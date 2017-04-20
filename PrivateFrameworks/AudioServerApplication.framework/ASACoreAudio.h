@@ -10,10 +10,15 @@
     NSMutableArray * _plugins;
 }
 
+@property (nonatomic, readonly, copy) NSArray *audioDeviceObjectIDs;
+@property (nonatomic, readonly, copy) NSArray *audioDevices;
 @property (nonatomic, readonly, copy) NSArray *boxObjectIDs;
+@property (nonatomic, readonly, copy) NSArray *boxes;
 @property (nonatomic, readonly, copy) NSArray *clockDeviceObjectIDs;
+@property (nonatomic, readonly, copy) NSArray *clockDevices;
 @property (nonatomic, readonly, copy) NSArray *deviceObjectIDs;
 @property (nonatomic, readonly, copy) NSArray *pluginObjectIDs;
+@property (nonatomic, readonly, copy) NSArray *plugins;
 
 + (id)coreAudio;
 + (id)sharedCoreAudioObject;
@@ -23,10 +28,14 @@
 - (void)_teardownDeathSource;
 - (void)addClient:(id)arg1;
 - (void)addPlugin:(id)arg1;
+- (id)audioDeviceObjectIDs;
+- (id)audioDevices;
 - (id)boxObjectIDs;
 - (unsigned long)boxWithUID:(id)arg1;
+- (id)boxes;
 - (id)clockDeviceObjectIDs;
 - (unsigned long)clockDeviceWithUID:(id)arg1;
+- (id)clockDevices;
 - (id)coreAudioClassName;
 - (void)dealloc;
 - (unsigned long)defaultInputAudioDevice;
@@ -38,6 +47,7 @@
 - (id)initWithAudioObjectID:(unsigned long)arg1;
 - (id)pluginObjectIDs;
 - (unsigned long)pluginWithBundleID:(id)arg1;
+- (id)plugins;
 - (void)removeClient:(id)arg1;
 - (void)removePlugin:(id)arg1;
 - (unsigned long)transportManagerWithBundleID:(id)arg1;

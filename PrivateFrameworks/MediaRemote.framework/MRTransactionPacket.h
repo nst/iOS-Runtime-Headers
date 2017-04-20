@@ -2,46 +2,46 @@
    Image: /System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
  */
 
-@interface MRTransactionPacket : NSObject <NSCopying, NSSecureCoding> {
+@interface MRTransactionPacket : NSObject <NSCopying> {
     NSMutableData * _data;
     NSString * _identifier;
-    NSString * _key;
+    struct _MRTransactionKeyProtobuf { Class x1; id x2; } * _key;
     unsigned int  _totalLength;
+    unsigned int  _totalWritePosition;
     unsigned int  _writeLength;
     unsigned int  _writePosition;
 }
 
 @property (nonatomic, readonly) unsigned int actualLength;
-@property (getter=isComplete, nonatomic, readonly) BOOL complete;
 @property (nonatomic, readonly, retain) NSData *data;
 @property (nonatomic, readonly) NSString *identifier;
-@property (nonatomic, readonly, retain) NSString *key;
+@property (nonatomic, readonly, retain) _MRTransactionKeyProtobuf *key;
 @property (nonatomic, readonly) _MRTransactionPacketProtobuf *protobuf;
 @property (getter=isReadComplete, nonatomic, readonly) BOOL readComplete;
 @property (nonatomic, readonly) unsigned int totalLength;
+@property (nonatomic, readonly) unsigned int totalWritePosition;
 @property (getter=isWriteComplete, nonatomic, readonly) BOOL writeComplete;
 @property (nonatomic) unsigned int writeLength;
 @property (nonatomic, readonly) unsigned int writePosition;
-
-+ (BOOL)supportsSecureCoding;
 
 - (unsigned int)actualLength;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)data;
 - (void)dealloc;
-- (void)encodeWithCoder:(id)arg1;
+- (id)description;
 - (id)identifier;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithData:(id)arg1 forKey:(id)arg2;
+- (id)initWithData:(id)arg1 forKey:(struct _MRTransactionKeyProtobuf { Class x1; id x2; }*)arg2;
+- (id)initWithPackets:(id)arg1;
 - (id)initWithProtobuf:(id)arg1;
 - (BOOL)isComplete;
 - (BOOL)isReadComplete;
 - (BOOL)isWriteComplete;
-- (id)key;
-- (void)merge:(id)arg1;
+- (struct _MRTransactionKeyProtobuf { Class x1; id x2; }*)key;
 - (id)protobuf;
 - (void)setWriteLength:(unsigned int)arg1;
 - (unsigned int)totalLength;
+- (unsigned int)totalWritePosition;
+- (void)writeComplete;
 - (unsigned int)writeLength;
 - (unsigned int)writePosition;
 

@@ -30,6 +30,7 @@
 - (void).cxx_destruct;
 - (id)buttonsRowView;
 - (id)descriptionView;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)impressionableElementsContainedInDocument:(id)arg1;
 - (id)initialFocusView;
 - (void)layoutSubviews;
@@ -45,6 +46,5 @@
 - (id)titleView;
 - (id)viewsAboveDescription;
 - (id)viewsBelowDescription;
-- (void)willUpdateFocusToView:(id)arg1;
 
 @end

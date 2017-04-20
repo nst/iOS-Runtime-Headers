@@ -4,34 +4,41 @@
 
 @interface _SFToolbar : UIToolbar {
     _UIBackdropView * _backgroundView;
-    BOOL  _hasDarkBackground;
-    BOOL  _hasLightButtonTint;
+    _UIBackdropViewSettings * _customBackdropSettings;
     int  _placement;
     UIView * _separator;
+    unsigned int  _tintStyle;
+    BOOL  _usesContainedAppearance;
+    BOOL  _usesDarkTheme;
 }
 
 @property (nonatomic, readonly) float URLFieldHorizontalMargin;
 @property (nonatomic) BOOL backdropComputesColorSettings;
 @property (nonatomic, copy) NSString *backdropGroupName;
-@property (nonatomic) BOOL hasDarkBackground;
 @property (nonatomic, readonly) int placement;
+@property (nonatomic) unsigned int tintStyle;
 @property (nonatomic, readonly) int toolbarSize;
+@property (nonatomic) BOOL usesContainedAppearance;
 
 + (float)defaultHeight;
 
 - (void).cxx_destruct;
 - (float)URLFieldHorizontalMargin;
+- (id)_backdropInputSettings;
+- (BOOL)_tintUsesDarkTheme;
 - (BOOL)backdropComputesColorSettings;
 - (id)backdropGroupName;
-- (BOOL)hasDarkBackground;
 - (id)initWithPlacement:(int)arg1;
 - (void)layoutSubviews;
 - (int)placement;
 - (void)setBackdropComputesColorSettings:(BOOL)arg1;
 - (void)setBackdropGroupName:(id)arg1;
-- (void)setHasDarkBackground:(BOOL)arg1;
+- (void)setTintStyle:(unsigned int)arg1;
+- (void)setUsesContainedAppearance:(BOOL)arg1;
+- (unsigned int)tintStyle;
 - (int)toolbarSize;
 - (void)updateBackdropSettings:(id)arg1;
 - (void)updateTintColor;
+- (BOOL)usesContainedAppearance;
 
 @end

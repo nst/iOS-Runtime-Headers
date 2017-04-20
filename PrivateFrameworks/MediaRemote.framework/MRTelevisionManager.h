@@ -16,6 +16,6 @@
 - (void)dealloc;
 - (id)init;
 - (void)registerTelevision:(id)arg1;
-- (id)televisionWithName:(id)arg1;
+- (id)televisionWithIdentifier:(id)arg1;
 
 @end

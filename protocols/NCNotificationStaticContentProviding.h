@@ -20,6 +20,7 @@
 - (NSString *)primaryText;
 - (NSString *)secondaryText;
 - (void)setDelegate:(id <NCNotificationStaticContentProvidingDelegate>)arg1;
+- (BOOL)showsTextInputOnAppearance;
 - (UIImage *)thumbnail;
 - (NSTimeZone *)timeZone;
 - (NSString *)title;

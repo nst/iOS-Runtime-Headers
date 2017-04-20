@@ -20,6 +20,7 @@
 - (void)_configureViewsWithStyle:(int)arg1;
 - (id)_dimmingKnockoutBackgroundColorForBackdropStyle:(int)arg1;
 - (id)_filterForBackdropStyle:(int)arg1;
+- (void)_setContinuousCornerRadius:(float)arg1;
 - (id)_visualEffectForStyle:(int)arg1;
 - (float)cornerRadius;
 - (id)initWithStyle:(int)arg1;
@@ -28,6 +29,7 @@
 - (void)setCornerRadius:(float)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setPressed:(BOOL)arg1;
+- (void)setRoundedCornerPosition:(unsigned int)arg1;
 - (void)setStyle:(int)arg1;
 - (int)style;
 

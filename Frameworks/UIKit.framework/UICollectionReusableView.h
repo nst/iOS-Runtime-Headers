@@ -20,6 +20,7 @@
 @property (getter=_layoutAttributes, setter=_setLayoutAttributes:, nonatomic, copy) UICollectionViewLayoutAttributes *layoutAttributes;
 @property (getter=_arePreferredAttributesValid, nonatomic) BOOL preferredAttributesValid;
 @property (setter=_setReuseIdentifier:, nonatomic, copy) NSString *reuseIdentifier;
+@property (setter=tv_setBelongsToOldIndexPath:, nonatomic) BOOL tv_belongsToOldIndexPath;
 @property (getter=tv_isDisplayed, setter=tv_setDisplayed:, nonatomic) BOOL tv_displayed;
 @property (getter=tv_isFocused, setter=tv_setFocused:, nonatomic) BOOL tv_focused;
 
@@ -72,8 +73,10 @@
 
 // Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
 
+- (BOOL)tv_belongsToOldIndexPath;
 - (BOOL)tv_isDisplayed;
 - (BOOL)tv_isFocused;
+- (void)tv_setBelongsToOldIndexPath:(BOOL)arg1;
 - (void)tv_setDisplayed:(BOOL)arg1;
 - (void)tv_setFocused:(BOOL)arg1;
 

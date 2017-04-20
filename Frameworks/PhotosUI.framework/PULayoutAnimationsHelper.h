@@ -10,7 +10,9 @@
 @property (nonatomic, readonly) PUSectionedGridLayout *layout;
 @property (nonatomic) BOOL shouldAnimateTemporaryImageView;
 
++ (double)stackedTransitionAnimationPreferredDurationUsingSpringAnimations:(BOOL)arg1;
 + (id /* block */)stackedTransitionAnimationsForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 shouldUseSpringAnimations:(BOOL)arg3;
++ (double)zoomTransitionAnimationPreferredDurationWhenZoomingIn:(BOOL)arg1;
 
 - (void).cxx_destruct;
 - (id)_adjustAnimation:(id)arg1 forReusableView:(id)arg2 toLayoutAttributes:(id)arg3;

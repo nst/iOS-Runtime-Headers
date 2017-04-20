@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
-@interface SKCloudServiceSetupViewController : UIViewController <SKCloudServiceSetupRemoteViewControllerDelegate> {
+@interface SKCloudServiceSetupViewController : UIViewController <SFSafariViewControllerDelegate, SKCloudServiceSetupRemoteViewControllerDelegate> {
     SKCloudServiceSetupReloadContext * _activeCloudServiceSetupReloadContext;
     SKCloudServiceSetupConfiguration * _configuration;
     <SKCloudServiceSetupViewControllerDelegate> * _delegate;
@@ -10,6 +10,7 @@
     BOOL  _isRemoteViewControllerReady;
     id /* block */  _loadCompletionHandler;
     _UIResilientRemoteViewContainerViewController * _remoteViewContainerViewController;
+    SFSafariViewController * _safariViewController;
 }
 
 @property (nonatomic, readonly, copy) SKCloudServiceSetupConfiguration *configuration;
@@ -25,14 +26,19 @@
 - (void)_requestRemoteViewController;
 - (void)cloudServiceSetupRemoteViewController:(id)arg1 didFinishLoadingWithSuccess:(BOOL)arg2 error:(id)arg3;
 - (void)cloudServiceSetupRemoteViewController:(id)arg1 requestsDismissalWithAnimation:(BOOL)arg2 completion:(id /* block */)arg3;
+- (void)cloudServiceSetupRemoteViewController:(id)arg1 requestsDismissingSafariViewControllerAnimated:(BOOL)arg2 completion:(id /* block */)arg3;
+- (void)cloudServiceSetupRemoteViewController:(id)arg1 requestsPresentingSafariViewControllerWithURL:(id)arg2 animated:(BOOL)arg3 completion:(id /* block */)arg4;
 - (id)configuration;
 - (void)dealloc;
 - (id)delegate;
+- (void)handleSafariScriptURL:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithConfiguration:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)reloadWithContext:(id)arg1;
+- (void)safariViewController:(id)arg1 didCompleteInitialLoad:(BOOL)arg2;
+- (void)safariViewControllerDidFinish:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

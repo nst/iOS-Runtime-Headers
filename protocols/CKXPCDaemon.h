@@ -26,6 +26,7 @@
 - (void)dumpDaemonStatusReportToFileHandle:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: NSFileHandle *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)fetchAllLongLivedOperationIDsWithSetupInfo:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 8: CKContainerSetupInfo *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
 - (void)fetchLongLivedOperationsWithIDs:(void *)arg1 setupInfo:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 9: NSArray *, CKContainerSetupInfo *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
+- (void)flushOperationMetricsToPowerLog;
 - (void)fullNameAndPrimaryEmailOnAccountWithSetupInfo:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 9: CKContainerSetupInfo *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSPersonNameComponents *, NSString *, NSError *, void*
 - (void)getBehaviorOptionForKey:(void *)arg1 isContainerOption:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 7: NSString *, BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id
 - (void)getNewWebSharingIdentityWithSetupInfo:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 8: CKContainerSetupInfo *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, CKEncryptedData *, NSError *, void*
@@ -73,6 +74,7 @@
 - (void)statusForApplicationPermission:(void *)arg1 setupInfo:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 9: unsigned int, CKContainerSetupInfo *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, NSError *, void*
 - (void)statusGroupsForApplicationPermission:(void *)arg1 setupInfo:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 9: unsigned int, CKContainerSetupInfo *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
 - (void)tossConfigWithSetupInfo:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: CKContainerSetupInfo *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
+- (void)triggerAutoBugCaptureSnapshot;
 - (void)updatePushTokens;
 - (void)wipeAllCachesAndDie;
 

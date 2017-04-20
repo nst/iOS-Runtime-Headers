@@ -2,29 +2,21 @@
    Image: /System/Library/PrivateFrameworks/CalendarDaemon.framework/CalendarDaemon
  */
 
-@interface CADEventsForAssistantSearchPredicate : CADPredicate <EKDefaultPropertiesLoading, NSSecureCoding> {
-    NSDate * _endDate;
+@interface CADEventsForAssistantSearchPredicate : EKPredicate <EKDefaultPropertiesLoading, NSSecureCoding> {
     int  _limit;
     NSString * _location;
     NSString * _notes;
     NSArray * _participants;
-    NSDate * _startDate;
-    NSTimeZone * _timeZone;
-    NSString * _title;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, copy) NSDate *endDate;
 @property (readonly) unsigned int hash;
 @property (nonatomic) int limit;
 @property (nonatomic, copy) NSString *location;
 @property (nonatomic, copy) NSString *notes;
 @property (nonatomic, copy) NSArray *participants;
-@property (nonatomic, copy) NSDate *startDate;
 @property (readonly) Class superclass;
-@property (nonatomic, copy) NSTimeZone *timeZone;
-@property (nonatomic, copy) NSString *title;
 
 + (BOOL)supportsSecureCoding;
 
@@ -34,7 +26,6 @@
 - (id)defaultPropertiesToLoad;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (id)endDate;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTimeZone:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 title:(id)arg4 location:(id)arg5 notes:(id)arg6 participants:(id)arg7 limit:(int)arg8;
 - (int)limit;
@@ -42,17 +33,10 @@
 - (id)notes;
 - (id)participants;
 - (id)predicateFormat;
-- (void)setEndDate:(id)arg1;
 - (void)setLimit:(int)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setNotes:(id)arg1;
 - (void)setParticipants:(id)arg1;
-- (void)setStartDate:(id)arg1;
-- (void)setTimeZone:(id)arg1;
-- (void)setTitle:(id)arg1;
 - (BOOL)shouldLoadDefaultProperties;
-- (id)startDate;
-- (id)timeZone;
-- (id)title;
 
 @end

@@ -55,6 +55,7 @@
 - (void)registerSiriViewServicePID:(int)arg1;
 - (void)registerZoomAttributesChangeHandler:(id /* block */)arg1;
 - (void)requestGuidedAccessSession:(BOOL)arg1 appID:(id)arg2 completion:(id /* block */)arg3;
+- (void)resetAccessibilityFeatures;
 - (void)restoreCachedBrightnessFilters;
 - (BOOL)sessionIsLoginSession;
 - (void)setAccessibilityPreferenceAsMobile:(id)arg1 value:(id)arg2 notification:(id)arg3;

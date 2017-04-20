@@ -9,6 +9,7 @@
 - (void)_presentRemoteSecretControllerWithNewestDevice:(id)arg1;
 - (void)_setupDevicePickerController:(id /* block */)arg1;
 - (void)devicePicker:(id)arg1 didSelectDevice:(id)arg2;
+- (id)devicePicker:(id)arg1 escapeOffersForDevices:(id)arg2;
 - (BOOL)performingAccountRecovery;
 
 @end

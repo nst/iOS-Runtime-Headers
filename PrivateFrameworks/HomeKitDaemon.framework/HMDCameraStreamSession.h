@@ -23,7 +23,7 @@
 + (id)logCategory;
 
 - (void).cxx_destruct;
-- (id)initWithSessionID:(id)arg1 streamingTierType:(unsigned int)arg2 remoteCapabilities:(id)arg3;
+- (id)initWithSessionID:(id)arg1 streamingTierType:(unsigned int)arg2 remoteCapabilities:(id)arg3 streamPreference:(id)arg4;
 - (id)logIdentifier;
 - (id)negotiatedParameters;
 - (id)protocolParameters;

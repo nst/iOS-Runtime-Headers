@@ -17,9 +17,15 @@
 - (id)_typedBackingStore;
 - (id)attribute;
 - (id)description;
+- (id)domain;
 - (id)entities;
 - (id)initWithEntities:(id)arg1 attribute:(id)arg2;
+- (id)parametersByName;
 - (void)setAttribute:(id)arg1;
+- (void)setDomain:(id)arg1;
 - (void)setEntities:(id)arg1;
+- (void)setParametersByName:(id)arg1;
+- (void)setVerb:(id)arg1;
+- (id)verb;
 
 @end

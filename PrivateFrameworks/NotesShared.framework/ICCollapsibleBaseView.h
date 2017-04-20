@@ -23,6 +23,7 @@
 @property (nonatomic, retain) NSLayoutConstraint *zeroWidthConstraint;
 
 - (void).cxx_destruct;
+- (void)awakeFromNib;
 - (struct UIView { Class x1; }*)contentView;
 - (void)ic_setNeedsUpdateConstraints;
 - (BOOL)isCollapsed;

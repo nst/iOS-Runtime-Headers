@@ -24,8 +24,10 @@
 - (id)displayContentsForKey:(id)arg1;
 - (float)dualStringKeyBottomFontSize:(unsigned int)arg1;
 - (struct CGPoint { float x1; float x2; })dualStringKeyBottomTextOffset:(unsigned int)arg1;
+- (struct CGPoint { float x1; float x2; })dualStringKeyBottomTextOffset:(id)arg1 keyplane:(id)arg2;
 - (float)dualStringKeyTopFontSize:(unsigned int)arg1;
 - (struct CGPoint { float x1; float x2; })dualStringKeyTopTextOffset:(unsigned int)arg1;
+- (struct CGPoint { float x1; float x2; })dualStringKeyTopTextOffset:(id)arg1 keyplane:(id)arg2;
 - (id)globalEmojiKeyImageName;
 - (id)globalKeyImageName;
 - (struct CGPoint { float x1; float x2; })iPadFudgeControlKeyOffset;
@@ -42,6 +44,7 @@
 - (float)spaceKeyFontSize;
 - (float)stringKeyFontSize:(unsigned int)arg1;
 - (struct CGPoint { float x1; float x2; })stringKeyOffset:(unsigned int)arg1;
+- (BOOL)supportsGestureBehaviors;
 - (BOOL)supportsInputTraits:(id)arg1 forKeyplane:(id)arg2;
 - (id)tabKeyImageName;
 

@@ -5,6 +5,7 @@
 @interface SSVPlayActivityController : NSObject {
     NSObject<OS_dispatch_queue> * _accessQueue;
     SSXPCConnection * _connection;
+    NSOperationQueue * _debugLogOperationQueue;
     NSMutableDictionary * _endpointIdentifierToEndpointRevisionInformation;
     int  _endpointRevisionInformationDidChangeNotifyToken;
     BOOL  _hasAttemptedTableCreation;

@@ -11,6 +11,7 @@
     double  _executing;
     double  _queueing;
     NSMutableArray * _ranges;
+    NSMutableSet * _requestUUIDs;
     NSDate * _startDate;
 }
 
@@ -26,6 +27,7 @@
 @property double queueing;
 @property (nonatomic, retain) NSMutableArray *ranges;
 @property (readonly) NSArray *rangesCopy;
+@property (readonly) NSMutableSet *requestUUIDs;
 @property (nonatomic, retain) NSDate *startDate;
 @property (readonly) Class superclass;
 
@@ -50,6 +52,7 @@
 - (id)ranges;
 - (void)rangesCompleted;
 - (id)rangesCopy;
+- (id)requestUUIDs;
 - (void)setBytesDownloaded:(unsigned int)arg1;
 - (void)setBytesUploaded:(unsigned int)arg1;
 - (void)setConnections:(unsigned int)arg1;

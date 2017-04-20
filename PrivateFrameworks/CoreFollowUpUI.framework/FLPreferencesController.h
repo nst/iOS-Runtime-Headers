@@ -3,23 +3,27 @@
  */
 
 @interface FLPreferencesController : NSObject {
-    FLFollowUpController * _controller;
+    FLPreferencesFollowUpItemListViewController * _controller;
     id /* block */  _itemChangeObserver;
-    int  _notifyToken;
+    PSListController * _listViewController;
+    NSSet * _spyglassWhitelist;
+    <FLViewModel> * _topViewModel;
 }
 
 @property (nonatomic, copy) id /* block */ itemChangeObserver;
+@property (nonatomic) PSListController *listViewController;
 
 - (void).cxx_destruct;
-- (unsigned int)_countOfPendingFollowUpItemsToShowInSettings;
-- (id)_pendingFollowUpItemsToShowInSettings;
-- (id)_specifiersForFollowUpItem:(id)arg1;
-- (void)actionTapped:(id)arg1;
-- (void)dealloc;
-- (id)followUpItemSpecifiers;
 - (id)init;
+- (id)initWithViewModel:(id)arg1;
 - (id /* block */)itemChangeObserver;
+- (id)listViewController;
+- (void)loadSpecifier:(id)arg1;
 - (void)setItemChangeObserver:(id /* block */)arg1;
+- (void)setListViewController:(id)arg1;
+- (id)spyglassSpecifiers;
+- (void)startSpinnerForSpecifier:(id)arg1;
+- (void)stopSpinnerForSpecifier:(id)arg1;
 - (id)topLevelSpecifiers;
 
 @end

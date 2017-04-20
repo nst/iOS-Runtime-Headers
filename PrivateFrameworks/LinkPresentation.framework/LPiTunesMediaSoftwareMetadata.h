@@ -5,6 +5,8 @@
 @interface LPiTunesMediaSoftwareMetadata : LPSpecializationMetadata <LPLinkMetadataPresentationTransformerAdaptor, LPLinkMetadataPreviewTransformerAdaptor, LPLinkMetadataStoreTransformerAdaptor> {
     NSString * _genre;
     LPImage * _icon;
+    BOOL  _isMessagesOnlyApp;
+    LPImage * _messagesAppIcon;
     NSString * _name;
     NSString * _platform;
     NSArray * _screenshots;
@@ -14,6 +16,8 @@
 
 @property (nonatomic, copy) NSString *genre;
 @property (nonatomic, retain) LPImage *icon;
+@property (nonatomic) BOOL isMessagesOnlyApp;
+@property (nonatomic, retain) LPImage *messagesAppIcon;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *platform;
 @property (nonatomic, retain) NSArray *screenshots;
@@ -28,6 +32,8 @@
 - (id)genre;
 - (id)icon;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)isMessagesOnlyApp;
+- (id)messagesAppIcon;
 - (id)name;
 - (id)platform;
 - (id)presentationPropertiesForTransformer:(id)arg1;
@@ -36,6 +42,8 @@
 - (id)screenshots;
 - (void)setGenre:(id)arg1;
 - (void)setIcon:(id)arg1;
+- (void)setIsMessagesOnlyApp:(BOOL)arg1;
+- (void)setMessagesAppIcon:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPlatform:(id)arg1;
 - (void)setScreenshots:(id)arg1;

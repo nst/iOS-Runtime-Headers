@@ -9,6 +9,6 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (id)clusterHeadlinesByTopic:(id)arg1 subscribedTopicIDs:(id)arg2 rules:(id)arg3;
+- (id)clusterHeadlinesByTopic:(id)arg1 subscribedTopicIDs:(id)arg2 blacklistedTopicIDs:(id)arg3 rules:(id)arg4 tagScoreProvider:(id /* block */)arg5;
 
 @end

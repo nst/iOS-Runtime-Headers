@@ -12,6 +12,7 @@
     unsigned int  _previousExpressFelicaState;
     unsigned int  _previousTransactionState;
     unsigned int  _previousVASTransactionState;
+    NSData * _restrictedModeID;
     NSData * _tsmUuid;
     unsigned long long  _tsmUuidRefTimestamp;
     NSUserDefaults * _userDefault;
@@ -24,6 +25,10 @@
 
 + (id)sharedAWDLogger;
 
+- (void)_postAWDEvent:(id)arg1 withTimestamp:(unsigned long long)arg2;
+- (void)_postAWDHardwareExceptionEventWithAssertionCounter:(unsigned int)arg1 wdogDump:(unsigned int*)arg2 hwFltDump:(unsigned int*)arg3;
+- (void)_resetAWDLoadStackExceptionCount;
+- (void)_updateStats:(id)arg1 reset:(BOOL)arg2;
 - (id)activeAID;
 - (void)dealloc;
 - (void)enableQueryMetricsListener;
@@ -49,6 +54,8 @@
 - (void)postAWDReaderModeExceptionForType:(unsigned int)arg1 withErrorCode:(unsigned int)arg2;
 - (void)postAWDRestrictedModeFromContactlessMode:(BOOL)arg1 isIcf:(BOOL)arg2;
 - (void)postAWDSERemovedEvent:(unsigned int)arg1 isIcf:(BOOL)arg2 hasCardEmulationStarted:(BOOL)arg3 hasExpressTransitStarted:(BOOL)arg4;
+- (void)postAWDSERestrictedModeEntered:(id)arg1 isIcf:(BOOL)arg2;
+- (void)postAWDSERestrictedModeExited:(BOOL)arg1;
 - (void)postAWDSESelectEventWithAID:(id)arg1;
 - (void)postAWDTSMConnectivityException:(unsigned int)arg1;
 - (void)postAWDTSMEndOfSession;

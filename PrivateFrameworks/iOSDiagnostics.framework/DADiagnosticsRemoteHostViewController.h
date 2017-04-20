@@ -2,35 +2,35 @@
    Image: /System/Library/PrivateFrameworks/iOSDiagnostics.framework/iOSDiagnostics
  */
 
-@interface DADiagnosticsRemoteHostViewController : _UIRemoteViewController <DADiagnosticsRemoteHost> {
+@interface DADiagnosticsRemoteHostViewController : _UIRemoteViewController <DSRemoteViewControllerInterface> {
     <DADiagnosticsRemoteDelegate> * _delegate;
-    <DKBrightnessResponder><DKVolumeHUDResponder> * _localResponder;
     float  _originalScreenBrightness;
+    DADiagnosticResponder * _responder;
 }
 
 @property (nonatomic) <DADiagnosticsRemoteDelegate> *delegate;
-@property (nonatomic, retain) <DKBrightnessResponder><DKVolumeHUDResponder> *localResponder;
 @property (nonatomic) float originalScreenBrightness;
+@property (nonatomic, retain) DADiagnosticResponder *responder;
 
 + (id)exportedInterface;
 + (void)requestDiagnosticsRemoteViewControllerWithConnectionHandler:(id /* block */)arg1;
 + (id)serviceViewControllerInterface;
 
 - (void).cxx_destruct;
-- (id)_diagnosticsServiceViewControllerProxy;
+- (id)_viewServiceInterface;
 - (id)delegate;
-- (void)didEnableVolumeHUD:(BOOL)arg1;
-- (void)didFinishWithError:(id)arg1;
-- (void)didSetScreenToBrightness:(float)arg1 animate:(BOOL)arg2;
-- (void)disconnect;
-- (id)localResponder;
+- (id)disconnect;
 - (float)originalScreenBrightness;
+- (id)responder;
 - (void)setDelegate:(id)arg1;
-- (void)setLocalResponder:(id)arg1;
 - (void)setOriginalScreenBrightness:(float)arg1;
-- (void)teardown;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)setResponder:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidLoad;
+- (void)viewServiceDidEnableVolumeHUD:(BOOL)arg1;
+- (void)viewServiceDidFinishWithReason:(unsigned int)arg1;
+- (void)viewServiceDidSetScreenToBrightness:(float)arg1 animate:(BOOL)arg2;
+- (void)viewServiceDidSuspend;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
  */
 
-@interface SBUIActionViewVibrantStyling : NCVibrantStyling {
+@interface SBUIActionViewVibrantStyling : MTVibrantStyling {
     CAFilter * _composedFilter;
 }
 

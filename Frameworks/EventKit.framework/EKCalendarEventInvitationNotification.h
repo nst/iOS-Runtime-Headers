@@ -25,6 +25,7 @@
 @property (getter=isAllDay, nonatomic) BOOL allDay;
 @property (nonatomic) BOOL attendeeReplyChanged;
 @property (nonatomic, retain) NSArray *attendees;
+@property (nonatomic) BOOL couldBeJunk;
 @property (nonatomic) BOOL dateChanged;
 @property (nonatomic, retain) NSDate *endDate;
 @property (nonatomic, readonly) NSString *invitedBy;

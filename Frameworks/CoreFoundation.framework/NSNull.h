@@ -42,6 +42,10 @@
 - (id)replacementObjectForPortCoder:(id)arg1;
 - (id)valueForKey:(id)arg1;
 
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
++ (id)_mapkit_fakeNil;
+
 // Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
 
 - (id)CAMLType;

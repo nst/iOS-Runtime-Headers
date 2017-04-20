@@ -3,6 +3,7 @@
  */
 
 @interface WBSSiteMetadataImageCache : NSObject {
+    WBSCacheRetainReleasePolicy * _cachePolicy;
     NSMutableDictionary * _cacheSettings;
     struct unique_ptr<SafariShared::CoalescedAsynchronousWriter, std::__1::default_delete<SafariShared::CoalescedAsynchronousWriter> > { 
         struct __compressed_pair<SafariShared::CoalescedAsynchronousWriter *, std::__1::default_delete<SafariShared::CoalescedAsynchronousWriter> > { 
@@ -12,12 +13,10 @@
     <WBSSiteMetadataImageCacheDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _diskAccessQueue;
     NSURL * _imageDirectoryURL;
-    NSCountedSet * _imageRetainCounts;
     int  _imageType;
     NSMutableDictionary * _imagesForKeyStrings;
     NSObject<OS_dispatch_queue> * _internalQueue;
     NSMutableSet * _missingImageKeyStrings;
-    NSCountedSet * _negativeImageRetainCounts;
     NSMutableSet * _pendingKeyStringRequests;
     BOOL  _terminating;
 }
@@ -46,7 +45,6 @@
 - (void)_internalReleaseImageForKeyString:(id)arg1;
 - (void)_internalRemoveAllImages;
 - (void)_internalRemoveImagesFromCacheForKeyStrings:(id)arg1;
-- (void)_internalRetainImageForKeyString:(id)arg1;
 - (void)_internalSaveImageToDisk:(id)arg1 forKeyString:(id)arg2;
 - (void)_internalSetImageState:(int)arg1 forKeyString:(id)arg2;
 - (void)_internalSetSetting:(id)arg1 forKey:(id)arg2;

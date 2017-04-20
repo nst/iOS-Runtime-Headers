@@ -6,8 +6,9 @@
     NSString * _bundleIdentifier;
     NSObject<OS_dispatch_queue> * _callOutQueue;
     <FBProcessDelegate> * _delegate;
-    NSNumber * _executablePartitionNumber;
-    FBSProcessHandle * _handle;
+    int  _executableOnSystemPartition;
+    NSString * _executablePath;
+    BSProcessHandle * _handle;
     NSString * _jobLabel;
     NSString * _name;
     NSHashTable * _observers;
@@ -31,6 +32,7 @@
 @property (nonatomic, readonly, copy) NSString *jobLabel;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly) int pid;
+@property (getter=_queue_executablePath, setter=_queue_setExecutablePath:, nonatomic, copy) NSString *queue_executablePath;
 @property (getter=_queue_jobLabel, setter=_queue_setJobLabel:, nonatomic, copy) NSString *queue_jobLabel;
 @property (getter=_queue_name, setter=_queue_setName:, nonatomic, copy) NSString *queue_name;
 @property (getter=_queue_pid, setter=_queue_setPid:, nonatomic) int queue_pid;
@@ -44,12 +46,15 @@
 @property (nonatomic, readonly) int type;
 @property (nonatomic, readonly, retain) FBWorkspace *workspace;
 
+- (void).cxx_destruct;
 - (id)_createWorkspace;
 - (id)_queue;
 - (void)_queue_callExitObservers;
 - (void)_queue_configureWithHandle:(id)arg1;
 - (int)_queue_effectiveVisibilityForVisibility:(int)arg1;
 - (void)_queue_enumerateObserversWithBlock:(id /* block */)arg1;
+- (BOOL)_queue_executableLivesOnSystemPartition;
+- (id)_queue_executablePath;
 - (BOOL)_queue_isForeground;
 - (BOOL)_queue_isRunning;
 - (id)_queue_jobLabel;
@@ -57,6 +62,7 @@
 - (id)_queue_newWatchdogForContext:(id)arg1 completion:(id /* block */)arg2;
 - (int)_queue_pid;
 - (void)_queue_processDidExit;
+- (void)_queue_setExecutablePath:(id)arg1;
 - (void)_queue_setJobLabel:(id)arg1;
 - (void)_queue_setName:(id)arg1;
 - (void)_queue_setPid:(int)arg1;

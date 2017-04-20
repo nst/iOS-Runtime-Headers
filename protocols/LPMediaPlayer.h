@@ -9,6 +9,12 @@
 - (BOOL)isMuted;
 - (BOOL)isPlaying;
 - (void)setActive:(BOOL)arg1;
+- (BOOL)shouldUnmuteWhenUserAdjustsVolume;
 - (BOOL)usesSharedAudioSession;
+
+@optional
+
+- (unsigned long long)lastInteractionTimestamp;
+- (float)unobscuredAreaFraction;
 
 @end

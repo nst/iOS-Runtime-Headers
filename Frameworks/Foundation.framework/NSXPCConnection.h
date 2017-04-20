@@ -143,6 +143,10 @@
 - (BOOL)hk_isAppExtension;
 - (id)hk_signingIdentifier;
 
+// Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
+
++ (id)_LSConnectionWithType:(unsigned short)arg1 remoteInterface:(id)arg2 withQueue:(id)arg3 connection:(id*)arg4;
+
 // Image: /System/Library/Frameworks/Social.framework/Social
 
 - (id)_clientBundleID;

@@ -4,8 +4,10 @@
 
 @interface __NSCFURLSessionTaskTransactionMetrics : NSURLSessionTaskTransactionMetrics <NSSecureCoding> {
     BOOL  __cellular;
+    NSString * __localAddressAndPort;
     BOOL  __localCache;
     unsigned int  __redirected;
+    NSString * __remoteAddressAndPort;
     BOOL  __secureConnection;
     BOOL  __serverPush;
     NSDate * _connectEndDate;
@@ -31,8 +33,10 @@
 
 - (BOOL)_cellular;
 - (id)_initWithPerformanceTiming:(struct __PerformanceTiming { }*)arg1;
+- (id)_localAddressAndPort;
 - (BOOL)_localCache;
 - (unsigned int)_redirected;
+- (id)_remoteAddressAndPort;
 - (BOOL)_secureConnection;
 - (BOOL)_serverPush;
 - (id)connectEndDate;
@@ -75,8 +79,10 @@
 - (void)setSecureConnectionEndDate:(id)arg1;
 - (void)setSecureConnectionStartDate:(id)arg1;
 - (void)set_cellular:(BOOL)arg1;
+- (void)set_localAddressAndPort:(id)arg1;
 - (void)set_localCache:(BOOL)arg1;
 - (void)set_redirected:(unsigned int)arg1;
+- (void)set_remoteAddressAndPort:(id)arg1;
 - (void)set_secureConnection:(BOOL)arg1;
 - (void)set_serverPush:(BOOL)arg1;
 

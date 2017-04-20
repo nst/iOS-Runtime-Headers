@@ -17,6 +17,7 @@
 @property (getter=_addressGeocodeAccuracy, nonatomic, readonly) int addressGeocodeAccuracy;
 @property (getter=_areaInMeters, nonatomic, readonly) double areaInMeters;
 @property (nonatomic, readonly) NSArray *areasOfInterest;
+@property (getter=_associatedApp, nonatomic, readonly) GEOAssociatedApp *associatedApp;
 @property (getter=_attribution, nonatomic, readonly) GEOMapItemPlaceAttribution *attribution;
 @property (getter=_businessClaim, nonatomic, readonly) GEOPDBusinessClaim *businessClaim;
 @property (getter=_businessURL, nonatomic, readonly) NSString *businessURL;
@@ -121,6 +122,8 @@
 @property (getter=_vendorID, nonatomic, readonly, copy) NSString *vendorID;
 @property (getter=_webURL, nonatomic, readonly, copy) NSURL *webURL;
 
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
 + (id)mapItemStorageForCoordinate:(struct { double x1; double x2; })arg1;
 + (id)mapItemStorageForGEOMapItem:(id)arg1;
 + (id)mapItemStorageForGEOMapItem:(id)arg1 clientAttributes:(id)arg2;
@@ -139,6 +142,7 @@
 - (double)_areaInMeters;
 - (id)_arrivalMapRegionForTransportType:(int)arg1;
 - (id)_asPlaceInfo;
+- (id)_associatedApp;
 - (id)_attribution;
 - (id)_businessClaim;
 - (id)_businessURL;
@@ -273,5 +277,12 @@
 - (id)timezone;
 - (id)weatherDisplayName;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)_fromJSONUsingReflection:(id)arg1;
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

@@ -18,23 +18,23 @@
 
 // Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
 
-+ (Class)_applicationInfoClass;
++ (id)_newApplicationLibrary;
 + (void)initializeSystemServices;
 + (void)postFrontBoardInitializationHook;
 + (void)preFrontBoardInitializationHook;
 + (BOOL)registerAsSystemApp;
 + (BOOL)rendersLocally;
++ (id)sharedApplicationLibrary;
 + (BOOL)shouldCheckInWithBackboard;
 + (BOOL)shouldFixMainThreadPriority;
 + (int)startupInterfaceOrientation;
-+ (BOOL)supportsAsynchronousApplicationLoading;
 + (BOOL)systemApplicationIsAliveForWatchdog:(id)arg1;
-+ (BOOL)systemApplicationShouldWaitForDataMigration:(id)arg1;
++ (double)systemIdleSleepInterval;
 
 - (int)_interfaceOrientationRotationDirectionFromOrientation:(int)arg1 toOrientation:(int)arg2;
 - (id)_newSceneForWindow:(id)arg1 oldDisplay:(id)arg2 newDisplay:(id)arg3;
-- (void)_noteApplicationDidFinishLaunching;
 - (BOOL)_openURL:(id)arg1;
+- (void)_performApplicationDidFinishLaunchingTasksWithCompletion:(id /* block */)arg1;
 - (BOOL)_saveSnapshotWithName:(id)arg1;
 - (void)_setDarkBoot:(BOOL)arg1;
 - (void)_updateSceneSettingsForScene:(id)arg1 layer:(id)arg2;

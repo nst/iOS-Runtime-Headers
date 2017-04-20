@@ -79,6 +79,7 @@
 - (BOOL)deviceOrFeatureProfileSupportsFeatureSet:(unsigned int)arg1;
 - (BOOL)deviceSupportsFeatureSet:(unsigned int)arg1;
 - (id)familyName;
+- (id)formattedDescription:(unsigned int)arg1;
 - (void*)fragmentFunctionKeyWithRenderPipelineDescriptor:(id)arg1 fragmentKeySize:(unsigned int*)arg2 previousStateVariant:(id)arg3;
 - (void*)fragmentFunctionKeyWithRenderPipelineDescriptor:(id)arg1 options:(unsigned int)arg2 previousStateVariant:(id)arg3 fragmentKeySize:(unsigned int*)arg4;
 - (id)fragmentVariantWithCompilerOutput:(id)arg1;

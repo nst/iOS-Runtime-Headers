@@ -12,6 +12,7 @@
     float  _distanceFromInitialPoint;
     float  _maximumTouchMovement;
     double  _minimumTouchDuration;
+    BOOL  _requireSingleTouch;
 }
 
 @property (setter=_setBeginRequestID:, nonatomic) unsigned int _beginRequestID;
@@ -20,6 +21,7 @@
 @property (nonatomic, readonly) float distanceFromInitialPoint;
 @property (nonatomic) float maximumTouchMovement;
 @property (nonatomic) double minimumTouchDuration;
+@property (nonatomic) BOOL requireSingleTouch;
 
 - (unsigned int)_beginRequestID;
 - (void)_beginWithRequestID:(unsigned int)arg1;
@@ -30,6 +32,7 @@
 - (void)_setInitialPointInView:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setTouchCount:(unsigned int)arg1;
 - (unsigned int)_touchCount;
+- (void)_updateDistanceFromInitialPoint;
 - (float)distanceFromInitialPoint;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (float)maximumTouchMovement;
@@ -38,10 +41,12 @@
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)pressesChanged:(id)arg1 withEvent:(id)arg2;
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
+- (BOOL)requireSingleTouch;
 - (void)reset;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setMaximumTouchMovement:(float)arg1;
 - (void)setMinimumTouchDuration:(double)arg1;
+- (void)setRequireSingleTouch:(BOOL)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

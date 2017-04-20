@@ -4,6 +4,7 @@
 
 @interface AVPlayerController : UIResponder {
     int  _actionAtItemEnd;
+    int  _allowsIdleSleepPreventionCount;
     BOOL  _atMaxTime;
     BOOL  _atMinTime;
     NSArray * _audioMediaSelectionOptions;
@@ -17,6 +18,7 @@
     BOOL  _deviceBatteryChargingOrFull;
     BOOL  _deviceBatteryMonitoringWasEnabled;
     id  _deviceBatteryStateDidChangeObserver;
+    BOOL  _didPreventSleepWhenStartingExternalPlayback;
     BOOL  _disablingAutomaticTermination;
     BOOL  _forceScanning;
     BOOL  _hasDiscoveredVideo;
@@ -78,7 +80,6 @@
     id  _updateTimingPeriodicObserverToken;
 }
 
-@property (nonatomic) BOOL CALayerDestinationIsTVOut;
 @property (getter=isAtMaxTime, nonatomic) BOOL atMaxTime;
 @property (getter=isAtMinTime, nonatomic) BOOL atMinTime;
 @property (nonatomic, retain) NSArray *availableMetadataFormats;
@@ -153,7 +154,6 @@
 + (id)keyPathsForValuesAffectingStatus;
 
 - (void).cxx_destruct;
-- (BOOL)CALayerDestinationIsTVOut;
 - (void)_attemptToResumePlaybackAfterInterruption;
 - (void)_disableLegibleMediaSelectionOptions:(id)arg1;
 - (void)_enableAutoMediaSelection:(id)arg1;
@@ -168,6 +168,7 @@
 - (void)_updateScanningForwardRate;
 - (void)actuallySeekToTime;
 - (BOOL)allowsExternalPlayback;
+- (BOOL)allowsIdleSleepPrevention;
 - (id)audioMediaSelectionOptions;
 - (id)audioOptions;
 - (void)autoplay:(id)arg1;
@@ -284,7 +285,6 @@
 - (void)setAtMinTime:(BOOL)arg1;
 - (void)setAudioMediaSelectionOptions:(id)arg1;
 - (void)setAvailableMetadataFormats:(id)arg1;
-- (void)setCALayerDestinationIsTVOut:(BOOL)arg1;
 - (void)setCompatibleWithAirPlayVideo:(BOOL)arg1;
 - (void)setComposable:(BOOL)arg1;
 - (void)setContentChapters:(id)arg1;
@@ -316,7 +316,9 @@
 - (void)setVolume:(double)arg1;
 - (BOOL)shouldPreventIdleDisplaySleep;
 - (void)skipBackwardThirtySeconds:(id)arg1;
+- (void)startAllowingIdleSleepPrevention;
 - (int)status;
+- (void)stopAllowingIdleSleepPrevention;
 - (void)throttledSeekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
 - (id)timing;
 - (void)toggleMuted:(id)arg1;

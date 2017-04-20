@@ -10,6 +10,7 @@
 }
 
 @property (readonly) UISegmentedControl *segmentedControl;
+@property (readonly) BOOL shouldShowTitles;
 @property (nonatomic, retain) UIKBThemedView *themedView;
 
 + (BOOL)_preventsAppearanceProxyCustomization;
@@ -25,6 +26,7 @@
 - (void)selectPreviousSegment;
 - (void)setSortControlTitles:(id)arg1;
 - (void)setThemedView:(id)arg1;
+- (BOOL)shouldShowTitles;
 - (id)themedView;
 - (void)updateTitleTextAttributes;
 

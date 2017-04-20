@@ -32,7 +32,7 @@
 @property (nonatomic, readonly) int state;
 @property (readonly) Class superclass;
 
-+ (id)recognizedUtteranceFromSpeechPhrases:(id)arg1 final:(BOOL)arg2;
++ (id)recognizedResultFromPackage:(id)arg1;
 + (id)transcriptionsWithTokens:(id)arg1;
 
 - (void).cxx_destruct;

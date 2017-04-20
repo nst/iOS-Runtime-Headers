@@ -3,7 +3,7 @@
  */
 
 @interface WKFormSelectControl : NSObject <WKFormPeripheral> {
-    struct RetainPtr<id<WKFormControl> > { 
+    struct RetainPtr<NSObject<WKFormControl> > { 
         void *m_ptr; 
     }  _control;
 }
@@ -14,5 +14,6 @@
 - (void)beginEditing;
 - (void)endEditing;
 - (id)initWithView:(id)arg1;
+- (void)selectRow:(int)arg1 inComponent:(int)arg2 extendingSelection:(BOOL)arg3;
 
 @end

@@ -22,6 +22,7 @@
 @property (nonatomic) NSExtensionContext *urlOpenContext;
 
 - (void).cxx_destruct;
+- (BOOL)_deviceIsPasscodeLocked;
 - (float)_maxEntryViewHeight;
 - (void)_messageReceivedInCurrentTranscript:(id)arg1;
 - (void)_raiseToListenSettingChanged:(id)arg1;

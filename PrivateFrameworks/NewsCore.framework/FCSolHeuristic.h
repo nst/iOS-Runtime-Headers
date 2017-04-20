@@ -18,11 +18,11 @@
 
 - (void).cxx_destruct;
 - (BOOL)alternate;
-- (double)computeScoreWithArticles:(id)arg1 tags:(id)arg2 articlesByTag:(id)arg3;
-- (id)fillGroupsWithArticles:(id)arg1 tags:(id)arg2 articlesByTag:(id)arg3 groupSizes:(id)arg4;
+- (double)computeScoreWithSelectedTag:(id)arg1 remainingArticles:(id)arg2 remainingTags:(id)arg3 articlesByTag:(id)arg4;
+- (id)fillGroupsWithSelectedTag:(id)arg1 remainingArticles:(id)arg2 remainingTags:(id)arg3 articlesByTag:(id)arg4 groupSizes:(id)arg5;
 - (id)groupSizes;
 - (int)heuristicSampleSize;
-- (id)initWithOption:(int)arg1 minClusterSize:(int)arg2 maxClusterSize:(int)arg3 heuristicSampleSize:(int)arg4 utilityBlock:(id /* block */)arg5;
+- (id)initWithOption:(int)arg1 minClusterSize:(int)arg2 maxClusterSize:(int)arg3 minIdealClusterSize:(int)arg4 maxIdealClusterSize:(int)arg5 heuristicSampleSize:(int)arg6 utilityBlock:(id /* block */)arg7;
 - (int)iterations;
 - (void)setGroupSizes:(id)arg1;
 - (id /* block */)utilityBlock;

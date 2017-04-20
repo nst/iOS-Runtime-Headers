@@ -10,7 +10,7 @@
 + (int)defaultNewPasscodeEntrySimplePasscodeType;
 + (id)deviceLockedError;
 + (id)generateSalt;
-+ (id)hashForPasscode:(id)arg1 usingMethod:(int)arg2 salt:(id)arg3;
++ (id)hashForPasscode:(id)arg1 usingMethod:(int)arg2 salt:(id)arg3 customIterations:(unsigned int)arg4;
 + (BOOL)isDeviceUnlocked;
 + (id)localizedDescriptionOfDefaultNewPasscodePolicyFromRestrictions:(id)arg1;
 + (id)localizedDescriptionOfPasscodePolicyFromRestrictions:(id)arg1;

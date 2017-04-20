@@ -3,10 +3,12 @@
  */
 
 @interface _SFBrowserWindowSettings : NSObject {
+    BOOL  _invalidatesClosedWindows;
     NSMutableDictionary * _settingsDictionary;
 }
 
 @property (nonatomic, readonly) BOOL hasPrivateBrowsingWindow;
+@property (nonatomic) BOOL invalidatesClosedWindows;
 
 + (void)setSharedSettings:(id)arg1;
 + (id)settings;
@@ -19,10 +21,12 @@
 - (BOOL)activeDocumentIsValidForWindowWithUUID:(id)arg1;
 - (BOOL)hasPrivateBrowsingWindow;
 - (id)init;
+- (BOOL)invalidatesClosedWindows;
 - (BOOL)isShowingTabViewForWindowWithUUID:(id)arg1;
 - (BOOL)privateBrowsingEnabledForWindowWithUUID:(id)arg1;
 - (void)removeWindowWithUUID:(id)arg1;
 - (void)setActiveDocumentIsValid:(BOOL)arg1 forWindowWithUUID:(id)arg2;
+- (void)setInvalidatesClosedWindows:(BOOL)arg1;
 - (void)setIsShowingTabView:(BOOL)arg1 forWindowWithUUID:(id)arg2;
 - (void)setPrivateBrowsingEnabled:(BOOL)arg1 forWindowWithUUID:(id)arg2;
 - (void)synchronize;

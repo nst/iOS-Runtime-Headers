@@ -42,6 +42,7 @@
 - (void)layoutSubviews;
 - (id)monogramDescription;
 - (id)placeholderImage;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id /* block */)pressCompletionBlock;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })selectionMarginsForSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setImage:(id)arg1;

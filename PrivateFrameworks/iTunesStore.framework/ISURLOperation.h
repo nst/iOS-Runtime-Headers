@@ -8,6 +8,7 @@
     NSMutableData * _dataBuffer;
     NSObject<OS_dispatch_queue> * _dataBufferAccessQueue;
     ISDataProvider * _dataProvider;
+    SSHTTPArchive * _httpArchive;
     BOOL  _loadsHTTPFailures;
     int  _networkRetryCount;
     NSArray * _passThroughErrors;
@@ -22,6 +23,7 @@
     BOOL  _usesPrivateCookieStore;
 }
 
+@property (readonly) SSHTTPArchive *HTTPArchive;
 @property (nonatomic, readonly) NSURLCache *URLCache;
 @property (nonatomic, readonly) NSString *URLCacheID;
 @property (getter=_loadsHTTPFailures, setter=_setLoadsHTTPFailures:) BOOL _loadsHTTPFailures;
@@ -51,11 +53,14 @@
 + (struct _CFURLCache { }*)sharedCFURLCache;
 
 - (void).cxx_destruct;
+- (id)HTTPArchive;
 - (id)URLCache;
 - (id)URLCacheID;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(id /* block */)arg4;
+- (id)URLSession:(id)arg1 task:(id)arg2 decodedDataForResponseData:(id)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithEvent:(id)arg3 error:(id)arg4;
+- (void)URLSession:(id)arg1 task:(id)arg2 didFinishCreatingHTTPArchive:(id)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)URLSession:(id)arg1 task:(id)arg2 didSendBodyData:(long long)arg3 totalBytesSent:(long long)arg4 totalBytesExpectedToSend:(long long)arg5;
 - (void)URLSession:(id)arg1 task:(id)arg2 needNewBodyStream:(id /* block */)arg3;

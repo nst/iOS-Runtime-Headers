@@ -57,6 +57,7 @@
 + (void)initialize;
 + (unsigned long)sizeofClassStructure:(BOOL)arg1;
 
+- (void)_addFields:(id)arg1;
 - (void)_addVariantAction:(id /* block */)arg1 withEvaluator:(id /* block */)arg2;
 - (void)_applyExtendedLayout:(const char *)arg1 withSize:(unsigned int)arg2;
 - (id)_copyWithInstanceSize:(unsigned int)arg1 superclassOffset:(unsigned int)arg2 asVariant:(BOOL)arg3 mutable:(BOOL)arg4;
@@ -108,6 +109,7 @@
 - (id)initWithSerializer:(id)arg1 classMap:(id)arg2 version:(unsigned int)arg3;
 - (unsigned int)instanceSize;
 - (id)instanceSpecificInfoForObject:(unsigned long long)arg1 ofSize:(unsigned int)arg2 memoryReader:(id /* block */)arg3;
+- (id)instanceSpecificInfoForObject:(unsigned long long)arg1 ofSize:(unsigned int)arg2 withScanner:(id)arg3 memoryReader:(id /* block */)arg4;
 - (BOOL)isARR;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isMetaClass;

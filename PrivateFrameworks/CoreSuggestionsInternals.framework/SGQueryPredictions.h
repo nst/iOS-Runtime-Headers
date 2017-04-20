@@ -8,6 +8,7 @@
     SGQPMetricsTracker * _metricsTracker;
     SGQPLanguageContext * _noLanguageContext;
     SGQPLanguageContext * _primaryLanguageContext;
+    SGQPSessionTracker * _sessionTracker;
 }
 
 @property (readonly, copy) NSString *debugDescription;

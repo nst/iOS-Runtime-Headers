@@ -13,6 +13,7 @@
 - (id)articleWithID:(id)arg1;
 - (id)articleWithID:(id)arg1 forceArticleUpdate:(BOOL)arg2 qualityOfService:(int)arg3 relativePriority:(int)arg4;
 - (id)articleWithID:(id)arg1 qualityOfService:(int)arg2 relativePriority:(int)arg3;
+- (id)cachedArticleWithID:(id)arg1;
 - (id)context;
 - (id)headlinesFetchOperationForArticleIDs:(id)arg1;
 - (id)headlinesFetchOperationForArticleIDs:(id)arg1 ignoreCacheForArticleIDs:(id)arg2;

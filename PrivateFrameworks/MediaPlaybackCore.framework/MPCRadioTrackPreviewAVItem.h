@@ -5,5 +5,7 @@
 @interface MPCRadioTrackPreviewAVItem : MPCRadioAVItem
 
 - (void)loadAssetAndPlayerItem;
+- (int)rtcReportingAssetType;
+- (id)rtcReportingServiceIdentifier;
 
 @end

@@ -44,6 +44,8 @@
 - (void)setContact:(id)arg1;
 - (void)setUseSplitActions:(BOOL)arg1;
 - (id)title;
+- (SEL)unwrappedSelectorForAction:(id)arg1;
+- (id)unwrappedTargetForAction:(id)arg1;
 - (BOOL)useSplitActions;
 
 @end

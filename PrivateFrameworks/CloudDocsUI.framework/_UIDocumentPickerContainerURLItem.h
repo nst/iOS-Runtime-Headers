@@ -6,6 +6,7 @@
     NSDate * _cachedContentModifiedDate;
     NSString * _cachedContentType;
     unsigned int  _cachedIndentation;
+    BOOL  _cachedIsAlias;
     NSString * _cachedSortPath;
     NSString * _cachedSubtitle;
     NSString * _cachedSubtitle2;
@@ -27,6 +28,7 @@
 - (id)contentType;
 - (unsigned int)indentationLevel;
 - (id)initWithURL:(id)arg1;
+- (BOOL)isAlias;
 - (id)modificationDate;
 - (BOOL)renameable;
 - (id)sortDate;

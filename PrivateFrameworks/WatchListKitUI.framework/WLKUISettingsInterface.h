@@ -5,6 +5,8 @@
 @interface WLKUISettingsInterface : IKJSObject <WLKUISettingsInterface>
 
 - (id)consentedBrands;
+- (id)deniedBrands;
 - (BOOL)privateModeEnabled;
+- (id)settings;
 
 @end

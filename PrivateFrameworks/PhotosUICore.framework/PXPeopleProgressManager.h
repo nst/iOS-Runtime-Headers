@@ -7,6 +7,7 @@
     BOOL  _monitoringProgress;
     unsigned int  _processingStatus;
     float  _progress;
+    NSTimer * _statusTimer;
     float  _updateInterval;
 }
 
@@ -15,6 +16,7 @@
 @property (readonly) BOOL processingComplete;
 @property unsigned int processingStatus;
 @property float progress;
+@property (nonatomic, retain) NSTimer *statusTimer;
 @property (nonatomic) float updateInterval;
 
 - (void).cxx_destruct;
@@ -38,7 +40,9 @@
 - (void)setMonitoringProgress:(BOOL)arg1;
 - (void)setProcessingStatus:(unsigned int)arg1;
 - (void)setProgress:(float)arg1;
+- (void)setStatusTimer:(id)arg1;
 - (void)setUpdateInterval:(float)arg1;
+- (id)statusTimer;
 - (float)updateInterval;
 
 @end

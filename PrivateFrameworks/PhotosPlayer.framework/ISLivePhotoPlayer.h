@@ -11,8 +11,13 @@
     int  __styleToPlayWhenReady;
     NSDate * __vitalityTimeoutDate;
     int  _currentPlaybackStyle;
+    int  _fadeInRequestID;
     BOOL  _hinting;
     BOOL  _immediatelyShowsPhotoWhenPlaybackEnds;
+    struct { 
+        BOOL scale; 
+    }  _isValid;
+    float  _lastAppliedScale;
     BOOL  _playbackAllowed;
     NSMutableSet * _playbackFilters;
     BOOL  _playingVitality;
@@ -45,9 +50,11 @@
 - (int)_coalescedPlaybackFilterState;
 - (void)_configurePlaybackFilter:(id)arg1;
 - (void)_configurePlaybackFilters;
+- (void)_fadeInAudio;
 - (void)_handlePlaybackFilterDidChange;
 - (void)_handleVitalityFilterDidChange:(id)arg1;
 - (int)_incrementedPlaybackIdentifier;
+- (void)_invalidateScale;
 - (double)_photoTransitionDuration;
 - (void)_playIfNeeded;
 - (int)_playbackIdentifier;
@@ -70,22 +77,27 @@
 - (int)_styleToPlayWhenReady;
 - (void)_updateHintingAndVitality;
 - (void)_updatePlayerItemLoadingTarget;
+- (void)_updateScaleIfNeeded;
 - (id)_vitalityTimeoutDate;
 - (void)activeBehaviorDidChange;
 - (void)addPlaybackFilter:(id)arg1;
 - (void)configurePlayerItem;
 - (int)currentPlaybackStyle;
+- (void)didPerformChanges;
 - (BOOL)immediatelyShowsPhotoWhenPlaybackEnds;
 - (id)init;
 - (BOOL)isHinting;
 - (BOOL)isPlaybackAllowed;
 - (BOOL)isPlayingVitality;
+- (float)lastAppliedScale;
+- (void)livePhotoPlaybackBehaviorDidBeginPlaying:(id)arg1;
 - (void)livePhotoPlaybackBehaviorDidFinish:(id)arg1;
 - (void)livePhotoSettleBehaviorDidFinish:(id)arg1;
 - (void)observable:(id)arg1 didChange:(unsigned int)arg2 context:(void*)arg3;
 - (void)playHintWhenReady;
 - (void)playVitality;
 - (id)playbackFilters;
+- (void)playbackStyleIdentifierDidChange;
 - (void)playerItemDidChange;
 - (void)prepareForHintWhenReady;
 - (void)prepareForVitality;
@@ -94,7 +106,6 @@
 - (void)setPlaybackAllowed:(BOOL)arg1;
 - (void)setTargetReadiness:(int)arg1;
 - (void)setVitalityFilter:(id)arg1;
-- (void)showPlaybackHintWithProgress:(float)arg1;
 - (void)startPlaybackWithStyle:(int)arg1;
 - (void)startPlaybackWithStyle:(int)arg1 settleAutomatically:(BOOL)arg2;
 - (void)startPlaybackWithStyleWhenReady:(int)arg1;
@@ -106,6 +117,7 @@
 - (double)videoWillPlayToEndInterval;
 - (void)vitalityBehaviorDidBeginPlaying:(id)arg1;
 - (void)vitalityBehaviorDidEndPlaying:(id)arg1;
+- (BOOL)vitalityBehaviorShouldEndPlayingAtPhoto:(id)arg1;
 - (id)vitalityFilter;
 
 @end

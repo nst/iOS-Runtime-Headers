@@ -19,6 +19,7 @@
 - (void)CADDatabaseRemoveSuggestedEventCalendarWithReply:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
 - (void)CADDatabaseSetDefaultCalendarForNewEvents:(struct { int x1; int x2; })arg1;
 - (void)CADDatabaseSetShowsDeclinedEvents:(BOOL)arg1;
+- (void)CADDatabaseShouldWhitelistOrganizerEmailFromJunkChecks:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 8: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, BOOL, void*
 - (void)CADOccurrenceCacheAreOccurrencesBeingGenerated:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, BOOL, void*
 - (void)CADOccurrenceCacheCancelSearchWithReplyID:(int)arg1;
 - (void)CADOccurrenceCacheDoEvents:(void *)arg1 haveOccurrencesAfterDate:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 9: NSArray *, NSDate *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, NSArray *, void*

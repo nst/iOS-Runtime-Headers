@@ -4,28 +4,40 @@
 
 @interface UMMobileKeyBag : NSObject
 
++ (int)_foregroundUID;
 + (void)_handleAttributeAccessCFError:(struct __CFError { }*)arg1 outError:(id*)arg2;
 + (id)_mutablePersonaSpecBase;
 + (void)_setAttributes:(id)arg1 onUser:(id)arg2;
 + (void)_setPasscodeTypeOnUser:(id)arg1 withPasscodeData:(id)arg2;
++ (BOOL)_start:(BOOL)arg1 syncBubbleForUser:(id)arg2 outError:(id*)arg3;
++ (id)_uidDictForUser:(id)arg1;
 + (id)_userAttributesForUID:(unsigned int)arg1 outError:(id*)arg2;
++ (id)allSyncBubbleUsers;
++ (id)allUsers;
++ (BOOL)clearSyncBubblesWithOutError:(id*)arg1;
++ (id)currentSyncBubbleUser;
++ (id)currentUser;
 + (id)currentUserSwitchContext;
 + (void)currentUserSwitchContextHasBeenUsed;
 + (id)deleteUser:(id)arg1;
 + (id)dictionaryRepresentationOfTask:(id)arg1;
 + (BOOL)fetchAttributesForUser:(id)arg1 outError:(id*)arg2;
-+ (int)foregroundUID;
 + (BOOL)inSyncBubble;
 + (void)initialize;
 + (BOOL)isMultiUser;
++ (unsigned int)lastLoggedInUID;
++ (id)lastLoggedInUser;
 + (id)loadUser:(id)arg1 withPasscodeData:(id)arg2;
 + (unsigned int)maxNumberOfUsers;
 + (double)passcodeBackOffIntervalForUser:(id)arg1;
 + (id)personaSpecForUser:(id)arg1;
++ (id)queuedSyncBubbleUsers;
++ (BOOL)startSyncBubbleForUser:(id)arg1 outError:(id*)arg2;
++ (BOOL)stopSyncBubbleForUser:(id)arg1 outError:(id*)arg2;
++ (id)syncBubbleMachServiceNamesForUser:(id)arg1;
 + (id)taskFromDictionaryRepresentation:(id)arg1;
 + (id)userFromAttributes:(id)arg1;
 + (unsigned int)userType;
-+ (id)userUIDs;
 + (BOOL)writeAttributesToDiskForUser:(id)arg1 outError:(id*)arg2;
 
 @end

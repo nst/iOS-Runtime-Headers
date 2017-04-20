@@ -7,6 +7,7 @@
     NSString * _name;
     SPXPCConnection * _receivingConnection;
     NSObject<OS_os_transaction> * _replyTransaction;
+    NSObject<OS_xpc_object> * _x_feedbackData;
     NSObject<OS_xpc_object> * _x_message;
     NSObject<OS_xpc_object> * _x_reply;
     NSObject<OS_xpc_object> * _x_reply_connection;
@@ -24,8 +25,10 @@
 - (id)name;
 - (BOOL)needsReply;
 - (id)rootObjectOfClasses:(id)arg1;
+- (id)rootObjectOfClassesForFeedback:(id)arg1;
 - (void)sendReply:(id)arg1;
 - (void)setInfo:(id)arg1;
 - (void)setRootObject:(id)arg1;
+- (void)setRootObjectForFeedback:(id)arg1;
 
 @end

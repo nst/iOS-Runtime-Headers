@@ -29,6 +29,7 @@
 - (id)descriptionWithIndent:(int)arg1 showFullContent:(BOOL)arg2;
 - (id)dnsSearchDomainOptions;
 - (id)dnsServerAddressOptions;
+- (unsigned int)hash;
 - (id)interfaceTypeOptions;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)matchesPath:(id)arg1;

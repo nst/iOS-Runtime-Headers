@@ -27,6 +27,7 @@
 - (void)_cleanupCreateAppleID:(id)arg1;
 - (void)_cleanupLoader;
 - (void)_createAppleAccount;
+- (void)_createAppleIDWithParameters:(id)arg1 handler:(id /* block */)arg2;
 - (void)_displayConnectionErrorAndDismiss;
 - (void)_popObjectModelAnimated:(BOOL)arg1;
 - (void)_userAgreedToTCs:(BOOL)arg1;

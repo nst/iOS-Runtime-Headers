@@ -19,6 +19,7 @@
 - (void)_updateCachedPipelineState:(id)arg1;
 - (id)description;
 - (id)descriptor;
+- (id)formattedDescription:(unsigned int)arg1;
 - (id)getParameter:(id)arg1;
 - (id)initWithPipelineState:(id)arg1 reflection:(id)arg2 parent:(id)arg3 descriptor:(id)arg4;
 - (id)reflection;

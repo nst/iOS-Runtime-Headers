@@ -4,17 +4,15 @@
 
 @interface HMDSnapshotFile : NSObject <HMFLogging> {
     NSNumber * _aspectRatio;
-    HAPOSTransaction * _createSlotIdentifierTransaction;
     NSString * _directory;
     BOOL  _externalFilePath;
     NSString * _filePath;
     NSNumber * _slotIdentifier;
-    CAContext * _snapshotContext;
+    HAPOSTransaction * _snapshotCATransaction;
     NSDate * _snapshotTimestamp;
 }
 
 @property (nonatomic, readonly) NSNumber *aspectRatio;
-@property (nonatomic, retain) HAPOSTransaction *createSlotIdentifierTransaction;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *directory;
@@ -22,7 +20,7 @@
 @property (nonatomic, readonly) NSString *filePath;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSNumber *slotIdentifier;
-@property (nonatomic, retain) CAContext *snapshotContext;
+@property (nonatomic, retain) HAPOSTransaction *snapshotCATransaction;
 @property (nonatomic, readonly) NSDate *snapshotTimestamp;
 @property (readonly) Class superclass;
 
@@ -31,8 +29,6 @@
 - (void).cxx_destruct;
 - (id)aspectRatio;
 - (id)copyFileAtPath:(id)arg1 snapshotTimestamp:(id)arg2;
-- (id)createSlotIdentifierTransaction;
-- (struct CGImage { }*)createSnapshotCGImageRef:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)directory;
@@ -46,13 +42,12 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)logIdentifier;
 - (BOOL)prepareParametersWithFilePath:(id)arg1 snapshotData:(id)arg2 directory:(id)arg3 snapshotTimestamp:(id)arg4 resize:(BOOL)arg5 writeBack:(BOOL)arg6;
-- (void)setCreateSlotIdentifierTransaction:(id)arg1;
 - (id)setFileData:(id)arg1 snapshotTimestamp:(id)arg2;
 - (void)setSlotIdentifier:(id)arg1;
-- (void)setSnapshotContext:(id)arg1;
+- (void)setSnapshotCATransaction:(id)arg1;
 - (id)slotIdentifier;
-- (id)snapshotContext;
+- (id)snapshotCATransaction;
 - (id)snapshotTimestamp;
-- (void)updateSlotIdentifierWithContext:(id)arg1;
+- (void)updateSlotIdentifier;
 
 @end

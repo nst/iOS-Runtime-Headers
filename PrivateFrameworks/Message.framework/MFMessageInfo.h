@@ -35,7 +35,6 @@
 @property (nonatomic) BOOL flagged;
 @property (nonatomic, readonly) long long generationNumber;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isVIP;
 @property (nonatomic) BOOL isVIP;
 @property (getter=isKnownToHaveAttachments, nonatomic, readonly) BOOL knownToHaveAttachments;
 @property (getter=isKnownToHaveAttachments, nonatomic) BOOL knownToHaveAttachments;
@@ -45,6 +44,7 @@
 @property (nonatomic) long long messageIDHash;
 @property (nonatomic, readonly) BOOL read;
 @property (nonatomic) BOOL read;
+@property (nonatomic, readonly) BOOL senderVIP;
 @property (nonatomic) unsigned int sortDateReceivedInterval;
 @property (nonatomic) unsigned int sortUid;
 @property (readonly) Class superclass;
@@ -72,6 +72,7 @@
 - (unsigned int)mailboxID;
 - (long long)messageIDHash;
 - (BOOL)read;
+- (BOOL)senderVIP;
 - (void)setConversationHash:(long long)arg1;
 - (void)setDateReceivedInterval:(unsigned int)arg1;
 - (void)setDateSentInterval:(unsigned int)arg1;

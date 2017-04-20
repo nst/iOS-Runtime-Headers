@@ -13,6 +13,7 @@
 
 + (id)handleWithDestinationID:(id)arg1;
 + (id)handleWithDictionaryRepresentation:(id)arg1;
++ (id)handleWithPersonHandle:(id)arg1;
 + (id)stringForType:(int)arg1;
 + (BOOL)supportsSecureCoding;
 
@@ -30,6 +31,7 @@
 - (BOOL)isCanonicallyEqualToHandle:(id)arg1 isoCountryCode:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToHandle:(id)arg1;
+- (id)personHandle;
 - (void)setType:(int)arg1;
 - (void)setValue:(id)arg1;
 - (int)type;

@@ -8,6 +8,8 @@
     NSUserDefaults * _userDefaults;
 }
 
+@property (nonatomic, retain) NSUserDefaults *userDefaults;
+
 + (id)sharedPreferences;
 
 - (void).cxx_destruct;
@@ -22,5 +24,7 @@
 - (unsigned int)enabledFeedbackTypesForCategory:(id)arg1;
 - (id)init;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)setUserDefaults:(id)arg1;
+- (id)userDefaults;
 
 @end

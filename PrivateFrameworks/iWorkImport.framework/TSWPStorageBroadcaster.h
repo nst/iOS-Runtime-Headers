@@ -5,7 +5,7 @@
 @interface TSWPStorageBroadcaster : NSObject {
     struct set<id<TSWPStorageObserver>, std::__1::less<id<TSWPStorageObserver> >, std::__1::allocator<id<TSWPStorageObserver> > > { 
         struct __tree<id<TSWPStorageObserver>, std::__1::less<id<TSWPStorageObserver> >, std::__1::allocator<id<TSWPStorageObserver> > > { 
-            struct __tree_node<id<TSWPStorageObserver>, void *> {} *__begin_node_; 
+            struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *__begin_node_; 
             struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<id<TSWPStorageObserver>, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
@@ -18,7 +18,7 @@
     }  _observers;
     struct set<id<TSWPStorageParagraphObserver>, std::__1::less<id<TSWPStorageParagraphObserver> >, std::__1::allocator<id<TSWPStorageParagraphObserver> > > { 
         struct __tree<id<TSWPStorageParagraphObserver>, std::__1::less<id<TSWPStorageParagraphObserver> >, std::__1::allocator<id<TSWPStorageParagraphObserver> > > { 
-            struct __tree_node<id<TSWPStorageParagraphObserver>, void *> {} *__begin_node_; 
+            struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *__begin_node_; 
             struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<id<TSWPStorageParagraphObserver>, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 

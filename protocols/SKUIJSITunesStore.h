@@ -15,9 +15,11 @@
 - (void)download:(NSDictionary *)arg1;
 - (void)downloadExistsFor:(NSNumber *)arg1 :(JSValue *)arg2;
 - (void)exit:(NSDictionary *)arg1;
+- (void)fetchMSOProviderStatus:(JSValue *)arg1;
 - (void)fetchTemplates:(NSArray *)arg1 :(JSValue *)arg2;
 - (void)findApps:(NSArray *)arg1 :(JSValue *)arg2 :(NSDictionary *)arg3;
 - (void)findLibraryItems:(NSArray *)arg1 :(JSValue *)arg2 :(NSDictionary *)arg3;
+- (void)findOwnedItems:(NSArray *)arg1 :(JSValue *)arg2;
 - (void)findToggleStateForItem:(NSString *)arg1 :(JSValue *)arg2;
 - (void)getAdminStatus:(NSDictionary *)arg1 :(JSValue *)arg2;
 - (void)getBookSample:(NSDictionary *)arg1;

@@ -30,7 +30,7 @@
 - (NSString *)languageCode;
 - (CKDMescalSession *)mescalSession;
 - (NSString *)regionCode;
-- (void)renewAuthTokenWithReason:(void *)arg1 failedToken:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 9: NSString *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
+- (void)renewAuthTokenWithReason:(void *)arg1 shouldForce:(void *)arg2 failedToken:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 10: NSString *, BOOL, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 - (void)renewMescalSessionForRequest:(void *)arg1 withCompletionHandler:(void *)arg2; // needs 2 arg types, found 8: CKDURLRequest *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 - (void)resetMescalSession;
 - (NSString *)serverPreferredPushEnvironment;

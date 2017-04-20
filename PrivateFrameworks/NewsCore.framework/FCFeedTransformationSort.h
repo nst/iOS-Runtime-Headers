@@ -10,6 +10,7 @@
 @property (readonly) Class superclass;
 
 + (id)transformationWithSortMethod:(int)arg1;
++ (id)transformationWithSortMethod:(int)arg1 personalizer:(id)arg2;
 
 - (id)transformFeedItems:(id)arg1;
 

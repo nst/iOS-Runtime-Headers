@@ -16,17 +16,19 @@
 - (BOOL)_forceInlineUI;
 - (void)_loadSpecifiers;
 - (BOOL)_offerRemoteApproval;
-- (void)_setStingrayStateToEnabled:(BOOL)arg1 sender:(id)arg2;
-- (id)_stingraySpecifier;
-- (id)_stingraySpecifierForState:(unsigned int)arg1;
+- (id)_recoverAndSyncrhonizeDataSpecifier;
+- (void)_recoverAndSyncrhonizeStingrayData:(id)arg1;
+- (void)_recoverStingrayData:(id)arg1;
+- (id)_recoverStingrayDataSpecifier;
+- (id)_recoveryKeySpecifier;
+- (id)_recoveryKeySpecifierRegen;
+- (void)beginFMIPRecovery:(id)arg1;
 - (void)beginIDMSRecovery:(id)arg1;
 - (void)beginIDMSRecoveryPrimary:(id)arg1;
 - (void)beginIDMSRecoveryWithFailure:(id)arg1;
-- (void)disableStingray:(id)arg1;
 - (void)enableCDP:(id)arg1;
-- (void)enableStingray:(id)arg1;
+- (void)generateNewRecoveryKey:(id)arg1;
 - (id)getUserDefaultEnabled:(id)arg1;
-- (void)preflightStingray:(id)arg1;
 - (void)promptFor4DigitICSC:(id)arg1;
 - (void)promptFor4DigitRemoteSecret:(id)arg1;
 - (void)promptFor6DigitICSC:(id)arg1;
@@ -36,9 +38,11 @@
 - (void)promptForCustomNumericRemoteSecret:(id)arg1;
 - (void)promptForLocalSecret:(id)arg1;
 - (void)promptForRandomICSC:(id)arg1;
+- (void)removeSpinnerFromSpecifier:(id)arg1;
 - (void)setUserDefaultEnabled:(id)arg1 specifier:(id)arg2;
 - (BOOL)shouldAllowCDPEnrollment;
 - (id)specifiers;
+- (void)startSpinnerForSpecifier:(id)arg1;
 - (void)viewDidLoad;
 
 @end

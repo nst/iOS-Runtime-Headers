@@ -7,6 +7,11 @@
         struct HistoryItem {} *m_ptr; 
     }  _historyItem;
     double  _lastVisitedTime;
+    struct unique_ptr<WTF::Vector<WTF::String, 0, WTF::CrashOnOverflow, 16>, std::__1::default_delete<WTF::Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> > > { 
+        struct __compressed_pair<WTF::Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> *, std::__1::default_delete<WTF::Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> > > { 
+            struct Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> {} *__first_; 
+        } __ptr_; 
+    }  _redirectURLs;
 }
 
 - (id).cxx_construct;

@@ -14,6 +14,7 @@
 @property (nonatomic, readonly) NSString *providerID;
 @property (nonatomic, readonly) NSString *providerName;
 @property (nonatomic, readonly) BOOL requiresAttributionInCallout;
+@property (nonatomic, readonly) BOOL shouldOpenInAppStore;
 @property (nonatomic, readonly) NSString *webBaseActionURL;
 
 - (id)_yelpHTTPURLForRequirement:(int)arg1 withUID:(id)arg2 writeAReview:(BOOL)arg3;
@@ -28,6 +29,7 @@
 - (id)providerName;
 - (id)providerSnippetLogoPathForScale:(float)arg1;
 - (BOOL)requiresAttributionInCallout;
+- (BOOL)shouldOpenInAppStore;
 - (id)webBaseActionURL;
 
 @end

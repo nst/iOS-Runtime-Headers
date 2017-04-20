@@ -52,7 +52,7 @@
 - (void)appWasLaunchedForBackgroundSession:(id)arg1;
 - (void)backgroundAVAssetDownloadTask:(unsigned int)arg1 didLoadTimeRange:(id)arg2 totalTimeRangesLoaded:(id)arg3 timeRangeExpectedToLoad:(id)arg4;
 - (void)backgroundAVAssetDownloadTask:(unsigned int)arg1 didReceiveDownloadToken:(unsigned long long)arg2;
-- (void)backgroundAVAssetDownloadTask:(unsigned int)arg1 didResolveMediaSelectionProperyList:(id)arg2;
+- (void)backgroundAVAssetDownloadTask:(unsigned int)arg1 didResolveMediaSelectionProperyList:(id)arg2 reply:(id /* block */)arg3;
 - (void)backgroundAVAssetDownloadTaskDidUpdateProgress:(unsigned int)arg1 totalBytesWritten:(unsigned long long)arg2 totalBytesExpectedToWrite:(unsigned long long)arg3;
 - (void)backgroundDataTask:(unsigned int)arg1 didReceiveData:(id)arg2 withReply:(id /* block */)arg3;
 - (void)backgroundDataTaskDidBecomeDownloadTask:(unsigned int)arg1;

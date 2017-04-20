@@ -24,6 +24,7 @@
 - (void)endDiscovery;
 - (id)init;
 - (BOOL)isDiscovering;
+- (void)netService:(id)arg1 didUpdateTXTRecordData:(id)arg2;
 - (void)netServiceBrowser:(id)arg1 didFindService:(id)arg2 moreComing:(BOOL)arg3;
 - (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(BOOL)arg3;
 - (void)netServiceDidResolveAddress:(id)arg1;

@@ -20,6 +20,8 @@
 @property (nonatomic, retain) SADistance *relativeDistance;
 @property (nonatomic, copy) NSString *stateCode;
 @property (nonatomic, copy) NSString *street;
+@property (nonatomic, copy) NSString *subAdministrativeArea;
+@property (nonatomic, copy) NSString *subLocality;
 @property (nonatomic, copy) NSString *subThoroughfare;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *thoroughfare;
@@ -58,6 +60,8 @@
 - (void)setRelativeDistance:(id)arg1;
 - (void)setStateCode:(id)arg1;
 - (void)setStreet:(id)arg1;
+- (void)setSubAdministrativeArea:(id)arg1;
+- (void)setSubLocality:(id)arg1;
 - (void)setSubThoroughfare:(id)arg1;
 - (void)setThoroughfare:(id)arg1;
 - (void)setTimezoneId:(id)arg1;
@@ -65,6 +69,8 @@
 - (void)setTravelTime:(id)arg1;
 - (id)stateCode;
 - (id)street;
+- (id)subAdministrativeArea;
+- (id)subLocality;
 - (id)subThoroughfare;
 - (id)thoroughfare;
 - (id)timezoneId;

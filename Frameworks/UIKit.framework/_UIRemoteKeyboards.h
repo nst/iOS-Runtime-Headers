@@ -47,6 +47,7 @@
 
 + (id)createArbiterConnection;
 + (BOOL)enabled;
++ (id)serviceName;
 + (id)sharedRemoteKeyboards;
 + (BOOL)useSystemService;
 

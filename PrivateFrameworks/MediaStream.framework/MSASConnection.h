@@ -77,6 +77,9 @@
 - (void)markAlbumGUIDAsViewed:(id)arg1 personID:(id)arg2;
 - (void)markAlbumGUIDAsViewed:(id)arg1 personID:(id)arg2 info:(id)arg3;
 - (void)markAlbumGUIDAsViewed:(id)arg1 personID:(id)arg2 moveLastViewedAssetCollectionMarker:(BOOL)arg3 info:(id)arg4;
+- (void)markAsSpamAlbumWithGUID:(id)arg1 personID:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)markAsSpamInvitationWithGUID:(id)arg1 personID:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)markAsSpamInvitationWithToken:(id)arg1 personID:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)markCommentsForAssetCollectionWithGUID:(id)arg1 asViewedWithLastViewedDate:(id)arg2 personID:(id)arg3;
 - (void)markCommentsForAssetCollectionWithGUID:(id)arg1 asViewedWithLastViewedDate:(id)arg2 personID:(id)arg3 info:(id)arg4;
 - (id)memberQueue;

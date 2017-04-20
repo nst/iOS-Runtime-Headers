@@ -9,8 +9,10 @@
     int  _batchIdentifier;
     NSString * _buyParameters;
     NSNumber * _buyParamsCreatesDownloads;
+    NSNumber * _buyParamsCreatesInstallJobs;
     NSNumber * _buyParamsCreatesJobs;
     BOOL  _createsDownloads;
+    BOOL  _createsInstallJobs;
     BOOL  _createsJobs;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     BOOL  _displaysOnLockScreen;
@@ -39,6 +41,7 @@
 @property int batchIdentifier;
 @property (copy) NSString *buyParameters;
 @property (nonatomic) BOOL createsDownloads;
+@property (nonatomic) BOOL createsInstallJobs;
 @property (nonatomic) BOOL createsJobs;
 @property (readonly) NSData *databaseEncoding;
 @property (readonly, copy) NSString *debugDescription;
@@ -67,10 +70,12 @@
 + (id)newPurchaseWithXPCEncoding:(id)arg1;
 + (id)purchaseWithBuyParameters:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_addEntriesToDatabaseEncoding:(id)arg1;
 - (id)_buyParametersValueForKey:(id)arg1 fromBuyParams:(id)arg2;
-- (bool)_createsDownloadsWithOverride;
-- (bool)_createsJobsWithOverride;
+- (BOOL)_createsDownloadsWithOverride;
+- (BOOL)_createsInstallJobsWithOverride;
+- (BOOL)_createsJobsWithOverride;
 - (id)_initSSPurchase;
 - (void)_setValuesUsingDatabaseEncoding:(id)arg1;
 - (id)accountIdentifier;
@@ -81,9 +86,9 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
 - (BOOL)createsDownloads;
+- (BOOL)createsInstallJobs;
 - (BOOL)createsJobs;
 - (id)databaseEncoding;
-- (void)dealloc;
 - (BOOL)displaysOnLockScreen;
 - (id)downloadMetadata;
 - (id)downloadPolicy;
@@ -118,6 +123,7 @@
 - (void)setBatchIdentifier:(int)arg1;
 - (void)setBuyParameters:(id)arg1;
 - (void)setCreatesDownloads:(BOOL)arg1;
+- (void)setCreatesInstallJobs:(BOOL)arg1;
 - (void)setCreatesJobs:(BOOL)arg1;
 - (void)setDefaultUserAgent:(id)arg1;
 - (void)setDisplaysOnLockScreen:(BOOL)arg1;

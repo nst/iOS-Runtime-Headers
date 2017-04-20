@@ -58,6 +58,8 @@
 - (BOOL)restoreApplicationWithBundleID:(id)arg1 failed:(BOOL)arg2 context:(id)arg3 error:(id*)arg4;
 - (BOOL)restoreApplicationWithBundleID:(id)arg1 failed:(BOOL)arg2 error:(id*)arg3;
 - (BOOL)restoreApplicationWithBundleID:(id)arg1 failed:(BOOL)arg2 withQOS:(int)arg3 context:(id)arg4 error:(id*)arg5;
+- (BOOL)restoreBookWithPath:(id)arg1 context:(id)arg2 error:(id*)arg3;
+- (BOOL)restoreBookWithPath:(id)arg1 error:(id*)arg2;
 - (BOOL)restoreDataExistsForApplicationWithBundleID:(id)arg1 size:(unsigned long long*)arg2;
 - (id)restoreFailuresForDataclass:(id)arg1 assetType:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (BOOL)restoreFileExistsWithPath:(id)arg1;
@@ -78,6 +80,7 @@
 - (void)setBackupEnabled:(BOOL)arg1 forDomainName:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setRestoreSessionWithBackupUDID:(id)arg1 snapshotUUID:(id)arg2;
+- (void)setSupportsiTunes:(BOOL)arg1;
 - (BOOL)setupBackupWithPasscode:(id)arg1 error:(id*)arg2;
 - (void)startBackup;
 - (BOOL)startBackupWithError:(id*)arg1;

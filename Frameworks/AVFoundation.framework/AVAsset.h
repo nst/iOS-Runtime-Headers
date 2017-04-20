@@ -146,6 +146,10 @@
 - (struct CGImageSource { }*)newPreviewImageSource;
 - (struct UIImage { Class x1; }*)previewImage;
 
+// Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
+
+- (id)plVideoCodecName;
+
 // Image: /System/Library/PrivateFrameworks/PhotosPlayer.framework/PhotosPlayer
 
 - (float)is_cropFactor;

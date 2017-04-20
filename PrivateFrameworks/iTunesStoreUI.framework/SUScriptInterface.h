@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUScriptInterface : SUScriptObject <SUScriptModalDialogDelegate, SUScriptXMLHTTPRequestDelegate> {
+@interface SUScriptInterface : SUScriptObject <SFSafariViewControllerDelegate, SUScriptModalDialogDelegate, SUScriptXMLHTTPRequestDelegate> {
     SUScriptAccountManager * _accountManager;
     SUScriptKeyValueStore * _applicationLocalStorage;
     SSAuthenticationContext * _authenticationContext;
@@ -18,6 +18,8 @@
     SUScriptPreviewOverlay * _previewOverlay;
     SUScriptPurchaseManager * _purchaseManager;
     NSMutableSet * _requireCellularURLs;
+    SFSafariViewController * _safariViewController;
+    NSString * _safariViewControllerIdentifier;
     SUScriptOperationDelegate * _scriptOperationDelegate;
     SUScriptStoreBagLoader * _scriptStoreBagLoader;
     SUScriptWindowContext * _scriptWindowContext;
@@ -63,6 +65,9 @@
 @property (readonly) SUScriptPurchaseManager *purchaseManager;
 @property (readonly) NSString *referrerURL;
 @property (readonly) NSString *referringUserAgent;
+@property (nonatomic, retain) SFSafariViewController *safariViewController;
+@property (nonatomic, retain) NSString *safariViewControllerIdentifier;
+@property (readonly) NSString *safariViewControllerIdentifierQueryParameterName;
 @property (readonly) id screenReaderRunning;
 @property (readonly) SUScriptDictionary *scriptStoreBagDictionary;
 @property (retain) SUScriptWindowContext *scriptWindowContext;
@@ -86,10 +91,13 @@
 - (id)DOMElementWithElement:(id)arg1;
 - (void)_accessibilityPostLayoutChange;
 - (id)_className;
+- (void)_cleanUpSafariViewController;
 - (id)_cookieForURL:(id)arg1;
 - (id)_copyDialogWithMessage:(id)arg1 title:(id)arg2 cancelButtonTitle:(id)arg3 okButtonTitle:(id)arg4;
+- (void)_dismissSafariViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)_getSoftwareApplicationWithCompletionFunction:(id)arg1 lookupBlock:(id /* block */)arg2;
 - (void)_globalEventNotification:(id)arg1;
+- (void)_presentSafariViewControllerWithURL:(id)arg1 safariIdentifier:(id)arg2 animated:(BOOL)arg3;
 - (void)_scriptUserInfoDidChangeNotification:(id)arg1;
 - (void)accessibilityPostLayoutChange;
 - (void)accessibilityPostScreenChange;
@@ -140,6 +148,7 @@
 - (id)deviceLocalStorage;
 - (int)dialogDisplayCountForKey:(id)arg1;
 - (id)diskSpaceAvailable;
+- (void)dismissSafariViewControllerAnimated:(BOOL)arg1;
 - (void)dismissSheet;
 - (void)dismissWindowsWithOptions:(id)arg1;
 - (void)dispatchGlobalEventWithName:(id)arg1 payload:(id)arg2;
@@ -239,6 +248,11 @@
 - (id)requestInfo;
 - (void)requireCellularForResourceWithURL:(id)arg1;
 - (void)retryAllRestoreDownloads;
+- (id)safariViewController;
+- (void)safariViewController:(id)arg1 didCompleteInitialLoad:(BOOL)arg2;
+- (void)safariViewControllerDidFinish:(id)arg1;
+- (id)safariViewControllerIdentifier;
+- (id)safariViewControllerIdentifierQueryParameterName;
 - (id)screenReaderRunning;
 - (id)scriptAttributeKeys;
 - (id)scriptStoreBagDictionary;
@@ -268,6 +282,8 @@
 - (void)setPrimaryLockerAccount:(id)arg1;
 - (void)setReferrerURL:(id)arg1;
 - (void)setReferringUserAgent:(id)arg1;
+- (void)setSafariViewController:(id)arg1;
+- (void)setSafariViewControllerIdentifier:(id)arg1;
 - (void)setScriptWindowContext:(id)arg1;
 - (void)setStoreFrontIdentifier:(id)arg1;
 - (void)setSubscriptionStatusCoordinator:(id)arg1;
@@ -279,6 +295,7 @@
 - (void)showMediaPlayerWithURLString:(id)arg1 orientation:(id)arg2 title:(id)arg3 subtitle:(id)arg4 bookmarkID:(id)arg5 duration:(id)arg6 type:(id)arg7 imageURL:(id)arg8;
 - (void)showMediaPreviewWithURLString:(id)arg1;
 - (id)showPromptWithMessage:(id)arg1 initialValue:(id)arg2 title:(id)arg3 okButtonTitle:(id)arg4 cancelButtonTitle:(id)arg5;
+- (void)showSafariViewControllerWithURLString:(id)arg1 identifier:(id)arg2 animated:(BOOL)arg3;
 - (void)signOutPrimaryAccount;
 - (id)softwareApplicationWithAdamID:(id)arg1;
 - (id)softwareApplicationWithBundleID:(id)arg1;

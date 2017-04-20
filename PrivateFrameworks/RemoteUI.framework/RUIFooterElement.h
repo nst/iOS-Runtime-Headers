@@ -2,10 +2,14 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@interface RUIFooterElement : RUIElement
+@interface RUIFooterElement : RUIElement {
+    RemoteUISectionFooter * _footerView;
+}
 
+- (void).cxx_destruct;
 - (void)configureView:(id)arg1;
 - (int)labelAlignment;
 - (id)linkURL;
+- (void)setEnabled:(BOOL)arg1;
 
 @end

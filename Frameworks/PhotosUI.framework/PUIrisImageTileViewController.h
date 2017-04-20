@@ -14,6 +14,7 @@
         BOOL respondsToViewHostingGestureRecognizers; 
         BOOL respondsToDelegateForGestureRecognizer; 
     }  _delegateFlags;
+    id /* block */  _ppt_didEndPlayingHandler;
 }
 
 @property (nonatomic, readonly) PHLivePhotoView *_livePhotoView;
@@ -41,6 +42,7 @@
 - (void)livePhotoViewDidBeginHinting:(id)arg1;
 - (void)livePhotoViewDidEndPlayingVitality:(id)arg1;
 - (id)loadView;
+- (void)ppt_playLivePhotoWithCompletionHandler:(id /* block */)arg1;
 - (void)removeAllAnimations;
 - (void)setAssetViewModel:(id)arg1;
 - (void)setDelegate:(id)arg1;

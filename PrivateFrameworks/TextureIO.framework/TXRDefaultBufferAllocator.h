@@ -9,6 +9,8 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
++ (id)newBufferWithLength:(unsigned int)arg1;
+
 - (id)newBufferWithLength:(unsigned int)arg1;
 
 @end

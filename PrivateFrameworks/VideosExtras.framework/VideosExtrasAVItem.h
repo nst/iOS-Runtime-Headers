@@ -2,33 +2,35 @@
    Image: /System/Library/PrivateFrameworks/VideosExtras.framework/VideosExtras
  */
 
-@interface VideosExtrasAVItem : MPStoreAVItem <AVAssetResourceLoaderDelegate> {
+@interface VideosExtrasAVItem : MPStoreAVItem {
     IKAssetElement * _assetElement;
     BOOL  _background;
     BOOL  _loadedHLS;
     unsigned int  _mediaType;
+    id  _rtcReportingParentHierarchyToken;
+    NSString * _rtcReportingServiceIdentifier;
 }
 
 @property (nonatomic, readonly) IKAssetElement *assetElement;
 @property (getter=isBackground, nonatomic, readonly) BOOL background;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) unsigned int mediaType;
-@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (int)_expectedPlaybackMode;
 - (void)_networkSettingsChanged:(id)arg1;
+- (BOOL)allowsStoreBagStreamingKeyURLsFallback;
 - (id)assetElement;
 - (void)dealloc;
 - (id)initWithAssetElement:(id)arg1 mediaType:(unsigned int)arg2 isBackground:(BOOL)arg3;
 - (BOOL)isAssetURLValid;
 - (BOOL)isBackground;
 - (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
+- (BOOL)isiTunesStoreStream;
 - (void)loadAssetAndPlayerItem;
 - (unsigned int)mediaType;
-- (BOOL)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;
+- (id)rtcReportingParentHierarchyToken;
+- (id)rtcReportingServiceIdentifier;
+- (id)rtcReportingServiceIdentifierWithAssetURL:(id)arg1;
 - (void)setPlaybackStoppedTime:(double)arg1;
 - (unsigned int)streamType;
 - (int)type;

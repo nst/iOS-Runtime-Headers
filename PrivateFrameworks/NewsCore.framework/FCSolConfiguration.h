@@ -3,57 +3,51 @@
  */
 
 @interface FCSolConfiguration : NSObject {
-    BOOL  _filterOverflowedOrphans;
+    double  _articleEntityScoreWeightRatio;
     int  _heuristicOption;
     unsigned int  _heuristicSampleSize;
+    double  _importanceScalar;
     unsigned int  _maxArticleCombos;
-    double  _moveAboutnessNoiseStd;
-    double  _moveAboutnessWeightRatio;
-    double  _moveNewOrphansCoeff;
-    double  _moveSizeCoeff;
     double  _searchBranchDecay;
     unsigned int  _searchBranchMultiplier;
     double  _searchTimeLimit;
+    double  _tagArticleScoreCoeff;
     double  _tagFavoritedCoeff;
-    double  _tagPairsCoeff;
+    double  _tagPersonalizationCoeff;
     double  _tagSizeCoeff;
     double  _utilityWeightAlpha;
     double  _utilityWeightBeta;
 }
 
-@property (nonatomic, readonly) BOOL filterOverflowedOrphans;
+@property (nonatomic, readonly) double articleEntityScoreWeightRatio;
 @property (nonatomic, readonly) int heuristicOption;
 @property (nonatomic, readonly) unsigned int heuristicSampleSize;
+@property (nonatomic, readonly) double importanceScalar;
 @property (nonatomic, readonly) unsigned int maxArticleCombos;
-@property (nonatomic, readonly) double moveAboutnessNoiseStd;
-@property (nonatomic, readonly) double moveAboutnessWeightRatio;
-@property (nonatomic, readonly) double moveNewOrphansCoeff;
-@property (nonatomic, readonly) double moveSizeCoeff;
 @property (nonatomic, readonly) double searchBranchDecay;
 @property (nonatomic, readonly) unsigned int searchBranchMultiplier;
 @property (nonatomic, readonly) double searchTimeLimit;
+@property (nonatomic, readonly) double tagArticleScoreCoeff;
 @property (nonatomic, readonly) double tagFavoritedCoeff;
-@property (nonatomic, readonly) double tagPairsCoeff;
+@property (nonatomic, readonly) double tagPersonalizationCoeff;
 @property (nonatomic, readonly) double tagSizeCoeff;
 @property (nonatomic, readonly) double utilityWeightAlpha;
 @property (nonatomic, readonly) double utilityWeightBeta;
 
 + (id)configurationWithTreatment:(id)arg1;
 
-- (BOOL)filterOverflowedOrphans;
+- (double)articleEntityScoreWeightRatio;
 - (int)heuristicOption;
 - (unsigned int)heuristicSampleSize;
-- (id)initWithMaxArticleCombos:(unsigned int)arg1 heuristicSampleSize:(unsigned int)arg2 searchBranchMultiplier:(unsigned int)arg3 searchBranchDecay:(double)arg4 searchTimeLimit:(double)arg5 tagSizeCoeff:(double)arg6 tagPairsCoeff:(double)arg7 tagFavoritedCoeff:(double)arg8 moveNewOrphansCoeff:(double)arg9 moveSizeCoeff:(double)arg10 moveAboutnessNoiseStd:(double)arg11 moveAboutnessWeightRatio:(double)arg12 utilityWeightAlpha:(double)arg13 utilityWeightBeta:(double)arg14 filterOverflowedOrphans:(BOOL)arg15 heuristicOption:(int)arg16;
+- (double)importanceScalar;
+- (id)initWithHeuristicSampleSize:(unsigned int)arg1 searchBranchMultiplier:(unsigned int)arg2 searchBranchDecay:(double)arg3 searchTimeLimit:(double)arg4 tagSizeCoeff:(double)arg5 tagFavoritedCoeff:(double)arg6 tagArticleScoreCoeff:(double)arg7 tagPersonalizationCoeff:(double)arg8 articleEntityScoreWeightRatio:(double)arg9 utilityWeightAlpha:(double)arg10 utilityWeightBeta:(double)arg11 importanceScalar:(double)arg12 heuristicOption:(int)arg13;
 - (unsigned int)maxArticleCombos;
-- (double)moveAboutnessNoiseStd;
-- (double)moveAboutnessWeightRatio;
-- (double)moveNewOrphansCoeff;
-- (double)moveSizeCoeff;
 - (double)searchBranchDecay;
 - (unsigned int)searchBranchMultiplier;
 - (double)searchTimeLimit;
+- (double)tagArticleScoreCoeff;
 - (double)tagFavoritedCoeff;
-- (double)tagPairsCoeff;
+- (double)tagPersonalizationCoeff;
 - (double)tagSizeCoeff;
 - (double)utilityWeightAlpha;
 - (double)utilityWeightBeta;

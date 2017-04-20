@@ -4,8 +4,10 @@
 
 @interface GEOLogMsgEvent : PBCodable <NSCopying> {
     GEOLogMsgEventCacheHit * _cacheHitEvent;
+    GEOLogMsgEventClientACSuggestions * _clientAcSuggestions;
     GEOLogMsgEventDirections * _directionsEvent;
     int  _eventType;
+    GEOLogMsgEventFullNavTrace * _fullNavTrace;
     struct { 
         unsigned int eventType : 1; 
     }  _has;
@@ -33,11 +35,15 @@
 }
 
 @property (nonatomic, retain) GEOLogMsgEventCacheHit *cacheHitEvent;
+@property (nonatomic, retain) GEOLogMsgEventClientACSuggestions *clientAcSuggestions;
 @property (nonatomic, retain) GEOLogMsgEventDirections *directionsEvent;
 @property (nonatomic) int eventType;
+@property (nonatomic, retain) GEOLogMsgEventFullNavTrace *fullNavTrace;
 @property (nonatomic, readonly) BOOL hasCacheHitEvent;
+@property (nonatomic, readonly) BOOL hasClientAcSuggestions;
 @property (nonatomic, readonly) BOOL hasDirectionsEvent;
 @property (nonatomic) BOOL hasEventType;
+@property (nonatomic, readonly) BOOL hasFullNavTrace;
 @property (nonatomic, readonly) BOOL hasListInteractionSession;
 @property (nonatomic, readonly) BOOL hasLogFrameworkEvent;
 @property (nonatomic, readonly) BOOL hasMapLaunchEvent;
@@ -93,6 +99,7 @@
 - (unsigned int)allowedSessionType;
 - (id)cacheHitEvent;
 - (void)clearLogMsgStates;
+- (id)clientAcSuggestions;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -101,9 +108,12 @@
 - (id)directionsEvent;
 - (int)eventType;
 - (id)eventTypeAsString:(int)arg1;
+- (id)fullNavTrace;
 - (BOOL)hasCacheHitEvent;
+- (BOOL)hasClientAcSuggestions;
 - (BOOL)hasDirectionsEvent;
 - (BOOL)hasEventType;
+- (BOOL)hasFullNavTrace;
 - (BOOL)hasListInteractionSession;
 - (BOOL)hasLogFrameworkEvent;
 - (BOOL)hasMapLaunchEvent;
@@ -127,6 +137,7 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isFullCarPlayStateAllowed;
+- (BOOL)isFullExperimentsStateAllowed;
 - (BOOL)isNavigationSessionAllowed;
 - (id)listInteractionSession;
 - (id)logFrameworkEvent;
@@ -148,8 +159,10 @@
 - (id)rideBookedSession;
 - (id)rideBookingSession;
 - (void)setCacheHitEvent:(id)arg1;
+- (void)setClientAcSuggestions:(id)arg1;
 - (void)setDirectionsEvent:(id)arg1;
 - (void)setEventType:(int)arg1;
+- (void)setFullNavTrace:(id)arg1;
 - (void)setHasEventType:(BOOL)arg1;
 - (void)setListInteractionSession:(id)arg1;
 - (void)setLogFrameworkEvent:(id)arg1;

@@ -8,6 +8,8 @@
     NSString * _bulkParsedPTag;
     CoreDAVErrorItem * _bulkUploadErrorItem;
     NSMutableArray * _childrenOrder;
+    NSURL * _destinationURL;
+    NSURL * _sourceURL;
 }
 
 @property (nonatomic, readonly) NSDictionary *appleAttributes;
@@ -18,11 +20,13 @@
 @property (nonatomic, readonly) NSData *dataPayload;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSURL *destinationURL;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isBookmarkBarFolder;
 @property (nonatomic) BOOL isBookmarkFolder;
 @property (nonatomic) BOOL isBookmarkMenuFolder;
 @property (nonatomic, retain) NSURL *serverID;
+@property (nonatomic, retain) NSURL *sourceURL;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *syncKey;
 
@@ -40,6 +44,7 @@
 - (id)copyPropPatchTask;
 - (id)dataPayload;
 - (void)dealloc;
+- (id)destinationURL;
 - (id)initWithServerID:(id)arg1 containerName:(id)arg2 appleAttributes:(id)arg3;
 - (id)initWithURL:(id)arg1 eTag:(id)arg2 dataPayload:(id)arg3 inContainerWithURL:(id)arg4 withAccountInfoProvider:(id)arg5;
 - (BOOL)isBookmarkBarFolder;
@@ -49,10 +54,13 @@
 - (void)setBulkParsedCTag:(id)arg1;
 - (void)setBulkParsedPTag:(id)arg1;
 - (void)setBulkUploadErrorItem:(id)arg1;
+- (void)setDestinationURL:(id)arg1;
 - (void)setIsBookmarkBarFolder:(BOOL)arg1;
 - (void)setIsBookmarkFolder:(BOOL)arg1;
 - (void)setIsBookmarkMenuFolder:(BOOL)arg1;
 - (void)setServerID:(id)arg1;
+- (void)setSourceURL:(id)arg1;
+- (id)sourceURL;
 - (id)syncKey;
 
 @end

@@ -7,10 +7,10 @@
     NSObject<OS_dispatch_queue> * _deletingAllAppletsPropertyConcurrentQueue;
     NSObject<OS_dispatch_source> * _deletingAllAppletsTimer;
     NSObject<OS_dispatch_queue> * _deletingAllAppletsTimerConcurrentQueue;
-    NSObject<OS_dispatch_queue> * _objectDisposalQueue;
     NSObject<OS_dispatch_queue> * _observerConcurrentQueue;
     NSHashTable * _observers;
     id /* block */  _pairingChangeHandler;
+    NSObject<OS_dispatch_queue> * _replyQueue;
     NFSecureElement * _secureElement;
     NSArray * _secureElementArray;
 }

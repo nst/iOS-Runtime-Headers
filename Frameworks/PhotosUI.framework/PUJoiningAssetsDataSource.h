@@ -24,7 +24,7 @@
 - (id)assetAtIndexPath:(id)arg1;
 - (id)assetCollectionAtIndexPath:(id)arg1;
 - (id)assetReferenceAtIndexPath:(id)arg1;
-- (id)badgeInfoForAssetAtIndexPath:(id)arg1;
+- (id)badgeInfoPromiseForAssetAtIndexPath:(id)arg1;
 - (id)containedAssetsDataSourceAtIndexPath:(id)arg1;
 - (id)indexPathForAssetCollection:(id)arg1;
 - (id)indexPathForAssetReference:(id)arg1;

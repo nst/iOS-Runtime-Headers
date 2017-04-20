@@ -5,20 +5,31 @@
 
 @required
 
+- (NSString *)adResponseId;
 - (UIView *)adSpaceView;
-- (void)bannerTappedAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)changeBannerViewState:(int)arg1;
+- (BOOL)displayed;
 - (int)internalAdType;
+- (int)lastErrorCode;
 - (int)options;
 - (void)pauseBannerMedia;
 - (UIViewController *)presentingViewController;
 - (void)privacyButtonWasTapped;
 - (void)resumeBannerMedia;
+- (int)screenfuls;
 - (void)serverBannerViewDidFailToReceiveAdWithError:(NSError *)arg1;
 - (void)serverBannerViewDidLoad;
 - (void)serverBannerViewWillLoad;
 - (void)serverStoryboardDidTransitionOut;
+- (void)setAdResponseId:(NSString *)arg1;
+- (void)setDisplayed:(BOOL)arg1;
+- (void)setLastErrorCode:(int)arg1;
+- (void)setScreenfuls:(int)arg1;
 - (BOOL)shouldTestVisibilityAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)storyboardViewControllerDidPresent;
+
+@optional
+
+- (void)creativeControllerViewWasTappedAtPoint:(struct CGPoint { float x1; float x2; })arg1 withMRAIDAction:(ADMRAIDAction *)arg2;
+- (void)setViewSizeInPortrait:(struct CGSize { float x1; float x2; })arg1 inLandscape:(struct CGSize { float x1; float x2; })arg2;
 
 @end

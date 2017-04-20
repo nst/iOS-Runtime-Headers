@@ -9,7 +9,6 @@
     unsigned int  _autoZooming;
     unsigned int  _avalancheBadgeShouldBeHidden;
     unsigned int  _badgeShouldBeVisible;
-    PLPhotoTileBadgeView * _badgeView;
     float  _badgeViewOptimalLayoutLowestTop;
     BOOL  _centerContentVertically;
     BOOL  _clientIsTemporarilyWallpaper;

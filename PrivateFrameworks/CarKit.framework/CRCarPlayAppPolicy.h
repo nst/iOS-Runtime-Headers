@@ -6,6 +6,7 @@
     BOOL  _badgesAppIcon;
     BOOL  _canDisplayOnCarScreen;
     BOOL  _carPlaySupported;
+    BOOL  _handlesCarIntents;
     BOOL  _launchUsingMusicUIService;
     BOOL  _launchUsingSiri;
     BOOL  _showsNotifications;
@@ -15,6 +16,7 @@
 @property (nonatomic) BOOL badgesAppIcon;
 @property (nonatomic) BOOL canDisplayOnCarScreen;
 @property (getter=isCarPlaySupported, nonatomic) BOOL carPlaySupported;
+@property (nonatomic) BOOL handlesCarIntents;
 @property (nonatomic) BOOL launchUsingMusicUIService;
 @property (nonatomic) BOOL launchUsingSiri;
 @property (nonatomic) BOOL showsNotifications;
@@ -23,6 +25,7 @@
 - (void).cxx_destruct;
 - (BOOL)badgesAppIcon;
 - (BOOL)canDisplayOnCarScreen;
+- (BOOL)handlesCarIntents;
 - (id)init;
 - (BOOL)isCarPlaySupported;
 - (BOOL)launchUsingMusicUIService;
@@ -30,6 +33,7 @@
 - (void)setBadgesAppIcon:(BOOL)arg1;
 - (void)setCanDisplayOnCarScreen:(BOOL)arg1;
 - (void)setCarPlaySupported:(BOOL)arg1;
+- (void)setHandlesCarIntents:(BOOL)arg1;
 - (void)setLaunchUsingMusicUIService:(BOOL)arg1;
 - (void)setLaunchUsingSiri:(BOOL)arg1;
 - (void)setShowsNotifications:(BOOL)arg1;

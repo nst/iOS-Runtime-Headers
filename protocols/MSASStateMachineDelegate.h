@@ -30,6 +30,8 @@
 - (void)MSASStateMachine:(MSASStateMachine *)arg1 didFinishDeletingComment:(MSASComment *)arg2 inAssetCollection:(MSASAssetCollection *)arg3 inAlbum:(MSASAlbum *)arg4 info:(NSDictionary *)arg5 error:(NSError *)arg6;
 - (void)MSASStateMachine:(MSASStateMachine *)arg1 didFinishEnqueueingAssetsForDownload:(NSArray *)arg2 inAlbumWithGUID:(NSString *)arg3;
 - (void)MSASStateMachine:(MSASStateMachine *)arg1 didFinishGettingAccessControls:(NSArray *)arg2 forAlbum:(MSASAlbum *)arg3 info:(NSDictionary *)arg4 error:(NSError *)arg5;
+- (void)MSASStateMachine:(MSASStateMachine *)arg1 didFinishMarkingAsSpamInvitationForAlbum:(MSASAlbum *)arg2 invitationGUID:(NSString *)arg3 info:(NSDictionary *)arg4 error:(NSError *)arg5;
+- (void)MSASStateMachine:(MSASStateMachine *)arg1 didFinishMarkingAsSpamInvitationForToken:(NSString *)arg2 info:(NSDictionary *)arg3 error:(NSError *)arg4;
 - (void)MSASStateMachine:(MSASStateMachine *)arg1 didFinishRemovingSharingRelationship:(MSASSharingRelationship *)arg2 fromOwnedAlbum:(MSASAlbum *)arg3 info:(NSDictionary *)arg4 error:(NSError *)arg5;
 - (void)MSASStateMachine:(MSASStateMachine *)arg1 didFinishRetrievingAsset:(MSAsset *)arg2 inAlbum:(MSASAlbum *)arg3 error:(NSError *)arg4;
 - (void)MSASStateMachine:(MSASStateMachine *)arg1 didFinishSendingInvitationByPhone:(NSString *)arg2 toOwnedAlbum:(MSASAlbum *)arg3 info:(NSDictionary *)arg4 error:(NSError *)arg5;

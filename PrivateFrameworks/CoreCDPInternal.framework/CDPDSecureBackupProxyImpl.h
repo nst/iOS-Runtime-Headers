@@ -12,11 +12,13 @@
 - (id)_secureBackup;
 - (id)accountInfoWithInfo:(id)arg1 error:(id*)arg2;
 - (void)backOffDateWithInfo:(id)arg1 completionBlock:(id /* block */)arg2;
+- (id)disableWithInfo:(id)arg1;
 - (void)disableWithInfo:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)enableWithInfo:(id)arg1;
 - (void)enableWithInfo:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)getAccountInfoWithInfo:(id)arg1 completionBlockWithResults:(id /* block */)arg2;
 - (void)recoverWithInfo:(id)arg1 completionBlockWithResults:(id /* block */)arg2;
+- (id)recoverWithInfo:(id)arg1 error:(id*)arg2;
 - (void)setBackOffDateWithInfo:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)uncachePassphraseWithInfo:(id)arg1 completionBlock:(id /* block */)arg2;
 

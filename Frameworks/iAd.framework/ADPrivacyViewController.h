@@ -34,6 +34,7 @@
 - (void)adPrivacyRemoteViewControllerClientRequestsDismisal;
 - (void)adPrivacyRemoteViewControllerDidAppear;
 - (void)adPrivacyRemoteViewControllerDidLinkOut;
+- (void)adPrivacyRemoteViewControllerDidLoad;
 - (void)adPrivacyRemoteViewControllerDidRenderTransparency;
 - (void)adPrivacyRemoteViewControllerDidTerminateWithError:(id)arg1;
 - (void)dealloc;
@@ -45,7 +46,6 @@
 - (void)loadView;
 - (id)remoteRequest;
 - (id)remoteViewController;
-- (void)remoteViewControllerDidLoad;
 - (id)servicePrivacyViewController;
 - (void)setDelegate:(id)arg1;
 - (void)setInternalDelegate:(id)arg1;

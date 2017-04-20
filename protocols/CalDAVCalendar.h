@@ -34,6 +34,7 @@
 - (BOOL)isScheduleOutbox;
 - (BOOL)isSubscribed;
 - (BOOL)isTaskContainer;
+- (NSArray *)itemsToReportAsJunk;
 - (BOOL)needsPublishUpdate;
 - (BOOL)needsResync;
 - (NSString *)notes;

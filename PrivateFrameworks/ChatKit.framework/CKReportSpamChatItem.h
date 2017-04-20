@@ -14,5 +14,6 @@
 - (id)loadTranscriptText;
 - (void)setTranscriptButtonText:(id)arg1;
 - (id)transcriptButtonText;
+- (id)transcriptTextForSpam:(BOOL)arg1;
 
 @end

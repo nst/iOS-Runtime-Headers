@@ -8,6 +8,7 @@
         float width; 
         float height; 
     }  _imageSize;
+    BOOL  _mediaWasPausedOnResignActive;
     QLOverlayPlayButton * _playButton;
     AVPlayer * _player;
     AVPlayerViewController * _playerViewController;
@@ -21,6 +22,8 @@
 - (void).cxx_destruct;
 - (BOOL)canEnterFullScreen;
 - (void)enterFullScreen:(BOOL)arg1;
+- (void)hostApplicationDidBecomeActive;
+- (void)hostApplicationDidEnterBackground:(id)arg1;
 - (struct CGSize { float x1; float x2; })imageSize;
 - (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)pause;

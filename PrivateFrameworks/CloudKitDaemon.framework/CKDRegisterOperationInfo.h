@@ -3,13 +3,12 @@
  */
 
 @interface CKDRegisterOperationInfo : NSObject {
-    NSDictionary * _options;
+    unsigned int  _options;
 }
 
-@property (nonatomic, retain) NSDictionary *options;
+@property (nonatomic) unsigned int options;
 
-- (void).cxx_destruct;
-- (id)options;
-- (void)setOptions:(id)arg1;
+- (unsigned int)options;
+- (void)setOptions:(unsigned int)arg1;
 
 @end

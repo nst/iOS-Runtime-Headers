@@ -8,7 +8,6 @@
     NFApplet * _defaultApplet;
     NFWeakReference * _delegate;
     BOOL  _emulationActive;
-    BOOL  _fieldPresent;
     unsigned int  _numActiveSEs;
     BOOL  _pendingServerRequest;
     NFTechnologyEvent * _technologyEvent;

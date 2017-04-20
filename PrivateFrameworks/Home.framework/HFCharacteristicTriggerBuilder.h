@@ -3,26 +3,42 @@
  */
 
 @interface HFCharacteristicTriggerBuilder : HFTriggerBuilder {
-    NSSet * _characteristics;
-    <NSCopying> * _triggerValue;
+    NSMutableSet * _characteristicEvents;
+    BOOL  _markTriggerAsHomeAppCreated;
 }
 
-@property (nonatomic, retain) NSSet *characteristics;
-@property (nonatomic, copy) <NSCopying> *triggerValue;
+@property (nonatomic, retain) NSMutableSet *characteristicEvents;
+@property (nonatomic, readonly) NSSet *characteristics;
+@property (nonatomic) BOOL markTriggerAsHomeAppCreated;
+@property (nonatomic, readonly) <NSCopying> *mostCommonTriggerValue;
+@property (nonatomic, readonly) NSSet *triggerValues;
 
 + (BOOL)supportsConditions;
 
 - (void).cxx_destruct;
 - (id)_allTriggerValuesForCharacteristic:(id)arg1 similarToValue:(id)arg2;
+- (id)_lazilyMarkTriggerAsHomeAppCreated;
 - (id)_performValidation;
+- (id)_triggerEventForCharacteristic:(id)arg1;
 - (id)_updateEvents;
+- (id)characteristicEvents;
 - (id)characteristics;
 - (id)commitCreateTrigger;
 - (id)commitEditTrigger;
-- (id)initWithExistingObject:(id)arg1 inHome:(id)arg2;
+- (id)commitItem;
+- (id)deleteTrigger;
+- (id)initWithExistingObject:(id)arg1 inHome:(id)arg2 context:(id)arg3;
+- (BOOL)markTriggerAsHomeAppCreated;
+- (id)mostCommonTriggerValue;
 - (id)naturalLanguageNameOfType:(unsigned int)arg1;
-- (void)setCharacteristics:(id)arg1;
-- (void)setTriggerValue:(id)arg1;
-- (id)triggerValue;
+- (void)removeAllCharacteristics;
+- (void)removeCharacteristic:(id)arg1;
+- (void)removeCharacteristics:(id)arg1;
+- (void)reset;
+- (void)setCharacteristic:(id)arg1 triggerValue:(id)arg2;
+- (void)setCharacteristicEvents:(id)arg1;
+- (void)setCharacteristics:(id)arg1 triggerValue:(id)arg2;
+- (void)setMarkTriggerAsHomeAppCreated:(BOOL)arg1;
+- (id)triggerValues;
 
 @end

@@ -62,6 +62,7 @@
 - (id)performActionForItem:(id)arg1 clientContext:(id)arg2;
 - (id)performActionForItem:(id)arg1 offer:(id)arg2 clientContext:(id)arg3;
 - (id)performActionForItem:(id)arg1 offer:(id)arg2 clientContext:(id)arg3 completionBlock:(id /* block */)arg4;
+- (id)performActionForSoftwareItem:(id)arg1 offer:(id)arg2 clientContext:(id)arg3 completionBlock:(id /* block */)arg4;
 - (void)pingURLs:(id)arg1;
 - (void)pingURLs:(id)arg1 withClientContext:(id)arg2;
 - (void)recordBuyConfirmedEventsForItems:(id)arg1 purchaseResponses:(id)arg2;

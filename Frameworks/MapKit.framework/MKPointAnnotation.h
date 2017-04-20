@@ -2,16 +2,42 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKPointAnnotation : MKShape {
+@interface MKPointAnnotation : MKShape <MKAnnotationPrivate, MKAnnotationRepresentation, MKCustomFeatureAnnotation> {
     struct CLLocationCoordinate2D { 
         double latitude; 
         double longitude; 
     }  _coordinate;
+    VKCustomFeature * _customFeature;
+    int  _representation;
 }
 
 @property (nonatomic) struct CLLocationCoordinate2D { double x1; double x2; } coordinate;
+@property (nonatomic) double course;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int representation;
+@property (nonatomic, readonly) BOOL showsBalloonCallout;
+@property (nonatomic, readonly, copy) NSString *subtitle;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly, copy) NSString *title;
 
+- (void).cxx_destruct;
+- (void)_invalidateCachedCoordinate;
+- (BOOL)_isPendingSelectionAnimated;
+- (void)_setHiddenForOffscreen:(BOOL)arg1;
+- (id)annotation;
 - (struct CLLocationCoordinate2D { double x1; double x2; })coordinate;
+- (id)feature;
+- (BOOL)isPersistent;
+- (void)prepareForReuse;
+- (int)representation;
+- (id)reuseIdentifier;
 - (void)setCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
+- (void)setRepresentation:(int)arg1;
+- (void)setShowsBalloonCallout:(BOOL)arg1;
+- (BOOL)shouldRepresentSelf;
+- (BOOL)showsBalloonCallout;
+- (id)viewRepresentation;
 
 @end

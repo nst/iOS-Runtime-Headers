@@ -32,8 +32,10 @@
 + (id)differentialPrivacyRecorderForEmoji:(id)arg1 usageMode:(id)arg2;
 
 - (void).cxx_destruct;
+- (void)_checkForDingbatDuplicates;
 - (void)_cleanUpOldFlagsCaches;
 - (void)_readPreferencesFromDefaults;
+- (void)_setRecentStrings:(id)arg1;
 - (void)didDisplaySkinToneHelp;
 - (void)didUseEmoji:(id)arg1;
 - (void)didUseEmoji:(id)arg1 usageMode:(id)arg2;

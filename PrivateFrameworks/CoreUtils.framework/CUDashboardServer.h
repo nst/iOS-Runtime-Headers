@@ -12,7 +12,7 @@
     NSObject<OS_dispatch_source> * _sockV6Source;
 }
 
-@property (nonatomic, retain) NSString *logFilePath;
+@property (nonatomic, copy) NSString *logFilePath;
 
 - (void).cxx_destruct;
 - (void)_readHandler:(int)arg1;

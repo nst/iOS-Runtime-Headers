@@ -29,7 +29,6 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-+ (struct TVRowMetrics { int x1; float x2; struct { float x_3_1_1; float x_3_1_2; } x3; struct { float x_4_1_1; float x_4_1_2; } x4; struct { float x_5_1_1; float x_5_1_2; } x5; struct { float x_6_1_1; float x_6_1_2; } x6; })_collapsedRowMetricsForViewController:(id)arg1;
 + (id)_viewControllerFromElement:(id)arg1 existingController:(id)arg2;
 
 - (void).cxx_destruct;
@@ -40,6 +39,7 @@
 - (struct CGSize { float x1; float x2; })_backgroundImageProxySize;
 - (void)_buildSpacingMetrics;
 - (void)_cancelImpressionsUpdate;
+- (struct TVRowMetrics { int x1; float x2; struct { float x_3_1_1; float x_3_1_2; } x3; struct { float x_4_1_1; float x_4_1_2; } x4; struct { float x_5_1_1; float x_5_1_2; } x5; struct { float x_6_1_1; float x_6_1_2; } x6; })_collapsedRowMetricsForViewController:(id)arg1;
 - (void)_configureWithBgImage:(id)arg1 backdropImage:(id)arg2;
 - (BOOL)_disableAutomaticKeyboardUI;
 - (void)_doneButtonPressed:(id)arg1;
@@ -88,6 +88,7 @@
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

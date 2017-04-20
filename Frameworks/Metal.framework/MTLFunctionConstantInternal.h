@@ -11,6 +11,7 @@
 
 - (void)dealloc;
 - (id)description;
+- (id)formattedDescription:(unsigned int)arg1;
 - (unsigned int)index;
 - (id)initWithName:(id)arg1 type:(unsigned int)arg2 index:(unsigned int)arg3 required:(BOOL)arg4;
 - (id)name;

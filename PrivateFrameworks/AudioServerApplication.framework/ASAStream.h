@@ -22,6 +22,7 @@
 - (id)availablePhysicalFormats;
 - (id)availableVirtualFormats;
 - (id)controlObjectIDs;
+- (id)controls;
 - (id)coreAudioClassName;
 - (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(BOOL)arg2;
 - (BOOL)isActive;

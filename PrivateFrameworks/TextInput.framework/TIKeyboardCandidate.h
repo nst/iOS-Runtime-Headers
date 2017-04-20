@@ -9,6 +9,7 @@
     unsigned int  _slotID;
 }
 
+@property (getter=isOTAWordListCandidate, nonatomic, readonly) BOOL OTAWordListCandidate;
 @property (nonatomic, copy) NSString *alternativeText;
 @property (nonatomic, copy) NSString *annotationText;
 @property (nonatomic, readonly) NSString *candidate;
@@ -19,6 +20,7 @@
 @property (readonly, copy) NSString *description;
 @property (getter=isEmojiCandidate, nonatomic, readonly) BOOL emojiCandidate;
 @property (getter=isExtensionCandidate, nonatomic, readonly) BOOL extensionCandidate;
+@property (getter=isFacemarkCandidate, nonatomic, readonly) BOOL facemarkCandidate;
 @property (getter=isFullwidthCandidate, nonatomic, readonly) BOOL fullwidthCandidate;
 @property (readonly) unsigned int hash;
 @property (nonatomic) unsigned int indexForMetrics;
@@ -62,9 +64,11 @@
 - (BOOL)isEmojiCandidate;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isExtensionCandidate;
+- (BOOL)isFacemarkCandidate;
 - (BOOL)isForShortcutConversion;
 - (BOOL)isFullwidthCandidate;
 - (BOOL)isInlineCompletionCandidate;
+- (BOOL)isOTAWordListCandidate;
 - (BOOL)isSecureContentCandidate;
 - (BOOL)isSendCurrentLocation;
 - (id)label;

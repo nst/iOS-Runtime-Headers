@@ -5,6 +5,7 @@
 @interface UIKeyboardLayoutStar : UIKeyboardLayout <UIKBEmojiHitTestResponder> {
     NSMutableSet * _accentInfo;
     UIKBTree * _activeKey;
+    NSMutableDictionary * _activeKeyplaneTransitions;
     NSMutableSet * _allKeyplaneKeycaps;
     NSMutableDictionary * _allKeyplaneViews;
     int  _appearance;
@@ -29,8 +30,10 @@
     float  _finalSplitProgress;
     UIView * _flickPopupView;
     NSTimer * _flickPopuptimer;
+    UIGestureKeyboardIntroduction * _gestureKeyboardIntroduction;
     BOOL  _ghostKeysEnabled;
     NSMutableSet * _hasAccents;
+    BOOL  _hasPeekedGestureKey;
     BOOL  _holdingShift;
     NSNumber * _homeRowHint;
     UIKBTree * _inactiveLanguageIndicator;
@@ -49,9 +52,9 @@
     NSMutableDictionary * _keyboards;
     UIKBTree * _keyplane;
     NSString * _keyplaneName;
-    UIKeyboardKeyplaneTransition * _keyplaneTransition;
     UIKBKeyplaneView * _keyplaneView;
     NSMutableSet * _keysUnderIndicator;
+    BOOL  _lastInputIsGestureKey;
     NSString * _lastInputMode;
     double  _lastTwoFingerTapTimestamp;
     NSString * _layoutTag;
@@ -110,7 +113,8 @@
     SEL  _spaceLongAction;
     id  _spaceTarget;
     BOOL  _suppressDeactivateKeys;
-    BOOL  _suppressKeyplaneAnimation;
+    BOOL  _suppressGestureKeyplaneAnimation;
+    BOOL  _suppressShiftKeyplaneAnimation;
     BOOL  _swipeDetected;
     double  _touchDownTimeSpan;
     id  _touchInfo;
@@ -158,6 +162,7 @@
 + (id)keyboardFromFactoryWithName:(id)arg1 screen:(id)arg2;
 + (struct CGSize { float x1; float x2; })keyboardSizeForInputMode:(id)arg1 screenTraits:(id)arg2 keyboardType:(int)arg3;
 + (id)keyboardWithName:(id)arg1 screenTraits:(id)arg2;
++ (id)sharedPunctuationCharacterSet;
 + (id)sharedRivenKeyplaneGenerator;
 
 - (id)_appendingSecondaryStringToVariantsTop:(id)arg1 secondaryString:(id)arg2 withDirection:(id)arg3;
@@ -230,6 +235,7 @@
 - (BOOL)didLongPress;
 - (void)didRecognizeGestureOnEdge:(unsigned int)arg1 withDistance:(float)arg2;
 - (void)didRotate;
+- (void)dismissGestureKeyboardIntroduction;
 - (int)displayTypeHintForMoreKey;
 - (int)displayTypeHintForShiftKey;
 - (void)divideKeysIntoLeft:(id)arg1 right:(id)arg2;
@@ -284,6 +290,7 @@
 - (void)hideMenu:(id)arg1 forKey:(id)arg2;
 - (id)highlightedVariantListForStylingKey:(id)arg1;
 - (float)hitBuffer;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (BOOL)ignoresShiftState;
 - (void)incrementPunctuationIfNeeded:(id)arg1;
 - (id)infoForTouch:(id)arg1;
@@ -353,6 +360,7 @@
 - (void)prepareForSplitTransition;
 - (void)rebuildKeyplaneTransitionWithTargetBias:(int)arg1;
 - (void)rebuildSplitTransitionView;
+- (void)refreshDualStringKeys;
 - (void)refreshForDictationAvailablityDidChange;
 - (void)refreshForRivenPreferences;
 - (void)refreshGhostKeyState;
@@ -423,11 +431,13 @@
 - (BOOL)shouldSendStringForFlick:(id)arg1;
 - (BOOL)shouldSendTouchUpToInputManager:(id)arg1;
 - (BOOL)shouldShowDictationKey;
+- (BOOL)shouldShowGestureKeyboardIntroduction;
 - (BOOL)shouldShowIndicator;
 - (BOOL)shouldSkipResponseToGlobeKey:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (BOOL)shouldUseDefaultShiftStateFromLayout;
 - (BOOL)shouldYieldToControlCenterForFlickWithInitialPoint:(struct CGPoint { float x1; float x2; })arg1 finalPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)showFlickView:(int)arg1 withKey:(id)arg2 flickString:(id)arg3;
+- (BOOL)showGestureKeyboardIntroductionIfNeeded;
 - (void)showKeyboardWithInputTraits:(id)arg1 screenTraits:(id)arg2 splitTraits:(id)arg3;
 - (void)showMenu:(id)arg1 forKey:(id)arg2;
 - (void)showPopupVariantsForKey:(id)arg1;
@@ -448,6 +458,9 @@
 - (int)stateForMultitapReverseKey:(id)arg1;
 - (int)stateForShiftKey:(id)arg1;
 - (int)stateForStylingKey:(id)arg1;
+- (struct CGSize { float x1; float x2; })stretchFactor;
+- (BOOL)stretchKeyboardToFit;
+- (BOOL)stretchKeyboardToFitKeyplane:(id)arg1;
 - (BOOL)supportStylingWithKey:(id)arg1;
 - (BOOL)supportsEmoji;
 - (void)swipeDetected:(id)arg1;
@@ -468,16 +481,19 @@
 - (void)uninstallGestureRecognizers;
 - (unsigned long long)upActionFlagsForKey:(id)arg1;
 - (void)upActionShift;
+- (void)updateAutolocalizedKeysForKeyplane:(id)arg1;
 - (void)updateBackgroundCorners;
 - (void)updateBackgroundIfNeeded;
 - (void)updateCachedKeyplaneKeycaps;
 - (void)updateCurrencySymbolForKey:(id)arg1 withCurrencyString:(id)arg2;
 - (void)updateGlobeKeyDisplayString;
+- (void)updateInputModeLocalizedKeysForKeyplane:(id)arg1;
 - (void)updateKeyCentroids;
 - (void)updateKeyboardForKeyplane:(id)arg1;
 - (void)updateLayoutTags;
 - (void)updateLocalizedDisplayStringOnEmojiInternationalWithKeyplane:(id)arg1 withInputMode:(id)arg2;
 - (void)updateLocalizedKeys:(BOOL)arg1;
+- (void)updateLocalizedKeysForKeyplane:(id)arg1 updateAllKeyplanes:(BOOL)arg2;
 - (void)updateLocalizedKeysOnKeyplane:(id)arg1;
 - (void)updateMoreAndInternationalKeys;
 - (void)updatePanAlternativesForTouchInfo:(id)arg1;
@@ -487,7 +503,6 @@
 - (void)updateShiftKeyState;
 - (void)updateTransitionWithFlags:(unsigned long long)arg1;
 - (BOOL)useDismissForMessagesWriteboard;
-- (BOOL)useScaledGeometrySet;
 - (BOOL)useUndoForMessagesWriteboard;
 - (BOOL)usesAutoShift;
 - (int)visualStyleForKeyboardIfSplit:(BOOL)arg1;

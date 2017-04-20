@@ -57,6 +57,8 @@
 - (void)mapRegionDidChange:(id)arg1;
 - (id)oneUpPresentationDataSourceManager:(id)arg1;
 - (id)oneUpPresentationMediaProvider:(id)arg1;
+- (void)ppt_performPlacesScrollTest:(id)arg1 iterations:(int)arg2 screenDelta:(int)arg3 delay:(double)arg4 completion:(id /* block */)arg5;
+- (void)ppt_performPlacesZoomTest:(id)arg1 iterations:(int)arg2 delay:(double)arg3 completion:(id /* block */)arg4;
 - (id)pxOneUpPresentationViewController;
 - (void)reloadStyle;
 - (id)selectedGeotaggable;

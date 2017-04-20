@@ -14,6 +14,7 @@
 
 - (id)_appletsById;
 - (void)_setApplets:(id)arg1;
+- (BOOL)addExpressApplet:(id)arg1 type:(unsigned char)arg2 authorization:(id)arg3;
 - (id)allApplets;
 - (id)appletWithIdentifier:(id)arg1;
 - (void)dealloc;
@@ -27,8 +28,9 @@
 - (BOOL)getCryptogram:(id*)arg1 challengeResponse:(id*)arg2;
 - (id)init;
 - (BOOL)refreshSecureElement:(id)arg1;
+- (BOOL)removeExpressApplet:(id)arg1 type:(unsigned char)arg2;
 - (BOOL)requireAuthorizationForAllAppletsExcept:(id)arg1;
-- (BOOL)runScript:(id)arg1 forSEID:(id)arg2 results:(id*)arg3 lastStatus:(unsigned int*)arg4;
+- (unsigned int)runScript:(id)arg1 forSEID:(id)arg2 results:(id*)arg3 lastStatus:(unsigned int*)arg4;
 - (BOOL)setExpressModesEnabled:(BOOL)arg1;
 - (BOOL)setExpressTransitApplet:(id)arg1 authorization:(id)arg2;
 - (id)signChallenge:(id)arg1 certs:(id*)arg2;

@@ -24,6 +24,7 @@
 
 + (void)initialize;
 
+- (void*)_compareWithGraph:(id)arg1 andMarkOnMatch:(BOOL)arg2;
 - (void)_modifyDerivativeGraphCount:(int)arg1;
 - (struct { unsigned long long x1; unsigned int x2; unsigned long long x3; })_rawReferenceInfoWithName:(unsigned int)arg1;
 - (void)_refineTypesWithOverlay:(id)arg1;
@@ -32,8 +33,11 @@
 - (unsigned int)addEdgeFromNode:(unsigned int)arg1 toNode:(unsigned int)arg2;
 - (void)archiveDictionaryRepresentation:(id)arg1 options:(unsigned int)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void*)createMapForIntersectGraph:(id)arg1;
+- (void*)createMapForMinusGraph:(id)arg1;
 - (void)dealloc;
 - (unsigned int)enumerateMarkedObjects:(void*)arg1 withBlock:(id /* block */)arg2;
+- (unsigned int)enumerateObjectsContainedInCollection:(unsigned int)arg1 withBlock:(id /* block */)arg2;
 - (unsigned int)enumerateObjectsOfGroupNode:(unsigned int)arg1 withBlock:(id /* block */)arg2;
 - (unsigned int)enumerateObjectsWithBlock:(id /* block */)arg1;
 - (unsigned int)enumerateReferencesOfNode:(unsigned int)arg1 withBlock:(id /* block */)arg2;
@@ -43,8 +47,13 @@
 - (id)initWithNodeCount:(unsigned int)arg1 nodeProvider:(id /* block */)arg2;
 - (id)initWithNodesNoCopy:(struct _VMUBlockNode { unsigned long long x1; unsigned int x2 : 3; unsigned int x3 : 2; unsigned int x4 : 36; unsigned int x5 : 23; }*)arg1 nodeCount:(unsigned int)arg2;
 - (void)internalizeNodes;
+- (void)markReachableNodesFromRoots:(void*)arg1 inMap:(void*)arg2;
 - (/* Warning: unhandled struct encoding: '{?=Qb60b4@}' */ struct { unsigned long long x1; unsigned int x2 : 60; unsigned int x3 : 4; id x4; })nodeDetails:(unsigned int)arg1;
+- (unsigned int)nodeReferencedFromSourceNode:(unsigned int)arg1 byIvarWithName:(id)arg2;
 - (struct { unsigned long long x1; unsigned int x2; unsigned long long x3; })referenceInfoWithName:(unsigned int)arg1;
 - (void)setIndexedClassInfos:(id)arg1;
+- (void)stronglyConnectedComponentSearch:(unsigned int)arg1 withRecorder:(id /* block */)arg2;
+- (id)subgraphWithShortestPathsFromNode:(unsigned int)arg1 toNodes:(void*)arg2;
+- (id)subgraphWithUniquePathsFromNode:(unsigned int)arg1 toNodes:(void*)arg2;
 
 @end

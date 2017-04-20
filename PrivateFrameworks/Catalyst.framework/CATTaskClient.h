@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Catalyst.framework/Catalyst
  */
 
-@interface CATTaskClient : NSObject <CATTaskOperationNotificationDelegate, CATTransportDelegate> {
+@interface CATTaskClient : NSObject <CATTransportDelegate> {
     <CATTaskClientDelegate> * _delegate;
     NSDictionary * _serverUserInfo;
     NSUUID * _sessionUUID;
@@ -31,6 +31,7 @@
 
 - (void).cxx_destruct;
 - (void)abandonTransport;
+- (void)abandonTransportClearQueuedMessagesAndCancelAllOperationsWithError:(id)arg1;
 - (void)activeOperationDidFinish:(id)arg1;
 - (id)captureTransport;
 - (void)clearQueuedMessagesAndCancelAllOperationsWithError:(id)arg1;
@@ -74,7 +75,6 @@
 - (void)setServerUserInfo:(id)arg1;
 - (void)setSessionUUID:(id)arg1;
 - (void)setUserInfo:(id)arg1;
-- (void)taskOperation:(id)arg1 didPostNotificationWithName:(id)arg2 userInfo:(id)arg3;
 - (void)taskOperationDidFailWithInvalidTaskClient:(id)arg1;
 - (void)trackTaskOperation:(id)arg1;
 - (id)transport;

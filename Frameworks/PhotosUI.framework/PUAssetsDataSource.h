@@ -5,6 +5,7 @@
 @interface PUAssetsDataSource : PUTilingDataSource
 
 @property (nonatomic, readonly) BOOL containsMultipleAssets;
+@property (nonatomic, readonly) NSIndexPath *firstItemIndexPath;
 
 + (id)emptyDataSource;
 
@@ -12,11 +13,12 @@
 - (id)assetCollectionAtIndexPath:(id)arg1;
 - (id)assetReferenceAtIndexPath:(id)arg1;
 - (id)assetReferenceForAssetReference:(id)arg1;
-- (id)badgeInfoForAssetAtIndexPath:(id)arg1;
+- (id)badgeInfoPromiseForAssetAtIndexPath:(id)arg1;
 - (id)containedAssetsDataSourceAtIndexPath:(id)arg1;
 - (BOOL)containsMultipleAssets;
 - (id)convertIndexPath:(id)arg1 fromAssetsDataSource:(id)arg2;
 - (BOOL)couldAssetReferenceAppear:(id)arg1;
+- (id)firstItemIndexPath;
 - (id)indexPathForAssetCollection:(id)arg1;
 - (id)indexPathForAssetReference:(id)arg1;
 - (BOOL)isEmpty;

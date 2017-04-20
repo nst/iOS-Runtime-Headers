@@ -7,9 +7,9 @@
     BOOL  __preparing;
     int  __readyToPlayPlaybackID;
     BOOL  __videoReadyToPlay;
-    double  _crossfadeDuration;
     struct { 
         BOOL respondsToDidFinish; 
+        BOOL respondsToDidBeginPlaying; 
     }  _delegateFlags;
     BOOL  _immediatelyShowsPhotoWhenPlaybackEnds;
     struct { 
@@ -26,7 +26,6 @@
 @property (getter=_isPreparing, setter=_setPreparing:, nonatomic) BOOL _preparing;
 @property (setter=_setReadyToPlayPlaybackID:, nonatomic) int _readyToPlayPlaybackID;
 @property (getter=_isVideoReadyToPlay, setter=_setVideoReadyToPlay:, nonatomic) BOOL _videoReadyToPlay;
-@property (nonatomic, readonly) double crossfadeDuration;
 @property (nonatomic) <ISLivePhotoPlaybackBehaviorDelegate> *delegate;
 @property (nonatomic, readonly) BOOL immediatelyShowsPhotoWhenPlaybackEnds;
 @property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } keyTime;
@@ -35,7 +34,6 @@
 
 - (int)_currentPlaybackID;
 - (void)_didFinishPreparing;
-- (void)_didTransitionToPhoto;
 - (void)_handleDidFinishPreroll;
 - (void)_handleDidSeekToBeginning;
 - (BOOL)_isPreparing;
@@ -52,15 +50,13 @@
 - (void)_transitionToVideoWithPlaybackID:(int)arg1;
 - (void)activeDidChange;
 - (int)behaviorType;
-- (double)crossfadeDuration;
 - (BOOL)immediatelyShowsPhotoWhenPlaybackEnds;
-- (id)initWithInitialLayoutInfo:(id)arg1 playbackStyle:(int)arg2 keyTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 photoTransitionDuration:(double)arg4 crossfadeDuration:(double)arg5 immediatelyShowsPhotoWhenPlaybackEnds:(BOOL)arg6;
+- (id)initWithInitialLayoutInfo:(id)arg1 playbackStyle:(int)arg2 keyTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 photoTransitionDuration:(double)arg4 immediatelyShowsPhotoWhenPlaybackEnds:(BOOL)arg5;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })keyTime;
 - (double)photoTransitionDuration;
 - (int)playbackStyle;
 - (void)setDelegate:(id)arg1;
 - (void)startPlayback;
-- (void)videoDidPlayToEnd;
 - (void)videoWillPlayToEnd;
 
 @end

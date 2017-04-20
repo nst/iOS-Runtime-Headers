@@ -184,6 +184,7 @@
 @property (readonly) int _virtualVerticalSizeClass;
 @property (readonly) struct CGSize { float x1; float x2; } _virtualWindowSizeInSceneReferenceSpace;
 @property (nonatomic, retain) NSDate *accessibilityLastGesturedTextInputStatusChange;
+@property (nonatomic, readonly) NSString *alternateIconName;
 @property (nonatomic) int applicationIconBadgeNumber;
 @property (nonatomic, readonly) int applicationState;
 @property (nonatomic) BOOL applicationSupportsShakeToEdit;
@@ -212,6 +213,7 @@
 @property (nonatomic, readonly) double statusBarOrientationAnimationDuration;
 @property (nonatomic, readonly) int statusBarStyle;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL supportsAlternateIcons;
 @property (nonatomic, readonly) int userInterfaceLayoutDirection;
 @property (nonatomic, readonly) NSArray *windows;
 
@@ -240,6 +242,7 @@
 + (BOOL)registerAsSystemApp;
 + (void)registerObjectForStateRestoration:(id)arg1 restorationIdentifier:(id)arg2;
 + (BOOL)rendersLocally;
++ (BOOL)runStatusBarServer;
 + (int)runningInStoreDemoModeFProgramNumber;
 + (id)sharedApplication;
 + (BOOL)shouldBackgroundMainThreadOnSuspendedLaunch;
@@ -352,7 +355,6 @@
 - (unsigned char)_getIOHIDKeyboardTypeForGSKeyboardType:(unsigned char)arg1;
 - (void)_getScheduledLocalNotificationsWithCompletionHandler:(id /* block */)arg1;
 - (int)_getSpringBoardOrientation;
-- (void*)_getSymbol:(id)arg1 forFramework:(id)arg2;
 - (void)_getUserNotificationCategorieWithCompletionHandler:(id /* block */)arg1;
 - (void)_getUserNotificationTypesWithCompletionHandler:(id /* block */)arg1;
 - (void)_handleApplicationActivationWithScene:(id)arg1 transitionContext:(id)arg2 completion:(id /* block */)arg3;
@@ -451,7 +453,6 @@
 - (void)_openURL:(id)arg1 originatingView:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_overrideDefaultInterfaceOrientationWithOrientation:(int)arg1;
 - (BOOL)_overridesDynamicCaret;
-- (id)_pathForFrameworkName:(id)arg1 inPrivate:(BOOL)arg2;
 - (void)_performBlockAfterCATransactionCommitSynchronizes:(id /* block */)arg1;
 - (void)_performBlockAfterCATransactionCommits:(id /* block */)arg1;
 - (void)_performChanges:(id /* block */)arg1 withTransitionContext:(id)arg2;
@@ -478,6 +479,7 @@
 - (void)_registerEstimatedTouches:(id)arg1 event:(id)arg2 forTouchable:(id)arg3;
 - (void)_registerForAlertItemStateChangeNotification;
 - (void)_registerForBackgroundRefreshStatusChangedNotification;
+- (void)_registerForHangTracerEnabledStateChangedNotification;
 - (void)_registerForKeyBagLockStatusNotification;
 - (void)_registerForLanguageChangedNotification;
 - (void)_registerForLocaleChangedNotification;
@@ -530,6 +532,7 @@
 - (void)_sendMoveEventWithPhysicalButtonsEvent:(id)arg1;
 - (void)_sendRemoteControlEvent:(int)arg1;
 - (void)_sendWillEnterForegroundCallbacks;
+- (void)_setAlternateIconName:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_setAlwaysHitTestsForMainScreen:(BOOL)arg1;
 - (void)_setAmbiguousControlCenterActivationMargin:(float)arg1;
 - (void)_setApplicationBackdropStyle:(int)arg1;
@@ -581,6 +584,7 @@
 - (BOOL)_shouldAttemptOpenURL:(id)arg1;
 - (BOOL)_shouldBigify;
 - (BOOL)_shouldDelayTouchesForControlCenter;
+- (BOOL)_shouldForceClassicForExtensions;
 - (BOOL)_shouldForceClassicMode;
 - (BOOL)_shouldHandleTestURL:(id)arg1;
 - (BOOL)_shouldIgnoreHeadsetClicks;
@@ -675,6 +679,7 @@
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)alertViewCancel:(id)arg1;
+- (id)alternateIconName;
 - (void)applicationDidBeginSuspendAnimation;
 - (void)applicationDidEndResumeAnimation;
 - (void)applicationDidResume;
@@ -725,7 +730,6 @@
 - (void)emitPPTEndTracePointForTestName:(id)arg1 identifier:(unsigned int)arg2;
 - (void)emitPPTStartTracePointForSubTestName:(id)arg1 identifier:(unsigned int)arg2 testIdentifier:(unsigned int)arg3;
 - (void)emitPPTStartTracePointForTestName:(id)arg1 identifier:(unsigned int)arg2;
-- (void)enableFramebufferStatisticsGathering;
 - (unsigned int)enabledRemoteNotificationTypes;
 - (void)endBackgroundTask:(unsigned int)arg1;
 - (void)endIgnoringInteractionEvents;
@@ -846,6 +850,7 @@
 - (id)resultsForTest:(id)arg1;
 - (void)ringerChanged:(int)arg1;
 - (BOOL)rotateIfNeeded:(int)arg1;
+- (void)rotateIfNeeded:(int)arg1 before:(id /* block */)arg2 after:(id /* block */)arg3;
 - (void)rotateIfNeeded:(int)arg1 completion:(id /* block */)arg2;
 - (void)runModal:(id)arg1;
 - (void)runTest:(id)arg1 forAnimation:(id)arg2;
@@ -862,6 +867,7 @@
 - (BOOL)sendAction:(SEL)arg1 to:(id)arg2 from:(id)arg3 forEvent:(id)arg4;
 - (BOOL)sendAction:(SEL)arg1 toTarget:(id)arg2 fromSender:(id)arg3 forEvent:(id)arg4;
 - (void)sendEvent:(id)arg1;
+- (void)setAlternateIconName:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setApplicationBadgeString:(id)arg1;
 - (void)setApplicationIconBadgeNumber:(int)arg1;
 - (void)setApplicationSupportsShakeToEdit:(BOOL)arg1;
@@ -953,6 +959,7 @@
 - (void)stopModal;
 - (id)subTest:(id)arg1 ForTest:(id)arg2 withMetrics:(id)arg3;
 - (unsigned int)supportedInterfaceOrientationsForWindow:(id)arg1;
+- (BOOL)supportsAlternateIcons;
 - (void)suspend;
 - (void)suspendReturningToLastApp:(BOOL)arg1;
 - (BOOL)systemIsAnimatingApplicationLifecycleEvent;
@@ -991,8 +998,11 @@
 + (id)pu_debugCurrentViewModel;
 + (id)pu_firstViewControllerPassingTest:(id /* block */)arg1;
 
+- (id)ppt_testDefinitions;
 - (id)pu_beginDisablingIdleTimer;
 - (void)pu_endDisablingIdleTimer:(id)arg1;
+- (void)pu_finishedAnimationSubTest:(id)arg1 forTest:(id)arg2;
+- (void)pu_startedAnimationSubTest:(id)arg1 forTest:(id)arg2;
 
 // Image: /System/Library/Frameworks/Social.framework/Social
 

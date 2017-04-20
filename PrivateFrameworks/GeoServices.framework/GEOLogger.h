@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOLogger : NSObject {
+@interface GEOLogger : NSObject <GEOExperimentConfigurationObserver> {
     GEOLogContext * _cachedLogContext;
     NSHashTable * _logContextDelegates;
     NSLock * _logContextDelegatesLock;
@@ -10,6 +10,11 @@
     void * _loggerQueueIdentityKey;
     void * _loggerQueueIdentityValue;
 }
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (void)registerGEOLogFacility;
 + (id)sharedLogger;
@@ -20,6 +25,7 @@
 - (void)captureLogMsgEvent:(id)arg1;
 - (void)captureLogMsgEvent:(id)arg1 withLogContext:(id)arg2;
 - (void)dealloc;
+- (void)experimentConfigurationDidChange:(id)arg1;
 - (id)init;
 - (void)registerLogContextDelegate:(id)arg1;
 - (void)registerLogMsgState:(id)arg1;

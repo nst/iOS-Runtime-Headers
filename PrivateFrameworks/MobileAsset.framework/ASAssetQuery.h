@@ -26,6 +26,7 @@
 - (BOOL)queriesLocalAssetInformationOnly;
 - (id)results;
 - (id)runQueryAndReturnError:(id*)arg1;
+- (id)runQueryForInfoReturnError:(id*)arg1;
 - (void)setAssetType:(id)arg1;
 - (void)setNetworkTimeout:(double)arg1;
 - (void)setPredicate:(id)arg1;

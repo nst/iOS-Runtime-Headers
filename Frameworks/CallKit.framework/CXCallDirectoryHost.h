@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CallKit.framework/CallKit
  */
 
-@interface CXCallDirectoryHost : NSObject <CXCallDirectoryManagerHostProtocol> {
+@interface CXCallDirectoryHost : NSObject <CXCallDirectoryManagerDefaultHostProtocol, CXCallDirectoryManagerMaintenanceHostProtocol> {
     <CXCallDirectoryHostDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _delegateQueue;
     NSObject<OS_dispatch_queue> * _queue;
@@ -20,21 +20,22 @@
 
 - (void).cxx_destruct;
 - (BOOL)_connectionContainsCallDirectoryHostEntitlementCapability:(id)arg1;
-- (void)_extensionWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)_nsExtensionWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (oneway void)compactStoreWithReply:(id /* block */)arg1;
 - (id)delegate;
 - (id)delegateQueue;
-- (oneway void)firstIdentificationEntriesForPhoneNumbers:(id)arg1 reply:(id /* block */)arg2;
-- (oneway void)getEnabledStatusForCallDirectoryExtensionWithIdentifier:(id)arg1 reply:(id /* block */)arg2;
-- (oneway void)getPrioritizedExtensionIdentifiersWithReply:(id /* block */)arg1;
+- (oneway void)firstIdentificationEntriesForEnabledExtensionsWithPhoneNumbers:(id)arg1 reply:(id /* block */)arg2;
+- (oneway void)getEnabledStatusForExtensionWithIdentifier:(id)arg1 reply:(id /* block */)arg2;
+- (oneway void)getExtensionsWithReply:(id /* block */)arg1;
 - (id)init;
 - (void)performDelegateCallback:(id /* block */)arg1;
-- (void)performMigrationsIfNecessary;
+- (void)prepareStoreIfNecessary;
 - (id)queue;
-- (oneway void)reloadCallDirectoryExtensionWithIdentifier:(id)arg1 reply:(id /* block */)arg2;
-- (oneway void)removeDataForCallDirectoryExtensionWithIdentifier:(id)arg1 reply:(id /* block */)arg2;
+- (oneway void)reloadExtensionWithIdentifier:(id)arg1 reply:(id /* block */)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setDelegateQueue:(id)arg1;
+- (oneway void)setEnabled:(BOOL)arg1 forExtensionWithIdentifier:(id)arg2 reply:(id /* block */)arg3;
 - (oneway void)setPrioritizedExtensionIdentifiers:(id)arg1 reply:(id /* block */)arg2;
 - (void)setQueue:(id)arg1;
 - (void)setXpcListener:(id)arg1;

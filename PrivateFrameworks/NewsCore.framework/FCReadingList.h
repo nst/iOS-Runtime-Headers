@@ -31,7 +31,7 @@
 + (BOOL)requiresPushNotificationSupport;
 
 - (void).cxx_destruct;
-- (void)_addedArticleIDs:(id)arg1 removedArticleIDs:(id)arg2;
+- (void)_addedArticleIDs:(id)arg1 removedArticleIDs:(id)arg2 eventInitiationLevel:(int)arg3;
 - (id)_entryIDForArticleID:(id)arg1;
 - (void)_invalidateAllSortedEntriesInReadingList;
 - (unsigned int)_maxCountOfArticlesAvailableOffline;
@@ -64,6 +64,5 @@
 - (void)setItemsLock:(id)arg1;
 - (void)setReadingListContentController:(id)arg1;
 - (BOOL)shouldHideHeadline:(id)arg1;
-- (void)toggleArticleIsOnReadingList:(id)arg1;
 
 @end

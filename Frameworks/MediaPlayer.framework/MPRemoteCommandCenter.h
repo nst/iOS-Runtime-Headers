@@ -23,6 +23,7 @@
     MPRemoteCommand * _disableLanguageOptionCommand;
     MPFeedbackCommand * _dislikeCommand;
     MPRemoteCommand * _enableLanguageOptionCommand;
+    BOOL  _handlingPlaybackQueueCommands;
     MPInsertIntoPlaybackQueueCommand * _insertIntoPlaybackQueueCommand;
     MPFeedbackCommand * _likeCommand;
     void * _mediaRemoteCommandHandler;
@@ -31,6 +32,7 @@
     MPRemoteControlOrigin * _origin;
     MPRemoteCommand * _pauseCommand;
     MPRemoteCommand * _playCommand;
+    MPRemoteCommand * _playItemInQueueCommand;
     MPPurchaseCommand * _preOrderAlbumCommand;
     MPRemoteCommand * _previousTrackCommand;
     MPRatingCommand * _ratingCommand;
@@ -75,6 +77,7 @@
 @property (nonatomic, readonly) MPRemoteCommand *nextTrackCommand;
 @property (nonatomic, readonly) MPRemoteCommand *pauseCommand;
 @property (nonatomic, readonly) MPRemoteCommand *playCommand;
+@property (nonatomic, readonly) MPRemoteCommand *playItemInQueueCommand;
 @property (nonatomic, readonly) MPPurchaseCommand *preOrderAlbumCommand;
 @property (nonatomic, readonly) MPRemoteCommand *previousTrackCommand;
 @property (nonatomic, readonly) MPRatingCommand *ratingCommand;
@@ -98,6 +101,10 @@
 - (void)_commandTargetsDidChangeNotification:(id)arg1;
 - (struct __CFArray { }*)_copySupportedCommands;
 - (id)_createRemoteCommandWithConcreteClass:(Class)arg1 mediaRemoteType:(unsigned int)arg2;
+- (int)_handlePlayItemCommand:(id)arg1;
+- (int)_handleRemoveCommand:(id)arg1;
+- (int)_handleReorderCommand:(id)arg1;
+- (void)_playbackQueueDelegateDidChangeNotification:(id)arg1;
 - (id)_pushMediaRemoteCommand:(unsigned int)arg1 withOptions:(struct __CFDictionary { }*)arg2;
 - (void)_pushMediaRemoteCommand:(unsigned int)arg1 withOptions:(struct __CFDictionary { }*)arg2 completion:(id /* block */)arg3;
 - (void)_scheduleSupportedCommandsChanged;
@@ -130,6 +137,7 @@
 - (id)nextTrackCommand;
 - (id)pauseCommand;
 - (id)playCommand;
+- (id)playItemInQueueCommand;
 - (id)preOrderAlbumCommand;
 - (id)previousTrackCommand;
 - (id)ratingCommand;
@@ -143,7 +151,9 @@
 - (id)skipForwardCommand;
 - (id)specialSeekBackwardCommand;
 - (id)specialSeekForwardCommand;
+- (void)startMediaRemoteSync;
 - (id)stopCommand;
+- (void)stopMediaRemoteSync;
 - (id)togglePlayPauseCommand;
 
 @end

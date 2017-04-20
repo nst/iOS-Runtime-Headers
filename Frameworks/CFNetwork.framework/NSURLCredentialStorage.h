@@ -33,7 +33,7 @@
 - (void)setDefaultCredential:(id)arg1 forProtectionSpace:(id)arg2 task:(id)arg3;
 - (void)set_useSystemKeychain:(BOOL)arg1;
 
-// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
+// Image: /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
 
 - (void)safari_setSynchronizableCredential:(id)arg1 forHTMLFormProtectionSpace:(id)arg2;
 

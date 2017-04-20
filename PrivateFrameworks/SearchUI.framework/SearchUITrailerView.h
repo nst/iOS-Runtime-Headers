@@ -2,7 +2,8 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUITrailerView : UIView {
+@interface SearchUITrailerView : SearchUIStackView {
+    UIView * _centeredBoxView;
     SearchUICardViewController * _controller;
     SKUIPlayButton * _playButton;
     SFPunchout * _punchout;
@@ -10,6 +11,7 @@
     UILabel * _titleLabel;
 }
 
+@property (retain) UIView *centeredBoxView;
 @property SearchUICardViewController *controller;
 @property (retain) SKUIPlayButton *playButton;
 @property (retain) SFPunchout *punchout;
@@ -17,6 +19,7 @@
 @property (retain) UILabel *titleLabel;
 
 - (void).cxx_destruct;
+- (id)centeredBoxView;
 - (id)controller;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithMediaItem:(id)arg1 controller:(id)arg2 section:(id)arg3;
@@ -24,6 +27,7 @@
 - (void)playTrailer;
 - (id)punchout;
 - (id)section;
+- (void)setCenteredBoxView:(id)arg1;
 - (void)setController:(id)arg1;
 - (void)setPlayButton:(id)arg1;
 - (void)setPunchout:(id)arg1;

@@ -8,6 +8,7 @@
     NSURL * _url;
 }
 
+@property (nonatomic, readonly) int countOfRecordsModifiedByLastQuery;
 @property (nonatomic) struct sqlite3 { }*database;
 @property (nonatomic, readonly) long long lastInsertedRowID;
 @property (nonatomic, retain) NSMutableDictionary *sqlQueryToStatements;
@@ -18,6 +19,7 @@
 - (BOOL)beginTransactionWithError:(id*)arg1;
 - (BOOL)closeWithError:(id*)arg1;
 - (BOOL)commitTransactionWithError:(id*)arg1;
+- (int)countOfRecordsModifiedByLastQuery;
 - (struct sqlite3 { }*)database;
 - (void)dealloc;
 - (id)description;
@@ -30,6 +32,7 @@
 - (id)init;
 - (id)initWithURL:(id)arg1 readOnly:(BOOL)arg2 error:(id*)arg3;
 - (long long)lastInsertedRowID;
+- (id)namesOfColumnsInTableWithName:(id)arg1 error:(id*)arg2;
 - (BOOL)performTransactionWithBlock:(id /* block */)arg1 error:(id*)arg2;
 - (BOOL)rollbackTransactionWithError:(id*)arg1;
 - (BOOL)selectSQL:(id)arg1 withBindings:(id)arg2 expectedColumnCount:(int)arg3 resultRowHandler:(id /* block */)arg4 error:(id*)arg5;

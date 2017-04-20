@@ -28,6 +28,7 @@
     BOOL  _alwaysEditing;
     int  _animating;
     CNContactToggleBlockCallerAction * _blockAction;
+    CNCache * _cachedAccounts;
     NSMapTable * _cachedLabelWidths;
     UIKeyCommand * _cancelCommand;
     CNCardGroup * _cardActionsGroup;
@@ -136,6 +137,7 @@
 @property (nonatomic, retain) NSString *alternateName;
 @property (nonatomic) BOOL alwaysEditing;
 @property (nonatomic, retain) CNContactToggleBlockCallerAction *blockAction;
+@property (nonatomic, retain) CNCache *cachedAccounts;
 @property (nonatomic, retain) NSMapTable *cachedLabelWidths;
 @property (nonatomic, retain) UIKeyCommand *cancelCommand;
 @property (nonatomic, readonly) NSArray *cardActions;
@@ -244,6 +246,7 @@
 - (id)_allDisplayPropertyItemsFromGroups:(id)arg1;
 - (id)_cardGroupAtTableViewSectionIndex:(int)arg1;
 - (id)_cellForIndexPath:(id)arg1;
+- (void)_clearCachedAccounts;
 - (id)_createReminderAction;
 - (id)_currentGroups;
 - (id)_currentTopVisibleGroupInContactView:(id)arg1;
@@ -252,6 +255,7 @@
 - (id)_faceTimeAction;
 - (id)_faceTimeAudioAction;
 - (BOOL)_indexPathIsActionItem:(id)arg1;
+- (id)_initializedCachedAccounts;
 - (id)_itemAtIndexPath:(id)arg1;
 - (id)_labelWidthKeyForGroup:(id)arg1;
 - (id)_linkedCardsAction;
@@ -343,6 +347,7 @@
 - (id)applyContactStyle;
 - (id)blockAction;
 - (void)blockListDidChange:(id)arg1;
+- (id)cachedAccounts;
 - (id)cachedLabelWidths;
 - (BOOL)canBecomeFirstResponder;
 - (id)cancelCommand;
@@ -390,6 +395,7 @@
 - (id)deleteContactAction;
 - (float)desiredHeightForWidth:(float)arg1;
 - (void)didChangeToEditMode:(BOOL)arg1;
+- (id)displayAccountForContact:(id)arg1;
 - (id)displayContactView;
 - (id)displayGroups;
 - (id)displayHeaderView;
@@ -516,6 +522,7 @@
 - (void)setAlternateName:(id)arg1;
 - (void)setAlwaysEditing:(BOOL)arg1;
 - (void)setBlockAction:(id)arg1;
+- (void)setCachedAccounts:(id)arg1;
 - (void)setCachedLabelWidths:(id)arg1;
 - (void)setCancelCommand:(id)arg1;
 - (void)setCancelKeyboardShortcutEnabled:(BOOL)arg1;

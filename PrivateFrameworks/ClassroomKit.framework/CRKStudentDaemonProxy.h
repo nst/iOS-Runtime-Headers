@@ -2,11 +2,45 @@
    Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
  */
 
-@interface CRKStudentDaemonProxy : NSObject
+@interface CRKStudentDaemonProxy : NSObject <CATTaskClientDelegate> {
+    BOOL  _connected;
+    int  _maxConnectionAttempts;
+    BOOL  mConnecting;
+    int  mConnectionAttempt;
+    NSHashTable * mObservers;
+    CATOperationQueue * mOperationQueue;
+    CATTaskClient * mTaskClient;
+}
+
+@property (getter=isConnected, nonatomic) BOOL connected;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int maxConnectionAttempts;
+@property (readonly) Class superclass;
 
 + (void)fetchResourceFromURL:(id)arg1 completion:(id /* block */)arg2;
 + (void)setActiveStudentIdentifier:(id)arg1 completion:(id /* block */)arg2;
 + (id)studentDaemonConnection;
 + (void)studentDidAuthenticate:(id)arg1 completion:(id /* block */)arg2;
+
+- (void).cxx_destruct;
+- (void)addObserver:(id)arg1;
+- (void)client:(id)arg1 didInterruptWithError:(id)arg2;
+- (void)client:(id)arg1 didReceiveNotificationWithName:(id)arg2 userInfo:(id)arg3;
+- (void)clientDidConnect:(id)arg1;
+- (void)clientDidDisconnect:(id)arg1;
+- (void)connect;
+- (void)dealloc;
+- (void)disconnect;
+- (void)enqueueOperation:(id)arg1;
+- (id)enqueuedOperationForRequest:(id)arg1;
+- (id)init;
+- (BOOL)isConnected;
+- (int)maxConnectionAttempts;
+- (id)operationForRequest:(id)arg1;
+- (void)removeObserver:(id)arg1;
+- (void)setConnected:(BOOL)arg1;
+- (void)setMaxConnectionAttempts:(int)arg1;
 
 @end

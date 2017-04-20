@@ -3,7 +3,6 @@
  */
 
 @interface HDFitnessFriendsRelationshipManager : NSObject <HDFitnessFriendsBBDataProviderDelegate, HDFitnessFriendsCloudKitManagerChangesObserver, HDFitnessFriendsGatewayManagerChangesObserver, HDFitnessFriendsIDSMessageCenterDelegate, HDFitnessFriendsManagerReadyObserver> {
-    ACAccountStore * _accountStore;
     HDFitnessFriendsActivityDataManager * _activityDataManager;
     HDFitnessAppBadgeManager * _badgeManager;
     HDFitnessFriendsInvitationBBDataProvider * _bulletinBoardInvitationDataProvider;
@@ -59,7 +58,6 @@
 - (void)cloudKitManager:(id)arg1 didRecieveNewRelationships:(id)arg2 fromRecordZoneWithID:(id)arg3 moreComing:(BOOL)arg4 changesProcessedHandler:(id /* block */)arg5;
 - (void)cloudKitManager:(id)arg1 didRecieveNewRemoteRelationships:(id)arg2 fromRecordZoneWithID:(id)arg3 moreComing:(BOOL)arg4 changesProcessedHandler:(id /* block */)arg5;
 - (void)dealloc;
-- (id)deviceCloudKitAddress;
 - (void)fitnessFriendsManagerReady:(id)arg1;
 - (void)gatewayManagerStatusDidChange;
 - (void)ignoreInviteRequestFromFriendWithUUID:(id)arg1 completion:(id /* block */)arg2;

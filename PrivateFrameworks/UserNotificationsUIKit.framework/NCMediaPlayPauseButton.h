@@ -3,13 +3,13 @@
  */
 
 @interface NCMediaPlayPauseButton : UIControl {
-    NCMaterialView * _backgroundCircle;
+    MTMaterialView * _backgroundCircle;
     NCMaterialButton * _button;
     UIButton * _invisibleButton;
     int  _type;
 }
 
-@property (nonatomic, retain) NCMaterialView *backgroundCircle;
+@property (nonatomic, retain) MTMaterialView *backgroundCircle;
 @property (nonatomic, retain) NCMaterialButton *button;
 @property (nonatomic, retain) UIButton *invisibleButton;
 @property (nonatomic) int type;

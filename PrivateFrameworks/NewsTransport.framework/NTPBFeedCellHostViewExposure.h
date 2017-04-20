@@ -4,37 +4,62 @@
 
 @interface NTPBFeedCellHostViewExposure : PBCodable <NSCopying> {
     int  _areaPresentationReason;
+    NSString * _campaignId;
+    NSString * _campaignType;
+    NSString * _creativeId;
     int  _feedCellHostType;
     struct { 
         unsigned int areaPresentationReason : 1; 
         unsigned int feedCellHostType : 1; 
     }  _has;
+    NSString * _topicFeedId;
 }
 
 @property (nonatomic) int areaPresentationReason;
+@property (nonatomic, retain) NSString *campaignId;
+@property (nonatomic, retain) NSString *campaignType;
+@property (nonatomic, retain) NSString *creativeId;
 @property (nonatomic) int feedCellHostType;
 @property (nonatomic) BOOL hasAreaPresentationReason;
+@property (nonatomic, readonly) BOOL hasCampaignId;
+@property (nonatomic, readonly) BOOL hasCampaignType;
+@property (nonatomic, readonly) BOOL hasCreativeId;
 @property (nonatomic) BOOL hasFeedCellHostType;
+@property (nonatomic, readonly) BOOL hasTopicFeedId;
+@property (nonatomic, retain) NSString *topicFeedId;
 
+- (void).cxx_destruct;
 - (int)StringAsAreaPresentationReason:(id)arg1;
 - (int)StringAsFeedCellHostType:(id)arg1;
 - (int)areaPresentationReason;
 - (id)areaPresentationReasonAsString:(int)arg1;
+- (id)campaignId;
+- (id)campaignType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)creativeId;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)feedCellHostType;
 - (id)feedCellHostTypeAsString:(int)arg1;
 - (BOOL)hasAreaPresentationReason;
+- (BOOL)hasCampaignId;
+- (BOOL)hasCampaignType;
+- (BOOL)hasCreativeId;
 - (BOOL)hasFeedCellHostType;
+- (BOOL)hasTopicFeedId;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAreaPresentationReason:(int)arg1;
+- (void)setCampaignId:(id)arg1;
+- (void)setCampaignType:(id)arg1;
+- (void)setCreativeId:(id)arg1;
 - (void)setFeedCellHostType:(int)arg1;
 - (void)setHasAreaPresentationReason:(BOOL)arg1;
 - (void)setHasFeedCellHostType:(BOOL)arg1;
+- (void)setTopicFeedId:(id)arg1;
+- (id)topicFeedId;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -8,6 +8,8 @@
 
 @property (nonatomic, copy) NSString *dsid;
 
++ (BOOL)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)description;
 - (id)dsid;

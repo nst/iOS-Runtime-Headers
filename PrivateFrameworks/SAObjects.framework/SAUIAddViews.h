@@ -45,4 +45,10 @@
 
 - (int)_afui_usefulUserResultType;
 
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)viewsWithText:(id)arg1;
+
+- (void)setViewsWithBlock:(id /* block */)arg1;
+
 @end

@@ -22,6 +22,8 @@
 - (void)loadExtension;
 - (void)playAudioMessage;
 - (NCNotificationAction *)presentationSourceAction;
+- (void)preserveInputViews;
+- (BOOL)restoreInputViews;
 - (void)setPresentationSourceAction:(NCNotificationAction *)arg1;
 
 @end

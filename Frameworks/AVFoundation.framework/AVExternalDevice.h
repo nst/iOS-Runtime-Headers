@@ -19,6 +19,7 @@
 @property (nonatomic, readonly) NSArray *limitedUIElements;
 @property (nonatomic, readonly) NSString *modelName;
 @property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) int navigationAidedDriving;
 @property (nonatomic, readonly) BOOL nightMode;
 @property (nonatomic, readonly) BOOL nightModeSupported;
 @property (nonatomic, readonly) BOOL ownsScreen;
@@ -60,6 +61,7 @@
 - (id)limitedUIElements;
 - (id)modelName;
 - (id)name;
+- (int)navigationAidedDriving;
 - (BOOL)nightMode;
 - (BOOL)nightModeSupported;
 - (BOOL)ownsScreen;

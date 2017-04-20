@@ -15,6 +15,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)formattedDescription:(unsigned int)arg1;
 - (unsigned int)hash;
 - (unsigned int)indexBufferIndex;
 - (unsigned int)indexType;

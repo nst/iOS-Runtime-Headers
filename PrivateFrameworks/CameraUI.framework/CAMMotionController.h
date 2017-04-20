@@ -5,6 +5,8 @@
 @interface CAMMotionController : NSObject <BKSAccelerometerDelegate> {
     BKSAccelerometer * __accelerometer;
     int  __cachedCaptureOrientation;
+    BOOL  __didNotifyCaptureOrientationWasInvalid;
+    int  __fallbackCaptureOrientation;
     int  __numberOfDominantPhysicalButtonObservers;
     CMMotionManager * __physicalButtonMotionManager;
     int  _dominantPhysicalButton;
@@ -12,6 +14,8 @@
 
 @property (setter=_setAccelerometer:, nonatomic, retain) BKSAccelerometer *_accelerometer;
 @property (setter=_setCachedCaptureOrientation:, nonatomic) int _cachedCaptureOrientation;
+@property (setter=_setDidNotifyCaptureOrientationWasInvalid:, nonatomic) BOOL _didNotifyCaptureOrientationWasInvalid;
+@property (nonatomic, readonly) int _fallbackCaptureOrientation;
 @property (setter=_setNumberOfDominantPhysicalButtonObservers:, nonatomic) int _numberOfDominantPhysicalButtonObservers;
 @property (nonatomic, readonly) CMMotionManager *_physicalButtonMotionManager;
 @property (nonatomic, readonly) int captureOrientation;
@@ -25,10 +29,15 @@
 - (void).cxx_destruct;
 - (id)_accelerometer;
 - (int)_cachedCaptureOrientation;
+- (id)_debugStringForDeviceOrientation:(int)arg1;
+- (id)_debugStringForInterfaceOrientation:(int)arg1;
+- (BOOL)_didNotifyCaptureOrientationWasInvalid;
+- (int)_fallbackCaptureOrientation;
 - (int)_numberOfDominantPhysicalButtonObservers;
 - (id)_physicalButtonMotionManager;
 - (void)_setAccelerometer:(id)arg1;
 - (void)_setCachedCaptureOrientation:(int)arg1;
+- (void)_setDidNotifyCaptureOrientationWasInvalid:(BOOL)arg1;
 - (void)_setDominantPhysicalButton:(int)arg1;
 - (void)_setNumberOfDominantPhysicalButtonObservers:(int)arg1;
 - (void)_updatePhysicalButtonObservation;
@@ -37,7 +46,7 @@
 - (void)beginGeneratingDominantPhysicalButtonNotifications;
 - (int)captureOrientation;
 - (void)dealloc;
-- (void)deviceDidChangeOrientation:(id)arg1;
+- (void)debugValidateCaptureOrientation;
 - (int)dominantPhysicalButton;
 - (void)endGeneratingDominantPhysicalButtonNotifications;
 - (id)init;

@@ -20,12 +20,11 @@
 @property (nonatomic, readonly, copy) NSString *imagePath;
 @property (nonatomic, readonly) unsigned int options;
 
-+ (id)jpegDataLoadSemaphore;
-
 - (void)_cacheImage;
 - (void)_cancel;
 - (BOOL)_hasCachedImage;
 - (void)_leaveWaitGroupIfNeeded;
+- (void)_loadPreheatDataWithHandler:(id /* block */)arg1;
 - (void)_setHasCachedImage:(BOOL)arg1;
 - (void)_uncancel;
 - (BOOL)addImageHandler:(id /* block */)arg1;
@@ -39,7 +38,6 @@
 - (id)initWithImagePath:(id)arg1 format:(int)arg2 imageType:(int)arg3 optimalSourcePixelSize:(struct CGSize { float x1; float x2; })arg4 options:(unsigned int)arg5;
 - (id)initialDecodeSessionOptions;
 - (BOOL)isCancelled;
-- (void)loadPreheatDataWithHandler:(id /* block */)arg1;
 - (unsigned int)options;
 - (BOOL)originalIsJpeg;
 - (id)preheatData;

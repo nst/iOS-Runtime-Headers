@@ -41,6 +41,7 @@
 + (Class)_contentViewClass;
 
 - (void).cxx_destruct;
+- (BOOL)_disableRasterizeInAnimations;
 - (void)_layoutTransitionFillerView;
 - (void)_updateCloudIcon;
 - (void)_updateContentViewClipsToBounds;

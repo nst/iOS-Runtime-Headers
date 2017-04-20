@@ -6,7 +6,6 @@
 @required
 
 - (GEOComposedWaypoint *)endWaypoint;
-- (BOOL)isFailed;
 - (BOOL)navigationWasInterrupted;
 - (GEOURLRouteHandle *)routeHandle;
 - (GEOComposedWaypoint *)startWaypoint;

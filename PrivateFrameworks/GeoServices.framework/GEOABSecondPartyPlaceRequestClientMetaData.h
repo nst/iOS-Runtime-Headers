@@ -4,11 +4,14 @@
 
 @interface GEOABSecondPartyPlaceRequestClientMetaData : PBCodable <NSCopying> {
     NSMutableArray * _clientConfigs;
+    GEOPDABClientDatasetMetadata * _clientDatasetMetadata;
     NSMutableArray * _serverAbAssignments;
     PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) NSMutableArray *clientConfigs;
+@property (nonatomic, retain) GEOPDABClientDatasetMetadata *clientDatasetMetadata;
+@property (nonatomic, readonly) BOOL hasClientDatasetMetadata;
 @property (nonatomic, retain) NSMutableArray *serverAbAssignments;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
@@ -22,11 +25,13 @@
 - (id)clientConfigAtIndex:(unsigned int)arg1;
 - (id)clientConfigs;
 - (unsigned int)clientConfigsCount;
+- (id)clientDatasetMetadata;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasClientDatasetMetadata;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
@@ -35,6 +40,7 @@
 - (id)serverAbAssignments;
 - (unsigned int)serverAbAssignmentsCount;
 - (void)setClientConfigs:(id)arg1;
+- (void)setClientDatasetMetadata:(id)arg1;
 - (void)setServerAbAssignments:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;

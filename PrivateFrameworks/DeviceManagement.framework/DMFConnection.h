@@ -20,16 +20,17 @@
 - (void)client:(id)arg1 didInterruptWithError:(id)arg2;
 - (void)clientDidConnect:(id)arg1;
 - (void)clientDidInvalidate:(id)arg1;
+- (void)dealloc;
 - (id)init;
 - (id)initWithServiceName:(id)arg1;
 - (id)initWithTransport:(id)arg1;
 - (id)initWithXPCConnection:(id)arg1;
 - (void)invalidate;
-- (void)operationDidFinish:(id)arg1 runLoop:(id)arg2;
-- (void)operationDidProgress:(id)arg1 progressBlock:(id)arg2;
+- (void)operationDidFinish:(id)arg1 completion:(id /* block */)arg2;
+- (void)operationDidFinish:(id)arg1 semaphore:(id)arg2;
+- (void)performRequest:(id)arg1 completion:(id /* block */)arg2;
 - (id)prepareOperationForRequest:(id)arg1;
 - (id)progressForAllInflightRequests;
-- (void)runRequest:(id)arg1 progress:(id /* block */)arg2 completion:(id /* block */)arg3;
-- (id)runRequestSync:(id)arg1 error:(id*)arg2;
+- (id)runRequest:(id)arg1 error:(id*)arg2;
 
 @end

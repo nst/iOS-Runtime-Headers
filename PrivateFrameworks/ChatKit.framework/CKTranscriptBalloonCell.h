@@ -20,6 +20,7 @@
 - (id)init;
 - (BOOL)mayReparentPluginViews;
 - (id)messageDisplayView;
+- (void)setAnimationPauseReasons:(int)arg1;
 - (void)setBalloonView:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setMayReparentPluginViews:(BOOL)arg1;

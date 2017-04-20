@@ -11,8 +11,11 @@
 
 - (void).cxx_destruct;
 - (void)_buyButtonAction:(id)arg1;
+- (id)_buyButtonTitle;
 - (void)_cancelBuyConfirmation:(id)arg1;
+- (id)_confirmButtonTitle;
 - (void)_finishPurchaseWithResult:(BOOL)arg1 errorMessage:(id)arg2;
+- (id)_newBuyBarButtonItemWithTitle:(id)arg1;
 - (void)_purchaseGift;
 - (void)_removeCancelGestureRecognizer;
 - (void)_setShowingConfirmation:(BOOL)arg1 animated:(BOOL)arg2;

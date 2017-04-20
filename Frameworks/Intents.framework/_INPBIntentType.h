@@ -11,6 +11,8 @@
 @property (nonatomic, retain) NSString *type;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -24,5 +26,11 @@
 - (id)type;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

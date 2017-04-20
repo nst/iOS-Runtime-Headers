@@ -3,22 +3,27 @@
  */
 
 @interface CDPDBackupInfoRecoveryFlowController : CDPDRecoveryFlowController {
-    NSArray * _icscRecoveryDevices;
+    <CDPDBackupRecoveryErrorProvider> * _errorProvider;
+    NSArray * _recoveryRecords;
+    <CDPDBackupRecoveryResultsParser> * _resultParser;
 }
 
+@property (nonatomic, retain) <CDPDBackupRecoveryErrorProvider> *errorProvider;
+@property (nonatomic, retain) NSArray *recoveryRecords;
+@property (nonatomic, retain) <CDPDBackupRecoveryResultsParser> *resultParser;
+
 - (void).cxx_destruct;
-- (id)_cooldownErrorWithUnderlyingError:(id)arg1;
-- (id)_hardLimitError;
-- (id)_hardLimitErrorForSingleRecord:(id)arg1;
-- (id)_idmsDictionaryWithValidationResults:(id)arg1 error:(id*)arg2;
-- (id)_outOfattemptsErrorForRecord:(id)arg1;
 - (id)_recoveryListFromDevices:(id)arg1;
-- (void)_showCooldownErrorWithUnderlyingError:(id)arg1 completion:(id /* block */)arg2;
-- (void)_showHardLimitError:(id)arg1 completion:(id /* block */)arg2;
-- (id)_verificationFailedErrorWithUnderlyingError:(id)arg1;
-- (void)beginIDMSRecoveryWithCompletion:(id /* block */)arg1;
+- (void)_updateRecordRecoveryStatusForRecordDictionary:(id)arg1;
+- (void)beginRecoveryWithCompletion:(id /* block */)arg1;
+- (id)errorProvider;
+- (id)recoveryRecords;
+- (id)resultParser;
 - (void)retrieveInflatedDevices:(id /* block */)arg1;
 - (void)secretValidator:(id)arg1 didFailRecoveryWithErrors:(id)arg2 completion:(id /* block */)arg3;
 - (BOOL)secretValidator:(id)arg1 shouldContinueValidationAfterError:(id)arg2;
+- (void)setErrorProvider:(id)arg1;
+- (void)setRecoveryRecords:(id)arg1;
+- (void)setResultParser:(id)arg1;
 
 @end

@@ -18,6 +18,11 @@
     BOOL  _allowZoomTransitions;
     float  _assetsWidgetPlaceholderAspectRatio;
     int  _curationAlgorithm;
+    struct PXAssetBadgeInfo { 
+        unsigned int badges; 
+        double duration; 
+        int count; 
+    }  _debugBadgeInfo;
     double  _defaultPriorityWidgetsLoadingDelay;
     int  _detailViewsToKeepLoaded;
     int  _editorialLayoutActivityFeedItemCountThreshold;
@@ -61,6 +66,7 @@
 @property (nonatomic) BOOL allowZoomTransitions;
 @property (nonatomic) float assetsWidgetPlaceholderAspectRatio;
 @property (nonatomic) int curationAlgorithm;
+@property (nonatomic) struct PXAssetBadgeInfo { unsigned int x1; double x2; int x3; } debugBadgeInfo;
 @property (nonatomic) double defaultPriorityWidgetsLoadingDelay;
 @property (nonatomic) int detailViewsToKeepLoaded;
 @property (nonatomic) int editorialLayoutActivityFeedItemCountThreshold;
@@ -106,6 +112,7 @@
 - (BOOL)allowZoomTransitions;
 - (float)assetsWidgetPlaceholderAspectRatio;
 - (int)curationAlgorithm;
+- (struct PXAssetBadgeInfo { unsigned int x1; double x2; int x3; })debugBadgeInfo;
 - (double)defaultPriorityWidgetsLoadingDelay;
 - (int)detailViewsToKeepLoaded;
 - (int)editorialLayoutActivityFeedItemCountThreshold;
@@ -136,6 +143,7 @@
 - (void)setAllowZoomTransitions:(BOOL)arg1;
 - (void)setAssetsWidgetPlaceholderAspectRatio:(float)arg1;
 - (void)setCurationAlgorithm:(int)arg1;
+- (void)setDebugBadgeInfo:(struct PXAssetBadgeInfo { unsigned int x1; double x2; int x3; })arg1;
 - (void)setDefaultPriorityWidgetsLoadingDelay:(double)arg1;
 - (void)setDefaultValues;
 - (void)setDetailViewsToKeepLoaded:(int)arg1;

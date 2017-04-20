@@ -51,6 +51,7 @@
 @property (nonatomic) unsigned long long targetID;
 @property (nonatomic, retain) GEOTransitPlaceCard *transitPlaceCard;
 
++ (id)actionDetailsWithDetails:(id)arg1 timestamp:(double)arg2;
 + (id)actionDetailsWithMapItem:(id)arg1 timestamp:(double)arg2 resultIndex:(int)arg3;
 + (id)actionDetailsWithMapItem:(id)arg1 timestamp:(double)arg2 resultIndex:(int)arg3 targetID:(unsigned long long)arg4;
 + (id)actionDetailsWithMapItem:(id)arg1 timestamp:(double)arg2 resultIndex:(int)arg3 targetID:(unsigned long long)arg4 transitCardCategory:(int)arg5 transitSystem:(id)arg6 transitDepartureSequence:(id)arg7 transitIncident:(id)arg8;

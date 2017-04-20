@@ -36,7 +36,7 @@
 - (void)_recordImpressionsForVisibleView;
 - (void)_updateImpressions;
 - (void)_updateView;
-- (void)didUpdateFocusFromView:(id)arg1;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)focusedController;
 - (id)impressionableElementsContainedInDocument:(id)arg1;
 - (id)listViewController;

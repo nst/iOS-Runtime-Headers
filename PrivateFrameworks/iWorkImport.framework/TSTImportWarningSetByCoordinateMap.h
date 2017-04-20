@@ -12,11 +12,11 @@
     }  _coordinates;
     struct unordered_map<TSUCellCoord, SFUtility::ObjcSharedPtr<TSTImportWarningSet>, std::__1::hash<TSUCellCoord>, std::__1::equal_to<TSUCellCoord>, std::__1::allocator<std::__1::pair<const TSUCellCoord, SFUtility::ObjcSharedPtr<TSTImportWarningSet> > > > { 
         struct __hash_table<std::__1::__hash_value_type<TSUCellCoord, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, std::__1::__unordered_map_hasher<TSUCellCoord, std::__1::__hash_value_type<TSUCellCoord, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, std::__1::hash<TSUCellCoord>, true>, std::__1::__unordered_map_equal<TSUCellCoord, std::__1::__hash_value_type<TSUCellCoord, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, std::__1::equal_to<TSUCellCoord>, true>, std::__1::allocator<std::__1::__hash_value_type<TSUCellCoord, SFUtility::ObjcSharedPtr<TSTImportWarningSet> > > > { 
-            struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<TSUCellCoord, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<TSUCellCoord, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, void *> *> > > { 
-                struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<TSUCellCoord, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<TSUCellCoord, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, void *> *> > > { 
-                    struct __hash_node<std::__1::__hash_value_type<TSUCellCoord, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, void *> {} **__first_; 
-                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<TSUCellCoord, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, void *> *> > { 
-                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<TSUCellCoord, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, void *> *> > { 
+            struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSUCellCoord, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSUCellCoord, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, void *> *> *> > > { 
+                struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSUCellCoord, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSUCellCoord, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, void *> *> *> > > { 
+                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSUCellCoord, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, void *> *> {} **__first_; 
+                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSUCellCoord, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, void *> *> *> > { 
+                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSUCellCoord, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, void *> *> *> > { 
                             unsigned long __first_; 
                         } __data_; 
                     } __second_; 
@@ -24,7 +24,7 @@
             } __bucket_list_; 
             struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSUCellCoord, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<TSUCellCoord, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, void *> > > { 
                 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSUCellCoord, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, void *> *> { 
-                    struct __hash_node<std::__1::__hash_value_type<TSUCellCoord, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, void *> {} *__next_; 
+                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSUCellCoord, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, void *> *> {} *__next_; 
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<TSUCellCoord, std::__1::__hash_value_type<TSUCellCoord, SFUtility::ObjcSharedPtr<TSTImportWarningSet> >, std::__1::hash<TSUCellCoord>, true> > { 

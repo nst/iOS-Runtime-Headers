@@ -8,6 +8,8 @@
 
 @property (nonatomic, copy) NSString *deviceName;
 
++ (BOOL)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)description;
 - (id)deviceName;

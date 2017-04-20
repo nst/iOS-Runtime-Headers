@@ -31,6 +31,7 @@
 + (id)_fetchCameraPreviewWellMetadata;
 + (int*)_imageTableModes;
 + (struct { int x1; int x2; }*)_imageTableSizes;
++ (void)_recordRebuildThumbnailsAttempt;
 + (void)_refetchAndSaveCameraPreviewWellImage;
 + (void)_saveCameraPreviewWellImage:(struct CGImage { }*)arg1 assetUUID:(id)arg2;
 + (BOOL)_shouldUseUnicornContext;

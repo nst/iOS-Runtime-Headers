@@ -3,6 +3,7 @@
  */
 
 @interface GEOPDPlaceResponse : PBCodable <NSCopying> {
+    GEOPDDatasetABStatus * _datasetAbStatus;
     NSString * _debugApiKey;
     unsigned long long  _debugLatencyMs;
     NSMutableArray * _displayLanguages;
@@ -20,11 +21,13 @@
     PBUnknownFields * _unknownFields;
 }
 
+@property (nonatomic, retain) GEOPDDatasetABStatus *datasetAbStatus;
 @property (nonatomic, retain) NSString *debugApiKey;
 @property (nonatomic) unsigned long long debugLatencyMs;
 @property (nonatomic, retain) NSMutableArray *displayLanguages;
 @property (nonatomic, retain) NSString *displayRegion;
 @property (nonatomic, retain) GEOPDPlaceGlobalResult *globalResult;
+@property (nonatomic, readonly) BOOL hasDatasetAbStatus;
 @property (nonatomic, readonly) BOOL hasDebugApiKey;
 @property (nonatomic) BOOL hasDebugLatencyMs;
 @property (nonatomic, readonly) BOOL hasDisplayRegion;
@@ -52,6 +55,7 @@
 - (void)clearSpokenLanguages;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)datasetAbStatus;
 - (void)dealloc;
 - (id)debugApiKey;
 - (unsigned long long)debugLatencyMs;
@@ -62,6 +66,7 @@
 - (unsigned int)displayLanguagesCount;
 - (id)displayRegion;
 - (id)globalResult;
+- (BOOL)hasDatasetAbStatus;
 - (BOOL)hasDebugApiKey;
 - (BOOL)hasDebugLatencyMs;
 - (BOOL)hasDisplayRegion;
@@ -78,6 +83,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (int)requestType;
 - (id)requestTypeAsString:(int)arg1;
+- (void)setDatasetAbStatus:(id)arg1;
 - (void)setDebugApiKey:(id)arg1;
 - (void)setDebugLatencyMs:(unsigned long long)arg1;
 - (void)setDisplayLanguages:(id)arg1;

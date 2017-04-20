@@ -4,6 +4,7 @@
 
 @interface GEOMapService : NSObject {
     int  _additionalEnabledMarketsChangedToken;
+    int  _experimentsChangedToken;
     NSCache * _handleCache;
     <NSCacheDelegate> * _handleCacheDelegate;
     int  _overriddenResultProviderID;
@@ -28,6 +29,7 @@
 - (void)_localeChanged:(id)arg1;
 - (id)_preferredLanguages;
 - (id)_searchable_ticketForReverseGeocodeCoordinate:(struct { double x1; double x2; })arg1 includeEntryPoints:(BOOL)arg2 shiftLocationsIfNeeded:(BOOL)arg3 includeETA:(BOOL)arg4 preserveOriginalLocation:(BOOL)arg5 traits:(id)arg6;
+- (void)_sendInvalidateDataToSiriAndParSec;
 - (id)_ticketForAutocompleteFragment:(id)arg1 type:(int)arg2 traits:(id)arg3 categoryFilter:(id)arg4;
 - (id)_ticketForBatchReverseGeocodeLocations:(id)arg1 shiftLocationsIfNeeded:(BOOL)arg2 additionalPlaceTypes:(int*)arg3 additionalPlaceTypesCount:(unsigned int)arg4 traits:(id)arg5;
 - (void)addPlaceDataRequestObserver:(id)arg1;
@@ -49,6 +51,7 @@
 - (id)ticketForBatchReverseGeocodeLocations:(id)arg1 shiftLocationsIfNeeded:(BOOL)arg2 traits:(id)arg3;
 - (id)ticketForCanonicalLocationSearchQueryString:(id)arg1 traits:(id)arg2;
 - (id)ticketForCategoryListWithTraits:(id)arg1;
+- (id)ticketForDatasetCheckWithTraits:(id)arg1;
 - (id)ticketForExternalBusinessID:(id)arg1 contentProvider:(id)arg2 includeETA:(BOOL)arg3 traits:(id)arg4;
 - (id)ticketForExternalTransitStationCodes:(id)arg1 sourceID:(id)arg2 transactionDate:(id)arg3 transactionLocation:(id)arg4 traits:(id)arg5;
 - (id)ticketForForwardGeocodeAddress:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;

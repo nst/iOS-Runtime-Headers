@@ -160,6 +160,7 @@
 - (BOOL)shapeDetectionEnabled;
 - (id)shapeRecognizer;
 - (void)showOverlay;
+- (void)toolbarNotification:(id)arg1;
 - (void)updateOverlayBoundsAndBackingScale:(id)arg1;
 - (void)updateStrokeAttributes;
 - (double)veryHighConfidenceLevel;

@@ -37,6 +37,7 @@
 - (id)_unanimousValueForResultsKey:(id)arg1 inServiceItems:(id)arg2;
 - (void)_updateControlItems;
 - (id)accessories;
+- (BOOL)actionsMayRequireDeviceUnlock;
 - (id)allControlItems;
 - (BOOL)containsActionableCharacteristics;
 - (id)controlItems;

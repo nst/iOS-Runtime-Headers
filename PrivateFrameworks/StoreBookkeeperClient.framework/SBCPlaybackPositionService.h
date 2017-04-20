@@ -26,12 +26,14 @@
 - (void)didConnectToService;
 - (oneway void)endAccessingPlaybackPositionEntities;
 - (id)initWithPlaybackPositionDomain:(id)arg1;
+- (oneway void)persistPlaybackPositionEntity:(id)arg1 isCheckpoint:(BOOL)arg2 completionBlock:(id /* block */)arg3;
 - (id)playbackPositionDomain;
+- (oneway void)pullLocalPlaybackPositionForEntityIdentifiers:(id)arg1 completionBlock:(id /* block */)arg2;
 - (oneway void)pullPlaybackPositionEntity:(id)arg1 completionBlock:(id /* block */)arg2;
 - (oneway void)pushPlaybackPositionEntity:(id)arg1 completionBlock:(id /* block */)arg2;
-- (oneway void)savePlaybackPositionEntity:(id)arg1 isCheckpoint:(BOOL)arg2;
 - (oneway void)synchronizeImmediatelyWithCompletionHandler:(id /* block */)arg1;
 - (oneway void)updateForeignDatabaseWithValuesFromPlaybackPositionEntity:(id)arg1;
 - (BOOL)usingPlaybackPositions;
+- (void)validateConnectionConfiguration;
 
 @end

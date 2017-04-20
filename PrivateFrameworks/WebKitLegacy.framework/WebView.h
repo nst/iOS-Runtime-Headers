@@ -157,7 +157,6 @@
 - (BOOL)_canShowMIMEType:(id)arg1;
 - (BOOL)_canZoomIn:(BOOL)arg1;
 - (BOOL)_canZoomOut:(BOOL)arg1;
-- (void)_clearBackForwardCache;
 - (void)_clearCredentials;
 - (void)_clearDelegates;
 - (void)_clearMainFrameName;
@@ -166,6 +165,7 @@
 - (void)_closeWindow;
 - (void)_closeWithFastTeardown;
 - (void)_commonInitializationWithFrameName:(id)arg1 groupName:(id)arg2;
+- (id)_contentsOfUserInterfaceItem:(id)arg1;
 - (struct CGSize { float x1; float x2; })_contentsSizeRespectingOverflow;
 - (BOOL)_continuousCheckingAllowed;
 - (struct CGPoint { float x1; float x2; })_convertPointFromRootView:(struct CGPoint { float x1; float x2; })arg1;
@@ -176,6 +176,7 @@
 - (id)_deviceOrientationProvider;
 - (void)_didCommitLoadForFrame:(id)arg1;
 - (void)_didFinishScrollingOrZooming;
+- (void)_didScrollDocumentInFrameView:(id)arg1;
 - (void)_dispatchPendingLoadRequests;
 - (void)_dispatchTileDidDraw:(id)arg1;
 - (void)_dispatchUnloadEvent;
@@ -223,7 +224,7 @@
 - (void)_loadBackForwardListFromOtherView:(id)arg1;
 - (BOOL)_locked_plugInsAreRunningInFrame:(id)arg1;
 - (void)_locked_recursivelyPerformPlugInSelector:(SEL)arg1 inFrame:(id)arg2;
-- (struct Frame { int (**x1)(); struct atomic<int> { int x_2_1_1; } x2; struct HashSet<WebCore::FrameDestructionObserver *, WTF::PtrHash<WebCore::FrameDestructionObserver *>, WTF::HashTraits<WebCore::FrameDestructionObserver *> > { struct HashTable<WebCore::FrameDestructionObserver *, WebCore::FrameDestructionObserver *, WTF::IdentityExtractor, WTF::PtrHash<WebCore::FrameDestructionObserver *>, WTF::HashTraits<WebCore::FrameDestructionObserver *>, WTF::HashTraits<WebCore::FrameDestructionObserver *> > { struct FrameDestructionObserver {} **x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_3_1_1; } x3; struct MainFrame {} *x4; struct Page {} *x5; struct RefPtr<WebCore::Settings> { struct Settings {} *x_6_1_1; } x6; struct FrameTree { struct Frame {} *x_7_1_1; struct Frame {} *x_7_1_2; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_3_2_1; } x_7_1_3; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_4_2_1; } x_7_1_4; struct RefPtr<WebCore::Frame> { struct Frame {} *x_5_2_1; } x_7_1_5; struct Frame {} *x_7_1_6; struct RefPtr<WebCore::Frame> { struct Frame {} *x_7_2_1; } x_7_1_7; struct Frame {} *x_7_1_8; unsigned int x_7_1_9; } x7; }*)_mainCoreFrame;
+- (struct Frame { int (**x1)(); struct atomic<unsigned int> { unsigned int x_2_1_1; } x2; struct HashSet<WebCore::FrameDestructionObserver *, WTF::PtrHash<WebCore::FrameDestructionObserver *>, WTF::HashTraits<WebCore::FrameDestructionObserver *> > { struct HashTable<WebCore::FrameDestructionObserver *, WebCore::FrameDestructionObserver *, WTF::IdentityExtractor, WTF::PtrHash<WebCore::FrameDestructionObserver *>, WTF::HashTraits<WebCore::FrameDestructionObserver *>, WTF::HashTraits<WebCore::FrameDestructionObserver *> > { struct FrameDestructionObserver {} **x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_3_1_1; } x3; struct MainFrame {} *x4; struct Page {} *x5; struct RefPtr<WebCore::Settings> { struct Settings {} *x_6_1_1; } x6; struct FrameTree { struct Frame {} *x_7_1_1; struct Frame {} *x_7_1_2; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_3_2_1; } x_7_1_3; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_4_2_1; } x_7_1_4; struct RefPtr<WebCore::Frame> { struct Frame {} *x_5_2_1; } x_7_1_5; struct Frame {} *x_7_1_6; struct RefPtr<WebCore::Frame> { struct Frame {} *x_7_2_1; } x_7_1_7; struct Frame {} *x_7_1_8; unsigned int x_7_1_9; } x7; }*)_mainCoreFrame;
 - (id)_mainFrameOverrideEncoding;
 - (void)_mouseDidMoveOverElement:(id)arg1 modifierFlags:(unsigned int)arg2;
 - (BOOL)_needsOneShotDrawingSynchronization;
@@ -282,7 +283,7 @@
 - (void)_setFormDelegate:(id)arg1;
 - (void)_setGapBetweenPages:(float)arg1;
 - (void)_setGeolocationProvider:(id)arg1;
-- (void)_setGlobalHistoryItem:(struct HistoryItem { unsigned int x1; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_4_1_1; } x4; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_5_1_1; } x5; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_6_1_1; } x6; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_7_1_1; } x7; struct IntPoint { int x_8_1_1; int x_8_1_2; } x8; float x9; struct Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> { struct String {} *x_10_1_1; unsigned int x_10_1_2; unsigned int x_10_1_3; } x10; int x11; struct Vector<WTF::Ref<WebCore::HistoryItem>, 0, WTF::CrashOnOverflow, 16> { struct Ref<WebCore::HistoryItem> {} *x_12_1_1; unsigned int x_12_1_2; unsigned int x_12_1_3; } x12; bool x13; bool x14; bool x15; struct unique_ptr<WTF::Vector<WTF::String, 0, WTF::CrashOnOverflow, 16>, std::__1::default_delete<WTF::Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> > > { struct __compressed_pair<WTF::Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> *, std::__1::default_delete<WTF::Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> > > { struct Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> {} *x_1_2_1; } x_16_1_1; } x16; }*)arg1;
+- (void)_setGlobalHistoryItem:(struct HistoryItem { unsigned int x1; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_4_1_1; } x4; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_5_1_1; } x5; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_6_1_1; } x6; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_7_1_1; } x7; struct IntPoint { int x_8_1_1; int x_8_1_2; } x8; float x9; struct Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> { struct String {} *x_10_1_1; unsigned int x_10_1_2; unsigned int x_10_1_3; } x10; int x11; struct Vector<WTF::Ref<WebCore::HistoryItem>, 0, WTF::CrashOnOverflow, 16> { struct Ref<WebCore::HistoryItem> {} *x_12_1_1; unsigned int x_12_1_2; unsigned int x_12_1_3; } x12; bool x13; bool x14; bool x15; long long x16; }*)arg1;
 - (void)_setHostApplicationProcessIdentifier:(int)arg1 auditToken:(struct { unsigned int x1[8]; })arg2;
 - (void)_setIncludesFlattenedCompositingLayersWhenDrawingToBitmap:(BOOL)arg1;
 - (void)_setIsVisible:(BOOL)arg1;
@@ -419,6 +420,7 @@
 - (void)goForward:(id)arg1;
 - (BOOL)goToBackForwardItem:(id)arg1;
 - (id)groupName;
+- (void)hideFormValidationMessage;
 - (id)historyDelegate;
 - (id)hostWindow;
 - (void)ignoreSpelling:(id)arg1;
@@ -524,6 +526,8 @@
 - (id)policyDelegate;
 - (id)preferences;
 - (id)preferencesIdentifier;
+- (void)prepareForMouseDown;
+- (void)prepareForMouseUp;
 - (id)previousValidKeyView;
 - (id)quickLookContentForURL:(id)arg1;
 - (id)rectsForTextMatches;
@@ -615,6 +619,7 @@
 - (BOOL)shouldRequestCandidates;
 - (BOOL)shouldUpdateWhileOffscreen;
 - (void)showCandidates:(id)arg1 forString:(id)arg2 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 forSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 view:(id)arg5 completionHandler:(id /* block */)arg6;
+- (void)showFormValidationMessage:(id)arg1 withAnchorRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)showGuessPanel:(id)arg1;
 - (BOOL)smartInsertDeleteEnabled;
 - (void)startSpeaking:(id)arg1;
@@ -647,13 +652,12 @@
 - (void)unscheduleFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)unscript:(id)arg1;
 - (void)updateLayoutIgnorePendingStyleSheets;
-- (void)updateWebViewAdditions;
+- (void)updateTouchBar;
 - (void)uppercaseWord:(id)arg1;
 - (id)userAgentForURL:(id)arg1;
 - (BOOL)usesPageCache;
 - (int)validationMessageTimerMagnification;
 - (void)viewDidMoveToWindow;
-- (void)webViewAdditionsWillDestroyView;
 - (id)windowScriptObject;
 - (void)yank:(id)arg1;
 - (void)yankAndSelect:(id)arg1;

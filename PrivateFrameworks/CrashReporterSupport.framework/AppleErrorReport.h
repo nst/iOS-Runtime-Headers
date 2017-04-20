@@ -6,6 +6,7 @@
     double  _capture_time;
     NSString * _incidentID;
     NSString * _logType;
+    NSMutableDictionary * _logWritingOptions;
     NSString * _logfile;
     NSMutableArray * _notes;
 }
@@ -32,7 +33,6 @@
 - (BOOL)isCarrierInstall;
 - (BOOL)isInternalInstall;
 - (BOOL)isInternalOrCarrierInstall;
-- (unsigned int)logLimit;
 - (id)logfile;
 - (id)notes;
 - (id)overrideFileExtension;

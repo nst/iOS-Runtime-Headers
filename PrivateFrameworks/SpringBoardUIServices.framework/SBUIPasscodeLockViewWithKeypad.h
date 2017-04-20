@@ -76,6 +76,7 @@
 - (void)setBackgroundAlpha:(float)arg1;
 - (void)setCustomBackgroundColor:(id)arg1;
 - (void)setLastCharacterBeforeBackspace:(id)arg1;
+- (void)setShowsCancelButton:(BOOL)arg1;
 - (void)setShowsEmergencyCallButton:(BOOL)arg1;
 - (void)setShowsStatusField:(BOOL)arg1;
 - (void)setStatusSubtitleView:(id)arg1;

@@ -35,6 +35,8 @@
 @property (getter=isHMError, nonatomic, readonly) BOOL hmError;
 @property (getter=isHMFError, nonatomic, readonly) BOOL hmfError;
 @property (nonatomic, readonly) NSString *idsIdentifier;
+@property (nonatomic, readonly) BOOL isAuthKitUnableToPromptDueToNetworkError;
+@property (nonatomic, readonly) BOOL isAuthKitUnableToPromptError;
 @property (nonatomic, readonly) BOOL isAuthenticationError;
 @property (readonly, copy) NSString *localizedDescription;
 @property (readonly, copy) NSString *localizedFailureReason;
@@ -232,7 +234,6 @@
 
 // Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
 
-- (id)_secureCodingSafeObject:(id)arg1;
 - (id)vs_secureCodingSafeError;
 
 // Image: /System/Library/Frameworks/WatchConnectivity.framework/WatchConnectivity
@@ -267,6 +268,7 @@
 
 + (id)ak_errorWithCode:(int)arg1;
 + (id)ak_errorWithCode:(int)arg1 underlyingError:(id)arg2;
++ (id)ak_errorWithCode:(int)arg1 userInfo:(id)arg2;
 + (id)ak_wrappedAnisetteError:(long)arg1;
 
 - (BOOL)ak_isUserCancelError;
@@ -408,12 +410,15 @@
 // Image: /System/Library/PrivateFrameworks/CoreCDPInternal.framework/CoreCDPInternal
 
 - (id)errorByExtendingUserInfoWithDictionary:(id)arg1;
+- (BOOL)isAuthKitUnableToPromptDueToNetworkError;
+- (BOOL)isAuthKitUnableToPromptError;
 - (BOOL)isAuthenticationError;
 - (BOOL)isCoolDownError;
 - (BOOL)isICSCRecoveryHardLimitError;
 - (BOOL)isLoginHardLimit;
 - (BOOL)isLoginSoftLimit;
 - (BOOL)isRecoveryPETHardLimitError;
+- (BOOL)isRecoveryPETSoftLimitError;
 
 // Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
 
@@ -590,6 +595,7 @@
 
 + (id)mf_cancelledError;
 + (id)mf_decodeFailedErrorWithUserInfo:(id)arg1;
++ (id)mf_illegalEmailAddressErrorWithAddress:(id)arg1;
 + (id)mf_timeoutError;
 
 - (BOOL)mf_isCancelledError;
@@ -598,7 +604,6 @@
 
 // Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
 
-+ (id)MCErrorWithDomain:(id)arg1 code:(int)arg2 description:(id)arg3 errorType:(id)arg4;
 + (id)MCErrorWithDomain:(id)arg1 code:(int)arg2 descriptionArray:(id)arg3 errorType:(id)arg4;
 + (id)MCErrorWithDomain:(id)arg1 code:(int)arg2 descriptionArray:(id)arg3 suggestion:(id)arg4 USEnglishSuggestion:(id)arg5 underlyingError:(id)arg6 errorType:(id)arg7;
 + (id)MCErrorWithDomain:(id)arg1 code:(int)arg2 descriptionArray:(id)arg3 underlyingError:(id)arg4 errorType:(id)arg5;
@@ -652,8 +657,11 @@
 
 + (id)fc_belowMinimumVersionError;
 + (id)fc_canaryDownError;
++ (id)fc_createStateMachineErrorForCode:(int)arg1 userInfo:(id)arg2;
++ (id)fc_errorWithCode:(int)arg1 description:(id)arg2;
 + (id)fc_errorWithCode:(int)arg1 description:(id)arg2 additionalUserInfo:(id)arg3;
 + (id)fc_feedDroppedError;
++ (id)fc_missingAppConfigErrorWithUnderlyingError:(id)arg1;
 + (id)fc_notAvailableError;
 + (id)fc_notCachedError;
 + (id)fc_offlineErrorWithReason:(int)arg1;
@@ -662,7 +670,10 @@
 - (BOOL)fc_isCKUnknownItemError;
 - (BOOL)fc_isCancellationError;
 - (BOOL)fc_isNetworkUnavailableError;
+- (BOOL)fc_isOfflineError;
+- (BOOL)fc_isOperationThrottledError;
 - (BOOL)fc_isServiceUnavailableError;
+- (BOOL)fc_isStateMachineError:(int)arg1;
 - (BOOL)fc_shouldRetry;
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
@@ -691,6 +702,7 @@
 
 // Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotoVision.framework/PhotoVision
 
++ (id)errorForPhotoVisionCancelledOperation;
 + (id)errorForPhotoVisionErrorCode:(int)arg1 userInfo:(id)arg2;
 + (id)errorForPhotoVisionInvalidNilParameterNamed:(id)arg1;
 + (id)errorForPhotoVisionInvalidParameterNamed:(id)arg1 integerValue:(int)arg2;
@@ -731,6 +743,7 @@
 
 // Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/PhotoAnalysis
 
++ (id)phaErrorForInvalidParameterNamed:(id)arg1 localizedDescription:(id)arg2;
 + (id)phaErrorForInvalidParameterValue:(id)arg1 named:(id)arg2;
 + (id)phaErrorForNilParameterNamed:(id)arg1;
 + (id)phaErrorWithCode:(int)arg1 localizedDescription:(id)arg2;
@@ -742,13 +755,16 @@
 + (id)phaUnexpectedConditionErrorWithLocalizedDescription:(id)arg1;
 + (id)phaUnexpectedConditionErrorWithUserInfo:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
+
+- (BOOL)safari_isClientSideNetworkError;
+- (id)safari_privacyPreservingDescription;
+
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 
 - (void)_safari_enumerateCloudKitErrorsWithBlock:(id /* block */)arg1;
 - (BOOL)safari_errorOrAnyPartialErrorHasCloudKitErrorCode:(int)arg1;
 - (BOOL)safari_errorOrAnyPartialErrorHasCloudKitInternalErrorCode:(int)arg1;
-- (BOOL)safari_isClientSideNetworkError;
-- (id)safari_privacyPreservingDescription;
 
 // Image: /System/Library/PrivateFrameworks/ServerDocsProtocol.framework/ServerDocsProtocol
 

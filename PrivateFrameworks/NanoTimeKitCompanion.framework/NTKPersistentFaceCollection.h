@@ -34,6 +34,7 @@
 - (void)_handleConnectionInterrupted;
 - (void)_handleFlushCompleteForIdentifier:(id)arg1;
 - (void)_notifyLoaded;
+- (void)_notifyReset;
 - (void)_performOrEnqueueUpdateOfType:(int)arg1 forFaceUUID:(id)arg2 block:(id /* block */)arg3;
 - (void)_performSuppressingFaceObserverCallbacks:(id /* block */)arg1;
 - (void)_pruneEnqueuedUpdatesMadeObsoleteByNewUpdate:(id)arg1;
@@ -57,6 +58,7 @@
 - (void)loadFullCollectionWithOrderedUUIDs:(id)arg1 selectedUUID:(id)arg2 facesByUUID:(id)arg3 seqId:(id)arg4 completion:(id /* block */)arg5;
 - (void)removeFaceForUUID:(id)arg1 seqId:(id)arg2 completion:(id /* block */)arg3;
 - (void)reset;
+- (void)resetClientCollection;
 - (void)resumeUpdatesFromDaemon;
 - (void)suspendUpdatesFromDaemon;
 - (void)updateFaceForUUID:(id)arg1 withConfiguration:(id)arg2 seqId:(id)arg3;

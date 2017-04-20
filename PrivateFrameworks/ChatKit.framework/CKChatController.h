@@ -151,6 +151,7 @@
 - (void)_initializeNavigationBarCanvasViewIfNecessary;
 - (id)_interfaceActionsForChatItem:(id)arg1;
 - (void)_invalidateChatItemLayoutIfNecessary;
+- (BOOL)_isRunningPPT;
 - (void)_kickPhotoKit;
 - (void)_markAsReadIfNecessary;
 - (float)_maxEntryViewHeight;
@@ -265,7 +266,7 @@
 - (id)entryView;
 - (BOOL)entryViewWasActiveBeforePresentingDataDetector;
 - (BOOL)entryViewWasActiveOnPreview;
-- (id)evaluateSendMetricsForComposition:(id)arg1;
+- (void)evaluateSendMetricsForComposition:(id)arg1;
 - (void)eventEditViewController:(id)arg1 didCompleteWithAction:(int)arg2;
 - (id)extensionPayloadBeingSent;
 - (void)forciblyUnloadChatInputController;

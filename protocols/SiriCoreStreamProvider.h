@@ -14,10 +14,11 @@
 - (NSString *)getResolvedHost;
 - (NSData *)headerData;
 - (BOOL)isPeerConnectionError:(NSError *)arg1;
-- (void)openStreamPairForURL:(void *)arg1 withConnectionId:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 10: NSURL *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSInputStream *, NSOutputStream *, NSError *, void*
+- (void)openStreamPairForURL:(void *)arg1 withConnectionId:(void *)arg2 initialPayload:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 11: NSURL *, NSString *, NSData *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSInputStream *, NSOutputStream *, NSError *, void*
 - (void)setConnectByPOPMethod:(BOOL)arg1;
 - (void)setDelegate:(id <SiriCoreStreamProviderDelegate>)arg1;
 - (BOOL)shouldFallbackFromError:(NSError *)arg1;
 - (BOOL)shouldFallbackQuickly;
+- (BOOL)supportsInitialPayload;
 
 @end

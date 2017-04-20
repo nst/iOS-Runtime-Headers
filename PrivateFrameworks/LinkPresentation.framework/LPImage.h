@@ -4,6 +4,7 @@
 
 @interface LPImage : NSObject <NSSecureCoding> {
     NSString * _MIMEType;
+    NSObject<OS_dispatch_group> * _asynchronousLoadGroup;
     NSData * _data;
     NSURL * _fileURL;
     UIImage * _originalPlatformImage;
@@ -26,8 +27,11 @@
 - (void)_createDataFromPlatformImage;
 - (unsigned long)_encodedSize;
 - (id)_initWithImage:(id)arg1;
+- (id)_initWithPlatformImageGenerator:(id /* block */)arg1;
 - (void)_mapDataFromFileURL;
+- (void)_preparePlatformImageWithCompletionHandler:(id /* block */)arg1;
 - (BOOL)_shouldEncodeData;
+- (void)_waitForAsynchronouslyLoadedImageIfNeeded;
 - (id)data;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fileURL;

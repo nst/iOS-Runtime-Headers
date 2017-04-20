@@ -79,13 +79,20 @@
 + (id)_hf_localizedStringOrNilIfNotFoundForKey:(id)arg1;
 + (id)_hf_naturalLanguageNameWithHome:(id)arg1 alarmCharacteristics:(id)arg2 triggerValue:(id)arg3 type:(unsigned int)arg4;
 + (id)_hf_naturalLanguageNameWithHome:(id)arg1 nonAlarmCharacteristics:(id)arg2 triggerValue:(id)arg3 type:(unsigned int)arg4;
++ (id)hf_localizationKeyForProgrammableSwitchCharacteristic:(id)arg1 value:(id)arg2;
++ (id)hf_localizedStringForProgrammableSwitchCharacteristic:(id)arg1 value:(id)arg2;
 + (id)hf_naturalLanguageNameWithHome:(id)arg1 characteristics:(id)arg2 triggerValue:(id)arg3 type:(unsigned int)arg4;
 + (id)hf_naturalLanguageNameWithHome:(id)arg1 region:(id)arg2 type:(unsigned int)arg3;
 + (id)hf_triggerValueNaturalLanguageDescriptionWithCharacteristics:(id)arg1 triggerValue:(id)arg2;
 
+- (id)hf_designateTrigger:(BOOL)arg1;
+- (BOOL)hf_isHomeAppCreatedTrigger;
+- (id)hf_markTriggerAsHomeAppCreated;
 - (id)hf_naturalLanguageNameWithHome:(id)arg1 type:(unsigned int)arg2;
 - (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (BOOL)hf_requiresConfirmationToRun;
 - (id)hf_serializedStateDumpRepresentation;
 - (unsigned int)hf_triggerType;
+- (id)hf_unmarkTriggerAsHomeAppCreated;
 
 @end

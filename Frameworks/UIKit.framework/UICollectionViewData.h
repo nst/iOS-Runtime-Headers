@@ -75,6 +75,7 @@
 - (void)invalidateItemsAtIndexPaths:(id)arg1;
 - (void)invalidateSupplementaryIndexPaths:(id)arg1;
 - (BOOL)isGlobalIndexValid:(int)arg1;
+- (BOOL)isIndexPathValid:(id)arg1;
 - (BOOL)isLayoutLocked;
 - (id)knownDecorationElementKinds;
 - (id)knownSupplementaryElementKinds;
@@ -99,5 +100,7 @@
 - (void)validateDecorationViews;
 - (void)validateLayoutInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)validateSupplementaryViews;
+- (int)validatedGlobalIndexForItemAtIndexPath:(id)arg1;
+- (id)validatedIndexPathForItemAtGlobalIndex:(int)arg1;
 
 @end

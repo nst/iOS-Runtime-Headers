@@ -197,6 +197,6 @@
 
 // Image: /System/Library/PrivateFrameworks/Swift/libswiftUIKit.dylib
 
-- (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 cancelButtonTitle:(id)arg4;
+- (id)initWithTitlemessagedelegatecancelButtonTitle;
 
 @end

@@ -17,7 +17,10 @@
 @property (nonatomic) int supportedPlatform;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 - (void).cxx_destruct;
+- (int)StringAsSupportedPlatform:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -32,7 +35,14 @@
 - (void)setMinimumOsVersion:(id)arg1;
 - (void)setSupportedPlatform:(int)arg1;
 - (int)supportedPlatform;
+- (id)supportedPlatformAsString:(int)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

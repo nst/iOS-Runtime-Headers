@@ -19,6 +19,7 @@
 - (id)builtInArguments;
 - (void)dealloc;
 - (id)description;
+- (id)formattedDescription:(unsigned int)arg1;
 - (id)initWithSerializedData:(id)arg1 device:(id)arg2 options:(unsigned int)arg3 flags:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 60; })arg4;
 - (id)initWithSerializedData:(id)arg1 serializedStageInputDescriptor:(id)arg2 device:(id)arg3 options:(unsigned int)arg4 flags:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 60; })arg5;
 - (id)performanceStatistics;

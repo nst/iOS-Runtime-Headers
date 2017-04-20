@@ -34,6 +34,8 @@
         unsigned int stationID : 1; 
         unsigned int storeAccountID : 1; 
         unsigned int subscriptionAdamID : 1; 
+        unsigned int tvShowPurchasedAdamID : 1; 
+        unsigned int tvShowSubscriptionAdamID : 1; 
         unsigned int containerType : 1; 
         unsigned int endReasonType : 1; 
         unsigned int eventType : 1; 
@@ -74,6 +76,8 @@
     long long  _subscriptionAdamID;
     NSData * _timedMetadata;
     NSData * _trackInfo;
+    long long  _tvShowPurchasedAdamID;
+    long long  _tvShowSubscriptionAdamID;
 }
 
 @property (nonatomic, retain) NSString *buildVersion;
@@ -135,6 +139,8 @@
 @property (nonatomic) BOOL hasSubscriptionAdamID;
 @property (nonatomic, readonly) BOOL hasTimedMetadata;
 @property (nonatomic, readonly) BOOL hasTrackInfo;
+@property (nonatomic) BOOL hasTvShowPurchasedAdamID;
+@property (nonatomic) BOOL hasTvShowSubscriptionAdamID;
 @property (nonatomic) BOOL internalBuild;
 @property (nonatomic) unsigned long long itemCloudID;
 @property (nonatomic) double itemDuration;
@@ -164,6 +170,8 @@
 @property (nonatomic) long long subscriptionAdamID;
 @property (nonatomic, retain) NSData *timedMetadata;
 @property (nonatomic, retain) NSData *trackInfo;
+@property (nonatomic) long long tvShowPurchasedAdamID;
+@property (nonatomic) long long tvShowSubscriptionAdamID;
 
 - (void).cxx_destruct;
 - (int)StringAsContainerType:(id)arg1;
@@ -239,6 +247,8 @@
 - (BOOL)hasSubscriptionAdamID;
 - (BOOL)hasTimedMetadata;
 - (BOOL)hasTrackInfo;
+- (BOOL)hasTvShowPurchasedAdamID;
+- (BOOL)hasTvShowSubscriptionAdamID;
 - (unsigned int)hash;
 - (BOOL)internalBuild;
 - (BOOL)isEqual:(id)arg1;
@@ -305,6 +315,8 @@
 - (void)setHasStationID:(BOOL)arg1;
 - (void)setHasStoreAccountID:(BOOL)arg1;
 - (void)setHasSubscriptionAdamID:(BOOL)arg1;
+- (void)setHasTvShowPurchasedAdamID:(BOOL)arg1;
+- (void)setHasTvShowSubscriptionAdamID:(BOOL)arg1;
 - (void)setInternalBuild:(BOOL)arg1;
 - (void)setItemCloudID:(unsigned long long)arg1;
 - (void)setItemDuration:(double)arg1;
@@ -334,6 +346,8 @@
 - (void)setSubscriptionAdamID:(long long)arg1;
 - (void)setTimedMetadata:(id)arg1;
 - (void)setTrackInfo:(id)arg1;
+- (void)setTvShowPurchasedAdamID:(long long)arg1;
+- (void)setTvShowSubscriptionAdamID:(long long)arg1;
 - (int)sourceType;
 - (id)sourceTypeAsString:(int)arg1;
 - (id)stationHash;
@@ -345,6 +359,8 @@
 - (long long)subscriptionAdamID;
 - (id)timedMetadata;
 - (id)trackInfo;
+- (long long)tvShowPurchasedAdamID;
+- (long long)tvShowSubscriptionAdamID;
 - (void)writeTo:(id)arg1;
 
 @end

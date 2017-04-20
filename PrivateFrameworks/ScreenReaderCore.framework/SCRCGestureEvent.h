@@ -13,6 +13,8 @@
     double  _time;
 }
 
+@property (nonatomic) double time;
+
 - (void)addFingerWithIdentifier:(unsigned int)arg1 location:(struct CGPoint { float x1; float x2; })arg2 orbValue:(float)arg3;
 - (void)addStylusWithIdentifier:(unsigned int)arg1 location:(struct CGPoint { float x1; float x2; })arg2 pressure:(float)arg3 altitude:(float)arg4 azimuth:(float)arg5;
 - (struct CGPoint { float x1; float x2; })averageLocation;
@@ -30,6 +32,7 @@
 - (BOOL)isCancelEvent;
 - (struct CGPoint { float x1; float x2; })magneticLocation;
 - (void)removeFingerWithIdentifier:(unsigned int)arg1;
+- (void)setTime:(double)arg1;
 - (double)time;
 
 @end

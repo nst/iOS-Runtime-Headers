@@ -4,9 +4,14 @@
 
 @interface LPVideo : NSObject <AVAssetResourceLoaderDelegate, NSSecureCoding> {
     NSString * _MIMEType;
+    AVAsset * _asset;
     NSData * _data;
     NSURL * _fileURL;
     BOOL  _hasAudio;
+    struct CGSize { 
+        float width; 
+        float height; 
+    }  _intrinsicSize;
     NSObject<OS_dispatch_queue> * _mediaLoadingQueue;
     NSURL * _streamingURL;
     NSURL * _youTubeURL;

@@ -9,7 +9,7 @@
     NSURL * _sourceURL;
 }
 
-@property (nonatomic, readonly) float destinationCompressionQuality;
+@property (nonatomic) float destinationCompressionQuality;
 @property (nonatomic) int destinationFormat;
 @property (nonatomic, copy) NSURL *destinationURL;
 @property (nonatomic, copy) NSURL *sourceURL;
@@ -26,6 +26,7 @@
 - (id)initWithSourceURL:(id)arg1 destinationURL:(id)arg2 destinationFormat:(int)arg3;
 - (Class)operationClass;
 - (int)operationPriority;
+- (void)setDestinationCompressionQuality:(float)arg1;
 - (void)setDestinationFormat:(int)arg1;
 - (void)setDestinationURL:(id)arg1;
 - (void)setSourceURL:(id)arg1;

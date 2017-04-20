@@ -143,6 +143,7 @@
 - (int)paymentSetupSupportedInRegion;
 - (unsigned int)performAction:(id)arg1 onServiceProviderPurchase:(id)arg2 completion:(id /* block */)arg3;
 - (unsigned int)performServiceProviderPayment:(id)arg1 completion:(id /* block */)arg2;
+- (unsigned int)prepareTransactionDetailsForMerchantSession:(id)arg1 secureElementIdentifier:(id)arg2 amount:(id)arg3 currencyCode:(id)arg4 completion:(id /* block */)arg5;
 - (id)primaryBrokerURL;
 - (unsigned int)provisionForRequest:(id)arg1 completion:(id /* block */)arg2;
 - (unsigned int)provisionRequest:(id)arg1 completion:(id /* block */)arg2;

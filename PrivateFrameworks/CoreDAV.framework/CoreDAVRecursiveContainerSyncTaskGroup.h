@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@interface CoreDAVRecursiveContainerSyncTaskGroup : CoreDAVTaskGroup <CoreDAVDeleteTaskDelegate, CoreDAVMkcolTaskDelegate, CoreDAVPropPatchTaskDelegate, CoreDAVPutTaskDelegate, CoreDAVTaskGroupDelegate> {
+@interface CoreDAVRecursiveContainerSyncTaskGroup : CoreDAVTaskGroup <CoreDAVDeleteTaskDelegate, CoreDAVMkcolTaskDelegate, CoreDAVMoveTaskDelegate, CoreDAVPropPatchTaskDelegate, CoreDAVPutTaskDelegate, CoreDAVTaskGroupDelegate> {
     NSArray * _actions;
     NSURL * _addMemberURL;
     Class  _appSpecificContainerItemClass;
@@ -65,6 +65,7 @@
 - (id)initWithFolderURL:(id)arg1 previousCTag:(id)arg2 previousPTag:(id)arg3 previousSyncToken:(id)arg4 actions:(id)arg5 syncItemOrder:(BOOL)arg6 context:(id)arg7 accountInfoProvider:(id)arg8 taskManager:(id)arg9;
 - (BOOL)isWhitelistedError:(id)arg1;
 - (void)mkcolTask:(id)arg1 parsedPropStats:(id)arg2 error:(id)arg3;
+- (void)moveTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
 - (unsigned int)multiGetBatchSize;
 - (id)nextCTag;
 - (BOOL)preflightCTag;

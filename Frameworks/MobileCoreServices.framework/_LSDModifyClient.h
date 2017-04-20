@@ -5,7 +5,7 @@
 @interface _LSDModifyClient : _LSDClient <_LSDModifyProtocol>
 
 - (BOOL)clientHasMIEntitlement:(id)arg1;
-- (void)didHandleInvocation:(id)arg1 isReply:(BOOL)arg2;
+- (void)installApplication:(id)arg1 atURL:(id)arg2 withOptions:(id)arg3 reply:(id /* block */)arg4;
 - (void)rebuildApplicationDatabasesForSystem:(BOOL)arg1 internal:(BOOL)arg2 user:(BOOL)arg3 completionHandler:(id /* block */)arg4;
 - (void)registerExtensionPoint:(id)arg1 withInfo:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)registerItemInfo:(id)arg1 alias:(id)arg2 diskImageAlias:(id)arg3 bundleURL:(id)arg4 installationPlist:(id)arg5 completionHandler:(id /* block */)arg6;
@@ -17,6 +17,7 @@
 - (void)setHandler:(id)arg1 version:(unsigned long long)arg2 roles:(unsigned long)arg3 forContentType:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)setHandlerOptions:(unsigned long)arg1 forContentType:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)synchronizeWithMobileInstallation;
+- (void)uninstallApplication:(id)arg1 withOptions:(id)arg2 reply:(id /* block */)arg3;
 - (void)updateContainerUnit:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
 - (void)updateRecordForApp:(id)arg1 withSINF:(id)arg2 iTunesMetadata:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)willHandleInvocation:(id)arg1 isReply:(BOOL)arg2;

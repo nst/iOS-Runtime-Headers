@@ -51,6 +51,9 @@
 
 // Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
 
++ (id)imageDerivativeTypes;
++ (id)videoDerivativeTypes;
+
 - (BOOL)deleteAfterUpload;
 - (void)setDeleteAfterUpload:(BOOL)arg1;
 

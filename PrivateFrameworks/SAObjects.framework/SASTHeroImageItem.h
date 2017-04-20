@@ -8,6 +8,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *position;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) SAUINanoImageResource *watchImageResource;
 
@@ -17,7 +18,9 @@
 - (id)caption;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (id)position;
 - (void)setCaption:(id)arg1;
+- (void)setPosition:(id)arg1;
 - (void)setWatchImageResource:(id)arg1;
 - (id)watchImageResource;
 

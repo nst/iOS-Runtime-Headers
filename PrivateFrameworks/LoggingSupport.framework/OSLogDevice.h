@@ -9,10 +9,10 @@
     NSString * _uid;
 }
 
-@property int devType;
-@property void*mobDev;
-@property (retain) SimDevice *simDev;
-@property (retain) NSString *uid;
+@property (nonatomic) int devType;
+@property (nonatomic) void*mobDev;
+@property (nonatomic, retain) SimDevice *simDev;
+@property (nonatomic, retain) NSString *uid;
 
 - (void).cxx_destruct;
 - (id)description;

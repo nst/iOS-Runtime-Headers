@@ -41,6 +41,7 @@
 - (id)initWithResultSection:(id)arg1;
 - (BOOL)isGlanceCategory;
 - (id)objectForFeedback;
+- (id)objectForFeedbackWithResultsArray:(id)arg1;
 - (void)removeResults:(id)arg1;
 - (void)removeResultsAtIndex:(unsigned int)arg1;
 - (void)removeResultsInArray:(id)arg1;

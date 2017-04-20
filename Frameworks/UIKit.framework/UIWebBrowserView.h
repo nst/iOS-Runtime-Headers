@@ -89,8 +89,8 @@
 @property (nonatomic) NSString *networkInterfaceName;
 @property (readonly) Class superclass;
 @property (setter=webui_setLastGeneratedPasswordForCurrentBackForwardItem:, nonatomic, copy) NSString *webui_lastGeneratedPasswordForCurrentBackForwardItem;
+@property (nonatomic, readonly) UIViewController *webui_presentingViewController;
 @property (nonatomic, readonly) BOOL webui_privateBrowsingEnabled;
-@property (nonatomic, readonly) UIView *webui_viewForAutoFillPrompt;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
@@ -268,11 +268,11 @@
 - (id)webui_formMetadataAndFrame:(id*)arg1 forLastPasswordGenerationOrSubmitEventInFrame:(id)arg2;
 - (id)webui_formMetadataForLastPasswordGenerationOrSubmitEventInFrame:(id)arg1;
 - (id)webui_lastGeneratedPasswordForCurrentBackForwardItem;
+- (id)webui_presentingViewController;
 - (id /* block */)webui_preventNavigationDuringAutoFillPrompt;
 - (BOOL)webui_privateBrowsingEnabled;
 - (void)webui_removeFormMetadataForLastPasswordGenerationOrSubmitEventInFrame:(id)arg1;
 - (void)webui_setFormMetadata:(id)arg1 forLastPasswordGenerationOrSubmitEventInFrame:(id)arg2;
 - (void)webui_setLastGeneratedPasswordForCurrentBackForwardItem:(id)arg1;
-- (id)webui_viewForAutoFillPrompt;
 
 @end

@@ -6,6 +6,7 @@
     NSObject<OS_dispatch_queue> * _accessQueue;
     NSMutableDictionary * _backingDictionary;
     SSDoubleLinkedList * _backingList;
+    SSLogConfig * _logConfig;
     unsigned int  _maxSize;
 }
 
@@ -13,6 +14,7 @@
 @property (nonatomic, retain) NSMutableDictionary *backingDictionary;
 @property (nonatomic, retain) SSDoubleLinkedList *backingList;
 @property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, retain) SSLogConfig *logConfig;
 @property (nonatomic, readonly) unsigned int maxSize;
 
 - (void).cxx_destruct;
@@ -27,11 +29,13 @@
 - (id)description;
 - (id)init;
 - (id)initWithMaxSize:(unsigned int)arg1;
+- (id)logConfig;
 - (unsigned int)maxSize;
 - (id)objectForKey:(id)arg1;
 - (void)setAccessQueue:(id)arg1;
 - (void)setBackingDictionary:(id)arg1;
 - (void)setBackingList:(id)arg1;
+- (void)setLogConfig:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 
 @end

@@ -4,6 +4,7 @@
 
 @interface UIEventEnvironment : NSObject {
     UIApplication * _application;
+    double  _commitTimeForTouchEvents;
     int  _currentNudgePressType;
     UITouch * _currentTouch;
     BOOL  _didDelayedInit;

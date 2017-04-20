@@ -111,6 +111,7 @@
 - (BOOL)_preconditionsMetForDatabaseOpen;
 - (BOOL)_removePassWithUniqueIDLocked:(id)arg1;
 - (void)_removeTransactionWithIdentifier:(id)arg1 forPassWithUniqueID:(id)arg2;
+- (BOOL)_repairEncodedImagesDuringMigration:(id)arg1;
 - (void)_saveDiffLocked:(id)arg1 forPassWithUniqueID:(id)arg2;
 - (void)_savePassLocked:(id)arg1 wasUpdate:(BOOL*)arg2;
 - (void)_saveTransactionLocked:(id)arg1 forPassWithUniqueID:(id)arg2;

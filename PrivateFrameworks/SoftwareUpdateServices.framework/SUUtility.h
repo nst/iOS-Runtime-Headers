@@ -12,8 +12,6 @@
 + (void)assignError:(id*)arg1 withError:(id)arg2 translate:(BOOL)arg3;
 + (unsigned long long)cacheDelete:(id)arg1;
 + (BOOL)cellularDataIsEnabled;
-+ (BOOL)createInstallationKeybag:(id)arg1;
-+ (BOOL)createInstallationKeybag:(id)arg1 forUnattendedInstall:(BOOL)arg2;
 + (id)currentProductBuild;
 + (id)currentProductCategory;
 + (id)currentProductType;
@@ -33,12 +31,8 @@
 + (BOOL)hasEnoughDiskSpace:(unsigned long long)arg1 growth:(unsigned long long)arg2 deltaSpaceNeeded:(unsigned long long*)arg3 isAutoDownload:(BOOL)arg4;
 + (BOOL)hasEnoughDiskSpace:(unsigned long long)arg1 growth:(unsigned long long)arg2 deltaSpaceNeeded:(unsigned long long*)arg3 isAutoDownload:(BOOL)arg4 disableCDLevelFour:(BOOL)arg5 disableCDLevelThree:(BOOL)arg6 disableSiriDeletion:(BOOL)arg7 disableAppDemotion:(BOOL)arg8;
 + (BOOL)hasEnoughDiskSpace:(unsigned long long)arg1 growth:(unsigned long long)arg2 deltaSpaceNeeded:(unsigned long long*)arg3 isAutoDownload:(BOOL)arg4 includePurging:(BOOL)arg5;
-+ (int)installationKeybagState;
 + (BOOL)isCellularDataCapable;
 + (BOOL)isDaemon;
-+ (BOOL)isPasscodeLocked;
-+ (BOOL)isPasswordProtected;
-+ (BOOL)isRestoringFromCloud;
 + (BOOL)isWiFiCapable;
 + (void)postFailureNotification:(id)arg1 body:(id)arg2 buttonText:(id)arg3 altButtonText:(id)arg4;
 + (id)prettyPrintDate:(id)arg1;

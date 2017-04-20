@@ -13,7 +13,7 @@
     UIView * _headerOverlayView;
     UIView * _mainContainerView;
     UIView * _mainOverlayView;
-    NCMaterialSettings * _materialSettings;
+    MTMaterialSettings * _materialSettings;
     UIImageView * _shadowView;
     BOOL  _usesBackgroundView;
 }

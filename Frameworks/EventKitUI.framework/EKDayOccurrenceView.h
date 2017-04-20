@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKDayOccurrenceView : UIVisualEffectView <EKDayOccurrenceTravelTimeViewMetricsDelegate, NSCopying> {
+@interface EKDayOccurrenceView : UIView <EKDayOccurrenceTravelTimeViewMetricsDelegate, NSCopying> {
     BOOL  _allDay;
     BOOL  _allDayDrawingStyle;
     float  _bottomPinningProximity;
@@ -273,7 +273,6 @@
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (double)travelTime;
 - (float)travelTimeSubviewHeightInPoints;
-- (float)unconstrainedWidth;
 - (BOOL)usesSmallText;
 - (float)viewMaxNaturalTextHeight;
 - (BOOL)visibleHeightLocked;

@@ -147,6 +147,11 @@
 
 - (id)mf_attachmentWithFilename:(id)arg1 UTIType:(id)arg2 fromManager:(id)arg3 contextID:(id)arg4;
 
+// Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
+
+- (id)safari_SHA1Hash;
+- (id)safari_dataByAppendingData:(id)arg1;
+
 // Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
 
 - (id)_operateOnDataUsingCompressionAlgorithm:(int)arg1 operation:(int)arg2;
@@ -206,6 +211,11 @@
 
 - (id)CertUIHexString;
 
+// Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
+
+- (id)crk_hexString;
+- (id)crk_sha1Hash;
+
 // Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
 
 + (id)brc_pendingPlaceholderForPackage:(BOOL)arg1;
@@ -248,6 +258,10 @@
 // Image: /System/Library/PrivateFrameworks/ControlCenterUIKit.framework/ControlCenterUIKit
 
 - (id)ccuiSHA1Hash;
+
+// Image: /System/Library/PrivateFrameworks/CoreCDPInternal.framework/CoreCDPInternal
+
+- (id)cdp_unarchivedRoot;
 
 // Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
 
@@ -434,11 +448,6 @@
 + (id)MCDataWithHexString:(id)arg1;
 
 - (id)MCHexString;
-- (BOOL)MCSCWriteToFile:(id)arg1 atomically:(BOOL)arg2;
-- (BOOL)MCSCWriteToFile:(id)arg1 atomically:(BOOL)arg2 error:(id*)arg3;
-- (BOOL)MCSCWriteToFile:(id)arg1 atomically:(BOOL)arg2 mode:(unsigned short)arg3 error:(id*)arg4;
-- (BOOL)MCSCWriteToURL:(id)arg1 atomically:(BOOL)arg2 error:(id*)arg3;
-- (BOOL)MCSCWriteToURL:(id)arg1 atomically:(BOOL)arg2 mode:(unsigned short)arg3 error:(id*)arg4;
 - (id)MCSHA1Hash;
 
 // Image: /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
@@ -559,11 +568,13 @@
 - (id)propertyListForRadioResponseReturningError:(id*)arg1;
 - (id)propertyListForRadioResponseReturningError:(id*)arg1 unparsedResponseDictionary:(id*)arg2;
 
-// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
+// Image: /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
 
+- (id)safari_SHA1Hash;
 - (BOOL)safari_dataAppearsToBeCompressed;
 - (id)safari_dataByCompressingData;
 - (id)safari_dataByDecompressingData;
+- (unsigned long long)safari_hashMD5;
 
 // Image: /System/Library/PrivateFrameworks/ServerDocsProtocol.framework/ServerDocsProtocol
 
@@ -571,6 +582,11 @@
 
 - (id)pu_hex;
 - (int)sd_compare:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)base64StringFromData:(id)arg1;
++ (id)dataFromBase64String:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
 

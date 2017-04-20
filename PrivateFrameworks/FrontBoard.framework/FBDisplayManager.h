@@ -5,6 +5,7 @@
 @interface FBDisplayManager : NSObject {
     NSMapTable * _displayIDToFBSDisplayMap;
     NSMutableSet * _displaysDebouncing;
+    CADisplay * _mainCADisplay;
     FBSDisplay * _mainDisplay;
     NSHashTable * _observers;
 }
@@ -17,7 +18,6 @@
 - (void)_broadcastFBSDisplayDidConnect:(id)arg1;
 - (void)_caDisplayDidConnect:(id)arg1 debounce:(BOOL)arg2 broadcast:(BOOL)arg3;
 - (void)_caDisplayDidDisconnect:(id)arg1;
-- (BOOL)_caDisplayIsMainDisplay:(id)arg1;
 - (void)_debounceDisplay:(id)arg1 broadcast:(BOOL)arg2;
 - (void)_displayDidDebounce:(id)arg1 broadcast:(BOOL)arg2;
 - (id)_fbsDisplayForCADisplay:(id)arg1;
@@ -27,6 +27,7 @@
 - (id)description;
 - (id)displays;
 - (id)init;
+- (BOOL)isConnectedToDisplay:(id)arg1;
 - (id)mainDisplay;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)removeObserver:(id)arg1;

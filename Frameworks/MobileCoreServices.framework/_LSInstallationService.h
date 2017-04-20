@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@interface _LSInstallationService : NSObject <LSInstalationServiceProtocol, NSXPCListenerDelegate> {
+@interface _LSInstallationService : NSObject <NSXPCListenerDelegate> {
     NSObject<OS_dispatch_queue> * _databaseQueue;
     NSObject<OS_dispatch_queue> * _serialQueue;
 }
@@ -20,8 +20,6 @@
 - (void)dealloc;
 - (id)initWithQueue:(id)arg1;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (void)removeSystemApplicationWithBundleIdentifier:(id)arg1 reply:(id /* block */)arg2;
-- (void)restoreSystemApplicationWithBundleIdentifier:(id)arg1 reply:(id /* block */)arg2;
 - (id)serialQueue;
 
 @end

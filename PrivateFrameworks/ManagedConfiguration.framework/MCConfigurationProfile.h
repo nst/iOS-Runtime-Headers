@@ -5,7 +5,9 @@
 @interface MCConfigurationProfile : MCProfile {
     MCProfileServiceProfile * _OTAProfile;
     BOOL  _isCloudLocked;
+    NSNumber * _isCloudLockedNum;
     BOOL  _isCloudProfile;
+    NSNumber * _isCloudProfileNum;
     BOOL  _isMDMProfile;
     NSArray * _managedPayloads;
     NSArray * _payloads;
@@ -13,7 +15,9 @@
 
 @property (nonatomic, retain) MCProfileServiceProfile *OTAProfile;
 @property (nonatomic) BOOL isCloudLocked;
+@property (nonatomic, retain) NSNumber *isCloudLockedNum;
 @property (nonatomic) BOOL isCloudProfile;
+@property (nonatomic, retain) NSNumber *isCloudProfileNum;
 @property (nonatomic) BOOL isMDMProfile;
 
 - (void).cxx_destruct;
@@ -30,7 +34,9 @@
 - (id)initWithDictionary:(id)arg1 allowEmptyPayload:(BOOL)arg2 outError:(id*)arg3;
 - (id)installationWarningsIncludeUnsignedProfileWarning:(BOOL)arg1;
 - (BOOL)isCloudLocked;
+- (id)isCloudLockedNum;
 - (BOOL)isCloudProfile;
+- (id)isCloudProfileNum;
 - (BOOL)isMDMProfile;
 - (BOOL)isManagedByProfileService;
 - (id)localizedManagedPayloadSummaryByType;
@@ -39,7 +45,9 @@
 - (id)payloadWithUUID:(id)arg1;
 - (id)payloads;
 - (void)setIsCloudLocked:(BOOL)arg1;
+- (void)setIsCloudLockedNum:(id)arg1;
 - (void)setIsCloudProfile:(BOOL)arg1;
+- (void)setIsCloudProfileNum:(id)arg1;
 - (void)setIsMDMProfile:(BOOL)arg1;
 - (void)setOTAProfile:(id)arg1;
 - (id)stubDictionary;

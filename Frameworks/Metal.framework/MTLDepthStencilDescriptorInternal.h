@@ -20,6 +20,7 @@
 - (unsigned int)depthCompareFunction;
 - (const /* Warning: unhandled struct encoding: '{MTLDepthStencilDescriptorPrivate=@@Ic@}' */ struct MTLDepthStencilDescriptorPrivate { id x1; unsigned int x2; BOOL x3; id x4; }*)depthStencilPrivate;
 - (id)description;
+- (id)formattedDescription:(unsigned int)arg1;
 - (id)frontFaceStencil;
 - (unsigned int)hash;
 - (id)init;

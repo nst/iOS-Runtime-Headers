@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPModelStorePlaybackItemsRequest : MPModelRequest <MPModelRequestDetailedKeepLocalStatusRequesting, MPModelStorePreviousRequestStoring> {
+@interface MPModelStorePlaybackItemsRequest : MPModelRequest <MPModelRequestDetailedKeepLocalStatusRequesting, MPModelRequestRTCReporting, MPModelStorePreviousRequestStoring> {
     BOOL  _allowLocalEquivalencies;
     BOOL  _allowsMultipleResponseHandlerCalls;
     MPModelResponse * _previousResponse;
@@ -20,6 +20,7 @@
 @property (nonatomic, retain) MPModelResponse *previousResponse;
 @property (nonatomic, copy) NSString *requestingBundleIdentifier;
 @property (nonatomic, copy) NSString *requestingBundleVersion;
+@property (nonatomic, readonly, copy) NSString *rtcReportingPlayQueueSourceIdentifier;
 @property (nonatomic, copy) NSArray *storeIDs;
 @property (readonly) Class superclass;
 @property (nonatomic) BOOL wantsDetailedKeepLocalRequestableResponse;
@@ -35,6 +36,7 @@
 - (id)previousResponse;
 - (id)requestingBundleIdentifier;
 - (id)requestingBundleVersion;
+- (id)rtcReportingPlayQueueSourceIdentifier;
 - (void)setAllowLocalEquivalencies:(BOOL)arg1;
 - (void)setAllowsMultipleResponseHandlerCalls:(BOOL)arg1;
 - (void)setPreviousResponse:(id)arg1;

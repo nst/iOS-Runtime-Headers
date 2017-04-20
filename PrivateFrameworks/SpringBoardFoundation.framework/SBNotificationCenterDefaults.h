@@ -5,6 +5,8 @@
 @interface SBNotificationCenterDefaults : SBAbstractSpringBoardDefaultDomain
 
 @property (getter=isBatteryWidgetAlwaysAvailable, nonatomic, readonly) BOOL batteryWidgetAlwaysAvailable;
+@property (nonatomic) BOOL didPurgeNonASTCSnapshots;
+@property (nonatomic) BOOL didPurgeNonCAMLSnapshots;
 @property (nonatomic, readonly) BOOL showInternalWidgets;
 @property (nonatomic, readonly) BOOL showWidgetSnapshotDebugLabels;
 @property (nonatomic, readonly) BOOL useDuetRecommendations;

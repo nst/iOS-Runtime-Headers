@@ -11,6 +11,7 @@
     BOOL  _grouped;
     BOOL  _internal;
     NSString * _keyboardLanguage;
+    BOOL  _lowPriority;
     NSArray * _markedTextArray;
     int  _maxCount;
     NSArray * _preferredLanguages;
@@ -28,6 +29,7 @@
 @property (nonatomic) BOOL grouped;
 @property (nonatomic) BOOL internal;
 @property (nonatomic, retain) NSString *keyboardLanguage;
+@property (nonatomic) BOOL lowPriority;
 @property (nonatomic, retain) NSArray *markedTextArray;
 @property (nonatomic) int maxCount;
 @property (nonatomic, copy) NSDictionary *options;
@@ -53,6 +55,7 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)internal;
 - (id)keyboardLanguage;
+- (BOOL)lowPriority;
 - (id)markedTextArray;
 - (int)maxCount;
 - (id)options;
@@ -68,6 +71,7 @@
 - (void)setGrouped:(BOOL)arg1;
 - (void)setInternal:(BOOL)arg1;
 - (void)setKeyboardLanguage:(id)arg1;
+- (void)setLowPriority:(BOOL)arg1;
 - (void)setMarkedTextArray:(id)arg1;
 - (void)setMaxCount:(int)arg1;
 - (void)setOptions:(id)arg1;

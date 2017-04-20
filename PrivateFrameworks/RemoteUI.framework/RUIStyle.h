@@ -6,6 +6,7 @@
     UIColor * _backgroundColor;
     UIColor * _buttonRowTextColor;
     UIColor * _detailHeaderLabelTextColor;
+    UIColor * _focusedRowTextColor;
     int  _footerLabelAlignment;
     UIColor * _footerLabelTextColor;
     int  _footerLinkAlignment;
@@ -17,11 +18,13 @@
     UIColor * _selectPageDetailTextColor;
     int  _subHeaderLabelAlignment;
     UIColor * _subHeaderLabelTextColor;
+    UIColor * _titleLabelTextColor;
 }
 
 @property (nonatomic, retain) UIColor *backgroundColor;
 @property (nonatomic, retain) UIColor *buttonRowTextColor;
 @property (nonatomic, retain) UIColor *detailHeaderLabelTextColor;
+@property (nonatomic, retain) UIColor *focusedRowTextColor;
 @property (nonatomic) int footerLabelAlignment;
 @property (nonatomic, retain) UIColor *footerLabelTextColor;
 @property (nonatomic) int footerLinkAlignment;
@@ -34,6 +37,7 @@
 @property (nonatomic, retain) UIColor *selectPageDetailTextColor;
 @property (nonatomic) int subHeaderLabelAlignment;
 @property (nonatomic, retain) UIColor *subHeaderLabelTextColor;
+@property (nonatomic, retain) UIColor *titleLabelTextColor;
 
 + (id)defaultStyle;
 + (id)frontRowStyle;
@@ -48,6 +52,7 @@
 - (id)backgroundColor;
 - (id)buttonRowTextColor;
 - (id)detailHeaderLabelTextColor;
+- (id)focusedRowTextColor;
 - (int)footerLabelAlignment;
 - (id)footerLabelTextColor;
 - (int)footerLinkAlignment;
@@ -62,6 +67,7 @@
 - (void)setBackgroundColor:(id)arg1;
 - (void)setButtonRowTextColor:(id)arg1;
 - (void)setDetailHeaderLabelTextColor:(id)arg1;
+- (void)setFocusedRowTextColor:(id)arg1;
 - (void)setFooterLabelAlignment:(int)arg1;
 - (void)setFooterLabelTextColor:(id)arg1;
 - (void)setFooterLinkAlignment:(int)arg1;
@@ -73,7 +79,9 @@
 - (void)setSelectPageDetailTextColor:(id)arg1;
 - (void)setSubHeaderLabelAlignment:(int)arg1;
 - (void)setSubHeaderLabelTextColor:(id)arg1;
+- (void)setTitleLabelTextColor:(id)arg1;
 - (int)subHeaderLabelAlignment;
 - (id)subHeaderLabelTextColor;
+- (id)titleLabelTextColor;
 
 @end

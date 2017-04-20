@@ -3,6 +3,7 @@
  */
 
 @interface PKPaymentRequest : NSObject <NSSecureCoding> {
+    NSString * _CTDataConnectionServiceType;
     NSData * _applicationData;
     const void * _billingAddress;
     PKContact * _billingContact;
@@ -23,10 +24,13 @@
     NSString * _shippingEditableMessage;
     NSArray * _shippingMethods;
     unsigned int  _shippingType;
+    NSString * _sourceApplicationBundleIdentifier;
+    NSString * _sourceApplicationSecondaryIdentifier;
     NSArray * _supportedNetworks;
     NSArray * _thumbnailURLs;
 }
 
+@property (nonatomic, retain) NSString *CTDataConnectionServiceType;
 @property (nonatomic, copy) NSData *applicationData;
 @property (nonatomic) const void*billingAddress;
 @property (nonatomic, retain) PKContact *billingContact;
@@ -47,6 +51,8 @@
 @property (nonatomic, copy) NSString *shippingEditableMessage;
 @property (nonatomic, copy) NSArray *shippingMethods;
 @property (nonatomic) unsigned int shippingType;
+@property (nonatomic, retain) NSString *sourceApplicationBundleIdentifier;
+@property (nonatomic, retain) NSString *sourceApplicationSecondaryIdentifier;
 @property (nonatomic, copy) NSArray *supportedNetworks;
 @property (nonatomic, retain) NSArray *thumbnailURLs;
 
@@ -56,6 +62,7 @@
 + (int)version;
 
 - (void).cxx_destruct;
+- (id)CTDataConnectionServiceType;
 - (id)_shippingTypeToString;
 - (id)_transactionAmount;
 - (id)applicationData;
@@ -85,6 +92,7 @@
 - (void)setApplicationData:(id)arg1;
 - (void)setBillingAddress:(void*)arg1;
 - (void)setBillingContact:(id)arg1;
+- (void)setCTDataConnectionServiceType:(id)arg1;
 - (void)setCountryCode:(id)arg1;
 - (void)setCurrencyCode:(id)arg1;
 - (void)setExpectsMerchantSession:(BOOL)arg1;
@@ -102,6 +110,8 @@
 - (void)setShippingEditableMessage:(id)arg1;
 - (void)setShippingMethods:(id)arg1;
 - (void)setShippingType:(unsigned int)arg1;
+- (void)setSourceApplicationBundleIdentifier:(id)arg1;
+- (void)setSourceApplicationSecondaryIdentifier:(id)arg1;
 - (void)setSupportedNetworks:(id)arg1;
 - (void)setThumbnailURLs:(id)arg1;
 - (const void*)shippingAddress;
@@ -109,6 +119,8 @@
 - (id)shippingEditableMessage;
 - (id)shippingMethods;
 - (unsigned int)shippingType;
+- (id)sourceApplicationBundleIdentifier;
+- (id)sourceApplicationSecondaryIdentifier;
 - (id)supportedNetworks;
 - (id)thumbnailURLs;
 

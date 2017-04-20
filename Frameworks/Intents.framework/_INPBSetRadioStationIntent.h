@@ -29,9 +29,12 @@
 @property (nonatomic, retain) _INPBString *stationName;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 + (id)options;
 
 - (void).cxx_destruct;
+- (int)StringAsRadioType:(id)arg1;
 - (id)channel;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -49,6 +52,7 @@
 - (void)mergeFrom:(id)arg1;
 - (id)presetNumber;
 - (int)radioType;
+- (id)radioTypeAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setChannel:(id)arg1;
 - (void)setFrequency:(id)arg1;
@@ -60,5 +64,11 @@
 - (id)stationName;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

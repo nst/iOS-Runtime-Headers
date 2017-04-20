@@ -26,6 +26,7 @@
     double  _firstChanceDetectionTime;
     NSDate * _firstChanceTriggeredDate;
     NSDictionary * _firstChanceVTEventInfo;
+    double  _firstPassScore;
     BOOL  _firstRecognitionResultReceived;
     int  _firstUnlockAfterRebootNotificationToken;
     NSDateFormatter * _formatter;
@@ -99,6 +100,7 @@
     unsigned long long  _triggerStartMachTime;
     double  _triggerThreshold;
     NSString * _triggerTokens;
+    BOOL  _useFallbackThresholdUponTimeout;
     BOOL  _useRecognizer;
     BOOL  _voiceTriggerEnabled;
     VTSiriNotifications * siriNotifications;
@@ -127,19 +129,19 @@
 - (void)VTAssetMonitor:(id)arg1 didReceiveNewAssetAvailable:(BOOL)arg2;
 - (void)VTLanguageCodeUpdateMonitor:(id)arg1 didReceiveLanguageCodeChanged:(id)arg2;
 - (id)_analyzeEnrollmentUtts:(id)arg1 enrollmentUtts:(id)arg2 thresholdTrigger:(double)arg3 thresholdSAT:(double)arg4 isUpdatingModel:(BOOL)arg5 extraUtts:(id*)arg6;
-- (id)_analyzeEvents:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; bool x5; }*)arg1;
-- (id)_analyzeMakeResult:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; bool x5; }*)arg1 eventKind:(unsigned char)arg2 satScore:(double)arg3;
+- (id)_analyzeEvents:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; bool x5; bool x6; }*)arg1;
+- (id)_analyzeMakeResult:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; bool x5; bool x6; }*)arg1 eventKind:(unsigned char)arg2 satScore:(double)arg3;
 - (void)_analyzeReset;
-- (unsigned long long)_applyExtraTimeTo:(unsigned long long)arg1;
+- (unsigned long long)_applyExtraTime:(double)arg1 to:(unsigned long long)arg2;
 - (void)_cancelSecondChance;
 - (id)_capturePathWithPrefix:(id)arg1 eventKind:(unsigned char)arg2;
 - (void)_clearDeviceHandHeld;
 - (void)_commonInit;
-- (double)_computeSATScore:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; bool x5; }*)arg1;
+- (double)_computeSATScore:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; bool x5; bool x6; }*)arg1;
 - (double)_computeSamplingMSE:(id)arg1 selectedUtts:(id)arg2 beforeScores:(id)arg3;
 - (BOOL)_configureWithConfig:(id)arg1 resourcePath:(id)arg2;
 - (BOOL)_configureWithDefaults;
-- (void)_createFirstChanceMeta:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; bool x5; }*)arg1;
+- (void)_createFirstChanceMeta:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; bool x5; bool x6; }*)arg1;
 - (id)_createVTEventInfoString:(id)arg1;
 - (void)_firstUnlockedAndSpringBoardStarted;
 - (id)_getAssetHashFromConfigPath:(id)arg1;
@@ -147,7 +149,7 @@
 - (id)_getSortedEnrollmentUtterances;
 - (id)_getSpeakerModelPath:(id)arg1 createDirectory:(BOOL)arg2;
 - (void)_handleAssetChangeForLanguageCode:(id)arg1;
-- (id)_handleTriggerEvent:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; bool x5; }*)arg1 num_new_samples:(unsigned int)arg2 satScore:(double)arg3;
+- (id)_handleTriggerEvent:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; bool x5; bool x6; }*)arg1 num_new_samples:(unsigned int)arg2 satScore:(double)arg3;
 - (void)_initDetector;
 - (BOOL)_isDeviceHandheld;
 - (void)_logCorruptAudio;
@@ -157,7 +159,7 @@
 - (void)_performReadyCompletion;
 - (void)_phraseSpotterEnabledDidChange;
 - (id)_randomSubset:(id)arg1 numSelected:(unsigned int)arg2;
-- (id)_recordTrainingSamples;
+- (id)_recordTrainingSamplesAndMeta;
 - (BOOL)_removeInvalidSATModel;
 - (unsigned int)_removeUnusedUttsFrom:(id)arg1 selectedUtts:(id)arg2;
 - (void)_resetCounters;
@@ -190,6 +192,7 @@
 - (id)initWithHardwareSampleRate:(double)arg1;
 - (id)initWithHardwareSampleRate:(double)arg1 readyCompletion:(id /* block */)arg2;
 - (id)initWithLanguageCodeForSATEnrollment:(id)arg1;
+- (int)isFollowedBySpeech;
 - (double)lastScore;
 - (double)lastSupervecScore;
 - (unsigned char)lastTriggerType;

@@ -73,6 +73,7 @@
 - (void)setDomainRestoreBehaviors:(id)arg1;
 - (void)setEncrypted:(BOOL)arg1;
 - (id)settingsContext;
+- (BOOL)shouldAlwaysRestoreSystemSharedContainerDomain:(id)arg1;
 - (BOOL)shouldCommitIfPossible;
 - (id)validateFile:(id)arg1;
 - (id)validateRestoreDomain:(id)arg1 relativePath:(id)arg2;

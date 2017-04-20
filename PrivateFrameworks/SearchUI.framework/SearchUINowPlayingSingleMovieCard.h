@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUINowPlayingSingleMovieCard : NUIContainerStackView {
+@interface SearchUINowPlayingSingleMovieCard : SearchUIStackView {
     SFPunchout * _punchout;
 }
 

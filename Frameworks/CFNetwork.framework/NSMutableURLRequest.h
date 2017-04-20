@@ -58,6 +58,7 @@
 - (BOOL)aa_addAuthTokenOrBasicAuthHeaderWithAccount:(id)arg1 preferUsingPassword:(BOOL)arg2;
 - (void)aa_addBasicAuthPasswordWithAccount:(id)arg1;
 - (void)aa_addBasicAuthorizationHeaderWithAccount:(id)arg1 preferUsingPassword:(BOOL)arg2;
+- (void)aa_addContentTypeHeaders:(id)arg1;
 - (void)aa_addDeviceIDHeader;
 - (void)aa_addDeviceInternalDevHeaderIfEnabled;
 - (void)aa_addDeviceProvisioningInfoHeadersWithAccount:(id)arg1;
@@ -65,6 +66,8 @@
 - (void)aa_addDeviceProvisioningInfoHeadersWithDSID:(id)arg1 sendEmptyValues:(BOOL)arg2;
 - (BOOL)aa_addDeviceProvisioningInfoHeadersWithDSIDFromReponse:(id)arg1;
 - (BOOL)aa_addGrandSlamAuthorizationHeaderWithAccount:(id)arg1 grandslamToken:(id)arg2;
+- (BOOL)aa_addGrandslamAuthorizationHeaderWithAltDSID:(id)arg1 grandslamToken:(id)arg2;
+- (BOOL)aa_addGrandslamAuthorizationheaderWithAltDSID:(id)arg1 heartbeatToken:(id)arg2;
 - (void)aa_addLocationSharingAllowedHeader;
 - (void)aa_addLoggedInAppleIDHeaderWithAccount:(id)arg1;
 - (void)aa_addMultiUserDeviceHeaderIfEnabled;
@@ -89,6 +92,7 @@
 - (void)ak_addAuthorizationHeaderWithHeartbeatToken:(id)arg1 forAltDSID:(id)arg2;
 - (void)ak_addAuthorizationHeaderWithIdentityToken:(id)arg1 forAltDSID:(id)arg2;
 - (void)ak_addAuthorizationHeaderWithServiceToken:(id)arg1 forAltDSID:(id)arg2;
+- (void)ak_addClientApp:(id)arg1;
 - (void)ak_addClientInfoHeader;
 - (void)ak_addCompanionClientInfoHeader:(id)arg1;
 - (void)ak_addContextHeaderForServiceType:(int)arg1;
@@ -103,13 +107,14 @@
 - (void)ak_addICSCRecoveryHeaderWithIdentityToken:(id)arg1 forAltDSID:(id)arg2;
 - (void)ak_addInternalBuildHeader;
 - (void)ak_addLocalUserHasAppleIDLoginHeader;
+- (void)ak_addLoggedInServicesHeaderForServices:(id)arg1;
 - (void)ak_addPRKRequestHeader;
 - (void)ak_addPasswordResetKeyHeader:(id)arg1;
 - (void)ak_addProxiedAnisetteHeaders:(id)arg1;
 - (void)ak_addProxiedClientInfoHeader:(id)arg1;
 - (void)ak_addProxiedDeviceUDIDHeader:(id)arg1;
+- (void)ak_addProxyApp:(id)arg1;
 - (void)ak_addShortLivedTokenHeaderWithIdentityToken:(id)arg1 forAltDSID:(id)arg2;
-- (void)ak_addStingrayDisableEligibilityHeader:(BOOL)arg1;
 - (void)ak_setBodyWithParameters:(id)arg1;
 - (void)ak_setJSONBodyWithParameters:(id)arg1;
 
@@ -146,5 +151,10 @@
 - (void)_web_setHTTPContentType:(id)arg1;
 - (void)_web_setHTTPReferrer:(id)arg1;
 - (void)_web_setHTTPUserAgent:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/iAdServices.framework/iAdServices
+
+- (void)setAdvertisingIdentifier:(id)arg1;
+- (void)setMaximumRequestCount:(id)arg1;
 
 @end

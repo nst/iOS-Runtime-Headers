@@ -30,7 +30,7 @@
 - (id)responseDelegate;
 - (void)setResponseDelegate:(id)arg1;
 - (void)setSystemInputManager:(id)arg1;
-- (void)setSystemInputManagerFromKeyboardState:(id)arg1;
+- (void)setSystemInputManagerFromKeyboardState:(id)arg1 devicePasscodeEntry:(BOOL)arg2;
 - (id)systemInputManager;
 - (void)updateClientResponseDelegatesWithDelegate:(id)arg1;
 

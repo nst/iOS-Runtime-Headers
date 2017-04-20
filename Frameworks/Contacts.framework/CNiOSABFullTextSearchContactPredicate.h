@@ -9,7 +9,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (id)_predicateWithAddressBook:(void*)arg1;
+- (id)_predicatesWithAddressBook:(void*)arg1;
 - (struct __CFArray { }*)cn_copyPeopleInAddressBook:(void*)arg1 withSortOrder:(unsigned int)arg2 matchInfos:(id*)arg3 options:(unsigned int)arg4 error:(struct __CFError {}**)arg5;
 - (id)cn_fetchPeopleInAddressBook:(void*)arg1 withSortOrder:(unsigned int)arg2 options:(unsigned int)arg3 progressiveResults:(id /* block */)arg4 completion:(id /* block */)arg5;
 - (BOOL)cn_supportsNativeSorting;

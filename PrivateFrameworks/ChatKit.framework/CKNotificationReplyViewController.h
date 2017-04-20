@@ -60,7 +60,6 @@
 - (BOOL)didSendMessage;
 - (id)entryView;
 - (id)initWithConversation:(id)arg1;
-- (id)inlayViewService;
 - (void)interactionStartedFromPreviewItemControllerInBalloonView:(id)arg1;
 - (void)interactionStoppedFromPreviewItemControllerInBalloonView:(id)arg1;
 - (BOOL)isAudioMessage;

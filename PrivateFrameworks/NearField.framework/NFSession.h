@@ -16,6 +16,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) BOOL didEnd;
 @property (readonly) unsigned int hash;
+@property (readonly) BOOL isActive;
 @property (readonly) unsigned int state;
 @property (readonly) Class superclass;
 
@@ -31,6 +32,7 @@
 - (void)endSession;
 - (void)endSessionWithCompletion:(id /* block */)arg1;
 - (id)init;
+- (BOOL)isActive;
 - (BOOL)isFirstInQueue;
 - (id)proxy;
 - (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;

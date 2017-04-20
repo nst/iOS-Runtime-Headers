@@ -3,7 +3,7 @@
  */
 
 @interface _SFReloadOptionsController : NSObject <RequestDesktopSiteUIProcessListener, SFContentBlockerManagerObserver> {
-    WBUInjectedJavaScriptController * _activityJSController;
+    _SFInjectedJavaScriptController * _activityJSController;
     NSMutableSet * _domainsNeedingDesktopUserAgent;
     BOOL  _hasEnabledContentBlockers;
     _WKRemoteObjectInterface * _requestDesktopSiteUIProcessPlugInListenerInterface;
@@ -11,7 +11,7 @@
     WKWebView * _webView;
 }
 
-@property (nonatomic, readonly) WBUInjectedJavaScriptController *activityJSController;
+@property (nonatomic, readonly) _SFInjectedJavaScriptController *activityJSController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL hasEnabledContentBlockers;

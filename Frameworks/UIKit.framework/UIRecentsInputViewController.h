@@ -3,10 +3,14 @@
  */
 
 @interface UIRecentsInputViewController : UITableViewController {
-    NSString * _addNewString;
+    BOOL  _canManageList;
     NSString * _clearAllString;
     int  _containingEffectStyle;
-    UILabel * _headerLabel;
+    UIView * _customHeaderView;
+    NSString * _enterNewString;
+    UIView * _headerContainerView;
+    UIViewController * _headerContainerViewController;
+    UIView * _headerView;
     NSLayoutConstraint * _heightConstraint;
     NSString * _previouslyUsedString;
     <UIRecentsInputViewControllerDelegate> * _recentInputDelegate;
@@ -14,10 +18,14 @@
     NSLayoutConstraint * _widthConstraint;
 }
 
-@property (nonatomic, retain) NSString *addNewString;
+@property (nonatomic) BOOL canManageList;
 @property (nonatomic, retain) NSString *clearAllString;
 @property (nonatomic) int containingEffectStyle;
-@property (nonatomic, retain) UILabel *headerLabel;
+@property (nonatomic, retain) UIView *customHeaderView;
+@property (nonatomic, retain) NSString *enterNewString;
+@property (nonatomic, retain) UIView *headerContainerView;
+@property (nonatomic, retain) UIViewController *headerContainerViewController;
+@property (nonatomic, retain) UIView *headerView;
 @property (nonatomic, retain) NSLayoutConstraint *heightConstraint;
 @property (nonatomic, retain) NSString *previouslyUsedString;
 @property (nonatomic) <UIRecentsInputViewControllerDelegate> *recentInputDelegate;
@@ -25,15 +33,21 @@
 @property (nonatomic, retain) NSLayoutConstraint *widthConstraint;
 
 - (void).cxx_destruct;
+- (void)_delete:(id)arg1;
+- (void)_overrideTraitCollectionForHeaderViewController;
 - (id)_uiktest_FocusedCellLabel;
 - (id)_uiktest_UnfocusedCellBackgroundView;
 - (id)_uiktest_UnfocusedCellLabel;
-- (id)addNewString;
+- (BOOL)canManageList;
 - (id)clearAllString;
 - (int)containingEffectStyle;
+- (id)customHeaderView;
 - (void)didSelectButtonAtIndexPath:(id)arg1;
 - (void)ensureConstraints;
-- (id)headerLabel;
+- (id)enterNewString;
+- (id)headerContainerView;
+- (id)headerContainerViewController;
+- (id)headerView;
 - (id)heightConstraint;
 - (id)indexPathForPreferredFocusedViewInTableView:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
@@ -42,10 +56,14 @@
 - (id)recentInputDelegate;
 - (id)recentInputs;
 - (void)scrollViewDidChangeContentSize:(id)arg1;
-- (void)setAddNewString:(id)arg1;
+- (void)setCanManageList:(BOOL)arg1;
 - (void)setClearAllString:(id)arg1;
 - (void)setContainingEffectStyle:(int)arg1;
-- (void)setHeaderLabel:(id)arg1;
+- (void)setCustomHeaderView:(id)arg1;
+- (void)setEnterNewString:(id)arg1;
+- (void)setHeaderContainerView:(id)arg1;
+- (void)setHeaderContainerViewController:(id)arg1;
+- (void)setHeaderView:(id)arg1;
 - (void)setHeightConstraint:(id)arg1;
 - (void)setPreviouslyUsedString:(id)arg1;
 - (void)setRecentInputDelegate:(id)arg1;
@@ -59,9 +77,10 @@
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
-- (void)traitCollectionDidChange:(id)arg1;
 - (void)updateTableViewWidth;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)arg1;
 - (id)widthConstraint;
 
 @end

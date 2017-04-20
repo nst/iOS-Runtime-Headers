@@ -6,7 +6,6 @@
     BOOL  _configured;
     RUIReadableContentContainer * _containerizedFooterView;
     RUIReadableContentContainer * _containerizedHeaderView;
-    <RUITableViewSectionDelegate> * _delegate;
     RUIDetailHeaderElement * _detailHeader;
     int  _disclosureLimit;
     NSNumber * _drawsTopSeparator;
@@ -19,12 +18,12 @@
     NSMutableArray * _rows;
     RUITableViewRow * _showAllRow;
     RUISubHeaderElement * _subHeader;
+    RUITableView * _tableElement;
 }
 
 @property (nonatomic) BOOL configured;
 @property (nonatomic, retain) UIView *containerizedFooterView;
 @property (nonatomic, retain) UIView *containerizedHeaderView;
-@property (nonatomic) <RUITableViewSectionDelegate> *delegate;
 @property (nonatomic, retain) RUIDetailHeaderElement *detailHeader;
 @property (nonatomic) BOOL drawTopSeparator;
 @property (nonatomic, retain) RUIElement *footer;
@@ -36,6 +35,7 @@
 @property (nonatomic, readonly) NSArray *rows;
 @property (nonatomic, retain) RUITableViewRow *showAllRow;
 @property (nonatomic, retain) RUISubHeaderElement *subHeader;
+@property (nonatomic) RUITableView *tableElement;
 
 - (void).cxx_destruct;
 - (Class)_customFooterClass;
@@ -45,7 +45,6 @@
 - (BOOL)configured;
 - (id)containerizedFooterView;
 - (id)containerizedHeaderView;
-- (id)delegate;
 - (id)detailHeader;
 - (BOOL)drawTopSeparator;
 - (id)footer;
@@ -59,7 +58,7 @@
 - (float)headerHeight;
 - (id)headerView;
 - (void)headerView:(id)arg1 activatedLinkWithURL:(id)arg2;
-- (id)init;
+- (id)initWithAttributes:(id)arg1 parent:(id)arg2;
 - (void)insertRow:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)populatePostbackDictionary:(id)arg1;
 - (void)removeRowAtIndex:(unsigned int)arg1;
@@ -68,7 +67,6 @@
 - (void)setConfigured:(BOOL)arg1;
 - (void)setContainerizedFooterView:(id)arg1;
 - (void)setContainerizedHeaderView:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (void)setDetailHeader:(id)arg1;
 - (void)setDrawTopSeparator:(BOOL)arg1;
 - (void)setFooter:(id)arg1;
@@ -82,10 +80,14 @@
 - (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setShowAllRow:(id)arg1;
 - (void)setSubHeader:(id)arg1;
+- (void)setTableElement:(id)arg1;
 - (id)showAllRow;
-- (id)sourceURL;
+- (id)staticFunctions;
+- (id)staticValues;
+- (id)subElementWithID:(id)arg1;
 - (id)subElementsWithName:(id)arg1;
 - (id)subHeader;
+- (id)tableElement;
 - (void)tappedShowAllRowWithTable:(id)arg1;
 
 @end

@@ -10,6 +10,7 @@
     BOOL  _fetchSubresources;
     LPStatisticsTimingToken * _fetchTimingToken;
     BOOL  _fetchingFromExistingWebView;
+    BOOL  _hasStartedFetching;
     unsigned int  _loggingID;
     LPLinkMetadata * _metadata;
     NSMutableArray * _pendingResolvers;
@@ -34,7 +35,6 @@
 + (id)_copyDefaultWebViewConfiguration;
 + (id)_defaultUserAgent;
 + (id)_incompleteMetadataRequests;
-+ (id)_metadataExtractorScript;
 + (id)requestMetadataForURL:(id)arg1 completionHandler:(id /* block */)arg2;
 + (id)requestMetadataForWebView:(id)arg1 completionHandler:(id /* block */)arg2;
 

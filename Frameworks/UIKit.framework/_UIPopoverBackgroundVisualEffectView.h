@@ -6,7 +6,6 @@
 
 - (BOOL)_shouldRegenerateMasksForNewMaskView:(id)arg1;
 - (void)_updateEffectViewMasks;
-- (void)replicateMaskViewIfNecessary:(id)arg1 forEffectView:(id)arg2;
 - (void)updateMasks;
 
 @end

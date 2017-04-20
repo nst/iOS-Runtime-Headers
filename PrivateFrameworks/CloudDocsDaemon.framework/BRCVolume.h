@@ -4,6 +4,9 @@
 
 @interface BRCVolume : NSObject {
     int  _deviceID;
+    BOOL  _hasCloning;
+    BOOL  _hasRenameExcl;
+    BOOL  _hasRenameSwap;
     BOOL  _isCaseSensitive;
     BOOL  _isIgnoringOwnership;
     struct statfs { 
@@ -31,6 +34,9 @@
 @property (nonatomic, readonly) int deviceID;
 @property (nonatomic, readonly) NSNumber *freeSize;
 @property (nonatomic, readonly) NSString *fsTypeName;
+@property (nonatomic, readonly) BOOL hasCloning;
+@property (nonatomic, readonly) BOOL hasRenameExcl;
+@property (nonatomic, readonly) BOOL hasRenameSwap;
 @property (nonatomic, readonly) BOOL isCaseSensitive;
 @property (nonatomic, readonly) BOOL isIgnoringOwnership;
 @property (nonatomic, readonly) NSString *mountPath;
@@ -40,6 +46,9 @@
 - (int)deviceID;
 - (id)freeSize;
 - (id)fsTypeName;
+- (BOOL)hasCloning;
+- (BOOL)hasRenameExcl;
+- (BOOL)hasRenameSwap;
 - (BOOL)isCaseSensitive;
 - (BOOL)isIgnoringOwnership;
 - (id)mountPath;

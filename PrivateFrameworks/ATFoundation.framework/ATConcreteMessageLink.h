@@ -49,7 +49,7 @@
 - (void)_checkMessageTimeouts;
 - (void)_invokeCompletionHandlerForResponseID:(unsigned int)arg1 withError:(id)arg2;
 - (unsigned int)_nextRequestID;
-- (void)_prepareStreamReaderForMessage:(id)arg1;
+- (void)_prepareStreamReaderForMessage:(id)arg1 withProgress:(id /* block */)arg2;
 - (void)_processIncomingDataRequest:(id)arg1;
 - (void)_processIncomingDataResponse:(id)arg1;
 - (void)_processIncomingMessage:(id)arg1;
@@ -81,6 +81,7 @@
 - (void)sendPartialResponse:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)sendRequest:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)sendResponse:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)sendResponse:(id)arg1 withProgress:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (void)setEndpointType:(int)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setInitialized:(BOOL)arg1;

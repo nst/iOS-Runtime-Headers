@@ -56,6 +56,7 @@
     UITextFieldLabel * _placeholderLabel;
     UITextFieldLabel * _prefixLabel;
     float  _progress;
+    UIView * _recentsAccessoryView;
     UIView * _rightView;
     int  _rightViewMode;
     struct CGSize { 
@@ -143,6 +144,7 @@
 @property (nonatomic) BOOL deferBecomingResponder;
 @property (nonatomic) <UITextFieldDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (getter=isDevicePasscodeEntry, nonatomic) BOOL devicePasscodeEntry;
 @property (nonatomic) BOOL disableInputBars;
 @property (nonatomic) BOOL disablePrediction;
 @property (nonatomic, retain) UIImage *disabledBackground;
@@ -180,6 +182,7 @@
 @property (nonatomic) float minimumFontSize;
 @property (nonatomic, copy) NSString *placeholder;
 @property (nonatomic, copy) NSString *recentInputIdentifier;
+@property (retain) UIView *recentsAccessoryView;
 @property (nonatomic, copy) NSString *responseContext;
 @property (nonatomic) BOOL returnKeyGoesToNextResponder;
 @property (nonatomic) int returnKeyType;
@@ -292,6 +295,7 @@
 - (BOOL)_isPasscodeStyle;
 - (BOOL)_isShowingPlaceholder;
 - (BOOL)_isShowingPrefix;
+- (BOOL)_labelShouldUseVibrancy;
 - (void)_layoutContent;
 - (void)_layoutLabels;
 - (struct CGSize { float x1; float x2; })_leftViewOffset;
@@ -567,6 +571,7 @@
 - (void)pressesChanged:(id)arg1 withEvent:(id)arg2;
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
 - (id)rangeWithTextAlternatives:(id*)arg1 atPosition:(id)arg2;
+- (id)recentsAccessoryView;
 - (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(BOOL)arg2;
 - (void)replace:(id)arg1;
 - (void)replaceRange:(id)arg1 withText:(id)arg2;
@@ -644,6 +649,7 @@
 - (void)setPaddingTop:(float)arg1 paddingLeft:(float)arg2;
 - (void)setPlaceholder:(id)arg1;
 - (void)setProgress:(float)arg1;
+- (void)setRecentsAccessoryView:(id)arg1;
 - (void)setRightView:(id)arg1;
 - (void)setRightViewMode:(int)arg1;
 - (void)setSecureTextEntry:(BOOL)arg1;

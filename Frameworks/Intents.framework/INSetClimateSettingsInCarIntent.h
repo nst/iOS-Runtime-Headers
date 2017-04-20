@@ -27,6 +27,7 @@
 - (int)airCirculationMode;
 - (int)climateZone;
 - (id)description;
+- (id)domain;
 - (id)enableAirConditioner;
 - (id)enableAutoMode;
 - (id)enableClimateControl;
@@ -34,19 +35,24 @@
 - (id)fanSpeedIndex;
 - (id)fanSpeedPercentage;
 - (id)initWithEnableFan:(id)arg1 enableAirConditioner:(id)arg2 enableClimateControl:(id)arg3 enableAutoMode:(id)arg4 airCirculationMode:(int)arg5 fanSpeedIndex:(id)arg6 fanSpeedPercentage:(id)arg7 relativeFanSpeedSetting:(int)arg8 temperature:(id)arg9 relativeTemperatureSetting:(int)arg10 climateZone:(int)arg11;
+- (id)parametersByName;
 - (int)relativeFanSpeedSetting;
 - (int)relativeTemperatureSetting;
 - (void)setAirCirculationMode:(int)arg1;
 - (void)setClimateZone:(int)arg1;
+- (void)setDomain:(id)arg1;
 - (void)setEnableAirConditioner:(id)arg1;
 - (void)setEnableAutoMode:(id)arg1;
 - (void)setEnableClimateControl:(id)arg1;
 - (void)setEnableFan:(id)arg1;
 - (void)setFanSpeedIndex:(id)arg1;
 - (void)setFanSpeedPercentage:(id)arg1;
+- (void)setParametersByName:(id)arg1;
 - (void)setRelativeFanSpeedSetting:(int)arg1;
 - (void)setRelativeTemperatureSetting:(int)arg1;
 - (void)setTemperature:(id)arg1;
+- (void)setVerb:(id)arg1;
 - (id)temperature;
+- (id)verb;
 
 @end

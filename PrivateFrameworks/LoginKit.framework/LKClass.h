@@ -10,19 +10,19 @@
     NSString * _className;
     NSMutableDictionary * _givenNameSimilarityDictionary;
     NSArray * _instructors;
-    NSString * _sortDescriptor;
     NSArray * _students;
 }
 
-@property (retain) NSString *classDescription;
-@property (retain) NSNumber *classID;
-@property (retain) NSString *classImageURL;
-@property (retain) NSString *className;
+@property (nonatomic, retain) NSMutableDictionary *avatarNameSimilarityDictionary;
+@property (nonatomic, retain) NSString *classDescription;
+@property (nonatomic, retain) NSNumber *classID;
+@property (nonatomic, retain) NSString *classImageURL;
+@property (nonatomic, retain) NSString *className;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSMutableDictionary *givenNameSimilarityDictionary;
 @property (readonly) unsigned int hash;
-@property (retain) NSArray *instructors;
-@property (retain) NSString *sortDescriptor;
+@property (nonatomic, retain) NSArray *instructors;
 @property (nonatomic, copy) NSArray *students;
 @property (readonly) Class superclass;
 
@@ -30,11 +30,13 @@
 
 - (void).cxx_destruct;
 - (void)_updateNamingSimilarityInfoForUser:(id)arg1;
+- (id)avatarNameSimilarityDictionary;
 - (id)classDescription;
 - (id)classID;
 - (id)classImageURL;
 - (id)className;
 - (void)encodeWithCoder:(id)arg1;
+- (id)givenNameSimilarityDictionary;
 - (unsigned int)hash;
 - (id)initWithClassDictionary:(id)arg1 usersByUserIdentifier:(id)arg2;
 - (id)initWithCoder:(id)arg1;
@@ -42,14 +44,14 @@
 - (id)instructors;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToLKClass:(id)arg1;
+- (void)setAvatarNameSimilarityDictionary:(id)arg1;
 - (void)setClassDescription:(id)arg1;
 - (void)setClassID:(id)arg1;
 - (void)setClassImageURL:(id)arg1;
 - (void)setClassName:(id)arg1;
+- (void)setGivenNameSimilarityDictionary:(id)arg1;
 - (void)setInstructors:(id)arg1;
-- (void)setSortDescriptor:(id)arg1;
 - (void)setStudents:(id)arg1;
-- (id)sortDescriptor;
 - (id)sortUsers:(id)arg1;
 - (id)students;
 

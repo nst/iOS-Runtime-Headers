@@ -5,15 +5,18 @@
 
 @optional
 
-- (void)connection:(CATRemoteConnection *)arg1 didFailToSecureUsingClientIdentity:(struct __SecIdentity { }*)arg2 trustedCertificates:(NSArray *)arg3;
-- (void)connection:(CATRemoteConnection *)arg1 didFailToSecureUsingServerIdentity:(struct __SecIdentity { }*)arg2 trustedCertificates:(NSArray *)arg3;
 - (void)connection:(CATRemoteConnection *)arg1 didFailToSendData:(NSData *)arg2 userInfo:(id)arg3 error:(NSError *)arg4;
+- (void)connection:(CATRemoteConnection *)arg1 didFailToSendDataWithStream:(NSInputStream *)arg2 userInfo:(id)arg3 error:(NSError *)arg4;
 - (void)connection:(CATRemoteConnection *)arg1 didInterruptWithError:(NSError *)arg2;
 - (void)connection:(CATRemoteConnection *)arg1 didReceiveData:(NSData *)arg2;
-- (void)connection:(CATRemoteConnection *)arg1 didSecureUsingClientIdentity:(struct __SecIdentity { }*)arg2 trustedCertificates:(NSArray *)arg3;
-- (void)connection:(CATRemoteConnection *)arg1 didSecureUsingServerIdentity:(struct __SecIdentity { }*)arg2 trustedCertificates:(NSArray *)arg3;
+- (void)connection:(CATRemoteConnection *)arg1 didReceiveDataRequestWithURL:(NSURL *)arg2;
+- (void)connection:(CATRemoteConnection *)arg1 didReceiveStreamData:(NSData *)arg2 moreComing:(BOOL)arg3;
 - (void)connection:(CATRemoteConnection *)arg1 didSendData:(NSData *)arg2 userInfo:(id)arg3;
+- (void)connection:(CATRemoteConnection *)arg1 didSendDataWithStream:(NSInputStream *)arg2 userInfo:(id)arg3;
+- (void)connection:(CATRemoteConnection *)arg1 encounteredTrustDecisionWhileTryingToSecure:(CATRemoteConnectionTrustDecision *)arg2;
 - (void)connectionDidClose:(CATRemoteConnection *)arg1;
 - (void)connectionDidOpen:(CATRemoteConnection *)arg1;
+- (void)connectionDidSecure:(CATRemoteConnection *)arg1;
+- (void)connectionWillSecure:(CATRemoteConnection *)arg1;
 
 @end

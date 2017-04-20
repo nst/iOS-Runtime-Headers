@@ -24,9 +24,12 @@
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic) int valueType;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 + (id)options;
 
 - (void).cxx_destruct;
+- (int)StringAsValueType:(id)arg1;
 - (BOOL)booleanValue;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -49,6 +52,13 @@
 - (id)stringValue;
 - (id)unknownFields;
 - (int)valueType;
+- (id)valueTypeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

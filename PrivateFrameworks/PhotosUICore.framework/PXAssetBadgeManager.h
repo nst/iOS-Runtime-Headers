@@ -4,7 +4,9 @@
 
 @interface PXAssetBadgeManager : NSObject
 
-- (unsigned int)badgeTypesForAsset:(id)arg1;
-- (unsigned int)badgeTypesForCollection:(id)arg1;
++ (id)defaultManager;
+
+- (struct PXAssetBadgeInfo { unsigned int x1; double x2; int x3; })badgeInfoForAsset:(id)arg1 inCollection:(id)arg2 options:(unsigned int)arg3;
+- (struct PXAssetBadgeInfo { unsigned int x1; double x2; int x3; })badgeInfoForCollection:(id)arg1 options:(unsigned int)arg2;
 
 @end

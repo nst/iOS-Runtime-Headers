@@ -3,6 +3,7 @@
  */
 
 @interface CKDMMCSItemGroup : NSObject {
+    NSData * _authPutRequest;
     BOOL  _complete;
     NSError * _error;
     NSMutableArray * _items;
@@ -10,6 +11,7 @@
     NSArray * _tuple;
 }
 
+@property (nonatomic, retain) NSData *authPutRequest;
 @property (nonatomic) BOOL complete;
 @property (nonatomic, readonly) NSURL *contentBaseURL;
 @property (nonatomic, retain) NSError *error;
@@ -18,13 +20,14 @@
 @property (nonatomic, readonly) NSString *owner;
 @property (nonatomic, readonly) NSString *requestor;
 @property (nonatomic, retain) NSArray *tuple;
-@property (nonatomic, readonly) BOOL useAuthRequests;
+@property (nonatomic, readonly) BOOL usePerItemAuthRequests;
 
 + (id)tupleForItem:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
 - (void)addItem:(id)arg1;
+- (id)authPutRequest;
 - (BOOL)complete;
 - (id)contentBaseURL;
 - (id)description;
@@ -34,11 +37,12 @@
 - (id)metrics;
 - (id)owner;
 - (id)requestor;
+- (void)setAuthPutRequest:(id)arg1;
 - (void)setComplete:(BOOL)arg1;
 - (void)setError:(id)arg1;
 - (void)setMetrics:(id)arg1;
 - (void)setTuple:(id)arg1;
 - (id)tuple;
-- (BOOL)useAuthRequests;
+- (BOOL)usePerItemAuthRequests;
 
 @end

@@ -3,62 +3,49 @@
  */
 
 @interface PXAutoScroller : NSObject {
-    float  _autoScrollerInset;
-    float  _autoScrollerMaximumSpeed;
-    double  _autoScrollerTimerInterval;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    }  __autoscrollDirection;
+    double  __lastUpdateTimestamp;
+    float  __margin;
+    float  __maximumSpeed;
+    BOOL  __repeating;
     <PXAutoScrollerDelegate> * _delegate;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    }  _distanceFromCenterFrame;
-    UIScrollView * _scrollView;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    }  _speed;
-    NSTimer * _timer;
-    int  _updateTrigger;
+    struct { 
+        BOOL didAutoscrollWithTimestamp; 
+    }  _delegateRespondsTo;
+    struct NSObject { Class x1; } * _scrollView;
 }
 
-@property (nonatomic) float autoScrollerInset;
-@property (nonatomic) float autoScrollerMaximumSpeed;
-@property (nonatomic) double autoScrollerTimerInterval;
+@property (setter=_setAutoscrollDirection:, nonatomic) struct CGPoint { float x1; float x2; } _autoscrollDirection;
+@property (setter=_setLastUpdateTimestamp:, nonatomic) double _lastUpdateTimestamp;
+@property (nonatomic, readonly) float _margin;
+@property (nonatomic, readonly) float _maximumSpeed;
+@property (getter=_isRepeating, setter=_setRepeating:, nonatomic) BOOL _repeating;
 @property (nonatomic) <PXAutoScrollerDelegate> *delegate;
-@property (nonatomic) struct CGPoint { float x1; float x2; } distanceFromCenterFrame;
-@property (nonatomic, retain) UIScrollView *scrollView;
-@property (nonatomic) struct CGPoint { float x1; float x2; } speed;
-@property (nonatomic, retain) NSTimer *timer;
-@property (nonatomic) int updateTrigger;
-
-+ (void)_scrollTestFire;
-+ (void)performScrollTest:(id)arg1 iterations:(unsigned int)arg2 length:(float)arg3 delta:(float)arg4 vertical:(BOOL)arg5;
+@property (nonatomic, readonly) NSObject<PXAnonymousScrollView> *scrollView;
 
 - (void).cxx_destruct;
-- (void)_handlerTimer:(id)arg1;
-- (void)_startTimer;
-- (void)_stopTimer;
-- (float)autoScrollerInset;
-- (float)autoScrollerMaximumSpeed;
-- (double)autoScrollerTimerInterval;
-- (void)dealloc;
+- (struct CGPoint { float x1; float x2; })_autoscrollDirection;
+- (BOOL)_isRepeating;
+- (double)_lastUpdateTimestamp;
+- (float)_margin;
+- (float)_maximumSpeed;
+- (void)_setAutoscrollDirection:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_setLastUpdateTimestamp:(double)arg1;
+- (void)_setRepeating:(BOOL)arg1;
+- (BOOL)autoscrollWithOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (id)delegate;
-- (struct CGPoint { float x1; float x2; })distanceFromCenterFrame;
-- (id)initWithTargetScrollView:(id)arg1;
-- (id)scrollView;
-- (void)setAutoScrollerInset:(float)arg1;
-- (void)setAutoScrollerMaximumSpeed:(float)arg1;
-- (void)setAutoScrollerTimerInterval:(double)arg1;
+- (id)init;
+- (id)initWithTargetScrollView:(struct NSObject { Class x1; }*)arg1;
+- (struct NSObject { Class x1; }*)scrollView;
 - (void)setDelegate:(id)arg1;
-- (void)setDistanceFromCenterFrame:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setScrollView:(id)arg1;
-- (void)setSpeed:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setTimer:(id)arg1;
-- (void)setUpdateTrigger:(int)arg1;
-- (struct CGPoint { float x1; float x2; })speed;
-- (void)stopAndInvalidate;
-- (id)timer;
-- (int)updateTrigger;
-- (void)updateWithGestureRecognizer:(id)arg1;
-- (void)updateWithPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)startRepeating;
+- (void)stop;
+- (void)stopRepeating;
+- (void)updateWithTimestamp:(double)arg1;
+- (void)updateWithUserInteractionLocation:(struct CGPoint { float x1; float x2; })arg1 inCoordinateSpace:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRectForScrollView:(struct NSObject { Class x1; }*)arg1;
 
 @end

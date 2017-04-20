@@ -6,11 +6,15 @@
     BOOL  _concatenatingFormatStringsSupported;
     struct { 
         unsigned int concatenatingFormatStringsSupported : 1; 
+        unsigned int timestampFormatPatternSupported : 1; 
     }  _has;
+    BOOL  _timestampFormatPatternSupported;
 }
 
 @property (nonatomic) BOOL concatenatingFormatStringsSupported;
 @property (nonatomic) BOOL hasConcatenatingFormatStringsSupported;
+@property (nonatomic) BOOL hasTimestampFormatPatternSupported;
+@property (nonatomic) BOOL timestampFormatPatternSupported;
 
 - (BOOL)concatenatingFormatStringsSupported;
 - (void)copyTo:(id)arg1;
@@ -18,12 +22,16 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasConcatenatingFormatStringsSupported;
+- (BOOL)hasTimestampFormatPatternSupported;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setConcatenatingFormatStringsSupported:(BOOL)arg1;
 - (void)setHasConcatenatingFormatStringsSupported:(BOOL)arg1;
+- (void)setHasTimestampFormatPatternSupported:(BOOL)arg1;
+- (void)setTimestampFormatPatternSupported:(BOOL)arg1;
+- (BOOL)timestampFormatPatternSupported;
 - (void)writeTo:(id)arg1;
 
 @end

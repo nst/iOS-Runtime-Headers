@@ -20,6 +20,7 @@
 - (void)didEngageSection:(id)arg1;
 - (void)didEngageSuggestion:(id)arg1;
 - (void)didErrorOccur:(id)arg1;
+- (void)didGradeResultRelevancy:(id)arg1;
 - (void)didRankSections:(id)arg1;
 - (void)didReceiveResultsAfterTimeout:(id)arg1;
 - (void)didStartSearch:(id)arg1;

@@ -12,6 +12,8 @@
 - (oneway void)audioSessionDidEndInterruption:(BOOL)arg1;
 - (oneway void)audioSessionIDChanged:(unsigned int)arg1;
 - (oneway void)cacheImage:(INImage *)arg1;
+- (oneway void)extensionRequestFinishedForApplication:(NSString *)arg1 error:(NSError *)arg2;
+- (oneway void)extensionRequestWillStartForApplication:(NSString *)arg1;
 - (oneway void)getBulletinContext:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, void*
 - (oneway void)invalidateCurrentUserActivity;
 - (oneway void)musicWasDetected;
@@ -39,5 +41,6 @@
 - (oneway void)speechRecordingStartpointDetected;
 - (oneway void)speechRecordingWillBeginRecognitionUpdateForTask:(NSString *)arg1;
 - (oneway void)speechRecordingWillBeginWithLevelsSharedMem:(AFXPCWrapper *)arg1;
+- (oneway void)startUIRequestWithText:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
 
 @end

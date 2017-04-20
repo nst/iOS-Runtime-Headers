@@ -14,6 +14,7 @@
     FCResourceRecordSource * _resourceRecordSource;
     FCTagRecordSource * _tagRecordSource;
     FCWebArchiveSource * _webArchiveSource;
+    FCWidgetSectionConfigRecordSource * _widgetSectionConfigRecordSource;
 }
 
 @property (nonatomic, retain) FCArticleListRecordSource *articleListRecordSource;
@@ -31,6 +32,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) FCTagRecordSource *tagRecordSource;
 @property (nonatomic, retain) FCWebArchiveSource *webArchiveSource;
+@property (nonatomic, retain) FCWidgetSectionConfigRecordSource *widgetSectionConfigRecordSource;
 
 - (void).cxx_destruct;
 - (id)articleListRecordSource;
@@ -55,7 +57,9 @@
 - (void)setResourceRecordSource:(id)arg1;
 - (void)setTagRecordSource:(id)arg1;
 - (void)setWebArchiveSource:(id)arg1;
+- (void)setWidgetSectionConfigRecordSource:(id)arg1;
 - (id)tagRecordSource;
 - (id)webArchiveSource;
+- (id)widgetSectionConfigRecordSource;
 
 @end

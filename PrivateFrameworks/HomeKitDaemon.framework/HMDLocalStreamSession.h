@@ -23,7 +23,7 @@
 - (void).cxx_destruct;
 - (BOOL)containsState:(int)arg1;
 - (void)dealloc;
-- (id)initWithSessionID:(id)arg1 reachabilityPath:(unsigned int)arg2 streamSender:(id)arg3 remoteCapabilities:(id)arg4 localNetworkConfig:(id)arg5;
+- (id)initWithSessionID:(id)arg1 reachabilityPath:(unsigned int)arg2 streamSender:(id)arg3 remoteCapabilities:(id)arg4 localNetworkConfig:(id)arg5 streamPreference:(id)arg6;
 - (id)localNetworkConfig;
 - (id)logIdentifier;
 - (id)parameterSelection;

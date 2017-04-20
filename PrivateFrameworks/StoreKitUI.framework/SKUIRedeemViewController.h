@@ -14,6 +14,7 @@
     NSOperationQueue * _operationQueue;
     SKUIRedeemPreflightOperation * _preflightOperation;
     SKUIRedeemConfiguration * _redeemConfiguration;
+    BOOL  _shouldPerformInitialOperationOnAppear;
 }
 
 @property (nonatomic) BOOL attempsAutomaticRedeem;
@@ -25,7 +26,10 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSString *initialCode;
 @property (nonatomic, retain) NSOperationQueue *operationQueue;
+@property (nonatomic) BOOL shouldPerformInitialOperationOnAppear;
 @property (readonly) Class superclass;
+
++ (BOOL)redeemRequiresNationalId:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_attemptAutomaticRedeemWithMetadata:(id)arg1;
@@ -37,7 +41,6 @@
 - (void)_loadInputViewController;
 - (id)_newInputViewController;
 - (void)_performInitialRedeemOperation;
-- (BOOL)_redeemRequiresNationalId;
 - (void)_showInputViewController;
 - (void)_showNationalIdLoadingPage;
 - (void)_showNationalIdVerificationPage;
@@ -58,6 +61,8 @@
 - (void)setClientContext:(id)arg1;
 - (void)setInitialCode:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
+- (void)setShouldPerformInitialOperationOnAppear:(BOOL)arg1;
+- (BOOL)shouldPerformInitialOperationOnAppear;
 - (unsigned int)supportedInterfaceOrientations;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;

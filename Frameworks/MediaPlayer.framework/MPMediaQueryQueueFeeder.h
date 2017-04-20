@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPMediaQueryQueueFeeder : MPQueueFeeder <MPAVRoutingControllerDelegate, MPShuffleControllerDataSource> {
+@interface MPMediaQueryQueueFeeder : MPQueueFeeder <MPAVRoutingControllerDelegate, MPRTCReportingItemSessionContaining, MPShuffleControllerDataSource> {
     MPMediaItem * _cloudDialogAllowedMediaItem;
     MPMediaLibraryConnectionAssertion * _connectionAssertion;
     unsigned int  _currentInvalidationRevision;
@@ -31,6 +31,8 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) MPMediaQuery *query;
+@property (nonatomic, readonly, copy) NSString *rtcReportingPlayQueueSourceIdentifier;
+@property (nonatomic, readonly, copy) NSDictionary *rtcReportingSessionAdditionalUserInfo;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
@@ -80,12 +82,14 @@
 - (void)player:(id)arg1 currentItemWillChangeFromItem:(id)arg2;
 - (id)query;
 - (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)rtcReportingPlayQueueSourceIdentifier;
 - (void)setCloudDialogAllowedMediaItem:(id)arg1;
 - (void)setQuery:(id)arg1;
 - (BOOL)shouldReuseQueueFeederForPlaybackContext:(id)arg1;
 - (unsigned int)shuffleController:(id)arg1 countOfItemIdentifier:(id)arg2 withMaximumCount:(unsigned int)arg3;
 - (id)shuffleController:(id)arg1 identifierForItemAtIndex:(unsigned int)arg2;
 - (void)shuffleItemsWithAnchor:(unsigned int*)arg1;
+- (BOOL)supportsAddToQueue;
 - (unsigned int)unshuffledIndexOfAVItem:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI

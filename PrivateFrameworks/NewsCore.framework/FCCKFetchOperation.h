@@ -6,6 +6,8 @@
     FCCKDatabase * _database;
     NSArray * _desiredKeys;
     id /* block */  _fetchRecordsCompletionBlock;
+    BOOL  _getPermanentAssetURLs;
+    int  _networkEventType;
     id /* block */  _perRecordCompletionBlock;
     NSArray * _recordIDs;
     NSDictionary * _recordIDsToETags;
@@ -16,6 +18,8 @@
 @property (nonatomic, retain) FCCKDatabase *database;
 @property (nonatomic, copy) NSArray *desiredKeys;
 @property (nonatomic, copy) id /* block */ fetchRecordsCompletionBlock;
+@property (nonatomic) BOOL getPermanentAssetURLs;
+@property (nonatomic) int networkEventType;
 @property (nonatomic, copy) id /* block */ perRecordCompletionBlock;
 @property (nonatomic, copy) NSArray *recordIDs;
 @property (nonatomic, retain) NSDictionary *recordIDsToETags;
@@ -27,7 +31,9 @@
 - (id)database;
 - (id)desiredKeys;
 - (id /* block */)fetchRecordsCompletionBlock;
+- (BOOL)getPermanentAssetURLs;
 - (id)init;
+- (int)networkEventType;
 - (void)operationWillFinishWithError:(id)arg1;
 - (id /* block */)perRecordCompletionBlock;
 - (void)performOperation;
@@ -38,6 +44,8 @@
 - (void)setDatabase:(id)arg1;
 - (void)setDesiredKeys:(id)arg1;
 - (void)setFetchRecordsCompletionBlock:(id /* block */)arg1;
+- (void)setGetPermanentAssetURLs:(BOOL)arg1;
+- (void)setNetworkEventType:(int)arg1;
 - (void)setPerRecordCompletionBlock:(id /* block */)arg1;
 - (void)setRecordIDs:(id)arg1;
 - (void)setRecordIDsToETags:(id)arg1;

@@ -8,6 +8,8 @@
 
 @property (nonatomic) BOOL activated;
 
++ (BOOL)supportsSecureCoding;
+
 - (BOOL)activated;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

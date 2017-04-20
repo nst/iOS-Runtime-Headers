@@ -8,6 +8,7 @@
 }
 
 @property (copy) NSDictionary *_DuetActivityProperties;
+@property (copy) NSData *_TCPConnectionMetadata;
 @property unsigned long _allowedProtocolTypes;
 @property BOOL _allowsCellular;
 @property (nonatomic, copy) NSDictionary *_backgroundTaskTimingData;
@@ -37,6 +38,7 @@
 @property (nonatomic, retain) struct __PerformanceTiming { }*_performanceTiming;
 @property unsigned int _powerAssertion;
 @property BOOL _preventsIdleSystemSleep;
+@property BOOL _preventsSystemHTTPProxyAuthentication;
 @property long long _priority;
 @property long long _priorityValue;
 @property BOOL _prohibitAuthUI;

@@ -11,6 +11,7 @@
     BOOL  _onClientSide;
     <AXRemoteElementChildrenDelegate> * _remoteChildrenDelegate;
     int  _remotePid;
+    NSObject<OS_dispatch_queue> * _remoteQueue;
     NSString * _uuid;
 }
 
@@ -21,6 +22,7 @@
 @property (nonatomic) BOOL onClientSide;
 @property (nonatomic) <AXRemoteElementChildrenDelegate> *remoteChildrenDelegate;
 @property (nonatomic) int remotePid;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *remoteQueue;
 @property (nonatomic, retain) NSString *uuid;
 @property (nonatomic, readonly) unsigned long long uuidHash;
 
@@ -54,6 +56,7 @@
 - (void)platformCleanup;
 - (id)remoteChildrenDelegate;
 - (int)remotePid;
+- (id)remoteQueue;
 - (void)setAccessibilityContainer:(id)arg1;
 - (void)setContextId:(unsigned int)arg1;
 - (void)setDeniesDirectAppConnection:(BOOL)arg1;
@@ -61,6 +64,7 @@
 - (void)setOnClientSide:(BOOL)arg1;
 - (void)setRemoteChildrenDelegate:(id)arg1;
 - (void)setRemotePid:(int)arg1;
+- (void)setRemoteQueue:(id)arg1;
 - (void)setUuid:(id)arg1;
 - (void)unregister;
 - (id)uuid;

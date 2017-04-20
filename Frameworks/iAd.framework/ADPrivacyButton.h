@@ -12,8 +12,8 @@
 @property (nonatomic, retain) UIImage *iconImage;
 @property (nonatomic, retain) UIImageView *iconImageView;
 
-+ (id)_highlightedIconImage;
-+ (id)_iconImage;
++ (id)highlightedIconImage;
++ (id)iconImage;
 
 - (void)dealloc;
 - (id)highlightedIconImage;

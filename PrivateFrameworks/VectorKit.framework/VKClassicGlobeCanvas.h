@@ -96,7 +96,7 @@
 @property (nonatomic) BOOL localizeLabels;
 @property (nonatomic) int mapType;
 @property (nonatomic) int navigationShieldSize;
-@property (nonatomic, readonly) struct GlobeOverlayContainer { struct weak_ptr<md::GlobeOverlayContainer> { struct GlobeOverlayContainer {} *x_1_1_1; struct __shared_weak_count {} *x_1_1_2; } x1; struct GlobeView {} *x2; struct NSMutableArray { Class x_3_1_1; } *x3; struct mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_4_1_1; } x4; float x5; }*overlayContainer;
+@property (nonatomic, readonly) struct GlobeOverlayContainer { struct weak_ptr<md::GlobeOverlayContainer> { struct GlobeOverlayContainer {} *x_1_1_1; struct __shared_weak_count {} *x_1_1_2; } x1; struct GlobeView {} *x2; struct NSMutableArray {} *x3; struct mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_4_1_1; } x4; float x5; }*overlayContainer;
 @property (nonatomic, readonly) NSArray *overlays;
 @property (nonatomic, readonly) NSSet *persistentOverlays;
 @property (nonatomic, readonly) NSArray *rasterOverlays;
@@ -163,6 +163,7 @@
 - (void)dealloc;
 - (void)debugHighlightFeatureMarker:(const struct shared_ptr<md::FeatureMarker> { }*)arg1;
 - (void)debugHighlightObjectAtPoint:(struct CGPoint { float x1; float x2; })arg1 highlightTarget:(unsigned char)arg2;
+- (id)debugLabelString:(BOOL)arg1;
 - (id)delegate;
 - (void)deselectLabelMarker;
 - (void)deselectTransitLineMarker;
@@ -208,7 +209,7 @@
 - (BOOL)localizeLabels;
 - (int)mapType;
 - (int)navigationShieldSize;
-- (struct GlobeOverlayContainer { struct weak_ptr<md::GlobeOverlayContainer> { struct GlobeOverlayContainer {} *x_1_1_1; struct __shared_weak_count {} *x_1_1_2; } x1; struct GlobeView {} *x2; struct NSMutableArray { Class x_3_1_1; } *x3; struct mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_4_1_1; } x4; float x5; }*)overlayContainer;
+- (struct GlobeOverlayContainer { struct weak_ptr<md::GlobeOverlayContainer> { struct GlobeOverlayContainer {} *x_1_1_1; struct __shared_weak_count {} *x_1_1_2; } x1; struct GlobeView {} *x2; struct NSMutableArray {} *x3; struct mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_4_1_1; } x4; float x5; }*)overlayContainer;
 - (id)overlays;
 - (void)pauseFlyoverTourAnimation;
 - (id)persistentOverlays;

@@ -8,6 +8,8 @@
 
 @property (nonatomic) BOOL hasNetwork;
 
++ (BOOL)supportsSecureCoding;
+
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)hasNetwork;

@@ -10,17 +10,18 @@
     int  final_error;
     NSObject<OS_nw_endpoint> * flow_divert_endpoint;
     NSObject<OS_xpc_object> * flow_divert_token;
-    bool  has_connected;
-    bool  input_finished;
+    unsigned int  has_connected;
+    unsigned int  initial_payload_sent;
+    unsigned int  input_finished;
     void * internally_retained_object;
-    bool  is_channel;
-    bool  is_custom_protocols_only;
-    bool  is_multipath;
-    bool  is_rawip;
-    bool  is_viable;
+    unsigned int  is_channel;
+    unsigned int  is_custom_protocols_only;
+    unsigned int  is_multipath;
+    unsigned int  is_rawip;
+    unsigned int  is_viable;
     struct __CFError { } * last_error;
     NSObject<OS_nw_endpoint> * multipath_effective_subflow_endpoint;
-    bool  multipath_nat64_query_outstanding;
+    unsigned int  multipath_nat64_query_outstanding;
     NSObject<OS_nw_array> * multipath_watcher_array;
     int  pre_connected_fd;
     struct nw_protocol_callbacks { 
@@ -60,7 +61,7 @@
         int mapping; 
     }  protocol_identifier;
     NSObject<OS_nw_read_request> * read_requests;
-    bool  servicing_reads;
+    unsigned int  servicing_reads;
     struct _DNSServiceRef_t { } * sleep_proxy_ref;
     struct nw_protocol { struct nw_protocol_identifier {} *x1; struct nw_protocol_callbacks {} *x2; struct nw_protocol {} *x3; void *x4; unsigned char x5[16]; struct nw_protocol {} *x6; void *x7; } * socket_protocol;
     struct nw_protocol { struct nw_protocol_identifier {} *x1; struct nw_protocol_callbacks {} *x2; struct nw_protocol {} *x3; void *x4; unsigned char x5[16]; struct nw_protocol {} *x6; void *x7; } * tls_protocol;

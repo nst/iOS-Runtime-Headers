@@ -41,6 +41,7 @@
 - (void)_beginTrackingDefaultItemSearchInfoIfNecessary;
 - (void)_beginTrackingFocusMovementSearchInfoIfNecessary;
 - (void)_beginTrackingSearches;
+- (id)_closestFocusableItemToPoint:(struct CGPoint { float x1; float x2; })arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 excludingItems:(id)arg3;
 - (id)_defaultFocusItemInEnvironment:(id)arg1;
 - (id)_defaultFocusItemInEnvironment:(id)arg1 limitScopeUsingFocusPreferences:(BOOL)arg2;
 - (id)_defaultItemSearchContext;

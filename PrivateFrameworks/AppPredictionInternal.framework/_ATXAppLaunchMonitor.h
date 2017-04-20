@@ -3,6 +3,7 @@
  */
 
 @interface _ATXAppLaunchMonitor : NSObject {
+    _ATXAppDailyDose * _appDailyDose;
     _ATXAppInfoManager * _appInfoManager;
     _ATXAppLaunchHistogramManager * _appLaunchHistogramManager;
     NSObject<OS_dispatch_queue> * _appLaunchHistoryQueue;
@@ -32,7 +33,7 @@
 - (void)handleAppLaunchNotification:(id)arg1 reason:(id)arg2;
 - (void)handleBacklightChangeNotificationWithValue:(int)arg1;
 - (id)init;
-- (id)initWithAppInfoManager:(id)arg1 appLaunchHistogramManager:(id)arg2 appLaunchSequenceManager:(id)arg3 duetHelper:(id)arg4;
+- (id)initWithAppInfoManager:(id)arg1 appLaunchHistogramManager:(id)arg2 appLaunchSequenceManager:(id)arg3 appDailyDose:(id)arg4 duetHelper:(id)arg5;
 - (id)initWithInMemoryStore;
 - (void)mergeAppLaunches:(id)arg1 andBacklightTransitions:(id)arg2 callingAppLaunchBlock:(id /* block */)arg3;
 - (void)registerForAppChange;

@@ -4,9 +4,10 @@
 
 @interface ASAClockDevice : ASAObject
 
-@property (getter=isActive, nonatomic, readonly) BOOL active;
+@property (getter=isAlive, nonatomic, readonly) BOOL alive;
 @property (nonatomic, readonly) unsigned int clockDomain;
 @property (nonatomic, readonly, copy) NSArray *controlObjectIDs;
+@property (nonatomic, readonly, copy) NSArray *controls;
 @property (nonatomic, readonly, copy) NSString *deviceUID;
 @property (getter=isHidden, nonatomic, readonly) BOOL hidden;
 @property (nonatomic, readonly) unsigned int inputLatency;
@@ -21,11 +22,12 @@
 
 - (unsigned int)clockDomain;
 - (id)controlObjectIDs;
+- (id)controls;
 - (id)coreAudioClassName;
 - (id)deviceUID;
 - (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(BOOL)arg2;
 - (unsigned int)inputLatency;
-- (BOOL)isActive;
+- (BOOL)isAlive;
 - (BOOL)isHidden;
 - (BOOL)isRunning;
 - (id)manufacturer;

@@ -6,6 +6,7 @@
     id  _cachedDomain;
     unsigned int  _managerID;
     NSObject<OS_dispatch_source> * _memoryEventSource;
+    PHImageManagerSettings * _settings;
 }
 
 @property (readonly, copy) NSString *debugDescription;

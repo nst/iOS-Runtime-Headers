@@ -3,6 +3,7 @@
  */
 
 @interface HUCameraView : UIView {
+    UIView * _backgroundView;
     float  _badgeInset;
     NSArray * _badgeInsetConstraints;
     <UILayoutSupport> * _badgeTopLayoutGuide;
@@ -18,6 +19,7 @@
     NSArray * _staticConstraints;
 }
 
+@property (nonatomic, retain) UIView *backgroundView;
 @property (nonatomic) float badgeInset;
 @property (nonatomic, retain) NSArray *badgeInsetConstraints;
 @property (nonatomic, retain) <UILayoutSupport> *badgeTopLayoutGuide;
@@ -47,6 +49,8 @@
 - (void)_updateBadgeViewReschedulingTimerIfNecessary:(BOOL)arg1;
 - (void)_updateErrorVisibilityStateAnimated:(BOOL)arg1;
 - (void)_updateMaskedCameraCorners;
+- (id)backgroundColor;
+- (id)backgroundView;
 - (float)badgeInset;
 - (id)badgeInsetConstraints;
 - (id)badgeTopLayoutGuide;
@@ -67,6 +71,8 @@
 - (id)initWithBadgeView:(id)arg1;
 - (void)layoutSubviews;
 - (unsigned int)maskedCameraCorners;
+- (void)setBackgroundColor:(id)arg1;
+- (void)setBackgroundView:(id)arg1;
 - (void)setBadgeInset:(float)arg1;
 - (void)setBadgeInsetConstraints:(id)arg1;
 - (void)setBadgeTopLayoutGuide:(id)arg1;

@@ -37,6 +37,7 @@
 - (void)cancelCPLDownloadImageDataWithVirtualTaskIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)cancelCPLDownloadWithContext:(id)arg1;
 - (void)cleanupForStoreDemoMode;
+- (BOOL)cleanupInvalidIgnoreDatesWithError:(id*)arg1;
 - (void)cleanupModelForDataMigration;
 - (void)clearAllBulletinsWithLastClearedRecordID:(unsigned int)arg1;
 - (void)clearChangeStore;
@@ -124,13 +125,15 @@
 - (void)repairPotentialModelCorruption;
 - (void)repairSingletonObjects;
 - (id)replyQueue;
+- (void)reportAsJunkPhotoStreamInvitationForAlbumWithCloudGUID:(id)arg1;
 - (void)requestAccessWithHandler:(id /* block */)arg1;
 - (void)requestAdjustmentDataForAsset:(id)arg1 withDataBlob:(BOOL)arg2 networkAccessAllowed:(BOOL)arg3 trackCPLDownload:(BOOL)arg4 handler:(id /* block */)arg5;
 - (void)requestCPLDownloadImageDataForAssets:(id)arg1 format:(int)arg2 doneTokens:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)requestImageDataForAsset:(id)arg1 format:(int)arg2 allowPlaceholder:(BOOL)arg3 wantURLOnly:(BOOL)arg4 networkAccessAllowed:(BOOL)arg5 trackCPLDownload:(BOOL)arg6 handler:(id /* block */)arg7;
 - (void)requestMasterThumbnailForAssetUUID:(id)arg1 handler:(id /* block */)arg2;
-- (void)requestVideoURLForAsset:(id)arg1 format:(int)arg2 networkAccessAllowed:(BOOL)arg3 streamingAllowed:(BOOL)arg4 trackCPLDownload:(BOOL)arg5 handler:(id /* block */)arg6;
+- (void)requestVideoURLForAsset:(id)arg1 format:(int)arg2 networkAccessAllowed:(BOOL)arg3 streamingAllowed:(BOOL)arg4 restrictToPlayable:(BOOL)arg5 trackCPLDownload:(BOOL)arg6 handler:(id /* block */)arg7;
 - (void)resetDupesAnalysis;
+- (BOOL)resetPendingAnalysisStatesWithError:(id*)arg1;
 - (void)revertToOriginalForAsset:(id)arg1;
 - (id)sandboxExtensionForAssetResourcePath:(id)arg1;
 - (void)saveAssetWithJobDictionary:(id)arg1 handler:(id /* block */)arg2 imageSurface:(struct __IOSurface { }*)arg3 previewImageSurface:(struct __IOSurface { }*)arg4;
@@ -145,7 +148,6 @@
 - (void)setPreviewAssetLocalIdentifiers:(id)arg1;
 - (void)setPreviewRenderedContentURLs:(id)arg1;
 - (void)setSearchIndexPaused:(BOOL)arg1 synchronously:(BOOL)arg2 reason:(id)arg3;
-- (void)setUnverifiedFaceCountThreshold:(unsigned int)arg1;
 - (void)softResetSyncStatusWithCompletionHandler:(id /* block */)arg1;
 - (void)syncWithCloudPhotoLibrary;
 - (void)takeStatisticsSnapshotSinceDate:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -157,6 +159,7 @@
 - (void)updateRestoredAssetWithUUID:(id)arg1 paths:(id)arg2 fixAddedDate:(BOOL)arg3;
 - (void)updateSharedAlbumsCachedServerConfigurationLimits;
 - (void)updateThumbnailsForPhotos:(id)arg1 waitForReply:(BOOL)arg2 assignNewIndex:(BOOL)arg3 forceRefresh:(BOOL)arg4;
+- (void)updateUnverifiedFaceCountThreshold;
 - (void)userViewedBulletinWithRecordID:(unsigned int)arg1;
 - (void)waitForSearchIndexExistenceWithCompletion:(id /* block */)arg1;
 - (void)waitUntilConnectionSendsAllMessages;

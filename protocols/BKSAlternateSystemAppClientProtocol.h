@@ -5,7 +5,7 @@
 
 @required
 
-- (void)alternateSystemAppWithBundleID:(NSString *)arg1 didExitWithReason:(unsigned long long)arg2;
+- (void)alternateSystemAppWithBundleID:(NSString *)arg1 didExitWithContext:(BKSProcessExitContext *)arg2;
 - (void)alternateSystemAppWithBundleID:(NSString *)arg1 failedToOpenWithResult:(NSError *)arg2;
 - (void)alternateSystemAppWithBundleIDDidOpen:(NSString *)arg1;
 - (void)alternateSystemAppWithBundleIDDidTerminate:(NSString *)arg1;

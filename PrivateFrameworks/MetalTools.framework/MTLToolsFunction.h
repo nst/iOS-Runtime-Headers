@@ -27,6 +27,7 @@
 - (void)dealloc;
 - (id)device;
 - (id)filePath;
+- (id)formattedDescription:(unsigned int)arg1;
 - (id)functionConstantsDictionary;
 - (unsigned int)functionType;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2 functions:(id)arg3;

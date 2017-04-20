@@ -33,6 +33,7 @@
 @property (nonatomic) unsigned int sequenceNumber;
 @property (nonatomic) unsigned short streamID;
 
+- (void)closeFileAndMarkDone;
 - (unsigned char)command;
 - (void)dealloc;
 - (id)description;

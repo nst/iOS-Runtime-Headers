@@ -8,6 +8,7 @@
     int  _articleDisplayRankInGroup;
     int  _articleHostViewType;
     NSString * _articleId;
+    BOOL  _articleLoaded;
     NSData * _articleSessionId;
     int  _articleType;
     int  _articleViewPresentationReason;
@@ -26,6 +27,9 @@
     int  _feedPresentationReason;
     NSString * _feedPresentationReasonSearchString;
     NSData * _feedViewExposureId;
+    NSMutableArray * _fractionalCohortMemberships;
+    int  _groupArticleCountInForYou;
+    int  _groupDisplayRankInForYou;
     NSString * _groupFeedId;
     int  _groupType;
     struct { 
@@ -42,7 +46,10 @@
         unsigned int displayRank : 1; 
         unsigned int feedCellHostType : 1; 
         unsigned int feedPresentationReason : 1; 
+        unsigned int groupArticleCountInForYou : 1; 
+        unsigned int groupDisplayRankInForYou : 1; 
         unsigned int groupType : 1; 
+        unsigned int loadFailureReason : 1; 
         unsigned int maxActiveTimeSpent : 1; 
         unsigned int maxVerticalScrollPositionEnding : 1; 
         unsigned int nextArticleAffordanceType : 1; 
@@ -50,7 +57,11 @@
         unsigned int parentFeedType : 1; 
         unsigned int previousArticleHostViewTypeIfSwipe : 1; 
         unsigned int publisherArticleVersion : 1; 
+        unsigned int widgetArticleRank : 1; 
+        unsigned int widgetSection : 1; 
+        unsigned int widgetSectionArticleRank : 1; 
         unsigned int adSupportedChannel : 1; 
+        unsigned int articleLoaded : 1; 
         unsigned int didBounce : 1; 
         unsigned int didOpenInSafari : 1; 
         unsigned int isCoverArticle : 1; 
@@ -83,6 +94,7 @@
     BOOL  _isUserSubscribedToParentFeed;
     BOOL  _isVideoInFeed;
     NSString * _language;
+    int  _loadFailureReason;
     int  _maxActiveTimeSpent;
     float  _maxVerticalScrollPositionEnding;
     NSMutableArray * _namedEntities;
@@ -94,6 +106,7 @@
     int  _parentFeedType;
     long long  _personalizationTreatmentId;
     int  _previousArticleHostViewTypeIfSwipe;
+    NSString * _previousArticleId;
     int  _publisherArticleVersion;
     NSString * _referencedArticleId;
     NSString * _referringSourceApplication;
@@ -109,6 +122,9 @@
     NSString * _userActivityType;
     NSString * _viewFrameInScreen;
     BOOL  _viewFromNotificationDirectOpen;
+    int  _widgetArticleRank;
+    int  _widgetSection;
+    int  _widgetSectionArticleRank;
 }
 
 @property (nonatomic) int activeTimeSpent;
@@ -116,6 +132,7 @@
 @property (nonatomic) int articleDisplayRankInGroup;
 @property (nonatomic) int articleHostViewType;
 @property (nonatomic, retain) NSString *articleId;
+@property (nonatomic) BOOL articleLoaded;
 @property (nonatomic, retain) NSData *articleSessionId;
 @property (nonatomic) int articleType;
 @property (nonatomic) int articleViewPresentationReason;
@@ -134,6 +151,9 @@
 @property (nonatomic) int feedPresentationReason;
 @property (nonatomic, retain) NSString *feedPresentationReasonSearchString;
 @property (nonatomic, retain) NSData *feedViewExposureId;
+@property (nonatomic, retain) NSMutableArray *fractionalCohortMemberships;
+@property (nonatomic) int groupArticleCountInForYou;
+@property (nonatomic) int groupDisplayRankInForYou;
 @property (nonatomic, retain) NSString *groupFeedId;
 @property (nonatomic) int groupType;
 @property (nonatomic) BOOL hasActiveTimeSpent;
@@ -141,6 +161,7 @@
 @property (nonatomic) BOOL hasArticleDisplayRankInGroup;
 @property (nonatomic) BOOL hasArticleHostViewType;
 @property (nonatomic, readonly) BOOL hasArticleId;
+@property (nonatomic) BOOL hasArticleLoaded;
 @property (nonatomic, readonly) BOOL hasArticleSessionId;
 @property (nonatomic) BOOL hasArticleType;
 @property (nonatomic) BOOL hasArticleViewPresentationReason;
@@ -159,6 +180,8 @@
 @property (nonatomic) BOOL hasFeedPresentationReason;
 @property (nonatomic, readonly) BOOL hasFeedPresentationReasonSearchString;
 @property (nonatomic, readonly) BOOL hasFeedViewExposureId;
+@property (nonatomic) BOOL hasGroupArticleCountInForYou;
+@property (nonatomic) BOOL hasGroupDisplayRankInForYou;
 @property (nonatomic, readonly) BOOL hasGroupFeedId;
 @property (nonatomic) BOOL hasGroupType;
 @property (nonatomic) BOOL hasIsCoverArticle;
@@ -175,6 +198,7 @@
 @property (nonatomic) BOOL hasIsUserSubscribedToParentFeed;
 @property (nonatomic) BOOL hasIsVideoInFeed;
 @property (nonatomic, readonly) BOOL hasLanguage;
+@property (nonatomic) BOOL hasLoadFailureReason;
 @property (nonatomic) BOOL hasMaxActiveTimeSpent;
 @property (nonatomic) BOOL hasMaxVerticalScrollPositionEnding;
 @property (nonatomic) BOOL hasNextArticleAffordanceType;
@@ -185,6 +209,7 @@
 @property (nonatomic) BOOL hasParentFeedType;
 @property (nonatomic) BOOL hasPersonalizationTreatmentId;
 @property (nonatomic) BOOL hasPreviousArticleHostViewTypeIfSwipe;
+@property (nonatomic, readonly) BOOL hasPreviousArticleId;
 @property (nonatomic) BOOL hasPublisherArticleVersion;
 @property (nonatomic, readonly) BOOL hasReferencedArticleId;
 @property (nonatomic, readonly) BOOL hasReferringSourceApplication;
@@ -200,6 +225,9 @@
 @property (nonatomic, readonly) BOOL hasUserActivityType;
 @property (nonatomic, readonly) BOOL hasViewFrameInScreen;
 @property (nonatomic) BOOL hasViewFromNotificationDirectOpen;
+@property (nonatomic) BOOL hasWidgetArticleRank;
+@property (nonatomic) BOOL hasWidgetSection;
+@property (nonatomic) BOOL hasWidgetSectionArticleRank;
 @property (nonatomic) BOOL isCoverArticle;
 @property (nonatomic) BOOL isDigitalReplicaAd;
 @property (nonatomic) BOOL isExplorationArticle;
@@ -214,6 +242,7 @@
 @property (nonatomic) BOOL isUserSubscribedToParentFeed;
 @property (nonatomic) BOOL isVideoInFeed;
 @property (nonatomic, retain) NSString *language;
+@property (nonatomic) int loadFailureReason;
 @property (nonatomic) int maxActiveTimeSpent;
 @property (nonatomic) float maxVerticalScrollPositionEnding;
 @property (nonatomic, retain) NSMutableArray *namedEntities;
@@ -225,6 +254,7 @@
 @property (nonatomic) int parentFeedType;
 @property (nonatomic) long long personalizationTreatmentId;
 @property (nonatomic) int previousArticleHostViewTypeIfSwipe;
+@property (nonatomic, retain) NSString *previousArticleId;
 @property (nonatomic) int publisherArticleVersion;
 @property (nonatomic, retain) NSString *referencedArticleId;
 @property (nonatomic, retain) NSString *referringSourceApplication;
@@ -240,7 +270,11 @@
 @property (nonatomic, retain) NSString *userActivityType;
 @property (nonatomic, retain) NSString *viewFrameInScreen;
 @property (nonatomic) BOOL viewFromNotificationDirectOpen;
+@property (nonatomic) int widgetArticleRank;
+@property (nonatomic) int widgetSection;
+@property (nonatomic) int widgetSectionArticleRank;
 
++ (Class)fractionalCohortMembershipType;
 + (Class)namedEntitiesType;
 
 - (void).cxx_destruct;
@@ -251,12 +285,15 @@
 - (int)StringAsNextArticleAffordanceType:(id)arg1;
 - (int)StringAsPaidSubscriberToFeedType:(id)arg1;
 - (int)StringAsParentFeedType:(id)arg1;
+- (int)StringAsWidgetSection:(id)arg1;
 - (int)activeTimeSpent;
 - (BOOL)adSupportedChannel;
+- (void)addFractionalCohortMembership:(id)arg1;
 - (void)addNamedEntities:(id)arg1;
 - (int)articleDisplayRankInGroup;
 - (int)articleHostViewType;
 - (id)articleId;
+- (BOOL)articleLoaded;
 - (id)articleSessionId;
 - (int)articleType;
 - (id)articleTypeAsString:(int)arg1;
@@ -266,6 +303,7 @@
 - (id)campaignId;
 - (id)campaignType;
 - (int)characterCount;
+- (void)clearFractionalCohortMemberships;
 - (void)clearNamedEntities;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)coverArticleDisplayRank;
@@ -282,6 +320,11 @@
 - (id)feedPresentationReasonAsString:(int)arg1;
 - (id)feedPresentationReasonSearchString;
 - (id)feedViewExposureId;
+- (id)fractionalCohortMembershipAtIndex:(unsigned int)arg1;
+- (id)fractionalCohortMemberships;
+- (unsigned int)fractionalCohortMembershipsCount;
+- (int)groupArticleCountInForYou;
+- (int)groupDisplayRankInForYou;
 - (id)groupFeedId;
 - (int)groupType;
 - (id)groupTypeAsString:(int)arg1;
@@ -290,6 +333,7 @@
 - (BOOL)hasArticleDisplayRankInGroup;
 - (BOOL)hasArticleHostViewType;
 - (BOOL)hasArticleId;
+- (BOOL)hasArticleLoaded;
 - (BOOL)hasArticleSessionId;
 - (BOOL)hasArticleType;
 - (BOOL)hasArticleViewPresentationReason;
@@ -308,6 +352,8 @@
 - (BOOL)hasFeedPresentationReason;
 - (BOOL)hasFeedPresentationReasonSearchString;
 - (BOOL)hasFeedViewExposureId;
+- (BOOL)hasGroupArticleCountInForYou;
+- (BOOL)hasGroupDisplayRankInForYou;
 - (BOOL)hasGroupFeedId;
 - (BOOL)hasGroupType;
 - (BOOL)hasIsCoverArticle;
@@ -324,6 +370,7 @@
 - (BOOL)hasIsUserSubscribedToParentFeed;
 - (BOOL)hasIsVideoInFeed;
 - (BOOL)hasLanguage;
+- (BOOL)hasLoadFailureReason;
 - (BOOL)hasMaxActiveTimeSpent;
 - (BOOL)hasMaxVerticalScrollPositionEnding;
 - (BOOL)hasNextArticleAffordanceType;
@@ -334,6 +381,7 @@
 - (BOOL)hasParentFeedType;
 - (BOOL)hasPersonalizationTreatmentId;
 - (BOOL)hasPreviousArticleHostViewTypeIfSwipe;
+- (BOOL)hasPreviousArticleId;
 - (BOOL)hasPublisherArticleVersion;
 - (BOOL)hasReferencedArticleId;
 - (BOOL)hasReferringSourceApplication;
@@ -349,6 +397,9 @@
 - (BOOL)hasUserActivityType;
 - (BOOL)hasViewFrameInScreen;
 - (BOOL)hasViewFromNotificationDirectOpen;
+- (BOOL)hasWidgetArticleRank;
+- (BOOL)hasWidgetSection;
+- (BOOL)hasWidgetSectionArticleRank;
 - (unsigned int)hash;
 - (BOOL)isCoverArticle;
 - (BOOL)isDigitalReplicaAd;
@@ -365,6 +416,7 @@
 - (BOOL)isUserSubscribedToParentFeed;
 - (BOOL)isVideoInFeed;
 - (id)language;
+- (int)loadFailureReason;
 - (int)maxActiveTimeSpent;
 - (float)maxVerticalScrollPositionEnding;
 - (void)mergeFrom:(id)arg1;
@@ -382,6 +434,7 @@
 - (id)parentFeedTypeAsString:(int)arg1;
 - (long long)personalizationTreatmentId;
 - (int)previousArticleHostViewTypeIfSwipe;
+- (id)previousArticleId;
 - (int)publisherArticleVersion;
 - (BOOL)readFrom:(id)arg1;
 - (id)referencedArticleId;
@@ -393,6 +446,7 @@
 - (void)setArticleDisplayRankInGroup:(int)arg1;
 - (void)setArticleHostViewType:(int)arg1;
 - (void)setArticleId:(id)arg1;
+- (void)setArticleLoaded:(BOOL)arg1;
 - (void)setArticleSessionId:(id)arg1;
 - (void)setArticleType:(int)arg1;
 - (void)setArticleViewPresentationReason:(int)arg1;
@@ -411,12 +465,16 @@
 - (void)setFeedPresentationReason:(int)arg1;
 - (void)setFeedPresentationReasonSearchString:(id)arg1;
 - (void)setFeedViewExposureId:(id)arg1;
+- (void)setFractionalCohortMemberships:(id)arg1;
+- (void)setGroupArticleCountInForYou:(int)arg1;
+- (void)setGroupDisplayRankInForYou:(int)arg1;
 - (void)setGroupFeedId:(id)arg1;
 - (void)setGroupType:(int)arg1;
 - (void)setHasActiveTimeSpent:(BOOL)arg1;
 - (void)setHasAdSupportedChannel:(BOOL)arg1;
 - (void)setHasArticleDisplayRankInGroup:(BOOL)arg1;
 - (void)setHasArticleHostViewType:(BOOL)arg1;
+- (void)setHasArticleLoaded:(BOOL)arg1;
 - (void)setHasArticleType:(BOOL)arg1;
 - (void)setHasArticleViewPresentationReason:(BOOL)arg1;
 - (void)setHasBackendArticleVersion:(BOOL)arg1;
@@ -428,6 +486,8 @@
 - (void)setHasDisplayRank:(BOOL)arg1;
 - (void)setHasFeedCellHostType:(BOOL)arg1;
 - (void)setHasFeedPresentationReason:(BOOL)arg1;
+- (void)setHasGroupArticleCountInForYou:(BOOL)arg1;
+- (void)setHasGroupDisplayRankInForYou:(BOOL)arg1;
 - (void)setHasGroupType:(BOOL)arg1;
 - (void)setHasIsCoverArticle:(BOOL)arg1;
 - (void)setHasIsDigitalReplicaAd:(BOOL)arg1;
@@ -442,6 +502,7 @@
 - (void)setHasIsTopStoryArticle:(BOOL)arg1;
 - (void)setHasIsUserSubscribedToParentFeed:(BOOL)arg1;
 - (void)setHasIsVideoInFeed:(BOOL)arg1;
+- (void)setHasLoadFailureReason:(BOOL)arg1;
 - (void)setHasMaxActiveTimeSpent:(BOOL)arg1;
 - (void)setHasMaxVerticalScrollPositionEnding:(BOOL)arg1;
 - (void)setHasNextArticleAffordanceType:(BOOL)arg1;
@@ -452,6 +513,9 @@
 - (void)setHasPublisherArticleVersion:(BOOL)arg1;
 - (void)setHasSubscriptionOnlyArticle:(BOOL)arg1;
 - (void)setHasViewFromNotificationDirectOpen:(BOOL)arg1;
+- (void)setHasWidgetArticleRank:(BOOL)arg1;
+- (void)setHasWidgetSection:(BOOL)arg1;
+- (void)setHasWidgetSectionArticleRank:(BOOL)arg1;
 - (void)setIsCoverArticle:(BOOL)arg1;
 - (void)setIsDigitalReplicaAd:(BOOL)arg1;
 - (void)setIsExplorationArticle:(BOOL)arg1;
@@ -466,6 +530,7 @@
 - (void)setIsUserSubscribedToParentFeed:(BOOL)arg1;
 - (void)setIsVideoInFeed:(BOOL)arg1;
 - (void)setLanguage:(id)arg1;
+- (void)setLoadFailureReason:(int)arg1;
 - (void)setMaxActiveTimeSpent:(int)arg1;
 - (void)setMaxVerticalScrollPositionEnding:(float)arg1;
 - (void)setNamedEntities:(id)arg1;
@@ -477,6 +542,7 @@
 - (void)setParentFeedType:(int)arg1;
 - (void)setPersonalizationTreatmentId:(long long)arg1;
 - (void)setPreviousArticleHostViewTypeIfSwipe:(int)arg1;
+- (void)setPreviousArticleId:(id)arg1;
 - (void)setPublisherArticleVersion:(int)arg1;
 - (void)setReferencedArticleId:(id)arg1;
 - (void)setReferringSourceApplication:(id)arg1;
@@ -492,6 +558,9 @@
 - (void)setUserActivityType:(id)arg1;
 - (void)setViewFrameInScreen:(id)arg1;
 - (void)setViewFromNotificationDirectOpen:(BOOL)arg1;
+- (void)setWidgetArticleRank:(int)arg1;
+- (void)setWidgetSection:(int)arg1;
+- (void)setWidgetSectionArticleRank:(int)arg1;
 - (id)sourceBinId;
 - (id)sourceChannelId;
 - (id)storyType;
@@ -502,6 +571,10 @@
 - (id)userActivityType;
 - (id)viewFrameInScreen;
 - (BOOL)viewFromNotificationDirectOpen;
+- (int)widgetArticleRank;
+- (int)widgetSection;
+- (int)widgetSectionArticleRank;
+- (id)widgetSectionAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

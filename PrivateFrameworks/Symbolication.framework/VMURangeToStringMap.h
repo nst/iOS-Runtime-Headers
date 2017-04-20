@@ -13,7 +13,7 @@
 + (void)initialize;
 + (BOOL)supportsSecureCoding;
 
-- (unsigned int)_indexForString:(id)arg1;
+- (unsigned int)_indexForString:(id)arg1 insertIfMissing:(BOOL)arg2;
 - (unsigned int)count;
 - (void)dealloc;
 - (id)description;
@@ -21,6 +21,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })rangeContainingAddress:(unsigned long long)arg1;
+- (struct _VMURange { unsigned long long x1; unsigned long long x2; })rangeForString:(id)arg1 startingAtAddress:(unsigned long long)arg2;
 - (void)setString:(id)arg1 forRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)sort;
 - (id)stringForAddress:(unsigned long long)arg1;

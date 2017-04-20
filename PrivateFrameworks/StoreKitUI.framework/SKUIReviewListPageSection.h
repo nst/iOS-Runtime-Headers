@@ -4,24 +4,32 @@
 
 @interface SKUIReviewListPageSection : SKUIStorePageSection {
     SKUIViewElementLayoutContext * _cellLayoutContext;
+    NSMutableDictionary * _contextActionsRegistration;
 }
 
+@property (nonatomic, copy) NSMutableDictionary *contextActionsRegistration;
 @property (nonatomic, readonly) SKUIReviewListPageComponent *pageComponent;
 
 - (void).cxx_destruct;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentInsetForReviewIndex:(int)arg1;
+- (id)_contextActionRegistrationKeyWithCell:(id)arg1 indexPath:(id)arg2;
 - (void)_requestCellLayout;
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
 - (id)cellForIndexPath:(id)arg1;
 - (struct CGSize { float x1; float x2; })cellSizeForIndexPath:(id)arg1;
 - (void)collectionViewDidEndDisplayingCellForItemAtIndexPath:(id)arg1;
 - (void)collectionViewDidSelectItemAtIndexPath:(id)arg1;
+- (BOOL)collectionViewShouldHighlightItemAtIndexPath:(id)arg1;
 - (void)collectionViewWillApplyLayoutAttributes:(id)arg1;
 - (void)collectionViewWillDisplayCellForItemAtIndexPath:(id)arg1;
+- (id)contextActionsRegistration;
 - (void)entityProvider:(id)arg1 didInvalidateWithContext:(id)arg2;
 - (id)initWithPageComponent:(id)arg1;
 - (int)numberOfCells;
+- (void)registerContextActionsForCell:(id)arg1 indexPath:(id)arg2 viewController:(id)arg3;
 - (void)reloadCellWithIndexPath:(id)arg1 reason:(int)arg2;
+- (void)setContextActionsRegistration:(id)arg1;
+- (void)unregisterContextActionsForCell:(id)arg1 indexPath:(id)arg2 viewController:(id)arg3;
 - (void)willAppearInContext:(id)arg1;
 - (void)willTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 

@@ -78,6 +78,7 @@
 - (id)browserPlugins;
 - (id)browserSnapshotForKey:(id)arg1;
 - (void)cleanSeenMap;
+- (id)createFakeAppsForPPTTesting:(unsigned int)arg1;
 - (void)dealloc;
 - (id)descriptionOfVisibleDrawerPlugins;
 - (id)digitalTouchViewControllerWithDataSource:(id)arg1;

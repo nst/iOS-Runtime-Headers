@@ -6,6 +6,7 @@
     unsigned int  _OSMode;
     unsigned int  _OSVersion;
     unsigned int  _appletMap;
+    NSArray * _bootHistory;
     NSNumber * _compiledFWVersion;
     unsigned int  _deviceType;
     NSString * _ecdsaCertificate;
@@ -38,6 +39,7 @@
 @property (nonatomic, readonly) unsigned int OSMode;
 @property (nonatomic, readonly) unsigned int OSVersion;
 @property (nonatomic, readonly) unsigned int appletMap;
+@property (nonatomic, readonly) NSArray *bootHistory;
 @property (nonatomic, readonly) NSNumber *compiledFWVersion;
 @property (nonatomic, readonly) unsigned int deviceType;
 @property (nonatomic, readonly) NSString *ecdsaCertificate;
@@ -72,6 +74,7 @@
 - (unsigned int)OSVersion;
 - (void)_setIsInRestrictedMode:(BOOL)arg1;
 - (unsigned int)appletMap;
+- (id)bootHistory;
 - (id)compiledFWVersion;
 - (void)dealloc;
 - (unsigned int)deviceType;
@@ -101,6 +104,7 @@
 - (id)rsaCertificate;
 - (id)sequenceCounter;
 - (id)serialNumber;
+- (void)setBootHistory:(id)arg1;
 - (unsigned int)signingKeyType;
 - (id)transientConfigID;
 

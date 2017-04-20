@@ -10,7 +10,7 @@
     UIView * _fadingHighlightedDayBackground;
     float  _fixedDayWidth;
     float  _gridHeightScale;
-    EKUIVisualEffectView * _gridParentView;
+    NSMutableDictionary * _gridParentViews;
     NSMutableArray * _gridPatternViews;
     UIVisualEffect * _gridVisualEffect;
     UIView * _highlightedDayBackground;

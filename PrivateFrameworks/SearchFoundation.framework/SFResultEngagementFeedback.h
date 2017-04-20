@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFResultEngagementFeedback : SFResultFeedback <NSCopying> {
+@interface SFResultEngagementFeedback : SFResultFeedback <NSCopying, SFProtobufObject> {
     BOOL  _actionEngaged;
     unsigned int  _actionTarget;
     unsigned int  _destination;
@@ -11,8 +11,15 @@
 
 @property (nonatomic, readonly) BOOL actionEngaged;
 @property (nonatomic) unsigned int actionTarget;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) unsigned int destination;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) PBCodable *protobufMessage;
+@property (readonly) Class superclass;
 @property (nonatomic) unsigned int triggerEvent;
+
+// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
 
 + (BOOL)supportsSecureCoding;
 
@@ -29,5 +36,11 @@
 - (void)setDestination:(unsigned int)arg1;
 - (void)setTriggerEvent:(unsigned int)arg1;
 - (unsigned int)triggerEvent;
+
+// Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
+
++ (Class)protobufClass;
+
+- (id)protobufMessage;
 
 @end

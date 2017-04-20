@@ -20,9 +20,11 @@
 - (void)holdBuddyUpdates;
 - (void)importMessage:(NSDictionary *)arg1 isRead:(BOOL)arg2;
 - (void)invitePersonInfo:(NSDictionary *)arg1 withMessage:(IMMessageItem *)arg2 toChatID:(NSString *)arg3 identifier:(NSString *)arg4 style:(unsigned char)arg5;
+- (void)invitePersonInfoToiMessageChat:(NSDictionary *)arg1 withMessage:(IMMessageItem *)arg2 toChatID:(NSString *)arg3 identifier:(NSString *)arg4 style:(unsigned char)arg5;
 - (void)joinChatID:(NSString *)arg1 handleInfo:(NSDictionary *)arg2 identifier:(NSString *)arg3 style:(unsigned char)arg4 groupID:(NSString *)arg5 joinProperties:(NSDictionary *)arg6;
 - (void)joinChatID:(NSString *)arg1 handleInfo:(NSDictionary *)arg2 identifier:(NSString *)arg3 style:(unsigned char)arg4 joinProperties:(NSDictionary *)arg5;
 - (void)leaveChatID:(NSString *)arg1 identifier:(NSString *)arg2 style:(unsigned char)arg3;
+- (void)leaveiMessageChatID:(NSString *)arg1 identifier:(NSString *)arg2 style:(unsigned char)arg3;
 - (void)login;
 - (void)loginWithAccount:(IMDAccount *)arg1;
 - (void)logout;
@@ -36,6 +38,7 @@
 - (void)removeAliases:(NSArray *)arg1 account:(NSString *)arg2;
 - (void)removeChatID:(NSString *)arg1 identifier:(NSString *)arg2 style:(unsigned char)arg3;
 - (void)removePersonInfo:(NSDictionary *)arg1 chatID:(NSString *)arg2 identifier:(NSString *)arg3 style:(unsigned char)arg4;
+- (void)removePersonInfoFromiMessageChat:(NSDictionary *)arg1 chatID:(NSString *)arg2 identifier:(NSString *)arg3 style:(unsigned char)arg4;
 - (void)renameGroup:(NSString *)arg1 to:(NSString *)arg2;
 - (void)requestGroups;
 - (void)requestProperty:(NSString *)arg1 ofPerson:(NSString *)arg2;

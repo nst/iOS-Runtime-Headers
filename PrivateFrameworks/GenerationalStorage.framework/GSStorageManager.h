@@ -13,6 +13,7 @@
 - (id)additionForItemAtURL:(id)arg1 forPersistentIdentifier:(id)arg2 error:(id*)arg3;
 - (BOOL)deallocateDocumentIDOfItemAtURL:(id)arg1 error:(id*)arg2;
 - (BOOL)isItemAtURLInsidePermanentStorage:(id)arg1 error:(id*)arg2;
+- (BOOL)isItemAtURLValidInsidePermanentStorage:(id)arg1 error:(id*)arg2;
 - (BOOL)isPermanentStorageSupportedAtURL:(id)arg1 error:(id*)arg2;
 - (id)permanentStorageForItemAtURL:(id)arg1 allocateIfNone:(BOOL)arg2 error:(id*)arg3;
 - (id)persistentIdentifierInStorage:(struct NSObject { Class x1; }*)arg1 forAdditionNamed:(id)arg2 inNameSpace:(id)arg3;

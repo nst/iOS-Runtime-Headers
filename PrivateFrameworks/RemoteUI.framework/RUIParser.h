@@ -12,6 +12,7 @@
     <RUIParserDelegate> * _delegate;
     NSMutableArray * _elementStack;
     NSError * _error;
+    BOOL  _foundXMLUI;
     NSMutableArray * _pages;
     NSXMLParser * _parser;
     int  _parserState;
@@ -30,6 +31,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSData *xmlData;
 
++ (id)rowWithAttributeDict:(id)arg1 delegate:(id)arg2 parent:(id)arg3;
++ (id)tableRowClassForElementName:(id)arg1;
 + (int)textAlignmentForString:(id)arg1;
 
 - (void).cxx_destruct;
@@ -44,6 +47,7 @@
 - (id)_lastRow;
 - (void)_logDeprecation:(id)arg1 value:(id)arg2;
 - (id)_newRowWithAttributeDict:(id)arg1;
+- (void)_validateDocumentContent;
 - (id)actionSignal;
 - (id)baseURL;
 - (void)dealloc;

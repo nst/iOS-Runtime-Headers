@@ -176,6 +176,10 @@
 
 - (id)ql_activatedConstraint;
 
+// Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
+
++ (void)_sf_setConstraints:(id)arg1 active:(BOOL)arg2;
+
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (BOOL)_UIWantsMarginAttributeSupport;

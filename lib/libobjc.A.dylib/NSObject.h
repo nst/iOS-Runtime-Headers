@@ -475,6 +475,15 @@
 
 - (BOOL)un_safeBoolValue;
 
+// Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
+
+- (void)vs_bind:(id)arg1 toObject:(id)arg2 withKeyPath:(id)arg3 options:(id)arg4;
+- (id)vs_binderCreatingIfNeeded:(BOOL)arg1;
+- (void)vs_setValue:(id)arg1 forBinding:(id)arg2;
+- (void)vs_unbind:(id)arg1;
+- (id)vs_unbinderCreatingIfNeeded:(BOOL)arg1;
+- (id)vs_valueForBinding:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/AXRuntime.framework/AXRuntime
 
 - (id)_accessibilityAttributedLocalizedString;
@@ -519,6 +528,9 @@
 - (void)handleFailoversForClassNamed:(id)arg1;
 - (BOOL)safeBoolForKey:(id)arg1;
 - (float)safeCGFloatForKey:(id)arg1;
+- (struct CGPoint { float x1; float x2; })safeCGPointForKey:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })safeCGRectForKey:(id)arg1;
+- (struct CGSize { float x1; float x2; })safeCGSizeForKey:(id)arg1;
 - (double)safeDoubleForKey:(id)arg1;
 - (float)safeFloatForKey:(id)arg1;
 - (int)safeIntForKey:(id)arg1;
@@ -682,8 +694,6 @@
 
 // Image: /System/Library/PrivateFrameworks/FMCoreLite.framework/FMCoreLite
 
-+ (id)FMLoggerFacility;
-
 - (void)_fm_addNotificationObserverProxy:(id)arg1;
 - (void)_fm_removeNotificationObserverProxy:(id)arg1;
 - (id)fm_addNotificationBlockObserverForName:(id)arg1 object:(id)arg2 queue:(id)arg3 usingBlock:(id /* block */)arg4;
@@ -826,11 +836,6 @@
 - (int)_px_reuseIdentifier;
 - (void)_px_setReuseIdentifier:(int)arg1;
 
-// Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
-
-- (BOOL)isNil;
-- (int)plCompare:(id)arg1;
-
 // Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
 
 + (double)performSelector:(SEL)arg1 withThreadKey:(id)arg2 count:(unsigned long)arg3 objects:(id)arg4;
@@ -842,9 +847,11 @@
 - (void)_scr_safeGetValueForKeyPath:(id)arg1;
 - (void)_scr_safeGetValueForKeyPath:(id)arg1 lock:(id)arg2;
 - (void)_scr_safeGetValueForSelector:(id)arg1 lock:(id)arg2;
+- (void)_scr_safePerformBlock:(id)arg1 lock:(id)arg2;
 - (id)copyValueForKeyPath:(id)arg1 forThreadKey:(id)arg2;
 - (id)copyValueForKeyPath:(id)arg1 forThreadKey:(id)arg2 waitTime:(double)arg3;
 - (id)copyValueForKeyPathOnMainThread:(id)arg1;
+- (void)performAsyncBlock:(id /* block */)arg1 forThreadKey:(id)arg2;
 - (id)performSelector:(SEL)arg1 withObjectsAsArray:(id)arg2;
 - (double)performSelector:(SEL)arg1 withThreadKey:(id)arg2 count:(unsigned long)arg3 objects:(id)arg4;
 - (double)performSelector:(SEL)arg1 withThreadKey:(id)arg2 waitTime:(double)arg3 cancelMask:(unsigned long)arg4 count:(unsigned long)arg5 objects:(id)arg6;
@@ -854,6 +861,11 @@
 - (id)valueForKeyPath:(id)arg1 forThreadKey:(id)arg2 waitTime:(double)arg3;
 - (id)valueForKeyPathOnMainThread:(id)arg1;
 - (id)valueForSelector:(SEL)arg1 forThreadKey:(id)arg2 waitTime:(double)arg3 copyValue:(BOOL)arg4 withObjects:(id)arg5;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (BOOL)isEmpty:(id)arg1;
++ (BOOL)isNotEmpty:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
 
@@ -872,8 +884,6 @@
 + (id)sbs_dataWithValue:(id)arg1;
 + (id)sbs_objectFromData:(id)arg1;
 + (id)sbs_valueFromData:(id)arg1 ofType:(const char *)arg2;
-
-- (BOOL)sbs_isPlistableType;
 
 // Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
 
@@ -896,6 +906,7 @@
 
 - (id)tv_associatedIKViewElement;
 - (void)tv_setAssociatedIKViewElement:(id)arg1;
+- (BOOL)tv_superOfClass:(Class)arg1 respondsToSelector:(SEL)arg2;
 
 // Image: /System/Library/PrivateFrameworks/TelephonyRPC.framework/TelephonyRPC
 
@@ -1391,6 +1402,7 @@
 - (BOOL)_accessibilityShouldAttemptScrollToFrameOnParentView;
 - (BOOL)_accessibilityShouldAvoidAnnouncing;
 - (BOOL)_accessibilityShouldAvoidScrollingCollectionViewCells;
+- (BOOL)_accessibilityShouldBeExplorerElementWithoutSystemFocus;
 - (BOOL)_accessibilityShouldBeProcessed:(id)arg1;
 - (BOOL)_accessibilityShouldIgnoreSoundForFailedMoveAttempt;
 - (BOOL)_accessibilityShouldInheritTraits;

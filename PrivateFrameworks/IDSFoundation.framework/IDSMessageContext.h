@@ -20,6 +20,7 @@
 @property (nonatomic, copy) NSString *originalDestinationDevice;
 @property (nonatomic, copy) NSString *outgoingResponseIdentifier;
 @property (nonatomic) NSNumber *priority;
+@property (nonatomic, readonly) NSDate *serverReceivedTime;
 @property (nonatomic, copy) NSString *serviceIdentifier;
 @property (nonatomic, copy) NSString *storageGuid;
 @property (nonatomic, copy) NSString *toID;
@@ -43,6 +44,8 @@
 - (id)originalDestinationDevice;
 - (id)outgoingResponseIdentifier;
 - (id)priority;
+- (id)serverReceivedTime;
+- (id)serverTimestamp;
 - (id)serviceIdentifier;
 - (void)setBoostContext:(id)arg1;
 - (void)setBroadcastID:(long long)arg1;
@@ -57,6 +60,7 @@
 - (void)setOriginalDestinationDevice:(id)arg1;
 - (void)setOutgoingResponseIdentifier:(id)arg1;
 - (void)setPriority:(id)arg1;
+- (void)setServerTimestamp:(id)arg1;
 - (void)setServiceIdentifier:(id)arg1;
 - (void)setStorageGuid:(id)arg1;
 - (void)setToID:(id)arg1;

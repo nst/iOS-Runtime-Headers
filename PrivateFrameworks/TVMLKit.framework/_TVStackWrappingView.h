@@ -6,13 +6,13 @@
     UIImage * _backgroundImage;
     UIImageView * _bgImageView;
     NSArray * _headerSupplementaryViews;
-    _TVCollectionView * _stackView;
+    UICollectionView * _stackView;
     NSArray * _supplementaryCellLayoutAttributes;
 }
 
 @property (nonatomic, retain) UIImage *backgroundImage;
 @property (nonatomic, copy) NSArray *headerSupplementaryViews;
-@property (nonatomic, retain) _TVCollectionView *stackView;
+@property (nonatomic, retain) UICollectionView *stackView;
 @property (nonatomic, readonly, copy) NSArray *supplementaryCellLayoutAttributes;
 
 - (void).cxx_destruct;

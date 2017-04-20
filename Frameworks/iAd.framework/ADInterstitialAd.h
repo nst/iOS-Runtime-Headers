@@ -4,23 +4,26 @@
 
 @interface ADInterstitialAd : NSObject <ADAdRecipient> {
     BOOL  _actionInProgress;
+    NSString * _adResponseId;
     ADAdSpace * _adSpace;
     BOOL  _canLoadMoreThanOnce;
     int  _creativeType;
     <ADInterstitialAdDelegate> * _delegate;
     BOOL  _dimmingEnabled;
+    BOOL  _displayed;
     BOOL  _hasLoadedFirstAd;
     <ADInterstitialAdDelegate> * _internalDelegate;
     UIViewController * _internalPresentingViewController;
     ADInterstitialView * _interstitialView;
+    int  _lastErrorCode;
     BOOL  _loaded;
     int  _options;
     ADInterstitialAdPresentationViewController * _presentationViewController;
-    int  _state;
-    id /* block */  _stateChangedBlock;
+    int  _screenfuls;
 }
 
 @property (getter=isActionInProgress, nonatomic) BOOL actionInProgress;
+@property (nonatomic, copy) NSString *adResponseId;
 @property (nonatomic, retain) ADAdSpace *adSpace;
 @property (nonatomic, readonly) UIView *adSpaceView;
 @property (nonatomic) BOOL canLoadMoreThanOnce;
@@ -29,36 +32,41 @@
 @property (nonatomic) <ADInterstitialAdDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL dimmingEnabled;
+@property (nonatomic) BOOL displayed;
 @property (nonatomic) BOOL hasLoadedFirstAd;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) int internalAdType;
 @property (nonatomic) <ADInterstitialAdDelegate> *internalDelegate;
 @property (nonatomic) UIViewController *internalPresentingViewController;
 @property (nonatomic, retain) ADInterstitialView *interstitialView;
+@property (nonatomic) int lastErrorCode;
 @property (getter=isLoaded, nonatomic) BOOL loaded;
 @property (nonatomic, readonly) int options;
 @property (nonatomic, retain) ADInterstitialAdPresentationViewController *presentationViewController;
 @property (nonatomic, readonly) UIViewController *presentingViewController;
-@property (nonatomic) int state;
-@property (nonatomic, copy) id /* block */ stateChangedBlock;
+@property (nonatomic, readonly) BOOL requiresMRAID;
+@property (nonatomic) int screenfuls;
 @property (readonly) Class superclass;
 
 - (BOOL)_considerClosingAdSpace;
 - (void)_dismissModalInterstitial;
 - (void)_notifyDelegateOfBannerLoad;
 - (void)_presentFromViewController:(id)arg1;
+- (id)adResponseId;
 - (id)adSpace;
 - (id)adSpaceView;
 - (void)bannerTappedAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)bannerTappedAtPoint:(struct CGPoint { float x1; float x2; })arg1 withMRAIDAction:(id)arg2;
 - (BOOL)canLoadMoreThanOnce;
 - (void)cancelAction;
-- (void)changeBannerViewState:(int)arg1;
 - (int)clickAction;
 - (id)context;
+- (void)creativeControllerViewWasTappedAtPoint:(struct CGPoint { float x1; float x2; })arg1 withMRAIDAction:(id)arg2;
 - (int)creativeType;
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)dimmingEnabled;
+- (BOOL)displayed;
 - (BOOL)hasLoadedFirstAd;
 - (id)identifier;
 - (id)init;
@@ -69,6 +77,7 @@
 - (id)interstitialView;
 - (BOOL)isActionInProgress;
 - (BOOL)isLoaded;
+- (int)lastErrorCode;
 - (int)options;
 - (void)pauseBannerMedia;
 - (void)presentFromViewController:(id)arg1;
@@ -76,13 +85,16 @@
 - (id)presentationViewController;
 - (id)presentingViewController;
 - (void)privacyButtonWasTapped;
+- (BOOL)requiresMRAID;
 - (void)resumeBannerMedia;
+- (int)screenfuls;
 - (void)serverBannerViewDidFailToReceiveAdWithError:(id)arg1;
 - (void)serverBannerViewDidLoad;
 - (void)serverBannerViewWillLoad;
 - (void)serverStoryboardDidTransitionOut;
 - (id)serverURL;
 - (void)setActionInProgress:(BOOL)arg1;
+- (void)setAdResponseId:(id)arg1;
 - (void)setAdSpace:(id)arg1;
 - (void)setAuthenticationUserName:(id)arg1;
 - (void)setCanLoadMoreThanOnce:(BOOL)arg1;
@@ -90,19 +102,18 @@
 - (void)setCreativeType:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDimmingEnabled:(BOOL)arg1;
+- (void)setDisplayed:(BOOL)arg1;
 - (void)setHasLoadedFirstAd:(BOOL)arg1;
 - (void)setInternalDelegate:(id)arg1;
 - (void)setInternalPresentingViewController:(id)arg1;
 - (void)setInterstitialView:(id)arg1;
+- (void)setLastErrorCode:(int)arg1;
 - (void)setLoaded:(BOOL)arg1;
 - (void)setPresentationViewController:(id)arg1;
+- (void)setScreenfuls:(int)arg1;
 - (void)setSection:(id)arg1;
 - (void)setServerURL:(id)arg1;
-- (void)setState:(int)arg1;
-- (void)setStateChangedBlock:(id /* block */)arg1;
 - (BOOL)shouldTestVisibilityAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (int)state;
-- (id /* block */)stateChangedBlock;
 - (void)storyboardViewControllerDidPresent;
 
 @end

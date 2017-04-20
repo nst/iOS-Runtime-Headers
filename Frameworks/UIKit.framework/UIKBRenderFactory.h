@@ -11,6 +11,10 @@
     float  _rivenSizeFactor;
     float  _scale;
     NSMutableArray * _segmentTraits;
+    struct CGSize { 
+        float width; 
+        float height; 
+    }  _stretchFactor;
     BOOL  _suppressSegmentTraits;
 }
 
@@ -23,6 +27,7 @@
 @property (nonatomic) float rivenSizeFactor;
 @property (nonatomic) float scale;
 @property (nonatomic, readonly) NSArray *segmentTraits;
+@property (nonatomic) struct CGSize { float x1; float x2; } stretchFactor;
 
 + (id)_characterSetForGlyphSelectors;
 + (BOOL)_enabled;
@@ -59,6 +64,8 @@
 - (id)dictationKeyImageName;
 - (id)dismissKeyImageName;
 - (id)displayContentsForKey:(id)arg1;
+- (struct CGPoint { float x1; float x2; })dualStringKeyBottomTextOffset:(id)arg1 keyplane:(id)arg2;
+- (struct CGPoint { float x1; float x2; })dualStringKeyTopTextOffset:(id)arg1 keyplane:(id)arg2;
 - (float)emojiPopupDividerKeyOffset;
 - (int)enabledBlendForm;
 - (id)extraPasscodePaddleTraits;
@@ -106,12 +113,15 @@
 - (void)setRenderingContext:(id)arg1;
 - (void)setRivenSizeFactor:(float)arg1;
 - (void)setScale:(float)arg1;
+- (void)setStretchFactor:(struct CGSize { float x1; float x2; })arg1;
 - (void)setupLayoutSegments;
 - (id)shiftKeyImageName;
 - (id)shiftLockImageName;
 - (id)shiftOnKeyImageName;
 - (BOOL)shouldClearBaseDisplayStringForVariants:(id)arg1;
 - (float)skinnyKeyThreshold;
+- (struct CGSize { float x1; float x2; })stretchFactor;
+- (BOOL)supportsGestureBehaviors;
 - (BOOL)supportsInputTraits:(id)arg1 forKeyplane:(id)arg2;
 - (void)suppressLayoutSegments;
 - (id)thinKeycapsFontName;

@@ -16,17 +16,17 @@
     int  _timeWindow;
 }
 
-@property (readonly) NSMutableData *capturedData;
-@property (retain) NSObject<OS_xpc_object> *daemon_conn;
-@property <OSActivityInstrumentationDelegate> *delegate;
-@property unsigned int eventFilter;
-@property unsigned int mode;
-@property unsigned int options;
-@property (retain) NSObject<OS_xpc_object> *pidList;
-@property BOOL receivedHeader;
-@property unsigned int state;
-@property (retain) NSObject<OS_xpc_object> *stream;
-@property int timeWindow;
+@property (nonatomic, readonly) NSMutableData *capturedData;
+@property (nonatomic, retain) NSObject<OS_xpc_object> *daemon_conn;
+@property (nonatomic) <OSActivityInstrumentationDelegate> *delegate;
+@property (nonatomic) unsigned int eventFilter;
+@property (nonatomic) unsigned int mode;
+@property (nonatomic) unsigned int options;
+@property (nonatomic, retain) NSObject<OS_xpc_object> *pidList;
+@property (nonatomic) BOOL receivedHeader;
+@property (nonatomic) unsigned int state;
+@property (nonatomic, retain) NSObject<OS_xpc_object> *stream;
+@property (nonatomic) int timeWindow;
 
 + (BOOL)blessProcess:(int)arg1 processID:(unsigned long long)arg2;
 + (void)evaluateBuffer:(id)arg1 usingPredicate:(id)arg2 withBlock:(id /* block */)arg3;

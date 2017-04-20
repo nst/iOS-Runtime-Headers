@@ -58,6 +58,7 @@
 - (unsigned int)depthAttachmentPixelFormat;
 - (id)description;
 - (id)fastBlendDescriptorAtIndex:(unsigned int)arg1;
+- (id)formattedDescription:(unsigned int)arg1;
 - (unsigned int)fragmentDepthCompareClampMask;
 - (id)fragmentFunction;
 - (unsigned int)hash;

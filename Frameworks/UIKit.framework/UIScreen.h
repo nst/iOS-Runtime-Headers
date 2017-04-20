@@ -16,6 +16,11 @@
         } size; 
     }  _bounds;
     NSDictionary * _capabilities;
+    struct { 
+        unsigned int isKnown : 1; 
+        unsigned int isSupported : 1; 
+        unsigned int isInRange : 1; 
+    }  _carPlayHumanPresenceStatus;
     UITraitCollection * _contentSizeCategoryTraits;
     UITraitCollection * _defaultTraitCollection;
     CADisplay * _display;
@@ -108,6 +113,7 @@
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } is_scaledSize;
 @property (getter=_lastNotifiedTraitCollection, setter=_setLastNotifiedTraitCollection:, nonatomic, retain) UITraitCollection *lastNotifiedTraitCollection;
 @property (getter=_linearFocusMovementSequences, nonatomic, readonly, copy) NSArray *linearFocusMovementSequences;
+@property (readonly) int maximumFramesPerSecond;
 @property (nonatomic, readonly) UIScreen *mirroredScreen;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } nativeBounds;
 @property (nonatomic, readonly) float nativeScale;
@@ -173,6 +179,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_boundsForInterfaceOrientation:(int)arg1;
 - (id)_capabilities;
 - (id)_capabilityForKey:(id)arg1;
+- (void)_clearCarPlayHumanPresenceState;
 - (void)_computeMetrics;
 - (void)_computeMetrics:(BOOL)arg1;
 - (void)_connectScreen;
@@ -187,6 +194,7 @@
 - (void)_enableScreenUpdates;
 - (void)_endObservingBacklightLevelNotifications;
 - (void)_enumerateWindowsWithBlock:(id /* block */)arg1;
+- (void)_fetchInitialCarPlayHumanPresenceStatusIfNeeded;
 - (void)_focusEnvironmentWillDisappear:(id)arg1;
 - (id)_focusSystem;
 - (id)_focusedItem;
@@ -200,6 +208,7 @@
 - (unsigned int)_integerDisplayID;
 - (int)_interfaceOrientation;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_interfaceOrientedMainSceneBounds;
+- (BOOL)_isCarPlayHumanPresenceInRange;
 - (BOOL)_isCarScreen;
 - (BOOL)_isExternal;
 - (BOOL)_isMainScreen;
@@ -242,6 +251,7 @@
 - (void)_searchForFocusRegionsInContext:(id)arg1;
 - (unsigned int)_seed;
 - (void)_setCapability:(id)arg1 forKey:(id)arg2;
+- (void)_setCarPlayHumanPresenceInRange:(BOOL)arg1;
 - (void)_setDefaultTraitCollection:(id)arg1;
 - (void)_setDefaultTraitCollection:(id)arg1 notify:(BOOL)arg2;
 - (void)_setExternalDeviceShouldInputText:(BOOL)arg1;
@@ -265,6 +275,7 @@
 - (id)_snapshotExcludingWindows:(id)arg1 withRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)_softwareDimmingWindow;
 - (BOOL)_supportsBrightness;
+- (BOOL)_supportsCarPlayHumanPresence;
 - (BOOL)_supportsDeferredFocus;
 - (float)_touchRadiusScaleFactor;
 - (float)_touchScaleFactor;
@@ -308,6 +319,7 @@
 - (int)gamut;
 - (id)initWithDisplay:(id)arg1;
 - (BOOL)isAncestorOfItem:(id)arg1;
+- (int)maximumFramesPerSecond;
 - (id)mirroredScreen;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })nativeBounds;
 - (float)nativeScale;

@@ -10,7 +10,7 @@
     IKImageElement * _bgImgElement;
     UIVisualEffectView * _bgVisualEffectView;
     IKViewElement * _collectionListElement;
-    _TVCollectionView * _collectionView;
+    _TVStackCollectionView * _collectionView;
     _TVFocusCaptureView * _disabledTemplateFocusCaptureView;
     UIViewController * _focusedSupplementaryViewController;
     IKImageElement * _heroImgElement;
@@ -28,7 +28,7 @@
 @property (nonatomic, retain) UIImage *bgImage;
 @property (nonatomic, retain) IKImageElement *bgImgElement;
 @property (nonatomic, retain) IKViewElement *collectionListElement;
-@property (nonatomic, retain) _TVCollectionView *collectionView;
+@property (nonatomic, retain) _TVStackCollectionView *collectionView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIViewController *focusedSupplementaryViewController;
@@ -79,7 +79,7 @@
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 willDisplaySupplementaryView:(id)arg2 forElementKind:(id)arg3 atIndexPath:(id)arg4;
 - (void)dealloc;
-- (void)didUpdateFocusFromView:(id)arg1;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)focusedSupplementaryViewController;
 - (id)heroImgElement;
 - (id)impressionableElementsContainedInDocument:(id)arg1;

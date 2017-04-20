@@ -6,7 +6,7 @@
     SSMetricsEventTable * _table;
 }
 
-- (id)_collectUnreportedPIDsFromDatabase:(id)arg1 matchingReportURLString:(id)arg2 since:(long long)arg3;
+- (id)_collectUnreportedPIDsFromDatabase:(id)arg1 matchingReportURLString:(id)arg2 since:(long long)arg3 suppressDSID:(BOOL)arg4;
 - (int)_maximumUnreportedToSelect;
 - (void)_serialQueueInsertEvents:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)dealloc;
@@ -16,8 +16,7 @@
 - (id)init;
 - (BOOL)insertEventSummaries:(id)arg1 error:(id*)arg2;
 - (BOOL)markEventsAsReported:(id)arg1;
-- (id)newReportingSessionForURL:(id)arg1 since:(long long)arg2;
 - (id)unreportedEventURLsSince:(long long)arg1;
-- (id)unreportedEventsForURL:(id)arg1 since:(long long)arg2;
+- (id)unreportedEventsForURL:(id)arg1 since:(long long)arg2 suppressDSID:(BOOL)arg3;
 
 @end

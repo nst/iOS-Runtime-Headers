@@ -57,6 +57,7 @@
     NSObject<OS_dispatch_source> * _silenceTimer;
     BOOL  _streamInterrupted;
     BOOL  _streamStarted;
+    BOOL  _supportsNonStandardAudioSourceSampleRates;
     BOOL  _useDecoupledIO;
 }
 

@@ -15,12 +15,14 @@
     NSString * _irisIdentifier;
     int  _irisMode;
     NSURL * _localVideoDestinationURL;
+    float  _loggingVideoZoomFactor;
     unsigned int  _maximumBurstLength;
     NSString * _originalIrisIdentifier;
     NSURL * _originalLocalVideoDestinationURL;
     NSString * _originalPersistenceUUID;
     NSString * _originalVideoPersistenceUUID;
     NSString * _timelapseIdentifier;
+    unsigned long long  _userInitiationTime;
     BOOL  _usesStillImageStabilization;
     NSString * _videoPersistenceUUID;
     BOOL  _wantsAudioForCapture;
@@ -42,6 +44,7 @@
 @property (nonatomic, readonly, copy) NSString *irisIdentifier;
 @property (nonatomic, readonly) int irisMode;
 @property (nonatomic, readonly, copy) NSURL *localVideoDestinationURL;
+@property (nonatomic, readonly) float loggingVideoZoomFactor;
 @property (nonatomic, readonly) unsigned int maximumBurstLength;
 @property (nonatomic, readonly, copy) NSString *originalIrisIdentifier;
 @property (nonatomic, readonly, copy) NSURL *originalLocalVideoDestinationURL;
@@ -49,6 +52,7 @@
 @property (nonatomic, readonly, copy) NSString *originalVideoPersistenceUUID;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSString *timelapseIdentifier;
+@property (nonatomic, readonly) unsigned long long userInitiationTime;
 @property (nonatomic, readonly) BOOL usesStillImageStabilization;
 @property (nonatomic, readonly, copy) NSString *videoPersistenceUUID;
 @property (nonatomic, readonly) BOOL wantsAudioForCapture;
@@ -76,6 +80,7 @@
 - (id)irisVideoPersistenceUUIDForOriginal:(BOOL)arg1;
 - (BOOL)isOriginalLocalVideoDestinationURL:(id)arg1;
 - (id)localVideoDestinationURL;
+- (float)loggingVideoZoomFactor;
 - (unsigned int)maximumBurstLength;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)originalIrisIdentifier;
@@ -84,6 +89,7 @@
 - (id)originalVideoPersistenceUUID;
 - (BOOL)shouldPersistToLivePhotoDirectory;
 - (id)timelapseIdentifier;
+- (unsigned long long)userInitiationTime;
 - (BOOL)usesStillImageStabilization;
 - (id)videoPersistenceUUID;
 - (BOOL)wantsAudioForCapture;

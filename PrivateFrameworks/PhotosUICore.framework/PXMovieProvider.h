@@ -25,6 +25,7 @@
 - (id)initWithAssetCollection:(id)arg1 keyAsset:(id)arg2;
 - (id)keyAsset;
 - (id)movieViewController;
+- (BOOL)ppt_runTest:(id)arg1 options:(id)arg2;
 - (void)setDelegate:(id)arg1;
 
 @end

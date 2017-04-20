@@ -678,6 +678,10 @@
 + (id)px_navigationController:(id)arg1 interactionControllerForAnimationController:(id)arg2;
 + (id)px_navigationControllerShouldUseBuiltinInteractionController:(id)arg1;
 
+- (void)_ppt_setTransitionAnimationCompletionHandler:(id /* block */)arg1;
+- (id /* block */)_ppt_transitionAnimationCompletionHandler;
+- (void)ppt_installTransitionAnimationCompletionHandler:(id /* block */)arg1;
+- (void)ppt_notifyTransitionAnimationDidComplete;
 - (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint { float x1; float x2; })arg1 inCoordinateSpace:(id)arg2;
 - (BOOL)px_preparePopToViewController:(id)arg1 forced:(BOOL)arg2;
 - (id)px_snapBackController;

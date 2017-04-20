@@ -26,11 +26,13 @@
 - (id)descriptionWithIndent:(int)arg1 showFullContent:(BOOL)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)encodedData;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithEncodedData:(id)arg1;
 - (id)initWithEndpoint:(id)arg1;
 - (id)interface;
 - (id)internalEndpoint;
+- (BOOL)isEqual:(id)arg1;
 - (id)parentEndpointDomain;
 - (id)privateDescription;
 - (void)resolveEndpointWithCompletionHandler:(id /* block */)arg1;

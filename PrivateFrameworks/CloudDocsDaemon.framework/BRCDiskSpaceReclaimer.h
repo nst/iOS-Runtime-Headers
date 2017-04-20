@@ -21,11 +21,15 @@
 + (int)urgencyForCacheDeleteUrgency:(int)arg1;
 
 - (void).cxx_destruct;
+- (void)_asyncAutovacuumIfNeeds:(id)arg1;
+- (long long)_dbAutovacuumableSpaceInBytes:(id)arg1;
+- (long long)_dbSizeInBytes:(id)arg1;
 - (long long)_doFullVacuum:(id)arg1;
 - (long long)_doIncrementalVacuum:(id)arg1 amount:(long long)arg2;
 - (void)_enumerateItemsForEvictSyncWithBlock:(id /* block */)arg1 withTimeDelta:(double)arg2 onDiskAccessTimeDelta:(double)arg3;
 - (void)_enumerateItemsForEvictSyncWithBlock:(id /* block */)arg1 withUrgency:(int)arg2;
 - (long long)_evictableTimestampForDocument:(id)arg1 accessTime:(unsigned long long)arg2 modifyAccessTime:(unsigned long long*)arg3;
+- (long long)_fullVacuumIfPossible:(id)arg1;
 - (long long)_purgeSpaceUnderQueue:(long long)arg1 withUrgency:(int)arg2;
 - (void)_requestPurgeSpace;
 - (long long)_vacuumDB:(id)arg1 amount:(long long)arg2 withUrgency:(int)arg3;

@@ -8,6 +8,7 @@
     SPProtoObjectMessage * _notifyDidPlayToEndTime;
     SPProtoObjectMessage * _notifyFailedToPlayToEndTime;
     SPProtoObjectMessage * _notifyTimeJumped;
+    SPProtoAudioFilePlayerItemSetCurrentTime * _setItemCurrentTime;
     SPProtoAudioFilePlayerStatus * _setStatus;
     SPProtoAudioFilePlayerUpdateContainedIdentifier * _upsertWithAsset;
 }
@@ -19,11 +20,13 @@
 @property (nonatomic, readonly) BOOL hasNotifyDidPlayToEndTime;
 @property (nonatomic, readonly) BOOL hasNotifyFailedToPlayToEndTime;
 @property (nonatomic, readonly) BOOL hasNotifyTimeJumped;
+@property (nonatomic, readonly) BOOL hasSetItemCurrentTime;
 @property (nonatomic, readonly) BOOL hasSetStatus;
 @property (nonatomic, readonly) BOOL hasUpsertWithAsset;
 @property (nonatomic, retain) SPProtoObjectMessage *notifyDidPlayToEndTime;
 @property (nonatomic, retain) SPProtoObjectMessage *notifyFailedToPlayToEndTime;
 @property (nonatomic, retain) SPProtoObjectMessage *notifyTimeJumped;
+@property (nonatomic, retain) SPProtoAudioFilePlayerItemSetCurrentTime *setItemCurrentTime;
 @property (nonatomic, retain) SPProtoAudioFilePlayerStatus *setStatus;
 @property (nonatomic, retain) SPProtoAudioFilePlayerUpdateContainedIdentifier *upsertWithAsset;
 
@@ -39,6 +42,7 @@
 - (BOOL)hasNotifyDidPlayToEndTime;
 - (BOOL)hasNotifyFailedToPlayToEndTime;
 - (BOOL)hasNotifyTimeJumped;
+- (BOOL)hasSetItemCurrentTime;
 - (BOOL)hasSetStatus;
 - (BOOL)hasUpsertWithAsset;
 - (unsigned int)hash;
@@ -50,9 +54,11 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setDestroy:(id)arg1;
 - (void)setGetCurrentTime:(id)arg1;
+- (id)setItemCurrentTime;
 - (void)setNotifyDidPlayToEndTime:(id)arg1;
 - (void)setNotifyFailedToPlayToEndTime:(id)arg1;
 - (void)setNotifyTimeJumped:(id)arg1;
+- (void)setSetItemCurrentTime:(id)arg1;
 - (void)setSetStatus:(id)arg1;
 - (id)setStatus;
 - (void)setUpsertWithAsset:(id)arg1;

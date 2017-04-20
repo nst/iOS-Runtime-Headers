@@ -101,6 +101,12 @@
 
 - (id)_contactForEmailAddress:(id)arg1 keysToFetch:(id)arg2;
 - (id)mf_fetchContactForEmailAddress:(id)arg1 keysToFetch:(id)arg2;
+- (id)mf_fetchContactForEmailAddress:(id)arg1 keysToFetch:(id)arg2 error:(id*)arg3;
+- (id)mf_onScheduler:(id)arg1 contactFutureForEmailAddress:(id)arg2 keysToFetch:(id)arg3;
+
+// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
+
++ (id)safari_sharedContactStore;
 
 // Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
 

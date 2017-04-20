@@ -150,6 +150,7 @@
 - (void)addItemWithProductID:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)addLibraryFilterPredicate:(id)arg1;
 - (void)addNonLibraryOwnedPlaylistWithGlobalID:(id)arg1 completion:(id /* block */)arg2;
+- (void)addNonLibraryOwnedPlaylistsWithGlobalIDs:(id)arg1 completion:(id /* block */)arg2;
 - (void)addPlaylistStoreItemsWithMetadata:(id)arg1 completion:(id /* block */)arg2;
 - (id)addPlaylistWithName:(id)arg1;
 - (id)addPlaylistWithName:(id)arg1 activeGeniusPlaylist:(BOOL)arg2;
@@ -267,6 +268,7 @@
 - (void)setRemovalReason:(int)arg1;
 - (void)setSyncPlaylistId:(unsigned long long)arg1;
 - (BOOL)setValue:(id)arg1 forDatabaseProperty:(id)arg2;
+- (void)setValues:(id)arg1 forProperties:(id)arg2 forItemPersistentIDs:(id)arg3;
 - (void)set_MLCoreStorage:(id)arg1;
 - (int)status;
 - (unsigned long long)syncGenerationID;

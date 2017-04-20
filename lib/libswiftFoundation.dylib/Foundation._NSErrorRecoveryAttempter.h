@@ -4,7 +4,7 @@
 
 @interface Foundation._NSErrorRecoveryAttempter : SwiftObject
 
-- (BOOL)attemptRecoveryFromError:(id)arg1 optionIndex:(int)arg2;
-- (void)attemptRecoveryFromError:(id)arg1 optionIndex:(int)arg2 delegate:(id)arg3 didRecoverSelector:(SEL)arg4 contextInfo:(void*)arg5;
+- (BOOL)attemptRecoveryFromErroroptionIndex;
+- (void)attemptRecoveryFromErroroptionIndexdelegatedidRecoverSelectorcontextInfo;
 
 @end

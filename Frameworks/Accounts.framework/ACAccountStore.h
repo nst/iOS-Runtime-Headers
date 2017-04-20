@@ -99,6 +99,7 @@
 - (void)renewCredentialsForAccount:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;
 - (void)renewCredentialsForAccount:(id)arg1 reason:(id)arg2 completion:(id /* block */)arg3;
 - (void)renewCredentialsForAccount:(id)arg1 services:(id)arg2 completion:(id /* block */)arg3;
+- (void)reportTelemetryForLandmarkEvent:(id /* block */)arg1;
 - (void)requestAccessToAccountsWithType:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;
 - (void)requestAccessToAccountsWithType:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)saveAccount:(id)arg1 toPairedDeviceWithOptions:(id)arg2 completion:(id /* block */)arg3;
@@ -137,14 +138,18 @@
 - (void)_performUpdateRequestWithAccount:(id)arg1 completion:(id /* block */)arg2;
 - (id)aa_accountsEnabledForDataclass:(id)arg1;
 - (id)aa_appleAccountType;
+- (id)aa_appleAccountWithAltDSID:(id)arg1;
 - (id)aa_appleAccountWithPersonID:(id)arg1;
 - (id)aa_appleAccountWithUsername:(id)arg1;
 - (id)aa_appleAccounts;
+- (void)aa_appleAccountsWithCompletion:(id /* block */)arg1;
 - (id)aa_authKitAccountForAltDSID:(id)arg1;
+- (id)aa_grandSlamAccountForAltDSID:(id)arg1;
 - (id)aa_grandSlamAccountForiCloudAccount:(id)arg1;
 - (BOOL)aa_isUsingiCloud;
 - (void)aa_lookupEmailAddresses:(id)arg1 withAppleAccount:(id)arg2 completion:(id /* block */)arg3;
 - (id)aa_primaryAppleAccount;
+- (void)aa_primaryAppleAccountWithCompletion:(id /* block */)arg1;
 - (id)aa_primaryAppleAccountWithPreloadedDataclasses;
 - (id)aa_recommendedAppleIDForAccountSignInWithTypeIdentifier:(id)arg1;
 - (void)aa_registerAppleAccount:(id)arg1 withCompletion:(id /* block */)arg2;

@@ -21,6 +21,7 @@
 - (id)initWithItemCollection:(id)arg1;
 - (id)initWithQuery:(id)arg1;
 - (id)itemCollection;
+- (id)playbackContext;
 - (id)query;
 - (void)setEndTime:(double)arg1 forItem:(id)arg2;
 - (void)setStartItem:(id)arg1;

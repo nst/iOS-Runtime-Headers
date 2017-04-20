@@ -3,6 +3,7 @@
  */
 
 @interface PHPerson : PHObject <PXPerson> {
+    NSDictionary * _contactMatchingDictionary;
     NSString * _displayName;
     int  _faceCount;
     BOOL  _inPersonNamingModel;
@@ -13,6 +14,7 @@
     BOOL  _verified;
 }
 
+@property (nonatomic, readonly) NSDictionary *contactMatchingDictionary;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *displayName;
@@ -24,7 +26,7 @@
 @property (nonatomic, readonly) NSString *personUri;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) int type;
-@property (nonatomic, readonly) BOOL verified;
+@property (getter=isVerified, nonatomic, readonly) BOOL verified;
 
 // Image: /System/Library/Frameworks/Photos.framework/Photos
 
@@ -48,6 +50,7 @@
 + (id)fetchPersonsWithOptions:(id)arg1;
 + (id)fetchPersonsWithType:(int)arg1 options:(id)arg2;
 + (id)fetchPredicateFromComparisonPredicate:(id)arg1 options:(id)arg2;
++ (id)fetchRejectedPersonsForFace:(id)arg1 options:(id)arg2;
 + (id)fetchType;
 + (id)fullNameFromContact:(id)arg1;
 + (id)identifierCode;
@@ -57,16 +60,17 @@
 
 - (void).cxx_destruct;
 - (Class)changeRequestClass;
+- (id)contactMatchingDictionary;
 - (id)description;
 - (id)displayName;
 - (int)faceCount;
 - (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned int)arg2 photoLibrary:(id)arg3;
 - (BOOL)isInPersonNamingModel;
+- (BOOL)isVerified;
 - (int)manualOrder;
 - (id)name;
 - (id)personUri;
 - (int)type;
-- (BOOL)verified;
 
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 

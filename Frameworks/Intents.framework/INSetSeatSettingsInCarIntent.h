@@ -20,18 +20,24 @@
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
 - (id)_typedBackingStore;
 - (id)description;
+- (id)domain;
 - (id)enableCooling;
 - (id)enableHeating;
 - (id)enableMassage;
 - (id)initWithEnableHeating:(id)arg1 enableCooling:(id)arg2 enableMassage:(id)arg3 seat:(int)arg4 level:(id)arg5 relativeLevelSetting:(int)arg6;
 - (id)level;
+- (id)parametersByName;
 - (int)relativeLevelSetting;
 - (int)seat;
+- (void)setDomain:(id)arg1;
 - (void)setEnableCooling:(id)arg1;
 - (void)setEnableHeating:(id)arg1;
 - (void)setEnableMassage:(id)arg1;
 - (void)setLevel:(id)arg1;
+- (void)setParametersByName:(id)arg1;
 - (void)setRelativeLevelSetting:(int)arg1;
 - (void)setSeat:(int)arg1;
+- (void)setVerb:(id)arg1;
+- (id)verb;
 
 @end

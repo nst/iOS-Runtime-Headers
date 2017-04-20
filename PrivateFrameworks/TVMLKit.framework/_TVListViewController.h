@@ -12,6 +12,7 @@
     BOOL  _floatingHeader;
     IKViewElement * _headerElement;
     UIViewController * _headerViewController;
+    BOOL  _indexDisplayEnabled;
     NSIndexPath * _lastFocusedIndexPath;
     NSIndexPath * _lastPreviewedIndexPath;
     NSIndexPath * _pendingPreviewIndexPath;
@@ -32,6 +33,7 @@
 @property (nonatomic) <_TVListViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (getter=isIndexDisplayEnabled, nonatomic) BOOL indexDisplayEnabled;
 @property (readonly) Class superclass;
 
 + (id)_shadowCollectionElementForCollectionElement:(id)arg1;
@@ -72,8 +74,10 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)didMoveToParentViewController:(id)arg1;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)impressionableElementsContainedInDocument:(id)arg1;
 - (id)indexPathForPreferredFocusedViewInCollectionView:(id)arg1;
+- (BOOL)isIndexDisplayEnabled;
 - (BOOL)listCell:(id)arg1 shouldAppearSelectedForPreviouslyFocusedView:(id)arg2;
 - (void)loadView;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
@@ -82,6 +86,7 @@
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (void)setCollectionView:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setIndexDisplayEnabled:(BOOL)arg1;
 - (void)templateControllerDidUpdateFocusFromView:(id)arg1;
 - (void)updateWithViewElement:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;

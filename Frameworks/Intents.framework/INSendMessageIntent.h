@@ -22,17 +22,23 @@
 - (id)_typedBackingStore;
 - (id)content;
 - (id)description;
+- (id)domain;
 - (id)groupName;
 - (id)initWithRecipients:(id)arg1 content:(id)arg2 groupName:(id)arg3 serviceName:(id)arg4 sender:(id)arg5;
 - (id)initWithRecipients:(id)arg1 content:(id)arg2 serviceName:(id)arg3 sender:(id)arg4;
+- (id)parametersByName;
 - (id)recipients;
 - (id)sender;
 - (id)serviceName;
 - (void)setContent:(id)arg1;
+- (void)setDomain:(id)arg1;
 - (void)setGroupName:(id)arg1;
+- (void)setParametersByName:(id)arg1;
 - (void)setRecipients:(id)arg1;
 - (void)setSender:(id)arg1;
 - (void)setServiceName:(id)arg1;
+- (void)setVerb:(id)arg1;
+- (id)verb;
 
 // Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
 

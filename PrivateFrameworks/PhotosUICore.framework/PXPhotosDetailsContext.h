@@ -15,6 +15,7 @@
     BOOL  _shouldShowMovieHeader;
     BOOL  _shouldUseKeyFace;
     NSString * _titleFontName;
+    unsigned int  _viewSourceOrigin;
 }
 
 @property (nonatomic, readonly) PHFetchResult *assetCollections;
@@ -34,6 +35,7 @@
 @property (nonatomic, readonly) BOOL shouldUseKeyFace;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSString *titleFontName;
+@property (nonatomic, readonly) unsigned int viewSourceOrigin;
 
 - (void).cxx_destruct;
 - (void)_updatePropertiesDerivedFromDisplayTitleInfo;
@@ -61,9 +63,11 @@
 - (void)setPeople:(id)arg1;
 - (void)setShouldShowMovieHeader:(BOOL)arg1;
 - (void)setTitleFontName:(id)arg1;
+- (void)setViewSourceOrigin:(unsigned int)arg1;
 - (BOOL)shouldShowHeaderTitle;
 - (BOOL)shouldShowMovieHeader;
 - (BOOL)shouldUseKeyFace;
 - (id)titleFontName;
+- (unsigned int)viewSourceOrigin;
 
 @end

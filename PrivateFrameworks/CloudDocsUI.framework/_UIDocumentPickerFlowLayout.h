@@ -20,5 +20,6 @@
 - (float)contentSizeAdjustment;
 - (void)setCellStyle:(int)arg1;
 - (void)setContentSizeAdjustment:(float)arg1;
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

@@ -13,6 +13,7 @@
     }  _contentSize;
     NSSet * _emphasizedCandidates;
     BOOL  _expanded;
+    BOOL  _forceJustifiedAlignment;
     BOOL  _hasExtensionCandidates;
     BOOL  _hasSecondaryCandidates;
     float  _headerViewHeight;
@@ -36,6 +37,7 @@
 @property (nonatomic) unsigned int columnsCount;
 @property (nonatomic, retain) NSSet *emphasizedCandidates;
 @property (nonatomic) BOOL expanded;
+@property (nonatomic) BOOL forceJustifiedAlignment;
 @property (nonatomic, readonly) float groupBarWidth;
 @property (nonatomic) BOOL hasExtensionCandidates;
 @property (nonatomic) BOOL hasSecondaryCandidates;
@@ -62,6 +64,7 @@
 - (id)emphasizedCandidates;
 - (BOOL)expanded;
 - (void)finishLayoutForRowWithAttributes:(id)arg1 minimumCellWidth:(float)arg2 remainingWidth:(float)arg3 rowOrigin:(struct CGPoint { float x1; float x2; })arg4 isFirstRow:(BOOL)arg5 isLastRow:(BOOL)arg6 zIndex:(int)arg7;
+- (BOOL)forceJustifiedAlignment;
 - (void)getGroupBarWidth:(float*)arg1 headerAttributes:(id*)arg2;
 - (float)groupBarWidth;
 - (BOOL)hasExtensionCandidates;
@@ -89,6 +92,7 @@
 - (void)setColumnsCount:(unsigned int)arg1;
 - (void)setEmphasizedCandidates:(id)arg1;
 - (void)setExpanded:(BOOL)arg1;
+- (void)setForceJustifiedAlignment:(BOOL)arg1;
 - (void)setHasExtensionCandidates:(BOOL)arg1;
 - (void)setHasSecondaryCandidates:(BOOL)arg1;
 - (void)setHeaderViewHeight:(float)arg1;
@@ -99,6 +103,7 @@
 - (void)setSupportsNumberKeySelection:(BOOL)arg1;
 - (void)setVisualStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1;
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)shouldShowGroupHeaderForGroup:(id)arg1;
 - (id)supplementaryAttributes;
 - (BOOL)supportsNumberKeySelection;
 - (struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })visualStyling;

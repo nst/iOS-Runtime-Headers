@@ -43,6 +43,7 @@
 @property (nonatomic, retain) NSNumber *originalOrientation;
 @property (nonatomic, retain) NSNumber *originalResourceChoice;
 @property (nonatomic, retain) NSNumber *originalWidth;
+@property (nonatomic, copy) NSString *originatingAssetIdentifier;
 @property (nonatomic) long long pendingPlayCount;
 @property (nonatomic) long long pendingShareCount;
 @property (nonatomic) long long pendingViewCount;

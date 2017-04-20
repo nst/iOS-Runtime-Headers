@@ -5,6 +5,7 @@
 @interface DiagnosticExtensionCacheDelete : NSObject
 
 + (void)purgePayloadsForAllCases;
++ (void)purgePayloadsForCases:(id)arg1;
 + (void)registerCallbacks:(const char *)arg1;
 + (id)sharedInstance;
 
@@ -14,6 +15,7 @@
 - (id)cacheDeletePurgeableWithUrgency:(int)arg1 info:(struct __CFDictionary { }*)arg2;
 - (unsigned int)purgeOrphanedPayloadsCalculateOnly:(BOOL)arg1;
 - (void)purgePayloadsForAllCases;
+- (void)purgePayloadsForCases:(id)arg1;
 - (void)purgePayloadsForCases:(id)arg1 payloadRecords:(id)arg2;
 - (void)registerCallbacks:(const char *)arg1;
 - (id)replyCacheDeleteDictionaryWithVolume:(id)arg1 amount:(unsigned int)arg2;

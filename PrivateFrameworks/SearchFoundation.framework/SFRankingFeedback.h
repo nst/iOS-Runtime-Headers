@@ -2,13 +2,20 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFRankingFeedback : SFFeedback <NSCopying> {
+@interface SFRankingFeedback : SFFeedback <NSCopying, SFProtobufObject> {
     double  _blendingDuration;
     NSArray * _sections;
 }
 
 @property (nonatomic) double blendingDuration;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) PBCodable *protobufMessage;
 @property (nonatomic, copy) NSArray *sections;
+@property (readonly) Class superclass;
+
+// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
 
 + (BOOL)supportsSecureCoding;
 
@@ -21,5 +28,11 @@
 - (id)sections;
 - (void)setBlendingDuration:(double)arg1;
 - (void)setSections:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
+
++ (Class)protobufClass;
+
+- (id)protobufMessage;
 
 @end

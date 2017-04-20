@@ -14,6 +14,7 @@
 @property (nonatomic, retain) NSNumber *forcedStatusBarStyle;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL idleModeEnabled;
+@property (nonatomic) BOOL statusBarDisabled;
 @property (nonatomic) int statusBarStyleOverridesToSuppress;
 @property (readonly) Class superclass;
 @property (nonatomic) BOOL underLock;
@@ -38,9 +39,11 @@
 - (void)setForcedStatusBarHidden:(id)arg1;
 - (void)setForcedStatusBarStyle:(id)arg1;
 - (void)setIdleModeEnabled:(BOOL)arg1;
+- (void)setStatusBarDisabled:(BOOL)arg1;
 - (void)setStatusBarStyleOverridesToSuppress:(int)arg1;
 - (void)setUnderLock:(BOOL)arg1;
 - (void)setUserInterfaceStyle:(int)arg1;
+- (BOOL)statusBarDisabled;
 - (int)statusBarStyleOverridesToSuppress;
 - (BOOL)underLock;
 - (int)userInterfaceStyle;

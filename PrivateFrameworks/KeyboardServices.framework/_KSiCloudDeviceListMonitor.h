@@ -25,11 +25,10 @@
 - (void).cxx_destruct;
 - (id)account;
 - (id)accountStore;
-- (void)accountStoreDidChange:(id)arg1;
 - (BOOL)canMigrateToCloudKit;
 - (void)dealloc;
 - (void)fetchCloudKitDevicesWithCompletionBlock:(id /* block */)arg1;
-- (void)fetchSoftwareVersionsFromICloudWithCompletionBlock:(id /* block */)arg1;
+- (void)fetchICloudDevicesWithCompletionBlock:(id /* block */)arg1;
 - (id)init;
 - (void)isAccountCompatibleForCloudKitSyncingWithCompletionBlock:(id /* block */)arg1;
 - (BOOL)isSWVersionCloudKitSyncCompatible:(id)arg1;

@@ -14,6 +14,7 @@
     BOOL  _ephemeralMultiUser;
     NSString * _identifier;
     NSArray * _installedApplications;
+    NSString * _instructorImageIdentifier;
     int  _interfaceOrientation;
     int  _lockState;
     int  _loginState;
@@ -27,14 +28,19 @@
     int  _screenState;
     NSString * _secondaryOpenApplication;
     NSString * _serialNumber;
+    NSString * _stagedAdHocIdentityCertificateFingerprint;
+    NSString * _studentImageIdentifier;
     BOOL  _supervised;
     NSString * _systemName;
     NSString * _systemVersion;
+    NSArray * _trustedAnchorCertificateFingerprints;
     NSString * _userDisplayName;
     NSString * _userFamilyName;
     NSString * _userGivenName;
     NSString * _userIdentifier;
     NSString * _userImageURL;
+    NSString * _userPhoneticFamilyName;
+    NSString * _userPhoneticGivenName;
     float  _volume;
 }
 
@@ -49,6 +55,7 @@
 @property (getter=isEphemeralMultiUser, nonatomic) BOOL ephemeralMultiUser;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, copy) NSArray *installedApplications;
+@property (nonatomic, copy) NSString *instructorImageIdentifier;
 @property (nonatomic) int interfaceOrientation;
 @property (nonatomic) int lockState;
 @property (nonatomic) int loginState;
@@ -62,14 +69,19 @@
 @property (nonatomic) int screenState;
 @property (nonatomic, copy) NSString *secondaryOpenApplication;
 @property (nonatomic, copy) NSString *serialNumber;
+@property (nonatomic, copy) NSString *stagedAdHocIdentityCertificateFingerprint;
+@property (nonatomic, copy) NSString *studentImageIdentifier;
 @property (getter=isSupervised, nonatomic) BOOL supervised;
 @property (nonatomic, copy) NSString *systemName;
 @property (nonatomic, copy) NSString *systemVersion;
+@property (nonatomic, copy) NSArray *trustedAnchorCertificateFingerprints;
 @property (nonatomic, copy) NSString *userDisplayName;
 @property (nonatomic, copy) NSString *userFamilyName;
 @property (nonatomic, copy) NSString *userGivenName;
 @property (nonatomic, copy) NSString *userIdentifier;
 @property (nonatomic, copy) NSString *userImageURL;
+@property (nonatomic, copy) NSString *userPhoneticFamilyName;
+@property (nonatomic, copy) NSString *userPhoneticGivenName;
 @property (nonatomic) float volume;
 
 + (id)allPropertyKeys;
@@ -91,6 +103,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;
 - (id)installedApplications;
+- (id)instructorImageIdentifier;
 - (int)interfaceOrientation;
 - (BOOL)isAppLocked;
 - (BOOL)isEphemeralMultiUser;
@@ -119,6 +132,7 @@
 - (void)setDeviceOrientation:(int)arg1;
 - (void)setEphemeralMultiUser:(BOOL)arg1;
 - (void)setInstalledApplications:(id)arg1;
+- (void)setInstructorImageIdentifier:(id)arg1;
 - (void)setInterfaceOrientation:(int)arg1;
 - (void)setLockState:(int)arg1;
 - (void)setLoginState:(int)arg1;
@@ -132,22 +146,32 @@
 - (void)setScreenState:(int)arg1;
 - (void)setSecondaryOpenApplication:(id)arg1;
 - (void)setSerialNumber:(id)arg1;
+- (void)setStagedAdHocIdentityCertificateFingerprint:(id)arg1;
+- (void)setStudentImageIdentifier:(id)arg1;
 - (void)setSupervised:(BOOL)arg1;
 - (void)setSystemName:(id)arg1;
 - (void)setSystemVersion:(id)arg1;
+- (void)setTrustedAnchorCertificateFingerprints:(id)arg1;
 - (void)setUserDisplayName:(id)arg1;
 - (void)setUserFamilyName:(id)arg1;
 - (void)setUserGivenName:(id)arg1;
 - (void)setUserIdentifier:(id)arg1;
 - (void)setUserImageURL:(id)arg1;
+- (void)setUserPhoneticFamilyName:(id)arg1;
+- (void)setUserPhoneticGivenName:(id)arg1;
 - (void)setVolume:(float)arg1;
+- (id)stagedAdHocIdentityCertificateFingerprint;
+- (id)studentImageIdentifier;
 - (id)systemName;
 - (id)systemVersion;
+- (id)trustedAnchorCertificateFingerprints;
 - (id)userDisplayName;
 - (id)userFamilyName;
 - (id)userGivenName;
 - (id)userIdentifier;
 - (id)userImageURL;
+- (id)userPhoneticFamilyName;
+- (id)userPhoneticGivenName;
 - (float)volume;
 
 @end

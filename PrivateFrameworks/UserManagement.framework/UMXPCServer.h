@@ -14,6 +14,7 @@
     NSString * _machServiceName;
     NSData * _passcodeData;
     NSDictionary * _personaSpec;
+    NSDictionary * _preferencesDict;
     id /* block */  _registrationCompletionHandler;
     id  _stakeholder;
     unsigned int  _stakeholderType;
@@ -44,6 +45,7 @@
 @property (nonatomic, retain) NSString *machServiceName;
 @property (nonatomic, retain) NSData *passcodeData;
 @property (nonatomic, retain) NSDictionary *personaSpec;
+@property (nonatomic, retain) NSDictionary *preferencesDict;
 @property (nonatomic, copy) id /* block */ registrationCompletionHandler;
 @property (nonatomic) id stakeholder;
 @property (nonatomic) unsigned int stakeholderType;
@@ -91,6 +93,7 @@
 - (id)machServiceName;
 - (id)passcodeData;
 - (id)personaSpec;
+- (id)preferencesDict;
 - (void)readyToSwitchToUser:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)registerCriticalUserSwitchStakeHolder:(id)arg1;
 - (void)registerUserSwitchStakeHolder:(id)arg1;
@@ -111,6 +114,7 @@
 - (void)setMachServiceName:(id)arg1;
 - (void)setPasscodeData:(id)arg1;
 - (void)setPersonaSpec:(id)arg1;
+- (void)setPreferencesDict:(id)arg1;
 - (void)setRegistrationCompletionHandler:(id /* block */)arg1;
 - (void)setStakeholder:(id)arg1;
 - (void)setStakeholderType:(unsigned int)arg1;
@@ -134,6 +138,7 @@
 - (void)switchToLoginUserWithCompletionHandler:(id /* block */)arg1;
 - (void)switchToLoginUserWithError:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)switchToUser:(id)arg1 passcodeData:(id)arg2 context:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)switchToUser:(id)arg1 passcodeData:(id)arg2 context:(id)arg3 preferences:(id)arg4 completionHandler:(id /* block */)arg5;
 - (id)syncTasks;
 - (void)terminateSyncWithCompletionHandler:(id /* block */)arg1;
 - (void)unregisterStakeHolder:(id)arg1 status:(unsigned int)arg2 reason:(id)arg3;
@@ -141,6 +146,7 @@
 - (unsigned int)unregistrationStatus;
 - (id /* block */)uploadContentCompletionHandler;
 - (void)uploadContentWithCompletionHandler:(id /* block */)arg1;
+- (void)userInteractionIsEnabled;
 - (void)userSwitchTaskListDidUpdate;
 - (id /* block */)willSwitchCompletionHandler;
 - (void)willSwitchToUser:(id)arg1 completionHandler:(id /* block */)arg2;

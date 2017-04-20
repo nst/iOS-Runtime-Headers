@@ -43,6 +43,7 @@
     unsigned int  _showMoreLessReason;
     UISwipeGestureRecognizer * _swipeDownRecognizer;
     UISwipeGestureRecognizer * _swipeUpRecognizer;
+    BOOL  _visibleCellsOrHeadersChanged;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -71,6 +72,7 @@
 @property (readonly) Class superclass;
 @property (retain) UISwipeGestureRecognizer *swipeDownRecognizer;
 @property (retain) UISwipeGestureRecognizer *swipeUpRecognizer;
+@property BOOL visibleCellsOrHeadersChanged;
 
 + (unsigned int)defaultStyle;
 + (unsigned int)previewStyle;
@@ -97,7 +99,6 @@
 - (BOOL)isZKWExpanded;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })keyboardFrame;
 - (void)keyboardFrameChanged:(id)arg1;
-- (void)keyboardWillShow:(id)arg1;
 - (float)lastScrollOffset;
 - (void)leavingSpotlight;
 - (void)numberOfRowsDidChange:(id)arg1;
@@ -119,7 +120,6 @@
 - (id)sectionForIndex:(unsigned int)arg1;
 - (id)sectionIdentifiers;
 - (BOOL)sectionIsExpanded:(id)arg1;
-- (BOOL)sectionIsProactiveSuggestions:(int)arg1;
 - (id)sectionsForIdentifiers;
 - (id)sectionsThatHaveBeenExpandedBefore;
 - (id)seenVisibleResults;
@@ -146,23 +146,28 @@
 - (void)setShowMoreLessReason:(unsigned int)arg1;
 - (void)setSwipeDownRecognizer:(id)arg1;
 - (void)setSwipeUpRecognizer:(id)arg1;
+- (void)setVisibleCellsOrHeadersChanged:(BOOL)arg1;
 - (unsigned int)showMoreLessReason;
 - (void)showViewController:(id)arg1 sender:(id)arg2;
 - (id)swipeDownRecognizer;
 - (id)swipeUpRecognizer;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (void)tableView:(id)arg1 didEndDisplayingHeaderView:(id)arg2 forSection:(int)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 editActionsForRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (BOOL)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(int)arg3;
 - (void)tableViewDidFinishReload:(id)arg1;
 - (void)toggleExpansionForSection:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)update;
 - (void)updateAnimated:(BOOL)arg1 whyUpdate:(unsigned int)arg2;
+- (void)updateCellSelectedBackgroundViewForRoundedCorners:(id)arg1;
 - (void)updateDataModel:(unsigned int)arg1;
 - (void)updateSeparator;
 - (void)viewBecomingVisible:(unsigned int)arg1;
@@ -170,5 +175,6 @@
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (BOOL)visibleCellsOrHeadersChanged;
 
 @end

@@ -10,6 +10,7 @@
     BOOL  _disableTouchInput;
     BOOL  _ignoreEventsUntilPressEnds;
     UIKBTree * _indirectKeyboard;
+    BOOL  _isForwardingEvent;
     NSString * _keyplaneBeforeDictation;
     NSArray * _keyplaneKeys;
     UILexicon * _recentInputs;

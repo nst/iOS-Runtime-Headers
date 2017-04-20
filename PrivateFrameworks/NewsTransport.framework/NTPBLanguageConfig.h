@@ -4,8 +4,12 @@
 
 @interface NTPBLanguageConfig : PBCodable <NSCopying> {
     NSString * _appleEditorialChannelId;
+    NSString * _breakingNewsChannelId;
     NSString * _briefingsTagId;
     NTPBCoverArticlesConfig * _coverArticlesConfig;
+    NSString * _editorialGemsSectionId;
+    NSString * _exploreArticleId;
+    NSString * _featuredStoriesTagId;
     NSString * _forYouConfigId;
     NSString * _hiddenFeedId;
     NSString * _languageTag;
@@ -14,21 +18,35 @@
     NSMutableArray * _preSubscribedNotificationsChannelIds;
     NSMutableArray * _recommendedNotificationChannels;
     NTPBCategory * _rootCategory;
+    NSString * _savedStoriesTagId;
     NTPBTopStoriesConfig * _topStoriesConfig;
+    NSString * _trendingTagId;
+    NSString * _widgetSectionConfigId;
 }
 
 @property (nonatomic, retain) NSString *appleEditorialChannelId;
+@property (nonatomic, retain) NSString *breakingNewsChannelId;
 @property (nonatomic, retain) NSString *briefingsTagId;
 @property (nonatomic, retain) NTPBCoverArticlesConfig *coverArticlesConfig;
+@property (nonatomic, retain) NSString *editorialGemsSectionId;
+@property (nonatomic, retain) NSString *exploreArticleId;
+@property (nonatomic, retain) NSString *featuredStoriesTagId;
 @property (nonatomic, retain) NSString *forYouConfigId;
 @property (nonatomic, readonly) BOOL hasAppleEditorialChannelId;
+@property (nonatomic, readonly) BOOL hasBreakingNewsChannelId;
 @property (nonatomic, readonly) BOOL hasBriefingsTagId;
 @property (nonatomic, readonly) BOOL hasCoverArticlesConfig;
+@property (nonatomic, readonly) BOOL hasEditorialGemsSectionId;
+@property (nonatomic, readonly) BOOL hasExploreArticleId;
+@property (nonatomic, readonly) BOOL hasFeaturedStoriesTagId;
 @property (nonatomic, readonly) BOOL hasForYouConfigId;
 @property (nonatomic, readonly) BOOL hasHiddenFeedId;
 @property (nonatomic, readonly) BOOL hasLanguageTag;
 @property (nonatomic, readonly) BOOL hasRootCategory;
+@property (nonatomic, readonly) BOOL hasSavedStoriesTagId;
 @property (nonatomic, readonly) BOOL hasTopStoriesConfig;
+@property (nonatomic, readonly) BOOL hasTrendingTagId;
+@property (nonatomic, readonly) BOOL hasWidgetSectionConfigId;
 @property (nonatomic, retain) NSString *hiddenFeedId;
 @property (nonatomic, retain) NSString *languageTag;
 @property (nonatomic, retain) NSMutableArray *onboardingTagIds;
@@ -36,7 +54,10 @@
 @property (nonatomic, retain) NSMutableArray *preSubscribedNotificationsChannelIds;
 @property (nonatomic, retain) NSMutableArray *recommendedNotificationChannels;
 @property (nonatomic, retain) NTPBCategory *rootCategory;
+@property (nonatomic, retain) NSString *savedStoriesTagId;
 @property (nonatomic, retain) NTPBTopStoriesConfig *topStoriesConfig;
+@property (nonatomic, retain) NSString *trendingTagId;
+@property (nonatomic, retain) NSString *widgetSectionConfigId;
 
 + (Class)onboardingTagIdsType;
 + (Class)preSubscribedFeedIdsType;
@@ -49,6 +70,7 @@
 - (void)addPreSubscribedNotificationsChannelIds:(id)arg1;
 - (void)addRecommendedNotificationChannels:(id)arg1;
 - (id)appleEditorialChannelId;
+- (id)breakingNewsChannelId;
 - (id)briefingsTagId;
 - (void)clearOnboardingTagIds;
 - (void)clearPreSubscribedFeedIds;
@@ -58,15 +80,25 @@
 - (id)coverArticlesConfig;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)editorialGemsSectionId;
+- (id)exploreArticleId;
+- (id)featuredStoriesTagId;
 - (id)forYouConfigId;
 - (BOOL)hasAppleEditorialChannelId;
+- (BOOL)hasBreakingNewsChannelId;
 - (BOOL)hasBriefingsTagId;
 - (BOOL)hasCoverArticlesConfig;
+- (BOOL)hasEditorialGemsSectionId;
+- (BOOL)hasExploreArticleId;
+- (BOOL)hasFeaturedStoriesTagId;
 - (BOOL)hasForYouConfigId;
 - (BOOL)hasHiddenFeedId;
 - (BOOL)hasLanguageTag;
 - (BOOL)hasRootCategory;
+- (BOOL)hasSavedStoriesTagId;
 - (BOOL)hasTopStoriesConfig;
+- (BOOL)hasTrendingTagId;
+- (BOOL)hasWidgetSectionConfigId;
 - (unsigned int)hash;
 - (id)hiddenFeedId;
 - (BOOL)isEqual:(id)arg1;
@@ -86,9 +118,14 @@
 - (id)recommendedNotificationChannelsAtIndex:(unsigned int)arg1;
 - (unsigned int)recommendedNotificationChannelsCount;
 - (id)rootCategory;
+- (id)savedStoriesTagId;
 - (void)setAppleEditorialChannelId:(id)arg1;
+- (void)setBreakingNewsChannelId:(id)arg1;
 - (void)setBriefingsTagId:(id)arg1;
 - (void)setCoverArticlesConfig:(id)arg1;
+- (void)setEditorialGemsSectionId:(id)arg1;
+- (void)setExploreArticleId:(id)arg1;
+- (void)setFeaturedStoriesTagId:(id)arg1;
 - (void)setForYouConfigId:(id)arg1;
 - (void)setHiddenFeedId:(id)arg1;
 - (void)setLanguageTag:(id)arg1;
@@ -97,8 +134,13 @@
 - (void)setPreSubscribedNotificationsChannelIds:(id)arg1;
 - (void)setRecommendedNotificationChannels:(id)arg1;
 - (void)setRootCategory:(id)arg1;
+- (void)setSavedStoriesTagId:(id)arg1;
 - (void)setTopStoriesConfig:(id)arg1;
+- (void)setTrendingTagId:(id)arg1;
+- (void)setWidgetSectionConfigId:(id)arg1;
 - (id)topStoriesConfig;
+- (id)trendingTagId;
+- (id)widgetSectionConfigId;
 - (void)writeTo:(id)arg1;
 
 @end

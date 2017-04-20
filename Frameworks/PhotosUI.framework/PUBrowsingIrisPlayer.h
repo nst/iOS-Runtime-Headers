@@ -10,6 +10,7 @@
     int  __livePhotoRequestID;
     int  __livePhotoRequestState;
     <PUDisplayAsset> * _asset;
+    ISWrappedAVPlayer * _avPlayer;
     BOOL  _hasPendingVitalityHint;
     BOOL  _isLivePhotoLoadingAllowed;
     BOOL  _isLivePhotoPlaybackAllowed;
@@ -30,6 +31,7 @@
 @property (setter=_setLivePhotoRequestID:, nonatomic) int _livePhotoRequestID;
 @property (setter=_setLivePhotoRequestState:, nonatomic) int _livePhotoRequestState;
 @property (nonatomic, retain) <PUDisplayAsset> *asset;
+@property (nonatomic, readonly) ISWrappedAVPlayer *avPlayer;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) BOOL hasPendingVitalityHint;
@@ -56,6 +58,7 @@
 - (int)_livePhotoRequestID;
 - (int)_livePhotoRequestState;
 - (BOOL)_needsUpdate;
+- (id)_playerCreateIfNeeded:(BOOL)arg1;
 - (void)_setCurrentUnloadRequestId:(int)arg1;
 - (void)_setLivePhoto:(id)arg1;
 - (void)_setLivePhotoLoadingAllowed:(BOOL)arg1;
@@ -68,6 +71,7 @@
 - (void)_updatePlayerContentIfNeeded;
 - (void)_updatePlayerItemLoadingTargetIfNeeded;
 - (id)asset;
+- (id)avPlayer;
 - (id)currentChange;
 - (void)dealloc;
 - (void)didPerformChanges;
@@ -83,6 +87,7 @@
 - (void)observable:(id)arg1 didChange:(unsigned int)arg2 context:(void*)arg3;
 - (void)playVitalityHint;
 - (id)player;
+- (id)playerCreateIfNeeded;
 - (void)registerChangeObserver:(id)arg1;
 - (void)setAsset:(id)arg1;
 - (void)setLivePhotoLoadingDisabled:(BOOL)arg1 forReason:(id)arg2;

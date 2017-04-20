@@ -3,6 +3,7 @@
  */
 
 @interface ADInterstitialView : UIView <ADDimmerViewDelegate> {
+    ADDimmerView * _dimmerView;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -19,6 +20,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) ADDimmerView *dimmerView;
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } dismissButtonRect;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) ADInterstitialAd *interstitialAd;
@@ -30,7 +32,9 @@
 - (void)_privacyButtonWasTapped;
 - (void)dealloc;
 - (void)didMoveToWindow;
+- (id)dimmerView;
 - (void)dimmerView:(id)arg1 didReceiveTouchUpAtPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (void)disableDimmerView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })dismissButtonRect;
 - (BOOL)enableDimmerView:(id)arg1;
 - (void)enablePrivacyButton;
@@ -41,6 +45,7 @@
 - (void)removeFromSuperview;
 - (void)setAlpha:(float)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setDimmerView:(id)arg1;
 - (void)setDismissButtonRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHidden:(BOOL)arg1;

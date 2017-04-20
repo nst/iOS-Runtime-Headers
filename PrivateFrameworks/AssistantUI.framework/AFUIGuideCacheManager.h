@@ -9,6 +9,7 @@
 
 @property (nonatomic, readonly) SAGuidanceGuideSnippet *cachedGuideSnippet;
 @property (nonatomic, readonly) NSNumber *cachedGuideTag;
+@property (nonatomic, readonly) SAGuidanceSuggestedUtterances *cachedSuggestedUtterances;
 
 + (id)sharedManager;
 
@@ -20,6 +21,7 @@
 - (void)_updateLastCheckedWithDate:(id)arg1;
 - (id)cachedGuideSnippet;
 - (id)cachedGuideTag;
+- (id)cachedSuggestedUtterances;
 - (void)clearCachedGuide;
 - (void)dealloc;
 - (id)init;

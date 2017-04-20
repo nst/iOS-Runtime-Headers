@@ -3,6 +3,7 @@
  */
 
 @interface UIStatusBarLayoutManager : NSObject {
+    NSNumber * _assignedStartPosition;
     UIStatusBarForegroundView * _foregroundView;
     UIStatusBarItemView * _itemViews;
     BOOL  _persistentAnimationsEnabled;
@@ -10,6 +11,7 @@
     BOOL  _usesVerticalLayout;
 }
 
+@property (nonatomic, retain) NSNumber *assignedStartPosition;
 @property (nonatomic) UIStatusBarForegroundView *foregroundView;
 @property (nonatomic) BOOL persistentAnimationsEnabled;
 @property (nonatomic, readonly) BOOL usesVerticalLayout;
@@ -31,6 +33,7 @@
 - (float)_startPosition;
 - (BOOL)_updateItemView:(id)arg1 withData:(id)arg2 actions:(int)arg3 animated:(BOOL)arg4;
 - (id)_viewForItem:(id)arg1;
+- (id)assignedStartPosition;
 - (void)clearOverlapFromItems:(id)arg1;
 - (void)dealloc;
 - (float)distributeOverlap:(float)arg1 amongItems:(id)arg2;
@@ -48,6 +51,7 @@
 - (void)reflowWithVisibleItems:(id)arg1 duration:(double)arg2;
 - (void)removeDisabledItems:(BOOL*)arg1;
 - (float)removeOverlap:(float)arg1 fromItems:(id)arg2;
+- (void)setAssignedStartPosition:(id)arg1;
 - (void)setForegroundView:(id)arg1;
 - (void)setPersistentAnimationsEnabled:(BOOL)arg1;
 - (void)setVisibilityOfAllItems:(BOOL)arg1;

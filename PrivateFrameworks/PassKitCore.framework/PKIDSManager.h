@@ -32,7 +32,6 @@
 - (BOOL)_deviceIsRegistered:(id)arg1;
 - (id)_fetchPaymentInstruments;
 - (BOOL)_hasRegisteredAccounts;
-- (BOOL)_isClientDevice;
 - (void)_logCloudPairingState;
 - (void)_paymentCancellationReceived:(id)arg1 service:(id)arg2 account:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)_paymentClientUpdateReceived:(id)arg1 service:(id)arg2 account:(id)arg3 fromID:(id)arg4 context:(id)arg5;

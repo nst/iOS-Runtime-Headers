@@ -18,6 +18,7 @@
 - (id)descriptor;
 - (id /* block */)errorOnlyCompletionHandlerAdapter;
 - (BOOL)finishWithError:(id)arg1;
+- (BOOL)finishWithNoResult;
 - (BOOL)finishWithResult:(id)arg1;
 - (BOOL)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)future;

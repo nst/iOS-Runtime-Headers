@@ -3,18 +3,24 @@
  */
 
 @interface MRTelevisionMessageQueue : NSObject {
+    <MRTelevisionMessageQueueDatasource> * _datasource;
+    <MRTelevisionMessageQueueDelegate> * _delegate;
     MRPendingMessageQueue * _pendingMessageQueue;
     NSMutableDictionary * _pendingReplyQueue;
-    NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _stopped;
 }
 
-- (void)_processNextMessages:(id /* block */)arg1;
+@property (nonatomic) <MRTelevisionMessageQueueDatasource> *datasource;
+@property (nonatomic) <MRTelevisionMessageQueueDelegate> *delegate;
+
+- (id)_dataForMessage:(id)arg1;
+- (id)datasource;
 - (void)dealloc;
-- (void)enqueueMessage:(id)arg1 reply:(id /* block */)arg2 queue:(id)arg3 createDataBlock:(id /* block */)arg4;
+- (id)delegate;
+- (void)enqueueMessage:(id)arg1 reply:(id /* block */)arg2 queue:(id)arg3;
+- (void)flush;
 - (id)initWithMaxLowPriorityMessagesAllowed:(unsigned int)arg1;
-- (void)processNextMessages:(id /* block */)arg1;
 - (BOOL)reply:(id)arg1;
-- (void)stop;
+- (void)setDatasource:(id)arg1;
+- (void)setDelegate:(id)arg1;
 
 @end

@@ -233,7 +233,7 @@
 - (id)iAdCategories;
 - (id)iAdKeywords;
 - (id)identifier;
-- (id)initChannelForTestingWithIdentifier:(id)arg1 name:(id)arg2 defaultSection:(id)arg3 publisherAuthorizationURL:(id)arg4;
+- (id)initChannelForTestingWithIdentifier:(id)arg1 name:(id)arg2 defaultSection:(id)arg3 publisherAuthorizationURL:(id)arg4 publisherVerificationURL:(id)arg5;
 - (id)initChannelFromNotificationWithIdentifier:(id)arg1 name:(id)arg2 nameImageAssetHandle:(id)arg3;
 - (id)initForTestingWithTagType:(unsigned int)arg1 identifier:(id)arg2 name:(id)arg3;
 - (id)initWithData:(id)arg1 context:(id)arg2;

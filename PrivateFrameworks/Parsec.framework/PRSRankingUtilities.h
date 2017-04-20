@@ -10,7 +10,6 @@
 + (id)categoryForBundleID:(id)arg1;
 + (void)computeDateCountsForDates:(id)arg1 countLastYear:(unsigned long*)arg2 countLastMonth:(unsigned long*)arg3 countLastWeek:(unsigned long*)arg4 countLastDay:(unsigned long*)arg5;
 + (BOOL)multiWordString:(id)arg1 hasPrefix:(id)arg2;
-+ (double)occurrencesOfWord:(id)arg1 inString:(id)arg2;
 + (id)roundedValue:(id)arg1 withSigFigs:(id)arg2;
 
 @end

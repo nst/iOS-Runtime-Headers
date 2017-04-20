@@ -12,6 +12,7 @@
     unsigned int  _topStoriesPrecedingGroupsCount;
     unsigned int  _trendingStoriesPosition;
     unsigned int  _trendingStoriesPrecedingGroupsCount;
+    double  _weekendGreatStoriesYouMissedTimeRange;
 }
 
 @property (nonatomic, readonly) unsigned int coverArticlesPosition;
@@ -22,6 +23,7 @@
 @property (nonatomic, readonly) unsigned int topStoriesPrecedingGroupsCount;
 @property (nonatomic, readonly) unsigned int trendingStoriesPosition;
 @property (nonatomic, readonly) unsigned int trendingStoriesPrecedingGroupsCount;
+@property (nonatomic, readonly) double weekendGreatStoriesYouMissedTimeRange;
 
 - (void).cxx_destruct;
 - (unsigned int)coverArticlesPosition;
@@ -35,5 +37,6 @@
 - (unsigned int)topStoriesPrecedingGroupsCount;
 - (unsigned int)trendingStoriesPosition;
 - (unsigned int)trendingStoriesPrecedingGroupsCount;
+- (double)weekendGreatStoriesYouMissedTimeRange;
 
 @end

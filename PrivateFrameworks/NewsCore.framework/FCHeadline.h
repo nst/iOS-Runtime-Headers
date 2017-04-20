@@ -52,7 +52,6 @@
     BOOL  _sponsored;
     FCTopStoriesStyleConfiguration * _storyStyle;
     unsigned int  _storyType;
-    NSString * _subtitle;
     NSString * _surfacedByBinID;
     NSString * _surfacedByChannelID;
     NSString * _surfacedBySectionID;
@@ -147,7 +146,6 @@
 @property (getter=isSponsored, nonatomic, readonly) BOOL sponsored;
 @property (nonatomic, retain) FCTopStoriesStyleConfiguration *storyStyle;
 @property (nonatomic) unsigned int storyType;
-@property (nonatomic, readonly, copy) NSString *subtitle;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *surfacedByBinID;
 @property (nonatomic, copy) NSString *surfacedByChannelID;
@@ -178,6 +176,7 @@
 - (BOOL)_tryRetain;
 - (id)accessoryText;
 - (id)allowedStorefrontIDs;
+- (void)applyHeadlineMetadata:(id)arg1 appConfig:(id)arg2;
 - (unsigned long long)articleContentType;
 - (id)articleID;
 - (unsigned long long)articleRecordModificationDateMilliseconds;
@@ -273,7 +272,6 @@
 - (id)sourceName;
 - (id)storyStyle;
 - (unsigned int)storyType;
-- (id)subtitle;
 - (id)surfacedByBinID;
 - (id)surfacedByChannelID;
 - (id)surfacedBySectionID;

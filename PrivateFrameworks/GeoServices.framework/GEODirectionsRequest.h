@@ -3,6 +3,7 @@
  */
 
 @interface GEODirectionsRequest : PBRequest <NSCopying> {
+    GEOPDABClientDatasetMetadata * _abClientMetadata;
     GEOAdditionalEnabledMarkets * _additionalEnabledMarkets;
     GEOClientCapabilities * _clientCapabilities;
     GEOCommonOptions * _commonOptions;
@@ -55,6 +56,7 @@
     NSMutableArray * _waypointTypeds;
 }
 
+@property (nonatomic, retain) GEOPDABClientDatasetMetadata *abClientMetadata;
 @property (nonatomic, retain) GEOAdditionalEnabledMarkets *additionalEnabledMarkets;
 @property (nonatomic, retain) GEOClientCapabilities *clientCapabilities;
 @property (nonatomic, retain) GEOCommonOptions *commonOptions;
@@ -63,6 +65,7 @@
 @property (nonatomic) int departureTime;
 @property (nonatomic, retain) GEODirectionsRequestFeedback *feedback;
 @property (nonatomic) BOOL getRouteForZilchPoints;
+@property (nonatomic, readonly) BOOL hasAbClientMetadata;
 @property (nonatomic, readonly) BOOL hasAdditionalEnabledMarkets;
 @property (nonatomic, readonly) BOOL hasClientCapabilities;
 @property (nonatomic, readonly) BOOL hasCommonOptions;
@@ -122,6 +125,7 @@
 + (Class)waypointTypedType;
 
 - (int)StringAsOriginalRoutePurpose:(id)arg1;
+- (id)abClientMetadata;
 - (void)addServiceTag:(id)arg1;
 - (void)addWaypointTyped:(id)arg1;
 - (id)additionalEnabledMarkets;
@@ -139,6 +143,7 @@
 - (id)dictionaryRepresentation;
 - (id)feedback;
 - (BOOL)getRouteForZilchPoints;
+- (BOOL)hasAbClientMetadata;
 - (BOOL)hasAdditionalEnabledMarkets;
 - (BOOL)hasClientCapabilities;
 - (BOOL)hasCommonOptions;
@@ -198,6 +203,7 @@
 - (unsigned int)serviceTagsCount;
 - (struct GEOSessionID { unsigned long long x1; unsigned long long x2; })sessionID;
 - (id)sessionState;
+- (void)setAbClientMetadata:(id)arg1;
 - (void)setAdditionalEnabledMarkets:(id)arg1;
 - (void)setClientCapabilities:(id)arg1;
 - (void)setCommonOptions:(id)arg1;

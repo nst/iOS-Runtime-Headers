@@ -30,15 +30,16 @@
 - (id)iAdSectionID;
 - (id)initWithContext:(id)arg1 identifier:(id)arg2 tag:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isMutedWithSubscriptionController:(id)arg1;
 - (BOOL)isSubscribable;
 - (BOOL)isSubscribedToWithSubscriptionController:(id)arg1;
 - (id)masterTag;
 - (id)name;
 - (void)setFeedType:(int)arg1;
 - (void)setTag:(id)arg1;
-- (BOOL)subscribeToWithSubscriptionController:(id)arg1 error:(id*)arg2;
+- (BOOL)subscribeToWithSubscriptionController:(id)arg1 eventInitiationLevel:(int)arg2 error:(id*)arg3;
 - (id)tag;
 - (id)theme;
-- (void)unsubscribeToWithSubscriptionController:(id)arg1;
+- (void)unsubscribeToWithSubscriptionController:(id)arg1 eventInitiationLevel:(int)arg2;
 
 @end

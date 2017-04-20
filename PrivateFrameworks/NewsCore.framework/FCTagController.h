@@ -2,15 +2,19 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCTagController : NSObject <FCTagsFetchOperationDelegate> {
+@interface FCTagController : NSObject <FCAppConfigurationObserving, FCOperationThrottlerDelegate, FCTagsFetchOperationDelegate> {
+    FCAppConfiguration * _appConfiguration;
     FCAssetManager * _assetManager;
     FCTagsSearchOperation * _channelSearchOperation;
     FCCKDatabase * _contentDatabase;
     NSCache * _fastCache;
+    NSMutableDictionary * _prefetchedTags;
+    FCOperationThrottler * _tagPrefetchThrottler;
     FCTagRecordSource * _tagRecordSource;
     FCTagsSearchOperation * _topicSearchOperation;
 }
 
+@property (nonatomic, retain) FCAppConfiguration *appConfiguration;
 @property (nonatomic, retain) FCAssetManager *assetManager;
 @property (nonatomic, retain) FCTagsSearchOperation *channelSearchOperation;
 @property (nonatomic, retain) FCCKDatabase *contentDatabase;
@@ -18,7 +22,10 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSCache *fastCache;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSMutableDictionary *prefetchedTags;
+@property (nonatomic) BOOL shouldPrefetchGlobalTags;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) FCOperationThrottler *tagPrefetchThrottler;
 @property (nonatomic, retain) FCTagRecordSource *tagRecordSource;
 @property (nonatomic, retain) FCTagsSearchOperation *topicSearchOperation;
 
@@ -30,11 +37,14 @@
 - (id)_cachedTagsForTagIDs:(id)arg1;
 - (void)_fetchTagForTagID:(id)arg1 qualityOfService:(int)arg2 callbackQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_fetchTagsForTagIDs:(id)arg1 qualityOfService:(int)arg2 callbackQueue:(id)arg3 completionHandler:(id /* block */)arg4;
+- (id)appConfiguration;
+- (void)appConfigurationDidChange:(id)arg1;
 - (id)assetManager;
 - (id)cachedTagForID:(id)arg1;
 - (id)cachedTagsForIDs:(id)arg1;
 - (id)channelSearchOperation;
 - (id)contentDatabase;
+- (void)dealloc;
 - (id)fastCache;
 - (void)fetchChannelsForSearchString:(id)arg1 batchSize:(unsigned int)arg2 completion:(id /* block */)arg3;
 - (id)fetchOperationForTagsWithIDs:(id)arg1;
@@ -46,15 +56,23 @@
 - (void)fetchTagsForTagIDs:(id)arg1 qualityOfService:(int)arg2 callbackQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)fetchTopicsForSearchString:(id)arg1 batchSize:(unsigned int)arg2 completion:(id /* block */)arg3;
 - (id)init;
-- (id)initWithContentDatabase:(id)arg1 assetManager:(id)arg2 tagRecordSource:(id)arg3;
+- (id)initWithContentDatabase:(id)arg1 assetManager:(id)arg2 tagRecordSource:(id)arg3 appConfiguration:(id)arg4;
+- (void)operationThrottler:(id)arg1 performAsyncOperationWithCompletion:(id /* block */)arg2;
+- (id)prefetchedTags;
 - (void)refreshTagsBasedOnAgeForTagIDs:(id)arg1;
 - (void)saveTagsToCache:(id)arg1;
+- (void)setAppConfiguration:(id)arg1;
 - (void)setAssetManager:(id)arg1;
 - (void)setChannelSearchOperation:(id)arg1;
 - (void)setContentDatabase:(id)arg1;
 - (void)setFastCache:(id)arg1;
+- (void)setPrefetchedTags:(id)arg1;
+- (void)setShouldPrefetchGlobalTags:(BOOL)arg1;
+- (void)setTagPrefetchThrottler:(id)arg1;
 - (void)setTagRecordSource:(id)arg1;
 - (void)setTopicSearchOperation:(id)arg1;
+- (BOOL)shouldPrefetchGlobalTags;
+- (id)tagPrefetchThrottler;
 - (id)tagRecordSource;
 - (void)tagsFetchOperation:(id)arg1 didFetchTagsByID:(id)arg2;
 - (id)tagsForTagIDs:(id)arg1;

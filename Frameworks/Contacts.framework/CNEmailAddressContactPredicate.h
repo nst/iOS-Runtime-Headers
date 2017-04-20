@@ -20,8 +20,10 @@
 - (id)description;
 - (id)emailAddress;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithEmailAddress:(id)arg1 returnMultipleResults:(BOOL)arg2;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)returnsMultipleResults;
 - (id)sgContactMatchesWithSortOrder:(int)arg1 mutableObjects:(BOOL)arg2 service:(id)arg3 error:(id*)arg4;
 

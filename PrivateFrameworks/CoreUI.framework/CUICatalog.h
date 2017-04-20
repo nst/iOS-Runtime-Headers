@@ -28,6 +28,7 @@
 - (id)_baseTextureKeyForName:(id)arg1;
 - (id)_defaultAssetRenditionKey:(id)arg1;
 - (BOOL)_doStyledQuartzDrawingInContext:(struct CGContext { }*)arg1 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 stylePresetName:(id)arg3 styleConfiguration:(id)arg4 drawingHandler:(id /* block */)arg5;
+- (BOOL)_effectStyle:(unsigned int*)arg1 state:(int*)arg2 presentationState:(int*)arg3 value:(int*)arg4 resolution:(unsigned int*)arg5 fromStyleConfiguration:(id)arg6;
 - (id)_resolvedRenditionKeyForName:(id)arg1 scaleFactor:(float)arg2 deviceIdiom:(int)arg3 deviceSubtype:(unsigned int)arg4 displayGamut:(int)arg5 layoutDirection:(int)arg6 sizeClassHorizontal:(int)arg7 sizeClassVertical:(int)arg8 memoryClass:(unsigned int)arg9 graphicsClass:(unsigned int)arg10 graphicsFallBackOrder:(id)arg11 withBaseKeySelector:(SEL)arg12;
 - (id)_resolvedRenditionKeyFromThemeRef:(unsigned int)arg1 withBaseKey:(id)arg2 scaleFactor:(float)arg3 deviceIdiom:(int)arg4 deviceSubtype:(unsigned int)arg5 displayGamut:(int)arg6 layoutDirection:(int)arg7 sizeClassHorizontal:(int)arg8 sizeClassVertical:(int)arg9 memoryClass:(unsigned int)arg10 graphicsClass:(unsigned int)arg11 graphicsFallBackOrder:(id)arg12;
 - (void)_resourceUnPinnedNotification:(id)arg1;
@@ -72,6 +73,7 @@
 - (id)layerStackWithName:(id)arg1 scaleFactor:(float)arg2;
 - (id)layerStackWithName:(id)arg1 scaleFactor:(float)arg2 deviceIdiom:(int)arg3;
 - (id)layerStackWithName:(id)arg1 scaleFactor:(float)arg2 deviceIdiom:(int)arg3 deviceSubtype:(unsigned int)arg4 sizeClassHorizontal:(int)arg5 sizeClassVertical:(int)arg6;
+- (id)lookupCache;
 - (id)namedImageAtlasWithName:(id)arg1 scaleFactor:(float)arg2;
 - (id)namedImageAtlasWithName:(id)arg1 scaleFactor:(float)arg2 deviceIdiom:(int)arg3;
 - (id)namedImageAtlasWithName:(id)arg1 scaleFactor:(float)arg2 deviceIdiom:(int)arg3 displayGamut:(int)arg4 deviceSubtype:(unsigned int)arg5 memoryClass:(unsigned int)arg6 graphicsClass:(unsigned int)arg7 graphicsFallBackOrder:(id)arg8;
@@ -85,6 +87,7 @@
 - (id)newShapeEffectPresetWithRenditionKey:(id)arg1;
 - (id)newShapeEffectStackForStylePresetName:(id)arg1 styleConfiguration:(id)arg2 foregroundColor:(struct CGColor { }*)arg3;
 - (id)newTextEffectStackForStylePresetName:(id)arg1 styleConfiguration:(id)arg2 foregroundColor:(struct CGColor { }*)arg3;
+- (id)parentNamedImageAtlasForImageNamed:(id)arg1 scaleFactor:(float)arg2 displayGamut:(unsigned int)arg3;
 - (id)parentNamedImageAtlastForImageNamed:(id)arg1 scaleFactor:(float)arg2;
 - (struct CGPDFDocument { }*)pdfDocumentWithName:(id)arg1;
 - (void)preloadNamedAtlasWithScaleFactor:(float)arg1 andNames:(id)arg2 completionHandler:(id /* block */)arg3;

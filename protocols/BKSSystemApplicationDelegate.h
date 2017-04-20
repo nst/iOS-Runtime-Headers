@@ -6,6 +6,5 @@
 @required
 
 + (BOOL)systemApplicationIsAliveForWatchdog:(BKSSystemApplication *)arg1;
-+ (BOOL)systemApplicationShouldWaitForDataMigration:(BKSSystemApplication *)arg1;
 
 @end

@@ -2,16 +2,23 @@
    Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
  */
 
-@interface CAMDeviceSwitchTestHarness : CAMPerformanceTestHarness {
+@interface CAMDeviceSwitchTestHarness : CAMModeAndDeviceConfigurationTestHarness {
     int  _desiredDevicePosition;
-    CAMViewfinderViewController * _viewfinder;
+    BOOL  _testingAnimation;
+    CAMViewfinderViewController * _viewfinderViewController;
 }
 
-+ (id)harnessWithTestName:(id)arg1 viewfinder:(id)arg2 devicePosition:(int)arg3;
+@property (nonatomic, readonly) int desiredDevicePosition;
+@property (getter=isTestingAnimation, nonatomic, readonly) BOOL testingAnimation;
+@property (nonatomic, readonly) CAMViewfinderViewController *viewfinderViewController;
 
 - (void).cxx_destruct;
-- (void)ensureCaptureDevicePosition:(int)arg1 thenPerform:(id /* block */)arg2;
-- (id)initWithTestName:(id)arg1 viewfinder:(id)arg2 devicePosition:(int)arg3;
-- (void)runConfiguredTest;
+- (void)_ensureCaptureDevicePosition:(int)arg1 thenPerform:(id /* block */)arg2;
+- (int)desiredDevicePosition;
+- (void)handleDidOpenViewfinderForReason:(int)arg1;
+- (id)initWithTestName:(id)arg1 viewfinderViewController:(id)arg2 devicePosition:(int)arg3 testingAnimation:(BOOL)arg4;
+- (BOOL)isTestingAnimation;
+- (void)startTesting;
+- (id)viewfinderViewController;
 
 @end

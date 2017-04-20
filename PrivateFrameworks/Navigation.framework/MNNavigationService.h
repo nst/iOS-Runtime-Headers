@@ -50,6 +50,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSArray *traceBookmarks;
 @property (nonatomic, readonly) double traceDuration;
+@property (nonatomic, readonly) NSString *traceFileName;
 @property (nonatomic) BOOL traceIsPlaying;
 @property (nonatomic, readonly) NSString *tracePath;
 @property (nonatomic) double tracePosition;
@@ -152,6 +153,7 @@
 - (void)stopNavigation;
 - (id)traceBookmarks;
 - (double)traceDuration;
+- (id)traceFileName;
 - (BOOL)traceIsPlaying;
 - (id)tracePath;
 - (double)tracePosition;

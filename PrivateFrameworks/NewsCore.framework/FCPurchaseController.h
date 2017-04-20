@@ -39,9 +39,9 @@
 - (id)_allPurchasedTagIDs;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_initializeAppStorePurchaseDiscoveredList;
-- (void)_notifyPurchaseListChangedWithTagIDs:(id)arg1;
 - (id)_ongoingPurchaseEntryIDForProductIdentifier:(id)arg1;
 - (id)_purchaseLookUpEntryIDForTagID:(id)arg1;
+- (void)_removeFromPurchasedChannelsListWithTagIDs:(id)arg1;
 - (id)_webAccessEntryIDForTagID:(id)arg1;
 - (void)addAppStoreDiscoveredChannelsToFavorites:(id)arg1;
 - (void)addAppStorePurchaseWithTagID:(id)arg1 purchaseID:(id)arg2;
@@ -58,6 +58,7 @@
 - (void)cleanupExpiredPurchaseLookupEntriesIfNeeded;
 - (void)cleanupStaleOngoingPurchaseEntries;
 - (void)clearAllAppStorePurchases;
+- (void)clearAllOngoingPurchaseEntries;
 - (void)clearAllPurchases;
 - (id)cloudContext;
 - (id)createPaymentQueueWithProductIdentifier:(id)arg1 tagID:(id)arg2 purchaseID:(id)arg3 webAccessOptIn:(BOOL)arg4 appAdamID:(id)arg5 storeExternalVersion:(id)arg6;
@@ -105,6 +106,7 @@
 - (id)session;
 - (void)setCloudContext:(id)arg1;
 - (void)setLastEntitlementCheckTime:(id)arg1;
+- (void)setLastSignedInItunesAccountNameWithName:(id)arg1;
 - (void)setLocalStore:(id)arg1;
 - (void)setOngoingPurchaseEntriesByProductID:(id)arg1;
 - (void)setPaymenQueueByProductID:(id)arg1;
@@ -114,8 +116,8 @@
 - (void)setReadWriteQueue:(id)arg1;
 - (void)setSession:(id)arg1;
 - (void)setWebAccessEntriesByTagID:(id)arg1;
-- (void)shouldShowSignedInWithDifferentiTunesAccountAlertWithCompletion:(id /* block */)arg1;
-- (void)shouldShowiTunesSignedOutAlertWithCompletion:(id /* block */)arg1;
+- (void)shouldShowSignedInWithDifferentiTunesAccountAlertWithAccount:(id)arg1 completion:(id /* block */)arg2;
+- (void)shouldShowiTunesSignedOutAlertWithAccount:(id)arg1 completion:(id /* block */)arg2;
 - (void)silentRemoveFromPurchasedChannelsListWithTagIDs:(id)arg1;
 - (void)simulatePurchaseWithTagID:(id)arg1 productIdentifier:(id)arg2 purchaseID:(id)arg3 appAdamID:(id)arg4 storeExternalVersion:(id)arg5 webAccessOptIn:(BOOL)arg6;
 - (void)startPurchaseWithTagID:(id)arg1 productIdentifier:(id)arg2 purchaseID:(id)arg3 appAdamID:(id)arg4 storeExternalVersion:(id)arg5 price:(id)arg6 webAccessOptIn:(BOOL)arg7 payment:(id)arg8 completion:(id /* block */)arg9;
@@ -124,7 +126,7 @@
 - (void)updatePurchaseEntryToExpired:(id)arg1;
 - (void)updatePurchaseEntryToExpiredForTagIDs:(id)arg1;
 - (void)updatePurchaseEntryToSubcsriptionNotSupported:(id)arg1;
-- (void)updatePurchaseEntryToValid:(id)arg1;
+- (void)updatePurchaseEntryToValid:(id)arg1 purchaseType:(unsigned int)arg2;
 - (void)userInfo:(id)arg1 didAddAccessTokenForTagID:(id)arg2;
 - (void)userInfo:(id)arg1 didChangeAccessTokenForTagID:(id)arg2;
 - (void)verifyAccessTokenWithTagID:(id)arg1 accessToken:(id)arg2 serialCompletion:(id /* block */)arg3 callbackQueue:(id)arg4 completion:(id /* block */)arg5;

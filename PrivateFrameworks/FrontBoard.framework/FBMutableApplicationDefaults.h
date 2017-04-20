@@ -5,6 +5,7 @@
 @interface FBMutableApplicationDefaults : FBApplicationDefaults
 
 @property (nonatomic) int backgroundStyle;
+@property (nonatomic) BOOL canChangeBackgroundStyle;
 @property (nonatomic) int interfaceOrientation;
 @property (nonatomic, copy) NSString *launchImageFile;
 @property (nonatomic) BOOL statusBarHidden;

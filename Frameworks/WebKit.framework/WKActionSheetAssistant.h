@@ -27,6 +27,7 @@
 - (void)_createSheetWithElementActions:(id)arg1 showLinkTitle:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_presentationRectForSheetGivenPoint:(struct CGPoint { float x1; float x2; })arg1 inHostView:(id)arg2;
 - (void)cleanupSheet;
+- (id)currentAvailableActionTitles;
 - (void)dealloc;
 - (struct RetainPtr<NSArray> { void *x1; })defaultActionsForImageSheet:(id)arg1;
 - (struct RetainPtr<NSArray> { void *x1; })defaultActionsForLinkSheet:(id)arg1;

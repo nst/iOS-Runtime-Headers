@@ -3,27 +3,28 @@
  */
 
 @interface WLKUIAccessView_tvOS : UIView <TVCarouselViewDataSource, TVCarouselViewDelegate> {
-    NSString * _accountName;
     UIButton * _allowButton;
     NSArray * _apps;
+    UILabel * _bodyLabel;
     UIStackView * _buttonStack;
     TVCarouselView * _carouselView;
     UILayoutGuide * _contentGuide;
     UIStackView * _contentStack;
     BOOL  _didLayout;
     UIButton * _disallowButton;
-    UILabel * _explanatoryLabel;
-    UILabel * _headerLabel;
     UIStackView * _logoStack;
     UIButton * _nackButton;
     UIButton * _privacyButton;
     UIButton * _seeAllButton;
+    UILabel * _titleLabel;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
+
++ (struct CGSize { float x1; float x2; })iconSize;
 
 - (void).cxx_destruct;
 - (id)_buildButtonStack;
@@ -35,12 +36,14 @@
 - (id)carouselView:(id)arg1 cellForItemAtIndex:(unsigned int)arg2;
 - (void)dealloc;
 - (id)disallowButton;
-- (id)initWithApps:(id)arg1 accountName:(id)arg2;
+- (id)initWithApps:(id)arg1;
 - (void)layoutSubviews;
 - (id)nackButton;
 - (unsigned int)numberOfItemsInCarouselView:(id)arg1;
 - (id)privacyButton;
 - (id)seeAllButton;
+- (void)setBody:(id)arg1;
+- (void)setTitle:(id)arg1;
 - (void)showNackScreen;
 
 @end

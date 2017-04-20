@@ -8,6 +8,8 @@
 
 @property (nonatomic, copy) AKAnisetteData *anisetteData;
 
++ (BOOL)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)anisetteData;
 - (id)description;

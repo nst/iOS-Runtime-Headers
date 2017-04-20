@@ -322,6 +322,10 @@
 
 - (void)setObject:(id)arg1 atIndex:(unsigned int)arg2;
 
+// Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
+
+- (void)_remoteUI_addObjectIfNotNil:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
 
 - (id)tk_dequeueObject;

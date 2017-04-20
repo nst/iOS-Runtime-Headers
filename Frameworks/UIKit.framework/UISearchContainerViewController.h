@@ -12,9 +12,9 @@
 - (void)_prepareForContainerTransition:(id)arg1;
 - (void)_presentSearchControllerIfNecessary;
 - (BOOL)_transitionsChildViewControllers;
-- (void)didMoveToParentViewController:(id)arg1;
 - (id)initWithSearchController:(id)arg1;
 - (id)searchController;
 - (void)setSearchController:(id)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 
 @end

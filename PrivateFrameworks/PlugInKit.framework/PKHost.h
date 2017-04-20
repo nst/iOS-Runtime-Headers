@@ -35,7 +35,7 @@
 - (id)hostInfoPlist;
 - (id)hostQueue;
 - (id)init;
-- (void)readyPlugIns:(id)arg1 ready:(id /* block */)arg2;
+- (void)readyPlugIns:(id)arg1 environment:(id)arg2 ready:(id /* block */)arg3;
 - (id)rewriteDiscoveryAttributes:(id)arg1 flags:(unsigned int)arg2;
 - (void)setActiveOneShots:(id)arg1;
 - (void)setActivePlugIns:(id)arg1;

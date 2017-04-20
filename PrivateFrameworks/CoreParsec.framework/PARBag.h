@@ -8,11 +8,13 @@
     NSString * _userAgent;
 }
 
+@property (nonatomic, readonly) NSArray *anonymousMetadataPreference;
 @property (nonatomic, readonly, copy) NSString *clientName;
 @property (nonatomic, readonly) BOOL collectAnonymousMetadata;
 @property (nonatomic, readonly) BOOL collectScores;
 @property (nonatomic, readonly) NSURL *crowdsourcingURL;
 @property (nonatomic, readonly, copy) NSString *customFlight;
+@property (nonatomic, readonly) NSArray *downloadResourcesList;
 @property (getter=isEnabled, nonatomic, readonly) BOOL enabled;
 @property (nonatomic, readonly, copy) NSArray *enabledDomains;
 @property (nonatomic, readonly) BOOL feedbackEnabled;
@@ -39,6 +41,7 @@
 @property (nonatomic, readonly) double subscriptionTTL;
 @property (nonatomic, readonly) NSArray *supportedGeoLocationSources;
 @property (nonatomic, readonly) double timeoutIntervalForRequest;
+@property (nonatomic, readonly) NSDictionary *tuscanyConfiguration;
 @property (nonatomic, readonly, copy) NSString *userAgent;
 @property (nonatomic, readonly, copy) NSString *version;
 @property (nonatomic, readonly) NSURL *warmURL;
@@ -48,6 +51,7 @@
 - (void).cxx_destruct;
 - (id)_bag_objectOfClass:(Class)arg1 forKey:(id)arg2;
 - (id)_bag_objectOfClass:(Class)arg1 forKey:(id)arg2 override:(BOOL)arg3;
+- (id)anonymousMetadataPreference;
 - (id)bag_URLForKey:(id)arg1;
 - (id)bag_arrayForKey:(id)arg1;
 - (BOOL)bag_boolForKey:(id)arg1;
@@ -59,6 +63,7 @@
 - (BOOL)collectScores;
 - (id)crowdsourcingURL;
 - (id)customFlight;
+- (id)downloadResourcesList;
 - (id)enabledDomains;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)feedbackEnabled;
@@ -89,6 +94,7 @@
 - (double)subscriptionTTL;
 - (id)supportedGeoLocationSources;
 - (double)timeoutIntervalForRequest;
+- (id)tuscanyConfiguration;
 - (id)urlForIdentifier:(id)arg1;
 - (id)userAgent;
 - (id)version;

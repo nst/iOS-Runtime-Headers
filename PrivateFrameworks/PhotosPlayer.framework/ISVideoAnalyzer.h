@@ -15,10 +15,10 @@
 
 - (void).cxx_destruct;
 - (int)_currentRequestID;
-- (void)_handleAllFrameTimesRequestFinishedForTime:(double)arg1 frameTimes:(id)arg2 completion:(id /* block */)arg3;
+- (void)_handleAllFrameTimesRequestFinishedForTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 frameTimes:(id)arg2 completion:(id /* block */)arg3;
 - (void)_setCurrentRequestID:(int)arg1;
 - (id)init;
-- (int)requestAllFrameTimesInAsset:(id)arg1 completion:(id /* block */)arg2;
-- (int)requestLastFrameTimeBeforeTime:(double)arg1 inAsset:(id)arg2 completion:(id /* block */)arg3;
+- (int)requestAllFrameTimesInAsset:(id)arg1 trackID:(int)arg2 completion:(id /* block */)arg3;
+- (int)requestFrameTimesAroundTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 inAsset:(id)arg2 trackID:(int)arg3 completion:(id /* block */)arg4;
 
 @end

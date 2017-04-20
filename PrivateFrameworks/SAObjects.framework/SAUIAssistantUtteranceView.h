@@ -28,4 +28,8 @@
 - (BOOL)af_isUtterance;
 - (id)af_text;
 
+// Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
+
+- (id)afui_insertionContext;
+
 @end

@@ -3,32 +3,23 @@
  */
 
 @interface AFAnalyticsEventRecord : NSObject <NSSecureCoding> {
-    NSData * _contextData;
-    int  _contextDataType;
     NSDate * _dateCreated;
+    AFAnalyticsEvent * _event;
     NSString * _streamUID;
-    unsigned long long  _timestamp;
-    int  _type;
 }
 
-@property (nonatomic, readonly, copy) NSData *contextData;
-@property (nonatomic, readonly) int contextDataType;
 @property (nonatomic, readonly, copy) NSDate *dateCreated;
+@property (nonatomic, readonly, copy) AFAnalyticsEvent *event;
 @property (nonatomic, readonly, copy) NSString *streamUID;
-@property (nonatomic, readonly) unsigned long long timestamp;
-@property (nonatomic, readonly) int type;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)contextData;
-- (int)contextDataType;
 - (id)dateCreated;
 - (void)encodeWithCoder:(id)arg1;
+- (id)event;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithStreamUID:(id)arg1 type:(int)arg2 timestamp:(unsigned long long)arg3 contextData:(id)arg4 contextDataType:(int)arg5 dateCreated:(id)arg6 noCopy:(BOOL)arg7;
+- (id)initWithEvent:(id)arg1 streamUID:(id)arg2 dateCreated:(id)arg3;
 - (id)streamUID;
-- (unsigned long long)timestamp;
-- (int)type;
 
 @end

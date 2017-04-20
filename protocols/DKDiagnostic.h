@@ -7,18 +7,15 @@
 
 - (BOOL)isCancelled;
 - (BOOL)isFinished;
-- (NSDictionary *)parameters;
-- (NSDictionary *)predicates;
 - (DKMutableResult *)result;
 - (void)setFinished:(BOOL)arg1;
 - (void)setResult:(DKMutableResult *)arg1;
-- (void)setupWithContext:(DKDiagnosticContext *)arg1;
-- (NSDictionary *)specifications;
 - (void)start;
 
 @optional
 
 - (void)cancel;
+- (void)setupWithInputs:(id <DKDiagnosticInputs>)arg1 responder:(id <DKResponder>)arg2;
 - (void)teardown;
 
 @end

@@ -17,9 +17,15 @@
 - (id)_typedBackingStore;
 - (int)audioSource;
 - (id)description;
+- (id)domain;
 - (id)initWithAudioSource:(int)arg1 relativeAudioSourceReference:(int)arg2;
+- (id)parametersByName;
 - (int)relativeAudioSourceReference;
 - (void)setAudioSource:(int)arg1;
+- (void)setDomain:(id)arg1;
+- (void)setParametersByName:(id)arg1;
 - (void)setRelativeAudioSourceReference:(int)arg1;
+- (void)setVerb:(id)arg1;
+- (id)verb;
 
 @end

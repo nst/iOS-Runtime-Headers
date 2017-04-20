@@ -51,6 +51,12 @@
 - (void)writeData:(id)arg1;
 - (id /* block */)writeabilityHandler;
 
+// Image: /System/Library/PrivateFrameworks/AppleServiceToolkit.framework/AppleServiceToolkit
+
++ (id)fileHandleForCreatingURL:(id)arg1 protection:(id)arg2 error:(id*)arg3;
+
+- (BOOL)isOpenForUpdating;
+
 // Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
 
 - (unsigned int)writeWithCompression:(id)arg1 andUpdateAdler32:(struct adler32_t { unsigned int x1; }*)arg2;

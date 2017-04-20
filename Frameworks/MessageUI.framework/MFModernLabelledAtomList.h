@@ -16,12 +16,13 @@
     unsigned int  _numberOfRows;
     float  _previousWidth;
     BOOL  _primary;
-    NSDictionary * _recipients;
     NSString * _title;
     NSArray * _viewsToDodge;
 }
 
+@property (nonatomic, copy) NSArray *addresses;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MFModernLabelledAtomListDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) UILabel *label;
@@ -39,6 +40,7 @@
 + (id)primaryLabelFont;
 + (float)spaceBetweenColonAndFirstAtomNaturalEdge;
 
+- (void).cxx_destruct;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForAtomAtIndex:(unsigned int)arg1 withStartingPoint:(struct CGPoint { float x1; float x2; })arg2 row:(inout unsigned int*)arg3;
 - (void)_reflow;
 - (void)_reflowIfNeeded;
@@ -47,12 +49,14 @@
 - (void)addressAtom:(id)arg1 displayStringDidChange:(id)arg2;
 - (id)addressAtoms;
 - (void)addressBookDidChange:(id)arg1;
+- (id)addresses;
 - (id)atomDisplayStrings;
 - (struct CGPoint { float x1; float x2; })baselinePointForRow:(unsigned int)arg1;
 - (void)crossFadeLabelVisibility:(BOOL)arg1 atomSeparatorStyle:(int)arg2 withAnimationCoordinator:(id)arg3;
 - (void)dealloc;
+- (id)delegate;
 - (void)enumerateAddressAtomsUsingBlock:(id /* block */)arg1;
-- (id)initWithLabel:(id)arg1 title:(id)arg2 addressBook:(void*)arg3;
+- (id)initWithLabel:(id)arg1 title:(id)arg2 addressBook:(const void*)arg3;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (BOOL)isLabelVisible;
 - (BOOL)isPrimary;
@@ -69,6 +73,7 @@
 - (void)setAddressAtomSeparatorStyle:(int)arg1;
 - (void)setAddressAtomTarget:(id)arg1 action:(SEL)arg2;
 - (void)setAddressAtomsArePrimary:(BOOL)arg1;
+- (void)setAddresses:(id)arg1;
 - (void)setAddresses:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)setAtomAlpha:(float)arg1;
 - (void)setDelegate:(id)arg1;

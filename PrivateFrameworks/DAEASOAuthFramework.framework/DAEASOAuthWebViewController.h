@@ -5,10 +5,13 @@
 @interface DAEASOAuthWebViewController : UIViewController <UIWebViewDelegate> {
     ACAccount * _account;
     ACAccountStore * _accountStore;
+    NSString * _authURI;
     id /* block */  _completion;
     NSExtension * _extension;
     NSError * _extensionCancellationError;
     BOOL  _extensionRequestDidComplete;
+    BOOL  _isFirstTimeSetup;
+    unsigned int  _oauthType;
     id /* block */  _presentationBlock;
     UIViewController * _serviceViewController;
 }
@@ -28,6 +31,7 @@
 - (void)_presentInternetOfflineError;
 - (void)_presentUsernameMismatchAlert;
 - (id /* block */)completion;
+- (id)initWithAccount:(id)arg1 accountStore:(id)arg2 authURI:(id)arg3 accountType:(unsigned int)arg4 userName:(id)arg5 accountDescription:(id)arg6 isFirstTimeSetup:(BOOL)arg7 presentationBlock:(id /* block */)arg8;
 - (id)initWithAccount:(id)arg1 accountStore:(id)arg2 presentationBlock:(id /* block */)arg3;
 - (id)initWithAccountDescription:(id)arg1 presentationBlock:(id /* block */)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

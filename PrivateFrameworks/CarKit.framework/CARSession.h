@@ -3,27 +3,27 @@
  */
 
 @interface CARSession : NSObject {
-    NSData * _MFiCertSerial;
+    NSData * _MFiCertificateSerialNumber;
+    BOOL  _authenticated;
     CARSessionConfiguration * _configuration;
     struct OpaqueFigEndpoint { } * _endpoint;
-    NSObject<OS_dispatch_queue> * _queue;
     <CARSessionDelegate> * _sessionDelegate;
 }
 
-@property (nonatomic, copy) NSData *MFiCertSerial;
-@property (nonatomic, retain) CARSessionConfiguration *configuration;
+@property (nonatomic, readonly, copy) NSData *MFiCertificateSerialNumber;
+@property (getter=isAuthenticated, nonatomic, readonly) BOOL authenticated;
+@property (nonatomic, readonly) CARSessionConfiguration *configuration;
 @property (nonatomic, readonly, copy) NSNumber *electronicTollCollectionAvailable;
 @property (nonatomic, readonly, copy) NSNumber *limitUserInterfaces;
 @property (nonatomic, readonly, copy) NSNumber *nightMode;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic) <CARSessionDelegate> *sessionDelegate;
 
 + (int)_siriRequestEventForEndpointAction:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)MFiCertSerial;
 - (id)MFiCertificateSerialNumber;
 - (id)_endpointValueForKey:(struct __CFString { }*)arg1;
+- (void)_fetchAuthenticationStatus;
 - (void)_handleOpenURL:(id)arg1;
 - (void)_handleSiriRequestEvent:(int)arg1;
 - (void)_performExtendedEndpointAction:(id /* block */)arg1;
@@ -35,19 +35,16 @@
 - (id)electronicTollCollectionAvailable;
 - (struct OpaqueFigEndpoint { }*)endpoint;
 - (id)initWithFigEndpoint:(struct OpaqueFigEndpoint { }*)arg1;
+- (BOOL)isAuthenticated;
 - (id)limitUserInterfaces;
 - (id)nightMode;
 - (BOOL)ownsScreen;
 - (BOOL)ownsTurnByTurnNavigation;
-- (id)queue;
 - (BOOL)recognizingSpeech;
 - (void)requestCarUI;
 - (void)requestCarUIForURL:(id)arg1;
 - (id)requestTurnByTurnNavigationOwnership;
 - (id)sessionDelegate;
-- (void)setConfiguration:(id)arg1;
-- (void)setMFiCertSerial:(id)arg1;
-- (void)setQueue:(id)arg1;
 - (void)setSessionDelegate:(id)arg1;
 - (void)takeScreenForClient:(id)arg1 reason:(id)arg2;
 - (void)takeScreenForConnection;

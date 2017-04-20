@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPMediaLibraryView : NSObject {
+@interface MPMediaLibraryView : NSObject <NSCopying> {
     struct shared_ptr<mlcore::LibraryView> { 
         struct LibraryView {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
@@ -18,8 +18,9 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (struct shared_ptr<mlcore::QueryResult> { struct QueryResult {} *x1; struct __shared_weak_count {} *x2; })_performCoreQuery:(struct shared_ptr<mlcore::Query> { struct Query {} *x1; struct __shared_weak_count {} *x2; })arg1 error:(id*)arg2;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)filteringOptions;
-- (BOOL)hasEntitiesForModelClass:(Class)arg1;
+- (BOOL)hasEntitiesForModelKind:(id)arg1;
 - (id)initWithLibrary:(id)arg1 filteringOptions:(unsigned int)arg2;
 - (id)library;
 - (struct shared_ptr<mlcore::LibraryView> { struct LibraryView {} *x1; struct __shared_weak_count {} *x2; })mlCoreView;

@@ -4,9 +4,11 @@
 
 @interface IMSPIMessage : NSObject {
     NSAttributedString * _attributedText;
+    NSString * _bundleId;
     NSArray * _chatGuids;
     NSDate * _date;
     NSDate * _dateRead;
+    NSString * _displayAppName;
     NSString * _displayName;
     NSString * _effect;
     NSString * _groupID;
@@ -16,16 +18,20 @@
     BOOL  _isRead;
     NSDate * _lastReadDate;
     long long  _messageID;
+    long long  _messageType;
     NSArray * _recipients;
+    IMSPIMessage * _referencedMessage;
     IMSPIHandle * _sender;
     NSString * _subject;
     NSString * _text;
 }
 
 @property (retain) NSAttributedString *attributedText;
+@property (retain) NSString *bundleId;
 @property (retain) NSArray *chatGuids;
 @property (retain) NSDate *date;
 @property (retain) NSDate *dateRead;
+@property (retain) NSString *displayAppName;
 @property (retain) NSString *displayName;
 @property (retain) NSString *effect;
 @property (retain) NSString *groupID;
@@ -35,19 +41,25 @@
 @property BOOL isRead;
 @property (retain) NSDate *lastReadDate;
 @property long long messageID;
+@property long long messageType;
 @property (retain) NSArray *recipients;
+@property (retain) IMSPIMessage *referencedMessage;
 @property (retain) IMSPIHandle *sender;
 @property (retain) NSString *subject;
 @property (retain) NSString *text;
 @property (readonly) NSURL *url;
 
+// Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
+
 - (void).cxx_destruct;
 - (id)attributedText;
+- (id)bundleId;
 - (id)chatGuids;
 - (id)date;
 - (id)dateRead;
 - (void)dealloc;
 - (id)description;
+- (id)displayAppName;
 - (id)displayName;
 - (id)effect;
 - (id)groupID;
@@ -57,12 +69,16 @@
 - (BOOL)isRead;
 - (id)lastReadDate;
 - (long long)messageID;
+- (long long)messageType;
 - (id)recipients;
+- (id)referencedMessage;
 - (id)sender;
 - (void)setAttributedText:(id)arg1;
+- (void)setBundleId:(id)arg1;
 - (void)setChatGuids:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setDateRead:(id)arg1;
+- (void)setDisplayAppName:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setEffect:(id)arg1;
 - (void)setGroupID:(id)arg1;
@@ -72,12 +88,20 @@
 - (void)setIsRead:(BOOL)arg1;
 - (void)setLastReadDate:(id)arg1;
 - (void)setMessageID:(long long)arg1;
+- (void)setMessageType:(long long)arg1;
 - (void)setRecipients:(id)arg1;
+- (void)setReferencedMessage:(id)arg1;
 - (void)setSender:(id)arg1;
 - (void)setSubject:(id)arg1;
 - (void)setText:(id)arg1;
 - (id)subject;
 - (id)text;
 - (id)url;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (long long)messageRowIDForURL:(id)arg1;
++ (BOOL)messagesForIdentifier:(long long)arg1 completion:(id /* block */)arg2;
++ (void)messagesForURLs:(id)arg1 completion:(id /* block */)arg2;
 
 @end

@@ -7,6 +7,9 @@
 
 - (NSString *)articleID;
 - (unsigned int)articleLikingStatus;
+- (NSDate *)firstSeenAt;
+- (NSDate *)firstSeenAtOfMaxVersionSeen;
+- (unsigned int)flags;
 - (BOOL)hasArticleBeenConsumed;
 - (BOOL)hasArticleBeenMarkedOffensive;
 - (BOOL)hasArticleBeenRead;
@@ -14,5 +17,6 @@
 - (NSString *)identifier;
 - (NSDate *)lastVisitedAt;
 - (unsigned long long)maxVersionRead;
+- (unsigned long long)maxVersionSeen;
 
 @end

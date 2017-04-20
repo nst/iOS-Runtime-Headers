@@ -34,11 +34,15 @@
 @property (nonatomic, readonly) double duration;
 @property (nonatomic, readonly, copy) NSString *editorNotes;
 @property (nonatomic, readonly, copy) NSDictionary *effectiveStorePlatformDictionary;
+@property (nonatomic, readonly) int episodeCount;
 @property (getter=isExplicitContent, nonatomic, readonly) BOOL explicitContent;
+@property (nonatomic, readonly) int explicitRating;
 @property (nonatomic, readonly, copy) NSArray *genreNames;
+@property (nonatomic, readonly, copy) NSString *handle;
 @property (nonatomic, readonly) BOOL hasArtistBiography;
 @property (nonatomic, readonly) BOOL hasLyrics;
 @property (nonatomic, readonly) BOOL hasSocialPosts;
+@property (nonatomic, readonly, copy) NSString *iTunesBrandType;
 @property (nonatomic, readonly) BOOL isPreorder;
 @property (nonatomic, readonly, copy) NSString *itemKind;
 @property (nonatomic, readonly, copy) NSDate *lastModifiedDate;
@@ -46,31 +50,37 @@
 @property (nonatomic, readonly) int movementCount;
 @property (nonatomic, readonly, copy) NSString *movementName;
 @property (nonatomic, readonly) int movementNumber;
+@property (nonatomic, readonly, copy) NSArray *movieClips;
+@property (nonatomic, readonly) int movieClipsCount;
 @property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, readonly, copy) NSString *nameForDisplay;
 @property (nonatomic, readonly, copy) NSArray *offers;
 @property (nonatomic, readonly, copy) MPStoreItemMetadata *parentStoreItemMetadata;
 @property (nonatomic, readonly, copy) NSArray *playlistIdentifiers;
 @property (nonatomic, readonly, copy) NSNumber *popularity;
+@property (nonatomic, readonly, copy) id pumpkinProfileID;
 @property (nonatomic, readonly, copy) NSDate *releaseDate;
+@property (nonatomic, readonly) int seasonNumber;
 @property (nonatomic, readonly, copy) NSString *shortEditorNotes;
 @property (nonatomic, readonly, copy) NSString *shortName;
 @property (nonatomic, readonly, copy) NSURL *shortURL;
-@property (nonatomic, readonly) BOOL shouldBookmarkPlayPosition;
+@property (nonatomic, readonly, copy) NSNumber *shouldBookmarkPlayPosition;
 @property (nonatomic, readonly) BOOL showComposer;
 @property (nonatomic, readonly, copy) id storeID;
 @property (nonatomic, readonly) int trackCount;
 @property (nonatomic, readonly) int trackNumber;
 @property (nonatomic, readonly, copy) NSString *versionHash;
+@property (nonatomic, readonly, copy) NSString *videoSubtype;
 @property (nonatomic, readonly, copy) NSString *workName;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
++ (id)artworkRequestTokenForStorePlatformArtworkValue:(id)arg1;
 + (id)storeServerCalendar;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)URL;
-- (id)_artworkRequestTokenForStorePlatformDictionary:(id)arg1 artworkKey:(id)arg2;
 - (id)_storePlatformLastModifiedDateFormatter;
 - (id)_storePlatformReleaseDateFormatter;
 - (id)artistName;
@@ -78,9 +88,11 @@
 - (id)artistUploadedContentType;
 - (id)artworkRequestToken;
 - (id)artworkRequestTokenForEditorialArtworkKind:(id)arg1;
+- (id)artworkRequestTokenForScreenshotArtwork;
 - (id)artworkRequestTokenForStorePlatformDictionary:(id)arg1;
 - (id)artworkRequestTokenForUberArtworkKind:(id)arg1;
 - (id)artworkTrackIDs;
+- (id)avatarArtworkRequestToken;
 - (id)brickEditorialArtworkRequestToken;
 - (id)childStoreItemMetadatas;
 - (id)childStorePlatformDictionaryForArtworkTrackID:(id)arg1;
@@ -103,11 +115,15 @@
 - (id)editorNotesWithStyle:(id)arg1;
 - (id)effectiveStorePlatformDictionary;
 - (void)encodeWithCoder:(id)arg1;
+- (int)episodeCount;
+- (int)explicitRating;
 - (id)flowcaseEditorialArtworkRequestToken;
 - (id)genreNames;
+- (id)handle;
 - (BOOL)hasArtistBiography;
 - (BOOL)hasLyrics;
 - (BOOL)hasSocialPosts;
+- (id)iTunesBrandType;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDownloadAssetDictionary:(id)arg1;
 - (id)initWithStorePlatformDictionary:(id)arg1;
@@ -126,21 +142,30 @@
 - (int)movementCount;
 - (id)movementName;
 - (int)movementNumber;
+- (id)movieArtworkRequestToken;
+- (id)movieClips;
+- (int)movieClipsCount;
 - (id)name;
+- (id)nameForDisplay;
 - (id)offers;
 - (id)parentStoreItemMetadata;
 - (id)playlistIdentifiers;
 - (id)popularity;
+- (id)pumpkinProfileID;
 - (id)releaseDate;
+- (int)seasonNumber;
 - (id)shortEditorNotes;
 - (id)shortName;
 - (id)shortURL;
-- (BOOL)shouldBookmarkPlayPosition;
+- (id)shouldBookmarkPlayPosition;
 - (BOOL)showComposer;
 - (id)storeID;
 - (int)trackCount;
 - (int)trackNumber;
+- (id)tvEpisodeArtworkRequestToken;
+- (id)tvShowArtworkRequestToken;
 - (id)versionHash;
+- (id)videoSubtype;
 - (id)workName;
 
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation

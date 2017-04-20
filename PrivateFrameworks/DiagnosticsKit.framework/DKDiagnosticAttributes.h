@@ -8,6 +8,7 @@
     BOOL  _headless;
     NSNumber * _identifier;
     NSString * _name;
+    BOOL  _requiresUnlock;
     BOOL  _restricted;
     NSString * _version;
 }
@@ -17,6 +18,7 @@
 @property (getter=isHeadless, nonatomic, readonly) BOOL headless;
 @property (nonatomic, readonly) NSNumber *identifier;
 @property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) BOOL requiresUnlock;
 @property (getter=isRestricted, nonatomic, readonly) BOOL restricted;
 @property (nonatomic, readonly) NSString *version;
 
@@ -29,6 +31,7 @@
 - (BOOL)isHeadless;
 - (BOOL)isRestricted;
 - (id)name;
+- (BOOL)requiresUnlock;
 - (id)version;
 
 @end

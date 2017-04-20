@@ -49,7 +49,7 @@
 - (void)customContent:(id)arg1 didLoadAudioAccessoryView:(id)arg2;
 - (void)customContentDidLoadExtension:(id)arg1;
 - (BOOL)didReceiveNotificationRequest:(id)arg1;
-- (BOOL)dismissPresentedViewControllerAndClearNotification:(BOOL)arg1 animated:(BOOL)arg2;
+- (BOOL)dismissPresentedViewControllerAndClearNotification:(BOOL)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)expandAndPlayAudioMessage;
 - (BOOL)hasCommittedToPresentingCustomContentProvidingViewController;
 - (BOOL)isContentExtensionVisible:(id)arg1;

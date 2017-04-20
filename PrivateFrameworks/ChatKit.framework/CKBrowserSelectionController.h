@@ -101,6 +101,7 @@
 - (void)runShowAnimation:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
+- (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (BOOL)sectionNeedsAdjustmentDuringMovementOfItem;
 - (void)setBackgroundView:(id)arg1;

@@ -13,6 +13,7 @@
     UIAlertControllerVisualStyle * __visualStyle;
     NSMutableDictionary * _actionToKeyCommandsDictionary;
     NSMutableArray * _actions;
+    NSPointerArray * _actionsWithInvokedHandlers;
     NSAttributedString * _attributedDetailMessage;
     NSAttributedString * _attributedMessage;
     NSAttributedString * _attributedTitle;
@@ -295,6 +296,14 @@
 + (id)pu_alertForCPLEnableError:(id)arg1 actionHandler:(id /* block */)arg2 cancelHandler:(id /* block */)arg3;
 + (id)pu_alertForStorageUpgradeLoadFailure;
 + (id)pu_deleteITunesContentAlertWithAssetCount:(int)arg1 includesPhotos:(BOOL)arg2 includesVideos:(BOOL)arg3 actionHandler:(id /* block */)arg4 cancelHandler:(id /* block */)arg5;
+
+// Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
+
++ (void)cam_showUsageSettings;
+
+- (id)initWithTitle:(id)arg1 message:(id)arg2;
+- (id)initWithTitle:(id)arg1 message:(id)arg2 lowDiskSpaceAlertType:(int)arg3 dismissActionHandler:(id /* block */)arg4 resultActionHandler:(id /* block */)arg5;
+- (id)initWithType:(int)arg1 captureMode:(int)arg2 dismissActionHandler:(id /* block */)arg3 resultActionHandler:(id /* block */)arg4;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
 

@@ -5,6 +5,7 @@
 
 @optional
 
+- (void)applicationIconDidChange:(NSArray *)arg1;
 - (void)applicationInstallsArePrioritized:(NSArray *)arg1 arePaused:(NSArray *)arg2;
 - (void)applicationInstallsDidCancel:(NSArray *)arg1;
 - (void)applicationInstallsDidChange:(NSArray *)arg1;

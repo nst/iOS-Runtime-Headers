@@ -4,20 +4,27 @@
 
 @interface ASAPlugin : ASAObject
 
+@property (nonatomic, readonly, copy) NSArray *audioDeviceObjectIDs;
+@property (nonatomic, readonly, copy) NSArray *audioDevices;
 @property (nonatomic, readonly, copy) NSArray *boxObjectIDs;
+@property (nonatomic, readonly, copy) NSArray *boxes;
 @property (nonatomic, readonly, copy) NSString *bundleID;
 @property (nonatomic, readonly, copy) NSArray *clockDeviceObjectIDs;
-@property (nonatomic, readonly, copy) NSArray *deviceObjectIDs;
+@property (nonatomic, readonly, copy) NSArray *clockDevices;
 @property (nonatomic, readonly, copy) NSString *manufacturer;
 @property (nonatomic, readonly, copy) NSURL *resourceBundleURL;
 
 + (id)pluginWithBundleIdentifier:(id)arg1;
 
+- (id)audioDeviceObjectIDs;
+- (id)audioDevices;
 - (id)boxObjectIDs;
 - (unsigned long)boxWithUID:(id)arg1;
+- (id)boxes;
 - (id)bundleID;
 - (id)clockDeviceObjectIDs;
 - (unsigned long)clockDeviceWithUID:(id)arg1;
+- (id)clockDevices;
 - (id)coreAudioClassName;
 - (id)deviceObjectIDs;
 - (unsigned long)deviceWithUID:(id)arg1;

@@ -2,60 +2,20 @@
    Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
  */
 
-@interface PXUIAutoScroller : NSObject {
-    float  _autoScrollerInset;
-    float  _autoScrollerMaximumSpeed;
-    double  _autoScrollerTimerInterval;
-    <PXAutoScrollerDelegate> * _delegate;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    }  _distanceFromCenterFrame;
-    UIScrollView * _scrollView;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    }  _speed;
-    NSTimer * _timer;
-    int  _updateTrigger;
+@interface PXUIAutoScroller : PXAutoScroller {
+    CADisplayLink * __displayLink;
 }
 
-@property (nonatomic) float autoScrollerInset;
-@property (nonatomic) float autoScrollerMaximumSpeed;
-@property (nonatomic) double autoScrollerTimerInterval;
-@property (nonatomic) <PXAutoScrollerDelegate> *delegate;
-@property (nonatomic) struct CGPoint { float x1; float x2; } distanceFromCenterFrame;
-@property (nonatomic, retain) UIScrollView *scrollView;
-@property (nonatomic) struct CGPoint { float x1; float x2; } speed;
-@property (nonatomic, retain) NSTimer *timer;
-@property (nonatomic) int updateTrigger;
+@property (setter=_setDisplayLink:, nonatomic, retain) CADisplayLink *_displayLink;
 
 - (void).cxx_destruct;
-- (void)_handlerTimer:(id)arg1;
-- (void)_startTimer;
-- (void)_stopTimer;
-- (float)autoScrollerInset;
-- (float)autoScrollerMaximumSpeed;
-- (double)autoScrollerTimerInterval;
-- (void)dealloc;
-- (id)delegate;
-- (struct CGPoint { float x1; float x2; })distanceFromCenterFrame;
-- (id)init;
-- (id)initWithTargetScrollView:(id)arg1;
-- (id)scrollView;
-- (void)setAutoScrollerInset:(float)arg1;
-- (void)setAutoScrollerMaximumSpeed:(float)arg1;
-- (void)setAutoScrollerTimerInterval:(double)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setDistanceFromCenterFrame:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setScrollView:(id)arg1;
-- (void)setSpeed:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setTimer:(id)arg1;
-- (void)setUpdateTrigger:(int)arg1;
-- (struct CGPoint { float x1; float x2; })speed;
-- (void)stopAndInvalidate;
-- (id)timer;
-- (int)updateTrigger;
+- (id)_displayLink;
+- (void)_handleDisplayLink:(id)arg1;
+- (void)_setDisplayLink:(id)arg1;
+- (BOOL)autoscrollWithOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)startRepeating;
+- (void)stopRepeating;
 - (void)updateWithGestureRecognizer:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRectForScrollView:(id)arg1;
 
 @end

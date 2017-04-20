@@ -18,6 +18,7 @@
     BOOL  _inHoldToTalkMode;
     BOOL  _isStark;
     BOOL  _mapsGatekeeperEnabled;
+    BOOL  _presentedConversationFromBreadcrumb;
     NSNumber * _recordingStartedTimeValue;
     AFUISiriRemoteViewController * _remoteViewController;
     NSObject<OS_dispatch_queue> * _remoteViewControllerDispatchQueue;
@@ -133,6 +134,8 @@
 - (void)dismissSiriRemoteViewController:(id)arg1 delayForTTS:(BOOL)arg2;
 - (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)endSession;
+- (void)enterUITrackingMode;
+- (void)exitUITrackingMode;
 - (void)handlePasscodeUnlockAndCancelRequest:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (void)handlePasscodeUnlockWithCompletion:(id /* block */)arg1;
 - (void)handleViewFullyRevealed;
@@ -175,14 +178,14 @@
 - (void)shortTapAction;
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;
 - (BOOL)shouldAutorotate;
-- (void)showPresentationWithIdentifier:(id)arg1 properties:(id)arg2;
+- (void)showPresentationWithIdentifier:(id)arg1 properties:(id)arg2 lockState:(unsigned int)arg3;
 - (BOOL)showsStatusBar;
 - (void)siriDidActivateFromSource:(int)arg1;
 - (void)siriDidDeactivate;
 - (id)siriRemoteViewController:(id)arg1 bulletinWithIdentifier:(id)arg2;
-- (void)siriRemoteViewController:(id)arg1 canLoadPreviousConversation:(id /* block */)arg2;
 - (void)siriRemoteViewController:(id)arg1 didChangePresentationPeekMode:(unsigned int)arg2;
 - (void)siriRemoteViewController:(id)arg1 didEncounterUnexpectedServiceError:(id)arg2;
+- (void)siriRemoteViewController:(id)arg1 didFinishTest:(id)arg2;
 - (void)siriRemoteViewController:(id)arg1 didReadBulletinWithIdentifier:(id)arg2;
 - (void)siriRemoteViewController:(id)arg1 handlePasscodeUnlockWithCompletion:(id /* block */)arg2;
 - (void)siriRemoteViewController:(id)arg1 launchApplicationWithBundleIdentifier:(id)arg2 withURL:(id)arg3 launchOptions:(int)arg4 replyHandler:(id /* block */)arg5;
@@ -201,9 +204,13 @@
 - (void)siriRemoteViewController:(id)arg1 viewServiceDidTerminateWithError:(id)arg2;
 - (void)siriRemoteViewController:(id)arg1 willDismissViewControllerWithStatusBarStyle:(int)arg2;
 - (void)siriRemoteViewController:(id)arg1 willPresentViewControllerWithStatusBarStyle:(int)arg2;
+- (void)siriRemoteViewController:(id)arg1 willStartTest:(id)arg2;
 - (void)siriRemoteViewControllerDidDetectMicButtonLongPressBegan:(id)arg1;
 - (void)siriRemoteViewControllerDidDetectMicButtonLongPressEnded:(id)arg1;
 - (void)siriRemoteViewControllerDidDetectMicButtonTap:(id)arg1;
+- (void)siriRemoteViewControllerDidEnterUITrackingMode:(id)arg1;
+- (void)siriRemoteViewControllerDidExitUITrackingMode:(id)arg1;
+- (void)siriRemoteViewControllerDidPresentConversationFromBreadcrumb:(id)arg1;
 - (void)siriRemoteViewControllerDidPresentUserInterface:(id)arg1;
 - (void)siriRemoteViewControllerPulseHelpButton:(id)arg1;
 - (void)siriSession:(id)arg1 didChangeDialogPhase:(id)arg2;

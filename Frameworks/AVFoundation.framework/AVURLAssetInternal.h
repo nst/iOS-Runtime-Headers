@@ -12,6 +12,7 @@
     long  makeOneAssetDownloadCacheOnly;
     long  makeOneResourceLoaderOnly;
     AVAssetResourceLoader * resourceLoader;
+    AVWeakReference * sessionReference;
     NSArray * tracks;
     NSObject<OS_dispatch_queue> * tracksAccessQueue;
 }

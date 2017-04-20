@@ -20,9 +20,12 @@
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) NSString *value;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 + (id)options;
 
 - (void).cxx_destruct;
+- (int)StringAsType:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -39,8 +42,15 @@
 - (void)setType:(int)arg1;
 - (void)setValue:(id)arg1;
 - (int)type;
+- (id)typeAsString:(int)arg1;
 - (id)unknownFields;
 - (id)value;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

@@ -4,6 +4,7 @@
 
 @interface SearchUICardViewController : SearchUITableViewController <UIViewControllerPreviewingDelegate> {
     NSArray * _cardSectionViews;
+    NSMutableDictionary * _cellCache;
     <SearchUIFeedbackDelegate> * _feedbackDelegate;
     NSIndexPath * _forceTouchIndexPath;
     <UIViewControllerPreviewing> * _previewingContext;
@@ -12,6 +13,7 @@
 }
 
 @property (retain) NSArray *cardSectionViews;
+@property (retain) NSMutableDictionary *cellCache;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <SearchUIFeedbackDelegate> *feedbackDelegate;
@@ -29,7 +31,7 @@
 
 - (void).cxx_destruct;
 - (id)cardSectionViews;
-- (void)createCardSectionViewsForSections:(id)arg1;
+- (id)cellCache;
 - (BOOL)didHandlePunchout:(id)arg1 fromSection:(id)arg2;
 - (id)feedbackDelegate;
 - (id)forceTouchIndexPath;
@@ -45,6 +47,7 @@
 - (id)result;
 - (void)sendFeedbackForPunchout:(id)arg1 fromSection:(id)arg2;
 - (void)setCardSectionViews:(id)arg1;
+- (void)setCellCache:(id)arg1;
 - (void)setFeedbackDelegate:(id)arg1;
 - (void)setForceTouchIndexPath:(id)arg1;
 - (void)setPreviewingContext:(id)arg1;

@@ -81,9 +81,11 @@
 - (BOOL)performAction:(id)arg1 forNotification:(id)arg2 withUserInfo:(id)arg3;
 - (void)playAudioMessage;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
+- (void)preserveInputViews;
 - (id)queuedRequests;
 - (id)remoteService;
 - (BOOL)resignFirstResponder;
+- (BOOL)restoreInputViews;
 - (void)setAllowManualDismiss:(BOOL)arg1;
 - (void)setBlockingView:(id)arg1;
 - (void)setDefaultContentHidden:(BOOL)arg1;

@@ -4,6 +4,7 @@
 
 @interface AKAnnotationLayer : CALayer {
     AKAnnotation * _annotation;
+    CALayer * _fastPathLayer;
     BOOL  _isObservingAnnotation;
     BOOL  _lastRedrawWasForDrawingBounds;
     AKPageController * _pageController;
@@ -11,6 +12,7 @@
 }
 
 @property (retain) AKAnnotation *annotation;
+@property (nonatomic, retain) CALayer *fastPathLayer;
 @property BOOL isObservingAnnotation;
 @property BOOL lastRedrawWasForDrawingBounds;
 @property AKPageController *pageController;
@@ -27,11 +29,13 @@
 - (id)annotation;
 - (void)dealloc;
 - (void)drawInContext:(struct CGContext { }*)arg1;
+- (id)fastPathLayer;
 - (BOOL)isObservingAnnotation;
 - (BOOL)lastRedrawWasForDrawingBounds;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)pageController;
 - (void)setAnnotation:(id)arg1;
+- (void)setFastPathLayer:(id)arg1;
 - (void)setIsObservingAnnotation:(BOOL)arg1;
 - (void)setLastRedrawWasForDrawingBounds:(BOOL)arg1;
 - (void)setPageController:(id)arg1;

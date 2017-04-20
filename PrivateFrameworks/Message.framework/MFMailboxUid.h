@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFMailboxUid : NSObject <MFMailboxPredictionMailbox, NSCopying> {
+@interface MFMailboxUid : NSObject <ECMailbox, MFMailboxPredictionMailbox, NSCopying> {
     MFWeakReferenceHolder * _account;
     unsigned int  _attributes;
     NSMutableArray * _children;
@@ -26,10 +26,13 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSArray *extraAttributes;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, retain) NSString *permanentTag;
+@property (nonatomic, readonly, copy) NSString *persistentID;
 @property (nonatomic, readonly) unsigned int suggestionsLostMessageSearchResultCount;
 @property (nonatomic, readonly) double suggestionsLostMessageSearchTimestamp;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) int type;
 
 + (BOOL)isDraftsMailboxType:(int)arg1;
 + (BOOL)isOutgoingMailboxType:(int)arg1;
@@ -87,6 +90,7 @@
 - (BOOL)isOutgoingMailboxUid;
 - (BOOL)isSelectable;
 - (BOOL)isSentMailboxUid;
+- (BOOL)isShared;
 - (BOOL)isSpecialMailboxUid;
 - (BOOL)isStandardizedMailboxUid;
 - (BOOL)isStore;

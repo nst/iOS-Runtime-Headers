@@ -13,6 +13,7 @@
 @property (nonatomic, readonly) NSArray *iOSVersionsForNoThanksUpsell;
 @property (nonatomic, readonly) NSArray *iOSVersionsForNotNowUpsell;
 @property (nonatomic, readonly) BOOL isIgnoringAddToPlaylistUserSetting;
+@property (nonatomic, readonly) NSURL *legacyForYouURL;
 @property (nonatomic, readonly) unsigned int librarySharedPlaylistTrackCountLimit;
 @property (nonatomic, readonly) int minimumNumberOfDaysBetweenPresentingWelcomeScreen;
 @property (nonatomic, readonly) float popularityStarThreshold;
@@ -39,6 +40,7 @@
 - (id)initWithBagDictionary:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isIgnoringAddToPlaylistUserSetting;
+- (id)legacyForYouURL;
 - (unsigned int)librarySharedPlaylistTrackCountLimit;
 - (int)minimumNumberOfDaysBetweenPresentingWelcomeScreen;
 - (float)popularityStarThreshold;

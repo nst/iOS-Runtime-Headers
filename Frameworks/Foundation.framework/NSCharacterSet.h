@@ -65,6 +65,10 @@
 + (id)forwardSlashCharacterSet;
 + (id)percentCharacterSet;
 
+// Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
+
++ (id)textAttachmentCharacterSet;
+
 // Image: /System/Library/PrivateFrameworks/EmojiFoundation.framework/EmojiFoundation
 
 + (id)_emojiCharacterSet;

@@ -5,13 +5,14 @@
 @interface _WKExperimentalFeature : NSObject <WKObject> {
     struct ObjectStorage<API::ExperimentalFeature> { 
         struct type { 
-            unsigned char __lx[20]; 
+            unsigned char __lx[24]; 
         } data; 
     }  _experimentalFeature;
 }
 
 @property (readonly) /* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*_apiObject;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) BOOL defaultValue;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *details;
 @property (readonly) unsigned int hash;
@@ -21,6 +22,7 @@
 
 - (/* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (void)dealloc;
+- (BOOL)defaultValue;
 - (id)description;
 - (id)details;
 - (id)key;

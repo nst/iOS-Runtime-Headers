@@ -8,6 +8,7 @@
     MKMapAnnotationManager * _annotationManager;
     id /* block */  _annotationRectTest;
     int  _annotationTrackingZoomStyle;
+    _MKCustomFeatureStore * _annotationsCustomFeatureStore;
     UIImageView * _attributionBadgeView;
     int  _attributionCorner;
     struct UIEdgeInsets { 
@@ -178,6 +179,7 @@
 @property (getter=_calloutPopoverTargetRect, nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } calloutPopoverTargetRect;
 @property (nonatomic, copy) MKMapCamera *camera;
 @property (getter=_canEnter3DMode, nonatomic, readonly) BOOL canEnter3DMode;
+@property (getter=_canEnter3DModeFlyover, nonatomic, readonly) BOOL canEnter3DModeFlyover;
 @property (getter=_canEnterNightMode, nonatomic, readonly) BOOL canEnterNightMode;
 @property (getter=_canSelectAllLabels, setter=_setCanSelectAllLabels:, nonatomic) BOOL canSelectAllLabels;
 @property (getter=_canSelectPOIs, setter=_setCanSelectPOIs:, nonatomic) BOOL canSelectPOIs;
@@ -282,6 +284,7 @@
 - (void).cxx_destruct;
 - (void)_addAnnotation:(id)arg1 allowAnimation:(BOOL)arg2;
 - (void)_addAnnotations:(id)arg1 allowAnimation:(BOOL)arg2;
+- (void)_addAnnotationsCustomFeatureStoreIfNeeded;
 - (void)_addCustomFeatureDataSource:(id)arg1;
 - (void)_addDebugGesture;
 - (void)_addPersistentVectorOverlay:(id)arg1;
@@ -305,6 +308,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_calloutPopoverTargetRect;
 - (id)_camera;
 - (BOOL)_canEnter3DMode;
+- (BOOL)_canEnter3DModeFlyover;
 - (BOOL)_canEnterNightMode;
 - (BOOL)_canSelectAllLabels;
 - (BOOL)_canSelectPOIs;
@@ -385,6 +389,7 @@
 - (BOOL)_isUsingDevResourceStyleSheet;
 - (BOOL)_isVectorKitConsoleEnabled;
 - (BOOL)_isVectorKitStyleDebugEnabled;
+- (void)_issueDatasetCheckinCall;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_labelEdgeInsets;
 - (id)_labelMarkerAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_labelMarkerForCustomFeatureAnnotation:(id)arg1;

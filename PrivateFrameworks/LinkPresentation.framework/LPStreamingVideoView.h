@@ -5,22 +5,33 @@
 @interface LPStreamingVideoView : LPVideoView {
     AVPlayerLooper * _looper;
     AVQueuePlayer * _player;
+    id /* block */  _readyForDisplayCallback;
+    AVPlayerLayer * _videoLayer;
+    UIView * _videoView;
 }
 
 - (void).cxx_destruct;
 - (id)_platformCreateVideoPlayerView;
+- (id)createFullScreenVideoViewController;
 - (void)createPlayer;
 - (id)createPlayerItemAdjustedForLoopingWithAsset:(id)arg1;
 - (id)createVideoPlayerView;
 - (void)dealloc;
+- (void)fullScreenVideoDidPresent;
+- (void)fullScreenVideoWillDismiss;
 - (id)init;
 - (id)initWithVideo:(id)arg1 style:(id)arg2 posterFrame:(id)arg3 posterFrameStyle:(id)arg4 disablePlayback:(BOOL)arg5;
 - (BOOL)isMuted;
+- (void)layoutComponentView;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)prepareForDisplayWithCompletionHandler:(id /* block */)arg1;
 - (void)setMuted:(BOOL)arg1;
 - (void)setPlaying:(BOOL)arg1;
+- (void)setVolume:(float)arg1;
 - (BOOL)shouldAutoPlay;
 - (BOOL)shouldShowMuteButton;
+- (BOOL)usesCustomFullScreenImplementation;
 - (BOOL)usesSharedAudioSession;
+- (float)volume;
 
 @end

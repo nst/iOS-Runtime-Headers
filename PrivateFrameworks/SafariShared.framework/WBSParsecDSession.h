@@ -34,6 +34,7 @@
 - (void)_didReceiveResponse:(id)arg1 error:(id)arg2 forTask:(id)arg3 query:(id)arg4;
 - (id)_parsecResultsFromRawResponse:(id)arg1 identifiersToSFSearchResults:(id)arg2 identifiersToSFResultSections:(id)arg3;
 - (id)_parsecResultsFromResponse:(id)arg1;
+- (void)_startUpdatingAutoFillDataInBackgroundFromBag:(id)arg1;
 - (void)_updateAutoFillCorrectionSetsIfNeededFromNewBag:(id)arg1;
 - (void)_updateAutoFillTLDsIfNeededFromNewBag:(id)arg1;
 - (id)currentQuery;

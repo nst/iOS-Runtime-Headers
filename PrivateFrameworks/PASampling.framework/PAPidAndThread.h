@@ -8,4 +8,6 @@
     unsigned long long  tid;
 }
 
+- (void)dealloc;
+
 @end

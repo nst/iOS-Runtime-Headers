@@ -6,7 +6,7 @@
     UIButton * _decreaseFontSizeButton;
     <SFReaderAppearanceFontSizeSelectorDelegate> * _delegate;
     UIButton * _increaseFontSizeButton;
-    SFReaderAppearanceFontSizeSeparatorView * _verticalSeparatorView;
+    UIView * _verticalSeparatorView;
 }
 
 @property (nonatomic, retain) UIButton *decreaseFontSizeButton;

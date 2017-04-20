@@ -20,6 +20,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)descriptor;
+- (id)formattedDescription:(unsigned int)arg1;
 - (id)function;
 - (id)getParameter:(id)arg1;
 - (struct { bool x1; unsigned int x2; struct { /* ? */ } *x3; }*)imageFilterFunctionInfo;

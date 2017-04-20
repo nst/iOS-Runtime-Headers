@@ -4,12 +4,12 @@
 
 @interface VSCredentialSaveOperation : VSAsyncOperation {
     VSAccountStore * _accountStore;
-    VSFailable * _result;
+    VSOptional * _result;
     VSAccount * _unsavedAccount;
 }
 
 @property (nonatomic, retain) VSAccountStore *accountStore;
-@property (nonatomic, retain) VSFailable *result;
+@property (nonatomic, retain) VSOptional *result;
 @property (nonatomic, retain) VSAccount *unsavedAccount;
 
 - (void).cxx_destruct;

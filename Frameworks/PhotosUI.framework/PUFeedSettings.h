@@ -8,6 +8,7 @@
     int  _feedContent;
     BOOL  _forceAllItemsAsVideo;
     BOOL  _forceDefaultPreheatManager;
+    BOOL  _forceLivePhotoBadges;
     BOOL  _ignoresCaptions;
     int  _infiniteScrollingWindowSizeIncrement;
     int  _initialWindowSize;
@@ -41,6 +42,7 @@
 @property (nonatomic) int feedContent;
 @property (nonatomic) BOOL forceAllItemsAsVideo;
 @property (nonatomic) BOOL forceDefaultPreheatManager;
+@property (nonatomic) BOOL forceLivePhotoBadges;
 @property (nonatomic) BOOL ignoresCaptions;
 @property (nonatomic) int infiniteScrollingWindowSizeIncrement;
 @property (nonatomic) int initialWindowSize;
@@ -77,6 +79,7 @@
 - (int)feedContent;
 - (BOOL)forceAllItemsAsVideo;
 - (BOOL)forceDefaultPreheatManager;
+- (BOOL)forceLivePhotoBadges;
 - (BOOL)ignoresCaptions;
 - (int)infiniteScrollingWindowSizeIncrement;
 - (int)initialWindowSize;
@@ -92,6 +95,7 @@
 - (void)setFeedContent:(int)arg1;
 - (void)setForceAllItemsAsVideo:(BOOL)arg1;
 - (void)setForceDefaultPreheatManager:(BOOL)arg1;
+- (void)setForceLivePhotoBadges:(BOOL)arg1;
 - (void)setIgnoresCaptions:(BOOL)arg1;
 - (void)setInfiniteScrollingWindowSizeIncrement:(int)arg1;
 - (void)setInitialWindowSize:(int)arg1;

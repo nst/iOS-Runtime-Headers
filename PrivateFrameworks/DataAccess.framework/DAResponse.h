@@ -10,7 +10,7 @@
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithItemChangeType:(int)arg1 changedItem:(id)arg2 serverId:(id)arg3 status:(int)arg4;
+- (id)initWithItemChangeType:(unsigned int)arg1 changedItem:(id)arg2 serverId:(id)arg3 status:(int)arg4;
 - (void)setStatus:(int)arg1;
 - (int)status;
 

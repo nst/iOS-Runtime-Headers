@@ -18,13 +18,13 @@
 + (id)harnessWithTestName:(id)arg1 captureController:(id)arg2;
 
 - (void).cxx_destruct;
-- (void)_finishAndCleanupConfiguredTest;
 - (id)initWithTestName:(id)arg1 captureController:(id)arg2;
 - (BOOL)intervalometer:(id)arg1 didGenerateCaptureRequest:(id)arg2;
 - (void)intervalometerDidReachMaximumCount:(id)arg1;
-- (void)runConfiguredTest;
 - (void)setTestIntervalometer:(id)arg1;
+- (void)startTesting;
 - (void)stillImageRequestDidCompleteStillImageCapture:(id)arg1 withResponse:(id)arg2 error:(id)arg3;
+- (void)stopTesting;
 - (id)testIntervalometer;
 
 @end

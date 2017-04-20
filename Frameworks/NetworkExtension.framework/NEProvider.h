@@ -43,6 +43,7 @@
 - (void)setDefaultPath:(id)arg1;
 - (void)setDefaultPathEvaluator:(id)arg1;
 - (void)setDeviceIdentifier:(id)arg1;
+- (void)setdefaultPathObserver:(id)arg1;
 - (void)sleepWithCompletionHandler:(id /* block */)arg1;
 - (void)wake;
 

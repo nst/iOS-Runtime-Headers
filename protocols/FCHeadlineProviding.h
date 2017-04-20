@@ -48,7 +48,6 @@
 - (NSString *)sourceName;
 - (FCTopStoriesStyleConfiguration *)storyStyle;
 - (unsigned int)storyType;
-- (NSString *)subtitle;
 - (NSString *)surfacedByBinID;
 - (NSString *)surfacedByChannelID;
 - (NSString *)surfacedBySectionID;

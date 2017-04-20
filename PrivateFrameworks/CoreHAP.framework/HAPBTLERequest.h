@@ -11,6 +11,7 @@
     HAPBTLETransactionIdentifier * _identifier;
     HMFBlockOperation * _operation;
     HMFTimer * _responseTimer;
+    HAPService * _service;
     double  _timeoutInterval;
     unsigned char  _type;
 }
@@ -23,6 +24,7 @@
 @property (nonatomic, readonly) HAPBTLETransactionIdentifier *identifier;
 @property (nonatomic) HMFBlockOperation *operation;
 @property (nonatomic, retain) HMFTimer *responseTimer;
+@property (nonatomic, readonly) HAPService *service;
 @property (nonatomic, readonly) double timeoutInterval;
 @property (nonatomic, readonly) unsigned char type;
 
@@ -43,6 +45,7 @@
 - (id)operation;
 - (id)responseTimer;
 - (id)serialize;
+- (id)service;
 - (void)setControlOutputStream:(id)arg1;
 - (void)setOperation:(id)arg1;
 - (void)setResponseTimer:(id)arg1;

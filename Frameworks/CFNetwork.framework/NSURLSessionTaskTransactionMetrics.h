@@ -5,8 +5,10 @@
 @interface NSURLSessionTaskTransactionMetrics : NSObject
 
 @property BOOL _cellular;
+@property (copy) NSString *_localAddressAndPort;
 @property BOOL _localCache;
 @property unsigned int _redirected;
+@property (copy) NSString *_remoteAddressAndPort;
 @property BOOL _secureConnection;
 @property BOOL _serverPush;
 @property (copy) NSDate *connectEndDate;

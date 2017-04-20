@@ -5,6 +5,7 @@
 @interface CKDFetchRecordsOperation : CKDDatabaseOperation {
     unsigned int  _URLOptions;
     NSSet * _assetFieldNamesToPublishURLs;
+    NSDictionary * _assetTransferOptionsByRecordTypeAndKey;
     CKDRecordCache * _cache;
     NSMutableDictionary * _cachedRecords;
     CKDDecryptRecordsOperation * _decryptOperation;
@@ -31,6 +32,7 @@
 
 @property (nonatomic) unsigned int URLOptions;
 @property (nonatomic, retain) NSSet *assetFieldNamesToPublishURLs;
+@property (nonatomic, retain) NSDictionary *assetTransferOptionsByRecordTypeAndKey;
 @property (nonatomic, retain) CKDRecordCache *cache;
 @property (nonatomic, retain) NSMutableDictionary *cachedRecords;
 @property (nonatomic, retain) NSSet *desiredKeySet;
@@ -67,9 +69,10 @@
 - (void)_finishAllDownloadTasksWithError:(id)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleRecordFetch:(id)arg1 recordID:(id)arg2 etagMatched:(BOOL)arg3 responseCode:(id)arg4;
-- (BOOL)_prepareAsset:(id)arg1 record:(id)arg2 recordKey:(id)arg3 signature:(id)arg4;
+- (BOOL)_prepareAsset:(id)arg1 record:(id)arg2 recordKey:(id)arg3 signature:(id)arg4 assetTransferOptions:(id)arg5;
 - (id)activityCreate;
 - (id)assetFieldNamesToPublishURLs;
+- (id)assetTransferOptionsByRecordTypeAndKey;
 - (id)cache;
 - (id)cachedRecords;
 - (id)desiredKeySet;
@@ -95,6 +98,7 @@
 - (id)recordIDsToVersionETags;
 - (unsigned int)requestedTTL;
 - (void)setAssetFieldNamesToPublishURLs:(id)arg1;
+- (void)setAssetTransferOptionsByRecordTypeAndKey:(id)arg1;
 - (void)setCache:(id)arg1;
 - (void)setCachedRecords:(id)arg1;
 - (void)setDesiredKeySet:(id)arg1;

@@ -4,10 +4,4 @@
 
 @interface OS_os_eventlog : OS_object
 
-+ (void)load;
-
-- (void)_dispose;
-- (id)description;
-- (id)init;
-
 @end

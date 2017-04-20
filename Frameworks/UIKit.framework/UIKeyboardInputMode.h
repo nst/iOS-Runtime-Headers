@@ -26,6 +26,7 @@
 @property (nonatomic, readonly) BOOL isDefaultRightToLeft;
 @property (nonatomic) BOOL isDisplayed;
 @property (nonatomic, readonly) BOOL isExtensionInputMode;
+@property (nonatomic, readonly) BOOL isStalledExtensionInputMode;
 @property (nonatomic, retain) NSString *languageWithRegion;
 @property (nonatomic, retain) NSArray *multilingualLanguages;
 @property (nonatomic, retain) NSString *normalizedIdentifier;
@@ -62,6 +63,7 @@
 - (BOOL)isDisplayed;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isExtensionInputMode;
+- (BOOL)isStalledExtensionInputMode;
 - (id)languageWithRegion;
 - (id)multilingualLanguages;
 - (id)normalizedIdentifier;

@@ -130,6 +130,7 @@
 - (BOOL)isDeviceBasedVPP;
 - (BOOL)isExplicitContent;
 - (BOOL)isHighDefinition;
+- (BOOL)isMusicShow;
 - (BOOL)isRedownloadDownload;
 - (BOOL)isRental;
 - (BOOL)isSample;
@@ -217,6 +218,7 @@
 - (void)setLongSeasonDescription:(id)arg1;
 - (void)setMD5HashStrings:(id)arg1 numberOfBytesToHash:(id)arg2;
 - (void)setMessagesArtworkURL:(id)arg1;
+- (void)setMusicShow:(BOOL)arg1;
 - (void)setNetworkName:(id)arg1;
 - (void)setNumberOfCollectionsInCollectionGroup:(id)arg1;
 - (void)setNumberOfItemsInCollection:(id)arg1;

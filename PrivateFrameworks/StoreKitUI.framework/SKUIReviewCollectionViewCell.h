@@ -2,23 +2,44 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIReviewCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIViewElementView>
+@interface SKUIReviewCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIViewElementView> {
+    id /* block */  _descriptionTapAction;
+    SKUITextBoxView * _descriptionView;
+    id /* block */  _responseDescriptionTapAction;
+    SKUIResponseView * _responseView;
+}
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, copy) id /* block */ descriptionTapAction;
+@property (nonatomic, retain) SKUITextBoxView *descriptionView;
 @property (readonly) unsigned int hash;
+@property (nonatomic, copy) id /* block */ responseDescriptionTapAction;
+@property (nonatomic, retain) SKUIResponseView *responseView;
 @property (readonly) Class superclass;
 
++ (id)_attributedStringForDateLabel:(id)arg1 context:(id)arg2;
 + (id)_attributedStringForTitleLabel:(id)arg1 context:(id)arg2;
-+ (id)expandableLabelElementForViewElement:(id)arg1 width:(float)arg2 context:(id)arg3;
 + (struct CGSize { float x1; float x2; })preferredSizeForViewElement:(id)arg1 context:(id)arg2;
 + (BOOL)prefetchResourcesForViewElement:(id)arg1 reason:(int)arg2 context:(id)arg3;
 + (void)requestLayoutForViewElement:(id)arg1 width:(float)arg2 context:(id)arg3;
 + (struct CGSize { float x1; float x2; })sizeThatFitsWidth:(float)arg1 viewElement:(id)arg2 context:(id)arg3;
 
+- (void).cxx_destruct;
+- (void)_resetTapGestures;
+- (void)contentViewTapped:(id)arg1;
+- (id /* block */)descriptionTapAction;
+- (id)descriptionView;
 - (void)layoutSubviews;
 - (void)reloadWithViewElement:(id)arg1 width:(float)arg2 context:(id)arg3;
+- (id /* block */)responseDescriptionTapAction;
+- (id)responseView;
+- (void)setDescriptionTapAction:(id /* block */)arg1;
+- (void)setDescriptionView:(id)arg1;
+- (void)setHighlighted:(BOOL)arg1;
 - (BOOL)setImage:(id)arg1 forArtworkRequest:(id)arg2 context:(id)arg3;
+- (void)setResponseDescriptionTapAction:(id /* block */)arg1;
+- (void)setResponseView:(id)arg1;
 - (BOOL)updateWithItemState:(id)arg1 context:(id)arg2 animated:(BOOL)arg3;
 - (id)viewForElementIdentifier:(id)arg1;
 

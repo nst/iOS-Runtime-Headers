@@ -5,10 +5,9 @@
 @interface PLDetectedFaceGroup : PLManagedObject
 
 @property (nonatomic, retain) PLPerson *associatedPerson;
-@property (nonatomic) int faceGroupType;
-@property (nonatomic, retain) NSSet *faces;
+@property (nonatomic, retain) NSSet *detectedFaces;
 @property (nonatomic) PLDetectedFace *keyFace;
-@property (nonatomic, retain) PLPerson *rejectedFacesPerson;
+@property (nonatomic) short personBuilderState;
 @property (nonatomic) int unnamedFaceCount;
 @property (nonatomic, retain) NSString *uuid;
 
@@ -17,7 +16,7 @@
 + (id)insertInManagedObjectContext:(id)arg1;
 
 - (void)awakeFromInsert;
-- (id)mutableFaces;
+- (id)mutableDetectedFaces;
 - (void)refreshFaces;
 
 @end

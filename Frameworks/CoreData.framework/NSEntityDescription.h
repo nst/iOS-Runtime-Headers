@@ -48,6 +48,7 @@
 @property (readonly) NSEntityDescription *ph_baseEntity;
 @property (retain) NSArray *properties;
 @property (readonly, copy) NSDictionary *propertiesByName;
+@property (getter=vs_referenceValueAttribute, setter=vs_setReferenceValueAttribute:, nonatomic, retain) NSAttributeDescription *referenceValueAttribute;
 @property (readonly, copy) NSDictionary *relationshipsByName;
 @property (copy) NSString *renamingIdentifier;
 @property (retain) NSArray *subentities;
@@ -189,5 +190,13 @@
 
 - (id)ph_baseEntity;
 - (id)ph_relationshipDescriptionsForKeyPath:(id)arg1;
+
+// Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
+
++ (id)vs_subscriptionEntityForVersion:(int)arg1;
+
+- (id)vs_referenceValueAttribute;
+- (void)vs_setReferenceValueAttribute:(id)arg1;
+- (void)vs_setUserInfoValue:(id)arg1 forKey:(id)arg2;
 
 @end

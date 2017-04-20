@@ -16,10 +16,11 @@
 - (id)_updateRegion;
 - (id)commitCreateTrigger;
 - (id)commitEditTrigger;
-- (id)initWithExistingObject:(id)arg1 inHome:(id)arg2;
+- (id)initWithExistingObject:(id)arg1 inHome:(id)arg2 context:(id)arg3;
 - (id)naturalLanguageNameOfType:(unsigned int)arg1;
 - (id)region;
 - (BOOL)requiresConfirmationToRun;
+- (BOOL)secureActionsRequireConfirmationToRun;
 - (void)setRegion:(id)arg1;
 
 @end

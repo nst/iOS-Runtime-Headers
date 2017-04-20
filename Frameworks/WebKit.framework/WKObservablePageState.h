@@ -18,6 +18,7 @@
 @property (nonatomic, readonly) double estimatedProgress;
 @property (nonatomic, readonly) BOOL hasOnlySecureContent;
 @property (getter=isLoading, nonatomic, readonly) BOOL loading;
+@property (nonatomic, readonly) struct __SecTrust { }*serverTrust;
 @property (nonatomic, readonly, copy) NSString *title;
 @property (nonatomic, readonly) NSURL *unreachableURL;
 
@@ -30,6 +31,7 @@
 - (BOOL)hasOnlySecureContent;
 - (id)initWithPage:(struct RefPtr<WebKit::WebPageProxy> { struct WebPageProxy {} *x1; }*)arg1;
 - (BOOL)isLoading;
+- (struct __SecTrust { }*)serverTrust;
 - (id)title;
 - (id)unreachableURL;
 

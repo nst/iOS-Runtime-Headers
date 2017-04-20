@@ -3,6 +3,8 @@
  */
 
 @interface _UIDocumentPickerContainerItem : NSObject <_UIDocumentPickerDirectoryObserverItem> {
+    BOOL  _cachedIsAlias;
+    BOOL  _hasCachedIsAlias;
     _UIDocumentPickerURLContainerModel * _model;
     int  _modelDisplayCount;
     _UIDocumentPickerContainerModel * _parentModel;

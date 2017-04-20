@@ -27,16 +27,22 @@
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 + (id)options;
 
 - (void).cxx_destruct;
+- (int)StringAsDestinationType:(id)arg1;
+- (int)StringAsEntityType:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)destinationName;
 - (int)destinationType;
+- (id)destinationTypeAsString:(int)arg1;
 - (id)dictionaryRepresentation;
 - (id)entityName;
 - (int)entityType;
+- (id)entityTypeAsString:(int)arg1;
 - (BOOL)hasDestinationName;
 - (BOOL)hasDestinationType;
 - (BOOL)hasEntityName;
@@ -56,5 +62,11 @@
 - (void)setIntentMetadata:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

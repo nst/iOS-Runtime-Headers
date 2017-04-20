@@ -31,6 +31,7 @@
 - (BOOL)_unapplyMotionEffect:(id)arg1;
 - (BOOL)allowsFocus;
 - (BOOL)canBecomeFocused;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)prepareForReuse;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
@@ -41,6 +42,5 @@
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2 withAnimationCoordinator:(id)arg3;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)willUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 
 @end

@@ -6,29 +6,42 @@
     BOOL  _applicationIsInForeground;
     unsigned int  _currentLogState;
     double  _currentLogStateStartDate;
+    unsigned int  _currentLogSubState;
+    double  _currentLogSubStateStartDate;
     id  _currentSessionSender;
     unsigned int  _currentSessionSource;
     unsigned int  _currentSessionTab;
     unsigned int  _currentTab;
+    BOOL  _enableDetailedDebugLogging;
 }
 
 @property (nonatomic) unsigned int currentLogState;
+@property (nonatomic) unsigned int currentLogSubState;
 @property (setter=setCurrentTab:, nonatomic) unsigned int currentTab;
+@property (nonatomic, readonly) BOOL enableDetailedDebugLogging;
 
 - (void).cxx_destruct;
 - (id)PXLogStateDescription:(unsigned int)arg1;
+- (id)PXLogSubStateDescription:(unsigned int)arg1;
 - (id)PXUserEventSourceDescription:(unsigned int)arg1;
 - (void)_setCurrentSessionSource:(unsigned int)arg1 sender:(id)arg2 isInForeground:(BOOL)arg3;
+- (void)aggregateSetMemoryFeedNumberOfDaysSinceLastVisit:(int)arg1;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (void)applicationWillEnterForeground:(id)arg1;
 - (unsigned int)currentLogState;
+- (unsigned int)currentLogSubState;
 - (unsigned int)currentTab;
+- (void)didFinishViewingMemoriesFeedView;
+- (BOOL)enableDetailedDebugLogging;
 - (void)eventSourceDidDisappear:(unsigned int)arg1 sender:(id)arg2;
 - (void)eventSourceWillAppear:(unsigned int)arg1 sender:(id)arg2;
 - (id)init;
 - (void)logCounterValuesForLogState:(unsigned int)arg1 duration:(double)arg2;
+- (void)logCounterValuesForLogSubState:(unsigned int)arg1 duration:(double)arg2;
 - (void)setCurrentLogState:(unsigned int)arg1;
-- (void)setCurrentLogState:(unsigned int)arg1 forceLogging:(BOOL)arg2;
+- (void)setCurrentLogState:(unsigned int)arg1 logSubState:(unsigned int)arg2 forceLogging:(BOOL)arg3;
+- (void)setCurrentLogSubState:(unsigned int)arg1;
 - (void)setCurrentTab:(unsigned int)arg1;
+- (void)willViewMemoriesFeedView;
 
 @end

@@ -35,6 +35,7 @@
 + (id)pauseMarkupString:(id)arg1;
 + (id)remapLanguageCode:(id)arg1;
 + (id)spellOutMarkupString:(id)arg1;
++ (void)test_actionStartTap:(id /* block */)arg1;
 + (void)test_setAvailableVoices:(id)arg1;
 + (void)test_setUnitTestMode:(BOOL)arg1;
 

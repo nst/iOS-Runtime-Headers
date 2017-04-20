@@ -17,6 +17,7 @@
 - (void)_setLockedHandler;
 - (BOOL)_shouldFlushWithChangeCount:(int)arg1;
 - (BOOL)attachDBAtPath:(id)arg1 as:(id)arg2 error:(id*)arg3;
+- (void)autovacuumIfNeeded;
 - (void)brc_close;
 - (void)disableProfilingForQueriesInBlock:(id /* block */)arg1;
 - (BOOL)executeWithErrorHandler:(id /* block */)arg1 sql:(id)arg2;
@@ -25,6 +26,7 @@
 - (void)flushToMakeEditsVisibleToIPCReaders;
 - (id)init;
 - (id)initWithLabel:(id)arg1 dbCorruptionHandler:(id)arg2;
+- (BOOL)needsAutovacuum;
 - (BOOL)openAtURL:(id)arg1 withFlags:(int)arg2 error:(id*)arg3;
 - (BOOL)profilingEnabled;
 - (void)setProfilingEnabled:(BOOL)arg1;

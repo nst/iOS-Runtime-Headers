@@ -2,35 +2,27 @@
    Image: /System/Library/PrivateFrameworks/TextToSpeech.framework/TextToSpeech
  */
 
-@interface TTSVoiceAsset : NSObject <NSSecureCoding> {
-    NSString * _compatibilityVersion;
-    NSNumber * _contentVersion;
+@interface TTSVoiceAsset : TTSAssetBase <NSSecureCoding> {
     int  _footprint;
     int  _gender;
     NSString * _identifier;
     BOOL  _isBuiltInVoice;
     BOOL  _isInstalled;
     NSArray * _languages;
-    NSString * _masteredVersion;
     NSString * _name;
 }
 
-@property (nonatomic, readonly) NSString *compatibilityVersion;
-@property (nonatomic, readonly) NSNumber *contentVersion;
 @property (nonatomic, readonly) int footprint;
 @property (nonatomic, readonly) int gender;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, readonly) BOOL isBuiltInVoice;
 @property (nonatomic, readonly) BOOL isInstalled;
 @property (nonatomic, readonly) NSArray *languages;
-@property (nonatomic, readonly) NSString *masteredVersion;
 @property (nonatomic, readonly) NSString *name;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)compatibilityVersion;
-- (id)contentVersion;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
@@ -43,7 +35,6 @@
 - (BOOL)isBuiltInVoice;
 - (BOOL)isInstalled;
 - (id)languages;
-- (id)masteredVersion;
 - (id)name;
 - (void)setIdentifier:(id)arg1;
 

@@ -12,6 +12,7 @@
 }
 
 @property (nonatomic, retain) <MDLObjectContainerComponent> *children;
+@property (nonatomic, readonly, copy) NSArray *components;
 @property (nonatomic) BOOL hidden;
 @property (nonatomic, retain) MDLObject *instance;
 @property (nonatomic, copy) NSString *name;
@@ -26,19 +27,23 @@
 - (struct { })boundingBoxAtTime:(double)arg1;
 - (id)children;
 - (id)componentConformingToProtocol:(id)arg1;
+- (id)components;
 - (void)enumerateChildObjectsOfClass:(Class)arg1 root:(id)arg2 usingBlock:(id /* block */)arg3 stopPointer:(BOOL*)arg4;
 - (BOOL)hidden;
 - (id)init;
 - (id)instance;
 - (id)name;
 - (id)objectAtPath:(id)arg1;
+- (id)objectForKeyedSubscript:(id)arg1;
 - (id)parent;
 - (id)path;
+- (id)primitive;
 - (void)setChildren:(id)arg1;
 - (void)setComponent:(id)arg1 forProtocol:(id)arg2;
 - (void)setHidden:(BOOL)arg1;
 - (void)setInstance:(id)arg1;
 - (void)setName:(id)arg1;
+- (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (void)setParent:(id)arg1;
 - (void)setTransform:(id)arg1;
 - (id)transform;

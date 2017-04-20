@@ -5,6 +5,7 @@
 @interface PXBasicTileAnimationOptions : NSObject <NSCopying> {
     double  _delay;
     double  _duration;
+    unsigned int  _flags;
     BOOL  _shouldNotifyTiles;
     BOOL  _shouldSnapshotDynamicContents;
     int  _style;
@@ -12,6 +13,7 @@
 
 @property (nonatomic) double delay;
 @property (nonatomic) double duration;
+@property (nonatomic) unsigned int flags;
 @property (nonatomic) BOOL shouldNotifyTiles;
 @property (nonatomic) BOOL shouldSnapshotDynamicContents;
 @property (nonatomic) int style;
@@ -22,9 +24,11 @@
 - (double)delay;
 - (id)description;
 - (double)duration;
+- (unsigned int)flags;
 - (id)init;
 - (void)setDelay:(double)arg1;
 - (void)setDuration:(double)arg1;
+- (void)setFlags:(unsigned int)arg1;
 - (void)setShouldNotifyTiles:(BOOL)arg1;
 - (void)setShouldSnapshotDynamicContents:(BOOL)arg1;
 - (void)setStyle:(int)arg1;

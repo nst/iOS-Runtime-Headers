@@ -16,8 +16,10 @@
     NSMutableDictionary * _runningTests;
     NSString * _serialNumber;
     NSString * _sessionId;
+    BOOL  _shouldAbort;
     BOOL  _shouldContinueRequestLoop;
     BOOL  _shouldUnenroll;
+    BOOL  _testSuiteRunning;
 }
 
 @property (nonatomic) int backoffCounter;
@@ -36,12 +38,18 @@
 @property (nonatomic, retain) NSMutableDictionary *runningTests;
 @property (nonatomic, retain) NSString *serialNumber;
 @property (nonatomic, retain) NSString *sessionId;
+@property (nonatomic) BOOL shouldAbort;
 @property (nonatomic) BOOL shouldContinueRequestLoop;
 @property (nonatomic) BOOL shouldUnenroll;
 @property (readonly) Class superclass;
+@property (nonatomic) BOOL testSuiteRunning;
 
++ (id)_MD5HashForString:(id)arg1;
++ (id)_destinationAssetDirectoryForSessionId:(id)arg1;
 + (id)_destinationURLForAsset:(id)arg1 sessionId:(id)arg2;
-+ (void)_downloadAsset:(id)arg1 sessionId:(id)arg2 completionHandler:(id /* block */)arg3;
++ (void)_downloadAsset:(id)arg1 sessionId:(id)arg2 fileHandle:(id)arg3 completion:(id /* block */)arg4;
++ (void)_fetchAsset:(id)arg1 sessionId:(id)arg2 completionHandler:(id /* block */)arg3;
++ (id)_readContentsOfFileHandle:(id)arg1 error:(id*)arg2;
 + (BOOL)auditToken:(struct { unsigned int x1[8]; }*)arg1 hasEntitlement:(id)arg2;
 + (BOOL)currentProcessHasEntitlement;
 + (void)requestAsset:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -54,6 +62,8 @@
 - (void)_archive;
 - (void)_backoff;
 - (void)_cancelRunningTests;
+- (void)_cancelSendingTestResults;
+- (id)_clientAbort;
 - (id)_continueWithLastRequest:(id)arg1;
 - (id)_idle;
 - (BOOL)_profile;
@@ -72,8 +82,6 @@
 - (BOOL)_validateCommand:(int)arg1 clientStatus:(int)arg2;
 - (int)backoffCounter;
 - (id)backoffTimer;
-- (void)cancelSendingResultsForAllTests;
-- (void)cancelSendingResultsForTest:(id)arg1;
 - (id)clientStatusLoopError;
 - (id)connectionManager;
 - (void)connectionManager:(id)arg1 pausedSendingResultForTest:(id)arg2 reason:(int)arg3;
@@ -83,6 +91,7 @@
 - (id)delegate;
 - (id)delegateQueue;
 - (void)end;
+- (void)idle;
 - (id)init;
 - (id)initWithSerialNumber:(id)arg1;
 - (id)pendingTestResults;
@@ -107,10 +116,14 @@
 - (void)setRunningTests:(id)arg1;
 - (void)setSerialNumber:(id)arg1;
 - (void)setSessionId:(id)arg1;
+- (void)setShouldAbort:(BOOL)arg1;
 - (void)setShouldContinueRequestLoop:(BOOL)arg1;
 - (void)setShouldUnenroll:(BOOL)arg1;
+- (void)setTestSuiteRunning:(BOOL)arg1;
+- (BOOL)shouldAbort;
 - (BOOL)shouldContinueRequestLoop;
 - (BOOL)shouldUnenroll;
 - (void)start;
+- (BOOL)testSuiteRunning;
 
 @end

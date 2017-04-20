@@ -6,6 +6,8 @@
 @required
 
 - (void)addObject:(MDLObject *)arg1;
+- (unsigned int)count;
+- (MDLObject *)objectAtIndexedSubscript:(unsigned int)arg1;
 - (NSArray *)objects;
 - (void)removeObject:(MDLObject *)arg1;
 

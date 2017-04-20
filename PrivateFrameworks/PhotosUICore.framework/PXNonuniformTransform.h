@@ -3,7 +3,7 @@
  */
 
 @interface PXNonuniformTransform : NSObject <NSCopying> {
-    <UICoordinateSpace> * _coordinateSpace;
+    NSObject<UICoordinateSpace> * _coordinateSpace;
     float  _maximumScale;
     float  _minimumScale;
     struct CGRect { 

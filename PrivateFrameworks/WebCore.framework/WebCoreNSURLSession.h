@@ -41,7 +41,7 @@
 @property (retain) <NSURLSessionTaskDelegate> *delegate;
 @property (readonly, retain) NSOperationQueue *delegateQueue;
 @property (readonly) BOOL didPassCORSAccessChecks;
-@property (readonly) struct PlatformMediaResourceLoader { int (**x1)(); struct atomic<int> { int x_2_1_1; } x2; }*loader;
+@property (readonly) struct PlatformMediaResourceLoader { int (**x1)(); struct atomic<unsigned int> { unsigned int x_2_1_1; } x2; }*loader;
 @property (copy) NSString *sessionDescription;
 
 - (id).cxx_construct;
@@ -62,10 +62,10 @@
 - (void)flushWithCompletionHandler:(id /* block */)arg1;
 - (void)getAllTasksWithCompletionHandler:(id /* block */)arg1;
 - (void)getTasksWithCompletionHandler:(id /* block */)arg1;
-- (id)initWithResourceLoader:(struct PlatformMediaResourceLoader { int (**x1)(); struct atomic<int> { int x_2_1_1; } x2; }*)arg1 delegate:(id)arg2 delegateQueue:(id)arg3;
+- (id)initWithResourceLoader:(struct PlatformMediaResourceLoader { int (**x1)(); struct atomic<unsigned int> { unsigned int x_2_1_1; } x2; }*)arg1 delegate:(id)arg2 delegateQueue:(id)arg3;
 - (void)invalidateAndCancel;
 - (BOOL)isKindOfClass:(Class)arg1;
-- (struct PlatformMediaResourceLoader { int (**x1)(); struct atomic<int> { int x_2_1_1; } x2; }*)loader;
+- (struct PlatformMediaResourceLoader { int (**x1)(); struct atomic<unsigned int> { unsigned int x_2_1_1; } x2; }*)loader;
 - (void)resetWithCompletionHandler:(id /* block */)arg1;
 - (id)sessionDescription;
 - (void)setDelegate:(id)arg1;

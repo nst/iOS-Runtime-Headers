@@ -12,7 +12,6 @@
     NSMutableDictionary * _topLevelAccountsByID;
 }
 
-+ (void)_migrateAccountsIfNeeded;
 + (id)_notifierClassNamesForAccountType:(id)arg1 dataclass:(id)arg2;
 + (BOOL)_oldDAAccountsInformationFound;
 + (BOOL)_oldMailAccountsInformationFound;
@@ -24,7 +23,6 @@
 + (unsigned int)currentVersion;
 + (id)displayNameForGroupOfAccountType:(id)arg1 forBeginningOfSentence:(BOOL)arg2;
 + (id)fullPathToAccountSettingsPlist;
-+ (void)killDataAccessIfNecessary;
 + (void)releaseMigrationLock:(id)arg1;
 + (void)removeNewAccountSettingsToMigrateOldAccountInformation;
 + (void)shouldMigrateOldMailAccounts:(BOOL*)arg1 oldDAAccounts:(BOOL*)arg2 newAccountSettings:(BOOL*)arg3;

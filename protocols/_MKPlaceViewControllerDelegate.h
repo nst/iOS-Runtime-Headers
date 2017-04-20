@@ -33,6 +33,7 @@
 - (void)placeViewControllerDidSelectOneReview:(_MKPlaceViewController *)arg1;
 - (void)placeViewControllerDidSelectRemoveMarker:(_MKPlaceViewController *)arg1;
 - (void)placeViewControllerDidSelectReportAProblem:(_MKPlaceViewController *)arg1;
+- (void)placeViewControllerDidSelectRidesharingButton:(_MKPlaceViewController *)arg1;
 - (void)placeViewControllerDidSelectShareLocation:(_MKPlaceViewController *)arg1;
 - (void)placeViewControllerDidSelectWriteAReview:(_MKPlaceViewController *)arg1;
 - (float)placeViewControllerPlaceCardHeaderTitleTrailingConstant:(_MKPlaceViewController *)arg1;

@@ -6,7 +6,11 @@
     NSMutableDictionary * _resourceCache;
 }
 
++ (id)_getLatestAssetFromArray:(id)arg1;
++ (id)queryForVoiceResourceAsset:(id)arg1 localOnly:(BOOL)arg2;
 + (id)sharedInstance;
++ (id)voiceResourceAssetForLanguage:(id)arg1 localOnly:(BOOL)arg2;
++ (id)voiceResourceFromAsset:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_autoDownloadedAssets;

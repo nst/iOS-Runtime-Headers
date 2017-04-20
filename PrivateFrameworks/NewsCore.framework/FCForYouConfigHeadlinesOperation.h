@@ -4,8 +4,10 @@
 
 @interface FCForYouConfigHeadlinesOperation : FCOperation {
     NSArray * _additionalArticleListIDs;
+    NSArray * _additionalTagIDs;
     FCCachePolicy * _articleListCachePolicy;
     <FCContentContext> * _context;
+    FCCachePolicy * _editorialSectionTagCachePolicy;
     int  _fields;
     FCCachePolicy * _forYouConfigCachePolicy;
     NSString * _forYouConfigID;
@@ -13,11 +15,14 @@
     NSDictionary * _resultArticleListsByID;
     FCForYouConfig * _resultForYouConfig;
     NSDictionary * _resultHeadlinesByArticleListID;
+    BOOL  _shouldFetchEditorialSectionTags;
 }
 
 @property (nonatomic, copy) NSArray *additionalArticleListIDs;
+@property (nonatomic, copy) NSArray *additionalTagIDs;
 @property (nonatomic, retain) FCCachePolicy *articleListCachePolicy;
 @property (nonatomic, retain) <FCContentContext> *context;
+@property (nonatomic, retain) FCCachePolicy *editorialSectionTagCachePolicy;
 @property (nonatomic) int fields;
 @property (nonatomic, retain) FCCachePolicy *forYouConfigCachePolicy;
 @property (nonatomic, copy) NSString *forYouConfigID;
@@ -25,11 +30,14 @@
 @property (nonatomic, retain) NSDictionary *resultArticleListsByID;
 @property (nonatomic, retain) FCForYouConfig *resultForYouConfig;
 @property (nonatomic, retain) NSDictionary *resultHeadlinesByArticleListID;
+@property (nonatomic) BOOL shouldFetchEditorialSectionTags;
 
 - (void).cxx_destruct;
 - (id)additionalArticleListIDs;
+- (id)additionalTagIDs;
 - (id)articleListCachePolicy;
 - (id)context;
+- (id)editorialSectionTagCachePolicy;
 - (int)fields;
 - (id)forYouConfigCachePolicy;
 - (id)forYouConfigID;
@@ -40,8 +48,10 @@
 - (id)resultForYouConfig;
 - (id)resultHeadlinesByArticleListID;
 - (void)setAdditionalArticleListIDs:(id)arg1;
+- (void)setAdditionalTagIDs:(id)arg1;
 - (void)setArticleListCachePolicy:(id)arg1;
 - (void)setContext:(id)arg1;
+- (void)setEditorialSectionTagCachePolicy:(id)arg1;
 - (void)setFields:(int)arg1;
 - (void)setForYouConfigCachePolicy:(id)arg1;
 - (void)setForYouConfigID:(id)arg1;
@@ -49,6 +59,8 @@
 - (void)setResultArticleListsByID:(id)arg1;
 - (void)setResultForYouConfig:(id)arg1;
 - (void)setResultHeadlinesByArticleListID:(id)arg1;
+- (void)setShouldFetchEditorialSectionTags:(BOOL)arg1;
+- (BOOL)shouldFetchEditorialSectionTags;
 - (BOOL)validateOperation;
 
 @end

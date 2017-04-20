@@ -7,12 +7,14 @@
     BOOL  _enableGenericService;
     BOOL  _enableMemoriesRelatedService;
     BOOL  _enableTitleFontService;
+    BOOL  _simulateLaunchedToTest;
 }
 
 @property (nonatomic) BOOL enableContextualGesture;
 @property (nonatomic) BOOL enableGenericService;
 @property (nonatomic) BOOL enableMemoriesRelatedService;
 @property (nonatomic) BOOL enableTitleFontService;
+@property (nonatomic) BOOL simulateLaunchedToTest;
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
@@ -26,5 +28,7 @@
 - (void)setEnableGenericService:(BOOL)arg1;
 - (void)setEnableMemoriesRelatedService:(BOOL)arg1;
 - (void)setEnableTitleFontService:(BOOL)arg1;
+- (void)setSimulateLaunchedToTest:(BOOL)arg1;
+- (BOOL)simulateLaunchedToTest;
 
 @end

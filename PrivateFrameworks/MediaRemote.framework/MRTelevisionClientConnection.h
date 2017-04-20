@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
  */
 
-@interface MRTelevisionClientConnection : NSObject <MSVMessageParserDelegate, NSStreamDelegate> {
+@interface MRTelevisionClientConnection : NSObject <MRTelevisionMessageQueueDatasource, MRTelevisionMessageQueueDelegate, MSVMessageParserDelegate, NSStreamDelegate> {
     MRCryptoPairingSession * _cryptoSession;
     <MRTelevisionClientConnectionDelegate> * _delegate;
     BOOL  _disconnected;
@@ -17,7 +17,6 @@
     BOOL  _registeredToNowPlayingUpdates;
     BOOL  _registeredVolumeControlAvailabilityUpdates;
     NSRunLoop * _runLoop;
-    BOOL  _useSSL;
     unsigned int  _voiceRecordingState;
 }
 
@@ -34,21 +33,26 @@
 @property (nonatomic) BOOL registeredVolumeControlAvailabilityUpdates;
 @property (nonatomic, readonly) BOOL streamsAreValid;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL useSSL;
 @property (nonatomic) unsigned int voiceRecordingState;
 
 - (void)_adjustTimestamp:(id)arg1;
+- (void)_closeStream:(id)arg1;
 - (void)_disconnectClient;
 - (void)_flush;
+- (void)_notifyDelegateClientDidDisconnect;
+- (void)_notifyDelegateClientDidRecieveMessage:(id)arg1;
 - (void)_openStream:(id)arg1;
+- (void)_parseMessageData:(id)arg1;
 - (void)_preProcessMessage:(id)arg1 data:(id)arg2;
+- (void)_sendMessage:(id)arg1 queue:(id)arg2 reply:(id /* block */)arg3;
 - (void)_setQOSPropertiesOnStream:(id)arg1;
 - (id)cryptoSession;
 - (void)dealloc;
 - (id)delegate;
-- (void)forceDisconnect;
 - (id)initWithInputStream:(id)arg1 outputStream:(id)arg2 runLoop:(id)arg3;
 - (id)inputStream;
+- (id)messageQueue:(id)arg1 dataForMessage:(id)arg2;
+- (unsigned int)messageQueue:(id)arg1 processData:(id)arg2 atReadPosition:(int)arg3;
 - (id)outputStream;
 - (void)parser:(id)arg1 didParseMessage:(id)arg2;
 - (BOOL)registeredKeyboardUpdates;
@@ -63,11 +67,9 @@
 - (void)setRegisteredToNowPlayingArtworkUpdates:(BOOL)arg1;
 - (void)setRegisteredToNowPlayingUpdates:(BOOL)arg1;
 - (void)setRegisteredVolumeControlAvailabilityUpdates:(BOOL)arg1;
-- (void)setUseSSL:(BOOL)arg1;
 - (void)setVoiceRecordingState:(unsigned int)arg1;
 - (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
 - (BOOL)streamsAreValid;
-- (BOOL)useSSL;
 - (unsigned int)voiceRecordingState;
 
 @end

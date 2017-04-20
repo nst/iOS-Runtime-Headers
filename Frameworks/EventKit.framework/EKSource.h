@@ -32,6 +32,7 @@
 @property (nonatomic, readonly) int sourceType;
 @property (nonatomic, readonly) int strictestEventPrivateValue;
 @property (nonatomic, readonly) BOOL supportsCalendarCreation;
+@property (nonatomic, readonly) BOOL supportsJunkReporting;
 @property (nonatomic, readonly) BOOL supportsReminderActions;
 @property (nonatomic, retain) NSDate *timeOfLastExternalIdentificationCache;
 @property (nonatomic, copy) NSString *title;
@@ -79,6 +80,7 @@
 - (int)sourceType;
 - (int)strictestEventPrivateValue;
 - (BOOL)supportsCalendarCreation;
+- (BOOL)supportsJunkReporting;
 - (BOOL)supportsReminderActions;
 - (id)timeOfLastExternalIdentificationCache;
 - (id)title;

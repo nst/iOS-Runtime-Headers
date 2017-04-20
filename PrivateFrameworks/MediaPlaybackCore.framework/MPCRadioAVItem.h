@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
  */
 
-@interface MPCRadioAVItem : MPAVItem {
+@interface MPCRadioAVItem : MPAVItem <MPRTCReportingItemSessionCreating> {
     NSArray * _buyOffers;
     BOOL  _heartbeatInvalid;
     BOOL  _isInWishList;
-    MPModelSong * _modelSong;
+    MPModelGenericObject * _modelGenericObject;
     MPModelResponse * _modelSongPersonalizationResponse;
     RadioTrack * _radioTrack;
+    id  _rtcReportingParentHierarchyToken;
     RadioStation * _station;
     NSString * _stationHash;
     long long  _stationID;
@@ -19,15 +20,20 @@
 @property (nonatomic, readonly, copy) RadioArtworkCollection *_artworkCollection;
 @property (nonatomic, readonly) double _expectedDuration;
 @property (nonatomic, readonly) BOOL _hasLyrics;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (getter=isHeartbeatInvalid, nonatomic) BOOL heartbeatInvalid;
 @property (nonatomic) BOOL isInWishList;
+@property (nonatomic, readonly) int rtcReportingAssetType;
+@property (nonatomic, retain) id rtcReportingParentHierarchyToken;
+@property (nonatomic, readonly, copy) NSString *rtcReportingServiceIdentifier;
 @property (nonatomic, retain) RadioStation *station;
 @property (nonatomic, readonly) NSString *stationHash;
 @property (nonatomic, readonly) long long stationID;
 @property (nonatomic, readonly) NSString *stationName;
 @property (nonatomic, readonly) NSString *stationStringID;
-
-+ (id)_supportedModelSongProperties;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_applyLoudnessInfoForVolumeNormalization;
@@ -38,7 +44,7 @@
 - (void)_handleUpdatedLikedState:(int)arg1 completion:(id /* block */)arg2;
 - (BOOL)_hasLyrics;
 - (void)_internalIsInWishlistDidChangeNotification:(id)arg1;
-- (void)_invalidateModelSong;
+- (void)_invalidateModelGenericObject;
 - (BOOL)_isSubscriptionEligible;
 - (void)_loadMediaItemWithCompletionHandler:(id /* block */)arg1;
 - (void)_modelSongPersonalizationResponseDidInvalidateNotification:(id)arg1;
@@ -73,15 +79,19 @@
 - (id)localizedPositionInPlaylistString;
 - (id)mainTitle;
 - (id)mediaItem;
-- (id)modelSong;
+- (id)modelGenericObject;
 - (unsigned int)mpcReporting_itemType;
 - (BOOL)mpcReporting_shouldReportPlayEventsToStore;
 - (id)mpcReporting_trackInfo;
 - (unsigned long long)persistentID;
 - (id)radioTrack;
 - (void)reevaluateType;
+- (int)rtcReportingAssetType;
+- (id)rtcReportingParentHierarchyToken;
+- (id)rtcReportingServiceIdentifier;
 - (void)setHeartbeatInvalid:(BOOL)arg1;
 - (void)setIsInWishList:(BOOL)arg1;
+- (void)setRtcReportingParentHierarchyToken:(id)arg1;
 - (void)setStation:(id)arg1;
 - (id)station;
 - (id)stationHash;

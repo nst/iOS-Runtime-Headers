@@ -12,8 +12,8 @@
 
 - (unsigned long)controlElement;
 - (unsigned long)controlScope;
-- (unsigned long)dataSizeForProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned long)arg2 andQualifierData:(const void*)arg3;
-- (BOOL)getProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned long)arg2 qualifierData:(const void*)arg3 dataSize:(unsigned int*)arg4 andData:(const void*)arg5 forClient:(int)arg6;
+- (unsigned int)dataSizeForProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned int)arg2 andQualifierData:(const void*)arg3;
+- (BOOL)getProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned int)arg2 qualifierData:(const void*)arg3 dataSize:(unsigned int*)arg4 andData:(void*)arg5 forClient:(int)arg6;
 - (BOOL)hasProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1;
 - (id)initWithElement:(unsigned long)arg1 inScope:(unsigned long)arg2 withPlugin:(id)arg3;
 - (id)initWithPlugin:(id)arg1;

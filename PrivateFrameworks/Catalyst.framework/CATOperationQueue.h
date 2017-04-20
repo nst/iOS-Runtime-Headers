@@ -8,6 +8,8 @@
 
 @property (nonatomic) <CATOperationQueueDelegate> *delegate;
 
+// Image: /System/Library/PrivateFrameworks/Catalyst.framework/Catalyst
+
 + (id)backgroundQueue;
 + (id)currentQueue;
 + (id)mainQueue;
@@ -24,5 +26,9 @@
 - (void)setUnderlyingQueue:(id)arg1;
 - (void)startObserving:(id)arg1;
 - (void)stopObserving:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
+
++ (id)crk_backgroundQueue;
 
 @end

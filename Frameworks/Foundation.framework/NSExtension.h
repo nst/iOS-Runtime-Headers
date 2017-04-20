@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSExtension : NSObject <_NSExtensionContextHosting> {
+@interface NSExtension : NSObject <CXCallDirectoryStoreMigratorExtension, _NSExtensionContextHosting> {
     NSSet * __allowedErrorClasses;
     int  __assertionRefCount;
     NSBundle * __extensionBundle;
@@ -43,15 +43,20 @@
 @property (retain) id _stashedPlugInConnection;
 @property (nonatomic, copy) NSDictionary *attributes;
 @property (nonatomic, copy) NSUUID *connectionUUID;
+@property (nonatomic, readonly) NSURL *containingAppURL;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (getter=isEnabledViaPlugInKit, nonatomic, readonly) BOOL enabledViaPlugInKit;
 @property (nonatomic, copy) NSString *extensionPointIdentifier;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSArray *icons;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) NSDictionary *infoDictionary;
+@property (nonatomic, readonly) NSString *localizedContainingAppName;
+@property (nonatomic, readonly) NSString *localizedName;
 @property (getter=_isObservingHostAppStateChanges, setter=_setObservingHostAppStateChanges:, nonatomic) BOOL observingHostAppStateChanges;
 @property (nonatomic, readonly) BOOL optedIn;
+@property (nonatomic, readonly) LSPlugInKitProxy *plugInKitProxy;
 @property (nonatomic, readonly) NSIndexSet *pu_supportedMediaTypes;
 @property (nonatomic, copy) id /* block */ requestCancellationBlock;
 @property (nonatomic, copy) id /* block */ requestCompletionBlock;
@@ -160,6 +165,14 @@
 - (void)set_safePluginQueue:(id)arg1;
 - (void)set_stashedPlugInConnection:(id)arg1;
 - (id)version;
+
+// Image: /System/Library/Frameworks/CallKit.framework/CallKit
+
+- (id)containingAppURL;
+- (BOOL)isEnabledViaPlugInKit;
+- (id)localizedContainingAppName;
+- (id)localizedName;
+- (id)plugInKitProxy;
 
 // Image: /System/Library/Frameworks/Intents.framework/Intents
 

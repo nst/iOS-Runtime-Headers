@@ -17,9 +17,15 @@
 - (id)_typedBackingStore;
 - (int)attribute;
 - (id)description;
+- (id)domain;
 - (id)identifiers;
 - (id)initWithIdentifiers:(id)arg1 attribute:(int)arg2;
+- (id)parametersByName;
 - (void)setAttribute:(int)arg1;
+- (void)setDomain:(id)arg1;
 - (void)setIdentifiers:(id)arg1;
+- (void)setParametersByName:(id)arg1;
+- (void)setVerb:(id)arg1;
+- (id)verb;
 
 @end

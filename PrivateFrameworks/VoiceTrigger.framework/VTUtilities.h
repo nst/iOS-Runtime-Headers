@@ -11,6 +11,7 @@
 + (BOOL)isInternalInstall;
 + (BOOL)isNano;
 + (id)sanitizeEventInfoForLogging:(id)arg1;
++ (BOOL)supportPremiumAssets;
 + (double)systemUpTime;
 
 @end

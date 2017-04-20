@@ -24,6 +24,7 @@
 @property (nonatomic) int width;
 
 + (long long)bytesNeededToDownloadOriginalResourcesInLibrary:(id)arg1;
++ (BOOL)countNonLocalFullSizeResourcesInLibrary:(id)arg1 outCount:(unsigned int*)arg2 photoCount:(unsigned int*)arg3 videoCount:(unsigned int*)arg4;
 + (BOOL)countNonLocalOriginalResourcesInLibrary:(id)arg1 outCount:(unsigned int*)arg2 photoCount:(unsigned int*)arg3 videoCount:(unsigned int*)arg4;
 + (BOOL)countOfLocalCloudResourcesOfType:(unsigned int)arg1 inManagedObjectContext:(id)arg2 localCount:(unsigned int*)arg3 unavailableCount:(unsigned int*)arg4 error:(id*)arg5;
 + (id)duplicateCloudResource:(id)arg1 forAsset:(id)arg2 withFilePath:(id)arg3 inManagedObjectContext:(id)arg4;

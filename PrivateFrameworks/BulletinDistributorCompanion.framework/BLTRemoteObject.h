@@ -6,7 +6,6 @@
     NSObject<OS_dispatch_queue> * _clientQueue;
     NSObject<OS_dispatch_queue> * _connectionStatusQueue;
     <BLTAbstractIDSDevice> * _defaultPairedDevice;
-    NSLock * _defaultPairedDeviceLock;
     BOOL  _full;
     NSMutableDictionary * _idsFileIDToResponseHandler;
     NSObject<OS_dispatch_queue> * _idsQueue;
@@ -23,7 +22,6 @@
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, readonly) <BLTAbstractIDSDevice> *defaultPairedDevice;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic) unsigned int lastKnownConnectionStatus;
@@ -40,9 +38,8 @@
 - (void)_queueHandleIDSProtobuf:(id)arg1;
 - (void)_queuePerformSend:(id /* block */)arg1 responseToRequest:(id)arg2 withTimeout:(id)arg3 withDescription:(id)arg4 shortDescription:(id)arg5 onlyOneFor:(id)arg6 didSend:(id /* block */)arg7 andResponse:(id /* block */)arg8;
 - (void)_queueSendMessage:(id)arg1 type:(unsigned short)arg2 responseToRequest:(id)arg3 withTimeout:(id)arg4 withDescription:(id)arg5 onlyOneFor:(id)arg6 didSend:(id /* block */)arg7 andResponse:(id /* block */)arg8 didQueue:(id /* block */)arg9;
-- (void)_queueUpdateConnectionStatus;
+- (void)_queueUpdateConnectionStatusWithResetDefaulteDevice:(BOOL)arg1;
 - (void)_removeAndHandleResponseHandler:(id)arg1;
-- (void)_resetDefaultPairedDevice;
 - (void)_sendAckInitialSequenceNumberForSession:(id)arg1 sessionState:(unsigned int)arg2;
 - (void)_sendAckInitialSequenceNumberForSession:(id)arg1 withAssert:(BOOL)arg2 sessionState:(unsigned int*)arg3;
 - (void)_sendAssertForSession;
@@ -51,11 +48,11 @@
 - (void)_setStandaloneTestModeEnabled:(BOOL)arg1;
 - (void)_storeProtobufAction:(SEL)arg1 messageType:(unsigned short)arg2 messageSendType:(int)arg3;
 - (void)_updateConnectionStatus;
+- (void)_updateConnectionStatusWithResetDefaulteDevice:(BOOL)arg1;
 - (id)_wrapError:(id)arg1 identifier:(id)arg2;
 - (id)clientQueue;
 - (unsigned int)connectionStatus;
 - (void)dealloc;
-- (id)defaultPairedDevice;
 - (void)disableStandaloneTestMode;
 - (void)enableStandaloneTestModeWithMinimumSendDelay:(unsigned int)arg1 maximumSendDelay:(unsigned int)arg2 minimumResponseDelay:(unsigned int)arg3 maximumResponseDelay:(unsigned int)arg4;
 - (void)handleAckInitialSequenceNumberRequest:(id)arg1;

@@ -7,6 +7,8 @@
     NSString * _clientIdentifier;
     NSString * _delegateMachServiceName;
     unsigned int  _displayStyle;
+    NSString * _extensionIdentifier;
+    NSString * _groupIdentifier;
     NSString * _informativeText;
     FLFollowUpNotification * _notification;
     BOOL  _shouldPersistWhenActivated;
@@ -23,6 +25,8 @@
 @property (nonatomic, copy) NSString *clientIdentifier;
 @property (nonatomic, copy) NSString *delegateMachServiceName;
 @property unsigned int displayStyle;
+@property (copy) NSString *extensionIdentifier;
+@property (nonatomic, copy) NSString *groupIdentifier;
 @property (nonatomic, copy) NSString *informativeText;
 @property (nonatomic, retain) FLFollowUpNotification *notification;
 @property BOOL shouldPersistWhenActivated;
@@ -40,8 +44,11 @@
 - (id)actions;
 - (id)clientIdentifier;
 - (id)delegateMachServiceName;
+- (id)description;
 - (unsigned int)displayStyle;
 - (void)encodeWithCoder:(id)arg1;
+- (id)extensionIdentifier;
+- (id)groupIdentifier;
 - (id)informativeText;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -52,6 +59,8 @@
 - (void)setClientIdentifier:(id)arg1;
 - (void)setDelegateMachServiceName:(id)arg1;
 - (void)setDisplayStyle:(unsigned int)arg1;
+- (void)setExtensionIdentifier:(id)arg1;
+- (void)setGroupIdentifier:(id)arg1;
 - (void)setInformativeText:(id)arg1;
 - (void)setNotification:(id)arg1;
 - (void)setShouldPersistWhenActivated:(BOOL)arg1;

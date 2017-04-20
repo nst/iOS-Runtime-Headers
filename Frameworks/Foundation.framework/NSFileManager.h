@@ -143,6 +143,10 @@
 
 + (id)_web_createTemporaryFileForQuickLook:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
+
+- (BOOL)crk_safeRemoveItemAtURL:(id)arg1 error:(id*)arg2;
+
 // Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
 
 - (BOOL)br_movePromisedItemAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
@@ -283,6 +287,7 @@
 - (id)_safari_libraryDirectoryForHomeDirectory:(id)arg1;
 - (id)_safari_safariLibraryDirectory;
 - (id)_safari_settingsDirectoryForLibraryDirectory:(id)arg1;
+- (id)safari_createTemporaryDirectoryWithTemplate:(id)arg1;
 - (id)safari_ensureDirectoryExists:(id)arg1;
 - (id)safari_productionSafariSettingsDirectory;
 - (BOOL)safari_removeFileAtURL:(id)arg1 error:(id*)arg2;
@@ -300,6 +305,10 @@
 - (id)incrementalPathInDirectory:(id)arg1 withFilename:(id)arg2 andExtension:(id)arg3;
 - (id)incrementalURLInDirectory:(id)arg1 withFilename:(id)arg2 andExtension:(id)arg3;
 - (id)unarchiveItemAtPath:(id)arg1 toDirectory:(id)arg2 withProgressionBlock:(id /* block */)arg3;
+
+// Image: /System/Library/PrivateFrameworks/Swift/libswiftFoundation.dylib
+
+- (id)enumeratorAtincludingPropertiesForKeysoptionserrorHandler;
 
 // Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
 

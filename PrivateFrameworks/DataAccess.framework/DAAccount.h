@@ -194,6 +194,7 @@
 - (void)removeClientCertificateData;
 - (void)removeConsumerForTask:(id)arg1;
 - (void)removeDBSyncData;
+- (id)reportShareRequestAsJunkForCalendar:(id)arg1 consumer:(id)arg2;
 - (id)requestCalendarAvailabilityForStartDate:(id)arg1 endDate:(id)arg2 ignoredEventID:(id)arg3 addresses:(id)arg4 consumer:(id)arg5;
 - (void)resetAccountID;
 - (BOOL)resetCertWarnings;

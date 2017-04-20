@@ -4,7 +4,6 @@
 
 @interface GEOPBSessionRequester : NSObject <NSURLSessionDataDelegate> {
     NSURL * _URL;
-    NSArray * _clientCertificates;
     NSDictionary * _connectionProperties;
     NSURLSessionTask * _currentTask;
     NSMutableData * _data;
@@ -33,12 +32,14 @@
     unsigned int  _lastGoodDataOffset;
     NSString * _logRequestToFile;
     NSString * _logResponseToFile;
+    int  _requestBodySize;
     NSMutableArray * _requests;
     int  _responseStatusCode;
     NSMutableArray * _responses;
-    NSURLSession * _session;
+    GEONSURLSharedSession * _session;
     NSOperationQueue * _sessionDelegateQ;
     BOOL  _shouldHandleCookies;
+    NSURLSessionTaskMetrics * _taskMetrics;
     unsigned long long  _timeRequestSent;
     unsigned long long  _timeResponseReceived;
     double  _timeoutSeconds;
@@ -46,7 +47,6 @@
 }
 
 @property (nonatomic, retain) NSURL *URL;
-@property (nonatomic, retain) NSArray *clientCertificates;
 @property (nonatomic, retain) NSURLSessionTask *currentTask;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <GEOPBSessionRequesterDelegate> *delegate;
@@ -54,14 +54,17 @@
 @property (nonatomic, readonly) unsigned int downloadPayloadSize;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSDictionary *httpRequestHeaders;
-@property (nonatomic, retain) NSDictionary *httpResponseHeaders;
+@property (nonatomic, copy) NSDictionary *httpResponseHeaders;
+@property (nonatomic, readonly) int httpResponseStatusCode;
 @property (nonatomic) BOOL ignoresResponse;
 @property (nonatomic, retain) NSString *logRequestToFile;
 @property (nonatomic, retain) NSString *logResponseToFile;
 @property BOOL needsCancel;
+@property (nonatomic, readonly) NSString *remoteAddressAndPort;
+@property (nonatomic, readonly) int requestBodySize;
 @property (nonatomic, readonly) unsigned int requestResponseTime;
 @property (nonatomic, readonly) NSArray *requests;
-@property (nonatomic, retain) NSURLSession *session;
+@property (nonatomic, retain) GEONSURLSharedSession *session;
 @property (nonatomic) BOOL shouldHandleCookies;
 @property (readonly) Class superclass;
 @property (nonatomic) double timeoutSeconds;
@@ -72,9 +75,9 @@
 - (id)URL;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(id /* block */)arg4;
-- (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 _willSendRequestForEstablishedConnection:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
+- (void)URLSession:(id)arg1 task:(id)arg2 didFinishCollectingMetrics:(id)arg3;
 - (id)_applicationID;
 - (void)_cancelNoNotify;
 - (void)_cancelWithErrorDomain:(id)arg1 errorCode:(int)arg2 userInfo:(id)arg3;
@@ -86,7 +89,6 @@
 - (void)_logErrorIfNecessary:(id)arg1;
 - (void)_logRequestsIfNecessary:(id)arg1;
 - (void)_logResponsesIfNecessary:(id)arg1;
-- (id)_newSessionWithDelegate:(id)arg1 delegateQueue:(id)arg2 connectionProperties:(id)arg3;
 - (id)_osVersion;
 - (void)_performOnDelegateQueue:(id /* block */)arg1;
 - (void)_scheduleThrottlingError;
@@ -101,7 +103,6 @@
 - (void)cancelWithErrorCode:(int)arg1;
 - (void)cancelWithErrorCode:(int)arg1 description:(id)arg2;
 - (void)clearRequests;
-- (id)clientCertificates;
 - (id)currentTask;
 - (void)dealloc;
 - (id)decodeResponseData:(id)arg1;
@@ -111,6 +112,7 @@
 - (void)handleResponse:(id)arg1 forInternalRequest:(id)arg2;
 - (id)httpRequestHeaders;
 - (id)httpResponseHeaders;
+- (int)httpResponseStatusCode;
 - (BOOL)ignoresResponse;
 - (id)initWithURL:(id)arg1 andDelegate:(id)arg2;
 - (id)internalRequests;
@@ -119,11 +121,10 @@
 - (id)logResponseToFile;
 - (BOOL)needsCancel;
 - (id)newMutableURLRequestWithURL:(id)arg1;
-- (id)newSessionTaskOnSession:(id)arg1 withURLRequest:(id)arg2;
-- (id)newSessionWithDelegate:(id)arg1 delegateQueue:(id)arg2;
-- (id)newSessionWithDelegate:(id)arg1 delegateQueue:(id)arg2 connectionProperties:(id)arg3;
 - (void)pause;
 - (BOOL)readResponsePreamble:(id)arg1;
+- (id)remoteAddressAndPort;
+- (int)requestBodySize;
 - (id)requestPreamble;
 - (unsigned int)requestResponseTime;
 - (id)requests;
@@ -131,7 +132,7 @@
 - (id)responseForRequest:(id)arg1;
 - (void)resume;
 - (id)session;
-- (void)setClientCertificates:(id)arg1;
+- (id)sessionWithConnectionProperties:(id)arg1;
 - (void)setCurrentTask:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHttpRequestHeader:(id)arg1 forKey:(id)arg2;

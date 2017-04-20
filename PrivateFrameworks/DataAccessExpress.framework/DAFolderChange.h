@@ -3,7 +3,7 @@
  */
 
 @interface DAFolderChange : NSObject <NSSecureCoding> {
-    int  _changeType;
+    unsigned int  _changeType;
     <DAFolderChangeConsumer> * _consumer;
     int  _dataclass;
     NSString * _displayName;
@@ -13,7 +13,7 @@
     unsigned int  _taskId;
 }
 
-@property (nonatomic) int changeType;
+@property (nonatomic) unsigned int changeType;
 @property (nonatomic) <DAFolderChangeConsumer> *consumer;
 @property (nonatomic) int dataclass;
 @property (nonatomic, retain) NSString *displayName;
@@ -27,18 +27,18 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (int)changeType;
+- (unsigned int)changeType;
 - (id)consumer;
 - (int)dataclass;
 - (id)description;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)folderId;
-- (id)initFolderChangeWithChangeType:(int)arg1 folderId:(id)arg2 parentFolderId:(id)arg3 displayName:(id)arg4 dataclass:(int)arg5 consumer:(id)arg6;
+- (id)initFolderChangeWithChangeType:(unsigned int)arg1 folderId:(id)arg2 parentFolderId:(id)arg3 displayName:(id)arg4 dataclass:(int)arg5 consumer:(id)arg6;
 - (id)initWithCoder:(id)arg1;
 - (id)parentFolderId;
 - (BOOL)renameOnCollision;
-- (void)setChangeType:(int)arg1;
+- (void)setChangeType:(unsigned int)arg1;
 - (void)setConsumer:(id)arg1;
 - (void)setDataclass:(int)arg1;
 - (void)setDisplayName:(id)arg1;

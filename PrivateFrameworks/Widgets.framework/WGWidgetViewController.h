@@ -32,6 +32,7 @@
 - (int)userSpecifiedDisplayModeForWidget:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)widget:(id)arg1 didRemoveSnapshotAtURL:(id)arg2;
 - (id)widgetHost;
 
 @end

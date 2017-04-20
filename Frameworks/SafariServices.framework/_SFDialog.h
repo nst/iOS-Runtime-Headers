@@ -3,34 +3,34 @@
  */
 
 @interface _SFDialog : NSObject {
-    id /* block */  _completionHandler;
-    BOOL  _completionHandlerBlocksWebProcess;
-    NSString * _defaultText;
-    NSString * _message;
-    NSString * _primaryActionTitle;
-    NSString * _secondaryActionTitle;
+    BOOL  _completed;
 }
 
+@property (nonatomic, readonly) BOOL canceledOnNavigation;
 @property (nonatomic, readonly) BOOL completionHandlerBlocksWebProcess;
-@property (nonatomic, readonly, copy) NSString *defaultText;
-@property (nonatomic, readonly, copy) NSString *message;
-@property (nonatomic, readonly, copy) NSString *primaryActionTitle;
-@property (nonatomic, readonly, copy) NSString *secondaryActionTitle;
+@property (nonatomic, readonly) int presentationStyle;
 
++ (id)_dialogWithTitle:(id)arg1 message:(id)arg2 primaryAction:(id)arg3 secondaryAction:(id)arg4 applicationModal:(BOOL)arg5 completionHandler:(id /* block */)arg6;
++ (id)authenticationDialogWithAuthenticationChallenge:(id)arg1 committedURL:(id)arg2 completionHandler:(id /* block */)arg3;
++ (id)continuePrintingDialogWithTitle:(id)arg1 message:(id)arg2 completionHandler:(id /* block */)arg3;
++ (id)dialogWithWebUIAlert:(id)arg1 completionHandler:(id /* block */)arg2;
++ (id)formSubmissionDialogWithMessage:(id)arg1 completionHandler:(id /* block */)arg2;
++ (id)genericErrorDialogWithTitle:(id)arg1 message:(id)arg2;
 + (id)javaScriptAlertDialogWithMessage:(id)arg1 completionHandler:(id /* block */)arg2;
 + (id)javaScriptConfirmDialogWithMessage:(id)arg1 completionHandler:(id /* block */)arg2;
 + (id)javaScriptPromptDialogWithMessage:(id)arg1 defaultText:(id)arg2 completionHandler:(id /* block */)arg3;
 + (id)mailNavigationDialogWithCompletionHandler:(id /* block */)arg1;
++ (id)noFeedAppDialogWithCompletionHandler:(id /* block */)arg1;
++ (id)pageLoadErrorWithMessage:(id)arg1;
++ (id)redirectDialogWithMessage:(id)arg1 completionHandler:(id /* block */)arg2;
 + (id)telephonyNavigationDialogWithCompletionHandler:(id /* block */)arg1;
 
-- (void).cxx_destruct;
-- (void)cancel;
+- (BOOL)canceledOnNavigation;
+- (void)completeWithResponse:(id)arg1;
 - (BOOL)completionHandlerBlocksWebProcess;
-- (id)defaultText;
-- (void)finishWithPrimaryAction:(BOOL)arg1 text:(id)arg2;
-- (id)initWithMessage:(id)arg1 defaultText:(id)arg2 primaryActionTitle:(id)arg3 secondaryActionTitle:(id)arg4 completionHandlerBlocksWebProcess:(BOOL)arg5 completionHandler:(id /* block */)arg6;
-- (id)message;
-- (id)primaryActionTitle;
-- (id)secondaryActionTitle;
+- (void)didCompleteWithResponse:(id)arg1;
+- (id)newDialogViewRepresentation;
+- (id)newViewControllerRepresentationWithCompletionHandler:(id /* block */)arg1;
+- (int)presentationStyle;
 
 @end

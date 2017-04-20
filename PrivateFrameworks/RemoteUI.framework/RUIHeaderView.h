@@ -4,7 +4,7 @@
 
 @interface RUIHeaderView : UIView <RUIHeader> {
     BOOL  _customIconSize;
-    UILabel * _detailHeaderLabel;
+    RUILinkLabel * _detailHeaderLabel;
     UILabel * _headerLabel;
     UIImageView * _iconView;
     int  _imageAlignment;
@@ -26,7 +26,7 @@
 
 - (void).cxx_destruct;
 - (BOOL)_hasIcon;
-- (float)_headerOffset;
+- (float)_headerOffsetInView:(id)arg1;
 - (float)_imageTitlePaddingInView:(id)arg1;
 - (float)_titleSubtitlePaddingInView:(id)arg1;
 - (id)detailHeaderLabel;

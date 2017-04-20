@@ -33,7 +33,7 @@
 - (id)entityWithIdentifier:(id)arg1;
 - (BOOL)evaluateJSONLDEntryForEntity:(id)arg1 key:(id)arg2 value:(id)arg3 error:(id*)arg4;
 - (int)hash;
-- (/* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*)hashValue;
+- (/* Warning: Unrecognized filer type: 'Â' using 'void*' */ void*)hashValue:(void *)arg1; // needs 1 arg types, found 13: /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: '' using 'void*' */ void*, unsigned long long, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Â' using 'void*' */ void*, unsigned long long, /* Warning: Unrecognized filer type: 'y' using 'void*' */ void*, long double, /* Warning: Unrecognized filer type: '	' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*, /* Warning: Unrecognized filer type: '' using 'void*' */ void*, long double
 - (void)importContentsOfJSONLDAtPath:(id)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)importJSONLDWithData:(id)arg1 error:(id*)arg2;
 - (BOOL)inferLinkTo:(id)arg1 withPredicate:(id)arg2 when:(id)arg3 error:(id*)arg4;
@@ -43,12 +43,12 @@
 - (void)linksWithBetween:(id)arg1 and:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)linksWithBetween:(id)arg1 and:(id)arg2 error:(id*)arg3;
 - (id)name;
-/* MISSING HEADER DESCRIPTION FOR METHOD objectForKeyedSubscript: */
+- (void)objectForKeyedSubscript;
 - (id)path;
 - (BOOL)removeEntity:(id)arg1 error:(id*)arg2;
-- (/* Warning: Unrecognized filer type: 'm' using 'void*' */ void*)removeObjectForKey:(in /* Warning: Unrecognized filer type: 't' using 'void*' */ void*)arg1 error:(short)arg2;
+- (/* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*)removeObjectForKey:(void *)arg1 error:(void *)arg2; // needs 2 arg types, found 3: /* Warning: Unrecognized filer type: 'P' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'x' using 'void*' */ void*, long double
 - (void)setDelegate:(id)arg1;
-/* MISSING HEADER DESCRIPTION FOR METHOD setObject:forKeyedSubscript: */
+- (void)setObjectforKeyedSubscript;
 - (id)subgraphWithEntities:(id)arg1;
 - (void)triplesMatching:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)triplesMatching:(id)arg1 error:(id*)arg2;

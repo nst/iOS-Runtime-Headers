@@ -19,6 +19,7 @@
 - (unsigned int)depthFailureOperation;
 - (unsigned int)depthStencilPassOperation;
 - (id)description;
+- (id)formattedDescription:(unsigned int)arg1;
 - (unsigned int)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;

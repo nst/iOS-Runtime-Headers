@@ -31,6 +31,7 @@
 - (NSArray *)customFeatureDataSources;
 - (void)debugHighlightFeatureMarker:(const struct shared_ptr<md::FeatureMarker> { struct FeatureMarker {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
 - (void)debugHighlightObjectAtPoint:(struct CGPoint { float x1; float x2; })arg1 highlightTarget:(unsigned char)arg2;
+- (NSString *)debugLabelString:(BOOL)arg1;
 - (<VKInteractiveMapDelegate> *)delegate;
 - (void)deselectLabelMarker;
 - (void)deselectTransitLineMarker;

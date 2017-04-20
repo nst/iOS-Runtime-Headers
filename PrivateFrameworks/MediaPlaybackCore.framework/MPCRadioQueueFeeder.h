@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
  */
 
-@interface MPCRadioQueueFeeder : MPQueueFeeder <MPCQueueBehaviorManaging> {
+@interface MPCRadioQueueFeeder : MPQueueFeeder <MPCQueueBehaviorManaging, MPRTCReportingItemSessionContaining> {
     BOOL  _canSeek;
     MPAVItem * _currentItem;
     BOOL  _didReceiveTracklistEnd;
@@ -28,6 +28,8 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) int playbackMode;
+@property (nonatomic, readonly, copy) NSString *rtcReportingPlayQueueSourceIdentifier;
+@property (nonatomic, readonly, copy) NSDictionary *rtcReportingSessionAdditionalUserInfo;
 @property (nonatomic, retain) RadioStation *station;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSArray *tracks;
@@ -103,6 +105,8 @@
 - (int)realRepeatType;
 - (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)restoreState:(id /* block */)arg1;
+- (id)rtcReportingPlayQueueSourceIdentifier;
+- (id)rtcReportingSessionAdditionalUserInfo;
 - (void)setStation:(id)arg1;
 - (void)setTracks:(id)arg1;
 - (BOOL)shouldContinuePlaybackForNetworkType:(int)arg1 player:(id)arg2;

@@ -135,6 +135,7 @@
 - (void)dumpDaemonStatusReportToFileHandle:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)fetchAllLongLivedOperationIDsWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)fetchLongLivedOperationsWithIDs:(id)arg1 setupInfo:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)flushOperationMetricsToPowerLog;
 - (void)forceFinishClientSetupWithClientContext:(id)arg1;
 - (void)fullNameAndPrimaryEmailOnAccountWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)getBehaviorOptionForKey:(id)arg1 isContainerOption:(BOOL)arg2 completionHandler:(id /* block */)arg3;
@@ -241,6 +242,7 @@
 - (id)tccAuthQueue;
 - (void)tearDown;
 - (void)tossConfigWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)triggerAutoBugCaptureSnapshot;
 - (void)updatePushTokens;
 - (BOOL)usePublicTokenEntitlement;
 - (id)valueForEntitlement:(id)arg1;

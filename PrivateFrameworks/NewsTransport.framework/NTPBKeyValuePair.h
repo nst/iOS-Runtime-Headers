@@ -3,6 +3,7 @@
  */
 
 @interface NTPBKeyValuePair : PBCodable <NSCopying> {
+    NTPBAppConfigurationResource * _appConfigurationResource;
     NTPBCacheCoordinatorHints * _cacheCoordinatorHintsValue;
     NSData * _dataValue;
     NTPBDate * _dateValue;
@@ -18,9 +19,11 @@
     int  _valueType;
 }
 
+@property (nonatomic, retain) NTPBAppConfigurationResource *appConfigurationResource;
 @property (nonatomic, retain) NTPBCacheCoordinatorHints *cacheCoordinatorHintsValue;
 @property (nonatomic, retain) NSData *dataValue;
 @property (nonatomic, retain) NTPBDate *dateValue;
+@property (nonatomic, readonly) BOOL hasAppConfigurationResource;
 @property (nonatomic, readonly) BOOL hasCacheCoordinatorHintsValue;
 @property (nonatomic, readonly) BOOL hasDataValue;
 @property (nonatomic, readonly) BOOL hasDateValue;
@@ -39,6 +42,7 @@
 @property (nonatomic, retain) NSString *stringValue;
 @property (nonatomic) int valueType;
 
+- (id)appConfigurationResource;
 - (id)cacheCoordinatorHintsValue;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataValue;
@@ -46,6 +50,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasAppConfigurationResource;
 - (BOOL)hasCacheCoordinatorHintsValue;
 - (BOOL)hasDataValue;
 - (BOOL)hasDateValue;
@@ -65,6 +70,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)readingHistoryItem;
 - (id)recordData;
+- (void)setAppConfigurationResource:(id)arg1;
 - (void)setCacheCoordinatorHintsValue:(id)arg1;
 - (void)setDataValue:(id)arg1;
 - (void)setDateValue:(id)arg1;

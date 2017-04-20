@@ -141,6 +141,8 @@
                 unsigned int connection_reuse_count; 
                 unsigned int data_stall_count; 
                 int connection_mode; 
+                int apple_host; 
+                int apple_app; 
             } nw_connection_report; 
         } u; 
     }  _report;

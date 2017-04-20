@@ -14,7 +14,7 @@
         float x; 
         float y; 
     }  _screenTouchLocation;
-    PUAutoScroller * _selectionAutoScroller;
+    PXUIAutoScroller * _selectionAutoScroller;
 }
 
 @property (setter=_setPausingChangesToken:, nonatomic, retain) id _pausingChangesToken;
@@ -24,7 +24,7 @@
 @property (nonatomic) <PUSwipeSelectionManagerDataSource> *datasource;
 @property (nonatomic) <PUSwipeSelectionManagerDelegate> *delegate;
 @property (nonatomic) struct CGPoint { float x1; float x2; } screenTouchLocation;
-@property (nonatomic, retain) PUAutoScroller *selectionAutoScroller;
+@property (nonatomic, retain) PXUIAutoScroller *selectionAutoScroller;
 
 - (void).cxx_destruct;
 - (struct NSMutableDictionary { Class x1; }*)_indexesPathsRangeForIndexPath:(id)arg1;

@@ -5,6 +5,7 @@
 @interface SSVPlatformRequestOperation : NSOperation {
     NSMutableDictionary * _additionalHeaderFields;
     NSMutableDictionary * _additionalParameters;
+    NSArray * _bundleIdentifiers;
     NSString * _caller;
     SSVPlatformContext * _context;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
@@ -18,6 +19,7 @@
     NSString * _userAgent;
 }
 
+@property (copy) NSArray *bundleIdentifiers;
 @property (copy) NSString *imageProfile;
 @property (copy) NSArray *itemIdentifiers;
 @property (copy) NSString *keyProfile;
@@ -36,6 +38,7 @@
 - (void)_makeLookupRequestWithPersonalizationStyle:(int)arg1;
 - (void)_setCaller:(id)arg1;
 - (void)_setUserAgent:(id)arg1;
+- (id)bundleIdentifiers;
 - (id)imageProfile;
 - (id)init;
 - (id)initWithPlatformContext:(id)arg1;
@@ -44,6 +47,7 @@
 - (void)main;
 - (int)personalizationStyle;
 - (id /* block */)responseBlock;
+- (void)setBundleIdentifiers:(id)arg1;
 - (void)setImageProfile:(id)arg1;
 - (void)setItemIdentifiers:(id)arg1;
 - (void)setKeyProfile:(id)arg1;

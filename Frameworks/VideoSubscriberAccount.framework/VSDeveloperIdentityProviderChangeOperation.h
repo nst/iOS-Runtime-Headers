@@ -6,13 +6,13 @@
     int  _changeKind;
     NSXPCConnection * _connection;
     VSIdentityProvider * _identityProvider;
-    VSFailable * _result;
+    VSOptional * _result;
 }
 
 @property (nonatomic) int changeKind;
 @property (nonatomic, retain) NSXPCConnection *connection;
 @property (nonatomic, retain) VSIdentityProvider *identityProvider;
-@property (nonatomic, retain) VSFailable *result;
+@property (nonatomic, retain) VSOptional *result;
 
 - (void).cxx_destruct;
 - (id)_serviceWithErrorHandler:(id /* block */)arg1;

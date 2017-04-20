@@ -13,6 +13,7 @@
 @property (nonatomic) int totalUnitCount;
 @property (nonatomic, retain) NSDictionary *userInfo;
 
+- (id)initWithCoder:(id)arg1;
 - (id)initWithOperationUUID:(id)arg1;
 - (id)initWithOperationUUID:(id)arg1 requestClass:(Class)arg2;
 - (void)setProgress:(id)arg1;

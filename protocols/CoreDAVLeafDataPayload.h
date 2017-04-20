@@ -14,5 +14,9 @@
 @optional
 
 - (NSArray *)childrenOrder;
+- (NSURL *)destinationURL;
+- (void)setDestinationURL:(NSURL *)arg1;
+- (void)setSourceURL:(NSURL *)arg1;
+- (NSURL *)sourceURL;
 
 @end

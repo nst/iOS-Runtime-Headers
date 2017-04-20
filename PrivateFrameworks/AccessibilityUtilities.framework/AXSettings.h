@@ -158,6 +158,7 @@
 @property (nonatomic) float reduceWhitePointLevel;
 @property (nonatomic, retain) NSMutableSet *registeredNotifications;
 @property (nonatomic) BOOL shouldFlashForAlertInSilentMode;
+@property (nonatomic) BOOL shouldLimitDisplayRefreshRate;
 @property (nonatomic) BOOL shouldStreamToLeftAid;
 @property (nonatomic) BOOL shouldStreamToRightAid;
 @property BOOL siriSemanticContextEnabled;
@@ -631,6 +632,7 @@
 - (void)setReduceWhitePointLevel:(float)arg1;
 - (void)setRegisteredNotifications:(id)arg1;
 - (void)setShouldFlashForAlertInSilentMode:(BOOL)arg1;
+- (void)setShouldLimitDisplayRefreshRate:(BOOL)arg1;
 - (void)setShouldStreamToLeftAid:(BOOL)arg1;
 - (void)setShouldStreamToRightAid:(BOOL)arg1;
 - (void)setSiriSemanticContextEnabled:(BOOL)arg1;
@@ -762,6 +764,7 @@
 - (void)setlastHearingAidHandoffTimeResetCount:(double)arg1;
 - (void)setlastPlatformSwitchTimeResetCount:(double)arg1;
 - (BOOL)shouldFlashForAlertInSilentMode;
+- (BOOL)shouldLimitDisplayRefreshRate;
 - (BOOL)shouldStreamToLeftAid;
 - (BOOL)shouldStreamToRightAid;
 - (BOOL)siriSemanticContextEnabled;

@@ -29,12 +29,15 @@
 - (void).cxx_destruct;
 - (id)SBKUniversalPlaybackPositionMetadata;
 - (double)bookmarkTime;
+- (BOOL)bookmarkTimeModified;
 - (double)bookmarkTimestamp;
+- (BOOL)bookmarkTimestampModified;
 - (id)copyWithValuesFromSBKUniversalPlaybackPositionMetadata:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (long long)foreignDatabaseEntityID;
 - (BOOL)hasBeenPlayed;
+- (BOOL)hasBeenPlayedModified;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPlaybackPositionDomain:(id)arg1 ubiquitousIdentifier:(id)arg2 foreignDatabaseEntityID:(long long)arg3;
 - (id)playbackPositionDomain;
@@ -44,5 +47,6 @@
 - (void)setUserPlayCount:(unsigned int)arg1;
 - (id)ubiquitousIdentifier;
 - (unsigned int)userPlayCount;
+- (BOOL)userPlayCountModified;
 
 @end

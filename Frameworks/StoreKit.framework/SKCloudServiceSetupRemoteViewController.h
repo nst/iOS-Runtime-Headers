@@ -19,6 +19,8 @@
 - (id)delegate;
 - (void)didFinishLoadingWithSuccess:(BOOL)arg1 error:(id)arg2;
 - (void)dismissCloudServiceSetupViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)dismissSafariViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)presentSafariViewControllerWithURL:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)setDelegate:(id)arg1;
 
 @end

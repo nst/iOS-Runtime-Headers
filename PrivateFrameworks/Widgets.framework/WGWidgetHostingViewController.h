@@ -32,7 +32,7 @@
     id /* block */  _remoteViewControllerConnectionHandler;
     id /* block */  _remoteViewControllerDisconnectionHandler;
     NSMutableDictionary * _sequenceIDsToOutstandingWidgetUpdateCompletionHandlers;
-    UIView * _snapshotView;
+    _WGCAPackageView * _snapshotView;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -86,7 +86,7 @@
 @property (getter=_sequenceIDsToOutstandingWidgetUpdateCompletionHandlers, setter=_setSequenceIDsToOutstandingWidgetUpdateCompletionHandlers:, nonatomic, retain) NSMutableDictionary *sequenceIDsToOutstandingWidgetUpdateCompletionHandlers;
 @property (nonatomic, readonly) UIImage *settingsIcon;
 @property (getter=isSnapshotLoaded, nonatomic, readonly) BOOL snapshotLoaded;
-@property (getter=_snapshotView, setter=_setSnapshotView:, nonatomic, retain) UIView *snapshotView;
+@property (getter=_snapshotView, setter=_setSnapshotView:, nonatomic, retain) _WGCAPackageView *snapshotView;
 @property (getter=_snapshotViewBounds, setter=_setSnapshotBounds:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } snapshotViewBounds;
 @property (nonatomic) int userSpecifiedDisplayMode;
 @property (getter=_viewWillAppearSemaphore, setter=_setViewWillAppearSemaphore:, nonatomic, retain) NSObject<OS_dispatch_semaphore> *viewWillAppearSemaphore;
@@ -143,7 +143,7 @@
 - (void)_insertSnapshotViewIfAppropriate;
 - (void)_insertSnapshotWithCompletionHandler:(id /* block */)arg1;
 - (void)_invalidateDisconnectionTimer;
-- (void)_invalidateSnapshotWithForce:(BOOL)arg1 completionHandler:(id /* block */)arg2;
+- (void)_invalidateSnapshotWithForce:(BOOL)arg1 removingSnapshotFilesForActiveDisplayMode:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (BOOL)_isActiveSequence:(id)arg1;
 - (BOOL)_isBlacklisted;
 - (BOOL)_isEncodingLayerTree;
@@ -160,13 +160,15 @@
 - (void)_performUpdateForSequence:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)_proxyConnectionQueue;
 - (id)_proxyRequestQueue;
+- (void)_purgeLegacySnapshotsIfNecessary;
 - (void)_registerUpdateRequestCompletionHandler:(id /* block */)arg1 forSequence:(id)arg2;
 - (id)_remoteViewController;
 - (id /* block */)_remoteViewControllerConnectionHandler;
 - (id /* block */)_remoteViewControllerDisconnectionHandler;
-- (void)_removeAllSnapshotsDueToIssue:(BOOL)arg1;
-- (void)_removeAllSnapshotsForActiveDisplayMode;
-- (void)_removeAllSnapshotsMatchingPredicate:(id)arg1 dueToIssue:(BOOL)arg2;
+- (void)_removeAllSnapshotFilesDueToIssue:(BOOL)arg1;
+- (void)_removeAllSnapshotFilesForActiveDisplayMode;
+- (void)_removeAllSnapshotFilesMatchingPredicate:(id)arg1 dueToIssue:(BOOL)arg2;
+- (void)_removeItemAsynchronouslyAtURL:(id)arg1;
 - (void)_removeItemAtURL:(id)arg1;
 - (void)_requestInsertionOfRemoteViewAfterViewWillAppearForSequence:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_requestRemoteViewControllerForSequence:(id)arg1 completionHander:(id /* block */)arg2;
@@ -193,10 +195,10 @@
 - (void)_setSequenceIDsToOutstandingWidgetUpdateCompletionHandlers:(id)arg1;
 - (void)_setSnapshotBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setSnapshotView:(id)arg1;
-- (void)_setSnapshotView:(id)arg1 forLayoutMode:(int)arg2;
 - (void)_setViewWillAppearSemaphore:(id)arg1;
 - (void)_setViewWillDisappearSemaphore:(id)arg1;
 - (void)_setupRequestQueue;
+- (BOOL)_shouldRemoveSnapshotWhenNotVisible;
 - (id)_snapshotIdentifierForLayoutMode:(int)arg1;
 - (id)_snapshotView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_snapshotViewBounds;
@@ -209,6 +211,8 @@
 - (id)_viewWillAppearSemaphore;
 - (id)_viewWillDisappearSemaphore;
 - (id)_widgetSnapshotURLForLayoutMode:(int)arg1 ensuringDirectoryExists:(BOOL)arg2;
+- (id)_widgetSnapshotURLForSnapshotIdentifier:(id)arg1;
+- (id)_widgetSnapshotURLForSnapshotIdentifier:(id)arg1 ensuringDirectoryExists:(BOOL)arg2;
 - (int)activeDisplayMode;
 - (id)appBundleID;
 - (id)auditToken;
@@ -224,6 +228,7 @@
 - (BOOL)implementsPerformUpdate;
 - (id)initWithWidgetInfo:(id)arg1 delegate:(id)arg2 host:(id)arg3;
 - (void)invalidateCachedSnapshotWithCompletionHandler:(id /* block */)arg1;
+- (void)invalidateCachedSnapshotWithURL:(id)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)isBrokenViewVisible;
 - (BOOL)isLinkedOnOrAfterSystemVersion:(id)arg1;
 - (BOOL)isRemoteViewVisible;
@@ -231,6 +236,8 @@
 - (int)largestAvailableDisplayMode;
 - (unsigned int)maskedCorners;
 - (void)maximumSizeDidChangeForDisplayMode:(int)arg1;
+- (void)parentContainerDidDisappear:(id)arg1;
+- (void)parentContainerWillAppear:(id)arg1;
 - (void)setActiveDisplayMode:(int)arg1;
 - (void)setAppBundleID:(id)arg1;
 - (void)setCornerRadius:(float)arg1;

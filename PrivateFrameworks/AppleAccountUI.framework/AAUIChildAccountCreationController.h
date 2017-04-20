@@ -3,6 +3,8 @@
  */
 
 @interface AAUIChildAccountCreationController : NSObject <RUIObjectModelDelegate> {
+    ACAccount * _appleAccount;
+    NSString * _continuationData;
     NSHTTPURLResponse * _currentResponse;
     <AAUIChildAccountCreationDelegate> * _delegate;
     AAGrandSlamSigner * _grandSlamSigner;
@@ -21,6 +23,7 @@
     UIActivityIndicatorView * _spinnerView;
 }
 
+@property (nonatomic, copy) NSString *continuationData;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <AAUIChildAccountCreationDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -32,6 +35,7 @@
 - (void)_addHeadersToRequest:(id)arg1;
 - (void)_cancel;
 - (void)_cleanupRemoteUILoader;
+- (void)_createAppleIDWithParameters:(id)arg1 handler:(id /* block */)arg2;
 - (void)_createChildAccount;
 - (void)_displayConnectionErrorAndCancel;
 - (void)_hideActivitySpinner;
@@ -43,8 +47,9 @@
 - (void)_showActivitySpinnerInToolbar:(id)arg1;
 - (id)_spinnerView;
 - (void)_startRemoteUILoaderWithRequest:(id)arg1;
+- (id)continuationData;
 - (id)delegate;
-- (id)initWithGrandSlamSigner:(id)arg1;
+- (id)initWithAppleAccount:(id)arg1 grandSlamSigner:(id)arg2;
 - (void)loadRemoteUI;
 - (void)loader:(id)arg1 didFailWithError:(id)arg2;
 - (void)loader:(id)arg1 didReceiveHTTPResponse:(id)arg2;
@@ -55,6 +60,7 @@
 - (void)objectModelDidChange:(id)arg1;
 - (void)objectModelPressedBack:(id)arg1;
 - (id)parentViewControllerForObjectModel:(id)arg1;
+- (void)setContinuationData:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setNavigationController:(id)arg1;
 - (unsigned int)supportedInterfaceOrientationsForObjectModel:(id)arg1 page:(id)arg2;

@@ -7,6 +7,7 @@
     PXFocusableUIImageView * __imageView;
     NSArray * __overlaySpecs;
     BOOL  _animating;
+    unsigned int  _animationFlags;
     UIView * _contentView;
     struct CGRect { 
         struct CGPoint { 
@@ -30,6 +31,7 @@
     BOOL  _hasParallax;
     UIImage * _image;
     NSMutableArray * _overlayViews;
+    UIView * _snapshotView;
     PXImageViewSpec * _spec;
 }
 
@@ -70,6 +72,7 @@
 - (BOOL)isFloatingRotationEnabled;
 - (void)setAllowsFocus:(BOOL)arg1;
 - (void)setAnimating:(BOOL)arg1;
+- (void)setAnimating:(BOOL)arg1 withFlags:(unsigned int)arg2;
 - (void)setContentMode:(int)arg1;
 - (void)setContentView:(id)arg1;
 - (void)setContentsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

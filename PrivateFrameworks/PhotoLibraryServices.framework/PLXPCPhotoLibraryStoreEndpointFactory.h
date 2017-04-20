@@ -9,8 +9,6 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-+ (void)getEndpoint:(id /* block */)arg1;
-
 - (id)newEndpoint;
 
 @end

@@ -31,9 +31,13 @@
 @property (nonatomic) int workoutLocationType;
 @property (nonatomic, retain) _INPBDataString *workoutName;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 + (id)options;
 
 - (void).cxx_destruct;
+- (int)StringAsWorkoutGoalUnitType:(id)arg1;
+- (int)StringAsWorkoutLocationType:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -61,8 +65,16 @@
 - (void)setWorkoutName:(id)arg1;
 - (id)unknownFields;
 - (int)workoutGoalUnitType;
+- (id)workoutGoalUnitTypeAsString:(int)arg1;
 - (int)workoutLocationType;
+- (id)workoutLocationTypeAsString:(int)arg1;
 - (id)workoutName;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

@@ -17,6 +17,7 @@
     UIImage * _fileIcon;
     NSArray * _files;
     NSNumber * _filesCopied;
+    BOOL  _hideProgress;
     NSArray * _items;
     NSString * _itemsDescription;
     NSDictionary * _itemsDescriptionAdvanced;
@@ -65,6 +66,7 @@
 @property (nonatomic, readonly, copy) NSString *firstFileName;
 @property (nonatomic, readonly, copy) NSString *firstFileTypeDescription;
 @property (nonatomic, readonly) NSURL *firstURL;
+@property (getter=shouldHideProgress, nonatomic) BOOL hideProgress;
 @property (nonatomic, retain) NSArray *items;
 @property (nonatomic, copy) NSString *itemsDescription;
 @property (nonatomic, retain) NSDictionary *itemsDescriptionAdvanced;
@@ -179,6 +181,7 @@
 - (void)setFileIcon:(id)arg1;
 - (void)setFiles:(id)arg1;
 - (void)setFilesCopied:(id)arg1;
+- (void)setHideProgress:(BOOL)arg1;
 - (void)setItems:(id)arg1;
 - (void)setItemsDescription:(id)arg1;
 - (void)setItemsDescriptionAdvanced:(id)arg1;
@@ -200,6 +203,7 @@
 - (void)setTransferCompleted:(BOOL)arg1;
 - (void)setVerifiableIdentity:(BOOL)arg1;
 - (BOOL)shouldAutoAccept;
+- (BOOL)shouldHideProgress;
 - (BOOL)soundPlayed;
 - (id)timeLastUserInteraction;
 - (id)timeRemaining;

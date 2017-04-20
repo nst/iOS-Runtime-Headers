@@ -7,15 +7,21 @@
 @property (nonatomic, readonly) NSString *actionParams;
 @property (nonatomic, readonly) NSString *adamID;
 @property (nonatomic, readonly) IKAssetElement *assetElement;
+@property (nonatomic, readonly) NSURL *extrasURL;
 @property (nonatomic, readonly) unsigned int keyDelivery;
+@property (nonatomic, readonly) NSNumber *persistentID;
+@property (nonatomic, readonly) NSNumber *rentalAdamID;
 @property (nonatomic, readonly) unsigned int type;
 @property (nonatomic, readonly) NSURL *url;
 
 - (id)actionParams;
 - (id)adamID;
 - (id)assetElement;
+- (id)extrasURL;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)keyDelivery;
+- (id)persistentID;
+- (id)rentalAdamID;
 - (unsigned int)type;
 - (id)url;
 

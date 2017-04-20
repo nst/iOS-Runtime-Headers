@@ -2,42 +2,46 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@interface NEAppProxyProviderContainer : NSObject <NEExtensionAppProxyProviderHostDelegate> {
-    NEAppProxyProviderContainerHostContext * _containerHostContext;
+@interface NEAppProxyProviderContainer : NSObject {
     <NEAppProxyProviderContainerDelegate> * _delegate;
-    NSString * _identifier;
+    unsigned int  _delegateInterfaceIndex;
+    struct _NEFlowDirector { } * _director;
+    NSObject<OS_dispatch_queue> * _flowQueue;
+    NEAppProxyProvider * _provider;
+    id /* block */  _stopCompletionHandler;
 }
 
-@property (readonly) NEAppProxyProviderContainerHostContext *containerHostContext;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly) <NEAppProxyProviderContainerDelegate> *delegate;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) NSString *identifier;
+@property (retain) <NEAppProxyProviderContainerDelegate> *delegate;
+@property unsigned int delegateInterfaceIndex;
+@property struct _NEFlowDirector { }*director;
+@property (retain) NSObject<OS_dispatch_queue> *flowQueue;
 @property (readonly) NEAppProxyProvider *provider;
-@property (readonly) Class superclass;
+@property (copy) id /* block */ stopCompletionHandler;
 
 - (void).cxx_destruct;
-- (id)containerHostContext;
 - (id)delegate;
-- (void)extension:(id)arg1 didFailWithError:(id)arg2;
-- (void)extension:(id)arg1 didRequestFlowDivertControlSocketWithCompletionHandler:(id /* block */)arg2;
-- (void)extension:(id)arg1 didRequestMatchAppPID:(int)arg2 uuid:(id)arg3 withAppRule:(id)arg4 completionHandler:(id /* block */)arg5;
-- (void)extension:(id)arg1 didRequestSocket:(BOOL)arg2 interface:(id)arg3 local:(id)arg4 remote:(id)arg5 completionHandler:(id /* block */)arg6;
-- (void)extension:(id)arg1 didSetStatus:(int)arg2;
-- (void)extension:(id)arg1 didSetTunnelConfiguration:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)extension:(id)arg1 didStartWithError:(id)arg2;
-- (void)extensionDidDetachIPC:(id)arg1;
+- (unsigned int)delegateInterfaceIndex;
+- (struct _NEFlowDirector { }*)director;
+- (void)flowDivertMatchAppRulesWithFlow:(unsigned int)arg1 pid:(int)arg2 uuid:(unsigned char)arg3 signingIdentifier:(struct __CFString { }*)arg4;
+- (void)flowDivertNewFlow:(struct _NEFlow { }*)arg1 completionHandler:(id /* block */)arg2;
+- (void)flowDivertOpenControlSocket;
+- (id)flowQueue;
 - (void)handleAppMessage:(id)arg1 completionHandler:(id /* block */)arg2;
-- (id)identifier;
 - (id)initWithDelegate:(id)arg1 providerClass:(Class)arg2;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)provider;
 - (void)setConfiguration:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setDelegateInterface:(unsigned int)arg1;
+- (void)setDelegateInterfaceIndex:(unsigned int)arg1;
+- (void)setDirector:(struct _NEFlowDirector { }*)arg1;
+- (void)setFlowQueue:(id)arg1;
 - (void)setInitialFlowDivertControlSocket:(id)arg1;
+- (void)setStopCompletionHandler:(id /* block */)arg1;
 - (void)sleepWithCompletionHandler:(id /* block */)arg1;
 - (void)startWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)stop;
+- (id /* block */)stopCompletionHandler;
 - (void)wake;
 
 @end

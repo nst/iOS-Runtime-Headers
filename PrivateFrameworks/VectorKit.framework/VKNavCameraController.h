@@ -169,7 +169,6 @@
             struct Mercator2<double> {} *__first_; 
         } __end_cap_; 
     }  _pointsToFrame;
-    bool  _pouncing;
     double  _previousUpdateTime;
     struct Unit<RadianUnitDescription, double> { 
         double _value; 
@@ -269,12 +268,12 @@
 - (void)_updateDebugOverlay;
 - (void)_updateDebugText;
 - (void)_updateRouteMatch;
-- (void)_updateSceneStyles;
+- (void)_updateSceneStyles:(BOOL)arg1;
 - (BOOL)_updateSprings:(double)arg1;
 - (void)_updateStyles;
 - (void)_updateZoomScaleLimts;
 - (double)altitude;
-- (void)animateCameraWithDuration:(float)arg1;
+- (void)animateCameraWithDuration:(float)arg1 fromFrame:(const struct CameraFrame<geo::Radians, double> { struct Mercator3<double> { double x_1_1_1[3]; } x1; struct Unit<MeterUnitDescription, double> { double x_2_1_1; } x2; struct Unit<RadianUnitDescription, double> { double x_3_1_1; } x3; struct Unit<RadianUnitDescription, double> { double x_4_1_1; } x4; }*)arg2 completionHandler:(id /* block */)arg3;
 - (int)baseDisplayRate;
 - (struct Unit<RadianUnitDescription, double> { double x1; })calculateHeading;
 - (struct Box<double, 2> { struct Matrix<double, 2, 1> { double x_1_1_1[2]; } x1; struct Matrix<double, 2, 1> { double x_2_1_1[2]; } x2; })calculateViewableScreenRect;
@@ -334,7 +333,7 @@
 - (void)startPinchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)startPitchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)startRotatingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)startWithPounce:(BOOL)arg1 startLocation:(struct { double x1; double x2; })arg2 pounceCompletionHandler:(id /* block */)arg3;
+- (void)startWithPounce:(BOOL)arg1 startLocation:(struct { double x1; double x2; })arg2 startCourse:(double)arg3 pounceCompletionHandler:(id /* block */)arg4;
 - (void)stop;
 - (void)stopAnimations;
 - (void)stopPanningAtPoint:(struct CGPoint { float x1; float x2; })arg1;

@@ -9,6 +9,7 @@
 @property (nonatomic) <_UIFocusGuideRegionDelegate> *delegate;
 
 - (void).cxx_destruct;
+- (BOOL)_canOccludeRegionsBelow;
 - (id)_delegatePreferredFocusEnvironmentsForMovement:(id)arg1;
 - (id)_destinationItemForFocusMovement:(id)arg1 inMap:(id)arg2;
 - (void)_drawDebugQuickLookImageWithInfo:(id)arg1 inContext:(struct CGContext { }*)arg2;
@@ -17,7 +18,6 @@
 - (BOOL)_isEnabledForFocusedRegion:(id)arg1;
 - (int)_preferredDistanceComparisonType;
 - (BOOL)_shouldDrawDebugQuickLookImageWithInfo:(id)arg1;
-- (BOOL)_shouldOccludeRegion:(id)arg1;
 - (id)_visualRepresentationColor;
 - (int)_visualRepresentationPatternType;
 - (void)_willParticipateAsDestinationRegionInFocusUpdate:(id)arg1;

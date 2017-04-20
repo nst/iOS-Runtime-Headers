@@ -90,6 +90,7 @@
 @property (nonatomic) BOOL deferBecomingResponder;
 @property (nonatomic) <UISearchBarDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (getter=isDevicePasscodeEntry, nonatomic) BOOL devicePasscodeEntry;
 @property (nonatomic) BOOL disableInputBars;
 @property (nonatomic) BOOL disablePrediction;
 @property (nonatomic) BOOL displaySecureEditsUsingPlainText;

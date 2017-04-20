@@ -7,6 +7,7 @@
 
 - (<FCPrivateDataContextInternal> *)internalPrivateDataContext;
 - (BOOL)isPrivateDataSyncingEnabled;
+- (FCNetworkBehaviorMonitor *)networkBehaviorMonitor;
 - (FCPersonalizationData *)personalizationData;
 - (FCPrivateChannelMembershipController *)privateChannelMembershipController;
 - (NSString *)privateDataDirectory;

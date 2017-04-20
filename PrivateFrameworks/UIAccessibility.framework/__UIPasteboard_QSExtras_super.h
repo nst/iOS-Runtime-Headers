@@ -33,6 +33,7 @@
 - (id)pasteboardTypesForItemSet:(id)arg1;
 - (void)setData:(id)arg1 forPasteboardType:(id)arg2;
 - (void)setItems:(id)arg1;
+- (void)setStrings:(id)arg1;
 - (void)setValue:(id)arg1 forPasteboardType:(id)arg2;
 - (id)string;
 - (id)strings;

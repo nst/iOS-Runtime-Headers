@@ -16,11 +16,11 @@
 @property (nonatomic, readonly) BOOL requiresForYouCatchUpOperation;
 @property (readonly) Class superclass;
 
+- (id)backingChannelTagIDWithAppConfig:(id)arg1;
 - (BOOL)canEmitGroupsWithType:(int)arg1;
 - (BOOL)emitsSingletonGroups;
 - (id)groupEmitterIdentifier;
 - (id)initWithMinPrecedingTopicGroups:(unsigned int)arg1;
-- (id)initWithNoDistanceRequirements;
 - (unsigned int)minPrecedingTopicGroups;
 - (id)operationToEmitGroupWithContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
 - (BOOL)requiresForYouCatchUpOperation;

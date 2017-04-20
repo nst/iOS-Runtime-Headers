@@ -7,6 +7,7 @@
     FCCKDatabase * _database;
     NSArray * _desiredKeys;
     NSArray * _feedRequests;
+    NSArray * _networkEvents;
     id /* block */  _queryCompletionHandler;
     int  _queryPriority;
     NSError * _resultError;
@@ -20,6 +21,7 @@
 @property (nonatomic, retain) FCCKDatabase *database;
 @property (nonatomic, copy) NSArray *desiredKeys;
 @property (nonatomic, copy) NSArray *feedRequests;
+@property (nonatomic, copy) NSArray *networkEvents;
 @property (nonatomic, copy) id /* block */ queryCompletionHandler;
 @property (nonatomic) int queryPriority;
 @property (nonatomic, retain) NSError *resultError;
@@ -38,6 +40,7 @@
 - (id)database;
 - (id)desiredKeys;
 - (id)feedRequests;
+- (id)networkEvents;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (void)prepareOperation;
@@ -53,6 +56,7 @@
 - (void)setDatabase:(id)arg1;
 - (void)setDesiredKeys:(id)arg1;
 - (void)setFeedRequests:(id)arg1;
+- (void)setNetworkEvents:(id)arg1;
 - (void)setQueryCompletionHandler:(id /* block */)arg1;
 - (void)setQueryPriority:(int)arg1;
 - (void)setResultError:(id)arg1;

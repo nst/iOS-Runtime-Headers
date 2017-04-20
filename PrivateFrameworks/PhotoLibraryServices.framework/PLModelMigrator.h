@@ -22,6 +22,7 @@
 + (void)_applySyncedProperties:(id)arg1 toAsset:(id)arg2;
 + (BOOL)_batchFetchedObjects:(id)arg1 inMOC:(id)arg2 batchSize:(unsigned int)arg3 objectHandler:(id /* block */)arg4 error:(id*)arg5;
 + (BOOL)_batchOfflineDeleteFromDatabaseOnlyAssets:(id)arg1 inManagedObjectContext:(id)arg2 error:(id*)arg3;
++ (BOOL)_cleanupInvalidAlbumsAndFoldersInStore:(id)arg1;
 + (BOOL)_convertManagedAdjustmentsInStore:(id)arg1;
 + (void)_createDatabase;
 + (void)_createPhotoDataDirectoryFailedWithNoPermission:(id)arg1;
@@ -37,6 +38,7 @@
 + (BOOL)_deletePhotoStreamAssetReferencesInStore:(id)arg1;
 + (BOOL)_disableICloudPhoto;
 + (BOOL)_executeBatchDeleteWithEntityName:(id)arg1 predicate:(id)arg2 managedObjectContext:(id)arg3;
++ (BOOL)_executeBatchUpdateWithEntityName:(id)arg1 predicate:(id)arg2 propertiesToUpdate:(id)arg3 managedObjectContext:(id)arg4;
 + (BOOL)_fixAdjustedAssets:(id)arg1;
 + (BOOL)_fixAlbumAndFolderSortAscending:(id)arg1;
 + (BOOL)_fixCloudMasterCloudLocalState:(id)arg1;
@@ -47,7 +49,6 @@
 + (BOOL)_fixFaceAlgorithmVersion:(id)arg1;
 + (BOOL)_fixFaceGroupUnverifiedPerson:(id)arg1;
 + (BOOL)_fixIncorrectAddedDateForAssetsInStore:(id)arg1;
-+ (BOOL)_fixIncorrectRejectedFaceGroupType:(id)arg1;
 + (BOOL)_fixIncorrectThumbnailTables;
 + (BOOL)_fixItemIdentifierForVideoCmplInStore:(id)arg1;
 + (BOOL)_fixKeywordsInStagedStore:(id)arg1;
@@ -89,15 +90,17 @@
 + (BOOL)_initiateLightweightReimportOfAllPhotoCloudSharingMetadataInStore:(id)arg1;
 + (BOOL)_isReasonableCreationDate:(id)arg1;
 + (id)_managedObjectModelForLightweightMigrationStageWithURL:(id)arg1;
-+ (BOOL)_markAllAnalysisStatesDirtyForWorkerType:(short)arg1 inStore:(id)arg2;
++ (BOOL)_markAllProcessedAnalysisStatesDirtyForWorkerType:(short)arg1 withStartingWorkerFlags:(int)arg2 inStore:(id)arg3;
 + (BOOL)_markOldPhotoIrisEditsEvaluatedInStore:(id)arg1;
 + (BOOL)_markPhotoIrisVideoOrphansInStore:(id)arg1;
 + (BOOL)_markPushedFaces:(id)arg1;
 + (BOOL)_migrateAssetLocationData:(id)arg1;
 + (BOOL)_migrateCloudResourcesRelationshipsInStagedStore:(id)arg1;
++ (BOOL)_migrateDetectedFacesGroupInStagedStore:(id)arg1;
 + (int)_migrateLegacySlomoAdjustmentsForAsset:(id)arg1;
 + (BOOL)_migrateLegacySlomoAdjustmentsInStore:(id)arg1 fromLegacySLMFormat:(BOOL)arg2;
 + (BOOL)_migrateOriginalColorSpaceInStagedStore:(id)arg1;
++ (BOOL)_migrateRejectedFacesGroupInStagedStore:(id)arg1;
 + (BOOL)_migrateRevGeoLocationDataFromKeyedArchiverFormat:(id)arg1;
 + (BOOL)_migrateTransformableUUIDsToStringsInStore:(id)arg1;
 + (id)_modelMigrator;
@@ -107,7 +110,7 @@
 + (void)_parseDMContextForRestartingAfterRestoreFromBackup:(BOOL*)arg1 restartingAfterRestoreFromCloud:(BOOL*)arg2;
 + (BOOL)_performMigrationCacheDateCreatedOnResources:(BOOL)arg1 cacheItemIdentifierOnResources:(BOOL)arg2 store:(id)arg3;
 + (BOOL)_persistMemoriesInStore:(id)arg1;
-+ (void)_persistMetadataToFileSystemForAlbum:(id)arg1;
++ (BOOL)_persistMetadataToFileSystemForAlbum:(id)arg1;
 + (BOOL)_persistPersonsInStore:(id)arg1;
 + (BOOL)_persistPhotoIrisVisibilityStateToDiskInStore:(id)arg1;
 + (BOOL)_persistPlaceAnnotationData:(id)arg1;
@@ -152,6 +155,7 @@
 + (BOOL)_resetFailedAssets:(id)arg1;
 + (BOOL)_resetFailedCloudMasters:(id)arg1;
 + (void)_resetICPLPrompt;
++ (void)_resetLocalResourcesStateForAssetsWithContext:(id)arg1 usingPredicate:(id)arg2;
 + (BOOL)_resetThumbnailIndexesAndInitiateRebuildRequestIfSuccessful;
 + (BOOL)_resetThumbnailsAndInitiateRebuildRequestIfNeeded;
 + (BOOL)_resetUploadAttempts:(id)arg1;
@@ -167,6 +171,7 @@
 + (id)_stagedVersions;
 + (BOOL)_tagScreenshotsForAssetsInStore:(id)arg1;
 + (BOOL)_trimInvalidAlbumAssetsMappingRecords;
++ (BOOL)_tryToPromoteUnknownCloudAssetsInStore:(id)arg1;
 + (BOOL)_updateKeyAssetInMemory:(id)arg1;
 + (BOOL)_updateKindSubtypeForPanoramaPhotosNeedsReset:(BOOL)arg1 inStore:(id)arg2;
 + (void)_validateCurrentModelVersionAttempt:(int)arg1;
@@ -207,7 +212,10 @@
 + (BOOL)isPostProcessingLightweightMigration;
 + (void)loadFacesFileSystemDataIntoDatabase;
 + (void)loadFileSystemDataIntoDatabaseIfNeededWithReason:(id)arg1;
++ (BOOL)markAllDirtyFaceAnalysisStatesWithFaceDetectionWorkerFlagsInStore:(id)arg1;
 + (BOOL)markAllSceneAnalysisStatesDirtyAndClearDistanceIdentitiesInStore:(id)arg1;
++ (BOOL)markUserConfirmedFacesAndCorrespondingFaceAnalysisStatesDirtyInStore:(id)arg1;
++ (void)migratePersonContactInfo;
 + (BOOL)migrateToRequiredAnalysisState:(id)arg1;
 + (BOOL)performFaceAnalysisResetMigrationStepWithResetLevel:(int)arg1 store:(id)arg2;
 + (void)postProcessFixesAfterOTARestoreForCompleteAsset:(id)arg1 fixAddedDate:(BOOL)arg2;
@@ -217,6 +225,7 @@
 + (void)repairPotentialModelCorruption;
 + (void)repairSingletonObjectsInDatabaseWithCompletionHandler:(id /* block */)arg1;
 + (void)repairSingletonObjectsInNewDatabaseOrFail;
++ (BOOL)resetRejectedFacesOnAllPersonsInStore:(id)arg1;
 + (BOOL)restartingAfterNonCloudRestoreFromBackup;
 + (BOOL)restartingAfterOTAMigration;
 + (BOOL)restartingAfterRestoreFromBackup;
@@ -230,10 +239,12 @@
 + (BOOL)waitForDataMigratorToExit;
 
 - (void)_collectFileURLs:(id)arg1 forAddingToAlbum:(id)arg2 intoAssetsArray:(id)arg3 assetsKind:(int)arg4 testCreationDates:(BOOL)arg5;
+- (void)_importAfterCrash:(id)arg1 dictionariesByPhotoStreamID:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)_importAllDCIMAssets;
 - (id)_importFileSystemImportAssets:(id)arg1 forceUpdate:(BOOL)arg2;
 - (void)_loadFacesFileSystemDataIntoDatabase;
 - (void)_loadFileSystemDataIntoDatabaseIfNeededWithReason:(id)arg1;
+- (void)_migratePersonContactInfo;
 - (id)_orderedAssetsToImportCameraRollOnly:(BOOL)arg1;
 - (void)_removeLegacyMemoryRelatedSnapshotDirectory;
 - (void)_removeLegacyModelInterestDatabase;
@@ -243,7 +254,6 @@
 - (void)dealloc;
 - (void)dontImportFileSystemDataIntoDatabase;
 - (id)fileManager;
-- (void)importAfterCrash:(id)arg1 dictionariesByPhotoStreamID:(id)arg2 completionBlock:(id /* block */)arg3;
 - (id)init;
 - (id)initWithImplicitTransaction:(BOOL)arg1;
 - (void)pausePhotoStreams;

@@ -19,6 +19,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStoreIDs:(id)arg1;
+- (id)playbackContext;
 - (void)setEndTime:(double)arg1 forItemWithStoreID:(id)arg2;
 - (void)setSourceStorefront:(id)arg1 forItemWithStoreID:(id)arg2;
 - (void)setStartItemID:(id)arg1;

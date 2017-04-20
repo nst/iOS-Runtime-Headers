@@ -30,14 +30,20 @@
 @property (nonatomic, retain) _INPBContact *recipient;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 + (id)options;
 
 - (void).cxx_destruct;
+- (int)StringAsCallCapabilities:(id)arg1;
+- (int)StringAsCallType:(id)arg1;
 - (void)addCallCapabilities:(int)arg1;
 - (int*)callCapabilities;
+- (id)callCapabilitiesAsString:(int)arg1;
 - (int)callCapabilitiesAtIndex:(unsigned int)arg1;
 - (unsigned int)callCapabilitiesCount;
 - (int)callType;
+- (id)callTypeAsString:(int)arg1;
 - (void)clearCallCapabilities;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dateCreated;
@@ -62,5 +68,11 @@
 - (void)setRecipient:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

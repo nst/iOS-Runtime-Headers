@@ -9,6 +9,7 @@
     NSMutableArray * _assetRecordsWithContainerChange;
     NSMutableArray * _deleteRecords;
     NSMutableArray * _expungedRecords;
+    NSMutableArray * _faceCropRecords;
     NSMutableArray * _masterRecords;
     NSMutableArray * _memoryRecords;
     NSMutableArray * _personRecords;
@@ -21,6 +22,7 @@
 @property (readonly) NSMutableArray *assetRecordsWithContainerChange;
 @property (readonly) NSMutableArray *deleteRecords;
 @property (readonly) NSMutableArray *expungedRecords;
+@property (readonly) NSMutableArray *faceCropRecords;
 @property (readonly) NSMutableArray *masterRecords;
 @property (readonly) NSMutableArray *memoryRecords;
 @property (readonly) NSMutableArray *personRecords;
@@ -32,6 +34,7 @@
 - (void)dealloc;
 - (id)deleteRecords;
 - (id)expungedRecords;
+- (id)faceCropRecords;
 - (id)initWithPhotoLibrary:(id)arg1;
 - (id)masterRecords;
 - (id)memoryRecords;

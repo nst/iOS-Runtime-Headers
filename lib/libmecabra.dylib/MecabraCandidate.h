@@ -17,6 +17,7 @@
 @property (nonatomic, readonly) BOOL isExtensionCandidate;
 @property (nonatomic, readonly) BOOL isFuzzyMatchCandidate;
 @property (nonatomic, readonly) BOOL isLearningDictionaryCandidate;
+@property (nonatomic, readonly) BOOL isOTAWordlistCandidate;
 @property (nonatomic, readonly) BOOL isPersonName;
 @property (nonatomic, readonly) BOOL isPredictionCandidate;
 @property (nonatomic, readonly) BOOL isSyntheticCandidate;
@@ -51,6 +52,7 @@
 - (BOOL)isExtensionCandidate;
 - (BOOL)isFuzzyMatchCandidate;
 - (BOOL)isLearningDictionaryCandidate;
+- (BOOL)isOTAWordlistCandidate;
 - (BOOL)isPersonName;
 - (BOOL)isPredictionCandidate;
 - (BOOL)isSyntheticCandidate;

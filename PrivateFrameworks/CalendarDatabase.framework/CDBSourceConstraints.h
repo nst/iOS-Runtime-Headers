@@ -61,6 +61,7 @@
         unsigned int allowsProposeNewTime : 1; 
         unsigned int prohibitsICSImport : 1; 
         unsigned int supportsAutoGeocodingStructuredLocations : 1; 
+        unsigned int supportsJunkReporting : 1; 
     }  _flags;
     int  _maxAlarmsAllowed;
     int  _maxRecurrencesAllowed;
@@ -114,6 +115,7 @@
 @property (nonatomic) BOOL supportsIgnoringEventsInAvailabilityRequests;
 @property (nonatomic) BOOL supportsIncomingInvitations;
 @property (nonatomic) BOOL supportsInvitationModifications;
+@property (nonatomic) BOOL supportsJunkReporting;
 @property (nonatomic) BOOL supportsLocationDirectorySearches;
 @property (nonatomic) BOOL supportsOutgoingInvitations;
 @property (nonatomic) BOOL supportsPrivateEvents;
@@ -208,6 +210,7 @@
 - (void)setSupportsIgnoringEventsInAvailabilityRequests:(BOOL)arg1;
 - (void)setSupportsIncomingInvitations:(BOOL)arg1;
 - (void)setSupportsInvitationModifications:(BOOL)arg1;
+- (void)setSupportsJunkReporting:(BOOL)arg1;
 - (void)setSupportsLocationDirectorySearches:(BOOL)arg1;
 - (void)setSupportsOutgoingInvitations:(BOOL)arg1;
 - (void)setSupportsPrivateEvents:(BOOL)arg1;
@@ -233,6 +236,7 @@
 - (BOOL)supportsIgnoringEventsInAvailabilityRequests;
 - (BOOL)supportsIncomingInvitations;
 - (BOOL)supportsInvitationModifications;
+- (BOOL)supportsJunkReporting;
 - (BOOL)supportsLocationDirectorySearches;
 - (BOOL)supportsOutgoingInvitations;
 - (BOOL)supportsPrivateEvents;

@@ -15,6 +15,7 @@
     NSString * _typeName;
 }
 
+@property (readonly) unsigned int bitfieldWidth;
 @property (readonly) VMUClassInfo *destinationLayout;
 @property (nonatomic, readonly) unsigned int flags;
 @property (nonatomic, readonly) BOOL isArrayEntries;
@@ -47,8 +48,10 @@
 - (void)_setSize:(unsigned int)arg1;
 - (void)_setStride:(unsigned int)arg1;
 - (void)_setTypeName:(id)arg1;
+- (unsigned int)bitfieldWidth;
 - (void)dealloc;
 - (id)description;
+- (id)descriptionOfFieldValueInObjectMemory:(void*)arg1 scanner:(id)arg2;
 - (id)destinationLayout;
 - (unsigned int)flags;
 - (id)getLeafFieldAtOffset:(unsigned int)arg1 leafOffset:(unsigned int*)arg2;

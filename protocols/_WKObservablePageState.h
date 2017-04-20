@@ -10,6 +10,7 @@
 - (double)estimatedProgress;
 - (BOOL)hasOnlySecureContent;
 - (BOOL)isLoading;
+- (struct __SecTrust { }*)serverTrust;
 - (NSString *)title;
 - (NSURL *)unreachableURL;
 

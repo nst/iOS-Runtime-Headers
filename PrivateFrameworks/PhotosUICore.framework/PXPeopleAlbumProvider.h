@@ -4,14 +4,14 @@
 
 @interface PXPeopleAlbumProvider : NSObject <PXPeopleDataSourceDelegate, PXPhotoLibraryUIChangeObserver> {
     NSObject<OS_dispatch_queue> * _backgroundQueue;
+    NSObject<OS_dispatch_queue> * _cacheIsolationQueue;
     int  _cachedPeopleCount;
+    int  _currentRequestId;
     BOOL  _didInitiatePeopleCountFetchRequest;
     BOOL  _didInitiateReCacheRequest;
     BOOL  _didPrepareDataSource;
     PXPeoplePersonDataSource * _favoriteDS;
-    NSMutableDictionary * _fetchedContainers;
-    NSObject<OS_dispatch_queue> * _fetchedContainersIsolationQueue;
-    NSMutableArray * _imageCache;
+    NSMutableDictionary * _imageCache;
     struct CGSize { 
         float width; 
         float height; 
@@ -25,12 +25,12 @@
 
 @property (nonatomic) int cachedPeopleCount;
 @property (getter=isCountAvailable, nonatomic, readonly) BOOL countAvailable;
+@property int currentRequestId;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) PXPeoplePersonDataSource *favoriteDS;
-@property (nonatomic, retain) NSMutableDictionary *fetchedContainers;
 @property (readonly) unsigned int hash;
-@property (nonatomic, retain) NSMutableArray *imageCache;
+@property (retain) NSMutableDictionary *imageCache;
 @property (nonatomic) struct CGSize { float x1; float x2; } imageSize;
 @property (nonatomic, retain) PXPeoplePersonDataSource *otherDS;
 @property (nonatomic, readonly) int peopleCount;
@@ -41,6 +41,7 @@
 - (void).cxx_destruct;
 - (void)_appWillEnterForeground;
 - (void)_asyncAddImagesToCacheWithItems:(id)arg1 completion:(id /* block */)arg2;
+- (void)_handleRequestResult:(void *)arg1 forRequestID:(void *)arg2 person:(void *)arg3 atIndex:(void *)arg4 error:(void *)arg5 completion:(void *)arg6; // needs 6 arg types, found 7: id, /* Warning: Unrecognized filer type: '' using 'void*' */ void*, int, id, int, id, id /* block */
 - (void)_invalidateCache;
 - (id)_members;
 - (void)_prepareIfNeeded;
@@ -48,9 +49,9 @@
 - (BOOL)_shouldShowInterstitialProgress;
 - (void)_updateCachedCountIfNeeded;
 - (int)cachedPeopleCount;
+- (int)currentRequestId;
 - (void)dealloc;
 - (id)favoriteDS;
-- (id)fetchedContainers;
 - (id)imageCache;
 - (void)imageCacheDidChanged:(id)arg1;
 - (struct CGSize { float x1; float x2; })imageSize;
@@ -65,8 +66,8 @@
 - (void)requestAlbumImagesWithSize:(struct CGSize { float x1; float x2; })arg1 completion:(id /* block */)arg2;
 - (id /* block */)requestCompletion;
 - (void)setCachedPeopleCount:(int)arg1;
+- (void)setCurrentRequestId:(int)arg1;
 - (void)setFavoriteDS:(id)arg1;
-- (void)setFetchedContainers:(id)arg1;
 - (void)setImageCache:(id)arg1;
 - (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setOtherDS:(id)arg1;

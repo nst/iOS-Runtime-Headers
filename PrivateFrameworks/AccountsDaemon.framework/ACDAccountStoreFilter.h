@@ -74,6 +74,7 @@
 - (void)removeAccountsFromPairedDeviceWithCompletion:(id /* block */)arg1;
 - (void)removeCredentialItem:(id)arg1 completion:(id /* block */)arg2;
 - (void)renewCredentialsForAccount:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;
+- (void)reportTelemetryForLandmarkEvent:(id /* block */)arg1;
 - (void)requestAccessForAccountTypeWithIdentifier:(id)arg1 options:(id)arg2 withHandler:(id /* block */)arg3;
 - (void)saveAccount:(id)arg1 toPairedDeviceWithOptions:(id)arg2 completion:(id /* block */)arg3;
 - (void)saveAccount:(id)arg1 verify:(BOOL)arg2 dataclassActions:(id)arg3 completion:(id /* block */)arg4;

@@ -4,12 +4,15 @@
 
 @interface MFComposeImageSizeView : MFComposeHeaderView {
     UISegmentedControl * _segmentedControl;
+    NSMutableArray * _visibleScales;
 }
 
-- (unsigned long)_segmentIndexForScale:(unsigned int)arg1;
+- (unsigned long)_insertIndexForScale:(unsigned int)arg1;
+- (unsigned long)_scaleLabelIndexForScale:(unsigned int)arg1;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
+- (void)removeSizeDescriptionForScale:(unsigned int)arg1;
 - (void)segmentedControlChanged;
 - (void)setScale:(unsigned int)arg1;
 - (void)setSizeDescription:(id)arg1 forScale:(unsigned int)arg2;

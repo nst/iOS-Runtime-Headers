@@ -5,6 +5,8 @@
 
 @optional
 
+- (void)authenticatorDidActivateDynamicFunctionRowConfirmation:(PKAuthenticator *)arg1;
+- (void)authenticatorDidDeactivateDynamicFunctionRowConfirmation:(PKAuthenticator *)arg1;
 - (void)authenticatorDidEncounterFingerOff:(PKAuthenticator *)arg1;
 - (void)authenticatorDidEncounterFingerOn:(PKAuthenticator *)arg1;
 - (void)authenticatorDidEncounterMatchMiss:(PKAuthenticator *)arg1;

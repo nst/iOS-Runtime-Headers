@@ -62,7 +62,7 @@
 - (void)__performOutstandingCompletionForRequestWithIdentifier:(id)arg1;
 - (void)__performUpdateWithReplyHandler:(id /* block */)arg1;
 - (void)__prepareForAnimationsForRequestWithIdentifier:(id)arg1 withReplyHandler:(id /* block */)arg2;
-- (void)__requestEncodedLayerTreeToURL:(id)arg1 withReplyHandler:(id /* block */)arg2;
+- (void)__requestEncodedLayerTreeToURL:(id)arg1 withCodingImageFormat:(id)arg2 withReplyHandler:(id /* block */)arg3;
 - (void)__setActiveDisplayMode:(int)arg1 requestIdentifier:(id)arg2;
 - (void)__setMaximumSize:(struct CGSize { float x1; float x2; })arg1 forDisplayMode:(int)arg2;
 - (void)__updateVisibilityState:(int)arg1;
@@ -80,7 +80,7 @@
 - (BOOL)_disableAutomaticKeyboardBehavior;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(BOOL*)arg2;
 - (float)_effectiveHeightForRequestedHeight:(float)arg1;
-- (void)_encodeLayerTreeToURL:(id)arg1 withReplyHandler:(id /* block */)arg2;
+- (void)_encodeLayerTreeToURL:(id)arg1 withCodingImageFormat:(id)arg2 withReplyHandler:(id /* block */)arg3;
 - (void)_enqueueProxyRequest:(id /* block */)arg1;
 - (id)_existingTransitionContextForRequestIdentifier:(id)arg1;
 - (id)_pendingSizeTransitionUUIDStack;

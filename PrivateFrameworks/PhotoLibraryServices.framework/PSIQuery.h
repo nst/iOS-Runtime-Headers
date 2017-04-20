@@ -10,7 +10,6 @@
     BOOL  _isWildcardQuery;
     int  _queryId;
     NSString * _searchText;
-    NSArray * _searchTokens;
     NSObject<OS_dispatch_queue> * _syncQueue;
 }
 
@@ -18,7 +17,6 @@
 @property (nonatomic, readonly) BOOL isWildcardQuery;
 @property (nonatomic, readonly) int queryId;
 @property (nonatomic, readonly, copy) NSString *searchText;
-@property (nonatomic, retain) NSArray *searchTokens;
 
 - (void).cxx_destruct;
 - (void)cancel;
@@ -29,8 +27,6 @@
 - (int)queryId;
 - (void)runWithResultsHandler:(id /* block */)arg1;
 - (id)searchText;
-- (id)searchTokens;
 - (void)setEarlyResultsNotificationHandler:(id /* block */)arg1;
-- (void)setSearchTokens:(id)arg1;
 
 @end

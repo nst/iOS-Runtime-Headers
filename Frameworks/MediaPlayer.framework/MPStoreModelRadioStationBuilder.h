@@ -9,6 +9,7 @@
         unsigned int name : 1; 
         unsigned int editorNotes : 1; 
         unsigned int shortEditorNotes : 1; 
+        unsigned int explicit; 
         unsigned int artwork : 1; 
     }  _requestedRadioStationProperties;
 }

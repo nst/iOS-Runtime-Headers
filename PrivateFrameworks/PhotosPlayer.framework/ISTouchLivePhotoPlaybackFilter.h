@@ -25,6 +25,7 @@
 - (void)_setPlaybackStartDate:(id)arg1;
 - (void)didPerformChanges;
 - (BOOL)isTouchActive;
+- (void)reset;
 - (void)setTouchActive:(BOOL)arg1;
 
 @end

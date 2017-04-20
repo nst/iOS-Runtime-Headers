@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUIRichTextField : NUIContainerStackView <NUIContainerStackViewDelegate> {
+@interface SearchUIRichTextField : SearchUIStackView <NUIContainerStackViewDelegate> {
     SearchUIContentAdvisoryView * _contentAdvisoryView;
     SearchUIImageView * _iconView;
     SFRichText * _richText;
@@ -25,8 +25,8 @@
 + (id)font;
 
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })containerStackView:(id)arg1 layoutFrameForArrangedSubview:(id)arg2 withProposedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })containerStackView:(id)arg1 minimumSpacingAdjecentToArrangedSubview:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })containerView:(id)arg1 layoutFrameForArrangedSubview:(id)arg2 withProposedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (id)contentAdvisoryView;
 - (id)iconView;
 - (id)initWithStyle:(unsigned int)arg1;

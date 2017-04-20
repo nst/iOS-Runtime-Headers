@@ -16,6 +16,7 @@
 @property (nonatomic, readonly) AVMetadataItem *creationDate;
 @property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
 @property (getter=isExportable, nonatomic, readonly) BOOL exportable;
+@property (nonatomic, readonly) NSString *identifyingTag;
 @property (nonatomic, readonly) NSString *identifyingTagClass;
 @property (getter=_instanceIdentifier, nonatomic, readonly) NSString *instanceIdentifier;
 @property (nonatomic, readonly) NSString *lyrics;
@@ -47,6 +48,7 @@
 - (id)creationDate;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (BOOL)hasProtectedContent;
+- (id)identifyingTag;
 - (id)identifyingTagClass;
 - (BOOL)isCompatibleWithAirPlayVideo;
 - (BOOL)isCompatibleWithSavedPhotosAlbum;

@@ -12,6 +12,7 @@
 @property (nonatomic, retain) NSNumber *adamID;
 @property (nonatomic, retain) NSString *appleID;
 @property (readonly) NSDictionary *assetDictionary;
+@property (nonatomic, retain) NSNumber *cloudDSID;
 @property (nonatomic, retain) NSNumber *collectionID;
 @property (nonatomic, retain) NSString *dimensions;
 @property (readonly) NSDictionary *downloadDictionary;
@@ -34,6 +35,7 @@
 - (id)adamID;
 - (id)appleID;
 - (id)assetDictionary;
+- (id)cloudDSID;
 - (id)collectionID;
 - (id)dimensions;
 - (id)downloadDictionary;
@@ -41,6 +43,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)flavor;
 - (id)init;
+- (id)initWithATStoreInfoForOlderiTunesClients:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)matchStatus;
 - (id)podcastEpisodeGUID;
@@ -49,6 +52,7 @@
 - (id)sagaID;
 - (void)setAdamID:(id)arg1;
 - (void)setAppleID:(id)arg1;
+- (void)setCloudDSID:(id)arg1;
 - (void)setCollectionID:(id)arg1;
 - (void)setDSID:(id)arg1;
 - (void)setDimensions:(id)arg1;

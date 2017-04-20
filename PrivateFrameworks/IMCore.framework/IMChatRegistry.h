@@ -53,9 +53,9 @@
 - (id)_allGUIDsForChat:(id)arg1;
 - (void)_blockUntilQueriesComplete:(id)arg1;
 - (void)_chat:(id)arg1 handleCompletionOfQuery:(id)arg2 withUserInfo:(id)arg3 success:(BOOL)arg4 error:(id)arg5;
-- (void)_chat:(id)arg1 inviteParticipants:(id)arg2 reason:(id)arg3;
+- (void)_chat:(id)arg1 inviteParticipants:(id)arg2 reason:(id)arg3 toiMessageChat:(BOOL)arg4;
 - (void)_chat:(id)arg1 joinWithProperties:(id)arg2;
-- (void)_chat:(id)arg1 removeParticipants:(id)arg2 reason:(id)arg3;
+- (void)_chat:(id)arg1 removeParticipants:(id)arg2 reason:(id)arg3 fromiMessageChat:(BOOL)arg4;
 - (void)_chat:(id)arg1 sendMessage:(id)arg2;
 - (void)_chat:(id)arg1 sendPlayedReceiptForMessage:(id)arg2;
 - (void)_chat:(id)arg1 sendReadReceiptForMessages:(id)arg2;
@@ -70,7 +70,7 @@
 - (void)_chatLoadedWithChatIdentifier:(id)arg1 chats:(id)arg2;
 - (void)_chat_clearHistory:(id)arg1 beforeGUID:(id)arg2 afterGUID:(id)arg3 queryID:(id)arg4;
 - (void)_chat_declineInvitation:(id)arg1;
-- (void)_chat_leave:(id)arg1;
+- (void)_chat_leave:(id)arg1 leavingiMessageChat:(BOOL)arg2;
 - (void)_chat_loadAttachments:(id)arg1 queryID:(id)arg2;
 - (void)_chat_loadFrequentReplies:(id)arg1 limit:(unsigned int)arg2 queryID:(id)arg3;
 - (void)_chat_loadHistory:(id)arg1 limit:(unsigned int)arg2 beforeGUID:(id)arg3 afterGUID:(id)arg4 queryID:(id)arg5;
@@ -142,6 +142,7 @@
 - (void)chatLoadedWithChatIdentifier:(id)arg1 chats:(id)arg2;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
+- (id)exisitingChatForGroupID:(id)arg1;
 - (id)existingChatForAddresses:(id)arg1 allowRetargeting:(BOOL)arg2 bestHandles:(id*)arg3;
 - (id)existingChatForIMHandle:(id)arg1;
 - (id)existingChatForIMHandle:(id)arg1 allowRetargeting:(BOOL)arg2;

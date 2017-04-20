@@ -5,7 +5,7 @@
 @interface WKNavigationData : NSObject <WKObject> {
     struct ObjectStorage<API::NavigationData> { 
         struct type { 
-            unsigned char __lx[500]; 
+            unsigned char __lx[532]; 
         } data; 
     }  _data;
 }

@@ -23,6 +23,7 @@
 - (id)authenticatedAccount;
 - (id)copyXPCEncoding;
 - (void)dealloc;
+- (id)description;
 - (id)error;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)responseDictionary;

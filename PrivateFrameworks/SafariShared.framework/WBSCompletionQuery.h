@@ -6,7 +6,6 @@
     BOOL  _forLastSearch;
     unsigned int  _indexInFeedbackArray;
     NSString * _normalizedQueryStringForParsec;
-    NSString * _parsecCompletionString;
     NSString * _parsecFeedbackQueryIdentifier;
     struct duration<long long, std::__1::ratio<1, 1000> > { 
         long long __rep_; 
@@ -30,7 +29,6 @@
 @property (getter=isForLastSearch, nonatomic) BOOL forLastSearch;
 @property (nonatomic) unsigned int indexInFeedbackArray;
 @property (nonatomic, readonly) NSString *normalizedQueryStringForParsec;
-@property (nonatomic, copy) NSString *parsecCompletionString;
 @property (nonatomic, copy) NSString *parsecFeedbackQueryIdentifier;
 @property (nonatomic) /* Warning: unhandled struct encoding: '{duration<long long' */ struct  parsecLatency; /* unknown property attribute:  1000> >=q} */
 @property (nonatomic, copy) NSURLRequest *parsecSearchRequest;
@@ -51,7 +49,6 @@
 - (id)initWithQueryString:(id)arg1;
 - (BOOL)isForLastSearch;
 - (id)normalizedQueryStringForParsec;
-- (id)parsecCompletionString;
 - (id)parsecFeedbackQueryIdentifier;
 - (struct duration<long long, std::__1::ratio<1, 1000> > { long long x1; })parsecLatency;
 - (id)parsecSearchRequest;
@@ -62,7 +59,6 @@
 - (struct duration<long long, std::__1::ratio<1, 1000> > { long long x1; })searchSuggestionProviderLatency;
 - (void)setForLastSearch:(BOOL)arg1;
 - (void)setIndexInFeedbackArray:(unsigned int)arg1;
-- (void)setParsecCompletionString:(id)arg1;
 - (void)setParsecFeedbackQueryIdentifier:(id)arg1;
 - (void)setParsecLatency:(struct duration<long long, std::__1::ratio<1, 1000> > { long long x1; })arg1;
 - (void)setParsecSearchRequest:(id)arg1;

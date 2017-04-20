@@ -18,6 +18,7 @@
 
 + (void)cacheGlyphView:(id)arg1;
 + (id)glyphViewForAcknowledgmentType:(int)arg1;
++ (void)prewarmGlyphViewCache;
 + (id)viewCache;
 
 - (void).cxx_destruct;

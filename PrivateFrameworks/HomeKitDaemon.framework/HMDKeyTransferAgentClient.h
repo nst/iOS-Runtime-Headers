@@ -13,6 +13,7 @@
     BOOL  _resolutionInProgress;
     HMFNetServiceBrowser * _serviceBrowser;
     NSMutableSet * _targetsToProcess;
+    int  _tfaState;
 }
 
 @property (nonatomic, retain) HMFExponentialBackoffTimer *atHomeRetryTimer;
@@ -29,6 +30,7 @@
 @property (nonatomic, retain) HMFNetServiceBrowser *serviceBrowser;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSMutableSet *targetsToProcess;
+@property (nonatomic) int tfaState;
 
 + (id)logCategory;
 + (void)twoFactorAuthenticationEnabledForAccount:(id)arg1 altDSID:(id)arg2 completionHandler:(id /* block */)arg3;
@@ -57,6 +59,7 @@
 - (void)_startBrowser;
 - (void)_startPairingWithKeyUUID:(id)arg1 forTarget:(id)arg2;
 - (void)_stopBrowser;
+- (void)_tfaVerificationCompleteForKeyUUID:(id)arg1 forTarget:(id)arg2;
 - (void)_tryPairingWithAccessories:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)atHomeRetryTimer;
 - (id)bonjourKeys;
@@ -87,7 +90,9 @@
 - (void)setResolutionInProgress:(BOOL)arg1;
 - (void)setServiceBrowser:(id)arg1;
 - (void)setTargetsToProcess:(id)arg1;
+- (void)setTfaState:(int)arg1;
 - (id)targetsToProcess;
+- (int)tfaState;
 - (void)timerDidFire:(id)arg1;
 
 @end

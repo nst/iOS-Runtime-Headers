@@ -3,8 +3,9 @@
  */
 
 @interface CKDUploadAssetsOperation : CKDDatabaseOperation {
-    NSMutableArray * _MMCSItemsToUpload;
+    CKDAssetRequestPlanner * _assetRequestPlanner;
     NSArray * _assetsToUpload;
+    BOOL  _atomic;
     CKDCancelTokenGroup * _cancelTokens;
     unsigned int  _maxPackageUploadsPerBatch;
     NSMutableArray * _openedPackages;
@@ -16,8 +17,9 @@
     NSMapTable * _uploadTasksByPackages;
 }
 
-@property (nonatomic, retain) NSMutableArray *MMCSItemsToUpload;
+@property (nonatomic, retain) CKDAssetRequestPlanner *assetRequestPlanner;
 @property (nonatomic, retain) NSArray *assetsToUpload;
+@property (nonatomic) BOOL atomic;
 @property (nonatomic, retain) CKDCancelTokenGroup *cancelTokens;
 @property (nonatomic) unsigned int maxPackageUploadsPerBatch;
 @property (nonatomic, retain) NSMutableArray *openedPackages;
@@ -30,24 +32,24 @@
 
 - (void).cxx_destruct;
 - (id)CKStatusReportLogGroups;
-- (id)MMCSItemsToUpload;
 - (void)_closeAllPackages;
 - (void)_closePackage:(id)arg1;
 - (void)_collectMetricsFromCompletedItemGroup:(id)arg1;
 - (void)_collectMetricsFromCompletedItemGroupSet:(id)arg1;
 - (void)_collectMetricsFromMMCSOperationMetrics:(id)arg1;
-- (void)_didFechUploadTokensForMMCSItems:(id)arg1 error:(id)arg2;
+- (void)_didFetchUploadTokensForAssetTokenRequest:(id)arg1 error:(id)arg2;
 - (void)_didMakeProgressForAsset:(id)arg1 progress:(double)arg2;
 - (void)_didMakeProgressForMMCSItem:(id)arg1;
 - (void)_didMakeProgressForMMCSSectionItem:(id)arg1 task:(id)arg2;
 - (void)_didPrepareAsset:(id)arg1;
-- (void)_didPrepareMMCSItems:(id)arg1 uploadTasksByPackages:(id)arg2 error:(id)arg3;
+- (void)_didPrepareAssetBatch:(id)arg1 error:(id)arg2;
 - (void)_didUploadAsset:(id)arg1 error:(id)arg2;
 - (void)_didUploadMMCSItem:(id)arg1 error:(id)arg2;
 - (void)_didUploadMMCSItems:(id)arg1 error:(id)arg2;
 - (void)_didUploadMMCSSectionItem:(id)arg1 task:(id)arg2 error:(id)arg3;
 - (void)_didUploadMMCSSectionItems:(id)arg1 task:(id)arg2 error:(id)arg3;
 - (void)_didUploadPackageWithTask:(id)arg1;
+- (void)_failAllItemsInAssetBatch:(id)arg1 error:(id)arg2;
 - (BOOL)_fetchUploadTokens;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_openPackage:(id)arg1;
@@ -59,7 +61,9 @@
 - (void)_uploadPackageSectionsWithEnumerator:(id)arg1 task:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)_uploadPackageSectionsWithPendingTasks:(id)arg1 uploadingTasks:(id)arg2 completedTasks:(id)arg3;
 - (void)_uploadPackageSectionsWithTask:(id)arg1 completionBlock:(id /* block */)arg2;
+- (id)assetRequestPlanner;
 - (id)assetsToUpload;
+- (BOOL)atomic;
 - (void)cancel;
 - (id)cancelTokens;
 - (void)finishWithError:(id)arg1;
@@ -71,9 +75,10 @@
 - (id)openedPackages;
 - (id)packageManifests;
 - (id)queue;
+- (void)setAssetRequestPlanner:(id)arg1;
 - (void)setAssetsToUpload:(id)arg1;
+- (void)setAtomic:(BOOL)arg1;
 - (void)setCancelTokens:(id)arg1;
-- (void)setMMCSItemsToUpload:(id)arg1;
 - (void)setMaxPackageUploadsPerBatch:(unsigned int)arg1;
 - (void)setOpenedPackages:(id)arg1;
 - (void)setPackageManifests:(id)arg1;

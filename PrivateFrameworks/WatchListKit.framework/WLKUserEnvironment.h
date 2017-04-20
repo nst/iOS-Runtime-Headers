@@ -4,6 +4,7 @@
 
 @interface WLKUserEnvironment : NSObject {
     NSString * _DSID;
+    BOOL  _consented;
     NSArray * _consentedBrands;
     NSDictionary * _entitlements;
     NSString * _localeIdentifier;
@@ -12,6 +13,7 @@
 }
 
 @property (nonatomic, retain) NSString *DSID;
+@property (nonatomic) BOOL consented;
 @property (nonatomic, retain) NSArray *consentedBrands;
 @property (nonatomic, retain) NSDictionary *entitlements;
 @property (nonatomic, retain) NSString *localeIdentifier;
@@ -24,6 +26,7 @@
 - (void).cxx_destruct;
 - (id)DSID;
 - (unsigned int)_hashForStoreStuff;
+- (BOOL)consented;
 - (id)consentedBrands;
 - (id)entitlements;
 - (unsigned int)hash;
@@ -32,6 +35,7 @@
 - (BOOL)isEqualToEnvironment:(id)arg1;
 - (id)localeIdentifier;
 - (id)restrictions;
+- (void)setConsented:(BOOL)arg1;
 - (void)setConsentedBrands:(id)arg1;
 - (void)setDSID:(id)arg1;
 - (void)setEntitlements:(id)arg1;

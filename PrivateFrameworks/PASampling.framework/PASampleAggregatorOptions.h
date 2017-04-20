@@ -4,9 +4,12 @@
 
 @interface PASampleAggregatorOptions : NSObject {
     BOOL  _binaryImagesBeforeStacks;
+    BOOL  _displayAddressesInBlockedReasons;
     BOOL  _displayAllBinaries;
     BOOL  _displayBinaryImageAddresses;
     BOOL  _displayBinaryImagesLackingNameOrPath;
+    BOOL  _displayBlockedReasons;
+    BOOL  _displayBlockedReasonsLackingProcessOwners;
     BOOL  _displayBlockedThreads;
     BOOL  _displayBody;
     BOOL  _displayFooter;
@@ -26,9 +29,12 @@
 }
 
 @property BOOL binaryImagesBeforeStacks;
+@property BOOL displayAddressesInBlockedReasons;
 @property BOOL displayAllBinaries;
 @property BOOL displayBinaryImageAddresses;
 @property BOOL displayBinaryImagesLackingNameOrPath;
+@property BOOL displayBlockedReasons;
+@property BOOL displayBlockedReasonsLackingProcessOwners;
 @property BOOL displayBlockedThreads;
 @property BOOL displayBody;
 @property BOOL displayFooter;
@@ -48,9 +54,12 @@
 @property BOOL verbose;
 
 - (BOOL)binaryImagesBeforeStacks;
+- (BOOL)displayAddressesInBlockedReasons;
 - (BOOL)displayAllBinaries;
 - (BOOL)displayBinaryImageAddresses;
 - (BOOL)displayBinaryImagesLackingNameOrPath;
+- (BOOL)displayBlockedReasons;
+- (BOOL)displayBlockedReasonsLackingProcessOwners;
 - (BOOL)displayBlockedThreads;
 - (BOOL)displayBody;
 - (BOOL)displayFooter;
@@ -68,9 +77,12 @@
 - (BOOL)printHeavyStacks;
 - (BOOL)printSpinSignatureStack;
 - (void)setBinaryImagesBeforeStacks:(BOOL)arg1;
+- (void)setDisplayAddressesInBlockedReasons:(BOOL)arg1;
 - (void)setDisplayAllBinaries:(BOOL)arg1;
 - (void)setDisplayBinaryImageAddresses:(BOOL)arg1;
 - (void)setDisplayBinaryImagesLackingNameOrPath:(BOOL)arg1;
+- (void)setDisplayBlockedReasons:(BOOL)arg1;
+- (void)setDisplayBlockedReasonsLackingProcessOwners:(BOOL)arg1;
 - (void)setDisplayBlockedThreads:(BOOL)arg1;
 - (void)setDisplayBody:(BOOL)arg1;
 - (void)setDisplayFooter:(BOOL)arg1;

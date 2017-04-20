@@ -56,6 +56,7 @@
 @property (nonatomic, readonly) UICollectionView *collectionView;
 @property (getter=_compositionLayout, setter=_setCompositionLayout:, nonatomic) _UICollectionViewCompositionLayout *compositionLayout;
 @property (getter=_elementKinds, setter=_setElementKinds:, nonatomic, copy) NSArray *elementKinds;
+@property (getter=_fastScrollingIndexBarInsets, nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } fastScrollingIndexBarInsets;
 @property (getter=_frame, setter=_setFrame:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
 @property (getter=_items, setter=_setItems:, nonatomic, copy) NSIndexSet *items;
 @property (getter=_layoutOffset, setter=_setLayoutOffset:, nonatomic) struct CGPoint { float x1; float x2; } layoutOffset;
@@ -76,12 +77,14 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_bounds;
 - (BOOL)_cellsShouldConferWithAutolayoutEngineForSizingInfo;
 - (struct _UICollectionViewCompositionLayout { Class x1; }*)_compositionLayout;
+- (struct CGPoint { float x1; float x2; })_contentOffsetForScrollingToSection:(int)arg1;
 - (id)_decorationViewForLayoutAttributes:(id)arg1;
 - (void)_didFinishLayoutTransitionAnimations:(BOOL)arg1;
 - (id)_dynamicAnimator;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_dynamicReferenceBounds;
 - (id)_elementKinds;
 - (BOOL)_estimatesSizes;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_fastScrollingIndexBarInsets;
 - (void)_finalizeCollectionViewItemAnimations;
 - (void)_finalizeLayoutTransition;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frame;
@@ -97,7 +100,7 @@
 - (id)_layoutAttributesForReorderedItemAtIndexPath:(id)arg1 withTargetPosition:(struct CGPoint { float x1; float x2; })arg2;
 - (struct CGPoint { float x1; float x2; })_layoutOffset;
 - (unsigned int)_layoutOffsetEdges;
-- (struct CGPoint { float x1; float x2; })_offsetInTopParentLayout:(struct _UICollectionViewCompositionLayout { Class x1; }**)arg1;
+- (struct CGPoint { float x1; float x2; })_offsetInTopParentLayout:(struct _UICollectionViewCompositionLayout {}**)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_preferredLayoutMargins;
 - (void)_prepareForTransitionFromLayout:(id)arg1;
 - (void)_prepareForTransitionToLayout:(id)arg1;

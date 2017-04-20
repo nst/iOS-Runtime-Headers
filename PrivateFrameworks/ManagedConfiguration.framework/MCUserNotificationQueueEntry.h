@@ -9,6 +9,7 @@
     double  _dismissAfterTimeInterval;
     BOOL  _displayInAppWhitelistModes;
     BOOL  _displayOnLockScreen;
+    NSString * _identifier;
     NSString * _message;
     id  _notification;
     NSString * _otherButtonText;
@@ -21,6 +22,7 @@
 @property (nonatomic) double dismissAfterTimeInterval;
 @property (nonatomic) BOOL displayInAppWhitelistModes;
 @property (nonatomic) BOOL displayOnLockScreen;
+@property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSString *message;
 @property (nonatomic, retain) id notification;
 @property (nonatomic, retain) NSString *otherButtonText;
@@ -33,6 +35,7 @@
 - (double)dismissAfterTimeInterval;
 - (BOOL)displayInAppWhitelistModes;
 - (BOOL)displayOnLockScreen;
+- (id)identifier;
 - (id)message;
 - (id)notification;
 - (id)otherButtonText;
@@ -42,6 +45,7 @@
 - (void)setDismissAfterTimeInterval:(double)arg1;
 - (void)setDisplayInAppWhitelistModes:(BOOL)arg1;
 - (void)setDisplayOnLockScreen:(BOOL)arg1;
+- (void)setIdentifier:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setNotification:(id)arg1;
 - (void)setOtherButtonText:(id)arg1;

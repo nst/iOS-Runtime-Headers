@@ -11,6 +11,7 @@
 @property (nonatomic) double maximumCachedAge;
 
 + (id)cachePolicyWithSoftMaxAge:(double)arg1;
++ (id)cachedOnlyCachePolicy;
 + (id)defaultCachePolicy;
 
 - (unsigned int)cachePolicy;

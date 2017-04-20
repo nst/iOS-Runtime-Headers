@@ -3,21 +3,35 @@
  */
 
 @interface MPModelPlaylistEntry : MPModelObject {
+    MPArtworkCatalog * __artworkCatalog;
+    MPModelMovie * _movie;
     MPModelPlaylist * _playlist;
     int  _position;
     MPModelSong * _song;
+    MPModelTVEpisode * _tvEpisode;
 }
 
+@property (nonatomic, retain) MPArtworkCatalog *_artworkCatalog;
+@property (nonatomic, retain) MPModelMovie *movie;
 @property (nonatomic, retain) MPModelPlaylist *playlist;
 @property (nonatomic) int position;
 @property (nonatomic, retain) MPModelSong *song;
+@property (nonatomic, retain) MPModelTVEpisode *tvEpisode;
 
 + (id)__MPModelPropertyPlaylistEntryPosition__PROPERTY;
++ (id)__MPModelRelationshipPlaylistEntryMovie__PROPERTY;
 + (id)__MPModelRelationshipPlaylistEntryPlaylist__PROPERTY;
 + (id)__MPModelRelationshipPlaylistEntrySong__PROPERTY;
++ (id)__MPModelRelationshipPlaylistEntryTVEpisode__PROPERTY;
++ (id)___MPModelPropertyPlaylistEntryArtwork__PROPERTY;
++ (id)___artworkCatalog__KEY;
++ (id)__movie__KEY;
 + (id)__playlist__KEY;
 + (id)__position__KEY;
 + (id)__song__KEY;
++ (id)__tvEpisode__KEY;
++ (id)kindWithKinds:(id)arg1;
++ (id)mqf_requiredPlaybackProperties;
 + (id)requiredKeepLocalStatusObservationProperties;
 + (id)requiredLibraryAddStatusObservationProperties;
 + (id)requiredLibraryRemovalProperties;
@@ -27,17 +41,27 @@
 + (BOOL)supportsLibraryRemoval;
 
 - (void).cxx_destruct;
+- (id)_artworkCatalog;
 - (struct MPLibraryAddStatusObserverConfiguration { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; })libraryAddStatusObserverConfiguration;
 - (int)libraryRemovalSupportedOptions;
+- (id)mediaItemPropertyValues;
+- (id)movie;
+- (void)mqf_configurePlaybackItemMetadata:(id)arg1;
+- (id)mqf_newPlaybackItemMetadata;
+- (id)mqf_playbackItemMetadataModelObject;
 - (id)newKeepLocalStatusObserverConfiguration;
 - (id)objectWithStoreLibraryPersonalizationRelativeModelObject:(id)arg1;
 - (id)personalizationScopedPropertiesForProperties:(id)arg1;
 - (id)playlist;
 - (int)position;
 - (id)relativeModelObjectForStoreLibraryPersonalization;
+- (void)setMovie:(id)arg1;
 - (void)setPlaylist:(id)arg1;
 - (void)setPosition:(int)arg1;
 - (void)setSong:(id)arg1;
+- (void)setTvEpisode:(id)arg1;
+- (void)set_artworkCatalog:(id)arg1;
 - (id)song;
+- (id)tvEpisode;
 
 @end

@@ -10,7 +10,7 @@
     BOOL  _hasReceivedLocalSpeechRecognized;
     BOOL  _hasReceivedServerSpeechRecognized;
     BOOL  _hasRecognizedAnything;
-    NSUUID * _instanceUUID;
+    unsigned char  _instanceUUID;
     NSArray * _localPhrases;
     NSArray * _localUtterances;
     NSObject<OS_dispatch_queue> * _queue;
@@ -47,14 +47,15 @@
 - (void)finishAudio;
 - (void)getOfflineDictationStatusWithCompletion:(id /* block */)arg1;
 - (id)init;
-- (id)initWithDelegate:(id)arg1 instanceUUID:(id)arg2;
+- (id)initWithDelegate:(id)arg1 instanceUUID:(unsigned char)arg2;
 - (void)invalidate;
 - (void)runAdaptationRecipeEvaluation:(id)arg1 localSpeechDESRecord:(id)arg2 completion:(id /* block */)arg3;
 - (oneway void)speechServiceDidFinishRecognitionWithError:(id)arg1;
 - (oneway void)speechServiceDidProcessAudioDuration:(double)arg1;
-- (oneway void)speechServiceDidRecognizePhrases:(id)arg1 utterances:(id)arg2;
+- (oneway void)speechServiceDidRecognizePackage:(id)arg1;
 - (oneway void)speechServiceDidRecognizeTokens:(id)arg1;
-- (void)startSpeechRecognitionWithLanguage:(id)arg1 task:(id)arg2 context:(id)arg3 narrowband:(BOOL)arg4 detectUtterances:(BOOL)arg5 maximumRecognitionDuration:(double)arg6 secureOfflineOnly:(BOOL)arg7 censorSpeech:(BOOL)arg8 didStartHandler:(id /* block */)arg9;
+- (void)startSpeechRecognitionWithLanguage:(id)arg1 task:(id)arg2 context:(id)arg3 narrowband:(BOOL)arg4 detectUtterances:(BOOL)arg5 maximumRecognitionDuration:(double)arg6 secureOfflineOnly:(BOOL)arg7 censorSpeech:(BOOL)arg8 originalAudioFileURL:(id)arg9 didStartHandler:(id /* block */)arg10;
 - (void)updateSpeechProfileWithLanguage:(id)arg1 userData:(id)arg2 localSpeechDESRecord:(id)arg3 completion:(id /* block */)arg4;
+- (void)writeDESRecord;
 
 @end

@@ -6,7 +6,6 @@
     NSString * _aliasedName;
     BOOL  _important;
     NSString * _name;
-    NSString * _stringValue;
     unsigned int  _type;
 }
 

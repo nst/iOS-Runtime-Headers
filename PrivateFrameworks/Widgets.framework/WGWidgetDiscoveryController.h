@@ -23,6 +23,8 @@
     WGWidgetListEditViewController * _presentedEditViewController;
     id  _presentedEditViewControllerStatusBarAssertion;
     NSMutableDictionary * _requesterIDsToWidgetIDsToWidgets;
+    BOOL  _shouldPurgeNonASTCSnapshots;
+    BOOL  _shouldPurgeNonCAMLSnapshots;
     NSMutableDictionary * _widgetIDsToPendingTestCompletions;
     NSMutableDictionary * _widgetIDsToPendingTestTearDowns;
 }
@@ -43,6 +45,7 @@
 + (int)layoutModeForSize:(struct CGSize { float x1; float x2; })arg1;
 
 - (void).cxx_destruct;
+- (void)_applicationIconChanged:(id)arg1;
 - (void)_beginObservingDataSourcesIfNecessary;
 - (void)_calculateAndPostNewWidgetsCount;
 - (void)_dataSourcesDidChange:(id)arg1;
@@ -76,6 +79,8 @@
 - (void)_setPresentedEditViewController:(id)arg1;
 - (void)_setPresentedEditViewControllerStatusBarAssertion:(id)arg1;
 - (id)_updatePublicationStateOfDatumWithIdentifier:(id)arg1 visibilityChanged:(BOOL)arg2 contentStateChanged:(BOOL)arg3 insertAtTop:(BOOL)arg4 notifyingObservers:(BOOL)arg5;
+- (void)_widget:(id)arg1 withIdentifier:(id)arg2 didRemoveSnapshotAtURL:(id)arg3;
+- (void)_widgetViewControllerDidRemoveSnapshot:(id)arg1;
 - (void)_widgetViewControllerRequestsAdd:(id)arg1;
 - (id)_widgetViewControllerWithBundleID:(id)arg1 containingBundleID:(id)arg2 didConnect:(id /* block */)arg3 canTearDown:(id /* block */)arg4;
 - (void)addDiscoveryObserver:(id)arg1;
@@ -111,6 +116,9 @@
 - (void)setWidgetLoggingEnabled:(BOOL)arg1;
 - (void)setWidgetSnapshotTimestampsEnabled:(BOOL)arg1;
 - (BOOL)shouldPurgeArchivedSnapshotsForWidget:(id)arg1;
+- (BOOL)shouldPurgeNonASTCSnapshotsForWidget:(id)arg1;
+- (BOOL)shouldPurgeNonCAMLSnapshotsForWidget:(id)arg1;
+- (BOOL)shouldRemoveSnapshotWhenNotVisibleForWidget:(id)arg1;
 - (int)userSpecifiedDisplayModeForWidget:(id)arg1;
 - (int)userSpecifiedDisplayModeForWidgetWithIdentifier:(id)arg1;
 - (id)visibleWidgetIdentifiersForGroup:(id)arg1;
@@ -118,6 +126,7 @@
 - (void)widget:(id)arg1 didChangeLargestAvailableDisplayMode:(int)arg2;
 - (void)widget:(id)arg1 didChangeUserSpecifiedDisplayMode:(int)arg2;
 - (void)widget:(id)arg1 didEncounterProblematicSnapshotAtURL:(id)arg2;
+- (void)widget:(id)arg1 didRemoveSnapshotAtURL:(id)arg2;
 - (void)widgetDataSource:(id)arg1 removeDatum:(id)arg2;
 - (void)widgetDataSource:(id)arg1 replaceWithDatum:(id)arg2;
 - (id)widgetIDsToPendingTestCompletions;

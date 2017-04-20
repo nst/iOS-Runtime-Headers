@@ -7,14 +7,14 @@
 }
 
 - (unsigned short*)_fastCharacterContents;
-- (unsigned short)characterAtIndex:(long)arg1;
+- (unsigned short)characterAtIndex;
 - (id)copy;
-- (void)getCharacters:(unsigned short*)arg1 range:(struct { int x1; int x2; })arg2;
+- (void)getCharactersrange;
 - (id)init;
-- (id)initWithCoder:(id)arg1;
+- (id)initWithCoder;
 - (long)length;
-- (id)substringFromIndex:(long)arg1;
-- (id)substringToIndex:(long)arg1;
-- (id)substringWithRange:(struct { int x1; int x2; })arg1;
+- (id)substringFromIndex;
+- (id)substringToIndex;
+- (id)substringWithRange;
 
 @end

@@ -23,13 +23,13 @@
 - (id)initWithPath:(id)arg1 name:(id)arg2;
 - (id)keys;
 - (id)kv;
-/* MISSING HEADER DESCRIPTION FOR METHOD objectForKeyedSubscript: */
+- (void)objectForKeyedSubscript;
 - (BOOL)removeObjectForKey:(id)arg1 error:(id*)arg2;
 - (BOOL)removeObjectsMatching:(id)arg1 error:(id*)arg2;
 - (void)setKeys:(id)arg1;
 - (void)setKv:(id)arg1;
 - (void)setValues:(id)arg1;
-- (long)sql:(void *)arg1; // needs 1 arg types, found 5: /* Warning: unhandled bit fieldencoding: 'b' */ unsigned int, /* Warning: Unrecognized filer type: 'y' using 'void*' */ void*, /* Warning: Unrecognized filer type: 't' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'e' using 'void*' */ void*, short
+- (/* Warning: Unrecognized filer type: 'z' using 'void*' */ void*)sql:(/* Warning: Unrecognized filer type: 'h' using 'void*' */ void*)arg1;
 - (id)tripleComponentsMatching:(id)arg1 error:(id*)arg2;
 - (id)values;
 - (BOOL)wipeAndReturnError:(id*)arg1;

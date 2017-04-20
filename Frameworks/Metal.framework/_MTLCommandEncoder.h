@@ -22,6 +22,7 @@
 - (id)description;
 - (id)device;
 - (void)endEncoding;
+- (id)formattedDescription:(unsigned int)arg1;
 - (unsigned int)getType;
 - (unsigned long long)globalTraceObjectID;
 - (id)initWithCommandBuffer:(id)arg1;

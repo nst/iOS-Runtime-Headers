@@ -38,6 +38,13 @@
     double  _stillImageCaptureAbsoluteStartTime;
     long long  _stillImageCaptureStartTime;
     long long  _stillImageRequestTime;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _stillImageUserInitiatedRequestPTS;
+    unsigned long long  _stillImageUserInitiatedRequestTime;
     NSDictionary * _vtCompressionProperties;
     int  _wideColorMode;
 }
@@ -79,6 +86,8 @@
 @property (nonatomic) double stillImageCaptureAbsoluteStartTime;
 @property (nonatomic) long long stillImageCaptureStartTime;
 @property (nonatomic) long long stillImageRequestTime;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } stillImageUserInitiatedRequestPTS;
+@property (nonatomic) unsigned long long stillImageUserInitiatedRequestTime;
 @property (nonatomic, copy) NSDictionary *vtCompressionProperties;
 @property (nonatomic) int wideColorMode;
 
@@ -152,6 +161,8 @@
 - (void)setStillImageCaptureAbsoluteStartTime:(double)arg1;
 - (void)setStillImageCaptureStartTime:(long long)arg1;
 - (void)setStillImageRequestTime:(long long)arg1;
+- (void)setStillImageUserInitiatedRequestPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setStillImageUserInitiatedRequestTime:(unsigned long long)arg1;
 - (void)setVtCompressionProperties:(id)arg1;
 - (void)setWideColorMode:(int)arg1;
 - (long long)settingsID;
@@ -161,6 +172,8 @@
 - (double)stillImageCaptureAbsoluteStartTime;
 - (long long)stillImageCaptureStartTime;
 - (long long)stillImageRequestTime;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })stillImageUserInitiatedRequestPTS;
+- (unsigned long long)stillImageUserInitiatedRequestTime;
 - (id)vtCompressionProperties;
 - (int)wideColorMode;
 

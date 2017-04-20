@@ -37,7 +37,7 @@
 - (void)_fixIndex:(unsigned int)arg1;
 - (void)_fixIndicesFrom:(unsigned int)arg1;
 - (void)_fixIndicesFrom:(unsigned int)arg1 through:(unsigned int)arg2;
-- (void)_getPassesAndCatalogWithHandler:(id /* block */)arg1;
+- (void)_getPassesAndCatalogSynchronously:(BOOL)arg1 withHandler:(id /* block */)arg2;
 - (BOOL)_groupIDIsNew:(id)arg1;
 - (id)_groupsExcludingPayment;
 - (unsigned int)_indexOfGroupID:(id)arg1;

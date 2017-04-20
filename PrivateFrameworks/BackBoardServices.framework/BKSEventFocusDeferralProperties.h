@@ -21,6 +21,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (id)clientID;
+- (id)conciseDescription;
 - (unsigned int)contextID;
 - (void)dealloc;
 - (id)description;

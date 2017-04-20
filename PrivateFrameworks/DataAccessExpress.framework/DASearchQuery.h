@@ -11,7 +11,7 @@
     NSString * _searchID;
     NSPredicate * _searchPredicate;
     NSString * _searchString;
-    int  _state;
+    unsigned int  _state;
     int  _timeLimit;
 }
 
@@ -21,7 +21,7 @@
 @property (nonatomic, copy) NSString *searchID;
 @property (nonatomic, copy) NSPredicate *searchPredicate;
 @property (nonatomic, copy) NSString *searchString;
-@property (nonatomic) int state;
+@property (nonatomic) unsigned int state;
 @property (nonatomic) int timeLimit;
 
 + (id)searchQueryWithSearchString:(id)arg1 consumer:(id)arg2;
@@ -47,9 +47,9 @@
 - (void)setSearchID:(id)arg1;
 - (void)setSearchPredicate:(id)arg1;
 - (void)setSearchString:(id)arg1;
-- (void)setState:(int)arg1;
+- (void)setState:(unsigned int)arg1;
 - (void)setTimeLimit:(int)arg1;
-- (int)state;
+- (unsigned int)state;
 - (int)timeLimit;
 
 @end

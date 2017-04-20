@@ -15,6 +15,7 @@
 @property (nonatomic, retain) FCGroupConfig *coverArticlesGroupConfig;
 @property (nonatomic, readonly) NSArray *editorialArticleListIDs;
 @property (nonatomic, retain) NSArray *editorialGroupConfigs;
+@property (nonatomic, readonly) NSArray *editorialSectionTagIDs;
 @property (nonatomic, readonly) NSDate *fetchedDate;
 @property (nonatomic, retain) NTPBForYouConfigRecord *forYouConfigRecord;
 @property (nonatomic, retain) FCInterestToken *interestToken;
@@ -29,6 +30,7 @@
 - (id)coverArticlesGroupConfig;
 - (id)editorialArticleListIDs;
 - (id)editorialGroupConfigs;
+- (id)editorialSectionTagIDs;
 - (id)fetchedDate;
 - (id)forYouConfigRecord;
 - (id)initWithRecord:(id)arg1 interestToken:(id)arg2;

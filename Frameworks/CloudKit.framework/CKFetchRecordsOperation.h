@@ -4,6 +4,7 @@
 
 @interface CKFetchRecordsOperation : CKDatabaseOperation {
     NSMutableDictionary * _assetInfoByArrayIndexByRecordKeyByRecordID;
+    NSDictionary * _assetTransferOptionsByRecordTypeAndKey;
     NSArray * _desiredKeys;
     NSDictionary * _desiredPackageFileIndices;
     id /* block */  _fetchRecordsCompletionBlock;
@@ -23,6 +24,7 @@
 }
 
 @property (nonatomic, retain) NSMutableDictionary *assetInfoByArrayIndexByRecordKeyByRecordID;
+@property (nonatomic, retain) NSDictionary *assetTransferOptionsByRecordTypeAndKey;
 @property (nonatomic, copy) NSArray *desiredKeys;
 @property (nonatomic, copy) NSDictionary *desiredPackageFileIndices;
 @property (nonatomic, copy) id /* block */ fetchRecordsCompletionBlock;
@@ -51,6 +53,7 @@
 - (id)activityCreate;
 - (id)assetInfoByArrayIndexByRecordKeyByRecordID;
 - (id)assetInfoForRecordID:(id)arg1 recordKey:(id)arg2 arrayIndex:(id)arg3;
+- (id)assetTransferOptionsByRecordTypeAndKey;
 - (BOOL)claimPackagesInRecord:(id)arg1 error:(id*)arg2;
 - (id)desiredKeys;
 - (id)desiredPackageFileIndices;
@@ -71,6 +74,7 @@
 - (id)recordIDsToRecords;
 - (id)recordIDsToVersionETags;
 - (void)setAssetInfoByArrayIndexByRecordKeyByRecordID:(id)arg1;
+- (void)setAssetTransferOptionsByRecordTypeAndKey:(id)arg1;
 - (void)setDesiredKeys:(id)arg1;
 - (void)setDesiredPackageFileIndices:(id)arg1;
 - (void)setFetchRecordsCompletionBlock:(id /* block */)arg1;

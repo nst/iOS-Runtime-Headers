@@ -6,6 +6,7 @@
     unsigned int  _cancellableQuery;
     NSProgress * _internalProgress;
     NSLock * _lock;
+    NSString * _logPrefixString;
     NSProgress * _progress;
     MDSearchQuery * _query;
     NSString * _queryString;
@@ -16,6 +17,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *logPrefixString;
 @property (readonly) NSProgress *progress;
 @property (nonatomic, readonly, copy) NSString *queryString;
 @property (readonly) Class superclass;
@@ -42,11 +44,13 @@
 - (id)description;
 - (id)init;
 - (id)initWithQueryString:(id)arg1 options:(id)arg2;
+- (id)logPrefixString;
 - (id)progress;
 - (id)queryString;
 - (void)searchQuery:(id)arg1 didFailWithError:(id)arg2;
 - (void)searchQuery:(id)arg1 didReturnItems:(id)arg2;
 - (void)searchQuery:(id)arg1 statusChanged:(unsigned int)arg2;
+- (void)setLogPrefixString:(id)arg1;
 - (void)start;
 - (id)truncatedDescription;
 

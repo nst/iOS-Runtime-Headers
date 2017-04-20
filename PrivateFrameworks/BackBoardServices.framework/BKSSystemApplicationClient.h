@@ -9,10 +9,12 @@
     BOOL  _pendingCheckIn;
     NSObject<OS_dispatch_semaphore> * _pingSemaphore;
     BOOL  _sentConnect;
+    double  _systemIdleSleepInterval;
     BOOL  _waitingForPing;
 }
 
 @property (nonatomic) <BKSSystemApplicationClientDelegate> *delegate;
+@property (nonatomic) double systemIdleSleepInterval;
 
 - (void)_connect;
 - (void)_queue_handleWatchdogPing:(id)arg1;
@@ -33,5 +35,7 @@
 - (void)restart;
 - (void)sendActions:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setSystemIdleSleepInterval:(double)arg1;
+- (double)systemIdleSleepInterval;
 
 @end

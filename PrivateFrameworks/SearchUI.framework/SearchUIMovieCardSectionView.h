@@ -2,21 +2,17 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUIMovieCardSectionView : SearchUICardSectionView {
-    SearchUIMovieCardSectionBuyButtonView * _playButton;
-    SearchUIMovieCardSectionBuyButtonView * _watchListButton;
-}
+@interface SearchUIMovieCardSectionView : SearchUILayoutFreeSectionView
 
-@property (retain) SearchUIMovieCardSectionBuyButtonView *playButton;
-@property (retain) SearchUIMovieCardSectionBuyButtonView *watchListButton;
+@property (retain) SFMediaInfoCardSection *section;
 
-- (void).cxx_destruct;
-- (id)initWithCardSection:(id)arg1 controller:(id)arg2;
-- (void)lookupWatchListStatusForCardSection:(id)arg1;
-- (id)playButton;
-- (void)setPlayButton:(id)arg1;
-- (void)setWatchListButton:(id)arg1;
-- (void)updateButtonsIsWatchListed:(BOOL)arg1 playables:(id)arg2 continuationText:(id)arg3;
-- (id)watchListButton;
+- (id)buttonForChannelDetails:(id)arg1 punchoutURLs:(id)arg2 isEntitled:(BOOL)arg3 isContinuing:(BOOL)arg4 isContainerItem:(BOOL)arg5 seasonNumber:(id)arg6 episodeNumber:(id)arg7;
+- (id)buttonForOffer:(id)arg1 playable:(id)arg2;
+- (id)buttonForPlayable:(id)arg1;
+- (id)buttonWithTitle:(id)arg1 subtitle:(id)arg2 punchoutURL:(id)arg3;
+- (id)buttonsForPlayables:(id)arg1 channels:(id)arg2 currentEpisode:(id)arg3 isUpNextable:(BOOL)arg4 isUpNexted:(BOOL)arg5;
+- (BOOL)channelHasBeenSeen:(id)arg1 seenChannels:(id)arg2;
+- (void)fetchButtonsWithCompletionHandler:(id /* block */)arg1;
+- (id)initWithCardSection:(id)arg1 controller:(id)arg2 style:(unsigned int)arg3;
 
 @end

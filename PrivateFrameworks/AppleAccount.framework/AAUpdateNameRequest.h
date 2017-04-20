@@ -10,7 +10,7 @@
 + (Class)responseClass;
 
 - (void).cxx_destruct;
-- (id)initWithAppleAccount:(id)arg1 grandSlamAccount:(id)arg2 accountStore:(id)arg3 firstName:(id)arg4 lastName:(id)arg5;
+- (id)initWithGrandSlamAccount:(id)arg1 accountStore:(id)arg2 firstName:(id)arg3 lastName:(id)arg4;
 - (id)urlRequest;
 - (id)urlString;
 

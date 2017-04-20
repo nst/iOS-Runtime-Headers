@@ -10,10 +10,11 @@
     UIViewController<NCNotificationCustomContent> * _customContentProvidingViewController;
     <NCNotificationViewControllerDelegate> * _delegate;
     BOOL  _didQueryCanPan;
+    id /* block */  _dismissalCompletion;
     NSString * _groupName;
     BOOL  _interactionEnabled;
     struct UIView { Class x1; } * _lookView;
-    NCMaterialSettings * _materialSettings;
+    MTMaterialSettings * _materialSettings;
     int  _ncTransitionAnimationState;
     NCNotificationRequest * _notificationRequest;
     NCNotificationAction * _presentationSourceAction;
@@ -32,12 +33,13 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <NCNotificationViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (getter=_dismissalCompletion, setter=_setDismissalCompletion:, nonatomic, copy) id /* block */ dismissalCompletion;
 @property (getter=isDragging, nonatomic, readonly) BOOL dragging;
 @property (nonatomic, retain) NSString *groupName;
 @property (readonly) unsigned int hash;
 @property (getter=isInteractionEnabled, nonatomic) BOOL interactionEnabled;
 @property (getter=isLookStyleLongLook, nonatomic, readonly) BOOL lookStyleLongLook;
-@property (nonatomic, retain) NCMaterialSettings *materialSettings;
+@property (nonatomic, retain) MTMaterialSettings *materialSettings;
 @property (nonatomic, retain) NCNotificationRequest *notificationRequest;
 @property (getter=_notificationViewControllerView, nonatomic, readonly) _NCNotificationViewControllerView *notificationViewControllerView;
 @property (nonatomic, copy) NSString *preferredContentSizeCategory;
@@ -57,6 +59,7 @@
 - (void)_configureScrollViewIfNecessary;
 - (id)_customContentProvidingViewController;
 - (int)_dateFormatStyle;
+- (id /* block */)_dismissalCompletion;
 - (void)_executeCancelAction:(BOOL)arg1;
 - (void)_executeClearAction:(BOOL)arg1;
 - (void)_executeCloseAction:(BOOL)arg1;
@@ -79,6 +82,7 @@
 - (void)_setActiveTransitionCoordinator:(id)arg1;
 - (void)_setCustomContentProvidingViewController:(id)arg1;
 - (BOOL)_setDelegate:(id)arg1;
+- (void)_setDismissalCompletion:(id /* block */)arg1;
 - (BOOL)_setNotificationRequest:(id)arg1;
 - (void)_setPreferredCustomContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setShouldRestorePresentingShortLookOnDismiss:(BOOL)arg1;
@@ -107,6 +111,7 @@
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (BOOL)didReceiveNotificationRequest:(id)arg1;
 - (BOOL)dismissPresentedViewControllerAndClearNotification:(BOOL)arg1 animated:(BOOL)arg2;
+- (BOOL)dismissPresentedViewControllerAndClearNotification:(BOOL)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)dismissViewControllerWithTransition:(int)arg1 completion:(id /* block */)arg2;
 - (void)expandAndPlayAudioMessage;
 - (id)groupName;
@@ -123,12 +128,13 @@
 - (int)ncTransitionAnimationState;
 - (id)notificationRequest;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
-- (void)presentLongLook:(id /* block */)arg1;
 - (void)presentLongLookAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (id)presentationSourceAction;
+- (void)preserveInputViews;
 - (void)reloadStaticContentProvider;
 - (void)removeAudioAccesoryObserver:(id)arg1;
+- (BOOL)restoreInputViews;
 - (BOOL)revealAdditionalContentOnPresentation;
 - (void)setAdjustsFontForContentSizeCategory:(BOOL)arg1;
 - (void)setAssociatedView:(id)arg1;

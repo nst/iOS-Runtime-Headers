@@ -4,9 +4,11 @@
 
 @interface NSPNetworkAgent : NSObject <NWNetworkAgent> {
     NSData * _agentData;
-    NEConfiguration * _configuration;
+    NSPAppRule * _appRule;
+    NSPConfiguration * _configuration;
+    unsigned char  _dataDigest;
     <NSPNetworkAgentDelegate> * _delegate;
-    NSData * _internalKeybag;
+    NSData * _keybag;
     BOOL  active;
     NSString * agentDescription;
     NSUUID * agentUUID;
@@ -19,9 +21,9 @@
 @property (retain) NSData *agentData;
 @property (nonatomic, copy) NSString *agentDescription;
 @property (nonatomic, copy) NSUUID *agentUUID;
-@property (retain) NEConfiguration *configuration;
+@property (retain) NSPAppRule *appRule;
+@property (retain) NSPConfiguration *configuration;
 @property <NSPNetworkAgentDelegate> *delegate;
-@property (retain) NSData *internalKeybag;
 @property (getter=isKernelActivated, nonatomic) BOOL kernelActivated;
 @property (retain) NSData *keybag;
 @property (getter=isNetworkProvider, nonatomic) BOOL networkProvider;
@@ -38,25 +40,26 @@
 - (id)agentData;
 - (id)agentDescription;
 - (id)agentUUID;
+- (id)appRule;
 - (BOOL)assertAgentWithOptions:(id)arg1;
 - (id)configuration;
 - (id)copyAgentData;
-- (id)copyConfiguration;
 - (id)delegate;
 - (id)init;
-- (id)internalKeybag;
 - (BOOL)isActive;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isKernelActivated;
 - (BOOL)isUserActivated;
 - (BOOL)isVoluntary;
 - (id)keybag;
+- (void)parseAgentData;
 - (void)setActive:(BOOL)arg1;
 - (void)setAgentData:(id)arg1;
 - (void)setAgentDescription:(id)arg1;
 - (void)setAgentUUID:(id)arg1;
+- (void)setAppRule:(id)arg1;
 - (void)setConfiguration:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setInternalKeybag:(id)arg1;
 - (void)setKernelActivated:(BOOL)arg1;
 - (void)setKeybag:(id)arg1;
 - (void)setUserActivated:(BOOL)arg1;

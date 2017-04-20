@@ -3,24 +3,39 @@
  */
 
 @interface CKDPAssetUploadTokenRetrieveResponse : PBCodable <NSCopying> {
+    NSData * _authPutResponse;
+    NSMutableArray * _authPutResponseHeaders;
     NSMutableArray * _uploadTokens;
 }
 
+@property (nonatomic, retain) NSData *authPutResponse;
+@property (nonatomic, retain) NSMutableArray *authPutResponseHeaders;
+@property (nonatomic, readonly) BOOL hasAuthPutResponse;
 @property (nonatomic, retain) NSMutableArray *uploadTokens;
 
++ (Class)authPutResponseHeadersType;
 + (Class)uploadTokensType;
 
 - (void).cxx_destruct;
+- (void)addAuthPutResponseHeaders:(id)arg1;
 - (void)addUploadTokens:(id)arg1;
+- (id)authPutResponse;
+- (id)authPutResponseHeaders;
+- (id)authPutResponseHeadersAtIndex:(unsigned int)arg1;
+- (unsigned int)authPutResponseHeadersCount;
+- (void)clearAuthPutResponseHeaders;
 - (void)clearUploadTokens;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasAuthPutResponse;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)setAuthPutResponse:(id)arg1;
+- (void)setAuthPutResponseHeaders:(id)arg1;
 - (void)setUploadTokens:(id)arg1;
 - (id)uploadTokens;
 - (id)uploadTokensAtIndex:(unsigned int)arg1;

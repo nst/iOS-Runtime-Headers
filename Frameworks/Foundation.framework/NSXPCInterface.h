@@ -37,7 +37,8 @@
 
 + (id)cx_callControllerHostInterface;
 + (id)cx_callControllerVendorInterface;
-+ (id)cx_callDirectoryManagerHostInterface;
++ (id)cx_callDirectoryManagerDefaultHostInterface;
++ (id)cx_callDirectoryManagerMaintenanceHostInterface;
 + (id)cx_callDirectoryProviderHostInterface;
 + (id)cx_callDirectoryProviderVendorInterface;
 + (id)cx_providerHostInterface;
@@ -49,7 +50,7 @@
 - (id)_cx_providerAllowedClasses;
 - (void)_cx_setAllowedClassesForCallControllerHostProtocol;
 - (void)_cx_setAllowedClassesForCallControllerVendorProtocol;
-- (void)_cx_setAllowedClassesForCallDirectoryManagerHostProtocol;
+- (void)_cx_setAllowedClassesForCallDirectoryManagerDefaultHostProtocol;
 - (void)_cx_setAllowedClassesForCallDirectoryProviderHostProtocol;
 - (id)cx_allowedClasses;
 - (void)cx_setAllowedClassesForProviderHostProtocol;

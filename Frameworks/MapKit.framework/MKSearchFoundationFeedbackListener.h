@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 - (unsigned int)clientType;
 - (void)didEngageResult:(id)arg1;
+- (void)didEngageSection:(id)arg1;
 - (void)didRankSections:(id)arg1;
 - (id)initWithClientType:(unsigned int)arg1;
 - (void)resultsDidBecomeVisible:(id)arg1;

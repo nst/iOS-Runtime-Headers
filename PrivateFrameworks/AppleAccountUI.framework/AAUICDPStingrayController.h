@@ -6,8 +6,6 @@
     id /* block */  __passcodeValidationCompletion;
     AAUICDPHelper * _helper;
     PSSetupController * _navController;
-    UIBarButtonItem * _previousRightButton;
-    NSString * _previousTitle;
     NSString * _stingrayPendingState;
 }
 
@@ -18,8 +16,9 @@
 @property (nonatomic, retain) NSString *stingrayPendingState;
 @property (readonly) Class superclass;
 
-+ (BOOL)isValidStingrayIndicator:(id)arg1;
 + (id)stingrayControllerWithPresenter:(id)arg1;
++ (id)stingrayControllerWithPresenter:(id)arg1 forceInline:(BOOL)arg2;
++ (id)stingrayRefreshRequestWithInfo:(id)arg1 serverInfo:(id)arg2 attributes:(id)arg3;
 
 - (void).cxx_destruct;
 - (id /* block */)_passcodeValidationCompletion;
@@ -27,19 +26,16 @@
 - (void)_setupNavController;
 - (void)_showPasscodePromptWithMode:(int)arg1;
 - (id)_specifierForMode:(int)arg1;
-- (void)addStingrayHeadersToRequest:(id)arg1;
 - (void)dealloc;
 - (void)devicePINController:(id)arg1 didAcceptSetPIN:(id)arg2;
+- (void)devicePINController:(id)arg1 didFailToSetPinWithError:(id)arg2;
 - (void)didAcceptEnteredPIN;
 - (void)didCancelEnteringPIN;
-- (void)disableUserInteractionAndStartSpinner;
-- (void)enableUserInteractionAndStopSpinner;
+- (void)dismissFlowWithSuccess:(BOOL)arg1 error:(id)arg2;
+- (void)generateRecoveryKeyWithCompletion:(id /* block */)arg1;
 - (void)setStingrayPendingState:(id)arg1;
 - (void)set_passcodeValidationCompletion:(id /* block */)arg1;
 - (id)stingrayPendingState;
-- (id)stingrayRefreshRequestWithInfo:(id)arg1 serverInfo:(id)arg2 attributes:(id)arg3;
-- (void)updateStingrayStateToEnabled:(BOOL)arg1 completion:(id /* block */)arg2;
-- (void)updateStingrayStateWithKey:(id)arg1 completion:(id /* block */)arg2;
 - (void)validateStingrayPasscodeStateWithCompletion:(id /* block */)arg1;
 
 @end

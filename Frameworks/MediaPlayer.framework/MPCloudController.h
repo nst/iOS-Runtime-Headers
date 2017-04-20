@@ -58,7 +58,6 @@
 - (void)disableCloudLibraryWithCompletionHandler:(id /* block */)arg1;
 - (void)enableCloudLibraryWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)enablingJaliscoGeniusRequiresTerms;
-- (void)evaluateKeepLocalRulesWithCompletionHandler:(id /* block */)arg1;
 - (void)fetchRecommendedContentWithSeedTrackID:(long long)arg1 seedTrackIDType:(int)arg2 count:(unsigned long long)arg3 completion:(id /* block */)arg4;
 - (BOOL)hasCloudLockerAccount;
 - (BOOL)hasProperNetworkConditionsToPlayMedia;

@@ -3,6 +3,8 @@
  */
 
 @interface GKAuthenticateResponse : GKInternalRepresentation {
+    NSString * _alertMessage;
+    NSString * _alertTitle;
     GKPlayerCredential * _credential;
     BOOL  _loginDisabled;
     BOOL  _passwordChangeRequired;
@@ -10,6 +12,8 @@
     BOOL  _shouldShowLinkAccountsUI;
 }
 
+@property (nonatomic, retain) NSString *alertMessage;
+@property (nonatomic, retain) NSString *alertTitle;
 @property (nonatomic, retain) GKPlayerCredential *credential;
 @property (nonatomic) BOOL loginDisabled;
 @property (nonatomic) BOOL passwordChangeRequired;
@@ -18,11 +22,15 @@
 
 + (id)secureCodedPropertyKeys;
 
+- (id)alertMessage;
+- (id)alertTitle;
 - (id)credential;
 - (void)dealloc;
 - (BOOL)loginDisabled;
 - (BOOL)passwordChangeRequired;
 - (id)passwordChangeURL;
+- (void)setAlertMessage:(id)arg1;
+- (void)setAlertTitle:(id)arg1;
 - (void)setCredential:(id)arg1;
 - (void)setLoginDisabled:(BOOL)arg1;
 - (void)setPasswordChangeRequired:(BOOL)arg1;

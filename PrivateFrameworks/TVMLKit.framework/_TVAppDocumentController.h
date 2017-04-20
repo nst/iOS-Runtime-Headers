@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
  */
 
-@interface _TVAppDocumentController : UIViewController <IKAppDocumentDelegate, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, _TVAppNavigationBarDisplayConfiguring, _TVModalPresenterFocusing> {
+@interface _TVAppDocumentController : UIViewController <UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, _TVAppNavigationBarDisplayConfiguring, _TVIKAppDocumentDelegate, _TVModalPresenterFocusing> {
     IKAppDocument * _appDocument;
     BOOL  _applicationDeactivatedOnMenu;
     BOOL  _avoidsFocusingTemplate;
@@ -17,7 +17,7 @@
     id /* block */  _menuGestureHandler;
     UITapGestureRecognizer * _menuGestureRecognizer;
     BOOL  _opaque;
-    BOOL  _shouldPreventRotationFromMarkingStylesDirty;
+    BOOL  _shouldMarkStylesDirtyBeforeLayout;
     _TVAppNavigationControllerStatusBlur * _statusBarEffectView;
     UIViewController * _templateViewController;
     BOOL  _transitioning;
@@ -73,7 +73,6 @@
 - (void)documentDidUpdate:(id)arg1;
 - (void)documentNeedsUpdate:(id)arg1;
 - (struct CGSize { float x1; float x2; })formSize;
-- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)impressionableViewElementsForDocument:(id)arg1;
 - (id)initWithAppDocument:(id)arg1;
 - (BOOL)isBackdropLayerNeeded;
@@ -112,10 +111,12 @@
 - (unsigned int)supportedInterfaceOrientations;
 - (id)templateViewController;
 - (void)traitCollectionDidChange:(id)arg1;
+- (struct CGSize { float x1; float x2; })tv_adjustedWindowSizeForDocument:(id)arg1;
 - (void)tvmlkit_handleEvent:(id)arg1 forElement:(id)arg2 andSourceView:(id)arg3;
 - (void)updatePreferredFocusedViewStateForFocus:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

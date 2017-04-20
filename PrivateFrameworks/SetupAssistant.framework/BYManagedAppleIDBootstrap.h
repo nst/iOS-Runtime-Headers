@@ -34,7 +34,7 @@
 - (void)recoverEMCSWithCompletion:(id /* block */)arg1;
 - (void)runSilentLoginUpgradeIfNeededWithCompletion:(id /* block */)arg1;
 - (id)shortLivedToken;
-- (void)switchToLoginWindowDueToError:(id)arg1;
+- (void)switchToLoginWindowDueToError:(id)arg1 completion:(id /* block */)arg2;
 - (id)userSwitchContext;
 - (void)userSwitchContextHasBeenUsed;
 - (void)writeAccountConfigurationIfNeededWithCompletion:(id /* block */)arg1;

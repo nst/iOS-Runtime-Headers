@@ -112,7 +112,6 @@
 - (BOOL)endpointOnCurrentDevice;
 - (id)forceAssistURLQueryItem;
 - (id)handle;
-- (id)handleForPersonHandle:(id)arg1;
 - (id)handleFromURL:(id)arg1;
 - (id)handleTypeURLQueryItem;
 - (unsigned int)hash;
@@ -142,7 +141,6 @@
 - (id)originatingUIURLQueryItem;
 - (BOOL)performDialAssist;
 - (BOOL)performLocalDialAssist;
-- (id)personHandleForHandle:(id)arg1;
 - (id)provider;
 - (id)providerCustomIdentifier;
 - (id)providerCustomIdentifierURLQueryItem;

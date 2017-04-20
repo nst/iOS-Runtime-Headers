@@ -46,6 +46,7 @@
     CAMIrisButton * __irisButton;
     CAMKeepAliveController * __keepAliveController;
     int  __lastConfigurationRequestID;
+    unsigned long long  __lastShutterButtonTouchDownTime;
     NSDate * __lastTimerIndicatorFaceUpdateDate;
     int  __layoutStyle;
     CAMLivePhotoBadge * __livePhotoBadge;
@@ -171,6 +172,7 @@
 @property (nonatomic, readonly) CAMIrisButton *_irisButton;
 @property (nonatomic, readonly) CAMKeepAliveController *_keepAliveController;
 @property (setter=_setLastConfigurationRequestID:, nonatomic) int _lastConfigurationRequestID;
+@property (setter=_setLastShutterButtonTouchDownTime:, nonatomic) unsigned long long _lastShutterButtonTouchDownTime;
 @property (setter=_setLastTimerIndicatorFaceUpdateDate:, nonatomic, retain) NSDate *_lastTimerIndicatorFaceUpdateDate;
 @property (setter=_setLayoutStyle:, nonatomic) int _layoutStyle;
 @property (nonatomic, readonly) CAMLivePhotoBadge *_livePhotoBadge;
@@ -352,6 +354,7 @@
 - (float)_currentMaximumZoomFactor;
 - (int)_currentMode;
 - (id)_debugEnabledDescriptionForControl:(id)arg1 withReason:(id)arg2;
+- (id)_debugStringForApplicationDeactivationReason:(int)arg1;
 - (int)_desiredFlashMode;
 - (int)_desiredHDRMode;
 - (int)_desiredLivePhotoMode;
@@ -414,6 +417,7 @@
 - (id)_gridView;
 - (void)_handleApplicationDidBecomeActive:(id)arg1;
 - (void)_handleApplicationDidEnterBackground:(id)arg1;
+- (void)_handleApplicationWillAddDeactivationReason:(id)arg1;
 - (void)_handleApplicationWillEnterForeground:(id)arg1;
 - (void)_handleApplicationWillResignActive:(id)arg1;
 - (void)_handleBurstTimerFired:(id)arg1;
@@ -433,7 +437,9 @@
 - (void)_handleShutterButtonCancelled:(id)arg1;
 - (void)_handleShutterButtonPressed:(id)arg1;
 - (void)_handleShutterButtonReleased:(id)arg1;
+- (void)_handleStillDuringVideoButtonPressed:(id)arg1;
 - (void)_handleStillDuringVideoButtonReleased:(id)arg1;
+- (void)_handleTimelapseLowDiskSpaceNotification:(id)arg1;
 - (void)_handleUserChangedToDevice:(int)arg1;
 - (void)_handleUserChangedToMode:(int)arg1;
 - (void)_handleUserChangedToMode:(int)arg1 device:(int)arg2;
@@ -441,6 +447,7 @@
 - (void)_handleUserSetDesiredTorchMode:(int)arg1;
 - (void)_handleZoomButtonWasTapped:(id)arg1;
 - (void)_handleZoomPinchGestureRecognizer:(id)arg1;
+- (BOOL)_hasBeenPromptedForICPLToday;
 - (BOOL)_hasInFlightConfiguration;
 - (void)_hdrButtonDidChangeHDRMode:(id)arg1;
 - (void)_hideBurstIndicatorView;
@@ -477,6 +484,7 @@
 - (BOOL)_isZoomAllowedForGraphConfiguration:(id)arg1;
 - (id)_keepAliveController;
 - (int)_lastConfigurationRequestID;
+- (unsigned long long)_lastShutterButtonTouchDownTime;
 - (id)_lastTimerIndicatorFaceUpdateDate;
 - (int)_layoutStyle;
 - (id)_livePhotoBadge;
@@ -548,6 +556,7 @@
 - (void)_setHidingTimerButtonForChangeToOrFromPortraitMode:(BOOL)arg1;
 - (void)_setInternalAutorotationStyle:(int)arg1;
 - (void)_setLastConfigurationRequestID:(int)arg1;
+- (void)_setLastShutterButtonTouchDownTime:(unsigned long long)arg1;
 - (void)_setLastTimerIndicatorFaceUpdateDate:(id)arg1;
 - (void)_setLayoutStyle:(int)arg1;
 - (void)_setModeDisabledForMultitasking:(BOOL)arg1;
@@ -579,6 +588,7 @@
 - (void)_setupBurstTimerWithDelay:(double)arg1;
 - (id)_shallowDepthOfFieldBadge;
 - (int)_shallowDepthOfFieldStatus;
+- (BOOL)_shouldAnimateViewfinderCloseForReason:(int)arg1;
 - (BOOL)_shouldApplyTopBarRotationForGraphConfiguration:(id)arg1;
 - (BOOL)_shouldCaptureWithTimer;
 - (BOOL)_shouldCreateGridViewForMode:(int)arg1;
@@ -728,6 +738,7 @@
 - (void)_updateTorchModeOnControllerIfNecessaryForMode:(int)arg1;
 - (void)_updateUIForCaptureOrientationAnimated:(BOOL)arg1;
 - (void)_updateUIForCapturing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_updateUserInitiationTimeForRequest:(id)arg1;
 - (void)_updateVideoConfigurationAggregateDictionaryForRequest:(id)arg1 response:(id)arg2;
 - (void)_updateZoomAggregateDictionaryForRequest:(id)arg1 response:(id)arg2;
 - (void)_updateZoomButtonTelephotoToggleForDevice:(int)arg1;
@@ -905,6 +916,7 @@
 - (BOOL)shouldHideShallowDepthOfFieldBadge;
 - (BOOL)shouldHideTimerButton;
 - (BOOL)shouldHideTopBar;
+- (void)simulateImageWellTap;
 - (BOOL)startRecording;
 - (void)startShowingLivePhotoIndicator;
 - (void)stillImageRequestDidCompleteCapture:(id)arg1 error:(id)arg2;

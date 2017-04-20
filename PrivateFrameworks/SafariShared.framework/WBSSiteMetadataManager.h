@@ -8,6 +8,7 @@
     NSObject<OS_dispatch_queue> * _internalQueue;
     NSOperationQueue * _operationQueue;
     WKProcessPool * _processPool;
+    BOOL  _providerCachesDisabled;
     NSMutableDictionary * _requestsToRequestInfos;
     NSMutableSet * _reusableWebViews;
     NSMutableArray * _siteMetadataProviders;
@@ -19,6 +20,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly, copy) NSURL *injectedBundleURL;
+@property (getter=areProviderCachesDisabled, nonatomic) BOOL providerCachesDisabled;
 @property (readonly) Class superclass;
 @property (getter=isSuspended, nonatomic) BOOL suspended;
 
@@ -39,18 +41,23 @@
 - (void)_sendResponse:(id)arg1 toResponseHandlersForRequest:(id)arg2 didReceiveNewData:(BOOL)arg3;
 - (void)_setUpOperationForRequest:(id)arg1 withSiteMetadataProvider:(id)arg2;
 - (BOOL)_updateOperationForRequestIfPossible:(id)arg1;
+- (BOOL)areProviderCachesDisabled;
 - (void)cancelRequestWithToken:(id)arg1;
 - (void)cancelRequestsWithTokens:(id)arg1;
+- (void)emptyProviderCaches;
 - (id)init;
 - (id)initWithInjectedBundleURL:(id)arg1;
 - (id)injectedBundleURL;
 - (BOOL)isSuspended;
 - (void)preloadRequest:(id)arg1 withPriority:(int)arg2;
+- (void)purgeUnneededProviderCacheEntries;
 - (id)registerOneTimeRequest:(id)arg1 priority:(int)arg2 responseHandler:(id /* block */)arg3;
 - (id)registerRequest:(id)arg1 priority:(int)arg2 responseHandler:(id /* block */)arg3;
 - (void)registerSiteMetadataProvider:(id)arg1;
+- (void)savePendingProviderChangesBeforeTermination;
 - (void)setPriority:(int)arg1 ofRequestWithToken:(id)arg2;
 - (void)setPriority:(int)arg1 ofRequestsWithTokens:(id)arg2;
+- (void)setProviderCachesDisabled:(BOOL)arg1;
 - (void)setSuspended:(BOOL)arg1;
 - (void)siteMetadataProvider:(id)arg1 cancelRequestsWithTokens:(id)arg2;
 - (void)siteMetadataProvider:(id)arg1 didFinishUsingWebView:(id)arg2;

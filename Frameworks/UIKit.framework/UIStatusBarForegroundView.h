@@ -17,6 +17,7 @@
 
 @property (nonatomic, readonly) UIStatusBarForegroundStyleAttributes *foregroundStyle;
 @property (nonatomic) int idiom;
+@property (nonatomic, readonly) UIStatusBar *statusBar;
 
 - (void).cxx_destruct;
 - (void)_animateUnlockCompletionBlock:(id /* block */)arg1;
@@ -48,6 +49,7 @@
 - (void)setPersistentAnimationsEnabled:(BOOL)arg1;
 - (void)setStatusBarData:(id)arg1 actions:(int)arg2 animated:(BOOL)arg3;
 - (void)startIgnoringData;
+- (id)statusBar;
 - (void)stopIgnoringData:(BOOL)arg1;
 - (BOOL)willChangeNavigationItemDisplayWithSystemNavigationAction:(id)arg1;
 

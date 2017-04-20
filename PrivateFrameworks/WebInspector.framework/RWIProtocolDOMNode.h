@@ -10,9 +10,9 @@
 @property (nonatomic, copy) NSArray *children;
 @property (nonatomic, retain) RWIProtocolDOMNode *contentDocument;
 @property (nonatomic, copy) NSString *contentSecurityPolicyHash;
+@property (nonatomic) int customElementState;
 @property (nonatomic, copy) NSString *documentURL;
 @property (nonatomic, copy) NSString *frameId;
-@property (nonatomic, copy) NSString *internalSubset;
 @property (nonatomic, copy) NSString *localName;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) int nodeId;
@@ -36,10 +36,10 @@
 - (id)children;
 - (id)contentDocument;
 - (id)contentSecurityPolicyHash;
+- (int)customElementState;
 - (id)documentURL;
 - (id)frameId;
 - (id)initWithNodeId:(int)arg1 nodeType:(int)arg2 nodeName:(id)arg3 localName:(id)arg4 nodeValue:(id)arg5;
-- (id)internalSubset;
 - (id)localName;
 - (id)name;
 - (int)nodeId;
@@ -56,9 +56,9 @@
 - (void)setChildren:(id)arg1;
 - (void)setContentDocument:(id)arg1;
 - (void)setContentSecurityPolicyHash:(id)arg1;
+- (void)setCustomElementState:(int)arg1;
 - (void)setDocumentURL:(id)arg1;
 - (void)setFrameId:(id)arg1;
-- (void)setInternalSubset:(id)arg1;
 - (void)setLocalName:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setNodeId:(int)arg1;

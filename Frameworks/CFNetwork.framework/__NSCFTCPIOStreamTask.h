@@ -3,7 +3,7 @@
  */
 
 @interface __NSCFTCPIOStreamTask : __NSCFURLSessionTask {
-    NSData * __TCPConnectionMetadata;
+    NSData * __initialDataPayload;
     NSError * _cancelError;
     unsigned char  _captureStreamsUponCompletion;
     id /* block */  _disavow;
@@ -18,11 +18,11 @@
     unsigned char  _secure;
 }
 
-@property (copy) NSData *_TCPConnectionMetadata;
+@property (copy) NSData *_initialDataPayload;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)_TCPConnectionMetadata;
+- (id)_initialDataPayload;
 - (void)_onSessionQueue_cleanupAndBreakCycles;
 - (void)_onSessionQueue_disavow;
 - (void)_onqueue_adjustLoadingPoolPriority;
@@ -48,7 +48,7 @@
 - (id)initWithHost:(id)arg1 port:(int)arg2 session:(id)arg3 disavow:(id /* block */)arg4;
 - (struct shared_ptr<TCPIOConnectionObjCPP> { struct TCPIOConnectionObjCPP {} *x1; struct __shared_weak_count {} *x2; })ios;
 - (void)readDataOfMinLength:(unsigned int)arg1 maxLength:(unsigned int)arg2 timeout:(double)arg3 completionHandler:(id /* block */)arg4;
-- (void)set_TCPConnectionMetadata:(id)arg1;
+- (void)set_initialDataPayload:(id)arg1;
 - (void)startSecureConnection;
 - (void)stopSecureConnection;
 - (void)writeData:(id)arg1 timeout:(double)arg2 completionHandler:(id /* block */)arg3;

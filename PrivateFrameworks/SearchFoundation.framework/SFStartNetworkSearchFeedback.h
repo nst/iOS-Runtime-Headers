@@ -2,15 +2,22 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFStartNetworkSearchFeedback : SFStartSearchFeedback {
+@interface SFStartNetworkSearchFeedback : SFStartSearchFeedback <SFProtobufObject> {
     unsigned int  _endpoint;
     NSDictionary * _headers;
     NSString * _url;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) unsigned int endpoint;
+@property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSDictionary *headers;
+@property (nonatomic, readonly) PBCodable *protobufMessage;
+@property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *url;
+
+// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
 
 + (BOOL)supportsSecureCoding;
 
@@ -25,5 +32,11 @@
 - (void)setHeaders:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;
+
+// Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
+
++ (Class)protobufClass;
+
+- (id)protobufMessage;
 
 @end

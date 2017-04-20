@@ -27,7 +27,7 @@
             float sum; 
             float average; 
             float current; 
-        } velocity; 
+        } normalizedVelocityPerSample; 
         struct SCRCMathAverageValue { 
             unsigned int samples; 
             float fifo[50]; 
@@ -35,7 +35,7 @@
             float sum; 
             float average; 
             float current; 
-        } slopeRise; 
+        } deltaXPerSample; 
         struct SCRCMathAverageValue { 
             unsigned int samples; 
             float fifo[50]; 
@@ -43,7 +43,7 @@
             float sum; 
             float average; 
             float current; 
-        } slopeRun; 
+        } deltaYPerSample; 
         struct SCRCMathAverageValue { 
             unsigned int samples; 
             float fifo[50]; 
@@ -51,18 +51,18 @@
             float sum; 
             float average; 
             float current; 
-        } distance; 
-        float velocityDistance; 
+        } distancePerSample; 
+        float distanceTraveledWithInertiaApplied; 
         BOOL dragStalled; 
         unsigned int type; 
         struct CGPoint { 
             float x; 
             float y; 
-        } startPoint; 
+        } startTouchPoint; 
         struct CGPoint { 
             float x; 
             float y; 
-        } lastPoint; 
+        } mostRecentTouchPoint; 
         struct CGPoint { 
             float x; 
             float y; 
@@ -102,8 +102,7 @@
     }  _mainFrame;
     float  _maxDimension;
     int  _orientation;
-    int  _previousState;
-    double  _requireDelayBeforeTracking;
+    double  _potentialTrackingStartTimestamp;
     BOOL  _requireUp;
     float  _scaledTrackingDistance;
     BOOL  _setTrackingTimer;
@@ -135,14 +134,13 @@
     float  _stallDistance;
     float  _startDegrees;
     float  _startDistance;
-    BOOL  _startedInGutter;
     int  _state;
     struct { 
-        BOOL down; 
+        BOOL isFingerCurrentlyDown; 
         BOOL dead; 
-        BOOL gutter; 
-        unsigned int current; 
-        unsigned int digits; 
+        BOOL gutterHasBeenTouched; 
+        unsigned int numFingersInCurrentGestureEvent; 
+        unsigned int totalNumFingersInGesture; 
         unsigned int count; 
         struct CGRect { 
             struct CGPoint { 
@@ -162,7 +160,6 @@
             float x; 
             float y; 
         } locationPerTap[8]; 
-        unsigned int digitsPerTap; 
         double thisTime; 
         double lastTime; 
     }  _tap;
@@ -202,7 +199,6 @@
     double  _tapVelocityThreshold;
     double  _tapVelocityThresholdForRegion;
     float  _thumbRegion;
-    float  _thumbRejectionDistance;
     BOOL  _thumbRejectionEnabled;
     SCRCTargetSelectorTimer * _trackingTimer;
 }
@@ -223,6 +219,7 @@
 - (void)_updateStartWithPoint:(struct CGPoint { float x1; float x2; })arg1 time:(double)arg2;
 - (void)_updateTapState;
 - (unsigned int)absoluteFingerCount;
+- (/* Warning: unhandled struct encoding: '{?=iiffffIIIc{CGPoint=ff}fff{CGPoint=ff}{CGPoint=ff}{CGPoint=ff}{CGRect={CGPoint=ff}{CGSize=ff}}{CGRect={CGPoint=ff}{CGSize=ff}}{CGPoint=ff}{CGPoint=ff}d@}' */ struct { int x1; int x2; float x3; float x4; float x5; float x6; unsigned int x7; unsigned int x8; unsigned int x9; BOOL x10; struct CGPoint { float x_11_1_1; float x_11_1_2; } x11; float x12; float x13; float x14; struct CGPoint { float x_15_1_1; float x_15_1_2; } x15; struct CGPoint { float x_16_1_1; float x_16_1_2; } x16; struct CGPoint { float x_17_1_1; float x_17_1_2; } x17; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_18_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_18_1_2; } x18; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_19_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_19_1_2; } x19; struct CGPoint { float x_20_1_1; float x_20_1_2; } x20; struct CGPoint { float x_21_1_1; float x_21_1_2; } x21; double x22; id x23; })captureCurrentState;
 - (void)dealloc;
 - (int)direction;
 - (float)directionalSlope;
@@ -235,7 +232,7 @@
 - (float)flickSpeed;
 - (int)gestureState;
 - (id)gestureStateString;
-- (void)handleGestureEvent:(id)arg1;
+- (/* Warning: unhandled struct encoding: '{?=iiffffIIIc{CGPoint=ff}fff{CGPoint=ff}{CGPoint=ff}{CGPoint=ff}{CGRect={CGPoint=ff}{CGSize=ff}}{CGRect={CGPoint=ff}{CGSize=ff}}{CGPoint=ff}{CGPoint=ff}d@}' */ struct { int x1; int x2; float x3; float x4; float x5; float x6; unsigned int x7; unsigned int x8; unsigned int x9; BOOL x10; struct CGPoint { float x_11_1_1; float x_11_1_2; } x11; float x12; float x13; float x14; struct CGPoint { float x_15_1_1; float x_15_1_2; } x15; struct CGPoint { float x_16_1_1; float x_16_1_2; } x16; struct CGPoint { float x_17_1_1; float x_17_1_2; } x17; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_18_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_18_1_2; } x18; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_19_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_19_1_2; } x19; struct CGPoint { float x_20_1_1; float x_20_1_2; } x20; struct CGPoint { float x_21_1_1; float x_21_1_2; } x21; double x22; id x23; })handleGestureEvent:(id)arg1;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 delegate:(id)arg2;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 delegate:(id)arg2 threadKey:(id)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })mainFrame;

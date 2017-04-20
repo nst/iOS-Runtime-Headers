@@ -54,6 +54,7 @@
 - (void)linkWithKeyboardController:(id)arg1;
 - (id)nextResponder;
 - (id)searchField;
+- (BOOL)searchFieldIsFocused;
 - (id)searchFieldTrailingConstraint;
 - (void)searchForSuggestedQuery:(id)arg1;
 - (void)setCancelButton:(id)arg1;

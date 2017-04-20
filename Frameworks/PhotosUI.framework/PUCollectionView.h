@@ -4,7 +4,7 @@
 
 @interface PUCollectionView : UICollectionView <UIGestureRecognizerDelegate> {
     _UIFeedbackDragSnappingBehavior * __feedbackDragBehavior;
-    PUAutoScroller * _autoScroller;
+    PXUIAutoScroller * _autoScroller;
     UILongPressGestureRecognizer * _dragGestureRecognizer;
     NSIndexPath * _dragSourceIndexPath;
     NSIndexPath * _dragTargetIndexPath;

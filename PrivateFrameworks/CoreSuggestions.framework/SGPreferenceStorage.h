@@ -12,6 +12,7 @@
 + (BOOL)detectContacts;
 + (BOOL)detectNLEvents;
 + (BOOL)detectStructuredEvents;
++ (int)hashedSessionsLogging;
 + (int)messagesToProcessImmediately;
 + (BOOL)onlyShowSignificantNLEvents;
 + (BOOL)onlyShowSignificantPseudoContacts;
@@ -28,6 +29,7 @@
 + (void)setDetectStructuredEvents:(BOOL)arg1;
 + (void)setFirstPartyCalendarAppIsInstalled:(BOOL)arg1;
 + (void)setFirstPartyMailAppIsInstalled:(BOOL)arg1;
++ (void)setHashedSessionsLogging:(int)arg1;
 + (void)setHidePastEventsForTests:(BOOL)arg1;
 + (void)setMessagesToProcessImmediately:(int)arg1;
 + (void)setMessagesToProcessImmediatelyForTests:(int)arg1;

@@ -6,13 +6,13 @@
     WBSFormAutoFillClassificationToCorrectionsTransformer * _classificationToCorrectionsTransformer;
     <WBSFormFieldClassificationCorrectorDelegate> * _delegate;
     NSString * _domain;
-    NSDictionary * _formMetadata;
+    WBSFormMetadata * _formMetadata;
     NSDictionary * _formValues;
 }
 
 @property (nonatomic) <WBSFormFieldClassificationCorrectorDelegate> *delegate;
 @property (nonatomic, readonly, copy) NSString *domain;
-@property (nonatomic, readonly, copy) NSDictionary *formMetadata;
+@property (nonatomic, readonly, copy) WBSFormMetadata *formMetadata;
 @property (nonatomic, readonly, copy) NSDictionary *formValues;
 
 - (void).cxx_destruct;

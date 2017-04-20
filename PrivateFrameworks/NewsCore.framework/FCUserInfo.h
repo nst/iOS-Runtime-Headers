@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCUserInfo : FCPrivateZoneController <FCAppConfigurationObserving, FCTagSettingsDelegate> {
+@interface FCUserInfo : FCPrivateZoneController <FCTagSettingsDelegate> {
     NSDate * _dateLastResetMeteredCount;
     BOOL  _iCloudAccountChanged;
     FCTagSettings * _tagSettings;
     NSNumber * _totalMeteredCount;
     BOOL  _useParsecResults;
-    NTPBWidgetConfig * _widgetConfiguration;
 }
 
 @property (nonatomic, copy) NSDate *dateLastOpened;
@@ -18,17 +17,16 @@
 @property (nonatomic, copy) NSString *feldsparID;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL iCloudAccountChanged;
+@property (nonatomic, readonly) BOOL mightNeedToUpdateOnboardingVersion;
 @property (nonatomic, copy) NSNumber *monthlyMeteredCount;
 @property (nonatomic, readonly, copy) NSString *notificationsUserID;
 @property (nonatomic, copy) NSNumber *onboardingVersionNumber;
-@property (nonatomic, readonly) int personalizationTreatmentID;
 @property (nonatomic, readonly) BOOL shouldShowDefaultForYou;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) FCTagSettings *tagSettings;
 @property (nonatomic, copy) NSNumber *totalMeteredCount;
 @property (nonatomic, readonly) BOOL useParsecResults;
 @property (nonatomic, copy) NSDate *userStartDate;
-@property (nonatomic, retain) NTPBWidgetConfig *widgetConfiguration;
 
 + (int)commandQueueUrgency;
 + (id)commandStoreFileName;
@@ -48,7 +46,6 @@
 - (void)accessTokenDidChangeForTagID:(id)arg1;
 - (void)addModifyTagSettingsCommandToCommandQueue:(id)arg1;
 - (void)addObserver:(id)arg1;
-- (void)appConfigurationDidChange:(id)arg1;
 - (id)dateLastOpened;
 - (id)dateLastResetMeteredCount;
 - (id)feldsparID;
@@ -59,10 +56,10 @@
 - (id)initWithContext:(id)arg1 pushNotificationCenter:(id)arg2 recordZone:(id)arg3 storeDirectory:(id)arg4 iCloudAccountChanged:(BOOL)arg5;
 - (void)loadLocalCachesFromStore;
 - (void)maybeUpdateOnboardingVersion:(id /* block */)arg1;
+- (BOOL)mightNeedToUpdateOnboardingVersion;
 - (id)monthlyMeteredCount;
 - (id)notificationsUserID;
 - (id)onboardingVersionNumber;
-- (int)personalizationTreatmentID;
 - (void)prepareForUse;
 - (void)removeObserver:(id)arg1;
 - (void)setDateLastOpened:(id)arg1;
@@ -74,7 +71,6 @@
 - (void)setTagSettings:(id)arg1;
 - (void)setTotalMeteredCount:(id)arg1;
 - (void)setUserStartDate:(id)arg1;
-- (void)setWidgetConfiguration:(id)arg1;
 - (BOOL)shouldShowDefaultForYou;
 - (void)syncLocalNotificationsUserID:(id)arg1 withRemoteNotificationsUserID:(id)arg2;
 - (void)syncWithCompletion:(id /* block */)arg1;
@@ -83,6 +79,5 @@
 - (BOOL)useParsecResults;
 - (id)userStartDate;
 - (void)validateIsMeteredLimitReachedWithArticleID:(id)arg1 completion:(id /* block */)arg2;
-- (id)widgetConfiguration;
 
 @end

@@ -177,6 +177,7 @@
 - (BOOL)buildingFootprintsDisabled;
 - (struct shared_ptr<md::FeatureMarker> { struct FeatureMarker {} *x1; struct __shared_weak_count {} *x2; })buildingMarkerAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)canEnter3DMode;
+- (BOOL)canEnter3DModeFlyoverForTileSize:(int)arg1;
 - (BOOL)canRotate;
 - (BOOL)canShowFlyover;
 - (BOOL)canShowFlyoverAnimation;
@@ -202,6 +203,7 @@
 - (float)debugFramesPerSecond;
 - (void)debugHighlightFeatureMarker:(const struct shared_ptr<md::FeatureMarker> { struct FeatureMarker {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
 - (void)debugHighlightLabelAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)debugLabelString:(BOOL)arg1;
 - (BOOL)debugLayoutContinuously;
 - (void)debugRunPerformanceTestWithOutputHeader:(id)arg1;
 - (void)deselectLabelMarker;
@@ -461,7 +463,8 @@
 - (id)transitLineMarkersForSelectionAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)transitLineMarkersInCurrentViewport;
 - (BOOL)transitLinesDisabled;
-- (void)transitionToTracking:(BOOL)arg1 mapMode:(int)arg2 startLocation:(struct { double x1; double x2; })arg3 pounceCompletionHandler:(id /* block */)arg4;
+- (void)transitionToTracking:(BOOL)arg1 mapMode:(int)arg2 startLocation:(struct { double x1; double x2; })arg3 startCourse:(double)arg4 pounceCompletionHandler:(id /* block */)arg5;
+- (void)updateAnalyticsOnEnteringForeground;
 - (BOOL)updateDisplayLinkStatus;
 - (void)updateOnscreenTimestamps;
 - (void)updatePanWithTranslation:(struct CGPoint { float x1; float x2; })arg1;

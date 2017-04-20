@@ -11,6 +11,7 @@
 @property (nonatomic) BOOL requiresLocalBootstrapScript;
 @property (nonatomic) BOOL supportsFullApplicationReload;
 @property (nonatomic) int tabBarControllerStyle;
+@property (nonatomic) BOOL useTransientStorageForTests;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setBootstrapScriptFallbackEnabled:(BOOL)arg1;
@@ -20,5 +21,6 @@
 - (void)setRequiresLocalBootstrapScript:(BOOL)arg1;
 - (void)setSupportsFullApplicationReload:(BOOL)arg1;
 - (void)setTabBarControllerStyle:(int)arg1;
+- (void)setUseTransientStorageForTests:(BOOL)arg1;
 
 @end

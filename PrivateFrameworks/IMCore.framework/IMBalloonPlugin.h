@@ -69,6 +69,7 @@
 - (id)messageToDatasourceMap;
 - (void)moveController:(id)arg1 toReusePoolFromChatItem:(id)arg2;
 - (BOOL)pluginLoaded;
+- (void)removeController:(id)arg1 forChatItem:(id)arg2;
 - (void)setBalloonControllerPool:(id)arg1;
 - (void)setBrowserClass:(Class)arg1;
 - (void)setBrowserDisplayName:(id)arg1;

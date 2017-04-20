@@ -17,13 +17,17 @@
 @property (nonatomic) BOOL hasDeviceType;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 + (id)options;
 
 - (void).cxx_destruct;
+- (int)StringAsDeviceType:(id)arg1;
 - (id)contact;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (int)deviceType;
+- (id)deviceTypeAsString:(int)arg1;
 - (id)dictionaryRepresentation;
 - (BOOL)hasContact;
 - (BOOL)hasDeviceType;
@@ -36,5 +40,11 @@
 - (void)setHasDeviceType:(BOOL)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

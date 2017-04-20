@@ -24,6 +24,10 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)pitch;
 - (unsigned int)pkMapType;
+- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })ppt_cityMapRect;
+- (void)ppt_performPlacesScrollTest:(id)arg1 iterations:(int)arg2 screenDelta:(int)arg3 delay:(double)arg4 completion:(id /* block */)arg5;
+- (void)ppt_performPlacesZoomTest:(id)arg1 iterations:(int)arg2 delay:(double)arg3 completion:(id /* block */)arg4;
+- (id /* block */)ppt_visibleMapRectBlockForQueue:(id)arg1 delay:(double)arg2;
 - (void)setPitch:(float)arg1;
 - (void)setPkMapType:(unsigned int)arg1;
 - (double)zoomLevel;

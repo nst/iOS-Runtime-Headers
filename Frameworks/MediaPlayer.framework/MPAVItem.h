@@ -43,8 +43,7 @@
     float  _loudnessInfoVolumeNormalization;
     unsigned int  _lyricsAvailable;
     MPMediaItem * _mediaItem;
-    MPModelObject * _modelObject;
-    MPModelSong * _modelSong;
+    MPModelGenericObject * _modelGenericObject;
     int  _playbackMode;
     MPAVController * _player;
     struct { 
@@ -54,10 +53,9 @@
         long long epoch; 
     }  _playerItemDuration;
     <MPAVItemPlaylistIdentifier> * _playlistIdentifier;
-    BOOL  _prefersHLS;
+    BOOL  _prefersSeekOverSkip;
     <MPAVItemQueueIdentifier> * _queueIdentifier;
     double  _seekableTimeRangesCacheTime;
-    BOOL  _shouldUseStreamingRedownload;
     float  _soundCheckVolumeNormalization;
     long long  _storeItemInt64ID;
     long long  _storeSubscriptionAdamID;
@@ -134,6 +132,7 @@
 @property (nonatomic, readonly) BOOL isCloudItem;
 @property (nonatomic, readonly) BOOL isRadioItem;
 @property (nonatomic, readonly) BOOL isStreamingLowQualityAsset;
+@property (nonatomic, readonly, copy) NSError *lastResourceLoadingError;
 @property (nonatomic) int likedState;
 @property (getter=isLikedStateEnabled, nonatomic, readonly) BOOL likedStateEnabled;
 @property (nonatomic) BOOL limitReadAhead;
@@ -142,8 +141,7 @@
 @property (nonatomic, readonly) NSString *lyrics;
 @property (nonatomic, readonly) NSString *mainTitle;
 @property (nonatomic, readonly, retain) MPMediaItem *mediaItem;
-@property (nonatomic, readonly) MPModelObject *modelObject;
-@property (nonatomic, readonly) MPModelSong *modelSong;
+@property (nonatomic, readonly) MPModelGenericObject *modelGenericObject;
 @property (nonatomic, readonly) long long mpcReporting_equivalencySourceAdamID;
 @property (nonatomic, readonly) BOOL mpcReporting_isValidReportingItem;
 @property (nonatomic, readonly) unsigned int mpcReporting_itemType;
@@ -163,12 +161,11 @@
 @property (nonatomic, retain) AVPlayerItem *playerItem;
 @property (nonatomic, retain) <MPAVItemPlaylistIdentifier> *playlistIdentifier;
 @property (nonatomic, readonly) NSURL *podcastURL;
-@property (setter=_setPrefersHLS:, nonatomic) BOOL prefersHLS;
+@property (nonatomic, readonly) BOOL prefersSeekOverSkip;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } presentationSize;
 @property (nonatomic, retain) <MPAVItemQueueIdentifier> *queueIdentifier;
 @property (nonatomic, readonly) RadioTrack *radioTrack;
 @property (nonatomic, retain) MPAlternateTextTrack *selectedAlternateTextTrack;
-@property (setter=_setShouldUseStreamingRedownload:, nonatomic) BOOL shouldUseStreamingRedownload;
 @property (nonatomic) float soundCheckVolumeNormalization;
 @property (nonatomic, readonly) int status;
 @property (nonatomic, readonly) MPStoreDownload *storeDownload;
@@ -235,8 +232,6 @@
 - (void)_setCurrentPlaybackRate:(float)arg1;
 - (void)_setListeningForCaptionsAppearanceSettingsChanged:(BOOL)arg1;
 - (void)_setNeedsPersistedLikedStateUpdate;
-- (void)_setPrefersHLS:(BOOL)arg1;
-- (void)_setShouldUseStreamingRedownload:(BOOL)arg1;
 - (id)_timeMarkerFromMarkers:(id)arg1 forTime:(double)arg2;
 - (void)_updateSoundCheckVolumeNormalizationForPlayerItem;
 - (void)_willBecomeActivePlayerItem;
@@ -315,6 +310,7 @@
 - (BOOL)isStreamingLowQualityAsset;
 - (BOOL)isSupportedDefaultPlaybackSpeed:(int)arg1;
 - (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
+- (id)lastResourceLoadingError;
 - (int)likedState;
 - (BOOL)limitReadAhead;
 - (void)loadAssetAndPlayerItem;
@@ -325,8 +321,7 @@
 - (id)lyrics;
 - (id)mainTitle;
 - (id)mediaItem;
-- (id)modelObject;
-- (id)modelSong;
+- (id)modelGenericObject;
 - (struct CGSize { float x1; float x2; })naturalSize;
 - (void)notePlaybackFinishedByHittingEnd;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
@@ -341,7 +336,7 @@
 - (id)playerItem;
 - (id)playlistIdentifier;
 - (id)podcastURL;
-- (BOOL)prefersHLS;
+- (BOOL)prefersSeekOverSkip;
 - (void)prepareForRate:(float)arg1 completionHandler:(id /* block */)arg2;
 - (struct CGSize { float x1; float x2; })presentationSize;
 - (id)queueIdentifier;
@@ -385,7 +380,6 @@
 - (void)setUserSkippedPlayback:(BOOL)arg1;
 - (void)setupEQPresetWithDefaultPreset:(int)arg1;
 - (void)setupPlaybackInfo;
-- (BOOL)shouldUseStreamingRedownload;
 - (float)soundCheckVolumeNormalization;
 - (int)status;
 - (id)storeDownload;

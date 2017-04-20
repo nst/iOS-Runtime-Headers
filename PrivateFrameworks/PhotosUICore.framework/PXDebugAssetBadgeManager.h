@@ -26,7 +26,7 @@
 - (void)_setMiroCurationAssets:(id)arg1;
 - (void)_setPhotosGraphCurationAssets:(id)arg1;
 - (void)_updateAssets;
-- (unsigned int)badgeTypeForAsset:(id)arg1;
+- (struct PXAssetBadgeInfo { unsigned int x1; double x2; int x3; })badgeInfoForAsset:(id)arg1 inCollection:(id)arg2 options:(unsigned int)arg3;
 - (void)dealloc;
 - (id)photosDataSource;
 - (void)photosDataSource:(id)arg1 didChange:(id)arg2;

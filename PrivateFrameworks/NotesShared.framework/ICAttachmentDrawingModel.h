@@ -35,7 +35,9 @@
 - (id)previewItemURL;
 - (void)saveDrawing:(id)arg1 withImage:(struct UIImage { Class x1; }*)arg2 forImageDrawing:(id)arg3;
 - (id)sharedDrawingController;
+- (BOOL)shouldSyncPreviewImageToCloud:(id)arg1;
 - (BOOL)showThumbnailInNoteList;
+- (BOOL)supportsQuickLook;
 - (void)writeMergeableData;
 
 @end

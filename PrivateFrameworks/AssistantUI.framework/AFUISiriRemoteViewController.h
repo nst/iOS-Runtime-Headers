@@ -36,12 +36,15 @@
 - (void)notifyOnNextUserInteraction;
 - (void)pulseHelpButton;
 - (void)serviceBulletinWithIdentifier:(id)arg1 replyHandler:(id /* block */)arg2;
-- (void)serviceCanLoadPreviousConversation:(id /* block */)arg1;
 - (void)serviceDidDetectMicButtonLongPressBegan;
 - (void)serviceDidDetectMicButtonLongPressEnded;
 - (void)serviceDidDetectMicButtonTap;
 - (void)serviceDidDismissBugReporter;
+- (void)serviceDidEnterUITrackingMode;
+- (void)serviceDidExitUITrackingMode;
+- (void)serviceDidFinishTest:(id)arg1;
 - (void)serviceDidPresentBugReporter;
+- (void)serviceDidPresentConversationFromBreadcrumb;
 - (void)serviceDidPresentUserInterface;
 - (void)serviceDidReadBulletinWithIdentifier:(id)arg1;
 - (void)serviceLastAppUpdateTimeWithReplyHandler:(id /* block */)arg1;
@@ -55,6 +58,7 @@
 - (void)serviceUserRelevantEventDidOccur;
 - (void)serviceWillDismissViewControllerWithStatusBarStyle:(int)arg1;
 - (void)serviceWillPresentViewControllerWithStatusBarStyle:(int)arg1;
+- (void)serviceWillStartTest:(id)arg1;
 - (id)sessionDelegate;
 - (void)setBugReportingAvailable:(BOOL)arg1;
 - (void)setCarDisplayGatekeeperVisible:(BOOL)arg1;
@@ -72,7 +76,7 @@
 - (void)setStatusViewHidden:(BOOL)arg1;
 - (void)setStatusViewUserInteractionEnabled:(BOOL)arg1;
 - (void)setViewServiceApplicationInfo:(id)arg1;
-- (void)showPresentationWithIdentifier:(id)arg1 properties:(id)arg2;
+- (void)showPresentationWithIdentifier:(id)arg1 properties:(id)arg2 lockState:(unsigned int)arg3;
 - (void)siriDidActivateFromSource:(int)arg1;
 - (void)siriDidDeactivate;
 - (void)siriDidHidePasscodeUnlock;

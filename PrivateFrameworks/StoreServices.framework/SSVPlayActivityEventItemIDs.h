@@ -9,6 +9,8 @@
     long long  _purchasedAdamID;
     long long  _radioAdamID;
     long long  _subscriptionAdamID;
+    long long  _tvShowPurchasedAdamID;
+    long long  _tvShowSubscriptionAdamID;
 }
 
 @property (nonatomic, readonly) unsigned long long cloudID;
@@ -17,6 +19,8 @@
 @property (nonatomic, readonly) long long purchasedAdamID;
 @property (nonatomic, readonly) long long radioAdamID;
 @property (nonatomic, readonly) long long subscriptionAdamID;
+@property (nonatomic, readonly) long long tvShowPurchasedAdamID;
+@property (nonatomic, readonly) long long tvShowSubscriptionAdamID;
 
 + (BOOL)supportsSecureCoding;
 
@@ -33,5 +37,7 @@
 - (long long)purchasedAdamID;
 - (long long)radioAdamID;
 - (long long)subscriptionAdamID;
+- (long long)tvShowPurchasedAdamID;
+- (long long)tvShowSubscriptionAdamID;
 
 @end

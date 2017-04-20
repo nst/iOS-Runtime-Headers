@@ -30,11 +30,12 @@
 - (void)closeConnection;
 - (void)commitFavoritesSerializedRepresentation:(id)arg1 completion:(id /* block */)arg2;
 - (void)commitHistorySerializedRepresentation:(id)arg1 completion:(id /* block */)arg2;
+- (void)eraseRAPData;
 - (void)favoritesDidChange;
 - (void)fetchCurrentAnnouncement:(id /* block */)arg1;
 - (void)fetchDevicePushToken:(id /* block */)arg1;
-- (void)fetchFavoritesSerializedRepresentationWithCompletion:(id /* block */)arg1;
-- (void)fetchHistorySerializedRepresentationWithCompletion:(id /* block */)arg1;
+- (void)fetchFavoritesSerializedRepresentationFileHandleWithCompletion:(id /* block */)arg1;
+- (void)fetchHistorySerializedRepresentationFileHandleWithCompletion:(id /* block */)arg1;
 - (void)fetchProblemStatus;
 - (void)fetchUserRoutingPreferencesWithCompletion:(id /* block */)arg1;
 - (void)historyDidChange;
@@ -57,6 +58,7 @@
 - (void)showTransitAlightAlertWithTitle:(id)arg1 message:(id)arg2;
 - (void)simulateAnnouncement:(id)arg1;
 - (void)simulateProblemResolution;
+- (void)testByNotingHistoryChangedOnDisk;
 - (oneway void)updateMapsModelBackupAttributesIfNeeded;
 - (id)userRoutingPrefrencesFromSettingsWithFreshness:(double)arg1;
 

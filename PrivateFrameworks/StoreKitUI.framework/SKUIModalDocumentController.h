@@ -2,17 +2,19 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIModalDocumentController : NSObject <AAUIFamilySetupDelegate, SKComposeReviewDelegate, SKUIGiftViewControllerDelegate, SKUIModalDocumentController, SKUIOverlayContainerDelegate, UIPopoverControllerDelegate, UIPopoverPresentationControllerDelegate> {
+@interface SKUIModalDocumentController : NSObject <AAUIFamilySetupDelegate, SKUIComposeReviewDelegate, SKUIGiftViewControllerDelegate, SKUIModalDocumentController, SKUIOverlayContainerDelegate, UIPopoverControllerDelegate, UIPopoverPresentationControllerDelegate> {
     SKUIClientContext * _clientContext;
     NSMutableArray * _composeReviewViewControllers;
     <SKUIModalDocumentDataSource> * _dataSource;
     <SKUIModalDocumentDelegate> * _delegate;
+    SKUIStoreDialogController * _dialogController;
     NSMutableArray * _giftViewControllers;
     <SKUIModalSourceViewProvider> * _modalSourceViewProvider;
     <UINavigationControllerDelegate> * _navigationControllerDelegate;
     UINavigationController * _overlayNavigationController;
     SKUIOverlayContainerViewController * _overlayViewController;
     UIPopoverController * _popoverController;
+    SKUIReportAConcernViewController * _reportAConcernViewController;
     UIViewController * _rootViewController;
     NSMutableArray * _stackItems;
 }
@@ -33,9 +35,11 @@
 
 - (void).cxx_destruct;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_centerRect:(id)arg1 adjust:(BOOL)arg2;
+- (void)_composeReviewViewControllerDidFinish:(id)arg1 finished:(BOOL)arg2;
 - (void)_dismissOverlayControllerWithStackItem:(id)arg1 animated:(BOOL)arg2;
 - (void)_garbageCollectActivityViewController:(id)arg1;
 - (id)_imageForImageViewElement:(id)arg1;
+- (id)_modalSourceViewProviderFromStackItems;
 - (void)_overlayControllerBackstopAction:(id)arg1;
 - (id)_overlayNavigationController;
 - (id)_overlayStackItems;
@@ -45,9 +49,11 @@
 - (void)_popOverlayStackItem:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)_popPopoverStackItem:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (BOOL)_popoverController:(id)arg1 containsStackItem:(id)arg2;
+- (void)_presentAlertForDialog:(id)arg1;
 - (void)_presentOverlayViewControllersFromNavigationController:(id)arg1;
 - (id)_presenterViewController;
 - (void)_presetPopoverSheetDocument:(id)arg1 viewController:(id)arg2 popoverPresentationController:(id)arg3;
+- (void)_promptForStarRating:(id)arg1;
 - (void)_pushCharityDocument:(id)arg1 options:(id)arg2;
 - (void)_pushDialogDocument:(id)arg1 options:(id)arg2;
 - (void)_pushFamilySetupDocument:(id)arg1 options:(id)arg2;
@@ -59,12 +65,16 @@
 - (void)_pushRedeemDocument:(id)arg1 options:(id)arg2;
 - (void)_pushSheetDocument:(id)arg1 viewController:(id)arg2;
 - (void)_pushSheetStackItem:(id)arg1;
-- (void)_pushWriteAReviewDocument:(id)arg1 viewController:(id)arg2;
 - (void)_sendDidFinishIfApplicable;
 - (id)_showOverlayContainerViewController;
 - (void)_unloadDocumentForPopoverController:(id)arg1;
 - (void)_unloadDocumentForViewController:(id)arg1;
 - (id)clientContext;
+- (void)composeReviewViewController:(id)arg1 didFailWithDialog:(id)arg2;
+- (void)composeReviewViewController:(id)arg1 didSubmitWithEdit:(BOOL)arg2;
+- (void)composeReviewViewController:(id)arg1 presentDialog:(id)arg2;
+- (BOOL)composeReviewViewController:(id)arg1 shouldSubmitReview:(id)arg2;
+- (void)composeReviewViewControllerDidCancel:(id)arg1;
 - (id)dataSource;
 - (void)dealloc;
 - (id)delegate;
@@ -87,7 +97,6 @@
 - (void)presentOverlayViewControllersFromNavigationController:(id)arg1;
 - (void)pushDocument:(id)arg1 options:(id)arg2;
 - (void)replaceDocument:(id)arg1 withDocument:(id)arg2 options:(id)arg3;
-- (void)reviewComposeViewControllerDidFinish:(id)arg1;
 - (id)rootViewController;
 - (void)setClientContext:(id)arg1;
 - (void)setDataSource:(id)arg1;

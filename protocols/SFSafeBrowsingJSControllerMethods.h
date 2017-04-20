@@ -10,6 +10,10 @@
 - (void)goBackSelected;
 - (void)ignoreWarningSelected;
 - (BOOL)isRTL;
+- (NSString *)learnMoreAboutPhishingURL:(NSString *)arg1;
 - (void)loaded;
+- (NSString *)malwareDetailsURL:(NSString *)arg1;
+- (NSString *)reportAnErrorURL:(NSString *)arg1;
+- (NSString *)safeBrowsingProviderString:(NSString *)arg1;
 
 @end

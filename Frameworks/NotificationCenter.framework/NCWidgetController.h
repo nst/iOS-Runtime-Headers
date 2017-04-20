@@ -10,6 +10,7 @@
 @property (getter=_connection, setter=_setConnection:, nonatomic, retain) NSXPCConnection *connection;
 @property (getter=_strongReference, setter=_setStrongReference:, nonatomic, retain) NCWidgetController *strongReference;
 
++ (id)widgetContentUnavailableViewWithButtonTitle:(id)arg1 buttonAction:(id /* block */)arg2;
 + (id)widgetContentUnavailableViewWithTitle:(id)arg1;
 + (id)widgetController;
 

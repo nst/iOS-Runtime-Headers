@@ -4,6 +4,7 @@
 
 @interface CDPDLocalDevice : NSObject
 
++ (id)deviceName;
 + (BOOL)hasLocalSecret;
 + (id)modelClass;
 + (id)serialNumber;

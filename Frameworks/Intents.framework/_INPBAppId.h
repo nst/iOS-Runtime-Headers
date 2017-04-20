@@ -11,7 +11,7 @@
 @property (nonatomic, readonly) BOOL hasBundleId;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
-+ (id)options;
+// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 - (void).cxx_destruct;
 - (id)bundleId;
@@ -26,5 +26,11 @@
 - (void)setBundleId:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

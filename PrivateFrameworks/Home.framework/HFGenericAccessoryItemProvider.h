@@ -11,6 +11,7 @@
 @property (nonatomic, retain) NSMutableSet *genericItems;
 
 - (void).cxx_destruct;
+- (BOOL)_supportsCreatingAccessoryItemForAccessory:(id)arg1;
 - (id /* block */)filter;
 - (id)genericItems;
 - (id)initWithHome:(id)arg1;

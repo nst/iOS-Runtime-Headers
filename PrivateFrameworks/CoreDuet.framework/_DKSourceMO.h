@@ -4,10 +4,14 @@
 
 @interface _DKSourceMO : NSManagedObject
 
-@property (nonatomic, retain) NSString *bundleId;
-@property (nonatomic, retain) NSString *deviceId;
-@property (nonatomic, retain) NSSet *object;
-@property (nonatomic) long long sourceHash;
-@property (nonatomic) short userId;
+@property (nonatomic, copy) NSString *bundleID;
+@property (nonatomic, copy) NSString *deviceID;
+@property (nonatomic, copy) NSString *groupID;
+@property (nonatomic, copy) NSString *itemID;
+@property (nonatomic, retain) NSSet *product;
+@property (nonatomic, copy) NSString *sourceID;
+@property (nonatomic, copy) NSNumber *userID;
+
++ (id)fetchRequest;
 
 @end

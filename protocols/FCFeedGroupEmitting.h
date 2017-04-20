@@ -13,6 +13,7 @@
 
 @optional
 
+- (NSString *)backingChannelTagIDWithAppConfig:(FCAppConfiguration *)arg1;
 - (BOOL)canMergeGroupsUnconditionally;
 - (BOOL)canMergeHeadlinesFromGroup:(id <FCFeedGroupOutlining>)arg1 intoGroup:(id <FCFeedGroupOutlining>)arg2;
 - (BOOL)emitsSingletonGroups;

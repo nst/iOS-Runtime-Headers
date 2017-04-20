@@ -4,6 +4,7 @@
 
 @interface GEOTimestampData : PBCodable <GEOServerFormatTokenTimeStampValue, NSCopying> {
     BOOL  _displayTimezone;
+    NSString * _formatPattern;
     struct { 
         unsigned int timestampVal : 1; 
         unsigned int displayTimezone : 1; 
@@ -14,9 +15,11 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL displayTimeZone;
 @property (nonatomic) BOOL displayTimezone;
+@property (nonatomic, readonly) NSString *formatPattern;
+@property (nonatomic, retain) NSString *formatPattern;
 @property (nonatomic) BOOL hasDisplayTimezone;
+@property (nonatomic, readonly) BOOL hasFormatPattern;
 @property (nonatomic) BOOL hasTimestampVal;
 @property (nonatomic, readonly) BOOL hasTimezone;
 @property (readonly) unsigned int hash;
@@ -33,7 +36,9 @@
 - (id)dictionaryRepresentation;
 - (BOOL)displayTimeZone;
 - (BOOL)displayTimezone;
+- (id)formatPattern;
 - (BOOL)hasDisplayTimezone;
+- (BOOL)hasFormatPattern;
 - (BOOL)hasTimestampVal;
 - (BOOL)hasTimezone;
 - (unsigned int)hash;
@@ -41,6 +46,7 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setDisplayTimezone:(BOOL)arg1;
+- (void)setFormatPattern:(id)arg1;
 - (void)setHasDisplayTimezone:(BOOL)arg1;
 - (void)setHasTimestampVal:(BOOL)arg1;
 - (void)setTimestampVal:(unsigned int)arg1;

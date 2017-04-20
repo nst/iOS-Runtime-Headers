@@ -4,13 +4,11 @@
 
 @interface ASDJobManifest : NSObject <NSCopying, NSSecureCoding> {
     NSMutableArray * _activities;
-    NSString * _clientID;
     int  _manifestType;
     NSNumber * _purchaseID;
     NSString * _storeCorrelationID;
 }
 
-@property (nonatomic, copy) NSString *clientID;
 @property (nonatomic, readonly) int manifestType;
 @property (nonatomic, copy) NSNumber *purchaseID;
 @property (nonatomic, copy) NSString *storeCorrelationID;
@@ -22,7 +20,6 @@
 - (id)_generateIdentifier;
 - (id)addActivity:(id)arg1;
 - (void)addActivity:(id)arg1 withIdentifier:(id)arg2;
-- (id)clientID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
 - (id)description;
@@ -33,7 +30,6 @@
 - (id)initWithManifestType:(int)arg1;
 - (int)manifestType;
 - (id)purchaseID;
-- (void)setClientID:(id)arg1;
 - (void)setPurchaseID:(id)arg1;
 - (void)setStoreCorrelationID:(id)arg1;
 - (id)storeCorrelationID;

@@ -56,6 +56,7 @@
 - (id)initFromResultSet:(id)arg1 pos:(int)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithVersion:(id)arg1;
+- (BOOL)isEtagEqual:(id)arg1;
 - (BOOL)isPackage;
 - (BOOL)isSmallAndMostRecentClientsGenerateThumbnails;
 - (id)lastEditorDeviceDisplayNameWithDB:(id)arg1;

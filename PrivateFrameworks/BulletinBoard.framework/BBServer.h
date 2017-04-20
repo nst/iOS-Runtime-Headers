@@ -81,6 +81,7 @@
 
 + (id)_dataDirectoryPath;
 + (BOOL)_removeSavedChronologicalSectionInfos:(id)arg1;
++ (BOOL)_sanitizeSectionInfo:(id)arg1;
 + (id)_sectionIdentifiersForNonDefaultSectionCategoriesFromSectionInfos:(id)arg1;
 + (id)_sectionIdentifiersForWeeAppsFromSectionInfos:(id)arg1;
 + (id)_sectionInfoPath;

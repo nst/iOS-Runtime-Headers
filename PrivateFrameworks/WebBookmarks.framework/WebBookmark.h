@@ -16,6 +16,7 @@
     BOOL  _inserted;
     NSDictionary * _localAttributes;
     BOOL  _locallyAdded;
+    unsigned long long  _modifiedAttributes;
     BOOL  _needsSyncUpdate;
     unsigned int  _orderIndex;
     int  _parentID;
@@ -49,6 +50,7 @@
 @property (nonatomic, retain) NSDictionary *localAttributes;
 @property (nonatomic, retain) NSString *localPreviewText;
 @property (nonatomic) BOOL locallyAdded;
+@property (nonatomic, readonly) unsigned long long modifiedAttributes;
 @property (nonatomic) BOOL needsSyncUpdate;
 @property (nonatomic, retain) NSDictionary *nextPageURLs;
 @property (nonatomic, readonly) int parentID;
@@ -73,8 +75,10 @@
 
 - (void).cxx_destruct;
 - (id)UUID;
+- (BOOL)_attributesMarkedAsModified:(unsigned long long)arg1;
 - (id)_initWithSqliteRow:(struct sqlite3_stmt { }*)arg1;
 - (id)_initWithSqliteRow:(struct sqlite3_stmt { }*)arg1 hasIcon:(BOOL)arg2;
+- (void)_markAttributesAsModified:(unsigned long long)arg1;
 - (void)_markSpecial:(int)arg1;
 - (void)_modifyExtraReadingListAttributes:(id /* block */)arg1;
 - (void)_modifyLocalReadingListAttributes:(id /* block */)arg1;
@@ -135,6 +139,7 @@
 - (id)localPreviewText;
 - (id)localizedTitle;
 - (BOOL)locallyAdded;
+- (unsigned long long)modifiedAttributes;
 - (BOOL)needsSyncUpdate;
 - (id)nextPageURLs;
 - (int)parentID;

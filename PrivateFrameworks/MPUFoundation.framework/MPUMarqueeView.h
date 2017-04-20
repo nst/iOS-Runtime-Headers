@@ -3,6 +3,7 @@
  */
 
 @interface MPUMarqueeView : UIView <CAAnimationDelegate> {
+    int  _animationDirection;
     float  _contentGap;
     struct CGSize { 
         float width; 
@@ -26,6 +27,7 @@
     UIView * _viewForContentSize;
 }
 
+@property (nonatomic) int animationDirection;
 @property (nonatomic) float contentGap;
 @property (nonatomic) struct CGSize { float x1; float x2; } contentSize;
 @property (nonatomic, readonly) UIView *contentView;
@@ -49,6 +51,7 @@
 - (void)_tearDownMarqueeAnimation;
 - (void)addCoordinatedMarqueeView:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (int)animationDirection;
 - (float)contentGap;
 - (struct CGSize { float x1; float x2; })contentSize;
 - (id)contentView;
@@ -64,6 +67,7 @@
 - (double)marqueeDelay;
 - (double)marqueeScrollRate;
 - (void)resetMarqueePosition;
+- (void)setAnimationDirection:(int)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setContentGap:(float)arg1;
 - (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;

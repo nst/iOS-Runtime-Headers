@@ -11,7 +11,7 @@
     int  _type;
 }
 
-@property (nonatomic, readonly) unsigned int restriction;
+@property (nonatomic) unsigned int restriction;
 @property (getter=isSecure, nonatomic) BOOL secure;
 @property (nonatomic, retain) HMDHomeKitVersion *sourceVersion;
 @property (nonatomic, readonly) double timeout;
@@ -27,7 +27,9 @@
 - (BOOL)isRemoteSource;
 - (BOOL)isSecure;
 - (unsigned int)restriction;
+- (void)setInternalResponseHandler:(id /* block */)arg1;
 - (void)setResponseHandler:(id /* block */)arg1;
+- (void)setRestriction:(unsigned int)arg1;
 - (void)setSecure:(BOOL)arg1;
 - (void)setSourceVersion:(id)arg1;
 - (void)setTransactionIdentifier:(id)arg1;

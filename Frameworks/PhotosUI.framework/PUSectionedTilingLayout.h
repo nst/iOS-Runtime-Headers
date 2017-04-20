@@ -13,30 +13,32 @@
     }  _interSectionSpacing;
     BOOL  _leftToRight;
     int  _numberOfSections;
-    NSMutableDictionary * _sectionInfos;
+    struct _PUSectionedTilingLayoutSectionInfo { BOOL x1; int x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; } * _sectionInfos;
     int  _seedSection;
     struct CGPoint { 
         float x; 
         float y; 
     }  _seedSectionOrigin;
+    struct _PUSectionedTilingLayoutSectionInfo { BOOL x1; int x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; } * _zeroedSectionInfo;
 }
 
 @property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } computedSections;
 @property (nonatomic) struct CGSize { float x1; float x2; } interSectionSpacing;
 @property (nonatomic) BOOL leftToRight;
 
-- (void).cxx_destruct;
 - (void)_computeSeedSectionIfNeeded;
 - (void)_ensureComputedSectionsHaveBeenSeeded;
 - (void)_invalidateNumberOfSections;
+- (void)_markAllSectionInfosInvalid;
 - (int)_numberOfSections;
 - (BOOL)_scrollsHorizontallyNotVertically;
-- (id)_sectionInfoForSection:(int)arg1;
+- (struct _PUSectionedTilingLayoutSectionInfo { BOOL x1; int x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; }*)_sectionInfoForSection:(int)arg1;
 - (void)addLayoutInfosForTilesInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 section:(int)arg2 toSet:(id)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsForSection:(int)arg1;
 - (void)computeSectionsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })computedSections;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentBounds;
+- (void)dealloc;
 - (id)init;
 - (struct CGSize { float x1; float x2; })interSectionSpacing;
 - (void)invalidateLayoutForUpdateWithItems:(id)arg1;

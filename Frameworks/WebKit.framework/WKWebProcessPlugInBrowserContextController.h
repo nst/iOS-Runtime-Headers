@@ -3,6 +3,9 @@
  */
 
 @interface WKWebProcessPlugInBrowserContextController : NSObject <WKObject> {
+    /* Warning: unhandled struct encoding: '{WeakObjCPtr<id<WKWebProcessPlugInEditingDelegate> >="m_weakReference"@}' */ struct WeakObjCPtr<id<WKWebProcessPlugInEditingDelegate> > { 
+        id m_weakReference; 
+    }  _editingDelegate;
     /* Warning: unhandled struct encoding: '{WeakObjCPtr<id<WKWebProcessPlugInFormDelegatePrivate> >="m_weakReference"@}' */ struct WeakObjCPtr<id<WKWebProcessPlugInFormDelegatePrivate> > { 
         id m_weakReference; 
     }  _formDelegate;
@@ -11,7 +14,7 @@
     }  _loadDelegate;
     struct ObjectStorage<WebKit::WebPage> { 
         struct type { 
-            unsigned char __lx[1592]; 
+            unsigned char __lx[1640]; 
         } data; 
     }  _page;
     struct RetainPtr<_WKRemoteObjectRegistry> { 
@@ -22,6 +25,7 @@
 @property (readonly) /* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*_apiObject;
 @property (nonatomic, readonly) struct OpaqueWKBundlePage { }*_bundlePageRef;
 @property (setter=_setDefersLoading:, nonatomic) BOOL _defersLoading;
+@property (setter=_setEditingDelegate:) <WKWebProcessPlugInEditingDelegate> *_editingDelegate;
 @property (setter=_setFormDelegate:) <WKWebProcessPlugInFormDelegatePrivate> *_formDelegate;
 @property (nonatomic, readonly) _WKRemoteObjectRegistry *_remoteObjectRegistry;
 @property (nonatomic, readonly) BOOL _usesNonPersistentWebsiteDataStore;
@@ -43,9 +47,11 @@
 - (/* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (struct OpaqueWKBundlePage { }*)_bundlePageRef;
 - (BOOL)_defersLoading;
+- (id)_editingDelegate;
 - (id)_formDelegate;
 - (id)_remoteObjectRegistry;
 - (void)_setDefersLoading:(BOOL)arg1;
+- (void)_setEditingDelegate:(id)arg1;
 - (void)_setFormDelegate:(id)arg1;
 - (BOOL)_usesNonPersistentWebsiteDataStore;
 - (void)dealloc;

@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
  */
 
-@interface _TVProductTemplateController : _TVBgImageLoadingViewController <CAAnimationDelegate, TVAppTemplateImpressionable, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIPopoverPresentationControllerDelegate, _TVCollectionViewDelegate> {
-    UIViewController * _accessoryMarkerViewController;
+@interface _TVProductTemplateController : _TVBgImageLoadingViewController <CAAnimationDelegate, TVAppTemplateImpressionable, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIPopoverPresentationControllerDelegate> {
     NSIndexPath * _autoHighlightIndexPath;
-    UIView * _backdropAccessoryView;
+    IKViewElement * _backdropTintElement;
     UIView * _backdropTintView;
+    UIViewController * _backdropTintViewController;
     UIView * _backdropView;
     UIViewController * _bannerViewController;
     IKAudioElement * _bgAudioElement;
@@ -14,7 +14,7 @@
     UIImage * _bgImage;
     IKImageElement * _bgImageElement;
     UIImageView * _bgImageView;
-    _TVCollectionView * _collectionView;
+    UICollectionView * _collectionView;
     struct CGSize { 
         float width; 
         float height; 
@@ -55,7 +55,7 @@
 - (void)_cancelImpressionsUpdate;
 - (id)_canonicalIDForElement:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_cellMarginForIndex:(int)arg1 partialMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2;
-- (void)_configureBackgroundAccessoryView;
+- (void)_configureBackgroundTintView;
 - (void)_configureTopHeroImage:(id)arg1;
 - (void)_configureWithBannerElement:(id)arg1;
 - (void)_configureWithBgElement:(id)arg1;
@@ -65,9 +65,10 @@
 - (id)_relatedSectionHeaderView;
 - (id)_spacingMetricsForViewControllers:(id)arg1;
 - (struct CGSize { float x1; float x2; })_topHeroImageViewSize;
-- (void)_updateBackgroundAccessoryView;
-- (void)_updateBackgroundAccessoryViewEffects;
+- (void)_updateBackgroundTintView;
+- (void)_updateBackgroundTintViewEffects;
 - (void)_updateImpressions;
+- (void)_updateTopHeroImageVisibility:(id)arg1;
 - (id)_yOffsetForView:(id)arg1 withScrollView:(id)arg2 targetYOffset:(float)arg3;
 - (BOOL)animateAppearanceUpdate;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
@@ -82,7 +83,6 @@
 - (BOOL)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
-- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)impressionableElementsContainedInDocument:(id)arg1;
 - (id)indexPathForPreferredFocusedViewInCollectionView:(id)arg1;
 - (void)loadView;

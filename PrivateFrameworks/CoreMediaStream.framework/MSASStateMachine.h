@@ -101,6 +101,8 @@
 - (void)_didFinishCheckingUpdatesInAlbumsDisposition:(int)arg1 params:(id)arg2;
 - (void)_getAccessControlsDisposition:(int)arg1 params:(id)arg2;
 - (void)_getAlbumURLDisposition:(int)arg1 params:(id)arg2;
+- (void)_markAsSpamInvitationForAlbumDisposition:(int)arg1 params:(id)arg2;
+- (void)_markAsSpamInvitationForTokenDisposition:(int)arg1 params:(id)arg2;
 - (id)_metadataBackoffManager;
 - (id)_model;
 - (void)_removeSharingRelationshipsDisposition:(int)arg1 params:(id)arg2;
@@ -157,6 +159,8 @@
 - (BOOL)isInRetryState;
 - (BOOL)isRetryingOutstandingActivities;
 - (id)latestNextActivityDate;
+- (void)markAsSpamInvitationForAlbum:(id)arg1 invitationGUID:(id)arg2 info:(id)arg3;
+- (void)markAsSpamInvitationForToken:(id)arg1 info:(id)arg2;
 - (int)maxMetadataRetryCount;
 - (id)memberQueue;
 - (id)memberQueueMetadataBackoffManager;

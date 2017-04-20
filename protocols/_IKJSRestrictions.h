@@ -6,6 +6,9 @@
 @required
 
 - (BOOL)allowArtistActivity;
+- (BOOL)allowsITunes;
+- (BOOL)allowsShowingUndownloadedMovies;
+- (BOOL)allowsShowingUndownloadedTVShows;
 - (BOOL)appAnalyticsAllowed;
 - (BOOL)appInstallationAllowed;
 - (int)maxAppRank;

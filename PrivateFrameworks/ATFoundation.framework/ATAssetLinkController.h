@@ -24,9 +24,10 @@
 - (void)_assetsDidChange;
 - (BOOL)_canEnqueueAsset:(id)arg1;
 - (BOOL)_canEnqueueAsset:(id)arg1 onLink:(id)arg2;
-- (void)_cancelAsset:(id)arg1;
+- (void)_cancelAsset:(id)arg1 withError:(id)arg2;
 - (void)_finishAsset:(id)arg1 withError:(id)arg2;
 - (void)_performSelectorOnObservers:(SEL)arg1 object:(id)arg2 object:(id)arg3;
+- (void)_prioritizeAsset:(id)arg1 onLinkClass:(Class)arg2;
 - (void)addAssetLink:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (id)allAssetLinks;
@@ -39,12 +40,16 @@
 - (void)assetLink:(id)arg1 didUpdateAsset:(id)arg2 progress:(double)arg3;
 - (void)assetLinkDidChange:(id)arg1;
 - (void)cancelAllAssetsMatchingPredicate:(id)arg1;
-- (void)cancelAssets:(id)arg1;
+- (void)cancelAssets:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)cancelAssets:(id)arg1 withError:(id)arg2 completion:(id /* block */)arg3;
 - (void)dispatchBlockOnControllerQueue:(id /* block */)arg1;
+- (void)enqueueAssetForStoreDownload:(long long)arg1 withCompletion:(id /* block */)arg2;
 - (void)enqueueAssets:(id)arg1;
 - (void)enqueueAssets:(id)arg1 progress:(id /* block */)arg2 completion:(id /* block */)arg3;
+- (id)getNonEnqueuedAssets:(id)arg1;
 - (id)init;
 - (void)prioritizeAsset:(id)arg1;
+- (void)prioritizeAssetWithStoreForLibraryIdentifier:(long long)arg1 withCompletion:(id /* block */)arg2;
 - (void)removeAssetLink:(id)arg1;
 - (void)removeObserver:(id)arg1;
 

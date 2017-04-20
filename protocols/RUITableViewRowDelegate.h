@@ -5,7 +5,6 @@
 
 @required
 
-- (void)row:(RUITableViewRow *)arg1 activatedElement:(RUIElement *)arg2;
 - (void)rowDidChange:(RUITableViewRow *)arg1 action:(int)arg2;
 - (void)rowDidEndEditing:(RUITableViewRow *)arg1;
 - (void)rowIsFirstResponder:(RUITableViewRow *)arg1;

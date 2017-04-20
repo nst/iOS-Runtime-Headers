@@ -47,6 +47,7 @@
 @property (nonatomic, readonly) BOOL lastVisitWasHTTPNonGet;
 @property (nonatomic, readonly) NSDate *lastVisitedDate;
 @property (nonatomic, readonly) double lastVisitedTimeInterval;
+@property (nonatomic, readonly) double lastVisitedTimeIntervalOnSynchronizationQueue;
 @property (nonatomic, readonly) NSArray *redirectSourceItems;
 @property (nonatomic, readonly) BOOL shouldRecomputeDerivedVisitCountScores;
 @property (nonatomic, readonly) NSString *simplifiedUserVisibleURLString;
@@ -106,6 +107,7 @@
 - (BOOL)lastVisitWasHTTPNonGet;
 - (id)lastVisitedDate;
 - (double)lastVisitedTimeInterval;
+- (double)lastVisitedTimeIntervalOnSynchronizationQueue;
 - (void)mergeDataFromItem:(id)arg1;
 - (void)recomputeDerivedVisitCountScoresWithVisits:(id)arg1;
 - (void)recordExistingRedirectFrom:(id)arg1 to:(id)arg2;

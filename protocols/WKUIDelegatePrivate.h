@@ -11,6 +11,7 @@
 - (UIViewController *)_presentingViewControllerForWebView:(WKWebView *)arg1;
 - (NSArray *)_webView:(WKWebView *)arg1 actionsForElement:(_WKActivatedElementInfo *)arg2 defaultActions:(NSArray *)arg3;
 - (void)_webView:(WKWebView *)arg1 alternateActionForURL:(NSURL *)arg2;
+- (void)_webView:(void *)arg1 checkUserMediaPermissionForURL:(void *)arg2 mainFrameURL:(void *)arg3 frameIdentifier:(void *)arg4 decisionHandler:(void *)arg5; // needs 5 arg types, found 11: WKWebView *, NSURL *, NSURL *, unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSString *, BOOL, void*
 - (void)_webView:(WKWebView *)arg1 commitPreviewedImageWithURL:(NSURL *)arg2;
 - (void)_webView:(WKWebView *)arg1 commitPreviewedViewController:(UIViewController *)arg2;
 - (void)_webView:(void *)arg1 decideDatabaseQuotaForSecurityOrigin:(void *)arg2 currentQuota:(void *)arg3 currentOriginUsage:(void *)arg4 currentDatabaseUsage:(void *)arg5 expectedUsage:(void *)arg6 decisionHandler:(void *)arg7; // needs 7 arg types, found 12: WKWebView *, WKSecurityOrigin *, unsigned long long, unsigned long long, unsigned long long, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned long long, void*
@@ -25,13 +26,18 @@
 - (UIViewController *)_webView:(WKWebView *)arg1 previewViewControllerForURL:(NSURL *)arg2;
 - (UIViewController *)_webView:(WKWebView *)arg1 previewViewControllerForURL:(NSURL *)arg2 defaultActions:(NSArray *)arg3 elementInfo:(_WKActivatedElementInfo *)arg4;
 - (void)_webView:(WKWebView *)arg1 printFrame:(_WKFrameHandle *)arg2;
+- (void)_webView:(void *)arg1 requestUserMediaAuthorizationForMicrophone:(void *)arg2 camera:(void *)arg3 url:(void *)arg4 mainFrameURL:(void *)arg5 decisionHandler:(void *)arg6; // needs 6 arg types, found 12: WKWebView *, BOOL, BOOL, NSURL *, NSURL *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, BOOL, void*
 - (BOOL)_webView:(WKWebView *)arg1 shouldIncludeAppLinkActionsForElement:(_WKActivatedElementInfo *)arg2;
 - (BOOL)_webView:(WKWebView *)arg1 shouldRequestGeolocationAuthorizationForURL:(NSURL *)arg2 isMainFrame:(BOOL)arg3 mainFrameURL:(NSURL *)arg4;
 - (BOOL)_webView:(WKWebView *)arg1 showCustomSheetForElement:(_WKActivatedElementInfo *)arg2;
 - (void)_webView:(WKWebView *)arg1 willPreviewImageWithURL:(NSURL *)arg2;
 - (void)_webViewClose:(WKWebView *)arg1;
+- (void)_webViewDidBeginCaptureSession:(WKWebView *)arg1;
+- (void)_webViewDidEndCaptureSession:(WKWebView *)arg1;
 - (void)_webViewDidEnterFullscreen:(WKWebView *)arg1;
 - (void)_webViewDidExitFullscreen:(WKWebView *)arg1;
+- (void)_webViewDidLosePointerLock:(WKWebView *)arg1;
 - (void)_webViewFullscreenMayReturnToInline:(WKWebView *)arg1;
+- (void)_webViewRequestPointerLock:(WKWebView *)arg1;
 
 @end

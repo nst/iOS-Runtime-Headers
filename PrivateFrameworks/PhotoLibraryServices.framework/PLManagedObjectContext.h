@@ -45,10 +45,12 @@
 @property (nonatomic, readonly) BOOL savingDuringMerge;
 
 + (void)__prepareEntityPropertyLookups;
++ (id)_asideDatabasePath;
 + (id)_attributeNamesByIndexByEntityNames;
 + (id)_changeNotificationKeys;
 + (void)_configurePersistentStoreCoordinator:(id)arg1;
 + (void)_configureXPCPersistentStoreCoordinator:(id)arg1;
++ (BOOL)_destroyPhotosDatabaseAndMoveOldStoreAside:(BOOL)arg1;
 + (void)_getStoreURL:(id*)arg1 options:(id*)arg2 enableNotifications:(BOOL)arg3;
 + (void)_getStoreURL:(id*)arg1 options:(id*)arg2 forFileURL:(id)arg3 enableNotifications:(BOOL)arg4;
 + (unsigned long long)_indexValueForPropertyNames:(id)arg1 entityName:(id)arg2 indexesByPropertyNamesByEntityNames:(id)arg3;
@@ -60,7 +62,6 @@
 + (BOOL)_rebuildAndRetryPersistentStoreWithURL:(id)arg1 options:(id)arg2 coordinator:(id)arg3 forced:(BOOL)arg4;
 + (id)_relationshipNamesByIndexByEntityNames;
 + (BOOL)_shouldRequestModelMigratorCreateDatabaseOnRebuildAndRetry;
-+ (BOOL)_shouldUseXPCPhotoLibraryStore;
 + (id)allContextsNotIdenticalTo:(void*)arg1;
 + (BOOL)assetsLibraryLoggingEnabled;
 + (id)attributeNamesForIndexValues:(unsigned long long)arg1 entity:(id)arg2;
@@ -80,11 +81,13 @@
 + (id)managedObjectModelURL;
 + (void)mergeChangesFromRemoteContextSave:(id)arg1 intoAllContextsNotIdenticalTo:(id)arg2 completionHandler:(id /* block */)arg3;
 + (void)mergeIntoAllContextsChangesFromRemoteContextSave:(id)arg1 completionHandler:(id /* block */)arg2;
-+ (BOOL)moveOldStoreAside;
-+ (BOOL)moveStoreFromURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
 + (void)recordVersion:(int)arg1 forStore:(id)arg2 extraMetadata:(id)arg3;
 + (id)relationshipNamesForIndexValues:(unsigned long long)arg1 entity:(id)arg2;
++ (void)removeAsidePhotosDatabase;
++ (void)removePhotosDatabase;
++ (id)sanitizedErrorFromError:(id)arg1;
 + (id)sharedPersistentStoreCoordinator;
++ (BOOL)shouldUseXPCPhotoLibraryStore;
 + (BOOL)storeIsOldEnough;
 
 - (void)_contextObjectsDidChange:(id)arg1;
@@ -96,6 +99,7 @@
 - (void)_informPTPDelegateAboutChangesFromRemoteContextSaveNotification:(id)arg1;
 - (void)_mergeChangesFromDidSaveDictionary:(id)arg1 usingObjectIDs:(BOOL)arg2;
 - (void)_notifyALAssetsLibraryWithChanges:(id)arg1 usingObjectIDs:(BOOL)arg2;
+- (void)_recordChangedKeys:(id)arg1 forObject:(id)arg2;
 - (void)_setHiddenFaceStateChanged:(BOOL)arg1;
 - (BOOL)_tooManyAssetChangesToHandle:(unsigned int)arg1;
 - (void)_writeHiddenFaceMetadata;
@@ -135,6 +139,7 @@
 - (void)recordHiddenFaceStateChanged;
 - (void)recordManagedObjectWillSave:(id)arg1;
 - (void)recordSyncChangeMarker;
+- (void)recordTriggerChangesFromUserInfo:(id)arg1;
 - (void)refreshAssetsWithCloudGUIDChangePersistenceIfNeeded;
 - (void)refreshHiddenFaceStatePersistenceIfNeeded;
 - (BOOL)regenerateVideoThumbnails;

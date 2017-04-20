@@ -4,9 +4,10 @@
 
 @interface NTKVictoryColorPalette : NSObject
 
++ (BOOL)_colorIsPairedWithWhite:(unsigned int)arg1;
 + (id)_grayColor;
 + (id)_offWhiteColor;
-+ (id)_primaryColor;
++ (id)_primaryColorForColor:(unsigned int)arg1;
 + (id)analogComplicationsColorForColor:(unsigned int)arg1;
 + (id)analogDotColorForColor:(unsigned int)arg1;
 + (BOOL)colorHasWhiteElements:(unsigned int)arg1;
@@ -15,5 +16,6 @@
 + (id)numbersColorForColor:(unsigned int)arg1;
 + (id)platterColor;
 + (id)secondHandColorForColor:(unsigned int)arg1;
++ (id)voltColor;
 
 @end

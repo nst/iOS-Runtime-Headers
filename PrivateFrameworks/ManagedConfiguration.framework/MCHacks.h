@@ -18,6 +18,7 @@
 - (void)_sendChangeNotificationsBasedOnDefaultsAdditionByDomain:(id)arg1;
 - (void)_sendChangeNotificationsBasedOnDefaultsRemovalByDomain:(id)arg1;
 - (void)_setRequriesEncryptedBackupInLockdownWithEffectiveUserSettings:(id)arg1;
+- (BOOL)isGreenTea;
 - (BOOL)isSetupBuddyDone;
 - (id)profileTrustEvaluators;
 - (id)quantizedAutoLockInSeconds:(id)arg1;

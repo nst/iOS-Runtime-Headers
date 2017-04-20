@@ -20,6 +20,7 @@
 @property (nonatomic, readonly) NSString *themeName;
 
 - (void).cxx_destruct;
+- (BOOL)_canSelectRowAtIndexPath:(id)arg1;
 - (void)_determineSelectedFontIndex;
 - (void)_determineSelectedTheme;
 - (void)_determineSelectedValues;

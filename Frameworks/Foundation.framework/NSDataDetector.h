@@ -8,6 +8,8 @@
 
 @property (readonly) unsigned long long checkingTypes;
 
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
 + (id)dataDetectorWithTypes:(unsigned long long)arg1 error:(id*)arg2;
 + (void)initialize;
 + (BOOL)supportsSecureCoding;
@@ -25,5 +27,9 @@
 - (unsigned int)numberOfCaptureGroups;
 - (unsigned int)options;
 - (id)pattern;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (void)runDataDetectors:(id)arg1 completion:(id /* block */)arg2;
 
 @end

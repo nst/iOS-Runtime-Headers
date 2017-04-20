@@ -23,6 +23,7 @@
 - (id)displayTitle;
 - (void)getPhotosDataSource:(id*)arg1 displayTitleInfo:(id*)arg2 forDetailsForVisualSection:(int)arg3;
 - (int)imageDeliveryMode;
+- (struct CGSize { float x1; float x2; })imageRequestItemSize;
 - (id)initWithZoomLevel:(unsigned int)arg1 zoomLevelManager:(id)arg2 baseZoomLevelInfo:(id)arg3;
 - (int)maxRowsPerSection;
 - (void)modelDidChange:(id)arg1;

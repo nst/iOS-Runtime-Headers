@@ -112,7 +112,8 @@
 - (id)_textSelectingContainer;
 - (id)_textStorage;
 - (void)_textStorageDidProcessEditing:(id)arg1;
-- (void)_tvUpdateTextColorForInterfaceStyle;
+- (void)_tvUpdateTextColor;
+- (id)_uiktest_proxiedViewTextColor;
 - (void)_unobscureAllText;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_unobscuredSecureRange;
 - (void)addTextAlternativesDisplayStyleToRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;

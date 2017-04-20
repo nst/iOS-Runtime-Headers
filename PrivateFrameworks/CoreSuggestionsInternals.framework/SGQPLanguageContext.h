@@ -17,9 +17,11 @@
 @property (nonatomic, readonly) NSString *language;
 
 + (id)array:(id)arg1 orderedByPattern:(id)arg2;
++ (BOOL)isSimilarPrediction:(id)arg1 in:(id)arg2;
 + (id)languageContextsWithMetricsTracker:(id)arg1 asset:(id)arg2;
 + (id)orderingPatternFromString:(id)arg1;
 + (id)unsupportedLanguageContextWithMetricsTracker:(id)arg1;
++ (id)withoutSimilarPredictions:(id)arg1 limit:(unsigned int)arg2;
 
 - (void).cxx_destruct;
 - (id)abGroup;

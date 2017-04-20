@@ -58,6 +58,9 @@
 - (void)markAlbumGUIDAsViewed:(NSString *)arg1;
 - (void)markAlbumGUIDAsViewed:(NSString *)arg1 info:(NSDictionary *)arg2;
 - (void)markAlbumGUIDAsViewed:(NSString *)arg1 moveLastViewedAssetCollectionMarker:(BOOL)arg2 info:(NSDictionary *)arg3;
+- (void)markAsSpamAlbumWithGUID:(NSString *)arg1 info:(NSDictionary *)arg2;
+- (void)markAsSpamInvitationWithGUID:(NSString *)arg1 info:(NSDictionary *)arg2;
+- (void)markAsSpamInvitationWithToken:(NSString *)arg1 info:(NSDictionary *)arg2;
 - (void)markCommentsForAssetCollectionWithGUID:(NSString *)arg1 asViewedWithLastViewedDate:(NSDate *)arg2;
 - (void)markCommentsForAssetCollectionWithGUID:(NSString *)arg1 asViewedWithLastViewedDate:(NSDate *)arg2 info:(NSDictionary *)arg3;
 - (int)maxGroupedCallbackEventBatchCount;

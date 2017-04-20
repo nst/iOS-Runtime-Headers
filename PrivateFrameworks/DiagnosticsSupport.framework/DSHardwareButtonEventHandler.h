@@ -3,21 +3,27 @@
  */
 
 @interface DSHardwareButtonEventHandler : NSObject {
-    unsigned int  _buttons;
-    <DSHardwareButtonEventDelegate> * _delegate;
+    SEL  _action;
+    unsigned int  _events;
     BOOL  _preventPropagation;
+    id  _target;
 }
 
-@property (nonatomic) unsigned int buttons;
-@property (nonatomic) <DSHardwareButtonEventDelegate> *delegate;
+@property (nonatomic) SEL action;
+@property (nonatomic) unsigned int events;
 @property (nonatomic) BOOL preventPropagation;
+@property (nonatomic, retain) id target;
 
 - (void).cxx_destruct;
-- (unsigned int)buttons;
-- (id)delegate;
+- (SEL)action;
+- (unsigned int)events;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToHandler:(id)arg1;
 - (BOOL)preventPropagation;
-- (void)setButtons:(unsigned int)arg1;
-- (void)setDelegate:(id)arg1;
+- (void)setAction:(SEL)arg1;
+- (void)setEvents:(unsigned int)arg1;
 - (void)setPreventPropagation:(BOOL)arg1;
+- (void)setTarget:(id)arg1;
+- (id)target;
 
 @end

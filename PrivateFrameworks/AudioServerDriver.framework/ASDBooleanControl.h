@@ -18,16 +18,16 @@
 
 - (void).cxx_destruct;
 - (unsigned long)baseClass;
-- (void)changeValue:(BOOL)arg1;
-- (unsigned long)dataSizeForProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned long)arg2 andQualifierData:(const void*)arg3;
-- (BOOL)getProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned long)arg2 qualifierData:(const void*)arg3 dataSize:(unsigned int*)arg4 andData:(const void*)arg5 forClient:(int)arg6;
+- (BOOL)changeValue:(BOOL)arg1;
+- (unsigned int)dataSizeForProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned int)arg2 andQualifierData:(const void*)arg3;
+- (BOOL)getProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned int)arg2 qualifierData:(const void*)arg3 dataSize:(unsigned int*)arg4 andData:(void*)arg5 forClient:(int)arg6;
 - (BOOL)hasProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1;
 - (id)initWithElement:(unsigned long)arg1 inScope:(unsigned long)arg2 withPlugin:(id)arg3;
 - (id)initWithPlugin:(id)arg1;
 - (id)initWithValue:(BOOL)arg1 isSettable:(BOOL)arg2 forElement:(unsigned long)arg3 inScope:(unsigned long)arg4 withPlugin:(id)arg5;
 - (BOOL)isPropertySettable:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1;
 - (unsigned long)objectClass;
-- (BOOL)setProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned long)arg2 qualifierData:(const void*)arg3 dataSize:(unsigned long)arg4 andData:(const void*)arg5 forClient:(int)arg6;
+- (BOOL)setProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned int)arg2 qualifierData:(const void*)arg3 dataSize:(unsigned int)arg4 andData:(const void*)arg5 forClient:(int)arg6;
 - (void)setSubclassID:(unsigned long)arg1;
 - (void)setValue:(BOOL)arg1;
 - (unsigned long)subclassID;

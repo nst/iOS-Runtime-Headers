@@ -7,6 +7,10 @@
 
 - (float)clusterRepresentativenessOfFace:(PVFace *)arg1;
 - (BOOL)faceIsGoodRepresentativeOfItsCluster:(PVFace *)arg1;
-- (BOOL)getDistance:(float*)arg1 fromFaceObservation:(CVMLFaceObservation *)arg2 toFaceObservation:(CVMLFaceObservation *)arg3 error:(id*)arg4;
+
+@optional
+
+- (NSDictionary *)clusterFaceIdsForClusterId:(unsigned int)arg1 error:(id*)arg2;
+- (NSNumber *)distanceBetweenLevel0ClusterId:(unsigned int)arg1 andLevel0ClusterId:(unsigned int)arg2 error:(id*)arg3;
 
 @end

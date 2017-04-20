@@ -4,7 +4,7 @@
 
 @interface WGShortLookStyleButton : UIControl {
     BOOL  _backgroundBlurred;
-    NCMaterialView * _backgroundView;
+    MTMaterialView * _backgroundView;
     float  _dimension;
     NCLookViewFontProvider * _fontProvider;
     UILabel * _titleLabel;

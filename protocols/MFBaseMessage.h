@@ -11,10 +11,10 @@
 - (BOOL)deleted;
 - (BOOL)flagged;
 - (BOOL)isKnownToHaveAttachments;
-- (BOOL)isVIP;
 - (unsigned int)mailboxID;
 - (long long)messageIDHash;
 - (BOOL)read;
+- (BOOL)senderVIP;
 - (unsigned long)uid;
 
 @end

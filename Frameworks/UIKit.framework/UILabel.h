@@ -71,6 +71,8 @@
         unsigned int disableUpdateTextColorOnTraitCollectionChange : 1; 
         unsigned int textAlignmentFollowsWritingDirection : 1; 
         unsigned int textAlignmentMirrored : 1; 
+        unsigned int shortcutIntrinsicContentSize : 1; 
+        unsigned int noNeedsDisplayCheckForBaselineCalculationNeeded : 1; 
     }  _textLabelFlags;
 }
 
@@ -177,6 +179,7 @@
 - (void)_invalidateLayout;
 - (void)_invalidateSynthesizedAttributedTextAndLayout;
 - (void)_invalidateTextSize;
+- (void)_invalidateTextSizeIncludingIntrinsicContentSize:(BOOL)arg1;
 - (BOOL)_isTextFieldCenteredLabel;
 - (float)_lastLineBaseline;
 - (float)_lastLineBaselineFrameOriginY;
@@ -185,6 +188,7 @@
 - (int)_measuredNumberOfLines;
 - (float)_minimumFontSize;
 - (float)_multilineContextWidth;
+- (BOOL)_needsDisplayForbaselineCalculation;
 - (BOOL)_needsDoubleUpdateConstraintsPass;
 - (void)_noteInstanceCustomizationForAttributedString:(id)arg1 attributes:(id)arg2;
 - (float)_preferredMaxLayoutWidth;
@@ -218,6 +222,7 @@
 - (void)_setTextAlignmentMirrored:(BOOL)arg1;
 - (void)_setTextColor:(id)arg1;
 - (void)_setTextColorFollowsTintColor:(BOOL)arg1;
+- (void)_setUseShortcutIntrinsicContentSize:(BOOL)arg1;
 - (void)_setUsesSimpleTextEffects:(BOOL)arg1;
 - (void)_setWantsUnderlineForAccessibilityButtonShapesEnabled:(BOOL)arg1;
 - (void)_setWordRoundingEnabled:(BOOL)arg1;
@@ -240,6 +245,7 @@
 - (BOOL)_updateScaledMetricsForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_updateTextColorWithFallbackColorIfNeeded;
 - (void)_updateVariableLengthString;
+- (BOOL)_useShortcutIntrinsicContentSize;
 - (BOOL)_usesSimpleTextEffects;
 - (BOOL)_wantsDeepDrawing;
 - (BOOL)_wantsUnderlineForAccessibilityButtonShapesEnabled;
@@ -271,6 +277,7 @@
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isEnabled;
 - (BOOL)isHighlighted;
+- (void)layerWillDraw:(id)arg1;
 - (id)letterpressStyle;
 - (int)lineBreakMode;
 - (int)lineSpacing;
@@ -306,6 +313,7 @@
 - (void)setMarqueeRunning:(BOOL)arg1;
 - (void)setMinimumFontSize:(float)arg1;
 - (void)setMinimumScaleFactor:(float)arg1;
+- (void)setNeedsDisplay;
 - (void)setNumberOfLines:(int)arg1;
 - (void)setPreferredMaxLayoutWidth:(float)arg1;
 - (void)setRawSize:(struct CGSize { float x1; float x2; })arg1;
@@ -317,6 +325,7 @@
 - (void)setTextAlignment:(int)arg1;
 - (void)setTextColor:(id)arg1;
 - (void)setUserInteractionEnabled:(BOOL)arg1;
+- (void)set_useShortcutIntrinsicContentSize:(BOOL)arg1;
 - (float)shadowBlur;
 - (id)shadowColor;
 - (struct CGSize { float x1; float x2; })shadowOffset;
@@ -349,6 +358,10 @@
 - (void)MPU_configureWithTextAttributes:(id)arg1;
 - (id)MPU_contentSizeUpdater;
 - (void)MPU_setAutomaticallyUpdatesTextStyleFontsToPreferredTextStyleFonts:(BOOL)arg1;
+
+// Image: /System/Library/PrivateFrameworks/MaterialKit.framework/MaterialKit
+
+- (void)mt_applyVibrantStyling:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
 
@@ -407,10 +420,6 @@
 
 - (BOOL)accessibilityExposeLabelAsValue;
 - (void)setAccessibilityExposeLabelAsValue:(BOOL)arg1;
-
-// Image: /System/Library/PrivateFrameworks/UserNotificationsUIKit.framework/UserNotificationsUIKit
-
-- (void)nc_applyVibrantStyling:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/VideosExtras.framework/VideosExtras
 

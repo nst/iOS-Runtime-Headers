@@ -14,6 +14,8 @@
     _LSDiskUsage * _diskUsage;
     NSNumber * _downloaderDSID;
     NSNumber * _familyID;
+    NSString * _genre;
+    NSNumber * _genreID;
     unsigned int  _installType;
     NSNumber * _itemID;
     NSString * _itemName;
@@ -66,6 +68,10 @@
 @property (nonatomic, readonly) NSNumber *externalVersionIdentifier;
 @property (nonatomic, readonly) NSNumber *familyID;
 @property (nonatomic, readonly) BOOL fileSharingEnabled;
+@property (getter=isGameCenterEnabled, nonatomic, readonly) BOOL gameCenterEnabled;
+@property (nonatomic, readonly) BOOL gameCenterEverEnabled;
+@property (nonatomic, readonly) NSString *genre;
+@property (nonatomic, readonly) NSNumber *genreID;
 @property (readonly) BOOL hasComplication;
 @property (nonatomic, readonly) BOOL hasCustomNotification;
 @property (nonatomic, readonly) BOOL hasGlance;
@@ -106,8 +112,10 @@
 @property (nonatomic, readonly) BOOL shouldSkipWatchAppInstall;
 @property (nonatomic, readonly) NSString *sourceAppIdentifier;
 @property (nonatomic, readonly) NSNumber *staticDiskUsage;
+@property (nonatomic, readonly) NSArray *staticShortcutItems;
 @property (nonatomic, readonly) NSString *storeCohortMetadata;
 @property (nonatomic, readonly) NSNumber *storeFront;
+@property (nonatomic, readonly) NSArray *subgenres;
 @property (readonly) NSArray *supportedComplicationFamilies;
 @property (nonatomic, readonly) BOOL supportsAudiobooks;
 @property (nonatomic, readonly) BOOL supportsExternallyPlayableContent;
@@ -128,6 +136,7 @@
 + (id)applicationProxyForIdentifier:(id)arg1 placeholder:(BOOL)arg2;
 + (id)applicationProxyForItemID:(id)arg1;
 + (id)applicationProxyWithBundleUnitID:(unsigned int)arg1;
++ (id)iconQueue;
 + (BOOL)supportsSecureCoding;
 
 - (id)ODRDiskUsage;
@@ -136,6 +145,7 @@
 - (id)VPNPlugins;
 - (id)_initWithBundleUnit:(unsigned int)arg1 applicationIdentifier:(id)arg2;
 - (id)activityTypes;
+- (id)alternateIconName;
 - (id)appState;
 - (id)appTags;
 - (id)applicationDSID;
@@ -162,12 +172,17 @@
 - (id)externalVersionIdentifier;
 - (id)familyID;
 - (BOOL)fileSharingEnabled;
+- (BOOL)gameCenterEverEnabled;
+- (id)genre;
+- (id)genreID;
 - (BOOL)hasComplication;
 - (BOOL)hasCustomNotification;
 - (BOOL)hasGlance;
 - (BOOL)hasMIDBasedSINF;
 - (BOOL)hasSettingsBundle;
 - (id)iconDataForVariant:(int)arg1;
+- (id)iconDataForVariant:(int)arg1 preferredIconName:(id)arg2 withOptions:(int)arg3;
+- (id)iconDataForVariant:(int)arg1 withOptions:(int)arg2;
 - (BOOL)iconIsPrerendered;
 - (id)iconStyleDomain;
 - (id)initWithCoder:(id)arg1;
@@ -177,6 +192,7 @@
 - (BOOL)isAdHocCodeSigned;
 - (BOOL)isAppUpdate;
 - (BOOL)isBetaApp;
+- (BOOL)isGameCenterEnabled;
 - (BOOL)isInstalled;
 - (BOOL)isLaunchProhibited;
 - (BOOL)isNewsstandApp;
@@ -199,6 +215,7 @@
 - (unsigned int)originalInstallType;
 - (id)plugInKitPlugins;
 - (id)preferredArchitecture;
+- (id)primaryIconDataForVariant:(int)arg1;
 - (id)privateDocumentIconNames;
 - (id)privateDocumentTypeOwner;
 - (BOOL)profileValidated;
@@ -209,6 +226,7 @@
 - (id)requiredDeviceCapabilities;
 - (id)resourcesDirectoryURL;
 - (id)sdkVersion;
+- (void)setAlternateIconName:(id)arg1 withResult:(id /* block */)arg2;
 - (void)setPrivateDocumentIconNames:(id)arg1;
 - (void)setPrivateDocumentTypeOwner:(id)arg1;
 - (void)setUserInitiatedUninstall:(BOOL)arg1;
@@ -216,8 +234,10 @@
 - (BOOL)shouldSkipWatchAppInstall;
 - (id)sourceAppIdentifier;
 - (id)staticDiskUsage;
+- (id)staticShortcutItems;
 - (id)storeCohortMetadata;
 - (id)storeFront;
+- (id)subgenres;
 - (id)supportedComplicationFamilies;
 - (BOOL)supportsAudiobooks;
 - (BOOL)supportsExternallyPlayableContent;
@@ -261,7 +281,6 @@
 
 - (BOOL)_uns_isReallyInstalled;
 - (id)uns_bundle;
-- (id)uns_infoDictionary;
 - (BOOL)uns_isSystemApplication;
 - (id)uns_path;
 - (BOOL)uns_requiresLocalNotifications;

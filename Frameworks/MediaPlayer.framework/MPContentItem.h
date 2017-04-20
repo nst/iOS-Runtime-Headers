@@ -6,7 +6,6 @@
     MPMediaItemArtwork * _artwork;
     double  _artworkHeightHint;
     double  _artworkWidthHint;
-    BOOL  _artworkingLoading;
     struct _MRContentItem { } * _mrContentItem;
 }
 
@@ -22,17 +21,17 @@
 
 - (void).cxx_destruct;
 - (id)_initWithMediaRemoteContentItem:(struct _MRContentItem { }*)arg1;
+- (void)_loadArtwork:(id)arg1 completion:(id /* block */)arg2;
 - (struct _MRContentItem { }*)_mediaRemoteContentItem;
 - (id)_notification;
 - (void)_postItemChangedNotification;
-- (void)_setArtworkSize:(double)arg1 height:(double)arg2;
+- (void)_setArtworkSize:(double)arg1 height:(double)arg2 completion:(id /* block */)arg3;
 - (id)artwork;
 - (void)dealloc;
 - (id)description;
 - (id)identifier;
 - (id)init;
 - (id)initWithIdentifier:(id)arg1;
-- (BOOL)isArtworkReady;
 - (BOOL)isContainer;
 - (BOOL)isExplicitContent;
 - (BOOL)isPlayable;

@@ -49,6 +49,9 @@
 - (id)pAliasWithPhoneNumber:(id)arg1;
 - (id)pAliasWithUserRecordID:(id)arg1;
 - (id)pAssetFromAsset:(id)arg1;
+- (id)pContainerScopedRecordIdentifierWithPRecordIdentifier:(id)arg1;
+- (id)pContainerScopedRecordZoneIdentifierFromFromPRecordZoneIdentifier:(id)arg1;
+- (id)pContainerScopedUserIdentifierFromPUserIdentifier:(id)arg1;
 - (id)pFieldWithKey:(id)arg1 value:(id)arg2;
 - (id)pIdentifierFromUserRecordID:(id)arg1;
 - (id)pPackageFromPackage:(id)arg1;

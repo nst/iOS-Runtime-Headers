@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFActionItem : NSObject <NSSecureCoding> {
+@interface SFActionItem : NSObject <NSSecureCoding, SFProtobufObject> {
     NSString * _applicationBundleIdentifier;
     SFImage * _baseIcon;
     NSString * _contactIdentifier;
@@ -29,7 +29,10 @@
 @property (nonatomic, copy) NSString *applicationBundleIdentifier;
 @property (nonatomic, retain) SFImage *baseIcon;
 @property (nonatomic, copy) NSString *contactIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *email;
+@property (readonly) unsigned int hash;
 @property (nonatomic, retain) SFImage *icon;
 @property (nonatomic) BOOL isITunes;
 @property (nonatomic) BOOL isOverlay;
@@ -42,11 +45,15 @@
 @property (nonatomic, retain) NSData *mapsData;
 @property (nonatomic, retain) NSString *offerType;
 @property (nonatomic, copy) NSString *phoneNumber;
+@property (nonatomic, readonly) PBCodable *protobufMessage;
 @property (nonatomic, retain) NSString *provider;
 @property (nonatomic, retain) SFPunchout *punchout;
 @property (nonatomic) BOOL requiresLocalMedia;
 @property (nonatomic, copy) NSArray *storeIdentifiers;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *type;
+
+// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
 
 + (BOOL)supportsSecureCoding;
 
@@ -95,5 +102,11 @@
 - (void)setType:(id)arg1;
 - (id)storeIdentifiers;
 - (id)type;
+
+// Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
+
++ (Class)protobufClass;
+
+- (id)protobufMessage;
 
 @end

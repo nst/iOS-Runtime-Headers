@@ -17,7 +17,7 @@
     }  _geolocationProvider;
     struct ObjectStorage<WebKit::WebProcessPool> { 
         struct type { 
-            unsigned char __lx[712]; 
+            unsigned char __lx[768]; 
         } data; 
     }  _processPool;
 }
@@ -25,6 +25,7 @@
 @property (readonly) /* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*_apiObject;
 @property (setter=_setAutomationDelegate:, nonatomic) <_WKAutomationDelegate> *_automationDelegate;
 @property (nonatomic, readonly) _WKProcessPoolConfiguration *_configuration;
+@property (getter=_isCookieStoragePartitioningEnabled, setter=_setCookieStoragePartitioningEnabled:, nonatomic) BOOL _cookieStoragePartitioningEnabled;
 @property (setter=_setDownloadDelegate:, nonatomic) <_WKDownloadDelegate> *_downloadDelegate;
 @property (readonly) WKGeolocationProviderIOS *_geolocationProvider;
 @property (readonly, copy) NSString *debugDescription;
@@ -32,6 +33,9 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+// Image: /System/Library/Frameworks/WebKit.framework/WebKit
+
++ (void)_forceGameControllerFramework;
 + (id)_sharedProcessPool;
 + (id)_websiteDataURLForContainerWithURL:(id)arg1;
 + (id)_websiteDataURLForContainerWithURL:(id)arg1 bundleIdentifierIfNotInContainer:(id)arg2;
@@ -45,12 +49,14 @@
 - (id)_downloadDelegate;
 - (id)_geolocationProvider;
 - (id)_initWithConfiguration:(id)arg1;
+- (BOOL)_isCookieStoragePartitioningEnabled;
 - (id)_objectForBundleParameter:(id)arg1;
 - (void)_setAllowsSpecificHTTPSCertificate:(id)arg1 forHost:(id)arg2;
 - (void)_setAutomationDelegate:(id)arg1;
 - (void)_setAutomationSession:(id)arg1;
 - (void)_setCanHandleHTTPSServerTrustEvaluation:(BOOL)arg1;
 - (void)_setCookieAcceptPolicy:(unsigned int)arg1;
+- (void)_setCookieStoragePartitioningEnabled:(BOOL)arg1;
 - (void)_setDownloadDelegate:(id)arg1;
 - (void)_setObject:(id)arg1 forBundleParameter:(id)arg2;
 - (void)_setObjectsForBundleParametersWithDictionary:(id)arg1;
@@ -61,5 +67,11 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+
+// Image: /System/Library/Frameworks/iAd.framework/iAd
+
++ (id)advertisingProcessPool;
++ (id)advertisingProcessPoolWithBackgoundPriority;
++ (id)processPoolWithBackgoundPriority:(BOOL)arg1;
 
 @end

@@ -24,6 +24,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)device;
+- (id)formattedDescription:(unsigned int)arg1;
 - (id)functionDictionary;
 - (id)functionNames;
 - (id)initWithLibraryContainer:(struct MTLLibraryContainer { int x1; struct { unsigned char x_2_1_1[32]; } x2; struct MTLLibraryData {} *x3; id x4; id x5; }*)arg1 device:(id)arg2;

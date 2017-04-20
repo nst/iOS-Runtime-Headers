@@ -28,8 +28,10 @@
 - (void)setDelegate:(id <SBUIPasscodeLockViewDelegate>)arg1;
 - (void)setPlaysKeypadSounds:(BOOL)arg1;
 - (void)setScreenOn:(BOOL)arg1;
+- (void)setShowsCancelButton:(BOOL)arg1;
 - (void)setShowsEmergencyCallButton:(BOOL)arg1;
 - (void)setShowsStatusField:(BOOL)arg1;
+- (BOOL)showsCancelButton;
 - (BOOL)showsEmergencyCallButton;
 - (BOOL)showsStatusField;
 - (int)style;

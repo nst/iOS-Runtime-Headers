@@ -3,24 +3,54 @@
  */
 
 @interface GEOTileUsageInfo : NSObject {
-    unsigned int  _dataLength;
+    double  _decodingTime;
     double  _endTime;
+    BOOL  _hasTileStyle;
+    int  _httpResponseStatusCode;
+    NSURLSessionTaskMetrics * _metrics;
+    double  _queuedTime;
+    NSString * _remoteAddressAndPort;
+    unsigned int  _requestSize;
     double  _startTime;
-    NSMapTable * _tileStyleToCount;
+    unsigned int  _tileSize;
+    int  _tileStyle;
 }
 
-@property (nonatomic, readonly) unsigned int dataLength;
+@property (nonatomic) double decodingTime;
 @property (nonatomic) double endTime;
+@property (nonatomic, readonly) BOOL hasTileStyle;
+@property (nonatomic) int httpResponseStatusCode;
+@property (nonatomic, readonly) NSURLSessionTaskMetrics *metrics;
+@property (nonatomic) double queuedTime;
+@property (nonatomic, copy) NSString *remoteAddressAndPort;
+@property (nonatomic) unsigned int requestSize;
 @property (nonatomic) double startTime;
-@property (nonatomic, readonly) NSMapTable *tileStyleToCount;
+@property (nonatomic) unsigned int tileSize;
+@property (nonatomic, readonly) int tileStyle;
 
-- (void)addTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 dataLength:(unsigned int)arg2;
-- (unsigned int)dataLength;
 - (void)dealloc;
+- (double)decodingTime;
+- (id)description;
 - (double)endTime;
+- (BOOL)hasTileStyle;
+- (int)httpResponseStatusCode;
+- (id)initWithTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 withTileUsageData:(id)arg2 andURLMetrics:(id)arg3;
+- (id)metrics;
+- (int)protocolType;
+- (double)queuedTime;
+- (id)remoteAddressAndPort;
+- (unsigned int)requestSize;
+- (int)resourceFetchType;
+- (void)setDecodingTime:(double)arg1;
 - (void)setEndTime:(double)arg1;
+- (void)setHttpResponseStatusCode:(int)arg1;
+- (void)setQueuedTime:(double)arg1;
+- (void)setRemoteAddressAndPort:(id)arg1;
+- (void)setRequestSize:(unsigned int)arg1;
 - (void)setStartTime:(double)arg1;
+- (void)setTileSize:(unsigned int)arg1;
 - (double)startTime;
-- (id)tileStyleToCount;
+- (unsigned int)tileSize;
+- (int)tileStyle;
 
 @end

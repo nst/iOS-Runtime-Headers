@@ -23,12 +23,14 @@
         unsigned int feedType : 1; 
         unsigned int feedViewPresentationReason : 1; 
         unsigned int groupType : 1; 
+        unsigned int recommendationBrickType : 1; 
         unsigned int subscribeUnsubscribeLocation : 1; 
         unsigned int userAction : 1; 
         unsigned int cameFromGroup : 1; 
         unsigned int isPaidSubscriberToFeed : 1; 
     }  _has;
     BOOL  _isPaidSubscriberToFeed;
+    int  _recommendationBrickType;
     NSString * _searchString;
     int  _subscribeUnsubscribeLocation;
     NSMutableArray * _subscribedFeedIds;
@@ -62,10 +64,12 @@
 @property (nonatomic, readonly) BOOL hasGroupFeedId;
 @property (nonatomic) BOOL hasGroupType;
 @property (nonatomic) BOOL hasIsPaidSubscriberToFeed;
+@property (nonatomic) BOOL hasRecommendationBrickType;
 @property (nonatomic, readonly) BOOL hasSearchString;
 @property (nonatomic) BOOL hasSubscribeUnsubscribeLocation;
 @property (nonatomic) BOOL hasUserAction;
 @property (nonatomic) BOOL isPaidSubscriberToFeed;
+@property (nonatomic) int recommendationBrickType;
 @property (nonatomic, retain) NSString *searchString;
 @property (nonatomic) int subscribeUnsubscribeLocation;
 @property (nonatomic, retain) NSMutableArray *subscribedFeedIds;
@@ -79,6 +83,7 @@
 - (int)StringAsFeedType:(id)arg1;
 - (int)StringAsFeedViewPresentationReason:(id)arg1;
 - (int)StringAsGroupType:(id)arg1;
+- (int)StringAsRecommendationBrickType:(id)arg1;
 - (void)addSubscribedFeedIds:(id)arg1;
 - (BOOL)cameFromGroup;
 - (id)campaignId;
@@ -116,6 +121,7 @@
 - (BOOL)hasGroupFeedId;
 - (BOOL)hasGroupType;
 - (BOOL)hasIsPaidSubscriberToFeed;
+- (BOOL)hasRecommendationBrickType;
 - (BOOL)hasSearchString;
 - (BOOL)hasSubscribeUnsubscribeLocation;
 - (BOOL)hasUserAction;
@@ -124,6 +130,8 @@
 - (BOOL)isPaidSubscriberToFeed;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (int)recommendationBrickType;
+- (id)recommendationBrickTypeAsString:(int)arg1;
 - (id)searchString;
 - (void)setCameFromGroup:(BOOL)arg1;
 - (void)setCampaignId:(id)arg1;
@@ -146,9 +154,11 @@
 - (void)setHasFeedViewPresentationReason:(BOOL)arg1;
 - (void)setHasGroupType:(BOOL)arg1;
 - (void)setHasIsPaidSubscriberToFeed:(BOOL)arg1;
+- (void)setHasRecommendationBrickType:(BOOL)arg1;
 - (void)setHasSubscribeUnsubscribeLocation:(BOOL)arg1;
 - (void)setHasUserAction:(BOOL)arg1;
 - (void)setIsPaidSubscriberToFeed:(BOOL)arg1;
+- (void)setRecommendationBrickType:(int)arg1;
 - (void)setSearchString:(id)arg1;
 - (void)setSubscribeUnsubscribeLocation:(int)arg1;
 - (void)setSubscribedFeedIds:(id)arg1;

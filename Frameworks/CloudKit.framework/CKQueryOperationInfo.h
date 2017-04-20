@@ -3,6 +3,7 @@
  */
 
 @interface CKQueryOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
+    NSDictionary * _assetTransferOptionsByKey;
     CKQueryCursor * _cursor;
     NSArray * _desiredKeys;
     BOOL  _fetchAllResults;
@@ -12,6 +13,7 @@
     CKRecordZoneID * _zoneID;
 }
 
+@property (nonatomic, retain) NSDictionary *assetTransferOptionsByKey;
 @property (nonatomic, retain) CKQueryCursor *cursor;
 @property (nonatomic, retain) NSArray *desiredKeys;
 @property (nonatomic) BOOL fetchAllResults;
@@ -23,6 +25,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)assetTransferOptionsByKey;
 - (id)cursor;
 - (id)desiredKeys;
 - (void)encodeWithCoder:(id)arg1;
@@ -30,6 +33,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)query;
 - (unsigned int)resultsLimit;
+- (void)setAssetTransferOptionsByKey:(id)arg1;
 - (void)setCursor:(id)arg1;
 - (void)setDesiredKeys:(id)arg1;
 - (void)setFetchAllResults:(BOOL)arg1;

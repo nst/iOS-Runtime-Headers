@@ -4,19 +4,23 @@
 
 @interface CATHTTPMessageParser : NSObject {
     <CATHTTPMessageParserDelegate> * _delegate;
-    NSDictionary * mAllHeaderFields;
+    unsigned int  mCurrentBytesReceived;
+    NSDictionary * mCurrentHeaderFields;
     struct __CFHTTPMessage { } * mCurrentMessage;
 }
 
 @property (nonatomic) <CATHTTPMessageParserDelegate> *delegate;
 
-+ (id)encodeData:(id)arg1;
++ (id)encodeRequestData:(id)arg1;
++ (id)responseHeaderForContentWithLength:(unsigned int)arg1;
 
 - (void).cxx_destruct;
 - (BOOL)appendBytes:(const char *)arg1 length:(unsigned int)arg2;
 - (void)dealloc;
 - (id)delegate;
-- (void)delegateDidReceiveData:(id)arg1;
+- (void)delegateDidReceiveRequestData:(id)arg1;
+- (void)delegateDidReceiveRequestWithURL:(id)arg1;
+- (void)delegateDidReceiveResponseData:(id)arg1 moreComing:(BOOL)arg2;
 - (void)setDelegate:(id)arg1;
 
 @end

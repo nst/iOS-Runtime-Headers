@@ -2,12 +2,14 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUIPrefsListController : PSListController <DevicePINControllerDelegate, PSSearchControllerDelegate, RadiosPreferencesDelegate> {
+@interface PSUIPrefsListController : PSListController <AAUISignInControllerDelegate, DevicePINControllerDelegate, PSSearchControllerDelegate, RadiosPreferencesDelegate> {
     ACAccountStore * _accountStore;
+    PSSpecifier * _appleAccountSpecifier;
     NSString * _bluetoothString;
     BOOL  _bluetoothValueIsClean;
     PSSpecifier * _carrierSelectionSpecifier;
-    PSSpecifier * _castleSpecifier;
+    PSSpecifier * _classroomSpecifier;
+    PSUIClassroomVisibilityArbitrator * _classroomVisibilityArbitrator;
     BOOL  _didFirstLoad;
     PSSpecifier * _eqSpecifier;
     PSSpecifier * _ethernetSpecifier;
@@ -29,6 +31,7 @@
     PSSpecifier * _passcodeSpecifier;
     NSString * _pendingOffsetItemName;
     PSSpecifier * _personalHotspotSpecifier;
+    AAUIProfilePictureStore * _profilePictureStore;
     BOOL  _refreshingThirdPartySpecifiers;
     PSSearchController * _searchController;
     NSString * _searchText;
@@ -73,12 +76,14 @@
 - (void)_loadThirdPartySpecifiersWithCompletion:(id /* block */)arg1;
 - (void)_localeChanged;
 - (void)_newCarrierNotification;
+- (void)_presentAppleAccountSignInController:(id)arg1;
 - (id)_primarySpecifierOrdering;
+- (id)_profilePictureStore;
 - (void)_reallyLoadThirdPartySpecifiersForApps:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_setAirplaneMode:(BOOL)arg1;
-- (void)_setupiCloudSpecifier:(id)arg1;
-- (void)_setupiCloudSpecifier:(id)arg1 withPrimaryAccount:(id)arg2;
-- (void)_setupiCloudSpecifierAsync:(id)arg1;
+- (void)_setupAppleAccountSpecifier:(id)arg1;
+- (void)_setupAppleAccountSpecifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)_setupAppleAccountSpecifierAsync:(id)arg1;
 - (BOOL)_showCarrier;
 - (void)_showControllerFromSpecifier:(id)arg1;
 - (void)_showDetailTargetDidChange:(id)arg1;
@@ -130,6 +135,7 @@
 - (void)refresh3rdPartyBundles;
 - (void)reloadCellularRelatedSpecifiers;
 - (void)reloadSpecifiers;
+- (void)removeAndReload3rdPartyBundles;
 - (void)rerootNavigationController;
 - (id)rootSpecifiersForSearchController:(id)arg1;
 - (id)searchController;
@@ -146,12 +152,14 @@
 - (void)setSkipSelectingGeneralOnLaunch:(BOOL)arg1;
 - (void)setSpeakerAccessory:(id)arg1 eqAvailable:(BOOL)arg2;
 - (void)setWifiString:(id)arg1;
-- (void)setupAppleAccountCategory:(id)arg1;
+- (void)setupPrimaryAppleAccountGroup:(id)arg1;
 - (void)setupSearchBar;
 - (BOOL)shouldDeferPushForSpecifierID:(id)arg1;
 - (BOOL)shouldReloadSpecifiersOnResume;
 - (BOOL)shouldShowEthernetSpecifier;
 - (void)showPINSheet:(id)arg1;
+- (void)signInController:(id)arg1 didCompleteWithSuccess:(BOOL)arg2 error:(id)arg3;
+- (void)signInControllerDidCancel:(id)arg1;
 - (BOOL)skipSelectingGeneralOnLaunch;
 - (id)specifierForBundle:(id)arg1;
 - (id)specifiers;
@@ -161,6 +169,7 @@
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)updateAccountSpecifiers;
+- (void)updateClassroomSpecifier;
 - (void)updateEthernet;
 - (void)updateHomeKitSpecifier;
 - (void)updatePersonalHotspotWithState:(int)arg1 andReason:(int)arg2;

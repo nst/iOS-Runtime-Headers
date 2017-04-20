@@ -15,6 +15,7 @@
 - (void).cxx_destruct;
 - (id)_addStoreItemMetadata:(id)arg1 forItemIdentifier:(id)arg2;
 - (id)_cachedStoreItemMetadataWithItemIdentifier:(id)arg1;
+- (id)_itemIdentifierForStoreItemMetadata:(id)arg1;
 - (void)_resolveItemIdentifiers:(id)arg1 withKeyProfile:(id)arg2 storeBagDictionary:(id)arg3 originatingRequest:(id)arg4 responseHandler:(id /* block */)arg5;
 - (BOOL)_storeItemMetadata:(id)arg1 hasCompleteDataForRequestReason:(unsigned int)arg2;
 - (id)_storePlatformKeyProfileForRequestReason:(unsigned int)arg1;

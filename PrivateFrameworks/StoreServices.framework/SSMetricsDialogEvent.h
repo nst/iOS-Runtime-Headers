@@ -5,9 +5,11 @@
 @interface SSMetricsDialogEvent : SSMetricsBaseEvent
 
 @property (nonatomic, copy) NSString *actionType;
+@property (nonatomic, copy) NSString *actionURL;
 @property (nonatomic, copy) NSDictionary *details;
 @property (nonatomic, copy) NSString *dialogId;
 @property (nonatomic, copy) NSString *dialogType;
+@property (nonatomic, copy) NSString *message;
 @property (nonatomic, copy) NSString *result;
 @property (nonatomic, copy) NSString *targetId;
 @property (nonatomic, copy) NSArray *userActions;
@@ -18,11 +20,14 @@
 - (id)dialogId;
 - (id)dialogType;
 - (id)init;
+- (id)message;
 - (id)result;
 - (void)setActionType:(id)arg1;
+- (void)setActionURL:(id)arg1;
 - (void)setDetails:(id)arg1;
 - (void)setDialogId:(id)arg1;
 - (void)setDialogType:(id)arg1;
+- (void)setMessage:(id)arg1;
 - (void)setResult:(id)arg1;
 - (void)setTargetId:(id)arg1;
 - (void)setUserActions:(id)arg1;

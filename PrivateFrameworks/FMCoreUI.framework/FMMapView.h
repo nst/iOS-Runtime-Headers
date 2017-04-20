@@ -119,7 +119,7 @@
 - (void)addAnnotations:(id)arg1;
 - (void)addOverlay:(id)arg1;
 - (void)addOverlays:(id)arg1;
-- (void)animateMapToPosition:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 withInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 andZoom:(BOOL)arg3;
+- (void)animateMapToPosition:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 withInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 attributionInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3 andZoom:(BOOL)arg4;
 - (void)animateRenderingModeChange;
 - (void)animateToAllAnnotation;
 - (id)annotationsSortedByDistance;

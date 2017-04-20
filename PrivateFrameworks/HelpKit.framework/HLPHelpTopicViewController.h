@@ -16,6 +16,7 @@
     BOOL  _hideDoneButton;
     id  _interactivePopGestureRecognizerDelegate;
     HLPHelpLoadingView * _loadingView;
+    HLPHelpLocale * _locale;
     NSArray * _searchTerms;
     BOOL  _showTopicNameAsTitle;
     UITapGestureRecognizer * _tapGestureRecognizer;
@@ -37,6 +38,7 @@
 @property (nonatomic, retain) NSURL *helpBookURL;
 @property (nonatomic) BOOL hideDoneButton;
 @property (nonatomic, retain) HLPHelpLoadingView *loadingView;
+@property (nonatomic, retain) HLPHelpLocale *locale;
 @property (nonatomic, retain) NSArray *searchTerms;
 @property (nonatomic) BOOL showTopicNameAsTitle;
 @property (readonly) Class superclass;
@@ -63,6 +65,7 @@
 - (void)loadHelpTopicItem:(id)arg1 searchTerms:(id)arg2 anchor:(id)arg3;
 - (void)loadHelpTopicItem:(id)arg1 searchTerms:(id)arg2 anchor:(id)arg3 topicAccessType:(int)arg4;
 - (id)loadingView;
+- (id)locale;
 - (void)reloadCurrentTopic;
 - (void)saveCurrentTopicItem;
 - (id)searchTerms;
@@ -73,6 +76,7 @@
 - (void)setHelpBookURL:(id)arg1;
 - (void)setHideDoneButton:(BOOL)arg1;
 - (void)setLoadingView:(id)arg1;
+- (void)setLocale:(id)arg1;
 - (void)setSearchTerms:(id)arg1;
 - (void)setShowTopicNameAsTitle:(BOOL)arg1;
 - (void)setUsageController:(id)arg1;

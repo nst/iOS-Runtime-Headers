@@ -11,6 +11,7 @@
     BOOL  _allowsInitiatingPlayWhileDownload;
     NSString * _artistName;
     long long  _artistStoreAdamID;
+    double  _bookmarkTime;
     NSString * _buyParameters;
     NSString * _composerName;
     NSString * _contentTitle;
@@ -26,7 +27,7 @@
     NSURL * _localNetworkContentURL;
     MPMediaItem * _mediaItem;
     long long  _mediaLibraryPersistentID;
-    MPModelSong * _modelSong;
+    MPModelGenericObject * _modelGenericObject;
     NSURL * _protectedContentSupportStorageURL;
     NSNumber * _rentalIdentifier;
     BOOL  _requiresPlayWhileDownload;
@@ -37,6 +38,8 @@
     long long  _storeAdamID;
     unsigned long long  _storeSagaID;
     long long  _storeSubscriptionAdamID;
+    NSString * _storeUbiquitousIdentifier;
+    BOOL  _subscriptionRequired;
     float  _volumeNormalization;
 }
 
@@ -49,6 +52,7 @@
 @property (nonatomic, readonly) BOOL allowsInitiatingPlayWhileDownload;
 @property (nonatomic, readonly, copy) NSString *artistName;
 @property (nonatomic, readonly) long long artistStoreAdamID;
+@property (nonatomic, readonly) double bookmarkTime;
 @property (nonatomic, readonly) NSString *buyParameters;
 @property (nonatomic, readonly, copy) NSString *composerName;
 @property (nonatomic, readonly, copy) NSString *contentTitle;
@@ -69,7 +73,7 @@
 @property (nonatomic, readonly, copy) NSURL *localNetworkContentURL;
 @property (nonatomic, readonly) MPMediaItem *mediaItem;
 @property (nonatomic, readonly) long long mediaLibraryPersistentID;
-@property (nonatomic, readonly) MPModelSong *modelSong;
+@property (nonatomic, readonly) MPModelGenericObject *modelGenericObject;
 @property (nonatomic, readonly, copy) NSURL *protectedContentSupportStorageURL;
 @property (getter=_rentalIdentifier, nonatomic, readonly) NSNumber *rentalIdentifier;
 @property (nonatomic, readonly) BOOL requiresPlayWhileDownload;
@@ -80,6 +84,8 @@
 @property (nonatomic, readonly) long long storeAdamID;
 @property (nonatomic, readonly) unsigned long long storeSagaID;
 @property (nonatomic, readonly) long long storeSubscriptionAdamID;
+@property (nonatomic, readonly, copy) NSString *storeUbiquitousIdentifier;
+@property (getter=isSubscriptionRequired, nonatomic, readonly) BOOL subscriptionRequired;
 @property (nonatomic, readonly) float volumeNormalization;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
@@ -105,6 +111,7 @@
 - (id)artistName;
 - (long long)artistStoreAdamID;
 - (id)artworkCatalogForPlaybackTime:(double)arg1;
+- (double)bookmarkTime;
 - (id)buyParameters;
 - (id)cachedLocalPlaybackAssetFilePathReturningAssetQuality:(unsigned int*)arg1 protectionType:(unsigned int*)arg2 usesPurchaseBundle:(BOOL*)arg3;
 - (void)clearLocalPlaybackAssetFilePathWithCompletionHandler:(id /* block */)arg1;
@@ -126,12 +133,13 @@
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isExplicitTrack;
+- (BOOL)isSubscriptionRequired;
 - (int)likedState;
 - (void)loadMediaItemWithCompletionHandler:(id /* block */)arg1;
 - (id)localNetworkContentURL;
 - (id)mediaItem;
 - (long long)mediaLibraryPersistentID;
-- (id)modelSong;
+- (id)modelGenericObject;
 - (id)protectedContentSupportStorageURL;
 - (BOOL)requiresPlayWhileDownload;
 - (void)setCachedLocalPlaybackAssetFilePath:(id)arg1 protectionType:(unsigned int)arg2 assetQuality:(unsigned int)arg3 withCompletionHandler:(id /* block */)arg4;
@@ -143,6 +151,7 @@
 - (long long)storeAdamID;
 - (unsigned long long)storeSagaID;
 - (long long)storeSubscriptionAdamID;
+- (id)storeUbiquitousIdentifier;
 - (id)streamingPlaybackAssetDestinationFilePathForAssetQuality:(unsigned int)arg1 assetFlavor:(id)arg2 protectionType:(unsigned int)arg3 pathExtension:(id)arg4;
 - (id)streamingPlaybackPurchaseBundleDestinationFilePathForAssetFilePath:(id)arg1;
 - (float)volumeNormalization;

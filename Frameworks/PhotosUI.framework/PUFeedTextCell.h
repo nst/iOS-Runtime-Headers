@@ -23,7 +23,6 @@
         float bottom; 
         float right; 
     }  _contentInsets;
-    PUFeedTextCellContentView * _contentView;
     UIImage * _iconImage;
     int  _iconLocation;
     struct UIOffset { 
@@ -94,7 +93,6 @@
 - (int)buttonSize;
 - (int)buttonType;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
-- (id)contentView;
 - (id)iconImage;
 - (int)iconLocation;
 - (struct UIOffset { float x1; float x2; })iconOffset;

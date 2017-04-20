@@ -11,6 +11,7 @@
 @property (nonatomic, readonly) NSString *providerID;
 @property (nonatomic, readonly) NSString *providerName;
 @property (nonatomic, readonly) BOOL requiresAttributionInCallout;
+@property (nonatomic, readonly) BOOL shouldOpenAppStore;
 
 - (void).cxx_destruct;
 - (id)attributionApps;
@@ -22,5 +23,6 @@
 - (id)providerName;
 - (id)providerSnippetLogoImageForScale:(float)arg1;
 - (BOOL)requiresAttributionInCallout;
+- (BOOL)shouldOpenAppStore;
 
 @end

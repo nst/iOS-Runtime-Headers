@@ -13,6 +13,7 @@
     NSString * _ak_password;
     NSString * _ak_reason;
     id /* block */  _ak_regenerateCodeAction;
+    NSString * _ak_title;
     id /* block */  _ak_useIDAction;
     NSString * _ak_username;
     int  _alertStyle;
@@ -25,6 +26,7 @@
 @property (nonatomic) int alertStyle;
 @property (nonatomic, copy) id /* block */ authenticateAction;
 @property (nonatomic, copy) NSString *authenticateButtonTitle;
+@property (nonatomic, copy) NSString *authenticateTitle;
 @property (nonatomic, copy) id /* block */ codeEnteredAction;
 @property (nonatomic, copy) id /* block */ createIDAction;
 @property (readonly, copy) NSString *debugDescription;
@@ -57,6 +59,7 @@
 - (int)alertStyle;
 - (id /* block */)authenticateAction;
 - (id)authenticateButtonTitle;
+- (id)authenticateTitle;
 - (void)clearSecondFactorEntry;
 - (id /* block */)codeEnteredAction;
 - (id /* block */)createIDAction;
@@ -75,6 +78,7 @@
 - (void)setAlertStyle:(int)arg1;
 - (void)setAuthenticateAction:(id /* block */)arg1;
 - (void)setAuthenticateButtonTitle:(id)arg1;
+- (void)setAuthenticateTitle:(id)arg1;
 - (void)setCodeEnteredAction:(id /* block */)arg1;
 - (void)setCreateIDAction:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;

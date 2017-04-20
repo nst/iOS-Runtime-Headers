@@ -3,8 +3,10 @@
  */
 
 @interface FCPrivateDataContext : NSObject <FCCKDatabaseDelegate, FCPrivateChannelMembershipObserving, FCPrivateDataContext> {
+    FCABTestingAgent * _abTestingAgent;
     <FCContentContext> * _contentContext;
     <FCPrivateDataContextInternal> * _internalPrivateDataContext;
+    FCNetworkBehaviorMonitor * _networkBehaviorMonitor;
     FCPersonalizationData * _personalizationData;
     FCPrivateChannelMembershipController * _privateChannelMembershipController;
     NSString * _privateDataDirectory;
@@ -17,11 +19,13 @@
     FCUserInfo * _userInfo;
 }
 
+@property (nonatomic, retain) FCABTestingAgent *abTestingAgent;
 @property (nonatomic, retain) <FCContentContext> *contentContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) <FCPrivateDataContextInternal> *internalPrivateDataContext;
+@property (nonatomic, readonly) FCNetworkBehaviorMonitor *networkBehaviorMonitor;
 @property (nonatomic, readonly) FCPersonalizationData *personalizationData;
 @property (nonatomic, readonly) FCPrivateChannelMembershipController *privateChannelMembershipController;
 @property (nonatomic, readonly, copy) NSString *privateDataDirectory;
@@ -36,6 +40,7 @@
 
 - (void).cxx_destruct;
 - (void)_updateRequestAnonymity;
+- (id)abTestingAgent;
 - (void)clearCloudKitCaches;
 - (id)contentContext;
 - (void)databaseHasBeenRateLimited:(id)arg1 retryAfter:(double)arg2;
@@ -44,6 +49,7 @@
 - (id)initWithContext:(id)arg1 privateDatabase:(id)arg2 privateContainer:(id)arg3 privateDataDirectory:(id)arg4 privateDataActionProvider:(id)arg5 networkBehaviorMonitor:(id)arg6 privateDataSyncingEnabled:(BOOL)arg7 iCloudAccountChanged:(BOOL)arg8;
 - (id)internalPrivateDataContext;
 - (BOOL)isPrivateDataSyncingEnabled;
+- (id)networkBehaviorMonitor;
 - (id)personalizationData;
 - (id)privateChannelMembershipController;
 - (void)privateChannelMembershipControllerDidChange:(id)arg1;
@@ -52,6 +58,7 @@
 - (id)privateStoreWithName:(id)arg1 version:(unsigned int)arg2 options:(unsigned int)arg3;
 - (id)readingHistory;
 - (id)readingList;
+- (void)setAbTestingAgent:(id)arg1;
 - (void)setContentContext:(id)arg1;
 - (void)setInternalPrivateDataContext:(id)arg1;
 - (id)subscriptionList;

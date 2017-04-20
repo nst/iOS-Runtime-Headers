@@ -4,6 +4,7 @@
 
 @interface SGXPCActivityManager : NSObject <SGXPCActivityManagerProtocol> {
     NSMutableArray * _activities;
+    NSMutableDictionary * _currentTasks;
     NSMutableArray * _handlers;
     NSMutableArray * _lastCriteria;
     struct _opaque_pthread_mutex_t { 
@@ -19,6 +20,7 @@
 + (void)useMockSharedInstance:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)_taskForActivity:(id)arg1;
 - (id)activityForActivityId:(int)arg1;
 - (id)copyCriteria:(id)arg1;
 - (void)dealloc;

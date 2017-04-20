@@ -10,7 +10,10 @@
     NTPBArticleHostViewExposure * _articleHostViewExposure;
     NTPBArticleLikeDislike * _articleLikeDislike;
     NTPBArticleScroll * _articleScroll;
+    NTPBArticleScrollNotw * _articleScrollNotw;
+    NTPBArticleViewNotw * _articleViewNotw;
     NTPBBackgroundSubscriptionValidation * _backgroundSubscriptionValidation;
+    NTPBBundleIdMappingMiss * _bundleIdMappingMiss;
     NTPBChannelMuteUnmute * _channelMuteUnmute;
     NTPBComscoreEventSend * _comscoreEventSend;
     NTPBCoverArticleWidgetExposure * _coverArticleWidgetExposure;
@@ -53,6 +56,7 @@
     NTPBShareSheetExposure * _shareSheetExposure;
     NTPBShareSheetIapFail * _shareSheetIapFail;
     NTPBSubscriptionDetectionScreenView * _subscriptionDetectionScreenView;
+    NTPBUrlMappingMiss * _urlMappingMiss;
     NTPBUserOnboardingBegin * _userOnboardingBegin;
     NTPBUserOnboardingChannelPickerComplete * _userOnboardingChannelPickerComplete;
     NTPBUserOnboardingResult * _userOnboardingResult;
@@ -68,7 +72,10 @@
 @property (nonatomic, retain) NTPBArticleHostViewExposure *articleHostViewExposure;
 @property (nonatomic, retain) NTPBArticleLikeDislike *articleLikeDislike;
 @property (nonatomic, retain) NTPBArticleScroll *articleScroll;
+@property (nonatomic, retain) NTPBArticleScrollNotw *articleScrollNotw;
+@property (nonatomic, retain) NTPBArticleViewNotw *articleViewNotw;
 @property (nonatomic, retain) NTPBBackgroundSubscriptionValidation *backgroundSubscriptionValidation;
+@property (nonatomic, retain) NTPBBundleIdMappingMiss *bundleIdMappingMiss;
 @property (nonatomic, retain) NTPBChannelMuteUnmute *channelMuteUnmute;
 @property (nonatomic, retain) NTPBComscoreEventSend *comscoreEventSend;
 @property (nonatomic, retain) NTPBCoverArticleWidgetExposure *coverArticleWidgetExposure;
@@ -89,7 +96,10 @@
 @property (nonatomic, readonly) BOOL hasArticleHostViewExposure;
 @property (nonatomic, readonly) BOOL hasArticleLikeDislike;
 @property (nonatomic, readonly) BOOL hasArticleScroll;
+@property (nonatomic, readonly) BOOL hasArticleScrollNotw;
+@property (nonatomic, readonly) BOOL hasArticleViewNotw;
 @property (nonatomic, readonly) BOOL hasBackgroundSubscriptionValidation;
+@property (nonatomic, readonly) BOOL hasBundleIdMappingMiss;
 @property (nonatomic, readonly) BOOL hasChannelMuteUnmute;
 @property (nonatomic, readonly) BOOL hasComscoreEventSend;
 @property (nonatomic, readonly) BOOL hasCoverArticleWidgetExposure;
@@ -132,6 +142,7 @@
 @property (nonatomic, readonly) BOOL hasShareSheetExposure;
 @property (nonatomic, readonly) BOOL hasShareSheetIapFail;
 @property (nonatomic, readonly) BOOL hasSubscriptionDetectionScreenView;
+@property (nonatomic, readonly) BOOL hasUrlMappingMiss;
 @property (nonatomic, readonly) BOOL hasUserOnboardingBegin;
 @property (nonatomic, readonly) BOOL hasUserOnboardingChannelPickerComplete;
 @property (nonatomic, readonly) BOOL hasUserOnboardingResult;
@@ -167,6 +178,7 @@
 @property (nonatomic, retain) NTPBShareSheetExposure *shareSheetExposure;
 @property (nonatomic, retain) NTPBShareSheetIapFail *shareSheetIapFail;
 @property (nonatomic, retain) NTPBSubscriptionDetectionScreenView *subscriptionDetectionScreenView;
+@property (nonatomic, retain) NTPBUrlMappingMiss *urlMappingMiss;
 @property (nonatomic, retain) NTPBUserOnboardingBegin *userOnboardingBegin;
 @property (nonatomic, retain) NTPBUserOnboardingChannelPickerComplete *userOnboardingChannelPickerComplete;
 @property (nonatomic, retain) NTPBUserOnboardingResult *userOnboardingResult;
@@ -182,7 +194,10 @@
 - (id)articleHostViewExposure;
 - (id)articleLikeDislike;
 - (id)articleScroll;
+- (id)articleScrollNotw;
+- (id)articleViewNotw;
 - (id)backgroundSubscriptionValidation;
+- (id)bundleIdMappingMiss;
 - (id)channelMuteUnmute;
 - (id)comscoreEventSend;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -206,7 +221,10 @@
 - (BOOL)hasArticleHostViewExposure;
 - (BOOL)hasArticleLikeDislike;
 - (BOOL)hasArticleScroll;
+- (BOOL)hasArticleScrollNotw;
+- (BOOL)hasArticleViewNotw;
 - (BOOL)hasBackgroundSubscriptionValidation;
+- (BOOL)hasBundleIdMappingMiss;
 - (BOOL)hasChannelMuteUnmute;
 - (BOOL)hasComscoreEventSend;
 - (BOOL)hasCoverArticleWidgetExposure;
@@ -249,6 +267,7 @@
 - (BOOL)hasShareSheetExposure;
 - (BOOL)hasShareSheetIapFail;
 - (BOOL)hasSubscriptionDetectionScreenView;
+- (BOOL)hasUrlMappingMiss;
 - (BOOL)hasUserOnboardingBegin;
 - (BOOL)hasUserOnboardingChannelPickerComplete;
 - (BOOL)hasUserOnboardingResult;
@@ -290,7 +309,10 @@
 - (void)setArticleHostViewExposure:(id)arg1;
 - (void)setArticleLikeDislike:(id)arg1;
 - (void)setArticleScroll:(id)arg1;
+- (void)setArticleScrollNotw:(id)arg1;
+- (void)setArticleViewNotw:(id)arg1;
 - (void)setBackgroundSubscriptionValidation:(id)arg1;
+- (void)setBundleIdMappingMiss:(id)arg1;
 - (void)setChannelMuteUnmute:(id)arg1;
 - (void)setComscoreEventSend:(id)arg1;
 - (void)setCoverArticleWidgetExposure:(id)arg1;
@@ -333,6 +355,7 @@
 - (void)setShareSheetExposure:(id)arg1;
 - (void)setShareSheetIapFail:(id)arg1;
 - (void)setSubscriptionDetectionScreenView:(id)arg1;
+- (void)setUrlMappingMiss:(id)arg1;
 - (void)setUserOnboardingBegin:(id)arg1;
 - (void)setUserOnboardingChannelPickerComplete:(id)arg1;
 - (void)setUserOnboardingResult:(id)arg1;
@@ -344,6 +367,7 @@
 - (id)shareSheetExposure;
 - (id)shareSheetIapFail;
 - (id)subscriptionDetectionScreenView;
+- (id)urlMappingMiss;
 - (id)userOnboardingBegin;
 - (id)userOnboardingChannelPickerComplete;
 - (id)userOnboardingResult;

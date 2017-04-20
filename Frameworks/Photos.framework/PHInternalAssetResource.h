@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@interface PHInternalAssetResource : PHAssetResource {
+@interface PHInternalAssetResource : PHAssetResource <PHCPLAssetResource> {
     NSString * _assetLocalIdentifier;
     unsigned int  _cplResourceType;
     id  _fileReservation;
@@ -18,7 +18,6 @@
 
 - (void).cxx_destruct;
 - (void)_acquireSandboxExtensionIfNeeded;
-- (BOOL)_fileExists;
 - (void)_fixupOriginalFilename;
 - (void)_fixupUTI;
 - (BOOL)_inconsistentTypeAndUTIOrMissingFileWithShouldCheckFileExistence:(BOOL)arg1;
@@ -35,6 +34,7 @@
 - (unsigned int)cplResourceType;
 - (void)dealloc;
 - (id)description;
+- (BOOL)fileExists;
 - (id)fileReservation;
 - (id)initWithResourceType:(int)arg1 fromAsset:(id)arg2 managedAsset:(id)arg3;
 - (BOOL)isLibraryAssetResource;

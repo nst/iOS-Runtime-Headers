@@ -10,6 +10,7 @@
     UIImageView * _imageView;
     UIView * _imageViewContainer;
     NSLayoutConstraint * _imageViewHeightCapConstraint;
+    NSLayoutConstraint * _imageViewHeightMinimumConstraint;
     UILabel * _instructionLabel;
     UIButton * _laterButton;
     <VTUITurnOnSiriViewDelegate> * _stateViewDelegate;

@@ -3,13 +3,11 @@
  */
 
 @interface MSPMutableHistoryEntryRoute : MSPMutableHistoryEntry <MSPHistoryEntryRoute> {
-    BOOL  _failed;
     <MSPRouteInformationSource> * _routeInformationSource;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isFailed, nonatomic) BOOL failed;
 @property (readonly) unsigned int hash;
 @property (getter=navigationWasInterrupted, nonatomic) BOOL navigationInterrupted;
 @property (nonatomic, copy) <MSPRouteInformationSource> *routeInformationSource;
@@ -25,11 +23,9 @@
 - (id)_routeRequestStorage;
 - (id)endWaypoint;
 - (id)initWithStorage:(id)arg1;
-- (BOOL)isFailed;
 - (BOOL)navigationWasInterrupted;
 - (id)routeHandle;
 - (id)routeInformationSource;
-- (void)setFailed:(BOOL)arg1;
 - (void)setNavigationInterrupted:(BOOL)arg1;
 - (void)setRouteInformationSource:(id)arg1;
 - (id)startWaypoint;

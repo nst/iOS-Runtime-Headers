@@ -11,6 +11,7 @@
     NCLookViewFontProvider * _fontProvider;
     BOOL  _heedsHorizontalLayoutMargins;
     UIButton * _iconButton;
+    UIImageView * _iconButtonShadow;
     int  _lookStyle;
     UILabel * _outgoingTitleLabel;
     NSString * _preferredContentSizeCategory;
@@ -46,8 +47,9 @@
 - (void).cxx_destruct;
 - (void)_configureDateLabelForShortLook;
 - (void)_configureDateLabelIfNecessary;
-- (void)_configureIconButtonForLongLook;
+- (void)_configureIconButtonForLongLookWithIcon:(id)arg1;
 - (void)_configureIconButtonIfNecessary;
+- (void)_configureIconButtonIfNecessaryWithIcon:(id)arg1;
 - (void)_configureTitleLabel:(id)arg1 forStyle:(int)arg2;
 - (void)_configureTitleLabelForLongLook:(id)arg1;
 - (void)_configureTitleLabelForShortLook:(id)arg1;
@@ -57,6 +59,7 @@
 - (id)_fontProvider;
 - (float)_headerHeight;
 - (float)_headerHeightForStyle:(int)arg1;
+- (id)_iconShadowImageForIcon:(id)arg1;
 - (void)_layoutDateLabelForLongLookWithScale:(float)arg1;
 - (void)_layoutDateLabelForShortLookWithScale:(float)arg1;
 - (void)_layoutDateLabelForStyle:(int)arg1 withScale:(float)arg2;

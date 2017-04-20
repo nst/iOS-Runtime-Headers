@@ -50,10 +50,9 @@
 - (void)setDelegate:(id)arg1;
 - (void)setReaderAvailable:(BOOL)arg1;
 - (void)setReaderFont:(id)arg1;
-- (void)setReaderInitialTopScrollOffset:(int)arg1 configuration:(id)arg2 userVisibleWidth:(double)arg3 isViewingArchive:(BOOL)arg4;
+- (void)setReaderInitialTopScrollOffset:(int)arg1 configuration:(id)arg2 isViewingArchive:(BOOL)arg3;
 - (void)setReaderLanguageTag:(id)arg1;
 - (void)setReaderTheme:(id)arg1;
-- (void)setReaderUserVisibleWidth:(double)arg1;
 - (BOOL)shouldCreateArticleFinder;
 - (void)stopLoadingNextPage;
 - (id)webView;

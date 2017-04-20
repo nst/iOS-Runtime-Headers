@@ -5,46 +5,37 @@
 @interface CNAddressComponentTextFieldCell : UITableViewCell {
     UIImageView * _chevron;
     NSArray * _componentConstraints;
-    NSArray * _oneFieldConstraints;
-    CNRepeatingGradientSeparatorView * _separator;
-    NSArray * _splitFieldConstraints;
+    UITextField * _textField;
     UITextField * _textFieldForChevron;
-    UITextField * _textFieldLeft;
-    UITextField * _textFieldRight;
-    BOOL  _usesSplitTextFields;
 }
 
 @property (nonatomic, retain) UIImageView *chevron;
 @property (nonatomic, retain) NSArray *componentConstraints;
-@property (nonatomic, retain) CNRepeatingGradientSeparatorView *separator;
 @property (nonatomic, copy) NSDictionary *textAttributes;
-@property (nonatomic, retain) UITextField *textFieldForChevron;
-@property (nonatomic, retain) UITextField *textFieldLeft;
-@property (nonatomic, retain) UITextField *textFieldRight;
+@property (nonatomic, retain) UITextField *textField;
+@property (nonatomic) UITextField *textFieldForChevron;
 @property (nonatomic, readonly) NSArray *textFields;
-@property (nonatomic) BOOL usesSplitTextFields;
+
++ (id)cellIdentifier;
 
 - (void).cxx_destruct;
-- (id)_addTextField;
+- (id)addTextField;
 - (id)chevron;
 - (id)componentConstraints;
+- (id)currentConstraintsForMetrics:(id)arg1;
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (id)separator;
+- (void)prepareForReuse;
 - (void)setChevron:(id)arg1;
 - (void)setComponentConstraints:(id)arg1;
-- (void)setSeparator:(id)arg1;
 - (void)setTextAttributes:(id)arg1;
+- (void)setTextField:(id)arg1;
 - (void)setTextFieldForChevron:(id)arg1;
-- (void)setTextFieldLeft:(id)arg1;
-- (void)setTextFieldRight:(id)arg1;
-- (void)setUsesSplitTextFields:(BOOL)arg1;
+- (void)setupTextFields;
 - (id)textAttributes;
+- (id)textField;
 - (id)textFieldForChevron;
-- (id)textFieldLeft;
-- (id)textFieldRight;
 - (id)textFields;
 - (void)updateConstraints;
-- (BOOL)usesSplitTextFields;
 
 @end

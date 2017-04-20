@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUIKeyValueDataCardSectionView : SearchUICardSectionView
+@interface SearchUIKeyValueDataCardSectionView : SearchUILayoutFreeSectionView
 
-- (id)containerOfVerticalStrings:(id)arg1 vibrant:(BOOL)arg2;
-- (id)initWithCardSection:(id)arg1 controller:(id)arg2;
+- (id)gridOfViewsForSection:(id)arg1;
+- (id)initWithCardSection:(id)arg1 controller:(id)arg2 style:(unsigned int)arg3;
+- (id)labelForString:(id)arg1 vibrant:(BOOL)arg2;
 
 @end

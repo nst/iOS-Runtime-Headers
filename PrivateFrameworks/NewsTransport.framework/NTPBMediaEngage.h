@@ -14,6 +14,7 @@
     int  _feedType;
     NSData * _feedViewExposureId;
     struct { 
+        unsigned int mediaDuration : 1; 
         unsigned int mediaPausePosition : 1; 
         unsigned int mediaResumePosition : 1; 
         unsigned int mediaResumeTimePlayed : 1; 
@@ -39,6 +40,7 @@
     BOOL  _isDigitalReplicaAd;
     BOOL  _isUserSubscribedToFeed;
     BOOL  _isVideoInFeed;
+    long long  _mediaDuration;
     NSString * _mediaId;
     int  _mediaPauseLocation;
     int  _mediaPauseMethod;
@@ -85,6 +87,7 @@
 @property (nonatomic) BOOL hasIsDigitalReplicaAd;
 @property (nonatomic) BOOL hasIsUserSubscribedToFeed;
 @property (nonatomic) BOOL hasIsVideoInFeed;
+@property (nonatomic) BOOL hasMediaDuration;
 @property (nonatomic, readonly) BOOL hasMediaId;
 @property (nonatomic) BOOL hasMediaPauseLocation;
 @property (nonatomic) BOOL hasMediaPauseMethod;
@@ -108,6 +111,7 @@
 @property (nonatomic) BOOL isDigitalReplicaAd;
 @property (nonatomic) BOOL isUserSubscribedToFeed;
 @property (nonatomic) BOOL isVideoInFeed;
+@property (nonatomic) long long mediaDuration;
 @property (nonatomic, retain) NSString *mediaId;
 @property (nonatomic) int mediaPauseLocation;
 @property (nonatomic) int mediaPauseMethod;
@@ -168,6 +172,7 @@
 - (BOOL)hasIsDigitalReplicaAd;
 - (BOOL)hasIsUserSubscribedToFeed;
 - (BOOL)hasIsVideoInFeed;
+- (BOOL)hasMediaDuration;
 - (BOOL)hasMediaId;
 - (BOOL)hasMediaPauseLocation;
 - (BOOL)hasMediaPauseMethod;
@@ -193,6 +198,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isUserSubscribedToFeed;
 - (BOOL)isVideoInFeed;
+- (long long)mediaDuration;
 - (id)mediaId;
 - (int)mediaPauseLocation;
 - (int)mediaPauseMethod;
@@ -232,6 +238,7 @@
 - (void)setHasIsDigitalReplicaAd:(BOOL)arg1;
 - (void)setHasIsUserSubscribedToFeed:(BOOL)arg1;
 - (void)setHasIsVideoInFeed:(BOOL)arg1;
+- (void)setHasMediaDuration:(BOOL)arg1;
 - (void)setHasMediaPauseLocation:(BOOL)arg1;
 - (void)setHasMediaPauseMethod:(BOOL)arg1;
 - (void)setHasMediaPausePosition:(BOOL)arg1;
@@ -248,6 +255,7 @@
 - (void)setIsDigitalReplicaAd:(BOOL)arg1;
 - (void)setIsUserSubscribedToFeed:(BOOL)arg1;
 - (void)setIsVideoInFeed:(BOOL)arg1;
+- (void)setMediaDuration:(long long)arg1;
 - (void)setMediaId:(id)arg1;
 - (void)setMediaPauseLocation:(int)arg1;
 - (void)setMediaPauseMethod:(int)arg1;

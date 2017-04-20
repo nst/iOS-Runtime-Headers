@@ -24,6 +24,8 @@
 - (void)configureAsAccessoryViewContainerForPreviewCollection:(id)arg1;
 - (void)configureWithNumberOfItems:(int)arg1 currentPreviewItemIndex:(unsigned int)arg2 itemProvider:(id)arg3 stateManager:(id)arg4;
 - (void)getPreviewCollectionUUIDWithCompletionHandler:(id /* block */)arg1;
+- (void)hostApplicationDidBecomeActive;
+- (void)hostApplicationDidEnterBackground:(BOOL)arg1;
 - (id)hostContext;
 - (void)hostViewControlerTransitionToState:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)invalidatePreviewCollection;

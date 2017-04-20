@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFLibrarySearchableIndex : NSObject <CSSearchableIndexDelegate, MFDiagnosticsGenerator> {
+@interface MFLibrarySearchableIndex : NSObject <CSSearchableIndexDelegate, MFDiagnosticsGenerator, MFLibrarySearchableIndexVerifierDataSource> {
     NSObject<OS_os_activity> * _batchIndexingActivity;
     MFCoalescer * _budgetCoalescer;
     BOOL  _clientStateFetched;
@@ -41,6 +41,7 @@
 @property (readonly, copy) NSString *description;
 @property (getter=_isForeground, setter=_setForeground:, nonatomic) BOOL foreground;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) unsigned int pendingIndexItemsCount;
 @property (readonly) Class superclass;
 @property (getter=_transaction, readonly) long long transaction;
 
@@ -93,6 +94,7 @@
 - (void)applicationWillSuspend;
 - (id)copyDiagnosticInformation;
 - (id)csIndex;
+- (id)dataSamplesForSearchableIndexVerifier:(id)arg1 searchableIndex:(id)arg2;
 - (id)dataSource;
 - (void)dealloc;
 - (id)identifiersMatchingCriterion:(id)arg1;
@@ -100,6 +102,8 @@
 - (id)indexedEmptySubjectIdentifers;
 - (id)init;
 - (id)initWithName:(id)arg1 dataSource:(id)arg2;
+- (id)librarySearchableIndexForSearchableIndexVerifier:(id)arg1;
+- (unsigned int)pendingIndexItemsCount;
 - (double)persistedRemainingIndexingBudget;
 - (void)refresh;
 - (void)removeAllItems;

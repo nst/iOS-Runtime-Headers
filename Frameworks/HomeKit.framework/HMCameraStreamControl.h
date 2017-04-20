@@ -28,6 +28,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setStreamControl:(id)arg1;
 - (void)startStream;
+- (void)startStreamWithPreferences:(id)arg1;
 - (void)stopStream;
 - (id)streamControl;
 - (unsigned int)streamState;

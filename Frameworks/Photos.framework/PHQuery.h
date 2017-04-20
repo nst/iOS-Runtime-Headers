@@ -54,6 +54,7 @@
 + (id)_fetchTypeForLocalIdentifiers:(id)arg1;
 + (id)_filterPredicateFromFetchOptionsPredicate:(id)arg1 options:(id)arg2 phClass:(Class)arg3;
 + (id)_queryForPersonsInAssetsWithObjectIDs:(id)arg1 withOptions:(id)arg2;
++ (id)_queryForPersonsWithFaceRelationshipPredicate:(id)arg1 options:(id)arg2;
 + (id)_relationshipForFetchType:(id)arg1 predicate:(id)arg2;
 + (id)_rootFolderID;
 + (id)_transformedSortDescriptors:(id)arg1 forFetchType:(id)arg2;
@@ -87,15 +88,17 @@
 + (id)queryForCollectionsInCollectionList:(id)arg1 options:(id)arg2;
 + (id)queryForCuratedAssetsInMemory:(id)arg1 options:(id)arg2;
 + (id)queryForCustomKeyAssetsInAssetCollection:(id)arg1 options:(id)arg2;
-+ (id)queryForFaceGroupsForPerson:(id)arg1 withType:(int)arg2 options:(id)arg3;
-+ (id)queryForFaceGroupsWithFace:(id)arg1 type:(int)arg2 options:(id)arg3;
++ (id)queryForFaceCropsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
++ (id)queryForFaceCropsWithOptions:(id)arg1;
++ (id)queryForFaceGroupsForPerson:(id)arg1 options:(id)arg2;
++ (id)queryForFaceGroupsWithFace:(id)arg1 options:(id)arg2;
 + (id)queryForFaceGroupsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 + (id)queryForFaceGroupsWithOptions:(id)arg1;
-+ (id)queryForFaceGroupsWithType:(int)arg1 options:(id)arg2;
 + (id)queryForFacesForPerson:(id)arg1 options:(id)arg2;
 + (id)queryForFacesInAsset:(id)arg1 options:(id)arg2;
 + (id)queryForFacesInFaceGroup:(id)arg1 options:(id)arg2;
 + (id)queryForFacesOnAssetWithFace:(id)arg1 options:(id)arg2;
++ (id)queryForFacesOnFaceCrop:(id)arg1 options:(id)arg2;
 + (id)queryForFacesWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 + (id)queryForFacesWithOptions:(id)arg1;
 + (id)queryForKeyAssetInMemory:(id)arg1 options:(id)arg2;
@@ -116,6 +119,7 @@
 + (id)queryForPersonsWithOptions:(id)arg1;
 + (id)queryForPersonsWithType:(int)arg1 options:(id)arg2;
 + (id)queryForRejectedFacesOnPerson:(id)arg1 options:(id)arg2;
++ (id)queryForRejectedPersonsForFace:(id)arg1 options:(id)arg2;
 + (id)queryForRepresentativeAssetsInMemory:(id)arg1 options:(id)arg2;
 + (id)queryForRootAlbumCollectionList;
 + (id)queryForSingletonFacesWithOptions:(id)arg1;
@@ -128,6 +132,7 @@
 - (id)_containerRelationship;
 - (id)_createFetchRequestIncludingBasePredicate:(BOOL)arg1;
 - (id)_effectiveSortDescriptors;
+- (id)_globalPredicatesForPHClass:(Class)arg1;
 - (BOOL)_includesCameraRoll;
 - (BOOL)_includesTrashedObjects;
 - (BOOL)_isAlbumContentSort;

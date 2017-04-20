@@ -3,6 +3,7 @@
  */
 
 @interface GEOETARequest : PBRequest <NSCopying> {
+    GEOPDABClientDatasetMetadata * _abClientMetadata;
     GEOAdditionalEnabledMarkets * _additionalEnabledMarkets;
     BOOL  _allowPartialResults;
     GEOAutomobileOptions * _automobileOptions;
@@ -54,6 +55,7 @@
     GEOWalkingOptions * _walkingOptions;
 }
 
+@property (nonatomic, retain) GEOPDABClientDatasetMetadata *abClientMetadata;
 @property (nonatomic, retain) GEOAdditionalEnabledMarkets *additionalEnabledMarkets;
 @property (nonatomic) BOOL allowPartialResults;
 @property (nonatomic, retain) GEOAutomobileOptions *automobileOptions;
@@ -62,6 +64,7 @@
 @property (nonatomic, retain) NSMutableArray *destinationWaypointTypeds;
 @property (nonatomic, retain) NSMutableArray *destinations;
 @property (nonatomic, retain) NSMutableArray *deviceHistoricalLocations;
+@property (nonatomic, readonly) BOOL hasAbClientMetadata;
 @property (nonatomic, readonly) BOOL hasAdditionalEnabledMarkets;
 @property (nonatomic) BOOL hasAllowPartialResults;
 @property (nonatomic, readonly) BOOL hasAutomobileOptions;
@@ -111,6 +114,7 @@
 + (Class)serviceTagType;
 
 - (int)StringAsTransportType:(id)arg1;
+- (id)abClientMetadata;
 - (void)addDestination:(id)arg1;
 - (void)addDestinationWaypointTyped:(id)arg1;
 - (void)addDeviceHistoricalLocation:(id)arg1;
@@ -138,6 +142,7 @@
 - (id)deviceHistoricalLocations;
 - (unsigned int)deviceHistoricalLocationsCount;
 - (id)dictionaryRepresentation;
+- (BOOL)hasAbClientMetadata;
 - (BOOL)hasAdditionalEnabledMarkets;
 - (BOOL)hasAllowPartialResults;
 - (BOOL)hasAutomobileOptions;
@@ -182,6 +187,7 @@
 - (unsigned int)serviceTagsCount;
 - (struct GEOSessionID { unsigned long long x1; unsigned long long x2; })sessionID;
 - (id)sessionState;
+- (void)setAbClientMetadata:(id)arg1;
 - (void)setAdditionalEnabledMarkets:(id)arg1;
 - (void)setAllowPartialResults:(BOOL)arg1;
 - (void)setAutomobileOptions:(id)arg1;

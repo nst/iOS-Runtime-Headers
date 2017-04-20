@@ -39,6 +39,7 @@
 @property (nonatomic, readonly) NCNotificationAction *defaultAction;
 @property (nonatomic, readonly, copy) NSArray *defaultEnvironmentActions;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL hasAttachments;
 @property (nonatomic, readonly) BOOL hasOnlySingleMinimalTextInputAction;
 @property (nonatomic, readonly) BOOL hasOnlySingleTextInputAction;
 @property (readonly) unsigned int hash;
@@ -52,6 +53,7 @@
 @property (nonatomic, readonly, copy) NSSet *requestDestinations;
 @property (nonatomic, readonly, copy) NSString *sectionIdentifier;
 @property (nonatomic, readonly, copy) NSSet *settingsSections;
+@property (nonatomic, readonly) BOOL showsTextInputOnAppearance;
 @property (nonatomic, readonly) NCNotificationAction *silenceAction;
 @property (nonatomic, readonly) NCNotificationSound *sound;
 @property (nonatomic, readonly, copy) NSDictionary *sourceInfo;
@@ -138,11 +140,13 @@
 
 - (id)bulletin;
 - (id)defaultEnvironmentActions;
+- (BOOL)hasAttachments;
 - (BOOL)hasOnlySingleMinimalTextInputAction;
 - (BOOL)hasOnlySingleTextInputAction;
 - (BOOL)hasSameContactAsNotificationRequest:(id)arg1;
 - (BOOL)isAudioMessageNotificationRequest;
 - (id)minimalEnvironmentActions;
 - (id)observer;
+- (BOOL)showsTextInputOnAppearance;
 
 @end

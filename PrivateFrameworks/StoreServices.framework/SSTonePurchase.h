@@ -22,6 +22,7 @@
 @property BOOL shouldMakeDefaultTextTone;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_addEntriesToDatabaseEncoding:(id)arg1;
 - (void)_setValuesUsingDatabaseEncoding:(id)arg1;
 - (id)allowedToneStyles;
@@ -30,7 +31,6 @@
 - (id)assigneeToneStyle;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithItem:(id)arg1 offer:(id)arg2;

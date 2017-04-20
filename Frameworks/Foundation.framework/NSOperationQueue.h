@@ -46,6 +46,10 @@
 - (id)underlyingQueue;
 - (void)waitUntilAllOperationsAreFinished;
 
+// Image: /System/Library/Frameworks/iAd.framework/iAd
+
++ (id)adSessionSharedDelegateQueue;
+
 // Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
 
 - (void)cancelAllOperationsWithError:(id)arg1;

@@ -4,11 +4,12 @@
 
 @interface MRNotificationMessage : MRProtocolMessage
 
-@property (nonatomic, readonly) NSMutableArray *notifications;
+@property (nonatomic, readonly) NSString *notification;
+@property (nonatomic, readonly) NSDictionary *userInfo;
 
 - (id)initWithNotification:(id)arg1;
-- (id)initWithNotifications:(id)arg1;
-- (id)notifications;
+- (id)notification;
 - (unsigned int)type;
+- (id)userInfo;
 
 @end

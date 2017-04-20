@@ -4,10 +4,12 @@
 
 @interface WLKUIImageService : NSObject
 
++ (id)_MD5StringForString:(id)arg1;
 + (void)_cacheImage:(id)arg1 forKey:(id)arg2;
 + (id)_cachePath;
 + (id)_cachedImageForKey:(id)arg1;
-+ (void)_fetchIconForChannel:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 completion:(id /* block */)arg3;
-+ (id)_keyForChannelID:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
++ (id)_imageURLForChannel:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
++ (id)_keyForChannel:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
++ (void)fetchIconForChannel:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 completion:(id /* block */)arg3;
 
 @end

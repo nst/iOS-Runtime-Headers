@@ -4,14 +4,14 @@
 
 @interface _SwiftNativeNSError : NSError
 
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)allocWithZone;
 
 - (Class)classForCoder;
 - (int)code;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)copyWithZone;
 - (void)dealloc;
 - (id)domain;
-- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqual;
 - (id)userInfo;
 
 @end

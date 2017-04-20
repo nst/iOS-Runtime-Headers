@@ -6,7 +6,6 @@
     BOOL  __backendRecoveryNeeded;
     CUCaptureController * __captureController;
     NSObject<OS_dispatch_source> * __captureTimer;
-    CAMLowDiskSpaceAlertView * __diskSpaceAlert;
     BOOL  __focusAndExposureAdjusted;
     BOOL  __ignoringTimerCallbacksForTearDown;
     BOOL  __ignoringTimerCallbacksWaitingForCaptureResponse;
@@ -26,7 +25,6 @@
 @property (setter=_setBackendRecoveryNeeded:, nonatomic) BOOL _backendRecoveryNeeded;
 @property (nonatomic, readonly) CUCaptureController *_captureController;
 @property (nonatomic, readonly) NSObject<OS_dispatch_source> *_captureTimer;
-@property (nonatomic, readonly) CAMLowDiskSpaceAlertView *_diskSpaceAlert;
 @property (getter=_isFocusAndExposureAdjusted, setter=_setFocusAndExposureAdjusted:, nonatomic) BOOL _focusAndExposureAdjusted;
 @property (nonatomic, readonly) BOOL _ignoringTimerCallbacksForTearDown;
 @property (nonatomic, readonly) BOOL _ignoringTimerCallbacksWaitingForCaptureResponse;
@@ -61,8 +59,6 @@
 - (void)_captureTimerFired;
 - (id)_createThumbnailImageFromPlaceholderResult:(id)arg1;
 - (void)_deviceStarted:(id)arg1;
-- (id)_diskSpaceAlert;
-- (void)_dismissDiskSpaceAlert;
 - (BOOL)_enqueueCaptureRequest;
 - (BOOL)_ignoringTimerCallbacksForTearDown;
 - (BOOL)_ignoringTimerCallbacksWaitingForCaptureResponse;
@@ -101,7 +97,6 @@
 - (void)_updateFocusAndExposureForStartCapturing;
 - (void)_updateFocusLensPosition:(float)arg1 forTimelapseUUID:(id)arg2 forceUpdate:(BOOL)arg3;
 - (void)_updateLocationIfNecessary;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)captureStartTime;
 - (void)dealloc;
 - (id)delegate;

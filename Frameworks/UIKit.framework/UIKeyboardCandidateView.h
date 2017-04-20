@@ -34,6 +34,7 @@
 - (void)_toggleExtendedCandidateView:(id)arg1;
 - (id)activeCandidateList;
 - (void)candidatesDidChange;
+- (int)candidatesVisualStyle;
 - (void)dealloc;
 - (float)extendedViewAnimationDuration;
 - (float)extendedViewHeight;

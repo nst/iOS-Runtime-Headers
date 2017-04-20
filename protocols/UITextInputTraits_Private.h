@@ -32,6 +32,7 @@
 - (UIColor *)insertionPointColor;
 - (unsigned int)insertionPointWidth;
 - (BOOL)isCarPlayIdiom;
+- (BOOL)isDevicePasscodeEntry;
 - (BOOL)isSingleLineDocument;
 - (BOOL)learnsCorrections;
 - (NSString *)recentInputIdentifier;
@@ -47,6 +48,7 @@
 - (void)setAutocorrectionContext:(NSString *)arg1;
 - (void)setContentsIsSingleValue:(BOOL)arg1;
 - (void)setDeferBecomingResponder:(BOOL)arg1;
+- (void)setDevicePasscodeEntry:(BOOL)arg1;
 - (void)setDisableInputBars:(BOOL)arg1;
 - (void)setDisablePrediction:(BOOL)arg1;
 - (void)setDisplaySecureEditsUsingPlainText:(BOOL)arg1;

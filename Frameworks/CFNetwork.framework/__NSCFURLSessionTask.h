@@ -4,6 +4,7 @@
 
 @interface __NSCFURLSessionTask : NSURLSessionTask {
     NSDictionary * _DuetActivityProperties;
+    NSData * __TCPConnectionMetadata;
     unsigned long  _allowedProtocolTypes;
     BOOL  _allowsCellular;
     NSURLSessionTaskHTTPAuthenticator * _authenticator;
@@ -43,6 +44,7 @@
     struct __PerformanceTiming { } * _performanceTiming;
     unsigned int  _powerAssertion;
     BOOL  _preventsIdleSystemSleep;
+    BOOL  _preventsSystemHTTPProxyAuthentication;
     float  _priorityHint;
     long long  _priorityValue;
     BOOL  _prohibitAuthUI;
@@ -78,6 +80,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (id)_DuetActivityProperties;
+- (id)_TCPConnectionMetadata;
 - (unsigned long)_allowedProtocolTypes;
 - (BOOL)_allowsCellular;
 - (id)_backgroundTaskTimingData;
@@ -123,6 +126,7 @@
 - (unsigned int)_powerAssertion;
 - (void)_prepareNewTimingDataContainer;
 - (BOOL)_preventsIdleSystemSleep;
+- (BOOL)_preventsSystemHTTPProxyAuthentication;
 - (long long)_priority;
 - (long long)_priorityValue;
 - (BOOL)_prohibitAuthUI;
@@ -196,6 +200,7 @@
 - (void)setTaskDescription:(id)arg1;
 - (void)setTaskIdentifier:(unsigned int)arg1;
 - (void)set_DuetActivityProperties:(id)arg1;
+- (void)set_TCPConnectionMetadata:(id)arg1;
 - (void)set_allowedProtocolTypes:(unsigned long)arg1;
 - (void)set_allowsCellular:(BOOL)arg1;
 - (void)set_backgroundTaskTimingData:(id)arg1;
@@ -224,6 +229,7 @@
 - (void)set_performanceTiming:(struct __PerformanceTiming { }*)arg1;
 - (void)set_powerAssertion:(unsigned int)arg1;
 - (void)set_preventsIdleSystemSleep:(BOOL)arg1;
+- (void)set_preventsSystemHTTPProxyAuthentication:(BOOL)arg1;
 - (void)set_priority:(long long)arg1;
 - (void)set_priorityValue:(long long)arg1;
 - (void)set_prohibitAuthUI:(BOOL)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
  */
 
-@interface WBSFormMetadata : NSObject {
+@interface WBSFormMetadata : NSObject <NSSecureCoding> {
     NSURL * _action;
     BOOL  _allowsAutocomplete;
     NSDictionary * _annotations;
@@ -15,7 +15,6 @@
     BOOL  _isSearchForm;
     NSString * _oldPasswordElementUniqueID;
     NSString * _passwordElementUniqueID;
-    NSDictionary * _radioButtonInfo;
     unsigned int  _requestType;
     NSString * _textSample;
     unsigned int  _type;
@@ -39,7 +38,6 @@
 @property (nonatomic, readonly) BOOL isSearchForm;
 @property (nonatomic, readonly, copy) NSString *oldPasswordElementUniqueID;
 @property (nonatomic, readonly, copy) NSString *passwordElementUniqueID;
-@property (nonatomic, readonly, copy) NSDictionary *radioButtonInfo;
 @property (nonatomic, readonly) unsigned int requestType;
 @property (nonatomic, readonly, copy) NSString *textSample;
 @property (nonatomic, readonly) unsigned int type;
@@ -49,7 +47,10 @@
 @property (nonatomic, readonly) BOOL usesRelAsync;
 @property (getter=isVisible, nonatomic, readonly) BOOL visible;
 
++ (BOOL)supportsSecureCoding;
+
 - (void).cxx_destruct;
+- (id)_init;
 - (id)action;
 - (BOOL)allowsAutocomplete;
 - (id)annotations;
@@ -57,15 +58,19 @@
 - (BOOL)containsActiveElement;
 - (id)controls;
 - (id)dictionaryRepresentation;
+- (void)encodeWithCoder:(id)arg1;
 - (id)firstCreditCardCardholderFieldOrCreditCardNumberFieldUniqueID;
+- (id)formMetadataByReplacingControlsWith:(id)arg1;
+- (unsigned int)hash;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithJSValue:(id)arg1;
 - (BOOL)isBestForCredentialPreFill;
 - (BOOL)isBestForPageLevelAutoFill;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isSearchForm;
 - (BOOL)isVisible;
 - (id)oldPasswordElementUniqueID;
 - (id)passwordElementUniqueID;
-- (id)radioButtonInfo;
 - (unsigned int)requestType;
 - (id)textSample;
 - (unsigned int)type;

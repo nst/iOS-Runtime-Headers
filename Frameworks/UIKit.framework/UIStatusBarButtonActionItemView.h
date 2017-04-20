@@ -20,6 +20,7 @@
 - (void)_pressAndHoldButton:(id)arg1;
 - (void)_pressButton:(id)arg1;
 - (void)_triggerButtonWithAction:(int)arg1;
+- (BOOL)allowsUserInteraction;
 - (int)buttonType;
 - (BOOL)canBecomeFocused;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;

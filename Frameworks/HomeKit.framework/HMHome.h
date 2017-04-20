@@ -97,7 +97,7 @@
 
 - (void).cxx_destruct;
 - (void)_acceptInvitation:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)_addAccessory:(id)arg1 password:(id)arg2 setupCodeDeferred:(BOOL)arg3 completionHandler:(id /* block */)arg4;
+- (void)_addAccessory:(id)arg1 appID:(id)arg2 password:(id)arg3 setupCodeDeferred:(BOOL)arg4 completionHandler:(id /* block */)arg5;
 - (void)_addAccessory:(id)arg1 toBridge:(id)arg2 password:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_addActionSetWithName:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_addAndSetupAccessoriesWithCompletionHandler:(id /* block */)arg1;
@@ -341,6 +341,7 @@
 - (void)setSetupViewController:(id)arg1;
 - (id)setupRemoteViewController;
 - (id)setupViewController;
+- (void)startPairingWithAccessory:(id)arg1 accessorySetupDescription:(id)arg2 setupRemoteViewController:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)startPairingWithAccessory:(id)arg1 setupRemoteViewController:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)triggerOwnedActionSetWithUUID:(id)arg1;
 - (id)triggerOwnedActionSets;
@@ -372,6 +373,7 @@
 - (id)hf_accessoryWithIdentifier:(id)arg1;
 - (id)hf_allBridgeAccessories;
 - (id)hf_allNonEmptyActionSets;
+- (id)hf_allProgrammableSwitchAccessories;
 - (id)hf_allRooms;
 - (id)hf_allServices;
 - (id)hf_cameraProfileWithIdentifier:(id)arg1;

@@ -7,4 +7,6 @@
     int  pid;
 }
 
+- (void)dealloc;
+
 @end

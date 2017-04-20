@@ -45,9 +45,7 @@
 - (BOOL)isExecutingDuringDarkWake;
 - (unsigned int)lastPerformedJobScenario;
 - (id)localFileURLForAssetResource:(id)arg1 error:(id*)arg2;
-- (id)newAssetFetchOptions;
 - (id)newCVMLRequestOptions;
-- (id)newObjectFetchOptions;
 - (void)performCVMLForcedCleanup;
 - (void)performCVMLForcedCleanupWithOptions:(id)arg1;
 - (id)preferredAssetResourcesForAnalyzingAsset:(id)arg1;

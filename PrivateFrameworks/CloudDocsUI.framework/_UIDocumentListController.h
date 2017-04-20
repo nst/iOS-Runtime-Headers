@@ -24,7 +24,6 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL editing;
 @property (readonly) unsigned int hash;
-@property (nonatomic) int listMode;
 @property (nonatomic, readonly) NSURL *presentedURL;
 @property (nonatomic) _UIDocumentListController *rootListController;
 @property (nonatomic, retain) NSArray *selectedItems;
@@ -37,6 +36,7 @@
 - (void).cxx_destruct;
 - (Class)_classForChildren;
 - (void)_commonInitWithModel:(id)arg1;
+- (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3 listMode:(int)arg4;
 - (void)_setContainerViewController:(id)arg1;
 - (void)_updateScrollPositionForStateRestoration;
 - (int)availableActions;
@@ -54,7 +54,6 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithURL:(id)arg1;
 - (void)itemsOrSelectionDidChange:(BOOL)arg1;
-- (int)listMode;
 - (id)model;
 - (void)performAction:(int)arg1 item:(id)arg2 view:(id)arg3 completion:(id /* block */)arg4;
 - (id)presentedURL;
@@ -66,7 +65,6 @@
 - (void)setDisplayMode:(int)arg1;
 - (void)setEditing:(BOOL)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setListMode:(int)arg1;
 - (void)setRootListController:(id)arg1;
 - (void)setSelectedItems:(id)arg1;
 - (void)setSortOrder:(int)arg1;

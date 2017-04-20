@@ -60,7 +60,6 @@
 @property (nonatomic, readonly) BOOL duplicateAllowsPrivateMetadata;
 @property (nonatomic, readonly, copy) NSString *editorBundleID;
 @property (nonatomic, retain) id faceAdjustmentVersion;
-@property (nonatomic) int faceDetectionState;
 @property (nonatomic, readonly) PHRelationshipChangeRequestHelper *facesHelper;
 @property (getter=isFavorite, nonatomic) BOOL favorite;
 @property (readonly) unsigned int hash;
@@ -111,7 +110,6 @@
 - (id)editorBundleID;
 - (void)encodeToXPCDict:(id)arg1;
 - (id)faceAdjustmentVersion;
-- (int)faceDetectionState;
 - (id)facesHelper;
 - (id)helper;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })imageDisplayTime;
@@ -147,7 +145,6 @@
 - (void)setCreationDate:(id)arg1;
 - (void)setCurationScore:(double)arg1;
 - (void)setFaceAdjustmentVersion:(id)arg1;
-- (void)setFaceDetectionState:(int)arg1;
 - (void)setFavorite:(BOOL)arg1;
 - (void)setHidden:(BOOL)arg1;
 - (void)setImageDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;

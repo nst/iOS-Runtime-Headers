@@ -3,29 +3,39 @@
  */
 
 @interface FBApplicationInfo : FBBundleInfo <BSDescriptionProviding> {
+    NSString * _appIDEntitlement;
     NSSet * _backgroundModes;
     BOOL  _beta;
+    BOOL  _blocked;
     NSURL * _bundleContainerURL;
     NSArray * _customMachServices;
     NSURL * _dataContainerURL;
     FBMutableApplicationDefaults * _defaults;
     NSArray * _deviceFamilies;
+    NSString * _displayName;
+    NSNumber * _downloaderDSID;
     BOOL  _enabled;
-    NSDictionary * _entitlements;
     NSDictionary * _environmentVariables;
     NSURL * _executableURL;
     BOOL  _exitsOnSuspend;
     NSArray * _externalAccessoryProtocols;
-    NSString * _fallbackFolderName;
-    NSArray * _folderNames;
+    BOOL  _hasViewServicesEntitlement;
+    BOOL  _initialized;
     BOOL  _installing;
     BOOL  _isManaged;
+    NSNumber * _itemID;
     double  _lastModifiedDate;
+    NSDictionary * _lazy_entitlements;
+    NSString * _lazy_fallbackFolderName;
+    NSArray * _lazy_folderNames;
     float  _minimumBrightnessLevel;
     BOOL  _newsstand;
+    long  _once_entitlements;
+    long  _once_folderNames;
     NSString * _preferenceDomain;
     FBProfileManager * _profileManager;
     BOOL  _provisioningProfileValidated;
+    NSNumber * _purchaserDSID;
     int  _ratingRank;
     NSArray * _requiredCapabilities;
     BOOL  _requiresPersistentWiFi;
@@ -37,10 +47,11 @@
     NSArray * _tags;
     unsigned int  _type;
     BOOL  _uninstalling;
-    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
+@property (getter=_appIDEntitlement, nonatomic, readonly, copy) NSString *appIDEntitlement;
 @property (getter=isBeta, nonatomic, readonly) BOOL beta;
+@property (getter=isBlocked, nonatomic, readonly) BOOL blocked;
 @property (nonatomic, readonly, retain) NSURL *bundleContainerURL;
 @property (nonatomic, readonly, retain) NSArray *customMachServices;
 @property (nonatomic, readonly, retain) NSURL *dataContainerURL;
@@ -48,6 +59,7 @@
 @property (nonatomic, readonly, retain) FBApplicationDefaults *defaults;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, retain) NSArray *deviceFamilies;
+@property (nonatomic, readonly, copy) NSString *displayName;
 @property (nonatomic, readonly, retain) NSNumber *downloaderDSID;
 @property (getter=isEnabled, nonatomic, readonly) BOOL enabled;
 @property (nonatomic, readonly, retain) NSDictionary *entitlements;
@@ -58,6 +70,7 @@
 @property (nonatomic, readonly, retain) NSString *fallbackFolderName;
 @property (nonatomic, readonly, retain) NSArray *folderNames;
 @property (getter=hasFreeDeveloperProvisioningProfile, nonatomic, readonly) BOOL freeDeveloperProvisioningProfile;
+@property (nonatomic, readonly) BOOL hasViewServicesEntitlement;
 @property (readonly) unsigned int hash;
 @property (getter=_isInstalling, setter=_setInstalling:, nonatomic) BOOL installing;
 @property (nonatomic, readonly, retain) NSNumber *itemID;
@@ -83,22 +96,24 @@
 @property (getter=_isUninstalling, setter=_setUninstalling:, nonatomic) BOOL uninstalling;
 @property (getter=hasUniversalProvisioningProfile, nonatomic, readonly) BOOL universalProvisioningProfile;
 
++ (unsigned int)_applicationTypeForProxy:(id)arg1;
++ (void)_buildDefaults:(id)arg1 fromInfo:(id)arg2 entitlements:(id)arg3 appType:(unsigned int)arg4 isOnOrAfterOkemo:(BOOL)arg5;
++ (unsigned int)_computeSupportedInterfaceOrientationsWithInfo:(id)arg1 forDefaults:(id)arg2;
++ (id)_configureEnvironment:(id)arg1 withInfo:(id)arg2 isPreApex:(BOOL)arg3;
++ (id)_genreNameForID:(int)arg1;
+
+- (id)_appIDEntitlement;
 - (id)_applicationTrustData;
-- (unsigned int)_applicationType:(id)arg1;
-- (void)_buildDefaultsFromInfoPlist:(id)arg1;
-- (void)_cacheFolderNamesForSystemApp:(id)arg1;
-- (unsigned int)_computeSupportedInterfaceOrientations:(id)arg1;
-- (id)_configureEnvironment:(id)arg1;
-- (id)_copyiTunesMetadata;
+- (id)_initForProfileManagerTesting;
 - (id)_initWithApplicationProxy:(id)arg1;
+- (id)_initWithBundleIdentifier:(id)arg1 url:(id)arg2;
+- (id)_initWithBundleProxy:(id)arg1 overrideURL:(id)arg2;
 - (BOOL)_isInstalling;
 - (BOOL)_isUninstalling;
-- (double)_lastModifiedDateForPath:(id)arg1;
-- (id)_localizedGenreFromDictionary:(id)arg1;
-- (id)_localizedGenreNameForID:(int)arg1;
+- (void)_loadFromProxy:(id)arg1;
 - (int)_mapSignatureStateFromTrustState:(unsigned int)arg1;
-- (void)_parse:(id)arg1 fromBundle:(id)arg2;
-- (id)_preferenceDomain;
+- (void)_once_loadFolderNamesIfNecessary;
+- (void)_overrideTags:(id)arg1;
 - (id)_profileManager;
 - (void)_setInstalling:(BOOL)arg1;
 - (void)_setProfileManager:(id)arg1;
@@ -115,6 +130,7 @@
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)deviceFamilies;
+- (id)displayName;
 - (id)downloaderDSID;
 - (id)entitlements;
 - (id)environmentVariables;
@@ -124,8 +140,10 @@
 - (id)folderNames;
 - (BOOL)hasFreeDeveloperProvisioningProfile;
 - (BOOL)hasUniversalProvisioningProfile;
+- (BOOL)hasViewServicesEntitlement;
 - (id)initWithApplicationProxy:(id)arg1;
 - (BOOL)isBeta;
+- (BOOL)isBlocked;
 - (BOOL)isEnabled;
 - (BOOL)isExitsOnSuspend;
 - (BOOL)isNewsstand;

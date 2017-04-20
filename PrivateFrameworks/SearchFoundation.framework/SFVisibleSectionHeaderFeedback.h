@@ -2,13 +2,20 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFVisibleSectionHeaderFeedback : SFFeedback {
+@interface SFVisibleSectionHeaderFeedback : SFFeedback <SFProtobufObject> {
     unsigned int  _headerType;
     SFResultSection * _section;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic) unsigned int headerType;
+@property (nonatomic, readonly) PBCodable *protobufMessage;
 @property (nonatomic, copy) SFResultSection *section;
+@property (readonly) Class superclass;
+
+// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
 
 + (BOOL)supportsSecureCoding;
 
@@ -20,5 +27,11 @@
 - (id)section;
 - (void)setHeaderType:(unsigned int)arg1;
 - (void)setSection:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
+
++ (Class)protobufClass;
+
+- (id)protobufMessage;
 
 @end

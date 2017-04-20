@@ -2,11 +2,12 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotosGridViewController : UICollectionViewController <PHAssetCollectionDataSource, PLDismissableViewController, PLNavigableAssetContainerViewController, PUAutoScrollerDelegate, PUCollectionViewReorderDelegate, PUDeletePhotosActionControllerDelegate, PUOneUpPresentationHelperDelegate, PUPhotosGlobalFooterViewDelegate, PUPhotosSharingViewControllerDelegate, PUScrollViewSpeedometerDelegate, PUSessionInfoObserver, PUSlideshowViewControllerDelegate, PUStackedAlbumControllerTransition, PUSwipeSelectionManagerDataSource, PUSwipeSelectionManagerDelegate, PXPhotosDataSourceChangeObserver, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, _UISettingsKeyObserver> {
+@interface PUPhotosGridViewController : UICollectionViewController <PHAssetCollectionDataSource, PLDismissableViewController, PLNavigableAssetContainerViewController, PUCollectionViewReorderDelegate, PUDeletePhotosActionControllerDelegate, PUOneUpPresentationHelperDelegate, PUPhotosGlobalFooterViewDelegate, PUPhotosGridBarsHelperDelegate, PUPhotosSharingViewControllerDelegate, PUScrollViewSpeedometerDelegate, PUSessionInfoObserver, PUSlideshowViewControllerDelegate, PUStackedAlbumControllerTransition, PUSwipeSelectionManagerDataSource, PUSwipeSelectionManagerDelegate, PXAutoScrollerDelegate, PXPhotosDataSourceChangeObserver, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, _UISettingsKeyObserver> {
     UIAlertController * __actionConfirmationAlert;
     UICollectionViewLayout * __albumListTransitionLayout;
     PUAlbumPickerViewController * __albumPickerViewController;
     PXAssetBadgeManager * __badgeManager;
+    PUPhotosGridBarsHelper * __barsHelper;
     int  __batchPreheatingCount;
     id  __cachedViewSizeTransitionContext;
     struct CGSize { 
@@ -27,6 +28,10 @@
     PUPhotoBrowserOneUpPresentationAdaptor * __photoBrowserOneUpPresentationAdaptor;
     NSIndexPath * __previewingIndexPath;
     unsigned int  __previousCollectionsCount;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    }  __previousPrefetchContentOffset;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -64,7 +69,6 @@
     unsigned int  _allowedActions;
     UIView * _alternateContentView;
     BOOL  _alwaysHideTabBar;
-    NSNumber * _cachedDefaultFooterHeight;
     UIBarButtonItem * _cancelButtonItem;
     float  _collectionViewLayoutReferenceWidth;
     BOOL  _contentViewInSyncWithModel;
@@ -96,6 +100,7 @@
     UINavigationButton * _selectionButton;
     PUSessionInfo * _sessionInfo;
     UIBarButtonItem * _shareToolbarButton;
+    BOOL  _showingMenu;
     BOOL  _showsCustomDoneButtonItemOnLeft;
     UIBarButtonItem * _slideshowButton;
     UIBarButtonItem * _slideshowButtonSpacer;
@@ -112,6 +117,7 @@
 @property (setter=setAlbumListTransitionLayout:, nonatomic, retain) UICollectionViewLayout *_albumListTransitionLayout;
 @property (setter=_setAlbumPickerViewController:, nonatomic, retain) PUAlbumPickerViewController *_albumPickerViewController;
 @property (nonatomic, readonly) PXAssetBadgeManager *_badgeManager;
+@property (nonatomic, readonly) PUPhotosGridBarsHelper *_barsHelper;
 @property (setter=_setBatchPreheatingCount:, nonatomic) int _batchPreheatingCount;
 @property (setter=_setCachedViewSizeTransitionContext:, nonatomic, retain) id _cachedViewSizeTransitionContext;
 @property (setter=_setCachedViewSizeTransitionContextSize:, nonatomic) struct CGSize { float x1; float x2; } _cachedViewSizeTransitionContextSize;
@@ -129,6 +135,7 @@
 @property (setter=_setPhotoBrowserOneUpPresentationAdaptor:, nonatomic, retain) PUPhotoBrowserOneUpPresentationAdaptor *_photoBrowserOneUpPresentationAdaptor;
 @property (setter=_setPreviewingIndexPath:, nonatomic, retain) NSIndexPath *_previewingIndexPath;
 @property (setter=_setPreviousCollectionsCount:, nonatomic) unsigned int _previousCollectionsCount;
+@property (setter=_setPreviousPrefetchContentOffset:, nonatomic) struct CGPoint { float x1; float x2; } _previousPrefetchContentOffset;
 @property (setter=_setPreviousPrefetchRect:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _previousPrefetchRect;
 @property (setter=_setPreviousPreheatContentOffset:, nonatomic) struct CGPoint { float x1; float x2; } _previousPreheatContentOffset;
 @property (setter=_setPreviousPreheatRect:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _previousPreheatRect;
@@ -165,6 +172,7 @@
 @property (readonly) Class superclass;
 @property (setter=_setSwipeSelectionGestureRecognizer:, nonatomic, retain) UIPanGestureRecognizer *swipeSelectionGestureRecognizer;
 
++ (id)_localizedSelectionTitleWithPhotoSelectionManager:(id)arg1;
 + (void)transferPhotoBrowserFromGridViewController:(id)arg1 toGridViewController:(id)arg2;
 
 - (void).cxx_destruct;
@@ -180,6 +188,7 @@
 - (id)_avalancheStackImageForAsset:(id)arg1 partialStack:(BOOL)arg2;
 - (id)_badgeManager;
 - (id)_barButtonSpacerWithWidth:(float)arg1;
+- (id)_barsHelper;
 - (int)_batchPreheatingCount;
 - (void)_beginInteractiveNavigationForItemAtIndexPath:(id)arg1;
 - (void)_beginInteractiveStackCollapse:(id)arg1;
@@ -200,7 +209,7 @@
 - (BOOL)_collectionView:(id)arg1 shouldApplyTransitionContentOffset:(struct CGPoint { float x1; float x2; })arg2 contentSize:(struct CGSize { float x1; float x2; })arg3;
 - (id)_collectionViewSpeedometer;
 - (void)_configureAddPlaceholderCell:(id)arg1 animated:(BOOL)arg2;
-- (void)_configureDecorationsForCell:(id)arg1 withAsset:(id)arg2 thumbnailIsPlaceholder:(BOOL)arg3 assetMayHaveChanged:(BOOL)arg4;
+- (void)_configureDecorationsForCell:(id)arg1 withAsset:(id)arg2 assetCollection:(id)arg3 thumbnailIsPlaceholder:(BOOL)arg4 assetMayHaveChanged:(BOOL)arg5;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (id)_dateRangeFormatter;
 - (id)_deleteActionController;
@@ -243,6 +252,7 @@
 - (void)_presentSharingViewController:(id)arg1 completion:(id /* block */)arg2;
 - (id)_previewingIndexPath;
 - (unsigned int)_previousCollectionsCount;
+- (struct CGPoint { float x1; float x2; })_previousPrefetchContentOffset;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_previousPrefetchRect;
 - (struct CGPoint { float x1; float x2; })_previousPreheatContentOffset;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_previousPreheatRect;
@@ -280,6 +290,7 @@
 - (void)_setPreviewingIndexPath:(id)arg1;
 - (void)_setPreviewingItem:(id)arg1;
 - (void)_setPreviousCollectionsCount:(unsigned int)arg1;
+- (void)_setPreviousPrefetchContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setPreviousPrefetchRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setPreviousPreheatContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setPreviousPreheatRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -309,6 +320,7 @@
 - (void)_updateBackButtonTitle;
 - (void)_updateCollectionViewMultipleSelection;
 - (void)_updateContentOffsetForPendingViewSizeTransition;
+- (void)_updateGlobalFooterOnWidthChange;
 - (void)_updateGlobalHeaderVisibility;
 - (void)_updateIndexPathForProgressInfo:(id)arg1;
 - (void)_updateNavigationBannerAnimated:(BOOL)arg1;
@@ -334,7 +346,7 @@
 - (id)assetCollectionsFetchResult;
 - (id)assetIndexPathForPhotoToken:(id)arg1;
 - (id)assetsInAssetCollection:(id)arg1;
-- (void)autoScrollerDidUpdate:(id)arg1;
+- (void)autoScroller:(id)arg1 didAutoscrollWithTimestamp:(double)arg2;
 - (void)beginBatchPreheating;
 - (id)beginShowingProgressForAsset:(id)arg1 inCollection:(id)arg2;
 - (void)beginSuppressingColorSettingsUpdate;
@@ -394,6 +406,7 @@
 - (BOOL)hasScrollableContent;
 - (int)imageDeliveryMode;
 - (id)imageForAsset:(id)arg1 outIsPlaceholder:(BOOL*)arg2;
+- (struct CGSize { float x1; float x2; })imageRequestItemSize;
 - (id)imageRequestOptionsForAsset:(id)arg1 pixelSize:(inout struct CGSize { float x1; float x2; }*)arg2;
 - (id)indexPathForAsset:(id)arg1 hintCollection:(id)arg2 hintIndexPath:(id)arg3;
 - (id)indexPathsForPreheatingInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -450,6 +463,10 @@
 - (void)photosDataSourceWillChange:(id)arg1;
 - (void)photosGlobalFooterView:(id)arg1 presentPurchaseFlowWithFlowManager:(id)arg2;
 - (void)photosGlobalFooterViewDidChangeHeight:(id)arg1;
+- (void)photosGridBarsHelper:(id)arg1 didChange:(unsigned int)arg2;
+- (void)photosGridBarsHelper:(id)arg1 getTitle:(out id*)arg2 prompt:(out id*)arg3 shouldHideBackButton:(out BOOL*)arg4 leftBarButtonItems:(out id*)arg5 rightBarButtonItems:(out id*)arg6 forPhotoSelectionManager:(id)arg7;
+- (id)photosGridBarsHelper:(id)arg1 titleForPhotoSelectionManager:(id)arg2;
+- (id)photosGridBarsHelperPhotoSelectionManager:(id)arg1;
 - (void)photosSharingViewController:(id)arg1 didCompleteWithActivityType:(id)arg2 success:(BOOL)arg3 withAsset:(id)arg4;
 - (void)photosSharingViewControllerDidCancel:(id)arg1 needsDismiss:(BOOL)arg2;
 - (void)photosSharingViewControllerWillCancel:(id)arg1 withAsset:(id)arg2;
@@ -459,6 +476,7 @@
 - (void)ppt_setNextDeleteFinishedBlock:(id /* block */)arg1;
 - (int)preferredStatusBarStyle;
 - (void)preheatAssets;
+- (void)preheatAssetsWithPrefetchingDisabled:(BOOL)arg1;
 - (BOOL)prepareForDismissingForced:(BOOL)arg1;
 - (void)prepareForPopoverPresentation:(id)arg1;
 - (void)previewActionController:(id)arg1 didDismissWithIdentifiedAction:(id)arg2;
@@ -541,6 +559,7 @@
 - (void)updateTitle;
 - (void)updateVisibleSectionHeadersAtIndexes:(id)arg1;
 - (void)updateVisibleSupplementaryViewsOfKind:(id)arg1 animated:(BOOL)arg2;
+- (unsigned int)userEventSourceType;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;

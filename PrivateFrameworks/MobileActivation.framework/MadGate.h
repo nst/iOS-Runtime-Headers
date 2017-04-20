@@ -27,6 +27,7 @@
 - (BOOL)handleReCertInfo:(id)arg1 withError:(id*)arg2;
 - (id)init;
 - (BOOL)isDeviceABrick:(id*)arg1;
+- (BOOL)isInFieldCollected:(id*)arg1;
 - (BOOL)isUCRTAvailable:(id*)arg1;
 - (id)issueClientCertificate:(id)arg1 error:(id*)arg2;
 - (BOOL)reactivateDevice:(id*)arg1;

@@ -26,6 +26,7 @@
     GEOLogMsgStatePairedDevice * _pairedDevice;
     GEOLogMsgStatePlaceCard * _placeCard;
     GEOLogMsgStatePlaceRequest * _placeRequest;
+    GEOLogMsgStateReportAnIssue * _reportAnIssue;
     GEOLogMsgStateRoute * _route;
     NSString * _stateOrigin;
     int  _stateType;
@@ -64,6 +65,7 @@
 @property (nonatomic, readonly) BOOL hasPairedDevice;
 @property (nonatomic, readonly) BOOL hasPlaceCard;
 @property (nonatomic, readonly) BOOL hasPlaceRequest;
+@property (nonatomic, readonly) BOOL hasReportAnIssue;
 @property (nonatomic, readonly) BOOL hasRoute;
 @property (nonatomic, readonly) BOOL hasStateOrigin;
 @property (nonatomic) BOOL hasStateType;
@@ -82,6 +84,7 @@
 @property (nonatomic, retain) GEOLogMsgStatePairedDevice *pairedDevice;
 @property (nonatomic, retain) GEOLogMsgStatePlaceCard *placeCard;
 @property (nonatomic, retain) GEOLogMsgStatePlaceRequest *placeRequest;
+@property (nonatomic, retain) GEOLogMsgStateReportAnIssue *reportAnIssue;
 @property (nonatomic, retain) GEOLogMsgStateRoute *route;
 @property (nonatomic, retain) NSString *stateOrigin;
 @property (nonatomic) int stateType;
@@ -125,6 +128,7 @@
 - (BOOL)hasPairedDevice;
 - (BOOL)hasPlaceCard;
 - (BOOL)hasPlaceRequest;
+- (BOOL)hasReportAnIssue;
 - (BOOL)hasRoute;
 - (BOOL)hasStateOrigin;
 - (BOOL)hasStateType;
@@ -147,6 +151,7 @@
 - (id)placeCard;
 - (id)placeRequest;
 - (BOOL)readFrom:(id)arg1;
+- (id)reportAnIssue;
 - (id)route;
 - (void)setApplicationIdentifier:(id)arg1;
 - (void)setCarPlay:(id)arg1;
@@ -169,6 +174,7 @@
 - (void)setPairedDevice:(id)arg1;
 - (void)setPlaceCard:(id)arg1;
 - (void)setPlaceRequest:(id)arg1;
+- (void)setReportAnIssue:(id)arg1;
 - (void)setRoute:(id)arg1;
 - (void)setStateOrigin:(id)arg1;
 - (void)setStateType:(int)arg1;

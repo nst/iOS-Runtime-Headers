@@ -19,6 +19,7 @@
 - (void)dealloc;
 - (id)init;
 - (void)requestCapabilitiesWithCompletionHandler:(id /* block */)arg1;
+- (void)requestPersonalizationTokenForClientToken:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)requestStorefrontIdentifierWithCompletionHandler:(id /* block */)arg1;
 
 @end

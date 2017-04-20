@@ -8,6 +8,7 @@
     BOOL  _diagnosticsEnabled;
     BOOL  _needsUpdateLayerPromise;
     BOOL  _rendersTextAsynchronously;
+    BOOL  _shouldRasterizeTextLayer;
     PXTitleSubtitleLabelSpec * _spec;
     NSString * _subtitleText;
     NSString * _titleText;
@@ -23,6 +24,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) float lastBaseline;
 @property (nonatomic) BOOL rendersTextAsynchronously;
+@property (nonatomic) BOOL shouldRasterizeTextLayer;
 @property (nonatomic, retain) PXTitleSubtitleLabelSpec *spec;
 @property (nonatomic, copy) NSString *subtitleText;
 @property (readonly) Class superclass;
@@ -51,10 +53,12 @@
 - (void)setDiagnosticsEnabled:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setRendersTextAsynchronously:(BOOL)arg1;
+- (void)setShouldRasterizeTextLayer:(BOOL)arg1;
 - (void)setSpec:(id)arg1;
 - (void)setSubtitleText:(id)arg1;
 - (void)setTitleText:(id)arg1;
 - (void)setTypesettingMode:(int)arg1;
+- (BOOL)shouldRasterizeTextLayer;
 - (id)spec;
 - (id)subtitleText;
 - (id)titleText;

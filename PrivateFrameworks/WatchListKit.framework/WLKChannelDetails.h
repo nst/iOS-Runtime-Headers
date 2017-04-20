@@ -12,6 +12,9 @@
     WLKArtworkVariantListing * _images;
     BOOL  _itunes;
     NSString * _name;
+    BOOL  _requiresAccountLevelConsent;
+    BOOL  _requiresSubscriptionForConsent;
+    BOOL  _shouldPromptForConsentOnSubscriptionChange;
     BOOL  _subscribed;
     BOOL  _watchListEnabled;
 }
@@ -25,6 +28,9 @@
 @property (nonatomic, readonly) WLKArtworkVariantListing *images;
 @property (getter=isiTunes, nonatomic, readonly) BOOL itunes;
 @property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, readonly) BOOL requiresAccountLevelConsent;
+@property (nonatomic, readonly) BOOL requiresSubscriptionForConsent;
+@property (nonatomic, readonly) BOOL shouldPromptForConsentOnSubscriptionChange;
 @property (getter=isSubscribed, nonatomic, readonly) BOOL subscribed;
 @property (getter=isWatchListEnabled, nonatomic, readonly) BOOL watchListEnabled;
 
@@ -43,5 +49,8 @@
 - (BOOL)isWatchListEnabled;
 - (BOOL)isiTunes;
 - (id)name;
+- (BOOL)requiresAccountLevelConsent;
+- (BOOL)requiresSubscriptionForConsent;
+- (BOOL)shouldPromptForConsentOnSubscriptionChange;
 
 @end

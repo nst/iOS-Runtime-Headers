@@ -15,6 +15,7 @@
 @property (nonatomic, readonly, retain) NSNumber *forcedStatusBarStyle;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL idleModeEnabled;
+@property (nonatomic, readonly) BOOL statusBarDisabled;
 @property (nonatomic, readonly) int statusBarStyleOverridesToSuppress;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) BOOL underLock;
@@ -32,6 +33,7 @@
 - (BOOL)isUISubclass;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (BOOL)statusBarDisabled;
 - (int)statusBarStyleOverridesToSuppress;
 - (BOOL)underLock;
 - (int)userInterfaceStyle;

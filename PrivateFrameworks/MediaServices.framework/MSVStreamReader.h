@@ -10,6 +10,7 @@
     id /* block */  _didReadDataBlock;
     unsigned int  _maximumBufferSize;
     NSObject<OS_dispatch_queue> * _queue;
+    BOOL  _stopped;
     NSInputStream * _stream;
     double  _timestamp;
     struct z_stream_s { char *x1; unsigned int x2; unsigned int x3; char *x4; unsigned int x5; unsigned int x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; int x12; unsigned int x13; unsigned int x14; } * _zstreamp;

@@ -4,9 +4,9 @@
 
 @interface NPTunnelFlowTelemetry : NPTunnelFlowHTTP
 
+- (void)handleTunnelConnected;
 - (id)initWithTunnel:(id)arg1 service:(id)arg2 postURL:(id)arg3 delegate:(id)arg4;
 - (BOOL)isBestEffort;
-- (void)reportTelemetry;
-- (void)sendReportWithCurrentState:(id)arg1 connectionInfo:(id)arg2;
+- (void)reportTelemetry:(id)arg1;
 
 @end

@@ -22,6 +22,7 @@
 - (int)displayTimeIndexForTimestampIndex:(unsigned int)arg1;
 - (void)filterToDisplayTimeIndexStart:(unsigned int)arg1 end:(unsigned int)arg2;
 - (void)filterToMachTimeRangeStart:(double)arg1 end:(double)arg2;
+- (void)filterToWallTimeRangeStart:(double)arg1 end:(double)arg2;
 - (BOOL)forceOneBasedTimeIndexes;
 - (BOOL)hasTargetProcess;
 - (id)headerNote;
@@ -35,6 +36,7 @@
 - (BOOL)printSpinSignatureStack;
 - (unsigned int)sampleIndexForDisplayTimeIndex:(int)arg1;
 - (id)sampleTaskWithPid:(int)arg1 atTimestampIndex:(unsigned int)arg2;
+- (id)sampleTaskWithPid:(int)arg1 orTid:(unsigned long long)arg2 atTimestampIndex:(unsigned int)arg3;
 - (id)sampleTaskWithUniqueId:(unsigned long long)arg1 atTimestampIndex:(unsigned int)arg2;
 - (void)setForceOneBasedTimeIndexes:(BOOL)arg1;
 - (void)setHeaderNote:(id)arg1;

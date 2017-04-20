@@ -18,8 +18,10 @@
 
 + (void)initialize;
 
-- (int)_retryHandlerCount;
-- (void)_setRetryHandlerCount:(int)arg1;
+- (BOOL)_retryHandlerCount;
+- (BOOL)_secureOperation;
+- (void)_setRetryHandlerCount:(BOOL)arg1;
+- (void)_setSecureOperation:(BOOL)arg1;
 - (void)dealloc;
 - (id)deletedObjects;
 - (id)description;

@@ -21,8 +21,8 @@
 - (id)font;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)lineBreakMode;
-- (void)nc_applyVibrantStyling:(id)arg1;
-- (void)nc_removeAllVibrantStyling;
+- (void)mt_applyVibrantStyling:(id)arg1;
+- (void)mt_removeAllVibrantStyling;
 - (int)numberOfLines;
 - (void)setFont:(id)arg1;
 - (void)setLineBreakMode:(int)arg1;

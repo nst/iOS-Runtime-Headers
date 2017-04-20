@@ -6,7 +6,6 @@
     UIColor * _backgroundColor;
     LPCaptionBarPresentationProperties * _captionBar;
     LPiTunesPlaybackInformation * _iTunesPlaybackInformation;
-    LPImage * _icon;
     LPImage * _image;
     LPCaptionBarPresentationProperties * _mediaBottomCaptionBar;
     LPCaptionBarPresentationProperties * _mediaTopCaptionBar;
@@ -22,7 +21,6 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) LPiTunesPlaybackInformation *iTunesPlaybackInformation;
-@property (nonatomic, retain) LPImage *icon;
 @property (nonatomic, retain) LPImage *image;
 @property (nonatomic, retain) LPCaptionBarPresentationProperties *mediaBottomCaptionBar;
 @property (nonatomic, retain) LPCaptionBarPresentationProperties *mediaTopCaptionBar;
@@ -36,7 +34,6 @@
 - (id)backgroundColor;
 - (id)captionBar;
 - (id)iTunesPlaybackInformation;
-- (id)icon;
 - (id)image;
 - (BOOL)isPreliminary;
 - (id)mediaBottomCaptionBar;
@@ -45,7 +42,6 @@
 - (void)setBackgroundColor:(id)arg1;
 - (void)setCaptionBar:(id)arg1;
 - (void)setITunesPlaybackInformation:(id)arg1;
-- (void)setIcon:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setMediaBottomCaptionBar:(id)arg1;
 - (void)setMediaTopCaptionBar:(id)arg1;

@@ -14,13 +14,19 @@
 @property (nonatomic, readonly, copy) NSData *challengeResponse;
 @property (nonatomic, readonly, copy) NSData *publicKey;
 
++ (id)shortDescription;
+
 - (void).cxx_destruct;
 - (id)challengeCertificate;
 - (id)challengeIdentifier;
 - (id)challengeResponse;
+- (id)debugDescription;
+- (id)description;
+- (id)descriptionWithPointer:(BOOL)arg1;
 - (id)init;
 - (id)initWithPublicKey:(id)arg1 challengeIdentifier:(id)arg2 challengeResponse:(id)arg3 challengeCertificate:(id)arg4;
 - (id)publicKey;
 - (id)serializeWithError:(id*)arg1;
+- (id)shortDescription;
 
 @end

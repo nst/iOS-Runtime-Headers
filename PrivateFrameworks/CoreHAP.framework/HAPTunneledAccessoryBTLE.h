@@ -119,6 +119,7 @@
 - (id)pendingResponses;
 - (id)propertyQueue;
 - (void)readCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)readValueForCharacteristic:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)removePairingForCurrentControllerWithCompletionQueue:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)removePairingWithIdentifier:(id)arg1 completionQueue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)requestOperationQueue;
@@ -153,6 +154,7 @@
 - (id)uniqueIdentifier;
 - (id)verificationBackoffTimer;
 - (void)verify;
+- (void)writeCharacteristicValue:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)writeCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 
 @end

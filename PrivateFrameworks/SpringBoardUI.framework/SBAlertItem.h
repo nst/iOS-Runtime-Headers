@@ -14,9 +14,9 @@
     BOOL  _didPlayPresentationSound;
     NSString * _iconImagePath;
     BOOL  _ignoreIfAlreadyDisplaying;
-    BOOL  _occluded;
     BOOL  _pendInSetupIfNotAllowed;
     BOOL  _pendWhileKeyBagLocked;
+    BOOL  _presented;
 }
 
 @property (nonatomic) BOOL allowInCar;
@@ -29,9 +29,9 @@
 @property (readonly) unsigned int hash;
 @property (getter=_iconImagePath, nonatomic, retain) NSString *iconImagePath;
 @property (nonatomic) BOOL ignoreIfAlreadyDisplaying;
-@property (getter=_isOccluded, setter=_setOccluded:, nonatomic) BOOL occluded;
 @property (nonatomic) BOOL pendInSetupIfNotAllowed;
 @property (nonatomic) BOOL pendWhileKeyBagLocked;
+@property (getter=_isPresented, setter=_setPresented:, nonatomic) BOOL presented;
 @property (readonly) Class superclass;
 
 + (id)_alertItemsController;
@@ -44,18 +44,19 @@
 - (void)_clearAlertController;
 - (void)_deactivationCompleted;
 - (BOOL)_didEverActivate;
-- (BOOL)_dismissesAutomatically;
 - (BOOL)_displayActionButtonOnLockScreen;
 - (BOOL)_hasActiveKeyboardOnScreen;
 - (id)_iconImage;
 - (id)_iconImagePath;
-- (BOOL)_isOccluded;
+- (BOOL)_isPresented;
 - (void)_noteVolumeOrLockPressed;
 - (id)_prepareNewAlertControllerWithLockedState:(BOOL)arg1 requirePasscodeForActions:(BOOL)arg2;
 - (BOOL)_preventLockOver;
 - (id)_publicDescription;
-- (void)_setOccluded:(BOOL)arg1;
+- (void)_setPresented:(BOOL)arg1;
 - (id)alertController;
+- (void)alertItemDidAppear;
+- (void)alertItemDidDisappear;
 - (int)alertPriority;
 - (BOOL)allowInCar;
 - (BOOL)allowInLoginWindow;

@@ -9,6 +9,10 @@
         unsigned int count; 
         unsigned int size; 
     }  _attributionRequirements;
+    BOOL  _enforceAppStore;
+    struct { 
+        unsigned int enforceAppStore : 1; 
+    }  _has;
     NSMutableArray * _localizedAttributions;
     NSString * _sourceIdentifier;
     unsigned int  _sourceVersion;
@@ -19,6 +23,8 @@
 @property (nonatomic, retain) NSMutableArray *attributionApps;
 @property (nonatomic, readonly) int*attributionRequirements;
 @property (nonatomic, readonly) unsigned int attributionRequirementsCount;
+@property (nonatomic) BOOL enforceAppStore;
+@property (nonatomic) BOOL hasEnforceAppStore;
 @property (nonatomic, readonly) BOOL hasWebBaseActionURL;
 @property (nonatomic, retain) NSMutableArray *localizedAttributions;
 @property (nonatomic, retain) NSString *sourceIdentifier;
@@ -53,6 +59,8 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)enforceAppStore;
+- (BOOL)hasEnforceAppStore;
 - (BOOL)hasWebBaseActionURL;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -63,6 +71,8 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setAttributionApps:(id)arg1;
 - (void)setAttributionRequirements:(int*)arg1 count:(unsigned int)arg2;
+- (void)setEnforceAppStore:(BOOL)arg1;
+- (void)setHasEnforceAppStore:(BOOL)arg1;
 - (void)setLocalizedAttributions:(id)arg1;
 - (void)setSourceIdentifier:(id)arg1;
 - (void)setSourceVersion:(unsigned int)arg1;

@@ -7,30 +7,26 @@
         unsigned int name : 1; 
     }  _has;
     unsigned long long  _name;
-    NSMutableArray * _packets;
+    _MRTransactionPacketsProtobuf * _packets;
 }
 
 @property (nonatomic) BOOL hasName;
+@property (nonatomic, readonly) BOOL hasPackets;
 @property (nonatomic) unsigned long long name;
-@property (nonatomic, retain) NSMutableArray *packets;
+@property (nonatomic, retain) _MRTransactionPacketsProtobuf *packets;
 
-+ (Class)packetsType;
-
-- (void)addPackets:(id)arg1;
-- (void)clearPackets;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasName;
+- (BOOL)hasPackets;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)name;
 - (id)packets;
-- (id)packetsAtIndex:(unsigned int)arg1;
-- (unsigned int)packetsCount;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasName:(BOOL)arg1;
 - (void)setName:(unsigned long long)arg1;

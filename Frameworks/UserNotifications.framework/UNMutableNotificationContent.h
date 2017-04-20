@@ -10,6 +10,7 @@
 @property (nonatomic, copy) NSString *categoryIdentifier;
 @property (nonatomic, copy) NSString *darwinNotificationName;
 @property (nonatomic, copy) NSString *darwinSnoozedNotificationName;
+@property (nonatomic, copy) NSString *defaultActionTitle;
 @property (getter=isFromSnooze, nonatomic) BOOL fromSnooze;
 @property (nonatomic) BOOL hasDefaultAction;
 @property (nonatomic, copy) NSString *launchImageName;
@@ -26,12 +27,14 @@
 @property (nonatomic, copy) NSDictionary *userInfo;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)defaultActionTitle;
 - (void)setAttachments:(id)arg1;
 - (void)setBadge:(id)arg1;
 - (void)setBody:(id)arg1;
 - (void)setCategoryIdentifier:(id)arg1;
 - (void)setDarwinNotificationName:(id)arg1;
 - (void)setDarwinSnoozedNotificationName:(id)arg1;
+- (void)setDefaultActionTitle:(id)arg1;
 - (void)setFromSnooze:(BOOL)arg1;
 - (void)setHasDefaultAction:(BOOL)arg1;
 - (void)setLaunchImageName:(id)arg1;

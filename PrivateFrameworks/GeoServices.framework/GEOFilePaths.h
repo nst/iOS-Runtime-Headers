@@ -7,6 +7,7 @@
 + (id)geoServicesCacheDirectoryPath;
 + (id)homeDirectory;
 + (void)initialize;
++ (id)locationShifterDBFilePath;
 + (id)logMessageCacheDirectoryPath;
 + (id)mapsSuggestionsCacheDirectoryPath;
 + (id)navdCacheDirectoryPath;

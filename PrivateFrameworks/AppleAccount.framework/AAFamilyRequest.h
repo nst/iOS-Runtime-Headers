@@ -3,6 +3,7 @@
  */
 
 @interface AAFamilyRequest : AARequest {
+    ACAccount * _appleAccount;
     AAGrandSlamSigner * _grandSlamSigner;
 }
 

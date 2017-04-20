@@ -23,8 +23,8 @@
 - (void)flush;
 - (int)histogramType;
 - (id)initWithDataStore:(id)arg1 histogramType:(int)arg2;
-- (id)initWithDataStore:(id)arg1 histogramType:(int)arg2 andSaveInBackground:(BOOL)arg3;
-- (id)initWithDataStore:(id)arg1 histogramType:(int)arg2 loadFromDataStore:(BOOL)arg3 andSaveInBackground:(BOOL)arg4;
+- (id)initWithDataStore:(id)arg1 histogramType:(int)arg2 loadFromDataStore:(BOOL)arg3 saveInBackground:(BOOL)arg4;
+- (id)initWithDataStore:(id)arg1 histogramType:(int)arg2 saveInBackground:(BOOL)arg3;
 - (void)receivedDataStoreRestoreCompletedNotification:(id)arg1;
 - (void)receivedDataStoreRestoreStartedNotification:(id)arg1;
 - (void)registerForRestoreCompletedNotificationsFrom:(id)arg1;

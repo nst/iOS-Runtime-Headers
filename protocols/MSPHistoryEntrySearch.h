@@ -5,7 +5,6 @@
 
 @required
 
-- (BOOL)isFailed;
 - (NSString *)languageCode;
 - (NSString *)locationDisplayString;
 - (GEOMapRegion *)mapRegion;

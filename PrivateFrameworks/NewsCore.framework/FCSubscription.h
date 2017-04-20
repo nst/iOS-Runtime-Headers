@@ -6,6 +6,7 @@
     BOOL  _canRetry;
     NSDate * _dateAdded;
     NSString * _errorMessage;
+    NSString * _groupID;
     BOOL  _notificationsEnabled;
     NSURL * _pollingURL;
     NSString * _subscriptionID;
@@ -18,6 +19,7 @@
 @property (nonatomic, readonly) BOOL canRetry;
 @property (nonatomic, readonly, copy) NSDate *dateAdded;
 @property (nonatomic, readonly) NSString *errorMessage;
+@property (nonatomic, retain) NSString *groupID;
 @property (nonatomic, readonly) BOOL notificationsEnabled;
 @property (nonatomic, readonly) NSURL *pollingURL;
 @property (nonatomic, readonly, copy) NSString *subscriptionID;
@@ -26,7 +28,7 @@
 @property (nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly) NSURL *url;
 
-+ (id)mutedSubscriptionWithSubscriptionID:(id)arg1 tagID:(id)arg2 dateAdded:(id)arg3;
++ (id)mutedSubscriptionWithSubscriptionID:(id)arg1 tagID:(id)arg2 groupID:(id)arg3 dateAdded:(id)arg4;
 + (id)pendingSubscriptionWithSubscriptionID:(id)arg1 url:(id)arg2 title:(id)arg3 pollingURL:(id)arg4 dateAdded:(id)arg5;
 + (id)subscriptionWithSubscriptionID:(id)arg1 dictionaryRepresentation:(id)arg2;
 + (id)subscriptionWithSubscriptionID:(id)arg1 tagID:(id)arg2 dateAdded:(id)arg3 notificationsEnabled:(BOOL)arg4;
@@ -36,13 +38,15 @@
 - (id)dateAdded;
 - (id)dictionaryRepresentation;
 - (id)errorMessage;
-- (id)initWithSubscriptionID:(id)arg1 tagID:(id)arg2 dateAdded:(id)arg3 subscriptionType:(unsigned int)arg4 notificationsEnabled:(BOOL)arg5;
+- (id)groupID;
+- (id)initWithSubscriptionID:(id)arg1 tagID:(id)arg2 groupID:(id)arg3 dateAdded:(id)arg4 subscriptionType:(unsigned int)arg5 notificationsEnabled:(BOOL)arg6;
 - (id)initWithSubscriptionID:(id)arg1 url:(id)arg2 title:(id)arg3 pollingURL:(id)arg4 dateAdded:(id)arg5;
 - (BOOL)isTypeMutedTag;
 - (BOOL)isTypePending;
 - (BOOL)isTypeTag;
 - (BOOL)notificationsEnabled;
 - (id)pollingURL;
+- (void)setGroupID:(id)arg1;
 - (void)setTagID:(id)arg1;
 - (id)subscriptionID;
 - (unsigned int)subscriptionType;

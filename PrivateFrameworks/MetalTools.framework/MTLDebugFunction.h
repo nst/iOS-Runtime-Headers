@@ -10,6 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)constantValues;
+- (id)formattedDescription:(unsigned int)arg1;
 - (void)setConstantValues:(id)arg1;
 
 @end

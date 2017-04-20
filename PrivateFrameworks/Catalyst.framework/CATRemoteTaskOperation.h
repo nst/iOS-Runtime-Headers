@@ -15,7 +15,6 @@
 + (BOOL)isCancelable;
 
 - (void).cxx_destruct;
-- (BOOL)canSendNotificationWithName:(id)arg1 userInfo:(id)arg2;
 - (void)cancel;
 - (void)cancelOperationIfNeeded;
 - (id)client;
@@ -26,8 +25,9 @@
 - (BOOL)isAsynchronous;
 - (void)main;
 - (void)operationWillFinish;
+- (void)postNotificationWithName:(id)arg1 userInfo:(id)arg2;
 - (void)processMessage:(id)arg1;
-- (void)processNotificationMessage:(id)arg1;
+- (void)processNotificationWithName:(id)arg1 userInfo:(id)arg2;
 - (id)remotePhase;
 - (void)setRemotePhase:(id)arg1;
 - (void)updateCompletedUnitCount:(int)arg1 andTotalUnitCount:(int)arg2;

@@ -2,7 +2,8 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@interface WKWebView : UIView <UIScrollViewDelegate> {
+@interface WKWebView : UIView <UIScrollViewDelegate, WBUFormAutoFillWebView> {
+    int  _activeAnimatedResizeCount;
     unsigned int  _activeFocusedStateRetainCount;
     BOOL  _allowsBackForwardNavigationGestures;
     BOOL  _allowsLinkPreview;
@@ -30,17 +31,37 @@
     BOOL  _fastClickingIsDisabled;
     unsigned long long  _firstPaintAfterCommitLoadTransactionID;
     unsigned long long  _firstTransactionIDAfterPageRestore;
-    struct Optional<CGRect> { 
-        bool m_isEngaged; 
-        struct type { 
-            unsigned char __lx[16]; 
-        } m_value; 
+    struct optional<CGRect> { 
+        bool init_; 
+        union constexpr_storage_t<CGRect> { 
+            unsigned char dummy_; 
+            struct CGRect { 
+                struct CGPoint { 
+                    float x; 
+                    float y; 
+                } origin; 
+                struct CGSize { 
+                    float width; 
+                    float height; 
+                } size; 
+            } value_; 
+        } storage_; 
     }  _frozenUnobscuredContentRect;
-    struct Optional<CGRect> { 
-        bool m_isEngaged; 
-        struct type { 
-            unsigned char __lx[16]; 
-        } m_value; 
+    struct optional<CGRect> { 
+        bool init_; 
+        union constexpr_storage_t<CGRect> { 
+            unsigned char dummy_; 
+            struct CGRect { 
+                struct CGPoint { 
+                    float x; 
+                    float y; 
+                } origin; 
+                struct CGSize { 
+                    float width; 
+                    float height; 
+                } size; 
+            } value_; 
+        } storage_; 
     }  _frozenVisibleContentRect;
     struct unique_ptr<WebKit::ViewGestureController, std::__1::default_delete<WebKit::ViewGestureController> > { 
         struct __compressed_pair<WebKit::ViewGestureController *, std::__1::default_delete<WebKit::ViewGestureController> > { 
@@ -50,6 +71,11 @@
     BOOL  _hadDelayedUpdateVisibleContentRects;
     BOOL  _hasCommittedLoadForMainFrame;
     BOOL  _haveSetObscuredInsets;
+    struct unique_ptr<WebKit::IconLoadingDelegate, std::__1::default_delete<WebKit::IconLoadingDelegate> > { 
+        struct __compressed_pair<WebKit::IconLoadingDelegate *, std::__1::default_delete<WebKit::IconLoadingDelegate> > { 
+            struct IconLoadingDelegate {} *__first_; 
+        } __ptr_; 
+    }  _iconLoadingDelegate;
     float  _initialScaleFactor;
     /* Warning: unhandled struct encoding: '{WeakObjCPtr<id<_WKInputDelegate> >="m_weakReference"@}' */ struct WeakObjCPtr<id<_WKInputDelegate> > { 
         id m_weakReference; 
@@ -121,11 +147,12 @@
         float m43; 
         float m44; 
     }  _resizeAnimationTransformAdjustments;
-    struct Optional<unsigned long long> { 
-        bool m_isEngaged; 
-        struct type { 
-            unsigned char __lx[8]; 
-        } m_value; 
+    struct optional<unsigned long long> { 
+        bool init_; 
+        union constexpr_storage_t<unsigned long long> { 
+            unsigned char dummy_; 
+            unsigned long long value_; 
+        } storage_; 
     }  _resizeAnimationTransformTransactionID;
     struct RetainPtr<UIView> { 
         void *m_ptr; 
@@ -139,10 +166,15 @@
         void *m_ptr; 
     }  _scrollView;
     struct Color { 
-        unsigned int m_color; 
-        bool m_valid; 
+        union { 
+            unsigned long long rgbaAndFlags; 
+            struct ExtendedColor {} *extendedColor; 
+        } m_colorData; 
     }  _scrollViewBackgroundColor;
     struct Vector<std::__1::function<void ()>, 0, WTF::CrashOnOverflow, 16>="m_buffer"^{function<void ()> {}  _snapshotsDeferredDuringResize;
+    struct RetainPtr<NSMutableArray> { 
+        void *m_ptr; 
+    }  _stableStatePresentationUpdateCallbacks;
     float  _totalScrollViewBottomInsetAdjustmentForKeyboard;
     struct unique_ptr<WebKit::UIDelegate, std::__1::default_delete<WebKit::UIDelegate> > { 
         struct __compressed_pair<WebKit::UIDelegate *, std::__1::default_delete<WebKit::UIDelegate> > { 
@@ -182,13 +214,16 @@
 @property (getter=_isEditable, setter=_setEditable:, nonatomic) BOOL _editable;
 @property (setter=_setFindDelegate:, nonatomic) <_WKFindDelegate> *_findDelegate;
 @property (setter=_setFixedLayoutSize:, nonatomic) struct CGSize { float x1; float x2; } _fixedLayoutSize;
-@property (setter=_setFormDelegate:, nonatomic) <_WKFormDelegate> *_formDelegate;
+@property (setter=_setFullscreenDelegate:, nonatomic) <_WKFullscreenDelegate> *_fullscreenDelegate;
 @property (setter=_setGapBetweenPages:, nonatomic) float _gapBetweenPages;
 @property (nonatomic, readonly) WKBrowsingContextHandle *_handle;
 @property (setter=_setHistoryDelegate:, nonatomic) <WKHistoryDelegatePrivate> *_historyDelegate;
+@property (setter=_setIconLoadingDelegate:, nonatomic) <_WKIconLoadingDelegate> *_iconLoadingDelegate;
 @property (setter=_setInputDelegate:, nonatomic) <_WKInputDelegate> *_inputDelegate;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _inputViewBounds;
 @property (setter=_setInterfaceOrientationOverride:, nonatomic) int _interfaceOrientationOverride;
 @property (nonatomic, readonly) BOOL _isBackground;
+@property (nonatomic, readonly) BOOL _isInFullscreen;
 @property (setter=_setLayoutMode:, nonatomic) unsigned int _layoutMode;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } _maximumUnobscuredSizeOverride;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } _minimumLayoutSizeOverride;
@@ -206,15 +241,18 @@
 @property (nonatomic, readonly) id _remoteObjectRegistry;
 @property (nonatomic, readonly) NSArray *_scrollPerformanceData;
 @property (setter=_setScrollPerformanceDataCollectionEnabled:, nonatomic) BOOL _scrollPerformanceDataCollectionEnabled;
+@property (nonatomic, readonly) NSString *_scrollingTreeAsText;
 @property (nonatomic, readonly) int _selectionGranularity;
 @property (nonatomic, readonly) _WKSessionState *_sessionState;
 @property (nonatomic, readonly) NSData *_sessionStateData;
 @property (setter=_sf_setSecurityInfo:, nonatomic, retain) _SFSecurityInfo *_sf_securityInfo;
 @property (getter=_isShowingNavigationGestureSnapshot, nonatomic, readonly) BOOL _showingNavigationGestureSnapshot;
+@property (nonatomic, readonly) NSNumber *_stableStateOverride;
 @property (nonatomic, readonly) NSString *_suggestedFilenameForDisplayedPDF;
 @property (nonatomic, readonly) BOOL _supportsTextZoom;
 @property (setter=_setTextZoomFactor:, nonatomic) double _textZoomFactor;
-@property (nonatomic, readonly) NSArray *_uiTextSelectionRectViews;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _uiTextCaretRect;
+@property (nonatomic, readonly) NSArray *_uiTextSelectionRects;
 @property (nonatomic, readonly) NSURL *_unreachableURL;
 @property (nonatomic, readonly) NSString *_userAgent;
 @property (setter=_setUserContentExtensionsEnabled:, nonatomic) BOOL _userContentExtensionsEnabled;
@@ -233,7 +271,6 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) double estimatedProgress;
-@property (nonatomic) BOOL forceIPadStyleZoomOnInputFocus;
 @property (nonatomic, readonly) BOOL hasOnlySecureContent;
 @property (readonly) unsigned int hash;
 @property (getter=isLoading, nonatomic, readonly) BOOL loading;
@@ -242,6 +279,9 @@
 @property (nonatomic, readonly) struct __SecTrust { }*serverTrust;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSString *title;
+@property (setter=webui_setLastGeneratedPasswordForCurrentBackForwardItem:, nonatomic, copy) NSString *webui_lastGeneratedPasswordForCurrentBackForwardItem;
+@property (nonatomic, readonly) UIViewController *webui_presentingViewController;
+@property (nonatomic, readonly) BOOL webui_privateBrowsingEnabled;
 
 // Image: /System/Library/Frameworks/WebKit.framework/WebKit
 
@@ -250,6 +290,7 @@
 - (id)UIDelegate;
 - (id)URL;
 - (id)_MIMEType;
+- (void)_accessibilitySettingsDidChange:(id)arg1;
 - (BOOL)_addsVisitedLinks;
 - (struct CGPoint { float x1; float x2; })_adjustedContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_allowsDoubleTapGestures;
@@ -265,11 +306,13 @@
 - (void)_close;
 - (id)_committedURL;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_computedContentInset;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentBoundsExtendedForRubberbandingWithScale:(float)arg1;
 - (id)_contentProviderRegistry;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentRectForUserInteraction;
 - (id)_contentSizeCategory;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentVisibleRect;
+- (id)_contentsOfUserInterfaceItem:(id)arg1;
 - (struct CGPoint { float x1; float x2; })_convertPointFromContentsToView:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })_convertPointFromViewToContents:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_couldNotRestorePageState;
@@ -281,6 +324,7 @@
 - (id)_diagnosticLoggingDelegate;
 - (void)_didCommitLayerTree:(const struct RemoteLayerTreeTransaction { unsigned long long x1; struct Vector<WTF::RefPtr<WebKit::PlatformCALayerRemote>, 0, WTF::CrashOnOverflow, 16> { struct RefPtr<WebKit::PlatformCALayerRemote> {} *x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; struct HashMap<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> >, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > > { struct HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > >, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> >, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > >::KeyValuePairTraits, WTF::HashTraits<unsigned long long> > { struct KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > {} *x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_3_1_1; } x3; }*)arg1;
 - (void)_didCommitLoadForMainFrame;
+- (void)_didDismissForcePressPreview;
 - (void)_didFailLoadForMainFrame;
 - (void)_didFinishLoadForMainFrame;
 - (void)_didFinishLoadingDataForCustomContentProviderWithSuggestedFilename:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1 data:(id)arg2;
@@ -289,36 +333,47 @@
 - (void)_didRelaunchProcess;
 - (void)_didSameDocumentNavigationForMainFrame:(int)arg1;
 - (void)_didScroll;
+- (void)_didShowForcePressPreview;
 - (void)_disableBackForwardSnapshotVolatilityForTesting;
 - (void)_doAfterNextPresentationUpdate:(id /* block */)arg1;
+- (void)_doAfterNextPresentationUpdateWithoutWaitingForPainting:(id /* block */)arg1;
+- (void)_doAfterNextStablePresentationUpdate:(id /* block */)arg1;
 - (void)_dynamicViewportUpdateChangedTargetToScale:(double)arg1 position:(struct CGPoint { float x1; float x2; })arg2 nextValidLayerTreeTransactionID:(unsigned long long)arg3;
 - (void)_enclosingScrollerScrollingEnded:(id)arg1;
 - (void)_endAnimatedResize;
 - (void)_endInteractiveObscuredInsetsChange;
 - (id)_findDelegate;
 - (void)_findString:(id)arg1 options:(unsigned int)arg2 maxCount:(unsigned int)arg3;
+- (void)_firePresentationUpdateForPendingStableStatePresentationCallbacks;
 - (struct CGSize { float x1; float x2; })_fixedLayoutSize;
 - (id)_formDelegate;
 - (void)_frameOrBoundsChanged;
+- (id)_fullscreenDelegate;
 - (float)_gapBetweenPages;
 - (void)_getMainResourceDataWithCompletionHandler:(id /* block */)arg1;
 - (void)_getWebArchiveDataWithCompletionHandler:(id /* block */)arg1;
 - (id)_handle;
+- (void)_handleActiveNowPlayingSessionInfoResponse:(BOOL)arg1 title:(id)arg2 duration:(double)arg3 elapsedTime:(double)arg4;
 - (void)_hideContentUntilNextUpdate;
 - (void)_hideFindUI;
 - (id)_historyDelegate;
+- (id)_iconLoadingDelegate;
 - (void)_initializeWithConfiguration:(id)arg1;
 - (id)_inputDelegate;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_inputViewBounds;
 - (int)_interfaceOrientationOverride;
 - (BOOL)_isBackground;
 - (BOOL)_isDisplayingPDF;
 - (BOOL)_isDisplayingStandaloneImageDocument;
 - (BOOL)_isDisplayingStandaloneMediaDocument;
 - (BOOL)_isEditable;
+- (BOOL)_isInFullscreen;
+- (BOOL)_isNavigationSwipeGestureRecognizer:(id)arg1;
 - (BOOL)_isShowingNavigationGestureSnapshot;
 - (BOOL)_isShowingVideoPictureInPicture;
 - (void)_keyboardChangedWithInfo:(id)arg1 adjustScrollView:(BOOL)arg2;
 - (void)_keyboardDidChangeFrame:(id)arg1;
+- (void)_keyboardDidShow:(id)arg1;
 - (void)_keyboardWillChangeFrame:(id)arg1;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
@@ -341,6 +396,7 @@
 - (unsigned int)_pageCount;
 - (struct OpaqueWKPage { }*)_pageForTesting;
 - (float)_pageLength;
+- (float)_pageScale;
 - (double)_pageZoomFactor;
 - (BOOL)_paginationBehavesLikeColumns;
 - (BOOL)_paginationLineGridEnabled;
@@ -351,6 +407,7 @@
 - (id)_reloadWithoutContentBlockers;
 - (id)_remoteInspectionNameOverride;
 - (id)_remoteObjectRegistry;
+- (void)_requestActiveNowPlayingSessionInfo;
 - (void)_resizeWhileHidingContentWithUpdates:(id /* block */)arg1;
 - (void)_restoreFromSessionStateData:(id)arg1;
 - (void)_restorePageScrollPosition:(struct FloatPoint { float x1; float x2; })arg1 scrollOrigin:(struct FloatPoint { float x1; float x2; })arg2 previousObscuredInset:(struct FloatSize { float x1; float x2; })arg3 scale:(double)arg4;
@@ -365,6 +422,7 @@
 - (BOOL)_scrollToRect:(struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 origin:(struct FloatPoint { float x1; float x2; })arg2 minimumScrollDistance:(float)arg3;
 - (void)_scrollViewDidInterruptDecelerating:(id)arg1;
 - (BOOL)_scrollViewIsRubberBanding;
+- (id)_scrollingTreeAsText;
 - (int)_selectionGranularity;
 - (id)_sessionState;
 - (id)_sessionStateData;
@@ -381,9 +439,11 @@
 - (void)_setFindDelegate:(id)arg1;
 - (void)_setFixedLayoutSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setFormDelegate:(id)arg1;
+- (void)_setFullscreenDelegate:(id)arg1;
 - (void)_setGapBetweenPages:(float)arg1;
 - (void)_setHasCustomContentView:(BOOL)arg1 loadedMIMEType:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg2;
 - (void)_setHistoryDelegate:(id)arg1;
+- (void)_setIconLoadingDelegate:(id)arg1;
 - (void)_setInputDelegate:(id)arg1;
 - (void)_setInterfaceOrientationOverride:(int)arg1;
 - (void)_setLayoutMode:(unsigned int)arg1;
@@ -393,6 +453,7 @@
 - (void)_setObservedRenderingProgressEvents:(unsigned int)arg1;
 - (void)_setOverlaidAccessoryViewsInset:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setPageLength:(float)arg1;
+- (void)_setPageScale:(float)arg1 withOrigin:(struct CGPoint { float x1; float x2; })arg2;
 - (void)_setPageZoomFactor:(double)arg1;
 - (void)_setPaginationBehavesLikeColumns:(BOOL)arg1;
 - (void)_setPaginationLineGridEnabled:(BOOL)arg1;
@@ -400,17 +461,21 @@
 - (void)_setRemoteInspectionNameOverride:(id)arg1;
 - (void)_setScrollPerformanceDataCollectionEnabled:(BOOL)arg1;
 - (void)_setTextZoomFactor:(double)arg1;
+- (void)_setUpSQLiteDatabaseTrackerClient;
 - (void)_setUserContentExtensionsEnabled:(BOOL)arg1;
 - (void)_setViewScale:(float)arg1;
 - (BOOL)_shouldUpdateKeyboardWithInfo:(id)arg1;
 - (id)_snapshotLayerContentsForBackForwardListItem:(id)arg1;
 - (void)_snapshotRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 intoImageOfWidth:(float)arg2 completionHandler:(id /* block */)arg3;
+- (id)_stableStateOverride;
+- (void)_stopMediaCapture;
 - (id)_suggestedFilenameForDisplayedPDF;
 - (BOOL)_supportsTextZoom;
 - (struct PassRefPtr<WebKit::ViewSnapshot> { struct ViewSnapshot {} *x1; })_takeViewSnapshot;
 - (float)_targetContentZoomScaleForRect:(const struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 currentScale:(double)arg2 fitEntireRect:(BOOL)arg3 minimumScale:(double)arg4 maximumScale:(double)arg5;
 - (double)_textZoomFactor;
-- (id)_uiTextSelectionRectViews;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_uiTextCaretRect;
+- (id)_uiTextSelectionRects;
 - (id)_unreachableURL;
 - (void)_updateContentRectsWithState:(BOOL)arg1;
 - (void)_updateScrollViewBackground;
@@ -428,7 +493,7 @@
 - (void)_willInvokeUIScrollViewDelegateCallback;
 - (void)_windowDidRotate:(id)arg1;
 - (void)_zoomOutWithOrigin:(struct FloatPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
-- (void)_zoomToFocusRect:(struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 selectionRect:(struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 fontSize:(float)arg3 minimumScale:(double)arg4 maximumScale:(double)arg5 allowScaling:(BOOL)arg6 forceScroll:(BOOL)arg7;
+- (void)_zoomToFocusRect:(struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 selectionRect:(struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 insideFixed:(BOOL)arg3 fontSize:(float)arg4 minimumScale:(double)arg5 maximumScale:(double)arg6 allowScaling:(BOOL)arg7 forceScroll:(BOOL)arg8;
 - (void)_zoomToInitialScaleWithOrigin:(struct FloatPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
 - (void)_zoomToPoint:(struct FloatPoint { float x1; float x2; })arg1 atScale:(double)arg2 animated:(BOOL)arg3;
 - (void)_zoomToRect:(struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 atScale:(double)arg2 origin:(struct FloatPoint { float x1; float x2; })arg3 animated:(BOOL)arg4;
@@ -445,11 +510,13 @@
 - (id)configuration;
 - (id)customUserAgent;
 - (void)dealloc;
+- (void)didEndFormControlInteraction;
 - (void)didMoveToWindow;
+- (void)didStartFormControlInteraction;
+- (void)dismissFormAccessoryView;
 - (void)encodeWithCoder:(id)arg1;
 - (double)estimatedProgress;
 - (void)evaluateJavaScript:(id)arg1 completionHandler:(id /* block */)arg2;
-- (BOOL)forceIPadStyleZoomOnInputFocus;
 - (id)goBack;
 - (id)goForward;
 - (id)goToBackForwardListItem:(id)arg1;
@@ -480,13 +547,13 @@
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewWillBeginZooming:(id)arg1 withView:(id)arg2;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
+- (void)selectFormAccessoryPickerRow:(int)arg1;
 - (struct __SecTrust { }*)serverTrust;
 - (void)setAllowsBackForwardNavigationGestures:(BOOL)arg1;
 - (void)setAllowsLinkPreview:(BOOL)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setCustomUserAgent:(id)arg1;
-- (void)setForceIPadStyleZoomOnInputFocus:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setNavigationDelegate:(id)arg1;
 - (void)setOpaque:(BOOL)arg1;
@@ -500,8 +567,19 @@
 
 // Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
 
+- (void)_sf_applicationDidEnterBackgroundOrWillTerminate:(id)arg1;
+- (void)_sf_saveUnsubmittedGeneratedPasswordAndRemoveFormMetadata;
 - (id)_sf_securityInfo;
 - (void)_sf_setSecurityInfo:(id)arg1;
+- (id)webui_formMetadataAndFrame:(id*)arg1 forLastPasswordGenerationOrSubmitEventInFrame:(id)arg2;
+- (id)webui_formMetadataForLastPasswordGenerationOrSubmitEventInFrame:(id)arg1;
+- (id)webui_lastGeneratedPasswordForCurrentBackForwardItem;
+- (id)webui_presentingViewController;
+- (id /* block */)webui_preventNavigationDuringAutoFillPrompt;
+- (BOOL)webui_privateBrowsingEnabled;
+- (void)webui_removeFormMetadataForLastPasswordGenerationOrSubmitEventInFrame:(id)arg1;
+- (void)webui_setFormMetadata:(id)arg1 forLastPasswordGenerationOrSubmitEventInFrame:(id)arg2;
+- (void)webui_setLastGeneratedPasswordForCurrentBackForwardItem:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 

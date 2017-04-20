@@ -19,6 +19,7 @@
 }
 
 - (const struct __CFDictionary {}**)_DuetActivityProperties;
+- (const struct __CFData {}**)_TCPConnectionMetadata;
 - (unsigned long)_allowedProtocolTypes;
 - (id)_allowsCellular;
 - (id)_backgroundTaskTimingData;
@@ -52,6 +53,7 @@
 - (struct __PerformanceTiming { }*)_performanceTiming;
 - (void)_prepareNewTimingDataContainer;
 - (unsigned char)_preventsIdleSystemSleep;
+- (BOOL)_preventsSystemHTTPProxyAuthentication;
 - (id)_priorityValue;
 - (void)_processConnectionProperties;
 - (id)_prohibitAuthUI;
@@ -89,6 +91,7 @@
 - (id)originalRequest;
 - (float)priority;
 - (id)session;
+- (void)set_TCPConnectionMetadata:(id)arg1;
 - (void)set_protocolForTask:(id)arg1;
 - (void)set_trailers:(id)arg1;
 - (bool)shouldHandleCookiesAndSchemeIsAppropriate;

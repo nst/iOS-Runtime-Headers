@@ -4,6 +4,7 @@
 
 @interface __NSCFURLLocalStreamTask : NSURLSessionTask {
     NSData * __TCPConnectionMetadata;
+    NSData * __initialDataPayload;
     NSMutableArray * _afterConnectQueue;
     BOOL  _betterRouteDiscovered;
     NSString * _boundInterfaceIdentifier;
@@ -62,6 +63,7 @@
 
 @property (copy) NSData *_TCPConnectionMetadata;
 @property (readonly) BOOL _goneSecure;
+@property (copy) NSData *_initialDataPayload;
 @property long long countOfBytesExpectedToReceive;
 @property long long countOfBytesExpectedToSend;
 @property long long countOfBytesReceived;
@@ -84,6 +86,7 @@
 - (id)_initWithExistingTask:(id)arg1 disavow:(id /* block */)arg2;
 - (id)_initWithSession:(id)arg1 disavow:(id /* block */)arg2;
 - (void)_init_setupTimeoutTimer;
+- (id)_initialDataPayload;
 - (id)_ledBellyServiceIdentifier;
 - (id)_legacySocketStreamProperties;
 - (int)_networkServiceType;
@@ -160,6 +163,7 @@
 - (void)set_boundInterfaceIdentifier:(id)arg1;
 - (void)set_disallowCellular:(BOOL)arg1;
 - (void)set_expectedWorkload:(long long)arg1;
+- (void)set_initialDataPayload:(id)arg1;
 - (void)set_ledBellyServiceIdentifier:(id)arg1;
 - (void)set_legacySocketStreamProperties:(id)arg1;
 - (void)set_networkServiceType:(int)arg1;

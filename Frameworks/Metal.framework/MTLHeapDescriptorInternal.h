@@ -9,7 +9,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)cpuCacheMode;
 - (void)dealloc;
-- (id)description;
 - (const struct MTLHeapDescriptorPrivate { unsigned int x1; unsigned int x2; unsigned int x3; }*)descriptorPrivate;
 - (unsigned int)hash;
 - (id)init;

@@ -43,6 +43,7 @@
 @property (nonatomic, readonly) UIView *foregroundView;
 @property (nonatomic, retain) UIView *frozenBackdropSnapshotView;
 @property (readonly) unsigned int hash;
+@property (getter=isInUITrackingMode, nonatomic) BOOL inUITrackingMode;
 @property (nonatomic) BOOL keepStatusViewHidden;
 @property (nonatomic) int mode;
 @property (nonatomic, retain) UIView *remoteContentView;
@@ -91,6 +92,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 configuration:(id)arg2;
 - (BOOL)isCarPlayMode;
+- (BOOL)isInUITrackingMode;
 - (BOOL)keepStatusViewHidden;
 - (void)layoutSubviews;
 - (int)mode;
@@ -110,6 +112,7 @@
 - (void)setFlamesViewDeferred:(BOOL)arg1;
 - (void)setFrozenBackdropSnapshotView:(id)arg1;
 - (void)setHelpButtonEmphasized:(BOOL)arg1;
+- (void)setInUITrackingMode:(BOOL)arg1;
 - (void)setKeepStatusViewHidden:(BOOL)arg1;
 - (void)setMode:(int)arg1;
 - (void)setRemoteContentView:(id)arg1;

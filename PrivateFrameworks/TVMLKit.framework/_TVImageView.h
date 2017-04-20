@@ -39,7 +39,7 @@
 - (void)_setImage:(id)arg1;
 - (void)_setTintColor:(id)arg1;
 - (id)_tintColor;
-- (void)_updateImageViewWithPlaceholderImageIfNeeded;
+- (void)_updateImageView;
 - (id /* block */)completion;
 - (int)contentMode;
 - (float)cornerRadius;

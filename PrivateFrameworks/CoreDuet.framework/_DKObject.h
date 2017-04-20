@@ -5,10 +5,12 @@
 @interface _DKObject : NSObject <NSSecureCoding> {
     NSUUID * _UUID;
     NSDictionary * _metadata;
+    _DKSource * _source;
 }
 
 @property (retain) NSUUID *UUID;
 @property (copy) NSDictionary *metadata;
+@property (retain) _DKSource *source;
 
 + (id)entityName;
 + (id)fetchObjectWithUUID:(id)arg1 context:(id)arg2;
@@ -31,7 +33,9 @@
 - (id)metadataFromData:(id)arg1;
 - (id)metadataFromData:(id)arg1 cache:(id)arg2;
 - (void)setMetadata:(id)arg1;
+- (void)setSource:(id)arg1;
 - (void)setUUID:(id)arg1;
+- (id)source;
 - (id)stringValue;
 
 @end

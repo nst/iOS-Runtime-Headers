@@ -4,6 +4,7 @@
 
 @interface NFHardwareManager : NSObject <NFHardwareManagerCallbacks, NSXPCConnectionDelegate> {
     NSXPCConnection * _connection;
+    BOOL  _didPreWarm;
     NSMutableSet * _eventListeners;
     BOOL  _hasEventListener;
     BOOL  _loadError;
@@ -22,6 +23,7 @@
 + (id)sharedHardwareManager;
 
 - (void)_connectIfNeeded;
+- (BOOL)areSessionsAllowed;
 - (id)blessedUser;
 - (id)boosterInfo;
 - (unsigned int)checkUserBlessing:(id)arg1;
@@ -36,12 +38,15 @@
 - (id)getSecureElementInfo;
 - (void)hardwareFailedToLoad;
 - (BOOL)hasCard;
+- (id)hostEmulationLog;
 - (id)init;
 - (BOOL)isInRestrictedMode;
+- (BOOL)preWarm;
 - (void)refreshSecureElements;
 - (void)registerEventListener:(id)arg1;
 - (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (id)rfSettings;
+- (BOOL)secureElementBootHistory:(id*)arg1;
 - (id)secureElementWithIdentifier:(id)arg1;
 - (void)secureElementWithIdentifier:(id)arg1 didChangeRestrictedMode:(BOOL)arg2;
 - (id)secureElements;
@@ -60,6 +65,7 @@
 - (id)startSecureElementManagerSession:(id /* block */)arg1;
 - (id)startSecureElementManagerSessionWithPriority:(id /* block */)arg1;
 - (id)startSecureElementSession:(id)arg1 didStartCallback:(id /* block */)arg2;
+- (id)startSesHatSession:(id /* block */)arg1;
 - (id)startValueAddedServiceSession:(id /* block */)arg1;
 - (id)startValueAddedServiceSession:(id)arg1 callback:(id /* block */)arg2;
 - (BOOL)triggerDelayedWake:(unsigned char)arg1;

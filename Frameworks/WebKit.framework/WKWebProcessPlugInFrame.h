@@ -41,5 +41,6 @@
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1;
 - (id)jsContextForWorld:(id)arg1;
 - (id)jsNodeForNodeHandle:(id)arg1 inWorld:(id)arg2;
+- (id)jsRangeForRangeHandle:(id)arg1 inWorld:(id)arg2;
 
 @end

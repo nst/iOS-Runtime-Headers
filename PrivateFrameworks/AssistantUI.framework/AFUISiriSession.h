@@ -79,6 +79,7 @@
 - (void)assistantConnection:(id)arg1 speechRecordingDidBeginOnAVRecordRoute:(id)arg2;
 - (void)assistantConnection:(id)arg1 speechRecordingDidChangeAVRecordRoute:(id)arg2;
 - (void)assistantConnection:(id)arg1 speechRecordingDidFail:(id)arg2;
+- (void)assistantConnection:(id)arg1 startUIRequestWithText:(id)arg2 completion:(id /* block */)arg3;
 - (void)assistantConnection:(id)arg1 wantsToCacheImage:(id)arg2;
 - (void)assistantConnectionDidChangeAudioRecordingPower:(id)arg1;
 - (void)assistantConnectionDidDetectMusic:(id)arg1;
@@ -108,6 +109,7 @@
 - (void)performAceCommand:(id)arg1 conflictHandler:(id /* block */)arg2;
 - (void)performAceCommands:(id)arg1;
 - (void)preheat;
+- (void)recordMetricsContext:(id)arg1 forDisambiguatedAppWIthBundleIdentifier:(id)arg2;
 - (void)recordRequestMetricEvent:(id)arg1 withTimestamp:(double)arg2;
 - (void)recordUIMetrics:(id)arg1;
 - (float)recordingPowerLevel;

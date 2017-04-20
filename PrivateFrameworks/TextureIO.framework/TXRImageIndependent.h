@@ -14,6 +14,7 @@
 
 - (unsigned int)alphaInfo;
 - (void)dimensions;
+- (BOOL)exportToURL:(id)arg1 uttype:(const struct __CFString { }*)arg2 error:(id*)arg3;
 - (id)initWithCGImage:(struct CGImage { }*)arg1 bufferAllocator:(id)arg2 options:(id)arg3 error:(id*)arg4;
 - (id)initWithCGImage:(struct CGImage { }*)arg1 pixelFormat:(unsigned int)arg2 bufferAllocator:(id)arg3 options:(id)arg4 error:(id*)arg5;
 - (id)initWithDimensions:(void *)arg1 pixelFormat:(void *)arg2 alphaInfo:(void *)arg3 bufferAllocator:(void *)arg4; // needs 4 arg types, found 3: unsigned int, unsigned int, id

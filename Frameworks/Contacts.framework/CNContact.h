@@ -102,6 +102,7 @@
 @property (nonatomic, readonly, copy) NSArray *emailAddresses;
 @property (nonatomic, readonly, copy) NSString *familyName;
 @property (readonly, copy) NSString *firstName;
+@property (nonatomic, readonly) NSString *fullName;
 @property (nonatomic, readonly, copy) NSString *fullName;
 @property (nonatomic, readonly, copy) NSData *fullscreenImageData;
 @property (nonatomic, readonly, copy) NSString *givenName;
@@ -410,6 +411,7 @@
 
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
++ (id)mf_contactFromEmailAddress:(id)arg1;
 + (id)mf_contactWithPersonNameComponents:(id)arg1 emailAddress:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/Accessibility.framework/Frameworks/AXHearingSupport.framework/AXHearingSupport
@@ -433,14 +435,14 @@
 
 + (id)contactWithABRecordRef:(void*)arg1;
 + (id)contactWithPkDictionary:(id)arg1;
-+ (id)pkContactWithNameComponents:(id)arg1 district:(id)arg2 labeledValues:(id)arg3;
-+ (id)pkContactWithNameComponents:(id)arg1 district:(id)arg2 postalAddresses:(id)arg3 emailAddresses:(id)arg4 phoneNumbers:(id)arg5;
 + (id)pkContactWithNameComponents:(id)arg1 labeledValues:(id)arg2;
++ (id)pkContactWithNameComponents:(id)arg1 postalAddresses:(id)arg2 emailAddresses:(id)arg3 phoneNumbers:(id)arg4;
 + (id)pkContactWithNameFromContact:(id)arg1 labeledValue:(id)arg2 property:(id)arg3;
 + (id)pkPassbookRequiredKeys;
 
 - (void*)ABPerson;
 - (unsigned int)contactSource;
+- (id)contactWithCleanedUpDistrict;
 - (id)nameComponents;
 - (void)pkAddLabeledValues:(id)arg1 withProperty:(id)arg2;
 - (id)pkDictionaryForProperty:(id)arg1;
@@ -451,6 +453,14 @@
 - (id)sanitizedContact;
 - (void)setContactSource:(unsigned int)arg1;
 - (void)setRecentContact:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
+
++ (id)safari_defaultDescriptors;
++ (id)safari_imageViewDescriptors;
+
+- (id)fullName;
+- (id)safari_valueForWBSABProperty:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
 

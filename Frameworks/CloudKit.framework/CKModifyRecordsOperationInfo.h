@@ -6,6 +6,7 @@
     BOOL  _atomic;
     NSData * _clientChangeTokenData;
     NSDictionary * _conflictLosersToResolveByRecordID;
+    NSDictionary * _pluginFieldsForRecordDeletesByID;
     NSArray * _recordIDsToDelete;
     NSDictionary * _recordIDsToDeleteToEtags;
     NSArray * _recordsToSave;
@@ -17,6 +18,7 @@
 @property (nonatomic) BOOL atomic;
 @property (nonatomic, retain) NSData *clientChangeTokenData;
 @property (nonatomic, retain) NSDictionary *conflictLosersToResolveByRecordID;
+@property (nonatomic, copy) NSDictionary *pluginFieldsForRecordDeletesByID;
 @property (nonatomic, retain) NSArray *recordIDsToDelete;
 @property (nonatomic, copy) NSDictionary *recordIDsToDeleteToEtags;
 @property (nonatomic, retain) NSArray *recordsToSave;
@@ -32,6 +34,7 @@
 - (id)conflictLosersToResolveByRecordID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)pluginFieldsForRecordDeletesByID;
 - (id)recordIDsToDelete;
 - (id)recordIDsToDeleteToEtags;
 - (id)recordsToSave;
@@ -39,6 +42,7 @@
 - (void)setAtomic:(BOOL)arg1;
 - (void)setClientChangeTokenData:(id)arg1;
 - (void)setConflictLosersToResolveByRecordID:(id)arg1;
+- (void)setPluginFieldsForRecordDeletesByID:(id)arg1;
 - (void)setRecordIDsToDelete:(id)arg1;
 - (void)setRecordIDsToDeleteToEtags:(id)arg1;
 - (void)setRecordsToSave:(id)arg1;

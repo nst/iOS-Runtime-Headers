@@ -15,6 +15,7 @@
 - (BOOL)debuggingEnabled;
 - (id)description;
 - (BOOL)fastMathEnabled;
+- (id)formattedDescription:(unsigned int)arg1;
 - (BOOL)glBufferBindPoints;
 - (unsigned int)hash;
 - (id)init;

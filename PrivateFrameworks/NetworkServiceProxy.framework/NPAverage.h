@@ -8,6 +8,7 @@
 }
 
 @property (readonly) unsigned int average;
+@property (readonly) BOOL isAnyValid;
 @property (readonly) BOOL isLastValid;
 @property (retain) NSMutableArray *samples;
 @property unsigned int size;
@@ -23,6 +24,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSampleSize:(unsigned int)arg1;
+- (BOOL)isAnyValid;
 - (BOOL)isLastValid;
 - (id)samples;
 - (void)setSamples:(id)arg1;

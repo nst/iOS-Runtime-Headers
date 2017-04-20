@@ -2,9 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MapsSupport.framework/MapsSupport
  */
 
-@interface MSPMutableHistoryEntryPlaceDisplay : MSPMutableHistoryEntry <MSPHistoryEntryPlaceDisplay> {
-    NSUUID * _supersededSearchStorageIdentifier;
-}
+@interface MSPMutableHistoryEntryPlaceDisplay : MSPMutableHistoryEntry <MSPHistoryEntryPlaceDisplay>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -18,7 +16,6 @@
 + (Class)mutableObjectClass;
 + (id)mutableObjectProtocol;
 
-- (void).cxx_destruct;
 - (BOOL)_isUserVisibleDuplicateOfSameClassObject:(id)arg1;
 - (id)geoMapItem;
 - (id)initWithStorage:(id)arg1;

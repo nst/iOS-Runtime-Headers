@@ -74,7 +74,7 @@
 - (void)_updateSelectedIndexPaths;
 - (void)_updateSelectionWithHitIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg1 leadingClosestIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg2 aboveClosestIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg3;
 - (void)_updateWithDataSource:(id)arg1 changeHistory:(id)arg2;
-- (void)autoScrollerDidUpdate:(id)arg1;
+- (void)autoScroller:(id)arg1 didAutoscrollWithTimestamp:(double)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;

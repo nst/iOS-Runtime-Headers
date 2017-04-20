@@ -17,9 +17,15 @@
 - (id)_typedBackingStore;
 - (int)defroster;
 - (id)description;
+- (id)domain;
 - (id)enable;
 - (id)initWithEnable:(id)arg1 defroster:(int)arg2;
+- (id)parametersByName;
 - (void)setDefroster:(int)arg1;
+- (void)setDomain:(id)arg1;
 - (void)setEnable:(id)arg1;
+- (void)setParametersByName:(id)arg1;
+- (void)setVerb:(id)arg1;
+- (id)verb;
 
 @end

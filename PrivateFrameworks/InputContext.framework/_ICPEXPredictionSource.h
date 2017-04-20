@@ -18,6 +18,7 @@
 - (id)buildPeopleRequestWithTrigger:(id)arg1;
 - (void)connectionsPredictionsWithProactiveTrigger:(id)arg1 searchContext:(id)arg2 limit:(unsigned int)arg3 timeout:(float)arg4 handler:(id /* block */)arg5;
 - (void)eventPredictionsWithProactiveTrigger:(id)arg1 searchContext:(id)arg2 limit:(unsigned int)arg3 timeout:(float)arg4 handler:(id /* block */)arg5;
+- (BOOL)generateNoresultExplanation:(id*)arg1;
 - (id)init;
 - (id)initForTesting;
 - (BOOL)isFirstPersonTrigger:(id)arg1;
@@ -26,5 +27,6 @@
 - (id)pexBroker;
 - (void)resetBrokerForTesting;
 - (void)setPexBroker:(id)arg1;
+- (id)toCamelCase:(id)arg1;
 
 @end

@@ -30,7 +30,7 @@
 - (void)_findPluginsInPaths:(id)arg1;
 - (id)_identifiersForAppPlugins;
 - (id)_infoPlistPathForPluginCreatingFolderIfNeeded:(id)arg1;
-- (void)_insertPluginForExtension:(id)arg1 balloonProviderBundle:(id)arg2 andTimingCollection:(id)arg3;
+- (id)_insertPluginForExtension:(id)arg1 balloonProviderBundle:(id)arg2 andTimingCollection:(id)arg3;
 - (BOOL)_isExtensionBlackListed:(id)arg1;
 - (BOOL)_isServerBlackListedBundle:(id)arg1 serverBag:(id)arg2;
 - (void)_loadAllDataSources;
@@ -54,7 +54,8 @@
 - (id)init;
 - (void)insertDataSource:(id)arg1 forGUID:(id)arg2;
 - (id)localParticipantIdentifierForAppID:(id)arg1 conversationID:(id)arg2;
-- (void)pluginChatItem:(id)arg1 didRelinquishController:(id)arg2;
+- (void)pluginChatItem:(id)arg1 didRelenquishNonResuableController:(id)arg2;
+- (void)pluginChatItem:(id)arg1 didRelinquishReusableController:(id)arg2;
 - (id)pluginIDToMetadataCache;
 - (id)pluginMetaDataFolder;
 - (id)pluginsMap;

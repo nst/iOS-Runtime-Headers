@@ -8,6 +8,7 @@
 - (int)mapTypeForPlaceCardHeaderViewController:(MKPlaceCardHeaderViewController *)arg1;
 - (void)placeCardheaderHeaderViewControllerDidSelectDirectionsButton:(MKPlaceCardHeaderViewController *)arg1 withTransportTypePreference:(NSNumber *)arg2;
 - (void)placeCardheaderHeaderViewControllerDidSelectRerouteButton:(MKPlaceCardHeaderViewController *)arg1;
+- (void)placeCardheaderHeaderViewControllerDidSelectRidesharingButton:(MKPlaceCardHeaderViewController *)arg1;
 - (void)placeCardheaderHeaderViewControllerDidSelectShareLocationButton:(MKPlaceCardHeaderViewController *)arg1;
 
 @optional

@@ -17,9 +17,9 @@
 - (void).cxx_destruct;
 - (void)_runIfNecessary;
 - (id)accessQueue;
-- (void)addCompletionBlock:(id /* block */)arg1;
-- (void)addFailureBlock:(id /* block */)arg1;
-- (void)addSuccessBlock:(id /* block */)arg1;
+- (id)addCompletionBlock:(id /* block */)arg1;
+- (id)addFailureBlock:(id /* block */)arg1;
+- (id)addSuccessBlock:(id /* block */)arg1;
 - (id /* block */)block;
 - (id)initWithBlock:(id /* block */)arg1 scheduler:(id)arg2;
 - (id)scheduler;

@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 title:(id)arg2 buttonText:(id)arg3;
+- (id)initWithTitle:(id)arg1 buttonText:(id)arg2;
 - (void)retryButtonPressed:(id)arg1;
 - (void)setDelegate:(id)arg1;
 

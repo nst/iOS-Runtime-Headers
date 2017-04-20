@@ -3,25 +3,31 @@
  */
 
 @interface _KSDeviceInfo : NSObject {
-    BOOL  _incompatible;
+    NSString * _model;
+    NSString * _modelDisplayName;
     NSString * _name;
     BOOL  _needsUpdate;
     NSString * _swVersion;
 }
 
-@property (nonatomic) BOOL incompatible;
+@property (nonatomic, copy) NSString *model;
+@property (nonatomic, copy) NSString *modelDisplayName;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) BOOL needsUpdate;
 @property (nonatomic, copy) NSString *swVersion;
 
++ (id)ksDecviceWithName:(id)arg1 swVersion:(id)arg2 model:(id)arg3 modelDisplayName:(id)arg4;
++ (id)ksDecviceWithiCloudDeviceInfo:(id)arg1;
++ (id)ksDeviceWithName:(id)arg1 needsUpgrade:(BOOL)arg2;
 + (id)ksDeviceWithName:(id)arg1 swVersion:(id)arg2;
-+ (id)ksDeviceWithName:(id)arg1 swVersion:(id)arg2 needsUpgrade:(BOOL)arg3 incompatible:(BOOL)arg4;
 
 - (void).cxx_destruct;
-- (BOOL)incompatible;
+- (id)model;
+- (id)modelDisplayName;
 - (id)name;
 - (BOOL)needsUpdate;
-- (void)setIncompatible:(BOOL)arg1;
+- (void)setModel:(id)arg1;
+- (void)setModelDisplayName:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setNeedsUpdate:(BOOL)arg1;
 - (void)setSwVersion:(id)arg1;

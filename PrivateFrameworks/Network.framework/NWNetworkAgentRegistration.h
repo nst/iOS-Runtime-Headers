@@ -18,10 +18,12 @@
 @property (getter=isRegistered, nonatomic, readonly) BOOL registered;
 @property (retain) NSUUID *registeredUUID;
 @property int registrationSocket;
+@property (nonatomic) unsigned long long useCount;
 
 + (BOOL)addActiveAssertionToNetworkAgent:(id)arg1;
 + (int)newRegistrationFileDescriptor;
 + (BOOL)removeActiveAssertionFromNetworkAgent:(id)arg1;
++ (BOOL)useNetworkAgent:(id)arg1 returnUseCount:(unsigned long long*)arg2;
 
 - (void).cxx_destruct;
 - (BOOL)addNetworkAgentToInterfaceNamed:(id)arg1;
@@ -48,7 +50,9 @@
 - (BOOL)setRegisteredNetworkAgent:(id)arg1 fileDescriptor:(int)arg2;
 - (void)setRegisteredUUID:(id)arg1;
 - (void)setRegistrationSocket:(int)arg1;
+- (void)setUseCount:(unsigned long long)arg1;
 - (BOOL)unregisterNetworkAgent;
 - (BOOL)updateNetworkAgent:(id)arg1;
+- (unsigned long long)useCount;
 
 @end

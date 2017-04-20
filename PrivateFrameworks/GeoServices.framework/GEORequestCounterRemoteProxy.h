@@ -20,5 +20,6 @@
 - (id)init;
 - (void)readRequestsPerAppSince:(id)arg1 handler:(id /* block */)arg2;
 - (void)setCountersEnabled:(BOOL)arg1;
+- (void)startPowerLogSessionWithName:(id)arg1;
 
 @end

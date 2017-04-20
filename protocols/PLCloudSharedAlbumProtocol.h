@@ -20,6 +20,7 @@
 - (NSString *)cloudOwnerFirstName;
 - (NSString *)cloudOwnerFullName;
 - (NSString *)cloudOwnerHashedPersonID;
+- (BOOL)cloudOwnerIsWhitelisted;
 - (NSString *)cloudOwnerLastName;
 - (NSString *)cloudPersonID;
 - (NSNumber *)cloudPublicURLEnabled;
@@ -44,6 +45,7 @@
 - (void)setCloudOwnerFirstName:(NSString *)arg1;
 - (void)setCloudOwnerFullName:(NSString *)arg1;
 - (void)setCloudOwnerHashedPersonID:(NSString *)arg1;
+- (void)setCloudOwnerIsWhitelisted:(BOOL)arg1;
 - (void)setCloudOwnerLastName:(NSString *)arg1;
 - (void)setCloudPersonID:(NSString *)arg1;
 - (void)setCloudPublicURLEnabled:(NSNumber *)arg1;

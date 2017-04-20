@@ -16,6 +16,11 @@
     UITapGestureRecognizer * __tapGestureRecognizer;
     NSString * __timeDescription;
     PLDateRangeFormatter * __timeFormatter;
+    struct PXAssetBadgeInfo { 
+        unsigned int badges; 
+        double duration; 
+        int count; 
+    }  _badgeInfo;
     NSDate * _creationDate;
     struct { 
         long long value; 
@@ -52,6 +57,7 @@
 @property (setter=_setTapGestureRecognizer:, nonatomic, retain) UITapGestureRecognizer *_tapGestureRecognizer;
 @property (setter=_setTimeDescription:, nonatomic, retain) NSString *_timeDescription;
 @property (nonatomic, readonly) PLDateRangeFormatter *_timeFormatter;
+@property (nonatomic) struct PXAssetBadgeInfo { unsigned int x1; double x2; int x3; } badgeInfo;
 @property (nonatomic, retain) NSDate *creationDate;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } currentPlaybackTime;
 @property (nonatomic) <PUPhotoBrowserTitleViewControllerDelegate> *delegate;
@@ -103,6 +109,7 @@
 - (void)_updateIfNeeded;
 - (void)_updateLabelsIfNeeded;
 - (void)_updatePlayClockDescriptionIfNeeded;
+- (struct PXAssetBadgeInfo { unsigned int x1; double x2; int x3; })badgeInfo;
 - (id)creationDate;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })currentPlaybackTime;
 - (void)dealloc;
@@ -113,6 +120,7 @@
 - (BOOL)isUsingCompactTitleView;
 - (void)performChanges:(id /* block */)arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })playbackDuration;
+- (void)setBadgeInfo:(struct PXAssetBadgeInfo { unsigned int x1; double x2; int x3; })arg1;
 - (void)setCreationDate:(id)arg1;
 - (void)setCurrentPlaybackTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setDelegate:(id)arg1;

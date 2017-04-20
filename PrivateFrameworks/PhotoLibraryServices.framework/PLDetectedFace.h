@@ -7,11 +7,13 @@
 @property (nonatomic, copy) NSDate *adjustmentVersion;
 @property (nonatomic, retain) NSDate *adjustmentVersion;
 @property (nonatomic, retain) PLManagedAsset *asset;
+@property (nonatomic, readonly) BOOL assetVisible;
 @property (nonatomic) double blurScore;
 @property (nonatomic) double centerX;
 @property (nonatomic) double centerY;
 @property (nonatomic) short cloudLocalState;
 @property (nonatomic) int clusterSequenceNumber;
+@property (nonatomic) short confirmedFaceCropGenerationState;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) double expressionConfidence;
@@ -22,8 +24,9 @@
 @property (nonatomic) int expressionType2;
 @property (nonatomic) int expressionType3;
 @property (nonatomic) int faceAlgorithmVersion;
+@property (nonatomic, retain) PLFaceCrop *faceCrop;
+@property (nonatomic, retain) PLDetectedFaceGroup *faceGroup;
 @property (nonatomic, retain) PLDetectedFaceGroup *faceGroupBeingKeyFace;
-@property (nonatomic, retain) NSSet *faceGroups;
 @property (nonatomic, retain) PLDetectedFaceprint *faceprint;
 @property (nonatomic) BOOL hasSmile;
 @property (readonly) unsigned int hash;
@@ -38,7 +41,7 @@
 @property (nonatomic) double mouthX;
 @property (nonatomic) double mouthY;
 @property (nonatomic) int nameSource;
-@property (nonatomic) BOOL nameSourceAuto;
+@property (nonatomic) BOOL nameSourceUser;
 @property (nonatomic, retain) <PLSyncablePerson> *person;
 @property (nonatomic, retain) PLPerson *person;
 @property (nonatomic, retain) <PLSyncablePerson> *personBeingKeyFace;
@@ -47,7 +50,8 @@
 @property (nonatomic) double poseRoll;
 @property (nonatomic) double poseYaw;
 @property (nonatomic) int qualityMeasure;
-@property (nonatomic, retain) NSSet *rejectedPeople;
+@property (nonatomic, retain) NSSet *rejectedPersons;
+@property (nonatomic, retain) NSSet *rejectedPersonsNeedingFaceCrops;
 @property (nonatomic) double rightEyeX;
 @property (nonatomic) double rightEyeY;
 @property (nonatomic) double size;
@@ -56,7 +60,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *uuid;
 
-+ (id)_allSyncableFacesInManagedObjectContext:(id)arg1;
++ (id)_facesMatchingPredicate:(id)arg1 limit:(unsigned int)arg2 inPhotoLibrary:(id)arg3;
++ (id)_syncableFacesPredicate;
 + (void)batchFetchDetectedFacesByAssetUUIDWithAssetUUIDs:(id)arg1 predicate:(id)arg2 completion:(id /* block */)arg3;
 + (void)batchFetchKeyFacesByPersonUUIDWithPersonUUIDs:(id)arg1 completion:(id /* block */)arg2;
 + (unsigned int)countOfHiddenFacesOnAssetsWithObjectIDs:(id)arg1 inManagedObjectContext:(id)arg2;
@@ -64,24 +69,35 @@
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 + (void)enumerateAssetUUIDsForSearchIndexingWithDetctedFaceUUIDs:(id)arg1 managedObjectContext:(id)arg2 assetUUIDHandler:(id /* block */)arg3;
-+ (id)findExistingFaceMatchingDimension:(struct PLFaceDimension { double x1; double x2; double x3; int x4; int x5; })arg1 inFaces:(id)arg2 inAsset:(id)arg3;
-+ (id)findExistingFaceMatchingRef:(id)arg1 inFaces:(id)arg2 inAsset:(id)arg3;
++ (BOOL)facesSyncFeatureEnabled;
++ (id)findExistingFaceMatchingDimension:(id)arg1 inFaces:(id)arg2;
 + (id)insertInManagedObjectContext:(id)arg1;
++ (id)predicatesForFacesNeedingFaceCropGeneration;
 + (id)predicatesToExcludeNonVisibleFaces;
 + (int)resetAssetForAllSyncableFacesInManagedObjectContext:(id)arg1 error:(id*)arg2;
++ (void)resetCloudStateInPhotoLibrary:(id)arg1;
++ (id)syncableFacesToUploadInitiallyInLibrary:(id)arg1 limit:(unsigned int)arg2;
 + (id)userCuratedFacePredicate;
 
+- (BOOL)_isTrainingFace;
 - (void)_updateFaceGroupIfNeeded;
-- (void)_updateFileSystemPersistenceIfNeeded;
+- (void)_updateFileSystemPersistenceIfNeededWithManagedObjectContext:(id)arg1;
 - (void)_verifyAssetRelationship;
+- (void)addRejectedPerson:(id)arg1;
+- (void)addRejectedPersonNeedingFaceCrops:(id)arg1;
 - (void)awakeFromInsert;
+- (double)cvmlPhotosFaceRepresentationCenterX;
+- (double)cvmlPhotosFaceRepresentationCenterY;
+- (double)cvmlPhotosFaceRepresentationSize;
+- (int)cvmlPhotosFaceRepresentationSourceHeight;
+- (int)cvmlPhotosFaceRepresentationSourceWidth;
 - (id)debugLogDescription;
 - (void)delete;
-- (BOOL)nameSourceAuto;
-- (id)rejectedPeople;
+- (BOOL)isSyncableChange;
+- (BOOL)nameSourceUser;
 - (void)removeFaceprint;
-- (void)setNameSourceAuto:(BOOL)arg1;
-- (void)setRejectedPeople:(id)arg1;
+- (void)setNameSourceUser:(BOOL)arg1;
+- (BOOL)supportsCloudUpload;
 - (void)willSave;
 
 @end

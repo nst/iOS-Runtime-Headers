@@ -23,6 +23,7 @@
     BOOL  squareCropEnabled;
     BOOL  turboModeEnabled;
     long long  uniqueID;
+    unsigned long long  userInitiatedPhotoRequestTime;
 }
 
 @end

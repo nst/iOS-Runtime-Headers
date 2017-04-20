@@ -45,6 +45,8 @@
 @property (nonatomic, retain) _INPBUserActivity *userActivityForBookingInApplication;
 @property (nonatomic) BOOL usesMeteredFare;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 + (Class)availablePartySizeOptionsType;
 + (Class)fareLineItemsType;
 + (id)options;
@@ -102,5 +104,11 @@
 - (id)userActivityForBookingInApplication;
 - (BOOL)usesMeteredFare;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

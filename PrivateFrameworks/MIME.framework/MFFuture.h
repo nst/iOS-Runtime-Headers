@@ -37,7 +37,7 @@
 - (void)addFailureBlock:(id /* block */)arg1;
 - (void)addSuccessBlock:(id /* block */)arg1;
 - (id /* block */)boolErrorCompletionHandlerAdapter;
-- (BOOL)cancel;
+- (void)cancel;
 - (id /* block */)completionHandlerAdapter;
 - (void)dealloc;
 - (void)didCancel;
@@ -58,5 +58,6 @@
 - (id)resultBeforeDate:(id)arg1 error:(id*)arg2;
 - (id)resultWithTimeout:(double)arg1 error:(id*)arg2;
 - (id)then:(id /* block */)arg1;
+- (BOOL)tryCancel;
 
 @end

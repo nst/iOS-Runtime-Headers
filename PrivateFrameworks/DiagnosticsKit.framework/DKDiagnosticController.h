@@ -7,10 +7,8 @@
     DKDiagnosticContext * _context;
     BOOL  _finished;
     NSLock * _finishedLock;
-    NSDictionary * _parameters;
-    NSDictionary * _predicates;
     DKMutableResult * _result;
-    NSDictionary * _specifications;
+    BOOL  _setup;
 }
 
 @property (getter=isCancelled, nonatomic, readonly) BOOL cancelled;
@@ -20,10 +18,8 @@
 @property (getter=isFinished, nonatomic) BOOL finished;
 @property (nonatomic, retain) NSLock *finishedLock;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) NSDictionary *parameters;
-@property (nonatomic, readonly) NSDictionary *predicates;
 @property (nonatomic, retain) DKMutableResult *result;
-@property (nonatomic, readonly) NSDictionary *specifications;
+@property (getter=isSetup, nonatomic) BOOL setup;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -34,16 +30,14 @@
 - (id)init;
 - (BOOL)isCancelled;
 - (BOOL)isFinished;
-- (id)parameters;
-- (id)predicates;
+- (BOOL)isSetup;
 - (id)result;
 - (void)setCancelled:(BOOL)arg1;
 - (void)setContext:(id)arg1;
 - (void)setFinished:(BOOL)arg1;
 - (void)setFinishedLock:(id)arg1;
 - (void)setResult:(id)arg1;
-- (void)setupWithContext:(id)arg1;
-- (id)specifications;
+- (void)setSetup:(BOOL)arg1;
 - (void)start;
 
 @end

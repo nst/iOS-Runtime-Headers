@@ -18,6 +18,7 @@
 @property (nonatomic, readonly) BOOL requiresForYouCatchUpOperation;
 @property (readonly) Class superclass;
 
+- (id)backingChannelTagIDWithAppConfig:(id)arg1;
 - (BOOL)canEmitGroupsWithType:(int)arg1;
 - (int)desiredArticlesCount;
 - (BOOL)emitsSingletonGroups;

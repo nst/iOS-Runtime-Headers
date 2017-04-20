@@ -20,6 +20,7 @@
     BOOL  _mediaTypeIsVideo;
     struct OpaqueFigSimpleMutex { } * _peerTerminationMutex;
     BOOL  _pixelBufferAttachmentModificationAllowed;
+    int  _receiverPID;
     struct remoteQueueSenderOpaque { } * _remoteQueueSender;
     BOOL  _sentDiagnosticMetadata;
     struct shmemPoolOpaque { } * _sharedMemoryPool;
@@ -42,7 +43,7 @@
 - (void)didReachEndOfDataForInput:(id)arg1;
 - (BOOL)discardsLateSampleBuffers;
 - (void)handleDroppedSample:(id)arg1 forInput:(id)arg2;
-- (id)initWithMediaType:(unsigned long)arg1;
+- (id)initWithMediaType:(unsigned long)arg1 receiverPID:(int)arg2;
 - (id)nodeSubType;
 - (BOOL)pixelBufferAttachmentModificationAllowed;
 - (void)prepareForCurrentConfigurationToBecomeLive;

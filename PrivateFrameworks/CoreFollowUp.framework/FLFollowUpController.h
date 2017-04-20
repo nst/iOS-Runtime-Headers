@@ -24,14 +24,21 @@
 - (void)_postHSA2PasswordChangeForAppleID:(id)arg1 completion:(id /* block */)arg2;
 - (void)_postHSA2PasswordResetNotification:(id)arg1 completion:(id /* block */)arg2;
 - (void)_tearDownHSA2LoginNotificationWithPushMessageID:(id)arg1;
+- (BOOL)clearNotificationForItem:(id)arg1 error:(id*)arg2;
+- (BOOL)clearPendingFollowUpItems:(id*)arg1;
 - (void)clearPendingFollowUpItemsWithCompletion:(id /* block */)arg1;
 - (void)clearPendingFollowUpItemsWithUniqueIdentifiers:(id)arg1 completion:(id /* block */)arg2;
+- (BOOL)clearPendingFollowUpItemsWithUniqueIdentifiers:(id)arg1 error:(id*)arg2;
+- (unsigned int)countOfPendingFollowUpItems:(id*)arg1;
 - (void)countOfPendingFollowUpItemsWithCompletion:(id /* block */)arg1;
 - (id)delegate;
+- (id)initWithClientIdentifier:(id)arg1;
 - (id)initWithClientIdentifier:(id)arg1 machServiceName:(id)arg2 delegate:(id)arg3;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (id)pendingFollowUpItems:(id*)arg1;
 - (void)pendingFollowUpItemsWithCompletion:(id /* block */)arg1;
 - (void)postFollowUpItem:(id)arg1 completion:(id /* block */)arg2;
+- (BOOL)postFollowUpItem:(id)arg1 error:(id*)arg2;
 - (void)setDelegate:(id)arg1;
 
 @end

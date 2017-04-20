@@ -93,6 +93,7 @@
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
+- (id)_languageOptionIdentifier;
 - (id)makeNowPlayingInfoLanguageOption;
 - (BOOL)mpIsOnlyAC3;
 - (BOOL)mpIsSDH;

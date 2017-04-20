@@ -9,6 +9,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic) UIViewController *presentingViewController;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -21,6 +22,9 @@
 - (void)cdpContext:(id)arg1 promptToInformUserOfAccountUnlockWithCompletion:(id /* block */)arg2;
 - (void)cdpContext:(id)arg1 showError:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)cdpContext:(id)arg1 showError:(id)arg2 withDefaultIndex:(int)arg3 withCompletion:(id /* block */)arg4;
+- (id)initWithPresentingViewController:(id)arg1;
 - (id)initWithPresentingViewControlller:(id)arg1;
+- (id)presentingViewController;
+- (void)setPresentingViewController:(id)arg1;
 
 @end

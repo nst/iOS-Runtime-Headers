@@ -3,7 +3,7 @@
  */
 
 @interface VSSAMLAuthenticationToken : NSObject <VSAuthenticationToken> {
-    NSString * _body;
+    NSData * _serializedData;
 }
 
 @property (nonatomic, copy) NSString *body;
@@ -11,6 +11,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSDate *expirationDate;
 @property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSData *serializedData;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -21,5 +22,6 @@
 - (BOOL)isValid;
 - (id)serializedData;
 - (void)setBody:(id)arg1;
+- (void)setSerializedData:(id)arg1;
 
 @end

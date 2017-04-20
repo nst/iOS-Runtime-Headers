@@ -14,6 +14,7 @@
     BOOL  _isTransitItem;
     MKMapItemMetadata * _metadata;
     NSString * _name;
+    NSNumberFormatter * _numberFormatterForAdamId;
     NSString * _phoneNumber;
     _MKMapItemPhotosAttribution * _photosAttribution;
     GEOPlace * _place;
@@ -27,6 +28,7 @@
 }
 
 @property (getter=_acceptsApplePay, nonatomic, readonly) BOOL acceptsApplePay;
+@property (getter=_alternativeAppAdamIds, nonatomic, readonly) NSArray *alternativeAppAdamIds;
 @property (getter=_attribution, nonatomic, readonly) _MKMapItemPlaceAttribution *attribution;
 @property (getter=_businessClaim, nonatomic, readonly) GEOPDBusinessClaim *businessClaim;
 @property (getter=_coordinate, nonatomic, readonly) struct CLLocationCoordinate2D { double x1; double x2; } coordinate;
@@ -89,6 +91,7 @@
 @property (nonatomic, readonly) MKPlacemark *placemark;
 @property (getter=_poiPinpointURLString, nonatomic, readonly) NSString *poiPinpointURLString;
 @property (getter=_poiSurveyURLString, nonatomic, readonly) NSString *poiSurveyURLString;
+@property (getter=_preferedAppAdamID, nonatomic, readonly) NSNumber *preferedAppAdamID;
 @property (getter=_priceRangeString, nonatomic, readonly) NSString *priceRangeString;
 @property (getter=_providerURL, nonatomic, readonly, copy) NSURL *providerURL;
 @property (nonatomic, retain) _MKPlaceReservationInfo *reservationInfo;
@@ -159,6 +162,7 @@
 - (id)_addressFormattedAsTitlesForMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)_addressFormattedAsWeatherDisplayName;
 - (id)_addressOrNil:(id)arg1;
+- (id)_alternativeAppAdamIds;
 - (id)_attribution;
 - (id)_attributionFor:(id)arg1 sourceStringFormat:(id)arg2 moreSourceStringFormat:(id)arg3 imageTintColor:(id)arg4;
 - (id)_attributionWithDisplayName:(id)arg1 attributionFormat:(id)arg2 logo:(id)arg3 isSnippetLogo:(BOOL)arg4;
@@ -174,6 +178,7 @@
 - (id)_firstLocalizedCategoryName;
 - (id)_flyover;
 - (id)_flyoverAnnouncementMessage;
+- (id)_formatterForAdamId;
 - (id)_fullAddressWithMultiline:(BOOL)arg1;
 - (id)_geoAddress;
 - (id)_geoFenceMapRegion;
@@ -225,6 +230,7 @@
 - (id)_poiPinpointURLString;
 - (id)_poiSurveyURLString;
 - (id)_postalAddressFromMeCardUsingAddressIdentifier:(id)arg1;
+- (id)_preferedAppAdamID;
 - (id)_priceRangeString;
 - (id)_providerURL;
 - (int)_recommendedTransportType;

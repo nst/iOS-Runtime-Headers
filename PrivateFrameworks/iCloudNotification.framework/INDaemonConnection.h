@@ -10,8 +10,11 @@
 - (BOOL)clearAllRegistrationDigestsWithError:(id*)arg1;
 - (void)dealloc;
 - (id)diagnosticReport;
+- (id)iCloudServerOfferForAccount:(id)arg1 error:(id*)arg2;
+- (id)iCloudServerOfferForAccount:(id)arg1 options:(id)arg2 error:(id*)arg3;
 - (id)init;
 - (BOOL)registerAccount:(id)arg1 foriCloudNotificationsWithReason:(unsigned int)arg2 error:(id*)arg3;
 - (BOOL)unregisterAccount:(id)arg1 fromiCloudNotificationsWithError:(id*)arg2;
+- (void)updateOfferForAccount:(id)arg1 offerId:(id)arg2 buttonId:(id)arg3 completion:(id /* block */)arg4;
 
 @end

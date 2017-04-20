@@ -18,6 +18,7 @@
 - (void)_dumpDebugInformation;
 - (void)addSession:(id)arg1;
 - (void)cancelSessionWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)fetchActiveSessionCountForSessionTypeIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)fetchSessionsWithTypeIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (id)init;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;

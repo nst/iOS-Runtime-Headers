@@ -10,7 +10,7 @@
     NSArray * _feedRequests;
     NSArray * _feedTransformations;
     unsigned int  _maxCount;
-    unsigned int  _networkEventCount;
+    NSMutableArray * _mutableNetworkEvents;
     int  _options;
     id /* block */  _requestCompletionHandler;
     id /* block */  _requestCompletionHandlerWithInterestToken;
@@ -25,7 +25,8 @@
 @property (nonatomic, copy) NSArray *feedRequests;
 @property (nonatomic, copy) NSArray *feedTransformations;
 @property (nonatomic) unsigned int maxCount;
-@property (nonatomic) unsigned int networkEventCount;
+@property (nonatomic, retain) NSMutableArray *mutableNetworkEvents;
+@property (nonatomic, readonly) NSArray *networkEvents;
 @property (nonatomic) int options;
 @property (nonatomic, copy) id /* block */ requestCompletionHandler;
 @property (nonatomic, copy) id /* block */ requestCompletionHandlerWithInterestToken;
@@ -36,6 +37,7 @@
 - (id)_failureResponseForRequest:(id)arg1 error:(id)arg2;
 - (void)_gatherAllFeedResponsesWithCompletionHandler:(id /* block */)arg1;
 - (void)_gatherAllOrderFeedResponsesWithCompletionHandler:(id /* block */)arg1;
+- (unsigned int)_networkEventCount;
 - (id)context;
 - (id)databaseLookupsByFeedID;
 - (unsigned int)expectedNetworkEventCount;
@@ -44,7 +46,8 @@
 - (id)feedTransformations;
 - (id)init;
 - (unsigned int)maxCount;
-- (unsigned int)networkEventCount;
+- (id)mutableNetworkEvents;
+- (id)networkEvents;
 - (void)operationWillFinishWithError:(id)arg1;
 - (int)options;
 - (void)performOperation;
@@ -60,7 +63,7 @@
 - (void)setFeedRequests:(id)arg1;
 - (void)setFeedTransformations:(id)arg1;
 - (void)setMaxCount:(unsigned int)arg1;
-- (void)setNetworkEventCount:(unsigned int)arg1;
+- (void)setMutableNetworkEvents:(id)arg1;
 - (void)setOptions:(int)arg1;
 - (void)setRequestCompletionHandler:(id /* block */)arg1;
 - (void)setRequestCompletionHandlerWithInterestToken:(id /* block */)arg1;

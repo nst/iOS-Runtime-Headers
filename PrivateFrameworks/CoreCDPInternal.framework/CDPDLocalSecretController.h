@@ -19,10 +19,11 @@
 - (void).cxx_destruct;
 - (id)_cdpStateMachine;
 - (void)_collectLocalSecretWithCompletion:(id /* block */)arg1;
-- (void)_createContextWithCompletion:(id /* block */)arg1;
+- (void)_createContextForSecret:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (void)_handleCompletionStatus:(BOOL)arg1;
 - (void)_localSecretChangedTo:(id)arg1 secretType:(unsigned int)arg2 completion:(id /* block */)arg3;
 - (void)_repairWithStateMachine:(id)arg1 completion:(id /* block */)arg2;
+- (void)_setContextWithAuthResults:(id)arg1;
 - (id)circleController;
 - (void)circleController:(id)arg1 secureBackupRecordsArePresentWithCompletion:(id /* block */)arg2;
 - (id)circlePeerIDForSecureBackupController:(id)arg1;

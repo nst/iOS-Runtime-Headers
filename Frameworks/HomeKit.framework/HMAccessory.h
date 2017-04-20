@@ -69,6 +69,9 @@
 @property (nonatomic, readonly) BOOL hf_isBridge;
 @property (nonatomic, readonly) BOOL hf_isCamera;
 @property (nonatomic, readonly) BOOL hf_isFavorite;
+@property (nonatomic, readonly) BOOL hf_isProgrammableSwitch;
+@property (nonatomic, readonly) unsigned int hf_numberOfProgrammableSwitches;
+@property (nonatomic, readonly) NSSet *hf_programmableSwitchNamespaceServices;
 @property (nonatomic, readonly) BOOL hf_requiresFirmwareUpdate;
 @property (nonatomic, readonly) HFServiceNameComponents *hf_serviceNameComponents;
 @property (nonatomic, readonly) NSSet *hf_visibleServices;
@@ -183,6 +186,7 @@
 - (void)notifyDelegateOfAppDataUpdateForService:(id)arg1;
 - (BOOL)paired;
 - (id)propertyQueue;
+- (void)queryAdvertisementInformationWithCompletionHandler:(id /* block */)arg1;
 - (int)reachableTransports;
 - (id)room;
 - (id)serialNumber;
@@ -241,10 +245,14 @@
 - (BOOL)hf_isBridge;
 - (BOOL)hf_isCamera;
 - (BOOL)hf_isFavorite;
+- (BOOL)hf_isProgrammableSwitch;
+- (unsigned int)hf_numberOfProgrammableSwitches;
 - (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (id)hf_programmableSwitchNamespaceServices;
 - (BOOL)hf_requiresFirmwareUpdate;
 - (id)hf_serializedStateDumpRepresentation;
 - (id)hf_serviceNameComponents;
+- (id)hf_serviceOfType:(id)arg1;
 - (id)hf_updateDateAdded:(id)arg1;
 - (id)hf_updateIsFavorite:(BOOL)arg1;
 - (id)hf_visibleServices;

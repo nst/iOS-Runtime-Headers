@@ -14,6 +14,7 @@
 @property (getter=_addressGeocodeAccuracy, nonatomic, readonly) int addressGeocodeAccuracy;
 @property (getter=_areaInMeters, nonatomic, readonly) double areaInMeters;
 @property (nonatomic, readonly) NSArray *areasOfInterest;
+@property (getter=_associatedApp, nonatomic, readonly) GEOAssociatedApp *associatedApp;
 @property (getter=_attribution, nonatomic, readonly) GEOMapItemPlaceAttribution *attribution;
 @property (getter=_businessClaim, nonatomic, readonly) GEOPDBusinessClaim *businessClaim;
 @property (getter=_businessURL, nonatomic, readonly) NSString *businessURL;
@@ -111,6 +112,7 @@
 - (double)_areaInMeters;
 - (id)_arrivalMapRegionForTransportType:(int)arg1;
 - (id)_asPlaceInfo;
+- (id)_associatedApp;
 - (id)_attribution;
 - (id)_businessClaim;
 - (id)_businessURL;

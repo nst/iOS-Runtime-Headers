@@ -9,7 +9,8 @@
         unsigned int includesSubentities : 1; 
         unsigned int resultType : 2; 
         unsigned int entityIsName : 1; 
-        unsigned int _RESERVED : 28; 
+        unsigned int secureOperation : 1; 
+        unsigned int _RESERVED : 27; 
     }  _flags;
     NSPredicate * _predicate;
 }
@@ -23,12 +24,15 @@
 @property (retain) NSPredicate *predicate;
 @property (copy) NSDictionary *propertiesToUpdate;
 @property unsigned int resultType;
+@property (getter=_secureOperation, setter=_setSecureOperation:, nonatomic) BOOL shouldPerformSecureOperation;
 @property (readonly) Class superclass;
 
 + (id)batchUpdateRequestWithEntityName:(id)arg1;
 
 - (id)_newValidatedPropertiesToUpdate:(id)arg1 error:(id*)arg2;
 - (void)_resolveEntityWithContext:(id)arg1;
+- (BOOL)_secureOperation;
+- (void)_setSecureOperation:(BOOL)arg1;
 - (void)_setValidatedPropertiesToUpdate:(id)arg1;
 - (void)dealloc;
 - (id)description;
@@ -46,5 +50,7 @@
 - (void)setPredicate:(id)arg1;
 - (void)setPropertiesToUpdate:(id)arg1;
 - (void)setResultType:(unsigned int)arg1;
+- (void)setShouldPerformSecureOperation:(BOOL)arg1;
+- (BOOL)shouldPerformSecureOperation;
 
 @end

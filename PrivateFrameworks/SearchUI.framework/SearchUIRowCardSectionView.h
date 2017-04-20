@@ -2,18 +2,42 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUIRowCardSectionView : SearchUICardSectionView {
-    SearchUIImageView * _leftImageView;
+@interface SearchUIRowCardSectionView : SearchUILayoutFreeSectionView <NUIContainerStackViewDelegate> {
+    BOOL  _imageIsLarge;
+    UIImageView * _leftImageView;
+    UIView<SearchUIWidthLimitedView> * _leftLabel;
+    BOOL  _onlyLeftAndRightLabel;
+    UIView<SearchUIWidthLimitedView> * _rightLabel;
 }
 
-@property (nonatomic, retain) SearchUIImageView *leftImageView;
-@property (nonatomic, readonly) SFRowCardSection *section;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property BOOL imageIsLarge;
+@property (retain) UIImageView *leftImageView;
+@property (retain) UIView<SearchUIWidthLimitedView> *leftLabel;
+@property BOOL onlyLeftAndRightLabel;
+@property (retain) UIView<SearchUIWidthLimitedView> *rightLabel;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)addContainerWithImage:(id)arg1 text:(id)arg2 formatter:(id)arg3 left:(BOOL)arg4;
-- (id)initWithCardSection:(id)arg1 controller:(id)arg2;
+- (void)containerView:(id)arg1 willMeasureArrangedSubviewsFittingSize:(struct CGSize { float x1; float x2; })arg2 forReason:(int)arg3;
+- (void)containerViewDidLayoutArrangedSubviews:(id)arg1;
+- (BOOL)imageIsLarge;
+- (id)initWithCardSection:(id)arg1 controller:(id)arg2 style:(unsigned int)arg3;
+- (BOOL)isLTR;
 - (id)leftImageView;
+- (id)leftLabel;
+- (id)makeImageView:(id)arg1 formatter:(id)arg2;
+- (id)makeLabel:(id)arg1 primaryText:(BOOL)arg2 formatter:(id)arg3;
+- (BOOL)onlyLeftAndRightLabel;
+- (id)rightLabel;
 - (float)separatorLeftInset;
+- (void)setImageIsLarge:(BOOL)arg1;
 - (void)setLeftImageView:(id)arg1;
+- (void)setLeftLabel:(id)arg1;
+- (void)setOnlyLeftAndRightLabel:(BOOL)arg1;
+- (void)setRightLabel:(id)arg1;
+- (void)shrinkLabel:(id)arg1 withGrowingLabel:(id)arg2 sizeOfResizeLabel:(struct CGSize { float x1; float x2; })arg3 leftLabel:(BOOL)arg4;
 
 @end

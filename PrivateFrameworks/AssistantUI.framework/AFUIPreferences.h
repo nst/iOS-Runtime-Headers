@@ -21,6 +21,7 @@
 - (id)objectForKey:(id)arg1;
 - (void)setBool:(BOOL)arg1 forKey:(id)arg2;
 - (void)setDelegate:(id)arg1;
+- (void)setDouble:(double)arg1 forKey:(id)arg2;
 - (void)setInteger:(int)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)stringForKey:(id)arg1;

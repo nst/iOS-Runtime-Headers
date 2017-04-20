@@ -28,6 +28,7 @@
 + (void)suggestionsDidBecomeVisible:(id)arg1;
 
 - (void)didEngageActionItem:(id)arg1 actionPerformed:(BOOL)arg2;
+- (void)didGradeResultRelevancy:(id)arg1;
 - (BOOL)didHandleCardSectionEngagement:(id)arg1;
 - (void)didPopResult:(id)arg1;
 - (void)didSelectResult:(id)arg1;

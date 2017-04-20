@@ -9,6 +9,7 @@
     ISLivePhotoPlaybackFilter * __playbackFilter;
     BOOL  __playingVitality;
     BOOL  __useForceTouch;
+    UIImpactFeedbackGenerator * _feedbackGenerator;
     UIGestureRecognizer * _playbackGestureRecognizer;
 }
 
@@ -34,6 +35,8 @@
 - (id)_overlayLabel;
 - (id)_playbackFilter;
 - (Class)_playbackFilterClass;
+- (void)_playerDidChangeHinting;
+- (void)_playerDidChangePlaybackStyle;
 - (BOOL)_playingVitality;
 - (void)_setOverlayDismissalID:(int)arg1;
 - (void)_setPlaybackFilter:(id)arg1;
@@ -41,10 +44,12 @@
 - (void)_setUseForceTouch:(BOOL)arg1;
 - (void)_showOverlayLabel;
 - (void)_updateForceInteractionProgress;
+- (void)_updateGestureRecognizerParameters;
 - (void)_updatePlaybackFilter;
 - (void)_updatePlaybackFilterInput;
 - (BOOL)_useForceTouch;
 - (void)audioSessionDidChange;
+- (void)contentDidChange;
 - (void)dealloc;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)initWithCoder:(id)arg1;

@@ -17,7 +17,6 @@
 + (id)defaultInstance;
 
 - (void).cxx_destruct;
-- (BOOL)_addressIsInChina:(id)arg1;
 - (id)_contactFromRecent:(id)arg1 preference:(id)arg2;
 - (void)_coreRecentsContactsForPreference:(id)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
 - (id)_defaultCRSearchQuery;

@@ -97,6 +97,7 @@
 - (void)dealloc;
 - (void)debugHighlightFeatureMarker:(const struct shared_ptr<md::FeatureMarker> { struct FeatureMarker {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
 - (void)debugHighlightObjectAtPoint:(struct CGPoint { float x1; float x2; })arg1 highlightTarget:(unsigned char)arg2;
+- (id)debugLabelString:(BOOL)arg1;
 - (id)defaultTrackingCamera;
 - (id)delegate;
 - (void)deselectLabelMarker;
@@ -227,7 +228,7 @@
 - (void)transferStateFromCanvas:(id)arg1;
 - (id)transitLineMarkersForSelectionAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)transitLineMarkersInCurrentViewport;
-- (void)transitionToTracking:(BOOL)arg1 mapMode:(int)arg2 startLocation:(struct { double x1; double x2; })arg3 cameraController:(id)arg4 pounceCompletionHandler:(id /* block */)arg5;
+- (void)transitionToTracking:(BOOL)arg1 mapMode:(int)arg2 startLocation:(struct { double x1; double x2; })arg3 startCourse:(double)arg4 cameraController:(id)arg5 pounceCompletionHandler:(id /* block */)arg6;
 - (void)updateCameraForFrameResize;
 - (struct VehicleState { bool x1; })vehicleState;
 - (id)visibleTileSets;

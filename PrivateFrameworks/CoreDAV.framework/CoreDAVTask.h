@@ -86,6 +86,7 @@
 - (void)_handleBadPasswordResponse;
 - (BOOL)_handleUnauthorizedAccessError:(id)arg1;
 - (BOOL)_includeGeneralHeaders;
+- (void)_logSantizedRequest:(id)arg1 withTaskID:(id)arg2;
 - (id)_osLogDescription;
 - (id)_requestForLogging;
 - (void)_sendTimeSpentInNetworkingToProvider;

@@ -6,6 +6,7 @@
 
 @property (nonatomic, copy) NSArray *actions;
 @property (nonatomic, retain) SAHAFilter *filter;
+@property (nonatomic, copy) NSString *serverValidity;
 
 // Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
 
@@ -17,8 +18,10 @@
 - (id)filter;
 - (id)groupIdentifier;
 - (BOOL)requiresResponse;
+- (id)serverValidity;
 - (void)setActions:(id)arg1;
 - (void)setFilter:(id)arg1;
+- (void)setServerValidity:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
 

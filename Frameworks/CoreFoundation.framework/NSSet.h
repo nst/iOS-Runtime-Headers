@@ -151,6 +151,11 @@
 - (id)CalMutableRecursiveCopy;
 - (id)allObjectsWithClass:(Class)arg1;
 
+// Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
+
+- (id)crk_mapUsingBlock:(id /* block */)arg1;
+- (id)crk_setBySubtractingSet:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/ContactsFoundation.framework/ContactsFoundation
 
 - (BOOL)_cn_any:(id /* block */)arg1;
@@ -212,6 +217,7 @@
 - (id)mf_flatMap:(id /* block */)arg1;
 - (id)mf_flatten;
 - (id)mf_map:(id /* block */)arg1;
+- (id)mf_partition:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
 
@@ -246,6 +252,7 @@
 - (id)fc_onlyObject;
 - (id)fc_setByIntersectingSet:(id)arg1;
 - (id)fc_setByMinusingSet:(id)arg1;
+- (id)fc_setByRemovingObject:(id)arg1;
 - (id)fc_setByTransformingWithBlock:(id /* block */)arg1;
 - (id)fc_setByUnioningSet:(id)arg1;
 - (id)fc_setOfObjectsPassingTest:(id /* block */)arg1;

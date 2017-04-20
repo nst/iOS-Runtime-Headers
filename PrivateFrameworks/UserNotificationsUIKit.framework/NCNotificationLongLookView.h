@@ -4,22 +4,20 @@
 
 @interface NCNotificationLongLookView : NCAnimatableBlurringView <NCContentSizeCategoryAdjusting, NCCustomContentContainingLookView, NCNotificationStaticContentAccepting, UIGestureRecognizerDelegate, UIScrollViewDelegate> {
     UIView * _actionsBackgroundView;
-    UIView * _actionsClippingView;
     BOOL  _actionsHidden;
     NCKeyLineView * _actionsKeyLineView;
     UIInterfaceActionGroupView * _actionsView;
+    UIView * _contentView;
     unsigned int  _customContentLocation;
     struct CGSize { 
         float width; 
         float height; 
     }  _customContentSize;
     UIView * _customContentView;
-    UIView * _headerClippingView;
     NCLookHeaderContentView * _headerContentView;
     UIView * _headerDivider;
     BOOL  _hidesNotificationContent;
     UITapGestureRecognizer * _lookViewTapGestureRecognizer;
-    UIView * _mainContentClippingView;
     UIView * _mainContentView;
     NCNotificationContentView * _notificationContentView;
     UIScrollView * _scrollView;
@@ -61,24 +59,23 @@
 @property (nonatomic, readonly) UIButton *utilityButton;
 
 - (void).cxx_destruct;
+- (struct CGSize { float x1; float x2; })_actionsSizeThatFits:(struct CGSize { float x1; float x2; })arg1 includingPadding:(BOOL)arg2;
 - (void)_configureActionViewIfNecessaryWithActions:(id)arg1;
 - (void)_configureActionsBackgroundViewIfNecessaryWithActions:(id)arg1;
-- (void)_configureActionsClippingViewIfNecessaryWithActions:(id)arg1;
 - (void)_configureActionsKeyLineViewIfNecessaryWithActions:(id)arg1;
+- (void)_configureContentViewIfNecessary;
 - (void)_configureCustomContentViewIfNecessary;
-- (void)_configureHeaderClippingViewIfNecessary;
 - (void)_configureHeaderContentViewIfNecessary;
 - (void)_configureLookViewTapGestureRecognizerIfNecessary;
-- (void)_configureMainContentClippingViewIfNecessary;
 - (void)_configureMainContentViewIfNecessary;
 - (void)_configureNotificationContentViewIfNecessary;
 - (void)_configureScrollViewIfNecessary;
 - (struct CGSize { float x1; float x2; })_contentSizeThatFitsContentWithSizeExcludingActions:(struct CGSize { float x1; float x2; })arg1;
 - (void)_layoutActionsView;
+- (void)_layoutContentView;
 - (void)_layoutCustomContentView;
 - (void)_layoutCustomContentViewInRelationToContentView;
 - (void)_layoutHeader;
-- (void)_layoutMainContentClippingView;
 - (void)_layoutMainContentView;
 - (void)_layoutNotificationContentView;
 - (void)_layoutScrollView;

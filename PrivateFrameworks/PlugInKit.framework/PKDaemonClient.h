@@ -27,7 +27,7 @@
 - (void)matchPlugIns:(id)arg1 flags:(unsigned long long)arg2 reply:(id /* block */)arg3;
 - (id)pkd;
 - (long long)protocolVersion;
-- (void)readyPlugIns:(id)arg1 flags:(unsigned long long)arg2 reply:(id /* block */)arg3;
+- (void)readyPlugIns:(id)arg1 flags:(unsigned long long)arg2 environment:(id)arg3 reply:(id /* block */)arg4;
 - (void)releaseHold:(id)arg1 reply:(id /* block */)arg2;
 - (void)removePlugIns:(id)arg1 reply:(id /* block */)arg2;
 - (id)replyQueue;

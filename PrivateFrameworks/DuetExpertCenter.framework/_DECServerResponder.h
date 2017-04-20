@@ -29,6 +29,7 @@
 - (void).cxx_destruct;
 - (id)_consumers;
 - (id)_experts;
+- (void)_requestRefreshForWidget;
 - (void)_setupFeedbackBuilder;
 - (void)_setupUpdatePredictionNotificationListener;
 - (id)_validConsumers;

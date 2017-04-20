@@ -3,10 +3,12 @@
  */
 
 @interface UIKBRenderingContext : NSObject <NSCopying> {
+    int  _keyboardType;
     UIKBRenderConfig * _renderConfig;
     unsigned int  _shiftState;
 }
 
+@property (nonatomic) int keyboardType;
 @property (nonatomic, retain) UIKBRenderConfig *renderConfig;
 @property (nonatomic) unsigned int shiftState;
 
@@ -16,7 +18,9 @@
 - (void)dealloc;
 - (id)initWithRenderConfig:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (int)keyboardType;
 - (id)renderConfig;
+- (void)setKeyboardType:(int)arg1;
 - (void)setRenderConfig:(id)arg1;
 - (void)setShiftState:(unsigned int)arg1;
 - (unsigned int)shiftState;

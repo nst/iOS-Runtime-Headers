@@ -70,7 +70,7 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionMargin;
 - (id)collectionView;
 - (id)delegate;
-- (void)didUpdateFocusFromView:(id)arg1;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)initWithCollectionView:(id)arg1 searchBar:(id)arg2 keyboard:(id)arg3 touchEnabled:(BOOL)arg4;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })inset;
 - (BOOL)isFocusHidden;
@@ -87,7 +87,7 @@
 - (void)setInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setPartialViewEnabled:(BOOL)arg1;
 - (void)setSpinning:(BOOL)arg1;
-- (BOOL)shouldUpdateFocusFromView:(id)arg1 toView:(id)arg2 heading:(unsigned int)arg3;
+- (BOOL)shouldUpdateFocusInContext:(id)arg1;
 - (void)stopEditing;
 - (void)updateConstraints;
 - (void)willMoveToWindow:(id)arg1;

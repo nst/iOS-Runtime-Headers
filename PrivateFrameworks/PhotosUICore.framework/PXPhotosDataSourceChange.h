@@ -11,6 +11,7 @@
     NSArray * _contentChangedIndexPaths;
     NSArray * _deletedIndexPaths;
     NSIndexSet * _deletedSections;
+    NSArray * _favoriteChangedIndexPaths;
     NSArray * _insertedIndexPaths;
     NSIndexSet * _insertedSections;
     PHChange * _originatingPhotoLibraryChange;
@@ -25,6 +26,7 @@
 @property (readonly, copy) NSArray *contentChangedIndexPaths;
 @property (readonly, copy) NSArray *deletedIndexPaths;
 @property (readonly, copy) NSIndexSet *deletedSections;
+@property (readonly, copy) NSArray *favoriteChangedIndexPaths;
 @property (readonly) BOOL hasIncrementalChanges;
 @property (readonly, copy) NSArray *insertedIndexPaths;
 @property (readonly, copy) NSIndexSet *insertedSections;
@@ -42,6 +44,7 @@
 - (id)deletedIndexPaths;
 - (id)deletedSections;
 - (id)description;
+- (id)favoriteChangedIndexPaths;
 - (BOOL)hasIncrementalChanges;
 - (id)indexPathAfterApplyingIncrementalChangesToIndexPath:(id)arg1;
 - (id)indexPathAfterRevertingIncrementalChangeDetailsFromIndexPath:(id)arg1;

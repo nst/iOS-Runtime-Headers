@@ -10,7 +10,7 @@
 
 @property (nonatomic) BOOL cancelsWhenAppEntersBackground;
 
-+ (id)alertControllerWithMatches:(id)arg1 currentUser:(id)arg2 currentPassword:(id)arg3 lastGeneratedPassword:(id)arg4 formURL:(id)arg5 preferredStyle:(int)arg6 completionHandler:(id /* block */)arg7;
++ (id)alertControllerWithMatchesFromFormProtectionSpace:(id)arg1 matchesFromOtherProtectionSpaces:(id)arg2 preferredStyle:(int)arg3 completionHandler:(id /* block */)arg4;
 
 - (void).cxx_destruct;
 - (BOOL)cancelsWhenAppEntersBackground;

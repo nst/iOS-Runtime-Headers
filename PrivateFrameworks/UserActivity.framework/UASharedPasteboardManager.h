@@ -48,6 +48,7 @@
 - (id)connection;
 - (id)currentGeneration;
 - (BOOL)currentGenerationHasUpdates;
+- (void)dealloc;
 - (id)disallowdTypes;
 - (void)doClearLocalPasteboardInfo;
 - (void)fetchPasteboardDataForProcess:(int)arg1 withCompletion:(id /* block */)arg2;

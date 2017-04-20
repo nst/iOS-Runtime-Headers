@@ -9,7 +9,7 @@
     <PUDisplayAsset> * _asset;
     PUAssetReference * _assetReference;
     PUAssetSharedViewModel * _assetSharedViewModel;
-    PUBadgeInfo * _badgeInfo;
+    PUBadgeInfoPromise * _badgeInfoPromise;
     float  _contentOffsetOverrideFactor;
     float  _focusValue;
     BOOL  _forceBadgesVisible;
@@ -46,7 +46,7 @@
 @property (nonatomic, retain) <PUDisplayAsset> *asset;
 @property (nonatomic, retain) PUAssetReference *assetReference;
 @property (nonatomic, retain) PUAssetSharedViewModel *assetSharedViewModel;
-@property (nonatomic, copy) PUBadgeInfo *badgeInfo;
+@property (nonatomic, copy) PUBadgeInfoPromise *badgeInfoPromise;
 @property (nonatomic, readonly) struct CGPoint { float x1; float x2; } contentOffset;
 @property (nonatomic) float contentOffsetOverrideFactor;
 @property (nonatomic, readonly) PUAssetViewModelChange *currentChange;
@@ -95,7 +95,7 @@
 - (id)asset;
 - (id)assetReference;
 - (id)assetSharedViewModel;
-- (id)badgeInfo;
+- (id)badgeInfoPromise;
 - (struct CGPoint { float x1; float x2; })contentOffset;
 - (float)contentOffsetOverrideFactor;
 - (id)currentChange;
@@ -128,7 +128,7 @@
 - (void)setAsset:(id)arg1;
 - (void)setAssetReference:(id)arg1;
 - (void)setAssetSharedViewModel:(id)arg1;
-- (void)setBadgeInfo:(id)arg1;
+- (void)setBadgeInfoPromise:(id)arg1;
 - (void)setContentOffsetOverrideFactor:(float)arg1;
 - (void)setFocusValue:(float)arg1;
 - (void)setForceBadgesVisible:(BOOL)arg1;

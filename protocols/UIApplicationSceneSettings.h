@@ -12,6 +12,7 @@
 - (NSNumber *)forcedStatusBarHidden;
 - (NSNumber *)forcedStatusBarStyle;
 - (BOOL)idleModeEnabled;
+- (BOOL)statusBarDisabled;
 - (int)statusBarStyleOverridesToSuppress;
 - (BOOL)underLock;
 - (int)userInterfaceStyle;

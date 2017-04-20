@@ -10,7 +10,6 @@
     NSDate * _expirationDate;
     NSString * _groupingID;
     BOOL  _hasStoredValue;
-    NSString * _iAdReportingIdentifier;
     NSDate * _ingestedDate;
     NSURL * _localLocationsURL;
     NSDate * _modifiedDate;
@@ -52,7 +51,6 @@
 @property (nonatomic, copy) NSString *groupingID;
 @property (readonly) BOOL hasLogoImageSet;
 @property (nonatomic) BOOL hasStoredValue;
-@property (setter=setiAdReportingIdentifier:, nonatomic, copy) NSString *iAdReportingIdentifier;
 @property (nonatomic, readonly, copy) UIImage *icon;
 @property (nonatomic, readonly) PKImage *iconImage;
 @property (nonatomic, retain) NSDate *ingestedDate;
@@ -139,7 +137,6 @@
 - (BOOL)hasStoredValue;
 - (BOOL)hasTimeOrLocationRelevancyInfo;
 - (BOOL)hasValidNFCPayload;
-- (id)iAdReportingIdentifier;
 - (id)iconImage;
 - (id)ingestedDate;
 - (id)initWithCoder:(id)arg1;
@@ -209,7 +206,6 @@
 - (void)setUserInfo:(id)arg1;
 - (void)setVoided:(BOOL)arg1;
 - (void)setWebLocationsURL:(id)arg1;
-- (void)setiAdReportingIdentifier:(id)arg1;
 - (int)sharingMethod;
 - (id)sharingText;
 - (id)sharingURL;

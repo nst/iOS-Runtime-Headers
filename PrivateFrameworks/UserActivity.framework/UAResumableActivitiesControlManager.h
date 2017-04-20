@@ -50,6 +50,7 @@
 - (id)simulatorStatus;
 - (void)startAdvertisingPingWithTimeInterval:(double)arg1;
 - (id)status;
+- (id)status:(id)arg1 options:(id)arg2;
 - (void)stopAdvertisingPing;
 - (void)synchronize;
 - (void)terminateServer;

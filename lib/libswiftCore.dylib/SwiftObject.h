@@ -3,11 +3,13 @@
  */
 
 @interface SwiftObject <NSObject> {
-    struct SwiftObject_s { 
-        void *isa; 
-        unsigned int strongRefCount; 
-        unsigned int weakRefCount; 
-    }  header;
+    Class  isa;
+    struct StrongRefCount { 
+        unsigned int refCount; 
+    }  refCount;
+    struct WeakRefCount { 
+        unsigned int refCount; 
+    }  weakRefCount;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -18,19 +20,19 @@
 + (BOOL)_isDeallocating;
 + (BOOL)_tryRetain;
 + (id)alloc;
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)allocWithZone;
 + (BOOL)allowsWeakReference;
 + (id)autorelease;
 + (Class)class;
-+ (BOOL)conformsToProtocol:(id)arg1;
++ (BOOL)conformsToProtocol;
 + (id)debugDescription;
 + (id)description;
 + (void)initialize;
-+ (BOOL)instancesRespondToSelector:(SEL)arg1;
-+ (BOOL)isMemberOfClass:(Class)arg1;
-+ (BOOL)isSubclassOfClass:(Class)arg1;
++ (BOOL)instancesRespondToSelector;
++ (BOOL)isMemberOfClass;
++ (BOOL)isSubclassOfClass;
 + (void)release;
-+ (BOOL)respondsToSelector:(SEL)arg1;
++ (BOOL)respondsToSelector;
 + (id)retain;
 + (unsigned int)retainCount;
 + (BOOL)retainWeakReference;
@@ -43,15 +45,15 @@
 - (BOOL)allowsWeakReference;
 - (id)autorelease;
 - (Class)class;
-- (BOOL)conformsToProtocol:(id)arg1;
+- (BOOL)conformsToProtocol;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)description;
-- (void)doesNotRecognizeSelector:(SEL)arg1;
+- (void)doesNotRecognizeSelector;
 - (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isKindOfClass:(Class)arg1;
-- (BOOL)isMemberOfClass:(Class)arg1;
+- (BOOL)isEqual;
+- (BOOL)isKindOfClass;
+- (BOOL)isMemberOfClass;
 - (BOOL)isNSArray__;
 - (BOOL)isNSData__;
 - (BOOL)isNSDate__;
@@ -62,11 +64,11 @@
 - (BOOL)isNSString__;
 - (BOOL)isNSValue__;
 - (BOOL)isProxy;
-- (id)performSelector:(SEL)arg1;
-- (id)performSelector:(SEL)arg1 withObject:(id)arg2;
-- (id)performSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
+- (id)performSelector;
+- (id)performSelectorwithObject;
+- (id)performSelectorwithObjectwithObject;
 - (void)release;
-- (BOOL)respondsToSelector:(SEL)arg1;
+- (BOOL)respondsToSelector;
 - (id)retain;
 - (unsigned int)retainCount;
 - (BOOL)retainWeakReference;

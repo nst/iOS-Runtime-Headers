@@ -183,6 +183,7 @@
 - (unsigned int)supportedInterfaceOrientations;
 - (void)systemLayoutFittingSizeDidChangeForChildViewController:(id)arg1;
 - (void)viewDidLoad;
+- (void)viewWillMoveToWindow:(id)arg1;
 - (void)window:(id)arg1 statusBarWillChangeFromHeight:(float)arg2 toHeight:(float)arg3;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface Libsysdiagnose : NSObject
 
-+ (void)addErrorString:(id)arg1 WithCode:(id)arg2 forError:(id*)arg3;
++ (int)addErrorString:(id)arg1 WithCode:(id)arg2 forError:(id*)arg3;
 + (id)createSysdiagnoseRequest:(id)arg1;
 + (id)sendSysdiagnoseRequest:(id)arg1 withError:(id*)arg2;
 + (void)setupConnection;

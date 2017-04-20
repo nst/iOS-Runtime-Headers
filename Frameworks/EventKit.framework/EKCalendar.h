@@ -3,6 +3,7 @@
  */
 
 @interface EKCalendar : EKObject {
+    unsigned int  _cachedJunkStatus;
     struct CGColor { } * _color;
     BOOL  _isMain;
     unsigned long  _loadFlags;
@@ -11,6 +12,7 @@
 @property (nonatomic) struct CGColor { }*CGColor;
 @property (nonatomic, readonly) unsigned int allowedEntityTypes;
 @property (nonatomic, readonly) BOOL allowsContentModifications;
+@property (nonatomic) unsigned int cachedJunkStatus;
 @property (nonatomic, readonly) NSString *calendarIdentifier;
 @property (getter=isImmutable, nonatomic, readonly) BOOL immutable;
 @property (nonatomic) BOOL isDefaultSchedulingCalendar;
@@ -45,12 +47,14 @@
 - (BOOL)allowsScheduling;
 - (BOOL)automaticEventLocationGeocodingAllowed;
 - (id)bulkRequests;
+- (unsigned int)cachedJunkStatus;
 - (id)calendarIdentifier;
 - (BOOL)canBePublished;
 - (BOOL)canBeShared;
 - (void)clearInvitationStatus;
 - (id)colorString;
 - (BOOL)commit:(id*)arg1;
+- (BOOL)couldBeJunk;
 - (void)dealloc;
 - (id)description;
 - (id)digest;
@@ -106,12 +110,14 @@
 - (id)selfIdentityEmail;
 - (id)selfIdentityFirstName;
 - (id)selfIdentityLastName;
+- (id)sendersEmail;
 - (void)setAlarms:(id)arg1;
 - (void)setAllAlarms:(id)arg1;
 - (void)setAllowReminders:(BOOL)arg1;
 - (void)setAllowsEvents:(BOOL)arg1;
 - (void)setBulkRequests:(id)arg1;
 - (void)setCGColor:(struct CGColor { }*)arg1;
+- (void)setCachedJunkStatus:(unsigned int)arg1;
 - (void)setColorString:(id)arg1;
 - (void)setDigest:(id)arg1;
 - (void)setDisplayOrder:(int)arg1;
@@ -121,6 +127,7 @@
 - (void)setIsDefaultSchedulingCalendar:(BOOL)arg1;
 - (void)setIsIgnoringEventAlerts:(BOOL)arg1;
 - (void)setIsIgnoringSharedCalendarNotifications:(BOOL)arg1;
+- (void)setIsJunk:(BOOL)arg1;
 - (void)setIsMainCalendarForSource:(BOOL)arg1;
 - (void)setIsPublished:(BOOL)arg1;
 - (void)setLoadFlags:(unsigned long)arg1;
@@ -157,6 +164,7 @@
 - (id)source;
 - (id)subcalAccountID;
 - (unsigned int)supportedEventAvailabilities;
+- (BOOL)supportsJunkReporting;
 - (id)symbolicColorName;
 - (id)syncHash;
 - (id)title;

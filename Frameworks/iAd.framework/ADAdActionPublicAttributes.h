@@ -3,6 +3,7 @@
  */
 
 @interface ADAdActionPublicAttributes : NSObject <NSSecureCoding> {
+    ADMRAIDAction * _MRAIDAction;
     int  _action;
     BOOL  _actionLeavesApplication;
     NSString * _actionURLString;
@@ -12,6 +13,7 @@
     int  _transitionType;
 }
 
+@property (nonatomic, copy) ADMRAIDAction *MRAIDAction;
 @property (nonatomic) int action;
 @property (nonatomic) BOOL actionLeavesApplication;
 @property (nonatomic, copy) NSString *actionURLString;
@@ -22,6 +24,7 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (id)MRAIDAction;
 - (id)_actionDescription;
 - (int)action;
 - (BOOL)actionLeavesApplication;
@@ -38,6 +41,7 @@
 - (void)setActionURLString:(id)arg1;
 - (void)setActionViewControllerHidesStatusBar:(BOOL)arg1;
 - (void)setActionViewControllerPresentationOrientationMask:(unsigned int)arg1;
+- (void)setMRAIDAction:(id)arg1;
 - (void)setModalPresentationStyle:(int)arg1;
 - (void)setTransitionType:(int)arg1;
 - (int)transitionType;

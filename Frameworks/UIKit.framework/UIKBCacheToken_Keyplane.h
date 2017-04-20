@@ -4,6 +4,7 @@
 
 @interface UIKBCacheToken_Keyplane : UIKBCacheToken {
     NSString * _annotations;
+    NSString * _cachedGestureKeySetName;
     NSString * _geometrySetName;
     NSString * _keySetName;
     struct CGSize { 

@@ -3,29 +3,34 @@
  */
 
 @interface CXCallDirectoryManager : NSObject {
-    NSXPCConnection * _connection;
+    NSXPCConnection * _defaultConnection;
+    NSXPCConnection * _maintenanceConnection;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
-@property (nonatomic, retain) NSXPCConnection *connection;
+@property (nonatomic, retain) NSXPCConnection *defaultConnection;
+@property (nonatomic, retain) NSXPCConnection *maintenanceConnection;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (id)connection;
+- (void)compactStoreWithCompletionHandler:(id /* block */)arg1;
 - (void)dealloc;
-- (void)firstIdentificationEntriesForPhoneNumbers:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)firstIdentificationEntryForPhoneNumber:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)defaultConnection;
+- (id)defaultConnectionRemoteObjectProxyWithErrorHandler:(id /* block */)arg1;
+- (void)firstIdentificationEntriesForEnabledExtensionsWithPhoneNumbers:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)firstIdentificationEntryForEnabledExtensionWithPhoneNumber:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)getEnabledStatusForExtensionWithIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)getPrioritizedExtensionIdentifiersWithCompletionHandler:(id /* block */)arg1;
+- (void)getExtensionsWithCompletionHandler:(id /* block */)arg1;
 - (id)init;
+- (id)maintenanceConnection;
+- (id)maintenanceConnectionRemoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (id)queue;
 - (void)reloadExtensionWithIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
-- (id)remoteObjectProxy;
-- (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
-- (void)removeDataForExtensionWithIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)setConnection:(id)arg1;
+- (void)setDefaultConnection:(id)arg1;
+- (void)setEnabled:(BOOL)arg1 forExtensionWithIdentifier:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)setMaintenanceConnection:(id)arg1;
 - (void)setPrioritizedExtensionIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setQueue:(id)arg1;
 - (void)synchronizeExtensionsWithCompletionHandler:(id /* block */)arg1;

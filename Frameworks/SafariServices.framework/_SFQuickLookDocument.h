@@ -22,6 +22,7 @@
 @property (nonatomic, readonly) BOOL needsQuickLookDocumentView;
 @property (nonatomic, copy) NSString *savedPath;
 @property (nonatomic, copy) NSString *savedPathWithProperExtension;
+@property (nonatomic, readonly, copy) NSURL *savedURLWithProperExtension;
 @property (nonatomic, readonly) BOOL shouldUnzipByUIDocumentInteractionController;
 @property (nonatomic, retain) NSURL *sourceURL;
 @property (nonatomic, copy) NSString *uti;
@@ -39,6 +40,7 @@
 - (BOOL)needsQuickLookDocumentView;
 - (id)savedPath;
 - (id)savedPathWithProperExtension;
+- (id)savedURLWithProperExtension;
 - (void)setDocumentProxy:(id)arg1;
 - (void)setFileName:(id)arg1;
 - (void)setMimeType:(id)arg1;

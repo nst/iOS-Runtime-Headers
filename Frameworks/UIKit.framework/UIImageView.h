@@ -159,6 +159,10 @@
 
 - (id)pu_extractPlayOverlayBackgroundImageFromCenter:(struct CGPoint { float x1; float x2; })arg1 asynchronously:(BOOL)arg2 handler:(id /* block */)arg3;
 
+// Image: /System/Library/PrivateFrameworks/MaterialKit.framework/MaterialKit
+
+- (void)mt_applyVibrantStyling:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
 - (void)ic_enableLetterpressIfSupported;
@@ -168,9 +172,5 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentRect;
 - (struct CGSize { float x1; float x2; })alignmentSize;
 - (void)setAlignmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-
-// Image: /System/Library/PrivateFrameworks/UserNotificationsUIKit.framework/UserNotificationsUIKit
-
-- (void)nc_applyVibrantStyling:(id)arg1;
 
 @end

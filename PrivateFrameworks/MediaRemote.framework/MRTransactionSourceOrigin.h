@@ -6,9 +6,9 @@
     BOOL  _active;
     unsigned long long  _name;
     struct _MROrigin { } * _origin;
+    double  _outOfMemoryWaitDuration;
     MRTransactionPacketizer * _packetizer;
     NSMutableArray * _packets;
-    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (getter=isActive, nonatomic, readonly) BOOL active;
@@ -17,7 +17,7 @@
 - (void)_cleanUp;
 - (void)_processMessage:(id)arg1;
 - (void)dealloc;
-- (id)initWithName:(unsigned long long)arg1 forOrigin:(struct _MROrigin { }*)arg2 withQueue:(id)arg3;
+- (id)initWithName:(unsigned long long)arg1 forOrigin:(struct _MROrigin { }*)arg2;
 - (BOOL)isActive;
 - (void)sendPackets:(id)arg1;
 

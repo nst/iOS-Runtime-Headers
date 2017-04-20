@@ -5,7 +5,7 @@
 
 @required
 
-- (void)addObserver:(LSApplicationWorkspaceObserver *)arg1 withUUID:(NSUUID *)arg2;
+- (void)addObserver:(LSApplicationWorkspaceRemoteObserver *)arg1 withUUID:(NSUUID *)arg2;
 - (void)beginObservingConnection;
 - (void)createInstallProgressForApplication:(LSApplicationProxy *)arg1 withPhase:(unsigned int)arg2 andPublishingString:(NSString *)arg3;
 - (void)endObservingConnection;
@@ -15,7 +15,7 @@
 - (void)removeObserverWithUUID:(NSUUID *)arg1;
 - (void)sendChangeNotificationForApp:(LSApplicationProxy *)arg1;
 - (void)sendFailedNotificationForApp:(LSApplicationProxy *)arg1 isUninstall:(BOOL)arg2;
-- (void)sendIconUpdatedNotificationForApp:(LSApplicationProxy *)arg1;
+- (void)sendIconUpdatedNotificationForApp:(LSApplicationProxy *)arg1 userInitiated:(BOOL)arg2;
 - (void)sendInstalledNotificationForApp:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: LSApplicationProxy *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
 - (void)sendInstalledNotificationForApps:(NSArray *)arg1 Plugins:(NSArray *)arg2;
 - (void)sendUninstalledNotificationForApp:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: LSApplicationProxy *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*

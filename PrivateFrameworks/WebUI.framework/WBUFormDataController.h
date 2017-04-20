@@ -22,9 +22,9 @@
 + (id)_meCard;
 + (id)_stringForCNContactObject:(id)arg1 contactObjectComponent:(id)arg2;
 + (BOOL)contactIsMe:(id)arg1;
-+ (id)contactKeyForString:(id)arg1;
 + (BOOL)contactStoreHasMeCard:(id)arg1;
 + (BOOL)keychainSyncEnabled;
++ (id)localizedLowercaseContactProperty:(id)arg1;
 + (id)valueStringForMatch:(id)arg1;
 
 - (void).cxx_destruct;
@@ -35,9 +35,7 @@
 - (id)_credentialForLoginForm:(id)arg1 inFrame:(id)arg2 completingPartialUser:(BOOL)arg3 matches:(id*)arg4 potentialMatches:(id*)arg5;
 - (id)_credentialMatchesEligibleForUpdateForURL:(id)arg1 username:(id)arg2 oldPassword:(id)arg3;
 - (void)_didFillFieldWithGeneratedPassword:(id)arg1 inFrame:(id)arg2 webView:(id)arg3;
-- (id)_displayDataWithFormMetadata:(id)arg1 multiRoundAutoFillManager:(id)arg2;
 - (id)_displayDataWithTextField:(id)arg1 displayedInQuickType:(BOOL)arg2 prefix:(id)arg3;
-- (id)_homeAndWorkDictionaryFromMatches:(id)arg1;
 - (void)_processCorrectionsForFormWithDomain:(id)arg1 formMetadata:(id)arg2;
 - (id)_relatedCredentialMatchesToUpdateForUser:(id)arg1 protectionSpace:(id)arg2 oldCredential:(id*)arg3 matchesForCurrentHost:(id*)arg4;
 - (void)_replaceCredentialsWithDontSaveMarkerForProtectionSpace:(id)arg1;
@@ -68,7 +66,6 @@
 - (id)feedbackProcessorForAutoFillCorrectionManager:(id)arg1;
 - (id)formAutoFillCorrectionManagerForFormFieldClassificationCorrector:(id)arg1;
 - (id)formFieldClassificationCorrector:(id)arg1 bestAddressBookLabelForControlValue:(id)arg2;
-- (void)gatherAutoFillDisplayDataWithFormMetadata:(id)arg1 multiRoundAutoFillManager:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)gatherAutoFillDisplayDataWithTextField:(id)arg1 displayedInQuickType:(BOOL)arg2 prefix:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)gatherValuesForForm:(id)arg1 inFrame:(id)arg2 multiRoundAutoFillManager:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)init;
@@ -92,7 +89,7 @@
 - (BOOL)shouldAutoGeneratePasswordsForURL:(id)arg1 inWebView:(id)arg2;
 - (void)textDidChangeInForm:(id)arg1 inWebView:(id)arg2 frame:(id)arg3;
 - (id)uniqueIDOfContact:(id)arg1;
-- (BOOL)webView:(id)arg1 frame:(id)arg2 willNavigateFromForm:(id)arg3 bySubmitting:(BOOL)arg4 submissionHandler:(id /* block */)arg5;
+- (BOOL)webView:(id)arg1 frame:(id)arg2 willNavigateFromForm:(id)arg3 bySubmitting:(BOOL)arg4 processMetadataCorrections:(BOOL)arg5 submissionHandler:(id /* block */)arg6;
 - (BOOL)whiteListAllowsURL:(id)arg1;
 
 @end

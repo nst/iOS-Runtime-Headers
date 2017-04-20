@@ -71,6 +71,7 @@
 - (void)dispatchThreadgroups:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg1 threadsPerThreadgroup:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg2;
 - (void)dispatchThreadgroupsWithIndirectBuffer:(id)arg1 indirectBufferOffset:(unsigned int)arg2 threadsPerThreadgroup:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg3;
 - (void)endEncoding;
+- (id)formattedDescription:(unsigned int)arg1;
 - (id)initWithComputeCommandEncoder:(id)arg1 commandBuffer:(id)arg2;
 - (void)setBuffer:(id)arg1 offset:(unsigned int)arg2 atIndex:(unsigned int)arg3;
 - (void)setBufferOffset:(unsigned int)arg1 atIndex:(unsigned int)arg2;

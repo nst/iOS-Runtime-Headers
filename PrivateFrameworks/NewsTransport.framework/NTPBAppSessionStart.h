@@ -12,7 +12,11 @@
         unsigned int channelSubscriptionCount : 1; 
         unsigned int notificationEnabledChannelsCount : 1; 
         unsigned int notitificationsEnabledChannelsCount : 1; 
+        unsigned int sessionStartMethod : 1; 
         unsigned int topicSubscriptionCount : 1; 
+        unsigned int widgetArticleRank : 1; 
+        unsigned int widgetSection : 1; 
+        unsigned int widgetSectionArticleRank : 1; 
         unsigned int startedFromNotification : 1; 
     }  _has;
     long long  _lastAppSessionTimestamp;
@@ -26,10 +30,15 @@
     NSMutableArray * _paidSubscriptionChannelIds;
     NSString * _referringSourceApplication;
     NSString * _referringUrl;
+    int  _sessionStartMethod;
     BOOL  _startedFromNotification;
+    NSMutableArray * _subscribedFeedIds;
     int  _topicSubscriptionCount;
     NSString * _userActivityType;
     NSMutableArray * _visibleViews;
+    int  _widgetArticleRank;
+    int  _widgetSection;
+    int  _widgetSectionArticleRank;
 }
 
 @property (nonatomic, retain) NSString *campaignId;
@@ -49,9 +58,13 @@
 @property (nonatomic) BOOL hasNotitificationsEnabledChannelsCount;
 @property (nonatomic, readonly) BOOL hasReferringSourceApplication;
 @property (nonatomic, readonly) BOOL hasReferringUrl;
+@property (nonatomic) BOOL hasSessionStartMethod;
 @property (nonatomic) BOOL hasStartedFromNotification;
 @property (nonatomic) BOOL hasTopicSubscriptionCount;
 @property (nonatomic, readonly) BOOL hasUserActivityType;
+@property (nonatomic) BOOL hasWidgetArticleRank;
+@property (nonatomic) BOOL hasWidgetSection;
+@property (nonatomic) BOOL hasWidgetSectionArticleRank;
 @property (nonatomic) long long lastAppSessionTimestamp;
 @property (nonatomic, retain) NSString *notificationArticleId;
 @property (nonatomic, retain) NSMutableArray *notificationChannelIds;
@@ -63,24 +76,33 @@
 @property (nonatomic, retain) NSMutableArray *paidSubscriptionChannelIds;
 @property (nonatomic, retain) NSString *referringSourceApplication;
 @property (nonatomic, retain) NSString *referringUrl;
+@property (nonatomic) int sessionStartMethod;
 @property (nonatomic) BOOL startedFromNotification;
+@property (nonatomic, retain) NSMutableArray *subscribedFeedIds;
 @property (nonatomic) int topicSubscriptionCount;
 @property (nonatomic, retain) NSString *userActivityType;
 @property (nonatomic, retain) NSMutableArray *visibleViews;
+@property (nonatomic) int widgetArticleRank;
+@property (nonatomic) int widgetSection;
+@property (nonatomic) int widgetSectionArticleRank;
 
 + (Class)notificationChannelIdsType;
 + (Class)paidSubscriptionChannelIdsType;
++ (Class)subscribedFeedIdsType;
 + (Class)visibleViewsType;
 
 - (void).cxx_destruct;
+- (int)StringAsWidgetSection:(id)arg1;
 - (void)addNotificationChannelIds:(id)arg1;
 - (void)addPaidSubscriptionChannelIds:(id)arg1;
+- (void)addSubscribedFeedIds:(id)arg1;
 - (void)addVisibleViews:(id)arg1;
 - (id)campaignId;
 - (id)campaignType;
 - (int)channelSubscriptionCount;
 - (void)clearNotificationChannelIds;
 - (void)clearPaidSubscriptionChannelIds;
+- (void)clearSubscribedFeedIds;
 - (void)clearVisibleViews;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)creativeId;
@@ -99,9 +121,13 @@
 - (BOOL)hasNotitificationsEnabledChannelsCount;
 - (BOOL)hasReferringSourceApplication;
 - (BOOL)hasReferringUrl;
+- (BOOL)hasSessionStartMethod;
 - (BOOL)hasStartedFromNotification;
 - (BOOL)hasTopicSubscriptionCount;
 - (BOOL)hasUserActivityType;
+- (BOOL)hasWidgetArticleRank;
+- (BOOL)hasWidgetSection;
+- (BOOL)hasWidgetSectionArticleRank;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (long long)lastAppSessionTimestamp;
@@ -121,6 +147,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)referringSourceApplication;
 - (id)referringUrl;
+- (int)sessionStartMethod;
 - (void)setCampaignId:(id)arg1;
 - (void)setCampaignType:(id)arg1;
 - (void)setChannelSubscriptionCount:(int)arg1;
@@ -129,8 +156,12 @@
 - (void)setHasLastAppSessionTimestamp:(BOOL)arg1;
 - (void)setHasNotificationEnabledChannelsCount:(BOOL)arg1;
 - (void)setHasNotitificationsEnabledChannelsCount:(BOOL)arg1;
+- (void)setHasSessionStartMethod:(BOOL)arg1;
 - (void)setHasStartedFromNotification:(BOOL)arg1;
 - (void)setHasTopicSubscriptionCount:(BOOL)arg1;
+- (void)setHasWidgetArticleRank:(BOOL)arg1;
+- (void)setHasWidgetSection:(BOOL)arg1;
+- (void)setHasWidgetSectionArticleRank:(BOOL)arg1;
 - (void)setLastAppSessionTimestamp:(long long)arg1;
 - (void)setNotificationArticleId:(id)arg1;
 - (void)setNotificationChannelIds:(id)arg1;
@@ -142,16 +173,28 @@
 - (void)setPaidSubscriptionChannelIds:(id)arg1;
 - (void)setReferringSourceApplication:(id)arg1;
 - (void)setReferringUrl:(id)arg1;
+- (void)setSessionStartMethod:(int)arg1;
 - (void)setStartedFromNotification:(BOOL)arg1;
+- (void)setSubscribedFeedIds:(id)arg1;
 - (void)setTopicSubscriptionCount:(int)arg1;
 - (void)setUserActivityType:(id)arg1;
 - (void)setVisibleViews:(id)arg1;
+- (void)setWidgetArticleRank:(int)arg1;
+- (void)setWidgetSection:(int)arg1;
+- (void)setWidgetSectionArticleRank:(int)arg1;
 - (BOOL)startedFromNotification;
+- (id)subscribedFeedIds;
+- (id)subscribedFeedIdsAtIndex:(unsigned int)arg1;
+- (unsigned int)subscribedFeedIdsCount;
 - (int)topicSubscriptionCount;
 - (id)userActivityType;
 - (id)visibleViews;
 - (id)visibleViewsAtIndex:(unsigned int)arg1;
 - (unsigned int)visibleViewsCount;
+- (int)widgetArticleRank;
+- (int)widgetSection;
+- (int)widgetSectionArticleRank;
+- (id)widgetSectionAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

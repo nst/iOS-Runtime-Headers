@@ -4,14 +4,19 @@
 
 @interface FCPPTContext : NSObject {
     NSString * _forYouFeedIDOverride;
+    BOOL  _runningPPT;
 }
 
 @property (nonatomic, retain) NSString *forYouFeedIDOverride;
+@property (getter=isRunningPPT, nonatomic) BOOL runningPPT;
 
 + (id)sharedContext;
 
 - (void).cxx_destruct;
+- (void)d_logState;
 - (id)forYouFeedIDOverride;
+- (BOOL)isRunningPPT;
 - (void)setForYouFeedIDOverride:(id)arg1;
+- (void)setRunningPPT:(BOOL)arg1;
 
 @end

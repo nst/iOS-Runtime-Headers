@@ -17,6 +17,7 @@
     NSString * _storeDirectory;
     FCAsyncSerialQueue * _syncQueue;
     BOOL  _syncingEnabled;
+    BOOL  _waitingForFirstSync;
 }
 
 @property (nonatomic) unsigned int changeCount;
@@ -33,8 +34,9 @@
 @property (nonatomic, retain) NSHashTable *stateObservers;
 @property (nonatomic, copy) NSString *storeDirectory;
 @property (nonatomic, retain) FCAsyncSerialQueue *syncQueue;
-@property (getter=isSyncingEnabled, nonatomic) BOOL syncingEnabled;
 @property (getter=isSyncingEnabled, nonatomic, readonly) BOOL syncingEnabled;
+@property (getter=isSyncingEnabled, nonatomic) BOOL syncingEnabled;
+@property (getter=isWaitingForFirstSync) BOOL waitingForFirstSync;
 
 + (int)commandQueueUrgency;
 + (id)commandStoreFileName;
@@ -54,6 +56,7 @@
 - (void).cxx_destruct;
 - (void)_markAsClean;
 - (void)_markAsDirty;
+- (int)_qualityOfServiceForNextSync;
 - (void)_serialSyncWithCompletion:(id /* block */)arg1;
 - (void)addCommandToCommandQueue:(id)arg1;
 - (void)addObserver:(id)arg1;
@@ -73,6 +76,7 @@
 - (id)initWithContext:(id)arg1 pushNotificationCenter:(id)arg2 recordZone:(id)arg3 storeDirectory:(id)arg4;
 - (BOOL)isDirty;
 - (BOOL)isSyncingEnabled;
+- (BOOL)isWaitingForFirstSync;
 - (id)lastSyncDate;
 - (void)loadLocalCachesFromStore;
 - (id)localStore;
@@ -97,6 +101,7 @@
 - (void)setStoreDirectory:(id)arg1;
 - (void)setSyncQueue:(id)arg1;
 - (void)setSyncingEnabled:(BOOL)arg1;
+- (void)setWaitingForFirstSync:(BOOL)arg1;
 - (id)stateObservers;
 - (id)storeDirectory;
 - (id)syncQueue;

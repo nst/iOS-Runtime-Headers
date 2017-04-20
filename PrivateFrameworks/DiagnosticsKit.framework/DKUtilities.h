@@ -5,6 +5,9 @@
 @interface DKUtilities : NSObject
 
 + (id)acceptableDecoderClasses;
++ (Class)diagnosticInputsClassAttribute;
++ (id)extensionAttributes;
++ (id)inputsForDiagnostic:(id)arg1 predicates:(id)arg2 specifications:(id)arg3 parameters:(id)arg4;
 + (void)parseExtensionInputItems:(id)arg1 completion:(id /* block */)arg2;
 
 @end

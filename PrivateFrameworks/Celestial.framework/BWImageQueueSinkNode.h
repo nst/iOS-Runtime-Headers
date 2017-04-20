@@ -18,6 +18,8 @@
     double  _lastFramePTS;
     double  _lateFrameIntervalStartPTS;
     unsigned int  _numFramesReceived;
+    NSMutableArray * _previewPTSHistory;
+    struct OpaqueFigSimpleMutex { } * _previewPTSHistoryMutex;
     struct OpaqueFigPreviewSynchronizer { } * _previewSynchronizer;
     <BWImageQueueSinkNodePreviewTapDelegate> * _previewTapDelegate;
     double  _previousFrameDuration;
@@ -43,6 +45,7 @@
 - (double)_displayTimeSyncedWithFramePTS:(double)arg1;
 - (void)_ensureImageQueue;
 - (void)_releaseBufferContext:(/* Warning: unhandled struct encoding: '{_EnqueuedBufferContext=^{opaqueCMSampleBuffer}Q@}' */ struct _EnqueuedBufferContext { struct opaqueCMSampleBuffer {} *x1; unsigned long long x2; id x3; }*)arg1;
+- (void)_storePreviewPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 withHostTime:(unsigned long long)arg2;
 - (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
@@ -55,6 +58,7 @@
 - (void)makeCurrentConfigurationLive;
 - (id)nodeSubType;
 - (void)prepareForCurrentConfigurationToBecomeLive;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })previewPTSAtHostTime:(unsigned long long)arg1;
 - (id)previewTapDelegate;
 - (void)registerSurfacesFromSourcePool:(id)arg1;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;

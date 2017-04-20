@@ -18,6 +18,7 @@
 + (id)_matchingAppProxyFromProxies:(id)arg1 forChannel:(id)arg2;
 
 - (void).cxx_destruct;
+- (BOOL)_canOpenAppWithBundleID:(id)arg1;
 - (void)_sendCompletionWithError:(id)arg1;
 - (void)applicationInstallsDidChange:(id)arg1;
 - (void)applicationInstallsDidStart:(id)arg1;

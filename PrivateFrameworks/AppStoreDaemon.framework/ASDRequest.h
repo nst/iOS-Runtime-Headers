@@ -14,6 +14,7 @@
 - (void).cxx_destruct;
 - (void)_handleResponse:(id)arg1 error:(id)arg2;
 - (void)_startRequestType:(unsigned int)arg1 withOptions:(id)arg2;
+- (void)dealloc;
 - (void)requestCompletedWithResponse:(id)arg1 error:(id)arg2;
 
 @end

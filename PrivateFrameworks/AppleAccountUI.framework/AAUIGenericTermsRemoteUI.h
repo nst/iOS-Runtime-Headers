@@ -14,10 +14,10 @@
     NSMutableArray * _objectModels;
     UIViewController * _originatingViewController;
     UINavigationController * _parentNavController;
-    UIAlertView * _tcConfirmationAlert;
 }
 
 @property (nonatomic, retain) ACAccount *account;
+@property (nonatomic, retain) ACAccountStore *accountStore;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <AAUIGenericTermsRemoteUIDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -33,7 +33,7 @@
 - (void)_loadRequestPreferingPassword:(BOOL)arg1;
 - (void)_popObjectModelAnimated:(BOOL)arg1;
 - (id)account;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (id)accountStore;
 - (id)delegate;
 - (id)initWithAccount:(id)arg1 inStore:(id)arg2;
 - (void)loader:(id)arg1 didFailWithError:(id)arg2;
@@ -44,6 +44,7 @@
 - (id)parentViewControllerForObjectModel:(id)arg1;
 - (void)presentFromViewController:(id)arg1 modal:(BOOL)arg2;
 - (void)setAccount:(id)arg1;
+- (void)setAccountStore:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (unsigned int)supportedInterfaceOrientationsForObjectModel:(id)arg1 page:(id)arg2;
 

@@ -48,6 +48,7 @@
 - (id)descriptionWithIndent:(int)arg1 showFullContent:(BOOL)arg2;
 - (id)endpoint;
 - (void)evaluateStartingAtIndex:(unsigned int)arg1 probeUUID:(id)arg2 probeWasSuccessful:(BOOL)arg3;
+- (unsigned int)hash;
 - (unsigned int)interfaceIndex;
 - (BOOL)isEqual:(id)arg1;
 - (id)lastProbeURL;

@@ -25,7 +25,7 @@
 - (BOOL)_isRootCertificateFromTrust:(struct __SecTrust { }*)arg1;
 - (id)_issuerFromTrust:(struct __SecTrust { }*)arg1;
 - (id)_messagingCenter;
-- (id)_newUserInfoForDisplayName:(id)arg1 hostname:(id)arg2 trust:(struct __SecTrust { }*)arg3 options:(id)arg4;
+- (id)_newUserInfoWithHostname:(id)arg1 trust:(struct __SecTrust { }*)arg2 options:(id)arg3;
 - (id)_propertyNamed:(id)arg1 ofType:(id)arg2 inProperties:(id)arg3;
 - (id)_purposeFromTrustProperties:(id)arg1;
 - (int)_responseFromReplyDict:(id)arg1;

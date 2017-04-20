@@ -18,12 +18,14 @@
 
 - (void)_debug_fetchAllAvailableExperiments:(id /* block */)arg1;
 - (void)_debug_setActiveExperimentBranchDictionaryRepresentation:(id)arg1;
+- (void)_debug_setBucketIdDictionaryRepresentation:(id)arg1;
 - (void)_debug_setQuerySubstring:(id)arg1 forExperimentType:(int)arg2 dispatcherRequestType:(int)arg3;
 - (void)dealloc;
 - (id)delegate;
 - (id)experimentsInfo;
 - (void)forceUpdate;
 - (id)initWithDelegate:(id)arg1;
+- (void)refreshDatasetABStatus:(id)arg1;
 - (void)setDelegate:(id)arg1;
 
 @end

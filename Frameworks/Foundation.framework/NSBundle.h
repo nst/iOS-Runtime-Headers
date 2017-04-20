@@ -147,6 +147,10 @@
 
 + (id)pu_PhotosUIFrameworkBundle;
 
+// Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
+
++ (BOOL)mainBundleSupportsBackgroundAudio;
+
 // Image: /System/Library/Frameworks/ReplayKit.framework/ReplayKit
 
 + (id)_rpFrameworkBundle;

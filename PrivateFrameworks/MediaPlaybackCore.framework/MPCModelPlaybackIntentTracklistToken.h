@@ -10,6 +10,7 @@
 @property (nonatomic, copy) MPModelRequest *request;
 @property (nonatomic, copy) MPIdentifierSet *startItemIdentifiers;
 
++ (id)requiredPropertiesForStaticMediaClips;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;

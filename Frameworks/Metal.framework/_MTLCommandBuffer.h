@@ -86,6 +86,7 @@
 - (void)didScheduleWithStartTime:(unsigned long long)arg1 endTime:(unsigned long long)arg2 error:(id)arg3;
 - (void)enqueue;
 - (id)error;
+- (id)formattedDescription:(unsigned int)arg1;
 - (unsigned int)getAndIncrementNumEncoders;
 - (unsigned int)getListIndex;
 - (unsigned long long)globalTraceObjectID;
@@ -101,6 +102,7 @@
 - (unsigned int)numEncoders;
 - (unsigned int)numThisCommandBuffer;
 - (void)presentDrawable:(id)arg1;
+- (void)presentDrawable:(id)arg1 afterMinimumDuration:(double)arg2;
 - (void)presentDrawable:(id)arg1 atTime:(double)arg2;
 - (id)profilingResults;
 - (BOOL)retainedReferences;

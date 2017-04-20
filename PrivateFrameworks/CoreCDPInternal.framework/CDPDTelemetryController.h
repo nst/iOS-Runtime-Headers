@@ -22,6 +22,7 @@
 - (void)signInSucceededWithIncorrectICSCAttemptCount:(unsigned int)arg1 didUseRemoteApproval:(BOOL)arg2;
 - (void)signInWithUserElectingResetProtectedData;
 - (void)signInWithUserSkippingFlow;
+- (void)stateMachineFailureDueToSyncFailure;
 - (void)stateMachineStartedFromClient:(unsigned int)arg1;
 
 @end

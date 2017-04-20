@@ -17,6 +17,7 @@
 - (void)CADDatabaseGetCalendarItemWithUUID:(id)arg1 reply:(id /* block */)arg2;
 - (void)CADDatabaseGetContactIdentifierForCalendarItem:(struct { int x1; int x2; })arg1 reply:(id /* block */)arg2;
 - (void)CADDatabaseRemoveContactIdentifier:(id)arg1 forCalendarItem:(struct { int x1; int x2; })arg2 withReply:(id /* block */)arg3;
+- (id)_resultsFilteredForJunkEvents:(id)arg1;
 - (id)_resultsFilteredForTCCAccess:(id)arg1;
 
 @end

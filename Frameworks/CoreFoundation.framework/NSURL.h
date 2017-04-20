@@ -53,6 +53,7 @@
 @property (nonatomic, readonly) BOOL needsDownload;
 @property (readonly) NSString *originatingUIIdentifier;
 @property (readonly, copy) NSString *parameterString;
+@property (nonatomic, readonly) BOOL parsec_isTuscanyURL;
 @property (readonly, copy) NSString *password;
 @property (readonly, copy) NSString *path;
 @property (readonly, copy) NSArray *pathComponents;
@@ -365,6 +366,10 @@
 
 - (BOOL)afui_hasMapItemScheme;
 
+// Image: /System/Library/PrivateFrameworks/BookmarkDAV.framework/BookmarkDAV
+
+- (BOOL)bdv_isEqualToDAVURL:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
 
 - (BOOL)MD5:(unsigned char)arg1;
@@ -428,6 +433,13 @@
 - (BOOL)ckShouldShowDigitalTouchCanvas;
 - (id)ckSuggestedReplies;
 - (id)ckWillNotLaunchComposeUIURL;
+
+// Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
+
++ (id)crk_uniqueTemporaryDirectoryURL;
+
+- (id)crk_escapedPath;
+- (BOOL)crk_isBundle;
 
 // Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
 
@@ -569,6 +581,7 @@
 
 // Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
 
+- (BOOL)parsec_isTuscanyURL;
 - (id)sf_asPunchout;
 
 // Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
@@ -596,6 +609,7 @@
 - (id)da_urlBySettingScheme:(id)arg1;
 - (id)da_urlBySettingScheme:(id)arg1 keepUsername:(BOOL)arg2;
 - (id)da_urlBySettingUsername:(id)arg1;
+- (id)da_urlForLogging;
 - (id)uri;
 
 // Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
@@ -634,15 +648,22 @@
 
 - (id)__imURLByAppendingQueryString:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/IMSharedUtilities
+
+- (BOOL)__im_conformsToDomain:(id)arg1 domainExtension:(id)arg2;
+
 // Image: /System/Library/PrivateFrameworks/LinkPresentation.framework/LinkPresentation
 
 + (id)_lp_URLWithData:(id)arg1 baseURL:(id)arg2;
-+ (struct _NSRange { unsigned int x1; unsigned int x2; })_lp_hostAndPortRangeFromUserTypedString:(id)arg1;
 
-- (id)_lp_fullySimplifiedUserVisibleURLString;
-- (BOOL)_lp_isHTTPFamilyURL;
+- (id)_lp_components;
+- (id)_lp_componentsNoCopy;
+- (BOOL)_lp_isHTTPFamilyOrLinkPresentationTestingURL;
 - (id)_lp_originalData;
+- (id)_lp_pathComponentAtIndex:(unsigned int)arg1;
+- (id)_lp_simplifiedDisplayString;
 - (id)_lp_userVisibleString;
+- (id)_lp_valueForQueryKey:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/Message.framework/Message
 
@@ -656,6 +677,8 @@
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
 + (id)fc_URLWithResourceID:(id)arg1;
++ (id)fc_articleListDirectoryWithFileName:(id)arg1;
++ (id)fc_safeURLWithString:(id)arg1;
 + (id)fc_urlForUserDomainCachesDirectory;
 + (id)fc_urlForUserDomainDocumentsDirectory;
 + (id)fc_urlForUserDomainLibraryDirectory;
@@ -665,6 +688,7 @@
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
+- (id)dedupedURLWithProhibitedNames:(id)arg1;
 - (BOOL)isAppStoreURL;
 - (BOOL)isMapURL;
 - (BOOL)isNewsURL;
@@ -702,6 +726,10 @@
 
 + (id)userCachesDirectoryURL:(BOOL)arg1;
 
+// Image: /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
+
++ (struct _NSRange { unsigned int x1; unsigned int x2; })safari_hostAndPortRangeFromUserTypedString:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/SafariSafeBrowsing.framework/SafariSafeBrowsing
 
 - (BOOL)ssb_hasUserInfo;
@@ -713,7 +741,6 @@
 + (id)safari_URLWithDataAsString:(id)arg1 relativeToURL:(id)arg2;
 + (id)safari_URLWithUserTypedString:(id)arg1;
 + (void)safari_enumeratePossibleURLsForUserTypedString:(id)arg1 withBlock:(id /* block */)arg2;
-+ (struct _NSRange { unsigned int x1; unsigned int x2; })safari_hostAndPortRangeFromUserTypedString:(id)arg1;
 
 - (id)_safari_URLByReplacingComponent:(long)arg1 includingSeparators:(BOOL)arg2 withString:(id)arg3;
 - (id)_safari_URLByReplacingComponent:(long)arg1 withString:(id)arg2;
@@ -722,6 +749,7 @@
 - (id)safari_URLByReplacingHostWithString:(id)arg1;
 - (id)safari_URLByReplacingQueryWithString:(id)arg1;
 - (id)safari_URLByReplacingSchemeWithString:(id)arg1;
+- (id)safari_URLWithUniqueFilename;
 - (id)safari_canonicalURL;
 - (id)safari_displayNameWithTitle:(id)arg1;
 - (BOOL)safari_hasCharactersBeyondPath;

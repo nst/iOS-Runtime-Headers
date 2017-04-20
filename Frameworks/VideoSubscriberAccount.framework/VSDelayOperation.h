@@ -4,14 +4,19 @@
 
 @interface VSDelayOperation : VSAsyncOperation {
     double  _delay;
+    NSDate * _fireDate;
+    BOOL  _shouldIgnoreTolerance;
     NSObject<OS_dispatch_source> * _timerSource;
     double  _tolerance;
 }
 
 @property (nonatomic, readonly) double delay;
+@property (nonatomic, readonly, copy) NSDate *fireDate;
+@property (nonatomic) BOOL shouldIgnoreTolerance;
 @property (nonatomic, readonly) double tolerance;
 
 + (id)delayOperationWithDelay:(double)arg1;
++ (id)delayOperationWithFireDate:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_cancelTimer;
@@ -19,8 +24,12 @@
 - (void)dealloc;
 - (double)delay;
 - (void)executionDidBegin;
+- (id)fireDate;
 - (id)init;
 - (id)initWithDelay:(double)arg1 tolerance:(double)arg2;
+- (id)initWithFireDate:(id)arg1 tolerance:(double)arg2;
+- (void)setShouldIgnoreTolerance:(BOOL)arg1;
+- (BOOL)shouldIgnoreTolerance;
 - (double)tolerance;
 
 @end

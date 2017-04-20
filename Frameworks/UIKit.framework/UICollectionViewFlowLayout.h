@@ -88,10 +88,12 @@
 - (BOOL)_boundsAndInsetsAreValidForReferenceDimension;
 - (void)_calculateAttributesForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_cellsShouldConferWithAutolayoutEngineForSizingInfo;
+- (struct CGPoint { float x1; float x2; })_contentOffsetForScrollingToSection:(int)arg1;
 - (float)_dimensionFromCollectionView;
 - (struct CGSize { float x1; float x2; })_effectiveEstimatedItemSize;
 - (BOOL)_estimatesSizes;
 - (id)_existingLayoutAttributesForItemAtIndexPath:(id)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_fastScrollingIndexBarInsets;
 - (id)_fetchAndCacheNewLayoutAttributesForCellWithIndexPath:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)_fetchItemsInfoForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_footerFollowsSectionMargins;

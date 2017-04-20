@@ -3,15 +3,20 @@
  */
 
 @interface SBUIPasscodeLockViewInstallTonightLongNumericKeypad : SBUIPasscodeLockViewLongNumericKeypad {
-    SBUIButton * _remindMeLaterButton;
+    SBUIButton * _actionButton;
 }
 
 - (void).cxx_destruct;
-- (void)_layoutRemindMeLaterButton;
+- (void)_actionButtonHit;
+- (void)_configureActionButton;
+- (void)_layoutActionButton;
 - (void)_layoutStatusView;
-- (void)_remindMeLaterButtonHit;
+- (void)_setShowsCancelButton:(BOOL)arg1 fromEmergencyCallButton:(BOOL)arg2;
+- (void)_setShowsEmergencyCallButton:(BOOL)arg1 fromCancelButton:(BOOL)arg2;
 - (void)_sizeLabel:(id)arg1;
 - (id)initWithLightStyle:(BOOL)arg1;
 - (void)passcodeEntryFieldTextDidChange:(id)arg1;
+- (void)setShowsCancelButton:(BOOL)arg1;
+- (void)setShowsEmergencyCallButton:(BOOL)arg1;
 
 @end

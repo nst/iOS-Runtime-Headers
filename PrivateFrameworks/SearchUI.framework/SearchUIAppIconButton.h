@@ -3,13 +3,16 @@
  */
 
 @interface SearchUIAppIconButton : UIButton {
-    SearchUISFImage * _image;
+    SearchUIAppIconImage * _image;
 }
 
-@property (retain) SearchUISFImage *image;
+@property (retain) SearchUIAppIconImage *image;
 
 - (void).cxx_destruct;
+- (void)appIconImageDidChange:(id)arg1;
+- (void)dealloc;
 - (id)image;
+- (id)init;
 - (void)setImage:(id)arg1;
 - (void)updateWithBundleID:(id)arg1;
 

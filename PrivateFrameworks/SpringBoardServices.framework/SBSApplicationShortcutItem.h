@@ -28,9 +28,10 @@
 
 // Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
 
-+ (id)staticShortcutItemWithDictionary:(id)arg1 localizationHandler:(id /* block */)arg2;
++ (id)_staticApplicationShortcutItemsFromInfoPlistEntry:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)_localizeWithHandler:(id /* block */)arg1;
 - (unsigned int)activationMode;
 - (id)bundleIdentifierToLaunch;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -16,11 +16,13 @@
 @optional
 
 - (IKAppDocument *)activeDocument;
+- (BOOL)appIsPrivileged;
 - (BOOL)appIsTrusted;
 - (NSURL *)appJSCachePath;
 - (NSDictionary *)appLaunchParams;
 - (NSURL *)appLocalJSURL;
 - (NSDictionary *)appTraitCollection;
+- (BOOL)appUsesDefaultStyleSheets;
 - (BOOL)shouldAllowRemoteInspection;
 - (IKViewElementRegistry *)viewElementRegistry;
 

@@ -70,7 +70,7 @@
     struct __SCNetworkReachability { } * _reachability;
     HMFTimer * _remoteAccessHealthMonitorTimer;
     HMDCentralMessageDispatcher * _remoteMessageDispatcher;
-    BOOL  _residentEnabled;
+    int  _residentEnabledState;
     HMDResidentMesh * _residentMesh;
     unsigned long long  _stateHandle;
     HMDSyncOperationManager * _syncManager;
@@ -161,7 +161,8 @@
 @property (nonatomic) struct __SCNetworkReachability { }*reachability;
 @property (nonatomic, retain) HMFTimer *remoteAccessHealthMonitorTimer;
 @property (nonatomic, retain) HMDCentralMessageDispatcher *remoteMessageDispatcher;
-@property (getter=isResidentEnabled, nonatomic) BOOL residentEnabled;
+@property (getter=isResidentEnabled, nonatomic, readonly) BOOL residentEnabled;
+@property (nonatomic) int residentEnabledState;
 @property (nonatomic, retain) HMDResidentMesh *residentMesh;
 @property (nonatomic) unsigned long long stateHandle;
 @property (readonly) Class superclass;
@@ -390,7 +391,7 @@
 - (void)_updateCloudDataSyncWithAccountState:(BOOL)arg1;
 - (void)_updateHomeKitInUsePreferences;
 - (void)_updateHomesAboutNetworkConnectivity:(BOOL)arg1;
-- (void)_updateResidentEnabledOnThisDevice:(BOOL)arg1 message:(id)arg2;
+- (void)_updateResidentEnabledOnThisDevice:(BOOL)arg1 forceNotify:(BOOL)arg2 message:(id)arg3;
 - (void)_updateTransportInformationInstances:(id)arg1 remoteAccessories:(id)arg2;
 - (void)_updateUserPushCachedForUser:(id)arg1 device:(id)arg2;
 - (void)_updateiCloudSwitchState:(BOOL)arg1;
@@ -528,6 +529,7 @@
 - (id)remoteMessageDispatcher;
 - (id)removeName:(id)arg1 namespace:(id)arg2;
 - (id)replaceName:(id)arg1 withNewName:(id)arg2 inNamespaces:(id)arg3;
+- (int)residentEnabledState;
 - (id)residentMesh;
 - (void)saveMetadata:(id)arg1 pushChangesToCloud:(BOOL)arg2;
 - (void)saveWithReason:(id)arg1 information:(id)arg2 postSyncNotification:(BOOL)arg3;
@@ -570,10 +572,10 @@
 - (void)setFullSyncedWatchPeers:(id)arg1;
 - (void)setGatherer:(id)arg1;
 - (void)setGenerationCounter:(unsigned int)arg1;
-- (void)setHomeConfigurationVersion:(unsigned int)arg1;
 - (void)setHomeDataLoadedFromArchive:(BOOL)arg1;
 - (void)setHomeDatabaseSize:(unsigned int)arg1;
 - (void)setHomeNames:(id)arg1;
+- (void)setHomekitLastSyncedAssistantConfigurationVersion:(unsigned int)arg1;
 - (void)setHomes:(id)arg1;
 - (void)setICloudSwitchEnabled:(BOOL)arg1;
 - (void)setIdentityRegistry:(id)arg1;
@@ -599,7 +601,7 @@
 - (void)setReachability:(struct __SCNetworkReachability { }*)arg1;
 - (void)setRemoteAccessHealthMonitorTimer:(id)arg1;
 - (void)setRemoteMessageDispatcher:(id)arg1;
-- (void)setResidentEnabled:(BOOL)arg1;
+- (void)setResidentEnabledState:(int)arg1;
 - (void)setResidentMesh:(id)arg1;
 - (void)setStateHandle:(unsigned long long)arg1;
 - (void)setTimeInformationMonitor:(id)arg1;

@@ -3,6 +3,7 @@
  */
 
 @interface FBApplicationPlaceholder : FBBundleInfo {
+    LSApplicationProxy * _proxy;
     NSObject<OS_dispatch_queue> * _queue;
     double  _queue_cachedPercentComplete;
     BOOL  _queue_installType;
@@ -13,6 +14,7 @@
 }
 
 @property (getter=isCancellable, nonatomic, readonly) BOOL cancellable;
+@property (nonatomic, readonly, copy) NSString *displayName;
 @property (nonatomic, readonly) unsigned int installPhase;
 @property (nonatomic, readonly) unsigned int installState;
 @property (nonatomic, readonly) unsigned int installType;
@@ -26,6 +28,8 @@
 - (void)_dispatchToObservers:(id)arg1 block:(id /* block */)arg2;
 - (id)_iconDictionary;
 - (id)_initWithApplicationProxy:(id)arg1;
+- (id)_initWithBundleIdentifier:(id)arg1 url:(id)arg2;
+- (id)_initWithBundleProxy:(id)arg1 url:(id)arg2;
 - (double)_normalizedProgress:(double)arg1;
 - (void)_noteChangedSignificantly;
 - (id)_proxy;
@@ -47,6 +51,7 @@
 - (void)cancel;
 - (void)dealloc;
 - (id)description;
+- (id)displayName;
 - (unsigned int)installPhase;
 - (unsigned int)installState;
 - (unsigned int)installType;

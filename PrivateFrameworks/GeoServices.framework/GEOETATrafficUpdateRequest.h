@@ -3,6 +3,7 @@
  */
 
 @interface GEOETATrafficUpdateRequest : PBRequest <NSCopying> {
+    GEOPDABClientDatasetMetadata * _abClientMetadata;
     GEOAdditionalEnabledMarkets * _additionalEnabledMarkets;
     GEOClientCapabilities * _clientCapabilities;
     struct GEOTimepoint { 
@@ -44,6 +45,7 @@
     BOOL  _useLiveTrafficAsFallback;
 }
 
+@property (nonatomic, retain) GEOPDABClientDatasetMetadata *abClientMetadata;
 @property (nonatomic, retain) GEOAdditionalEnabledMarkets *additionalEnabledMarkets;
 @property (nonatomic, retain) GEOClientCapabilities *clientCapabilities;
 @property (nonatomic) struct GEOTimepoint { double x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } clientTimepoint;
@@ -51,6 +53,7 @@
 @property (nonatomic, retain) GEOLocation *currentUserLocation;
 @property (nonatomic, retain) NSMutableArray *destinationWaypointTypeds;
 @property (nonatomic, retain) NSData *directionsResponseID;
+@property (nonatomic, readonly) BOOL hasAbClientMetadata;
 @property (nonatomic, readonly) BOOL hasAdditionalEnabledMarkets;
 @property (nonatomic, readonly) BOOL hasClientCapabilities;
 @property (nonatomic) BOOL hasClientTimepoint;
@@ -85,6 +88,7 @@
 + (Class)serviceTagType;
 
 - (int)StringAsRerouteStatus:(id)arg1;
+- (id)abClientMetadata;
 - (void)addDestinationWaypointTyped:(id)arg1;
 - (void)addRoute:(id)arg1;
 - (void)addServiceTag:(id)arg1;
@@ -105,6 +109,7 @@
 - (unsigned int)destinationWaypointTypedsCount;
 - (id)dictionaryRepresentation;
 - (id)directionsResponseID;
+- (BOOL)hasAbClientMetadata;
 - (BOOL)hasAdditionalEnabledMarkets;
 - (BOOL)hasClientCapabilities;
 - (BOOL)hasClientTimepoint;
@@ -141,6 +146,7 @@
 - (unsigned int)serviceTagsCount;
 - (struct GEOSessionID { unsigned long long x1; unsigned long long x2; })sessionID;
 - (id)sessionState;
+- (void)setAbClientMetadata:(id)arg1;
 - (void)setAdditionalEnabledMarkets:(id)arg1;
 - (void)setClientCapabilities:(id)arg1;
 - (void)setClientTimepoint:(struct GEOTimepoint { double x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;

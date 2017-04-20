@@ -40,6 +40,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)error;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithOperation:(id)arg1;
 - (id)initWithOperationUUID:(id)arg1;

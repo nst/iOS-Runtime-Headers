@@ -3,10 +3,10 @@
  */
 
 @interface BFFNavigationObserver : NSObject {
-    <UINavigationControllerDelegate> * _observer;
+    <BFFNavigationControllerDelegate> * _observer;
 }
 
-@property (nonatomic) <UINavigationControllerDelegate> *observer;
+@property (nonatomic) <BFFNavigationControllerDelegate> *observer;
 
 + (id)observerWithObserver:(id)arg1;
 

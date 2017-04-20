@@ -5,6 +5,7 @@
 
 @required
 
+- (BOOL)actionsMayRequireDeviceUnlock;
 - (BOOL)containsActionableCharacteristics;
 - (NAFuture *)currentStateActionBuildersForHome:(HMHome *)arg1;
 

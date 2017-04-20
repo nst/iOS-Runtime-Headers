@@ -9,6 +9,7 @@
     int  _axis;
     int  _distribution;
     UIStackView * _stackView;
+    unsigned int  _visualCornerPosition;
     UIInterfaceActionVisualStyle * _visualStyle;
 }
 
@@ -18,20 +19,27 @@
 @property (nonatomic) int axis;
 @property (nonatomic) int distribution;
 @property (nonatomic, readonly) UIStackView *stackView;
+@property (nonatomic) unsigned int visualCornerPosition;
 @property (nonatomic, retain) UIInterfaceActionVisualStyle *visualStyle;
 
 - (void).cxx_destruct;
 - (void)_addSeparatorToStackAndMutableArray:(id)arg1 preferSectionStyle:(BOOL)arg2;
 - (int)_dimensionAttributeToConstrainEqual;
 - (BOOL)_isVerticalLayout;
+- (void)_markRoundedCornerPositionOnAllCornersOfView:(id)arg1;
+- (void)_markRoundedCornerPositionOnLeadingEdgeOfView:(id)arg1;
+- (void)_markRoundedCornerPositionOnNoCornersOfView:(id)arg1;
+- (void)_markRoundedCornerPositionOnTrailingEdgeOfView:(id)arg1;
 - (void)_reloadContentDistributionConstraintsForArrangedContentViews;
 - (void)_reloadStackViewArrangement;
 - (int)_separatorConstantSizedAxis;
 - (void)_setLayoutDebuggingIdentifier:(id)arg1;
+- (void)_setRoundedCornersOfView:(id)arg1 toCornerPosition:(unsigned int)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_stackViewFrameForViewBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGSize { float x1; float x2; })_systemLayoutSizeFittingStackView;
 - (void)_updateActionRepresentationViewsOnlyKeepVisibleContentInHierarchySetting;
 - (void)_updateLayoutWithStackFrameForActionSequenceEdgeInsets;
+- (void)_updateRoundedCornerPositionForActionRepViews;
 - (void)_updateSeparatorConstantSizedAxis;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_viewBoundsForStackViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_withUnsatisfiableConstraintsLoggingSuspendedIfEngineDelegateExists:(id /* block */)arg1;
@@ -48,11 +56,13 @@
 - (void)setArrangedContentViews:(id)arg1;
 - (void)setAxis:(int)arg1;
 - (void)setDistribution:(int)arg1;
+- (void)setVisualCornerPosition:(unsigned int)arg1;
 - (void)setVisualStyle:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)stackView;
 - (struct CGSize { float x1; float x2; })systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)updateConstraints;
+- (unsigned int)visualCornerPosition;
 - (id)visualStyle;
 
 @end

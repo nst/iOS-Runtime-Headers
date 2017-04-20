@@ -4,21 +4,16 @@
 
 @interface FCSolScoredArticle : NSObject {
     FCSolArticleID * _articleId;
-    double  _rawScore;
     double  _score;
 }
 
-@property (nonatomic, retain) FCSolArticleID *articleId;
-@property (nonatomic, readonly) double rawScore;
-@property (nonatomic) double score;
+@property (nonatomic, readonly) FCSolArticleID *articleId;
+@property (nonatomic, readonly) double score;
 
 - (void).cxx_destruct;
 - (id)articleId;
 - (id)description;
-- (id)initWithArticleId:(id)arg1 rawScore:(double)arg2;
-- (double)rawScore;
+- (id)initWithArticleId:(id)arg1 score:(double)arg2;
 - (double)score;
-- (void)setArticleId:(id)arg1;
-- (void)setScore:(double)arg1;
 
 @end

@@ -8,10 +8,10 @@
     NSData * _bufferPrivateData;
 }
 
-@property (retain) NSMutableArray *argumentData;
-@property (readonly) NSMutableArray *arguments;
-@property (retain) NSData *bufferData;
-@property (retain) NSData *bufferPrivateData;
+@property (nonatomic, retain) NSMutableArray *argumentData;
+@property (nonatomic, readonly) NSMutableArray *arguments;
+@property (nonatomic, retain) NSData *bufferData;
+@property (nonatomic, retain) NSData *bufferPrivateData;
 @property (readonly, copy) NSString *format;
 
 - (void).cxx_destruct;

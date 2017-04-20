@@ -3,8 +3,12 @@
  */
 
 @interface _SwiftNativeNSSetBase : NSSet {
-    unsigned int  __magic_refCount;
-    unsigned int  __magic_weakRefCount;
+    struct StrongRefCount { 
+        unsigned int refCount; 
+    }  refCount;
+    struct WeakRefCount { 
+        unsigned int refCount; 
+    }  weakRefCount;
 }
 
 - (BOOL)_isDeallocating;

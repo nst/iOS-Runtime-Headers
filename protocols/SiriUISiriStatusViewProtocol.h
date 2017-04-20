@@ -11,11 +11,13 @@
 - (BOOL)flamesViewDeferred;
 - (float)flamesViewWidth;
 - (void)forceMicVisible:(BOOL)arg1;
+- (BOOL)isInUITrackingMode;
 - (int)mode;
 - (void)setDelegate:(id <SiriUISiriStatusViewDelegate>)arg1;
 - (void)setDisabledMicOpacity:(float)arg1;
 - (void)setFlamesViewDeferred:(BOOL)arg1;
 - (void)setFlamesViewWidth:(float)arg1;
+- (void)setInUITrackingMode:(BOOL)arg1;
 - (void)setMode:(int)arg1;
 
 @end

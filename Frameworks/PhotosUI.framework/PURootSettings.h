@@ -11,6 +11,7 @@
     PUFeedSettings * _feedSettings;
     Class  _interfaceThemeClass;
     PUIrisSettings * _irisSettings;
+    int  _livePhotoBadgingType;
     PULoggingSettings * _loggingSettings;
     PUMedusaSettings * _medusaSettings;
     PUMemoriesSettings * _memoriesSettings;
@@ -34,6 +35,7 @@
 @property (nonatomic, retain) PUFeedSettings *feedSettings;
 @property (nonatomic) Class interfaceThemeClass;
 @property (nonatomic, retain) PUIrisSettings *irisSettings;
+@property (nonatomic) int livePhotoBadgingType;
 @property (nonatomic, retain) PULoggingSettings *loggingSettings;
 @property (nonatomic, retain) PUMedusaSettings *medusaSettings;
 @property (nonatomic, retain) PUMemoriesSettings *memoriesSettings;
@@ -53,6 +55,7 @@
 + (id)_debugRowsForViewControllerStack:(id)arg1;
 + (void)_deleteAllDiagnosticFiles;
 + (id)_memoriesRelatedSettings;
++ (id)_photoKitSettings;
 + (id)_photosUICoreSettings;
 + (void)_setCurrentAsset:(id)arg1;
 + (void)_setDebugRows:(id)arg1;
@@ -74,6 +77,7 @@
 - (Class)interfaceThemeClass;
 - (id)irisSettings;
 - (BOOL)irisUIEnabled;
+- (int)livePhotoBadgingType;
 - (id)loggingSettings;
 - (id)medusaSettings;
 - (id)memoriesSettings;
@@ -94,6 +98,7 @@
 - (void)setFeedSettings:(id)arg1;
 - (void)setInterfaceThemeClass:(Class)arg1;
 - (void)setIrisSettings:(id)arg1;
+- (void)setLivePhotoBadgingType:(int)arg1;
 - (void)setLoggingSettings:(id)arg1;
 - (void)setMedusaSettings:(id)arg1;
 - (void)setMemoriesSettings:(id)arg1;

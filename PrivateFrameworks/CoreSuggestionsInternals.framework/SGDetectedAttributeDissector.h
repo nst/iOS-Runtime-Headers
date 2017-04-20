@@ -3,6 +3,8 @@
  */
 
 @interface SGDetectedAttributeDissector : SGPipelineDissector {
+    SGAppleDirectory * _appleDirectory;
+    PMLAWDSessionTracker * _awdSessionTracker;
     unsigned int  _selfIdentificationMessageCount;
 }
 
@@ -15,7 +17,9 @@
 + (BOOL)isMaybeNameContext:(id)arg1;
 + (BOOL)isNameRequest:(id)arg1;
 + (BOOL)isPhoneContext:(id)arg1;
++ (unsigned int)supervisionTypeIfFoundByPrevModel:(BOOL)arg1 isKnownContact:(BOOL)arg2 isKnownInternal:(BOOL)arg3;
 
+- (void).cxx_destruct;
 - (id)_extractEmailishTokenFromMailHeader:(id)arg1;
 - (id)_makeAlnum:(id)arg1;
 - (id)_makeSimplifiedListIdEmail:(id)arg1;
@@ -31,6 +35,10 @@
 - (id)getLineContaining:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inText:(id)arg2;
 - (void)handleTextMessageSelfIdentification:(id)arg1;
 - (id)init;
+- (id)initWithAWDTracker:(id)arg1 appleDirectory:(id)arg2;
+- (BOOL)isAppleInternalConversation:(id)arg1;
+- (BOOL)isAuthorOfEntity:(id)arg1 knownContactWithPhonenumber:(id)arg2;
+- (BOOL)isEmail:(id)arg1 appleInternalContactWithPhonenumber:(id)arg2;
 - (id)processTextMessageConversation:(id)arg1 messageIndex:(unsigned int)arg2;
 - (unsigned int)selfIdentificationMessageCount;
 - (void)setSelfIdentificationMessageCount:(unsigned int)arg1;

@@ -118,6 +118,7 @@
 - (void)_ICSEscapePropertyValue;
 - (void)_ICSRemoveCharactersFromSet:(id)arg1;
 - (void)_ICSStripControlChracters;
+- (id)controlCharacterSet;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 

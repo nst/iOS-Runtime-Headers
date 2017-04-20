@@ -3,8 +3,6 @@
  */
 
 @interface SUPreferences : NSObject {
-    NSObject<OS_os_log> * _SUOSLogDebug;
-    NSObject<OS_os_log> * _SUOSLogInfo;
     BOOL  _allowSameBuildUpdates;
     BOOL  _disableAutoDownload;
     BOOL  _disableAutoSU;
@@ -13,13 +11,13 @@
     BOOL  _disableFullReplacementFallback;
     BOOL  _disableUserWiFiOnlyPeriod;
     BOOL  _forceFullReplacement;
-    int  _logLevel;
     BOOL  _scanWeeklyInternally;
+    BOOL  _shouldDelayUpdates;
     BOOL  _simulateAutoDownload;
+    NSNumber * _unmetConstraints;
+    NSNumber * _updateDelayInterval;
 }
 
-@property (nonatomic, readonly) NSObject<OS_os_log> *SUOSLogDebug;
-@property (nonatomic, readonly) NSObject<OS_os_log> *SUOSLogInfo;
 @property (nonatomic, readonly) BOOL allowSameBuildUpdates;
 @property (getter=isAutoDownloadDisabled, nonatomic, readonly) BOOL disableAutoDownload;
 @property (getter=isAutoSUDisabled, nonatomic, readonly) BOOL disableAutoSU;
@@ -28,16 +26,16 @@
 @property (nonatomic, readonly) BOOL disableFullReplacementFallback;
 @property (nonatomic, readonly) BOOL disableUserWiFiOnlyPeriod;
 @property (nonatomic, readonly) BOOL forceFullReplacement;
-@property (nonatomic, readonly) int logLevel;
 @property (nonatomic, readonly) BOOL scanWeeklyInternally;
+@property (nonatomic, readonly) BOOL shouldDelayUpdates;
 @property (nonatomic, readonly) BOOL simulateAutoDownload;
+@property (nonatomic, readonly) NSNumber *unmetConstraints;
+@property (nonatomic, readonly) NSNumber *updateDelayInterval;
 
 + (id)sharedInstance;
 
-- (id)SUOSLogDebug;
-- (id)SUOSLogInfo;
+- (id)_copyNumberPreferenceForKey:(id)arg1;
 - (void*)_copyPreferenceForKey:(struct __CFString { }*)arg1 ofType:(unsigned long)arg2;
-- (int)_defaultLogLevel;
 - (BOOL)_getBooleanPreferenceForKey:(id)arg1 withDefaultValue:(BOOL)arg2;
 - (void)_loadPreferences;
 - (BOOL)allowSameBuildUpdates;
@@ -50,9 +48,11 @@
 - (id)init;
 - (BOOL)isAutoDownloadDisabled;
 - (BOOL)isAutoSUDisabled;
-- (int)logLevel;
 - (void)reload;
 - (BOOL)scanWeeklyInternally;
+- (BOOL)shouldDelayUpdates;
 - (BOOL)simulateAutoDownload;
+- (id)unmetConstraints;
+- (id)updateDelayInterval;
 
 @end

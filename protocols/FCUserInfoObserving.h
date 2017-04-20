@@ -9,5 +9,6 @@
 - (void)userInfo:(FCUserInfo *)arg1 didChangeAccessTokenForTagID:(NSString *)arg2;
 - (void)userInfoDidChangeFeldsparID:(FCUserInfo *)arg1 fromCloud:(BOOL)arg2;
 - (void)userInfoDidChangeNotificationsUserID:(FCUserInfo *)arg1;
+- (void)userInfoDidChangeOnboardingStatus:(FCUserInfo *)arg1;
 
 @end

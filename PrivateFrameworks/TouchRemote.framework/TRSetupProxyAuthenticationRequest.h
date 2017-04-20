@@ -12,6 +12,8 @@
 @property (nonatomic, retain) NSString *rawPassword;
 @property (nonatomic, retain) NSSet *targetedAccountServices;
 
++ (BOOL)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)account;
 - (id)description;

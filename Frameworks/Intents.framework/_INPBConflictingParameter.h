@@ -13,6 +13,8 @@
 @property (nonatomic, retain) NSString *keyPath;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 + (Class)alternateItemsType;
 + (id)options;
 
@@ -35,5 +37,11 @@
 - (void)setKeyPath:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

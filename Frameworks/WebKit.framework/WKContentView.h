@@ -37,6 +37,7 @@
         } selectionRect; 
         double minimumScaleFactor; 
         double maximumScaleFactor; 
+        double maximumScaleFactorIgnoringAlwaysScalable; 
         double nodeFontSize; 
         bool hasNextNode; 
         bool hasPreviousNode; 
@@ -45,7 +46,7 @@
         bool isMultiSelect; 
         bool isReadOnly; 
         bool allowsUserScaling; 
-        bool allowsUserScalingIgnoringForceAlwaysScaling; 
+        bool allowsUserScalingIgnoringAlwaysScalable; 
         bool insideFixedPosition; 
         int autocapitalizeType; 
         int elementType; 
@@ -118,7 +119,6 @@
     struct RetainPtr<UIView> { 
         void *m_ptr; 
     }  _fixedClippingView;
-    BOOL  _forceIPadStyleZoomOnInputFocus;
     struct RetainPtr<UIWebFormAccessory> { 
         void *m_ptr; 
     }  _formAccessoryView;
@@ -137,9 +137,13 @@
     struct HistoricalVelocityData { 
         unsigned int m_historySize; 
         unsigned int m_latestDataIndex; 
-        double m_lastAppendTimestamp; 
+        struct MonotonicTime { 
+            double m_value; 
+        } m_lastAppendTimestamp; 
         struct Data { 
-            double timestamp; 
+            struct MonotonicTime { 
+                double m_value; 
+            } timestamp; 
             struct CGPoint { 
                 float x; 
                 float y; 
@@ -199,9 +203,24 @@
     struct RetainPtr<NSString> { 
         void *m_ptr; 
     }  _markedText;
+    BOOL  _needsDeferredEndScrollingSelectionUpdate;
     struct RetainPtr<UITapGestureRecognizer> { 
         void *m_ptr; 
     }  _nonBlockingDoubleTapGestureRecognizer;
+    struct optional<WebKit::InteractionInformationRequest> { 
+        bool init_; 
+        union constexpr_storage_t<WebKit::InteractionInformationRequest> { 
+            unsigned char dummy_; 
+            struct InteractionInformationRequest { 
+                struct IntPoint { 
+                    int m_x; 
+                    int m_y; 
+                } point; 
+                bool includeSnapshot; 
+                bool includeLinkIndicator; 
+            } value_; 
+        } storage_; 
+    }  _outstandingPositionInformationRequest;
     struct RefPtr<WebKit::WebPageProxy> { 
         struct WebPageProxy {} *m_ptr; 
     }  _page;
@@ -211,10 +230,14 @@
         } __ptr_; 
     }  _pageClient;
     struct InteractionInformationAtPosition { 
-        struct IntPoint { 
-            int m_x; 
-            int m_y; 
-        } point; 
+        struct InteractionInformationRequest { 
+            struct IntPoint { 
+                int m_x; 
+                int m_y; 
+            } point; 
+            bool includeSnapshot; 
+            bool includeLinkIndicator; 
+        } request; 
         bool nodeAtPositionIsAssistedNode; 
         bool isSelectable; 
         bool isNearMarkedText; 
@@ -344,8 +367,10 @@
     }  _smartMagnificationController;
     struct TapHighlightInformation { 
         struct Color { 
-            unsigned int m_color; 
-            bool m_valid; 
+            union { 
+                unsigned long long rgbaAndFlags; 
+                struct ExtendedColor {} *extendedColor; 
+            } m_colorData; 
         } color; 
         struct Vector<WebCore::FloatQuad, 0, WTF::CrashOnOverflow, 16> { 
             struct FloatQuad {} *m_buffer; 
@@ -404,7 +429,7 @@
 @property (nonatomic) BOOL acceptsEmoji;
 @property (nonatomic) BOOL acceptsFloatingKeyboard;
 @property (nonatomic) BOOL acceptsSplitKeyboard;
-@property (nonatomic, readonly) const struct AssistedNodeInformation { struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_1_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_1_1_2; } x1; struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_2_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_2_1_2; } x2; double x3; double x4; double x5; bool x6; bool x7; bool x8; bool x9; bool x10; bool x11; bool x12; bool x13; bool x14; int x15; int x16; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_17_1_1; } x17; /* Warning: unhandled struct encoding: '{Vector<WebKit::OptionItem' */ struct x18; }*assistedNodeInformation; /* unknown property attribute:  16>=^{OptionItem}II}i{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}d{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}i} */
+@property (nonatomic, readonly) const struct AssistedNodeInformation { struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_1_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_1_1_2; } x1; struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_2_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_2_1_2; } x2; double x3; double x4; double x5; double x6; bool x7; bool x8; bool x9; bool x10; bool x11; bool x12; bool x13; bool x14; bool x15; int x16; int x17; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_18_1_1; } x18; /* Warning: unhandled struct encoding: '{Vector<WebKit::OptionItem' */ struct x19; }*assistedNodeInformation; /* unknown property attribute:  16>=^{OptionItem}II}i{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}d{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}i} */
 @property (nonatomic) int autocapitalizationType;
 @property (nonatomic, copy) NSString *autocorrectionContext;
 @property (nonatomic, readonly) const struct WKAutoCorrectionData { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; float x2; unsigned long long x3; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_4_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_4_1_2; } x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; id /* block */ x6; id /* block */ x7; }*autocorrectionData;
@@ -415,6 +440,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) BOOL deferBecomingResponder;
 @property (readonly, copy) NSString *description;
+@property (getter=isDevicePasscodeEntry, nonatomic) BOOL devicePasscodeEntry;
 @property (nonatomic) BOOL disableInputBars;
 @property (nonatomic) BOOL disablePrediction;
 @property (nonatomic) BOOL displaySecureEditsUsingPlainText;
@@ -427,7 +453,6 @@
 @property (nonatomic) int forceDictationKeyboardType;
 @property (nonatomic) BOOL forceDisableDictation;
 @property (nonatomic) BOOL forceEnableDictation;
-@property (nonatomic) BOOL forceIPadStyleZoomOnInputFocus;
 @property (nonatomic, readonly) UIWebFormAccessory *formAccessoryView;
 @property (nonatomic) BOOL hasDefaultContents;
 @property (nonatomic, readonly) BOOL hasText;
@@ -449,8 +474,8 @@
 @property (nonatomic) BOOL learnsCorrections;
 @property (nonatomic, readonly) UITextRange *markedTextRange;
 @property (nonatomic, copy) NSDictionary *markedTextStyle;
-@property (nonatomic, readonly) struct WebPageProxy { int (**x1)(); id x2; int (*x3)(); int (**x4)(); int (**x5)(); struct RetainPtr<NSArray> { void *x_6_1_1; } x6; struct PageClient {} *x7; struct Ref<API::PageConfiguration> { struct PageConfiguration {} *x_8_1_1; } x8; /* Warning: unhandled struct encoding: '{unique_ptr<API::LoaderClient' */ struct x9; }*page; /* unknown property attribute:  std::__1::default_delete<WebKit::NodeAssistanceArguments> >=^{NodeAssistanceArguments}}}BB} */
-@property (nonatomic, readonly) const struct InteractionInformationAtPosition { struct IntPoint { int x_1_1_1; int x_1_1_2; } x1; bool x2; bool x3; bool x4; bool x5; bool x6; bool x7; bool x8; bool x9; bool x10; bool x11; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_12_1_1; } x12; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_13_1_1; } x13; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_14_1_1; } x14; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_15_1_1; } x15; struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_16_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_16_1_2; } x16; struct RefPtr<WebKit::ShareableBitmap> { struct ShareableBitmap {} *x_17_1_1; } x17; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_18_1_1; } x18; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_19_1_1; } x19; struct TextIndicatorData { struct FloatRect { struct FloatPoint { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct FloatSize { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_20_1_1; struct FloatRect { struct FloatPoint { float x_1_3_1; float x_1_3_2; } x_2_2_1; struct FloatSize { float x_2_3_1; float x_2_3_2; } x_2_2_2; } x_20_1_2; /* Warning: unhandled struct encoding: '{Vector<WebCore::FloatRect' */ struct x_20_1_3; } x20; }*positionInformation; /* unknown property attribute:  16>=^{FloatRect}II}f{RefPtr<WebCore::Image>=^{Image}}{RefPtr<WebCore::Image>=^{Image}}iC}{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}{RetainPtr<NSArray>=^v}} */
+@property (nonatomic, readonly) struct WebPageProxy { int (**x1)(); id x2; int (*x3)(); int (**x4)(); int (**x5)(); struct RetainPtr<NSArray> { void *x_6_1_1; } x6; struct PageClient {} *x7; struct Ref<API::PageConfiguration> { struct PageConfiguration {} *x_8_1_1; } x8; /* Warning: unhandled struct encoding: '{unique_ptr<API::LoaderClient' */ struct x9; }*page; /* unknown property attribute:  std::__1::default_delete<WebKit::NodeAssistanceArguments> >=^{NodeAssistanceArguments}}}BB{WeakPtrFactory<WebKit::WebPageProxy>={Ref<WTF::WeakReference<WebKit::WebPageProxy> >=^{WeakReference<WebKit::WebPageProxy>}}}} */
+@property (nonatomic, readonly) const struct InteractionInformationAtPosition { struct InteractionInformationRequest { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_1_1_1; bool x_1_1_2; bool x_1_1_3; } x1; bool x2; bool x3; bool x4; bool x5; bool x6; bool x7; bool x8; bool x9; bool x10; bool x11; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_12_1_1; } x12; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_13_1_1; } x13; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_14_1_1; } x14; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_15_1_1; } x15; struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_16_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_16_1_2; } x16; struct RefPtr<WebKit::ShareableBitmap> { struct ShareableBitmap {} *x_17_1_1; } x17; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_18_1_1; } x18; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_19_1_1; } x19; }*positionInformation; /* unknown property attribute:  16>=^{FloatRect}II}f{RefPtr<WebCore::Image>=^{Image}}{RefPtr<WebCore::Image>=^{Image}}iC}{String={RefPtr<WTF::StringImpl>=^{StringImpl}}}{RetainPtr<NSArray>=^v}} */
 @property (nonatomic, copy) NSString *recentInputIdentifier;
 @property (getter=isResigningFirstResponder, nonatomic, readonly) BOOL resigningFirstResponder;
 @property (nonatomic, copy) NSString *responseContext;
@@ -464,6 +489,7 @@
 @property (nonatomic) int selectionGranularity;
 @property (nonatomic, retain) UIColor *selectionHighlightColor;
 @property (nonatomic) int shortcutConversionType;
+@property (nonatomic, readonly) BOOL shouldHideSelectionWhenScrolling;
 @property (getter=isShowingInspectorIndication, nonatomic) BOOL showingInspectorIndication;
 @property (nonatomic) int spellCheckingType;
 @property (readonly) Class superclass;
@@ -486,6 +512,7 @@
 - (SEL)_actionForLongPress;
 - (void)_addDefaultGestureRecognizers;
 - (void)_addShortcut:(id)arg1;
+- (BOOL)_allowAnimatedUpdateSelectionRectViews;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_applicationDidCreateWindowContext;
 - (void)_applicationDidEnterBackground;
@@ -501,6 +528,8 @@
 - (unsigned long)_characterInRelationToCaretSelection:(int)arg1;
 - (void)_commitPotentialTapFailed;
 - (id)_commonInitializationWithProcessPool:(struct WebProcessPool { int (**x1)(); id x2; int (*x3)(); struct Ref<API::ProcessPoolConfiguration> { struct ProcessPoolConfiguration {} *x_4_1_1; } x4; struct MessageReceiverMap { struct HashMap<IPC::StringReference, IPC::MessageReceiver *, IPC::StringReference::Hash, WTF::HashTraits<IPC::StringReference>, WTF::HashTraits<IPC::MessageReceiver *> > { struct HashTable<IPC::StringReference, WTF::KeyValuePair<IPC::StringReference, IPC::MessageReceiver *>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<IPC::StringReference, IPC::MessageReceiver *> >, IPC::StringReference::Hash, WTF::HashMap<IPC::StringReference, IPC::MessageReceiver *, IPC::StringReference::Hash, WTF::HashTraits<IPC::StringReference>, WTF::HashTraits<IPC::MessageReceiver *> >::KeyValuePairTraits, WTF::HashTraits<IPC::StringReference> > { struct KeyValuePair<IPC::StringReference, IPC::MessageReceiver *> {} *x_1_3_1; unsigned int x_1_3_2; unsigned int x_1_3_3; unsigned int x_1_3_4; unsigned int x_1_3_5; } x_1_2_1; } x_5_1_1; struct HashMap<std::__1::pair<IPC::StringReference, unsigned long long>, IPC::MessageReceiver *, WTF::PairHash<IPC::StringReference, unsigned long long>, WTF::HashTraits<std::__1::pair<IPC::StringReference, unsigned long long> >, WTF::HashTraits<IPC::MessageReceiver *> > { struct HashTable<std::__1::pair<IPC::StringReference, unsigned long long>, WTF::KeyValuePair<std::__1::pair<IPC::StringReference, unsigned long long>, IPC::MessageReceiver *>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<std::__1::pair<IPC::StringReference, unsigned long long>, IPC::MessageReceiver *> >, WTF::PairHash<IPC::StringReference, unsigned long long>, WTF::HashMap<std::__1::pair<IPC::StringReference, unsigned long long>, IPC::MessageReceiver *, WTF::PairHash<IPC::StringReference, unsigned long long>, WTF::HashTraits<std::__1::pair<IPC::StringReference, unsigned long long> >, WTF::HashTraits<IPC::MessageReceiver *> >::KeyValuePairTraits, WTF::HashTraits<std::__1::pair<IPC::StringReference, unsigned long long> > > { struct KeyValuePair<std::__1::pair<IPC::StringReference, unsigned long long>, IPC::MessageReceiver *> {} *x_1_3_1; unsigned int x_1_3_2; unsigned int x_1_3_3; unsigned int x_1_3_4; unsigned int x_1_3_5; } x_2_2_1; } x_5_1_2; } x5; }*)arg1 configuration:(struct Ref<API::PageConfiguration> { struct PageConfiguration {} *x1; }*)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_computeUnobscuredContentRectRespectingInputViewBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 unobscuredContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inputViewBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 scale:(float)arg4;
+- (id)_contentsOfUserInterfaceItem:(id)arg1;
 - (void)_createAndConfigureDoubleTapGestureRecognizer;
 - (struct unique_ptr<WebKit::DrawingAreaProxy, std::__1::default_delete<WebKit::DrawingAreaProxy> > { struct __compressed_pair<WebKit::DrawingAreaProxy *, std::__1::default_delete<WebKit::DrawingAreaProxy> > { struct DrawingAreaProxy {} *x_1_1_1; } x1; })_createDrawingAreaProxy;
 - (id)_dataDetectionResults;
@@ -509,7 +538,8 @@
 - (void)_didCommitLayerTree:(const struct RemoteLayerTreeTransaction { unsigned long long x1; struct Vector<WTF::RefPtr<WebKit::PlatformCALayerRemote>, 0, WTF::CrashOnOverflow, 16> { struct RefPtr<WebKit::PlatformCALayerRemote> {} *x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; struct HashMap<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> >, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > > { struct HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > >, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> >, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > >::KeyValuePairTraits, WTF::HashTraits<unsigned long long> > { struct KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > {} *x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_3_1_1; } x3; }*)arg1;
 - (void)_didCommitLoadForMainFrame;
 - (void)_didEndScrollingOrZooming;
-- (void)_didGetTapHighlightForRequest:(unsigned long long)arg1 color:(const struct Color { unsigned int x1; bool x2; }*)arg2 quads:(const struct Vector<WebCore::FloatQuad, 0, WTF::CrashOnOverflow, 16> { struct FloatQuad {} *x1; unsigned int x2; unsigned int x3; }*)arg3 topLeftRadius:(const struct IntSize { int x1; int x2; }*)arg4 topRightRadius:(const struct IntSize { int x1; int x2; }*)arg5 bottomLeftRadius:(const struct IntSize { int x1; int x2; }*)arg6 bottomRightRadius:(const struct IntSize { int x1; int x2; }*)arg7;
+- (void)_didExitStableState;
+- (void)_didGetTapHighlightForRequest:(unsigned long long)arg1 color:(const struct Color { union { unsigned long long x_1_1_1; struct ExtendedColor {} *x_1_1_2; } x1; }*)arg2 quads:(const struct Vector<WebCore::FloatQuad, 0, WTF::CrashOnOverflow, 16> { struct FloatQuad {} *x1; unsigned int x2; unsigned int x3; }*)arg3 topLeftRadius:(const struct IntSize { int x1; int x2; }*)arg4 topRightRadius:(const struct IntSize { int x1; int x2; }*)arg5 bottomLeftRadius:(const struct IntSize { int x1; int x2; }*)arg6 bottomRightRadius:(const struct IntSize { int x1; int x2; }*)arg7;
 - (void)_didHandleKeyEvent:(id)arg1 eventWasHandled:(BOOL)arg2;
 - (void)_didNotHandleTapAsClick:(const struct IntPoint { int x1; int x2; }*)arg1;
 - (void)_didRelaunchProcess;
@@ -554,7 +584,7 @@
 - (void)_overflowScrollingDidEnd;
 - (void)_overflowScrollingWillBegin;
 - (struct OpaqueWKPage { }*)_pageRef;
-- (void)_positionInformationDidChange:(const struct InteractionInformationAtPosition { struct IntPoint { int x_1_1_1; int x_1_1_2; } x1; bool x2; bool x3; bool x4; bool x5; bool x6; bool x7; bool x8; bool x9; bool x10; bool x11; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_12_1_1; } x12; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_13_1_1; } x13; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_14_1_1; } x14; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_15_1_1; } x15; struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_16_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_16_1_2; } x16; struct RefPtr<WebKit::ShareableBitmap> { struct ShareableBitmap {} *x_17_1_1; } x17; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_18_1_1; } x18; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_19_1_1; } x19; struct TextIndicatorData { struct FloatRect { struct FloatPoint { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct FloatSize { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_20_1_1; struct FloatRect { struct FloatPoint { float x_1_3_1; float x_1_3_2; } x_2_2_1; struct FloatSize { float x_2_3_1; float x_2_3_2; } x_2_2_2; } x_20_1_2; struct Vector<WebCore::FloatRect, 0, WTF::CrashOnOverflow, 16> { struct FloatRect {} *x_3_2_1; unsigned int x_3_2_2; unsigned int x_3_2_3; } x_20_1_3; float x_20_1_4; struct RefPtr<WebCore::Image> { struct Image {} *x_5_2_1; } x_20_1_5; struct RefPtr<WebCore::Image> { struct Image {} *x_6_2_1; } x_20_1_6; int x_20_1_7; unsigned char x_20_1_8; } x20; }*)arg1;
+- (void)_positionInformationDidChange:(const struct InteractionInformationAtPosition { struct InteractionInformationRequest { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_1_1_1; bool x_1_1_2; bool x_1_1_3; } x1; bool x2; bool x3; bool x4; bool x5; bool x6; bool x7; bool x8; bool x9; bool x10; bool x11; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_12_1_1; } x12; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_13_1_1; } x13; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_14_1_1; } x14; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_15_1_1; } x15; struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_16_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_16_1_2; } x16; struct RefPtr<WebKit::ShareableBitmap> { struct ShareableBitmap {} *x_17_1_1; } x17; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_18_1_1; } x18; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_19_1_1; } x19; }*)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_presentationRectForPreviewItemController:(id)arg1;
 - (id)_presentationRectsForPreviewItemController:(id)arg1;
 - (id)_presentationSnapshotForPreviewItemController:(id)arg1;
@@ -572,7 +602,7 @@
 - (BOOL)_requiresKeyboardWhenFirstResponder;
 - (void)_resetIsDoubleTapPending;
 - (void)_resetShowingTextStyle:(id)arg1;
-- (struct Optional<WebCore::FloatPoint> { bool x1; struct type { unsigned char x_2_1_1[8]; } x2; })_scrollOffsetForEvent:(id)arg1;
+- (struct optional<WebCore::FloatPoint> { bool x1; union constexpr_storage_t<WebCore::FloatPoint> { unsigned char x_2_1_1; struct FloatPoint { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; })_scrollOffsetForEvent:(id)arg1;
 - (BOOL)_scrollToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withOrigin:(struct CGPoint { float x1; float x2; })arg2 minimumScrollDistance:(float)arg3;
 - (id)_scroller;
 - (BOOL)_selectionAtDocumentStart;
@@ -586,7 +616,7 @@
 - (void)_showDataDetectorsSheet;
 - (void)_showDictionary:(id)arg1;
 - (void)_showImageSheet;
-- (void)_showInspectorHighlight:(const struct Highlight { struct Color { unsigned int x_1_1_1; bool x_1_1_2; } x1; struct Color { unsigned int x_2_1_1; bool x_2_1_2; } x2; struct Color { unsigned int x_3_1_1; bool x_3_1_2; } x3; struct Color { unsigned int x_4_1_1; bool x_4_1_2; } x4; struct Color { unsigned int x_5_1_1; bool x_5_1_2; } x5; int x6; struct Vector<WebCore::FloatQuad, 0, WTF::CrashOnOverflow, 16> { struct FloatQuad {} *x_7_1_1; unsigned int x_7_1_2; unsigned int x_7_1_3; } x7; bool x8; }*)arg1;
+- (void)_showInspectorHighlight:(const struct Highlight { struct Color { union { unsigned long long x_1_2_1; struct ExtendedColor {} *x_1_2_2; } x_1_1_1; } x1; struct Color { union { unsigned long long x_1_2_1; struct ExtendedColor {} *x_1_2_2; } x_2_1_1; } x2; struct Color { union { unsigned long long x_1_2_1; struct ExtendedColor {} *x_1_2_2; } x_3_1_1; } x3; struct Color { union { unsigned long long x_1_2_1; struct ExtendedColor {} *x_1_2_2; } x_4_1_1; } x4; struct Color { union { unsigned long long x_1_2_1; struct ExtendedColor {} *x_1_2_2; } x_5_1_1; } x5; int x6; struct Vector<WebCore::FloatQuad, 0, WTF::CrashOnOverflow, 16> { struct FloatQuad {} *x_7_1_1; unsigned int x_7_1_2; unsigned int x_7_1_3; } x7; bool x8; }*)arg1;
 - (void)_showLinkSheet;
 - (void)_showPlaybackTargetPicker:(BOOL)arg1 fromRect:(const struct IntRect { struct IntPoint { int x_1_1_1; int x_1_1_2; } x1; struct IntSize { int x_2_1_1; int x_2_1_2; } x2; }*)arg2;
 - (void)_showRunOpenPanel:(struct OpenPanelParameters { }*)arg1 resultListener:(struct WebOpenPanelResultListenerProxy { }*)arg2;
@@ -596,13 +626,14 @@
 - (void)_singleTapDidReset:(id)arg1;
 - (void)_singleTapRecognized:(id)arg1;
 - (void)_startAssistingKeyboard;
-- (void)_startAssistingNode:(const struct AssistedNodeInformation { struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_1_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_1_1_2; } x1; struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_2_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_2_1_2; } x2; double x3; double x4; double x5; bool x6; bool x7; bool x8; bool x9; bool x10; bool x11; bool x12; bool x13; bool x14; int x15; int x16; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_17_1_1; } x17; struct Vector<WebKit::OptionItem, 0, WTF::CrashOnOverflow, 16> { struct OptionItem {} *x_18_1_1; unsigned int x_18_1_2; unsigned int x_18_1_3; } x18; int x19; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_20_1_1; } x20; double x21; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_22_1_1; } x22; int x23; }*)arg1 userIsInteracting:(BOOL)arg2 blurPreviousNode:(BOOL)arg3 userObject:(id)arg4;
+- (void)_startAssistingNode:(const struct AssistedNodeInformation { struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_1_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_1_1_2; } x1; struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_2_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_2_1_2; } x2; double x3; double x4; double x5; double x6; bool x7; bool x8; bool x9; bool x10; bool x11; bool x12; bool x13; bool x14; bool x15; int x16; int x17; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_18_1_1; } x18; struct Vector<WebKit::OptionItem, 0, WTF::CrashOnOverflow, 16> { struct OptionItem {} *x_19_1_1; unsigned int x_19_1_2; unsigned int x_19_1_3; } x19; int x20; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_21_1_1; } x21; double x22; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_23_1_1; } x23; int x24; }*)arg1 userIsInteracting:(BOOL)arg2 blurPreviousNode:(BOOL)arg3 userObject:(id)arg4;
 - (void)_stopAssistingKeyboard;
 - (void)_stopAssistingNode;
-- (struct Color { unsigned int x1; bool x2; })_tapHighlightColorForFastClick:(BOOL)arg1;
+- (struct Color { union { unsigned long long x_1_1_1; struct ExtendedColor {} *x_1_1_2; } x1; })_tapHighlightColorForFastClick:(BOOL)arg1;
 - (void)_transliterateChinese:(id)arg1;
 - (void)_twoFingerDoubleTapRecognized:(id)arg1;
 - (void)_twoFingerSingleTapGestureRecognized:(id)arg1;
+- (id)_uiTextSelectionRects;
 - (void)_unregisterPreview;
 - (void)_updateAccessory;
 - (void)_updateChangedSelection;
@@ -617,7 +648,7 @@
 - (unsigned int)_wk_pageCountForPrintFormatter:(id)arg1;
 - (struct CGPDFDocument { }*)_wk_printedDocument;
 - (void)_zoomOutWithOrigin:(struct CGPoint { float x1; float x2; })arg1;
-- (void)_zoomToFocusRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 selectionRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 fontSize:(float)arg3 minimumScale:(double)arg4 maximumScale:(double)arg5 allowScaling:(BOOL)arg6 forceScroll:(BOOL)arg7;
+- (void)_zoomToFocusRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 selectionRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 insideFixed:(BOOL)arg3 fontSize:(float)arg4 minimumScale:(double)arg5 maximumScale:(double)arg6 allowScaling:(BOOL)arg7 forceScroll:(BOOL)arg8;
 - (void)_zoomToInitialScaleWithOrigin:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_zoomToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withOrigin:(struct CGPoint { float x1; float x2; })arg2 fitEntireRect:(BOOL)arg3 minimumScale:(double)arg4 maximumScale:(double)arg5 minimumScrollDistance:(float)arg6;
 - (void)accessibilityRetrieveSpeakSelectionContent;
@@ -634,7 +665,7 @@
 - (void)actionSheetAssistant:(id)arg1 willStartInteractionWithElement:(id)arg2;
 - (void)actionSheetAssistantDidStopInteraction:(id)arg1;
 - (void)applyAutocorrection:(id)arg1 toString:(id)arg2 withCompletionHandler:(id /* block */)arg3;
-- (const struct AssistedNodeInformation { struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_1_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_1_1_2; } x1; struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_2_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_2_1_2; } x2; double x3; double x4; double x5; bool x6; bool x7; bool x8; bool x9; bool x10; bool x11; bool x12; bool x13; bool x14; int x15; int x16; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_17_1_1; } x17; struct Vector<WebKit::OptionItem, 0, WTF::CrashOnOverflow, 16> { struct OptionItem {} *x_18_1_1; unsigned int x_18_1_2; unsigned int x_18_1_3; } x18; int x19; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_20_1_1; } x20; double x21; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_22_1_1; } x22; int x23; }*)assistedNodeInformation;
+- (const struct AssistedNodeInformation { struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_1_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_1_1_2; } x1; struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_2_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_2_1_2; } x2; double x3; double x4; double x5; double x6; bool x7; bool x8; bool x9; bool x10; bool x11; bool x12; bool x13; bool x14; bool x15; int x16; int x17; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_18_1_1; } x18; struct Vector<WebKit::OptionItem, 0, WTF::CrashOnOverflow, 16> { struct OptionItem {} *x_19_1_1; unsigned int x_19_1_2; unsigned int x_19_1_3; } x19; int x20; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_21_1_1; } x21; double x22; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_23_1_1; } x23; int x24; }*)assistedNodeInformation;
 - (struct Vector<WebKit::OptionItem, 0, WTF::CrashOnOverflow, 16> { struct OptionItem {} *x1; unsigned int x2; unsigned int x3; }*)assistedNodeSelectOptions;
 - (const struct WKAutoCorrectionData { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; float x2; unsigned long long x3; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_4_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_4_1_2; } x4; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_5_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_5_1_2; } x5; id /* block */ x6; id /* block */ x7; }*)autocorrectionData;
 - (id)automaticallySelectedOverlay;
@@ -667,20 +698,20 @@
 - (void)didFinishScrolling;
 - (void)didInterruptScrolling;
 - (void)didMoveToWindow;
-- (void)didUpdateVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 unobscuredRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 unobscuredRectInScrollViewCoordinates:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 obscuredInset:(struct CGSize { float x1; float x2; })arg4 scale:(float)arg5 minimumScale:(float)arg6 inStableState:(BOOL)arg7 isChangingObscuredInsetsInteractively:(BOOL)arg8 enclosedInScrollableAncestorView:(BOOL)arg9;
+- (void)didUpdateVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 unobscuredRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 unobscuredRectInScrollViewCoordinates:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 obscuredInset:(struct CGSize { float x1; float x2; })arg4 inputViewBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 scale:(float)arg6 minimumScale:(float)arg7 inStableState:(BOOL)arg8 isChangingObscuredInsetsInteractively:(BOOL)arg9 enclosedInScrollableAncestorView:(BOOL)arg10;
 - (void)didZoomToScale:(float)arg1;
 - (id)endOfDocument;
 - (void)endSelectionChange;
-- (void)ensurePositionInformationIsUpToDate:(struct CGPoint { float x1; float x2; })arg1;
+- (void)ensurePositionInformationIsUpToDate:(struct InteractionInformationRequest { struct IntPoint { int x_1_1_1; int x_1_1_2; } x1; bool x2; bool x3; })arg1;
 - (void)executeEditCommandWithCallback:(id)arg1;
 - (void)fileUploadPanelDidDismiss:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })firstRectForRange:(id)arg1;
 - (id)fontForCaretSelection;
-- (BOOL)forceIPadStyleZoomOnInputFocus;
 - (id)formAccessoryView;
 - (BOOL)gestureRecognizer:(id)arg1 canBePreventedByGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 canPreventGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (BOOL)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (void)handleKeyEvent:(id)arg1;
 - (void)handleKeyWebEvent:(id)arg1;
@@ -728,8 +759,8 @@
 - (id)positionFromPosition:(id)arg1 inDirection:(int)arg2 offset:(int)arg3;
 - (id)positionFromPosition:(id)arg1 offset:(int)arg2;
 - (id)positionFromPosition:(id)arg1 toBoundary:(int)arg2 inDirection:(int)arg3;
-- (const struct InteractionInformationAtPosition { struct IntPoint { int x_1_1_1; int x_1_1_2; } x1; bool x2; bool x3; bool x4; bool x5; bool x6; bool x7; bool x8; bool x9; bool x10; bool x11; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_12_1_1; } x12; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_13_1_1; } x13; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_14_1_1; } x14; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_15_1_1; } x15; struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_16_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_16_1_2; } x16; struct RefPtr<WebKit::ShareableBitmap> { struct ShareableBitmap {} *x_17_1_1; } x17; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_18_1_1; } x18; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_19_1_1; } x19; struct TextIndicatorData { struct FloatRect { struct FloatPoint { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct FloatSize { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_20_1_1; struct FloatRect { struct FloatPoint { float x_1_3_1; float x_1_3_2; } x_2_2_1; struct FloatSize { float x_2_3_1; float x_2_3_2; } x_2_2_2; } x_20_1_2; struct Vector<WebCore::FloatRect, 0, WTF::CrashOnOverflow, 16> { struct FloatRect {} *x_3_2_1; unsigned int x_3_2_2; unsigned int x_3_2_3; } x_20_1_3; float x_20_1_4; struct RefPtr<WebCore::Image> { struct Image {} *x_5_2_1; } x_20_1_5; struct RefPtr<WebCore::Image> { struct Image {} *x_6_2_1; } x_20_1_6; int x_20_1_7; unsigned char x_20_1_8; } x20; }*)positionInformation;
-- (const struct InteractionInformationAtPosition { struct IntPoint { int x_1_1_1; int x_1_1_2; } x1; bool x2; bool x3; bool x4; bool x5; bool x6; bool x7; bool x8; bool x9; bool x10; bool x11; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_12_1_1; } x12; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_13_1_1; } x13; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_14_1_1; } x14; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_15_1_1; } x15; struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_16_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_16_1_2; } x16; struct RefPtr<WebKit::ShareableBitmap> { struct ShareableBitmap {} *x_17_1_1; } x17; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_18_1_1; } x18; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_19_1_1; } x19; struct TextIndicatorData { struct FloatRect { struct FloatPoint { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct FloatSize { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_20_1_1; struct FloatRect { struct FloatPoint { float x_1_3_1; float x_1_3_2; } x_2_2_1; struct FloatSize { float x_2_3_1; float x_2_3_2; } x_2_2_2; } x_20_1_2; struct Vector<WebCore::FloatRect, 0, WTF::CrashOnOverflow, 16> { struct FloatRect {} *x_3_2_1; unsigned int x_3_2_2; unsigned int x_3_2_3; } x_20_1_3; float x_20_1_4; struct RefPtr<WebCore::Image> { struct Image {} *x_5_2_1; } x_20_1_5; struct RefPtr<WebCore::Image> { struct Image {} *x_6_2_1; } x_20_1_6; int x_20_1_7; unsigned char x_20_1_8; } x20; }*)positionInformationForActionSheetAssistant:(id)arg1;
+- (const struct InteractionInformationAtPosition { struct InteractionInformationRequest { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_1_1_1; bool x_1_1_2; bool x_1_1_3; } x1; bool x2; bool x3; bool x4; bool x5; bool x6; bool x7; bool x8; bool x9; bool x10; bool x11; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_12_1_1; } x12; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_13_1_1; } x13; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_14_1_1; } x14; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_15_1_1; } x15; struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_16_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_16_1_2; } x16; struct RefPtr<WebKit::ShareableBitmap> { struct ShareableBitmap {} *x_17_1_1; } x17; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_18_1_1; } x18; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_19_1_1; } x19; }*)positionInformation;
+- (const struct InteractionInformationAtPosition { struct InteractionInformationRequest { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_1_1_1; bool x_1_1_2; bool x_1_1_3; } x1; bool x2; bool x3; bool x4; bool x5; bool x6; bool x7; bool x8; bool x9; bool x10; bool x11; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_12_1_1; } x12; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_13_1_1; } x13; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_14_1_1; } x14; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_15_1_1; } x15; struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_16_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_16_1_2; } x16; struct RefPtr<WebKit::ShareableBitmap> { struct ShareableBitmap {} *x_17_1_1; } x17; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_18_1_1; } x18; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_19_1_1; } x19; }*)positionInformationForActionSheetAssistant:(id)arg1;
 - (id)positionWithinRange:(id)arg1 farthestInDirection:(int)arg2;
 - (id)previousUnperturbedDictationResultBoundaryFromPosition:(id)arg1;
 - (id)rangeEnclosingPosition:(id)arg1 withGranularity:(int)arg2 inDirection:(int)arg3;
@@ -740,16 +771,18 @@
 - (void)replaceRange:(id)arg1 withText:(id)arg2;
 - (void)replaceRangeWithTextWithoutClosingTyping:(id)arg1 replacementText:(id)arg2;
 - (void)replaceText:(id)arg1 withText:(id)arg2;
+- (void)requestAsynchronousPositionInformationUpdate:(struct InteractionInformationRequest { struct IntPoint { int x_1_1_1; int x_1_1_2; } x1; bool x2; bool x3; })arg1;
 - (void)requestAutocorrectionContextWithCompletionHandler:(id /* block */)arg1;
 - (void)requestAutocorrectionRectsForString:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)requestDictationContext:(id /* block */)arg1;
-- (BOOL)requiresAccessoryView:(BOOL)arg1;
+- (BOOL)requiresAccessoryView;
 - (BOOL)requiresKeyEvents;
 - (BOOL)resignFirstResponder;
 - (void)scrollViewWillStartPanOrPinchGesture;
 - (void)select:(id)arg1;
 - (void)selectAll;
 - (void)selectAll:(id)arg1;
+- (void)selectFormAccessoryPickerRow:(int)arg1;
 - (void)selectPositionAtBoundary:(int)arg1 inDirection:(int)arg2 fromPoint:(struct CGPoint { float x1; float x2; })arg3 completionHandler:(id /* block */)arg4;
 - (void)selectPositionAtPoint:(struct CGPoint { float x1; float x2; })arg1 completionHandler:(id /* block */)arg2;
 - (void)selectTextWithGranularity:(int)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 completionHandler:(id /* block */)arg3;
@@ -765,8 +798,8 @@
 - (id)selectionRectsForRange:(id)arg1;
 - (void)setBaseWritingDirection:(int)arg1 forRange:(id)arg2;
 - (void)setBottomBufferHeight:(float)arg1;
-- (void)setForceIPadStyleZoomOnInputFocus:(BOOL)arg1;
 - (void)setInputDelegate:(id)arg1;
+- (BOOL)setIsEditable:(BOOL)arg1;
 - (void)setMarkedText:(id)arg1;
 - (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)setMarkedTextStyle:(id)arg1;
@@ -774,6 +807,7 @@
 - (void)setSelectedTextRange:(id)arg1;
 - (void)setShowingInspectorIndication:(BOOL)arg1;
 - (void)setupInteraction;
+- (BOOL)shouldHideSelectionWhenScrolling;
 - (BOOL)shouldIgnoreWebTouch;
 - (id)supportedPasteboardTypesForCurrentSelection;
 - (void)takeTraitsFrom:(id)arg1;

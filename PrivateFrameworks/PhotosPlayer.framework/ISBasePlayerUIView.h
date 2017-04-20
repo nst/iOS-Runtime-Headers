@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PhotosPlayer.framework/PhotosPlayer
  */
 
-@interface ISBasePlayerUIView : UIView <ISBasePlayerOutput> {
+@interface ISBasePlayerUIView : UIView <ISBasePlayerOutput, ISChangeObserver> {
     UIView * __containerView;
-    ISCrossfadeUIView * __crossfadeView;
     UIImageView * __photoView;
     ISVideoPlayerUIView * __videoView;
     AVAudioSession * _audioSession;
     NSObject<OS_dispatch_queue> * _audioSessionQueue;
+    ISPlayerOutputContent * _content;
     UIView * _customPhotoView;
     ISBasePlayer * _player;
     struct CGPoint { 
@@ -18,7 +18,6 @@
 }
 
 @property (nonatomic, readonly) UIView *_containerView;
-@property (nonatomic, readonly) ISCrossfadeUIView *_crossfadeView;
 @property (nonatomic, readonly) UIImageView *_photoView;
 @property (nonatomic, readonly) ISVideoPlayerUIView *_videoView;
 @property (setter=_setAudioSession:, nonatomic, retain) AVAudioSession *audioSession;
@@ -34,18 +33,22 @@
 
 - (void).cxx_destruct;
 - (id)_containerView;
-- (id)_crossfadeView;
 - (void)_performCommonInitialization;
 - (id)_photoView;
 - (void)_setAudioSession:(id)arg1;
+- (void)_updatePhotoView;
+- (void)_updatePlayerAudioSession;
 - (id)_videoView;
 - (void)applyOutputInfo:(id)arg1 withTransitionOptions:(id)arg2 completion:(id /* block */)arg3;
+- (void)applyScale:(float)arg1 withTransitionOptions:(id)arg2 completion:(id /* block */)arg3;
 - (id)audioSession;
 - (void)audioSessionDidChange;
+- (void)contentDidChange;
 - (id)customPhotoView;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
+- (void)observable:(id)arg1 didChange:(unsigned int)arg2 context:(void*)arg3;
 - (id)player;
 - (void)playerDidChange;
 - (struct CGPoint { float x1; float x2; })scaleAnchorOffset;

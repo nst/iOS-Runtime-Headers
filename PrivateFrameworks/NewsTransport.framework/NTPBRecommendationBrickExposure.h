@@ -3,44 +3,62 @@
  */
 
 @interface NTPBRecommendationBrickExposure : PBCodable <NSCopying> {
+    BOOL  _exposedFromReferredUser;
     NSString * _feedId;
     int  _feedType;
     struct { 
         unsigned int feedType : 1; 
+        unsigned int recommendationBrickType : 1; 
+        unsigned int exposedFromReferredUser : 1; 
     }  _has;
+    int  _recommendationBrickType;
     NSMutableArray * _recommendedFeedIds;
 }
 
+@property (nonatomic) BOOL exposedFromReferredUser;
 @property (nonatomic, retain) NSString *feedId;
 @property (nonatomic) int feedType;
+@property (nonatomic) BOOL hasExposedFromReferredUser;
 @property (nonatomic, readonly) BOOL hasFeedId;
 @property (nonatomic) BOOL hasFeedType;
+@property (nonatomic) BOOL hasRecommendationBrickType;
+@property (nonatomic) int recommendationBrickType;
 @property (nonatomic, retain) NSMutableArray *recommendedFeedIds;
 
 + (Class)recommendedFeedIdsType;
 
 - (void).cxx_destruct;
 - (int)StringAsFeedType:(id)arg1;
+- (int)StringAsRecommendationBrickType:(id)arg1;
 - (void)addRecommendedFeedIds:(id)arg1;
 - (void)clearRecommendedFeedIds;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)exposedFromReferredUser;
 - (id)feedId;
 - (int)feedType;
 - (id)feedTypeAsString:(int)arg1;
+- (BOOL)hasExposedFromReferredUser;
 - (BOOL)hasFeedId;
 - (BOOL)hasFeedType;
+- (BOOL)hasRecommendationBrickType;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (int)recommendationBrickType;
+- (id)recommendationBrickTypeAsString:(int)arg1;
 - (id)recommendedFeedIds;
 - (id)recommendedFeedIdsAtIndex:(unsigned int)arg1;
 - (unsigned int)recommendedFeedIdsCount;
+- (void)setExposedFromReferredUser:(BOOL)arg1;
 - (void)setFeedId:(id)arg1;
 - (void)setFeedType:(int)arg1;
+- (void)setHasExposedFromReferredUser:(BOOL)arg1;
 - (void)setHasFeedType:(BOOL)arg1;
+- (void)setHasRecommendationBrickType:(BOOL)arg1;
+- (void)setRecommendationBrickType:(int)arg1;
 - (void)setRecommendedFeedIds:(id)arg1;
 - (void)writeTo:(id)arg1;
 

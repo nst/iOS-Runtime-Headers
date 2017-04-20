@@ -2,18 +2,14 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKBackFieldTableCell : PKTableViewCell <UITextViewDelegate> {
+@interface PKBackFieldTableCell : PKTableViewCell {
     PKPassField * _field;
     BOOL  _showLinks;
     UITextView * _valueTextView;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) PKPassField *field;
-@property (readonly) unsigned int hash;
 @property (nonatomic) BOOL showLinks;
-@property (readonly) Class superclass;
 
 + (id)_linkColor;
 + (id)_linkTextAttributes;
@@ -33,6 +29,5 @@
 - (void)setShowLinks:(BOOL)arg1;
 - (BOOL)showLinks;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 interaction:(int)arg4;
 
 @end

@@ -14,11 +14,11 @@
     VKCompoundAnimation * _panDecelerationAnimationGroup;
     UIPanGestureRecognizer * _panGestureRecognizer;
     BOOL  _panWithMomentum;
-    _UIDynamicValueAnimation * _pinchDecelerationAnimation;
+    VKDynamicAnimation * _pinchDecelerationAnimation;
     UIPinchGestureRecognizer * _pinchGestureRecognizer;
-    _UIDynamicValueAnimation * _rotationDecelerationAnimation;
+    VKDynamicAnimation * _rotationDecelerationAnimation;
     UIRotationGestureRecognizer * _rotationGestureRecognizer;
-    _UIDynamicValueAnimation * _tiltDecelerationAnimation;
+    VKDynamicAnimation * _tiltDecelerationAnimation;
     MKTiltGestureRecognizer * _tiltGestureRecognizer;
     _MKUserInteractionGestureRecognizer * _touchGestureRecognizer;
     UILongPressGestureRecognizer * _twoFingerLongPressGestureRecognizer;

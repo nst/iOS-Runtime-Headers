@@ -45,6 +45,7 @@
         BOOL acceptsVeryLowQuality; 
         BOOL wantsNonVisibleFaceCompletion; 
     }  _params;
+    NSDate * _ppt_requestStartDate;
     int  _requestID;
 }
 
@@ -59,6 +60,7 @@
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } normalizedFaceCropRect;
 @property (nonatomic, retain) PHObject *originalRequestObject;
 @property (nonatomic, readonly) struct PXFaceTileImageParams { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; unsigned int x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; } params;
+@property (setter=ppt_setRequestStartDate:, nonatomic, copy) NSDate *ppt_requestStartDate;
 @property (nonatomic, readonly) int requestID;
 
 - (void).cxx_destruct;
@@ -75,6 +77,9 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })normalizedFaceCropRect;
 - (id)originalRequestObject;
 - (struct PXFaceTileImageParams { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; unsigned int x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; })params;
+- (void)ppt_reportMeasurementsForImageQuality:(int)arg1;
+- (id)ppt_requestStartDate;
+- (void)ppt_setRequestStartDate:(id)arg1;
 - (int)requestID;
 - (void)setAssetContainingFace:(id)arg1;
 - (void)setCanceled:(BOOL)arg1;

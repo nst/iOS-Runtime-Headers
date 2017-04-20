@@ -50,4 +50,10 @@
 
 - (id)nmr_valueForPotentiallyUndefinedKey:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
+
 @end

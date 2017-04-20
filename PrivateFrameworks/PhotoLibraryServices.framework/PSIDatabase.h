@@ -57,6 +57,7 @@
 - (unsigned long long)_inqUpdateGroupAndPrefixTreeForString:(id)arg1 category:(short)arg2 owningGroupId:(unsigned long long)arg3 shouldUpdateOwningGroupId:(BOOL)arg4;
 - (void)_inqUpdatePrefixTreeWithGroupId:(unsigned long long)arg1 text:(id)arg2;
 - (void)_query:(id)arg1 recursiveAddToGroupResults:(id)arg2 aggregate:(id)arg3 atIndex:(unsigned int)arg4 outOf:(unsigned int)arg5 inGroupArrays:(id)arg6;
+- (void)_safeGetTokensForSearchFromString:(id)arg1 useWildcard:(BOOL)arg2 tokens:(id*)arg3 wildcardTokens:(id*)arg4;
 - (void)addAsset:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)addAssets:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)dealloc;

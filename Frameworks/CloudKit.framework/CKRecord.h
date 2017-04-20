@@ -340,7 +340,7 @@
 - (BOOL)ic_isOwnedByCurrentUser;
 - (id)ic_loggingDescription;
 
-// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
+// Image: /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
 
 - (id)safari_arrayForKey:(id)arg1;
 - (BOOL)safari_boolForKey:(id)arg1;

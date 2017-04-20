@@ -28,6 +28,7 @@
 - (id)appleID;
 - (void)authenticateWithHandler:(id /* block */)arg1;
 - (void)createAppleIDWithParameters:(id)arg1 handler:(id /* block */)arg2;
+- (void)createAppleIDWithParameters:(id)arg1 handlerWithResponse:(id /* block */)arg2;
 - (void)dealloc;
 - (void)downloadURLConfiguration:(id /* block */)arg1;
 - (id)emailChoice;

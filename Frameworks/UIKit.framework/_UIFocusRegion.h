@@ -25,13 +25,15 @@
 @property (getter=_originalRegion, setter=_setOriginRegion:, nonatomic, retain) _UIFocusRegion *originalRegion;
 @property (readonly) Class superclass;
 
++ (id)__regionsByEvaluatingOcclusionsForBaseRegions:(id)arg1 occludingRegions:(id)arg2 baseRegionsCanOccludeEachOther:(BOOL)arg3;
 + (id)_regionsByEvaluatingOcclusionsForRegions:(id)arg1;
-+ (id)_regionsByEvaluatingOcclusionsForRegions:(id)arg1 beneathRegions:(id)arg2;
-+ (id)_regionsByOccludingRegions:(id)arg1 withRegions:(id)arg2;
++ (id)_regionsByOccludingRegions:(id)arg1 beneathRegions:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_addOccludingRegion:(id)arg1;
 - (unsigned int)_boundariesBlockingFocusMovement:(id)arg1;
+- (BOOL)_canBeOccludedByRegionsAbove;
+- (BOOL)_canOccludeRegionsBelow;
 - (id)_defaultFocusItem;
 - (id)_destinationItemForFocusMovement:(id)arg1 inMap:(id)arg2;
 - (void)_didParticipateAsDestinationRegionInFocusUpdate:(id)arg1;
@@ -47,10 +49,8 @@
 - (void)_setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setMutableOccludingRegions:(id)arg1;
 - (void)_setOriginRegion:(id)arg1;
-- (BOOL)_shouldBeOccludedByRegion:(id)arg1;
 - (BOOL)_shouldCropRegionToSearchArea;
 - (BOOL)_shouldDrawDebugQuickLookImageWithInfo:(id)arg1;
-- (BOOL)_shouldOccludeRegion:(id)arg1;
 - (id)_subregionWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 occludedByRegion:(id)arg2;
 - (id)_visibleSubregionsWhenOccludedByRegion:(id)arg1;
 - (void)_willParticipateAsDestinationRegionInFocusUpdate:(id)arg1;

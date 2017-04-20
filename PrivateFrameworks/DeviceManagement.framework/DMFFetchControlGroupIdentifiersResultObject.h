@@ -14,6 +14,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)groupIdentifiers;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithGroupIdentifiers:(id)arg1;
 - (void)setGroupIdentifiers:(id)arg1;
 
 @end

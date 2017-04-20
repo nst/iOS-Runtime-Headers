@@ -6,7 +6,6 @@
     float  _currentValue;
     float  _elastic;
     float  _friction;
-    double  _lastTime;
     float  _oldForce;
     float  _tension;
     float  _velocity;
@@ -20,7 +19,6 @@
 
 + (id)functionWithTension:(float)arg1 friction:(float)arg2 initialValue:(float)arg3;
 
-- (void)_update;
 - (float)friction;
 - (id)init;
 - (float)input;
@@ -28,6 +26,7 @@
 - (void)setFriction:(float)arg1;
 - (void)setInput:(float)arg1;
 - (void)setTension:(float)arg1;
+- (void)step;
 - (float)tension;
 - (float)velocity;
 

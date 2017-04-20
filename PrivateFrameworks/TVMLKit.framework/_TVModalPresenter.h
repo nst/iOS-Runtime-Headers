@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
  */
 
-@interface _TVModalPresenter : NSObject <UIGestureRecognizerDelegate, UINavigationControllerDelegate, UIViewControllerTransitioningDelegate> {
-    _TVModalPresentationAnimator * _dismissingAnimator;
+@interface _TVModalPresenter : NSObject <UIGestureRecognizerDelegate, UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate, UIViewControllerTransitioningDelegate> {
+    _UIProgressiveBlurPresentationAnimator * _dismissingAnimator;
     UINavigationController * _modalRootViewController;
-    _TVModalPresentationAnimator * _presentingAnimator;
+    _UIProgressiveBlurPresentationAnimator * _presentingAnimator;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -30,6 +30,7 @@
 - (id)init;
 - (id)modalRootViewController;
 - (unsigned int)navigationControllerSupportedInterfaceOrientations:(id)arg1;
+- (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;
 - (id)presentedViewController;
 - (void)showController:(id)arg1 fromController:(id)arg2 withCompletionBlock:(id /* block */)arg3;

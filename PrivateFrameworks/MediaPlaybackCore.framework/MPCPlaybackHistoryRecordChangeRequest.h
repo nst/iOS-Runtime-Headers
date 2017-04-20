@@ -4,26 +4,26 @@
 
 @interface MPCPlaybackHistoryRecordChangeRequest : NSObject <NSCopying> {
     BOOL  _allowsStoreContainerImport;
+    MPModelGenericObject * _itemGenericObject;
     MPModelPlayEvent * _playEvent;
     int  _repeatType;
-    MPModelSong * _song;
 }
 
 @property (nonatomic) BOOL allowsStoreContainerImport;
+@property (nonatomic, retain) MPModelGenericObject *itemGenericObject;
 @property (nonatomic, retain) MPModelPlayEvent *playEvent;
 @property (nonatomic) int repeatType;
-@property (nonatomic, retain) MPModelSong *song;
 
 - (void).cxx_destruct;
 - (BOOL)allowsStoreContainerImport;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)itemGenericObject;
 - (id)newOperationWithResponseHandler:(id /* block */)arg1;
 - (id)playEvent;
 - (int)repeatType;
 - (void)setAllowsStoreContainerImport:(BOOL)arg1;
+- (void)setItemGenericObject:(id)arg1;
 - (void)setPlayEvent:(id)arg1;
 - (void)setRepeatType:(int)arg1;
-- (void)setSong:(id)arg1;
-- (id)song;
 
 @end

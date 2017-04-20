@@ -2,9 +2,18 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUIInlineCardSectionsTableViewCell : SearchUITableViewCell
+@interface SearchUIInlineCardSectionsTableViewCell : SearchUITableViewCell {
+    UIView * _container;
+}
 
+@property (retain) UIView *container;
+
+- (void).cxx_destruct;
+- (id)container;
 - (id)initWithResult:(id)arg1 style:(unsigned int)arg2 feedbackDelegate:(id)arg3;
+- (void)layoutSubviews;
+- (void)setContainer:(id)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)supportsRecycling;
 
 @end

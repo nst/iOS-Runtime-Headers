@@ -11,17 +11,19 @@
         float right; 
     }  _contentInset;
     LPiTunesPlaybackInformation * _playbackInformation;
+    LPMusicPlayButtonStyle * _style;
 }
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)initWithPlaybackInformation:(id)arg1;
+- (id)initWithPlaybackInformation:(id)arg1 style:(id)arg2;
 - (void)installPlaceholderButton;
 - (void)installPreviewButton;
 - (void)installiTunesButton;
 - (void)layoutComponentView;
 - (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)updateButton;
+- (void)updateButtonForPodcast;
 - (void)updateButtonForRadio;
 - (void)updateButtonForSongOrAlbum;
 

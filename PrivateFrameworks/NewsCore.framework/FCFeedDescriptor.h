@@ -6,6 +6,7 @@
     <FCContentContext> * _context;
     int  _feedType;
     NSString * _identifier;
+    NSArray * _otherArticleIDs;
 }
 
 @property (nonatomic, readonly) NSString *backingChannelID;
@@ -33,6 +34,7 @@
 @property (nonatomic, readonly) BOOL isSubscribable;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly, copy) NSArray *offlineFeedGroupEmitters;
+@property (nonatomic, retain) NSArray *otherArticleIDs;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) <FCFeedTheming> *theme;
 
@@ -67,17 +69,22 @@
 - (id)init;
 - (id)initWithIdentifier:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isMutedWithSubscriptionController:(id)arg1;
 - (BOOL)isSubscribable;
 - (BOOL)isSubscribedToWithSubscriptionController:(id)arg1;
 - (id)latestHeadlineResultsWithContext:(id)arg1;
 - (id)name;
 - (id)offlineFeedGroupEmitters;
+- (id)otherArticleIDs;
+- (void)prepareToFilterFeedGroupEmittersWithCallbackQueue:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setContext:(id)arg1;
 - (void)setFeedType:(int)arg1;
+- (void)setOtherArticleIDs:(id)arg1;
+- (BOOL)shouldFilterFeedGroupEmitter:(id)arg1;
 - (id)streamOfHeadlinesWithIDs:(id)arg1 context:(id)arg2 cachedOnly:(BOOL)arg3 maxCachedAge:(double)arg4;
 - (id)streamOfLatestHeadlinesWithContext:(id)arg1;
-- (BOOL)subscribeToWithSubscriptionController:(id)arg1 error:(id*)arg2;
+- (BOOL)subscribeToWithSubscriptionController:(id)arg1 eventInitiationLevel:(int)arg2 error:(id*)arg3;
 - (id)theme;
-- (void)unsubscribeToWithSubscriptionController:(id)arg1;
+- (void)unsubscribeToWithSubscriptionController:(id)arg1 eventInitiationLevel:(int)arg2;
 
 @end

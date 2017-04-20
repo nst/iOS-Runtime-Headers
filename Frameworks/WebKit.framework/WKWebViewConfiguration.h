@@ -28,19 +28,22 @@
             void *m_ptr; 
         } m_value; 
     }  _contentProviderRegistry;
+    BOOL  _controlledByAutomation;
     BOOL  _convertsPositionStyleOnCopy;
     unsigned int  _dataDetectorTypes;
     struct RetainPtr<NSString> { 
         void *m_ptr; 
     }  _groupIdentifier;
     BOOL  _ignoresViewportScaleLimits;
-    float  _incrementalRenderingSuppressionTimeout;
+    double  _incrementalRenderingSuppressionTimeout;
     BOOL  _initialCapitalizationEnabled;
     BOOL  _inlineMediaPlaybackRequiresPlaysInlineAttribute;
     BOOL  _invisibleAutoplayNotPermitted;
     BOOL  _mainContentUserGestureOverrideEnabled;
     BOOL  _mediaDataLoadsAutomatically;
     unsigned int  _mediaTypesRequiringUserActionForPlayback;
+    BOOL  _needsStorageAccessFromFileURLsQuirk;
+    NSString * _overrideContentSecurityPolicy;
     struct LazyInitialized<WTF::RetainPtr<WKPreferences> > { 
         bool m_isInitialized; 
         struct RetainPtr<WKPreferences> { 
@@ -73,6 +76,7 @@
             void *m_ptr; 
         } m_value; 
     }  _visitedLinkStore;
+    BOOL  _waitsForPaintAfterViewDidMoveToWindow;
     struct LazyInitialized<WTF::RetainPtr<WKWebsiteDataStore> > { 
         bool m_isInitialized; 
         struct RetainPtr<WKWebsiteDataStore> { 
@@ -90,22 +94,25 @@
 @property (setter=_setApplePayEnabled:, nonatomic) BOOL _applePayEnabled;
 @property (setter=_setAttachmentElementEnabled:, nonatomic) BOOL _attachmentElementEnabled;
 @property (setter=_setContentProviderRegistry:, nonatomic) WKWebViewContentProviderRegistry *_contentProviderRegistry;
+@property (getter=_isControlledByAutomation, setter=_setControlledByAutomation:, nonatomic) BOOL _controlledByAutomation;
 @property (setter=_setConvertsPositionStyleOnCopy:, nonatomic) BOOL _convertsPositionStyleOnCopy;
 @property (setter=_setGroupIdentifier:, nonatomic, copy) NSString *_groupIdentifier;
-@property (setter=_setIncrementalRenderingSuppressionTimeout:, nonatomic) float _incrementalRenderingSuppressionTimeout;
+@property (setter=_setIncrementalRenderingSuppressionTimeout:, nonatomic) double _incrementalRenderingSuppressionTimeout;
 @property (setter=_setInitialCapitalizationEnabled:, nonatomic) BOOL _initialCapitalizationEnabled;
 @property (setter=_setInlineMediaPlaybackRequiresPlaysInlineAttribute:, nonatomic) BOOL _inlineMediaPlaybackRequiresPlaysInlineAttribute;
 @property (setter=_setInvisibleAutoplayNotPermitted:, nonatomic) BOOL _invisibleAutoplayNotPermitted;
 @property (setter=_setMainContentUserGestureOverrideEnabled:, nonatomic) BOOL _mainContentUserGestureOverrideEnabled;
 @property (setter=_setMediaDataLoadsAutomatically:, nonatomic) BOOL _mediaDataLoadsAutomatically;
+@property (setter=_setNeedsStorageAccessFromFileURLsQuirk:, nonatomic) BOOL _needsStorageAccessFromFileURLsQuirk;
+@property (setter=_setOverrideContentSecurityPolicy:, nonatomic) NSString *_overrideContentSecurityPolicy;
 @property (setter=_setPrintsBackgrounds:, nonatomic) BOOL _printsBackgrounds;
 @property (setter=_setRelatedWebView:, nonatomic) WKWebView *_relatedWebView;
 @property (setter=_setRequiresUserActionForAudioPlayback:, nonatomic) BOOL _requiresUserActionForAudioPlayback;
 @property (setter=_setRequiresUserActionForVideoPlayback:, nonatomic) BOOL _requiresUserActionForVideoPlayback;
 @property (setter=_setRespectsImageOrientation:, nonatomic) BOOL _respectsImageOrientation;
 @property (setter=_setTreatsSHA1SignedCertificatesAsInsecure:, nonatomic) BOOL _treatsSHA1SignedCertificatesAsInsecure;
-@property (setter=_setVisitedLinkProvider:, nonatomic, retain) _WKVisitedLinkProvider *_visitedLinkProvider;
 @property (setter=_setVisitedLinkStore:, nonatomic, retain) _WKVisitedLinkStore *_visitedLinkStore;
+@property (setter=_setWaitsForPaintAfterViewDidMoveToWindow:, nonatomic) BOOL _waitsForPaintAfterViewDidMoveToWindow;
 @property (setter=_setWebsiteDataStore:, nonatomic, retain) _WKWebsiteDataStore *_websiteDataStore;
 @property (nonatomic) BOOL allowsAirPlayForMediaPlayback;
 @property (nonatomic) BOOL allowsInlineMediaPlayback;
@@ -124,6 +131,8 @@
 @property (nonatomic, retain) WKUserContentController *userContentController;
 @property (nonatomic, retain) WKWebsiteDataStore *websiteDataStore;
 
+// Image: /System/Library/Frameworks/WebKit.framework/WebKit
+
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (BOOL)_allowUniversalAccessFromFileURLs;
@@ -137,12 +146,15 @@
 - (id)_contentProviderRegistry;
 - (BOOL)_convertsPositionStyleOnCopy;
 - (id)_groupIdentifier;
-- (float)_incrementalRenderingSuppressionTimeout;
+- (double)_incrementalRenderingSuppressionTimeout;
 - (BOOL)_initialCapitalizationEnabled;
 - (BOOL)_inlineMediaPlaybackRequiresPlaysInlineAttribute;
 - (BOOL)_invisibleAutoplayNotPermitted;
+- (BOOL)_isControlledByAutomation;
 - (BOOL)_mainContentUserGestureOverrideEnabled;
 - (BOOL)_mediaDataLoadsAutomatically;
+- (BOOL)_needsStorageAccessFromFileURLsQuirk;
+- (id)_overrideContentSecurityPolicy;
 - (BOOL)_printsBackgrounds;
 - (id)_relatedWebView;
 - (BOOL)_requiresUserActionForAudioPlayback;
@@ -157,14 +169,17 @@
 - (void)_setApplePayEnabled:(BOOL)arg1;
 - (void)_setAttachmentElementEnabled:(BOOL)arg1;
 - (void)_setContentProviderRegistry:(id)arg1;
+- (void)_setControlledByAutomation:(BOOL)arg1;
 - (void)_setConvertsPositionStyleOnCopy:(BOOL)arg1;
 - (void)_setGroupIdentifier:(id)arg1;
-- (void)_setIncrementalRenderingSuppressionTimeout:(float)arg1;
+- (void)_setIncrementalRenderingSuppressionTimeout:(double)arg1;
 - (void)_setInitialCapitalizationEnabled:(BOOL)arg1;
 - (void)_setInlineMediaPlaybackRequiresPlaysInlineAttribute:(BOOL)arg1;
 - (void)_setInvisibleAutoplayNotPermitted:(BOOL)arg1;
 - (void)_setMainContentUserGestureOverrideEnabled:(BOOL)arg1;
 - (void)_setMediaDataLoadsAutomatically:(BOOL)arg1;
+- (void)_setNeedsStorageAccessFromFileURLsQuirk:(BOOL)arg1;
+- (void)_setOverrideContentSecurityPolicy:(id)arg1;
 - (void)_setPrintsBackgrounds:(BOOL)arg1;
 - (void)_setRelatedWebView:(id)arg1;
 - (void)_setRequiresUserActionForAudioPlayback:(BOOL)arg1;
@@ -173,11 +188,13 @@
 - (void)_setTreatsSHA1SignedCertificatesAsInsecure:(BOOL)arg1;
 - (void)_setVisitedLinkProvider:(id)arg1;
 - (void)_setVisitedLinkStore:(id)arg1;
+- (void)_setWaitsForPaintAfterViewDidMoveToWindow:(BOOL)arg1;
 - (void)_setWebsiteDataStore:(id)arg1;
 - (BOOL)_treatsSHA1SignedCertificatesAsInsecure;
 - (void)_validate;
 - (id)_visitedLinkProvider;
 - (id)_visitedLinkStore;
+- (BOOL)_waitsForPaintAfterViewDidMoveToWindow;
 - (id)_websiteDataStore;
 - (BOOL)allowsAirPlayForMediaPlayback;
 - (BOOL)allowsInlineMediaPlayback;
@@ -216,5 +233,11 @@
 - (BOOL)suppressesIncrementalRendering;
 - (id)userContentController;
 - (id)websiteDataStore;
+
+// Image: /System/Library/Frameworks/iAd.framework/iAd
+
++ (id)advertisingConfiguration;
++ (id)configurationWithBackgroundPriority:(BOOL)arg1;
++ (id)sharedAdvertisingConfigurationWithBackgroundPriority;
 
 @end

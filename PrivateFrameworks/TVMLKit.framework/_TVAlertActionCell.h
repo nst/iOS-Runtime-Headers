@@ -10,7 +10,6 @@
 
 - (void).cxx_destruct;
 - (id)buttonView;
-- (void)didUpdateFocusFromView:(id)arg1;
 - (id)preferredFocusEnvironments;
 - (void)prepareForReuse;
 - (void)setButtonView:(id)arg1;

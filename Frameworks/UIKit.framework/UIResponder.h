@@ -241,6 +241,7 @@
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)pressesChanged:(id)arg1 withEvent:(id)arg2;
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
+- (id)recentsAccessoryView;
 - (void)reloadInputViews;
 - (void)reloadInputViewsWithoutReset;
 - (void)remoteControlReceivedWithEvent:(id)arg1;

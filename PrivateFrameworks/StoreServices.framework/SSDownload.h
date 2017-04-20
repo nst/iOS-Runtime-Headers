@@ -10,6 +10,7 @@
 }
 
 @property (getter=_XPCConnection, readonly) SSXPCConnection *_XPCConnection;
+@property (readonly) NSDictionary *_localAssets;
 @property (nonatomic, retain) NSArray *assets;
 @property (getter=isCancelable, readonly) BOOL cancelable;
 @property (readonly, copy) NSString *debugDescription;
@@ -37,6 +38,7 @@
 - (id)_errorWithData:(id)arg1;
 - (id)_errorWithXPCReply:(id)arg1;
 - (id)_initWithLocalPropertyValues:(id)arg1;
+- (id)_localAssets;
 - (id)_newAssetWithURL:(id)arg1 assetType:(id)arg2;
 - (void)_resetLocalIVars;
 - (void)_resetStatus;

@@ -10,6 +10,7 @@
     UILabel * _instructionsLabel;
     HFItem * _item;
     HUGridCellLayoutOptions * _layoutOptions;
+    HUChevronButton * _storeButton;
 }
 
 @property (nonatomic, retain) HUColoredButton *addAccessoryButton;
@@ -23,14 +24,15 @@
 @property (nonatomic, retain) HFItem *item;
 @property (nonatomic, retain) HUGridCellLayoutOptions *layoutOptions;
 @property (getter=isRearranging, nonatomic) BOOL rearranging;
+@property (nonatomic, retain) HUChevronButton *storeButton;
 @property (readonly) Class superclass;
 
-+ (float)instructionsLabelBaselineToButtonConstant;
 + (Class)layoutOptionsClass;
 + (BOOL)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
 - (void)_addNewAccessory:(id)arg1;
+- (void)_openStore:(id)arg1;
 - (void)_setupCommonCellAppearance;
 - (id)addAccessoryButton;
 - (BOOL)areCellContentsHidden;
@@ -51,6 +53,8 @@
 - (void)setInstructionsLabel:(id)arg1;
 - (void)setItem:(id)arg1;
 - (void)setLayoutOptions:(id)arg1;
+- (void)setStoreButton:(id)arg1;
+- (id)storeButton;
 - (void)tintColorDidChange;
 - (void)updateConstraints;
 - (void)updateUIWithAnimation:(BOOL)arg1;

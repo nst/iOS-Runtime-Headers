@@ -5,7 +5,7 @@
 @interface ASTAssetConnection : NSObject <ASTDownloadConnection> {
     NSString * _assetName;
     <ASTConnectionStatusDelegate> * _delegate;
-    NSURL * _destinationFileURL;
+    NSFileHandle * _destinationFileHandle;
     id /* block */  _didDownloadFile;
     id /* block */  _didReceiveResponse;
     int  _networkDisconnectedRetryCount;
@@ -20,7 +20,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <ASTConnectionStatusDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) NSURL *destinationFileURL;
+@property (nonatomic, readonly) NSFileHandle *destinationFileHandle;
 @property (nonatomic, copy) id /* block */ didDownloadFile;
 @property (nonatomic, copy) id /* block */ didReceiveResponse;
 @property (readonly) unsigned int hash;
@@ -35,11 +35,11 @@
 - (void).cxx_destruct;
 - (id)assetName;
 - (id)delegate;
-- (id)destinationFileURL;
+- (id)destinationFileHandle;
 - (id /* block */)didDownloadFile;
 - (id /* block */)didReceiveResponse;
 - (id)generateRequest;
-- (id)initWithAssetName:(id)arg1 destinationFileURL:(id)arg2 sessionId:(id)arg3;
+- (id)initWithAssetName:(id)arg1 destinationFileHandle:(id)arg2 sessionId:(id)arg3;
 - (int)networkDisconnectedRetryCount;
 - (id)request;
 - (BOOL)retryOnNetworkDisconnected;

@@ -8,7 +8,6 @@
     _LSLazyPropertyList * __environmentVariables;
     _LSLazyPropertyList * __groupContainers;
     _LSLazyPropertyList * __infoDictionary;
-    NSURL * _appStoreReceiptURL;
     NSString * _bundleExecutable;
     unsigned long long  _bundleFlags;
     NSString * _bundleType;
@@ -30,7 +29,7 @@
 @property (setter=_setEnvironmentVariables:, nonatomic, copy) _LSLazyPropertyList *_environmentVariables;
 @property (setter=_setGroupContainers:, nonatomic, copy) _LSLazyPropertyList *_groupContainers;
 @property (setter=_setInfoDictionary:, nonatomic, copy) _LSLazyPropertyList *_infoDictionary;
-@property (nonatomic, copy) NSURL *appStoreReceiptURL;
+@property (nonatomic, readonly) NSURL *appStoreReceiptURL;
 @property (nonatomic, readonly) NSURL *bundleContainerURL;
 @property (nonatomic, readonly) NSString *bundleExecutable;
 @property (nonatomic, readonly) NSString *bundleIdentifier;
@@ -38,6 +37,7 @@
 @property (nonatomic, readonly) NSURL *bundleURL;
 @property (nonatomic, readonly) NSString *bundleVersion;
 @property (nonatomic, readonly) NSUUID *cacheGUID;
+@property (nonatomic, readonly) NSString *canonicalExecutablePath;
 @property (nonatomic, readonly) NSURL *containerURL;
 @property (nonatomic, readonly) NSURL *dataContainerURL;
 @property (nonatomic, readonly) NSDictionary *entitlements;
@@ -81,12 +81,14 @@
 - (id)bundleURL;
 - (id)bundleVersion;
 - (id)cacheGUID;
+- (id)canonicalExecutablePath;
 - (id)containerURL;
 - (id)dataContainerURL;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)entitlementValueForKey:(id)arg1 ofClass:(Class)arg2;
 - (id)entitlementValueForKey:(id)arg1 ofClass:(Class)arg2 valuesOfClass:(Class)arg3;
+- (id)entitlementValuesForKeys:(id)arg1;
 - (id)entitlements;
 - (id)environmentVariables;
 - (BOOL)foundBackingBundle;
@@ -96,12 +98,13 @@
 - (BOOL)isContainerized;
 - (BOOL)isEqual:(id)arg1;
 - (id)localizedShortName;
+- (id)localizedValuesForKeys:(id)arg1 fromTable:(id)arg2;
 - (id)machOUUIDs;
 - (id)objectForInfoDictionaryKey:(id)arg1 ofClass:(Class)arg2;
 - (id)objectForInfoDictionaryKey:(id)arg1 ofClass:(Class)arg2 valuesOfClass:(Class)arg3;
+- (id)objectsForInfoDictionaryKeys:(id)arg1;
 - (BOOL)profileValidated;
 - (unsigned int)sequenceNumber;
-- (void)setAppStoreReceiptURL:(id)arg1;
 - (void)setLocalizedShortName:(id)arg1;
 - (void)setMachOUUIDs:(id)arg1;
 - (void)setPropertyListCachingStrategy:(unsigned int)arg1;

@@ -5,8 +5,10 @@
 @interface CKAsset : NSObject <CKRecordValue, NSSecureCoding> {
     NSString * _UUID;
     int  _arrayIndex;
+    NSDictionary * _assetChunkerOptions;
     NSData * _assetContent;
     NSData * _assetKey;
+    CKAssetTransferOptions * _assetTransferOptions;
     NSData * _authRequest;
     NSString * _authToken;
     NSURL * _contentBaseURL;
@@ -41,9 +43,11 @@
 
 @property (nonatomic, retain) NSString *UUID;
 @property (nonatomic) int arrayIndex;
+@property (nonatomic, retain) NSDictionary *assetChunkerOptions;
 @property (nonatomic, copy) NSData *assetContent;
 @property (nonatomic, readonly) NSString *assetHandleUUID;
 @property (nonatomic, retain) NSData *assetKey;
+@property (nonatomic, retain) CKAssetTransferOptions *assetTransferOptions;
 @property (nonatomic, copy) NSData *authRequest;
 @property (nonatomic, copy) NSString *authToken;
 @property (nonatomic, retain) NSURL *contentBaseURL;
@@ -93,9 +97,11 @@
 - (id)UUID;
 - (id)_initBare;
 - (int)arrayIndex;
+- (id)assetChunkerOptions;
 - (id)assetContent;
 - (id)assetHandleUUID;
 - (id)assetKey;
+- (id)assetTransferOptions;
 - (id)authRequest;
 - (id)authToken;
 - (id)contentBaseURL;
@@ -127,8 +133,10 @@
 - (id)referenceSignature;
 - (id)requestor;
 - (void)setArrayIndex:(int)arg1;
+- (void)setAssetChunkerOptions:(id)arg1;
 - (void)setAssetContent:(id)arg1;
 - (void)setAssetKey:(id)arg1;
+- (void)setAssetTransferOptions:(id)arg1;
 - (void)setAuthRequest:(id)arg1;
 - (void)setAuthToken:(id)arg1;
 - (void)setContentBaseURL:(id)arg1;

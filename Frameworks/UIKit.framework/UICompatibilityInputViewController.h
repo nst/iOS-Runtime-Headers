@@ -8,6 +8,7 @@
     double  _incomingExtensionInputModeTime;
     UIViewController * _inputController;
     UIKeyboardInputMode * _inputMode;
+    NSArray * _internalEdgeMatchConstraints;
     double  _lastSuspendedTime;
     double  _resetInputModeTime;
     BOOL  _shouldRegenerateSizingConstraints;
@@ -18,6 +19,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIViewController *inputController;
+@property (nonatomic, retain) NSArray *internalEdgeMatchConstraints;
 @property (readonly) Class superclass;
 
 + (BOOL)_requiresProxyInterface;
@@ -44,6 +46,7 @@
 - (void)finishSplitTransition:(BOOL)arg1;
 - (void)generateCompatibleSizeConstraintsIfNecessary;
 - (id)inputController;
+- (id)internalEdgeMatchConstraints;
 - (void)keyboardWillChangeFromDelegate:(id)arg1 toDelegate:(id)arg2;
 - (void)killIncomingExtension;
 - (void)loadView;
@@ -54,6 +57,7 @@
 - (void)resetInputModeInMainThread;
 - (void)setInputController:(id)arg1;
 - (void)setInputMode:(id)arg1;
+- (void)setInternalEdgeMatchConstraints:(id)arg1;
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;
 - (BOOL)shouldAutomaticallyForwardRotationMethods;
 - (void)shouldUpdateInputMode:(id)arg1;

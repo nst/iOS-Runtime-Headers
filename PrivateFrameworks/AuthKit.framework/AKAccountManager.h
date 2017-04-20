@@ -25,6 +25,7 @@
 - (void)_removeTokenForKeys:(id)arg1 forAccount:(id)arg2;
 - (void)_removeTokenKey:(id)arg1 forAccount:(id)arg2;
 - (id)_tokenWithName:(id)arg1 forAccount:(id)arg2;
+- (id)activeServiceNamesForAccount:(id)arg1;
 - (id)aliasesForAccount:(id)arg1;
 - (id)allAuthKitAccounts;
 - (id)altDSIDForAccount:(id)arg1;
@@ -59,6 +60,7 @@
 - (void)setSecurityLevel:(unsigned int)arg1 forAccount:(id)arg2;
 - (void)setStore:(id)arg1;
 - (id)store;
+- (id)stringRepresentationForService:(int)arg1;
 - (id)transportableAuthKitAccount:(id)arg1;
 
 @end

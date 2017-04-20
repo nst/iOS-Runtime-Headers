@@ -14,6 +14,8 @@
 @property (nonatomic) unsigned int triggerEvent;
 @property (nonatomic, retain) NSString *uuid;
 
+// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
+
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -30,5 +32,11 @@
 - (void)setUuid:(id)arg1;
 - (unsigned int)triggerEvent;
 - (id)uuid;
+
+// Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
+
++ (Class)protobufClass;
+
+- (id)protobufMessage;
 
 @end

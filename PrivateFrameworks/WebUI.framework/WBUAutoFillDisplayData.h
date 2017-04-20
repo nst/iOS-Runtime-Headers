@@ -3,33 +3,22 @@
  */
 
 @interface WBUAutoFillDisplayData : NSObject {
-    CNContact * _contact;
     NSArray * _fillMatches;
     NSString * _label;
-    NSArray * _skipMatches;
 }
 
-@property (nonatomic, readonly) CNContact *contact;
-@property (nonatomic, readonly) NSString *displayString;
 @property (nonatomic, readonly, copy) NSArray *fillMatches;
-@property (nonatomic, readonly) NSString *headerString;
 @property (nonatomic, retain) NSString *label;
-@property (nonatomic, readonly, copy) NSArray *skipMatches;
+@property (nonatomic, readonly) NSString *property;
 @property (nonatomic, readonly) NSString *valueString;
-@property (nonatomic, readonly) NSString *valueWithLabelString;
 
 - (void).cxx_destruct;
 - (id)addressStringForLabel:(id)arg1;
-- (id)contact;
-- (id)displayString;
-- (id)fillAndSkipString;
 - (id)fillMatches;
-- (id)headerString;
-- (id)initWithLabel:(id)arg1 contact:(id)arg2 fillMatches:(id)arg3 skipMatches:(id)arg4;
+- (id)initWithLabel:(id)arg1 fillMatches:(id)arg2;
 - (id)label;
+- (id)property;
 - (void)setLabel:(id)arg1;
-- (id)skipMatches;
 - (id)valueString;
-- (id)valueWithLabelString;
 
 @end

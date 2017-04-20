@@ -22,6 +22,7 @@
 
 - (void).cxx_destruct;
 - (void)_addPassbookPassWithURL:(id)arg1;
+- (void)_handleSafariScriptDataUpdate:(id)arg1;
 - (id)_newHTMLViewControllerWithSection:(id)arg1;
 - (void)_performLookupWithURL:(id)arg1;
 - (void)_presentViewController:(id)arg1;

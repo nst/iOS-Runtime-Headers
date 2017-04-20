@@ -106,7 +106,7 @@
 - (id)previousParticipantOrFirstKnownPlayer;
 - (void)rematchWithCompletionHandler:(id /* block */)arg1;
 - (void)removeWithCompletionHandler:(id /* block */)arg1;
-- (void)reserveShareParticipantSlots:(int)arg1 andInvitePlayers:(id)arg2 withMessage:(id)arg3 handler:(id /* block */)arg4;
+- (void)reserveShareParticipantSlots:(int)arg1 minPlayerCount:(int)arg2 maxPlayerCount:(int)arg3 andInvitePlayers:(id)arg4 withMessage:(id)arg5 handler:(id /* block */)arg6;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (void)saveCurrentTurnWithMatchData:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)saveMergedMatchData:(id)arg1 withResolvedExchanges:(id)arg2 completionHandler:(id /* block */)arg3;

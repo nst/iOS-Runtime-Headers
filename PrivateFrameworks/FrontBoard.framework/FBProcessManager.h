@@ -2,21 +2,20 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@interface FBProcessManager : NSObject <FBApplicationProcessDelegate, FBApplicationProcessObserver, FBUIProcessManagerInternal> {
+@interface FBProcessManager : NSObject <FBApplicationProcessDelegate, FBUIProcessManagerInternal> {
     FBApplicationLibrary * _appLibrary;
     NSObject<OS_dispatch_queue> * _callOutQueue;
     FBApplicationProcessWatchdogPolicy * _defaultWatchdogPolicy;
     FBApplicationProcess * _foregroundAppProcess;
     NSHashTable * _observers;
     FBApplicationProcess * _preferredForegroundAppProcess;
+    NSMutableSet * _preventIdleSleepReasons;
     NSMapTable * _processesByBundleID;
     NSMapTable * _processesByPID;
     NSObject<OS_dispatch_queue> * _processesQueue;
     NSObject<OS_dispatch_queue> * _queue;
     FBApplicationProcess * _systemAppProcess;
     BKSProcessAssertion * _systemAppProcessAssertion;
-    int  _workspaceLocked;
-    int  _workspaceLockedToken;
     NSMutableDictionary * _workspacesByClientIdentity;
 }
 
@@ -28,7 +27,6 @@
 
 + (id)sharedInstance;
 
-- (BOOL)_isWorkspaceLocked;
 - (id)_processesQueue_processForPID:(int)arg1;
 - (id)_processesQueue_processesForBundleIdentifier:(id)arg1;
 - (void)_queue_addProcess:(id)arg1 completion:(id /* block */)arg2;
@@ -37,12 +35,11 @@
 - (void)_queue_removeProcess:(id)arg1 withBundleID:(id)arg2 pid:(int)arg3;
 - (id)_serviceClientAddedWithProcessHandle:(id)arg1;
 - (void)_setPreferredForegroundApplicationProcess:(id)arg1;
-- (void)_updateWorkspaceLockedState;
+- (void)_setSystemIdleSleepDisabled:(BOOL)arg1 forReason:(id)arg2;
 - (void)addObserver:(id)arg1;
 - (id)allApplicationProcesses;
 - (id)allProcesses;
 - (id)applicationProcessForPID:(int)arg1;
-- (void)applicationProcessWillLaunch:(id)arg1;
 - (id)applicationProcessesForBundleIdentifier:(id)arg1;
 - (id)createApplicationProcessForBundleID:(id)arg1;
 - (id)createApplicationProcessForBundleID:(id)arg1 withExecutionContext:(id)arg2;

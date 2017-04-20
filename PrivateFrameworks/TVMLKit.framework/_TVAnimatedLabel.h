@@ -6,6 +6,7 @@
     BOOL  _animating;
     NSArray * _attributedStrings;
     double  _crossfadeDuration;
+    BOOL  _crossfading;
     unsigned int  _currentAttributedStringIndex;
     __TVAnimatedImageView * _currentMarqueeView;
     double  _marqueeDelay;
@@ -36,6 +37,7 @@
 - (void).cxx_destruct;
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;
 - (void)_applicationWillResignActiveNotification:(id)arg1;
+- (void)_clearAnimations;
 - (void)_clearAttributedStrings;
 - (void)_clearLabelTextContents;
 - (id)_imageForText:(BOOL)arg1;

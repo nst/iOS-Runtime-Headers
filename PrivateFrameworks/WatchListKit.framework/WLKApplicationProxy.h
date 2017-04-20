@@ -4,8 +4,8 @@
 
 @interface WLKApplicationProxy : NSObject {
     NSString * _bundleIdentifier;
-    NSDictionary * _entitlements;
     BOOL  _isBetaApp;
+    BOOL  _isEntitled;
     BOOL  _isSystemApp;
     NSString * _localizedName;
     BOOL  _supportsTVApp;
@@ -13,8 +13,8 @@
 }
 
 @property (nonatomic, readonly, copy) NSString *bundleIdentifier;
-@property (nonatomic, readonly, copy) NSDictionary *entitlements;
 @property (nonatomic, readonly) BOOL isBetaApp;
+@property (nonatomic, readonly) BOOL isEntitled;
 @property (nonatomic, readonly) BOOL isSystemApp;
 @property (nonatomic, readonly, copy) NSString *localizedName;
 @property (nonatomic, readonly) BOOL supportsTVApp;
@@ -23,8 +23,8 @@
 - (void).cxx_destruct;
 - (id)_initWithDictionary:(id)arg1;
 - (id)bundleIdentifier;
-- (id)entitlements;
 - (BOOL)isBetaApp;
+- (BOOL)isEntitled;
 - (BOOL)isSystemApp;
 - (id)localizedName;
 - (BOOL)supportsTVApp;

@@ -9,6 +9,7 @@
 @property (nonatomic) struct __SecTask { }*currentTask;
 
 + (id)currentProcessInfo;
++ (BOOL)isSandboxed;
 
 - (BOOL)boolValueForEntitlement:(id)arg1;
 - (struct __SecTask { }*)currentTask;

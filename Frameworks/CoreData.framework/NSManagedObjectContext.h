@@ -37,7 +37,8 @@
         unsigned int _deleteInaccessible : 1; 
         unsigned int _priority : 2; 
         unsigned int _autoMerge : 1; 
-        unsigned int _reservedFlags : 6; 
+        unsigned int _pushSecureDelete : 1; 
+        unsigned int _reservedFlags : 5; 
     }  _flags;
     int  _ignoreChangeNotification;
     id  _infoByGID;
@@ -77,6 +78,7 @@
 @property (nonatomic, readonly) NSSet *registeredObjects;
 @property (nonatomic) BOOL retainsRegisteredObjects;
 @property BOOL shouldDeleteInaccessibleFaults;
+@property (nonatomic) BOOL shouldPerformSecureOperation;
 @property double stalenessInterval;
 @property (nonatomic, retain) NSUndoManager *undoManager;
 @property (nonatomic, readonly) NSSet *updatedObjects;
@@ -94,6 +96,7 @@
 + (void)mergeChangesFromRemoteContextSave:(id)arg1 intoContexts:(id)arg2;
 + (id)new;
 
+- (void)_addObjectIDsUpdatedByTriggers:(id)arg1;
 - (id)_allOrderKeysForDestination:(id)arg1 inRelationship:(id)arg2 error:(id*)arg3;
 - (BOOL)_attemptCoalesceChangesForFetch;
 - (void)_automaticallyMergeChangesFromContextDidSaveNotification:(id)arg1;
@@ -319,10 +322,12 @@
 - (BOOL)setQueryGenerationFromToken:(id)arg1 error:(id*)arg2;
 - (void)setRetainsRegisteredObjects:(BOOL)arg1;
 - (void)setShouldDeleteInaccessibleFaults:(BOOL)arg1;
+- (void)setShouldPerformSecureOperation:(BOOL)arg1;
 - (void)setStalenessInterval:(double)arg1;
 - (void)setUndoManager:(id)arg1;
 - (BOOL)shouldDeleteInaccessibleFaults;
 - (BOOL)shouldHandleInaccessibleFault:(id)arg1 forObjectID:(id)arg2 triggeredByProperty:(id)arg3;
+- (BOOL)shouldPerformSecureOperation;
 - (double)stalenessInterval;
 - (BOOL)tryLock;
 - (void)undo;

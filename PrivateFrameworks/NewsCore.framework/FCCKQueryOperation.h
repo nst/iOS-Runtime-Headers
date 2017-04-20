@@ -6,6 +6,7 @@
     CKQueryCursor * _cursor;
     FCCKDatabase * _database;
     NSArray * _desiredKeys;
+    int  _networkEventType;
     NSArray * _networkEvents;
     CKQuery * _query;
     id /* block */  _queryCompletionBlock;
@@ -18,6 +19,7 @@
 @property (nonatomic, retain) CKQueryCursor *cursor;
 @property (nonatomic, retain) FCCKDatabase *database;
 @property (nonatomic, copy) NSArray *desiredKeys;
+@property (nonatomic) int networkEventType;
 @property (nonatomic, copy) NSArray *networkEvents;
 @property (nonatomic, retain) CKQuery *query;
 @property (nonatomic, copy) id /* block */ queryCompletionBlock;
@@ -34,6 +36,7 @@
 - (id)database;
 - (id)desiredKeys;
 - (id)init;
+- (int)networkEventType;
 - (id)networkEvents;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
@@ -46,6 +49,7 @@
 - (void)setCursor:(id)arg1;
 - (void)setDatabase:(id)arg1;
 - (void)setDesiredKeys:(id)arg1;
+- (void)setNetworkEventType:(int)arg1;
 - (void)setNetworkEvents:(id)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setQueryCompletionBlock:(id /* block */)arg1;

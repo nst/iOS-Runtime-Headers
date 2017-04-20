@@ -76,7 +76,6 @@
 + (void)willParseDOMElement:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_propagateUpdateType:(unsigned int)arg1;
 - (void)_resetUpdates;
 - (void)_setAppDocument:(id)arg1;
 - (void)_updateSubtreeWithElement:(id)arg1;
@@ -99,6 +98,7 @@
 - (BOOL)didUpdateAutoHighlightIdentifier;
 - (void)dispatchEvent:(id)arg1 eventAttribute:(id)arg2 canBubble:(BOOL)arg3 isCancelable:(BOOL)arg4 extraInfo:(id)arg5 completionBlock:(id /* block */)arg6;
 - (void)dispatchEventOfType:(unsigned int)arg1 canBubble:(BOOL)arg2 isCancelable:(BOOL)arg3 extraInfo:(id)arg4 completionBlock:(id /* block */)arg5;
+- (void)disperseUpdateType:(unsigned int)arg1;
 - (id)elementID;
 - (id)elementName;
 - (unsigned int)elementType;
@@ -116,6 +116,7 @@
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)parent;
 - (id)parentStyleableElement;
+- (void)propagateUpdateType:(unsigned int)arg1;
 - (id)prototypesByType;
 - (BOOL)prototypesUpdated;
 - (void)resetProperty:(unsigned int)arg1;
@@ -131,18 +132,12 @@
 - (void)setParent:(id)arg1;
 - (void)setStyleComposer:(id)arg1;
 - (void)setUpdateType:(unsigned int)arg1;
-- (void)setViewElementUpdateType:(unsigned int)arg1;
 - (BOOL)shouldResolveDataForDOMBindingController:(id)arg1;
 - (id)style;
 - (id)styleComposer;
 - (id)unfilteredChildren;
 - (id)unfilteredChildrenChangeset;
 - (unsigned int)updateType;
-
-// Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
-
-- (unsigned int)vs_elementType;
-- (id)vs_itemElementsOfType:(unsigned int)arg1;
 
 // Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
 
@@ -154,5 +149,10 @@
 - (id)tv_associatedViewElement;
 - (id)tv_associatedViewElementWithDefaultClass:(Class)arg1;
 - (unsigned int)tv_elementType;
+
+// Image: /System/Library/PrivateFrameworks/VideoSubscriberAccountUI.framework/VideoSubscriberAccountUI
+
+- (unsigned int)vs_elementType;
+- (id)vs_itemElementsOfType:(unsigned int)arg1;
 
 @end

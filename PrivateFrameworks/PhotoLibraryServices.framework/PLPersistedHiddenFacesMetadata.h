@@ -12,14 +12,12 @@
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain) NSURL *metadataURL;
 
-+ (BOOL)_isHiddenFaceMetadataExtension:(id)arg1;
 + (id)hiddenFacesToArchiveInManagedObjectContext:(id)arg1;
-+ (BOOL)isHiddenFaceMetadataPath:(id)arg1;
 + (BOOL)isValidPath:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_metadataData;
-- (void)_readMetadata;
+- (BOOL)_readMetadata;
 - (void)_saveMetadata;
 - (id)description;
 - (id)hiddenFaces;

@@ -3,10 +3,15 @@
  */
 
 @interface _INPBStartVideoCallIntentResponse : PBCodable <NSCopying> {
+    _INPBCallMetrics * _metrics;
     PBUnknownFields * _unknownFields;
 }
 
+@property (nonatomic, readonly) BOOL hasMetrics;
+@property (nonatomic, retain) _INPBCallMetrics *metrics;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
+
+// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -14,11 +19,20 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasMetrics;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (id)metrics;
 - (BOOL)readFrom:(id)arg1;
+- (void)setMetrics:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

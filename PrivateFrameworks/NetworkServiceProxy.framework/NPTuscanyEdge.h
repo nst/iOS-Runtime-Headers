@@ -3,33 +3,41 @@
  */
 
 @interface NPTuscanyEdge : NSObject <NSSecureCoding> {
+    NPNetworkInfo * _currentNWInfo;
     int  _currentOnRampIndex;
+    NWParameters * _currentParameters;
     BOOL  _dayPassPending;
     double  _distance;
     unsigned int  _index;
     NSString * _label;
+    NSDate * _lastUsed;
     NPLocation * _location;
     NSString * _name;
     NSArray * _onRamps;
     id /* block */  _probeCompletionHandler;
     NWTCPConnection * _probeConnection;
-    NPTunnelTuscanyEndpoint * _probeEndpoint;
+    NWEndpoint * _probeEndpoint;
+    BOOL  _probePending;
     NSObject<OS_dispatch_source> * _probeTimer;
 }
 
+@property (retain) NPNetworkInfo *currentNWInfo;
 @property (readonly) NPTuscanyOnRamp *currentOnRamp;
 @property int currentOnRampIndex;
+@property (retain) NWParameters *currentParameters;
 @property BOOL dayPassPending;
 @property double distance;
 @property unsigned int index;
 @property (readonly) NSString *label;
+@property (retain) NSDate *lastUsed;
 @property (readonly) NPLocation *location;
 @property (readonly) NSString *name;
 @property (readonly) int nextOnRampIndex;
 @property (readonly) NSArray *onRamps;
 @property (copy) id /* block */ probeCompletionHandler;
 @property (retain) NWTCPConnection *probeConnection;
-@property (readonly) NPTunnelTuscanyEndpoint *probeEndpoint;
+@property (readonly) NWEndpoint *probeEndpoint;
+@property BOOL probePending;
 @property (retain) NSObject<OS_dispatch_source> *probeTimer;
 
 + (BOOL)supportsSecureCoding;
@@ -37,20 +45,24 @@
 - (void).cxx_destruct;
 - (void)cancelLatencyMeasurement;
 - (int)compareByDistance:(id)arg1;
+- (id)currentNWInfo;
 - (id)currentOnRamp;
 - (int)currentOnRampIndex;
+- (id)currentParameters;
 - (BOOL)dayPassPending;
 - (id)description;
 - (double)distance;
 - (void)encodeWithCoder:(id)arg1;
 - (id)getOnRamp:(int)arg1;
+- (id)hasValidDayPass;
 - (unsigned int)index;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLabel:(id)arg1 name:(id)arg2 index:(unsigned int)arg3 onRamps:(id)arg4 probeEndpoint:(id)arg5 location:(id)arg6;
 - (BOOL)isEqual:(id)arg1;
 - (id)label;
+- (id)lastUsed;
 - (id)location;
-- (void)measureLatency:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)measureLatency:(id)arg1 withNPNetworkInfo:(id)arg2 probeTFO:(BOOL)arg3 probeNoTFOCookie:(BOOL)arg4 withCompletionHandler:(id /* block */)arg5;
 - (id)name;
 - (int)nextIndexWithCurrentIndex:(int)arg1 bound:(int)arg2;
 - (int)nextOnRampIndex;
@@ -60,14 +72,21 @@
 - (id /* block */)probeCompletionHandler;
 - (id)probeConnection;
 - (id)probeEndpoint;
+- (BOOL)probePending;
 - (id)probeTimer;
 - (void)replaceOnRampAtIndex:(unsigned int)arg1 withOnRamp:(id)arg2;
+- (void)retainValidDayPassesFromEdge:(id)arg1;
+- (void)setCurrentNWInfo:(id)arg1;
 - (void)setCurrentOnRampIndex:(int)arg1;
+- (void)setCurrentParameters:(id)arg1;
 - (void)setDayPassPending:(BOOL)arg1;
 - (void)setDistance:(double)arg1;
 - (void)setIndex:(unsigned int)arg1;
+- (void)setLastUsed:(id)arg1;
 - (void)setProbeCompletionHandler:(id /* block */)arg1;
 - (void)setProbeConnection:(id)arg1;
+- (void)setProbePending:(BOOL)arg1;
 - (void)setProbeTimer:(id)arg1;
+- (void)tfoFailed:(id)arg1;
 
 @end

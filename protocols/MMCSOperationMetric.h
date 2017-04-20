@@ -15,6 +15,7 @@
 - (<MMCSOperationStateTimeRange> *)newRangeWithOperationState:(unsigned int)arg1 startDate:(NSDate *)arg2 duration:(double)arg3;
 - (double)queueing;
 - (NSArray *)rangesCopy;
+- (NSMutableSet *)requestUUIDs;
 - (void)setBytesDownloaded:(unsigned int)arg1;
 - (void)setBytesUploaded:(unsigned int)arg1;
 - (void)setConnections:(unsigned int)arg1;

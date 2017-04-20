@@ -12,7 +12,7 @@
     BOOL  _isLocallyCacheable;
     BOOL  _isZipStreamable;
     NSNumber * _numberOfBytesToHash;
-    NSArray * _sinfs;
+    NSData * _sinfs;
     NSString * _variantID;
 }
 
@@ -25,7 +25,7 @@
 @property (nonatomic) BOOL isLocallyCacheable;
 @property (nonatomic) BOOL isZipStreamable;
 @property (nonatomic, copy) NSNumber *numberOfBytesToHash;
-@property (nonatomic, copy) NSArray *sinfs;
+@property (nonatomic, copy) NSData *sinfs;
 @property (nonatomic, copy) NSString *variantID;
 
 + (BOOL)supportsSecureCoding;

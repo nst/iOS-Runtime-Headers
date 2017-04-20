@@ -17,6 +17,9 @@
     void * internally_retained_object;
     unsigned int  is_custom_resolver;
     unsigned int  local_only;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  lock;
     NSObject<OS_nw_parameters> * parameters;
     NSObject<OS_dispatch_source> * query_timer;
     BOOL  resolver_activity;

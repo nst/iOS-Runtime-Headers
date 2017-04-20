@@ -24,7 +24,7 @@
 - (id)queue;
 - (void)queue_activateRemoteAlertForHandle:(id)arg1 withContext:(id)arg2;
 - (void)queue_invalidateRemoteAlertForHandle:(id)arg1;
-- (void)queue_lookupHandlesForRemoteAlertWithConfiguration:(id)arg1 creatingIfNone:(BOOL)arg2 withCompletion:(id /* block */)arg3;
-- (id)queue_newHandleForRemoteAlertWithConfiguration:(id)arg1;
+- (void)queue_lookupHandlesForRemoteAlertWithDefinition:(id)arg1 creatingIfNone:(BOOL)arg2 withCompletion:(id /* block */)arg3;
+- (id)queue_newHandleForRemoteAlertWithDefinition:(id)arg1 context:(id)arg2;
 
 @end

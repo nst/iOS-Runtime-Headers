@@ -15,6 +15,7 @@
     int  _externalScreenType;
     BOOL  _hasExternalScreenType;
     BOOL  _hasVolumeControlInfoForPickedRoute;
+    MPAVRoute * _legacyCachedRoute;
     NSString * _name;
     MPAVRoute * _pendingPickedRoute;
     BOOL  _pickedRouteHasVolumeControl;

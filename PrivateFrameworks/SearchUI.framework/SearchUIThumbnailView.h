@@ -12,8 +12,11 @@
 @property (retain) UIView *overlayPlayButton;
 @property (retain) SFSearchResult *result;
 
++ (id)suggestedQueryIcon;
+
 - (void).cxx_destruct;
-- (id)appIconForResult:(id)arg1;
+- (void)appIconImageDidChange:(id)arg1;
+- (void)dealloc;
 - (id)imageView;
 - (id)initWithStyle:(unsigned int)arg1;
 - (void)layoutSubviews;

@@ -4,6 +4,7 @@
 
 @interface FBApplicationDefaults : NSObject {
     int  _backgroundStyle;
+    BOOL  _canChangeBackgroundStyle;
     int  _interfaceOrientation;
     NSString * _launchImageFile;
     BOOL  _statusBarHidden;
@@ -12,6 +13,7 @@
 }
 
 @property (nonatomic) int backgroundStyle;
+@property (nonatomic) BOOL canChangeBackgroundStyle;
 @property (nonatomic) int interfaceOrientation;
 @property (nonatomic, copy) NSString *launchImageFile;
 @property (nonatomic) BOOL statusBarHidden;
@@ -19,11 +21,13 @@
 @property (nonatomic) int statusBarStyle;
 
 - (int)backgroundStyle;
+- (BOOL)canChangeBackgroundStyle;
 - (void)dealloc;
 - (id)init;
 - (int)interfaceOrientation;
 - (id)launchImageFile;
 - (void)setBackgroundStyle:(int)arg1;
+- (void)setCanChangeBackgroundStyle:(BOOL)arg1;
 - (void)setInterfaceOrientation:(int)arg1;
 - (void)setLaunchImageFile:(id)arg1;
 - (void)setStatusBarHidden:(BOOL)arg1;

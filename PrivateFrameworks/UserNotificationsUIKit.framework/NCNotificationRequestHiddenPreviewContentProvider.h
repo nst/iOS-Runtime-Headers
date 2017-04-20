@@ -8,7 +8,7 @@
     NSString * _topic;
 }
 
-@property (nonatomic, readonly, retain) NSMutableArray *coalescedNotificationRequests;
+@property (nonatomic, retain) NSMutableArray *coalescedNotificationRequests;
 @property (getter=isDeviceAuthenticated, nonatomic) BOOL deviceAuthenticated;
 @property (nonatomic, copy) NSString *topic;
 
@@ -22,7 +22,9 @@
 - (id)interfaceActions;
 - (BOOL)isDeviceAuthenticated;
 - (id)primarySubtitleText;
+- (void)removeCoalescedNotificationRequest:(id)arg1;
 - (id)secondaryText;
+- (void)setCoalescedNotificationRequests:(id)arg1;
 - (void)setDeviceAuthenticated:(BOOL)arg1;
 - (void)setTopic:(id)arg1;
 - (id)thumbnail;

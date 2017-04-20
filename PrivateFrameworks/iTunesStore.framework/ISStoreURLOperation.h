@@ -15,6 +15,7 @@
     BOOL  _needsTermsAndConditionsAcceptance;
     BOOL  _needsURLBag;
     SSVFairPlaySAPSession * _sapSession;
+    BOOL  _shouldSendDSIDHeader;
     BOOL  _shouldSendXTokenHeader;
     BOOL  _urlKnownToBeTrusted;
     BOOL  _useUserSpecificURLBag;
@@ -37,6 +38,7 @@
 @property BOOL needsTermsAndConditionsAcceptance;
 @property BOOL needsURLBag;
 @property BOOL performsMachineDataActions;
+@property BOOL shouldSendDSIDHeader;
 @property BOOL shouldSendXTokenHeader;
 @property (readonly) Class superclass;
 @property BOOL urlKnownToBeTrusted;
@@ -101,11 +103,13 @@
 - (void)setNeedsURLBag:(BOOL)arg1;
 - (void)setPerformsMachineDataActions:(BOOL)arg1;
 - (void)setSAPSession:(id)arg1;
+- (void)setShouldSendDSIDHeader:(BOOL)arg1;
 - (void)setShouldSendXTokenHeader:(BOOL)arg1;
 - (void)setURLBagRequest:(BOOL)arg1;
 - (void)setUrlKnownToBeTrusted:(BOOL)arg1;
 - (void)setUseUserSpecificURLBag:(BOOL)arg1;
 - (BOOL)shouldFollowRedirectWithRequest:(id)arg1 returningError:(id*)arg2;
+- (BOOL)shouldSendDSIDHeader;
 - (BOOL)shouldSendXTokenHeader;
 - (BOOL)urlKnownToBeTrusted;
 - (BOOL)useUserSpecificURLBag;

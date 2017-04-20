@@ -10,6 +10,8 @@
 @property (nonatomic) BOOL needsNetwork;
 @property (nonatomic, copy) NSSet *unauthenticatedAccountServices;
 
++ (BOOL)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)_stringFromAccountServices:(id)arg1;
 - (id)description;

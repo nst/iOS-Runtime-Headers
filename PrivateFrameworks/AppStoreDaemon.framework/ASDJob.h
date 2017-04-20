@@ -4,7 +4,9 @@
 
 @interface ASDJob : NSObject <NSCopying, NSSecureCoding> {
     NSString * _bundleID;
+    NSNumber * _externalOrderKey;
     NSError * _failureError;
+    NSNumber * _orderKey;
     double  _percentComplete;
     long long  _persistentID;
     int  _phase;
@@ -14,7 +16,9 @@
 }
 
 @property (nonatomic, copy) NSString *bundleID;
+@property (nonatomic, copy) NSNumber *externalOrderKey;
 @property (nonatomic, copy) NSError *failureError;
+@property (nonatomic, copy) NSNumber *orderKey;
 @property (nonatomic) double percentComplete;
 @property (nonatomic) long long persistentID;
 @property (nonatomic) int phase;
@@ -29,18 +33,22 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (id)externalOrderKey;
 - (id)failureError;
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPersistentID:(long long)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (id)orderKey;
 - (double)percentComplete;
 - (long long)persistentID;
 - (int)phase;
 - (long long)purchaseID;
 - (void)setBundleID:(id)arg1;
+- (void)setExternalOrderKey:(id)arg1;
 - (void)setFailureError:(id)arg1;
+- (void)setOrderKey:(id)arg1;
 - (void)setPercentComplete:(double)arg1;
 - (void)setPersistentID:(long long)arg1;
 - (void)setPhase:(int)arg1;

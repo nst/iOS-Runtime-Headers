@@ -16,6 +16,8 @@
 @property (nonatomic, readonly) _HKAchievementPredicateDatesEnvironment *dates;
 @property (nonatomic, readonly) _HKAchievementPredicateWorkoutsEnvironment *workouts;
 
++ (id)pairedWatchCountryCode;
+
 - (void).cxx_destruct;
 - (id)activityData;
 - (id)currentCountryCode;

@@ -30,6 +30,7 @@
 - (unsigned int)runScript:(id)arg1 results:(id*)arg2 lastStatus:(unsigned int*)arg3;
 - (void)setDelegate:(id)arg1;
 - (BOOL)startPolling;
+- (BOOL)startPollingForTechnology:(unsigned int)arg1;
 - (BOOL)stopPolling;
 - (id)transceive:(id)arg1;
 

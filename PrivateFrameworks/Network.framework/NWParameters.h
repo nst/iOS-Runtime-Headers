@@ -20,6 +20,7 @@
 @property (nonatomic) BOOL enableHWChecksum;
 @property (nonatomic) BOOL enableSFO;
 @property (nonatomic) BOOL enableTFO;
+@property (nonatomic) BOOL enableTFONoCookie;
 @property (nonatomic) BOOL enableTLS;
 @property (nonatomic) BOOL enableTLSSessionTicket;
 @property double fallbackTimeout;
@@ -87,6 +88,7 @@
 - (BOOL)enableHWChecksum;
 - (BOOL)enableSFO;
 - (BOOL)enableTFO;
+- (BOOL)enableTFONoCookie;
 - (BOOL)enableTLS;
 - (BOOL)enableTLSSessionTicket;
 - (void)encodeWithCoder:(id)arg1;
@@ -96,6 +98,7 @@
 - (BOOL)hasPreferredNetworkAgents;
 - (BOOL)hasProhibitedNetworkAgents;
 - (BOOL)hasRequiredNetworkAgents;
+- (unsigned int)hash;
 - (BOOL)indefinite;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -152,6 +155,7 @@
 - (void)setEnableHWChecksum:(BOOL)arg1;
 - (void)setEnableSFO:(BOOL)arg1;
 - (void)setEnableTFO:(BOOL)arg1;
+- (void)setEnableTFONoCookie:(BOOL)arg1;
 - (void)setEnableTLS:(BOOL)arg1;
 - (void)setEnableTLSSessionTicket:(BOOL)arg1;
 - (void)setIndefinite:(BOOL)arg1;

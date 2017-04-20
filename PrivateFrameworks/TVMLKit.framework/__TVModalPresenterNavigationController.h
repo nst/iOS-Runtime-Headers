@@ -3,6 +3,7 @@
  */
 
 @interface __TVModalPresenterNavigationController : UINavigationController <UIGestureRecognizerDelegate, _TVModalPresenterFocusing> {
+    id /* block */  _dismissalBlock;
     BOOL  _isModalNavVisisble;
     NSMapTable * _popCompletionBlocks;
     NSArray * _previousViewControllers;
@@ -12,6 +13,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, copy) id /* block */ dismissalBlock;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly, copy) NSArray *preferredFocusEnvironments;
 @property (nonatomic, readonly) UIView *preferredFocusedView;
@@ -22,6 +24,7 @@
 - (void)_dismissForLastViewController;
 - (void)_dismissForLastViewController:(BOOL)arg1;
 - (void)didShowViewController:(id)arg1 animated:(BOOL)arg2;
+- (id /* block */)dismissalBlock;
 - (id)initWithRootViewController:(id)arg1;
 - (id)popViewControllerAnimated:(BOOL)arg1;
 - (void)popViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
@@ -29,9 +32,13 @@
 - (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)pushViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)reset;
+- (void)setDismissalBlock:(id /* block */)arg1;
 - (void)setPreviousViewControllers:(id)arg1;
 - (BOOL)shouldAutorotate;
 - (void)updatePreferredFocusedViewStateForFocus:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 
 @end

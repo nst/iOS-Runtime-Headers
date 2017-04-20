@@ -19,6 +19,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_applicationIconChanged:(id)arg1;
 - (id)_bulletinsPerSectionIdForNotificationRequests:(id)arg1;
 - (id)_sectionInfoForBulletin:(id)arg1;
 - (id)bulletinFeeds;

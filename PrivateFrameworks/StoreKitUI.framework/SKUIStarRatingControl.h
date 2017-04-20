@@ -18,6 +18,8 @@
 @property (nonatomic) int userRating;
 
 - (void).cxx_destruct;
+- (float)_unfilledStarsMinX;
+- (float)_unfilledStarsWidth;
 - (void)_updateUserRatingWithTouch:(id)arg1;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;

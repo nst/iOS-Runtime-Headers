@@ -37,6 +37,7 @@
 - (id)_init;
 - (BOOL)_isAppleWatch;
 - (BOOL)_isApplication;
+- (BOOL)_isHidden;
 - (BOOL)_isLocalDevice;
 - (BOOL)_isPreferredSource;
 - (unsigned long long)_options;

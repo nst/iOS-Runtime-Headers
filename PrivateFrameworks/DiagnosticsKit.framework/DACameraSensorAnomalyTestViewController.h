@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/DiagnosticsKit.framework/DiagnosticsKit
  */
 
-@interface DACameraSensorAnomalyTestViewController : DATestViewController <DACameraSensorAnomalyTargetViewDelegate, UIGestureRecognizerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate> {
+@interface DACameraSensorAnomalyTestViewController : DATestViewController <AVCapturePhotoCaptureDelegate, DACameraSensorAnomalyTargetViewDelegate, UIGestureRecognizerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate> {
     CBAdaptationClient * _adaptationClient;
     NSMutableArray * _allResults;
     CBBlueLightClient * _blueLightClient;
     BOOL  _blueLightStatusActive;
     UIView * _bottomBar;
-    BOOL  _cameraPickerVisible;
-    UIImagePickerController * _cameraViewController;
     CBClient * _client;
     BOOL  _colorAdaptationStatus;
     UIButton * _continueButton;
@@ -20,6 +18,7 @@
     BOOL  _drawingMode;
     BOOL  _enableMaxBrightness;
     BOOL  _flashModeOn;
+    NSString * _identifier;
     UIScrollView * _imageScrollView;
     float  _minimumSquareLength;
     struct CGPoint { 
@@ -27,9 +26,10 @@
         float y; 
     }  _originPoint;
     float  _originalScreenBrightness;
+    AVCapturePhotoOutput * _output;
     DACameraSensorAnomalyTargetView * _overlayView;
     UIPanGestureRecognizer * _panGesture;
-    BOOL  _presentedCameraPicker;
+    UIView * _previewView;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -41,6 +41,7 @@
         } size; 
     }  _rectangle;
     UIButton * _retakeButton;
+    AVCaptureSession * _session;
     UITapGestureRecognizer * _tapGesture;
     UIButton * _usePhotoButton;
     NSString * _viewfinderInstruction;
@@ -51,8 +52,6 @@
 @property (nonatomic, retain) CBBlueLightClient *blueLightClient;
 @property (nonatomic) BOOL blueLightStatusActive;
 @property (nonatomic, retain) UIView *bottomBar;
-@property (nonatomic) BOOL cameraPickerVisible;
-@property (nonatomic, retain) UIImagePickerController *cameraViewController;
 @property (nonatomic, retain) CBClient *client;
 @property (nonatomic) BOOL colorAdaptationStatus;
 @property (nonatomic, retain) UIButton *continueButton;
@@ -66,15 +65,18 @@
 @property (nonatomic) BOOL enableMaxBrightness;
 @property (nonatomic) BOOL flashModeOn;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) UIScrollView *imageScrollView;
 @property (nonatomic) float minimumSquareLength;
 @property (nonatomic) struct CGPoint { float x1; float x2; } originPoint;
 @property (nonatomic) float originalScreenBrightness;
+@property (nonatomic, retain) AVCapturePhotoOutput *output;
 @property (nonatomic, retain) DACameraSensorAnomalyTargetView *overlayView;
 @property (nonatomic, retain) UIPanGestureRecognizer *panGesture;
-@property (nonatomic) BOOL presentedCameraPicker;
+@property (nonatomic, retain) UIView *previewView;
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rectangle;
 @property (nonatomic, retain) UIButton *retakeButton;
+@property (nonatomic, retain) AVCaptureSession *session;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UITapGestureRecognizer *tapGesture;
 @property (nonatomic, retain) UIButton *usePhotoButton;
@@ -89,10 +91,9 @@
 - (id)blueLightClient;
 - (BOOL)blueLightStatusActive;
 - (id)bottomBar;
-- (BOOL)cameraPickerVisible;
-- (id)cameraViewController;
 - (void)cancelTapped;
 - (void)cancelTest;
+- (void)captureOutput:(id)arg1 didFinishProcessingPhotoSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2 previewPhotoSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg3 resolvedSettings:(id)arg4 bracketSettings:(id)arg5 error:(id)arg6;
 - (void)cleanUp;
 - (id)client;
 - (BOOL)colorAdaptationStatus;
@@ -102,47 +103,43 @@
 - (int)currentTag;
 - (void)disableAdaptationAndBlueLightReduction;
 - (BOOL)disableAmbientLightAdaptation;
-- (void)disableCameraPinchToZoomPanGesture;
-- (void)dismissCameraView;
 - (id)drawColor;
 - (BOOL)drawingMode;
 - (BOOL)enableMaxBrightness;
 - (void)endTestWithStatusCode:(id)arg1;
+- (id)findDevice:(id)arg1;
 - (BOOL)flashModeOn;
-- (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
+- (void)hideCameraView;
+- (id)identifier;
 - (id)imageScrollView;
 - (id)initWithTest:(id)arg1 fullScreen:(BOOL)arg2;
 - (float)minimumSquareLength;
 - (struct CGPoint { float x1; float x2; })originPoint;
 - (float)originalScreenBrightness;
+- (id)output;
 - (id)overlayView;
 - (id)panGesture;
 - (void)panOccurred:(id)arg1;
-- (BOOL)parameterize:(id)arg1;
 - (void)parseResults;
 - (int)preferredInterfaceOrientationForPresentation;
-- (void)presentCameraView;
-- (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
-- (BOOL)presentedCameraPicker;
+- (id)previewView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectangle;
 - (void)removeDrawingModeViews;
 - (void)removeResultWithTag:(int)arg1;
 - (void)removeShape:(id)arg1;
 - (void)resetBrightness;
 - (void)resetColorAdjustmentStates;
-- (void)resetIdleTimerDisabled;
 - (id)retakeButton;
 - (void)retakeButtonPressed:(id)arg1;
 - (void)saveAndMaximizeBrightness;
 - (void)saveColorAdjustmentStates;
 - (void)scrollViewDidZoom:(id)arg1;
+- (id)session;
 - (void)setAdaptationClient:(id)arg1;
 - (void)setAllResults:(id)arg1;
 - (void)setBlueLightClient:(id)arg1;
 - (void)setBlueLightStatusActive:(BOOL)arg1;
 - (void)setBottomBar:(id)arg1;
-- (void)setCameraPickerVisible:(BOOL)arg1;
-- (void)setCameraViewController:(id)arg1;
 - (void)setClient:(id)arg1;
 - (void)setColorAdaptationStatus:(BOOL)arg1;
 - (void)setContinueButton:(id)arg1;
@@ -153,19 +150,26 @@
 - (void)setDrawingMode:(BOOL)arg1;
 - (void)setEnableMaxBrightness:(BOOL)arg1;
 - (void)setFlashModeOn:(BOOL)arg1;
+- (void)setIdentifier:(id)arg1;
 - (void)setImageScrollView:(id)arg1;
 - (void)setMinimumSquareLength:(float)arg1;
 - (void)setOriginPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setOriginalScreenBrightness:(float)arg1;
+- (void)setOutput:(id)arg1;
 - (void)setOverlayView:(id)arg1;
 - (void)setPanGesture:(id)arg1;
-- (void)setPresentedCameraPicker:(BOOL)arg1;
+- (void)setPreviewView:(id)arg1;
 - (void)setRectangle:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setRetakeButton:(id)arg1;
+- (void)setSession:(id)arg1;
 - (void)setTapGesture:(id)arg1;
 - (void)setUsePhotoButton:(id)arg1;
 - (void)setViewfinderInstruction:(id)arg1;
+- (void)setupCamera;
+- (int)setupCameraPreview;
+- (int)setupSessionForDevice:(id)arg1;
 - (BOOL)shouldAutorotate;
+- (void)showCameraView;
 - (unsigned int)supportedInterfaceOrientations;
 - (void)takePicture;
 - (id)tapGesture;
@@ -174,7 +178,8 @@
 - (void)updateViewConstraints;
 - (id)usePhotoButton;
 - (void)usePhotoButtonPressed:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
+- (BOOL)validateAndApplyParameters:(id)arg1;
+- (BOOL)validateAndApplyPredicates:(id)arg1;
 - (void)viewDidLoad;
 - (id)viewForZoomingInScrollView:(id)arg1;
 - (id)viewfinderInstruction;

@@ -3,30 +3,103 @@
  */
 
 @interface _MRContentItemProtobuf : PBCodable <NSCopying> {
+    NSString * _ancestorIdentifier;
+    NSData * _artworkData;
+    NSMutableArray * _availableLanguageOptions;
+    NSMutableArray * _currentLanguageOptions;
     NSString * _identifier;
+    NSString * _info;
+    _MRLyricsItemProtobuf * _lyrics;
     _MRContentItemMetadataProtobuf * _metadata;
+    NSString * _parentIdentifier;
+    NSString * _queueIdentifier;
+    NSString * _requestIdentifier;
+    NSMutableArray * _sections;
 }
 
+@property (nonatomic, retain) NSString *ancestorIdentifier;
+@property (nonatomic, retain) NSData *artworkData;
+@property (nonatomic, retain) NSMutableArray *availableLanguageOptions;
+@property (nonatomic, retain) NSMutableArray *currentLanguageOptions;
+@property (nonatomic, readonly) BOOL hasAncestorIdentifier;
+@property (nonatomic, readonly) BOOL hasArtworkData;
 @property (nonatomic, readonly) BOOL hasIdentifier;
+@property (nonatomic, readonly) BOOL hasInfo;
+@property (nonatomic, readonly) BOOL hasLyrics;
 @property (nonatomic, readonly) BOOL hasMetadata;
+@property (nonatomic, readonly) BOOL hasParentIdentifier;
+@property (nonatomic, readonly) BOOL hasQueueIdentifier;
+@property (nonatomic, readonly) BOOL hasRequestIdentifier;
 @property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, retain) NSString *info;
+@property (nonatomic, retain) _MRLyricsItemProtobuf *lyrics;
 @property (nonatomic, retain) _MRContentItemMetadataProtobuf *metadata;
+@property (nonatomic, retain) NSString *parentIdentifier;
+@property (nonatomic, retain) NSString *queueIdentifier;
+@property (nonatomic, retain) NSString *requestIdentifier;
+@property (nonatomic, retain) NSMutableArray *sections;
 
++ (Class)availableLanguageOptionsType;
++ (Class)currentLanguageOptionsType;
++ (Class)sectionsType;
+
+- (void)addAvailableLanguageOptions:(id)arg1;
+- (void)addCurrentLanguageOptions:(id)arg1;
+- (void)addSections:(id)arg1;
+- (id)ancestorIdentifier;
+- (id)artworkData;
+- (id)availableLanguageOptions;
+- (id)availableLanguageOptionsAtIndex:(unsigned int)arg1;
+- (unsigned int)availableLanguageOptionsCount;
+- (void)clearAvailableLanguageOptions;
+- (void)clearCurrentLanguageOptions;
+- (void)clearSections;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)currentLanguageOptions;
+- (id)currentLanguageOptionsAtIndex:(unsigned int)arg1;
+- (unsigned int)currentLanguageOptionsCount;
 - (void)dealloc;
 - (id)description;
+- (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasAncestorIdentifier;
+- (BOOL)hasArtworkData;
+- (BOOL)hasAvailableLanguageOptions;
+- (BOOL)hasCurrentLanguageOptions;
 - (BOOL)hasIdentifier;
+- (BOOL)hasInfo;
+- (BOOL)hasLyrics;
 - (BOOL)hasMetadata;
+- (BOOL)hasParentIdentifier;
+- (BOOL)hasQueueIdentifier;
+- (BOOL)hasRequestIdentifier;
 - (unsigned int)hash;
 - (id)identifier;
+- (id)info;
 - (BOOL)isEqual:(id)arg1;
+- (id)lyrics;
 - (void)mergeFrom:(id)arg1;
 - (id)metadata;
+- (id)parentIdentifier;
+- (id)queueIdentifier;
 - (BOOL)readFrom:(id)arg1;
+- (id)requestIdentifier;
+- (id)sections;
+- (id)sectionsAtIndex:(unsigned int)arg1;
+- (unsigned int)sectionsCount;
+- (void)setAncestorIdentifier:(id)arg1;
+- (void)setArtworkData:(id)arg1;
+- (void)setAvailableLanguageOptions:(id)arg1;
+- (void)setCurrentLanguageOptions:(id)arg1;
 - (void)setIdentifier:(id)arg1;
+- (void)setInfo:(id)arg1;
+- (void)setLyrics:(id)arg1;
 - (void)setMetadata:(id)arg1;
+- (void)setParentIdentifier:(id)arg1;
+- (void)setQueueIdentifier:(id)arg1;
+- (void)setRequestIdentifier:(id)arg1;
+- (void)setSections:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

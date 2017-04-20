@@ -18,6 +18,7 @@
 - (unsigned char)getLastTriggerType;
 - (long long)getVoiceTriggerCount;
 - (id)init;
+- (int)isLastTriggerFollowedBySpeech;
 - (void)notifySecondChanceRequest;
 - (void)notifyTriggerEventRequest;
 - (void)notifyVoiceTriggeredSiriSessionCancelled;

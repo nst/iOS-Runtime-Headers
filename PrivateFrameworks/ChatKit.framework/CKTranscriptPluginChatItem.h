@@ -51,6 +51,7 @@
 - (id)pasteboardItems;
 - (void)pluginContentViewDidDisappear;
 - (void)pluginContentViewWillAppear;
+- (void)releaseBalloonControllerIfNeeded;
 - (void)relinquishBalloonController;
 - (id)sender;
 - (void)setBalloonController:(id)arg1;

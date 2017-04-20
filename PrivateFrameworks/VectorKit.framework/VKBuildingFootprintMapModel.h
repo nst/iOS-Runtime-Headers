@@ -30,7 +30,7 @@
         struct Pool<ggl::RenderItem> { 
             struct set<void *, std::__1::less<void *>, std::__1::allocator<void *> > { 
                 struct __tree<void *, std::__1::less<void *>, std::__1::allocator<void *> > { 
-                    struct __tree_node<void *, void *> {} *__begin_node_; 
+                    struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *__begin_node_; 
                     struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<void *, void *> > > { 
                         struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                             struct __tree_node_base<void *> {} *__left_; 
@@ -92,11 +92,11 @@
     struct ClearItem { unsigned char x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; bool x3; float x4; unsigned char x5; unsigned int x6; } * _clearItem;
     struct unordered_map<VKVectorTile *, OccluderGroupList, std::__1::hash<VKVectorTile *>, std::__1::equal_to<VKVectorTile *>, std::__1::allocator<std::__1::pair<VKVectorTile *const, OccluderGroupList> > > { 
         struct __hash_table<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, std::__1::__unordered_map_hasher<VKVectorTile *, std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, std::__1::hash<VKVectorTile *>, true>, std::__1::__unordered_map_equal<VKVectorTile *, std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, std::__1::equal_to<VKVectorTile *>, true>, std::__1::allocator<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList> > > { 
-            struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> > > { 
-                struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> > > { 
-                    struct __hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> {} **__first_; 
-                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> > { 
-                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> > { 
+            struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> *> > > { 
+                struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> *> > > { 
+                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> {} **__first_; 
+                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> *> > { 
+                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> *> > { 
                             unsigned long __first_; 
                         } __data_; 
                     } __second_; 
@@ -104,7 +104,7 @@
             } __bucket_list_; 
             struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> > > { 
                 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> { 
-                    struct __hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> {} *__next_; 
+                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> {} *__next_; 
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<VKVectorTile *, std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, std::__1::hash<VKVectorTile *>, true> > { 
@@ -241,11 +241,11 @@
     VK3DObjectSubMapModel * _landmarksModel;
     struct unordered_map<VKVectorTile *, OccluderGroupList, std::__1::hash<VKVectorTile *>, std::__1::equal_to<VKVectorTile *>, std::__1::allocator<std::__1::pair<VKVectorTile *const, OccluderGroupList> > > { 
         struct __hash_table<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, std::__1::__unordered_map_hasher<VKVectorTile *, std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, std::__1::hash<VKVectorTile *>, true>, std::__1::__unordered_map_equal<VKVectorTile *, std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, std::__1::equal_to<VKVectorTile *>, true>, std::__1::allocator<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList> > > { 
-            struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> > > { 
-                struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> > > { 
-                    struct __hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> {} **__first_; 
-                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> > { 
-                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> > { 
+            struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> *> > > { 
+                struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> *> > > { 
+                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> {} **__first_; 
+                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> *> > { 
+                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> *> > { 
                             unsigned long __first_; 
                         } __data_; 
                     } __second_; 
@@ -253,7 +253,7 @@
             } __bucket_list_; 
             struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> > > { 
                 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> { 
-                    struct __hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> {} *__next_; 
+                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, void *> *> {} *__next_; 
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<VKVectorTile *, std::__1::__hash_value_type<VKVectorTile *, OccluderGroupList>, std::__1::hash<VKVectorTile *>, true> > { 

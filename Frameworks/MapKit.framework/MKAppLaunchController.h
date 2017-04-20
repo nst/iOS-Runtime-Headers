@@ -11,9 +11,10 @@
 @property (nonatomic, retain) SSLookupRequest *storeRequest;
 @property (nonatomic, retain) NSURL *webURL;
 
++ (void)launchAttributionURLs:(id)arg1 withAttribution:(id)arg2 completionHandler:(id /* block */)arg3;
++ (void)launchAttributionURLs:(id)arg1 withAttribution:(id)arg2 mapItem:(id)arg3;
++ (void)launchAttributionURLs:(id)arg1 withAttribution:(id)arg2 mapItem:(id)arg3 completionHandler:(id /* block */)arg4;
 + (void)launchAttributionURLs:(id)arg1 withAttributionApps:(id)arg2 completionHandler:(id /* block */)arg3;
-+ (void)launchAttributionURLs:(id)arg1 withAttributionApps:(id)arg2 mapItem:(id)arg3;
-+ (void)launchAttributionURLs:(id)arg1 withAttributionApps:(id)arg2 mapItem:(id)arg3 completionHandler:(id /* block */)arg4;
 + (id)sharedController;
 
 - (void).cxx_destruct;

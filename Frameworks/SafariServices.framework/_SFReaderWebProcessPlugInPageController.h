@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
  */
 
-@interface _SFReaderWebProcessPlugInPageController : WBUWebProcessPlugInPageController {
+@interface _SFReaderWebProcessPlugInPageController : _SFWebProcessPlugInPageController {
     WKWebProcessPlugInScriptWorld * _isolatedWorldForNextPageDetection;
     _SFWebProcessPlugInReaderEnabledPageController * _originalPageController;
     struct unique_ptr<SafariServices::WebProcessPlugInReaderJSController, std::__1::default_delete<SafariServices::WebProcessPlugInReaderJSController> > { 
@@ -31,7 +31,6 @@
 - (void)setOriginalPageController:(id)arg1;
 - (void)setReaderFont:(id)arg1;
 - (void)setReaderTheme:(id)arg1;
-- (void)setUserVisibleWidth:(double)arg1;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 globalObjectIsAvailableForFrame:(id)arg2 inScriptWorld:(id)arg3;
 - (void)willDestroyBrowserContextController:(id)arg1;
 

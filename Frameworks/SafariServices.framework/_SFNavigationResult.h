@@ -13,6 +13,7 @@
 @property (nonatomic, readonly) BOOL appliesOneTimeUserInitiatedActionPolicy;
 @property (nonatomic, readonly) LSApplicationProxy *externalApplication;
 @property (nonatomic, readonly) int externalApplicationCategory;
+@property (nonatomic, readonly) BOOL isRedirectToAppStore;
 @property (nonatomic, readonly) int type;
 
 + (id)resultOfLoadingRequest:(id)arg1 isMainFrame:(BOOL)arg2 disallowRedirectToExternalApps:(BOOL)arg3;
@@ -25,6 +26,8 @@
 - (BOOL)appliesOneTimeUserInitiatedActionPolicy;
 - (id)externalApplication;
 - (int)externalApplicationCategory;
+- (BOOL)isRedirectToAppStore;
+- (BOOL)shouldPromptWithPolicy:(int)arg1 telephonyNavigationPolicy:(id)arg2 userAction:(id)arg3;
 - (int)type;
 
 @end

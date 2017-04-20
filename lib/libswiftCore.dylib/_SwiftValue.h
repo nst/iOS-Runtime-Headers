@@ -4,15 +4,16 @@
 
 @interface _SwiftValue : NSObject <NSCopying>
 
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)allocWithZone;
 
 - (const struct TargetMetadata<swift::InProcess> { unsigned int x1; }*)_swiftTypeMetadata;
+- (id)_swiftTypeName;
 - (const struct OpaqueValue { }*)_swiftValue;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)copyWithZone;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)description;
 - (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqual;
 
 @end

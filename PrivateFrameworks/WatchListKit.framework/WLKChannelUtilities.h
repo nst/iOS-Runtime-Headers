@@ -3,7 +3,9 @@
  */
 
 @interface WLKChannelUtilities : NSObject {
+    NSObject<OS_dispatch_queue> * _accessQueue;
     NSDictionary * _channelsByBundleID;
+    WLKServerConfiguration * _config;
     BOOL  _offLineMode;
 }
 
@@ -16,13 +18,14 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (id)_channels;
+- (id)_init;
 - (id)_serverConfiguration;
 - (id)channelForBundleID:(id)arg1;
 - (id)channelForID:(id)arg1;
 - (id)channelIDForBundleID:(id)arg1;
 - (id)channelsByBundleID;
 - (id)channelsByID;
+- (id)init;
 - (id)initOffline;
 - (id)orderedChannels;
 

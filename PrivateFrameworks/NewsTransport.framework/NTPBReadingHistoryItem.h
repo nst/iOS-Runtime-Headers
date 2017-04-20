@@ -4,13 +4,17 @@
 
 @interface NTPBReadingHistoryItem : PBCodable <FCKeyValueStoreCoding, FCMutableReadingHistoryItem, NSCopying> {
     NSString * _articleID;
+    NTPBDate * _firstSeenDate;
+    NTPBDate * _firstSeenDateOfMaxVersionSeen;
     unsigned int  _flags;
     struct { 
         unsigned int maxVersionRead : 1; 
+        unsigned int maxVersionSeen : 1; 
         unsigned int flags : 1; 
     }  _has;
     NTPBDate * _lastVisitedDate;
     unsigned long long  _maxVersionRead;
+    unsigned long long  _maxVersionSeen;
 }
 
 @property (nonatomic, readonly, copy) NSString *articleID;
@@ -18,21 +22,31 @@
 @property (nonatomic, readonly) unsigned int articleLikingStatus;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, copy) NSDate *firstSeenAt;
+@property (nonatomic, readonly, copy) NSDate *firstSeenAtOfMaxVersionSeen;
+@property (nonatomic, retain) NTPBDate *firstSeenDate;
+@property (nonatomic, retain) NTPBDate *firstSeenDateOfMaxVersionSeen;
+@property (nonatomic, readonly) unsigned int flags;
 @property (nonatomic) unsigned int flags;
 @property (nonatomic, readonly) BOOL hasArticleBeenConsumed;
 @property (nonatomic, readonly) BOOL hasArticleBeenMarkedOffensive;
 @property (nonatomic, readonly) BOOL hasArticleBeenRead;
 @property (nonatomic, readonly) BOOL hasArticleBeenSeen;
 @property (nonatomic, readonly) BOOL hasArticleID;
+@property (nonatomic, readonly) BOOL hasFirstSeenDate;
+@property (nonatomic, readonly) BOOL hasFirstSeenDateOfMaxVersionSeen;
 @property (nonatomic) BOOL hasFlags;
 @property (nonatomic, readonly) BOOL hasLastVisitedDate;
 @property (nonatomic) BOOL hasMaxVersionRead;
+@property (nonatomic) BOOL hasMaxVersionSeen;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly, copy) NSDate *lastVisitedAt;
 @property (nonatomic, retain) NTPBDate *lastVisitedDate;
 @property (nonatomic, readonly) unsigned long long maxVersionRead;
 @property (nonatomic) unsigned long long maxVersionRead;
+@property (nonatomic, readonly) unsigned long long maxVersionSeen;
+@property (nonatomic) unsigned long long maxVersionSeen;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/PrivateFrameworks/NewsTransport.framework/NewsTransport
@@ -42,23 +56,33 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)firstSeenDate;
+- (id)firstSeenDateOfMaxVersionSeen;
 - (unsigned int)flags;
 - (BOOL)hasArticleID;
+- (BOOL)hasFirstSeenDate;
+- (BOOL)hasFirstSeenDateOfMaxVersionSeen;
 - (BOOL)hasFlags;
 - (BOOL)hasLastVisitedDate;
 - (BOOL)hasMaxVersionRead;
+- (BOOL)hasMaxVersionSeen;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)lastVisitedDate;
 - (unsigned long long)maxVersionRead;
+- (unsigned long long)maxVersionSeen;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setArticleID:(id)arg1;
+- (void)setFirstSeenDate:(id)arg1;
+- (void)setFirstSeenDateOfMaxVersionSeen:(id)arg1;
 - (void)setFlags:(unsigned int)arg1;
 - (void)setHasFlags:(BOOL)arg1;
 - (void)setHasMaxVersionRead:(BOOL)arg1;
+- (void)setHasMaxVersionSeen:(BOOL)arg1;
 - (void)setLastVisitedDate:(id)arg1;
 - (void)setMaxVersionRead:(unsigned long long)arg1;
+- (void)setMaxVersionSeen:(unsigned long long)arg1;
 - (void)writeTo:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
@@ -68,6 +92,8 @@
 + (id)readingHistoryItemWithCKRecord:(id)arg1;
 
 - (unsigned int)articleLikingStatus;
+- (id)firstSeenAt;
+- (id)firstSeenAtOfMaxVersionSeen;
 - (BOOL)hasArticleBeenConsumed;
 - (BOOL)hasArticleBeenMarkedOffensive;
 - (BOOL)hasArticleBeenRead;
@@ -76,6 +102,8 @@
 - (id)lastVisitedAt;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)setArticleLikingStatus:(unsigned int)arg1;
+- (void)setFirstSeenAt:(id)arg1;
+- (void)setFirstSeenAtOfMaxVersionSeen:(id)arg1;
 - (void)setHasArticleBeenConsumed:(BOOL)arg1;
 - (void)setHasArticleBeenMarkedOffensive:(BOOL)arg1;
 - (void)setHasArticleBeenRead:(BOOL)arg1;

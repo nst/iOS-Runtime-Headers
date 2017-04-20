@@ -6,7 +6,6 @@
     NSXPCConnection * _anisetteServiceConnection;
     NSLock * _connectionLock;
     NSXPCListenerEndpoint * _daemonXPCEndpoint;
-    NSObject<OS_dispatch_queue> * _replyHandlingQueue;
     AKDevice * _targetDevice;
 }
 
@@ -14,6 +13,7 @@
 - (id)_anisetteServiceConnection;
 - (id)_initForDevice:(id)arg1 daemonXPCEndpoint:(id)arg2;
 - (void)anisetteDataForURLRequest:(id)arg1 completion:(id /* block */)arg2;
+- (id)anisetteDataForURLRequest:(id)arg1 error:(id*)arg2;
 - (void)anisetteDataWithCompletion:(id /* block */)arg1;
 - (id)anisetteDataWithError:(id*)arg1;
 - (void)dealloc;

@@ -53,7 +53,6 @@
 - (id)legacyContactsManager;
 - (id)medicalIDEmergencyContacts;
 - (struct _opaque_pthread_mutex_t { long x1; BOOL x2[40]; })medicalIDEmergencyContactsMutex;
-- (BOOL)notificationEnabledAndContactsExist;
 - (id)phoneNumbersToMessage;
 - (void)removeSOSFriend:(id)arg1 destinationNumber:(id)arg2;
 - (void)setFriendsManager:(id)arg1;

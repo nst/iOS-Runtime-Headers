@@ -26,7 +26,7 @@
 - (id)commandModifiedInput;
 - (void)dealloc;
 - (int)describes:(id)arg1;
-- (id)description;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;

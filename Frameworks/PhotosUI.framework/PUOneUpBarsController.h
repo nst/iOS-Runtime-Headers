@@ -8,6 +8,7 @@
     NSCache * __cachedDisplayInfosByAssetReference;
     NSObject<OS_dispatch_queue> * __displayInfoLoadingIsolationQueue;
     BOOL  __isDisplayInfoLoadingScheduled;
+    BOOL  __lastChromeVisibility;
     NSMutableIndexSet * __leftNavBarButtonIdentifiers;
     PUBarButtonItemCollection * __leftNavBarButtonItemCollection;
     BOOL  __needsUpdateChromeVisibility;
@@ -54,6 +55,7 @@
 @property (nonatomic, readonly) NSCache *_cachedDisplayInfosByAssetReference;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_displayInfoLoadingIsolationQueue;
 @property (setter=_setDisplayInfoLoadingScheduled:, nonatomic) BOOL _isDisplayInfoLoadingScheduled;
+@property (setter=_setLastChromeVisibility:, nonatomic) BOOL _lastChromeVisibility;
 @property (setter=_setLeftNavBarButtonIdentifiers:, nonatomic, retain) NSMutableIndexSet *_leftNavBarButtonIdentifiers;
 @property (setter=_setLeftNavBarButtonItemCollection:, nonatomic, retain) PUBarButtonItemCollection *_leftNavBarButtonItemCollection;
 @property (setter=_setNeedsUpdateChromeVisibility:, nonatomic) BOOL _needsUpdateChromeVisibility;
@@ -115,6 +117,7 @@
 - (void)_invalidateScrubber;
 - (void)_invalidateTitle;
 - (BOOL)_isDisplayInfoLoadingScheduled;
+- (BOOL)_lastChromeVisibility;
 - (id)_leftNavBarButtonIdentifiers;
 - (id)_leftNavBarButtonItemCollection;
 - (void)_loadDisplayInfoForCurrentAsset;
@@ -156,6 +159,7 @@
 - (void)_setActiveActionPerformer:(id)arg1;
 - (void)_setCachedDisplayInfoForCurrentAsset:(id)arg1;
 - (void)_setDisplayInfoLoadingScheduled:(BOOL)arg1;
+- (void)_setLastChromeVisibility:(BOOL)arg1;
 - (void)_setLeftNavBarButtonIdentifiers:(id)arg1;
 - (void)_setLeftNavBarButtonItemCollection:(id)arg1;
 - (void)_setNeedsUpdateChromeVisibility:(BOOL)arg1;

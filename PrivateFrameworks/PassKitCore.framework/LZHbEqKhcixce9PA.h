@@ -14,8 +14,7 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (id)GLYQkLbyLXRMxf6D:(id)arg1 error:(id*)arg2;
-- (void)QFYEmRJgRag2HkWc:(id)arg1 completion:(id /* block */)arg2;
+- (void)QFYEmRJgRag2HkWc:(id)arg1 intermediate:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (id)initWithServiceName:(id)arg1;
 
 @end

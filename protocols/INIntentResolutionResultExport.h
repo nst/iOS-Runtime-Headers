@@ -7,7 +7,6 @@
 
 + (id)resolutionResultConfirmationRequiredWithItemToConfirm:(NSObject *)arg1;
 + (id)resolutionResultDisambiguationWithItemsToDisambiguate:(NSArray *)arg1;
-+ (id)resolutionResultNeedsMoreDetailsForValue:(NSObject *)arg1;
 + (id)resolutionResultNeedsValue;
 + (id)resolutionResultNotRequired;
 + (id)resolutionResultSuccessWithResolvedValue:(NSObject *)arg1;

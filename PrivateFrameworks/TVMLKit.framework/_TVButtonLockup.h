@@ -24,7 +24,6 @@
 
 - (void).cxx_destruct;
 - (int)_focusedSound;
-- (void)_imageDidLoad:(id)arg1;
 - (void)_playButtonAction:(id)arg1;
 - (void)_selectButtonAction:(id)arg1;
 - (void)_updateForFocusStateChange;

@@ -98,5 +98,6 @@
 - (void)setMaxDatabaseSize:(unsigned long long)arg1;
 - (void)shrinkBySize:(unsigned long long)arg1 callback:(id /* block */)arg2 onQueue:(id)arg3;
 - (void)shrinkToSize:(unsigned long long)arg1 finished:(id /* block */)arg2 onQueue:(id)arg3;
+- (void)waitForPendingWrites;
 
 @end

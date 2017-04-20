@@ -20,9 +20,10 @@
 @property (nonatomic, retain) NSMutableArray *supportedPlatforms;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 + (Class)intentSupportType;
 + (Class)localizedProjectsType;
-+ (id)options;
 + (Class)supportedPlatformsType;
 
 - (void).cxx_destruct;
@@ -59,5 +60,11 @@
 - (unsigned int)supportedPlatformsCount;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

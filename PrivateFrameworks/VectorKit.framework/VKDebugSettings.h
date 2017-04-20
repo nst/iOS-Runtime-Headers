@@ -28,11 +28,11 @@
     BOOL  _constantlyChangeTileGroup;
     struct unordered_map<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup>, std::__1::hash<std::__1::basic_string<char> >, std::__1::equal_to<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> > > > { 
         struct __hash_table<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> >, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> >, std::__1::hash<std::__1::basic_string<char> >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> >, std::__1::equal_to<std::__1::basic_string<char> >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> > > > { 
-            struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> >, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> >, void *> *> > > { 
-                struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> >, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> >, void *> *> > > { 
-                    struct __hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> >, void *> {} **__first_; 
-                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> >, void *> *> > { 
-                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> >, void *> *> > { 
+            struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> >, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> >, void *> *> *> > > { 
+                struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> >, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> >, void *> *> *> > > { 
+                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> >, void *> *> {} **__first_; 
+                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> >, void *> *> *> > { 
+                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> >, void *> *> *> > { 
                             unsigned long __first_; 
                         } __data_; 
                     } __second_; 
@@ -40,7 +40,7 @@
             } __bucket_list_; 
             struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> >, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> >, void *> > > { 
                 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> >, void *> *> { 
-                    struct __hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> >, void *> {} *__next_; 
+                    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> >, void *> *> {} *__next_; 
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::shared_ptr<md::ObjectGroup> >, std::__1::hash<std::__1::basic_string<char> >, true> > { 
@@ -136,6 +136,8 @@
     BOOL  _realisticWireframeEnabled;
     BOOL  _renderInSeparateThread;
     float  _ribbonCrispness;
+    float  _routeCoarsenThreshold;
+    float  _routeRefineThreshold;
     BOOL  _shouldUseTestTileLoader;
     BOOL  _showNavCameraDebugConsole;
     BOOL  _showNavCameraDebugConsoleAttributes;
@@ -249,6 +251,8 @@
 @property (nonatomic) BOOL realisticWireframeEnabled;
 @property (nonatomic) BOOL renderInSeparateThread;
 @property (nonatomic) float ribbonCrispness;
+@property (nonatomic) float routeCoarsenThreshold;
+@property (nonatomic) float routeRefineThreshold;
 @property (nonatomic) BOOL shouldUseTestTileLoader;
 @property (nonatomic) BOOL showNavCameraDebugConsole;
 @property (nonatomic) BOOL showNavCameraDebugConsoleAttributes;
@@ -375,6 +379,8 @@
 - (BOOL)realisticWireframeEnabled;
 - (BOOL)renderInSeparateThread;
 - (float)ribbonCrispness;
+- (float)routeCoarsenThreshold;
+- (float)routeRefineThreshold;
 - (void)setAltitudeDisableC3mTextureLoading:(BOOL)arg1;
 - (void)setAltitudeFadeSpeed:(float)arg1;
 - (void)setAltitudeFreezeViewNode:(BOOL)arg1;
@@ -476,6 +482,8 @@
 - (void)setRealisticWireframeEnabled:(BOOL)arg1;
 - (void)setRenderInSeparateThread:(BOOL)arg1;
 - (void)setRibbonCrispness:(float)arg1;
+- (void)setRouteCoarsenThreshold:(float)arg1;
+- (void)setRouteRefineThreshold:(float)arg1;
 - (void)setShouldUseTestTileLoader:(BOOL)arg1;
 - (void)setShowNavCameraDebugConsole:(BOOL)arg1;
 - (void)setShowNavCameraDebugConsoleAttributes:(BOOL)arg1;

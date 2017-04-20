@@ -43,8 +43,8 @@
 - (void)_injectDefinitionsForTesting:(id)arg1;
 - (void)_queue_clearCaches;
 - (BOOL)_queue_isDefinitionWithIdentifierRemotelyDefined:(id)arg1;
-- (void)_queue_updateStickerAvailabilityWithDownloadedAssets:(id)arg1 usingFilter:(id)arg2;
-- (void)_stickerAvailabilityDidChange;
+- (void)_queue_updateStickerAvailabilityWithInstalledAssets:(id)arg1 downloadedAssets:(id)arg2 removedAssets:(id)arg3 usingFilter:(id)arg4;
+- (void)_setAndNotifyStickersAvailable:(BOOL)arg1;
 - (id)achievementDefinitionForIdentifier:(id)arg1;
 - (id)allAchievementDefinitionIdentifiers;
 - (id)allAchievementDefinitions;

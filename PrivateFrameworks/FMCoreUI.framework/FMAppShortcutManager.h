@@ -4,6 +4,8 @@
 
 @interface FMAppShortcutManager : NSObject
 
+@property (readonly) BOOL hasShortcutItems;
+
 + (id)sharedInstance;
 
 - (void)clearShortcutItems;

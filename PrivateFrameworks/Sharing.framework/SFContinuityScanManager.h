@@ -23,7 +23,7 @@
 + (id)sharedManager;
 
 - (void).cxx_destruct;
-- (void)activityPayloadFromDeviceUniqueID:(id)arg1 forAdvertisementPayload:(id)arg2 command:(id)arg3 withCompletionHandler:(id /* block */)arg4;
+- (void)activityPayloadFromDeviceUniqueID:(id)arg1 forAdvertisementPayload:(id)arg2 command:(id)arg3 timeout:(int)arg4 withCompletionHandler:(id /* block */)arg5;
 - (void)addObserver:(id)arg1;
 - (id)connectionProxy;
 - (void)foundDeviceWithDevice:(id)arg1;

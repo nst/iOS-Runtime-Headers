@@ -88,6 +88,7 @@
 - (void)registrationControlSetRegistrationStateForRegistrationType:(int)arg1 toState:(int)arg2 requestID:(NSString *)arg3;
 - (void)removeAliases:(NSArray *)arg1 fromAccount:(NSString *)arg2;
 - (void)reportiMessageSpam:(NSArray *)arg1 toURI:(NSString *)arg2;
+- (void)reportiMessageSpamCheckUnknown:(NSString *)arg1 count:(NSNumber *)arg2 requestID:(NSString *)arg3;
 - (void)reportiMessageUnknownSender:(NSString *)arg1 messageID:(NSString *)arg2 messageServerTimestamp:(NSNumber *)arg3 toURI:(NSString *)arg4;
 - (void)reunionSyncCompletedForServices:(NSArray *)arg1 requestID:(NSString *)arg2;
 - (void)reunionSyncStartedForServices:(NSArray *)arg1 requestID:(NSString *)arg2;

@@ -3,6 +3,8 @@
  */
 
 @interface NWConcrete_nw_pac_resolver : NSObject <OS_nw_pac_resolver> {
+    struct __CFData { } * auditToken;
+    struct __CFString { } * bundleIdentifier;
     struct __CFURL { } * endpointURL;
     struct __CFString { } * pacScript;
     struct __CFURL { } * pacURL;

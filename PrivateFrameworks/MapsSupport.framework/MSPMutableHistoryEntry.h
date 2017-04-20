@@ -15,6 +15,7 @@
 @property (getter=_isImmutable, nonatomic, readonly) BOOL immutable;
 @property (nonatomic, readonly) MSPHistoryEntryStorage *storage;
 @property (readonly) Class superclass;
+@property (getter=tracksRAPReportingOnly, nonatomic) BOOL tracksRAPReportingOnly;
 @property (nonatomic, copy) NSDate *usageDate;
 
 + (Class)immutableObjectClass;
@@ -37,9 +38,11 @@
 - (BOOL)isFailed;
 - (BOOL)isUserVisibleDuplicateOfEntry:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (void)setTracksRAPReportingOnly:(BOOL)arg1;
 - (void)setUsageDate:(id)arg1;
 - (id)storage;
 - (id)storageIdentifier;
+- (BOOL)tracksRAPReportingOnly;
 - (id)transferToImmutableIfValidWithError:(out id*)arg1;
 - (id)usageDate;
 

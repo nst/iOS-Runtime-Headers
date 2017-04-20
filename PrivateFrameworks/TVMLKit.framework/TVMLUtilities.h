@@ -14,6 +14,7 @@
 + (id)_placeholderImageForValue:(id)arg1 userInterfaceStyle:(int)arg2 withCornerRadii:(struct TVCornerRadii { float x1; float x2; float x3; float x4; })arg3 andScaledSize:(struct CGSize { float x1; float x2; })arg4;
 + (int)contentModeForPosition:(int)arg1 defaultMode:(int)arg2;
 + (BOOL)cornerRadiiFromElement:(id)arg1 screenScale:(float)arg2 cornerRadii:(struct TVCornerRadii { float x1; float x2; float x3; float x4; }*)arg3 circle:(BOOL*)arg4;
++ (void)disassociateIKViewElementsRecursivelyFromView:(id)arg1;
 + (float)focusedSizeIncreaseForSize:(struct CGSize { float x1; float x2; })arg1 upscaleFactor:(float)arg2;
 + (float)focusedSizeIncreaseForSize:(struct CGSize { float x1; float x2; })arg1 upscaleFactor:(float)arg2 useInSearchPartial:(BOOL)arg3;
 + (id)fontFromStyle:(id)arg1;

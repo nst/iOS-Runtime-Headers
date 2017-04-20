@@ -3,20 +3,17 @@
  */
 
 @interface MPModelLibrarySearchSectionedCollectionDataSource : NSObject <MPLazySectionedCollectionDataSource> {
-    <MPMediaLibraryEntityTranslatingContext> * _entityTranslationContext;
     NSArray * _resultContainers;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) <MPMediaLibraryEntityTranslatingContext> *entityTranslationContext;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly, copy) NSArray *resultContainers;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)entityTranslationContext;
-- (id)initWithEntitiesQueryResultContainers:(id)arg1 entityTranslationContext:(id)arg2;
+- (id)initWithEntitiesQueryResultContainers:(id)arg1;
 - (id)itemAtIndexPath:(id)arg1;
 - (unsigned int)numberOfItemsInSection:(unsigned int)arg1;
 - (unsigned int)numberOfSections;

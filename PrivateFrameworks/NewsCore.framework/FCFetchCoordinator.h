@@ -8,7 +8,7 @@
     <FCFetchCoordinatorDelegate> * _delegate;
     NSHashTable * _fetchGroups;
     NSMapTable * _fetchOperationsByGroup;
-    <FCOperationThrottler> * _fetchThrottler;
+    FCBoostableOperationThrottler * _fetchThrottler;
     unsigned int  _maxConcurrentFetchCount;
 }
 
@@ -19,7 +19,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSHashTable *fetchGroups;
 @property (nonatomic, retain) NSMapTable *fetchOperationsByGroup;
-@property (nonatomic, retain) <FCOperationThrottler> *fetchThrottler;
+@property (nonatomic, retain) FCBoostableOperationThrottler *fetchThrottler;
 @property (readonly) unsigned int hash;
 @property unsigned int maxConcurrentFetchCount;
 @property (readonly) Class superclass;

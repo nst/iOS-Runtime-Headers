@@ -8,6 +8,7 @@
 
 @property (nonatomic, readonly) NSURL *URL;
 @property (nonatomic, readonly) unsigned long long availableFileSize;
+@property (nonatomic, readonly) unsigned long long countOfBytesReceived;
 @property (nonatomic, readonly) NSURL *destinationURL;
 @property (nonatomic, readonly) unsigned long long downloadToken;
 @property (nonatomic, readonly) NSError *error;
@@ -47,6 +48,7 @@
 - (id)_verifyDownloadConfigurationForAssetType;
 - (id)_weakReference;
 - (unsigned long long)availableFileSize;
+- (unsigned long long)countOfBytesReceived;
 - (void)dealloc;
 - (id)destinationURL;
 - (unsigned long long)downloadToken;

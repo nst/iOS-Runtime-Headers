@@ -3,24 +3,24 @@
  */
 
 @interface LPGlyphStyle : NSObject {
-    LPImageViewStyle * _image;
-    NSString * _name;
+    LPImage * _image;
+    LPImageViewStyle * _imageStyle;
     float  _opacity;
     LPPadding * _padding;
 }
 
-@property (nonatomic, readonly) LPImageViewStyle *image;
-@property (nonatomic, copy) NSString *name;
+@property (nonatomic, retain) LPImage *image;
+@property (nonatomic, readonly) LPImageViewStyle *imageStyle;
 @property (nonatomic) float opacity;
 @property (nonatomic, readonly, retain) LPPadding *padding;
 
 - (void).cxx_destruct;
 - (id)image;
+- (id)imageStyle;
 - (id)initSearchGlyph;
-- (id)name;
 - (float)opacity;
 - (id)padding;
-- (void)setName:(id)arg1;
+- (void)setImage:(id)arg1;
 - (void)setOpacity:(float)arg1;
 
 @end

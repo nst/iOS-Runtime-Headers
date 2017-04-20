@@ -10,6 +10,7 @@
     BOOL  _needsRender;
     float  _preferredFramesPerSecond;
     BKSProcessAssertion * _renderingAssertion;
+    NSTimer * _renderingAssertionTimer;
     UIScreen * _screen;
     BOOL  _shouldBypassApplicationStateChecking;
     BOOL  _synchronizesWithCA;

@@ -23,7 +23,9 @@
 @property (nonatomic, readonly, copy) NSAttributedString *text;
 @property (setter=_setVisibleAssociatedMessageChatItems:, nonatomic, retain) NSArray *visibleAssociatedMessageChatItems;
 
++ (id)_defaultRichLinkWhiteList;
 + (id)_guidForMessage:(id)arg1 url:(id)arg2;
++ (BOOL)_isWhiteListedURL:(id)arg1;
 + (id)_messageItemWithPartsDeleted:(id)arg1 fromMessageItem:(id)arg2;
 + (id)_newMessagePartsForMessageItem:(id)arg1;
 + (id)_newMessagePartsForMessageItem:(id)arg1 shouldDisplayLink:(BOOL)arg2;

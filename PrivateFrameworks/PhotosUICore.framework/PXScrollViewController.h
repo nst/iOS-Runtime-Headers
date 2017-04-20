@@ -4,7 +4,7 @@
 
 @interface PXScrollViewController : NSObject <PXTilingScrollController> {
     NSHashTable * __observers;
-    <UICoordinateSpace> * _contentCoordinateSpace;
+    NSObject<UICoordinateSpace> * _contentCoordinateSpace;
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -25,7 +25,7 @@
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } activeRect;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } constrainedVisibleRect;
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentBounds;
-@property (nonatomic, readonly) <UICoordinateSpace> *contentCoordinateSpace;
+@property (nonatomic, readonly) NSObject<UICoordinateSpace> *contentCoordinateSpace;
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

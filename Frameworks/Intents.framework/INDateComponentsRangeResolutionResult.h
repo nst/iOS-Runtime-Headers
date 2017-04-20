@@ -11,7 +11,6 @@
 
 + (id)confirmationRequiredWithDateComponentsRangeToConfirm:(id)arg1;
 + (id)disambiguationWithDateComponentsRangesToDisambiguate:(id)arg1;
-+ (id)needsMoreDetailsForDateComponentsRange:(id)arg1;
 + (id)successWithResolvedDateComponentsRange:(id)arg1;
 + (id)unsupportedWithReason:(unsigned int)arg1 alternativeDateComponentsRanges:(id)arg2;
 

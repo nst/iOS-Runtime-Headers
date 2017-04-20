@@ -44,6 +44,7 @@
 @property (nonatomic, readonly) int layoutOrientation;
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } markedRange;
 @property (nonatomic) struct CGSize { float x1; float x2; } maxSize;
+@property (nonatomic) float maxTileHeight;
 @property (nonatomic) struct CGSize { float x1; float x2; } minSize;
 @property (readonly) Class superclass;
 @property (nonatomic) NSTextContainer *textContainer;
@@ -81,6 +82,7 @@
 - (id)linkTextAttributes;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })markedRange;
 - (struct CGSize { float x1; float x2; })maxSize;
+- (float)maxTileHeight;
 - (struct CGSize { float x1; float x2; })minSize;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setConstrainedFrameSize:(struct CGSize { float x1; float x2; })arg1;
@@ -89,6 +91,7 @@
 - (void)setHorizontallyResizable:(BOOL)arg1;
 - (void)setLayoutOrientation:(int)arg1;
 - (void)setMaxSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setMaxTileHeight:(float)arg1;
 - (void)setMinSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 avoidAdditionalLayout:(BOOL)arg2;
 - (void)setTextContainer:(id)arg1;

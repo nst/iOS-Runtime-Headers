@@ -54,7 +54,7 @@
 - (id)ptpInformationForPhotoWithObjectID:(id)arg1;
 - (id)ptpInformationForPhotosWithPrimaryKeys:(id)arg1;
 - (id)ptpThumbnailForPhotoWithKey:(struct NSObject { Class x1; }*)arg1;
-- (id)ptpThumbnailForPhotoWithKey:(struct NSObject { Class x1; }*)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (id)ptpThumbnailForPhotoWithKey:(struct NSObject { Class x1; }*)arg1 size:(struct CGSize { float x1; float x2; })arg2 compressionQuality:(float)arg3;
 - (void)setDelegate:(id)arg1;
 - (void)setFileManager:(id)arg1;
 - (void)setPtpDelegate:(id)arg1;

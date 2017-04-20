@@ -25,6 +25,7 @@
     BOOL  _mainAssetIsMine;
     BOOL  _mainAssetIsVideo;
     NSString * _mainAssetUUID;
+    BOOL  _offerToReportAsJunk;
     NSDate * _originalDate;
     unsigned int  _originalRecordID;
     NSString * _photosBatchID;

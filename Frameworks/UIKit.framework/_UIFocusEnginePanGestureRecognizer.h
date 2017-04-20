@@ -3,14 +3,18 @@
  */
 
 @interface _UIFocusEnginePanGestureRecognizer : UIPanGestureRecognizer {
-    _UIFocusEngine * _focusEngine;
+    <_UIFocusEnginePanGestureTouchObserver> * _touchObserver;
 }
 
-@property (nonatomic) _UIFocusEngine *focusEngine;
+@property (nonatomic) <_UIFocusEnginePanGestureRecognizerDelegate> *delegate;
+@property (nonatomic) <_UIFocusEnginePanGestureTouchObserver> *touchObserver;
 
 - (void).cxx_destruct;
-- (id)focusEngine;
-- (void)setFocusEngine:(id)arg1;
+- (void)setTouchObserver:(id)arg1;
+- (id)touchObserver;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 
 @end

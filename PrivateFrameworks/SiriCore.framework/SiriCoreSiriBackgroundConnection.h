@@ -66,6 +66,7 @@
 @property (nonatomic) BOOL usesProxyConnection;
 
 - (void).cxx_destruct;
+- (id)_aceHeaderData;
 - (void)_aceHeaderTimeoutFired:(id)arg1 afterTimeout:(double)arg2;
 - (id)_activeBufferedOutputData;
 - (void)_addOutgoingCommandForSendCompletion:(id)arg1;
@@ -84,6 +85,7 @@
 - (BOOL)_consumeAceHeaderWithData:(id)arg1 bytesRead:(unsigned int*)arg2 error:(id*)arg3;
 - (BOOL)_consumeHTTPHeaderWithData:(id)arg1 bytesRead:(unsigned int*)arg2 error:(id*)arg3;
 - (void)_didEncounterError:(id)arg1;
+- (void)_didOpenStreamPairWithInitialDataPayload:(id)arg1 withBufferedLength:(unsigned int)arg2 url:(id)arg3 completedWithInputStream:(id)arg4 outputStream:(id)arg5 error:(id)arg6;
 - (void)_fallBackToNextConnectionMethodWithError:(id)arg1;
 - (void)_fallBackToNextConnectionMethodWithError:(id)arg1 orElse:(id /* block */)arg2;
 - (void)_flushOutgoingCommandsAndDispatchSendCompletionWithResult:(int)arg1 error:(id)arg2;
@@ -98,7 +100,8 @@
 - (BOOL)_hasReadACEHeader;
 - (BOOL)_hasReadHTTPHeader;
 - (id)_headerDataForURL:(id)arg1 aceHost:(id)arg2 languageCode:(id)arg3 syncAssistantId:(id)arg4;
-- (void)_initializeAndSendBufferedGeneralOutputData;
+- (id)_httpHeaderData;
+- (void)_initializeBufferedGeneralOutputDataAndSend:(BOOL)arg1;
 - (int)_nextConnectionMethod;
 - (void)_pingTimerFired;
 - (id)_readDataFromReadStream:(struct __CFReadStream { }*)arg1 hasMore:(BOOL*)arg2;

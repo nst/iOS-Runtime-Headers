@@ -74,6 +74,7 @@
 - (id)_firstPageForPresentation;
 - (void)_handleElementChange:(id)arg1 completion:(id /* block */)arg2;
 - (void)_handleLinkPress:(id)arg1 attributes:(id)arg2 completion:(id /* block */)arg3;
+- (void)_logException:(struct OpaqueJSValue { }*)arg1;
 - (void)_navigateBackWithPop:(BOOL)arg1 fromViewController:(id)arg2;
 - (void)_navigateToNextPageAnimated;
 - (id)_pageContainingTableView:(id)arg1;
@@ -128,6 +129,7 @@
 - (id)newNavigationControllerForPresentation;
 - (int)nextButtonStyle;
 - (id)objectForJSValue:(struct OpaqueJSValue { }*)arg1;
+- (void)openLink:(id)arg1 HTTPMethod:(id)arg2 completion:(id /* block */)arg3;
 - (void)pageDidDisappear:(id)arg1;
 - (id)pages;
 - (void)parseDidFinish;
@@ -175,6 +177,7 @@
 - (void)stopNavigationBarSpinner;
 - (id)stringForAttributeName:(id)arg1 withAttributes:(id)arg2;
 - (id)style;
+- (id)subElementWithID:(id)arg1;
 - (unsigned int)supportedInterfaceOrientationsForRUIPage:(id)arg1;
 - (id)tableFooterViewForAttributes:(id)arg1;
 - (id)tableHeaderViewForAttributes:(id)arg1;

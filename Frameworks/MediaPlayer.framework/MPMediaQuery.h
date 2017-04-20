@@ -10,8 +10,6 @@
     int  _staticEntityType;
 }
 
-@property (getter=MCD_playlist, nonatomic, readonly) MPMediaPlaylist *MCD_playlist;
-@property (getter=MCD_playlistTitle, nonatomic, readonly) NSString *MCD_playlistTitle;
 @property (nonatomic, readonly) unsigned int _countOfCollections;
 @property (nonatomic, readonly) unsigned int _countOfItems;
 @property (nonatomic, readonly) BOOL _hasCollections;
@@ -185,14 +183,5 @@
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
 
 - (id)_MPUSDS_searchPredicate;
-
-// Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
-
-+ (id)MCD_queryWithFilterPredicates:(id)arg1;
-
-- (BOOL)MCD_isEqualToNowPlayingQuery:(id)arg1;
-- (id)MCD_playlist;
-- (id)MCD_playlistTitle;
-- (id)_music_nowPlayingComparableQuery;
 
 @end

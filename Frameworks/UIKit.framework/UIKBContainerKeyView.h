@@ -6,6 +6,8 @@
     UIKBKeyView * _keyView;
 }
 
+- (void)changeBackgroundToActiveIfNecessary;
+- (void)changeBackgroundToEnabled;
 - (id)contentsKeyView;
 - (void)dealloc;
 - (void)dimKeys:(id)arg1;

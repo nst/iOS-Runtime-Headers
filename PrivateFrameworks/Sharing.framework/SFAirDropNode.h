@@ -3,6 +3,9 @@
  */
 
 @interface SFAirDropNode : NSObject {
+    BOOL  _classroom;
+    BOOL  _classroomCourse;
+    BOOL  _classroomGroup;
     NSString * _contactIdentifier;
     UIImage * _displayIcon;
     NSString * _displayName;
@@ -18,6 +21,9 @@
     BOOL  _unknown;
 }
 
+@property (getter=isClassroom) BOOL classroom;
+@property (getter=isClassroomCourse) BOOL classroomCourse;
+@property (getter=isclassroomGroup) BOOL classroomGroup;
 @property (retain) NSString *contactIdentifier;
 @property (retain) UIImage *displayIcon;
 @property (retain) NSString *displayName;
@@ -42,13 +48,19 @@
 - (void)handleOperationCallback:(struct __SFOperation { }*)arg1 event:(long)arg2 withResults:(id)arg3;
 - (unsigned int)hash;
 - (id)init;
+- (BOOL)isClassroom;
+- (BOOL)isClassroomCourse;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isMe;
 - (BOOL)isMonogram;
 - (BOOL)isUnknown;
+- (BOOL)isclassroomGroup;
 - (id)node;
 - (id)realName;
 - (id)secondaryName;
+- (void)setClassroom:(BOOL)arg1;
+- (void)setClassroomCourse:(BOOL)arg1;
+- (void)setClassroomGroup:(BOOL)arg1;
 - (void)setContactIdentifier:(id)arg1;
 - (void)setDisplayIcon:(id)arg1;
 - (void)setDisplayName:(id)arg1;

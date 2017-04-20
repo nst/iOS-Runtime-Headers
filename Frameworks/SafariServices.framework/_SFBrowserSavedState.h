@@ -14,6 +14,7 @@
 @property (nonatomic, retain) NSArray *recentlyClosedTabs;
 @property (nonatomic) BOOL secureDeleteEnabled;
 
++ (id)ephemeralSavedState;
 + (void)setSharedBrowserSavedState:(id)arg1;
 + (id)sharedBrowserSavedState;
 
@@ -27,6 +28,7 @@
 - (void)clearRecentlyClosedTabs;
 - (void)dealloc;
 - (id)initWithDatabaseURL:(id)arg1;
+- (id)initWithInMemoryDatabase;
 - (id)readSavedSessionStateDataForTabWithUUID:(id)arg1;
 - (id)recentlyClosedTabs;
 - (void)removeRecentlyClosedTabWithData:(id)arg1;

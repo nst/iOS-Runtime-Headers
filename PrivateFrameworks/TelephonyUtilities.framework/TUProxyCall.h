@@ -59,6 +59,7 @@
         } size; 
     }  _remoteVideoContentRect;
     NSMutableDictionary * _remoteVideoModeToLayer;
+    BOOL  _requiresRemoteVideo;
     BOOL  _sos;
     double  _startTime;
     BOOL  _thirdPartyVideo;
@@ -128,7 +129,7 @@
 - (int)_cameraTypeForVideoAttributeCamera:(int)arg1;
 - (void)_createRemoteVideoIfNecessary;
 - (int)_orientationForVideoAttributesOrientation:(int)arg1;
-- (void)_synchronizeRemoteVideoLayers;
+- (void)_synchronizeRemoteVideo;
 - (void)_updateVideoStreamToken:(int)arg1;
 - (void)answerWithRequest:(id)arg1;
 - (id)audioCategory;
@@ -189,6 +190,7 @@
 - (void)remoteVideoClient:(id)arg1 videoDidDegrade:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })remoteVideoContentRect;
 - (id)remoteVideoModeToLayer;
+- (BOOL)requiresRemoteVideo;
 - (void)sendHardPauseDigits;
 - (void)setAudioCategory:(id)arg1;
 - (void)setAudioMode:(id)arg1;
@@ -234,6 +236,7 @@
 - (void)setRemoteVideoModeToLayer:(id)arg1;
 - (void)setRemoteVideoPresentationSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setRemoteVideoPresentationState:(int)arg1;
+- (void)setRequiresRemoteVideo:(BOOL)arg1;
 - (void)setSOS:(BOOL)arg1;
 - (void)setShouldSuppressRingtone:(BOOL)arg1;
 - (void)setStartTime:(double)arg1;

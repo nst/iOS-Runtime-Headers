@@ -4,6 +4,7 @@
 
 @interface FCWebArchiveSource : NSObject <FCCacheCoordinatorDelegate, FCCacheFlushing, FCFetchCoordinatorDelegate> {
     FCCacheCoordinator * _cacheCoordinator;
+    NSURL * _directoryURLForCachedWebArchives;
     FCFetchCoordinator * _fetchCoordinator;
     FCThreadSafeMutableDictionary * _keysToURLs;
     FCWebArchiveStore * _webArchiveStore;
@@ -12,6 +13,7 @@
 @property (nonatomic, retain) FCCacheCoordinator *cacheCoordinator;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSURL *directoryURLForCachedWebArchives;
 @property (nonatomic, retain) FCFetchCoordinator *fetchCoordinator;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) FCThreadSafeMutableDictionary *keysToURLs;
@@ -22,6 +24,7 @@
 - (id)cacheCoordinator;
 - (void)cacheCoordinator:(id)arg1 flushKeysWithWriteLock:(id)arg2;
 - (unsigned long long)cacheCoordinatorCurrentSizeWithReadLock:(id)arg1;
+- (id)directoryURLForCachedWebArchives;
 - (void)enableFlushingWithFlushingThreshold:(unsigned int)arg1;
 - (id)fetchCoordinator;
 - (void)fetchCoordinator:(id)arg1 addFetchOperation:(id)arg2 context:(id)arg3;

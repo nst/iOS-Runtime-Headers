@@ -8,6 +8,7 @@
     NSData * _paymentData;
     PKProtobufPaymentMethod * _paymentMethod;
     NSString * _redeemURL;
+    NSString * _retryNonce;
     NSString * _transactionIdentifier;
 }
 
@@ -16,12 +17,14 @@
 @property (nonatomic, readonly) BOOL hasPaymentData;
 @property (nonatomic, readonly) BOOL hasPaymentMethod;
 @property (nonatomic, readonly) BOOL hasRedeemURL;
+@property (nonatomic, readonly) BOOL hasRetryNonce;
 @property (nonatomic, readonly) BOOL hasTransactionIdentifier;
 @property (nonatomic, retain) NSString *instrumentName;
 @property (nonatomic, retain) NSString *network;
 @property (nonatomic, retain) NSData *paymentData;
 @property (nonatomic, retain) PKProtobufPaymentMethod *paymentMethod;
 @property (nonatomic, retain) NSString *redeemURL;
+@property (nonatomic, retain) NSString *retryNonce;
 @property (nonatomic, retain) NSString *transactionIdentifier;
 
 - (void).cxx_destruct;
@@ -34,6 +37,7 @@
 - (BOOL)hasPaymentData;
 - (BOOL)hasPaymentMethod;
 - (BOOL)hasRedeemURL;
+- (BOOL)hasRetryNonce;
 - (BOOL)hasTransactionIdentifier;
 - (unsigned int)hash;
 - (id)instrumentName;
@@ -44,11 +48,13 @@
 - (id)paymentMethod;
 - (BOOL)readFrom:(id)arg1;
 - (id)redeemURL;
+- (id)retryNonce;
 - (void)setInstrumentName:(id)arg1;
 - (void)setNetwork:(id)arg1;
 - (void)setPaymentData:(id)arg1;
 - (void)setPaymentMethod:(id)arg1;
 - (void)setRedeemURL:(id)arg1;
+- (void)setRetryNonce:(id)arg1;
 - (void)setTransactionIdentifier:(id)arg1;
 - (id)transactionIdentifier;
 - (void)writeTo:(id)arg1;

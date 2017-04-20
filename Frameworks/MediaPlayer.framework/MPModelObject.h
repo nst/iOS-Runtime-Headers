@@ -17,6 +17,7 @@
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 + (void)initialize;
++ (id)mqf_requiredPlaybackProperties;
 + (void)performWithoutEnforcement:(id /* block */)arg1;
 + (id)requiredKeepLocalStatusObservationProperties;
 + (id)requiredLibraryAddStatusObservationProperties;
@@ -37,6 +38,10 @@
 - (id)initWithIdentifiers:(id)arg1 block:(id /* block */)arg2;
 - (struct MPLibraryAddStatusObserverConfiguration { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; })libraryAddStatusObserverConfiguration;
 - (int)libraryRemovalSupportedOptions;
+- (id)mediaItemPropertyValues;
+- (void)mqf_configurePlaybackItemMetadata:(id)arg1;
+- (id)mqf_newPlaybackItemMetadata;
+- (id)mqf_playbackItemMetadataModelObject;
 - (id)newKeepLocalStatusObserverConfiguration;
 - (id)originalIdentifierSet;
 

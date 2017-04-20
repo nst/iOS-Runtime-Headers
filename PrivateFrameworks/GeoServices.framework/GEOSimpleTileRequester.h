@@ -8,7 +8,7 @@
     NSMutableArray * _errors;
     GEOTileKeyMap * _keysToBaseOps;
     NSMutableSet * _running;
-    NSURLSession * _session;
+    GEONSURLSharedSession * _session;
     BOOL  _subclassImplementsTileEdition;
     NSMutableArray * _waiting;
 }

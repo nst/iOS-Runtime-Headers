@@ -16,6 +16,8 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void)_setFinishedHandler:(id /* block */)arg1;
+- (void)_setSimpleETARequestFinishedHandler:(id /* block */)arg1;
 - (void)cancelRequest;
 - (void)dealloc;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;

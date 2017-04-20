@@ -8,6 +8,7 @@
     <CDPDDeviceSecretValidatorDelegate> * _delegate;
     BOOL  _depletedRemainingAttempts;
     unsigned int  _failedAttempts;
+    NSMutableSet * _failedRecoveryKeys;
     NSMutableDictionary * _failedSecrets;
     NSMutableSet * _failedSingleICSCs;
     BOOL  _isAttemptingRecovery;
@@ -24,6 +25,7 @@
 
 - (void).cxx_destruct;
 - (void)_attemptToRecoverDevice:(id)arg1 withSecret:(id)arg2 completion:(id /* block */)arg3;
+- (void)_attemptToRecoverWithRecoveryKey:(id)arg1 completion:(id /* block */)arg2;
 - (id)_failedSecretsForDevice:(id)arg1;
 - (id)_failedSingleICSCs;
 - (void)_handleDelegateValidationError:(id)arg1;
@@ -50,6 +52,7 @@
 - (unsigned int)supportedEscapeOfferMask;
 - (void)supportedEscapeOfferMaskCompletion:(id /* block */)arg1;
 - (id /* block */)validSecretHandler;
+- (void)validateRecoveryKey:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)validateSecret:(id)arg1 devices:(id)arg2 type:(unsigned int)arg3 withCompletion:(id /* block */)arg4;
 
 @end

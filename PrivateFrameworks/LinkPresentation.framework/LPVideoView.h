@@ -2,9 +2,17 @@
    Image: /System/Library/PrivateFrameworks/LinkPresentation.framework/LinkPresentation
  */
 
-@interface LPVideoView : LPComponentView <LPMediaPlayer, UIGestureRecognizerDelegate> {
+@interface LPVideoView : LPComponentView <CALayerDelegate, LPMediaPlayer, UIGestureRecognizerDelegate> {
+    UIView * _containerView;
     BOOL  _disablePlayback;
+    BOOL  _fullScreen;
+    LPFullScreenVideoViewController * _fullScreenViewController;
+    UIWindow * _fullScreenWindow;
     BOOL  _hasBuilt;
+    BOOL  _hasCreatedVideoView;
+    BOOL  _hasEverPlayed;
+    unsigned long long  _lastInteractionTimestamp;
+    UIView * _muteButtonContainerView;
     UIImageView * _muteButtonView;
     UIView * _playButtonContainerView;
     UIView * _playButtonView;
@@ -13,29 +21,39 @@
     LPImage * _posterFrame;
     LPImageViewStyle * _posterFrameStyle;
     UIView * _pulsingLoadView;
+    BOOL  _showingPlayButton;
     LPVideoViewStyle * _style;
     BOOL  _usesSharedAudioSession;
     LPVideo * _video;
     UIView * _videoPlaceholderView;
-    UIView * _videoView;
     UIView * _visualEffectView;
+    float  _volume;
+    BOOL  _waitingForPlayback;
+    BOOL  _wasPlayingOrWaitingToPlayWhenUnparented;
     BOOL  _wasPlayingWhenSuspended;
-    BOOL  _wasPlayingWhenUnparented;
 }
 
 @property (getter=isActive, nonatomic) BOOL active;
+@property (nonatomic, readonly) UIView *containerView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (getter=isFullScreen, nonatomic) BOOL fullScreen;
+@property (nonatomic) BOOL hasEverPlayed;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isMuted;
 @property (nonatomic, readonly) BOOL isPlaying;
+@property (nonatomic, readonly) unsigned long long lastInteractionTimestamp;
 @property (getter=isMuted, nonatomic) BOOL muted;
 @property (getter=isPlaying, nonatomic) BOOL playing;
 @property (nonatomic, readonly) BOOL shouldAutoPlay;
 @property (nonatomic, readonly) BOOL shouldShowMuteButton;
+@property (nonatomic, readonly) BOOL shouldUnmuteWhenUserAdjustsVolume;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) float unobscuredAreaFraction;
 @property (nonatomic, readonly) BOOL usesSharedAudioSession;
 @property (nonatomic, readonly) LPVideo *video;
+@property (nonatomic) float volume;
+@property (getter=isWaitingForPlayback, nonatomic) BOOL waitingForPlayback;
 
 - (void).cxx_destruct;
 - (void)_buildVideoPlaceholderView;
@@ -43,33 +61,59 @@
 - (id)_createPulsingLoadIndicator;
 - (void)_muteButtonHighlightLongPressRecognized:(id)arg1;
 - (void)_muteButtonTapRecognized:(id)arg1;
-- (void)_swapVideoPlaceholderForVideo;
+- (void)_swapVideoPlaceholderForVideoForAutoPlay:(BOOL)arg1;
 - (void)applicationDidBecomeActive:(id)arg1;
 - (void)applicationWillResignActive:(id)arg1;
 - (void)componentViewDidMoveToWindow;
+- (id)containerView;
+- (id)createFullScreenVideoViewController;
 - (id)createVideoPlayerView;
 - (void)dealloc;
 - (void)didChangeMutedState:(BOOL)arg1;
 - (void)didChangePlayingState:(BOOL)arg1;
 - (void)didEncounterPlaybackError;
+- (void)enterCustomFullScreen;
+- (void)fadeInMuteButton;
+- (void)fullScreenVideoDidDismiss;
+- (void)fullScreenVideoDidPresent;
+- (void)fullScreenVideoWillDismiss;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (BOOL)hasEverPlayed;
+- (void)hideMuteButton;
+- (void)hidePlayButtonAnimated:(BOOL)arg1;
 - (id)init;
 - (id)initWithVideo:(id)arg1 style:(id)arg2 posterFrame:(id)arg3 posterFrameStyle:(id)arg4 disablePlayback:(BOOL)arg5;
 - (BOOL)isActive;
+- (BOOL)isFullScreen;
 - (BOOL)isMuted;
+- (BOOL)isParented;
 - (BOOL)isPlaying;
+- (BOOL)isWaitingForPlayback;
+- (unsigned long long)lastInteractionTimestamp;
 - (void)layoutComponentView;
+- (void)prepareForDisplayWithCompletionHandler:(id /* block */)arg1;
 - (void)removePlaceholderViews;
 - (void)setActive:(BOOL)arg1;
+- (void)setFullScreen:(BOOL)arg1;
+- (void)setHasEverPlayed:(BOOL)arg1;
 - (void)setMuted:(BOOL)arg1;
 - (void)setPlaying:(BOOL)arg1;
+- (void)setShowPlayButton:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setVolume:(float)arg1;
+- (void)setWaitingForPlayback:(BOOL)arg1;
 - (BOOL)shouldAutoPlay;
 - (BOOL)shouldShowMuteButton;
+- (BOOL)shouldUnmuteWhenUserAdjustsVolume;
 - (void)showMuteButton;
+- (void)showPlayButtonAnimated:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)tapRecognized:(id)arg1;
+- (float)unobscuredAreaFraction;
 - (void)updateMuteButtonImage;
+- (void)userInteractedWithVideoView;
+- (BOOL)usesCustomFullScreenImplementation;
 - (BOOL)usesSharedAudioSession;
 - (id)video;
+- (float)volume;
 
 @end

@@ -13,12 +13,11 @@
 @property (nonatomic, readonly) NSArray *values;
 
 - (id /* block */).cxx_destruct;
-- (/* Warning: Unrecognized filer type: '
-' using 'void*' */ void*)closed;
+- (/* Warning: Unrecognized filer type: 'z' using 'void*' */ void*)closed;
 - (id)init;
 - (id)keys;
 - (id)kv;
-/* MISSING HEADER DESCRIPTION FOR METHOD objectForKeyedSubscript: */
+- (void)objectForKeyedSubscript;
 - (BOOL)removeObjectForKey:(id)arg1 error:(id*)arg2;
 - (BOOL)removeObjectsMatching:(id)arg1 error:(id*)arg2;
 - (void)setKv:(id)arg1;

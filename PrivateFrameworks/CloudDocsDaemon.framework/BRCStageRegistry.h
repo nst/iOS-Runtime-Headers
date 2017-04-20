@@ -32,6 +32,7 @@
 
 - (void).cxx_destruct;
 - (void)_fileIDMightHaveBeenUnlocked:(id)arg1;
+- (BOOL)_flockToMakeLiveAtPath:(id)arg1 error:(id*)arg2;
 - (BOOL)_graveyardAt:(int)arg1 path:(id)arg2 forItemID:(id)arg3;
 - (int)_openStageDirectory:(unsigned char)arg1;
 - (id)_pathInStage:(unsigned long long)arg1 index:(unsigned char*)arg2 generationID:(unsigned int*)arg3;
@@ -63,6 +64,7 @@
 - (BOOL)isCancelled;
 - (void)lowDiskStatusChangedForDevice:(int)arg1 hasEnoughSpace:(BOOL)arg2;
 - (BOOL)makeDirectoryInStageGatherFileID:(unsigned long long*)arg1 generationID:(unsigned int*)arg2 error:(id*)arg3;
+- (BOOL)makeItemLive:(id)arg1 fromStage:(unsigned long long)arg2 bySwappingWith:(id)arg3 fileName:(id)arg4 error:(id*)arg5;
 - (id)makeNonLocalVersionSideFaultWithAdditionName:(id)arg1 appLibrary:(id)arg2 statInfo:(id)arg3 version:(id)arg4 error:(id*)arg5;
 - (BOOL)makeSideFaultInStageGatherFileID:(unsigned long long*)arg1 generationID:(unsigned int*)arg2 documentID:(unsigned int*)arg3 properties:(id)arg4 inAppLibrary:(id)arg5 forCreation:(BOOL)arg6 error:(id*)arg7;
 - (BOOL)makeSymlinkWithTarget:(id)arg1 inStageGatherFileID:(unsigned long long*)arg2 generationID:(unsigned int*)arg3 error:(id*)arg4;

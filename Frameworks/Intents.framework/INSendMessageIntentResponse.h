@@ -10,6 +10,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, copy) INMessage *sentMessage;
 @property (readonly) Class superclass;
 
 + (BOOL)_appLaunchRequestedFromCode:(int)arg1;
@@ -29,5 +30,7 @@
 - (id)initWithBackingStore:(id)arg1;
 - (id)initWithCode:(int)arg1 userActivity:(id)arg2;
 - (id)initWithCoder:(id)arg1;
+- (id)sentMessage;
+- (void)setSentMessage:(id)arg1;
 
 @end

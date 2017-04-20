@@ -23,11 +23,11 @@
     NSArray * _layoutAttributes;
     NSArray * _oldAssociatedLayoutAttributes;
     double  _prevTimestamp;
-    BOOL  _shouldDisplayLinkInvalidateLayout;
     struct CGPoint { 
         float x; 
         float y; 
     }  _targetContentOffset;
+    BOOL  _useFastQuanta;
     BOOL  _useInitialLayoutAttributesForRotation;
     struct CGRect { 
         struct CGPoint { 
@@ -56,8 +56,8 @@
 @property (nonatomic, copy) NSArray *layoutAttributes;
 @property (nonatomic, copy) NSArray *oldAssociatedLayoutAttributes;
 @property (nonatomic) double prevTimestamp;
-@property (nonatomic) BOOL shouldDisplayLinkInvalidateLayout;
 @property (nonatomic) struct CGPoint { float x1; float x2; } targetContentOffset;
+@property (nonatomic) BOOL useFastQuanta;
 @property (getter=isUsingInitialLayoutAttributesForRotation, nonatomic) BOOL useInitialLayoutAttributesForRotation;
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleBounds;
 
@@ -114,12 +114,11 @@
 - (void)setLayoutAttributes:(id)arg1;
 - (void)setOldAssociatedLayoutAttributes:(id)arg1;
 - (void)setPrevTimestamp:(double)arg1;
-- (void)setShouldDisplayLinkInvalidateLayout:(BOOL)arg1;
 - (void)setTargetContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setUseFastQuanta:(BOOL)arg1;
 - (void)setUseInitialLayoutAttributesForRotation:(BOOL)arg1;
 - (void)setVerticalOffset:(float)arg1 forParentOfAssociatedItemDeletedAtIndex:(unsigned int)arg2;
 - (void)setVisibleBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)shouldDisplayLinkInvalidateLayout;
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGPoint { float x1; float x2; })targetContentOffset;
 - (void)updateAssociatedLayoutAttributesIfNecessary;
@@ -127,6 +126,7 @@
 - (void)updateAttributesForTargetContentOffsetChangeWithAttributes:(id)arg1;
 - (void)updateContentSize;
 - (void)updateFrames;
+- (BOOL)useFastQuanta;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleBounds;
 
 @end

@@ -31,6 +31,7 @@
 - (float)addContentOverlap:(float)arg1;
 - (float)adjustFrameToNewSize:(float)arg1;
 - (BOOL)allowsUpdates;
+- (BOOL)allowsUserInteraction;
 - (BOOL)animatesDataChange;
 - (void)beginDisablingRasterization;
 - (void)beginImageContextWithMinimumWidth:(float)arg1;
@@ -47,6 +48,7 @@
 - (float)extraLeftPadding;
 - (float)extraRightPadding;
 - (id)foregroundStyle;
+- (id)foregroundView;
 - (id)imageFromImageContextClippedToWidth:(float)arg1;
 - (id)imageWithShadowNamed:(id)arg1;
 - (id)imageWithText:(id)arg1;
@@ -77,6 +79,7 @@
 - (int)textStyle;
 - (float)updateContentsAndWidth;
 - (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (void)updateForNewStyle:(id)arg1;
 - (void)willMoveToWindow:(id)arg1;
 
 @end

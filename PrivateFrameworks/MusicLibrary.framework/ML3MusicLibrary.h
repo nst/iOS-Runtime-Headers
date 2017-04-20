@@ -112,7 +112,7 @@
 - (long long)_cloudAssetsTotalSize;
 - (BOOL)_coalesceMismatchedCollectionClass:(Class)arg1 usingConnection:(id)arg2;
 - (void)_configureMediaLibraryDatabaseConnection:(id)arg1;
-- (void)_convertArtworkToDevicePreferredFormatFromSourceURL:(id)arg1 toDestinationURL:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_convertOriginalArtworkToDevicePreferredFormatFromSourceURL:(id)arg1 toDestinationURL:(id)arg2 completionHandler:(id /* block */)arg3;
 - (long long)_databaseFileFreeSpace;
 - (void)_deleteAllArtworkVariantsAtRelativePaths:(id)arg1;
 - (BOOL)_determineAndUpdateBestArtworkTokensForEntityPersistentID:(long long)arg1 entityType:(int)arg2 artworkType:(int)arg3 retrievalTime:(double)arg4 preserveExistingAvailableToken:(BOOL)arg5 usingConnection:(id)arg6;
@@ -143,7 +143,7 @@
 - (id)_systemUnicodeVersionData;
 - (void)_teardownMediaLibraryDatabaseConnection:(id)arg1;
 - (unsigned long long)_totalSizeForAllNonCacheTracks;
-- (BOOL)_updateBestArtworkTokensForArtworkToken:(id)arg1 artworkType:(int)arg2 sourceType:(int)arg3 usingConnection:(id)arg4;
+- (BOOL)_updateBestArtworkTokensForArtworkToken:(id)arg1 artworkType:(int)arg2 sourceType:(int)arg3 preserveExistingAvailableToken:(BOOL)arg4 usingConnection:(id)arg5;
 - (void)_updateDatabaseConnectionsProfilingLevel;
 - (BOOL)_validateDatabaseUsingConnection:(id)arg1 error:(id*)arg2;
 - (void)accessSortKeyBuilder:(id /* block */)arg1;
@@ -155,13 +155,14 @@
 - (BOOL)autoFilledTracksArePurgeable;
 - (long long)autoFilledTracksTotalSize;
 - (long long)autoFilledTracksTotalSizeWithUrgency:(unsigned int)arg1;
-- (void)autogenerateSupportedSizesForAllOriginalArtworkWithConnection:(id)arg1;
+- (void)autogenerateSupportedSizesForAllOriginalArtworkWithConnection:(id)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)automaticDatabaseValidationDisabled;
 - (void)checkInDatabaseConnection:(id)arg1;
 - (id)checkoutReaderConnection;
 - (id)checkoutWriterConnection;
 - (BOOL)cleanupArtworkWithOptions:(unsigned int)arg1;
 - (BOOL)cleanupArtworkWithOptions:(unsigned int)arg1 usingConnection:(id)arg2;
+- (BOOL)clearAllCloudKVSData;
 - (BOOL)clearAllGeniusData;
 - (long long)clearAllRemovedTracks;
 - (long long)clearPurgeableStorageAmount:(long long)arg1 withUrgency:(unsigned int)arg2;
@@ -196,7 +197,6 @@
 - (BOOL)deleteDatabaseProperty:(id)arg1;
 - (void)deletePresignedValidity;
 - (BOOL)downloadOnAddToLibrary;
-- (BOOL)dropItemIndexes;
 - (BOOL)emptyAllTables;
 - (void)enumerateArtworkTokensForEntityPersistentID:(long long)arg1 entityType:(int)arg2 artworkType:(int)arg3 usingBlock:(id /* block */)arg4;
 - (void)enumeratePersistentIDsAfterRevision:(long long)arg1 revisionTrackingCode:(unsigned int)arg2 maximumRevisionType:(int)arg3 forMediaTypes:(id)arg4 inUsersLibrary:(BOOL)arg5 usingBlock:(id /* block */)arg6;

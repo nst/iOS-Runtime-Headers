@@ -18,6 +18,7 @@
 @property (readonly) Class superclass;
 
 - (void)_cachePlaceData:(id)arg1 forKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })arg2 shouldOptimizeWritesToDisk:(BOOL)arg3;
+- (void)_cachePlaceData:(id)arg1 forKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })arg2 shouldOptimizeWritesToDisk:(BOOL)arg3 shouldUseDefaultProviderId:(BOOL)arg4;
 - (id)_cachedPlacedForRequest:(id)arg1;
 - (void)_callHistoryRecentsClearedObserver:(id)arg1;
 - (int)_invalidationStateForPlace:(id)arg1;
@@ -27,6 +28,7 @@
 - (void)_resetPhoneNumberMapper;
 - (void)_trackPlaceData:(id)arg1 forRequest:(id)arg2;
 - (void)applyRAPUpdatedMapItems:(id)arg1;
+- (id)cacheRegister;
 - (void)calculateFreeableSpaceWithHandler:(id /* block */)arg1;
 - (void)cancelRequest:(id)arg1;
 - (void)clearCache;

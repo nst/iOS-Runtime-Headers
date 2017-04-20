@@ -78,7 +78,7 @@
 - (id)generateHAPMetadataTuplesDictionary:(id)arg1;
 - (id)generateHMDHAPMetadataTupleArrayFromDict:(id)arg1;
 - (id)generateHMDictionary;
-- (id)getAliasedCharacteristicType:(id)arg1;
+- (id)getAliasedCharacteristicTypes:(id)arg1;
 - (id)getAliasedServiceType:(id)arg1;
 - (id)getCharacteristicTypeAlias:(id)arg1;
 - (id)getServiceTypeAlias:(id)arg1;

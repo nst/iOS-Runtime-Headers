@@ -4,6 +4,7 @@
 
 @interface CKDMMCSItem : NSObject {
     CKAsset * _asset;
+    NSDictionary * _assetChunkerOptions;
     NSData * _assetKey;
     NSData * _authRequest;
     NSString * _authToken;
@@ -48,6 +49,7 @@
 }
 
 @property (nonatomic, retain) CKAsset *asset;
+@property (nonatomic, retain) NSDictionary *assetChunkerOptions;
 @property (nonatomic, retain) NSData *assetKey;
 @property (nonatomic, retain) NSData *authRequest;
 @property (nonatomic, retain) NSString *authToken;
@@ -94,6 +96,7 @@
 - (id)CKPropertiesDescription;
 - (id)_openInfo;
 - (id)asset;
+- (id)assetChunkerOptions;
 - (id)assetKey;
 - (id)authRequest;
 - (id)authToken;
@@ -137,6 +140,7 @@
 - (id)requestor;
 - (id)sectionItems;
 - (void)setAsset:(id)arg1;
+- (void)setAssetChunkerOptions:(id)arg1;
 - (void)setAssetKey:(id)arg1;
 - (void)setAuthRequest:(id)arg1;
 - (void)setAuthToken:(id)arg1;

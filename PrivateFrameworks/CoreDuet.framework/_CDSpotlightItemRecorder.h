@@ -34,6 +34,7 @@
 - (void)deleteAllSearchableItemsWithBundleID:(id)arg1;
 - (void)deleteInteractionsWithGroupIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
 - (void)deleteInteractionsWithIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
+- (void)deleteKnowledgeEventsMatchingPredicate:(id)arg1;
 - (void)deleteKnowledgeEventsWithBundleID:(id)arg1;
 - (void)deleteSearchableItemsSinceDate:(id)arg1 bundleID:(id)arg2;
 - (void)deleteSearchableItemsWithDomainIdentifiers:(id)arg1 bundleID:(id)arg2;

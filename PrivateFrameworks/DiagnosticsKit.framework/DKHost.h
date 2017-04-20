@@ -6,6 +6,7 @@
     <DKAssetResponder> * _assetResponder;
     <DKBrightnessResponder> * _brightnessResponder;
     DATestViewOperation * _currentLegacyDiagnostic;
+    NSObject<OS_dispatch_queue> * _diagnosticRunnerQueue;
     NSMutableDictionary * _diagnostics;
     BOOL  _discoveryComplete;
     NSCondition * _discoveryLock;
@@ -23,6 +24,7 @@
 @property (nonatomic, retain) DATestViewOperation *currentLegacyDiagnostic;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *diagnosticRunnerQueue;
 @property (nonatomic, retain) NSMutableDictionary *diagnostics;
 @property (nonatomic) BOOL discoveryComplete;
 @property (nonatomic, retain) NSCondition *discoveryLock;
@@ -40,14 +42,18 @@
 - (void)_beginExtensionDiscovery;
 - (BOOL)_checkPrerequisitesForDiagnostic:(id)arg1 parameters:(id)arg2 error:(id*)arg3;
 - (BOOL)_freeSpaceAvailable:(id)arg1;
+- (BOOL)_isDeviceLocked;
 - (void)_prepareHandlersForRequest:(id)arg1;
 - (void)_startRequest:(id)arg1 parameters:(id)arg2;
 - (id)assetResponder;
+- (id)attributesForIdentifier:(id)arg1;
 - (id)availableDiagnostics;
 - (void)beginDiagnosticWithIdentifier:(id)arg1 parameters:(id)arg2 presentingViewController:(id)arg3 completion:(id /* block */)arg4;
+- (void)beginDiagnosticWithIdentifier:(id)arg1 parameters:(id)arg2 presentingViewController:(id)arg3 environment:(id)arg4 completion:(id /* block */)arg5;
 - (id)brightnessResponder;
 - (void)cancelAllDiagnostics;
 - (id)currentLegacyDiagnostic;
+- (id)diagnosticRunnerQueue;
 - (id)diagnostics;
 - (BOOL)discoveryComplete;
 - (id)discoveryLock;
@@ -63,6 +69,7 @@
 - (void)setAssetResponder:(id)arg1;
 - (void)setBrightnessResponder:(id)arg1;
 - (void)setCurrentLegacyDiagnostic:(id)arg1;
+- (void)setDiagnosticRunnerQueue:(id)arg1;
 - (void)setDiagnostics:(id)arg1;
 - (void)setDiscoveryComplete:(BOOL)arg1;
 - (void)setDiscoveryLock:(id)arg1;

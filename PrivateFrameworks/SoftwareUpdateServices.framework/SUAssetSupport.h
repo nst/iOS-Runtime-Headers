@@ -12,10 +12,12 @@
 + (void)cleanupAllSoftwareUpdateAssets;
 + (id)defaultAssetDownloadOptionsWithPriority:(int)arg1;
 + (id)findAssetWithMatcher:(id)arg1 localSearch:(BOOL)arg2 error:(id*)arg3;
++ (id)findAssetWithMatcher:(id)arg1 localSearch:(BOOL)arg2 releaseDate:(id*)arg3 error:(id*)arg4;
 + (id)getInstalledDocumentationAssetFromSoftwareUpdateAssetIfExists:(id)arg1;
 + (id)getLocalDefaultSoftwareUpdateAssetIfExists;
++ (id)getLocalDefaultSoftwareUpdateAssetIfExistsWithReleaseDate:(id*)arg1;
 + (void)purgeMSUUpdate:(id /* block */)arg1;
-+ (id)tryCreateDescriptorFromSoftwareUpdateAsset:(id)arg1;
++ (id)tryCreateDescriptorFromSoftwareUpdateAsset:(id)arg1 withReleaseDate:(id)arg2;
 + (id)tryCreateDocumentationFromDocumentationAsset:(id)arg1;
 
 @end

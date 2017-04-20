@@ -33,6 +33,7 @@
 - (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
+- (BOOL)contentFlowsVertically;
 - (id)delegate;
 - (void)didMoveToParentViewController:(id)arg1;
 - (BOOL)hideHeader;

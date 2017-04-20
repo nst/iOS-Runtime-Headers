@@ -2,11 +2,18 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFStartLocalSearchFeedback : SFStartSearchFeedback {
+@interface SFStartLocalSearchFeedback : SFStartSearchFeedback <SFProtobufObject> {
     unsigned int  _indexType;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic) unsigned int indexType;
+@property (nonatomic, readonly) PBCodable *protobufMessage;
+@property (readonly) Class superclass;
+
+// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
 
 + (BOOL)supportsSecureCoding;
 
@@ -16,5 +23,11 @@
 - (id)initWithInput:(id)arg1 triggerEvent:(unsigned int)arg2 indexType:(unsigned int)arg3;
 - (id)initWithInput:(id)arg1 triggerEvent:(unsigned int)arg2 indexType:(unsigned int)arg3 queryId:(unsigned long long)arg4;
 - (void)setIndexType:(unsigned int)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
+
++ (Class)protobufClass;
+
+- (id)protobufMessage;
 
 @end

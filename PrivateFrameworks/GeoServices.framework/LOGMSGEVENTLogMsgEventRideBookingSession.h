@@ -3,6 +3,7 @@
  */
 
 @interface LOGMSGEVENTLogMsgEventRideBookingSession : PBCodable <NSCopying> {
+    BOOL  _comparedRideOptions;
     GEOLatLng * _destinationBlurred;
     double  _distanceToPickupInMeters;
     double  _durationOfSessionInSeconds;
@@ -17,6 +18,8 @@
         unsigned int endState : 1; 
         unsigned int endView : 1; 
         unsigned int numberOfAvailableExtensions : 1; 
+        unsigned int statusIssue : 1; 
+        unsigned int comparedRideOptions : 1; 
         unsigned int exploredOtherOptions : 1; 
         unsigned int installedApp : 1; 
         unsigned int movedPickupLocation : 1; 
@@ -31,14 +34,17 @@
     GEOLatLng * _originBlurred;
     BOOL  _paymentIsApplePay;
     NSString * _rideAppId;
+    NSString * _rideAppVersion;
     NSString * _rideBookingSessionId;
     NSString * _rideType;
     BOOL  _showedSurgePricingAlert;
+    int  _statusIssue;
     BOOL  _switchedApp;
     long long  _timestamp;
     BOOL  _unavailable;
 }
 
+@property (nonatomic) BOOL comparedRideOptions;
 @property (nonatomic, retain) GEOLatLng *destinationBlurred;
 @property (nonatomic) double distanceToPickupInMeters;
 @property (nonatomic) double durationOfSessionInSeconds;
@@ -46,6 +52,7 @@
 @property (nonatomic) int endView;
 @property (nonatomic, retain) NSMutableArray *errorMessages;
 @property (nonatomic) BOOL exploredOtherOptions;
+@property (nonatomic) BOOL hasComparedRideOptions;
 @property (nonatomic, readonly) BOOL hasDestinationBlurred;
 @property (nonatomic) BOOL hasDistanceToPickupInMeters;
 @property (nonatomic) BOOL hasDurationOfSessionInSeconds;
@@ -58,9 +65,11 @@
 @property (nonatomic, readonly) BOOL hasOriginBlurred;
 @property (nonatomic) BOOL hasPaymentIsApplePay;
 @property (nonatomic, readonly) BOOL hasRideAppId;
+@property (nonatomic, readonly) BOOL hasRideAppVersion;
 @property (nonatomic, readonly) BOOL hasRideBookingSessionId;
 @property (nonatomic, readonly) BOOL hasRideType;
 @property (nonatomic) BOOL hasShowedSurgePricingAlert;
+@property (nonatomic) BOOL hasStatusIssue;
 @property (nonatomic) BOOL hasSwitchedApp;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) BOOL hasUnavailable;
@@ -70,9 +79,11 @@
 @property (nonatomic, retain) GEOLatLng *originBlurred;
 @property (nonatomic) BOOL paymentIsApplePay;
 @property (nonatomic, retain) NSString *rideAppId;
+@property (nonatomic, retain) NSString *rideAppVersion;
 @property (nonatomic, retain) NSString *rideBookingSessionId;
 @property (nonatomic, retain) NSString *rideType;
 @property (nonatomic) BOOL showedSurgePricingAlert;
+@property (nonatomic) int statusIssue;
 @property (nonatomic) BOOL switchedApp;
 @property (nonatomic) long long timestamp;
 @property (nonatomic) BOOL unavailable;
@@ -81,8 +92,10 @@
 
 - (int)StringAsEndState:(id)arg1;
 - (int)StringAsEndView:(id)arg1;
+- (int)StringAsStatusIssue:(id)arg1;
 - (void)addErrorMessage:(id)arg1;
 - (void)clearErrorMessages;
+- (BOOL)comparedRideOptions;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -99,6 +112,7 @@
 - (id)errorMessages;
 - (unsigned int)errorMessagesCount;
 - (BOOL)exploredOtherOptions;
+- (BOOL)hasComparedRideOptions;
 - (BOOL)hasDestinationBlurred;
 - (BOOL)hasDistanceToPickupInMeters;
 - (BOOL)hasDurationOfSessionInSeconds;
@@ -111,9 +125,11 @@
 - (BOOL)hasOriginBlurred;
 - (BOOL)hasPaymentIsApplePay;
 - (BOOL)hasRideAppId;
+- (BOOL)hasRideAppVersion;
 - (BOOL)hasRideBookingSessionId;
 - (BOOL)hasRideType;
 - (BOOL)hasShowedSurgePricingAlert;
+- (BOOL)hasStatusIssue;
 - (BOOL)hasSwitchedApp;
 - (BOOL)hasTimestamp;
 - (BOOL)hasUnavailable;
@@ -127,8 +143,10 @@
 - (BOOL)paymentIsApplePay;
 - (BOOL)readFrom:(id)arg1;
 - (id)rideAppId;
+- (id)rideAppVersion;
 - (id)rideBookingSessionId;
 - (id)rideType;
+- (void)setComparedRideOptions:(BOOL)arg1;
 - (void)setDestinationBlurred:(id)arg1;
 - (void)setDistanceToPickupInMeters:(double)arg1;
 - (void)setDurationOfSessionInSeconds:(double)arg1;
@@ -136,6 +154,7 @@
 - (void)setEndView:(int)arg1;
 - (void)setErrorMessages:(id)arg1;
 - (void)setExploredOtherOptions:(BOOL)arg1;
+- (void)setHasComparedRideOptions:(BOOL)arg1;
 - (void)setHasDistanceToPickupInMeters:(BOOL)arg1;
 - (void)setHasDurationOfSessionInSeconds:(BOOL)arg1;
 - (void)setHasEndState:(BOOL)arg1;
@@ -146,6 +165,7 @@
 - (void)setHasNumberOfAvailableExtensions:(BOOL)arg1;
 - (void)setHasPaymentIsApplePay:(BOOL)arg1;
 - (void)setHasShowedSurgePricingAlert:(BOOL)arg1;
+- (void)setHasStatusIssue:(BOOL)arg1;
 - (void)setHasSwitchedApp:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setHasUnavailable:(BOOL)arg1;
@@ -155,13 +175,17 @@
 - (void)setOriginBlurred:(id)arg1;
 - (void)setPaymentIsApplePay:(BOOL)arg1;
 - (void)setRideAppId:(id)arg1;
+- (void)setRideAppVersion:(id)arg1;
 - (void)setRideBookingSessionId:(id)arg1;
 - (void)setRideType:(id)arg1;
 - (void)setShowedSurgePricingAlert:(BOOL)arg1;
+- (void)setStatusIssue:(int)arg1;
 - (void)setSwitchedApp:(BOOL)arg1;
 - (void)setTimestamp:(long long)arg1;
 - (void)setUnavailable:(BOOL)arg1;
 - (BOOL)showedSurgePricingAlert;
+- (int)statusIssue;
+- (id)statusIssueAsString:(int)arg1;
 - (BOOL)switchedApp;
 - (long long)timestamp;
 - (BOOL)unavailable;

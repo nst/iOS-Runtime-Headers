@@ -10,7 +10,7 @@
     BOOL  _expectsPartialContent;
     NSLock * _lock;
     BOOL  _requiresWiFi;
-    NSURLSession * _session;
+    GEONSURLSharedSession * _session;
     NSURLSessionTask * _task;
     NSURL * _url;
 }

@@ -16,9 +16,7 @@
 - (void)setCustomInputView:(UIView *)arg1;
 - (void)setForceSecureTextEntry:(BOOL)arg1;
 - (void)setSuggestions:(NSArray *)arg1;
-- (void)setTextContentType:(NSString *)arg1;
 - (NSArray *)suggestions;
-- (NSString *)textContentType;
 - (NSObject<NSSecureCoding> *)userObject;
 
 @end

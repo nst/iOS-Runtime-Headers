@@ -2,12 +2,14 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@interface PHDerivativeAssetResource : PHAssetResource {
+@interface PHDerivativeAssetResource : PHAssetResource <PHCPLAssetResource> {
+    PHAsset * _asset;
     unsigned int  _cplResourceType;
     PLImageFormat * _format;
     BOOL  _tableFormat;
 }
 
+@property (nonatomic, readonly) PHAsset *asset;
 @property (nonatomic, readonly) unsigned int cplResourceType;
 @property (getter=isCroppedToSquare, nonatomic, readonly) BOOL croppedToSquare;
 @property (nonatomic, retain) PLImageFormat *format;
@@ -17,13 +19,16 @@
 
 + (id)CPLDerivativeAssetResourcesForAsset:(id)arg1 managedAsset:(id)arg2;
 + (id)assetResourceForAsset:(id)arg1 qualityClass:(id)arg2;
-+ (id)tableThumbnailDataForAsset:(id)arg1 resource:(id)arg2 dataSpecification:(id*)arg3;
++ (id)tableThumbnailDataForAsset:(id)arg1 assetResourceQualityClass:(id)arg2 dataSpecification:(struct PHAssetResourceTableDataSpecification { int x1; int x2; int x3; int x4; int x5; int x6; }*)arg3;
 + (id)thumbnailDerivativeAssetResourcesForAsset:(id)arg1;
 
 - (void).cxx_destruct;
 - (int)analysisType;
+- (id)asset;
+- (id)assetLocalIdentifier;
 - (unsigned int)cplResourceType;
 - (id)description;
+- (BOOL)fileExists;
 - (id)format;
 - (id)initWithCloudResource:(id)arg1 forAsset:(id)arg2;
 - (id)initWithQualityClass:(id)arg1 forAsset:(id)arg2;

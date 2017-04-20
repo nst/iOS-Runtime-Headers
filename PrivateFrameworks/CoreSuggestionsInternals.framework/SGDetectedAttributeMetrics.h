@@ -9,6 +9,7 @@
 @property (nonatomic, retain) SGMContactDetailExtraction *petGenClassInstance;
 
 + (id)contactStore;
++ (id)findContactFromEntity:(id)arg1 withPhonenumber:(id)arg2;
 + (id)findContactFromEntity:(id)arg1 withType:(struct SGMContactDetailType_ { unsigned int x1; })arg2 detailValue:(id)arg3;
 + (id)instance;
 + (void)recordExtractionEventFromSource:(struct SGMDocumentType_ { unsigned int x1; })arg1 foundInSignature:(BOOL)arg2 detailType:(struct SGMContactDetailType_ { unsigned int x1; })arg3 outcome:(struct SGMContactDetailExtractionOutcome_ { unsigned int x1; })arg4 foundInSenderCNContact:(BOOL)arg5;

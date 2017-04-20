@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) NSString *versionNumber;
 
-+ (id)options;
+// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 - (void).cxx_destruct;
 - (id)buildNumber;
@@ -32,5 +32,11 @@
 - (id)unknownFields;
 - (id)versionNumber;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

@@ -58,6 +58,7 @@
 - (id)init;
 - (void)initiateAssetDownloadSessionsWithCompletion:(id /* block */)arg1;
 - (void)keepATCAlive:(BOOL)arg1 withCompletion:(id /* block */)arg2;
+- (id)legacyHostVersion;
 - (void)listener:(id)arg1 didReceiveMessageLinkRequest:(id)arg2;
 - (void)lowBatteryNotificationWithCompletion:(id /* block */)arg1;
 - (void)messageLink:(id)arg1 didReceiveRequest:(id)arg2;

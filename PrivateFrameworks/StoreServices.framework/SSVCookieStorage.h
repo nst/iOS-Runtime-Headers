@@ -11,8 +11,17 @@
 
 @property (readonly) NSURL *storageLocation;
 
++ (BOOL)_currentProcessIsRoot;
++ (BOOL)_currentProcessShouldUseRescuedStorageLocationForLocation:(id)arg1;
++ (BOOL)_fileIsOwnedByRoot:(id)arg1;
++ (BOOL)_fileURLRepresentsSharedStorageLocation:(id)arg1;
++ (id)_getGlobalSetCookiesForResponse:(id)arg1;
++ (id)_getSetCookiesForResponse:(id)arg1;
++ (id)_getUserSetCookiesForResponse:(id)arg1;
++ (id)_rescuedStorageLocationForLocation:(id)arg1;
 + (BOOL)_setupCookieDatabase:(id)arg1 forCookieStorage:(id)arg2;
 + (id)_sharedStorageLocationPath;
++ (BOOL)responseHasSetCookies:(id)arg1;
 + (id)sharedInstance;
 + (id)sharedStorage;
 

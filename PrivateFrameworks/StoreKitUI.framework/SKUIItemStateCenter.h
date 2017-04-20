@@ -5,7 +5,6 @@
 @interface SKUIItemStateCenter : NSObject <ASDJobManagerObserver, SSDownloadManagerObserver> {
     NSObject<OS_dispatch_queue> * _accessQueue;
     BOOL  _appInstallRestricted;
-    SSSoftwareUpdatesStore * _appUpdatesStore;
     ASDSoftwareUpdatesStore * _appstoredUpdatesStore;
     BOOL  _canAccessAppUpdates;
     BOOL  _canAccessPurchaseHistory;
@@ -22,7 +21,6 @@
     NSObject<OS_dispatch_queue> * _observerQueue;
     NSHashTable * _observers;
     int  _parentalControlsRank;
-    SKUIPendingRentalCenter * _pendingRentalsCenter;
     SSAppPurchaseHistoryDatabase * _purchaseHistoryDatabase;
     SKUIStoreItemRelationshipCounsellor * _relationshipCouncellor;
     BOOL  _runningInStoreDemoMode;
@@ -36,7 +34,6 @@
 @property (getter=isGratisEligible, nonatomic, readonly) BOOL gratisEligible;
 @property (readonly) unsigned int hash;
 @property (readonly) int parentalControlsRank;
-@property (readonly) SKUIPendingRentalCenter *pendingRentalsCenter;
 @property (getter=isRunningInStoreDemoMode, readonly) BOOL runningInStoreDemoMode;
 @property (readonly) Class superclass;
 
@@ -44,7 +41,6 @@
 
 - (void).cxx_destruct;
 - (id)_addState:(unsigned int)arg1 forItemIdentifier:(id)arg2;
-- (id)_appUpdatesStore;
 - (id)_appstoredUpdatesStore;
 - (void)_appstoredUpdatesStoreChangeNotification:(id)arg1;
 - (id)_copyItemsStatesForLibraryItems:(id)arg1;
@@ -56,16 +52,18 @@
 - (id)_jobManager;
 - (void)_mediaLibraryDidChangeNotification:(id)arg1;
 - (id)_newPurchaseWithItem:(id)arg1 offer:(id)arg2;
+- (id)_newPurchasesForSoftwareWithBundleItem:(id)arg1 bundleOffer:(id)arg2;
 - (id)_newPurchasesWithBundleItem:(id)arg1 bundleOffer:(id)arg2;
 - (id)_newPurchasesWithItems:(id)arg1;
+- (id)_newSoftwarePurchaseWithItem:(id)arg1 offer:(id)arg2;
 - (void)_notifyObserversOfMediaLibraryChange;
 - (void)_notifyObserversOfPurchasesResponses:(id)arg1;
 - (void)_notifyObserversOfRestrictionsChange;
+- (void)_notifyObserversOfSoftwarePurchasesResponses:(id)arg1;
 - (void)_notifyObserversOfStateChange:(id)arg1;
 - (void)_notifyObserversOfStateChanges:(id)arg1;
-- (void)_pendingRentalAdded:(id)arg1;
-- (void)_pendingRentalRemoved:(id)arg1;
 - (void)_performPurchases:(id)arg1 hasBundlePurchase:(BOOL)arg2 withClientContext:(id)arg3 completionBlock:(id /* block */)arg4;
+- (void)_performSoftwarePurchases:(id)arg1 withClientContext:(id)arg2 completionBlock:(id /* block */)arg3;
 - (id)_purchaseHistoryDatabase;
 - (void)_reloadAppUpdatesStore;
 - (void)_reloadDownloadManager;
@@ -79,7 +77,6 @@
 - (void)_replacePurchasingItem:(id)arg1 withDownloadIDs:(id)arg2;
 - (void)_restrictionsChangedNotification:(id)arg1;
 - (void)_setAvailableAppstoredUpdatesWithUpdates:(id)arg1 decrementLoadCount:(BOOL)arg2;
-- (void)_setAvailableUpdatesWithUpdates:(id)arg1 decrementLoadCount:(BOOL)arg2;
 - (void)_setDownloads:(id)arg1;
 - (void)_setFirstPartyRemovableItemsIdentifiers:(id)arg1;
 - (void)_setGratisIdentifiers:(id)arg1 error:(id)arg2;
@@ -90,6 +87,7 @@
 - (id)_setStateFlag:(unsigned int)arg1 forItemsWithIdentifiers:(id)arg2 sendNotification:(BOOL)arg3;
 - (id)_setStateFlag:(unsigned int)arg1 forOnlyItemsWithIdentifiers:(id)arg2 sendNotification:(BOOL)arg3;
 - (void)_storefrontDidChangeNotification:(id)arg1;
+- (void)_updatesSoftwarePurchasingItemsForPurchases:(id)arg1 purchaseWasSuccessful:(BOOL)arg2;
 - (void)_updatesStoreChangeNotification:(id)arg1;
 - (void)addDownloads:(id)arg1;
 - (void)addManifestDownloadWithURL:(id)arg1 placeholderMetadata:(id)arg2;
@@ -103,7 +101,6 @@
 - (void)dealloc;
 - (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (void)downloadManagerDownloadsDidChange:(id)arg1;
-- (void)downloadRentalForItem:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (void)endObservingLibraryItems:(id)arg1;
 - (void)evaluatePurchaseResponseForRentals:(id)arg1;
 - (void)findLibraryItemsForContentIdentifiers:(id)arg1 options:(id)arg2 completionBlock:(id /* block */)arg3;
@@ -122,14 +119,16 @@
 - (void)jobManager:(id)arg1 updatedStateOfJobs:(id)arg2;
 - (id)metricsActionTypeForItem:(id)arg1;
 - (int)parentalControlsRank;
-- (id)pendingRentalsCenter;
+- (id)performActionForItem:(id)arg1 clientContext:(id)arg2;
 - (id)performActionForItem:(id)arg1 clientContext:(id)arg2 completionBlock:(id /* block */)arg3;
 - (id)performActionForItem:(id)arg1 offer:(id)arg2 clientContext:(id)arg3 completionBlock:(id /* block */)arg4;
 - (id)performActionForItem:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (void)performActionForLibraryItem:(id)arg1;
+- (id)performActionForSoftwareItem:(id)arg1 offer:(id)arg2 clientContext:(id)arg3 completionBlock:(id /* block */)arg4;
 - (void)purchaseItem:(id)arg1 offer:(id)arg2 clientContext:(id)arg3 completionBlock:(id /* block */)arg4;
 - (void)purchaseItems:(id)arg1 withClientContext:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)purchaseItems:(id)arg1 withCompletionBlock:(id /* block */)arg2;
+- (void)purchaseSoftwareItem:(id)arg1 offer:(id)arg2 clientContext:(id)arg3 completionBlock:(id /* block */)arg4;
 - (void)purchaseTone:(id)arg1 withProperties:(id)arg2 clientContext:(id)arg3 completionBlock:(id /* block */)arg4;
 - (void)reloadFromServer;
 - (void)reloadFromServerWithCompletionBlock:(id /* block */)arg1;

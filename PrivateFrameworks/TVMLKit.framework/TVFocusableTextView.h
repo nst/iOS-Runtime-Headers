@@ -4,6 +4,7 @@
 
 @interface TVFocusableTextView : UIView <UIGestureRecognizerDelegate, _UIFloatingContentViewDelegate> {
     BOOL  _alwaysFocusable;
+    UITextView * _auxilliaryTextView;
     UIVisualEffectView * _backgroundView;
     UIColor * _descriptionTextColor;
     UIColor * _descriptionTextHighlightColor;

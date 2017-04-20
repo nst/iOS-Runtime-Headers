@@ -15,6 +15,7 @@
 - (void).cxx_destruct;
 - (id /* block */)completionHandler;
 - (id)initWithBundleIDs:(id)arg1 accountName:(id)arg2 completionHandler:(id /* block */)arg3;
+- (id)initWithBundleIDs:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)setCompletionHandler:(id /* block */)arg1;
 
 @end

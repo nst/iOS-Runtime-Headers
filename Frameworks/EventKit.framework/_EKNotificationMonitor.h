@@ -8,6 +8,7 @@
     NSArray * _eventNotificationReferences;
     EKEventStore * _eventStore;
     id /* block */  _eventStoreGetter;
+    BOOL  _initialCheck;
     unsigned int  _lastEventCount;
     unsigned int  _lastReminderCount;
     BOOL  _loadRecentlyRepliedNotifications;

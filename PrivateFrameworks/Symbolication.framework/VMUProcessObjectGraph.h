@@ -4,7 +4,6 @@
 
 @interface VMUProcessObjectGraph : VMUObjectGraph <VMUCommonGraphInterface> {
     VMURangeToStringMap * _binarySectionNameRanges;
-    BOOL  _hasDerivedObjcClassStructureRanges;
     unsigned int  _kernPageSize;
     unsigned long long  _machAbsolute;
     VMUNodeToStringMap * _nodeLabels;
@@ -47,6 +46,7 @@
 - (void*)copyUserMarked;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (unsigned int)enumerateReferencesFromDataRegion:(id)arg1 atGlobalSymbol:(id)arg2 withBlock:(id /* block */)arg3;
 - (unsigned int)enumerateRegionsWithBlock:(id /* block */)arg1;
 - (id)initWithArchived:(id)arg1 version:(int)arg2 options:(unsigned int)arg3;
 - (id)initWithPid:(int)arg1 nodes:(struct _VMUBlockNode { unsigned long long x1; unsigned int x2 : 3; unsigned int x3 : 2; unsigned int x4 : 36; unsigned int x5 : 23; }*)arg2 nodeCount:(unsigned int)arg3 zoneNames:(id)arg4 classInfoMap:(id)arg5 regions:(id)arg6 pthreadOffsets:(id)arg7 userMarked:(void*)arg8;
@@ -57,8 +57,10 @@
 - (id)nodeDescription:(unsigned int)arg1 withDestinationNode:(unsigned int)arg2 referenceInfo:(struct { unsigned long long x1; unsigned int x2; unsigned long long x3; })arg3;
 - (id)nodeDescription:(unsigned int)arg1 withOffset:(unsigned long long)arg2;
 - (id)nodeOffsetDescription:(struct { unsigned long long x1; unsigned int x2; unsigned long long x3; })arg1 withSourceNode:(unsigned int)arg2 destinationNode:(unsigned int)arg3;
+- (unsigned int)nodeReferencedFromDataRegion:(id)arg1 byGlobalSymbol:(id)arg2;
 - (int)pid;
 - (id)processName;
+- (struct _VMURange { unsigned long long x1; unsigned long long x2; })rangeForSymbolName:(id)arg1 inRegion:(id)arg2;
 - (id)realizedClasses;
 - (id)referenceDescription:(struct { unsigned long long x1; unsigned int x2; unsigned long long x3; })arg1 withSourceNode:(unsigned int)arg2 destinationNode:(unsigned int)arg3 alignmentSpacing:(unsigned int)arg4;
 - (void)refineEdges:(unsigned int)arg1 withOptions:(unsigned int)arg2 markingInvalid:(void*)arg3;
@@ -73,6 +75,7 @@
 - (void)setSnapshotMachTime:(unsigned long long)arg1;
 - (void)setThreadName:(id)arg1 forRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)setToolHeaderDescription:(id)arg1;
+- (void)setUserMarked:(void*)arg1;
 - (id)shortLabelForMallocNode:(unsigned int)arg1;
 - (id)shortNodeDescription:(unsigned int)arg1;
 - (unsigned long long)snapshotMachTime;

@@ -2,9 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIFocusEngine : NSObject <UIGestureRecognizerDelegate, _UIFocusMapDelegate> {
+@interface _UIFocusEngine : NSObject <UIGestureRecognizerDelegate, _UIFocusEnginePanGestureRecognizerDelegate, _UIFocusFastScrollingRecognizerDelegate, _UIFocusMapDelegate> {
     NSMapTable * _activeScrollViewAnimatingBounds;
     NSMapTable * _activeScrollViewLoadingBounds;
+    NSHashTable * _activelyScrollingScrollViews;
     _UIFocusSoundPool * _appIconSoundPool;
     NSMapTable * _cachedViewSearchResults;
     struct CGPoint { 
@@ -13,6 +14,7 @@
     }  _currentFocusDirection;
     unsigned int  _currentGestureID;
     BOOL  _enabled;
+    _UIFocusFastScrollingRecognizer * _fastScrollingRecognizer;
     struct CGPoint { 
         float x; 
         float y; 
@@ -26,6 +28,7 @@
         unsigned int isJoystickInRepeatMode : 1; 
         unsigned int isPendingJoystickRepeat : 1; 
         unsigned int isPeekingScrollView : 1; 
+        unsigned int isFastScrolling : 1; 
         unsigned int shouldApplyAcceleration : 1; 
         unsigned int shouldShowDebugOverlays : 1; 
     }  _flags;
@@ -36,6 +39,7 @@
     _UIFocusEngineJoystickGestureRecognizer * _joystickGestureRecognizer;
     NSTimer * _joystickModeExitTimer;
     NSTimer * _joystickModeRepeatTimer;
+    int  _joystickRepeatCount;
     unsigned int  _joystickRepeatingHeading;
     _UIFocusSoundPool * _keyboardSoundPool;
     _UIFocusSoundPool * _largeSoundPool;
@@ -78,6 +82,7 @@
     BOOL  _shouldShowDebugOverlays;
     _UIFocusSoundPool * _smallSoundPool;
     NSObject<OS_dispatch_queue> * _soundQueue;
+    BOOL  _supportsFastScrolling;
     UITapGestureRecognizer * _tapGestureRecognizer;
     UIWindow * _targetWindow;
     struct CGPoint { 
@@ -99,6 +104,7 @@
 @property (getter=_sendsFocusDirection, setter=_setSendsFocusDirection:, nonatomic) BOOL sendsFocusDirection;
 @property (nonatomic) BOOL shouldShowDebugOverlays;
 @property (readonly) Class superclass;
+@property (getter=_supportsFastScrolling, setter=_setSupportsFastScrolling:, nonatomic) BOOL supportsFastScrolling;
 @property (nonatomic) UIWindow *targetWindow;
 @property (nonatomic) UIView *viewForTouchDeferredFocus;
 @property (nonatomic) BOOL wantsScrollPeeking;
@@ -120,12 +126,17 @@
 - (void)_clearVisibleRectForLoadingScrollViewContent:(id)arg1;
 - (id)_closestFocusableViewToPoint:(struct CGPoint { float x1; float x2; })arg1 inView:(id)arg2;
 - (id)_closestFocusableViewToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2;
+- (struct CGPoint { float x1; float x2; })_contentOffsetForScrollView:(id)arg1 toFocusRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 targetOffset:(struct CGPoint { float x1; float x2; })arg3 targetBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 - (struct CGPoint { float x1; float x2; })_contentOffsetForScrollView:(id)arg1 toFocusView:(id)arg2;
 - (struct CGPoint { float x1; float x2; })_contentOffsetForScrollView:(id)arg1 toFocusView:(id)arg2 targetOffset:(struct CGPoint { float x1; float x2; })arg3 targetBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
+- (struct CGPoint { float x1; float x2; })_contentOffsetForScrollView:(id)arg1 toFocusView:(id)arg2 withFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 targetOffset:(struct CGPoint { float x1; float x2; })arg4 targetBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5;
 - (void)_continueTouchWithMomentum;
+- (void)_createFastScrollingRecognizerIfNeeded;
 - (float)_effortRequiredForFocusMovement:(id)arg1 fromItem:(id)arg2;
 - (void)_ensureFocusedViewIsOnscreen:(id)arg1;
 - (void)_exitJoystickModeForReal:(id)arg1;
+- (void)_fastScrollingBeganInScrollView:(id)arg1;
+- (void)_fastScrollingEnded;
 - (id)_findFocusCandidateByExhaustivelySearchingScrollView:(id)arg1 forFocusMovement:(id)arg2 fromItem:(id)arg3 didFindSpeedBump:(out BOOL*)arg4;
 - (id)_findFocusCandidateBySearchingLinearFocusMovementSequencesForMovement:(id)arg1 fromItem:(id)arg2;
 - (id)_findFocusCandidateWithoutLoadingScrollViewContent:(id)arg1 forFocusMovement:(id)arg2 fromItem:(id)arg3 minimumSearchArea:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 didFindSpeedBump:(out BOOL*)arg5;
@@ -145,7 +156,6 @@
 - (void)_handleTapGesture:(id)arg1;
 - (unsigned int)_headingForJoystickPosition:(struct CGPoint { float x1; float x2; })arg1 usingMinimumRadius:(float)arg2;
 - (float)_horizontalFrictionInterpolationForMomentumSpeed:(float)arg1 totalDistance:(float)arg2;
-- (BOOL)_isContinuingTouchWithMomentum;
 - (BOOL)_isScrollingScrollView:(id)arg1;
 - (BOOL)_joystickAttemptFocusMovement:(id)arg1 fromItem:(id)arg2;
 - (void)_joystickDisplayLinkHeartbeat:(id)arg1;
@@ -161,7 +171,6 @@
 - (void)_momentumHeartbeat:(id)arg1;
 - (id)_noCache_bestCandidateForNonLinearFocusMovement:(id)arg1 fromItem:(id)arg2;
 - (void)_panGestureEnd:(id)arg1;
-- (id)_panGestureRecognizer;
 - (void)_panGestureStart:(id)arg1;
 - (void)_peekScrollViewStartingAtFocusedItem:(id)arg1 progress:(struct CGVector { float x1; float x2; })arg2;
 - (BOOL)_performFocusMovement:(id)arg1;
@@ -180,8 +189,6 @@
 - (void)_resetProgressAccumulatorForHeading:(unsigned int)arg1 focusedItem:(id)arg2;
 - (void)_resetScrollViewPeek:(BOOL)arg1;
 - (void)_resetViewSearchCache;
-- (void)_runPerformanceTestWithName:(id)arg1 bySwipingAlongAxis:(int)arg2;
-- (void)_runPerformanceTestWithName:(id)arg1 fakeEvents:(struct { double x1; int x2; float x3; float x4; float x5; float x6; }*)arg2 count:(int)arg3;
 - (void)_scrollView:(id)arg1 toOffset:(struct CGPoint { float x1; float x2; })arg2;
 - (id)_scrollViewToPeekFocusMovement:(id)arg1 fromItem:(id)arg2;
 - (void)_sendFocusDirectionNotificationWithDirection:(struct CGPoint { float x1; float x2; })arg1;
@@ -191,12 +198,13 @@
 - (void)_sendMomentumEndNotificationsAndAnimateRollback:(BOOL)arg1;
 - (BOOL)_sendsFocusDirection;
 - (void)_setCachedSearchResult:(id)arg1 forHeading:(unsigned int)arg2;
-- (void)_setPanGestureRecognizer:(id)arg1;
 - (void)_setPlaysSoundOnFocusChange:(BOOL)arg1;
 - (void)_setSendsFocusDirection:(BOOL)arg1;
+- (void)_setSupportsFastScrolling:(BOOL)arg1;
 - (void)_setUpSounds;
 - (void)_setVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forLoadingScrollViewContent:(id)arg2;
 - (void)_setupDebugOverlays;
+- (BOOL)_shouldAcceptInputType:(unsigned int)arg1;
 - (BOOL)_shouldEagerlyValidateFocusCandidates;
 - (BOOL)_shouldPerformFocusUpdateWithCurrentMomentumStatus;
 - (BOOL)_shouldRecordDestinationViewDistanceOffscreen;
@@ -204,11 +212,15 @@
 - (BOOL)_speedBumpsAllowFocusMovement:(id)arg1 fromItem:(id)arg2;
 - (void)_startFocusDirectionRollbackForItem:(id)arg1;
 - (void)_stopMomentumAndPerformRollback;
+- (BOOL)_supportsFastScrolling;
 - (struct CGPoint { float x1; float x2; })_targetContentOffsetForScrollView:(id)arg1;
 - (void)_teardownDebugOverlays;
 - (int)_touchRegionForDigitizerLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })_touchSensitivityForView:(id)arg1;
+- (void)_uiktest_handlePanGesture:(id)arg1;
+- (id)_uiktest_panGestureRecognizer;
 - (BOOL)_uiktest_performFocusMovement:(id)arg1;
+- (void)_uiktest_setPanGestureRecognizer:(id)arg1;
 - (BOOL)_uiktest_updateFocusToItem:(id)arg1;
 - (void)_updateDebugOverlayByRemovingTouchIndicators;
 - (void)_updateDebugOverlayWithTouchAtNormalizedPoint:(struct CGPoint { float x1; float x2; })arg1 navigationBoundary:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
@@ -220,6 +232,8 @@
 - (BOOL)_wouldCrossSpeedBumpDuringFocusMovement:(id)arg1 fromItem:(id)arg2;
 - (BOOL)_wouldCrossSpeedBumpDuringFocusMovement:(id)arg1 fromView:(id)arg2 toView:(id)arg3;
 - (void)dealloc;
+- (void)fastScrollingRecognizer:(id)arg1 didRecognizeFastScrollingRequest:(id)arg2;
+- (BOOL)focusEnginePanGestureRecognizerShouldRecognizeImmediately:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)init;
 - (BOOL)isEnabled;

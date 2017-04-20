@@ -6,11 +6,11 @@
 
 @property (nonatomic, readonly) long count;
 
-- (id)copyWithZone:(void*)arg1;
+- (id)copyWithZone;
 - (long)count;
-- (long)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(long)arg3;
-- (void)getObjects:(id*)arg1 range:(struct { int x1; int x2; })arg2;
+- (long)countByEnumeratingWithStateobjectscount;
+- (void)getObjectsrange;
 - (id)init;
-- (id)objectAtIndex:(long)arg1;
+- (id)objectAtIndex;
 
 @end

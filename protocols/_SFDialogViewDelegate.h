@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)dialogView:(_SFDialogView *)arg1 didSelectPrimaryAction:(BOOL)arg2 withPromptText:(NSString *)arg3;
+- (void)dialogView:(_SFDialogView *)arg1 didSelectPrimaryAction:(BOOL)arg2 withInputText:(NSString *)arg3 passwordText:(NSString *)arg4;
 
 @end

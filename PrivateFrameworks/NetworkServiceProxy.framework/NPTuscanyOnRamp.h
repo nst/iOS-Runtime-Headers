@@ -5,18 +5,16 @@
 @interface NPTuscanyOnRamp : NSObject <NSPNetworkAgentDelegate, NSSecureCoding> {
     NSPKeyNetworkAgent * _agent;
     NWNetworkAgentRegistration * _agentRegistration;
-    NSPNetworkAgent * _currentAgent;
     NSData * _dayPass;
     NSDate * _dayPassCreationDate;
     BOOL  _dayPassFailed;
     double  _dayPassHardExpiry;
+    NSURLSession * _dayPassSession;
     NSUUID * _dayPassUUID;
     NWHostEndpoint * _daypassEndpoint;
     NPKeyBag * _keybag;
     unsigned int  _maxFrameSize;
-    NSMutableDictionary * _outstandingAssertions;
     NPWaldo * _parentWaldo;
-    unsigned int  _receivedUsageUpdates;
     NSDate * _retryDate;
     unsigned int  _rtt;
     NPTunnelTuscanyEndpoint * _tuscanyEndpoint;
@@ -24,7 +22,6 @@
 
 @property (retain) NSPKeyNetworkAgent *agent;
 @property (retain) NWNetworkAgentRegistration *agentRegistration;
-@property (retain) NSPNetworkAgent *currentAgent;
 @property (readonly) int currentEdgeType;
 @property (readonly) unsigned int currentFailureReason;
 @property unsigned int currentTimestamp;
@@ -32,15 +29,15 @@
 @property (retain) NSDate *dayPassCreationDate;
 @property BOOL dayPassFailed;
 @property double dayPassHardExpiry;
+@property (readonly) BOOL dayPassRefreshAllowed;
+@property (retain) NSURLSession *dayPassSession;
 @property unsigned int dayPassSessionCounter;
 @property (retain) NSUUID *dayPassUUID;
 @property (readonly) NWHostEndpoint *daypassEndpoint;
 @property (readonly) BOOL isDayPassExpired;
 @property (retain) NPKeyBag *keybag;
 @property (readonly) unsigned int maxFrameSize;
-@property (retain) NSMutableDictionary *outstandingAssertions;
 @property NPWaldo *parentWaldo;
-@property unsigned int receivedUsageUpdates;
 @property (retain) NSDate *retryDate;
 @property (readonly) unsigned int rtt;
 @property (readonly) NSString *shortDescription;
@@ -48,8 +45,8 @@
 @property (retain) NPTunnelTuscanyEndpoint *tuscanyEndpoint;
 
 + (id)currentOnRamp;
-+ (void)logKeybag:(id)arg1 message:(id)arg2;
-+ (id)resetWithOnRamps:(id)arg1 currentTimestamp:(unsigned int)arg2 currentEdgeIndex:(int)arg3 lastFailureReason:(unsigned int)arg4 generation:(unsigned int)arg5 lastUsedTimestamp:(double)arg6;
++ (void)logKeybag:(id)arg1 message:(id)arg2 identifier:(id)arg3;
++ (id)resetWithOnRamps:(id)arg1 currentTimestamp:(unsigned int)arg2 currentEdgeIndex:(int)arg3 lastFailureReason:(unsigned int)arg4 generation:(unsigned int)arg5 lastUsedTimestamp:(double)arg6 identifier:(id)arg7;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -57,7 +54,6 @@
 - (id)agentRegistration;
 - (id)copyCurrentDayPass;
 - (unsigned int)copyValue:(void*)arg1 ofSize:(unsigned int)arg2 fromOffset:(unsigned int)arg3 base:(const char *)arg4 totalLength:(unsigned int)arg5;
-- (id)currentAgent;
 - (int)currentEdgeType;
 - (unsigned int)currentFailureReason;
 - (unsigned int)currentTimestamp;
@@ -65,6 +61,8 @@
 - (id)dayPassCreationDate;
 - (BOOL)dayPassFailed;
 - (double)dayPassHardExpiry;
+- (BOOL)dayPassRefreshAllowed;
+- (id)dayPassSession;
 - (unsigned int)dayPassSessionCounter;
 - (id)dayPassUUID;
 - (id)daypassEndpoint;
@@ -79,37 +77,36 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)keybag;
 - (unsigned int)maxFrameSize;
-- (id)outstandingAssertions;
 - (id)parentWaldo;
 - (void)receiveAssertionForUUID:(id)arg1;
 - (void)receiveUnassertionForUUID:(id)arg1;
-- (unsigned int)receivedUsageUpdates;
 - (void)refreshDayPassWithWaldoDelegate:(id)arg1 softExpiry:(double)arg2 retryInterval:(double)arg3 edge:(id)arg4 completionHandler:(id /* block */)arg5;
-- (BOOL)registerAgent;
+- (BOOL)registerAgentWithKey:(id)arg1;
 - (void)reportUsageWithResult:(BOOL)arg1 appData:(id)arg2;
 - (BOOL)resetAgent:(id)arg1;
 - (void)resetFromCurrentInfo;
+- (void)resetParentWaldo:(id)arg1;
 - (id)retryDate;
 - (unsigned int)rtt;
 - (void)setAgent:(id)arg1;
 - (void)setAgentRegistration:(id)arg1;
-- (void)setCurrentAgent:(id)arg1;
 - (void)setCurrentTimestamp:(unsigned int)arg1;
 - (void)setDayPass:(id)arg1;
 - (void)setDayPassCreationDate:(id)arg1;
 - (void)setDayPassFailed:(BOOL)arg1;
 - (void)setDayPassHardExpiry:(double)arg1;
+- (void)setDayPassSession:(id)arg1;
 - (void)setDayPassSessionCounter:(unsigned int)arg1;
 - (void)setDayPassUUID:(id)arg1;
 - (void)setKeybag:(id)arg1;
-- (void)setOutstandingAssertions:(id)arg1;
 - (void)setParentWaldo:(id)arg1;
-- (void)setReceivedUsageUpdates:(unsigned int)arg1;
 - (void)setRetryDate:(id)arg1;
 - (void)setTuscanyEndpoint:(id)arg1;
 - (id)shortDescription;
+- (void)stopUsing;
 - (double)timeSinceLastUsed;
 - (id)tuscanyEndpoint;
 - (void)unregisterAgent;
+- (void)updateSessionCounterFromKernel;
 
 @end

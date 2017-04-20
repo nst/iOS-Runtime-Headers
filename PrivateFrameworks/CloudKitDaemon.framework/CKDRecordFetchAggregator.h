@@ -3,7 +3,9 @@
  */
 
 @interface CKDRecordFetchAggregator : CKDDatabaseOperation {
+    NSDictionary * _assetTransferOptionsByRecordTypeAndKey;
     unsigned int  _curFetchOrder;
+    CKDFetchRecordsOperation * _currentFetchOp;
     NSSet * _desiredKeys;
     id /* block */  _fetchAggregatorCompletionBlock;
     BOOL  _fetchAssetContents;
@@ -17,10 +19,11 @@
     CKDRecordCache * _recordCache;
     NSObject<OS_dispatch_source> * _recordReadySource;
     BOOL  _started;
-    NSObject<OS_dispatch_source> * _timerSource;
 }
 
+@property (nonatomic, retain) NSDictionary *assetTransferOptionsByRecordTypeAndKey;
 @property unsigned int curFetchOrder;
+@property (nonatomic) CKDFetchRecordsOperation *currentFetchOp;
 @property (nonatomic, retain) NSSet *desiredKeys;
 @property (nonatomic, copy) id /* block */ fetchAggregatorCompletionBlock;
 @property (nonatomic) BOOL fetchAssetContents;
@@ -34,7 +37,6 @@
 @property (nonatomic, readonly) CKDRecordCache *recordCache;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *recordReadySource;
 @property BOOL started;
-@property (nonatomic, retain) NSObject<OS_dispatch_source> *timerSource;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
@@ -44,11 +46,12 @@
 - (void)_flushFetchedRecordsToConsumerLocked;
 - (void)_flushFetchedRecordsToConsumerNoOrderingLocked;
 - (void)_flushFetchedRecordsToConsumerOrderedLocked;
-- (void)_lockedRescheduleQueuedFetchesTimer;
 - (void)_lockedSendFetchRequest;
 - (void)_performCallbackForFetchInfoLocked:(id)arg1;
 - (void)_recordFetchesAvailable;
+- (id)assetTransferOptionsByRecordTypeAndKey;
 - (unsigned int)curFetchOrder;
+- (id)currentFetchOp;
 - (void)dealloc;
 - (id)description;
 - (id)desiredKeys;
@@ -67,7 +70,9 @@
 - (BOOL)preserveOrdering;
 - (id)recordCache;
 - (id)recordReadySource;
+- (void)setAssetTransferOptionsByRecordTypeAndKey:(id)arg1;
 - (void)setCurFetchOrder:(unsigned int)arg1;
+- (void)setCurrentFetchOp:(id)arg1;
 - (void)setDesiredKeys:(id)arg1;
 - (void)setFetchAggregatorCompletionBlock:(id /* block */)arg1;
 - (void)setFetchAssetContents:(BOOL)arg1;
@@ -80,8 +85,6 @@
 - (void)setPreserveOrdering:(BOOL)arg1;
 - (void)setRecordReadySource:(id)arg1;
 - (void)setStarted:(BOOL)arg1;
-- (void)setTimerSource:(id)arg1;
 - (BOOL)started;
-- (id)timerSource;
 
 @end

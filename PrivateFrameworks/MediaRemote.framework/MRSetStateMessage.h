@@ -4,7 +4,6 @@
 
 @interface MRSetStateMessage : MRProtocolMessage {
     NSDictionary * _nowPlayingInfo;
-    void * _playbackQueue;
     NSArray * _supportedCommands;
 }
 

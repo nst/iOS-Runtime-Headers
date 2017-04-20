@@ -32,7 +32,11 @@
 - (id)_loadCertificateData;
 - (id)_postExchangeData:(id)arg1;
 - (BOOL)_primeTheConnection;
+- (BOOL)_shouldRetrySAPOperationForError:(id)arg1;
+- (id)_signData:(id)arg1 error:(id*)arg2;
 - (id)_urlBagInterpreter;
+- (BOOL)_verifyPrimeResponse:(id)arg1;
+- (BOOL)_verifySignature:(id)arg1 forData:(id)arg2 error:(id*)arg3;
 - (id)certificateData;
 - (void)establishSessionWithCompletionBlock:(id /* block */)arg1;
 - (id)init;
@@ -47,7 +51,6 @@
 - (void)signData:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)signatureWithData:(id)arg1 error:(id*)arg2;
 - (BOOL)verifyData:(id)arg1 withSignature:(id)arg2 error:(id*)arg3;
-- (BOOL)verifyPrimeResponse:(id)arg1;
 - (void)verifySignature:(id)arg1 forData:(id)arg2 completionBlock:(id /* block */)arg3;
 - (int)version;
 

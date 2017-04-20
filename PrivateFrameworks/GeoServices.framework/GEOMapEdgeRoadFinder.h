@@ -5,11 +5,11 @@
 @interface GEOMapEdgeRoadFinder : GEOMapEdgeFinder {
     struct unordered_set<GEORoadEdge, std::__1::hash<GEORoadEdge>, std::__1::equal_to<GEORoadEdge>, std::__1::allocator<GEORoadEdge> > { 
         struct __hash_table<GEORoadEdge, std::__1::hash<GEORoadEdge>, std::__1::equal_to<GEORoadEdge>, std::__1::allocator<GEORoadEdge> > { 
-            struct unique_ptr<std::__1::__hash_node<GEORoadEdge, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<GEORoadEdge, void *> *> > > { 
-                struct __compressed_pair<std::__1::__hash_node<GEORoadEdge, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<GEORoadEdge, void *> *> > > { 
-                    struct __hash_node<GEORoadEdge, void *> {} **__first_; 
-                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<GEORoadEdge, void *> *> > { 
-                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<GEORoadEdge, void *> *> > { 
+            struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<GEORoadEdge, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<GEORoadEdge, void *> *> *> > > { 
+                struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<GEORoadEdge, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<GEORoadEdge, void *> *> *> > > { 
+                    struct __hash_node_base<std::__1::__hash_node<GEORoadEdge, void *> *> {} **__first_; 
+                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<GEORoadEdge, void *> *> *> > { 
+                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<GEORoadEdge, void *> *> *> > { 
                             unsigned long __first_; 
                         } __data_; 
                     } __second_; 
@@ -17,7 +17,7 @@
             } __bucket_list_; 
             struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<GEORoadEdge, void *> *>, std::__1::allocator<std::__1::__hash_node<GEORoadEdge, void *> > > { 
                 struct __hash_node_base<std::__1::__hash_node<GEORoadEdge, void *> *> { 
-                    struct __hash_node<GEORoadEdge, void *> {} *__next_; 
+                    struct __hash_node_base<std::__1::__hash_node<GEORoadEdge, void *> *> {} *__next_; 
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::hash<GEORoadEdge> > { 

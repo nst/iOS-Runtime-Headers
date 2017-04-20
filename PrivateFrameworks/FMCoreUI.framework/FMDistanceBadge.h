@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FMCoreUI.framework/FMCoreUI
  */
 
-@interface FMDistanceBadge : FMDynamicTypeLabel {
+@interface FMDistanceBadge : UILabel {
     UIColor * _badgeColor;
     struct UIEdgeInsets { 
         float top; 

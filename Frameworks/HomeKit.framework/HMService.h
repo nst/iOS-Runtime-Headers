@@ -126,6 +126,7 @@
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
 + (id)hf_allRequiredCharacteristicTypesForStandardServices;
++ (id)hf_programmableSwitchServiceTypes;
 + (id)hf_requiredCharacteristicTypesForDisplayMetadataWithServiceType:(id)arg1;
 + (id)hf_roomsForServices:(id)arg1;
 + (id)hf_sensorCharacteristicTypeForServiceType:(id)arg1;
@@ -135,13 +136,18 @@
 - (id)hf_dateAdded;
 - (id)hf_displayName;
 - (id)hf_effectiveServiceType;
+- (unsigned int)hf_fallbackProgrammableSwitchIndex;
 - (BOOL)hf_hasSetFavorite;
 - (BOOL)hf_hasSetVisibleInHomeStatus;
 - (id)hf_iconDescriptor;
 - (BOOL)hf_isFavorite;
 - (BOOL)hf_isLegacyService;
+- (BOOL)hf_isProgrammableSwitch;
 - (BOOL)hf_isShowNotificationsStatus;
 - (BOOL)hf_isVisibleInHomeStatus;
+- (id)hf_labelIndexCharacteristic;
+- (id)hf_labelNamespaceCharacteristic;
+- (id)hf_linkedServiceOfType:(id)arg1;
 - (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
 - (id)hf_requiredCharacteristicTypesForDisplayMetadata;
 - (id)hf_room;

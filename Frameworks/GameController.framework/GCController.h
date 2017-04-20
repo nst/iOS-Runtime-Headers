@@ -2,9 +2,7 @@
    Image: /System/Library/Frameworks/GameController.framework/GameController
  */
 
-@interface GCController : NSObject {
-    NSString * _physicalDeviceUniqueID;
-}
+@interface GCController : NSObject
 
 @property (getter=isAttachedToDevice, nonatomic, readonly) BOOL attachedToDevice;
 @property (nonatomic, copy) id /* block */ controllerPausedHandler;
@@ -37,7 +35,6 @@
 + (void)startWirelessControllerDiscoveryWithCompletionHandler:(id /* block */)arg1;
 + (void)stopWirelessControllerDiscovery;
 
-- (void).cxx_destruct;
 - (void)addServiceRefs:(id)arg1;
 - (id /* block */)controllerPausedHandler;
 - (void*)createInputBufferForDevice:(struct __IOHIDDevice { }*)arg1 withSize:(unsigned long)arg2;

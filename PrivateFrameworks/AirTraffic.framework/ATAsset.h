@@ -27,6 +27,7 @@
     BOOL  _isRestore;
     BOOL  _legacy;
     NSString * _localPath;
+    BOOL  _lyricsEmbeddedInAsset;
     NSString * _prettyName;
     unsigned int  _priority;
     id /* block */  _progressBlock;
@@ -65,6 +66,7 @@
 @property (nonatomic) BOOL isPrioritized;
 @property (nonatomic) BOOL isRestore;
 @property (getter=isLegacy, nonatomic) BOOL legacy;
+@property (nonatomic) BOOL lyricsEmbeddedInAsset;
 @property (nonatomic, retain) NSString *path;
 @property (nonatomic, retain) NSString *prettyName;
 @property (nonatomic) unsigned int priority;
@@ -106,6 +108,7 @@
 - (id)icon;
 - (id)identifier;
 - (id)infoPlist;
+- (id)initWithATAssetForOlderiTunesClients:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 dataclass:(id)arg2 prettyName:(id)arg3;
 - (BOOL)installOnly;
@@ -118,6 +121,7 @@
 - (BOOL)isLegacy;
 - (BOOL)isPrioritized;
 - (BOOL)isRestore;
+- (BOOL)lyricsEmbeddedInAsset;
 - (id)manifestEntry;
 - (id)path;
 - (id)prettyName;
@@ -150,6 +154,7 @@
 - (void)setIsPrioritized:(BOOL)arg1;
 - (void)setIsRestore:(BOOL)arg1;
 - (void)setLegacy:(BOOL)arg1;
+- (void)setLyricsEmbeddedInAsset:(BOOL)arg1;
 - (void)setPath:(id)arg1;
 - (void)setPrettyName:(id)arg1;
 - (void)setPriority:(unsigned int)arg1;

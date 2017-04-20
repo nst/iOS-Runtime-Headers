@@ -4,6 +4,7 @@
 
 @interface SSAuthenticateRequest : SSRequest <SSXPCCoding> {
     SSAuthenticationContext * _authenticationContext;
+    SSLogConfig * _logConfig;
 }
 
 @property (readonly) SSAuthenticationContext *authenticationContext;
@@ -11,14 +12,17 @@
 @property (nonatomic) <SSAuthenticateRequestDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) SSLogConfig *logConfig;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)authenticationContext;
 - (id)copyXPCEncoding;
-- (void)dealloc;
 - (id)initWithAccount:(id)arg1;
 - (id)initWithAuthenticationContext:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
+- (id)logConfig;
+- (void)setLogConfig:(id)arg1;
 - (BOOL)start;
 - (void)startWithAuthenticateResponseBlock:(id /* block */)arg1;
 - (void)startWithCompletionBlock:(id /* block */)arg1;

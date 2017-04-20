@@ -9,8 +9,10 @@
     <FCContentContext> * _context;
     id /* block */  _dynamicCachePolicyBlock;
     NSDictionary * _linkKeysByRecordType;
+    NSMutableArray * _mutableNetworkEvents;
     id /* block */  _recordChainCompletionHandler;
     NSDictionary * _resultHeldRecordsByType;
+    BOOL  _shouldReturnErrorWhenSomeRecordsMissing;
     NSArray * _topLevelRecordIDs;
 }
 
@@ -20,18 +22,24 @@
 @property (nonatomic, retain) <FCContentContext> *context;
 @property (nonatomic, copy) id /* block */ dynamicCachePolicyBlock;
 @property (nonatomic, copy) NSDictionary *linkKeysByRecordType;
+@property (nonatomic, retain) NSMutableArray *mutableNetworkEvents;
+@property (nonatomic, readonly, copy) NSArray *networkEvents;
 @property (nonatomic, copy) id /* block */ recordChainCompletionHandler;
 @property (nonatomic, retain) NSDictionary *resultHeldRecordsByType;
+@property (nonatomic) BOOL shouldReturnErrorWhenSomeRecordsMissing;
 @property (nonatomic, copy) NSArray *topLevelRecordIDs;
 
 - (void).cxx_destruct;
 - (void)_collectActualTopLevelRecordIDsFromRecordIDs:(id)arg1;
 - (void)_collectCachedRecordsFromRecordIDs:(id)arg1;
+- (id)_errorForMissingRecordNames:(id)arg1;
 - (void)_filterOrphansFromCachedRecords;
 - (void)_finalizeResultFromCachedRecords;
 - (void)_issueCloudRequestIfNeeded;
+- (id)_partialErrorForMissingRecordName:(id)arg1;
 - (int)_pbRecordTypeForRecordID:(id)arg1;
 - (int)_pbRecordTypeForRecordType:(id)arg1;
+- (id)_recordIDsMissingFromCachedRecords;
 - (id)_recordSourceForRecordType:(id)arg1;
 - (id)_recordTypeForPBRecordType:(int)arg1;
 - (id)_recordTypeForRecordID:(id)arg1;
@@ -43,6 +51,8 @@
 - (id /* block */)dynamicCachePolicyBlock;
 - (id)init;
 - (id)linkKeysByRecordType;
+- (id)mutableNetworkEvents;
+- (id)networkEvents;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (id /* block */)recordChainCompletionHandler;
@@ -53,9 +63,12 @@
 - (void)setContext:(id)arg1;
 - (void)setDynamicCachePolicyBlock:(id /* block */)arg1;
 - (void)setLinkKeysByRecordType:(id)arg1;
+- (void)setMutableNetworkEvents:(id)arg1;
 - (void)setRecordChainCompletionHandler:(id /* block */)arg1;
 - (void)setResultHeldRecordsByType:(id)arg1;
+- (void)setShouldReturnErrorWhenSomeRecordsMissing:(BOOL)arg1;
 - (void)setTopLevelRecordIDs:(id)arg1;
+- (BOOL)shouldReturnErrorWhenSomeRecordsMissing;
 - (id)topLevelRecordIDs;
 - (BOOL)validateOperation;
 

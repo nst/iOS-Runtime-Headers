@@ -5,11 +5,11 @@
 @interface GEOMapEdgeTransitFinder : GEOMapEdgeFinder {
     struct unordered_set<geo::TransitEdgePiece, std::__1::hash<geo::TransitEdgePiece>, std::__1::equal_to<geo::TransitEdgePiece>, std::__1::allocator<geo::TransitEdgePiece> > { 
         struct __hash_table<geo::TransitEdgePiece, std::__1::hash<geo::TransitEdgePiece>, std::__1::equal_to<geo::TransitEdgePiece>, std::__1::allocator<geo::TransitEdgePiece> > { 
-            struct unique_ptr<std::__1::__hash_node<geo::TransitEdgePiece, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<geo::TransitEdgePiece, void *> *> > > { 
-                struct __compressed_pair<std::__1::__hash_node<geo::TransitEdgePiece, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<geo::TransitEdgePiece, void *> *> > > { 
-                    struct __hash_node<geo::TransitEdgePiece, void *> {} **__first_; 
-                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<geo::TransitEdgePiece, void *> *> > { 
-                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<geo::TransitEdgePiece, void *> *> > { 
+            struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<geo::TransitEdgePiece, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<geo::TransitEdgePiece, void *> *> *> > > { 
+                struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<geo::TransitEdgePiece, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<geo::TransitEdgePiece, void *> *> *> > > { 
+                    struct __hash_node_base<std::__1::__hash_node<geo::TransitEdgePiece, void *> *> {} **__first_; 
+                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<geo::TransitEdgePiece, void *> *> *> > { 
+                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<geo::TransitEdgePiece, void *> *> *> > { 
                             unsigned long __first_; 
                         } __data_; 
                     } __second_; 
@@ -17,7 +17,7 @@
             } __bucket_list_; 
             struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<geo::TransitEdgePiece, void *> *>, std::__1::allocator<std::__1::__hash_node<geo::TransitEdgePiece, void *> > > { 
                 struct __hash_node_base<std::__1::__hash_node<geo::TransitEdgePiece, void *> *> { 
-                    struct __hash_node<geo::TransitEdgePiece, void *> {} *__next_; 
+                    struct __hash_node_base<std::__1::__hash_node<geo::TransitEdgePiece, void *> *> {} *__next_; 
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::hash<geo::TransitEdgePiece> > { 

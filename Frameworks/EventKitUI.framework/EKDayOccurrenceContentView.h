@@ -9,8 +9,6 @@
     BOOL  _birthday;
     float  _cachedLineHeight;
     UIFont * _cachedPrimaryFont;
-    float  _cachedPrimaryFontBottomOutset;
-    float  _cachedPrimaryFontTopOutset;
     UIFont * _cachedSecondaryFont;
     float  _cachedSecondaryLineHeight;
     BOOL  _cancelled;
@@ -84,6 +82,7 @@
 @property (nonatomic, retain) UIColor *titleTextColor;
 @property (nonatomic) BOOL usesSmallText;
 
++ (void)_getLanguageAwareOutsets;
 + (id)defaultPrimaryTextFont;
 + (id)defaultSecondaryTextFont;
 + (id)defaultSmallPrimaryTextFont;
@@ -92,7 +91,6 @@
 - (void).cxx_destruct;
 - (float)_attributedStringMinimumLineHeightBasedOnCurrentFontMetrics;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForText;
-- (void)_getLanguageAwareOutsets;
 - (void)_invalidateCachedFonts;
 - (void)_invalidateMetrics;
 - (float)_minimumPrimaryFontLineHeight;
@@ -162,7 +160,6 @@
 - (id)strikethroughColor;
 - (id)stringDrawingContext;
 - (id)textBackgroundColor;
-- (float)textNaturalWidth;
 - (id)time;
 - (id)timeTextColor;
 - (id)title;

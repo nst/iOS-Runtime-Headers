@@ -2,6 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UICollectionSnapshotView : UICollectionReusableView
+@interface _UICollectionSnapshotView : UICollectionReusableView {
+    BOOL  _snapshottedViewDisablesRasterizationInAnimations;
+}
+
+- (BOOL)_disableRasterizeInAnimations;
 
 @end

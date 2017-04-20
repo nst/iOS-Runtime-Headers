@@ -27,9 +27,11 @@
     unsigned int  _subscriptionAvailabilityObservationCount;
     BOOL  _subscriptionAvailable;
     unsigned int  _subscriptionLeaseUsageCount;
+    NSOperationQueue * _subscriptionOperationQueue;
     unsigned int  _subscriptionStatusObservationCount;
 }
 
+@property (nonatomic, readonly) SSVPlaybackLease *_existingPlaybackLease;
 @property (getter=isCloudLibraryEnabled, nonatomic, readonly) BOOL cloudLibraryEnabled;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -57,14 +59,17 @@
 - (void)_endObservingAccountStoreDidChange;
 - (void)_endObservingURLBag;
 - (void)_endUsingSubscriptionLease;
+- (id)_existingPlaybackLease;
 - (id)_fairPlaySubscriptionController;
 - (void)_fairPlaySubscriptionControllerSubscriptionStatusDidChangeNotification:(id)arg1;
 - (void)_getCurrentFairPlaySubscriptionStatusWithCompletionHandler:(id /* block */)arg1;
 - (void)_networkReachabilityDidChangeNotification:(id)arg1;
 - (void)_setHasSubscriptionLease:(BOOL)arg1 endReasonType:(unsigned int)arg2;
+- (id)_subscriptionOperationQueue;
 - (void)_subscriptionStatusDidChangeNotification:(id)arg1;
 - (void)_updateForNetworkReachabilityObserversCountChange;
 - (void)_updateMatchStatus;
+- (void)_updateSubscriptionInformationWithEndReasonType:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
 - (void)_updateWithURLBagDictionary:(id)arg1;
 - (void)acquireSubscriptionLeaseWithCompletionHandler:(id /* block */)arg1;
 - (void)bagDidChange:(id)arg1;
@@ -87,7 +92,6 @@
 - (void)endObservingSubscriptionAvailability;
 - (void)endObservingSubscriptionLease;
 - (void)endObservingSubscriptionStatus;
-- (void)endSubscriptionLease;
 - (void)getFairPlaySubscriptionStatusWithCompletionHandler:(id /* block */)arg1;
 - (void)getSubscriptionAssetWithRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)getSubscriptionStatusWithOptions:(id)arg1 statusBlock:(id /* block */)arg2;
@@ -97,11 +101,13 @@
 - (BOOL)isSubscriptionAvailable;
 - (id)lastKnownFairPlaySubscriptionStatus;
 - (unsigned int)matchStatus;
+- (void)performSubscriptionSecureKeyDeliveryRequestOperation:(id)arg1;
 - (void)playbackLease:(id)arg1 automaticRefreshDidFinishWithResponse:(id)arg2 error:(id)arg3;
 - (void)playbackLease:(id)arg1 didEndWithReasonType:(unsigned int)arg2;
 - (void)preheatSubscriptionLeaseRequestsWithCompletionHandler:(id /* block */)arg1;
 - (void)refreshSubscriptionLeaseWithCompletionHandler:(id /* block */)arg1;
 - (BOOL)shouldPlaybackRequireSubscriptionLease;
 - (id)subscriptionStatus;
+- (void)updateWithExternalLeaseResponseError:(id)arg1 completionHandler:(id /* block */)arg2;
 
 @end

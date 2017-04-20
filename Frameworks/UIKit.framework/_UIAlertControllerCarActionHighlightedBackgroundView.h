@@ -12,6 +12,7 @@
 - (void)setCornerRadius:(float)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setPressed:(BOOL)arg1;
+- (void)setRoundedCornerPosition:(unsigned int)arg1;
 - (void)tintColorDidChange;
 
 @end

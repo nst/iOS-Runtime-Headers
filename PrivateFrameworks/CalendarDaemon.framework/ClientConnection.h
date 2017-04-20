@@ -56,6 +56,7 @@
 - (id)insertedObjects;
 - (BOOL)isCalendarItemRestricted:(void*)arg1;
 - (BOOL)isCalendarRestricted:(void*)arg1;
+- (BOOL)isObjectWithObjectIDAJunkEvent:(struct { int x1; int x2; })arg1;
 - (BOOL)isStoreRestricted:(void*)arg1;
 - (void*)objectForKey:(id)arg1;
 - (id)operations;

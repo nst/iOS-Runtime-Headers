@@ -18,7 +18,6 @@
         double _e[16]; 
     }  _inverseMatrix;
     double  _lastTrafficTimeStamp;
-    double  _lastUserLocationMatchTimestamp;
     BOOL  _matchToRoads;
     double  _metersPerPoint;
     <VKRouteLineObserverProtocol> * _observer;

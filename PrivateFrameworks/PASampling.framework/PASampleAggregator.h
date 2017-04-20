@@ -12,9 +12,12 @@
 
 @property BOOL binaryImagesBeforeStacks;
 @property (readonly) unsigned int count;
+@property BOOL displayAddressesInBlockedReasons;
 @property BOOL displayAllBinaries;
 @property BOOL displayBinaryImageAddresses;
 @property BOOL displayBinaryImagesLackingNameOrPath;
+@property BOOL displayBlockedReasons;
+@property BOOL displayBlockedReasonsLackingProcessOwners;
 @property BOOL displayBlockedThreads;
 @property BOOL displayBody;
 @property BOOL displayFooter;
@@ -39,9 +42,12 @@
 - (void)addSampleTask:(id)arg1 atTimestampIndex:(unsigned int)arg2;
 - (BOOL)binaryImagesBeforeStacks;
 - (unsigned int)count;
+- (BOOL)displayAddressesInBlockedReasons;
 - (BOOL)displayAllBinaries;
 - (BOOL)displayBinaryImageAddresses;
 - (BOOL)displayBinaryImagesLackingNameOrPath;
+- (BOOL)displayBlockedReasons;
+- (BOOL)displayBlockedReasonsLackingProcessOwners;
 - (BOOL)displayBlockedThreads;
 - (BOOL)displayBody;
 - (BOOL)displayFooter;
@@ -69,9 +75,12 @@
 - (void)printToStream:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1;
 - (id)sampleStore;
 - (void)setBinaryImagesBeforeStacks:(BOOL)arg1;
+- (void)setDisplayAddressesInBlockedReasons:(BOOL)arg1;
 - (void)setDisplayAllBinaries:(BOOL)arg1;
 - (void)setDisplayBinaryImageAddresses:(BOOL)arg1;
 - (void)setDisplayBinaryImagesLackingNameOrPath:(BOOL)arg1;
+- (void)setDisplayBlockedReasons:(BOOL)arg1;
+- (void)setDisplayBlockedReasonsLackingProcessOwners:(BOOL)arg1;
 - (void)setDisplayBlockedThreads:(BOOL)arg1;
 - (void)setDisplayBody:(BOOL)arg1;
 - (void)setDisplayFooter:(BOOL)arg1;

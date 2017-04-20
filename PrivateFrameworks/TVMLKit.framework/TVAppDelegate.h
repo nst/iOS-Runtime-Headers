@@ -25,6 +25,7 @@
 - (void)_presetDialogWithError:(int)arg1 appController:(id)arg2;
 - (id)appController;
 - (void)appController:(id)arg1 didFailWithError:(id)arg2;
+- (void)appController:(id)arg1 evaluateAppJavaScriptInContext:(id)arg2;
 - (BOOL)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
 - (BOOL)application:(id)arg1 openURL:(id)arg2 options:(id)arg3;
 - (void)applicationDidEnterBackground:(id)arg1;

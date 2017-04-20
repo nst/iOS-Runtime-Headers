@@ -26,7 +26,7 @@
 - (id)ISO8061StringFromDateTime:(id)arg1;
 - (id)_21vCardRepresentationAsData;
 - (void)_addPersonSounds:(void*)arg1 identifier:(int)arg2 toActivityAlerts:(id*)arg3 activity:(id)arg4 alert:(id)arg5;
-- (void)_appendPropValue:(id)arg1 forExternalPropKey:(id)arg2 toOutString:(id)arg3 usingDelimiter:(id)arg4;
+- (void)_appendPropValue:(id)arg1 forPropKey:(id)arg2 toOutString:(id)arg3 usingDelimiter:(id)arg4 inGroup:(id)arg5;
 - (id)_copyGroupVCardRepresentationAsStringIncludeExternalProperties:(BOOL)arg1;
 - (id)_copyVCardRepresentationAsStringIncludeExternalProperties:(BOOL)arg1 withPhoto:(id)arg2 extraPhotoParameters:(id)arg3 includePrivateData:(BOOL)arg4;
 - (id)_dictionaryForActivityAlerts;

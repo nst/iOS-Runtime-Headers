@@ -2,60 +2,64 @@
    Image: /System/Library/PrivateFrameworks/iCloudQuotaUI.framework/iCloudQuotaUI
  */
 
-@interface ICQUpgradeFlowManager : NSObject <ICQPageDelegate, PSCloudStorageOffersManagerDelegate, UINavigationControllerDelegate> {
+@interface ICQUpgradeFlowManager : NSObject <ICQPageDelegate, UINavigationControllerDelegate> {
     ICQUpgradeOfferViewController * _busyOfferViewController;
-    NSURLSession * _buyProductSession;
     <ICQUpgradeFlowManagerDelegate> * _delegate;
+    UINavigationController * _hostingNavigationController;
     ICQOffer * _offer;
-    PSCloudStorageOffersManager * _storageOffersManager;
-    ICQUpgradeNavigationController * _upgradeNavigationController;
+    BOOL  _shouldNavigationControllerBeDismissed;
+    ICQAlertController * _upgradeAlertController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <ICQUpgradeFlowManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) UINavigationController *hostingNavigationController;
 @property (nonatomic, readonly) ICQOffer *offer;
-@property (nonatomic, retain) PSCloudStorageOffersManager *storageOffersManager;
+@property (nonatomic) BOOL shouldNavigationControllerBeDismissed;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) ICQUpgradeNavigationController *upgradeNavigationController;
+@property (nonatomic, retain) ICQAlertController *upgradeAlertController;
 
++ (id)activeFlowManagers;
++ (void)addActiveFlowManager:(id)arg1;
++ (void)needsToRunWithCompletion:(id /* block */)arg1;
++ (void)removeActiveFlowManager:(id)arg1;
 + (BOOL)shouldShowForOffer:(id)arg1;
++ (BOOL)shouldSubclassShowForOffer:(id)arg1;
++ (Class)subclassForOfferType:(int)arg1;
 
 - (void).cxx_destruct;
-- (void)_adoptRemoteUI;
-- (void)_adoptRemoteUIWithPurchaseToken:(id)arg1 buyParameters:(id)arg2 requestHeaders:(id)arg3;
-- (id)_buyProductQueryDictionary;
-- (id)_buyProductQueryFragment;
-- (id)_buyProductQueryItems;
-- (id)_buyProductQueryKeySet;
-- (id)_buyProductRequestWithAccount:(id)arg1 token:(id)arg2;
-- (void)_buyProductShouldUseToken:(BOOL)arg1 completionHandler:(id /* block */)arg2;
-- (id)_buyProductURL;
+- (void)_addAlertActionForAlertSpec:(id)arg1 buttonIndex:(int)arg2;
+- (void)_cancelFlow;
 - (void)_clearBusyOfferViewController;
-- (void)_performPurchase;
-- (void)_performPurchaseUsingSettingsUI;
-- (void)_performPurchaseUsingTouchID;
+- (void)_openURL:(id)arg1 completion:(id /* block */)arg2;
+- (void)_performPageButtonActionWithCompletion:(id /* block */)arg1;
+- (void)_presentPageWithSpecification:(id)arg1;
 - (void)_presentUpgradeComplete;
+- (void)_sendDelegateCancel;
+- (void)_sendDelegateComplete;
+- (void)_sendDelegateDidPresentViewController:(id)arg1;
 - (void)_setBusyOfferViewController:(id)arg1;
-- (id)_storageContextHeaderDictionary;
-- (id)_storageContextJSONString;
+- (void)_tappedAlertLink:(id)arg1;
 - (void)beginFlowWithPresentingViewController:(id)arg1;
-- (void)cancelFlow;
 - (id)delegate;
+- (id)hostingNavigationController;
 - (id)init;
+- (id)initBaseclassWithOffer:(id)arg1;
+- (id)initSubclassWithOffer:(id)arg1;
 - (id)initWithOffer:(id)arg1;
-- (void)manager:(id)arg1 loadDidFailWithError:(id)arg2;
-- (void)manager:(id)arg1 willPresentViewController:(id)arg2;
-- (void)managerDidCancel:(id)arg1;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
+- (BOOL)needsNetwork;
 - (id)offer;
+- (void)presentFlowHostedInNavigationController:(id)arg1;
 - (void)sender:(id)arg1 action:(int)arg2 parameters:(id)arg3;
 - (float)senderGetTopMargin:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setStorageOffersManager:(id)arg1;
-- (void)setUpgradeNavigationController:(id)arg1;
-- (id)storageOffersManager;
-- (id)upgradeNavigationController;
+- (void)setHostingNavigationController:(id)arg1;
+- (void)setShouldNavigationControllerBeDismissed:(BOOL)arg1;
+- (void)setUpgradeAlertController:(id)arg1;
+- (BOOL)shouldNavigationControllerBeDismissed;
+- (id)upgradeAlertController;
 
 @end

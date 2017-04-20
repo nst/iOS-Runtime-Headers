@@ -20,6 +20,7 @@
     }  __contentsRect;
     float  __displayScale;
     PXImageViewSpec * __spec;
+    unsigned int  _animationFlags;
     BOOL  _applyBlurEffect;
     UIVisualEffectView * _blurEffectView;
     PXImageRequester * _imageRequester;

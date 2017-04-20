@@ -23,6 +23,7 @@
 - (void)queryPedometerDataFromDate:(id)arg1 toDate:(id)arg2 withHandler:(id /* block */)arg3;
 - (void)queryPedometerDataSinceDataRecord:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)queryPedometerDataSinceRecord:(int)arg1 withHandler:(id /* block */)arg2;
+- (BOOL)sendStrideCalibrationHistoryToFile:(id)arg1;
 - (void)startPedometerEventUpdatesWithHandler:(id /* block */)arg1;
 - (void)startPedometerUpdatesFromDate:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)stopPedometerEventUpdates;

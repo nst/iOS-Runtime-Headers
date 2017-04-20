@@ -10,7 +10,6 @@
 
 - (void)addFailureBlock:(id /* block */)arg1;
 - (void)addSuccessBlock:(id /* block */)arg1;
-- (BOOL)cancel;
 - (void)dealloc;
 - (id)initWithBlock:(id /* block */)arg1;
 - (BOOL)isCancelled;
@@ -19,5 +18,6 @@
 - (void)onScheduler:(id)arg1 addSuccessBlock:(id /* block */)arg2;
 - (id)resultBeforeDate:(id)arg1 error:(id*)arg2;
 - (BOOL)run;
+- (BOOL)tryCancel;
 
 @end

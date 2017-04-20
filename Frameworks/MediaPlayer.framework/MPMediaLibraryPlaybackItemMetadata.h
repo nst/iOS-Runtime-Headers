@@ -28,6 +28,7 @@
 - (id)artistName;
 - (long long)artistStoreAdamID;
 - (id)artworkCatalogForPlaybackTime:(double)arg1;
+- (double)bookmarkTime;
 - (id)buyParameters;
 - (id)cachedLocalPlaybackAssetFilePathReturningAssetQuality:(unsigned int*)arg1 protectionType:(unsigned int*)arg2 usesPurchaseBundle:(BOOL*)arg3;
 - (void)clearLocalPlaybackAssetFilePathWithCompletionHandler:(id /* block */)arg1;
@@ -46,10 +47,11 @@
 - (id)initWithMediaItem:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isExplicitTrack;
+- (BOOL)isSubscriptionRequired;
 - (id)localNetworkContentURL;
 - (id)mediaItem;
 - (long long)mediaLibraryPersistentID;
-- (id)modelSong;
+- (id)modelGenericObject;
 - (id)protectedContentSupportStorageURL;
 - (void)setCachedLocalPlaybackAssetFilePath:(id)arg1 protectionType:(unsigned int)arg2 assetQuality:(unsigned int)arg3 withCompletionHandler:(id /* block */)arg4;
 - (void)setMediaItem:(id)arg1;
@@ -60,6 +62,7 @@
 - (long long)storeAdamID;
 - (unsigned long long)storeSagaID;
 - (long long)storeSubscriptionAdamID;
+- (id)storeUbiquitousIdentifier;
 - (id)streamingPlaybackAssetDestinationFilePathForAssetQuality:(unsigned int)arg1 assetFlavor:(id)arg2 protectionType:(unsigned int)arg3 pathExtension:(id)arg4;
 - (float)volumeNormalization;
 

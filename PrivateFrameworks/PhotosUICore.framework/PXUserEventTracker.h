@@ -12,12 +12,18 @@
 
 @property (setter=_setRelatedLookupTable:, nonatomic, retain) NSHashTable *_relatedLookupTable;
 
++ (BOOL)_isMemoryTriggered:(id)arg1;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
+- (void)_aggdDurationLoggingDryrun:(unsigned int)arg1 duration:(double)arg2;
+- (void)_aggdDurationLoggingDryrunForSubState:(unsigned int)arg1 duration:(double)arg2;
+- (void)_aggdJumpCountLoggingDryrun:(unsigned int)arg1 totalJumpCount:(unsigned int)arg2;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
+- (void)_logAggdAddValueForScalarKey:(struct __CFString { }*)arg1 value:(long long)arg2;
 - (void)_logAggdDurationCounterForLogState:(unsigned int)arg1 duration:(double)arg2;
+- (void)_logAggdDurationCounterForLogSubState:(unsigned int)arg1 duration:(double)arg2;
 - (void)_logAggdRelatedJumpStatistics:(unsigned int)arg1 totalJumpCount:(unsigned int)arg2;
 - (id)_relatedLookupTable;
 - (void)_resetDetailViewTraversalStatistics;
@@ -31,6 +37,7 @@
 - (void)didViewDetailsForAssetCollection:(id)arg1;
 - (id)init;
 - (void)logCounterValuesForLogState:(unsigned int)arg1 duration:(double)arg2;
+- (void)logCounterValuesForLogSubState:(unsigned int)arg1 duration:(double)arg2;
 - (void)willViewDetailsWithCurrentContext:(id)arg1;
 - (void)willViewMemoriesFeedView;
 

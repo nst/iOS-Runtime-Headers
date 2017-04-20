@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCPersonalizationData : FCPrivateZoneController <FCAppConfigurationObserving, FCDerivedPersonalizationData, FCOperationThrottlerDelegate> {
+@interface FCPersonalizationData : FCPrivateZoneController <FCAppConfigurationObserving, FCDerivedPersonalizationData, FCOperationThrottlerDelegate, FCUserInfoObserving> {
     NSMutableDictionary * _aggregates;
     BOOL  _attemptingUpload;
     NSMutableArray * _closedChangeGroups;
@@ -11,6 +11,7 @@
     CKRecord * _remoteRecord;
     <FCOperationThrottler> * _saveThrottler;
     FCPersonalizationTreatment * _treatment;
+    FCUserInfo * _userInfo;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *aggregates;
@@ -26,6 +27,7 @@
 @property (nonatomic, retain) <FCOperationThrottler> *saveThrottler;
 @property (readonly) Class superclass;
 @property (retain) FCPersonalizationTreatment *treatment;
+@property (nonatomic, retain) FCUserInfo *userInfo;
 
 + (int)commandQueueUrgency;
 + (id)commandStoreFileName;
@@ -44,8 +46,10 @@
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_closeOpenChangeGroup;
 - (id)_instanceIdentifier;
+- (void)_reloadTreatment;
 - (void)_updateWithRemoteRecord:(id)arg1 profile:(id)arg2;
 - (void)_writeToLocalStoreWithCompletionHandler:(id /* block */)arg1;
+- (void)addObserver:(id)arg1;
 - (id)aggregateForFeatureKey:(id)arg1;
 - (id)aggregates;
 - (id)aggregatesForFeatureKeys:(id)arg1;
@@ -66,6 +70,7 @@
 - (id)personalizationTreatment;
 - (id)readWriteQueue;
 - (id)remoteRecord;
+- (void)removeObserver:(id)arg1;
 - (id)saveThrottler;
 - (void)setAggregates:(id)arg1;
 - (void)setAttemptingUpload:(BOOL)arg1;
@@ -75,7 +80,10 @@
 - (void)setRemoteRecord:(id)arg1;
 - (void)setSaveThrottler:(id)arg1;
 - (void)setTreatment:(id)arg1;
+- (void)setUserInfo:(id)arg1;
 - (void)syncWithCompletion:(id /* block */)arg1;
 - (id)treatment;
+- (id)userInfo;
+- (void)userInfoDidChangeFeldsparID:(id)arg1 fromCloud:(BOOL)arg2;
 
 @end

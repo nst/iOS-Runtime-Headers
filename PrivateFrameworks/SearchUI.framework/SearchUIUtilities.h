@@ -10,12 +10,14 @@
 + (id)captionFont;
 + (BOOL)deviceSupportsRotation;
 + (void)dispatchMainIfNecessary:(id /* block */)arg1;
++ (id)footnoteBoldFont;
 + (id)hyphenatableStringForString:(id)arg1;
 + (id)imageWithColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 + (id)imageWithColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 cornersToRound:(unsigned int)arg3 cornerRadius:(float)arg4;
 + (void)initialize;
 + (BOOL)isPortrait;
 + (BOOL)isWideScreen;
++ (id)localizedStringForKey:(id)arg1;
 + (struct CGSize { float x1; float x2; })maxThumbnailSize;
 + (float)onePixelForCurrentScreenResolution;
 + (id)openOptions;

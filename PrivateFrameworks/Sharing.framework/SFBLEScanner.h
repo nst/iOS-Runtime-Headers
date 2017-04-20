@@ -4,6 +4,7 @@
 
 @interface SFBLEScanner : NSObject <CBCentralManagerDelegate, WPAWDLDelegate, WPNearbyDelegate> {
     BOOL  _activateCalled;
+    BOOL  _activeScan;
     id /* block */  _bluetoothStateChangedHandler;
     struct BTSessionImpl { } * _btSession;
     BOOL  _btStarted;
@@ -31,6 +32,8 @@
     int  _scanInterval;
     int  _scanRate;
     BOOL  _scanStarted;
+    int  _scanState;
+    id /* block */  _scanStateChangedHandler;
     int  _scanWindow;
     CURetrier * _startRetrier;
     double  _timeout;
@@ -62,6 +65,8 @@
 @property (nonatomic) BOOL scanCache;
 @property (nonatomic) int scanInterval;
 @property (nonatomic) int scanRate;
+@property (nonatomic, readonly) int scanState;
+@property (nonatomic, copy) id /* block */ scanStateChangedHandler;
 @property (nonatomic) int scanWindow;
 @property (readonly) Class superclass;
 @property (nonatomic) double timeout;
@@ -74,6 +79,7 @@
 - (void)_foundDevice:(id)arg1 advertisementData:(id)arg2 rssi:(int)arg3 fields:(id)arg4;
 - (void)_invalidate;
 - (void)_invokeBlockActivateSafe:(id /* block */)arg1;
+- (BOOL)_needActiveScan;
 - (BOOL)_needDups;
 - (void)_poweredOff;
 - (void)_rescanTimerFired;
@@ -122,6 +128,8 @@
 - (BOOL)scanCache;
 - (int)scanInterval;
 - (int)scanRate;
+- (int)scanState;
+- (id /* block */)scanStateChangedHandler;
 - (int)scanWindow;
 - (void)setBluetoothStateChangedHandler:(id /* block */)arg1;
 - (void)setChangeFlags:(unsigned int)arg1;
@@ -139,6 +147,7 @@
 - (void)setScanCache:(BOOL)arg1;
 - (void)setScanInterval:(int)arg1;
 - (void)setScanRate:(int)arg1;
+- (void)setScanStateChangedHandler:(id /* block */)arg1;
 - (void)setScanWindow:(int)arg1;
 - (void)setTimeout:(double)arg1;
 - (void)setTimeoutHandler:(id /* block */)arg1;

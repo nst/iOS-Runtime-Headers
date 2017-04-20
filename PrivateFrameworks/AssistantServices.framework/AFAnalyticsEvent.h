@@ -3,31 +3,30 @@
  */
 
 @interface AFAnalyticsEvent : NSObject <NSCopying, NSSecureCoding> {
-    int  _categoryType;
-    NSDictionary * _context;
-    unsigned long long  _machAbsoluteTime;
+    NSData * _contextData;
+    int  _contextDataType;
+    unsigned long long  _timestamp;
     int  _type;
 }
 
-@property (nonatomic, readonly) int categoryType;
-@property (nonatomic, readonly) NSDictionary *context;
-@property (nonatomic, readonly) unsigned long long machAbsoluteTime;
+@property (nonatomic, readonly, copy) NSData *contextData;
+@property (nonatomic, readonly) int contextDataType;
+@property (nonatomic, readonly) unsigned long long timestamp;
 @property (nonatomic, readonly) int type;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (int)categoryType;
-- (id)context;
+- (id)contextData;
+- (int)contextDataType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithType:(int)arg1 machAbsoluteTime:(unsigned long long)arg2 categoryType:(int)arg3 context:(id)arg4;
+- (id)initWithType:(int)arg1 timestamp:(unsigned long long)arg2 contextDataType:(int)arg3 contextData:(id)arg4;
 - (BOOL)isEqual:(id)arg1;
-- (unsigned long long)machAbsoluteTime;
+- (unsigned long long)timestamp;
 - (int)type;
 
 @end

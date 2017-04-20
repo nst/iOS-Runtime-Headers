@@ -75,8 +75,10 @@
 - (void)setShutterSound:(unsigned long)arg1;
 - (void)setSquareCropEnabled:(BOOL)arg1;
 - (void)setTurboModeEnabled:(BOOL)arg1;
+- (void)setUserInitiatedPhotoRequestTime:(unsigned long long)arg1;
 - (unsigned long)shutterSound;
 - (long long)uniqueID;
+- (unsigned long long)userInitiatedPhotoRequestTime;
 
 // Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
 

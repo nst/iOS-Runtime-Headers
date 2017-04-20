@@ -5,6 +5,7 @@
 
 @required
 
+- (BOOL)isRunningTests;
 - (void)launchComplete:(NSDictionary *)arg1;
 - (void)launchFailed;
 - (BOOL)pageRenderMetricsEnabled;

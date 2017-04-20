@@ -39,6 +39,7 @@
 - (id)logMsgStateForPlaceCardWithStateOrigin:(id)arg1 placeActionDetails:(id)arg2 placeCardType:(int)arg3 mapItemCategory:(id)arg4 actionableActions:(id)arg5 unactionableUIElements:(id)arg6;
 - (id)logMsgStateForPlaceRequestWithRequestType:(int)arg1 request:(id)arg2;
 - (id)logMsgStateForPlaceRequestWithStateOrigin:(id)arg1 requestType:(int)arg2 request:(id)arg3;
+- (id)logMsgStateForReportAnIssueWithSelectedIndex:(unsigned int)arg1;
 - (id)logMsgStateForRidesharingWithNumberOfAppsInstalled:(unsigned int)arg1 enabled:(unsigned int)arg2;
 - (id)logMsgStateForRouteWithRouteDetails:(id)arg1;
 - (id)logMsgStateForRouteWithStateOrigin:(id)arg1 routeDetails:(id)arg2;

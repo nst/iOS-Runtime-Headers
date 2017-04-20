@@ -616,6 +616,10 @@
 
 - (void)sf_setUsesVibrantSelection:(BOOL)arg1;
 
+// Image: /System/Library/PrivateFrameworks/AppSupportUI.framework/AppSupportUI
+
+- (float)effectiveSeparatorHeight;
+
 // Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
 
 - (void)setSelectedBackgroundColor:(id)arg1;

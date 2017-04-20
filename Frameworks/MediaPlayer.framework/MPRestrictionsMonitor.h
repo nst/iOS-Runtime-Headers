@@ -22,6 +22,8 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) BOOL hasRestrictionsPasscode;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int maximumMovieRating;
+@property (nonatomic, readonly) int maximumTVShowRating;
 @property (readonly) Class superclass;
 
 + (id)sharedRestrictionsMonitor;
@@ -39,6 +41,8 @@
 - (id)effectiveValueForSetting:(id)arg1;
 - (BOOL)hasRestrictionsPasscode;
 - (id)init;
+- (int)maximumMovieRating;
+- (int)maximumTVShowRating;
 - (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 
 @end

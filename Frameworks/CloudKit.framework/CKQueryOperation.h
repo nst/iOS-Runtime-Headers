@@ -3,6 +3,7 @@
  */
 
 @interface CKQueryOperation : CKDatabaseOperation {
+    NSDictionary * _assetTransferOptionsByKey;
     CKQueryCursor * _cursor;
     NSArray * _desiredKeys;
     BOOL  _fetchAllResults;
@@ -16,6 +17,7 @@
     CKRecordZoneID * _zoneID;
 }
 
+@property (nonatomic, retain) NSDictionary *assetTransferOptionsByKey;
 @property (nonatomic, copy) CKQueryCursor *cursor;
 @property (nonatomic, copy) NSArray *desiredKeys;
 @property (nonatomic) BOOL fetchAllResults;
@@ -34,6 +36,7 @@
 - (void)_handleCompletionCallback:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id)activityCreate;
+- (id)assetTransferOptionsByKey;
 - (id)cursor;
 - (id)desiredKeys;
 - (BOOL)fetchAllResults;
@@ -50,6 +53,7 @@
 - (id /* block */)recordFetchedBlock;
 - (id)resultsCursor;
 - (unsigned int)resultsLimit;
+- (void)setAssetTransferOptionsByKey:(id)arg1;
 - (void)setCursor:(id)arg1;
 - (void)setDesiredKeys:(id)arg1;
 - (void)setFetchAllResults:(BOOL)arg1;

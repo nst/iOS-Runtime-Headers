@@ -3,9 +3,11 @@
  */
 
 @interface _ICQUpgradeOfferPageSpecification : _ICQPageSpecification {
+    NSString * _altMessage;
+    ICQLink * _bottomLink;
     NSString * _finePrintFormat;
     NSArray * _finePrintLinks;
-    ICQLink * _learnMoreLink;
+    NSString * _iconBundleIdentifier;
     NSString * _message;
     ICQLink * _purchaseLink;
     NSDictionary * _serverDict;
@@ -13,9 +15,11 @@
     NSString * _title;
 }
 
+@property (nonatomic, retain) NSString *altMessage;
+@property (nonatomic, retain) ICQLink *bottomLink;
 @property (nonatomic, retain) NSString *finePrintFormat;
 @property (nonatomic, retain) NSArray *finePrintLinks;
-@property (nonatomic, retain) ICQLink *learnMoreLink;
+@property (nonatomic, retain) NSString *iconBundleIdentifier;
 @property (nonatomic, retain) NSString *message;
 @property (nonatomic, retain) ICQLink *purchaseLink;
 @property (nonatomic, readonly) NSDictionary *serverDict;
@@ -25,19 +29,23 @@
 + (id)upgradeOfferPageSpecificationSampleForLevel:(int)arg1;
 
 - (void).cxx_destruct;
+- (id)altMessage;
+- (id)bottomLink;
 - (id)debugDescription;
 - (id)finePrintFormat;
 - (id)finePrintLinks;
+- (id)iconBundleIdentifier;
 - (id)initWithServerDictionary:(id)arg1;
-- (id)learnMoreLink;
+- (id)initWithServerDictionary:(id)arg1 pageIdentifier:(id)arg2;
 - (id)message;
-- (id)pageIdentifier;
 - (id)purchaseLink;
 - (id)serverDict;
 - (id)services;
+- (void)setAltMessage:(id)arg1;
+- (void)setBottomLink:(id)arg1;
 - (void)setFinePrintFormat:(id)arg1;
 - (void)setFinePrintLinks:(id)arg1;
-- (void)setLearnMoreLink:(id)arg1;
+- (void)setIconBundleIdentifier:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setPurchaseLink:(id)arg1;
 - (void)setServices:(id)arg1;

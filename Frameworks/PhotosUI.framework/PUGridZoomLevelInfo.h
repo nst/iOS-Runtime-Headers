@@ -29,12 +29,15 @@
 @property (nonatomic, readonly) struct __CFString { }*aggregateLevelKey;
 @property (nonatomic, readonly) PUGridZoomLevelInfo *baseZoomLevelInfo;
 @property (nonatomic, readonly) PHCachingImageManager *cachingImageManager;
+@property (nonatomic, readonly) int cellFillMode;
 @property (nonatomic, readonly) PUSectionedGridLayout *collectionViewLayout;
 @property (nonatomic, readonly) unsigned int dateRangeFormatterPreset;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *displayTitle;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } imageRequestItemSize;
+@property (nonatomic, readonly) float itemContentScale;
 @property (nonatomic) struct CGSize { float x1; float x2; } lastItemPixelSize;
 @property (nonatomic, readonly) int maxRowsPerSection;
 @property (nonatomic) float pendingContentWidth;
@@ -53,6 +56,7 @@
 @property (nonatomic, readonly) PUZoomableGridViewController *zoomableGridViewController;
 
 - (void).cxx_destruct;
+- (unsigned int)_detailViewSourceOriginWithZoomLevel:(unsigned int)arg1;
 - (void)_updateBackdropGroupNameForHeaderView:(id)arg1;
 - (struct __CFString { }*)aggregateLevelKey;
 - (id)assetsToDisplayInMapForVisualSection:(int)arg1;
@@ -73,7 +77,9 @@
 - (void)headerView:(id)arg1 actionButtonPressed:(id)arg2;
 - (id)imageDataForAsset:(id)arg1 itemContentScale:(float)arg2 imageWidth:(int*)arg3 imageHeight:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
 - (int)imageDeliveryMode;
+- (struct CGSize { float x1; float x2; })imageRequestItemSize;
 - (id)initWithZoomLevel:(unsigned int)arg1 zoomLevelManager:(id)arg2 baseZoomLevelInfo:(id)arg3;
+- (float)itemContentScale;
 - (struct CGSize { float x1; float x2; })lastItemPixelSize;
 - (int)maxRowsPerSection;
 - (void)modelDidChange:(id)arg1;

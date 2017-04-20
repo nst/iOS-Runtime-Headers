@@ -27,6 +27,7 @@
 @property (nonatomic) BOOL inverted;
 @property (nonatomic, readonly) unsigned int nodeCount;
 @property (nonatomic, readonly) unsigned int nodeNamespaceSize;
+@property (nonatomic, readonly) unsigned int pointerSize;
 
 + (id)_archivedBytes:(const void*)arg1 length:(unsigned int)arg2 options:(unsigned int)arg3;
 + (id)_archivedObject:(id)arg1 options:(unsigned int)arg2;
@@ -46,6 +47,7 @@
 - (void)_removeEdges:(id /* block */)arg1;
 - (void)_renameWithNodeMap:(unsigned int*)arg1 nodeNamespace:(unsigned int)arg2 edgeMap:(unsigned int*)arg3 edgeNamespace:(unsigned int)arg4;
 - (void)_renormalize;
+- (void)_reorderEdgesNaturally;
 - (void)_searchMainLoop:(unsigned int)arg1 action:(id /* block */)arg2;
 - (unsigned int)addEdgeFromNode:(unsigned int)arg1 toNode:(unsigned int)arg2;
 - (unsigned int)addGroupNodeForNodes:(const unsigned int*)arg1 count:(unsigned int)arg2;
@@ -70,20 +72,17 @@
 - (BOOL)inverted;
 - (id)invertedGraph;
 - (BOOL)isNodePresent:(unsigned int)arg1;
-- (void)markReachableNodesFromRoots:(void*)arg1 inMap:(void*)arg2;
 - (unsigned int)nodeCount;
 - (unsigned int)nodeNamespaceSize;
 - (unsigned int)parentGroupForNode:(unsigned int)arg1;
 - (id)plistRepresentationWithOptions:(unsigned int)arg1;
+- (unsigned int)pointerSize;
 - (void)removeMarkedEdges:(void*)arg1;
 - (void)removeMarkedNodes:(void*)arg1;
 - (id)renormalizedGraph;
 - (void)setAdditionalProperties:(id)arg1;
 - (void)setInverted:(BOOL)arg1;
-- (void)stronglyConnectedComponentSearch:(unsigned int)arg1 withRecorder:(id /* block */)arg2;
 - (id)subgraphWithMarkedNodes:(void*)arg1;
-- (id)subgraphWithShortestPathsFromNode:(unsigned int)arg1 toNodes:(void*)arg2;
-- (id)subgraphWithUniquePathsFromNode:(unsigned int)arg1 toNodes:(void*)arg2;
 - (void)ungroupNode:(unsigned int)arg1;
 - (void)withEdgeMarkingMap:(id /* block */)arg1;
 - (void)withNodeMarkingMap:(id /* block */)arg1;

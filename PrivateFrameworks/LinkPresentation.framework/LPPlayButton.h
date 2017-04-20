@@ -2,12 +2,15 @@
    Image: /System/Library/PrivateFrameworks/LinkPresentation.framework/LinkPresentation
  */
 
-@interface LPPlayButton : SKUIPlayButton
+@interface LPPlayButton : SKUIPlayButton {
+    LPMusicPlayButtonStyle * _style;
+}
 
+- (void).cxx_destruct;
 - (float)buttonCornerRadius;
 - (struct CGSize { float x1; float x2; })buttonSize;
 - (id)cancelImage;
-- (id)init;
+- (id)initWithStyle:(id)arg1;
 - (void)layoutSubviews;
 - (id)mainColor;
 - (id)outerBorderColor;

@@ -46,6 +46,7 @@
 + (int)protocolSortTypeFromTrackOrder:(unsigned long)arg1;
 + (void)reloadContainedMediaTypesForContainerWithPersistID:(long long)arg1 usingConnection:(id)arg2;
 + (void)removeAnyNonLibraryItemsInPersistentIDs:(id)arg1 fromContainersInLibrary:(id)arg2 usingConnection:(id)arg3;
++ (void)removeNonLibraryItemsFromContainer:(id)arg1 usingConnection:(id)arg2;
 + (void)removeNonLibraryItemsFromContainersInLibrary:(id)arg1 usingConnection:(id)arg2;
 + (int)revisionTrackingCode;
 + (id)sectionPropertyForProperty:(id)arg1;

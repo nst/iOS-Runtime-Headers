@@ -15,7 +15,7 @@
 - (void)analyzeWavData:(const short*)arg1 length:(int)arg2;
 - (void)dealloc;
 - (void)deleteVectorIndex:(int)arg1;
-- (const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; bool x5; }*)getAnalyzedResult;
+- (const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; bool x5; bool x6; }*)getAnalyzedResult;
 - (BOOL)getDoSAT;
 - (BOOL)getDoSupervectorSecondaryTest;
 - (double)getExtraSamplesAtStart;
@@ -36,6 +36,7 @@
 - (double)getThresholdSAT;
 - (double)getTriggerThreshold;
 - (id)getTriggerTokens;
+- (BOOL)getUseFallbackThresholdUponTimeout;
 - (BOOL)getUseRecognizer;
 - (id)initWithConfigPath:(id)arg1 resourcePath:(id)arg2;
 - (BOOL)initializeSAT:(id)arg1;

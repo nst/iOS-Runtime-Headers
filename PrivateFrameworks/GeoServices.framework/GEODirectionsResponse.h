@@ -3,6 +3,7 @@
  */
 
 @interface GEODirectionsResponse : PBCodable <NSCopying> {
+    GEOPDDatasetABStatus * _datasetAbStatus;
     unsigned long long  _debugLatencyMs;
     GEOTransitDecoderData * _decoderData;
     NSData * _directionsResponseID;
@@ -55,6 +56,7 @@
     GEOPBTransitRoutingIncidentMessage * _transitIncidentMessage;
 }
 
+@property (nonatomic, retain) GEOPDDatasetABStatus *datasetAbStatus;
 @property (nonatomic) unsigned long long debugLatencyMs;
 @property (nonatomic, retain) GEOTransitDecoderData *decoderData;
 @property (nonatomic, retain) NSData *directionsResponseID;
@@ -62,6 +64,7 @@
 @property (nonatomic, retain) GEOETAServiceResponseSummary *etaServiceSummary;
 @property (nonatomic, retain) GEOAlert *failureAlert;
 @property (nonatomic, retain) NSData *graphV3;
+@property (nonatomic, readonly) BOOL hasDatasetAbStatus;
 @property (nonatomic) BOOL hasDebugLatencyMs;
 @property (nonatomic, readonly) BOOL hasDecoderData;
 @property (nonatomic, readonly) BOOL hasDirectionsResponseID;
@@ -133,6 +136,7 @@
 - (void)clearSupportedTransportTypes;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)datasetAbStatus;
 - (void)dealloc;
 - (unsigned long long)debugLatencyMs;
 - (id)decoderData;
@@ -143,6 +147,7 @@
 - (id)etaServiceSummary;
 - (id)failureAlert;
 - (id)graphV3;
+- (BOOL)hasDatasetAbStatus;
 - (BOOL)hasDebugLatencyMs;
 - (BOOL)hasDecoderData;
 - (BOOL)hasDirectionsResponseID;
@@ -193,6 +198,7 @@
 - (id)serviceGaps;
 - (unsigned int)serviceGapsCount;
 - (id)sessionState;
+- (void)setDatasetAbStatus:(id)arg1;
 - (void)setDebugLatencyMs:(unsigned long long)arg1;
 - (void)setDecoderData:(id)arg1;
 - (void)setDirectionsResponseID:(id)arg1;

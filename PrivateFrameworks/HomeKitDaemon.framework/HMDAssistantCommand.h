@@ -75,13 +75,14 @@
 - (id)parseColorEncoding:(id)arg1;
 - (void)performWithGather:(id)arg1 queue:(id)arg2 msgDispatcher:(id)arg3 completion:(id /* block */)arg4;
 - (BOOL)populateColorResult:(id)arg1 serviceType:(id)arg2 service:(id)arg3 action:(id)arg4 responses:(id)arg5 forObjects:(id)arg6;
-- (BOOL)populateResult:(id)arg1 fromResponse:(id)arg2 forAction:(id)arg3 serviceType:(id)arg4 forObjects:(id)arg5;
+- (BOOL)populateResult:(id)arg1 fromResponse:(id)arg2 responses:(id)arg3 forAction:(id)arg4 serviceType:(id)arg5 forObjects:(id)arg6;
 - (BOOL)populateResult:(id)arg1 withObject:(id)arg2 serviceType:(id)arg3 action:(id)arg4;
-- (BOOL)populateResult:(id)arg1 withService:(id)arg2 serviceType:(id)arg3 characteristic:(id)arg4 action:(id)arg5;
+- (BOOL)populateResult:(id)arg1 withService:(id)arg2 serviceType:(id)arg3 characteristic:(id)arg4 resultAttribute:(id)arg5 action:(id)arg6;
 - (BOOL)populateResultWithEntity:(id)arg1 action:(id)arg2 entity:(id)arg3;
 - (id)primaryHomeName;
 - (id)primaryHomeUUID;
 - (id)queue;
+- (id)readRequestsForCharacteristic:(id)arg1;
 - (void)reportOutcome:(id)arg1 results:(id)arg2 handler:(id /* block */)arg3;
 - (void)reportResults:(id)arg1 handler:(id /* block */)arg2;
 - (void)reportUnlockRequired:(id /* block */)arg1;

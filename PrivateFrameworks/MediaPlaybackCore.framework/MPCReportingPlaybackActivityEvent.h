@@ -4,7 +4,6 @@
 
 @interface MPCReportingPlaybackActivityEvent : NSObject <MPCReportingEvent> {
     SSVPlayActivityEvent * _playActivityEvent;
-    NSString * _playbackSessionID;
     BOOL  _shouldReportToStore;
 }
 
@@ -12,7 +11,6 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) SSVPlayActivityEvent *playActivityEvent;
-@property (nonatomic, copy) NSString *playbackSessionID;
 @property (nonatomic) BOOL shouldReportToStore;
 @property (readonly) Class superclass;
 
@@ -20,10 +18,8 @@
 - (id)description;
 - (BOOL)isValidReportingEvent;
 - (id)playActivityEvent;
-- (id)playbackSessionID;
 - (unsigned int)reportingEventType;
 - (void)setPlayActivityEvent:(id)arg1;
-- (void)setPlaybackSessionID:(id)arg1;
 - (void)setShouldReportToStore:(BOOL)arg1;
 - (BOOL)shouldReportToStore;
 

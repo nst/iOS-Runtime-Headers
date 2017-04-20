@@ -3,6 +3,8 @@
  */
 
 @interface FCPersonalizationTreatment : NSObject <NSCopying, NSSecureCoding> {
+    double  _articleEntityScoreWeightRatioIPad;
+    double  _articleEntityScoreWeightRatioIPhone;
     double  _baselineClicksByAction;
     double  _baselineImpressionPrior;
     double  _baselineImpressionsByAction;
@@ -28,7 +30,6 @@
     double  _featureClicksByAction;
     double  _featureImpressionPrior;
     double  _featureImpressionsByAction;
-    BOOL  _filterOverflowedOrphans;
     int  _flowRateDampeningSliceCount;
     double  _flowRateMinimumDampeningFactor;
     double  _globalScoreBump;
@@ -57,13 +58,12 @@
     double  _hourlyFlowRatePerSubscription;
     double  _hourlyFlowRatePriorWeight;
     double  _hourlyFlowRateSubscriptionCountBuffer;
+    double  _importanceScalar;
     double  _likeBaselineClickValue;
     double  _likeBaselineImpressionValue;
     double  _likeClickValue;
     double  _likeImpressionValue;
     double  _lowQualityContentThreshold;
-    int  _maxArticleCombosIPad;
-    int  _maxArticleCombosIPhone;
     int  _maxClusterSizeIPad;
     int  _maxClusterSizeIPhone;
     int  _maxIdealClusterSizeIPad;
@@ -72,14 +72,11 @@
     int  _minClusterSizeIPhone;
     int  _minIdealClusterSizeIPad;
     int  _minIdealClusterSizeIPhone;
-    double  _moveAboutnessNoiseStdIPad;
-    double  _moveAboutnessNoiseStdIPhone;
-    double  _moveAboutnessWeightRatioIPad;
-    double  _moveAboutnessWeightRatioIPhone;
-    double  _moveNewOrphansCoeffIPad;
-    double  _moveNewOrphansCoeffIPhone;
-    double  _moveSizeCoeffIPad;
-    double  _moveSizeCoeffIPhone;
+    double  _muteBaselineClickValue;
+    double  _muteBaselineImpressionValue;
+    double  _muteClickValue;
+    double  _muteImpressionValue;
+    double  _mutedVoteCoefficient;
     unsigned int  _optimizedLayoutIncrementUnitIPad;
     unsigned int  _optimizedLayoutIncrementUnitIPhone;
     unsigned int  _optimizedLayoutSizeThresholdIPad;
@@ -104,6 +101,7 @@
     double  _recommendationPresentationFeedBaselineImpressionValue;
     double  _recommendationPresentationFeedClickValue;
     double  _recommendationPresentationFeedImpressionValue;
+    double  _saturatedMutedCountFactor;
     double  _saturatedSubscriptionCountFactor;
     double  _savedBaselineClickValue;
     double  _savedBaselineImpressionValue;
@@ -129,9 +127,12 @@
     double  _subscribeRelatedImpressionValue;
     double  _subscriptionCatchupDampeningFactor;
     double  _subscriptionVoteCoefficient;
-    double  _tagFavoritedCoeff;
-    double  _tagPairsCoeffIPad;
-    double  _tagPairsCoeffIPhone;
+    double  _tagArticleScoreCoeffIPad;
+    double  _tagArticleScoreCoeffIPhone;
+    double  _tagFavoritedCoeffIPad;
+    double  _tagFavoritedCoeffIPhone;
+    double  _tagPersonalizationCoeffIPad;
+    double  _tagPersonalizationCoeffIPhone;
     double  _tagSizeCoeffIPad;
     double  _tagSizeCoeffIPhone;
     double  _tappedBaselineClickValue;
@@ -139,6 +140,10 @@
     double  _tappedClickValue;
     double  _tappedImpressionValue;
     int  _treatmentID;
+    double  _unmuteBaselineClickValue;
+    double  _unmuteBaselineImpressionValue;
+    double  _unmuteClickValue;
+    double  _unmuteImpressionValue;
     double  _unsubscribeBaselineClickValue;
     double  _unsubscribeBaselineImpressionValue;
     double  _unsubscribeClickValue;
@@ -155,6 +160,8 @@
     double  _weakClickImpressionValue;
 }
 
+@property (nonatomic, readonly) double articleEntityScoreWeightRatioIPad;
+@property (nonatomic, readonly) double articleEntityScoreWeightRatioIPhone;
 @property (nonatomic, readonly) double*baselineClicksByAction;
 @property (nonatomic, readonly) double baselineImpressionPrior;
 @property (nonatomic, readonly) double*baselineImpressionsByAction;
@@ -180,7 +187,6 @@
 @property (nonatomic, readonly) double*featureClicksByAction;
 @property (nonatomic, readonly) double featureImpressionPrior;
 @property (nonatomic, readonly) double*featureImpressionsByAction;
-@property (nonatomic, readonly) BOOL filterOverflowedOrphans;
 @property (nonatomic, readonly) int flowRateDampeningSliceCount;
 @property (nonatomic, readonly) double flowRateMinimumDampeningFactor;
 @property (nonatomic, readonly) double globalScoreBump;
@@ -209,13 +215,12 @@
 @property (nonatomic, readonly) double hourlyFlowRatePerSubscription;
 @property (nonatomic, readonly) double hourlyFlowRatePriorWeight;
 @property (nonatomic, readonly) double hourlyFlowRateSubscriptionCountBuffer;
+@property (nonatomic, readonly) double importanceScalar;
 @property (nonatomic, readonly) double likeBaselineClickValue;
 @property (nonatomic, readonly) double likeBaselineImpressionValue;
 @property (nonatomic, readonly) double likeClickValue;
 @property (nonatomic, readonly) double likeImpressionValue;
 @property (nonatomic, readonly) double lowQualityContentThreshold;
-@property (nonatomic, readonly) int maxArticleCombosIPad;
-@property (nonatomic, readonly) int maxArticleCombosIPhone;
 @property (nonatomic, readonly) int maxClusterSizeIPad;
 @property (nonatomic, readonly) int maxClusterSizeIPhone;
 @property (nonatomic, readonly) int maxIdealClusterSizeIPad;
@@ -224,14 +229,11 @@
 @property (nonatomic, readonly) int minClusterSizeIPhone;
 @property (nonatomic, readonly) int minIdealClusterSizeIPad;
 @property (nonatomic, readonly) int minIdealClusterSizeIPhone;
-@property (nonatomic, readonly) double moveAboutnessNoiseStdIPad;
-@property (nonatomic, readonly) double moveAboutnessNoiseStdIPhone;
-@property (nonatomic, readonly) double moveAboutnessWeightRatioIPad;
-@property (nonatomic, readonly) double moveAboutnessWeightRatioIPhone;
-@property (nonatomic, readonly) double moveNewOrphansCoeffIPad;
-@property (nonatomic, readonly) double moveNewOrphansCoeffIPhone;
-@property (nonatomic, readonly) double moveSizeCoeffIPad;
-@property (nonatomic, readonly) double moveSizeCoeffIPhone;
+@property (nonatomic, readonly) double muteBaselineClickValue;
+@property (nonatomic, readonly) double muteBaselineImpressionValue;
+@property (nonatomic, readonly) double muteClickValue;
+@property (nonatomic, readonly) double muteImpressionValue;
+@property (nonatomic, readonly) double mutedVoteCoefficient;
 @property (nonatomic, readonly) unsigned int optimizedLayoutIncrementUnitIPad;
 @property (nonatomic, readonly) unsigned int optimizedLayoutIncrementUnitIPhone;
 @property (nonatomic, readonly) unsigned int optimizedLayoutSizeThresholdIPad;
@@ -255,6 +257,7 @@
 @property (nonatomic, readonly) double recommendationPresentationFeedBaselineImpressionValue;
 @property (nonatomic, readonly) double recommendationPresentationFeedClickValue;
 @property (nonatomic, readonly) double recommendationPresentationFeedImpressionValue;
+@property (nonatomic, readonly) double saturatedMutedCountFactor;
 @property (nonatomic, readonly) double saturatedSubscriptionCountFactor;
 @property (nonatomic, readonly) double savedBaselineClickValue;
 @property (nonatomic, readonly) double savedBaselineImpressionValue;
@@ -280,9 +283,12 @@
 @property (nonatomic, readonly) double subscribeRelatedImpressionValue;
 @property (nonatomic) double subscriptionCatchupDampeningFactor;
 @property (nonatomic, readonly) double subscriptionVoteCoefficient;
-@property (nonatomic, readonly) double tagFavoritedCoeff;
-@property (nonatomic, readonly) double tagPairsCoeffIPad;
-@property (nonatomic, readonly) double tagPairsCoeffIPhone;
+@property (nonatomic, readonly) double tagArticleScoreCoeffIPad;
+@property (nonatomic, readonly) double tagArticleScoreCoeffIPhone;
+@property (nonatomic, readonly) double tagFavoritedCoeffIPad;
+@property (nonatomic, readonly) double tagFavoritedCoeffIPhone;
+@property (nonatomic, readonly) double tagPersonalizationCoeffIPad;
+@property (nonatomic, readonly) double tagPersonalizationCoeffIPhone;
 @property (nonatomic, readonly) double tagSizeCoeffIPad;
 @property (nonatomic, readonly) double tagSizeCoeffIPhone;
 @property (nonatomic, readonly) double tappedBaselineClickValue;
@@ -290,6 +296,10 @@
 @property (nonatomic, readonly) double tappedClickValue;
 @property (nonatomic, readonly) double tappedImpressionValue;
 @property (nonatomic, readonly) int treatmentID;
+@property (nonatomic, readonly) double unmuteBaselineClickValue;
+@property (nonatomic, readonly) double unmuteBaselineImpressionValue;
+@property (nonatomic, readonly) double unmuteClickValue;
+@property (nonatomic, readonly) double unmuteImpressionValue;
 @property (nonatomic, readonly) double unsubscribeBaselineClickValue;
 @property (nonatomic, readonly) double unsubscribeBaselineImpressionValue;
 @property (nonatomic, readonly) double unsubscribeClickValue;
@@ -308,6 +318,8 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (double)articleEntityScoreWeightRatioIPad;
+- (double)articleEntityScoreWeightRatioIPhone;
 - (double*)baselineClicksByAction;
 - (double)baselineImpressionPrior;
 - (double*)baselineImpressionsByAction;
@@ -335,7 +347,6 @@
 - (double*)featureClicksByAction;
 - (double)featureImpressionPrior;
 - (double*)featureImpressionsByAction;
-- (BOOL)filterOverflowedOrphans;
 - (int)flowRateDampeningSliceCount;
 - (double)flowRateMinimumDampeningFactor;
 - (double)globalScoreBump;
@@ -364,6 +375,7 @@
 - (double)hourlyFlowRatePerSubscription;
 - (double)hourlyFlowRatePriorWeight;
 - (double)hourlyFlowRateSubscriptionCountBuffer;
+- (double)importanceScalar;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPBPersonalizationTreatment:(id)arg1;
@@ -372,8 +384,6 @@
 - (double)likeClickValue;
 - (double)likeImpressionValue;
 - (double)lowQualityContentThreshold;
-- (int)maxArticleCombosIPad;
-- (int)maxArticleCombosIPhone;
 - (int)maxClusterSizeIPad;
 - (int)maxClusterSizeIPhone;
 - (int)maxIdealClusterSizeIPad;
@@ -382,14 +392,11 @@
 - (int)minClusterSizeIPhone;
 - (int)minIdealClusterSizeIPad;
 - (int)minIdealClusterSizeIPhone;
-- (double)moveAboutnessNoiseStdIPad;
-- (double)moveAboutnessNoiseStdIPhone;
-- (double)moveAboutnessWeightRatioIPad;
-- (double)moveAboutnessWeightRatioIPhone;
-- (double)moveNewOrphansCoeffIPad;
-- (double)moveNewOrphansCoeffIPhone;
-- (double)moveSizeCoeffIPad;
-- (double)moveSizeCoeffIPhone;
+- (double)muteBaselineClickValue;
+- (double)muteBaselineImpressionValue;
+- (double)muteClickValue;
+- (double)muteImpressionValue;
+- (double)mutedVoteCoefficient;
 - (unsigned int)optimizedLayoutIncrementUnitIPad;
 - (unsigned int)optimizedLayoutIncrementUnitIPhone;
 - (unsigned int)optimizedLayoutSizeThresholdIPad;
@@ -413,6 +420,7 @@
 - (double)recommendationPresentationFeedBaselineImpressionValue;
 - (double)recommendationPresentationFeedClickValue;
 - (double)recommendationPresentationFeedImpressionValue;
+- (double)saturatedMutedCountFactor;
 - (double)saturatedSubscriptionCountFactor;
 - (double)savedBaselineClickValue;
 - (double)savedBaselineImpressionValue;
@@ -439,9 +447,12 @@
 - (double)subscribeRelatedImpressionValue;
 - (double)subscriptionCatchupDampeningFactor;
 - (double)subscriptionVoteCoefficient;
-- (double)tagFavoritedCoeff;
-- (double)tagPairsCoeffIPad;
-- (double)tagPairsCoeffIPhone;
+- (double)tagArticleScoreCoeffIPad;
+- (double)tagArticleScoreCoeffIPhone;
+- (double)tagFavoritedCoeffIPad;
+- (double)tagFavoritedCoeffIPhone;
+- (double)tagPersonalizationCoeffIPad;
+- (double)tagPersonalizationCoeffIPhone;
 - (double)tagSizeCoeffIPad;
 - (double)tagSizeCoeffIPhone;
 - (double)tappedBaselineClickValue;
@@ -449,6 +460,10 @@
 - (double)tappedClickValue;
 - (double)tappedImpressionValue;
 - (int)treatmentID;
+- (double)unmuteBaselineClickValue;
+- (double)unmuteBaselineImpressionValue;
+- (double)unmuteClickValue;
+- (double)unmuteImpressionValue;
 - (double)unsubscribeBaselineClickValue;
 - (double)unsubscribeBaselineImpressionValue;
 - (double)unsubscribeClickValue;

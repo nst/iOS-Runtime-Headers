@@ -53,6 +53,8 @@
 @property (getter=_visualStyle, setter=_setVisualStyle:, nonatomic, retain) UIInterfaceActionVisualStyle *visualStyle;
 @property (nonatomic, readonly) NSPointerArray *weakDisplayPropertyObservers;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (id)_observableDisplayProperties;
 + (void)_setInterfaceActionCanInvokeActionsWithoutPresentingController:(BOOL)arg1;
 + (id)actionWithCustomContentView:(id)arg1;
@@ -109,5 +111,9 @@
 - (struct CGSize { float x1; float x2; })trailingImageLayoutSize;
 - (int)type;
 - (id)weakDisplayPropertyObservers;
+
+// Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
+
++ (id)actionWithTitle:(id)arg1 resource:(id)arg2 handler:(id /* block */)arg3;
 
 @end

@@ -19,12 +19,16 @@
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 + (Class)contactType;
 + (id)options;
 
 - (void).cxx_destruct;
+- (int)StringAsAudioRoute:(id)arg1;
 - (void)addContact:(id)arg1;
 - (int)audioRoute;
+- (id)audioRouteAsString:(int)arg1;
 - (void)clearContacts;
 - (id)contactAtIndex:(unsigned int)arg1;
 - (id)contacts;
@@ -45,5 +49,11 @@
 - (void)setIntentMetadata:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

@@ -6,6 +6,7 @@
     BOOL  _accessoryViewVisibilityChanged;
     BOOL  _assetChanged;
     BOOL  _badgeInfoChanged;
+    BOOL  _badgeInfoPromiseChanged;
     BOOL  _contentOffsetChanged;
     BOOL  _focusValueChanged;
     BOOL  _forceBadgesVisibleChanged;
@@ -22,7 +23,8 @@
 
 @property (setter=_setAccessoryViewVisibilityChanged:, nonatomic) BOOL accessoryViewVisibilityChanged;
 @property (setter=_setAssetChanged:, nonatomic) BOOL assetChanged;
-@property (setter=_setBadgeInfoChanged:, nonatomic) BOOL badgeInfoChanged;
+@property (nonatomic, readonly) BOOL badgeInfoChanged;
+@property (setter=_setBadgeInfoPromiseChanged:, nonatomic) BOOL badgeInfoPromiseChanged;
 @property (setter=_setContentOffsetChanged:, nonatomic) BOOL contentOffsetChanged;
 @property (setter=_setFocusValueChanged:, nonatomic) BOOL focusValueChanged;
 @property (setter=_setForceBadgesVisibleChanged:, nonatomic) BOOL forceBadgesVisibleChanged;
@@ -39,7 +41,7 @@
 - (void).cxx_destruct;
 - (void)_setAccessoryViewVisibilityChanged:(BOOL)arg1;
 - (void)_setAssetChanged:(BOOL)arg1;
-- (void)_setBadgeInfoChanged:(BOOL)arg1;
+- (void)_setBadgeInfoPromiseChanged:(BOOL)arg1;
 - (void)_setContentOffsetChanged:(BOOL)arg1;
 - (void)_setFocusValueChanged:(BOOL)arg1;
 - (void)_setForceBadgesVisibleChanged:(BOOL)arg1;
@@ -55,6 +57,7 @@
 - (BOOL)accessoryViewVisibilityChanged;
 - (BOOL)assetChanged;
 - (BOOL)badgeInfoChanged;
+- (BOOL)badgeInfoPromiseChanged;
 - (BOOL)contentOffsetChanged;
 - (BOOL)focusValueChanged;
 - (BOOL)forceBadgesVisibleChanged;

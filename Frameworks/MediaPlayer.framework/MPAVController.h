@@ -276,6 +276,7 @@
 - (void)_sizeDidChange:(id)arg1;
 - (void)_streamBufferFull:(id)arg1;
 - (void)_streamLikelyToKeepUp:(id)arg1;
+- (void)_streamLimitExceeded;
 - (void)_streamRanDry:(id)arg1;
 - (void)_streamUnlikelyToKeepUp:(id)arg1;
 - (void)_timeHasJumpedNotification:(id)arg1;

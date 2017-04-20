@@ -27,6 +27,8 @@
     CKElasticFunction * _elasticFunctionRotation;
     CKElasticFunction * _elasticFunctionScaleX;
     CKElasticFunction * _elasticFunctionScaleY;
+    double  _elasticLastTime;
+    double  _elasticRemainingTime;
     float  _elasticRotationAngle;
     float  _elasticScaleX;
     float  _elasticScaleY;
@@ -111,6 +113,8 @@
 @property (nonatomic, retain) CKElasticFunction *elasticFunctionRotation;
 @property (nonatomic, retain) CKElasticFunction *elasticFunctionScaleX;
 @property (nonatomic, retain) CKElasticFunction *elasticFunctionScaleY;
+@property (nonatomic) double elasticLastTime;
+@property (nonatomic) double elasticRemainingTime;
 @property (nonatomic) float elasticRotationAngle;
 @property (nonatomic) float elasticScaleX;
 @property (nonatomic) float elasticScaleY;
@@ -180,6 +184,8 @@
 - (id)elasticFunctionRotation;
 - (id)elasticFunctionScaleX;
 - (id)elasticFunctionScaleY;
+- (double)elasticLastTime;
+- (double)elasticRemainingTime;
 - (float)elasticRotationAngle;
 - (float)elasticScaleX;
 - (float)elasticScaleY;
@@ -191,6 +197,8 @@
 - (struct CGSize { float x1; float x2; })initialSize;
 - (BOOL)isPressed;
 - (BOOL)isScaledDown;
+- (void)manuallyInitializeDragAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)manuallyUpdateDragPositionToPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)meshLayer;
 - (struct CGPoint { float x1; float x2; })meshLayerStartPosition;
 - (void)panGestureRecognized:(id)arg1;
@@ -225,6 +233,8 @@
 - (void)setElasticFunctionRotation:(id)arg1;
 - (void)setElasticFunctionScaleX:(id)arg1;
 - (void)setElasticFunctionScaleY:(id)arg1;
+- (void)setElasticLastTime:(double)arg1;
+- (void)setElasticRemainingTime:(double)arg1;
 - (void)setElasticRotationAngle:(float)arg1;
 - (void)setElasticScaleX:(float)arg1;
 - (void)setElasticScaleY:(float)arg1;

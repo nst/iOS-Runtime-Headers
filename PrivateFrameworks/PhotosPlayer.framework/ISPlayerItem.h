@@ -3,36 +3,57 @@
  */
 
 @interface ISPlayerItem : ISObservable {
-    ISCrossfadeItem * __crossfadeItem;
-    int  __crossfadeItemRequestID;
     BOOL  __loadingCancelled;
-    int  __numberOfCrossfadeLoadingAttempts;
-    double  __photoTime;
     AVPlayerItem * __videoPlayerItem;
-    int  __videoPlayerItemRequestID;
-    BOOL  _aggressivelyCacheVideoFrames;
+    int  __workQueue_numberOfCrossfadeLoadingAttempts;
     ISAsset * _asset;
-    NSError * _error;
+    NSObject<OS_dispatch_queue> * _ivarQueue;
+    void * _ivarQueueIdentifier;
+    BOOL  _ivarQueue_aggressivelyCacheVideoFrames;
+    NSError * _ivarQueue_error;
     struct { 
         BOOL videoPlayerItem; 
-        BOOL crossfadeItem; 
-    }  _isLoaded;
-    struct { 
         BOOL status; 
         BOOL content; 
-    }  _isValid;
-    int  _loadingTarget;
-    NSHashTable * _observers;
-    ISPlayerContent * _playerContent;
-    BOOL  _preparesForVitalityOnLoad;
-    BOOL  _reversesMoreVideoFramesInMemory;
-    BOOL  _shouldLoadCrossfadeContent;
-    NSObject<OS_dispatch_queue> * _stateQueue;
-    int  _status;
-    struct CGSize { 
-        float width; 
-        float height; 
-    }  _targetSize;
+        BOOL offsetPhoto; 
+        BOOL minimumClientVersion; 
+        BOOL playbackStyleIdentifier; 
+    }  _ivarQueue_isValid;
+    int  _ivarQueue_loadingTarget;
+    NSString * _ivarQueue_minimumClientVersion;
+    struct CGImage { } * _ivarQueue_offsetPhoto;
+    NSString * _ivarQueue_playbackStyleIdentifier;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _ivarQueue_playerItemDuration;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _ivarQueue_playerItemPhotoTime;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _ivarQueue_postPhotoTime;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _ivarQueue_prePhotoTime;
+    BOOL  _ivarQueue_reversesMoreVideoFramesInMemory;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _ivarQueue_scrubbingPhotoTime;
     struct { 
         struct { 
             long long value; 
@@ -46,18 +67,26 @@
             unsigned int flags; 
             long long epoch; 
         } duration; 
-    }  _trimmedTimeRange;
-    AVVideoComposition * _videoComposition;
-    float  _videoCropFactor;
+    }  _ivarQueue_trimmedTimeRange;
+    AVVideoComposition * _ivarQueue_videoComposition;
+    int  _ivarQueue_videoPlayerItemRequestID;
+    ISPlayerContent * _playerContent;
+    BOOL  _preparesForVitalityOnLoad;
+    int  _status;
+    struct CGSize { 
+        float width; 
+        float height; 
+    }  _targetSize;
+    NSObject<OS_dispatch_queue> * _workQueue;
+    void * _workQueueIdentifier;
+    AVAssetImageGenerator * _workQueue_imageGenerator;
+    BOOL  _workQueue_isGeneratingOffsetImage;
 }
 
-@property (setter=_setCrossfadeItem:, nonatomic, retain) ISCrossfadeItem *_crossfadeItem;
-@property (setter=_setCrossfadeItemRequestID:, nonatomic) int _crossfadeItemRequestID;
 @property (getter=_isLoadingCancelled, setter=_setLoadingCancelled:, nonatomic) BOOL _loadingCancelled;
-@property (setter=_setNumberOfCrossfadeLoadingAttempts:, nonatomic) int _numberOfCrossfadeLoadingAttempts;
-@property (nonatomic, readonly) double _photoTime;
 @property (setter=_setVideoPlayerItem:, nonatomic, retain) AVPlayerItem *_videoPlayerItem;
 @property (setter=_setVideoPlayerItemRequestID:, nonatomic) int _videoPlayerItemRequestID;
+@property (setter=_workQueue_setNumberOfCrossfadeLoadingAttempts:, nonatomic) int _workQueue_numberOfCrossfadeLoadingAttempts;
 @property (nonatomic) BOOL aggressivelyCacheVideoFrames;
 @property (readonly) ISAsset *asset;
 @property (setter=_setError:, nonatomic, retain) NSError *error;
@@ -65,51 +94,68 @@
 @property (setter=_setPlayerContent:, nonatomic, retain) ISPlayerContent *playerContent;
 @property (nonatomic) BOOL preparesForVitalityOnLoad;
 @property (nonatomic) BOOL reversesMoreVideoFramesInMemory;
-@property (nonatomic) BOOL shouldLoadCrossfadeContent;
+@property struct { long long x1; int x2; unsigned int x3; long long x4; } scrubbingPhotoTime;
 @property (setter=_setStatus:, nonatomic) int status;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } targetSize;
-@property (nonatomic, readonly) struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } trimmedTimeRange;
+@property struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } trimmedTimeRange;
 @property (copy) AVVideoComposition *videoComposition;
-@property (nonatomic, readonly) float videoCropFactor;
 
++ (int)currentClientVersion;
 + (id)playerItemWithAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2;
 + (id)playerItemWithAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 trimmedTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg3;
 
 - (void).cxx_destruct;
+- (void)_assertOnIvarQueue;
+- (void)_assertOnWorkQueue;
 - (void)_cancelLoading;
-- (id)_crossfadeItem;
-- (int)_crossfadeItemRequestID;
-- (void)_handleCrossfadeLoadingResultWithSuccess:(BOOL)arg1 crossfadeItem:(id)arg2 error:(id)arg3;
-- (void)_handleVideoPlayerItemLoadResultWithSuccess:(BOOL)arg1 playerItem:(id)arg2 videoCropFactor:(float)arg3 error:(id)arg4;
+- (void)_configureNewVideoPlayerItem:(id)arg1 forPhotoTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
+- (void)_handleOffsetPhotoGenerationResult:(int)arg1 image:(struct CGImage { }*)arg2 time:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 error:(id)arg4;
+- (void)_handleVideoPlayerItemLoadResultWithSuccess:(BOOL)arg1 playerItem:(id)arg2 prePhotoTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 photoTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4 postPhotoTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg5 videoDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg6 error:(id)arg7;
+- (void)_invalidateMinimumClientVersion;
+- (void)_invalidateOffsetPhoto;
+- (void)_invalidatePlaybackStyleIdentifier;
 - (void)_invalidatePlayerContent;
 - (void)_invalidateStatus;
+- (void)_invalidateVideoPlayerItem;
 - (BOOL)_isLoadingCancelled;
-- (void)_loadCrossfadeItemIfNeeded;
-- (void)_loadNextResourceIfNeeded;
-- (void)_loadVideoPlayerItemIfNeeded;
-- (BOOL)_needsToLoadContent;
+- (BOOL)_isMinimumClientVersionValid;
+- (BOOL)_isOffsetPhotoValid;
+- (BOOL)_isOnIvarQueue;
+- (BOOL)_isOnWorkQueue;
+- (BOOL)_isPlaybackStyleIdentifierValid;
+- (BOOL)_isPlayerContentValid;
+- (BOOL)_isStatusVaild;
+- (BOOL)_isVideoPlayerItemValid;
+- (id)_minimumClientVersion;
 - (BOOL)_needsUpdate;
-- (int)_numberOfCrossfadeLoadingAttempts;
-- (double)_photoTime;
+- (struct CGImage { }*)_offsetPhoto;
+- (void)_performIvarRead:(id /* block */)arg1;
+- (void)_performIvarWrite:(id /* block */)arg1;
+- (void)_performWork:(id /* block */)arg1;
+- (void)_performWork:(id /* block */)arg1 sync:(BOOL)arg2;
+- (id)_playbackStyleIdentifier;
 - (void)_reloadAllContent;
-- (void)_resetAVObjects;
-- (void)_setCrossfadeItem:(id)arg1;
-- (void)_setCrossfadeItemRequestID:(int)arg1;
 - (void)_setError:(id)arg1;
 - (void)_setLoadingCancelled:(BOOL)arg1;
-- (void)_setLoadingTarget:(int)arg1;
-- (void)_setNumberOfCrossfadeLoadingAttempts:(int)arg1;
+- (void)_setMinimumClientVersion:(id)arg1;
+- (void)_setOffsetPhoto:(struct CGImage { }*)arg1;
+- (void)_setPlaybackStyleIdentifier:(id)arg1;
 - (void)_setPlayerContent:(id)arg1;
 - (void)_setStatus:(int)arg1;
-- (void)_setVideoComposition:(id)arg1;
 - (void)_setVideoPlayerItem:(id)arg1;
-- (void)_setVideoPlayerItem:(id)arg1 cropFactor:(float)arg2;
+- (void)_setVideoPlayerItem:(id)arg1 prePhotoTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 photoTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 postPhotoTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4 videoDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg5;
 - (void)_setVideoPlayerItemRequestID:(int)arg1;
 - (void)_updateIfNeeded;
+- (void)_updateMinimumClientVersionIfNeeded;
+- (void)_updateOffsetPhotoIfNeeded;
+- (void)_updatePlaybackStyleIdentifierIfNeeded;
 - (void)_updatePlayerContentIfNeeded;
 - (void)_updateStatusIfNeeded;
+- (void)_updateVideoPlayerItemIfNeeded;
 - (id)_videoPlayerItem;
 - (int)_videoPlayerItemRequestID;
+- (int)_workQueue_numberOfCrossfadeLoadingAttempts;
+- (void)_workQueue_setNumberOfCrossfadeLoadingAttempts:(int)arg1;
 - (BOOL)aggressivelyCacheVideoFrames;
 - (id)asset;
 - (void)cancelLoading;
@@ -122,21 +168,22 @@
 - (id)initWithAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 trimmedTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg3;
 - (int)loadingTarget;
 - (id)mutableChangeObject;
+- (void)performChanges:(id /* block */)arg1;
 - (id)playerContent;
 - (BOOL)preparesForVitalityOnLoad;
 - (void)resetAVObjects;
 - (BOOL)reversesMoreVideoFramesInMemory;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })scrubbingPhotoTime;
 - (void)setAggressivelyCacheVideoFrames:(BOOL)arg1;
 - (void)setLoadingTarget:(int)arg1;
 - (void)setPreparesForVitalityOnLoad:(BOOL)arg1;
 - (void)setReversesMoreVideoFramesInMemory:(BOOL)arg1;
-- (void)setShouldLoadCrossfadeContent:(BOOL)arg1;
+- (void)setScrubbingPhotoTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setTrimmedTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1;
 - (void)setVideoComposition:(id)arg1;
-- (BOOL)shouldLoadCrossfadeContent;
 - (int)status;
 - (struct CGSize { float x1; float x2; })targetSize;
 - (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })trimmedTimeRange;
 - (id)videoComposition;
-- (float)videoCropFactor;
 
 @end

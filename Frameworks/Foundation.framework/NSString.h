@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSString : NSObject <ASParsingLeafNode, CKRecordValue, CKShortDescription, CNKeyDescriptor_Private, CNUIURLDestinationID, CSCoderEncoder, FCKeyValueStoreCoding, HFPropertyListConvertible, HFStringGenerator, NSCopying, NSMutableCopying, NSSecureCoding, PASerializable, PQLValuable, SBFFileCacheFileIdentifier, SiriCoreSQLiteValue>
+@interface NSString : NSObject <ASParsingLeafNode, CKRecordValue, CKShortDescription, CNKeyDescriptor_Private, CNUIURLDestinationID, CRCoding, CRDataType, CREquatable, CSCoderEncoder, FCKeyValueStoreCoding, HFPropertyListConvertible, HFStringGenerator, NSCopying, NSMutableCopying, NSSecureCoding, PASerializable, PQLValuable, SBFFileCacheFileIdentifier, SiriCoreSQLiteValue>
 
 @property (nonatomic, retain) NSString *IPASpeechPhonemes;
 @property (nonatomic, readonly) NSData *_FTDataFromBase64String;
@@ -12,8 +12,11 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) BOOL hasMobileMeSuffix;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSString *ic_sanitizedFilenameString;
+@property (nonatomic, readonly) NSString *ic_trimmedString;
 @property (readonly) BOOL isAllCaps;
 @property (readonly) unsigned int length;
+@property (readonly, copy) NSString *localizedString;
 @property (nonatomic, readonly) NSString *mobileMeDomain;
 @property (readonly) BOOL npkHasContent;
 @property (nonatomic, readonly) long long px_platformAgnosticHash;
@@ -709,6 +712,10 @@
 - (BOOL)isAddressBookLabel;
 - (id)unformattedPhoneNumber;
 
+// Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
+
+- (id)crk_sha1Hash;
+
 // Image: /System/Library/PrivateFrameworks/ClockKit.framework/ClockKit
 
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_clkBlinkerRange;
@@ -801,6 +808,8 @@
 - (BOOL)_cn_hasCaseAndDiacriticInsensitivePrefix:(id)arg1;
 - (BOOL)_cn_hasPrefix:(id)arg1;
 - (BOOL)_cn_hasPrefix:(id)arg1 options:(unsigned int)arg2;
+- (BOOL)_cn_hasSuffix:(id)arg1;
+- (BOOL)_cn_hasSuffix:(id)arg1 options:(unsigned int)arg2;
 - (BOOL)_cn_isBlank;
 - (id)_cn_nameComponentTokens;
 - (id)_cn_nameComponentTokensUsingLocale:(id)arg1 inferredNameOrder:(int*)arg2;
@@ -953,6 +962,10 @@
 
 - (id)dd_leadingTextWithNumberOfCharacters:(int)arg1 beforeRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)dd_trailingTextWithNumberOfCharacters:(int)arg1 afterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+
+// Image: /System/Library/PrivateFrameworks/DiagnosticsKit.framework/DiagnosticsKit
+
+- (id)localizedString;
 
 // Image: /System/Library/PrivateFrameworks/DifferentialPrivacy.framework/DifferentialPrivacy
 
@@ -1179,7 +1192,10 @@
 
 - (BOOL)_lp_hasCaseInsensitivePrefix:(id)arg1;
 - (id)_lp_highLevelDomainFromHost;
-- (id)_lp_simplifiedUserVisibleURLStringWithSimplifications:(unsigned int)arg1 forDisplayOnly:(BOOL)arg2 simplifiedStringOffset:(unsigned int*)arg3;
+- (BOOL)_lp_isEqualIgnoringCase:(id)arg1;
+- (BOOL)_lp_isEqualToAnyIgnoringCase:(id)arg1;
+- (id)_lp_simplifiedUserVisibleURLStringWithSimplifications:(unsigned int)arg1 forDisplayOnly:(BOOL)arg2;
+- (id)_lp_stringForcingLeftToRightDirection;
 - (id)_lp_topLevelDomainUsingCFFromComponents:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
@@ -1368,7 +1384,7 @@
 + (id)_navigation_replacementForFormatToken:(id)arg1 timeStampTimeZone:(id)arg2 abbreviatedUnits:(BOOL)arg3 detail:(int)arg4 spoken:(BOOL)arg5;
 + (id)_navigation_selectInstructionWithServerString:(id)arg1 isSpoken:(BOOL)arg2 clientBlock:(id /* block */)arg3;
 + (id)_navigation_selectInstructionWithServerStringArray:(id)arg1 isSpoken:(BOOL)arg2 clientBlock:(id /* block */)arg3;
-+ (id)_navigation_stringForDistance:(double)arg1 formatter:(id)arg2;
++ (id)_navigation_stringForDistance:(double)arg1 formatter:(id)arg2 locale:(id)arg3;
 + (id)_navigation_stringForExpectedTravelTime:(double)arg1 dateUnitStyle:(int)arg2;
 + (id)_navigation_stringForServerFormattedString:(id)arg1;
 + (id)_navigation_stringForServerFormattedString:(id)arg1 timeZone:(id)arg2 abbreviatedUnits:(BOOL)arg3 detail:(int)arg4 spoken:(BOOL)arg5 overrideVariables:(id)arg6;
@@ -1409,11 +1425,10 @@
 - (id)_FCCKPIdentifierWithType:(int)arg1;
 - (id)fc_lowerCaseStringByTrimmingWhiteSpace;
 - (id)fc_lowercaseTokensWithMinimumLength:(unsigned int)arg1;
-- (id)fc_sanitizeWithOffendingCharacterSet:(id)arg1;
+- (id)fc_numberFollowingString:(id)arg1;
 - (id)fc_stringByMultiplyingStringByCount:(unsigned int)arg1;
 - (id)fc_stringByPrefixingLinesWithString:(id)arg1;
 - (id)fc_stringByRemovingPunctuation;
-- (BOOL)fc_validateWithRegexPattern:(id)arg1;
 - (id)fr_readingHistoryItemID;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (id)stringByRemovingCharactersInSet:(id)arg1;
@@ -1425,23 +1440,34 @@
 
 - (void)enumerateContentLineRangesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 usingBlock:(id /* block */)arg2;
 - (void)enumerateParagraphsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 usingBlock:(id /* block */)arg2;
+- (id)ic_sanitizedFilenameString;
+- (id)ic_stringByReplacingCharactersInSet:(id)arg1 withString:(id)arg2;
 - (id)ic_stringByReplacingNewlineCharactersWithWhiteSpace;
 - (id)ic_substringFromIndex:(unsigned int)arg1;
 - (id)ic_substringToIndex:(unsigned int)arg1;
 - (id)ic_substringWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)ic_trimmedString;
 - (id)md5;
 - (unsigned int)numberOfLines;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })paragraphRangeForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 contentEnd:(unsigned int*)arg2;
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
+- (id)deltaSince:(id)arg1 in:(id)arg2;
 - (id)dictionaryFromQueryComponents;
+- (void)encodeWithCRCoder:(id)arg1;
+- (id)initWithCRCoder:(id)arg1;
+- (void)mergeWith:(id)arg1;
+- (void)realizeLocalChangesIn:(id)arg1;
+- (void)setDocument:(id)arg1;
 - (id)stringByDecodingURLFormat;
 - (id)stringByEncodingURLFormat;
+- (id)tombstone;
+- (void)walkGraph:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/OAuth.framework/OAuth
 
-- (id)urlEncodedString;
+- (id)oauth_urlEncodedString;
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
@@ -1671,17 +1697,6 @@
 
 - (int)compareVersionString:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
-
-- (int)compareFloat:(id)arg1;
-- (int)compareInt:(id)arg1;
-- (BOOL)containsStringInArray:(id)arg1;
-- (BOOL)matchingStringInArray:(id)arg1;
-- (id)stringByReplacingOccurrencesOfStrings:(id)arg1 withString:(id)arg2;
-- (id)strip;
-- (id)tokenizedByString:(id)arg1;
-- (id)tokenizedByStrings:(id)arg1;
-
 // Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
 
 - (id)ICCIDString;
@@ -1722,9 +1737,23 @@
 
 + (id)stringWithPositionalSpecifiersFormat:(id)arg1 arguments:(id)arg2;
 
+// Image: /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
+
++ (void)safari_reverseEnumerateComponents:(id)arg1 usingBlock:(id /* block */)arg2;
+
+- (BOOL)safari_hasCaseInsensitivePrefix:(id)arg1;
+- (BOOL)safari_hasCaseInsensitiveSuffix:(id)arg1;
+- (BOOL)safari_hasLocalizedCaseInsensitivePrefix:(id)arg1;
+- (BOOL)safari_hasPrefix:(id)arg1;
+- (id)safari_highLevelDomainFromHost;
+- (BOOL)safari_isCaseInsensitiveEqualToString:(id)arg1;
+- (id)safari_simplifiedUserVisibleURLString;
+- (id)safari_simplifiedUserVisibleURLStringWithSimplifications:(unsigned int)arg1 forDisplayOnly:(BOOL)arg2 simplifiedStringOffset:(unsigned int*)arg3;
+- (id)safari_stringByTrimmingWhitespace;
+- (id)safari_topLevelDomainUsingCFFromComponents:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 
-+ (void)_safari_reverseEnumerateComponents:(id)arg1 usingBlock:(id /* block */)arg2;
 + (id)safari_stringAsHexWithBuffer:(const char *)arg1 length:(unsigned long)arg2;
 + (id)safari_stringAsHexWithData:(id)arg1;
 + (id)safari_stringByBase64EncodingData:(id)arg1;
@@ -1732,7 +1761,6 @@
 + (id)safari_stringWithJSValue:(struct OpaqueJSValue { }*)arg1 context:(struct OpaqueJSContext { }*)arg2 nullStringPolicy:(long)arg3;
 + (id)safari_stringWithUTF8Bytes:(const void*)arg1 length:(unsigned int)arg2;
 
-- (id)_safari_topLevelDomainUsingCFFromComponents:(id)arg1;
 - (id)safari_base64DecodedData;
 - (id)safari_bestLanguageTag;
 - (id)safari_bestURLForUserTypedString;
@@ -1743,29 +1771,23 @@
 - (id)safari_domainFromHost;
 - (void)safari_enumerateSubdomainRangesInHostUsingBlock:(id /* block */)arg1;
 - (id)safari_fixedStringByExpandingTildeInPath;
-- (BOOL)safari_hasCaseInsensitivePrefix:(id)arg1;
-- (BOOL)safari_hasCaseInsensitiveSuffix:(id)arg1;
-- (BOOL)safari_hasLocalizedCaseInsensitivePrefix:(id)arg1;
-- (BOOL)safari_hasPrefix:(id)arg1;
-- (id)safari_highLevelDomainFromHost;
-- (BOOL)safari_isCaseInsensitiveEqualToString:(id)arg1;
+- (BOOL)safari_hasDirectionalPrefix;
 - (BOOL)safari_isJavaScriptURLString;
 - (BOOL)safari_isVisualDuplicateOfURLString:(id)arg1;
 - (id)safari_md5Hash;
 - (id)safari_normalizedParsecInputString;
 - (id)safari_possibleTopLevelDomainCorrectionForUserTypedString;
 - (id)safari_scriptIfJavaScriptURLString;
-- (id)safari_simplifiedUserVisibleURLString;
-- (id)safari_simplifiedUserVisibleURLStringWithSimplifications:(unsigned int)arg1 forDisplayOnly:(BOOL)arg2 simplifiedStringOffset:(unsigned int*)arg3;
+- (id)safari_sha256Hash;
 - (id)safari_stringByFoldingWideCharactersAndNormalizing;
 - (id)safari_stringByRemovingCharactersInSet:(id)arg1;
+- (id)safari_stringByRemovingDirectionalPrefix;
 - (id)safari_stringByRemovingExcessWhitespace;
 - (id)safari_stringByRemovingTopLevelDomainFromHost;
 - (id)safari_stringByRemovingUnnecessaryCharactersFromUserTypedURLString;
 - (id)safari_stringByRemovingWwwDotPrefix;
 - (id)safari_stringBySubstitutingAmpersandAndAngleBracketsForHTMLEntities;
 - (id)safari_stringBySubstitutingHTMLEntitiesForAmpersandAndAngleBrackets;
-- (id)safari_stringByTrimmingWhitespace;
 - (id)safari_stringEncodedAsURLQueryParameter;
 - (id)safari_stringWithFont:(id)arg1 forWidth:(float)arg2 lineBreakMode:(int)arg3;
 - (id)safari_userVisibleURL;
@@ -1786,6 +1808,13 @@
 // Image: /System/Library/PrivateFrameworks/ScreenReaderOutputServer.framework/ScreenReaderOutputServer
 
 - (int)_brailleTableCompare:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
+- (id)SHA256;
+- (id)_cf_camelCase;
+- (id)_cf_fixCase:(BOOL)arg1;
+- (int)messageAttributeEnum;
 
 // Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
 

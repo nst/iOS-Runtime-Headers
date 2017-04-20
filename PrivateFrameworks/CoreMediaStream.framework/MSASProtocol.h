@@ -50,6 +50,7 @@
 - (id)_getUploadTokensURLWithBaseURL:(id)arg1;
 - (id)_getVideoURLWithBaseURL:(id)arg1;
 - (id)_putAssetsURLWithBaseURL:(id)arg1;
+- (id)_reportSpamURL;
 - (id)_serverSideConfigURL;
 - (id)_setAlbumStateURL;
 - (id)_setAssetStateURL;
@@ -86,6 +87,8 @@
 - (id)headerVersion;
 - (id)initWithPersonID:(id)arg1;
 - (BOOL)isShuttingDown;
+- (void)markAsSpamInvitationForAlbum:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)markAsSpamInvitationForToken:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)memberQueue;
 - (id)pendingConnectionsGroup;
 - (id)pendingConnectionsQueue;

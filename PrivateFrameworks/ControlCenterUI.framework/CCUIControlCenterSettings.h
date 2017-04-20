@@ -14,6 +14,7 @@
     float  _bounceResistance;
     float  _maxVelocity;
     float  _minVelocity;
+    float  _noninteractiveDismissDuration;
     float  _oldBounceFriction;
     CCUIControlCenterSettingsSectionSettings * _settingsSectionSettings;
     CCUIControlCenterShortcutSectionSettings * _shortcutSectionSettings;
@@ -31,6 +32,7 @@
 @property float bounceResistance;
 @property float maxVelocity;
 @property float minVelocity;
+@property float noninteractiveDismissDuration;
 @property float oldBounceFriction;
 @property (retain) CCUIControlCenterSettingsSectionSettings *settingsSectionSettings;
 @property (retain) CCUIControlCenterShortcutSectionSettings *shortcutSectionSettings;
@@ -50,6 +52,7 @@
 - (float)bounceResistance;
 - (float)maxVelocity;
 - (float)minVelocity;
+- (float)noninteractiveDismissDuration;
 - (float)oldBounceFriction;
 - (void)setAttachmentFrequencyAbove:(float)arg1;
 - (void)setAttachmentFrequencyBelow:(float)arg1;
@@ -63,6 +66,7 @@
 - (void)setDefaultValues;
 - (void)setMaxVelocity:(float)arg1;
 - (void)setMinVelocity:(float)arg1;
+- (void)setNoninteractiveDismissDuration:(float)arg1;
 - (void)setOldBounceFriction:(float)arg1;
 - (void)setSettingsSectionSettings:(id)arg1;
 - (void)setShortcutSectionSettings:(id)arg1;

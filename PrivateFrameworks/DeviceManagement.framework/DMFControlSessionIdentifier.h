@@ -6,7 +6,8 @@
     unsigned int  _leaderIP;
 }
 
-@property unsigned int leaderIP;
+@property (nonatomic, readonly) DMFControlGroupIdentifier *groupIdentifier;
+@property (nonatomic) unsigned int leaderIP;
 
 + (BOOL)supportsSecureCoding;
 
@@ -19,7 +20,7 @@
 - (id)initWithOrganizationUUID:(id)arg1 groupID:(unsigned short)arg2 leaderIP:(unsigned int)arg3;
 - (id)initWithString:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToManagementSessionIdentifier:(id)arg1;
+- (BOOL)isEqualToControlSessionIdentifier:(id)arg1;
 - (unsigned int)leaderIP;
 - (void)setLeaderIP:(unsigned int)arg1;
 - (id)stringValue;

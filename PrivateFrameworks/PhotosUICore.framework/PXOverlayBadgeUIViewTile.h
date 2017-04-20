@@ -4,7 +4,7 @@
 
 @interface PXOverlayBadgeUIViewTile : UIView <PXAssetTile, PXChangeObserver, PXOverlayBadgeTile, PXReusableObject, PXUIViewBasicTile> {
     unsigned int  __badgeOptions;
-    PXAssetBadgeUIView * __badgeView;
+    PXUIAssetBadgeView * __badgeView;
     PXAssetBadgeManager * _badgeManager;
     PXImageRequester * _imageRequester;
     struct { 
@@ -13,7 +13,7 @@
 }
 
 @property (setter=_setBadgeOptions:, nonatomic) unsigned int _badgeOptions;
-@property (setter=_setBadgeView:, nonatomic, retain) PXAssetBadgeUIView *_badgeView;
+@property (nonatomic, readonly) PXUIAssetBadgeView *_badgeView;
 @property (nonatomic, retain) PXAssetBadgeManager *badgeManager;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -22,12 +22,13 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIView *view;
 
++ (void)preloadResources;
+
 - (void).cxx_destruct;
 - (unsigned int)_badgeOptions;
 - (id)_badgeView;
 - (void)_invalidateBadgeView;
 - (void)_setBadgeOptions:(unsigned int)arg1;
-- (void)_setBadgeView:(id)arg1;
 - (void)_updateBadgeViewIfNeeded;
 - (id)badgeManager;
 - (void)becomeReusable;

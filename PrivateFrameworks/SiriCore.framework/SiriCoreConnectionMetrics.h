@@ -24,6 +24,7 @@
     NSDictionary * _tcpInfoMetricsByInterfaceName;
     NSNumber * _timeUntilFirstByteRead;
     NSNumber * _timeUntilOpen;
+    NSNumber * _unacknowledgedPingCount;
 }
 
 @property (nonatomic, copy) NSNumber *attemptCount;
@@ -47,6 +48,7 @@
 @property (setter=setTCPInfoMetricsByInterfaceName:, nonatomic, copy) NSDictionary *tcpInfoMetricsByInterfaceName;
 @property (nonatomic, copy) NSNumber *timeUntilFirstByteRead;
 @property (nonatomic, copy) NSNumber *timeUntilOpen;
+@property (nonatomic, copy) NSNumber *unacknowledgedPingCount;
 
 - (void).cxx_destruct;
 - (id)attemptCount;
@@ -89,10 +91,12 @@
 - (void)setTCPInfoMetricsByInterfaceName:(id)arg1;
 - (void)setTimeUntilFirstByteRead:(id)arg1;
 - (void)setTimeUntilOpen:(id)arg1;
+- (void)setUnacknowledgedPingCount:(id)arg1;
 - (id)subflowCount;
 - (id)subflowSwitchCounts;
 - (id)tcpInfoMetricsByInterfaceName;
 - (id)timeUntilFirstByteRead;
 - (id)timeUntilOpen;
+- (id)unacknowledgedPingCount;
 
 @end

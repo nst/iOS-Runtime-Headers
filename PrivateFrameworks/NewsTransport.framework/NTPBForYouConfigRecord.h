@@ -7,6 +7,7 @@
     NSString * _configuration;
     NSString * _coverArticlesArticleListID;
     NSMutableArray * _editorialArticleListIDs;
+    NSMutableArray * _editorialSectionTagIDs;
     NSString * _topStoriesArticleListID;
     NSString * _trendingArticleListID;
 }
@@ -15,6 +16,7 @@
 @property (nonatomic, retain) NSString *configuration;
 @property (nonatomic, retain) NSString *coverArticlesArticleListID;
 @property (nonatomic, retain) NSMutableArray *editorialArticleListIDs;
+@property (nonatomic, retain) NSMutableArray *editorialSectionTagIDs;
 @property (nonatomic, readonly) BOOL hasBase;
 @property (nonatomic, readonly) BOOL hasConfiguration;
 @property (nonatomic, readonly) BOOL hasCoverArticlesArticleListID;
@@ -24,10 +26,13 @@
 @property (nonatomic, retain) NSString *trendingArticleListID;
 
 + (Class)editorialArticleListIDsType;
++ (Class)editorialSectionTagIDsType;
 
 - (void)addEditorialArticleListIDs:(id)arg1;
+- (void)addEditorialSectionTagIDs:(id)arg1;
 - (id)base;
 - (void)clearEditorialArticleListIDs;
+- (void)clearEditorialSectionTagIDs;
 - (id)configuration;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)coverArticlesArticleListID;
@@ -37,6 +42,9 @@
 - (id)editorialArticleListIDs;
 - (id)editorialArticleListIDsAtIndex:(unsigned int)arg1;
 - (unsigned int)editorialArticleListIDsCount;
+- (id)editorialSectionTagIDs;
+- (id)editorialSectionTagIDsAtIndex:(unsigned int)arg1;
+- (unsigned int)editorialSectionTagIDsCount;
 - (BOOL)hasBase;
 - (BOOL)hasConfiguration;
 - (BOOL)hasCoverArticlesArticleListID;
@@ -50,6 +58,7 @@
 - (void)setConfiguration:(id)arg1;
 - (void)setCoverArticlesArticleListID:(id)arg1;
 - (void)setEditorialArticleListIDs:(id)arg1;
+- (void)setEditorialSectionTagIDs:(id)arg1;
 - (void)setTopStoriesArticleListID:(id)arg1;
 - (void)setTrendingArticleListID:(id)arg1;
 - (id)topStoriesArticleListID;

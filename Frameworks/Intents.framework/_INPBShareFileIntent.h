@@ -21,11 +21,14 @@
 @property (nonatomic) int shareMode;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 + (Class)entityNameType;
 + (id)options;
 + (Class)recipientsType;
 
 - (void).cxx_destruct;
+- (int)StringAsShareMode:(id)arg1;
 - (void)addEntityName:(id)arg1;
 - (void)addRecipients:(id)arg1;
 - (void)clearEntityNames;
@@ -52,7 +55,14 @@
 - (void)setRecipients:(id)arg1;
 - (void)setShareMode:(int)arg1;
 - (int)shareMode;
+- (id)shareModeAsString:(int)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

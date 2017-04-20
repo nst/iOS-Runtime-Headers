@@ -2,29 +2,43 @@
    Image: /System/Library/Frameworks/CallKit.framework/CallKit
  */
 
-@interface CXCallDirectoryExtension : NSObject {
-    NSExtension * _extension;
+@interface CXCallDirectoryExtension : NSObject <NSSecureCoding> {
+    NSString * _identifier;
+    NSString * _localizedContainingAppName;
+    NSString * _localizedName;
+    BOOL  _onlyExtensionInContainingApp;
+    LSPlugInKitProxy * _plugInKitProxy;
+    long long  _priority;
+    int  _state;
 }
 
-@property (getter=isEnabled, nonatomic) BOOL enabled;
-@property (nonatomic, retain) NSExtension *extension;
-@property (nonatomic, readonly, copy) NSString *identifier;
-@property (nonatomic, readonly) NSString *localizedContainingAppName;
-@property (nonatomic, readonly) NSString *localizedName;
-@property (nonatomic, readonly) LSPlugInKitProxy *plugInKitProxy;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSString *localizedContainingAppName;
+@property (nonatomic, copy) NSString *localizedName;
+@property (getter=isOnlyExtensionInContainingApp, nonatomic) BOOL onlyExtensionInContainingApp;
+@property (nonatomic, retain) LSPlugInKitProxy *plugInKitProxy;
+@property (nonatomic) long long priority;
+@property (nonatomic) int state;
+
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
-- (id)extension;
+- (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
-- (id)init;
-- (id)initWithExtension:(id)arg1;
-- (BOOL)isEnabled;
+- (id)initWithCoder:(id)arg1;
+- (BOOL)isOnlyExtensionInContainingApp;
 - (id)localizedContainingAppName;
 - (id)localizedName;
 - (id)plugInKitProxy;
-- (void)resetEnabledStatus;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setExtension:(id)arg1;
+- (long long)priority;
+- (void)setIdentifier:(id)arg1;
+- (void)setLocalizedContainingAppName:(id)arg1;
+- (void)setLocalizedName:(id)arg1;
+- (void)setOnlyExtensionInContainingApp:(BOOL)arg1;
+- (void)setPlugInKitProxy:(id)arg1;
+- (void)setPriority:(long long)arg1;
+- (void)setState:(int)arg1;
+- (int)state;
 
 @end

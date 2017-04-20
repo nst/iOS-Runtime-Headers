@@ -17,6 +17,7 @@
 @property (getter=isAutoFillAvailable, nonatomic, readonly) BOOL autoFillAvailable;
 @property (getter=isBookmarksAvailable, nonatomic, readonly) BOOL bookmarksAvailable;
 @property (getter=isCloudHistorySyncAvailable, nonatomic, readonly) BOOL cloudHistorySyncAvailable;
+@property (getter=isCloudKitBookmarksAvailable, nonatomic, readonly) BOOL cloudKitBookmarksAvailable;
 @property (getter=isCloudSyncAvailable, nonatomic, readonly) BOOL cloudSyncAvailable;
 @property (getter=isCloudTabsAvailable, nonatomic, readonly) BOOL cloudTabsAvailable;
 @property (getter=isCreditCardStorageAvailable, nonatomic, readonly) BOOL creditCardStorageAvailable;
@@ -39,6 +40,7 @@
 - (BOOL)isAutoFillAvailable;
 - (BOOL)isBookmarksAvailable;
 - (BOOL)isCloudHistorySyncAvailable;
+- (BOOL)isCloudKitBookmarksAvailable;
 - (BOOL)isCloudSyncAvailable;
 - (BOOL)isCloudTabsAvailable;
 - (BOOL)isCreditCardStorageAvailable;

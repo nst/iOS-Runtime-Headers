@@ -55,6 +55,7 @@
 - (void)copyFromPixels:(const void*)arg1 rowBytes:(unsigned int)arg2 imageBytes:(unsigned int)arg3 toSlice:(unsigned int)arg4 mipmapLevel:(unsigned int)arg5 origin:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg6 size:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg7;
 - (void)copyFromSlice:(unsigned int)arg1 mipmapLevel:(unsigned int)arg2 origin:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg3 size:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg4 toPixels:(void*)arg5 rowBytes:(unsigned int)arg6 imageBytes:(unsigned int)arg7;
 - (unsigned int)depth;
+- (id)formattedDescription:(unsigned int)arg1;
 - (void)generateMipmapLevel:(unsigned int)arg1 slice:(unsigned int)arg2;
 - (void)getBytes:(void*)arg1 bytesPerRow:(unsigned int)arg2 bytesPerImage:(unsigned int)arg3 fromRegion:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; })arg4 mipmapLevel:(unsigned int)arg5 slice:(unsigned int)arg6;
 - (void)getBytes:(void*)arg1 bytesPerRow:(unsigned int)arg2 bytesPerImage:(unsigned int)arg3 fromRegion:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; })arg4 mipmapLevel:(unsigned int)arg5 slice:(unsigned int)arg6 options:(unsigned int)arg7;

@@ -24,5 +24,6 @@
 - (void)removeRequestHandlerForDataClass:(id)arg1;
 - (void)sendRequest:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)sendResponse:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)sendResponse:(id)arg1 withProgress:(id /* block */)arg2 completion:(id /* block */)arg3;
 
 @end

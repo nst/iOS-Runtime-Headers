@@ -39,6 +39,8 @@
 - (id)connectedLocalEndpoint;
 - (id)connectedRemoteEndpoint;
 - (int)connectionState;
+- (id)copyCurrentPath;
+- (id)copyError;
 - (id)currentPath;
 - (void)dumpTimestamps;
 - (id)endpoint;

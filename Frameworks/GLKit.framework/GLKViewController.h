@@ -8,7 +8,6 @@
     GLKDisplayLinkMessenger * _displayLinkMessenger;
     BOOL  _displayLinkPaused;
     BOOL  _firstResumeOccurred;
-    int  _frameInterval;
     int  _framesDisplayed;
     int  _framesPerSecond;
     BOOL  _lastDrawOccurred;
@@ -38,7 +37,6 @@
 @property (nonatomic, retain) GLKDisplayLinkMessenger *displayLinkMessenger;
 @property (nonatomic) BOOL displayLinkPaused;
 @property (nonatomic) BOOL firstResumeOccurred;
-@property (nonatomic) int frameInterval;
 @property (nonatomic, readonly) int framesDisplayed;
 @property (nonatomic, readonly) int framesPerSecond;
 @property (readonly) unsigned int hash;
@@ -78,7 +76,6 @@
 - (BOOL)displayLinkPaused;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)firstResumeOccurred;
-- (int)frameInterval;
 - (int)framesDisplayed;
 - (int)framesPerSecond;
 - (void)glkView:(id)arg1 drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
@@ -100,7 +97,6 @@
 - (void)setDisplayLinkMessenger:(id)arg1;
 - (void)setDisplayLinkPaused:(BOOL)arg1;
 - (void)setFirstResumeOccurred:(BOOL)arg1;
-- (void)setFrameInterval:(int)arg1;
 - (void)setLastDrawOccurred:(BOOL)arg1;
 - (void)setLastResumeOccurred:(BOOL)arg1;
 - (void)setLastUpdateOccurred:(BOOL)arg1;

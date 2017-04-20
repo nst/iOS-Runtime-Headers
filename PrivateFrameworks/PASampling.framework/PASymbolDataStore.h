@@ -3,6 +3,7 @@
  */
 
 @interface PASymbolDataStore : NSObject <PASerializable> {
+    PABinaryLocator * _binaryLocator;
     NSString * _dscSymDir;
     NSMutableArray * _dsymPaths;
     PAImageInfo * _kernelCache;
@@ -56,6 +57,7 @@
 - (void)cacheSymbolicatorForPid:(int)arg1;
 - (id)copyImageInfosForLivingPid:(int)arg1;
 - (struct _CSTypeRef { unsigned int x1; unsigned int x2; })csSymbolicatorForPid:(int)arg1;
+- (void)dealloc;
 - (id)dscSymDir;
 - (void)flushCachedSymbolicatorForPid:(int)arg1;
 - (void)flushSymbolicatorCache;

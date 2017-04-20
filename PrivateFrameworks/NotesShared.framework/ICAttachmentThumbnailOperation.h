@@ -3,7 +3,9 @@
  */
 
 @interface ICAttachmentThumbnailOperation : NSBlockOperation {
+    NSManagedObjectID * _attachmentID;
     ICAttachmentPreviewImageLoader * _attachmentPreviewImageLoader;
+    BOOL  _attachmentPropertiesCaptured;
     NSCache * _cache;
     NSString * _cacheKey;
     NSMutableArray * _completionBlocks;
@@ -16,10 +18,13 @@
         float height; 
     }  _minSize;
     id /* block */  _processingBlock;
+    float  _scale;
     BOOL  _showAsFileIcon;
 }
 
+@property (nonatomic, retain) NSManagedObjectID *attachmentID;
 @property (nonatomic, retain) ICAttachmentPreviewImageLoader *attachmentPreviewImageLoader;
+@property (nonatomic) BOOL attachmentPropertiesCaptured;
 @property (nonatomic, retain) NSCache *cache;
 @property (nonatomic, retain) NSString *cacheKey;
 @property (nonatomic, retain) NSMutableArray *completionBlocks;
@@ -29,13 +34,17 @@
 @property (nonatomic, retain) NSURL *mediaURL;
 @property (nonatomic) struct CGSize { float x1; float x2; } minSize;
 @property (nonatomic, copy) id /* block */ processingBlock;
+@property (nonatomic) float scale;
 @property (nonatomic) BOOL showAsFileIcon;
 
 - (void).cxx_destruct;
 - (void)addCompletionBlock:(id /* block */)arg1;
+- (id)attachmentID;
 - (id)attachmentPreviewImageLoader;
+- (BOOL)attachmentPropertiesCaptured;
 - (id)cache;
 - (id)cacheKey;
+- (void)capturePropertiesFromAttachment:(id)arg1;
 - (id)completionBlocks;
 - (id /* block */)fallbackBlock;
 - (unsigned int)imageScaling;
@@ -45,7 +54,10 @@
 - (id)mediaURL;
 - (struct CGSize { float x1; float x2; })minSize;
 - (id /* block */)processingBlock;
+- (float)scale;
+- (void)setAttachmentID:(id)arg1;
 - (void)setAttachmentPreviewImageLoader:(id)arg1;
+- (void)setAttachmentPropertiesCaptured:(BOOL)arg1;
 - (void)setCache:(id)arg1;
 - (void)setCacheKey:(id)arg1;
 - (void)setCompletionBlocks:(id)arg1;
@@ -55,6 +67,7 @@
 - (void)setMediaURL:(id)arg1;
 - (void)setMinSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setProcessingBlock:(id /* block */)arg1;
+- (void)setScale:(float)arg1;
 - (void)setShowAsFileIcon:(BOOL)arg1;
 - (BOOL)showAsFileIcon;
 

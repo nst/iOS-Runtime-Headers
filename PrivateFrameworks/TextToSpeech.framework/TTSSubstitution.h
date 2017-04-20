@@ -9,6 +9,7 @@
     BOOL  _ignoreCase;
     BOOL  _isReplacementTextAllPunctuation;
     BOOL  _isReplacementTextSurroundedByPunctuation;
+    BOOL  _isUserSubstitution;
     NSSet * _languages;
     NSString * _originalString;
     NSString * _phonemes;
@@ -27,6 +28,7 @@
 @property (nonatomic) BOOL ignoreCase;
 @property (nonatomic, readonly) BOOL isReplacementTextAllPunctuation;
 @property (nonatomic, readonly) BOOL isReplacementTextSurroundedByPunctuation;
+@property (nonatomic) BOOL isUserSubstitution;
 @property (nonatomic, copy) NSSet *languages;
 @property (nonatomic, copy) NSString *originalString;
 @property (nonatomic, copy) NSString *phonemes;
@@ -52,6 +54,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isReplacementTextAllPunctuation;
 - (BOOL)isReplacementTextSurroundedByPunctuation;
+- (BOOL)isUserSubstitution;
 - (id)languages;
 - (id)originalString;
 - (id)phonemes;
@@ -61,6 +64,7 @@
 - (void)setAppliesToAllApps:(BOOL)arg1;
 - (void)setBundleIdentifiers:(id)arg1;
 - (void)setIgnoreCase:(BOOL)arg1;
+- (void)setIsUserSubstitution:(BOOL)arg1;
 - (void)setLanguages:(id)arg1;
 - (void)setOriginalString:(id)arg1;
 - (void)setPhonemes:(id)arg1;

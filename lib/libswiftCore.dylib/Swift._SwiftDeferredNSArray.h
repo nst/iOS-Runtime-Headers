@@ -17,7 +17,7 @@
 - (id)_nativeStorage;
 - (long)count;
 - (id)init;
-- (id)initWith_nativeStorage:(id)arg1;
-- (void)set_heapBufferBridged_DoNotUse:(id)arg1;
+- (id)initWith_nativeStorage;
+- (void)set_heapBufferBridged_DoNotUse;
 
 @end

@@ -3,15 +3,17 @@
  */
 
 @interface MRDeviceInfoMessage : MRProtocolMessage {
-    MRDeviceInfo * _deviceInfo;
+    MRSupportedProtocolMessages * _supportedProtocolMessages;
 }
 
-@property (nonatomic, readonly) MRDeviceInfo *deviceInfo;
+@property (nonatomic, readonly) void*deviceInfo;
+@property (nonatomic, readonly) MRSupportedProtocolMessages *supportedProtocolMessages;
 
 - (void)dealloc;
-- (id)deviceInfo;
+- (void*)deviceInfo;
 - (unsigned int)encryptionType;
-- (id)initWithDeviceInfo:(id)arg1;
+- (id)initWithDeviceInfo:(void*)arg1;
+- (id)supportedProtocolMessages;
 - (unsigned int)type;
 
 @end

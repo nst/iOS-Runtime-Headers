@@ -27,7 +27,7 @@
 - (void)_showErrorAlert;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)confirmIdentityViewController:(id)arg1 didCompleteWithSuccess:(BOOL)arg2;
-- (id)initWithInvite:(id)arg1 grandSlamSigner:(id)arg2;
+- (id)initWithInvite:(id)arg1 appleAccount:(id)arg2 grandSlamSigner:(id)arg3;
 - (void)remoteUIController:(id)arg1 didReceiveHTTPResponse:(id)arg2;
 - (void)remoteUIController:(id)arg1 willLoadRequest:(id)arg2;
 - (void)remoteUIController:(id)arg1 willPresentObjectModel:(id)arg2 modally:(BOOL)arg3;

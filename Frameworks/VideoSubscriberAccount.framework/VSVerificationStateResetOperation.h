@@ -5,18 +5,19 @@
 @interface VSVerificationStateResetOperation : VSAsyncOperation {
     VSStoreURLBag * _bag;
     NSURLSessionTask * _resetStateTask;
-    VSFailable * _result;
+    VSOptional * _result;
 }
 
 @property (nonatomic, retain) VSStoreURLBag *bag;
 @property (nonatomic, retain) NSURLSessionTask *resetStateTask;
-@property (nonatomic, retain) VSFailable *result;
+@property (nonatomic, retain) VSOptional *result;
 
 - (void).cxx_destruct;
 - (void)_resetVerificationStateWithURL:(id)arg1;
 - (id)bag;
 - (void)cancel;
 - (void)executionDidBegin;
+- (id)init;
 - (id)resetStateTask;
 - (id)result;
 - (void)setBag:(id)arg1;

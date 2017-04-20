@@ -13,6 +13,7 @@
     int  autocorrectionType;
     BOOL  contentsIsSingleValue;
     BOOL  deferBecomingResponder;
+    BOOL  devicePasscodeEntry;
     BOOL  disableInputBars;
     BOOL  disablePrediction;
     BOOL  displaySecureEditsUsingPlainText;
@@ -33,6 +34,7 @@
     unsigned int  keyboardAppearance;
     unsigned int  keyboardType;
     BOOL  learnsCorrections;
+    BOOL  manageRecentInputs;
     NSString * recentInputIdentifier;
     NSString * responseContext;
     BOOL  returnKeyGoesToNextResponder;
@@ -69,6 +71,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) BOOL deferBecomingResponder;
 @property (readonly, copy) NSString *description;
+@property (getter=isDevicePasscodeEntry, nonatomic) BOOL devicePasscodeEntry;
 @property (nonatomic, readonly) int dictationInfoKeyboardType;
 @property (nonatomic, readonly) int dictationKeyboardType;
 @property (nonatomic) BOOL disableInputBars;
@@ -92,6 +95,7 @@
 @property (nonatomic) int keyboardAppearance;
 @property (nonatomic) int keyboardType;
 @property (nonatomic) BOOL learnsCorrections;
+@property (nonatomic) BOOL manageRecentInputs;
 @property (nonatomic, copy) NSString *recentInputIdentifier;
 @property (nonatomic, copy) NSString *responseContext;
 @property (nonatomic) BOOL returnKeyGoesToNextResponder;
@@ -154,12 +158,14 @@
 - (id)insertionPointColor;
 - (unsigned int)insertionPointWidth;
 - (BOOL)isCarPlayIdiom;
+- (BOOL)isDevicePasscodeEntry;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isSecureTextEntry;
 - (BOOL)isSingleLineDocument;
 - (int)keyboardAppearance;
 - (int)keyboardType;
 - (BOOL)learnsCorrections;
+- (BOOL)manageRecentInputs;
 - (BOOL)publicTraitsMatchTraits:(id)arg1;
 - (id)recentInputIdentifier;
 - (id)responseContext;
@@ -177,6 +183,7 @@
 - (void)setAutocorrectionType:(int)arg1;
 - (void)setContentsIsSingleValue:(BOOL)arg1;
 - (void)setDeferBecomingResponder:(BOOL)arg1;
+- (void)setDevicePasscodeEntry:(BOOL)arg1;
 - (void)setDisableInputBars:(BOOL)arg1;
 - (void)setDisablePrediction:(BOOL)arg1;
 - (void)setDisplaySecureEditsUsingPlainText:(BOOL)arg1;
@@ -197,6 +204,7 @@
 - (void)setKeyboardAppearance:(int)arg1;
 - (void)setKeyboardType:(int)arg1;
 - (void)setLearnsCorrections:(BOOL)arg1;
+- (void)setManageRecentInputs:(BOOL)arg1;
 - (void)setPINEntrySeparatorIndexes:(id)arg1;
 - (void)setRecentInputIdentifier:(id)arg1;
 - (void)setResponseContext:(id)arg1;

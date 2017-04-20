@@ -17,6 +17,7 @@
 - (void)evacuateDataclasses:(id)arg1;
 - (id)geniusPathForDataclass:(id)arg1 geniusIdentifier:(id)arg2;
 - (id)init;
+- (id)lyricsPathForDataclass:(id)arg1 lyricsIdentifier:(id)arg2;
 - (id)pathForAsset:(id)arg1 withDataclass:(id)arg2;
 - (id)pathForDataclass:(id)arg1;
 - (void)processCompletedAsset:(id)arg1;

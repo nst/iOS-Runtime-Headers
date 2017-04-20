@@ -19,6 +19,7 @@
     float  _currentAssetTransitionProgress;
     NSMutableSet * _invalidAssetViewModels;
     BOOL  _isAnimatingAnyTransition;
+    BOOL  _isBrowsingSpeedRegimeInvalidationScheduled;
     BOOL  _isChromeVisible;
     BOOL  _isScrolling;
     BOOL  _isScrubbing;
@@ -68,14 +69,15 @@
 - (void).cxx_destruct;
 - (id)_animatingTransitionIdentifiers;
 - (id)_assetSharedViewModelForAsset:(id)arg1 createIfNeeded:(BOOL)arg2;
-- (id)_badgeInfoForAssetReference:(id)arg1;
+- (id)_badgeInfoPromiseForAssetReference:(id)arg1;
 - (float)_focusValueForAsset:(id)arg1;
 - (void)_handleAssetSharedViewModel:(id)arg1 didChange:(id)arg2;
 - (void)_handleAssetViewModel:(id)arg1 didChange:(id)arg2;
-- (void)_handleAsyncScrubRegimeInvalidation;
+- (void)_handleAsyncBrowsingSpeedRegimeInvalidation;
 - (void)_invalidateAllAssetViewModels;
 - (void)_invalidateAssetViewModel:(id)arg1;
 - (void)_invalidateBrowsingSpeedRegime;
+- (void)_invalidateBrowsingSpeedRegimeAfterMaximumDelay:(double)arg1;
 - (void)_invalidateNeighboringAssetViewModels;
 - (BOOL)_isAssetInFocus:(id)arg1;
 - (id)_leadingAssetReference;

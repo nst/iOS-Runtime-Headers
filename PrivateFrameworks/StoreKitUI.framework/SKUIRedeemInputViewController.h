@@ -26,6 +26,7 @@
 - (void)_redeemConfigurationImagesDidLoad:(id)arg1;
 - (void)_termsButtonAction:(id)arg1;
 - (void)_textFieldTextDidChange:(id)arg1;
+- (void)_toggleActivityIndicatorBarButtonItem:(BOOL)arg1;
 - (int)category;
 - (void)dealloc;
 - (id)initWithRedeemCategory:(int)arg1;

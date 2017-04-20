@@ -30,6 +30,8 @@
 @property (nonatomic) int urgency;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
++ (id)sharedWorkQueue;
+
 - (void).cxx_destruct;
 - (void)_addCommand:(id)arg1 saveCompletion:(id /* block */)arg2;
 - (void)_applicationDidEnterBackground:(id)arg1;

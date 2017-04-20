@@ -16,9 +16,6 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-+ (id)cacheURLWithName:(id)arg1 forBundleWithIdentifier:(id)arg2 options:(unsigned int)arg3;
-+ (id)cacheURLWithUniqueIdentifier:(id)arg1 options:(id)arg2;
-
 - (id)_imageForKey:(id)arg1 withCPBitmapReadFlags:(int)arg2 generatingIfNecessaryWithBlock:(id /* block */)arg3;
 - (id)_imageForKey:(id)arg1 withCPBitmapReadFlags:(int)arg2 generatingIfNecessaryWithBlock:(id /* block */)arg3 completion:(id /* block */)arg4;
 - (void)_noteExternalChangeForKey:(id)arg1;

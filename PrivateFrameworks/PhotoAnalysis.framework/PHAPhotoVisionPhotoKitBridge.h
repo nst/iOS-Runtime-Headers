@@ -4,8 +4,22 @@
 
 @interface PHAPhotoVisionPhotoKitBridge : NSObject
 
++ (void)assignPropertiesOfPVFace:(id)arg1 toPHFaceChangeRequest:(id)arg2;
++ (id)newAllFacesFetchOptionsWithPhotoLibrary:(id)arg1;
++ (id)newAllPersonsFetchOptionsWithPhotoLibrary:(id)arg1;
++ (id)newAssetFetchOptionsWithPhotoLibrary:(id)arg1;
++ (id)newFaceCropsFetchOptionsWithPhotoLibrary:(id)arg1;
++ (id)newFaceGroupsFetchOptionsWithPhotoLibrary:(id)arg1;
++ (id)newFacesRequiringFaceCropGenerationFetchOptionsWithPhotoLibrary:(id)arg1;
++ (id)newObjectFetchOptionsWithPhotoLibrary:(id)arg1;
++ (id)newVerifiedPersonsFetchOptionsWithPhotoLibrary:(id)arg1;
++ (id)newVisibleFacesFetchOptionsWithPhotoLibrary:(id)arg1;
++ (id)phFaceCropFromPVFaceCrop:(id)arg1 withFetchOptions:(id)arg2;
++ (id)phFaceCropsFromPVFaceCrops:(id)arg1 withFetchOptions:(id)arg2;
 + (id)phFaceFromPVFace:(id)arg1 withFetchOptions:(id)arg2;
++ (id)phFaceprintFromPVFaceprint:(id)arg1;
 + (id)phFacesFromPVFaces:(id)arg1 withFetchOptions:(id)arg2;
++ (id)pvFaceCropFromPHFaceCrop:(id)arg1;
 + (id)pvFaceFromPHFace:(id)arg1 copyPropertiesOption:(int)arg2;
 + (id)pvFaceGroupFromPHFaceGroup:(id)arg1;
 + (id)pvFaceGroupsArrayFromPHFaceGroups:(id)arg1;

@@ -7,6 +7,7 @@
 
 - (NSDate *)dateForComparingAdjustmentVersions;
 - (NSSet *)detectedFaces;
+- (BOOL)faceProcessed;
 - (short)height;
 - (void)setDetectedFaces:(NSSet *)arg1;
 - (short)width;

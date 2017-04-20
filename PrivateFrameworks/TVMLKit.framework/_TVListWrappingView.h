@@ -39,7 +39,7 @@
 - (void).cxx_destruct;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_listContentInsetForSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)adjustScrollForContentOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)didUpdateFocusFromView:(id)arg1;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (BOOL)floatingHeader;
 - (BOOL)headerCanBecomeFocused;
 - (id)headerView;

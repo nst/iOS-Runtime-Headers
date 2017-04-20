@@ -7,6 +7,7 @@
     NSObject<OS_dispatch_group> * _group;
     id /* block */  _handler;
     NSString * _key;
+    NSError * _lastError;
 }
 
 @property (nonatomic, readonly) NSEnumerator *documentIDsEnumerator;
@@ -14,6 +15,7 @@
 @property (nonatomic, readonly) NSString *key;
 
 - (void).cxx_destruct;
+- (void)addCompletionHandler:(id /* block */)arg1;
 - (void)completeWithError:(id)arg1;
 - (id /* block */)completionHandlerFor:(id)arg1;
 - (id)description;

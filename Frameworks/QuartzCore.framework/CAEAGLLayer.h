@@ -3,11 +3,12 @@
  */
 
 @interface CAEAGLLayer : CALayer <EAGLDrawable> {
-    struct _CAEAGLNativeWindow { struct _EAGLNativeWindowObject { int x_1_1_1; int (*x_1_1_2)(); int (*x_1_1_3)(); int (*x_1_1_4)(); int (*x_1_1_5)(); int (*x_1_1_6)(); int (*x_1_1_7)(); int (*x_1_1_8)(); } x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); struct x_list_struct {} *x7; unsigned int x8; unsigned int x9; struct Atomic { struct { int x_1_2_1; } x_10_1_1; } x10; struct Atomic { struct { int x_1_2_1; } x_11_1_1; } x11; struct SpinLock { struct { int x_1_2_1; } x_12_1_1; } x12; struct _CAImageQueue {} *x13; id x14; struct x_list_struct {} x15; unsigned int x16; struct CAEAGLBuffer {} *x17; struct CAEAGLBuffer {} *x18; unsigned int x19; unsigned int x20; unsigned int x21; struct CAEAGLBuffer {} *x22; id x23; /* Warning: Unrecognized filer type: 't' using 'void*' */ void*x24; out void*x25; int x26; BOOL x27; void*x28; struct { int x_29_1_1; } x29; } * _win;
+    struct _CAEAGLNativeWindow { struct _EAGLNativeWindowObject { int x_1_1_1; int (*x_1_1_2)(); int (*x_1_1_3)(); int (*x_1_1_4)(); int (*x_1_1_5)(); int (*x_1_1_6)(); int (*x_1_1_7)(); int (*x_1_1_8)(); } x1; void *x2; int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); struct x_list_struct {} *x7; unsigned int x8; unsigned int x9; struct Atomic { struct { int x_1_2_1; } x_10_1_1; } x10; struct Atomic { struct { int x_1_2_1; } x_11_1_1; } x11; struct SpinLock { struct { int x_1_2_1; } x_12_1_1; } x12; struct _CAImageQueue {} *x13; id x14; struct x_list_struct {} *x15; unsigned int x16; struct CAEAGLBuffer {} *x17; struct CAEAGLBuffer {} *x18; unsigned int x19; unsigned int x20; unsigned int x21; struct CAEAGLBuffer {} *x22; id x23; /* Warning: Unrecognized filer type: 't' using 'void*' */ void*x24; out void*x25; int x26; BOOL x27; void*x28; struct { int x_29_1_1; } x29; } * _win;
 }
 
 @property (getter=isAsynchronous) BOOL asynchronous;
 @property (copy) NSDictionary *drawableProperties;
+@property double inputTime;
 @property BOOL lowLatency;
 @property (readonly) struct _EAGLNativeWindowObject { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); }*nativeWindow;
 @property BOOL presentsWithTransaction;
@@ -22,6 +23,7 @@
 - (void)didChangeValueForKey:(id)arg1;
 - (void)discardContents;
 - (id)drawableProperties;
+- (double)inputTime;
 - (BOOL)isAsynchronous;
 - (BOOL)isDrawableAvailable;
 - (void)layerDidBecomeVisible:(BOOL)arg1;
@@ -30,6 +32,7 @@
 - (BOOL)presentsWithTransaction;
 - (void)setAsynchronous:(BOOL)arg1;
 - (void)setDrawableProperties:(id)arg1;
+- (void)setInputTime:(double)arg1;
 - (void)setLowLatency:(BOOL)arg1;
 - (void)setPresentsWithTransaction:(BOOL)arg1;
 - (BOOL)shouldArchiveValueForKey:(id)arg1;

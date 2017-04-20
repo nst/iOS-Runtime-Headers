@@ -43,7 +43,7 @@
 - (void)deviceConnectionReceiver:(id)arg1 didSetup:(id)arg2;
 - (void)deviceConnectionSender:(id)arg1 didEndSession:(id)arg2;
 - (void)deviceConnectionSender:(id)arg1 didSetup:(id)arg2;
-- (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 streamSnapshotHandler:(id)arg3 reachabilityPath:(unsigned int)arg4 destinationID:(id)arg5 delegate:(id)arg6 delegateQueue:(id)arg7 accessory:(id)arg8 streamManagementService:(id)arg9 remoteCapabilities:(id)arg10 profileUniqueIdentifier:(id)arg11 residentMessageHandler:(id)arg12;
+- (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 streamSnapshotHandler:(id)arg3 reachabilityPath:(unsigned int)arg4 destinationID:(id)arg5 delegate:(id)arg6 delegateQueue:(id)arg7 accessory:(id)arg8 streamManagementService:(id)arg9 remoteCapabilities:(id)arg10 profileUniqueIdentifier:(id)arg11 residentMessageHandler:(id)arg12 streamPreference:(id)arg13;
 - (void)negotiateStream;
 - (id)profileUniqueIdentifier;
 - (void)reconfigureStream:(id)arg1;

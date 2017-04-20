@@ -10,6 +10,8 @@
 @property (nonatomic, copy) NSString *networkPassword;
 @property (nonatomic, copy) NSString *networkSSID;
 
++ (BOOL)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

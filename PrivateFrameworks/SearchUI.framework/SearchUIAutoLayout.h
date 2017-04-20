@@ -30,6 +30,8 @@
 + (id)baselineAlignBottomView:(id)arg1 toTopView:(id)arg2 spacing:(float)arg3 isDynamic:(BOOL)arg4 forFont:(id)arg5 minimum:(BOOL)arg6 priority:(float)arg7;
 + (id)baselineAlignBottomView:(id)arg1 toTopView:(id)arg2 spacing:(float)arg3 minimum:(BOOL)arg4;
 + (id)baselineAlignBottomView:(id)arg1 toTopView:(id)arg2 spacing:(float)arg3 priority:(float)arg4;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })customBaselineInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 font:(id)arg2;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })customUnscaledBaselineInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 font:(id)arg2;
 + (float)deviceScaledRoundedValue:(float)arg1;
 + (void)enableAutoLayoutForItems:(id)arg1;
 + (void)fillContainerWithView:(id)arg1;

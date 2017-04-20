@@ -13,6 +13,7 @@
             float height; 
         } size; 
     }  _gridBounds;
+    float  _maxTileHeight;
     struct { 
         unsigned int disableTiling : 1; 
         unsigned int ditchAllTiles : 1; 
@@ -26,6 +27,7 @@
     NSMutableArray * _visibleTiles;
 }
 
+@property (nonatomic) float maxTileHeight;
 @property (nonatomic) BOOL usesTiledLayers;
 
 - (void)_prepareGridForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -36,11 +38,13 @@
 - (void)drawDirtyLayer:(id)arg1 intoContext:(struct CGContext { }*)arg2;
 - (id)init;
 - (void)layoutSublayers;
+- (float)maxTileHeight;
 - (void)renderInContext:(struct CGContext { }*)arg1;
 - (void)resumeTiling;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setContentsFormat:(id)arg1;
 - (void)setDrawsAsynchronously:(BOOL)arg1;
+- (void)setMaxTileHeight:(float)arg1;
 - (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setUsesTiledLayers:(BOOL)arg1;
 - (void)suspendTiling;

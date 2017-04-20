@@ -108,6 +108,7 @@
 - (id)encodeSYChangeForBackwardCompatibility:(id)arg1 protocolVersion:(int)arg2;
 - (id)error;
 - (double)fullSessionTimeout;
+- (BOOL)hasRejectedPeerSession;
 - (id)identifier;
 - (id)initWithService:(id)arg1;
 - (BOOL)isResetSync;
@@ -130,6 +131,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setFullSessionTimeout:(double)arg1;
+- (void)setHasRejectedPeerSession:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setMaxConcurrentMessages:(int)arg1;
 - (void)setOptions:(id)arg1;

@@ -42,6 +42,8 @@
 - (id)defaultTextForTextField:(id)arg1 item:(id)arg2;
 - (id)gridLayoutOptions;
 - (BOOL)hasFinishedInitialLoad;
+- (void)highlightItemAnimated:(id)arg1;
+- (void)highlightItemAnimated:(id)arg1 duration:(double)arg2;
 - (id)hu_preloadContent;
 - (id)indexPathToTextFieldMap;
 - (id)initWithItemManager:(id)arg1 tableViewStyle:(int)arg2;

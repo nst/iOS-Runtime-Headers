@@ -18,7 +18,12 @@
 + (id)predicateForEventsWithIdentifierValue:(id)arg1;
 + (id)predicateForEventsWithIntegerValue:(int)arg1;
 + (id)predicateForEventsWithQuantityValue:(id)arg1;
++ (id)predicateForEventsWithSourceID:(id)arg1;
++ (id)predicateForEventsWithSourceID:(id)arg1 bundleID:(id)arg2;
++ (id)predicateForEventsWithSourceID:(id)arg1 bundleID:(id)arg2 groupIDs:(id)arg3;
++ (id)predicateForEventsWithSourceID:(id)arg1 bundleID:(id)arg2 itemIDs:(id)arg3;
 + (id)predicateForEventsWithStartAndEndInDateRangeFrom:(id)arg1 to:(id)arg2;
++ (id)predicateForEventsWithStartDateAfter:(id)arg1;
 + (id)predicateForEventsWithStartInDateRangeFrom:(id)arg1 to:(id)arg2;
 + (id)predicateForEventsWithStartOrEndInDateRangeWithFrom:(id)arg1 to:(id)arg2;
 + (id)predicateForEventsWithStreamName:(id)arg1;

@@ -8,8 +8,7 @@
     NSBundle * _bundle;
     NSString * _bundleID;
     NSArray * _descriptions;
-    NSString * _distanceString;
-    MKSearchFoundationRichText * _fourthLineDisplayedText;
+    MKSearchFoundationBusinessHoursAndDistanceRichText * _fourthLineDisplayedText;
     NSMutableArray * _fourthLineText;
     unsigned int  _iconSize;
     MKLocationManager * _locationManager;
@@ -17,11 +16,8 @@
     NSData * _mapsData;
     unsigned int  _mksfResultType;
     BOOL  _optionSmallerScreen;
-    MKSearchFoundationRichText * _secondLineDisplayedText;
-    NSMutableArray * _secondLineText;
-    NSString * _temporaryReviewString;
+    MKSearchFoundationBusinessReviewRichText * _secondLineDisplayedText;
     MKSearchFoundationRichText * _thirdLineDisplayedText;
-    NSMutableArray * _thirdLineText;
     SFImage * _thumbnail;
     SFText * _title;
 }
@@ -31,9 +27,8 @@
 @property (nonatomic, copy) NSString *bundleID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, copy) NSString *distanceString;
-@property (nonatomic, retain) MKSearchFoundationRichText *fourthLineDisplayedText;
-@property (nonatomic, copy) NSMutableArray *fourthLineText;
+@property (nonatomic, retain) MKSearchFoundationBusinessHoursAndDistanceRichText *fourthLineDisplayedText;
+@property (nonatomic, retain) NSMutableArray *fourthLineText;
 @property (readonly) unsigned int hash;
 @property (nonatomic) unsigned int iconSize;
 @property (nonatomic, retain) MKLocationManager *locationManager;
@@ -41,14 +36,16 @@
 @property (nonatomic, retain) NSData *mapsData;
 @property (nonatomic) unsigned int mksfResultType;
 @property (nonatomic) BOOL optionSmallerScreen;
-@property (nonatomic, retain) MKSearchFoundationRichText *secondLineDisplayedText;
-@property (nonatomic, copy) NSMutableArray *secondLineText;
+@property (nonatomic, retain) MKSearchFoundationBusinessReviewRichText *secondLineDisplayedText;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) NSString *temporaryReviewString;
 @property (nonatomic, retain) MKSearchFoundationRichText *thirdLineDisplayedText;
-@property (nonatomic, copy) NSMutableArray *thirdLineText;
+
++ (id)styledStringFromStringArray:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)_businessAddress;
+- (id)_businessHoursAndDistance;
+- (id)_businessPriceAndReviewText;
 - (void)_commonInit;
 - (id)_defaultRichTextItems;
 - (BOOL)_isSmallerScreen;
@@ -59,7 +56,6 @@
 - (id)bundleID;
 - (void)dealloc;
 - (id)descriptions;
-- (id)distanceString;
 - (id)fourthLineDisplayedText;
 - (id)fourthLineText;
 - (unsigned int)iconSize;
@@ -87,13 +83,11 @@
 - (unsigned int)mksfResultType;
 - (BOOL)optionSmallerScreen;
 - (id)secondLineDisplayedText;
-- (id)secondLineText;
 - (void)setAction:(id)arg1;
 - (void)setAttributionObserver:(id)arg1;
 - (void)setBundle:(id)arg1;
 - (void)setBundleID:(id)arg1;
 - (void)setDescriptions:(id)arg1;
-- (void)setDistanceString:(id)arg1;
 - (void)setFourthLineDisplayedText:(id)arg1;
 - (void)setFourthLineText:(id)arg1;
 - (void)setIconSize:(unsigned int)arg1;
@@ -103,16 +97,10 @@
 - (void)setMksfResultType:(unsigned int)arg1;
 - (void)setOptionSmallerScreen:(BOOL)arg1;
 - (void)setSecondLineDisplayedText:(id)arg1;
-- (void)setSecondLineText:(id)arg1;
-- (void)setTemporaryReviewString:(id)arg1;
 - (void)setThirdLineDisplayedText:(id)arg1;
-- (void)setThirdLineText:(id)arg1;
 - (void)setThumbnail:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (id)styledStringFromStringArray:(id)arg1;
-- (id)temporaryReviewString;
 - (id)thirdLineDisplayedText;
-- (id)thirdLineText;
 - (id)thumbnail;
 - (id)title;
 

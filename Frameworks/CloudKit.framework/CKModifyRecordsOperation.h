@@ -12,6 +12,7 @@
     NSMutableSet * _packagesToDestroy;
     id /* block */  _perRecordCompletionBlock;
     id /* block */  _perRecordProgressBlock;
+    NSDictionary * _pluginFieldsForRecordDeletesByID;
     NSMutableDictionary * _recordErrors;
     NSArray * _recordIDsToDelete;
     NSDictionary * _recordIDsToDeleteToEtags;
@@ -33,6 +34,7 @@
 @property (nonatomic, retain) NSMutableSet *packagesToDestroy;
 @property (nonatomic, copy) id /* block */ perRecordCompletionBlock;
 @property (nonatomic, copy) id /* block */ perRecordProgressBlock;
+@property (nonatomic, copy) NSDictionary *pluginFieldsForRecordDeletesByID;
 @property (nonatomic, retain) NSMutableDictionary *recordErrors;
 @property (nonatomic, copy) NSArray *recordIDsToDelete;
 @property (nonatomic, copy) NSDictionary *recordIDsToDeleteToEtags;
@@ -70,6 +72,7 @@
 - (id /* block */)perRecordCompletionBlock;
 - (id /* block */)perRecordProgressBlock;
 - (void)performCKOperation;
+- (id)pluginFieldsForRecordDeletesByID;
 - (id)recordErrors;
 - (id)recordIDsToDelete;
 - (id)recordIDsToDeleteToEtags;
@@ -87,6 +90,7 @@
 - (void)setPackagesToDestroy:(id)arg1;
 - (void)setPerRecordCompletionBlock:(id /* block */)arg1;
 - (void)setPerRecordProgressBlock:(id /* block */)arg1;
+- (void)setPluginFieldsForRecordDeletesByID:(id)arg1;
 - (void)setRecordErrors:(id)arg1;
 - (void)setRecordIDsToDelete:(id)arg1;
 - (void)setRecordIDsToDeleteToEtags:(id)arg1;

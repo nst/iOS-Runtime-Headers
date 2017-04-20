@@ -6,7 +6,6 @@
     ACAccountStore * _accountStore;
     NSMutableDictionary * _accounts;
     SKUIMediaSocialAuthor * _author;
-    NSMutableDictionary * _externalServices;
     NSOperationQueue * _operationQueue;
 }
 
@@ -14,7 +13,7 @@
 @property (nonatomic) int preferredFacebookAutopostingDestination;
 
 - (void).cxx_destruct;
-- (id)_facebookAppId;
+- (id)_facebookClientIdFromBag:(id)arg1;
 - (void)_handleAccountStoreDidChange:(id)arg1;
 - (id)_ssvServiceIdentifierForMSCLServiceIdentifier:(id)arg1;
 - (void)_updateAccountInfoWithServiceIdentifier:(id)arg1;

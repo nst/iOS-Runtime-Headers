@@ -12,6 +12,7 @@
 @optional
 
 - (unsigned int)longLookPresentationControllerDismissalEdge:(NCLongLookPresentationController *)arg1;
+- (BOOL)longLookPresentationControllerShouldAllowKeyboardOnAppearance:(NCLongLookPresentationController *)arg1;
 - (BOOL)longLookPresentationControllerShouldIncludePreview:(NCLongLookPresentationController *)arg1;
 
 @end

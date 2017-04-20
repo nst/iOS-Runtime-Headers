@@ -31,6 +31,7 @@
 - (void)_lockedFetchPCSForItem:(id)arg1 memoryCache:(id)arg2 forOperation:(id)arg3 options:(unsigned int)arg4 fetchCreator:(id /* block */)arg5 withCompletionHandler:(id /* block */)arg6;
 - (id)_lockedGetOutstandingFetchForOperation:(id)arg1 options:(unsigned int)arg2 itemIDString:(id)arg3;
 - (void)_lockedHandleMemoryFetchOfItem:(id)arg1 pcsData:(id)arg2 forOperation:(id)arg3 options:(unsigned int)arg4 fetchCreator:(id /* block */)arg5 withCompletionHandler:(id /* block */)arg6;
+- (void)_lockedInvalidateAllOutstandingPCSFetchesForItemIDString:(id)arg1 databaseScope:(int)arg2;
 - (void)_lockedRemoveOutstandingFetch:(id)arg1 forItemIDString:(id)arg2 databaseScope:(int)arg3;
 - (void)_updateMemoryCacheWithPCSData:(id)arg1 forItemWithID:(id)arg2 inMemoryCache:(id)arg3 databaseScope:(int)arg4 withCompletionHandler:(id /* block */)arg5;
 - (id)callbackQueue;

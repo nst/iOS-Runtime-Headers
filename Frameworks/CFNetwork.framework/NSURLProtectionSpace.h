@@ -50,7 +50,7 @@
 
 - (id)_sf_highLevelDomainAndPort;
 
-// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
+// Image: /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
 
 + (id)safari_HTMLFormProtectionSpaceForURL:(id)arg1;
 

@@ -24,6 +24,9 @@
     NSString * _groupName;
     UIImage * _maskImage;
     UIView * _maskView;
+    float  _noiseAlpha;
+    BOOL  _noiseEnabled;
+    _UIVisualEffectFilterView * _noiseSubview;
     UIVisualEffect * _overrideEffect;
 }
 
@@ -56,8 +59,10 @@
 - (id)_effectViews;
 - (id)_groupName;
 - (BOOL)_isBlurDisabled;
+- (BOOL)_isNoiseEnabled;
 - (id)_maskImage;
 - (id)_maskViewImageMask;
+- (id)_noiseSubview;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_rebuildEffectViewForCurrentEffect;
 - (void)_setBackdropViewBackgroundColorAlpha:(float)arg1;
@@ -67,6 +72,7 @@
 - (void)_setEffect:(id)arg1;
 - (void)_setGroupName:(id)arg1;
 - (void)_setMaskImage:(id)arg1;
+- (void)_setNoiseEnabled:(BOOL)arg1;
 - (void)_setTintOpacity:(float)arg1;
 - (void)_setupEffectsViewsForSettings:(id)arg1;
 - (BOOL)_shouldRegenerateMasksForNewMaskView:(id)arg1;

@@ -2,41 +2,8 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
  */
 
-@interface SBSRemoteAlertConfiguration : NSObject <BSDescriptionProviding, BSXPCCoding> {
-    BOOL  _forCarPlay;
-    NSString * _impersonatedCarPlayAppIdentifier;
-    NSString * _serviceName;
-    NSDictionary * _userInfo;
-    NSString * _vcClassName;
-}
+@interface SBSRemoteAlertConfiguration : SBSRemoteAlertDefinition
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (getter=isForCarPlay, nonatomic) BOOL forCarPlay;
-@property (readonly) unsigned int hash;
-@property (nonatomic, retain) NSString *impersonatedCarPlayAppIdentifier;
-@property (nonatomic, readonly) NSString *serviceName;
-@property (readonly) Class superclass;
 @property (nonatomic, retain) NSDictionary *userInfo;
-@property (nonatomic, readonly) NSString *viewControllerClassName;
-
-- (void).cxx_destruct;
-- (id)description;
-- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
-- (id)descriptionWithMultilinePrefix:(id)arg1;
-- (void)encodeWithXPCDictionary:(id)arg1;
-- (id)impersonatedCarPlayAppIdentifier;
-- (id)init;
-- (id)initWithServiceName:(id)arg1 viewControllerClassName:(id)arg2;
-- (id)initWithXPCDictionary:(id)arg1;
-- (BOOL)isForCarPlay;
-- (id)serviceName;
-- (void)setForCarPlay:(BOOL)arg1;
-- (void)setImpersonatedCarPlayAppIdentifier:(id)arg1;
-- (void)setUserInfo:(id)arg1;
-- (id)succinctDescription;
-- (id)succinctDescriptionBuilder;
-- (id)userInfo;
-- (id)viewControllerClassName;
 
 @end

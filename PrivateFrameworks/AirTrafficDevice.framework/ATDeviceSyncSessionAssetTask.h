@@ -33,6 +33,7 @@
 - (void)_handleEndAssetTaskRequest:(id)arg1 onMessagLink:(id)arg2;
 - (void)_handleUpdateSessionTaskRequest:(id)arg1 onMessageLink:(id)arg2;
 - (void)_updateDetailedProgressForCompletedAsset:(id)arg1;
+- (void)_updateProgressWithBytesTransferred:(unsigned long long)arg1;
 - (void)_updateProperties;
 - (void)_updateTaskDescription;
 - (void)assetLinkController:(id)arg1 didFinishAsset:(id)arg2;
@@ -42,5 +43,6 @@
 - (void)messageLink:(id)arg1 didReceiveRequest:(id)arg2;
 - (id)sessionGroupingKey;
 - (void)start;
+- (void)updateProgressWithCount:(unsigned int)arg1 totalItemCount:(unsigned int)arg2;
 
 @end

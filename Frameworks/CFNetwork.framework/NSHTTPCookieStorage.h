@@ -61,7 +61,6 @@
 // Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
 
 - (void)webui_applySafariCookieAcceptPolicy;
-- (void)webui_migrateSafariCookieAcceptPolicy;
 - (id)webui_safariCookieAcceptPolicy;
 
 @end

@@ -5,6 +5,7 @@
 @interface DKHostRequest : NSObject {
     id /* block */  _completion;
     DKDiagnosticAttributes * _diagnostic;
+    NSDictionary * _environment;
     NSError * _error;
     BOOL  _failedToPresentViewController;
     BOOL  _isCancelled;
@@ -17,6 +18,7 @@
 
 @property (nonatomic, copy) id /* block */ completion;
 @property (nonatomic, retain) DKDiagnosticAttributes *diagnostic;
+@property (nonatomic, retain) NSDictionary *environment;
 @property (nonatomic, retain) NSError *error;
 @property (nonatomic) BOOL failedToPresentViewController;
 @property (nonatomic) BOOL isCancelled;
@@ -38,16 +40,18 @@
 - (void)cancelTimedOutWithInfo:(id)arg1;
 - (id /* block */)completion;
 - (id)diagnostic;
+- (id)environment;
 - (id)error;
 - (BOOL)failedToPresentViewController;
 - (id)init;
-- (id)initWithDiagnostic:(id)arg1 completion:(id /* block */)arg2 presentingViewController:(id)arg3;
+- (id)initWithDiagnostic:(id)arg1 completion:(id /* block */)arg2 presentingViewController:(id)arg3 environment:(id)arg4;
 - (BOOL)isCancelled;
 - (id)presentingViewController;
 - (id)requestIdentifier;
 - (id)result;
 - (void)setCompletion:(id /* block */)arg1;
 - (void)setDiagnostic:(id)arg1;
+- (void)setEnvironment:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setFailedToPresentViewController:(BOOL)arg1;
 - (void)setIsCancelled:(BOOL)arg1;

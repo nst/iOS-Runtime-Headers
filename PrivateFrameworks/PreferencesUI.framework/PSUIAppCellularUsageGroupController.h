@@ -3,6 +3,7 @@
  */
 
 @interface PSUIAppCellularUsageGroupController : NSObject <PSSpecifierGroupController, PSUIWirelessDataOptionsDelegate, UsageFeedDelegate> {
+    ACAccountStore * _accountStore;
     PSExpandableAppListGroupController * _appGroupController;
     BOOL  _cancelled;
     NSArray * _cellularDataSwitches;
@@ -14,6 +15,7 @@
     WirelessDataUsageWorkspace * _workspace;
 }
 
+@property (nonatomic, retain) ACAccountStore *accountStore;
 @property (nonatomic, retain) PSExpandableAppListGroupController *appGroupController;
 @property (getter=isCancelled) BOOL cancelled;
 @property (readonly, copy) NSString *debugDescription;
@@ -31,8 +33,12 @@
 + (id)nameForSpecialCategory:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)_appleAccount;
 - (void)_createAppSpecifiersForVisibleApps:(id)arg1 hiddenApps:(id)arg2 unknownApps:(id)arg3 internalProcesses:(id)arg4 wifiAssist:(id)arg5;
+- (void)_setUseCellularForCloudDrive:(id)arg1 forSpecifier:(id)arg2;
 - (void)_updateTotalBytesUsed:(double)arg1 roamingBytesUsed:(double)arg2;
+- (id)_useCellularForCloudDrive:(id)arg1;
+- (id)accountStore;
 - (id)appCellularDataEnabledForSpecifier:(id)arg1;
 - (id)appGroupController;
 - (void)calculateUsage;
@@ -46,6 +52,7 @@
 - (id)isReliableNetworkFallbackEnabled:(id)arg1;
 - (id)managedBundleIDs;
 - (id)managedCellularDataBundleIdentifiers;
+- (void)setAccountStore:(id)arg1;
 - (void)setAppCellularDataEnabled:(id)arg1 forSpecifier:(id)arg2;
 - (void)setAppGroupController:(id)arg1;
 - (void)setCancelled:(BOOL)arg1;
@@ -57,6 +64,7 @@
 - (void)setTotalRoamingBytesUsed:(id)arg1;
 - (void)setWirelessManager:(id)arg1;
 - (void)setWorkspace:(id)arg1;
+- (BOOL)shouldShowCloudDrive;
 - (BOOL)shouldShowWifiAssist;
 - (id)specifierForApp:(id)arg1 enabled:(BOOL)arg2;
 - (id)specifierForSpecialCategory:(id)arg1 bytesUsed:(id)arg2;

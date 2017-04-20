@@ -3,12 +3,15 @@
  */
 
 @interface MPReorderQueueCommandEvent : MPRemoteCommandEvent {
+    NSNumber * _destinationOffset;
     NSString * _insertAfterContextItemID;
 }
 
+@property (nonatomic, readonly) NSNumber *destinationOffset;
 @property (nonatomic, readonly) NSString *insertAfterContextItemID;
 
 - (void).cxx_destruct;
+- (id)destinationOffset;
 - (id)initWithCommand:(id)arg1 mediaRemoteType:(unsigned int)arg2 options:(id)arg3;
 - (id)insertAfterContextItemID;
 

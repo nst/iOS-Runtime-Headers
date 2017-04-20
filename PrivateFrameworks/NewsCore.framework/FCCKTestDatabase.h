@@ -4,12 +4,14 @@
 
 @interface FCCKTestDatabase : FCCKDatabase {
     FCCKTestFeedQueryEndpoint * _feedQueryEndpoint;
+    FCCKTestMultiFetchQueryEndpoint * _multiFetchQueryEndpoint;
     FCCKTestOrderFeedQueryEndpoint * _orderFeedQueryEndpoint;
     NSMutableArray * _records;
     BOOL  _simulateNetworkError;
 }
 
 @property (nonatomic, retain) FCCKTestFeedQueryEndpoint *feedQueryEndpoint;
+@property (nonatomic, retain) FCCKTestMultiFetchQueryEndpoint *multiFetchQueryEndpoint;
 @property (nonatomic, retain) FCCKTestOrderFeedQueryEndpoint *orderFeedQueryEndpoint;
 @property (nonatomic, retain) NSMutableArray *records;
 @property (nonatomic) BOOL simulateNetworkError;
@@ -31,11 +33,13 @@
 - (id)insertTestTagWithType:(id)arg1 feedID:(id)arg2;
 - (id)insertTestTagWithType:(id)arg1 feedID:(id)arg2 properties:(id)arg3;
 - (id)insertTestTagWithType:(id)arg1 properties:(id)arg2;
+- (id)multiFetchQueryEndpoint;
 - (id)orderFeedQueryEndpoint;
 - (unsigned long long)orderForArticleID:(id)arg1 feedID:(id)arg2;
 - (void)populateWithBasicTestFeeds;
 - (id)records;
 - (void)setFeedQueryEndpoint:(id)arg1;
+- (void)setMultiFetchQueryEndpoint:(id)arg1;
 - (void)setOrderFeedQueryEndpoint:(id)arg1;
 - (void)setRecords:(id)arg1;
 - (void)setSimulateNetworkError:(BOOL)arg1;

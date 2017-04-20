@@ -12,6 +12,7 @@
 
 @property (setter=_setAcceleratedDrawingEnabled:, nonatomic) BOOL _acceleratedDrawingEnabled;
 @property (setter=_setAllowFileAccessFromFileURLs:, nonatomic) BOOL _allowFileAccessFromFileURLs;
+@property (setter=_setAnimatedImageAsyncDecodingEnabled:, nonatomic) BOOL _animatedImageAsyncDecodingEnabled;
 @property (readonly) /* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*_apiObject;
 @property (setter=_setApplePayCapabilityDisclosureAllowed:, nonatomic) BOOL _applePayCapabilityDisclosureAllowed;
 @property (setter=_setCompositingBordersVisible:, nonatomic) BOOL _compositingBordersVisible;
@@ -26,10 +27,12 @@
 @property (setter=_setHiddenPageDOMTimerThrottlingAutoIncreases:, nonatomic) BOOL _hiddenPageDOMTimerThrottlingAutoIncreases;
 @property (setter=_setHiddenPageDOMTimerThrottlingEnabled:, nonatomic) BOOL _hiddenPageDOMTimerThrottlingEnabled;
 @property (setter=_setJavaScriptRuntimeFlags:, nonatomic) unsigned int _javaScriptRuntimeFlags;
+@property (setter=_setLargeImageAsyncDecodingEnabled:, nonatomic) BOOL _largeImageAsyncDecodingEnabled;
 @property (setter=_setLogsPageMessagesToSystemConsoleEnabled:, nonatomic) BOOL _logsPageMessagesToSystemConsoleEnabled;
 @property (setter=_setOfflineApplicationCacheIsEnabled:, nonatomic) BOOL _offlineApplicationCacheIsEnabled;
 @property (setter=_setPageVisibilityBasedProcessSuppressionEnabled:, nonatomic) BOOL _pageVisibilityBasedProcessSuppressionEnabled;
 @property (setter=_setResourceUsageOverlayVisible:, nonatomic) BOOL _resourceUsageOverlayVisible;
+@property (setter=_setShouldSuppressKeyboardInputDuringProvisionalNavigation:, nonatomic) BOOL _shouldSuppressKeyboardInputDuringProvisionalNavigation;
 @property (setter=_setSimpleLineLayoutDebugBordersEnabled:, nonatomic) BOOL _simpleLineLayoutDebugBordersEnabled;
 @property (getter=_isStandalone, setter=_setStandalone:, nonatomic) BOOL _standalone;
 @property (setter=_setStorageBlockingPolicy:, nonatomic) int _storageBlockingPolicy;
@@ -37,6 +40,7 @@
 @property (setter=_setTextAutosizingEnabled:, nonatomic) BOOL _textAutosizingEnabled;
 @property (setter=_setTiledScrollingIndicatorVisible:, nonatomic) BOOL _tiledScrollingIndicatorVisible;
 @property (setter=_setVisibleDebugOverlayRegions:, nonatomic) unsigned int _visibleDebugOverlayRegions;
+@property (setter=_setVisualViewportEnabled:, nonatomic) BOOL _visualViewportEnabled;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -49,6 +53,7 @@
 
 - (BOOL)_acceleratedDrawingEnabled;
 - (BOOL)_allowFileAccessFromFileURLs;
+- (BOOL)_animatedImageAsyncDecodingEnabled;
 - (/* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (BOOL)_applePayCapabilityDisclosureAllowed;
 - (BOOL)_compositingBordersVisible;
@@ -65,12 +70,14 @@
 - (BOOL)_isEnabledForFeature:(id)arg1;
 - (BOOL)_isStandalone;
 - (unsigned int)_javaScriptRuntimeFlags;
+- (BOOL)_largeImageAsyncDecodingEnabled;
 - (BOOL)_logsPageMessagesToSystemConsoleEnabled;
 - (BOOL)_offlineApplicationCacheIsEnabled;
 - (BOOL)_pageVisibilityBasedProcessSuppressionEnabled;
 - (BOOL)_resourceUsageOverlayVisible;
 - (void)_setAcceleratedDrawingEnabled:(BOOL)arg1;
 - (void)_setAllowFileAccessFromFileURLs:(BOOL)arg1;
+- (void)_setAnimatedImageAsyncDecodingEnabled:(BOOL)arg1;
 - (void)_setApplePayCapabilityDisclosureAllowed:(BOOL)arg1;
 - (void)_setCompositingBordersVisible:(BOOL)arg1;
 - (void)_setCompositingRepaintCountersVisible:(BOOL)arg1;
@@ -85,10 +92,12 @@
 - (void)_setHiddenPageDOMTimerThrottlingAutoIncreases:(BOOL)arg1;
 - (void)_setHiddenPageDOMTimerThrottlingEnabled:(BOOL)arg1;
 - (void)_setJavaScriptRuntimeFlags:(unsigned int)arg1;
+- (void)_setLargeImageAsyncDecodingEnabled:(BOOL)arg1;
 - (void)_setLogsPageMessagesToSystemConsoleEnabled:(BOOL)arg1;
 - (void)_setOfflineApplicationCacheIsEnabled:(BOOL)arg1;
 - (void)_setPageVisibilityBasedProcessSuppressionEnabled:(BOOL)arg1;
 - (void)_setResourceUsageOverlayVisible:(BOOL)arg1;
+- (void)_setShouldSuppressKeyboardInputDuringProvisionalNavigation:(BOOL)arg1;
 - (void)_setSimpleLineLayoutDebugBordersEnabled:(BOOL)arg1;
 - (void)_setStandalone:(BOOL)arg1;
 - (void)_setStorageBlockingPolicy:(int)arg1;
@@ -96,12 +105,15 @@
 - (void)_setTextAutosizingEnabled:(BOOL)arg1;
 - (void)_setTiledScrollingIndicatorVisible:(BOOL)arg1;
 - (void)_setVisibleDebugOverlayRegions:(unsigned int)arg1;
+- (void)_setVisualViewportEnabled:(BOOL)arg1;
+- (BOOL)_shouldSuppressKeyboardInputDuringProvisionalNavigation;
 - (BOOL)_simpleLineLayoutDebugBordersEnabled;
 - (int)_storageBlockingPolicy;
 - (BOOL)_telephoneNumberDetectionIsEnabled;
 - (BOOL)_textAutosizingEnabled;
 - (BOOL)_tiledScrollingIndicatorVisible;
 - (unsigned int)_visibleDebugOverlayRegions;
+- (BOOL)_visualViewportEnabled;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;

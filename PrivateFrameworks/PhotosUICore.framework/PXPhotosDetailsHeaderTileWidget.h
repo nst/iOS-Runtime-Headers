@@ -116,6 +116,7 @@
 - (id)_curatedAssetCollection;
 - (void)_didFinishPreparingSlideshowSession:(id)arg1;
 - (void)_filterOutVideosFromAssetCollection:(id)arg1 filteredAssetCollection:(id*)arg2 assets:(id*)arg3;
+- (void)_handleTapGesture:(id)arg1;
 - (id)_headerSpec;
 - (void)_headerSpecDidChange;
 - (void)_invalidateAssetCollection;
@@ -167,7 +168,7 @@
 - (BOOL)_slideshowStartingDelayFinished;
 - (id)_slideshowTile;
 - (id)_slideshowViewController;
-- (void)_startMiroMovie:(id)arg1;
+- (id)_startMiroMovie;
 - (id)_subtitle;
 - (id)_tapGestureRecognizer;
 - (void*)_tileForIdentifier:(struct PXTileIdentifier { unsigned int x1; unsigned int x2[10]; })arg1 layout:(id)arg2;
@@ -208,6 +209,7 @@
 - (void)photosDataSource:(id)arg1 didChange:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })photosDetailsHeaderTileLayout:(id)arg1 contentsRectForAspectRatio:(float)arg2;
 - (id)photosDetailsHeaderTileLayoutFontName:(id)arg1;
+- (void)ppt_navigateToMovieWithCompletionHandler:(id /* block */)arg1;
 - (float)preferredContentHeightForWidth:(float)arg1;
 - (void)preloadWithSourceRegionOfInterest:(id)arg1 forContext:(id)arg2;
 - (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint { float x1; float x2; })arg1 inCoordinateSpace:(id)arg2;

@@ -48,10 +48,9 @@
 - (void)_updateWithReason:(id)arg1;
 - (id)currentForecastModel;
 - (id)delegate;
+- (void)getLocationServicesAuthorizationStatus:(id /* block */)arg1;
 - (id)init;
 - (BOOL)locationServicesActive;
-- (BOOL)locationServicesAreAuthorized;
-- (BOOL)locationServicesAreForbidden;
 - (void)setCurrentForecastModel:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLocationServicesActive:(BOOL)arg1;

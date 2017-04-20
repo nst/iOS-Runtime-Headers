@@ -17,6 +17,8 @@
 + (id)_allSongItemsFromLookupItems:(id)arg1;
 + (id)_artworkTokenForItemWithCollectionID:(unsigned long long)arg1 itemID:(unsigned long long)arg2;
 + (id)_artworkTokenFromLookupItem:(id)arg1;
++ (int)_episodeTypeFromVideoSubTypeString:(id)arg1;
++ (id)_lookupItemArtworksForArtworkDictionaries:(id)arg1;
 + (double)_songDurationFromOffersArray:(id)arg1;
 
 - (void).cxx_destruct;

@@ -60,7 +60,9 @@
     BOOL  _shouldPreventInteractiveAuth;
     BOOL  _shouldPromptForPasswordOnly;
     BOOL  _shouldRequestConfigurationInfo;
+    BOOL  _shouldRequestRecoveryPET;
     BOOL  _shouldRequestShortLivedToken;
+    BOOL  _shouldSendIdentityTokenForRemoteUI;
     BOOL  _shouldSkipSettingsLaunchAlert;
     BOOL  _shouldUpdatePersistentServiceTokens;
     BOOL  _supportsPiggybacking;
@@ -80,6 +82,7 @@
 @property (setter=_setProxiedAppBundleID:, nonatomic, copy) NSString *_proxiedAppBundleID;
 @property (setter=_setProxiedAppName:, nonatomic, copy) NSString *_proxiedAppName;
 @property (setter=_setShortLivedToken:, nonatomic, copy) NSString *_shortLivedToken;
+@property (nonatomic) BOOL _shouldSendIdentityTokenForRemoteUI;
 @property (nonatomic, copy) NSString *altDSID;
 @property (nonatomic, copy) <AKAnisetteServiceProtocol> *anisetteDataProvider;
 @property (nonatomic) BOOL anticipateEscrowAttempt;
@@ -125,6 +128,7 @@
 @property (nonatomic) BOOL shouldPreventInteractiveAuth;
 @property (nonatomic) BOOL shouldPromptForPasswordOnly;
 @property (nonatomic) BOOL shouldRequestConfigurationInfo;
+@property (nonatomic) BOOL shouldRequestRecoveryPET;
 @property (nonatomic) BOOL shouldRequestShortLivedToken;
 @property (nonatomic) BOOL shouldSkipSettingsLaunchAlert;
 @property (nonatomic) BOOL shouldUpdatePersistentServiceTokens;
@@ -144,6 +148,7 @@
 - (id)_initWithIdentifier:(id)arg1;
 - (BOOL)_isPasswordEditable;
 - (BOOL)_isProxyingForApp;
+- (BOOL)_localUserHasEmptyPassword;
 - (id)_mapICSCRecoveryResultsToAuthKit:(id)arg1;
 - (id)_message;
 - (id)_password;
@@ -159,6 +164,7 @@
 - (void)_setProxyingForApp:(BOOL)arg1;
 - (void)_setShortLivedToken:(id)arg1;
 - (id)_shortLivedToken;
+- (BOOL)_shouldSendIdentityTokenForRemoteUI;
 - (void)_startListeningForSecondFactorCodeEntryNotification;
 - (void)_stopListeningForSecondFactorCodeEntryNotification;
 - (void)_updateWithValuesFromContext:(id)arg1;
@@ -171,6 +177,7 @@
 - (id)companionDevice;
 - (id)companionDeviceAnisetteData;
 - (id)defaultButtonString;
+- (id)description;
 - (id)desiredInternalTokens;
 - (id)deviceClass;
 - (id)deviceColor;
@@ -252,6 +259,7 @@
 - (void)setShouldPreventInteractiveAuth:(BOOL)arg1;
 - (void)setShouldPromptForPasswordOnly:(BOOL)arg1;
 - (void)setShouldRequestConfigurationInfo:(BOOL)arg1;
+- (void)setShouldRequestRecoveryPET:(BOOL)arg1;
 - (void)setShouldRequestShortLivedToken:(BOOL)arg1;
 - (void)setShouldSkipSettingsLaunchAlert:(BOOL)arg1;
 - (void)setShouldUpdatePersistentServiceTokens:(BOOL)arg1;
@@ -261,12 +269,14 @@
 - (void)setUsername:(id)arg1;
 - (void)set_isPasswordEditable:(BOOL)arg1;
 - (void)set_passwordPromptTitle:(id)arg1;
+- (void)set_shouldSendIdentityTokenForRemoteUI:(BOOL)arg1;
 - (BOOL)shouldAllowAppleIDCreation;
 - (BOOL)shouldForceInteractiveAuth;
 - (BOOL)shouldOfferSecurityUpgrade;
 - (BOOL)shouldPreventInteractiveAuth;
 - (BOOL)shouldPromptForPasswordOnly;
 - (BOOL)shouldRequestConfigurationInfo;
+- (BOOL)shouldRequestRecoveryPET;
 - (BOOL)shouldRequestShortLivedToken;
 - (BOOL)shouldSkipSettingsLaunchAlert;
 - (BOOL)shouldUpdatePersistentServiceTokens;

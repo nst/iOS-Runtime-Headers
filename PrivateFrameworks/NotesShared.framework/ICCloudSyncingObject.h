@@ -44,6 +44,7 @@
 + (id)allCloudObjectsInContext:(id)arg1;
 + (void)applicationWillTerminate:(id)arg1;
 + (id)assetForData:(id)arg1;
++ (id)cloudObjectWithIdentifier:(id)arg1 context:(id)arg2;
 + (id)currentNotesVersion;
 + (void)deleteAllTemporaryAssetFilesForAllObjects;
 + (void)deleteTemporaryAssetFilesForOperation:(id)arg1;
@@ -56,9 +57,11 @@
 + (void)initialize;
 + (id)keyPathsForValuesAffectingCanBeSharedViaICloud;
 + (id)keyPathsForValuesAffectingCloudAccount;
++ (id)keyPathsForValuesAffectingIsSharedReadOnly;
 + (id)keyPathsForValuesAffectingIsSharedViaICloud;
 + (id)keyPathsForValuesAffectingNeedsToBeDeletedFromCloud;
 + (id)keyPathsForValuesAffectingNeedsToBePushedToCloud;
++ (id)keyPathsForValuesAffectingServerShareCheckingParent;
 + (id)keyPathsForValuesAffectingZoneOwnerName;
 + (BOOL)needsToReFetchServerRecordValue:(id)arg1;
 + (id)newCloudObjectForRecord:(id)arg1 context:(id)arg2;
@@ -112,6 +115,7 @@
 - (BOOL)isMergingUnappliedEncryptedRecord;
 - (BOOL)isOwnedByCurrentUser;
 - (long long)isPushingSameOrLaterThanVersion:(long long)arg1;
+- (BOOL)isSharedReadOnly;
 - (BOOL)isSharedRootObject;
 - (BOOL)isSharedViaICloud;
 - (BOOL)isUnsupported;
@@ -153,6 +157,7 @@
 - (void)saveAndClearDecryptedData;
 - (void)saveAndClearDecryptedDataIfNecessary;
 - (void)saveEncryptedJSON;
+- (id)serverShareCheckingParent;
 - (void)setCryptoInitializationVector:(id)arg1;
 - (void)setCryptoMasterKey:(id)arg1;
 - (void)setCryptoTag:(id)arg1;

@@ -5,7 +5,6 @@
 @interface HDDataManager : NSObject <HDDiagnosticObject, HDHealthDataManager> {
     BBDataProviderConnection * _dataProviderConnection;
     NSNumber * _lastAnchor;
-    SOSContactsManager * _legacySOSContactsManager;
     NSObject<OS_dispatch_queue> * _notificationQueue;
     NSMutableDictionary * _observersByDataType;
     unsigned int  _openTransactions;
@@ -14,6 +13,7 @@
     NSMutableSet * _pendingSources;
     HDProfile * _profile;
     NSObject<OS_dispatch_queue> * _queue;
+    FKFriendsManager * _sosFriendsManager;
     unsigned int  _sourceObserverCount;
 }
 

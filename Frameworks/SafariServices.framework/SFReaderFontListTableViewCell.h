@@ -9,6 +9,7 @@
 @property (nonatomic, retain) UIImageView *fontSelectionImageView;
 
 - (void).cxx_destruct;
+- (void)_setUpFontSelectionImageViewIfNecessary;
 - (id)fontSelectionImageView;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;

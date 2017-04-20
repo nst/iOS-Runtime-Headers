@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUIRichTitleCardSectionView : SearchUICardSectionView
+@interface SearchUIRichTitleCardSectionView : SearchUILayoutFreeSectionView
 
-- (id)initWithCardSection:(id)arg1 controller:(id)arg2;
+- (id)initWithCardSection:(id)arg1 controller:(id)arg2 style:(unsigned int)arg3;
+- (id)textContainerViewForSection:(id)arg1;
 
 @end

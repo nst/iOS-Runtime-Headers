@@ -14,6 +14,7 @@
     CLPlacemark * _pickupLocation;
     NSString * _rideIdentifier;
     INRideOption * _rideOption;
+    INDateComponentsRange * _scheduledPickupTime;
     NSUserActivity * _userActivityForCancelingInApplication;
     INRideVehicle * _vehicle;
     NSArray * _waypoints;
@@ -33,6 +34,7 @@
 @property (nonatomic, copy) CLPlacemark *pickupLocation;
 @property (nonatomic, copy) NSString *rideIdentifier;
 @property (nonatomic, copy) INRideOption *rideOption;
+@property (nonatomic, copy) INDateComponentsRange *scheduledPickupTime;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSUserActivity *userActivityForCancelingInApplication;
 @property (nonatomic, copy) INRideVehicle *vehicle;
@@ -58,6 +60,7 @@
 - (id)pickupLocation;
 - (id)rideIdentifier;
 - (id)rideOption;
+- (id)scheduledPickupTime;
 - (void)setAdditionalActionActivities:(id)arg1;
 - (void)setCompletionStatus:(id)arg1;
 - (void)setDriver:(id)arg1;
@@ -69,6 +72,7 @@
 - (void)setPickupLocation:(id)arg1;
 - (void)setRideIdentifier:(id)arg1;
 - (void)setRideOption:(id)arg1;
+- (void)setScheduledPickupTime:(id)arg1;
 - (void)setUserActivityForCancelingInApplication:(id)arg1;
 - (void)setVehicle:(id)arg1;
 - (void)setWaypoints:(id)arg1;

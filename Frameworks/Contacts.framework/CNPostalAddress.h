@@ -10,6 +10,8 @@
     NSString * _postalCode;
     NSString * _state;
     NSString * _street;
+    NSString * _subAdministrativeArea;
+    NSString * _subLocality;
 }
 
 @property (nonatomic, copy) NSString *ISOCountryCode;
@@ -23,6 +25,8 @@
 @property (nonatomic, copy) NSString *postalCode;
 @property (nonatomic, copy) NSString *state;
 @property (nonatomic, copy) NSString *street;
+@property (nonatomic, copy) NSString *subAdministrativeArea;
+@property (nonatomic, copy) NSString *subLocality;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/Frameworks/Contacts.framework/Contacts
@@ -54,8 +58,12 @@
 - (void)setPostalCode:(id)arg1;
 - (void)setState:(id)arg1;
 - (void)setStreet:(id)arg1;
+- (void)setSubAdministrativeArea:(id)arg1;
+- (void)setSubLocality:(id)arg1;
 - (id)state;
 - (id)street;
+- (id)subAdministrativeArea;
+- (id)subLocality;
 
 // Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
 

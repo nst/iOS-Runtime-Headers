@@ -353,7 +353,7 @@
 @property (nonatomic, readonly) BOOL shouldPresentInterstitialAd;
 @property (getter=isSkLoaded, nonatomic, readonly) BOOL skLoaded;
 @property (getter=isSkLoading, nonatomic, readonly) BOOL skLoading;
-@property (nonatomic, readonly) FMSlidingPaneViewController *slidingPaneViewController;
+@property (readonly) FMSlidingPaneViewController *slidingPaneViewController;
 @property (nonatomic, readonly) UISplitViewController *splitViewController;
 @property (nonatomic, retain) SUStorePageProtocol *storePageProtocol;
 @property (setter=_setStoryboard:, nonatomic, retain) UIStoryboard *storyboard;
@@ -492,6 +492,7 @@
 - (void)_collapseSecondaryViewController:(id)arg1 forSplitViewController:(id)arg2 withTransitionCoordinator:(id)arg3;
 - (void)_commitPreviewTransitionAsDetailOfSplitViewController:(id)arg1 withDelegate:(id)arg2 completion:(id /* block */)arg3;
 - (id /* block */)_completionBlock;
+- (void)_containingAlertControllerDidChangeVisualStyle:(id)arg1;
 - (BOOL)_containsFirstResponder;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentInsetsInWindow;
 - (float)_contentMargin;
@@ -857,6 +858,7 @@
 - (BOOL)_viewHostsLayoutEngineAllowsTAMIC_NO;
 - (id)_viewsWithDisabledInteractionGivenTransitionContext:(id)arg1;
 - (id)_visibleView;
+- (id)_visualStyleOfContainingAlertController;
 - (void)_willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2 forwardToChildControllers:(BOOL)arg3 skipSelf:(BOOL)arg4;
 - (void)_willAppearInRemoteViewController;
 - (void)_willAppearInRemoteViewController:(id)arg1;
@@ -1220,6 +1222,7 @@
 // Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
 
 + (id)eventDetailViewControllerWithEvent:(id)arg1 delegate:(id)arg2 context:(struct NSDictionary { Class x1; }*)arg3;
++ (id)eventDetailViewControllerWithEvent:(id)arg1 delegate:(id)arg2 context:(struct NSDictionary { Class x1; }*)arg3 allowInlinePreview:(BOOL)arg4 previewInline:(BOOL)arg5 minimalMode:(BOOL)arg6;
 
 - (BOOL)isPresentedInsidePopover;
 
@@ -1301,6 +1304,7 @@
 
 // Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
 
+- (void)_sf_animateAlongsideTransitionOrPerform:(id /* block */)arg1;
 - (void)_sf_presentViewControllerOnTopOfPresentedViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (id)_sf_viewControllerToPresentFrom;
 
@@ -1467,11 +1471,6 @@
 
 - (void)MPU_prepareForNavigationController:(id)arg1 poppingToViewController:(id)arg2 animated:(BOOL)arg3 completion:(id /* block */)arg4;
 
-// Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
-
-+ (id)MCD_queryForIdentifier:(id)arg1;
-+ (void)MCD_registerViewControllerIdentifiers;
-
 // Image: /System/Library/PrivateFrameworks/NetAppsUtilitiesUI.framework/NetAppsUtilitiesUI
 
 + (id)recursiveDescription;
@@ -1575,12 +1574,14 @@
 - (id)SKUIStackedBar;
 - (float)SKUIStackedBarSplit;
 - (id)_SKUIView;
+- (id)registerForPreviewingFromSourceView:(id)arg1 handler:(id /* block */)arg2;
 - (id)scrollingSegmentedController;
 - (id)scrollingTabBarController;
 - (void)setNeedsNavigationBarAppearanceUpdate;
 - (void)setNeedsNestedPagingScrollViewUpdate;
 - (void)setNeedsScrollingSegmentContentScrollViewUpdate;
 - (void)setSKUIStackedBarSplit:(float)arg1;
+- (void)unregisterForPreviewing:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
 

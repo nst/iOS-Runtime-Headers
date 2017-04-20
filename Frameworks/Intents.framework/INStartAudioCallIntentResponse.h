@@ -11,6 +11,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
+@property (nonatomic) double timeToEstablishCall;
 
 + (BOOL)_appLaunchRequestedFromCode:(int)arg1;
 + (int)_codeFromType:(int)arg1 errorCode:(int)arg2 appLaunchRequested:(BOOL)arg3;
@@ -29,5 +30,7 @@
 - (id)initWithBackingStore:(id)arg1;
 - (id)initWithCode:(int)arg1 userActivity:(id)arg2;
 - (id)initWithCoder:(id)arg1;
+- (void)setTimeToEstablishCall:(double)arg1;
+- (double)timeToEstablishCall;
 
 @end

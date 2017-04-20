@@ -16,6 +16,8 @@
 - (id)assetFlavor;
 - (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
 - (void)loadAssetAndPlayerItem;
+- (int)rtcReportingAssetType;
+- (id)rtcReportingServiceIdentifier;
 - (BOOL)supportsRadioTrackActions;
 
 @end

@@ -4,6 +4,7 @@
 
 @interface PRSBagHandler : NSObject {
     BOOL  _active;
+    NSArray * _anonymousMetadataUndesiredBundleIDs;
     NSSet * _appBlacklist;
     PARBag * _bag;
     NSObject<OS_dispatch_queue> * _bagQueue;
@@ -14,6 +15,7 @@
     double  _cep_top_hit_threshold;
     <PRSSessionController> * _client;
     BOOL  _collectAnonymousData;
+    BOOL  _collectScores;
     NSDictionary * _correctionDict;
     NSURL * _correctionDictURL;
     NSArray * _enabledDomains;
@@ -35,6 +37,7 @@
 }
 
 @property (nonatomic) BOOL active;
+@property (nonatomic, retain) NSArray *anonymousMetadataUndesiredBundleIDs;
 @property (nonatomic, retain) NSSet *appBlacklist;
 @property (nonatomic) int cat_score_enum;
 @property (nonatomic) int cep_probability_factor;
@@ -43,6 +46,7 @@
 @property (nonatomic) double cep_top_hit_threshold;
 @property <PRSSessionController> *client;
 @property (nonatomic) BOOL collectAnonymousData;
+@property (nonatomic) BOOL collectScores;
 @property (retain) NSDictionary *correctionDict;
 @property (retain) NSURL *correctionDictURL;
 @property (nonatomic, retain) NSArray *enabledDomains;
@@ -66,6 +70,7 @@
 - (void)_processQIFeatures:(id)arg1 forClient:(id)arg2;
 - (void)activate;
 - (BOOL)active;
+- (id)anonymousMetadataUndesiredBundleIDs;
 - (id)appBlacklist;
 - (id)applicationNameForUserAgent;
 - (int)cat_score_enum;
@@ -75,6 +80,7 @@
 - (double)cep_top_hit_threshold;
 - (id)client;
 - (BOOL)collectAnonymousData;
+- (BOOL)collectScores;
 - (id)correctionDict;
 - (id)correctionDictURL;
 - (void)deactivate;
@@ -100,6 +106,7 @@
 - (BOOL)searchSupported:(BOOL)arg1;
 - (BOOL)sessionReady;
 - (void)setActive:(BOOL)arg1;
+- (void)setAnonymousMetadataUndesiredBundleIDs:(id)arg1;
 - (void)setAppBlacklist:(id)arg1;
 - (void)setCat_score_enum:(int)arg1;
 - (void)setCep_probability_factor:(int)arg1;
@@ -108,6 +115,7 @@
 - (void)setCep_top_hit_threshold:(double)arg1;
 - (void)setClient:(id)arg1;
 - (void)setCollectAnonymousData:(BOOL)arg1;
+- (void)setCollectScores:(BOOL)arg1;
 - (void)setCorrectionDict:(id)arg1;
 - (void)setCorrectionDictURL:(id)arg1;
 - (void)setEnabledDomains:(id)arg1;

@@ -8,6 +8,7 @@
     double  _centerX;
     double  _centerY;
     int  _clusterSequenceNumber;
+    short  _confirmedFaceCropGenerationState;
     double  _expressionConfidence;
     double  _expressionScore1;
     double  _expressionScore2;
@@ -44,6 +45,8 @@
 @property (nonatomic, readonly) double centerX;
 @property (nonatomic, readonly) double centerY;
 @property (nonatomic, readonly) int clusterSequenceNumber;
+@property (getter=isConfirmedFaceCropGenerationPending, nonatomic, readonly) BOOL confirmedFaceCropGenerationPending;
+@property (nonatomic, readonly) short confirmedFaceCropGenerationState;
 @property (nonatomic) double expressionConfidence;
 @property (nonatomic) double expressionScore1;
 @property (nonatomic) double expressionScore2;
@@ -82,6 +85,7 @@
 + (id)corePropertiesToFetch;
 + (id)croppingPropertiesToFetch;
 + (id)entityKeyForPropertyKey:(id)arg1;
++ (id)fetchFacesForFaceCrop:(id)arg1 options:(id)arg2;
 + (id)fetchFacesForPerson:(id)arg1 options:(id)arg2;
 + (id)fetchFacesGroupedByAssetLocalIdentifierForAssets:(id)arg1 options:(id)arg2;
 + (id)fetchFacesInAsset:(id)arg1 options:(id)arg2;
@@ -101,7 +105,9 @@
 + (id)fetchType;
 + (id)identifierCode;
 + (id)managedEntityName;
++ (BOOL)managedObjectSupportsFaceCropGeneration;
 + (BOOL)managedObjectSupportsFaceVisibility;
++ (id)personBuilderPropertiesToFetch;
 + (id)propertiesToFetchWithHint:(unsigned int)arg1;
 + (unsigned int)propertyFetchHintsForPropertySets:(id)arg1;
 + (id)propertySetAccessorsByPropertySet;
@@ -117,6 +123,7 @@
 - (double)centerY;
 - (Class)changeRequestClass;
 - (int)clusterSequenceNumber;
+- (short)confirmedFaceCropGenerationState;
 - (double)expressionConfidence;
 - (double)expressionScore1;
 - (double)expressionScore2;
@@ -129,6 +136,7 @@
 - (void)fetchPropertySetsIfNeeded;
 - (BOOL)hasSmile;
 - (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned int)arg2 photoLibrary:(id)arg3;
+- (BOOL)isConfirmedFaceCropGenerationPending;
 - (BOOL)isHidden;
 - (BOOL)isInTrash;
 - (BOOL)isLeftEyeClosed;

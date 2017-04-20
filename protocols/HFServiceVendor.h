@@ -7,4 +7,8 @@
 
 - (NSSet *)services;
 
+@optional
+
+- (BOOL)shouldReduceOptionItemsForNotifyingCharacteristics;
+
 @end

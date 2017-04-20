@@ -14,7 +14,6 @@
     _MRGameControllerPropertiesMessageProtobuf * _gameControllerProperties;
     _MRGenericMessageProtobuf * _genericMessage;
     _MRGetKeyboardSessionProtobuf * _getKeyboardMessage;
-    _MRGetPlaybackQueueMessageProtobuf * _getPlaybackQueue;
     _MRGetStateMessageProtobuf * _getStateMessage;
     _MRGetVoiceInputDevicesMessageProtobuf * _getVoiceInputDevicesMessage;
     _MRGetVoiceInputDevicesResponseMessageProtobuf * _getVoiceInputDevicesResponseMessage;
@@ -26,6 +25,7 @@
     NSString * _identifier;
     _MRKeyboardMessageProtobuf * _keyboardMessage;
     _MRNotificationMessageProtobuf * _notificationMessage;
+    _MRPlaybackQueueRequestProtobuf * _playbackQueueRequest;
     _MRSetReadyStateMessageProtobuf * _readyStateMessage;
     _MRRegisterForGameControllerEventsMessageProtobuf * _registerForGameControllerEvents;
     _MRRegisterGameControllerMessageProtobuf * _registerGameController;
@@ -39,6 +39,8 @@
     _MRSendCommandResultMessageProtobuf * _sendCommandResultMessage;
     _MRSendHIDEventMessageProtobuf * _sendHIDEventMessage;
     _MRSendHIDReportMessageProtobuf * _sendHIDReportMessage;
+    _MRSendLyricsEventMessageProtobuf * _sendLyricsEventMessage;
+    _MRSendPackedVirtualTouchEventMessageProtobuf * _sendPackedVirtualTouchEventMessage;
     _MRSendVirtualTouchEventMessageProtobuf * _sendVirtualTouchEventMessage;
     _MRSendVoiceInputMessageProtobuf * _sendVoiceInputMessage;
     _MRSetArtworkMessageProtobuf * _setArtworkMessage;
@@ -65,7 +67,6 @@
 @property (nonatomic, retain) _MRGameControllerPropertiesMessageProtobuf *gameControllerProperties;
 @property (nonatomic, retain) _MRGenericMessageProtobuf *genericMessage;
 @property (nonatomic, retain) _MRGetKeyboardSessionProtobuf *getKeyboardMessage;
-@property (nonatomic, retain) _MRGetPlaybackQueueMessageProtobuf *getPlaybackQueue;
 @property (nonatomic, retain) _MRGetStateMessageProtobuf *getStateMessage;
 @property (nonatomic, retain) _MRGetVoiceInputDevicesMessageProtobuf *getVoiceInputDevicesMessage;
 @property (nonatomic, retain) _MRGetVoiceInputDevicesResponseMessageProtobuf *getVoiceInputDevicesResponseMessage;
@@ -80,13 +81,13 @@
 @property (nonatomic, readonly) BOOL hasGameControllerProperties;
 @property (nonatomic, readonly) BOOL hasGenericMessage;
 @property (nonatomic, readonly) BOOL hasGetKeyboardMessage;
-@property (nonatomic, readonly) BOOL hasGetPlaybackQueue;
 @property (nonatomic, readonly) BOOL hasGetStateMessage;
 @property (nonatomic, readonly) BOOL hasGetVoiceInputDevicesMessage;
 @property (nonatomic, readonly) BOOL hasGetVoiceInputDevicesResponseMessage;
 @property (nonatomic, readonly) BOOL hasIdentifier;
 @property (nonatomic, readonly) BOOL hasKeyboardMessage;
 @property (nonatomic, readonly) BOOL hasNotificationMessage;
+@property (nonatomic, readonly) BOOL hasPlaybackQueueRequest;
 @property (nonatomic, readonly) BOOL hasReadyStateMessage;
 @property (nonatomic, readonly) BOOL hasRegisterForGameControllerEvents;
 @property (nonatomic, readonly) BOOL hasRegisterGameController;
@@ -100,6 +101,8 @@
 @property (nonatomic, readonly) BOOL hasSendCommandResultMessage;
 @property (nonatomic, readonly) BOOL hasSendHIDEventMessage;
 @property (nonatomic, readonly) BOOL hasSendHIDReportMessage;
+@property (nonatomic, readonly) BOOL hasSendLyricsEventMessage;
+@property (nonatomic, readonly) BOOL hasSendPackedVirtualTouchEventMessage;
 @property (nonatomic, readonly) BOOL hasSendVirtualTouchEventMessage;
 @property (nonatomic, readonly) BOOL hasSendVoiceInputMessage;
 @property (nonatomic, readonly) BOOL hasSetArtworkMessage;
@@ -116,6 +119,7 @@
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) _MRKeyboardMessageProtobuf *keyboardMessage;
 @property (nonatomic, retain) _MRNotificationMessageProtobuf *notificationMessage;
+@property (nonatomic, retain) _MRPlaybackQueueRequestProtobuf *playbackQueueRequest;
 @property (nonatomic, retain) _MRSetReadyStateMessageProtobuf *readyStateMessage;
 @property (nonatomic, retain) _MRRegisterForGameControllerEventsMessageProtobuf *registerForGameControllerEvents;
 @property (nonatomic, retain) _MRRegisterGameControllerMessageProtobuf *registerGameController;
@@ -129,6 +133,8 @@
 @property (nonatomic, retain) _MRSendCommandResultMessageProtobuf *sendCommandResultMessage;
 @property (nonatomic, retain) _MRSendHIDEventMessageProtobuf *sendHIDEventMessage;
 @property (nonatomic, retain) _MRSendHIDReportMessageProtobuf *sendHIDReportMessage;
+@property (nonatomic, retain) _MRSendLyricsEventMessageProtobuf *sendLyricsEventMessage;
+@property (nonatomic, retain) _MRSendPackedVirtualTouchEventMessageProtobuf *sendPackedVirtualTouchEventMessage;
 @property (nonatomic, retain) _MRSendVirtualTouchEventMessageProtobuf *sendVirtualTouchEventMessage;
 @property (nonatomic, retain) _MRSendVoiceInputMessageProtobuf *sendVoiceInputMessage;
 @property (nonatomic, retain) _MRSetArtworkMessageProtobuf *setArtworkMessage;
@@ -160,7 +166,6 @@
 - (id)gameControllerProperties;
 - (id)genericMessage;
 - (id)getKeyboardMessage;
-- (id)getPlaybackQueue;
 - (id)getStateMessage;
 - (id)getVoiceInputDevicesMessage;
 - (id)getVoiceInputDevicesResponseMessage;
@@ -175,13 +180,13 @@
 - (BOOL)hasGameControllerProperties;
 - (BOOL)hasGenericMessage;
 - (BOOL)hasGetKeyboardMessage;
-- (BOOL)hasGetPlaybackQueue;
 - (BOOL)hasGetStateMessage;
 - (BOOL)hasGetVoiceInputDevicesMessage;
 - (BOOL)hasGetVoiceInputDevicesResponseMessage;
 - (BOOL)hasIdentifier;
 - (BOOL)hasKeyboardMessage;
 - (BOOL)hasNotificationMessage;
+- (BOOL)hasPlaybackQueueRequest;
 - (BOOL)hasReadyStateMessage;
 - (BOOL)hasRegisterForGameControllerEvents;
 - (BOOL)hasRegisterGameController;
@@ -195,6 +200,8 @@
 - (BOOL)hasSendCommandResultMessage;
 - (BOOL)hasSendHIDEventMessage;
 - (BOOL)hasSendHIDReportMessage;
+- (BOOL)hasSendLyricsEventMessage;
+- (BOOL)hasSendPackedVirtualTouchEventMessage;
 - (BOOL)hasSendVirtualTouchEventMessage;
 - (BOOL)hasSendVoiceInputMessage;
 - (BOOL)hasSetArtworkMessage;
@@ -214,6 +221,7 @@
 - (id)keyboardMessage;
 - (void)mergeFrom:(id)arg1;
 - (id)notificationMessage;
+- (id)playbackQueueRequest;
 - (BOOL)readFrom:(id)arg1;
 - (id)readyStateMessage;
 - (id)registerForGameControllerEvents;
@@ -228,6 +236,8 @@
 - (id)sendCommandResultMessage;
 - (id)sendHIDEventMessage;
 - (id)sendHIDReportMessage;
+- (id)sendLyricsEventMessage;
+- (id)sendPackedVirtualTouchEventMessage;
 - (id)sendVirtualTouchEventMessage;
 - (id)sendVoiceInputMessage;
 - (id)setArtworkMessage;
@@ -242,7 +252,6 @@
 - (void)setGameControllerProperties:(id)arg1;
 - (void)setGenericMessage:(id)arg1;
 - (void)setGetKeyboardMessage:(id)arg1;
-- (void)setGetPlaybackQueue:(id)arg1;
 - (void)setGetStateMessage:(id)arg1;
 - (void)setGetVoiceInputDevicesMessage:(id)arg1;
 - (void)setGetVoiceInputDevicesResponseMessage:(id)arg1;
@@ -253,6 +262,7 @@
 - (void)setIdentifier:(id)arg1;
 - (void)setKeyboardMessage:(id)arg1;
 - (void)setNotificationMessage:(id)arg1;
+- (void)setPlaybackQueueRequest:(id)arg1;
 - (void)setReadyStateMessage:(id)arg1;
 - (id)setRecordingStateMessage;
 - (void)setRegisterForGameControllerEvents:(id)arg1;
@@ -267,6 +277,8 @@
 - (void)setSendCommandResultMessage:(id)arg1;
 - (void)setSendHIDEventMessage:(id)arg1;
 - (void)setSendHIDReportMessage:(id)arg1;
+- (void)setSendLyricsEventMessage:(id)arg1;
+- (void)setSendPackedVirtualTouchEventMessage:(id)arg1;
 - (void)setSendVirtualTouchEventMessage:(id)arg1;
 - (void)setSendVoiceInputMessage:(id)arg1;
 - (void)setSetArtworkMessage:(id)arg1;

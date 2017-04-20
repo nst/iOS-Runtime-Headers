@@ -19,10 +19,17 @@
     BOOL  _invalidateDone;
     id /* block */  _invalidationHandler;
     BOOL  _legacy;
+    BOOL  _overrideScreenOff;
     int  _rssiThreshold;
     BOOL  _scanCache;
     int  _scanRate;
+    int  _scanState;
+    id /* block */  _scanStateChangedHandler;
     BOOL  _targetUserSession;
+    double  _timeout;
+    BOOL  _timeoutFired;
+    id /* block */  _timeoutHandler;
+    NSObject<OS_dispatch_source> * _timeoutTimer;
     NSXPCConnection * _xpcCnx;
 }
 
@@ -35,10 +42,15 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
 @property (nonatomic, copy) id /* block */ interruptionHandler;
 @property (nonatomic, copy) id /* block */ invalidationHandler;
+@property (nonatomic) BOOL overrideScreenOff;
 @property (nonatomic) int rssiThreshold;
 @property (nonatomic) BOOL scanCache;
 @property (nonatomic) int scanRate;
+@property (nonatomic, readonly) int scanState;
+@property (nonatomic, copy) id /* block */ scanStateChangedHandler;
 @property (nonatomic) BOOL targetUserSession;
+@property (nonatomic) double timeout;
+@property (nonatomic, copy) id /* block */ timeoutHandler;
 
 + (BOOL)supportsSecureCoding;
 
@@ -46,10 +58,11 @@
 - (void)_activateWithCompletion:(id /* block */)arg1;
 - (long)_ensureXPCStarted;
 - (void)_interrupted;
-- (void)_invalidate;
 - (void)_invalidated;
 - (void)_invokeBlockActivateSafe:(id /* block */)arg1;
 - (void)_retryConsole;
+- (void)_startTimeoutIfNeeded;
+- (void)_timeoutTimerFired;
 - (void)activateWithCompletion:(id /* block */)arg1;
 - (unsigned int)changeFlags;
 - (void)dealloc;
@@ -58,6 +71,7 @@
 - (void)deviceDiscoveryDeviceChanged:(id)arg1 changes:(unsigned int)arg2;
 - (void)deviceDiscoveryFoundDevice:(id)arg1;
 - (void)deviceDiscoveryLostDevice:(id)arg1;
+- (void)deviceDiscoveryScanStateChanged:(int)arg1;
 - (id)deviceFilter;
 - (id /* block */)deviceFoundHandler;
 - (id /* block */)deviceLostHandler;
@@ -69,9 +83,12 @@
 - (id /* block */)interruptionHandler;
 - (void)invalidate;
 - (id /* block */)invalidationHandler;
+- (BOOL)overrideScreenOff;
 - (int)rssiThreshold;
 - (BOOL)scanCache;
 - (int)scanRate;
+- (int)scanState;
+- (id /* block */)scanStateChangedHandler;
 - (void)setChangeFlags:(unsigned int)arg1;
 - (void)setDeviceChangedHandler:(id /* block */)arg1;
 - (void)setDeviceFilter:(id)arg1;
@@ -81,10 +98,16 @@
 - (void)setDispatchQueue:(id)arg1;
 - (void)setInterruptionHandler:(id /* block */)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;
+- (void)setOverrideScreenOff:(BOOL)arg1;
 - (void)setRssiThreshold:(int)arg1;
 - (void)setScanCache:(BOOL)arg1;
 - (void)setScanRate:(int)arg1;
+- (void)setScanStateChangedHandler:(id /* block */)arg1;
 - (void)setTargetUserSession:(BOOL)arg1;
+- (void)setTimeout:(double)arg1;
+- (void)setTimeoutHandler:(id /* block */)arg1;
 - (BOOL)targetUserSession;
+- (double)timeout;
+- (id /* block */)timeoutHandler;
 
 @end

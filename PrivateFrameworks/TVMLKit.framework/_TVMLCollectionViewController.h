@@ -41,7 +41,7 @@
     BOOL  _ignoreNextSelect;
     float  _impressionThreshold;
     NSIndexPath * _lastFocusedIndexPath;
-    BOOL  _needsMoreContent;
+    _TVNeedsMoreContentEvaluator * _needsMoreContentEvaluator;
     _TVConfirmationPreviewInteractionController * _previewInteractionController;
     _TVShadowViewElement * _shadowViewElement;
 }
@@ -66,7 +66,6 @@
 - (void)_cancelImpressionsUpdate;
 - (void)_confirmationPreviewInteractionControllerShouldBegin;
 - (void)_doUpdateViewLayoutAnimated:(BOOL)arg1 relayout:(BOOL)arg2;
-- (void)_evaluateNeedsMoreContent;
 - (void)_recordImpressionsForVisibleView;
 - (void)_registerCellClassesInCollectionView:(id)arg1;
 - (void)_updateHeaderView;
@@ -109,6 +108,9 @@
 - (void)updateWithViewElement:(id)arg1 cellMetrics:(struct TVCellMetrics { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct UIEdgeInsets { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct UIEdgeInsets { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; struct UIEdgeInsets { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; } x4; struct UIEdgeInsets { float x_5_1_1; float x_5_1_2; float x_5_1_3; float x_5_1_4; } x5; })arg2;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidLoad;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

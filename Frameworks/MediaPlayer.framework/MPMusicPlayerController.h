@@ -11,6 +11,7 @@
 @property (nonatomic, readonly) BOOL isPreparedToPlay;
 
 + (id)applicationMusicPlayer;
++ (id)applicationQueuePlayer;
 + (id)iPodMusicPlayer;
 + (void)initialize;
 + (id)runLoopForNotifications;
@@ -26,7 +27,10 @@
 - (BOOL)_musicPlayerExistencePortIsValid;
 - (void)_nowPlayingItemDidChange:(unsigned long long)arg1;
 - (void)_playbackStateDidChange:(int)arg1;
+- (void)_queueDidInvalidate;
 - (void)_queuePreparationFailedWithErrorCode:(unsigned char)arg1;
+- (void)_queueRequestDidFinish;
+- (void)_queueUpdateDidFinish;
 - (void)_registerForLaunchNotifications;
 - (void)_repeatModeDidChange:(int)arg1;
 - (void)_runMigServerOnPort:(unsigned int)arg1;
@@ -37,6 +41,7 @@
 - (void)_systemVolumeDidChange:(id)arg1;
 - (void)_unregisterForLaunchNotifications;
 - (BOOL)allowsBackgroundVideo;
+- (void)appendQueueDescriptor:(id)arg1;
 - (void)beginGeneratingPlaybackNotifications;
 - (void)beginSeekingBackward;
 - (void)beginSeekingForward;
@@ -49,6 +54,7 @@
 - (void)forwardInvocation:(id)arg1;
 - (unsigned int)indexOfNowPlayingItem;
 - (id)init;
+- (id)internal;
 - (BOOL)isGeniusAvailable;
 - (BOOL)isGeniusAvailableForSeedItems:(id)arg1;
 - (BOOL)isNowPlayingItemFromGeniusMix;
@@ -66,6 +72,7 @@
 - (void)prepareQueueForPlayback;
 - (void)prepareToPlay;
 - (void)prepareToPlayWithCompletionHandler:(id /* block */)arg1;
+- (void)prependQueueDescriptor:(id)arg1;
 - (id)queueAsQuery;
 - (id)queueAsRadioStation;
 - (int)repeatMode;

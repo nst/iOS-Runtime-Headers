@@ -589,8 +589,13 @@
 - (BOOL)_estimatesSectionHeaderHeights;
 - (id)_existingCellForRowAtIndexPath:(id)arg1;
 - (float)_externalIndexWidth;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_fastScrollingIndexBarInsets;
 - (void)_finishedAnimatingCellReorder:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_finishedRemovingRemovalButtonForTableCell:(id)arg1;
+- (id)_focusFastScrollingDestinationItemAtContentEnd;
+- (id)_focusFastScrollingDestinationItemAtContentStart;
+- (id)_focusFastScrollingDestinationItemForIndexEntry:(id)arg1;
+- (id)_focusFastScrollingIndexEntries;
 - (id)_focusedCell;
 - (id)_focusedCellIndexPath;
 - (void)_focusedView:(id)arg1 isMinX:(BOOL*)arg2 isMaxX:(BOOL*)arg3 isMinY:(BOOL*)arg4 isMaxY:(BOOL*)arg5;

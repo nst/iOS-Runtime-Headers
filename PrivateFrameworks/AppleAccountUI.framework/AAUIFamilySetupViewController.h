@@ -25,7 +25,7 @@
 - (void)_closeButtonWasTapped:(id)arg1;
 - (id)_createCloseButton;
 - (void)_hideActivitySpinnerInNavigationBar;
-- (id)_initWithGrandSlamSigner:(id)arg1 rootViewController:(id)arg2;
+- (id)_initWithAccount:(id)arg1 grandSlamSigner:(id)arg2 rootViewController:(id)arg3;
 - (BOOL)_isRunningInSettings;
 - (void)_loadRemoteUIPages;
 - (void)_remoteUIDidCancel;
@@ -34,9 +34,9 @@
 - (id)_urlForLaunchingSettings;
 - (void)dealloc;
 - (void)familySetupPage:(id)arg1 didCompleteWithSuccess:(BOOL)arg2;
-- (id)initTrimmedFlowWithGrandSlamSigner:(id)arg1;
+- (id)initTrimmedFlowWithAccount:(id)arg1 grandSlamSigner:(id)arg2;
+- (id)initWithAccount:(id)arg1 grandSlamSigner:(id)arg2 familyEligibilityResponse:(id)arg3;
 - (id)initWithAccount:(id)arg1 store:(id)arg2;
-- (id)initWithGrandSlamSigner:(id)arg1 familyEligibilityResponse:(id)arg2;
 - (void)remoteUIController:(id)arg1 didReceiveHTTPResponse:(id)arg2;
 - (BOOL)remoteUIController:(id)arg1 shouldLoadRequest:(id)arg2 redirectResponse:(id)arg3;
 - (void)remoteUIController:(id)arg1 willPresentObjectModel:(id)arg2 modally:(BOOL)arg3;

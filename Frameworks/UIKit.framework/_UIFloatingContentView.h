@@ -13,7 +13,7 @@
         float height; 
     }  _asymmetricScaleFactor;
     struct __CFDictionary { } * _backgroundColorsByState;
-    _UIFloatingContentSpecialAnimatingView * _containerView;
+    _UIFloatingContentCornerRadiusAnimatingView * _containerView;
     NSMutableArray * _contentMotionEffects;
     BOOL  _contentOpaque;
     struct CGPoint { 
@@ -40,7 +40,7 @@
         float y; 
     }  _focusScaleAnchorPoint;
     int  _highlightStyle;
-    _UIFloatingContentSpecialAnimatingView * _highlightView;
+    _UIFloatingContentCornerRadiusAnimatingView * _highlightView;
     BOOL  _roundContentWhenDeselected;
     BOOL  _scalesBackwards;
     struct CGRect { 
@@ -70,6 +70,7 @@
     UIView * _shadowView;
     BOOL  _stretchableShadowImage;
     BOOL  _symmetricScale;
+    _UIFloatingContentTransformView * _transformView;
     struct CGSize { 
         float width; 
         float height; 
@@ -78,7 +79,7 @@
     float  _unfocusedShadowRadius;
     float  _unfocusedShadowVerticalOffset;
     BOOL  _useShadowImage;
-    _UIFloatingContentSpecialAnimatingView * _visualEffectContainerView;
+    _UIFloatingContentCornerRadiusAnimatingView * _visualEffectContainerView;
     float  _visualEffectContainerViewScaleFactor;
 }
 
@@ -116,7 +117,6 @@
 @property (nonatomic) float visualEffectContainerViewScaleFactor;
 
 + (id)_defaultFocusAnimationConfiguration;
-+ (Class)layerClass;
 
 - (void).cxx_destruct;
 - (BOOL)_applyKeyPathsAndRelativeValues:(id)arg1 forMotionEffect:(id)arg2;
@@ -134,7 +134,7 @@
 - (BOOL)_shouldAppearToFloatForPrimaryState:(unsigned int)arg1;
 - (BOOL)_shouldApplyCornerRadiusForPrimaryState:(unsigned int)arg1;
 - (void)_uninstallContentMotionEffects;
-- (void)_updateBackgroundViewForPrimaryState:(unsigned int)arg1;
+- (void)_updateContainerLayerQualityForPrimaryState:(unsigned int)arg1;
 - (void)_updateHighlightViewForPrimaryState:(unsigned int)arg1;
 - (void)_updateScaleFactor;
 - (void)_updateShadowContentsScaleForPrimaryState:(unsigned int)arg1;
@@ -145,7 +145,6 @@
 - (struct CGSize { float x1; float x2; })asymmetricFocusedSizeIncrease;
 - (struct CGSize { float x1; float x2; })asymmetricScaleFactor;
 - (id)backgroundColorForState:(unsigned int)arg1;
-- (BOOL)canBecomeFocused;
 - (BOOL)clipsContentToBounds;
 - (id)contentView;
 - (unsigned int)controlState;
@@ -157,6 +156,7 @@
 - (struct CGPoint { float x1; float x2; })focusScaleAnchorPoint;
 - (float)focusedSizeIncrease;
 - (int)highlightStyle;
+- (id)highlightView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isContentOpaque;
 - (BOOL)isShadowEnabled;

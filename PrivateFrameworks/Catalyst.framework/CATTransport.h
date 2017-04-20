@@ -6,7 +6,6 @@
     <CATTransportDelegate> * _delegate;
     NSString * _name;
     CATOperationQueue * mControlQueue;
-    CATOperationQueue * mDelegationQueue;
     CATStateMachine * mFSM;
     CATOperationQueue * mMessageQueue;
     CATTransport * mStrongSelf;
@@ -17,7 +16,9 @@
 
 - (void).cxx_destruct;
 - (void)cancelAndResumeQueuesAndEnqueueInvalidateConnection;
+- (void)cancelHelloMessageAndResumeQueueOperations;
 - (void)dealloc;
+- (id)debugDescription;
 - (id)delegate;
 - (void)delegateDidInvalidate;
 - (void)delegateDidResume;
@@ -30,7 +31,6 @@
 - (void)enqueueDelegateDidInterruptWithError:(id)arg1;
 - (void)enqueueDelegateDidInvalidateAndFinalize;
 - (void)enqueueDelegateDidReceiveMessage:(id)arg1;
-- (void)enqueueReceiveForMessage:(id)arg1;
 - (void)enqueueSendForMessage:(id)arg1;
 - (id)init;
 - (void)invalidSendForMessage:(id)arg1;

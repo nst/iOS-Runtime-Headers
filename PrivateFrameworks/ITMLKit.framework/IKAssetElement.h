@@ -11,22 +11,29 @@
 @property (nonatomic, readonly, retain) NSString *bookmarkID;
 @property (nonatomic, readonly, retain) NSString *contentID;
 @property (nonatomic, readonly, retain) NSString *externalID;
+@property (nonatomic, readonly, retain) NSURL *extrasURL;
 @property (getter=isInfiniteDuration, nonatomic, readonly) BOOL infiniteDuration;
 @property (nonatomic, readonly) int keyDelivery;
+@property (nonatomic, readonly, retain) NSNumber *persistentID;
+@property (nonatomic, readonly, retain) NSNumber *rentalAdamID;
 @property (nonatomic, readonly, retain) NSString *serviceID;
 @property (nonatomic, readonly) int type;
 @property (nonatomic, readonly, retain) NSURL *url;
 
 + (BOOL)shouldParseChildDOMElements;
 
+- (id)_numberForAttribute:(id)arg1;
 - (id)actionParams;
 - (id)adamID;
 - (id)bookmarkID;
 - (id)contentID;
 - (id)externalID;
+- (id)extrasURL;
 - (BOOL)infiniteDuration;
 - (BOOL)isInfiniteDuration;
 - (int)keyDelivery;
+- (id)persistentID;
+- (id)rentalAdamID;
 - (id)serviceID;
 - (int)type;
 - (id)url;

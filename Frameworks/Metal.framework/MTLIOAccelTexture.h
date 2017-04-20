@@ -72,6 +72,7 @@
 - (void)dealloc;
 - (unsigned int)depth;
 - (id)description;
+- (id)formattedDescription:(unsigned int)arg1;
 - (void)getBytes:(void*)arg1 bytesPerRow:(unsigned int)arg2 fromRegion:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; })arg3 mipmapLevel:(unsigned int)arg4;
 - (unsigned int)height;
 - (id)initWithBuffer:(id)arg1 descriptor:(id)arg2 offset:(unsigned int)arg3 bytesPerRow:(unsigned int)arg4;

@@ -30,7 +30,7 @@
 
 - (void).cxx_destruct;
 - (id)_displayNameFromBundleInfoDictionaryForPID:(int)arg1;
-- (id)_displayNameFromSpringBoardForPID:(int)arg1;
+- (id)_displayNameFromLaunchServicesForPID:(int)arg1;
 - (id)adamOrDisplayID;
 - (struct __CFBundle { }*)bundle;
 - (id)bundleID;

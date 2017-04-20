@@ -27,6 +27,7 @@
 
 - (void).cxx_destruct;
 - (BOOL)addNewFlow:(id)arg1;
+- (id)appRule;
 - (BOOL)canHandleMoreData;
 - (void)cancelConnectionTimer;
 - (BOOL)connected;
@@ -47,6 +48,7 @@
 - (void)removeFlow:(unsigned long long)arg1;
 - (BOOL)selectBestEdge;
 - (id)sendBuffer;
+- (void)setAppRule:(id)arg1;
 - (void)setConnected:(BOOL)arg1;
 - (void)setCurrentBlobSizeIndex:(unsigned int)arg1;
 - (void)setDayPass:(id)arg1;

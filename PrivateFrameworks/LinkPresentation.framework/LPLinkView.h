@@ -31,6 +31,7 @@
     LPiTunesPlaybackInformation * _iTunesPlaybackInformation;
     LPImage * _image;
     BOOL  _isPreliminary;
+    unsigned int  _loggingID;
     BOOL  _mayReceiveAdditionalMetadata;
     LPCaptionBarPresentationProperties * _mediaBottomCaptionBar;
     LPCaptionBarView * _mediaBottomCaptionBarView;
@@ -61,7 +62,6 @@
 @property (setter=_setDisablePlayback:, nonatomic) BOOL _disablePlayback;
 @property (setter=_setDisableTapGesture:, nonatomic) BOOL _disableTapGesture;
 @property (setter=_setForceFlexibleWidth:, nonatomic) BOOL _forceFlexibleWidth;
-@property (nonatomic, readonly, copy) NSString *_storeIdentifier;
 @property (setter=_setUsesDeferredLayout:, nonatomic) BOOL _usesDeferredLayout;
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
 @property (readonly, copy) NSString *debugDescription;
@@ -78,6 +78,7 @@
 - (BOOL)_allowsTapToLoad;
 - (int)_animationOrigin;
 - (BOOL)_applyCornerRadius;
+- (void)_commonInitWithURL:(id)arg1;
 - (void)_computePresentationPropertiesFromMetadataIfNeeded;
 - (id)_createCaptionBar;
 - (id)_createMediaBottomCaptionBarView;
@@ -112,7 +113,6 @@
 - (void)_setUsesDeferredLayout:(BOOL)arg1;
 - (void)_setupInteraction;
 - (void)_setupView;
-- (id)_storeIdentifier;
 - (void)_tapRecognized:(id)arg1;
 - (BOOL)_usesDeferredLayout;
 - (void)animateBackgroundColor;

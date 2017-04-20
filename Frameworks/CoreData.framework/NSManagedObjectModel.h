@@ -104,6 +104,7 @@
 
 + (id)vs_developerModeModelForVersion:(int)arg1;
 + (id)vs_identityProviderEntityForVersion:(int)arg1;
++ (id)vs_subscriptionModelForVersion:(int)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 

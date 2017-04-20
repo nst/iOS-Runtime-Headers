@@ -15,6 +15,7 @@
 - (void)resetAccountCDPState;
 - (unsigned int)supportedEscapeOfferMask;
 - (void)supportedEscapeOfferMaskCompletion:(id /* block */)arg1;
+- (void)validateRecoveryKey:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)validateSecret:(id)arg1 devices:(id)arg2 type:(unsigned int)arg3 withCompletion:(id /* block */)arg4;
 
 @end

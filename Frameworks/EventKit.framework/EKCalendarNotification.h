@@ -5,6 +5,7 @@
 @interface EKCalendarNotification : NSObject <EKIdentityProtocol> {
     NSURL * _URI;
     BOOL  _alerted;
+    BOOL  _couldBeJunk;
     struct CGColor { } * _dotColor;
     NSString * _emailAddress;
     NSString * _firstName;
@@ -18,6 +19,7 @@
 
 @property (nonatomic, retain) NSURL *URI;
 @property (nonatomic) BOOL alerted;
+@property (nonatomic) BOOL couldBeJunk;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) struct CGColor { }*dotColor;
@@ -38,6 +40,7 @@
 - (void).cxx_destruct;
 - (id)URI;
 - (BOOL)alerted;
+- (BOOL)couldBeJunk;
 - (void)dealloc;
 - (struct CGColor { }*)dotColor;
 - (id)emailAddress;
@@ -49,6 +52,7 @@
 - (BOOL)needsAlert;
 - (id)objectID;
 - (void)setAlerted:(BOOL)arg1;
+- (void)setCouldBeJunk:(BOOL)arg1;
 - (void)setDotColor:(struct CGColor { }*)arg1;
 - (void)setEmailAddress:(id)arg1;
 - (void)setFirstName:(id)arg1;

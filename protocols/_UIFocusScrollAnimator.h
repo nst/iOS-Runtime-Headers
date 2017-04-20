@@ -7,6 +7,7 @@
 
 - (void)cancelPeekAdjustmentForScrollView:(UIScrollView *)arg1 performRollback:(BOOL)arg2;
 - (void)cancelScrollingForScrollView:(UIScrollView *)arg1;
+- (struct CGPoint { float x1; float x2; })currentVelocityForScrollView:(UIScrollView *)arg1;
 - (float)defaultConvergenceRate;
 - (BOOL)isAnimatingScrollView:(UIScrollView *)arg1;
 - (BOOL)requiresExtendingScrollViewVisibleBounds;

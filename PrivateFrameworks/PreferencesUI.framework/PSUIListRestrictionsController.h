@@ -8,6 +8,7 @@
 - (void)colorCells;
 - (void)dealloc;
 - (id)disallowKey;
+- (id)footerSpecifiers;
 - (id)headerKey;
 - (id)init;
 - (void)loadView;

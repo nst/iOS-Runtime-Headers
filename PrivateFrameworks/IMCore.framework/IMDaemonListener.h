@@ -78,6 +78,7 @@
 - (void)activeAccountsChanged:(id)arg1 forService:(id)arg2;
 - (void)addHandler:(id)arg1;
 - (id)allServices;
+- (void)databaseChatSpamUpdated:(id)arg1;
 - (void)databaseFull;
 - (void)databaseNoLongerFull;
 - (void)databaseUpdated:(id)arg1;

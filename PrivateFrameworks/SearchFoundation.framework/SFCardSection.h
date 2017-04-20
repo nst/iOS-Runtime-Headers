@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFCardSection : NSObject <NSSecureCoding> {
+@interface SFCardSection : NSObject <NSSecureCoding, SFProtobufObject> {
     BOOL  _canBeHidden;
     BOOL  _hasBottomPadding;
     BOOL  _hasTopPadding;
@@ -15,14 +15,21 @@
 }
 
 @property (nonatomic) BOOL canBeHidden;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL hasBottomPadding;
 @property (nonatomic) BOOL hasTopPadding;
+@property (readonly) unsigned int hash;
 @property (nonatomic) BOOL hideDivider;
 @property (nonatomic, retain) SFCard *nextCard;
+@property (nonatomic, readonly) PBCodable *protobufMessage;
 @property (nonatomic, copy) NSArray *punchoutOptions;
 @property (nonatomic, copy) NSString *punchoutPickerDismissText;
 @property (nonatomic, copy) NSString *punchoutPickerTitle;
+@property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *type;
+
+// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
 
 + (BOOL)supportsSecureCoding;
 
@@ -47,5 +54,11 @@
 - (void)setPunchoutPickerTitle:(id)arg1;
 - (void)setType:(id)arg1;
 - (id)type;
+
+// Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
+
++ (Class)protobufClass;
+
+- (id)protobufMessage;
 
 @end

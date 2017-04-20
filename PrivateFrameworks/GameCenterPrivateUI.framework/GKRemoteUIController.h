@@ -4,6 +4,7 @@
 
 @interface GKRemoteUIController : NSObject <GKRemoteUIAuxiliaryViewDelegate, RUILoaderDelegate, RUIObjectModelDelegate> {
     NSString * _alias;
+    NSString * _altDSID;
     NSString * _appleID;
     NSDictionary * _authInfo;
     NSString * _authToken;
@@ -31,6 +32,7 @@
 }
 
 @property (nonatomic, retain) NSString *alias;
+@property (nonatomic, retain) NSString *altDSID;
 @property (nonatomic, retain) NSString *appleID;
 @property (nonatomic, retain) NSDictionary *authInfo;
 @property (nonatomic, retain) NSString *authToken;
@@ -67,6 +69,7 @@
 
 - (id)addThemeInfoToAttributes:(id)arg1;
 - (id)alias;
+- (id)altDSID;
 - (id)appleID;
 - (id)authInfo;
 - (id)authToken;
@@ -133,6 +136,7 @@
 - (id)pushToken;
 - (void)replaceObjectModelAtIndex:(unsigned int)arg1 withObjectObjectModel:(id)arg2;
 - (void)setAlias:(id)arg1;
+- (void)setAltDSID:(id)arg1;
 - (void)setAppleID:(id)arg1;
 - (void)setAuthInfo:(id)arg1;
 - (void)setAuthToken:(id)arg1;

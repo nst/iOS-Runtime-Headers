@@ -37,7 +37,6 @@
 - (void).cxx_destruct;
 - (id)_activatedElementInfo;
 - (void)_addRemoteView;
-- (id)_childViewControllerForWhitePointAdaptivityStyle;
 - (void)_connectToService;
 - (void)_forwardNotificationToViewService:(id)arg1;
 - (id)_previewActions;
@@ -60,7 +59,7 @@
 - (id)preferredBarTintColor;
 - (id)preferredControlTintColor;
 - (int)preferredStatusBarStyle;
-- (id)previewActions;
+- (id)previewActionItems;
 - (void)remoteViewController:(id)arg1 didFinishInitialLoad:(BOOL)arg2;
 - (void)remoteViewController:(id)arg1 executeCustomActivityProxyID:(id)arg2;
 - (void)remoteViewController:(id)arg1 fetchHostAppCustomActivitiesForURL:(id)arg2 title:(id)arg3;

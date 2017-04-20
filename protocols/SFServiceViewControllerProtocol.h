@@ -6,6 +6,7 @@
 @required
 
 - (void)didDetectRemoteViewControllerViewIsHidden;
+- (void)didDetectUserInteractionFromHostApp;
 - (void)didFetchHostAppCustomActivities:(NSArray *)arg1;
 - (void)loadURL:(NSURL *)arg1;
 - (void)repostNotificationInViewService:(NSString *)arg1;

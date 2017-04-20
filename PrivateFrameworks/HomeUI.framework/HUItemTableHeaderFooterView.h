@@ -2,20 +2,26 @@
    Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
  */
 
-@interface HUItemTableHeaderFooterView : UITableViewHeaderFooterView {
+@interface HUItemTableHeaderFooterView : UITableViewHeaderFooterView <UITextViewDelegate> {
     NSLayoutConstraint * _bottomSpacingConstraint;
     NSArray * _constraints;
     BOOL  _includeBottomSpacing;
-    UILabel * _messageLabel;
+    UITextView * _messageTextView;
+    <HUTextInteractionHandling> * _textInteractionHandler;
 }
 
 @property (nonatomic, copy) NSAttributedString *attributedMessage;
 @property (nonatomic, retain) NSLayoutConstraint *bottomSpacingConstraint;
 @property (nonatomic, retain) NSArray *constraints;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic) BOOL includeBottomSpacing;
 @property (nonatomic, copy) NSString *message;
-@property (nonatomic, retain) UILabel *messageLabel;
+@property (nonatomic, retain) UITextView *messageTextView;
 @property (nonatomic) unsigned int numberOfLines;
+@property (readonly) Class superclass;
+@property (nonatomic) <HUTextInteractionHandling> *textInteractionHandler;
 
 + (BOOL)requiresConstraintBasedLayout;
 
@@ -27,15 +33,18 @@
 - (BOOL)includeBottomSpacing;
 - (id)initWithReuseIdentifier:(id)arg1;
 - (id)message;
-- (id)messageLabel;
+- (id)messageTextView;
 - (unsigned int)numberOfLines;
 - (void)setAttributedMessage:(id)arg1;
 - (void)setBottomSpacingConstraint:(id)arg1;
 - (void)setConstraints:(id)arg1;
 - (void)setIncludeBottomSpacing:(BOOL)arg1;
 - (void)setMessage:(id)arg1;
-- (void)setMessageLabel:(id)arg1;
+- (void)setMessageTextView:(id)arg1;
 - (void)setNumberOfLines:(unsigned int)arg1;
+- (void)setTextInteractionHandler:(id)arg1;
+- (id)textInteractionHandler;
+- (BOOL)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 interaction:(int)arg4;
 - (void)updateConstraints;
 
 @end

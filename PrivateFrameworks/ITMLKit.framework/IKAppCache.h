@@ -10,6 +10,7 @@
     NSURL * _appJSURL;
     NSURL * _appLocalJSFileURL;
     NSString * _cacheAppJSChecksum;
+    NSArray * _cacheAppJSChecksumHistory;
     NSString * _cacheAppLocalJSChecksum;
     NSURL * _cacheFileURL;
     <IKAppCacheDelegate> * _delegate;
@@ -25,6 +26,7 @@
 @property (nonatomic, readonly) NSURL *appJSURL;
 @property (nonatomic, readonly, copy) NSURL *appLocalJSFileURL;
 @property (nonatomic, readonly) NSString *cacheAppJSChecksum;
+@property (nonatomic, readonly) NSArray *cacheAppJSChecksumHistory;
 @property (nonatomic, readonly) NSString *cacheAppLocalJSChecksum;
 @property (nonatomic, readonly, copy) NSURL *cacheFileURL;
 @property (readonly, copy) NSString *debugDescription;
@@ -40,18 +42,20 @@
 + (id)_appContextDelegateSelectors;
 
 - (void).cxx_destruct;
+- (id)_cacheFileURLForAppJS:(id)arg1 checksum:(id)arg2 error:(id*)arg3;
 - (void)_checkManifest;
 - (void)_cleanupValidationContext;
 - (void)_loadManifest;
 - (void)_performAsync:(id /* block */)arg1;
 - (void)_storeManifest;
-- (id)_writeCacheAppJS:(id)arg1 checksum:(id)arg2 error:(id*)arg3;
+- (id)_validatedChecksumForScript:(id)arg1 error:(id*)arg2;
 - (id)app;
 - (void)appContext:(id)arg1 didFailWithError:(id)arg2;
 - (void)appContext:(id)arg1 didStartWithOptions:(id)arg2 validatedJSString:(id)arg3;
 - (void)appContext:(id)arg1 didStopWithOptions:(id)arg2;
 - (void)appContext:(id)arg1 evaluateAppJavaScriptInContext:(id)arg2;
 - (void)appContext:(id)arg1 needsReloadWithUrgency:(unsigned int)arg2 options:(id)arg3;
+- (BOOL)appContext:(id)arg1 shouldStartWithScript:(id)arg2 scriptURL:(id)arg3 loadedFromFallback:(BOOL)arg4;
 - (BOOL)appContext:(id)arg1 validateDOMDocument:(id)arg2 inContext:(id)arg3 error:(id*)arg4;
 - (id)appContextDelegate;
 - (id)appJSChecksum;
@@ -59,8 +63,10 @@
 - (void)appJSURLWithCompletion:(id /* block */)arg1;
 - (id)appLocalJSFileURL;
 - (id)cacheAppJSChecksum;
+- (id)cacheAppJSChecksumHistory;
 - (id)cacheAppLocalJSChecksum;
 - (id)cacheFileURL;
+- (void)cleanBlobStorageWithCompletion:(id /* block */)arg1;
 - (id)delegate;
 - (id)deviceConfigForContext:(id)arg1;
 - (id)initWithApplication:(id)arg1;

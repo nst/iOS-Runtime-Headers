@@ -13,6 +13,7 @@
 - (void)clearTrafficIncidentBulletinWithAlertID:(NSData *)arg1;
 - (void)clearTrafficIncidentsBulletin;
 - (void)clearTransitAlightAlertBulletin;
+- (void)eraseRAPData;
 - (void)fetchCurrentAnnouncement:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, GEOAnnouncement *, void*
 - (void)fetchDevicePushToken:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSData *, void*
 - (void)fetchProblemStatus;

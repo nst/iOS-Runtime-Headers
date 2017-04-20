@@ -11,6 +11,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) unsigned int size;
 @property (readonly) Class superclass;
+@property (readonly) struct { unsigned long long x1[2]; } watermark;
 
 - (void)acceptVisitor:(id)arg1;
 - (unsigned int)alignment;

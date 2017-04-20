@@ -9,11 +9,13 @@
     }  _implFlags;
     IKViewElement * _templateElement;
     UIWindow * _window;
+    _TVWindowSizeAdaptor * _windowSizeAdaptor;
 }
 
 @property (nonatomic) <TVMediaQueryEvaluatorDelegate> *delegate;
 @property (nonatomic, readonly, retain) IKViewElement *templateElement;
 @property (nonatomic, readonly, retain) UIWindow *window;
+@property (nonatomic, readonly, retain) _TVWindowSizeAdaptor *windowSizeAdaptor;
 
 + (id)_mobileGestaltStringForKey:(struct __CFString { }*)arg1;
 + (id)_productType;
@@ -30,5 +32,6 @@
 - (void)setDelegate:(id)arg1;
 - (id)templateElement;
 - (id)window;
+- (id)windowSizeAdaptor;
 
 @end

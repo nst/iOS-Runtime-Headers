@@ -51,7 +51,6 @@
 - (id)activityDataNotificationManager;
 - (void)addFriendsListObserver:(id)arg1;
 - (void)clearFriendListWithCompletion:(id /* block */)arg1;
-- (void)cloudKitAccountStatusWithCompletion:(id /* block */)arg1;
 - (id)cloudKitManager;
 - (id)contactsManager;
 - (void)daemonReady:(id)arg1;
@@ -61,6 +60,7 @@
 - (void)fetchAllDataIfTimeSinceLastFetchIsGreaterThan:(unsigned int)arg1 completion:(id /* block */)arg2;
 - (void)fetchAllDataWithCompletion:(id /* block */)arg1;
 - (void)fetchAreMultipleDevicesSharingDataForSnapshotIndex:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)fetchCloudKitAccountStatusWithCompletion:(id /* block */)arg1;
 - (id)friendListManager;
 - (id)friends;
 - (id)gatewayManager;

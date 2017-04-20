@@ -15,13 +15,13 @@
 + (id)expectedUTIsForMechanism:(int)arg1;
 + (int)getInteractionMechanismForContentUTI:(id)arg1 typeTree:(id)arg2;
 + (id)interactionForSearchableItem:(id)arg1;
-+ (id)interactionRequestedIntentClasses;
 + (id)interactionUUIDForSearchableItemWithUID:(id)arg1 bundleID:(id)arg2;
 + (BOOL)isLocationBasedItem:(id)arg1;
 + (id)knowledgeEventsForSearchableItem:(id)arg1 userAction:(id)arg2;
 + (id)mechanismUtiMap;
 + (id)policies;
 + (id)querySpotlightItemsWithStartDate:(id)arg1 endDate:(id)arg2 getMail:(BOOL)arg3 getMessages:(BOOL)arg4;
++ (id)requestedIntentClasses;
 + (BOOL)shouldFilterEmailAddress:(id)arg1;
 + (BOOL)uncachedUtType:(id)arg1 conformsTo:(id)arg2;
 + (BOOL)utType:(id)arg1 conformsTo:(id)arg2;

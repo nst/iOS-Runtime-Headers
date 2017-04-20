@@ -56,6 +56,7 @@
 - (id)_readFromDiskPath:(id)arg1;
 - (void)_setNextEK:(id)arg1;
 - (void)_synchronizeWithCacheAndNotifySelf:(BOOL)arg1 others:(BOOL)arg2;
+- (void)_synchronizeWithCacheAndNotifySelf:(BOOL)arg1 others:(BOOL)arg2 ignoreValidation:(BOOL)arg3;
 - (void)_updateWithResponse:(id)arg1 expirationDate:(id)arg2 environmentHash:(unsigned int)arg3;
 - (BOOL)_writeToDisk:(id)arg1;
 - (void)applicationConfigRequestOperationDidFail:(id)arg1;

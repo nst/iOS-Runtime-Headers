@@ -91,6 +91,7 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForStyleKey:(id)arg1;
 - (id)_gradientFromString:(id)arg1;
 - (id)_newColorFromString:(id)arg1;
+- (id)_styleNameForAlias:(id)arg1;
 - (id)backgroundColor;
 - (id)badgeTreatment;
 - (id)borderColor;

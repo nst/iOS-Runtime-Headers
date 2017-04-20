@@ -56,6 +56,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)iconDataForStyle:(id)arg1 width:(int)arg2 height:(int)arg3 options:(unsigned int)arg4;
 - (id)iconDataForVariant:(int)arg1;
+- (id)iconDataForVariant:(int)arg1 withOptions:(int)arg2;
 - (id)iconStyleDomain;
 - (id)iconsDictionary;
 - (id)initWithCoder:(id)arg1;

@@ -3,7 +3,10 @@
  */
 
 @interface NTPBSearchResultSelect : PBCodable <NSCopying> {
+    NSString * _campaignId;
+    NSString * _campaignType;
     NSMutableArray * _channelResultFeedIds;
+    NSString * _creativeId;
     BOOL  _didSelectResult;
     struct { 
         unsigned int searchExecutionMethod : 1; 
@@ -38,8 +41,14 @@
     int  _totalResultsInSelectedSection;
 }
 
+@property (nonatomic, retain) NSString *campaignId;
+@property (nonatomic, retain) NSString *campaignType;
 @property (nonatomic, retain) NSMutableArray *channelResultFeedIds;
+@property (nonatomic, retain) NSString *creativeId;
 @property (nonatomic) BOOL didSelectResult;
+@property (nonatomic, readonly) BOOL hasCampaignId;
+@property (nonatomic, readonly) BOOL hasCampaignType;
+@property (nonatomic, readonly) BOOL hasCreativeId;
 @property (nonatomic) BOOL hasDidSelectResult;
 @property (nonatomic) BOOL hasSearchExecutionMethod;
 @property (nonatomic) BOOL hasSearchLocation;
@@ -87,6 +96,8 @@
 - (void)addNonSelectedResultFeedId:(id)arg1;
 - (void)addSearchResults:(id)arg1;
 - (void)addTopicResultFeedIds:(id)arg1;
+- (id)campaignId;
+- (id)campaignType;
 - (id)channelResultFeedIds;
 - (id)channelResultFeedIdsAtIndex:(unsigned int)arg1;
 - (unsigned int)channelResultFeedIdsCount;
@@ -95,9 +106,13 @@
 - (void)clearSearchResults;
 - (void)clearTopicResultFeedIds;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)creativeId;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)didSelectResult;
+- (BOOL)hasCampaignId;
+- (BOOL)hasCampaignType;
+- (BOOL)hasCreativeId;
 - (BOOL)hasDidSelectResult;
 - (BOOL)hasSearchExecutionMethod;
 - (BOOL)hasSearchLocation;
@@ -137,7 +152,10 @@
 - (BOOL)selectedResultShowMore;
 - (id)selectedResultString;
 - (int)selectedResultType;
+- (void)setCampaignId:(id)arg1;
+- (void)setCampaignType:(id)arg1;
 - (void)setChannelResultFeedIds:(id)arg1;
+- (void)setCreativeId:(id)arg1;
 - (void)setDidSelectResult:(BOOL)arg1;
 - (void)setHasDidSelectResult:(BOOL)arg1;
 - (void)setHasSearchExecutionMethod:(BOOL)arg1;

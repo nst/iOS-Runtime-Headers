@@ -17,6 +17,7 @@
 @property (nonatomic, readonly) unsigned long long persistentID;
 @property (nonatomic, readonly) float playbackRate;
 @property (nonatomic, readonly) NSString *radioStationIdentifier;
+@property (nonatomic, readonly) NSString *radioStationName;
 @property (nonatomic, readonly) NSString *title;
 
 - (void).cxx_destruct;
@@ -32,6 +33,7 @@
 - (unsigned long long)persistentID;
 - (float)playbackRate;
 - (id)radioStationIdentifier;
+- (id)radioStationName;
 - (id)title;
 
 @end

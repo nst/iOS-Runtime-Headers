@@ -8,6 +8,7 @@
     MPAVBatteryLevel * _batteryLevel;
     BOOL  _carplayRoute;
     int  _displayRouteType;
+    id  _notificationToken;
     int  _pickableRouteType;
     BOOL  _picked;
     BOOL  _pickedOnPairedDevice;

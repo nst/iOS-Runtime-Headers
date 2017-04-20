@@ -7,6 +7,8 @@
 
 - (NSString *)articleID;
 - (unsigned int)articleLikingStatus;
+- (NSDate *)firstSeenAt;
+- (NSDate *)firstSeenAtOfMaxVersionSeen;
 - (BOOL)hasArticleBeenConsumed;
 - (BOOL)hasArticleBeenMarkedOffensive;
 - (BOOL)hasArticleBeenRead;
@@ -14,13 +16,17 @@
 - (NSString *)identifier;
 - (NSDate *)lastVisitedAt;
 - (unsigned long long)maxVersionRead;
+- (unsigned long long)maxVersionSeen;
 - (void)setArticleID:(NSString *)arg1;
 - (void)setArticleLikingStatus:(unsigned int)arg1;
+- (void)setFirstSeenAt:(NSDate *)arg1;
+- (void)setFirstSeenAtOfMaxVersionSeen:(NSDate *)arg1;
 - (void)setHasArticleBeenConsumed:(BOOL)arg1;
 - (void)setHasArticleBeenMarkedOffensive:(BOOL)arg1;
 - (void)setHasArticleBeenRead:(BOOL)arg1;
 - (void)setHasArticleBeenSeen:(BOOL)arg1;
 - (void)setLastVisitedAt:(NSDate *)arg1;
 - (void)setMaxVersionRead:(unsigned long long)arg1;
+- (void)setMaxVersionSeen:(unsigned long long)arg1;
 
 @end

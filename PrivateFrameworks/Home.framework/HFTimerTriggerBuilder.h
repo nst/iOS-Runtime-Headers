@@ -21,7 +21,7 @@
 - (id)commitCreateTrigger;
 - (id)commitEditTrigger;
 - (id)executionTime;
-- (id)initWithExistingObject:(id)arg1 inHome:(id)arg2;
+- (id)initWithExistingObject:(id)arg1 inHome:(id)arg2 context:(id)arg3;
 - (id)naturalLanguageNameOfType:(unsigned int)arg1;
 - (id)recurrences;
 - (void)setExecutionTime:(id)arg1;

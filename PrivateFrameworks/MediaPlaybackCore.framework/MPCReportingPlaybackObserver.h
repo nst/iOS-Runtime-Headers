@@ -13,7 +13,6 @@
     double  _lastPlayEventEndTimeForCurrentItem;
     double  _lastPlayEventTimeStamp;
     BOOL  _offline;
-    NSString * _playbackSessionID;
     MPAVController * _player;
     MPCReportingController * _reportingController;
     BOOL  _shouldReportAsPlaying;
@@ -31,7 +30,6 @@
 
 - (void).cxx_destruct;
 - (double)_itemEndTimeForItem:(id)arg1 withProposedEndTime:(double)arg2;
-- (void)_itemNewAccessLogEntryNotification:(id)arg1;
 - (void)_itemReportingJingleTimedMetadataDidChangeNotification:(id)arg1;
 - (double)_itemStartTimeForItem:(id)arg1;
 - (void)_playerDidReloadWithPlaybackContextNotification:(id)arg1;
@@ -43,7 +41,6 @@
 - (void)_playerWillSetCurrentTimeNotification:(id)arg1;
 - (void)_reportPlaybackEndedForTimeoutWithItem:(id)arg1;
 - (void)_setLastPlayEventEndTimeForCurrentItem:(double)arg1;
-- (void)_updatePlaybackSessionID;
 - (void)dealloc;
 - (void)didHitPlaybackTimeoutEndingPlayback:(BOOL)arg1 withCurrentItem:(id)arg2;
 - (void)didTransitionItemForBan:(id)arg1;

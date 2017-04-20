@@ -17,10 +17,14 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 
 // Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
 
++ (Class)protobufClass;
+
 - (id)featureVectorsForClient:(id)arg1;
+- (id)protobufMessage;
 
 @end

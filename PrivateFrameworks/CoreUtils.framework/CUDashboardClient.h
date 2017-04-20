@@ -42,7 +42,7 @@
     unsigned char  _udid;
 }
 
-@property (nonatomic, retain) NSString *server;
+@property (nonatomic, copy) NSString *server;
 
 - (void).cxx_destruct;
 - (long)_activate;

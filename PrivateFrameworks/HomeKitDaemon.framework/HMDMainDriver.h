@@ -34,6 +34,7 @@
 - (id)identityRegistry;
 - (id)init;
 - (void)initBackgroundTaskAgent;
+- (void)localeChanged;
 - (void)logError:(id)arg1 component:(id)arg2;
 - (id)messageDispatcher;
 - (id)msgFilterChain;

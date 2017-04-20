@@ -8,6 +8,7 @@
     PKPaymentMethod * _paymentMethod;
     NSString * _paymentNetwork;
     NSURL * _redeemURL;
+    NSString * _retryNonce;
     NSString * _transactionIdentifier;
 }
 
@@ -16,6 +17,7 @@
 @property (nonatomic, retain) PKPaymentMethod *paymentMethod;
 @property (nonatomic, copy) NSString *paymentNetwork;
 @property (nonatomic, retain) NSURL *redeemURL;
+@property (nonatomic, copy) NSString *retryNonce;
 @property (nonatomic, copy) NSString *transactionIdentifier;
 
 + (id)paymentTokenWithProtobuf:(id)arg1;
@@ -34,11 +36,13 @@
 - (id)paymentNetwork;
 - (id)protobuf;
 - (id)redeemURL;
+- (id)retryNonce;
 - (void)setPaymentData:(id)arg1;
 - (void)setPaymentInstrumentName:(id)arg1;
 - (void)setPaymentMethod:(id)arg1;
 - (void)setPaymentNetwork:(id)arg1;
 - (void)setRedeemURL:(id)arg1;
+- (void)setRetryNonce:(id)arg1;
 - (void)setTransactionIdentifier:(id)arg1;
 - (id)transactionIdentifier;
 

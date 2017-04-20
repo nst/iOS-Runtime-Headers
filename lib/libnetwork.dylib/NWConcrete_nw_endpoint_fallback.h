@@ -3,15 +3,16 @@
  */
 
 @interface NWConcrete_nw_endpoint_fallback : NSObject <OS_nw_endpoint_fallback> {
-    bool  fallback_based_on_interface_type;
+    unsigned int  fallback_based_on_interface_type;
     NWConcrete_nw_endpoint_handler * fallback_child;
     NSObject<OS_nw_interface> * fallback_interface;
     void * fallback_timer;
+    unsigned int  no_fallback_timer;
     NWConcrete_nw_endpoint_handler * primary_child;
     NSObject<OS_nw_interface> * primary_interface;
     int  result;
-    bool  started_fallback;
-    bool  weak_fallback;
+    unsigned int  started_fallback;
+    unsigned int  weak_fallback;
 }
 
 @property (readonly, copy) NSString *debugDescription;

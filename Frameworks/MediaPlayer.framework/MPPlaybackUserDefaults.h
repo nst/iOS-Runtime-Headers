@@ -24,6 +24,8 @@
 @property (nonatomic, readonly) int musicEQPreset;
 @property (nonatomic) int musicRepeatType;
 @property (nonatomic) int musicShuffleType;
+@property (nonatomic, readonly) unsigned int preferredVideosAssetQualityOnCellular;
+@property (nonatomic, readonly) unsigned int preferredVideosAssetQualityOnWifi;
 @property (nonatomic, readonly) BOOL soundCheckEnabled;
 
 + (id)standardUserDefaults;
@@ -42,6 +44,8 @@
 - (int)musicEQPreset;
 - (int)musicRepeatType;
 - (int)musicShuffleType;
+- (unsigned int)preferredVideosAssetQualityOnCellular;
+- (unsigned int)preferredVideosAssetQualityOnWifi;
 - (void)setMusicRepeatType:(int)arg1;
 - (void)setMusicShuffleType:(int)arg1;
 - (BOOL)soundCheckEnabled;

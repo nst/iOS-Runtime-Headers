@@ -3,8 +3,10 @@
  */
 
 @interface _TVStackTemplateController : _TVStackCommonTemplateController {
+    UIView * _backdropTintView;
+    UIViewController * _backdropTintViewController;
     NSIndexPath * _lastFocusedIndexPath;
-    BOOL  _needsMoreContent;
+    _TVNeedsMoreContentEvaluator * _needsMoreContentEvaluator;
     NSArray * _stackRows;
     NSArray * _stackSections;
     NSArray * _viewControllers;
@@ -13,8 +15,11 @@
 - (void).cxx_destruct;
 - (void)_adjustedContentOffsetForRowIndex:(int)arg1 targetContentOffset:(struct CGPoint { float x1; float x2; }*)arg2;
 - (void)_buildStackSections;
-- (void)_evaluateNeedsMoreContent;
+- (void)_configureBackgroundTintView;
+- (struct CGSize { float x1; float x2; })_maxContentSize;
 - (float)_maxViewWidth;
+- (void)_updateBackgroundTintView;
+- (void)_updateBackgroundTintViewEffects;
 - (void)_updateFirstItemRowIndexes;
 - (BOOL)_updateWithCollectionListElement:(id)arg1 autoHighlightIndexPath:(id*)arg2;
 - (id)_viewControllerWithElement:(id)arg1 existingController:(id)arg2;
@@ -29,9 +34,11 @@
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)indexPathForPreferredFocusedViewInCollectionView:(id)arg1;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
+- (void)scrollViewDidScroll:(id)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (int)updateCollectionViewControllers;
 - (id)viewControllers;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

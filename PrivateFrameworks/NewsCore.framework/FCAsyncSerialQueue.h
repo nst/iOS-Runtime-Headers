@@ -14,11 +14,12 @@
 - (void)enqueueBlock:(id /* block */)arg1;
 - (void)enqueueBlockForMainThread:(id /* block */)arg1;
 - (void)enqueueOperation:(id)arg1;
-- (void)enqueueWithQualityOfService:(int)arg1 block:(id /* block */)arg2;
 - (id)init;
+- (id)initWithQualityOfService:(int)arg1;
 - (id)serialOperationQueue;
 - (void)setSerialOperationQueue:(id)arg1;
 - (void)setSuspended:(BOOL)arg1;
 - (BOOL)suspended;
+- (void)withQualityOfService:(int)arg1 enqueueBlockForMainThread:(id /* block */)arg2;
 
 @end

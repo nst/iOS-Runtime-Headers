@@ -3,12 +3,13 @@
  */
 
 @interface CAMetalLayer : CALayer {
-    struct _CAMetalLayerPrivate { struct Atomic { struct { int x_1_2_1; } x_1_1_1; } x1; struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; struct SpinLock { struct { int x_1_2_1; } x_3_1_1; } x3; struct _CAImageQueue {} *x4; id x5; struct List<_CAMetalDrawablePrivate *> {} x6; unsigned int x7; struct _CAMetalDrawablePrivate {} *x8; id x9; struct CGSize { float x_10_1_1; float x_10_1_2; } x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; struct Atomic { struct { int x_1_2_1; } x_15_1_1; } x15; id x16; /* Warning: Unrecognized filer type: 't' using 'void*' */ void*x17; out void*x18; int x19; BOOL x20; void*x21; struct { int x_22_1_1; } x22; } * _priv;
+    struct _CAMetalLayerPrivate { struct Atomic { struct { int x_1_2_1; } x_1_1_1; } x1; struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; struct SpinLock { struct { int x_1_2_1; } x_3_1_1; } x3; struct _CAImageQueue {} *x4; id x5; struct List<_CAMetalDrawablePrivate *> {} *x6; unsigned int x7; struct _CAMetalDrawablePrivate {} *x8; id x9; struct CGSize { float x_10_1_1; float x_10_1_2; } x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; struct Atomic { struct { int x_1_2_1; } x_15_1_1; } x15; id x16; /* Warning: Unrecognized filer type: 't' using 'void*' */ void*x17; out void*x18; int x19; BOOL x20; void*x21; struct { int x_22_1_1; } x22; } * _priv;
 }
 
 @property (retain) <MTLDevice> *device;
 @property struct CGSize { float x1; float x2; } drawableSize;
 @property BOOL framebufferOnly;
+@property double inputTime;
 @property BOOL lowLatency;
 @property unsigned long maximumDrawableCount;
 @property unsigned int pixelFormat;
@@ -28,6 +29,7 @@
 - (struct CGSize { float x1; float x2; })drawableSize;
 - (BOOL)framebufferOnly;
 - (id)init;
+- (double)inputTime;
 - (BOOL)isDrawableAvailable;
 - (void)layerDidBecomeVisible:(BOOL)arg1;
 - (BOOL)lowLatency;
@@ -40,6 +42,7 @@
 - (void)setDevice:(id)arg1;
 - (void)setDrawableSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setFramebufferOnly:(BOOL)arg1;
+- (void)setInputTime:(double)arg1;
 - (void)setLowLatency:(BOOL)arg1;
 - (void)setMaximumDrawableCount:(unsigned long)arg1;
 - (void)setPixelFormat:(unsigned int)arg1;

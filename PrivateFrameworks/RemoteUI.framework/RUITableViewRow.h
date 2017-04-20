@@ -14,6 +14,8 @@
     int  _datePickerMode;
     <RUITableViewRowDelegate> * _delegate;
     NSDictionary * _deleteAction;
+    RUIDetailButtonElement * _detailButton;
+    BOOL  _focused;
     float  _height;
     RUIPage * _linkedPage;
     UIView * _pickerView;
@@ -40,8 +42,11 @@
 @property (nonatomic) <RUITableViewRowDelegate> *delegate;
 @property (nonatomic, retain) NSDictionary *deleteAction;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) RUIDetailButtonElement *detailButton;
+@property (getter=isFocused, nonatomic) BOOL focused;
 @property (readonly) unsigned int hash;
 @property (nonatomic) float height;
+@property (nonatomic, readonly) BOOL indentWhileEditing;
 @property (nonatomic) RUIPage *linkedPage;
 @property (nonatomic, retain) UIView *pickerView;
 @property (nonatomic) BOOL rowInvalid;
@@ -64,6 +69,7 @@
 - (id)_datePickerFormatter;
 - (void)_switchFlipped:(id)arg1;
 - (void)_updateContentForDisabledState;
+- (void)_updateTextColors;
 - (void)accessoryImageLoaded;
 - (int)alignment;
 - (void)clearCachedHeight;
@@ -79,8 +85,11 @@
 - (id)delegate;
 - (id)deleteAction;
 - (id)description;
+- (id)detailButton;
 - (void)detailLabelActivatedLinkFromCell:(id)arg1 completion:(id /* block */)arg2;
 - (float)height;
+- (BOOL)indentWhileEditing;
+- (BOOL)isFocused;
 - (BOOL)isSelected;
 - (BOOL)isShowingProgressIndicator;
 - (id)linkedPage;
@@ -106,10 +115,13 @@
 - (void)setDateMin:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDeleteAction:(id)arg1;
+- (void)setDetailButton:(id)arg1;
 - (void)setEditableTextFieldValue:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
+- (void)setFocused:(BOOL)arg1;
 - (void)setHeight:(float)arg1;
 - (void)setImage:(id)arg1;
+- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setLinkedPage:(id)arg1;
 - (void)setPickerView:(id)arg1;
 - (void)setRowInvalid:(BOOL)arg1;
@@ -119,6 +131,7 @@
 - (void)setShowingProgressIndicator:(BOOL)arg1;
 - (void)setTextFieldChangeObserver:(id)arg1;
 - (void)setValueFromString:(id)arg1;
+- (void)setValueFromString:(id)arg1 notify:(BOOL)arg2;
 - (id)sourceURL;
 - (BOOL)supportsAutomaticSelection;
 - (void)switchCanceled;

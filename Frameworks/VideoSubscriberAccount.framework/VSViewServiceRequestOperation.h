@@ -6,7 +6,7 @@
     <VSViewServiceRequestOperationDelegate> * _delegate;
     BOOL  _isPresentingViewController;
     NSUUID * _requestID;
-    VSFailable * _result;
+    VSOptional * _result;
     VSViewServiceHostViewController * _viewServiceHostViewController;
     VSViewServiceRequest * _viewServiceRequest;
 }
@@ -16,7 +16,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSUUID *requestID;
-@property (nonatomic, retain) VSFailable *result;
+@property (nonatomic, retain) VSOptional *result;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) VSViewServiceHostViewController *viewServiceHostViewController;
 @property (nonatomic, readonly, copy) VSViewServiceRequest *viewServiceRequest;

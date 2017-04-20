@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@interface FBSceneManager : NSObject <FBSceneDelegate, FBSceneLayerManagerObserver, FBUISceneManager> {
+@interface FBSceneManager : NSObject <FBDisplayManagerObserver, FBSceneDelegate, FBSceneLayerManagerObserver, FBUISceneManager> {
     FBSSceneClientSettingsDiffInspector * _clientSettingsDiffInspector;
     FBSceneManagerObserver * _delegate;
     NSMutableDictionary * _displayToOcclusionsStack;
@@ -61,6 +61,8 @@
 - (id)description;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (void)destroyScene:(id)arg1 withTransitionContext:(id)arg2;
+- (void)displayManager:(id)arg1 didConnectDisplay:(id)arg2;
+- (void)displayManager:(id)arg1 didDisconnectDisplay:(id)arg2;
 - (void)enumerateScenesWithBlock:(id /* block */)arg1;
 - (id)init;
 - (void)invalidateSceneWorkspace:(id)arg1;

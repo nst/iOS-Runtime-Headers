@@ -30,6 +30,7 @@
 + (id)newEllipticalConeWithHeight:(void *)arg1 radii:(void *)arg2 radialSegments:(void *)arg3 verticalSegments:(void *)arg4 geometryType:(void *)arg5 inwardNormals:(void *)arg6 allocator:(void *)arg7; // needs 7 arg types, found 6: float, unsigned int, unsigned int, int, BOOL, id
 + (id)newIcosahedronWithRadius:(float)arg1 inwardNormals:(BOOL)arg2 allocator:(id)arg3;
 + (id)newIcosahedronWithRadius:(float)arg1 inwardNormals:(BOOL)arg2 geometryType:(int)arg3 allocator:(id)arg4;
++ (id)newMeshWithPrimitive:(void *)arg1 segments:(void *)arg2 inwardNormals:(void *)arg3 geometryType:(void *)arg4 allocator:(void *)arg5; // needs 5 arg types, found 4: id, BOOL, int, id
 + (id)newPlaneWithDimensions:(void *)arg1 segments:(void *)arg2 geometryType:(void *)arg3 allocator:(void *)arg4; // needs 4 arg types, found 2: int, id
 + (id)newSubdividedMesh:(id)arg1 submeshIndex:(unsigned int)arg2 subdivisionLevels:(unsigned int)arg3;
 
@@ -46,6 +47,7 @@
 - (void)addTangentBasisForTextureCoordinateAttributeNamed:(id)arg1 normalAttributeNamed:(id)arg2 tangentAttributeNamed:(id)arg3;
 - (void)addTangentBasisForTextureCoordinateAttributeNamed:(id)arg1 tangentAttributeNamed:(id)arg2 bitangentAttributeNamed:(id)arg3;
 - (void)addUnwrappedTextureCoordinatesForAttributeNamed:(id)arg1;
+- (int)addVertexBuffer:(id)arg1;
 - (id)allocator;
 - (struct { })boundingBox;
 - (id)controlNodeForINdex:(unsigned int)arg1;
@@ -61,12 +63,13 @@
 - (BOOL)generateLightMapTextureWithTextureSize:(void *)arg1 lightsToConsider:(void *)arg2 objectsToConsider:(void *)arg3 vertexAttributeNamed:(void *)arg4 materialPropertyNamed:(void *)arg5; // needs 5 arg types, found 4: id, id, id, id
 - (BOOL)generateLightMapVertexColorsWithLightsToConsider:(id)arg1 objectsToConsider:(id)arg2 vertexAttributeNamed:(id)arg3;
 - (id)initBoxWithExtent:(void *)arg1 segments:(void *)arg2 inwardNormals:(void *)arg3 geometryType:(void *)arg4 allocator:(void *)arg5; // needs 5 arg types, found 3: BOOL, int, id
-- (id)initCapsuleWithExtent:(void *)arg1 cylinderSegments:(void *)arg2 hemisphereSegments:(void *)arg3 inwardNormals:(void *)arg4 geometryType:(void *)arg5 allocator:(void *)arg6; // needs 6 arg types, found 4: unsigned int, BOOL, int, id
+- (id)initCapsuleWithExtent:(void *)arg1 cylinderSegments:(void *)arg2 hemisphereSegments:(void *)arg3 inwardNormals:(void *)arg4 geometryType:(void *)arg5 allocator:(void *)arg6; // needs 6 arg types, found 4: int, BOOL, int, id
 - (id)initConeWithExtent:(void *)arg1 segments:(void *)arg2 inwardNormals:(void *)arg3 cap:(void *)arg4 geometryType:(void *)arg5 allocator:(void *)arg6; // needs 6 arg types, found 4: BOOL, BOOL, int, id
 - (id)initCylinderWithExtent:(void *)arg1 segments:(void *)arg2 inwardNormals:(void *)arg3 topCap:(void *)arg4 bottomCap:(void *)arg5 geometryType:(void *)arg6 allocator:(void *)arg7; // needs 7 arg types, found 5: BOOL, BOOL, BOOL, int, id
 - (id)initHemisphereWithExtent:(void *)arg1 segments:(void *)arg2 inwardNormals:(void *)arg3 cap:(void *)arg4 geometryType:(void *)arg5 allocator:(void *)arg6; // needs 6 arg types, found 4: BOOL, BOOL, int, id
 - (id)initIcosahedronWithExtent:(void *)arg1 inwardNormals:(void *)arg2 geometryType:(void *)arg3 allocator:(void *)arg4; // needs 4 arg types, found 3: BOOL, int, id
 - (id)initMeshBySubdividingMesh:(id)arg1 submeshIndex:(int)arg2 subdivisionLevels:(unsigned int)arg3 allocator:(id)arg4;
+- (id)initMeshWithPrimitive:(void *)arg1 segments:(void *)arg2 inwardNormals:(void *)arg3 geometryType:(void *)arg4 allocator:(void *)arg5; // needs 5 arg types, found 4: id, BOOL, int, id
 - (id)initPlaneWithExtent:(void *)arg1 segments:(void *)arg2 geometryType:(void *)arg3 allocator:(void *)arg4; // needs 4 arg types, found 2: int, id
 - (id)initSphereWithExtent:(void *)arg1 segments:(void *)arg2 inwardNormals:(void *)arg3 geometryType:(void *)arg4 allocator:(void *)arg5; // needs 5 arg types, found 3: BOOL, int, id
 - (id)initWithBufferAllocator:(id)arg1;

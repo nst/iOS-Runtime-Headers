@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSString *connectionType;
 @property (nonatomic) double domainLookupEndTime;
 @property (nonatomic) double domainLookupStartTime;
+@property (nonatomic, retain) NSString *edgeNodeCacheStatus;
 @property (nonatomic) double fetchStartTime;
 @property (nonatomic) unsigned int redirectCount;
 @property (nonatomic) double redirectEndTime;
@@ -54,6 +55,7 @@
 - (id)description;
 - (double)domainLookupEndTime;
 - (double)domainLookupStartTime;
+- (id)edgeNodeCacheStatus;
 - (double)fetchStartTime;
 - (id)init;
 - (unsigned int)redirectCount;
@@ -78,6 +80,7 @@
 - (void)setDNSServers:(id)arg1;
 - (void)setDomainLookupEndTime:(double)arg1;
 - (void)setDomainLookupStartTime:(double)arg1;
+- (void)setEdgeNodeCacheStatus:(id)arg1;
 - (void)setFetchStartTime:(double)arg1;
 - (void)setRedirectCount:(unsigned int)arg1;
 - (void)setRedirectEndTime:(double)arg1;

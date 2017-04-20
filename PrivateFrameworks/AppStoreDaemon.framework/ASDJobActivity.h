@@ -18,6 +18,7 @@
     NSNumber * _divertedTrackingID;
     NSNumber * _enableExtensions;
     BOOL  _explicitContent;
+    NSNumber * _externalOrderKey;
     NSString * _genre;
     NSNumber * _genreID;
     BOOL  _hasMessagesExtension;
@@ -27,6 +28,7 @@
     BOOL  _isAutomatic;
     BOOL  _isDeviceBasedVPP;
     BOOL  _isFromStore;
+    BOOL  _isGameCenterEnabled;
     BOOL  _isInQueue;
     BOOL  _isPendingApproval;
     BOOL  _isPurchasedRedownload;
@@ -74,6 +76,7 @@
 @property (nonatomic, copy) NSNumber *divertedTrackingID;
 @property (nonatomic, copy) NSNumber *enableExtensions;
 @property (nonatomic) BOOL explicitContent;
+@property (nonatomic, copy) NSNumber *externalOrderKey;
 @property (nonatomic, copy) NSString *genre;
 @property (nonatomic, copy) NSNumber *genreID;
 @property (nonatomic) BOOL hasMessagesExtension;
@@ -83,6 +86,7 @@
 @property (nonatomic) BOOL isAutomatic;
 @property (nonatomic) BOOL isDeviceBasedVPP;
 @property (nonatomic) BOOL isFromStore;
+@property (nonatomic) BOOL isGameCenterEnabled;
 @property (nonatomic) BOOL isInQueue;
 @property (nonatomic) BOOL isPendingApproval;
 @property (nonatomic) BOOL isPurchasedRedownload;
@@ -134,6 +138,7 @@
 - (id)enableExtensions;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)explicitContent;
+- (id)externalOrderKey;
 - (id)genre;
 - (id)genreID;
 - (BOOL)hasMessagesExtension;
@@ -144,6 +149,7 @@
 - (BOOL)isAutomatic;
 - (BOOL)isDeviceBasedVPP;
 - (BOOL)isFromStore;
+- (BOOL)isGameCenterEnabled;
 - (BOOL)isInQueue;
 - (BOOL)isPendingApproval;
 - (BOOL)isPurchasedRedownload;
@@ -177,6 +183,7 @@
 - (void)setDivertedTrackingID:(id)arg1;
 - (void)setEnableExtensions:(id)arg1;
 - (void)setExplicitContent:(BOOL)arg1;
+- (void)setExternalOrderKey:(id)arg1;
 - (void)setGenre:(id)arg1;
 - (void)setGenreID:(id)arg1;
 - (void)setHasMessagesExtension:(BOOL)arg1;
@@ -186,6 +193,7 @@
 - (void)setIsAutomatic:(BOOL)arg1;
 - (void)setIsDeviceBasedVPP:(BOOL)arg1;
 - (void)setIsFromStore:(BOOL)arg1;
+- (void)setIsGameCenterEnabled:(BOOL)arg1;
 - (void)setIsInQueue:(BOOL)arg1;
 - (void)setIsPendingApproval:(BOOL)arg1;
 - (void)setIsPurchasedRedownload:(BOOL)arg1;

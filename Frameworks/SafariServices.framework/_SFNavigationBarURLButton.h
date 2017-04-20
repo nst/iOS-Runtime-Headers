@@ -24,6 +24,7 @@
 @property (nonatomic) BOOL usesLightOverlayAndTintAlpha;
 
 - (void).cxx_destruct;
+- (id)_accessibilityQuickSpeakContent;
 - (void)_dismissMenu:(id)arg1;
 - (void)_handleLongPress:(id)arg1;
 - (void)_updateBackgroundImageAnimated:(BOOL)arg1;
@@ -37,7 +38,6 @@
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)pasteAndNavigate:(id)arg1;
-- (id)pasteButtonTitle;
 - (BOOL)pointMostlyInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)setBackgroundAlphaFactor:(float)arg1;
 - (void)setBackgroundStyle:(int)arg1;

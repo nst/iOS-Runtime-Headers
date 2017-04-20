@@ -77,6 +77,7 @@
 - (void)_inq_stopJobsAfterConstraintOrActivityChange;
 - (void)_inq_timeoutJob:(id)arg1;
 - (void)_installMaintenanceTimer;
+- (id)_nextAdditionalJobForWorkerTypeObj:(id)arg1 scenario:(unsigned int)arg2;
 - (void)_scheduleNextJob;
 - (id)_workerForJob:(id)arg1;
 - (id)activityGovernor;

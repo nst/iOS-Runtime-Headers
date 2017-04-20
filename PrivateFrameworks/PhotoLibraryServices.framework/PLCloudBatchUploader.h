@@ -16,7 +16,6 @@
 
 - (void)_addAsset:(id)arg1 toAssetChanges:(id)arg2 isInsert:(BOOL)arg3 seenAssetUuid:(id)arg4;
 - (void)_addLocalResourcesToRecord:(id)arg1;
-- (BOOL)_asset:(id)arg1 isIn:(id)arg2;
 - (void)_cleanUploadedResources:(id)arg1;
 - (id)_fetchChangesFromEvent:(id)arg1 shouldTriggerPrefetch:(BOOL*)arg2;
 - (void)_incrementUploadAttemptsAndPushStateForAssets:(id)arg1;

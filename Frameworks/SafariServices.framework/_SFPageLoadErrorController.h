@@ -3,10 +3,10 @@
  */
 
 @interface _SFPageLoadErrorController : NSObject {
-    NSMutableArray * _alerts;
     NSTimer * _crashCountResetTimer;
     unsigned int  _crashesSinceLastSuccessfulLoad;
     <_SFPageLoadErrorControllerDelegate> * _delegate;
+    NSMutableArray * _dialogs;
     NSURLRequest * _failedRequest;
     BOOL  _reloadAfterResume;
     BOOL  _reloadingFailedRequest;
@@ -14,6 +14,7 @@
 }
 
 @property (nonatomic, readonly) unsigned int crashesSinceLastSuccessfulLoad;
+@property (nonatomic, readonly) _SFDialog *currentDialog;
 @property (nonatomic) <_SFPageLoadErrorControllerDelegate> *delegate;
 @property (nonatomic, readonly) NSURLRequest *failedRequest;
 @property (nonatomic, readonly) BOOL reloadingFailedRequest;
@@ -33,16 +34,21 @@
 - (id)_titleForError:(id)arg1;
 - (void)addAlert:(id)arg1;
 - (void)addAlertWithTitle:(id)arg1 bodyText:(id)arg2;
+- (void)addDialog:(id)arg1;
+- (void)addDisallowedFileURLAlert;
 - (void)addDisallowedUseOfJavaScriptAlert;
 - (void)addFormAlertWithTitle:(id)arg1 decisionHandler:(id /* block */)arg2;
 - (void)addInvalidURLAlert;
-- (id)alert;
+- (void)cancelAllDialogsIfNeeded;
 - (void)clearCrashCountResetTimer;
 - (void)clearFailedRequest;
 - (unsigned int)crashesSinceLastSuccessfulLoad;
+- (id)currentDialog;
 - (void)dealloc;
 - (id)delegate;
+- (void)didDismissDialog:(id)arg1;
 - (id)failedRequest;
+- (void)handleClientCertificateAuthenticationChallenge:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)handleFrameLoadError:(id)arg1;
 - (void)handleSubframeCertificateError:(id)arg1;
 - (id)initWithWebView:(id)arg1;

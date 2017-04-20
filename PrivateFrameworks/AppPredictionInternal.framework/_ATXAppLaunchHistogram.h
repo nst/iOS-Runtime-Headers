@@ -11,6 +11,19 @@
     double  _launchThreshold;
     unsigned int  _maxEventId;
     NSDictionary * _parameters;
+    NSString * _prevBundleId;
+    NSDate * _prevDate;
+    unsigned int  _prevEventId;
+    unsigned short  _prevLocaltime;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
+    }  _prevLocaltimeLock;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
+    }  _prevLock;
+    NSTimeZone * _prevTimeZone;
     int  _secondsPerLocaltimeInterval;
     int  _timeBase;
     _ATXInternalUninstallNotification * _uninstallNotificationListener;
@@ -25,6 +38,7 @@
 - (id)_timeHistogram;
 - (void)addLaunchWithBundleId:(id)arg1 withDate:(id)arg2 timeZone:(id)arg3;
 - (BOOL)bundleHasBeenLaunched:(id)arg1;
+- (void)dealloc;
 - (void)decayByFactor:(double)arg1;
 - (void)decayWithHalfLife:(double)arg1;
 - (id)description;

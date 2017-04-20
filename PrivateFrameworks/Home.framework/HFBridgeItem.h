@@ -4,6 +4,7 @@
 
 @interface HFBridgeItem : HFItem <HFServiceLikeBuilderCreating, HFServiceLikeItem> {
     HMAccessory * _accessory;
+    <HFCharacteristicValueSource> * _valueSource;
 }
 
 @property (nonatomic, retain) HMAccessory *accessory;
@@ -12,7 +13,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) <HFHomeKitObject> *homeKitObject;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) <HFCharacteristicValueSource> *valueSource;
+@property (nonatomic, retain) <HFCharacteristicValueSource> *valueSource;
 
 - (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;
@@ -25,11 +26,12 @@
 - (id)homeKitObject;
 - (id)incrementalStateControlItem;
 - (id)init;
-- (id)initWithAccessory:(id)arg1;
+- (id)initWithAccessory:(id)arg1 valueSource:(id)arg2;
 - (id)primaryStateControlItem;
 - (id)serviceLikeBuilderInHome:(id)arg1;
 - (id)services;
 - (void)setAccessory:(id)arg1;
+- (void)setValueSource:(id)arg1;
 - (id)valueSource;
 
 @end

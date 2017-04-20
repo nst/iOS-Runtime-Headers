@@ -7,6 +7,8 @@
     NSURL * _certificateURL;
     NSURL * _getAssetURL;
     int  _leaseType;
+    NSURL * _pastisCertificateURL;
+    NSURL * _pastisKeyServerURL;
     NSURL * _provisionMachineURL;
     NSURL * _refreshLeaseURL;
     NSString * _storeFrontSuffix;
@@ -17,6 +19,8 @@
 @property (nonatomic, copy) NSURL *certificateURL;
 @property (nonatomic, copy) NSURL *getAssetURL;
 @property (nonatomic, readonly) int leaseType;
+@property (nonatomic, copy) NSURL *pastisCertificateURL;
+@property (nonatomic, copy) NSURL *pastisKeyServerURL;
 @property (nonatomic, copy) NSURL *provisionMachineURL;
 @property (nonatomic, copy) NSURL *refreshLeaseURL;
 @property (nonatomic, copy) NSString *storeFrontSuffix;
@@ -30,11 +34,15 @@
 - (id)initWithURLBagDictionary:(id)arg1;
 - (id)initWithURLBagDictionary:(id)arg1 leaseType:(int)arg2;
 - (int)leaseType;
+- (id)pastisCertificateURL;
+- (id)pastisKeyServerURL;
 - (id)provisionMachineURL;
 - (id)refreshLeaseURL;
 - (void)setBeginLeaseURL:(id)arg1;
 - (void)setCertificateURL:(id)arg1;
 - (void)setGetAssetURL:(id)arg1;
+- (void)setPastisCertificateURL:(id)arg1;
+- (void)setPastisKeyServerURL:(id)arg1;
 - (void)setProvisionMachineURL:(id)arg1;
 - (void)setRefreshLeaseURL:(id)arg1;
 - (void)setStoreFrontSuffix:(id)arg1;

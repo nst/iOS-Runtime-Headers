@@ -5,6 +5,7 @@
 @interface UIInputSwitcher : NSObject {
     NSString * _loadedIdentifier;
     NSString * _newMode;
+    BOOL  _otherKeyPressedDuringShiftDown;
     UIDelayedAction * m_hideSwitcherDelay;
     UIDelayedAction * m_keyHoldDelay;
     double  m_lastGlobeKeyUpTime;
@@ -14,6 +15,7 @@
 }
 
 @property (nonatomic, copy) NSString *loadedIdentifier;
+@property (nonatomic) BOOL otherKeyPressedDuringShiftDown;
 
 + (id)activeInstance;
 + (id)sharedInstance;
@@ -34,7 +36,9 @@
 - (BOOL)isVisible;
 - (BOOL)isVisibleOrHiding;
 - (id)loadedIdentifier;
+- (BOOL)otherKeyPressedDuringShiftDown;
 - (void)setLoadedIdentifier:(id)arg1;
+- (void)setOtherKeyPressedDuringShiftDown:(BOOL)arg1;
 - (void)showSwitcherShouldAutoHide:(BOOL)arg1;
 - (void)showSwitcherWithAutoHide;
 - (void)showSwitcherWithoutAutoHide;

@@ -10,12 +10,15 @@
 - (void)notifyOnNextUserInteraction;
 - (void)pulseHelpButton;
 - (void)serviceBulletinWithIdentifier:(void *)arg1 replyHandler:(void *)arg2; // needs 2 arg types, found 7: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, AFBulletin *, void*
-- (void)serviceCanLoadPreviousConversation:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
 - (void)serviceDidDetectMicButtonLongPressBegan;
 - (void)serviceDidDetectMicButtonLongPressEnded;
 - (void)serviceDidDetectMicButtonTap;
 - (void)serviceDidDismissBugReporter;
+- (void)serviceDidEnterUITrackingMode;
+- (void)serviceDidExitUITrackingMode;
+- (void)serviceDidFinishTest:(NSString *)arg1;
 - (void)serviceDidPresentBugReporter;
+- (void)serviceDidPresentConversationFromBreadcrumb;
 - (void)serviceDidPresentUserInterface;
 - (void)serviceDidReadBulletinWithIdentifier:(NSString *)arg1;
 - (void)serviceLastAppUpdateTimeWithReplyHandler:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDate *, void*
@@ -29,6 +32,7 @@
 - (void)serviceUserRelevantEventDidOccur;
 - (void)serviceWillDismissViewControllerWithStatusBarStyle:(int)arg1;
 - (void)serviceWillPresentViewControllerWithStatusBarStyle:(int)arg1;
+- (void)serviceWillStartTest:(NSString *)arg1;
 - (void)setBugReportingAvailable:(BOOL)arg1;
 - (void)setCarDisplayGatekeeperVisible:(BOOL)arg1;
 - (void)setCarDisplaySnippetVisible:(BOOL)arg1;

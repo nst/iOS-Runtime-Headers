@@ -3,4 +3,8 @@
 
 @protocol MTLTextureImplementation <MTLTextureSPI>
 
+@required
+
+- (NSString *)formattedDescription:(unsigned int)arg1;
+
 @end

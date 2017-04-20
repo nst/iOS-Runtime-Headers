@@ -18,5 +18,6 @@
 - (void)alertViewCancel:(id)arg1;
 - (id)init;
 - (void)presentDialog:(id)arg1;
+- (void)presentDialog:(id)arg1 fromViewController:(id)arg2;
 
 @end

@@ -174,6 +174,7 @@
 - (void)MCDeepCopyEntriesFromDictionary:(id)arg1;
 - (void)MCDeepCopyMissingEntriesFromDictionary:(id)arg1;
 - (void)MCDeleteBoolRestriction:(id)arg1;
+- (void)MCFilterRestrictionPayloadKeys:(id)arg1;
 - (void)MCFixUpRestrictionsDictionaryForMDMReporting;
 - (id)MCMutableDictionaryContainingValidatedKeysAndClasses:(id)arg1 removeKeys:(BOOL)arg2 outError:(id*)arg3;
 - (void)MCSetBoolRestriction:(id)arg1 value:(BOOL)arg2;
@@ -219,7 +220,9 @@
 - (void)fc_removeObjectsForKeysNotInSet:(id)arg1;
 - (void)fc_safelySetObject:(id)arg1 forKey:(id)arg2;
 - (void)fc_safelySetObjectAllowingNil:(id)arg1 forKey:(id)arg2;
+- (void)fc_safelySetObjectAllowingNil:(id)arg1 forKeyAllowingNil:(id)arg2;
 - (void)fc_setLocalDataHintIfNeeded:(BOOL)arg1;
+- (void)fc_transformValuesWithKeyAndValueBlock:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
@@ -274,8 +277,8 @@
 
 // Image: /System/Library/PrivateFrameworks/Swift/libswiftFoundation.dylib
 
-/* MISSING HEADER DESCRIPTION FOR METHOD _swift_objectForKeyedSubscript: */
-/* MISSING HEADER DESCRIPTION FOR METHOD _swift_setObject:forKeyedSubscript: */
+- (void)_swift_objectForKeyedSubscript;
+- (void)_swift_setObjectforKeyedSubscript;
 
 // Image: /System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomEvaluator.framework/SymptomEvaluator
 

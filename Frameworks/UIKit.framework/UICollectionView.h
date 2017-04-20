@@ -52,6 +52,10 @@
         unsigned int dataSourceMoveItemAtIndexPathSPI : 1; 
         unsigned int dataSourceCanMoveItemAtIndexPath : 1; 
         unsigned int dataSourceMoveItemAtIndexPath : 1; 
+        unsigned int dataSourceSectionIndexTitlesSPI : 1; 
+        unsigned int dataSourceIndexPathForSectionIndexSPI : 1; 
+        unsigned int dataSourceIndexTitles : 1; 
+        unsigned int dataSourceIndexPathForIndex : 1; 
         unsigned int dataSourceWasNonNil : 1; 
         unsigned int prefetchDataSourcePrefetchItemsAtIndexPaths : 1; 
         unsigned int prefetchDataSourceCancelPrefetchingForItemsAtIndexPaths : 1; 
@@ -234,6 +238,7 @@
 @property (nonatomic, readonly) int numberOfSections;
 @property (nonatomic) <UICollectionViewDataSourcePrefetching> *prefetchDataSource;
 @property (getter=isPrefetchingEnabled, nonatomic) BOOL prefetchingEnabled;
+@property (nonatomic, readonly) NSArray *pu_indexPathsForPreparedItems;
 @property (nonatomic) BOOL remembersLastFocusedIndexPath;
 @property (getter=_reorderedItems, nonatomic, readonly) NSArray *reorderedItems;
 @property (getter=_reorderingTargetPosition, nonatomic, readonly) struct CGPoint { float x1; float x2; } reorderingTargetPosition;
@@ -285,6 +290,7 @@
 - (void)_computePrefetchCandidatesForVisibleBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 futureVisibleBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 prefetchVector:(struct CGVector { float x1; float x2; })arg3 notifyDelegateIfNeeded:(BOOL)arg4;
 - (id)_contentFocusContainerGuide;
 - (struct CGPoint { float x1; float x2; })_contentOffsetForNewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 oldFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 newContentSize:(struct CGSize { float x1; float x2; })arg3 andOldContentSize:(struct CGSize { float x1; float x2; })arg4;
+- (struct CGPoint { float x1; float x2; })_contentOffsetForScrollingToItemAtIndexPath:(id)arg1 atScrollPosition:(unsigned int)arg2;
 - (id)_createPreparedCellForItemAtIndexPath:(id)arg1 withLayoutAttributes:(id)arg2 applyAttributes:(BOOL)arg3;
 - (id)_createPreparedCellForItemAtIndexPath:(id)arg1 withLayoutAttributes:(id)arg2 applyAttributes:(BOOL)arg3 isFocused:(BOOL)arg4 notify:(BOOL)arg5;
 - (id)_createPreparedSupplementaryViewForElementOfKind:(id)arg1 atIndexPath:(id)arg2 withLayoutAttributes:(id)arg3 applyAttributes:(BOOL)arg4;
@@ -312,8 +318,12 @@
 - (void)_endReordering;
 - (void)_endUpdatesWithInvalidationContext:(id)arg1 tentativelyForReordering:(BOOL)arg2 animator:(id)arg3;
 - (void)_ensureViewsAreLoadedInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_fastScrollingIndexBarInsets;
 - (void)_finishInteractiveTransitionShouldFinish:(BOOL)arg1 finalAnimation:(BOOL)arg2;
 - (void)_finishInteractiveTransitionWithFinalAnimation:(BOOL)arg1;
+- (id)_focusFastScrollingDestinationItemAtContentEnd;
+- (id)_focusFastScrollingDestinationItemAtContentStart;
+- (id)_focusFastScrollingDestinationItemForIndexEntry:(id)arg1;
 - (id)_focusedCell;
 - (id)_focusedCellElementKind;
 - (id)_focusedCellIndexPath;
@@ -444,6 +454,7 @@
 - (void)_updateReorderingTargetPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_updateReorderingTargetPosition:(struct CGPoint { float x1; float x2; })arg1 forced:(BOOL)arg2;
 - (void)_updateRowsAtIndexPaths:(id)arg1 updateAction:(int)arg2;
+- (void)_updateSectionIndex;
 - (void)_updateSections:(id)arg1 updateAction:(int)arg2;
 - (void)_updateTrackedLayoutValuesWith:(id)arg1;
 - (void)_updateTransitionWithProgress:(float)arg1;
@@ -568,6 +579,8 @@
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
 - (id)next:(int)arg1 indexPathFromIndexPath:(id)arg2;
+- (id)pu_indexPathsForPreparedItems;
+- (id)pu_preparedCellForItemAtIndexPath:(id)arg1;
 - (void)pu_scrollToItemAtIndexPath:(id)arg1 atScrollPosition:(unsigned int)arg2 animated:(BOOL)arg3;
 - (void)pu_scrollToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 atScrollPosition:(unsigned int)arg2 animated:(BOOL)arg3;
 
@@ -596,13 +609,5 @@
 - (void)_gkRegisterNib:(id)arg1 forCellClass:(Class)arg2;
 - (id)_gkReuseIdentifierForClass:(Class)arg1;
 - (id)_gkVisibleCellForIndexPath:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
-
-- (id)tv_indexPathsForIndexSet:(id)arg1 withOptions:(unsigned int)arg2 prefix:(id)arg3;
-- (void)tv_updateItemsInSection:(unsigned int)arg1 withChange:(id)arg2;
-- (void)tv_updateItemsInSection:(unsigned int)arg1 withChanges:(id)arg2;
-- (void)tv_updateSectionsWithChange:(id)arg1;
-- (void)tv_updateSectionsWithChanges:(id)arg1;
 
 @end

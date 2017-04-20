@@ -2,29 +2,27 @@
    Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
  */
 
-@interface VSPrivacyInfoCenter : NSObject {
-    unsigned int  _privacyAccessStatus;
-    VSPrivacyFacade * _privacyFacade;
+@interface VSPrivacyInfoCenter : NSObject <MCProfileConnectionObserver> {
+    int  _accountAccessStatus;
     int  _registrationToken;
 }
 
-@property (nonatomic, readonly) int accountAccessStatus;
-@property (nonatomic) unsigned int privacyAccessStatus;
-@property (nonatomic, retain) VSPrivacyFacade *privacyFacade;
+@property (nonatomic) int accountAccessStatus;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic) int registrationToken;
+@property (readonly) Class superclass;
 
 + (id)sharedPrivacyInfoCenter;
 
-- (void).cxx_destruct;
 - (void)_invalidateAccountAccessStatus;
 - (int)accountAccessStatus;
 - (void)dealloc;
 - (id)init;
-- (unsigned int)privacyAccessStatus;
-- (id)privacyFacade;
+- (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (int)registrationToken;
-- (void)setPrivacyAccessStatus:(unsigned int)arg1;
-- (void)setPrivacyFacade:(id)arg1;
+- (void)setAccountAccessStatus:(int)arg1;
 - (void)setRegistrationToken:(int)arg1;
 - (id)updateAccountAccessStatusWithError:(id)arg1;
 - (void)updateAccountAccessStatusWithResponse:(id)arg1;

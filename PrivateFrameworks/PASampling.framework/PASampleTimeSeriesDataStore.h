@@ -133,19 +133,22 @@
 @property (readonly) unsigned int workQueueHardThreadLimit;
 @property (readonly) unsigned int workQueueSoftThreadLimit;
 
++ (BOOL)canOpenFileAsKTraceFile:(const char *)arg1 errorOut:(id*)arg2;
++ (id)newSampleStoreFromFilePath:(const char *)arg1 warningsOut:(id)arg2 errorOut:(id*)arg3;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (unsigned int)_addKCDataStackshotFromBuffer:(const void*)arg1 withLength:(unsigned long)arg2 toSample:(id)arg3 shouldSkipSampleOut:(BOOL*)arg4;
+- (int)_addKPerfDataFromKTraceSession:(struct ktrace_session { }*)arg1 beforeTime:(unsigned long long)arg2;
 - (void)_addSampleToSampleArray:(id)arg1;
 - (BOOL)_addStackshot:(id)arg1;
 - (void)_asynchronouslyCacheSymbolicatorForPid:(int)arg1;
+- (unsigned int)_backfillPETSamplesUsingKCDataStackshotFromBuffer:(const void*)arg1 withLength:(unsigned long)arg2;
 - (void)addDSCSymFromBuffer:(const void*)arg1 withLength:(unsigned long)arg2;
 - (void)addDsymPaths:(id)arg1;
 - (unsigned int)addKCDataStackshotFromBuffer:(const void*)arg1 withLength:(unsigned long)arg2;
 - (unsigned int)addKCDataStackshots:(id)arg1 createSeparateSamplePerStackshot:(BOOL)arg2;
-- (BOOL)addKCDataThread:(const struct thread_snapshot_v2 { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned long long x11; unsigned int x12; unsigned int x13; short x14; short x15; unsigned char x16; unsigned char x17; unsigned char x18; unsigned char x19; }*)arg1 orDeltaThread:(const struct thread_delta_snapshot_v2 { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned int x5; unsigned int x6; short x7; short x8; unsigned char x9; unsigned char x10; unsigned char x11; unsigned char x12; }*)arg2 withStack:(id)arg3 andName:(const char *)arg4 toTask:(id)arg5 withCurrentThreads:(id)arg6 withPreviousThreads:(id)arg7;
-- (int)addKPerfDataFromKTraceSession:(struct ktrace_session { }*)arg1 beforeTime:(unsigned long long)arg2;
+- (BOOL)addKCDataThread:(const struct thread_snapshot_v2 { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned long long x11; unsigned int x12; unsigned int x13; short x14; short x15; unsigned char x16; unsigned char x17; unsigned char x18; unsigned char x19; }*)arg1 orDeltaThread:(const struct thread_delta_snapshot_v2 { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned int x5; unsigned int x6; short x7; short x8; unsigned char x9; unsigned char x10; unsigned char x11; unsigned char x12; }*)arg2 withStack:(id)arg3 andName:(const char *)arg4 andWaitInfo:(const struct stackshot_thread_waitinfo { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned char x4; }*)arg5 toTask:(id)arg6 withCurrentThreads:(id)arg7 withPreviousThreads:(id)arg8;
 - (id)addKernelStack:(id)arg1;
 - (void)addPidToSampledPids:(int)arg1;
 - (void)addPidsWithNameToSampledPids:(id)arg1;
@@ -192,6 +195,7 @@
 - (id)getMissingSampleThreadInCurrentSampleInTask:(id)arg1 forTid:(unsigned long long)arg2 needNewThreadForThisSample:(BOOL)arg3;
 - (id)hardwareModel;
 - (BOOL)hasSampleOnOrAfterTime:(double)arg1 returningFirstIndex:(unsigned int*)arg2;
+- (BOOL)hasSampleOnOrAfterWallTime:(double)arg1 returningFirstIndex:(unsigned int*)arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)kernelCache;
@@ -282,7 +286,6 @@
 - (id)timeInsensitiveTaskDataPid:(int)arg1 andUniqueId:(unsigned long long)arg2 andName:(const char *)arg3 didExec:(BOOL)arg4;
 - (double)timeWhenTransitionedToSamplingAllProcesses;
 - (void)useDsymForUUIDFor:(id)arg1;
-- (unsigned int)useKCDataStackshotAsLastKPerSampleFromBuffer:(const void*)arg1 withLength:(unsigned long)arg2;
 - (unsigned int)wakeupsDuration;
 - (unsigned int)wakeupsPerSec;
 - (unsigned int)workQueueHardThreadLimit;

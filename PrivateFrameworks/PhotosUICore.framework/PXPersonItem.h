@@ -22,6 +22,8 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) unsigned int photosCount;
 
++ (id)px_modelObjectsFromPersonItemArray:(id)arg1;
+
 - (void).cxx_destruct;
 - (id)displayName;
 - (id)faceImage;

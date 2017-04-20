@@ -19,20 +19,17 @@
 
 @property (nonatomic) double centerX;
 @property (nonatomic) double centerY;
-@property (getter=isConfirmed, nonatomic) BOOL confirmed;
 @property (nonatomic) unsigned int faceState;
 @property (nonatomic) BOOL hasCenterX;
 @property (nonatomic) BOOL hasCenterY;
 @property (nonatomic) BOOL hasFaceState;
 @property (nonatomic, readonly) BOOL hasPersonIdentifier;
 @property (nonatomic) BOOL hasSize;
-@property (getter=isHidden, nonatomic) BOOL hidden;
+@property (getter=isKeyFace, nonatomic) BOOL keyFace;
 @property (getter=isManual, nonatomic) BOOL manual;
-@property (getter=isNameSourceAuto, nonatomic) BOOL nameSourceAuto;
 @property (getter=isNoneState, nonatomic, readonly) BOOL noneState;
 @property (nonatomic, retain) NSString *personIdentifier;
 @property (nonatomic, retain) NSMutableArray *rejectedPersonIdentifiers;
-@property (getter=isRepresentativeFace, nonatomic) BOOL representativeFace;
 @property (nonatomic) double size;
 
 + (Class)rejectedPersonIdentifiersType;
@@ -57,13 +54,10 @@
 - (BOOL)hasPersonIdentifier;
 - (BOOL)hasSize;
 - (unsigned int)hash;
-- (BOOL)isConfirmed;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isHidden;
+- (BOOL)isKeyFace;
 - (BOOL)isManual;
-- (BOOL)isNameSourceAuto;
 - (BOOL)isNoneState;
-- (BOOL)isRepresentativeFace;
 - (void)mergeFrom:(id)arg1;
 - (id)personIdentifier;
 - (BOOL)readFrom:(id)arg1;
@@ -72,18 +66,15 @@
 - (unsigned int)rejectedPersonIdentifiersCount;
 - (void)setCenterX:(double)arg1;
 - (void)setCenterY:(double)arg1;
-- (void)setConfirmed:(BOOL)arg1;
 - (void)setFaceState:(unsigned int)arg1;
 - (void)setHasCenterX:(BOOL)arg1;
 - (void)setHasCenterY:(BOOL)arg1;
 - (void)setHasFaceState:(BOOL)arg1;
 - (void)setHasSize:(BOOL)arg1;
-- (void)setHidden:(BOOL)arg1;
+- (void)setKeyFace:(BOOL)arg1;
 - (void)setManual:(BOOL)arg1;
-- (void)setNameSourceAuto:(BOOL)arg1;
 - (void)setPersonIdentifier:(id)arg1;
 - (void)setRejectedPersonIdentifiers:(id)arg1;
-- (void)setRepresentativeFace:(BOOL)arg1;
 - (void)setSize:(double)arg1;
 - (double)size;
 - (void)writeTo:(id)arg1;

@@ -3,6 +3,7 @@
  */
 
 @interface GEOETATrafficUpdateResponse : PBCodable <NSCopying> {
+    GEOPDDatasetABStatus * _datasetAbStatus;
     unsigned long long  _debugServerLatencyMs;
     GEOETAServiceResponseSummary * _etaServiceSummary;
     struct { 
@@ -14,8 +15,10 @@
     int  _status;
 }
 
+@property (nonatomic, retain) GEOPDDatasetABStatus *datasetAbStatus;
 @property (nonatomic) unsigned long long debugServerLatencyMs;
 @property (nonatomic, retain) GEOETAServiceResponseSummary *etaServiceSummary;
+@property (nonatomic, readonly) BOOL hasDatasetAbStatus;
 @property (nonatomic) BOOL hasDebugServerLatencyMs;
 @property (nonatomic, readonly) BOOL hasEtaServiceSummary;
 @property (nonatomic, readonly) BOOL hasSessionState;
@@ -31,11 +34,13 @@
 - (void)clearRoutes;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)datasetAbStatus;
 - (void)dealloc;
 - (unsigned long long)debugServerLatencyMs;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)etaServiceSummary;
+- (BOOL)hasDatasetAbStatus;
 - (BOOL)hasDebugServerLatencyMs;
 - (BOOL)hasEtaServiceSummary;
 - (BOOL)hasSessionState;
@@ -48,6 +53,7 @@
 - (id)routes;
 - (unsigned int)routesCount;
 - (id)sessionState;
+- (void)setDatasetAbStatus:(id)arg1;
 - (void)setDebugServerLatencyMs:(unsigned long long)arg1;
 - (void)setEtaServiceSummary:(id)arg1;
 - (void)setHasDebugServerLatencyMs:(BOOL)arg1;

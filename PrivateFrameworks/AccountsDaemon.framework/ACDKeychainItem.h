@@ -8,14 +8,15 @@
     NSMutableDictionary * _properties;
 }
 
-@property (copy) NSString *accessGroup;
-@property (copy) NSString *accessibility;
-@property (copy) NSString *account;
-@property (copy) NSDictionary *metadata;
-@property (readonly) const struct __CFData { }*persistentRef;
-@property (copy) NSString *service;
-@property BOOL synchronizable;
-@property int version;
+@property (nonatomic, readonly) struct __SecAccessControl { }*accessControlRef;
+@property (nonatomic, copy) NSString *accessGroup;
+@property (nonatomic, copy) NSString *accessibility;
+@property (nonatomic, copy) NSString *account;
+@property (nonatomic, copy) NSDictionary *metadata;
+@property (nonatomic, readonly) const struct __CFData { }*persistentRef;
+@property (nonatomic, copy) NSString *service;
+@property (nonatomic) BOOL synchronizable;
+@property (nonatomic) int version;
 
 - (void).cxx_destruct;
 - (void)_clearDirtyProperties;
@@ -25,6 +26,7 @@
 - (void)_reloadProperties;
 - (BOOL)_setMetadata:(id)arg1 withError:(id*)arg2;
 - (void)_setValue:(id)arg1 forProperty:(id)arg2;
+- (struct __SecAccessControl { }*)accessControlRef;
 - (id)accessGroup;
 - (id)accessibility;
 - (id)account;

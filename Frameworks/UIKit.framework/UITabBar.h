@@ -119,6 +119,7 @@
 - (void)_effectiveBarTintColorDidChange;
 - (id)_effectiveUnselectedTabTintColorConsideringView:(id)arg1;
 - (id)_effectiveUnselectedTintColor;
+- (void)_ensureUnfocusedItemsAreNotSelected;
 - (BOOL)_focusedItemHighlightShouldBeVisible;
 - (id)_focusedTabBarItem;
 - (BOOL)_hasCustomAutolayoutNeighborSpacing;

@@ -25,16 +25,22 @@
 - (id)contacts;
 - (id)description;
 - (int)destinationType;
+- (id)domain;
 - (id)initWithContacts:(id)arg1;
+- (id)parametersByName;
 - (int)preferredCallProvider;
 - (void)setAudioRoute:(int)arg1;
 - (void)setContacts:(id)arg1;
 - (void)setDestinationType:(int)arg1;
+- (void)setDomain:(id)arg1;
+- (void)setParametersByName:(id)arg1;
 - (void)setPreferredCallProvider:(int)arg1;
 - (void)setTTYType:(int)arg1;
 - (void)setUseSpeaker:(BOOL)arg1;
+- (void)setVerb:(id)arg1;
 - (int)ttyType;
 - (BOOL)useSpeaker;
+- (id)verb;
 
 // Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
 

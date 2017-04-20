@@ -34,7 +34,7 @@
 - (void)URLSession:(id)arg1 betterRouteDiscoveredForStreamTask:(id)arg2;
 - (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
 - (void)URLSession:(id)arg1 streamTask:(id)arg2 didBecomeInputStream:(id)arg3 outputStream:(id)arg4;
-- (void)_getConfiguredStreamPair:(id /* block */)arg1;
+- (void)_getConfiguredStreamPairWithInitalPayload:(id)arg1 completion:(id /* block */)arg2;
 - (id)analysisInfo;
 - (void)close;
 - (id)connectionType;
@@ -44,12 +44,13 @@
 - (id)headerData;
 - (id)initWithQueue:(id)arg1;
 - (BOOL)isPeerConnectionError:(id)arg1;
-- (void)openStreamPairForURL:(id)arg1 withConnectionId:(id)arg2 completion:(id /* block */)arg3;
+- (void)openStreamPairForURL:(id)arg1 withConnectionId:(id)arg2 initialPayload:(id)arg3 completion:(id /* block */)arg4;
 - (void)setConnectByPOPMethod:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPolicyRoute:(id)arg1;
 - (void)setPrefersWWAN:(BOOL)arg1;
 - (BOOL)shouldFallbackFromError:(id)arg1;
 - (BOOL)shouldFallbackQuickly;
+- (BOOL)supportsInitialPayload;
 
 @end

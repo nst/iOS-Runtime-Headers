@@ -32,10 +32,14 @@
 @property (nonatomic, retain) _INPBString *scopeEntityName;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 + (id)options;
 + (Class)propertiesType;
 
 - (void).cxx_destruct;
+- (int)StringAsEntityType:(id)arg1;
+- (int)StringAsScope:(id)arg1;
 - (void)addProperties:(id)arg1;
 - (id)appId;
 - (void)clearProperties;
@@ -44,6 +48,7 @@
 - (id)dictionaryRepresentation;
 - (id)entityName;
 - (int)entityType;
+- (id)entityTypeAsString:(int)arg1;
 - (BOOL)hasAppId;
 - (BOOL)hasEntityName;
 - (BOOL)hasEntityType;
@@ -59,6 +64,7 @@
 - (unsigned int)propertiesCount;
 - (BOOL)readFrom:(id)arg1;
 - (int)scope;
+- (id)scopeAsString:(int)arg1;
 - (id)scopeEntityName;
 - (void)setAppId:(id)arg1;
 - (void)setEntityName:(id)arg1;
@@ -71,5 +77,11 @@
 - (void)setScopeEntityName:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

@@ -13,6 +13,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)errorsByPropertyKey;
 - (id)initWithCoder:(id)arg1;

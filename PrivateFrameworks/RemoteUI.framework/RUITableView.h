@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@interface RUITableView : RUIElement <RUITableViewRowDelegate, RUITableViewSectionDelegate, RUITopLevelPageElement, RUIWebViewDelegate, UITableViewDataSource, UITableViewDelegate> {
+@interface RUITableView : RUIElement <RUITableViewRowDelegate, RUITopLevelPageElement, RUIWebViewDelegate, UITableViewDataSource, UITableViewDelegate> {
     UIDatePicker * _datePicker;
     RUITableViewRow * _defaultFirstResponderRow;
     NSIndexPath * _embeddedPickerRowIndexPath;
@@ -17,7 +17,6 @@
     NSDate * _oldPickerDate;
     RUIBarButtonItem * _oldRightBarButtonItemForPicker;
     RUIPage * _page;
-    RUIPhotoPicker * _photoPicker;
     _UIBackdropView * _pickerBackdrop;
     NSIndexPath * _pickerRowIndexPath;
     BOOL  _registeredForNotifications;
@@ -81,24 +80,26 @@
 - (id)indexPathForPreferredFocusedViewInTableView:(id)arg1;
 - (id)indexPathForRow:(id)arg1;
 - (id)init;
+- (void)insertRow:(id)arg1 atIndexPath:(id)arg2;
 - (BOOL)isShowingPicker;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)objectModel;
 - (id)objectModelRowForIndexPath:(id)arg1;
 - (id)page;
+- (void)performAction:(int)arg1 forElement:(id)arg2 completion:(id /* block */)arg3;
 - (void)populatePostbackDictionary:(id)arg1;
 - (void)reloadHeadersAndFootersForSection:(id)arg1;
-- (void)row:(id)arg1 activatedElement:(id)arg2;
+- (void)removeRowAtIndexPath:(id)arg1;
 - (void)rowDidChange:(id)arg1 action:(int)arg2;
 - (void)rowDidEndEditing:(id)arg1;
 - (void)rowIsFirstResponder:(id)arg1;
 - (id)rowWithIdentifier:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)section:(id)arg1 activatedElement:(id)arg2 completion:(id /* block */)arg3;
 - (id)sections;
 - (id)selectPicker;
 - (void)setAttributes:(id)arg1;
 - (void)setDefaultFirstResponderRow:(id)arg1;
+- (void)setEditing:(BOOL)arg1;
 - (void)setFooter:(id)arg1;
 - (void)setFooterViewAttributes:(id)arg1;
 - (void)setHeader:(id)arg1;
@@ -115,14 +116,17 @@
 - (void)showPickerViewForRow:(id)arg1 animated:(BOOL)arg2;
 - (id)sourceURL;
 - (id)sourceURLForRUITableViewRow;
-- (id)sourceURLForRUITableViewSection;
+- (id)staticValues;
+- (id)subElementWithID:(id)arg1;
 - (id)subElementsWithName:(id)arg1;
 - (id)subHeader;
 - (Class)tableCellClassForTableViewRow:(id)arg1;
 - (id)tableView;
+- (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didUpdateFocusInContext:(id)arg2 withAnimationCoordinator:(id)arg3;
 - (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;

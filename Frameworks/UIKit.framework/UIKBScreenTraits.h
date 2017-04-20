@@ -3,6 +3,16 @@
  */
 
 @interface UIKBScreenTraits : NSObject {
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    }  _bounds;
     BOOL  _isKeyboardMinorEdgeWidth;
     float  _keyboardWidth;
     BOOL  _knobInput;
@@ -12,6 +22,7 @@
     BOOL  _touchpadInput;
 }
 
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
 @property (nonatomic, readonly) int idiom;
 @property (nonatomic, readonly) BOOL isKeyboardMinorEdgeWidth;
 @property (nonatomic) float keyboardWidth;
@@ -23,6 +34,7 @@
 
 + (id)traitsWithScreen:(id)arg1 orientation:(int)arg2;
 
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (id)description;
 - (int)idiom;
 - (id)initWithScreen:(id)arg1 orientation:(int)arg2;
@@ -31,6 +43,7 @@
 - (BOOL)knobInput;
 - (int)orientation;
 - (id)screen;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setKeyboardWidth:(float)arg1;
 - (void)setOrientation:(int)arg1;
 - (BOOL)touchInput;

@@ -17,6 +17,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)device;
+- (id)formattedDescription:(unsigned int)arg1;
 - (id)initWithDevice:(id)arg1 samplerDescriptor:(id)arg2;
 - (id)label;
 

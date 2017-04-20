@@ -16,10 +16,13 @@
 + (BOOL)registerCredentialsFromContext:(id)arg1;
 
 - (void).cxx_destruct;
+- (int)_authenticatedCircleStatus:(id*)arg1;
+- (int)_circleStatus:(id*)arg1;
 - (BOOL)_performSOSCBlock:(id /* block */)arg1 error:(id*)arg2;
 - (BOOL)anyPeerHasEnabledViewsInSet:(id)arg1 error:(id*)arg2;
 - (id)cdpContext;
 - (int)circleStatus:(id*)arg1;
+- (id)generateRecoveryKeyWithInfo:(id)arg1 error:(id*)arg2;
 - (BOOL)hasNonViewAwarePeers;
 - (id)initWithContext:(id)arg1;
 - (BOOL)isLastBackupMakingPeer:(id*)arg1;

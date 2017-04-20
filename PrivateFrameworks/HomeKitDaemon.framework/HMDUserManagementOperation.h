@@ -52,6 +52,7 @@
 
 + (id)addUserManagementOperationForUser:(id)arg1 accessory:(id)arg2;
 + (id)removeUserManagementOperationForUser:(id)arg1 accessory:(id)arg2;
++ (id)shortDescription;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -74,6 +75,7 @@
 - (id)delegate;
 - (id)dependencies;
 - (id)description;
+- (id)descriptionWithPointer:(BOOL)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)executeWithCompletionQueue:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)expirationDate;

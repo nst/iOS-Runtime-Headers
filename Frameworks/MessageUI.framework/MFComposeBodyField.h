@@ -3,10 +3,12 @@
  */
 
 @interface MFComposeBodyField : UIWebDocumentView <WebResourceLoadDelegate> {
+    unsigned int  _attachmentSequenceNumber;
     NSArray * _attachmentURLsToReplaceWithFilenames;
     DOMHTMLElement * _blockquote;
     DOMHTMLElement * _body;
     NSString * _compositionContextID;
+    BOOL  _createAttachmentsForUnknownDataTypes;
     DOMHTMLDocument * _document;
     unsigned int  _forwardingNotification;
     unsigned int  _imageCount;
@@ -32,6 +34,7 @@
     BOOL  _shouldShowStandardButtons;
 }
 
+@property (nonatomic, readonly) BOOL canPaste;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -73,6 +76,7 @@
 - (void)appendMarkupString:(id)arg1 quote:(BOOL)arg2;
 - (void)appendQuotedMarkupString:(id)arg1 baseURL:(id)arg2;
 - (void)beginPreventingLayout;
+- (BOOL)canPaste;
 - (void)changeQuoteLevel:(int)arg1;
 - (void)changeQuoteLevel:(int)arg1 forDOMRange:(id)arg2;
 - (id)compositionContextID;

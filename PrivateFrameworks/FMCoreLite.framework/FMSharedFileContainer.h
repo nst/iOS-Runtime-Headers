@@ -14,6 +14,7 @@
 
 - (void).cxx_destruct;
 - (id)groupContainerURLWithIdentifier:(id)arg1;
+- (id)init;
 - (id)initWithIdentifier:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;

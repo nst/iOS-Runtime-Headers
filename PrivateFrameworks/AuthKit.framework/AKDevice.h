@@ -48,6 +48,7 @@
 @property (copy) NSString *serverFriendlyDescription;
 @property (copy) NSString *uniqueDeviceIdentifier;
 @property (readonly) NSString *userChosenName;
+@property (readonly) NSString *userFullName;
 
 + (id)_buildNumber;
 + (id)_generateServerFriendlyDescription;
@@ -118,5 +119,6 @@
 - (void)setUniqueDeviceIdentifier:(id)arg1;
 - (id)uniqueDeviceIdentifier;
 - (id)userChosenName;
+- (id)userFullName;
 
 @end

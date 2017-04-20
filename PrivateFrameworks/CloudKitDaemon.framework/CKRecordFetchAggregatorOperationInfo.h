@@ -3,20 +3,24 @@
  */
 
 @interface CKRecordFetchAggregatorOperationInfo : CKDatabaseOperationInfo {
+    NSDictionary * _assetTransferOptionsByRecordTypeAndKey;
     NSSet * _desiredKeys;
     BOOL  _fetchAssetContents;
     BOOL  _preserveOrdering;
 }
 
+@property (nonatomic, retain) NSDictionary *assetTransferOptionsByRecordTypeAndKey;
 @property (nonatomic, retain) NSSet *desiredKeys;
 @property (nonatomic) BOOL fetchAssetContents;
 @property (nonatomic) BOOL preserveOrdering;
 
 - (void).cxx_destruct;
+- (id)assetTransferOptionsByRecordTypeAndKey;
 - (id)desiredKeys;
 - (BOOL)fetchAssetContents;
 - (id)init;
 - (BOOL)preserveOrdering;
+- (void)setAssetTransferOptionsByRecordTypeAndKey:(id)arg1;
 - (void)setDesiredKeys:(id)arg1;
 - (void)setFetchAssetContents:(BOOL)arg1;
 - (void)setPreserveOrdering:(BOOL)arg1;

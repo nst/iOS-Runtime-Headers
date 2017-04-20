@@ -72,6 +72,7 @@
     BOOL  _preventsDirectWiFiAccess;
     BOOL  _preventsIdleSleep;
     BOOL  _preventsIdleSleepOnceConnected;
+    BOOL  _preventsSystemHTTPProxyAuthentication;
     id  _protocolClasses;
     BOOL  _proxySession;
     unsigned int  _requestCachePolicy;
@@ -164,6 +165,7 @@
 - (BOOL)_preventsDirectWiFiAccess;
 - (BOOL)_preventsIdleSleep;
 - (BOOL)_preventsIdleSleepOnceConnected;
+- (BOOL)_preventsSystemHTTPProxyAuthentication;
 - (BOOL)_requiresClientToOpenFiles;
 - (BOOL)_requiresPowerPluggedIn;
 - (BOOL)_respectsAllowsCellularAccessForDiscretionaryTasks;
@@ -285,6 +287,7 @@
 - (void)set_preventsDirectWiFiAccess:(BOOL)arg1;
 - (void)set_preventsIdleSleep:(BOOL)arg1;
 - (void)set_preventsIdleSleepOnceConnected:(BOOL)arg1;
+- (void)set_preventsSystemHTTPProxyAuthentication:(BOOL)arg1;
 - (void)set_proxySession:(BOOL)arg1;
 - (void)set_requiresClientToOpenFiles:(BOOL)arg1;
 - (void)set_requiresPowerPluggedIn:(BOOL)arg1;

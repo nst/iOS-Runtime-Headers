@@ -4,11 +4,9 @@
 
 @interface ASDJobManager : ASDBaseClient <ASDJobManagerClient, NSXPCListenerDelegate> {
     NSObject<OS_dispatch_queue> * _accessQueue;
-    ASDJobManagerClientConnection * _clientConnection;
     NSXPCConnection * _connection;
     NSArray * _jobs;
     int  _launchNotificationToken;
-    NSXPCListener * _listener;
     NSObject<OS_dispatch_queue> * _observerQueue;
     NSHashTable * _observers;
     ASDJobManagerOptions * _options;
@@ -52,7 +50,6 @@
 - (id)init;
 - (id)initWithOptions:(id)arg1;
 - (void)invalidate;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)pauseJobsWithIDs:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)removeObserver:(id)arg1;
 - (void)resumeJobsWithIDs:(id)arg1 completionBlock:(id /* block */)arg2;

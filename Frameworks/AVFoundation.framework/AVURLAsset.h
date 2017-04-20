@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@interface AVURLAsset : AVAsset {
+@interface AVURLAsset : AVAsset <AVContentKeyRecipient> {
     AVURLAssetInternal * _URLAsset;
 }
 
 @property (nonatomic, readonly, copy) NSURL *URL;
 @property (nonatomic, readonly) NSString *cacheKey;
+@property (nonatomic, readonly) BOOL mayRequireContentKeysForMediaDataProcessing;
 @property (nonatomic, readonly) double rc_durationInSeconds;
 @property (nonatomic, readonly) AVAssetResourceLoader *resourceLoader;
 @property (nonatomic, readonly) BOOL shouldMatchDataInCacheByURLPathComponentOnly;
@@ -43,6 +44,8 @@
 - (void)_addFigAssetNotifications;
 - (id)_assetInspector;
 - (id)_assetInspectorLoader;
+- (void)_attachToContentKeySession:(id)arg1;
+- (BOOL)_attachedToExternalContentKeySession;
 - (Class)_classForAssetTracks;
 - (Class)_classForFigAssetInspectorLoader;
 - (Class)_classForTrackInspectors;
@@ -63,16 +66,20 @@
 - (id)assetCache;
 - (id)cacheKey;
 - (void)cancelLoading;
+- (id)contentKeySession;
 - (id)creationOptions;
 - (void)dealloc;
 - (id)description;
 - (id)downloadDestinationURL;
 - (unsigned long long)downloadToken;
+- (void)expire;
 - (void)finalize;
+- (id)identifyingTag;
 - (id)identifyingTagClass;
 - (id)init;
 - (id)initWithURL:(id)arg1 options:(id)arg2;
 - (id)lyrics;
+- (BOOL)mayRequireContentKeysForMediaDataProcessing;
 - (id)originalNetworkContentURL;
 - (unsigned int)referenceRestrictions;
 - (id)resolvedURL;

@@ -5,7 +5,7 @@
 @interface TSTMergeRegionMapIterator : NSObject {
     struct __hash_map_const_iterator<std::__1::__hash_const_iterator<std::__1::__hash_node<std::__1::__hash_value_type<TSUCellCoord, TSUColumnRowSize>, void *> *> > { 
         struct __hash_const_iterator<std::__1::__hash_node<std::__1::__hash_value_type<TSUCellCoord, TSUColumnRowSize>, void *> *> { 
-            struct __hash_node<std::__1::__hash_value_type<TSUCellCoord, TSUColumnRowSize>, void *> {} *__node_; 
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<TSUCellCoord, TSUColumnRowSize>, void *> *> {} *__node_; 
         } __i_; 
     }  mMergeRegionIterator;
     TSTMergeRegionMap * mMergeRegionMap;

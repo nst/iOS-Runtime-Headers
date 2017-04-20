@@ -118,6 +118,8 @@
 + (id)__type__KEY;
 + (id)__userEditableComponents__KEY;
 + (id)__visiblePlaylist__KEY;
++ (id)kindWithPlaylistEntryKind:(id)arg1 options:(unsigned int)arg2;
++ (id)kindWithVariants:(unsigned int)arg1 playlistEntryKind:(id)arg2 options:(unsigned int)arg3;
 + (id)requiredKeepLocalStatusObservationProperties;
 + (id)requiredLibraryAddStatusObservationProperties;
 + (id)requiredLibraryRemovalProperties;

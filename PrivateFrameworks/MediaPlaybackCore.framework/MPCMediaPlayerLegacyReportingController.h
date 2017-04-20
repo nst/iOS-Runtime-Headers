@@ -6,6 +6,7 @@
     MPCJinglePlayActivityReportingController * _jinglePlayActivityReportingController;
     MPCMediaPlayerLegacyPlayer * _player;
     MPCReportingPlaybackObserver * _reportingPlaybackObserver;
+    MPRTCReportingController * _rtcReportingController;
 }
 
 @property (nonatomic, retain) MPCJinglePlayActivityReportingController *jinglePlayActivityReportingController;

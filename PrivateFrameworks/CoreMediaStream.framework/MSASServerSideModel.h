@@ -55,6 +55,8 @@
 - (void)MSASStateMachine:(id)arg1 didFinishDeletingComment:(id)arg2 inAssetCollection:(id)arg3 inAlbum:(id)arg4 info:(id)arg5 error:(id)arg6;
 - (void)MSASStateMachine:(id)arg1 didFinishEnqueueingAssetsForDownload:(id)arg2 inAlbumWithGUID:(id)arg3;
 - (void)MSASStateMachine:(id)arg1 didFinishGettingAccessControls:(id)arg2 forAlbum:(id)arg3 info:(id)arg4 error:(id)arg5;
+- (void)MSASStateMachine:(id)arg1 didFinishMarkingAsSpamInvitationForAlbum:(id)arg2 invitationGUID:(id)arg3 info:(id)arg4 error:(id)arg5;
+- (void)MSASStateMachine:(id)arg1 didFinishMarkingAsSpamInvitationForToken:(id)arg2 info:(id)arg3 error:(id)arg4;
 - (void)MSASStateMachine:(id)arg1 didFinishRemovingSharingRelationship:(id)arg2 fromOwnedAlbum:(id)arg3 info:(id)arg4 error:(id)arg5;
 - (void)MSASStateMachine:(id)arg1 didFinishRetrievingAsset:(id)arg2 inAlbum:(id)arg3 error:(id)arg4;
 - (void)MSASStateMachine:(id)arg1 didFinishSendingInvitationByPhone:(id)arg2 toOwnedAlbum:(id)arg3 info:(id)arg4 error:(id)arg5;
@@ -198,6 +200,9 @@
 - (void)markAlbumGUIDAsViewed:(id)arg1;
 - (void)markAlbumGUIDAsViewed:(id)arg1 info:(id)arg2;
 - (void)markAlbumGUIDAsViewed:(id)arg1 moveLastViewedAssetCollectionMarker:(BOOL)arg2 info:(id)arg3;
+- (void)markAsSpamAlbumWithGUID:(id)arg1 info:(id)arg2;
+- (void)markAsSpamInvitationWithGUID:(id)arg1 info:(id)arg2;
+- (void)markAsSpamInvitationWithToken:(id)arg1 info:(id)arg2;
 - (void)markCommentsForAssetCollectionWithGUID:(id)arg1 asViewedWithLastViewedDate:(id)arg2;
 - (void)markCommentsForAssetCollectionWithGUID:(id)arg1 asViewedWithLastViewedDate:(id)arg2 info:(id)arg3;
 - (int)maxGroupedCallbackEventBatchCount;

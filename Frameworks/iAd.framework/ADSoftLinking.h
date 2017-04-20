@@ -71,10 +71,6 @@
 @property (nonatomic, readonly) Class PLStaticWallpaperImageViewController;
 @property (nonatomic, readonly) NSString *SKStoreProductParameterITunesItemIdentifier;
 @property (nonatomic, readonly) Class SKStoreProductViewController;
-@property (nonatomic, readonly) Class SLComposeViewController;
-@property (nonatomic, readonly) Class SLRequest;
-@property (nonatomic, readonly) Class SLService;
-@property (nonatomic, readonly) NSString *SLServiceTypeTwitter;
 @property (nonatomic, readonly) Class TLToneManager;
 @property (nonatomic, readonly) int (*VTImageRotationSessionCreate;
 @property (nonatomic, readonly) int (*VTImageRotationSessionInvalidate;
@@ -153,10 +149,6 @@
 - (Class)PLStaticWallpaperImageViewController;
 - (id)SKStoreProductParameterITunesItemIdentifier;
 - (Class)SKStoreProductViewController;
-- (Class)SLComposeViewController;
-- (Class)SLRequest;
-- (Class)SLService;
-- (id)SLServiceTypeTwitter;
 - (Class)TLToneManager;
 - (int (*)VTImageRotationSessionCreate;
 - (int (*)VTImageRotationSessionInvalidate;

@@ -5,6 +5,9 @@
 @interface OSActivityStream : NSObject {
     NSMutableDictionary * _activityFilters;
     <OSActivityStreamDelegate> * _delegate;
+    BOOL  _delegateHasDidFail;
+    BOOL  _delegateStreamErrorLess;
+    BOOL  _delegateStreamWithError;
     OSLogDevice * _device;
     void * _deviceEventSession;
     void * _deviceSearchSession;
@@ -18,14 +21,14 @@
     <OSDeviceDelegate> * deviceDelegate;
 }
 
-@property NSMutableDictionary *activityFilters;
-@property <OSActivityStreamDelegate> *delegate;
-@property OSLogDevice *device;
-@property <OSDeviceDelegate> *deviceDelegate;
-@property unsigned int eventFilter;
-@property unsigned int events;
-@property unsigned int options;
-@property (copy) NSCompoundPredicate *predicate;
+@property (nonatomic) NSMutableDictionary *activityFilters;
+@property (nonatomic) <OSActivityStreamDelegate> *delegate;
+@property (nonatomic) OSLogDevice *device;
+@property (nonatomic) <OSDeviceDelegate> *deviceDelegate;
+@property (nonatomic) unsigned int eventFilter;
+@property (nonatomic) unsigned int events;
+@property (nonatomic) unsigned int options;
+@property (nonatomic, copy) NSCompoundPredicate *predicate;
 
 - (void).cxx_destruct;
 - (id)activityFilters;
@@ -59,6 +62,7 @@
 - (void)stop;
 - (void)stopLocal;
 - (void)stopRemote;
+- (BOOL)streamEvent:(id)arg1 error:(id)arg2;
 - (void)waitForProcessName:(id)arg1;
 
 @end

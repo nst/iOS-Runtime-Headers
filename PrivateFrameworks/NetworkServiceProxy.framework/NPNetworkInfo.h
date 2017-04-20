@@ -3,10 +3,15 @@
  */
 
 @interface NPNetworkInfo : NSObject <NSSecureCoding> {
+    int  _TFOStatus;
+    NPEdgeSelection * _edgeSelection;
     NSDate * _lastUsed;
     NSDate * _lastVisited;
 }
 
+@property int TFOStatus;
+@property (readonly) NSString *TFOStatusDesc;
+@property (retain) NPEdgeSelection *edgeSelection;
 @property (retain) NSDate *lastUsed;
 @property (readonly) NSString *lastUsedDesc;
 @property (retain) NSDate *lastVisited;
@@ -15,15 +20,19 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (int)TFOStatus;
+- (id)TFOStatusDesc;
 - (int)compareLastVisited:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)edgeSelection;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)lastUsed;
 - (id)lastUsedDesc;
 - (id)lastVisited;
 - (id)lastVisitedDesc;
+- (void)setEdgeSelection:(id)arg1;
 - (void)setLastUsed:(id)arg1;
 - (void)setLastVisited:(id)arg1;
+- (void)setTFOStatus:(int)arg1;
 
 @end

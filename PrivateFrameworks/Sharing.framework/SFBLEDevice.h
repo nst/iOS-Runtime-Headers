@@ -32,10 +32,10 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) double pairCheckTime;
 @property (nonatomic) BOOL paired;
-@property (nonatomic, readonly) int rssi;
-@property (nonatomic, readonly) int rssiCeiling;
-@property (nonatomic, readonly) int rssiFloor;
-@property (nonatomic, readonly) int smoothedRSSI;
+@property (nonatomic) int rssi;
+@property (nonatomic) int rssiCeiling;
+@property (nonatomic) int rssiFloor;
+@property (nonatomic) int smoothedRSSI;
 
 + (void)setRSSIEstimatorInfo:(id)arg1;
 + (BOOL)supportsSecureCoding;
@@ -44,6 +44,7 @@
 - (id)advertisementData;
 - (id)advertisementFields;
 - (id)bluetoothAddress;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)counterpartIdentifier;
 - (id)description;
 - (int)distance;
@@ -67,6 +68,10 @@
 - (void)setName:(id)arg1;
 - (void)setPairCheckTime:(double)arg1;
 - (void)setPaired:(BOOL)arg1;
+- (void)setRssi:(int)arg1;
+- (void)setRssiCeiling:(int)arg1;
+- (void)setRssiFloor:(int)arg1;
+- (void)setSmoothedRSSI:(int)arg1;
 - (int)smoothedRSSI;
 - (BOOL)updateRSSI:(int)arg1;
 

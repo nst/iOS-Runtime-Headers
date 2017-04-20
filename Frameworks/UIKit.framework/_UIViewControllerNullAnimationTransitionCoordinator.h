@@ -35,6 +35,7 @@
 - (void)_runAlongsideAnimations;
 - (void)_runAlongsideCompletions;
 - (void)_runAlongsideCompletionsAfterCommit;
+- (void)_runAlongsideCompletionsAndClearAlongsideAnimations;
 - (BOOL)animateAlongsideTransition:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (BOOL)animateAlongsideTransitionInView:(id)arg1 animation:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (int)completionCurve;

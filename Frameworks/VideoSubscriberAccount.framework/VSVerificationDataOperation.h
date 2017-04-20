@@ -4,11 +4,11 @@
 
 @interface VSVerificationDataOperation : VSAsyncOperation {
     AKAnisetteProvisioningController * _provisioningController;
-    VSFailable * _result;
+    VSOptional * _result;
 }
 
 @property (nonatomic, retain) AKAnisetteProvisioningController *provisioningController;
-@property (nonatomic, retain) VSFailable *result;
+@property (nonatomic, retain) VSOptional *result;
 
 - (void).cxx_destruct;
 - (void)_finishWithData:(id)arg1;

@@ -16,7 +16,7 @@
 
 @property (retain) SSURLBag *bag;
 @property (copy) NSString *domain;
-@property (getter=domainDisabled) BOOL domainDisabled;
+@property BOOL domainDisabled;
 @property double pollingIntervalInSeconds;
 @property (retain) NSURL *pullAllKeyValueRequestURL;
 @property (retain) NSURL *pullKeyValueRequestURL;

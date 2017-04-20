@@ -12,12 +12,10 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-+ (id)readerSessionWithInternalSession:(id)arg1;
-
 - (void).cxx_destruct;
 - (id)delegate;
 - (void)endSession;
-- (id)initWithInternalSession:(id)arg1;
+- (id)initWithInternalSession:(id)arg1 targetQueue:(id)arg2;
 - (void)readerSession:(id)arg1 didDetectTags:(id)arg2;
 - (void)readerSessionDidEndUnexpectedly:(id)arg1;
 - (void)setDelegate:(id)arg1;

@@ -4,7 +4,6 @@
 
 @interface ICAttachmentPreviewImage : ICCloudSyncingObject {
     NSObject<OS_dispatch_queue> * _fileQueue;
-    long  _fileQueueOnceToken;
     unsigned int  _imageID;
 }
 
@@ -12,6 +11,7 @@
 @property (nonatomic, retain) NSData *cryptoMetadataInitializationVector;
 @property (nonatomic, retain) NSData *cryptoMetadataTag;
 @property (nonatomic, retain) NSData *encryptedMetadata;
+@property (readonly) NSObject<OS_dispatch_queue> *fileQueue;
 @property (nonatomic) double height;
 @property (nonatomic, retain) NSData *metadata;
 @property (nonatomic, retain) NSDate *modifiedDate;
@@ -59,8 +59,6 @@
 - (void)invalidateCache;
 - (void)invalidateImage;
 - (void)invalidateOrientedImage;
-- (BOOL)isMap;
-- (BOOL)isSketch;
 - (BOOL)makeSurePreviewImageDirectoryExists:(id*)arg1;
 - (id)metadata;
 - (BOOL)needsInitialFetchFromCloud;
@@ -82,7 +80,7 @@
 - (id)previewImageURL;
 - (void)removeItemAtURL:(id)arg1;
 - (void)saveAndClearDecryptedData;
-- (void)saveScaledImageFromImageSrc:(struct CGImageSource { }*)arg1 completion:(id /* block */)arg2;
+- (void)saveScaledImageFromImageSrc:(struct CGImageSource { }*)arg1 typeUTI:(struct __CFString { }*)arg2 completion:(id /* block */)arg3;
 - (void)setCachedImage:(struct UIImage { Class x1; }*)arg1;
 - (void)setCachedOrientedImage:(struct UIImage { Class x1; }*)arg1;
 - (void)setImage:(struct UIImage { Class x1; }*)arg1 withScale:(float)arg2 completion:(id /* block */)arg3;

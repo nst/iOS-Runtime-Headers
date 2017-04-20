@@ -5,7 +5,6 @@
 @interface NCNotificationContentView : UIView <NCContentSizeCategoryAdjusting> {
     UIView * _accessoryView;
     BOOL  _adjustsFontForContentSizeCategory;
-    int  _calculatedSecondaryTextNumberOfLines;
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -15,6 +14,7 @@
     UIView * _contentView;
     NCLookViewFontProvider * _fontProvider;
     UILabel * _hintTextLabel;
+    NSMapTable * _labelsToDrawingContexts;
     int  _lookStyle;
     UILabel * _outgoingPrimaryLabel;
     UILabel * _outgoingPrimarySubtitleLabel;
@@ -23,6 +23,7 @@
     UILabel * _primaryLabel;
     UILabel * _primarySubtitleLabel;
     UILabel * _secondaryLabel;
+    NSMutableDictionary * _secondaryLabelWidthToMeasuredNumLines;
     UIImageView * _thumbnailImageView;
 }
 
@@ -55,6 +56,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForThumbnailInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)_hintTextBaselineOffset;
 - (id)_hintTextLabel;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_hintTextLabelBoundsForSize:(struct CGSize { float x1; float x2; })arg1 withContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (id)_lazyHintTextLabel;
 - (id)_lazyOutgoingPrimaryLabel;
 - (id)_lazyOutgoingPrimarySubtitleLabel;
@@ -67,18 +69,22 @@
 - (id)_newPrimaryLabel;
 - (id)_newSecondaryLabel;
 - (int)_numberOfLinesForLabel:(id)arg1 inRectWithSize:(struct CGSize { float x1; float x2; })arg2;
-- (int)_numberOfLinesInSecondaryLabelInBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_outgoingPrimaryLabel;
 - (id)_outgoingPrimarySubtitleLabel;
 - (id)_outgoingSecondaryLabel;
 - (id)_primaryLabel;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_primaryLabelBoundsForSize:(struct CGSize { float x1; float x2; })arg1 withContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (id)_primarySubtitleLabel;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_primarySubtitleLabelBoundsForSize:(struct CGSize { float x1; float x2; })arg1 withContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (float)_primarySubtitleTextBaselineOffsetForCurrentStyle;
 - (float)_primaryTextBaselineOffsetWithBaseValue:(float)arg1;
 - (id)_secondaryLabel;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_secondaryLabelBoundsForSize:(struct CGSize { float x1; float x2; })arg1 withContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 andNumberOfLines:(float)arg3;
+- (int)_secondaryLabelNumberOfLinesWithMeasuredNumberOfLines:(int)arg1;
 - (float)_secondaryTextBaselineOffsetForCurrentStyle;
 - (float)_secondaryTextBaselineOffsetFromBottomWithBaseValue:(float)arg1;
 - (float)_secondaryTextBaselineOffsetWithBaseValue:(float)arg1;
+- (int)_secondaryTextMeasuredNumberOfLinesForWidth:(float)arg1;
 - (void)_setFontProvider:(id)arg1;
 - (void)_setOutgoingPrimaryLabel:(id)arg1;
 - (void)_setOutgoingPrimarySubtitleLabel:(id)arg1;
@@ -94,6 +100,9 @@
 - (id)accessoryView;
 - (BOOL)adjustForContentSizeCategoryChange;
 - (BOOL)adjustsFontForContentSizeCategory;
+- (id)debugDescription;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)hintText;
 - (id)initWithStyle:(int)arg1;
 - (void)layoutSubviews;

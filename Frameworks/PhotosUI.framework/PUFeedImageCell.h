@@ -20,7 +20,7 @@
     UIView<PXVideoOverlayButton> * __overlayPlayButton;
     PUImageViewExtraction * __overlayPlayButtonBackgroundExtraction;
     UIImageView * __overlayPlayButtonBackgroundImageView;
-    PLPhotoTileBadgeView * __photoIrisBadgeView;
+    PXUIAssetBadgeView * __photoIrisBadgeView;
     BOOL  __shouldHideCenterOverlayImageView;
     BOOL  __shouldHideCommentButton;
     BOOL  __shouldHideOverlayPlayButton;
@@ -45,7 +45,7 @@
 @property (setter=_setOverlayPlayButton:, nonatomic, retain) UIView<PXVideoOverlayButton> *_overlayPlayButton;
 @property (setter=_setOverlayPlayButtonBackgroundExtraction:, nonatomic, retain) PUImageViewExtraction *_overlayPlayButtonBackgroundExtraction;
 @property (setter=_setOverlayPlayButtonBackgroundImageView:, nonatomic, retain) UIImageView *_overlayPlayButtonBackgroundImageView;
-@property (setter=_setPhotoIrisBadgeView:, nonatomic, retain) PLPhotoTileBadgeView *_photoIrisBadgeView;
+@property (setter=_setPhotoIrisBadgeView:, nonatomic, retain) PXUIAssetBadgeView *_photoIrisBadgeView;
 @property (setter=_setShouldHideCenterOverlayImageView:, nonatomic) BOOL _shouldHideCenterOverlayImageView;
 @property (setter=_setShouldHideCommentButton:, nonatomic) BOOL _shouldHideCommentButton;
 @property (setter=_setShouldHideOverlayPlayButton:, nonatomic) BOOL _shouldHideOverlayPlayButton;
@@ -58,7 +58,10 @@
 @property (nonatomic) struct CGSize { float x1; float x2; } maximumImageSize;
 @property (nonatomic) int overlayOptions;
 
++ (BOOL)_allowHighQualityVideoOverlayButton;
 + (Class)_contentViewClass;
++ (int)_videoOverlayButtonStyle;
++ (void)preloadResources;
 
 - (void).cxx_destruct;
 - (id)_centerOverlayImageView;

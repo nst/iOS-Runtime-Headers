@@ -15,12 +15,12 @@
     FCNotificationsEndpointConnection * _notificationsEndpointConnection;
     <FCPrivateDataContext> * _privateDataContext;
     FCPurchaseController * _purchaseController;
-    BOOL  _runningPPT;
     FCSubscriptionController * _subscriptionController;
 }
 
 @property (nonatomic, readonly) FCAppConfiguration *appConfiguration;
 @property (nonatomic, readonly) FCArticleController *articleController;
+@property (nonatomic, readonly) NSURL *assetCacheDirectoryURL;
 @property (nonatomic, readonly) FCAssetManager *assetManager;
 @property (nonatomic, retain) <FCContentContext> *contentContext;
 @property (nonatomic, readonly, copy) NSString *contentDirectory;
@@ -50,13 +50,14 @@
 @property (nonatomic, readonly) FCPurchaseController *purchaseController;
 @property (nonatomic, readonly) FCReadingHistory *readingHistory;
 @property (nonatomic, readonly) FCReadingList *readingList;
-@property (getter=isRunningPPT, nonatomic) BOOL runningPPT;
 @property (nonatomic, readonly) FCSubscriptionController *subscriptionController;
 @property (nonatomic, readonly) FCSubscriptionList *subscriptionList;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly, copy) NSString *supportedContentStoreFrontID;
 @property (nonatomic, readonly) FCTagController *tagController;
 @property (nonatomic, readonly) FCTagSettings *tagSettings;
 @property (nonatomic, readonly) FCUserInfo *userInfo;
+@property (nonatomic, readonly) NSURL *webArchiveCacheDirectoryURL;
 
 + (void)initialize;
 + (id)testingContext;
@@ -64,6 +65,7 @@
 - (void).cxx_destruct;
 - (id)appConfiguration;
 - (id)articleController;
+- (id)assetCacheDirectoryURL;
 - (id)assetManager;
 - (void)clearCloudKitCaches;
 - (id)contentContext;
@@ -74,7 +76,7 @@
 - (id)endpointCommandQueue;
 - (id)endpointConnection;
 - (id)feedManager;
-- (id)fetchEndOfArticleDataForHeadline:(id)arg1 initialRelatedHeadlineCount:(unsigned int)arg2 initialPublisherHeadlineCount:(unsigned int)arg3 totalRelatedHeadlineCount:(unsigned int)arg4 totalPublisherHeadlineCount:(unsigned int)arg5 fetchRelatedHeadline:(BOOL)arg6 fetchAllTopics:(BOOL)arg7 completion:(id /* block */)arg8;
+- (id)fetchEndOfArticleDataForHeadline:(id)arg1 initialRelatedHeadlineCount:(unsigned int)arg2 initialPublisherHeadlineCount:(unsigned int)arg3 totalRelatedHeadlineCount:(unsigned int)arg4 totalPublisherHeadlineCount:(unsigned int)arg5 fetchRelatedHeadline:(BOOL)arg6 fetchPublisherHeadlines:(BOOL)arg7 fetchAllTopics:(BOOL)arg8 completion:(id /* block */)arg9;
 - (id)flintHelper;
 - (id)flintResourceManager;
 - (void)getCoverImageForFeed:(id)arg1 completion:(id /* block */)arg2;
@@ -88,7 +90,6 @@
 - (id)internalContentContext;
 - (id)internalPrivateDataContext;
 - (BOOL)isPrivateDataSyncingEnabled;
-- (BOOL)isRunningPPT;
 - (id)networkBehaviorMonitor;
 - (id)notificationController;
 - (id)notificationsController;
@@ -106,11 +107,12 @@
 - (void)setContentContext:(id)arg1;
 - (void)setFlintHelper:(id)arg1;
 - (void)setPrivateDataContext:(id)arg1;
-- (void)setRunningPPT:(BOOL)arg1;
 - (id)subscriptionController;
 - (id)subscriptionList;
+- (id)supportedContentStoreFrontID;
 - (id)tagController;
 - (id)tagSettings;
 - (id)userInfo;
+- (id)webArchiveCacheDirectoryURL;
 
 @end

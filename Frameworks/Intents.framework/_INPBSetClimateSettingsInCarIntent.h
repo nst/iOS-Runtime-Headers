@@ -54,11 +54,19 @@
 @property (nonatomic, retain) _INPBTemperature *temperature;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 + (id)options;
 
 - (void).cxx_destruct;
+- (int)StringAsAirCirculationMode:(id)arg1;
+- (int)StringAsClimateZone:(id)arg1;
+- (int)StringAsRelativeFanSpeedSetting:(id)arg1;
+- (int)StringAsRelativeTemperatureSetting:(id)arg1;
 - (int)airCirculationMode;
+- (id)airCirculationModeAsString:(int)arg1;
 - (int)climateZone;
+- (id)climateZoneAsString:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -86,7 +94,9 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (int)relativeFanSpeedSetting;
+- (id)relativeFanSpeedSettingAsString:(int)arg1;
 - (int)relativeTemperatureSetting;
+- (id)relativeTemperatureSettingAsString:(int)arg1;
 - (void)setAirCirculationMode:(int)arg1;
 - (void)setClimateZone:(int)arg1;
 - (void)setEnableAirConditioner:(BOOL)arg1;
@@ -110,5 +120,11 @@
 - (id)temperature;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

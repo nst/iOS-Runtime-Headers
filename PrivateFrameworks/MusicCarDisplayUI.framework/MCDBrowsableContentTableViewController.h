@@ -11,14 +11,13 @@
     MPWeakTimer * _delayTimer;
     BOOL  _didPushToNowPlayingAtLaunch;
     AVExternalDevice * _externalDevice;
-    MCDErrorLoadingView * _failedLoadView;
     BOOL  _hasCarScreen;
     BOOL  _hasNoBrowsableContent;
     BOOL  _hasTabbedBrowsing;
     BOOL  _limited;
-    MCDLoadingContentView * _loadingContentView;
     MPWeakTimer * _loadingTimer;
     MCDNowPlayingButton * _nowPlayingButton;
+    UIView * _placeholderView;
     NSIndexPath * _reselectIndexPath;
     NSIndexPath * _selectedIndexPath;
     NSIndexPath * _selectedNextIndexPath;
@@ -32,6 +31,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIView *placeholderView;
 @property (nonatomic, retain) NSIndexPath *selectedIndexPath;
 @property (readonly) Class superclass;
 @property (getter=isVisible, nonatomic) BOOL visible;
@@ -44,6 +44,7 @@
 - (void)_limitedUIChanged:(id)arg1;
 - (void)_nowPlayingButtonTapped:(id)arg1;
 - (void)_nowPlayingDidChange:(id)arg1;
+- (void)_replacePlaceholderViewWithView:(id)arg1;
 - (void)_showLoadingScreen;
 - (void)_showTimeoutScreen;
 - (void)_updateNowPlayingButtonVisibility;
@@ -59,10 +60,12 @@
 - (id)initWithContainer:(id)arg1 tabbedBrowsing:(BOOL)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)isVisible;
-- (id)preferredFocusedItem;
+- (id)placeholderView;
+- (id)preferredFocusEnvironments;
 - (void)reloadTable;
 - (void)reloadWithCompletion:(id /* block */)arg1;
 - (id)selectedIndexPath;
+- (void)setPlaceholderView:(id)arg1;
 - (void)setSelectedIndexPath:(id)arg1;
 - (void)setVisible:(BOOL)arg1;
 - (void)showActivity:(BOOL)arg1 inCell:(id)arg2;

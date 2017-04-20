@@ -5,6 +5,7 @@
 @interface NFPowerAssertion : NSObject {
     NSMutableArray * _assertionHolders;
     unsigned int  _assertionID;
+    NSObject<OS_os_transaction> * _powerAssertTransaction;
     unsigned int  _powerNotificationConnection;
     unsigned int  _powerNotificationNotifier;
     struct IONotificationPort { } * _powerNotificationPort;

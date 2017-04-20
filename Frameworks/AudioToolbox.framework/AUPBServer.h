@@ -6,7 +6,7 @@
     unsigned int  mAUHandleCntr;
     struct map<unsigned int, RemoteAUHandleInfo, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, RemoteAUHandleInfo> > > { 
         struct __tree<std::__1::__value_type<unsigned int, RemoteAUHandleInfo>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, RemoteAUHandleInfo>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, RemoteAUHandleInfo> > > { 
-            struct __tree_node<std::__1::__value_type<unsigned int, RemoteAUHandleInfo>, void *> {} *__begin_node_; 
+            struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *__begin_node_; 
             struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, RemoteAUHandleInfo>, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
@@ -20,7 +20,7 @@
     unsigned int  mAUPBRefCounter;
     struct map<unsigned int, AUProcessingBlock, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, AUProcessingBlock> > > { 
         struct __tree<std::__1::__value_type<unsigned int, AUProcessingBlock>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, AUProcessingBlock>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, AUProcessingBlock> > > { 
-            struct __tree_node<std::__1::__value_type<unsigned int, AUProcessingBlock>, void *> {} *__begin_node_; 
+            struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *__begin_node_; 
             struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, AUProcessingBlock>, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
@@ -38,6 +38,8 @@
             struct CAMutex {} *__first_; 
         } __ptr_; 
     }  mLock;
+    int  mNotifyToken;
+    BOOL  mPrevRegistrarNeeded;
     <AUPBRegistrarHosting> * mProxyInterface;
     NSXPCConnection * mRegistrarConnection;
     struct unique_ptr<TestAUProcessingBlock, std::__1::default_delete<TestAUProcessingBlock> > { 
@@ -45,6 +47,7 @@
             struct TestAUProcessingBlock {} *__first_; 
         } __ptr_; 
     }  mTestBlock;
+    BOOL  mValidToken;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -63,6 +66,7 @@
 - (struct AUProcessingBlock { struct AUPBMethods { unsigned int x_1_1_1; int (*x_1_1_2)(); int (*x_1_1_3)(); int (*x_1_1_4)(); int (*x_1_1_5)(); int (*x_1_1_6)(); int (*x_1_1_7)(); int (*x_1_1_8)(); } x1; void *x2; }*)aupbFromRef:(struct OpaqueAUPB { }*)arg1;
 - (id)autorelease;
 - (void)blockListChanged;
+- (void)checkConnectRegistrar;
 - (void)copyProcessingBlock:(unsigned int)arg1 property:(unsigned long)arg2 intoReply:(id /* block */)arg3;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

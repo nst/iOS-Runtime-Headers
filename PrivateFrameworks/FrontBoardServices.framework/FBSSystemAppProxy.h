@@ -33,7 +33,7 @@
 - (void)setBadgeValue:(id)arg1 forBundleID:(id)arg2;
 - (void)setKeyboardFocusApplicationWithBundleID:(id)arg1 pid:(int)arg2 completion:(id /* block */)arg3;
 - (void)setNextWakeInterval:(double)arg1 completion:(id /* block */)arg2;
-- (void)shutdownAndReboot:(BOOL)arg1;
+- (void)shutdownWithOptions:(id)arg1;
 - (void)suspendCurrentApplication;
 - (void)systemApplicationBundleIdentifierWithResult:(id /* block */)arg1;
 - (void)terminateApplication:(id)arg1 forReason:(int)arg2 andReport:(BOOL)arg3 withDescription:(id)arg4 completion:(id /* block */)arg5;

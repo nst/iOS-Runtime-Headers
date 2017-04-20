@@ -23,6 +23,7 @@
 @property (readonly) Class superclass;
 
 + (id)globalQueue;
++ (id)observableWithPredicates:(id)arg1 sortOrdering:(unsigned int)arg2 options:(unsigned int)arg3 addressBook:(void*)arg4;
 
 - (void*)addressBook;
 - (id)cancelationToken;

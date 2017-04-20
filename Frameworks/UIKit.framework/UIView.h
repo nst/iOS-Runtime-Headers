@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIView : UIResponder <CALayerDelegate, MFPopoverPresentationSource, MKInfoCardThemeListener, MKStackingViewControllerSizableView, NSCoding, NSISEngineDelegate, NSISVariableDelegate, SearchUIAutoLayoutItem, UIAppearance, UIAppearanceContainer, UICoordinateSpace, UIDynamicItem, UIFocusContainer, UIFocusItem, UITextEffectsOrdering, UITraitEnvironment, _UIFocusEnvironmentInternal, _UIFocusEnvironmentPrivate, _UIFocusRegionContainer, _UIFocusRegionContainerInternal, _UIGeometryChangeObserver, _UILayoutItem, _UILegacyFocusRegion, _UIMultilineTextContentSizing, _UIScrollNotification, _UITraitEnvironmentInternal> {
+@interface UIView : UIResponder <CALayerDelegate, MFPopoverPresentationSource, MKInfoCardThemeListener, MKStackingViewControllerSizableView, NSCoding, NSISEngineDelegate, NSISVariableDelegate, SearchUIAutoLayoutItem, UIAppearance, UIAppearanceContainer, UICoordinateSpace, UIDynamicItem, UIFocusContainer, UIFocusItem, UITextEffectsOrdering, UITraitEnvironment, _NUIGridArrangementItem, _UIFocusEnvironmentInternal, _UIFocusEnvironmentPrivate, _UIFocusRegionContainer, _UIFocusRegionContainerInternal, _UIGeometryChangeObserver, _UILayoutItem, _UILegacyFocusRegion, _UIMultilineTextContentSizing, _UIScrollNotification, _UITraitEnvironmentInternal> {
     int  __preferedContentsFormat;
     UIPresentationController * __presentationControllerToNotifyOnLayoutSubviews;
     NSString * _backgroundColorSystemColorName;
@@ -51,6 +51,7 @@
     int  _tag;
     UIView * _templateLayoutView;
     int  _tintAdjustmentDimmingCount;
+    unsigned int  _unsatisfiableConstraintsLoggingSuspensionCount;
     UIViewController * _viewDelegate;
     struct { 
         unsigned int userInteractionDisabled : 1; 
@@ -112,12 +113,12 @@
         unsigned int isHostingUpdateConstraintsPassDuringLayout : 1; 
         unsigned int isRunningEngineLevelConstraintsPass : 1; 
         unsigned int isUpdatingLayoutEngineHostConstraints : 1; 
-        unsigned int isUnsatisfiableConstraintsLoggingSuspended : 1; 
         unsigned int isExpectingToFlushPendingLayoutChangeNotifications : 1; 
         unsigned int systemLayoutFittingSizeNeedsUpdate : 1; 
         unsigned int systemLayoutFittingSizeNeedsUpdateInWholeSubtree : 1; 
         unsigned int isCalculatingSystemLayoutFittingSize : 1; 
         unsigned int suppressEncapsulationConstraints : 1; 
+        unsigned int isFetchingSizeForTAMIC_NOEngineHost : 1; 
         unsigned int stayHiddenAwaitingReuse : 1; 
         unsigned int stayHiddenAfterReuse : 1; 
         unsigned int skippedLayoutWhileHiddenForReuse : 1; 
@@ -202,6 +203,7 @@
 @property (setter=_setInteractionTintColor:, nonatomic, retain) UIColor *_interactionTintColor;
 @property (setter=_setInternalConstraints:, nonatomic, retain) NSMutableArray *_internalConstraints;
 @property (nonatomic, readonly) BOOL _isInLayoutSubviews;
+@property (nonatomic, readonly) BOOL _isUnsatisfiableConstraintsLoggingSuspended;
 @property (nonatomic, readonly) int _keyboardOrientation;
 @property (setter=_setLayoutDebuggingIdentifier:, nonatomic, copy) NSString *_layoutDebuggingIdentifier;
 @property (setter=_setLayoutEngine:, nonatomic, retain) NSISEngine *_layoutEngine;
@@ -239,8 +241,11 @@
 @property (setter=_setTracksFocusedAncestors:, nonatomic) BOOL _tracksFocusedAncestors;
 @property (getter=_userInterfaceIdiom, setter=_setUserInterfaceIdiom:, nonatomic) int _userInterfaceIdiom;
 @property (nonatomic, readonly) BOOL _wantsGeometryChangeNotification;
+@property (readonly, copy) NSArray *allSubviews;
+@property (nonatomic) BOOL allowsBaselineOffsetApproximation;
 @property (nonatomic, readonly) MPArtworkCatalog *artworkCatalog;
 @property (getter=_backgroundColorSystemColorName, setter=_setBackgroundColorSystemColorName:, nonatomic, retain) NSString *backgroundColorSystemColorName;
+@property (getter=isBaselineRelativeAlignmentRectInsets, nonatomic) BOOL baselineRelativeAlignmentRectInsets;
 @property (readonly) NSLayoutYAxisAnchor *bottomAnchor;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
 @property (nonatomic, readonly) struct CGPoint { float x1; float x2; } boundsCenter;
@@ -254,6 +259,9 @@
 @property (getter=_contentSizeNotificationToken, setter=_setContentSizeNotificationToken:, nonatomic, retain) id contentSizeNotificationToken;
 @property (nonatomic, readonly) CALayer *currentLayer;
 @property (getter=_currentScreenScale, nonatomic, readonly) float currentScreenScale;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } customAlignmentRectInsets;
+@property (nonatomic) float customBaselineOffsetFromBottom;
+@property (nonatomic) float customFirstBaselineOffsetFromContentTop;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) UIColor *debugHighlight;
 @property (nonatomic) BOOL deliversButtonsForGesturesToSuperview;
@@ -307,7 +315,6 @@
 @property (readonly) NSLayoutXAxisAnchor *trailingAnchor;
 @property (nonatomic, readonly) UITraitCollection *traitCollection;
 @property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
-@property (getter=_isUnsatisfiableConstraintsLoggingSuspended, setter=_setUnsatisfiableConstraintsLoggingSuspended:, nonatomic) BOOL unsatisfiableConstraintsLoggingSuspended;
 @property (getter=isUserInteractionEnabled, nonatomic) BOOL userInteractionEnabled;
 @property (getter=_viewDelegate, setter=_setViewDelegate:, nonatomic) UIViewController *viewDelegate;
 @property (nonatomic) BOOL viewTraversalMark;
@@ -570,6 +577,7 @@
 - (void)_clearAnimationFilters;
 - (void)_clearBecomeFirstResponderWhenCapable;
 - (void)_clearBecomeFirstResponderWhenCapableOnSubtree;
+- (void)_clearConstraintsBrokenWhileUnsatisfiableConstraintsLoggingSuspended;
 - (void)_clearLayoutVariableObservationsOnlyToSupportTAMICChange:(BOOL)arg1;
 - (int)_clipCorners;
 - (int)_clipCornersOfView:(id)arg1;
@@ -586,6 +594,7 @@
 - (id)_constraintForIdentifier:(id)arg1;
 - (id)_constraintsArray;
 - (id)_constraintsBrokenWhileUnsatisfiableConstraintsLoggingSuspended;
+- (id)_constraintsBrokenWhileUnsatisfiableConstraintsLoggingSuspendedCreateIfNecessary:(BOOL)arg1;
 - (id)_constraintsEquivalentToAutoresizingMask;
 - (id)_constraintsExceptingSubviewAutoresizingConstraints;
 - (id)_constraintsValidityDescription;
@@ -635,6 +644,7 @@
 - (id)_debuggableDescriptionForConstraintsAffectingVerticalAxis;
 - (void)_decrementHiddenManagedByLayoutArrangementCount;
 - (void)_decrementPendingHiddenCount;
+- (void)_decrementUnsatisfiableConstraintsLoggingSuspensionCount;
 - (struct CGSize { float x1; float x2; })_defaultContentCompressionResistancePriorities;
 - (struct CGSize { float x1; float x2; })_defaultContentHuggingPriorities;
 - (id)_defaultLayoutDescription;
@@ -748,6 +758,7 @@
 - (BOOL)_imageSnapshotCapturedAllContent;
 - (void)_incrementHiddenManagedByLayoutArrangementCount;
 - (void)_incrementPendingHiddenCount;
+- (void)_incrementUnsatisfiableConstraintsLoggingSuspensionCount;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_inferredLayoutMargins;
 - (void)_informContainerThatSubviewsNeedUpdateConstraints;
 - (void)_informContainerThatSubviewsNeedUpdateConstraintsNeedingLayout:(BOOL)arg1;
@@ -764,6 +775,7 @@
 - (id)_interceptMouseEvent:(struct __GSEvent { }*)arg1;
 - (id)_internalConstraints;
 - (float)_internalScaleForScale:(float)arg1;
+- (BOOL)_intrinsicContentSizeConstraintsAreClean;
 - (void)_intrinsicContentSizeInvalidatedForChildView:(id)arg1;
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_invalidateAppearance;
@@ -848,6 +860,7 @@
 - (void)_markClippingDetected;
 - (id)_maskView;
 - (BOOL)_mayRemainFocused;
+- (void)_mergeConstraintsBrokenWhileUnsatisfiableConstraintsLoggingSuspendedToAncestor:(id)arg1;
 - (id)_minXVariable;
 - (id)_minYVariable;
 - (float)_minimumZoomScaleDelta;
@@ -1076,7 +1089,6 @@
 - (void)_setTraitStorageList:(id)arg1;
 - (void)_setTraitStorageSubviews:(id)arg1;
 - (void)_setTransformForBackdropMaskViews:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (void)_setUnsatisfiableConstraintsLoggingSuspended:(BOOL)arg1;
 - (void)_setUserInterfaceIdiom:(int)arg1;
 - (void)_setViewDelegate:(id)arg1;
 - (void)_setViewsJostledDuringUpdateConstraintsPass:(id)arg1;
@@ -1806,6 +1818,25 @@
 - (id)akEnclosingScrollView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })akVisibleRect;
 
+// Image: /System/Library/PrivateFrameworks/AppSupportUI.framework/AppSupportUI
+
+- (BOOL)allowsBaselineOffsetApproximation;
+- (id)containerViewInfoCreateIfNeeded:(BOOL)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })customAlignmentRectInsets;
+- (float)customBaselineOffsetFromBottom;
+- (float)customFirstBaselineOffsetFromContentTop;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })effectiveAlignmentRectInsets;
+- (float)effectiveBaselineOffsetFromContentBottom;
+- (float)effectiveFirstBaselineOffsetFromContentTop;
+- (struct CGSize { float x1; float x2; })effectiveLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)isBaselineRelativeAlignmentRectInsets;
+- (BOOL)isLayoutSizeDependentOnPerpendicularAxis;
+- (void)setAllowsBaselineOffsetApproximation:(BOOL)arg1;
+- (void)setBaselineRelativeAlignmentRectInsets:(BOOL)arg1;
+- (void)setCustomAlignmentRectInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setCustomBaselineOffsetFromBottom:(float)arg1;
+- (void)setCustomFirstBaselineOffsetFromContentTop:(float)arg1;
+
 // Image: /System/Library/PrivateFrameworks/BaseBoardUI.framework/BaseBoardUI
 
 - (BOOL)bs_isHitTestingDisabled;
@@ -1988,6 +2019,11 @@
 - (id)MPU_vibrantContentEffectView;
 - (id)initForAutolayout;
 
+// Image: /System/Library/PrivateFrameworks/MaterialKit.framework/MaterialKit
+
+- (void)mt_applyVibrantStyling:(id)arg1;
+- (void)mt_removeAllVibrantStyling;
+
 // Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
 
 - (struct CGPoint { float x1; float x2; })boundsCenter;
@@ -2105,6 +2141,7 @@
 + (void)px_animateUsingDefaultDampedEaseInEaseOutWithDuration:(double)arg1 animations:(id /* block */)arg2 completion:(id /* block */)arg3;
 + (void)px_animateView:(id)arg1 toCenter:(struct CGPoint { float x1; float x2; })arg2 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg4 usingDefaultDampedSpringWithDelay:(double)arg5 initialVelocity:(struct PXDisplayVelocity { float x1; float x2; float x3; float x4; })arg6 options:(unsigned int)arg7 completion:(id /* block */)arg8;
 + (void)px_animateView:(id)arg1 toCenter:(struct CGPoint { float x1; float x2; })arg2 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg4 withDuration:(double)arg5 delay:(double)arg6 usingSpringWithDamping:(float)arg7 initialVelocity:(struct PXDisplayVelocity { float x1; float x2; float x3; float x4; })arg8 options:(unsigned int)arg9 completion:(id /* block */)arg10;
++ (void)px_preloadResourcesForVideoOverlayButtonWithStyle:(int)arg1;
 + (struct CGSize { float x1; float x2; })px_videoOverlayButtonSize;
 + (id)px_videoOverlayButtonWithStyle:(int)arg1;
 + (id)px_videoOverlayButtonWithStyle:(int)arg1 allowBackdropStatisticsSupression:(BOOL)arg2;
@@ -2131,15 +2168,8 @@
 
 // Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
 
-+ (BOOL)isDebugBoundingBoxesEnabled;
-+ (void)load;
-
-- (void)_beginObservingSubviewVisibility:(id)arg1;
-- (void)_endObservingSubviewVisibility:(id)arg1;
-- (void)_notifySubviewVisibilityChanged:(id)arg1;
 - (id)containerView;
 - (BOOL)isContainedByItem:(id)arg1;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)view;
 
 // Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
@@ -2199,6 +2229,7 @@
 // Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
 
 - (id)_SKUIView;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })defaultPresentationPosition;
 - (id)skui_apparentBackgroundColor;
 
 // Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
@@ -2294,11 +2325,6 @@
 - (void)_addAccessibilityElementsAndOrderedContainersWithOptions:(id)arg1 toCollection:(id)arg2;
 - (struct CGPoint { float x1; float x2; })accessibilityConvertPointFromSceneReferenceCoordinates:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityConvertRectToSceneReferenceCoordinates:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-
-// Image: /System/Library/PrivateFrameworks/UserNotificationsUIKit.framework/UserNotificationsUIKit
-
-- (void)nc_applyVibrantStyling:(id)arg1;
-- (void)nc_removeAllVibrantStyling;
 
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
 

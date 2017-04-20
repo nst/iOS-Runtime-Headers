@@ -42,11 +42,11 @@
     EKUIOccurrenceCellLabel * _primaryLabel;
     NSLayoutConstraint * _primaryTextBaseline_to_secondaryTextBaseline_Constraint;
     UIVisualEffect * _primaryVisualEffect;
-    UIVisualEffectView * _primaryVisualEffectParentView;
+    NSMutableArray * _primaryVisualEffectViews;
     EKUIOccurrenceCellLabel * _secondaryLabel;
     NSDictionary * _secondaryStringDrawingAttributes;
     UIVisualEffect * _secondaryVisualEffect;
-    UIVisualEffectView * _secondaryVisualEffectParentView;
+    NSMutableArray * _secondaryVisualEffectViews;
     BOOL  _selected;
     UIColor * _selectedBackGroundColor;
     UIView * _selectedBackgroundView;
@@ -113,6 +113,7 @@
 + (BOOL)vibrant;
 
 - (void).cxx_destruct;
+- (void)_addVibrantSubview:(id)arg1 usingPrimaryEffect:(BOOL)arg2;
 - (void)_countdownTimerFired;
 - (id)_createParentVisualEffectViewWithVisualEffect:(id)arg1;
 - (void)_createViews;

@@ -34,6 +34,8 @@
 @property (nonatomic) int status;
 @property (nonatomic) unsigned long long updateVersion;
 
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
 + (id)attributionForPlaceData:(id)arg1 type:(int)arg2;
 + (Class)componentType;
 + (id)failedPlaceData;
@@ -100,5 +102,12 @@
 - (id)statusAsString:(int)arg1;
 - (unsigned long long)updateVersion;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)_fromJSONUsingReflection:(id)arg1;
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

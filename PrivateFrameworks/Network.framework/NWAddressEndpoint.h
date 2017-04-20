@@ -20,6 +20,5 @@
 - (id)addressString;
 - (id)addressStringNoPort;
 - (id)descriptionWithIndent:(int)arg1 showFullContent:(BOOL)arg2;
-- (BOOL)isEqual:(id)arg1;
 
 @end

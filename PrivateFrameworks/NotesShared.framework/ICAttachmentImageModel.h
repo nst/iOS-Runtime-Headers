@@ -14,7 +14,11 @@
 - (BOOL)hasPreviews;
 - (BOOL)hasThumbnailImage;
 - (BOOL)needToGeneratePreviews;
+- (BOOL)needsFullSizePreview;
+- (int)previewImageOrientation;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })previewImageOrientationTransform;
 - (BOOL)showThumbnailInNoteList;
+- (BOOL)supportsQuickLook;
 - (void)updateAttachmentSize;
 - (void)updateFileBasedAttributes;
 

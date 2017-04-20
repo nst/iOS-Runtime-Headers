@@ -23,6 +23,7 @@
 @property (nonatomic, copy) NSURL *localDestinationURL;
 @property (nonatomic, copy) NSURL *localVideoDestinationURL;
 @property (nonatomic, retain) CLLocation *location;
+@property (nonatomic) float loggingVideoZoomFactor;
 @property (nonatomic) unsigned int maximumBurstLength;
 @property (nonatomic) int origin;
 @property (nonatomic, copy) NSString *originalIrisIdentifier;
@@ -39,6 +40,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic) int temporaryPersistenceOptions;
 @property (nonatomic, copy) NSString *timelapseIdentifier;
+@property (nonatomic) unsigned long long userInitiationTime;
 @property (nonatomic) BOOL usesStillImageStabilization;
 @property (nonatomic, copy) NSString *videoPersistenceUUID;
 @property (nonatomic) BOOL wantsAudioForCapture;
@@ -67,6 +69,7 @@
 - (void)setLocalDestinationURL:(id)arg1;
 - (void)setLocalVideoDestinationURL:(id)arg1;
 - (void)setLocation:(id)arg1;
+- (void)setLoggingVideoZoomFactor:(float)arg1;
 - (void)setMaximumBurstLength:(unsigned int)arg1;
 - (void)setOrigin:(int)arg1;
 - (void)setOriginalIrisIdentifier:(id)arg1;
@@ -82,6 +85,7 @@
 - (void)setShouldPersistDiagnosticsToSidecar:(BOOL)arg1;
 - (void)setTemporaryPersistenceOptions:(int)arg1;
 - (void)setTimelapseIdentifier:(id)arg1;
+- (void)setUserInitiationTime:(unsigned long long)arg1;
 - (void)setUsesStillImageStabilization:(BOOL)arg1;
 - (void)setVideoPersistenceUUID:(id)arg1;
 - (void)setWantsAudioForCapture:(BOOL)arg1;

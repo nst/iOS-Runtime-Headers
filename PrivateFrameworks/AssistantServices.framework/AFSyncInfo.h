@@ -6,6 +6,7 @@
     NSString * _anchor;
     SASyncAppMetaData * _appMetadata;
     int  _count;
+    BOOL  _forVerification;
     NSString * _key;
     BOOL  _targetIsLocal;
     NSString * _validity;
@@ -14,6 +15,7 @@
 @property (nonatomic, copy) NSString *anchor;
 @property (nonatomic, copy) SASyncAppMetaData *appMetadata;
 @property (nonatomic) int count;
+@property (nonatomic) BOOL forVerification;
 @property (nonatomic, copy) NSString *key;
 @property (nonatomic) BOOL targetIsLocal;
 @property (nonatomic, copy) NSString *validity;
@@ -26,12 +28,14 @@
 - (int)count;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)forVerification;
 - (id)initWithAnchor:(id)arg1 forcingReset:(BOOL)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)key;
 - (void)setAnchor:(id)arg1;
 - (void)setAppMetadata:(id)arg1;
 - (void)setCount:(int)arg1;
+- (void)setForVerification:(BOOL)arg1;
 - (void)setKey:(id)arg1;
 - (void)setTargetIsLocal:(BOOL)arg1;
 - (void)setValidity:(id)arg1;

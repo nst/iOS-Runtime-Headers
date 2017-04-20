@@ -3,8 +3,8 @@
  */
 
 @interface WKNetworkSessionDelegate : NSObject <NSURLSessionDataDelegate> {
-    struct RefPtr<WebKit::NetworkSession> { 
-        struct NetworkSession {} *m_ptr; 
+    struct RefPtr<WebKit::NetworkSessionCocoa> { 
+        struct NetworkSessionCocoa {} *m_ptr; 
     }  _session;
     bool  _withCredentials;
 }
@@ -29,6 +29,7 @@
 - (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)URLSession:(id)arg1 task:(id)arg2 didSendBodyData:(long long)arg3 totalBytesSent:(long long)arg4 totalBytesExpectedToSend:(long long)arg5;
 - (void)URLSession:(id)arg1 task:(id)arg2 willPerformHTTPRedirection:(id)arg3 newRequest:(id)arg4 completionHandler:(id /* block */)arg5;
-- (id)initWithNetworkSession:(struct NetworkSession { unsigned int x1; struct SessionID { unsigned long long x_2_1_1; } x2; struct unique_ptr<WebCore::NetworkStorageSession, std::__1::default_delete<WebCore::NetworkStorageSession> > { struct __compressed_pair<WebCore::NetworkStorageSession *, std::__1::default_delete<WebCore::NetworkStorageSession> > { struct NetworkStorageSession {} *x_1_2_1; } x_3_1_1; } x3; struct HashMap<unsigned long long, WebKit::NetworkDataTask *, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebKit::NetworkDataTask *> > { struct HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, WebKit::NetworkDataTask *>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, WebKit::NetworkDataTask *> >, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, WebKit::NetworkDataTask *, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebKit::NetworkDataTask *> >::KeyValuePairTraits, WTF::HashTraits<unsigned long long> > { struct KeyValuePair<unsigned long long, WebKit::NetworkDataTask *> {} *x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_4_1_1; } x4; }*)arg1 withCredentials:(bool)arg2;
+- (id)initWithNetworkSession:(struct NetworkSessionCocoa { int (**x1)(); unsigned int x2; struct SessionID { unsigned long long x_3_1_1; } x3; struct HashSet<WebKit::NetworkDataTask *, WTF::PtrHash<WebKit::NetworkDataTask *>, WTF::HashTraits<WebKit::NetworkDataTask *> > { struct HashTable<WebKit::NetworkDataTask *, WebKit::NetworkDataTask *, WTF::IdentityExtractor, WTF::PtrHash<WebKit::NetworkDataTask *>, WTF::HashTraits<WebKit::NetworkDataTask *>, WTF::HashTraits<WebKit::NetworkDataTask *> > { struct NetworkDataTask {} **x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_4_1_1; } x4; struct HashMap<unsigned long long, WebKit::NetworkDataTaskCocoa *, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebKit::NetworkDataTaskCocoa *> > { struct HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, WebKit::NetworkDataTaskCocoa *>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, WebKit::NetworkDataTaskCocoa *> >, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, WebKit::NetworkDataTaskCocoa *, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebKit::NetworkDataTaskCocoa *> >::KeyValuePairTraits, WTF::HashTraits<unsigned long long> > { struct KeyValuePair<unsigned long long, WebKit::NetworkDataTaskCocoa *> {} *x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_5_1_1; } x5; }*)arg1 withCredentials:(bool)arg2;
+- (void)sessionInvalidated;
 
 @end

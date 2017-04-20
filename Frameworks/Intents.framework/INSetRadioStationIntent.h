@@ -20,15 +20,21 @@
 - (id)_typedBackingStore;
 - (id)channel;
 - (id)description;
+- (id)domain;
 - (id)frequency;
 - (id)initWithRadioType:(int)arg1 frequency:(id)arg2 stationName:(id)arg3 channel:(id)arg4 presetNumber:(id)arg5;
+- (id)parametersByName;
 - (id)presetNumber;
 - (int)radioType;
 - (void)setChannel:(id)arg1;
+- (void)setDomain:(id)arg1;
 - (void)setFrequency:(id)arg1;
+- (void)setParametersByName:(id)arg1;
 - (void)setPresetNumber:(id)arg1;
 - (void)setRadioType:(int)arg1;
 - (void)setStationName:(id)arg1;
+- (void)setVerb:(id)arg1;
 - (id)stationName;
+- (id)verb;
 
 @end

@@ -7,6 +7,7 @@
     int  _cellPosition;
     <EKEventDetailItemDelegate> * _delegate;
     EKEvent * _event;
+    EKEvent * _lastEventUpdated;
     EKUIRecurrenceAlertController * _recurrenceAlertController;
     BOOL  _shouldIndent;
     EKEventStore * _store;

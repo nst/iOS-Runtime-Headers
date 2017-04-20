@@ -38,11 +38,16 @@
 @property (nonatomic) int sourceType;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 + (Class)entityNameType;
 + (id)options;
 + (Class)propertiesType;
 
 - (void).cxx_destruct;
+- (int)StringAsDestinationType:(id)arg1;
+- (int)StringAsEntityTypes:(id)arg1;
+- (int)StringAsSourceType:(id)arg1;
 - (void)addEntityName:(id)arg1;
 - (void)addEntityType:(int)arg1;
 - (void)addProperties:(id)arg1;
@@ -54,12 +59,14 @@
 - (id)description;
 - (id)destinationName;
 - (int)destinationType;
+- (id)destinationTypeAsString:(int)arg1;
 - (id)dictionaryRepresentation;
 - (id)entityNameAtIndex:(unsigned int)arg1;
 - (id)entityNames;
 - (unsigned int)entityNamesCount;
 - (int)entityTypeAtIndex:(unsigned int)arg1;
 - (int*)entityTypes;
+- (id)entityTypesAsString:(int)arg1;
 - (unsigned int)entityTypesCount;
 - (BOOL)hasDestinationName;
 - (BOOL)hasDestinationType;
@@ -86,7 +93,14 @@
 - (void)setSourceType:(int)arg1;
 - (id)sourceName;
 - (int)sourceType;
+- (id)sourceTypeAsString:(int)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

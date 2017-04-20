@@ -2,13 +2,23 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@interface LSApplicationWorkspaceRemoteObserver : LSApplicationWorkspaceObserver {
+@interface LSApplicationWorkspaceRemoteObserver : NSObject <LSInternalWorkspaceObserverProtocol, NSSecureCoding> {
     NSHashTable * _observers;
     BOOL  _observinglsd;
     NSObject<OS_dispatch_queue> * _progressSubscriptionsQueue;
+    NSUUID * _uuid;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSUUID *uuid;
+
++ (BOOL)supportsSecureCoding;
+
 - (void)addLocalObserver:(id)arg1;
+- (void)applicationIconDidChange:(id)arg1;
 - (void)applicationInstallsArePrioritized:(id)arg1 arePaused:(id)arg2;
 - (void)applicationInstallsDidCancel:(id)arg1;
 - (void)applicationInstallsDidChange:(id)arg1;
@@ -26,7 +36,9 @@
 - (void)applicationsWillUninstall:(id)arg1;
 - (unsigned int)currentObserverCount;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)isObservinglsd;
 - (id)localObservers;
 - (BOOL)messageObserversWithSelector:(SEL)arg1 andApps:(id)arg2;
@@ -36,5 +48,7 @@
 - (void)pluginsWillUninstall:(id)arg1;
 - (void)removeLocalObserver:(id)arg1;
 - (void)setObservinglsd:(BOOL)arg1;
+- (void)setUuid:(id)arg1;
+- (id)uuid;
 
 @end

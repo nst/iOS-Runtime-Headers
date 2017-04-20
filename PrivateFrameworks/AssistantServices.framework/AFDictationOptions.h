@@ -17,6 +17,7 @@
     double  _maximumRecognitionDuration;
     NSString * _microphoneIdentifier;
     NSString * _offlineLanguage;
+    NSURL * _originalAudioFileURL;
     NSString * _orthography;
     NSString * _postfixText;
     NSString * _prefixText;
@@ -47,6 +48,7 @@
 @property (nonatomic) double maximumRecognitionDuration;
 @property (nonatomic, copy) NSString *microphoneIdentifier;
 @property (nonatomic, copy) NSString *offlineLanguage;
+@property (nonatomic, copy) NSURL *originalAudioFileURL;
 @property (nonatomic, copy) NSString *orthography;
 @property (nonatomic, copy) NSString *postfixText;
 @property (nonatomic, copy) NSString *prefixText;
@@ -84,6 +86,7 @@
 - (double)maximumRecognitionDuration;
 - (id)microphoneIdentifier;
 - (id)offlineLanguage;
+- (id)originalAudioFileURL;
 - (id)orthography;
 - (id)postfixText;
 - (id)prefixText;
@@ -106,6 +109,7 @@
 - (void)setMaximumRecognitionDuration:(double)arg1;
 - (void)setMicrophoneIdentifier:(id)arg1;
 - (void)setOfflineLanguage:(id)arg1;
+- (void)setOriginalAudioFileURL:(id)arg1;
 - (void)setOrthography:(id)arg1;
 - (void)setPostfixText:(id)arg1;
 - (void)setPrefixText:(id)arg1;

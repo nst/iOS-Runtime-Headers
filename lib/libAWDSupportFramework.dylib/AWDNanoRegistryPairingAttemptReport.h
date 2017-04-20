@@ -11,6 +11,7 @@
     NSString * _finalScreenName;
     NSString * _gizmoBuild;
     NSString * _gizmoBuildtype;
+    NSString * _gizmoEnclosureColor;
     unsigned int  _gizmoEnclosureMaterial;
     NSString * _gizmoHardware;
     unsigned int  _gizmoMaxPairingVersion;
@@ -56,6 +57,7 @@
 @property (nonatomic, retain) NSString *finalScreenName;
 @property (nonatomic, retain) NSString *gizmoBuild;
 @property (nonatomic, retain) NSString *gizmoBuildtype;
+@property (nonatomic, retain) NSString *gizmoEnclosureColor;
 @property (nonatomic) unsigned int gizmoEnclosureMaterial;
 @property (nonatomic, retain) NSString *gizmoHardware;
 @property (nonatomic) unsigned int gizmoMaxPairingVersion;
@@ -68,6 +70,7 @@
 @property (nonatomic, readonly) BOOL hasFinalScreenName;
 @property (nonatomic, readonly) BOOL hasGizmoBuild;
 @property (nonatomic, readonly) BOOL hasGizmoBuildtype;
+@property (nonatomic, readonly) BOOL hasGizmoEnclosureColor;
 @property (nonatomic) BOOL hasGizmoEnclosureMaterial;
 @property (nonatomic, readonly) BOOL hasGizmoHardware;
 @property (nonatomic) BOOL hasGizmoMaxPairingVersion;
@@ -112,6 +115,7 @@
 - (id)finalScreenName;
 - (id)gizmoBuild;
 - (id)gizmoBuildtype;
+- (id)gizmoEnclosureColor;
 - (unsigned int)gizmoEnclosureMaterial;
 - (id)gizmoHardware;
 - (unsigned int)gizmoMaxPairingVersion;
@@ -124,6 +128,7 @@
 - (BOOL)hasFinalScreenName;
 - (BOOL)hasGizmoBuild;
 - (BOOL)hasGizmoBuildtype;
+- (BOOL)hasGizmoEnclosureColor;
 - (BOOL)hasGizmoEnclosureMaterial;
 - (BOOL)hasGizmoHardware;
 - (BOOL)hasGizmoMaxPairingVersion;
@@ -163,6 +168,7 @@
 - (void)setFinalScreenName:(id)arg1;
 - (void)setGizmoBuild:(id)arg1;
 - (void)setGizmoBuildtype:(id)arg1;
+- (void)setGizmoEnclosureColor:(id)arg1;
 - (void)setGizmoEnclosureMaterial:(unsigned int)arg1;
 - (void)setGizmoHardware:(id)arg1;
 - (void)setGizmoMaxPairingVersion:(unsigned int)arg1;

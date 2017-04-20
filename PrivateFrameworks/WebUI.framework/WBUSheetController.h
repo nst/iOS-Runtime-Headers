@@ -2,18 +2,14 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@interface WBUSheetController : NSObject <UITableViewDataSource, UITableViewDelegate> {
+@interface WBUSheetController : NSObject {
     WebUIAlert * _alert;
     UIAlertController * _alertController;
     NSMutableArray * _alertInvocationQueue;
     id  _delegate;
-    UITableView * _tableView;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) Class superclass;
++ (id)alertControllerForAlert:(id)arg1 automaticallyDismiss:(BOOL)arg2 withCompletionHandler:(id /* block */)arg3;
 
 - (void).cxx_destruct;
 - (void)_alertDidDismissWithAction:(int)arg1;
@@ -22,8 +18,5 @@
 - (void)setDelegate:(id)arg1;
 - (void)showSheetForAlert:(id)arg1;
 - (void)showSheetForAlert:(id)arg1 inView:(id)arg2;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 
 @end

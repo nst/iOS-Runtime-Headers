@@ -195,6 +195,7 @@
 - (id)gestureOccurrenceSuperview;
 - (float)gutterWidth;
 - (float)horizontalOffsetForPagingForEventGestureController:(id)arg1;
+- (id)horizontalScrollView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)insertViewForEvent:(id)arg1 belowViewForOtherEvent:(id)arg2;
 - (void)layoutContainerView:(id)arg1;

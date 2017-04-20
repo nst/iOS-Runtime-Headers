@@ -20,6 +20,7 @@
     NSDate * _lastSiriActivationTime;
     BOOL  _listenTimerIsRunning;
     NSObject<OS_dispatch_queue> * _myriadListenQueue;
+    NSObject<OS_dispatch_queue> * _myriadTimerManagementQueue;
     NSObject<OS_dispatch_queue> * _myriadTimerQueue;
     NSObject<OS_dispatch_source> * _recentLossTimer;
     NSMutableDictionary * _replies;
@@ -36,6 +37,7 @@
 + (id)currentCoordinator;
 
 - (void).cxx_destruct;
+- (id)_CreateDispatchTimerFor:(double)arg1 onQueue:(id)arg2 toExecute:(id /* block */)arg3;
 - (void)_cancelTimer;
 - (void)_handleRecentClientElectionLoss;
 - (void)_initDeviceClassAndAdjustments;
@@ -69,6 +71,7 @@
 - (void)startAdvertising:(id)arg1 afterDelay:(float)arg2 maxInterval:(float)arg3;
 - (void)startAdvertisingFromDirectTrigger;
 - (void)startAdvertisingFromVoiceTrigger;
+- (void)startAdvertisingFromVoiceTriggerAdjusted:(BOOL)arg1;
 - (void)startListening;
 - (void)startResponseAdvertising:(unsigned short)arg1;
 - (void)startWatchAdvertisingFromVoiceTrigger;

@@ -21,6 +21,7 @@
     NSString * _profileDescription;
     NSDate * _removalDate;
     NSString * _removalPasscode;
+    BOOL  _shouldHaveFullSSLTrust;
     NSObject<OS_dispatch_queue> * _signerEvaluationQueue;
     NSArray * _signerQueueSignerCertificates;
     NSString * _signerQueueSignerSummary;
@@ -61,6 +62,7 @@
 @property (nonatomic, readonly, retain) NSString *profileIDHashFileName;
 @property (nonatomic, readonly) NSDate *removalDate;
 @property (nonatomic, retain) NSString *removalPasscode;
+@property (nonatomic, readonly) BOOL shouldHaveFullSSLTrust;
 @property (nonatomic, readonly) struct __SecCertificate { }*signerCertificate;
 @property (nonatomic, retain) NSArray *signerCertificates;
 @property (nonatomic, readonly) NSString *signerSummary;
@@ -92,6 +94,7 @@
 - (void).cxx_destruct;
 - (id)UUID;
 - (id)appAccessibilityParameters;
+- (BOOL)containsAnyPayloadOfClasses:(id)arg1;
 - (BOOL)containsOnlyPayloadsOfClasses:(id)arg1;
 - (BOOL)containsPayloadOfClass:(Class)arg1;
 - (struct __SecCertificate { }*)copyCertificateFromPayloadWithUUID:(id)arg1;
@@ -146,6 +149,8 @@
 - (void)setMustInstallNonInteractively:(BOOL)arg1;
 - (void)setRemovalPasscode:(id)arg1;
 - (void)setSignerCertificates:(id)arg1;
+- (BOOL)shouldHaveFullSSLTrust;
+- (BOOL)shouldHaveFullSSLTrust;
 - (id)signatureVersion;
 - (struct __SecCertificate { }*)signerCertificate;
 - (id)signerCertificates;

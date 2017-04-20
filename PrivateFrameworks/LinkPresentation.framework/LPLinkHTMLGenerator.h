@@ -30,6 +30,7 @@
     BOOL  _useVariablesWhenUsingInlineStyles;
     BOOL  _usesComputedPresentationProperties;
     LPVideo * _video;
+    LPHTMLVideoComponent * _videoComponent;
 }
 
 @property (nonatomic, readonly, copy) NSURL *URL;
@@ -68,6 +69,7 @@
 - (id)_createMediaComponent;
 - (id)_createMediaTopCaptionBar;
 - (id)_createQuoteComponent;
+- (void)_didFollowLink;
 - (void)_fetchMetadata;
 - (BOOL)_includeClassNamesWhenUsingInlineStyles;
 - (void)_rebuildView;

@@ -20,6 +20,8 @@
 - (oneway void)audioSessionDidEndInterruption:(BOOL)arg1;
 - (oneway void)audioSessionIDChanged:(unsigned int)arg1;
 - (oneway void)cacheImage:(id)arg1;
+- (oneway void)extensionRequestFinishedForApplication:(id)arg1 error:(id)arg2;
+- (oneway void)extensionRequestWillStartForApplication:(id)arg1;
 - (oneway void)getBulletinContext:(id /* block */)arg1;
 - (id)initWithConnection:(id)arg1;
 - (oneway void)invalidateCurrentUserActivity;
@@ -48,5 +50,6 @@
 - (oneway void)speechRecordingStartpointDetected;
 - (oneway void)speechRecordingWillBeginRecognitionUpdateForTask:(id)arg1;
 - (oneway void)speechRecordingWillBeginWithLevelsSharedMem:(id)arg1;
+- (oneway void)startUIRequestWithText:(id)arg1 completion:(id /* block */)arg2;
 
 @end

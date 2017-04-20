@@ -6,5 +6,6 @@
 @required
 
 - (void)planInfoDidUpdate;
+- (void)remoteProvisioningDidBecomeAvailable;
 
 @end

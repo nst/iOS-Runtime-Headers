@@ -38,7 +38,6 @@
     double  _distanceWhenPrepareAnnounced;
     double  _estimateOfTimeToSpeakExecutionAnnouncement;
     int  _guidanceState;
-    GEORouteMatch * _lastRouteMatch;
     double  _minExecutionDistance;
     MNNavigationSession * _navigationSession;
     unsigned int  _pointIndexForCurrentRoadInfo;
@@ -131,6 +130,6 @@
 - (void)updateForReturnToRoute;
 - (void)updateGuidanceAfterReroute;
 - (void)updateGuidanceForLocation:(id)arg1 navigatorState:(int)arg2;
-- (void)updateGuidanceForProceedToRouteAtLocation:(struct { double x1; double x2; })arg1 routeMatch:(id)arg2 remainingTime:(double)arg3 distanceUntilDestination:(double)arg4;
+- (void)updateGuidanceForProceedToRouteAtLocation:(struct { double x1; double x2; })arg1 routeMatch:(id)arg2;
 
 @end

@@ -12,7 +12,7 @@
 
 @optional
 
-- (int)changeType;
+- (unsigned int)changeType;
 - (NSString *)clientId;
 - (NSString *)contentType;
 - (NSString *)data;

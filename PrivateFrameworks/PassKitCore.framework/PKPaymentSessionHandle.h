@@ -7,10 +7,8 @@
     <NFSession> * _sessionHandle;
 }
 
-+ (id)paymentSessionHandleWithInternalSessionHandle:(id)arg1;
-
 - (void).cxx_destruct;
-- (id)initWithInternalSessionHandle:(id)arg1;
+- (id)initWithInternalSessionHandle:(id)arg1 targetQueue:(id)arg2;
 - (void)invalidateSession;
 - (BOOL)isFirstInQueue;
 

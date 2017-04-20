@@ -4,7 +4,6 @@
 
 @interface ICNoteContext : NSObject <ICNoteContainer> {
     ICAccountUtilities * _accountUtilities;
-    NSMutableSet * _attachmentIdentifersAlreadyCheckedForUpdate;
     NSObject<OS_dispatch_queue> * _backgroundTaskQueue;
     unsigned int  _changeTrackingDisableLevel;
     unsigned int  _contextOptions;
@@ -25,7 +24,6 @@
 }
 
 @property (nonatomic, retain) ICAccountUtilities *accountUtilities;
-@property (nonatomic, retain) NSMutableSet *attachmentIdentifersAlreadyCheckedForUpdate;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *backgroundTaskQueue;
 @property (nonatomic) unsigned int changeTrackingDisableLevel;
 @property (nonatomic) unsigned int contextOptions;
@@ -74,7 +72,6 @@
 - (void)addPersistentStoreIfNeeded;
 - (id)allICloudACAccounts;
 - (void)applicationWillTerminate;
-- (id)attachmentIdentifersAlreadyCheckedForUpdate;
 - (id)backgroundTaskQueue;
 - (BOOL)canBeSharedViaICloud;
 - (BOOL)canTrackChangesForSync;
@@ -142,7 +139,6 @@
 - (void)saveAndClearDecryptedDataIfNecessary;
 - (BOOL)saveImmediately;
 - (void)setAccountUtilities:(id)arg1;
-- (void)setAttachmentIdentifersAlreadyCheckedForUpdate:(id)arg1;
 - (void)setBackgroundTaskQueue:(id)arg1;
 - (void)setChangeTrackingDisableLevel:(unsigned int)arg1;
 - (void)setContextOptions:(unsigned int)arg1;

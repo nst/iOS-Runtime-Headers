@@ -5,18 +5,19 @@
 @interface VSStoreRequestOperation : VSAsyncOperation {
     VSStoreRequest * _request;
     int  _requestCompletionFlag;
-    VSFailable * _result;
+    VSOptional * _result;
     SSRequest * _storeServicesRequest;
 }
 
 @property (nonatomic, copy) VSStoreRequest *request;
-@property (nonatomic, retain) VSFailable *result;
+@property (nonatomic, retain) VSOptional *result;
 @property (nonatomic, retain) SSRequest *storeServicesRequest;
 
 - (void).cxx_destruct;
 - (BOOL)_isFirstToFinish;
 - (void)cancel;
 - (void)executionDidBegin;
+- (id)init;
 - (id)request;
 - (id)result;
 - (void)setRequest:(id)arg1;

@@ -5,6 +5,7 @@
 @interface MPStoreItemMetadataRequest : NSObject {
     BOOL  _allowLocalEquivalencies;
     NSArray * _itemIdentifiers;
+    NSString * _platform;
     unsigned int  _reason;
     NSString * _requestingBundleIdentifier;
     NSString * _requestingBundleVersion;
@@ -13,6 +14,7 @@
 
 @property (nonatomic) BOOL allowLocalEquivalencies;
 @property (nonatomic, copy) NSArray *itemIdentifiers;
+@property (nonatomic, copy) NSString *platform;
 @property (nonatomic) unsigned int reason;
 @property (nonatomic, copy) NSString *requestingBundleIdentifier;
 @property (nonatomic, copy) NSString *requestingBundleVersion;
@@ -21,11 +23,13 @@
 - (void).cxx_destruct;
 - (BOOL)allowLocalEquivalencies;
 - (id)itemIdentifiers;
+- (id)platform;
 - (unsigned int)reason;
 - (id)requestingBundleIdentifier;
 - (id)requestingBundleVersion;
 - (void)setAllowLocalEquivalencies:(BOOL)arg1;
 - (void)setItemIdentifiers:(id)arg1;
+- (void)setPlatform:(id)arg1;
 - (void)setReason:(unsigned int)arg1;
 - (void)setRequestingBundleIdentifier:(id)arg1;
 - (void)setRequestingBundleVersion:(id)arg1;

@@ -27,6 +27,7 @@
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 + (id)insertInManagedObjectContext:(id)arg1;
++ (id)localizedRecoveredTitle;
 
 - (id)_prettyDescription;
 - (id)_typeDescription;

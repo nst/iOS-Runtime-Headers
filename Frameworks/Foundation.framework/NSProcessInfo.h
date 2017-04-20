@@ -79,4 +79,8 @@
 - (void)_disableAutomaticTerminationWithoutSettingRelaunchable:(id)arg1;
 - (void)_enableAutomaticTerminationWithoutSettingRelaunchable:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
+
+- (id)bs_jobLabel;
+
 @end

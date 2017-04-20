@@ -17,6 +17,7 @@
 @property (nonatomic, copy) NSDictionary *startTimeModifications;
 
 + (Class)queueFeederClass;
++ (id)requiredPropertiesForStaticMediaClips;
 
 - (void).cxx_destruct;
 - (id)assetStoreFronts;

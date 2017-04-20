@@ -74,6 +74,7 @@
 - (unsigned int)hash;
 - (id)initForAutocompleteWithTraits:(id)arg1 count:(unsigned int)arg2;
 - (id)initForCategoryListWithTraits:(id)arg1;
+- (id)initForDatasetCheckWithTraits:(id)arg1;
 - (id)initForNearestTransitStationWithLine:(unsigned long long)arg1 coordinate:(struct { double x1; double x2; })arg2 includeETA:(BOOL)arg3 traits:(id)arg4;
 - (id)initForSearchFieldPlaceholderWithTraits:(id)arg1;
 - (id)initForSpotlightCategoryListWithTraits:(id)arg1;

@@ -122,10 +122,6 @@
     BOOL  _showsBuildings;
     VKSkyModel * _skyModel;
     VKRasterMapModel * _standardRasterModel;
-    struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > { 
-        struct StylesheetQuery<gss::PropertyID> {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    }  _styleQuery;
     float  _styleTransitionProgress;
     unsigned char  _targetDisplay;
     VKTileProvider * _tileProvider;
@@ -267,6 +263,7 @@
 - (void)dealloc;
 - (void)debugHighlightFeatureMarker:(const struct shared_ptr<md::FeatureMarker> { struct FeatureMarker {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
 - (void)debugHighlightObjectAtPoint:(struct CGPoint { float x1; float x2; })arg1 highlightTarget:(unsigned char)arg2;
+- (id)debugLabelString:(BOOL)arg1;
 - (id)debugModel;
 - (id)delegate;
 - (void)deselectLabelMarker;
@@ -309,7 +306,6 @@
 - (BOOL)isShowingNoDataPlaceholders;
 - (BOOL)isTrafficEnabled;
 - (BOOL)isTrafficIncidentsEnabled;
-- (id)labelDebugString;
 - (struct shared_ptr<md::LabelMarker> { struct LabelMarker {} *x1; struct __shared_weak_count {} *x2; })labelMarkerForCustomFeatureAnnotation:(id)arg1 dataSource:(id)arg2;
 - (struct shared_ptr<md::LabelMarker> { struct LabelMarker {} *x1; struct __shared_weak_count {} *x2; })labelMarkerForSelectionAtPoint:(struct CGPoint { float x1; float x2; })arg1 selectableLabelsOnly:(BOOL)arg2;
 - (BOOL)labelMarkerSelectionEnabled;

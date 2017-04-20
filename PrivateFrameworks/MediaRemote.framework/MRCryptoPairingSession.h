@@ -4,13 +4,14 @@
 
 @interface MRCryptoPairingSession : NSObject {
     <MRCryptoPairingSessionDelegate> * _delegate;
-    NSString * _peerIdentifier;
+    void * _device;
     unsigned int  _role;
-    BOOL  _valid;
 }
 
 @property (nonatomic) <MRCryptoPairingSessionDelegate> *delegate;
-@property (nonatomic, readonly) NSString *peerIdentifier;
+@property (nonatomic, readonly) void*device;
+@property (getter=isPaired, nonatomic, readonly) BOOL paired;
+@property (nonatomic, readonly) NSArray *pairedDevices;
 @property (nonatomic, readonly) unsigned int role;
 @property (getter=isValid, nonatomic, readonly) BOOL valid;
 
@@ -21,15 +22,19 @@
 - (id)decryptData:(id)arg1 withError:(id*)arg2;
 - (id)delegate;
 - (BOOL)deleteIdentityWithError:(id*)arg1;
+- (void*)device;
 - (id)encryptData:(id)arg1 withError:(id*)arg2;
 - (void)handlePairingExchangeData:(id)arg1 completion:(id /* block */)arg2;
 - (void)handlePairingFailureWithStatus:(long)arg1;
 - (id)init;
-- (id)initWithRole:(unsigned int)arg1 peerIdentifier:(id)arg2;
+- (id)initWithRole:(unsigned int)arg1 device:(void*)arg2;
+- (BOOL)isPaired;
 - (BOOL)isValid;
 - (void)open;
-- (id)peerIdentifier;
+- (id)pairedDevices;
+- (id)removePeer;
 - (unsigned int)role;
 - (void)setDelegate:(id)arg1;
+- (id)updatePeer;
 
 @end

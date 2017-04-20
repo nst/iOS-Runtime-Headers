@@ -17,18 +17,22 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isMuted;
 @property (nonatomic, readonly) BOOL isPlaying;
+@property (nonatomic, readonly) unsigned long long lastInteractionTimestamp;
+@property (nonatomic, readonly) BOOL shouldUnmuteWhenUserAdjustsVolume;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) float unobscuredAreaFraction;
 @property (nonatomic, readonly) BOOL usesSharedAudioSession;
 
 - (void).cxx_destruct;
 - (void)buttonPressed:(id)arg1;
 - (void)dealloc;
-- (id)initWithPreviewURL:(id)arg1;
+- (id)initWithPreviewURL:(id)arg1 style:(id)arg2;
 - (BOOL)isActive;
 - (BOOL)isMuted;
 - (BOOL)isPlaying;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)setActive:(BOOL)arg1;
+- (BOOL)shouldUnmuteWhenUserAdjustsVolume;
 - (void)updateToState:(int)arg1;
 - (BOOL)usesSharedAudioSession;
 

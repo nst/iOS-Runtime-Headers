@@ -21,7 +21,7 @@
 - (void).cxx_destruct;
 - (BOOL)containsState:(int)arg1;
 - (void)dealloc;
-- (id)initWithSessionID:(id)arg1 reachabilityPath:(unsigned int)arg2 streamSender:(id)arg3 streamReceiver:(id)arg4 remoteCapabilities:(id)arg5;
+- (id)initWithSessionID:(id)arg1 reachabilityPath:(unsigned int)arg2 streamSender:(id)arg3 streamReceiver:(id)arg4 remoteCapabilities:(id)arg5 streamPreference:(id)arg6;
 - (id)logIdentifier;
 - (void)setStreamState:(unsigned int)arg1;
 - (id)stateAsString;

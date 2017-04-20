@@ -15,6 +15,7 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (id)conciseDescription;
 - (void)dealloc;
 - (id)deferredProperties;
 - (id)deferredPropertiesForProperties:(id)arg1;

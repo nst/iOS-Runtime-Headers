@@ -24,8 +24,10 @@
 + (id)sharedDefaultEvaluator;
 
 - (void).cxx_destruct;
+- (id)copyPath;
 - (void)dealloc;
 - (id)endpoint;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithEndpoint:(id)arg1 parameters:(id)arg2;
 - (id)internalEvaluator;

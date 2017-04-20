@@ -8,6 +8,7 @@
     UIViewController * _internalDetailViewController;
     UIViewController * _internalMasterViewController;
     BOOL  _supportsEdgeSwipeBackGesture;
+    id /* block */  _transitionAnimationCompletionHandler;
 }
 
 @property (setter=_setPauseToken:, nonatomic, retain) id _pauseToken;
@@ -33,11 +34,13 @@
 - (void)didEndTransition;
 - (id)init;
 - (id)initWithMasterViewController:(id)arg1 detailViewController:(id)arg2;
+- (void)installTransitionAnimationCompletionHandler:(id /* block */)arg1;
 - (BOOL)isInteractive;
 - (id)masterViewController;
 - (void)startInteractiveTransition:(id)arg1;
 - (BOOL)supportsEdgeSwipeBackGesture;
 - (double)transitionDuration:(id)arg1;
+- (void)willEndTransition;
 - (void)willStartTransition;
 
 @end

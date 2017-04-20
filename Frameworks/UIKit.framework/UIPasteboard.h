@@ -44,7 +44,6 @@
 - (void)setName:(id)arg1;
 - (void)setPersistent:(BOOL)arg1;
 - (void)setString:(id)arg1;
-- (void)setStrings:(id)arg1;
 - (void)setURL:(id)arg1;
 - (void)setURLs:(id)arg1;
 
@@ -62,6 +61,11 @@
 - (BOOL)pu_containsAssets;
 - (void)pu_setAssetRepresentation:(id)arg1;
 - (void)pu_setAssetRepresentations:(id)arg1;
+
+// Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
+
+- (id)safari_bestStringForPastingIntoURLField;
+- (id)safari_pasteAndNavigateButtonTitle;
 
 // Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
 
@@ -125,6 +129,7 @@
 - (id)pasteboardTypesForItemSet:(id)arg1;
 - (void)setData:(id)arg1 forPasteboardType:(id)arg2;
 - (void)setItems:(id)arg1;
+- (void)setStrings:(id)arg1;
 - (void)setValue:(id)arg1 forPasteboardType:(id)arg2;
 - (id)string;
 - (id)strings;

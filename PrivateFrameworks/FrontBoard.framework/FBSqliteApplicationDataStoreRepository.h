@@ -6,7 +6,7 @@
     NSObject<OS_dispatch_queue> * _calloutQueue;
     NSObject<OS_dispatch_queue> * _dbQueue;
     unsigned int  _dbQueue_batchDepth;
-    FBSqliteDatabaseConnection * _dbQueue_dbConnection;
+    BSSqliteDatabaseConnection * _dbQueue_dbConnection;
     int  _dbQueue_firstUnlockToken;
     <FBApplicationDataStoreRepositoryDelegate> * _delegate;
     NSURL * _storeURL;
@@ -39,9 +39,11 @@
 - (id)_dbQueue_objectsForKeys:(id)arg1;
 - (id)_dbQueue_openDatabase;
 - (void)_dbQueue_performWithSavepoint:(id)arg1 handler:(id /* block */)arg2;
-- (BOOL)_dbQueue_setAsideDamagedDatabase;
+- (BOOL)_dbQueue_truncateDamagedDatabase;
+- (BOOL)_dbQueue_tryPreserveDamagedDatabase;
+- (BOOL)_inAlternateSystemApp;
 - (BOOL)_isEligibleForSaving:(id)arg1;
-- (BOOL)_setAsideFileAtURL:(id)arg1;
+- (BOOL)_preserveFileAtURL:(id)arg1;
 - (id)applicationIdentifiersWithState;
 - (void)beginBatchedUpdate;
 - (void)close;

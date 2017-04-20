@@ -22,7 +22,6 @@
     double  _faceAreaMaxY;
     double  _faceAreaMinX;
     double  _faceAreaMinY;
-    int  _faceDetectionState;
     NSArray * _faceRegions;
     BOOL  _favorite;
     NSString * _filename;
@@ -94,7 +93,6 @@
 @property (nonatomic, readonly) double faceAreaMaxY;
 @property (nonatomic, readonly) double faceAreaMinX;
 @property (nonatomic, readonly) double faceAreaMinY;
-@property (nonatomic, readonly) int faceDetectionState;
 @property (nonatomic, readonly) NSArray *faceRegions;
 @property (getter=isFavorite, nonatomic, readonly) BOOL favorite;
 @property (nonatomic, readonly) NSString *filename;
@@ -205,6 +203,8 @@
 + (id)fetchType;
 + (id)identifierCode;
 + (id)imageManagerPropertiesToFetch;
++ (BOOL)isOriginalKnownUnsupportedFormatForAsset:(id)arg1 failureInfo:(id*)arg2;
++ (BOOL)isOriginalVideoComplementKnownUnsupportedFormatForAsset:(id)arg1 failureInfo:(id*)arg2;
 + (id)locationPropertiesToFetch;
 + (id)managedEntityName;
 + (BOOL)managedObjectSupportsBursts;
@@ -232,6 +232,8 @@
 - (id)_createPropertyObjectOfClass:(Class)arg1 preFetchedProperties:(id)arg2;
 - (id)_fileURLForMetadataWithExtension:(id)arg1;
 - (id)_imageRequestOptionsForBaseVersion:(int)arg1 options:(id)arg2 progressEstimateForImageProgress:(id /* block */)arg3;
+- (id)_inq_messagesForRequestID:(int)arg1;
+- (void)_inq_trimToMostRecent;
 - (void)_renderTemporaryVideoForObjectBuilder:(id)arg1 resultHandler:(id /* block */)arg2;
 - (void)_requestRenderedVideoForVideoURL:(id)arg1 adjustmentData:(id)arg2 canHandleAdjustmentData:(BOOL)arg3 resultHandler:(id /* block */)arg4;
 - (id)_unfetchedPropertySetsFromPropertySets:(id)arg1;
@@ -276,7 +278,6 @@
 - (double)faceAreaMaxY;
 - (double)faceAreaMinX;
 - (double)faceAreaMinY;
-- (int)faceDetectionState;
 - (id)faceRegions;
 - (void)fetchPropertySetsIfNeeded;
 - (id)fileURLForAdjustedFullsizeImage;
@@ -340,6 +341,7 @@
 - (id)managedAssetForPhotoLibrary:(id)arg1;
 - (unsigned int)mediaSubtypes;
 - (int)mediaType;
+- (id)messagesForRecentImageManagerRequests;
 - (id)metadataDebugDescription;
 - (id)modificationDate;
 - (id)momentProperties;
@@ -368,6 +370,7 @@
 - (unsigned int)pixelWidth;
 - (id)pl_managedAsset;
 - (id)pl_photoLibrary;
+- (void)recordImageManagerMessageForRequestID:(int)arg1 message:(id)arg2;
 - (BOOL)representsBurst;
 - (unsigned int)requestContentEditingInputWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
 - (short)savedAssetType;

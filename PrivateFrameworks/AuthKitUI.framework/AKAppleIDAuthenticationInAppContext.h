@@ -5,6 +5,7 @@
 @interface AKAppleIDAuthenticationInAppContext : AKAppleIDAuthenticationContext <AKAppleIDAuthenticationUIProvider, AKBasicLoginAlertControllerDelegate, RemoteUIControllerDelegate> {
     AKBasicLoginAlertController * _basicLoginViewController;
     RUIObjectModel * _currentRemoteOM;
+    NSHTTPURLResponse * _deferredResponse;
     <AKAppleIDAuthenticationInAppContextDelegate> * _delegate;
     BOOL  _isPresentingServerUI;
     NSHTTPURLResponse * _latestReadResponse;
@@ -15,6 +16,7 @@
     id /* block */  _serverUICompletion;
     AKAppleIDServerResourceLoadDelegate * _serverUIDelegate;
     AKAppleIDServerUIDataHarvester * _serverUIHelper;
+    AAUICDPStingrayRemoteUIController * _stingrayController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -37,6 +39,7 @@
 - (void)basicLoginAlertControllerDidPresent:(id)arg1;
 - (void)basicLoginAlertControllerWillDismiss:(id)arg1;
 - (id)cdpUiProvider;
+- (void)completeWithError:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)dismissBasicLoginUIWithCompletion:(id /* block */)arg1;

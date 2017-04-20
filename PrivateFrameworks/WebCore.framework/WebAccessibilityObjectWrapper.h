@@ -30,6 +30,7 @@
 - (struct WebAccessibilityObjectWrapper { Class x1; struct AccessibilityObject {} *x2; int x3; unsigned long long x4; }*)_accessibilityTableAncestor;
 - (unsigned long long)_accessibilityTextEntryTraits;
 - (unsigned long long)_accessibilityTraitsFromAncestors;
+- (struct WebAccessibilityObjectWrapper { Class x1; struct AccessibilityObject {} *x2; int x3; unsigned long long x4; }*)_accessibilityTreeAncestor;
 - (BOOL)_accessibilityValueIsAutofilled;
 - (id)_accessibilityWebDocumentView;
 - (BOOL)_addAccessibilityObject:(struct AccessibilityObject { int (**x1)(); unsigned int x2; unsigned int x3; struct Vector<WTF::RefPtr<WebCore::AccessibilityObject>, 0, WTF::CrashOnOverflow, 16> { struct RefPtr<WebCore::AccessibilityObject> {} *x_4_1_1; unsigned int x_4_1_2; unsigned int x_4_1_3; } x4; bool x5; int x6; int x7; struct RetainPtr<WebAccessibilityObjectWrapper> { void *x_8_1_1; } x8; }*)arg1 toTextMarkerArray:(id)arg2;
@@ -60,7 +61,7 @@
 - (unsigned long long)_axVisitedTrait;
 - (unsigned long long)_axWebContentTrait;
 - (struct RefPtr<WebCore::Range> { struct Range {} *x1; })_convertToDOMRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_convertToNSRange:(struct Range { unsigned int x1; struct Ref<WebCore::Document> { struct Document {} *x_2_1_1; } x2; struct RangeBoundaryPoint { struct RefPtr<WebCore::Node> { struct Node {} *x_1_2_1; } x_3_1_1; int x_3_1_2; struct RefPtr<WebCore::Node> { struct Node {} *x_3_2_1; } x_3_1_3; } x3; struct RangeBoundaryPoint { struct RefPtr<WebCore::Node> { struct Node {} *x_1_2_1; } x_4_1_1; int x_4_1_2; struct RefPtr<WebCore::Node> { struct Node {} *x_3_2_1; } x_4_1_3; } x4; }*)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })_convertToNSRange:(struct Range { unsigned int x1; struct Ref<WebCore::Document> { struct Document {} *x_2_1_1; } x2; struct RangeBoundaryPoint { struct RefPtr<WebCore::Node> { struct Node {} *x_1_2_1; } x_3_1_1; struct optional<unsigned int> { bool x_2_2_1; union constexpr_storage_t<unsigned int> { unsigned char x_2_3_1; unsigned int x_2_3_2; } x_2_2_2; } x_3_1_2; struct RefPtr<WebCore::Node> { struct Node {} *x_3_2_1; } x_3_1_3; } x3; struct RangeBoundaryPoint { struct RefPtr<WebCore::Node> { struct Node {} *x_1_2_1; } x_4_1_1; struct optional<unsigned int> { bool x_2_2_1; union constexpr_storage_t<unsigned int> { unsigned char x_2_3_1; unsigned int x_2_3_2; } x_2_2_2; } x_4_1_2; struct RefPtr<WebCore::Node> { struct Node {} *x_3_2_1; } x_4_1_3; } x4; }*)arg1;
 - (BOOL)_prepareAccessibilityCall;
 - (id)_stringForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 attributed:(BOOL)arg2;
 - (unsigned int)accessibilityARIAColumnCount;
@@ -86,6 +87,7 @@
 - (void)accessibilityElementDidBecomeFocused;
 - (id)accessibilityElementForRow:(int)arg1 andColumn:(int)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityElementRect;
+- (id)accessibilityExpandedTextValue;
 - (id)accessibilityFlowToElements;
 - (id)accessibilityFocusedUIElement;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
@@ -133,6 +135,7 @@
 - (unsigned int)accessibilityRowCount;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })accessibilityRowRange;
 - (BOOL)accessibilityScroll:(int)arg1;
+- (id)accessibilitySortDirection;
 - (id)accessibilitySpeechHint;
 - (BOOL)accessibilitySupportsARIAExpanded;
 - (BOOL)accessibilitySupportsARIAPressed;
@@ -197,5 +200,6 @@
 - (id)textMarkerRangeForMarkers:(id)arg1;
 - (id)textMarkerRangeForSelection;
 - (id)textMarkersForRange:(struct RefPtr<WebCore::Range> { struct Range {} *x1; })arg1;
+- (struct AccessibilityObject { int (**x1)(); unsigned int x2; unsigned int x3; struct Vector<WTF::RefPtr<WebCore::AccessibilityObject>, 0, WTF::CrashOnOverflow, 16> { struct RefPtr<WebCore::AccessibilityObject> {} *x_4_1_1; unsigned int x_4_1_2; unsigned int x_4_1_3; } x4; bool x5; int x6; int x7; struct RetainPtr<WebAccessibilityObjectWrapper> { void *x_8_1_1; } x8; }*)treeItemParentForObject:(struct AccessibilityObject { int (**x1)(); unsigned int x2; unsigned int x3; struct Vector<WTF::RefPtr<WebCore::AccessibilityObject>, 0, WTF::CrashOnOverflow, 16> { struct RefPtr<WebCore::AccessibilityObject> {} *x_4_1_1; unsigned int x_4_1_2; unsigned int x_4_1_3; } x4; bool x5; int x6; int x7; struct RetainPtr<WebAccessibilityObjectWrapper> { void *x_8_1_1; } x8; }*)arg1;
 
 @end

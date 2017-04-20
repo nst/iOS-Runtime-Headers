@@ -3,7 +3,6 @@
  */
 
 @interface WBSTouchIconCache : NSObject <WBSSiteMetadataImageCacheDelegate, WBSSiteMetadataProvider, WBSWebViewMetadataFetchOperationDelegate> {
-    BOOL  _alwaysRequestTouchIcons;
     NSURL * _cacheDirectoryURL;
     WBSTouchIconCacheSettingsSQLiteStore * _cacheSettingsStore;
     BOOL  _didLoadSettings;
@@ -21,8 +20,8 @@
     NSMutableDictionary * _touchIconsDataForHosts;
 }
 
-@property (nonatomic) BOOL alwaysRequestTouchIcons;
 @property (nonatomic, readonly) NSURL *cacheDirectoryURL;
+@property (getter=isCachingDisabled, nonatomic) BOOL cachingDisabled;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -48,6 +47,7 @@
 - (id)_imageCacheSettingsDatabaseURL;
 - (float)_maximumScreenScale;
 - (void)_notifyImageWasLoaded:(id)arg1 forHost:(id)arg2;
+- (void)_openCacheSettingsDatabaseIfNeeded;
 - (id)_operationWithRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_registerRequest:(id)arg1;
 - (void)_removeTouchIconsDataForHost:(id)arg1;
@@ -65,12 +65,11 @@
 - (id)_touchIconForURL:(id)arg1;
 - (void)_updateTouchIconsDataForHost:(id)arg1 image:(id)arg2 requestDidSucceed:(BOOL)arg3 isUserLoadedWebpageRequest:(BOOL)arg4 higherPriorityIconDownloadFailedDueToNetworkError:(BOOL)arg5;
 - (void)_willSaveTouchIcon:(id)arg1 withCacheSettingsEntry:(id)arg2;
-- (BOOL)alwaysRequestTouchIcons;
 - (id)cacheDirectoryURL;
 - (void)cacheFirstAvailableTouchIcon:(id)arg1 forURL:(id)arg2;
 - (BOOL)canHandleRequest:(id)arg1;
 - (void)dealloc;
-- (void)emptyCache;
+- (void)emptyCaches;
 - (BOOL)hasDeterminedIconAvailabilityForURL:(id)arg1;
 - (id)imageDirectoryURL;
 - (id)init;
@@ -81,7 +80,7 @@
 - (id)operationForRequest:(id)arg1;
 - (void)prepareResponseForRequest:(id)arg1 allowDelayedResponse:(BOOL)arg2;
 - (id)providerDelegate;
-- (void)purgeUnneededImages;
+- (void)purgeUnneededCacheEntries;
 - (void)releaseTouchIconForHost:(id)arg1;
 - (void)releaseTouchIconForURLString:(id)arg1;
 - (void)releaseTouchIconsForHosts:(id)arg1;
@@ -90,7 +89,6 @@
 - (void)retainTouchIconForURLString:(id)arg1;
 - (void)retainTouchIconsForHosts:(id)arg1;
 - (void)savePendingChangesBeforeTermination;
-- (void)setAlwaysRequestTouchIcons:(BOOL)arg1;
 - (void)setInternalQueueBusy:(BOOL)arg1;
 - (void)setProviderDelegate:(id)arg1;
 - (BOOL)shouldRequestTouchIconForURL:(id)arg1 inUserLoadedWebpage:(BOOL)arg2;

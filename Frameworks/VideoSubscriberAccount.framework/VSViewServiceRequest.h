@@ -5,7 +5,7 @@
 @interface VSViewServiceRequest : NSObject <NSCopying, NSSecureCoding> {
     VSAccountMetadataRequest * _accountMetadataRequest;
     BOOL  _allowsPrivacyUI;
-    NSString * _requestingAppDisplayName;
+    VSOptional * _requestingAppDisplayName;
     BOOL  _requiresPrivacyUI;
 }
 
@@ -13,7 +13,7 @@
 @property (nonatomic, readonly) BOOL allowsAuthenticationUI;
 @property (nonatomic) BOOL allowsPrivacyUI;
 @property (nonatomic, readonly, copy) NSString *localizedVideoTitle;
-@property (nonatomic, copy) NSString *requestingAppDisplayName;
+@property (nonatomic, retain) VSOptional *requestingAppDisplayName;
 @property (nonatomic) BOOL requiresPrivacyUI;
 @property (nonatomic, readonly, copy) NSArray *supportedAccountProviderAuthenticationSchemes;
 @property (nonatomic, readonly, copy) NSArray *supportedIdentityProviderIdentifiers;

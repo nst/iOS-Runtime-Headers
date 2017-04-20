@@ -14,8 +14,8 @@
 
 + (id)UUIDStringForString:(id)arg1;
 
-- (id)bundleCacheKeyForBundleIdentifier:(id)arg1 cacheKey:(id)arg2 variant:(int)arg3;
-- (id)bundleCacheKeyForBundleIdentifier:(id)arg1 roleIdentifier:(id)arg2 iconFiles:(id)arg3 variant:(int)arg4;
+- (id)bundleCacheKeyForBundleIdentifier:(id)arg1 cacheKey:(id)arg2 variant:(int)arg3 options:(int)arg4;
+- (id)bundleCacheKeyForBundleIdentifier:(id)arg1 roleIdentifier:(id)arg2 iconFiles:(id)arg3 variant:(int)arg4 options:(int)arg5;
 - (id)bundleCacheKeyPrefixForBundleIdentifier:(id)arg1;
 - (id)cacheKeySalt;
 - (id)cacheURL;

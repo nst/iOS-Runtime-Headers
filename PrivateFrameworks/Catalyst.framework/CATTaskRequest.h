@@ -10,10 +10,10 @@
 
 + (BOOL)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
-+ (id)whitelistedNotificationNames;
 
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)handlesNotifications;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)setHandlesNotifications:(BOOL)arg1;
 

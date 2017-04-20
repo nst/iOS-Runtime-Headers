@@ -4,27 +4,33 @@
 
 @interface GEOLogMsgStateExperiments : PBCodable <NSCopying> {
     GEOABClientConfig * _clientAbExperimentAssignment;
+    GEOPDDatasetABStatus * _datasetAbStatus;
     GEOABExperimentAssignment * _tilesAbExperimentAssignment;
 }
 
 @property (nonatomic, retain) GEOABClientConfig *clientAbExperimentAssignment;
+@property (nonatomic, retain) GEOPDDatasetABStatus *datasetAbStatus;
 @property (nonatomic, readonly) BOOL hasClientAbExperimentAssignment;
+@property (nonatomic, readonly) BOOL hasDatasetAbStatus;
 @property (nonatomic, readonly) BOOL hasTilesAbExperimentAssignment;
 @property (nonatomic, retain) GEOABExperimentAssignment *tilesAbExperimentAssignment;
 
 - (id)clientAbExperimentAssignment;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)datasetAbStatus;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasClientAbExperimentAssignment;
+- (BOOL)hasDatasetAbStatus;
 - (BOOL)hasTilesAbExperimentAssignment;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setClientAbExperimentAssignment:(id)arg1;
+- (void)setDatasetAbStatus:(id)arg1;
 - (void)setTilesAbExperimentAssignment:(id)arg1;
 - (id)tilesAbExperimentAssignment;
 - (void)writeTo:(id)arg1;

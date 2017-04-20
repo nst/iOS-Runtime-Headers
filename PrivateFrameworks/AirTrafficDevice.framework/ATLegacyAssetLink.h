@@ -27,6 +27,7 @@
 @property (nonatomic, copy) NSArray *supportedDataClasses;
 
 - (void).cxx_destruct;
+- (id)_assetByReplacingLyricsPartForOlderiTunesClients:(id)arg1;
 - (id)_assetManifestForDataclasses:(id)arg1;
 - (id)_assetsForDataClass:(id)arg1 identifier:(id)arg2;
 - (void)_enqueueAndRequestAssets;

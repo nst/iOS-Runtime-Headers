@@ -7,6 +7,7 @@
 + (float)_notificationListBottomOffset;
 + (float)_notificationListSideOffset;
 + (float)_notificationListTopPadding;
++ (float)_subTitleHeight;
 + (float)dateBaselineOffsetFromTime;
 + (float)dateLabelFontSize;
 + (float)dateViewBaselineY;

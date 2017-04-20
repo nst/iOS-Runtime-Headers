@@ -10,7 +10,7 @@
 }
 
 - (unsigned int)arrayLength;
-- (id)describe;
+- (id)formattedDescription:(unsigned int)arg1;
 - (id)initWithName:(id)arg1 access:(unsigned int)arg2 isActive:(BOOL)arg3 locationIndex:(unsigned int)arg4 arraySize:(unsigned int)arg5 dataType:(unsigned int)arg6 textureType:(unsigned int)arg7 isDepthTexture:(bool)arg8;
 - (BOOL)isDepthTexture;
 - (unsigned int)textureDataType;

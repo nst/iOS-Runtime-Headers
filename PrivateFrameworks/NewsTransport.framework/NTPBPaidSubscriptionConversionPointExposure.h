@@ -6,6 +6,7 @@
     BOOL  _arrivedFromAd;
     NSString * _articleId;
     NSData * _articleViewingSessionId;
+    NSData * _feedViewExposureId;
     struct { 
         unsigned int paidSubscriptionConversionPointExposureLocation : 1; 
         unsigned int paidSubscriptionConversionPointExposurePresentationReason : 1; 
@@ -30,9 +31,11 @@
 @property (nonatomic) BOOL arrivedFromAd;
 @property (nonatomic, retain) NSString *articleId;
 @property (nonatomic, retain) NSData *articleViewingSessionId;
+@property (nonatomic, retain) NSData *feedViewExposureId;
 @property (nonatomic) BOOL hasArrivedFromAd;
 @property (nonatomic, readonly) BOOL hasArticleId;
 @property (nonatomic, readonly) BOOL hasArticleViewingSessionId;
+@property (nonatomic, readonly) BOOL hasFeedViewExposureId;
 @property (nonatomic, readonly) BOOL hasIadQtoken;
 @property (nonatomic) BOOL hasPaidSubscriptionConversionPointExposureLocation;
 @property (nonatomic) BOOL hasPaidSubscriptionConversionPointExposurePresentationReason;
@@ -64,9 +67,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)feedViewExposureId;
 - (BOOL)hasArrivedFromAd;
 - (BOOL)hasArticleId;
 - (BOOL)hasArticleViewingSessionId;
+- (BOOL)hasFeedViewExposureId;
 - (BOOL)hasIadQtoken;
 - (BOOL)hasPaidSubscriptionConversionPointExposureLocation;
 - (BOOL)hasPaidSubscriptionConversionPointExposurePresentationReason;
@@ -93,6 +98,7 @@
 - (void)setArrivedFromAd:(BOOL)arg1;
 - (void)setArticleId:(id)arg1;
 - (void)setArticleViewingSessionId:(id)arg1;
+- (void)setFeedViewExposureId:(id)arg1;
 - (void)setHasArrivedFromAd:(BOOL)arg1;
 - (void)setHasPaidSubscriptionConversionPointExposureLocation:(BOOL)arg1;
 - (void)setHasPaidSubscriptionConversionPointExposurePresentationReason:(BOOL)arg1;

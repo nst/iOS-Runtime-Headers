@@ -18,5 +18,6 @@
 - (void)mediaPlayer:(id)arg1 didChangeMutedState:(BOOL)arg2;
 - (void)mediaPlayer:(id)arg1 didChangePlayingState:(BOOL)arg2;
 - (void)removeMediaPlayer:(id)arg1;
+- (void)volumeChanged:(id)arg1;
 
 @end

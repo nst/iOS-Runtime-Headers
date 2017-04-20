@@ -3,16 +3,20 @@
  */
 
 @interface FCFeedPersonalizedArticles : NSObject {
+    NSMapTable * _agedPersonalizedScores;
     NSArray * _articlesToShow;
     NSMapTable * _personalizedScores;
 }
 
+@property (nonatomic, retain) NSMapTable *agedPersonalizedScores;
 @property (nonatomic, retain) NSArray *articlesToShow;
 @property (nonatomic, retain) NSMapTable *personalizedScores;
 
 - (void).cxx_destruct;
+- (id)agedPersonalizedScores;
 - (id)articlesToShow;
 - (id)personalizedScores;
+- (void)setAgedPersonalizedScores:(id)arg1;
 - (void)setArticlesToShow:(id)arg1;
 - (void)setPersonalizedScores:(id)arg1;
 

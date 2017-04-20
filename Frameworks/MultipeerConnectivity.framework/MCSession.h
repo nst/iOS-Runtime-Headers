@@ -101,8 +101,8 @@
 - (id)stringForEncryptionPreference:(int)arg1;
 - (void)syncCancelIncomingStream:(id)arg1 fromPeer:(id)arg2;
 - (void)syncCancelOutgoingStream:(id)arg1 toPeer:(id)arg2;
-- (void)syncCloseIncomingStream:(id)arg1 forPeer:(id)arg2 state:(id)arg3 error:(id)arg4 reason:(int)arg5 removeObserver:(BOOL)arg6;
-- (void)syncCloseOutgoingStream:(id)arg1 forPeer:(id)arg2 state:(id)arg3 error:(id)arg4 removeObserver:(BOOL)arg5;
+- (void)syncCloseIncomingStream:(id)arg1 forPeer:(id)arg2 state:(id)arg3 error:(id)arg4 reason:(int)arg5 shouldTriggerCancelProgress:(BOOL)arg6;
+- (void)syncCloseOutgoingStream:(id)arg1 forPeer:(id)arg2 state:(id)arg3 error:(id)arg4 shouldTriggerCancelProgress:(BOOL)arg5;
 - (void)syncCloseStreamsForPeer:(id)arg1;
 - (void)syncConnectPeer:(id)arg1 withConnectionData:(id)arg2;
 - (unsigned int)syncConnectedPeersCount;

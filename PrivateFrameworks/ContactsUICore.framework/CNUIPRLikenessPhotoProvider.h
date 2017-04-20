@@ -3,24 +3,27 @@
  */
 
 @interface CNUIPRLikenessPhotoProvider : NSObject <CNUIPRLikenessProvider> {
-    PRLikeness * _likeness;
+    CNCache * _cache;
     NSData * _originalPhotoData;
 }
 
+@property (nonatomic, readonly) CNCache *cache;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) PRLikeness *likeness;
 @property (nonatomic, readonly) NSData *originalPhotoData;
 @property (readonly) Class superclass;
 
 + (struct CGImage { }*)cgImageFromData:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)_cnui_likeness;
+- (struct CGImage { }*)_cnui_imageForSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
+- (id)_cnui_likenessForSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)_cnui_likenessForSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (unsigned int)_cnui_likenessType;
+- (id)cache;
 - (id)initWithPhotoData:(id)arg1;
-- (id)likeness;
 - (id)originalPhotoData;
+- (struct CGImage { }*)renderImageForSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 
 @end

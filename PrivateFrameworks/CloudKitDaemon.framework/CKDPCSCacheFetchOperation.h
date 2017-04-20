@@ -12,6 +12,7 @@
     int  _numRetries;
     CKDRecordPCSData * _parentPCSData;
     CKDPCSData * _pcsData;
+    BOOL  _pcsDataInvalidated;
     BOOL  _shouldRetry;
     BOOL  _wasFetchedFromCache;
 }
@@ -26,6 +27,7 @@
 @property (nonatomic) int numRetries;
 @property (nonatomic, retain) CKDRecordPCSData *parentPCSData;
 @property (nonatomic, retain) CKDPCSData *pcsData;
+@property (getter=isPCSDataInvalidated) BOOL pcsDataInvalidated;
 @property (nonatomic) BOOL shouldRetry;
 @property (nonatomic) BOOL wasFetchedFromCache;
 
@@ -45,6 +47,7 @@
 - (unsigned int)fetchOptions;
 - (BOOL)hasAllPCSData;
 - (id)initWithItemID:(id)arg1 parentOperation:(id)arg2 cache:(id)arg3 options:(unsigned int)arg4;
+- (BOOL)isPCSDataInvalidated;
 - (id)itemID;
 - (id)itemTypeName;
 - (void)main;
@@ -61,6 +64,7 @@
 - (void)setNumRetries:(int)arg1;
 - (void)setParentPCSData:(id)arg1;
 - (void)setPcsData:(id)arg1;
+- (void)setPcsDataInvalidated:(BOOL)arg1;
 - (void)setShouldRetry:(BOOL)arg1;
 - (void)setWasFetchedFromCache:(BOOL)arg1;
 - (BOOL)shouldRetry;

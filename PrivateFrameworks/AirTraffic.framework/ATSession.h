@@ -45,7 +45,9 @@
 @property (getter=isSuspended) BOOL suspended;
 
 + (void)_cancelSessionWithIdentifier:(id)arg1;
++ (unsigned int)_remoteActiveSessionCountWithTypeIdentifier:(id)arg1;
 + (id)_remoteSessionsWithTypeIdentifier:(id)arg1;
++ (unsigned int)activeSessionCountWithSessionTypeIdentifier:(id)arg1;
 + (id)allSessions;
 + (void)initialize;
 + (id)sessionsWithSessionTypeIdentifier:(id)arg1;

@@ -67,6 +67,7 @@
 - (int)_createUnprotectedKeyValueTableWithError:(id*)arg1;
 - (int)_dropDataSessionActivitiesTableWithError:(id*)arg1;
 - (int)_dropMenstruationTable:(id*)arg1;
+- (int)_erie_removeBadTurkeyTrotAchievementsWithError:(id*)arg1;
 - (int)_fixDanglingSourcesAndProvenancesWithError:(id*)arg1;
 - (int)_fixDataProvenanceProductTypeAgainWithError:(id*)arg1;
 - (int)_fixDataProvenanceProductTypeWithError:(id*)arg1;
@@ -128,6 +129,8 @@
 - (id)database;
 - (id)eagleProtectedMigrationSteps;
 - (id)eagleUnprotectedMigrationSteps;
+- (id)erieProtectedMigrationSteps;
+- (id)erieUnprotectedMigrationSteps;
 - (BOOL)executeSQL:(id)arg1 error:(id*)arg2;
 - (BOOL)executeSQLStatements:(id)arg1 error:(id*)arg2;
 - (int)fatalStatusForVersion:(int)arg1 errorMessage:(id)arg2 error:(id*)arg3;

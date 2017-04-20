@@ -191,7 +191,6 @@
 - (id)markupStringForDisplayWithData:(id)arg1 displayStyle:(int)arg2 printableWidth:(float)arg3 allowAttachmentElement:(BOOL)arg4;
 - (id)meetingStorePersistentID;
 - (BOOL)needsColorspaceConversion;
-- (id)pass;
 - (id)passWithError:(id*)arg1;
 - (unsigned int)scaledFileSize;
 - (unsigned int)scaledFileSizeForScale:(unsigned int)arg1;

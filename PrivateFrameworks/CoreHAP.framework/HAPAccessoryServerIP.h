@@ -2,13 +2,16 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPAccessoryServerIP : HAPAccessoryServer <HAPHTTPClientDebugDelegate, HAPHTTPClientDelegate> {
+@interface HAPAccessoryServerIP : HAPAccessoryServer <HAPHTTPClientDebugDelegate, HAPHTTPClientDelegate, HMFTimerDelegate> {
     NSDictionary * _bonjourDeviceInfo;
+    HMFTimer * _bonjourEventTimer;
     HAPAccessoryServerBrowserIP * _browser;
     BOOL  _continuingLegacyWACpairing;
     NSString * _controllerUsername;
+    BOOL  _econnresetRetryInProgress;
     BOOL  _establishingSecureConnection;
     unsigned long long  _featureFlags;
+    BOOL  _hasStartedPairing;
     BOOL  _hasTunnelService;
     HAPHTTPClient * _httpClient;
     NSArray * _ipServices;
@@ -31,12 +34,15 @@
 
 @property (getter=isAddingViaWAC, nonatomic, readonly) BOOL addingViaWAC;
 @property (nonatomic, retain) NSDictionary *bonjourDeviceInfo;
+@property (nonatomic, retain) HMFTimer *bonjourEventTimer;
 @property (nonatomic) HAPAccessoryServerBrowserIP *browser;
 @property (getter=isContinuingLegacyWACpairing, nonatomic) BOOL continuingLegacyWACpairing;
 @property (nonatomic, retain) NSString *controllerUsername;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL econnresetRetryInProgress;
 @property BOOL establishingSecureConnection;
+@property (nonatomic) BOOL hasStartedPairing;
 @property (nonatomic) BOOL hasTunnelService;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) HAPHTTPClient *httpClient;
@@ -87,11 +93,16 @@
 - (void)_handleReadResponseObject:(id)arg1 type:(unsigned int)arg2 httpStatus:(int)arg3 error:(id)arg4 characteristics:(id)arg5 queue:(id)arg6 completion:(id /* block */)arg7;
 - (void)_handleUpdatesForCharacteristics:(id)arg1;
 - (void)_handleWriteResponseObject:(id)arg1 type:(unsigned int)arg2 httpStatus:(int)arg3 error:(id)arg4 requestTuples:(id)arg5 queue:(id)arg6 completion:(id /* block */)arg7;
+- (BOOL)_hasBonjourDeviceInfo;
+- (void)_insertReadCharacteristicValues:(id)arg1 timeout:(double)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)_insertWriteCharacteristicValues:(id)arg1 timeout:(double)arg2 queue:(id)arg3 withCompletionHandler:(id /* block */)arg4;
 - (void)_invalidateWAC;
+- (void)_invokePairVerifyCompletionBlock:(id)arg1;
 - (void)_isAccessoryPublicKeyPresent:(BOOL*)arg1 registeredWithHomeKit:(BOOL*)arg2;
 - (BOOL)_isSessionEstablished;
 - (BOOL)_mergeExistingAccessory:(id)arg1 withNewAccessory:(id)arg2;
 - (BOOL)_mergeExistingService:(id)arg1 withNewService:(id)arg2;
+- (void)_notifyDelegatesOfAddAccessoryFailure;
 - (void)_notifyDelegatesPairingStopped:(id)arg1;
 - (void)_pairSetupContinueWAC;
 - (long)_pairSetupStart;
@@ -113,6 +124,8 @@
 - (void)_queueEnableEvents:(BOOL)arg1 forCharacteristics:(id)arg2 withCompletionHandler:(id /* block */)arg3 queue:(id)arg4;
 - (void)_queueReadCharacteristicValues:(id)arg1 timeout:(double)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_queueWriteCharacteristicValues:(id)arg1 timeout:(double)arg2 queue:(id)arg3 withCompletionHandler:(id /* block */)arg4;
+- (id /* block */)_queuedReadOperationBlock:(id)arg1 timeout:(double)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
+- (id /* block */)_queuedWriteOperationBlock:(id)arg1 timeout:(double)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_readCharacteristicValues:(id)arg1 timeout:(double)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_removePairingWithIdentifier:(id)arg1 publicKey:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
 - (void)_requestResource:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
@@ -126,17 +139,21 @@
 - (void)_writeCharacteristicValues:(id)arg1 timeout:(double)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (BOOL)addPairingWithIdentifier:(id)arg1 publicKey:(id)arg2 admin:(BOOL)arg3 queue:(id)arg4 completion:(id /* block */)arg5;
 - (id)bonjourDeviceInfo;
+- (id)bonjourEventTimer;
 - (id)browser;
 - (void)continuePairingAfterAuthPrompt;
 - (id)controllerUsername;
 - (void)dealloc;
 - (id)description;
 - (void)discoverAccessories;
+- (BOOL)econnresetRetryInProgress;
 - (void)enableEvents:(BOOL)arg1 forCharacteristics:(id)arg2 withCompletionHandler:(id /* block */)arg3 queue:(id)arg4;
 - (BOOL)establishingSecureConnection;
 - (void)fetchDiscoveredAccessoriesAttributeDatabase;
 - (void)fetchEntireAttributeDatabase;
 - (void)handleUpdatesForCharacteristics:(id)arg1;
+- (BOOL)hasBonjourDeviceInfo;
+- (BOOL)hasStartedPairing;
 - (BOOL)hasTunnelService;
 - (id)httpClient;
 - (void)httpClient:(id)arg1 didReceiveEvent:(id)arg2;
@@ -148,6 +165,7 @@
 - (id)initWithBonjourDeviceInfo:(id)arg1 keyStore:(id)arg2 browser:(id)arg3;
 - (id)initWithWACDeviceDictionary:(id)arg1 keyStore:(id)arg2 browser:(id)arg3;
 - (void)invalidateWithCompletionHandler:(id /* block */)arg1;
+- (void)invokePairVerifyCompletionBlock:(id)arg1;
 - (id)ipServices;
 - (BOOL)isAddingViaWAC;
 - (BOOL)isContinuingLegacyWACpairing;
@@ -174,10 +192,13 @@
 - (void)requestResource:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)services;
 - (void)setBonjourDeviceInfo:(id)arg1;
+- (void)setBonjourEventTimer:(id)arg1;
 - (void)setBrowser:(id)arg1;
 - (void)setContinuingLegacyWACpairing:(BOOL)arg1;
 - (void)setControllerUsername:(id)arg1;
+- (void)setEconnresetRetryInProgress:(BOOL)arg1;
 - (void)setEstablishingSecureConnection:(BOOL)arg1;
+- (void)setHasStartedPairing:(BOOL)arg1;
 - (void)setHasTunnelService:(BOOL)arg1;
 - (void)setHttpClient:(id)arg1;
 - (void)setIpServices:(id)arg1;
@@ -198,6 +219,7 @@
 - (void)startPairing;
 - (unsigned int)statusFlags;
 - (BOOL)stopPairingWithError:(id*)arg1;
+- (void)timerDidFire:(id)arg1;
 - (BOOL)tryPairingPassword:(id)arg1 error:(id*)arg2;
 - (void)updateWithBonjourDeviceInfo:(id)arg1;
 - (void)updateWithWACDevice:(id)arg1;

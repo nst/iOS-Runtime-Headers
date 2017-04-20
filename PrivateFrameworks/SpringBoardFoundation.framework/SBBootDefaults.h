@@ -7,7 +7,6 @@
 @property (nonatomic) NSDictionary *bootTransitionContext;
 @property (nonatomic) BOOL comingFromUserPowerDown;
 @property (nonatomic, readonly) BOOL dontLockAfterCrash;
-@property (nonatomic) BOOL fromOTASoftwareUpdate;
 @property (nonatomic) BOOL hasCompletedSynchronizingCloudCriticalData;
 @property (nonatomic, retain) NSString *lastRestoreIdentifier;
 @property (nonatomic, retain) NSString *lastSystemBuildVersion;

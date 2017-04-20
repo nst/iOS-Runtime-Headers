@@ -5,10 +5,8 @@
 @interface DAEASOAuthRequest : NSObject
 
 + (id)authCodeFromURLRequest:(id)arg1;
-+ (void)clearCookiesFromStorage:(id)arg1;
 + (id)requestForURL:(id)arg1;
-+ (id)urlForClientID:(id)arg1 redirectURI:(id)arg2 scope:(id)arg3 username:(id)arg4;
++ (id)urlForOAuthURI:(id)arg1 clientID:(id)arg2 redirectURI:(id)arg3 scope:(id)arg4 username:(id)arg5 resource:(id)arg6;
 + (BOOL)urlPageWillContainAuthorizationCode:(id)arg1;
-+ (id)urlRequestForClientID:(id)arg1 redirectURI:(id)arg2 scope:(id)arg3 username:(id)arg4;
 
 @end

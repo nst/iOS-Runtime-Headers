@@ -52,6 +52,7 @@
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
++ (id)genericMarkerStyleAttributes;
 + (id)markerStyleAttributes;
 + (id)styleAttributesForCalloutWithAttributes:(id)arg1;
 + (id)styleAttributesForTrafficIncidentType:(int)arg1;

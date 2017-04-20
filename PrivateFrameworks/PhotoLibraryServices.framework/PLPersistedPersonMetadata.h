@@ -3,6 +3,7 @@
  */
 
 @interface PLPersistedPersonMetadata : NSObject {
+    NSDictionary * _contactMatchingDictionary;
     NSArray * _detectedFaces;
     NSString * _displayName;
     NSString * _fullName;
@@ -15,6 +16,7 @@
     int  _type;
 }
 
+@property (nonatomic, copy) NSDictionary *contactMatchingDictionary;
 @property (nonatomic, retain) NSArray *detectedFaces;
 @property (nonatomic, retain) NSString *displayName;
 @property (nonatomic, retain) NSString *fullName;
@@ -26,11 +28,9 @@
 @property (nonatomic, retain) NSArray *rejectedFaces;
 @property (nonatomic) int type;
 
-+ (BOOL)_isFaceMetadataExtension:(id)arg1;
 + (id)_persistedFaceMetadataWithFaces:(id)arg1 keyFace:(id)arg2;
 + (id)detectedFacesToArchiveWithPerson:(id)arg1;
 + (BOOL)isFacePersistable:(id)arg1;
-+ (BOOL)isPersonMetadataPath:(id)arg1;
 + (BOOL)isValidPath:(id)arg1;
 + (id)rejectedFacesToArchiveWithPerson:(id)arg1;
 + (unsigned int)writeMetadataForVerifiedPeopleOnAssetObjectIDs:(id)arg1 inManagedObjectContext:(id)arg2;
@@ -40,8 +40,9 @@
 - (BOOL)_insertDetectedFacesOnPerson:(id)arg1 fromDataInManagedObjectContext:(id)arg2 deferUnmatched:(BOOL)arg3;
 - (BOOL)_insertRejectedFacesOnPerson:(id)arg1 fromDataInManagedObjectContext:(id)arg2 deferUnmatched:(BOOL)arg3;
 - (id)_metadataData;
-- (void)_readMetadata;
+- (BOOL)_readMetadata;
 - (void)_saveMetadata;
+- (id)contactMatchingDictionary;
 - (id)description;
 - (id)detectedFaces;
 - (id)displayName;
@@ -59,6 +60,7 @@
 - (id)personUri;
 - (id)rejectedFaces;
 - (void)removePersistedData;
+- (void)setContactMatchingDictionary:(id)arg1;
 - (void)setDetectedFaces:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setFullName:(id)arg1;

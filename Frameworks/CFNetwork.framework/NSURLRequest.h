@@ -18,6 +18,7 @@
 @property (readonly) unsigned int cachePolicy;
 @property (readonly, copy) NSURL *mainDocumentURL;
 @property (readonly) unsigned int networkServiceType;
+@property (nonatomic, readonly) NSURLRequest *parsec_tuscanyRequest;
 @property (readonly) double timeoutInterval;
 
 // Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
@@ -25,9 +26,9 @@
 + (BOOL)allowsAnyHTTPSCertificateForHost:(id)arg1;
 + (id)allowsSpecificHTTPSCertificateForHost:(id)arg1;
 + (double)defaultTimeoutInterval;
-+ (id)frRequestWithURL:(id)arg1;
-+ (id)frRequestWithURL:(id)arg1 cachePolicy:(unsigned int)arg2 timeoutInterval:(double)arg3;
 + (id)getObjectKeyWithIndex:(long)arg1;
++ (id)requestWithURL:(id)arg1;
++ (id)requestWithURL:(id)arg1 cachePolicy:(unsigned int)arg2 timeoutInterval:(double)arg3;
 + (void)setAllowsAnyHTTPSCertificate:(BOOL)arg1 forHost:(id)arg2;
 + (void)setAllowsSpecificHTTPSCertificate:(id)arg1 forHost:(id)arg2;
 + (void)setDefaultTimeoutInterval:(double)arg1;
@@ -82,6 +83,10 @@
 
 - (BOOL)ak_usesHTTPSScheme;
 
+// Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
+
+- (id)parsec_tuscanyRequest;
+
 // Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
 
 - (id)DARequestByApplyingStorageSession:(struct __CFURLStorageSession { }*)arg1;
@@ -94,10 +99,10 @@
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
-+ (void)load;
++ (id)frRequestWithURL:(id)arg1;
++ (id)frRequestWithURL:(id)arg1 cachePolicy:(unsigned int)arg2 timeoutInterval:(double)arg3;
 + (id)overrideUserAgent;
-+ (id)requestWithURL:(id)arg1;
-+ (id)requestWithURL:(id)arg1 cachePolicy:(unsigned int)arg2 timeoutInterval:(double)arg3;
++ (void)setupFeldsparUserAgent;
 
 // Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
 

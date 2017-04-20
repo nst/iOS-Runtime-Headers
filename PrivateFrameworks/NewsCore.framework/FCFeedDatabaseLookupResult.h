@@ -18,6 +18,7 @@
 @property (nonatomic) BOOL exhaustedRange;
 @property (nonatomic, copy) NSArray *feedItems;
 @property (nonatomic, copy) FCFeedRange *feedRange;
+@property (nonatomic, readonly) BOOL hasCKCursor;
 @property (nonatomic, retain) id insertionToken;
 
 - (void).cxx_destruct;
@@ -28,6 +29,7 @@
 - (BOOL)exhaustedRange;
 - (id)feedItems;
 - (id)feedRange;
+- (BOOL)hasCKCursor;
 - (id)insertionToken;
 - (void)setCkFromCursor:(id)arg1;
 - (void)setCkFromOrder:(unsigned long long)arg1;

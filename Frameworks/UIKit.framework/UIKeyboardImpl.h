@@ -217,6 +217,7 @@
 + (BOOL)isActivatingForeground;
 + (BOOL)isFloating;
 + (BOOL)isSplit;
++ (BOOL)keyboardOrientation:(int)arg1 isEquivalentToOrientation:(int)arg2;
 + (id)keyboardScreen;
 + (struct CGSize { float x1; float x2; })keyboardSizeForInterfaceOrientation:(int)arg1;
 + (float)keyboardWidthForScreen:(id)arg1 withOrientation:(int)arg2;
@@ -230,6 +231,7 @@
 + (struct CGPoint { float x1; float x2; })normalizedPersistentOffsetIgnoringState;
 + (struct CGPoint { float x1; float x2; })persistentOffset;
 + (float)persistentSplitProgress;
++ (void)purgeImageCache;
 + (void)refreshRivenStateWithTraits:(id)arg1 isKeyboard:(BOOL)arg2;
 + (void)releaseSharedInstance;
 + (BOOL)rivenInstalled;
@@ -618,6 +620,7 @@
 - (void)removeAutocorrection;
 - (void)removeCandidateList;
 - (void)removeFromSuperview;
+- (void)removeRecentInput:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)removeSpaceAfterEmojiForInputString:(id)arg1;
 - (void)replaceText:(id)arg1;
 - (id)replacementsFromSelectedText;
@@ -710,6 +713,7 @@
 - (void)setShiftOffIfNeeded;
 - (void)setShiftPreventAutoshift:(BOOL)arg1;
 - (void)setShouldSkipCandidateSelection:(BOOL)arg1;
+- (void)setShouldSkipCandidateSelection:(BOOL)arg1 userInitiated:(BOOL)arg2;
 - (void)setShouldUpdateCacheOnInputModesChange:(BOOL)arg1;
 - (void)setShowInputModeIndicator:(BOOL)arg1;
 - (void)setShowsCandidateBar:(BOOL)arg1;
@@ -763,6 +767,7 @@
 - (void)startCaretBlinkIfNeeded;
 - (void)stopAutoDelete;
 - (void)storeDelegateConformance;
+- (struct CGSize { float x1; float x2; })stretchFactor;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })subtractKeyboardFrameFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2;
 - (BOOL)suppliesCompletions;
 - (BOOL)supportsNumberKeySelection;

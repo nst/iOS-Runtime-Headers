@@ -10,6 +10,7 @@
     int  _lockState;
     NSString * _name;
     CTCellularPlan * _plan;
+    BOOL  _shouldAppearDisabled;
     BOOL  _shouldAutoSelectWhenInRange;
     BOOL  _shouldDisplay;
     BOOL  _shouldDisplayType;
@@ -26,6 +27,7 @@
 @property (nonatomic) int lockState;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) CTCellularPlan *plan;
+@property (nonatomic) BOOL shouldAppearDisabled;
 @property (nonatomic) BOOL shouldAutoSelectWhenInRange;
 @property (nonatomic, readonly) BOOL shouldDisplay;
 @property (nonatomic) BOOL shouldDisplayType;
@@ -56,9 +58,11 @@
 - (void)setIsSelectedOverride:(id)arg1;
 - (void)setIsSimStateValid:(BOOL)arg1;
 - (void)setLockState:(int)arg1;
+- (void)setShouldAppearDisabled:(BOOL)arg1;
 - (void)setShouldAutoSelectWhenInRange:(BOOL)arg1;
 - (void)setShouldDisplayType:(BOOL)arg1;
 - (void)setType:(int)arg1;
+- (BOOL)shouldAppearDisabled;
 - (BOOL)shouldAutoSelectWhenInRange;
 - (BOOL)shouldDisplay;
 - (BOOL)shouldDisplayType;

@@ -36,9 +36,13 @@
 @property (nonatomic) int seat;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 + (id)options;
 
 - (void).cxx_destruct;
+- (int)StringAsRelativeLevelSetting:(id)arg1;
+- (int)StringAsSeat:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -59,7 +63,9 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (int)relativeLevelSetting;
+- (id)relativeLevelSettingAsString:(int)arg1;
 - (int)seat;
+- (id)seatAsString:(int)arg1;
 - (void)setEnableCooling:(BOOL)arg1;
 - (void)setEnableHeating:(BOOL)arg1;
 - (void)setEnableMassage:(BOOL)arg1;
@@ -74,5 +80,11 @@
 - (void)setSeat:(int)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

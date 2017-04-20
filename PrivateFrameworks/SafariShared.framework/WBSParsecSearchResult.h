@@ -22,6 +22,7 @@
     MKMapItem * _mapItem;
     NSString * _mediaKind;
     unsigned int  _minimumRankOfTopHitToSuppressResult;
+    NSString * _query;
     NSString * _referrerForLoadingResult;
     NSURL * _reportProblemURL;
     NSString * _sectionHeader;
@@ -62,6 +63,7 @@
 @property (nonatomic, readonly, copy) NSString *mediaKind;
 @property (nonatomic, readonly) unsigned int minimumRankOfTopHitToSuppressResult;
 @property (nonatomic, readonly) NSString *parsecDomainIdentifier;
+@property (nonatomic, readonly, copy) NSString *query;
 @property (nonatomic, readonly, copy) NSString *referrerForLoadingResult;
 @property (nonatomic, readonly) NSURL *reportProblemURL;
 @property (nonatomic, readonly) NSString *sectionHeader;
@@ -114,6 +116,7 @@
 - (id)mediaKind;
 - (unsigned int)minimumRankOfTopHitToSuppressResult;
 - (id)parsecDomainIdentifier;
+- (id)query;
 - (id)referrerForLoadingResult;
 - (id)reportProblemURL;
 - (id)sectionHeader;

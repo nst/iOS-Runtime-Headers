@@ -25,6 +25,7 @@
 @property (nonatomic, readonly, copy) NSString *primarySubtitleText;
 @property (nonatomic, readonly, copy) NSString *primaryText;
 @property (nonatomic, readonly, copy) NSString *secondaryText;
+@property (nonatomic, readonly) BOOL showsTextInputOnAppearance;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIImage *thumbnail;
 @property (nonatomic, readonly, copy) NSTimeZone *timeZone;
@@ -52,6 +53,7 @@
 - (id)secondaryText;
 - (void)setDelegate:(id)arg1;
 - (void)setNotificationRequest:(id)arg1;
+- (BOOL)showsTextInputOnAppearance;
 - (id)thumbnail;
 - (id)timeZone;
 - (id)title;

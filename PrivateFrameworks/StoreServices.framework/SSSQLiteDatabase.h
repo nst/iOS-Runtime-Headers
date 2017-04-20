@@ -26,6 +26,7 @@
 - (void)_accessDatabaseUsingBlock:(id /* block */)arg1;
 - (void)_beginTaskCompletionAssertion;
 - (void)_endTaskCompletionAssertion;
+- (void)_expireBackgroundTask;
 - (int)_openDatabase;
 - (int)_openFlags;
 - (int)_resetAndReopenDatabaseWithPath:(id)arg1;
@@ -41,6 +42,7 @@
 - (void)dispatchBlockSync:(id /* block */)arg1;
 - (void)endTaskCompletionAssertion;
 - (BOOL)executeSQL:(id)arg1;
+- (void)expireBackgroundTask;
 - (id)initWithDatabaseURL:(id)arg1;
 - (id)initWithDatabaseURL:(id)arg1 readOnly:(BOOL)arg2;
 - (id)newDispatchSourceWithType:(struct dispatch_source_type_s { }*)arg1;

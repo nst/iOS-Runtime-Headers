@@ -33,6 +33,7 @@
 
 @property (readonly) NSSet *automaticDownloadKinds;
 @property (readonly) double batteryLevel;
+@property (readonly) NSString *clientVersion;
 @property (copy) NSString *cloudMediaLibraryIdentifier;
 @property (readonly) NSString *compatibleProductType;
 @property (readonly, copy) NSString *debugDescription;
@@ -99,6 +100,7 @@
 - (id)automaticDownloadKinds;
 - (double)batteryLevel;
 - (id)carrierBundleStatusForService:(int)arg1;
+- (id)clientVersion;
 - (id)cloudMediaLibraryIdentifier;
 - (id)compatibleProductType;
 - (id)copyStoreFrontRequestHeaders;

@@ -8,6 +8,7 @@
     BOOL  _allowsRemove;
     PHChangeRequestHelper * _changeRequestHelper;
     NSString * _destinationEntityName;
+    NSString * _destinationUUIDKeyPath;
     id /* block */  _isDestinationObjectValid;
     NSMutableArray * _mutableObjectIDsAndUUIDs;
     NSArray * _originalObjectIDs;
@@ -19,6 +20,7 @@
 @property (nonatomic) BOOL allowsRemove;
 @property (nonatomic, retain) PHChangeRequestHelper *changeRequestHelper;
 @property (nonatomic, retain) NSString *destinationEntityName;
+@property (nonatomic, retain) NSString *destinationUUIDKeyPath;
 @property (nonatomic, copy) id /* block */ isDestinationObjectValid;
 @property (nonatomic, retain) NSMutableArray *mutableObjectIDsAndUUIDs;
 @property (nonatomic, retain) NSArray *originalObjectIDs;
@@ -35,6 +37,7 @@
 - (BOOL)applyMutationsToManagedObjectToOneRelationship:(id)arg1 error:(id*)arg2;
 - (id)changeRequestHelper;
 - (id)destinationEntityName;
+- (id)destinationUUIDKeyPath;
 - (void)encodeToXPCDict:(id)arg1;
 - (id)initWithRelationshipName:(id)arg1 changeRequestHelper:(id)arg2;
 - (id)initWithRelationshipName:(id)arg1 xpcDict:(id)arg2 changeRequestHelper:(id)arg3;
@@ -47,6 +50,7 @@
 - (void)setAllowsRemove:(BOOL)arg1;
 - (void)setChangeRequestHelper:(id)arg1;
 - (void)setDestinationEntityName:(id)arg1;
+- (void)setDestinationUUIDKeyPath:(id)arg1;
 - (void)setIsDestinationObjectValid:(id /* block */)arg1;
 - (void)setMutableObjectIDsAndUUIDs:(id)arg1;
 - (void)setOriginalObjectIDs:(id)arg1;

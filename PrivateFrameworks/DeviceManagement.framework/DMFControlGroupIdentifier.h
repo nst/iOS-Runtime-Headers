@@ -7,9 +7,13 @@
     NSUUID * _organizationUUID;
 }
 
-@property unsigned short groupID;
-@property (copy) NSUUID *organizationUUID;
+@property (nonatomic) unsigned short groupID;
+@property (nonatomic, copy) NSUUID *organizationUUID;
+@property (nonatomic, readonly, copy) NSString *stringValue;
 
+// Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
+
++ (id)new;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -28,5 +32,10 @@
 - (void)setGroupID:(unsigned short)arg1;
 - (void)setOrganizationUUID:(id)arg1;
 - (id)stringValue;
+
+// Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
+
++ (id)crk_adHocXPCGroupIdentifier;
++ (id)crk_managedXPCGroupIdentifier;
 
 @end

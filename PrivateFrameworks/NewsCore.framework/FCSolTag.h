@@ -3,30 +3,50 @@
  */
 
 @interface FCSolTag : NSObject {
-    NSMutableSet * _articles;
-    FCSolConfiguration * _config;
+    NSDictionary * _articleScores;
+    NSSet * _articles;
+    bool  _favorited;
+    double  _heuristicScore;
+    NSMutableSet * _orphans;
+    double  _personalizationScore;
+    FCHeadlineClusteringRules * _rules;
     double  _score;
-    NSMutableSet * _solos;
     FCSolTagID * _tagId;
+    NSMutableSet * _topArticles;
 }
 
-@property (nonatomic, retain) NSMutableSet *articles;
-@property (nonatomic, retain) FCSolConfiguration *config;
-@property (nonatomic) double score;
-@property (nonatomic, retain) NSMutableSet *solos;
+@property (nonatomic, retain) NSDictionary *articleScores;
+@property (nonatomic, retain) NSSet *articles;
+@property (nonatomic) bool favorited;
+@property (nonatomic) double heuristicScore;
+@property (nonatomic, readonly) NSMutableSet *orphans;
+@property (nonatomic) double personalizationScore;
+@property (nonatomic, retain) FCHeadlineClusteringRules *rules;
+@property (nonatomic, readonly) double score;
 @property (nonatomic, retain) FCSolTagID *tagId;
+@property (nonatomic, readonly) NSMutableSet *topArticles;
+
++ (id)predictBestTag:(id)arg1 ungroupedArticles:(id)arg2 ungroupedTags:(id)arg3 articlesByTag:(id)arg4 heuristic:(id)arg5;
 
 - (void).cxx_destruct;
+- (id)articleScores;
 - (id)articles;
-- (id)config;
-- (id)initWithTagId:(id)arg1 articles:(id)arg2;
+- (void)computeTopArticlesAndScore;
+- (bool)favorited;
+- (double)heuristicScore;
+- (id)initWithTagId:(id)arg1 personalizationScore:(double)arg2 favorited:(bool)arg3 articles:(id)arg4 articleScores:(id)arg5 rules:(id)arg6;
+- (id)orphans;
+- (double)personalizationScore;
+- (id)rules;
 - (double)score;
+- (void)setArticleScores:(id)arg1;
 - (void)setArticles:(id)arg1;
-- (void)setConfig:(id)arg1;
-- (void)setScore:(double)arg1;
-- (void)setSolos:(id)arg1;
+- (void)setFavorited:(bool)arg1;
+- (void)setHeuristicScore:(double)arg1;
+- (void)setPersonalizationScore:(double)arg1;
+- (void)setRules:(id)arg1;
 - (void)setTagId:(id)arg1;
-- (id)solos;
 - (id)tagId;
+- (id)topArticles;
 
 @end

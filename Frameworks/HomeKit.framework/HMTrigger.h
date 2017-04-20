@@ -24,6 +24,7 @@
 @property (readonly, copy) NSString *description;
 @property (getter=isEnabled, nonatomic) BOOL enabled;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL hf_requiresConfirmationToRun;
 @property (nonatomic) HMHome *home;
 @property (nonatomic, copy) NSDate *lastFireDate;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
@@ -95,7 +96,9 @@
 
 + (id)_hf_sanitizeTriggerName:(id)arg1 home:(id)arg2;
 
+- (id)hf_forceDisableReasons;
 - (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (BOOL)hf_requiresConfirmationToRun;
 - (id)hf_serializedStateDumpRepresentation;
 
 @end

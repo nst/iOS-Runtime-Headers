@@ -2,18 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
  */
 
-@interface WBSFormFieldFingerprinter : NSObject {
-    NSDictionary * _formMetadata;
-}
+@interface WBSFormFieldFingerprinter : NSObject
 
-@property (nonatomic, readonly, copy) NSDictionary *formMetadata;
-
-- (void).cxx_destruct;
-- (id)_fingerprintComponentsForControlMetadata:(id)arg1;
-- (id)_hashForString:(id)arg1;
-- (id)fingerprintForControlMetadata:(id)arg1;
-- (id)formMetadata;
-- (id)init;
-- (id)initWithFormMetadata:(id)arg1;
++ (id)_fingerprintComponentsForControlMetadata:(id)arg1;
++ (id)_hashForString:(id)arg1;
++ (id)fingerprintForControlMetadata:(id)arg1;
 
 @end

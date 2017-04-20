@@ -37,6 +37,7 @@
 - (id)description;
 - (id)device;
 - (void)endEncoding;
+- (id)formattedDescription:(unsigned int)arg1;
 - (unsigned long long)globalTraceObjectID;
 - (id)initWithCommandBuffer:(id)arg1 renderPassDescriptor:(id)arg2;
 - (void)insertDebugSignpost:(id)arg1;

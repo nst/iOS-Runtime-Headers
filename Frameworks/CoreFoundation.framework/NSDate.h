@@ -97,6 +97,14 @@
 
 + (id)_srGetStringFromDate:(id)arg1;
 
+// Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
+
++ (id)vs_currentDate;
++ (id)vs_dateAccessQueue;
++ (id)vs_recordedDates;
++ (void)vs_startRecordingDates;
++ (id)vs_stopRecordingDates;
+
 // Image: /System/Library/PrivateFrameworks/AggregateDictionary.framework/AggregateDictionary
 
 + (id)dateForDaysSince1970:(int)arg1;
@@ -114,6 +122,10 @@
 - (BOOL)isAfterDate:(id)arg1;
 - (BOOL)isBeforeDate:(id)arg1;
 - (BOOL)isInclusiveBetweenDate:(id)arg1 andDate:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
+
+- (BOOL)aaui_isTodayWithCalendar:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
 
@@ -392,9 +404,11 @@
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
 + (id)dateFromString:(id)arg1 possibleFormats:(id)arg2;
++ (id)dateFromStringWithHTTPHeaderFormat:(id)arg1;
 + (id)dateFromStringWithISO8601Format:(id)arg1;
 + (id)dateWithPBDate:(id)arg1;
 + (id)fc_dateWithMillisecondsTimeIntervalSince1970:(unsigned long long)arg1;
++ (id)fc_earlierDateAllowingNilWithDate:(id)arg1 andDate:(id)arg2;
 + (int)keyValuePairType;
 + (id)pbDate;
 + (id)readValueFromKeyValuePair:(id)arg1;
@@ -413,7 +427,7 @@
 
 // Image: /System/Library/PrivateFrameworks/NewsServices.framework/NewsServices
 
-- (void)nss_gregorianDescriptionWithFlags:(int)arg1 completion:(id /* block */)arg2;
+- (void)nss_gregorianDescriptionWithFlags:(int)arg1 options:(int)arg2 completion:(id /* block */)arg3;
 
 // Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
 
@@ -457,28 +471,10 @@
 
 - (BOOL)px_isSameDayAsDate:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
-
-+ (BOOL)dateIsMidnightLocalTime:(id)arg1;
-+ (id)defaultDateFormatter;
-+ (id)filenameDateStringWithStartDate:(id)arg1 endDate:(id)arg2;
-+ (id)monotonicDate;
-+ (id)monotonicDateWithTimeIntervalSinceNow:(double)arg1;
-+ (id)nearestMidnightAfterDate:(id)arg1;
-+ (id)nearestMidnightBeforeDate:(id)arg1;
-
-- (id)convertFromBasebandToMonotonic;
-- (id)convertFromMonotonicToBaseband;
-- (id)convertFromMonotonicToSystem;
-- (id)convertFromSystemToMonotonic;
-- (BOOL)isInMonotonicFuture;
-- (BOOL)isInMonotonicFutureWithDistance:(double)arg1;
-- (BOOL)isInMonotonicPastWithDistance:(double)arg1;
-- (double)timeIntervalSinceMonitonicNow;
-
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 
 + (id)safari_dateOfMidnightNumberOfDaysAgo:(int)arg1;
++ (double)safari_oneDayInSeconds;
 
 - (BOOL)safari_isInSameDayAsDate:(id)arg1;
 - (BOOL)safari_isInToday;

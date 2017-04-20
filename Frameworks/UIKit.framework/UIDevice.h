@@ -116,7 +116,7 @@
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
 - (struct CGSize { float x1; float x2; })_notesDeviceDrawingSize;
-- (BOOL)_notesDeviceSupportsBodyLettpress;
+- (BOOL)_notesDeviceSupportsLetterpress;
 - (BOOL)_notesLowEndHardware;
 - (id)_notesProductType;
 

@@ -16,6 +16,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)applicationIconDidChange:(id)arg1;
 - (void)applicationsDidInstall:(id)arg1;
 - (void)applicationsDidUninstall:(id)arg1;
 - (void)dealloc;

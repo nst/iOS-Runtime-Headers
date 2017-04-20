@@ -387,6 +387,8 @@
 - (void)didTapFeedCell:(id)arg1;
 - (void)didTapOverlayPlayButtonInFeedImageCell:(id)arg1;
 - (void)feedInvitationCell:(id)arg1 didAccept:(BOOL)arg2;
+- (void)feedInvitationCell:(id)arg1 presentViewController:(id)arg2;
+- (void)feedInvitationCellReportAsJunk:(id)arg1;
 - (void)feedSectionInfosManager:(id)arg1 sectionInfosDidChange:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;

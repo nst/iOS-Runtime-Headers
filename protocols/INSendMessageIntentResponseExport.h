@@ -6,5 +6,7 @@
 @required
 
 - (int)code;
+- (INMessage *)sentMessage;
+- (void)setSentMessage:(INMessage *)arg1;
 
 @end

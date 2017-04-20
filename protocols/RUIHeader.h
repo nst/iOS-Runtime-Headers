@@ -9,7 +9,7 @@
 
 @optional
 
-- (UILabel *)detailHeaderLabel;
+- (RUILinkLabel *)detailHeaderLabel;
 - (float)headerHeightForWidth:(float)arg1 inTableView:(UITableView *)arg2;
 - (float)headerHeightForWidth:(float)arg1 inView:(UIView *)arg2;
 - (UILabel *)headerLabel;

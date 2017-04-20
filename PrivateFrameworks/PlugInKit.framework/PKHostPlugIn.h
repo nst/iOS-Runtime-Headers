@@ -11,6 +11,7 @@
     NSDictionary * _discoveryExtensions;
     NSBundle * _embeddedBundle;
     id  _embeddedPrincipal;
+    NSDictionary * _environment;
     NSUUID * _multipleInstanceUUID;
     id /* block */  _notificationBlock;
     id  _plugInPrincipal;
@@ -43,6 +44,7 @@
 @property (retain) NSBundle *embeddedBundle;
 @property (retain) id embeddedPrincipal;
 @property (readonly) NSDictionary *entitlements;
+@property (retain) NSDictionary *environment;
 @property (retain) NSDictionary *extensionState;
 @property (readonly) unsigned int hash;
 @property (readonly) NSString *identifier;
@@ -90,6 +92,7 @@
 - (id)embeddedBundle;
 - (id)embeddedPrincipal;
 - (void)endUsing:(id /* block */)arg1;
+- (id)environment;
 - (id)extensionState;
 - (id)initWithForm:(id)arg1;
 - (bool)loadExtensions:(id)arg1 error:(id*)arg2;
@@ -109,6 +112,7 @@
 - (void)setDiscoveryExtensions:(id)arg1;
 - (void)setEmbeddedBundle:(id)arg1;
 - (void)setEmbeddedPrincipal:(id)arg1;
+- (void)setEnvironment:(id)arg1;
 - (void)setExtensionState:(id)arg1;
 - (void)setHostPrincipal:(id)arg1 withProtocol:(id)arg2;
 - (void)setMultipleInstanceUUID:(id)arg1;

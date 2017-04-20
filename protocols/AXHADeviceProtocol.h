@@ -63,7 +63,7 @@
 - (short)rightStreamVolumeSteps;
 - (BOOL)rightTreble;
 - (NSString *)rightUUID;
-- (void)selectProgram:(AXHearingAidMode *)arg1;
+- (void)selectProgram:(AXHearingAidMode *)arg1 forEar:(int)arg2;
 - (NSIndexSet *)selectedProgramIndexes;
 - (NSArray *)selectedPrograms;
 - (void)setAvailableEars:(int)arg1;

@@ -91,10 +91,12 @@
 - (void)_dumpInterfaceDictionary;
 - (void)_fillDataWithRandom:(id)arg1 length:(int)arg2;
 - (BOOL)_handleAction:(id)arg1 forNotification:(id)arg2 remoteNotificationContext:(id)arg3 localNotification:(id)arg4 unNotification:(id)arg5 handler:(id)arg6 controller:(id)arg7;
+- (void)_inQueue_recoverFromMissingIntefaceControllerWithID:(id)arg1;
 - (id)_interfaceControllerClientIDForControllerID:(id)arg1;
 - (id)_interfaceControllerID:(id)arg1;
 - (id)_interfaceControllerIDsForClientID:(id)arg1;
 - (id)_interfaceControllerWithID:(id)arg1;
+- (void)_interfaceControllerWithID:(id)arg1 performBlock:(id /* block */)arg2;
 - (void)_registerInterfaceController:(id)arg1 interfaceControllerID:(id)arg2 interfaceControllerClientID:(id)arg3 applicationRootController:(BOOL)arg4;
 - (void)_requestTimingData:(id)arg1;
 - (void)_saveReceiveTime;
@@ -103,6 +105,7 @@
 - (void)_sendOpenParentApplicationRequest;
 - (id)_setupSignal:(int)arg1 handler:(id /* block */)arg2;
 - (void)_setupSignalHandlers;
+- (void)_tellApplicationThatInterfaceControllerCantBeFound:(id)arg1;
 - (void)activateViewController:(id)arg1 clientIdentifier:(id)arg2;
 - (id)activeComplicationsConnections;
 - (id /* block */)addPassesCompletion;

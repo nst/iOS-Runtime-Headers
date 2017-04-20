@@ -10,6 +10,7 @@
     unsigned int  _type;
 }
 
+@property (nonatomic, readonly) BOOL isAvailableForAnonymousDownload;
 @property (nonatomic, copy) NSArray *offers;
 @property (nonatomic, copy) NSURL *previewURL;
 @property (nonatomic, copy) NSString *storeIdentifier;
@@ -19,6 +20,7 @@
 - (void).cxx_destruct;
 - (unsigned int)availability;
 - (id)initWithType:(unsigned int)arg1;
+- (BOOL)isAvailableForAnonymousDownload;
 - (id)offers;
 - (id)previewURL;
 - (void)setOffers:(id)arg1;

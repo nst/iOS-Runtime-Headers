@@ -3,13 +3,16 @@
  */
 
 @interface SBUIPasscodeLockViewInstallTonightWithKeyboard : SBUIPasscodeLockViewWithKeyboard {
-    SBUIButton * _remindMeLaterButton;
+    SBUIButton * _actionButton;
 }
 
 - (void).cxx_destruct;
-- (void)_layoutRemindMeLaterButton;
+- (void)_actionButtonHit;
+- (void)_configureActionButton;
+- (void)_layoutActionButton;
 - (void)_layoutStatusView;
-- (void)_remindMeLaterButtonHit;
 - (id)initWithLightStyle:(BOOL)arg1;
+- (void)setShowsCancelButton:(BOOL)arg1;
+- (void)setShowsEmergencyCallButton:(BOOL)arg1;
 
 @end

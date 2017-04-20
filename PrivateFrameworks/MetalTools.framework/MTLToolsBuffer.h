@@ -23,6 +23,7 @@
 - (void)addDebugMarker:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void*)contents;
 - (void)didModifyRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)formattedDescription:(unsigned int)arg1;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2;
 - (struct __IOSurface { }*)iosurface;
 - (unsigned int)length;

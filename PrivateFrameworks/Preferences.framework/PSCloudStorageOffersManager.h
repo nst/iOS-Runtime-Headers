@@ -6,6 +6,8 @@
     CommerceRemoteUIDelegate * _commerceDelegate;
     <PSCloudStorageOffersManagerDelegate> * _delegate;
     unsigned long long  _requiredStorageThreshold;
+    BOOL  _skipCompletionAlert;
+    BOOL  _supportsModernAlerts;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -13,12 +15,16 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic) unsigned long long requiredStorageThreshold;
+@property (nonatomic) BOOL skipCompletionAlert;
 @property (readonly) Class superclass;
+@property (nonatomic) BOOL supportsModernAlerts;
 
 - (void).cxx_destruct;
+- (void)_setupFlowWithNavigationController:(id)arg1 modally:(BOOL)arg2;
 - (void)beginFlowWithNavigationController:(id)arg1 modally:(BOOL)arg2;
 - (void)beginFlowWithNavigationController:(id)arg1 purchaseToken:(id)arg2 buyParameters:(id)arg3 requestHeaders:(id)arg4 modally:(BOOL)arg5;
 - (void)cancelLoad;
+- (void)commerceDelegate:(id)arg1 didCompleteWithError:(id)arg2;
 - (void)commerceDelegate:(id)arg1 loadDidFailWithError:(id)arg2;
 - (void)commerceDelegate:(id)arg1 willPresentObjectModel:(id)arg2 page:(id)arg3;
 - (void)commerceDelegateDidCancel:(id)arg1;
@@ -27,5 +33,9 @@
 - (unsigned long long)requiredStorageThreshold;
 - (void)setDelegate:(id)arg1;
 - (void)setRequiredStorageThreshold:(unsigned long long)arg1;
+- (void)setSkipCompletionAlert:(BOOL)arg1;
+- (void)setSupportsModernAlerts:(BOOL)arg1;
+- (BOOL)skipCompletionAlert;
+- (BOOL)supportsModernAlerts;
 
 @end

@@ -11,6 +11,7 @@
     NSDate * _editionKeyDate;
     NSArray * _emitters;
     FCFeedDescriptor * _feedDescriptor;
+    FCFeedEdition * _followingEdition;
     NSArray * _followingGroups;
     FCForYouCatchUpOperation * _forYouCatchUpOperation;
     NSHashTable * _groupsFromPage;
@@ -19,6 +20,7 @@
     BOOL  _isTopOfPage;
     FCDateRange * _pageDateRange;
     NSArray * _pendingGroups;
+    NSArray * _pendingGroupsFromOtherSessions;
     <FCFeedPersonalizing> * _personalizer;
     NSArray * _precedingGroups;
     BOOL  _preferSpeedOverQuality;
@@ -36,6 +38,7 @@
 @property (nonatomic, readonly) NSDate *editionKeyDate;
 @property (nonatomic, retain) NSArray *emitters;
 @property (nonatomic, readonly, copy) FCFeedDescriptor *feedDescriptor;
+@property (nonatomic, retain) FCFeedEdition *followingEdition;
 @property (nonatomic, readonly, copy) NSArray *followingGroups;
 @property (nonatomic, readonly) FCForYouCatchUpOperation *forYouCatchUpOperation;
 @property (nonatomic, retain) NSHashTable *groupsFromPage;
@@ -44,6 +47,7 @@
 @property (nonatomic, readonly) BOOL isTopOfPage;
 @property (nonatomic, readonly, copy) FCDateRange *pageDateRange;
 @property (nonatomic, readonly, copy) NSArray *pendingGroups;
+@property (nonatomic, readonly, copy) NSArray *pendingGroupsFromOtherSessions;
 @property (nonatomic, readonly) <FCFeedPersonalizing> *personalizer;
 @property (nonatomic, readonly) int precedingGroupType;
 @property (nonatomic, readonly, copy) NSArray *precedingGroups;
@@ -72,13 +76,16 @@
 - (id)filterTransformationWithFilterOptions:(int)arg1 considerOutputFrom:(id)arg2;
 - (id)filterTransformationWithFilterOptions:(int)arg1 ignoringCurrentPageOutputFrom:(id)arg2;
 - (id)filterTransformationWithFilterOptions:(int)arg1 ignoringOutputFrom:(id)arg2;
+- (id)filterTransformationWithFilterOptions:(int)arg1 otherArticleIDs:(id)arg2;
 - (id)followingAdjacentHeadlinesFromGroupType:(int)arg1;
+- (id)followingEdition;
 - (id)followingGroups;
 - (id)forYouCatchUpOperation;
 - (id)groupFromPageWithType:(int)arg1;
 - (id)groupsFromPage;
-- (id)initWithCloudContext:(id)arg1 refreshSession:(id)arg2 refreshDateRange:(id)arg3 edition:(id)arg4 precedingGroups:(id)arg5 followingGroups:(id)arg6 feedDescriptor:(id)arg7 emitters:(id)arg8 desiredHeadlineCount:(unsigned int)arg9 preferSpeedOverQuality:(BOOL)arg10 forYouCatchUpOperation:(id)arg11;
+- (id)initWithCloudContext:(id)arg1 refreshSession:(id)arg2 refreshDateRange:(id)arg3 currentEdition:(id)arg4 followingEdition:(id)arg5 precedingGroups:(id)arg6 followingGroups:(id)arg7 pendingGroupsFromOtherSessions:(id)arg8 feedDescriptor:(id)arg9 emitters:(id)arg10 desiredHeadlineCount:(unsigned int)arg11 preferSpeedOverQuality:(BOOL)arg12 forYouCatchUpOperation:(id)arg13;
 - (BOOL)isFirstPageInRefreshSession;
+- (BOOL)isNewEdition;
 - (BOOL)isOffline;
 - (BOOL)isTopOfPage;
 - (id)pageDateRange;
@@ -86,6 +93,7 @@
 - (BOOL)pageHasPrecedingGroupWithSourceIdentifier:(id)arg1;
 - (BOOL)pageWillContainGroupWithType:(int)arg1;
 - (id)pendingGroups;
+- (id)pendingGroupsFromOtherSessions;
 - (id)personalizer;
 - (id)precedingAdjacentHeadlinesFromGroupType:(int)arg1;
 - (int)precedingGroupType;
@@ -96,6 +104,7 @@
 - (id)refreshSession;
 - (id)remainingEmitters;
 - (void)setEmitters:(id)arg1;
+- (void)setFollowingEdition:(id)arg1;
 - (void)setGroupsFromPage:(id)arg1;
 - (void)setRefreshSession:(id)arg1;
 - (void)setRemainingEmitters:(id)arg1;

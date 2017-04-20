@@ -13,7 +13,7 @@
 - (UIView *)customBackgroundViewForNotificationViewController:(NCNotificationViewController *)arg1;
 - (void)longLookWillDismissForNotificationViewController:(NCNotificationViewController *)arg1;
 - (void)longLookWillPresentForNotificationViewController:(NCNotificationViewController *)arg1;
-- (NCMaterialSettings *)materialSettingsForNotificationViewController:(NCNotificationViewController *)arg1;
+- (MTMaterialSettings *)materialSettingsForNotificationViewController:(NCNotificationViewController *)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })notificationViewController:(NCNotificationViewController *)arg1 convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 toLocalWindowSpaceFromView:(UIView *)arg3;
 - (void)notificationViewController:(NCNotificationViewController *)arg1 didCommitToLongLookPresentation:(BOOL)arg2 withCoordinator:(id <UIViewControllerTransitionCoordinator>)arg3;
 - (void)notificationViewController:(NCNotificationViewController *)arg1 didCommitToShortLookPresentation:(BOOL)arg2 withCoordinator:(id <UIViewControllerTransitionCoordinator>)arg3;

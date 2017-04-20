@@ -4,11 +4,11 @@
 
 @interface _CKWeakWrapper : NSProxy {
     Class  _targetClass;
-    CUTWeakReference * _weakReference;
+    IMWeakReference * _weakReference;
 }
 
 @property (nonatomic, retain) Class targetClass;
-@property (nonatomic, retain) CUTWeakReference *weakReference;
+@property (nonatomic, retain) IMWeakReference *weakReference;
 
 - (void).cxx_destruct;
 - (Class)class;

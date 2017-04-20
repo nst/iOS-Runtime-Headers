@@ -43,8 +43,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) VSSpeechSynthesizer *synthesizer;
 
++ (id)_deviceVoiceLanguage;
 + (id)_uiLanguage;
-+ (id)_vsPreferencesSpokenLanguageIdentifier;
 + (id)defaultVoiceLanguageWithSource:(int*)arg1;
 + (id)localizedStringForKey:(id)arg1;
 + (id)sharedInstance;

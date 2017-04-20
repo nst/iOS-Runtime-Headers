@@ -16,6 +16,7 @@
 @property (nonatomic, copy) id /* block */ messageLoggingBlock;
 
 + (id)getPersistentIdentifierForDNU:(BOOL)arg1;
++ (id)newHierarchyTokenFromParentToken:(id)arg1;
 + (void)regeneratePersistentIdentifierForDNU:(BOOL)arg1;
 + (BOOL)sendMsgToServer:(int)arg1 serverStoreBagName:(id)arg2 defaultSvrIP:(id)arg3 defaultSvrPort:(unsigned short)arg4 componentType:(int)arg5 version:(unsigned short)arg6 sessionID:(unsigned int)arg7 eventID:(unsigned short)arg8 method:(unsigned short)arg9 respCode:(unsigned short)arg10 dict:(id)arg11;
 + (BOOL)sendOneMessageWithSessionInfo:(id)arg1 userInfo:(id)arg2 category:(unsigned short)arg3 type:(unsigned short)arg4 payload:(id)arg5 error:(id*)arg6;

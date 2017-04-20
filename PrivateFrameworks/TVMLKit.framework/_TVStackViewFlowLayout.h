@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
  */
 
-@interface _TVStackViewFlowLayout : UICollectionViewFlowLayout {
+@interface _TVStackViewFlowLayout : _TVCollectionViewFlowLayout {
     id /* block */  _onPrepareLayout;
     NSArray * _supplementaryCellLayoutAttributes;
 }

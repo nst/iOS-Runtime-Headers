@@ -78,6 +78,7 @@
 
 // Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
 
+- (BOOL)_af_isKindOfDictationRequest;
 - (id)af_dialogIdentifier;
 - (BOOL)af_isUserUtterance;
 - (BOOL)af_isUtterance;
@@ -86,6 +87,7 @@
 // Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
 
 - (int)_afui_usefulUserResultType;
+- (id)afui_insertionContext;
 
 // Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
 

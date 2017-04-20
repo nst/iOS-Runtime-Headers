@@ -3,6 +3,7 @@
  */
 
 @interface CKTranscriptMessageContentCell : CKPhoneTranscriptMessageCell {
+    int  _animationPauseReasons;
     UILabel * _drawerLabel;
     NSAttributedString * _drawerText;
     BOOL  _drawerTextChanged;
@@ -17,6 +18,7 @@
     }  _messageDisplayViewRequestedSize;
 }
 
+@property (nonatomic) int animationPauseReasons;
 @property (nonatomic, retain) UILabel *drawerLabel;
 @property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } drawerLabelFrame;
 @property (nonatomic, copy) NSAttributedString *drawerText;
@@ -27,6 +29,7 @@
 @property (nonatomic) struct CGSize { float x1; float x2; } messageDisplayViewRequestedSize;
 
 - (void).cxx_destruct;
+- (int)animationPauseReasons;
 - (void)configureForChatItem:(id)arg1;
 - (id)drawerLabel;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })drawerLabelFrame;
@@ -40,6 +43,7 @@
 - (id)messageDisplayView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })messageDisplayViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContainerFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (struct CGSize { float x1; float x2; })messageDisplayViewRequestedSize;
+- (void)setAnimationPauseReasons:(int)arg1;
 - (void)setDrawerLabel:(id)arg1;
 - (void)setDrawerText:(id)arg1;
 - (void)setDrawerTextChanged:(BOOL)arg1;

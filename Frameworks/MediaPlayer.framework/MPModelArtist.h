@@ -8,6 +8,7 @@
     id /* block */  _editorialArtworkCatalogBlock;
     MPModelGenre * _genre;
     BOOL  _hasBiography;
+    NSDate * _libraryAddedDate;
     int  _songCount;
 }
 
@@ -16,6 +17,7 @@
 @property (nonatomic, copy) id /* block */ editorialArtworkCatalogBlock;
 @property (nonatomic, copy) MPModelGenre *genre;
 @property (nonatomic) BOOL hasBiography;
+@property (nonatomic, copy) NSDate *libraryAddedDate;
 @property (nonatomic) int songCount;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
@@ -24,6 +26,7 @@
 + (id)__MPModelPropertyArtistArtwork__PROPERTY;
 + (id)__MPModelPropertyArtistEditorialArtwork__PROPERTY;
 + (id)__MPModelPropertyArtistHasBiography__PROPERTY;
++ (id)__MPModelPropertyArtistLibraryAddedDate__PROPERTY;
 + (id)__MPModelPropertyArtistSongCount__PROPERTY;
 + (id)__MPModelRelationshipArtistGenre__PROPERTY;
 + (id)__albumCount__KEY;
@@ -31,7 +34,9 @@
 + (id)__editorialArtworkCatalogBlock__KEY;
 + (id)__genre__KEY;
 + (id)__hasBiography__KEY;
++ (id)__libraryAddedDate__KEY;
 + (id)__songCount__KEY;
++ (id)kindWithAlbumKind:(id)arg1;
 
 - (void).cxx_destruct;
 - (int)albumCount;
@@ -41,11 +46,13 @@
 - (id /* block */)editorialArtworkCatalogBlock;
 - (id)genre;
 - (BOOL)hasBiography;
+- (id)libraryAddedDate;
 - (void)setAlbumCount:(int)arg1;
 - (void)setArtworkCatalogBlock:(id /* block */)arg1;
 - (void)setEditorialArtworkCatalogBlock:(id /* block */)arg1;
 - (void)setGenre:(id)arg1;
 - (void)setHasBiography:(BOOL)arg1;
+- (void)setLibraryAddedDate:(id)arg1;
 - (void)setSongCount:(int)arg1;
 - (int)songCount;
 

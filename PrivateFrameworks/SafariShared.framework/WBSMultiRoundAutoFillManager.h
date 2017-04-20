@@ -7,7 +7,7 @@
     NSString * _addressSetLabelUsedDuringFirstAutoFillPass;
     unsigned int  _autoFillAttemptTrigger;
     NSMutableSet * _controlUniqueIDToBeIgnoredByFollowUpAutoFill;
-    NSDictionary * _formMetadataFromPreviousAutoFillAttempt;
+    WBSFormMetadata * _formMetadataFromPreviousAutoFillAttempt;
     unsigned int  _numberOfFollowUpAutoFillAttempts;
     NSTimer * _timerForFollowUpAutoFill;
     BOOL  _userDidInteractWithForm;

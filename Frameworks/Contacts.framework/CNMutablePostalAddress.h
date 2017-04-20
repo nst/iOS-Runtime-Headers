@@ -11,6 +11,8 @@
 @property (nonatomic, copy) NSString *postalCode;
 @property (nonatomic, copy) NSString *state;
 @property (nonatomic, copy) NSString *street;
+@property (nonatomic, copy) NSString *subAdministrativeArea;
+@property (nonatomic, copy) NSString *subLocality;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)freeze;

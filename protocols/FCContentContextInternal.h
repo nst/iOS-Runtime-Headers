@@ -15,5 +15,6 @@
 - (FCResourceRecordSource *)resourceRecordSource;
 - (FCTagRecordSource *)tagRecordSource;
 - (FCWebArchiveSource *)webArchiveSource;
+- (FCWidgetSectionConfigRecordSource *)widgetSectionConfigRecordSource;
 
 @end

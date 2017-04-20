@@ -29,10 +29,12 @@
 - (void)resetRegisteredResponses;
 - (id)responsesForMessage:(id)arg1 maximumResponses:(unsigned int)arg2 forContext:(id)arg3 withLanguage:(id)arg4 options:(unsigned int)arg5;
 - (void)responsesForMessage:(id)arg1 maximumResponses:(unsigned int)arg2 forContext:(id)arg3 withLanguage:(id)arg4 options:(unsigned int)arg5 completionBlock:(id /* block */)arg6;
-- (id)responsesForMessageImp:(id)arg1 maximumResponses:(unsigned int)arg2 forContext:(id)arg3 withLanguage:(id)arg4 options:(unsigned int)arg5;
-- (id)responsesForMessageWithLanguageDetection:(id)arg1 maximumResponses:(unsigned int)arg2 forContext:(id)arg3 withLanguage:(id*)arg4 options:(unsigned int)arg5;
-- (void)responsesForMessageWithLanguageDetection:(id)arg1 maximumResponses:(unsigned int)arg2 forContext:(id)arg3 withLanguage:(id*)arg4 options:(unsigned int)arg5 completionBlock:(id /* block */)arg6;
-- (id)responsesForMessageWithLanguageDetectionImp:(id)arg1 maximumResponses:(unsigned int)arg2 forContext:(id)arg3 withLanguage:(id*)arg4 options:(unsigned int)arg5;
+- (id)responsesForMessage:(id)arg1 maximumResponses:(unsigned int)arg2 forConversationHistory:(id)arg3 withLanguage:(id)arg4 options:(unsigned int)arg5;
+- (void)responsesForMessage:(id)arg1 maximumResponses:(unsigned int)arg2 forConversationHistory:(id)arg3 withLanguage:(id)arg4 options:(unsigned int)arg5 completionBlock:(id /* block */)arg6;
+- (id)responsesForMessageImp:(id)arg1 maximumResponses:(unsigned int)arg2 forConversationHistory:(id)arg3 forContext:(id)arg4 withLanguage:(id)arg5 options:(unsigned int)arg6;
+- (id)responsesForMessageWithLanguageDetection:(id)arg1 maximumResponses:(unsigned int)arg2 forConversationHistory:(id)arg3 withLanguage:(id*)arg4 options:(unsigned int)arg5;
+- (void)responsesForMessageWithLanguageDetection:(id)arg1 maximumResponses:(unsigned int)arg2 forConversationHistory:(id)arg3 withLanguage:(id*)arg4 options:(unsigned int)arg5 completionBlock:(id /* block */)arg6;
+- (id)responsesForMessageWithLanguageDetectionImp:(id)arg1 maximumResponses:(unsigned int)arg2 forConversationHistory:(id)arg3 forContext:(id)arg4 withLanguage:(id*)arg5 options:(unsigned int)arg6;
 - (void)setCollection:(id)arg1;
 - (void)setDispatchQueue:(id)arg1;
 - (void)setPreferredLanguages:(id)arg1;

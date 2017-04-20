@@ -5,6 +5,7 @@
 @interface INIntentResponse : NSObject <INCacheableContainer, INIntentResponseExport, NSCopying, NSSecureCoding> {
     _INPBIntentResponse * _backingStore;
     int  _code;
+    _INPBGenericIntentResponse * _responseMessagePBRepresentation;
     NSUserActivity * _userActivity;
 }
 
@@ -32,6 +33,7 @@
 - (id)_impl;
 - (int)_intentHandlingStatus;
 - (id)_payloadResponseMessageData;
+- (id)_responseMessagePBRepresentation;
 - (void)_setPayloadResponseMessageData:(id)arg1;
 - (id)backingStore;
 - (id)cacheableObjects;
@@ -43,7 +45,9 @@
 - (id)initWithBackingStore:(id)arg1;
 - (id)initWithCode:(int)arg1 userActivity:(id)arg2;
 - (id)initWithCoder:(id)arg1;
+- (id)propertiesByName;
 - (id)protoData;
+- (void)setPropertiesByName:(id)arg1;
 - (void)setShouldOpenContainingApplication:(BOOL)arg1;
 - (BOOL)shouldOpenContainingApplication;
 - (id)userActivity;

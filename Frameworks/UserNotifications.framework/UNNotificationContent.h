@@ -9,6 +9,7 @@
     NSString * _categoryIdentifier;
     NSString * _darwinNotificationName;
     NSString * _darwinSnoozedNotificationName;
+    NSString * _defaultActionTitle;
     BOOL  _fromSnooze;
     BOOL  _hasDefautAction;
     NSString * _launchImageName;
@@ -31,6 +32,7 @@
 @property (nonatomic, readonly, copy) NSString *categoryIdentifier;
 @property (nonatomic, readonly, copy) NSString *darwinNotificationName;
 @property (nonatomic, readonly, copy) NSString *darwinSnoozedNotificationName;
+@property (nonatomic, readonly, copy) NSString *defaultActionTitle;
 @property (getter=isFromSnooze, nonatomic, readonly) BOOL fromSnooze;
 @property (nonatomic, readonly) BOOL hasDefaultAction;
 @property (nonatomic, readonly, copy) NSString *launchImageName;
@@ -51,7 +53,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_initWithAttachments:(id)arg1 badge:(id)arg2 body:(id)arg3 categoryIdentifier:(id)arg4 darwinNotificationName:(id)arg5 darwinSnoozedNotificationName:(id)arg6 fromSnooze:(BOOL)arg7 hasDefaultAction:(BOOL)arg8 launchImageName:(id)arg9 peopleIdentifiers:(id)arg10 shouldAddToNotificationsList:(BOOL)arg11 shouldAlwaysAlertWhileAppIsForeground:(BOOL)arg12 shouldLockDevice:(BOOL)arg13 shouldPauseMedia:(BOOL)arg14 snoozeable:(BOOL)arg15 sound:(id)arg16 subtitle:(id)arg17 threadIdentifier:(id)arg18 title:(id)arg19 userInfo:(id)arg20;
+- (id)_initWithAttachments:(id)arg1 badge:(id)arg2 body:(id)arg3 categoryIdentifier:(id)arg4 darwinNotificationName:(id)arg5 darwinSnoozedNotificationName:(id)arg6 fromSnooze:(BOOL)arg7 hasDefaultAction:(BOOL)arg8 defaultActionTitle:(id)arg9 launchImageName:(id)arg10 peopleIdentifiers:(id)arg11 shouldAddToNotificationsList:(BOOL)arg12 shouldAlwaysAlertWhileAppIsForeground:(BOOL)arg13 shouldLockDevice:(BOOL)arg14 shouldPauseMedia:(BOOL)arg15 snoozeable:(BOOL)arg16 sound:(id)arg17 subtitle:(id)arg18 threadIdentifier:(id)arg19 title:(id)arg20 userInfo:(id)arg21;
 - (id)attachments;
 - (id)badge;
 - (id)body;
@@ -59,6 +61,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)darwinNotificationName;
 - (id)darwinSnoozedNotificationName;
+- (id)defaultActionTitle;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)hasDefaultAction;

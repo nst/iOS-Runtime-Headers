@@ -3,6 +3,7 @@
  */
 
 @interface PUSectionedGridLayout : UICollectionViewLayout <PUCollectionViewLayoutDelegating, PUGridLayoutProtocol, PUPhotosGridTransitioningLayout, PUReorderableLayout> {
+    NSNumber * _cachedDefaultGlobalFooterHeight;
     PUSectionedGridLayoutInvalidationContext * _cachedFloatingHeaderInvalidationContext;
     int  _cachedFloatingHeaderInvalidationContextNewVisualSection;
     struct CGRect { 
@@ -116,6 +117,7 @@
     NSArray * _visualToRealSectionIndexes;
 }
 
+@property (nonatomic, retain) NSNumber *cachedDefaultGlobalFooterHeight;
 @property (setter=_setColumnsPerRow:, nonatomic) int columnsPerRow;
 @property (nonatomic) float cropAmount;
 @property (nonatomic) int cropType;
@@ -218,6 +220,7 @@
 - (id)assetIndexPathsForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)beginInsertingItemAtIndexPath:(id)arg1;
 - (void)beginReorderingItemAtIndexPath:(id)arg1;
+- (id)cachedDefaultGlobalFooterHeight;
 - (struct CGSize { float x1; float x2; })collectionViewContentSize;
 - (int)columnsPerRow;
 - (float)cropAmount;
@@ -305,6 +308,7 @@
 - (float)sectionHeaderHeight;
 - (BOOL)sectionHeadersEnabled;
 - (float)sectionTopPadding;
+- (void)setCachedDefaultGlobalFooterHeight:(id)arg1;
 - (void)setCropAmount:(float)arg1;
 - (void)setCropType:(int)arg1;
 - (void)setDelegate:(id)arg1;

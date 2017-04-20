@@ -8,6 +8,7 @@
         unsigned int position : 1; 
         unsigned int timestamp : 1; 
         unsigned int searchType : 1; 
+        unsigned int tracksRAPRecordingOnly : 1; 
     }  _has;
     NSString * _identifier;
     MSPPlaceDisplay * _placeDisplay;
@@ -16,6 +17,7 @@
     MSPRidesharingTrip * _ridesharingTrip;
     int  _searchType;
     double  _timestamp;
+    BOOL  _tracksRAPRecordingOnly;
     MSPTransitStorageLineItem * _transitLineItem;
     PBUnknownFields * _unknownFields;
 }
@@ -29,6 +31,7 @@
 @property (nonatomic, readonly) BOOL hasRidesharingTrip;
 @property (nonatomic) BOOL hasSearchType;
 @property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasTracksRAPRecordingOnly;
 @property (nonatomic, readonly) BOOL hasTransitLineItem;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) MSPPlaceDisplay *placeDisplay;
@@ -37,6 +40,7 @@
 @property (nonatomic, retain) MSPRidesharingTrip *ridesharingTrip;
 @property (nonatomic) int searchType;
 @property (nonatomic) double timestamp;
+@property (nonatomic) BOOL tracksRAPRecordingOnly;
 @property (nonatomic, retain) MSPTransitStorageLineItem *transitLineItem;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
@@ -55,6 +59,7 @@
 - (BOOL)hasRidesharingTrip;
 - (BOOL)hasSearchType;
 - (BOOL)hasTimestamp;
+- (BOOL)hasTracksRAPRecordingOnly;
 - (BOOL)hasTransitLineItem;
 - (unsigned int)hash;
 - (id)identifier;
@@ -71,6 +76,7 @@
 - (void)setHasPosition:(BOOL)arg1;
 - (void)setHasSearchType:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasTracksRAPRecordingOnly:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setPlaceDisplay:(id)arg1;
 - (void)setPosition:(double)arg1;
@@ -78,8 +84,10 @@
 - (void)setRidesharingTrip:(id)arg1;
 - (void)setSearchType:(int)arg1;
 - (void)setTimestamp:(double)arg1;
+- (void)setTracksRAPRecordingOnly:(BOOL)arg1;
 - (void)setTransitLineItem:(id)arg1;
 - (double)timestamp;
+- (BOOL)tracksRAPRecordingOnly;
 - (id)transitLineItem;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;

@@ -31,7 +31,7 @@
 - (void)_queue_invalidate;
 - (void)_waitForState:(int)arg1;
 - (void)activate;
-- (void)alternateSystemAppWithBundleID:(id)arg1 didExitWithReason:(unsigned long long)arg2;
+- (void)alternateSystemAppWithBundleID:(id)arg1 didExitWithContext:(id)arg2;
 - (void)alternateSystemAppWithBundleID:(id)arg1 failedToOpenWithResult:(id)arg2;
 - (void)alternateSystemAppWithBundleIDDidOpen:(id)arg1;
 - (void)alternateSystemAppWithBundleIDDidTerminate:(id)arg1;

@@ -3,6 +3,8 @@
  */
 
 @interface NPTunnelFlowProtocol : NPTunnelFlowTCP {
+    BOOL  _connectedOnInitialRead;
+    BOOL  _discardFirstData;
     BOOL  _disconnectedByApp;
     BOOL  _disconnectedByTunnel;
     NSObject<OS_dispatch_data> * _inputBuffer;
@@ -10,6 +12,8 @@
     NSError * _lastError;
 }
 
+@property BOOL connectedOnInitialRead;
+@property BOOL discardFirstData;
 @property BOOL disconnectedByApp;
 @property BOOL disconnectedByTunnel;
 @property (retain) NSObject<OS_dispatch_data> *inputBuffer;
@@ -24,8 +28,12 @@
 - (unsigned int)addOutputFramesToArray:(struct nw_frame_array_s { struct nw_frame {} *x1; struct nw_frame {} **x2; }*)arg1 limitMinimumBytes:(unsigned int)arg2 limitMaximumBytes:(unsigned int)arg3 limitMaximumFrames:(unsigned int)arg4;
 - (id)appData;
 - (void)closeClientFlowWithError:(id)arg1;
+- (id)composeInitialData;
 - (void)connect;
+- (BOOL)connectedOnInitialRead;
+- (id)copyAndClearInitialData;
 - (void)detachFromInputProtocol;
+- (BOOL)discardFirstData;
 - (void)disconnect;
 - (BOOL)disconnectedByApp;
 - (BOOL)disconnectedByTunnel;
@@ -38,6 +46,8 @@
 - (void)readDataFromClient;
 - (void)sendDataToClient:(id)arg1 fromTunnel:(BOOL)arg2;
 - (void)setAppData:(id)arg1;
+- (void)setConnectedOnInitialRead:(BOOL)arg1;
+- (void)setDiscardFirstData:(BOOL)arg1;
 - (void)setDisconnectedByApp:(BOOL)arg1;
 - (void)setDisconnectedByTunnel:(BOOL)arg1;
 - (void)setInputBuffer:(id)arg1;

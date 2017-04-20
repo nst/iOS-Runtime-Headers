@@ -10,7 +10,7 @@
 
 @optional
 
-- (NCMaterialSettings *)materialSettingsForWidgetListViewController:(WGWidgetListViewController *)arg1;
+- (MTMaterialSettings *)materialSettingsForWidgetListViewController:(WGWidgetListViewController *)arg1;
 - (UIView *)widgetListViewController:(WGWidgetListViewController *)arg1 newCustomBackgroundViewForItemInList:(id)arg2;
 
 @end

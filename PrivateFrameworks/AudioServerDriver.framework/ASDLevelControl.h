@@ -23,12 +23,12 @@
 - (float)_decibelFromScalar:(float)arg1;
 - (float)_scalarFromDecibel:(float)arg1;
 - (unsigned long)baseClass;
-- (void)changeDecibelValue:(float)arg1;
-- (void)changeScalarValue:(float)arg1;
-- (unsigned long)dataSizeForProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned long)arg2 andQualifierData:(const void*)arg3;
+- (BOOL)changeDecibelValue:(float)arg1;
+- (BOOL)changeScalarValue:(float)arg1;
+- (unsigned int)dataSizeForProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned int)arg2 andQualifierData:(const void*)arg3;
 - (float)decibelFromScalar:(float)arg1;
 - (float)decibelValue;
-- (BOOL)getProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned long)arg2 qualifierData:(const void*)arg3 dataSize:(unsigned int*)arg4 andData:(const void*)arg5 forClient:(int)arg6;
+- (BOOL)getProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned int)arg2 qualifierData:(const void*)arg3 dataSize:(unsigned int*)arg4 andData:(void*)arg5 forClient:(int)arg6;
 - (BOOL)hasProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1;
 - (id)initWithDecibelValue:(float)arg1 minimumValue:(float)arg2 maximumValue:(float)arg3 isSettable:(BOOL)arg4 forElement:(unsigned long)arg5 inScope:(unsigned long)arg6 withPlugin:(id)arg7;
 - (id)initWithElement:(unsigned long)arg1 inScope:(unsigned long)arg2 withPlugin:(id)arg3;
@@ -42,7 +42,7 @@
 - (void)setDecibelValue:(float)arg1;
 - (void)setMaximumDecibelValue:(float)arg1;
 - (void)setMinimumDecibelValue:(float)arg1;
-- (BOOL)setProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned long)arg2 qualifierData:(const void*)arg3 dataSize:(unsigned long)arg4 andData:(const void*)arg5 forClient:(int)arg6;
+- (BOOL)setProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned int)arg2 qualifierData:(const void*)arg3 dataSize:(unsigned int)arg4 andData:(const void*)arg5 forClient:(int)arg6;
 - (void)setScalarValue:(float)arg1;
 - (void)setSubclassID:(unsigned long)arg1;
 - (unsigned long)subclassID;

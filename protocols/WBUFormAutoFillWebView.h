@@ -5,14 +5,14 @@
 
 @required
 
-- (NSDictionary *)webui_formMetadataAndFrame:(id*)arg1 forLastPasswordGenerationOrSubmitEventInFrame:(id <WBUFormAutoFillFrameHandle>)arg2;
-- (NSDictionary *)webui_formMetadataForLastPasswordGenerationOrSubmitEventInFrame:(id <WBUFormAutoFillFrameHandle>)arg1;
+- (WBSFormMetadata *)webui_formMetadataAndFrame:(id*)arg1 forLastPasswordGenerationOrSubmitEventInFrame:(id <WBUFormAutoFillFrameHandle>)arg2;
+- (WBSFormMetadata *)webui_formMetadataForLastPasswordGenerationOrSubmitEventInFrame:(id <WBUFormAutoFillFrameHandle>)arg1;
 - (NSString *)webui_lastGeneratedPasswordForCurrentBackForwardItem;
+- (UIViewController *)webui_presentingViewController;
 - (id /* block */)webui_preventNavigationDuringAutoFillPrompt:(void *)arg1; // needs 1 arg types, found 4: id /* block */, void*, id, SEL
 - (BOOL)webui_privateBrowsingEnabled;
 - (void)webui_removeFormMetadataForLastPasswordGenerationOrSubmitEventInFrame:(id <WBUFormAutoFillFrameHandle>)arg1;
-- (void)webui_setFormMetadata:(NSDictionary *)arg1 forLastPasswordGenerationOrSubmitEventInFrame:(id <WBUFormAutoFillFrameHandle>)arg2;
+- (void)webui_setFormMetadata:(WBSFormMetadata *)arg1 forLastPasswordGenerationOrSubmitEventInFrame:(id <WBUFormAutoFillFrameHandle>)arg2;
 - (void)webui_setLastGeneratedPasswordForCurrentBackForwardItem:(NSString *)arg1;
-- (UIView *)webui_viewForAutoFillPrompt;
 
 @end

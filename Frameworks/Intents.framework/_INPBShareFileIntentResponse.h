@@ -24,10 +24,13 @@
 @property (nonatomic) BOOL success;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 + (id)options;
 + (Class)recipientsType;
 
 - (void).cxx_destruct;
+- (int)StringAsShareMode:(id)arg1;
 - (void)addRecipients:(id)arg1;
 - (void)clearRecipients;
 - (BOOL)confirm;
@@ -52,8 +55,15 @@
 - (void)setShareMode:(int)arg1;
 - (void)setSuccess:(BOOL)arg1;
 - (int)shareMode;
+- (id)shareModeAsString:(int)arg1;
 - (BOOL)success;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

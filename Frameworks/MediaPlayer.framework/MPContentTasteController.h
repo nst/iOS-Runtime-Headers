@@ -17,7 +17,6 @@
 - (id)_ML3QueryWithEntityClass:(Class)arg1 predicate:(id)arg2 options:(long long)arg3;
 - (id)_addPendingUpdateRecordForPlaylistGlobalID:(id)arg1 contentTasteType:(int)arg2;
 - (id)_addPendingUpdateRecordForStoreAdamID:(long long)arg1 contentTasteType:(int)arg2;
-- (int)_contentTypeForModel:(id)arg1;
 - (void)_deviceMediaLibraryDidChangeNotification:(id)arg1;
 - (id)_libraryEntityForModel:(id)arg1;
 - (id)_libraryEntityWithStoreID:(long long)arg1 contentType:(int)arg2;

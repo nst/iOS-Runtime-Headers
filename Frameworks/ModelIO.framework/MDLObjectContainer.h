@@ -6,6 +6,7 @@
     NSMutableArray * _objects;
 }
 
+@property (readonly) unsigned int count;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -14,8 +15,10 @@
 
 - (void).cxx_destruct;
 - (void)addObject:(id)arg1;
+- (unsigned int)count;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (id)init;
+- (id)objectAtIndexedSubscript:(unsigned int)arg1;
 - (id)objects;
 - (void)removeObject:(id)arg1;
 

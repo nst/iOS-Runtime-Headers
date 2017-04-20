@@ -3,8 +3,8 @@
  */
 
 @interface HAPWACScanInstance : NSObject <HMFTimerDelegate> {
+    unsigned int  _ageOut;
     id /* block */  _completion;
-    BOOL  _fastAgeOut;
     unsigned int  _filterMethod;
     NSObject<OS_dispatch_queue> * _queue;
     HAPWACScanFilter * _scanFilter;
@@ -14,10 +14,10 @@
     BOOL  _shouldContinueScan;
 }
 
+@property (nonatomic) unsigned int ageOut;
 @property (nonatomic, copy) id /* block */ completion;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL fastAgeOut;
 @property (nonatomic) unsigned int filterMethod;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
@@ -30,10 +30,10 @@
 
 - (void).cxx_destruct;
 - (void)_addScanRequest;
-- (void)_handleFastAgeOutChange;
+- (void)_handleAgeOutChange;
+- (unsigned int)ageOut;
 - (id /* block */)completion;
 - (void)dealloc;
-- (BOOL)fastAgeOut;
 - (unsigned int)filterMethod;
 - (id)initWithFilter:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
 - (id)queue;
@@ -41,8 +41,8 @@
 - (double)scanInterval;
 - (id)scanRepeatTimer;
 - (id)scanStopSemaphore;
+- (void)setAgeOut:(unsigned int)arg1;
 - (void)setCompletion:(id /* block */)arg1;
-- (void)setFastAgeOut:(BOOL)arg1;
 - (void)setFilterMethod:(unsigned int)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setScanFilter:(id)arg1;

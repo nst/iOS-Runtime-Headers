@@ -33,6 +33,7 @@
 - (BOOL)isPeeking;
 - (id)objectForPropertyListKey:(id)arg1 ofClass:(Class)arg2;
 - (id)objectForPropertyListKey:(id)arg1 ofClass:(Class)arg2 valuesOfClass:(Class)arg3;
+- (id)objectsForPropertyListKeys:(id)arg1;
 - (id)propertyList;
 - (void)setPeeking:(BOOL)arg1;
 

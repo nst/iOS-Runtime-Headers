@@ -12,7 +12,7 @@
 - (id)arrayType;
 - (unsigned int)dataType;
 - (void)dealloc;
-- (id)describe;
+- (id)formattedDescription:(unsigned int)arg1;
 - (id)initWithName:(id)arg1 offset:(unsigned int)arg2 dataType:(unsigned int)arg3 details:(id)arg4;
 - (id)name;
 - (unsigned int)offset;

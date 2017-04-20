@@ -4,7 +4,6 @@
 
 @interface GEOLogContext : NSObject <NSCopying> {
     NSMutableArray * _logMsgStates;
-    NSLock * _logMsgStatesLock;
 }
 
 @property (nonatomic, readonly) NSArray *logMsgStates;
@@ -16,7 +15,6 @@
 
 - (void)_initializeDefaultStates;
 - (void)_registerApplicationIdentifierState;
-- (void)_registerCarPlayStateWithTraits:(id)arg1;
 - (void)_registerDefaultMapUIState;
 - (void)_registerDeviceBaseStateWithTraits:(id)arg1;
 - (void)_registerDeviceConnectionState;
@@ -26,6 +24,7 @@
 - (void)_registerLogContextWithTraits:(id)arg1;
 - (void)_registerMapViewStateWithTraits:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)currentExperimentsState;
 - (void)dealloc;
 - (id)init;
 - (id)initWithDefaultStates;

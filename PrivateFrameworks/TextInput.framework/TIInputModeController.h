@@ -28,6 +28,7 @@
 - (id)defaultInputModes;
 - (id)enabledInputModeIdentifiers;
 - (id)enabledInputModes;
+- (BOOL)identifierIsValidSystemInputMode:(id)arg1;
 - (id)preferredLanguages;
 - (void)setCurrentLocale:(id)arg1;
 - (void)setDefaultInputModes:(id)arg1;

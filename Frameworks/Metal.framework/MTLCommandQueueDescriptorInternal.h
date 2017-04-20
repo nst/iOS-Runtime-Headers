@@ -12,6 +12,7 @@
 @property BOOL isOpenGLQueue;
 
 - (id)description;
+- (id)formattedDescription:(unsigned int)arg1;
 - (id)init;
 - (BOOL)isOpenGLQueue;
 - (unsigned int)maxCommandBufferCount;

@@ -9,9 +9,11 @@
     NSMutableDictionary * _nextStartTimes;
     NSString * _playActivityFeatureName;
     NSData * _playActivityRecommendationData;
+    NSString * _playbackContextUniqueIdentifier;
     int  _repeatType;
     BOOL  _requiresQueueChangeVerification;
     int  _shuffleType;
+    NSString * _siriReferenceIdentifier;
     struct { 
         int numberOfAvailableSkips; 
         int skipFrequency; 
@@ -36,6 +38,7 @@
 @property (nonatomic, readonly) MPModelPlayEvent *modelPlayEvent;
 @property (nonatomic, copy) NSString *playActivityFeatureName;
 @property (nonatomic, copy) NSData *playActivityRecommendationData;
+@property (nonatomic, copy) NSString *playbackContextUniqueIdentifier;
 @property (nonatomic, readonly) int playbackMode;
 @property (nonatomic, readonly) BOOL playerPreparesItemsForPlaybackAsynchronously;
 @property (nonatomic, readonly) int realRepeatType;
@@ -43,6 +46,7 @@
 @property (nonatomic) int repeatType;
 @property (nonatomic) BOOL requiresQueueChangeVerification;
 @property (nonatomic) int shuffleType;
+@property (nonatomic, copy) NSString *siriReferenceIdentifier;
 @property (nonatomic) struct { int x1; int x2; double x3; } skipLimit;
 @property (nonatomic) unsigned int state;
 @property (nonatomic, readonly) RadioStation *station;
@@ -89,11 +93,13 @@
 - (id)localizedAttributedPositionInPlaylistStringForItem:(id)arg1 withRegularTextAttributes:(id)arg2 emphasizedTextAttributes:(id)arg3;
 - (id)localizedPositionInPlaylistString:(id)arg1;
 - (id)mediaItemAtIndex:(unsigned int)arg1;
+- (id)mediaItemForIdentifier:(id)arg1;
 - (id)metadataItemForIdentifier:(id)arg1;
 - (id)modelPlayEvent;
 - (id)pathAtIndex:(unsigned int)arg1;
 - (id)playActivityFeatureName;
 - (id)playActivityRecommendationData;
+- (id)playbackContextUniqueIdentifier;
 - (id)playbackInfoForIdentifier:(id)arg1;
 - (int)playbackMode;
 - (void)player:(id)arg1 currentItemDidChangeToItem:(id)arg2;
@@ -113,15 +119,18 @@
 - (void)setNextStartTime:(double)arg1 forIndentifier:(id)arg2;
 - (void)setPlayActivityFeatureName:(id)arg1;
 - (void)setPlayActivityRecommendationData:(id)arg1;
+- (void)setPlaybackContextUniqueIdentifier:(id)arg1;
 - (void)setRepeatType:(int)arg1;
 - (void)setRequiresQueueChangeVerification:(BOOL)arg1;
 - (void)setShuffleType:(int)arg1;
+- (void)setSiriReferenceIdentifier:(id)arg1;
 - (void)setSkipLimit:(struct { int x1; int x2; double x3; })arg1;
 - (void)setState:(unsigned int)arg1;
 - (BOOL)shouldBeginPlaybackOfItem:(id)arg1 error:(id*)arg2;
 - (BOOL)shouldReuseQueueFeederForPlaybackContext:(id)arg1;
 - (void)shuffleItemsWithAnchor:(unsigned int*)arg1;
 - (int)shuffleType;
+- (id)siriReferenceIdentifier;
 - (struct { int x1; int x2; double x3; })skipLimit;
 - (unsigned int)state;
 - (BOOL)trackChangesCanEndPlayback;

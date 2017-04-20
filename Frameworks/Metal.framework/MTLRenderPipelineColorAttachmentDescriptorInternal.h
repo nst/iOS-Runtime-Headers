@@ -32,6 +32,7 @@
 - (id)description;
 - (unsigned int)destinationAlphaBlendFactor;
 - (unsigned int)destinationRGBBlendFactor;
+- (id)formattedDescription:(unsigned int)arg1;
 - (unsigned int)hash;
 - (id)init;
 - (BOOL)isBlendingEnabled;

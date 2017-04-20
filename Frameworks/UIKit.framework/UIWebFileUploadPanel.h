@@ -14,6 +14,7 @@
         float y; 
     }  _interactionPoint;
     BOOL  _isUsingCamera;
+    int  _mediaCaptureType;
     NSArray * _mimeTypes;
     UIPopoverController * _presentationPopover;
     UIViewController * _presentationViewController;
@@ -27,11 +28,13 @@
 @property (nonatomic) UIWebDocumentView *documentView;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isUsingCamera;
+@property (nonatomic) int mediaCaptureType;
 @property (nonatomic, copy) NSArray *mimeTypes;
 @property (nonatomic, retain) NSObject<WebOpenPanelResultListener> *resultListener;
 @property (readonly) Class superclass;
 
 - (id)_UTIsForMIMETypes;
+- (void)_adjustMediaCaptureType;
 - (id)_cameraButtonLabel;
 - (void)_cancel;
 - (void)_chooseFilename:(id)arg1 displayString:(id)arg2 iconImage:(id)arg3;
@@ -47,6 +50,7 @@
 - (void)_presentPopoverWithContentViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)_processMediaInfoDictionaries:(id)arg1 atIndex:(unsigned int)arg2 processedResults:(id)arg3 processedImageCount:(unsigned int)arg4 processedVideoCount:(unsigned int)arg5 successBlock:(id /* block */)arg6 failureBlock:(id /* block */)arg7;
 - (void)_processMediaInfoDictionaries:(id)arg1 successBlock:(id /* block */)arg2 failureBlock:(id /* block */)arg3;
+- (BOOL)_shouldMediaCaptureOpenMediaDevice;
 - (void)_showDocumentPickerMenu;
 - (void)_showPhotoPickerWithSourceType:(int)arg1;
 - (BOOL)_string:(id)arg1 hasPrefixCaseInsensitive:(id)arg2;
@@ -67,8 +71,9 @@
 - (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
 - (void)imagePickerController:(id)arg1 didFinishPickingMultipleMediaWithInfo:(id)arg2;
 - (void)imagePickerControllerDidCancel:(id)arg1;
-- (id)initWithResultListener:(id)arg1 mimeTypes:(id)arg2 allowMultipleFiles:(BOOL)arg3 documentView:(id)arg4;
+- (id)initWithResultListener:(id)arg1 configuration:(id)arg2 documentView:(id)arg3;
 - (BOOL)isUsingCamera;
+- (int)mediaCaptureType;
 - (id)mimeTypes;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)present;
@@ -77,6 +82,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDocumentView:(id)arg1;
 - (void)setIsUsingCamera:(BOOL)arg1;
+- (void)setMediaCaptureType:(int)arg1;
 - (void)setMimeTypes:(id)arg1;
 - (void)setResultListener:(id)arg1;
 

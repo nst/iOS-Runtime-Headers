@@ -11,6 +11,7 @@
 @property (nonatomic, readonly) NSDictionary *lookupDictionary;
 @property (nonatomic, readonly) NSString *offerType;
 @property (nonatomic, readonly) NSNumber *price;
+@property (nonatomic, readonly) NSString *subscriptionType;
 
 // Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
 
@@ -22,6 +23,7 @@
 - (id)lookupDictionary;
 - (id)offerType;
 - (id)price;
+- (id)subscriptionType;
 
 // Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/MDM.framework/MDM
 

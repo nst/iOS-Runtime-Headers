@@ -16,10 +16,16 @@
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
 - (id)_typedBackingStore;
 - (id)description;
+- (id)domain;
 - (id)dropOffLocation;
 - (id)initWithPickupLocation:(id)arg1 dropOffLocation:(id)arg2;
+- (id)parametersByName;
 - (id)pickupLocation;
+- (void)setDomain:(id)arg1;
 - (void)setDropOffLocation:(id)arg1;
+- (void)setParametersByName:(id)arg1;
 - (void)setPickupLocation:(id)arg1;
+- (void)setVerb:(id)arg1;
+- (id)verb;
 
 @end

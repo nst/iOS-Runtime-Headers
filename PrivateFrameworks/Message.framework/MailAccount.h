@@ -28,11 +28,13 @@
     NSString * _path;
     MFMailboxUid * _rootMailboxUid;
     MFMailboxUid * _sentMessagesMailboxUid;
+    BOOL  _supportsFastRemoteBodySearch;
     MFMailboxUid * _trashMailboxUid;
 }
 
 @property (readonly) BOOL shouldArchiveByDefault;
 @property (readonly) BOOL sourceIsManaged;
+@property (nonatomic, readonly) BOOL supportsFastRemoteBodySearch;
 
 // Image: /System/Library/PrivateFrameworks/Message.framework/Message
 
@@ -320,6 +322,7 @@
 - (BOOL)supportsAppend;
 - (BOOL)supportsArchiving;
 - (BOOL)supportsContinuationType:(id)arg1;
+- (BOOL)supportsFastRemoteBodySearch;
 - (BOOL)supportsMailDrop;
 - (BOOL)supportsMailboxEditing;
 - (BOOL)supportsMessageFlagging;

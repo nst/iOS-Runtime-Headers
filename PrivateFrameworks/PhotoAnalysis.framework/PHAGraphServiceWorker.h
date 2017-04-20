@@ -72,6 +72,7 @@
 - (BOOL)canServiceGraphCurationRequestsInCurrentStateLoadingGraphIfNeeded;
 - (BOOL)canServiceGraphRequestsInCurrentStateLoadingGraphIfNeeded;
 - (BOOL)canServiceGraphStatusRequestsInCurrentStateLoadingGraphIfNeeded;
+- (BOOL)checkForWritablePersistentStorageDirectoryURL;
 - (void)computeDiffWithProgressHandler:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
 - (void)cooldown;
 - (id)currentGraphRebuildProgress;
@@ -158,6 +159,7 @@
 - (void)requestTitleForMemoryWithLocalIdentifier:(id)arg1 context:(id)arg2 reply:(id /* block */)arg3;
 - (void)requestTitleForPersonIdentifiers:(id)arg1 format:(int)arg2 context:(id)arg3 reply:(id /* block */)arg4;
 - (void)requestWriteAdditionalDataToSnapshotResults:(id)arg1 forFilenameKey:(id)arg2 context:(id)arg3 reply:(id /* block */)arg4;
+- (BOOL)retryStartup;
 - (void)setBackgroundTaskQueue:(id)arg1;
 - (void)setCurrentGraphRebuildProgress:(id)arg1;
 - (void)setFlags:(unsigned int)arg1;

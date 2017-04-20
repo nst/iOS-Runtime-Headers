@@ -3,16 +3,19 @@
  */
 
 @interface MPNetworkObserver : NSObject {
+    NSObject<OS_dispatch_queue> * _accessQueue;
     BOOL  _isMusicCellularDownloadingAllowed;
     int  _musicCellularNetworkingAllowedNotifyToken;
     int  _networkUsageCount;
-    NSObject<OS_dispatch_queue> * _networkUsageQueue;
+    BOOL  _videosAllowsCellularStreaming;
+    int  _videosPreferencesChangedToken;
 }
 
 @property (nonatomic, readonly) BOOL isMusicCellularDownloadingAllowed;
 @property (nonatomic, readonly) BOOL isMusicCellularStreamingAllowed;
 @property (nonatomic, readonly) BOOL isStoreCellularNetworkingAllowed;
 @property (nonatomic, readonly) BOOL isUsingNetwork;
+@property (getter=isVideoCellularStreamingAllowed, nonatomic) BOOL videoCellularStreamingAllowed;
 
 + (id)sharedNetworkObserver;
 
@@ -28,5 +31,7 @@
 - (BOOL)isMusicCellularStreamingAllowed;
 - (BOOL)isStoreCellularNetworkingAllowed;
 - (BOOL)isUsingNetwork;
+- (BOOL)isVideoCellularStreamingAllowed;
+- (void)setVideoCellularStreamingAllowed:(BOOL)arg1;
 
 @end

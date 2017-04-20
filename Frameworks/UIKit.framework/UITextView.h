@@ -94,6 +94,7 @@
 @property (nonatomic) BOOL deferBecomingResponder;
 @property (nonatomic) <UITextViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (getter=isDevicePasscodeEntry, nonatomic) BOOL devicePasscodeEntry;
 @property (nonatomic) BOOL disableInputBars;
 @property (nonatomic) BOOL disablePrediction;
 @property (nonatomic) BOOL displaySecureEditsUsingPlainText;
@@ -369,6 +370,7 @@
 - (unsigned int)marginTop;
 - (id)markedTextRange;
 - (id)markedTextStyle;
+- (float)maxTileHeight;
 - (id)metadataDictionariesForDictationResults;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (BOOL)mightHaveLinks;
@@ -421,6 +423,7 @@
 - (void)setMarginTop:(unsigned int)arg1;
 - (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)setMarkedTextStyle:(id)arg1;
+- (void)setMaxTileHeight:(float)arg1;
 - (void)setScrollEnabled:(BOOL)arg1;
 - (void)setSecureTextEntry:(BOOL)arg1;
 - (void)setSelectable:(BOOL)arg1;

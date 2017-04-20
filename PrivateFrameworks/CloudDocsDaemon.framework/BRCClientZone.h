@@ -108,6 +108,7 @@
 - (void)_dumpRecursivePropertiesOfItemByRowID:(unsigned long long)arg1 context:(id)arg2 depth:(int)arg3;
 - (void)_finishedReset:(unsigned int)arg1;
 - (void)_fixupMissingCrossMovedItems;
+- (void)_forDBUpgradeSetStateBits:(unsigned int)arg1 clearStateBits:(unsigned int)arg2;
 - (BOOL)_hasAllItemsDidUploadHandlers;
 - (void)_increaseSyncUpBatchSizeAfterSuccess;
 - (void)_markLatestSyncRequestFailed;

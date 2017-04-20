@@ -11,7 +11,6 @@
 
 + (id)confirmationRequiredWithTemperatureToConfirm:(id)arg1;
 + (id)disambiguationWithTemperaturesToDisambiguate:(id)arg1;
-+ (id)needsMoreDetailsForTemperature:(id)arg1;
 + (id)successWithResolvedTemperature:(id)arg1;
 
 @end

@@ -7,11 +7,14 @@
     NSLock * _connectionLock;
     _AKAppleIDAuthenticationContextManager * _contextManager;
     NSXPCListenerEndpoint * _daemonXPCEndpoint;
-    NSObject<OS_dispatch_queue> * _replyHandlingQueue;
+    id /* block */  _deallocHandler;
     NSString * _serviceID;
 }
 
+@property (nonatomic, copy) id /* block */ deallocHandler;
 @property (nonatomic) <AKAppleIDAuthenticationDelegate> *delegate;
+
++ (id)sensitiveAuthenticationKeys;
 
 - (void).cxx_destruct;
 - (id)_authenticationServiceConnection;
@@ -19,9 +22,12 @@
 - (void)authenticateWithContext:(id)arg1 completion:(id /* block */)arg2;
 - (void)checkInWithAuthenticationServerForAppleID:(id)arg1 completion:(id /* block */)arg2;
 - (void)checkSecurityUpgradeEligibilityForAppleID:(id)arg1 completion:(id /* block */)arg2;
+- (void)configurationInfoWithIdentifiers:(id)arg1 forAltDSID:(id)arg2 completion:(id /* block */)arg3;
 - (void)dealloc;
+- (id /* block */)deallocHandler;
 - (id)delegate;
 - (id)emailsForAltDSID:(id)arg1;
+- (void)fetchUserInformationForAltDSID:(id)arg1 completion:(id /* block */)arg2;
 - (void)generateLoginCodeWithCompletion:(id /* block */)arg1;
 - (void)getServerUILoadDelegateForAltDSID:(id)arg1 completion:(id /* block */)arg2;
 - (void)getServerUILoadDelegateWithContext:(id)arg1 completion:(id /* block */)arg2;
@@ -37,7 +43,11 @@
 - (void)setAppleIDWithAltDSID:(id)arg1 inUse:(BOOL)arg2 forService:(int)arg3;
 - (void)setAppleIDWithDSID:(id)arg1 inUse:(BOOL)arg2 forService:(int)arg3;
 - (void)setConfigurationInfo:(id)arg1 forIdentifier:(id)arg2 forAltDSID:(id)arg3 completion:(id /* block */)arg4;
+- (void)setDeallocHandler:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)synchronizeFollowUpItemsForContext:(id)arg1 completion:(id /* block */)arg2;
+- (BOOL)synchronizeFollowUpItemsForContext:(id)arg1 error:(id*)arg2;
+- (void)teardownFollowUpWithContext:(id)arg1 completion:(id /* block */)arg2;
 - (void)updateStateWithExternalAuthenticationResponse:(id)arg1 forAppleID:(id)arg2 completion:(id /* block */)arg3;
 - (void)updateStateWithExternalAuthenticationResponse:(id)arg1 forContext:(id)arg2 completion:(id /* block */)arg3;
 - (void)validateLoginCode:(unsigned int)arg1 forAppleID:(id)arg2 completion:(id /* block */)arg3;

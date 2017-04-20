@@ -34,6 +34,7 @@
 - (void)registeredWithHost;
 - (void)setHost:(id)arg1;
 - (void)setVisible:(BOOL)arg1;
+- (BOOL)shouldBreadcrumbLaunchedApplicationWithBundleIdentifier:(id)arg1;
 - (BOOL)supportedAndEnabled;
 - (id)viewControllerForActivationContext:(id)arg1;
 - (void)viewPartiallyRevealedWithPercentRevealed:(float)arg1;

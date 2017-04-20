@@ -10,6 +10,7 @@
     }  _has;
     int  _type;
     PBUnknownFields * _unknownFields;
+    _INPBUserActivity * _userActivity;
 }
 
 @property (nonatomic, retain) _INPBIntentResponsePayloadFailure *PayloadFailure;
@@ -17,18 +18,24 @@
 @property (nonatomic, readonly) BOOL hasPayloadFailure;
 @property (nonatomic, readonly) BOOL hasPayloadSuccess;
 @property (nonatomic) BOOL hasType;
+@property (nonatomic, readonly) BOOL hasUserActivity;
 @property (nonatomic) int type;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (nonatomic, retain) _INPBUserActivity *userActivity;
+
+// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 - (void).cxx_destruct;
 - (id)PayloadFailure;
 - (id)PayloadSuccess;
+- (int)StringAsType:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasPayloadFailure;
 - (BOOL)hasPayloadSuccess;
 - (BOOL)hasType;
+- (BOOL)hasUserActivity;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
@@ -37,8 +44,17 @@
 - (void)setPayloadFailure:(id)arg1;
 - (void)setPayloadSuccess:(id)arg1;
 - (void)setType:(int)arg1;
+- (void)setUserActivity:(id)arg1;
 - (int)type;
+- (id)typeAsString:(int)arg1;
 - (id)unknownFields;
+- (id)userActivity;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

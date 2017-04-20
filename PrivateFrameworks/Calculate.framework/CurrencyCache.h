@@ -9,6 +9,7 @@
     NSMutableString * _currentString;
     NSDate * _lastRefreshDate;
     NSMutableDictionary * _mutableCurrencyCache;
+    NSObject<OS_dispatch_queue> * _persistenceQueue;
     unsigned long  _uuid;
 }
 
@@ -17,6 +18,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSDate *lastRefreshDate;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *persistenceQueue;
 @property (readonly) Class superclass;
 @property (readonly) unsigned long uuid;
 
@@ -31,10 +33,12 @@
 - (void)parser:(id)arg1 didEndElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4;
 - (void)parser:(id)arg1 didStartElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4 attributes:(id)arg5;
 - (void)parser:(id)arg1 foundCharacters:(id)arg2;
+- (id)persistenceQueue;
 - (BOOL)refresh;
 - (BOOL)refreshWithTimeOut:(float)arg1;
 - (void)setCurrencyData:(id)arg1;
 - (void)setLastRefreshDate:(id)arg1;
+- (void)setPersistenceQueue:(id)arg1;
 - (unsigned long)uuid;
 
 @end

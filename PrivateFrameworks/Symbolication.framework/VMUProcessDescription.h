@@ -41,6 +41,7 @@
 @property (readonly) Class superclass;
 
 + (id)parseBinaryImagesDescription:(id)arg1;
++ (struct _CSTypeRef { unsigned int x1; unsigned int x2; })symbolicatorFromBinaryImagesDescription:(id)arg1;
 
 - (id)_binaryImagesDescriptionForRanges:(id)arg1;
 - (id)_buildInfoDescription;

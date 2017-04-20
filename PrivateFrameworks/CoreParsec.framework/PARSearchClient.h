@@ -25,6 +25,7 @@
 @property (retain) <PARDaemonXPC> *remoteObject;
 @property (readonly) Class superclass;
 
++ (id)_deafListenerEndpoint;
 + (id)daemonConnection;
 
 - (void).cxx_destruct;

@@ -26,7 +26,7 @@
 - (void)beginRecovery:(id /* block */)arg1;
 - (id)circleController;
 - (void)dealloc;
-- (id)initWithContext:(id)arg1 uiProvider:(id)arg2 secureBackupController:(id)arg3;
+- (id)initWithContext:(id)arg1 uiProvider:(id)arg2 secureBackupController:(id)arg3 circleProxy:(id)arg4;
 - (id)recoveryContext;
 - (id)recoveryValidatorWithDevices:(id)arg1 forMultipleICSC:(BOOL)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)retrieveInflatedDevices:(id /* block */)arg1;

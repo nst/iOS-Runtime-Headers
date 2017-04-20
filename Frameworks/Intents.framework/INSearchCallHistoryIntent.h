@@ -21,11 +21,17 @@
 - (int)callType;
 - (id)dateCreated;
 - (id)description;
+- (id)domain;
 - (id)initWithCallType:(int)arg1 dateCreated:(id)arg2 recipient:(id)arg3 callCapabilities:(unsigned int)arg4;
+- (id)parametersByName;
 - (id)recipient;
 - (void)setCallCapabilities:(unsigned int)arg1;
 - (void)setCallType:(int)arg1;
 - (void)setDateCreated:(id)arg1;
+- (void)setDomain:(id)arg1;
+- (void)setParametersByName:(id)arg1;
 - (void)setRecipient:(id)arg1;
+- (void)setVerb:(id)arg1;
+- (id)verb;
 
 @end

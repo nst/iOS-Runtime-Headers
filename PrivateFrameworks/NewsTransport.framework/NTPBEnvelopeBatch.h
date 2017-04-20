@@ -3,8 +3,10 @@
  */
 
 @interface NTPBEnvelopeBatch : PBCodable <NSCopying> {
+    int  _envelopeDroppedCountDueToSizeLimit;
     NSMutableArray * _envelopes;
     struct { 
+        unsigned int envelopeDroppedCountDueToSizeLimit : 1; 
         unsigned int majorVersion : 1; 
         unsigned int minorVersion : 1; 
         unsigned int patchVersion : 1; 
@@ -14,7 +16,9 @@
     int  _patchVersion;
 }
 
+@property (nonatomic) int envelopeDroppedCountDueToSizeLimit;
 @property (nonatomic, retain) NSMutableArray *envelopes;
+@property (nonatomic) BOOL hasEnvelopeDroppedCountDueToSizeLimit;
 @property (nonatomic) BOOL hasMajorVersion;
 @property (nonatomic) BOOL hasMinorVersion;
 @property (nonatomic) BOOL hasPatchVersion;
@@ -31,8 +35,10 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)envelopeAtIndex:(unsigned int)arg1;
+- (int)envelopeDroppedCountDueToSizeLimit;
 - (id)envelopes;
 - (unsigned int)envelopesCount;
+- (BOOL)hasEnvelopeDroppedCountDueToSizeLimit;
 - (BOOL)hasMajorVersion;
 - (BOOL)hasMinorVersion;
 - (BOOL)hasPatchVersion;
@@ -43,7 +49,9 @@
 - (int)minorVersion;
 - (int)patchVersion;
 - (BOOL)readFrom:(id)arg1;
+- (void)setEnvelopeDroppedCountDueToSizeLimit:(int)arg1;
 - (void)setEnvelopes:(id)arg1;
+- (void)setHasEnvelopeDroppedCountDueToSizeLimit:(BOOL)arg1;
 - (void)setHasMajorVersion:(BOOL)arg1;
 - (void)setHasMinorVersion:(BOOL)arg1;
 - (void)setHasPatchVersion:(BOOL)arg1;

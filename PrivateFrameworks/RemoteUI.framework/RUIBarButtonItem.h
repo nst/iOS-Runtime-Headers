@@ -2,8 +2,19 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@interface RUIBarButtonItem : RUIElement
+@interface RUIBarButtonItem : RUIElement {
+    id /* block */  _action;
+    UIBarButtonItem * _barButtonItem;
+}
 
-- (id)newBarButtonItemWithTarget:(id)arg1 action:(SEL)arg2;
+@property (nonatomic, copy) id /* block */ action;
+@property (nonatomic, readonly) UIBarButtonItem *barButtonItem;
+
+- (void).cxx_destruct;
+- (void)_buttonPressed:(id)arg1;
+- (id /* block */)action;
+- (id)barButtonItem;
+- (void)setAction:(id /* block */)arg1;
+- (void)setEnabled:(BOOL)arg1;
 
 @end

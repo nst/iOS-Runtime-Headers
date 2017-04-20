@@ -20,6 +20,8 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)JSONDictionary;
+- (id)_statusStrings;
 - (unsigned int)accessStatus;
 - (id)channelID;
 - (id)description;

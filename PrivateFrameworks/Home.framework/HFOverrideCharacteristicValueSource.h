@@ -18,6 +18,7 @@
 - (void).cxx_destruct;
 - (id)cachedErrorForWriteToCharacteristic:(id)arg1;
 - (id)cachedValueForCharacteristic:(id)arg1;
+- (id)contextProvider;
 - (id)initWithOriginalValueSource:(id)arg1 overrideValueProvider:(id)arg2;
 - (id)originalValueSource;
 - (id)overrideValueProvider;

@@ -36,6 +36,7 @@
 - (void)dumpDaemonStatusReportToFileHandle:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)fetchAllLongLivedOperationIDsWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)fetchLongLivedOperationsWithIDs:(id)arg1 setupInfo:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)flushOperationMetricsToPowerLog;
 - (void)fullNameAndPrimaryEmailOnAccountWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)getBehaviorOptionForKey:(id)arg1 isContainerOption:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (void)getNewWebSharingIdentityWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -86,6 +87,7 @@
 - (void)statusForApplicationPermission:(unsigned int)arg1 setupInfo:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)statusGroupsForApplicationPermission:(unsigned int)arg1 setupInfo:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)tossConfigWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)triggerAutoBugCaptureSnapshot;
 - (void)updatePushTokens;
 - (void)wipeAllCachesAndDie;
 

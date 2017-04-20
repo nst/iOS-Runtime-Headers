@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFMessageCriterion : NSObject {
+@interface MFMessageCriterion : NSObject <NSCopying> {
     unsigned int  _allCriteriaMustBeSatisfied;
     NSArray * _criteria;
     NSString * _criterionIdentifier;
@@ -11,6 +11,7 @@
     NSString * _expression;
     BOOL  _expressionIsSanitized;
     unsigned int  _includeRelatedMessages;
+    BOOL  _includeRemoteBodyContent;
     NSIndexSet * _libraryIdentifiers;
     NSString * _name;
     BOOL  _preferFullTextSearch;
@@ -21,11 +22,13 @@
     BOOL  _useFlaggedForUnreadCount;
 }
 
+@property (nonatomic, copy) NSArray *criteria;
 @property (nonatomic, retain) NSString *criterionIdentifier;
 @property (nonatomic) int criterionType;
 @property (nonatomic, copy) NSString *expression;
 @property (nonatomic) BOOL expressionIsSanitized;
 @property (nonatomic) BOOL includeRelatedMessages;
+@property (nonatomic) BOOL includeRemoteBodyContent;
 @property (nonatomic, retain) NSIndexSet *libraryIdentifiers;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic) BOOL preferFullTextSearch;
@@ -98,6 +101,7 @@
 - (id)_wordQueryWithAttributes:(id)arg1 matchingValue:(id)arg2;
 - (BOOL)allCriteriaMustBeSatisfied;
 - (unsigned int)bestBaseTable;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)criteria;
 - (id)criteriaSatisfyingPredicate:(int (*)arg1;
 - (id)criterionByApplyingTransform:(id /* block */)arg1;
@@ -123,6 +127,7 @@
 - (BOOL)hasNonFullTextSearchableCriterion;
 - (unsigned int)hash;
 - (BOOL)includeRelatedMessages;
+- (BOOL)includeRemoteBodyContent;
 - (BOOL)includesCriterionSatisfyingPredicate:(int (*)arg1 restrictive:(BOOL)arg2;
 - (id)init;
 - (id)initWithCriterion:(id)arg1 expression:(id)arg2;
@@ -146,6 +151,7 @@
 - (void)setExpression:(id)arg1;
 - (void)setExpressionIsSanitized:(BOOL)arg1;
 - (void)setIncludeRelatedMessages:(BOOL)arg1;
+- (void)setIncludeRemoteBodyContent:(BOOL)arg1;
 - (void)setLibraryIdentifiers:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPreferFullTextSearch:(BOOL)arg1;

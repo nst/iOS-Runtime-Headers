@@ -3,8 +3,9 @@
 
 @protocol BKSProcessDelegate <NSObject>
 
-@required
+@optional
 
+- (void)process:(BKSProcess *)arg1 didExitWithContext:(BKSProcessExitContext *)arg2;
 - (void)process:(BKSProcess *)arg1 isBeingDebugged:(BOOL)arg2;
 - (void)process:(BKSProcess *)arg1 taskStateDidChange:(int)arg2;
 - (void)processWillExpire:(BKSProcess *)arg1;

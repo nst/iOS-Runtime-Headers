@@ -52,6 +52,7 @@
 - (BOOL)fingerPresent;
 - (BOOL)fingerPresentTimeoutExpired;
 - (BOOL)fingerPresentTimeoutRequired;
+- (void)handleDFRConfirmationEvent:(int)arg1 params:(id)arg2;
 - (void)handlePasscodeEvent:(int)arg1 params:(id)arg2;
 - (void)handlePassphraseEvent:(int)arg1 params:(id)arg2;
 - (void)handleTouchIDEvent:(int)arg1 params:(id)arg2;

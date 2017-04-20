@@ -6,6 +6,7 @@
     int  _activeDisplayMode;
     PETGoalConversionEventTracker * _conversionTracker;
     BOOL  _didBecomeVisibleWhileLocked;
+    PETScalarEventTracker * _foregroundingTracker;
     BOOL  _hasReceivedActiveDisplayModeChangeNotificationOnce;
     NSString * _identifier;
     BOOL  _isCurrentlyVisible;
@@ -13,6 +14,8 @@
     PETScalarEventTracker * _resizeTracker;
     PETDistributionEventTracker * _screenLingerTracker;
     PETScalarEventTracker * _updateTracker;
+    BOOL  _widgetIsForeground;
+    BOOL  _widgetWasEverForeground;
     BOOL  _willBecomeVisible;
 }
 
@@ -24,6 +27,7 @@
 - (void)userEngagedWithWidget;
 - (void)widgetActiveDisplayModeDidChange:(int)arg1 withMaximumSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)widgetDidAppear;
+- (void)widgetDidBecomeForeground:(BOOL)arg1;
 - (void)widgetDidDisappear;
 - (void)widgetPerformedUpdateWithResult:(unsigned int)arg1;
 - (void)widgetWillAppear;

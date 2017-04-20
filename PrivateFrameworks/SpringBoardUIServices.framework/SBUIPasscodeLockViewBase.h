@@ -30,6 +30,7 @@
     NSTimer * _screenBrightnessChangedTimer;
     BOOL  _screenOn;
     BOOL  _shouldResetForFailedPasscodeAttempt;
+    BOOL  _showsCancelButton;
     BOOL  _showsEmergencyCallButton;
     BOOL  _showsStatusField;
     unsigned int  _statusState;
@@ -57,6 +58,7 @@
 @property (nonatomic, retain) NSTimer *screenBrightnessChangedTimer;
 @property (getter=isScreenOn, nonatomic) BOOL screenOn;
 @property (nonatomic) BOOL shouldResetForFailedPasscodeAttempt;
+@property (nonatomic) BOOL showsCancelButton;
 @property (nonatomic) BOOL showsEmergencyCallButton;
 @property (nonatomic) BOOL showsStatusField;
 @property (getter=_statusState, setter=_setStatusState:, nonatomic) unsigned int statusState;
@@ -147,10 +149,12 @@
 - (void)setScreenBrightnessChangedTimer:(id)arg1;
 - (void)setScreenOn:(BOOL)arg1;
 - (void)setShouldResetForFailedPasscodeAttempt:(BOOL)arg1;
+- (void)setShowsCancelButton:(BOOL)arg1;
 - (void)setShowsEmergencyCallButton:(BOOL)arg1;
 - (void)setShowsStatusField:(BOOL)arg1;
 - (void)setStyle:(int)arg1;
 - (BOOL)shouldResetForFailedPasscodeAttempt;
+- (BOOL)showsCancelButton;
 - (BOOL)showsEmergencyCallButton;
 - (BOOL)showsStatusField;
 - (int)style;

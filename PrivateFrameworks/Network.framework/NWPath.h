@@ -17,6 +17,7 @@
 @property (getter=isEligibleForCrazyIvan46, nonatomic, readonly) BOOL eligibleForCrazyIvan46;
 @property (nonatomic, readonly) NWEndpoint *endpoint;
 @property (getter=isExpensive, nonatomic, readonly) BOOL expensive;
+@property (nonatomic, readonly) BOOL fallbackEligible;
 @property (nonatomic, readonly) NWInterface *fallbackInterface;
 @property (nonatomic, readonly) unsigned int fallbackInterfaceIndex;
 @property (nonatomic, readonly) BOOL fallbackIsWeak;
@@ -31,7 +32,7 @@
 @property (nonatomic, readonly) NWParameters *parameters;
 @property (nonatomic, readonly) unsigned int policyID;
 @property (nonatomic, readonly, copy) NSString *privateDescription;
-@property (nonatomic, retain) NSObject<OS_xpc_object> *proxySettings;
+@property (nonatomic, readonly) NSArray *proxySettings;
 @property (nonatomic, readonly) int reason;
 @property (nonatomic, readonly) NSString *reasonDescription;
 @property (getter=isRoaming, nonatomic, readonly) BOOL roaming;
@@ -58,6 +59,7 @@
 - (id)dnsServersAsStrings;
 - (int)dnsServiceID;
 - (id)endpoint;
+- (BOOL)fallbackEligible;
 - (id)fallbackInterface;
 - (unsigned int)fallbackInterfaceIndex;
 - (BOOL)fallbackIsWeak;
@@ -88,7 +90,6 @@
 - (id)reasonDescription;
 - (id)scopedInterface;
 - (void)setDerivedEndpoint:(id)arg1;
-- (void)setProxySettings:(id)arg1;
 - (int)status;
 - (id)statusAsString;
 - (BOOL)supportsDNS;

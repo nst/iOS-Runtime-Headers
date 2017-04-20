@@ -28,6 +28,7 @@
 @property (nonatomic, readonly) BOOL isOfficialApp;
 @property (nonatomic) unsigned long long lastClientRevision;
 @property (nonatomic) unsigned long long lastServerRevision;
+@property (nonatomic, readonly) _CPNetworkTimingData *networkTimingProtobuf;
 @property (nonatomic) unsigned long long newRevision;
 @property (readonly) NSString *npkRelevancyRelevantText;
 @property (readonly) NSString *npkRelevancyUniqueID;
@@ -220,9 +221,11 @@
 // Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
 
 - (BOOL)_LS_BoolForKey:(id)arg1;
+- (BOOL)_LS_BoolForKey:(id)arg1;
 - (BOOL)_LS_containsKey:(id)arg1;
 - (unsigned long long)_LS_integerForKey:(id)arg1;
 - (id)_LS_objectForKey:(id)arg1 ofType:(Class)arg2;
+- (id)_LS_safeObjectForKey:(id)arg1 ofType:(Class)arg2;
 - (unsigned int)_hashQuery;
 - (id)_parseQueryForIdentifiers:(id)arg1;
 - (id)insertExtensionPointVersion:(id)arg1;
@@ -311,9 +314,17 @@
 - (void)setVersionToken:(id)arg1;
 - (id)versionToken;
 
+// Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
+
+- (id)aaui_map:(id /* block */)arg1;
+
 // Image: /System/Library/PrivateFrameworks/AuthKit.framework/AuthKit
 
 + (id)ak_dictionaryWithResponseData:(id)arg1;
+
+- (id)_ak_truncatedTokensCopy;
+- (id)ak_map:(id /* block */)arg1;
+- (id)ak_redactedCopy;
 
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
 
@@ -322,8 +333,8 @@
 - (void)bs_each:(id /* block */)arg1;
 - (id)bs_filter:(id /* block */)arg1;
 - (id)bs_safeArrayForKey:(id)arg1;
-- (BOOL)bs_safeBOOLForKey:(id)arg1;
 - (id)bs_safeDictionaryForKey:(id)arg1;
+- (id)bs_safeNumberForKey:(id)arg1;
 - (id)bs_safeObjectForKey:(id)arg1 ofType:(Class)arg2;
 - (id)bs_safeStringForKey:(id)arg1;
 - (id)bs_safeURLForKey:(id)arg1;
@@ -365,6 +376,11 @@
 - (unsigned long)bw_optimalMicPolarPattern;
 - (BOOL)matchesUID:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
+
+- (id)crk_dictionaryByAddingEntriesFromDictionary:(id)arg1;
+- (id)crk_mapUsingBlock:(id /* block */)arg1;
+
 // Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
 
 - (BOOL)brc_booleanValueForKey:(id)arg1;
@@ -397,6 +413,10 @@
 - (id)_cn_mapKeys:(id /* block */)arg1;
 - (id)_cn_mapValues:(id /* block */)arg1;
 
+// Image: /System/Library/PrivateFrameworks/CoreCDP.framework/CoreCDP
+
+- (id)cdp_sanitizedCopy;
+
 // Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
 
 - (id)CDVMergeOverrideDictionary:(id)arg1;
@@ -419,6 +439,9 @@
 
 // Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
 
++ (id)dictionaryWithNetworkTimingProtobuf:(id)arg1;
+
+- (id)networkTimingProtobuf;
 - (id)parsec_URLForKey:(id)arg1;
 - (id)parsec_UUIDForKey:(id)arg1;
 - (id)parsec_arrayForKey:(id)arg1;
@@ -472,6 +495,27 @@
 // Image: /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DAEAS.framework/DAEAS
 
 - (id)objectForInt:(int)arg1;
+
+// Image: /System/Library/PrivateFrameworks/DiagnosticsSupport.framework/DiagnosticsSupport
+
+- (id)ds_arrayFromKey:(id)arg1 inSet:(id)arg2 maxLength:(unsigned int)arg3 defaultValue:(id)arg4 failed:(BOOL*)arg5;
+- (id)ds_arrayFromKey:(id)arg1 types:(id)arg2 maxLength:(unsigned int)arg3 defaultValue:(id)arg4 failed:(BOOL*)arg5;
+- (id)ds_arrayFromKey:(id)arg1 types:(id)arg2 maxLength:(unsigned int)arg3 defaultValue:(id)arg4 failed:(BOOL*)arg5 validator:(id /* block */)arg6;
+- (id)ds_arrayFromRequiredKey:(id)arg1 inSet:(id)arg2 maxLength:(unsigned int)arg3 failed:(BOOL*)arg4;
+- (id)ds_arrayFromRequiredKey:(id)arg1 types:(id)arg2 maxLength:(unsigned int)arg3 failed:(BOOL*)arg4;
+- (id)ds_arrayFromRequiredKey:(id)arg1 types:(id)arg2 maxLength:(unsigned int)arg3 failed:(BOOL*)arg4 validator:(id /* block */)arg5;
+- (BOOL)ds_boolFromKey:(id)arg1 defaultValue:(BOOL)arg2 failed:(BOOL*)arg3;
+- (BOOL)ds_boolFromRequiredKey:(id)arg1 failed:(BOOL*)arg2;
+- (id)ds_dictionaryFromKey:(id)arg1 defaultValue:(id)arg2 failed:(BOOL*)arg3;
+- (id)ds_dictionaryFromKey:(id)arg1 limitedToKeys:(id)arg2 defaultValue:(id)arg3 failed:(BOOL*)arg4;
+- (id)ds_dictionaryFromRequiredKey:(id)arg1 failed:(BOOL*)arg2;
+- (id)ds_dictionaryFromRequiredKey:(id)arg1 limitedToKeys:(id)arg2 failed:(BOOL*)arg3;
+- (id)ds_numberFromKey:(id)arg1 lowerBound:(id)arg2 upperBound:(id)arg3 defaultValue:(id)arg4 failed:(BOOL*)arg5;
+- (id)ds_numberFromRequiredKey:(id)arg1 lowerBound:(id)arg2 upperBound:(id)arg3 failed:(BOOL*)arg4;
+- (id)ds_stringFromKey:(id)arg1 inSet:(id)arg2 defaultValue:(id)arg3 failed:(BOOL*)arg4;
+- (id)ds_stringFromKey:(id)arg1 maxLength:(unsigned int)arg2 defaultValue:(id)arg3 failed:(BOOL*)arg4;
+- (id)ds_stringFromRequiredKey:(id)arg1 inSet:(id)arg2 failed:(BOOL*)arg3;
+- (id)ds_stringFromRequiredKey:(id)arg1 maxLength:(unsigned int)arg2 failed:(BOOL*)arg3;
 
 // Image: /System/Library/PrivateFrameworks/FMCoreLite.framework/FMCoreLite
 
@@ -633,11 +677,6 @@
 - (id)MCRetainOptionalObjectKey:(id)arg1 type:(Class)arg2 errorDomain:(id)arg3 invalidDataCode:(int)arg4 invalidDataErrorString:(id)arg5 outError:(id*)arg6;
 - (id)MCRetainRequiredNonZeroLengthStringKey:(id)arg1 errorDomain:(id)arg2 missingDataCode:(int)arg3 missingDataErrorString:(id)arg4 invalidDataCode:(int)arg5 invalidDataErrorString:(id)arg6 outError:(id*)arg7;
 - (id)MCRetainRequiredObjectKey:(id)arg1 type:(Class)arg2 errorDomain:(id)arg3 missingDataCode:(int)arg4 missingDataErrorString:(id)arg5 invalidDataCode:(int)arg6 invalidDataErrorString:(id)arg7 outError:(id*)arg8;
-- (BOOL)MCSCWriteToFile:(id)arg1 atomically:(BOOL)arg2;
-- (BOOL)MCSCWriteToFile:(id)arg1 atomically:(BOOL)arg2 error:(id*)arg3;
-- (BOOL)MCSCWriteToFile:(id)arg1 atomically:(BOOL)arg2 mode:(unsigned short)arg3 error:(id*)arg4;
-- (BOOL)MCSCWriteToURL:(id)arg1 atomically:(BOOL)arg2 error:(id*)arg3;
-- (BOOL)MCSCWriteToURL:(id)arg1 atomically:(BOOL)arg2 mode:(unsigned short)arg3 error:(id*)arg4;
 - (id)MCShortenedPlistDescription;
 
 // Image: /System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
@@ -679,12 +718,14 @@
 + (id)fc_dictionaryByAddingEntriesFromDictionary:(id)arg1 toDictionary:(id)arg2;
 + (id)fc_dictionaryFromArray:(id)arg1 keyBlock:(id /* block */)arg2 valueBlock:(id /* block */)arg3;
 + (id)fc_dictionaryFromJSON:(id)arg1;
++ (id)fc_dictionaryFromJSON:(id)arg1 error:(id*)arg2;
 + (id)fc_dictionaryWithKeys:(id)arg1 valueBlock:(id /* block */)arg2;
 + (id)fc_dictionaryWithKeys:(id)arg1 valueWithIndexBlock:(id /* block */)arg2;
 + (id)fc_dictionaryWithObjects:(id)arg1 keyBlock:(id /* block */)arg2;
 
 - (id)fc_actionTypes;
 - (id)fc_deepCopy;
+- (id)fc_dictionaryByMergingDictionary:(id)arg1 withValueCombiner:(id /* block */)arg2;
 - (id)fc_dictionaryByRemovingObjectForKey:(id)arg1;
 - (id)fc_dictionaryBySwappingValuesAndKeys;
 - (id)fc_dictionaryByTransformingKeysWithBlock:(id /* block */)arg1;
@@ -693,8 +734,9 @@
 - (id)fc_dictionaryByTransformingValuesWithKeyAndValueBlock:(id /* block */)arg1;
 - (BOOL)fc_localDataHint;
 - (id)fc_objectsForKeysWithoutMarker:(id)arg1;
+- (id)fc_sortedEntriesWithKeyBlock:(id /* block */)arg1;
+- (id)fc_subdictionaryForKeys:(id)arg1;
 - (id)fc_subdictionaryWithCopiesForKeys:(id)arg1;
-- (id)fc_subdictionaryWithKeys:(id)arg1;
 - (id)fr_descriptionWithKeyComparator:(id /* block */)arg1;
 - (id)jsonString;
 
@@ -775,13 +817,6 @@
 
 - (id)dictionaryChanging:(id)arg1 to:(id)arg2;
 
-// Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
-
-- (id)descriptionSingleLine;
-- (id)objectForCFString:(struct __CFString { }*)arg1;
-- (id)objectForNullMarkerForKey:(id)arg1;
-- (id)objectOrNullMarkerForCFString:(struct __CFString { }*)arg1;
-
 // Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
 
 - (BOOL)writeToProtectedFile:(id)arg1 atomically:(BOOL)arg2;
@@ -794,7 +829,7 @@
 
 - (id)_sa_mappedDictionaryWithBlock:(id /* block */)arg1;
 
-// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
+// Image: /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
 
 + (id)safari_dictionaryWithContentsOfData:(id)arg1 options:(unsigned int)arg2;
 + (id)safari_dictionaryWithPropertyListData:(id)arg1;
@@ -836,8 +871,8 @@
 
 // Image: /System/Library/PrivateFrameworks/Swift/libswiftFoundation.dylib
 
-- (id)_swiftInitWithDictionary_NSDictionary:(id)arg1;
-/* MISSING HEADER DESCRIPTION FOR METHOD _swift_objectForKeyedSubscript: */
+- (id)_swiftInitWithDictionary_NSDictionary;
+- (void)_swift_objectForKeyedSubscript;
 
 // Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
 
@@ -921,13 +956,21 @@
 
 // Image: /System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
 
+- (id)wb_URLForKey:(id)arg1 isValid:(BOOL*)arg2;
 - (id)wb_arrayForKey:(id)arg1 isValid:(BOOL*)arg2;
 - (BOOL)wb_boolForKey:(id)arg1;
+- (id)wb_dateForKey:(id)arg1 isValid:(BOOL*)arg2;
 - (id)wb_dictionaryForKey:(id)arg1 isValid:(BOOL*)arg2;
 - (id)wb_numberForKey:(id)arg1;
 - (id)wb_numberForKey:(id)arg1 isValid:(BOOL*)arg2;
 - (id)wb_objectOfType:(Class)arg1 forKey:(id)arg2 isValid:(BOOL*)arg3;
 - (id)wb_stringForKey:(id)arg1 isValid:(BOOL*)arg2;
+
+// Image: /System/Library/PrivateFrameworks/WebInspector.framework/WebInspector
+
+- (BOOL)webDriver_boolForKey:(id)arg1;
+- (id)webDriver_numberForKey:(id)arg1;
+- (id)webDriver_stringForKey:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 

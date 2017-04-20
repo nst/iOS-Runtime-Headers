@@ -18,13 +18,12 @@
 - (void)_handleSetObjectForKey:(id)arg1 client:(id)arg2;
 - (void)_handleSetPrefetchedKeys:(id)arg1 client:(id)arg2;
 - (void)_handleSynchronize:(id)arg1;
+- (id)_init;
 - (void)applicationDataStoreRepositoryClient:(id)arg1 valueChangedForObject:(id)arg2 key:(id)arg3 bundleID:(id)arg4;
 - (void)applicationDataStoreRespositoryClient:(id)arg1 repositoryInvalidatedForBundleID:(id)arg2;
 - (Class)classForClient:(id)arg1;
 - (id)dataStore;
 - (void)dealloc;
-- (id)init;
-- (id)initWithIdentifier:(id)arg1 queue:(id)arg2 clientAuthenticator:(id)arg3;
 - (void)noteClientDidConnect:(id)arg1 withMessage:(id)arg2;
 - (void)noteClientDidDisconnect:(id)arg1;
 - (void)noteDidReceiveMessage:(id)arg1 withType:(long long)arg2 fromClient:(id)arg3;

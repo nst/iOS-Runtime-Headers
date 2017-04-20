@@ -21,7 +21,6 @@
 - (void)_disablePhoneLocatorAndErase;
 - (void)_eraseSettingsAndContent;
 - (BOOL)_networkConnectivityAvailable;
-- (void)_postStockholmEraseSettingsAndContent:(id)arg1;
 - (void)_resetWithMode:(int)arg1;
 - (void)_showStockholmLocallyStoredValueOfflineWarningIfNeeded:(id /* block */)arg1;
 - (void)confirmEraseCellularSettings;

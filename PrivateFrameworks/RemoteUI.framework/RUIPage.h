@@ -3,6 +3,7 @@
  */
 
 @interface RUIPage : UIViewController <UIWebViewDelegate> {
+    NSDictionary * _attributes;
     NSString * _backButtonTitle;
     NSMutableArray * _childPages;
     UIView * _containerView;
@@ -43,6 +44,7 @@
 }
 
 @property (nonatomic, readonly) NSArray *accessoryViews;
+@property (nonatomic, copy) NSDictionary *attributes;
 @property (nonatomic, copy) NSString *backButtonTitle;
 @property (nonatomic, readonly) NSArray *buttonItems;
 @property (nonatomic, readonly) NSArray *buttons;
@@ -105,6 +107,7 @@
 - (void)_updateWithCompletedChild:(id)arg1;
 - (id)accessoryViews;
 - (void)addDidAppearBlock:(id /* block */)arg1;
+- (id)attributes;
 - (id)backButtonTitle;
 - (id)buttonItems;
 - (id)buttons;
@@ -123,6 +126,7 @@
 - (BOOL)hasWebView;
 - (BOOL)hidesBackButton;
 - (id)init;
+- (id)initWithAttributes:(id)arg1;
 - (BOOL)isLoading;
 - (id)leftNavigationBarButton;
 - (id)leftNavigationBarButtonItem;
@@ -148,6 +152,7 @@
 - (id)rightToolbarButton;
 - (id)rightToolbarButtonItem;
 - (id)rightToolbarItem;
+- (void)setAttributes:(id)arg1;
 - (void)setBackButtonTitle:(id)arg1;
 - (void)setButton:(id)arg1 enabled:(BOOL)arg2;
 - (void)setCustomEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
@@ -182,6 +187,7 @@
 - (BOOL)showsTitlesAsHeaderViews;
 - (id)spinnerViewOM;
 - (id)style;
+- (id)subElementWithID:(id)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 - (id)tableViewOM;
 - (id)titleLabel;

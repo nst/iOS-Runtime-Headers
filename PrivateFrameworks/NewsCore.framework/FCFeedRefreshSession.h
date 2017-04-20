@@ -6,6 +6,7 @@
     NSSet * _activeGroupEmitterIDs;
     NSDictionary * _cursorsByGroupEmitterID;
     NSString * _identifier;
+    BOOL  _isNewEdition;
     BOOL  _isOffline;
     FCFeedEdition * _lastCompletedEdition;
     NSDate * _modificationDate;
@@ -17,6 +18,7 @@
 @property (nonatomic, readonly, copy) NSSet *activeGroupEmitterIDs;
 @property (nonatomic, readonly, copy) NSDictionary *cursorsByGroupEmitterID;
 @property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly) BOOL isNewEdition;
 @property (nonatomic, readonly) BOOL isOffline;
 @property (nonatomic, readonly) FCFeedEdition *lastCompletedEdition;
 @property (nonatomic, readonly) NSDate *modificationDate;
@@ -27,6 +29,7 @@
 - (void).cxx_destruct;
 - (id)activeGroupEmitterIDs;
 - (id)copyByRemovingPendingGroupIdenticalTo:(id)arg1;
+- (id)copyByRemovingPendingGroupsAtIndexes:(id)arg1;
 - (id)copyWithAdditionalPendingGroups:(id)arg1 cursors:(id)arg2;
 - (id)copyWithAllGroupEmittersExhausted;
 - (id)copyWithExhaustedGroupEmitterID:(id)arg1 cursors:(id)arg2;
@@ -39,6 +42,7 @@
 - (id)initWithIdentifier:(id)arg1 refreshDate:(id)arg2 modificationDate:(id)arg3 lastCompletedEdition:(id)arg4 cursorsByGroupEmitterID:(id)arg5 pendingGroups:(id)arg6 activeGroupEmitterIDs:(id)arg7 reachedEnd:(BOOL)arg8 isOffline:(BOOL)arg9;
 - (id)initWithRefreshDate:(id)arg1 activeGroupEmitterIDs:(id)arg2 isOffline:(BOOL)arg3;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isNewEdition;
 - (BOOL)isOffline;
 - (id)lastCompletedEdition;
 - (id)modificationDate;

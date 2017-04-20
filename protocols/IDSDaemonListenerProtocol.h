@@ -58,6 +58,7 @@
 - (void)deviceIdentifierDidChange:(NSString *)arg1;
 - (void)didSwitchActivePairedDevice:(NSString *)arg1;
 - (void)didSwitchActivePairedDevice:(NSString *)arg1 forService:(NSString *)arg2 wasHandled:(BOOL*)arg3;
+- (void)iMessageReportSpamCheckUnknownResponseForRequestID:(NSString *)arg1 status:(int)arg2 abusive:(BOOL)arg3 delay:(double)arg4 withError:(NSError *)arg5;
 - (void)localDeviceInfo:(NSDictionary *)arg1;
 - (void)localPairingResponseForRequestID:(NSString *)arg1 withError:(NSError *)arg2;
 - (void)localPairingResponseForRequestID:(NSString *)arg1 withError:(NSError *)arg2 pairedDevices:(NSArray *)arg3;

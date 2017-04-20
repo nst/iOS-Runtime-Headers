@@ -10,7 +10,6 @@
 
 - (void).cxx_destruct;
 - (id)_connection;
-- (id)_proxy;
 - (void)fetchApplicationsOfType:(unsigned int)arg1 completion:(id /* block */)arg2;
 
 @end

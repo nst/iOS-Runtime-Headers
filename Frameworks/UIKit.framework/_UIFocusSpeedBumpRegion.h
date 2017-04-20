@@ -9,8 +9,8 @@
 @property (nonatomic) unsigned int speedBumpEdges;
 
 - (unsigned int)_boundariesBlockingFocusMovement:(id)arg1;
-- (BOOL)_shouldBeOccludedByRegion:(id)arg1;
-- (BOOL)_shouldOccludeRegion:(id)arg1;
+- (BOOL)_canBeOccludedByRegionsAbove;
+- (BOOL)_canOccludeRegionsBelow;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 speedBumpEdges:(unsigned int)arg2;

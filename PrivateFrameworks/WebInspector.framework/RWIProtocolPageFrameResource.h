@@ -8,6 +8,7 @@
 @property (nonatomic) BOOL failed;
 @property (nonatomic, copy) NSString *mimeType;
 @property (nonatomic, copy) NSString *sourceMapURL;
+@property (nonatomic, copy) NSString *targetId;
 @property (nonatomic) int type;
 @property (nonatomic, copy) NSString *url;
 
@@ -19,9 +20,11 @@
 - (void)setFailed:(BOOL)arg1;
 - (void)setMimeType:(id)arg1;
 - (void)setSourceMapURL:(id)arg1;
+- (void)setTargetId:(id)arg1;
 - (void)setType:(int)arg1;
 - (void)setUrl:(id)arg1;
 - (id)sourceMapURL;
+- (id)targetId;
 - (int)type;
 - (id)url;
 

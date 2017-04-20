@@ -14,6 +14,7 @@
 + (id)stageInputOutputDescriptor;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)formattedDescription:(unsigned int)arg1;
 - (void)reset;
 
 @end

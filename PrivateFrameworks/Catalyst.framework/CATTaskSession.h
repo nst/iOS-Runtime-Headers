@@ -16,6 +16,7 @@
     CATOperationQueue * mOrphanedOperationQueue;
     NSHashTable * mOrphanedTransports;
     NSDictionary * mPreviousSessionInfo;
+    NSMapTable * mRemoteUUIDsByFinishedOperationProgressUpdates;
     NSObject<OS_dispatch_group> * mSessionDidInvalidateGroup;
     CATTaskSession * mStrongSelf;
     CATTransport * mTransport;
@@ -54,6 +55,7 @@
 - (void)delegateWillInvalidateAndInvalidateSessionWithError:(id)arg1;
 - (void)delegatedidReceiveNotificationWithName:(id)arg1;
 - (id)description;
+- (void)didCompleteSendForMessage:(id)arg1;
 - (void)discardPreviousSessionInfo;
 - (void)disconnect;
 - (void)enqueueDelegateDidInterruptWithError:(id)arg1;

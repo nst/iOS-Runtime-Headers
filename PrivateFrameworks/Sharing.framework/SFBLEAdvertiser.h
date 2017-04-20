@@ -39,6 +39,8 @@
 - (void)_activateWithCompletion:(id /* block */)arg1;
 - (void)_invalidate;
 - (long)_preparePayload:(BOOL)arg1;
+- (id)_preparePayloadNearbyAction:(int*)arg1;
+- (id)_preparePayloadNearbyInfo:(int*)arg1;
 - (void)_restartIfNeeded:(BOOL)arg1;
 - (void)activateWithCompletion:(id /* block */)arg1;
 - (int)advertiseRate;
@@ -65,5 +67,6 @@
 - (void)setInvalidationHandler:(id /* block */)arg1;
 - (void)setPayloadCoder:(id)arg1 fields:(id)arg2 identifier:(id)arg3;
 - (void)setPayloadData:(id)arg1;
+- (void)setPayloadFields:(id)arg1;
 
 @end

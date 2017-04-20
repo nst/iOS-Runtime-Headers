@@ -3,6 +3,7 @@
  */
 
 @interface CKTranscriptCollectionViewController : CKViewController <CKAssociatedMessageTranscriptCellDelegate, CKAudioControllerDelegate, CKFullScreenEffectManagerDelegate, CKLocationShareBalloonViewDelegate, CKLocationSharingDelegate, CKMovieBalloonViewDelegate, CKPluginPlaybackManagerDelegate, CKSendAnimationManagerDelegate, CKTitledImageBalloonViewDelegate, CKTranscriptCollectionViewDelegate, CNAvatarViewDelegate, UIAlertViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout> {
+    NSString * ___CurrentTestName;
     id /* block */  _alertHandler;
     BOOL  _allowsPluginPlayback;
     NSArray * _associatedChatItems;
@@ -10,6 +11,7 @@
     float  _balloonMaxWidth;
     NSArray * _chatItems;
     CKTranscriptCollectionView * _collectionView;
+    int  _contentAnimationPauseReasons;
     CKConversation * _conversation;
     NSMutableSet * _currentEffectDecorationViews;
     <CKTranscriptCollectionViewControllerDelegate> * _delegate;
@@ -21,7 +23,6 @@
     NSIndexSet * _hiddenItems;
     CKImpactEffectManager * _impactEffectManager;
     BOOL  _initialLoad;
-    int  _invisibleInkEffectPauseReasons;
     BOOL  _isLoadingEarlierMessages;
     BOOL  _isPerformingRegenerateOnlyUpdate;
     NSIndexPath * _itemIndexPathToHighlight;
@@ -52,6 +53,7 @@
     NSObject<OS_dispatch_group> * _updateAnimationGroup;
 }
 
+@property (setter=__setCurrentTestName:, nonatomic, retain) NSString *__CurrentTestName;
 @property (nonatomic, copy) id /* block */ alertHandler;
 @property (nonatomic) BOOL allowsPluginPlayback;
 @property (nonatomic, copy) NSArray *associatedChatItems;
@@ -60,6 +62,7 @@
 @property (nonatomic, readonly) IMChat *chat;
 @property (nonatomic, copy) NSArray *chatItems;
 @property (nonatomic, retain) CKTranscriptCollectionView *collectionView;
+@property (nonatomic) int contentAnimationPauseReasons;
 @property (nonatomic, retain) CKConversation *conversation;
 @property (nonatomic, retain) NSMutableSet *currentEffectDecorationViews;
 @property (readonly, copy) NSString *debugDescription;
@@ -74,7 +77,6 @@
 @property (nonatomic, copy) NSIndexSet *hiddenItems;
 @property (nonatomic, retain) CKImpactEffectManager *impactEffectManager;
 @property (getter=isInitialLoad, nonatomic) BOOL initialLoad;
-@property (nonatomic) int invisibleInkEffectPauseReasons;
 @property (nonatomic) BOOL isLoadingEarlierMessages;
 @property (nonatomic) BOOL isPerformingRegenerateOnlyUpdate;
 @property (nonatomic, retain) UITapGestureRecognizer *loggingTapGestureRecognizer;
@@ -97,7 +99,9 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *updateAnimationGroup;
 
 - (void).cxx_destruct;
+- (id)__CurrentTestName;
 - (void)__handleLoggingTapped:(id)arg1;
+- (void)__setCurrentTestName:(id)arg1;
 - (BOOL)_allowsEffectAutoPlayback;
 - (float)_balloonHorizontalOffsetForParentChatItem:(id)arg1 contentAlignmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 responsibleChatItems:(id*)arg3 individualOffsets:(id*)arg4;
 - (void)_collectionViewDidRestAsync:(BOOL)arg1;
@@ -114,7 +118,10 @@
 - (void)_performLocalLogDump;
 - (void)_performRemoteLogDump;
 - (BOOL)_pluginChatItem:(id)arg1 hasControllerConformingToProtocol:(id)arg2;
+- (void)_prewarmBalloonControllers;
+- (void)_prewarmTranscriptAssetsIfNecessary;
 - (void)_refreshLocationsForRecipientsIfNecessary;
+- (void)_releaseActiveBalloonControllers;
 - (id)_remoteLogDumpButtonTitle;
 - (void)_replayLastImpactEffectIfNotFromMe;
 - (void)_resendMessageAtIndexPath:(id)arg1;
@@ -126,7 +133,7 @@
 - (void)_tearDownLoggingTapGestureRecognizer;
 - (void)_updateEffectViewMessageRect:(id)arg1 effect:(id)arg2;
 - (void)_updatePluginPlaybackManagerForInsertedChatItems:(id)arg1;
-- (void)addInvisibleInkEffectPauseReasons:(int)arg1;
+- (void)addContentAnimationPauseReasons:(int)arg1;
 - (void)addressBookChanged:(id)arg1;
 - (id /* block */)alertHandler;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
@@ -156,6 +163,7 @@
 - (id)chat;
 - (id)chatForSendAnimationManager:(id)arg1;
 - (id)chatItemForCell:(id)arg1;
+- (void)chatItemIsFilteredChanged:(id)arg1;
 - (id)chatItemWithIMChatItem:(id)arg1;
 - (id)chatItems;
 - (void)chatItemsDidChange:(id)arg1;
@@ -185,6 +193,7 @@
 - (void)configureAssociatedCell:(id)arg1 forItemAtIndexPath:(id)arg2;
 - (void)configureCell:(id)arg1 forItemAtIndexPath:(id)arg2;
 - (void)configureSpeakerButtonCell:(id)arg1 forItemAtIndexPath:(id)arg2;
+- (int)contentAnimationPauseReasons;
 - (id)conversation;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertedBoundsToCullFromView:(id)arg1;
 - (void)cullCellSubviews;
@@ -210,7 +219,6 @@
 - (void)interactionStartedFromPreviewItemControllerInBalloonView:(id)arg1;
 - (void)interactionStoppedFromPreviewItemControllerInBalloonView:(id)arg1;
 - (void)invalidateChatItemLayoutWithBalloonMaxWidth:(float)arg1 marginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
-- (int)invisibleInkEffectPauseReasons;
 - (BOOL)isInitialLoad;
 - (BOOL)isLoadingEarlierMessages;
 - (BOOL)isPeeking;
@@ -241,7 +249,7 @@
 - (void)raiseGestureRecognized:(id)arg1;
 - (void)reconfigureVisibleSpeakerButtonCells;
 - (void)reloadData;
-- (void)removeInvisibleInkEffectPauseReasons:(int)arg1;
+- (void)removeContentAnimationPauseReasons:(int)arg1;
 - (void)scrollToTopOfLastBubbleCellAnimated:(BOOL)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
@@ -263,6 +271,7 @@
 - (void)setChatItems:(id)arg1;
 - (void)setChatItems:(id)arg1 removedAssociatedIndexes:(id*)arg2 insertedAssociatedIndexes:(id*)arg3;
 - (void)setCollectionView:(id)arg1;
+- (void)setContentAnimationPauseReasons:(int)arg1;
 - (void)setConversation:(id)arg1;
 - (void)setCurrentEffectDecorationViews:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -275,7 +284,6 @@
 - (void)setHiddenItems:(id)arg1;
 - (void)setImpactEffectManager:(id)arg1;
 - (void)setInitialLoad:(BOOL)arg1;
-- (void)setInvisibleInkEffectPauseReasons:(int)arg1;
 - (void)setIsLoadingEarlierMessages:(BOOL)arg1;
 - (void)setIsPerformingRegenerateOnlyUpdate:(BOOL)arg1;
 - (void)setLoggingTapGestureRecognizer:(id)arg1;
@@ -320,9 +328,10 @@
 - (void)transferUpdated:(id)arg1;
 - (BOOL)transitionedFromComposing;
 - (id)updateAnimationGroup;
+- (void)updateAnimationPaused;
 - (void)updateEffectViewMessageRects;
-- (void)updateInvisibleInkEffectsPaused;
 - (void)updateTranscript:(id /* block */)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
+- (void)updateTranscriptChatItems:(id)arg1 inserted:(id)arg2 removed:(id)arg3 reload:(id)arg4 regenerate:(id)arg5 animated:(BOOL)arg6 checkFiltered:(BOOL)arg7 completion:(id /* block */)arg8;
 - (void)updateTranscriptChatItems:(id)arg1 inserted:(id)arg2 removed:(id)arg3 reload:(id)arg4 regenerate:(id)arg5 animated:(BOOL)arg6 completion:(id /* block */)arg7;
 - (void)verticallyScrollTranscriptByAmount:(float)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)viewDidAppear:(BOOL)arg1;

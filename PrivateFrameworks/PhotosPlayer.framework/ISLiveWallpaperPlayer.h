@@ -32,6 +32,7 @@
 - (BOOL)_isSeeking;
 - (float)_playRate;
 - (void)_seekVideoToBeginning;
+- (void)_seekVideoToEnd;
 - (void)_setActive:(BOOL)arg1;
 - (void)_setDisplayLink:(id)arg1;
 - (void)_setPlayRate:(float)arg1;

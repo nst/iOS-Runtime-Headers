@@ -5,6 +5,7 @@
 @interface AAUIPickInviteeViewController : UIViewController <AAUIContactsSearchDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
     ACAccount * _account;
     ACAccountStore * _accountStore;
+    NSString * _addFamilyMemberInstructions;
     void * _addressBook;
     UILabel * _childAccountLabel;
     UITextField * _contactSearchBar;
@@ -28,6 +29,7 @@
     UILabel * _toLabel;
 }
 
+@property (nonatomic, copy) NSString *addFamilyMemberInstructions;
 @property (nonatomic, copy) NSString *createChildAccountButtonTitle;
 @property (nonatomic, copy) NSString *createChildAccountInstructions;
 @property (readonly, copy) NSString *debugDescription;
@@ -37,6 +39,7 @@
 @property (nonatomic, readonly) NSString *inviteeCompositeName;
 @property (nonatomic, readonly) NSString *inviteeEmail;
 @property (nonatomic, readonly) NSString *inviteeShortName;
+@property (nonatomic, readonly) NSString *searchQuery;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -48,6 +51,7 @@
 - (id)_imageForPersonWithRecordID:(int)arg1;
 - (void)_nextButtonWasTapped:(id)arg1;
 - (void)_updateNextButtonEnabledState;
+- (id)addFamilyMemberInstructions;
 - (void)contactsSearchController:(id)arg1 didFindSortedResult:(id)arg2;
 - (void)contactsSearchController:(id)arg1 didFinishSearchWithSuccess:(BOOL)arg2;
 - (id)contentScrollView;
@@ -61,6 +65,8 @@
 - (id)inviteeShortName;
 - (void)loadView;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (id)searchQuery;
+- (void)setAddFamilyMemberInstructions:(id)arg1;
 - (void)setCreateChildAccountButtonTitle:(id)arg1;
 - (void)setCreateChildAccountInstructions:(id)arg1;
 - (void)setDelegate:(id)arg1;

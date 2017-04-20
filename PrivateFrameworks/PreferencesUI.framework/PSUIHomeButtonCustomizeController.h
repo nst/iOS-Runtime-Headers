@@ -8,6 +8,7 @@
     BOOL  _forceFeelValueChanged;
     BFFPaneHeaderView * _headerView;
     UITapGestureRecognizer * _menuButtonRecognizer;
+    BOOL  _reachabilityEnabled;
     PSUICircleSegmentedControl * _segmentedControl;
     BOOL  _usesDoneButton;
     BOOL  _visible;

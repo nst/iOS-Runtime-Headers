@@ -32,6 +32,7 @@
 - (struct CGSize { float x1; float x2; })_clearButtonSize;
 - (id)_createEffectsBackgroundViewWithStyle:(unsigned int)arg1 applyFilter:(id)arg2;
 - (BOOL)_hasActionForEventMask:(unsigned int)arg1;
+- (BOOL)_labelShouldUseVibrancy;
 - (id)_offsetValueForIcon:(int)arg1;
 - (id)_placeholderColor;
 - (Class)_placeholderLabelClass;

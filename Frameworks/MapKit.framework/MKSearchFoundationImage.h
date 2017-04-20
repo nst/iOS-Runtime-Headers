@@ -3,15 +3,12 @@
  */
 
 @interface MKSearchFoundationImage : SFImage {
-    id /* block */  _imageUIUpdateBlock;
+    NSObject<OS_dispatch_group> * _group;
 }
 
-@property (nonatomic, copy) id /* block */ imageUIUpdateBlock;
-
 - (void).cxx_destruct;
-- (id /* block */)imageUIUpdateBlock;
 - (id)initIconWithSize:(unsigned int)arg1 mapItem:(id)arg2;
+- (void)loadImageDataWithCompletionAndErrorHandler:(id /* block */)arg1;
 - (void)loadImageDataWithCompletionHandler:(id /* block */)arg1;
-- (void)setImageUIUpdateBlock:(id /* block */)arg1;
 
 @end

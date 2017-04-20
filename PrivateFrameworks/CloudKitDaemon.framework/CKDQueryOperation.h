@@ -3,6 +3,7 @@
  */
 
 @interface CKDQueryOperation : CKDDatabaseOperation <CKDOperationPipelining> {
+    NSDictionary * _assetTransferOptionsByKey;
     CKQueryCursor * _cursor;
     NSSet * _desiredKeySet;
     BOOL  _fetchAllResults;
@@ -20,6 +21,7 @@
     CKRecordZoneID * _zoneID;
 }
 
+@property (nonatomic, retain) NSDictionary *assetTransferOptionsByKey;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
 @property (nonatomic, readonly) CKQueryCursor *cursor;
 @property (readonly, copy) NSString *debugDescription;
@@ -48,6 +50,7 @@
 - (void)_handleRecordResponse:(id)arg1 perRequestSchedulerInfo:(id)arg2;
 - (void)_sendQueryRequestWithCursor:(id)arg1 previousRequestSchedulerInfo:(id)arg2;
 - (id)activityCreate;
+- (id)assetTransferOptionsByKey;
 - (id)cursor;
 - (id)desiredKeySet;
 - (BOOL)fetchAllResults;
@@ -66,6 +69,7 @@
 - (id)requestInfos;
 - (id)resultsCursor;
 - (unsigned int)resultsLimit;
+- (void)setAssetTransferOptionsByKey:(id)arg1;
 - (void)setDesiredKeySet:(id)arg1;
 - (void)setFetchAllResults:(BOOL)arg1;
 - (void)setFetchRecordsGroup:(id)arg1;

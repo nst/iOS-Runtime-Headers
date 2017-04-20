@@ -2,10 +2,11 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSNumber : NSValue <ASParsingLeafNode, CKRecordValue, HFPropertyListConvertible, LPCSSText, NSFetchRequestResult, PQLValuable, SiriCoreSQLiteValue, TSCHChartGridValue, TSDMixing>
+@interface NSNumber : NSValue <ASParsingLeafNode, CKRecordValue, CRCoding, CRDataType, CREquatable, HFPropertyListConvertible, LPCSSText, NSFetchRequestResult, PQLValuable, SiriCoreSQLiteValue, TSCHChartGridValue, TSDMixing>
 
 @property (nonatomic, readonly) float CGFloatValue;
 @property (nonatomic, readonly) unsigned int PXDataSourceIdentifierValue;
+@property (readonly) int _cn_reputationScoreValue;
 @property (readonly) BOOL boolValue;
 @property (readonly) BOOL charValue;
 @property (nonatomic, readonly) int chartGridValueType;
@@ -98,6 +99,10 @@
 - (unsigned long long)unsignedLongLongValue;
 - (unsigned long)unsignedLongValue;
 - (unsigned short)unsignedShortValue;
+
+// Image: /System/Library/Frameworks/Contacts.framework/Contacts
+
+- (int)_cn_reputationScoreValue;
 
 // Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
 
@@ -202,6 +207,10 @@
 
 - (id)_lp_CSSText;
 
+// Image: /System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
+
+- (bool)_BoolValue;
+
 // Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
 
 - (void)ml_bindToSQLiteStatement:(struct sqlite3_stmt { }*)arg1 atPosition:(int)arg2;
@@ -220,6 +229,17 @@
 - (BOOL)fc_isLessThanOrEqualTo:(id)arg1;
 - (id)fc_largerNumber:(id)arg1;
 - (id)fc_smallerNumber:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
+- (id)deltaSince:(id)arg1 in:(id)arg2;
+- (void)encodeWithCRCoder:(id)arg1;
+- (id)initWithCRCoder:(id)arg1;
+- (void)mergeWith:(id)arg1;
+- (void)realizeLocalChangesIn:(id)arg1;
+- (void)setDocument:(id)arg1;
+- (id)tombstone;
+- (void)walkGraph:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
@@ -256,9 +276,9 @@
 
 // Image: /System/Library/PrivateFrameworks/Swift/libswiftFoundation.dylib
 
-- (id)initWithBooleanLiteral:(BOOL)arg1;
-- (id)initWithFloatLiteral:(double)arg1;
-- (id)initWithIntegerLiteral:(int)arg1;
+- (id)initWithBooleanLiteral;
+- (id)initWithFloatLiteral;
+- (id)initWithIntegerLiteral;
 
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
 

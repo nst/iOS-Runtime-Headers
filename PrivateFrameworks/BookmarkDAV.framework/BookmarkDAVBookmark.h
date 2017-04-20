@@ -7,10 +7,12 @@
     NSDictionary * _appleAttributes;
     NSURL * _bookmarkURL;
     CoreDAVErrorItem * _bulkUploadErrorItem;
+    NSURL * _destinationURL;
     int  _ignoreLevel;
     NSString * _name;
     int  _parseState;
     NSURL * _serverID;
+    NSURL * _sourceURL;
     NSString * _syncKey;
 }
 
@@ -21,9 +23,11 @@
 @property (nonatomic, readonly) NSData *dataPayload;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSURL *destinationURL;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly, retain) NSString *name;
 @property (nonatomic, retain) NSURL *serverID;
+@property (nonatomic, retain) NSURL *sourceURL;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *syncKey;
 
@@ -32,6 +36,7 @@
 - (id)bulkUploadErrorItem;
 - (id)dataPayload;
 - (void)dealloc;
+- (id)destinationURL;
 - (id)initWithBookmarkURL:(id)arg1 serverID:(id)arg2 name:(id)arg3 syncKey:(id)arg4 appleAttributes:(id)arg5;
 - (id)initWithURL:(id)arg1 eTag:(id)arg2 dataPayload:(id)arg3 inContainerWithURL:(id)arg4 withAccountInfoProvider:(id)arg5;
 - (id)name;
@@ -41,8 +46,11 @@
 - (void)parser:(id)arg1 foundCharacters:(id)arg2;
 - (id)serverID;
 - (void)setBulkUploadErrorItem:(id)arg1;
+- (void)setDestinationURL:(id)arg1;
 - (void)setPropertiesFromXBEL:(id)arg1;
 - (void)setServerID:(id)arg1;
+- (void)setSourceURL:(id)arg1;
+- (id)sourceURL;
 - (id)syncKey;
 
 @end

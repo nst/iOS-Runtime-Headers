@@ -6,6 +6,7 @@
     NSXPCConnection * _connection;
     <MNNavigationServiceRemoteProxyDelegate> * _delegate;
     NSDate * _lastReconnectionDate;
+    BOOL  _navigationStopCalled;
     MNNavigationServiceReconnector * _reconnector;
     MNSettings * _settings;
 }

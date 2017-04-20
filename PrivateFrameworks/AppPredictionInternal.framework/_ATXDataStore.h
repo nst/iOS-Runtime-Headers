@@ -23,9 +23,11 @@
 - (void)_testMigrate;
 - (void)addAppInstallForBundleId:(id)arg1 withDate:(id)arg2;
 - (void)addAppLaunchForBundleId:(id)arg1 withDate:(id)arg2 withLaunchType:(int)arg3;
+- (void)addCategoricalHistogramData:(id)arg1 forHistogramOfType:(int)arg2;
 - (void)addHistogramData:(id)arg1 forHistogramOfType:(int)arg2;
 - (id)appInfoForBundleId:(id)arg1;
 - (void)beginRestoring;
+- (id)categoricalHistogramDataForHistogramType:(int)arg1;
 - (void)clearAppInstallInfo;
 - (void)clearAppLaunchInfo;
 - (void)clearDatabase;
@@ -49,6 +51,7 @@
 - (id)loadLaunchesFollowingBundle:(id)arg1;
 - (void)migrate;
 - (int)migrateToVersion:(unsigned int)arg1 withMigrationPlan:(id)arg2;
+- (int)migration_AddCategoricalHistograms;
 - (int)migration_AppLaunchHistogramToTable;
 - (int)migration_DelinkFromCoreLocationVisitMonitoring;
 - (int)migration_InstallDateToAppTable;
@@ -68,6 +71,7 @@
 - (void)runQuery:(id)arg1 onPrep:(id /* block */)arg2 onRow:(id /* block */)arg3 onError:(id /* block */)arg4;
 - (int)skipFromZeroSchema;
 - (void)swapInDuetHelperStub:(id)arg1;
+- (BOOL)updateOrInsertCategoricalHistogramData:(id)arg1 forHistogram:(int)arg2;
 - (BOOL)updateOrInsertHistogramData:(id)arg1 forHistogram:(int)arg2;
 - (BOOL)updateOrInsertSubsequentLaunchCountData:(id)arg1 forBundleId:(id)arg2;
 - (BOOL)updateOrInsertTimestamp:(long long)arg1 intoColumn:(id)arg2 forBundleId:(id)arg3;

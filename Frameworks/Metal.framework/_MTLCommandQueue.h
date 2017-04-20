@@ -66,6 +66,7 @@
 - (void)enqueueCommandBuffer:(id)arg1;
 - (BOOL)executionEnabled;
 - (void)finish;
+- (id)formattedDescription:(unsigned int)arg1;
 - (unsigned int)getAndIncrementNumCommandBuffers;
 - (unsigned int)getListIndex;
 - (unsigned long long)getStatLocations;

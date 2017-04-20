@@ -2,16 +2,20 @@
    Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
  */
 
-@interface MPCPlayer : NSObject {
+@interface MPCPlayer : NSObject <MPCMediaRemoteMuxerDelegate> {
     NSString * _activeRouteName;
     MPRemoteCommandCenter * _commandCenter;
     MPCPlayerItemContainer * _currentContainer;
     MPCPlayerItem * _currentItem;
+    MPCMediaRemoteMuxer * _mediaRemoteMuxer;
     NSPointerArray * _nowPlayingInfoHandlers;
+    NSString * _parentAppBundleID;
     NSPointerArray * _playbackErrorObservers;
     NSPointerArray * _playbackIntentObservers;
     BOOL  _restoringPlaybackState;
+    BOOL  _shouldRestorePlaybackState;
     int  _state;
+    BOOL  _syncingNowPlayingInfo;
     AVPlayerLayer * _videoLayer;
 }
 
@@ -19,11 +23,19 @@
 @property (nonatomic, retain) MPRemoteCommandCenter *commandCenter;
 @property (nonatomic) MPCPlayerItemContainer *currentContainer;
 @property (nonatomic) MPCPlayerItem *currentItem;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) MPCMediaRemoteMuxer *mediaRemoteMuxer;
 @property (nonatomic, readonly, copy) NSArray *nowPlayingInfoHandlers;
+@property (nonatomic, copy) NSString *parentAppBundleID;
 @property (nonatomic, readonly, copy) NSArray *playbackErrorObservers;
 @property (nonatomic, readonly, copy) NSArray *playbackIntentObservers;
 @property (getter=isRestoringPlaybackState, nonatomic, readonly) BOOL restoringPlaybackState;
+@property (nonatomic) BOOL shouldRestorePlaybackState;
 @property (nonatomic) int state;
+@property (readonly) Class superclass;
+@property (getter=isSyncingNowPlayingInfo, nonatomic, readonly) BOOL syncingNowPlayingInfo;
 @property (nonatomic, readonly) AVPlayerLayer *videoLayer;
 
 + (Class)queueRequestOperationClass;
@@ -35,8 +47,12 @@
 - (id)commandCenter;
 - (id)currentContainer;
 - (id)currentItem;
+- (id)init;
 - (BOOL)isRestoringPlaybackState;
+- (BOOL)isSyncingNowPlayingInfo;
+- (id)mediaRemoteMuxer;
 - (id)nowPlayingInfoHandlers;
+- (id)parentAppBundleID;
 - (void)performCommandEvent:(id)arg1 completion:(id /* block */)arg2;
 - (id)playbackErrorObservers;
 - (id)playbackIntentObservers;
@@ -50,11 +66,18 @@
 - (void)setCommandCenter:(id)arg1;
 - (void)setCurrentContainer:(id)arg1;
 - (void)setCurrentItem:(id)arg1;
+- (void)setMediaRemoteMuxer:(id)arg1;
+- (void)setParentAppBundleID:(id)arg1;
+- (void)setShouldRestorePlaybackState:(BOOL)arg1;
 - (void)setState:(int)arg1;
+- (BOOL)shouldRestorePlaybackState;
+- (void)startSyncingNowPlayingInfo;
 - (int)state;
+- (void)stopSyncingNowPlayingInfo;
 - (void)unregisterNowPlayingInfoHandler:(id)arg1;
 - (void)unregisterPlaybackErrorObserver:(id)arg1;
 - (void)unregisterPlaybackIntentObserver:(id)arg1;
+- (void)updateSupportedCommandsForCommandCenter:(id)arg1 muxer:(id)arg2 action:(SEL)arg3;
 - (id)videoLayer;
 
 @end

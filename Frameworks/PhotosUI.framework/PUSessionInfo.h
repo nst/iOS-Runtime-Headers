@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUSessionInfo : NSObject <PUPhotoSelectionManagerDelegate> {
+@interface PUSessionInfo : NSObject <PUPhotoSelectionManagerChangeObserver> {
     id /* block */  _bannerGenerator;
     NSString * _localizedPrompt;
     NSPointerArray * _observers;

@@ -11,6 +11,7 @@
     NSString * _localizedContext;
     WLKBasicContentMetadata * _movieOrShowContent;
     WLKPlayEvent * _playEvent;
+    WLKPlayable * _playable;
     WLKBasicContentMetadata * _showParent;
 }
 
@@ -22,6 +23,7 @@
 @property (nonatomic, readonly, copy) NSString *localizedContext;
 @property (nonatomic, readonly) WLKBasicContentMetadata *movieOrShowContent;
 @property (nonatomic, readonly) WLKPlayEvent *playEvent;
+@property (nonatomic, readonly) WLKPlayable *playable;
 @property (nonatomic, readonly) WLKBasicContentMetadata *showParent;
 
 - (void).cxx_destruct;
@@ -35,6 +37,7 @@
 - (id)localizedContext;
 - (id)movieOrShowContent;
 - (id)playEvent;
+- (id)playable;
 - (id)showParent;
 
 @end

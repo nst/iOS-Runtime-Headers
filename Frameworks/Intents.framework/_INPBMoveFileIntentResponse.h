@@ -33,10 +33,13 @@
 @property (nonatomic) BOOL success;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 + (Class)entityNameType;
 + (id)options;
 
 - (void).cxx_destruct;
+- (int)StringAsEntityTypes:(id)arg1;
 - (void)addEntityName:(id)arg1;
 - (void)addEntityType:(int)arg1;
 - (void)clearEntityNames;
@@ -51,6 +54,7 @@
 - (unsigned int)entityNamesCount;
 - (int)entityTypeAtIndex:(unsigned int)arg1;
 - (int*)entityTypes;
+- (id)entityTypesAsString:(int)arg1;
 - (unsigned int)entityTypesCount;
 - (BOOL)hasDestinationName;
 - (BOOL)hasOverwrite;
@@ -73,5 +77,11 @@
 - (BOOL)success;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

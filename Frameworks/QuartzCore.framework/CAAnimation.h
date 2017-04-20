@@ -14,6 +14,7 @@
 @property double beginTime;
 @property (copy) NSString *beginTimeMode;
 @property (retain) <CAAnimationDelegate> *delegate;
+@property BOOL discretizesTime;
 @property double duration;
 @property (getter=isEnabled) BOOL enabled;
 @property float fadeInDuration;
@@ -55,6 +56,7 @@
 - (void)dealloc;
 - (id)debugDescription;
 - (id)delegate;
+- (BOOL)discretizesTime;
 - (double)duration;
 - (void)encodeWithCAMLWriter:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -74,6 +76,7 @@
 - (void)setBeginTimeMode:(id)arg1;
 - (void)setDefaultDuration:(double)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDiscretizesTime:(BOOL)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setFillMode:(id)arg1;

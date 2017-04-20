@@ -125,6 +125,7 @@
 - (void)_updateTitleAndSubtitle;
 - (void)_updateWidgetDisablingWithAnimationOptions:(id)arg1;
 - (void)_updateWidgetSpec;
+- (unsigned int)_userEventSourceForDetailView:(id)arg1;
 - (id)_viewModel;
 - (id)_widgetAtLocation:(struct CGPoint { float x1; float x2; })arg1 inCoordinateSpace:(id)arg2;
 - (id)_widgetDisablingDimmingViews;
@@ -148,6 +149,7 @@
 - (void)observable:(id)arg1 didChange:(unsigned int)arg2 context:(void*)arg3;
 - (unsigned int)occludedContentEdges;
 - (unsigned int)options;
+- (void)ppt_navigateToMovieWithCompletionHandler:(id /* block */)arg1;
 - (void)ppt_performBlockAfterAllWidgetLoadingCompletes:(id /* block */)arg1;
 - (id)ppt_scrollView;
 - (void)ppt_toggleDiscloseWidgets;

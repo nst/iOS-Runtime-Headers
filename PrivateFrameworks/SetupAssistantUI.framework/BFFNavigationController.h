@@ -4,7 +4,9 @@
 
 @interface BFFNavigationController : PSRootController {
     BOOL  _animating;
+    NSMutableDictionary * _appearanceHandlers;
     NSMutableArray * _observers;
+    int  _pendingWillShowOperation;
 }
 
 @property (getter=isAnimating, nonatomic, readonly) BOOL animating;
@@ -19,8 +21,12 @@
 - (BOOL)isAnimating;
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
+- (id)popToRootViewControllerAnimated:(BOOL)arg1;
+- (id)popToViewController:(id)arg1 animated:(BOOL)arg2;
+- (id)popViewControllerAnimated:(BOOL)arg1;
 - (int)preferredStatusBarStyle;
 - (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)pushViewController:(id)arg1 completion:(id /* block */)arg2;
 - (void)removeDelegateObserver:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;

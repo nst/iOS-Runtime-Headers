@@ -66,7 +66,7 @@
 - (void)fillOutCurrentEASTimeZoneInfo;
 - (void)handleURL:(id)arg1;
 - (id)init;
-- (BOOL)isOofSettingsSupportedForAccountWithID:(id)arg1;
+- (void)isOofSettingsSupportedForAccountWithID:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)performCalendarDirectorySearchWithAccountID:(id)arg1 terms:(id)arg2 recordTypes:(id)arg3 resultLimit:(unsigned int)arg4 resultsBlock:(id /* block */)arg5 completionBlock:(id /* block */)arg6;
 - (BOOL)performServerContactsSearch:(id)arg1 forAccountWithID:(id)arg2;
 - (BOOL)processFolderChange:(id)arg1 forAccountWithID:(id)arg2;
@@ -76,6 +76,7 @@
 - (BOOL)registered;
 - (void)removeStoresForAccountWithID:(id)arg1;
 - (void)reportFolderItemsSyncSuccess:(BOOL)arg1 forFolderWithID:(id)arg2 withItemsCount:(unsigned int)arg3 andAccountWithID:(id)arg4;
+- (void)reportSharedCalendarInviteAsJunkForCalendarWithID:(id)arg1 accountID:(id)arg2 queue:(id)arg3 completionBlock:(id /* block */)arg4;
 - (id)requestCalendarAvailabilityWithAccountID:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 ignoredEventID:(id)arg4 addresses:(id)arg5 resultsBlock:(id /* block */)arg6 completionBlock:(id /* block */)arg7;
 - (void)requestDaemonShutdown;
 - (void)requestDaemonStartMonitoringAgents;

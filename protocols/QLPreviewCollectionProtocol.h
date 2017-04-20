@@ -6,6 +6,8 @@
 @required
 
 - (void)configureWithNumberOfItems:(int)arg1 currentPreviewItemIndex:(unsigned int)arg2 itemProvider:(id <QLPreviewItemProvider>)arg3 stateManager:(id <QLPreviewControllerStateProtocol>)arg4;
+- (void)hostApplicationDidBecomeActive;
+- (void)hostApplicationDidEnterBackground:(BOOL)arg1;
 - (void)hostViewControlerTransitionToState:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)invalidatePreviewCollection;
 - (void)keyCommandWasPerformed:(UIKeyCommand *)arg1;

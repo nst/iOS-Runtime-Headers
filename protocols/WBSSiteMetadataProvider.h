@@ -13,7 +13,12 @@
 
 @optional
 
+- (void)emptyCaches;
+- (BOOL)isCachingDisabled;
 - (NSOperation *)operationForRequest:(WBSSiteMetadataRequest *)arg1;
+- (void)purgeUnneededCacheEntries;
+- (void)savePendingChangesBeforeTermination;
+- (void)setCachingDisabled:(BOOL)arg1;
 - (void)stopWatchingUpdatesForRequest:(WBSSiteMetadataRequest *)arg1;
 
 @end

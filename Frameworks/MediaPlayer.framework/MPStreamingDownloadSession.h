@@ -8,11 +8,14 @@
     unsigned int  _assetQuality;
     BOOL  _didStartLeaseSession;
     unsigned long long  _downloadToken;
+    BOOL  _iTunesStoreStream;
     BOOL  _isHLSAsset;
     unsigned int  _protectionType;
     NSDictionary * _purchaseBundle;
     NSDictionary * _responseAssetDictionary;
     NSURL * _sourceURL;
+    NSURL * _streamingKeyCertificateURL;
+    NSURL * _streamingKeyServerURL;
 }
 
 @property (nonatomic, copy) NSURL *alternateSourceURL;
@@ -20,11 +23,14 @@
 @property (nonatomic) unsigned int assetQuality;
 @property (nonatomic) BOOL didStartLeaseSession;
 @property (nonatomic) unsigned long long downloadToken;
+@property (getter=isiTunesStoreStream, nonatomic) BOOL iTunesStoreStream;
 @property (nonatomic) BOOL isHLSAsset;
 @property (nonatomic) unsigned int protectionType;
 @property (nonatomic, copy) NSDictionary *purchaseBundle;
 @property (nonatomic, retain) NSDictionary *responseAssetDictionary;
 @property (nonatomic, copy) NSURL *sourceURL;
+@property (nonatomic, copy) NSURL *streamingKeyCertificateURL;
+@property (nonatomic, copy) NSURL *streamingKeyServerURL;
 
 - (void).cxx_destruct;
 - (id)alternateSourceURL;
@@ -35,6 +41,7 @@
 - (BOOL)didStartLeaseSession;
 - (unsigned long long)downloadToken;
 - (BOOL)isHLSAsset;
+- (BOOL)isiTunesStoreStream;
 - (unsigned int)protectionType;
 - (id)purchaseBundle;
 - (id)responseAssetDictionary;
@@ -43,11 +50,16 @@
 - (void)setAssetQuality:(unsigned int)arg1;
 - (void)setDidStartLeaseSession:(BOOL)arg1;
 - (void)setDownloadToken:(unsigned long long)arg1;
+- (void)setITunesStoreStream:(BOOL)arg1;
 - (void)setIsHLSAsset:(BOOL)arg1;
 - (void)setProtectionType:(unsigned int)arg1;
 - (void)setPurchaseBundle:(id)arg1;
 - (void)setResponseAssetDictionary:(id)arg1;
 - (void)setSourceURL:(id)arg1;
+- (void)setStreamingKeyCertificateURL:(id)arg1;
+- (void)setStreamingKeyServerURL:(id)arg1;
 - (id)sourceURL;
+- (id)streamingKeyCertificateURL;
+- (id)streamingKeyServerURL;
 
 @end

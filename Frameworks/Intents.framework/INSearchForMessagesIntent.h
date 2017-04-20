@@ -34,6 +34,7 @@
 - (int)contentsOperator;
 - (id)dateTimeRange;
 - (id)description;
+- (id)domain;
 - (id)groupNames;
 - (int)groupNamesOperator;
 - (id)identifiers;
@@ -43,6 +44,7 @@
 - (id)initWithRecipients:(id)arg1 senders:(id)arg2 searchTerms:(id)arg3 attributes:(unsigned int)arg4 dateTimeRange:(id)arg5 identifiers:(id)arg6 notificationIdentifiers:(id)arg7 groupNames:(id)arg8;
 - (id)notificationIdentifiers;
 - (int)notificationIdentifiersOperator;
+- (id)parametersByName;
 - (id)recipients;
 - (int)recipientsOperator;
 - (id)searchTerms;
@@ -52,11 +54,15 @@
 - (void)setAttributes:(unsigned int)arg1;
 - (void)setContents:(id)arg1;
 - (void)setDateTimeRange:(id)arg1;
+- (void)setDomain:(id)arg1;
 - (void)setGroupNames:(id)arg1;
 - (void)setIdentifiers:(id)arg1;
 - (void)setNotificationIdentifiers:(id)arg1;
+- (void)setParametersByName:(id)arg1;
 - (void)setRecipients:(id)arg1;
 - (void)setSearchTerms:(id)arg1;
 - (void)setSenders:(id)arg1;
+- (void)setVerb:(id)arg1;
+- (id)verb;
 
 @end

@@ -19,6 +19,7 @@
 @property (nonatomic) int type;
 
 + (int)extraIdiomForVisualStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1 width:(float)arg2;
++ (void)initialize;
 + (id)key;
 + (id)keyboard;
 + (id)mergeStringForKeyName:(id)arg1;
@@ -42,8 +43,6 @@
 - (void)addkeyToCachedKeyList:(id)arg1;
 - (BOOL)allowRetestAfterCommittingDownActions;
 - (id)alternateKeyplaneName;
-- (id)alternateStrings;
-- (BOOL)alternatesOnTop;
 - (id)attributeSet:(BOOL)arg1;
 - (id)autolocalizedKeyCacheIterator;
 - (BOOL)avoidAutoDeactivation;
@@ -54,6 +53,7 @@
 - (id)cacheDisplayString;
 - (void)cacheKey:(id)arg1;
 - (id)cacheSecondaryDisplayString;
+- (id)cachedGestureLayout;
 - (id)cachedKeysByKeyName:(id)arg1;
 - (void)centerKeys:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 scale:(float)arg3;
 - (void)clearManualAddedKey;
@@ -87,6 +87,8 @@
 - (id)geometriesOrderedByPosition;
 - (id)geometry;
 - (id)geometrySet:(BOOL)arg1;
+- (id)gestureKey;
+- (id)gestureKeyplaneName;
 - (BOOL)ghost;
 - (int)handBias;
 - (BOOL)hasLayoutTag:(id)arg1;
@@ -157,10 +159,9 @@
 - (id)secondaryRepresentedStrings;
 - (int)selectedVariantIndex;
 - (void)setActiveGeometriesList:(id)arg1;
-- (void)setAlternateStrings:(id)arg1;
-- (void)setAlternatesOnTop:(BOOL)arg1;
 - (void)setAttributes:(id)arg1;
 - (void)setCache:(id)arg1;
+- (void)setCachedGestureLayout:(id)arg1;
 - (void)setClipCorners:(int)arg1;
 - (void)setDisabled:(BOOL)arg1;
 - (void)setDisplayRowHint:(int)arg1;
@@ -172,6 +173,7 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setGeometriesList:(id)arg1;
 - (void)setGeometry:(id)arg1;
+- (void)setGestureKey:(id)arg1;
 - (void)setGhost:(BOOL)arg1;
 - (void)setHighlightedVariantsList:(id)arg1;
 - (void)setInteractionType:(int)arg1;
@@ -221,6 +223,7 @@
 - (int)type;
 - (id)unhashedName;
 - (void)updateDictationKeyOnNumberPads:(BOOL)arg1;
+- (void)updateFlickKeycapOnKeys;
 - (void)updateMoreAndInternationalKeysWithOptions:(int)arg1;
 - (void)updateVariantTypeForActions:(unsigned int)arg1;
 - (BOOL)usesAdaptiveKeys;

@@ -2,17 +2,24 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFSectionRankingFeedback : SFFeedback <NSCopying> {
+@interface SFSectionRankingFeedback : SFFeedback <NSCopying, SFProtobufObject> {
     unsigned int  _localSectionPosition;
     float  _personalizationScore;
     NSArray * _results;
     SFResultSection * _section;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic) unsigned int localSectionPosition;
 @property (nonatomic) float personalizationScore;
+@property (nonatomic, readonly) PBCodable *protobufMessage;
 @property (nonatomic, copy) NSArray *results;
 @property (nonatomic, copy) SFResultSection *section;
+@property (readonly) Class superclass;
+
+// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
 
 + (BOOL)supportsSecureCoding;
 
@@ -29,5 +36,11 @@
 - (void)setPersonalizationScore:(float)arg1;
 - (void)setResults:(id)arg1;
 - (void)setSection:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
+
++ (Class)protobufClass;
+
+- (id)protobufMessage;
 
 @end

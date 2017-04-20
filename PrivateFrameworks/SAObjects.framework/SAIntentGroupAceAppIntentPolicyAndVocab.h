@@ -5,19 +5,13 @@
 @interface SAIntentGroupAceAppIntentPolicyAndVocab : SADomainObject
 
 @property (nonatomic, retain) SAIntentGroupProtobufMessage *aceAppBundleInfo;
-@property (nonatomic, retain) SAIntentGroupProtobufMessage *aceAppIntentPolicy;
-@property (nonatomic, retain) SAIntentGroupProtobufMessage *aceAppIntentVocabulary;
 
 + (id)aceAppIntentPolicyAndVocab;
 + (id)aceAppIntentPolicyAndVocabWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)aceAppBundleInfo;
-- (id)aceAppIntentPolicy;
-- (id)aceAppIntentVocabulary;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (void)setAceAppBundleInfo:(id)arg1;
-- (void)setAceAppIntentPolicy:(id)arg1;
-- (void)setAceAppIntentVocabulary:(id)arg1;
 
 @end

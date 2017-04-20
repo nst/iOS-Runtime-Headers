@@ -3,20 +3,22 @@
  */
 
 @interface ML3StoreItemPlaylistData : NSObject {
-    SSLookupItem * _lookupItem;
-    NSDictionary * _parsedPlaylistImportProperties;
+    NSArray * _lookupItems;
+    NSArray * _parsedPlaylistsImportProperties;
     NSData * _playlistData;
 }
 
-@property (nonatomic, readonly) NSDictionary *parsedPlaylistImportProperties;
-@property (nonatomic, readonly) NSData *playlistData;
+@property (nonatomic, readonly) NSArray *parsedStorePlaylistsImportProperties;
+@property (nonatomic, readonly) unsigned int playlistCount;
+@property (nonatomic, readonly) NSData *playlistsData;
 
 - (void).cxx_destruct;
-- (id)_playlistPropertiesForLookupItem:(id)arg1;
+- (id)_playlistPropertiesForLookupItems:(id)arg1;
 - (id)_playlistPropertiesFromPlaylistData:(id)arg1;
-- (id)initWithLookupItem:(id)arg1;
-- (id)initWithPlaylistData:(id)arg1;
-- (id)parsedPlaylistImportProperties;
-- (id)playlistData;
+- (id)initWithLookupItems:(id)arg1;
+- (id)initWithPlaylistsData:(id)arg1;
+- (id)parsedStorePlaylistsImportProperties;
+- (unsigned int)playlistCount;
+- (id)playlistsData;
 
 @end

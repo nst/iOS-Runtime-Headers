@@ -11,6 +11,7 @@
     }  _has;
     NSString * _merchantIdentifier;
     NSString * _nonce;
+    NSString * _retryNonce;
     NSString * _sessionIdentifier;
     NSData * _signature;
 }
@@ -23,10 +24,12 @@
 @property (nonatomic) BOOL hasEpochTimestamp;
 @property (nonatomic, readonly) BOOL hasMerchantIdentifier;
 @property (nonatomic, readonly) BOOL hasNonce;
+@property (nonatomic, readonly) BOOL hasRetryNonce;
 @property (nonatomic, readonly) BOOL hasSessionIdentifier;
 @property (nonatomic, readonly) BOOL hasSignature;
 @property (nonatomic, retain) NSString *merchantIdentifier;
 @property (nonatomic, retain) NSString *nonce;
+@property (nonatomic, retain) NSString *retryNonce;
 @property (nonatomic, retain) NSString *sessionIdentifier;
 @property (nonatomic, retain) NSData *signature;
 
@@ -43,6 +46,7 @@
 - (BOOL)hasEpochTimestamp;
 - (BOOL)hasMerchantIdentifier;
 - (BOOL)hasNonce;
+- (BOOL)hasRetryNonce;
 - (BOOL)hasSessionIdentifier;
 - (BOOL)hasSignature;
 - (unsigned int)hash;
@@ -51,6 +55,7 @@
 - (void)mergeFrom:(id)arg1;
 - (id)nonce;
 - (BOOL)readFrom:(id)arg1;
+- (id)retryNonce;
 - (id)sessionIdentifier;
 - (void)setDisplayName:(id)arg1;
 - (void)setDomain:(id)arg1;
@@ -58,6 +63,7 @@
 - (void)setHasEpochTimestamp:(BOOL)arg1;
 - (void)setMerchantIdentifier:(id)arg1;
 - (void)setNonce:(id)arg1;
+- (void)setRetryNonce:(id)arg1;
 - (void)setSessionIdentifier:(id)arg1;
 - (void)setSignature:(id)arg1;
 - (id)signature;

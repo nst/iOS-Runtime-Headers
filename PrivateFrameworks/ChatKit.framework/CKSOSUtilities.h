@@ -4,11 +4,19 @@
 
 @interface CKSOSUtilities : NSObject
 
-+ (id)_sendMessage:(id)arg1 location:(id)arg2 handles:(id)arg3;
-+ (void)_sendMessage:(id)arg1 location:(id)arg2 recipients:(id)arg3 failureHandler:(id /* block */)arg4;
+@property (getter=isMMSEnabled, nonatomic, readonly) BOOL MMSEnabled;
+
 + (BOOL)isMMSEnabled;
-+ (id)sendComposition:(id)arg1 toConversation:(id)arg2;
 + (void)sendMessage:(id)arg1 location:(id)arg2 recipients:(id)arg3;
 + (void)sendMessage:(id)arg1 location:(id)arg2 recipients:(id)arg3 failureHandler:(id /* block */)arg4;
++ (id)sharedUtilities;
+
+- (id)_sendMessage:(id)arg1 location:(id)arg2 handles:(id)arg3;
+- (void)_sendMessage:(id)arg1 location:(id)arg2 recipients:(id)arg3 failureHandler:(id /* block */)arg4;
+- (BOOL)isMMSEnabled;
+- (BOOL)isMobileKeyBagDisabledOrDeviceUnlockedSinceBoot;
+- (id)sendComposition:(id)arg1 toConversation:(id)arg2;
+- (void)sendMessage:(id)arg1 location:(id)arg2 recipients:(id)arg3;
+- (void)sendMessage:(id)arg1 location:(id)arg2 recipients:(id)arg3 failureHandler:(id /* block */)arg4;
 
 @end

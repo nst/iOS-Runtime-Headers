@@ -25,7 +25,7 @@
     BOOL  _xpcRegistered;
 }
 
-@property (nonatomic, retain) NSDate *date;
+@property (nonatomic, copy) NSDate *date;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
 @property (nonatomic) double interval;
 @property (nonatomic, copy) id /* block */ invalidationHandler;

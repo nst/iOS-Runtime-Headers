@@ -39,6 +39,7 @@
 - (id)chatsForMessage:(id)arg1;
 - (id)chatsForMessageGUID:(id)arg1;
 - (void)cleanseAttachments;
+- (void)databaseChatSpamUpdated:(id)arg1;
 - (void)dealloc;
 - (id)deleteMessageGUIDs:(id)arg1;
 - (id)deleteMessageGUIDs:(id)arg1 inChat:(id)arg2;

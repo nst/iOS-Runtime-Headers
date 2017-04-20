@@ -3,6 +3,7 @@
  */
 
 @interface NPTunnel : NSObject {
+    NSPAppRule * _appRule;
     NSPConnectionInfo * _connectionInfo;
     NSDate * _connectionStartDate;
     <NPTunnelDelegate> * _delegate;
@@ -11,14 +12,12 @@
     BOOL  _persistMetrics;
     NSObject<OS_dispatch_queue> * _queue;
     NetworkServiceProxyConnectionStats * _stats;
-    NSNumber * _telemetryRatio;
-    NSString * _telemetryService;
-    NSURL * _telemetryURL;
     double  _timeIntervalSinceLastUsage;
     double  _timeToFirstByte;
     double  _timeToFirstRequest;
 }
 
+@property (retain) NSPAppRule *appRule;
 @property (readonly) BOOL canHandleMoreData;
 @property (retain) NSPConnectionInfo *connectionInfo;
 @property (retain) NSDate *connectionStartDate;
@@ -30,9 +29,6 @@
 @property BOOL persistMetrics;
 @property (readonly) NSObject<OS_dispatch_queue> *queue;
 @property (retain) NetworkServiceProxyConnectionStats *stats;
-@property (retain) NSNumber *telemetryRatio;
-@property (retain) NSString *telemetryService;
-@property (retain) NSURL *telemetryURL;
 @property (readonly) double timeIntervalSinceLastUsage;
 @property double timeToFirstByte;
 @property double timeToFirstRequest;
@@ -41,21 +37,26 @@
 - (void)acknowledgeData:(unsigned int)arg1 sentToFlow:(id)arg2;
 - (BOOL)addNewFlow:(id)arg1;
 - (unsigned long long)allocateFlowID;
+- (id)appRule;
 - (BOOL)canHandleMoreData;
 - (void)closeFlow:(id)arg1 withError:(id)arg2;
 - (id)connectionInfo;
 - (id)connectionStartDate;
 - (id)createConnectionInfo;
+- (id)createConnectionInfoIfNotCancelled;
 - (id)delegate;
 - (id)directConnectionHostForFlow:(id)arg1;
 - (id)directConnectionPortForFlow:(id)arg1;
+- (BOOL)flowIsFirstFlow:(id)arg1;
 - (id)flows;
 - (void)handleCanHandleMoreData;
+- (void)handleConnectedNotifyDelegate:(BOOL)arg1;
 - (void)handleDisconnected;
 - (void)handleFallbackForFlow:(id)arg1;
 - (id)handleFlowClosed:(unsigned long long)arg1 withError:(id)arg2;
 - (id)handleFlowClosed:(unsigned long long)arg1 withFallbackReason:(int)arg2 withFrameError:(unsigned int)arg3;
 - (void)handleFlowUsedTunnel;
+- (BOOL)hasFlow:(unsigned long long)arg1;
 - (void)increaseWindowSizeForFlow:(unsigned long long)arg1 byBytes:(unsigned int)arg2;
 - (id)initWithDelegate:(id)arg1;
 - (unsigned int)initialWindowSize;
@@ -68,6 +69,7 @@
 - (void)removeFlow:(unsigned long long)arg1;
 - (int)sendData:(id)arg1 forFlow:(id)arg2 packetsSent:(int*)arg3;
 - (void)sendData:(id)arg1 toClientFlow:(unsigned long long)arg2;
+- (void)setAppRule:(id)arg1;
 - (void)setConnectionInfo:(id)arg1;
 - (void)setConnectionStartDate:(id)arg1;
 - (void)setFlowFallbackReason:(int)arg1;
@@ -75,17 +77,11 @@
 - (void)setIsViable:(BOOL)arg1;
 - (void)setPersistMetrics:(BOOL)arg1;
 - (void)setStats:(id)arg1;
-- (void)setTelemetryRatio:(id)arg1;
-- (void)setTelemetryService:(id)arg1;
-- (void)setTelemetryURL:(id)arg1;
 - (void)setTimeToFirstByte:(double)arg1;
 - (void)setTimeToFirstRequest:(double)arg1;
 - (BOOL)shouldTunnelFlow:(id)arg1;
 - (void)start;
 - (id)stats;
-- (id)telemetryRatio;
-- (id)telemetryService;
-- (id)telemetryURL;
 - (double)timeIntervalSinceLastUsage;
 - (double)timeToFirstByte;
 - (double)timeToFirstRequest;

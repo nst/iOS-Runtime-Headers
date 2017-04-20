@@ -4,6 +4,7 @@
 
 @interface FCFeedDatabase : NSObject <FCOperationThrottlerDelegate> {
     NSMutableDictionary * _cachedFeedsByID;
+    int  _endpoint;
     NSEntityDescription * _feedEntity;
     NSEntityDescription * _feedItemEntity;
     NSEntityDescription * _feedItemIndexEntity;
@@ -19,6 +20,7 @@
 @property (nonatomic, retain) NSMutableDictionary *cachedFeedsByID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) int endpoint;
 @property (nonatomic, retain) NSEntityDescription *feedEntity;
 @property (nonatomic, retain) NSEntityDescription *feedItemEntity;
 @property (nonatomic, retain) NSEntityDescription *feedItemIndexEntity;
@@ -32,6 +34,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic) int usage;
 
++ (unsigned short)currentFeedDatabaseVersion;
 + (void)initialize;
 + (id)temporaryFeedDatabase;
 
@@ -43,11 +46,12 @@
 - (id)_shortCircuitLookup:(id)arg1 withFeed:(id)arg2;
 - (id)cachedFeedsByID;
 - (void)d_sanityCheckFeed:(id)arg1;
+- (int)endpoint;
 - (id)feedEntity;
 - (id)feedItemEntity;
 - (id)feedItemIndexEntity;
 - (id)feedSegmentEntity;
-- (id)initWithParentDirectoryURL:(id)arg1 usage:(int)arg2;
+- (id)initWithParentDirectoryURL:(id)arg1 usage:(int)arg2 endpoint:(int)arg3;
 - (id)managedObjectContext;
 - (id)modifiedFeedIDs;
 - (int)nextFeedLookupID;

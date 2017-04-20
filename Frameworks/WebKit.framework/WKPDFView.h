@@ -65,10 +65,14 @@
         void *m_ptr; 
     }  _pdfDocument;
     struct InteractionInformationAtPosition { 
-        struct IntPoint { 
-            int m_x; 
-            int m_y; 
-        } point; 
+        struct InteractionInformationRequest { 
+            struct IntPoint { 
+                int m_x; 
+                int m_y; 
+            } point; 
+            bool includeSnapshot; 
+            bool includeLinkIndicator; 
+        } request; 
         bool nodeAtPositionIsAssistedNode; 
         bool isSelectable; 
         bool isNearMarkedText; 
@@ -226,7 +230,7 @@
 - (void)didMoveToWindow;
 - (BOOL)isBackground;
 - (struct CGPDFDocument { }*)pdfDocument;
-- (const struct InteractionInformationAtPosition { struct IntPoint { int x_1_1_1; int x_1_1_2; } x1; bool x2; bool x3; bool x4; bool x5; bool x6; bool x7; bool x8; bool x9; bool x10; bool x11; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_12_1_1; } x12; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_13_1_1; } x13; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_14_1_1; } x14; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_15_1_1; } x15; struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_16_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_16_1_2; } x16; struct RefPtr<WebKit::ShareableBitmap> { struct ShareableBitmap {} *x_17_1_1; } x17; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_18_1_1; } x18; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_19_1_1; } x19; struct TextIndicatorData { struct FloatRect { struct FloatPoint { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct FloatSize { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_20_1_1; struct FloatRect { struct FloatPoint { float x_1_3_1; float x_1_3_2; } x_2_2_1; struct FloatSize { float x_2_3_1; float x_2_3_2; } x_2_2_2; } x_20_1_2; struct Vector<WebCore::FloatRect, 0, WTF::CrashOnOverflow, 16> { struct FloatRect {} *x_3_2_1; unsigned int x_3_2_2; unsigned int x_3_2_3; } x_20_1_3; float x_20_1_4; struct RefPtr<WebCore::Image> { struct Image {} *x_5_2_1; } x_20_1_5; struct RefPtr<WebCore::Image> { struct Image {} *x_6_2_1; } x_20_1_6; int x_20_1_7; unsigned char x_20_1_8; } x20; }*)positionInformationForActionSheetAssistant:(id)arg1;
+- (const struct InteractionInformationAtPosition { struct InteractionInformationRequest { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_1_1_1; bool x_1_1_2; bool x_1_1_3; } x1; bool x2; bool x3; bool x4; bool x5; bool x6; bool x7; bool x8; bool x9; bool x10; bool x11; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_12_1_1; } x12; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_13_1_1; } x13; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_14_1_1; } x14; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_15_1_1; } x15; struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_16_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_16_1_2; } x16; struct RefPtr<WebKit::ShareableBitmap> { struct ShareableBitmap {} *x_17_1_1; } x17; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_18_1_1; } x18; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_19_1_1; } x19; }*)positionInformationForActionSheetAssistant:(id)arg1;
 - (void)resetZoom:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (id)suggestedFilename;

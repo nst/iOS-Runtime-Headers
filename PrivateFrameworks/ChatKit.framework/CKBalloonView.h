@@ -3,6 +3,7 @@
  */
 
 @interface CKBalloonView : CKBalloonImageView <CKInvisibleInkEffectHostView, UIGestureRecognizerDelegate> {
+    BOOL  _animationPaused;
     CABackdropLayer * _backdropFilterLayer;
     unsigned int  _balloonCorners;
     BOOL  _balloonShape;
@@ -32,6 +33,7 @@
     BOOL  _wantsSkinnyMask;
 }
 
+@property (nonatomic) BOOL animationPaused;
 @property (nonatomic, retain) CABackdropLayer *backdropFilterLayer;
 @property (nonatomic) unsigned int balloonCorners;
 @property (nonatomic) struct CKBalloonDescriptor_t { BOOL x1; BOOL x2; BOOL x3; BOOL x4; unsigned int x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; } balloonDescriptor;
@@ -68,6 +70,7 @@
 - (void).cxx_destruct;
 - (void)_dismissOverlay;
 - (void)addFilter:(id)arg1;
+- (BOOL)animationPaused;
 - (void)attachInvisibleInkEffectView;
 - (id)backdropFilterLayer;
 - (unsigned int)balloonCorners;
@@ -113,6 +116,7 @@
 - (void)prepareForDisplay;
 - (void)prepareForDisplayIfNeeded;
 - (void)prepareForReuse;
+- (void)setAnimationPaused:(BOOL)arg1;
 - (void)setBackdropFilterLayer:(id)arg1;
 - (void)setBalloonCorners:(unsigned int)arg1;
 - (void)setBalloonDescriptor:(struct CKBalloonDescriptor_t { BOOL x1; BOOL x2; BOOL x3; BOOL x4; unsigned int x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; })arg1;

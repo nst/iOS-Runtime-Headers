@@ -9,6 +9,8 @@
     int  _articleType;
     NSData * _articleViewingSessionId;
     int  _backendArticleVersion;
+    int  _countOfImagesExposed;
+    int  _countOfImagesInGallery;
     int  _feedCellSection;
     NSString * _feedId;
     int  _feedType;
@@ -18,6 +20,8 @@
         unsigned int personalizationTreatmentId : 1; 
         unsigned int articleType : 1; 
         unsigned int backendArticleVersion : 1; 
+        unsigned int countOfImagesExposed : 1; 
+        unsigned int countOfImagesInGallery : 1; 
         unsigned int feedCellSection : 1; 
         unsigned int feedType : 1; 
         unsigned int galleryType : 1; 
@@ -52,6 +56,8 @@
 @property (nonatomic) int articleType;
 @property (nonatomic, retain) NSData *articleViewingSessionId;
 @property (nonatomic) int backendArticleVersion;
+@property (nonatomic) int countOfImagesExposed;
+@property (nonatomic) int countOfImagesInGallery;
 @property (nonatomic) int feedCellSection;
 @property (nonatomic, retain) NSString *feedId;
 @property (nonatomic) int feedType;
@@ -63,6 +69,8 @@
 @property (nonatomic) BOOL hasArticleType;
 @property (nonatomic, readonly) BOOL hasArticleViewingSessionId;
 @property (nonatomic) BOOL hasBackendArticleVersion;
+@property (nonatomic) BOOL hasCountOfImagesExposed;
+@property (nonatomic) BOOL hasCountOfImagesInGallery;
 @property (nonatomic) BOOL hasFeedCellSection;
 @property (nonatomic, readonly) BOOL hasFeedId;
 @property (nonatomic) BOOL hasFeedType;
@@ -116,6 +124,8 @@
 - (int)backendArticleVersion;
 - (void)clearNamedEntities;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (int)countOfImagesExposed;
+- (int)countOfImagesInGallery;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)feedCellSection;
@@ -132,6 +142,8 @@
 - (BOOL)hasArticleType;
 - (BOOL)hasArticleViewingSessionId;
 - (BOOL)hasBackendArticleVersion;
+- (BOOL)hasCountOfImagesExposed;
+- (BOOL)hasCountOfImagesInGallery;
 - (BOOL)hasFeedCellSection;
 - (BOOL)hasFeedId;
 - (BOOL)hasFeedType;
@@ -175,6 +187,8 @@
 - (void)setArticleType:(int)arg1;
 - (void)setArticleViewingSessionId:(id)arg1;
 - (void)setBackendArticleVersion:(int)arg1;
+- (void)setCountOfImagesExposed:(int)arg1;
+- (void)setCountOfImagesInGallery:(int)arg1;
 - (void)setFeedCellSection:(int)arg1;
 - (void)setFeedId:(id)arg1;
 - (void)setFeedType:(int)arg1;
@@ -183,6 +197,8 @@
 - (void)setHasAdSupportedChannel:(BOOL)arg1;
 - (void)setHasArticleType:(BOOL)arg1;
 - (void)setHasBackendArticleVersion:(BOOL)arg1;
+- (void)setHasCountOfImagesExposed:(BOOL)arg1;
+- (void)setHasCountOfImagesInGallery:(BOOL)arg1;
 - (void)setHasFeedCellSection:(BOOL)arg1;
 - (void)setHasFeedType:(BOOL)arg1;
 - (void)setHasGalleryType:(BOOL)arg1;

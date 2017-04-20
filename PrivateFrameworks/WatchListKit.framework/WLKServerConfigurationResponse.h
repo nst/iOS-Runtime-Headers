@@ -3,7 +3,6 @@
  */
 
 @interface WLKServerConfigurationResponse : NSObject {
-    NSDictionary * _channelsByID;
     NSDictionary * _dictionary;
     NSDictionary * _endpointsDictionary;
     unsigned int  _expirationInSeconds;
@@ -12,7 +11,6 @@
     NSDictionary * _serverRoutesDictionary;
 }
 
-@property (nonatomic, readonly, copy) NSDictionary *channelsByID;
 @property (nonatomic, readonly) NSDictionary *dictionary;
 @property (nonatomic, readonly) NSDictionary *endpointsDictionary;
 @property (nonatomic, readonly) unsigned int expirationInSeconds;
@@ -21,7 +19,6 @@
 @property (nonatomic, readonly) NSDictionary *serverRoutesDictionary;
 
 - (void).cxx_destruct;
-- (id)channelsByID;
 - (id)dictionary;
 - (id)endpointsDictionary;
 - (unsigned int)expirationInSeconds;

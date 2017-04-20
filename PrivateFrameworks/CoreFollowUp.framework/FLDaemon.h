@@ -16,5 +16,6 @@
 - (id)init;
 - (void)invalidateConnection;
 - (id)remoteObjectInterface;
+- (id)synchronousDaemonWithErrorHandler:(id /* block */)arg1;
 
 @end

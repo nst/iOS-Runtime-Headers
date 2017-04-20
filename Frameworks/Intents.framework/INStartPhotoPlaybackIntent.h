@@ -25,20 +25,26 @@
 - (id)albumName;
 - (id)dateCreated;
 - (id)description;
+- (id)domain;
 - (unsigned int)excludedAttributes;
 - (unsigned int)includedAttributes;
 - (id)initWithDateCreated:(id)arg1 locationCreated:(id)arg2 albumName:(id)arg3 searchTerms:(id)arg4 includedAttributes:(unsigned int)arg5 excludedAttributes:(unsigned int)arg6 peopleInPhoto:(id)arg7;
 - (id)locationCreated;
+- (id)parametersByName;
 - (id)peopleInPhoto;
 - (int)peopleInPhotoOperator;
 - (id)searchTerms;
 - (int)searchTermsOperator;
 - (void)setAlbumName:(id)arg1;
 - (void)setDateCreated:(id)arg1;
+- (void)setDomain:(id)arg1;
 - (void)setExcludedAttributes:(unsigned int)arg1;
 - (void)setIncludedAttributes:(unsigned int)arg1;
 - (void)setLocationCreated:(id)arg1;
+- (void)setParametersByName:(id)arg1;
 - (void)setPeopleInPhoto:(id)arg1;
 - (void)setSearchTerms:(id)arg1;
+- (void)setVerb:(id)arg1;
+- (id)verb;
 
 @end

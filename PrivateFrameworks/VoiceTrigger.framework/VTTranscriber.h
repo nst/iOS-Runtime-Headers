@@ -4,6 +4,7 @@
 
 @interface VTTranscriber : NSObject <_EARSpeechRecognitionResultStream> {
     id /* block */  _callback;
+    BOOL  _isTriggerFollowedByWords;
     NSMutableArray * _previousUtteranceTokens;
     NSObject<OS_dispatch_queue> * _queue;
     _EARSpeechRecognizer * _recognizer;
@@ -15,6 +16,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (readonly) BOOL isTriggerFollowedByWords;
 @property (readonly) Class superclass;
 @property (readonly) double triggerConfidence;
 
@@ -22,6 +24,7 @@
 - (double)_getConfidence:(id)arg1;
 - (void)endAudio;
 - (id)initWithConfiguration:(id)arg1 triggerTokens:(id)arg2;
+- (BOOL)isTriggerFollowedByWords;
 - (void)recognizeWavData:(const short*)arg1 length:(int)arg2;
 - (id)recognizedTokens;
 - (void)reset;

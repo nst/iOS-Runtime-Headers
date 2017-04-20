@@ -8,6 +8,7 @@
     NSString * _serverHeader;
     NSString * _supportedCalendarComponentSets;
     BOOL  _supportsAutoSchedule;
+    BOOL  _supportsCalendarAudit;
     BOOL  _supportsCalendarHomeSync;
     BOOL  _supportsCalendarNoTimezone;
     BOOL  _supportsCalendarProxy;
@@ -37,6 +38,7 @@
 @property (nonatomic, copy) NSString *serverHeader;
 @property (nonatomic, copy) NSString *supportedCalendarComponentSets;
 @property (nonatomic) BOOL supportsAutoSchedule;
+@property (nonatomic) BOOL supportsCalendarAudit;
 @property (nonatomic) BOOL supportsCalendarHomeSync;
 @property (nonatomic) BOOL supportsCalendarNoTimezone;
 @property (nonatomic) BOOL supportsCalendarProxy;
@@ -84,6 +86,7 @@
 - (void)setServerHeader:(id)arg1;
 - (void)setSupportedCalendarComponentSets:(id)arg1;
 - (void)setSupportsAutoSchedule:(BOOL)arg1;
+- (void)setSupportsCalendarAudit:(BOOL)arg1;
 - (void)setSupportsCalendarHomeSync:(BOOL)arg1;
 - (void)setSupportsCalendarNoTimezone:(BOOL)arg1;
 - (void)setSupportsCalendarProxy:(BOOL)arg1;
@@ -108,6 +111,7 @@
 - (void)setVersion:(double)arg1;
 - (id)supportedCalendarComponentSets;
 - (BOOL)supportsAutoSchedule;
+- (BOOL)supportsCalendarAudit;
 - (BOOL)supportsCalendarHomeSync;
 - (BOOL)supportsCalendarNoTimezone;
 - (BOOL)supportsCalendarProxy;

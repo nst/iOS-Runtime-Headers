@@ -26,7 +26,6 @@
         float bottom; 
         float right; 
     }  _contentInsets;
-    PUPhotosSectionHeaderContentView * _contentView;
     UILabel * _dateLabel;
     <PUPhotosSectionHeaderViewDelegate> * _delegate;
     UIImageView * _disclosureIconView;

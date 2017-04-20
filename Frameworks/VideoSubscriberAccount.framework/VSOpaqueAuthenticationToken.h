@@ -12,6 +12,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSDate *expirationDate;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly, copy) NSData *serializedData;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

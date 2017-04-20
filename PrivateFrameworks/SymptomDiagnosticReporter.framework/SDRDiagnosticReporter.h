@@ -20,7 +20,7 @@
 - (id)delegate;
 - (BOOL)endLogCollectionForSession:(id)arg1 signature:(id)arg2 reply:(id /* block */)arg3;
 - (BOOL)endSession:(id)arg1;
-- (BOOL)getInProgressDiagnosticDataOutputFiles:(id /* block */)arg1;
+- (BOOL)getDiagnosticPayloadsForSignatures:(id)arg1 reply:(id /* block */)arg2;
 - (id)init;
 - (id)initWithQueue:(id)arg1;
 - (BOOL)isSignatureValid:(id)arg1;

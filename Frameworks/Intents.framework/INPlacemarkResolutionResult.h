@@ -11,7 +11,6 @@
 
 + (id)confirmationRequiredWithPlacemarkToConfirm:(id)arg1;
 + (id)disambiguationWithPlacemarksToDisambiguate:(id)arg1;
-+ (id)needsMoreDetailsForPlacemark:(id)arg1;
 + (id)successWithResolvedPlacemark:(id)arg1;
 + (id)unsupportedWithReason:(unsigned int)arg1 alternativePlacemarks:(id)arg2;
 

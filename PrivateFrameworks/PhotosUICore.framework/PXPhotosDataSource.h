@@ -70,6 +70,7 @@
 @property (nonatomic, readonly) unsigned int versionIdentifier;
 
 + (id)_curationSharedBackgroundQueue;
++ (id)_emptyAssetsFetchResult;
 
 - (void).cxx_destruct;
 - (BOOL)_allSectionsConsideredAccurate;
@@ -171,6 +172,7 @@
 - (id)photoLibrary;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
 - (void)prefetchApproximateAssetsAtIndexPaths:(id)arg1;
+- (void)prefetchApproximateAssetsAtIndexPaths:(id)arg1 reverseOrder:(BOOL)arg2;
 - (void)prefetchAssetsAtIndexPaths:(id)arg1;
 - (id)prepareForPhotoLibraryChange:(id)arg1;
 - (id)referenceAsset;

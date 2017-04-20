@@ -4,6 +4,7 @@
 
 @interface HDAchievementAssetManager : NSObject <HDDatabaseProtectedDataObserver, HDHealthDaemonReadyObserver, HDNanoSyncManagerObserver> {
     NSHashTable * _assetObservers;
+    NSObject<OS_dispatch_queue> * _observerQueue;
     HDProfile * _profile;
     NSObject<OS_dispatch_queue> * _queue;
     NSNumber * _waitingToRun;

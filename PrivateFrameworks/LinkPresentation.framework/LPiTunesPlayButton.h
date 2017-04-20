@@ -17,8 +17,9 @@
 - (void)buttonPressed:(id)arg1;
 - (struct _MRSystemAppPlaybackQueue { }*)createPlaybackQueue;
 - (void)didMoveToWindow;
-- (id)initWithPlaybackInformation:(id)arg1;
+- (id)initWithPlaybackInformation:(id)arg1 style:(id)arg2;
 - (BOOL)matchesNowPlayingItem;
+- (id)mediaPlaybackApplicationID;
 - (void)nowPlayingController:(id)arg1 elapsedTimeDidChange:(double)arg2;
 - (void)nowPlayingController:(id)arg1 nowPlayingInfoDidChange:(id)arg2;
 - (void)nowPlayingController:(id)arg1 playbackStateDidChange:(BOOL)arg2;

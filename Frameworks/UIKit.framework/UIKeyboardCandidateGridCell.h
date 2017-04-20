@@ -18,6 +18,7 @@
     BOOL  _dummy;
     unsigned int  _edges;
     BOOL  _emphasizedAppearance;
+    BOOL  _facemarkCategoryAppearance;
     float  _minimumWidth;
     BOOL  _needsUpdateLabels;
     float  _rightPadding;
@@ -64,6 +65,7 @@
 @property (nonatomic) BOOL dummy;
 @property (nonatomic) unsigned int edges;
 @property (nonatomic) BOOL emphasizedAppearance;
+@property (nonatomic) BOOL facemarkCategoryAppearance;
 @property (nonatomic) float minimumWidth;
 @property (nonatomic) BOOL needsUpdateLabels;
 @property (nonatomic) float rightPadding;
@@ -84,6 +86,7 @@
 + (struct CGColor { }*)legacy_outlineShadowColorForVisualStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1 candidatesVisualStyle:(int)arg2;
 + (id)reuseIdentifier;
 + (float)rightPaddingForIndex;
++ (BOOL)shouldShowImageForGroupTitle:(id)arg1;
 + (struct CGSize { float x1; float x2; })sizeForGroupHeader:(id)arg1 visualStyle:(int)arg2;
 + (float)widthForCandidate:(id)arg1 candidateNumber:(unsigned int)arg2 visualStyle:(int)arg3;
 
@@ -104,6 +107,7 @@
 - (BOOL)dummy;
 - (unsigned int)edges;
 - (BOOL)emphasizedAppearance;
+- (BOOL)facemarkCategoryAppearance;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (float)minimumWidth;
@@ -125,6 +129,7 @@
 - (void)setDummy:(BOOL)arg1;
 - (void)setEdges:(unsigned int)arg1;
 - (void)setEmphasizedAppearance:(BOOL)arg1;
+- (void)setFacemarkCategoryAppearance:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setMinimumWidth:(float)arg1;
 - (void)setNeedsUpdateLabels:(BOOL)arg1;

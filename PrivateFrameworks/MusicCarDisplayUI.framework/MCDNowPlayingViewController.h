@@ -3,7 +3,8 @@
  */
 
 @interface MCDNowPlayingViewController : UIViewController {
-    UILabel * _albumArtistLabel;
+    MCDLabelButton * _albumArtistLabelButton;
+    NSLayoutConstraint * _artistAlbumLabelConstraint;
     UIImageView * _artworkView;
     UITapGestureRecognizer * _backPressRecognizer;
     UIFocusContainerGuide * _controlsFocusContainerGuide;
@@ -32,8 +33,10 @@
     MCDTitleView * _titleView;
     MCDTransportControlView * _transportControlView;
     UIViewController * _transportViewController;
+    BOOL  _viewHasShifted;
 }
 
+@property (nonatomic, retain) NSLayoutConstraint *artistAlbumLabelConstraint;
 @property (nonatomic, readonly) UIImageView *artworkView;
 @property (nonatomic, readonly) UITapGestureRecognizer *backPressRecognizer;
 @property (nonatomic, retain) UIFocusContainerGuide *controlsFocusContainerGuide;
@@ -79,6 +82,8 @@
 - (void)_updateRepeatStateWithType:(int)arg1;
 - (void)_updateShuffleStateWithType:(int)arg1;
 - (void)_updateTransportControl:(id)arg1 withDefaultImage:(id)arg2 actionType:(int)arg3;
+- (void)albumArtistButtonTapped:(id)arg1;
+- (id)artistAlbumLabelConstraint;
 - (id)artworkView;
 - (id)backPressRecognizer;
 - (id)controlsFocusContainerGuide;
@@ -103,6 +108,7 @@
 - (void)reloadData;
 - (id)rightNudgeLongPressRecognizer;
 - (id)rightNudgePressRecognizer;
+- (void)setArtistAlbumLabelConstraint:(id)arg1;
 - (void)setControlsFocusContainerGuide:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;

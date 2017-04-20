@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TextureIO.framework/TextureIO
  */
 
-@interface TXRParserImageIO : TXRParserBase <TXRParser> {
+@interface TXRParserImageIO : NSObject <TXRParser> {
     TXRImageInfo * _imageInfo;
     TXRTextureInfo * _textureInfo;
 }
@@ -17,6 +17,8 @@
 + (id)decodeCGImageNonIndexed:(struct CGImage { }*)arg1 desiredPixelFormat:(unsigned int)arg2 bufferAllocator:(id)arg3 options:(id)arg4 error:(id*)arg5;
 + (int)determineColorSpaceClass:(struct CGImage { }*)arg1 displayGamut:(unsigned int)arg2 options:(id)arg3;
 + (BOOL)exportImage:(id)arg1 url:(id)arg2 uttype:(struct __CFString { }*)arg3 error:(id*)arg4;
++ (BOOL)exportTexture:(id)arg1 url:(id)arg2 error:(id*)arg3;
++ (BOOL)handlesData:(id)arg1;
 
 - (void).cxx_destruct;
 - (BOOL)parseData:(id)arg1 bufferAllocator:(id)arg2 options:(id)arg3 error:(id*)arg4;

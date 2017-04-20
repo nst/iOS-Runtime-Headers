@@ -11,6 +11,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) SAUILocalImageResource *localImageResource;
+@property (nonatomic, copy) NSString *position;
 @property (readonly) Class superclass;
 
 + (id)buttonItem;
@@ -22,9 +23,11 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)localImageResource;
+- (id)position;
 - (void)setAction:(id)arg1;
 - (void)setCentered:(BOOL)arg1;
 - (void)setDecoratedLabel:(id)arg1;
 - (void)setLocalImageResource:(id)arg1;
+- (void)setPosition:(id)arg1;
 
 @end

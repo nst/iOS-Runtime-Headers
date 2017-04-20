@@ -3,7 +3,10 @@
  */
 
 @interface NTPBSearchExecute : PBCodable <NSCopying> {
+    NSString * _campaignId;
+    NSString * _campaignType;
     NSMutableArray * _channelResultFeedIds;
+    NSString * _creativeId;
     struct { 
         unsigned int searchExecutionMethod : 1; 
         unsigned int searchLocation : 1; 
@@ -18,7 +21,13 @@
     int  _totalResults;
 }
 
+@property (nonatomic, retain) NSString *campaignId;
+@property (nonatomic, retain) NSString *campaignType;
 @property (nonatomic, retain) NSMutableArray *channelResultFeedIds;
+@property (nonatomic, retain) NSString *creativeId;
+@property (nonatomic, readonly) BOOL hasCampaignId;
+@property (nonatomic, readonly) BOOL hasCampaignType;
+@property (nonatomic, readonly) BOOL hasCreativeId;
 @property (nonatomic) BOOL hasSearchExecutionMethod;
 @property (nonatomic) BOOL hasSearchLocation;
 @property (nonatomic, readonly) BOOL hasSearchString;
@@ -41,14 +50,20 @@
 - (int)StringAsSearchLocation:(id)arg1;
 - (void)addChannelResultFeedIds:(id)arg1;
 - (void)addTopicResultFeedIds:(id)arg1;
+- (id)campaignId;
+- (id)campaignType;
 - (id)channelResultFeedIds;
 - (id)channelResultFeedIdsAtIndex:(unsigned int)arg1;
 - (unsigned int)channelResultFeedIdsCount;
 - (void)clearChannelResultFeedIds;
 - (void)clearTopicResultFeedIds;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)creativeId;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasCampaignId;
+- (BOOL)hasCampaignType;
+- (BOOL)hasCreativeId;
 - (BOOL)hasSearchExecutionMethod;
 - (BOOL)hasSearchLocation;
 - (BOOL)hasSearchString;
@@ -64,7 +79,10 @@
 - (int)searchLocation;
 - (id)searchLocationAsString:(int)arg1;
 - (id)searchString;
+- (void)setCampaignId:(id)arg1;
+- (void)setCampaignType:(id)arg1;
 - (void)setChannelResultFeedIds:(id)arg1;
+- (void)setCreativeId:(id)arg1;
 - (void)setHasSearchExecutionMethod:(BOOL)arg1;
 - (void)setHasSearchLocation:(BOOL)arg1;
 - (void)setHasTotalResults:(BOOL)arg1;

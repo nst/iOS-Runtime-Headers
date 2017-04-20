@@ -26,6 +26,7 @@
 - (id)URLRequestProperties;
 - (id)_copyURLRequestProperties;
 - (int)_legacyAssetType;
+- (id)_localProperties;
 - (void)_resetLocalIVars;
 - (int)assetType;
 - (long long)bytesDownloaded;

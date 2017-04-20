@@ -8,12 +8,14 @@
 
 @property (nonatomic, readonly) NSArray *buttons;
 @property (nonatomic, readonly) int dialogType;
+@property (nonatomic, readonly) SKUIImageViewElement *image;
 @property (nonatomic, readonly) SKUILabelViewElement *message;
 @property (nonatomic, readonly) SKUILabelViewElement *title;
 
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)buttons;
 - (int)dialogType;
+- (id)image;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (id)message;
 - (id)title;

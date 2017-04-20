@@ -73,12 +73,12 @@
 - (void)_queue_cancelAllExecutingFetches;
 - (void)_queue_clearChangeTokenCacheAndFriendListWithCompletion:(id /* block */)arg1;
 - (void)_queue_fetchAllChangesWithPriority:(int)arg1;
-- (BOOL)_queue_isCloudKitAccountDifferentFromLastAccount;
+- (BOOL)_queue_isLastCloudKitAddressDifferentFromNewCloudKitAddress:(id)arg1;
 - (void)_queue_notifyObserversOfStatusChanged;
 - (void)_queue_pushEnable;
-- (void)_queue_saveCloudKitAccountToKeyValueStore;
 - (void)_queue_setHasCompletedFirstFetch:(BOOL)arg1;
 - (void)_queue_startFetchAllChangesOperationWithPriority:(int)arg1 completion:(id /* block */)arg2;
+- (void)_saveCloudKitAddressToKeyValueStore;
 - (void)_saveSubscriptions:(id)arg1 andDeleteSubscriptionsWithIdentifiers:(id)arg2 inDatabase:(id)arg3 completion:(id /* block */)arg4;
 - (void)_subscribeToChangesInDatabase:(id)arg1 subscriptionPrefix:(id)arg2 recordTypes:(id)arg3 recordTypesToDelete:(id)arg4 completion:(id /* block */)arg5;
 - (void)_subscribeToChangesInPrivateDatabaseWithCompletion:(id /* block */)arg1;
@@ -87,7 +87,6 @@
 - (void)acceptSharesWithURLs:(id)arg1 completion:(id /* block */)arg2;
 - (void)addObserver:(id)arg1;
 - (void)addParticipantWithCloudKitAddress:(id)arg1 toShares:(id)arg2 completion:(id /* block */)arg3;
-- (void)cloudKitAccountStatusWithCompletion:(id /* block */)arg1;
 - (id)cloudKitUtility;
 - (void)connection:(id)arg1 didReceiveIncomingMessage:(id)arg2;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
@@ -100,6 +99,8 @@
 - (void)fetchAllChangesWithPriority:(int)arg1 completion:(id /* block */)arg2;
 - (void)fetchAllChangesWithPriority:(int)arg1 waitingForSuccessfulFetchCompletion:(id /* block */)arg2;
 - (void)fetchAndHandleAccountStatus;
+- (void)fetchCloudKitAccountStatusWithCompletion:(id /* block */)arg1;
+- (void)fetchCloudKitAddressWithCompletion:(id /* block */)arg1;
 - (void)fetchOrCreateActivityDataShareWithCompletion:(id /* block */)arg1;
 - (void)fetchShareWithShareRecordID:(id)arg1 completion:(id /* block */)arg2;
 - (void)fitnessFriendsManagerReady:(id)arg1;

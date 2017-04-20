@@ -27,6 +27,7 @@
     BOOL  _faceDetectionEnabled;
     BOOL  _faceDetectionMetadataRequested;
     BOOL  _flashEnabled;
+    NSDictionary * _focusPositionToLensMakersPFLLinearFit;
     NSDictionary * _geometricDistortionCoefficients;
     BOOL  _grabNextFrame;
     float  _gravityFactor;
@@ -81,6 +82,7 @@
 @property (nonatomic) BOOL defersFaceDetectionStartup;
 @property (nonatomic) <BWFigVideoCaptureStreamDelegate> *delegate;
 @property (nonatomic) BOOL enablesSphereWhenAvailable;
+@property (readonly) NSDictionary *focusPositionToLensMakersPFLLinearFit;
 @property (readonly) NSDictionary *geometricDistortionCoefficients;
 @property (readonly) float gravityFactor;
 @property (readonly) BOOL hasSphere;
@@ -139,6 +141,7 @@
 - (void)enableFaceDetectionForAutoFocus;
 - (BOOL)enablesSphereWhenAvailable;
 - (void)failedToCaptureStillImageFromFirmwareWithError:(long)arg1;
+- (id)focusPositionToLensMakersPFLLinearFit;
 - (id)geometricDistortionCoefficients;
 - (float)gravityFactor;
 - (BOOL)hasSphere;

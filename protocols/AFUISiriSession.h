@@ -13,6 +13,7 @@
 - (void)performAceCommand:(AceObject<SAAceCommand> *)arg1;
 - (void)performAceCommand:(void *)arg1 conflictHandler:(void *)arg2; // needs 2 arg types, found 6: AceObject<SAAceCommand> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)preheat;
+- (void)recordMetricsContext:(NSString *)arg1 forDisambiguatedAppWIthBundleIdentifier:(NSString *)arg2;
 - (void)recordRequestMetricEvent:(NSString *)arg1 withTimestamp:(double)arg2;
 - (void)recordUIMetrics:(AFMetrics *)arg1;
 - (void)requestDidPresentViewForErrorCommand:(SABaseClientBoundCommand *)arg1;

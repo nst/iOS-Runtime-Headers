@@ -11,6 +11,7 @@
     NSArray * _allSystemCodes;
     NSData * _tagID;
     unsigned int  _technology;
+    unsigned int  _type;
 }
 
 @property (nonatomic, readonly) NSData *AppData;
@@ -21,6 +22,7 @@
 @property (nonatomic, readonly) NSArray *allSystemCodes;
 @property (nonatomic, readonly) NSData *tagID;
 @property (nonatomic, readonly) unsigned int technology;
+@property (nonatomic, readonly) unsigned int type;
 
 + (BOOL)supportsSecureCoding;
 
@@ -36,6 +38,7 @@
 - (void)_setSystemCode:(id)arg1;
 - (void)_setSystemCodes:(id)arg1;
 - (void)_setTechnology:(unsigned int)arg1;
+- (void)_setType:(unsigned int)arg1;
 - (void)_setUID:(id)arg1;
 - (id)allSystemCodes;
 - (void)dealloc;
@@ -45,5 +48,6 @@
 - (id)initWithCoder:(id)arg1;
 - (id)tagID;
 - (unsigned int)technology;
+- (unsigned int)type;
 
 @end

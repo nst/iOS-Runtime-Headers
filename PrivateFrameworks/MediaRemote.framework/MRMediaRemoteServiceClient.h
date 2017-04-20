@@ -5,7 +5,6 @@
 @interface MRMediaRemoteServiceClient : NSObject {
     NSArray * _externalScreenTypeNotificationObservers;
     NSArray * _nowPlayingNotificationObservers;
-    void * _nowPlayingPlaybackQueueContext;
     NSArray * _originNotificationObservers;
     BOOL  _receivesExternalScreenTypeChangedNotifications;
     BOOL  _receivesOriginChangedNotifications;
@@ -27,7 +26,6 @@
 
 @property (nonatomic, retain) NSArray *externalScreenTypeNotificationObservers;
 @property (nonatomic, retain) NSArray *nowPlayingNotificationObservers;
-@property (getter=copyNowPlayingPlaybackQueueContext, nonatomic) void*nowPlayingPlaybackQueueContext;
 @property (nonatomic, retain) NSArray *originNotificationObservers;
 @property (nonatomic) BOOL receivesExternalScreenTypeChangedNotifications;
 @property (nonatomic) BOOL receivesOriginChangedNotifications;
@@ -44,7 +42,6 @@
 
 + (id)sharedServiceClient;
 
-- (void*)copyNowPlayingPlaybackQueueContext;
 - (void)dealloc;
 - (id)externalScreenTypeNotificationObservers;
 - (void)fetchPickableRoutesWithCategory:(id)arg1 completion:(id /* block */)arg2;
@@ -67,7 +64,6 @@
 - (id)serviceQueue;
 - (void)setExternalScreenTypeNotificationObservers:(id)arg1;
 - (void)setNowPlayingNotificationObservers:(id)arg1;
-- (void)setNowPlayingPlaybackQueueContext:(void*)arg1;
 - (void)setOriginNotificationObservers:(id)arg1;
 - (void)setReceivesExternalScreenTypeChangedNotifications:(BOOL)arg1;
 - (void)setReceivesOriginChangedNotifications:(BOOL)arg1;

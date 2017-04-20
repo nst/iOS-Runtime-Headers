@@ -79,6 +79,7 @@
 - (void)connectPlayer;
 - (int)currentIndex;
 - (id)currentItem;
+- (id)currentQueueUUID;
 - (void)dealloc;
 - (id)delegate;
 - (void)disconnectPlayer;
@@ -94,6 +95,7 @@
 - (id)itemForPlaylistIndex:(int)arg1;
 - (BOOL)limitsBandwidthForCellularAccess;
 - (id)metadataItemForPlaylistIndex:(int)arg1;
+- (id)musicPlayerControllerQueueForUUID:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (int)playbackMode;
 - (id)player;
@@ -118,11 +120,13 @@
 - (void)reloadItemsKeepingCurrentItem:(BOOL)arg1;
 - (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(id /* block */)arg2;
 - (int)repeatMode;
+- (void)requestMusicPlayerControllerQueueWithCompletionHandler:(id /* block */)arg1;
 - (void)setAudioSessionModeOverride:(id)arg1;
 - (void)setAvController:(id)arg1;
 - (void)setCurrentIndex:(int)arg1 selectionDirection:(int)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setLimitsBandwidthForCellularAccess:(BOOL)arg1;
+- (BOOL)setMusicPlayerControllerQueue:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (BOOL)setPlaylistFeeder:(id)arg1 startIndex:(int)arg2 keepPlaying:(BOOL)arg3;
 - (void)setRepeatMode:(int)arg1;
 - (void)updateForSoundCheckDefaultsChange;

@@ -39,6 +39,8 @@
 - (id)currentSectionIdentifiers;
 - (id)initWithDelegate:(id)arg1 shouldGroupByRoom:(BOOL)arg2 itemProvidersCreator:(id /* block */)arg3;
 - (id)initWithDelegate:(id)arg1 shouldGroupByRoom:(BOOL)arg2 shouldShowSectionHeaders:(BOOL)arg3 itemProvidersCreator:(id /* block */)arg4;
+- (id)initWithDelegate:(id)arg1 sourceItem:(id)arg2;
+- (id)initWithDelegate:(id)arg1 sourceItem:(id)arg2 shouldGroupByRoom:(BOOL)arg3 shouldShowSectionHeaders:(BOOL)arg4 itemProvidersCreator:(id /* block */)arg5;
 - (id)itemProviders;
 - (id /* block */)itemProvidersCreator;
 - (void)setCachedSortedRoomIdentifiers:(id)arg1;

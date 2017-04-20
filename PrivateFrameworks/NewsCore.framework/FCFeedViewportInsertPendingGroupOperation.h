@@ -12,6 +12,7 @@
     NSString * _resultDeletedElementID;
     FCFeedGroup * _resultInsertedGroup;
     FCFeedRefreshSession * _resultRefreshSession;
+    NSArray * _resultUpdatedRefreshSessions;
 }
 
 @property (nonatomic, retain) FCCloudContext *context;

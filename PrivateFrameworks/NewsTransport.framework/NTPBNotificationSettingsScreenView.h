@@ -3,24 +3,43 @@
  */
 
 @interface NTPBNotificationSettingsScreenView : PBCodable <NSCopying> {
+    NSString * _campaignId;
+    NSString * _campaignType;
+    NSString * _creativeId;
     struct { 
         unsigned int notificationSettingsScreenViewPresentationReason : 1; 
     }  _has;
     int  _notificationSettingsScreenViewPresentationReason;
 }
 
+@property (nonatomic, retain) NSString *campaignId;
+@property (nonatomic, retain) NSString *campaignType;
+@property (nonatomic, retain) NSString *creativeId;
+@property (nonatomic, readonly) BOOL hasCampaignId;
+@property (nonatomic, readonly) BOOL hasCampaignType;
+@property (nonatomic, readonly) BOOL hasCreativeId;
 @property (nonatomic) BOOL hasNotificationSettingsScreenViewPresentationReason;
 @property (nonatomic) int notificationSettingsScreenViewPresentationReason;
 
+- (void).cxx_destruct;
+- (id)campaignId;
+- (id)campaignType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)creativeId;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasCampaignId;
+- (BOOL)hasCampaignType;
+- (BOOL)hasCreativeId;
 - (BOOL)hasNotificationSettingsScreenViewPresentationReason;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)notificationSettingsScreenViewPresentationReason;
 - (BOOL)readFrom:(id)arg1;
+- (void)setCampaignId:(id)arg1;
+- (void)setCampaignType:(id)arg1;
+- (void)setCreativeId:(id)arg1;
 - (void)setHasNotificationSettingsScreenViewPresentationReason:(BOOL)arg1;
 - (void)setNotificationSettingsScreenViewPresentationReason:(int)arg1;
 - (void)writeTo:(id)arg1;

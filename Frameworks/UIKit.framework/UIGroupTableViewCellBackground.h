@@ -9,6 +9,7 @@
         unsigned int selected : 1; 
     }  _groupBackgroundFlags;
     int  _newSectionLocation;
+    int  _renderingMode;
     float  _sectionBorderWidth;
     int  _sectionLocation;
     int  _selectionStyle;
@@ -23,6 +24,7 @@
     UIView * _topSeparatorView;
 }
 
+@property (getter=_renderingMode, setter=_setRenderingMode:, nonatomic) int renderingMode;
 @property (nonatomic) float sectionBorderWidth;
 @property (nonatomic) int sectionLocation;
 @property (getter=isSelected, nonatomic) BOOL selected;
@@ -51,10 +53,12 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_modernResizableContentsCenter;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_modernResizableContentsRect;
 - (float)_pixelDisplayedImageHeight;
+- (int)_renderingMode;
 - (id)_roundedRectBezierPathInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withSectionLocation:(int)arg2 forBorder:(BOOL)arg3 cornerRadiusAdjustment:(float)arg4;
 - (id)_sectionBorderColor;
 - (float)_sectionCornerRadius;
 - (id)_separatorColor;
+- (void)_setRenderingMode:(int)arg1;
 - (void)_setSectionLocationAnimationDidStop;
 - (id)_topShadowColor;
 - (id)_topShadowViewWithColor:(id)arg1;

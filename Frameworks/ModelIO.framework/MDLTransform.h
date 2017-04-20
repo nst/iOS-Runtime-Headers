@@ -52,6 +52,7 @@
 - (void)setLocalTransform:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })arg1;
 - (void)setLocalTransform:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })arg1 forTime:(double)arg2;
 - (void)setMatrix:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })arg1;
+- (void)setMatrix:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })arg1 forTime:(double)arg2;
 - (void)setResetsTransform:(BOOL)arg1;
 - (void)setRotation;
 - (void)setRotation:(void *)arg1 forTime:(void *)arg2; // needs 2 arg types, found 1: double

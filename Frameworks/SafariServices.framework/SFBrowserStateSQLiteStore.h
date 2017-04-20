@@ -4,6 +4,7 @@
 
 @interface SFBrowserStateSQLiteStore : NSObject {
     NSMutableDictionary * _browserWindowDatabaseIDs;
+    WBSSQLiteStatement * _cachedTabDeleteStatement;
     WBSSQLiteDatabase * _database;
     NSObject<OS_dispatch_queue> * _databaseQueue;
     NSURL * _databaseURL;
@@ -15,6 +16,7 @@
 - (BOOL)_checkDatabaseIntegrity;
 - (void)_closeDatabase;
 - (int)_createFreshDatabaseSchema;
+- (int)_createTableForTabs;
 - (int)_databaseIDForBrowserWindow:(id)arg1;
 - (void)_insertTabStateWithData:(id)arg1;
 - (BOOL)_isDatabaseOpen;
@@ -23,6 +25,7 @@
 - (void)_migrateFromLegacyPlistWithPath:(id)arg1;
 - (int)_migrateToCurrentSchemaVersionIfNeeded;
 - (int)_migrateToSchemaVersion_2;
+- (int)_migrateToSchemaVersion_3;
 - (void)_openDatabaseAndCheckIntegrity:(BOOL)arg1;
 - (id)_readSavedSessionStateDataForTabWithUUID:(id)arg1;
 - (void)_readTabStatesWithBrowserWindowUUID:(id)arg1 completion:(id /* block */)arg2;

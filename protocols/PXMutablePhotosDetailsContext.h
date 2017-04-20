@@ -19,7 +19,9 @@
 - (void)setPeople:(PHFetchResult *)arg1;
 - (void)setShouldShowMovieHeader:(BOOL)arg1;
 - (void)setTitleFontName:(NSString *)arg1;
+- (void)setViewSourceOrigin:(unsigned int)arg1;
 - (BOOL)shouldShowMovieHeader;
 - (NSString *)titleFontName;
+- (unsigned int)viewSourceOrigin;
 
 @end

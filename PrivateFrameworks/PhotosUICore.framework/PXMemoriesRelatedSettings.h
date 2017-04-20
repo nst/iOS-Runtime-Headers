@@ -4,7 +4,6 @@
 
 @interface PXMemoriesRelatedSettings : PXSettings {
     unsigned int  _deleteBehavior;
-    BOOL  _enableFeedbackBannerUI;
     BOOL  _enableFeedbackComboUI;
     BOOL  _enableFeedbackUI;
     BOOL  _enableMemoryBlurryHeader;
@@ -17,7 +16,6 @@
 }
 
 @property (nonatomic) unsigned int deleteBehavior;
-@property (nonatomic) BOOL enableFeedbackBannerUI;
 @property (nonatomic) BOOL enableFeedbackComboUI;
 @property (nonatomic) BOOL enableFeedbackUI;
 @property (nonatomic) BOOL enableMemoryBlurryHeader;
@@ -33,7 +31,6 @@
 + (id)sharedInstance;
 
 - (unsigned int)deleteBehavior;
-- (BOOL)enableFeedbackBannerUI;
 - (BOOL)enableFeedbackComboUI;
 - (BOOL)enableFeedbackUI;
 - (BOOL)enableMemoryBlurryHeader;
@@ -45,7 +42,6 @@
 - (double)refreshPhotoKitTimeout;
 - (void)setDefaultValues;
 - (void)setDeleteBehavior:(unsigned int)arg1;
-- (void)setEnableFeedbackBannerUI:(BOOL)arg1;
 - (void)setEnableFeedbackComboUI:(BOOL)arg1;
 - (void)setEnableFeedbackUI:(BOOL)arg1;
 - (void)setEnableMemoryBlurryHeader:(BOOL)arg1;

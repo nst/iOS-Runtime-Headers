@@ -4,8 +4,11 @@
 
 @interface SSMetricsEventTable : SSEventsTableBase
 
++ (id)_eventsTableName;
 + (id)databasePath;
 
+- (BOOL)_migrateToVersion1;
+- (BOOL)_migrateToVersion2;
 - (BOOL)_setupDatabase;
 
 @end

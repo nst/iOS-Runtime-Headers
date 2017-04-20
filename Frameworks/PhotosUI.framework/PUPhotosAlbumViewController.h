@@ -73,6 +73,7 @@
 - (void)updateLayoutMetrics;
 - (BOOL)updateSpec;
 - (void)updateTitle;
+- (unsigned int)userEventSourceType;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;

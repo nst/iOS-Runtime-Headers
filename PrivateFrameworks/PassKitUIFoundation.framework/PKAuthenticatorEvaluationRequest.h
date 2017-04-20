@@ -5,6 +5,7 @@
 @interface PKAuthenticatorEvaluationRequest : NSObject {
     NSNumber * _PINLength;
     NSString * _PINTitle;
+    PKPaymentInstructions * _instructions;
     int  _policy;
     NSNumber * _processIdentifier;
     NSString * _processName;
@@ -13,6 +14,7 @@
 
 @property (nonatomic, copy) NSNumber *PINLength;
 @property (nonatomic, copy) NSString *PINTitle;
+@property (nonatomic, retain) PKPaymentInstructions *instructions;
 @property (nonatomic, readonly) int policy;
 @property (nonatomic, copy) NSNumber *processIdentifier;
 @property (nonatomic, copy) NSString *processName;
@@ -24,10 +26,12 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithPolicy:(int)arg1;
+- (id)instructions;
 - (int)policy;
 - (id)processIdentifier;
 - (id)processName;
 - (id)reason;
+- (void)setInstructions:(id)arg1;
 - (void)setPINLength:(id)arg1;
 - (void)setPINTitle:(id)arg1;
 - (void)setProcessIdentifier:(id)arg1;

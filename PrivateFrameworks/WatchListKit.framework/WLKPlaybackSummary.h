@@ -10,7 +10,6 @@
     NSNumber * _duration;
     NSNumber * _elapsedTime;
     NSString * _externalProfileID;
-    BOOL  _isItunes;
     NSNumber * _playbackRate;
     int  _playbackState;
     NSDate * _timestamp;
@@ -23,7 +22,6 @@
 @property (nonatomic, readonly) NSNumber *duration;
 @property (nonatomic, readonly) NSNumber *elapsedTime;
 @property (nonatomic, readonly) NSString *externalProfileID;
-@property (nonatomic, readonly) BOOL isItunes;
 @property (nonatomic, readonly) NSNumber *playbackRate;
 @property (nonatomic, readonly) int playbackState;
 @property (nonatomic, readonly) NSDate *timestamp;
@@ -46,12 +44,11 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)externalProfileID;
 - (unsigned int)hash;
-- (id)initWithBundleId:(id)arg1 timestamp:(id)arg2 duration:(id)arg3 elapsedTime:(id)arg4 externalProfileID:(id)arg5 contentID:(id)arg6 isItunes:(BOOL)arg7 accountID:(id)arg8 playbackState:(int)arg9 playbackRate:(id)arg10 completionState:(int)arg11;
+- (id)initWithBundleId:(id)arg1 timestamp:(id)arg2 duration:(id)arg3 elapsedTime:(id)arg4 externalProfileID:(id)arg5 contentID:(id)arg6 accountID:(id)arg7 playbackState:(int)arg8 playbackRate:(id)arg9 completionState:(int)arg10;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMediaRemoteDictionary:(id)arg1 bundleID:(id)arg2 accountID:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToSummary:(id)arg1;
-- (BOOL)isItunes;
 - (id)playbackRate;
 - (int)playbackState;
 - (id)timestamp;

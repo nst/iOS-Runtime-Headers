@@ -24,7 +24,7 @@
 - (int)_cacheVersion;
 - (void)_createConnectionIfNecessary;
 - (void)_idleIfNecessary:(BOOL)arg1;
-- (struct _img { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned char x5; unsigned char x6[4]; })_imgForItem:(id)arg1;
+- (struct _img { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned char x5; unsigned char x6[4]; })_imgForItem:(id)arg1;
 - (void)_localStoreImageForKey:(id)arg1 inGroup:(id)arg2 withItem:(id)arg3;
 - (void)_remoteStoreImageForKey:(id)arg1 inGroup:(id)arg2 withItem:(id)arg3;
 - (void)_setCacheVersion:(int)arg1;
@@ -34,7 +34,6 @@
 - (int)cacheVersion;
 - (struct CGImage { }*)copyImageForKey:(id)arg1 inGroup:(id)arg2;
 - (void)dealloc;
-- (BOOL)findImageWithKey:(id)arg1 inGroup:(id)arg2 andInfo:(struct _img { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned char x5; unsigned char x6[4]; }*)arg3;
 - (void)idleAfter:(double)arg1;
 - (unsigned int)imageCount;
 - (BOOL)imageExistsForKey:(id)arg1 inGroup:(id)arg2;
@@ -42,7 +41,7 @@
 - (id)initWithLocalAccess:(BOOL)arg1;
 - (BOOL)lockOnRead;
 - (unsigned int)memContentOffset;
-- (void*)openAndMmap:(id)arg1 withInfo:(struct _img { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned char x5; unsigned char x6[4]; }*)arg2;
+- (void*)openAndMmap:(id)arg1 withInfo:(struct _img { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned char x5; unsigned char x6[4]; }*)arg2;
 - (void)purge;
 - (void)removeImagesInGroups:(id)arg1 completion:(id /* block */)arg2;
 - (void)setCacheItemLimit:(unsigned int)arg1;

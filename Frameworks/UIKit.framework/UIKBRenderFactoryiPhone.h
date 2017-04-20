@@ -29,6 +29,7 @@
 - (id)globalEmojiKeyImageName;
 - (id)globalKeyImageName;
 - (float)hintNoneKeyFontSize;
+- (BOOL)iPadFudgeLayout;
 - (struct CGPoint { float x1; float x2; })internationalKeyOffset;
 - (BOOL)isTallPopup;
 - (struct CGPoint { float x1; float x2; })leftArrowKeyOffset;

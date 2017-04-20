@@ -40,9 +40,13 @@
 @property (nonatomic, retain) _INPBStringList *searchTerm;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 + (id)options;
 
 - (void).cxx_destruct;
+- (int)StringAsExcludedAttributes:(id)arg1;
+- (int)StringAsIncludedAttributes:(id)arg1;
 - (void)addExcludedAttribute:(int)arg1;
 - (void)addIncludedAttribute:(int)arg1;
 - (id)albumName;
@@ -55,6 +59,7 @@
 - (id)dictionaryRepresentation;
 - (int)excludedAttributeAtIndex:(unsigned int)arg1;
 - (int*)excludedAttributes;
+- (id)excludedAttributesAsString:(int)arg1;
 - (unsigned int)excludedAttributesCount;
 - (BOOL)hasAlbumName;
 - (BOOL)hasDateCreated;
@@ -65,6 +70,7 @@
 - (unsigned int)hash;
 - (int)includedAttributeAtIndex:(unsigned int)arg1;
 - (int*)includedAttributes;
+- (id)includedAttributesAsString:(int)arg1;
 - (unsigned int)includedAttributesCount;
 - (id)intentMetadata;
 - (BOOL)isEqual:(id)arg1;
@@ -83,5 +89,11 @@
 - (void)setSearchTerm:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

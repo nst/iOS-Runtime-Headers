@@ -13,6 +13,7 @@
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithDatesByAppleID:(id)arg1;
 - (id)lastLoginDatesByAppleID;
 - (void)setLastLoginDatesByAppleID:(id)arg1;
 

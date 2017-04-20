@@ -11,6 +11,7 @@
     NSMutableDictionary * _iworkRenamedShareIDsToNames;
     NSMutableArray * _iworkUnsharedShareIDs;
     NSMutableArray * _packagesInFlight;
+    NSMutableDictionary * _pluginFieldsForRecordDeletesByID;
     NSMutableDictionary * _recordIDsToDeleteToEtags;
     NSMutableArray * _recordsNeedingNewSharingProtectionInfo;
     NSMutableArray * _recordsNeedingUpdatedSharingProtectionInfo;
@@ -32,6 +33,7 @@
 @property (nonatomic, retain) NSMutableDictionary *iworkRenamedShareIDsToNames;
 @property (nonatomic, retain) NSMutableArray *iworkUnsharedShareIDs;
 @property (nonatomic, retain) NSMutableArray *packagesInFlight;
+@property (nonatomic, retain) NSMutableDictionary *pluginFieldsForRecordDeletesByID;
 @property (nonatomic, retain) NSMutableDictionary *recordIDsToDeleteToEtags;
 @property (nonatomic, retain) NSMutableArray *recordsNeedingNewSharingProtectionInfo;
 @property (nonatomic, retain) NSMutableArray *recordsNeedingUpdatedSharingProtectionInfo;
@@ -64,6 +66,7 @@
 - (void)main;
 - (id)packagesInFlight;
 - (void)performShareUpdate:(id /* block */)arg1;
+- (id)pluginFieldsForRecordDeletesByID;
 - (BOOL)prepareWithMaxCost:(float)arg1 retryAfter:(unsigned long long*)arg2;
 - (id)recordIDsToDeleteToEtags;
 - (id)recordsNeedingNewSharingProtectionInfo;
@@ -76,6 +79,7 @@
 - (void)setIworkRenamedShareIDsToNames:(id)arg1;
 - (void)setIworkUnsharedShareIDs:(id)arg1;
 - (void)setPackagesInFlight:(id)arg1;
+- (void)setPluginFieldsForRecordDeletesByID:(id)arg1;
 - (void)setRecordIDsToDeleteToEtags:(id)arg1;
 - (void)setRecordsNeedingNewSharingProtectionInfo:(id)arg1;
 - (void)setRecordsNeedingUpdatedSharingProtectionInfo:(id)arg1;

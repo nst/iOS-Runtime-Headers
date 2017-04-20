@@ -46,6 +46,7 @@
 @property (nonatomic) unsigned int playCountSinceSync;
 @property (getter=wlk_playState, nonatomic, readonly, copy) NSString *playState;
 @property (nonatomic, readonly) double playbackDuration;
+@property (nonatomic, readonly) NSString *playbackStoreID;
 @property (nonatomic, readonly) unsigned long long podcastPersistentID;
 @property (nonatomic, readonly) NSString *podcastTitle;
 @property (getter=hasProtectedAsset, nonatomic, readonly) BOOL protectedAsset;
@@ -145,6 +146,7 @@
 - (unsigned int)playCount;
 - (unsigned int)playCountSinceSync;
 - (double)playbackDuration;
+- (id)playbackStoreID;
 - (unsigned long long)podcastPersistentID;
 - (id)podcastTitle;
 - (void)populateLocationPropertiesWithPath:(id)arg1;
@@ -175,6 +177,11 @@
 - (id)valuesForProperties:(id)arg1;
 - (unsigned int)year;
 
+// Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
+
++ (id)playingInfoFromAsset:(id)arg1 withDefaultTitle:(id)arg2;
++ (id)playingInfoFromAsset:(id)arg1 withDefaultTitle:(id)arg2 playbackDuration:(double)arg3 elapsedTime:(double)arg4;
+
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
 
 + (id)customPropertyHandlersCollection;
@@ -198,7 +205,6 @@
 
 // Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
 
-- (id)SAMPMediaItemRepresentation;
 - (id)albumImageWithFallbackForSize:(struct CGSize { float x1; float x2; })arg1 doubleLineRow:(BOOL)arg2;
 
 // Image: /System/Library/PrivateFrameworks/WatchListKitUI.framework/WatchListKitUI

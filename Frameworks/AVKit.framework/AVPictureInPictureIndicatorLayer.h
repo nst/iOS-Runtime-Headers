@@ -3,10 +3,38 @@
  */
 
 @interface AVPictureInPictureIndicatorLayer : CALayer {
+    NSAttributedString * _attributedText;
     CALayer * _containerLayer;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    }  _containerLayerUncompressedBounds;
+    CALayer * _imageLayer;
+    CATextLayer * _textLayer;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    }  _textLayerUncompressedBounds;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    }  _textLayerUncompressedPosition;
 }
 
 - (void).cxx_destruct;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_textBoundsForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)init;
 - (id)initWithTraitCollection:(id)arg1 opaque:(BOOL)arg2;
 - (void)layoutSublayers;

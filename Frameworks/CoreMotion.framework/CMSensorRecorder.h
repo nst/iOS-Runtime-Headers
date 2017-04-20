@@ -26,6 +26,6 @@
 - (BOOL)setAccelSampleRate:(unsigned int)arg1;
 - (BOOL)setGyroSampleRate:(unsigned int)arg1;
 - (BOOL)setSensorSampleRate:(unsigned int)arg1 forType:(int)arg2;
-- (BOOL)validateTimesFromDate:(id)arg1 toDate:(id)arg2;
+- (BOOL)validateTimesFromDate:(id*)arg1 toDate:(id)arg2;
 
 @end

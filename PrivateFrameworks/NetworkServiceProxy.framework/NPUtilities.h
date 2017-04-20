@@ -7,6 +7,7 @@
 + (id)connectionInfoToDict:(id)arg1 dictionary:(id)arg2;
 + (id)copyCurrentNetworkCharacteristicsForPath:(id)arg1;
 + (id)copyDataFromKeychainWithIdentifier:(id)arg1 accountName:(id)arg2;
++ (id)copyItemIdentifiersFromKeychainWithAccountName:(id)arg1;
 + (id)createConnectionInfoFromConnection:(id)arg1;
 + (id)endpointFromString:(id)arg1 defaultPortString:(id)arg2;
 + (id)getInterfaceTypeString:(int)arg1;
@@ -19,6 +20,8 @@
 + (BOOL)printDictionaryAsJson:(id)arg1 debugName:(id)arg2;
 + (int)protocolTypeFromPath:(id)arg1 endpoint:(id)arg2;
 + (void)removeDataFromKeychainWithIdentifier:(id)arg1;
++ (BOOL)rollDiceWithSuccessRatio:(id)arg1;
 + (void)saveDataToKeychain:(id)arg1 withIdentifier:(id)arg2 accountName:(id)arg3;
++ (id)stripWhitespace:(id)arg1;
 
 @end

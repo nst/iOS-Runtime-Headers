@@ -3,12 +3,12 @@
  */
 
 @interface CCUIControlCenterPagePlatterView : UIView <_UISettingsKeyObserver> {
-    NCMaterialView * _baseMaterialView;
+    MTMaterialView * _baseMaterialView;
     NSLayoutConstraint * _bottomMargin;
     UIView * _contentView;
     <CCUIControlCenterPagePlatterViewDelegate> * _delegate;
     NSLayoutConstraint * _leadingMargin;
-    NCMaterialSettings * _materialSettings;
+    MTMaterialSettings * _materialSettings;
     NSSet * _renderedPunchOutMasks;
     NSLayoutConstraint * _topMargin;
     NSLayoutConstraint * _trailingMargin;

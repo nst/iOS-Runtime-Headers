@@ -69,7 +69,6 @@
 @property (getter=isSponsored, nonatomic, readonly) BOOL sponsored;
 @property (nonatomic, readonly) FCTopStoriesStyleConfiguration *storyStyle;
 @property (nonatomic, readonly) unsigned int storyType;
-@property (nonatomic, readonly, copy) NSString *subtitle;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSString *surfacedByBinID;
 @property (nonatomic, readonly, copy) NSString *surfacedByChannelID;
@@ -161,7 +160,6 @@
 - (id)sourceName;
 - (id)storyStyle;
 - (unsigned int)storyType;
-- (id)subtitle;
 - (id)surfacedByBinID;
 - (id)surfacedByChannelID;
 - (id)surfacedBySectionID;

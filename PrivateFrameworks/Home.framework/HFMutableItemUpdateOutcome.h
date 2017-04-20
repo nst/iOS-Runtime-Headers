@@ -11,6 +11,8 @@
 @property (nonatomic, retain) NSDictionary *results;
 
 - (void).cxx_destruct;
+- (void)addResultsFromDictionary:(id)arg1;
+- (void)addResultsFromOutcome:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithResults:(id)arg1 type:(unsigned int)arg2;
 - (id)mutableResults;

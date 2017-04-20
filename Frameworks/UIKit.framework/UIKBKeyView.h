@@ -3,6 +3,8 @@
  */
 
 @interface UIKBKeyView : UIView <UIKBCacheableView> {
+    struct CGColor { } * _activeBackgroundColor;
+    id  _activeCompositingFilter;
     int  _cachedAnchorCorner;
     BOOL  _cachedControlKeyRenderingPreference;
     int  _cachedSelector;
@@ -13,6 +15,7 @@
     UIKeyboardMenuView * _popupMenu;
     BOOL  _renderAsMask;
     int  _renderedKeyState;
+    BOOL  _singleRerender;
     struct __CFBoolean { } * m_allowsCaching;
     struct CGRect { 
         struct CGPoint { 
@@ -74,6 +77,8 @@
 - (unsigned int)cachedShiftState;
 - (id)cachedTraitsHashString;
 - (float)cachedWidth;
+- (void)changeBackgroundToActiveIfNecessary;
+- (void)changeBackgroundToEnabled;
 - (id)contentsKeyView;
 - (void)dealloc;
 - (int)didInputSubTree:(id)arg1;

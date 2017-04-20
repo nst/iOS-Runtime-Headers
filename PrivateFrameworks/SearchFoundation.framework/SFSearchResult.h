@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFSearchResult : NSObject <NSCopying, NSSecureCoding, SFSearchResult, WBSCompletionListItem> {
+@interface SFSearchResult : NSObject <NSCopying, NSSecureCoding, SFProtobufObject, SFSearchResult, WBSCompletionListItem> {
     SFActionItem * _action;
     NSString * _applicationBundleIdentifier;
     NSString * _auxiliaryBottomText;
@@ -127,6 +127,7 @@
 @property (nonatomic) double personalizationScore;
 @property (nonatomic) unsigned int placement;
 @property (nonatomic) BOOL preventThumbnailImageScaling;
+@property (nonatomic, readonly) PBCodable *protobufMessage;
 @property (nonatomic) BOOL publiclyIndexable;
 @property (nonatomic, copy) NSString *publishDate;
 @property (nonatomic, retain) SFPunchout *punchout;
@@ -313,8 +314,11 @@
 
 // Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
 
++ (Class)protobufClass;
+
 - (id)domainFeature:(id)arg1;
 - (id)mediaTypeFeature:(id)arg1;
+- (id)protobufMessage;
 - (id)topicFeatures:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
@@ -327,6 +331,7 @@
 
 // Image: /System/Library/PrivateFrameworks/Search.framework/Search
 
+- (BOOL)collectAnonymousFeatures;
 - (id)objectForFeedback;
 - (void)setPropertiesOnResultCopy:(id)arg1;
 

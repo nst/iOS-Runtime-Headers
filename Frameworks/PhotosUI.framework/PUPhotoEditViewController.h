@@ -210,6 +210,7 @@
 - (id)_photoEditModel;
 - (void)_photoEditModelDidChange:(id)arg1;
 - (void)_presentErrorAndDismissEditorWithTitle:(id)arg1 message:(id)arg2;
+- (void)_presentErrorAndDismissEditorWithTitle:(id)arg1 message:(id)arg2 additionalAction:(id)arg3;
 - (void)_presentWarningForIrisRemovesEditsWithCompletion:(id /* block */)arg1;
 - (int)_previewRenderType;
 - (id)_previewingOriginalRenderer;
@@ -303,6 +304,7 @@
 - (int)_workImageVersion;
 - (void)dealloc;
 - (void)didFinishWithAsset:(id)arg1 savedChanges:(BOOL)arg2;
+- (void)didFinishWithChanges:(BOOL)arg1;
 - (void)editLivePhotoControllerIsRenderingDidChange:(id)arg1;
 - (void)editLivePhotoControllerRenderedLivePhotoDidChange:(id)arg1;
 - (void)editLivePhotoControllerRenderingProgressDidChange:(id)arg1;

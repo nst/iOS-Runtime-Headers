@@ -3,11 +3,13 @@
  */
 
 @interface SFSearchResult_SpotlightExtras : SFSearchResult <NSSecureCoding> {
+    double  _categoryProbabilityUsed;
+    BOOL  _collectAnonymousFeatures;
     NSString * _contentURL;
     BOOL  _coreSpotlightSourced;
     NSNumber * _documentIdentifier;
     NSMutableArray * _duplicatedItems;
-    NSDictionary * _featuresSet;
+    PRSFeatureVector * _featureVector;
     NSNumber * _fileIdentifier;
     NSString * _filename;
     BOOL  _isParsecResult;
@@ -17,20 +19,23 @@
     NSNumber * _parentFileIdentifier;
     NSString * _protectionClass;
     NSString * _queryString;
-    unsigned long long  _rank;
+    double  _rank;
     PRSRankingProperties * _rankingProperties;
     unsigned long long  _score;
+    NSDictionary * _searchThroughCEPData;
     unsigned long long  _topHitScore;
     NSData * _userActivityData;
     NSString * _userActivitySecondaryString;
     NSString * _userActivityType;
 }
 
+@property (nonatomic) double categoryProbabilityUsed;
+@property (nonatomic) BOOL collectAnonymousFeatures;
 @property (nonatomic, retain) NSString *contentURL;
 @property (nonatomic) BOOL coreSpotlightSourced;
 @property (nonatomic, retain) NSNumber *documentIdentifier;
 @property (nonatomic, retain) NSMutableArray *duplicatedItems;
-@property (nonatomic, retain) NSDictionary *featuresSet;
+@property (nonatomic, retain) PRSFeatureVector *featureVector;
 @property (nonatomic, retain) NSNumber *fileIdentifier;
 @property (nonatomic, retain) NSString *filename;
 @property (nonatomic) BOOL isParsecResult;
@@ -40,9 +45,10 @@
 @property (nonatomic, retain) NSNumber *parentFileIdentifier;
 @property (nonatomic, retain) NSString *protectionClass;
 @property (nonatomic, retain) NSString *queryString;
-@property (nonatomic) unsigned long long rank;
+@property (nonatomic) double rank;
 @property (nonatomic, retain) PRSRankingProperties *rankingProperties;
 @property (nonatomic) unsigned long long score;
+@property (nonatomic, retain) NSDictionary *searchThroughCEPData;
 @property (nonatomic) unsigned long long topHitScore;
 @property (nonatomic, retain) NSData *userActivityData;
 @property (nonatomic, retain) NSString *userActivitySecondaryString;
@@ -51,14 +57,18 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (double)categoryProbabilityUsed;
+- (BOOL)collectAnonymousFeatures;
 - (id)contentURL;
 - (BOOL)coreSpotlightSourced;
+- (id)debugDescription;
 - (id)documentIdentifier;
 - (id)duplicatedItems;
 - (void)encodeWithCoder:(id)arg1;
-- (id)featuresSet;
+- (id)featureVector;
 - (id)fileIdentifier;
 - (id)filename;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isParsecResult;
 - (id)launchDates;
@@ -68,14 +78,17 @@
 - (id)parentFileIdentifier;
 - (id)protectionClass;
 - (id)queryString;
-- (unsigned long long)rank;
+- (double)rank;
 - (id)rankingProperties;
 - (unsigned long long)score;
+- (id)searchThroughCEPData;
+- (void)setCategoryProbabilityUsed:(double)arg1;
+- (void)setCollectAnonymousFeatures:(BOOL)arg1;
 - (void)setContentURL:(id)arg1;
 - (void)setCoreSpotlightSourced:(BOOL)arg1;
 - (void)setDocumentIdentifier:(id)arg1;
 - (void)setDuplicatedItems:(id)arg1;
-- (void)setFeaturesSet:(id)arg1;
+- (void)setFeatureVector:(id)arg1;
 - (void)setFileIdentifier:(id)arg1;
 - (void)setFilename:(id)arg1;
 - (void)setIsParsecResult:(BOOL)arg1;
@@ -85,9 +98,10 @@
 - (void)setParentFileIdentifier:(id)arg1;
 - (void)setProtectionClass:(id)arg1;
 - (void)setQueryString:(id)arg1;
-- (void)setRank:(unsigned long long)arg1;
+- (void)setRank:(double)arg1;
 - (void)setRankingProperties:(id)arg1;
 - (void)setScore:(unsigned long long)arg1;
+- (void)setSearchThroughCEPData:(id)arg1;
 - (void)setTopHitScore:(unsigned long long)arg1;
 - (void)setUrl:(id)arg1;
 - (void)setUserActivityData:(id)arg1;

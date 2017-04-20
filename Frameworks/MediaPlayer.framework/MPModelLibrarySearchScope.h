@@ -3,19 +3,17 @@
  */
 
 @interface MPModelLibrarySearchScope : NSObject <NSCopying, NSSecureCoding> {
-    unsigned int  _contentTypes;
     struct shared_ptr<mlcore::LocalizedSearchScope> { 
         struct LocalizedSearchScope {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
     }  _coreScope;
-    Class  _itemClass;
+    MPModelKind * _itemKind;
     MPPropertySet * _itemProperties;
     NSString * _name;
 }
 
-@property (nonatomic, readonly) unsigned int contentTypes;
 @property (nonatomic, readonly) struct shared_ptr<mlcore::LocalizedSearchScope> { struct LocalizedSearchScope {} *x1; struct __shared_weak_count {} *x2; } coreScope;
-@property (nonatomic, readonly) Class itemClass;
+@property (nonatomic, retain) MPModelKind *itemKind;
 @property (nonatomic, readonly, copy) MPPropertySet *itemProperties;
 @property (nonatomic, readonly, copy) NSString *name;
 
@@ -23,15 +21,15 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (unsigned int)contentTypes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct shared_ptr<mlcore::LocalizedSearchScope> { struct LocalizedSearchScope {} *x1; struct __shared_weak_count {} *x2; })coreScope;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithItemClass:(Class)arg1 contentTypes:(unsigned int)arg2 name:(id)arg3 properties:(id)arg4;
-- (Class)itemClass;
+- (id)initWithItemKind:(id)arg1 name:(id)arg2 properties:(id)arg3;
+- (id)itemKind;
 - (id)itemProperties;
 - (id)name;
+- (void)setItemKind:(id)arg1;
 
 @end

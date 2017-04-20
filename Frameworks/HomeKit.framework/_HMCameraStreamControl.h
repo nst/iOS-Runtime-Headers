@@ -23,7 +23,7 @@
 - (void)_handleVideoStreamStopped:(id)arg1;
 - (void)_registerNotificationHandlers;
 - (void)_resetState:(id)arg1;
-- (void)_startStream;
+- (void)_startStreamWithPraeferences:(id)arg1;
 - (void)_stopStream;
 - (id)cameraStream;
 - (void)dealloc;
@@ -34,7 +34,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setStreamSessionID:(id)arg1;
 - (void)setStreamState:(unsigned int)arg1;
-- (void)startStream;
+- (void)startStreamWithPreferences:(id)arg1;
 - (void)stopStream;
 - (id)streamSessionID;
 - (unsigned int)streamState;

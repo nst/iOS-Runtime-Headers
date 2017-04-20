@@ -187,6 +187,7 @@
 + (void)updateAlbumKeyAssetsInContext:(id)arg1 withPredicate:(id)arg2;
 + (void)updateAssetPlayShareViewCountsInContext:(id)arg1;
 + (void)updateICloudPhotosMarkerForEnable:(BOOL)arg1;
++ (void)updateUnverifiedFaceCountThreshold;
 + (id)videosPath;
 
 - (void).cxx_destruct;
@@ -194,6 +195,7 @@
 - (void)_batchDeleteAssets:(id)arg1 inManagedObjectContext:(id)arg2 withReason:(id)arg3;
 - (void)_calculatePendingItemCountsAfterOTARestoreWithMangedObjectContext:(id)arg1;
 - (BOOL)_checkMomentAnalysisCompletion;
+- (void)_deleteEmptyImportAlbumsWithAddedAlbums:(id)arg1;
 - (void)_deleteObsoleteMetadataFiles;
 - (void)_enumerateFilesAtURL:(id)arg1 withBlock:(id /* block */)arg2;
 - (void)_enumerateFilesAtURLs:(id)arg1 withBlock:(id /* block */)arg2;
@@ -204,13 +206,16 @@
 - (BOOL)_hasIncompleteAsset;
 - (BOOL)_hasPendingAssetsIgnoreiTunes:(BOOL)arg1;
 - (id)_init;
+- (BOOL)_isOTARestoreFinished;
 - (void)_linkAsideAlbumMetadataForOTARestore;
+- (void)_loadDatabase:(const char *)arg1;
 - (void)_loadFileExtensionInformation;
 - (void)_processPhotoIrisSidecarIfNecessary:(id)arg1 forAsset:(id)arg2;
 - (void)_recreateItemsFromMetadataAtDirectoryURLs:(id)arg1;
 - (void)_removeOldFaceMetadataAsync;
 - (void)_removeSyncedAlbumsInTransactionWithManagedObjectContext:(id)arg1;
 - (void)_safeSave:(id)arg1;
+- (BOOL)_shouldCreateDatabase;
 - (void)_updateHasAtLeastOnePhotoWithGPSWithInsertedCount:(unsigned int)arg1 deletedCount:(unsigned int)arg2 updatedAssets:(id)arg3;
 - (void)_updateWithInsertedAssetsCount:(unsigned int)arg1 deletedCount:(unsigned int)arg2 updatedAssets:(id)arg3;
 - (void)_userApplyTrashedState:(short)arg1 toAlbums:(id)arg2;
@@ -297,7 +302,6 @@
 - (id)lastImportedPhotosAlbum;
 - (id)lastImportedPhotosAlbumCreateIfNeeded:(BOOL)arg1;
 - (id)librarySizes;
-- (void)loadDatabase:(const char *)arg1;
 - (id)managedObjectContext;
 - (id)managedObjectContextStoreUUID;
 - (id)managedObjectWithObjectID:(id)arg1;

@@ -13,6 +13,7 @@
 - (unsigned int)depth;
 - (id)description;
 - (const struct MTLTextureDescriptorPrivate { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; BOOL x9; unsigned int x10; BOOL x11; BOOL x12; unsigned int x13; union { unsigned int x_14_1_1; unsigned int x_14_1_2; } x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; }*)descriptorPrivate;
+- (id)formattedDescription:(unsigned int)arg1;
 - (BOOL)framebufferOnly;
 - (unsigned int)getSwizzle;
 - (unsigned int)hash;

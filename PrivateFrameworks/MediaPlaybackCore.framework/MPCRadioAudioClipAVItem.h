@@ -10,6 +10,8 @@
 - (id)initWithAudioClip:(id)arg1;
 - (BOOL)isLikedStateEnabled;
 - (void)loadAssetAndPlayerItem;
+- (int)rtcReportingAssetType;
+- (id)rtcReportingServiceIdentifier;
 - (BOOL)supportsSkip;
 
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI

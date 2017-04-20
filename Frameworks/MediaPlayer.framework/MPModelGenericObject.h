@@ -5,33 +5,78 @@
 @interface MPModelGenericObject : MPModelObject {
     MPModelAlbum * _album;
     MPModelArtist * _artist;
+    MPModelMediaClip * _mediaClip;
+    MPModelMovie * _movie;
     MPModelPlaylist * _playlist;
+    MPModelPlaylistEntry * _playlistEntry;
+    MPModelTVSeason * _season;
+    MPModelTVShow * _show;
     MPModelSong * _song;
+    MPModelTVEpisode * _tvEpisode;
 }
 
 @property (nonatomic, retain) MPModelAlbum *album;
 @property (nonatomic, retain) MPModelArtist *artist;
+@property (nonatomic, retain) MPModelMediaClip *mediaClip;
+@property (nonatomic, retain) MPModelMovie *movie;
 @property (nonatomic, retain) MPModelPlaylist *playlist;
+@property (nonatomic, retain) MPModelPlaylistEntry *playlistEntry;
+@property (nonatomic, retain) MPModelTVSeason *season;
+@property (nonatomic, retain) MPModelTVShow *show;
 @property (nonatomic, retain) MPModelSong *song;
+@property (nonatomic, retain) MPModelTVEpisode *tvEpisode;
 
 + (id)__MPModelRelationshipGenericAlbum__PROPERTY;
 + (id)__MPModelRelationshipGenericArtist__PROPERTY;
++ (id)__MPModelRelationshipGenericMediaClip__PROPERTY;
++ (id)__MPModelRelationshipGenericMovie__PROPERTY;
++ (id)__MPModelRelationshipGenericPlaylistEntry__PROPERTY;
 + (id)__MPModelRelationshipGenericPlaylist__PROPERTY;
 + (id)__MPModelRelationshipGenericSong__PROPERTY;
++ (id)__MPModelRelationshipGenericTVEpisode__PROPERTY;
++ (id)__MPModelRelationshipGenericTVSeason__PROPERTY;
++ (id)__MPModelRelationshipGenericTVShow__PROPERTY;
 + (id)__album__KEY;
 + (id)__artist__KEY;
++ (id)__mediaClip__KEY;
++ (id)__movie__KEY;
++ (id)__playlistEntry__KEY;
 + (id)__playlist__KEY;
++ (id)__season__KEY;
++ (id)__show__KEY;
 + (id)__song__KEY;
++ (id)__tvEpisode__KEY;
++ (id)kindWithRelationshipKinds:(id)arg1;
++ (id)mqf_requiredPlaybackProperties;
++ (id)requiredStoreLibraryPersonalizationProperties;
 
 - (void).cxx_destruct;
 - (id)album;
 - (id)artist;
+- (id)identifiers;
+- (id)mediaClip;
+- (id)mediaItemPropertyValues;
+- (id)movie;
+- (id)mqf_playbackItemMetadataModelObject;
+- (id)objectWithStoreLibraryPersonalizationRelativeModelObject:(id)arg1;
+- (id)personalizationScopedPropertiesForProperties:(id)arg1;
 - (id)playlist;
+- (id)playlistEntry;
+- (id)relativeModelObjectForStoreLibraryPersonalization;
+- (id)season;
 - (void)setAlbum:(id)arg1;
 - (void)setArtist:(id)arg1;
+- (void)setMediaClip:(id)arg1;
+- (void)setMovie:(id)arg1;
 - (void)setPlaylist:(id)arg1;
+- (void)setPlaylistEntry:(id)arg1;
+- (void)setSeason:(id)arg1;
+- (void)setShow:(id)arg1;
 - (void)setSong:(id)arg1;
+- (void)setTvEpisode:(id)arg1;
+- (id)show;
 - (id)song;
+- (id)tvEpisode;
 - (int)type;
 
 @end

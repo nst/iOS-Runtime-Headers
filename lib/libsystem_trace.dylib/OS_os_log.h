@@ -7,7 +7,5 @@
 + (void)load;
 
 - (void)_dispose;
-- (id)description;
-- (id)init;
 
 @end

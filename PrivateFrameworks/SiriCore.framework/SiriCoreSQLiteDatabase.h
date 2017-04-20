@@ -3,6 +3,7 @@
  */
 
 @interface SiriCoreSQLiteDatabase : NSObject {
+    NSCache * _cachedSQLiteStatementsByQueryString;
     int  _dataProtectionClass;
     struct sqlite3 { } * _handle;
     int  _options;
@@ -19,7 +20,7 @@
 - (BOOL)beginTransactionWithError:(id*)arg1;
 - (BOOL)closeWithError:(id*)arg1;
 - (BOOL)commitTransactionWithError:(id*)arg1;
-- (unsigned int)countValuesInTableWithName:(id)arg1 columnName:(id)arg2 criterion:(id)arg3 range:(id)arg4 error:(id*)arg5;
+- (unsigned int)countValuesInTableWithName:(id)arg1 columnName:(id)arg2 behavior:(int)arg3 criterion:(id)arg4 range:(id)arg5 error:(id*)arg6;
 - (BOOL)createIndex:(id)arg1 error:(id*)arg2;
 - (BOOL)createTable:(id)arg1 error:(id*)arg2;
 - (int)dataProtectionClass;
@@ -43,9 +44,9 @@
 - (BOOL)rollbackToSavepointWithName:(id)arg1 error:(id*)arg2;
 - (BOOL)rollbackTransactionWithError:(id*)arg1;
 - (BOOL)savepointWithName:(id)arg1 error:(id*)arg2;
-- (id)selectValueMapsFromTableWithName:(id)arg1 columnNames:(id)arg2 criterion:(id)arg3 order:(id)arg4 range:(id)arg5 error:(id*)arg6;
-- (id)selectValueTuplesFromTableWithName:(id)arg1 columnNames:(id)arg2 criterion:(id)arg3 order:(id)arg4 range:(id)arg5 error:(id*)arg6;
-- (id)selectValuesFromTableWithName:(id)arg1 columnName:(id)arg2 criterion:(id)arg3 order:(id)arg4 range:(id)arg5 error:(id*)arg6;
+- (id)selectValueMapsFromTableWithName:(id)arg1 columnNames:(id)arg2 behavior:(int)arg3 criterion:(id)arg4 order:(id)arg5 range:(id)arg6 error:(id*)arg7;
+- (id)selectValueTuplesFromTableWithName:(id)arg1 columnNames:(id)arg2 behavior:(int)arg3 criterion:(id)arg4 order:(id)arg5 range:(id)arg6 error:(id*)arg7;
+- (id)selectValuesFromTableWithName:(id)arg1 columnName:(id)arg2 behavior:(int)arg3 criterion:(id)arg4 order:(id)arg5 range:(id)arg6 error:(id*)arg7;
 - (BOOL)updateTableWithName:(id)arg1 valueMap:(id)arg2 criterion:(id)arg3 error:(id*)arg4;
 - (BOOL)vacuumWithError:(id*)arg1;
 

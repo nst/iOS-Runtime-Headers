@@ -10,6 +10,8 @@
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSMutableArray *playerItemIdentifiers;
 
++ (Class)playerItemIdentifiersType;
+
 - (void).cxx_destruct;
 - (void)addPlayerItemIdentifiers:(id)arg1;
 - (void)clearPlayerItemIdentifiers;

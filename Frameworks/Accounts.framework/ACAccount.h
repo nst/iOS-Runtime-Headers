@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Accounts.framework/Accounts
  */
 
-@interface ACAccount : NSObject <NSCopying, NSSecureCoding> {
+@interface ACAccount : NSObject <NSCoding, NSCopying, NSSecureCoding> {
     BOOL  _accountAccessAvailable;
     NSString * _accountDescription;
     id /* block */  _accountPropertiesTransformer;
@@ -68,6 +68,7 @@
 @property (nonatomic, readonly) BOOL aa_isUsingiCloud;
 @property (setter=aa_setLastName:, nonatomic, copy) NSString *aa_lastName;
 @property (nonatomic, readonly) NSString *aa_mapsToken;
+@property (setter=aa_setMiddleName:, nonatomic, copy) NSString *aa_middleName;
 @property (nonatomic, readonly) BOOL aa_needsEmailConfiguration;
 @property (nonatomic, readonly) BOOL aa_needsRegistration;
 @property (setter=aa_setNeedsToVerifyTerms:, nonatomic) BOOL aa_needsToVerifyTerms;
@@ -135,6 +136,7 @@
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, retain) NSDate *lastCredentialRenewalRejectionDate;
 @property (nonatomic, retain) NSString *mcAccountIdentifier;
+@property (nonatomic, retain) NSString *mcConfigurationProfileIdentifier;
 @property (nonatomic, retain) NSString *mcPayloadUUID;
 @property (nonatomic, retain) NSString *mcProfileUUID;
 @property (nonatomic, readonly) NSURL *objectID;
@@ -202,6 +204,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)fullDescription;
 - (id)identifier;
+- (id)init;
 - (id)initWithAccountType:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithManagedAccount:(id)arg1;
@@ -277,6 +280,7 @@
 - (id)_aa_rawPassword;
 - (void)_aa_setAltDSID:(id)arg1;
 - (void)_aa_setAppleID:(id)arg1;
+- (void)_aa_setPrimaryEmail:(id)arg1;
 - (void)_aa_setRawPassword:(id)arg1;
 - (id)_registeredBundles;
 - (id)aa_accountFirstDisplayAlert;
@@ -311,6 +315,7 @@
 - (BOOL)aa_isUsingiCloud;
 - (id)aa_lastName;
 - (id)aa_mapsToken;
+- (id)aa_middleName;
 - (BOOL)aa_needsEmailConfiguration;
 - (BOOL)aa_needsPCSRepair;
 - (BOOL)aa_needsPCSRepairWithAuthToken:(id)arg1;
@@ -330,6 +335,7 @@
 - (void)aa_setHSAToken:(id)arg1;
 - (void)aa_setLastName:(id)arg1;
 - (void)aa_setMapsToken:(id)arg1;
+- (void)aa_setMiddleName:(id)arg1;
 - (void)aa_setNeedsToVerifyTerms:(BOOL)arg1;
 - (void)aa_setPassword:(id)arg1;
 - (void)aa_setPrimaryAccount:(BOOL)arg1;
@@ -488,10 +494,12 @@
 - (id)mcAccountIdentifier;
 - (id)mcBackingPayload;
 - (id)mcBackingProfile;
+- (id)mcConfigurationProfileIdentifier;
 - (id)mcPayloadUUID;
 - (id)mcProfileUUID;
 - (void)setCommunicationServiceRules:(id)arg1;
 - (void)setMcAccountIdentifier:(id)arg1;
+- (void)setMcConfigurationProfileIdentifier:(id)arg1;
 - (void)setMcPayloadUUID:(id)arg1;
 - (void)setMcProfileUUID:(id)arg1;
 

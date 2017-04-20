@@ -15,7 +15,7 @@
 - (unsigned int)bufferDataType;
 - (id)bufferStructType;
 - (void)dealloc;
-- (id)describe;
+- (id)formattedDescription:(unsigned int)arg1;
 - (id)initWithName:(id)arg1 type:(unsigned int)arg2 access:(unsigned int)arg3 isActive:(BOOL)arg4 locationIndex:(unsigned int)arg5 arraySize:(unsigned int)arg6 dataType:(unsigned int)arg7 dataSize:(unsigned int)arg8 alignment:(unsigned int)arg9;
 - (BOOL)isVertexDescriptorBuffer;
 - (void)setStructType:(id)arg1;

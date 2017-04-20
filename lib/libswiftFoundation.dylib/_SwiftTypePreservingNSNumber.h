@@ -4,21 +4,26 @@
 
 @interface _SwiftTypePreservingNSNumber : NSNumber {
     BOOL  storage;
-    int  tag;
+    unsigned char  tag;
 }
 
 - (BOOL)charValue;
 - (Class)classForCoder;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)copyWithZone;
 - (double)doubleValue;
 - (float)floatValue;
-- (void)getValue:(void*)arg1;
+- (void)getValue;
 - (id)init;
-- (id)initWithCoder:(id)arg1;
+- (id)initWithCoder;
 - (int)intValue;
+- (int)integerValue;
 - (long long)longLongValue;
 - (const char *)objCType;
+- (short)shortValue;
+- (unsigned char)unsignedCharValue;
 - (unsigned int)unsignedIntValue;
+- (unsigned int)unsignedIntegerValue;
 - (unsigned long long)unsignedLongLongValue;
+- (unsigned short)unsignedShortValue;
 
 @end

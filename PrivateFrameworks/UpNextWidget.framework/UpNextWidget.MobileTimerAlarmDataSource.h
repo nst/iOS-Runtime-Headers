@@ -8,6 +8,7 @@
     void callbackQueue;
     void elementsChangedBlock;
     void manager;
+    void workQueue;
 }
 
 @end

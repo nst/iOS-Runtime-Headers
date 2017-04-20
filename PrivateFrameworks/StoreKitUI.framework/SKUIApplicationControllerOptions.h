@@ -10,6 +10,7 @@
     BOOL  _requiresLocalBootstrapScript;
     BOOL  _supportsFullApplicationReload;
     int  _tabBarControllerStyle;
+    BOOL  _useTransientStorageForTests;
 }
 
 @property (getter=isBootstrapScriptFallbackEnabled, nonatomic, readonly) BOOL bootstrapScriptFallbackEnabled;
@@ -19,6 +20,7 @@
 @property (nonatomic, readonly) BOOL requiresLocalBootstrapScript;
 @property (nonatomic, readonly) BOOL supportsFullApplicationReload;
 @property (nonatomic, readonly) int tabBarControllerStyle;
+@property (nonatomic, readonly) BOOL useTransientStorageForTests;
 
 - (double)bootstrapScriptFallbackMaximumAge;
 - (double)bootstrapScriptTimeoutInterval;
@@ -32,5 +34,6 @@
 - (BOOL)requiresLocalBootstrapScript;
 - (BOOL)supportsFullApplicationReload;
 - (int)tabBarControllerStyle;
+- (BOOL)useTransientStorageForTests;
 
 @end

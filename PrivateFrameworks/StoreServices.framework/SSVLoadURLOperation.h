@@ -78,7 +78,7 @@
 - (void)_applyResponseToMetrics:(id)arg1;
 - (void)_configureWithURLBagInterpreter:(id)arg1;
 - (void)_createAuthKitSession;
-- (id)_dataForCachedResponse:(struct _CFCachedURLResponse { }*)arg1;
+- (id)_dataForCachedResponse:(const struct _CFCachedURLResponse { }*)arg1;
 - (void)_finishWithData:(id)arg1;
 - (void)_finishWithOutput:(id)arg1 error:(id)arg2;
 - (id)_initSSVLoadURLOperation;

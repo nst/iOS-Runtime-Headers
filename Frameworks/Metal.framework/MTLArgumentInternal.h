@@ -17,8 +17,8 @@
 - (unsigned int)bufferDataType;
 - (id)bufferStructType;
 - (void)dealloc;
-- (id)describe;
 - (id)description;
+- (id)formattedDescription:(unsigned int)arg1;
 - (unsigned int)index;
 - (id)initWithName:(id)arg1 type:(unsigned int)arg2 access:(unsigned int)arg3 index:(unsigned int)arg4 active:(BOOL)arg5;
 - (BOOL)isActive;

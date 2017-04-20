@@ -14,6 +14,12 @@
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
 - (id)_typedBackingStore;
 - (id)description;
+- (id)domain;
 - (id)init;
+- (id)parametersByName;
+- (void)setDomain:(id)arg1;
+- (void)setParametersByName:(id)arg1;
+- (void)setVerb:(id)arg1;
+- (id)verb;
 
 @end

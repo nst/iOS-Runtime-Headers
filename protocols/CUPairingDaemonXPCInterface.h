@@ -12,5 +12,6 @@
 - (void)removePairedPeer:(void *)arg1 options:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: CUPairedPeer *, unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)savePairedPeer:(void *)arg1 options:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: CUPairedPeer *, unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)showWithCompletion:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSString *, NSError *, void*
+- (void)startMonitoringWithOptions:(unsigned int)arg1;
 
 @end

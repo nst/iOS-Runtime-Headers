@@ -2,21 +2,41 @@
    Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
  */
 
-@interface _SFWebView : WBUFormAutoFillWebView <_SFDialogPresenting> {
+@interface _SFWebView : WKWebView <_SFDialogViewPresenting, _SFKillWebContentProcessUIActivityDelegate> {
     _SFDialogView * _dialogView;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    }  _hitTestInsets;
+    UIImageView * _placeholderView;
+    NSTimer * _placeholderViewRemovalTimer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, copy) NSString *evOrganizationName;
 @property (readonly) unsigned int hash;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } hitTestInsets;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_close;
+- (struct __SecTrust { }*)_serverTrust;
 - (void)_setObscuredInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)dismissDialogView:(id)arg1 forDialogController:(id)arg2;
+- (void)dealloc;
+- (void)dismissDialogView:(id)arg1 withAdditionalAnimations:(id /* block */)arg2 forDialogController:(id)arg3;
+- (id)evOrganizationName;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })hitTestInsets;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 configuration:(id)arg2;
 - (void)layoutSubviews;
-- (void)presentDialogView:(id)arg1 forDialogController:(id)arg2;
+- (void)presentDialogView:(id)arg1 withAdditionalAnimations:(id /* block */)arg2 forDialogController:(id)arg3;
+- (void)safariKillWebContentProcessUIActivityKillWebProcess:(id)arg1;
 - (void)setAllowsBackForwardNavigationGestures:(BOOL)arg1;
-- (int)webProcessIdentifierForDialogController:(id)arg1;
+- (void)setHitTestInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setPlaceholderImage:(id)arg1;
+- (int)webProcessIDForDialogController:(id)arg1;
 
 @end

@@ -4,6 +4,8 @@
 
 @interface BRCSystemResourcesManager : NSObject <BRReachabilityObserver> {
     NSHashTable * _appListObservers;
+    BOOL  _connectedToPowerSource;
+    NSDate * _connectedToPowerSourceCheckedDate;
     BOOL  _invalidated;
     BOOL  _isNetworkReachable;
     NSObject<OS_dispatch_source> * _isNetworkReachableTimer;
@@ -67,6 +69,7 @@
 - (void)addProcessMonitor:(id)arg1 forProcessID:(int)arg2;
 - (void)addReachabilityObserver:(id)arg1;
 - (void)close;
+- (BOOL)connectedToPowerSource;
 - (void)dealloc;
 - (BOOL)hasEnoughSpaceForDevice:(int)arg1;
 - (id)init;

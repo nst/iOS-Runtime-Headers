@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Swift/libswiftCore.dylib
  */
 
-@interface Swift._EmptyArrayStorage : Swift._ContiguousArrayStorageBase {
-    void countAndCapacity;
-}
+@interface Swift._EmptyArrayStorage : Swift._ContiguousArrayStorageBase
 
-- (id)init;
+- (long)_getNonVerbatimBridgedCount;
 - (id)initWith_doNotCallMe;
+- (id)initWith_doNotCallMeBase;
 
 @end

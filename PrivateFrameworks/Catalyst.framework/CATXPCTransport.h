@@ -17,6 +17,7 @@
 + (id)new;
 
 - (void).cxx_destruct;
+- (BOOL)boolValueForEntitlement:(id)arg1;
 - (void)dealloc;
 - (void)didInvalidate;
 - (id)init;
@@ -29,5 +30,6 @@
 - (void)suspendConnection;
 - (void)tearDownConnection;
 - (void)transportSendMessageOperation:(id)arg1 processMessage:(id)arg2;
+- (id)valueForEntitlement:(id)arg1;
 
 @end

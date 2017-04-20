@@ -121,6 +121,7 @@
 - (void)_playerItemDidReachEnd:(id)arg1;
 - (void)_presentAlertForVideoLoadFailure;
 - (void)_presentErrorAlertWithTitle:(id)arg1 message:(id)arg2;
+- (void)_presentErrorAlertWithTitle:(id)arg1 message:(id)arg2 additionalAction:(id)arg3;
 - (void)_recordAggdStatsForSave;
 - (void)_refetchPlaceholderImage;
 - (void)_revertToOriginal;

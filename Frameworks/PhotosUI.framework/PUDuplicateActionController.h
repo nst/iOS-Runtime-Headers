@@ -27,7 +27,7 @@
 @property (setter=_setProgressController:, nonatomic, retain) PUActivityProgressController *_progressController;
 @property (nonatomic, readonly) BOOL shouldUseAlertController;
 
-+ (void)_showDuplicationWasInterruptedWithItemCount:(int)arg1 completionHandler:(id /* block */)arg2;
++ (void)_presentDuplicationWasInterruptedWithItemCount:(int)arg1 hasPhotos:(BOOL)arg2 hasVideos:(BOOL)arg3;
 + (BOOL)canPerformDuplicateActionOnAssets:(id)arg1 orAssetsByAssetCollection:(id)arg2;
 
 - (void).cxx_destruct;
@@ -35,14 +35,13 @@
 - (BOOL)_canDuplicate;
 - (BOOL)_canExtractStill;
 - (void)_checkDuplicateCapabilities;
+- (void)_checkHasPhotos:(BOOL*)arg1 hasVideos:(BOOL*)arg2;
 - (BOOL)_didCheckDuplicateCapabilities;
 - (void)_downloadResourcesForDuplicateAction:(int)arg1 completionHandler:(id /* block */)arg2;
 - (id)_downloadingProgress;
 - (id)_duplicatingProgress;
 - (void)_finishedDownloadWithSuccess:(BOOL)arg1;
 - (void)_finishedDuplicationWithSuccess:(BOOL)arg1;
-- (void)_handleDownloadResourcesCompletionForRequest:(id)arg1 error:(id)arg2;
-- (void)_handleDownloadResourcesCompletionForRequest:(id)arg1 withError:(id)arg2;
 - (void)_handleOperationCompletionWithError:(id)arg1;
 - (void)_handlePhotoLibraryDuplicationCompletionWithSuccess:(BOOL)arg1 error:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_handleProgressUserCancellation;
@@ -58,6 +57,7 @@
 - (void)_setOnFinishDownloadCompletionHandler:(id /* block */)arg1;
 - (void)_setOverallProgress:(id)arg1;
 - (void)_setProgressController:(id)arg1;
+- (BOOL)_validateOriginalAssetResourcesForDuplicateAction:(int)arg1;
 - (id)alertControllerForDuplicateActionWithUserConfirmationHandler:(id /* block */)arg1;
 - (void)dealloc;
 - (id)init;

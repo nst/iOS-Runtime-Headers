@@ -18,6 +18,7 @@
     FBApplicationProcessExitContext * _exitContext;
     BOOL  _finishedLaunching;
     BSMachPortSendRight * _gsEventPort;
+    unsigned long long  _htAppIdentifier;
     BKSProcessAssertion * _launchProcessAssertion;
     BOOL  _nowPlayingWithAudio;
     BOOL  _pendingExit;
@@ -54,12 +55,11 @@
 @property (getter=_queue_supportsSuspendOnLock, nonatomic, readonly) BOOL supportsSuspendOnLock;
 @property (getter=_queue_terminationReason, nonatomic, readonly) int terminationReason;
 
-+ (void)deleteAllJobs;
-
 - (id)GSEventPort;
 - (id)_applicationWorkspace;
 - (id)_createWorkspace;
 - (long long)_exceptionCodeForKillReason:(int)arg1;
+- (unsigned long long)_queue_activationInfoForEvent:(int)arg1 withToken:(unsigned long long)arg2 didWatchdog:(BOOL)arg3;
 - (void)_queue_addAllowedLockedFilePath:(id)arg1;
 - (int)_queue_bksVisibilityForVisibility:(int)arg1;
 - (BOOL)_queue_bootstrapAndExecWithContext:(id)arg1;
@@ -93,7 +93,7 @@
 - (id)_queue_lockedFilePathsIgnoringAllowed;
 - (id)_queue_name;
 - (id)_queue_newWatchdogForContext:(id)arg1 completion:(id /* block */)arg2;
-- (unsigned long long)_queue_noteExitedForForceQuit:(BOOL)arg1;
+- (unsigned int)_queue_noteExitedForForceQuit:(BOOL)arg1;
 - (int)_queue_ourTaskStateForBKSTaskState:(int)arg1;
 - (void)_queue_processDidExit;
 - (void)_queue_processReallyDidExit;
@@ -103,7 +103,6 @@
 - (void)_queue_setSupportsSuspendOnLock:(BOOL)arg1;
 - (void)_queue_setTaskState:(int)arg1;
 - (void)_queue_setVisibility:(int)arg1;
-- (void)_queue_setupBKSProcess;
 - (BOOL)_queue_shouldWatchdogWithDeclineReason:(id*)arg1;
 - (void)_queue_startWatchdogTimerForContext:(id)arg1;
 - (BOOL)_queue_supportsBackgroundTaskAssertions;
@@ -112,7 +111,6 @@
 - (void)_queue_takeLaunchProcessAssertion;
 - (void)_queue_terminateWithRequest:(id)arg1 completion:(id /* block */)arg2;
 - (int)_queue_terminationReason;
-- (void)_queue_waitToExecOrExit;
 - (void)_terminateWithRequest:(id)arg1 forWatchdog:(id)arg2;
 - (BOOL)_watchdog:(id)arg1 shouldTerminateWithDeclineReason:(out id*)arg2;
 - (id)_watchdog:(id)arg1 terminationRequestForViolatedProvision:(id)arg2 error:(id)arg3;
@@ -143,7 +141,7 @@
 - (void)killForReason:(int)arg1 andReport:(BOOL)arg2 withDescription:(id)arg3;
 - (void)killForReason:(int)arg1 andReport:(BOOL)arg2 withDescription:(id)arg3 completion:(id /* block */)arg4;
 - (void)launchIfNecessary;
-- (void)noteWorkspaceLocked:(BOOL)arg1;
+- (void)process:(id)arg1 didExitWithContext:(id)arg2;
 - (void)process:(id)arg1 isBeingDebugged:(BOOL)arg2;
 - (void)process:(id)arg1 taskStateDidChange:(int)arg2;
 - (void)processWillExpire:(id)arg1;

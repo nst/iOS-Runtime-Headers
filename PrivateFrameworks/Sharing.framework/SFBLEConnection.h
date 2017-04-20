@@ -27,6 +27,7 @@
 @property (nonatomic) BOOL acceptor;
 @property (nonatomic, copy) id /* block */ bluetoothBandwidthChangedHandler;
 @property (nonatomic, copy) id /* block */ bluetoothStateChangedHandler;
+@property (nonatomic, readonly) int connectionState;
 @property (nonatomic, copy) id /* block */ connectionStateChangedHandler;
 @property (nonatomic, copy) id /* block */ dataHandler;
 @property (readonly, copy) NSString *debugDescription;
@@ -49,6 +50,7 @@
 - (void)addClient:(id)arg1;
 - (id /* block */)bluetoothBandwidthChangedHandler;
 - (id /* block */)bluetoothStateChangedHandler;
+- (int)connectionState;
 - (id /* block */)connectionStateChangedHandler;
 - (id /* block */)dataHandler;
 - (void)dealloc;

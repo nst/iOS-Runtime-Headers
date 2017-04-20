@@ -10,6 +10,7 @@
     }  _has;
     GEORPPhotoWithMetadata * _photo;
     unsigned int  _routeStepIndex;
+    NSData * _routeStepScreenshotImageData;
     unsigned int  _routeStepSubstepIndex;
 }
 
@@ -17,9 +18,11 @@
 @property (nonatomic, readonly) BOOL hasComments;
 @property (nonatomic, readonly) BOOL hasPhoto;
 @property (nonatomic) BOOL hasRouteStepIndex;
+@property (nonatomic, readonly) BOOL hasRouteStepScreenshotImageData;
 @property (nonatomic) BOOL hasRouteStepSubstepIndex;
 @property (nonatomic, retain) GEORPPhotoWithMetadata *photo;
 @property (nonatomic) unsigned int routeStepIndex;
+@property (nonatomic, retain) NSData *routeStepScreenshotImageData;
 @property (nonatomic) unsigned int routeStepSubstepIndex;
 
 - (id)comments;
@@ -31,6 +34,7 @@
 - (BOOL)hasComments;
 - (BOOL)hasPhoto;
 - (BOOL)hasRouteStepIndex;
+- (BOOL)hasRouteStepScreenshotImageData;
 - (BOOL)hasRouteStepSubstepIndex;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -38,12 +42,14 @@
 - (id)photo;
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)routeStepIndex;
+- (id)routeStepScreenshotImageData;
 - (unsigned int)routeStepSubstepIndex;
 - (void)setComments:(id)arg1;
 - (void)setHasRouteStepIndex:(BOOL)arg1;
 - (void)setHasRouteStepSubstepIndex:(BOOL)arg1;
 - (void)setPhoto:(id)arg1;
 - (void)setRouteStepIndex:(unsigned int)arg1;
+- (void)setRouteStepScreenshotImageData:(id)arg1;
 - (void)setRouteStepSubstepIndex:(unsigned int)arg1;
 - (void)writeTo:(id)arg1;
 

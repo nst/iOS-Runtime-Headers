@@ -4,15 +4,27 @@
 
 @interface _MRCryptoPairingMessageProtobuf : PBCodable <NSCopying> {
     struct { 
+        unsigned int state : 1; 
         unsigned int status : 1; 
+        unsigned int isRetrying : 1; 
+        unsigned int isUsingSystemPairing : 1; 
     }  _has;
+    BOOL  _isRetrying;
+    BOOL  _isUsingSystemPairing;
     NSData * _pairingData;
+    int  _state;
     int  _status;
 }
 
+@property (nonatomic) BOOL hasIsRetrying;
+@property (nonatomic) BOOL hasIsUsingSystemPairing;
 @property (nonatomic, readonly) BOOL hasPairingData;
+@property (nonatomic) BOOL hasState;
 @property (nonatomic) BOOL hasStatus;
+@property (nonatomic) BOOL isRetrying;
+@property (nonatomic) BOOL isUsingSystemPairing;
 @property (nonatomic, retain) NSData *pairingData;
+@property (nonatomic) int state;
 @property (nonatomic) int status;
 
 - (void)copyTo:(id)arg1;
@@ -20,16 +32,28 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasIsRetrying;
+- (BOOL)hasIsUsingSystemPairing;
 - (BOOL)hasPairingData;
+- (BOOL)hasState;
 - (BOOL)hasStatus;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isRetrying;
+- (BOOL)isUsingSystemPairing;
 - (void)mergeFrom:(id)arg1;
 - (id)pairingData;
 - (BOOL)readFrom:(id)arg1;
+- (void)setHasIsRetrying:(BOOL)arg1;
+- (void)setHasIsUsingSystemPairing:(BOOL)arg1;
+- (void)setHasState:(BOOL)arg1;
 - (void)setHasStatus:(BOOL)arg1;
+- (void)setIsRetrying:(BOOL)arg1;
+- (void)setIsUsingSystemPairing:(BOOL)arg1;
 - (void)setPairingData:(id)arg1;
+- (void)setState:(int)arg1;
 - (void)setStatus:(int)arg1;
+- (int)state;
 - (int)status;
 - (void)writeTo:(id)arg1;
 

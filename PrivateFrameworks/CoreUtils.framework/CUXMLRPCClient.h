@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) id /* block */ invalidationHandler;
-@property (nonatomic, retain) NSString *label;
+@property (nonatomic, copy) NSString *label;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

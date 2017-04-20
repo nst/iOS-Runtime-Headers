@@ -3,14 +3,13 @@
  */
 
 @interface FBApplicationLibrary : NSObject <LSApplicationWorkspaceObserverProtocol> {
-    Class  _appInfoClass;
     LSApplicationWorkspace * _applicationWorkspace;
     NSObject<OS_dispatch_queue> * _callOutQueue;
+    FBApplicationLibraryConfiguration * _configuration;
     BOOL  _initializing;
     NSObject<OS_dispatch_queue> * _observerQueue;
-    NSHashTable * _observerQueue_observers;
-    NSObject<OS_dispatch_group> * _preInstallGroup;
-    BOOL  _usingNetwork;
+    NSMapTable * _observerQueue_legacyObserverToTokens;
+    NSMapTable * _observerQueue_tokensToBlocks;
     NSObject<OS_dispatch_queue> * _workQueue;
     NSMutableDictionary * _workQueue_installedApplicationsByBundleID;
     NSMutableArray * _workQueue_pendingSynchronizationExecutionBlocks;
@@ -25,30 +24,34 @@
 @property (readonly) Class superclass;
 @property (getter=isUsingNetwork, nonatomic, readonly) BOOL usingNetwork;
 
++ (id)_systemApplicationBundleIdentifier;
++ (id)_systemApplicationProxy;
 + (void)setBundleExtendedInfoGenerationHandler:(id /* block */)arg1;
 + (id)sharedInstance;
 
 - (void)_anyQueue_generateExtendedInfoForBundleInfo:(id)arg1;
-- (void)_dispatchToObservers:(id)arg1 synchronously:(BOOL)arg2 preBlock:(id /* block */)arg3 block:(id /* block */)arg4;
-- (id)_initWithAppInfoClass:(Class)arg1;
+- (id)_filterProxiesByInclusionFilter:(id)arg1 filter:(id /* block */)arg2;
 - (void)_load;
-- (id)_observers;
-- (void)_sendToObservers:(id)arg1 didAddApplications:(id)arg2;
-- (void)_sendToObservers:(id)arg1 didAddPlaceholders:(id)arg2;
-- (void)_sendToObservers:(id)arg1 didCancelPlaceholders:(id)arg2;
-- (void)_sendToObservers:(id)arg1 didDemoteApplications:(id)arg2;
-- (void)_sendToObservers:(id)arg1 didRemoveApplications:(id)arg2;
-- (void)_sendToObservers:(id)arg1 didReplaceApplications:(id)arg2 withApplications:(id)arg3;
-- (void)_sendToObservers:(id)arg1 networkUsageDidChange:(id)arg2 usingNetwork:(BOOL)arg3;
+- (void)_notifyDidAddApplications:(id)arg1;
+- (void)_notifyDidAddPlaceholders:(id)arg1;
+- (void)_notifyDidCancelPlaceholders:(id)arg1;
+- (void)_notifyDidChangeNetworkUsage:(BOOL)arg1;
+- (void)_notifyDidDemoteApplications:(id)arg1;
+- (void)_notifyDidRemoveApplications:(id)arg1;
+- (void)_notifyDidReplaceApplications:(id)arg1;
+- (void)_notifyForType:(int)arg1 synchronously:(BOOL)arg2 withCastingBlock:(id /* block */)arg3;
+- (id)_observeType:(int)arg1 withBlock:(id)arg2;
+- (id)_observerQueue_observeType:(int)arg1 withCopiedBlock:(id /* block */)arg2 token:(id)arg3;
+- (void)_observerQueue_removeObserverForToken:(id)arg1;
 - (BOOL)_workQueue_applicationHasBeenModified:(id)arg1 applicationProxy:(id)arg2;
-- (id)_workQueue_applicationInfoForProxy:(id)arg1 createIfNecessary:(BOOL)arg2 createReason:(id)arg3 wasCreated:(BOOL*)arg4;
-- (id)_workQueue_applicationsForProxies:(id)arg1 createIfNecessary:(BOOL)arg2 createReason:(id)arg3 createdPlaceholders:(const id*)arg4 existingApplications:(const id*)arg5 unmappedProxies:(const id*)arg6;
+- (id)_workQueue_applicationInfoForProxy:(id)arg1 filterExisting:(BOOL)arg2 createIfNecessary:(BOOL)arg3 createReason:(id)arg4;
+- (id)_workQueue_applicationsForProxies:(id)arg1 createIfNecessary:(BOOL)arg2 createReason:(id)arg3 createdApplications:(id*)arg4 existingApplications:(id*)arg5 filterExistingApplications:(id*)arg6 unmappedProxies:(id*)arg7;
 - (void)_workQueue_decrementSynchronizationActionCount;
 - (void)_workQueue_executeInstallSynchronizationBlocksIfAppropriate;
 - (void)_workQueue_incrementSynchronizationActionCount;
 - (void)_workQueue_notePlaceholdersModifiedSignificantly:(id)arg1;
-- (id)_workQueue_placeholderForProxy:(id)arg1 updateExistingIfNecessary:(BOOL)arg2 createIfNecessary:(BOOL)arg3 createReason:(id)arg4 wasCreated:(BOOL*)arg5;
-- (id)_workQueue_placeholdersForProxies:(id)arg1 updateExistingIfNecessary:(BOOL)arg2 createIfNecessary:(BOOL)arg3 createReason:(id)arg4 createdPlaceholders:(const id*)arg5 existingPlaceholders:(const id*)arg6 unmappedProxies:(const id*)arg7;
+- (id)_workQueue_placeholderForProxy:(id)arg1 filterExisting:(BOOL)arg2 updateExistingIfNecessary:(BOOL)arg3 createIfNecessary:(BOOL)arg4 createReason:(id)arg5;
+- (id)_workQueue_placeholdersForProxies:(id)arg1 updateExistingIfNecessary:(BOOL)arg2 createIfNecessary:(BOOL)arg3 createReason:(id)arg4 createdPlaceholders:(id*)arg5 existingPlaceholders:(id*)arg6 filterExistingPlaceholders:(id*)arg7 unmappedProxies:(id*)arg8;
 - (void)_workQueue_removeInstalledApplicationFromModelForBundleID:(id)arg1 forInstall:(BOOL)arg2 withReason:(id)arg3;
 - (void)_workQueue_removePlaceholderFromModelForBundleID:(id)arg1 forInstall:(BOOL)arg2 withReason:(id)arg3;
 - (void)addObserver:(id)arg1;
@@ -62,6 +65,7 @@
 - (void)applicationInstallsDidResume:(id)arg1;
 - (void)applicationInstallsDidStart:(id)arg1;
 - (void)applicationInstallsDidUpdateIcon:(id)arg1;
+- (void)applicationStateDidChange:(id)arg1;
 - (void)applicationsDidFailToInstall:(id)arg1;
 - (void)applicationsDidFailToUninstall:(id)arg1;
 - (void)applicationsDidInstall:(id)arg1;
@@ -72,12 +76,22 @@
 - (id)description;
 - (void)executeOrPendInstallSynchronizationBlock:(id /* block */)arg1;
 - (id)init;
+- (id)initWithApplicationWorkspace:(id)arg1 configuration:(id)arg2;
+- (id)initWithConfiguration:(id)arg1;
 - (id)installedApplicationWithBundleIdentifier:(id)arg1;
 - (void)installedApplicationWithBundleIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)isUsingNetwork;
 - (void)networkUsageChanged:(BOOL)arg1;
+- (id)observeDidAddApplicationsWithBlock:(id /* block */)arg1;
+- (id)observeDidAddPlaceholdersWithBlock:(id /* block */)arg1;
+- (id)observeDidCancelPlaceholdersWithBlock:(id /* block */)arg1;
+- (id)observeDidChangeNetworkUsageWithBlock:(id /* block */)arg1;
+- (id)observeDidDemoteApplicationsWithBlock:(id /* block */)arg1;
+- (id)observeDidRemoveApplicationsWithBlock:(id /* block */)arg1;
+- (id)observeDidReplaceApplicationsWithBlock:(id /* block */)arg1;
 - (id)placeholderWithBundleIdentifier:(id)arg1;
 - (void)removeObserver:(id)arg1;
+- (void)removeObserverForToken:(id)arg1;
 - (void)uninstallApplication:(id)arg1 completion:(id /* block */)arg2;
 - (void)uninstallApplication:(id)arg1 withOptions:(id)arg2 completion:(id /* block */)arg3;
 

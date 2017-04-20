@@ -40,6 +40,7 @@
 - (id)allFeedItemsAfterTransformation:(id)arg1;
 - (id)allNonEditorialFeedItemsAfterTransformation:(id)arg1;
 - (id)catchUpError;
+- (id)catchUpErrorForContentTypes:(int)arg1;
 - (id)conditionWaiters;
 - (id)conditionWaitersLock;
 - (id)coverArticleHeadlines;

@@ -9,9 +9,11 @@
     NSObject<OS_dispatch_queue> * _calloutSerialQueue;
     NSMutableDictionary * _downloadHandlers;
     NSMapTable * _downloadIdentifiersToDownloads;
+    NSDictionary * _downloadKindToRequiredClientBundleIdentifiers;
     SSDownloadManager * _downloadManager;
     NSMutableArray * _downloads;
     NSMapTable * _downloadsToObservers;
+    BOOL  _fetchedInitialDownloads;
     NSMapTable * _libraryIdentifiersToDownloads;
     NSHashTable * _observersForAllDownloads;
     SSPurchaseManager * _purchaseManager;
@@ -31,10 +33,12 @@
 + (id)sharedManager;
 
 - (void).cxx_destruct;
+- (void)_addNonCancelledDownloadsToActiveList:(id)arg1;
 - (void)_addPurchaseFinishedHandler:(id /* block */)arg1 forDownloads:(id)arg2;
 - (void)_addStoreDownloadForRedownloadProductItem:(id)arg1;
 - (id)_existingDownloadForSSDownload:(id)arg1;
 - (id)_init;
+- (BOOL)_isActiveDownload:(id)arg1;
 - (id)_observersForAllDownloads;
 - (id)_observersForDownload:(id)arg1;
 - (void)_onQueue_addDownloadToMapTables:(id)arg1;
@@ -47,7 +51,9 @@
 - (void)_sendDownloadsDidFinishPurchasesToObserversForDownloads:(id)arg1;
 - (void)_sendDownloadsDidFinishToObserversForDownloads:(id)arg1 notifyDownloadManager:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (void)_sendDownloadsDidProgressToObserversForDownloads:(id)arg1;
+- (BOOL)_shouldHideDownload:(id)arg1;
 - (void)_unregisterBlockObserver:(id)arg1;
+- (void)_updateActiveDownloadsWithCancelledDownloads:(id)arg1;
 - (void)_updateActiveDownloadsWithChangedActiveDownloads:(id)arg1 inactiveDownloads:(id)arg2;
 - (void)_updateDownloadsWithAdditions:(id)arg1 removals:(id)arg2;
 - (void)_updateMediaItemPropertiesForFinishedStoreDownload:(id)arg1 SSDownload:(id)arg2;
@@ -68,6 +74,7 @@
 - (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (void)downloadManagerNetworkUsageDidChange:(id)arg1;
 - (id)downloads;
+- (BOOL)hasFetchedInitialDownloads;
 - (id)init;
 - (BOOL)isUsingNetwork;
 - (void)pauseDownloads:(id)arg1;

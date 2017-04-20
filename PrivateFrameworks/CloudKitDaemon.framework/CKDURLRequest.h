@@ -20,7 +20,6 @@
     CKDClientContext * _context;
     int  _databaseScope;
     NSDate * _dateRequestWentOut;
-    NSOperationQueue * _delegateQueue;
     NSString * _deviceID;
     BOOL  _didFinishLoading;
     BOOL  _didRetryAuth;
@@ -51,6 +50,7 @@
     <CKDURLRequestMetricsDelegate> * _metricsDelegate;
     BOOL  _needsAuthRetry;
     unsigned int  _numDownloadedElements;
+    NSString * _operationID;
     NSObject<OS_os_activity> * _osActivity;
     NSMutableDictionary * _overriddenHeaders;
     BOOL  _preferAnonymousRequests;
@@ -66,8 +66,10 @@
     CKDResponseBodyParser * _responseBodyParser;
     id /* block */  _responseProgressBlock;
     int  _responseStatusCode;
+    NSObject<OS_dispatch_queue> * _sessionCallbackQueue;
     NSURLSessionConfiguration * _sessionConfiguration;
     NSString * _sessionConfigurationName;
+    BOOL  _shouldTriggerAutoBugCapture;
     NSString * _sourceApplicationBundleIdentifier;
     NSString * _sourceApplicationSecondaryIdentifier;
     CKDProtobufStreamWriter * _streamWriter;
@@ -102,7 +104,6 @@
 @property (nonatomic) int databaseScope;
 @property (retain) NSDate *dateRequestWentOut;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, retain) NSOperationQueue *delegateQueue;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *deviceID;
 @property (retain) NSError *error;
@@ -123,6 +124,7 @@
 @property (nonatomic) <CKDURLRequestMetricsDelegate> *metricsDelegate;
 @property BOOL needsAuthRetry;
 @property (nonatomic) unsigned int numDownloadedElements;
+@property (nonatomic, retain) NSString *operationID;
 @property (nonatomic, readonly) int operationType;
 @property (nonatomic, readonly) int partitionType;
 @property (nonatomic, readonly) NSString *path;
@@ -144,9 +146,11 @@
 @property (nonatomic, readonly) int responseStatusCode;
 @property (nonatomic, readonly) NSString *sectionID;
 @property (nonatomic, readonly) int serverType;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *sessionCallbackQueue;
 @property (retain) NSURLSessionConfiguration *sessionConfiguration;
 @property (retain) NSString *sessionConfigurationName;
 @property (nonatomic, readonly) BOOL shouldCompressBody;
+@property BOOL shouldTriggerAutoBugCapture;
 @property (nonatomic, retain) NSString *sourceApplicationBundleIdentifier;
 @property (nonatomic, retain) NSString *sourceApplicationSecondaryIdentifier;
 @property (nonatomic, readonly) CKDProtobufStreamWriter *streamWriter;
@@ -228,7 +232,6 @@
 - (id)dateRequestWentOut;
 - (void)dealloc;
 - (id)defaultParserForContentType:(id)arg1;
-- (id)delegateQueue;
 - (id)description;
 - (id)deviceID;
 - (id)error;
@@ -256,6 +259,7 @@
 - (id)metricsDelegate;
 - (BOOL)needsAuthRetry;
 - (unsigned int)numDownloadedElements;
+- (id)operationID;
 - (id)operationRequestWithType:(int)arg1;
 - (int)operationType;
 - (void)overrideRequestHeader:(id)arg1 withValue:(id)arg2;
@@ -296,6 +300,7 @@
 - (id)sectionID;
 - (BOOL)sendRequestAnonymously;
 - (int)serverType;
+- (id)sessionCallbackQueue;
 - (id)sessionConfiguration;
 - (id)sessionConfigurationName;
 - (void)setAccountInfoProvider:(id)arg1;
@@ -315,7 +320,6 @@
 - (void)setContext:(id)arg1;
 - (void)setDatabaseScope:(int)arg1;
 - (void)setDateRequestWentOut:(id)arg1;
-- (void)setDelegateQueue:(id)arg1;
 - (void)setDeviceID:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setFakeResponseOperationResultByItemID:(id)arg1;
@@ -329,6 +333,7 @@
 - (void)setMetricsDelegate:(id)arg1;
 - (void)setNeedsAuthRetry:(BOOL)arg1;
 - (void)setNumDownloadedElements:(unsigned int)arg1;
+- (void)setOperationID:(id)arg1;
 - (void)setPreferAnonymousRequests:(BOOL)arg1;
 - (void)setQualityOfService:(int)arg1;
 - (void)setRequest:(id)arg1;
@@ -337,8 +342,10 @@
 - (void)setResponse:(id)arg1;
 - (void)setResponseBodyParser:(id)arg1;
 - (void)setResponseProgressBlock:(id /* block */)arg1;
+- (void)setSessionCallbackQueue:(id)arg1;
 - (void)setSessionConfiguration:(id)arg1;
 - (void)setSessionConfigurationName:(id)arg1;
+- (void)setShouldTriggerAutoBugCapture:(BOOL)arg1;
 - (void)setSourceApplicationBundleIdentifier:(id)arg1;
 - (void)setSourceApplicationSecondaryIdentifier:(id)arg1;
 - (void)setTimeLogger:(id)arg1;
@@ -351,6 +358,7 @@
 - (void)setVoucher:(id)arg1;
 - (BOOL)shouldCompressBody;
 - (BOOL)shouldLogResponseBody;
+- (BOOL)shouldTriggerAutoBugCapture;
 - (id)sourceApplicationBundleIdentifier;
 - (id)sourceApplicationSecondaryIdentifier;
 - (id)statusReportWithIndent:(unsigned int)arg1;

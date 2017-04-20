@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPModelLibraryRequest : MPModelRequest <MPMediaLibraryEntityTranslatingContext, MPModelPlaybackRequesting, MPModelRequestDetailedKeepLocalStatusRequesting> {
+@interface MPModelLibraryRequest : MPModelRequest <MPModelPlaybackRequesting, MPModelRequestDetailedKeepLocalStatusRequesting, MPModelRequestRTCReporting> {
     NSArray * _allowedItemIdentifiers;
     struct _NSRange { 
         unsigned int location; 
@@ -21,7 +21,7 @@
 @property (nonatomic) unsigned int filteringOptions;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) MPMediaLibrary *mediaLibrary;
-@property (getter=isMultiQuery, nonatomic, readonly) BOOL multiQuery;
+@property (nonatomic, readonly, copy) NSString *rtcReportingPlayQueueSourceIdentifier;
 @property (nonatomic, copy) NSArray *scopedContainers;
 @property (nonatomic) BOOL shouldExcludeNonShuffleItems;
 @property (readonly) Class superclass;
@@ -33,13 +33,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)filteringOptions;
-- (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isMultiQuery;
+- (id)itemTranslationContext;
 - (id)mediaLibrary;
 - (id)newOperationWithResponseHandler:(id /* block */)arg1;
 - (void)performWithResponseHandler:(id /* block */)arg1;
+- (id)rtcReportingPlayQueueSourceIdentifier;
 - (id)scopedContainers;
+- (id)sectionTranslationContext;
 - (void)setAllowedItemIdentifiers:(id)arg1;
 - (void)setContentRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setFilteringOptions:(unsigned int)arg1;

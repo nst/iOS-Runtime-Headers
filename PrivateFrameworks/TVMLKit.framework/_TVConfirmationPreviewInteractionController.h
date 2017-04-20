@@ -27,11 +27,13 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_cleanupPreviewInteraction;
 - (void)animateTransition:(id)arg1;
 - (id)animationControllerForDismissedController:(id)arg1;
 - (id)collectionElement;
 - (id)collectionView;
+- (void)dealloc;
 - (id)delegate;
 - (void)dismissConfirmation;
 - (id)initWithPresentingViewController:(id)arg1 andCollectionView:(id)arg2 andCollectionElement:(id)arg3;

@@ -23,6 +23,8 @@
     NSMutableArray * _processedWordRanges;
     double  _rate;
     NSMutableArray * _replacedWords;
+    NSURL * _resourceListURL;
+    NSURL * _resourceSearchPathURL;
     TTSSpeechChannel * _speechChannel;
     NSString * _text;
     BOOL  _useMonarchStyleRate;
@@ -50,6 +52,8 @@
 @property (nonatomic, retain) NSMutableArray *processedWordRanges;
 @property (nonatomic) double rate;
 @property (nonatomic, retain) NSMutableArray *replacedWords;
+@property (nonatomic, copy) NSURL *resourceListURL;
+@property (nonatomic, copy) NSURL *resourceSearchPathURL;
 @property (nonatomic, retain) TTSSpeechChannel *speechChannel;
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic) BOOL useMonarchStyleRate;
@@ -84,6 +88,8 @@
 - (id)processedWordRanges;
 - (double)rate;
 - (id)replacedWords;
+- (id)resourceListURL;
+- (id)resourceSearchPathURL;
 - (void)setAttributedText:(id)arg1;
 - (void)setAudioQueueFlags:(unsigned int)arg1;
 - (void)setAudioSessionID:(unsigned int)arg1;
@@ -104,6 +110,8 @@
 - (void)setProcessedWordRanges:(id)arg1;
 - (void)setRate:(double)arg1;
 - (void)setReplacedWords:(id)arg1;
+- (void)setResourceListURL:(id)arg1;
+- (void)setResourceSearchPathURL:(id)arg1;
 - (void)setSpeechChannel:(id)arg1;
 - (void)setText:(id)arg1;
 - (void)setUseMonarchStyleRate:(BOOL)arg1;

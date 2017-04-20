@@ -17,12 +17,18 @@
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
 - (id)_typedBackingStore;
 - (id)description;
+- (id)domain;
 - (id)initWithProfileNumber:(id)arg1 profileLabel:(id)arg2;
 - (id)initWithProfileNumber:(id)arg1 profileName:(id)arg2;
+- (id)parametersByName;
 - (id)profileLabel;
 - (id)profileName;
 - (id)profileNumber;
+- (void)setDomain:(id)arg1;
+- (void)setParametersByName:(id)arg1;
 - (void)setProfileName:(id)arg1;
 - (void)setProfileNumber:(id)arg1;
+- (void)setVerb:(id)arg1;
+- (id)verb;
 
 @end

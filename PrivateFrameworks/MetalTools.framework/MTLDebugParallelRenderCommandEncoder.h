@@ -13,6 +13,7 @@
 - (id)description;
 - (id)descriptor;
 - (void)endEncoding;
+- (id)formattedDescription:(unsigned int)arg1;
 - (id)initWithBaseRenderPass:(id)arg1 commandBuffer:(id)arg2 descriptor:(id)arg3;
 - (id)renderCommandEncoder;
 - (id)sampledRenderCommandEncoderWithProgramInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned long long x4; unsigned long long x5; }*)arg1 capacity:(unsigned int)arg2;

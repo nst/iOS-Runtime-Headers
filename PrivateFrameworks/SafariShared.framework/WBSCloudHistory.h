@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
  */
 
-@interface WBSCloudHistory : NSObject <WBSCloudHistoryThrottlerDataStore> {
+@interface WBSCloudHistory : NSObject <WBSCloudKitThrottlerDataStore> {
     BOOL  _cloudHistoryEnabled;
     NSObject<OS_dispatch_queue> * _cloudHistoryQueue;
     WBSCloudHistoryConfiguration * _configuration;
-    WBSCloudHistoryThrottler * _fetchChangesThrottler;
+    WBSCloudKitThrottler * _fetchChangesThrottler;
     BOOL  _fetchChangesWhenBackoffTimerFires;
     BOOL  _fetchChangesWhenHistoryLoads;
     struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
@@ -25,7 +25,7 @@
             struct SuddenTerminationDisabler {} *__first_; 
         } __ptr_; 
     }  _replayLongLivedSaveOperationSuddenTerminationDisabler;
-    WBSCloudHistoryThrottler * _saveChangesThrottler;
+    WBSCloudKitThrottler * _saveChangesThrottler;
     BOOL  _saveChangesWhenBackoffTimerFires;
     BOOL  _saveChangesWhenHistoryLoads;
     struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
@@ -36,7 +36,7 @@
     NSTimer * _serverBackoffTimer;
     <WBSCloudHistoryDataStore> * _store;
     NSMutableDictionary * _syncCircleSizeRetrievalCompletionHandlersByOperation;
-    WBSCloudHistoryThrottler * _syncCircleSizeRetrievalThrottler;
+    WBSCloudKitThrottler * _syncCircleSizeRetrievalThrottler;
 }
 
 @property (getter=isCloudHistoryEnabled, nonatomic) BOOL cloudHistoryEnabled;

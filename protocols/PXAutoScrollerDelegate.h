@@ -3,8 +3,8 @@
 
 @protocol PXAutoScrollerDelegate <NSObject>
 
-@required
+@optional
 
-- (void)autoScrollerDidUpdate:(PXUIAutoScroller *)arg1;
+- (void)autoScroller:(PXAutoScroller *)arg1 didAutoscrollWithTimestamp:(double)arg2;
 
 @end

@@ -99,7 +99,7 @@
 - (BOOL)_hasTableWithName:(id)arg1;
 - (BOOL)_isQueryGenerationTrackingConnection;
 - (id)_newValueForColumn:(id)arg1 atIndex:(unsigned int)arg2 inStatement:(struct sqlite3_stmt { }*)arg3;
-- (void)_performPostSaveTasks;
+- (void)_performPostSaveTasks:(BOOL)arg1 andForceFullVacuum:(BOOL)arg2;
 - (void)_registerExtraFunctions;
 - (void)_restoreBusyTimeOutSettings;
 - (int)_rowsChangedByLastExecute;
@@ -200,13 +200,14 @@
 - (void)setColumnsToFetch:(id)arg1;
 - (void)setExclusiveLockingMode:(BOOL)arg1;
 - (void)setIsWriter:(BOOL)arg1;
+- (void)setSecureDeleteMode:(BOOL)arg1;
 - (void)setUbiquityTableValue:(id)arg1 forKey:(id)arg2;
 - (id)sqlStatement;
 - (id)statementCacheForEntity:(id)arg1;
 - (void)transactionDidBegin;
 - (void)transactionDidCommit;
 - (void)transactionDidRollback;
-- (void)triggerUpdatedRowInTable:(id)arg1 withEntityID:(long long)arg2 primaryKey:(long long)arg3 columnName:(id)arg4 newValue:(long long)arg5;
+- (void)triggerUpdatedRowInTable:(const char *)arg1 withEntityID:(long long)arg2 primaryKey:(long long)arg3 columnName:(const char *)arg4 newValue:(long long)arg5;
 - (id)ubiquityTableKeysAndValues;
 - (id)ubiquityTableValueForKey:(id)arg1;
 - (void)uncacheVMStatement:(id)arg1;

@@ -48,6 +48,7 @@
 
 @property (nonatomic, retain) HDAchievementAssetManager *achievementAssetManager;
 @property (nonatomic, retain) HDAchievementDefinitionAlertManager *achievementDefinitionAlertManager;
+@property (nonatomic, retain) HDAchievementDoctorManager *achievementDoctorManager;
 @property (nonatomic, retain) <HDNanoAlertSuppressionService> *alertSuppressionService;
 @property (nonatomic, retain) HDAppLauncher *appLauncher;
 @property (nonatomic, retain) HDAuthorizationManager *authorizationManager;
@@ -123,6 +124,7 @@
 - (void)_updateCurrentDeviceName;
 - (id)achievementAssetManager;
 - (id)achievementDefinitionAlertManager;
+- (id)achievementDoctorManager;
 - (id)alertSuppressionService;
 - (id)appLauncher;
 - (id)authorizationManager;
@@ -182,6 +184,7 @@
 - (id)serviceManager;
 - (void)setAchievementAssetManager:(id)arg1;
 - (void)setAchievementDefinitionAlertManager:(id)arg1;
+- (void)setAchievementDoctorManager:(id)arg1;
 - (void)setAlertSuppressionService:(id)arg1;
 - (void)setAppLauncher:(id)arg1;
 - (void)setAuthorizationManager:(id)arg1;

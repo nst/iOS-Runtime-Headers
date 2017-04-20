@@ -21,6 +21,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
+- (void)invalidate;
 - (void)performWhenConnected:(id /* block */)arg1;
 - (id)performWhenConnectedBlocks;
 - (id)rpcProxy;

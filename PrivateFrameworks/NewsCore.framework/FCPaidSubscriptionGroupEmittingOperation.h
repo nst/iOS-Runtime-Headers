@@ -15,7 +15,6 @@
 - (void)_fetchHeadlinesForFeedItems:(id)arg1 feedContextByFeedID:(id)arg2 block:(id /* block */)arg3;
 - (void)_fetchTagForSourceChannelIdentifier:(id)arg1 block:(id /* block */)arg2;
 - (BOOL)alwaysShowExpiredGroups;
-- (BOOL)disableMinimumGroupSize;
 - (void)performOperation;
 - (BOOL)unlimitedBackfill;
 

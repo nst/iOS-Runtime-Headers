@@ -25,7 +25,6 @@
     AKUndoViewController * _undoPopoverViewController;
 }
 
-@property (nonatomic, readonly) float additionalOffset;
 @property (nonatomic, retain) UIView *attributeToolbarContainer;
 @property (nonatomic, retain) AKFloatingAttributePickerViewController *attributeToolbarViewController;
 @property (nonatomic, retain) NSLayoutConstraint *attributeToolbarViewControllerConstraint;
@@ -33,6 +32,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) float heightIncludingAdditionalVisibleBars;
 @property (nonatomic, retain) UIBarButtonItem *lineStyleButton;
 @property (nonatomic, retain) AKLineStylesViewController *lineStylesViewController;
 @property (nonatomic, retain) UIGestureRecognizer *longPressGestureRecognizer;
@@ -50,6 +50,7 @@
 @property (nonatomic, retain) UIBarButtonItem *textStyleButton;
 @property (nonatomic, retain) UIBarButtonItem *undoButton;
 @property (nonatomic, retain) AKUndoViewController *undoPopoverViewController;
+@property (nonatomic, readonly) float visibleHeightOfAttributeBar;
 
 - (void).cxx_destruct;
 - (int)_attributeTagForCurrentSelectionState;
@@ -80,7 +81,6 @@
 - (void)_updateToggleButton:(id)arg1 withTraitCollection:(id)arg2;
 - (BOOL)_validateUndoButton;
 - (unsigned int)_workaroundToolbarPopoverPositioningBug26744300;
-- (float)additionalOffset;
 - (id)attributeToolbarContainer;
 - (id)attributeToolbarViewController;
 - (id)attributeToolbarViewControllerConstraint;
@@ -88,6 +88,7 @@
 - (void)dealloc;
 - (void)dismissAttributeToolbarForSelectedAnnotations;
 - (void)dismissPresentedPopovers;
+- (float)heightIncludingAdditionalVisibleBars;
 - (id)initWithController:(id)arg1;
 - (BOOL)isPresentingPopovers;
 - (id)lineStyleButton;
@@ -140,5 +141,6 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)undoButton;
 - (id)undoPopoverViewController;
+- (float)visibleHeightOfAttributeBar;
 
 @end

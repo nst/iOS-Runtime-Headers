@@ -3,7 +3,7 @@
  */
 
 @interface PUPhotoViewContentHelper : NSObject <PHLivePhotoViewDelegate> {
-    PXAssetBadgeUIView * __badgeView;
+    PXUIAssetBadgeView * __badgeView;
     UIImageView * __crossfadeImageView;
     UIView * __highlightOverlayView;
     PXTitleSubtitleUILabel * __titleSubtitleLabel;
@@ -13,9 +13,14 @@
     BOOL  _avoidsImageViewIfPossible;
     BOOL  _avoidsPhotoDecoration;
     UIColor * _backgroundColor;
+    struct PXAssetBadgeInfo { 
+        unsigned int badges; 
+        double duration; 
+        int count; 
+    }  _badgeInfo;
     int  _badgeStyle;
-    unsigned int  _badgeTypes;
     PXCollectionTileLayoutTemplate * _collectionTileLayoutTemplate;
+    float  _contentAlpha;
     UIView * _contentView;
     float  _cornerRadius;
     <PUPhotoViewContentHelperDelegate> * _delegate;
@@ -65,10 +70,9 @@
     NSString * _title;
     NSString * _titleFontName;
     BOOL  _useOverlay;
-    double  _videoDuration;
 }
 
-@property (setter=_setBadgeView:, nonatomic, retain) PXAssetBadgeUIView *_badgeView;
+@property (setter=_setBadgeView:, nonatomic, retain) PXUIAssetBadgeView *_badgeView;
 @property (nonatomic, retain) UIImageView *_crossfadeImageView;
 @property (setter=_setHighlightOverlayView:, nonatomic, retain) UIView *_highlightOverlayView;
 @property (setter=_setTitleSubtitleUILabel:, nonatomic, retain) PXTitleSubtitleUILabel *_titleSubtitleLabel;
@@ -79,9 +83,10 @@
 @property (nonatomic) BOOL avoidsPhotoDecoration;
 @property (nonatomic, retain) UIColor *backgroundColor;
 @property (nonatomic, readonly) UIView *badgeContainerView;
-@property (nonatomic, readonly) int badgeStyle;
-@property (nonatomic, readonly) unsigned int badgeTypes;
+@property (nonatomic) struct PXAssetBadgeInfo { unsigned int x1; double x2; int x3; } badgeInfo;
+@property (nonatomic) int badgeStyle;
 @property (nonatomic, retain) PXCollectionTileLayoutTemplate *collectionTileLayoutTemplate;
+@property (nonatomic) float contentAlpha;
 @property (nonatomic, readonly) UIView *contentView;
 @property (nonatomic) float cornerRadius;
 @property (readonly, copy) NSString *debugDescription;
@@ -115,7 +120,6 @@
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *titleFontName;
 @property (nonatomic) BOOL useOverlay;
-@property (nonatomic, readonly) double videoDuration;
 
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_imageContentFrameForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 imageSize:(struct CGSize { float x1; float x2; })arg2 fillMode:(int)arg3;
 + (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 imageSize:(struct CGSize { float x1; float x2; })arg2 fillMode:(int)arg3;
@@ -125,6 +129,7 @@
 - (id)_badgeView;
 - (id)_crossfadeImageView;
 - (id)_highlightOverlayView;
+- (void)_invalidateBadgeView;
 - (void)_invalidateTitleSubtitleUILabel;
 - (void)_removeAvalancheStackViewIfNecessary;
 - (void)_removePhotoImageViewIfNecessary;
@@ -153,9 +158,10 @@
 - (BOOL)avoidsPhotoDecoration;
 - (id)backgroundColor;
 - (id)badgeContainerView;
+- (struct PXAssetBadgeInfo { unsigned int x1; double x2; int x3; })badgeInfo;
 - (int)badgeStyle;
-- (unsigned int)badgeTypes;
 - (id)collectionTileLayoutTemplate;
+- (float)contentAlpha;
 - (id)contentView;
 - (struct CGSize { float x1; float x2; })contentViewSizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (float)cornerRadius;
@@ -192,9 +198,10 @@
 - (void)setAvoidsImageViewIfPossible:(BOOL)arg1;
 - (void)setAvoidsPhotoDecoration:(BOOL)arg1;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setBadgeTypes:(unsigned int)arg1 videoDuration:(double)arg2;
-- (void)setBadgeTypes:(unsigned int)arg1 videoDuration:(double)arg2 style:(int)arg3;
+- (void)setBadgeInfo:(struct PXAssetBadgeInfo { unsigned int x1; double x2; int x3; })arg1;
+- (void)setBadgeStyle:(int)arg1;
 - (void)setCollectionTileLayoutTemplate:(id)arg1;
+- (void)setContentAlpha:(float)arg1;
 - (void)setCornerRadius:(float)arg1;
 - (void)setCornerRadius:(float)arg1 useOverlay:(BOOL)arg2 overlayColor:(id)arg3;
 - (void)setDelegate:(id)arg1;
@@ -232,6 +239,5 @@
 - (id)titleFontName;
 - (void)updatePhotoImageWithoutReconfiguring:(id)arg1;
 - (BOOL)useOverlay;
-- (double)videoDuration;
 
 @end

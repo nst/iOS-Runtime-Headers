@@ -37,7 +37,6 @@
 - (BOOL)isDroppedPin;
 - (id)mapItem;
 - (int)mediaType;
-- (id)pin;
 - (Class)previewBalloonViewClass;
 - (id)previewCacheKeyWithOrientation:(BOOL)arg1;
 - (id)previewCachesFileURLWithOrientation:(BOOL)arg1 extension:(id)arg2;

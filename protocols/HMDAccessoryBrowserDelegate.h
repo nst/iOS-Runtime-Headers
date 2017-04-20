@@ -13,7 +13,7 @@
 - (void)accessoryBrowser:(HMDAccessoryBrowser *)arg1 accessoryServer:(HAPAccessoryServer *)arg2 didUpdateValuesForCharacteristics:(NSArray *)arg3 stateNumber:(NSNumber *)arg4;
 - (void)accessoryBrowser:(void *)arg1 accessoryServer:(void *)arg2 isBlockedWithCompletionHandler:(void *)arg3; // needs 3 arg types, found 8: HMDAccessoryBrowser *, HAPAccessoryServer *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
 - (void)accessoryBrowser:(void *)arg1 didFindAccessoryServer:(void *)arg2 stateChanged:(void *)arg3 stateNumber:(void *)arg4 completion:(void *)arg5; // needs 5 arg types, found 10: HMDAccessoryBrowser *, HAPAccessoryServer *, BOOL, NSNumber *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
-- (void)accessoryBrowser:(HMDAccessoryBrowser *)arg1 didRemoveAccessoryServer:(HAPAccessoryServer *)arg2;
+- (void)accessoryBrowser:(HMDAccessoryBrowser *)arg1 didRemoveAccessoryServer:(HAPAccessoryServer *)arg2 error:(NSError *)arg3;
 - (void)accessoryBrowser:(HMDAccessoryBrowser *)arg1 didTombstoneAccessoryServer:(HAPAccessoryServer *)arg2;
 - (void)accessoryBrowser:(HMDAccessoryBrowser *)arg1 didUpdateReachability:(BOOL)arg2 forBTLEAccessoriesWithServerIdentifier:(NSString *)arg3;
 - (void)accessoryBrowser:(HMDAccessoryBrowser *)arg1 discoveryFailedWithError:(NSError *)arg2 accessoryServer:(NSString *)arg3 linkType:(int)arg4;

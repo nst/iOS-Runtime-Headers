@@ -17,10 +17,14 @@
 @property (nonatomic, readonly) BOOL hasAttributeValue;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 + (id)options;
 
 - (void).cxx_destruct;
+- (int)StringAsAttributeType:(id)arg1;
 - (int)attributeType;
+- (id)attributeTypeAsString:(int)arg1;
 - (id)attributeValue;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -36,5 +40,11 @@
 - (void)setHasAttributeType:(BOOL)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

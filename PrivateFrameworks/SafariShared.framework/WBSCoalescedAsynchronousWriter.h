@@ -4,6 +4,7 @@
 
 @interface WBSCoalescedAsynchronousWriter : NSObject {
     id /* block */  _dataSourceBlock;
+    <WBSCoalescedAsynchronousWriterDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _diskAccessQueue;
     BOOL  _done;
     NSURL * _fileURL;
@@ -19,10 +20,13 @@
     id /* block */  _writerBlock;
 }
 
+@property (nonatomic) <WBSCoalescedAsynchronousWriterDelegate> *delegate;
+
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_cancelPendingWriteSynchronouslyLeavingSuddenTerminationIntact;
 - (id)_dataFromDataSource;
+- (id)_initWithName:(id)arg1 fileURL:(id)arg2 writerBlock:(id /* block */)arg3 dataSourceBlock:(id /* block */)arg4;
 - (void)_invalidateTimer;
 - (void)_scheduleTimer;
 - (void)_timerFired:(id)arg1;
@@ -32,8 +36,11 @@
 - (void)cancelPendingWriteSynchronously;
 - (void)completePendingWriteSynchronously;
 - (void)dealloc;
+- (id)delegate;
 - (id)initWithName:(id)arg1 fileURL:(id)arg2 dataSourceBlock:(id /* block */)arg3;
+- (id)initWithName:(id)arg1 writerBlock:(id /* block */)arg2 dataSourceBlock:(id /* block */)arg3;
 - (void)scheduleWrite;
+- (void)setDelegate:(id)arg1;
 - (void)startScheduledWriteNow;
 
 @end

@@ -15,7 +15,6 @@
     NSObject<OS_dispatch_queue> * _queue;
     BOOL  _ready;
     NSArray * _recordMiddleware;
-    id /* block */  _startUpCompletion;
     NSArray * _startUpMiddleware;
     int  _status;
 }
@@ -36,7 +35,6 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (getter=isReady, nonatomic) BOOL ready;
 @property (nonatomic, retain) NSArray *recordMiddleware;
-@property (nonatomic, copy) id /* block */ startUpCompletion;
 @property (nonatomic, retain) NSArray *startUpMiddleware;
 @property (nonatomic) int status;
 @property (readonly) Class superclass;
@@ -55,7 +53,7 @@
 - (BOOL)_isEnabled;
 - (id)_mapObjects:(id)arg1 withRecordMiddlewareBlock:(id /* block */)arg2;
 - (id)_mapRecords:(id)arg1 client:(BOOL)arg2;
-- (void)_performStartUpWithCompletion:(id /* block */)arg1;
+- (void)_performStartUp;
 - (BOOL)_preflightOperation:(id)arg1;
 - (void)_preflightRecordsInFetchOperation:(id)arg1;
 - (void)_preflightRecordsInModifyOperation:(id)arg1;
@@ -122,10 +120,8 @@
 - (void)setQueue:(id)arg1;
 - (void)setReady:(BOOL)arg1;
 - (void)setRecordMiddleware:(id)arg1;
-- (void)setStartUpCompletion:(id /* block */)arg1;
 - (void)setStartUpMiddleware:(id)arg1;
 - (void)setStatus:(int)arg1;
-- (id /* block */)startUpCompletion;
 - (id)startUpMiddleware;
 - (int)status;
 

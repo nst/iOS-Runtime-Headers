@@ -27,6 +27,10 @@
 + (BOOL)shouldShowForOffer:(id)arg1;
 
 - (void).cxx_destruct;
+- (int)_delegateActionForAction:(int)arg1;
+- (id)_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)_legacyDelegateMethodHandlesAction:(int)arg1;
+- (BOOL)_performLink:(id)arg1;
 - (id)activeConstraints;
 - (id)attributedText;
 - (id)delegate;
@@ -34,6 +38,7 @@
 - (BOOL)hasDismissButton;
 - (BOOL)hasTitle;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithOffer:(id)arg1;
 - (BOOL)isRTL;
 - (void)layoutSubviews;
 - (id)messageAttributes;

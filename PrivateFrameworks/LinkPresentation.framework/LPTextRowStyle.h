@@ -13,6 +13,8 @@
 - (void).cxx_destruct;
 - (id)init;
 - (id)leading;
+- (id)left;
+- (id)right;
 - (id)trailing;
 
 @end

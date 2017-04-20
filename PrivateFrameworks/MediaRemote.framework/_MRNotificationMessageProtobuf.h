@@ -4,14 +4,19 @@
 
 @interface _MRNotificationMessageProtobuf : PBCodable <NSCopying> {
     NSMutableArray * _notifications;
+    NSMutableArray * _userInfos;
 }
 
 @property (nonatomic, retain) NSMutableArray *notifications;
+@property (nonatomic, retain) NSMutableArray *userInfos;
 
 + (Class)notificationType;
++ (Class)userInfoType;
 
 - (void)addNotification:(id)arg1;
+- (void)addUserInfo:(id)arg1;
 - (void)clearNotifications;
+- (void)clearUserInfos;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -25,6 +30,10 @@
 - (unsigned int)notificationsCount;
 - (BOOL)readFrom:(id)arg1;
 - (void)setNotifications:(id)arg1;
+- (void)setUserInfos:(id)arg1;
+- (id)userInfoAtIndex:(unsigned int)arg1;
+- (id)userInfos;
+- (unsigned int)userInfosCount;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -14,6 +14,7 @@
 - (float)globalTopPadding;
 - (NSSet *)hiddenItemIndexPaths;
 - (void)invalidateLayoutForVerticalScroll;
+- (struct CGSize { float x1; float x2; })itemSize;
 - (id)prepareForViewTransitionToSize:(struct CGSize { float x1; float x2; })arg1;
 - (NSString *)sectionHeaderElementKind;
 - (float)sectionHeaderHeight;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@interface PHExternalAssetResource : PHAssetResource {
+@interface PHExternalAssetResource : PHAssetResource <PHCPLAssetResource> {
     unsigned int  _cplResourceType;
     PHAssetResourceCreationOptions * _creationOptions;
     NSData * _data;

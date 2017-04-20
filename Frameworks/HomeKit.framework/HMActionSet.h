@@ -34,6 +34,7 @@
 @property (nonatomic, readonly) BOOL hf_hasSetFavorite;
 @property (nonatomic, readonly) <HFIconDescriptor> *hf_iconDescriptor;
 @property (nonatomic, readonly) BOOL hf_isFavorite;
+@property (nonatomic, readonly) BOOL hf_requiresDeviceUnlock;
 @property (nonatomic) HMHome *home;
 @property (nonatomic, readonly, copy) NSDate *lastExecutionDate;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
@@ -117,6 +118,7 @@
 - (BOOL)hf_isAnonymous;
 - (BOOL)hf_isFavorite;
 - (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (BOOL)hf_requiresDeviceUnlock;
 - (id)hf_serializedStateDumpRepresentation;
 - (id)hf_updateDateAdded:(id)arg1;
 - (id)hf_updateIconDescriptor:(id)arg1;

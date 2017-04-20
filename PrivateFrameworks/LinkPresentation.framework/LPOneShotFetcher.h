@@ -4,6 +4,7 @@
 
 @interface LPOneShotFetcher : NSObject <WKNavigationDelegate, _LPResolver> {
     id /* block */  _completionHandler;
+    unsigned int  _loggingID;
     <_LPResolvable> * _resolvable;
     WKWebView * _webView;
 }

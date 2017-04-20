@@ -11,6 +11,7 @@
     VMUClassInfoMap * _classInfoIndexer;
     id * _classInfos;
     unsigned int  _classInfosCount;
+    VMUDebugTimer * _debugTimer;
     BOOL  _exactScanningEnabled;
     /* Warning: unhandled struct encoding: '{_VMUInstanceValues=Q@}' */ struct _VMUInstanceValues { unsigned long long x1; id x2; } * _instanceValues;
     unsigned int  _instanceValuesCount;
@@ -41,6 +42,7 @@
 
 @property (nonatomic) BOOL abandonedMarkingEnabled;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) VMUDebugTimer *debugTimer;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL exactScanningEnabled;
 @property (readonly) unsigned int hash;
@@ -48,12 +50,14 @@
 @property (nonatomic) unsigned long long maxInteriorOffset;
 @property (nonatomic, readonly) unsigned int nodeCount;
 @property (nonatomic, readonly) unsigned int nodeNamespaceSize;
+@property (nonatomic, readonly) VMUObjectIdentifier *objectIdentifier;
 @property (nonatomic, readonly) int pid;
 @property (nonatomic, readonly) VMUClassInfoMap *realizedClasses;
 @property (nonatomic, readonly) unsigned int regionCount;
 @property (nonatomic) BOOL saveNodeLabelsInGraph;
 @property (nonatomic) unsigned int scanningMask;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned int task;
 @property (nonatomic, readonly) unsigned int vmPageSize;
 @property (nonatomic, readonly) unsigned int zoneCount;
 
@@ -61,6 +65,7 @@
 + (id)nodeDescription:(/* Warning: unhandled struct encoding: '{?=Qb60b4@}' */ struct { unsigned long long x1; unsigned int x2 : 60; unsigned int x3 : 4; id x4; })arg1 withNodeOffset:(unsigned long long)arg2 sortedVMRegions:(id)arg3;
 + (id)referenceDescription:(struct { unsigned long long x1; unsigned int x2; unsigned long long x3; })arg1 withSourceNode:(/* Warning: unhandled struct encoding: '{?=Qb60b4@}' */ struct { unsigned long long x1; unsigned int x2 : 60; unsigned int x3 : 4; id x4; })arg2 destinationNode:(/* Warning: unhandled struct encoding: '{?=Qb60b4@}' */ struct { unsigned long long x1; unsigned int x2 : 60; unsigned int x3 : 4; id x4; })arg3 sortedVMRegions:(id)arg4 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg5 alignmentSpacing:(unsigned int)arg6;
 
+- (void)_buildRegionPageBlockMaps;
 - (void)_callRemoteMallocEnumerators:(unsigned int)arg1 block:(id /* block */)arg2;
 - (void)_findMarkedAbandonedBlocks;
 - (void)_fixupBlockIsas;
@@ -77,9 +82,11 @@
 - (void)addMallocNodes:(id)arg1;
 - (void)addMallocNodesFromTask;
 - (void)addRootNodesFromTask;
+- (id)classInfoForObjectAtAddress:(unsigned long long)arg1;
 - (void*)contentForNode:(unsigned int)arg1;
 - (void*)copyUserMarked;
 - (void)dealloc;
+- (id)debugTimer;
 - (void)detachFromTask;
 - (unsigned int)enumerateMarkedObjects:(void*)arg1 withBlock:(id /* block */)arg2;
 - (unsigned int)enumerateNodesWithBlock:(id /* block */)arg1;
@@ -99,6 +106,7 @@
 - (id)nodeDescription:(unsigned int)arg1 withOffset:(unsigned long long)arg2;
 - (/* Warning: unhandled struct encoding: '{?=Qb60b4@}' */ struct { unsigned long long x1; unsigned int x2 : 60; unsigned int x3 : 4; id x4; })nodeDetails:(unsigned int)arg1;
 - (unsigned int)nodeNamespaceSize;
+- (id)objectIdentifier;
 - (void)orderedNodeTraversal:(int)arg1 withBlock:(id /* block */)arg2;
 - (int)pid;
 - (id)processSnapshotGraph;
@@ -109,16 +117,16 @@
 - (void)removeRootReachableNodes;
 - (BOOL)saveNodeLabelsInGraph;
 - (void)scanNodesForReferences:(id /* block */)arg1;
-- (id)scanNodesIntoGraph;
 - (unsigned int)scanningMask;
-- (unsigned int)scanningMaskForAllReferences;
 - (void)setAbandonedMarkingEnabled:(BOOL)arg1;
+- (void)setDebugTimer:(id)arg1;
 - (void)setExactScanningEnabled:(BOOL)arg1;
 - (void)setMaxInteriorOffset:(unsigned long long)arg1;
 - (void)setNodeScanningLogger:(id /* block */)arg1;
 - (void)setReferenceScanningLogger:(id /* block */)arg1;
 - (void)setSaveNodeLabelsInGraph:(BOOL)arg1;
 - (void)setScanningMask:(unsigned int)arg1;
+- (unsigned int)task;
 - (unsigned int)vmPageSize;
 - (id)vmuVMRegionForNode:(unsigned int)arg1;
 - (unsigned int)zoneCount;

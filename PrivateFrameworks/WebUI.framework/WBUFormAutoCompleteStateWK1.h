@@ -10,8 +10,8 @@
 @property (nonatomic, readonly) WebFrame *webFrame;
 
 - (void).cxx_destruct;
-- (void)annotateForm:(id)arg1 withValues:(id)arg2;
-- (void)autoFillGeneratedPassword:(id)arg1 inForm:(double)arg2;
+- (void)annotateForm:(int)arg1 withValues:(id)arg2;
+- (void)autoFillGeneratedPassword:(id)arg1 inForm:(int)arg2;
 - (void)autoFillValues:(id)arg1 setAutoFilled:(BOOL)arg2 andFocusFieldAfterFilling:(BOOL)arg3 fieldToFocus:(id)arg4;
 - (void)dealloc;
 - (void)fetchFormMetadataWithCompletion:(id /* block */)arg1;

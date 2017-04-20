@@ -45,6 +45,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)device;
+- (id)formattedDescription:(unsigned int)arg1;
 - (id)functionConstantsDictionary;
 - (unsigned int)functionType;
 - (id)initWithName:(id)arg1 type:(unsigned int)arg2 libraryData:(/* Warning: unhandled struct encoding: '{MTLLibraryData=^^?i@}' */ struct MTLLibraryData { int (**x1)(); int x2; id x3; }*)arg3 device:(id)arg4;

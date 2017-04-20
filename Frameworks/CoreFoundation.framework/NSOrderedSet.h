@@ -139,6 +139,7 @@
 - (void)fc_enumerateObjectsPairwiseUsingBlock:(id /* block */)arg1;
 - (id)fc_firstObjectPassingTest:(id /* block */)arg1;
 - (id)fc_indexesOfObjectsInOrderedSet:(id)arg1;
+- (BOOL)fc_isEqualToOrderedSet:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (BOOL)fc_isSortedUsingComparator:(id /* block */)arg1;
 - (id)fc_orderedSetByCollectingObjectsWithBlock:(id /* block */)arg1;
 - (id)fc_orderedSetByMinusingOrderedSet:(id)arg1;

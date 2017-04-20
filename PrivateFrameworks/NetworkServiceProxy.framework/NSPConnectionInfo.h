@@ -52,6 +52,7 @@
 - (BOOL)TFOSucceeded;
 - (id)connectedPath;
 - (double)connectionDelay;
+- (id)copyDictionary;
 - (id)edgeAddress;
 - (int)edgeType;
 - (void)encodeWithCoder:(id)arg1;

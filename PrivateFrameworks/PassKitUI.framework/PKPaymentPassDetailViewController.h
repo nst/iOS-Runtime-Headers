@@ -45,6 +45,7 @@
     NSArray * _transactions;
     PKSettingTableCell * _transactionsSwitch;
     PKPaymentVerificationController * _verificationController;
+    BOOL  _viewIsDisappearing;
     UIColor * _warningTextColor;
     PKPaymentWebService * _webService;
 }
@@ -200,6 +201,7 @@
 - (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)updateActivationFooterViewContents;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

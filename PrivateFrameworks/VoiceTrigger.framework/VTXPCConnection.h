@@ -26,6 +26,7 @@
 - (oneway void)getVoiceTriggerCountWithReply:(id /* block */)arg1;
 - (void)handleDisconnect;
 - (id)init;
+- (oneway void)isLastTriggerFollowedBySpeechWithReply:(id /* block */)arg1;
 - (oneway void)notifySecondChanceRequest;
 - (oneway void)notifyTriggerEventRequest;
 - (oneway void)notifyVoiceTriggeredSiriSessionCancelled;

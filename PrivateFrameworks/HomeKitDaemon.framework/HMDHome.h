@@ -281,7 +281,7 @@
 - (void)_modifyNotificationOnResident:(BOOL)arg1 ignoreDeviceUnlockRequirement:(BOOL)arg2 forCharacteristics:(id)arg3;
 - (void)_modifyNotificationsOnResidentWithPayload:(id)arg1 enableNotification:(BOOL)arg2;
 - (void)_modifyNotificationsWithPayload:(id)arg1 enableNotification:(BOOL)arg2 withResidentDevice:(id)arg3;
-- (id)_notificationPayloadForChangedCharacterisitics:(id)arg1;
+- (id)_notificationPayloadForChangedCharacterisitics:(id)arg1 destinationIsXPCTransport:(BOOL)arg2;
 - (void)_notifyChangedCharacteristics:(id)arg1 identifier:(id)arg2 multiPartResponse:(BOOL)arg3 moreMessagesInMultipart:(BOOL)arg4 requestMessage:(id)arg5 withCompletionHandler:(id /* block */)arg6;
 - (void)_notifyChangedCharacteristics:(id)arg1 message:(id)arg2 modifiedCharacteristics:(id)arg3;
 - (void)_notifyChangedCharacteristics:(id)arg1 toUserDeviceAddress:(id)arg2;
@@ -356,7 +356,7 @@
 - (void)_subscribeForHomeNotificationsFromRemoteGateway:(BOOL)arg1;
 - (void)_subscribeForHomeNotificationsOnDirectTransports:(BOOL)arg1;
 - (void)_subscribeForNotificationFromRemoteGateway:(BOOL)arg1;
-- (void)_unconfigurePairedAccessoriesForServer:(id)arg1;
+- (void)_unconfigurePairedAccessoriesForServer:(id)arg1 updateReachability:(BOOL)arg2;
 - (void)_updateBulletinBoardOfChangedCharacteristics:(id)arg1 changedByThisDevice:(BOOL)arg2;
 - (void)_updateCloudRelaySupport;
 - (void)_updateConfigurationStateForResidentDevice:(id)arg1 desiredConfigState:(unsigned int)arg2 message:(id)arg3;
@@ -367,7 +367,7 @@
 - (void)_updatePairedAccessoriesForServer:(id)arg1 reAddServices:(BOOL)arg2;
 - (void)_updateReachabilityChangeToRegisteredDevices:(id)arg1;
 - (void)_updateRemoteReachability:(BOOL)arg1 accessories:(id)arg2;
-- (void)_updateWoWState;
+- (void)_updateWoWState:(id)arg1;
 - (BOOL)_validateAddingNewTriggerWithName:(id)arg1 message:(id)arg2;
 - (BOOL)_verifyUserManagementPermissionForAccessory:(id)arg1 error:(id*)arg2;
 - (void)_writeCharacteristicValues:(id)arg1 requestMessage:(id)arg2 withCompletionHandler:(id /* block */)arg3;
@@ -382,7 +382,7 @@
 - (void)accessoryBrowser:(id)arg1 accessoryServer:(id)arg2 didUpdateValuesForCharacteristics:(id)arg3 stateNumber:(id)arg4;
 - (void)accessoryBrowser:(id)arg1 accessoryServer:(id)arg2 isBlockedWithCompletionHandler:(id /* block */)arg3;
 - (void)accessoryBrowser:(id)arg1 didFindAccessoryServer:(id)arg2 stateChanged:(BOOL)arg3 stateNumber:(id)arg4 completion:(id /* block */)arg5;
-- (void)accessoryBrowser:(id)arg1 didRemoveAccessoryServer:(id)arg2;
+- (void)accessoryBrowser:(id)arg1 didRemoveAccessoryServer:(id)arg2 error:(id)arg3;
 - (void)accessoryBrowser:(id)arg1 didTombstoneAccessoryServer:(id)arg2;
 - (void)accessoryBrowser:(id)arg1 didUpdateReachability:(BOOL)arg2 forBTLEAccessoriesWithServerIdentifier:(id)arg3;
 - (void)accessoryBrowser:(id)arg1 discoveryFailedWithError:(id)arg2 accessoryServer:(id)arg3 linkType:(int)arg4;
@@ -459,6 +459,7 @@
 - (void)invalidate;
 - (BOOL)isAdminUser;
 - (BOOL)isAnyBTLEAccessoryReachable;
+- (BOOL)isCurrentDeviceAvaliableResident;
 - (BOOL)isOwnerUser;
 - (BOOL)isResidentSupported;
 - (int)lastKnownReachableAccessoryCount;
@@ -482,7 +483,9 @@
 - (void)notifyClientOfAccessoryInfoUpdatedForAccessories:(id)arg1;
 - (void)notifyClientOfVendorInfoUpdatedForManufacturers:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)notifyDidArriveHome;
+- (void)notifyDidEnterHomeRegion;
 - (void)notifyDidLeaveHome;
+- (void)notifyDidLeaveHomeRegion;
 - (void)notifyNewRemotePeersFound:(BOOL)arg1 remoteUsersRemoved:(id)arg2 forceRemoteNotificationRegistration:(BOOL)arg3;
 - (void)notifyOfChangedCharacteristic:(id)arg1 changedByThisDevice:(BOOL)arg2 residentShouldNotifyPeers:(BOOL)arg3 message:(id)arg4;
 - (id)outgoingInvitations;
@@ -529,6 +532,8 @@
 - (id)removeName:(id)arg1;
 - (void)removeResidentCapableDevice:(id)arg1;
 - (void)removeService:(id)arg1;
+- (void)removeTrigger:(id)arg1;
+- (void)removeTriggerNoNotification:(id)arg1;
 - (void)removeTriggerOwnedActionSet:(id)arg1;
 - (void)removeUnconfiguredResidentDeviceWithUserID:(id)arg1;
 - (void)removeUser:(id)arg1;

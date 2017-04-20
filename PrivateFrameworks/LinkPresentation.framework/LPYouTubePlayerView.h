@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/LinkPresentation.framework/LinkPresentation
  */
 
-@interface LPYouTubePlayerView : UIView {
+@interface LPYouTubePlayerView : UIView <UIScrollViewDelegate> {
     <LPYouTubePlayerDelegate> * _delegate;
     double  _endTime;
     BOOL  _muted;
@@ -15,12 +15,16 @@
     WKWebView * _webView;
 }
 
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <LPYouTubePlayerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) double endTime;
+@property (readonly) unsigned int hash;
 @property (getter=isMuted, nonatomic) BOOL muted;
 @property (nonatomic) BOOL showsControls;
 @property (nonatomic) double startTime;
 @property (nonatomic) BOOL startsPlayingAutomatically;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_parameterScript;
@@ -30,13 +34,17 @@
 - (void)didReceiveScriptMessage:(id)arg1;
 - (void)dispatchErrorForInvalidURL;
 - (double)endTime;
+- (void)enterFullScreen;
+- (void)exitFullScreen;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isMuted;
+- (void)layoutSubviews;
 - (void)loadVideoWithEmbedURL:(id)arg1;
 - (void)loadVideoWithID:(id)arg1;
 - (void)loadVideoWithURL:(id)arg1;
 - (void)pause;
 - (void)play;
+- (void)scrollViewDidScroll:(id)arg1;
 - (void)seekTo:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEndTime:(double)arg1;

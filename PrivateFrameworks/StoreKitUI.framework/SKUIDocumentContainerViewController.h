@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIDocumentContainerViewController : SKUIViewController <IKAppDocumentDelegate, SKUIMediaQueryDelegate, SKUIModalSourceViewProvider, SKUINavigationBarControllerDelegate, SKUINavigationBarDisplayConfiguring, SKUINavigationPaletteProvider, SKUIResourceLoaderDelegate, SKUIScrollingTabAppearanceStatusObserver, SKUIScrollingTabNestedPagedScrolling, SKUIToolbarControllerDelegate, UIViewControllerTransitioningDelegate> {
+@interface SKUIDocumentContainerViewController : SKUIViewController <IKAppDocumentDelegate, SKUIMediaQueryDelegate, SKUIModalSourceViewProvider, SKUINavigationBarControllerDelegate, SKUINavigationBarDisplayConfiguring, SKUINavigationPaletteProvider, SKUIResourceLoaderDelegate, SKUIScrollingTabAppearanceStatusObserver, SKUIScrollingTabNestedPagedScrolling, SKUIToolbarControllerDelegate, SKUIViewControllerTesting, UIViewControllerTransitioningDelegate> {
     UIViewController * _beforeErrorChildViewController;
     UIViewController * _childViewController;
     NSArray * _defaultLeftBarButtonItems;
@@ -109,6 +109,7 @@
 - (id)navigationPaletteView;
 - (id)pageRenderEvent;
 - (id /* block */)pendingSizeTransitionCompletion;
+- (BOOL)performTestWithName:(id)arg1 options:(id)arg2;
 - (BOOL)prefersNavigationBarBackgroundViewHidden;
 - (BOOL)prefersNavigationBarHidden;
 - (id)previewMenuItems;

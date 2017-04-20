@@ -2,11 +2,18 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFLateSectionsAppendedFeedback : SFFeedback <NSCopying> {
+@interface SFLateSectionsAppendedFeedback : SFFeedback <NSCopying, SFProtobufObject> {
     NSArray * _sections;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) PBCodable *protobufMessage;
 @property (nonatomic, copy) NSArray *sections;
+@property (readonly) Class superclass;
+
+// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
 
 + (BOOL)supportsSecureCoding;
 
@@ -17,5 +24,11 @@
 - (id)initWithSections:(id)arg1;
 - (id)sections;
 - (void)setSections:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
+
++ (Class)protobufClass;
+
+- (id)protobufMessage;
 
 @end

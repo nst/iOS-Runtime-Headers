@@ -4,15 +4,16 @@
 
 @interface ASAAudioDevice : ASAObject
 
-@property (getter=isActive, nonatomic, readonly) BOOL active;
 @property (nonatomic, readonly) double actualSampleRate;
 @property (getter=isAggregate, nonatomic, readonly) BOOL aggregate;
 @property (nonatomic, readonly, copy) NSDictionary *aggregateDescription;
+@property (getter=isAlive, nonatomic, readonly) BOOL alive;
+@property (nonatomic, readonly) BOOL canBeDefaultDevice;
+@property (nonatomic, readonly) BOOL canBeDefaultSystemDevice;
 @property (nonatomic, copy) NSString *clockDeviceUID;
 @property (nonatomic, readonly) unsigned int clockDomain;
 @property (nonatomic, readonly, copy) NSArray *controlObjectIDs;
-@property (getter=canBeDefaultDevice, nonatomic, readonly) BOOL defaultDevice;
-@property (getter=canBeDefaultSystemDevice, nonatomic, readonly) BOOL defaultSystemDevice;
+@property (nonatomic, readonly, copy) NSArray *controls;
 @property (nonatomic, readonly, copy) NSString *deviceUID;
 @property (nonatomic, readonly) BOOL hasInput;
 @property (nonatomic, readonly) BOOL hasOutput;
@@ -21,6 +22,7 @@
 @property (nonatomic, readonly) unsigned int inputLatency;
 @property (nonatomic, readonly) unsigned int inputSafetyOffset;
 @property (nonatomic, readonly, copy) NSArray *inputStreamObjectIDs;
+@property (nonatomic, readonly, copy) NSArray *inputStreams;
 @property (nonatomic) unsigned int ioBufferFrameSize;
 @property (nonatomic) float ioCycleUsage;
 @property (nonatomic, readonly, copy) NSString *manufacturer;
@@ -33,6 +35,7 @@
 @property (nonatomic, readonly) unsigned int outputLatency;
 @property (nonatomic, readonly) unsigned int outputSafetyOffset;
 @property (nonatomic, readonly, copy) NSArray *outputStreamObjectIDs;
+@property (nonatomic, readonly, copy) NSArray *outputStreams;
 @property (nonatomic, readonly, copy) NSArray *relatedDeviceObjectIDs;
 @property (getter=isRunning, nonatomic, readonly) BOOL running;
 @property (nonatomic, readonly) unsigned int transportType;
@@ -45,8 +48,11 @@
 - (id)clockDeviceUID;
 - (unsigned int)clockDomain;
 - (id)controlObjectIDs;
+- (id)controls;
 - (id)coreAudioClassName;
 - (BOOL)createAudioProcID:(int (**)arg1 forIOProc:(int (*)arg2 withClientData:(void*)arg3 error:(id*)arg4;
+- (BOOL)defaultDevice;
+- (BOOL)defaultSystemDevice;
 - (BOOL)destroyAudioProcID:(int (*)arg1 error:(id*)arg2;
 - (id)deviceUID;
 - (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(BOOL)arg2;
@@ -57,10 +63,11 @@
 - (unsigned int)inputSafetyOffset;
 - (id)inputStreamObjectIDs;
 - (id)inputStreamUsageForAudioProc:(int (*)arg1;
+- (id)inputStreams;
 - (unsigned int)ioBufferFrameSize;
 - (float)ioCycleUsage;
-- (BOOL)isActive;
 - (BOOL)isAggregate;
+- (BOOL)isAlive;
 - (BOOL)isHidden;
 - (BOOL)isRunning;
 - (id)manufacturer;
@@ -74,6 +81,7 @@
 - (unsigned int)outputSafetyOffset;
 - (id)outputStreamObjectIDs;
 - (id)outputStreamUsageForAudioProc:(int (*)arg1;
+- (id)outputStreams;
 - (id)relatedDeviceObjectIDs;
 - (void)setClockDeviceUID:(id)arg1;
 - (BOOL)setInputStreamUsage:(id)arg1 forAudioProc:(int (*)arg2;

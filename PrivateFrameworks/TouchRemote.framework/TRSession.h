@@ -31,7 +31,7 @@
 - (id /* block */)_handlerForRequestClass:(Class)arg1;
 - (id)_messageHandlerForMessageClass:(Class)arg1;
 - (void)_respondToRequest:(id)arg1 withError:(id)arg2;
-- (void)_sendHeartbeat;
+- (void)_sendHeartbeats;
 - (void)_sendResponse:(id)arg1 forRequest:(id)arg2;
 - (void)_setMessageHandler:(id)arg1 forMessageClass:(Class)arg2;
 - (id)anisetteDataHandler;
@@ -47,6 +47,7 @@
 - (id)messageHandlerMapQ;
 - (id)nearbyDevice;
 - (void)sendEvent:(id)arg1;
+- (void)sendHeartbeatWithResponseHandler:(id /* block */)arg1;
 - (void)sendRequest:(id)arg1 withResponseHandler:(id /* block */)arg2;
 - (void)setAnisetteDataHandler:(id)arg1;
 - (void)setConnection:(id)arg1;

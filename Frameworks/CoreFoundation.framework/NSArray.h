@@ -285,6 +285,10 @@
 - (id)un_safeArrayContainingClass:(Class)arg1;
 - (id)un_safeArrayContainingClasses:(id)arg1;
 
+// Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
+
+- (id)vs_componentsJoinedByAttributedString:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/Accessibility.framework/Frameworks/AXHearingSupport.framework/AXHearingSupport
 
 - (id)programThatMatchesProgram:(id)arg1;
@@ -313,6 +317,13 @@
 // Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
 
 - (id)afui_arrayByMappingWithBlock:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AuthKit.framework/AuthKit
+
++ (id)ak_arrayWithJSONResponseData:(id)arg1;
++ (id)ak_arrayWithResponseData:(id)arg1;
+
+- (id)ak_map:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
 
@@ -389,6 +400,10 @@
 - (id)composeRecipientHandles;
 - (id)composeRecipientNormalizedAddresses;
 
+// Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
+
+- (id)crk_mapUsingBlock:(id /* block */)arg1;
+
 // Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
 
 - (id)CKSortedForUpload;
@@ -449,6 +464,10 @@
 
 + (id)_arrayWithIntArg:(int)arg1 additionalArgs:(void*)arg2;
 + (id)cdvArrayWithIntegers:(int)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreFollowUp.framework/CoreFollowUp
+
+- (id)fl_map:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
 
@@ -543,6 +562,8 @@
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
++ (id)hf_arrayWithNumbersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 stride:(unsigned int)arg2;
+
 - (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
 - (id)hf_serializedStateDumpRepresentation;
 
@@ -595,6 +616,7 @@
 - (BOOL)mf_any:(id /* block */)arg1;
 - (unsigned int)mf_countObjectsPassingTest:(id /* block */)arg1;
 - (id)mf_dictionaryWithMessagesSortedByStore;
+- (id)mf_diffWithArray:(id)arg1;
 - (void)mf_enumerateObjectsInBatchesOfSize:(unsigned int)arg1 block:(id /* block */)arg2;
 - (id)mf_filter:(id /* block */)arg1;
 - (id)mf_firstObjectPassingTest:(id /* block */)arg1;
@@ -618,14 +640,6 @@
 - (id)mf_tail;
 - (id)mf_uncommentedAddressList;
 - (id)mf_uniquifyWithComparator:(id /* block */)arg1;
-
-// Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
-
-- (BOOL)MCSCWriteToFile:(id)arg1 atomically:(BOOL)arg2;
-- (BOOL)MCSCWriteToFile:(id)arg1 atomically:(BOOL)arg2 error:(id*)arg3;
-- (BOOL)MCSCWriteToFile:(id)arg1 atomically:(BOOL)arg2 mode:(unsigned short)arg3 error:(id*)arg4;
-- (BOOL)MCSCWriteToURL:(id)arg1 atomically:(BOOL)arg2 error:(id*)arg3;
-- (BOOL)MCSCWriteToURL:(id)arg1 atomically:(BOOL)arg2 mode:(unsigned short)arg3 error:(id*)arg4;
 
 // Image: /System/Library/PrivateFrameworks/MapsSupport.framework/MapsSupport
 
@@ -717,6 +731,7 @@
 - (id)fc_firstObjectWithValue:(id)arg1 forKey:(id)arg2;
 - (unsigned int)fc_indexOfFirstObjectWithValue:(id)arg1 forKey:(id)arg2;
 - (id)fc_indexesOfObjectsIdenticalTo:(id)arg1;
+- (BOOL)fc_isEqualToArray:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (BOOL)fc_isSortedUsingComparator:(id /* block */)arg1;
 - (id)fc_onlyObject;
 - (id)fc_orderedSetByTransformingWithBlock:(id /* block */)arg1;
@@ -820,6 +835,10 @@
 - (id)indentBy:(unsigned int)arg1 withSeparator:(id)arg2;
 - (id)map:(id /* block */)arg1;
 
+// Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/PhotoAnalysis
+
+- (void)persistenceDelegate_enumerateInChunksOfSize:(unsigned int)arg1 withOverageAllowance:(unsigned int)arg2 usingBlock:(id /* block */)arg3;
+
 // Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
 
 - (BOOL)b_boolAtIndex:(unsigned int)arg1;
@@ -860,12 +879,6 @@
 
 + (id)arrayWithValues:(id)arg1 inBlock:(id /* block */)arg2;
 
-// Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
-
-- (id)arrayByRemovingObjectsFromArray:(id)arg1;
-- (BOOL)containsAtleastOneOf:(id)arg1;
-- (BOOL)containsString:(id)arg1;
-
 // Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
 
 - (id)arrayByPerformingSpecifierUpdatesUsingBlock:(id /* block */)arg1;
@@ -876,27 +889,55 @@
 
 - (BOOL)containsString:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/ProactiveML.framework/ProactiveML
+
+- (id)initFromPointer:(const double*)arg1 withLength:(int)arg2;
+- (id)toMutableData;
+
 // Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
 
 - (id)_sa_mappedArrayWithBlock:(id /* block */)arg1;
 
-// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
+// Image: /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
 
 + (id)safari_arrayWithPropertyListData:(id)arg1 options:(unsigned int)arg2;
++ (id)safari_arrayWithPropertyListData:(id)arg1 options:(unsigned int)arg2;
 
+- (id)_safari_computeLengthsOfLongestSubsequencesCommonWithArray:(id)arg1;
+- (id)_safari_computeLengthsOfLongestSubsequencesCommonWithArray:(id)arg1;
+- (id)_safari_generateDiffWithLongestCommonSubsequenceLengths:(id)arg1 array:(id)arg2 indexIntoSelf:(unsigned int)arg3 indexIntoArray:(unsigned int)arg4;
+- (id)_safari_generateDiffWithLongestCommonSubsequenceLengths:(id)arg1 array:(id)arg2 indexIntoSelf:(unsigned int)arg3 indexIntoArray:(unsigned int)arg4;
+- (id)safari_arrayAtIndex:(unsigned int)arg1;
 - (id)safari_arrayAtIndex:(unsigned int)arg1;
 - (id)safari_dictionaryAtIndex:(unsigned int)arg1;
+- (id)safari_dictionaryAtIndex:(unsigned int)arg1;
+- (id)safari_diffWithArray:(id)arg1;
+- (id)safari_diffWithArray:(id)arg1;
+- (id)safari_filterObjectsUsingBlock:(id /* block */)arg1;
 - (id)safari_filterObjectsUsingBlock:(id /* block */)arg1;
 - (id)safari_firstObjectPassingTest:(id /* block */)arg1;
+- (id)safari_firstObjectPassingTest:(id /* block */)arg1;
+- (id)safari_mapAndFilterObjectsUsingBlock:(id /* block */)arg1;
 - (id)safari_mapAndFilterObjectsUsingBlock:(id /* block */)arg1;
 - (id)safari_mapAndFilterObjectsWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
+- (id)safari_mapAndFilterObjectsWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
+- (id)safari_mapObjectsUsingBlock:(id /* block */)arg1;
 - (id)safari_mapObjectsUsingBlock:(id /* block */)arg1;
 - (id)safari_maximumUsingComparator:(id /* block */)arg1;
+- (id)safari_maximumUsingComparator:(id /* block */)arg1;
+- (id)safari_minimumUsingComparator:(id /* block */)arg1;
 - (id)safari_minimumUsingComparator:(id /* block */)arg1;
 - (id)safari_numberAtIndex:(unsigned int)arg1;
+- (id)safari_numberAtIndex:(unsigned int)arg1;
+- (id)safari_reduceObjectsUsingBlock:(id /* block */)arg1;
 - (id)safari_reduceObjectsUsingBlock:(id /* block */)arg1;
 - (id)safari_reduceObjectsWithInitialValue:(id)arg1 usingBlock:(id /* block */)arg2;
+- (id)safari_reduceObjectsWithInitialValue:(id)arg1 usingBlock:(id /* block */)arg2;
 - (id)safari_stringAtIndex:(unsigned int)arg1;
+- (id)safari_stringAtIndex:(unsigned int)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
+
 - (id)safari_translateToArrayOfParsecModelsOfClass:(Class)arg1;
 
 // Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
@@ -954,6 +995,10 @@
 
 - (id)_nextKeywordUsingCursors:(struct __CFDictionary { }*)arg1;
 - (id)_scrambledKeywordsAndAddToSet:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/WatchListKit.framework/WatchListKit
+
+- (id)wlk_arrayDifference:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 

@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
  */
 
-@interface MRTelevision : NSObject <MRDeviceInfoObserving, MRTelevisionClientConnectionDelegate> {
+@interface MRTelevision : NSObject <MRTelevisionClientConnectionDelegate> {
     unsigned int  _cachedServerDisconnectError;
+    void * _commandHandlerToken;
     MRTelevisionClientConnection * _connection;
     unsigned int  _connectionState;
     id /* block */  _connectionStateCallback;
@@ -11,8 +12,7 @@
     id /* block */  _customDataCallback;
     NSObject<OS_dispatch_queue> * _customDataCallbackQueue;
     struct _MROrigin { } * _customOrigin;
-    MRDeviceInfo * _deviceInfo;
-    MRDeviceInfoObserver * _deviceInfoObserver;
+    void * _deviceInfo;
     unsigned int  _gameControllerInputMode;
     id /* block */  _gameControllerInputModeCallback;
     NSObject<OS_dispatch_queue> * _gameControllerInputModeCallbackQueue;
@@ -22,10 +22,10 @@
     id /* block */  _hiliteModeCallback;
     NSObject<OS_dispatch_queue> * _hiliteModeCallbackQueue;
     BOOL  _isCallingClientCallback;
-    BOOL  _isCoalescingClientStateUpdatesConfigMessages;
     id /* block */  _nameCallback;
     NSObject<OS_dispatch_queue> * _nameCallbackQueue;
     NSNetService * _netService;
+    int  _notifyRestoreClientStateForLaunch;
     NSData * _nowPlayingArtwork;
     NSMutableDictionary * _nowPlayingInfo;
     id /* block */  _pairingAllowedCallback;
@@ -36,6 +36,7 @@
     id /* block */  _recordingStateCallback;
     NSObject<OS_dispatch_queue> * _recordingStateCallbackQueue;
     NSObject<OS_dispatch_queue> * _serialQueue;
+    MRSupportedProtocolMessages * _supportedMessages;
     id /* block */  _textInputCallback;
     NSObject<OS_dispatch_queue> * _textInputCallbackQueue;
     MSVDistributedNotificationObserver * _volumeControlNotificationObserver;
@@ -54,7 +55,7 @@
 @property (nonatomic) struct _MROrigin { }*customOrigin;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, copy) MRDeviceInfo *deviceInfo;
+@property (nonatomic, readonly) void*deviceInfo;
 @property (nonatomic) unsigned int gameControllerInputMode;
 @property (nonatomic, copy) id /* block */ gameControllerInputModeCallback;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *gameControllerInputModeCallbackQueue;
@@ -67,7 +68,6 @@
 @property (nonatomic, readonly) NSString *hostName;
 @property (nonatomic, readonly) NSInputStream *inputStream;
 @property (nonatomic) BOOL isCallingClientCallback;
-@property (nonatomic) BOOL isCoalescingClientStateUpdatesConfigMessages;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, copy) id /* block */ nameCallback;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *nameCallbackQueue;
@@ -76,7 +76,6 @@
 @property (nonatomic, retain) NSMutableDictionary *nowPlayingInfo;
 @property (nonatomic, readonly) NSOutputStream *outputStream;
 @property (getter=isPaired, nonatomic, readonly) BOOL paired;
-@property (nonatomic, readonly) void*pairedDevice;
 @property (nonatomic, copy) id /* block */ pairingAllowedCallback;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *pairingAllowedCallbackQueue;
 @property (nonatomic, copy) id /* block */ pairingCallback;
@@ -85,6 +84,7 @@
 @property (nonatomic, copy) id /* block */ recordingStateCallback;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *recordingStateCallbackQueue;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) MRSupportedProtocolMessages *supportedMessages;
 @property (nonatomic, copy) id /* block */ textInputCallback;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *textInputCallbackQueue;
 @property (nonatomic, retain) MSVDistributedNotificationObserver *volumeControlNotificationObserver;
@@ -92,9 +92,8 @@
 @property (nonatomic) BOOL wantsNowPlayingNotifications;
 @property (nonatomic) BOOL wantsVolumeNotifications;
 
-+ (id)_deviceInfoFromTXTRecordData:(id)arg1;
++ (void*)createDeviceInfoFromTXTRecordData:(id)arg1;
 
-- (void)_addArtwork:(id)arg1 toNowPlayingInfo:(id)arg2;
 - (void)_callCientCustomDataCallback:(id)arg1 name:(id)arg2;
 - (void)_callCientHiliteModeCallback;
 - (void)_callClientAllowsPairingCallback;
@@ -108,6 +107,7 @@
 - (void)_cleanUp;
 - (id)_errorForCurrentState;
 - (void)_handleCryptoPairingMessage:(id)arg1;
+- (void)_handleDeviceInfoChanged:(id)arg1;
 - (void)_handleDeviceInfoUpdateMessage:(id)arg1;
 - (void)_handleGenericMessage:(id)arg1;
 - (void)_handleHiliteModeMessage:(id)arg1;
@@ -122,12 +122,13 @@
 - (id)_initializeConnection;
 - (id)_loadDeviceInfo;
 - (id)_openSecuritySession;
-- (void)_registerPlaybackQueueCallback;
-- (void)_scheduleClientStateUpdatesConfigMessage;
+- (void)_registerCallbacks;
+- (void)_registerOriginCallbacks;
+- (void)_sendClientUpdatesConfigMessage;
 - (void)_sendTextInputMessageWithActionType:(unsigned int)arg1 text:(id)arg2;
 - (id)_setupCustomOrigin;
-- (void)_setupCustomOriginWithReplyQueue:(id)arg1 completion:(id /* block */)arg2;
-- (void)_teardownCustomOrigin;
+- (void)_tearDownCustomOrigin;
+- (void)_televisionDeviceInfoDidChange:(void*)arg1 oldDevice:(void*)arg2;
 - (void)_updateNowPlayingInfo;
 - (void)clearActiveTextEditingSessionData;
 - (void)clientConnection:(id)arg1 didReceiveMessage:(id)arg2;
@@ -143,7 +144,7 @@
 - (void)dealloc;
 - (void)deleteBackwardInActiveTextEditingSession;
 - (id)description;
-- (id)deviceInfo;
+- (void*)deviceInfo;
 - (void)disconnect:(id)arg1;
 - (void)exitHiliteMode;
 - (unsigned int)gameControllerInputMode;
@@ -160,7 +161,6 @@
 - (id)inputStream;
 - (void)insertTextIntoActiveTextEditingSessionWithText:(id)arg1;
 - (BOOL)isCallingClientCallback;
-- (BOOL)isCoalescingClientStateUpdatesConfigMessages;
 - (BOOL)isPaired;
 - (id)name;
 - (id /* block */)nameCallback;
@@ -168,13 +168,12 @@
 - (id)netService;
 - (id)nowPlayingArtwork;
 - (id)nowPlayingInfo;
-- (void)observer:(id)arg1 didObserveNewDeviceInfo:(id)arg2;
 - (id)outputStream;
-- (void*)pairedDevice;
 - (id /* block */)pairingAllowedCallback;
 - (id)pairingAllowedCallbackQueue;
 - (id /* block */)pairingCallback;
 - (id)pairingCallbackQueue;
+- (void)ping:(double)arg1 callback:(id /* block */)arg2 withQueue:(id)arg3;
 - (int)port;
 - (void)processVoiceInputAudioDataForDeviceID:(unsigned int)arg1 withBuffer:(id)arg2 time:(struct { double x1; double x2; })arg3 gain:(float)arg4;
 - (id /* block */)recordingStateCallback;
@@ -196,7 +195,7 @@
 - (void)setCustomDataCallback:(id /* block */)arg1 withQueue:(id)arg2;
 - (void)setCustomDataCallbackQueue:(id)arg1;
 - (void)setCustomOrigin:(struct _MROrigin { }*)arg1;
-- (void)setDeviceInfo:(id)arg1;
+- (void)setDeviceInfo:(void*)arg1;
 - (void)setGameControllerInputMode:(unsigned int)arg1;
 - (void)setGameControllerInputModeCallback:(id /* block */)arg1;
 - (void)setGameControllerInputModeCallback:(id /* block */)arg1 withQueue:(id)arg2;
@@ -209,7 +208,6 @@
 - (void)setHiliteModeCallback:(id /* block */)arg1 withQueue:(id)arg2;
 - (void)setHiliteModeCallbackQueue:(id)arg1;
 - (void)setIsCallingClientCallback:(BOOL)arg1;
-- (void)setIsCoalescingClientStateUpdatesConfigMessages:(BOOL)arg1;
 - (void)setName:(id)arg1;
 - (void)setNameCallback:(id /* block */)arg1;
 - (void)setNameCallback:(id /* block */)arg1 withQueue:(id)arg2;
@@ -225,6 +223,7 @@
 - (void)setPairingCallbackQueue:(id)arg1;
 - (void)setRecordingStateCallback:(id /* block */)arg1;
 - (void)setRecordingStateCallbackQueue:(id)arg1;
+- (void)setSupportedMessages:(id)arg1;
 - (void)setTextEditingCallback:(id /* block */)arg1 withQueue:(id)arg2;
 - (void)setTextInputCallback:(id /* block */)arg1;
 - (void)setTextInputCallbackQueue:(id)arg1;
@@ -235,6 +234,7 @@
 - (void)setWantsNowPlayingArtworkNotifications:(BOOL)arg1;
 - (void)setWantsNowPlayingNotifications:(BOOL)arg1;
 - (void)setWantsVolumeNotifications:(BOOL)arg1;
+- (id)supportedMessages;
 - (id /* block */)textInputCallback;
 - (id)textInputCallbackQueue;
 - (void)unpair;

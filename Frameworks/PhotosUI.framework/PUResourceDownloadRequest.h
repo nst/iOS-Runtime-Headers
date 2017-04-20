@@ -30,11 +30,17 @@
 @property (nonatomic) BOOL shouldTreatLivePhotosAsStills;
 @property (readonly) Class superclass;
 
++ (id)_fileURLsToShareForAsset:(id)arg1 resourcesToShare:(id)arg2 fulfillOnDemandResources:(BOOL)arg3;
++ (id)_resourcesToShareForAsset:(id)arg1;
++ (id)fileURLsToShareForAsset:(id)arg1 requestType:(int)arg2 error:(id*)arg3;
++ (id)indexesForAssetsRequiringDownload:(id)arg1 requestType:(int)arg2;
+
 - (void).cxx_destruct;
 - (id)_activeAssetResourcesRequest;
 - (id)_assetResources;
 - (void)_cancelActiveAssetResourceRequests;
-- (void)_didFinishDownloadWithSuccess:(BOOL)arg1 error:(id)arg2;
+- (void)_didFinishDownloadWithSuccess:(BOOL)arg1 userInfo:(id)arg2 error:(id)arg3;
+- (void)_fetchResourcesForAssetExplorerSharingAsset:(id)arg1 networkAccessAllowed:(BOOL)arg2 handler:(id /* block */)arg3;
 - (void)_fetchResourcesForDuplicatingAsset:(id)arg1 networkAccessAllowed:(BOOL)arg2 handler:(id /* block */)arg3;
 - (void)_fetchResourcesForEditingAsset:(id)arg1 networkAccessAllowed:(BOOL)arg2 handler:(id /* block */)arg3;
 - (void)_fetchResourcesForSharingAsset:(id)arg1 networkAccessAllowed:(BOOL)arg2 handler:(id /* block */)arg3;

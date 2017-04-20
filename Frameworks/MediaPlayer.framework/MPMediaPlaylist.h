@@ -61,8 +61,4 @@
 
 - (id)MPU_contentItemIdentifierCollection;
 
-// Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
-
-- (int)MCD_sortPlaylistByName:(id)arg1;
-
 @end

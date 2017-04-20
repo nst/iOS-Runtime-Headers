@@ -17,11 +17,13 @@
     NSURL * _userContainerURL;
 }
 
+@property (nonatomic, readonly) BOOL allowsAlternateIcons;
 @property (getter=isAppleInternal, nonatomic, readonly) BOOL appleInternal;
 @property (readonly) unsigned int currentSchemaVersion;
 @property (readonly) double databaseSaveInterval;
 @property (readonly) double databaseSaveLatency;
 @property (readonly) NSURL *databaseStoreFileURL;
+@property (readonly) NSURL *dbRecoveryFileURL;
 @property (readonly) NSURL *dbSentinelFileURL;
 @property (readonly) BOOL hasPersistentPreferences;
 @property BOOL hasServer;
@@ -53,12 +55,14 @@
 + (id)systemGroupContainerURL;
 + (id)userContainerURL;
 
+- (BOOL)allowsAlternateIcons;
 - (unsigned int)currentSchemaVersion;
 - (id)darwinNotificationNameForCurrentUser:(id)arg1;
 - (double)databaseSaveInterval;
 - (double)databaseSaveLatency;
 - (id)databaseStoreFileURL;
 - (id)databaseUpdateNotificationName;
+- (id)dbRecoveryFileURL;
 - (id)dbSentinelFileURL;
 - (void)dealloc;
 - (id)debugDescription;

@@ -7,7 +7,7 @@
     id  _changedAttendees;
     id  _changedItem;
     id  _instanceId;
-    int  _itemChangeType;
+    unsigned int  _itemChangeType;
     id  _serverId;
 }
 
@@ -15,7 +15,7 @@
 @property (nonatomic, retain) id changedAttendees;
 @property (setter=_setChangedItem:, nonatomic, retain) id changedItem;
 @property (nonatomic, retain) id instanceId;
-@property (nonatomic) int itemChangeType;
+@property (nonatomic) unsigned int itemChangeType;
 @property (nonatomic, retain) id serverId;
 
 // Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
@@ -35,20 +35,20 @@
 - (/* Warning: unhandled struct encoding: '{ASEvent=#@@ii@i@?i@}' */ struct ASEvent { Class x1; id x2; int x3; int x4; id x5; id /* block */ x6; int x7; id x8; }*)event;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithItemChangeType:(int)arg1 changedItem:(id)arg2 serverId:(id)arg3;
-- (id)initWithItemChangeType:(int)arg1 changedItem:(id)arg2 serverId:(id)arg3 instanceId:(id)arg4;
+- (id)initWithItemChangeType:(unsigned int)arg1 changedItem:(id)arg2 serverId:(id)arg3;
+- (id)initWithItemChangeType:(unsigned int)arg1 changedItem:(id)arg2 serverId:(id)arg3 instanceId:(id)arg4;
 - (id)instanceId;
 - (BOOL)isEqual:(id)arg1;
-- (int)itemChangeType;
+- (unsigned int)itemChangeType;
 - (id)message;
 - (/* Warning: unhandled struct encoding: '{ASNote=#@@ii@i@?i@}' */ struct ASNote { Class x1; id x2; int x3; int x4; id x5; id /* block */ x6; int x7; id x8; }*)note;
 - (id)serverId;
 - (void)setChangeId:(int)arg1;
 - (void)setChangedAttendees:(id)arg1;
 - (void)setInstanceId:(id)arg1;
-- (void)setItemChangeType:(int)arg1;
+- (void)setItemChangeType:(unsigned int)arg1;
 - (void)setServerId:(id)arg1;
-- (id)stringForItemChangeType:(int)arg1;
+- (id)stringForItemChangeType:(unsigned int)arg1;
 - (/* Warning: unhandled struct encoding: '{ASToDo=#@@ii@i@?i@}' */ struct ASToDo { Class x1; id x2; int x3; int x4; id x5; id /* block */ x6; int x7; id x8; }*)toDo;
 
 // Image: /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DAEAS.framework/DAEAS

@@ -10,9 +10,16 @@
         float bottom; 
         float right; 
     }  __margins;
+    NSLayoutConstraint * __subtitleBottomLayoutConstraint;
     UILabel * __subtitleLabel;
+    float  __subtitleVerticalOffset;
     BOOL  __subtitleVisible;
     UILabel * __titleLabel;
+    struct PXAssetBadgeInfo { 
+        unsigned int badges; 
+        double duration; 
+        int count; 
+    }  _badgeInfo;
     BOOL  _isPerformingChanges;
     BOOL  _isPerformingUpdates;
     struct { 
@@ -32,9 +39,12 @@
 
 @property (setter=_setConstraints:, nonatomic, retain) NSArray *_constraints;
 @property (setter=_setMargins:, nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _margins;
+@property (setter=_setSubtitleBottomLayoutConstraint:, nonatomic, retain) NSLayoutConstraint *_subtitleBottomLayoutConstraint;
 @property (nonatomic, readonly) UILabel *_subtitleLabel;
+@property (setter=_setSubtitleVerticalOffset:, nonatomic) float _subtitleVerticalOffset;
 @property (getter=_isSubtitleVisible, setter=_setSubtitleVisible:, nonatomic) BOOL _subtitleVisible;
 @property (nonatomic, readonly) UILabel *_titleLabel;
+@property (nonatomic) struct PXAssetBadgeInfo { unsigned int x1; double x2; int x3; } badgeInfo;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -47,7 +57,10 @@
 @property (nonatomic, retain) UIColor *titleTextColor;
 @property (nonatomic) int verticalSizeClass;
 
++ (id)_livePhotoBadgeImage;
+
 - (void).cxx_destruct;
+- (id)_attributedStringWithBadgeInfo:(struct PXAssetBadgeInfo { unsigned int x1; double x2; int x3; })arg1 font:(id)arg2 verticalOffset:(float*)arg3;
 - (id)_constraints;
 - (void)_invalidateConstraints;
 - (void)_invalidateFonts;
@@ -59,16 +72,24 @@
 - (void)_setConstraints:(id)arg1;
 - (void)_setMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_setNeedsUpdate;
+- (void)_setSubtitleBottomLayoutConstraint:(id)arg1;
+- (void)_setSubtitleVerticalOffset:(float)arg1;
 - (void)_setSubtitleVisible:(BOOL)arg1;
+- (id)_subtitleBottomLayoutConstraint;
 - (id)_subtitleLabel;
+- (float)_subtitleVerticalOffset;
 - (id)_titleLabel;
 - (void)_updateConstraintsIfNeeded;
 - (void)_updateFontsIfNeeded;
 - (void)_updateIfNeeded;
 - (void)_updateSizeIfNeeded;
+- (void)_updateSubtitleBottomLayoutConstraint;
 - (void)_updateTextsIfNeeded;
+- (id)attributedStringWithBadgeInfo:(struct PXAssetBadgeInfo { unsigned int x1; double x2; int x3; })arg1 font:(id)arg2;
+- (struct PXAssetBadgeInfo { unsigned int x1; double x2; int x3; })badgeInfo;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)performChanges:(id /* block */)arg1;
+- (void)setBadgeInfo:(struct PXAssetBadgeInfo { unsigned int x1; double x2; int x3; })arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setSubtitleFont:(id)arg1;
 - (void)setSubviewsAlpha:(float)arg1;

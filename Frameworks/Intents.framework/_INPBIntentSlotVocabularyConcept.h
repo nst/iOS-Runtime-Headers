@@ -13,6 +13,8 @@
 @property (nonatomic, retain) NSMutableArray *synonyms;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 + (Class)synonymsType;
 
 - (void).cxx_destruct;
@@ -34,5 +36,11 @@
 - (unsigned int)synonymsCount;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

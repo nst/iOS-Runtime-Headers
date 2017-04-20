@@ -6,7 +6,7 @@
     UIImage * _uiImage;
 }
 
-@property (nonatomic, retain) UIImage *uiImage;
+@property (retain) UIImage *uiImage;
 @property (readonly) UIImage *uiImage;
 
 // Image: /System/Library/PrivateFrameworks/SearchUIFoundation.framework/SearchUIFoundation

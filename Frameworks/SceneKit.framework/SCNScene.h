@@ -112,6 +112,7 @@
 - (void)setSceneSource:(id)arg1;
 - (void)setStartTime:(double)arg1;
 - (void)setUpAxis:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (double)startTime;
 - (void)unlock;
 - (struct SCNVector3 { float x1; float x2; float x3; })upAxis;

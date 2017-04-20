@@ -14,6 +14,7 @@
 @property (readonly) Class superclass;
 
 + (float)defaultExtendedControlHeight;
++ (float)extendedHeight;
 
 - (float)_additionalClipHeight;
 - (int)_clipCornersOfView:(id)arg1;

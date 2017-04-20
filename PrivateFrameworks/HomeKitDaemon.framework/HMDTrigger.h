@@ -83,6 +83,8 @@
 - (void)refreshActivate;
 - (void)removeAccessory:(id)arg1;
 - (void)removeActionSet:(id)arg1;
+- (void)removeCharacteristic:(id)arg1;
+- (void)removeService:(id)arg1;
 - (void)sendTriggerFiredNotification:(id)arg1;
 - (void)setActive:(BOOL)arg1;
 - (void)setActiveOnLocalDevice:(BOOL)arg1;

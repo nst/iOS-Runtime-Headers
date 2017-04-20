@@ -40,6 +40,9 @@
     }  fixedLayoutSize;
     <WebFormDelegate> * formDelegate;
     id  formDelegateForwarder;
+    struct RefPtr<WebCore::ValidationBubble> { 
+        struct ValidationBubble {} *m_ptr; 
+    }  formValidationBubble;
     id  frameLoadDelegate;
     id  frameLoadDelegateForwarder;
     struct WebFrameLoadDelegateImplementationCache { 

@@ -15,6 +15,7 @@
     NSMutableDictionary * _modifyHandlersByZoneID;
     NSObject<OS_dispatch_queue> * _modifyRecordsQueue;
     NSDictionary * _parentsByRecordID;
+    NSDictionary * _pluginFieldsForRecordDeletesByID;
     NSArray * _recordIDsToDelete;
     NSDictionary * _recordIDsToDeleteToEtags;
     id /* block */  _recordsInFlightBlock;
@@ -44,6 +45,7 @@
 @property (nonatomic, retain) NSMutableDictionary *modifyHandlersByZoneID;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *modifyRecordsQueue;
 @property (nonatomic, retain) NSDictionary *parentsByRecordID;
+@property (nonatomic, retain) NSDictionary *pluginFieldsForRecordDeletesByID;
 @property (nonatomic, readonly) CKDDecryptRecordsOperation *recordDecryptOperation;
 @property (nonatomic, retain) NSArray *recordIDsToDelete;
 @property (nonatomic, retain) NSDictionary *recordIDsToDeleteToEtags;
@@ -97,9 +99,11 @@
 - (id)activityCreate;
 - (BOOL)atomic;
 - (id)cache;
+- (void)callbackWithMetadata:(id)arg1 error:(id)arg2;
 - (BOOL)canSetPreviousProtectionEtag;
 - (id)clientChangeTokenData;
 - (id)conflictLosersToResolveByRecordID;
+- (void)deleteCallbackWithMetadata:(id)arg1 error:(id)arg2;
 - (id /* block */)deleteCompletionBlock;
 - (void)finishWithError:(id)arg1;
 - (id)handlersByRecordID;
@@ -112,6 +116,7 @@
 - (id)modifyRecordsQueue;
 - (id)nameForState:(unsigned int)arg1;
 - (id)parentsByRecordID;
+- (id)pluginFieldsForRecordDeletesByID;
 - (id)recordDecryptOperation;
 - (id)recordIDsToDelete;
 - (id)recordIDsToDeleteToEtags;
@@ -135,6 +140,7 @@
 - (void)setModifyHandlersByZoneID:(id)arg1;
 - (void)setModifyRecordsQueue:(id)arg1;
 - (void)setParentsByRecordID:(id)arg1;
+- (void)setPluginFieldsForRecordDeletesByID:(id)arg1;
 - (void)setRecordIDsToDelete:(id)arg1;
 - (void)setRecordIDsToDeleteToEtags:(id)arg1;
 - (void)setRecordsInFlightBlock:(id /* block */)arg1;

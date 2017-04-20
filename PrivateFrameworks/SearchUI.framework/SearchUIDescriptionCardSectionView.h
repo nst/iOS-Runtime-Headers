@@ -2,25 +2,23 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUIDescriptionCardSectionView : SearchUICardSectionView {
-    SearchUICardDetailsView * _detailsView;
+@interface SearchUIDescriptionCardSectionView : SearchUILayoutFreeSectionView {
+    UITextView * _detailsTextView;
     UIButton * _moreButton;
-    NSLayoutConstraint * _moreButtonHorizontalInsetConstraint;
 }
 
-@property (retain) SearchUICardDetailsView *detailsView;
+@property (retain) UITextView *detailsTextView;
 @property (retain) UIButton *moreButton;
-@property (retain) NSLayoutConstraint *moreButtonHorizontalInsetConstraint;
 
 - (void).cxx_destruct;
-- (id)detailsView;
-- (id)initWithCardSection:(id)arg1 controller:(id)arg2;
+- (id)detailsTextView;
+- (id)initWithCardSection:(id)arg1 controller:(id)arg2 style:(unsigned int)arg3;
 - (void)layoutSubviews;
 - (id)moreButton;
-- (id)moreButtonHorizontalInsetConstraint;
 - (void)moreButtonPressed;
-- (void)setDetailsView:(id)arg1;
+- (void)setDetailsTextView:(id)arg1;
 - (void)setMoreButton:(id)arg1;
-- (void)setMoreButtonHorizontalInsetConstraint:(id)arg1;
+- (void)setMoreButtonFrameWithTextView:(id)arg1 inset:(float)arg2 lastLineYOrigin:(float)arg3;
+- (BOOL)shouldHideMoreButtonForTextView:(id)arg1;
 
 @end

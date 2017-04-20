@@ -3,16 +3,36 @@
  */
 
 @interface WBSTabDialogInformation : NSObject {
+    BOOL  _blockingWebProcess;
+    unsigned int  _cancellationExceptions;
     id /* block */  _dismissalBlock;
+    BOOL  _dismissed;
+    BOOL  _isInvokingPresentationBlock;
     id /* block */  _presentationBlock;
     BOOL  _presented;
+    struct { 
+        int webProcessID; 
+        unsigned int tabID; 
+    }  _slot;
 }
 
-@property (nonatomic, readonly, copy) id /* block */ dismissalBlock;
+@property (getter=isBlockingWebProcess, nonatomic, readonly) BOOL blockingWebProcess;
+@property (nonatomic) unsigned int cancellationExceptions;
+@property (getter=isDismissed, nonatomic, readonly) BOOL dismissed;
+@property (getter=isPresented, nonatomic, readonly) BOOL presented;
+@property (nonatomic) struct { int x1; unsigned int x2; } slot;
 
 - (void).cxx_destruct;
-- (id /* block */)dismissalBlock;
-- (id)initWithPresentationBlock:(id /* block */)arg1 dismissalBlock:(id /* block */)arg2;
+- (unsigned int)cancellationExceptions;
+- (id)description;
+- (void)dismissWithResponse:(id)arg1;
+- (id)initWithPresentationBlock:(id /* block */)arg1 dismissalBlock:(id /* block */)arg2 blocksWebProcessUntilDismissed:(BOOL)arg3;
+- (BOOL)isBlockingWebProcess;
+- (BOOL)isDismissed;
+- (BOOL)isPresented;
 - (void)presentIfNeeded;
+- (void)setCancellationExceptions:(unsigned int)arg1;
+- (void)setSlot:(struct { int x1; unsigned int x2; })arg1;
+- (struct { int x1; unsigned int x2; })slot;
 
 @end

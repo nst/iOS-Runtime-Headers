@@ -84,6 +84,7 @@
 - (void)clientInterface:(id)arg1 presentDialog:(id)arg2;
 - (id)configurationDictionary;
 - (void)customizePurchase:(id)arg1;
+- (void)customizeSoftwarePurchase:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)documentViewControllerForTemplateViewElement:(id)arg1;

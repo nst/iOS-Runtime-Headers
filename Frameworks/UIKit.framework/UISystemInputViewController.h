@@ -83,6 +83,7 @@
 - (id)_promptLabel;
 - (void)_removeAccessoryViewController:(id)arg1;
 - (void)_resetDelegate;
+- (void)_restoreKeyboardIfNecessary;
 - (void)_returnButtonPressed;
 - (void)_setNonInputViewVisibility:(BOOL)arg1;
 - (id)_traitCollectionForUserInterfaceStyle;

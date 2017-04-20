@@ -4,15 +4,19 @@
 
 @interface _GEOLocationShifterLocalProxy : NSObject <_GEOLocationShifterProxy> {
     _GEOLocationShiftRequester * _requester;
+    int  _resetPrivacyToken;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) GEOLocationShifterPersistence *persistentCache;
 @property (readonly) Class superclass;
 
+- (void)_prunePersistentCache;
 - (void)dealloc;
 - (id)init;
+- (id)persistentCache;
 - (void)shiftCoordinate:(struct { double x1; double x2; })arg1 completionHandler:(id /* block */)arg2;
 
 @end

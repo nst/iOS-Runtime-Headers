@@ -117,6 +117,6 @@
 
 // Image: /System/Library/PrivateFrameworks/Swift/libswiftUIKit.dylib
 
-- (id)initWithTitle:(id)arg1 delegate:(id)arg2 cancelButtonTitle:(id)arg3 destructiveButtonTitle:(id)arg4;
+- (id)initWithTitledelegatecancelButtonTitledestructiveButtonTitle;
 
 @end

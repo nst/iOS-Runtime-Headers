@@ -7,7 +7,6 @@
 
 - (BOOL)allowsErotica;
 - (BOOL)allowsExplicit;
-- (BOOL)allowsITunes;
 - (int)maxMovieRank;
 - (NSString *)maxMovieRatingForCountry:(JSValue *)arg1;
 - (int)maxTVShowRank;

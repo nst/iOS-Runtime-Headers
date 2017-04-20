@@ -6,6 +6,7 @@
     BOOL  _autodownloadNeedsOneTimeRetry;
     SUDescriptor * _currentDescriptor;
     SUDescriptor * _failedPatchDescriptor;
+    SUInstallPolicy * _installPolicy;
     _SUAutoInstallOperationModel * _lastAutoInstallOperationModel;
     SUDownload * _lastDownload;
     NSString * _lastProductBuild;
@@ -15,6 +16,7 @@
     SUDescriptor * _lastScannedDescriptor;
     NSDate * _lastScannedDescriptorTime;
     BOOL  _manifestSubmitted;
+    SUManagedDeviceUpdateDelay * _mdmDelay;
     NSDate * _scheduledAutodownloadPolicyChangeTime;
     NSDate * _scheduledAutodownloadWifiPeriodEndTime;
     NSDate * _scheduledManualDownloadWifiPeriodEndTime;
@@ -28,6 +30,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) SUDescriptor *failedPatchDescriptor;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) SUInstallPolicy *installPolicy;
 @property (nonatomic, retain) _SUAutoInstallOperationModel *lastAutoInstallOperationModel;
 @property (nonatomic, copy) SUDownload *lastDownload;
 @property (nonatomic, retain) NSString *lastProductBuild;
@@ -37,6 +40,7 @@
 @property (nonatomic, copy) SUDescriptor *lastScannedDescriptor;
 @property (nonatomic, retain) NSDate *lastScannedDescriptorTime;
 @property (nonatomic) BOOL manifestSubmitted;
+@property (nonatomic, retain) SUManagedDeviceUpdateDelay *mdmDelay;
 @property (nonatomic, retain) NSDate *scheduledAutodownloadPolicyChangeTime;
 @property (nonatomic, retain) NSDate *scheduledAutodownloadWifiPeriodEndTime;
 @property (nonatomic, retain) NSDate *scheduledManualDownloadWifiPeriodEndTime;
@@ -54,6 +58,7 @@
 - (id)description;
 - (id)failedPatchDescriptor;
 - (id)init;
+- (id)installPolicy;
 - (id)lastAutoInstallOperationModel;
 - (id)lastDownload;
 - (id)lastProductBuild;
@@ -64,6 +69,7 @@
 - (id)lastScannedDescriptorTime;
 - (void)load;
 - (BOOL)manifestSubmitted;
+- (id)mdmDelay;
 - (void)resetAllHistory;
 - (void)resetDownloadAndScanHistory;
 - (void)save;
@@ -73,6 +79,7 @@
 - (void)setAutodownloadNeedsOneTimeRetry:(BOOL)arg1;
 - (void)setCurrentDescriptor:(id)arg1;
 - (void)setFailedPatchDescriptor:(id)arg1;
+- (void)setInstallPolicy:(id)arg1;
 - (void)setLastAutoInstallOperationModel:(id)arg1;
 - (void)setLastDownload:(id)arg1;
 - (void)setLastProductBuild:(id)arg1;
@@ -82,6 +89,7 @@
 - (void)setLastScannedDescriptor:(id)arg1;
 - (void)setLastScannedDescriptorTime:(id)arg1;
 - (void)setManifestSubmitted:(BOOL)arg1;
+- (void)setMdmDelay:(id)arg1;
 - (void)setScheduledAutodownloadPolicyChangeTime:(id)arg1;
 - (void)setScheduledAutodownloadWifiPeriodEndTime:(id)arg1;
 - (void)setScheduledManualDownloadWifiPeriodEndTime:(id)arg1;

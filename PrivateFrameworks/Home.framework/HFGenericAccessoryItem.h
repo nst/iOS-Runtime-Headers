@@ -4,6 +4,7 @@
 
 @interface HFGenericAccessoryItem : HFItem <HFServiceLikeBuilderCreating, HFServiceLikeItem> {
     HMAccessory * _accessory;
+    <HFCharacteristicValueSource> * _valueSource;
 }
 
 @property (nonatomic, readonly) HMAccessory *accessory;
@@ -24,7 +25,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)homeKitObject;
 - (id)incrementalStateControlItem;
-- (id)initWithAccessory:(id)arg1;
+- (id)initWithAccessory:(id)arg1 valueSource:(id)arg2;
 - (id)primaryStateControlItem;
 - (id)serviceLikeBuilderInHome:(id)arg1;
 - (id)services;

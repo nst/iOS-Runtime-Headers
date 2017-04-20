@@ -6,7 +6,6 @@
     <MRTransactionDelegate> * _delegate;
     unsigned long long  _name;
     struct _MROrigin { } * _origin;
-    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic) <MRTransactionDelegate> *delegate;
@@ -18,7 +17,7 @@
 - (void)_transactionEnded;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithName:(unsigned long long)arg1 fromMessage:(id)arg2;
+- (id)initWithName:(unsigned long long)arg1 fromMessage:(id)arg2 withDelegate:(id)arg3;
 - (unsigned long long)name;
 - (void)send:(id)arg1 toConnection:(id)arg2 completion:(id /* block */)arg3;
 - (void)setDelegate:(id)arg1;

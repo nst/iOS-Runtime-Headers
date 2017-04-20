@@ -3,10 +3,9 @@
  */
 
 @interface ISPlayerOutputContent : NSObject {
-    ISCrossfadeItem * _crossfadeItem;
-    ISLayerPlayer * _crossfadePlayer;
     struct CGImage { } * _photo;
     int  _photoEXIFOrientation;
+    BOOL  _photoIsOriginal;
     ISWrappedAVPlayer * _videoPlayer;
     struct CGSize { 
         float width; 
@@ -14,21 +13,19 @@
     }  _videoSize;
 }
 
-@property (nonatomic, readonly) ISCrossfadeItem *crossfadeItem;
-@property (nonatomic, readonly) ISLayerPlayer *crossfadePlayer;
 @property (nonatomic, readonly) struct CGImage { }*photo;
 @property (nonatomic, readonly) int photoEXIFOrientation;
+@property (nonatomic, readonly) BOOL photoIsOriginal;
 @property (nonatomic, readonly) ISWrappedAVPlayer *videoPlayer;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } videoSize;
 
 - (void).cxx_destruct;
-- (id)crossfadeItem;
-- (id)crossfadePlayer;
 - (void)dealloc;
 - (id)description;
-- (id)initWithPhoto:(struct CGImage { }*)arg1 photoEXIFOrientation:(int)arg2 videoPlayer:(id)arg3 videoSize:(struct CGSize { float x1; float x2; })arg4 crossfadePlayer:(id)arg5 crossfadeItem:(id)arg6;
+- (id)initWithPhoto:(struct CGImage { }*)arg1 photoIsOriginal:(BOOL)arg2 photoEXIFOrientation:(int)arg3 videoPlayer:(id)arg4 videoSize:(struct CGSize { float x1; float x2; })arg5;
 - (struct CGImage { }*)photo;
 - (int)photoEXIFOrientation;
+- (BOOL)photoIsOriginal;
 - (id)videoPlayer;
 - (struct CGSize { float x1; float x2; })videoSize;
 

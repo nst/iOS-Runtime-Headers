@@ -6,7 +6,7 @@
     NSArray * _propertyKeys;
 }
 
-@property (retain) NSArray *propertyKeys;
+@property (nonatomic, copy) NSArray *propertyKeys;
 
 + (BOOL)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;

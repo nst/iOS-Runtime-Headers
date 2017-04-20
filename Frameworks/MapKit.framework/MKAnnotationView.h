@@ -250,5 +250,6 @@
 - (void)setSelected:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)set_calloutHitTest:(id /* block */)arg1;
+- (id)viewRepresentation;
 
 @end

@@ -30,6 +30,8 @@
 @property (nonatomic, readonly) double cacheDeleteRecomputeInterval;
 @property (nonatomic, readonly) NSObject<OS_xpc_object> *configurationUpdateXPCActivity;
 @property (nonatomic, readonly) unsigned int copyShareIDsBatchSize;
+@property (nonatomic, readonly) long long dbAutovacuumBatchSize;
+@property (nonatomic, readonly) float dbAutovacuumRatio;
 @property (nonatomic, readonly) double dbBatchDelay;
 @property (nonatomic, readonly) int dbBatchSize;
 @property (nonatomic, readonly) BOOL dbProfiled;
@@ -88,6 +90,7 @@
 @property (nonatomic, readonly) NSSet *nonAutoEvictableExtensions;
 @property (nonatomic, readonly) NSSet *nonAutoEvictableUTIs;
 @property (nonatomic, readonly) NSSet *nonEvictableExtensions;
+@property (nonatomic, readonly) NSSet *nonEvictablePathComponents;
 @property (nonatomic, readonly) unsigned int notifBatchSize;
 @property (nonatomic, readonly) unsigned int notifGatherUpTo;
 @property (nonatomic, readonly) unsigned int notifOverflowLimit;
@@ -126,6 +129,7 @@
 @property (nonatomic, readonly) BOOL shouldDisplayUploadNotification;
 @property (nonatomic, readonly) BOOL shouldFetchAllChanges;
 @property (nonatomic, readonly) BOOL shouldFixupBundleBitOnPackages;
+@property (nonatomic, readonly) BOOL shouldFixupTargetCZMAliases;
 @property (nonatomic, readonly) BOOL shouldPreparePCSMigration;
 @property (nonatomic, readonly) BOOL skipServerSideThrottling;
 @property (nonatomic, readonly) unsigned int spotlightIndexerBatchSize;
@@ -219,6 +223,8 @@
 - (double)cacheDeleteRecomputeInterval;
 - (id)configurationUpdateXPCActivity;
 - (unsigned int)copyShareIDsBatchSize;
+- (long long)dbAutovacuumBatchSize;
+- (float)dbAutovacuumRatio;
 - (double)dbBatchDelay;
 - (int)dbBatchSize;
 - (BOOL)dbProfiled;
@@ -283,6 +289,7 @@
 - (id)nonAutoEvictableExtensions;
 - (id)nonAutoEvictableUTIs;
 - (id)nonEvictableExtensions;
+- (id)nonEvictablePathComponents;
 - (unsigned int)notifBatchSize;
 - (unsigned int)notifGatherUpTo;
 - (unsigned int)notifOverflowLimit;
@@ -322,6 +329,7 @@
 - (BOOL)shouldDisplayUploadNotification;
 - (BOOL)shouldFetchAllChanges;
 - (BOOL)shouldFixupBundleBitOnPackages;
+- (BOOL)shouldFixupTargetCZMAliases;
 - (BOOL)shouldPreparePCSMigration;
 - (BOOL)skipServerSideThrottling;
 - (unsigned int)spotlightIndexerBatchSize;

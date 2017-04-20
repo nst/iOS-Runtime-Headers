@@ -64,7 +64,7 @@
     BOOL  _isRootSharedAlbumList;
     NSArray * _keyAssetsForMoments;
     struct { 
-        BOOL visibleCellsConfiguration; 
+        BOOL preparedCellsConfiguration; 
     }  _needsUpdateFlags;
     BOOL  _progressViewVisible;
     PHCollection * _pushedAlbum;
@@ -176,8 +176,8 @@
 - (int)_ignoredReorderNotificationCount;
 - (id)_imageRequestOptions;
 - (void)_initializeMemoriesTitleSupportIfNeeded;
+- (void)_invalidatePreparedCellsConfiguration;
 - (void)_invalidateSyncProgressAlbums;
-- (void)_invalidateVisibleCellsConfiguration;
 - (BOOL)_isKeyboardAware;
 - (BOOL)_isPlaceholderEnabled:(int)arg1;
 - (id /* block */)_justCreatedCollectionAnimationCompletionHandler;
@@ -201,9 +201,14 @@
 - (id)_photoPinchGestureRecognizer;
 - (id)_pickerBannerView;
 - (id)_placesAlbumCoverProvider;
+- (void)_postDidAppearActions;
 - (int)_preferredWhitePointAdaptivityStyle;
 - (id)_preheatedCollections;
 - (void)_prepareStackView:(id)arg1 forCollection:(id)arg2 withStackCount:(int)arg3 withCustomEmptyPlaceHolderImage:(id)arg4;
+- (id)_preparedAlbumListCellContentViewAtIndexPath:(id)arg1;
+- (struct PUAlbumListCellContentView { Class x1; }*)_preparedPlaceholderListCellContentViewAtIndexPath:(id)arg1;
+- (id)_preparedStackViewAtIndexPath:(id)arg1;
+- (id)_preparedStackViewForCollection:(id)arg1;
 - (void)_presentSearchViewController:(id)arg1 animated:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_previousPreheatRect;
 - (void)_recursivelyCollectCollectionsIn:(id)arg1 fetchResult:(id)arg2;
@@ -251,17 +256,15 @@
 - (void)_updateNavigationBannerAnimated:(BOOL)arg1;
 - (void)_updatePeripheralInterfaceAnimated:(BOOL)arg1;
 - (void)_updatePreheatedAssets;
+- (void)_updatePreparedCellsConfigurationIfNeeded;
 - (void)_updateStackView:(id)arg1 forAssets:(id)arg2 collection:(id)arg3 withCustomEmptyPlaceholderImage:(id)arg4;
 - (void)_updateStackView:(id)arg1 forAssets:(id)arg2 memoriesCollection:(id)arg3 memories:(id)arg4 withCustomEmptyPlaceholderImage:(id)arg5;
 - (void)_updateStackView:(id)arg1 forFaces:(id)arg2 inCollection:(id)arg3 withCustomEmptyPlaceholderImage:(id)arg4;
 - (void)_updateStackView:(id)arg1 forPeopleImages:(id)arg2 inCollection:(id)arg3 withCustomEmptyPlaceholderImage:(id)arg4;
-- (void)_updateVisibleCellsConfigurationIfNeeded;
 - (id)_validateNewCollectionTitle:(id)arg1;
 - (id)_visibleAssetsForCollection:(id)arg1;
 - (id)_visibleAssetsForCollection:(id)arg1 correspondingCollections:(out id*)arg2;
 - (id)_visibleAssetsForCollection:(id)arg1 maximumNumberOfVisibleAssets:(int)arg2 correspondingCollections:(out id*)arg3;
-- (id)_visibleStackViewAtIndexPath:(id)arg1;
-- (id)_visibleStackViewForCollection:(id)arg1;
 - (void)_visiblyInsertItemAtIndexPath:(id)arg1 modelUpdate:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
 - (void)albumListCellContentView:(id)arg1 didEndRetitingFromTitle:(id)arg2 toTitle:(id)arg3;
 - (void)albumListCellContentView:(id)arg1 performDeleteAction:(id)arg2;
@@ -317,6 +320,7 @@
 - (id)indexPathForItemAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)indexPathForPeopleAlbum;
 - (id)indexPathForPlacesAlbum;
+- (id)indexPathForPreparedItems;
 - (id)indexPathsForItemsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)indexPathsForVisibleItems;
 - (id)initWithSpec:(id)arg1 isRootSharedAlbumList:(BOOL)arg2;
@@ -346,6 +350,10 @@
 - (void)placesSnapshotDidChange;
 - (BOOL)popoverPresentationControllerShouldDismissPopover:(id)arg1;
 - (void)ppt_navigateToPeople;
+- (void)ppt_navigateToPlacesAndRunPreparationBlock:(id /* block */)arg1 thenPerformTest:(id /* block */)arg2;
+- (void)ppt_performPlacesScrollTest:(id)arg1 preparationHandler:(id /* block */)arg2 iterations:(int)arg3 screenDelta:(int)arg4 delay:(double)arg5 completion:(id /* block */)arg6;
+- (void)ppt_performPlacesZoomTest:(id)arg1 preparationHandler:(id /* block */)arg2 iterations:(int)arg3 delay:(double)arg4 completion:(id /* block */)arg5;
+- (void)ppt_prepareForSearchScrollingTestWithString:(id)arg1 completion:(id /* block */)arg2;
 - (void)prepareForPopoverPresentation:(id)arg1;
 - (BOOL)progressViewVisible;
 - (BOOL)pu_handleSecondTabTap;
@@ -440,7 +448,5 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
-- (id)visibleAlbumListCellContentViewAtIndexPath:(id)arg1;
-- (struct PUAlbumListCellContentView { Class x1; }*)visiblePlaceholderListCellContentViewAtIndexPath:(id)arg1;
 
 @end

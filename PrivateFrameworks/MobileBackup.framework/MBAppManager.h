@@ -34,6 +34,7 @@
 - (BOOL)moveAppDataToSafeHarborForContainer:(id)arg1 usingIntermediateRestoreDir:(BOOL)arg2 withError:(id*)arg3;
 - (BOOL)moveAppDataToSafeHarborForContainer:(id)arg1 withError:(id*)arg2;
 - (void)removeAllDisabledDomainNames;
+- (void)removeOldAppPlaceholderDomainZip;
 - (void)removeOldSafeHarbors;
 - (void)setEnabled:(BOOL)arg1 forDomainName:(id)arg2;
 - (id)systemDataContainerWithIdentifier:(id)arg1;

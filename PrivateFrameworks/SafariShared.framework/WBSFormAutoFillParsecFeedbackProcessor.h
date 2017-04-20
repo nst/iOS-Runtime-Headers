@@ -4,6 +4,7 @@
 
 @interface WBSFormAutoFillParsecFeedbackProcessor : NSObject <WBSFormAutoFillFeedbackProcessor> {
     unsigned int  _autoFillVersion;
+    WBSFormAutoFillCorrectionsDomainNormalizer * _domainNormalizer;
     <WBSFormAutoFillFeedbackDomainPolicyProvider> * _domainPolicyProvider;
     <WBSParsecGlobalFeedbackDispatcher> * _globalFeedbackDispatcher;
 }

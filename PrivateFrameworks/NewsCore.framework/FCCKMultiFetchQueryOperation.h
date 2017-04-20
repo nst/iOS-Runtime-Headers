@@ -7,6 +7,7 @@
     NSMutableArray * _fetchedRecords;
     NSDictionary * _knownRecordIDsToEtags;
     NSMutableSet * _missingRecordIDs;
+    NSArray * _networkEvents;
     id /* block */  _queryCompletionHandler;
     NSArray * _recordIDs;
     NSArray * _recordSpecs;
@@ -17,6 +18,7 @@
 @property (nonatomic, retain) NSMutableArray *fetchedRecords;
 @property (nonatomic, retain) NSDictionary *knownRecordIDsToEtags;
 @property (nonatomic, retain) NSMutableSet *missingRecordIDs;
+@property (nonatomic, copy) NSArray *networkEvents;
 @property (nonatomic, copy) id /* block */ queryCompletionHandler;
 @property (nonatomic, retain) NSArray *recordIDs;
 @property (nonatomic, retain) NSArray *recordSpecs;
@@ -28,6 +30,7 @@
 - (id)fetchedRecords;
 - (id)knownRecordIDsToEtags;
 - (id)missingRecordIDs;
+- (id)networkEvents;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (void)prepareOperation;
@@ -39,6 +42,7 @@
 - (void)setFetchedRecords:(id)arg1;
 - (void)setKnownRecordIDsToEtags:(id)arg1;
 - (void)setMissingRecordIDs:(id)arg1;
+- (void)setNetworkEvents:(id)arg1;
 - (void)setQueryCompletionHandler:(id /* block */)arg1;
 - (void)setRecordIDs:(id)arg1;
 - (void)setRecordSpecs:(id)arg1;

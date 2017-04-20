@@ -8,11 +8,11 @@
 
 @property BOOL hasBeenDisplayed;
 
++ (void)dismissForever;
 + (BOOL)needsDisplay;
 + (void)updateViewCountToCount:(int)arg1;
 + (int)viewCount;
 
-- (void)dismissForever;
 - (BOOL)hasBeenDisplayed;
 - (id)initWithSupportedDomains:(unsigned int)arg1 explanationText:(id)arg2 learnMoreText:(id)arg3 continueButtonTitle:(id)arg4;
 - (void)setHasBeenDisplayed:(BOOL)arg1;

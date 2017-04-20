@@ -19,6 +19,7 @@
     NSString * _sectionID;
     BOOL  _showingAsPressed;
     NSArray * _viewsToDisappearWhenHighlighted;
+    unsigned int  _visualCornerPosition;
 }
 
 @property (nonatomic, readonly) UIInterfaceAction *action;
@@ -37,6 +38,7 @@
 @property (nonatomic, retain) NSString *sectionID;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSArray *viewsToDisappearWhenHighlighted;
+@property (nonatomic) unsigned int visualCornerPosition;
 @property (nonatomic, readonly) UIInterfaceActionVisualStyle *visualStyle;
 
 - (void).cxx_destruct;
@@ -106,11 +108,13 @@
 - (void)setOnlyKeepVisibleContentInHierarchy:(BOOL)arg1;
 - (void)setSectionID:(id)arg1;
 - (void)setViewsToDisappearWhenHighlighted:(id)arg1;
+- (void)setVisualCornerPosition:(unsigned int)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (void)updateConstraints;
 - (void)updateContentsInsertedIntoHierarchy;
 - (id)viewsToDisappearWhenHighlighted;
+- (unsigned int)visualCornerPosition;
 - (id)visualStyle;
 
 @end

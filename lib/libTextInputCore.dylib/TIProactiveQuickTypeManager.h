@@ -3,12 +3,15 @@
  */
 
 @interface TIProactiveQuickTypeManager : NSObject {
+    NSDate * _lastSuggestionTime;
+    TIProactiveTrigger * _lastTriggerForSuggestion;
     _ICPredictionManager * _predictionManager;
 }
 
 + (id)proactiveTriggerForTextContentType:(id)arg1;
 + (id)sharedTIProactiveQuickTypeManager;
 
+- (void)dealloc;
 - (BOOL)enumerateContactsWithContactsLimit:(int)arg1 withFoundLimit:(int)arg2 error:(id*)arg3 usingBlock:(id /* block */)arg4;
 - (id)generateAndRenderProactiveSuggestionsWithInput:(id)arg1 withSecureCandidateRenderer:(id)arg2 withRenderTraits:(id)arg3;
 - (id)generateAndRenderProactiveSuggestionsWithTriggers:(id)arg1 withSecureCandidateRenderer:(id)arg2 withRenderTraits:(id)arg3 withInput:(id)arg4 withRecipient:(id)arg5 withApplication:(id)arg6 withLocale:(id)arg7 withTextContentType:(id)arg8 withCanSendCurrentLocation:(BOOL)arg9;
@@ -18,5 +21,7 @@
 - (BOOL)isEnabled;
 - (id)renderItems:(id)arg1 withSecureCandidateRenderer:(id)arg2 withRenderTraits:(id)arg3 withInput:(id)arg4;
 - (void)reset;
+- (void)suggestionAccepted:(id)arg1;
+- (void)userActionWithNoNewTriggers:(id)arg1;
 
 @end

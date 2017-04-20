@@ -4,35 +4,48 @@
 
 @interface CKDPAssetUploadTokenRetrieveRequest : PBRequest <NSCopying> {
     NSMutableArray * _assets;
+    NSData * _authPutRequest;
+    NSMutableArray * _authPutRequestHeaders;
     CKDPRecordFieldIdentifier * _field;
     CKDPRecordType * _type;
     NSMutableArray * _uploads;
 }
 
 @property (nonatomic, retain) NSMutableArray *assets;
+@property (nonatomic, retain) NSData *authPutRequest;
+@property (nonatomic, retain) NSMutableArray *authPutRequestHeaders;
 @property (nonatomic, retain) CKDPRecordFieldIdentifier *field;
+@property (nonatomic, readonly) BOOL hasAuthPutRequest;
 @property (nonatomic, readonly) BOOL hasField;
 @property (nonatomic, readonly) BOOL hasType;
 @property (nonatomic, retain) CKDPRecordType *type;
 @property (nonatomic, retain) NSMutableArray *uploads;
 
 + (Class)assetsType;
++ (Class)authPutRequestHeadersType;
 + (id)options;
 + (Class)uploadsType;
 
 - (void).cxx_destruct;
 - (void)addAssets:(id)arg1;
+- (void)addAuthPutRequestHeaders:(id)arg1;
 - (void)addUploads:(id)arg1;
 - (id)assets;
 - (id)assetsAtIndex:(unsigned int)arg1;
 - (unsigned int)assetsCount;
+- (id)authPutRequest;
+- (id)authPutRequestHeaders;
+- (id)authPutRequestHeadersAtIndex:(unsigned int)arg1;
+- (unsigned int)authPutRequestHeadersCount;
 - (void)clearAssets;
+- (void)clearAuthPutRequestHeaders;
 - (void)clearUploads;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)field;
+- (BOOL)hasAuthPutRequest;
 - (BOOL)hasField;
 - (BOOL)hasType;
 - (unsigned int)hash;
@@ -42,6 +55,8 @@
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setAssets:(id)arg1;
+- (void)setAuthPutRequest:(id)arg1;
+- (void)setAuthPutRequestHeaders:(id)arg1;
 - (void)setField:(id)arg1;
 - (void)setType:(id)arg1;
 - (void)setUploads:(id)arg1;

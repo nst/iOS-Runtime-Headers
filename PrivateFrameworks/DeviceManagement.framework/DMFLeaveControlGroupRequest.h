@@ -7,7 +7,7 @@
     NSArray * _leaderIdentifiers;
 }
 
-@property (nonatomic, copy) DMFControlGroupIdentifier *groupIdentifier;
+@property (nonatomic, retain) DMFControlGroupIdentifier *groupIdentifier;
 @property (nonatomic, copy) NSArray *leaderIdentifiers;
 
 + (BOOL)supportsSecureCoding;

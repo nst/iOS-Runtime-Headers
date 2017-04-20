@@ -32,7 +32,6 @@
         float height; 
     }  _drawableSize;
     BOOL  _enableSetNeedsDisplay;
-    int  _frameInterval;
     int  _maxValidAttachmentIndex;
     CAMetalLayer * _metalLayer;
     <MTLTexture> * _multisampleColorTexture;
@@ -133,6 +132,7 @@
 - (void)setDrawableAttachmentIndex:(unsigned int)arg1;
 - (void)setDrawableSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setEnableSetNeedsDisplay:(BOOL)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFramebufferOnly:(BOOL)arg1;
 - (void)setNominalFramesPerSecond:(int)arg1;
 - (void)setPaused:(BOOL)arg1;

@@ -38,9 +38,9 @@
 - (void).cxx_destruct;
 - (void)_flushCompletionBlocks;
 - (BOOL)_queue_isCancelled;
-- (void)addCompletionBlock:(id /* block */)arg1;
-- (void)addFailureBlock:(id /* block */)arg1;
-- (void)addSuccessBlock:(id /* block */)arg1;
+- (id)addCompletionBlock:(id /* block */)arg1;
+- (id)addFailureBlock:(id /* block */)arg1;
+- (id)addSuccessBlock:(id /* block */)arg1;
 - (BOOL)cancel;
 - (id /* block */)completionHandlerAdapter;
 - (id)description;
@@ -48,6 +48,7 @@
 - (void)didCancel;
 - (id /* block */)errorOnlyCompletionHandlerAdapter;
 - (BOOL)finishWithError:(id)arg1;
+- (BOOL)finishWithNoResult;
 - (BOOL)finishWithResult:(id)arg1;
 - (BOOL)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)flatMap:(id /* block */)arg1;

@@ -10,7 +10,6 @@
     UIButton * _endpointButtonLandscape;
     SUICFlamesView * _flamesView;
     BOOL  _keyboardInTransition;
-    UIDictationMeterView * _meterView;
     int  _state;
     UIButton * _waveTapEndpointButton;
 }

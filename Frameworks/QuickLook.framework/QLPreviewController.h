@@ -147,6 +147,7 @@
 - (void)_previousPreview;
 - (BOOL)_quickLookWillBecomeVisible;
 - (void)_refreshCurrentPreviewItemAnimated:(BOOL)arg1;
+- (void)_registerForApplicationStateChangesNotifications;
 - (void)_reloadDataIfNeeded;
 - (void)_savePreviousNavigationVCState;
 - (void)_setCurrentPreviewItemIndex:(int)arg1 updatePreview:(BOOL)arg2 animated:(BOOL)arg3;
@@ -157,6 +158,7 @@
 - (id)_toolBarButtonsWithTraitCollection:(id)arg1;
 - (void)_toolbarButtonPressed:(id)arg1;
 - (id)_topViewController;
+- (void)_unregisterForApplicationStateChangesNotifications;
 - (void)_updateAppearance:(BOOL)arg1;
 - (void)_updateBackgroundColor;
 - (void)_updateNavigationTitle;
@@ -171,6 +173,8 @@
 - (id)animationControllerForDismissedController:(id)arg1;
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (id)animatorForShowing:(BOOL)arg1 previewController:(id)arg2 presentingController:(id)arg3;
+- (void)applicationDidBecomeActive:(id)arg1;
+- (void)applicationDidEnterBackground:(id)arg1;
 - (void)beginInteractiveTransition;
 - (BOOL)blockRemoteImages;
 - (BOOL)canShowToolbar;

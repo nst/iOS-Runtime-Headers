@@ -11,6 +11,7 @@
 @property (readonly) Class superclass;
 
 - (id)accessories;
+- (BOOL)actionsMayRequireDeviceUnlock;
 - (BOOL)containsActionableCharacteristics;
 - (id)currentStateActionBuildersForHome:(id)arg1;
 - (id)services;

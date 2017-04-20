@@ -42,9 +42,9 @@
 - (void)buttonPressed;
 - (id)captionLabel;
 - (struct CGSize { float x1; float x2; })captionLabelSize;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })containerStackView:(id)arg1 layoutFrameForArrangedSubview:(id)arg2 withProposedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (struct CGSize { float x1; float x2; })containerStackView:(id)arg1 systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg2 forArrangedSubview:(id)arg3;
-- (void)containerStackViewDidInvalidateIntrinsicContentSize:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })containerView:(id)arg1 layoutFrameForArrangedSubview:(id)arg2 withProposedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (struct CGSize { float x1; float x2; })containerView:(id)arg1 systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg2 forArrangedSubview:(id)arg3;
+- (void)containerViewDidInvalidateIntrinsicContentSize:(id)arg1;
 - (id)fetchLocalMediaItem;
 - (id)localMediaItem;
 - (id)localMediaItemIdentifier;

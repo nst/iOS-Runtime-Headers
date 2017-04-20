@@ -26,6 +26,8 @@
     int  _chromeBackgroundAnimationType;
     double  _chromeDefaultAnimationDuration;
     double  _chromeTimedAutoHideAnimationDuration;
+    unsigned int  _debuggingBadges;
+    unsigned int  _debuggingBadgesWhenFavorite;
     float  _defaultMaximumZoomFactor;
     BOOL  _doubleTapZoomAreaExcludesBackground;
     BOOL  _doubleTapZoomAreaExcludesBars;
@@ -53,7 +55,6 @@
     BOOL  _simulateAssetContentDownloadFailure;
     PUSwipeDownSettings * _swipeDownSettings;
     int  _titleTapAction;
-    BOOL  _useDebuggingBadge;
     BOOL  _useDebuggingColors;
     BOOL  _useDebuggingProgressLabel;
     BOOL  _useDebuggingTitle;
@@ -91,6 +92,8 @@
 @property (nonatomic) int chromeBackgroundAnimationType;
 @property (nonatomic) double chromeDefaultAnimationDuration;
 @property (nonatomic) double chromeTimedAutoHideAnimationDuration;
+@property (nonatomic) unsigned int debuggingBadges;
+@property (nonatomic) unsigned int debuggingBadgesWhenFavorite;
 @property (nonatomic) float defaultMaximumZoomFactor;
 @property (nonatomic) BOOL doubleTapZoomAreaExcludesBackground;
 @property (nonatomic) BOOL doubleTapZoomAreaExcludesBars;
@@ -118,7 +121,6 @@
 @property (nonatomic) BOOL simulateAssetContentDownloadFailure;
 @property (nonatomic, retain) PUSwipeDownSettings *swipeDownSettings;
 @property (nonatomic) int titleTapAction;
-@property (nonatomic) BOOL useDebuggingBadge;
 @property (nonatomic) BOOL useDebuggingColors;
 @property (nonatomic) BOOL useDebuggingProgressLabel;
 @property (nonatomic) BOOL useDebuggingTitle;
@@ -159,6 +161,8 @@
 - (int)chromeBackgroundAnimationType;
 - (double)chromeDefaultAnimationDuration;
 - (double)chromeTimedAutoHideAnimationDuration;
+- (unsigned int)debuggingBadges;
+- (unsigned int)debuggingBadgesWhenFavorite;
 - (float)defaultMaximumZoomFactor;
 - (BOOL)doubleTapZoomAreaExcludesBackground;
 - (BOOL)doubleTapZoomAreaExcludesBars;
@@ -203,6 +207,8 @@
 - (void)setChromeBackgroundAnimationType:(int)arg1;
 - (void)setChromeDefaultAnimationDuration:(double)arg1;
 - (void)setChromeTimedAutoHideAnimationDuration:(double)arg1;
+- (void)setDebuggingBadges:(unsigned int)arg1;
+- (void)setDebuggingBadgesWhenFavorite:(unsigned int)arg1;
 - (void)setDefaultMaximumZoomFactor:(float)arg1;
 - (void)setDefaultValues;
 - (void)setDoubleTapZoomAreaExcludesBackground:(BOOL)arg1;
@@ -231,7 +237,6 @@
 - (void)setSimulateAssetContentDownloadFailure:(BOOL)arg1;
 - (void)setSwipeDownSettings:(id)arg1;
 - (void)setTitleTapAction:(int)arg1;
-- (void)setUseDebuggingBadge:(BOOL)arg1;
 - (void)setUseDebuggingColors:(BOOL)arg1;
 - (void)setUseDebuggingProgressLabel:(BOOL)arg1;
 - (void)setUseDebuggingTitle:(BOOL)arg1;
@@ -250,7 +255,6 @@
 - (BOOL)simulateAssetContentDownloadFailure;
 - (id)swipeDownSettings;
 - (int)titleTapAction;
-- (BOOL)useDebuggingBadge;
 - (BOOL)useDebuggingColors;
 - (BOOL)useDebuggingProgressLabel;
 - (BOOL)useDebuggingTitle;

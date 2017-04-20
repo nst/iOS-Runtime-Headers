@@ -5,14 +5,14 @@
 @interface VSKeychainFetchRequest : NSObject <NSCopying> {
     unsigned int  _fetchLimit;
     BOOL  _includesDataValues;
-    VSKeychainItemKind * _itemKind;
+    VSOptional * _itemKind;
     NSPredicate * _predicate;
     NSArray * _sortDescriptors;
 }
 
 @property (nonatomic) unsigned int fetchLimit;
 @property (nonatomic) BOOL includesDataValues;
-@property (nonatomic, copy) VSKeychainItemKind *itemKind;
+@property (nonatomic, retain) VSOptional *itemKind;
 @property (nonatomic, copy) NSPredicate *predicate;
 @property (nonatomic, copy) NSArray *sortDescriptors;
 
@@ -20,6 +20,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)fetchLimit;
 - (BOOL)includesDataValues;
+- (id)init;
 - (id)itemKind;
 - (id)predicate;
 - (void)setFetchLimit:(unsigned int)arg1;

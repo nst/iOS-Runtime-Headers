@@ -3,16 +3,22 @@
  */
 
 @interface NEPathControllerNetworkAgent : NENetworkAgent {
+    NSString * _advisoryAgentDomain;
+    NSString * _advisoryAgentType;
     NWInterface * _advisoryInterface;
     id /* block */  _internalAssertHandler;
     id /* block */  _internalUnassertHandler;
+    BOOL  _noAdvisoryTimer;
     NWInterface * _predictedInterface;
     BOOL  _weakAdvisory;
 }
 
+@property (retain) NSString *advisoryAgentDomain;
+@property (retain) NSString *advisoryAgentType;
 @property (retain) NWInterface *advisoryInterface;
 @property (copy) id /* block */ internalAssertHandler;
 @property (copy) id /* block */ internalUnassertHandler;
+@property BOOL noAdvisoryTimer;
 @property (retain) NWInterface *predictedInterface;
 @property BOOL weakAdvisory;
 
@@ -20,16 +26,24 @@
 + (id)agentType;
 
 - (void).cxx_destruct;
+- (id)advisoryAgentDomain;
+- (id)advisoryAgentType;
 - (id)advisoryInterface;
 - (BOOL)assertAgentWithOptions:(id)arg1;
 - (id)copyAgentData;
+- (id)initWithAdvisoryAgentDomain:(id)arg1 agentType:(id)arg2 advisoryMode:(unsigned int)arg3;
+- (id)initWithAdvisoryInterface:(id)arg1 advisoryMode:(unsigned int)arg2;
 - (id /* block */)internalAssertHandler;
 - (id /* block */)internalUnassertHandler;
+- (BOOL)noAdvisoryTimer;
 - (id)predictedInterface;
+- (void)setAdvisoryAgentDomain:(id)arg1;
+- (void)setAdvisoryAgentType:(id)arg1;
 - (void)setAdvisoryInterface:(id)arg1;
 - (void)setAssertHandler:(id /* block */)arg1;
 - (void)setInternalAssertHandler:(id /* block */)arg1;
 - (void)setInternalUnassertHandler:(id /* block */)arg1;
+- (void)setNoAdvisoryTimer:(BOOL)arg1;
 - (void)setPredictedInterface:(id)arg1;
 - (void)setUnassertHandler:(id /* block */)arg1;
 - (void)setWeakAdvisory:(BOOL)arg1;

@@ -29,7 +29,6 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })dismissKeySymbolFrame;
 - (id)displayContentsForKey:(id)arg1;
 - (float)dualStringKeyFontSizeAdjustment;
-- (float)dualStringKeyMiddleMargin;
 - (struct CGPoint { float x1; float x2; })dualStringKeyOffset;
 - (float)emailDotKeyFontSize;
 - (float)facemarkKeyFontSize;
@@ -69,9 +68,12 @@
 - (float)spaceKeyFontSize;
 - (float)stringKeyFontSize;
 - (struct CGPoint { float x1; float x2; })stringKeyOffset;
+- (BOOL)supportsGestureBehaviors;
 - (BOOL)supportsInputTraits:(id)arg1 forKeyplane:(id)arg2;
 - (float)symbolFrameInset;
 - (id)thinKeycapsFontName;
+- (float)tinyPunctuationGlyphFontSize;
+- (struct CGPoint { float x1; float x2; })tinyPunctuationGlyphOffset;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })variantDisplayFrameInsets;
 - (id)variantGeometriesForGeometry:(id)arg1 variantCount:(unsigned int)arg2 rowLimit:(int)arg3;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })variantSymbolFrameInsets;

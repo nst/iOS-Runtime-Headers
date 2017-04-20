@@ -31,6 +31,7 @@
 - (id)_instanceIdentifier;
 - (BOOL)_isStreaming;
 - (id)_mediaSelectionGroupDictionaries;
+- (id)_nameForProxy;
 - (void*)_valueAsCFTypeForProperty:(struct __CFString { }*)arg1;
 - (id)alternateTrackGroups;
 - (id)availableMetadataFormats;
@@ -46,6 +47,7 @@
 - (void)finalize;
 - (BOOL)hasProtectedContent;
 - (unsigned int)hash;
+- (id)identifyingTag;
 - (id)identifyingTagClass;
 - (id)initWithFigAsset:(struct OpaqueFigAsset { }*)arg1;
 - (BOOL)isCompatibleWithAirPlayVideo;

@@ -15,9 +15,6 @@
     struct RetainPtr<NSArray<UITextSuggestion *> > { 
         void *m_ptr; 
     }  _suggestions;
-    struct RetainPtr<NSString> { 
-        void *m_ptr; 
-    }  _textContentType;
     struct RetainPtr<NSObject<NSSecureCoding> > { 
         void *m_ptr; 
     }  _userObject;
@@ -33,7 +30,6 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSArray *suggestions;
 @property (readonly) Class superclass;
-@property (nonatomic, copy) NSString *textContentType;
 @property (nonatomic, readonly) NSObject<NSSecureCoding> *userObject;
 @property (getter=isValid, nonatomic, readonly) BOOL valid;
 
@@ -52,9 +48,7 @@
 - (void)setCustomInputView:(id)arg1;
 - (void)setForceSecureTextEntry:(BOOL)arg1;
 - (void)setSuggestions:(id)arg1;
-- (void)setTextContentType:(id)arg1;
 - (id)suggestions;
-- (id)textContentType;
 - (id)userObject;
 
 @end

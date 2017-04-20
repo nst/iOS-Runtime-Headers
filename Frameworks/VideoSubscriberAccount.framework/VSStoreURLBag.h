@@ -11,6 +11,7 @@
 - (void).cxx_destruct;
 - (id)bag;
 - (id)init;
+- (void)invalidateCache;
 - (void)loadValueForKey:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)setBag:(id)arg1;
 

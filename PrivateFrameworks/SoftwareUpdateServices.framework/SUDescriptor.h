@@ -15,6 +15,7 @@
     BOOL  _downloadableOverCellular;
     NSString * _humanReadableUpdateName;
     unsigned long long  _installationSize;
+    unsigned long long  _mdmDelayInterval;
     unsigned long long  _minimumSystemPartitionSize;
     unsigned long long  _msuPrepareSize;
     NSString * _productBuildVersion;
@@ -22,6 +23,7 @@
     NSString * _productVersion;
     NSString * _publisher;
     BOOL  _rampEnabled;
+    NSDate * _releaseDate;
     NSString * _releaseType;
     NSData * _rsepDigest;
     NSData * _sepDigest;
@@ -41,6 +43,7 @@
 @property (getter=isDownloadable, nonatomic) BOOL downloadable;
 @property (getter=isDownloadableOverCellular, nonatomic) BOOL downloadableOverCellular;
 @property (nonatomic) unsigned long long installationSize;
+@property (nonatomic) unsigned long long mdmDelayInterval;
 @property (nonatomic) unsigned long long minimumSystemPartitionSize;
 @property (getter=_msuPrepareSize, setter=_setMsuPrepareSize:, nonatomic) unsigned long long msuPrepareSize;
 @property (nonatomic, retain) NSString *productBuildVersion;
@@ -48,6 +51,7 @@
 @property (nonatomic, retain) NSString *productVersion;
 @property (nonatomic, retain) NSString *publisher;
 @property (nonatomic) BOOL rampEnabled;
+@property (nonatomic, retain) NSDate *releaseDate;
 @property (nonatomic, retain) NSString *releaseType;
 @property (setter=setRSEPDigest:, nonatomic, retain) NSData *rsepDigest;
 @property (setter=setSEPDigest:, nonatomic, retain) NSData *sepDigest;
@@ -89,6 +93,7 @@
 - (BOOL)isDownloadableOverCellular;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isValidDescriptor;
+- (unsigned long long)mdmDelayInterval;
 - (unsigned long long)minimumSystemPartitionSize;
 - (unsigned long long)preparationSize;
 - (id)productBuildVersion;
@@ -96,6 +101,7 @@
 - (id)productVersion;
 - (id)publisher;
 - (BOOL)rampEnabled;
+- (id)releaseDate;
 - (id)releaseType;
 - (id)rsepDigest;
 - (id)sepDigest;
@@ -105,6 +111,7 @@
 - (void)setDownloadable:(BOOL)arg1;
 - (void)setDownloadableOverCellular:(BOOL)arg1;
 - (void)setInstallationSize:(unsigned long long)arg1;
+- (void)setMdmDelayInterval:(unsigned long long)arg1;
 - (void)setMinimumSystemPartitionSize:(unsigned long long)arg1;
 - (void)setProductBuildVersion:(id)arg1;
 - (void)setProductSystemName:(id)arg1;
@@ -112,6 +119,7 @@
 - (void)setPublisher:(id)arg1;
 - (void)setRSEPDigest:(id)arg1;
 - (void)setRampEnabled:(BOOL)arg1;
+- (void)setReleaseDate:(id)arg1;
 - (void)setReleaseType:(id)arg1;
 - (void)setSEPDigest:(id)arg1;
 - (void)setSystemPartitionPadding:(id)arg1;

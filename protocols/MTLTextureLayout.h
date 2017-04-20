@@ -12,4 +12,8 @@
 - (void)finalizeTextureMemory:(void*)arg1;
 - (unsigned int)size;
 
+@optional
+
+- (struct { unsigned long long x1[2]; })watermark;
+
 @end

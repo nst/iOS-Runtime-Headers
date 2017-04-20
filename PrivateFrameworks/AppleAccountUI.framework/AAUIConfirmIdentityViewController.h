@@ -3,7 +3,7 @@
  */
 
 @interface AAUIConfirmIdentityViewController : UIViewController <UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
-    ACAccount * _account;
+    ACAccount * _appleAccount;
     UIView * _contentView;
     UIButton * _continueButton;
     <AAUIConfirmIdentityViewControllerDelegate> * _delegate;
@@ -41,7 +41,7 @@
 - (id)delegate;
 - (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
 - (void)imagePickerControllerDidCancel:(id)arg1;
-- (id)initWithGrandSlamSigner:(id)arg1;
+- (id)initWithAppleAccount:(id)arg1 grandSlamSigner:(id)arg2;
 - (id)instructions;
 - (void)loadView;
 - (id)pageTitle;

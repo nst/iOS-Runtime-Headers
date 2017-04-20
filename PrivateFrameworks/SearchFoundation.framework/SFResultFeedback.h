@@ -2,11 +2,18 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFResultFeedback : SFFeedback <NSCopying> {
+@interface SFResultFeedback : SFFeedback <NSCopying, SFProtobufObject> {
     SFSearchResult * _result;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) PBCodable *protobufMessage;
 @property (nonatomic, retain) SFSearchResult *result;
+@property (readonly) Class superclass;
+
+// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
 
 + (BOOL)supportsSecureCoding;
 
@@ -18,5 +25,11 @@
 - (id)initWithResult:(id)arg1;
 - (id)result;
 - (void)setResult:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
+
++ (Class)protobufClass;
+
+- (id)protobufMessage;
 
 @end

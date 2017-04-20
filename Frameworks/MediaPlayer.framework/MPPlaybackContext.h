@@ -11,6 +11,7 @@
     BOOL  _shouldRestartPlayback;
     BOOL  _shouldStartPlayback;
     int  _shuffleType;
+    NSString * _siriReferenceIdentifier;
     int  _startIndex;
 }
 
@@ -23,6 +24,7 @@
 @property (nonatomic) BOOL shouldRestartPlayback;
 @property (nonatomic) BOOL shouldStartPlayback;
 @property (nonatomic) int shuffleType;
+@property (nonatomic, copy) NSString *siriReferenceIdentifier;
 @property (nonatomic) int startIndex;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
@@ -48,10 +50,12 @@
 - (void)setShouldRestartPlayback:(BOOL)arg1;
 - (void)setShouldStartPlayback:(BOOL)arg1;
 - (void)setShuffleType:(int)arg1;
+- (void)setSiriReferenceIdentifier:(id)arg1;
 - (void)setStartIndex:(int)arg1;
 - (BOOL)shouldRestartPlayback;
 - (BOOL)shouldStartPlayback;
 - (int)shuffleType;
+- (id)siriReferenceIdentifier;
 - (int)startIndex;
 
 // Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore

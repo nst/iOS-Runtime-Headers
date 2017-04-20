@@ -29,7 +29,7 @@
     EDResources * mResources;
     struct map<long, unsigned int, std::__1::less<long>, std::__1::allocator<std::__1::pair<const long, unsigned int> > > { 
         struct __tree<std::__1::__value_type<long, unsigned int>, std::__1::__map_value_compare<long, std::__1::__value_type<long, unsigned int>, std::__1::less<long>, true>, std::__1::allocator<std::__1::__value_type<long, unsigned int> > > { 
-            struct __tree_node<std::__1::__value_type<long, unsigned int>, void *> {} *__begin_node_; 
+            struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *__begin_node_; 
             struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<long, unsigned int>, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 

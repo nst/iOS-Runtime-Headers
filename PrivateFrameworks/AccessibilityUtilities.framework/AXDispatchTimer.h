@@ -12,6 +12,7 @@
     NSString * _label;
     BOOL  _pending;
     id /* block */  _processBlock;
+    BOOL  _useWallTime;
 }
 
 @property (getter=isActive, nonatomic) BOOL active;
@@ -27,6 +28,7 @@
 @property (getter=isPending, nonatomic) BOOL pending;
 @property (nonatomic, copy) id /* block */ processBlock;
 @property (readonly) Class superclass;
+@property (nonatomic) BOOL useWallTime;
 
 - (void)_reallyCancel;
 - (void)afterDelay:(double)arg1 processBlock:(id /* block */)arg2;
@@ -54,5 +56,7 @@
 - (void)setLabel:(id)arg1;
 - (void)setPending:(BOOL)arg1;
 - (void)setProcessBlock:(id /* block */)arg1;
+- (void)setUseWallTime:(BOOL)arg1;
+- (BOOL)useWallTime;
 
 @end

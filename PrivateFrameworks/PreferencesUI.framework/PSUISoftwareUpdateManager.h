@@ -14,6 +14,7 @@
     SUMutableDownloadMetadata * _downloadMetadata;
     NSDateComponentsFormatter * _durationFormatter;
     UIViewController * _hostController;
+    SUInstallPolicy * _installPolicy;
     BOOL  _manuallyStartedScan;
     int  _networkType;
     unsigned char  _originalCellFlag;
@@ -38,6 +39,7 @@
 @property (nonatomic, retain) SUMutableDownloadMetadata *downloadMetadata;
 @property (readonly) unsigned int hash;
 @property (nonatomic) UIViewController *hostController;
+@property (nonatomic, retain) SUInstallPolicy *installPolicy;
 @property (nonatomic, readonly) NSString *prettyUpdateName;
 @property (nonatomic, readonly) NSString *progressString;
 @property (nonatomic, retain) RUIStyle *serverFlowStyle;
@@ -59,11 +61,12 @@
 - (void)_updateDownloadProgressWithDownload:(id)arg1 stateFromDownload:(int*)arg2;
 - (id)actionString;
 - (BOOL)allowCellularDownloads;
+- (BOOL)canCancelAutoInstall;
 - (void)cancelAutoInstall;
 - (void)checkAndSetReadyToInstall;
 - (void)checkAutoInstall;
 - (void)client:(id)arg1 downloadDidFail:(id)arg2 withError:(id)arg3;
-- (void)client:(id)arg1 downloadDidFinish:(id)arg2;
+- (void)client:(id)arg1 downloadDidFinish:(id)arg2 withInstallPolicy:(id)arg3;
 - (void)client:(id)arg1 downloadDidStart:(id)arg2;
 - (void)client:(id)arg1 downloadProgressDidChange:(id)arg2;
 - (void)client:(id)arg1 downloadWasInvalidatedForNewUpdateAvailable:(id)arg2;
@@ -80,6 +83,7 @@
 - (id)hostController;
 - (id)humanReadableDescriptionForError:(id)arg1 enableButton:(BOOL*)arg2 showAsButtonFooter:(BOOL*)arg3;
 - (id)initWithDelegate:(id)arg1 hostController:(id)arg2;
+- (id)installPolicy;
 - (Class)managerClientClass;
 - (void)networkChangedFromNetworkType:(int)arg1 toNetworkType:(int)arg2;
 - (void)presentTermsIfNecessaryCompletion:(id /* block */)arg1;
@@ -100,6 +104,7 @@
 - (void)setDownload:(id)arg1;
 - (void)setDownloadMetadata:(id)arg1;
 - (void)setHostController:(id)arg1;
+- (void)setInstallPolicy:(id)arg1;
 - (void)setServerFlowStyle:(id)arg1;
 - (void)setState:(int)arg1;
 - (void)setState:(int)arg1 error:(id)arg2;

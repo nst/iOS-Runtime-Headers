@@ -24,6 +24,7 @@
 + (id)firstChanceTriggeredDate;
 + (id)firstChanceVTEventInfo;
 + (long long)getVoiceTriggerCount;
++ (int)isLastTriggerFollowedBySpeech;
 + (BOOL)isLastTriggerForced;
 + (BOOL)isLastTriggerSecondChanceTriggered;
 + (void)notifyVoiceTriggeredSiriSessionCancelled;

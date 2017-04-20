@@ -3,31 +3,37 @@
  */
 
 @interface FCForYouFeedDescriptor : FCMultiTagFeedDescriptor <FCFeedPaginating> {
-    FCForYouGroupsConfiguration * _forYouGroupsConfiguration;
+    FCAppConfiguration * _appConfiguration;
+    FCSubscriptionList * _subscriptionList;
     unsigned int  _trendingAndSavedStoriesCount;
 }
 
+@property (nonatomic, retain) FCAppConfiguration *appConfiguration;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, retain) FCForYouGroupsConfiguration *forYouGroupsConfiguration;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) FCSubscriptionList *subscriptionList;
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned int trendingAndSavedStoriesCount;
 
 - (void).cxx_destruct;
+- (id)appConfiguration;
 - (id)editionAtDate:(id)arg1;
 - (id)editionFollowingEdition:(id)arg1;
 - (int)feedFilterOptions;
 - (id)feedGroupEmitters;
 - (id)feedPaginator;
 - (int)feedSortMethod;
-- (id)forYouGroupsConfiguration;
 - (id)iAdFeedID;
-- (id)initWithIdentifier:(id)arg1 trendingAndSavedStoriesCount:(int)arg2 forYouGroupsConfiguration:(id)arg3;
+- (id)initWithIdentifier:(id)arg1 trendingAndSavedStoriesCount:(int)arg2 appConfiguration:(id)arg3 subscriptionList:(id)arg4;
 - (id)name;
 - (id)offlineFeedGroupEmitters;
-- (void)setForYouGroupsConfiguration:(id)arg1;
+- (void)prepareToFilterFeedGroupEmittersWithCallbackQueue:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)setAppConfiguration:(id)arg1;
+- (void)setSubscriptionList:(id)arg1;
 - (void)setTrendingAndSavedStoriesCount:(unsigned int)arg1;
+- (BOOL)shouldFilterFeedGroupEmitter:(id)arg1;
+- (id)subscriptionList;
 - (unsigned int)trendingAndSavedStoriesCount;
 
 @end

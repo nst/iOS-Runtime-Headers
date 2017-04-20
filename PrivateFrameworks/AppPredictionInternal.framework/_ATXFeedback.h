@@ -35,7 +35,7 @@
 - (id)init;
 - (id)initWithDataStore:(id)arg1;
 - (id)initWithDataStore:(id)arg1 asset:(id)arg2;
-- (void)putFeedbackScoresForApps:(id)arg1 into:(double*)arg2;
+- (void)putFeedbackScoresForApps:(id)arg1 intoScores:(double*)arg2 confirms:(double*)arg3 rejects:(double*)arg4;
 - (void)putNopScoresForApps:(id)arg1 into:(double*)arg2 atTime:(double)arg3;
 - (void)removeFeedbackForBundle:(id)arg1;
 - (void)removeFeedbackForBundles:(id)arg1;

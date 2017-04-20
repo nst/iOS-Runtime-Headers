@@ -16,6 +16,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (BOOL)_shouldFadeCellsForBoundChangeWhileRotating;
 - (BOOL)configureForListTemplate;
 - (id)headerView;
 - (id)rowMetricsForExpectedWidth:(float)arg1 firstItemRowIndex:(int*)arg2;

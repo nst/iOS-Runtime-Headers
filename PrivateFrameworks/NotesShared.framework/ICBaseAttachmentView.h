@@ -28,7 +28,9 @@
 - (void)contentSizeCategoryDidChange;
 - (void)dealloc;
 - (void)didChangeAttachment;
+- (void)didChangeAttachmentTitle;
 - (void)didChangeMedia;
+- (void)didChangeMergeableData;
 - (void)didChangeSize;
 - (void)didScrollIntoVisibleRange;
 - (void)didScrollOutOfVisibleRange;

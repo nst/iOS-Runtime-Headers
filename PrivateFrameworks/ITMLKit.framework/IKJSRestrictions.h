@@ -8,6 +8,8 @@
 @property (nonatomic, readonly) BOOL allowsErotica;
 @property (nonatomic, readonly) BOOL allowsExplicit;
 @property (nonatomic, readonly) BOOL allowsITunes;
+@property (nonatomic, readonly) BOOL allowsShowingUndownloadedMovies;
+@property (nonatomic, readonly) BOOL allowsShowingUndownloadedTVShows;
 @property (nonatomic, readonly) BOOL appAnalyticsAllowed;
 @property (nonatomic, readonly) BOOL appInstallationAllowed;
 @property (readonly, copy) NSString *debugDescription;
@@ -27,6 +29,8 @@
 - (BOOL)allowsErotica;
 - (BOOL)allowsExplicit;
 - (BOOL)allowsITunes;
+- (BOOL)allowsShowingUndownloadedMovies;
+- (BOOL)allowsShowingUndownloadedTVShows;
 - (BOOL)appAnalyticsAllowed;
 - (BOOL)appInstallationAllowed;
 - (id)asPrivateIKJSRestrictions;

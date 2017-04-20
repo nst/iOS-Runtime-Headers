@@ -13,6 +13,8 @@
     NSString * _creativeId;
     int  _feedType;
     BOOL  _fromNextArticleAffordanceTap;
+    NSString * _groupFeedId;
+    int  _groupType;
     struct { 
         unsigned int personalizationTreatmentId : 1; 
         unsigned int addRemoveReadingListLocation : 1; 
@@ -20,6 +22,7 @@
         unsigned int backendArticleVersion : 1; 
         unsigned int characterCount : 1; 
         unsigned int feedType : 1; 
+        unsigned int groupType : 1; 
         unsigned int nextArticleAffordanceType : 1; 
         unsigned int publisherArticleVersion : 1; 
         unsigned int userAction : 1; 
@@ -27,6 +30,7 @@
         unsigned int isCoverArticle : 1; 
         unsigned int isDigitalReplicaAd : 1; 
         unsigned int isFreeArticle : 1; 
+        unsigned int isGroupedArticle : 1; 
         unsigned int isNotificationArticle : 1; 
         unsigned int isPaidSubscriberToSourceChannel : 1; 
         unsigned int isUserSubscribedToFeed : 1; 
@@ -34,6 +38,7 @@
     BOOL  _isCoverArticle;
     BOOL  _isDigitalReplicaAd;
     BOOL  _isFreeArticle;
+    BOOL  _isGroupedArticle;
     BOOL  _isNotificationArticle;
     BOOL  _isPaidSubscriberToSourceChannel;
     BOOL  _isUserSubscribedToFeed;
@@ -63,6 +68,8 @@
 @property (nonatomic, retain) NSString *creativeId;
 @property (nonatomic) int feedType;
 @property (nonatomic) BOOL fromNextArticleAffordanceTap;
+@property (nonatomic, retain) NSString *groupFeedId;
+@property (nonatomic) int groupType;
 @property (nonatomic) BOOL hasAddRemoveReadingListLocation;
 @property (nonatomic, readonly) BOOL hasArticleId;
 @property (nonatomic) BOOL hasArticleType;
@@ -73,9 +80,12 @@
 @property (nonatomic, readonly) BOOL hasCreativeId;
 @property (nonatomic) BOOL hasFeedType;
 @property (nonatomic) BOOL hasFromNextArticleAffordanceTap;
+@property (nonatomic, readonly) BOOL hasGroupFeedId;
+@property (nonatomic) BOOL hasGroupType;
 @property (nonatomic) BOOL hasIsCoverArticle;
 @property (nonatomic) BOOL hasIsDigitalReplicaAd;
 @property (nonatomic) BOOL hasIsFreeArticle;
+@property (nonatomic) BOOL hasIsGroupedArticle;
 @property (nonatomic) BOOL hasIsNotificationArticle;
 @property (nonatomic) BOOL hasIsPaidSubscriberToSourceChannel;
 @property (nonatomic) BOOL hasIsUserSubscribedToFeed;
@@ -95,6 +105,7 @@
 @property (nonatomic) BOOL isCoverArticle;
 @property (nonatomic) BOOL isDigitalReplicaAd;
 @property (nonatomic) BOOL isFreeArticle;
+@property (nonatomic) BOOL isGroupedArticle;
 @property (nonatomic) BOOL isNotificationArticle;
 @property (nonatomic) BOOL isPaidSubscriberToSourceChannel;
 @property (nonatomic) BOOL isUserSubscribedToFeed;
@@ -118,6 +129,7 @@
 - (void).cxx_destruct;
 - (int)StringAsArticleType:(id)arg1;
 - (int)StringAsFeedType:(id)arg1;
+- (int)StringAsGroupType:(id)arg1;
 - (int)StringAsNextArticleAffordanceType:(id)arg1;
 - (void)addNamedEntities:(id)arg1;
 - (int)addRemoveReadingListLocation;
@@ -136,6 +148,9 @@
 - (int)feedType;
 - (id)feedTypeAsString:(int)arg1;
 - (BOOL)fromNextArticleAffordanceTap;
+- (id)groupFeedId;
+- (int)groupType;
+- (id)groupTypeAsString:(int)arg1;
 - (BOOL)hasAddRemoveReadingListLocation;
 - (BOOL)hasArticleId;
 - (BOOL)hasArticleType;
@@ -146,9 +161,12 @@
 - (BOOL)hasCreativeId;
 - (BOOL)hasFeedType;
 - (BOOL)hasFromNextArticleAffordanceTap;
+- (BOOL)hasGroupFeedId;
+- (BOOL)hasGroupType;
 - (BOOL)hasIsCoverArticle;
 - (BOOL)hasIsDigitalReplicaAd;
 - (BOOL)hasIsFreeArticle;
+- (BOOL)hasIsGroupedArticle;
 - (BOOL)hasIsNotificationArticle;
 - (BOOL)hasIsPaidSubscriberToSourceChannel;
 - (BOOL)hasIsUserSubscribedToFeed;
@@ -170,6 +188,7 @@
 - (BOOL)isDigitalReplicaAd;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isFreeArticle;
+- (BOOL)isGroupedArticle;
 - (BOOL)isNotificationArticle;
 - (BOOL)isPaidSubscriberToSourceChannel;
 - (BOOL)isUserSubscribedToFeed;
@@ -197,15 +216,19 @@
 - (void)setCreativeId:(id)arg1;
 - (void)setFeedType:(int)arg1;
 - (void)setFromNextArticleAffordanceTap:(BOOL)arg1;
+- (void)setGroupFeedId:(id)arg1;
+- (void)setGroupType:(int)arg1;
 - (void)setHasAddRemoveReadingListLocation:(BOOL)arg1;
 - (void)setHasArticleType:(BOOL)arg1;
 - (void)setHasBackendArticleVersion:(BOOL)arg1;
 - (void)setHasCharacterCount:(BOOL)arg1;
 - (void)setHasFeedType:(BOOL)arg1;
 - (void)setHasFromNextArticleAffordanceTap:(BOOL)arg1;
+- (void)setHasGroupType:(BOOL)arg1;
 - (void)setHasIsCoverArticle:(BOOL)arg1;
 - (void)setHasIsDigitalReplicaAd:(BOOL)arg1;
 - (void)setHasIsFreeArticle:(BOOL)arg1;
+- (void)setHasIsGroupedArticle:(BOOL)arg1;
 - (void)setHasIsNotificationArticle:(BOOL)arg1;
 - (void)setHasIsPaidSubscriberToSourceChannel:(BOOL)arg1;
 - (void)setHasIsUserSubscribedToFeed:(BOOL)arg1;
@@ -216,6 +239,7 @@
 - (void)setIsCoverArticle:(BOOL)arg1;
 - (void)setIsDigitalReplicaAd:(BOOL)arg1;
 - (void)setIsFreeArticle:(BOOL)arg1;
+- (void)setIsGroupedArticle:(BOOL)arg1;
 - (void)setIsNotificationArticle:(BOOL)arg1;
 - (void)setIsPaidSubscriberToSourceChannel:(BOOL)arg1;
 - (void)setIsUserSubscribedToFeed:(BOOL)arg1;

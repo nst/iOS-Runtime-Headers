@@ -8,6 +8,7 @@
         unsigned int ignoringTypingUpdates : 1; 
     }  _conversationFlags;
     NSAttributedString * _groupName;
+    BOOL  _isReportedAsSpam;
     unsigned int  _limitToLoad;
     NSString * _name;
     BOOL  _needsReload;
@@ -32,6 +33,7 @@
 @property (nonatomic, readonly) BOOL hasUnreadMessages;
 @property (getter=isIgnoringTypingUpdates, nonatomic) BOOL ignoringTypingUpdates;
 @property (nonatomic, readonly) BOOL isPreviewTextForAttachment;
+@property (nonatomic) BOOL isReportedAsSpam;
 @property (nonatomic, readonly) BOOL isToEmailAddress;
 @property (getter=hasLeft, nonatomic, readonly) BOOL left;
 @property (getter=hasLeftGroupChat, nonatomic, readonly) BOOL leftGroupChat;
@@ -80,6 +82,7 @@
 
 - (void).cxx_destruct;
 - (void)_chatItemsDidChange:(id)arg1;
+- (void)_chatPropertiesChanged:(id)arg1;
 - (BOOL)_chatSupportsTypingIndicators;
 - (void)_clearTypingIndicatorsIfNecessary;
 - (void)_deleteAllMessagesAndRemoveGroup:(BOOL)arg1;
@@ -136,6 +139,7 @@
 - (BOOL)isPending;
 - (BOOL)isPlaceholder;
 - (BOOL)isPreviewTextForAttachment;
+- (BOOL)isReportedAsSpam;
 - (BOOL)isToEmailAddress;
 - (unsigned int)limitToLoad;
 - (void)loadAllMessages;
@@ -176,6 +180,7 @@
 - (void)setDisplayName:(id)arg1;
 - (void)setForceMMS:(BOOL)arg1;
 - (void)setIgnoringTypingUpdates:(BOOL)arg1;
+- (void)setIsReportedAsSpam:(BOOL)arg1;
 - (void)setLimitToLoad:(unsigned int)arg1;
 - (void)setLoadedMessageCount:(unsigned int)arg1;
 - (void)setLoadedMessageCount:(unsigned int)arg1 loadImmediately:(BOOL)arg2;

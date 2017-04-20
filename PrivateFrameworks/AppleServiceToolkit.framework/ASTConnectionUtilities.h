@@ -5,7 +5,7 @@
 @interface ASTConnectionUtilities : NSObject
 
 + (id)MD5ForData:(id)arg1;
-+ (id)MD5ForFileURL:(id)arg1;
++ (id)MD5ForFileHandle:(id)arg1;
 + (id)MD5HeaderValueForTask:(id)arg1;
 + (id)acceptLanguage;
 + (void)addBodyToRequest:(id)arg1 body:(id)arg2 gzip:(BOOL)arg3;

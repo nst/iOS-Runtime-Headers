@@ -6,6 +6,8 @@
     NSURL * _fileURL;
     NSObject<OS_dispatch_queue> * _processingQueue;
     PKRemoteAssetManager * _remoteAssetManager;
+    bool  _remoteAssetManagerAccessed;
+    NSLock * _remoteAssetManagerLock;
 }
 
 @property (nonatomic, readonly) NSURL *fileURL;
@@ -20,7 +22,9 @@
 - (id)displayProfileOfType:(int)arg1;
 - (void)downloadRemoteAssetsWithScreenScale:(float)arg1 suffix:(id)arg2 completion:(id /* block */)arg3;
 - (id)fileURL;
+- (id)imageSetForType:(int)arg1 screenScale:(float)arg2 suffix:(id)arg3 displayProfile:(id)arg4 preheat:(BOOL)arg5;
 - (void)imageSetForType:(int)arg1 screenScale:(float)arg2 suffix:(id)arg3 displayProfile:(id)arg4 preheat:(BOOL)arg5 withCompletion:(id /* block */)arg6;
+- (id)init;
 - (id)initWithFileURL:(id)arg1 error:(id*)arg2;
 - (id)initWithFileURL:(id)arg1 error:(id*)arg2 processingQueue:(id)arg3;
 - (id)manifestHash;

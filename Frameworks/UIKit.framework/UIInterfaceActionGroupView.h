@@ -26,6 +26,7 @@
     UIInterfaceActionRepresentationView * _preferredActionRepresentation;
     int  _presentationStyle;
     float  _requiredActionRepresentationWidth;
+    float  _selectionHighlightContinuousCornerRadius;
     BOOL  _showsSeparatorAboveActions;
     UIView * _topLevelItemsView;
     NSArray * _topLevelViewArrangementConstraints;
@@ -58,6 +59,7 @@
 @property (nonatomic, retain) UIInterfaceActionRepresentationView *preferredActionRepresentation;
 @property (nonatomic) int presentationStyle;
 @property (nonatomic) float requiredActionRepresentationWidth;
+@property (getter=_selectionHighlightContinuousCornerRadius, setter=_setSelectionHighlightContinuousCornerRadius:, nonatomic) float selectionHighlightContinuousCornerRadius;
 @property (nonatomic) BOOL showsSeparatorAboveActions;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIView *topLevelItemsView;
@@ -67,6 +69,8 @@
 @property (getter=_visualStyleOverrideTitleLabelFont, setter=_setVisualStyleOverrideTitleLabelFont:, nonatomic, retain) UIFont *visualStyleOverrideTitleLabelFont;
 @property (nonatomic) <UIInterfaceActionVisualStyleProviding> *visualStyleProvider;
 @property (nonatomic, readonly) NSPointerArray *weakSimultaneouslyPresentedGroupViews;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (void).cxx_destruct;
 - (int)_actionLayoutAxisUnknowDisallowed;
@@ -110,11 +114,13 @@
 - (void)_removeUsAsThePresentingViewControllerForAllActions;
 - (void)_scrollActionRepresentationViewToVisibleForAction:(id)arg1 animated:(BOOL)arg2;
 - (void)_scrollPreferredActionRepresentationViewToVisibleAnimated:(BOOL)arg1;
+- (float)_selectionHighlightContinuousCornerRadius;
 - (void)_setAndApplyVisualStyle:(id)arg1;
 - (void)_setDrawsBackground:(BOOL)arg1;
 - (void)_setLayoutDebuggingIdentifier:(id)arg1;
 - (void)_setNeedsUpdateActionSequenceViewArrangement;
 - (void)_setNeedsUpdateTopLevelViewsArrangement;
+- (void)_setSelectionHighlightContinuousCornerRadius:(float)arg1;
 - (void)_setUsAsThePresentingViewControllerForAllActions;
 - (void)_setVisualStyleOverrideSeparatorAttributes:(id)arg1;
 - (void)_setVisualStyleOverrideTitleLabelFont:(id)arg1;
@@ -124,6 +130,7 @@
 - (void)_updateActionSequenceViewActionLayoutAxis;
 - (void)_updateActionSequenceViewDebugLayoutIdentifier;
 - (void)_updateRequiredActionRepresentationSizeConstraints;
+- (void)_updateRoundedCornerPositionForSubviews;
 - (id)_viewContainingTopLevelItems;
 - (id)_viewDisplayingRoundedBackground;
 - (id)_visualStyleByApplyingOurTraitsToVisualStyle:(id)arg1 traitCollection:(id)arg2;
@@ -190,5 +197,9 @@
 - (id)visualStyle;
 - (id)visualStyleProvider;
 - (id)weakSimultaneouslyPresentedGroupViews;
+
+// Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
+
+- (id)newActionSeparatorView;
 
 @end

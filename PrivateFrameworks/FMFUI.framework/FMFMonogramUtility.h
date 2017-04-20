@@ -8,8 +8,8 @@
 + (id)contactImageCache;
 + (id)contactStatusCache;
 + (struct __CFString { }*)hexStringFromColor:(id)arg1;
-+ (id)monogramImageOfDiameter:(float)arg1 forRecordID:(int)arg2 monogramStyle:(int)arg3 tintColor:(id)arg4 customFont:(id)arg5 isPersonImage:(BOOL*)arg6;
-+ (id)monogramImageOfDiameter:(float)arg1 forRecordID:(int)arg2 useTintColor:(id)arg3 useCustomFont:(BOOL)arg4 isPersonImage:(BOOL*)arg5;
++ (id)monogramImageOfDiameter:(float)arg1 forContact:(id)arg2 monogramStyle:(int)arg3 tintColor:(id)arg4 customFont:(id)arg5 isPersonImage:(BOOL*)arg6;
++ (id)monogramImageOfDiameter:(float)arg1 forContact:(id)arg2 useTintColor:(id)arg3 useCustomFont:(BOOL)arg4 isPersonImage:(BOOL*)arg5;
 + (id)monogrammerWithDiameter:(float)arg1 style:(int)arg2 useTintColor:(id)arg3 customFont:(id)arg4;
 + (id)placeholderContactImageOfDiameter:(float)arg1 monogramStyle:(int)arg2 useTintColor:(id)arg3;
 + (void)setAddressBook:(void*)arg1;

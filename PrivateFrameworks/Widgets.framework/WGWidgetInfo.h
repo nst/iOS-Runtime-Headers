@@ -41,6 +41,7 @@
 - (id)_iconWithFormat:(int)arg1;
 - (id)_iconWithOutline;
 - (int)_outlineVariantForScale:(float)arg1;
+- (void)_resetIcons;
 - (id)_sdkVersion;
 - (void)_setDisplayName:(id)arg1;
 - (void)_setIcon:(id)arg1;

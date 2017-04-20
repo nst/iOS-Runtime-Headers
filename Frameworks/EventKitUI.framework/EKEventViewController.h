@@ -28,10 +28,8 @@
     int  _editorHideTransition;
     int  _editorShowTransition;
     EKEvent * _event;
-    NSLayoutConstraint * _footerHeightConstraint;
-    NSArray * _footerSections;
-    UITableView * _footerTableView;
-    UIView * _footerView;
+    NSArray * _headerConstraints;
+    UIView * _headerView;
     BOOL  _hidePreview;
     BOOL  _ignoreDBChanges;
     BOOL  _inlineDayViewRespectsSelectedCalendarsFilter;
@@ -64,6 +62,7 @@
     float  _statusButtonsViewCachedFontSize;
     BOOL  _tableIsBeingEdited;
     UITableView * _tableView;
+    NSArray * _tableViewTopConstraints;
     BOOL  _trustsStatus;
     BOOL  _viewIsVisible;
 }
@@ -143,10 +142,11 @@
 - (BOOL)_shouldShowEditButton;
 - (id)_statusButtons;
 - (id)_statusButtonsContainerView;
+- (id)_statusButtonsForOrb:(BOOL)arg1;
 - (id)_statusButtonsView;
 - (void)_storeChanged:(id)arg1;
 - (void)_teardownTableView;
-- (void)_updateFooterIfNeeded;
+- (void)_updateHeaderAndFooterIfNeeded;
 - (void)_updateNavBarAnimated:(BOOL)arg1;
 - (void)_updateResponse;
 - (void)_updateResponseVisibility;

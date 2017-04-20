@@ -36,6 +36,10 @@
 + (id)previewInteractionPopCount;
 + (id)previewInteractionPopForce;
 + (id)previewInteractionTapCount;
++ (id)recentsInputViewItemSelectedCount;
++ (id)recentsInputViewNewEntryCount;
++ (id)recentsInputViewNumberOfItems;
++ (id)recentsInputViewPresentationCount;
 + (id)scrollBounceCount;
 + (id)scrollViewVerticalVelocityInteractive;
 + (id)scrollViewVerticalVelocityNoninteractive;

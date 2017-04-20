@@ -17,7 +17,6 @@
 @property (nonatomic, readonly) int clientProcessID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) int faceGroupType;
 @property (nonatomic, readonly) PHRelationshipChangeRequestHelper *facesHelper;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) PHChangeRequestHelper *helper;
@@ -26,6 +25,7 @@
 @property (getter=isMutated, readonly) BOOL mutated;
 @property (getter=isNew, readonly) BOOL new;
 @property (nonatomic, readonly) NSManagedObjectID *objectID;
+@property (nonatomic) int personBuilderState;
 @property (nonatomic, readonly) PHObjectPlaceholder *placeholderForCreatedFaceGroup;
 @property (readonly) Class superclass;
 @property (nonatomic) int unnamedFaceCount;
@@ -33,7 +33,6 @@
 
 + (id)changeRequestForFaceGroup:(id)arg1;
 + (id)creationRequestForFaceGroup;
-+ (id)creationRequestForRejectedFacesFaceGroup;
 + (void)deleteFaceGroups:(id)arg1;
 
 - (void).cxx_destruct;
@@ -53,7 +52,6 @@
 - (id)createManagedObjectForInsertIntoPhotoLibrary:(id)arg1 error:(id*)arg2;
 - (void)didMutate;
 - (void)encodeToXPCDict:(id)arg1;
-- (int)faceGroupType;
 - (id)facesHelper;
 - (id)helper;
 - (id)initForNewObject;
@@ -67,10 +65,11 @@
 - (id)mutations;
 - (id)objectID;
 - (void)performTransactionCompletionHandlingInPhotoLibrary:(id)arg1;
+- (int)personBuilderState;
 - (id)placeholderForCreatedFaceGroup;
 - (void)removeFaces:(id)arg1;
-- (void)setFaceGroupType:(int)arg1;
 - (void)setKeyFace:(id)arg1;
+- (void)setPersonBuilderState:(int)arg1;
 - (void)setUnnamedFaceCount:(int)arg1;
 - (int)unnamedFaceCount;
 - (id)uuid;

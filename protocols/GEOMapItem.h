@@ -11,6 +11,7 @@
 - (double)_areaInMeters;
 - (GEOMapRegion *)_arrivalMapRegionForTransportType:(int)arg1;
 - (GEOMapItemAdditionalPlaceInfo *)_asPlaceInfo;
+- (GEOAssociatedApp *)_associatedApp;
 - (GEOMapItemPlaceAttribution *)_attribution;
 - (GEOPDBusinessClaim *)_businessClaim;
 - (NSString *)_businessURL;

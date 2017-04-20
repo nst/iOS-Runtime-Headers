@@ -342,6 +342,7 @@
 @property (nonatomic, readonly) UIFont *transcriptDateTextFont;
 @property (nonatomic, readonly) float transcriptDrawerContactImageDiameter;
 @property (nonatomic, readonly) float transcriptDrawerContactImagePadding;
+@property (nonatomic, readonly) UIActivityIndicatorView *transcriptHeaderIndicatorView;
 @property (nonatomic, readonly) float transcriptHeaderViewMaxRows;
 @property (nonatomic, readonly) UIFont *transcriptJunkHeaderButtonFont;
 @property (nonatomic, readonly) float transcriptJunkHeaderButtonHeight;
@@ -744,7 +745,7 @@
 - (id)stickerDetailsTimestampFont;
 - (id)stickerDetailsTitleFont;
 - (unsigned int)stickerScreenScale;
-- (struct CGSize { float x1; float x2; })stickerSizeScaledWithInitialSize:(struct CGSize { float x1; float x2; })arg1 imageScale:(float)arg2 userScale:(float)arg3 rectifiedScreenScale:(float)arg4;
+- (struct CGSize { float x1; float x2; })stickerSizeScaledWithInitialSize:(struct CGSize { float x1; float x2; })arg1 imageScale:(float)arg2 userScale:(float)arg3 rectifiedScreenScale:(float)arg4 maxWidth:(float)arg5;
 - (id)strokedBalloonName;
 - (id)strokedTaillessBalloonName;
 - (float)summaryDateConversationListSpace;
@@ -789,6 +790,7 @@
 - (float)transcriptDrawerOverlapForMarginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (float)transcriptDrawerSpace;
 - (float)transcriptDrawerWidthForMarginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (id)transcriptHeaderIndicatorView;
 - (float)transcriptHeaderViewMaxRows;
 - (id)transcriptJunkHeaderButtonFont;
 - (float)transcriptJunkHeaderButtonHeight;

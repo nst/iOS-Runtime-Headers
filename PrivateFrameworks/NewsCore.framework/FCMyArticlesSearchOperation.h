@@ -10,6 +10,7 @@
     FCFeedItemFeature * _feature;
     BOOL  _permitStaleSubscriptions;
     BOOL  _purchasedChannelsOnly;
+    NSDictionary * _resultFeedContextByFeedID;
     NSArray * _resultFeedItems;
     id /* block */  _searchCompletionHandler;
     BOOL  _unreadOnly;
@@ -22,6 +23,7 @@
 @property (nonatomic, copy) FCFeedItemFeature *feature;
 @property (nonatomic) BOOL permitStaleSubscriptions;
 @property (nonatomic) BOOL purchasedChannelsOnly;
+@property (copy) NSDictionary *resultFeedContextByFeedID;
 @property (nonatomic, retain) NSArray *resultFeedItems;
 @property (nonatomic, copy) id /* block */ searchCompletionHandler;
 @property (nonatomic) BOOL unreadOnly;
@@ -38,6 +40,7 @@
 - (void)performOperation;
 - (BOOL)permitStaleSubscriptions;
 - (BOOL)purchasedChannelsOnly;
+- (id)resultFeedContextByFeedID;
 - (id)resultFeedItems;
 - (id /* block */)searchCompletionHandler;
 - (void)setCachedOnly:(BOOL)arg1;
@@ -47,6 +50,7 @@
 - (void)setFeature:(id)arg1;
 - (void)setPermitStaleSubscriptions:(BOOL)arg1;
 - (void)setPurchasedChannelsOnly:(BOOL)arg1;
+- (void)setResultFeedContextByFeedID:(id)arg1;
 - (void)setResultFeedItems:(id)arg1;
 - (void)setSearchCompletionHandler:(id /* block */)arg1;
 - (void)setUnreadOnly:(BOOL)arg1;

@@ -6,7 +6,7 @@
     NSMutableArray * _activeConnections;
     NSMutableDictionary * _authTokens;
     double  _bandwidthStddev;
-    unsigned long long  _bytesWritten;
+    unsigned int  _bytesWritten;
     int  _cacheMaxAge;
     struct __CFHTTPMessage { } * _currentRequest;
     <HTSHTTPServerDelegate> * _delegate;
@@ -53,7 +53,7 @@
 - (void)_respondWithData:(id)arg1 mimeType:(id)arg2 toRequest:(id)arg3 connection:(id)arg4;
 - (id)_restrictedFilePathForRelativePath:(id)arg1;
 - (void)_returnResponse:(id)arg1 toConnection:(id)arg2 closeAfterSending:(BOOL)arg3;
-- (unsigned long long)availableBandwidth;
+- (unsigned int)availableBandwidth;
 - (double)bandwidthStddev;
 - (int)cacheMaxAge;
 - (void)consumedBandwidth:(unsigned long long)arg1;

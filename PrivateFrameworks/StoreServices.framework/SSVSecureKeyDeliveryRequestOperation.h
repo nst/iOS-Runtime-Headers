@@ -3,41 +3,72 @@
  */
 
 @interface SSVSecureKeyDeliveryRequestOperation : NSOperation {
+    NSDictionary * _URLBagDictionary;
     NSObject<OS_dispatch_queue> * _accessQueue;
     NSURL * _certificateURL;
+    double  _expirationTime;
     BOOL  _iTunesStoreRequest;
     NSURL * _keyServerURL;
+    int  _leaseAction;
+    double  _playbackStartTime;
     NSNumber * _rentalId;
     AVAssetResourceLoadingRequest * _resourceLoadingRequest;
     id /* block */  _responseBlock;
+    NSData * _serverPlaybackContextData;
+    <SSVSecureKeyDeliveryRequestOperationDelegate> * _serverPlaybackContextDataDelegate;
+    BOOL  _shouldIncludeGUID;
+    BOOL  _skippedRentalCheckout;
 }
 
 @property (getter=isITunesStoreRequest) BOOL ITunesStoreRequest;
 @property (retain) NSURL *certificateURL;
+@property (nonatomic, readonly) double expirationTime;
 @property (retain) NSURL *keyServerURL;
+@property (nonatomic) int leaseAction;
+@property (nonatomic, readonly) double playbackStartTime;
 @property (copy) NSNumber *rentalId;
 @property (retain) AVAssetResourceLoadingRequest *resourceLoadingRequest;
 @property (copy) id /* block */ responseBlock;
+@property (nonatomic, retain) NSData *serverPlaybackContextData;
+@property (nonatomic) <SSVSecureKeyDeliveryRequestOperationDelegate> *serverPlaybackContextDataDelegate;
+@property (nonatomic) BOOL shouldIncludeGUID;
+@property BOOL skippedRentalCheckout;
 
 - (void).cxx_destruct;
-- (id)_contentKeyContextForStreamingKeyID:(long long)arg1 streamingKeyDictionaries:(id)arg2 error:(id*)arg3;
+- (id)_contentKeyContextForStreamingKeyID:(long long)arg1 streamingKeyDictionaries:(id)arg2 renewAfter:(double*)arg3 error:(id*)arg4;
+- (double)_expirationTimeForStreamingKeyID:(long long)arg1 streamingKeyDictionaries:(id)arg2;
+- (double)_playbackStartTimeForStreamingKeyID:(long long)arg1 streamingKeyDictionaries:(id)arg2;
 - (void)_sendResponseBlockWithError:(id)arg1;
 - (id)_streamingKeyDictionaryForID:(long long)arg1 URI:(id)arg2 serverPlaybackContextData:(id)arg3;
 - (id)_streamingRequestDictionaryWithStreamingKeyDictionaries:(id)arg1;
+- (double)_timeIntervalForStreamingKeyID:(long long)arg1 responseKey:(id)arg2 streamingKeyDictionaries:(id)arg3;
 - (id)certificateURL;
+- (void)configureWithURLBagDictionary:(id)arg1;
+- (double)expirationTime;
 - (id)init;
 - (BOOL)isITunesStoreRequest;
 - (id)keyServerURL;
+- (int)leaseAction;
 - (void)main;
+- (double)playbackStartTime;
 - (id)rentalId;
 - (id)resourceLoadingRequest;
 - (id /* block */)responseBlock;
+- (id)serverPlaybackContextData;
+- (id)serverPlaybackContextDataDelegate;
 - (void)setCertificateURL:(id)arg1;
 - (void)setITunesStoreRequest:(BOOL)arg1;
 - (void)setKeyServerURL:(id)arg1;
+- (void)setLeaseAction:(int)arg1;
 - (void)setRentalId:(id)arg1;
 - (void)setResourceLoadingRequest:(id)arg1;
 - (void)setResponseBlock:(id /* block */)arg1;
+- (void)setServerPlaybackContextData:(id)arg1;
+- (void)setServerPlaybackContextDataDelegate:(id)arg1;
+- (void)setShouldIncludeGUID:(BOOL)arg1;
+- (void)setSkippedRentalCheckout:(BOOL)arg1;
+- (BOOL)shouldIncludeGUID;
+- (BOOL)skippedRentalCheckout;
 - (void)start;
 
 @end

@@ -22,6 +22,7 @@
 - (id)init;
 - (id)initWithAddedItems:(id)arg1 removedItems:(id)arg2 existingItems:(id)arg3;
 - (id)removedItems;
+- (id)resultsByMergingWithResults:(id)arg1;
 - (void)setAddedItems:(id)arg1;
 - (void)setExistingItems:(id)arg1;
 - (void)setRemovedItems:(id)arg1;

@@ -4,26 +4,29 @@
 
 @interface _ATXAppLaunch : NSObject {
     NSString * _bundleId;
-    NSDate * _date;
+    NSDate * _endDate;
     NSString * _reason;
+    NSDate * _startDate;
     NSTimeZone * _timeZone;
 }
 
 @property (nonatomic, readonly) NSString *bundleId;
-@property (nonatomic, readonly) NSDate *date;
+@property (nonatomic, readonly) NSDate *endDate;
 @property (nonatomic, readonly) NSString *reason;
+@property (nonatomic, readonly) NSDate *startDate;
 @property (nonatomic, readonly) NSTimeZone *timeZone;
 
 - (void).cxx_destruct;
 - (id)bundleId;
-- (id)date;
 - (id)description;
+- (id)endDate;
 - (unsigned int)hash;
 - (id)init;
-- (id)initWithBundleId:(id)arg1 date:(id)arg2 timeZone:(id)arg3 reason:(id)arg4;
+- (id)initWithBundleId:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 timeZone:(id)arg4 reason:(id)arg5;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToLaunch:(id)arg1;
 - (id)reason;
+- (id)startDate;
 - (id)timeZone;
 
 @end

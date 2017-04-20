@@ -10,6 +10,7 @@
             struct NewServerListener {} *__first_; 
         } __end_cap_; 
     }  mNewServerListeners;
+    int  mNotifyToken;
     struct vector<PropertyListener, std::__1::allocator<PropertyListener> > { 
         struct PropertyListener {} *__begin_; 
         struct PropertyListener {} *__end_; 
@@ -22,6 +23,7 @@
     NSMutableArray * mRemoteServers;
     unsigned int  mServerRefCounter;
     NSObject<OS_dispatch_queue> * mTouchServersQueue;
+    BOOL  mValidToken;
 }
 
 @property (readonly, copy) NSString *debugDescription;

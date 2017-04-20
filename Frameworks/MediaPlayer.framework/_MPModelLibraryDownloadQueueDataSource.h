@@ -7,7 +7,7 @@
         struct EntityQueryResult {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
     }  _entityQueryResult;
-    _MPMediaLibraryEntityTranslationContext * _entityTranslationContext;
+    MPMediaLibraryEntityTranslationContext * _entityTranslationContext;
     MPMediaLibraryEntityTranslator * _entityTranslator;
     MPModelLibraryDownloadQueueRequest * _request;
 }

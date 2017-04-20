@@ -70,6 +70,7 @@
 - (oneway void)refreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
 - (oneway void)relayPushNotification:(id)arg1;
 - (id)replyQueueForRequestSelector:(SEL)arg1;
+- (void)resetLoginCancelCount;
 - (oneway void)resetNetworkActivity;
 - (void)resetServiceLookup;
 - (oneway void)respondedToNearbyInvite:(id)arg1;

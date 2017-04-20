@@ -98,6 +98,7 @@
 - (void)enumerateFragmentBuffersUsingBlock:(id /* block */)arg1;
 - (void)enumerateFragmentSamplersUsingBlock:(id /* block */)arg1;
 - (void)enumerateFragmentTexturesUsingBlock:(id /* block */)arg1;
+- (id)formattedDescription:(unsigned int)arg1;
 - (unsigned int)frontStencilRef;
 - (unsigned int)height;
 - (id)initWithFragmentRenderCommandEncoder:(id)arg1 parent:(id)arg2 descriptor:(id)arg3;

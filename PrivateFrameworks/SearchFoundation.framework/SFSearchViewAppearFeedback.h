@@ -2,15 +2,22 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFSearchViewAppearFeedback : SFFeedback {
+@interface SFSearchViewAppearFeedback : SFFeedback <SFProtobufObject> {
     BOOL  _isOnLockScreen;
     BOOL  _isOverApp;
     unsigned int  _viewAppearEvent;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isOnLockScreen;
 @property (nonatomic) BOOL isOverApp;
+@property (nonatomic, readonly) PBCodable *protobufMessage;
+@property (readonly) Class superclass;
 @property (nonatomic) unsigned int viewAppearEvent;
+
+// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
 
 + (BOOL)supportsSecureCoding;
 
@@ -23,5 +30,11 @@
 - (void)setIsOverApp:(BOOL)arg1;
 - (void)setViewAppearEvent:(unsigned int)arg1;
 - (unsigned int)viewAppearEvent;
+
+// Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
+
++ (Class)protobufClass;
+
+- (id)protobufMessage;
 
 @end

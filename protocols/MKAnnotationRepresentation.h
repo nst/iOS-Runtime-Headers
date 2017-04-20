@@ -11,5 +11,6 @@
 - (BOOL)isPersistent;
 - (void)prepareForReuse;
 - (NSString *)reuseIdentifier;
+- (MKAnnotationView<MKAnnotationRepresentation> *)viewRepresentation;
 
 @end

@@ -18,11 +18,17 @@
 - (id)_typedBackingStore;
 - (id)currencyAmount;
 - (id)description;
+- (id)domain;
 - (id)initWithPayer:(id)arg1 currencyAmount:(id)arg2 note:(id)arg3;
 - (id)note;
+- (id)parametersByName;
 - (id)payer;
 - (void)setCurrencyAmount:(id)arg1;
+- (void)setDomain:(id)arg1;
 - (void)setNote:(id)arg1;
+- (void)setParametersByName:(id)arg1;
 - (void)setPayer:(id)arg1;
+- (void)setVerb:(id)arg1;
+- (id)verb;
 
 @end

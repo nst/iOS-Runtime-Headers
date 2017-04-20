@@ -2,13 +2,17 @@
    Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
  */
 
-@interface VSDeveloperIdentityProviderFetchAllOperation : VSAsyncOperation {
+@interface VSDeveloperIdentityProviderFetchAllOperation : VSAsyncOperation <VSIdentityProviderFetchAllResult> {
     VSDeveloperServiceConnection * _connection;
-    VSFailable * _result;
+    VSOptional * _result;
 }
 
 @property (nonatomic, retain) VSDeveloperServiceConnection *connection;
-@property (nonatomic, retain) VSFailable *result;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) VSOptional *result;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)connection;

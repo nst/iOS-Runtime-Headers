@@ -6,7 +6,8 @@
     NSMutableArray * _dashViews;
     <PSPasscodeFieldDelegate> * _delegate;
     NSMutableArray * _digitViews;
-    NSMutableArray * _dotViews;
+    NSMutableArray * _dotFullViews;
+    NSMutableArray * _dotOutlineViews;
     BOOL  _enabled;
     NSArray * _fieldSpacing;
     UIColor * _foregroundColor;

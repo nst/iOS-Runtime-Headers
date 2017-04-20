@@ -5,7 +5,7 @@
 
 @required
 
-- (void)secretValidator:(void *)arg1 recoverSecureBackupWithContext:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: CDPDDeviceSecretValidator *, CDPDSecureBackupRecoveryContext *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, NSError *, void*
+- (void)secretValidator:(void *)arg1 recoverSecureBackupWithContext:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: CDPDDeviceSecretValidator *, CDPDSecureBackupContext *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, NSError *, void*
 - (BOOL)secretValidator:(CDPDDeviceSecretValidator *)arg1 shouldContinueValidationAfterError:(NSError *)arg2;
 
 @optional

@@ -3,17 +3,22 @@
  */
 
 @interface AAUICDPHelper : NSObject {
+    BOOL  _forceInline;
     UIViewController * _presentingViewController;
 }
 
+@property (nonatomic) BOOL forceInline;
 @property (nonatomic, readonly) UIViewController *presentingViewController;
 
++ (id)cdpContextForAccount:(id)arg1;
 + (id)cdpContextForPrimaryAccount;
 + (id)helperWithPresenter:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)cdpStateControllerForPrimaryAccount;
 - (id)cdpStateControllerWithContext:(id)arg1;
+- (BOOL)forceInline;
 - (id)presentingViewController;
+- (void)setForceInline:(BOOL)arg1;
 
 @end

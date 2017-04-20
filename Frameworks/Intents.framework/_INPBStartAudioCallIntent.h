@@ -31,13 +31,19 @@
 @property (nonatomic) int ttyType;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 + (Class)contactType;
 + (id)options;
 
 - (void).cxx_destruct;
+- (int)StringAsAudioRoute:(id)arg1;
+- (int)StringAsDestinationType:(id)arg1;
+- (int)StringAsPreferredCallProvider:(id)arg1;
 - (int)StringAsTtyType:(id)arg1;
 - (void)addContact:(id)arg1;
 - (int)audioRoute;
+- (id)audioRouteAsString:(int)arg1;
 - (void)clearContacts;
 - (id)contactAtIndex:(unsigned int)arg1;
 - (id)contacts;
@@ -45,6 +51,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (int)destinationType;
+- (id)destinationTypeAsString:(int)arg1;
 - (id)dictionaryRepresentation;
 - (BOOL)hasAudioRoute;
 - (BOOL)hasDestinationType;
@@ -56,6 +63,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)preferredCallProvider;
+- (id)preferredCallProviderAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAudioRoute:(int)arg1;
 - (void)setContacts:(id)arg1;
@@ -71,5 +79,11 @@
 - (id)ttyTypeAsString:(int)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

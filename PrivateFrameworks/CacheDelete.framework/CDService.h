@@ -4,7 +4,6 @@
 
 @interface CDService : NSObject <CDService> {
     NSString * _ID;
-    BOOL  __dead;
     BOOL  __inFlight;
     NSSet * _desiredNotifications;
     BOOL  _doNotQuery;
@@ -19,7 +18,6 @@
 }
 
 @property (nonatomic, retain) NSString *ID;
-@property (nonatomic) BOOL _dead;
 @property (nonatomic) BOOL _inFlight;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -43,7 +41,6 @@
 
 - (void).cxx_destruct;
 - (id)ID;
-- (BOOL)_dead;
 - (BOOL)_inFlight;
 - (void)_serviceCallback:(id)arg1 replyBlock:(id /* block */)arg2;
 - (void)_serviceCancelPurge:(id /* block */)arg1;
@@ -83,7 +80,6 @@
 - (void)setRootOnly:(BOOL)arg1;
 - (void)setServiceInvalidationHandler:(id /* block */)arg1;
 - (void)setServiceQueue:(id)arg1;
-- (void)set_dead:(BOOL)arg1;
 - (void)set_inFlight:(BOOL)arg1;
 
 @end

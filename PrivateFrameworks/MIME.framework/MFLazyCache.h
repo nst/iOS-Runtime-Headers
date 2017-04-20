@@ -17,15 +17,17 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (void)_exchangeOriginalValue:(id)arg1 forKey:(id)arg2 withValue:(id)arg3;
+- (void)_exchangeOriginalObject:(id)arg1 forKey:(id)arg2 withObject:(id)arg3;
 - (void)cache:(id)arg1 willEvictObject:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
+- (id)initWithCountLimit:(unsigned int)arg1;
+- (id)objectForKey:(id)arg1 generator:(id /* block */)arg2;
 - (void)removeAllObjects;
+- (void)removeObjectForKey:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (id)storedValueForKey:(id)arg1;
-- (id)valueForKey:(id)arg1 valueGenerator:(id /* block */)arg2;
+- (id)storedObjectForKey:(id)arg1;
 - (int)waiterCountForKey:(id)arg1;
 
 @end

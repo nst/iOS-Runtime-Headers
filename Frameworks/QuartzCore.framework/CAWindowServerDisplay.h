@@ -18,14 +18,13 @@
 @property (nonatomic, copy) NSString *colorMode;
 @property float contrast;
 @property (readonly) NSString *deviceName;
+@property BOOL disabled;
 @property BOOL disablesUpdates;
 @property (readonly) unsigned int displayId;
 @property (getter=isGrayscale) BOOL grayscale;
 @property float idealRefreshRate;
 @property BOOL invertsColors;
 @property float maximumBrightness;
-@property float maximumRefreshRate;
-@property float minimumRefreshRate;
 @property (getter=isMirroringEnabled) BOOL mirroringEnabled;
 @property (readonly) NSString *name;
 @property (copy) NSString *orientation;
@@ -42,7 +41,7 @@
 
 - (id)TVMode;
 - (id)TVSignalType;
-- (id)_initWithCADisplayServer:(struct Server { int (**x1)(); struct SpinLock { struct { int x_1_2_1; } x_2_1_1; } x2; struct Mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_3_1_1; } x3; id x4; struct Display {} x5; struct __CFString {} *x6; struct ContextItem {} *x7; unsigned int x8; unsigned int x9; struct ContextItem {} *x10; unsigned int x11; struct SpinLock { struct { int x_1_2_1; } x_12_1_1; } x12; struct PendingOperation {} *x13; struct Context {} *x14; struct Shape {} *x15; unsigned int x16; struct Context {} *x17; struct Renderer {} *x18; double x19; double x20; double x21; struct __CFDictionary {} *x22; struct HangEvent { int (**x_23_1_1)(); struct hangEvent {} *x_23_1_2; } x23; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; }*)arg1;
+- (id)_initWithCADisplayServer:(struct Server { int (**x1)(); struct SpinLock { struct { int x_1_2_1; } x_2_1_1; } x2; struct Mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_3_1_1; } x3; id x4; struct Display {} x5; struct __CFString {} *x6; struct ContextItem {} *x7; unsigned int x8; unsigned int x9; struct ContextItem {} *x10; unsigned int x11; struct SpinLock { struct { int x_1_2_1; } x_12_1_1; } x12; struct PendingOperation {} *x13; struct Context {} *x14; struct Shape {} *x15; unsigned int x16; struct Context {} *x17; struct Renderer {} *x18; double x19; double x20; double x21; struct __CFDictionary {} *x22; struct HangEvent { int (**x_23_1_1)(); struct hangEvent {} *x_23_1_2; } x23; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; }*)arg1;
 - (void)addClone:(id)arg1;
 - (void)addClone:(id)arg1 options:(id)arg2;
 - (BOOL)allowsDisplayCompositing;
@@ -60,6 +59,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)deviceName;
+- (BOOL)disabled;
 - (BOOL)disablesUpdates;
 - (unsigned int)displayId;
 - (void)freeze;
@@ -89,6 +89,7 @@
 - (void)setColorMatrix:(float*)arg1 scale:(float)arg2 rampDuration:(double)arg3;
 - (void)setColorMode:(id)arg1;
 - (void)setContrast:(float)arg1;
+- (void)setDisabled:(BOOL)arg1;
 - (void)setDisablesUpdates:(BOOL)arg1;
 - (void)setGrayscale:(BOOL)arg1;
 - (void)setIdealRefreshRate:(float)arg1;

@@ -15,8 +15,14 @@
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
 - (id)_typedBackingStore;
 - (id)description;
+- (id)domain;
 - (id)initWithWorkoutName:(id)arg1;
+- (id)parametersByName;
+- (void)setDomain:(id)arg1;
+- (void)setParametersByName:(id)arg1;
+- (void)setVerb:(id)arg1;
 - (void)setWorkoutName:(id)arg1;
+- (id)verb;
 - (id)workoutName;
 
 @end

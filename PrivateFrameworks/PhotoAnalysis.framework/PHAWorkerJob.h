@@ -5,6 +5,7 @@
 @interface PHAWorkerJob : NSObject <NSCopying> {
     unsigned int  _countOfFailedStarts;
     <PHAWorkerJobDelegate> * _delegate;
+    BOOL  _disableReactionCheck;
     BOOL  _ignoreFurtherResults;
     BOOL  _isReactionJob;
     double  _lastReportTimeAsInterval;
@@ -17,6 +18,7 @@
 @property (nonatomic, readonly) float completionScore;
 @property (nonatomic) unsigned int countOfFailedStarts;
 @property (nonatomic) <PHAWorkerJobDelegate> *delegate;
+@property (nonatomic) BOOL disableReactionCheck;
 @property (nonatomic, readonly) BOOL finished;
 @property (nonatomic) BOOL ignoreFurtherResults;
 @property (readonly) double intervalSinceLastReport;
@@ -32,6 +34,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)countOfFailedStarts;
 - (id)delegate;
+- (BOOL)disableReactionCheck;
 - (void)extendTimeout;
 - (void)finish;
 - (BOOL)finished;
@@ -47,6 +50,7 @@
 - (unsigned int)scenario;
 - (void)setCountOfFailedStarts:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDisableReactionCheck:(BOOL)arg1;
 - (void)setIgnoreFurtherResults:(BOOL)arg1;
 - (void)setIsReactionJob:(BOOL)arg1;
 - (void)setLastReportTimeAsInterval:(double)arg1;

@@ -33,7 +33,10 @@
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) NSString *uuid;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 - (void).cxx_destruct;
+- (int)StringAsRequiredEntitlements:(id)arg1;
 - (void)addRequiredEntitlement:(int)arg1;
 - (id)canonicalValue;
 - (void)clearRequiredEntitlements;
@@ -54,6 +57,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (int)requiredEntitlementAtIndex:(unsigned int)arg1;
 - (int*)requiredEntitlements;
+- (id)requiredEntitlementsAsString:(int)arg1;
 - (unsigned int)requiredEntitlementsCount;
 - (void)setCanonicalValue:(id)arg1;
 - (void)setConfirmed:(BOOL)arg1;
@@ -66,5 +70,11 @@
 - (id)unknownFields;
 - (id)uuid;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

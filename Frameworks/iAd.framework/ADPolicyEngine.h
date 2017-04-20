@@ -7,9 +7,6 @@
     NSData * _currentSongData;
     NSData * _currentStationData;
     BOOL  _enabled;
-    NSData * _heartbeatToken;
-    NSError * _heartbeatTokenError;
-    double  _heartbeatTokenExpiration;
     NSError * _lastSharedMediaPlayerVideoAdError;
     double  _nextInterstitialPresentationTime;
     double  _nextPrerollPlaybackTime;
@@ -22,7 +19,6 @@
     NSURL * _sharedInterstitialServerURL;
     ADBannerView * _sharedMediaPlayerVideoAd;
     BOOL  _sharedMediaPlayerVideoAdClaimed;
-    BOOL  _visuallyEngaged;
 }
 
 @property (nonatomic) BOOL canAutoEnable;
@@ -32,9 +28,6 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL enabled;
 @property (readonly) unsigned int hash;
-@property (nonatomic, retain) NSData *heartbeatToken;
-@property (nonatomic, retain) NSError *heartbeatTokenError;
-@property (nonatomic) double heartbeatTokenExpiration;
 @property (nonatomic, retain) NSError *lastSharedMediaPlayerVideoAdError;
 @property (nonatomic) double nextInterstitialPresentationTime;
 @property (nonatomic) double nextPrerollPlaybackTime;
@@ -48,15 +41,12 @@
 @property (nonatomic, retain) ADBannerView *sharedMediaPlayerVideoAd;
 @property (nonatomic) BOOL sharedMediaPlayerVideoAdClaimed;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL visuallyEngaged;
 
 + (id)sharedEngine;
 
 - (void)_adSheetConnectionBootstrapped;
 - (void)_enablePolicyEngineWithReason:(id)arg1;
 - (void)_performWhenAdSheetConnectionEstablished:(id /* block */)arg1;
-- (void)acquireMatchSlotWithBodyParameters:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)acquireMatchSlotWithUserConfirmation:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (void)adSheetDidIdleDisablePolicyEngine;
 - (void)bannerView:(id)arg1 didFailToReceiveAdWithError:(id)arg2;
 - (void)bannerViewActionDidFinish:(id)arg1;
@@ -68,17 +58,10 @@
 - (BOOL)claimSharedMediaPlayerVideoAdWithError:(id*)arg1;
 - (id)currentSongData;
 - (id)currentStationData;
-- (void)didBeginPlaybackOnStation:(id)arg1 song:(id)arg2;
-- (void)didEnterStation:(id)arg1;
-- (void)didStopPlaybackOnStation:(id)arg1;
 - (void)disablePolicyEngine;
 - (void)enablePolicyEngine;
 - (BOOL)enabled;
 - (void)finishedPresentingSharedInterstitialAd;
-- (id)heartbeatToken;
-- (id)heartbeatToken:(id*)arg1;
-- (id)heartbeatTokenError;
-- (double)heartbeatTokenExpiration;
 - (id)init;
 - (void)interstitialAd:(id)arg1 didFailWithError:(id)arg2;
 - (void)interstitialAdDidLoad:(id)arg1;
@@ -86,23 +69,13 @@
 - (id)lastSharedMediaPlayerVideoAdError;
 - (double)nextInterstitialPresentationTime;
 - (double)nextPrerollPlaybackTime;
-- (void)optimalTransmissionWindowDidOpen;
 - (id)policyEngineQueue;
 - (id)queuedCommands;
 - (void)relinquishSharedMediaPlayerVideoAd;
-- (void)removeRecordForAccountWithIdentifier:(id)arg1;
-- (void)reportClientEvent:(id)arg1;
-- (void)reportListeningPresenceEvent:(int)arg1;
-- (void)reportStationTileImpression:(id)arg1;
-- (void)requestAdsForSlot:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setCanAutoEnable:(BOOL)arg1;
 - (void)setCurrentSongData:(id)arg1;
 - (void)setCurrentStationData:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
-- (void)setHeartbeatToken:(id)arg1;
-- (void)setHeartbeatToken:(id)arg1 expirationDate:(double)arg2 error:(id)arg3;
-- (void)setHeartbeatTokenError:(id)arg1;
-- (void)setHeartbeatTokenExpiration:(double)arg1;
 - (void)setLastSharedMediaPlayerVideoAdError:(id)arg1;
 - (void)setNextInterstitialPresentationTime:(double)arg1;
 - (void)setNextPrerollPlaybackTime:(double)arg1;
@@ -114,8 +87,6 @@
 - (void)setSharedInterstitialServerURL:(id)arg1;
 - (void)setSharedMediaPlayerVideoAd:(id)arg1;
 - (void)setSharedMediaPlayerVideoAdClaimed:(BOOL)arg1;
-- (void)setStationData:(id)arg1 withInitialTrackBlobs:(id)arg2;
-- (void)setVisuallyEngaged:(BOOL)arg1;
 - (id)sharedInterstitialAd;
 - (BOOL)sharedInterstitialAdIsInUse;
 - (id)sharedInterstitialAuthenticationUserName;
@@ -127,11 +98,5 @@
 - (void)sharedMediaPlayerVideoAdDidFailToReceiveAdWithError:(id)arg1;
 - (void)sharedMediaPlayerVideoAdDidLoad;
 - (void)sharedMediaPlayerVideoAdWillLoad;
-- (void)songBeganWithTags:(id)arg1;
-- (void)songBeganWithTags:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)songSkipped;
-- (void)songStopped;
-- (void)stationChanged:(id)arg1 completionHandler:(id /* block */)arg2;
-- (BOOL)visuallyEngaged;
 
 @end

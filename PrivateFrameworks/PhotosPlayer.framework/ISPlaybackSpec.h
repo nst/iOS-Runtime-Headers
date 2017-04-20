@@ -14,7 +14,6 @@
     double  _playbackTransitionCrossfadeDelay;
     double  _playbackTransitionDuration;
     float  _playbackTransitionScale;
-    double  _preCrossfadeDuration;
     BOOL  _reversesMoreVideoFramesInMemory;
     double  _settleTransitionDuration;
     BOOL  _shouldScaleAndBlurForPlayback;
@@ -65,7 +64,6 @@
 @property (nonatomic) double playbackTransitionCrossfadeDelay;
 @property (nonatomic) double playbackTransitionDuration;
 @property (nonatomic) float playbackTransitionScale;
-@property (nonatomic) double preCrossfadeDuration;
 @property (nonatomic) BOOL reversesMoreVideoFramesInMemory;
 @property (nonatomic) double settleTransitionDuration;
 @property (nonatomic) BOOL shouldScaleAndBlurForPlayback;
@@ -100,7 +98,6 @@
 - (double)playbackTransitionCrossfadeDelay;
 - (double)playbackTransitionDuration;
 - (float)playbackTransitionScale;
-- (double)preCrossfadeDuration;
 - (void)registerObserver:(id)arg1;
 - (BOOL)reversesMoreVideoFramesInMemory;
 - (void)setAggressivelyCachesVideoFrames:(BOOL)arg1;
@@ -116,7 +113,6 @@
 - (void)setPlaybackTransitionCrossfadeDelay:(double)arg1;
 - (void)setPlaybackTransitionDuration:(double)arg1;
 - (void)setPlaybackTransitionScale:(float)arg1;
-- (void)setPreCrossfadeDuration:(double)arg1;
 - (void)setReversesMoreVideoFramesInMemory:(BOOL)arg1;
 - (void)setSettleTransitionDuration:(double)arg1;
 - (void)setShouldScaleAndBlurForPlayback:(BOOL)arg1;

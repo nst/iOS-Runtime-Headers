@@ -29,9 +29,9 @@
 }
 
 @property int epid;
-@property (readonly) NWEndpoint *localEndpoint;
+@property (copy) NWEndpoint *localEndpoint;
 @property int pid;
-@property (readonly) NWEndpoint *remoteEndpoint;
+@property (copy) NWEndpoint *remoteEndpoint;
 @property int socketFamily;
 @property int socketProtocol;
 @property int socketType;
@@ -51,7 +51,9 @@
 - (int)pid;
 - (id)remoteEndpoint;
 - (void)setEpid:(int)arg1;
+- (void)setLocalEndpoint:(id)arg1;
 - (void)setPid:(int)arg1;
+- (void)setRemoteEndpoint:(id)arg1;
 - (void)setSocketFamily:(int)arg1;
 - (void)setSocketProtocol:(int)arg1;
 - (void)setSocketType:(int)arg1;

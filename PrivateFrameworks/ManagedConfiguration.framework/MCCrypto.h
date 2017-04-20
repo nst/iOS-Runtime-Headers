@@ -4,7 +4,7 @@
 
 @interface MCCrypto : NSObject
 
-+ (id)_decryptionFailedError;
++ (id)_decryptionFailedErrorWithUnderlyingError:(id)arg1;
 + (void)clearStoredActivationLockBypassCode;
 + (void)clearStoredActivationLockHash;
 + (struct __SecCertificate { }*)copyCertificateRefFromPEMData:(id)arg1;

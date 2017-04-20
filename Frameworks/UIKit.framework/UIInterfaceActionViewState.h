@@ -9,6 +9,7 @@
     BOOL  _isHighlighted;
     BOOL  _isPreferred;
     UIColor * _legacyPresentationTintColor;
+    unsigned int  _visualCornerPosition;
 }
 
 @property (nonatomic, readonly) UIInterfaceAction *action;
@@ -17,6 +18,7 @@
 @property (nonatomic, readonly) BOOL isHighlighted;
 @property (nonatomic, readonly) BOOL isPreferred;
 @property (nonatomic, readonly) UIColor *legacyPresentationTintColor;
+@property (nonatomic, readonly) unsigned int visualCornerPosition;
 
 + (id)viewStateForActionRepresentationView:(id)arg1 action:(id)arg2;
 + (id)viewStateForActionRepresentationViewDescendantView:(id)arg1 action:(id)arg2;
@@ -41,5 +43,6 @@
 - (BOOL)isHighlighted;
 - (BOOL)isPreferred;
 - (id)legacyPresentationTintColor;
+- (unsigned int)visualCornerPosition;
 
 @end

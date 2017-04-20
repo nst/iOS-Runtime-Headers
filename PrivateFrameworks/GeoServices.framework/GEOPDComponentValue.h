@@ -7,6 +7,7 @@
     GEOPDAddress * _address;
     GEOPDAddressObject * _addressObject;
     GEOPDAmenities * _amenities;
+    GEOPDAssociatedApp * _associatedApp;
     GEOPDBounds * _bounds;
     GEOPDBusinessClaim * _businessClaim;
     GEOPDCaptionedPhoto * _captionedPhoto;
@@ -19,6 +20,7 @@
     GEOPDPhoto * _photo;
     GEOPDPlaceInfo * _placeInfo;
     GEOPDPlacecardURL * _placecardUrl;
+    GEOPDRap * _rap;
     GEOPDRating * _rating;
     GEOPDRawAttribute * _rawAttribute;
     GEOPDRestaurantReservationLink * _restaurantReservationLink;
@@ -40,6 +42,7 @@
 @property (nonatomic, retain) GEOPDAddress *address;
 @property (nonatomic, retain) GEOPDAddressObject *addressObject;
 @property (nonatomic, retain) GEOPDAmenities *amenities;
+@property (nonatomic, retain) GEOPDAssociatedApp *associatedApp;
 @property (nonatomic, retain) GEOPDBounds *bounds;
 @property (nonatomic, retain) GEOPDBusinessClaim *businessClaim;
 @property (nonatomic, retain) GEOPDCaptionedPhoto *captionedPhoto;
@@ -52,6 +55,7 @@
 @property (nonatomic, readonly) BOOL hasAddress;
 @property (nonatomic, readonly) BOOL hasAddressObject;
 @property (nonatomic, readonly) BOOL hasAmenities;
+@property (nonatomic, readonly) BOOL hasAssociatedApp;
 @property (nonatomic, readonly) BOOL hasBounds;
 @property (nonatomic, readonly) BOOL hasBusinessClaim;
 @property (nonatomic, readonly) BOOL hasCaptionedPhoto;
@@ -64,6 +68,7 @@
 @property (nonatomic, readonly) BOOL hasPhoto;
 @property (nonatomic, readonly) BOOL hasPlaceInfo;
 @property (nonatomic, readonly) BOOL hasPlacecardUrl;
+@property (nonatomic, readonly) BOOL hasRap;
 @property (nonatomic, readonly) BOOL hasRating;
 @property (nonatomic, readonly) BOOL hasRawAttribute;
 @property (nonatomic, readonly) BOOL hasRestaurantReservationLink;
@@ -83,6 +88,7 @@
 @property (nonatomic, retain) GEOPDPhoto *photo;
 @property (nonatomic, retain) GEOPDPlaceInfo *placeInfo;
 @property (nonatomic, retain) GEOPDPlacecardURL *placecardUrl;
+@property (nonatomic, retain) GEOPDRap *rap;
 @property (nonatomic, retain) GEOPDRating *rating;
 @property (nonatomic, retain) GEOPDRawAttribute *rawAttribute;
 @property (nonatomic, retain) GEOPDRestaurantReservationLink *restaurantReservationLink;
@@ -103,6 +109,7 @@
 - (id)address;
 - (id)addressObject;
 - (id)amenities;
+- (id)associatedApp;
 - (id)bounds;
 - (id)businessClaim;
 - (id)captionedPhoto;
@@ -120,6 +127,7 @@
 - (BOOL)hasAddress;
 - (BOOL)hasAddressObject;
 - (BOOL)hasAmenities;
+- (BOOL)hasAssociatedApp;
 - (BOOL)hasBounds;
 - (BOOL)hasBusinessClaim;
 - (BOOL)hasCaptionedPhoto;
@@ -132,6 +140,7 @@
 - (BOOL)hasPhoto;
 - (BOOL)hasPlaceInfo;
 - (BOOL)hasPlacecardUrl;
+- (BOOL)hasRap;
 - (BOOL)hasRating;
 - (BOOL)hasRawAttribute;
 - (BOOL)hasRestaurantReservationLink;
@@ -154,6 +163,7 @@
 - (id)photo;
 - (id)placeInfo;
 - (id)placecardUrl;
+- (id)rap;
 - (id)rating;
 - (id)rawAttribute;
 - (BOOL)readFrom:(id)arg1;
@@ -164,6 +174,7 @@
 - (void)setAddress:(id)arg1;
 - (void)setAddressObject:(id)arg1;
 - (void)setAmenities:(id)arg1;
+- (void)setAssociatedApp:(id)arg1;
 - (void)setBounds:(id)arg1;
 - (void)setBusinessClaim:(id)arg1;
 - (void)setCaptionedPhoto:(id)arg1;
@@ -176,6 +187,7 @@
 - (void)setPhoto:(id)arg1;
 - (void)setPlaceInfo:(id)arg1;
 - (void)setPlacecardUrl:(id)arg1;
+- (void)setRap:(id)arg1;
 - (void)setRating:(id)arg1;
 - (void)setRawAttribute:(id)arg1;
 - (void)setRestaurantReservationLink:(id)arg1;

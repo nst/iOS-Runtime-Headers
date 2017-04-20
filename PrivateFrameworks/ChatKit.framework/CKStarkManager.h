@@ -17,6 +17,8 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
+- (id)_assistantContextForConversation:(id)arg1;
+- (id)_assistantContextForRecipientID:(id)arg1;
 - (void)activateForConversation:(id)arg1;
 - (void)activateForRecipient:(id)arg1;
 - (void)attachStarkToScreen:(id)arg1;

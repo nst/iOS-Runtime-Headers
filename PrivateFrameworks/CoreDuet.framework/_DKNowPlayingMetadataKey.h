@@ -7,6 +7,7 @@
 + (id)album;
 + (id)artist;
 + (id)duration;
++ (id)elapsed;
 + (id)genre;
 + (id)identifier;
 + (id)playing;

@@ -12,16 +12,18 @@
     BOOL  _shouldUsePolyShiftFunction;
 }
 
-@property (nonatomic) struct { double x1; double x2; } originalCoordinate;
+@property (nonatomic, readonly) struct { double x1; double x2; } originalCoordinate;
+@property (nonatomic, readonly) double radius;
 
 + (BOOL)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPolyLocationShiftResponse:(id)arg1 originalCoordinate:(struct { double x1; double x2; })arg2;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isValidForCoordinate:(struct { double x1; double x2; })arg1;
 - (struct { double x1; double x2; })originalCoordinate;
-- (void)setOriginalCoordinate:(struct { double x1; double x2; })arg1;
+- (double)radius;
 - (struct { double x1; double x2; })shiftedCoordinateForCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double*)arg2;
 
 @end

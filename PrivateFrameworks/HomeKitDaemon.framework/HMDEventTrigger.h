@@ -27,8 +27,8 @@
 - (void).cxx_destruct;
 - (void)_activate:(BOOL)arg1 characteristicEvents:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_activateLocationEvents:(BOOL)arg1 completionHandler:(id /* block */)arg2;
-- (void)_checkForNoEvents;
 - (BOOL)_compareEventValue:(id)arg1 withCharacteristic:(id)arg2;
+- (void)_deactivateOnNoEvents;
 - (void)_evaluateFiringTrigger;
 - (void)_handleAccessoryCharacteristicsChangedNotification:(id)arg1;
 - (void)_handleAddEventToEventTrigger:(id)arg1;
@@ -41,6 +41,7 @@
 - (void)_handleUpdateEventTriggerRecurrences:(id)arg1;
 - (void)_reevaluateIfRelaunchRequired:(BOOL)arg1;
 - (void)_registerForMessages;
+- (BOOL)_removeEvents:(id)arg1;
 - (id)_rewritePredicate:(id)arg1 currentCharacteristicInPredicate:(id*)arg2 characteristicsToRead:(id)arg3;
 - (void)_saveChanges:(id)arg1;
 - (void)_sortEvents:(id)arg1;
@@ -49,6 +50,7 @@
 - (void)activateOnLocalDevice;
 - (id)addDeltaToNow:(id)arg1;
 - (id)characteristicEvents;
+- (BOOL)checkForNoEvents;
 - (id)compareValueOfCharacteristic:(id)arg1 againstValue:(id)arg2 operatorType:(id)arg3;
 - (void)configure:(id)arg1 messageDispatcher:(id)arg2 queue:(id)arg3;
 - (BOOL)containsSecureActionSet;
@@ -70,6 +72,8 @@
 - (id)locationEvents;
 - (id)recurrences;
 - (void)removeAccessory:(id)arg1;
+- (void)removeCharacteristic:(id)arg1;
+- (void)removeService:(id)arg1;
 - (id)secureTriggerConfirmationTimer;
 - (void)sendTriggerFiredNotification:(id)arg1;
 - (void)setCharacteristicEvents:(id)arg1;

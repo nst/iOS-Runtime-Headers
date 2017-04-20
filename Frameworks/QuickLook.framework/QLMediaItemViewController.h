@@ -11,6 +11,7 @@
     }  _imageSize;
     BOOL  _isFullScreen;
     BOOL  _isVisible;
+    AVAsset * _mediaAsset;
     double  _mediaDuration;
     float  _mediaVolume;
     BOOL  _mediaWasPausedOnResignActive;
@@ -22,6 +23,7 @@
     AVPlayerLayer * _playerLayer;
     UIView * _playerView;
     BOOL  _playing;
+    NSMutableDictionary * _playingInfo;
     int  _playingStatus;
     id /* block */  _previewItemLoadingBlock;
     double  _remainingTime;
@@ -52,10 +54,12 @@
 @property (nonatomic, readonly) BOOL visualTracksEnabled;
 
 - (void).cxx_destruct;
+- (id)_playingInfoWithPlaybackDuration:(double)arg1 elapsedTime:(double)arg2;
+- (void)_registerForCommandCenterHandlers;
+- (void)_unregisterForCommandCenterHandlers;
+- (void)_updateCommandCencerPlayingInfoWithCurrentPlaybackTimeInformation;
 - (void)_updateExternalPlayback;
 - (void)_updatePlayingStatus;
-- (void)applicationDidBecomeActive:(id)arg1;
-- (void)applicationWillResignActive:(id)arg1;
 - (void)buttonPressedWithIdentifier:(id)arg1;
 - (float)currentPlaybackHeadPosition;
 - (void)dealloc;
@@ -67,6 +71,8 @@
 - (void)hideTimeLabel;
 - (void)hideTimeLabelAfterDelay;
 - (void)hideTimeLabelAnimated:(BOOL)arg1;
+- (void)hostApplicationDidBecomeActive;
+- (void)hostApplicationDidEnterBackground:(id)arg1;
 - (struct CGSize { float x1; float x2; })imageSize;
 - (id)labelTextWithFormat:(int)arg1 elapsedInterval:(double)arg2 remainingInterval:(double)arg3;
 - (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -101,7 +107,6 @@
 - (void)setRemainingTime:(double)arg1;
 - (void)setTimeLabelNeedsUpdate;
 - (void)setUpTimeLabelIfNeeded;
-- (BOOL)shouldPauseOnDisappear;
 - (void)showTimeLabel;
 - (void)showTimeLabelIfNeeded;
 - (void)stop;
@@ -110,6 +115,7 @@
 - (void)togglePlayback;
 - (id)toolbarButtons;
 - (void)transitionDidFinish:(BOOL)arg1 didComplete:(BOOL)arg2;
+- (void)userScrubbedInControlCenter:(id)arg1;
 - (BOOL)visualTracksEnabled;
 
 @end

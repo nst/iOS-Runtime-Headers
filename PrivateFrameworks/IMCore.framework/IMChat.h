@@ -148,10 +148,12 @@
 - (void)_insertHistoricalMessages:(id)arg1 queryID:(id)arg2 isRefresh:(BOOL)arg3 isHistoryQuery:(BOOL)arg4;
 - (void)_insertHistoricalMessages:(id)arg1 queryID:(id)arg2 isRefresh:(BOOL)arg3 isHistoryQuery:(BOOL)arg4 limit:(unsigned int)arg5;
 - (void)_invalidateDowngradeState;
-- (void)_inviteParticipants:(id)arg1 reason:(id)arg2;
+- (void)_inviteParticipants:(id)arg1 reason:(id)arg2 toiMessageChat:(BOOL)arg3;
+- (void)_inviteParticipantsToChat:(id)arg1 reason:(id)arg2 toiMessageChat:(BOOL)arg3;
 - (void)_invitePendingParticipants;
 - (BOOL)_isDuplicate:(id)arg1;
 - (void)_itemsDidChange:(id)arg1;
+- (void)_leaveChat:(BOOL)arg1;
 - (void)_markItemAsPlayed:(id)arg1;
 - (void)_participant:(id)arg1 statusChanged:(int)arg2;
 - (id)_pendingParticipants;
@@ -162,6 +164,7 @@
 - (id)_previousAccountForService:(id)arg1;
 - (id)_privateInitWithAccount:(id)arg1 style:(unsigned char)arg2 roomName:(id)arg3 messages:(id)arg4 participants:(id)arg5 isFiltered:(BOOL)arg6 hasHadSuccessfulQuery:(BOOL)arg7;
 - (void)_recomputeOverallChatStatusQuietly:(BOOL)arg1;
+- (void)_removeParticipantsFromChat:(id)arg1 reason:(id)arg2 fromiMessageChat:(BOOL)arg3;
 - (void)_replaceStaleChatItems;
 - (BOOL)_sanityCheckAccounts;
 - (void)_sendCurrentLocationMessageUsingLocationManager:(id)arg1;
@@ -255,6 +258,7 @@
 - (id)init;
 - (id)invitationForPendingParticipants;
 - (void)inviteParticipants:(id)arg1 reason:(id)arg2;
+- (void)inviteParticipantsToiMessageChat:(id)arg1 reason:(id)arg2;
 - (BOOL)isDowngraded;
 - (BOOL)isFiltered;
 - (void)join;
@@ -271,6 +275,7 @@
 - (id)lastSentMessageDate;
 - (double)latestTypingIndicatorTimeInterval;
 - (void)leave;
+- (void)leaveiMessageGroup;
 - (void)loadAttachments:(id /* block */)arg1;
 - (id)loadFrequentRepliesLimit:(unsigned int)arg1 loadImmediately:(BOOL)arg2;
 - (id)loadMessagesBeforeDate:(id)arg1 limit:(unsigned int)arg2;
@@ -304,6 +309,7 @@
 - (void)refreshServiceForSending;
 - (void)remove;
 - (void)removeParticipants:(id)arg1 reason:(id)arg2;
+- (void)removeParticipantsFromiMessageChat:(id)arg1 reason:(id)arg2;
 - (id)roomName;
 - (id)roomNameWithoutSuffix;
 - (void)sendCurrentLocationMessage;

@@ -2,15 +2,22 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFCardSectionEngagementFeedback : SFCardSectionFeedback {
+@interface SFCardSectionEngagementFeedback : SFCardSectionFeedback <SFProtobufObject> {
     unsigned int  _actionCardType;
     SFPunchout * _destination;
     unsigned int  _triggerEvent;
 }
 
 @property (nonatomic) unsigned int actionCardType;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) SFPunchout *destination;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) PBCodable *protobufMessage;
+@property (readonly) Class superclass;
 @property (nonatomic) unsigned int triggerEvent;
+
+// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
 
 + (BOOL)supportsSecureCoding;
 
@@ -24,5 +31,11 @@
 - (void)setDestination:(id)arg1;
 - (void)setTriggerEvent:(unsigned int)arg1;
 - (unsigned int)triggerEvent;
+
+// Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
+
++ (Class)protobufClass;
+
+- (id)protobufMessage;
 
 @end

@@ -2,11 +2,19 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@interface MFMimeBody : MFMessageBody {
+@interface MFMimeBody : MFMessageBody <ECMimePart> {
     unsigned int  _numAlternatives;
     unsigned int  _preferredAlternative;
     MFMimePart * _topLevelPart;
 }
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly, copy) NSString *mimeSubtype;
+@property (nonatomic, readonly, copy) NSString *mimeType;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned int totalTextSize;
 
 + (id)copyNewMimeBoundary;
 + (id)versionString;

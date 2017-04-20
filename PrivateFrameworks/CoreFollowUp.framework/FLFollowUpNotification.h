@@ -5,9 +5,13 @@
 @interface FLFollowUpNotification : NSObject <NSSecureCoding> {
     FLFollowUpAction * _activateAction;
     FLFollowUpAction * _clearAction;
+    NSDate * _creationDate;
     FLFollowUpAction * _dismissAction;
+    double  _firstNotificationDelay;
+    BOOL  _forceDelivery;
+    double  _frequency;
     NSString * _informativeText;
-    NSDate * _relevanceDate;
+    NSDate * _previousNotificationActionDate;
     unsigned int  _sqlID;
     NSString * _title;
     NSString * _unlockActionLabel;
@@ -15,9 +19,13 @@
 
 @property (nonatomic, retain) FLFollowUpAction *activateAction;
 @property (nonatomic, retain) FLFollowUpAction *clearAction;
+@property (nonatomic, retain) NSDate *creationDate;
 @property (nonatomic, retain) FLFollowUpAction *dismissAction;
+@property (nonatomic) double firstNotificationDelay;
+@property (nonatomic) BOOL forceDelivery;
+@property (nonatomic) double frequency;
 @property (nonatomic, copy) NSString *informativeText;
-@property (nonatomic, copy) NSDate *relevanceDate;
+@property (nonatomic, retain) NSDate *previousNotificationActionDate;
 @property (nonatomic) unsigned int sqlID;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *unlockActionLabel;
@@ -25,21 +33,35 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (double)_creationDateAugmentedRepeatTimer;
+- (double)_frequencyDelta;
 - (id)activateAction;
 - (id)clearAction;
+- (id)creationDate;
+- (id)description;
 - (id)dismissAction;
 - (void)encodeWithCoder:(id)arg1;
+- (double)firstNotificationDelay;
+- (BOOL)forceDelivery;
+- (double)frequency;
 - (id)informativeText;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)relevanceDate;
+- (id)previousNotificationActionDate;
+- (void)recalculateActionDateToAccountForDelay;
 - (void)setActivateAction:(id)arg1;
 - (void)setClearAction:(id)arg1;
+- (void)setCreationDate:(id)arg1;
 - (void)setDismissAction:(id)arg1;
+- (void)setFirstNotificationDelay:(double)arg1;
+- (void)setForceDelivery:(BOOL)arg1;
+- (void)setFrequency:(double)arg1;
 - (void)setInformativeText:(id)arg1;
-- (void)setRelevanceDate:(id)arg1;
+- (void)setPreviousNotificationActionDate:(id)arg1;
 - (void)setSqlID:(unsigned int)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUnlockActionLabel:(id)arg1;
+- (BOOL)shouldDeliverNotification;
 - (unsigned int)sqlID;
 - (id)title;
 - (id)unlockActionLabel;

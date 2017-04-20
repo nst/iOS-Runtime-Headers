@@ -7,7 +7,10 @@
     long long  _deviceLibraryPersistentID;
     NSString * _globalPlaylistID;
     long long  _homeSharingLibraryID;
+    NSString * _informalMediaClipID;
+    NSString * _informalStaticAssetID;
     NSString * _lyricsID;
+    NSString * _pumpkinProfileID;
     NSString * _radioStationHash;
     long long  _radioStationID;
     NSString * _radioStationStringID;
@@ -23,7 +26,10 @@
 @property (nonatomic) long long deviceLibraryPersistentID;
 @property (nonatomic, copy) NSString *globalPlaylistID;
 @property (nonatomic) long long homeSharingLibraryID;
+@property (nonatomic, copy) NSString *informalMediaClipID;
+@property (nonatomic, copy) NSString *informalStaticAssetID;
 @property (nonatomic, copy) NSString *lyricsID;
+@property (nonatomic, copy) NSString *pumpkinProfileID;
 @property (nonatomic, copy) NSString *radioStationHash;
 @property (nonatomic) long long radioStationID;
 @property (nonatomic, copy) NSString *radioStationStringID;
@@ -48,10 +54,13 @@
 - (BOOL)hasCommonIdentifierWithIdentifierSet:(id)arg1;
 - (unsigned int)hash;
 - (long long)homeSharingLibraryID;
+- (id)informalMediaClipID;
+- (id)informalStaticAssetID;
 - (id)initWithBlock:(id /* block */)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)lyricsID;
+- (id)pumpkinProfileID;
 - (id)radioStationHash;
 - (long long)radioStationID;
 - (id)radioStationStringID;
@@ -59,7 +68,10 @@
 - (void)setDeviceLibraryPersistentID:(long long)arg1;
 - (void)setGlobalPlaylistID:(id)arg1;
 - (void)setHomeSharingLibraryID:(long long)arg1;
+- (void)setInformalMediaClipID:(id)arg1;
+- (void)setInformalStaticAssetID:(id)arg1;
 - (void)setLyricsID:(id)arg1;
+- (void)setPumpkinProfileID:(id)arg1;
 - (void)setRadioStationHash:(id)arg1;
 - (void)setRadioStationID:(long long)arg1;
 - (void)setRadioStationStringID:(id)arg1;

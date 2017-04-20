@@ -4,10 +4,8 @@
 
 @interface RemoteUISectionFooter : UIView <RemoteUITableFooter> {
     <RUITableFooterDelegate> * _delegate;
-    UIButton * _linkButton;
+    RUILinkLabel * _linkLabel;
     NSURL * _linkURL;
-    int  _textAlignment;
-    UILabel * _textLabel;
     BOOL  _usesCustomTextAlignment;
 }
 
@@ -16,6 +14,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) UIButton *linkButton;
+@property (nonatomic, readonly) RUILinkLabel *linkLabel;
 @property (nonatomic, retain) NSURL *linkURL;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UILabel *textLabel;
@@ -28,6 +27,7 @@
 - (id)initWithAttributes:(id)arg1;
 - (void)layoutSubviews;
 - (id)linkButton;
+- (id)linkLabel;
 - (id)linkURL;
 - (void)setDelegate:(id)arg1;
 - (void)setLinkURL:(id)arg1;

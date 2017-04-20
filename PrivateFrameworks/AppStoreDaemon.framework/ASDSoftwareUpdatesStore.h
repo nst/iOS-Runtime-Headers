@@ -7,6 +7,7 @@
     NSObject<OS_dispatch_queue> * _calloutQueue;
     NSXPCConnection * _connection;
     BOOL  _hasUpdatesEntitlement;
+    int  _storeChangedNotificationToken;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -14,6 +14,7 @@
 @property (nonatomic, readonly) NSString *displayName;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) unsigned int requirementsMask;
+@property (nonatomic, readonly) BOOL shouldOpenInAppStore;
 @property (nonatomic, readonly) GEOSearchAttributionSource *source;
 @property (nonatomic, readonly) unsigned int version;
 @property (nonatomic, readonly) NSString *webBaseActionURL;
@@ -34,6 +35,7 @@
 - (id)initWithSource:(id)arg1 localizedAttribution:(id)arg2 logoPaths:(id)arg3 snippetLogoPaths:(id)arg4;
 - (id)logoPathForScale:(float)arg1;
 - (unsigned int)requirementsMask;
+- (BOOL)shouldOpenInAppStore;
 - (id)snippetLogoPathForScale:(float)arg1;
 - (id)source;
 - (BOOL)supportsActionURLs;

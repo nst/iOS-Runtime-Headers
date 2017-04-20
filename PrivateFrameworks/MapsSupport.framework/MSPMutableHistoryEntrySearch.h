@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/MapsSupport.framework/MapsSupport
  */
 
-@interface MSPMutableHistoryEntrySearch : MSPMutableHistoryEntry <MSPHistoryEntrySearch> {
-    BOOL  _failed;
-}
+@interface MSPMutableHistoryEntrySearch : MSPMutableHistoryEntry <MSPHistoryEntrySearch>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isFailed, nonatomic) BOOL failed;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSString *languageCode;
 @property (nonatomic, copy) NSString *locationDisplayString;
@@ -23,12 +20,10 @@
 
 - (BOOL)_isUserVisibleDuplicateOfSameClassObject:(id)arg1;
 - (id)initWithStorage:(id)arg1;
-- (BOOL)isFailed;
 - (id)languageCode;
 - (id)locationDisplayString;
 - (id)mapRegion;
 - (id)query;
-- (void)setFailed:(BOOL)arg1;
 - (void)setLanguageCode:(id)arg1;
 - (void)setLocationDisplayString:(id)arg1;
 - (void)setMapRegion:(id)arg1;

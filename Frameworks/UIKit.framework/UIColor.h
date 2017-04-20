@@ -549,6 +549,7 @@
 + (struct UIColor { Class x1; }*)ICYellowTodoButtonColor;
 + (struct UIColor { Class x1; }*)ICYellowTodoButtonHighlightColor;
 + (id)ic_colorWith256Red:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
++ (id)ic_darkerAccessibilityColorForColor:(id)arg1;
 + (struct UIColor { Class x1; }*)preferredDefaultFontColor;
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport

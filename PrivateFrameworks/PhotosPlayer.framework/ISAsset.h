@@ -3,6 +3,7 @@
  */
 
 @interface ISAsset : NSObject {
+    id  _UIImage;
     unsigned int  _options;
     struct CGImage { } * _photo;
     int  _photoEXIFOrientation;
@@ -25,6 +26,7 @@
 - (id)description;
 - (BOOL)hasColorAdjustments;
 - (id)init;
+- (id)initWithVideoAsset:(id)arg1 UIImage:(id)arg2 photoTime:(double)arg3 photoEXIFOrientation:(int)arg4 options:(unsigned int)arg5;
 - (id)initWithVideoAsset:(id)arg1 photo:(struct CGImage { }*)arg2 photoTime:(double)arg3;
 - (id)initWithVideoAsset:(id)arg1 photo:(struct CGImage { }*)arg2 photoTime:(double)arg3 options:(unsigned int)arg4;
 - (id)initWithVideoAsset:(id)arg1 photo:(struct CGImage { }*)arg2 photoTime:(double)arg3 photoEXIFOrientation:(int)arg4;

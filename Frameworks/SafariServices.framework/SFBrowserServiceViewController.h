@@ -16,6 +16,7 @@
 + (id)_remoteViewControllerInterface;
 
 - (void).cxx_destruct;
+- (void)_closeDatabasesOnBackgroundingOrDismissal;
 - (void)_didLoadWebView;
 - (void)_dismiss;
 - (void)_fetchCustomActivitiesForURL:(id)arg1 title:(id)arg2 completion:(id /* block */)arg3;
@@ -29,9 +30,12 @@
 - (void)_willAppearInRemoteViewController;
 - (void)dealloc;
 - (void)didDetectRemoteViewControllerViewIsHidden;
+- (void)didDetectUserInteractionFromHostApp;
 - (void)didFetchHostAppCustomActivities:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadURL:(id)arg1;
+- (id)processPool;
+- (id)processPoolConfiguration;
 - (void)repostNotificationInViewService:(id)arg1;
 - (void)safariActivity:(id)arg1 didFinish:(BOOL)arg2;
 - (void)setIsRunningTransitionAnimation:(BOOL)arg1;

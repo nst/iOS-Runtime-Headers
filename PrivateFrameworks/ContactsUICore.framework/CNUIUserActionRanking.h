@@ -21,7 +21,6 @@
 - (id)init;
 - (id)initWithInteractionAdvisor:(id)arg1;
 - (id)interactionAdvisor;
-- (id)observableForRecentActionsChanged;
 - (id)selectMostRecentActionFromItems:(id)arg1;
 - (id)selectRecentActionItems:(id)arg1 schedulerProvider:(id)arg2;
 - (id)sortActionItems:(id)arg1 schedulerProvider:(id)arg2;

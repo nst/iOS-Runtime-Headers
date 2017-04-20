@@ -165,7 +165,7 @@
 - (void)_performNavigationToAssetDisplayDescriptor:(id)arg1 beforeDate:(id)arg2 completionHandler:(id /* block */)arg3;
 - (float)_preloadInsetsBasedOffViewWidth;
 - (void)_presentAlertForError:(id)arg1;
-- (void)_presentErrorAlertForUnplayableAssetReference:(id)arg1;
+- (void)_presentAlertForUnplayableAssetReference:(id)arg1;
 - (void)_scheduleTimedChromeAutoHide;
 - (id)_secondScreenBrowser;
 - (void)_setAccessoryVisible:(BOOL)arg1;
@@ -304,6 +304,7 @@
 - (id)ppt_currentAccessoryViewController;
 - (id)ppt_mainScrollView;
 - (id)ppt_overOneUpPresentationSession;
+- (void)ppt_playCurrentLivePhotoWithCompletionHandler:(id /* block */)arg1;
 - (void)ppt_toggleAccessoryView;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (int)preferredStatusBarUpdateAnimation;

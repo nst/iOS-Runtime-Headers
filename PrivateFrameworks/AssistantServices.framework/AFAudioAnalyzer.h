@@ -17,6 +17,7 @@
     int  _endpointMode;
     NSMutableData * _floatSampleBuffer;
     unsigned long  _frameRate;
+    BOOL  _haveSeenNonZeroSamples;
     double  _interspeechWaitTime;
     BOOL  _isConfigured;
     double  _lastOneShotEndpoint;

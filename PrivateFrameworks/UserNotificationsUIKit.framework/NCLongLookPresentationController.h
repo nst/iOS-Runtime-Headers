@@ -4,7 +4,8 @@
 
 @interface NCLongLookPresentationController : UIPresentationController <NCLongLookAnimator> {
     <UIViewControllerTransitionCoordinator> * _activeTransitionCoordinator;
-    _UIBackdropView * _backgroundBlurView;
+    BSUIBackdropView * _backgroundBlurView;
+    BSUIBackdropView * _backgroundCapturingBlurView;
     UIView * _backgroundDarkeningView;
     BOOL  _didPlayDismissHaptic;
     _UIFeedbackStatesBehavior * _dismissFeedbackBehavior;
@@ -23,6 +24,7 @@
     BOOL  _listenToKeyboardEvents;
     <NCLongLookPresentationControllerDelegate> * _longLookPresentationControllerDelegate;
     _UIBackdropViewSettings * _presentedBackgroundBlurSettings;
+    _UIBackdropViewSettings * _presentedBackgroundBlurSettingsIncludingZoom;
     BOOL  _presenting;
     UIView * _revealShortLook;
     UIView * _sourceView;
@@ -71,17 +73,19 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_dismissLabelContainerViewFrameForPresentedViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForTransitionViewInPresentationSuperview:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameOfPresentedViewInContainerViewWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)_initialBackgroundBlurSettings;
+- (id)_initialBackgroundBlurSettingsWithZoom:(BOOL)arg1;
 - (BOOL)_isTransitionAnimated;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_keyboardFrame;
+- (id)_newPresentedBackgroundBlurSettingsWithZoom:(BOOL)arg1;
 - (void)_popDismissLabel;
 - (id)_presentedAnimatableBlurringView;
-- (id)_presentedBackgroundBlurSettings;
+- (id)_presentedBackgroundBlurSettingsWithZoom:(BOOL)arg1;
 - (id)_presentedNotificationViewController;
 - (void)_setKeyboardFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_shouldMakePresentedViewControllerFirstResponder;
 - (BOOL)_shouldPresentInCurrentContext;
 - (BOOL)_shouldRespectDefinesPresentationContext;
+- (BOOL)_usesNonDefaultBackdropScale;
 - (void)animateTransition:(id)arg1;
 - (void)animationEnded:(BOOL)arg1;
 - (void)cancelInteractiveTransition;

@@ -21,7 +21,7 @@
 - (void)_artworkDidChangeNotification:(id)arg1;
 - (void)_durationAvailablityDidChangeNotification:(id)arg1;
 - (void)_explicitDidChangeNotification:(id)arg1;
-- (void)_modelSongDidChangeNotification:(id)arg1;
+- (void)_modelGenericObjectDidChangeNotification:(id)arg1;
 - (void)_rateDidChangeNotification:(id)arg1;
 - (void)_timeDidJumpNotification:(id)arg1;
 - (void)_titlesDidChangeNotification:(id)arg1;
@@ -30,12 +30,12 @@
 - (id)artistName;
 - (id)artworkCatalog;
 - (id)avItem;
+- (id)composerName;
 - (void)dealloc;
 - (struct { double x1; double x2; double x3; double x4; double x5; float x6; BOOL x7; })durationSnapshot;
 - (id)initWithAVItem:(id)arg1;
 - (BOOL)isExplicit;
-- (id)modelPlaylistEntryRepresentation;
-- (id)modelSongRepresentation;
+- (id)modelGenericObjectRepresentation;
 - (id)title;
 
 @end

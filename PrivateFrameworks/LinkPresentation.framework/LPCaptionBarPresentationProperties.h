@@ -35,6 +35,12 @@
 - (int)leadingAccessoryType;
 - (id)leadingIcon;
 - (id)leadingIconMaskColor;
+- (int)leftAccessoryType;
+- (id)leftIcon;
+- (id)leftIconMaskColor;
+- (int)rightAccessoryType;
+- (id)rightIcon;
+- (id)rightIconMaskColor;
 - (void)setLeadingAccessoryType:(int)arg1;
 - (void)setLeadingIcon:(id)arg1;
 - (void)setLeadingIconMaskColor:(id)arg1;

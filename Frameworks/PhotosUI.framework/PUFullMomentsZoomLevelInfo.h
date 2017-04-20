@@ -25,6 +25,7 @@
 - (id)displayTitle;
 - (void)getPhotosDataSource:(id*)arg1 displayTitleInfo:(id*)arg2 forDetailsForVisualSection:(int)arg3;
 - (void)headerView:(id)arg1 actionButtonPressed:(id)arg2;
+- (struct CGSize { float x1; float x2; })imageRequestItemSize;
 - (id)newCollectionViewLayout;
 - (void)prepareForTransitionFromZoomLevelInfo:(id)arg1 animated:(BOOL)arg2 interactive:(BOOL)arg3;
 - (void)prepareForTransitionToZoomLevelInfo:(id)arg1 animated:(BOOL)arg2 interactive:(BOOL)arg3;
@@ -38,6 +39,5 @@
 - (BOOL)wantsAutomaticContentOffsetAdjustment;
 - (BOOL)wantsCloudStatusVisible;
 - (BOOL)wantsMagnifierNavigation;
-- (double)zoomInDuration;
 
 @end

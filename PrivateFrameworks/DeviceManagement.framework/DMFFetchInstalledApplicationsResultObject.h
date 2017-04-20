@@ -13,6 +13,7 @@
 - (void).cxx_destruct;
 - (id)applicationsByIdentifier;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithApplicationsByIdentifier:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setApplicationsByIdentifier:(id)arg1;
 

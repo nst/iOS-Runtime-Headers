@@ -12,6 +12,7 @@
     NSData * _mediaMetaData;
     NSString * _mediaMetaDataType;
     int  _originalOrientation;
+    NSString * _originatingFingerprint;
     NSArray * _resources;
 }
 
@@ -26,6 +27,7 @@
 @property (nonatomic, retain) NSData *mediaMetaData;
 @property (nonatomic, copy) NSString *mediaMetaDataType;
 @property (nonatomic) int originalOrientation;
+@property (nonatomic, copy) NSString *originatingFingerprint;
 @property (nonatomic, copy) NSArray *resources;
 
 - (void).cxx_destruct;
@@ -46,6 +48,7 @@
 - (id)mediaMetaDataType;
 - (id)name;
 - (int)originalOrientation;
+- (id)originatingFingerprint;
 - (void)prepareForStorage;
 - (id)propertiesDescription;
 - (id)propertiesForChangeType:(unsigned int)arg1;
@@ -60,6 +63,7 @@
 - (void)setMediaMetaDataType:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setOriginalOrientation:(int)arg1;
+- (void)setOriginatingFingerprint:(id)arg1;
 - (void)setResources:(id)arg1;
 - (BOOL)supportsDeletion;
 - (BOOL)supportsResources;

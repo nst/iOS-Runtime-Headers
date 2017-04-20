@@ -9,6 +9,7 @@
     GEOResourceManifestConfiguration * _configuration;
     <GEOResourceManifestServerProxyDelegate> * _delegate;
     GEOResourceFiltersManager * _filtersManager;
+    int  _httpResponseStatusCode;
     double  _lastManifestRequestStartTime;
     double  _lastManifestRetryTimestamp;
     NSError * _lastResourceManifestLoadError;
@@ -24,6 +25,7 @@
     NSURLSession * _session;
     BOOL  _started;
     NSURLSessionTask * _task;
+    NSURLSessionTaskMetrics * _taskMetrics;
     unsigned int  _tileGroupRetryCount;
     NSTimer * _tileGroupUpdateTimer;
     BOOL  _wantsManifestUpdateOnReachabilityChange;
@@ -40,6 +42,7 @@
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
+- (void)URLSession:(id)arg1 task:(id)arg2 didFinishCollectingMetrics:(id)arg3;
 - (void)_activeTileGroupOverridesChanged:(id)arg1;
 - (void)_cancelSession;
 - (void)_changeActiveTileGroup:(id)arg1 activeScales:(id)arg2 activeScenarios:(id)arg3 loadedResources:(id)arg4 unloadedConditionalResources:(id)arg5 flushTileCache:(BOOL)arg6 completionHandler:(id /* block */)arg7;

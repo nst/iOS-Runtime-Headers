@@ -7,6 +7,18 @@
         int *list; 
         unsigned int count; 
         unsigned int size; 
+    }  _PayloadAccountTypes;
+    NSMutableArray * _PayloadBillDetailsValues;
+    NSMutableArray * _PayloadBillPayeeValues;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    }  _PayloadBillTypes;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
     }  _PayloadCallAudioRoutes;
     struct { 
         int *list; 
@@ -43,6 +55,11 @@
         unsigned int count; 
         unsigned int size; 
     }  _PayloadCarSeats;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    }  _PayloadCarSignalIdentifiers;
     NSMutableArray * _PayloadContactLists;
     NSMutableArray * _PayloadContactValues;
     NSMutableArray * _PayloadCurrencyAmounts;
@@ -50,12 +67,15 @@
     NSMutableArray * _PayloadDataStrings;
     NSMutableArray * _PayloadDateTimeRangeLists;
     NSMutableArray * _PayloadDateTimeRangeValues;
+    NSMutableArray * _PayloadDateTimeValues;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
     }  _PayloadDeviceTypes;
     NSMutableArray * _PayloadDialingContacts;
+    NSMutableArray * _PayloadDistanceLists;
+    NSMutableArray * _PayloadDistanceValues;
     NSMutableArray * _PayloadDoubleLists;
     NSMutableArray * _PayloadDoubleValues;
     struct { 
@@ -90,6 +110,7 @@
         unsigned int count; 
         unsigned int size; 
     }  _PayloadFileTypes;
+    NSMutableArray * _PayloadFinancialAccountValues;
     struct { 
         int *list; 
         unsigned int count; 
@@ -124,8 +145,14 @@
         unsigned int count; 
         unsigned int size; 
     }  _PayloadMessageAttributes;
+    NSMutableArray * _PayloadPaymentAmountValues;
     NSMutableArray * _PayloadPaymentMethodLists;
     NSMutableArray * _PayloadPaymentMethodValues;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    }  _PayloadPaymentStatus;
     struct { 
         int *list; 
         unsigned int count; 
@@ -194,6 +221,12 @@
     PBUnknownFields * _unknownFields;
 }
 
+@property (nonatomic, readonly) int*PayloadAccountTypes;
+@property (nonatomic, readonly) unsigned int PayloadAccountTypesCount;
+@property (nonatomic, retain) NSMutableArray *PayloadBillDetailsValues;
+@property (nonatomic, retain) NSMutableArray *PayloadBillPayeeValues;
+@property (nonatomic, readonly) int*PayloadBillTypes;
+@property (nonatomic, readonly) unsigned int PayloadBillTypesCount;
 @property (nonatomic, readonly) int*PayloadCallAudioRoutes;
 @property (nonatomic, readonly) unsigned int PayloadCallAudioRoutesCount;
 @property (nonatomic, readonly) int*PayloadCallCapabilitys;
@@ -210,6 +243,8 @@
 @property (nonatomic, readonly) unsigned int PayloadCarDefrostersCount;
 @property (nonatomic, readonly) int*PayloadCarSeats;
 @property (nonatomic, readonly) unsigned int PayloadCarSeatsCount;
+@property (nonatomic, readonly) int*PayloadCarSignalIdentifiers;
+@property (nonatomic, readonly) unsigned int PayloadCarSignalIdentifiersCount;
 @property (nonatomic, retain) NSMutableArray *PayloadContactLists;
 @property (nonatomic, retain) NSMutableArray *PayloadContactValues;
 @property (nonatomic, retain) NSMutableArray *PayloadCurrencyAmounts;
@@ -217,9 +252,12 @@
 @property (nonatomic, retain) NSMutableArray *PayloadDataStrings;
 @property (nonatomic, retain) NSMutableArray *PayloadDateTimeRangeLists;
 @property (nonatomic, retain) NSMutableArray *PayloadDateTimeRangeValues;
+@property (nonatomic, retain) NSMutableArray *PayloadDateTimeValues;
 @property (nonatomic, readonly) int*PayloadDeviceTypes;
 @property (nonatomic, readonly) unsigned int PayloadDeviceTypesCount;
 @property (nonatomic, retain) NSMutableArray *PayloadDialingContacts;
+@property (nonatomic, retain) NSMutableArray *PayloadDistanceLists;
+@property (nonatomic, retain) NSMutableArray *PayloadDistanceValues;
 @property (nonatomic, retain) NSMutableArray *PayloadDoubleLists;
 @property (nonatomic, retain) NSMutableArray *PayloadDoubleValues;
 @property (nonatomic, readonly) int*PayloadFileEntityTypes;
@@ -236,6 +274,7 @@
 @property (nonatomic, readonly) unsigned int PayloadFileShareModesCount;
 @property (nonatomic, readonly) int*PayloadFileTypes;
 @property (nonatomic, readonly) unsigned int PayloadFileTypesCount;
+@property (nonatomic, retain) NSMutableArray *PayloadFinancialAccountValues;
 @property (nonatomic, readonly) int*PayloadHomeAttributeTypes;
 @property (nonatomic, readonly) unsigned int PayloadHomeAttributeTypesCount;
 @property (nonatomic, readonly) int*PayloadHomeAttributeValueTypes;
@@ -255,8 +294,11 @@
 @property (nonatomic, retain) NSMutableArray *PayloadLongValues;
 @property (nonatomic, readonly) int*PayloadMessageAttributes;
 @property (nonatomic, readonly) unsigned int PayloadMessageAttributesCount;
+@property (nonatomic, retain) NSMutableArray *PayloadPaymentAmountValues;
 @property (nonatomic, retain) NSMutableArray *PayloadPaymentMethodLists;
 @property (nonatomic, retain) NSMutableArray *PayloadPaymentMethodValues;
+@property (nonatomic, readonly) int*PayloadPaymentStatus;
+@property (nonatomic, readonly) unsigned int PayloadPaymentStatusCount;
 @property (nonatomic, readonly) int*PayloadPhotoAttributes;
 @property (nonatomic, readonly) unsigned int PayloadPhotoAttributesCount;
 @property (nonatomic, readonly) int*PayloadPreferredCallProviders;
@@ -289,6 +331,10 @@
 @property (nonatomic) int type;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
++ (Class)PayloadBillDetailsValueType;
++ (Class)PayloadBillPayeeValueType;
 + (Class)PayloadContactListType;
 + (Class)PayloadContactValueType;
 + (Class)PayloadCurrencyAmountType;
@@ -296,11 +342,15 @@
 + (Class)PayloadDataStringType;
 + (Class)PayloadDateTimeRangeListType;
 + (Class)PayloadDateTimeRangeValueType;
++ (Class)PayloadDateTimeValueType;
 + (Class)PayloadDialingContactType;
++ (Class)PayloadDistanceListType;
++ (Class)PayloadDistanceValueType;
 + (Class)PayloadDoubleListType;
 + (Class)PayloadDoubleValueType;
 + (Class)PayloadFilePropertyType;
 + (Class)PayloadFilePropertyValueType;
++ (Class)PayloadFinancialAccountValueType;
 + (Class)PayloadHomeAttributeType;
 + (Class)PayloadHomeAttributeValueType;
 + (Class)PayloadHomeEntityType;
@@ -310,6 +360,7 @@
 + (Class)PayloadLocationType;
 + (Class)PayloadLongListType;
 + (Class)PayloadLongValueType;
++ (Class)PayloadPaymentAmountValueType;
 + (Class)PayloadPaymentMethodListType;
 + (Class)PayloadPaymentMethodValueType;
 + (Class)PayloadPrimitiveStringType;
@@ -320,30 +371,56 @@
 + (Class)PayloadTemperatureValueType;
 
 - (void).cxx_destruct;
+- (int)PayloadAccountTypeAtIndex:(unsigned int)arg1;
+- (int*)PayloadAccountTypes;
+- (id)PayloadAccountTypesAsString:(int)arg1;
+- (unsigned int)PayloadAccountTypesCount;
+- (id)PayloadBillDetailsValueAtIndex:(unsigned int)arg1;
+- (id)PayloadBillDetailsValues;
+- (unsigned int)PayloadBillDetailsValuesCount;
+- (id)PayloadBillPayeeValueAtIndex:(unsigned int)arg1;
+- (id)PayloadBillPayeeValues;
+- (unsigned int)PayloadBillPayeeValuesCount;
+- (int)PayloadBillTypeAtIndex:(unsigned int)arg1;
+- (int*)PayloadBillTypes;
+- (id)PayloadBillTypesAsString:(int)arg1;
+- (unsigned int)PayloadBillTypesCount;
 - (int)PayloadCallAudioRouteAtIndex:(unsigned int)arg1;
 - (int*)PayloadCallAudioRoutes;
+- (id)PayloadCallAudioRoutesAsString:(int)arg1;
 - (unsigned int)PayloadCallAudioRoutesCount;
 - (int)PayloadCallCapabilityAtIndex:(unsigned int)arg1;
 - (int*)PayloadCallCapabilitys;
+- (id)PayloadCallCapabilitysAsString:(int)arg1;
 - (unsigned int)PayloadCallCapabilitysCount;
 - (int)PayloadCallDestinationTypeAtIndex:(unsigned int)arg1;
 - (int*)PayloadCallDestinationTypes;
+- (id)PayloadCallDestinationTypesAsString:(int)arg1;
 - (unsigned int)PayloadCallDestinationTypesCount;
 - (int)PayloadCallRecordTypeAtIndex:(unsigned int)arg1;
 - (int*)PayloadCallRecordTypes;
+- (id)PayloadCallRecordTypesAsString:(int)arg1;
 - (unsigned int)PayloadCallRecordTypesCount;
 - (int)PayloadCarAirCirculationModeAtIndex:(unsigned int)arg1;
 - (int*)PayloadCarAirCirculationModes;
+- (id)PayloadCarAirCirculationModesAsString:(int)arg1;
 - (unsigned int)PayloadCarAirCirculationModesCount;
 - (int)PayloadCarAudioSourceAtIndex:(unsigned int)arg1;
 - (int*)PayloadCarAudioSources;
+- (id)PayloadCarAudioSourcesAsString:(int)arg1;
 - (unsigned int)PayloadCarAudioSourcesCount;
 - (int)PayloadCarDefrosterAtIndex:(unsigned int)arg1;
 - (int*)PayloadCarDefrosters;
+- (id)PayloadCarDefrostersAsString:(int)arg1;
 - (unsigned int)PayloadCarDefrostersCount;
 - (int)PayloadCarSeatAtIndex:(unsigned int)arg1;
 - (int*)PayloadCarSeats;
+- (id)PayloadCarSeatsAsString:(int)arg1;
 - (unsigned int)PayloadCarSeatsCount;
+- (int)PayloadCarSignalIdentifierAtIndex:(unsigned int)arg1;
+- (int*)PayloadCarSignalIdentifiers;
+- (id)PayloadCarSignalIdentifiersAsString:(int)arg1;
+- (unsigned int)PayloadCarSignalIdentifiersCount;
 - (id)PayloadContactListAtIndex:(unsigned int)arg1;
 - (id)PayloadContactLists;
 - (unsigned int)PayloadContactListsCount;
@@ -365,12 +442,22 @@
 - (id)PayloadDateTimeRangeValueAtIndex:(unsigned int)arg1;
 - (id)PayloadDateTimeRangeValues;
 - (unsigned int)PayloadDateTimeRangeValuesCount;
+- (id)PayloadDateTimeValueAtIndex:(unsigned int)arg1;
+- (id)PayloadDateTimeValues;
+- (unsigned int)PayloadDateTimeValuesCount;
 - (int)PayloadDeviceTypeAtIndex:(unsigned int)arg1;
 - (int*)PayloadDeviceTypes;
+- (id)PayloadDeviceTypesAsString:(int)arg1;
 - (unsigned int)PayloadDeviceTypesCount;
 - (id)PayloadDialingContactAtIndex:(unsigned int)arg1;
 - (id)PayloadDialingContacts;
 - (unsigned int)PayloadDialingContactsCount;
+- (id)PayloadDistanceListAtIndex:(unsigned int)arg1;
+- (id)PayloadDistanceLists;
+- (unsigned int)PayloadDistanceListsCount;
+- (id)PayloadDistanceValueAtIndex:(unsigned int)arg1;
+- (id)PayloadDistanceValues;
+- (unsigned int)PayloadDistanceValuesCount;
 - (id)PayloadDoubleListAtIndex:(unsigned int)arg1;
 - (id)PayloadDoubleLists;
 - (unsigned int)PayloadDoubleListsCount;
@@ -379,13 +466,16 @@
 - (unsigned int)PayloadDoubleValuesCount;
 - (int)PayloadFileEntityTypeAtIndex:(unsigned int)arg1;
 - (int*)PayloadFileEntityTypes;
+- (id)PayloadFileEntityTypesAsString:(int)arg1;
 - (unsigned int)PayloadFileEntityTypesCount;
 - (id)PayloadFilePropertyAtIndex:(unsigned int)arg1;
 - (int)PayloadFilePropertyNameAtIndex:(unsigned int)arg1;
 - (int*)PayloadFilePropertyNames;
+- (id)PayloadFilePropertyNamesAsString:(int)arg1;
 - (unsigned int)PayloadFilePropertyNamesCount;
 - (int)PayloadFilePropertyQualifierAtIndex:(unsigned int)arg1;
 - (int*)PayloadFilePropertyQualifiers;
+- (id)PayloadFilePropertyQualifiersAsString:(int)arg1;
 - (unsigned int)PayloadFilePropertyQualifiersCount;
 - (id)PayloadFilePropertyValueAtIndex:(unsigned int)arg1;
 - (id)PayloadFilePropertyValues;
@@ -394,20 +484,28 @@
 - (unsigned int)PayloadFilePropertysCount;
 - (int)PayloadFileSearchScopeAtIndex:(unsigned int)arg1;
 - (int*)PayloadFileSearchScopes;
+- (id)PayloadFileSearchScopesAsString:(int)arg1;
 - (unsigned int)PayloadFileSearchScopesCount;
 - (int)PayloadFileShareModeAtIndex:(unsigned int)arg1;
 - (int*)PayloadFileShareModes;
+- (id)PayloadFileShareModesAsString:(int)arg1;
 - (unsigned int)PayloadFileShareModesCount;
 - (int)PayloadFileTypeAtIndex:(unsigned int)arg1;
 - (int*)PayloadFileTypes;
+- (id)PayloadFileTypesAsString:(int)arg1;
 - (unsigned int)PayloadFileTypesCount;
+- (id)PayloadFinancialAccountValueAtIndex:(unsigned int)arg1;
+- (id)PayloadFinancialAccountValues;
+- (unsigned int)PayloadFinancialAccountValuesCount;
 - (id)PayloadHomeAttributeAtIndex:(unsigned int)arg1;
 - (int)PayloadHomeAttributeTypeAtIndex:(unsigned int)arg1;
 - (int*)PayloadHomeAttributeTypes;
+- (id)PayloadHomeAttributeTypesAsString:(int)arg1;
 - (unsigned int)PayloadHomeAttributeTypesCount;
 - (id)PayloadHomeAttributeValueAtIndex:(unsigned int)arg1;
 - (int)PayloadHomeAttributeValueTypeAtIndex:(unsigned int)arg1;
 - (int*)PayloadHomeAttributeValueTypes;
+- (id)PayloadHomeAttributeValueTypesAsString:(int)arg1;
 - (unsigned int)PayloadHomeAttributeValueTypesCount;
 - (id)PayloadHomeAttributeValues;
 - (unsigned int)PayloadHomeAttributeValuesCount;
@@ -415,10 +513,12 @@
 - (unsigned int)PayloadHomeAttributesCount;
 - (int)PayloadHomeDeviceTypeAtIndex:(unsigned int)arg1;
 - (int*)PayloadHomeDeviceTypes;
+- (id)PayloadHomeDeviceTypesAsString:(int)arg1;
 - (unsigned int)PayloadHomeDeviceTypesCount;
 - (id)PayloadHomeEntityAtIndex:(unsigned int)arg1;
 - (int)PayloadHomeEntityTypeAtIndex:(unsigned int)arg1;
 - (int*)PayloadHomeEntityTypes;
+- (id)PayloadHomeEntityTypesAsString:(int)arg1;
 - (unsigned int)PayloadHomeEntityTypesCount;
 - (id)PayloadHomeEntitys;
 - (unsigned int)PayloadHomeEntitysCount;
@@ -442,18 +542,28 @@
 - (unsigned int)PayloadLongValuesCount;
 - (int)PayloadMessageAttributeAtIndex:(unsigned int)arg1;
 - (int*)PayloadMessageAttributes;
+- (id)PayloadMessageAttributesAsString:(int)arg1;
 - (unsigned int)PayloadMessageAttributesCount;
+- (id)PayloadPaymentAmountValueAtIndex:(unsigned int)arg1;
+- (id)PayloadPaymentAmountValues;
+- (unsigned int)PayloadPaymentAmountValuesCount;
 - (id)PayloadPaymentMethodListAtIndex:(unsigned int)arg1;
 - (id)PayloadPaymentMethodLists;
 - (unsigned int)PayloadPaymentMethodListsCount;
 - (id)PayloadPaymentMethodValueAtIndex:(unsigned int)arg1;
 - (id)PayloadPaymentMethodValues;
 - (unsigned int)PayloadPaymentMethodValuesCount;
+- (int*)PayloadPaymentStatus;
+- (id)PayloadPaymentStatusAsString:(int)arg1;
+- (int)PayloadPaymentStatusAtIndex:(unsigned int)arg1;
+- (unsigned int)PayloadPaymentStatusCount;
 - (int)PayloadPhotoAttributeAtIndex:(unsigned int)arg1;
 - (int*)PayloadPhotoAttributes;
+- (id)PayloadPhotoAttributesAsString:(int)arg1;
 - (unsigned int)PayloadPhotoAttributesCount;
 - (int)PayloadPreferredCallProviderAtIndex:(unsigned int)arg1;
 - (int*)PayloadPreferredCallProviders;
+- (id)PayloadPreferredCallProvidersAsString:(int)arg1;
 - (unsigned int)PayloadPreferredCallProvidersCount;
 - (BOOL)PayloadPrimitiveBoolAtIndex:(unsigned int)arg1;
 - (BOOL*)PayloadPrimitiveBools;
@@ -472,12 +582,15 @@
 - (unsigned int)PayloadPrimitiveStringsCount;
 - (int)PayloadRadioTypeAtIndex:(unsigned int)arg1;
 - (int*)PayloadRadioTypes;
+- (id)PayloadRadioTypesAsString:(int)arg1;
 - (unsigned int)PayloadRadioTypesCount;
 - (int)PayloadRelativeReferenceAtIndex:(unsigned int)arg1;
 - (int*)PayloadRelativeReferences;
+- (id)PayloadRelativeReferencesAsString:(int)arg1;
 - (unsigned int)PayloadRelativeReferencesCount;
 - (int)PayloadRelativeSettingAtIndex:(unsigned int)arg1;
 - (int*)PayloadRelativeSettings;
+- (id)PayloadRelativeSettingsAsString:(int)arg1;
 - (unsigned int)PayloadRelativeSettingsCount;
 - (id)PayloadShareDestinationAtIndex:(unsigned int)arg1;
 - (id)PayloadShareDestinations;
@@ -496,10 +609,48 @@
 - (unsigned int)PayloadTemperatureValuesCount;
 - (int)PayloadWorkoutGoalUnitTypeAtIndex:(unsigned int)arg1;
 - (int*)PayloadWorkoutGoalUnitTypes;
+- (id)PayloadWorkoutGoalUnitTypesAsString:(int)arg1;
 - (unsigned int)PayloadWorkoutGoalUnitTypesCount;
 - (int)PayloadWorkoutLocationTypeAtIndex:(unsigned int)arg1;
 - (int*)PayloadWorkoutLocationTypes;
+- (id)PayloadWorkoutLocationTypesAsString:(int)arg1;
 - (unsigned int)PayloadWorkoutLocationTypesCount;
+- (int)StringAsPayloadAccountTypes:(id)arg1;
+- (int)StringAsPayloadBillTypes:(id)arg1;
+- (int)StringAsPayloadCallAudioRoutes:(id)arg1;
+- (int)StringAsPayloadCallCapabilitys:(id)arg1;
+- (int)StringAsPayloadCallDestinationTypes:(id)arg1;
+- (int)StringAsPayloadCallRecordTypes:(id)arg1;
+- (int)StringAsPayloadCarAirCirculationModes:(id)arg1;
+- (int)StringAsPayloadCarAudioSources:(id)arg1;
+- (int)StringAsPayloadCarDefrosters:(id)arg1;
+- (int)StringAsPayloadCarSeats:(id)arg1;
+- (int)StringAsPayloadCarSignalIdentifiers:(id)arg1;
+- (int)StringAsPayloadDeviceTypes:(id)arg1;
+- (int)StringAsPayloadFileEntityTypes:(id)arg1;
+- (int)StringAsPayloadFilePropertyNames:(id)arg1;
+- (int)StringAsPayloadFilePropertyQualifiers:(id)arg1;
+- (int)StringAsPayloadFileSearchScopes:(id)arg1;
+- (int)StringAsPayloadFileShareModes:(id)arg1;
+- (int)StringAsPayloadFileTypes:(id)arg1;
+- (int)StringAsPayloadHomeAttributeTypes:(id)arg1;
+- (int)StringAsPayloadHomeAttributeValueTypes:(id)arg1;
+- (int)StringAsPayloadHomeDeviceTypes:(id)arg1;
+- (int)StringAsPayloadHomeEntityTypes:(id)arg1;
+- (int)StringAsPayloadMessageAttributes:(id)arg1;
+- (int)StringAsPayloadPaymentStatus:(id)arg1;
+- (int)StringAsPayloadPhotoAttributes:(id)arg1;
+- (int)StringAsPayloadPreferredCallProviders:(id)arg1;
+- (int)StringAsPayloadRadioTypes:(id)arg1;
+- (int)StringAsPayloadRelativeReferences:(id)arg1;
+- (int)StringAsPayloadRelativeSettings:(id)arg1;
+- (int)StringAsPayloadWorkoutGoalUnitTypes:(id)arg1;
+- (int)StringAsPayloadWorkoutLocationTypes:(id)arg1;
+- (int)StringAsType:(id)arg1;
+- (void)addPayloadAccountType:(int)arg1;
+- (void)addPayloadBillDetailsValue:(id)arg1;
+- (void)addPayloadBillPayeeValue:(id)arg1;
+- (void)addPayloadBillType:(int)arg1;
 - (void)addPayloadCallAudioRoute:(int)arg1;
 - (void)addPayloadCallCapability:(int)arg1;
 - (void)addPayloadCallDestinationType:(int)arg1;
@@ -508,6 +659,7 @@
 - (void)addPayloadCarAudioSource:(int)arg1;
 - (void)addPayloadCarDefroster:(int)arg1;
 - (void)addPayloadCarSeat:(int)arg1;
+- (void)addPayloadCarSignalIdentifier:(int)arg1;
 - (void)addPayloadContactList:(id)arg1;
 - (void)addPayloadContactValue:(id)arg1;
 - (void)addPayloadCurrencyAmount:(id)arg1;
@@ -515,8 +667,11 @@
 - (void)addPayloadDataStringList:(id)arg1;
 - (void)addPayloadDateTimeRangeList:(id)arg1;
 - (void)addPayloadDateTimeRangeValue:(id)arg1;
+- (void)addPayloadDateTimeValue:(id)arg1;
 - (void)addPayloadDeviceType:(int)arg1;
 - (void)addPayloadDialingContact:(id)arg1;
+- (void)addPayloadDistanceList:(id)arg1;
+- (void)addPayloadDistanceValue:(id)arg1;
 - (void)addPayloadDoubleList:(id)arg1;
 - (void)addPayloadDoubleValue:(id)arg1;
 - (void)addPayloadFileEntityType:(int)arg1;
@@ -527,6 +682,7 @@
 - (void)addPayloadFileSearchScope:(int)arg1;
 - (void)addPayloadFileShareMode:(int)arg1;
 - (void)addPayloadFileType:(int)arg1;
+- (void)addPayloadFinancialAccountValue:(id)arg1;
 - (void)addPayloadHomeAttribute:(id)arg1;
 - (void)addPayloadHomeAttributeType:(int)arg1;
 - (void)addPayloadHomeAttributeValue:(id)arg1;
@@ -541,8 +697,10 @@
 - (void)addPayloadLongList:(id)arg1;
 - (void)addPayloadLongValue:(id)arg1;
 - (void)addPayloadMessageAttribute:(int)arg1;
+- (void)addPayloadPaymentAmountValue:(id)arg1;
 - (void)addPayloadPaymentMethodList:(id)arg1;
 - (void)addPayloadPaymentMethodValue:(id)arg1;
+- (void)addPayloadPaymentStatus:(int)arg1;
 - (void)addPayloadPhotoAttribute:(int)arg1;
 - (void)addPayloadPreferredCallProvider:(int)arg1;
 - (void)addPayloadPrimitiveBool:(BOOL)arg1;
@@ -560,6 +718,10 @@
 - (void)addPayloadTemperatureValue:(id)arg1;
 - (void)addPayloadWorkoutGoalUnitType:(int)arg1;
 - (void)addPayloadWorkoutLocationType:(int)arg1;
+- (void)clearPayloadAccountTypes;
+- (void)clearPayloadBillDetailsValues;
+- (void)clearPayloadBillPayeeValues;
+- (void)clearPayloadBillTypes;
 - (void)clearPayloadCallAudioRoutes;
 - (void)clearPayloadCallCapabilitys;
 - (void)clearPayloadCallDestinationTypes;
@@ -568,6 +730,7 @@
 - (void)clearPayloadCarAudioSources;
 - (void)clearPayloadCarDefrosters;
 - (void)clearPayloadCarSeats;
+- (void)clearPayloadCarSignalIdentifiers;
 - (void)clearPayloadContactLists;
 - (void)clearPayloadContactValues;
 - (void)clearPayloadCurrencyAmounts;
@@ -575,8 +738,11 @@
 - (void)clearPayloadDataStrings;
 - (void)clearPayloadDateTimeRangeLists;
 - (void)clearPayloadDateTimeRangeValues;
+- (void)clearPayloadDateTimeValues;
 - (void)clearPayloadDeviceTypes;
 - (void)clearPayloadDialingContacts;
+- (void)clearPayloadDistanceLists;
+- (void)clearPayloadDistanceValues;
 - (void)clearPayloadDoubleLists;
 - (void)clearPayloadDoubleValues;
 - (void)clearPayloadFileEntityTypes;
@@ -587,6 +753,7 @@
 - (void)clearPayloadFileSearchScopes;
 - (void)clearPayloadFileShareModes;
 - (void)clearPayloadFileTypes;
+- (void)clearPayloadFinancialAccountValues;
 - (void)clearPayloadHomeAttributeTypes;
 - (void)clearPayloadHomeAttributeValueTypes;
 - (void)clearPayloadHomeAttributeValues;
@@ -601,8 +768,10 @@
 - (void)clearPayloadLongLists;
 - (void)clearPayloadLongValues;
 - (void)clearPayloadMessageAttributes;
+- (void)clearPayloadPaymentAmountValues;
 - (void)clearPayloadPaymentMethodLists;
 - (void)clearPayloadPaymentMethodValues;
+- (void)clearPayloadPaymentStatus;
 - (void)clearPayloadPhotoAttributes;
 - (void)clearPayloadPreferredCallProviders;
 - (void)clearPayloadPrimitiveBools;
@@ -630,6 +799,10 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasType:(BOOL)arg1;
+- (void)setPayloadAccountTypes:(int*)arg1 count:(unsigned int)arg2;
+- (void)setPayloadBillDetailsValues:(id)arg1;
+- (void)setPayloadBillPayeeValues:(id)arg1;
+- (void)setPayloadBillTypes:(int*)arg1 count:(unsigned int)arg2;
 - (void)setPayloadCallAudioRoutes:(int*)arg1 count:(unsigned int)arg2;
 - (void)setPayloadCallCapabilitys:(int*)arg1 count:(unsigned int)arg2;
 - (void)setPayloadCallDestinationTypes:(int*)arg1 count:(unsigned int)arg2;
@@ -638,6 +811,7 @@
 - (void)setPayloadCarAudioSources:(int*)arg1 count:(unsigned int)arg2;
 - (void)setPayloadCarDefrosters:(int*)arg1 count:(unsigned int)arg2;
 - (void)setPayloadCarSeats:(int*)arg1 count:(unsigned int)arg2;
+- (void)setPayloadCarSignalIdentifiers:(int*)arg1 count:(unsigned int)arg2;
 - (void)setPayloadContactLists:(id)arg1;
 - (void)setPayloadContactValues:(id)arg1;
 - (void)setPayloadCurrencyAmounts:(id)arg1;
@@ -645,8 +819,11 @@
 - (void)setPayloadDataStrings:(id)arg1;
 - (void)setPayloadDateTimeRangeLists:(id)arg1;
 - (void)setPayloadDateTimeRangeValues:(id)arg1;
+- (void)setPayloadDateTimeValues:(id)arg1;
 - (void)setPayloadDeviceTypes:(int*)arg1 count:(unsigned int)arg2;
 - (void)setPayloadDialingContacts:(id)arg1;
+- (void)setPayloadDistanceLists:(id)arg1;
+- (void)setPayloadDistanceValues:(id)arg1;
 - (void)setPayloadDoubleLists:(id)arg1;
 - (void)setPayloadDoubleValues:(id)arg1;
 - (void)setPayloadFileEntityTypes:(int*)arg1 count:(unsigned int)arg2;
@@ -657,6 +834,7 @@
 - (void)setPayloadFileSearchScopes:(int*)arg1 count:(unsigned int)arg2;
 - (void)setPayloadFileShareModes:(int*)arg1 count:(unsigned int)arg2;
 - (void)setPayloadFileTypes:(int*)arg1 count:(unsigned int)arg2;
+- (void)setPayloadFinancialAccountValues:(id)arg1;
 - (void)setPayloadHomeAttributeTypes:(int*)arg1 count:(unsigned int)arg2;
 - (void)setPayloadHomeAttributeValueTypes:(int*)arg1 count:(unsigned int)arg2;
 - (void)setPayloadHomeAttributeValues:(id)arg1;
@@ -671,8 +849,10 @@
 - (void)setPayloadLongLists:(id)arg1;
 - (void)setPayloadLongValues:(id)arg1;
 - (void)setPayloadMessageAttributes:(int*)arg1 count:(unsigned int)arg2;
+- (void)setPayloadPaymentAmountValues:(id)arg1;
 - (void)setPayloadPaymentMethodLists:(id)arg1;
 - (void)setPayloadPaymentMethodValues:(id)arg1;
+- (void)setPayloadPaymentStatus:(int*)arg1 count:(unsigned int)arg2;
 - (void)setPayloadPhotoAttributes:(int*)arg1 count:(unsigned int)arg2;
 - (void)setPayloadPreferredCallProviders:(int*)arg1 count:(unsigned int)arg2;
 - (void)setPayloadPrimitiveBools:(BOOL*)arg1 count:(unsigned int)arg2;
@@ -692,7 +872,14 @@
 - (void)setPayloadWorkoutLocationTypes:(int*)arg1 count:(unsigned int)arg2;
 - (void)setType:(int)arg1;
 - (int)type;
+- (id)typeAsString:(int)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)fromJSONProtoDictionary:(id)arg1;
+
+- (id)toJSONProtoDictionary;
 
 @end

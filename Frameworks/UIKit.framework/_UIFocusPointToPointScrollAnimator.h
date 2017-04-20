@@ -18,6 +18,7 @@
 - (float)_animationDurationForDistance:(float)arg1 convergenceRate:(float)arg2;
 - (void)cancelPeekAdjustmentForScrollView:(id)arg1 performRollback:(BOOL)arg2;
 - (void)cancelScrollingForScrollView:(id)arg1;
+- (struct CGPoint { float x1; float x2; })currentVelocityForScrollView:(id)arg1;
 - (float)defaultConvergenceRate;
 - (id)init;
 - (BOOL)isAnimatingScrollView:(id)arg1;

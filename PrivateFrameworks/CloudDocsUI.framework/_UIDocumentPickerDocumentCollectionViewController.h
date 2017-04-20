@@ -3,6 +3,7 @@
  */
 
 @interface _UIDocumentPickerDocumentCollectionViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateTableLayout, UIViewControllerPreviewingDelegate, _UIDocumentPickerContainedViewController> {
+    NSArray * _actions;
     int  _displayMode;
     BOOL  _editing;
     _UIDocumentPickerFlowLayout * _gridLayout;
@@ -19,6 +20,7 @@
     <UIViewControllerPreviewing> * _viewControllerPreviewContext;
 }
 
+@property (nonatomic, retain) NSArray *actions;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) int displayMode;
@@ -47,6 +49,7 @@
 - (void)_updateIconSpacing;
 - (void)_updateRowHeight;
 - (id)actionViewForLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (id)actions;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
@@ -83,6 +86,7 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (id)serviceViewController;
+- (void)setActions:(id)arg1;
 - (void)setContentSizeAdjustment:(float)arg1;
 - (void)setDisplayMode:(int)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;

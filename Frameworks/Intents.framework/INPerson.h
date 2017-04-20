@@ -2,8 +2,9 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INPerson : NSObject <INCacheableContainer, INSpeakable, NSCopying, NSSecureCoding> {
+@interface INPerson : NSObject <INCacheableContainer, INPersonExport, INSpeakable, NSCopying, NSSecureCoding> {
     NSArray * _aliases;
+    NSArray * _alternatives;
     NSString * _contactIdentifier;
     NSString * _customIdentifier;
     NSString * _displayName;
@@ -17,6 +18,8 @@
 
 @property (nonatomic, readonly, copy) NSArray *aliases;
 @property (nonatomic, copy) NSArray *aliases;
+@property (nonatomic, readonly, copy) NSArray *alternativeSiriMatches;
+@property (nonatomic, copy) NSArray *alternatives;
 @property (nonatomic, copy) NSString *contactIdentifier;
 @property (nonatomic, copy) NSString *customIdentifier;
 @property (readonly, copy) NSString *debugDescription;
@@ -24,6 +27,7 @@
 @property (nonatomic, copy) NSString *displayName;
 @property (nonatomic, readonly, copy) NSString *firstName;
 @property (nonatomic, readonly, copy) NSString *fullName;
+@property (nonatomic, copy) NSString *handle;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, copy) INImage *image;
@@ -32,6 +36,7 @@
 @property (nonatomic, copy) INPersonHandle *personHandle;
 @property (nonatomic, readonly) NSString *pronunciationHint;
 @property (nonatomic, copy) NSString *relationship;
+@property (nonatomic, readonly, copy) NSArray *siriMatches;
 @property (nonatomic, readonly) NSString *spokenPhrase;
 @property (nonatomic, readonly) int suggestionType;
 @property (nonatomic) int suggestionType;
@@ -46,10 +51,11 @@
 - (id)_aliases;
 - (id)_dictionaryRepresentation;
 - (id)_displayName;
-- (id)_initWithUserInput:(id)arg1 handle:(id)arg2 nameComponents:(id)arg3 displayName:(id)arg4 image:(id)arg5 contactIdentifier:(id)arg6;
-- (id)_initWithUserInput:(id)arg1 personHandle:(id)arg2 nameComponents:(id)arg3 displayName:(id)arg4 image:(id)arg5 contactIdentifier:(id)arg6 customIdentifier:(id)arg7 relationship:(id)arg8 aliases:(id)arg9 suggestionType:(int)arg10;
+- (id)_initWithUserInput:(id)arg1 personHandle:(id)arg2 nameComponents:(id)arg3 displayName:(id)arg4 image:(id)arg5 contactIdentifier:(id)arg6 customIdentifier:(id)arg7 relationship:(id)arg8 aliases:(id)arg9 suggestionType:(int)arg10 alternatives:(id)arg11;
 - (id)_userInput;
 - (id)aliases;
+- (id)alternativeSiriMatches;
+- (id)alternatives;
 - (id)cacheableObjects;
 - (id)contactIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -76,6 +82,7 @@
 - (id)pronunciationHint;
 - (id)relationship;
 - (void)setAliases:(id)arg1;
+- (void)setAlternatives:(id)arg1;
 - (void)setContactIdentifier:(id)arg1;
 - (void)setCustomIdentifier:(id)arg1;
 - (void)setDisplayName:(id)arg1;
@@ -84,6 +91,7 @@
 - (void)setPersonHandle:(id)arg1;
 - (void)setRelationship:(id)arg1;
 - (void)setSuggestionType:(int)arg1;
+- (id)siriMatches;
 - (id)spokenPhrase;
 - (int)suggestionType;
 - (id)userIdentifier;

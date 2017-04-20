@@ -14,7 +14,7 @@
 + (id)typeStrings;
 
 - (void).cxx_destruct;
-- (id)_defaultMediaSettings;
+- (id)_defaultValueRestrictions;
 - (id)_enforcedFeatureStrings;
 - (void)_insertRestrictedBoolForKey:(id)arg1 value:(id)arg2 preferenc:(BOOL)arg3;
 - (id)_intersectionStrings;

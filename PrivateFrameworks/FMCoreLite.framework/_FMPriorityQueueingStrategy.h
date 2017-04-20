@@ -14,6 +14,7 @@
 - (void).cxx_destruct;
 - (unsigned int)_insertionIndexForObject:(id)arg1 buffer:(id)arg2;
 - (void)enqueueObject:(id)arg1 buffer:(id)arg2;
+- (id)init;
 - (id)initWithComparator:(id /* block */)arg1;
 
 @end

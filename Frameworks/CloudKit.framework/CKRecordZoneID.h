@@ -26,6 +26,7 @@
 - (id)CKXPCSuitableString;
 - (id)_initWithZoneName:(id)arg1 ownerName:(id)arg2;
 - (id)ckShortDescription;
+- (int)compareToRecordZoneID:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

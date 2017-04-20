@@ -15,6 +15,7 @@
 @property (nonatomic, retain) NSString *mediaMetadataType;
 @property (nonatomic, retain) NSString *originalFilename;
 @property (nonatomic) short originalOrientation;
+@property (nonatomic, copy) NSString *originatingAssetIdentifier;
 @property (nonatomic, retain) NSSet *resources;
 @property (nonatomic, retain) NSString *uniformTypeIdentifier;
 

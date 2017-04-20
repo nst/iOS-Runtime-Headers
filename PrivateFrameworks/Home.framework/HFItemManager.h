@@ -73,6 +73,7 @@
 - (id)_itemProviders;
 - (id)_itemsOfClass:(Class)arg1 inItems:(id)arg2 allowTransformedItems:(BOOL)arg3;
 - (id)_itemsToHideInSet:(id)arg1;
+- (id)_itemsToUpdateForAllowAccessWhileLockedSettingChange;
 - (id)_itemsToUpdateForIncomingInvitation:(id)arg1;
 - (id)_itemsToUpdateForModifiedAccessories:(id)arg1;
 - (id)_itemsToUpdateForModifiedActionSets:(id)arg1;
@@ -215,6 +216,7 @@
 - (void)homeKitDispatcher:(id)arg1 manager:(id)arg2 didChangeHome:(id)arg3;
 - (void)homeManager:(id)arg1 didAddHome:(id)arg2;
 - (void)homeManager:(id)arg1 didRemoveHome:(id)arg2;
+- (void)homeManager:(id)arg1 didUpdateAccessAllowedWhenLocked:(BOOL)arg2;
 - (void)homeManager:(id)arg1 didUpdateStateForIncomingInvitations:(id)arg2;
 - (void)homeManager:(id)arg1 residentProvisioningStatusChanged:(unsigned int)arg2;
 - (void)homeManagerDidEndBatchNotifications:(id)arg1;
@@ -229,6 +231,7 @@
 - (id)initWithDelegate:(id)arg1 sourceItem:(id)arg2;
 - (BOOL)isRunningFastInitialUpdate;
 - (id)lastUpdatedHome;
+- (void)notificationSettingsInvalidatedForManager:(id)arg1;
 - (unsigned int)numberOfSections;
 - (unsigned int)overallLoadingState;
 - (void)recalculateVisibilityAndSortAllItems;

@@ -4,6 +4,6 @@
 
 @interface LPPlaceholderPlayButton : LPPlayButton
 
-- (id)init;
+- (id)initWithStyle:(id)arg1;
 
 @end

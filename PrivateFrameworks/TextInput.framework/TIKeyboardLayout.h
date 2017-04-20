@@ -26,6 +26,7 @@
 - (id)initWithCapacity:(unsigned int)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (int)keyContainingPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setUsesTwoHands:(BOOL)arg1;
 - (BOOL)usesTwoHands;
 

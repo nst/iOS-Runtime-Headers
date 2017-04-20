@@ -46,6 +46,7 @@
 - (id)_clientWithErrorHandler:(id /* block */)arg1;
 - (void)_deactivateWithCompletion:(id /* block */)arg1;
 - (void)_generateGapForType:(id)arg1 resumeData:(id)arg2;
+- (void)_handleWorkoutEventReceivedPauseResume:(id)arg1;
 - (void)_queue_activateWorkoutWithCompletion:(id /* block */)arg1;
 - (void)_queue_addEventType:(int)arg1 forDate:(id)arg2;
 - (void)_queue_endWorkoutWithCompletion:(id /* block */)arg1;

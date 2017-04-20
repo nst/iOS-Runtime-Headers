@@ -8,6 +8,7 @@
     NSLayoutConstraint * _minimumHeightConstraint;
     _UIInterfaceActionSeparatableSequenceView * _separatedContentSequenceView;
     int  _sizingSeparatedContentSequenceViewToFitDisabledCount;
+    unsigned int  _visualCornerPosition;
     UIInterfaceActionVisualStyle * _visualStyle;
 }
 
@@ -15,6 +16,7 @@
 @property (nonatomic, retain) NSArray *arrangedActionRepresentationViews;
 @property (nonatomic, readonly) NSLayoutConstraint *minimumHeightConstraint;
 @property (nonatomic, readonly) _UIInterfaceActionSeparatableSequenceView *separatedContentSequenceView;
+@property (nonatomic) unsigned int visualCornerPosition;
 @property (nonatomic, retain) UIInterfaceActionVisualStyle *visualStyle;
 
 - (void).cxx_destruct;
@@ -27,6 +29,7 @@
 - (void)_loadDefaultSizingConstraints;
 - (float)_minimumNumberOfRowsRequiredVisible;
 - (void)_notifyDidScroll;
+- (struct CGSize { float x1; float x2; })_sizeByApplyingLayoutMarginsAsOutsetToSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_temporarilySkipSizingSeparatedContentSequenceViewToFit;
 - (void)_updateMinimumHeightConstraint;
 - (void)_updateSeparatedContentSequenceViewToFitSizeIfPossible;
@@ -42,9 +45,11 @@
 - (id)separatedContentSequenceView;
 - (void)setActionLayoutAxis:(int)arg1;
 - (void)setArrangedActionRepresentationViews:(id)arg1;
+- (void)setVisualCornerPosition:(unsigned int)arg1;
 - (void)setVisualStyle:(id)arg1;
 - (struct CGSize { float x1; float x2; })systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)updateConstraints;
+- (unsigned int)visualCornerPosition;
 - (id)visualStyle;
 - (void)willUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 

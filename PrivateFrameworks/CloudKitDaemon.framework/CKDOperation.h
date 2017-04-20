@@ -94,6 +94,7 @@
 @property (nonatomic, retain) CKTimeLogger *timeLogger;
 @property (nonatomic) double timeoutIntervalForRequest;
 @property (nonatomic) double timeoutIntervalForResource;
+@property (nonatomic, readonly) CKDOperation *topmostParentOperation;
 @property (nonatomic) BOOL useEncryption;
 @property (nonatomic, retain) UMUserSyncTask *userSyncTask;
 @property (nonatomic, readonly) BOOL usesBackgroundSession;
@@ -229,6 +230,7 @@
 - (id)timeLogger;
 - (double)timeoutIntervalForRequest;
 - (double)timeoutIntervalForResource;
+- (id)topmostParentOperation;
 - (BOOL)useEncryption;
 - (id)userSyncTask;
 - (BOOL)usesBackgroundSession;

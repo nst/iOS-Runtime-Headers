@@ -39,8 +39,6 @@
 @property (nonatomic, readonly) unsigned int state;
 @property (readonly) Class superclass;
 
-+ (id)contactlessInterfaceSessionWithInternalSession:(id)arg1;
-
 - (void).cxx_destruct;
 - (id)_appletForPaymentApplication:(id)arg1;
 - (id)_appletWithIdentifier:(id)arg1;
@@ -61,7 +59,7 @@
 - (id)felicaAppletState;
 - (BOOL)fieldPresent;
 - (id)fieldProperties;
-- (id)initWithInternalSession:(id)arg1;
+- (id)initWithInternalSession:(id)arg1 targetQueue:(id)arg2;
 - (void)invalidateSessionWithCompletion:(id /* block */)arg1;
 - (void)loyaltyAndPaymentSession:(id)arg1 didDetectField:(BOOL)arg2;
 - (void)loyaltyAndPaymentSession:(id)arg1 didDetectTechnology:(id)arg2;

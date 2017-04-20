@@ -31,7 +31,6 @@
 - (void)expandAndPlayAudioMessage;
 - (BOOL)hasCommittedToPresentingCustomContentProvidingViewController;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
-- (void)presentLongLook:(id /* block */)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewDidScroll:(id)arg1;

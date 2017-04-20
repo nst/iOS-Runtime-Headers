@@ -64,6 +64,7 @@
 @property BOOL _preventsDirectWiFiAccess;
 @property BOOL _preventsIdleSleep;
 @property BOOL _preventsIdleSleepOnceConnected;
+@property BOOL _preventsSystemHTTPProxyAuthentication;
 @property (getter=_isProxySession) BOOL _proxySession;
 @property BOOL _requiresClientToOpenFiles;
 @property BOOL _requiresPowerPluggedIn;
@@ -127,6 +128,7 @@
 // Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
 
 + (id)_geo_ephemeralSessionConfiguration;
++ (id)auditTokenFromNSURLConnectionProperties:(id)arg1;
 
 - (void)applyNSURLConnectionProperties:(id)arg1;
 

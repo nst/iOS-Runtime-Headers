@@ -48,6 +48,7 @@
 - (void)setHapServices:(id)arg1;
 - (void)setHapValueUnits:(id)arg1;
 - (void)setVersion:(id)arg1;
+- (BOOL)shouldNotCacheCharacteristicOfType:(id)arg1;
 - (id)version;
 
 @end

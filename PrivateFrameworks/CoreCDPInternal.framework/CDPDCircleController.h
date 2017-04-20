@@ -25,7 +25,6 @@
 - (void)_requestToJoinWithRequestBlock:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (void)_resetCicleToResolvePendingAfterRecoveryWithCompletion:(id /* block */)arg1;
 - (void)applyToJoinCircleWithJoinHandler:(id /* block */)arg1;
-- (int)authenticatedCircleStatus:(id*)arg1;
 - (void)cancelApplicationToJoinCircle;
 - (id)circleProxy;
 - (int)circleStatus;

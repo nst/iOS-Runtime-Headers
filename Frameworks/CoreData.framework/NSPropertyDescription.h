@@ -30,19 +30,29 @@
     NSString * _versionHashModifier;
 }
 
+@property (getter=vs_JSONKey, setter=vs_setJSONKey:, nonatomic, copy) NSString *JSONKey;
+@property (getter=vs_JSONValueTransformerName, setter=vs_setJSONValueTransformerName:, nonatomic, copy) NSString *JSONValueTransformerName;
 @property (nonatomic, readonly) NSEntityDescription *entity;
+@property (getter=vs_expectedJSONValueClass, setter=vs_setExpectedJSONValueClass:, nonatomic, retain) Class expectedJSONValueClass;
 @property (getter=isIndexed) BOOL indexed;
 @property (getter=isIndexedBySpotlight) BOOL indexedBySpotlight;
 @property (nonatomic, copy) NSString *name;
 @property (getter=isOptional) BOOL optional;
+@property (getter=vs_propertyListKey, setter=vs_setPropertyListKey:, nonatomic, copy) NSString *propertyListKey;
+@property (getter=vs_propertyListValueTransformerName, setter=vs_setPropertyListValueTransformerName:, nonatomic, copy) NSString *propertyListValueTransformerName;
 @property (copy) NSString *renamingIdentifier;
+@property (getter=vs_isRequiredJSONValue, setter=vs_setRequiredJSONValue:, nonatomic) BOOL requiredJSONValue;
 @property (getter=isStoredInExternalRecord) BOOL storedInExternalRecord;
+@property (getter=vs_subscriptionKeyPath, setter=vs_setSubscriptionKeyPath:, nonatomic, copy) NSString *subscriptionKeyPath;
+@property (getter=vs_suitablePurposes, setter=vs_setSuitablePurposes:, nonatomic) int suitablePurposes;
 @property (getter=isTransient) BOOL transient;
 @property (nonatomic, retain) NSDictionary *userInfo;
 @property (readonly) NSArray *validationPredicates;
 @property (readonly) NSArray *validationWarnings;
 @property (readonly, copy) NSData *versionHash;
 @property (copy) NSString *versionHashModifier;
+
+// Image: /System/Library/Frameworks/CoreData.framework/CoreData
 
 + (void)initialize;
 
@@ -118,5 +128,28 @@
 - (id)validationWarnings;
 - (id)versionHash;
 - (id)versionHashModifier;
+
+// Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
+
+- (id)vs_JSONKey;
+- (id)vs_JSONValueTransformer;
+- (id)vs_JSONValueTransformerName;
+- (Class)vs_expectedJSONValueClass;
+- (BOOL)vs_isRequiredJSONValue;
+- (BOOL)vs_isSuitableForPurpose:(int)arg1;
+- (id)vs_propertyListKey;
+- (id)vs_propertyListValueTransformer;
+- (id)vs_propertyListValueTransformerName;
+- (void)vs_setExpectedJSONValueClass:(Class)arg1;
+- (void)vs_setJSONKey:(id)arg1;
+- (void)vs_setJSONValueTransformerName:(id)arg1;
+- (void)vs_setPropertyListKey:(id)arg1;
+- (void)vs_setPropertyListValueTransformerName:(id)arg1;
+- (void)vs_setRequiredJSONValue:(BOOL)arg1;
+- (void)vs_setSubscriptionKeyPath:(id)arg1;
+- (void)vs_setSuitablePurposes:(int)arg1;
+- (void)vs_setUserInfoValue:(id)arg1 forKey:(id)arg2;
+- (id)vs_subscriptionKeyPath;
+- (int)vs_suitablePurposes;
 
 @end

@@ -10,6 +10,7 @@
 + (id)sharedService;
 
 - (void)_openApplication:(id)arg1 withOptions:(id)arg2 clientHandle:(id)arg3 completion:(id /* block */)arg4;
+- (id)badgeValueForBundleID:(id)arg1;
 - (BOOL)canOpenApplication:(id)arg1 reason:(int*)arg2;
 - (void)cleanupClientPort:(unsigned int)arg1;
 - (unsigned int)createClientPort;
@@ -27,6 +28,7 @@
 - (void)setBadgeValue:(id)arg1 forBundleID:(id)arg2;
 - (void)setKeyboardFocusApplicationWithBundleID:(id)arg1 pid:(int)arg2 completion:(id /* block */)arg3;
 - (void)shutdown;
+- (void)shutdownWithOptions:(id)arg1;
 - (id)systemApplicationBundleIdentifier;
 - (void)terminateApplication:(id)arg1 forReason:(int)arg2 andReport:(BOOL)arg3 withDescription:(id)arg4;
 - (void)terminateApplication:(id)arg1 forReason:(int)arg2 andReport:(BOOL)arg3 withDescription:(id)arg4 completion:(id /* block */)arg5;

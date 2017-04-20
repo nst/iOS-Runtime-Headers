@@ -140,7 +140,7 @@
         double znear; 
         double zfar; 
     }  _viewport;
-    struct set<unsigned int, std::__1::less<unsigned int>, std::__1::allocator<unsigned int> > { struct __tree<unsigned int, std::__1::less<unsigned int>, std::__1::allocator<unsigned int> > { struct __tree_node<unsigned int, void *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<unsigned int, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, std::__1::less<unsigned int> > { unsigned long x_3_2_1; } x_1_1_3; } x1; } * _visibilityOffsets;
+    struct set<unsigned int, std::__1::less<unsigned int>, std::__1::allocator<unsigned int> > { struct __tree<unsigned int, std::__1::less<unsigned int>, std::__1::allocator<unsigned int> > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<unsigned int, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, std::__1::less<unsigned int> > { unsigned long x_3_2_1; } x_1_1_3; } x1; } * _visibilityOffsets;
     unsigned int  _visibilityResultMode;
     unsigned int  _visibilityResultOffset;
     unsigned int  _width;
@@ -220,6 +220,7 @@
 - (void)enumerateVertexBuffersUsingBlock:(id /* block */)arg1;
 - (void)enumerateVertexSamplersUsingBlock:(id /* block */)arg1;
 - (void)enumerateVertexTexturesUsingBlock:(id /* block */)arg1;
+- (id)formattedDescription:(unsigned int)arg1;
 - (unsigned int)frontFacingWinding;
 - (unsigned int)frontStencilRef;
 - (unsigned int)height;

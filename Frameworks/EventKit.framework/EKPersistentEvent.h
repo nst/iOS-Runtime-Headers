@@ -28,6 +28,7 @@
 @property (getter=isInvitation, nonatomic, readonly) BOOL invitation;
 @property (nonatomic, readonly) unsigned int invitationChangedProperties;
 @property (nonatomic) unsigned int invitationStatus;
+@property (nonatomic) unsigned int junkStatus;
 @property (nonatomic) int locationPredictionState;
 @property (getter=isMeeting, nonatomic, readonly) BOOL meeting;
 @property (nonatomic) BOOL needsOccurrenceCacheUpdate;
@@ -80,6 +81,7 @@
 - (BOOL)isFloating;
 - (BOOL)isInvitation;
 - (BOOL)isMeeting;
+- (unsigned int)junkStatus;
 - (int)locationPredictionState;
 - (BOOL)needsOccurrenceCacheUpdate;
 - (id)organizer;
@@ -98,6 +100,7 @@
 - (void)setEndDate:(id)arg1;
 - (void)setFiredTTL:(BOOL)arg1;
 - (void)setInvitationStatus:(unsigned int)arg1;
+- (void)setJunkStatus:(unsigned int)arg1;
 - (void)setLocationPredictionState:(int)arg1;
 - (void)setNeedsOccurrenceCacheUpdate:(BOOL)arg1;
 - (void)setOriginalStartDate:(id)arg1;

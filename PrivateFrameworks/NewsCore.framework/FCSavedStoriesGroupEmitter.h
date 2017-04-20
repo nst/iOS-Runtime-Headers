@@ -21,6 +21,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)backingChannelTagIDWithAppConfig:(id)arg1;
 - (BOOL)canEmitGroupsWithType:(int)arg1;
 - (int)desiredArticlesCount;
 - (BOOL)emitsSingletonGroups;

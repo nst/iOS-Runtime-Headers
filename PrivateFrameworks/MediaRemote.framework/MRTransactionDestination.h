@@ -9,7 +9,6 @@
 
 @property (nonatomic, readonly) unsigned long long name;
 
-- (void)_cleanUp;
 - (void)dealloc;
 - (id)initWithName:(unsigned long long)arg1;
 - (unsigned long long)name;

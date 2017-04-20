@@ -23,6 +23,7 @@
 - (void)CADDatabaseRemoveSuggestedEventCalendarWithReply:(id /* block */)arg1;
 - (void)CADDatabaseSetDefaultCalendarForNewEvents:(struct { int x1; int x2; })arg1;
 - (void)CADDatabaseSetShowsDeclinedEvents:(BOOL)arg1;
+- (void)CADDatabaseShouldWhitelistOrganizerEmailFromJunkChecks:(id)arg1 reply:(id /* block */)arg2;
 - (void)CADOccurrenceCacheAreOccurrencesBeingGenerated:(id /* block */)arg1;
 - (void)CADOccurrenceCacheCancelSearchWithReplyID:(int)arg1;
 - (void)CADOccurrenceCacheDoEvents:(id)arg1 haveOccurrencesAfterDate:(id)arg2 reply:(id /* block */)arg3;

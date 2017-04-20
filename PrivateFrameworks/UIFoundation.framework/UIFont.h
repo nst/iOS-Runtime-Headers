@@ -186,10 +186,15 @@
 
 // Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
 
++ (id)aa_actionFontForTraitCollection:(id)arg1;
++ (id)aa_cellLabelFontForTraitCollection:(id)arg1;
 + (id)aa_fontForLargeButton;
 + (id)aa_fontForLargerInformationLabel;
 + (id)aa_fontForPageTitle;
 + (id)aa_fontForPrimaryInformationLabel;
++ (id)aa_messageFontForTraitCollection:(id)arg1;
++ (id)aa_primaryActionFontForTraitCollection:(id)arg1;
++ (id)aa_titleFontForTraitCollection:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
 

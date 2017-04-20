@@ -6,14 +6,14 @@
     id /* block */  _callback;
     NSMutableData * _data;
     NSURLResponse * _response;
-    NSURLSession * _session;
+    GEONSURLSharedSession * _session;
 }
 
 @property (nonatomic, copy) id /* block */ callback;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, retain) NSURLSession *session;
+@property (nonatomic, retain) GEONSURLSharedSession *session;
 @property (readonly) Class superclass;
 
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;

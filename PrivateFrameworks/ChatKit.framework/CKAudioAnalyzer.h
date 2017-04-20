@@ -11,7 +11,7 @@
     NSMutableData * _floatSampleBuffer;
     struct { 
         float rms; 
-        unsigned int zc; 
+        unsigned long zc; 
     }  _frameAnalysisArray;
     unsigned long  _frameRate;
     unsigned int  _framesSeen;

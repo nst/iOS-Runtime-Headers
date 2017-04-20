@@ -16,6 +16,7 @@
     double  _preDuration;
     double  _relativeEnd;
     double  _relativeStart;
+    double  _startSeekTolerance;
 }
 
 @property (nonatomic) int behavior;
@@ -34,6 +35,7 @@
 @property (nonatomic) double preDuration;
 @property (nonatomic) double relativeEnd;
 @property (nonatomic) double relativeStart;
+@property (nonatomic) double startSeekTolerance;
 @property (readonly) Class superclass;
 
 + (id)settingsControllerModule;
@@ -66,5 +68,7 @@
 - (void)setPreDuration:(double)arg1;
 - (void)setRelativeEnd:(double)arg1;
 - (void)setRelativeStart:(double)arg1;
+- (void)setStartSeekTolerance:(double)arg1;
+- (double)startSeekTolerance;
 
 @end

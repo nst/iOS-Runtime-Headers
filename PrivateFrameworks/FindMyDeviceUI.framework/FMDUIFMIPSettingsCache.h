@@ -25,6 +25,7 @@
 - (BOOL)fmipStateAvailable;
 - (BOOL)fmipStateChangeInProgress;
 - (id)init;
+- (void)invalidateCache;
 - (BOOL)lowBatteryLocateEnabled;
 - (BOOL)lowBatteryLocateStateAvailable;
 - (void)setFmipState:(unsigned int)arg1;

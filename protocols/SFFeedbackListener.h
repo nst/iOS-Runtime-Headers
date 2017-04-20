@@ -14,7 +14,9 @@
 - (void)didEngageSection:(SFSectionEngagementFeedback *)arg1;
 - (void)didEngageSuggestion:(SFSuggestionEngagementFeedback *)arg1;
 - (void)didErrorOccur:(SFErrorFeedback *)arg1;
+- (void)didGoToSearch:(SFDidGoToSearchFeedback *)arg1;
 - (void)didGoToSite:(SFDidGoToSiteFeedback *)arg1;
+- (void)didGradeResultRelevancy:(SFResultGradingFeedback *)arg1;
 - (void)didRankSections:(SFRankingFeedback *)arg1;
 - (void)didReceiveResultsAfterTimeout:(SFResultsReceivedAfterTimeoutFeedback *)arg1;
 - (void)didStartSearch:(SFStartSearchFeedback *)arg1;

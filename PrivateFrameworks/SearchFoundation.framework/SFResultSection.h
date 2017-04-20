@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFResultSection : NSObject <NSCopying, NSSecureCoding> {
+@interface SFResultSection : NSObject <NSCopying, NSSecureCoding, SFProtobufObject> {
     NSString * _bundleIdentifier;
     NSString * _identifier;
     unsigned int  _maxInitiallyVisibleResults;
@@ -13,11 +13,16 @@
 }
 
 @property (nonatomic, copy) NSString *bundleIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic) unsigned int maxInitiallyVisibleResults;
 @property (nonatomic, copy) NSString *moreText;
+@property (nonatomic, readonly) PBCodable *protobufMessage;
 @property (nonatomic) float rankingScore;
 @property (nonatomic, retain) NSArray *results;
+@property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *title;
 
 // Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
@@ -44,8 +49,15 @@
 - (void)setTitle:(id)arg1;
 - (id)title;
 
+// Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
+
++ (Class)protobufClass;
+
+- (id)protobufMessage;
+
 // Image: /System/Library/PrivateFrameworks/Search.framework/Search
 
 - (id)objectForFeedback;
+- (id)objectForFeedbackWithResultsArray:(id)arg1;
 
 @end

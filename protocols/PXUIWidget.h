@@ -6,7 +6,7 @@
 @optional
 
 - (void)commitPreviewViewController:(UIViewController *)arg1;
-- (BOOL)containsPoint:(struct CGPoint { float x1; float x2; })arg1 forCoordinateSpace:(id <UICoordinateSpace>)arg2;
+- (BOOL)containsPoint:(struct CGPoint { float x1; float x2; })arg1 forCoordinateSpace:(NSObject<UICoordinateSpace> *)arg2;
 - (void)controllerTraitCollectionDidChangeFrom:(UITraitCollection *)arg1 to:(UITraitCollection *)arg2;
 - (void)didDismissPreviewViewController:(UIViewController *)arg1 committing:(BOOL)arg2;
 - (void)environmentDidUpdateFocusInContext:(UIFocusUpdateContext *)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKDayTimeView : EKUIVisualEffectView <EKCurrentTimeMarkerViewUpdating> {
+@interface EKDayTimeView : UIView <EKCurrentTimeMarkerViewUpdating, EKUITintColorUpdateDelegate> {
     NSMutableArray * _contentViews;
     <EKDayTimeViewDelegate> * _delegate;
     float  _designatorSize;
@@ -25,6 +25,8 @@
     UIView * _timeMarkerExtension;
     float  _timeWidth;
     BOOL  _usesLightText;
+    UIVisualEffect * _visualEffect;
+    NSMutableDictionary * _visualEffectViews;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -45,6 +47,7 @@
 @property (nonatomic, retain) UIColor *timeColor;
 @property (nonatomic, readonly) EKCurrentTimeMarkerView *timeMarker;
 @property (nonatomic) BOOL usesLightText;
+@property (nonatomic, retain) UIVisualEffect *visualEffect;
 
 + (id)_boldFontForOrientation:(int)arg1;
 + (void)_calculateWidthForOrientation:(int)arg1 excludeCurrentTime:(BOOL)arg2;
@@ -109,17 +112,19 @@
 - (void)setShowsTimeMarkerExtension:(BOOL)arg1;
 - (void)setTimeColor:(id)arg1;
 - (void)setUsesLightText:(BOOL)arg1;
+- (void)setVisualEffect:(id)arg1;
 - (BOOL)showsLeftBorder;
 - (BOOL)showsRightBorder;
 - (BOOL)showsTimeMarker;
 - (BOOL)showsTimeMarkerExtension;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)subTintColorUpdatedToColor:(id)arg1;
 - (id)timeColor;
 - (id)timeMarker;
 - (void)tintColorDidChange;
 - (float)topPadding;
 - (void)updateMarkerPosition;
 - (BOOL)usesLightText;
+- (void)viewTintColorDidChangeForView:(id)arg1 toColor:(id)arg2;
+- (id)visualEffect;
 
 @end

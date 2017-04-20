@@ -19,14 +19,14 @@
 }
 
 @property (nonatomic) BOOL allowAnonymousConnection;
-@property (nonatomic, readonly) NSURL *baseURL;
+@property (nonatomic, readonly, copy) NSURL *baseURL;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property <HMFHTTPClientDelegate> *delegate;
 @property (nonatomic, retain) HMFExponentialBackoffTimer *delegatedPingTimer;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) HMFNetService *netService;
+@property (nonatomic, readonly, copy) HMFNetService *netService;
 @property (nonatomic, readonly) _HMFNetServiceMonitor *netServiceMonitor;
 @property (nonatomic, readonly) unsigned int options;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
@@ -47,8 +47,8 @@
 - (void)__initializeWithOptions:(unsigned int)arg1;
 - (BOOL)allowAnonymousConnection;
 - (id)baseURL;
+- (void)cancelPendingRequests;
 - (id)clientQueue;
-- (id)currentNetService;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)delegate;
@@ -79,6 +79,7 @@
 - (void)setAllowAnonymousConnection:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegatedPingTimer:(id)arg1;
+- (void)setNetService:(id)arg1;
 - (void)setReachable:(BOOL)arg1;
 - (id)shortDescription;
 - (void)startDelegatedPingTimer;

@@ -26,6 +26,7 @@
 - (void)_updateDisplayLinkConfiguration;
 - (void)cancelPeekAdjustmentForScrollView:(id)arg1 performRollback:(BOOL)arg2;
 - (void)cancelScrollingForScrollView:(id)arg1;
+- (struct CGPoint { float x1; float x2; })currentVelocityForScrollView:(id)arg1;
 - (void)dealloc;
 - (float)defaultConvergenceRate;
 - (id)initWithScreen:(id)arg1;

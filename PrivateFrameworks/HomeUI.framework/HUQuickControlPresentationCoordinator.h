@@ -33,8 +33,8 @@
 - (void)_actuateTapticFeedbackIfAvailable;
 - (void)_beginControlPresentation;
 - (void)_cleanupForQuickControlDismissal;
-- (void)_configureInitialStateForPressedItemContext:(id)arg1;
-- (id)_createPressedContextForItem:(id)arg1;
+- (void)_configureInitialStateForPressedItemContext:(id)arg1 userInitiated:(BOOL)arg2;
+- (id)_createPressedContextForItem:(id)arg1 userInitiated:(BOOL)arg2;
 - (BOOL)_dismissQuickControlViewControllerAnimated:(BOOL)arg1;
 - (void)_endUsingTapticFeedbackIfAvailable;
 - (id)_gestureInstallationView;
@@ -62,6 +62,7 @@
 - (BOOL)hasDetailsActionForQuickControlViewController:(id)arg1 item:(id)arg2;
 - (id)initWithTargetView:(id)arg1 delegate:(id)arg2;
 - (id)mutuallyExclusiveGestureRecognizers;
+- (void)playBounceForItem:(id)arg1;
 - (void)presentQuickControlAnimatedWithContext:(id)arg1;
 - (id)presentationContext;
 - (id)presentingViewController;

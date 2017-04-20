@@ -15,6 +15,7 @@
     NSString * _lazyIconAppID;
     BOOL  _lazyIconDontUnload;
     BOOL  _lazyIconForceSynchronous;
+    NSURL * _lazyIconURL;
     UILongPressGestureRecognizer * _longTapRecognizer;
     SEL  _pAction;
     id  _pTarget;
@@ -22,6 +23,7 @@
     BOOL  _shouldHideTitle;
     PSSpecifier * _specifier;
     int  _type;
+    NSURLSession * _urlSession;
     id  _value;
 }
 
@@ -49,6 +51,7 @@
 - (id)_disclosureChevronImage:(BOOL)arg1;
 - (void)_invalidateHighlightContext;
 - (void)_updateAccessoryTypeForSpecifier:(id)arg1;
+- (id)_urlSession;
 - (SEL)action;
 - (id)blankIcon;
 - (BOOL)canBeChecked;

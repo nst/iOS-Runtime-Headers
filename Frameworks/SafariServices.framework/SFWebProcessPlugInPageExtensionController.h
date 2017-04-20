@@ -6,16 +6,14 @@
     WKWebProcessPlugInBrowserContextController * _browserContextController;
     _WKRemoteObjectInterface * _extensionControllerInterface;
     NSMutableDictionary * _extensionToScriptWorldMap;
-    <SFSafariExtensionEventsListener> * _safariExtensionEventsListener;
 }
 
 - (void).cxx_destruct;
 - (void)_clearExtensionControllerInterface;
-- (id)_extensionEventListenerProxy;
 - (void)_setUpExtensionControllerInterface;
 - (void)clearExtensionScriptWorlds;
 - (void)dealloc;
-- (void)evaluateJavaScriptForSharingExtension:(id)arg1 javaScript:(id)arg2 replyIdentifier:(id)arg3;
+- (void)evaluateJavaScriptForSharingExtension:(id)arg1 javaScript:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)finalizeJavaScriptForSharingExtension:(id)arg1 arguments:(id)arg2;
 - (id)initWithBrowserContextController:(id)arg1;
 

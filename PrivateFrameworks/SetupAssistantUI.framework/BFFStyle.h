@@ -26,6 +26,8 @@
 - (id)headerTitleFont;
 - (float)horizontalMarginForView:(id)arg1;
 - (float)nonTableHorizontalMargin;
+- (float)screenHeaderFooterSideInsetForView:(id)arg1;
+- (float)screenHeaderHeightForView:(id)arg1;
 - (float)singleLineCellHeightForTable:(id)arg1;
 - (id)tableCellFont;
 

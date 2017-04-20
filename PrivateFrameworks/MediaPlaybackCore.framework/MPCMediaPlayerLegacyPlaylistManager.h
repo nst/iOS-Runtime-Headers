@@ -4,6 +4,7 @@
 
 @interface MPCMediaPlayerLegacyPlaylistManager : MPAVPlaylistManager <MPCQueueBehaviorManaging> {
     NSObject<OS_dispatch_queue> * _accessQueue;
+    MPMusicPlayerControllerQueue * _currentMusicPlayerControllerQueue;
     BOOL  _disableQueueModifications;
     BOOL  _disableSoftQueueFaulting;
     NSMutableIndexSet * _failedSoftQueueIndexes;
@@ -17,6 +18,7 @@
     unsigned int  _maximumModifiedPlaylistIterationIndex;
     unsigned int  _maximumPlaylistIndex;
     unsigned int  _minimumPlaylistIndex;
+    NSObject<OS_dispatch_queue> * _musicPlayerControllerAccessQueue;
     int  _nextCurrentIndex;
     _MPCAVItemSourceContext * _repeatPlaylistIdentifer;
     MPQueueFeeder * _softQueueFeeder;
@@ -48,7 +50,9 @@
 - (void)_handleConfiguredQueueFeeder:(id)arg1 fromPlaybackContext:(id)arg2;
 - (int)_hardQueueIndexForIndex:(int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_hardQueuePlaylistIndexRangeIncludingCurrentItem:(BOOL)arg1;
+- (unsigned int)_indexOfMediaItem:(id)arg1;
 - (void)_insertSoftQueueSourceContext:(id)arg1 atIndex:(int)arg2;
+- (void)_invalidateCachedMusicPlayerControllerQueue;
 - (id)_itemForPlaylistIndex:(int)arg1;
 - (id)_itemForSourceContext:(id)arg1;
 - (BOOL)_itemIsHardQueueItem:(id)arg1;
@@ -61,16 +65,19 @@
 - (id)_queueFeeder:(id)arg1 itemForIdentifier:(id)arg2;
 - (BOOL)_removeHardQueueItems;
 - (id)_removeSoftQueueSourceContextAtIndex:(int)arg1;
+- (void)_removeSourceContextAtIndex:(unsigned int)arg1;
 - (int)_softQueueIndexForIndex:(int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_softQueuePlaylistIndexRangeIncludingCurrentItem:(BOOL)arg1;
 - (id)_softQueueSourceContextForIndex:(int)arg1;
 - (id)_sourceContextForPlaylistIndex:(unsigned int)arg1;
+- (void)_updateMusicPlayerControllerQueueWithCompletionHandler:(id /* block */)arg1;
 - (void)_willFinishReloadWithQueueFeeder:(id)arg1 fromPlaybackContext:(id)arg2;
 - (void)addPlaybackContext:(id)arg1 toQueueWithInsertionType:(int)arg2 completionHandler:(id /* block */)arg3;
 - (BOOL)canSkipToPreviousItem;
 - (void)clearHardQueue;
 - (void)clearSoftQueue;
 - (int)currentIndex;
+- (id)currentQueueUUID;
 - (BOOL)disableQueueModifications;
 - (unsigned int)displayCountForItem:(id)arg1;
 - (unsigned int)displayIndexForItem:(id)arg1;
@@ -88,6 +95,7 @@
 - (id)lastPlayedSoftQueueItem;
 - (id)metadataItemForPlaylistIndex:(int)arg1;
 - (void)moveItemAtPlaybackIndex:(int)arg1 toPlaybackIndex:(int)arg2 intoHardQueue:(BOOL)arg3;
+- (id)musicPlayerControllerQueueForUUID:(id)arg1;
 - (int)nextCurrentIndex;
 - (void)player:(id)arg1 currentItemDidChangeFromItem:(id)arg2 toItem:(id)arg3;
 - (id)playlistFeeder;
@@ -105,11 +113,13 @@
 - (void)queueFeederDidInvalidateRealShuffleType:(id)arg1;
 - (void)removeItemAtPlaybackIndex:(int)arg1;
 - (id)repeatPlaylistIdentifer;
+- (void)requestMusicPlayerControllerQueueWithCompletionHandler:(id /* block */)arg1;
 - (void)setCurrentIndex:(int)arg1 selectionDirection:(int)arg2;
 - (void)setDisableQueueModifications:(BOOL)arg1;
 - (void)setHardQueueInsertionIndex:(int)arg1;
 - (void)setHardQueueSourceContexts:(id)arg1;
 - (void)setLastPlayedSoftQueueItem:(id)arg1;
+- (BOOL)setMusicPlayerControllerQueue:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)setNextCurrentIndex:(int)arg1;
 - (BOOL)setPlaylistFeeder:(id)arg1 startIndex:(int)arg2 keepPlaying:(BOOL)arg3;
 - (void)setRepeatMode:(int)arg1;

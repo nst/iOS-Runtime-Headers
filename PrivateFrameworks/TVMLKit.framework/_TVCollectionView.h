@@ -11,7 +11,6 @@
     }  _delegateFlags;
     NSIndexPath * _indexPathForLastFocusedItem;
     UILongPressGestureRecognizer * _longPressRecognizer;
-    UITapGestureRecognizer * _playButtonRecognizer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -30,7 +29,6 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_visibleBounds;
 - (BOOL)canBecomeFocused;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
-- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (id)indexPathForLastFocusedItem;

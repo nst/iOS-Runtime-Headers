@@ -3,51 +3,62 @@
  */
 
 @interface ICQOfferManager : NSObject {
-    NSURLSessionDataTask * _fetchOfferDataTask;
+    ICQOffer * _cachedOffer;
+    NSObject<OS_dispatch_queue> * _cachedOfferQueue;
     NSTimer * _invalidationTimer;
     BOOL  _isRegisteredForDarwinNotifications;
-    NSURLSession * _sharedURLSession;
-    NSURLSessionDataTask * _teardownAckDataTask;
-    int  _testKind;
-    int  _testLevel;
 }
 
-@property (nonatomic) int testKind;
-@property (nonatomic) int testLevel;
+@property (getter=isBuddyOfferEnabled, nonatomic) BOOL buddyOfferEnabled;
+@property (nonatomic, retain) ICQOffer *cachedOffer;
+@property (nonatomic, readonly) BOOL isDeviceStorageAlmostFull;
+@property (nonatomic, readonly) NSNumber *photosLibrarySize;
+@property (getter=isSimulatedDeviceStorageAlmostFull, nonatomic) BOOL simulatedDeviceStorageAlmostFull;
+@property (nonatomic, retain) NSNumber *simulatedPhotosLibrarySize;
 
++ (BOOL)_legacyBuddyOfferMightNeedPresenting;
++ (BOOL)buddyOfferMightNeedPresenting;
++ (id)ckBackupDeviceID;
++ (id)defaultBundleIdentifier;
++ (id)defaultPlaceholderKeys;
 + (id)sharedOfferManager;
++ (id)stringWithPlaceholderFormat:(id)arg1 alternateString:(id)arg2;
 
 - (void).cxx_destruct;
-- (id)URLForAccount:(id)arg1 quotaKey:(id)arg2;
-- (void)_addCommonHeadersToRequest:(id)arg1 account:(id)arg2;
-- (BOOL)_attemptSetRequest:(id)arg1 toPostWithJSONDict:(id)arg2;
-- (void)_fetchOfferForAccount:(id)arg1 notificationID:(id)arg2;
-- (void)_fetchOfferForAccount:(id)arg1 notificationID:(id)arg2 completion:(id /* block */)arg3;
-- (BOOL)_fetchPersistedOfferIfNeeded:(id*)arg1;
 - (void)_firedInvalidationTimer:(id)arg1;
+- (id)_funnelCloudServerOfferForAccount:(id)arg1 options:(id)arg2 error:(id*)arg3;
+- (void)_getOfferForAccount:(id)arg1 bundleIdentifier:(id)arg2 completion:(id /* block */)arg3;
 - (void)_handlePushReceivedDarwinNotification;
-- (id)_lastPushNotificationID;
-- (void)_postPushReceivedDarwinNotification;
-- (id)_pushNotificationDictionary;
+- (void)_refetchOffer;
 - (void)_registerForDarwinNotifications;
-- (void)_respondWithTeardownAcknowledgementForNotificationDictionary:(id)arg1 store:(id)arg2 account:(id)arg3 completion:(id /* block */)arg4;
-- (id)_sanitizedNotificationDictionary:(id)arg1 account:(id)arg2;
 - (void)_setupTimerForInvalidationDate:(id)arg1;
-- (void)_showDaemonAlertForOffer:(id)arg1 notificationDictionary:(id)arg2 store:(id)arg3 account:(id)arg4 completion:(id /* block */)arg5;
+- (BOOL)_shouldUseOffer:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)_teardownInvalidationTimer;
 - (void)_unregisterForDarwinNotifications;
+- (id)cachedOffer;
+- (void)clearFollowups;
 - (id)currentOffer;
 - (id)currentOfferForBundleIdentifier:(id)arg1;
 - (void)dealloc;
 - (BOOL)fetchOfferIfNeeded;
+- (void)forcePostFollowup;
+- (void)getOfferForBundleIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)getOfferWithCompletion:(id /* block */)arg1;
 - (id)init;
-- (void)persistOffer:(id)arg1;
-- (void)persistOffer:(id)arg1 completion:(id /* block */)arg2;
-- (id)persistedOffer;
-- (void)processPushNotificationDictionary:(id)arg1 completion:(id /* block */)arg2;
-- (void)setTestKind:(int)arg1;
-- (void)setTestLevel:(int)arg1;
-- (int)testKind;
-- (int)testLevel;
+- (BOOL)isBuddyOfferEnabled;
+- (BOOL)isDeviceStorageAlmostFull;
+- (BOOL)isSimulatedDeviceStorageAlmostFull;
+- (id)photosLibrarySize;
+- (void)postBuddyOfferType:(id)arg1;
+- (void)postOfferType:(id)arg1;
+- (void)setBuddyOfferEnabled:(BOOL)arg1;
+- (void)setCachedOffer:(id)arg1;
+- (void)setSimulatedDeviceStorageAlmostFull:(BOOL)arg1;
+- (void)setSimulatedPhotosLibrarySize:(id)arg1;
+- (id)simulatedPhotosLibrarySize;
+- (void)teardownCachedBuddyOffer;
+- (void)teardownCachedOffer;
+- (void)teardownCachedOffers;
+- (void)updateOfferId:(id)arg1 buttonId:(id)arg2 completion:(id /* block */)arg3;
 
 @end

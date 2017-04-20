@@ -3,12 +3,14 @@
  */
 
 @interface MRUserSettings : NSObject {
+    BOOL  _televisionPairingAllowed;
     NSUserDefaults * _userDefaults;
 }
 
 @property (nonatomic, readonly) double bluetoothDeviceResumeDuration;
 @property (nonatomic, readonly) double broadcastCommandWaitDuration;
 @property (nonatomic, readonly) BOOL hasTelevisionSocketQOSLevelSet;
+@property (nonatomic, readonly) int maxTransactionMemorySize;
 @property (nonatomic, readonly) double televisionDisconnectSleepDuration;
 @property (nonatomic, readonly) double televisionDisconnectWaitDuration;
 @property (nonatomic, readonly) double televisionNowPlayingInfoArtworkCoalesceDuration;
@@ -17,20 +19,26 @@
 @property (nonatomic, readonly) double televisionSleepAssertionOnClientConnectDuration;
 @property (nonatomic, readonly) int televisionSocketQOSLevel;
 @property (nonatomic, readonly) double televisionTimeoutDuration;
+@property (nonatomic, readonly) double transactionWaitDurationOnNetworkSend;
+@property (nonatomic, readonly) double transactionWaitDurationOnOutOfMemory;
+@property (nonatomic, readonly) double transactionWaitDurationOnXpcSend;
 @property (nonatomic, readonly) BOOL useDebugAVRouteWithoutVolumeControl;
 @property (nonatomic, readonly) BOOL useNoDelayOptionForTelevisionSockets;
 @property (nonatomic, readonly) BOOL usePeerToPeerTelevisionConnections;
+@property (nonatomic, readonly) BOOL useTelevisionSystemPairing;
 
 + (id)currentSettings;
 
 - (BOOL)_boolValueForKey:(id)arg1 usingDefaultValue:(BOOL)arg2;
-- (double)_doubleValueForKey:(id)arg1 usingDefaultValue:(BOOL)arg2;
+- (double)_doubleValueForKey:(id)arg1 usingDefaultValue:(double)arg2;
+- (int)_integerValueForKey:(id)arg1 usingDefaultValue:(int)arg2;
 - (double)bluetoothDeviceResumeDuration;
 - (double)broadcastCommandWaitDuration;
 - (void)dealloc;
 - (BOOL)hasTelevisionSocketQOSLevelSet;
 - (id)init;
 - (BOOL)isTelevisionPairingAllowed;
+- (int)maxTransactionMemorySize;
 - (void)setTelevisionPairingAllowed:(BOOL)arg1;
 - (double)televisionDisconnectSleepDuration;
 - (double)televisionDisconnectWaitDuration;
@@ -39,8 +47,12 @@
 - (double)televisionSleepAssertionOnClientConnectDuration;
 - (int)televisionSocketQOSLevel;
 - (double)televisionTimeoutDuration;
+- (double)transactionWaitDurationOnNetworkSend;
+- (double)transactionWaitDurationOnOutOfMemory;
+- (double)transactionWaitDurationOnXpcSend;
 - (BOOL)useDebugAVRouteWithoutVolumeControl;
 - (BOOL)useNoDelayOptionForTelevisionSockets;
 - (BOOL)usePeerToPeerTelevisionConnections;
+- (BOOL)useTelevisionSystemPairing;
 
 @end

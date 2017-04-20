@@ -2,7 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSMetricsEvent : NSObject
+@interface SSMetricsEvent : NSObject {
+    NSString * _eventType;
+    BOOL  _shouldSuppressDSIDHeader;
+}
+
+@property (nonatomic, readonly, retain) NSString *eventType;
+@property (nonatomic, readonly) BOOL shouldSuppressDSIDHeader;
 
 + (id)_globalCanaryLock;
 + (id)globalEventCanary;
@@ -13,10 +19,12 @@
 - (id)allTableEntityPropertiesPermittedByConfiguration:(id)arg1 externalValues:(id)arg2;
 - (void)appendPropertiesToBody:(id)arg1;
 - (id)decorateReportingURL:(id)arg1;
+- (id)eventType;
 - (BOOL)isBlacklistedByConfiguration:(id)arg1;
 - (BOOL)isFieldBlacklistEnabled;
 - (id)millisecondsFromTimeInterval:(double)arg1;
 - (BOOL)requiresDiagnosticSendingPermission;
+- (BOOL)shouldSuppressDSIDHeader;
 - (double)timeIntervalFromMilliseconds:(id)arg1;
 
 @end

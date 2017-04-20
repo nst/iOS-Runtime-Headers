@@ -180,6 +180,7 @@
 - (id)subtitle1Label;
 - (id)subtitle2Description;
 - (id)subtitle2Label;
+- (id)userInputFields;
 - (id)username;
 - (BOOL)usernameRequired;
 

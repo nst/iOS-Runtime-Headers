@@ -10,9 +10,9 @@
     NSTimer * _maskedPendingSyncStateRevealTimer;
     unsigned int  _numberOfAssetPlaylistItems;
     unsigned int  _numberOfAssetPlaylistItemsNeedingDownload;
+    unsigned int  _numberOfAssetPlaylistItemsSynced;
     ATSession * _observedSession;
-    BOOL  _syncPending;
-    BOOL  _syncing;
+    unsigned int  _syncState;
     BOOL  _waitingForActiveSyncSessionIdentifierChange;
 }
 
@@ -25,9 +25,9 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) unsigned int numberOfAssetPlaylistItems;
 @property (nonatomic) unsigned int numberOfAssetPlaylistItemsNeedingDownload;
+@property (nonatomic, readonly) unsigned int numberOfAssetPlaylistItemsSynced;
 @property (readonly) Class superclass;
-@property (getter=isSyncPending, nonatomic) BOOL syncPending;
-@property (getter=isSyncing, nonatomic) BOOL syncing;
+@property (nonatomic) unsigned int syncState;
 
 + (id)sharedManager;
 
@@ -55,10 +55,9 @@
 - (float)estimatedSyncProgress;
 - (BOOL)hasAssetPlaylistItemsPendingDownload;
 - (id)init;
-- (BOOL)isSyncPending;
-- (BOOL)isSyncing;
 - (unsigned int)numberOfAssetPlaylistItems;
 - (unsigned int)numberOfAssetPlaylistItemsNeedingDownload;
+- (unsigned int)numberOfAssetPlaylistItemsSynced;
 - (void)session:(id)arg1 didBeginSessionTask:(id)arg2;
 - (void)session:(id)arg1 didFinishSessionTask:(id)arg2;
 - (void)session:(id)arg1 didUpdateSessionTask:(id)arg2;
@@ -71,7 +70,7 @@
 - (void)setEstimatedSyncProgress:(float)arg1;
 - (void)setNumberOfAssetPlaylistItems:(unsigned int)arg1;
 - (void)setNumberOfAssetPlaylistItemsNeedingDownload:(unsigned int)arg1;
-- (void)setSyncPending:(BOOL)arg1;
-- (void)setSyncing:(BOOL)arg1;
+- (void)setSyncState:(unsigned int)arg1;
+- (unsigned int)syncState;
 
 @end

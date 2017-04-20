@@ -14,6 +14,7 @@
     NSNumber * _includeFavoriteMemoriesCollectionListNumber;
     NSNumber * _includeHiddenAssetsNumber;
     NSNumber * _includeNonvisibleFacesNumber;
+    NSNumber * _includeOnlyFacesNeedingFaceCropNumber;
     NSNumber * _includePendingMemoriesNumber;
     NSNumber * _includePlacesSmartAlbumNumber;
     NSNumber * _includeRejectedMemoriesNumber;
@@ -22,6 +23,7 @@
     NSPredicate * _internalInclusionPredicate;
     NSPredicate * _internalPredicate;
     NSArray * _internalSortDescriptors;
+    NSNumber * _isExclusivePredicateNumber;
     NSNumber * _minimumUnverifiedFaceCountNumber;
     NSNumber * _minimumVerifiedFaceCountNumber;
     NSNumber * _personContextNumber;
@@ -48,6 +50,7 @@
 @property (nonatomic) BOOL includeFavoriteMemoriesCollectionList;
 @property (nonatomic) BOOL includeHiddenAssets;
 @property (nonatomic) BOOL includeNonvisibleFaces;
+@property (nonatomic) BOOL includeOnlyFacesNeedingFaceCrop;
 @property (nonatomic) BOOL includePendingMemories;
 @property (nonatomic) BOOL includePlacesSmartAlbum;
 @property (nonatomic) BOOL includeRejectedMemories;
@@ -56,6 +59,7 @@
 @property (nonatomic, retain) NSPredicate *internalInclusionPredicate;
 @property (nonatomic, retain) NSPredicate *internalPredicate;
 @property (nonatomic, retain) NSArray *internalSortDescriptors;
+@property (nonatomic) BOOL isExclusivePredicate;
 @property (nonatomic) unsigned int minimumUnverifiedFaceCount;
 @property (nonatomic) unsigned int minimumVerifiedFaceCount;
 @property (nonatomic) int personContext;
@@ -88,6 +92,7 @@
 - (BOOL)includeFavoriteMemoriesCollectionList;
 - (BOOL)includeHiddenAssets;
 - (BOOL)includeNonvisibleFaces;
+- (BOOL)includeOnlyFacesNeedingFaceCrop;
 - (BOOL)includePendingMemories;
 - (BOOL)includePlacesSmartAlbum;
 - (BOOL)includeRejectedMemories;
@@ -97,6 +102,7 @@
 - (id)internalInclusionPredicate;
 - (id)internalPredicate;
 - (id)internalSortDescriptors;
+- (BOOL)isExclusivePredicate;
 - (void)mergeWithFetchOptions:(id)arg1;
 - (unsigned int)minimumUnverifiedFaceCount;
 - (unsigned int)minimumVerifiedFaceCount;
@@ -116,6 +122,7 @@
 - (void)setIncludeFavoriteMemoriesCollectionList:(BOOL)arg1;
 - (void)setIncludeHiddenAssets:(BOOL)arg1;
 - (void)setIncludeNonvisibleFaces:(BOOL)arg1;
+- (void)setIncludeOnlyFacesNeedingFaceCrop:(BOOL)arg1;
 - (void)setIncludePendingMemories:(BOOL)arg1;
 - (void)setIncludePlacesSmartAlbum:(BOOL)arg1;
 - (void)setIncludeRejectedMemories:(BOOL)arg1;
@@ -124,6 +131,7 @@
 - (void)setInternalInclusionPredicate:(id)arg1;
 - (void)setInternalPredicate:(id)arg1;
 - (void)setInternalSortDescriptors:(id)arg1;
+- (void)setIsExclusivePredicate:(BOOL)arg1;
 - (void)setMinimumUnverifiedFaceCount:(unsigned int)arg1;
 - (void)setMinimumVerifiedFaceCount:(unsigned int)arg1;
 - (void)setPersonContext:(int)arg1;

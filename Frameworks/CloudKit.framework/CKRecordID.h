@@ -24,6 +24,7 @@
 - (id)CKPropertiesDescriptionWithProperties:(id)arg1;
 - (id)CKXPCSuitableString;
 - (id)ckShortDescription;
+- (int)compareToRecordID:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -50,6 +51,7 @@
 - (BOOL)brc_isZoneRootRecordID;
 - (id)brc_itemIDOfTargetWithLibraryRowID:(id)arg1 session:(id)arg2;
 - (id)brc_itemIDWithSession:(id)arg1;
+- (id)brc_itemIDWithSession:(id)arg1 error:(id*)arg2;
 - (BOOL)brc_itemType;
 - (id)brc_shareItemIDWithLibraryRowID:(id)arg1;
 - (id)brc_shareOwnerItemID;

@@ -39,6 +39,7 @@
 - (id)initWithPathToVideo:(id)arg1 pathToImage:(id)arg2;
 - (id)initWithPathToVideo:(id)arg1 pathToImage:(id)arg2 imageDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 pairingIdentifier:(id)arg4;
 - (id)initWithPropertyList:(id)arg1;
+- (BOOL)linkOrCopyPath:(id)arg1 toPath:(id)arg2 forceCopy:(BOOL)arg3 error:(id*)arg4;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })originalImageDisplayTime;
 - (id)originalPairingIdentifier;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })originalVideoDuration;

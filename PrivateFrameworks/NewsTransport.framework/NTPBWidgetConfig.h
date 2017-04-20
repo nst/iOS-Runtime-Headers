@@ -5,6 +5,8 @@
 @interface NTPBWidgetConfig : PBCodable <NSCopying> {
     double  _alternativeButlerWidgetConfigPopulationCeiling;
     double  _alternativeButlerWidgetConfigPopulationFloor;
+    long long  _articleListBackgroundMinimumUpdateInterval;
+    long long  _articleListForegroundMinimumUpdateInterval;
     long long  _backgroundMinimumUpdateInterval;
     unsigned int  _enabledSections;
     long long  _forYouBackgroundMinimumUpdateInterval;
@@ -14,11 +16,14 @@
     struct { 
         unsigned int alternativeButlerWidgetConfigPopulationCeiling : 1; 
         unsigned int alternativeButlerWidgetConfigPopulationFloor : 1; 
+        unsigned int articleListBackgroundMinimumUpdateInterval : 1; 
+        unsigned int articleListForegroundMinimumUpdateInterval : 1; 
         unsigned int backgroundMinimumUpdateInterval : 1; 
         unsigned int forYouBackgroundMinimumUpdateInterval : 1; 
         unsigned int forYouCutoffTime : 1; 
         unsigned int forYouForegroundMinimumUpdateInterval : 1; 
         unsigned int foregroundMinimumUpdateInterval : 1; 
+        unsigned int minimumArticleExposureDurationToBePreseen : 1; 
         unsigned int parsecPopulationCeiling : 1; 
         unsigned int parsecPopulationFloor : 1; 
         unsigned int parsecTrendingCutoffTime : 1; 
@@ -26,11 +31,18 @@
         unsigned int topStoriesCutoffTime : 1; 
         unsigned int topStoriesForegroundMinimumUpdateInterval : 1; 
         unsigned int trendingBackgroundMinimumUpdateInterval : 1; 
+        unsigned int trendingByParsecBackgroundMinimumUpdateInterval : 1; 
+        unsigned int trendingByParsecForegroundMinimumUpdateInterval : 1; 
         unsigned int trendingCutoffTime : 1; 
         unsigned int trendingForegroundMinimumUpdateInterval : 1; 
+        unsigned int widgetSectionConfigBackgroundMinimumUpdateInterval : 1; 
+        unsigned int widgetSectionConfigForegroundMinimumUpdateInterval : 1; 
         unsigned int enabledSections : 1; 
+        unsigned int minimumNumberOfTimesPreseenToBeSeen : 1; 
     }  _has;
     NSString * _identifier;
+    long long  _minimumArticleExposureDurationToBePreseen;
+    unsigned int  _minimumNumberOfTimesPreseenToBeSeen;
     double  _parsecPopulationCeiling;
     double  _parsecPopulationFloor;
     long long  _parsecTrendingCutoffTime;
@@ -38,12 +50,18 @@
     long long  _topStoriesCutoffTime;
     long long  _topStoriesForegroundMinimumUpdateInterval;
     long long  _trendingBackgroundMinimumUpdateInterval;
+    long long  _trendingByParsecBackgroundMinimumUpdateInterval;
+    long long  _trendingByParsecForegroundMinimumUpdateInterval;
     long long  _trendingCutoffTime;
     long long  _trendingForegroundMinimumUpdateInterval;
+    long long  _widgetSectionConfigBackgroundMinimumUpdateInterval;
+    long long  _widgetSectionConfigForegroundMinimumUpdateInterval;
 }
 
 @property (nonatomic) double alternativeButlerWidgetConfigPopulationCeiling;
 @property (nonatomic) double alternativeButlerWidgetConfigPopulationFloor;
+@property (nonatomic) long long articleListBackgroundMinimumUpdateInterval;
+@property (nonatomic) long long articleListForegroundMinimumUpdateInterval;
 @property (nonatomic) long long backgroundMinimumUpdateInterval;
 @property (nonatomic) unsigned int enabledSections;
 @property (nonatomic) long long forYouBackgroundMinimumUpdateInterval;
@@ -52,6 +70,8 @@
 @property (nonatomic) long long foregroundMinimumUpdateInterval;
 @property (nonatomic) BOOL hasAlternativeButlerWidgetConfigPopulationCeiling;
 @property (nonatomic) BOOL hasAlternativeButlerWidgetConfigPopulationFloor;
+@property (nonatomic) BOOL hasArticleListBackgroundMinimumUpdateInterval;
+@property (nonatomic) BOOL hasArticleListForegroundMinimumUpdateInterval;
 @property (nonatomic) BOOL hasBackgroundMinimumUpdateInterval;
 @property (nonatomic) BOOL hasEnabledSections;
 @property (nonatomic) BOOL hasForYouBackgroundMinimumUpdateInterval;
@@ -59,6 +79,8 @@
 @property (nonatomic) BOOL hasForYouForegroundMinimumUpdateInterval;
 @property (nonatomic) BOOL hasForegroundMinimumUpdateInterval;
 @property (nonatomic, readonly) BOOL hasIdentifier;
+@property (nonatomic) BOOL hasMinimumArticleExposureDurationToBePreseen;
+@property (nonatomic) BOOL hasMinimumNumberOfTimesPreseenToBeSeen;
 @property (nonatomic) BOOL hasParsecPopulationCeiling;
 @property (nonatomic) BOOL hasParsecPopulationFloor;
 @property (nonatomic) BOOL hasParsecTrendingCutoffTime;
@@ -66,9 +88,15 @@
 @property (nonatomic) BOOL hasTopStoriesCutoffTime;
 @property (nonatomic) BOOL hasTopStoriesForegroundMinimumUpdateInterval;
 @property (nonatomic) BOOL hasTrendingBackgroundMinimumUpdateInterval;
+@property (nonatomic) BOOL hasTrendingByParsecBackgroundMinimumUpdateInterval;
+@property (nonatomic) BOOL hasTrendingByParsecForegroundMinimumUpdateInterval;
 @property (nonatomic) BOOL hasTrendingCutoffTime;
 @property (nonatomic) BOOL hasTrendingForegroundMinimumUpdateInterval;
+@property (nonatomic) BOOL hasWidgetSectionConfigBackgroundMinimumUpdateInterval;
+@property (nonatomic) BOOL hasWidgetSectionConfigForegroundMinimumUpdateInterval;
 @property (nonatomic, retain) NSString *identifier;
+@property (nonatomic) long long minimumArticleExposureDurationToBePreseen;
+@property (nonatomic) unsigned int minimumNumberOfTimesPreseenToBeSeen;
 @property (nonatomic) double parsecPopulationCeiling;
 @property (nonatomic) double parsecPopulationFloor;
 @property (nonatomic) long long parsecTrendingCutoffTime;
@@ -76,12 +104,18 @@
 @property (nonatomic) long long topStoriesCutoffTime;
 @property (nonatomic) long long topStoriesForegroundMinimumUpdateInterval;
 @property (nonatomic) long long trendingBackgroundMinimumUpdateInterval;
+@property (nonatomic) long long trendingByParsecBackgroundMinimumUpdateInterval;
+@property (nonatomic) long long trendingByParsecForegroundMinimumUpdateInterval;
 @property (nonatomic) long long trendingCutoffTime;
 @property (nonatomic) long long trendingForegroundMinimumUpdateInterval;
+@property (nonatomic) long long widgetSectionConfigBackgroundMinimumUpdateInterval;
+@property (nonatomic) long long widgetSectionConfigForegroundMinimumUpdateInterval;
 
 - (void).cxx_destruct;
 - (double)alternativeButlerWidgetConfigPopulationCeiling;
 - (double)alternativeButlerWidgetConfigPopulationFloor;
+- (long long)articleListBackgroundMinimumUpdateInterval;
+- (long long)articleListForegroundMinimumUpdateInterval;
 - (long long)backgroundMinimumUpdateInterval;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -93,6 +127,8 @@
 - (long long)foregroundMinimumUpdateInterval;
 - (BOOL)hasAlternativeButlerWidgetConfigPopulationCeiling;
 - (BOOL)hasAlternativeButlerWidgetConfigPopulationFloor;
+- (BOOL)hasArticleListBackgroundMinimumUpdateInterval;
+- (BOOL)hasArticleListForegroundMinimumUpdateInterval;
 - (BOOL)hasBackgroundMinimumUpdateInterval;
 - (BOOL)hasEnabledSections;
 - (BOOL)hasForYouBackgroundMinimumUpdateInterval;
@@ -100,6 +136,8 @@
 - (BOOL)hasForYouForegroundMinimumUpdateInterval;
 - (BOOL)hasForegroundMinimumUpdateInterval;
 - (BOOL)hasIdentifier;
+- (BOOL)hasMinimumArticleExposureDurationToBePreseen;
+- (BOOL)hasMinimumNumberOfTimesPreseenToBeSeen;
 - (BOOL)hasParsecPopulationCeiling;
 - (BOOL)hasParsecPopulationFloor;
 - (BOOL)hasParsecTrendingCutoffTime;
@@ -107,18 +145,26 @@
 - (BOOL)hasTopStoriesCutoffTime;
 - (BOOL)hasTopStoriesForegroundMinimumUpdateInterval;
 - (BOOL)hasTrendingBackgroundMinimumUpdateInterval;
+- (BOOL)hasTrendingByParsecBackgroundMinimumUpdateInterval;
+- (BOOL)hasTrendingByParsecForegroundMinimumUpdateInterval;
 - (BOOL)hasTrendingCutoffTime;
 - (BOOL)hasTrendingForegroundMinimumUpdateInterval;
+- (BOOL)hasWidgetSectionConfigBackgroundMinimumUpdateInterval;
+- (BOOL)hasWidgetSectionConfigForegroundMinimumUpdateInterval;
 - (unsigned int)hash;
 - (id)identifier;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (long long)minimumArticleExposureDurationToBePreseen;
+- (unsigned int)minimumNumberOfTimesPreseenToBeSeen;
 - (double)parsecPopulationCeiling;
 - (double)parsecPopulationFloor;
 - (long long)parsecTrendingCutoffTime;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAlternativeButlerWidgetConfigPopulationCeiling:(double)arg1;
 - (void)setAlternativeButlerWidgetConfigPopulationFloor:(double)arg1;
+- (void)setArticleListBackgroundMinimumUpdateInterval:(long long)arg1;
+- (void)setArticleListForegroundMinimumUpdateInterval:(long long)arg1;
 - (void)setBackgroundMinimumUpdateInterval:(long long)arg1;
 - (void)setEnabledSections:(unsigned int)arg1;
 - (void)setForYouBackgroundMinimumUpdateInterval:(long long)arg1;
@@ -127,12 +173,16 @@
 - (void)setForegroundMinimumUpdateInterval:(long long)arg1;
 - (void)setHasAlternativeButlerWidgetConfigPopulationCeiling:(BOOL)arg1;
 - (void)setHasAlternativeButlerWidgetConfigPopulationFloor:(BOOL)arg1;
+- (void)setHasArticleListBackgroundMinimumUpdateInterval:(BOOL)arg1;
+- (void)setHasArticleListForegroundMinimumUpdateInterval:(BOOL)arg1;
 - (void)setHasBackgroundMinimumUpdateInterval:(BOOL)arg1;
 - (void)setHasEnabledSections:(BOOL)arg1;
 - (void)setHasForYouBackgroundMinimumUpdateInterval:(BOOL)arg1;
 - (void)setHasForYouCutoffTime:(BOOL)arg1;
 - (void)setHasForYouForegroundMinimumUpdateInterval:(BOOL)arg1;
 - (void)setHasForegroundMinimumUpdateInterval:(BOOL)arg1;
+- (void)setHasMinimumArticleExposureDurationToBePreseen:(BOOL)arg1;
+- (void)setHasMinimumNumberOfTimesPreseenToBeSeen:(BOOL)arg1;
 - (void)setHasParsecPopulationCeiling:(BOOL)arg1;
 - (void)setHasParsecPopulationFloor:(BOOL)arg1;
 - (void)setHasParsecTrendingCutoffTime:(BOOL)arg1;
@@ -140,9 +190,15 @@
 - (void)setHasTopStoriesCutoffTime:(BOOL)arg1;
 - (void)setHasTopStoriesForegroundMinimumUpdateInterval:(BOOL)arg1;
 - (void)setHasTrendingBackgroundMinimumUpdateInterval:(BOOL)arg1;
+- (void)setHasTrendingByParsecBackgroundMinimumUpdateInterval:(BOOL)arg1;
+- (void)setHasTrendingByParsecForegroundMinimumUpdateInterval:(BOOL)arg1;
 - (void)setHasTrendingCutoffTime:(BOOL)arg1;
 - (void)setHasTrendingForegroundMinimumUpdateInterval:(BOOL)arg1;
+- (void)setHasWidgetSectionConfigBackgroundMinimumUpdateInterval:(BOOL)arg1;
+- (void)setHasWidgetSectionConfigForegroundMinimumUpdateInterval:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1;
+- (void)setMinimumArticleExposureDurationToBePreseen:(long long)arg1;
+- (void)setMinimumNumberOfTimesPreseenToBeSeen:(unsigned int)arg1;
 - (void)setParsecPopulationCeiling:(double)arg1;
 - (void)setParsecPopulationFloor:(double)arg1;
 - (void)setParsecTrendingCutoffTime:(long long)arg1;
@@ -150,14 +206,22 @@
 - (void)setTopStoriesCutoffTime:(long long)arg1;
 - (void)setTopStoriesForegroundMinimumUpdateInterval:(long long)arg1;
 - (void)setTrendingBackgroundMinimumUpdateInterval:(long long)arg1;
+- (void)setTrendingByParsecBackgroundMinimumUpdateInterval:(long long)arg1;
+- (void)setTrendingByParsecForegroundMinimumUpdateInterval:(long long)arg1;
 - (void)setTrendingCutoffTime:(long long)arg1;
 - (void)setTrendingForegroundMinimumUpdateInterval:(long long)arg1;
+- (void)setWidgetSectionConfigBackgroundMinimumUpdateInterval:(long long)arg1;
+- (void)setWidgetSectionConfigForegroundMinimumUpdateInterval:(long long)arg1;
 - (long long)topStoriesBackgroundMinimumUpdateInterval;
 - (long long)topStoriesCutoffTime;
 - (long long)topStoriesForegroundMinimumUpdateInterval;
 - (long long)trendingBackgroundMinimumUpdateInterval;
+- (long long)trendingByParsecBackgroundMinimumUpdateInterval;
+- (long long)trendingByParsecForegroundMinimumUpdateInterval;
 - (long long)trendingCutoffTime;
 - (long long)trendingForegroundMinimumUpdateInterval;
+- (long long)widgetSectionConfigBackgroundMinimumUpdateInterval;
+- (long long)widgetSectionConfigForegroundMinimumUpdateInterval;
 - (void)writeTo:(id)arg1;
 
 @end

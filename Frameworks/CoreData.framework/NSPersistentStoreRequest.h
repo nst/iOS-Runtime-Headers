@@ -11,6 +11,8 @@
 
 + (void)initialize;
 
+- (BOOL)_secureOperation;
+- (void)_setSecureOperation:(BOOL)arg1;
 - (id)affectedStores;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

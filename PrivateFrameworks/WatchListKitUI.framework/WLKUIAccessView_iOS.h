@@ -3,10 +3,10 @@
  */
 
 @interface WLKUIAccessView_iOS : UIView <TVCarouselViewDataSource> {
-    NSString * _accountName;
     UIButton * _allowButton;
     NSArray * _apps;
     UILabel * _bodyLabel;
+    UIScrollView * _bodyScroll;
     UIStackView * _bottomStack;
     TVCarouselView * _carouselView;
     UIStackView * _contentStack;
@@ -26,6 +26,8 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
++ (struct CGSize { float x1; float x2; })iconSize;
+
 - (void).cxx_destruct;
 - (id)_buildCarousel;
 - (id)_buildLogoStack;
@@ -34,13 +36,16 @@
 - (id)carouselView:(id)arg1 cellForItemAtIndex:(unsigned int)arg2;
 - (void)dealloc;
 - (id)disallowButton;
-- (id)initWithApps:(id)arg1 accountName:(id)arg2;
+- (id)initWithApps:(id)arg1;
 - (void)layoutSubviews;
 - (id)nackButton;
 - (unsigned int)numberOfItemsInCarouselView:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)privacyButton;
 - (id)seeAllButton;
+- (void)setBody:(id)arg1;
+- (void)setFooter:(id)arg1;
+- (void)setTitle:(id)arg1;
 - (void)showNackScreen;
 
 @end

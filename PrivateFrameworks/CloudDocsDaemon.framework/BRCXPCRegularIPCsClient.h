@@ -13,11 +13,12 @@
 - (id)_crossZoneMoveOperationForReset:(BOOL)arg1;
 - (id)_loggedInUserPropertyValuesForKeys:(id)arg1 error:(id*)arg2;
 - (void)_presentAcceptDialogsWithURL:(id)arg1 metadata:(id)arg2 reply:(id /* block */)arg3;
+- (void)_retryCZMigrationWithRetryCount:(int)arg1 syncContext:(id)arg2 reply:(id /* block */)arg3;
 - (void)_t_blockSyncForContainerID:(id)arg1 withPendingUpgradeToOSName:(id)arg2 reply:(id /* block */)arg3;
 - (void)_t_blockSyncUpOfItemWithID:(id)arg1 containerID:(id)arg2 withPendingUpgradeToOSName:(id)arg3 reply:(id /* block */)arg4;
 - (void)_t_clearAllBlockedItemsForContainerID:(id)arg1 reply:(id /* block */)arg2;
 - (void)_t_getPCSChainStateAtURL:(id)arg1 reply:(id /* block */)arg2;
-- (void)_t_migrateAllZonesToClouddocsWithReset:(BOOL)arg1 reply:(id /* block */)arg2;
+- (void)_t_migrateAllZonesToClouddocsWithReset:(BOOL)arg1 onlyPrepare:(BOOL)arg2 reply:(id /* block */)arg3;
 - (void)_t_pauseSyncDownOfContainer:(id)arg1 reply:(id /* block */)arg2;
 - (void)_t_resumeSyncDownOfContainer:(id)arg1 reply:(id /* block */)arg2;
 - (void)_t_setFSEventProcessingState:(BOOL)arg1 reply:(id /* block */)arg2;
@@ -38,6 +39,7 @@
 - (void)deleteAllContentsOfContainerID:(id)arg1 onClient:(BOOL)arg2 onServer:(BOOL)arg3 reply:(id /* block */)arg4;
 - (void)didReceiveHandoffRequestForBundleID:(id)arg1 reply:(id /* block */)arg2;
 - (void)dropSpotlightIndexWithReply:(id /* block */)arg1;
+- (void)dumpCoordinationInfoTo:(id)arg1 reply:(id /* block */)arg2;
 - (void)dumpDatabaseTo:(id)arg1 containerID:(id)arg2 reply:(id /* block */)arg3;
 - (void)evictItemAtURL:(id)arg1 options:(unsigned int)arg2 reply:(id /* block */)arg3;
 - (void)evictOldDocumentsWithReply:(id /* block */)arg1;

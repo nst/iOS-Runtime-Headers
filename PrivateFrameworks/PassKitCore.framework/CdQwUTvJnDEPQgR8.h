@@ -3,18 +3,37 @@
  */
 
 @interface CdQwUTvJnDEPQgR8 : NSObject {
+    BOOL  _callbackDone;
+    NSObject<OS_dispatch_queue> * _callback_queue;
     jprL7AuZZkLkFoBK * _context;
+    id /* block */  _handler;
+    NSError * _intermediateError;
+    NSData * _intermediateScoreMessage;
 }
 
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *callback_queue;
 @property (nonatomic, retain) jprL7AuZZkLkFoBK *context;
+@property (nonatomic, copy) id /* block */ handler;
+@property (nonatomic, retain) NSError *intermediateError;
+@property (nonatomic, retain) NSData *intermediateScoreMessage;
 
 + (id)scorerWithContext:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)_decryptScores:(id)arg1 error:(id*)arg2;
+- (id)callback_queue;
 - (id)context;
+- (id /* block */)handler;
 - (id)initWithContext:(id)arg1;
+- (id)intermediateError;
+- (id)intermediateScoreMessage;
 - (void)scoreMessageWithCompletionHandler:(id /* block */)arg1;
+- (void)setCallback_queue:(id)arg1;
 - (void)setContext:(id)arg1;
+- (void)setHandler:(id /* block */)arg1;
+- (void)setIntermediateError:(id)arg1;
+- (void)setIntermediateScoreMessage:(id)arg1;
 - (id)settingsFromContext:(id)arg1;
+- (void)stop;
 
 @end

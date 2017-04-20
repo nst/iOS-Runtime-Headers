@@ -3,37 +3,32 @@
  */
 
 @interface PHFaceGroup : PHObject {
-    int  _faceGroupType;
+    int  _personBuilderState;
     int  _personModelId;
     int  _unnamedFaceCount;
 }
 
-@property (nonatomic, readonly) int faceGroupType;
-@property (nonatomic) int personModelId;
+@property (nonatomic, readonly) int personBuilderState;
+@property (nonatomic, readonly) int personModelId;
 @property (nonatomic, readonly) int unnamedFaceCount;
 
 + (id)_transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
 + (id)entityKeyForPropertyKey:(id)arg1;
-+ (id)fetchAlgorithmicFaceGroupsForPerson:(id)arg1 options:(id)arg2;
-+ (id)fetchAlgorithmicFaceGroupsWithOptions:(id)arg1;
-+ (id)fetchFaceGroupsWithFace:(id)arg1 type:(int)arg2 options:(id)arg3;
++ (id)fetchFaceGroupsForPerson:(id)arg1 options:(id)arg2;
++ (id)fetchFaceGroupsWithFace:(id)arg1 options:(id)arg2;
 + (id)fetchFaceGroupsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 + (id)fetchFaceGroupsWithOptions:(id)arg1;
-+ (id)fetchFaceGroupsWithType:(int)arg1 options:(id)arg2;
 + (id)fetchPredicateFromComparisonPredicate:(id)arg1 options:(id)arg2;
-+ (id)fetchRejectedFaceGroupsForPerson:(id)arg1 options:(id)arg2;
-+ (id)fetchRejectedFaceGroupsWithOptions:(id)arg1;
 + (id)fetchType;
 + (id)identifierCode;
 + (id)managedEntityName;
 + (id)propertiesToFetchWithHint:(unsigned int)arg1;
 
 - (Class)changeRequestClass;
-- (int)faceGroupType;
 - (int)getPersonModelId;
 - (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned int)arg2 photoLibrary:(id)arg3;
+- (int)personBuilderState;
 - (int)personModelId;
-- (void)setPersonModelId:(int)arg1;
 - (int)unnamedFaceCount;
 
 @end

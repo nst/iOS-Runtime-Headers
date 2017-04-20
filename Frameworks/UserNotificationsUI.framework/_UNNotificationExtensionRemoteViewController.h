@@ -30,6 +30,8 @@
 - (void)_mediaPause;
 - (void)_mediaPlay;
 - (void)_performSelectorOnExtension:(SEL)arg1;
+- (void)_preserveInputViews;
+- (void)_restoreInputViews;
 - (void)_setupExtensionViewController:(id)arg1;
 - (BOOL)_shouldForwardSystemLayoutFittingSizeChanges;
 - (void)_updateMediaPlayPauseButton;

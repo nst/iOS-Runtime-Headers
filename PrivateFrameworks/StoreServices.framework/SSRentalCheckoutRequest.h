@@ -4,6 +4,7 @@
 
 @interface SSRentalCheckoutRequest : SSRequest <SSXPCCoding> {
     NSNumber * _accountIdentifier;
+    unsigned int  _checkoutType;
     BOOL  _checkoutWithPlay;
     long long  _downloadIdentifier;
     NSNumber * _rentalKeyIdentifier;
@@ -12,6 +13,7 @@
 }
 
 @property (readonly) NSNumber *accountIdentifier;
+@property unsigned int checkoutType;
 @property (getter=shouldCheckoutWithPlay, nonatomic) BOOL checkoutWithPlay;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -23,6 +25,7 @@
 @property (readonly) Class superclass;
 
 - (id)accountIdentifier;
+- (unsigned int)checkoutType;
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (long long)downloadIdentifier;
@@ -32,6 +35,7 @@
 - (id)initWithSinfs:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)rentalKeyIdentifier;
+- (void)setCheckoutType:(unsigned int)arg1;
 - (void)setCheckoutWithPlay:(BOOL)arg1;
 - (void)setShouldValidateRentalInfo:(BOOL)arg1;
 - (BOOL)shouldCheckoutWithPlay;

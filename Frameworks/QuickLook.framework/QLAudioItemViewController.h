@@ -45,7 +45,6 @@
 - (void)setScrubberVerticalOffset:(float)arg1;
 - (void)setScrubbing:(BOOL)arg1;
 - (void)setTopScrubber:(id)arg1;
-- (BOOL)shouldPauseOnDisappear;
 - (id)timeLabelScrollView;
 - (id)topScrubber;
 - (void)transitionDidFinish:(BOOL)arg1 didComplete:(BOOL)arg2;

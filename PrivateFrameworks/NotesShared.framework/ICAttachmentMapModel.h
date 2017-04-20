@@ -13,5 +13,6 @@
 - (BOOL)hasPreviews;
 - (BOOL)needToGeneratePreviews;
 - (BOOL)requiresNetworkToGeneratePreview;
+- (BOOL)shouldSyncPreviewImageToCloud:(id)arg1;
 
 @end

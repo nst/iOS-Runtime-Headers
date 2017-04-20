@@ -4,6 +4,10 @@
 
 @interface _UIDocumentPickerCell : UICollectionViewTableCell {
     UILongPressGestureRecognizer * _actionGestureRecognizer;
+    NSArray * _actions;
+    NSArray * _activeConstraints;
+    NSArray * _availableActions;
+    UIView * _cachedSelectedBackgroundView;
     int  _cellStyle;
     _UIDocumentPickerDocumentCollectionViewController * _collectionView;
     NSArray * _gridConstraints;
@@ -14,6 +18,8 @@
     UILongPressGestureRecognizer * _pickableDiagnosticGestureRecognizer;
     UIProgressView * _progressView;
     UIImageView * _selectionView;
+    NSMutableArray * _selectionViewConstraints;
+    UIView * _selectionViewsThumbnailView;
     UILabel * _subtitle2Label;
     UILabel * _subtitleJoiner;
     UILabel * _subtitleLabel;
@@ -23,9 +29,14 @@
     NSLayoutConstraint * _thumbnailCenterWidthConstraint;
     UIImageView * _thumbnailView;
     UILabel * _titleLabel;
+    BOOL  _transitioningLayout;
 }
 
 @property (nonatomic, retain) UILongPressGestureRecognizer *actionGestureRecognizer;
+@property (nonatomic, retain) NSArray *actions;
+@property (nonatomic, retain) NSArray *activeConstraints;
+@property (nonatomic, retain) NSArray *availableActions;
+@property (nonatomic, retain) UIView *cachedSelectedBackgroundView;
 @property (nonatomic) int cellStyle;
 @property (nonatomic) _UIDocumentPickerDocumentCollectionViewController *collectionView;
 @property (nonatomic, retain) NSArray *gridConstraints;
@@ -36,6 +47,8 @@
 @property (nonatomic, retain) UILongPressGestureRecognizer *pickableDiagnosticGestureRecognizer;
 @property (nonatomic, retain) UIProgressView *progressView;
 @property (nonatomic, retain) UIImageView *selectionView;
+@property (nonatomic, retain) NSMutableArray *selectionViewConstraints;
+@property (nonatomic, retain) UIView *selectionViewsThumbnailView;
 @property (nonatomic, retain) UILabel *subtitle2Label;
 @property (nonatomic, retain) UILabel *subtitleJoiner;
 @property (nonatomic, retain) UILabel *subtitleLabel;
@@ -45,6 +58,7 @@
 @property (nonatomic, retain) NSLayoutConstraint *thumbnailCenterWidthConstraint;
 @property (nonatomic, retain) UIImageView *thumbnailView;
 @property (nonatomic, retain) UILabel *titleLabel;
+@property (getter=isTransitioningLayout, nonatomic) BOOL transitioningLayout;
 
 + (id)_subtitleFontForTable:(BOOL)arg1;
 + (id)_titleFontForTable:(BOOL)arg1;
@@ -69,25 +83,36 @@
 - (void)_updateSelectionState:(BOOL)arg1;
 - (void)_updateSeparatorInset;
 - (id)actionGestureRecognizer;
+- (id)actions;
+- (id)activeConstraints;
 - (void)applyLayoutAttributes:(id)arg1;
 - (id)availableActions;
+- (id)cachedSelectedBackgroundView;
 - (BOOL)canBecomeFirstResponder;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (int)cellStyle;
 - (id)collectionView;
 - (void)dealloc;
+- (void)didTransitionFromLayout:(id)arg1 toLayout:(id)arg2;
 - (id)gridConstraints;
 - (id)indentationConstraint;
 - (id)indentationHelperView;
 - (id)indentedConstraints;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isTransitioningLayout;
 - (id)item;
 - (id)pickableDiagnosticGestureRecognizer;
 - (void)prepareForReuse;
 - (id)progressView;
 - (void)reloadItem:(BOOL)arg1;
 - (id)selectionView;
+- (id)selectionViewConstraints;
+- (id)selectionViewsThumbnailView;
 - (void)setActionGestureRecognizer:(id)arg1;
+- (void)setActions:(id)arg1;
+- (void)setActiveConstraints:(id)arg1;
+- (void)setAvailableActions:(id)arg1;
+- (void)setCachedSelectedBackgroundView:(id)arg1;
 - (void)setCellStyle:(int)arg1;
 - (void)setCollectionView:(id)arg1;
 - (void)setEditing:(BOOL)arg1;
@@ -101,6 +126,8 @@
 - (void)setProgressView:(id)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setSelectionView:(id)arg1;
+- (void)setSelectionViewConstraints:(id)arg1;
+- (void)setSelectionViewsThumbnailView:(id)arg1;
 - (void)setSubtitle2Label:(id)arg1;
 - (void)setSubtitleJoiner:(id)arg1;
 - (void)setSubtitleLabel:(id)arg1;
@@ -110,6 +137,7 @@
 - (void)setThumbnailCenterWidthConstraint:(id)arg1;
 - (void)setThumbnailView:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
+- (void)setTransitioningLayout:(BOOL)arg1;
 - (id)subtitle2Label;
 - (id)subtitleJoiner;
 - (id)subtitleLabel;
@@ -122,6 +150,7 @@
 - (id)titleLabel;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateActionGestureRecognizer;
-- (void)updateForEditingState;
+- (void)updateForEditingState:(BOOL)arg1;
+- (void)willTransitionFromLayout:(id)arg1 toLayout:(id)arg2;
 
 @end

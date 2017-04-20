@@ -23,6 +23,12 @@
 - (void)setAceId:(id)arg1;
 - (void)setRefId:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)newAceObjectWithDictionaryWithCustomHandling:(id)arg1 context:(id)arg2;
+
+- (void)dealloc;
+
 // Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
 
 - (void)siriCore_addSendCompletion:(id /* block */)arg1;

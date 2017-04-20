@@ -136,7 +136,7 @@
 - (id)__getOrCreateServerZone:(id)arg1 ownerName:(id)arg2;
 - (void)__registerServerZone:(id)arg1 clientZone:(id)arg2 appLibrary:(id)arg3 isShared:(BOOL)arg4;
 - (BOOL)_checkIntegrity:(id)arg1 serverTruth:(BOOL)arg2 error:(id*)arg3;
-- (void)_clearNeedsUpgradeErrorsIfNeeded:(id)arg1 brVersion:(id)arg2;
+- (void)_clearNeedsUpgradeErrors:(id)arg1 brVersion:(id)arg2;
 - (id)_clientZonesMatchingSearchString:(id)arg1;
 - (id)_containerMetadataRecordsToSaveWithBatchSize:(unsigned int)arg1;
 - (void)_createAccountSupportPathIfNeeded:(id)arg1 protectParent:(BOOL)arg2;
@@ -181,6 +181,7 @@
 - (struct PQLResultSet { Class x1; }*)_sharedClientZonesEnumerator:(id)arg1;
 - (id)_sharedServerZoneByName:(id)arg1 ownerName:(id)arg2 db:(id)arg3;
 - (struct PQLResultSet { Class x1; }*)_sharedServerZonesEnumerator:(id)arg1;
+- (BOOL)_shouldPrivateAppLibraryBeCZMMoved:(id)arg1;
 - (void)_showiCloudDriveAppInstallationNotificationIfNeeded;
 - (void)_startWatcher;
 - (BOOL)_stepBackupDetector:(struct backup_detector { unsigned long long x1; unsigned long long x2; unsigned long long x3; })arg1 newState:(struct backup_detector { unsigned long long x1; unsigned long long x2; unsigned long long x3; }*)arg2 error:(id*)arg3;
@@ -247,6 +248,7 @@
 - (BOOL)disableSyncforSyncedFolderType:(unsigned int)arg1 isInitialCreation:(BOOL)arg2 error:(id*)arg3;
 - (id)diskReclaimer;
 - (BOOL)dumpDatabaseToFileHandle:(id)arg1 zoneName:(id)arg2 error:(id*)arg3;
+- (BOOL)dumpFileCoordinationInfoToFileHandle:(id)arg1 error:(id*)arg2;
 - (void)dumpMiscOperationsToContext:(id)arg1;
 - (BOOL)dumpStatusToFileHandle:(id)arg1 zoneName:(id)arg2 error:(id*)arg3;
 - (void)dumpXPCClientsToContext:(id)arg1;
@@ -335,6 +337,7 @@
 - (BOOL)saveAppLibraryToDB:(id)arg1;
 - (BOOL)saveClientZoneToDB:(id)arg1;
 - (BOOL)saveServerZoneToDB:(id)arg1;
+- (void)scheduleZoneMovesToCloudDocs:(id)arg1;
 - (id)serverDB;
 - (id)serverState;
 - (id)serverZoneByID:(id)arg1;

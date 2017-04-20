@@ -22,6 +22,7 @@
 - (BOOL)isDefaultRightToLeft;
 - (BOOL)isDesiredForTraits:(id)arg1;
 - (BOOL)isExtensionInputMode;
+- (BOOL)isStalledExtensionInputMode;
 - (id)normalizedIdentifierLevels;
 - (void)setExtension:(id)arg1;
 - (void)setPrimaryLanguage:(id)arg1;

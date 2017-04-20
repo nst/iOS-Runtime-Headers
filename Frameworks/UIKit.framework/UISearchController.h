@@ -104,6 +104,7 @@
 - (void)_updateSearchResultsContentScrollViewWithDelta:(struct CGSize { float x1; float x2; })arg1;
 - (void)_updateSearchResultsControllerWithDelta:(struct CGSize { float x1; float x2; })arg1;
 - (void)_updateSearchResultsPositionWithDelta:(struct CGSize { float x1; float x2; })arg1;
+- (void)_updateSystemInputViewController;
 - (void)_updateTableHeaderBackgroundViewInTableView:(id)arg1 amountScrolledUnder:(float)arg2;
 - (void)_updateVisibilityOfSearchResultsForSearchBar:(id)arg1;
 - (void)_watchScrollView:(id)arg1 forScrolling:(BOOL)arg2;

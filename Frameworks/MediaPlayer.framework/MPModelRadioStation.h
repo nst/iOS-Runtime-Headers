@@ -6,6 +6,7 @@
     id /* block */  _artworkCatalogBlock;
     BOOL  _beats1;
     NSString * _editorNotes;
+    BOOL  _hasExplicitContent;
     NSString * _name;
     NSString * _shortEditorNotes;
 }
@@ -13,17 +14,20 @@
 @property (nonatomic, copy) id /* block */ artworkCatalogBlock;
 @property (getter=isBeats1, nonatomic) BOOL beats1;
 @property (nonatomic, copy) NSString *editorNotes;
+@property (nonatomic) BOOL hasExplicitContent;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *shortEditorNotes;
 
 + (id)__MPModelPropertyRadioStationArtwork__PROPERTY;
 + (id)__MPModelPropertyRadioStationBeats1__PROPERTY;
 + (id)__MPModelPropertyRadioStationEditorNotes__PROPERTY;
++ (id)__MPModelPropertyRadioStationHasExplicitContent__PROPERTY;
 + (id)__MPModelPropertyRadioStationName__PROPERTY;
 + (id)__MPModelPropertyRadioStationShortEditorNotes__PROPERTY;
 + (id)__artworkCatalogBlock__KEY;
 + (id)__beats1__KEY;
 + (id)__editorNotes__KEY;
++ (id)__hasExplicitContent__KEY;
 + (id)__name__KEY;
 + (id)__shortEditorNotes__KEY;
 
@@ -32,11 +36,13 @@
 - (id /* block */)artworkCatalogBlock;
 - (id)descriptionWithType:(int)arg1;
 - (id)editorNotes;
+- (BOOL)hasExplicitContent;
 - (BOOL)isBeats1;
 - (id)name;
 - (void)setArtworkCatalogBlock:(id /* block */)arg1;
 - (void)setBeats1:(BOOL)arg1;
 - (void)setEditorNotes:(id)arg1;
+- (void)setHasExplicitContent:(BOOL)arg1;
 - (void)setName:(id)arg1;
 - (void)setShortEditorNotes:(id)arg1;
 - (id)shortEditorNotes;

@@ -31,15 +31,12 @@
 - (void)_applicationDidEnterForegroundNotification:(id)arg1;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)_defaultMediaLibraryDidChangeNotification:(id)arg1;
-- (void)_mediaLibraryDidChangeNotification:(id)arg1;
 - (BOOL)_onQueue_isEnabled;
 - (BOOL)_onQueue_shouldBeActive;
 - (void)_onServiceQueue_becomeActiveService;
 - (id)_onServiceQueue_connectedUPPServiceProxy;
 - (void)_onServiceQueue_resignActiveService;
-- (void)_onServiceQueue_setDatabaseHasBookmarkableContents:(BOOL)arg1;
 - (void)_onServiceQueue_updateActiveServiceIfNeeded;
-- (void)_onServiceQueue_updateBoomkarkabilityState;
 - (id)_playbackPositionEntityWithValuesFromMusicLibraryTrackPersistentID:(long long)arg1;
 - (BOOL)applicationBecomingActive;
 - (void)beginUsingPlaybackPositionMetadata;
@@ -50,6 +47,9 @@
 - (BOOL)isServiceActive;
 - (BOOL)isServiceActive;
 - (void)noteChangedPlaybackPositionMetadataForTrackPersistentID:(long long)arg1 isCheckpoint:(BOOL)arg2;
+- (void)persistPlaybackPositionMetadataEntity:(id)arg1 isCheckpoint:(BOOL)arg2 completion:(id /* block */)arg3;
+- (id)playbackPositionForLocalEntityIdentifier:(id)arg1;
+- (id)playbackPositionForLocalEntityIdentifiers:(id)arg1;
 - (id)queue;
 - (id)serviceQueue;
 - (void)setBeganUsingPlaybackPositionMetadata:(BOOL)arg1;

@@ -45,6 +45,8 @@
 @property (retain) IKViewElement *toolbarElement;
 @property (getter=isUpdated, nonatomic) BOOL updated;
 
+// Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
+
 - (void).cxx_destruct;
 - (void)_addStyleChangeObserver:(id)arg1;
 - (BOOL)_clearUpdatesForElement:(id)arg1;
@@ -105,5 +107,9 @@
 - (id)templateElement;
 - (id)toolbarElement;
 - (void)updateForDocument:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
+
+- (struct CGSize { float x1; float x2; })tv_adjustedWindowSize;
 
 @end

@@ -79,6 +79,7 @@
 + (id)_kitImageNamed:(id)arg1 withTrait:(id)arg2;
 + (struct CGSize { float x1; float x2; })_legibilityImageSizeForSize:(struct CGSize { float x1; float x2; })arg1 style:(int)arg2;
 + (int)_mirroredImageOrientationForOrientation:(int)arg1;
++ (id)_noiseImage;
 + (unsigned int)_scaleDefinedByPath:(id)arg1;
 + (id)_tintedImageForSize:(struct CGSize { float x1; float x2; })arg1 withTint:(id)arg2 effectsImage:(id)arg3 maskImage:(id)arg4 style:(int)arg5;
 + (id)_tintedImageForSize:(struct CGSize { float x1; float x2; })arg1 withTint:(id)arg2 maskImage:(id)arg3 effectsImage:(id)arg4 style:(int)arg5;
@@ -262,6 +263,8 @@
 
 // Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
 
++ (id)cnui_defaultChevronImage;
++ (id)cnui_highlightedChevronImage;
 + (id)cnui_imageNamed:(id)arg1;
 + (id)cnui_templateImageNamed:(id)arg1;
 + (id)cnui_templateImageNamed:(id)arg1 withTint:(id)arg2;
@@ -287,6 +290,7 @@
 - (id)artworkCatalogBackingFileURL;
 - (id)imageWithEtchedBorderOfColor:(id)arg1 radius:(float)arg2;
 - (id)imageWithShadow:(id)arg1;
+- (id)initWithContentsOfExactFilePath:(id)arg1;
 
 // Image: /System/Library/Frameworks/Messages.framework/Messages
 
@@ -323,6 +327,10 @@
 + (id)ak_underlineTextStyleImage;
 
 - (struct CGImage { }*)akCGImage;
+
+// Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
+
++ (id)aaui_imageFromColor:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
 
@@ -452,15 +460,20 @@
 
 + (id)UIImageFromCIImage:(id)arg1;
 + (struct UIImage { Class x1; }*)fileIconForURL:(id)arg1 withPreferredSize:(struct CGSize { float x1; float x2; })arg2;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })ic_aspectFitImageFrameForViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 imageSize:(struct CGSize { float x1; float x2; })arg2;
 + (struct UIImage { Class x1; }*)ic_imageWithColor:(struct UIColor { Class x1; }*)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 + (struct UIImage { Class x1; }*)ic_imageWithContentsOfURL:(id)arg1;
 + (struct UIImage { Class x1; }*)imageNamed:(id)arg1 withTint:(struct UIColor { Class x1; }*)arg2;
++ (id)orientationMetadataFromImageOrientation:(int)arg1;
++ (struct UIImage { Class x1; }*)orientedImageFromCGImage:(struct CGImage { }*)arg1 scale:(float)arg2 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3;
++ (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformFromImageOrientation:(int)arg1 imageSize:(struct CGSize { float x1; float x2; })arg2;
 
 - (struct UIImage { Class x1; }*)decodeInBackground;
 - (void)decodeWithCompletion:(id /* block */)arg1;
 - (id)ic_JPEGData;
+- (id)ic_JPEGDataWithOrientation:(int)arg1;
 - (id)ic_PNGData;
-- (id)ic_imageDataWithUTType:(id)arg1;
+- (id)ic_imageDataWithUTType:(id)arg1 metadata:(id)arg2;
 - (struct UIImage { Class x1; }*)imageFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct UIImage { Class x1; }*)scaledImageMaxDimension:(float)arg1 scale:(float)arg2;
 - (struct UIImage { Class x1; }*)scaledImageMinDimension:(float)arg1 scale:(float)arg2;
@@ -651,9 +664,13 @@
 - (id)sbf_resizedImagedForCurrentMagnifyMode;
 - (id)sbf_scaleImage:(float)arg1;
 
+// Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
+
++ (id)singlePointImageWithColor:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/Swift/libswiftUIKit.dylib
 
-- (id)initWithImageLiteralResourceName:(id)arg1;
+- (id)initWithImageLiteralResourceName;
 
 // Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
 
@@ -675,10 +692,8 @@
 
 // Image: /System/Library/PrivateFrameworks/UserNotificationsUIKit.framework/UserNotificationsUIKit
 
-+ (id)nc_animatedImageWithImageSource:(struct CGImageSource { }*)arg1;
 + (id)nc_imageFromPDFWithFileURL:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 + (id)nc_imageWithPDDocument:(struct CGPDFDocument { }*)arg1 size:(struct CGSize { float x1; float x2; })arg2;
-+ (struct CGSize { float x1; float x2; })nc_loadAnimatedImageGettingSizeForFileURL:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 
 - (id)nc_alphaOnlyImageForMask;
 

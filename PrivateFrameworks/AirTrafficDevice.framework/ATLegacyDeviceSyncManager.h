@@ -59,6 +59,7 @@
 - (void)cancelSyncOnMessageLink:(id)arg1;
 - (id)currentSyncHostInfo;
 - (void)environmentMonitorDidChangePower:(id)arg1;
+- (id)hostVersion;
 - (id)init;
 - (void)initiateSyncForLibrary:(id)arg1 onMessageLink:(id)arg2;
 - (void)messageLinkWasClosed:(id)arg1;

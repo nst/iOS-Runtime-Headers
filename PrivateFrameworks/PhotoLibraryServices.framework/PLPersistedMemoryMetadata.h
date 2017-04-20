@@ -52,13 +52,11 @@
 @property (nonatomic, retain) NSString *uuid;
 @property (nonatomic) int version;
 
-+ (BOOL)_isMemoryMetadataExtension:(id)arg1;
-+ (BOOL)isMemoryMetadataPath:(id)arg1;
 + (BOOL)isValidPath:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_metadataData;
-- (void)_readMetadata;
+- (BOOL)_readMetadata;
 - (void)_saveMetadata;
 - (BOOL)_updateAssetsInMemory:(id)arg1 relationshipName:(id)arg2 persistedAssetUUIDs:(id)arg3 includePendingChanges:(BOOL)arg4;
 - (id)assetListPredicate;

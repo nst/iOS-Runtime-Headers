@@ -8,11 +8,9 @@
     UILabel * _badgeNumberLabel;
 }
 
-+ (id)badgeNumberLabelHighlightedTextColor;
 + (id)badgeNumberLabelTextColor;
 + (float)badgePadding;
 + (id)reuseIdentifierForClassAndType:(int)arg1;
-+ (id)unreadBubbleHighlightedImage;
 + (id)unreadBubbleImage;
 
 - (void).cxx_destruct;

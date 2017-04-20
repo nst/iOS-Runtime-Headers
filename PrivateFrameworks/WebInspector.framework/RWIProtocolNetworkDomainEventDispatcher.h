@@ -12,7 +12,7 @@
 - (void)loadingFinishedWithRequestId:(id)arg1 timestamp:(double)arg2 sourceMapURL:(id*)arg3;
 - (void)requestServedFromCacheWithRequestId:(id)arg1;
 - (void)requestServedFromMemoryCacheWithRequestId:(id)arg1 frameId:(id)arg2 loaderId:(id)arg3 documentURL:(id)arg4 timestamp:(double)arg5 initiator:(id)arg6 resource:(id)arg7;
-- (void)requestWillBeSentWithRequestId:(id)arg1 frameId:(id)arg2 loaderId:(id)arg3 documentURL:(id)arg4 request:(id)arg5 timestamp:(double)arg6 initiator:(id)arg7 redirectResponse:(id*)arg8 type:(int*)arg9;
+- (void)requestWillBeSentWithRequestId:(id)arg1 frameId:(id)arg2 loaderId:(id)arg3 documentURL:(id)arg4 request:(id)arg5 timestamp:(double)arg6 initiator:(id)arg7 redirectResponse:(id*)arg8 type:(int*)arg9 targetId:(id*)arg10;
 - (void)responseReceivedWithRequestId:(id)arg1 frameId:(id)arg2 loaderId:(id)arg3 timestamp:(double)arg4 type:(int)arg5 response:(id)arg6;
 - (void)webSocketClosedWithRequestId:(id)arg1 timestamp:(double)arg2;
 - (void)webSocketCreatedWithRequestId:(id)arg1 url:(id)arg2;

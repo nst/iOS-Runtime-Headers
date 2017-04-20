@@ -4,7 +4,6 @@
 
 @interface BKSProcessAssertion : NSObject <BKSProcessAssertionClientHandler> {
     BOOL  _acquired;
-    BOOL  _acquiring;
     id /* block */  _acquisitionHandler;
     NSString * _bundleIdentifier;
     BKSProcessAssertionClient * _client;
@@ -30,10 +29,8 @@
 
 + (id)NameForReason:(unsigned int)arg1;
 
-- (BOOL)_acquireAssertionSync;
-- (void)_clientQueue_acquireAssertion;
+- (BOOL)_clientQueue_acquireAssertion;
 - (void)_clientQueue_invalidate:(BOOL)arg1;
-- (void)_clientQueue_notifyAssertionAcquired:(BOOL)arg1;
 - (void)_clientQueue_updateAssertion;
 - (BOOL)acquire;
 - (void)assertionDidInvalidate;
@@ -49,12 +46,10 @@
 - (void)invalidate;
 - (id /* block */)invalidationHandler;
 - (id)name;
-- (id)newCreateEvent;
 - (unsigned int)reason;
 - (void)setFlags:(unsigned int)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;
 - (void)setName:(id)arg1;
-- (void)setReason:(unsigned int)arg1;
 - (BOOL)valid;
 
 @end

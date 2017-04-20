@@ -18,7 +18,7 @@
     UIViewController * _lastPoppedViewController;
     NSDictionary * _launchOptions;
     SKUIURL * _legacyLaunchURL;
-    IKAppDataStorage * _localStorage;
+    <IKAppDataStoring> * _localStorage;
     BOOL  _mescalPrimeEnabledForXHRRequests;
     SKUIMetricsController * _metricsController;
     SKUIModalDocumentController * _modalDocumentController;
@@ -40,7 +40,7 @@
     NSArray * _tabBarItems;
     SKUINavigationDocumentController * _transientNavigationDocument;
     SKUIURLResolver * _urlResolver;
-    IKAppDataStorage * _vendorStorage;
+    <IKAppDataStoring> * _vendorStorage;
     NSMutableArray * _whenLoadedBlocks;
 }
 
@@ -64,6 +64,7 @@
 @property (nonatomic, readonly) UITabBarController *tabBarController;
 @property (nonatomic, copy) NSArray *tabBarItems;
 
++ (id)_referrerAppForSourceApplication:(id)arg1 launchURL:(id*)arg2;
 + (id)applicationOptionsWithLaunchOptions:(id)arg1;
 + (id)configurationPreloader;
 + (void)finishedWithConfigurationPreloader;
@@ -147,6 +148,7 @@
 - (BOOL)_usesFloatingStatusOverlayForWidth:(float)arg1;
 - (id)activeDocument;
 - (void)appContext:(id)arg1 didCompletePurchase:(id)arg2;
+- (void)appContext:(id)arg1 didCompleteSoftwarePurchase:(id)arg2;
 - (void)appContext:(id)arg1 didExitWithOptions:(id)arg2;
 - (void)appContext:(id)arg1 didFailWithError:(id)arg2;
 - (void)appContext:(id)arg1 didStartWithOptions:(id)arg2;

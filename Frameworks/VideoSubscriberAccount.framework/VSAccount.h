@@ -6,19 +6,20 @@
     NSString * _accountDescription;
     VSAccountStore * _accountStore;
     NSString * _accountTypeDescription;
-    <VSAuthenticationToken> * _authenticationToken;
-    NSString * _identityProviderDisplayName;
-    NSString * _identityProviderID;
+    VSOptional * _authenticationToken;
+    VSOptional * _identityProviderID;
+    VSOptional * _optionalIdentityProviderDisplayName;
     NSString * _username;
 }
 
 @property (nonatomic, copy) NSString *accountDescription;
 @property (nonatomic) VSAccountStore *accountStore;
 @property (nonatomic, copy) NSString *accountTypeDescription;
-@property (nonatomic, retain) <VSAuthenticationToken> *authenticationToken;
-@property (nonatomic, copy) NSString *identityProviderDisplayName;
-@property (nonatomic, copy) NSString *identityProviderID;
-@property (nonatomic, retain) VSKeychainGenericPassword *keychainItem;
+@property (nonatomic, retain) VSOptional *authenticationToken;
+@property (nonatomic, readonly) NSString *identityProviderDisplayName;
+@property (nonatomic, retain) VSOptional *identityProviderID;
+@property (nonatomic, retain) VSOptional *keychainItem;
+@property (nonatomic, retain) VSOptional *optionalIdentityProviderDisplayName;
 @property (nonatomic, copy) NSString *username;
 
 - (void).cxx_destruct;
@@ -29,14 +30,16 @@
 - (id)description;
 - (id)identityProviderDisplayName;
 - (id)identityProviderID;
+- (id)init;
 - (id)keychainItem;
+- (id)optionalIdentityProviderDisplayName;
 - (void)setAccountDescription:(id)arg1;
 - (void)setAccountStore:(id)arg1;
 - (void)setAccountTypeDescription:(id)arg1;
 - (void)setAuthenticationToken:(id)arg1;
-- (void)setIdentityProviderDisplayName:(id)arg1;
 - (void)setIdentityProviderID:(id)arg1;
 - (void)setKeychainItem:(id)arg1;
+- (void)setOptionalIdentityProviderDisplayName:(id)arg1;
 - (void)setUsername:(id)arg1;
 - (id)username;
 

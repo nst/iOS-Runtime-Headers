@@ -25,6 +25,7 @@
     struct TrafficMeshStyle { 
         int _style[4]; 
     }  _builtMeshStyle;
+    double  _builtViewUnitsPerPoint;
     struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > { 
         struct StylesheetQuery<gss::PropertyID> {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
@@ -63,7 +64,6 @@
     }  _pilledTrafficLayer;
     VKTileKeyList * _previousKeysInView;
     NSSet * _previousTilesInView;
-    double  _previousViewUnitsPerPoint;
     VKRouteLine * _routeLine;
     struct unique_ptr<md::RouteLineLayer, std::__1::default_delete<md::RouteLineLayer> > { 
         struct __compressed_pair<md::RouteLineLayer *, std::__1::default_delete<md::RouteLineLayer> > { 
@@ -79,11 +79,11 @@
     BOOL  _selected;
     struct unordered_set<GEOComposedRouteSection *, std::__1::hash<GEOComposedRouteSection *>, std::__1::equal_to<GEOComposedRouteSection *>, std::__1::allocator<GEOComposedRouteSection *> > { 
         struct __hash_table<GEOComposedRouteSection *, std::__1::hash<GEOComposedRouteSection *>, std::__1::equal_to<GEOComposedRouteSection *>, std::__1::allocator<GEOComposedRouteSection *> > { 
-            struct unique_ptr<std::__1::__hash_node<GEOComposedRouteSection *, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<GEOComposedRouteSection *, void *> *> > > { 
-                struct __compressed_pair<std::__1::__hash_node<GEOComposedRouteSection *, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<GEOComposedRouteSection *, void *> *> > > { 
-                    struct __hash_node<GEOComposedRouteSection *, void *> {} **__first_; 
-                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<GEOComposedRouteSection *, void *> *> > { 
-                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<GEOComposedRouteSection *, void *> *> > { 
+            struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<GEOComposedRouteSection *, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<GEOComposedRouteSection *, void *> *> *> > > { 
+                struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<GEOComposedRouteSection *, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<GEOComposedRouteSection *, void *> *> *> > > { 
+                    struct __hash_node_base<std::__1::__hash_node<GEOComposedRouteSection *, void *> *> {} **__first_; 
+                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<GEOComposedRouteSection *, void *> *> *> > { 
+                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<GEOComposedRouteSection *, void *> *> *> > { 
                             unsigned long __first_; 
                         } __data_; 
                     } __second_; 
@@ -91,7 +91,7 @@
             } __bucket_list_; 
             struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<GEOComposedRouteSection *, void *> *>, std::__1::allocator<std::__1::__hash_node<GEOComposedRouteSection *, void *> > > { 
                 struct __hash_node_base<std::__1::__hash_node<GEOComposedRouteSection *, void *> *> { 
-                    struct __hash_node<GEOComposedRouteSection *, void *> {} *__next_; 
+                    struct __hash_node_base<std::__1::__hash_node<GEOComposedRouteSection *, void *> *> {} *__next_; 
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::hash<GEOComposedRouteSection *> > { 

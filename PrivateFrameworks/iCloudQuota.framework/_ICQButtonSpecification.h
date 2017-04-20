@@ -3,16 +3,20 @@
  */
 
 @interface _ICQButtonSpecification : NSObject {
+    NSString * _buttonFormat;
     ICQLink * _buttonLink;
     NSDictionary * _linkForBundleIdentifier;
     NSDictionary * _serverDict;
 }
 
+@property (nonatomic, readonly) NSString *buttonFormat;
+@property (nonatomic, readonly) ICQLink *buttonLink;
 @property (nonatomic, retain) NSDictionary *linkForBundleIdentifier;
 
 + (id)buttonSpecificationSampleForLevel:(int)arg1;
 
 - (void).cxx_destruct;
+- (id)buttonFormat;
 - (id)buttonLink;
 - (id)initWithServerDictionary:(id)arg1;
 - (id)linkForBundleIdentifier;

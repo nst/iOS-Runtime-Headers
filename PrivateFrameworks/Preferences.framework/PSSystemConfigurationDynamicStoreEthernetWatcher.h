@@ -14,6 +14,7 @@
 - (id)ethernetNetworkInterfaces;
 - (BOOL)hasEthernetNetworkInterfaces;
 - (id)init;
+- (BOOL)isNCMInterface:(struct __SCNetworkInterface { }*)arg1;
 - (void)registerForEthernetAdapterNotifications;
 
 @end

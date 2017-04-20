@@ -19,6 +19,7 @@
     BOOL  _hasRoundedCorners;
     BOOL  _highlighted;
     BOOL  _imageHidden;
+    float  _itemAlpha;
     BOOL  _needsDynamicLayout;
     int  _numberOfVisibleItems;
     PUPhotoDecoration * _photoDecoration;
@@ -71,6 +72,7 @@
 @property (nonatomic) float gridMargin;
 @property (nonatomic) BOOL hasRoundedCorners;
 @property (getter=isHighlighted, nonatomic) BOOL highlighted;
+@property (nonatomic) float itemAlpha;
 @property (nonatomic) int numberOfVisibleItems;
 @property (nonatomic, retain) PUPhotoDecoration *photoDecoration;
 @property (nonatomic) float posterSquareCornerRadius;
@@ -118,6 +120,7 @@
 - (BOOL)isEmpty;
 - (BOOL)isHighlighted;
 - (BOOL)isImageHiddenForItemAtIndex:(int)arg1;
+- (float)itemAlpha;
 - (void)layoutSubviews;
 - (id)newLayoutAttributesForItemAtIndex:(int)arg1 relativeToView:(id)arg2;
 - (id)newLayoutAttributesForVisbleItemsRelativeToView:(id)arg1 maxCount:(int)arg2;
@@ -126,10 +129,8 @@
 - (float)posterSquareCornerRadius;
 - (float)posterSubitemCornerRadius;
 - (void)prepareForReuse;
-- (void)setAlpha:(float)arg1 forItemAtIndex:(int)arg2;
-- (void)setBadgeTypes:(unsigned int)arg1 forItemAtIndex:(int)arg2;
-- (void)setBadgeTypes:(unsigned int)arg1 videoDuration:(double)arg2 forItemAtIndex:(int)arg3;
-- (void)setBadgeTypes:(unsigned int)arg1 videoDuration:(double)arg2 style:(int)arg3 forItemAtIndex:(int)arg4;
+- (void)setBadgeInfo:(struct PXAssetBadgeInfo { unsigned int x1; double x2; int x3; })arg1 forItemAtIndex:(int)arg2;
+- (void)setBadgeInfo:(struct PXAssetBadgeInfo { unsigned int x1; double x2; int x3; })arg1 style:(int)arg2 forItemAtIndex:(int)arg3;
 - (void)setCollectionTileLayoutTemplate:(id)arg1 forItemAtIndex:(int)arg2;
 - (void)setCombinesPhotoDecorations:(BOOL)arg1;
 - (void)setCornersBackgroundColor:(id)arg1;
@@ -145,6 +146,7 @@
 - (void)setImage:(id)arg1 forItemAtIndex:(int)arg2;
 - (void)setImageHidden:(BOOL)arg1 forItemAtIndex:(int)arg2;
 - (void)setImageSize:(struct CGSize { float x1; float x2; })arg1 forItemAtIndex:(int)arg2;
+- (void)setItemAlpha:(float)arg1;
 - (void)setNumberOfVisibleItems:(int)arg1;
 - (void)setPhotoDecoration:(id)arg1;
 - (void)setPosterSquareCornerRadius:(float)arg1;

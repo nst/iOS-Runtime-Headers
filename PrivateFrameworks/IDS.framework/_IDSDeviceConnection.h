@@ -3,6 +3,7 @@
  */
 
 @interface _IDSDeviceConnection : NSObject <IDSDaemonListenerProtocol> {
+    NSMutableDictionary * _awdMetrics;
     NSString * _connectionUUID;
     BOOL  _hasTimedOut;
     NSInputStream * _inputStreamForSocket;

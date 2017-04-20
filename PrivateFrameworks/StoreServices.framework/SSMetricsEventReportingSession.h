@@ -7,6 +7,7 @@
     long long  _insertTimestamp;
     NSURL * _reportingURL;
     NSString * _sessionCanaryIdentifier;
+    BOOL  _suppressDSID;
     NSMutableArray * _unreportedEventPIDs;
     NSArray * _unreportedEvents;
 }
@@ -16,6 +17,7 @@
 - (BOOL)anyUnreportedEvents;
 - (void)dealloc;
 - (id)initWithReportingURL:(id)arg1 insertTimestamp:(long long)arg2 eventController:(id)arg3;
+- (id)initWithReportingURL:(id)arg1 insertTimestamp:(long long)arg2 suppressDSID:(BOOL)arg3 eventController:(id)arg4;
 - (BOOL)markEventsAsReported;
 - (id)sessionCanaryIdentifier;
 - (id)writeEventsToStream:(id)arg1;

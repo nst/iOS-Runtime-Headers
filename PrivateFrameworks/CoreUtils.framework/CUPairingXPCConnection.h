@@ -5,6 +5,7 @@
 @interface CUPairingXPCConnection : NSObject <CUPairingDaemonXPCInterface> {
     CUPairingDaemon * _daemon;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
+    BOOL  _monitoring;
     BOOL  _pmEntitledDeleteIdentity;
     BOOL  _pmEntitledRead;
     BOOL  _pmEntitledRemovePeer;
@@ -22,5 +23,6 @@
 - (void)removePairedPeer:(id)arg1 options:(unsigned int)arg2 completion:(id /* block */)arg3;
 - (void)savePairedPeer:(id)arg1 options:(unsigned int)arg2 completion:(id /* block */)arg3;
 - (void)showWithCompletion:(id /* block */)arg1;
+- (void)startMonitoringWithOptions:(unsigned int)arg1;
 
 @end

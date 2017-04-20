@@ -27,12 +27,12 @@
 - (void)layoutSubviews;
 - (id)placeholder;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (void)setAttributedText:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setFont:(id)arg1;
 - (void)setPlaceholder:(id)arg1;
-- (void)setText:(id)arg1;
 - (void)setTextAlignment:(int)arg1;
 
 @end

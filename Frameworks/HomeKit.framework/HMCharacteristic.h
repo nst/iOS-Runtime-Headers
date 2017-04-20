@@ -114,9 +114,15 @@
 - (id)hf_associatedCharacteristicType;
 - (id)hf_characteristicTypeDescription;
 - (id)hf_defaultValue;
+- (id)hf_designatedEventTriggerForProgrammableSwitchWithTriggerValue:(id)arg1;
+- (id)hf_eventTriggers;
+- (id)hf_eventTriggersForTriggerValue:(id)arg1;
+- (id)hf_home;
 - (BOOL)hf_isReadable;
 - (BOOL)hf_isWritable;
 - (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (id)hf_programmableSwitchTriggerValueToEventTriggersMap;
+- (id)hf_programmableSwitchValidValueSet;
 - (id)hf_serializedStateDumpRepresentation;
 - (int)hf_sortPriority;
 

@@ -8,6 +8,7 @@
 
 - (void).cxx_destruct;
 - (BOOL)clearFollowUpWithContext:(id)arg1 error:(id*)arg2;
+- (void)dealloc;
 - (id)init;
 - (void)invalidate;
 - (BOOL)postFollowUpWithContext:(id)arg1 error:(id*)arg2;

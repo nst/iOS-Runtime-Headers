@@ -5,6 +5,7 @@
 @interface WGNewWidgetsButton : UIButton {
     unsigned int  _badgeNumber;
     _UILegibilitySettings * _legibilitySettings;
+    NSCache * _numberAttributedStringCache;
     NSString * _numberText;
     UIButton * _overlayButton;
     NSString * _text;

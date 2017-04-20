@@ -252,6 +252,7 @@
 - (void)rebuildConstraints:(id)arg1 forView:(id)arg2 toMatchView:(id)arg3;
 - (void)registerPowerLogEvent:(BOOL)arg1;
 - (void)resetVerticalConstraint;
+- (id)screenSnapshotOfView:(id)arg1;
 - (id)scrollDismissController;
 - (void)setAccessoryViewHeightConstraint:(id)arg1;
 - (void)setAccessoryViewVisible:(BOOL)arg1 delay:(float)arg2;

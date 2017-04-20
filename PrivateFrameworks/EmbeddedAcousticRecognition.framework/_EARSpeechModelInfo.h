@@ -29,7 +29,7 @@
         } version; 
         struct set<int, std::__1::less<int>, std::__1::allocator<int> > { 
             struct __tree<int, std::__1::less<int>, std::__1::allocator<int> > { 
-                struct __tree_node<int, void *> {} *__begin_node_; 
+                struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *__begin_node_; 
                 struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<int, void *> > > { 
                     struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                         struct __tree_node_base<void *> {} *__left_; 
@@ -42,7 +42,7 @@
         } samplingRates; 
         struct set<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char> >, std::__1::allocator<std::__1::basic_string<char> > > { 
             struct __tree<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char> >, std::__1::allocator<std::__1::basic_string<char> > > { 
-                struct __tree_node<std::__1::basic_string<char>, void *> {} *__begin_node_; 
+                struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *__begin_node_; 
                 struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::basic_string<char>, void *> > > { 
                     struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                         struct __tree_node_base<void *> {} *__left_; 
@@ -124,7 +124,7 @@
         } acousticProfileVersion; 
         struct map<std::__1::basic_string<char>, std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::basic_string<char> > > > { 
             struct __tree<std::__1::__value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, std::__1::less<std::__1::basic_string<char> >, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, std::__1::basic_string<char> > > > { 
-                struct __tree_node<std::__1::__value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, void *> {} *__begin_node_; 
+                struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *__begin_node_; 
                 struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, void *> > > { 
                     struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                         struct __tree_node_base<void *> {} *__left_; 
@@ -137,7 +137,7 @@
         } aceToQuasarTemplate; 
         struct map<std::__1::basic_string<char>, std::__1::vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char> > >, std::__1::less<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char> > > > > > { 
             struct __tree<std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char> > > >, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char> > > >, std::__1::less<std::__1::basic_string<char> >, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char> > > > > > { 
-                struct __tree_node<std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char> > > >, void *> {} *__begin_node_; 
+                struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *__begin_node_; 
                 struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char> > > >, void *> > > { 
                     struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                         struct __tree_node_base<void *> {} *__left_; 
@@ -150,7 +150,7 @@
         } quasarTemplateToAce; 
         struct map<std::__1::basic_string<char>, std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::basic_string<char> > > > { 
             struct __tree<std::__1::__value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, std::__1::less<std::__1::basic_string<char> >, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, std::__1::basic_string<char> > > > { 
-                struct __tree_node<std::__1::__value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, void *> {} *__begin_node_; 
+                struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *__begin_node_; 
                 struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, void *> > > { 
                     struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                         struct __tree_node_base<void *> {} *__left_; 

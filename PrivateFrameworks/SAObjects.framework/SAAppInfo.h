@@ -9,6 +9,7 @@
 @property (nonatomic, retain) SASyncAppIdentifyingInfo *appIdentifyingInfo;
 @property (nonatomic, copy) NSString *appName;
 @property (nonatomic, copy) NSDictionary *appNameMap;
+@property (nonatomic, copy) NSDictionary *appNameSynonymsMap;
 @property (nonatomic, copy) NSString *appVersion;
 @property (nonatomic) BOOL betaApp;
 @property (nonatomic, copy) NSString *carPlayAlternativeDisplayName;
@@ -39,6 +40,7 @@
 - (id)appIdentifyingInfo;
 - (id)appName;
 - (id)appNameMap;
+- (id)appNameSynonymsMap;
 - (id)appVersion;
 - (BOOL)betaApp;
 - (id)carPlayAlternativeDisplayName;
@@ -60,6 +62,7 @@
 - (void)setAppIdentifyingInfo:(id)arg1;
 - (void)setAppName:(id)arg1;
 - (void)setAppNameMap:(id)arg1;
+- (void)setAppNameSynonymsMap:(id)arg1;
 - (void)setAppVersion:(id)arg1;
 - (void)setBetaApp:(BOOL)arg1;
 - (void)setCarPlayAlternativeDisplayName:(id)arg1;

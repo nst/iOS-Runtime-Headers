@@ -38,6 +38,7 @@
 - (BOOL)contentOrThumbnailChangedForPHAssetOID:(id)arg1;
 - (id)deletedObjectIDs;
 - (id)description;
+- (BOOL)favoriteStateChangedForPHAssetOID:(id)arg1;
 - (BOOL)hasIncrementalChanges;
 - (BOOL)hiddenStateChangedForPHAssetOID:(id)arg1;
 - (id)init;

@@ -46,9 +46,11 @@
 - (void)entityValueProviderDidChange;
 - (void)enumerateChildrenUsingBlock:(id /* block */)arg1;
 - (void)enumerateViewElementsWithDictionary:(id)arg1 factory:(id)arg2 usingBlock:(id /* block */)arg3;
+- (id)expandableLabelElementForWidth:(float)arg1 context:(id)arg2;
 - (id)explicitEntityProvider;
 - (id)explicitEntityValueProvider;
 - (id)featureWithName:(id)arg1;
+- (id)firstChildForElementName:(id)arg1;
 - (id)firstChildForElementType:(unsigned int)arg1;
 - (id)firstDescendentWithIndexBarEntryID:(id)arg1;
 - (id)flattenedChildren;

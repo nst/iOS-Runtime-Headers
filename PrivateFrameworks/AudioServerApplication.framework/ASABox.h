@@ -7,8 +7,11 @@
 @property (getter=isAcquireSettable, nonatomic, readonly) BOOL acquireSettable;
 @property (getter=isAcquired, nonatomic) BOOL acquired;
 @property (nonatomic, readonly) long acquisitionFailure;
+@property (nonatomic, readonly, copy) NSArray *audioDeviceObjectIDs;
+@property (nonatomic, readonly, copy) NSArray *audioDevices;
 @property (nonatomic, readonly, copy) NSString *boxUID;
 @property (nonatomic, readonly, copy) NSArray *clockDeviceObjectIDs;
+@property (nonatomic, readonly, copy) NSArray *clockDevices;
 @property (nonatomic, readonly, copy) NSArray *deviceObjectIDs;
 @property (nonatomic, readonly, copy) NSString *firmwareVersion;
 @property (nonatomic, readonly) BOOL hasAudio;
@@ -26,8 +29,11 @@
 @property (nonatomic, readonly) unsigned int transportType;
 
 - (long)acquisitionFailure;
+- (id)audioDeviceObjectIDs;
+- (id)audioDevices;
 - (id)boxUID;
 - (id)clockDeviceObjectIDs;
+- (id)clockDevices;
 - (id)coreAudioClassName;
 - (id)deviceObjectIDs;
 - (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(BOOL)arg2;

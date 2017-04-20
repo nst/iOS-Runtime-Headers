@@ -8,6 +8,8 @@
 + (BOOL)canSkipUserPromptsForProcessWithName:(id)arg1 identifier:(int)arg2;
 + (id)connection:(id)arg1 grantedEntitlements:(id)arg2;
 + (BOOL)connection:(id)arg1 hasEntitlement:(id)arg2;
++ (id)connection:(id)arg1 valueForEntitlement:(id)arg2;
++ (id)connection:(id)arg1 valuesForEntitlements:(id)arg2;
 + (BOOL)connectionIsEntitledForPhotoKit:(id)arg1;
 + (BOOL)containsPhotoKitEntitlement:(id)arg1;
 + (BOOL)isEntitledForCloudSharingData;

@@ -8,6 +8,8 @@
 
 @property (nonatomic, retain) NSMutableArray *objects;
 
++ (Class)objectType;
+
 - (void).cxx_destruct;
 - (void)addObject:(id)arg1;
 - (void)clearObjects;

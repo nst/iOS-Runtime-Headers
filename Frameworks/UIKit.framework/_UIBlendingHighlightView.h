@@ -17,6 +17,7 @@
 + (id)_blendingSeparatorView;
 
 - (void).cxx_destruct;
+- (void)_setContinuousCornerRadius:(float)arg1;
 - (float)cornerRadius;
 - (id)initWithCompositingBurnColor:(id)arg1 plusDColor:(id)arg2;
 - (id)initWithTopLevelFilters:(id)arg1 compositingColors:(id)arg2 compositingFilterModes:(id)arg3;
@@ -24,5 +25,6 @@
 - (void)setCornerRadius:(float)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setPressed:(BOOL)arg1;
+- (void)setRoundedCornerPosition:(unsigned int)arg1;
 
 @end

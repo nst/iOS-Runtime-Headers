@@ -32,6 +32,7 @@
 - (id)initWithAPI:(unsigned int)arg1 sharegroup:(id)arg2;
 - (BOOL)isMultiThreaded;
 - (BOOL)presentRenderbuffer:(unsigned int)arg1;
+- (BOOL)presentRenderbuffer:(unsigned int)arg1 afterMinimumDuration:(double)arg2;
 - (BOOL)presentRenderbuffer:(unsigned int)arg1 atTime:(double)arg2;
 - (BOOL)renderbufferStorage:(unsigned int)arg1 fromDrawable:(id)arg2;
 - (void)sendNotification:(unsigned int)arg1 forTransaction:(unsigned int)arg2 onLayer:(unsigned int)arg3;

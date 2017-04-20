@@ -48,6 +48,7 @@
 - (void)fetchRawImageAndCropRectForFamilyMember:(id)arg1 completion:(id /* block */)arg2;
 - (id)init;
 - (id)initWithAppleAccount:(id)arg1 grandSlamAccount:(id)arg2 accountStore:(id)arg3;
+- (id)initWithAppleAccount:(id)arg1 grandSlamSigner:(id)arg2;
 - (id)initWithAppleAccount:(id)arg1 store:(id)arg2;
 - (id)initWithGrandSlamSigner:(id)arg1;
 - (float)pictureDiameter;

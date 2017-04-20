@@ -20,6 +20,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) CKScheduledUpdater *triggerUpdater;
 
++ (double)delayBeforeEffectWithIdentifier:(id)arg1;
++ (double)idleDurationAfterEffectWithIdentifier:(id)arg1;
 + (id)localizedMaskStringForEffectWithIdentifier:(id)arg1;
 
 - (void).cxx_destruct;

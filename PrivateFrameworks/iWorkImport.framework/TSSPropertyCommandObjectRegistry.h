@@ -5,7 +5,7 @@
 @interface TSSPropertyCommandObjectRegistry : NSObject {
     struct map<Class, int, std::__1::less<Class>, std::__1::allocator<std::__1::pair<const Class, int> > > { 
         struct __tree<std::__1::__value_type<Class, int>, std::__1::__map_value_compare<Class, std::__1::__value_type<Class, int>, std::__1::less<Class>, true>, std::__1::allocator<std::__1::__value_type<Class, int> > > { 
-            struct __tree_node<std::__1::__value_type<Class, int>, void *> {} *__begin_node_; 
+            struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *__begin_node_; 
             struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<Class, int>, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
@@ -18,7 +18,7 @@
     }  _classToIndex;
     struct map<int, std::__1::pair<Class, std::__1::basic_string<char> >, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, std::__1::pair<Class, std::__1::basic_string<char> > > > > { 
         struct __tree<std::__1::__value_type<int, std::__1::pair<Class, std::__1::basic_string<char> > >, std::__1::__map_value_compare<int, std::__1::__value_type<int, std::__1::pair<Class, std::__1::basic_string<char> > >, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, std::__1::pair<Class, std::__1::basic_string<char> > > > > { 
-            struct __tree_node<std::__1::__value_type<int, std::__1::pair<Class, std::__1::basic_string<char> > >, void *> {} *__begin_node_; 
+            struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *__begin_node_; 
             struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<int, std::__1::pair<Class, std::__1::basic_string<char> > >, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 

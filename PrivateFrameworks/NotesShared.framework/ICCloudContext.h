@@ -20,6 +20,7 @@
     NSObject<OS_dispatch_queue> * _processingQueue;
     ICSelectorDelayer * _processingSelectorDelayer;
     int  _qualityOfService;
+    NSMutableDictionary * _retryCountsByOperationType;
     NSTimer * _retryTimer;
     NSMutableSet * _subscribedSubscriptionIDs;
     BOOL  _syncDisabledByServer;
@@ -47,6 +48,7 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *processingQueue;
 @property (retain) ICSelectorDelayer *processingSelectorDelayer;
 @property (nonatomic) int qualityOfService;
+@property (nonatomic, retain) NSMutableDictionary *retryCountsByOperationType;
 @property (retain) NSTimer *retryTimer;
 @property (retain) NSMutableSet *subscribedSubscriptionIDs;
 @property (nonatomic) BOOL syncDisabledByServer;
@@ -88,6 +90,7 @@
 - (void)cancelEverythingWithCompletionHandler:(id /* block */)arg1;
 - (void)checkForLongLivedOperations;
 - (void)clearPendingActivity;
+- (void)clearRetryCountForOperationType:(id)arg1;
 - (void)clearSubscribedSubscriptionIDs;
 - (void)clearZoneFetchState;
 - (id)cloudContextDelegate;
@@ -132,6 +135,8 @@
 - (void)handleGenericPartialFailuresForError:(id)arg1 operation:(id)arg2;
 - (void)handleNotification:(id)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)hasPendingOperations;
+- (void)incrementOrClearRetryCountForOperationType:(id)arg1 error:(id)arg2;
+- (void)incrementRetryCountForOperationType:(id)arg1;
 - (id)init;
 - (BOOL)isCloudKitAccountAvailable;
 - (BOOL)isDisabled;
@@ -181,6 +186,7 @@
 - (id)readinessLoggingDescription;
 - (void)receivedZoneNotFound:(id)arg1 operation:(id)arg2;
 - (void)recursiveCancelDependentOperations:(id)arg1;
+- (id)retryCountsByOperationType;
 - (void)retryOperationsIfNecessary;
 - (void)retryProcessingCloudObjects;
 - (id)retryTimer;
@@ -207,6 +213,7 @@
 - (void)setProcessingQueue:(id)arg1;
 - (void)setProcessingSelectorDelayer:(id)arg1;
 - (void)setQualityOfService:(int)arg1;
+- (void)setRetryCountsByOperationType:(id)arg1;
 - (void)setRetryTimer:(id)arg1;
 - (void)setSubscribedSubscriptionIDs:(id)arg1;
 - (void)setSyncDisabledByServer:(BOOL)arg1;
@@ -224,7 +231,7 @@
 - (void)updateCloudContextState;
 - (void)updateConfiguration;
 - (void)updateSelectorDelayers;
-- (void)updateSubscriptions;
+- (void)updateSubscriptionsWithCompletionHandler:(id /* block */)arg1;
 - (id)zoneIDsFetchingChanges;
 - (id)zoneIDsNeedingFetchChanges;
 - (id)zoneIDsNeedingToBeSaved;

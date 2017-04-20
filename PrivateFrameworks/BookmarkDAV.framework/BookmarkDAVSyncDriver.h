@@ -41,13 +41,17 @@
 - (BOOL)_applyReturnedBookmarks:(id)arg1 withPushedBookmarks:(struct __CFArray { }*)arg2;
 - (BOOL)_applyReturnedFolders:(id)arg1 parentToArrayOfChildrenFolders:(struct __CFDictionary { }*)arg2 topmostFolders:(struct __CFArray { }*)arg3 postedToURL:(id)arg4;
 - (BOOL)_applyUnmatchedParsedFolders:(id)arg1;
+- (void*)_bookmarkByUpdatingBookmark:(void*)arg1 withServerID:(id)arg2;
 - (id)_bookmarkXBELDataForBookmarkChanges:(struct __CFArray { }*)arg1 pushedBookmarks:(struct __CFArray { }*)arg2 maxResources:(int)arg3 maxSize:(int)arg4;
 - (int)_clientOrderOfItemPrecedingItemAtServerOrder:(int)arg1 inParentWithURL:(id)arg2;
+- (void)_cloneCoreAttributesFromItem:(void*)arg1 toItem:(void*)arg2 isBookmark:(BOOL)arg3;
 - (void)_closeDBAndSave:(BOOL)arg1;
 - (id)_copyDAVBookmarkFromBookmarkRef:(void*)arg1;
 - (id)_copyDAVFolderFromFolderRef:(void*)arg1;
+- (id)_copySyntheticModifyActionForMovedItem:(void*)arg1 change:(void*)arg2 destinationURL:(id)arg3 absoluteOrder:(int)arg4;
 - (id)_dbRelativeString:(id)arg1;
 - (void)_finishInitialSyncShouldPushChanges:(BOOL)arg1;
+- (void*)_folderByUpdatingFolder:(void*)arg1 withServerID:(id)arg2;
 - (id)_folderXBELDataForTopmostFolderChanges:(struct __CFArray { }*)arg1 foldersToAddByServerId:(struct __CFDictionary { }*)arg2 parentToArrayOfChildrenFolderChanges:(struct __CFDictionary { }*)arg3 pushedParentToArrayOfChildrenFolders:(struct __CFDictionary { }*)arg4 pushedTopmostFolders:(struct __CFArray { }*)arg5 maxResources:(int)arg6 maxSize:(int)arg7;
 - (void)_handleAddsOrModifies:(id)arg1 removes:(id)arg2;
 - (BOOL)_handleErrorItem:(id)arg1 forBAItem:(void*)arg2;
@@ -62,6 +66,7 @@
 - (void)_setRootCTag:(id)arg1 rootSyncToken:(id)arg2 knownOrderings:(id)arg3;
 - (void)_setServerIdOnItem:(void*)arg1 isBookmark:(BOOL)arg2 suggestedId:(id)arg3;
 - (void)_syncWithRemoteChanges:(BOOL)arg1 completionHandler:(id /* block */)arg2 skipAddChanges:(BOOL)arg3;
+- (void)_updatePayload:(id)arg1 forMovedItem:(void*)arg2 sourceServerID:(id)arg3;
 - (id)accountInfoProvider;
 - (unsigned int)accountPropertyFetchAttempt;
 - (void)containerInfoTask:(id)arg1 completedWithContainers:(id)arg2 error:(id)arg3;

@@ -4,7 +4,7 @@
 
 @interface MPStreamingDownloadSessionController : NSObject {
     NSObject<OS_dispatch_queue> * _accessQueue;
-    NSMapTable * _assetDownloadSessionToDownloadSessions;
+    NSMapTable * _assetDownloadSessionToDownloadSession;
     NSMapTable * _assetDownloadSessionToPlaybackMetadata;
     NSMutableArray * _assetDownloadSessionsPendingStart;
     unsigned int  _pausingAllDownloadsTransactionCount;
@@ -16,7 +16,6 @@
         } __end_cap_; 
     }  _prioritizedDownloadTokens;
     NSOperationQueue * _streamingOperationQueue;
-    NSMapTable * _uniqueKeyToDownloadSessions;
 }
 
 + (id)sharedDownloadSessionController;
@@ -26,17 +25,16 @@
 - (void)_assetDownloadSessionDownloadFailedNotification:(id)arg1;
 - (void)_assetDownloadSessionDownloadSucceededNotification:(id)arg1;
 - (void)_assetDownloadSessionFileSizeAvailableNotification:(id)arg1;
-- (id)_assetDownloadSessionForDownloadSession:(id)arg1 returningAllDownloadSessions:(id*)arg2 playbackItemMetadata:(id*)arg3;
+- (id)_assetDownloadSessionForDownloadSession:(id)arg1;
 - (unsigned int)_assetQualityForAssetFlavor:(id)arg1;
 - (void)_auditAssetDownloadSession:(id)arg1 withNetworkConstraints:(id)arg2;
 - (void)_auditNetworkConstraintsForAssetDownloadSession:(id)arg1 playbackItemMetadata:(id)arg2;
-- (id)_createNewDownloadSessionWithExistingDownloadSessionForUniqueKey:(id)arg1;
 - (id)_downloadKeyCookieWithValue:(id)arg1 URL:(id)arg2;
 - (void)_getNetworkConstraintsForPlaybackItemMetadata:(id)arg1 withCompletionHandler:(id /* block */)arg2;
-- (void)_handleNewDownloadSession:(id)arg1 withAssetDownloadSession:(id)arg2 forPlaybackItemMetadata:(id)arg3 uniqueKey:(id)arg4;
+- (void)_handleNewDownloadSession:(id)arg1 withAssetDownloadSession:(id)arg2 forPlaybackItemMetadata:(id)arg3;
 - (void)_handlePrioritizationForFinishingAssetDownloadSession:(id)arg1;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
-- (id)_newDownloadSessionForPlaybackItemMetadata:(id)arg1 sourceURL:(id)arg2 downloadKey:(id)arg3 sinfs:(id)arg4 pathExtension:(id)arg5 assetFlavor:(id)arg6 allowAssetCaching:(BOOL)arg7 protectionType:(unsigned int)arg8 returningAssetDownloadSession:(id*)arg9;
+- (id)_newDownloadSessionForRequest:(id)arg1 sourceURL:(id)arg2 downloadKey:(id)arg3 sinfs:(id)arg4 pathExtension:(id)arg5 assetFlavor:(id)arg6 allowAssetCaching:(BOOL)arg7 allowITunesContentConfiguration:(BOOL)arg8 protectionType:(unsigned int)arg9 returningAssetDownloadSession:(id*)arg10;
 - (void)_playbackItemMetadataNetworkConstraintsDidChangeNotification:(id)arg1;
 - (void)_postFailedForDownloadSession:(id)arg1;
 - (void)_postFailedForDownloadSession:(id)arg1 withError:(id)arg2;
@@ -45,8 +43,7 @@
 - (void)_registerForNotificationsForPlaybackItemMetadata:(id)arg1;
 - (void)_removeFileForAssetDownloadSession:(id)arg1 playbackItemMetadata:(id)arg2;
 - (id)_sinfsByCleaningSinfs:(id)arg1;
-- (id)_uniqueKeyForRequest:(id)arg1;
-- (void)_unregisterDownloadSession:(id)arg1 withAssetDownloadSession:(id)arg2 playbackItemMetadata:(id)arg3 returningWasLastAssociatedDownloadSession:(BOOL*)arg4;
+- (void)_unregisterDownloadSession:(id)arg1;
 - (void)_unregisterForNotificationsForAssetDownloadSession:(id)arg1;
 - (void)_unregisterForNotificationsForPlaybackItemMetadata:(id)arg1;
 - (void)acquireDownloadSessionWithRequest:(id)arg1 completionHandler:(id /* block */)arg2;

@@ -5,6 +5,7 @@
 @interface PSUsageBundleApp : NSObject {
     NSString * _bundleIdentifier;
     NSArray * _categories;
+    BOOL  _deletionRestricted;
     NSString * _name;
     PSWeakReference * _storageReporterReference;
     float  _totalSize;
@@ -12,6 +13,7 @@
 
 @property (nonatomic, retain) NSString *bundleIdentifier;
 @property (nonatomic, retain) NSArray *categories;
+@property (getter=isDeletionRestricted, nonatomic) BOOL deletionRestricted;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic) float totalSize;
 @property (nonatomic) <PSStorageReporting> *usageBundleStorageReporter;
@@ -23,9 +25,11 @@
 - (id)bundleIdentifier;
 - (id)categories;
 - (id)description;
+- (BOOL)isDeletionRestricted;
 - (id)name;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setCategories:(id)arg1;
+- (void)setDeletionRestricted:(BOOL)arg1;
 - (void)setName:(id)arg1;
 - (void)setTotalSize:(float)arg1;
 - (void)setUsageBundleStorageReporter:(id)arg1;

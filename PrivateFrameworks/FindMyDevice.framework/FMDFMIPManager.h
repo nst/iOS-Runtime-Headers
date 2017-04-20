@@ -25,8 +25,11 @@
 - (unsigned int)_needsAckLostModeType;
 - (id)_postWipePrefPath;
 - (BOOL)_quickFetchFMIPEnabledstate;
+- (void)_stopAlarm;
 - (void)_updateManagedLostModeWithInfo:(id)arg1 completion:(id /* block */)arg2;
 - (void)_updateNeedsLocateAckLostModeWithInfo:(id)arg1 completion:(id /* block */)arg2;
+- (void)addNotificationRequest:(id)arg1 completion:(id /* block */)arg2;
+- (void)clearData:(unsigned int)arg1 completion:(id /* block */)arg2;
 - (id)currentXPCConnection;
 - (void)dealloc;
 - (void)deviceActivationDidSucceed;
@@ -45,6 +48,7 @@
 - (id)fmipAccount;
 - (void)fmipAccountWithCompletion:(id /* block */)arg1;
 - (void)fmipStateWithCompletion:(id /* block */)arg1;
+- (void)getAccessoriesWithCompletion:(id /* block */)arg1;
 - (id)getManagedLostModeFileURL;
 - (id)getNeedsLocateAckLostModeFileURL;
 - (id)init;
@@ -66,15 +70,20 @@
 - (BOOL)needsLostModeExitAuth;
 - (id)newErrorForCode:(int)arg1 message:(id)arg2;
 - (id)pathsToPreserveAcrossWipe;
+- (void)playSoundWithOptions:(id)arg1 completion:(id /* block */)arg2;
 - (void)setLowBatteryLocateEnabled:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (void)setManagedLostModeFileURL:(id)arg1;
 - (void)setNeedsLocateAckLostModeFileURL:(id)arg1;
 - (void)setXpcConnection:(id)arg1;
 - (void)setXpcConnectionCreationQueue:(id)arg1;
 - (void)signatureHeadersWithData:(id)arg1 completion:(id /* block */)arg2;
+- (void)soundStoppedForAccessoryIdentifier:(id)arg1;
+- (void)startPlayingSoundForAccessory:(id)arg1 duration:(double)arg2 rampUpDuration:(double)arg3 channels:(id)arg4 completion:(id /* block */)arg5;
+- (void)stopPlayingSoundForAccessory:(id)arg1 rampDownDuration:(double)arg2 completion:(id /* block */)arg3;
 - (void)userDidAckManagedLostModeLocateWithCompletion:(id /* block */)arg1;
 - (void)userNotifiedOfActivationLockForAllPairedDevices;
 - (void)userNotifiedOfActivationLockForPairedDevices:(id)arg1;
+- (void)waitForRoutableAccessory:(id)arg1 timeout:(double)arg2 completion:(id /* block */)arg3;
 - (id)xpcConnection;
 - (id)xpcConnectionCreationQueue;
 

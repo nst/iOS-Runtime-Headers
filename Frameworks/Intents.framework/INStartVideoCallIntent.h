@@ -20,9 +20,15 @@
 - (int)audioRoute;
 - (id)contacts;
 - (id)description;
+- (id)domain;
 - (id)initWithContacts:(id)arg1;
+- (id)parametersByName;
 - (void)setAudioRoute:(int)arg1;
 - (void)setContacts:(id)arg1;
+- (void)setDomain:(id)arg1;
+- (void)setParametersByName:(id)arg1;
+- (void)setVerb:(id)arg1;
+- (id)verb;
 
 // Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
 

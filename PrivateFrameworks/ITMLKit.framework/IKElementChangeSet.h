@@ -18,6 +18,7 @@
 - (id)addedIndexes;
 - (id)initWithAddedIndexes:(id)arg1 removedIndexes:(id)arg2 movedIndexesByNewIndex:(id)arg3 updatedIndexesByNewIndex:(id)arg4;
 - (id)movedIndexesByNewIndex;
+- (int)newIndexForOldIndex:(int)arg1;
 - (id)removedIndexes;
 - (id)updatedIndexesByNewIndex;
 

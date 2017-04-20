@@ -10,6 +10,8 @@
 @property (nonatomic) BOOL completedSuccessfully;
 @property (nonatomic) int errorCode;
 
++ (BOOL)supportsSecureCoding;
+
 - (BOOL)completedSuccessfully;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

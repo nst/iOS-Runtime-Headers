@@ -5,10 +5,12 @@
 @interface MCEmailAccountPayloadBase : MCPayload {
     BOOL  _SMIMEEnabled;
     NSNumber * _SMIMEEnabledNum;
+    NSNumber * _SMIMEEncryptionEnabled;
     NSData * _SMIMEEncryptionIdentityPersistentID;
     NSString * _SMIMEEncryptionIdentityUUID;
     BOOL  _SMIMEPerMessageSwitchEnabled;
     NSNumber * _SMIMEPerMessageSwitchEnabledNum;
+    NSNumber * _SMIMESigningEnabled;
     NSData * _SMIMESigningIdentityPersistentID;
     NSString * _SMIMESigningIdentityUUID;
     BOOL  _isMailDropEnabled;
@@ -23,10 +25,12 @@
 
 @property (nonatomic) BOOL SMIMEEnabled;
 @property (nonatomic, retain) NSNumber *SMIMEEnabledNum;
+@property (nonatomic, retain) NSNumber *SMIMEEncryptionEnabled;
 @property (nonatomic, retain) NSData *SMIMEEncryptionIdentityPersistentID;
 @property (nonatomic, retain) NSString *SMIMEEncryptionIdentityUUID;
 @property (nonatomic) BOOL SMIMEPerMessageSwitchEnabled;
 @property (nonatomic, retain) NSNumber *SMIMEPerMessageSwitchEnabledNum;
+@property (nonatomic, retain) NSNumber *SMIMESigningEnabled;
 @property (nonatomic, retain) NSData *SMIMESigningIdentityPersistentID;
 @property (nonatomic, retain) NSString *SMIMESigningIdentityUUID;
 @property (nonatomic) BOOL isMailDropEnabled;
@@ -41,10 +45,12 @@
 - (void).cxx_destruct;
 - (BOOL)SMIMEEnabled;
 - (id)SMIMEEnabledNum;
+- (id)SMIMEEncryptionEnabled;
 - (id)SMIMEEncryptionIdentityPersistentID;
 - (id)SMIMEEncryptionIdentityUUID;
 - (BOOL)SMIMEPerMessageSwitchEnabled;
 - (id)SMIMEPerMessageSwitchEnabledNum;
+- (id)SMIMESigningEnabled;
 - (id)SMIMESigningIdentityPersistentID;
 - (id)SMIMESigningIdentityUUID;
 - (BOOL)containsSensitiveUserInformation;
@@ -69,10 +75,12 @@
 - (void)setPreventMoveNum:(id)arg1;
 - (void)setSMIMEEnabled:(BOOL)arg1;
 - (void)setSMIMEEnabledNum:(id)arg1;
+- (void)setSMIMEEncryptionEnabled:(id)arg1;
 - (void)setSMIMEEncryptionIdentityPersistentID:(id)arg1;
 - (void)setSMIMEEncryptionIdentityUUID:(id)arg1;
 - (void)setSMIMEPerMessageSwitchEnabled:(BOOL)arg1;
 - (void)setSMIMEPerMessageSwitchEnabledNum:(id)arg1;
+- (void)setSMIMESigningEnabled:(id)arg1;
 - (void)setSMIMESigningIdentityPersistentID:(id)arg1;
 - (void)setSMIMESigningIdentityUUID:(id)arg1;
 - (id)stubDictionary;

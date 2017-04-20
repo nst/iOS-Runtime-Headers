@@ -14,6 +14,8 @@
 - (BOOL)canRotate;
 - (BOOL)canShowToolBar;
 - (BOOL)canSwipeToDismiss;
+- (void)hostApplicationDidBecomeActive;
+- (void)hostApplicationDidEnterBackground:(NSNumber *)arg1;
 - (void)previewBecameFullScreen:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)previewDidAppear:(BOOL)arg1;
 - (void)previewDidDisappear:(BOOL)arg1;

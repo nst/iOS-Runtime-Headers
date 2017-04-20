@@ -44,7 +44,7 @@
 - (void)sendAppControlsNotificationForApp:(id)arg1 withName:(id)arg2;
 - (void)sendChangeNotificationForApp:(id)arg1;
 - (void)sendFailedNotificationForApp:(id)arg1 isUninstall:(BOOL)arg2;
-- (void)sendIconUpdatedNotificationForApp:(id)arg1;
+- (void)sendIconUpdatedNotificationForApp:(id)arg1 userInitiated:(BOOL)arg2;
 - (void)sendInstalledNotificationForApp:(id)arg1 reply:(id /* block */)arg2;
 - (void)sendInstalledNotificationForApps:(id)arg1 Plugins:(id)arg2;
 - (void)sendNetworkUsageChangedNotification;

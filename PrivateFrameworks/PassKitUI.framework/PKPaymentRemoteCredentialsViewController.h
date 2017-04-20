@@ -24,7 +24,8 @@
 - (id)_deviceSpecificLocalizedStringKeyForKey:(id)arg1;
 - (void)_presentCardDetailsControllerForCredential:(id)arg1;
 - (void)_presentManualAddController;
-- (void)_presentViewController:(id)arg1;
+- (void)_presentViewController:(id)arg1 completion:(id /* block */)arg2;
+- (void)_setUserInteractionEnabled:(BOOL)arg1;
 - (BOOL)hideSetupLaterButton;
 - (id)initWithProvisioningController:(id)arg1 context:(int)arg2 delegate:(id)arg3 remoteCredentials:(id)arg4 allowsManualEntry:(BOOL)arg5;
 - (int)numberOfSectionsInTableView:(id)arg1;

@@ -33,6 +33,8 @@
 @property (nonatomic, copy) NSString *suffix;
 @property (readonly) Class superclass;
 
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
+
 + (id)person;
 + (id)personWithDictionary:(id)arg1 context:(id)arg2;
 
@@ -86,5 +88,9 @@
 - (void)setSuffix:(id)arg1;
 - (id)socialProfiles;
 - (id)suffix;
+
+// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
+
++ (id)personFromDisplayName:(id)arg1 address:(id)arg2;
 
 @end

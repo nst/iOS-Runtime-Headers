@@ -17,6 +17,7 @@
 @property (nonatomic, readonly) TUCallProvider *faceTimeProvider;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly, copy) NSArray *providers;
+@property (nonatomic, readonly, copy) NSDictionary *providersByIdentifier;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) TUCallProvider *telephonyProvider;
@@ -42,6 +43,7 @@
 - (id)providerWithIdentifier:(id)arg1;
 - (id)providerWithService:(int)arg1 video:(BOOL*)arg2;
 - (id)providers;
+- (id)providersByIdentifier;
 - (void)providersChangedForDataSource:(id)arg1;
 - (id)providersPassingTest:(id /* block */)arg1;
 - (id)queue;

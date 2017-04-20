@@ -74,7 +74,9 @@
 - (BOOL)canPasswordProtectNotes;
 - (int)compare:(id)arg1;
 - (unsigned int)countOfVisibleFolders;
+- (void)createDefaultFolder;
 - (void)createStandardFolders;
+- (void)createTrashFolder;
 - (id)cryptoPassphraseVerifier;
 - (void)dealloc;
 - (id)defaultFolder;

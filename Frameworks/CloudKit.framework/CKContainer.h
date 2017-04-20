@@ -141,6 +141,7 @@
 - (void)fetchUserRecordIDWithCompletionHandler:(id /* block */)arg1;
 - (id)findTrackedAssetByUUID:(id)arg1;
 - (id)flowControlManager;
+- (void)flushOperationMetricsToPowerLog;
 - (void)getNewWebSharingIdentity:(id /* block */)arg1;
 - (void)handleOperationCheckpoint:(id)arg1 forOperationWithID:(id)arg2;
 - (void)handleOperationCompletion:(id)arg1 forOperationWithID:(id)arg2;
@@ -205,6 +206,7 @@
 - (id)throttlingOperationQueue;
 - (void)tossConfigWithCompletionHandler:(id /* block */)arg1;
 - (void)trackAssets:(id)arg1;
+- (void)triggerAutoBugCaptureSnapshot;
 - (void)updatePushTokens;
 - (BOOL)wantsSiloedContext;
 - (void)wipeAllCachesAndDie;

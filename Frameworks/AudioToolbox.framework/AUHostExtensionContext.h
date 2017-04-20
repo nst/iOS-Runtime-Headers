@@ -17,6 +17,7 @@
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
 
+- (id)_derivedExtensionAuxiliaryHostProtocol;
 - (id)audioUnit;
 - (void)dealloc;
 - (id)extension;

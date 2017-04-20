@@ -4,13 +4,15 @@
 
 @interface NSBatchDeleteRequest : NSPersistentStoreRequest {
     NSFetchRequest * _deleteTarget;
-    void * _reserved;
+    long  _flags;
     unsigned int  _resultType;
 }
 
 @property (readonly, copy) NSFetchRequest *fetchRequest;
 @property unsigned int resultType;
 
+- (BOOL)_secureOperation;
+- (void)_setSecureOperation:(BOOL)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)fetchRequest;
@@ -19,5 +21,7 @@
 - (unsigned int)requestType;
 - (unsigned int)resultType;
 - (void)setResultType:(unsigned int)arg1;
+- (void)setShouldPerformSecureOperation:(BOOL)arg1;
+- (BOOL)shouldPerformSecureOperation;
 
 @end

@@ -4,6 +4,7 @@
 
 @interface EKEvent : EKCalendarItem {
     NSString * _birthdayPersonUniqueID;
+    unsigned int  _cachedJunkStatus;
     EKStructuredLocation * _cachedLocationPrediction;
     NSDate * _cachedLocationPredictionExpirationDate;
     BOOL  _locationPredictionFrozen;
@@ -22,6 +23,7 @@
 @property (nonatomic, readonly) NSString *birthdayContactIdentifier;
 @property (nonatomic, readonly) int birthdayPersonID;
 @property (nonatomic, readonly) NSString *birthdayPersonUniqueID;
+@property (nonatomic) unsigned int cachedJunkStatus;
 @property (nonatomic, copy) NSDate *endDate;
 @property (nonatomic, readonly) NSString *eventIdentifier;
 @property BOOL ipsos_allDayPreferred;
@@ -97,6 +99,7 @@
 - (id)birthdayContactIdentifier;
 - (int)birthdayPersonID;
 - (id)birthdayPersonUniqueID;
+- (unsigned int)cachedJunkStatus;
 - (BOOL)canBeRespondedTo;
 - (BOOL)canDetachSingleOccurrence;
 - (BOOL)canForward;
@@ -105,9 +108,11 @@
 - (void)clearInvitationStatus;
 - (BOOL)commitWithSpan:(int)arg1 error:(id*)arg2;
 - (id)committedValueForKey:(id)arg1;
+- (int)compareStartDateIncludingTravelWithEvent:(id)arg1;
 - (int)compareStartDateWithEvent:(id)arg1;
 - (void)confirmPredictedLocation:(id)arg1;
 - (BOOL)conformsToRecurrenceRules:(id)arg1;
+- (BOOL)couldBeJunk;
 - (BOOL)dateChanged;
 - (void)dealloc;
 - (id)description;
@@ -146,6 +151,7 @@
 - (BOOL)isStartDateDirty;
 - (BOOL)isStatusDirty;
 - (BOOL)isTentative;
+- (unsigned int)junkStatus;
 - (BOOL)locationChanged;
 - (BOOL)locationIsAConferenceRoom;
 - (int)locationPredictionState;
@@ -179,12 +185,16 @@
 - (void)revert;
 - (void)rollback;
 - (id)scanForConflicts;
+- (id)sendersEmail;
 - (BOOL)serverSupportedProposeNewTime;
 - (void)setAllDay:(BOOL)arg1;
 - (void)setAvailability:(int)arg1;
+- (void)setCachedJunkStatus:(unsigned int)arg1;
 - (void)setEndDate:(id)arg1;
 - (void)setFiredTTL:(BOOL)arg1;
 - (void)setInvitationStatus:(unsigned int)arg1;
+- (void)setIsJunk:(BOOL)arg1 shouldSave:(BOOL)arg2;
+- (void)setJunkStatus:(unsigned int)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setLocationPredictionState:(int)arg1;
 - (void)setNeedsOccurrenceCacheUpdate:(BOOL)arg1;
@@ -220,6 +230,7 @@
 - (id)structuredLocation;
 - (id)structuredLocationWithoutPrediction;
 - (id)suggestionInfo;
+- (BOOL)supportsJunkReporting;
 - (BOOL)timeChanged;
 - (id)title;
 - (BOOL)titleChanged;

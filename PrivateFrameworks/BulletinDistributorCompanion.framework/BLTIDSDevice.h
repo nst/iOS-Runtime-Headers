@@ -17,10 +17,15 @@
 
 - (void).cxx_destruct;
 - (void)dealloc;
+- (id)description;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)initWithIDSDevice:(id)arg1;
 - (BOOL)isCloudReachable;
 - (BOOL)isConnected;
 - (BOOL)isDefaultPairedDevice;
 - (BOOL)isNearby;
+- (id)succinctDescription;
+- (id)succinctDescriptionBuilder;
 
 @end

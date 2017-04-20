@@ -3,9 +3,10 @@
  */
 
 @interface _SFWebProcessPlugInPageSafeBrowsingController : NSObject <_SFSafeBrowsingWebProcessController> {
+    BOOL  _canGoBack;
     id /* block */  _completionHandler;
     NSDictionary * _localizedStrings;
-    WBUWebProcessPlugInPageController * _pageController;
+    _SFWebProcessPlugInPageController * _pageController;
     <_SFSafeBrowsingWarningResponseObserver> * _responseObserver;
     _WKRemoteObjectInterface * _safeBrowsingControllerInterface;
     _SFSecurityInfo * _securityInfo;
@@ -27,7 +28,7 @@
 - (void)injectPhishingAlertBindingsForFrame:(id)arg1 inScriptWorld:(id)arg2;
 - (id)localizedStringForString:(id)arg1;
 - (void)performSafeBrowsingCheckForURL:(id)arg1 completion:(id /* block */)arg2;
-- (void)safeBrowsingCheckFinishedWithSecurityInfo:(id)arg1 localizedStrings:(id)arg2;
+- (void)safeBrowsingCheckFinishedWithSecurityInfo:(id)arg1 canGoBack:(BOOL)arg2 localizedStrings:(id)arg3;
 - (void)securityWarningPageLoaded;
 - (void)urlPassedSafeBrowsingCheck:(id)arg1 canCache:(BOOL)arg2;
 - (BOOL)urlPassesFastSafeBrowsingCheck:(id)arg1;

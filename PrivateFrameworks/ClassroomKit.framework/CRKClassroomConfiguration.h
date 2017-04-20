@@ -4,13 +4,17 @@
 
 @interface CRKClassroomConfiguration : NSObject
 
++ (unsigned int)configurationType;
 + (BOOL)createPlaceholderFileWithError:(id*)arg1;
++ (void)fetchAdHocConfiguration:(id /* block */)arg1;
 + (void)fetchConfiguration:(id /* block */)arg1;
 + (BOOL)isStudentdInstalled;
 + (BOOL)placeholderFileExists;
 + (id)placeholderFileURL;
 + (BOOL)removePlaceholderFileWithError:(id*)arg1;
++ (void)setAdHocConfiguration:(id)arg1 completion:(id /* block */)arg2;
 + (void)setConfiguration:(id)arg1 completion:(id /* block */)arg2;
++ (id)setOfActiveRestrictionUUIDs:(id)arg1;
 + (id)studentDaemonConnection;
 
 @end

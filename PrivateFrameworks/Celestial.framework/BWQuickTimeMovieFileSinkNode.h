@@ -9,8 +9,6 @@
         unsigned int flags; 
         long long epoch; 
     }  _adjustedMaxFileDuration;
-    unsigned long long  _adjustedMaxFileSize;
-    unsigned long long  _adjustedMinFreeDiskSpaceLimit;
     BOOL  _atLeastOneFragmentIsWritten;
     struct OpaqueCMByteStream { } * _byteStream;
     struct { 
@@ -47,12 +45,15 @@
     }  _debugDurationForFailOfDiskSpaceTest;
     BOOL  _didBeginSession;
     BOOL  _didBeginWriting;
+    long long  _estimatedMovieSizeOverhead;
     BOOL * _expectingToSeeSamplesForInput;
+    unsigned long long  _fileSizeAtPreviousCheck;
     BOOL * _finalDurationNeedsToBeWrittenForTrack;
     BWIrisMovieInfo * _firstIrisMovieInfo;
     struct OpaqueFigFormatWriter { } * _formatWriter;
     BOOL  _haveDebugASBD;
     BOOL * _haveSeenSamplesForTrack;
+    BOOL  _ignoreFileSizeLimit;
     BWIrisMovieGenerator * _irisMovieGenerator;
     BOOL  _irisMovieProcessingSuspended;
     BOOL  _irisSampleReferenceMoviesEnabled;
@@ -111,9 +112,10 @@
 
 + (void)initialize;
 
-- (long)_adjustRecordingLimitsForMovieTimeScale:(int)arg1;
+- (long)_adjustMaxFileDurationForMovieTimeScale:(int)arg1;
+- (long long)_adjustedMinFreeDiskSpaceLimitForEstimatedMovieSizeOverhead:(long long)arg1;
 - (void)_buildIrisRefMovieGeneratorAndWriteFirstIrisAsRefMovie;
-- (long)_checkFreeSpace;
+- (long)_checkFreeSpaceForEstimatedMovieSizeOverhead:(long long)arg1;
 - (void)_debugAudioUsingSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)_determineWhichInputsWeExpectToSeeSamplesFor;
 - (void)_doEndRecordingAtTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 earlyTerminationErrCode:(long)arg2;

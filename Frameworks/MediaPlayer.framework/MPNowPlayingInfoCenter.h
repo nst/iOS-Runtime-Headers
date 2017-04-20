@@ -4,9 +4,11 @@
 
 @interface MPNowPlayingInfoCenter : NSObject {
     NSDictionary * _convertedNowPlayingInfo;
+    <MPNowPlayingInfoLyricsDelegate> * _lyricsDelegate;
     NSDictionary * _nowPlayingInfo;
     MPNowPlayingPlaybackQueueCache * _playbackQueueCache;
     <MPNowPlayingPlaybackQueueDataSource> * _playbackQueueDataSource;
+    <MPNowPlayingPlaybackQueueDelegate> * _playbackQueueDelegate;
     unsigned int  _playbackState;
     NSDate * _pushDate;
     NSObject<OS_dispatch_queue> * _queue;
@@ -19,16 +21,22 @@
 + (id)defaultCenter;
 
 - (void).cxx_destruct;
+- (void)_asynchronousRequests:(void*)arg1 forItem:(id)arg2 completion:(id /* block */)arg3;
 - (id)_init;
+- (id)_itemAtIndexPath:(id)arg1 fromRoot:(id)arg2;
 - (void)_pushNowPlayingInfoAndRetry:(BOOL)arg1;
 - (void)_registerCallbacks;
 - (id)init;
 - (void)invalidatePlaybackQueue;
+- (id)lyricsDelegate;
 - (id)nowPlayingInfo;
 - (id)playbackQueueDataSource;
+- (id)playbackQueueDelegate;
 - (unsigned int)playbackState;
+- (void)setLyricsDelegate:(id)arg1;
 - (void)setNowPlayingInfo:(id)arg1;
 - (void)setPlaybackQueueDataSource:(id)arg1;
+- (void)setPlaybackQueueDelegate:(id)arg1;
 - (void)setPlaybackState:(unsigned int)arg1;
 
 @end

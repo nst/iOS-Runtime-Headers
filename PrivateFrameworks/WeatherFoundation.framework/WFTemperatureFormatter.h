@@ -4,6 +4,7 @@
 
 @interface WFTemperatureFormatter : NSFormatter {
     NSString * _fallbackTemperatureString;
+    BOOL  _includeDegreeSymbol;
     int  _inputUnit;
     NSLocale * _locale;
     unsigned int  _maximumFractionDigits;
@@ -13,6 +14,7 @@
 }
 
 @property (nonatomic, copy) NSString *fallbackTemperatureString;
+@property (nonatomic) BOOL includeDegreeSymbol;
 @property (nonatomic) int inputUnit;
 @property (nonatomic, retain) NSLocale *locale;
 @property (nonatomic) unsigned int maximumFractionDigits;
@@ -31,6 +33,7 @@
 - (id)formattedStringFromTemperature:(id)arg1;
 - (id)formattedTemperatureFromString:(id)arg1;
 - (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
+- (BOOL)includeDegreeSymbol;
 - (id)init;
 - (int)inputUnit;
 - (id)locale;
@@ -39,6 +42,7 @@
 - (int)outputUnit;
 - (unsigned int)roundingMode;
 - (void)setFallbackTemperatureString:(id)arg1;
+- (void)setIncludeDegreeSymbol:(BOOL)arg1;
 - (void)setInputUnit:(int)arg1;
 - (void)setLocale:(id)arg1;
 - (void)setMaximumFractionDigits:(unsigned int)arg1;

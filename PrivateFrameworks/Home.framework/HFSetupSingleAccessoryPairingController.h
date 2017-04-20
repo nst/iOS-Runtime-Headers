@@ -9,6 +9,7 @@
     NAFuture * _pairingFuture;
     NSHashTable * _pairingObservers;
     unsigned int  _phase;
+    HMSetupAccessoryDescription * _setupAccessoryDescription;
     NSString * _setupCode;
     <HMSetupRemoteService> * _setupRemoteService;
     NSString * _statusText;
@@ -25,6 +26,7 @@
 @property (nonatomic, retain) NAFuture *pairingFuture;
 @property (nonatomic, retain) NSHashTable *pairingObservers;
 @property (nonatomic) unsigned int phase;
+@property (nonatomic, readonly) HMSetupAccessoryDescription *setupAccessoryDescription;
 @property (nonatomic, retain) NSString *setupCode;
 @property (nonatomic) <HMSetupRemoteService> *setupRemoteService;
 @property (nonatomic, retain) NSString *statusText;
@@ -44,7 +46,7 @@
 - (BOOL)hasFailedAccessories;
 - (id)home;
 - (void)home:(id)arg1 didAddAccessory:(id)arg2;
-- (id)initWithDiscoveredAccessory:(id)arg1 setupRemoteService:(id)arg2;
+- (id)initWithDiscoveredAccessory:(id)arg1 setupRemoteService:(id)arg2 setupAccessoryDescription:(id)arg3;
 - (id)pairedDiscoveredAccessory;
 - (id)pairingFuture;
 - (id)pairingObservers;
@@ -58,6 +60,7 @@
 - (void)setSetupCode:(id)arg1;
 - (void)setSetupRemoteService:(id)arg1;
 - (void)setStatusText:(id)arg1;
+- (id)setupAccessoryDescription;
 - (id)setupCode;
 - (id)setupRemoteService;
 - (void)startWithHome:(id)arg1;

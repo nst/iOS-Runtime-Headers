@@ -3,20 +3,27 @@
  */
 
 @interface WBSTabDialogManager : NSObject {
-    NSMutableDictionary * _completionHandlers;
-    unsigned int  _maximumNumberOfBackgroundDialogs;
-    NSMutableDictionary * _webPIDToDialogQueueMap;
+    unsigned int  _queueCapacity;
+    NSMutableDictionary * _tabIDToDialogQueueMapping;
+    NSMutableDictionary * _webProcessIDToDialogSetMapping;
 }
 
 - (void).cxx_destruct;
-- (void)dismissAllDialogsForWebPIDIfNeeded:(int)arg1;
-- (void)dismissCurrentDialogForWebPID:(int)arg1 withResponse:(int)arg2 message:(id)arg3;
-- (void)dismissDialogForWebPID:(int)arg1 withResponse:(int)arg2 message:(id)arg3;
-- (void)dismissDialogForWebPIDIfNeeded:(int)arg1;
-- (void)enqueueOrPresentDialogForWebPID:(int)arg1 presentationBlock:(id /* block */)arg2 dismissalBlock:(id /* block */)arg3 andIgnoreQueueCapacity:(BOOL)arg4;
+- (id)_dialogBlockingSlot:(struct { int x1; unsigned int x2; })arg1;
+- (id)_dialogBlockingWebProcessID:(int)arg1;
+- (void)_dismissDialog:(id)arg1 withResponse:(id)arg2;
+- (int)_enqueueDialog:(id)arg1;
+- (struct NSMutableArray { Class x1; }*)_queueForTabID:(unsigned long)arg1 createIfNeeded:(BOOL)arg2;
+- (struct NSMutableSet { Class x1; }*)_setForWebProcessID:(int)arg1 createIfNeeded:(BOOL)arg2;
+- (void)cancelAllDialogsBlockingSlot:(struct { int x1; unsigned int x2; })arg1;
+- (void)cancelAllDialogsBlockingWebProcessID:(int)arg1;
+- (void)cancelAllDialogsForTabID:(unsigned long)arg1;
+- (void)cancelAllDialogsForTabID:(unsigned long)arg1 reason:(int)arg2;
+- (id)description;
+- (void)dismissCurrentDialogForTabID:(unsigned long)arg1 withResponse:(id)arg2;
+- (void)enqueueOrPresentDialog:(id)arg1 inSlot:(struct { int x1; unsigned int x2; })arg2;
+- (void)enqueueOrPresentDialogInSlot:(struct { int x1; unsigned int x2; })arg1 presentationBlock:(id /* block */)arg2 dismissalBlock:(id /* block */)arg3 blocksWebProcessUntilDismissed:(BOOL)arg4;
 - (id)init;
-- (void)presentNextDialogForWebPID:(int)arg1;
-- (void)registerDialogForWebPID:(int)arg1 withCompletionHandler:(id)arg2;
-- (id)unregisterDialogForWebPID:(int)arg1;
+- (void)presentNextDialogForSlot:(struct { int x1; unsigned int x2; })arg1;
 
 @end

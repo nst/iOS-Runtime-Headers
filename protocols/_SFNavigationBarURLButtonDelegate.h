@@ -9,5 +9,6 @@
 - (void)navigationBarURLButtonDidReceivePasteCommand:(_SFNavigationBarURLButton *)arg1;
 - (BOOL)navigationBarURLButtonShouldCopy:(_SFNavigationBarURLButton *)arg1;
 - (BOOL)navigationBarURLButtonShouldPaste:(_SFNavigationBarURLButton *)arg1;
+- (NSString *)textForNavigationBarURLButton:(_SFNavigationBarURLButton *)arg1;
 
 @end

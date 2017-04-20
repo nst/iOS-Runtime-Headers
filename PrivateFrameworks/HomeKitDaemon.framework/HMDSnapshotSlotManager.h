@@ -11,7 +11,6 @@
     HMFMessageDispatcher * _msgDispatcher;
     HMDNotificationRegistration * _notificationRegistration;
     NSObject<OS_dispatch_queue> * _propertyQueue;
-    CAContext * _snapshotContext;
     NSMapTable * _snapshotSlots;
     NSUUID * _uniqueIdentifier;
     NSObject<OS_dispatch_queue> * _workQueue;
@@ -29,7 +28,6 @@
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, readonly) HMDNotificationRegistration *notificationRegistration;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
-@property (nonatomic, retain) CAContext *snapshotContext;
 @property (nonatomic, readonly) NSMapTable *snapshotSlots;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSUUID *uniqueIdentifier;
@@ -60,9 +58,7 @@
 - (void)registerForMessages;
 - (void)setMostRecentSnapshot:(id)arg1;
 - (void)setMsgDispatcher:(id)arg1;
-- (void)setSnapshotContext:(id)arg1;
 - (void)setupMostRecentSnapshot;
-- (id)snapshotContext;
 - (id)snapshotSlots;
 - (id)uniqueIdentifier;
 - (id)workQueue;

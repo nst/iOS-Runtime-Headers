@@ -10,6 +10,7 @@
 - (void)exceededMaximumAttemptsForRemoteSecretEntry:(CDPRemoteSecretEntryViewController *)arg1;
 - (void)finishValidation:(CDPRemoteSecretEntryViewController *)arg1 withError:(NSError *)arg2;
 - (void)performAccountReset:(CDPRemoteSecretEntryViewController *)arg1;
+- (void)performRecoveryKeyRecovery:(CDPRemoteSecretEntryViewController *)arg1;
 - (void)performRemoteApproval:(CDPRemoteSecretEntryViewController *)arg1;
 - (BOOL)performingAccountRecovery;
 - (void)remoteSecretEntry:(CDPRemoteSecretEntryViewController *)arg1 depletedRemainingAttemptsForDevice:(CDPDevice *)arg2;

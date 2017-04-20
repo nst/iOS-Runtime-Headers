@@ -30,16 +30,15 @@
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned int unsupportedReason;
 
++ (id)_dataForResolutionMethodUnimplemented;
++ (id)callerToResolve;
 + (id)needsValue;
 + (id)notRequired;
 + (id)resolutionResultConfirmationRequiredWithItemToConfirm:(id)arg1;
 + (id)resolutionResultDisambiguationWithItemsToDisambiguate:(id)arg1;
-+ (id)resolutionResultNeedsMoreDetailsForParameters:(id)arg1;
-+ (id)resolutionResultNeedsMoreDetailsForValue:(id)arg1;
 + (id)resolutionResultNeedsValue;
 + (id)resolutionResultNeedsValueForParameters:(id)arg1;
 + (id)resolutionResultNotRequired;
-+ (id)resolutionResultSpecificityNotEnoughForParameters:(id)arg1;
 + (id)resolutionResultSuccessWithResolvedValue:(id)arg1;
 + (id)resolutionResultUnsupportedDueToConflictWithParameter:(id)arg1 alternateItems:(id)arg2;
 + (id)resolutionResultUnsupportedWithReason:(unsigned int)arg1;

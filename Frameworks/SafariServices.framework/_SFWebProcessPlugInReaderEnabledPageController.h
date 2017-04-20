@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
  */
 
-@interface _SFWebProcessPlugInReaderEnabledPageController : WBUWebProcessPlugInAutoFillPageController <RequestDesktopSiteWebProcessPlugInListener, SFReaderWebProcessControllerProtocol> {
+@interface _SFWebProcessPlugInReaderEnabledPageController : _SFWebProcessPlugInAutoFillPageController <RequestDesktopSiteWebProcessPlugInListener, SFReaderWebProcessControllerProtocol> {
     _WKRemoteObjectInterface * _availabilityControllerInterface;
     int  _cachedReaderTopScrollOffset;
     NSMutableSet * _domainsNeedingDesktopUserAgent;
@@ -17,7 +17,6 @@
         } __ptr_; 
     }  _readerAvailabilityController;
     _SFReaderWebProcessPlugInPageController * _readerPageController;
-    float  _readerUserVisibleWidth;
     <RequestDesktopSiteUIProcessListener> * _requestDesktopSiteUIProcessListener;
     _WKRemoteObjectInterface * _requestDesktopSiteWebProcessPlugInListenerInterface;
     _SFWebProcessPlugInPageSafeBrowsingController * _safeBrowsingController;
@@ -32,7 +31,6 @@
 @property (nonatomic, copy) NSDictionary *initalArticleScrollPositionAsDictionary;
 @property (nonatomic, readonly) NSDictionary *initialReaderConfiguration;
 @property (nonatomic, retain) _SFReaderWebProcessPlugInPageController *readerPageController;
-@property (nonatomic, readonly) float readerUserVisibleWidth;
 @property (readonly) Class superclass;
 @property (getter=isViewingReadingListArchive, nonatomic, readonly) BOOL viewingReadingListArchive;
 
@@ -42,6 +40,7 @@
 - (void)_deferPageLoadingUntilSafeBrowsingCheckCompleteForFrame:(id)arg1;
 - (void)_detectAvailabilityAfterDelay:(double)arg1 loadEvent:(int)arg2;
 - (void)_detectReaderAvailabilityAfterSameDocumentNavigation;
+- (void)_setUpReaderActivityListenerProxy;
 - (void)_setUpReaderControllerInterface;
 - (int)cachedReaderTopScrollOffset;
 - (void)collectReaderContentForMail;
@@ -63,14 +62,12 @@
 - (void)prepareToTransitionToReader;
 - (void)readerContentIsReadyForDisplay:(id)arg1;
 - (id)readerPageController;
-- (float)readerUserVisibleWidth;
 - (void)setCachedReaderTopScrollOffset:(int)arg1;
 - (void)setInitalArticleScrollPositionAsDictionary:(id)arg1;
 - (void)setReaderFont:(id)arg1;
-- (void)setReaderInitialTopScrollOffset:(int)arg1 configuration:(id)arg2 userVisibleWidth:(double)arg3 isViewingArchive:(BOOL)arg4;
+- (void)setReaderInitialTopScrollOffset:(int)arg1 configuration:(id)arg2 isViewingArchive:(BOOL)arg3;
 - (void)setReaderPageController:(id)arg1;
 - (void)setReaderTheme:(id)arg1;
-- (void)setReaderUserVisibleWidth:(double)arg1;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 didCommitLoadForFrame:(id)arg2;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 didFinishDocumentLoadForFrame:(id)arg2;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 didFinishLoadForFrame:(id)arg2;

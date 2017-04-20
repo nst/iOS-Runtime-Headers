@@ -14,9 +14,7 @@
 
 + (id)contactKeyForVCardKey:(id)arg1;
 + (id /* block */)contactValueTransformForVCardKey:(id)arg1;
-+ (id /* block */)instantMessageAddressFromDictionaryTransform;
 + (id)labeledValuesWithValues:(id)arg1 transform:(id /* block */)arg2 labels:(id)arg3 isPrimaries:(id)arg4;
-+ (id /* block */)socialProfileFromDictionaryTransform;
 
 - (id)build;
 - (BOOL)canSetValueForProperty:(id)arg1;

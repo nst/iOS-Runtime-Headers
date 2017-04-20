@@ -23,6 +23,7 @@
 - (void)openURL:(id)arg1 bundleIdentifier:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)openURL:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)openURLDelegate;
+- (void)openUserActivity:(id)arg1 withApplicationProxy:(id)arg2 requireOptionKeyPromptUnlockDevice:(BOOL)arg3 completionHandler:(id /* block */)arg4;
 - (BOOL)overrideBlurStyle;
 - (void)placeDialRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)reduceMotionEnabled;

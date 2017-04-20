@@ -26,7 +26,7 @@
 - (unsigned long long)_spaceRequiredForReaders;
 - (void)_triggerImmediateReadOfDocumentAtPath:(id)arg1;
 - (void)_unregisterPresenterForKey:(id)arg1;
-- (void)_waitForDownloadOfDirectory:(id)arg1 key:(id)arg2 readingOptions:(unsigned int)arg3 completionHandler:(id /* block */)arg4;
+- (void)_waitForDownloadOfDirectory:(id)arg1 key:(id)arg2 requireCurrent:(BOOL)arg3 readingOptions:(unsigned int)arg4 completionHandler:(id /* block */)arg5;
 - (void)_waitForDownloadOfDocument:(id)arg1 key:(id)arg2 requireCurrent:(BOOL)arg3 readingOptions:(unsigned int)arg4 completionHandler:(id /* block */)arg5;
 - (void)boostFilePresenterForURL:(id)arg1;
 - (void)cancelAllCoordinationProviders;

@@ -23,5 +23,6 @@
 - (id)diagnosticsItemProvider;
 - (id)miroMovie:(id)arg1 createAndNavigateToMemoryFromCollection:(id)arg2;
 - (id)movieViewController;
+- (BOOL)ppt_runTest:(id)arg1 options:(id)arg2;
 
 @end

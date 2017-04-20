@@ -5,14 +5,21 @@
 @interface MBManagerClient : MBManager <MBConnectionHandler> {
     MBConnection * _conn;
     NSObject<OS_dispatch_queue> * _eventQueue;
+    int  _iTunesRestoreEndedNotificationToken;
+    BOOL  _iTunesRestoreStarted;
+    int  _iTunesRestoreStartedNotificationToken;
     NSObject<MBManagerDelegate> * _privateDelegate;
+    BOOL  _shouldSupportiTunes;
     int  _stateToken;
+    NSObject<OS_dispatch_source> * _timer;
 }
 
 @property NSObject<MBManagerDelegate> *privateDelegate;
+@property (nonatomic) BOOL shouldSupportiTunes;
 
 - (void)_backupDidBeginNotification;
 - (void)_establishConnection;
+- (BOOL)_isBackupAgent2Running;
 - (id)_sendRequest:(id)arg1 arguments:(id)arg2;
 - (id)_sendRequest:(id)arg1 arguments:(id)arg2 error:(id*)arg3;
 - (void)accountChanged;
@@ -74,6 +81,8 @@
 - (BOOL)restoreApplicationWithBundleID:(id)arg1 failed:(BOOL)arg2 context:(id)arg3 error:(id*)arg4;
 - (BOOL)restoreApplicationWithBundleID:(id)arg1 failed:(BOOL)arg2 error:(id*)arg3;
 - (BOOL)restoreApplicationWithBundleID:(id)arg1 failed:(BOOL)arg2 withQOS:(int)arg3 context:(id)arg4 error:(id*)arg5;
+- (BOOL)restoreBookWithPath:(id)arg1 context:(id)arg2 error:(id*)arg3;
+- (BOOL)restoreBookWithPath:(id)arg1 error:(id*)arg2;
 - (BOOL)restoreDataExistsForApplicationWithBundleID:(id)arg1 size:(unsigned long long*)arg2;
 - (id)restoreFailuresForDataclass:(id)arg1 assetType:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (BOOL)restoreFileExistsWithPath:(id)arg1;
@@ -92,11 +101,15 @@
 - (void)setDelegate:(id)arg1;
 - (void)setPrivateDelegate:(id)arg1;
 - (void)setRestoreSessionWithBackupUDID:(id)arg1 snapshotUUID:(id)arg2;
+- (void)setShouldSupportiTunes:(BOOL)arg1;
+- (void)setSupportsiTunes:(BOOL)arg1;
 - (BOOL)setupBackupWithPasscode:(id)arg1 error:(id*)arg2;
+- (BOOL)shouldSupportiTunes;
 - (BOOL)startBackupWithError:(id*)arg1;
 - (BOOL)startRestoreForBackupUDID:(id)arg1 snapshotID:(unsigned int)arg2 error:(id*)arg3;
 - (BOOL)startScanForBundleIDs:(id)arg1 error:(id*)arg2;
 - (BOOL)startScanWithError:(id*)arg1;
+- (void)startWatchingBackupAgent2;
 - (void)syncBackupEnabled;
 - (BOOL)unpinSnapshotID:(unsigned int)arg1 backupUDID:(id)arg2 error:(id*)arg3;
 - (BOOL)unsetLocalBackupPasswordWithError:(id*)arg1;

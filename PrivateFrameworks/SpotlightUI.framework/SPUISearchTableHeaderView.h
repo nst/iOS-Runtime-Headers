@@ -18,6 +18,7 @@
 @property (nonatomic, retain) NSLayoutConstraint *moreButtonVisibleConstraint;
 @property (nonatomic, retain) SFResultSection *section;
 @property (readonly) unsigned int sectionHeaderType;
+@property (readonly) NSString *title;
 @property (nonatomic, retain) UILabel *titleLabel;
 
 - (void).cxx_destruct;
@@ -38,6 +39,7 @@
 - (void)setSection:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
 - (BOOL)supportsShowMoreInApp;
+- (id)title;
 - (id)titleLabel;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateShowMoreButtonVisibility;

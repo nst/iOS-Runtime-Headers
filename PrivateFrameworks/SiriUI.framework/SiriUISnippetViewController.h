@@ -149,6 +149,7 @@
 - (Class)transparentHeaderViewClass;
 - (BOOL)usePlatterStyle;
 - (BOOL)wantsConfirmationInsets;
+- (BOOL)wantsToManageBackgroundColor;
 - (void)willCancel;
 - (void)willConfirm;
 

@@ -7,9 +7,9 @@
 
 - (void)dismissSiriRemoteViewController:(AFUISiriRemoteViewController *)arg1 delayForTTS:(BOOL)arg2;
 - (void)notifyOnNextUserInteractionForSiriRemoteViewController:(AFUISiriRemoteViewController *)arg1;
-- (void)siriRemoteViewController:(void *)arg1 canLoadPreviousConversation:(void *)arg2; // needs 2 arg types, found 7: AFUISiriRemoteViewController *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 didChangePresentationPeekMode:(unsigned int)arg2;
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 didEncounterUnexpectedServiceError:(NSError *)arg2;
+- (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 didFinishTest:(NSString *)arg2;
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 didReadBulletinWithIdentifier:(NSString *)arg2;
 - (void)siriRemoteViewController:(void *)arg1 handlePasscodeUnlockWithCompletion:(void *)arg2; // needs 2 arg types, found 7: AFUISiriRemoteViewController *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
 - (void)siriRemoteViewController:(void *)arg1 launchApplicationWithBundleIdentifier:(void *)arg2 withURL:(void *)arg3 launchOptions:(void *)arg4 replyHandler:(void *)arg5; // needs 5 arg types, found 10: AFUISiriRemoteViewController *, NSString *, NSURL *, int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
@@ -28,9 +28,13 @@
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 viewServiceDidTerminateWithError:(NSError *)arg2;
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 willDismissViewControllerWithStatusBarStyle:(int)arg2;
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 willPresentViewControllerWithStatusBarStyle:(int)arg2;
+- (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 willStartTest:(NSString *)arg2;
 - (void)siriRemoteViewControllerDidDetectMicButtonLongPressBegan:(AFUISiriRemoteViewController *)arg1;
 - (void)siriRemoteViewControllerDidDetectMicButtonLongPressEnded:(AFUISiriRemoteViewController *)arg1;
 - (void)siriRemoteViewControllerDidDetectMicButtonTap:(AFUISiriRemoteViewController *)arg1;
+- (void)siriRemoteViewControllerDidEnterUITrackingMode:(AFUISiriRemoteViewController *)arg1;
+- (void)siriRemoteViewControllerDidExitUITrackingMode:(AFUISiriRemoteViewController *)arg1;
+- (void)siriRemoteViewControllerDidPresentConversationFromBreadcrumb:(AFUISiriRemoteViewController *)arg1;
 - (void)siriRemoteViewControllerDidPresentUserInterface:(AFUISiriRemoteViewController *)arg1;
 - (void)siriRemoteViewControllerPulseHelpButton:(AFUISiriRemoteViewController *)arg1;
 - (void)startGuidedAccessForRemoteViewController:(AFUISiriRemoteViewController *)arg1;

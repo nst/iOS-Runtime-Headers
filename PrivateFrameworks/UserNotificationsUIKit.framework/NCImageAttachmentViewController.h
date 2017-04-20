@@ -6,21 +6,21 @@
     struct CGSize { 
         float width; 
         float height; 
-    }  _imageSize;
-    UIImageView * _imageView;
+    }  _contentSize;
+    NCAnimatedImageView * _imageView;
 }
 
-@property (nonatomic) struct CGSize { float x1; float x2; } imageSize;
-@property (nonatomic, retain) UIImageView *imageView;
+@property (nonatomic) struct CGSize { float x1; float x2; } contentSize;
+@property (nonatomic, retain) NCAnimatedImageView *imageView;
 
 - (void).cxx_destruct;
-- (void)_setupViewUsingImage:(id)arg1;
 - (struct CGSize { float x1; float x2; })contentSize;
 - (void)dealloc;
-- (struct CGSize { float x1; float x2; })imageSize;
 - (id)imageView;
 - (id)initWithAttachment:(id)arg1 forNotificationRequest:(id)arg2;
-- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setImageView:(id)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillLayoutSubviews;
 
 @end

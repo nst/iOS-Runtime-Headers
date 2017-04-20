@@ -123,6 +123,7 @@
 + (BOOL)isSmartAlbumForKind:(int)arg1;
 + (id)keyPathsForValuesAffectingKindValue;
 + (id)keyPathsForValuesAffectingName;
++ (id)localizedRecoveredTitle;
 + (id)localizedTitleForAlbumKind:(int)arg1;
 + (id)otaRestoreProgressAlbumInLibrary:(id)arg1;
 + (void)removeAllUserAlbumsAndFoldersInLibrary:(id)arg1;
@@ -141,6 +142,7 @@
 - (id)_itemIdentifier;
 - (id)_kindDescription;
 - (id)_prettyDescription;
+- (void)_repairTitleIfEmpty;
 - (void)applyPropertiesFromAlbumChange:(id)arg1;
 - (void)applyTrashedState:(short)arg1 cascade:(BOOL)arg2;
 - (unsigned int)approximateCount;
@@ -199,6 +201,7 @@
 - (void)reducePendingItemsCountBy:(unsigned int)arg1;
 - (void)registerDerivedAlbum:(struct NSObject { Class x1; }*)arg1;
 - (void)registerForChanges;
+- (void)repairUuidAndTitleWithRecoveryReason:(const char *)arg1;
 - (void)setDidRegisteredWithUserInterfaceContext:(BOOL)arg1;
 - (void)setHasUnseenContentBoolValue:(BOOL)arg1;
 - (void)setIsRegisteredForChanges:(BOOL)arg1;
@@ -210,6 +213,7 @@
 - (void)unregisterForChanges;
 - (void)updateAlbumFolderRelation:(id)arg1 inLibrary:(id)arg2;
 - (unsigned int)videosCount;
+- (void)willSave;
 - (void)willTurnIntoFault;
 
 @end

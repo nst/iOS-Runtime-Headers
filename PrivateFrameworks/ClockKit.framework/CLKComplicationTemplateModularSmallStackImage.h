@@ -3,13 +3,13 @@
  */
 
 @interface CLKComplicationTemplateModularSmallStackImage : CLKComplicationTemplate {
-    unsigned int  _highlightMode;
+    unsigned long long  _highlightMode;
     CLKImageProvider * _line1ImageProvider;
     CLKTextProvider * _line2TextProvider;
 }
 
-@property (nonatomic) BOOL highlightLine2;
-@property (nonatomic) unsigned int highlightMode;
+@property (nonatomic) bool highlightLine2;
+@property (nonatomic) unsigned long long highlightMode;
 @property (nonatomic, copy) CLKImageProvider *line1ImageProvider;
 @property (nonatomic, copy) CLKTextProvider *line2TextProvider;
 
@@ -19,13 +19,13 @@
 - (void)_enumerateIntegerKeysWithBlock:(id /* block */)arg1;
 - (void)_enumerateTextProviderKeysWithBlock:(id /* block */)arg1;
 - (id)_initWithJSONObjectRepresentation:(id)arg1 bundle:(id)arg2;
-- (BOOL)highlightLine2;
-- (unsigned int)highlightMode;
-- (BOOL)isCompatibleWithFamily:(int)arg1;
+- (bool)highlightLine2;
+- (unsigned long long)highlightMode;
+- (bool)isCompatibleWithFamily:(long long)arg1;
 - (id)line1ImageProvider;
 - (id)line2TextProvider;
-- (void)setHighlightLine2:(BOOL)arg1;
-- (void)setHighlightMode:(unsigned int)arg1;
+- (void)setHighlightLine2:(bool)arg1;
+- (void)setHighlightMode:(unsigned long long)arg1;
 - (void)setLine1ImageProvider:(id)arg1;
 - (void)setLine2TextProvider:(id)arg1;
 

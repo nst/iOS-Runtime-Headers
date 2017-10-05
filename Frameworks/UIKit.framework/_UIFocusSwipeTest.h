@@ -3,8 +3,8 @@
  */
 
 @interface _UIFocusSwipeTest : _UIFocusTest {
-    unsigned int  _eventCount;
-    struct { double x1; int x2; float x3; float x4; float x5; float x6; } * _events;
+    unsigned long long  _eventCount;
+    const struct { double x1; long long x2; double x3; double x4; double x5; double x6; } * _events;
     int  _swipeAxis;
     UIWindow * _window;
 }

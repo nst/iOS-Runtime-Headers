@@ -5,33 +5,29 @@
 @interface CKDGetContentAuthTokensForPutURLRequest : CKDURLRequest {
     CKDAssetTokenRequest * _assetTokenRequest;
     NSDictionary * _headers;
-    NSArray * _lazyRequestOperations;
     NSMapTable * _transactionStateByRequestIDs;
-    BOOL  _useEncryption;
+    bool  _useEncryption;
 }
 
 @property (nonatomic, retain) CKDAssetTokenRequest *assetTokenRequest;
 @property (nonatomic, retain) NSDictionary *headers;
-@property (nonatomic, retain) NSArray *lazyRequestOperations;
 @property (nonatomic, retain) NSMapTable *transactionStateByRequestIDs;
-@property (nonatomic) BOOL useEncryption;
+@property (nonatomic) bool useEncryption;
 
 - (void).cxx_destruct;
 - (id)assetTokenRequest;
+- (id)generateRequestOperations;
 - (id)headers;
 - (id)initWithAssetTokenRequest:(id)arg1 headers:(id)arg2;
-- (id)lazyRequestOperations;
 - (int)operationType;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
-- (id)requestOperations;
 - (void)setAssetTokenRequest:(id)arg1;
 - (void)setHeaders:(id)arg1;
-- (void)setLazyRequestOperations:(id)arg1;
 - (void)setTransactionStateByRequestIDs:(id)arg1;
-- (void)setUseEncryption:(BOOL)arg1;
+- (void)setUseEncryption:(bool)arg1;
 - (id)transactionStateByRequestIDs;
-- (BOOL)useEncryption;
+- (bool)useEncryption;
 
 @end

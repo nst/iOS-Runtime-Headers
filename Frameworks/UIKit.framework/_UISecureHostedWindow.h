@@ -4,6 +4,6 @@
 
 @interface _UISecureHostedWindow : _UIHostedWindow
 
-+ (BOOL)_isSecure;
++ (bool)_isSecure;
 
 @end

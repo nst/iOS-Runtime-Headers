@@ -6,6 +6,8 @@
     struct CGImage { } * _image;
 }
 
++ (bool)supportsSecureCoding;
+
 - (void)dealloc;
 - (id)decodedObject;
 - (void)encodeWithCoder:(id)arg1;

@@ -4,16 +4,16 @@
 
 @interface TIRecentInputs : TILexicon {
     NSString * _filePath;
-    BOOL  _needsSync;
+    bool  _needsSync;
 }
 
 @property (nonatomic, retain) NSString *filePath;
-@property (nonatomic) BOOL needsSync;
+@property (nonatomic) bool needsSync;
 
 + (id)_lexiconPathForLocalIdentifier:(id)arg1;
 + (id)_sanitizeRecentInputString:(id)arg1;
 + (void)clearRecentInputForIdentifier:(id)arg1;
-+ (BOOL)identifierIsSystemIdentifier:(id)arg1;
++ (bool)identifierIsSystemIdentifier:(id)arg1;
 + (id)recentInputAtPath:(id)arg1;
 + (id)recentInputForIdentifier:(id)arg1;
 + (void)recentInputForIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -28,10 +28,10 @@
 - (void)dealloc;
 - (id)filePath;
 - (id)lexiconByRemovingEntry:(id)arg1;
-- (id)lexiconWithAdditionalEntry:(id)arg1 maximumSize:(int)arg2;
-- (BOOL)needsSync;
+- (id)lexiconWithAdditionalEntry:(id)arg1 maximumSize:(long long)arg2;
+- (bool)needsSync;
 - (void)setFilePath:(id)arg1;
-- (void)setNeedsSync:(BOOL)arg1;
+- (void)setNeedsSync:(bool)arg1;
 - (void)storeIfNecessary;
 
 @end

@@ -6,6 +6,6 @@
 @required
 
 - (NSDictionary *)additionalAdSheetLaunchOptions;
-- (BOOL)shouldLaunchAdSheet;
+- (bool)shouldLaunchAdSheet;
 
 @end

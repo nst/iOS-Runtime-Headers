@@ -4,23 +4,23 @@
 
 @interface DAWaiterWrapper : NSObject {
     id /* block */  _completionHandler;
-    int  _dataclasses;
+    long long  _dataclasses;
     <DADataclassLockWatcher> * _waiter;
     int  _waiterNum;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;
-@property (nonatomic) int dataclasses;
+@property (nonatomic) long long dataclasses;
 @property (nonatomic, retain) <DADataclassLockWatcher> *waiter;
 @property (nonatomic, readonly) int waiterNum;
 
 - (void).cxx_destruct;
 - (id /* block */)completionHandler;
-- (int)dataclasses;
+- (long long)dataclasses;
 - (id)description;
 - (id)init;
 - (void)setCompletionHandler:(id /* block */)arg1;
-- (void)setDataclasses:(int)arg1;
+- (void)setDataclasses:(long long)arg1;
 - (void)setWaiter:(id)arg1;
 - (id)waiter;
 - (int)waiterNum;

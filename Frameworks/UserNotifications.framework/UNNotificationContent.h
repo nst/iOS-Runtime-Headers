@@ -10,15 +10,15 @@
     NSString * _darwinNotificationName;
     NSString * _darwinSnoozedNotificationName;
     NSString * _defaultActionTitle;
-    BOOL  _fromSnooze;
-    BOOL  _hasDefautAction;
+    bool  _fromSnooze;
+    bool  _hasDefautAction;
     NSString * _launchImageName;
     NSArray * _peopleIdentifiers;
-    BOOL  _shouldAddToNotificationsList;
-    BOOL  _shouldAlwaysAlertWhileAppIsForeground;
-    BOOL  _shouldLockDevice;
-    BOOL  _shouldPauseMedia;
-    BOOL  _snoozeable;
+    bool  _shouldAddToNotificationsList;
+    bool  _shouldAlwaysAlertWhileAppIsForeground;
+    bool  _shouldLockDevice;
+    bool  _shouldPauseMedia;
+    bool  _snoozeable;
     UNNotificationSound * _sound;
     NSString * _subtitle;
     NSString * _threadIdentifier;
@@ -33,15 +33,15 @@
 @property (nonatomic, readonly, copy) NSString *darwinNotificationName;
 @property (nonatomic, readonly, copy) NSString *darwinSnoozedNotificationName;
 @property (nonatomic, readonly, copy) NSString *defaultActionTitle;
-@property (getter=isFromSnooze, nonatomic, readonly) BOOL fromSnooze;
-@property (nonatomic, readonly) BOOL hasDefaultAction;
+@property (getter=isFromSnooze, nonatomic, readonly) bool fromSnooze;
+@property (nonatomic, readonly) bool hasDefaultAction;
 @property (nonatomic, readonly, copy) NSString *launchImageName;
 @property (nonatomic, readonly, copy) NSArray *peopleIdentifiers;
-@property (nonatomic, readonly) BOOL shouldAddToNotificationsList;
-@property (nonatomic, readonly) BOOL shouldAlwaysAlertWhileAppIsForeground;
-@property (nonatomic, readonly) BOOL shouldLockDevice;
-@property (nonatomic, readonly) BOOL shouldPauseMedia;
-@property (getter=isSnoozeable, nonatomic, readonly) BOOL snoozeable;
+@property (nonatomic, readonly) bool shouldAddToNotificationsList;
+@property (nonatomic, readonly) bool shouldAlwaysAlertWhileAppIsForeground;
+@property (nonatomic, readonly) bool shouldLockDevice;
+@property (nonatomic, readonly) bool shouldPauseMedia;
+@property (getter=isSnoozeable, nonatomic, readonly) bool snoozeable;
 @property (nonatomic, readonly, copy) UNNotificationSound *sound;
 @property (nonatomic, readonly, copy) NSString *subtitle;
 @property (nonatomic, readonly, copy) NSString *threadIdentifier;
@@ -50,10 +50,10 @@
 
 // Image: /System/Library/Frameworks/UserNotifications.framework/UserNotifications
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_initWithAttachments:(id)arg1 badge:(id)arg2 body:(id)arg3 categoryIdentifier:(id)arg4 darwinNotificationName:(id)arg5 darwinSnoozedNotificationName:(id)arg6 fromSnooze:(BOOL)arg7 hasDefaultAction:(BOOL)arg8 defaultActionTitle:(id)arg9 launchImageName:(id)arg10 peopleIdentifiers:(id)arg11 shouldAddToNotificationsList:(BOOL)arg12 shouldAlwaysAlertWhileAppIsForeground:(BOOL)arg13 shouldLockDevice:(BOOL)arg14 shouldPauseMedia:(BOOL)arg15 snoozeable:(BOOL)arg16 sound:(id)arg17 subtitle:(id)arg18 threadIdentifier:(id)arg19 title:(id)arg20 userInfo:(id)arg21;
+- (id)_initWithAttachments:(id)arg1 badge:(id)arg2 body:(id)arg3 categoryIdentifier:(id)arg4 darwinNotificationName:(id)arg5 darwinSnoozedNotificationName:(id)arg6 fromSnooze:(bool)arg7 hasDefaultAction:(bool)arg8 defaultActionTitle:(id)arg9 launchImageName:(id)arg10 peopleIdentifiers:(id)arg11 shouldAddToNotificationsList:(bool)arg12 shouldAlwaysAlertWhileAppIsForeground:(bool)arg13 shouldLockDevice:(bool)arg14 shouldPauseMedia:(bool)arg15 snoozeable:(bool)arg16 sound:(id)arg17 subtitle:(id)arg18 threadIdentifier:(id)arg19 title:(id)arg20 userInfo:(id)arg21;
 - (id)attachments;
 - (id)badge;
 - (id)body;
@@ -64,20 +64,20 @@
 - (id)defaultActionTitle;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasDefaultAction;
-- (unsigned int)hash;
+- (bool)hasDefaultAction;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isFromSnooze;
-- (BOOL)isSnoozeable;
+- (bool)isEqual:(id)arg1;
+- (bool)isFromSnooze;
+- (bool)isSnoozeable;
 - (id)launchImageName;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)peopleIdentifiers;
-- (BOOL)shouldAddToNotificationsList;
-- (BOOL)shouldAlwaysAlertWhileAppIsForeground;
-- (BOOL)shouldLockDevice;
-- (BOOL)shouldPauseMedia;
+- (bool)shouldAddToNotificationsList;
+- (bool)shouldAlwaysAlertWhileAppIsForeground;
+- (bool)shouldLockDevice;
+- (bool)shouldPauseMedia;
 - (id)sound;
 - (id)subtitle;
 - (id)threadIdentifier;
@@ -86,7 +86,7 @@
 
 // Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
 
-- (BOOL)uns_willAlertUser;
-- (BOOL)uns_willNotifyUser;
+- (bool)uns_willAlertUser;
+- (bool)uns_willNotifyUser;
 
 @end

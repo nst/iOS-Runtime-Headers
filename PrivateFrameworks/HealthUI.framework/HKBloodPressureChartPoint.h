@@ -6,25 +6,25 @@
     NSDate * _date;
     HKHealthChartPoint * _diastolicChartPoint;
     HKHealthChartPoint * _systolicChartPoint;
-    id  _userInfo;
+    <HKGraphSeriesBlockCoordinateInfo> * _userInfo;
 }
 
 @property (nonatomic, retain) NSDate *date;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) HKHealthChartPoint *diastolicChartPoint;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) HKHealthChartPoint *systolicChartPoint;
-@property (nonatomic, retain) id userInfo;
+@property (nonatomic, retain) <HKGraphSeriesBlockCoordinateInfo> *userInfo;
 
 - (void).cxx_destruct;
 - (id)allYValues;
 - (id)date;
 - (id)diastolicChartPoint;
-- (id)maxXValue;
+- (id)maxXValueAsGenericType;
 - (id)maxYValue;
-- (id)minXValue;
+- (id)minXValueAsGenericType;
 - (id)minYValue;
 - (void)setChartPoint:(id)arg1 forType:(id)arg2;
 - (void)setDate:(id)arg1;
@@ -33,7 +33,7 @@
 - (void)setUserInfo:(id)arg1;
 - (id)systolicChartPoint;
 - (id)userInfo;
-- (id)xValue;
+- (id)xValueAsGenericType;
 - (id)yValue;
 - (id)yValueForKey:(id)arg1;
 

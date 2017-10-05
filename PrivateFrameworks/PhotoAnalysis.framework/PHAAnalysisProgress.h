@@ -11,8 +11,8 @@
 + (void)requestCurrentProgressWithLibrary:(id)arg1 completion:(id /* block */)arg2;
 
 - (void).cxx_destruct;
-- (float)_progressFromProcessedCount:(int)arg1 outOfPossibleCount:(int)arg2;
-- (unsigned int)countOfDeletionsForWorkerType:(short)arg1;
+- (float)_progressFromProcessedCount:(long long)arg1 outOfPossibleCount:(long long)arg2;
+- (unsigned long long)countOfDeletionsForWorkerType:(short)arg1;
 - (id)description;
 - (id)init;
 - (id)initWithCounts:(id)arg1 totalProgressCounts:(id)arg2 countOfDeletionsByWorkerType:(id)arg3;

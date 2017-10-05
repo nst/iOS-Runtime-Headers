@@ -9,9 +9,9 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)equivalentOuterShadowEffect;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (int)presetShadowType;
 - (void)setPresetShadowType:(int)arg1;
 

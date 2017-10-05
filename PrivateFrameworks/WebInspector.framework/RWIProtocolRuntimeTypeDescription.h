@@ -4,18 +4,18 @@
 
 @interface RWIProtocolRuntimeTypeDescription : RWIProtocolJSONObject
 
-@property (nonatomic) BOOL isTruncated;
-@property (nonatomic) BOOL isValid;
+@property (nonatomic) bool isTruncated;
+@property (nonatomic) bool isValid;
 @property (nonatomic, copy) NSString *leastCommonAncestor;
 @property (nonatomic, copy) NSArray *structures;
 @property (nonatomic, retain) RWIProtocolRuntimeTypeSet *typeSet;
 
-- (id)initWithIsValid:(BOOL)arg1;
-- (BOOL)isTruncated;
-- (BOOL)isValid;
+- (id)initWithIsValid:(bool)arg1;
+- (bool)isTruncated;
+- (bool)isValid;
 - (id)leastCommonAncestor;
-- (void)setIsTruncated:(BOOL)arg1;
-- (void)setIsValid:(BOOL)arg1;
+- (void)setIsTruncated:(bool)arg1;
+- (void)setIsValid:(bool)arg1;
 - (void)setLeastCommonAncestor:(id)arg1;
 - (void)setStructures:(id)arg1;
 - (void)setTypeSet:(id)arg1;

@@ -3,21 +3,21 @@
  */
 
 @interface BBBulletinRemoveUpdate : BBBulletinUpdate {
-    BOOL  _shouldSync;
+    bool  _shouldSync;
 }
 
-@property (nonatomic, readonly) BOOL shouldSync;
+@property (nonatomic, readonly) bool shouldSync;
 
-+ (BOOL)supportsSecureCoding;
-+ (id)updateWithBulletin:(id)arg1 feeds:(unsigned int)arg2 shouldSync:(BOOL)arg3;
++ (bool)supportsSecureCoding;
++ (id)updateWithBulletin:(id)arg1 feeds:(unsigned long long)arg2 shouldSync:(bool)arg3;
 
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
-- (id)initWithBulletin:(id)arg1 feeds:(unsigned int)arg2 shouldSync:(BOOL)arg3;
+- (unsigned long long)hash;
+- (id)initWithBulletin:(id)arg1 feeds:(unsigned long long)arg2 shouldSync:(bool)arg3;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)shouldSync;
+- (bool)isEqual:(id)arg1;
+- (bool)shouldSync;
 - (id)typeDescription;
 
 @end

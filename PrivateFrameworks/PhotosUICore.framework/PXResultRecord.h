@@ -5,7 +5,7 @@
 @interface PXResultRecord : NSObject <NSCopying>
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)curate;
+- (bool)curate;
 - (id)curatedFetchResult;
 - (id)curatedOids;
 - (id)description;
@@ -16,6 +16,6 @@
 - (id)includedOids;
 - (id)inclusionPredicate;
 - (id)keyAssetsFetchResult;
-- (BOOL)reverseSortOrder;
+- (bool)reverseSortOrder;
 
 @end

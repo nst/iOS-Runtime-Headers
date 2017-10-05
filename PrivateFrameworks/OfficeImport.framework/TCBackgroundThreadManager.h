@@ -3,27 +3,27 @@
  */
 
 @interface TCBackgroundThreadManager : NSObject {
-    unsigned int  mBlockCount;
+    unsigned long long  mBlockCount;
     <TCCancelDelegate> * mCancelDelegate;
     NSObject<OS_dispatch_group> * mGroup;
-    BOOL  mIsWaiting;
+    bool  mIsWaiting;
     TCMessageContext * mMessageContext;
     TCProgressContext * mProgressContext;
     NSObject<OS_dispatch_queue> * mProgressReportingQueue;
     NSObject<OS_dispatch_queue> * mQueue;
 }
 
-@property (readonly) BOOL isCancelled;
+@property (readonly) bool isCancelled;
 @property (retain) TCMessageContext *messageContext;
 @property (retain) TCProgressContext *progressContext;
 
 - (void)addASyncBlock:(id /* block */)arg1;
 - (void)dealloc;
 - (id)initWithCancelDelegate:(id)arg1;
-- (BOOL)isCancelled;
+- (bool)isCancelled;
 - (id)messageContext;
 - (id)progressContext;
-- (void)reportWarning:(/* Warning: unhandled struct encoding: '{TCTaggedMessageStructure=i@}' */ struct TCTaggedMessageStructure { int x1; id x2; }*)arg1;
+- (void)reportWarning:(id)arg1;
 - (void)setMessageContext:(id)arg1;
 - (void)setProgressContext:(id)arg1;
 - (void)waitUntilComplete;

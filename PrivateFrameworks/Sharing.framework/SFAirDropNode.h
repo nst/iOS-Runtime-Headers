@@ -3,39 +3,39 @@
  */
 
 @interface SFAirDropNode : NSObject {
-    BOOL  _classroom;
-    BOOL  _classroomCourse;
-    BOOL  _classroomGroup;
+    bool  _classroom;
+    bool  _classroomCourse;
+    bool  _classroomGroup;
     NSString * _contactIdentifier;
     UIImage * _displayIcon;
     NSString * _displayName;
-    BOOL  _me;
-    BOOL  _monogram;
+    bool  _me;
+    bool  _monogram;
     id  _node;
     NSString * _realName;
     NSString * _secondaryName;
     struct __SFOperation { } * _sender;
-    BOOL  _supportsFMF;
-    BOOL  _supportsMixedTypes;
-    BOOL  _supportsPasses;
-    BOOL  _unknown;
+    bool  _supportsFMF;
+    bool  _supportsMixedTypes;
+    bool  _supportsPasses;
+    bool  _unknown;
 }
 
-@property (getter=isClassroom) BOOL classroom;
-@property (getter=isClassroomCourse) BOOL classroomCourse;
-@property (getter=isclassroomGroup) BOOL classroomGroup;
+@property (getter=isClassroom) bool classroom;
+@property (getter=isClassroomCourse) bool classroomCourse;
+@property (getter=isclassroomGroup) bool classroomGroup;
 @property (retain) NSString *contactIdentifier;
 @property (retain) UIImage *displayIcon;
 @property (retain) NSString *displayName;
-@property (getter=isMe) BOOL me;
-@property (getter=isMonogram) BOOL monogram;
+@property (getter=isMe) bool me;
+@property (getter=isMonogram) bool monogram;
 @property (retain) id node;
 @property (retain) NSString *realName;
 @property (retain) NSString *secondaryName;
-@property (readonly) BOOL supportsFMF;
-@property (readonly) BOOL supportsMixedTypes;
-@property (readonly) BOOL supportsPasses;
-@property (getter=isUnknown) BOOL unknown;
+@property (readonly) bool supportsFMF;
+@property (readonly) bool supportsMixedTypes;
+@property (readonly) bool supportsPasses;
+@property (getter=isUnknown) bool unknown;
 
 + (id)nodeWithSFNode:(struct __SFNode { }*)arg1;
 
@@ -45,36 +45,36 @@
 - (id)description;
 - (id)displayIcon;
 - (id)displayName;
-- (void)handleOperationCallback:(struct __SFOperation { }*)arg1 event:(long)arg2 withResults:(id)arg3;
-- (unsigned int)hash;
+- (void)handleOperationCallback:(struct __SFOperation { }*)arg1 event:(long long)arg2 withResults:(id)arg3;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isClassroom;
-- (BOOL)isClassroomCourse;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isMe;
-- (BOOL)isMonogram;
-- (BOOL)isUnknown;
-- (BOOL)isclassroomGroup;
+- (bool)isClassroom;
+- (bool)isClassroomCourse;
+- (bool)isEqual:(id)arg1;
+- (bool)isMe;
+- (bool)isMonogram;
+- (bool)isUnknown;
+- (bool)isclassroomGroup;
 - (id)node;
 - (id)realName;
 - (id)secondaryName;
-- (void)setClassroom:(BOOL)arg1;
-- (void)setClassroomCourse:(BOOL)arg1;
-- (void)setClassroomGroup:(BOOL)arg1;
+- (void)setClassroom:(bool)arg1;
+- (void)setClassroomCourse:(bool)arg1;
+- (void)setClassroomGroup:(bool)arg1;
 - (void)setContactIdentifier:(id)arg1;
 - (void)setDisplayIcon:(id)arg1;
 - (void)setDisplayName:(id)arg1;
-- (void)setMe:(BOOL)arg1;
-- (void)setMonogram:(BOOL)arg1;
+- (void)setMe:(bool)arg1;
+- (void)setMonogram:(bool)arg1;
 - (void)setNode:(id)arg1;
 - (void)setRealName:(id)arg1;
 - (void)setSecondaryName:(id)arg1;
-- (void)setUnknown:(BOOL)arg1;
+- (void)setUnknown:(bool)arg1;
 - (void)simulateFakeTransferWithSessionID:(id)arg1;
-- (void)startSendWithSessionID:(id)arg1 items:(id)arg2 description:(id)arg3 previewImage:(id)arg4;
-- (BOOL)supportsFMF;
-- (BOOL)supportsMixedTypes;
-- (BOOL)supportsPasses;
+- (void)startSendForBundleID:(id)arg1 sessionID:(id)arg2 items:(id)arg3 description:(id)arg4 previewImage:(id)arg5;
+- (bool)supportsFMF;
+- (bool)supportsMixedTypes;
+- (bool)supportsPasses;
 - (void)updateWithSFNode:(struct __SFNode { }*)arg1;
 
 @end

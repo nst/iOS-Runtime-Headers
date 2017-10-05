@@ -4,27 +4,27 @@
 
 @interface CNContactPropertyTransaction : NSObject <NSSecureCoding> {
     NSString * _property;
-    int  _type;
+    long long  _type;
     id  _value;
 }
 
 @property (nonatomic, retain) NSString *property;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 @property (nonatomic, retain) id value;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithType:(int)arg1 forProperty:(id)arg2 withValue:(id)arg3;
+- (id)initWithType:(long long)arg1 forProperty:(id)arg2 withValue:(id)arg3;
 - (void)mergeTransactionIntoTransactionArray:(id)arg1;
 - (id)property;
 - (void)setProperty:(id)arg1;
-- (void)setType:(int)arg1;
+- (void)setType:(long long)arg1;
 - (void)setValue:(id)arg1;
-- (int)type;
+- (long long)type;
 - (id)value;
 
 @end

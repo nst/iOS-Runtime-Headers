@@ -5,19 +5,19 @@
 @interface _PHFetchRequestWrapper : NSObject <NSCopying> {
     NSManagedObjectID * _containerIdentifier;
     NSFetchRequest * _fetchRequest;
-    unsigned int  _hash;
+    unsigned long long  _hash;
 }
 
 @property (nonatomic, readonly) NSManagedObjectID *containerIdentifier;
 @property (nonatomic, readonly) NSFetchRequest *fetchRequest;
-@property (nonatomic, readonly) unsigned int hash;
+@property (nonatomic, readonly) unsigned long long hash;
 
 - (void).cxx_destruct;
 - (id)containerIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)fetchRequest;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithFetchRequest:(id)arg1 containerIdentifier:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

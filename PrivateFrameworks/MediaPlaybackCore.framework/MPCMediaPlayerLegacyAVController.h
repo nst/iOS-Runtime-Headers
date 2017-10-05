@@ -16,16 +16,18 @@
 
 - (void).cxx_destruct;
 - (void)_connectAVPlayer;
+- (id)_expectedAssetTypesForPlaybackMode:(long long)arg1;
 - (void)_playbackUserDefaultsEQPresetDidChangeNotification:(id)arg1;
 - (void)_queueModificationsDidChangeNotification;
 - (void)_registerForPlaylistManager:(id)arg1;
+- (void)_setState:(long long)arg1;
 - (void)_unregisterForPlaylistManager:(id)arg1;
 - (void)dealloc;
 - (id)fallbackPlaybackContext;
 - (id)init;
-- (BOOL)jumpToItemWithContentID:(id)arg1;
+- (bool)jumpToItemWithContentID:(id)arg1;
 - (id)mpcPlayer;
-- (void)playWithOptions:(unsigned int)arg1;
+- (void)playWithOptions:(unsigned long long)arg1;
 - (id)playlistManagerUUID;
 - (void)setFallbackPlaybackContext:(id)arg1;
 - (void)setMpcPlayer:(id)arg1;

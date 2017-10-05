@@ -5,52 +5,39 @@
 @interface ASTSessionExistsConnection : NSObject <ASTConnection> {
     <ASTConnectionStatusDelegate> * _delegate;
     id /* block */  _didReceiveResponse;
-    int  _networkDisconnectedRetryCount;
+    long long  _networkDisconnectedRetryCount;
     NSURLRequest * _request;
-    BOOL  _retryOnNetworkDisconnected;
-    unsigned int  _rootOfTrust;
-    NSArray * _serialNumbers;
-    int  _state;
-    NSString * _ticket;
-    double  _timeout;
+    bool  _retryOnNetworkDisconnected;
+    unsigned long long  _rootOfTrust;
+    long long  _state;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <ASTConnectionStatusDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ didReceiveResponse;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int networkDisconnectedRetryCount;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long networkDisconnectedRetryCount;
 @property (nonatomic, retain) NSURLRequest *request;
-@property (nonatomic) BOOL retryOnNetworkDisconnected;
-@property (nonatomic, readonly) unsigned int rootOfTrust;
-@property (nonatomic, retain) NSArray *serialNumbers;
-@property (nonatomic) int state;
+@property (nonatomic) bool retryOnNetworkDisconnected;
+@property (nonatomic, readonly) unsigned long long rootOfTrust;
+@property (nonatomic) long long state;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) NSString *ticket;
-@property (nonatomic) double timeout;
 
 - (void).cxx_destruct;
 - (id)delegate;
 - (id /* block */)didReceiveResponse;
-- (id)generateRequest;
-- (id)initWithSerialNumbers:(id)arg1 ticket:(id)arg2 timeout:(double)arg3;
-- (int)networkDisconnectedRetryCount;
+- (id)initWithSerialNumbers:(id)arg1 ticket:(id)arg2 timeout:(double)arg3 allowsCellularAccess:(bool)arg4;
+- (long long)networkDisconnectedRetryCount;
 - (id)request;
-- (BOOL)retryOnNetworkDisconnected;
-- (unsigned int)rootOfTrust;
-- (id)serialNumbers;
+- (bool)retryOnNetworkDisconnected;
+- (unsigned long long)rootOfTrust;
 - (void)setDelegate:(id)arg1;
 - (void)setDidReceiveResponse:(id /* block */)arg1;
-- (void)setNetworkDisconnectedRetryCount:(int)arg1;
+- (void)setNetworkDisconnectedRetryCount:(long long)arg1;
 - (void)setRequest:(id)arg1;
-- (void)setRetryOnNetworkDisconnected:(BOOL)arg1;
-- (void)setSerialNumbers:(id)arg1;
-- (void)setState:(int)arg1;
-- (void)setTicket:(id)arg1;
-- (void)setTimeout:(double)arg1;
-- (int)state;
-- (id)ticket;
-- (double)timeout;
+- (void)setRetryOnNetworkDisconnected:(bool)arg1;
+- (void)setState:(long long)arg1;
+- (long long)state;
 
 @end

@@ -5,10 +5,10 @@
 @interface UIPrintingProgress : NSObject {
     UIAlertView * _alert;
     id /* block */  _cancelHandler;
-    BOOL  _creatingPDF;
+    bool  _creatingPDF;
     double  _displayTime;
-    BOOL  _donePrinting;
-    BOOL  _forceDisplayAsAlert;
+    bool  _donePrinting;
+    bool  _forceDisplayAsAlert;
     double  _lastPageUpdate;
     NSString * _printerName;
     double  _progressAlertDelay;
@@ -16,31 +16,31 @@
     UIPrintingProgressViewController * _viewController;
 }
 
-@property BOOL creatingPDF;
+@property bool creatingPDF;
 @property double lastPageUpdate;
 @property double progressAlertDelay;
 @property (readonly) NSString *title;
 
 - (void).cxx_destruct;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
 - (void)alertViewCancel:(id)arg1;
-- (BOOL)creatingPDF;
+- (bool)creatingPDF;
 - (void)didPresentAlertView:(id)arg1;
 - (void)endProgress;
-- (void)hideProgressAnimated:(BOOL)arg1;
+- (void)hideProgressAnimated:(bool)arg1;
 - (id)initPDFCreationWithCancelHandler:(id /* block */)arg1;
-- (id)initWithPrinterName:(id)arg1 forceDisplayAsAlert:(BOOL)arg2 cancelHandler:(id /* block */)arg3;
+- (id)initWithPrinterName:(id)arg1 forceDisplayAsAlert:(bool)arg2 cancelHandler:(id /* block */)arg3;
 - (double)lastPageUpdate;
 - (double)nextPrintDelay;
 - (double)progressAlertDelay;
 - (void)progressCancel;
-- (BOOL)progressVisible;
-- (void)setCreatingPDF:(BOOL)arg1;
+- (bool)progressVisible;
+- (void)setCreatingPDF:(bool)arg1;
 - (void)setLastPageUpdate:(double)arg1;
-- (void)setPage:(int)arg1 ofPage:(int)arg2;
+- (void)setPage:(long long)arg1 ofPage:(long long)arg2;
 - (void)setPrintInfoState:(int)arg1;
 - (void)setProgressAlertDelay:(double)arg1;
-- (void)showProgress:(id)arg1 immediately:(BOOL)arg2;
+- (void)showProgress:(id)arg1 immediately:(bool)arg2;
 - (id)title;
 
 @end

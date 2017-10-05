@@ -5,7 +5,7 @@
 
 @required
 
-- (void)sourceDevices:(WLSourceDevicesController *)arg1 didChangeWithDevices:(NSArray *)arg2;
+- (void)sourceDeviceController:(WLSourceDevicesController *)arg1 didDiscoverDevice:(WLSourceDevice *)arg2;
 - (void)wifiAndDeviceDiscoveryDidGetInterrupted;
 
 @end

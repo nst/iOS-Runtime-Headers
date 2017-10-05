@@ -4,11 +4,11 @@
 
 @interface _UIBadgeStarkVisualStyle : _UIBadgeVisualStyle
 
-- (float)edgePadding;
-- (float)fontSize;
-- (float)horizontalInset;
-- (float)singleBadgeWidth;
-- (BOOL)usesExternalImage;
-- (float)verticalInset;
+- (double)edgePadding;
+- (double)fontSize;
+- (double)horizontalInset;
+- (double)singleBadgeWidth;
+- (bool)usesExternalImage;
+- (double)verticalInset;
 
 @end

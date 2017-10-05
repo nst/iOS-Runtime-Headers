@@ -11,7 +11,7 @@
 @property (nonatomic, copy) id /* block */ touchesEndedCallback;
 
 - (void).cxx_destruct;
-- (BOOL)canPreventGestureRecognizer:(id)arg1;
+- (bool)canPreventGestureRecognizer:(id)arg1;
 - (void)ignoreTouch:(id)arg1 forEvent:(id)arg2;
 - (id)init;
 - (void)reset;

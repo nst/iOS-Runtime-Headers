@@ -4,7 +4,7 @@
 
 @interface SAUSRichTitleCardSection : SAUSTitleCardSection
 
-@property (nonatomic) BOOL centered;
+@property (nonatomic) bool centered;
 @property (nonatomic, copy) NSString *contentRatingText;
 @property (nonatomic, copy) NSString *subtitle;
 @property (nonatomic, retain) SAUIImageResource *titleImage;
@@ -12,11 +12,11 @@
 + (id)richTitleCardSection;
 + (id)richTitleCardSectionWithDictionary:(id)arg1 context:(id)arg2;
 
-- (BOOL)centered;
+- (bool)centered;
 - (id)contentRatingText;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (void)setCentered:(BOOL)arg1;
+- (void)setCentered:(bool)arg1;
 - (void)setContentRatingText:(id)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setTitleImage:(id)arg1;

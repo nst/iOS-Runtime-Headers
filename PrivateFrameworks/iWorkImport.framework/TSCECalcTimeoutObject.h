@@ -10,8 +10,8 @@
 @property (readonly) NSString *blockingIdentifier;
 @property (readonly) double timeoutInterval;
 
+- (void).cxx_destruct;
 - (id)blockingIdentifier;
-- (void)dealloc;
 - (id)initWithTimeout:(double)arg1;
 - (double)timeoutInterval;
 

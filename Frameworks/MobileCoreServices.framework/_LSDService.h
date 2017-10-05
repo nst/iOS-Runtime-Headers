@@ -9,10 +9,10 @@
 @property (readonly) NSXPCListener *XPCListener;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)XPCConnectionIsAlwaysPrivileged;
++ (bool)XPCConnectionIsAlwaysPrivileged;
 + (id)XPCConnectionToService;
 + (id)XPCInterface;
 + (id)XPCProxyWithErrorHandler:(id /* block */)arg1;
@@ -21,13 +21,13 @@
 + (Class)clientClass;
 + (unsigned short)connectionType;
 + (id)dispatchQueue;
-+ (BOOL)isEnabled;
++ (bool)isEnabled;
 + (id)replacementObjectForXPCConnection:(id)arg1 encoder:(id)arg2 object:(id)arg3;
-+ (id)synchronous:(BOOL)arg1 XPCProxyWithErrorHandler:(id /* block */)arg2;
++ (id)synchronous:(bool)arg1 XPCProxyWithErrorHandler:(id /* block */)arg2;
 + (id)synchronousXPCProxyWithErrorHandler:(id /* block */)arg1;
 
 - (id)XPCListener;
 - (id)initWithXPCListener:(id)arg1;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 
 @end

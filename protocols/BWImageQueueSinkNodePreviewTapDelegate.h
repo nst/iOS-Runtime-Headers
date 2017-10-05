@@ -5,7 +5,7 @@
 
 @required
 
-- (void)imageQueueSinkNode:(BWImageQueueSinkNode *)arg1 didEnqueuePreviewSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2;
+- (void)imageQueueSinkNode:(BWImageQueueSinkNode *)arg1 didAttemptToEnqueuePreviewSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2 withSuccess:(bool)arg3;
 - (void)imageQueueSinkNodeDidDisplayFirstFrame:(BWImageQueueSinkNode *)arg1;
 
 @end

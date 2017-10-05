@@ -20,7 +20,7 @@
 - (id)_createLabelForPublisher:(id)arg1;
 - (void)_updateInstallButtonWithState:(int)arg1;
 - (void)_updateSubviewsWithInstallState:(int)arg1;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 - (int)installState;
 - (void)layoutSubviews;
 - (void)setInstallState:(int)arg1;

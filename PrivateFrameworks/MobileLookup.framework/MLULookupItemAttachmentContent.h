@@ -4,8 +4,8 @@
 
 @interface MLULookupItemAttachmentContent : MLULookupItemContent
 
-- (unsigned int)commitType;
-- (id)initWithAttachments:(id)arg1 currentAttachmentIndex:(unsigned int)arg2;
+- (unsigned long long)commitType;
+- (id)initWithAttachments:(id)arg1 currentAttachmentIndex:(unsigned long long)arg2;
 - (id)previewActions;
 
 @end

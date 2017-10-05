@@ -6,28 +6,28 @@
     NSString * _originalAssetsUUID;
     short  _originalExifOrientation;
     NSString * _originalFilename;
-    int  _originalFilesize;
-    short  _originalHeight;
-    short  _originalWidth;
+    unsigned long long  _originalFilesize;
+    long long  _originalHeight;
+    long long  _originalWidth;
 }
 
 @property (nonatomic, readonly) NSString *originalAssetsUUID;
 @property (nonatomic, readonly) short originalExifOrientation;
 @property (nonatomic, readonly) NSString *originalFilename;
-@property (nonatomic, readonly) int originalFilesize;
-@property (nonatomic, readonly) short originalHeight;
-@property (nonatomic, readonly) short originalWidth;
+@property (nonatomic, readonly) unsigned long long originalFilesize;
+@property (nonatomic, readonly) long long originalHeight;
+@property (nonatomic, readonly) long long originalWidth;
 
 + (id)propertiesToFetch;
 + (id)propertySetName;
 
 - (void).cxx_destruct;
-- (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(BOOL)arg3;
+- (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(bool)arg3;
 - (id)originalAssetsUUID;
 - (short)originalExifOrientation;
 - (id)originalFilename;
-- (int)originalFilesize;
-- (short)originalHeight;
-- (short)originalWidth;
+- (unsigned long long)originalFilesize;
+- (long long)originalHeight;
+- (long long)originalWidth;
 
 @end

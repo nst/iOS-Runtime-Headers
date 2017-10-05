@@ -16,9 +16,9 @@
 @property (copy) NSString *searchString;
 @property (copy) NSString *sendingAddress;
 
-+ (int)addressTypeForRecentContact:(id)arg1;
++ (long long)addressTypeForRecentContact:(id)arg1;
 + (id)autocompleteResultForRecent:(id)arg1 factory:(id)arg2 membersFactory:(id)arg3 chosenAddressHashes:(id)arg4 searchString:(id)arg5 library:(id)arg6;
-+ (id)contactAutocompleteResultForRecent:(id)arg1 factory:(id)arg2 completesChosenGroup:(BOOL)arg3;
++ (id)contactAutocompleteResultForRecent:(id)arg1 factory:(id)arg2 completesChosenGroup:(bool)arg3;
 + (id)groupAutocompleteResultForRecent:(id)arg1 factory:(id)arg2 membersFactory:(id)arg3 chosenAddressHashes:(id)arg4 searchString:(id)arg5;
 + (id /* block */)resultTransformWithFactory:(id)arg1 membersFactory:(id)arg2 chosenAddressHashes:(id)arg3 searchString:(id)arg4 library:(id)arg5;
 + (id /* block */)transformForRequest:(id)arg1 library:(id)arg2;

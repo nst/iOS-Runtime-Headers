@@ -7,12 +7,12 @@
     NSMutableDictionary * _underlyingDictionary;
 }
 
-@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly) unsigned long long count;
 @property (nonatomic, retain) FMReadWriteLock *lock;
 @property (nonatomic, retain) NSMutableDictionary *underlyingDictionary;
 
 - (void).cxx_destruct;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
 - (id)lock;
@@ -21,6 +21,7 @@
 - (id)objectForKey:(id)arg1 withConstructor:(id /* block */)arg2;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)popObjectforKey:(id)arg1;
+- (void)removeAllObjects;
 - (void)removeObjectForKey:(id)arg1;
 - (id)replaceObject:(id)arg1 forKey:(id)arg2;
 - (void)setLock:(id)arg1;

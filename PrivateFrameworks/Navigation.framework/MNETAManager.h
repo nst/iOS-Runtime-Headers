@@ -3,6 +3,8 @@
  */
 
 @interface MNETAManager : NSObject <GEOETAUpdaterDelegate> {
+    GEOApplicationAuditToken * _auditToken;
+    GEOETATrafficUpdateResponse * _currentResponse;
     double  _debugInitialRequestDelay;
     <MNETAManagerDelegate> * _delegate;
     NSMapTable * _etaRoutesTable;
@@ -11,18 +13,22 @@
     NSArray * _routes;
 }
 
+@property (nonatomic, retain) GEOApplicationAuditToken *auditToken;
 @property (nonatomic) double debugBackgroundTimeWindow;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) double debugInitialRequestDelay;
 @property (nonatomic) <MNETAManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long maxAlternateRoutesCount;
 @property (nonatomic) double requestInterval;
+@property (nonatomic, retain) NSString *requestingAppIdentifier;
 @property (nonatomic, retain) NSArray *routes;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_updateRouteWithETATrafficUpdateResponse:(id)arg1 currentStep:(id)arg2 percentOfCurrentStepRemaining:(double)arg3;
+- (bool)_updateRouteWithETATrafficUpdateResponse:(id)arg1 currentStep:(id)arg2 percentOfCurrentStepRemaining:(double)arg3;
+- (id)auditToken;
 - (void)dealloc;
 - (double)debugBackgroundTimeWindow;
 - (double)debugInitialRequestDelay;
@@ -30,19 +36,24 @@
 - (id)etaRouteForRoute:(id)arg1;
 - (void)etaUpdater:(id)arg1 receivedETATrafficUpdateResponse:(id)arg2;
 - (void)etaUpdater:(id)arg1 receivedError:(id)arg2;
-- (BOOL)etaUpdater:(id)arg1 updateRouteWithETATrafficUpdateResponse:(id)arg2 step:(id)arg3 percentOfCurrentStepRemaining:(double)arg4;
+- (bool)etaUpdater:(id)arg1 updateRouteWithETATrafficUpdateResponse:(id)arg2 step:(id)arg3 percentOfCurrentStepRemaining:(double)arg4;
 - (void)etaUpdater:(id)arg1 willSendETATrafficUpdateRequest:(id)arg2;
 - (void)etaUpdaterReceivedInvalidRoute:(id)arg1 newRoute:(id)arg2 incidentsOnRoute:(id)arg3 incidentsOffRoute:(id)arg4;
 - (id)etaUpdaterRoutesForETATrafficUpdateRequest:(id)arg1;
 - (void)etaUpdaterUpdatedETA:(id)arg1;
 - (id)initWithDestination:(id)arg1 routeAttributes:(id)arg2 tracePlayer:(id)arg3;
+- (unsigned long long)maxAlternateRoutesCount;
 - (double)requestInterval;
+- (id)requestingAppIdentifier;
 - (void)reset;
 - (id)routes;
+- (void)setAuditToken:(id)arg1;
 - (void)setDebugBackgroundTimeWindow:(double)arg1;
 - (void)setDebugInitialRequestDelay:(double)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setMaxAlternateRoutesCount:(unsigned long long)arg1;
 - (void)setRequestInterval:(double)arg1;
+- (void)setRequestingAppIdentifier:(id)arg1;
 - (void)setRoutes:(id)arg1;
 - (void)startUpdateRequests;
 - (void)stopUpdateRequests;

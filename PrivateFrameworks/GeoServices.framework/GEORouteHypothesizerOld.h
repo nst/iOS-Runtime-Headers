@@ -8,7 +8,7 @@
     <GEORouteHypothesizerDelegate> * _delegate;
     NSDate * _departureDate;
     GEOComposedWaypoint * _destination;
-    unsigned int  _etaUpdateFrequency;
+    unsigned long long  _etaUpdateFrequency;
     double  _etaUpdateInterval;
     GEOETAUpdater * _etaUpdater;
     GEORoute * _existingRoute;
@@ -32,16 +32,17 @@
 @property (nonatomic, readonly) NSDate *departureDate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) GEOComposedWaypoint *destination;
-@property (nonatomic) unsigned int etaUpdateFrequency;
+@property (nonatomic) unsigned long long etaUpdateFrequency;
 @property (nonatomic, retain) GEODirectionsRequestFeedback *feedback;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) GEOComposedRoute *route;
 @property (nonatomic, readonly) GEOComposedWaypoint *source;
 @property (nonatomic, readonly) NSDate *suggestedNextUpdateDate;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL supportsDirections;
-@property (nonatomic, readonly) BOOL supportsLiveTraffic;
+@property (nonatomic, readonly) bool supportsDirections;
+@property (nonatomic, readonly) bool supportsLiveTraffic;
 
+- (void).cxx_destruct;
 - (void)_commonInit;
 - (void)_createUpdaterWithStartingLocation:(id)arg1;
 - (void)_refreshETAWithRouteMatch:(id)arg1;
@@ -54,7 +55,7 @@
 - (id)delegate;
 - (id)departureDate;
 - (id)destination;
-- (unsigned int)etaUpdateFrequency;
+- (unsigned long long)etaUpdateFrequency;
 - (void)etaUpdater:(id)arg1 receivedETATrafficUpdateResponse:(id)arg2;
 - (void)etaUpdater:(id)arg1 receivedError:(id)arg2;
 - (void)etaUpdater:(id)arg1 willSendETATrafficUpdateRequest:(id)arg2;
@@ -69,12 +70,12 @@
 - (void)routeHypothesizerUpdater:(id)arg1 receivedNewRoute:(id)arg2 request:(id)arg3 response:(id)arg4;
 - (void)routeHypothesizerUpdater:(id)arg1 willRequestNewRoute:(id)arg2;
 - (void)setDelegate:(id)arg1;
-- (void)setEtaUpdateFrequency:(unsigned int)arg1;
+- (void)setEtaUpdateFrequency:(unsigned long long)arg1;
 - (void)setFeedback:(id)arg1;
 - (id)source;
 - (id)suggestedNextUpdateDate;
-- (BOOL)supportsDirections;
-- (BOOL)supportsLiveTraffic;
+- (bool)supportsDirections;
+- (bool)supportsLiveTraffic;
 - (void)updateLocation:(id)arg1 hypothesisHandler:(id /* block */)arg2;
 
 @end

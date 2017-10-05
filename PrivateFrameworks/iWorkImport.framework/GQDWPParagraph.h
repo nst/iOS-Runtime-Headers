@@ -3,20 +3,20 @@
  */
 
 @interface GQDWPParagraph : GQDWPInlineList {
-    BOOL  mContinue;
-    BOOL  mIsHidden;
-    long  mListLevel;
+    bool  mContinue;
+    bool  mIsHidden;
+    long long  mListLevel;
     GQDSStyle * mParaStyle;
-    BOOL  mRestartList;
+    bool  mRestartList;
 }
 
-- (BOOL)cont;
+- (bool)cont;
 - (void)dealloc;
-- (BOOL)isBlank;
-- (BOOL)isHidden;
-- (long)listLevel;
+- (bool)isBlank;
+- (bool)isHidden;
+- (long long)listLevel;
 - (id)paragraphStyle;
 - (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
-- (BOOL)restartList;
+- (bool)restartList;
 
 @end

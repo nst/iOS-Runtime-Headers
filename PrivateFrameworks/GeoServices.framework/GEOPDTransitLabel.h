@@ -9,45 +9,48 @@
     GEOPBTransitArtwork * _labelArtwork;
     NSString * _labelTextString;
     int  _labelType;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL hasLabelArtwork;
-@property (nonatomic, readonly) BOOL hasLabelTextString;
-@property (nonatomic) BOOL hasLabelType;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) <GEOTransitArtworkDataSource> *labelArtwork;
+@property (nonatomic, readonly) bool hasLabelArtwork;
+@property (nonatomic, readonly) bool hasLabelTextString;
+@property (nonatomic) bool hasLabelType;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) GEOPBTransitArtwork *labelArtwork;
+@property (nonatomic, readonly) <GEOTransitArtworkDataSource> *labelArtwork;
 @property (nonatomic, readonly) NSString *labelString;
 @property (nonatomic, retain) NSString *labelTextString;
 @property (nonatomic) int labelType;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+- (void).cxx_destruct;
 - (int)StringAsLabelType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLabelArtwork;
-- (BOOL)hasLabelTextString;
-- (BOOL)hasLabelType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasLabelArtwork;
+- (bool)hasLabelTextString;
+- (bool)hasLabelType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)labelArtwork;
 - (id)labelString;
 - (id)labelTextString;
 - (int)labelType;
 - (id)labelTypeAsString:(int)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasLabelType:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasLabelType:(bool)arg1;
 - (void)setLabelArtwork:(id)arg1;
 - (void)setLabelTextString:(id)arg1;
 - (void)setLabelType:(int)arg1;
-- (int)type;
+- (long long)type;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -4,15 +4,15 @@
 
 @interface PULayoutAnimationsHelper : NSObject {
     PUSectionedGridLayout * _layout;
-    BOOL  _shouldAnimateTemporaryImageView;
+    bool  _shouldAnimateTemporaryImageView;
 }
 
 @property (nonatomic, readonly) PUSectionedGridLayout *layout;
-@property (nonatomic) BOOL shouldAnimateTemporaryImageView;
+@property (nonatomic) bool shouldAnimateTemporaryImageView;
 
-+ (double)stackedTransitionAnimationPreferredDurationUsingSpringAnimations:(BOOL)arg1;
-+ (id /* block */)stackedTransitionAnimationsForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 shouldUseSpringAnimations:(BOOL)arg3;
-+ (double)zoomTransitionAnimationPreferredDurationWhenZoomingIn:(BOOL)arg1;
++ (double)stackedTransitionAnimationPreferredDurationUsingSpringAnimations:(bool)arg1;
++ (id /* block */)stackedTransitionAnimationsForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 shouldUseSpringAnimations:(bool)arg3;
++ (double)zoomTransitionAnimationPreferredDurationWhenZoomingIn:(bool)arg1;
 
 - (void).cxx_destruct;
 - (id)_adjustAnimation:(id)arg1 forReusableView:(id)arg2 toLayoutAttributes:(id)arg3;
@@ -26,10 +26,10 @@
 - (id)_createDefaultZoomingOutAnimationForKeyPath:(id)arg1 ofReusableView:(id)arg2 toLayoutAttributes:(id)arg3;
 - (id)_defaultAnimationForKeyPath:(id)arg1 ofReusableView:(id)arg2 toLayoutAttributes:(id)arg3;
 - (id /* block */)animationsForReusableView:(id)arg1 toLayoutAttributes:(id)arg2;
-- (void)didFinishLayoutTransitionAnimations:(BOOL)arg1 transitionIsAppearing:(BOOL)arg2;
+- (void)didFinishLayoutTransitionAnimations:(bool)arg1 transitionIsAppearing:(bool)arg2;
 - (id)initWithSectionedGridLayout:(id)arg1;
 - (id)layout;
-- (void)setShouldAnimateTemporaryImageView:(BOOL)arg1;
-- (BOOL)shouldAnimateTemporaryImageView;
+- (void)setShouldAnimateTemporaryImageView:(bool)arg1;
+- (bool)shouldAnimateTemporaryImageView;
 
 @end

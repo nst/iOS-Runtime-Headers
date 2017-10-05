@@ -4,27 +4,27 @@
 
 @interface UIWebClipIcon : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _bestSize;
-    BOOL  _precomposed;
-    BOOL  _siteWide;
+    bool  _precomposed;
+    bool  _siteWide;
     NSURL * _url;
 }
 
-@property (nonatomic) struct CGSize { float x1; float x2; } bestSize;
-@property (getter=isPrecomposed, nonatomic) BOOL precomposed;
-@property (getter=isSiteWide, nonatomic) BOOL siteWide;
+@property (nonatomic) struct CGSize { double x1; double x2; } bestSize;
+@property (getter=isPrecomposed, nonatomic) bool precomposed;
+@property (getter=isSiteWide, nonatomic) bool siteWide;
 @property (nonatomic, retain) NSURL *url;
 
 - (void).cxx_destruct;
-- (struct CGSize { float x1; float x2; })bestSize;
-- (int)compare:(id)arg1 preferringDeviceIconSizes:(BOOL)arg2;
-- (BOOL)isPrecomposed;
-- (BOOL)isSiteWide;
-- (void)setBestSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setPrecomposed:(BOOL)arg1;
-- (void)setSiteWide:(BOOL)arg1;
+- (struct CGSize { double x1; double x2; })bestSize;
+- (long long)compare:(id)arg1 preferringDeviceIconSizes:(bool)arg2;
+- (bool)isPrecomposed;
+- (bool)isSiteWide;
+- (void)setBestSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPrecomposed:(bool)arg1;
+- (void)setSiteWide:(bool)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;
 

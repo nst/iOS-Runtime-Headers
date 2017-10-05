@@ -3,7 +3,7 @@
  */
 
 @interface ICReachability : NSObject {
-    BOOL  _alwaysReturnLocalWiFiStatus;
+    bool  _alwaysReturnLocalWiFiStatus;
     struct __SCNetworkReachability { } * _reachabilityRef;
 }
 
@@ -13,12 +13,12 @@
 + (id)reachabilityWithHostName:(id)arg1;
 + (id)sharedReachabilityForInternetConnection;
 
-- (BOOL)connectionRequired;
-- (int)currentReachabilityStatus;
+- (bool)connectionRequired;
+- (long long)currentReachabilityStatus;
 - (void)dealloc;
-- (int)localWiFiStatusForFlags:(unsigned int)arg1;
-- (int)networkStatusForFlags:(unsigned int)arg1;
-- (BOOL)startNotifier;
+- (long long)localWiFiStatusForFlags:(unsigned int)arg1;
+- (long long)networkStatusForFlags:(unsigned int)arg1;
+- (bool)startNotifier;
 - (void)stopNotifier;
 
 @end

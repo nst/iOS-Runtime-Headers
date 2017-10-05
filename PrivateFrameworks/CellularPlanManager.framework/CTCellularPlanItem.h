@@ -4,36 +4,36 @@
 
 @interface CTCellularPlanItem : NSObject <NSCopying, NSSecureCoding> {
     NSString * _iccid;
-    BOOL  _isSelectable;
+    bool  _isSelectable;
     NSNumber * _isSelectedOverride;
-    BOOL  _isSimStateValid;
-    int  _lockState;
+    bool  _isSimStateValid;
+    long long  _lockState;
     NSString * _name;
     CTCellularPlan * _plan;
-    BOOL  _shouldAppearDisabled;
-    BOOL  _shouldAutoSelectWhenInRange;
-    BOOL  _shouldDisplay;
-    BOOL  _shouldDisplayType;
-    int  _type;
+    bool  _shouldAppearDisabled;
+    bool  _shouldAutoSelectWhenInRange;
+    bool  _shouldDisplay;
+    bool  _shouldDisplayType;
+    long long  _type;
 }
 
 @property (nonatomic, readonly) NSString *iccid;
 @property (nonatomic, readonly) NSString *identifier;
-@property (nonatomic, readonly) BOOL isBackedByCellularPlan;
-@property (nonatomic) BOOL isSelectable;
-@property (nonatomic, readonly) BOOL isSelected;
+@property (nonatomic, readonly) bool isBackedByCellularPlan;
+@property (nonatomic) bool isSelectable;
+@property (nonatomic, readonly) bool isSelected;
 @property (nonatomic, retain) NSNumber *isSelectedOverride;
-@property (nonatomic) BOOL isSimStateValid;
-@property (nonatomic) int lockState;
+@property (nonatomic) bool isSimStateValid;
+@property (nonatomic) long long lockState;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) CTCellularPlan *plan;
-@property (nonatomic) BOOL shouldAppearDisabled;
-@property (nonatomic) BOOL shouldAutoSelectWhenInRange;
-@property (nonatomic, readonly) BOOL shouldDisplay;
-@property (nonatomic) BOOL shouldDisplayType;
-@property (nonatomic) int type;
+@property (nonatomic) bool shouldAppearDisabled;
+@property (nonatomic) bool shouldAutoSelectWhenInRange;
+@property (nonatomic, readonly) bool shouldDisplay;
+@property (nonatomic) bool shouldDisplayType;
+@property (nonatomic) long long type;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -42,30 +42,30 @@
 - (id)iccid;
 - (id)identifier;
 - (id)initWithCellularPlan:(id)arg1;
-- (id)initWithCellularPlan:(id)arg1 iccid:(id)arg2 name:(id)arg3 type:(int)arg4;
-- (id)initWithCellularPlan:(id)arg1 type:(int)arg2;
+- (id)initWithCellularPlan:(id)arg1 iccid:(id)arg2 name:(id)arg3 type:(long long)arg4;
+- (id)initWithCellularPlan:(id)arg1 type:(long long)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIccid:(id)arg1 name:(id)arg2;
-- (BOOL)isBackedByCellularPlan;
-- (BOOL)isSelectable;
-- (BOOL)isSelected;
+- (bool)isBackedByCellularPlan;
+- (bool)isSelectable;
+- (bool)isSelected;
 - (id)isSelectedOverride;
-- (BOOL)isSimStateValid;
-- (int)lockState;
+- (bool)isSimStateValid;
+- (long long)lockState;
 - (id)name;
 - (id)plan;
-- (void)setIsSelectable:(BOOL)arg1;
+- (void)setIsSelectable:(bool)arg1;
 - (void)setIsSelectedOverride:(id)arg1;
-- (void)setIsSimStateValid:(BOOL)arg1;
-- (void)setLockState:(int)arg1;
-- (void)setShouldAppearDisabled:(BOOL)arg1;
-- (void)setShouldAutoSelectWhenInRange:(BOOL)arg1;
-- (void)setShouldDisplayType:(BOOL)arg1;
-- (void)setType:(int)arg1;
-- (BOOL)shouldAppearDisabled;
-- (BOOL)shouldAutoSelectWhenInRange;
-- (BOOL)shouldDisplay;
-- (BOOL)shouldDisplayType;
-- (int)type;
+- (void)setIsSimStateValid:(bool)arg1;
+- (void)setLockState:(long long)arg1;
+- (void)setShouldAppearDisabled:(bool)arg1;
+- (void)setShouldAutoSelectWhenInRange:(bool)arg1;
+- (void)setShouldDisplayType:(bool)arg1;
+- (void)setType:(long long)arg1;
+- (bool)shouldAppearDisabled;
+- (bool)shouldAutoSelectWhenInRange;
+- (bool)shouldDisplay;
+- (bool)shouldDisplayType;
+- (long long)type;
 
 @end

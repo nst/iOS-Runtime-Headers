@@ -3,7 +3,7 @@
  */
 
 @interface MNTransitInstruction : NSObject {
-    int  _context;
+    long long  _context;
     <GEOServerFormattedString> * _countStopsFormattedString;
     <GEOServerFormattedString> * _departureBarInstruction;
     NSArray * _majorFormattedInstruction;
@@ -11,25 +11,24 @@
     NSArray * _tertiaryFormattedInstruction;
 }
 
-@property (nonatomic, readonly) int context;
+@property (nonatomic, readonly) long long context;
 @property (nonatomic, retain) <GEOServerFormattedString> *countStopsFormattedString;
 @property (nonatomic, retain) <GEOServerFormattedString> *departureBarInstruction;
 @property (copy) NSArray *majorFormattedInstruction;
 @property (copy) NSArray *minorFormattedInstruction;
 @property (copy) NSArray *tertiaryFormattedInstruction;
-@property (nonatomic, readonly) NSTimeZone *timeZoneForFormattedString;
 
-+ (id)instructionForUncertainArrivalToStationStep:(id)arg1 context:(int)arg2;
++ (id)instructionForUncertainArrivalToStationStep:(id)arg1 context:(long long)arg2;
 
 - (void).cxx_destruct;
 - (void)_fillInInstructions;
-- (int)context;
+- (long long)context;
 - (id)countStopsFormattedString;
 - (id)departureBarInstruction;
-- (id)formattedInstructionForType:(int)arg1;
-- (id)initWithContext:(int)arg1;
+- (id)formattedInstructionForType:(long long)arg1;
+- (id)initWithContext:(long long)arg1;
 - (id)instructionSet;
-- (id)instructionSetsForInstructionType:(int)arg1;
+- (id)instructionSetsForInstructionType:(long long)arg1;
 - (id)majorFormattedInstruction;
 - (id)minorFormattedInstruction;
 - (struct NSDictionary { Class x1; }*)overridenInstructionsMapping;
@@ -40,6 +39,5 @@
 - (void)setMinorFormattedInstruction:(id)arg1;
 - (void)setTertiaryFormattedInstruction:(id)arg1;
 - (id)tertiaryFormattedInstruction;
-- (id)timeZoneForFormattedString;
 
 @end

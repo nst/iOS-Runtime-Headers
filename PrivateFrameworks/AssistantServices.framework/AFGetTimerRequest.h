@@ -4,7 +4,7 @@
 
 @interface AFGetTimerRequest : AFSiriRequest
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)createResponseWithTimer:(id)arg1;
 

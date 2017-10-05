@@ -2,19 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
  */
 
-@interface DMFFetchInstalledProfilesResultObject : CATTaskResultObject {
-    NSArray * _profiles;
-}
-
-@property (nonatomic, copy) NSArray *profiles;
-
-+ (BOOL)supportsSecureCoding;
-
-- (void).cxx_destruct;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithProfiles:(id)arg1;
-- (id)profiles;
-- (void)setProfiles:(id)arg1;
+@interface DMFFetchInstalledProfilesResultObject : DMFFetchProfilesResultObject
 
 @end

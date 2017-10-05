@@ -9,21 +9,22 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_pickerController;
 - (void)_showPicker:(id)arg1;
-- (void)configureReusableTransparentFooterView:(id)arg1;
-- (float)desiredHeightForTransparentFooterView;
-- (float)desiredHeightForWidth:(float)arg1;
+- (void)configureReusableFooterView:(id)arg1;
+- (double)desiredHeightForFooterView;
+- (double)desiredHeightForWidth:(double)arg1;
+- (Class)footerViewClass;
 - (id)initWithSnippet:(id)arg1;
 - (void)loadView;
 - (void)pickerViewController:(id)arg1 didSelectObject:(id)arg2 fromPicker:(id)arg3;
 - (void)pickerViewController:(id)arg1 willDismissPicker:(id)arg2;
 - (void)pickerViewController:(id)arg1 willPresentPicker:(id)arg2;
-- (Class)transparentFooterViewClass;
+- (bool)usePlatterStyle;
 - (id)viewControllerForPickerPresentation:(id)arg1;
 
 @end

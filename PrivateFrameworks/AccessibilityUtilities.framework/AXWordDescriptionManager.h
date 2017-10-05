@@ -16,7 +16,7 @@
 
 + (id)sharedInstance;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)descriptionForWord:(id)arg1;
 - (id)languageCode;
 - (id)languageDialectCode;

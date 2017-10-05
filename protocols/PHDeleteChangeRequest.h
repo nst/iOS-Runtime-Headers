@@ -6,6 +6,6 @@
 @required
 
 - (void)deleteManagedObject:(NSManagedObject *)arg1 photoLibrary:(PLPhotoLibrary *)arg2;
-- (BOOL)validateForDeleteManagedObject:(NSManagedObject *)arg1 error:(id*)arg2;
+- (bool)validateForDeleteManagedObject:(NSManagedObject *)arg1 error:(id*)arg2;
 
 @end

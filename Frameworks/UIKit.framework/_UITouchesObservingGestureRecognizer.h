@@ -8,13 +8,15 @@
 
 @property (nonatomic, copy) NSSet *touches;
 
++ (bool)_shouldDefaultToTouches;
+
 - (void).cxx_destruct;
-- (BOOL)_affectedByGesture:(id)arg1;
-- (BOOL)_allTouchesAreEndedOrCancelled:(id)arg1;
+- (bool)_affectedByGesture:(id)arg1;
+- (bool)_allTouchesAreEndedOrCancelled:(id)arg1;
 - (void)_updateTouchesFromEvent:(id)arg1;
-- (BOOL)_wantsPartialTouchSequences;
-- (BOOL)canBePreventedByGestureRecognizer:(id)arg1;
-- (BOOL)canPreventGestureRecognizer:(id)arg1;
+- (bool)_wantsPartialTouchSequences;
+- (bool)canBePreventedByGestureRecognizer:(id)arg1;
+- (bool)canPreventGestureRecognizer:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)reset;
 - (void)setTouches:(id)arg1;

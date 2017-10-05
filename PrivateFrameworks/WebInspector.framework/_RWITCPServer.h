@@ -13,9 +13,9 @@
 @property (nonatomic, readonly) <_RWITCPServerDelegate> *delegate;
 
 - (void).cxx_destruct;
-- (BOOL)_createListenDispatchSource;
+- (bool)_createListenDispatchSource;
 - (id)_initWithDelegate:(id)arg1;
-- (BOOL)_listenOnPort:(unsigned short)arg1;
+- (bool)_listenOnPort:(unsigned short)arg1;
 - (void)connectionClosed:(id)arg1;
 - (void)dealloc;
 - (id)delegate;

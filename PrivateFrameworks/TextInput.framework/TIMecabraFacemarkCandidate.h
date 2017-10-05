@@ -9,7 +9,7 @@
 @property (nonatomic, copy) NSString *category;
 
 + (id)candidateWithCandidate:(id)arg1 category:(id)arg2 input:(id)arg3 mecabraCandidatePointerValue:(id)arg4;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (int)type;
 
 - (id)category;
@@ -21,8 +21,8 @@
 - (id)initWithCandidate:(id)arg1 category:(id)arg2 input:(id)arg3 mecabraCandidatePointerValue:(id)arg4;
 - (id)initWithCandidateResultSetCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isFacemarkCandidate;
+- (bool)isEqual:(id)arg1;
+- (bool)isFacemarkCandidate;
 - (void)setCategory:(id)arg1;
 
 @end

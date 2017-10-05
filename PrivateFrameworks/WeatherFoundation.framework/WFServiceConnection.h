@@ -18,7 +18,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) NSMutableDictionary *dispatchGroupForTaskIdentifier;
 @property (readonly) NSMutableDictionary *executionStartTimeForTaskIdentifier;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *internalStateQueue;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, retain) <WeatherServiceProtocol> *serviceProxy;
@@ -40,11 +40,12 @@
 - (void)dealloc;
 - (id)dispatchGroupForTaskIdentifier;
 - (void)enqueueRequest:(id)arg1;
-- (void)enqueueRequest:(id)arg1 waitUntilDone:(BOOL)arg2;
+- (void)enqueueRequest:(id)arg1 waitUntilDone:(bool)arg2;
 - (id)executionStartTimeForTaskIdentifier;
 - (id)init;
 - (id)internalStateQueue;
 - (void)invalidate;
+- (void)invalidateCache;
 - (id)queue;
 - (void)serviceDidReceiveResponse:(id)arg1;
 - (id)serviceProxy;

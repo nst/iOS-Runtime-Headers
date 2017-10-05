@@ -12,16 +12,16 @@
     double  _currentRateTarget;
     double  _currentTimeDelegateUpdateRate;
     double  _currentTimeTarget;
-    BOOL  _isPreparingForPreview;
+    bool  _isPreparingForPreview;
     NSURL * _lastPlayedAssetReferenceURL;
     NSString * _lastRouteKeyForRouteUsageLog;
-    BOOL  _logNextRouteUsageStatisticForced;
+    bool  _logNextRouteUsageStatisticForced;
     NSMutableDictionary * _monitoredDispatchSourcesByURL;
     RCAudioSessionRoutingAssertion * _preparingToPreviewRouteAssertion;
     NSUUID * _preparingToPreviewRouteAssertionSessionUUID;
-    BOOL  _resetUseVoiceMemoSettingsValue;
-    BOOL  _useVoiceMemoSettings;
-    BOOL  _voiceMemoSettingEnabledNeedsReset;
+    bool  _resetUseVoiceMemoSettingsValue;
+    bool  _useVoiceMemoSettings;
+    bool  _voiceMemoSettingEnabledNeedsReset;
     NSHashTable * _weakObservers;
 }
 
@@ -32,11 +32,11 @@
 @property (nonatomic) double currentTimeDelegateUpdateRate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) struct { double x1; double x2; } playableTimeRange;
 @property (nonatomic, readonly) float rate;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL useVoiceMemoSettings;
+@property (nonatomic) bool useVoiceMemoSettings;
 
 - (void).cxx_destruct;
 - (id)AVPlayer;
@@ -52,17 +52,17 @@
 - (void)_endActivePreviewRouteAssertion;
 - (void)_handleDidStopPlaybackWithError:(id)arg1;
 - (void)_handleUnderlyingAssetDisappeared;
-- (BOOL)_monitorUnderlyingAssetPathInPlayerItem:(id)arg1 assetDisappearedBlock:(id /* block */)arg2;
+- (bool)_monitorUnderlyingAssetPathInPlayerItem:(id)arg1 assetDisappearedBlock:(id /* block */)arg2;
 - (void)_performWithObserversBlock:(id /* block */)arg1;
 - (void)_playbackUsageStatisticsIncrementPlaybackIfNecessary;
 - (void)_playbackUsageStatisticsPrepareForPlaybackContextName:(id)arg1;
 - (void)_playbackUsageStatisticsPrepareForStartingNewPlayback;
-- (void)_playerCurrentRateDidChangeToRate:(float)arg1 hadPlaybackItem:(BOOL)arg2;
+- (void)_playerCurrentRateDidChangeToRate:(float)arg1 hadPlaybackItem:(bool)arg2;
 - (void)_postDelegateCurrentTimeUpdate;
 - (void)_postDelegateDidBeginPlaybackWithRate:(float)arg1;
 - (void)_readyToPlay_playPlayer:(id)arg1;
 - (id)_recreateAVPlayer;
-- (void)_setPreparingToPlay:(BOOL)arg1 notifyObservers:(BOOL)arg2;
+- (void)_setPreparingToPlay:(bool)arg1 notifyObservers:(bool)arg2;
 - (void)_stopMonitoringUnderylingAssetPath;
 - (void)addObserver:(id)arg1;
 - (double)currentTime;
@@ -85,8 +85,8 @@
 - (void)setCurrentTimeDelegateUpdateRate:(double)arg1;
 - (void)setPlayableTimeRange:(struct { double x1; double x2; })arg1;
 - (void)setRate:(float)arg1;
-- (void)setUseVoiceMemoSettings:(BOOL)arg1;
+- (void)setUseVoiceMemoSettings:(bool)arg1;
 - (void)stop;
-- (BOOL)useVoiceMemoSettings;
+- (bool)useVoiceMemoSettings;
 
 @end

@@ -10,10 +10,10 @@
 }
 
 @property (nonatomic, retain) NSData *billingContact;
-@property (nonatomic, readonly) BOOL hasBillingContact;
-@property (nonatomic, readonly) BOOL hasShippingContact;
-@property (nonatomic, readonly) BOOL hasShippingMethod;
-@property (nonatomic, readonly) BOOL hasToken;
+@property (nonatomic, readonly) bool hasBillingContact;
+@property (nonatomic, readonly) bool hasShippingContact;
+@property (nonatomic, readonly) bool hasShippingMethod;
+@property (nonatomic, readonly) bool hasToken;
 @property (nonatomic, retain) NSData *shippingContact;
 @property (nonatomic, retain) PKProtobufShippingMethod *shippingMethod;
 @property (nonatomic, retain) PKProtobufPaymentToken *token;
@@ -24,14 +24,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasBillingContact;
-- (BOOL)hasShippingContact;
-- (BOOL)hasShippingMethod;
-- (BOOL)hasToken;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasBillingContact;
+- (bool)hasShippingContact;
+- (bool)hasShippingMethod;
+- (bool)hasToken;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setBillingContact:(id)arg1;
 - (void)setShippingContact:(id)arg1;
 - (void)setShippingMethod:(id)arg1;

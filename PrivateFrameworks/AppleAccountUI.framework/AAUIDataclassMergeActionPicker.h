@@ -3,33 +3,33 @@
  */
 
 @interface AAUIDataclassMergeActionPicker : ACUIDataclassActionPicker {
-    BOOL  _isAnotherAccountSyncingDataclass;
-    BOOL  _isDataclassSyncingUsingExchangeOnly;
-    BOOL  _isPerformingBatchMerge;
-    BOOL  _isTetheredSyncingEnabled;
-    BOOL  _localStoreHasReadOnlyCalendars;
+    bool  _isAnotherAccountSyncingDataclass;
+    bool  _isDataclassSyncingUsingExchangeOnly;
+    bool  _isPerformingBatchMerge;
+    bool  _isTetheredSyncingEnabled;
+    bool  _localStoreHasReadOnlyCalendars;
     NSString * _tetheredSyncingSource;
 }
 
-@property (setter=setAnotherAccountIsSyncingDataclass:, nonatomic) BOOL isAnotherAccountSyncingDataclass;
-@property (setter=setDataclassIsSyncingUsingExchangeOnly:, nonatomic) BOOL isDataclassSyncingUsingExchangeOnly;
-@property (setter=setPerformingBatchMerge:, nonatomic) BOOL isPerformingBatchMerge;
-@property (setter=setTetheredSyncingEnabled:, nonatomic) BOOL isTetheredSyncingEnabled;
-@property (nonatomic) BOOL localStoreHasReadOnlyCalendars;
+@property (setter=setAnotherAccountIsSyncingDataclass:, nonatomic) bool isAnotherAccountSyncingDataclass;
+@property (setter=setDataclassIsSyncingUsingExchangeOnly:, nonatomic) bool isDataclassSyncingUsingExchangeOnly;
+@property (setter=setPerformingBatchMerge:, nonatomic) bool isPerformingBatchMerge;
+@property (setter=setTetheredSyncingEnabled:, nonatomic) bool isTetheredSyncingEnabled;
+@property (nonatomic) bool localStoreHasReadOnlyCalendars;
 @property (nonatomic) NSString *tetheredSyncingSource;
 
 - (id)descriptionForDataclassAction:(id)arg1;
-- (BOOL)isAnotherAccountSyncingDataclass;
-- (BOOL)isDataclassSyncingUsingExchangeOnly;
-- (BOOL)isPerformingBatchMerge;
-- (BOOL)isTetheredSyncingEnabled;
-- (BOOL)localStoreHasReadOnlyCalendars;
+- (bool)isAnotherAccountSyncingDataclass;
+- (bool)isDataclassSyncingUsingExchangeOnly;
+- (bool)isPerformingBatchMerge;
+- (bool)isTetheredSyncingEnabled;
+- (bool)localStoreHasReadOnlyCalendars;
 - (id)message;
-- (void)setAnotherAccountIsSyncingDataclass:(BOOL)arg1;
-- (void)setDataclassIsSyncingUsingExchangeOnly:(BOOL)arg1;
-- (void)setLocalStoreHasReadOnlyCalendars:(BOOL)arg1;
-- (void)setPerformingBatchMerge:(BOOL)arg1;
-- (void)setTetheredSyncingEnabled:(BOOL)arg1;
+- (void)setAnotherAccountIsSyncingDataclass:(bool)arg1;
+- (void)setDataclassIsSyncingUsingExchangeOnly:(bool)arg1;
+- (void)setLocalStoreHasReadOnlyCalendars:(bool)arg1;
+- (void)setPerformingBatchMerge:(bool)arg1;
+- (void)setTetheredSyncingEnabled:(bool)arg1;
 - (void)setTetheredSyncingSource:(id)arg1;
 - (id)tetheredSyncingSource;
 - (id)title;

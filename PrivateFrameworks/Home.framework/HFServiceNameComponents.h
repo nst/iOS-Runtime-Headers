@@ -15,9 +15,9 @@
 
 - (void).cxx_destruct;
 - (id)composedString;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithRawServiceName:(id)arg1 rawRoomName:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)rawServiceName;
 - (id)roomName;
 - (id)serviceName;

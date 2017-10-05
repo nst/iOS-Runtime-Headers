@@ -6,6 +6,9 @@
 
 + (id)_objectWithCodable:(id)arg1;
 + (Class)healthEntityClass;
-+ (int)syncEntityType;
++ (int)nanoSyncObjectType;
++ (unsigned long long)supportedNanoSyncDirectionsForProtocolVersion:(int)arg1;
++ (bool)supportsSpeculativeNanoSyncChanges;
++ (long long)syncEntityType;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface MFComposeRecipient : NSObject <MFDraggableItem, NSCoding, NSCopying> {
+@interface MFComposeRecipient : NSObject <NSCoding, NSCopying, UIItemProviderReading, UIItemProviderWriting> {
     NSString * _address;
     CNAutocompleteResult * _autocompleteResult;
     NSArray * _cachedCompleteMatches;
@@ -14,13 +14,13 @@
     NSString * _countryCode;
     NSString * _displayString;
     int  _identifier;
-    unsigned int  _kind;
+    unsigned long long  _kind;
     NSString * _label;
     MFComposeRecipientOriginContext * _originContext;
     int  _property;
     void * _record;
     int  _recordID;
-    unsigned int  _sourceType;
+    unsigned long long  _sourceType;
     NSString * _unlocalizedLabel;
     NSString * _valueIdentifier;
 }
@@ -35,32 +35,36 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSString *displayString;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isDirectoryServerResult;
-@property (nonatomic, readonly) BOOL isGroup;
-@property (nonatomic, readonly) BOOL isSuggestedRecipient;
-@property (nonatomic, readonly) unsigned int kind;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isDirectoryServerResult;
+@property (nonatomic, readonly) bool isGroup;
+@property (nonatomic, readonly) bool isSuggestedRecipient;
+@property (nonatomic, readonly) unsigned long long kind;
 @property (nonatomic, retain) NSString *label;
 @property (nonatomic, readonly) NSString *normalizedAddress;
 @property (nonatomic, readonly) MFComposeRecipientOriginContext *originContext;
 @property (nonatomic, readonly) NSString *placeholderName;
-@property (getter=isRemovableFromSearchResults, nonatomic, readonly) BOOL removableFromSearchResults;
+@property (getter=isRemovableFromSearchResults, nonatomic, readonly) bool removableFromSearchResults;
 @property (nonatomic, readonly) NSString *shortName;
-@property (nonatomic, readonly) BOOL showsAccessoryButton;
-@property (nonatomic) unsigned int sourceType;
+@property (nonatomic, readonly) bool showsAccessoryButton;
+@property (nonatomic) unsigned long long sourceType;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *uncommentedAddress;
 @property (nonatomic, retain) NSString *unlocalizedLabel;
 @property (nonatomic, retain) NSString *valueIdentifier;
+@property (nonatomic, readonly, copy) NSArray *writableTypeIdentifiersForItemProvider;
 
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
 + (id)_requiredKeyDescriptors;
 + (id)composeRecipientWithAutocompleteResult:(id)arg1;
 + (id)mf_recipientWithGALResult:(id)arg1;
++ (id)objectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id*)arg3;
++ (id)readableTypeIdentifiersForItemProvider;
 + (id)recipientWithProperty:(int)arg1 address:(id)arg2;
 + (id)recipientWithRecord:(void*)arg1 property:(int)arg2 identifier:(int)arg3;
 + (id)recipientWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4;
++ (id)writableTypeIdentifiersForItemProvider;
 
 - (id)_unformattedAddress;
 - (id)address;
@@ -78,22 +82,22 @@
 - (id)description;
 - (id)displayString;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (int)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithContact:(id)arg1 address:(id)arg2 kind:(unsigned int)arg3;
+- (id)initWithContact:(id)arg1 address:(id)arg2 kind:(unsigned long long)arg3;
 - (id)initWithRecord:(void*)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4 address:(id)arg5;
-- (BOOL)isDirectoryServerResult;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isGroup;
-- (BOOL)isRemovableFromSearchResults;
-- (BOOL)isSuggestedRecipient;
-- (unsigned int)kind;
+- (bool)isDirectoryServerResult;
+- (bool)isEqual:(id)arg1;
+- (bool)isGroup;
+- (bool)isRemovableFromSearchResults;
+- (bool)isSuggestedRecipient;
+- (unsigned long long)kind;
 - (id)label;
 - (id)labeledValueIdentifier;
+- (id)loadDataWithTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(id /* block */)arg2;
 - (id)normalizedAddress;
-- (id)objectForDragType:(id)arg1;
 - (id)originContext;
 - (id)placeholderName;
 - (id)preferredSendingAddress;
@@ -110,26 +114,25 @@
 - (void)setLabel:(id)arg1;
 - (void)setOriginContext:(id)arg1;
 - (void)setRecord:(void*)arg1 recordID:(int)arg2 identifier:(int)arg3;
-- (void)setSourceType:(unsigned int)arg1;
+- (void)setSourceType:(unsigned long long)arg1;
 - (void)setUnlocalizedLabel:(id)arg1;
 - (void)setValueIdentifier:(id)arg1;
 - (id)shortName;
-- (BOOL)showsAccessoryButton;
+- (bool)showsAccessoryButton;
 - (id)sortedChildren;
-- (unsigned int)sourceType;
-- (id)supportedDragTypes;
+- (unsigned long long)sourceType;
 - (id)uncommentedAddress;
 - (id)unlocalizedLabel;
 - (id)valueIdentifier;
-- (BOOL)wasCompleteMatch;
+- (bool)wasCompleteMatch;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
 - (id)IDSCanonicalAddress;
 - (id)canonicalAddress;
 - (struct __CFPhoneNumber { }*)copyPhoneNumber;
-- (BOOL)isEmail;
-- (BOOL)isPhone;
+- (bool)isEmail;
+- (bool)isPhone;
 - (id)rawAddress;
 - (void)setCanonicalAddress:(id)arg1;
 

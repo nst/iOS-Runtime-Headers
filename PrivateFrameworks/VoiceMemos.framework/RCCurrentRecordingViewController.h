@@ -5,10 +5,10 @@
 @interface RCCurrentRecordingViewController : UIViewController <RCCurrentRecordingViewControllerDelegate, RCUIServiceCurrentRecordingViewController> {
     RCAVState * _AVState;
     <RCCurrentRecordingViewControllerDelegate> * _delegate;
-    BOOL  _isDisplayingLockscreenInterface;
+    bool  _isDisplayingLockscreenInterface;
     UIColor * _presentationBackgroundColor;
     RCCurrentRecordingRemoteViewController * _remoteViewController;
-    BOOL  _screenUpdatesDisabled;
+    bool  _screenUpdatesDisabled;
     UIColor * _waveformBackgroundColor;
     UIColor * _waveformForegroundColor;
 }
@@ -17,7 +17,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <RCCurrentRecordingViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (Class)remoteViewControllerClass;
@@ -27,7 +27,7 @@
 - (id)AVState;
 - (void)_failedToBecomeReadyWithMessage:(id)arg1;
 - (void)currentRecordingViewController:(id)arg1 didChangeAVState:(id)arg2;
-- (void)currentRecordingViewController:(id)arg1 didDeterminteAvailability:(BOOL)arg2;
+- (void)currentRecordingViewController:(id)arg1 didDeterminteAvailability:(bool)arg2;
 - (void)currentRecordingViewControllerRecordingDidEnd:(id)arg1;
 - (id)delegate;
 - (void)dismissLockscreenInterface;
@@ -39,9 +39,9 @@
 - (void)presentLockscreenInterfaceWithBackgroundColor:(id)arg1 waveformForegroundColor:(id)arg2 waveformBackgroundColor:(id)arg3;
 - (void)setAVState:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setScreenUpdatesDisabled:(BOOL)arg1;
-- (BOOL)shouldAutomaticallyForwardAppearanceMethods;
-- (BOOL)shouldAutomaticallyForwardRotationMethods;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)setScreenUpdatesDisabled:(bool)arg1;
+- (bool)shouldAutomaticallyForwardAppearanceMethods;
+- (bool)shouldAutomaticallyForwardRotationMethods;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 
 @end

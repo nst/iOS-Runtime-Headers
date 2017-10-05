@@ -5,20 +5,20 @@
 @interface PLConcurrentQueue : NSObject {
     NSObject<OS_dispatch_queue> * _internalQueue;
     NSMutableArray * _internalQueue_pendingBlocks;
-    int  _internalQueue_usedWidth;
+    long long  _internalQueue_usedWidth;
     NSObject<OS_dispatch_queue> * _targetQueue;
-    int  _width;
+    long long  _width;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *targetQueue;
-@property (nonatomic, readonly) int width;
+@property (nonatomic, readonly) long long width;
 
 - (void)_internalQueue_tryDispatchingNextPendingBlock;
 - (void)dealloc;
 - (void)dispatchAsync:(id /* block */)arg1;
 - (id)init;
-- (id)initWithTargetQueue:(id)arg1 width:(int)arg2;
+- (id)initWithTargetQueue:(id)arg1 width:(long long)arg2;
 - (id)targetQueue;
-- (int)width;
+- (long long)width;
 
 @end

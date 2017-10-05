@@ -3,65 +3,73 @@
  */
 
 @interface PXPeopleSuggestionView : PXSmartScaleView {
+    NSDateFormatter * _dateFormatter;
+    UILabel * _dateLabel;
     UIView * _dimView;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _faceRect;
-    NSTimer * _imageLoadInvalidationTimer;
+    PXPersonImageRequest * _imageRequest;
     UIImageView * _imageView;
-    BOOL  _needsSpotlightUpdate;
+    bool  _needsSpotlightUpdate;
     CAShapeLayer * _spotlightLayer;
     <PXPerson> * _suggestion;
     UIView * _suggestionView;
-    BOOL  _validSpotlight;
+    bool  _validSpotlight;
 }
 
+@property (nonatomic, retain) NSDateFormatter *dateFormatter;
+@property (nonatomic, retain) UILabel *dateLabel;
 @property (nonatomic, retain) UIView *dimView;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } faceRect;
-@property (retain) NSTimer *imageLoadInvalidationTimer;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } faceRect;
+@property (nonatomic, retain) PXPersonImageRequest *imageRequest;
 @property (nonatomic, retain) UIImageView *imageView;
-@property BOOL needsSpotlightUpdate;
+@property (nonatomic) bool needsSpotlightUpdate;
 @property (nonatomic, retain) CAShapeLayer *spotlightLayer;
 @property (nonatomic, readonly) <PXPerson> *suggestion;
 @property (nonatomic, retain) UIView *suggestionView;
-@property BOOL validSpotlight;
+@property (nonatomic) bool validSpotlight;
 
 - (void).cxx_destruct;
-- (float)_faceScale;
-- (void)_fetchImageForSuggestion:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 withCompletion:(id /* block */)arg3;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_scaledFaceRect;
-- (void)_updateSpotlightAnimated:(BOOL)arg1;
-- (void)_updateSuggestionImageWithAnimatedSpotlight:(BOOL)arg1 withCompletion:(id /* block */)arg2;
+- (double)_faceScale;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_scaledFaceRect;
+- (void)_updateDateFieldWithSuggestion:(id)arg1;
+- (void)_updateSpotlightAnimated:(bool)arg1;
+- (void)_updateSuggestionImageWithAnimatedSpotlight:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (void)commonInit;
-- (void)dealloc;
+- (id)dateFormatter;
+- (id)dateLabel;
 - (id)dimView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })faceRect;
-- (id)imageLoadInvalidationTimer;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })faceRect;
+- (id)imageRequest;
 - (id)imageView;
 - (id)init;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (BOOL)needsSpotlightUpdate;
+- (bool)needsSpotlightUpdate;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)setDateFormatter:(id)arg1;
+- (void)setDateLabel:(id)arg1;
 - (void)setDimView:(id)arg1;
-- (void)setFaceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setImageLoadInvalidationTimer:(id)arg1;
+- (void)setFaceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setImageRequest:(id)arg1;
 - (void)setImageView:(id)arg1;
-- (void)setNeedsSpotlightUpdate:(BOOL)arg1;
+- (void)setNeedsSpotlightUpdate:(bool)arg1;
 - (void)setSpotlightLayer:(id)arg1;
-- (void)setSuggestion:(id)arg1 animated:(BOOL)arg2 withCompletion:(id /* block */)arg3;
+- (void)setSuggestion:(id)arg1 animated:(bool)arg2 withCompletion:(id /* block */)arg3;
 - (void)setSuggestionView:(id)arg1;
-- (void)setValidSpotlight:(BOOL)arg1;
+- (void)setValidSpotlight:(bool)arg1;
 - (id)spotlightLayer;
 - (id)suggestion;
 - (id)suggestionView;
-- (BOOL)validSpotlight;
+- (bool)validSpotlight;
 - (void)viewScaleDidChange;
 
 @end

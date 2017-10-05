@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraAudioParameterCombination : NSObject {
+@interface HMDCameraAudioParameterCombination : HMFObject {
     HMDBitRateSetting * _bitrateSetting;
     HMDAudioCodecGroup * _codecGroupType;
     NSNumber * _maximumBitrate;
@@ -26,7 +26,7 @@
 - (id)description;
 - (id)initWithCodecGroup:(id)arg1 bitrateSetting:(id)arg2 sampleRate:(id)arg3;
 - (id)initWithCodecGroup:(id)arg1 bitrateSetting:(id)arg2 sampleRate:(id)arg3 maximumBitrate:(id)arg4 minimumBitrate:(id)arg5 rtcpInterval:(id)arg6 rtpPtime:(id)arg7;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)maximumBitrate;
 - (id)minimumBitrate;
 - (id)rtcpInterval;

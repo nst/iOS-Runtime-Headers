@@ -3,17 +3,16 @@
  */
 
 @interface PEXPeopleSuggester : PEXContactSuggester {
-    <_CDInteractionAdvising> * _cdAdvisor;
-    <_CDInteractionQuerying> * _cdQuerier;
-    _CDPeopleSuggester * _cdSuggester;
     id /* block */  _mockBlock;
     NSObject<OS_dispatch_source> * _timer;
 }
 
 - (void).cxx_destruct;
-- (void)_processPeopleSuggestions:(id)arg1 doRetry:(BOOL)arg2;
-- (void)_refreshPeopleSuggestionsAndRetryIfNoResults:(BOOL)arg1;
+- (id)_makeDuetPeopleSuggester;
+- (void)_processPeopleSuggestions:(id)arg1 favorites:(id)arg2 doRetry:(bool)arg3;
+- (void)_refreshPeopleSuggestionsAndRetryIfNoResults:(bool)arg1;
 - (void)clearCaches;
+- (void)clearCachesWithoutRefreshing;
 - (id)init;
 - (id)initWithMock:(id /* block */)arg1;
 - (void)refreshMockPeopleSuggestions;

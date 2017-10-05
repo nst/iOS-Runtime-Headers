@@ -5,8 +5,10 @@
 
 @required
 
-- (BOOL)hf_isShowNotificationsStatus;
-- (BOOL)hf_supportsNotifications;
-- (NAFuture *)hf_updateShowNotificationsStatus:(BOOL)arg1;
+- (bool)hf_isShowNotificationsStatus;
+- (NSPredicate *)hf_notificationsCondition;
+- (bool)hf_supportsNotifications;
+- (NAFuture *)hf_updateNotificationsCondition:(NSPredicate *)arg1;
+- (NAFuture *)hf_updateShowNotificationsStatus:(bool)arg1;
 
 @end

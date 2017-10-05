@@ -13,6 +13,6 @@
 - (id)initWithSendError:(unsigned int)arg1 results:(id)arg2;
 - (id)results;
 - (unsigned int)sendError;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

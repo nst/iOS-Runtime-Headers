@@ -3,42 +3,42 @@
  */
 
 @interface AWDCarouselAppInfo : PBCodable <NSCopying> {
-    BOOL  _development;
+    bool  _development;
     struct { 
         unsigned int development : 1; 
         unsigned int watchKit : 1; 
     }  _has;
     NSString * _identifier;
-    BOOL  _watchKit;
+    bool  _watchKit;
 }
 
-@property (nonatomic) BOOL development;
-@property (nonatomic) BOOL hasDevelopment;
-@property (nonatomic, readonly) BOOL hasIdentifier;
-@property (nonatomic) BOOL hasWatchKit;
+@property (nonatomic) bool development;
+@property (nonatomic) bool hasDevelopment;
+@property (nonatomic, readonly) bool hasIdentifier;
+@property (nonatomic) bool hasWatchKit;
 @property (nonatomic, retain) NSString *identifier;
-@property (nonatomic) BOOL watchKit;
+@property (nonatomic) bool watchKit;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (BOOL)development;
+- (bool)development;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDevelopment;
-- (BOOL)hasIdentifier;
-- (BOOL)hasWatchKit;
-- (unsigned int)hash;
+- (bool)hasDevelopment;
+- (bool)hasIdentifier;
+- (bool)hasWatchKit;
+- (unsigned long long)hash;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setDevelopment:(BOOL)arg1;
-- (void)setHasDevelopment:(BOOL)arg1;
-- (void)setHasWatchKit:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setDevelopment:(bool)arg1;
+- (void)setHasDevelopment:(bool)arg1;
+- (void)setHasWatchKit:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setWatchKit:(BOOL)arg1;
-- (BOOL)watchKit;
+- (void)setWatchKit:(bool)arg1;
+- (bool)watchKit;
 - (void)writeTo:(id)arg1;
 
 @end

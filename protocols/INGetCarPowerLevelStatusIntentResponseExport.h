@@ -6,7 +6,7 @@
 @required
 
 - (NSNumber *)chargePercentRemaining;
-- (int)code;
+- (long long)code;
 - (NSMeasurement *)distanceRemaining;
 - (NSNumber *)fuelPercentRemaining;
 - (void)setChargePercentRemaining:(NSNumber *)arg1;

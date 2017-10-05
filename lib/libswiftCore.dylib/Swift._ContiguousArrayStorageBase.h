@@ -6,8 +6,6 @@
     void countAndCapacity;
 }
 
-- (long)_getNonVerbatimBridgedCount;
 - (id)init;
-- (id)initWith_doNotCallMeBase;
 
 @end

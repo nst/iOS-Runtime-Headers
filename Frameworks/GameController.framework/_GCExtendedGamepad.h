@@ -9,12 +9,12 @@
     _GCControllerButtonInput * _button3;
     GCController * _controller;
     _GCControllerDirectionPad * _dpad;
-    BOOL  _dpadFlippedY;
-    BOOL  _leftFlippedY;
+    bool  _dpadFlippedY;
+    bool  _leftFlippedY;
     _GCControllerButtonInput * _leftShoulder;
     _GCControllerDirectionPad * _leftThumbstick;
     _GCControllerButtonInput * _leftTrigger;
-    BOOL  _rightFlippedY;
+    bool  _rightFlippedY;
     _GCControllerButtonInput * _rightShoulder;
     _GCControllerDirectionPad * _rightThumbstick;
     _GCControllerButtonInput * _rightTrigger;
@@ -23,12 +23,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) NSString *name;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
-+ (BOOL)supportsUSBInterfaceProtocol:(unsigned char)arg1;
++ (bool)supportsSecureCoding;
++ (bool)supportsUSBInterfaceProtocol:(unsigned char)arg1;
 
 - (void).cxx_destruct;
 - (id)buttonA;
@@ -40,7 +40,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithController:(id)arg1;
-- (id)initWithController:(id)arg1 dpadFlippedY:(BOOL)arg2 leftFlippedY:(BOOL)arg3 rightFlippedY:(BOOL)arg4;
+- (id)initWithController:(id)arg1 dpadFlippedY:(bool)arg2 leftFlippedY:(bool)arg3 rightFlippedY:(bool)arg4;
 - (id)leftShoulder;
 - (id)leftThumbstick;
 - (id)leftTrigger;
@@ -49,7 +49,7 @@
 - (id)rightThumbstick;
 - (id)rightTrigger;
 - (void)setController:(id)arg1;
-- (void)setPlayerIndex:(int)arg1;
+- (void)setPlayerIndex:(long long)arg1;
 - (void)setValueChangedHandler:(id /* block */)arg1;
 - (id /* block */)valueChangedHandler;
 

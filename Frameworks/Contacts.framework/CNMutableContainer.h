@@ -4,26 +4,26 @@
 
 @interface CNMutableContainer : CNContainer
 
-@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (getter=isEnabled, nonatomic) bool enabled;
 @property (nonatomic) int iOSLegacyIdentifier;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) CNContainer *snapshot;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
-- (void)adoptValuesFromAndSetSnaphot:(id)arg1;
+- (void)adoptValuesFromAndSetSnapshot:(id)arg1;
 - (id)copy;
 - (id)freeze;
 - (id)freezeWithSelfAsSnapshot;
 - (id)identifier;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (id)name;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setIOSLegacyIdentifier:(int)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setSnapshot:(id)arg1;
-- (void)setType:(int)arg1;
-- (int)type;
+- (void)setType:(long long)arg1;
+- (long long)type;
 
 @end

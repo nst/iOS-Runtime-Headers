@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) NSString *displayName;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) NSArray *languageOptionCharacteristics;
-@property (nonatomic, readonly) unsigned int languageOptionType;
+@property (nonatomic, readonly) unsigned long long languageOptionType;
 @property (nonatomic, readonly) NSString *languageTag;
 @property (nonatomic, readonly) void*mrLanguageOption;
 
@@ -17,11 +17,11 @@
 - (id)displayName;
 - (id)identifier;
 - (id)initWithMRLanguageOption:(void*)arg1;
-- (id)initWithType:(unsigned int)arg1 languageTag:(id)arg2 characteristics:(id)arg3 displayName:(id)arg4 identifier:(id)arg5;
-- (BOOL)isAutomaticAudibleLanguageOption;
-- (BOOL)isAutomaticLegibleLanguageOption;
+- (id)initWithType:(unsigned long long)arg1 languageTag:(id)arg2 characteristics:(id)arg3 displayName:(id)arg4 identifier:(id)arg5;
+- (bool)isAutomaticAudibleLanguageOption;
+- (bool)isAutomaticLegibleLanguageOption;
 - (id)languageOptionCharacteristics;
-- (unsigned int)languageOptionType;
+- (unsigned long long)languageOptionType;
 - (id)languageTag;
 - (void*)mrLanguageOption;
 

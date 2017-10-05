@@ -12,7 +12,7 @@
 
 - (void)dealloc;
 - (id)init;
-- (BOOL)isOpaque;
+- (bool)isOpaque;
 - (id)prepareWindowIfNeeded;
 - (void)setUiView:(id)arg1;
 - (void)setUiWindow:(id)arg1;

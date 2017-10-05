@@ -4,12 +4,12 @@
 
 @interface SUKeybagPreventLockAssertion : NSObject <BSInvalidatable> {
     struct __MKBAssertion { } * _assertion;
-    BOOL  _invalidated;
+    bool  _invalidated;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)dealloc;

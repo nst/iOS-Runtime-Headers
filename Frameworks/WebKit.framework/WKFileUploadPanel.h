@@ -6,7 +6,7 @@
     struct RetainPtr<UIAlertController> { 
         void *m_ptr; 
     }  _actionSheetController;
-    BOOL  _allowMultipleFiles;
+    bool  _allowMultipleFiles;
     <WKFileUploadPanelDelegate> * _delegate;
     struct RetainPtr<UIDocumentMenuViewController> { 
         void *m_ptr; 
@@ -15,8 +15,8 @@
         void *m_ptr; 
     }  _imagePicker;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _interactionPoint;
     struct RefPtr<WebKit::WebOpenPanelResultListenerProxy> { 
         struct WebOpenPanelResultListenerProxy {} *m_ptr; 
@@ -31,14 +31,14 @@
     struct RetainPtr<UIViewController> { 
         void *m_ptr; 
     }  _presentationViewController;
-    BOOL  _usingCamera;
+    bool  _usingCamera;
     WKContentView * _view;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <WKFileUploadPanelDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id).cxx_construct;
@@ -47,25 +47,23 @@
 - (id)_cameraButtonLabel;
 - (void)_cancel;
 - (void)_chooseFiles:(id)arg1 displayString:(id)arg2 iconImage:(id)arg3;
-- (void)_dismissDisplayAnimated:(BOOL)arg1;
+- (void)_dismissDisplayAnimated:(bool)arg1;
 - (void)_dispatchDidDismiss;
-- (id)_displayStringForPhotos:(unsigned int)arg1 videos:(unsigned int)arg2;
 - (id)_documentPickerMenuMediaTypes;
-- (id)_mediaTypesForPickerSourceType:(int)arg1;
+- (id)_mediaTypesForPickerSourceType:(long long)arg1;
 - (id)_photoLibraryButtonLabel;
-- (void)_presentForCurrentInterfaceIdiom:(id)arg1;
-- (void)_presentFullscreenViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)_presentPopoverWithContentViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)_processMediaInfoDictionaries:(id)arg1 atIndex:(unsigned int)arg2 processedResults:(id)arg3 processedImageCount:(unsigned int)arg4 processedVideoCount:(unsigned int)arg5 successBlock:(id /* block */)arg6 failureBlock:(id /* block */)arg7;
+- (void)_presentFullscreenViewController:(id)arg1 animated:(bool)arg2;
+- (void)_presentMenuOptionForCurrentInterfaceIdiom:(id)arg1;
+- (void)_presentPopoverWithContentViewController:(id)arg1 animated:(bool)arg2;
+- (void)_processMediaInfoDictionaries:(id)arg1 atIndex:(unsigned long long)arg2 processedResults:(id)arg3 processedImageCount:(unsigned long long)arg4 processedVideoCount:(unsigned long long)arg5 successBlock:(id /* block */)arg6 failureBlock:(id /* block */)arg7;
 - (void)_processMediaInfoDictionaries:(id)arg1 successBlock:(id /* block */)arg2 failureBlock:(id /* block */)arg3;
-- (BOOL)_shouldMediaCaptureOpenMediaDevice;
+- (bool)_shouldMediaCaptureOpenMediaDevice;
 - (void)_showDocumentPickerMenu;
-- (void)_showPhotoPickerWithSourceType:(int)arg1;
-- (void)_uploadItemForImage:(id)arg1 withAssetURL:(id)arg2 successBlock:(id /* block */)arg3 failureBlock:(id /* block */)arg4;
+- (void)_showPhotoPickerWithSourceType:(long long)arg1;
 - (void)_uploadItemForImageData:(id)arg1 imageName:(id)arg2 successBlock:(id /* block */)arg3 failureBlock:(id /* block */)arg4;
 - (void)_uploadItemForJPEGRepresentationOfImage:(id)arg1 successBlock:(id /* block */)arg2 failureBlock:(id /* block */)arg3;
 - (void)_uploadItemFromMediaInfo:(id)arg1 successBlock:(id /* block */)arg2 failureBlock:(id /* block */)arg3;
-- (BOOL)_willMultipleSelectionDelegateBeCalled;
+- (bool)_willMultipleSelectionDelegateBeCalled;
 - (void)dealloc;
 - (id)delegate;
 - (void)dismiss;

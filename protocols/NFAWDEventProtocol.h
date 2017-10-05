@@ -6,12 +6,12 @@
 @optional
 
 - (PBCodable *)getMetric;
-- (unsigned long)getMetricId;
-- (unsigned int)updateCardIngestionSessionStateChangeInfoWithPreviousState:(unsigned int)arg1;
+- (unsigned int)getMetricId;
+- (unsigned long long)updateCardIngestionSessionStateChangeInfoWithPreviousState:(unsigned long long)arg1;
 - (void)updateExceptionUUID:(NSData *)arg1;
-- (unsigned int)updateExpressFelicaStateInfoWithPreviousState:(unsigned int)arg1;
-- (unsigned int)updateTransactionStateInfoWithPreviousState:(unsigned int)arg1;
+- (unsigned long long)updateExpressTransactionStateInfoWithPreviousState:(unsigned long long)arg1;
+- (unsigned long long)updateTransactionStateInfoWithPreviousState:(unsigned long long)arg1;
 - (void)updateUUID:(NSData *)arg1 withUUIDRefTimestamp:(unsigned long long)arg2;
-- (unsigned int)updateVASTransactionStateInfoWithPreviousState:(unsigned int)arg1;
+- (unsigned long long)updateVASTransactionStateInfoWithPreviousState:(unsigned long long)arg1;
 
 @end

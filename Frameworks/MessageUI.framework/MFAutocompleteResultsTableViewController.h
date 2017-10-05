@@ -3,28 +3,28 @@
  */
 
 @interface MFAutocompleteResultsTableViewController : UITableViewController {
-    BOOL  _cellAnimationsEnabled;
+    bool  _cellAnimationsEnabled;
     UIColor * _cellBackgroundColor;
-    BOOL  _deferTableViewUpdates;
+    bool  _deferTableViewUpdates;
     <MFAutocompleteResultsTableViewControllerDelegate> * _delegate;
     NSMutableArray * _searchResults;
     NSMutableArray * _serverSearchResults;
-    BOOL  _shouldDimIrrelevantInformation;
-    BOOL  _shouldHighlightCompleteMatches;
+    bool  _shouldDimIrrelevantInformation;
+    bool  _shouldHighlightCompleteMatches;
     NSMutableArray * _suggestedSearchResults;
     _MFAutocompleteResultsTableViewModel * _tableViewModel;
-    BOOL  _tableViewNeedsReload;
+    bool  _tableViewNeedsReload;
 }
 
 @property (nonatomic, readonly) NSArray *allRecipients;
-@property (getter=areCellAnimationsEnabled, nonatomic) BOOL cellAnimationsEnabled;
+@property (getter=areCellAnimationsEnabled, nonatomic) bool cellAnimationsEnabled;
 @property (nonatomic, retain) UIColor *cellBackgroundColor;
 @property (nonatomic, readonly) NSArray *contactRecipients;
-@property (getter=isDeferringTableViewUpdates, nonatomic) BOOL deferTableViewUpdates;
+@property (getter=isDeferringTableViewUpdates, nonatomic) bool deferTableViewUpdates;
 @property (nonatomic) <MFAutocompleteResultsTableViewControllerDelegate> *delegate;
 @property (nonatomic, readonly) NSArray *directoryServerRecipients;
-@property (nonatomic) BOOL shouldDimIrrelevantInformation;
-@property (nonatomic) BOOL shouldHighlightCompleteMatches;
+@property (nonatomic) bool shouldDimIrrelevantInformation;
+@property (nonatomic) bool shouldHighlightCompleteMatches;
 @property (nonatomic, readonly) NSArray *suggestedRecipients;
 
 + (id)cellBackgroundColorForInlineDisplay;
@@ -35,47 +35,45 @@
 - (id)_indexPathForRecipient:(id)arg1;
 - (id)_recipientAtIndexPath:(id)arg1;
 - (void)_selectSearchResultsRecipientAtIndexPath:(id)arg1;
-- (float)_tableViewHeaderHeight;
-- (void)_updateTableViewModelAnimated:(BOOL)arg1;
+- (double)_tableViewHeaderHeight;
+- (void)_updateTableViewModelAnimated:(bool)arg1;
 - (id)allRecipients;
-- (BOOL)areCellAnimationsEnabled;
+- (bool)areCellAnimationsEnabled;
 - (id)cellBackgroundColor;
 - (void)clear;
-- (BOOL)confirmSelectedRecipient;
+- (bool)confirmSelectedRecipient;
 - (id)contactRecipients;
-- (BOOL)containsRecipient:(id)arg1;
+- (bool)containsRecipient:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)directoryServerRecipients;
-- (id)initWithStyle:(int)arg1;
+- (id)initWithStyle:(long long)arg1;
 - (void)invalidateSearchResultRecipient:(id)arg1;
-- (BOOL)isDeferringTableViewUpdates;
+- (bool)isDeferringTableViewUpdates;
 - (void)loadView;
-- (unsigned int)numberOfResults;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (unsigned long long)numberOfResults;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)presentSearchResults:(id)arg1;
 - (Class)recipientTableViewCellClass;
 - (void)resetScrollPosition;
 - (void)selectNextSearchResult;
 - (void)selectPreviousSearchResult;
-- (void)setCellAnimationsEnabled:(BOOL)arg1;
+- (void)setCellAnimationsEnabled:(bool)arg1;
 - (void)setCellBackgroundColor:(id)arg1;
-- (void)setDeferTableViewUpdates:(BOOL)arg1;
+- (void)setDeferTableViewUpdates:(bool)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setShouldDimIrrelevantInformation:(BOOL)arg1;
-- (void)setShouldHighlightCompleteMatches:(BOOL)arg1;
-- (BOOL)shouldDimIrrelevantInformation;
-- (BOOL)shouldHighlightCompleteMatches;
+- (void)setShouldDimIrrelevantInformation:(bool)arg1;
+- (void)setShouldHighlightCompleteMatches:(bool)arg1;
+- (bool)shouldDimIrrelevantInformation;
+- (bool)shouldHighlightCompleteMatches;
 - (id)suggestedRecipients;
 - (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 
 @end

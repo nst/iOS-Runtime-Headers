@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
  */
 
-@interface CFPBJsonReader : NSObject {
+@interface CFPBJSONReader : NSObject {
     NSMutableDictionary * _objNamesToPropMaps;
     NSMutableDictionary * _propertyCache;
 }

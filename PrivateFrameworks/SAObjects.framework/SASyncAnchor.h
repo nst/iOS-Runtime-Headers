@@ -6,11 +6,11 @@
 
 @property (nonatomic, copy) NSString *appBundleId;
 @property (nonatomic, retain) SASyncAppMetaData *appMetaData;
-@property (nonatomic) int count;
+@property (nonatomic) long long count;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *generation;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *intentSlotName;
 @property (nonatomic, copy) NSString *key;
 @property (readonly) Class superclass;
@@ -25,7 +25,7 @@
 
 - (id)appBundleId;
 - (id)appMetaData;
-- (int)count;
+- (long long)count;
 - (id)encodedClassName;
 - (id)generation;
 - (id)groupIdentifier;
@@ -33,7 +33,7 @@
 - (id)key;
 - (void)setAppBundleId:(id)arg1;
 - (void)setAppMetaData:(id)arg1;
-- (void)setCount:(int)arg1;
+- (void)setCount:(long long)arg1;
 - (void)setGeneration:(id)arg1;
 - (void)setIntentSlotName:(id)arg1;
 - (void)setKey:(id)arg1;
@@ -48,7 +48,7 @@
 
 + (id)_af_normalizedKeyForKey:(id)arg1 appBundleID:(id)arg2 syncSlotName:(id)arg3;
 
-- (BOOL)_af_isValid;
+- (bool)_af_isValid;
 - (id)_af_normalizedKey;
 
 @end

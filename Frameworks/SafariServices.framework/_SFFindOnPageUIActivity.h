@@ -8,11 +8,11 @@
 
 - (void).cxx_destruct;
 - (id)_beforeActivity;
-- (void)activityDidFinish:(BOOL)arg1;
+- (void)activityDidFinish:(bool)arg1;
 - (id)activityImage;
 - (id)activityTitle;
 - (id)activityType;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
+- (bool)canPerformWithActivityItems:(id)arg1;
 - (id)initWithFindOnPageView:(id)arg1;
 - (void)performActivity;
 

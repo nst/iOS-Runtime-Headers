@@ -6,18 +6,18 @@
     MPMusicPlayerControllerServerInternal * _internal;
 }
 
-@property (nonatomic, readonly) BOOL allowForeignAssetPlayback;
+@property (nonatomic, readonly) bool allowForeignAssetPlayback;
 @property (nonatomic, readonly) MPAVController *player;
 @property (nonatomic, readonly, copy) NSString *requestingBundleIdentifier;
 @property (nonatomic, readonly, copy) NSString *requestingBundleVersion;
 
-+ (BOOL)isMusicPlayerControllerServerRunning;
++ (bool)isMusicPlayerControllerServerRunning;
 + (id)sharedInstance;
 + (void)startMusicPlayerControllerServerWithDelegate:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_runMigServer;
-- (BOOL)allowForeignAssetPlayback;
+- (bool)allowForeignAssetPlayback;
 - (void)forwardInvocation:(id)arg1;
 - (id)init;
 - (id)methodSignatureForSelector:(SEL)arg1;

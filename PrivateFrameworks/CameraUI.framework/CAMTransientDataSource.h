@@ -7,9 +7,9 @@
     NSMutableDictionary * __assetsByUUID;
     NSMutableDictionary * __enqueuedBurstAssetUUIDByBurstIdentifier;
     NSMutableDictionary * __enqueuedBurstConvertiblesByAssetUUID;
-    int  __nestedPerformChanges;
+    long long  __nestedPerformChanges;
     NSHashTable * __observers;
-    int  __pendingChangeNotifications;
+    long long  __pendingChangeNotifications;
     NSMutableDictionary * __representativeAssetsByBurstIdentifier;
 }
 
@@ -17,13 +17,13 @@
 @property (nonatomic, readonly) NSMutableDictionary *_assetsByUUID;
 @property (nonatomic, readonly) NSMutableDictionary *_enqueuedBurstAssetUUIDByBurstIdentifier;
 @property (nonatomic, readonly) NSMutableDictionary *_enqueuedBurstConvertiblesByAssetUUID;
-@property (setter=_setNestedPerformChanges:, nonatomic) int _nestedPerformChanges;
+@property (setter=_setNestedPerformChanges:, nonatomic) long long _nestedPerformChanges;
 @property (nonatomic, readonly) NSHashTable *_observers;
-@property (setter=_setPendingChangeNotifications:, nonatomic) int _pendingChangeNotifications;
+@property (setter=_setPendingChangeNotifications:, nonatomic) long long _pendingChangeNotifications;
 @property (nonatomic, readonly) NSMutableDictionary *_representativeAssetsByBurstIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -31,14 +31,14 @@
 - (id)_assetsByUUID;
 - (id)_enqueuedBurstAssetUUIDByBurstIdentifier;
 - (id)_enqueuedBurstConvertiblesByAssetUUID;
-- (int)_nestedPerformChanges;
+- (long long)_nestedPerformChanges;
 - (void)_notifyObserversOfDataSourceChange;
 - (id)_observers;
-- (int)_pendingChangeNotifications;
-- (BOOL)_removeAssetWithUUID:(id)arg1;
+- (long long)_pendingChangeNotifications;
+- (bool)_removeAssetWithUUID:(id)arg1;
 - (id)_representativeAssetsByBurstIdentifier;
-- (void)_setNestedPerformChanges:(int)arg1;
-- (void)_setPendingChangeNotifications:(int)arg1;
+- (void)_setNestedPerformChanges:(long long)arg1;
+- (void)_setPendingChangeNotifications:(long long)arg1;
 - (id)description;
 - (void)enqueuePendingBurstAssetWithConvertible:(id)arg1;
 - (id)existingAssetForUUID:(id)arg1;

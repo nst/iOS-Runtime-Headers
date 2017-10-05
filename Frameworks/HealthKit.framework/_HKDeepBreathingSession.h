@@ -8,12 +8,12 @@
     <_HKDeepBreathingSessionLifecycleDelegate> * _lifecycleDelegate;
     NSObject<OS_dispatch_queue> * _queue;
     <NSXPCProxyCreating> * _server;
-    int  _serverState;
+    long long  _serverState;
     _HKDeepBreathingSessionConfiguration * _sessionConfiguration;
 }
 
 @property <_HKDeepBreathingSessionDelegate> *delegate;
-@property (readonly) int serverState;
+@property (readonly) long long serverState;
 @property (readonly) _HKDeepBreathingSessionConfiguration *sessionConfiguration;
 
 + (id)_clientInterface;
@@ -24,25 +24,25 @@
 - (void)_attachServerWithClientQueue:(id)arg1 healthStore:(id)arg2 completion:(id /* block */)arg3;
 - (void)_connectionDidEncounterError:(id)arg1;
 - (id)_initWithSessionConfiguration:(id)arg1 lifecycleDelegate:(id)arg2;
-- (BOOL)_isServerAttached;
+- (bool)_isServerAttached;
 - (id)_lifecycleDelegate;
 - (void)_queue_alertDelegateDidEncounterError:(id)arg1;
 - (void)_queue_alertDelegateDidReceiveHeartRate:(double)arg1;
 - (void)_queue_deactivate;
-- (BOOL)_queue_isServerAttached;
-- (void)_queue_transitionToServerState:(int)arg1;
+- (bool)_queue_isServerAttached;
+- (void)_queue_transitionToServerState:(long long)arg1;
 - (id)_serverProxy;
 - (id)_serverWithErrorHandler:(id /* block */)arg1;
 - (id)_sessionConfiguration;
 - (id)delegate;
 - (id)description;
-- (void)endSessionWithEndReason:(int)arg1;
-- (int)serverState;
+- (void)endSessionWithEndReason:(long long)arg1;
+- (long long)serverState;
 - (id)sessionConfiguration;
 - (void)sessionDidReceiveError:(id)arg1;
 - (void)sessionDidReceiveHeartRate:(double)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)startScoringSession;
+- (void)startGuiding;
 - (void)startSessionWithStartDate:(id)arg1 completion:(id /* block */)arg2;
 
 @end

@@ -11,9 +11,9 @@
 
 - (void)dealloc;
 - (void*)deviceInfo;
-- (unsigned int)encryptionType;
+- (unsigned long long)encryptionType;
 - (id)initWithDeviceInfo:(void*)arg1;
 - (id)supportedProtocolMessages;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

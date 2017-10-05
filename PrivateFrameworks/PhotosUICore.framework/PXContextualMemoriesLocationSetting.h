@@ -8,9 +8,9 @@
         double latitude; 
         double longitude; 
     }  _coordinate;
-    unsigned int  _locationState;
+    unsigned long long  _locationState;
     PXLocationStream * _locationStream;
-    BOOL  _monitorsCurrentLocation;
+    bool  _monitorsCurrentLocation;
     CLPlacemark * _placemark;
 }
 
@@ -18,12 +18,12 @@
 @property (nonatomic) struct CLLocationCoordinate2D { double x1; double x2; } coordinate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *headerTitle;
 @property (nonatomic, readonly) CLLocation *location;
-@property (nonatomic) unsigned int locationState;
+@property (nonatomic) unsigned long long locationState;
 @property (nonatomic, retain) PXLocationStream *locationStream;
-@property (nonatomic) BOOL monitorsCurrentLocation;
+@property (nonatomic) bool monitorsCurrentLocation;
 @property (nonatomic, retain) CLPlacemark *placemark;
 @property (nonatomic, readonly) NSString *subtitle;
 @property (readonly) Class superclass;
@@ -31,7 +31,7 @@
 
 + (void)_setSimulatedLocationCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
 + (struct CLLocationCoordinate2D { double x1; double x2; })_simulatedLocationCoordinate;
-+ (BOOL)automaticallyNotifiesObserversOfCoordinate;
++ (bool)automaticallyNotifiesObserversOfCoordinate;
 + (id)keyPathsForValuesAffectingPlacemark;
 + (id)keyPathsForValuesAffectingSubtitle;
 + (id)keyPathsForValuesAffectingTitle;
@@ -49,17 +49,17 @@
 - (id)headerTitle;
 - (id)init;
 - (id)location;
-- (unsigned int)locationState;
+- (unsigned long long)locationState;
 - (id)locationStream;
-- (BOOL)monitorsCurrentLocation;
+- (bool)monitorsCurrentLocation;
 - (id)placemark;
 - (void)requestLocationUpdateWithCompletionHandler:(id /* block */)arg1;
 - (void)resetToDefault;
 - (void)setCompletionHandlerManager:(id)arg1;
 - (void)setCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
-- (void)setLocationState:(unsigned int)arg1;
+- (void)setLocationState:(unsigned long long)arg1;
 - (void)setLocationStream:(id)arg1;
-- (void)setMonitorsCurrentLocation:(BOOL)arg1;
+- (void)setMonitorsCurrentLocation:(bool)arg1;
 - (void)setPlacemark:(id)arg1;
 - (id)subtitle;
 - (id)title;

@@ -5,38 +5,39 @@
 @interface TUCallHistoryController : NSObject <TUCallProviderManagerDelegate> {
     CHManager * _callHistoryManager;
     TUCallProviderManager * _callProviderManager;
-    NSString * _coalescingStrategy;
+    unsigned long long  _coalescingStrategy;
     TUDispatcher * _dispatcher;
     NSMutableSet * _metadataPreCachedOptions;
-    unsigned int  _options;
+    unsigned long long  _options;
     NSArray * _recentCalls;
     TUDispatcher * _simpleIvarDispatcher;
-    unsigned int  _unreadAudioCallCount;
-    unsigned int  _unreadCallCount;
-    unsigned int  _unreadVideoCallCount;
+    unsigned long long  _unreadAudioCallCount;
+    unsigned long long  _unreadCallCount;
+    unsigned long long  _unreadVideoCallCount;
 }
 
 @property (nonatomic, retain) CHManager *callHistoryManager;
 @property (nonatomic, retain) TUCallProviderManager *callProviderManager;
-@property (nonatomic, copy) NSString *coalescingStrategy;
+@property (nonatomic) unsigned long long coalescingStrategy;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) TUDispatcher *dispatcher;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableSet *metadataPreCachedOptions;
-@property (nonatomic) unsigned int options;
+@property (nonatomic) unsigned long long options;
 @property (nonatomic, retain) NSArray *recentCalls;
 @property (nonatomic, retain) TUDispatcher *simpleIvarDispatcher;
 @property (readonly) Class superclass;
-@property (nonatomic) unsigned int unreadAudioCallCount;
-@property (nonatomic) unsigned int unreadCallCount;
-@property (nonatomic) unsigned int unreadVideoCallCount;
+@property (nonatomic) unsigned long long unreadAudioCallCount;
+@property (nonatomic) unsigned long long unreadCallCount;
+@property (nonatomic) unsigned long long unreadVideoCallCount;
 
-+ (id)callHistoryControllerWithCoalescingStrategy:(id)arg1 options:(unsigned int)arg2;
++ (id)callHistoryControllerWithCoalescingStrategy:(unsigned long long)arg1 options:(unsigned long long)arg2;
 + (id)sharedController;
-+ (id)sharedControllerWithCoalescingStrategy:(id)arg1 options:(unsigned int)arg2;
++ (id)sharedControllerWithCoalescingStrategy:(unsigned long long)arg1 options:(unsigned long long)arg2;
 
 - (void).cxx_destruct;
+- (id)_callHistoryCoalescingStrategyForCoalescingStrategy:(unsigned long long)arg1;
 - (void)_updateCallHistoryManagerUsingCurrentOptions;
 - (void)boostQualityOfService;
 - (void)callHistoryDatabaseChanged:(id)arg1;
@@ -44,7 +45,9 @@
 - (id /* block */)callHistoryManagerInitializationDispatchBlock;
 - (id /* block */)callHistoryManagerRecentCallsDispatchBlock;
 - (id)callProviderManager;
-- (id)coalescingStrategy;
+- (bool)canCoalesceCall:(id)arg1 withCall:(id)arg2;
+- (bool)coalesceCall:(id)arg1 withCall:(id)arg2;
+- (unsigned long long)coalescingStrategy;
 - (void)dealloc;
 - (void)deleteAllRecentCalls;
 - (void)deleteRecentCall:(id)arg1;
@@ -52,32 +55,32 @@
 - (id)dispatcher;
 - (void)dispatcherDidFinishBoost:(id)arg1;
 - (id)init;
-- (id)initWithCoalescingStrategy:(id)arg1 options:(unsigned int)arg2;
+- (id)initWithCoalescingStrategy:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (void)loadDispatchQueue;
 - (void)markRecentAudioCallsAsRead;
 - (void)markRecentCallsAsRead;
 - (void)markRecentCallsAsReadWithPredicate:(id)arg1;
 - (void)markRecentVideoCallsAsRead;
 - (id)metadataPreCachedOptions;
-- (unsigned int)options;
+- (unsigned long long)options;
 - (void)providersChangedForProviderManager:(id)arg1;
 - (id)recentCalls;
 - (id)recentCallsWithPredicate:(id)arg1;
-- (void)reloadWithOptions:(unsigned int)arg1;
+- (void)reloadWithOptions:(unsigned long long)arg1;
 - (void)setCallHistoryManager:(id)arg1;
 - (void)setCallProviderManager:(id)arg1;
-- (void)setCoalescingStrategy:(id)arg1;
+- (void)setCoalescingStrategy:(unsigned long long)arg1;
 - (void)setDispatcher:(id)arg1;
 - (void)setMetadataPreCachedOptions:(id)arg1;
-- (void)setOptions:(unsigned int)arg1;
+- (void)setOptions:(unsigned long long)arg1;
 - (void)setRecentCalls:(id)arg1;
 - (void)setSimpleIvarDispatcher:(id)arg1;
-- (void)setUnreadAudioCallCount:(unsigned int)arg1;
-- (void)setUnreadCallCount:(unsigned int)arg1;
-- (void)setUnreadVideoCallCount:(unsigned int)arg1;
+- (void)setUnreadAudioCallCount:(unsigned long long)arg1;
+- (void)setUnreadCallCount:(unsigned long long)arg1;
+- (void)setUnreadVideoCallCount:(unsigned long long)arg1;
 - (id)simpleIvarDispatcher;
-- (unsigned int)unreadAudioCallCount;
-- (unsigned int)unreadCallCount;
-- (unsigned int)unreadVideoCallCount;
+- (unsigned long long)unreadAudioCallCount;
+- (unsigned long long)unreadCallCount;
+- (unsigned long long)unreadVideoCallCount;
 
 @end

@@ -4,14 +4,14 @@
 
 @interface NTKBatteryTimelineEntryModel : NTKTimelineEntryModel {
     float  _level;
-    int  _state;
+    long long  _state;
 }
 
 @property (nonatomic) float level;
-@property (nonatomic) int state;
+@property (nonatomic) long long state;
 
 - (id)_levelTintColor;
-- (id)_newCircularTemplateMedium:(BOOL)arg1;
+- (id)_newCircularTemplateMedium:(bool)arg1;
 - (id)_newExtraLargeTemplate;
 - (id)_newModularSmallTemplate;
 - (id)_newUtilitarianLargeTemplate;
@@ -20,8 +20,8 @@
 - (id)_ringTextProvider;
 - (float)level;
 - (void)setLevel:(float)arg1;
-- (void)setState:(int)arg1;
-- (int)state;
-- (id)templateForComplicationFamily:(int)arg1;
+- (void)setState:(long long)arg1;
+- (long long)state;
+- (id)templateForComplicationFamily:(long long)arg1;
 
 @end

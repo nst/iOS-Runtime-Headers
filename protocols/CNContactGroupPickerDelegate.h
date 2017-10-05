@@ -8,5 +8,6 @@
 - (NSArray *)alreadyPickedGroups;
 - (void)contactGroupPickerDidCancel:(CNContactGroupPickerViewController *)arg1;
 - (void)contactGroupPickerDidFinish:(CNContactGroupPickerViewController *)arg1 withGroup:(NSString *)arg2;
+- (CNPolicy *)policy;
 
 @end

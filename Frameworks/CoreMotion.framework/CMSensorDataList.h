@@ -20,7 +20,7 @@
     unsigned long long  fCurrentBlockTimestamp;
     unsigned long long  fCurrentIdentifier;
     NSObject<OS_xpc_object> * fDataBuffer;
-    unsigned long  fDataBufferLength;
+    unsigned long long  fDataBufferLength;
     char * fDataBufferPtr;
     int  fDataType;
     struct GyroUnpacker { 
@@ -39,8 +39,8 @@
 
 - (id).cxx_construct;
 - (void)_updateCurrentBlockProperties;
-- (BOOL)_updatePointers;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (bool)_updatePointers;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
 - (void)dealloc;
 - (id)initFrom:(double)arg1 to:(double)arg2 withType:(int)arg3;
 - (id)initWithIdentifier:(unsigned long long)arg1 andType:(int)arg2;

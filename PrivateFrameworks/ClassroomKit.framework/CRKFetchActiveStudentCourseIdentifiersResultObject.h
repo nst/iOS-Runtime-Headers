@@ -10,7 +10,7 @@
 @property (nonatomic, copy) NSArray *activeCourseIdentifiers;
 @property (nonatomic, copy) NSArray *activeInstructorIdentifiers;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)activeCourseIdentifiers;

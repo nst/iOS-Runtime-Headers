@@ -3,19 +3,19 @@
  */
 
 @interface WBSParsecMovieCardDetailSection : WBSParsecModel {
-    unsigned int  _descriptionMaxLines;
+    unsigned long long  _descriptionMaxLines;
     NSString * _descriptionText;
     NSString * _title;
 }
 
-@property (nonatomic, readonly) unsigned int descriptionMaxLines;
+@property (nonatomic, readonly) unsigned long long descriptionMaxLines;
 @property (nonatomic, readonly, copy) NSString *descriptionText;
 @property (nonatomic, readonly, copy) NSString *title;
 
 + (id)movieCardDetailSectionSchema;
 
 - (void).cxx_destruct;
-- (unsigned int)descriptionMaxLines;
+- (unsigned long long)descriptionMaxLines;
 - (id)descriptionText;
 - (id)initWithDictionary:(id)arg1;
 - (id)title;

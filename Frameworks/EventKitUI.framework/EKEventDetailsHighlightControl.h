@@ -10,6 +10,7 @@
     UIImageView * _iconStack;
     NSLayoutConstraint * _interLabelPaddingConstraint;
     NSArray * _justSubtitleVisibleContraints;
+    NSArray * _justTitleAndActionVisibleContraints;
     NSArray * _justTitleVisibleContraints;
     UILabel * _subtitleLabel;
     NSString * _subtitleText;
@@ -26,13 +27,13 @@
 @property (nonatomic, readonly) UILabel *titleLabel;
 @property (nonatomic, readonly, retain) NSLayoutConstraint *topMarginConstraint;
 
-+ (float)bottomMarginConstant;
-+ (float)interLabelBaselineDeltaConstant;
-+ (BOOL)requiresConstraintBasedLayout;
++ (double)bottomMarginConstant;
++ (double)interLabelBaselineDeltaConstant;
++ (bool)requiresConstraintBasedLayout;
 + (id)subtitleColor;
 + (id)subtitleFont;
 + (id)titleFont;
-+ (float)topMarginConstant;
++ (double)topMarginConstant;
 
 - (void).cxx_destruct;
 - (void)_updateSubtitleAndActionText;
@@ -42,7 +43,7 @@
 - (void)contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)dealloc;
 - (id)iconStack;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)interLabelPaddingConstraint;
 - (void)setActionText:(id)arg1 color:(id)arg2;
 - (void)setIconImage:(id)arg1;

@@ -4,7 +4,7 @@
 
 @interface MMCSEngine : NSObject {
     NSString * _appIDHeader;
-    BOOL  _autoGenerateItemID;
+    bool  _autoGenerateItemID;
     NSMutableDictionary * _autoItemIDDictionary;
     NSObject<OS_dispatch_queue> * _autoItemIDDictionaryQueue;
     NSURL * _autoItemIDPersistenceURL;
@@ -12,7 +12,7 @@
     <MMCSEngineDelegate> * _delegate;
     struct _mmcs_engine { } * _engine;
     struct { 
-        int version; 
+        long long version; 
         void *context; 
         int (*getFileDescriptorAndContentTypeFromItemCallback)(); 
         int (*getItemProgressCallback)(); 
@@ -21,8 +21,8 @@
         int (*putItemDoneCallback)(); 
         int (*requestCompletedCallback)(); 
     }  _engineClientContext;
-    BOOL  _isDone;
-    BOOL  _isMetricsGatheringEnabled;
+    bool  _isDone;
+    bool  _isMetricsGatheringEnabled;
     NSMutableDictionary * _itemIDToAssetMap;
     NSObject<OS_dispatch_queue> * _itemIDToAssetMapQueue;
     NSDictionary * _options;
@@ -33,11 +33,11 @@
     NSThread * _workThread;
 }
 
-@property (nonatomic) BOOL autoGenerateItemID;
+@property (nonatomic) bool autoGenerateItemID;
 @property (nonatomic) <MMCSEngineDelegate> *delegate;
-@property (nonatomic, readonly) BOOL hasOutstandingActivity;
-@property (nonatomic) BOOL isDone;
-@property (nonatomic) BOOL isMetricsGatheringEnabled;
+@property (nonatomic, readonly) bool hasOutstandingActivity;
+@property (nonatomic) bool isDone;
+@property (nonatomic) bool isMetricsGatheringEnabled;
 @property (nonatomic, retain) NSTimer *threadKeepAliveTimer;
 @property (nonatomic, retain) NSThread *workThread;
 
@@ -47,11 +47,10 @@
 - (void).cxx_destruct;
 - (id)_assetWithItemID:(unsigned long long)arg1;
 - (void)_doNothingTimerHandler:(id)arg1;
-- (BOOL)_getFileDescriptorAndContentTypeFromItemID:(unsigned long long)arg1 outFD:(int*)arg2 outItemType:(id*)arg3 outError:(id*)arg4;
+- (bool)_getFileDescriptorAndContentTypeFromItemID:(unsigned long long)arg1 outFD:(int*)arg2 outItemType:(id*)arg3 outError:(id*)arg4;
 - (void)_getItemDoneItemID:(unsigned long long)arg1 path:(id)arg2 requestorContext:(id)arg3 error:(id)arg4;
 - (void)_getItemProgressItemID:(unsigned long long)arg1 state:(int)arg2 progress:(double)arg3 requestorContext:(id)arg4 error:(id)arg5;
 - (void)_initItemIDPersistence;
-- (void)_logLevel:(int)arg1 message:(id)arg2;
 - (unsigned long long)_nextItemID;
 - (void)_putItemDoneItemID:(unsigned long long)arg1 requestorContext:(id)arg2 putReceipt:(id)arg3 error:(id)arg4;
 - (void)_putItemProgressItemID:(unsigned long long)arg1 state:(int)arg2 progress:(double)arg3 requestorContext:(id)arg4 error:(id)arg5;
@@ -60,29 +59,29 @@
 - (void)_removeAssetForItemID:(unsigned long long)arg1;
 - (void)_removeRequestorContext:(id)arg1;
 - (void)_requestCompletedRequestorContext:(id)arg1;
-- (BOOL)autoGenerateItemID;
+- (bool)autoGenerateItemID;
 - (void)cancelAllOperations;
 - (void)cancelOperationsWithContext:(id)arg1;
 - (id)delegate;
 - (void)getAssets:(id)arg1 requestURL:(id)arg2 DSID:(id)arg3 options:(id)arg4;
-- (BOOL)hasOutstandingActivity;
+- (bool)hasOutstandingActivity;
 - (id)initWithWorkPath:(id)arg1 appIDHeader:(id)arg2 dataClass:(id)arg3 options:(id)arg4;
 - (id)initWithWorkPath:(id)arg1 appIDHeader:(id)arg2 dataClass:(id)arg3 options:(id)arg4 modes:(id)arg5;
-- (BOOL)isActive;
-- (BOOL)isDone;
-- (BOOL)isMetricsGatheringEnabled;
+- (bool)isActive;
+- (bool)isDone;
+- (bool)isMetricsGatheringEnabled;
 - (void)performBlock:(id /* block */)arg1;
 - (void)performBlockOnWorkThread:(id /* block */)arg1;
-- (void)performBlockOnWorkThread:(id /* block */)arg1 waitUntilDone:(BOOL)arg2;
+- (void)performBlockOnWorkThread:(id /* block */)arg1 waitUntilDone:(bool)arg2;
 - (void)putAssets:(id)arg1 requestURL:(id)arg2 DSID:(id)arg3 options:(id)arg4;
 - (void)registerAssetForUpload:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)registerAssets:(id)arg1 forDownloadCompletionBlock:(id /* block */)arg2;
 - (void)reregisterAssetForDownload:(id)arg1;
 - (void)reregisterAssetForUpload:(id)arg1;
-- (void)setAutoGenerateItemID:(BOOL)arg1;
+- (void)setAutoGenerateItemID:(bool)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setIsDone:(BOOL)arg1;
-- (void)setIsMetricsGatheringEnabled:(BOOL)arg1;
+- (void)setIsDone:(bool)arg1;
+- (void)setIsMetricsGatheringEnabled:(bool)arg1;
 - (void)setThreadKeepAliveTimer:(id)arg1;
 - (void)setWorkThread:(id)arg1;
 - (void)shutDownCompletionBlock:(id /* block */)arg1;

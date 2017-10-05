@@ -5,12 +5,12 @@
 
 @required
 
-- (void)setDateComplicationText:(NSString *)arg1 forDateStyle:(unsigned int)arg2;
+- (void)setDateComplicationText:(NSString *)arg1 forDateStyle:(unsigned long long)arg2;
 
 @optional
 
-- (unsigned int)desiredDateComplicationDateStyle;
-- (BOOL)needsAbbreviatedDate;
-- (void)setDateComplicationText:(NSString *)arg1 withDayRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 forDateStyle:(unsigned int)arg3;
+- (unsigned long long)desiredDateComplicationDateStyle;
+- (unsigned long long)overrideDateStyle;
+- (void)setDateComplicationText:(NSString *)arg1 withDayRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 forDateStyle:(unsigned long long)arg3;
 
 @end

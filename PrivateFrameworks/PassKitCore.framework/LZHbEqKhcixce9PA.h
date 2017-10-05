@@ -8,13 +8,14 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (void)QFYEmRJgRag2HkWc:(id)arg1 intermediate:(id /* block */)arg2 completion:(id /* block */)arg3;
+- (void)computeScoresUsingSettings:(id)arg1 completion:(id /* block */)arg2;
+- (void)getScoreMessageWithIdentifier:(id)arg1 nonce:(id)arg2 completion:(id /* block */)arg3;
 - (id)initWithServiceName:(id)arg1;
 
 @end

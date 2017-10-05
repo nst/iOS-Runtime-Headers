@@ -4,53 +4,53 @@
 
 @interface W5DiagnosticsTestResult : NSObject <NSCopying, NSSecureCoding> {
     NSDictionary * _configuration;
-    BOOL  _didPass;
+    bool  _didPass;
     NSError * _error;
     NSDictionary * _info;
-    BOOL  _result;
+    bool  _result;
     double  _testCompleted;
-    int  _testID;
+    long long  _testID;
     double  _testStarted;
     NSUUID * _uuid;
 }
 
 @property (nonatomic, copy) NSDictionary *configuration;
-@property (nonatomic) BOOL didPass;
+@property (nonatomic) bool didPass;
 @property (nonatomic, copy) NSError *error;
 @property (nonatomic, copy) NSDictionary *info;
-@property (nonatomic) BOOL result;
+@property (nonatomic) bool result;
 @property (nonatomic) double testCompleted;
-@property (nonatomic) int testID;
+@property (nonatomic) long long testID;
 @property (nonatomic) double testStarted;
-@property (nonatomic) NSUUID *uuid;
+@property (nonatomic, copy) NSUUID *uuid;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)configuration;
-- (BOOL)conformsToProtocol:(id)arg1;
+- (bool)conformsToProtocol:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (BOOL)didPass;
+- (bool)didPass;
 - (void)encodeWithCoder:(id)arg1;
 - (id)error;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)info;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToDiagnosticsTestResult:(id)arg1;
-- (BOOL)result;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToDiagnosticsTestResult:(id)arg1;
+- (bool)result;
 - (void)setConfiguration:(id)arg1;
-- (void)setDidPass:(BOOL)arg1;
+- (void)setDidPass:(bool)arg1;
 - (void)setError:(id)arg1;
 - (void)setInfo:(id)arg1;
-- (void)setResult:(BOOL)arg1;
+- (void)setResult:(bool)arg1;
 - (void)setTestCompleted:(double)arg1;
-- (void)setTestID:(int)arg1;
+- (void)setTestID:(long long)arg1;
 - (void)setTestStarted:(double)arg1;
 - (void)setUuid:(id)arg1;
 - (double)testCompleted;
-- (int)testID;
+- (long long)testID;
 - (double)testStarted;
 - (id)uuid;
 

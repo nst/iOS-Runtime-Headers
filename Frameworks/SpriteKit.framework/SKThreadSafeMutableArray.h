@@ -5,8 +5,8 @@
 @interface SKThreadSafeMutableArray : NSObject <NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding> {
     NSMutableArray * _storage;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _storageLock;
 }
 

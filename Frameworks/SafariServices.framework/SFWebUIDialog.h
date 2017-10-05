@@ -15,6 +15,6 @@
 - (void)didCompleteWithResponse:(id)arg1;
 - (id)initWithAlert:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)newViewControllerRepresentationWithCompletionHandler:(id /* block */)arg1;
-- (int)presentationStyle;
+- (long long)presentationStyle;
 
 @end

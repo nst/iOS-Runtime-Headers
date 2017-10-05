@@ -4,41 +4,41 @@
 
 @interface SSVContentLink : NSObject {
     NSString * _categoryName;
-    int  _contentKind;
+    long long  _contentKind;
     NSNumber * _itemIdentifier;
     NSString * _itemTitle;
     NSString * _providerName;
     NSString * _searchTerm;
-    int  _targetApplication;
+    long long  _targetApplication;
 }
 
 @property (nonatomic, readonly) NSURL *URL;
 @property (nonatomic, copy) NSString *categoryName;
-@property (nonatomic) int contentKind;
+@property (nonatomic) long long contentKind;
 @property (nonatomic, copy) NSNumber *itemIdentifier;
 @property (nonatomic, copy) NSString *itemTitle;
 @property (nonatomic, copy) NSString *providerName;
 @property (nonatomic, copy) NSString *searchTerm;
-@property (nonatomic) int targetApplication;
+@property (nonatomic) long long targetApplication;
 
 - (void).cxx_destruct;
 - (id)URL;
-- (id)_URLSchemeWithApplication:(int)arg1;
-- (id)_stringForContentKind:(int)arg1;
-- (int)_targetApplicationWithContentKind:(int)arg1;
+- (id)_URLSchemeWithApplication:(long long)arg1;
+- (id)_stringForContentKind:(long long)arg1;
+- (long long)_targetApplicationWithContentKind:(long long)arg1;
 - (id)categoryName;
-- (int)contentKind;
+- (long long)contentKind;
 - (id)itemIdentifier;
 - (id)itemTitle;
 - (id)providerName;
 - (id)searchTerm;
 - (void)setCategoryName:(id)arg1;
-- (void)setContentKind:(int)arg1;
+- (void)setContentKind:(long long)arg1;
 - (void)setItemIdentifier:(id)arg1;
 - (void)setItemTitle:(id)arg1;
 - (void)setProviderName:(id)arg1;
 - (void)setSearchTerm:(id)arg1;
-- (void)setTargetApplication:(int)arg1;
-- (int)targetApplication;
+- (void)setTargetApplication:(long long)arg1;
+- (long long)targetApplication;
 
 @end

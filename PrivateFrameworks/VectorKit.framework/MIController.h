@@ -4,7 +4,18 @@
 
 @interface MIController : NSObject <VKMapViewDelegate> {
     NSObject<OS_xpc_object> * _connection;
-    BOOL  _isActive;
+    struct DebugTree { 
+        VKMapView *_mapView; 
+        struct vector<std::__1::shared_ptr<md::DebugTreeNode>, std::__1::allocator<std::__1::shared_ptr<md::DebugTreeNode> > > { 
+            struct shared_ptr<md::DebugTreeNode> {} *__begin_; 
+            struct shared_ptr<md::DebugTreeNode> {} *__end_; 
+            struct __compressed_pair<std::__1::shared_ptr<md::DebugTreeNode> *, std::__1::allocator<std::__1::shared_ptr<md::DebugTreeNode> > > { 
+                struct shared_ptr<md::DebugTreeNode> {} *__first_; 
+            } __end_cap_; 
+        } _nodes; 
+        bool _options[4]; 
+    }  _debugTree;
+    bool  _isActive;
     VKMapView * _mapView;
     struct shared_ptr<MITManager> { 
         struct MITManager {} *__ptr_; 
@@ -15,8 +26,8 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isActive;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isActive;
 @property (readonly) Class superclass;
 
 + (id)sharedController;
@@ -25,13 +36,14 @@
 - (void).cxx_destruct;
 - (void)activateController:(id)arg1;
 - (void)deactivateController;
+- (void)decodeDebugTreeData:(id)arg1;
 - (void)decodeMITreeData:(id)arg1;
 - (void)handleXPCEvent:(id)arg1;
 - (id)init;
-- (BOOL)isActive;
-- (void)mapLayer:(id)arg1 didChangeRegionAnimated:(BOOL)arg2;
+- (bool)isActive;
+- (void)mapLayer:(id)arg1 didChangeRegionAnimated:(bool)arg2;
 - (void)recievedData:(id)arg1;
 - (void)sendData:(id)arg1;
-- (BOOL)takeMITSnapshot:(out id*)arg1;
+- (bool)takeMITSnapshot:(out id*)arg1;
 
 @end

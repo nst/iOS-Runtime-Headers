@@ -6,6 +6,6 @@
 
 - (id)init;
 - (void)initializeReturnAutoreleased;
-- (id)returnsAutoreleased;
+- (id)returnsAutoreleased:(id)arg1;
 
 @end

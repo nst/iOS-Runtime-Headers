@@ -11,8 +11,8 @@
     double  _timestamp;
 }
 
-@property (nonatomic) BOOL hasSampleRate;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasSampleRate;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) double sampleRate;
 @property (nonatomic) double timestamp;
 
@@ -20,15 +20,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasSampleRate;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasSampleRate;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (double)sampleRate;
-- (void)setHasSampleRate:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasSampleRate:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setSampleRate:(double)arg1;
 - (void)setTimestamp:(double)arg1;
 - (double)timestamp;

@@ -3,25 +3,23 @@
  */
 
 @interface FBUIUserAgent : NSObject <FBUIUserAgentInternal> {
-    BOOL  _systemApp;
+    bool  _systemApp;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (getter=isSystemApp, nonatomic) BOOL systemApp;
+@property (getter=isSystemApp, nonatomic) bool systemApp;
 
 + (id)sharedAgent;
 
 - (id)currentProcess;
 - (id)init;
-- (BOOL)isSystemApp;
-- (id)mainDisplay;
+- (bool)isSystemApp;
 - (id)mainQueue;
-- (id)mainScene;
 - (id)processManager;
 - (id)sceneManager;
-- (void)setSystemApp:(BOOL)arg1;
+- (void)setSystemApp:(bool)arg1;
 
 @end

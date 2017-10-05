@@ -11,7 +11,7 @@
 @property (nonatomic) void*userData;
 
 - (int (*)functionPointer;
-- (BOOL)registerWithConnection:(id)arg1;
+- (bool)registerWithConnection:(id)arg1;
 - (void)setFunctionPointer:(int (*)arg1;
 - (void)setUserData:(void*)arg1;
 - (void*)userData;

@@ -6,14 +6,14 @@
     UIVisualEffectView * _backdropView;
     id /* block */  _completedAnimationBlock;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _modalSize;
 }
 
 @property (nonatomic, readonly) UIVisualEffectView *backdropView;
 @property (nonatomic, copy) id /* block */ completedAnimationBlock;
-@property (nonatomic) struct CGSize { float x1; float x2; } modalSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } modalSize;
 
 - (void).cxx_destruct;
 - (void)_layoutPresentedView;
@@ -23,10 +23,10 @@
 - (void)dealloc;
 - (void)dismissalTransitionWillBegin;
 - (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;
-- (struct CGSize { float x1; float x2; })modalSize;
-- (int)presentationStyle;
+- (struct CGSize { double x1; double x2; })modalSize;
+- (long long)presentationStyle;
 - (void)presentationTransitionWillBegin;
 - (void)setCompletedAnimationBlock:(id /* block */)arg1;
-- (void)setModalSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setModalSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

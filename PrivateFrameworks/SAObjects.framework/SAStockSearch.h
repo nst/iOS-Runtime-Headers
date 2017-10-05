@@ -11,7 +11,7 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setStockReferences:(id)arg1;
 - (id)stockReferences;
 

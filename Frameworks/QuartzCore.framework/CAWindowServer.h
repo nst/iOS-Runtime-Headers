@@ -4,13 +4,13 @@
 
 @interface CAWindowServer : NSObject {
     /* Warning: unhandled struct encoding: '{CAWindowServerImpl=^{__CFArray}I@}' */ struct CAWindowServerImpl { struct __CFArray {} *x1; unsigned int x2; id x3; } * _impl;
-    BOOL  _mirroringEnabled;
+    bool  _mirroringEnabled;
 }
 
 @property (readonly) NSArray *displays;
-@property (getter=isMirroringEnabled) BOOL mirroringEnabled;
+@property (getter=isMirroringEnabled) bool mirroringEnabled;
 @property unsigned int rendererFlags;
-@property (getter=isSecure) BOOL secure;
+@property (getter=isSecure) bool secure;
 
 + (id)context;
 + (id)contextWithOptions:(id)arg1;
@@ -32,15 +32,16 @@
 - (id)displays;
 - (id)init;
 - (id)insecureProcessIds;
-- (BOOL)isMirroringEnabled;
-- (BOOL)isSecure;
+- (bool)isMirroringEnabled;
+- (bool)isSecure;
 - (void)removeAllDisplays;
 - (void)removeDisplay:(id)arg1;
 - (unsigned int)rendererFlags;
 - (id)secureModeViolations;
-- (void)setMirroringEnabled:(BOOL)arg1;
+- (void)setMirroringEnabled:(bool)arg1;
 - (void)setRendererFlags:(unsigned int)arg1;
-- (void)setSecure:(BOOL)arg1;
+- (void)setSecure:(bool)arg1;
+- (unsigned int)taskNamePortOfContextId:(unsigned int)arg1;
 - (unsigned int)taskPortOfContextId:(unsigned int)arg1;
 
 @end

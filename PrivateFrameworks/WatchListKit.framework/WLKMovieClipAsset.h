@@ -3,12 +3,12 @@
  */
 
 @interface WLKMovieClipAsset : NSObject {
-    unsigned int  _duration;
+    unsigned long long  _duration;
     NSString * _flavor;
     NSString * _url;
 }
 
-@property (nonatomic, readonly) unsigned int duration;
+@property (nonatomic, readonly) unsigned long long duration;
 @property (nonatomic, readonly, copy) NSString *durationString;
 @property (nonatomic, readonly, copy) NSString *flavor;
 @property (nonatomic, readonly, copy) NSString *url;
@@ -17,7 +17,7 @@
 
 - (void).cxx_destruct;
 - (id)_init;
-- (unsigned int)duration;
+- (unsigned long long)duration;
 - (id)durationString;
 - (id)flavor;
 - (id)init;

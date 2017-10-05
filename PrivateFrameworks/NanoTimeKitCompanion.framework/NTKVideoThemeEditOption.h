@@ -4,14 +4,15 @@
 
 @interface NTKVideoThemeEditOption : NTKEnumeratedEditOption
 
-@property (nonatomic, readonly) unsigned int videoTheme;
+@property (nonatomic, readonly) unsigned long long videoTheme;
 
-+ (id)_nameLocalizationKeyForValue:(unsigned int)arg1;
++ (id)_nameLocalizationKeyForValue:(unsigned long long)arg1;
 + (id)_orderedValues;
-+ (id)_snapshotKeyForValue:(unsigned int)arg1;
-+ (id)optionWithVideoTheme:(unsigned int)arg1;
++ (id)_snapshotKeyForValue:(unsigned long long)arg1;
++ (id)optionWithVideoTheme:(unsigned long long)arg1;
 
 - (id)_valueToFaceBundleStringDict;
-- (unsigned int)videoTheme;
+- (long long)swatchStyle;
+- (unsigned long long)videoTheme;
 
 @end

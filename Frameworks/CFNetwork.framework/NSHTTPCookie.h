@@ -6,7 +6,7 @@
     NSHTTPCookieInternal * _cookiePrivate;
 }
 
-@property (getter=isHTTPOnly, readonly) BOOL HTTPOnly;
+@property (getter=isHTTPOnly, readonly) bool HTTPOnly;
 @property (readonly, copy) NSString *comment;
 @property (readonly, copy) NSURL *commentURL;
 @property (readonly, copy) NSString *domain;
@@ -15,16 +15,16 @@
 @property (readonly, copy) NSString *path;
 @property (readonly, copy) NSArray *portList;
 @property (readonly, copy) NSDictionary *properties;
-@property (getter=isSecure, readonly) BOOL secure;
-@property (getter=isSessionOnly, readonly) BOOL sessionOnly;
+@property (getter=isSecure, readonly) bool secure;
+@property (getter=isSessionOnly, readonly) bool sessionOnly;
 @property (readonly, copy) NSString *value;
-@property (readonly) unsigned int version;
+@property (readonly) unsigned long long version;
 
 // Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
 
 + (id)_cf2nsCookies:(struct __CFArray { }*)arg1;
 + (id)_cookieForSetCookieString:(id)arg1 forURL:(id)arg2 partition:(id)arg3;
-+ (id)_cookiesWithResponseHeaderFields:(id)arg1 forURL:(id)arg2 singleCookie:(BOOL)arg3;
++ (id)_cookiesWithResponseHeaderFields:(id)arg1 forURL:(id)arg2 singleCookie:(bool)arg3;
 + (const struct __CFArray { }*)_ns2cfCookies:(id)arg1;
 + (id)_parsedCookiesWithResponseHeaderFields:(id)arg1 forURL:(id)arg2;
 + (id)cookieWithCFHTTPCookie:(struct OpaqueCFHTTPCookie { }*)arg1;
@@ -48,8 +48,8 @@
 - (id)Version;
 - (const struct OpaqueCFHTTPCookie { }*)_CFHTTPCookie;
 - (const struct OpaqueCFHTTPCookie { }*)_GetInternalCFHTTPCookie;
-- (int)_compareForHeaderOrder:(id)arg1;
-- (BOOL)_isExpired;
+- (long long)_compareForHeaderOrder:(id)arg1;
+- (bool)_isExpired;
 - (id)_key;
 - (id)_storagePartition;
 - (id)comment;
@@ -59,24 +59,28 @@
 - (id)domain;
 - (void)encodeWithCoder:(id)arg1;
 - (id)expiresDate;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCFHTTPCookie:(struct OpaqueCFHTTPCookie { }*)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithProperties:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isHTTPOnly;
-- (BOOL)isSecure;
-- (BOOL)isSessionOnly;
+- (bool)isEqual:(id)arg1;
+- (bool)isHTTPOnly;
+- (bool)isSecure;
+- (bool)isSessionOnly;
 - (id)name;
 - (id)path;
 - (id)portList;
 - (id)properties;
 - (id)value;
-- (unsigned int)version;
+- (unsigned long long)version;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 - (id)replacementObjectForPortCoder:(id)arg1;
+
+// Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
+
+- (bool)sf_matchesTopLevelDomain:(id)arg1;
 
 @end

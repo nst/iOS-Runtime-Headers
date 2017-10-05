@@ -6,16 +6,16 @@
     NSDate * _startDate;
 }
 
-@property (nonatomic, readonly) BOOL isCurrentSession;
+@property (nonatomic, readonly) bool isCurrentSession;
 @property (nonatomic, readonly) NSDate *startDate;
 
 + (id)currentSession;
 
 - (void).cxx_destruct;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithSessionStartDate:(id)arg1;
-- (BOOL)isCurrentSession;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isCurrentSession;
+- (bool)isEqual:(id)arg1;
 - (id)startDate;
 
 @end

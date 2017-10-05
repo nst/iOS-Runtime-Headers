@@ -17,6 +17,6 @@
 - (id)init;
 - (void)setDesiredImageName:(id)arg1;
 - (void)setFallbackImageName:(id)arg1;
-- (void)updateImagesWithAnimation:(BOOL)arg1;
+- (void)updateImagesWithAnimation:(bool)arg1;
 
 @end

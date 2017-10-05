@@ -5,11 +5,11 @@
 
 @required
 
-- (NSString *)siriCoreSQLiteValue_escapedString:(BOOL)arg1;
+- (NSString *)siriCoreSQLiteValue_escapedString:(bool)arg1;
 - (NSData *)siriCoreSQLiteValue_toData;
 - (NSNumber *)siriCoreSQLiteValue_toNumber;
 - (NSString *)siriCoreSQLiteValue_toString;
-- (int)siriCoreSQLiteValue_type;
+- (long long)siriCoreSQLiteValue_type;
 
 @optional
 

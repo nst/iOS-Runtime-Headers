@@ -13,8 +13,8 @@
 - (void)addItemValidationTests:(id)arg1;
 - (void)dealloc;
 - (void)removeValidationTest:(id)arg1;
-- (BOOL)validateItems:(id)arg1 error:(id*)arg2;
-- (BOOL)validateItems:(id)arg1 offers:(id)arg2 error:(id*)arg3;
+- (bool)validateItems:(id)arg1 error:(id*)arg2;
+- (bool)validateItems:(id)arg1 offers:(id)arg2 error:(id*)arg3;
 - (id)validationTests;
 
 @end

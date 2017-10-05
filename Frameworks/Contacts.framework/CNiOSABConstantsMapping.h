@@ -29,7 +29,7 @@
 + (id)CNToABPersonSortOrderingConstantsMapping;
 + (id)CNToABSourceTypeConstantsMapping;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)defaultConstant;
 - (id)initWithMapping:(id)arg1;
 - (id)invertedMapping;

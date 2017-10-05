@@ -7,14 +7,14 @@
     struct { 
         unsigned int moreAvailable : 1; 
     }  _has;
-    BOOL  _moreAvailable;
+    bool  _moreAvailable;
     NSMutableArray * _pushMessages;
 }
 
 @property (nonatomic, retain) NSData *changeID;
-@property (nonatomic, readonly) BOOL hasChangeID;
-@property (nonatomic) BOOL hasMoreAvailable;
-@property (nonatomic) BOOL moreAvailable;
+@property (nonatomic, readonly) bool hasChangeID;
+@property (nonatomic) bool hasMoreAvailable;
+@property (nonatomic) bool moreAvailable;
 @property (nonatomic, retain) NSMutableArray *pushMessages;
 
 + (Class)pushMessageType;
@@ -27,19 +27,19 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasChangeID;
-- (BOOL)hasMoreAvailable;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasChangeID;
+- (bool)hasMoreAvailable;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)moreAvailable;
-- (id)pushMessageAtIndex:(unsigned int)arg1;
+- (bool)moreAvailable;
+- (id)pushMessageAtIndex:(unsigned long long)arg1;
 - (id)pushMessages;
-- (unsigned int)pushMessagesCount;
-- (BOOL)readFrom:(id)arg1;
+- (unsigned long long)pushMessagesCount;
+- (bool)readFrom:(id)arg1;
 - (void)setChangeID:(id)arg1;
-- (void)setHasMoreAvailable:(BOOL)arg1;
-- (void)setMoreAvailable:(BOOL)arg1;
+- (void)setHasMoreAvailable:(bool)arg1;
+- (void)setMoreAvailable:(bool)arg1;
 - (void)setPushMessages:(id)arg1;
 - (void)writeTo:(id)arg1;
 

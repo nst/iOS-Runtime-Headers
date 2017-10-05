@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)visionServiceAssetsProcessingOperation:(PHAVisionServiceAssetsAnalyzingOperation *)arg1 didExecuteToCompletion:(BOOL)arg2;
+- (void)visionServiceAssetsProcessingOperation:(PHAVisionServiceAssetsAnalyzingOperation *)arg1 didExecuteToCompletion:(bool)arg2;
 
 @end

@@ -12,7 +12,7 @@
 @property (nonatomic, readonly) NSArray *addedImmutableObjects;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSIndexSet *indexesOfAddedObjects;
 @property (nonatomic, readonly) NSArray *objects;
 @property (readonly) Class superclass;

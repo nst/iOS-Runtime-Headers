@@ -14,27 +14,27 @@
 
 @property (nonatomic) unsigned int bucketId;
 @property (nonatomic) unsigned int datasetId;
-@property (nonatomic) BOOL hasBucketId;
-@property (nonatomic) BOOL hasDatasetId;
+@property (nonatomic) bool hasBucketId;
+@property (nonatomic) bool hasDatasetId;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+- (void).cxx_destruct;
 - (unsigned int)bucketId;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)datasetId;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasBucketId;
-- (BOOL)hasDatasetId;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasBucketId;
+- (bool)hasDatasetId;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setBucketId:(unsigned int)arg1;
 - (void)setDatasetId:(unsigned int)arg1;
-- (void)setHasBucketId:(BOOL)arg1;
-- (void)setHasDatasetId:(BOOL)arg1;
+- (void)setHasBucketId:(bool)arg1;
+- (void)setHasDatasetId:(bool)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
 

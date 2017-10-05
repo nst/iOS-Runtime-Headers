@@ -7,18 +7,18 @@
     NSMutableData * _content;
     NSMutableArray * _devicePropertiesSupported;
     NSString * _deviceVersion;
-    BOOL  _dirty;
+    bool  _dirty;
     NSMutableArray * _eventsSupported;
     unsigned short  _functionalMode;
     NSMutableArray * _imageFormats;
     NSString * _manufacturer;
     NSString * _model;
     NSMutableArray * _operationsSupported;
-    BOOL  _readOnlyObject;
+    bool  _readOnlyObject;
     NSString * _serialNumber;
     unsigned short  _standardVersion;
     NSString * _vendorExtensionDescription;
-    unsigned long  _vendorExtensionID;
+    unsigned int  _vendorExtensionID;
     unsigned short  _vendorExtensionVersion;
 }
 
@@ -52,12 +52,12 @@
 - (void)setSerialNumber:(id)arg1;
 - (void)setStandardVersion:(unsigned short)arg1;
 - (void)setVendorExtensionDescription:(id)arg1;
-- (void)setVendorExtensionID:(unsigned long)arg1;
+- (void)setVendorExtensionID:(unsigned int)arg1;
 - (void)setVendorExtensionVersion:(unsigned short)arg1;
 - (unsigned short)standardVersion;
 - (void)updateContent;
 - (id)vendorExtensionDescription;
-- (unsigned long)vendorExtensionID;
+- (unsigned int)vendorExtensionID;
 - (unsigned short)vendorExtensionVersion;
 
 @end

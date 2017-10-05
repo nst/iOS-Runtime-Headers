@@ -11,7 +11,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) CNAutocompleteFetchRequest *fetchRequest;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <CNScheduler> *scheduler;
 @property (nonatomic, readonly) <CNAutocompleteSearchProvider> *searchProvider;
 @property (readonly) Class superclass;

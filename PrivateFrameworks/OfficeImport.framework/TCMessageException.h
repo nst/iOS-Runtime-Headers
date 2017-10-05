@@ -6,17 +6,17 @@
     TCMessageEntry * m_entry;
 }
 
-+ (id)exceptionWithMessage:(/* Warning: unhandled struct encoding: '{TCTaggedMessageStructure=i@}' */ struct TCTaggedMessageStructure { int x1; id x2; }*)arg1;
++ (id)exceptionWithMessage:(id)arg1;
 + (id)exceptionWithUntaggedMessage:(id)arg1;
 + (void)initialize;
 + (id)nsError:(id)arg1 domain:(id)arg2;
-+ (void)raise:(/* Warning: unhandled struct encoding: '{TCTaggedMessageStructure=i@}' */ struct TCTaggedMessageStructure { int x1; id x2; }*)arg1;
++ (void)raise:(id)arg1;
 + (void)raiseUntaggedMessage:(id)arg1;
 
 - (void)dealloc;
 - (id)description;
 - (id)getEntry;
-- (id)initWithMessage:(/* Warning: unhandled struct encoding: '{TCTaggedMessageStructure=i@}' */ struct TCTaggedMessageStructure { int x1; id x2; }*)arg1;
+- (id)initWithMessage:(id)arg1;
 - (id)initWithUntaggedMessage:(id)arg1;
 
 @end

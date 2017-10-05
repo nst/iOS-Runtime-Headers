@@ -17,7 +17,7 @@
 @property (copy) NSString *type;
 
 + (id)createFromUserActivity:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bundleId;

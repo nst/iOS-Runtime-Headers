@@ -6,7 +6,7 @@
     id /* block */  _action;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     double  _interval;
-    BOOL  _invalidateCalled;
+    bool  _invalidateCalled;
     id /* block */  _invalidationHandler;
     double  _leeway;
     NSObject<OS_dispatch_source> * _retryTimer;

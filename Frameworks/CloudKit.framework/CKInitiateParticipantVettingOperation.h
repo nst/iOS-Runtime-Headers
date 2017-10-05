@@ -17,7 +17,7 @@
 @property (nonatomic, retain) CKShareMetadata *shareMetadata;
 
 - (void).cxx_destruct;
-- (BOOL)CKOperationShouldRun:(id*)arg1;
+- (bool)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id)address;
@@ -29,7 +29,7 @@
 - (id /* block */)participantVettingInitiatedBlock;
 - (id /* block */)participantVettingInitiationCompletionBlock;
 - (void)performCKOperation;
-- (void)retryTimes:(unsigned int)arg1 container:(id)arg2 participantVettingInitiatedBlock:(id /* block */)arg3 participantVettingInitiationCompletionBlock:(id /* block */)arg4;
+- (void)retryTimes:(unsigned long long)arg1 container:(id)arg2 participantVettingInitiatedBlock:(id /* block */)arg3 participantVettingInitiationCompletionBlock:(id /* block */)arg4;
 - (void)setAddress:(id)arg1;
 - (void)setParticipantID:(id)arg1;
 - (void)setParticipantVettingInitiatedBlock:(id /* block */)arg1;

@@ -5,7 +5,7 @@
 
 @required
 
-- (void)accountRepairRemoteUI:(AAUIAccountRepairRemoteUI *)arg1 account:(ACAccount *)arg2 didFinishWithSuccess:(BOOL)arg3;
+- (void)accountRepairRemoteUI:(AAUIAccountRepairRemoteUI *)arg1 account:(ACAccount *)arg2 didFinishWithSuccess:(bool)arg3;
 
 @optional
 

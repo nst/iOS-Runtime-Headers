@@ -3,20 +3,20 @@
  */
 
 @interface EKEventPrivacyLevelInlineEditItem : EKEventEditItem {
-    BOOL  _currentSwitchState;
-    BOOL  _originalSwitchState;
+    bool  _currentSwitchState;
+    bool  _originalSwitchState;
 }
 
 - (void)_switchChanged:(id)arg1;
-- (BOOL)canBeConfiguredForCalendarConstraints:(id)arg1;
-- (id)cellForSubitemAtIndex:(unsigned int)arg1;
-- (float)footerHeightForWidth:(float)arg1;
+- (bool)canBeConfiguredForCalendarConstraints:(id)arg1;
+- (id)cellForSubitemAtIndex:(unsigned long long)arg1;
+- (double)footerHeightForWidth:(double)arg1;
 - (id)footerTitle;
-- (BOOL)forceTableReloadOnSave;
-- (BOOL)isInline;
+- (bool)forceTableReloadOnSave;
+- (bool)isInline;
 - (void)refreshFromCalendarItemAndStore;
-- (BOOL)requiresReconfigurationOnSave;
-- (BOOL)saveAndDismissWithForce:(BOOL)arg1;
-- (BOOL)shouldAppearWithVisibility:(int)arg1;
+- (bool)requiresReconfigurationOnSave;
+- (bool)saveAndDismissWithForce:(bool)arg1;
+- (bool)shouldAppearWithVisibility:(int)arg1;
 
 @end

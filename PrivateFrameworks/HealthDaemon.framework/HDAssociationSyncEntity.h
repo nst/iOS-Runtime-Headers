@@ -6,18 +6,17 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)decodeSyncObjectWithData:(id)arg1;
-+ (BOOL)generateSyncObjectsForStore:(id)arg1 predicate:(id)arg2 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg3 maxEncodedBytesPerMessage:(int)arg4 profile:(id)arg5 error:(id*)arg6 handler:(id /* block */)arg7;
++ (bool)generateSyncObjectsForSession:(id)arg1 predicate:(id)arg2 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg3 maxEncodedBytesPerMessage:(long long)arg4 profile:(id)arg5 error:(id*)arg6 handler:(id /* block */)arg7;
 + (int)nanoSyncObjectType;
 + (id)nanoSyncPredicateForSession:(id)arg1;
-+ (long long)nextSyncAnchorWithStore:(id)arg1 predicate:(id)arg2 startSyncAnchor:(long long)arg3 profile:(id)arg4 error:(id*)arg5;
-+ (int)receiveSyncObjects:(id)arg1 syncStore:(id)arg2 profile:(id)arg3 error:(id*)arg4;
-+ (unsigned int)supportedNanoSyncDirectionsForProtocolVersion:(int)arg1;
-+ (id)syncEntityDependencies;
-+ (id)syncEntityDependenciesForNanoSyncProtocolVersion:(int)arg1;
-+ (int)syncEntityType;
++ (long long)nextSyncAnchorWithSession:(id)arg1 predicate:(id)arg2 startSyncAnchor:(long long)arg3 profile:(id)arg4 error:(id*)arg5;
++ (long long)receiveSyncObjects:(id)arg1 syncStore:(id)arg2 profile:(id)arg3 error:(id*)arg4;
++ (unsigned long long)supportedNanoSyncDirectionsForProtocolVersion:(int)arg1;
++ (id)syncEntityDependenciesForSyncProtocolVersion:(int)arg1;
++ (long long)syncEntityType;
 
 @end

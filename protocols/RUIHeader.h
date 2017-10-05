@@ -10,15 +10,15 @@
 @optional
 
 - (RUILinkLabel *)detailHeaderLabel;
-- (float)headerHeightForWidth:(float)arg1 inTableView:(UITableView *)arg2;
-- (float)headerHeightForWidth:(float)arg1 inView:(UIView *)arg2;
+- (double)headerHeightForWidth:(double)arg1 inTableView:(UITableView *)arg2;
+- (double)headerHeightForWidth:(double)arg1 inView:(UIView *)arg2;
 - (UILabel *)headerLabel;
 - (void)setDelegate:(id <RUIHeaderDelegate>)arg1;
 - (void)setDetailText:(NSString *)arg1 attributes:(NSDictionary *)arg2;
 - (void)setIconImage:(UIImage *)arg1;
 - (void)setImageAlignment:(int)arg1;
-- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setSectionIsFirst:(BOOL)arg1;
+- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSectionIsFirst:(bool)arg1;
 - (void)setSubHeaderText:(NSString *)arg1 attributes:(NSDictionary *)arg2;
 - (void)setText:(NSString *)arg1 attributes:(NSDictionary *)arg2;
 - (UILabel *)subHeaderLabel;

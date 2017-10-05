@@ -8,9 +8,9 @@
 }
 
 - (id)_childRotationController;
-- (void)animateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)animateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)dealloc;
-- (void)finishRotationFromInterfaceOrientation:(int)arg1;
-- (void)prepareToRotateToInterfaceOrientation:(int)arg1;
+- (void)finishRotationFromInterfaceOrientation:(long long)arg1;
+- (void)prepareToRotateToInterfaceOrientation:(long long)arg1;
 
 @end

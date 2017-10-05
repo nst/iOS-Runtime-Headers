@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) BRFieldCKInfo *ckInfo;
 @property (nonatomic, readonly) int state;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)ckInfo;

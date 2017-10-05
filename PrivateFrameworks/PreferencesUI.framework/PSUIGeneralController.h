@@ -2,7 +2,9 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUIGeneralController : PSListController <CRCarPlayPreferencesDelegate, DevicePINControllerDelegate, PSListControllerTestableSpecifiers, PSUIHomeButtonCustomizeControllerDelegate> {
+@interface PSUIGeneralController : PSListController <CRCarPlayPreferencesDelegate, DevicePINControllerDelegate, PSListControllerTestableSpecifiers, PSUIHomeButtonCustomizeControllerDelegate, SFAirDropDiscoveryControllerDelegate> {
+    SFAirDropDiscoveryController * _airDropDiscoveryController;
+    PSSpecifier * _airDropSpecifier;
     CRCarPlayPreferences * _carPreferences;
     PSUITVOutManager * _tvOutManager;
     PSSpecifier * _tvOutSpecifier;
@@ -12,19 +14,21 @@
 @property (nonatomic, retain) CRCarPlayPreferences *carPreferences;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)booleanCapabilitiesToTest;
 
 - (void).cxx_destruct;
 - (id)EDGEEnabled:(id)arg1;
-- (BOOL)_hasCarPlayContent;
+- (bool)_hasCarPlayContent;
 - (void)_setUseSwitchForOrientationLockWithSpecifier:(id)arg1;
 - (id)carPreferences;
 - (void)dealloc;
 - (void)didAcceptEnteredPIN:(id)arg1;
 - (void)didCancelEnteringPIN;
+- (void)discoveryControllerSettingsDidChange:(id)arg1;
+- (void)discoveryControllerVisibilityDidChange:(id)arg1;
 - (void)enableEdge:(id)arg1;
 - (void)handleCarPlayAllowedDidChange;
 - (void)handleTVOutChange;
@@ -35,9 +39,10 @@
 - (id)parentalControlsEnabled:(id)arg1;
 - (void)profileNotification:(id)arg1;
 - (void)setCarPreferences:(id)arg1;
-- (BOOL)shouldDeferPushForSpecifierID:(id)arg1;
+- (bool)shouldDeferPushForSpecifierID:(id)arg1;
+- (void)shutDown:(id)arg1;
 - (id)specifiers;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 
 @end

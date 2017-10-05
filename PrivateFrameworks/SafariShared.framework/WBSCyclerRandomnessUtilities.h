@@ -8,11 +8,11 @@
 + (void)initialize;
 + (id)randomElementOfArray:(id)arg1;
 + (id)randomElementOfArray:(id)arg1 relativeProbabilities:(id)arg2;
-+ (unsigned int)randomIntegerWithUpperBound:(unsigned int)arg1;
++ (unsigned long long)randomIntegerWithUpperBound:(unsigned long long)arg1;
 + (id)randomString;
 + (id)randomURL;
 + (void)reseed;
-+ (unsigned int)seed;
-+ (void)setSeed:(unsigned int)arg1;
++ (unsigned long long)seed;
++ (void)setSeed:(unsigned long long)arg1;
 
 @end

@@ -10,9 +10,10 @@
 
 - (void).cxx_destruct;
 - (struct opaqueCMSampleBuffer { }*)copyNextSampleBuffer;
+- (struct opaqueCMSampleBuffer { }*)getNextCaptureSampleBuffer;
 - (id)init;
 - (id)initWithTrack:(id)arg1;
 - (id)settings;
-- (int)status;
+- (long long)status;
 
 @end

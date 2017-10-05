@@ -9,7 +9,7 @@
 
 @property (nonatomic, readonly) long long actionType;
 @property (nonatomic, readonly) long long direction;
-@property (nonatomic, readonly) BOOL isFromMe;
+@property (nonatomic, readonly) bool isFromMe;
 @property (nonatomic, readonly) IMHandle *otherHandle;
 @property (nonatomic, readonly) IMHandle *sender;
 
@@ -20,7 +20,7 @@
 - (long long)actionType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (long long)direction;
-- (BOOL)isFromMe;
+- (bool)isFromMe;
 - (id)otherHandle;
 - (id)sender;
 

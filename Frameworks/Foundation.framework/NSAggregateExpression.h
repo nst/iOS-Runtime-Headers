@@ -6,10 +6,10 @@
     id  _collection;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_expressionWithSubstitutionVariables:(id)arg1;
-- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
+- (void)acceptVisitor:(id)arg1 flags:(unsigned long long)arg2;
 - (void)allowEvaluation;
 - (id)collection;
 - (id)constantValue;
@@ -17,10 +17,10 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCollection:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)predicateFormat;
 
 @end

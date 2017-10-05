@@ -6,15 +6,14 @@
     NSData * _screenshotData;
 }
 
-@property (nonatomic, retain) NSData *screenshotData;
+@property (nonatomic, readonly) NSData *screenshotData;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithData:(id)arg1;
 - (id)screenshotData;
-- (void)setScreenshotData:(id)arg1;
 
 @end

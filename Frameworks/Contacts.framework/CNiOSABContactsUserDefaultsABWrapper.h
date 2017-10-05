@@ -7,13 +7,13 @@
 - (unsigned int)ABPersonGetCompositeNameFormatForRecord:(void*)arg1;
 - (unsigned int)ABPersonGetEditNameFormat;
 - (unsigned int)ABPersonGetShortNameFormat;
-- (BOOL)ABPersonGetShortNameFormatEnabled;
-- (BOOL)ABPersonGetShortNamePreferNicknames;
+- (bool)ABPersonGetShortNameFormatEnabled;
+- (bool)ABPersonGetShortNamePreferNicknames;
 - (unsigned int)ABPersonGetSortOrdering;
 - (void)ABPersonSetCompositeNameFormat:(unsigned int)arg1;
 - (void)ABPersonSetShortNameFormat:(unsigned int)arg1;
-- (void)ABPersonSetShortNameFormatEnabled:(BOOL)arg1;
-- (void)ABPersonSetShortNamePreferNicknames:(BOOL)arg1;
+- (void)ABPersonSetShortNameFormatEnabled:(bool)arg1;
+- (void)ABPersonSetShortNamePreferNicknames:(bool)arg1;
 - (id)abDefaultCountryCode;
 - (id)displayedContactsFilterRepresentationPref;
 - (void)setDisplayedContactsFilterRepresentationPref:(id)arg1;

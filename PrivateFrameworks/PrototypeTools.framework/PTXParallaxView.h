@@ -4,38 +4,38 @@
 
 @interface PTXParallaxView : UIView <PTXParallaxObserver, _UISettingsKeyObserver> {
     PTXParallaxController * _parallaxController;
-    BOOL  _resizesView;
+    bool  _resizesView;
     PTXParallaxSettings * _settings;
     PTXMotionWindow * _slideWindowX;
     PTXMotionWindow * _slideWindowY;
-    BOOL  _stopped;
+    bool  _stopped;
     PTXMotionWindow * _tiltWindowX;
     PTXMotionWindow * _tiltWindowY;
     UIView * _view;
-    float  _viewAlpha;
+    double  _viewAlpha;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL resizesView;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool resizesView;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIView *view;
 
 - (void).cxx_destruct;
 - (void)_clearOffset;
-- (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })_slideTransform:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })_tiltTransform:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })_slideTransform:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })_tiltTransform:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_updateSettings;
 - (void)clearParallaxOffset;
 - (void)dealloc;
-- (void)handleParallaxOffset:(struct CGPoint { float x1; float x2; })arg1 lockStatus:(int)arg2 strength:(float)arg3;
+- (void)handleParallaxOffset:(struct CGPoint { double x1; double x2; })arg1 lockStatus:(long long)arg2 strength:(double)arg3;
 - (id)initWithView:(id)arg1 parallaxController:(id)arg2 settings:(id)arg3;
 - (void)layoutSubviews;
-- (BOOL)resizesView;
-- (void)setResizesView:(BOOL)arg1;
+- (bool)resizesView;
+- (void)setResizesView:(bool)arg1;
 - (void)setView:(id)arg1;
-- (void)setViewAlpha:(float)arg1;
+- (void)setViewAlpha:(double)arg1;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (void)start;
 - (void)stop;

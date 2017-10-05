@@ -4,12 +4,12 @@
 
 @interface PKBackFieldTableCell : PKTableViewCell {
     PKPassField * _field;
-    BOOL  _showLinks;
+    bool  _showLinks;
     UITextView * _valueTextView;
 }
 
 @property (nonatomic, retain) PKPassField *field;
-@property (nonatomic) BOOL showLinks;
+@property (nonatomic) bool showLinks;
 
 + (id)_linkColor;
 + (id)_linkTextAttributes;
@@ -20,14 +20,14 @@
 - (void).cxx_destruct;
 - (void)_detectLinks;
 - (void)_setupTextAttributes;
-- (struct CGSize { float x1; float x2; })_sizeForValueTextWithWidth:(float)arg1;
+- (struct CGSize { double x1; double x2; })_sizeForValueTextWithWidth:(double)arg1;
 - (void)dealloc;
 - (id)field;
-- (id)initWithField:(id)arg1 showLinks:(BOOL)arg2;
+- (id)initWithField:(id)arg1 showLinks:(bool)arg2;
 - (void)layoutSubviews;
 - (void)setField:(id)arg1;
-- (void)setShowLinks:(BOOL)arg1;
-- (BOOL)showLinks;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setShowLinks:(bool)arg1;
+- (bool)showLinks;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

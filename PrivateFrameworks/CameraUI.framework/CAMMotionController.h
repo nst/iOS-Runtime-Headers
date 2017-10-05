@@ -2,54 +2,66 @@
    Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
  */
 
-@interface CAMMotionController : NSObject <BKSAccelerometerDelegate> {
+@interface CAMMotionController : NSObject <BKSAccelerometerDelegate, CAMLevelViewModelChangeObserver> {
     BKSAccelerometer * __accelerometer;
-    int  __cachedCaptureOrientation;
-    BOOL  __didNotifyCaptureOrientationWasInvalid;
-    int  __fallbackCaptureOrientation;
-    int  __numberOfDominantPhysicalButtonObservers;
+    long long  __cachedCaptureOrientation;
+    bool  __didNotifyCaptureOrientationWasInvalid;
+    long long  __fallbackCaptureOrientation;
+    CMMotionManager * __levelMotionManager;
+    long long  __numberOfDominantPhysicalButtonObservers;
     CMMotionManager * __physicalButtonMotionManager;
-    int  _dominantPhysicalButton;
+    CAMLevelViewModel * _activeLevelViewModel;
+    long long  _dominantPhysicalButton;
 }
 
 @property (setter=_setAccelerometer:, nonatomic, retain) BKSAccelerometer *_accelerometer;
-@property (setter=_setCachedCaptureOrientation:, nonatomic) int _cachedCaptureOrientation;
-@property (setter=_setDidNotifyCaptureOrientationWasInvalid:, nonatomic) BOOL _didNotifyCaptureOrientationWasInvalid;
-@property (nonatomic, readonly) int _fallbackCaptureOrientation;
-@property (setter=_setNumberOfDominantPhysicalButtonObservers:, nonatomic) int _numberOfDominantPhysicalButtonObservers;
+@property (setter=_setCachedCaptureOrientation:, nonatomic) long long _cachedCaptureOrientation;
+@property (setter=_setDidNotifyCaptureOrientationWasInvalid:, nonatomic) bool _didNotifyCaptureOrientationWasInvalid;
+@property (nonatomic, readonly) long long _fallbackCaptureOrientation;
+@property (nonatomic, readonly) CMMotionManager *_levelMotionManager;
+@property (setter=_setNumberOfDominantPhysicalButtonObservers:, nonatomic) long long _numberOfDominantPhysicalButtonObservers;
 @property (nonatomic, readonly) CMMotionManager *_physicalButtonMotionManager;
-@property (nonatomic, readonly) int captureOrientation;
+@property (setter=_setActiveLevelViewModel:, nonatomic, retain) CAMLevelViewModel *activeLevelViewModel;
+@property (nonatomic, readonly) long long captureOrientation;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (setter=_setDominantPhysicalButton:, nonatomic) int dominantPhysicalButton;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int panoramaCaptureOrientation;
+@property (setter=_setDominantPhysicalButton:, nonatomic) long long dominantPhysicalButton;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long panoramaCaptureOrientation;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_accelerometer;
-- (int)_cachedCaptureOrientation;
-- (id)_debugStringForDeviceOrientation:(int)arg1;
-- (id)_debugStringForInterfaceOrientation:(int)arg1;
-- (BOOL)_didNotifyCaptureOrientationWasInvalid;
-- (int)_fallbackCaptureOrientation;
-- (int)_numberOfDominantPhysicalButtonObservers;
+- (long long)_cachedCaptureOrientation;
+- (id)_debugStringForDeviceOrientation:(long long)arg1;
+- (id)_debugStringForInterfaceOrientation:(long long)arg1;
+- (bool)_didNotifyCaptureOrientationWasInvalid;
+- (long long)_fallbackCaptureOrientation;
+- (void)_handleLevelMotionUpdate:(id)arg1 error:(id)arg2;
+- (id)_levelMotionManager;
+- (long long)_numberOfDominantPhysicalButtonObservers;
 - (id)_physicalButtonMotionManager;
 - (void)_setAccelerometer:(id)arg1;
-- (void)_setCachedCaptureOrientation:(int)arg1;
-- (void)_setDidNotifyCaptureOrientationWasInvalid:(BOOL)arg1;
-- (void)_setDominantPhysicalButton:(int)arg1;
-- (void)_setNumberOfDominantPhysicalButtonObservers:(int)arg1;
+- (void)_setActiveLevelViewModel:(id)arg1;
+- (void)_setCachedCaptureOrientation:(long long)arg1;
+- (void)_setDidNotifyCaptureOrientationWasInvalid:(bool)arg1;
+- (void)_setDominantPhysicalButton:(long long)arg1;
+- (void)_setNumberOfDominantPhysicalButtonObservers:(long long)arg1;
+- (void)_updateLevelMotionManagerFrequency;
 - (void)_updatePhysicalButtonObservation;
 - (void)accelerometer:(id)arg1 didAccelerateWithTimeStamp:(double)arg2 x:(float)arg3 y:(float)arg4 z:(float)arg5 eventType:(int)arg6;
 - (void)accelerometer:(id)arg1 didChangeDeviceOrientation:(int)arg2;
+- (id)activeLevelViewModel;
 - (void)beginGeneratingDominantPhysicalButtonNotifications;
-- (int)captureOrientation;
+- (void)beginUpdatingLevelViewModel:(id)arg1;
+- (long long)captureOrientation;
 - (void)dealloc;
 - (void)debugValidateCaptureOrientation;
-- (int)dominantPhysicalButton;
+- (long long)dominantPhysicalButton;
 - (void)endGeneratingDominantPhysicalButtonNotifications;
+- (void)endUpdatingActiveLevelViewModel;
 - (id)init;
-- (int)panoramaCaptureOrientation;
+- (void)observable:(id)arg1 didPublishChange:(unsigned long long)arg2 withContext:(void*)arg3;
+- (long long)panoramaCaptureOrientation;
 
 @end

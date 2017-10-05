@@ -3,12 +3,12 @@
  */
 
 @interface PHActivityProgressViewController : UIViewController {
-    float  _progress;
+    double  _progress;
     PUActivityProgressController * _pu_activityProgressController;
 }
 
 @property (nonatomic, copy) id /* block */ cancellationHandler;
-@property (nonatomic) float progress;
+@property (nonatomic) double progress;
 
 - (void).cxx_destruct;
 - (void)_commonPHActivityProgressViewControllerInitialization;
@@ -16,11 +16,11 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (float)progress;
+- (double)progress;
 - (void)setCancellationHandler:(id /* block */)arg1;
-- (void)setProgress:(float)arg1;
+- (void)setProgress:(double)arg1;
 - (void)setTitle:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

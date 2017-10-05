@@ -9,7 +9,7 @@
     NSObject<OS_dispatch_queue> * _downsamplingQueue;
     id /* block */  _fetchCompletion;
     NSError * _lastError;
-    unsigned int  _maxByteSize;
+    unsigned long long  _maxByteSize;
     int  _numRequestedImages;
 }
 
@@ -23,7 +23,7 @@
 - (id)_generateTemporaryFilename;
 - (void)exportDataFromVideoAssetURL:(id)arg1 toFileURL:(id)arg2 exportPreset:(id)arg3 completion:(id /* block */)arg4;
 - (id /* block */)fetchCompletion;
-- (void)fetchImageDataForAssetsURLs:(id)arg1 maxByteSize:(unsigned int)arg2 completion:(id /* block */)arg3;
+- (void)fetchImageDataForAssetsURLs:(id)arg1 maxByteSize:(unsigned long long)arg2 completion:(id /* block */)arg3;
 - (void)fetchedAsset:(id)arg1;
 - (id)init;
 - (void)mappedDataFromVideoAtFileURL:(id)arg1 completion:(id /* block */)arg2;

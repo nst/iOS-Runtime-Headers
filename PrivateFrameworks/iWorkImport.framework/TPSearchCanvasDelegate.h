@@ -4,7 +4,7 @@
 
 @interface TPSearchCanvasDelegate : TSASearchCanvasDelegate
 
-- (void)dealloc;
 - (id)initWithDocumentRoot:(id)arg1 canvas:(id)arg2;
+- (bool)isExportingFixedLayoutEPub;
 
 @end

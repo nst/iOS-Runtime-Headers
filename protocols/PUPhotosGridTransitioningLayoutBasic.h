@@ -5,12 +5,12 @@
 
 @required
 
-- (void)setTransitionStartContentOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setTransitionZoomingOut:(BOOL)arg1;
-- (struct CGPoint { float x1; float x2; })transitionEndContentOffset;
-- (BOOL)transitionIsAppearing;
+- (void)setTransitionStartContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setTransitionZoomingOut:(bool)arg1;
+- (struct CGPoint { double x1; double x2; })transitionEndContentOffset;
+- (bool)transitionIsAppearing;
 - (UICollectionViewLayout *)transitionLayout;
-- (struct CGPoint { float x1; float x2; })transitionStartContentOffset;
-- (BOOL)transitionZoomingOut;
+- (struct CGPoint { double x1; double x2; })transitionStartContentOffset;
+- (bool)transitionZoomingOut;
 
 @end

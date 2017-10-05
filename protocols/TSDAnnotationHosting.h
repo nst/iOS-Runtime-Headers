@@ -6,18 +6,18 @@
 @required
 
 - (TSKAnnotationAuthor *)author;
-- (void)commentWillBeAddedToDocumentRoot;
+- (void)commitText:(NSString *)arg1;
 - (NSDate *)date;
-- (TSPObject *)hostingModel;
+- (bool)isEqual:(id)arg1;
+- (<TSKModel> *)model;
 - (void)setAuthor:(TSKAnnotationAuthor *)arg1;
+- (void)setModel:(id <TSKModel>)arg1;
 
 @optional
 
-- (NSString *)changeTrackingContentFormatString;
-- (NSString *)changeTrackingContentString;
-- (NSString *)changeTrackingTitleString;
+- (NSString *)changeTrackingString;
+- (TSKCommand *)commandForDeletingComment;
 - (void)setStorage:(TSDCommentStorage *)arg1;
 - (TSDCommentStorage *)storage;
-- (BOOL)wantsAnnotationPopover;
 
 @end

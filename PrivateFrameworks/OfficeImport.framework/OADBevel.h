@@ -10,10 +10,10 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (float)height;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setHeight:(float)arg1;
 - (void)setType:(int)arg1;
 - (void)setWidth:(float)arg1;

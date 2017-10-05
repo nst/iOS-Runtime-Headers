@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) NSArray *accessoryInvitations;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HMUser *invitee;
 @property (readonly) Class superclass;
 
@@ -18,13 +18,13 @@
 
 + (id)homeInvitationsFromData:(id)arg1 home:(id)arg2;
 + (id)homeInvitationsFromEncodedData:(id)arg1 home:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_cancelInviteWithCompletionHandler:(id /* block */)arg1;
 - (void)_configure:(id)arg1 clientQueue:(id)arg2 delegateCaller:(id)arg3;
-- (BOOL)_mergeWithNewAccessoryInvitations:(id)arg1 operations:(id)arg2;
-- (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
+- (bool)_mergeWithNewAccessoryInvitations:(id)arg1 operations:(id)arg2;
+- (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (id)accessoryInvitations;
 - (void)cancelInviteWithCompletionHandler:(id /* block */)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -34,7 +34,7 @@
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
-- (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
 - (id)hf_serializedStateDumpRepresentation;
 
 @end

@@ -3,7 +3,7 @@
 
 @protocol CLLocationSmootherClientInterface <NSObject>
 
-@required
+@optional
 
 - (void)didSmoothLocations:(NSArray *)arg1 ofType:(NSNumber *)arg2;
 

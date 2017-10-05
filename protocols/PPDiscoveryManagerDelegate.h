@@ -5,6 +5,6 @@
 
 @required
 
-- (void)didDiscoverDeviceWithAdvertisingID:(NSString *)arg1 signalStrength:(int)arg2;
+- (void)didDiscoverDeviceWithAdvertisingID:(NSString *)arg1 signalStrength:(long long)arg2;
 
 @end

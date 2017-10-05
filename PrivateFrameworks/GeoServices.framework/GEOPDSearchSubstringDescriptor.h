@@ -18,27 +18,27 @@
 
 + (Class)spanDataType;
 
+- (void).cxx_destruct;
 - (int)StringAsStringType:(id)arg1;
 - (void)addSpanData:(id)arg1;
 - (int)beginIndex;
 - (void)clearSpanDatas;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)endIndex;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setBeginIndex:(int)arg1;
 - (void)setEndIndex:(int)arg1;
 - (void)setSpanDatas:(id)arg1;
 - (void)setStringType:(int)arg1;
-- (id)spanDataAtIndex:(unsigned int)arg1;
+- (id)spanDataAtIndex:(unsigned long long)arg1;
 - (id)spanDatas;
-- (unsigned int)spanDatasCount;
+- (unsigned long long)spanDatasCount;
 - (int)stringType;
 - (id)stringTypeAsString:(int)arg1;
 - (id)unknownFields;

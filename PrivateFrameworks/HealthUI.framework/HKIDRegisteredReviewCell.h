@@ -3,31 +3,20 @@
  */
 
 @interface HKIDRegisteredReviewCell : UITableViewCell {
-    UILabel * _bodyLabel;
-    UIImageView * _logoImageView;
     UILabel * _titleLabel;
 }
 
-@property (nonatomic, retain) UILabel *bodyLabel;
-@property (nonatomic, retain) NSString *bodyText;
-@property (nonatomic, retain) UIImage *logoImage;
-@property (nonatomic, retain) UIImageView *logoImageView;
 @property (nonatomic, retain) UILabel *titleLabel;
-@property (nonatomic, retain) NSString *titleText;
+
++ (id)defaultReuseIdentifier;
 
 - (void).cxx_destruct;
-- (id)bodyLabel;
-- (id)bodyText;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (id)logoImage;
-- (id)logoImageView;
-- (void)setBodyLabel:(id)arg1;
-- (void)setBodyText:(id)arg1;
-- (void)setLogoImage:(id)arg1;
-- (void)setLogoImageView:(id)arg1;
+- (void)_updateForCurrentSizeCategory;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)setTitleLabel:(id)arg1;
-- (void)setTitleText:(id)arg1;
+- (void)setupConstraints;
+- (void)setupSubviews;
 - (id)titleLabel;
-- (id)titleText;
+- (void)traitCollectionDidChange:(id)arg1;
 
 @end

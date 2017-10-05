@@ -6,7 +6,7 @@
 
 - (id)consentedBrands;
 - (id)deniedBrands;
-- (BOOL)privateModeEnabled;
+- (bool)privateModeEnabled;
 - (id)settings;
 
 @end

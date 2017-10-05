@@ -13,17 +13,17 @@
 - (void).cxx_destruct;
 - (void)cancelProgress;
 - (void)cleanupAfterDismiss;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)dismissAnimated:(BOOL)arg1;
+- (void)didRotateFromInterfaceOrientation:(long long)arg1;
+- (void)dismissAnimated:(bool)arg1;
 - (void)doneProgress;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 printingProgress:(id)arg3;
 - (double)rotationDelay;
-- (void)setDonePrinting:(BOOL)arg1;
+- (void)setDonePrinting:(bool)arg1;
 - (void)setMessage:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)show;
-- (unsigned int)supportedInterfaceOrientations;
-- (BOOL)visible;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (unsigned long long)supportedInterfaceOrientations;
+- (bool)visible;
+- (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 
 @end

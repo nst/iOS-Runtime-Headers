@@ -3,25 +3,25 @@
  */
 
 @interface SKUIIndexBarEntryListViewElement : SKUIViewElement {
-    int  _entryListElementType;
-    BOOL  _indexBarHiddenWhenEmpty;
-    int  _minimumEntityCount;
+    long long  _entryListElementType;
+    bool  _indexBarHiddenWhenEmpty;
+    long long  _minimumEntityCount;
     NSString * _targetIndexBarEntryID;
 }
 
 @property (nonatomic, readonly, copy) NSArray *childIndexBarEntryElements;
-@property (nonatomic, readonly) int entryListElementType;
-@property (getter=isIndexBarHiddenWhenEmpty, nonatomic, readonly) BOOL indexBarHiddenWhenEmpty;
-@property (nonatomic, readonly) int minimumEntityCount;
+@property (nonatomic, readonly) long long entryListElementType;
+@property (getter=isIndexBarHiddenWhenEmpty, nonatomic, readonly) bool indexBarHiddenWhenEmpty;
+@property (nonatomic, readonly) long long minimumEntityCount;
 @property (nonatomic, readonly, copy) NSString *targetIndexBarEntryID;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)childIndexBarEntryElements;
-- (int)entryListElementType;
+- (long long)entryListElementType;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (BOOL)isIndexBarHiddenWhenEmpty;
-- (int)minimumEntityCount;
+- (bool)isIndexBarHiddenWhenEmpty;
+- (long long)minimumEntityCount;
 - (id)targetIndexBarEntryID;
 
 @end

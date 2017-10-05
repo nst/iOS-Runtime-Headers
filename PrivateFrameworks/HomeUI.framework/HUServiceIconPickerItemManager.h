@@ -3,20 +3,15 @@
  */
 
 @interface HUServiceIconPickerItemManager : HFItemManager {
-    HFItemProvider * _iconItemProvider;
     HFServiceBuilder * _serviceBuilder;
 }
 
-@property (nonatomic, readonly) HFItemProvider *iconItemProvider;
 @property (nonatomic, readonly) HFServiceBuilder *serviceBuilder;
 
 - (void).cxx_destruct;
+- (id)_buildItemProvidersForHome:(id)arg1;
 - (id /* block */)_comparatorForSectionIdentifier:(id)arg1;
-- (void)_createItemProvidersWithHome:(id)arg1;
-- (id)_itemProviders;
 - (id)_serviceType;
-- (id)_styleForItem:(id)arg1;
-- (id)iconItemProvider;
 - (id)initWithServiceBuilder:(id)arg1 delegate:(id)arg2;
 - (id)serviceBuilder;
 

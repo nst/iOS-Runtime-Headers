@@ -18,7 +18,7 @@
 - (id)guideSnippet;
 - (id)guideTag;
 - (id)languageCode;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setGuideSnippet:(id)arg1;
 - (void)setGuideTag:(id)arg1;
 - (void)setLanguageCode:(id)arg1;

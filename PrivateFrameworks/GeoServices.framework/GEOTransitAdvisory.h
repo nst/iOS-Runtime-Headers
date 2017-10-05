@@ -6,19 +6,19 @@
     GEOFormattedString * _text;
 }
 
-@property (nonatomic, readonly) BOOL hasText;
+@property (nonatomic, readonly) bool hasText;
 @property (nonatomic, retain) GEOFormattedString *text;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasText;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasText;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setText:(id)arg1;
 - (id)text;
 - (void)writeTo:(id)arg1;

@@ -9,6 +9,6 @@
 
 @optional
 
-- (void)gridViewElementPageSectionConfiguration:(SKUIGridViewElementPageSectionConfiguration *)arg1 configurePosition:(inout int*)arg2 forItemAtIndexPath:(NSIndexPath *)arg3;
+- (void)gridViewElementPageSectionConfiguration:(SKUIGridViewElementPageSectionConfiguration *)arg1 configurePosition:(inout long long*)arg2 forItemAtIndexPath:(NSIndexPath *)arg3;
 
 @end

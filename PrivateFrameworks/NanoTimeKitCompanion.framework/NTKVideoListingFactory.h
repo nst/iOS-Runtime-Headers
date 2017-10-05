@@ -13,19 +13,19 @@
 
 - (void).cxx_destruct;
 - (id)_initLibrary;
-- (id)_listingWithTheme:(unsigned int)arg1 variant:(int)arg2 tag:(unsigned int)arg3;
-- (id)_listingsWithTheme:(unsigned int)arg1;
-- (id)_listingsWithTheme:(unsigned int)arg1 notMatchingVariant:(int)arg2;
-- (id)_listingsWithTheme:(unsigned int)arg1 notMatchingVariant:(int)arg2 matchingTag:(unsigned int)arg3;
-- (id)_listingsWithTheme:(unsigned int)arg1 variant:(int)arg2;
-- (id)_listingsWithTheme:(unsigned int)arg1 variant:(int)arg2 tag:(unsigned int)arg3 notMatchingClip:(int)arg4;
-- (id)anyListingWithTheme:(unsigned int)arg1 notMatchingVariant:(int)arg2 matchingTag:(unsigned int)arg3;
-- (id)anyListingWithTheme:(unsigned int)arg1 variant:(int)arg2 tag:(unsigned int)arg3;
-- (id)anyListingWithTheme:(unsigned int)arg1 variant:(int)arg2 tag:(unsigned int)arg3 notMatchingClip:(int)arg4;
-- (int)behaviorForTheme:(unsigned int)arg1;
-- (id)defaultListingWithTheme:(unsigned int)arg1;
+- (id)_listingWithTheme:(unsigned long long)arg1 variant:(long long)arg2 tag:(unsigned long long)arg3;
+- (id)_listingsWithTheme:(unsigned long long)arg1;
+- (id)_listingsWithTheme:(unsigned long long)arg1 notMatchingVariant:(long long)arg2;
+- (id)_listingsWithTheme:(unsigned long long)arg1 notMatchingVariant:(long long)arg2 matchingTag:(unsigned long long)arg3;
+- (id)_listingsWithTheme:(unsigned long long)arg1 variant:(long long)arg2;
+- (id)_listingsWithTheme:(unsigned long long)arg1 variant:(long long)arg2 tag:(unsigned long long)arg3 notMatchingClip:(long long)arg4;
+- (id)anyListingWithTheme:(unsigned long long)arg1 notMatchingVariant:(long long)arg2 matchingTag:(unsigned long long)arg3;
+- (id)anyListingWithTheme:(unsigned long long)arg1 variant:(long long)arg2 tag:(unsigned long long)arg3;
+- (id)anyListingWithTheme:(unsigned long long)arg1 variant:(long long)arg2 tag:(unsigned long long)arg3 notMatchingClip:(long long)arg4;
+- (long long)behaviorForTheme:(unsigned long long)arg1;
+- (id)defaultListingWithTheme:(unsigned long long)arg1;
 - (void)discardAssets;
-- (id)posterImageWithTheme:(unsigned int)arg1;
+- (id)posterImageWithTheme:(unsigned long long)arg1;
 - (void)setVideoListingHasAssets:(id)arg1;
 
 @end

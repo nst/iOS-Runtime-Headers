@@ -12,10 +12,10 @@
 @property (nonatomic, copy) id /* block */ assertionWasReleasedHandler;
 @property (nonatomic, retain) NSMutableDictionary *healdAssertionMap;
 
+- (void).cxx_destruct;
 - (void)addHeldAssertionOfType:(id)arg1 byClient:(id)arg2;
 - (id /* block */)assertionWasAcquiredHandler;
 - (id /* block */)assertionWasReleasedHandler;
-- (void)dealloc;
 - (id)description;
 - (id)healdAssertionMap;
 - (id)init;

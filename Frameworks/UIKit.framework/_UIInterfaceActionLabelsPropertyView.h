@@ -9,7 +9,6 @@
     NSArray * _labelConstraints;
     NSLayoutConstraint * _leadingLabelLeadingConstraint;
     NSLayoutConstraint * _leadingLabelVerticalPositionConstraint;
-    float  _minimumEdgeMargin;
     UILabel * _titleLabel;
     NSLayoutConstraint * _trailingLabelTrailingConstraint;
     NSLayoutConstraint * _trailingLabelVerticalPositionConstraint;
@@ -18,7 +17,7 @@
 @property (nonatomic, readonly) UIInterfaceAction *action;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

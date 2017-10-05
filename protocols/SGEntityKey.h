@@ -5,7 +5,7 @@
 
 @required
 
-+ (BOOL)isSupportedEntityType:(long long)arg1;
++ (bool)isSupportedEntityType:(long long)arg1;
 
 - (id)initWithSerialized:(NSString *)arg1;
 - (NSString *)serialize;

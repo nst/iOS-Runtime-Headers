@@ -4,12 +4,12 @@
 
 @interface SUSUIExternalSettingsAppDefaults : BSAbstractDefaultDomain
 
-@property (getter=isBadgedForSoftwareUpdate, nonatomic) BOOL badgedForSoftwareUpdate;
+@property (getter=isBadgedForSoftwareUpdate, nonatomic) bool badgedForSoftwareUpdate;
 
-+ (BOOL)__useDynamicMethodResolution;
++ (bool)__useDynamicMethodResolution;
 
 - (id)init;
-- (BOOL)isBadgedForSoftwareUpdate;
-- (void)setBadgedForSoftwareUpdate:(BOOL)arg1;
+- (bool)isBadgedForSoftwareUpdate;
+- (void)setBadgedForSoftwareUpdate:(bool)arg1;
 
 @end

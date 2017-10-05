@@ -3,7 +3,7 @@
  */
 
 @interface FCCKMultiFetchQueryOperation : FCOperation {
-    FCCKDatabase * _database;
+    FCCKContentDatabase * _database;
     NSMutableArray * _fetchedRecords;
     NSDictionary * _knownRecordIDsToEtags;
     NSMutableSet * _missingRecordIDs;
@@ -12,9 +12,10 @@
     NSArray * _recordIDs;
     NSArray * _recordSpecs;
     NSDictionary * _recordSpecsByType;
+    long long  _requestTypeOverride;
 }
 
-@property (nonatomic, retain) FCCKDatabase *database;
+@property (nonatomic, retain) FCCKContentDatabase *database;
 @property (nonatomic, retain) NSMutableArray *fetchedRecords;
 @property (nonatomic, retain) NSDictionary *knownRecordIDsToEtags;
 @property (nonatomic, retain) NSMutableSet *missingRecordIDs;
@@ -23,6 +24,7 @@
 @property (nonatomic, retain) NSArray *recordIDs;
 @property (nonatomic, retain) NSArray *recordSpecs;
 @property (nonatomic, retain) NSDictionary *recordSpecsByType;
+@property (nonatomic) long long requestTypeOverride;
 
 - (void).cxx_destruct;
 - (id)_constructQuery;
@@ -38,6 +40,7 @@
 - (id)recordIDs;
 - (id)recordSpecs;
 - (id)recordSpecsByType;
+- (long long)requestTypeOverride;
 - (void)setDatabase:(id)arg1;
 - (void)setFetchedRecords:(id)arg1;
 - (void)setKnownRecordIDsToEtags:(id)arg1;
@@ -47,6 +50,7 @@
 - (void)setRecordIDs:(id)arg1;
 - (void)setRecordSpecs:(id)arg1;
 - (void)setRecordSpecsByType:(id)arg1;
-- (BOOL)validateOperation;
+- (void)setRequestTypeOverride:(long long)arg1;
+- (bool)validateOperation;
 
 @end

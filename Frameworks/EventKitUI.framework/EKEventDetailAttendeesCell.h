@@ -3,23 +3,29 @@
  */
 
 @interface EKEventDetailAttendeesCell : EKEventDetailCell {
-    UIView<EKEventDetailAttendeesList> * _attendeesListView;
-    BOOL  _useFaces;
+    EKEventDetailAttendeesListView * _attendeesListView;
+    UILabel * _countLabel;
+    UIImageView * _disclosure;
+    NSLayoutConstraint * _listHeight;
+    UILabel * _titleLabel;
     UIViewController * _viewController;
 }
 
-@property BOOL useFaces;
 @property UIViewController *viewController;
+
++ (bool)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
 - (id)_attendeesListView;
-- (id)initWithEvent:(id)arg1 editable:(BOOL)arg2;
-- (void)layoutForWidth:(float)arg1 position:(int)arg2;
+- (double)displayHeight;
+- (double)footerInset;
+- (double)headerInset;
+- (id)initWithEvent:(id)arg1 editable:(bool)arg2;
+- (void)layoutForWidth:(double)arg1 position:(int)arg2;
+- (double)listToTitle;
 - (void)setAttendees:(id)arg1;
-- (void)setUseFaces:(BOOL)arg1;
 - (void)setViewController:(id)arg1;
-- (BOOL)update;
-- (BOOL)useFaces;
+- (bool)update;
 - (id)viewController;
 
 @end

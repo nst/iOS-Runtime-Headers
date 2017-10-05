@@ -3,9 +3,9 @@
  */
 
 @interface ATNetServiceSocket : ATSocket <NSNetServiceDelegate, NSStreamDelegate> {
-    BOOL  _connected;
+    bool  _connected;
     NSObject<OS_tcp_connection> * _connection;
-    BOOL  _enableTLS;
+    bool  _enableTLS;
     NSString * _hostname;
     NSString * _interfaceName;
     unsigned short  _port;
@@ -20,19 +20,19 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL enableTLS;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool enableTLS;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *interfaceName;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_connect;
+- (bool)_connect;
 - (void)closeDescriptor;
-- (BOOL)enableTLS;
+- (bool)enableTLS;
 - (id)initWithServiceName:(id)arg1 type:(id)arg2 domain:(id)arg3;
 - (id)interfaceName;
-- (BOOL)open;
-- (void)setEnableTLS:(BOOL)arg1;
+- (bool)open;
+- (void)setEnableTLS:(bool)arg1;
 - (void)setInterfaceName:(id)arg1;
 
 @end

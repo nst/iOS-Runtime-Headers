@@ -5,6 +5,6 @@
 
 @required
 
-- (int)userInterfaceFeature;
+- (long long)userInterfaceFeature;
 
 @end

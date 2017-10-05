@@ -9,38 +9,38 @@
     NSObject<OS_os_activity> * _transportActivity;
 }
 
-@property (nonatomic, readonly) BOOL buffersHandshake;
-@property (nonatomic, readonly) BOOL buffersSessions;
+@property (nonatomic, readonly) bool buffersHandshake;
+@property (nonatomic, readonly) bool buffersSessions;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isInSession;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isInSession;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic) <SYSyncEngineResponder> *responder;
 @property (nonatomic, readonly) SYService *service;
 @property (nonatomic, readonly) PBCodable *stateForLogging;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL targetIsNearby;
+@property (nonatomic, readonly) bool targetIsNearby;
 @property (nonatomic, readonly) NSObject<OS_os_activity> *transportActivity;
 
 - (void).cxx_destruct;
 - (void)beginSession;
-- (BOOL)buffersHandshake;
-- (BOOL)buffersSessions;
+- (bool)buffersHandshake;
+- (bool)buffersSessions;
 - (id)cancelMessagesReturningFailures:(id)arg1;
 - (void)endSession;
-- (void)enqueueSyncRequest:(id)arg1 withMessageID:(unsigned short)arg2 priority:(int)arg3 options:(id)arg4 userContext:(id)arg5 callback:(id /* block */)arg6;
+- (void)enqueueSyncRequest:(id)arg1 withMessageID:(unsigned short)arg2 priority:(long long)arg3 options:(id)arg4 userContext:(id)arg5 callback:(id /* block */)arg6;
 - (id)initWithService:(id)arg1 queue:(id)arg2;
-- (BOOL)isInSession;
-- (id)outputStreamWithMetadata:(id)arg1 priority:(int)arg2 options:(id)arg3 context:(id)arg4 error:(id*)arg5;
+- (bool)isInSession;
+- (id)outputStreamWithMetadata:(id)arg1 priority:(long long)arg2 options:(id)arg3 context:(id)arg4 error:(id*)arg5;
 - (id)queue;
 - (id)responder;
-- (BOOL)resume:(id*)arg1;
+- (bool)resume:(id*)arg1;
 - (id)service;
 - (void)setResponder:(id)arg1;
 - (id)stateForLogging;
 - (void)suspend;
-- (BOOL)targetIsNearby;
+- (bool)targetIsNearby;
 - (id)transportActivity;
 
 @end

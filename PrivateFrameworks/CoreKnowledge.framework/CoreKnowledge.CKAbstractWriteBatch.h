@@ -3,8 +3,8 @@
  */
 
 @interface CoreKnowledge.CKAbstractWriteBatch : SwiftObject {
+    void backingStore;
     void buffer;
-    void storage;
 }
 
 - (void)setObject:(id)arg1 forKey:(id)arg2;

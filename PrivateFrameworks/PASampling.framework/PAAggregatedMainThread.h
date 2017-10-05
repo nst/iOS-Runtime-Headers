@@ -2,11 +2,9 @@
    Image: /System/Library/PrivateFrameworks/PASampling.framework/PASampling
  */
 
-@interface PAAggregatedMainThread : PAAggregatedThreadAndDispatchQueue
+@interface PAAggregatedMainThread : PAAggregatedThread
 
-- (void)addStack:(id)arg1;
 - (id)debugDescription;
-- (id)initWithAggregatedTask:(id)arg1 andThreadId:(unsigned long long)arg2;
-- (BOOL)isMainThread;
+- (bool)isMainThread;
 
 @end

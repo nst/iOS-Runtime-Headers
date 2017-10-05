@@ -6,22 +6,22 @@
     PKPaymentSetupAboutView * _aboutView;
     NSString * _bodyText;
     void * _navigationController;
-    BOOL  _navigationControllerHidesShadow;
-    BOOL  _requiresPrivacy;
+    bool  _navigationControllerHidesShadow;
+    bool  _requiresPrivacy;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_done:(id)arg1;
-- (void)_setupNavigationItemWithTitle:(id)arg1 isPresented:(BOOL)arg2;
+- (void)_setupNavigationItemWithTitle:(id)arg1 isPresented:(bool)arg2;
 - (void)_showPrivacyView:(id)arg1;
 - (void)dealloc;
-- (id)initForPrivacyPresented:(BOOL)arg1;
-- (id)initWithAboutText:(id)arg1 isPresented:(BOOL)arg2;
+- (id)initForPrivacyPresented:(bool)arg1;
+- (id)initWithAboutText:(id)arg1 isPresented:(bool)arg2;
 - (void)loadView;
 - (void)scrollViewDidScroll:(id)arg1;
 

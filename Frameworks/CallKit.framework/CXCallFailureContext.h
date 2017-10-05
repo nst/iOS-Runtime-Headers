@@ -3,56 +3,56 @@
  */
 
 @interface CXCallFailureContext : NSObject <CXCopying, NSSecureCoding> {
-    int  _failureReason;
-    BOOL  _hasCellularSettingsRemediation;
-    BOOL  _hasDateAndTimeSettingsRemediation;
-    BOOL  _hasLocationSettingsRemediation;
-    BOOL  _hasWiFiSettingsRemediation;
+    long long  _failureReason;
+    bool  _hasCellularSettingsRemediation;
+    bool  _hasDateAndTimeSettingsRemediation;
+    bool  _hasLocationSettingsRemediation;
+    bool  _hasWiFiSettingsRemediation;
     NSString * _message;
-    int  _providerEndedReason;
-    int  _providerErrorCode;
+    long long  _providerEndedReason;
+    long long  _providerErrorCode;
     NSString * _title;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) int failureReason;
-@property (nonatomic) BOOL hasCellularSettingsRemediation;
-@property (nonatomic) BOOL hasDateAndTimeSettingsRemediation;
-@property (nonatomic) BOOL hasLocationSettingsRemediation;
-@property (nonatomic) BOOL hasWiFiSettingsRemediation;
-@property (readonly) unsigned int hash;
+@property (nonatomic) long long failureReason;
+@property (nonatomic) bool hasCellularSettingsRemediation;
+@property (nonatomic) bool hasDateAndTimeSettingsRemediation;
+@property (nonatomic) bool hasLocationSettingsRemediation;
+@property (nonatomic) bool hasWiFiSettingsRemediation;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *message;
-@property (nonatomic) int providerEndedReason;
-@property (nonatomic) int providerErrorCode;
+@property (nonatomic) long long providerEndedReason;
+@property (nonatomic) long long providerErrorCode;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *title;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (int)failureReason;
-- (BOOL)hasCellularSettingsRemediation;
-- (BOOL)hasDateAndTimeSettingsRemediation;
-- (BOOL)hasLocationSettingsRemediation;
-- (BOOL)hasWiFiSettingsRemediation;
+- (long long)failureReason;
+- (bool)hasCellularSettingsRemediation;
+- (bool)hasDateAndTimeSettingsRemediation;
+- (bool)hasLocationSettingsRemediation;
+- (bool)hasWiFiSettingsRemediation;
 - (id)initWithCoder:(id)arg1;
 - (id)message;
-- (int)providerEndedReason;
-- (int)providerErrorCode;
+- (long long)providerEndedReason;
+- (long long)providerErrorCode;
 - (id)sanitizedCopy;
 - (id)sanitizedCopyWithZone:(struct _NSZone { }*)arg1;
-- (void)setFailureReason:(int)arg1;
-- (void)setHasCellularSettingsRemediation:(BOOL)arg1;
-- (void)setHasDateAndTimeSettingsRemediation:(BOOL)arg1;
-- (void)setHasLocationSettingsRemediation:(BOOL)arg1;
-- (void)setHasWiFiSettingsRemediation:(BOOL)arg1;
+- (void)setFailureReason:(long long)arg1;
+- (void)setHasCellularSettingsRemediation:(bool)arg1;
+- (void)setHasDateAndTimeSettingsRemediation:(bool)arg1;
+- (void)setHasLocationSettingsRemediation:(bool)arg1;
+- (void)setHasWiFiSettingsRemediation:(bool)arg1;
 - (void)setMessage:(id)arg1;
-- (void)setProviderEndedReason:(int)arg1;
-- (void)setProviderErrorCode:(int)arg1;
+- (void)setProviderEndedReason:(long long)arg1;
+- (void)setProviderErrorCode:(long long)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)updateCopy:(id)arg1 withZone:(struct _NSZone { }*)arg2;

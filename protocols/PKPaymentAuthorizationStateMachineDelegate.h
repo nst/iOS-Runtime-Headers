@@ -5,6 +5,6 @@
 
 @optional
 
-- (BOOL)paymentAuthorizationStateMachine:(PKPaymentAuthorizationStateMachine *)arg1 didTransitionFromState:(unsigned int)arg2 toState:(unsigned int)arg3 withParam:(PKPaymentAuthorizationStateParam *)arg4;
+- (bool)paymentAuthorizationStateMachine:(PKPaymentAuthorizationStateMachine *)arg1 didTransitionFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3 withParam:(PKPaymentAuthorizationStateParam *)arg4;
 
 @end

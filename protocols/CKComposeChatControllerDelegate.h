@@ -6,12 +6,12 @@
 @required
 
 - (void)composeChatController:(CKComposeChatController *)arg1 didSelectNewConversation:(CKConversation *)arg2;
-- (BOOL)composeChatControllerCanEditRecipients;
+- (bool)composeChatControllerCanEditRecipients;
 - (void)composeChatControllerDidCancelComposition:(CKComposeChatController *)arg1;
-- (BOOL)composeChatControllerShouldShowBackButtonViewDuringSendAnimation:(CKComposeChatController *)arg1;
+- (bool)composeChatControllerShouldShowBackButtonViewDuringSendAnimation:(CKComposeChatController *)arg1;
 
 @optional
 
-- (void)composeChatController:(void *)arg1 shouldSendComposition:(void *)arg2 inConversation:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 9: CKComposeChatController *, CKComposition *, CKConversation *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
+- (void)composeChatController:(void *)arg1 shouldSendComposition:(void *)arg2 inConversation:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 9: CKComposeChatController *, CKComposition *, CKConversation *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
 
 @end

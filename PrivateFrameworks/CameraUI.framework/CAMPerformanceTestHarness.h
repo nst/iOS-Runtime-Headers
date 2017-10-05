@@ -8,13 +8,14 @@
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;
-@property (getter=isRunningTest, nonatomic, readonly) BOOL runningTest;
+@property (getter=isRunningTest, nonatomic, readonly) bool runningTest;
 @property (nonatomic, readonly, copy) NSString *testName;
 
 - (void).cxx_destruct;
 - (id /* block */)completionHandler;
+- (void)failedTestwithReason:(id)arg1;
 - (id)initWithTestName:(id)arg1;
-- (BOOL)isRunningTest;
+- (bool)isRunningTest;
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)startSubtestWithName:(id)arg1;
 - (void)startTesting;

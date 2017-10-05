@@ -3,25 +3,27 @@
  */
 
 @interface UIDebuggingInformationOverlay : UIWindow <UISplitViewControllerDelegate> {
-    BOOL  _checkingTouches;
+    bool  _checkingTouches;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _drawingOrigin;
     UIWindow * _inspectedWindow;
     UIEvent * _lastTouch;
-    BOOL  _touchCaptureEnabled;
+    bool  _touchCaptureEnabled;
     NSMutableArray * _touchObservers;
 }
 
-@property (nonatomic) BOOL checkingTouches;
-@property (nonatomic) struct CGPoint { float x1; float x2; } drawingOrigin;
+@property (nonatomic) bool checkingTouches;
+@property (nonatomic) struct CGPoint { double x1; double x2; } drawingOrigin;
 @property (nonatomic, retain) UIWindow *inspectedWindow;
 @property (nonatomic, retain) UIEvent *lastTouch;
 @property (nonatomic, readonly) UIDebuggingInformationOverlayViewController *overlayViewController;
 @property (nonatomic, retain) UIDebuggingInformationRootTableViewController *rootTableViewController;
-@property (nonatomic) BOOL touchCaptureEnabled;
+@property (nonatomic) bool touchCaptureEnabled;
 @property (nonatomic, retain) NSMutableArray *touchObservers;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)overlay;
 + (void)popDisableApplyingConfigurations;
@@ -29,26 +31,28 @@
 + (void)pushDisableApplyingConfigurations;
 
 - (void).cxx_destruct;
-- (void)_handleActivationGesture:(id)arg1;
-- (BOOL)checkingTouches;
-- (struct CGPoint { float x1; float x2; })drawingOrigin;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (bool)checkingTouches;
+- (struct CGPoint { double x1; double x2; })drawingOrigin;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)init;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)inspectedWindow;
 - (id)lastTouch;
 - (id)overlayViewController;
 - (id)rootTableViewController;
-- (void)setCheckingTouches:(BOOL)arg1;
-- (void)setDrawingOrigin:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setCheckingTouches:(bool)arg1;
+- (void)setDrawingOrigin:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setInspectedWindow:(id)arg1;
 - (void)setLastTouch:(id)arg1;
 - (void)setRootTableViewController:(id)arg1;
-- (void)setTouchCaptureEnabled:(BOOL)arg1;
+- (void)setTouchCaptureEnabled:(bool)arg1;
 - (void)setTouchObservers:(id)arg1;
 - (void)toggleFullscreen;
 - (void)toggleVisibility;
-- (BOOL)touchCaptureEnabled;
+- (bool)touchCaptureEnabled;
 - (id)touchObservers;
 
 @end

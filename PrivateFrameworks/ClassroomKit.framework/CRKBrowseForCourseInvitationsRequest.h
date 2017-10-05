@@ -4,7 +4,7 @@
 
 @interface CRKBrowseForCourseInvitationsRequest : CATTaskRequest
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)init;
 

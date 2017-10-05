@@ -8,14 +8,14 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) <TSDHint> *hint;
 @property (readonly) Class superclass;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)hint;
-- (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 hint:(id)arg2;
+- (void)loadFromUnarchiver:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (void)setHint:(id)arg1;
 

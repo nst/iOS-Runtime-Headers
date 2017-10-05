@@ -7,28 +7,28 @@
     NSSet * _pedigree;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)_iconURL;
-- (BOOL)_isActive;
-- (BOOL)_isAppleInternal;
-- (BOOL)_isPublic;
+- (bool)_isActive;
+- (bool)_isAppleInternal;
+- (bool)_isPublic;
 - (id)_kernelExtensionName;
 - (id)_localizedDescriptionDictionary;
-- (id)_localizedDescriptionWithPreferredLocalizations:(id)arg1;
+- (id)_localizedDescriptionWithPreferredLocalizations:(id)arg1 checkingParents:(bool)arg2;
 - (id)_pedigree;
 - (id)_unlocalizedDescription;
-- (BOOL)conformsToType:(id)arg1;
-- (BOOL)conformsToTypeIdentifier:(id)arg1;
-- (void)dealloc;
+- (bool)conformsToType:(id)arg1;
+- (bool)conformsToTypeIdentifier:(id)arg1;
 - (id)declaration;
 - (id)declaringBundleURL;
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 pedigree:(id)arg2;
-- (BOOL)isDeclared;
-- (BOOL)isDynamic;
+- (bool)isDeclared;
+- (bool)isDynamic;
 - (id)parentIdentifiers;
 - (id)referenceURL;
 - (id)tagSpecification;

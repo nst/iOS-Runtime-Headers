@@ -5,7 +5,7 @@
 @interface CTCellularPlanSubscription : NSObject <NSCopying, NSSecureCoding> {
     int  _accountStatus;
     NSString * _accountURL;
-    BOOL  _autoRenew;
+    bool  _autoRenew;
     double  _billingEndDate;
     double  _billingStartDate;
     NSString * _carrierName;
@@ -21,7 +21,7 @@
 
 @property (nonatomic, readonly) int accountStatus;
 @property (nonatomic, readonly) NSString *accountURL;
-@property (nonatomic, readonly) BOOL autoRenew;
+@property (nonatomic, readonly) bool autoRenew;
 @property (nonatomic, readonly) double billingEndDate;
 @property (nonatomic, readonly) double billingStartDate;
 @property (nonatomic) NSString *carrierName;
@@ -34,11 +34,11 @@
 @property (nonatomic) int subscriptionResult;
 @property (nonatomic, readonly) double timestamp;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (int)accountStatus;
 - (id)accountURL;
-- (BOOL)autoRenew;
+- (bool)autoRenew;
 - (double)billingEndDate;
 - (double)billingStartDate;
 - (id)carrierName;
@@ -50,8 +50,8 @@
 - (id)homeCountryList;
 - (id)iccid;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIccid:(id)arg1 subscriptionResult:(int)arg2 autoRenew:(BOOL)arg3 billingStartDate:(double)arg4 billingEndDate:(double)arg5 carrierName:(id)arg6 planType:(int)arg7 planDescription:(id)arg8 planStatus:(int)arg9 accountStatus:(int)arg10 accountURL:(id)arg11 timestamp:(double)arg12 homeCountryList:(id)arg13 dataUsage:(id)arg14;
-- (BOOL)isEqualOrNewerThanSubscription:(id)arg1;
+- (id)initWithIccid:(id)arg1 subscriptionResult:(int)arg2 autoRenew:(bool)arg3 billingStartDate:(double)arg4 billingEndDate:(double)arg5 carrierName:(id)arg6 planType:(int)arg7 planDescription:(id)arg8 planStatus:(int)arg9 accountStatus:(int)arg10 accountURL:(id)arg11 timestamp:(double)arg12 homeCountryList:(id)arg13 dataUsage:(id)arg14;
+- (bool)isEqualOrNewerThanSubscription:(id)arg1;
 - (id)planDescription;
 - (int)planStatus;
 - (int)planType;

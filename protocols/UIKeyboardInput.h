@@ -5,10 +5,10 @@
 
 @optional
 
-- (BOOL)keyboardInput:(id <UIKeyboardInput>)arg1 shouldInsertText:(NSString *)arg2 isMarkedText:(BOOL)arg3;
-- (BOOL)keyboardInput:(id <UIKeyboardInput>)arg1 shouldReplaceTextInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementText:(NSString *)arg3;
-- (BOOL)keyboardInputChanged:(id <UIKeyboardInput>)arg1;
+- (bool)keyboardInput:(id <UIKeyboardInput>)arg1 shouldInsertText:(NSString *)arg2 isMarkedText:(bool)arg3;
+- (bool)keyboardInput:(id <UIKeyboardInput>)arg1 shouldReplaceTextInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 replacementText:(NSString *)arg3;
+- (bool)keyboardInputChanged:(id <UIKeyboardInput>)arg1;
 - (void)keyboardInputChangedSelection:(id <UIKeyboardInput>)arg1;
-- (BOOL)keyboardInputShouldDelete:(id <UIKeyboardInput>)arg1;
+- (bool)keyboardInputShouldDelete:(id <UIKeyboardInput>)arg1;
 
 @end

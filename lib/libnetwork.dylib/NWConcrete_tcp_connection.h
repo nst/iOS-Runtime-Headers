@@ -44,6 +44,8 @@
     NSObject<OS_nw_connection> * tc_nwconn;
     long long  tc_quality;
     unsigned int  tc_sent_connected;
+    unsigned int  tc_sent_tls_finished;
+    unsigned int  tc_started;
     unsigned char  tc_state;
     unsigned int  tc_state_has_been_preparing;
     int  tc_tls_mode;
@@ -52,7 +54,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

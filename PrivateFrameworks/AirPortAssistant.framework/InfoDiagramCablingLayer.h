@@ -9,10 +9,10 @@
     CAGradientLayer * internetGradientLayer;
     CAShapeLayer * internetInnerLineLayer;
     CAShapeLayer * internetOuterLineLayer;
-    BOOL  isCompactWidth;
+    bool  isCompactWidth;
     CAShapeLayer * swapArcArrowLayer;
     CAShapeLayer * swapArcLineLayer;
-    BOOL  swapCabling;
+    bool  swapCabling;
 }
 
 @property (nonatomic, retain) CAShapeLayer *broadbandToWANInnerLineLayer;
@@ -21,10 +21,10 @@
 @property (nonatomic, retain) CAGradientLayer *internetGradientLayer;
 @property (nonatomic, retain) CAShapeLayer *internetInnerLineLayer;
 @property (nonatomic, retain) CAShapeLayer *internetOuterLineLayer;
-@property (nonatomic) BOOL isCompactWidth;
+@property (nonatomic) bool isCompactWidth;
 @property (nonatomic, retain) CAShapeLayer *swapArcArrowLayer;
 @property (nonatomic, retain) CAShapeLayer *swapArcLineLayer;
-@property (nonatomic) BOOL swapCabling;
+@property (nonatomic) bool swapCabling;
 
 - (id)broadbandToWANInnerLineLayer;
 - (id)broadbandToWANOuterLineLayer;
@@ -37,7 +37,7 @@
 - (id)internetGradientLayer;
 - (id)internetInnerLineLayer;
 - (id)internetOuterLineLayer;
-- (BOOL)isCompactWidth;
+- (bool)isCompactWidth;
 - (void)layoutSublayers;
 - (void)setBroadbandToWANInnerLineLayer:(id)arg1;
 - (void)setBroadbandToWANOuterLineLayer:(id)arg1;
@@ -45,12 +45,12 @@
 - (void)setInternetGradientLayer:(id)arg1;
 - (void)setInternetInnerLineLayer:(id)arg1;
 - (void)setInternetOuterLineLayer:(id)arg1;
-- (void)setIsCompactWidth:(BOOL)arg1;
+- (void)setIsCompactWidth:(bool)arg1;
 - (void)setSwapArcArrowLayer:(id)arg1;
 - (void)setSwapArcLineLayer:(id)arg1;
-- (void)setSwapCabling:(BOOL)arg1;
+- (void)setSwapCabling:(bool)arg1;
 - (id)swapArcArrowLayer;
 - (id)swapArcLineLayer;
-- (BOOL)swapCabling;
+- (bool)swapCabling;
 
 @end

@@ -4,18 +4,18 @@
 
 @interface TSWPStoragePasteboardProxy : TSPObject {
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _range;
     TSWPStorage * _storage;
     <TSWPStyleProvider> * _styleProvider;
 }
 
-@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } storageRange;
+@property (nonatomic, readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } storageRange;
 
-- (void)dealloc;
-- (id)initWithContext:(id)arg1 storage:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 styleProvider:(id)arg4;
+- (void).cxx_destruct;
+- (id)initWithContext:(id)arg1 storage:(id)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 styleProvider:(id)arg4;
 - (void)saveToArchiver:(id)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })storageRange;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })storageRange;
 
 @end

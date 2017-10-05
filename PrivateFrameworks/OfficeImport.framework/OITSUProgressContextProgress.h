@@ -3,7 +3,7 @@
  */
 
 @interface OITSUProgressContextProgress : OITSUProgress {
-    BOOL  hasAddedProgressContextObserver;
+    bool  hasAddedProgressContextObserver;
     OITSUProgressContext * mProgressContext;
     NSObject<OS_dispatch_queue> * mProgressContextObserverQueue;
 }
@@ -12,7 +12,7 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithProgressContext:(id)arg1;
-- (BOOL)isIndeterminate;
+- (bool)isIndeterminate;
 - (double)maxValue;
 - (void)p_progressDidChange:(id)arg1;
 - (void)p_updateProgressContextObserver;

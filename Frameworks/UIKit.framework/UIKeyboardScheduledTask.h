@@ -13,7 +13,7 @@
 
 @property (nonatomic, retain) _UIActionWhenIdle *deferredAction;
 @property (nonatomic, copy) id /* block */ enqueuedTask;
-@property (nonatomic, readonly) BOOL repeats;
+@property (nonatomic, readonly) bool repeats;
 @property (nonatomic, readonly) id /* block */ task;
 @property (nonatomic, readonly) UIKeyboardTaskQueue *taskQueue;
 @property (nonatomic, readonly) double timeInterval;
@@ -23,10 +23,10 @@
 - (id)deferredAction;
 - (id /* block */)enqueuedTask;
 - (void)handleDeferredTimerFiredEvent;
-- (id)initWithTaskQueue:(id)arg1 timeInterval:(double)arg2 repeats:(BOOL)arg3 task:(id /* block */)arg4;
+- (id)initWithTaskQueue:(id)arg1 timeInterval:(double)arg2 repeats:(bool)arg3 task:(id /* block */)arg4;
 - (void)invalidate;
-- (BOOL)isValid;
-- (BOOL)repeats;
+- (bool)isValid;
+- (bool)repeats;
 - (void)resetTimer;
 - (void)setDeferredAction:(id)arg1;
 - (void)setEnqueuedTask:(id /* block */)arg1;

@@ -14,11 +14,11 @@
 - (id)contingency;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setContingency:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
 
-- (int)_afui_usefulUserResultType;
+- (long long)_afui_usefulUserResultType;
 
 @end

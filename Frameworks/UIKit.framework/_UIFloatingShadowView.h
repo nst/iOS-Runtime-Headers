@@ -3,88 +3,88 @@
  */
 
 @interface _UIFloatingShadowView : UIView {
-    BOOL  __disableOutsetShadowPath;
-    float  _cornerRadius;
+    bool  __disableOutsetShadowPath;
+    double  _cornerRadius;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _shadowContentsCenter;
-    BOOL  _shadowEnabled;
-    float  _shadowExpansion;
+    bool  _shadowEnabled;
+    double  _shadowExpansion;
     UIImage * _shadowImage;
-    float  _shadowOpacity;
-    float  _shadowRadius;
+    double  _shadowOpacity;
+    double  _shadowRadius;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _shadowSize;
     struct CATransform3D { 
-        float m11; 
-        float m12; 
-        float m13; 
-        float m14; 
-        float m21; 
-        float m22; 
-        float m23; 
-        float m24; 
-        float m31; 
-        float m32; 
-        float m33; 
-        float m34; 
-        float m41; 
-        float m42; 
-        float m43; 
-        float m44; 
+        double m11; 
+        double m12; 
+        double m13; 
+        double m14; 
+        double m21; 
+        double m22; 
+        double m23; 
+        double m24; 
+        double m31; 
+        double m32; 
+        double m33; 
+        double m34; 
+        double m41; 
+        double m42; 
+        double m43; 
+        double m44; 
     }  _shadowTransform;
-    float  _shadowVerticalOffset;
+    double  _shadowVerticalOffset;
     UIView * _shadowView;
 }
 
-@property (nonatomic) BOOL _disableOutsetShadowPath;
-@property (nonatomic) float cornerRadius;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } shadowContentsCenter;
-@property (getter=isShadowEnabled, nonatomic) BOOL shadowEnabled;
-@property (nonatomic) float shadowExpansion;
+@property (nonatomic) bool _disableOutsetShadowPath;
+@property (nonatomic) double cornerRadius;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } shadowContentsCenter;
+@property (getter=isShadowEnabled, nonatomic) bool shadowEnabled;
+@property (nonatomic) double shadowExpansion;
 @property (nonatomic, retain) UIImage *shadowImage;
-@property (nonatomic) float shadowOpacity;
-@property (nonatomic) float shadowRadius;
-@property (nonatomic) struct CGSize { float x1; float x2; } shadowSize;
-@property (nonatomic) float shadowVerticalOffset;
+@property (nonatomic) double shadowOpacity;
+@property (nonatomic) double shadowRadius;
+@property (nonatomic) struct CGSize { double x1; double x2; } shadowSize;
+@property (nonatomic) double shadowVerticalOffset;
 
 + (Class)layerClass;
 
 - (void).cxx_destruct;
-- (BOOL)_disableOutsetShadowPath;
+- (bool)_disableOutsetShadowPath;
 - (void)_layoutShadow;
 - (void)_setShadowImageIfNeeded;
-- (struct CGPath { }*)_shadowPathForSize:(struct CGSize { float x1; float x2; })arg1 radius:(float)arg2;
+- (struct CGPath { }*)_shadowPathForSize:(struct CGSize { double x1; double x2; })arg1 radius:(double)arg2;
 - (void)_updateShadowLayer;
-- (float)cornerRadius;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isShadowEnabled;
+- (double)cornerRadius;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isShadowEnabled;
 - (void)layoutSubviews;
-- (void)setCornerRadius:(float)arg1;
-- (void)setShadowContentsCenter:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setShadowEnabled:(BOOL)arg1;
-- (void)setShadowExpansion:(float)arg1;
+- (void)setCornerRadius:(double)arg1;
+- (void)setShadowContentsCenter:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setShadowEnabled:(bool)arg1;
+- (void)setShadowExpansion:(double)arg1;
 - (void)setShadowImage:(id)arg1;
-- (void)setShadowOpacity:(float)arg1;
-- (void)setShadowRadius:(float)arg1;
-- (void)setShadowSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setShadowVerticalOffset:(float)arg1;
-- (void)set_disableOutsetShadowPath:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })shadowContentsCenter;
-- (float)shadowExpansion;
+- (void)setShadowOpacity:(double)arg1;
+- (void)setShadowRadius:(double)arg1;
+- (void)setShadowSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setShadowVerticalOffset:(double)arg1;
+- (void)set_disableOutsetShadowPath:(bool)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })shadowContentsCenter;
+- (double)shadowExpansion;
 - (id)shadowImage;
-- (float)shadowOpacity;
-- (float)shadowRadius;
-- (struct CGSize { float x1; float x2; })shadowSize;
-- (float)shadowVerticalOffset;
+- (double)shadowOpacity;
+- (double)shadowRadius;
+- (struct CGSize { double x1; double x2; })shadowSize;
+- (double)shadowVerticalOffset;
 
 @end

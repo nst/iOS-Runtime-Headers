@@ -2,37 +2,16 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOUsageLogMessage : PBCodable <NSCopying> {
-    GEOLongSessionUsageLogMessage * _longSessionUsageLogMessage;
-    GEOSessionlessUsageLogMessage * _sessionlessUsageLogMessage;
-    GEOShortSessionUsageLogMessage * _shortSessionUsageLogMessage;
-}
-
-@property (nonatomic, readonly) BOOL hasLongSessionUsageLogMessage;
-@property (nonatomic, readonly) BOOL hasSessionlessUsageLogMessage;
-@property (nonatomic, readonly) BOOL hasShortSessionUsageLogMessage;
-@property (nonatomic, retain) GEOLongSessionUsageLogMessage *longSessionUsageLogMessage;
-@property (nonatomic, retain) GEOSessionlessUsageLogMessage *sessionlessUsageLogMessage;
-@property (nonatomic, retain) GEOShortSessionUsageLogMessage *shortSessionUsageLogMessage;
+@interface GEOUsageLogMessage : PBCodable <NSCopying>
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLongSessionUsageLogMessage;
-- (BOOL)hasSessionlessUsageLogMessage;
-- (BOOL)hasShortSessionUsageLogMessage;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)longSessionUsageLogMessage;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (id)sessionlessUsageLogMessage;
-- (void)setLongSessionUsageLogMessage:(id)arg1;
-- (void)setSessionlessUsageLogMessage:(id)arg1;
-- (void)setShortSessionUsageLogMessage:(id)arg1;
-- (id)shortSessionUsageLogMessage;
+- (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

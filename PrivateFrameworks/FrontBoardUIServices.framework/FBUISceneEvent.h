@@ -4,7 +4,7 @@
 
 @interface FBUISceneEvent : NSObject {
     id /* block */  _sender;
-    BOOL  _sent;
+    bool  _sent;
     FBSSceneTransitionContext * _transitionContext;
 }
 

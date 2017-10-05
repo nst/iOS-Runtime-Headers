@@ -14,7 +14,7 @@
 }
 
 @property (nonatomic) float attackTime;
-@property (getter=_isAudio, nonatomic, readonly) BOOL audio;
+@property (getter=_isAudio, nonatomic, readonly) bool audio;
 @property (nonatomic) float decayTime;
 @property (getter=_effectiveVolume, nonatomic, readonly) float effectiveVolume;
 @property (nonatomic) _UIFeedback *feedback;
@@ -29,7 +29,7 @@
 - (void).cxx_destruct;
 - (float)_effectiveValueForParameterWithKey:(id)arg1;
 - (float)_effectiveVolume;
-- (BOOL)_isAudio;
+- (bool)_isAudio;
 - (void)_updateParameterWithKey:(id)arg1;
 - (float)attackTime;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -38,7 +38,7 @@
 - (id)feedback;
 - (id)initWithDictionaryRepresentation:(id)arg1 feedback:(id)arg2;
 - (id)initWithFeedback:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)parentParameters;
 - (float)rate;
 - (float)releaseTime;

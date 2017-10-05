@@ -6,14 +6,14 @@
     <NSObject> * _boostToken;
     ClientConnection * _connection;
     NSObject<OS_dispatch_semaphore> * _finishedSemaphore;
-    long  _lastIndex;
+    long long  _lastIndex;
     unsigned int  _replyID;
     CalSearch * _search;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)operationWithConnection:(id)arg1 filter:(struct CalFilter { }*)arg2 replyID:(unsigned int)arg3;

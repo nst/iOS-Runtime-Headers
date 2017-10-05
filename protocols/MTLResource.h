@@ -5,14 +5,15 @@
 
 @required
 
-- (unsigned int)cpuCacheMode;
+- (unsigned long long)allocatedSize;
+- (unsigned long long)cpuCacheMode;
 - (<MTLDevice> *)device;
 - (<MTLHeap> *)heap;
-- (BOOL)isAliasable;
+- (bool)isAliasable;
 - (NSString *)label;
 - (void)makeAliasable;
 - (void)setLabel:(NSString *)arg1;
-- (unsigned int)setPurgeableState:(unsigned int)arg1;
-- (unsigned int)storageMode;
+- (unsigned long long)setPurgeableState:(unsigned long long)arg1;
+- (unsigned long long)storageMode;
 
 @end

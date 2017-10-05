@@ -11,8 +11,8 @@
 - (id)init;
 - (id)initWithTarget:(id)arg1;
 - (void)invoke;
-- (BOOL)isBeginMark;
-- (BOOL)isEndMark;
+- (bool)isBeginMark;
+- (bool)isEndMark;
 - (id)target;
 
 @end

@@ -4,8 +4,8 @@
 
 @interface RadioRecentStationsController : NSObject {
     NSObject<OS_dispatch_queue> * _accessQueue;
-    BOOL  _hasRefreshed;
-    BOOL  _hasValidStationGroups;
+    bool  _hasRefreshed;
+    bool  _hasValidStationGroups;
     NSMutableArray * _pendingRecentStations;
     NSArray * _serverRecentStationGroups;
     NSArray * _stationGroups;
@@ -16,7 +16,7 @@
 
 - (void).cxx_destruct;
 - (void)_createStationGroups;
-- (void)_handleRecentStationsResponse:(id)arg1 fromRequest:(id)arg2 pendingRecentStations:(id)arg3 isInitialCacheLoad:(BOOL)arg4;
+- (void)_handleRecentStationsResponse:(id)arg1 fromRequest:(id)arg2 pendingRecentStations:(id)arg3 isInitialCacheLoad:(bool)arg4;
 - (void)_insertPendingRecentStation:(id)arg1;
 - (id)_newRecentStationsRequest;
 - (void)_postStationsDidChangeNotification;

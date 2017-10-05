@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraVideoParameterCombination : NSObject {
+@interface HMDCameraVideoParameterCombination : HMFObject {
     HMDH264Level * _level;
     HMDH264Profile * _profile;
     HMDCameraVideoTier * _videoTier;
@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)initWithProfile:(id)arg1 level:(id)arg2 videoTier:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)level;
 - (id)profile;
 - (id)videoTier;

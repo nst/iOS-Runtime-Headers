@@ -3,18 +3,18 @@
  */
 
 @interface OITSUBasicProgressStorage : NSObject {
-    BOOL  mIndeterminate;
+    bool  mIndeterminate;
     double  mMaxValue;
     double  mValue;
 }
 
-@property (getter=isIndeterminate) BOOL indeterminate;
+@property (getter=isIndeterminate) bool indeterminate;
 @property double maxValue;
 @property double value;
 
-- (BOOL)isIndeterminate;
+- (bool)isIndeterminate;
 - (double)maxValue;
-- (void)setIndeterminate:(BOOL)arg1;
+- (void)setIndeterminate:(bool)arg1;
 - (void)setMaxValue:(double)arg1;
 - (void)setValue:(double)arg1;
 - (double)value;

@@ -9,6 +9,7 @@
     GEORegionalResourceTileData * _tile;
 }
 
+- (void).cxx_destruct;
 - (void)cancel;
 - (void)dealloc;
 - (id)init;

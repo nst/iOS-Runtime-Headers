@@ -4,34 +4,34 @@
 
 @interface NTKModuleView : UIControl <NTKContainerViewLayoutDelegate, NTKControl> {
     NTKFaceColorScheme * _colorScheme;
-    float  _contentHeight;
-    float  _contentHeightOffset;
+    double  _contentHeight;
+    double  _contentHeightOffset;
     NTKContainerView * _contentView;
     UIColor * _foregroundColor;
-    float  _highlightAlpha;
+    double  _highlightAlpha;
     UIColor * _highlightBackgroundColor;
-    float  _highlightCornerRadius;
+    double  _highlightCornerRadius;
     UIView * _highlightView;
     UIColor * _overrideColor;
     UIColor * _secondaryForegroundColor;
 }
 
 @property (nonatomic, retain) NTKFaceColorScheme *colorScheme;
-@property (nonatomic) float contentHeight;
-@property (nonatomic) float contentHeightOffset;
+@property (nonatomic) double contentHeight;
+@property (nonatomic) double contentHeightOffset;
 @property (nonatomic, readonly) UIView *contentView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIColor *foregroundColor;
-@property (readonly) unsigned int hash;
-@property (nonatomic) float highlightAlpha;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) double highlightAlpha;
 @property (nonatomic, retain) UIColor *highlightBackgroundColor;
-@property (nonatomic) float highlightCornerRadius;
+@property (nonatomic) double highlightCornerRadius;
 @property (nonatomic, retain) UIColor *overrideColor;
 @property (nonatomic, retain) UIColor *secondaryForegroundColor;
 @property (readonly) Class superclass;
 
-+ (float)cornerRadius;
++ (double)cornerRadius;
 
 - (void).cxx_destruct;
 - (void)_enumerateForegroundColoringViewsWithBlock:(id /* block */)arg1;
@@ -39,34 +39,34 @@
 - (void)_layoutContentView;
 - (void)_updateColors;
 - (void)applyColorScheme:(id)arg1;
-- (void)applyFaceColor:(unsigned int)arg1 units:(unsigned int)arg2;
-- (void)applyTransitionFraction:(float)arg1 fromFaceColor:(unsigned int)arg2 toFaceColor:(unsigned int)arg3 units:(unsigned int)arg4 brightenedUnits:(unsigned int)arg5;
+- (void)applyFaceColor:(unsigned long long)arg1 units:(unsigned long long)arg2;
+- (void)applyTransitionFraction:(double)arg1 fromFaceColor:(unsigned long long)arg2 toFaceColor:(unsigned long long)arg3 units:(unsigned long long)arg4 brightenedUnits:(unsigned long long)arg5;
 - (id)colorScheme;
-- (float)contentHeight;
-- (float)contentHeightOffset;
+- (double)contentHeight;
+- (double)contentHeightOffset;
 - (id)contentView;
 - (id)foregroundColor;
-- (float)highlightAlpha;
+- (double)highlightAlpha;
 - (id)highlightBackgroundColor;
-- (float)highlightCornerRadius;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (double)highlightCornerRadius;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutContainerView:(id)arg1;
 - (void)layoutSubviews;
-- (void)naturalHorizontalLayoutForViewsAndSpacing:(id)arg1 columnAlignmentSpacing:(BOOL)arg2;
+- (void)naturalHorizontalLayoutForViewsAndSpacing:(id)arg1 columnAlignmentSpacing:(bool)arg2;
 - (id)overrideColor;
 - (id)secondaryForegroundColor;
 - (void)setColorScheme:(id)arg1;
-- (void)setContentHeight:(float)arg1;
-- (void)setContentHeightOffset:(float)arg1;
+- (void)setContentHeight:(double)arg1;
+- (void)setContentHeightOffset:(double)arg1;
 - (void)setForegroundColor:(id)arg1;
-- (void)setHighlightAlpha:(float)arg1;
+- (void)setHighlightAlpha:(double)arg1;
 - (void)setHighlightBackgroundColor:(id)arg1;
-- (void)setHighlightCornerRadius:(float)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlightCornerRadius:(double)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setOverrideColor:(id)arg1;
 - (void)setSecondaryForegroundColor:(id)arg1;
-- (BOOL)shouldCancelTouchesInScrollview;
-- (id)viewsAndSpacingArrayForSpace:(float)arg1 view:(id)arg2;
-- (id)viewsAndSpacingArrayForSpace:(float)arg1 view:(id)arg2 space:(float)arg3 view:(id)arg4;
+- (bool)shouldCancelTouchesInScrollview;
+- (id)viewsAndSpacingArrayForSpace:(double)arg1 view:(id)arg2;
+- (id)viewsAndSpacingArrayForSpace:(double)arg1 view:(id)arg2 space:(double)arg3 view:(id)arg4;
 
 @end

@@ -14,7 +14,7 @@
 - (void)_commonInit;
 - (void)_setImageFromSignature;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)setSignature:(id)arg1;
 - (void)setSignatureImageView:(id)arg1;

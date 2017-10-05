@@ -13,23 +13,23 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SKTermsPageViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)_buttonAccept:(id)arg1;
 - (void)_buttonDecline:(id)arg1;
 - (void)_dismissViewController;
-- (void)_dismissViewControllerAnimated:(BOOL)arg1;
-- (void)_dismissViewControllerAnimated:(BOOL)arg1 withAcceptance:(BOOL)arg2;
+- (void)_dismissViewControllerAnimated:(bool)arg1;
+- (void)_dismissViewControllerAnimated:(bool)arg1 withAcceptance:(bool)arg2;
 - (void)_loadSubviews;
 - (id)_markupTermsWithHTML:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (unsigned int)edgesForExtendedLayout;
+- (unsigned long long)edgesForExtendedLayout;
 - (id)init;
 - (id)initWithTerms:(id)arg1;
 - (void)loadView;
-- (int)positionForBar:(id)arg1;
+- (long long)positionForBar:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

@@ -3,7 +3,7 @@
  */
 
 @interface _WBSParsecSubscriptionInfoKeyValueStringParser : NSObject {
-    unsigned int  _index;
+    unsigned long long  _index;
     NSString * _string;
 }
 
@@ -12,10 +12,10 @@
 - (void).cxx_destruct;
 - (unsigned short)_consumeCharacter;
 - (id)_initWithString:(id)arg1;
-- (BOOL)_isAtEnd;
+- (bool)_isAtEnd;
 - (id)_parseJSONValue;
 - (id)_parseKey;
-- (BOOL)_parseKeyValuePairWithKey:(id*)arg1 value:(id*)arg2;
+- (bool)_parseKeyValuePairWithKey:(id*)arg1 value:(id*)arg2;
 - (id)_parseKeyValuePairs;
 - (id)_parseUpToCharacterFromSet:(id)arg1;
 - (id)_parseValue;

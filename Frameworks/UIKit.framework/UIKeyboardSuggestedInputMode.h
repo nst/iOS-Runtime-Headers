@@ -3,14 +3,14 @@
  */
 
 @interface UIKeyboardSuggestedInputMode : UIKeyboardInputMode {
-    BOOL  enabled;
+    bool  enabled;
 }
 
-@property (nonatomic) BOOL enabled;
+@property (nonatomic) bool enabled;
 
 - (id)description;
-- (BOOL)enabled;
-- (id)initWithIdentifier:(id)arg1 enabled:(BOOL)arg2;
-- (void)setEnabled:(BOOL)arg1;
+- (bool)enabled;
+- (id)initWithIdentifier:(id)arg1 enabled:(bool)arg2;
+- (void)setEnabled:(bool)arg1;
 
 @end

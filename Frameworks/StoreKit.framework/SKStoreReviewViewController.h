@@ -11,11 +11,12 @@
 
 @property (nonatomic, retain) _UIAsyncInvocation *cancelRequest;
 @property (nonatomic, retain) SKRemoteReviewViewController *remoteViewController;
-@property (nonatomic) NSString *reviewRequestToken;
+@property (nonatomic, retain) NSString *reviewRequestToken;
 @property (nonatomic, retain) SKInvocationQueueProxy<SKUIServiceReviewViewController> *serviceProxy;
 
+- (void).cxx_destruct;
 - (void)_addRemoteView;
-- (void)_didFinishWithResult:(unsigned int)arg1 error:(id)arg2;
+- (void)_didFinishWithResult:(unsigned long long)arg1 error:(id)arg2;
 - (void)_requestRemoteViewController;
 - (void)_viewTapped:(id)arg1;
 - (id)cancelRequest;
@@ -29,6 +30,6 @@
 - (void)setReviewRequestToken:(id)arg1;
 - (void)setServiceProxy:(id)arg1;
 - (void)viewDidLoad;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

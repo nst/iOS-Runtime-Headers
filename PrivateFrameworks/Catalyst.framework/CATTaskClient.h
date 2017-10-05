@@ -11,7 +11,7 @@
     NSMutableArray * mEnqueuedMessages;
     NSMutableArray * mEnqueuedTaskUUIDs;
     CATStateMachine * mFSM;
-    BOOL  mIsStarting;
+    bool  mIsStarting;
     NSHashTable * mOrphanedTransports;
     NSMapTable * mRemoteTaskByUUID;
     NSObject<OS_dispatch_group> * mSessionDidInvalidateGroup;
@@ -22,7 +22,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CATTaskClientDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSDictionary *serverUserInfo;
 @property (nonatomic, retain) NSUUID *sessionUUID;
 @property (readonly) Class superclass;

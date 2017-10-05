@@ -17,12 +17,12 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)errors;
-- (id)errorsAtIndex:(unsigned int)arg1;
-- (unsigned int)errorsCount;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (id)errorsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)errorsCount;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setErrors:(id)arg1;
 - (void)writeTo:(id)arg1;
 

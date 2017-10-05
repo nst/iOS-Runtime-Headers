@@ -10,8 +10,8 @@
     NSString * _libraryName;
 }
 
-@property (nonatomic) BOOL hasLibraryId;
-@property (nonatomic, readonly) BOOL hasLibraryName;
+@property (nonatomic) bool hasLibraryId;
+@property (nonatomic, readonly) bool hasLibraryName;
 @property (nonatomic) long long libraryId;
 @property (nonatomic, retain) NSString *libraryName;
 
@@ -20,15 +20,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLibraryId;
-- (BOOL)hasLibraryName;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasLibraryId;
+- (bool)hasLibraryName;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (long long)libraryId;
 - (id)libraryName;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasLibraryId:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasLibraryId:(bool)arg1;
 - (void)setLibraryId:(long long)arg1;
 - (void)setLibraryName:(id)arg1;
 - (void)writeTo:(id)arg1;

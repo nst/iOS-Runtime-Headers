@@ -7,7 +7,7 @@
     NSURL * _url;
 }
 
-@property (nonatomic, readonly) unsigned int destination;
+@property (nonatomic, readonly) unsigned long long destination;
 @property (nonatomic, readonly) HFHomeKitDispatcher *homeKitDispatcher;
 @property (nonatomic, readonly) NAFuture *homeKitObjectFuture;
 @property (nonatomic, readonly) NSURL *url;
@@ -16,7 +16,7 @@
 
 - (void).cxx_destruct;
 - (id)_homeKitIdentifier;
-- (unsigned int)destination;
+- (unsigned long long)destination;
 - (id)homeKitDispatcher;
 - (id)homeKitObjectFuture;
 - (id)initWithURL:(id)arg1;

@@ -10,7 +10,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, retain) NSError *error;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) BSSettings *info;
 @property (readonly) Class superclass;
 
@@ -25,15 +25,15 @@
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)error;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)info;
 - (id)init;
 - (id)initWithInfo:(id)arg1 error:(id)arg2;
 - (id)initWithXPCDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)keyDescriptionForSetting:(unsigned int)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)keyDescriptionForSetting:(unsigned long long)arg1;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
-- (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
+- (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
 
 @end

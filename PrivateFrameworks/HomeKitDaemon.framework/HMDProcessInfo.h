@@ -2,27 +2,29 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDProcessInfo : NSObject {
+@interface HMDProcessInfo : HMFObject {
     HMDApplicationInfo * _appInfo;
     NSObject<OS_dispatch_queue> * _clientQueue;
     NSHashTable * _connectionProxies;
     int  _pid;
-    unsigned int  _state;
-    BOOL  _viewService;
+    NSArray * _runningReasons;
+    unsigned long long  _state;
+    bool  _viewService;
 }
 
 @property (nonatomic, readonly) HMDApplicationInfo *appInfo;
-@property (getter=isBackgrounded, nonatomic, readonly) BOOL background;
-@property (getter=isBackgroundUpgradedToForeground, nonatomic, readonly) BOOL backgroundUpgradedToForeground;
+@property (getter=isBackgrounded, nonatomic, readonly) bool background;
+@property (getter=isBackgroundUpgradedToForeground, nonatomic, readonly) bool backgroundUpgradedToForeground;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 @property (nonatomic, readonly) NSHashTable *connectionProxies;
-@property (getter=isForegrounded, nonatomic, readonly) BOOL foreground;
+@property (getter=isForegrounded, nonatomic, readonly) bool foreground;
 @property (nonatomic, readonly) int pid;
-@property (nonatomic, readonly) unsigned int proxyCount;
-@property (nonatomic) unsigned int state;
-@property (getter=isSuspended, nonatomic, readonly) BOOL suspended;
-@property (getter=isTerminated, nonatomic, readonly) BOOL terminated;
-@property (getter=isViewService, nonatomic, readonly) BOOL viewService;
+@property (nonatomic, readonly) unsigned long long proxyCount;
+@property (nonatomic, retain) NSArray *runningReasons;
+@property (nonatomic) unsigned long long state;
+@property (getter=isSuspended, nonatomic, readonly) bool suspended;
+@property (getter=isTerminated, nonatomic, readonly) bool terminated;
+@property (getter=isViewService, nonatomic, readonly) bool viewService;
 
 - (void).cxx_destruct;
 - (void)activate;
@@ -36,16 +38,18 @@
 - (id)init;
 - (id)initWithConnectionProxy:(id)arg1 application:(id)arg2 processId:(int)arg3;
 - (void)initiateRefresh;
-- (BOOL)isBackgroundUpgradedToForeground;
-- (BOOL)isBackgrounded;
-- (BOOL)isForegrounded;
-- (BOOL)isSuspended;
-- (BOOL)isTerminated;
-- (BOOL)isViewService;
+- (bool)isBackgroundUpgradedToForeground;
+- (bool)isBackgrounded;
+- (bool)isForegrounded;
+- (bool)isSuspended;
+- (bool)isTerminated;
+- (bool)isViewService;
 - (int)pid;
-- (unsigned int)proxyCount;
+- (unsigned long long)proxyCount;
 - (void)removeConnectionProxy:(id)arg1;
-- (void)setState:(unsigned int)arg1;
-- (unsigned int)state;
+- (id)runningReasons;
+- (void)setRunningReasons:(id)arg1;
+- (void)setState:(unsigned long long)arg1;
+- (unsigned long long)state;
 
 @end

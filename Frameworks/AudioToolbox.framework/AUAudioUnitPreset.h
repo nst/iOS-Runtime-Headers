@@ -4,20 +4,21 @@
 
 @interface AUAudioUnitPreset : NSObject <NSSecureCoding> {
     NSString * _name;
-    int  _number;
+    long long  _number;
 }
 
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic) int number;
+@property (nonatomic) long long number;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)name;
-- (int)number;
+- (long long)number;
 - (void)setName:(id)arg1;
-- (void)setNumber:(int)arg1;
+- (void)setNumber:(long long)arg1;
 
 @end

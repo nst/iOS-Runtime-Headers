@@ -11,7 +11,7 @@
         long long epoch; 
     }  _compositionTime;
     <AVVideoCompositionInstruction> * _instruction;
-    BOOL  _isFinished;
+    bool  _isFinished;
     AVVideoCompositionRenderContext * _renderContext;
     AVWeakReference * _session;
     NSArray * _sourceTrackIDsInClientOrder;
@@ -21,7 +21,7 @@
 @property (nonatomic) struct OpaqueFigVideoCompositorFrame { }*compositionFrame;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } compositionTime;
 @property (nonatomic, retain) <AVVideoCompositionInstruction> *instruction;
-@property (nonatomic) BOOL isFinished;
+@property (nonatomic) bool isFinished;
 @property (nonatomic, retain) AVVideoCompositionRenderContext *renderContext;
 @property (nonatomic, retain) AVWeakReference *session;
 @property (nonatomic, retain) NSArray *sourceTrackIDsInClientOrder;
@@ -31,13 +31,13 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })compositionTime;
 - (void)dealloc;
 - (id)instruction;
-- (BOOL)isFinished;
+- (bool)isFinished;
 - (id)renderContext;
 - (id)session;
 - (void)setCompositionFrame:(struct OpaqueFigVideoCompositorFrame { }*)arg1;
 - (void)setCompositionTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setInstruction:(id)arg1;
-- (void)setIsFinished:(BOOL)arg1;
+- (void)setIsFinished:(bool)arg1;
 - (void)setRenderContext:(id)arg1;
 - (void)setSession:(id)arg1;
 - (void)setSourceTrackIDsInClientOrder:(id)arg1;

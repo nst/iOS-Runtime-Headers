@@ -2,43 +2,72 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUITableViewCell : UITableViewCell {
-    <SearchUIFeedbackDelegatePrivate> * _delegate;
-    BOOL  _expanded;
-    unsigned int  _style;
+@interface SearchUITableViewCell : UITableViewCell <SearchUIKeyboardableNavigationProtocol> {
+    <SearchUIFeedbackDelegateInternal> * _delegate;
+    SearchUIDragSource * _dragSource;
+    SearchUIDropTarget * _dropTarget;
+    bool  _isExpanded;
+    <SearchUIRowModel> * _rowModel;
+    UIView * _sizingContainer;
+    unsigned long long  _style;
 }
 
-@property <SearchUIFeedbackDelegatePrivate> *delegate;
-@property (getter=isExpanded) BOOL expanded;
-@property unsigned int style;
+@property (readonly, copy) NSString *debugDescription;
+@property <SearchUIFeedbackDelegateInternal> *delegate;
+@property (readonly, copy) NSString *description;
+@property (retain) SearchUIDragSource *dragSource;
+@property (retain) SearchUIDropTarget *dropTarget;
+@property (readonly) unsigned long long hash;
+@property bool isExpanded;
+@property (retain) <SearchUIRowModel> *rowModel;
+@property (retain) UIView *sizingContainer;
+@property unsigned long long style;
+@property (readonly) Class superclass;
+@property (readonly) NSArray *visibleResults;
 
-+ (BOOL)canCellExpandWithResults:(id)arg1;
-+ (Class)classForResult:(id)arg1;
++ (bool)canCellExpandWithResults:(id)arg1;
++ (id)cellViewForRowModel:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
 + (id)convertResultIfNecessary:(id)arg1;
-+ (float)distanceToTopOfAppIconsForMultiResultCell;
-+ (BOOL)resultIsSuggestedQuery:(id)arg1;
-+ (id)reuseIdentifierForClass:(Class)arg1;
++ (double)distanceToTopOfAppIconsForMultiResultCell;
 + (id)reuseIdentifierForResult:(id)arg1;
-+ (id)reuseIdentifierForResults:(id)arg1;
-+ (id)rowViewForResult:(id)arg1 style:(unsigned int)arg2 feedbackDelegate:(id)arg3;
 
 - (void).cxx_destruct;
+- (bool)canSetupKeyboardHandler;
 - (id)delegate;
-- (id)initWithResult:(id)arg1 style:(unsigned int)arg2 feedbackDelegate:(id)arg3;
-- (id)initWithResults:(id)arg1 style:(unsigned int)arg2 feedbackDelegate:(id)arg3;
-- (id)initWithStyle:(unsigned int)arg1;
-- (BOOL)isExpandable;
-- (BOOL)isExpanded;
-- (unsigned int)numberOfVisibleResults;
+- (id)dragSource;
+- (id)dropTarget;
+- (id)initWithRowModel:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
+- (id)initWithStyle:(unsigned long long)arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (bool)isExpandable;
+- (bool)isExpanded;
+- (void)layoutSubviews;
+- (bool)navigateKeyboardLeft;
+- (bool)navigateKeyboardRight;
+- (void)removeKeyboardHandler;
+- (void)returnKeyPressed;
+- (void)roundNecessaryCornersForView:(id)arg1;
+- (id)rowModel;
 - (void)setDelegate:(id)arg1;
-- (void)setExpanded:(BOOL)arg1;
-- (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
-- (void)setStyle:(unsigned int)arg1;
-- (BOOL)shouldHideBottomSeparator;
-- (unsigned int)style;
-- (BOOL)supportsRecycling;
-- (void)updateExpanded:(BOOL)arg1;
+- (void)setDragSource:(id)arg1;
+- (void)setDropTarget:(id)arg1;
+- (void)setIsExpanded:(bool)arg1;
+- (void)setRowModel:(id)arg1;
+- (void)setSectionLocation:(int)arg1 animated:(bool)arg2;
+- (void)setSizingContainer:(id)arg1;
+- (void)setStyle:(unsigned long long)arg1;
+- (void)setupKeyboardHandler;
+- (bool)shouldHideBottomSeparator;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (id)sizingContainer;
+- (unsigned long long)style;
+- (bool)supportsRecycling;
+- (struct CGSize { double x1; double x2; })systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)updateChevronVisible:(bool)arg1 leaveSpaceForChevron:(bool)arg2;
+- (void)updateExpanded:(bool)arg1;
 - (void)updateWithResult:(id)arg1;
 - (void)updateWithResults:(id)arg1;
+- (void)updateWithRowModel:(id)arg1;
+- (id)visibleResults;
 
 @end

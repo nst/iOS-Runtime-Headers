@@ -4,29 +4,29 @@
 
 @interface SFCustomActivityProxy : NSObject <NSCopying, NSSecureCoding> {
     UIImage * _activityImage;
-    unsigned int  _activityProxyID;
+    unsigned long long  _activityProxyID;
     NSString * _activityTitle;
     NSString * _activityType;
 }
 
 @property (nonatomic, readonly) UIImage *activityImage;
-@property (nonatomic, readonly) unsigned int activityProxyID;
+@property (nonatomic, readonly) unsigned long long activityProxyID;
 @property (nonatomic, readonly) NSString *activityTitle;
 @property (nonatomic, readonly) NSString *activityType;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_initWithActivityType:(id)arg1 title:(id)arg2 image:(id)arg3 proxyID:(unsigned int)arg4;
+- (id)_initWithActivityType:(id)arg1 title:(id)arg2 image:(id)arg3 proxyID:(unsigned long long)arg4;
 - (id)activityImage;
-- (unsigned int)activityProxyID;
+- (unsigned long long)activityProxyID;
 - (id)activityTitle;
 - (id)activityType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithActivity:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

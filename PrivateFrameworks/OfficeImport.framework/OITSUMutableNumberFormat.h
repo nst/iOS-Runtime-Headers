@@ -14,8 +14,8 @@
 - (void)setNegativeStyle:(int)arg1;
 - (void)setNilValueForKey:(id)arg1;
 - (void)setPrefixString:(id)arg1;
-- (void)setShowThousandsSeparator:(BOOL)arg1;
+- (void)setShowThousandsSeparator:(bool)arg1;
 - (void)setSuffixString:(id)arg1;
-- (void)setUseAccountingStyle:(BOOL)arg1;
+- (void)setUseAccountingStyle:(bool)arg1;
 
 @end

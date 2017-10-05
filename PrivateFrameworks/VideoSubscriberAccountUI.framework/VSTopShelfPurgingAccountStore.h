@@ -5,7 +5,7 @@
 @interface VSTopShelfPurgingAccountStore : VSAccountStore
 
 - (void)_purgeTopShelfContent;
-- (void)removeAccount:(id)arg1 withCompletionHandler:(id /* block */)arg2;
-- (void)saveAccount:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)removeAccounts:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)saveAccounts:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 
 @end

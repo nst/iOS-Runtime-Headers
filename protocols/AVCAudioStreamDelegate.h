@@ -5,15 +5,15 @@
 
 @required
 
-- (void)stream:(AVCAudioStream *)arg1 didStart:(BOOL)arg2 error:(NSError *)arg3;
+- (void)stream:(AVCAudioStream *)arg1 didStart:(bool)arg2 error:(NSError *)arg3;
 
 @optional
 
-- (void)stream:(AVCAudioStream *)arg1 didPause:(BOOL)arg2 error:(NSError *)arg3;
+- (void)stream:(AVCAudioStream *)arg1 didPause:(bool)arg2 error:(NSError *)arg3;
 - (void)stream:(AVCAudioStream *)arg1 didReceiveDTMFEventWithDigit:(BOOL)arg2;
 - (void)stream:(AVCAudioStream *)arg1 didReceiveRTCPPackets:(NSArray *)arg2;
-- (void)stream:(AVCAudioStream *)arg1 didResume:(BOOL)arg2 error:(NSError *)arg3;
-- (void)stream:(AVCAudioStream *)arg1 didStartSynchronizer:(BOOL)arg2 error:(NSError *)arg3;
+- (void)stream:(AVCAudioStream *)arg1 didResume:(bool)arg2 error:(NSError *)arg3;
+- (void)stream:(AVCAudioStream *)arg1 didStartSynchronizer:(bool)arg2 error:(NSError *)arg3;
 - (void)stream:(AVCAudioStream *)arg1 updateInputFrequencyLevel:(NSData *)arg2;
 - (void)stream:(AVCAudioStream *)arg1 updateOutputFrequencyLevel:(NSData *)arg2;
 - (void)streamDidRTCPTimeOut:(AVCAudioStream *)arg1;

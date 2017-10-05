@@ -8,45 +8,45 @@
     TPLCDTextView * _labelView;
     unsigned int  _layoutAsLabelled;
     TPLCDTextView * _textView;
-    BOOL  _verticallyCenterTextViewIfLabelless;
+    bool  _verticallyCenterTextViewIfLabelless;
 }
 
-@property BOOL verticallyCenterTextViewIfLabelless;
+@property bool verticallyCenterTextViewIfLabelless;
 
-+ (float)defaultLabelFontSize;
-+ (float)defaultTextFontSize;
++ (double)defaultLabelFontSize;
++ (double)defaultTextFontSize;
 
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_imageViewFrame;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_labelFrame;
-- (float)_labelVInset;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_imageViewFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_labelFrame;
+- (double)_labelVInset;
 - (void)_resetContentViewFrame;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_text1Frame;
-- (float)_textVInset;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_text1Frame;
+- (double)_textVInset;
 - (void)blinkLabel;
 - (void)didFinishAnimatingLCDLabelFadeOut:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)didMoveToWindow;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fullSizedContentViewFrame;
-- (id)initWithDefaultSizeForOrientation:(int)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })fullSizedContentViewFrame;
+- (id)initWithDefaultSizeForOrientation:(long long)arg1;
 - (id)label;
 - (void)layoutSubviews;
 - (id)secondLineText;
-- (void)setContentsAlpha:(float)arg1;
+- (void)setContentsAlpha:(double)arg1;
 - (void)setLabel:(id)arg1;
-- (void)setLabel:(id)arg1 animate:(BOOL)arg2;
-- (void)setLabelFontSize:(float)arg1;
-- (void)setLayoutAsLabelled:(BOOL)arg1;
+- (void)setLabel:(id)arg1 animate:(bool)arg2;
+- (void)setLabelFontSize:(double)arg1;
+- (void)setLayoutAsLabelled:(bool)arg1;
 - (void)setSecondLineText:(id)arg1;
 - (void)setShadowColor:(id)arg1;
 - (void)setSubImage:(id)arg1;
 - (void)setText:(id)arg1;
-- (void)setTextFontSize:(float)arg1;
-- (void)setVerticallyCenterTextViewIfLabelless:(BOOL)arg1;
-- (BOOL)shouldCenterContentView;
-- (BOOL)shouldCenterText;
+- (void)setTextFontSize:(double)arg1;
+- (void)setVerticallyCenterTextViewIfLabelless:(bool)arg1;
+- (bool)shouldCenterContentView;
+- (bool)shouldCenterText;
 - (id)subImage;
 - (id)text;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textFrame;
-- (BOOL)verticallyCenterTextViewIfLabelless;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })textFrame;
+- (bool)verticallyCenterTextViewIfLabelless;
 
 @end

@@ -5,17 +5,17 @@
 
 @required
 
-- (int)completionCurve;
-- (float)completionVelocity;
+- (long long)completionCurve;
+- (double)completionVelocity;
 - (UIView *)containerView;
-- (BOOL)initiallyInteractive;
-- (BOOL)isAnimated;
-- (BOOL)isCancelled;
-- (BOOL)isInteractive;
-- (BOOL)isInterruptible;
-- (float)percentComplete;
-- (int)presentationStyle;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })targetTransform;
+- (bool)initiallyInteractive;
+- (bool)isAnimated;
+- (bool)isCancelled;
+- (bool)isInteractive;
+- (bool)isInterruptible;
+- (double)percentComplete;
+- (long long)presentationStyle;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })targetTransform;
 - (double)transitionDuration;
 - (UIViewController *)viewControllerForKey:(NSString *)arg1;
 - (UIView *)viewForKey:(NSString *)arg1;

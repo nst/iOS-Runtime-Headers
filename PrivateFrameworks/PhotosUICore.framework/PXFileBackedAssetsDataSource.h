@@ -13,9 +13,9 @@
 - (void).cxx_destruct;
 - (id)fileURLsBySection;
 - (id)initWithFileURLsBySection:(id)arg1;
-- (int)numberOfItemsInSection:(int)arg1;
-- (int)numberOfSections;
-- (int)numberOfSubitemsInItem:(int)arg1 section:(int)arg2;
-- (id)objectAtIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg1;
+- (long long)numberOfItemsInSection:(long long)arg1;
+- (long long)numberOfSections;
+- (long long)numberOfSubitemsInItem:(long long)arg1 section:(long long)arg2;
+- (id)objectAtIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg1;
 
 @end

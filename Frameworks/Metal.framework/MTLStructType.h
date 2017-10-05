@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@interface MTLStructType : NSObject
+@interface MTLStructType : MTLType
 
 @property (readonly) NSArray *members;
 

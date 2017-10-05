@@ -21,9 +21,12 @@
 - (void)setInternalQueue:(id)arg1;
 - (void)setXpcConnection:(id)arg1;
 - (void)synchronizeNanoDomain:(id)arg1 keys:(id)arg2;
+- (void)synchronizeNanoDomain:(id)arg1 keys:(id)arg2 cloudEnabled:(bool)arg3;
 - (void)synchronizeUserDefaultsDomain:(id)arg1 keys:(id)arg2;
+- (void)synchronizeUserDefaultsDomain:(id)arg1 keys:(id)arg2 cloudEnabled:(bool)arg3;
 - (void)synchronizeUserDefaultsDomain:(id)arg1 keys:(id)arg2 container:(id)arg3;
 - (void)synchronizeUserDefaultsDomain:(id)arg1 keys:(id)arg2 container:(id)arg3 appGroupContainer:(id)arg4;
+- (void)synchronizeUserDefaultsDomain:(id)arg1 keys:(id)arg2 container:(id)arg3 appGroupContainer:(id)arg4 cloudEnabled:(bool)arg5;
 - (void)unsafe_invalidate;
 - (id)xpcConnection;
 

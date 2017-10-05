@@ -4,25 +4,25 @@
 
 @interface WLDeviceDiscoverySocketHandler : WLSocketHandler <NSXMLParserDelegate> {
     <WLDeviceDiscoverySocketHandlerDelegate> * _delegate;
-    BOOL  _handshakeDataSent;
+    bool  _handshakeDataSent;
     NSObject<OS_dispatch_source> * _readSource;
     int  _sockfd;
     WLSourceDevice * _sourceDevice;
     NSString * _srpPassword;
-    unsigned int  _state;
+    unsigned long long  _state;
     NSObject<OS_dispatch_queue> * _writeQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <WLDeviceDiscoverySocketHandlerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) int sockfd;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_commandStringWithData:(id)arg1;
-- (BOOL)_generateSourceDeviceFromHandshakeData:(id)arg1;
+- (bool)_generateSourceDeviceFromHandshakeData:(id)arg1;
 - (void)_handleHandshakeData:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)_handshakeCommandData;
 - (id)_handshakeResponseData;

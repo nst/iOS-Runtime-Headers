@@ -4,21 +4,21 @@
 
 @interface TPTextExporter : NSObject <TSKExporter> {
     TPDocumentRoot * mDocumentRoot;
-    BOOL  mIsCancelled;
+    bool  mIsCancelled;
     TSUProgressContext * mProgressContext;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (retain) TSUProgressContext *progressContext;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) TSUProgressContext *progressContext;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)cancel;
-- (void)dealloc;
-- (BOOL)exportToURL:(id)arg1 delegate:(id)arg2 error:(id*)arg3;
+- (bool)exportToURL:(id)arg1 delegate:(id)arg2 error:(id*)arg3;
 - (id)initWithDocumentRoot:(id)arg1;
-- (BOOL)isCancelled;
+- (bool)isCancelled;
 - (id)progressContext;
 - (void)quit;
 - (void)setProgressContext:(id)arg1;

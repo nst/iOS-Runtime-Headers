@@ -6,13 +6,13 @@
     NSObject<OS_dispatch_queue> * _accessQueue;
     NSObject<OS_dispatch_queue> * _calloutQueue;
     NSXPCConnection * _connection;
-    BOOL  _hasUpdatesEntitlement;
+    bool  _hasUpdatesEntitlement;
     int  _storeChangedNotificationToken;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -22,7 +22,7 @@
 - (void)dealloc;
 - (void)getUpdateableFirstPartyAppMetadataWithCompletion:(id /* block */)arg1;
 - (void)getUpdatesWithCompletionBlock:(id /* block */)arg1;
-- (BOOL)hasEntitlement;
+- (bool)hasEntitlement;
 - (void)hideApplicationBadgeForPendingUpdates;
 - (id)init;
 - (void)refreshUpdateCountWithCompletionBlock:(id /* block */)arg1;
@@ -33,5 +33,7 @@
 - (void)showApplicationBadgeForPendingUpdates;
 - (void)showApplicationUpdateBulletin;
 - (void)updateAllWithCompletionBlock:(id /* block */)arg1;
+- (void)updateAllWithJobResultsCompletionBlock:(id /* block */)arg1;
+- (void)updateAllWithOrder:(id)arg1 completionBlock:(id /* block */)arg2;
 
 @end

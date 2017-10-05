@@ -3,82 +3,88 @@
  */
 
 @interface UIStatusBarItemView : UIView {
-    BOOL  _allowsUpdates;
-    float  _currentOverlap;
+    bool  _allowsUpdates;
+    double  _currentOverlap;
     UIStatusBarForegroundStyleAttributes * _foregroundStyle;
     struct CGContext { } * _imageContext;
-    float  _imageContextScale;
+    double  _imageContextScale;
     UIStatusBarItem * _item;
     _UILegibilityImageSet * _lastGeneratedTextImage;
-    float  _lastGeneratedTextImageLetterSpacing;
+    double  _lastGeneratedTextImageLetterSpacing;
     NSString * _lastGeneratedTextImageText;
     UIStatusBarLayoutManager * _layoutManager;
     _UILegibilityView * _legibilityView;
-    BOOL  _visible;
+    bool  _visible;
 }
 
-@property (nonatomic) BOOL allowsUpdates;
+@property (nonatomic) bool allowsUpdates;
 @property (nonatomic, readonly) UIStatusBarForegroundStyleAttributes *foregroundStyle;
 @property (nonatomic, readonly) UIStatusBarItem *item;
 @property (nonatomic) UIStatusBarLayoutManager *layoutManager;
-@property (getter=isVisible, nonatomic) BOOL visible;
+@property (getter=isVisible, nonatomic) bool visible;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)createViewForItem:(id)arg1 withData:(id)arg2 actions:(int)arg3 foregroundStyle:(id)arg4;
 
 - (void).cxx_destruct;
-- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
-- (BOOL)_shouldReverseLayoutDirection;
-- (float)addContentOverlap:(float)arg1;
-- (float)adjustFrameToNewSize:(float)arg1;
-- (BOOL)allowsUpdates;
-- (BOOL)allowsUserInteraction;
-- (BOOL)animatesDataChange;
-- (void)beginDisablingRasterization;
-- (void)beginImageContextWithMinimumWidth:(float)arg1;
-- (id)cachedImageWithText:(id)arg1 truncatedWithEllipsesAtMaxWidth:(float)arg2 letterSpacing:(float)arg3;
-- (void)clearCachedTextImage;
-- (id)contentsImage;
-- (float)currentLeftOverlap;
-- (float)currentOverlap;
-- (float)currentRightOverlap;
+- (bool)_shouldAnimatePropertyWithKey:(id)arg1;
+- (bool)_shouldReverseLayoutDirection;
 - (void)dealloc;
 - (id)description;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (id)accessibilityHUDRepresentation;
+- (double)addContentOverlap:(double)arg1;
+- (double)adjustFrameToNewSize:(double)arg1;
+- (bool)allowsUpdates;
+- (bool)allowsUserInteraction;
+- (bool)animatesDataChange;
+- (void)beginDisablingRasterization;
+- (void)beginImageContextWithMinimumWidth:(double)arg1;
+- (id)cachedImageWithText:(id)arg1 truncatedWithEllipsesAtMaxWidth:(double)arg2 letterSpacing:(double)arg3;
+- (void)clearCachedTextImage;
+- (id)contentsImage;
+- (double)currentLeftOverlap;
+- (double)currentOverlap;
+- (double)currentRightOverlap;
 - (void)endDisablingRasterization;
 - (void)endImageContext;
-- (float)extraLeftPadding;
-- (float)extraRightPadding;
+- (double)extraLeftPadding;
+- (double)extraRightPadding;
 - (id)foregroundStyle;
 - (id)foregroundView;
-- (id)imageFromImageContextClippedToWidth:(float)arg1;
+- (id)imageFromImageContextClippedToWidth:(double)arg1;
 - (id)imageWithShadowNamed:(id)arg1;
 - (id)imageWithText:(id)arg1;
 - (id)initWithItem:(id)arg1 data:(id)arg2 actions:(int)arg3 style:(id)arg4;
-- (BOOL)isVisible;
+- (bool)isVisible;
 - (id)item;
 - (id)layoutManager;
-- (float)legibilityStrength;
-- (int)legibilityStyle;
-- (float)maximumOverlap;
-- (float)neededSizeForImageSet:(id)arg1;
+- (double)legibilityStrength;
+- (long long)legibilityStyle;
+- (double)maximumOverlap;
+- (double)neededSizeForImageSet:(id)arg1;
 - (void)performPendedActions;
-- (float)resetContentOverlap;
-- (void)setAllowsUpdates:(BOOL)arg1;
-- (void)setContentMode:(int)arg1;
-- (void)setCurrentOverlap:(float)arg1;
+- (double)resetContentOverlap;
+- (void)setAllowsUpdates:(bool)arg1;
+- (void)setContentMode:(long long)arg1;
+- (void)setCurrentOverlap:(double)arg1;
 - (void)setLayerContentsImage:(id)arg1;
 - (void)setLayoutManager:(id)arg1;
-- (void)setPersistentAnimationsEnabled:(BOOL)arg1;
-- (float)setStatusBarData:(id)arg1 actions:(int)arg2;
-- (void)setVisible:(BOOL)arg1;
-- (void)setVisible:(BOOL)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 duration:(double)arg3;
-- (void)setVisible:(BOOL)arg1 settingAlpha:(BOOL)arg2;
-- (float)shadowPadding;
-- (float)standardPadding;
-- (int)textAlignment;
+- (void)setPersistentAnimationsEnabled:(bool)arg1;
+- (double)setStatusBarData:(id)arg1 actions:(int)arg2;
+- (void)setVisible:(bool)arg1;
+- (void)setVisible:(bool)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 duration:(double)arg3;
+- (void)setVisible:(bool)arg1 settingAlpha:(bool)arg2;
+- (double)shadowPadding;
+- (double)standardPadding;
+- (long long)textAlignment;
 - (id)textFont;
-- (int)textStyle;
-- (float)updateContentsAndWidth;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (long long)textStyle;
+- (double)updateContentsAndWidth;
+- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
 - (void)updateForNewStyle:(id)arg1;
 - (void)willMoveToWindow:(id)arg1;
 

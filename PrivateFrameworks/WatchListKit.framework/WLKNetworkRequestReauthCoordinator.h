@@ -4,22 +4,22 @@
 
 @interface WLKNetworkRequestReauthCoordinator : NSObject <NSLocking> {
     NSLock * _lock;
-    BOOL  _sessionPrompt;
+    bool  _sessionPrompt;
 }
 
-@property BOOL sessionPrompt;
+@property bool sessionPrompt;
 
 + (id)coordinator;
 
 - (void).cxx_destruct;
 - (id)_init;
 - (void)dealloc;
-- (BOOL)didPrompt;
+- (bool)didPrompt;
 - (void)lock;
 - (void)markPrompt;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (BOOL)sessionPrompt;
-- (void)setSessionPrompt:(BOOL)arg1;
+- (bool)sessionPrompt;
+- (void)setSessionPrompt:(bool)arg1;
 - (void)unlock;
 
 @end

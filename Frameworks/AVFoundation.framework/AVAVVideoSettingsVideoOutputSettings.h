@@ -8,26 +8,26 @@
     NSDictionary * _adaptedVideoCompressionProperties;
 }
 
-@property (nonatomic, readonly) unsigned long videoCodecType;
+@property (nonatomic, readonly) unsigned int videoCodecType;
 @property (nonatomic, readonly) NSDictionary *videoCompressionProperties;
 @property (nonatomic, readonly) NSDictionary *videoEncoderSpecification;
 
-+ (BOOL)_validateVideoCompressionProperties:(id)arg1 againstSupportedPropertyDictionary:(id)arg2 forCodecType:(id)arg3 exceptionReason:(id*)arg4;
++ (bool)_validateVideoCompressionProperties:(id)arg1 againstSupportedPropertyDictionary:(id)arg2 forCodecType:(id)arg3 exceptionReason:(id*)arg4;
 + (id)_videoOutputSettingsWithVideoSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 + (id)eligibleOutputSettingsDictionaryKeys;
 
-- (BOOL)canFullySpecifyOutputFormatReturningReason:(id*)arg1;
+- (bool)canFullySpecifyOutputFormatReturningReason:(id*)arg1;
 - (id)cleanApertureDictionary;
 - (void)dealloc;
-- (BOOL)encoderIsAvailableOnCurrentSystemReturningError:(id*)arg1;
+- (bool)encoderIsAvailableOnCurrentSystemReturningError:(id*)arg1;
 - (int)height;
 - (id)initWithAVVideoSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
 - (id)initWithTrustedAVVideoSettingsDictionary:(id)arg1;
 - (id)pixelAspectRatioDictionary;
-- (unsigned long)videoCodecType;
+- (unsigned int)videoCodecType;
 - (id)videoCompressionProperties;
 - (id)videoEncoderSpecification;
 - (int)width;
-- (BOOL)willYieldCompressedSamples;
+- (bool)willYieldCompressedSamples;
 
 @end

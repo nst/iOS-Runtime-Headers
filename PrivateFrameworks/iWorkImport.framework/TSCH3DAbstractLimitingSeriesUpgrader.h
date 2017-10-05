@@ -9,25 +9,25 @@
 
 @property (nonatomic, copy) id /* block */ willModifyBlock;
 
-+ (BOOL)chartTypeUsesSeriesLimiting:(id)arg1;
-+ (float)depthFactorForAdjustingNumberOfSeries:(unsigned int)arg1 chartType:(id)arg2 fromOldLimitingSeries:(unsigned int)arg3 toNewLimitingSeries:(unsigned int)arg4;
++ (bool)chartTypeUsesSeriesLimiting:(id)arg1;
++ (double)depthFactorForAdjustingNumberOfSeries:(unsigned long long)arg1 chartType:(id)arg2 fromOldLimitingSeries:(unsigned long long)arg3 toNewLimitingSeries:(unsigned long long)arg4;
 + (id)upgraderWithChartInfo:(id)arg1;
 
-- (id)adjustedScaleFromLayoutSettings:(const struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; int x6; unsigned int x7; }*)arg1 toLayoutSettings:(const struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; int x6; unsigned int x7; }*)arg2;
+- (id)adjustedScaleFromLayoutSettings:(const struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; long long x7; unsigned long long x8; }*)arg1 toLayoutSettings:(const struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; long long x7; unsigned long long x8; }*)arg2;
 - (void)configureScene:(id)arg1;
-- (id)configuredSceneWithLayoutSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; int x6; unsigned int x7; })arg1;
+- (id)configuredSceneWithLayoutSettings:(struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; long long x7; unsigned long long x8; })arg1;
 - (id)constantDepthInfoChartScaleForInfoChartScale:(id)arg1;
 - (void)dealloc;
 - (id)initWithChartInfo:(id)arg1;
-- (void)mutateInfoByAdjustingScaleFromLayoutSettings:(const struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; int x6; unsigned int x7; }*)arg1 toLayoutSettings:(const struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; int x6; unsigned int x7; }*)arg2;
+- (void)mutateInfoByAdjustingScaleFromLayoutSettings:(const struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; long long x7; unsigned long long x8; }*)arg1 toLayoutSettings:(const struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; long long x7; unsigned long long x8; }*)arg2;
 - (void)mutateInfoWithContainingViewport:(id)arg1 scene:(id)arg2;
 - (void)mutateInfoWithMutations:(id)arg1;
-- (unsigned int)numberOfSeries;
-- (struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; int x6; unsigned int x7; })oldLayoutSettings;
-- (struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; int x6; unsigned int x7; })p_oldLayoutSettingsForSpice:(BOOL)arg1;
+- (unsigned long long)numberOfSeries;
+- (struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; long long x7; unsigned long long x8; })oldLayoutSettings;
+- (struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; long long x7; unsigned long long x8; })p_oldLayoutSettingsForSpice:(bool)arg1;
 - (void)setWillModifyBlock:(id /* block */)arg1;
-- (void)upgradeForSpice:(BOOL)arg1 naturalSize:(struct CGSize { float x1; float x2; })arg2;
-- (struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; int x6; unsigned int x7; })upgradedLayoutSettings;
+- (void)upgradeForSpice:(bool)arg1 naturalSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct { bool x1; bool x2; bool x3; bool x4; bool x5; bool x6; long long x7; unsigned long long x8; })upgradedLayoutSettings;
 - (id /* block */)willModifyBlock;
 
 @end

@@ -7,13 +7,13 @@
         double latitude; 
         double longitude; 
     }  _center;
-    BOOL  _isCanceling;
+    bool  _isCanceling;
     double  _radius;
     id /* block */  _tileHandler;
     int  _tileScale;
     int  _tileSize;
     int  _tileStyle;
-    unsigned int  _zoomLevel;
+    unsigned long long  _zoomLevel;
 }
 
 @property (nonatomic, readonly) GEOMapAccess *map;
@@ -21,16 +21,17 @@
 @property (nonatomic, readonly) int tileScale;
 @property (nonatomic, readonly) int tileSize;
 @property (nonatomic, readonly) int tileStyle;
-@property (nonatomic, readonly) unsigned int zoomLevel;
+@property (nonatomic, readonly) unsigned long long zoomLevel;
 
 + (id)buildingsTileFinderForMap:(id)arg1 center:(struct { double x1; double x2; })arg2 radius:(double)arg3;
 + (id)detailedTransitTileFinderForMap:(id)arg1 center:(struct { double x1; double x2; })arg2 radius:(double)arg3;
 + (id)realisticTileFinderForMap:(id)arg1 center:(struct { double x1; double x2; })arg2 radius:(double)arg3;
 + (id)transitGeometryTileFinderForMap:(id)arg1 center:(struct { double x1; double x2; })arg2 radius:(double)arg3;
 
+- (void).cxx_destruct;
 - (struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })_adjacentTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 dirX:(int)arg2 dirY:(int)arg3;
-- (void)_fetchDataForKeys:(const struct unordered_set<_GEOTileKey, std::__1::hash<GEOTileKey>, std::__1::equal_to<GEOTileKey>, std::__1::allocator<_GEOTileKey> > { struct __hash_table<_GEOTileKey, std::__1::hash<GEOTileKey>, std::__1::equal_to<GEOTileKey>, std::__1::allocator<_GEOTileKey> > { struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<_GEOTileKey, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<_GEOTileKey, void *> *> *> > > { struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<_GEOTileKey, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<_GEOTileKey, void *> *> *> > > { struct __hash_node_base<std::__1::__hash_node<_GEOTileKey, void *> *> {} **x_1_3_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<_GEOTileKey, void *> *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<_GEOTileKey, void *> *> *> > { unsigned long x_1_5_1; } x_2_4_1; } x_1_3_2; } x_1_2_1; } x_1_1_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<_GEOTileKey, void *> *>, std::__1::allocator<std::__1::__hash_node<_GEOTileKey, void *> > > { struct __hash_node_base<std::__1::__hash_node<_GEOTileKey, void *> *> { struct __hash_node_base<std::__1::__hash_node<_GEOTileKey, void *> *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; } x1; }*)arg1;
-- (id)_initWithMap:(id)arg1 zoomLevel:(unsigned int)arg2 tileSize:(int)arg3 tileScale:(int)arg4 tileStyle:(int)arg5 center:(struct { double x1; double x2; })arg6 radius:(double)arg7;
+- (void)_fetchDataForKeys:(const struct unordered_set<_GEOTileKey, std::__1::hash<GEOTileKey>, std::__1::equal_to<GEOTileKey>, std::__1::allocator<_GEOTileKey> > { struct __hash_table<_GEOTileKey, std::__1::hash<GEOTileKey>, std::__1::equal_to<GEOTileKey>, std::__1::allocator<_GEOTileKey> > { struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<_GEOTileKey, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<_GEOTileKey, void *> *> *> > > { struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<_GEOTileKey, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<_GEOTileKey, void *> *> *> > > { struct __hash_node_base<std::__1::__hash_node<_GEOTileKey, void *> *> {} **x_1_3_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<_GEOTileKey, void *> *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<_GEOTileKey, void *> *> *> > { unsigned long long x_1_5_1; } x_2_4_1; } x_1_3_2; } x_1_2_1; } x_1_1_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<_GEOTileKey, void *> *>, std::__1::allocator<std::__1::__hash_node<_GEOTileKey, void *> > > { struct __hash_node_base<std::__1::__hash_node<_GEOTileKey, void *> *> { struct __hash_node_base<std::__1::__hash_node<_GEOTileKey, void *> *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; } x1; }*)arg1;
+- (id)_initWithMap:(id)arg1 zoomLevel:(unsigned long long)arg2 tileSize:(int)arg3 tileScale:(int)arg4 tileStyle:(int)arg5 center:(struct { double x1; double x2; })arg6 radius:(double)arg7;
 - (void)cancel;
 - (void)dealloc;
 - (void)findTiles:(id /* block */)arg1;
@@ -42,6 +43,6 @@
 - (int)tileScale;
 - (int)tileSize;
 - (int)tileStyle;
-- (unsigned int)zoomLevel;
+- (unsigned long long)zoomLevel;
 
 @end

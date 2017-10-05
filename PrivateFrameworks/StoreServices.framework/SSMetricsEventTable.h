@@ -7,8 +7,9 @@
 + (id)_eventsTableName;
 + (id)databasePath;
 
-- (BOOL)_migrateToVersion1;
-- (BOOL)_migrateToVersion2;
-- (BOOL)_setupDatabase;
+- (bool)_migrateToVersion1;
+- (bool)_migrateToVersion2;
+- (bool)_migrateToVersion3;
+- (bool)_setupDatabase;
 
 @end

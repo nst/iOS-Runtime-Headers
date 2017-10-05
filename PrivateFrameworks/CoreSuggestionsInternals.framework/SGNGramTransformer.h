@@ -3,15 +3,15 @@
  */
 
 @interface SGNGramTransformer : NSObject {
-    unsigned int  _ngrams;
+    unsigned long long  _ngrams;
 }
 
-@property unsigned int ngrams;
+@property unsigned long long ngrams;
 
-+ (id)withNGrams:(unsigned int)arg1;
++ (id)withNGrams:(unsigned long long)arg1;
 
-- (unsigned int)ngrams;
-- (void)setNgrams:(unsigned int)arg1;
+- (unsigned long long)ngrams;
+- (void)setNgrams:(unsigned long long)arg1;
 - (id)transform:(id)arg1;
 
 @end

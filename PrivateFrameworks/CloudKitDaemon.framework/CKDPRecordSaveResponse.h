@@ -9,9 +9,9 @@
 }
 
 @property (nonatomic, retain) NSString *etag;
-@property (nonatomic, readonly) BOOL hasEtag;
-@property (nonatomic, readonly) BOOL hasServerFields;
-@property (nonatomic, readonly) BOOL hasTimeStatistics;
+@property (nonatomic, readonly) bool hasEtag;
+@property (nonatomic, readonly) bool hasServerFields;
+@property (nonatomic, readonly) bool hasTimeStatistics;
 @property (nonatomic, retain) CKDPRecord *serverFields;
 @property (nonatomic, retain) CKDPDateStatistics *timeStatistics;
 
@@ -21,13 +21,13 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)etag;
-- (BOOL)hasEtag;
-- (BOOL)hasServerFields;
-- (BOOL)hasTimeStatistics;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasEtag;
+- (bool)hasServerFields;
+- (bool)hasTimeStatistics;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)serverFields;
 - (void)setEtag:(id)arg1;
 - (void)setServerFields:(id)arg1;

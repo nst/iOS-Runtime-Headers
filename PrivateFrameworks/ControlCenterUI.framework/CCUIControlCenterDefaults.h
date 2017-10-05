@@ -4,14 +4,10 @@
 
 @interface CCUIControlCenterDefaults : BSAbstractDefaultDomain
 
-@property (nonatomic) BOOL hasAcknowledgedFirstUseAlert;
-@property (nonatomic, readonly) BOOL shouldAlwaysBeEnabled;
-@property (nonatomic, readonly) BOOL shouldDisableArtraceButton;
-@property (nonatomic, readonly) BOOL shouldDisableInternalButtons;
-@property (nonatomic, readonly) BOOL shouldDisableLaunchingClockToTimer;
-@property (nonatomic, readonly) BOOL shouldDisableScreenRecordingButton;
-@property (nonatomic, readonly) BOOL shouldEnablePrototypeFeatures;
-@property (nonatomic, readonly) BOOL shouldExcludeControlCenterFromStatusBarOverrides;
+@property (nonatomic) bool hasForceTouchedToExpandModule;
+@property (nonatomic) bool hasLongPressedToExpandModule;
+@property (nonatomic, readonly) bool shouldAlwaysBeEnabled;
+@property (nonatomic, readonly) bool shouldExcludeControlCenterFromStatusBarOverrides;
 
 + (id)standardDefaults;
 

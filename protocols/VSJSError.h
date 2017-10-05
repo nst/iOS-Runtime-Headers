@@ -5,10 +5,10 @@
 
 @required
 
-- (unsigned int)code;
+- (unsigned long long)code;
 - (id)init;
 - (NSString *)message;
-- (void)setCode:(unsigned int)arg1;
+- (void)setCode:(unsigned long long)arg1;
 - (void)setMessage:(NSString *)arg1;
 
 @end

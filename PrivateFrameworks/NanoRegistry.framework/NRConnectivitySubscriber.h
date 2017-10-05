@@ -3,20 +3,20 @@
  */
 
 @interface NRConnectivitySubscriber : NSObject {
-    BOOL  _connected;
+    bool  _connected;
     unsigned long long  _dropoutCounter;
 }
 
-@property (nonatomic) BOOL connected;
+@property (nonatomic) bool connected;
 @property (nonatomic) unsigned long long dropoutCounter;
 
-+ (BOOL)getDropoutCounter:(unsigned long long*)arg1;
++ (bool)getDropoutCounter:(unsigned long long*)arg1;
 
 - (void)_readConnectivityStatus;
-- (BOOL)connected;
+- (bool)connected;
 - (unsigned long long)dropoutCounter;
 - (id)init;
-- (void)setConnected:(BOOL)arg1;
+- (void)setConnected:(bool)arg1;
 - (void)setDropoutCounter:(unsigned long long)arg1;
 
 @end

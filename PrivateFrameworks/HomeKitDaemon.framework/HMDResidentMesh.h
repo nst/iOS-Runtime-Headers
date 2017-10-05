@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDResidentMesh : NSObject <HMFLogging, HMFMessageReceiver, HMFTimerDelegate> {
+@interface HMDResidentMesh : HMFObject <HMFLogging, HMFMessageReceiver, HMFTimerDelegate> {
     HMDAccountRegistry * _accountRegistry;
     unsigned long long  _broadcastRate;
     HMFTimer * _devicesChangedTimer;
@@ -12,7 +12,7 @@
     HMDCentralMessageDispatcher * _remoteMessageDispatcher;
     HMDResidentMeshMeshStorage * _resident;
     NSMutableArray * _residents;
-    int  _startupTickCount;
+    long long  _startupTickCount;
     HMFTimer * _startupTimer;
     NSUUID * _uuid;
     NSObject<OS_dispatch_queue> * _workQueue;
@@ -23,7 +23,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) HMFTimer *devicesChangedTimer;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) HMDHomeManager *homeManager;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
@@ -32,7 +32,7 @@
 @property (nonatomic) HMDCentralMessageDispatcher *remoteMessageDispatcher;
 @property (nonatomic) HMDResidentMeshMeshStorage *resident;
 @property (nonatomic, retain) NSMutableArray *residents;
-@property (nonatomic) int startupTickCount;
+@property (nonatomic) long long startupTickCount;
 @property (nonatomic, readonly) HMFTimer *startupTimer;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSUUID *uuid;
@@ -48,11 +48,11 @@
 - (void)__deviceResidentChanged:(id)arg1;
 - (void)__rebuildResidents:(id)arg1;
 - (void)__rebuildResidentsViaElection:(id)arg1;
-- (void)_addConnectivityFromDeviceToAccessory:(id)arg1 activateTimer:(BOOL)arg2;
+- (void)_addConnectivityFromDeviceToAccessory:(id)arg1 activateTimer:(bool)arg2;
 - (id)_addDeviceInMesh:(id)arg1;
 - (id)_addDeviceInResidents:(id)arg1;
 - (void)_buildResidentsWithElection:(id)arg1 device:(id)arg2;
-- (BOOL)_checkReachabilityWithTimerActivation:(BOOL)arg1;
+- (bool)_checkReachabilityWithTimerActivation:(bool)arg1;
 - (void)_deviceIsNotReachable:(id)arg1;
 - (void)_deviceIsReachable:(id)arg1;
 - (void)_dumpDebug;
@@ -63,7 +63,7 @@
 - (void)_flushWorkQueue;
 - (void)_handleMeshUpdateMessage:(id)arg1;
 - (void)_handleMeshUpdateRequestMessage:(id)arg1;
-- (void)_removeConnectivityFromDeviceToAccessory:(id)arg1 activateTimer:(BOOL)arg2;
+- (void)_removeConnectivityFromDeviceToAccessory:(id)arg1 activateTimer:(bool)arg2;
 - (void)_sendMessage:(id)arg1 payload:(id)arg2 target:(id)arg3 responseHandler:(id /* block */)arg4;
 - (id)accountRegistry;
 - (unsigned long long)broadcastRate;
@@ -73,7 +73,7 @@
 - (void)dumpDebug;
 - (id)dumpState;
 - (id)homeManager;
-- (id)initWithHomeManager:(id)arg1 residentEnabled:(BOOL)arg2;
+- (id)initWithHomeManager:(id)arg1 residentEnabled:(bool)arg2;
 - (id)logIdentifier;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
@@ -90,10 +90,10 @@
 - (void)setRemoteMessageDispatcher:(id)arg1;
 - (void)setResident:(id)arg1;
 - (void)setResidents:(id)arg1;
-- (void)setStartupTickCount:(int)arg1;
+- (void)setStartupTickCount:(long long)arg1;
 - (void)setUuid:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
-- (int)startupTickCount;
+- (long long)startupTickCount;
 - (id)startupTimer;
 - (void)timerDidFire:(id)arg1;
 - (id)uuid;

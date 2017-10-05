@@ -9,18 +9,18 @@
     struct NSNumber { Class x1; } * _clockTimerToken;
     NSDate * _crownDate;
     NTKAstronomyDummy_CrownInputSequencer * _crownSequencer;
-    unsigned int  _dateFormatterStyle;
+    unsigned long long  _dateFormatterStyle;
     NTKDateComplicationLabel * _dateLabel;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _dateLabelZoomEndingCenter;
     NTKDigitalTimeLabel * _digitalTimeLabel;
     NTKDigitalTimeLabelStyle * _digitalTimeLabelDefaultLayoutStyle;
     NTKDigitalTimeLabelStyle * _digitalTimeLabelSmallInUpperRightStyle;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _digitalTimeLabelZoomEndingCenter;
     struct CLLocationCoordinate2D { 
         double latitude; 
@@ -33,23 +33,23 @@
     unsigned int  _isLocationCurrent;
     UIButton * _leftButton;
     NTKAstronomyLocationDot * _locationDot;
-    struct NSNumber { Class x1; } * _locationManagerToken;
+    struct NSString { Class x1; } * _locationManagerToken;
     NSDate * _overrideDate;
     UILabel * _overrideDateLabel;
     UILabel * _phaseLabel;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _phaseLabelDefaultFrame;
     NTKDelayedBlock * _physicalButtonDelayedBlock;
     NTKAstronomyDummy_ClientSideAnimation * _poseInterpolationAnimation;
-    int  _previousDataMode;
+    long long  _previousDataMode;
     void _previousTranslation;
     float  _recentMovement;
     UIButton * _rightButton;
@@ -58,36 +58,36 @@
     UILabel * _scrubLabel;
     UIImageView * _spheroidLabels;
     UIPanGestureRecognizer * _spheroidPanGesture;
-    float  _supplementalFontLineHeightPlusDescender;
+    double  _supplementalFontLineHeightPlusDescender;
     UITapGestureRecognizer * _supplementalModeDoubleTapGesture;
     NTKDelayedBlock * _wheelDelayedBlock;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isFrozen, nonatomic) BOOL frozen;
-@property (readonly) unsigned int hash;
+@property (getter=isFrozen, nonatomic) bool frozen;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (void)_prewarm;
 
 - (void).cxx_destruct;
-- (void)_animateTransitionToViewMode:(int)arg1;
+- (void)_animateTransitionToViewMode:(long long)arg1;
 - (void)_applyDataMode;
-- (void)_applyDataModeAnimated:(BOOL)arg1;
+- (void)_applyDataModeAnimated:(bool)arg1;
 - (void)_applyShowContentForUnadornedSnapshot;
-- (void)_applyViewMode:(int)arg1;
+- (void)_applyViewMode:(long long)arg1;
 - (void)_asyncUpdateLocale;
 - (void)_asyncUpdateTime;
-- (BOOL)_canEnterInteractiveMode;
+- (bool)_canEnterInteractiveMode;
 - (void)_cleanupAfterZoom;
 - (id)_date;
-- (id)_digitalTimeLabelStyle:(int)arg1;
+- (id)_digitalTimeLabelStyle:(long long)arg1;
 - (void)_disableCrown;
-- (void)_enableCrownForAstronomyTarget:(unsigned int)arg1;
+- (void)_enableCrownForAstronomyTarget:(unsigned long long)arg1;
 - (void)_handleDateLabelButton:(id)arg1;
 - (void)_handleInteractiveModeGesture:(id)arg1;
-- (BOOL)_handlePhysicalButton:(unsigned int)arg1 event:(unsigned int)arg2;
+- (bool)_handlePhysicalButton:(unsigned long long)arg1 event:(unsigned long long)arg2;
 - (void)_handleSpheroidPanGesture:(id)arg1;
 - (void)_handleSupplementalModeGesture:(id)arg1;
 - (void)_handleVirtualButton:(id)arg1;
@@ -99,35 +99,35 @@
 - (void)_loadSnapshotContentViews;
 - (void)_performWristRaiseAnimation;
 - (void)_physicalButtonDelayedBlockFired;
-- (void)_prepareToZoomWithIconView:(id)arg1 minDiameter:(float)arg2 maxDiameter:(float)arg3;
+- (void)_prepareToZoomWithIconView:(id)arg1 minDiameter:(double)arg2 maxDiameter:(double)arg3;
 - (void)_prepareWristRaiseAnimation;
-- (void)_renderSynchronouslyWithImageQueueDiscard:(BOOL)arg1;
+- (void)_renderSynchronouslyWithImageQueueDiscard:(bool)arg1;
 - (void)_setAstronomyFaceViewModeDefault;
 - (void)_setAstronomyFaceViewModeInteractive;
 - (void)_setAstronomyFaceViewModeNonInteractive;
 - (void)_setAstronomyFaceViewModeSupplemental;
-- (void)_setIsAnimatingViewMode:(BOOL)arg1;
-- (void)_setZoomFraction:(float)arg1 iconDiameter:(float)arg2;
-- (BOOL)_shouldHideStatusBarForViewMode:(int)arg1;
+- (void)_setIsAnimatingViewMode:(bool)arg1;
+- (void)_setZoomFraction:(double)arg1 iconDiameter:(double)arg2;
+- (bool)_shouldHideStatusBarForViewMode:(long long)arg1;
 - (void)_showLocationDotIfNeeded;
 - (void)_startClockUpdates;
 - (void)_stopClockUpdates;
 - (void)_unloadSnapshotContentViews;
-- (void)_updateLocaleAnimated:(BOOL)arg1;
+- (void)_updateLocaleAnimated:(bool)arg1;
 - (void)_updateLocation:(id)arg1 lastLocation:(id)arg2;
-- (void)_updateTimeAnimated:(BOOL)arg1;
-- (BOOL)_usesCustomZoom;
-- (BOOL)_wheelChangedWithEvent:(id)arg1;
+- (void)_updateTimeAnimated:(bool)arg1;
+- (bool)_usesCustomZoom;
+- (bool)_wheelChangedWithEvent:(id)arg1;
 - (void)_wheelDelayedBlockFired;
 - (void)astronomyViewContentsAnimationFinished:(id)arg1;
 - (void)crownInputSequencerOffsetDidChange:(id)arg1;
 - (void)dealloc;
-- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)rotationModelStoppedByDecelerating:(id)arg1;
 - (void)setOverrideDate:(id)arg1 duration:(double)arg2;
 - (void)setTimeOffset:(double)arg1;
-- (void)setViewMode:(int)arg1;
+- (void)setViewMode:(long long)arg1;
 
 @end

@@ -11,7 +11,8 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)mutatingCommand;
+- (bool)requiresResponse;
 - (void)setStatesToGet:(id)arg1;
 - (id)statesToGet;
 

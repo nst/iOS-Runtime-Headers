@@ -5,18 +5,18 @@
 @interface LPSwipeDownTracker : PHSwipeDownTracker {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _initialBounds;
 }
 
-- (struct CGPoint { float x1; float x2; })anchorPoint;
-- (void)startTrackingCenter:(struct CGPoint { float x1; float x2; })arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3 withInitialGestureLocation:(struct CGPoint { float x1; float x2; })arg4;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })trackedTransform;
+- (struct CGPoint { double x1; double x2; })anchorPoint;
+- (void)startTrackingCenter:(struct CGPoint { double x1; double x2; })arg1 bounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg3 withInitialGestureLocation:(struct CGPoint { double x1; double x2; })arg4;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })trackedTransform;
 
 @end

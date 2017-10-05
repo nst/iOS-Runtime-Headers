@@ -3,8 +3,10 @@
  */
 
 @interface AWDIDSRegistrationCompleted : PBCodable <NSCopying> {
+    int  _circleStatus;
     struct { 
         unsigned int timestamp : 1; 
+        unsigned int circleStatus : 1; 
         unsigned int registrationError : 1; 
         unsigned int registrationType : 1; 
         unsigned int wasSuccessful : 1; 
@@ -16,38 +18,44 @@
     unsigned int  _wasSuccessful;
 }
 
-@property (nonatomic) BOOL hasRegistrationError;
-@property (nonatomic) BOOL hasRegistrationType;
-@property (nonatomic, readonly) BOOL hasServiceIdentifier;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) BOOL hasWasSuccessful;
+@property (nonatomic) int circleStatus;
+@property (nonatomic) bool hasCircleStatus;
+@property (nonatomic) bool hasRegistrationError;
+@property (nonatomic) bool hasRegistrationType;
+@property (nonatomic, readonly) bool hasServiceIdentifier;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic) bool hasWasSuccessful;
 @property (nonatomic) int registrationError;
 @property (nonatomic) int registrationType;
 @property (nonatomic, retain) NSString *serviceIdentifier;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) unsigned int wasSuccessful;
 
+- (int)circleStatus;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasRegistrationError;
-- (BOOL)hasRegistrationType;
-- (BOOL)hasServiceIdentifier;
-- (BOOL)hasTimestamp;
-- (BOOL)hasWasSuccessful;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCircleStatus;
+- (bool)hasRegistrationError;
+- (bool)hasRegistrationType;
+- (bool)hasServiceIdentifier;
+- (bool)hasTimestamp;
+- (bool)hasWasSuccessful;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)registrationError;
 - (int)registrationType;
 - (id)serviceIdentifier;
-- (void)setHasRegistrationError:(BOOL)arg1;
-- (void)setHasRegistrationType:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setHasWasSuccessful:(BOOL)arg1;
+- (void)setCircleStatus:(int)arg1;
+- (void)setHasCircleStatus:(bool)arg1;
+- (void)setHasRegistrationError:(bool)arg1;
+- (void)setHasRegistrationType:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasWasSuccessful:(bool)arg1;
 - (void)setRegistrationError:(int)arg1;
 - (void)setRegistrationType:(int)arg1;
 - (void)setServiceIdentifier:(id)arg1;

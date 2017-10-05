@@ -3,36 +3,36 @@
  */
 
 @interface WGShortLookStyleButton : UIControl {
-    BOOL  _backgroundBlurred;
+    bool  _backgroundBlurred;
     MTMaterialView * _backgroundView;
-    float  _dimension;
-    NCLookViewFontProvider * _fontProvider;
+    double  _dimension;
+    MTFontProvider * _fontProvider;
     UILabel * _titleLabel;
 }
 
-@property (getter=isBackgroundBlurred, nonatomic) BOOL backgroundBlurred;
+@property (getter=isBackgroundBlurred, nonatomic) bool backgroundBlurred;
 @property (nonatomic, retain) NSString *groupName;
 @property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
-- (float)_backgroundViewCornerRadius;
+- (double)_backgroundViewCornerRadius;
 - (void)_configureBackgroundViewIfNecessary;
 - (void)_configureMaskIfNecessary;
 - (void)_configureTitleLabelIfNecessary;
-- (float)_dimension;
+- (double)_dimension;
 - (id)_fontProvider;
 - (void)_layoutTitleLabel;
-- (float)_minimumScaleFactorForFont:(id)arg1;
-- (void)_setBackgroundViewCornerRadius:(float)arg1;
+- (double)_minimumScaleFactorForFont:(id)arg1;
+- (void)_setBackgroundViewCornerRadius:(double)arg1;
 - (void)_updateTitleLabelFont;
 - (id)groupName;
 - (void)invalidateCachedGeometry;
-- (BOOL)isBackgroundBlurred;
+- (bool)isBackgroundBlurred;
 - (void)layoutSubviews;
-- (void)setBackgroundBlurred:(BOOL)arg1;
+- (void)setBackgroundBlurred:(bool)arg1;
 - (void)setGroupName:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)title;
 - (void)traitCollectionDidChange:(id)arg1;
 

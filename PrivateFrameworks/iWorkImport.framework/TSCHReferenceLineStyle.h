@@ -9,14 +9,14 @@
 + (id)defaultStyleForPresetFromChartStyle:(id)arg1 seriesStyle:(id)arg2 paragraphStyles:(id)arg3 valueAxisStyle:(id)arg4;
 + (id)defaultStyleWithContext:(id)arg1;
 + (id)defaultValueForProperty:(int)arg1;
-+ (id)identifierForRoleIndex:(unsigned int)arg1 ordinal:(unsigned int)arg2;
++ (id)identifierForRoleIndex:(unsigned long long)arg1 ordinal:(unsigned long long)arg2;
 + (id)imageFillProperties;
 + (int)muxDefaultPropertyForSpecificProperty:(int)arg1;
 + (id)overrideMapFromChartStyle:(id)arg1 seriesStyle:(id)arg2 paragraphStyles:(id)arg3 valueAxisStyle:(id)arg4;
-+ (id)presetStyleDescriptorForOrdinal:(unsigned int)arg1;
++ (id)presetStyleDescriptorForOrdinal:(unsigned long long)arg1;
 + (id)properties;
 
-- (id)initFromUnarchiver:(id)arg1;
+- (void)loadFromUnarchiver:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
 
 @end

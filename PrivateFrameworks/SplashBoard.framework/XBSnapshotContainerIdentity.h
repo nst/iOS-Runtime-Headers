@@ -20,19 +20,19 @@
 + (id)identityForBundleProxy:(id)arg1;
 + (id)identityForCompatibilityInfo:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)_initWithBundleIdentifier:(id)arg1 bundlePath:(id)arg2 dataContainerPath:(id)arg3 bundleContainerPath:(id)arg4;
 - (id)bundleContainerPath;
 - (id)bundleIdentifier;
 - (id)bundlePath;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataContainerPath;
-- (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)snapshotContainerPath;
 - (id)snapshotContainerPathForGroupID:(id)arg1;
 - (id)snapshotContainerPathForSnapshot:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
  */
 
-@interface CFPBJsonWriter : NSObject
+@interface CFPBJSONWriter : NSObject
 
 - (void)_traverseDictionary:(id)arg1;
 - (void)_traverseOther:(id)arg1;

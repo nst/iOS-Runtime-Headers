@@ -14,7 +14,7 @@
 - (void)controlEndEditing;
 - (id)controlView;
 - (void)dealloc;
-- (id)initWithDOMHTMLInputElement:(id)arg1 datePickerMode:(int)arg2;
+- (id)initWithDOMHTMLInputElement:(id)arg1 datePickerMode:(long long)arg2;
 - (void)set_webDateTimeViewController:(id)arg1;
 
 @end

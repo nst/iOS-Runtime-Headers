@@ -4,7 +4,8 @@
 
 @interface SPError : NSObject
 
-+ (id)errorWithCode:(int)arg1;
-+ (BOOL)isValidationErrorCode:(int)arg1;
++ (id)errorWithCode:(long long)arg1;
++ (id)errorWithCode:(long long)arg1 additionalDescription:(id)arg2;
++ (bool)isValidationErrorCode:(long long)arg1;
 
 @end

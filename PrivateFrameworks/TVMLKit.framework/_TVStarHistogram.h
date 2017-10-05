@@ -5,14 +5,14 @@
 @interface _TVStarHistogram : UIView {
     UIColor * _barEmptyColor;
     UIColor * _barFillColor;
-    float  _lineSpacing;
+    double  _lineSpacing;
     NSArray * _starBars;
     UIImage * _starImage;
 }
 
 @property (nonatomic, retain) UIColor *barEmptyColor;
 @property (nonatomic, retain) UIColor *barFillColor;
-@property (nonatomic) float lineSpacing;
+@property (nonatomic) double lineSpacing;
 @property (nonatomic, copy) NSArray *starBars;
 @property (nonatomic, retain) UIImage *starImage;
 
@@ -22,12 +22,12 @@
 - (void).cxx_destruct;
 - (id)barEmptyColor;
 - (id)barFillColor;
-- (BOOL)canBecomeFocused;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)lineSpacing;
+- (bool)canBecomeFocused;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)lineSpacing;
 - (void)setBarEmptyColor:(id)arg1;
 - (void)setBarFillColor:(id)arg1;
-- (void)setLineSpacing:(float)arg1;
+- (void)setLineSpacing:(double)arg1;
 - (void)setStarBars:(id)arg1;
 - (void)setStarImage:(id)arg1;
 - (id)starBars;

@@ -3,7 +3,7 @@
  */
 
 @interface ICBackoffTimer : NSObject {
-    unsigned int  _backoffCount;
+    unsigned long long  _backoffCount;
     double  _initialTimeInterval;
     double  _maxTimeInterval;
     SEL  _selector;
@@ -12,7 +12,7 @@
     id  _userInfo;
 }
 
-@property (nonatomic) unsigned int backoffCount;
+@property (nonatomic) unsigned long long backoffCount;
 @property (nonatomic) double initialTimeInterval;
 @property (nonatomic) double maxTimeInterval;
 @property (nonatomic) SEL selector;
@@ -21,7 +21,7 @@
 @property (nonatomic, retain) id userInfo;
 
 - (void).cxx_destruct;
-- (unsigned int)backoffCount;
+- (unsigned long long)backoffCount;
 - (void)dealloc;
 - (void)fire;
 - (void)fire:(id)arg1;
@@ -29,12 +29,12 @@
 - (id)initWithInitialInterval:(double)arg1 maxInterval:(double)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5;
 - (double)initialTimeInterval;
 - (void)invalidate;
-- (BOOL)isScheduled;
+- (bool)isScheduled;
 - (double)maxTimeInterval;
 - (double)nextTimeInterval;
 - (void)scheduleToFire;
 - (SEL)selector;
-- (void)setBackoffCount:(unsigned int)arg1;
+- (void)setBackoffCount:(unsigned long long)arg1;
 - (void)setInitialTimeInterval:(double)arg1;
 - (void)setMaxTimeInterval:(double)arg1;
 - (void)setSelector:(SEL)arg1;

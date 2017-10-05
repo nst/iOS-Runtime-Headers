@@ -4,52 +4,64 @@
 
 @interface _HKActiveWorkoutServerConfiguration : NSObject <NSSecureCoding> {
     NSUUID * _UUID;
-    BOOL  _indoor;
+    NSUUID * _fitnessMachineSessionID;
+    bool  _indoor;
+    HKQuantity * _initialActiveEnergyBurned;
+    HKQuantity * _initialBasalEnergyBurned;
     HKQuantity * _lapLength;
     NSDictionary * _resumeDataByType;
-    BOOL  _shouldUseDeviceData;
+    bool  _shouldUseDeviceData;
     NSDate * _startDate;
-    int  _swimmingLocation;
-    unsigned int  _workoutActivityType;
+    long long  _swimmingLocation;
+    unsigned long long  _workoutActivityType;
     NSArray * _workoutEvents;
-    int  _workoutState;
+    long long  _workoutState;
 }
 
 @property (nonatomic, retain) NSUUID *UUID;
-@property (getter=isIndoor, nonatomic) BOOL indoor;
+@property (nonatomic, retain) NSUUID *fitnessMachineSessionID;
+@property (getter=isIndoor, nonatomic) bool indoor;
+@property (nonatomic, retain) HKQuantity *initialActiveEnergyBurned;
+@property (nonatomic, retain) HKQuantity *initialBasalEnergyBurned;
 @property (nonatomic, retain) HKQuantity *lapLength;
 @property (nonatomic, retain) NSDictionary *resumeDataByType;
-@property (nonatomic) BOOL shouldUseDeviceData;
+@property (nonatomic) bool shouldUseDeviceData;
 @property (nonatomic, retain) NSDate *startDate;
-@property (nonatomic) int swimmingLocation;
-@property (nonatomic) unsigned int workoutActivityType;
+@property (nonatomic) long long swimmingLocation;
+@property (nonatomic) unsigned long long workoutActivityType;
 @property (nonatomic, retain) NSArray *workoutEvents;
-@property (nonatomic) int workoutState;
+@property (nonatomic) long long workoutState;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)UUID;
 - (void)encodeWithCoder:(id)arg1;
+- (id)fitnessMachineSessionID;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isIndoor;
+- (id)initialActiveEnergyBurned;
+- (id)initialBasalEnergyBurned;
+- (bool)isIndoor;
 - (id)lapLength;
 - (id)resumeDataByType;
-- (void)setIndoor:(BOOL)arg1;
+- (void)setFitnessMachineSessionID:(id)arg1;
+- (void)setIndoor:(bool)arg1;
+- (void)setInitialActiveEnergyBurned:(id)arg1;
+- (void)setInitialBasalEnergyBurned:(id)arg1;
 - (void)setLapLength:(id)arg1;
 - (void)setResumeDataByType:(id)arg1;
-- (void)setShouldUseDeviceData:(BOOL)arg1;
+- (void)setShouldUseDeviceData:(bool)arg1;
 - (void)setStartDate:(id)arg1;
-- (void)setSwimmingLocation:(int)arg1;
+- (void)setSwimmingLocation:(long long)arg1;
 - (void)setUUID:(id)arg1;
-- (void)setWorkoutActivityType:(unsigned int)arg1;
+- (void)setWorkoutActivityType:(unsigned long long)arg1;
 - (void)setWorkoutEvents:(id)arg1;
-- (void)setWorkoutState:(int)arg1;
-- (BOOL)shouldUseDeviceData;
+- (void)setWorkoutState:(long long)arg1;
+- (bool)shouldUseDeviceData;
 - (id)startDate;
-- (int)swimmingLocation;
-- (unsigned int)workoutActivityType;
+- (long long)swimmingLocation;
+- (unsigned long long)workoutActivityType;
 - (id)workoutEvents;
-- (int)workoutState;
+- (long long)workoutState;
 
 @end

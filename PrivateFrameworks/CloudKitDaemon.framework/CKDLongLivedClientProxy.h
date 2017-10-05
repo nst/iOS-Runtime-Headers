@@ -5,6 +5,7 @@
 @interface CKDLongLivedClientProxy : CKDClientProxy
 
 + (id)_sharedLongLivedProxyForContext:(id)arg1;
++ (void)clearCachedLongLivedProxies;
 + (id)longLivedProxyWithContext:(id)arg1;
 + (id)sharedLongLivedProxies;
 
@@ -12,29 +13,29 @@
 - (id)_clientPrefixEntitlement;
 - (void)_handleCompletionForOperation:(id)arg1 withBlock:(id /* block */)arg2;
 - (void)_handleProgressForOperation:(id)arg1 withArguments:(id)arg2;
-- (BOOL)_hasCustomAccountsEntitlement;
-- (BOOL)_hasEnvironmentEntitlement;
+- (bool)_hasCustomAccountsEntitlement;
+- (bool)_hasEnvironmentEntitlement;
 - (void)addOperationWithOperationInfo:(id)arg1;
 - (id)applicationIdentifier;
 - (id)apsEnvironmentEntitlement;
 - (id)bundleIdentifier;
-- (BOOL)darkWakeEnabledEntitlement;
+- (bool)darkWakeEnabledEntitlement;
 - (id)description;
-- (BOOL)hasAllowAccessBeforeFirstUnlockSinceBootEntitlement;
-- (BOOL)hasAllowAccessDuringBuddyEntitlement;
-- (BOOL)hasCloudKitSystemServiceEntitlement;
-- (BOOL)hasDarkWakeNetworkReachabilityEnabledEntitlement;
-- (BOOL)hasDeviceIdentifierEntitlement;
-- (BOOL)hasDisplaysSystemAcceptPromptEntitlement;
-- (BOOL)hasLightweightPCSEntitlement;
-- (BOOL)hasMasqueradingEntitlement;
-- (BOOL)hasOutOfProcessUIEntitlement;
-- (BOOL)hasParticipantPIIEntitlement;
-- (BOOL)hasProtectionDataEntitlement;
-- (BOOL)hasTCCAuthorization;
+- (bool)hasAllowAccessDuringBuddyEntitlement;
+- (bool)hasCloudKitSystemServiceEntitlement;
+- (bool)hasDarkWakeNetworkReachabilityEnabledEntitlement;
+- (bool)hasDeviceIdentifierEntitlement;
+- (bool)hasDisplaysSystemAcceptPromptEntitlement;
+- (bool)hasLightweightPCSEntitlement;
+- (bool)hasMasqueradingEntitlement;
+- (bool)hasOutOfProcessUIEntitlement;
+- (bool)hasParticipantPIIEntitlement;
+- (bool)hasProtectionDataEntitlement;
+- (bool)hasTCCAuthorization;
+- (bool)hasZoneProtectionDataEntitlement;
 - (id)initWithClientContext:(id)arg1;
-- (BOOL)isLongLived;
+- (bool)isLongLived;
+- (id)serviceNameForContainerMapEntitlement;
 - (id)sourceApplicationBundleIdentifier;
-- (BOOL)usePublicTokenEntitlement;
 
 @end

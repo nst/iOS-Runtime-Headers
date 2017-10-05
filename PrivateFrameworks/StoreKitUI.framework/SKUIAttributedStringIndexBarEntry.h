@@ -5,7 +5,7 @@
 @interface SKUIAttributedStringIndexBarEntry : SKUIIndexBarEntry {
     NSAttributedString * _attributedString;
     NSDictionary * _defaultTextAttributes;
-    BOOL  _hasValidSynthesizedAttributedString;
+    bool  _hasValidSynthesizedAttributedString;
     NSAttributedString * _synthesizedAttributedString;
 }
 
@@ -13,8 +13,8 @@
 @property (nonatomic, copy) NSDictionary *defaultTextAttributes;
 
 - (void).cxx_destruct;
-- (struct CGSize { float x1; float x2; })_calculatedContentSize;
-- (void)_drawContentInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })_calculatedContentSize;
+- (void)_drawContentInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_invalidateSynthesizedAttributedString;
 - (id)_synthesizedAttributedString;
 - (void)_tintColorDidChange;
@@ -22,9 +22,9 @@
 - (id)defaultTextAttributes;
 - (id)description;
 - (id)entryAttributedString;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithAttributedString:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setDefaultTextAttributes:(id)arg1;
 
 @end

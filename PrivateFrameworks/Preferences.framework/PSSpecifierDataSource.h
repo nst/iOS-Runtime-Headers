@@ -5,12 +5,12 @@
 @interface PSSpecifierDataSource : NSObject <PSSpecifierDataSource> {
     NSMutableSet * _observerRefs;
     NSMutableArray * _specifiers;
-    BOOL  _specifiersLoaded;
+    bool  _specifiersLoaded;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSMutableArray *specifiers;
 @property (readonly) Class superclass;
 
@@ -21,7 +21,7 @@
 - (void)_clearAllSpecifiers;
 - (void)_invalidateSpecifiersForObservers;
 - (void)addObserver:(id)arg1;
-- (BOOL)areSpecifiersLoaded;
+- (bool)areSpecifiersLoaded;
 - (void)enumerateObserversOfClass:(Class)arg1 usingBlock:(id /* block */)arg2;
 - (void)enumerateObserversUsingBlock:(id /* block */)arg1;
 - (id)init;
@@ -29,7 +29,7 @@
 - (id)observers;
 - (id)observersOfClass:(Class)arg1;
 - (void)performUpdates:(id)arg1;
-- (void)performUpdatesAnimated:(BOOL)arg1 usingBlock:(id /* block */)arg2;
+- (void)performUpdatesAnimated:(bool)arg1 usingBlock:(id /* block */)arg2;
 - (id)readPreferenceValue:(id)arg1;
 - (void)reloadSpecifiers;
 - (void)removeObserver:(id)arg1;

@@ -21,7 +21,7 @@
 - (id)_encryptedKeyDataWithShareMetadata:(id)arg1 error:(id*)arg2;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleVettingInitiationProgress:(id)arg1;
-- (void)_sendRequest:(BOOL)arg1;
+- (void)_sendRequest:(bool)arg1;
 - (id)activityCreate;
 - (id)address;
 - (id)encryptedKey;

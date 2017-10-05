@@ -18,5 +18,6 @@
 + (id)privateEventPlistPath;
 + (id)simulatorHomePathFor:(id)arg1;
 + (id)simulatorSystemPathFor:(id)arg1 withEnvVar:(id)arg2;
++ (id)userKnowledgeDirectory;
 
 @end

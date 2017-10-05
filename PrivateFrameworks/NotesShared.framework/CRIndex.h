@@ -8,7 +8,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSArray *indexPath;
 @property (readonly) Class superclass;
 
@@ -16,18 +16,18 @@
 + (id)indexWithPath:(id)arg1;
 
 - (void).cxx_destruct;
-- (int)compare:(id)arg1;
+- (long long)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)deltaSince:(id)arg1 in:(id)arg2;
-- (unsigned int)depth;
+- (unsigned long long)depth;
 - (id)description;
 - (void)encodeWithCRCoder:(id)arg1;
-- (unsigned int)hash;
-- (id)indexAtDepth:(unsigned int)arg1 withInteger:(long long)arg2 replica:(id)arg3;
+- (unsigned long long)hash;
+- (id)indexAtDepth:(unsigned long long)arg1 withInteger:(long long)arg2 replica:(id)arg3;
 - (id)indexPath;
 - (id)init;
 - (id)initWithCRCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeWith:(id)arg1;
 - (id)nextIndexForReplica:(id)arg1;
 - (id)previousIndexForReplica:(id)arg1;

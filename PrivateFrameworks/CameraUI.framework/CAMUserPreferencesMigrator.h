@@ -4,10 +4,10 @@
 
 @interface CAMUserPreferencesMigrator : NSObject
 
-+ (int)_HDRModeForLegacyHDRMode:(int)arg1;
-+ (int)_captureModeForLegacyCameraMode:(int)arg1;
-+ (int)_flashModeForLegacyFlashMode:(int)arg1;
-+ (int)_previewViewAspectModeForLegacyAspectMode:(int)arg1;
++ (long long)_HDRModeForLegacyHDRMode:(long long)arg1;
++ (long long)_captureModeForLegacyCameraMode:(long long)arg1;
++ (long long)_flashModeForLegacyFlashMode:(long long)arg1;
++ (long long)_previewViewAspectModeForLegacyAspectMode:(long long)arg1;
 + (void)migrateLegacyPreferences;
 
 @end

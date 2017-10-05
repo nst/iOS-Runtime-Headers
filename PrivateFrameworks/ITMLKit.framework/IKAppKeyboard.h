@@ -18,7 +18,7 @@
 @property (nonatomic) <IKAppKeyboardDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *featureName;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (setter=setJSKeyboard:, nonatomic) IKJSKeyboard *jsKeyboard;
 @property (setter=setJSSource:, nonatomic, copy) NSString *jsSource;
 @property (setter=setJSText:, nonatomic, copy) NSString *jsText;

@@ -8,10 +8,10 @@
 
 @property (nonatomic, retain) SCRCMathExpression *divisor;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)divisor;
 - (id)initWithDictionary:(id)arg1;
 - (void)setDivisor:(id)arg1;
-- (id)speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(BOOL)arg2;
+- (id)speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(bool)arg2;
 
 @end

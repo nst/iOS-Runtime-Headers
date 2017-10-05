@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *identifier;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *type;
@@ -18,10 +18,10 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setType:(id)arg1;
 - (id)type;

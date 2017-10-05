@@ -15,11 +15,11 @@
 
 - (void).cxx_destruct;
 - (void)_createLog;
-- (void)_logOSMessage:(const char *)arg1 args:(void*)arg2 returnAddress:(void*)arg3;
+- (void)_logOSMessage:(const char *)arg1 args:(char *)arg2 returnAddress:(void*)arg3;
 - (id)facility;
 - (id)init;
 - (void)logMessage:(id)arg1;
-- (void)logMessage:(id)arg1 args:(void*)arg2;
+- (void)logMessage:(id)arg1 args:(char *)arg2;
 - (id)oslog;
 - (void)setFacility:(id)arg1;
 

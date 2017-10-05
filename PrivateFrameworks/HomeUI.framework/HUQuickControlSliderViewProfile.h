@@ -3,32 +3,32 @@
  */
 
 @interface HUQuickControlSliderViewProfile : HUQuickControlViewProfile <HUQuickControlIncrementalConvertibleProfile> {
-    BOOL  _hasOffState;
-    BOOL  _hasSecondaryValue;
-    unsigned int  _preferredFillSection;
+    bool  _hasOffState;
+    bool  _hasSecondaryValue;
+    unsigned long long  _preferredFillSection;
     double  _stepValue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL hasOffState;
-@property (nonatomic) BOOL hasSecondaryValue;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int preferredFillSection;
+@property (nonatomic) bool hasOffState;
+@property (nonatomic) bool hasSecondaryValue;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long preferredFillSection;
 @property (nonatomic) double stepValue;
 @property (readonly) Class superclass;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)hasOffState;
-- (BOOL)hasSecondaryValue;
+- (bool)hasOffState;
+- (bool)hasSecondaryValue;
 - (id)init;
 - (double)percentageValueForViewValue:(id)arg1;
-- (unsigned int)preferredFillSection;
-- (void)setHasOffState:(BOOL)arg1;
-- (void)setHasSecondaryValue:(BOOL)arg1;
-- (void)setPreferredFillSection:(unsigned int)arg1;
+- (unsigned long long)preferredFillSection;
+- (void)setHasOffState:(bool)arg1;
+- (void)setHasSecondaryValue:(bool)arg1;
+- (void)setPreferredFillSection:(unsigned long long)arg1;
 - (void)setStepValue:(double)arg1;
 - (double)stepValue;
-- (id)viewValueForPercentageValue:(double)arg1 round:(BOOL)arg2;
+- (id)viewValueForPercentageValue:(double)arg1 round:(bool)arg2;
 
 @end

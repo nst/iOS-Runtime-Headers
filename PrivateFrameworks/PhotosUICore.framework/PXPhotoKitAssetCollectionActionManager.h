@@ -20,16 +20,17 @@
 - (id)_activePerformer;
 - (void)_executeActionTypeIfPossible:(id)arg1;
 - (Class)_firstPossiblePerformerForActionType:(id)arg1;
-- (void)_handleActionPerformerComplete:(id)arg1 success:(BOOL)arg2 error:(id)arg3;
+- (void)_handleActionPerformerComplete:(id)arg1 success:(bool)arg2 error:(id)arg3;
 - (void)_handleBarButtonItem:(id)arg1;
 - (void)_handlePreviewAction:(id)arg1;
 - (id)_performerClassesByType;
 - (void)_setActivePerformer:(id)arg1;
 - (id)actionPerformerForActionType:(id)arg1;
 - (id)barButtonItemForActionType:(id)arg1;
-- (BOOL)canPerformActionType:(id)arg1;
+- (bool)canPerformActionType:(id)arg1;
 - (id)initWithAssetCollection:(id)arg1 displayTitleInfo:(id)arg2;
-- (id)localizedTitleForActionType:(id)arg1 useCase:(unsigned int)arg2;
+- (id)localizedTitleForActionType:(id)arg1 useCase:(unsigned long long)arg2;
 - (id)previewActionForActionType:(id)arg1;
+- (id)previewActionGroupForActionType:(id)arg1;
 
 @end

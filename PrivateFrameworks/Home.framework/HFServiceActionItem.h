@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) HFItem<HFServiceLikeItem> *containingItem;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HMHome *home;
 @property (nonatomic, readonly) <HFHomeKitObject> *homeKitObject;
 @property (readonly) Class superclass;

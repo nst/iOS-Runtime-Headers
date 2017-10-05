@@ -8,8 +8,8 @@
 - (unsigned long long)downloadSize;
 - (id)humanReadableUpdateName;
 - (unsigned long long)installationSize;
-- (BOOL)isDownloadable;
-- (BOOL)isDownloadableOverCellular;
+- (bool)isDownloadable;
+- (bool)isDownloadableOverCellular;
 - (unsigned long long)preparationSize;
 - (id)productBuildVersion;
 - (id)productSystemName;

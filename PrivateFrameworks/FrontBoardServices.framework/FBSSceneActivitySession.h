@@ -7,9 +7,9 @@
     id /* block */  _errorHandler;
     FBSProcessExecutionPolicy * _executionPolicy;
     NSString * _identifier;
-    BOOL  _invalidated;
+    bool  _invalidated;
     NSString * _name;
-    BOOL  _open;
+    bool  _open;
     <FBSProcess> * _process;
     <FBSSceneHandle> * _scene;
     FBSProcessWatchdog * _watchdog;
@@ -19,16 +19,16 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ errorHandler;
 @property (nonatomic, copy) FBSProcessExecutionPolicy *executionPolicy;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *identifier;
-@property (getter=isInvalidated, nonatomic, readonly) BOOL invalidated;
+@property (getter=isInvalidated, nonatomic, readonly) bool invalidated;
 @property (nonatomic, copy) NSString *name;
-@property (getter=isOpen, nonatomic, readonly) BOOL open;
+@property (getter=isOpen, nonatomic, readonly) bool open;
 @property (nonatomic) <FBSSceneHandle> *scene;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_isValid;
+- (bool)_isValid;
 - (void)close;
 - (void)dealloc;
 - (id)description;
@@ -39,8 +39,8 @@
 - (id)identifier;
 - (id)initWithName:(id)arg1 scene:(id)arg2 executionPolicy:(id)arg3;
 - (void)invalidate;
-- (BOOL)isInvalidated;
-- (BOOL)isOpen;
+- (bool)isInvalidated;
+- (bool)isOpen;
 - (id)name;
 - (void)open;
 - (id)scene;

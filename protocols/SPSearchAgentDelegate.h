@@ -5,8 +5,7 @@
 
 @required
 
-- (void)searchAgentClearedResults:(SPSearchAgent *)arg1;
-- (void)searchAgentReceivedSuggestions:(NSArray *)arg1;
-- (void)searchAgentUpdatedResults:(SPSearchAgent *)arg1;
+- (void)searchAgentClearedResults:(SPUISearchModel *)arg1;
+- (void)searchAgentUpdatedResults:(SPUISearchModel *)arg1;
 
 @end

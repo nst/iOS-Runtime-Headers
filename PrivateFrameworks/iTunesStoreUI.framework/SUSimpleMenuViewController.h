@@ -14,12 +14,12 @@
 - (id)cancelButtonTitle;
 - (void)dealloc;
 - (id)initWithTitles:(id)arg1;
-- (BOOL)isMenuItemEnabledAtIndex:(int)arg1;
-- (int)numberOfMenuItems;
+- (bool)isMenuItemEnabledAtIndex:(long long)arg1;
+- (long long)numberOfMenuItems;
 - (void)reloadContentSizeForViewInPopover;
 - (void)setCancelButtonTitle:(id)arg1;
 - (void)setTitles:(id)arg1;
-- (id)titleOfMenuItemAtIndex:(int)arg1;
+- (id)titleOfMenuItemAtIndex:(long long)arg1;
 - (id)titles;
 
 @end

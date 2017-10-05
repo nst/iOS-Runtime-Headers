@@ -9,16 +9,16 @@
 
 @property (nonatomic, readonly) NSArray *allObjects;
 @property (nonatomic, readonly) NSMutableArray *buffer;
-@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly) unsigned long long count;
 @property (nonatomic, readonly) <MFQueueingStrategy> *strategy;
 
-+ (id)boundedQueueWithCapacity:(unsigned int)arg1;
-+ (id)boundedQueueWithCapacity:(unsigned int)arg1 overflowHandler:(id /* block */)arg2;
++ (id)boundedQueueWithCapacity:(unsigned long long)arg1;
++ (id)boundedQueueWithCapacity:(unsigned long long)arg1 overflowHandler:(id /* block */)arg2;
 + (id)priorityQueueWithComparator:(id /* block */)arg1;
 
 - (id)allObjects;
 - (id)buffer;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)dequeue;

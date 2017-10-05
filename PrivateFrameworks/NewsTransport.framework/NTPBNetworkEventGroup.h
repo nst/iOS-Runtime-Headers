@@ -7,8 +7,8 @@
     NSString * _via;
 }
 
-@property (nonatomic, readonly) BOOL hasRespondingInstance;
-@property (nonatomic, readonly) BOOL hasVia;
+@property (nonatomic, readonly) bool hasRespondingInstance;
+@property (nonatomic, readonly) bool hasVia;
 @property (nonatomic, retain) NSString *respondingInstance;
 @property (nonatomic, retain) NSString *via;
 
@@ -16,12 +16,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasRespondingInstance;
-- (BOOL)hasVia;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasRespondingInstance;
+- (bool)hasVia;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)respondingInstance;
 - (void)setRespondingInstance:(id)arg1;
 - (void)setVia:(id)arg1;

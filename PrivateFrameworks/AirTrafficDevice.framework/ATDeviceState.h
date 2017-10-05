@@ -5,8 +5,8 @@
 @interface ATDeviceState : NSObject
 
 + (void)blockUntilFirstUnlock;
-+ (BOOL)isClassCLocked;
-+ (BOOL)isUnlocked;
++ (bool)isClassCLocked;
++ (bool)isUnlocked;
 + (void)registerBlockForFirstUnlock:(id /* block */)arg1;
 
 @end

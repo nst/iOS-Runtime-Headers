@@ -3,13 +3,13 @@
  */
 
 @interface _ATXInternalInstallNotification : NSObject {
-    id  _installNotificationToken;
+    _ATXInternalNotification * _note;
 }
 
-+ (void)postNotificationForObject:(id)arg1 withInstallDictionary:(id)arg2;
++ (void)postNotificationWithInstallDictionary:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)dealloc;
+- (id)init;
 - (void)registerForNotificationsWithInstallBlock:(id /* block */)arg1;
 
 @end

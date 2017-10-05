@@ -4,12 +4,12 @@
 
 @interface AVOutputContextInternal : NSObject {
     int  applicationPID;
-    struct __CFString { } * contextUUID;
-    struct OpaqueFigEndpointPicker { } * endpointPicker;
-    BOOL  isSystemPicker;
-    unsigned int  pickerFeature;
-    NSObject<OS_dispatch_queue> * pickerQueue;
-    AVWeakReference * weakReference;
+    <AVOutputContextCommunicationChannelDelegate> * communicationChannelDelegate;
+    <AVOutputContextImpl> * impl;
+    NSObject<OS_dispatch_queue> * ivarAccessQueue;
+    unsigned long long  outputDeviceFeatures;
 }
+
+- (void).cxx_destruct;
 
 @end

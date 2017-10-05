@@ -2,56 +2,16 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOCacheHitLogMessage : PBCodable <NSCopying> {
-    unsigned int  _cacheHitCount;
-    unsigned int  _cacheMissCount;
-    int  _cacheType;
-    struct { 
-        unsigned int cacheHitCount : 1; 
-        unsigned int cacheMissCount : 1; 
-        unsigned int cacheType : 1; 
-        unsigned int tileSetStyle : 1; 
-    }  _has;
-    int  _tileSetStyle;
-}
+@interface GEOCacheHitLogMessage : PBCodable <NSCopying>
 
-@property (nonatomic) unsigned int cacheHitCount;
-@property (nonatomic) unsigned int cacheMissCount;
-@property (nonatomic) int cacheType;
-@property (nonatomic) BOOL hasCacheHitCount;
-@property (nonatomic) BOOL hasCacheMissCount;
-@property (nonatomic) BOOL hasCacheType;
-@property (nonatomic) BOOL hasTileSetStyle;
-@property (nonatomic) int tileSetStyle;
-
-- (int)StringAsCacheType:(id)arg1;
-- (int)StringAsTileSetStyle:(id)arg1;
-- (unsigned int)cacheHitCount;
-- (unsigned int)cacheMissCount;
-- (int)cacheType;
-- (id)cacheTypeAsString:(int)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCacheHitCount;
-- (BOOL)hasCacheMissCount;
-- (BOOL)hasCacheType;
-- (BOOL)hasTileSetStyle;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setCacheHitCount:(unsigned int)arg1;
-- (void)setCacheMissCount:(unsigned int)arg1;
-- (void)setCacheType:(int)arg1;
-- (void)setHasCacheHitCount:(BOOL)arg1;
-- (void)setHasCacheMissCount:(BOOL)arg1;
-- (void)setHasCacheType:(BOOL)arg1;
-- (void)setHasTileSetStyle:(BOOL)arg1;
-- (void)setTileSetStyle:(int)arg1;
-- (int)tileSetStyle;
-- (id)tileSetStyleAsString:(int)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

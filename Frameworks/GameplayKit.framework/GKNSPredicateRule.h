@@ -9,7 +9,7 @@
 @property (nonatomic, readonly, retain) NSPredicate *predicate;
 
 - (void).cxx_destruct;
-- (BOOL)evaluatePredicateWithSystem:(id)arg1;
+- (bool)evaluatePredicateWithSystem:(id)arg1;
 - (id)initWithPredicate:(id)arg1;
 - (id)predicate;
 

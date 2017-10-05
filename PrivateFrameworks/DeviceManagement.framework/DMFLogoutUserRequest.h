@@ -2,6 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
  */
 
-@interface DMFLogoutUserRequest : CATTaskRequest
+@interface DMFLogoutUserRequest : DMFLogOutUserRequest
 
 @end

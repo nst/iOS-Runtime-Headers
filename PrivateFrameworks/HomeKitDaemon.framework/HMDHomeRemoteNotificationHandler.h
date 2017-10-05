@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDHomeRemoteNotificationHandler : NSObject <HMFLogging> {
+@interface HMDHomeRemoteNotificationHandler : HMFObject <HMFLogging> {
     NSString * _logID;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *logID;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;

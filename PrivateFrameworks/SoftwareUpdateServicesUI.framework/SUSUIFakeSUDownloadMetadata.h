@@ -4,7 +4,7 @@
 
 @interface SUSUIFakeSUDownloadMetadata : SUDownloadMetadata
 
-- (BOOL)isAutoDownload;
+- (bool)isAutoDownload;
 - (int)termsAndConditionsAgreementStatus;
 
 @end

@@ -5,6 +5,6 @@
 
 @required
 
-- (void)peoplePreviewActionViewController:(PXPeoplePreviewActionViewController *)arg1 wantsToChangePerson:(PXPersonItem *)arg2 toType:(int)arg3;
+- (void)peoplePreviewActionViewController:(PXPeoplePreviewActionViewController *)arg1 wantsToChangePerson:(PXPersonItem *)arg2 toType:(long long)arg3;
 
 @end

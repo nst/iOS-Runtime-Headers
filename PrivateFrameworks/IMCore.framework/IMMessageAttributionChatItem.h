@@ -4,17 +4,17 @@
 
 @interface IMMessageAttributionChatItem : IMMessageStatusChatItem {
     NSDictionary * _attributionInfo;
-    int  _attributionType;
+    long long  _attributionType;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *attributionInfo;
-@property (nonatomic, readonly) int attributionType;
+@property (nonatomic, readonly) long long attributionType;
 @property (nonatomic, readonly, copy) NSString *bundleID;
 
 - (void).cxx_destruct;
-- (id)_initWithItem:(id)arg1 attributionInfo:(id)arg2 attributionType:(int)arg3;
+- (id)_initWithItem:(id)arg1 attributionInfo:(id)arg2 attributionType:(long long)arg3;
 - (id)attributionInfo;
-- (int)attributionType;
+- (long long)attributionType;
 - (id)bundleID;
 
 @end

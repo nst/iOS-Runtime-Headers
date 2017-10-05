@@ -10,7 +10,7 @@
 @property (retain) NSXPCConnection *parentConnection;
 @property unsigned long long sequence;
 
-- (void)_setUserInfoValue:(id)arg1 forKey:(id)arg2 fromChild:(BOOL)arg3;
+- (void)_setUserInfoValue:(id)arg1 forKey:(id)arg2 fromChild:(bool)arg3;
 - (void)_updateFractionCompleted:(id)arg1;
 - (void)dealloc;
 - (id)parentConnection;

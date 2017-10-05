@@ -12,7 +12,7 @@
 @property (nonatomic, retain) NSString *expandedNameSpace;
 @property (nonatomic, retain) NSSet *propertiesToFind;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)expandedName;
 - (id)expandedNameSpace;
 - (id)initWithPropertiesToFind:(id)arg1 expandedName:(id)arg2 expandedNameSpace:(id)arg3;

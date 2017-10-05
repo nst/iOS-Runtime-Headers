@@ -6,6 +6,5 @@
 @required
 
 - (void)child:(id <NRMutableStateProtocol>)arg1 didApplyDiff:(id <NRDiffProtocol>)arg2;
-- (NSObject<OS_dispatch_queue> *)queue;
 
 @end

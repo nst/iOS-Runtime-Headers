@@ -6,7 +6,7 @@
 
 @property (nonatomic, retain) _UIDocumentPickerContainerViewHuggingTableView *tableView;
 
-- (id)initWithStyle:(int)arg1;
+- (id)initWithStyle:(long long)arg1;
 - (void)willMoveToParentViewController:(id)arg1;
 
 @end

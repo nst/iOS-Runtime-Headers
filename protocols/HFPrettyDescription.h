@@ -5,6 +5,6 @@
 
 @required
 
-- (NSString *)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (NSString *)hf_prettyDescriptionOfType:(unsigned long long)arg1;
 
 @end

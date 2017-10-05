@@ -11,12 +11,12 @@
 - (<TSDHint> *)firstChildHint;
 - (<TSDHint> *)lastChildHint;
 - (void)offsetByDelta:(int)arg1;
-- (BOOL)overlapsWithSelectionPath:(TSKSelectionPath *)arg1;
+- (bool)overlapsWithSelection:(TSKSelection *)arg1;
 
 @optional
 
-- (struct CGSize { float x1; float x2; })effectiveSize;
-- (BOOL)isFirstHint;
-- (struct CGSize { float x1; float x2; })maximumSize;
+- (struct CGSize { double x1; double x2; })effectiveSize;
+- (bool)isFirstHint;
+- (struct CGSize { double x1; double x2; })maximumSize;
 
 @end

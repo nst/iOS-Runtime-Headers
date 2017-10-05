@@ -6,14 +6,14 @@
     NSString * _baseKey;
     NSArray * _bucketKeys;
     NSMutableSet * _children;
-    int  _recordCount;
+    long long  _recordCount;
     long long  _values;
 }
 
 - (void).cxx_destruct;
 - (void)_addChildStatistic:(id)arg1;
 - (void)clearValues;
-- (id)initWithDomain:(id)arg1 identifierReporting:(int)arg2;
+- (id)initWithDomain:(id)arg1 identifierReporting:(long long)arg2;
 - (void)recordValue:(double)arg1;
 - (void)reportValues;
 

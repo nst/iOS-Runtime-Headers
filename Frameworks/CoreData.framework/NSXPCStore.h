@@ -3,6 +3,7 @@
  */
 
 @interface NSXPCStore : NSIncrementalStore {
+    int  _assertion;
     NSGenerationalRowCache * _cache;
     NSMutableDictionary * _changeCache;
     NSSQLCore * _core;
@@ -16,7 +17,7 @@
 
 @property (readonly, copy) NSString *remoteStoreChangedNotificationName;
 
-+ (BOOL)_isOnExtendedTimeout;
++ (bool)_isOnExtendedTimeout;
 + (id)archiver:(id)arg1 willEncodeObject:(id)arg2;
 + (int)debugDefault;
 + (void)initialize;
@@ -29,7 +30,8 @@
 - (void)_clearCachedRowForObjectWithID:(id)arg1 generation:(id)arg2;
 - (void)_commitChangesForRequest:(id)arg1;
 - (id)_createAndCacheRowForObjectWithID:(id)arg1 propertyValues:(id)arg2 inContext:(id)arg3 error:(id*)arg4;
-- (id)_executeSaveRequest:(id)arg1 forceInsertsToUpdates:(BOOL)arg2 withContext:(id)arg3 interrupts:(unsigned int*)arg4 error:(id*)arg5;
+- (id)_executeSaveRequest:(id)arg1 forceInsertsToUpdates:(bool)arg2 withContext:(id)arg3 interrupts:(unsigned long long*)arg4 error:(id*)arg5;
+- (void)_freeQueryGenerationWithIdentifier:(id)arg1;
 - (id)_newObjectIDForEntityDescription:(id)arg1 pk:(long long)arg2;
 - (Class)_objectIDClass;
 - (id)_sanityCheckToken;
@@ -47,17 +49,19 @@
 - (id)decodeValue:(id)arg1 forRelationship:(id)arg2 onSource:(id)arg3 inContext:(id)arg4 error:(id*)arg5;
 - (void)disconnect;
 - (void)disconnectConnection:(id)arg1;
-- (id)encodeObjectsForSave:(id)arg1 forDelete:(BOOL)arg2;
-- (id)encodeSaveRequest:(id)arg1 forceInsertsToUpdates:(BOOL)arg2;
+- (id)encodeObjectsForSave:(id)arg1 forDelete:(bool)arg2;
+- (id)encodeSaveRequest:(id)arg1 forceInsertsToUpdates:(bool)arg2;
 - (id)entityForEntityDescription:(id)arg1;
+- (id)executeBatchDeleteRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
 - (id)executeFetchRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
+- (id)executePersistentHistoryRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
 - (id)executePullChangesRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
 - (id)executeRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
 - (id)executeSaveRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
 - (void)freeQueryGenerationWithIdentifier:(id)arg1;
 - (id)initWithPersistentStoreCoordinator:(id)arg1 configurationName:(id)arg2 URL:(id)arg3 options:(id)arg4;
-- (BOOL)load:(id*)arg1;
-- (BOOL)loadMetadata:(id*)arg1;
+- (bool)load:(id*)arg1;
+- (bool)loadMetadata:(id*)arg1;
 - (void)managedObjectContextDidRegisterObjectsWithIDs:(id)arg1 generation:(id)arg2;
 - (void)managedObjectContextDidUnregisterObjectsWithIDs:(id)arg1 generation:(id)arg2;
 - (id)model;
@@ -69,16 +73,17 @@
 - (Class)objectIDFactoryForSQLEntity:(id)arg1;
 - (id)obtainPermanentIDsForObjects:(id)arg1 error:(id*)arg2;
 - (id)remoteStoreChangedNotificationName;
+- (id)reopenQueryGenerationWithIdentifier:(id)arg1 error:(id*)arg2;
 - (id)replacementObjectForXPCConnection:(id)arg1 encoder:(id)arg2 object:(id)arg3;
 - (id)retainedConnection;
-- (id)sendMessage:(id)arg1 fromContext:(id)arg2 interrupts:(unsigned int*)arg3 error:(id*)arg4;
+- (id)sendMessage:(id)arg1 fromContext:(id)arg2 interrupts:(unsigned long long*)arg3 error:(id*)arg4;
 - (id)serviceName;
 - (void)setIdentifier:(id)arg1;
 - (void)setSQLCore:(id)arg1;
 - (void)setURL:(id)arg1;
 - (void)setupRemoteStoreObserver;
 - (id)sqlCore;
-- (BOOL)supportsGenerationalQuerying;
+- (bool)supportsGenerationalQuerying;
 - (id)type;
 - (id)unarchiver:(id)arg1 didDecodeObject:(id)arg2;
 - (void)willRemoveFromPersistentStoreCoordinator:(id)arg1;

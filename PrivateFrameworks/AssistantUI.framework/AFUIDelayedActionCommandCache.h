@@ -9,7 +9,7 @@
 }
 
 @property (nonatomic) <AFUIDelayedActionCommandCacheDelegate> *delegate;
-@property (nonatomic, readonly) BOOL hasPendingCommands;
+@property (nonatomic, readonly) bool hasPendingCommands;
 
 - (void).cxx_destruct;
 - (void)_invalidateDelayedActionTimer:(id)arg1 withKey:(id)arg2;
@@ -18,7 +18,7 @@
 - (id)delegate;
 - (void)handleDelayedActionCancelCommand:(id)arg1 completion:(id /* block */)arg2;
 - (void)handleDelayedActionCommand:(id)arg1 completion:(id /* block */)arg2;
-- (BOOL)hasPendingCommands;
+- (bool)hasPendingCommands;
 - (id)initWithDelegate:(id)arg1;
 - (void)invalidatePendingCommands;
 - (void)performDismissalCommands;

@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)offlineMode;
-- (void)setOfflineMode:(BOOL)arg1;
+- (bool)offlineMode;
+- (void)setOfflineMode:(bool)arg1;
 
 @end

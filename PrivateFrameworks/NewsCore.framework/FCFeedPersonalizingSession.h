@@ -4,24 +4,24 @@
 
 @interface FCFeedPersonalizingSession : NSObject {
     FCDateRange * _dateRange;
-    int  _feedType;
-    unsigned int  _fixedArticleCount;
+    long long  _feedType;
+    unsigned long long  _fixedArticleCount;
     NSString * _sessionID;
 }
 
 @property (nonatomic, retain) FCDateRange *dateRange;
-@property (nonatomic) int feedType;
-@property (nonatomic) unsigned int fixedArticleCount;
+@property (nonatomic) long long feedType;
+@property (nonatomic) unsigned long long fixedArticleCount;
 @property (nonatomic, retain) NSString *sessionID;
 
 - (void).cxx_destruct;
 - (id)dateRange;
-- (int)feedType;
-- (unsigned int)fixedArticleCount;
+- (long long)feedType;
+- (unsigned long long)fixedArticleCount;
 - (id)sessionID;
 - (void)setDateRange:(id)arg1;
-- (void)setFeedType:(int)arg1;
-- (void)setFixedArticleCount:(unsigned int)arg1;
+- (void)setFeedType:(long long)arg1;
+- (void)setFixedArticleCount:(unsigned long long)arg1;
 - (void)setSessionID:(id)arg1;
 
 @end

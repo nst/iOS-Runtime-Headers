@@ -8,6 +8,6 @@
 
 - (id)createViewController;
 - (id)previewActions;
-- (void)setPreviewMode:(BOOL)arg1;
+- (void)setPreviewMode:(bool)arg1;
 
 @end

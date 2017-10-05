@@ -7,13 +7,12 @@
 @property (nonatomic, readonly) CKRecordID *shareID;
 @property (nonatomic, retain) CKDSharePCSData *sharePCSData;
 
-- (BOOL)_decryptPCS;
-- (BOOL)_fetchPCSDataFromDatabase;
-- (BOOL)_fetchPCSDataFromServer;
+- (bool)_decryptPCS;
+- (bool)_fetchPCSDataFromDatabase;
+- (bool)_fetchPCSDataFromServer;
 - (void)_handlePCSDataFetched:(id)arg1 withError:(id)arg2;
-- (BOOL)_savePCSDataToCache;
-- (BOOL)hasAllPCSData;
-- (id)initWithShareID:(id)arg1 parentOperation:(id)arg2 cache:(id)arg3 options:(unsigned int)arg4;
+- (bool)_savePCSDataToCache;
+- (bool)hasAllPCSData;
 - (id)itemTypeName;
 - (void)setSharePCSData:(id)arg1;
 - (id)shareID;

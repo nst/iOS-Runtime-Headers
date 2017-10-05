@@ -8,16 +8,16 @@
 @property (nonatomic, retain) NSString *managed_filename;
 @property (nonatomic, retain) NSString *managed_id;
 @property (nonatomic) int size;
-@property (nonatomic) BOOL x_apple_autoarchived;
+@property (nonatomic) bool x_apple_autoarchived;
 @property (nonatomic, retain) NSString *x_apple_ews_attachmentid;
 @property (nonatomic, retain) NSString *x_apple_filename;
 
-- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+- (void)_ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;
 - (id)filename;
 - (id)fmtype;
 - (id)initWithData:(id)arg1;
 - (id)initWithURL:(id)arg1;
-- (BOOL)isBinary;
+- (bool)isBinary;
 - (id)managed_filename;
 - (id)managed_id;
 - (void)setData:(id)arg1;
@@ -26,12 +26,12 @@
 - (void)setManaged_id:(id)arg1;
 - (void)setSize:(int)arg1;
 - (void)setURL:(id)arg1;
-- (void)setX_apple_autoarchived:(BOOL)arg1;
+- (void)setX_apple_autoarchived:(bool)arg1;
 - (void)setX_apple_ews_attachmentid:(id)arg1;
 - (void)setX_apple_filename:(id)arg1;
-- (BOOL)shouldObscureValue;
+- (bool)shouldObscureValue;
 - (int)size;
-- (BOOL)x_apple_autoarchived;
+- (bool)x_apple_autoarchived;
 - (id)x_apple_ews_attachmentid;
 - (id)x_apple_filename;
 

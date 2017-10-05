@@ -4,13 +4,13 @@
 
 @interface DOMOverflowEvent : DOMEvent
 
-@property (readonly) BOOL horizontalOverflow;
+@property (readonly) bool horizontalOverflow;
 @property (readonly) unsigned short orient;
-@property (readonly) BOOL verticalOverflow;
+@property (readonly) bool verticalOverflow;
 
-- (BOOL)horizontalOverflow;
-- (void)initOverflowEvent:(unsigned short)arg1 horizontalOverflow:(BOOL)arg2 verticalOverflow:(BOOL)arg3;
+- (bool)horizontalOverflow;
+- (void)initOverflowEvent:(unsigned short)arg1 horizontalOverflow:(bool)arg2 verticalOverflow:(bool)arg3;
 - (unsigned short)orient;
-- (BOOL)verticalOverflow;
+- (bool)verticalOverflow;
 
 @end

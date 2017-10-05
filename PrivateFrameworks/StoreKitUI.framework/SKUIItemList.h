@@ -13,7 +13,7 @@
 @property (nonatomic, readonly) NSMutableDictionary *cacheRepresentation;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSArray *items;
 @property (nonatomic, copy) NSString *seeAllTitle;
 @property (nonatomic, copy) NSString *seeAllURLString;
@@ -27,7 +27,7 @@
 - (id)cacheRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithCacheRepresentation:(id)arg1;
-- (BOOL)isUnavailableItemIdentifier:(id)arg1;
+- (bool)isUnavailableItemIdentifier:(id)arg1;
 - (id)items;
 - (void)removeItemsAtIndexes:(id)arg1;
 - (id)seeAllTitle;

@@ -3,16 +3,25 @@
  */
 
 @interface AVPlayerView : UIView {
-    int  _viewWindowState;
+    AVPlayerViewControllerContentView * _contentView;
+    bool  _managesContentViewLayout;
+    UIScreen * _primaryScreen;
 }
 
-@property (nonatomic, readonly) int viewWindowState;
+@property (nonatomic, readonly) AVPlayerViewControllerContentView *contentView;
+@property (nonatomic) bool managesContentViewLayout;
+@property (nonatomic) UIScreen *primaryScreen;
 
-- (BOOL)_isEnclosedInNonPagingScrollView;
-- (void)_updateViewWindowState;
-- (void)didMoveToWindow;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)viewWindowState;
+- (void).cxx_destruct;
+- (id)contentView;
+- (void)dealloc;
+- (id)initWithContentView:(id)arg1;
+- (void)layoutSubviews;
+- (bool)managesContentViewLayout;
+- (id)primaryScreen;
+- (void)setClipsToBounds:(bool)arg1;
+- (void)setManagesContentViewLayout:(bool)arg1;
+- (void)setPrimaryScreen:(id)arg1;
 - (void)willMoveToWindow:(id)arg1;
 
 @end

@@ -6,7 +6,7 @@
 @required
 
 - (IMBalloonPluginDataSource *)dataSource;
-- (BOOL)isFromMe;
+- (bool)isFromMe;
 - (NSString *)type;
 
 @end

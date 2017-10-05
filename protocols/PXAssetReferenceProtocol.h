@@ -7,6 +7,6 @@
 
 - (id)asset;
 - (id)assetCollection;
-- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })simpleIndexPath;
+- (struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })simpleIndexPath;
 
 @end

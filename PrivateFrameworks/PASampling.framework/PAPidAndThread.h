@@ -3,6 +3,7 @@
  */
 
 @interface PAPidAndThread : NSObject {
+    unsigned long long  machAbsTime;
     int  pid;
     const char * processName;
     unsigned long long  tid;

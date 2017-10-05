@@ -4,26 +4,26 @@
 
 @interface NamedURLEditingController : URLEditingController {
     PSUIWebRestrictionsController * _URLSaveController;
-    BOOL  _saved;
+    bool  _saved;
 }
 
 @property (nonatomic, retain) PSUIWebRestrictionsController *URLSaveController;
-@property (nonatomic) BOOL saved;
+@property (nonatomic) bool saved;
 
 - (void).cxx_destruct;
 - (id)URLSaveController;
 - (id)controlledURL:(id)arg1;
 - (id)controlledURLTitle:(id)arg1;
 - (void)saveURL;
-- (BOOL)saved;
+- (bool)saved;
 - (void)setControlledURL:(id)arg1 specifier:(id)arg2;
 - (void)setControlledURLTitle:(id)arg1 specifier:(id)arg2;
-- (void)setSaved:(BOOL)arg1;
+- (void)setSaved:(bool)arg1;
 - (void)setURLSaveController:(id)arg1;
 - (id)specifiers;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (void)willResignActive;
 
 @end

@@ -7,7 +7,7 @@
     AVPlayerViewController * _avPlayerViewController;
     id /* block */  _completionHandler;
     ADTVMediaControlsViewController * _mediaControlsViewController;
-    BOOL  _setupInProgress;
+    bool  _setupInProgress;
     ADTVPrerollVideoView * _videoView;
 }
 
@@ -16,17 +16,17 @@
 @property (nonatomic, copy) id /* block */ completionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) ADTVMediaControlsViewController *mediaControlsViewController;
-@property (nonatomic) BOOL setupInProgress;
+@property (nonatomic) bool setupInProgress;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) ADTVPrerollVideoView *videoView;
 
 - (id)_advertisementView;
-- (BOOL)_canBeginPlayback;
-- (void)_handlePlaybackCompletion:(BOOL)arg1;
+- (bool)_canBeginPlayback;
+- (void)_handlePlaybackCompletion:(bool)arg1;
 - (id)adPlayer;
-- (void)adPlayer:(id)arg1 didChangePlaybackState:(unsigned int)arg2;
+- (void)adPlayer:(id)arg1 didChangePlaybackState:(unsigned long long)arg2;
 - (void)adPlayer:(id)arg1 elapsedTime:(double)arg2 totalTime:(double)arg3;
 - (void)adPlayer:(id)arg1 readyForPlaybackWithAVPlayer:(id)arg2 impressionProperties:(id)arg3;
 - (void)adPlayerDidBeginAction:(id)arg1;
@@ -48,9 +48,9 @@
 - (void)setAvPlayerViewController:(id)arg1;
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setMediaControlsViewController:(id)arg1;
-- (void)setSetupInProgress:(BOOL)arg1;
+- (void)setSetupInProgress:(bool)arg1;
 - (void)setVideoView:(id)arg1;
-- (BOOL)setupInProgress;
+- (bool)setupInProgress;
 - (void)shutdown;
 - (id)videoView;
 

@@ -5,6 +5,6 @@
 
 @optional
 
-+ (BOOL)requiresSingleTexturePerStage;
++ (bool)requiresSingleTexturePerStage;
 
 @end

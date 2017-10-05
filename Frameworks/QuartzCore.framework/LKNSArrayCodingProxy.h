@@ -6,6 +6,8 @@
     NSArray * _array;
 }
 
++ (bool)supportsSecureCoding;
+
 - (void)dealloc;
 - (id)decodedObject;
 - (void)encodeWithCoder:(id)arg1;

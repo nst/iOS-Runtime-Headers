@@ -6,7 +6,7 @@
 
 @property NSObject<PFUbiquityBaselineRollResponseOperationDelegate> *delegate;
 
-- (BOOL)canAdoptBaseline:(id)arg1 byReplacingLocalStoreFile:(BOOL*)arg2 withStack:(id)arg3 withError:(id*)arg4;
+- (bool)canAdoptBaseline:(id)arg1 byReplacingLocalStoreFile:(bool*)arg2 withStack:(id)arg3 withError:(id*)arg4;
 - (id)delegate;
 - (void)main;
 - (id)retainedDelegate;

@@ -7,14 +7,14 @@
     NSData * _dataPendingWrite;
     NSFileHandle * _fileHandleForReading;
     NSFileHandle * _fileHandleForWriting;
-    BOOL  _hasBufferedData;
+    bool  _hasBufferedData;
     NSPipe * _inputPipe;
     NSPipe * _outputPipe;
     NSObject<OS_dispatch_queue> * _queue;
     NSFileHandle * _readBufferFileHandle;
     NSObject<OS_dispatch_source> * _readSource;
-    BOOL  _readSourceClosed;
-    BOOL  _readyForData;
+    bool  _readSourceClosed;
+    bool  _readyForData;
     NSFileHandle * _writeBufferFileHandle;
     NSObject<OS_dispatch_source> * _writeSource;
 }
@@ -26,8 +26,8 @@
 
 - (void).cxx_destruct;
 - (void)_createBufferFiles;
-- (void)_inputReadyForReading:(unsigned int)arg1;
-- (void)_outputReadyForWriting:(unsigned int)arg1;
+- (void)_inputReadyForReading:(unsigned long long)arg1;
+- (void)_outputReadyForWriting:(unsigned long long)arg1;
 - (void)_writeBufferedData;
 - (id)fileHandleForReading;
 - (id)fileHandleForWriting;

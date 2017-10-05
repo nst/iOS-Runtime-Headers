@@ -4,26 +4,26 @@
 
 @interface myDeli : NSObject <NSURLSessionDelegate> {
     NSError * _errorResult;
-    BOOL  _hasCanceled;
-    BOOL  _receivedResponse;
+    bool  _hasCanceled;
+    bool  _receivedResponse;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property BOOL hasCanceled;
-@property (readonly) unsigned int hash;
-@property BOOL receivedResponse;
+@property bool hasCanceled;
+@property (readonly) unsigned long long hash;
+@property bool receivedResponse;
 @property (retain) NSError *someError;
 @property (readonly) Class superclass;
 
 - (void)URLSession:(id)arg1 downloadTask:(id)arg2 didWriteData:(long long)arg3 totalBytesWritten:(long long)arg4 totalBytesExpectedToWrite:(long long)arg5;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)dealloc;
-- (BOOL)hasCanceled;
+- (bool)hasCanceled;
 - (id)init;
-- (BOOL)receivedResponse;
-- (void)setHasCanceled:(BOOL)arg1;
-- (void)setReceivedResponse:(BOOL)arg1;
+- (bool)receivedResponse;
+- (void)setHasCanceled:(bool)arg1;
+- (void)setReceivedResponse:(bool)arg1;
 - (void)setSomeError:(id)arg1;
 - (id)someError;
 

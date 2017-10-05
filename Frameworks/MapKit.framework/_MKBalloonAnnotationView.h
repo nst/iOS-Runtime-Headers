@@ -9,7 +9,7 @@
     _MKBalloonCalloutView * _calloutView;
     UIImage * _largeImage;
     UIImageView * _smallImageView;
-    int  _style;
+    long long  _style;
 }
 
 @property (nonatomic, copy) UIColor *balloonStrokeColor;
@@ -19,21 +19,21 @@
 @property (nonatomic, copy) UIImage *smallImage;
 
 - (void).cxx_destruct;
-- (id)_baseTransitionAnimation:(BOOL)arg1;
+- (id)_baseTransitionAnimation:(bool)arg1;
 - (void)_updateBaseImage;
 - (id)balloonStrokeColor;
 - (id)balloonTintColor;
 - (id)contentView;
 - (void)didMoveToWindow;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
-- (id)initWithAnnotation:(id)arg1 style:(int)arg2 reuseIdentifier:(id)arg3;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (id)initWithAnnotation:(id)arg1 style:(long long)arg2 reuseIdentifier:(id)arg3;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (id)largeImage;
 - (void)setBalloonStrokeColor:(id)arg1;
 - (void)setBalloonTintColor:(id)arg1;
 - (void)setContentView:(id)arg1;
 - (void)setLargeImage:(id)arg1;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setSelected:(bool)arg1 animated:(bool)arg2;
 - (void)setSmallImage:(id)arg1;
 - (id)smallImage;
 

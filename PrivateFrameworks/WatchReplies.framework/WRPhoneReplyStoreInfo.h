@@ -4,6 +4,6 @@
 
 @interface WRPhoneReplyStoreInfo : WRReplyStoreInfo
 
-- (unsigned int)defaultCount;
+- (unsigned long long)defaultCount;
 
 @end

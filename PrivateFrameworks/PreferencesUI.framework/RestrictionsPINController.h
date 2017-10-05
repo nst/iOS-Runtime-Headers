@@ -11,15 +11,15 @@
 - (struct __CFString { }*)defaultsID;
 - (void)delegateUpdateToggleState;
 - (struct __CFString { }*)failedAttemptsKey;
-- (BOOL)isNumericPIN;
+- (bool)isNumericPIN;
 - (void)performActionAfterPINRemove;
 - (void)performActionAfterPINSet;
 - (id)pinInstructionsPromptFont;
-- (BOOL)pinIsAcceptable:(id)arg1 outError:(id*)arg2;
+- (bool)pinIsAcceptable:(id)arg1 outError:(id*)arg2;
 - (int)pinLength;
 - (void)setPIN:(id)arg1;
-- (BOOL)simplePIN;
+- (bool)simplePIN;
 - (id)stringsTable;
-- (BOOL)validatePIN:(id)arg1;
+- (bool)validatePIN:(id)arg1;
 
 @end

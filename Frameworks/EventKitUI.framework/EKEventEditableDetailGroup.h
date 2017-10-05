@@ -4,6 +4,6 @@
 
 @interface EKEventEditableDetailGroup : EKEventDetailGroup
 
-- (id)itemAtIndex:(unsigned int)arg1;
+- (id)itemAtIndex:(unsigned long long)arg1;
 
 @end

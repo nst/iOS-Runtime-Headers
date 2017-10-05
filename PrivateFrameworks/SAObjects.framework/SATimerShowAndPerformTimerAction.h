@@ -11,7 +11,7 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setTimerAction:(id)arg1;
 - (id)timerAction;
 

@@ -14,10 +14,10 @@
 
 - (void).cxx_destruct;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithValue:(id)arg1;
 - (id)initWithValue:(id)arg1 timestamp:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeWith:(id)arg1;
 - (void)setTimestamp:(id)arg1;
 - (void)setValue:(id)arg1;

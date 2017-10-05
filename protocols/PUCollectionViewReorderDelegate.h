@@ -9,7 +9,7 @@
 
 @optional
 
-- (BOOL)collectionView:(PUCollectionView *)arg1 canReorderItemAtIndexPath:(NSIndexPath *)arg2;
+- (bool)collectionView:(PUCollectionView *)arg1 canReorderItemAtIndexPath:(NSIndexPath *)arg2;
 - (NSIndexPath *)collectionView:(PUCollectionView *)arg1 targetIndexPathForMoveFromIndexPath:(NSIndexPath *)arg2 toProposedIndexPath:(NSIndexPath *)arg3;
 
 @end

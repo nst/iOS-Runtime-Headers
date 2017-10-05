@@ -6,6 +6,6 @@
 
 + (void)_registerDefaultStyles;
 + (void)initialize;
-+ (void)registerStyle:(id)arg1 withType:(int)arg2 inherited:(BOOL)arg3;
++ (void)registerStyle:(id)arg1 withType:(long long)arg2 inherited:(bool)arg3;
 
 @end

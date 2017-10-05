@@ -18,7 +18,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)identifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setAlCityId:(id)arg1;
 - (void)setCountryCode:(id)arg1;
 - (void)setIdentifier:(id)arg1;

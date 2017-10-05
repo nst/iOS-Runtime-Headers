@@ -15,14 +15,14 @@
 @property (nonatomic, retain) NSMutableArray *notificationIDsMarkedRead;
 
 - (void).cxx_destruct;
-- (BOOL)CKOperationShouldRun:(id*)arg1;
+- (bool)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id)activityCreate;
 - (id)errorsByNotificationID;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
-- (BOOL)hasCKOperationCallbacksSet;
+- (bool)hasCKOperationCallbacksSet;
 - (id)init;
 - (id)initWithNotificationIDsToMarkRead:(id)arg1;
 - (id /* block */)markNotificationsReadCompletionBlock;

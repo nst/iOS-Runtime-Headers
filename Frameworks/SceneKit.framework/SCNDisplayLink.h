@@ -3,39 +3,38 @@
  */
 
 @interface SCNDisplayLink : NSObject {
-    BOOL  _asynchronous;
+    id /* block */  _adaptativeFrameDuration;
     id /* block */  _block;
     CADisplayLink * _caDisplayLink;
-    BOOL  _invalidated;
+    bool  _invalidated;
     double  _lastFrameTime;
-    id  _owner;
-    BOOL  _paused;
+    bool  _paused;
     float  _preferredFrameRate;
     NSObject<OS_dispatch_queue> * _queue;
     int  _queuedFrameCount;
-    BOOL  _supportTargetTimestamp;
+    bool  _supportTargetTimestamp;
 }
 
-@property (getter=isPaused, nonatomic) BOOL paused;
+@property (nonatomic, copy) id /* block */ adaptativeFrameRate;
+@property (getter=isPaused, nonatomic) bool paused;
 @property (nonatomic) float preferredFrameRate;
 
 - (void)_caDisplayLinkCallback;
 - (void)_callbackWithTime:(double)arg1;
-- (BOOL)_isInvalidated;
-- (void)_pause;
-- (void)_resume;
-- (void)_teardown;
+- (void)_cleanup;
+- (bool)_isInvalidated;
+- (id /* block */)adaptativeFrameRate;
 - (void)dealloc;
 - (id)init;
-- (id)initWithOwner:(id)arg1 queue:(id)arg2 block:(id /* block */)arg3;
+- (id)initWithQueue:(id)arg1 block:(id /* block */)arg2;
 - (void)invalidate;
-- (BOOL)isPaused;
+- (bool)isPaused;
 - (float)preferredFrameRate;
 - (int)queuedFrameCount;
+- (void)setAdaptativeFrameRate:(id /* block */)arg1;
 - (void)setNeedsDisplay;
-- (void)setPaused:(BOOL)arg1;
-- (BOOL)setPaused:(BOOL)arg1 nextFrameTimeHint:(double)arg2 lastUpdate:(double)arg3;
+- (void)setPaused:(bool)arg1;
+- (bool)setPaused:(bool)arg1 nextFrameTimeHint:(double)arg2 lastUpdate:(double)arg3;
 - (void)setPreferredFrameRate:(float)arg1;
-- (void)willDie;
 
 @end

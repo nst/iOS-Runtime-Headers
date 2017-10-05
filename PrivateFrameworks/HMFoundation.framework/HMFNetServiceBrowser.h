@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
  */
 
-@interface HMFNetServiceBrowser : NSObject <NSNetServiceBrowserDelegate> {
+@interface HMFNetServiceBrowser : HMFObject <NSNetServiceBrowserDelegate> {
     id /* block */  _browseBlock;
-    BOOL  _browsing;
+    bool  _browsing;
     NSHashTable * _cachedNetServices;
     NSObject<OS_dispatch_queue> * _clientQueue;
     <HMFNetServiceBrowserDelegate> * _delegate;
@@ -13,11 +13,11 @@
     NSNetServiceBrowser * _internal;
     NSObject<OS_dispatch_queue> * _propertyQueue;
     NSString * _serviceType;
-    BOOL  _shouldCache;
+    bool  _shouldCache;
 }
 
 @property (nonatomic, copy) id /* block */ browseBlock;
-@property (getter=isBrowsing, nonatomic) BOOL browsing;
+@property (getter=isBrowsing, nonatomic) bool browsing;
 @property (nonatomic, readonly, copy) NSArray *cachedNetServices;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 @property (readonly, copy) NSString *debugDescription;
@@ -25,11 +25,11 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *domain;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSNetServiceBrowser *internal;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (nonatomic, readonly, copy) NSString *serviceType;
-@property (nonatomic) BOOL shouldCache;
+@property (nonatomic) bool shouldCache;
 @property (readonly) Class superclass;
 
 + (id)shortDescription;
@@ -45,16 +45,16 @@
 - (id)delegate;
 - (id)delegateQueue;
 - (id)description;
-- (id)descriptionWithPointer:(BOOL)arg1;
+- (id)descriptionWithPointer:(bool)arg1;
 - (id)domain;
 - (id)init;
 - (id)initWithDomain:(id)arg1 serviceType:(id)arg2;
 - (id)internal;
-- (BOOL)isBrowsing;
-- (void)netServiceBrowser:(id)arg1 didFindService:(id)arg2 moreComing:(BOOL)arg3;
+- (bool)isBrowsing;
+- (void)netServiceBrowser:(id)arg1 didFindService:(id)arg2 moreComing:(bool)arg3;
 - (void)netServiceBrowser:(id)arg1 didNotSearch:(id)arg2;
-- (void)netServiceBrowser:(id)arg1 didRemoveDomain:(id)arg2 moreComing:(BOOL)arg3;
-- (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(BOOL)arg3;
+- (void)netServiceBrowser:(id)arg1 didRemoveDomain:(id)arg2 moreComing:(bool)arg3;
+- (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(bool)arg3;
 - (void)netServiceBrowserDidStopSearch:(id)arg1;
 - (void)netServiceBrowserWillSearch:(id)arg1;
 - (void)notifyDelegateBrowserStoppedWithError:(id)arg1;
@@ -64,11 +64,11 @@
 - (void)removeNetServiceFromCache:(id)arg1;
 - (id)serviceType;
 - (void)setBrowseBlock:(id /* block */)arg1;
-- (void)setBrowsing:(BOOL)arg1;
+- (void)setBrowsing:(bool)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setShouldCache:(BOOL)arg1;
+- (void)setShouldCache:(bool)arg1;
 - (id)shortDescription;
-- (BOOL)shouldCache;
+- (bool)shouldCache;
 - (void)startBrowsingWithCompletionHandler:(id /* block */)arg1;
 - (void)stopBrowsing;
 

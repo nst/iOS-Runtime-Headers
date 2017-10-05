@@ -3,53 +3,44 @@
  */
 
 @interface TURepeatingActor : NSObject {
-    id /* block */  _action;
     id /* block */  _attemptNextIterationBlock;
-    id /* block */  _completionBlock;
-    BOOL  _currentlyPerformingAction;
-    unsigned int  _iterationsRemaining;
-    double  _pauseDuration;
+    TURepeatingAction * _currentRepeatingAction;
+    bool  _currentlyPerformingAction;
+    TURepeatingAction * _pendingRepeatingAction;
     NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _running;
-    BOOL  _stopped;
+    bool  _stopped;
 }
 
-@property (nonatomic, copy) id /* block */ action;
-@property (nonatomic) id /* block */ attemptNextIterationBlock;
-@property (nonatomic, copy) id /* block */ completionBlock;
-@property (getter=isCurrentlyPerformingAction, nonatomic) BOOL currentlyPerformingAction;
-@property (nonatomic) unsigned int iterationsRemaining;
-@property (nonatomic) double pauseDuration;
+@property (nonatomic, copy) id /* block */ attemptNextIterationBlock;
+@property (nonatomic, retain) TURepeatingAction *currentRepeatingAction;
+@property (getter=isCurrentlyPerformingAction, nonatomic) bool currentlyPerformingAction;
+@property (nonatomic, retain) TURepeatingAction *pendingRepeatingAction;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
-@property (getter=isRunning, nonatomic) BOOL running;
-@property (getter=isStopped, nonatomic) BOOL stopped;
+@property (getter=isRunning, nonatomic, readonly) bool running;
+@property (getter=isStopped, nonatomic) bool stopped;
 
 - (void).cxx_destruct;
 - (void)_attemptNextIteration;
-- (void)_completeWithDidFinish:(BOOL)arg1;
-- (BOOL)_hasIterationsRemaining;
-- (void)_stopWithDidFinish:(BOOL)arg1;
-- (id /* block */)action;
+- (void)_beginRepeatingAction:(id)arg1;
+- (void)_completeWithDidFinish:(bool)arg1;
+- (bool)_hasIterationsRemaining;
+- (void)_stopWithDidFinish:(bool)arg1;
 - (id /* block */)attemptNextIterationBlock;
-- (void)beginRepeatingAction:(id /* block */)arg1 iterations:(unsigned int)arg2 completion:(id /* block */)arg3;
-- (void)beginRepeatingAction:(id /* block */)arg1 iterations:(unsigned int)arg2 pauseDurationBetweenIterations:(double)arg3 completion:(id /* block */)arg4;
-- (id /* block */)completionBlock;
+- (void)beginRepeatingAction:(id /* block */)arg1 iterations:(unsigned long long)arg2 completion:(id /* block */)arg3;
+- (void)beginRepeatingAction:(id /* block */)arg1 iterations:(unsigned long long)arg2 pauseDurationBetweenIterations:(double)arg3 completion:(id /* block */)arg4;
+- (id)currentRepeatingAction;
 - (id)init;
-- (BOOL)isCurrentlyPerformingAction;
-- (BOOL)isRunning;
-- (BOOL)isStopped;
-- (unsigned int)iterationsRemaining;
-- (double)pauseDuration;
+- (bool)isCurrentlyPerformingAction;
+- (bool)isRunning;
+- (bool)isStopped;
+- (id)pendingRepeatingAction;
 - (id)queue;
-- (void)setAction:(id /* block */)arg1;
 - (void)setAttemptNextIterationBlock:(id /* block */)arg1;
-- (void)setCompletionBlock:(id /* block */)arg1;
-- (void)setCurrentlyPerformingAction:(BOOL)arg1;
-- (void)setIterationsRemaining:(unsigned int)arg1;
-- (void)setPauseDuration:(double)arg1;
+- (void)setCurrentRepeatingAction:(id)arg1;
+- (void)setCurrentlyPerformingAction:(bool)arg1;
+- (void)setPendingRepeatingAction:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (void)setRunning:(BOOL)arg1;
-- (void)setStopped:(BOOL)arg1;
+- (void)setStopped:(bool)arg1;
 - (void)stop;
 
 @end

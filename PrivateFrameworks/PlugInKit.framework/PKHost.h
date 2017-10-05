@@ -28,20 +28,22 @@
 - (id)activePlugIns;
 - (void)cancelPlugInDiscovery:(id)arg1;
 - (id)client;
-- (id)continuouslyDiscoverPlugInsForAttributes:(id)arg1 flags:(unsigned int)arg2 found:(id /* block */)arg3;
+- (id)continuouslyDiscoverPlugInsForAttributes:(id)arg1 flags:(unsigned long long)arg2 found:(id /* block */)arg3;
 - (void)deactivatePlugIn:(id)arg1;
-- (void)discoverPlugInsForAttributes:(id)arg1 flags:(unsigned int)arg2 found:(id /* block */)arg3;
+- (void)discoverPlugInsForAttributes:(id)arg1 flags:(unsigned long long)arg2 found:(id /* block */)arg3;
 - (id)discoveryMap;
+- (void)findPlugInByPathURL:(id)arg1 reply:(id /* block */)arg2;
+- (void)findPlugInByUUID:(id)arg1 reply:(id /* block */)arg2;
 - (id)hostInfoPlist;
 - (id)hostQueue;
 - (id)init;
 - (void)readyPlugIns:(id)arg1 environment:(id)arg2 ready:(id /* block */)arg3;
-- (id)rewriteDiscoveryAttributes:(id)arg1 flags:(unsigned int)arg2;
+- (id)rewriteDiscoveryAttributes:(id)arg1 flags:(unsigned long long)arg2;
 - (void)setActiveOneShots:(id)arg1;
 - (void)setActivePlugIns:(id)arg1;
 - (void)setClient:(id)arg1;
 - (void)setDiscoveryMap:(id)arg1;
-- (void)setElection:(int)arg1 forPlugIn:(id)arg2;
+- (void)setElection:(long long)arg1 forPlugIn:(id)arg2;
 - (void)setExtensionState:(id)arg1 forPlugIn:(id)arg2;
 - (void)setHostQueue:(id)arg1;
 

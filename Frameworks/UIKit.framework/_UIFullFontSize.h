@@ -3,19 +3,19 @@
  */
 
 @interface _UIFullFontSize : NSObject {
-    BOOL  _isDefault;
-    BOOL  _needsEvaluation;
-    float  _value;
+    bool  _isDefault;
+    bool  _needsEvaluation;
+    double  _value;
 }
 
 + (id)defaultValue;
-+ (id)valued:(float)arg1;
++ (id)valued:(double)arg1;
 
-- (id)initWithValue:(float)arg1 isDefault:(BOOL)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)needsEvaluation;
-- (id)overrideUnlessDefault:(float)arg1;
-- (BOOL)setNeedsEvaluation;
-- (float)valueWithEvaluationIfNeeded:(id /* block */)arg1;
+- (id)initWithValue:(double)arg1 isDefault:(bool)arg2;
+- (bool)isEqual:(id)arg1;
+- (bool)needsEvaluation;
+- (id)overrideUnlessDefault:(double)arg1;
+- (bool)setNeedsEvaluation;
+- (double)valueWithEvaluationIfNeeded:(id /* block */)arg1;
 
 @end

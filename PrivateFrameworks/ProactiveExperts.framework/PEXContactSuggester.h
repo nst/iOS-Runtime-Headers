@@ -15,6 +15,7 @@
 @property (nonatomic, retain) NSMutableDictionary *searchMap;
 
 - (void).cxx_destruct;
+- (id)bestContactsWithLimit:(unsigned long long)arg1;
 - (void)clearCaches;
 - (id)contactStore;
 - (id)init;

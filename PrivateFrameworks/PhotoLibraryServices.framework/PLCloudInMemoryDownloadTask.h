@@ -3,13 +3,13 @@
  */
 
 @interface PLCloudInMemoryDownloadTask : NSObject {
-    BOOL  _completed;
+    bool  _completed;
     NSString * _resourceID;
     NSMapTable * _taskIDsToCompletionHandlers;
     CPLResourceTransferTask * _transferTask;
 }
 
-@property (getter=isCompleted, nonatomic, readonly) BOOL completed;
+@property (getter=isCompleted, nonatomic, readonly) bool completed;
 @property (nonatomic, readonly, copy) NSString *resourceID;
 @property (nonatomic, readonly) NSArray *taskIDs;
 @property (nonatomic, retain) CPLResourceTransferTask *transferTask;
@@ -18,7 +18,7 @@
 - (void)cancelClientWithTaskID:(id)arg1;
 - (void)dealloc;
 - (id)initWithResourceID:(id)arg1 taskID:(id)arg2 completionHandler:(id /* block */)arg3;
-- (BOOL)isCompleted;
+- (bool)isCompleted;
 - (void)reportCompletionWithData:(id)arg1 error:(id)arg2;
 - (id)resourceID;
 - (void)setTransferTask:(id)arg1;

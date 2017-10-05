@@ -5,14 +5,14 @@
 
 @required
 
-- (int)displayFrequency;
+- (long long)displayFrequency;
 - (NSDate *)firstTimeInFrequency;
 - (double)frequencyForSorting;
-- (int)frequencyType;
-- (BOOL)isEstimate;
-- (BOOL)isValidAtDate:(NSDate *)arg1;
+- (long long)frequencyType;
+- (bool)isEstimate;
+- (bool)isValidAtDate:(NSDate *)arg1;
 - (NSDate *)lastTimeInFrequency;
-- (int)maxFrequency;
-- (int)minFrequency;
+- (long long)maxFrequency;
+- (long long)minFrequency;
 
 @end

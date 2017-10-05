@@ -4,36 +4,36 @@
 
 @interface SiriUIChevronButton : UIButton {
     UIImageView * _chevronImageView;
-    float  _chevronRightInset;
-    BOOL  _hasChevron;
+    double  _chevronRightInset;
+    bool  _hasChevron;
     SiriUIKeyline * _keyline;
-    int  _keylineType;
-    float  _leftSubviewInset;
-    float  _rightSubviewInset;
+    long long  _keylineType;
+    double  _leftSubviewInset;
+    double  _rightSubviewInset;
     UIView * _subview;
 }
 
-@property (nonatomic) float chevronRightInset;
-@property (nonatomic) BOOL hasChevron;
-@property (nonatomic) int keylineType;
-@property (nonatomic) float leftSubviewInset;
-@property (nonatomic) float rightSubviewInset;
+@property (nonatomic) double chevronRightInset;
+@property (nonatomic) bool hasChevron;
+@property (nonatomic) long long keylineType;
+@property (nonatomic) double leftSubviewInset;
+@property (nonatomic) double rightSubviewInset;
 @property (nonatomic, retain) UIView *subview;
 
 - (void).cxx_destruct;
-- (float)chevronRightInset;
-- (BOOL)hasChevron;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)keylineType;
+- (double)chevronRightInset;
+- (bool)hasChevron;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (long long)keylineType;
 - (void)layoutSubviews;
-- (float)leftSubviewInset;
-- (float)rightSubviewInset;
-- (void)setChevronRightInset:(float)arg1;
-- (void)setHasChevron:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setKeylineType:(int)arg1;
-- (void)setLeftSubviewInset:(float)arg1;
-- (void)setRightSubviewInset:(float)arg1;
+- (double)leftSubviewInset;
+- (double)rightSubviewInset;
+- (void)setChevronRightInset:(double)arg1;
+- (void)setHasChevron:(bool)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setKeylineType:(long long)arg1;
+- (void)setLeftSubviewInset:(double)arg1;
+- (void)setRightSubviewInset:(double)arg1;
 - (void)setSubview:(id)arg1;
 - (id)subview;
 

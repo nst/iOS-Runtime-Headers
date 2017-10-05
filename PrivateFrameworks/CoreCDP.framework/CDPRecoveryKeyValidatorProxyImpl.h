@@ -8,12 +8,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)confirmRecoveryKey:(id)arg1 completion:(id /* block */)arg2;
-- (BOOL)confirmRecoveryKey:(id)arg1 error:(id*)arg2;
+- (bool)confirmRecoveryKey:(id)arg1 error:(id*)arg2;
 - (void)generateRecoveryKey:(id /* block */)arg1;
 - (id)generateRecoveryKeyWithError:(id*)arg1;
 - (id)initWithRemoteObject:(id)arg1;

@@ -14,11 +14,10 @@
 - (void)didBeginSlideToDismissTransition;
 - (void)doneButtonTapped:(id)arg1;
 - (id)fullScreenController;
-- (void)hidePlaybackControls;
 - (id)initWithPlayerLayerView:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)prepareForDisplayWithCompletionHandler:(id /* block */)arg1;
 - (void)setFullScreenController:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

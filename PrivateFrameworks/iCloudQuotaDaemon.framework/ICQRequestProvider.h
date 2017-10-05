@@ -7,7 +7,7 @@
 }
 
 + (void)addEntriesToPostDictionary:(id)arg1 forStub:(id)arg2;
-+ (BOOL)attemptSetRequest:(id)arg1 toPostWithJSONDict:(id)arg2;
++ (bool)attemptSetRequest:(id)arg1 toPostWithJSONDict:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)addCommonHeadersToRequest:(id)arg1;

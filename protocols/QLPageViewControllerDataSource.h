@@ -5,6 +5,6 @@
 
 @required
 
-- (UIViewController *)pageViewController:(QLPageViewController *)arg1 viewControllerAtIndex:(unsigned int)arg2;
+- (UIViewController *)pageViewController:(QLPageViewController *)arg1 viewControllerAtIndex:(unsigned long long)arg2;
 
 @end

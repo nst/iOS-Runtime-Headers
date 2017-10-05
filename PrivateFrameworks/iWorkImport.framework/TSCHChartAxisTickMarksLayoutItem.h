@@ -7,13 +7,13 @@
 @property (nonatomic, readonly) float majorTickmarkLength;
 @property (nonatomic, readonly) float minorTickmarkLength;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calcDrawingRect;
-- (struct CGSize { float x1; float x2; })calcMinSize;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })calcDrawingRect;
+- (struct CGSize { double x1; double x2; })calcMinSize;
 - (id)initWithParent:(id)arg1;
 - (int)location;
 - (float)majorTickmarkLength;
 - (float)minorTickmarkLength;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_effectiveRootedLayoutRect;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformForRenderingOutElementSize:(struct CGSize { float x1; float x2; }*)arg1 outClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })p_effectiveRootedLayoutRect;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transformForRenderingOutElementSize:(struct CGSize { double x1; double x2; }*)arg1 outClipRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2;
 
 @end

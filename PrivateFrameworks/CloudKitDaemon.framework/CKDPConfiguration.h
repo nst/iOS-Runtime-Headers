@@ -15,8 +15,8 @@
 @property (nonatomic) unsigned long long created;
 @property (nonatomic) unsigned long long expires;
 @property (nonatomic, retain) NSMutableArray *fields;
-@property (nonatomic) BOOL hasCreated;
-@property (nonatomic) BOOL hasExpires;
+@property (nonatomic) bool hasCreated;
+@property (nonatomic) bool hasExpires;
 
 + (Class)fieldsType;
 
@@ -30,19 +30,19 @@
 - (id)dictionaryRepresentation;
 - (unsigned long long)expires;
 - (id)fields;
-- (id)fieldsAtIndex:(unsigned int)arg1;
-- (unsigned int)fieldsCount;
-- (BOOL)hasCreated;
-- (BOOL)hasExpires;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (id)fieldsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)fieldsCount;
+- (bool)hasCreated;
+- (bool)hasExpires;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCreated:(unsigned long long)arg1;
 - (void)setExpires:(unsigned long long)arg1;
 - (void)setFields:(id)arg1;
-- (void)setHasCreated:(BOOL)arg1;
-- (void)setHasExpires:(BOOL)arg1;
+- (void)setHasCreated:(bool)arg1;
+- (void)setHasExpires:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

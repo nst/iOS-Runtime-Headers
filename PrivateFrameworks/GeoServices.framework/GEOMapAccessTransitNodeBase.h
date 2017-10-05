@@ -20,7 +20,7 @@
         struct __shared_weak_count {} *__cntrl_; 
     }  _node;
     struct { double x1; double x2; } * _polygonPoints;
-    int  _polygonPointsCount;
+    long long  _polygonPointsCount;
 }
 
 @property (nonatomic, readonly) double boundingRadius;
@@ -28,10 +28,10 @@
 @property (nonatomic, readonly) struct { double x1; double x2; } coordinate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *internalName;
 @property (nonatomic, readonly) struct { double x1; double x2; }*polygonPoints;
-@property (nonatomic, readonly) int polygonPointsCount;
+@property (nonatomic, readonly) long long polygonPointsCount;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned long long transitID;
 
@@ -48,7 +48,7 @@
 - (id)initWithMap:(id)arg1 node:(struct shared_ptr<geo::MapNodeTransit> { struct MapNodeTransit {} *x1; struct __shared_weak_count {} *x2; })arg2;
 - (id)internalName;
 - (struct { double x1; double x2; }*)polygonPoints;
-- (int)polygonPointsCount;
+- (long long)polygonPointsCount;
 - (unsigned long long)transitID;
 
 @end

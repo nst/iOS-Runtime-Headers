@@ -7,24 +7,24 @@
     NSData * _requestIdentifier;
     struct { 
         long long *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _typesToReads;
     struct { 
         long long *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _typesToWrites;
 }
 
 @property (nonatomic, retain) NSString *appBundleIdentifier;
-@property (nonatomic, readonly) BOOL hasAppBundleIdentifier;
-@property (nonatomic, readonly) BOOL hasRequestIdentifier;
+@property (nonatomic, readonly) bool hasAppBundleIdentifier;
+@property (nonatomic, readonly) bool hasRequestIdentifier;
 @property (nonatomic, retain) NSData *requestIdentifier;
 @property (nonatomic, readonly) long long*typesToReads;
-@property (nonatomic, readonly) unsigned int typesToReadsCount;
+@property (nonatomic, readonly) unsigned long long typesToReadsCount;
 @property (nonatomic, readonly) long long*typesToWrites;
-@property (nonatomic, readonly) unsigned int typesToWritesCount;
+@property (nonatomic, readonly) unsigned long long typesToWritesCount;
 
 - (void).cxx_destruct;
 - (void)addTypesToRead:(long long)arg1;
@@ -37,23 +37,23 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAppBundleIdentifier;
-- (BOOL)hasRequestIdentifier;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAppBundleIdentifier;
+- (bool)hasRequestIdentifier;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)requestIdentifier;
 - (void)setAppBundleIdentifier:(id)arg1;
 - (void)setRequestIdentifier:(id)arg1;
-- (void)setTypesToReads:(long long*)arg1 count:(unsigned int)arg2;
-- (void)setTypesToWrites:(long long*)arg1 count:(unsigned int)arg2;
-- (long long)typesToReadAtIndex:(unsigned int)arg1;
+- (void)setTypesToReads:(long long*)arg1 count:(unsigned long long)arg2;
+- (void)setTypesToWrites:(long long*)arg1 count:(unsigned long long)arg2;
+- (long long)typesToReadAtIndex:(unsigned long long)arg1;
 - (long long*)typesToReads;
-- (unsigned int)typesToReadsCount;
-- (long long)typesToWriteAtIndex:(unsigned int)arg1;
+- (unsigned long long)typesToReadsCount;
+- (long long)typesToWriteAtIndex:(unsigned long long)arg1;
 - (long long*)typesToWrites;
-- (unsigned int)typesToWritesCount;
+- (unsigned long long)typesToWritesCount;
 - (void)writeTo:(id)arg1;
 
 @end

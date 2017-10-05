@@ -11,15 +11,15 @@
 @property (nonatomic, readonly) NSDictionary *entitlements;
 @property (nonatomic, readonly) NSString *entitlementsRelativePath;
 @property (nonatomic, readonly) NSArray *groups;
-@property (nonatomic, readonly) BOOL isAppUpdating;
-@property (nonatomic, readonly) BOOL isPlaceholder;
-@property (nonatomic, readonly) BOOL isSystemApp;
+@property (nonatomic, readonly) bool isAppUpdating;
+@property (nonatomic, readonly) bool isPlaceholder;
+@property (nonatomic, readonly) bool isSystemApp;
 @property (nonatomic, readonly) NSArray *plugins;
 
 + (id)appWithBundleID:(id)arg1;
 + (id)appWithPropertyList:(id)arg1;
 + (id)safeHarborWithPath:(id)arg1;
-+ (BOOL)unzipPlaceholderDomainZipFile:(id)arg1 atDirectory:(id)arg2;
++ (bool)unzipPlaceholderDomainZipFile:(id)arg1 atDirectory:(id)arg2;
 
 - (id)_placeholderRelativePathsToBackupAndRestoreWithCache:(id)arg1;
 - (id)_resourceRelativePathsToBackupAndRestoreForRootDir:(id)arg1 relativePath:(id)arg2;
@@ -31,9 +31,9 @@
 - (id)entitlements;
 - (id)entitlementsRelativePath;
 - (id)groups;
-- (BOOL)isAppUpdating;
-- (BOOL)isPlaceholder;
-- (BOOL)isSystemApp;
+- (bool)isAppUpdating;
+- (bool)isPlaceholder;
+- (bool)isSystemApp;
 - (id)placeholderDomainWithCache:(id)arg1;
 - (id)placeholderDomainZipWithCache:(id)arg1;
 - (id)plugins;

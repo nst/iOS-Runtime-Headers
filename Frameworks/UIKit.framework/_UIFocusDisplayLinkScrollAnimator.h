@@ -2,40 +2,39 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIFocusDisplayLinkScrollAnimator : NSObject <_UIFocusScrollAnimator> {
-    float  _defaultConvergenceRate;
+@interface _UIFocusDisplayLinkScrollAnimator : NSObject {
+    double  _defaultConvergenceRate;
     CADisplayLink * _displayLink;
+    double  _lastTimerFireDate;
     UIScreen * _screen;
     NSMapTable * _scrollViews;
     _UIFocusEngineScrollViewOffsets * _singleScrollViewEntry;
+    NSTimer * _timer;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) float defaultConvergenceRate;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL requiresExtendingScrollViewVisibleBounds;
-@property (readonly) Class superclass;
+@property (nonatomic) double defaultConvergenceRate;
 
 - (void).cxx_destruct;
-- (struct CGPoint { float x1; float x2; })_applyAccelerationLimitToAcceleration:(struct CGPoint { float x1; float x2; })arg1 currentOffset:(struct CGPoint { float x1; float x2; })arg2 targetOffset:(struct CGPoint { float x1; float x2; })arg3;
-- (id)_entryForScrollView:(id)arg1 createIfNeeded:(BOOL)arg2;
-- (void)_heartbeat:(id)arg1;
-- (void)_processEntry:(id)arg1 timeDelta:(int)arg2 completed:(id)arg3;
-- (BOOL)_shouldPushAndPopRunLoopModes;
-- (void)_updateDisplayLinkConfiguration;
-- (void)cancelPeekAdjustmentForScrollView:(id)arg1 performRollback:(BOOL)arg2;
+- (struct CGPoint { double x1; double x2; })_applyAccelerationLimitToAcceleration:(struct CGPoint { double x1; double x2; })arg1 currentOffset:(struct CGPoint { double x1; double x2; })arg2 targetOffset:(struct CGPoint { double x1; double x2; })arg3;
+- (bool)_canCreateDisplayLink;
+- (void)_commonHeartbeat:(double)arg1;
+- (void)_displayLinkHeartbeat:(id)arg1;
+- (id)_entryForScrollView:(id)arg1 createIfNeeded:(bool)arg2;
+- (void)_processEntry:(id)arg1 timeDelta:(long long)arg2 completed:(id)arg3;
+- (bool)_shouldPushAndPopRunLoopModes;
+- (void)_switchToTimerScrolling;
+- (void)_timerHeartbeat:(id)arg1;
+- (void)_updateHeartbeatConfiguration;
 - (void)cancelScrollingForScrollView:(id)arg1;
-- (struct CGPoint { float x1; float x2; })currentVelocityForScrollView:(id)arg1;
+- (struct CGPoint { double x1; double x2; })currentVelocityForScrollView:(id)arg1;
 - (void)dealloc;
-- (float)defaultConvergenceRate;
+- (double)defaultConvergenceRate;
 - (id)initWithScreen:(id)arg1;
-- (BOOL)isAnimatingScrollView:(id)arg1;
-- (BOOL)requiresExtendingScrollViewVisibleBounds;
-- (void)setDefaultConvergenceRate:(float)arg1;
-- (void)setPeekOffsetAdjustment:(struct CGPoint { float x1; float x2; })arg1 forScrollView:(id)arg2;
-- (void)setTargetContentOffset:(struct CGPoint { float x1; float x2; })arg1 forScrollView:(id)arg2 convergenceRate:(float)arg3 completion:(id /* block */)arg4;
-- (struct CGPoint { float x1; float x2; })targetContentOffsetForScrollView:(id)arg1;
-- (struct CGPoint { float x1; float x2; })velocityToScrollFromOffset:(struct CGPoint { float x1; float x2; })arg1 toOffset:(struct CGPoint { float x1; float x2; })arg2;
+- (bool)isAnimatingScrollView:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)setDefaultConvergenceRate:(double)arg1;
+- (void)setTargetContentOffset:(struct CGPoint { double x1; double x2; })arg1 forScrollView:(id)arg2 convergenceRate:(double)arg3 completion:(id /* block */)arg4;
+- (struct CGPoint { double x1; double x2; })targetContentOffsetForScrollView:(id)arg1;
+- (struct CGPoint { double x1; double x2; })velocityToScrollFromOffset:(struct CGPoint { double x1; double x2; })arg1 toOffset:(struct CGPoint { double x1; double x2; })arg2;
 
 @end

@@ -6,7 +6,7 @@
 @required
 
 - (double)duration;
-- (BOOL)isPlaying;
+- (bool)isPlaying;
 - (void)setDuration:(double)arg1;
 - (void)stop;
 

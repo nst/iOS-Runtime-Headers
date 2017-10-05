@@ -3,43 +3,45 @@
  */
 
 @interface UIGraphicsImageRendererFormat : UIGraphicsRendererFormat {
-    BOOL  _grayscale;
-    BOOL  _opaque;
-    int  _overrideBitsPerComponent;
+    bool  _grayscale;
+    bool  _opaque;
+    long long  _overrideBitsPerComponent;
     struct CGColorSpace { } * _overrideColorSpace;
-    BOOL  _prefersExtendedRange;
-    float  _scale;
-    BOOL  _wantsAlphaMask;
+    bool  _prefersExtendedRange;
+    double  _scale;
+    bool  _wantsAlphaMask;
 }
 
-@property (getter=_contextScale, nonatomic, readonly) float _contextScale;
-@property (getter=_grayscale, setter=_setGrayscale:, nonatomic) BOOL _grayscale;
-@property (getter=_overrideBitsPerComponent, setter=_setOverrideBitsPerComponent:, nonatomic) int _overrideBitsPerComponent;
+@property (getter=_contextScale, nonatomic, readonly) double _contextScale;
+@property (getter=_grayscale, setter=_setGrayscale:, nonatomic) bool _grayscale;
+@property (getter=_overrideBitsPerComponent, setter=_setOverrideBitsPerComponent:, nonatomic) long long _overrideBitsPerComponent;
 @property (getter=_overrideColorSpace, setter=_setOverrideColorSpace:, nonatomic) struct CGColorSpace { }*_overrideColorSpace;
-@property (getter=_wantsAlphaMask, setter=_setWantsAlphaMask:, nonatomic) BOOL _wantsAlphaMask;
-@property (nonatomic) BOOL opaque;
-@property (nonatomic) BOOL prefersExtendedRange;
-@property (nonatomic) float scale;
+@property (getter=_wantsAlphaMask, setter=_setWantsAlphaMask:, nonatomic) bool _wantsAlphaMask;
+@property (nonatomic) bool opaque;
+@property (nonatomic) bool prefersExtendedRange;
+@property (nonatomic) double scale;
 
 + (id)defaultFormat;
++ (id)formatForTraitCollection:(id)arg1;
++ (id)preferredFormat;
 
-- (float)_contextScale;
-- (BOOL)_grayscale;
-- (int)_overrideBitsPerComponent;
+- (double)_contextScale;
+- (bool)_grayscale;
+- (long long)_overrideBitsPerComponent;
 - (struct CGColorSpace { }*)_overrideColorSpace;
-- (void)_setGrayscale:(BOOL)arg1;
-- (void)_setOverrideBitsPerComponent:(int)arg1;
+- (void)_setGrayscale:(bool)arg1;
+- (void)_setOverrideBitsPerComponent:(long long)arg1;
 - (void)_setOverrideColorSpace:(struct CGColorSpace { }*)arg1;
-- (void)_setWantsAlphaMask:(BOOL)arg1;
-- (BOOL)_wantsAlphaMask;
+- (void)_setWantsAlphaMask:(bool)arg1;
+- (bool)_wantsAlphaMask;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (BOOL)opaque;
-- (BOOL)prefersExtendedRange;
-- (float)scale;
-- (void)setOpaque:(BOOL)arg1;
-- (void)setPrefersExtendedRange:(BOOL)arg1;
-- (void)setScale:(float)arg1;
+- (bool)opaque;
+- (bool)prefersExtendedRange;
+- (double)scale;
+- (void)setOpaque:(bool)arg1;
+- (void)setPrefersExtendedRange:(bool)arg1;
+- (void)setScale:(double)arg1;
 
 @end

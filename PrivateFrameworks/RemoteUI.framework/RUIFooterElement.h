@@ -8,8 +8,8 @@
 
 - (void).cxx_destruct;
 - (void)configureView:(id)arg1;
-- (int)labelAlignment;
+- (long long)labelAlignment;
 - (id)linkURL;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 
 @end

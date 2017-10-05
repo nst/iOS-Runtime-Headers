@@ -8,15 +8,15 @@
 
 @property (nonatomic, readonly, copy) NSString *sceneID;
 
-- (id)_initWithExternalSceneID:(id)arg1 level:(float)arg2 trackingContext:(id)arg3;
+- (id)_initWithExternalSceneID:(id)arg1 level:(double)arg2 trackingContext:(id)arg3;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (unsigned int)hash;
-- (id)initWithExternalSceneID:(id)arg1 level:(float)arg2;
+- (unsigned long long)hash;
+- (id)initWithExternalSceneID:(id)arg1 level:(double)arg2;
 - (id)initWithExternalSceneID:(id)arg1 trackingContext:(id)arg2;
 - (id)initWithXPCDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)sceneID;
 
 @end

@@ -12,6 +12,7 @@
     NSCountedSet * __splitTags;
     NSDate * __startingDate;
     NSString * __title;
+    bool  __usedLocationsOfInterest;
     short  _generationType;
 }
 
@@ -26,6 +27,7 @@
 @property (nonatomic, readonly) NSObject<NSCopying> *objectID;
 @property (setter=_setStartingDate:, nonatomic, retain) NSDate *startingDate;
 @property (nonatomic, retain) NSString *title;
+@property (nonatomic) bool usedLocationsOfInterest;
 
 + (double)nameOccurrenceCutoff;
 
@@ -47,25 +49,27 @@
 - (void)dealloc;
 - (id)description;
 - (id)endingDate;
-- (unsigned int)expandFromNode:(id)arg1 withNeighbors:(id)arg2 inClustering:(id)arg3 minimumNumberOfPoints:(unsigned int)arg4;
+- (unsigned long long)expandFromNode:(id)arg1 withNeighbors:(id)arg2 inClustering:(id)arg3 minimumNumberOfPoints:(unsigned long long)arg4;
 - (short)generationType;
-- (BOOL)hasMerges;
-- (BOOL)hasSplits;
+- (bool)hasMerges;
+- (bool)hasSplits;
 - (id)init;
 - (id)initWithMoment:(id)arg1;
 - (id)initWithObjectID:(id)arg1;
-- (BOOL)isTagged;
+- (bool)isTagged;
 - (id)mergeTagAboveCutoff:(double)arg1;
 - (id)mergeTags;
 - (id)nodes;
 - (id)objectID;
-- (void)removeNode:(id)arg1 nilCluster:(BOOL)arg2;
+- (void)removeNode:(id)arg1 nilCluster:(bool)arg2;
 - (void)removeNodes:(id)arg1;
 - (void)removeNodesFromCluster:(id)arg1;
 - (void)setGenerationType:(short)arg1;
 - (void)setTitle:(id)arg1;
+- (void)setUsedLocationsOfInterest:(bool)arg1;
 - (id)splitTags;
 - (id)startingDate;
 - (id)title;
+- (bool)usedLocationsOfInterest;
 
 @end

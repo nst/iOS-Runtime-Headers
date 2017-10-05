@@ -6,26 +6,26 @@
     TPPageInfo * _pageInfo;
 }
 
-@property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;
-@property (getter=isAttachedToBodyText, nonatomic, readonly) BOOL attachedToBodyText;
+@property (getter=isAnchoredToText, nonatomic, readonly) bool anchoredToText;
+@property (getter=isAttachedToBodyText, nonatomic, readonly) bool attachedToBodyText;
 @property (nonatomic, readonly) TSWPStorage *bodyStorage;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isFloatingAboveText, nonatomic, readonly) BOOL floatingAboveText;
+@property (getter=isFloatingAboveText, nonatomic, readonly) bool floatingAboveText;
 @property (nonatomic, copy) TSDInfoGeometry *geometry;
-@property (readonly) unsigned int hash;
-@property (getter=isInlineWithText, nonatomic, readonly) BOOL inlineWithText;
-@property (nonatomic, readonly) BOOL layoutVertically;
-@property (nonatomic) BOOL matchesObjectPlaceholderGeometry;
+@property (readonly) unsigned long long hash;
+@property (getter=isInlineWithText, nonatomic, readonly) bool inlineWithText;
+@property (nonatomic, readonly) bool layoutVertically;
+@property (nonatomic) bool matchesObjectPlaceholderGeometry;
 @property (nonatomic, readonly) <TSDHint> *nextTargetFirstChildHint;
 @property (nonatomic, readonly) <TSWPOffscreenColumn> *nextTargetFirstColumn;
-@property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{TSWPTopicNumberHints={map<const TSWPListStyle *' */ struct *nextTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
+@property (nonatomic, readonly) NSObject<TSWPTopicNumberHints> *nextTargetTopicNumbers;
 @property (nonatomic) TSPObject<TSDOwningAttachment> *owningAttachment;
 @property (nonatomic, readonly) TSPObject<TSDOwningAttachment> *owningAttachmentNoRecurse;
 @property (nonatomic, readonly) TPPageHint *pageHint;
 @property (nonatomic) NSObject<TSDContainerInfo> *parentInfo;
 @property (nonatomic, readonly) <TSWPOffscreenColumn> *previousTargetLastColumn;
-@property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{TSWPTopicNumberHints={map<const TSWPListStyle *' */ struct *previousTargetTopicNumbers; /* unknown property attribute:  true> >=L}}}II} */
+@property (nonatomic, readonly) NSObject<TSWPTopicNumberHints> *previousTargetTopicNumbers;
 @property (nonatomic, readonly) TSWPStorage *storage;
 @property (readonly) Class superclass;
 
@@ -36,23 +36,23 @@
 - (id)geometry;
 - (void)inflateBodyLayout:(id)arg1;
 - (id)infoForSelectionPath:(id)arg1;
-- (BOOL)isAnchoredToText;
-- (BOOL)isAttachedToBodyText;
-- (BOOL)isFloatingAboveText;
-- (BOOL)isInlineWithText;
-- (BOOL)isSelectable;
-- (BOOL)isThemeContent;
+- (bool)isAnchoredToText;
+- (bool)isAttachedToBodyText;
+- (bool)isFloatingAboveText;
+- (bool)isInlineWithText;
+- (bool)isSelectable;
+- (bool)isThemeContent;
 - (Class)layoutClass;
-- (BOOL)layoutVertically;
+- (bool)layoutVertically;
 - (id)nextTargetFirstChildHint;
 - (id)nextTargetFirstColumn;
-- (const struct TSWPTopicNumberHints { struct map<const TSWPListStyle *, std::__1::vector<TSWPTopicNumberEntry, std::__1::allocator<TSWPTopicNumberEntry> >, std::__1::less<const TSWPListStyle *>, std::__1::allocator<std::__1::pair<const TSWPListStyle *const, std::__1::vector<TSWPTopicNumberEntry, std::__1::allocator<TSWPTopicNumberEntry> > > > > { struct __tree<std::__1::__value_type<const TSWPListStyle *, std::__1::vector<TSWPTopicNumberEntry, std::__1::allocator<TSWPTopicNumberEntry> > >, std::__1::__map_value_compare<const TSWPListStyle *, std::__1::__value_type<const TSWPListStyle *, std::__1::vector<TSWPTopicNumberEntry, std::__1::allocator<TSWPTopicNumberEntry> > >, std::__1::less<const TSWPListStyle *>, true>, std::__1::allocator<std::__1::__value_type<const TSWPListStyle *, std::__1::vector<TSWPTopicNumberEntry, std::__1::allocator<TSWPTopicNumberEntry> > > > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *x_1_2_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<const TSWPListStyle *, std::__1::vector<TSWPTopicNumberEntry, std::__1::allocator<TSWPTopicNumberEntry> > >, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_4_1; } x_2_3_1; } x_1_2_2; struct __compressed_pair<unsigned long, std::__1::__map_value_compare<const TSWPListStyle *, std::__1::__value_type<const TSWPListStyle *, std::__1::vector<TSWPTopicNumberEntry, std::__1::allocator<TSWPTopicNumberEntry> > >, std::__1::less<const TSWPListStyle *>, true> > { unsigned long x_3_3_1; } x_1_2_3; } x_1_1_1; } x1; }*)nextTargetTopicNumbers;
+- (id)nextTargetTopicNumbers;
 - (id)owningAttachment;
 - (id)owningAttachmentNoRecurse;
 - (id)pageHint;
 - (id)parentInfo;
 - (id)previousTargetLastColumn;
-- (const struct TSWPTopicNumberHints { struct map<const TSWPListStyle *, std::__1::vector<TSWPTopicNumberEntry, std::__1::allocator<TSWPTopicNumberEntry> >, std::__1::less<const TSWPListStyle *>, std::__1::allocator<std::__1::pair<const TSWPListStyle *const, std::__1::vector<TSWPTopicNumberEntry, std::__1::allocator<TSWPTopicNumberEntry> > > > > { struct __tree<std::__1::__value_type<const TSWPListStyle *, std::__1::vector<TSWPTopicNumberEntry, std::__1::allocator<TSWPTopicNumberEntry> > >, std::__1::__map_value_compare<const TSWPListStyle *, std::__1::__value_type<const TSWPListStyle *, std::__1::vector<TSWPTopicNumberEntry, std::__1::allocator<TSWPTopicNumberEntry> > >, std::__1::less<const TSWPListStyle *>, true>, std::__1::allocator<std::__1::__value_type<const TSWPListStyle *, std::__1::vector<TSWPTopicNumberEntry, std::__1::allocator<TSWPTopicNumberEntry> > > > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> {} *x_1_2_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<const TSWPListStyle *, std::__1::vector<TSWPTopicNumberEntry, std::__1::allocator<TSWPTopicNumberEntry> > >, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_4_1; } x_2_3_1; } x_1_2_2; struct __compressed_pair<unsigned long, std::__1::__map_value_compare<const TSWPListStyle *, std::__1::__value_type<const TSWPListStyle *, std::__1::vector<TSWPTopicNumberEntry, std::__1::allocator<TSWPTopicNumberEntry> > >, std::__1::less<const TSWPListStyle *>, true> > { unsigned long x_3_3_1; } x_1_2_3; } x_1_1_1; } x1; }*)previousTargetTopicNumbers;
+- (id)previousTargetTopicNumbers;
 - (Class)repClass;
 - (void)setGeometry:(id)arg1;
 - (void)setOwningAttachment:(id)arg1;

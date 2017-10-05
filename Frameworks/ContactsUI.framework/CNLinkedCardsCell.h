@@ -12,7 +12,7 @@
 @property (nonatomic, readonly) UILabel *nameLabel;
 @property (nonatomic, readonly) UILabel *sourceLabel;
 
-+ (BOOL)wantsChevron;
++ (bool)wantsChevron;
 
 - (void).cxx_destruct;
 - (id)delegate;
@@ -21,8 +21,9 @@
 - (void)performDefaultAction;
 - (void)setCardGroupItem:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (BOOL)shouldPerformDefaultAction;
+- (bool)shouldPerformDefaultAction;
 - (id)sourceLabel;
+- (void)updateConstraints;
 - (id)valueView;
 
 @end

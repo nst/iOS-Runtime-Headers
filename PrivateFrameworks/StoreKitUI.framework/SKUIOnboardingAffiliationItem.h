@@ -9,7 +9,7 @@
     NSString * _imageTreatment;
     NSURL * _imageURL;
     NSString * _title;
-    int  _userAffinityCount;
+    long long  _userAffinityCount;
 }
 
 @property (nonatomic, copy) UIColor *fillColor;
@@ -18,26 +18,26 @@
 @property (nonatomic, copy) NSString *imageTreatment;
 @property (nonatomic, copy) NSURL *imageURL;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic) int userAffinityCount;
+@property (nonatomic) long long userAffinityCount;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)fillColor;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)imageName;
 - (id)imageTreatment;
 - (id)imageURL;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setFillColor:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setImageName:(id)arg1;
 - (void)setImageTreatment:(id)arg1;
 - (void)setImageURL:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setUserAffinityCount:(int)arg1;
+- (void)setUserAffinityCount:(long long)arg1;
 - (id)title;
-- (int)userAffinityCount;
+- (long long)userAffinityCount;
 
 @end

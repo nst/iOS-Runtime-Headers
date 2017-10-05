@@ -6,10 +6,10 @@
     PKFelicaPassProperties * _felicaProperties;
 }
 
-@property (getter=isBlacklisted, nonatomic, readonly) BOOL blacklisted;
-@property (getter=isGreenCarTicketUsed, nonatomic, readonly) BOOL greenCarTicketUsed;
-@property (getter=isInShinkansenStation, nonatomic, readonly) BOOL inShinkansenStation;
-@property (getter=isInStation, nonatomic, readonly) BOOL inStation;
+@property (getter=isBlacklisted, nonatomic, readonly) bool blacklisted;
+@property (getter=isGreenCarTicketUsed, nonatomic, readonly) bool greenCarTicketUsed;
+@property (getter=isInShinkansenStation, nonatomic, readonly) bool inShinkansenStation;
+@property (getter=isInStation, nonatomic, readonly) bool inStation;
 @property (nonatomic, readonly, copy) NSDecimalNumber *transitBalance;
 @property (nonatomic, readonly, copy) NSString *transitBalanceCurrencyCode;
 
@@ -17,10 +17,10 @@
 
 - (void).cxx_destruct;
 - (id)_initWithProperties:(id)arg1;
-- (BOOL)isBlacklisted;
-- (BOOL)isGreenCarTicketUsed;
-- (BOOL)isInShinkansenStation;
-- (BOOL)isInStation;
+- (bool)isBlacklisted;
+- (bool)isGreenCarTicketUsed;
+- (bool)isInShinkansenStation;
+- (bool)isInStation;
 - (id)transitBalance;
 - (id)transitBalanceCurrencyCode;
 

@@ -4,9 +4,9 @@
 
 @interface UIRemoteKeyboardWindowHosted : UIRemoteKeyboardWindow
 
-- (BOOL)_isHostedInAnotherProcess;
-- (BOOL)_isTextEffectsWindowHosting;
-- (int)_orientationForRootTransform;
-- (int)_orientationForViewTransform;
+- (bool)_isHostedInAnotherProcess;
+- (bool)_isTextEffectsWindowHosting;
+- (long long)_orientationForRootTransform;
+- (long long)_orientationForViewTransform;
 
 @end

@@ -3,14 +3,14 @@
  */
 
 @interface MSStickerView : UIView <CKAnimationTimerObserver, UIGestureRecognizerDelegate> {
-    BOOL  _animating;
+    bool  _animating;
     double  _animationDuration;
     NSArray * _frames;
     CKAnimatedImage * _image;
     CKImageData * _imageData;
     UIImageView * _imageView;
-    BOOL  _initialLayoutComplete;
-    BOOL  _isPeeled;
+    bool  _initialLayoutComplete;
+    bool  _isPeeled;
     UILongPressGestureRecognizer * _longPressRecognizer;
     MSSticker * _sticker;
     NSError * _stickerError;
@@ -18,18 +18,18 @@
     UITapGestureRecognizer * _tapRecognizer;
 }
 
-@property (nonatomic) BOOL animating;
+@property (nonatomic) bool animating;
 @property (nonatomic) double animationDuration;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSArray *frames;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CKAnimatedImage *image;
 @property (nonatomic, retain) CKImageData *imageData;
 @property (nonatomic, retain) UIImageView *imageView;
-@property (nonatomic) BOOL initialLayoutComplete;
-@property (nonatomic, readonly) BOOL isAnimated;
-@property (nonatomic) BOOL isPeeled;
+@property (nonatomic) bool initialLayoutComplete;
+@property (nonatomic, readonly) bool isAnimated;
+@property (nonatomic) bool isPeeled;
 @property (nonatomic, readonly) UILongPressGestureRecognizer *longPressRecognizer;
 @property (nonatomic, retain) MSSticker *sticker;
 @property (nonatomic, retain) NSError *stickerError;
@@ -42,15 +42,15 @@
 - (void)_loadAnimatedStickerfIfNecessary;
 - (void)_loadSticker;
 - (void)_prepareForReuse;
-- (void)_resetPeel:(BOOL)arg1;
+- (void)_resetPeel:(bool)arg1;
 - (void)_setImage:(id)arg1;
 - (void)_stickerPreviewCachePreviewDidChange:(id)arg1;
 - (void)_swapWithOutlineImage;
 - (void)_updateStickerView;
 - (id)accessibilityLabel;
-- (BOOL)animating;
+- (bool)animating;
 - (double)animationDuration;
-- (void)animationTimerFired:(unsigned int)arg1;
+- (void)animationTimerFired:(unsigned long long)arg1;
 - (void)dealloc;
 - (void)didMoveToWindow;
 - (id)frames;
@@ -60,27 +60,27 @@
 - (id)imageData;
 - (id)imageView;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 sticker:(id)arg2;
-- (BOOL)initialLayoutComplete;
-- (BOOL)isAnimated;
-- (BOOL)isAnimating;
-- (BOOL)isPeeled;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 sticker:(id)arg2;
+- (bool)initialLayoutComplete;
+- (bool)isAnimated;
+- (bool)isAnimating;
+- (bool)isPeeled;
 - (void)layoutSubviews;
 - (id)longPressRecognizer;
 - (void)prepareForSnapshotting;
-- (void)setAnimating:(BOOL)arg1;
+- (void)setAnimating:(bool)arg1;
 - (void)setAnimationDuration:(double)arg1;
 - (void)setFrames:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setImageData:(id)arg1;
 - (void)setImageView:(id)arg1;
-- (void)setInitialLayoutComplete:(BOOL)arg1;
-- (void)setIsPeeled:(BOOL)arg1;
+- (void)setInitialLayoutComplete:(bool)arg1;
+- (void)setIsPeeled:(bool)arg1;
 - (void)setSticker:(id)arg1;
 - (void)setStickerError:(id)arg1;
 - (void)setStickerImage:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)startAnimating;
 - (id)sticker;
 - (id)stickerError;

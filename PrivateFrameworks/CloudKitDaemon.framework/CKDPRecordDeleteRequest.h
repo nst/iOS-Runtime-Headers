@@ -9,8 +9,8 @@
 }
 
 @property (nonatomic, retain) NSString *etag;
-@property (nonatomic, readonly) BOOL hasEtag;
-@property (nonatomic, readonly) BOOL hasRecordIdentifier;
+@property (nonatomic, readonly) bool hasEtag;
+@property (nonatomic, readonly) bool hasRecordIdentifier;
 @property (nonatomic, retain) NSMutableArray *pluginFields;
 @property (nonatomic, retain) CKDPRecordIdentifier *recordIdentifier;
 
@@ -25,15 +25,15 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)etag;
-- (BOOL)hasEtag;
-- (BOOL)hasRecordIdentifier;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasEtag;
+- (bool)hasRecordIdentifier;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)pluginFields;
-- (id)pluginFieldsAtIndex:(unsigned int)arg1;
-- (unsigned int)pluginFieldsCount;
-- (BOOL)readFrom:(id)arg1;
+- (id)pluginFieldsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)pluginFieldsCount;
+- (bool)readFrom:(id)arg1;
 - (id)recordIdentifier;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;

@@ -3,7 +3,9 @@
  */
 
 @interface HKSourceAuthorizationController : NSObject {
+    <HKSourceAuthorizationControllerDelegate> * _delegate;
     HKHealthStore * _healthStore;
+    bool  _isUpdatingAllTypes;
     NSArray * _orderedTypesForReading;
     NSArray * _orderedTypesForSharing;
     NSDictionary * _requestedDocumentAuths;
@@ -14,7 +16,9 @@
     NSMutableSet * _typesEnabledForSharing;
 }
 
+@property (nonatomic) <HKSourceAuthorizationControllerDelegate> *delegate;
 @property (nonatomic, readonly) HKHealthStore *healthStore;
+@property (nonatomic) bool isUpdatingAllTypes;
 @property (nonatomic, retain) NSArray *orderedTypesForReading;
 @property (nonatomic, retain) NSArray *orderedTypesForSharing;
 @property (nonatomic, retain) NSDictionary *requestedDocumentAuths;
@@ -25,21 +29,26 @@
 @property (nonatomic, retain) NSMutableSet *typesEnabledForSharing;
 
 - (void).cxx_destruct;
-- (int)_authorizationStatusWithType:(id)arg1;
-- (id)_enabledTypesInSection:(int)arg1;
+- (long long)_authorizationStatusWithType:(id)arg1;
+- (id)_enabledSubTypesForType:(id)arg1 inSection:(long long)arg2;
+- (id)_enabledTypesInSection:(long long)arg1;
+- (bool)_parentTypeDisabledForType:(id)arg1 inSection:(long long)arg2;
 - (void)_reloadDocumentAuthorizationRecords;
 - (void)_reloadTypeAuthorizationRecords;
 - (void)_setAuthorizationStatuses:(id)arg1;
+- (id)_sortedTypes:(id)arg1;
 - (void)_updateAuthorizationStatusWithTypes:(id)arg1;
-- (BOOL)allTypesEnabled;
-- (BOOL)anyTypeEnabled;
+- (bool)allTypesEnabled;
+- (bool)anyTypeEnabled;
 - (void)commitAuthorizationStatuses;
 - (void)commitObjectAuthorizationStatuses:(id)arg1;
-- (unsigned int)countOfTypesInSection:(int)arg1;
+- (unsigned long long)countOfTypesInSection:(long long)arg1;
+- (id)delegate;
 - (id)healthStore;
 - (id)initWithHealthStore:(id)arg1 source:(id)arg2 typesForSharing:(id)arg3 typesForReading:(id)arg4;
-- (BOOL)isRequestingDocumentAuthorization;
-- (BOOL)isTypeEnabled:(id)arg1 inSection:(int)arg2;
+- (bool)isRequestingDocumentAuthorization;
+- (bool)isTypeEnabled:(id)arg1 inSection:(long long)arg2;
+- (bool)isUpdatingAllTypes;
 - (id)objectAuthorizationStatusesForDocuments;
 - (id)orderedTypesForReading;
 - (id)orderedTypesForSharing;
@@ -48,8 +57,10 @@
 - (id)requestedTypesForReading;
 - (id)requestedTypesForSharing;
 - (void)resetObjectAuthorizationStatuses;
-- (void)setEnabled:(BOOL)arg1 forAllTypesInSection:(int)arg2 commit:(BOOL)arg3;
-- (void)setEnabled:(BOOL)arg1 forType:(id)arg2 inSection:(int)arg3 commit:(BOOL)arg4;
+- (void)setDelegate:(id)arg1;
+- (void)setEnabled:(bool)arg1 forAllTypesInSection:(long long)arg2 commit:(bool)arg3;
+- (void)setEnabled:(bool)arg1 forType:(id)arg2 inSection:(long long)arg3 commit:(bool)arg4;
+- (void)setIsUpdatingAllTypes:(bool)arg1;
 - (void)setOrderedTypesForReading:(id)arg1;
 - (void)setOrderedTypesForSharing:(id)arg1;
 - (void)setRequestedDocumentAuths:(id)arg1;
@@ -60,6 +71,6 @@
 - (id)source;
 - (id)typesEnabledForReading;
 - (id)typesEnabledForSharing;
-- (id)typesInSection:(int)arg1;
+- (id)typesInSection:(long long)arg1;
 
 @end

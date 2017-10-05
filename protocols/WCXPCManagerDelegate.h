@@ -6,7 +6,7 @@
 @required
 
 - (NSString *)currentPairingID;
-- (BOOL)supportsActiveDeviceSwitch;
+- (bool)supportsActiveDeviceSwitch;
 - (void)xpcConnectionInterrupted;
 
 @end

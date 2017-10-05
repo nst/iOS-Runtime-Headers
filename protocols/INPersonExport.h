@@ -13,6 +13,7 @@
 - (NSString *)handle;
 - (INImage *)image;
 - (id)init;
+- (bool)isMe;
 - (NSPersonNameComponents *)nameComponents;
 - (INPersonHandle *)personHandle;
 - (NSString *)relationship;
@@ -23,10 +24,11 @@
 - (void)setDisplayName:(NSString *)arg1;
 - (void)setHandle:(NSString *)arg1;
 - (void)setImage:(INImage *)arg1;
+- (void)setIsMe:(bool)arg1;
 - (void)setNameComponents:(NSPersonNameComponents *)arg1;
 - (void)setPersonHandle:(INPersonHandle *)arg1;
 - (void)setRelationship:(NSString *)arg1;
-- (void)setSuggestionType:(int)arg1;
-- (int)suggestionType;
+- (void)setSuggestionType:(long long)arg1;
+- (long long)suggestionType;
 
 @end

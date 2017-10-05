@@ -3,19 +3,19 @@
  */
 
 @interface TPArchivedLayoutState : TSPObject <TPArchivedLayoutStateProtocol> {
-    unsigned int  _bodyLength;
-    unsigned int  _documentPageIndex;
-    unsigned int  _lastPageCount;
+    unsigned long long  _bodyLength;
+    unsigned long long  _documentPageIndex;
+    unsigned long long  _lastPageCount;
     NSSet * _missingFonts;
     NSArray * _sectionHints;
-    unsigned int  _sectionIndex;
-    unsigned int  _sectionPageIndex;
+    unsigned long long  _sectionIndex;
+    unsigned long long  _sectionPageIndex;
 }
 
+- (void).cxx_destruct;
 - (void)captureLayoutStateWithProvider:(id)arg1;
-- (void)dealloc;
-- (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
+- (void)loadFromUnarchiver:(id)arg1;
 - (void)p_reset;
 - (void)readLayoutStateWithConsumer:(id)arg1;
 - (void)saveToArchiver:(id)arg1;

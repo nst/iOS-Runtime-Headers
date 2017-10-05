@@ -20,7 +20,7 @@
 @property (nonatomic) <MusicJSProductNativeViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *featureName;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) IKJSNavigationDocument *navigationDocument;
 @property (nonatomic, readonly) NSDictionary *productEntityValueProviderData;
 @property (nonatomic, readonly) long long prominentTrackStoreID;
@@ -43,7 +43,7 @@
 - (id)relatedContentDocumentOptions;
 - (id)reportingInformation;
 - (void)setDelegate:(id)arg1;
-- (void)setNumberOfLikes:(unsigned int)arg1;
+- (void)setNumberOfLikes:(unsigned long long)arg1;
 - (void)setProductEntityValueProvider:(id)arg1;
 - (void)setProminentTrackStoreID:(id)arg1;
 - (void)setRelatedContentDocument:(id)arg1 :(id)arg2;

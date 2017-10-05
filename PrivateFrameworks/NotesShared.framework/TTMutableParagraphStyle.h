@@ -4,15 +4,15 @@
 
 @interface TTMutableParagraphStyle : TTParagraphStyle
 
-@property (nonatomic) int alignment;
+@property (nonatomic) long long alignment;
 @property (nonatomic) unsigned int hints;
-@property (nonatomic) unsigned int indent;
-@property (nonatomic) BOOL needsListCleanup;
-@property (nonatomic) BOOL needsParagraphCleanup;
-@property (nonatomic) unsigned int startingItemNumber;
+@property (nonatomic) unsigned long long indent;
+@property (nonatomic) bool needsListCleanup;
+@property (nonatomic) bool needsParagraphCleanup;
+@property (nonatomic) unsigned long long startingItemNumber;
 @property (nonatomic) unsigned int style;
 @property (nonatomic, retain) TTTodo *todo;
-@property (nonatomic) int writingDirection;
+@property (nonatomic) long long writingDirection;
 
 + (id)paragraphStyleNamed:(unsigned int)arg1;
 

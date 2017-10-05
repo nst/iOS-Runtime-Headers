@@ -4,6 +4,6 @@
 
 @interface TSDInstantAlphaSeedFill : NSObject
 
-+ (id)newSeedFillWithImage:(id)arg1 seedPoint:(struct CGPoint { float x1; float x2; })arg2 context:(struct { unsigned int x1; int x2; }*)arg3 oldFill:(id)arg4;
++ (id)newSeedFillWithImage:(id)arg1 seedPoint:(struct CGPoint { double x1; double x2; })arg2 context:(struct { unsigned int x1; long long x2; }*)arg3 oldFill:(id)arg4;
 
 @end

@@ -14,8 +14,10 @@
 @property (nonatomic, readonly) MPModelPlaybackPosition *playbackPosition;
 @property (nonatomic, readonly) MPModelStoreAsset *storeAsset;
 
-+ (BOOL)_shouldRespectMusicCellularDataSetting;
-+ (BOOL)_shouldRespectStoreCellularDataSetting;
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
++ (bool)_shouldRespectMusicCellularDataSetting;
++ (bool)_shouldRespectStoreCellularDataSetting;
 + (id)requiredHomeSharingAssetProperties;
 + (id)requiredLocalFileAssetProperties;
 + (id)requiredPlaybackPositionProperties;
@@ -23,36 +25,39 @@
 + (id)requiredStoreAssetProperties;
 
 - (void).cxx_destruct;
-- (id)_cachedLocalPlaybackAssetFilePathWithIntegrityCheck:(BOOL)arg1 returningAssetQuality:(unsigned int*)arg2 protectionType:(unsigned int*)arg3 usesPurchaseBundle:(BOOL*)arg4;
+- (id)_cachedLocalPlaybackAssetFilePathWithIntegrityCheck:(bool)arg1 returningAssetQuality:(unsigned long long*)arg2 protectionType:(unsigned long long*)arg3 usesPurchaseBundle:(bool*)arg4;
 - (void)_invalidateModelObjectPlaybackItemMetadata;
-- (BOOL)allowsAssetCaching;
+- (bool)allowsAssetCaching;
 - (double)bookmarkTime;
 - (id)buyParameters;
-- (id)cachedLocalPlaybackAssetFilePathReturningAssetQuality:(unsigned int*)arg1 protectionType:(unsigned int*)arg2 usesPurchaseBundle:(BOOL*)arg3;
+- (id)cachedLocalPlaybackAssetFilePathReturningAssetQuality:(unsigned long long*)arg1 protectionType:(unsigned long long*)arg2 usesPurchaseBundle:(bool*)arg3;
 - (void)clearLocalPlaybackAssetFilePathWithCompletionHandler:(id /* block */)arg1;
 - (void)dealloc;
 - (long long)downloadIdentifier;
-- (int)endpointType;
+- (long long)endpointType;
 - (id)homeSharingAsset;
 - (id)iTunesStoreContentDSID;
 - (id)iTunesStoreContentID;
 - (id)init;
-- (BOOL)isSubscriptionRequired;
+- (bool)isSubscriptionRequired;
 - (void)loadMediaItemWithCompletionHandler:(id /* block */)arg1;
 - (id)localFileAsset;
 - (id)localNetworkContentURL;
 - (long long)mediaLibraryPersistentID;
 - (id)modelObjectDelegate;
-- (id)mqf_playbackItemMetadataModelObject;
 - (id)playbackPosition;
 - (id)protectedContentSupportStorageURL;
-- (void)setCachedLocalPlaybackAssetFilePath:(id)arg1 protectionType:(unsigned int)arg2 assetQuality:(unsigned int)arg3 withCompletionHandler:(id /* block */)arg4;
+- (void)setCachedLocalPlaybackAssetFilePath:(id)arg1 protectionType:(unsigned long long)arg2 assetQuality:(unsigned long long)arg3 withCompletionHandler:(id /* block */)arg4;
 - (void)setModelObjectDelegate:(id)arg1;
-- (BOOL)shouldRememberBookmarkTime;
-- (BOOL)shouldReportPlayEventsToStore;
+- (bool)shouldRememberBookmarkTime;
+- (bool)shouldReportPlayEventsToStore;
 - (unsigned long long)storeAccountID;
 - (id)storeAsset;
 - (id)storeUbiquitousIdentifier;
-- (id)streamingPlaybackAssetDestinationFilePathForAssetQuality:(unsigned int)arg1 assetFlavor:(id)arg2 protectionType:(unsigned int)arg3 pathExtension:(id)arg4;
+- (id)streamingPlaybackAssetDestinationFilePathForAssetQuality:(unsigned long long)arg1 assetFlavor:(id)arg2 protectionType:(unsigned long long)arg3 pathExtension:(id)arg4;
+
+// Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
+
+- (id)mqf_playbackItemMetadataModelObject;
 
 @end

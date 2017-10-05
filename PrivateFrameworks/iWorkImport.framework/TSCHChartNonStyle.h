@@ -11,13 +11,13 @@
 + (id)imageFillProperties;
 + (int)muxDefaultPropertyForSpecificProperty:(int)arg1;
 + (id)properties;
-+ (BOOL)shouldWarnWithPersistingWithoutStylesheet;
++ (bool)shouldWarnWithPersistingWithoutStylesheet;
 
-- (id)initFromPreUFFArchiveWithUnarchiver:(id)arg1;
-- (id)initFromUnarchiver:(id)arg1;
-- (id)initWithContext:(id)arg1 name:(id)arg2 overridePropertyMap:(id)arg3 isVariation:(BOOL)arg4;
-- (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
-- (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
+- (id)initWithContext:(id)arg1 name:(id)arg2 overridePropertyMap:(id)arg3 isVariation:(bool)arg4;
+- (void)loadFromPreUFFArchiveWithUnarchiver:(id)arg1;
+- (void)loadFromUnarchiver:(id)arg1;
+- (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
+- (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 
 @end

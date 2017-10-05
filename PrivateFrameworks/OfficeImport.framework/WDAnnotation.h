@@ -6,7 +6,7 @@
     WDAnnotationData * mData;
     WDAnnotation * mOtherEndOfRangedAnnotation;
     WDCharacterRun * mReference;
-    BOOL  mReferencePopertiesFixed;
+    bool  mReferencePopertiesFixed;
     int  mType;
 }
 
@@ -19,7 +19,7 @@
 - (id)otherEndOfRangedAnnotation;
 - (id)owner;
 - (id)reference;
-- (BOOL)referencePropertiesFixed;
+- (bool)referencePropertiesFixed;
 - (int)runType;
 - (void)setDate:(id)arg1;
 - (void)setOtherEndOfRangedAnnotation:(id)arg1;

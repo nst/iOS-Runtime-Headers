@@ -8,6 +8,6 @@
 
 - (void).cxx_destruct;
 - (id)initWithMergeBlock:(id /* block */)arg1;
-- (BOOL)mergeConflictsWithError:(id*)arg1;
+- (bool)mergeConflictsWithError:(id*)arg1;
 
 @end

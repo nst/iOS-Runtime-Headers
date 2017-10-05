@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/IMSharedUtilities
  */
 
-@interface IMGroupTitleChangeItem : IMItem <IMRemoteObjectCoding, NSCoding, NSCopying> {
+@interface IMGroupTitleChangeItem : IMItem <IMRemoteObjectCoding, NSCopying, NSSecureCoding> {
     NSString * _otherCountryCode;
     NSString * _otherHandle;
     NSString * _otherUnformattedID;
@@ -16,12 +16,15 @@
 
 // Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/IMSharedUtilities
 
++ (bool)supportsSecureCoding;
+
 - (id)copyDictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)otherCountryCode;
 - (id)otherHandle;
 - (id)otherUnformattedID;

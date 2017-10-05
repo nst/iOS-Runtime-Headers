@@ -2,26 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
  */
 
-@interface DMFInstalledApplicationInstallProgress : NSObject <NSSecureCoding> {
-    double  _fractionCompleted;
-    unsigned int  _phase;
-    unsigned int  _state;
-}
-
-@property (nonatomic) double fractionCompleted;
-@property (nonatomic) unsigned int phase;
-@property (nonatomic) unsigned int state;
-
-+ (BOOL)supportsSecureCoding;
-
-- (void)encodeWithCoder:(id)arg1;
-- (double)fractionCompleted;
-- (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)phase;
-- (void)setFractionCompleted:(double)arg1;
-- (void)setPhase:(unsigned int)arg1;
-- (void)setState:(unsigned int)arg1;
-- (unsigned int)state;
+@interface DMFInstalledApplicationInstallProgress : DMFApplicationInstallProgress
 
 @end

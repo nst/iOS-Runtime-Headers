@@ -4,7 +4,7 @@
 
 @interface TZUtilities : NSObject
 
-+ (BOOL)fileExistsAndIsSymbolicLinkAtURL:(id)arg1;
++ (bool)fileExistsAndIsSymbolicLinkAtURL:(id)arg1;
 + (id)stringWithContentsOfFileAtURL:(id)arg1 error:(id*)arg2;
 
 @end

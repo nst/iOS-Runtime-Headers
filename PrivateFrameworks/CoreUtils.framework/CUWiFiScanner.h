@@ -3,7 +3,7 @@
  */
 
 @interface CUWiFiScanner : NSObject {
-    BOOL  _activateCalled;
+    bool  _activateCalled;
     unsigned int  _changeFlags;
     id /* block */  _deviceChangedHandler;
     id /* block */  _deviceFoundHandler;
@@ -11,13 +11,13 @@
     struct NSMutableDictionary { Class x1; } * _devices;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     id /* block */  _errorHandler;
-    BOOL  _invalidateCalled;
-    BOOL  _invalidateDone;
+    bool  _invalidateCalled;
+    bool  _invalidateDone;
     id /* block */  _invalidationHandler;
     NSString * _label;
     unsigned int  _scanFlags;
     NSObject<OS_dispatch_source> * _scanTimer;
-    BOOL  _scanning;
+    bool  _scanning;
     NSString * _ssid;
     struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; char *x15; struct LogCategoryPrivate {} *x16; } * _ucat;
 }
@@ -36,7 +36,7 @@
 - (void).cxx_destruct;
 - (void)_cleanup;
 - (void)_invalidated;
-- (void)_scanWiFiFinished:(id)arg1 status:(long)arg2;
+- (void)_scanWiFiFinished:(id)arg1 status:(int)arg2;
 - (void)_scanWiFiProcessResult:(id)arg1;
 - (void)_scanWiFiStart;
 - (void)activate;

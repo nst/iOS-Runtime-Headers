@@ -4,27 +4,27 @@
 
 @interface WBSOpenSearchURLTemplateParameter : NSObject {
     NSString * _name;
-    BOOL  _optional;
+    bool  _optional;
     NSString * _prefix;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _range;
 }
 
 @property (nonatomic, copy) NSString *name;
-@property (getter=isOptional, nonatomic) BOOL optional;
+@property (getter=isOptional, nonatomic) bool optional;
 @property (nonatomic, copy) NSString *prefix;
-@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } range;
+@property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } range;
 
 - (void).cxx_destruct;
-- (BOOL)isOptional;
+- (bool)isOptional;
 - (id)name;
 - (id)prefix;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })range;
 - (void)setName:(id)arg1;
-- (void)setOptional:(BOOL)arg1;
+- (void)setOptional:(bool)arg1;
 - (void)setPrefix:(id)arg1;
-- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)setRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 
 @end

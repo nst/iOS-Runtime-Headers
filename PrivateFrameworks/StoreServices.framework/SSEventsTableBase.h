@@ -9,7 +9,7 @@
 + (id)databasePath;
 
 - (void).cxx_destruct;
-- (BOOL)_setupDatabase;
+- (bool)_setupDatabase;
 - (id)init;
 - (id)initWithDatabase:(id)arg1;
 - (void)performTransactionWithBlock:(id /* block */)arg1;

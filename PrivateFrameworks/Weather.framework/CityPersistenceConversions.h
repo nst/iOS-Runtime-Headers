@@ -4,7 +4,7 @@
 
 @interface CityPersistenceConversions : NSObject
 
-+ (BOOL)cityDictionaryHasValidCoordinates:(id)arg1;
++ (bool)cityDictionaryHasValidCoordinates:(id)arg1;
 + (id)cityFromALCity:(id)arg1;
 + (id)cityFromCloudDictionary:(id)arg1;
 + (id)cityFromDictionary:(id)arg1;
@@ -14,7 +14,7 @@
 + (id)dictionaryRepresentationOfCity:(id)arg1;
 + (id)dictionaryRepresentationOfTemperature:(id)arg1;
 + (id)hourlyForecastDictionariesFromCity:(id)arg1;
-+ (BOOL)isCityValid:(id)arg1;
++ (bool)isCityValid:(id)arg1;
 + (void)populateCity:(id)arg1 withDayForecastDictionaries:(id)arg2;
 + (void)populateCity:(id)arg1 withHourlyForecastDictionaries:(id)arg2;
 + (id)temperatureFromDictionaryRepresentation:(id)arg1;

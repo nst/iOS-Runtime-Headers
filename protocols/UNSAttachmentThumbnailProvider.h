@@ -5,7 +5,7 @@
 
 @required
 
-- (struct CGSize { float x1; float x2; })sizeForThumbnailOptions:(id <UNNotificationAttachmentThumbnailOptions>)arg1;
-- (NSData *)thumbnailPNGOfSize:(struct CGSize { float x1; float x2; })arg1 forThumbnailOptions:(id <UNNotificationAttachmentThumbnailOptions>)arg2;
+- (struct CGSize { double x1; double x2; })sizeForThumbnailOptions:(id <UNNotificationAttachmentThumbnailOptions>)arg1;
+- (NSData *)thumbnailPNGOfSize:(struct CGSize { double x1; double x2; })arg1 forThumbnailOptions:(id <UNNotificationAttachmentThumbnailOptions>)arg2;
 
 @end

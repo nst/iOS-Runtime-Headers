@@ -6,17 +6,18 @@
 @required
 
 - (NSString *)articleID;
-- (unsigned int)articleLikingStatus;
+- (unsigned long long)articleLikingStatus;
+- (CKRecord *)asCKRecord;
 - (NSDate *)firstSeenAt;
 - (NSDate *)firstSeenAtOfMaxVersionSeen;
-- (unsigned int)flags;
-- (BOOL)hasArticleBeenConsumed;
-- (BOOL)hasArticleBeenMarkedOffensive;
-- (BOOL)hasArticleBeenRead;
-- (BOOL)hasArticleBeenSeen;
+- (unsigned long long)flags;
+- (bool)hasArticleBeenConsumed;
+- (bool)hasArticleBeenMarkedOffensive;
+- (bool)hasArticleBeenRead;
+- (bool)hasArticleBeenSeen;
 - (NSString *)identifier;
 - (NSDate *)lastVisitedAt;
-- (unsigned long long)maxVersionRead;
-- (unsigned long long)maxVersionSeen;
+- (long long)maxVersionRead;
+- (long long)maxVersionSeen;
 
 @end

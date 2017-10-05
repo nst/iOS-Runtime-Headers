@@ -4,29 +4,26 @@
 
 @interface _ATXPredictionModelDetails : NSObject <NSSecureCoding> {
     NSString * _abGroup;
-    int  _assetCompatibilityVersion;
-    int  _assetResourceVersion;
-    int  _assetVersion;
+    long long  _assetCompatibilityVersion;
+    long long  _assetVersion;
 }
 
 @property (nonatomic, retain) NSString *abGroup;
-@property (nonatomic) int assetCompatibilityVersion;
-@property (nonatomic) int assetResourceVersion;
-@property (nonatomic) int assetVersion;
+@property (nonatomic) long long assetCompatibilityVersion;
+@property (nonatomic) long long assetVersion;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)abGroup;
-- (int)assetCompatibilityVersion;
-- (int)assetResourceVersion;
-- (int)assetVersion;
+- (long long)assetCompatibilityVersion;
+- (long long)assetVersion;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithAssetResourceVersion:(int)arg1 assetCompatibilityVersion:(int)arg2 assetVersion:(int)arg3 abGroup:(id)arg4;
+- (id)init;
+- (id)initWithAssetCompatibilityVersion:(long long)arg1 assetVersion:(long long)arg2 abGroup:(id)arg3;
 - (id)initWithCoder:(id)arg1;
 - (void)setAbGroup:(id)arg1;
-- (void)setAssetCompatibilityVersion:(int)arg1;
-- (void)setAssetResourceVersion:(int)arg1;
-- (void)setAssetVersion:(int)arg1;
+- (void)setAssetCompatibilityVersion:(long long)arg1;
+- (void)setAssetVersion:(long long)arg1;
 
 @end

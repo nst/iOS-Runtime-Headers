@@ -2,17 +2,22 @@
    Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
  */
 
-@interface CFMMessagesQuery : SABaseClientBoundCommand
+@interface CFMMessagesQuery : SABaseClientBoundCommand <CFLocalAceHandling>
 
-@property (nonatomic) int messageIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *guid;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 + (id)messagesQuery;
 + (id)messagesQueryWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (int)messageIdentifier;
-- (BOOL)requiresResponse;
-- (void)setMessageIdentifier:(int)arg1;
+- (id)guid;
+- (void)handleWithCompletion:(id /* block */)arg1;
+- (bool)requiresResponse;
+- (void)setGuid:(id)arg1;
 
 @end

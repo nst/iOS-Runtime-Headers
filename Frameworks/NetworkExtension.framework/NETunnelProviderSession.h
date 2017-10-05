@@ -4,8 +4,8 @@
 
 @interface NETunnelProviderSession : NEVPNConnection
 
-- (BOOL)sendProviderMessage:(id)arg1 returnError:(id*)arg2 responseHandler:(id /* block */)arg3;
-- (BOOL)startTunnelWithOptions:(id)arg1 andReturnError:(id*)arg2;
+- (bool)sendProviderMessage:(id)arg1 returnError:(id*)arg2 responseHandler:(id /* block */)arg3;
+- (bool)startTunnelWithOptions:(id)arg1 andReturnError:(id*)arg2;
 - (void)stopTunnel;
 
 @end

@@ -16,19 +16,19 @@
 @property (nonatomic, copy) W5PowerStatus *power;
 @property (nonatomic, copy) W5WiFiStatus *wifi;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)awdl;
 - (id)bluetooth;
-- (BOOL)conformsToProtocol:(id)arg1;
+- (bool)conformsToProtocol:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToStatus:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToStatus:(id)arg1;
 - (id)network;
 - (id)power;
 - (void)setAwdl:(id)arg1;

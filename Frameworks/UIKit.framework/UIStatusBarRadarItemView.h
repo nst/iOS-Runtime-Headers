@@ -4,10 +4,12 @@
 
 @interface UIStatusBarRadarItemView : UIStatusBarButtonActionItemView
 
-- (int)buttonType;
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (long long)buttonType;
 - (id)contentsImage;
-- (float)extraRightPadding;
+- (double)extraRightPadding;
 - (id)highlightImage;
-- (BOOL)usesAdvancedActions;
+- (bool)usesAdvancedActions;
 
 @end

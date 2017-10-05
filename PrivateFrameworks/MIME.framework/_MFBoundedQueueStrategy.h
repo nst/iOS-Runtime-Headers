@@ -3,24 +3,24 @@
  */
 
 @interface _MFBoundedQueueStrategy : NSObject <MFQueueingStrategy> {
-    unsigned int  _capacity;
+    unsigned long long  _capacity;
     id /* block */  _overflowHandler;
 }
 
-@property (nonatomic, readonly) unsigned int capacity;
+@property (nonatomic, readonly) unsigned long long capacity;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *descriptionType;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) id /* block */ overflowHandler;
 @property (readonly) Class superclass;
 
-- (unsigned int)capacity;
+- (unsigned long long)capacity;
 - (void)dealloc;
 - (void)dequeueObject:(id)arg1 buffer:(id)arg2;
 - (id)descriptionType;
 - (void)enqueueObject:(id)arg1 buffer:(id)arg2;
-- (id)initWithCapacity:(unsigned int)arg1 overflowHandler:(id /* block */)arg2;
+- (id)initWithCapacity:(unsigned long long)arg1 overflowHandler:(id /* block */)arg2;
 - (id /* block */)overflowHandler;
 
 @end

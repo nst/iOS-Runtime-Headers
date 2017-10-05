@@ -10,15 +10,15 @@
 
 - (void).cxx_destruct;
 - (void)_cleanupStore;
-- (BOOL)_loadStore;
-- (BOOL)_saveStore;
+- (bool)_loadStore;
+- (bool)_saveStore;
 - (id)_storePath;
 - (void)addFeedbackEntry:(id)arg1;
 - (id)init;
 - (id)longDescription;
 - (void)removeFeedbackEntry:(id)arg1;
-- (unsigned int)sentFeedbackCount;
+- (unsigned long long)sentFeedbackCount;
 - (id)store;
-- (unsigned int)unsentFeedbackCount;
+- (unsigned long long)unsentFeedbackCount;
 
 @end

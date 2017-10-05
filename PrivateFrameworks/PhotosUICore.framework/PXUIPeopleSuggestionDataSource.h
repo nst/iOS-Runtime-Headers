@@ -2,22 +2,42 @@
    Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
  */
 
-@interface PXUIPeopleSuggestionDataSource : NSObject <PXPeopleSuggestionManagerDataSource> {
-    NSMutableSet * _cancelledTokens;
+@interface PXUIPeopleSuggestionDataSource : NSObject <PHPhotoLibraryChangeObserver, PXPeopleSuggestionManagerDataSource> {
+    unsigned long long  _flowType;
+    unsigned long long  _initialPageLimit;
+    PHFetchResult * _mergeCandidateFetchResult;
+    NSArray * _mergeCandidates;
+    unsigned long long  _suggestionFetchType;
 }
 
-@property (nonatomic, retain) NSMutableSet *cancelledTokens;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned long long flowType;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long initialPageLimit;
+@property (nonatomic, copy) PHFetchResult *mergeCandidateFetchResult;
+@property (nonatomic, copy) NSArray *mergeCandidates;
+@property (nonatomic) unsigned long long suggestionFetchType;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)cancelSuggestionForPerson:(id)arg1 withToken:(int)arg2 error:(id*)arg3;
-- (id)cancelledTokens;
-- (void)commitSuggestionsForPerson:(id)arg1 withConfirmedSuggestions:(id)arg2 andRejectedSuggestions:(id)arg3;
-- (id)init;
-- (void)setCancelledTokens:(id)arg1;
-- (int)suggestionsForPerson:(id)arg1 withConfirmedSuggestions:(id)arg2 andRejectedSuggestions:(id)arg3 completion:(id /* block */)arg4;
+- (bool)cancelSuggestionForPerson:(id)arg1 withToken:(id)arg2 error:(id*)arg3;
+- (id)commitSuggestionsForPerson:(id)arg1 withConfirmedSuggestions:(id)arg2 andRejectedSuggestions:(id)arg3;
+- (id)fetchAndCacheMergeCandidatesForPerson:(id)arg1;
+- (unsigned long long)flowType;
+- (id)initWithFlowType:(unsigned long long)arg1;
+- (unsigned long long)initialPageLimit;
+- (id)mergeCandidateFetchResult;
+- (id)mergeCandidates;
+- (void)photoLibraryDidChange:(id)arg1;
+- (void)setFlowType:(unsigned long long)arg1;
+- (void)setInitialPageLimit:(unsigned long long)arg1;
+- (void)setMergeCandidateFetchResult:(id)arg1;
+- (void)setMergeCandidates:(id)arg1;
+- (void)setSuggestionFetchType:(unsigned long long)arg1;
+- (void)startListeningForLibraryChanges;
+- (void)stopListeningForLibraryChanges;
+- (unsigned long long)suggestionFetchType;
+- (id)suggestionsForPerson:(id)arg1 withConfirmedSuggestions:(id)arg2 andRejectedSuggestions:(id)arg3 completion:(id /* block */)arg4;
 
 @end

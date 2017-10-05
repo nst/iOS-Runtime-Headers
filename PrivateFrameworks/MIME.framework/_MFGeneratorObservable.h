@@ -12,7 +12,7 @@
     id  _state;
 }
 
-- (BOOL)_isFinished;
+- (bool)_isFinished;
 - (void)_scheduleNextResultForObserver:(id)arg1;
 - (void)_updateState;
 - (void)dealloc;

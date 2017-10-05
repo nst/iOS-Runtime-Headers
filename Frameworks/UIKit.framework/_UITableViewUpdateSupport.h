@@ -9,70 +9,70 @@
     id * animatedHeaders;
     NSMutableArray * deletedSections;
     NSMutableArray * gaps;
-    int  globalReorderingRow;
+    long long  globalReorderingRow;
     NSMutableArray * insertedSections;
     NSMutableIndexSet * movedRows;
     NSMutableIndexSet * movedSections;
-    int  newGlobalRow;
-    int  newGlobalRowCount;
-    int * newGlobalRowMap;
+    long long  newGlobalRow;
+    long long  newGlobalRowCount;
+    long long * newGlobalRowMap;
     UITableViewRowData * newRowData;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  newRowRange;
-    int  newSection;
-    int  newSectionCount;
-    int * newSectionMap;
+    long long  newSection;
+    long long  newSectionCount;
+    long long * newSectionMap;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  newTableViewVisibleBounds;
-    int  oldGlobalRow;
-    int  oldGlobalRowCount;
-    int * oldGlobalRowMap;
+    long long  oldGlobalRow;
+    long long  oldGlobalRowCount;
+    long long * oldGlobalRowMap;
     UITableViewRowData * oldRowData;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  oldRowRange;
-    int  oldSection;
-    int  oldSectionCount;
-    int * oldSectionMap;
+    long long  oldSection;
+    long long  oldSectionCount;
+    long long * oldSectionMap;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  oldTableViewVisibleBounds;
     NSMutableIndexSet * rows;
     UITableView * tableView;
-    float  tableViewVisibleBoundsOffset;
+    double  tableViewVisibleBoundsOffset;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  tableViewVisibleBoundsUnion;
     NSArray * updateItems;
     NSMutableArray * viewAnimations;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  visibleRows;
 }
 
@@ -83,9 +83,9 @@
 - (void)_computeRowUpdates;
 - (void)_computeSectionUpdates;
 - (void)_computeVisibleBounds;
-- (void)_faultInRealHeightsOfNeededCells;
+- (void)_faultInRealHeightsOfNeededElements;
 - (id)_imageViewForView:(id)arg1;
-- (BOOL)_isReloadSectionUpdate;
+- (bool)_isReloadSectionUpdate;
 - (void)_setupAnimationForReorderingRow;
 - (void)_setupAnimationForTableFooter;
 - (void)_setupAnimationForTableHeader;
@@ -98,16 +98,16 @@
 - (void)_setupAnimationsForExistingVisibleCells;
 - (void)_setupAnimationsForInsertedHeadersAndFooters;
 - (void)_setupAnimationsForNewlyInsertedCells;
-- (void)_setupDeleteAnimationForFooterInSection:(int)arg1 withTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 forUpdateItem:(id)arg3;
-- (void)_setupDeleteAnimationForHeaderInSection:(int)arg1 withTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 forUpdateItem:(id)arg3;
-- (void)_setupInsertAnimationForFooterInSection:(int)arg1 withTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 forUpdateItem:(id)arg3;
-- (void)_setupInsertAnimationForHeaderInSection:(int)arg1 withTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 forUpdateItem:(id)arg3;
-- (float)_startOfRowAfterFooterInSection:(int)arg1 withRowData:(id)arg2;
-- (float)_startOfRowAfterHeaderInSection:(int)arg1 withRowData:(id)arg2;
-- (float)_startOfRowAfterRow:(int)arg1 withRowData:(id)arg2;
+- (void)_setupDeleteAnimationForFooterInSection:(long long)arg1 withTargetRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 forUpdateItem:(id)arg3;
+- (void)_setupDeleteAnimationForHeaderInSection:(long long)arg1 withTargetRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 forUpdateItem:(id)arg3;
+- (void)_setupInsertAnimationForFooterInSection:(long long)arg1 withTargetRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 forUpdateItem:(id)arg3;
+- (void)_setupInsertAnimationForHeaderInSection:(long long)arg1 withTargetRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 forUpdateItem:(id)arg3;
+- (double)_startOfRowAfterFooterInSection:(long long)arg1 withRowData:(id)arg2;
+- (double)_startOfRowAfterHeaderInSection:(long long)arg1 withRowData:(id)arg2;
+- (double)_startOfRowAfterRow:(long long)arg1 withRowData:(id)arg2;
 - (void)_validateAnimatedCells;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_visibleRowRangePlusAdjoining;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })_visibleRowRangePlusAdjoining;
 - (void)dealloc;
-- (id)initWithTableView:(id)arg1 updateItems:(id)arg2 oldRowData:(id)arg3 newRowData:(id)arg4 oldRowRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5 newRowRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg6 context:(id)arg7;
+- (id)initWithTableView:(id)arg1 updateItems:(id)arg2 oldRowData:(id)arg3 newRowData:(id)arg4 oldRowRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg5 newRowRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg6 context:(id)arg7;
 
 @end

@@ -15,10 +15,10 @@
 
 - (void)_allCacheEntriesWithHandler:(id /* block */)arg1;
 - (void)_cacheEntriesBeforeTimeStamp:(double)arg1 withHandler:(id /* block */)arg2;
-- (void)_cacheEntriesForHash:(unsigned int)arg1 withHandler:(id /* block */)arg2;
+- (void)_cacheEntriesForHash:(unsigned long long)arg1 withHandler:(id /* block */)arg2;
 - (void)_cacheEntryForNextRefreshWithHandler:(id /* block */)arg1;
 - (void)_cacheEntryWithRowId:(long long)arg1 handler:(id /* block */)arg2;
-- (void)_cacheKeysForHash:(unsigned int)arg1 withHandler:(id /* block */)arg2;
+- (void)_cacheKeysForHash:(unsigned long long)arg1 withHandler:(id /* block */)arg2;
 - (void)_cacheRowIdsOfEntriesBeforeTimeStamp:(double)arg1 withHandler:(id /* block */)arg2;
 - (long long)_numberOfEntries;
 - (void)_openDB;

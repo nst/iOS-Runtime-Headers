@@ -12,7 +12,7 @@
 - (id)document;
 - (id)init;
 - (id)initWithText:(id)arg1;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (id)newRunIterator;
 - (id)runIterator;
 - (id)text;

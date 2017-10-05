@@ -2,36 +2,37 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDDrawableComment : NSObject <TSDAnnotationHosting> {
-    TSDDrawableInfo * mParent;
+@interface TSDDrawableComment : TSKSosBase <TSDComment> {
+    TSDDrawableInfo * _parent;
     TSDCommentStorage * mStorage;
 }
 
 @property (nonatomic, readonly) int annotationDisplayStringType;
 @property (nonatomic, readonly) int annotationType;
-@property (nonatomic, readonly) TSKAnnotationAuthor *author;
-@property (nonatomic, readonly) NSString *changeTrackingContentFormatString;
-@property (nonatomic, readonly) NSString *changeTrackingContentString;
-@property (nonatomic, readonly) NSString *changeTrackingTitleString;
+@property (nonatomic, readonly) NSString *annotationUUID;
+@property (nonatomic, retain) TSKAnnotationAuthor *author;
 @property (nonatomic, readonly) NSDate *date;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) TSPObject *hostingModel;
-@property (nonatomic, retain) TSDDrawableInfo *parent;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isHighlight;
+@property (nonatomic) TSDDrawableInfo *parent;
 @property (nonatomic, copy) TSDCommentStorage *storage;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (int)annotationDisplayStringType;
 - (int)annotationType;
+- (id)annotationUUID;
 - (id)author;
 - (void)commentWillBeAddedToDocumentRoot;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
-- (void)dealloc;
 - (id)description;
-- (id)hostingModel;
 - (id)initWithParent:(id)arg1 storage:(id)arg2;
+- (bool)isFloatingComment;
+- (bool)isHighlight;
+- (bool)isInDocument;
 - (id)parent;
 - (void)setAuthor:(id)arg1;
 - (void)setParent:(id)arg1;

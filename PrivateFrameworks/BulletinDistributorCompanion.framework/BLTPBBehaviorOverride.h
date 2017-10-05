@@ -15,8 +15,8 @@
 @property (nonatomic) unsigned long long behaviorOverrideMode;
 @property (nonatomic) unsigned long long behaviorOverrideType;
 @property (nonatomic, retain) NSMutableArray *effectiveIntervals;
-@property (nonatomic) BOOL hasBehaviorOverrideMode;
-@property (nonatomic) BOOL hasBehaviorOverrideType;
+@property (nonatomic) bool hasBehaviorOverrideMode;
+@property (nonatomic) bool hasBehaviorOverrideType;
 
 - (void).cxx_destruct;
 - (void)addEffectiveIntervals:(id)arg1;
@@ -28,19 +28,19 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)effectiveIntervals;
-- (id)effectiveIntervalsAtIndex:(unsigned int)arg1;
-- (unsigned int)effectiveIntervalsCount;
-- (BOOL)hasBehaviorOverrideMode;
-- (BOOL)hasBehaviorOverrideType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (id)effectiveIntervalsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)effectiveIntervalsCount;
+- (bool)hasBehaviorOverrideMode;
+- (bool)hasBehaviorOverrideType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setBehaviorOverrideMode:(unsigned long long)arg1;
 - (void)setBehaviorOverrideType:(unsigned long long)arg1;
 - (void)setEffectiveIntervals:(id)arg1;
-- (void)setHasBehaviorOverrideMode:(BOOL)arg1;
-- (void)setHasBehaviorOverrideType:(BOOL)arg1;
+- (void)setHasBehaviorOverrideMode:(bool)arg1;
+- (void)setHasBehaviorOverrideType:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

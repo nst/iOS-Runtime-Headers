@@ -10,9 +10,9 @@
 
 + (id)copyParseRules;
 
+- (void).cxx_destruct;
 - (id)accessControlEntities;
 - (void)addACE:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)init;
 - (id)liveACEs;

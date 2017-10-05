@@ -5,12 +5,12 @@
 @interface _CDSpotlightItemRecorderOperation : NSObject {
     NSString * _bundleID;
     NSArray * _items;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, retain) NSString *bundleID;
 @property (nonatomic, retain) NSArray *items;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
 - (void).cxx_destruct;
 - (id)bundleID;
@@ -18,7 +18,7 @@
 - (id)operationByCombiningOperation:(id)arg1;
 - (void)setBundleID:(id)arg1;
 - (void)setItems:(id)arg1;
-- (void)setType:(int)arg1;
-- (int)type;
+- (void)setType:(long long)arg1;
+- (long long)type;
 
 @end

@@ -8,6 +8,6 @@
 - (NSSet *)allControlItems;
 - (NSArray *)controlPanelItems;
 - (HFIncrementalStateControlItem *)incrementalStateControlItem;
-- (HFPrimaryStateControlItem *)primaryStateControlItem;
+- (HFControlItem<HFPrimaryStateWriter> *)primaryStateControlItem;
 
 @end

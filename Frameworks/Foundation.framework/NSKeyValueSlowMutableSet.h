@@ -4,12 +4,12 @@
 
 @interface NSKeyValueSlowMutableSet : NSKeyValueMutableSet {
     BOOL  _padding;
-    BOOL  _treatNilValuesLikeEmptySets;
+    bool  _treatNilValuesLikeEmptySets;
     NSKeyValueGetter * _valueGetter;
     NSKeyValueSetter * _valueSetter;
 }
 
-+ (struct { unsigned int x1; /* Warning: unhandled array encoding: '[4@]}' */ id x2[4]; }*)_proxyNonGCPoolPointer;
++ (struct { unsigned long long x1; /* Warning: unhandled array encoding: '[4@]}' */ id x2[4]; }*)_proxyNonGCPoolPointer;
 
 - (id)_createMutableSetValueWithSelector:(SEL)arg1;
 - (id)_proxyInitWithContainer:(id)arg1 getter:(id)arg2;
@@ -18,7 +18,7 @@
 - (id)_setValueWithSelector:(SEL)arg1;
 - (void)addObject:(id)arg1;
 - (void)addObjectsFromArray:(id)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)intersectSet:(id)arg1;
 - (id)member:(id)arg1;
 - (void)minusSet:(id)arg1;

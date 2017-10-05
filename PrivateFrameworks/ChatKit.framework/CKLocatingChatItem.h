@@ -9,8 +9,8 @@
 - (Class)balloonViewClass;
 - (void)configureBalloonView:(id)arg1;
 - (id)description;
-- (BOOL)failed;
-- (BOOL)isFromMe;
+- (bool)failed;
+- (bool)isFromMe;
 - (id)locationText;
 - (id)message;
 - (id)sender;

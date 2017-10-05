@@ -12,10 +12,10 @@
     PXPhotosDetailsContext * _parentContext;
     PHFetchResult * _people;
     PXPhotosDataSource * _photosDataSource;
-    BOOL  _shouldShowMovieHeader;
-    BOOL  _shouldUseKeyFace;
+    bool  _shouldShowMovieHeader;
+    bool  _shouldUseKeyFace;
     NSString * _titleFontName;
-    unsigned int  _viewSourceOrigin;
+    unsigned long long  _viewSourceOrigin;
 }
 
 @property (nonatomic, readonly) PHFetchResult *assetCollections;
@@ -23,19 +23,21 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) PXDisplayTitleInfo *displayTitleInfo;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PHFetchResult *keyAssetsFetchResult;
 @property (nonatomic, readonly, copy) NSString *localizedSubtitle;
 @property (nonatomic, readonly, copy) NSString *localizedTitle;
 @property (nonatomic, readonly) PXPhotosDetailsContext *parentContext;
 @property (nonatomic, readonly) PHFetchResult *people;
 @property (nonatomic, readonly) PXPhotosDataSource *photosDataSource;
-@property (nonatomic, readonly) BOOL shouldShowHeaderTitle;
-@property (nonatomic, readonly) BOOL shouldShowMovieHeader;
-@property (nonatomic, readonly) BOOL shouldUseKeyFace;
+@property (nonatomic, readonly) bool shouldShowHeaderTitle;
+@property (nonatomic, readonly) bool shouldShowMovieHeader;
+@property (nonatomic, readonly) bool shouldUseKeyFace;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSString *titleFontName;
-@property (nonatomic, readonly) unsigned int viewSourceOrigin;
+@property (nonatomic, readonly) unsigned long long viewSourceOrigin;
+
++ (id)photosDetailsContextForMemory:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_updatePropertiesDerivedFromDisplayTitleInfo;
@@ -49,7 +51,7 @@
 - (id)localizedSubtitle;
 - (id)localizedTitle;
 - (id)mutableChangeObject;
-- (void)observable:(id)arg1 didChange:(unsigned int)arg2 context:(void*)arg3;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
 - (id)parentContext;
 - (id)people;
 - (void)performChanges:(id /* block */)arg1;
@@ -61,13 +63,13 @@
 - (void)setLocalizedSubtitle:(id)arg1;
 - (void)setLocalizedTitle:(id)arg1;
 - (void)setPeople:(id)arg1;
-- (void)setShouldShowMovieHeader:(BOOL)arg1;
+- (void)setShouldShowMovieHeader:(bool)arg1;
 - (void)setTitleFontName:(id)arg1;
-- (void)setViewSourceOrigin:(unsigned int)arg1;
-- (BOOL)shouldShowHeaderTitle;
-- (BOOL)shouldShowMovieHeader;
-- (BOOL)shouldUseKeyFace;
+- (void)setViewSourceOrigin:(unsigned long long)arg1;
+- (bool)shouldShowHeaderTitle;
+- (bool)shouldShowMovieHeader;
+- (bool)shouldUseKeyFace;
 - (id)titleFontName;
-- (unsigned int)viewSourceOrigin;
+- (unsigned long long)viewSourceOrigin;
 
 @end

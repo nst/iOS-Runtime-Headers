@@ -10,16 +10,16 @@
 
 @property (nonatomic, retain) NSArray *headerSortDescriptors;
 
+- (void).cxx_destruct;
 - (id)_inflateRequestBody:(id)arg1;
-- (void)dealloc;
 - (void)finishCoreDAVResponse;
 - (id)headerSortDescriptors;
 - (id)initWithProvider:(id)arg1;
 - (void)logCoreDAVRequest:(id)arg1 withTaskIdentifier:(id)arg2;
-- (void)logCoreDAVResponseHeaders:(id)arg1 andStatusCode:(int)arg2 withTaskIdentifier:(id)arg3;
+- (void)logCoreDAVResponseHeaders:(id)arg1 andStatusCode:(long long)arg2 withTaskIdentifier:(id)arg3;
 - (void)logCoreDAVResponseSnippet:(id)arg1;
 - (void)logCoreDAVResponseSnippet:(id)arg1 withTaskIdentifier:(id)arg2;
-- (void)logCoreDAVResponseSnippet:(id)arg1 withTaskIdentifier:(id)arg2 isBody:(BOOL)arg3;
+- (void)logCoreDAVResponseSnippet:(id)arg1 withTaskIdentifier:(id)arg2 isBody:(bool)arg3;
 - (void)setHeaderSortDescriptors:(id)arg1;
 
 @end

@@ -4,6 +4,7 @@
 
 @interface VTUITurnOnSiriView : UIView <UITextViewDelegate> {
     UIButton * _continueButton;
+    NSArray * _continueButtons;
     UITextView * _footerTextView;
     NSMutableArray * _horizontalPaddingConstraints;
     NSLayoutConstraint * _imageSpacingConstraint;
@@ -13,15 +14,19 @@
     NSLayoutConstraint * _imageViewHeightMinimumConstraint;
     UILabel * _instructionLabel;
     UIButton * _laterButton;
+    UIView * _scrollContainerView;
+    UIScrollView * _scrollView;
+    NSArray * _siriLanguages;
     <VTUITurnOnSiriViewDelegate> * _stateViewDelegate;
     UILabel * _subtitleLabel;
     UILabel * _titleLabel;
 }
 
 @property (nonatomic, readonly) UIButton *continueButton;
+@property (nonatomic, readonly) NSArray *continueButtons;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) UIButton *laterButton;
 @property (nonatomic) <VTUITurnOnSiriViewDelegate> *stateViewDelegate;
 @property (readonly) Class superclass;
@@ -32,13 +37,15 @@
 - (void)_setupImage;
 - (void)_setupUI;
 - (id)continueButton;
+- (id)continueButtons;
 - (void)fadeInSubviews;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)languageSelectionOfContinueButton:(id)arg1;
 - (id)laterButton;
 - (void)layoutSubviews;
 - (void)prepareForLastTimeShown;
 - (void)setStateViewDelegate:(id)arg1;
 - (id)stateViewDelegate;
-- (BOOL)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
 
 @end

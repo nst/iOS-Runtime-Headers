@@ -4,9 +4,9 @@
 
 @interface EDSortedCollection : EDKeyedCollection
 
-- (unsigned int)addObject:(id)arg1;
-- (unsigned int)addObject:(id)arg1 overrideDuplicate:(bool)arg2;
-- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
+- (unsigned long long)addObject:(id)arg1;
+- (unsigned long long)addObject:(id)arg1 overrideDuplicate:(bool)arg2;
+- (void)insertObject:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)replaceObjectAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 
 @end

@@ -10,13 +10,13 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) <XPCNSServiceListenerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, retain) NSString *serviceName;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)XPCServiceListener:(id)arg1 didReceiveNewConnection:(id)arg2;
-- (BOOL)XPCServiceListener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)XPCServiceListener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)delegate;
 - (id)initWithServiceName:(id)arg1 queue:(id)arg2 delegate:(id)arg3;
 - (id)serviceName;

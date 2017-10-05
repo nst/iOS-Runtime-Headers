@@ -16,6 +16,7 @@
 - (void)expel;
 - (long long)handle;
 - (id)initWithExtension:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setHandle:(long long)arg1;
 - (void)setToken:(id)arg1;
 - (id)token;

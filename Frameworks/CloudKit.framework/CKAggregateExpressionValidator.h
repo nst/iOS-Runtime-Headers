@@ -13,6 +13,6 @@
 - (id)initWithValidators:(id)arg1;
 - (void)setSubExpressionValidators:(id)arg1;
 - (id)subExpressionValidators;
-- (BOOL)validate:(id)arg1 error:(id*)arg2;
+- (bool)validate:(id)arg1 error:(id*)arg2;
 
 @end

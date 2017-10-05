@@ -4,39 +4,39 @@
 
 @interface PKAssertion : NSObject {
     NSString * _identifier;
-    BOOL  _invalidateWhenBackgrounded;
+    bool  _invalidateWhenBackgrounded;
     id /* block */  _invalidationHandler;
     NSLock * _invalidationLock;
     NSString * _reason;
-    int  _state;
-    unsigned int  _type;
+    long long  _state;
+    unsigned long long  _type;
 }
 
 @property (nonatomic, copy) NSString *identifier;
-@property (nonatomic) BOOL invalidateWhenBackgrounded;
+@property (nonatomic) bool invalidateWhenBackgrounded;
 @property (nonatomic, copy) id /* block */ invalidationHandler;
 @property (nonatomic, readonly) NSString *reason;
-@property (nonatomic) int state;
-@property (nonatomic, readonly) unsigned int type;
+@property (nonatomic) long long state;
+@property (nonatomic, readonly) unsigned long long type;
 
-+ (void)acquireAssertionOfType:(unsigned int)arg1 withReason:(id)arg2 completion:(id /* block */)arg3;
-+ (BOOL)assertionExistsOfType:(unsigned int)arg1;
++ (void)acquireAssertionOfType:(unsigned long long)arg1 withReason:(id)arg2 completion:(id /* block */)arg3;
++ (bool)assertionExistsOfType:(unsigned long long)arg1;
 + (void)preheatConnection;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (id)identifier;
-- (id)initWithType:(unsigned int)arg1 identifier:(id)arg2 reason:(id)arg3;
+- (id)initWithType:(unsigned long long)arg1 identifier:(id)arg2 reason:(id)arg3;
 - (void)invalidate;
-- (BOOL)invalidateWhenBackgrounded;
+- (bool)invalidateWhenBackgrounded;
 - (id /* block */)invalidationHandler;
 - (id)reason;
 - (void)setIdentifier:(id)arg1;
-- (void)setInvalidateWhenBackgrounded:(BOOL)arg1;
+- (void)setInvalidateWhenBackgrounded:(bool)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;
-- (void)setState:(int)arg1;
-- (int)state;
-- (unsigned int)type;
+- (void)setState:(long long)arg1;
+- (long long)state;
+- (unsigned long long)type;
 
 @end

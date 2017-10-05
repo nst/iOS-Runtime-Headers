@@ -6,7 +6,7 @@
 @required
 
 - (void)cancelRequest:(NSString *)arg1;
-- (void)fetchConfiguration:(BOOL)arg1 :(JSValue *)arg2;
+- (void)fetchConfiguration:(bool)arg1 :(JSValue *)arg2;
 - (void)invalidateConfiguration;
 - (JSValue *)makeRequest:(NSDictionary *)arg1 :(JSValue *)arg2;
 

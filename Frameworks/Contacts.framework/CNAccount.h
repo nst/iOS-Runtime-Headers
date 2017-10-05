@@ -20,20 +20,20 @@
 + (id)predicateForAccountForContainerWithIdentifier:(id)arg1;
 + (id)predicateForAccountWithExternalIdentifier:(id)arg1;
 + (id)predicateForAccountsWithIdentifiers:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)externalIdentifierString;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithExternalIdentifier:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 externalIdentifier:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 // Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
 
@@ -41,8 +41,8 @@
 + (void)_cnui_canRequestRefreshWithCompletion:(id /* block */)arg1;
 + (id)_cnui_displayNameForACAccount:(id)arg1;
 + (id)_cnui_displayNameForLocal;
-+ (BOOL)_cnui_isFacebookACAccount:(id)arg1;
-+ (BOOL)_cnui_requestRefreshWithUserAction:(BOOL)arg1;
++ (bool)_cnui_isFacebookACAccount:(id)arg1;
++ (bool)_cnui_requestRefreshWithUserAction:(bool)arg1;
 
 - (id)_cnui_displayName;
 

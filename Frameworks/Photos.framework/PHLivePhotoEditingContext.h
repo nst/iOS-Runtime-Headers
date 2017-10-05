@@ -25,7 +25,7 @@
 - (id)initWithLivePhotoEditingInput:(id)arg1;
 - (unsigned int)orientation;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })photoTime;
-- (void)prepareLivePhotoForPlaybackWithTargetSize:(struct CGSize { float x1; float x2; })arg1 options:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)prepareLivePhotoForPlaybackWithTargetSize:(struct CGSize { double x1; double x2; })arg1 options:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)saveLivePhotoToOutput:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)setAudioVolume:(float)arg1;
 - (void)setFrameProcessor:(id /* block */)arg1;

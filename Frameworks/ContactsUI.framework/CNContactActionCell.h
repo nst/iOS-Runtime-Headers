@@ -17,12 +17,14 @@
 - (id)actionGroupItem;
 - (id)label;
 - (id)labelView;
-- (float)minCellHeight;
+- (double)minCellHeight;
+- (id)rightMostView;
 - (void)setCardGroupItem:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setLabelTextAttributes:(id)arg1;
 - (void)setTransportIcon:(id)arg1;
-- (BOOL)shouldPerformDefaultAction;
+- (bool)shouldIndentWhileEditing;
+- (bool)shouldPerformDefaultAction;
 - (void)tintColorDidChange;
 - (id)transportIcon;
 - (id)variableConstraints;

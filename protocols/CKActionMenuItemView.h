@@ -5,8 +5,8 @@
 
 @optional
 
-- (void)setEnabled:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setEnabled:(bool)arg1 animated:(bool)arg2;
+- (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
+- (void)setSelected:(bool)arg1 animated:(bool)arg2;
 
 @end

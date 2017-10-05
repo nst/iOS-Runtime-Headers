@@ -5,6 +5,6 @@
 
 @required
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 @end

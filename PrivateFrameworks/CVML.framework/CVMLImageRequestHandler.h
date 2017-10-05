@@ -26,6 +26,6 @@
 - (id)initWithURL:(id)arg1 options:(id)arg2;
 - (id)properties;
 - (void)releaseOriginalBuffer;
-- (BOOL)useFullImageBufferForFaces:(id)arg1;
+- (bool)useFullImageBufferForFaces:(id)arg1;
 
 @end

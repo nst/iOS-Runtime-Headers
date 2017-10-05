@@ -8,9 +8,9 @@
 - (NSString *)MIMEType;
 - (double)autoPlaybackPosition;
 - (UIColor *)backgroundColorOverride;
-- (BOOL)isPromisedItem;
+- (bool)isPromisedItem;
 - (NSString *)previewItemContentType;
 - (NSURL *)previewItemURLForDisplay;
-- (BOOL)wantsDefaultMediaPlayer;
+- (bool)wantsDefaultMediaPlayer;
 
 @end

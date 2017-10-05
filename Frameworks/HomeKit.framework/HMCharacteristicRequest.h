@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) HMCharacteristic *characteristic;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
@@ -20,7 +20,7 @@
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
-- (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
 - (id)hf_serializedStateDumpRepresentation;
 
 @end

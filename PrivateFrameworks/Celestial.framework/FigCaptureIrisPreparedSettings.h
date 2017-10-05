@@ -18,7 +18,7 @@
 @property (nonatomic) unsigned int bracketedImageCount;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned int outputHeight;
 @property (nonatomic) unsigned int outputWidth;
 @property (nonatomic) unsigned int processedOutputFormat;
@@ -36,7 +36,7 @@
 - (id)figCaptureStillImageSettingsRepresentation;
 - (id)init;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (unsigned int)outputHeight;
 - (unsigned int)outputWidth;
 - (unsigned int)processedOutputFormat;

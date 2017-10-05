@@ -4,14 +4,14 @@
 
 @interface FBSShutdownOptions : NSObject <BSXPCCoding, NSCopying> {
     NSString * _reason;
-    int  _rebootType;
+    long long  _rebootType;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *reason;
-@property (nonatomic) int rebootType;
+@property (nonatomic) long long rebootType;
 @property (readonly) Class superclass;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -24,8 +24,8 @@
 - (id)initWithReason:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (id)reason;
-- (int)rebootType;
-- (void)setRebootType:(int)arg1;
+- (long long)rebootType;
+- (void)setRebootType:(long long)arg1;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
 

@@ -4,7 +4,7 @@
 
 @interface ACDPairedDeviceAccountCache : NSObject {
     NSArray * _accounts;
-    BOOL  _accountsIsValid;
+    bool  _accountsIsValid;
     NSMutableArray * _completions;
     NSObject<OS_dispatch_queue> * _synchronizationQueue;
 }

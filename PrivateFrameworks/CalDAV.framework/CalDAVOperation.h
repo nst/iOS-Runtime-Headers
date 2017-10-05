@@ -3,7 +3,7 @@
  */
 
 @interface CalDAVOperation : CoreDAVTaskGroup {
-    BOOL  _isCancellingTaskGroups;
+    bool  _isCancellingTaskGroups;
     NSMutableSet * _outstandingTaskGroups;
     <CalDAVPrincipal> * _principal;
 }

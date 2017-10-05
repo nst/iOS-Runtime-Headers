@@ -3,16 +3,16 @@
  */
 
 @interface WMEnumProperty : CMProperty {
-    unsigned int  wdValue;
+    unsigned long long  wdValue;
 }
 
 - (id)cssStringForName:(id)arg1;
 - (id)description;
-- (id)initWithEnum:(unsigned int)arg1;
+- (id)initWithEnum:(unsigned long long)arg1;
 - (id)mapCellTextVAlign;
 - (id)mapJustification;
 - (id)mapUnderline;
 - (id)mapVerticalAlign;
-- (unsigned int)value;
+- (unsigned long long)value;
 
 @end

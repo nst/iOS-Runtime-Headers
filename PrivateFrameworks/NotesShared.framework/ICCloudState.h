@@ -6,10 +6,10 @@
 
 @property (nonatomic, retain) ICCloudSyncingObject *cloudSyncingObject;
 @property (nonatomic) long long currentLocalVersion;
-@property (nonatomic) BOOL inCloud;
+@property (nonatomic) bool inCloud;
 @property (nonatomic) long long latestVersionSyncedToCloud;
 @property (nonatomic, retain) NSDate *localVersionDate;
 
-- (BOOL)isInCloud;
+- (bool)isInCloud;
 
 @end

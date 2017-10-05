@@ -28,7 +28,7 @@
 @property (nonatomic, readonly) NSNumber *terminalMode;
 @property (nonatomic, readonly) NSData *token;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)asDictionary;
 - (void)dealloc;

@@ -10,19 +10,19 @@
 @property (nonatomic, readonly) NSArray *conditions;
 @property (nonatomic, readonly) NSDate *notBefore;
 @property (nonatomic, readonly) NSDate *notOnOrAfter;
-@property (nonatomic, readonly) BOOL oneTimeUse;
+@property (nonatomic, readonly) bool oneTimeUse;
 @property (nonatomic, readonly) NSNumber *proxyRestrictionAudienceCount;
 @property (nonatomic, readonly) NSArray *proxyRestrictions;
 
 + (id)createElement:(id*)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)assertionMeetsConditions:(id*)arg1;
+- (bool)assertionMeetsConditions:(id*)arg1;
 - (id)audienceRestrictions;
 - (id)conditions;
 - (id)notBefore;
 - (id)notOnOrAfter;
-- (BOOL)oneTimeUse;
+- (bool)oneTimeUse;
 - (id)proxyRestrictionAudienceCount;
 - (id)proxyRestrictions;
 

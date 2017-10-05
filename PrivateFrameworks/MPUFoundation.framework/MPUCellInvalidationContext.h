@@ -3,24 +3,24 @@
  */
 
 @interface MPUCellInvalidationContext : NSObject {
-    BOOL  _animated;
-    BOOL  _invalidateDownloadStatus;
-    BOOL  _invalidateEverything;
-    BOOL  _invalidateLayout;
+    bool  _animated;
+    bool  _invalidateDownloadStatus;
+    bool  _invalidateEverything;
+    bool  _invalidateLayout;
 }
 
-@property (getter=isAnimated, nonatomic) BOOL animated;
-@property (nonatomic) BOOL invalidateDownloadStatus;
-@property (nonatomic) BOOL invalidateEverything;
-@property (nonatomic) BOOL invalidateLayout;
+@property (getter=isAnimated, nonatomic) bool animated;
+@property (nonatomic) bool invalidateDownloadStatus;
+@property (nonatomic) bool invalidateEverything;
+@property (nonatomic) bool invalidateLayout;
 
-- (BOOL)invalidateDownloadStatus;
-- (BOOL)invalidateEverything;
-- (BOOL)invalidateLayout;
-- (BOOL)isAnimated;
-- (void)setAnimated:(BOOL)arg1;
-- (void)setInvalidateDownloadStatus:(BOOL)arg1;
-- (void)setInvalidateEverything:(BOOL)arg1;
-- (void)setInvalidateLayout:(BOOL)arg1;
+- (bool)invalidateDownloadStatus;
+- (bool)invalidateEverything;
+- (bool)invalidateLayout;
+- (bool)isAnimated;
+- (void)setAnimated:(bool)arg1;
+- (void)setInvalidateDownloadStatus:(bool)arg1;
+- (void)setInvalidateEverything:(bool)arg1;
+- (void)setInvalidateLayout:(bool)arg1;
 
 @end

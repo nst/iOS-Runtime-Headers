@@ -4,11 +4,13 @@
 
 @interface UIStatusBarHomeItemView : UIStatusBarButtonActionItemView
 
-- (int)buttonType;
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (long long)buttonType;
 - (id)contentsImage;
-- (BOOL)extendsHitTestingFrame;
-- (float)extraRightPadding;
+- (bool)extendsHitTestingFrame;
+- (double)extraRightPadding;
 - (id)highlightImage;
-- (BOOL)usesAdvancedActions;
+- (bool)usesAdvancedActions;
 
 @end

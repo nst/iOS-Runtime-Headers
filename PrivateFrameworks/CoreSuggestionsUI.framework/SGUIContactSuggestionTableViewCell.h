@@ -5,7 +5,7 @@
 @interface SGUIContactSuggestionTableViewCell : UITableViewCell {
     UIButton * _addUpdateButton;
     NSLayoutConstraint * _bottomMarginConstraint;
-    <SGUIContactSuggestionTableViewCellDelegate> * _delegate;
+    <SGUISuggestionTableViewCellDelegate> * _delegate;
     UILabel * _descriptionLabel;
     UIImageView * _iconImageView;
     UIButton * _ignoreButton;
@@ -16,17 +16,17 @@
     NSLayoutConstraint * _topMarginConstraint;
 }
 
-@property (nonatomic) <SGUIContactSuggestionTableViewCellDelegate> *delegate;
+@property (nonatomic) <SGUISuggestionTableViewCellDelegate> *delegate;
 @property (nonatomic, retain) SGRealtimeContact *realtimeContact;
 
 + (id)actionButtonTitleForContact:(id)arg1;
-+ (float)bottomMarginConstant;
++ (double)bottomMarginConstant;
 + (id)buttonTitleFont;
 + (id)descriptionFont;
-+ (float)interLabelAndButtonBaselineDeltaConstant;
-+ (float)interLabelBaselineDeltaConstant;
++ (double)interLabelAndButtonBaselineDeltaConstant;
++ (double)interLabelBaselineDeltaConstant;
 + (id)titleFont;
-+ (float)topMarginConstant;
++ (double)topMarginConstant;
 
 - (void).cxx_destruct;
 - (void)_addUpdateButtonTapped:(id)arg1;
@@ -35,7 +35,7 @@
 - (void)_setLabelAndButtonFonts;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)realtimeContact;
 - (void)setDelegate:(id)arg1;
 - (void)setRealtimeContact:(id)arg1;

@@ -4,13 +4,13 @@
 
 @interface IKJSPlaylistEndAction : IKJSObject <IKJSPlaylistEndAction>
 
-@property (readonly) int PAUSE;
-@property (readonly) int STOP;
-@property (readonly) int WAIT_FOR_MORE_ITEMS;
+@property (readonly) long long PAUSE;
+@property (readonly) long long STOP;
+@property (readonly) long long WAIT_FOR_MORE_ITEMS;
 
-- (int)PAUSE;
-- (int)STOP;
-- (int)WAIT_FOR_MORE_ITEMS;
+- (long long)PAUSE;
+- (long long)STOP;
+- (long long)WAIT_FOR_MORE_ITEMS;
 - (id)init;
 
 @end

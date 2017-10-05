@@ -10,14 +10,15 @@
 @property (nonatomic, copy) NSString *name;
 
 - (void)addColor:(id)arg1 index:(int)arg2;
-- (unsigned int)colorCount;
+- (unsigned long long)colorCount;
 - (id)colorForIndex:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (unsigned long long)hash;
 - (id)init;
 - (bool)isEmpty;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)name;
 - (void)setColor:(id)arg1 index:(int)arg2;
 - (void)setName:(id)arg1;

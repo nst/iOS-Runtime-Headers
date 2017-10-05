@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) NSString *APIToken;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)APIToken;

@@ -3,12 +3,12 @@
  */
 
 @interface AKNoteEditorViewController : UIViewController {
-    AKNoteAnnotation * _annotation;
+    AKPopupAnnotation * _annotation;
     <AKNoteEditorViewControllerDelegate> * _delegate;
     UITextView * _textView;
 }
 
-@property (retain) AKNoteAnnotation *annotation;
+@property (retain) AKPopupAnnotation *annotation;
 @property (nonatomic) <AKNoteEditorViewControllerDelegate> *delegate;
 @property (nonatomic, retain) UITextView *textView;
 
@@ -19,8 +19,8 @@
 - (void)setDelegate:(id)arg1;
 - (void)setTextView:(id)arg1;
 - (id)textView;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

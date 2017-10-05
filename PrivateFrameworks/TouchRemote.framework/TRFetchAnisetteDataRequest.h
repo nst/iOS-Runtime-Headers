@@ -3,17 +3,17 @@
  */
 
 @interface TRFetchAnisetteDataRequest : TRRequestMessage {
-    BOOL  _shouldProvision;
+    bool  _shouldProvision;
 }
 
-@property (nonatomic) BOOL shouldProvision;
+@property (nonatomic) bool shouldProvision;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setShouldProvision:(BOOL)arg1;
-- (BOOL)shouldProvision;
+- (void)setShouldProvision:(bool)arg1;
+- (bool)shouldProvision;
 
 @end

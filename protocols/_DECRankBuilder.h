@@ -5,6 +5,6 @@
 
 @required
 
-- (NSDictionary *)rankResults:(_DECPredictionSet *)arg1 limit:(unsigned int)arg2;
+- (NSDictionary *)rankResults:(_DECPredictionSet *)arg1 limit:(unsigned long long)arg2;
 
 @end

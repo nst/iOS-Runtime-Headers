@@ -6,7 +6,7 @@
     CKDPSubscription * _subscription;
 }
 
-@property (nonatomic, readonly) BOOL hasSubscription;
+@property (nonatomic, readonly) bool hasSubscription;
 @property (nonatomic, retain) CKDPSubscription *subscription;
 
 + (id)options;
@@ -16,11 +16,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasSubscription;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasSubscription;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setSubscription:(id)arg1;

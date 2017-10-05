@@ -2,25 +2,8 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIFeedbackKeyboardBehavior : UIFeedbackGenerator {
-    double  _lastTypedKeyTimestamp;
-}
+@interface _UIFeedbackKeyboardBehavior : _UIKeyboardFeedbackGenerator
 
-@property (getter=_keyboardConfiguration, nonatomic, readonly) _UIFeedbackKeyboardBehaviorConfiguration *keyboardConfiguration;
-@property (getter=_lastTypedKeyTimestamp, setter=_setLastTypedKeyTimestamp:, nonatomic) double lastTypedKeyTimestamp;
-
-+ (Class)_configurationClass;
-
-- (void)_activated;
-- (double)_autoDeactivationTimeout;
-- (id)_feedbackWithUpdatedVolume:(id)arg1;
-- (id)_keyboardConfiguration;
-- (double)_lastTypedKeyTimestamp;
-- (void)_playFeedbackForActionType:(int)arg1 withCustomization:(id /* block */)arg2;
-- (void)_setLastTypedKeyTimestamp:(double)arg1;
-- (id)_stats_key;
-- (void)actionOccurred:(int)arg1;
-- (float)scaleVolumeSlow:(float)arg1 fast:(float)arg2 timeSpan:(double)arg3;
-- (void)userTypedOnKeyWithType:(int)arg1;
+- (void)userTypedOnKeyWithType:(long long)arg1;
 
 @end

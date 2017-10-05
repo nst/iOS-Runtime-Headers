@@ -9,6 +9,7 @@
 
 + (id)sharedRequester;
 
+- (void).cxx_destruct;
 - (void)cancelRequest:(id)arg1;
 - (void)dealloc;
 - (id)init;

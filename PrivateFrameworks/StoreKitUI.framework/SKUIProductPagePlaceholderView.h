@@ -11,11 +11,11 @@
 @property (nonatomic, retain) UIColor *textColor;
 
 - (void).cxx_destruct;
-- (id)initWithPlaceholderString:(id)arg1 isPad:(BOOL)arg2;
+- (id)initWithPlaceholderString:(id)arg1 isPad:(bool)arg2;
 - (void)layoutSubviews;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setTextColor:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)textColor;
 
 @end

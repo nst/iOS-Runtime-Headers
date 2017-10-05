@@ -6,13 +6,15 @@
     UILabel * _label;
 }
 
-@property (nonatomic, readonly) UILabel *label;
+@property (nonatomic, retain) UILabel *label;
 
 - (void).cxx_destruct;
 - (id)label;
 - (id)labelView;
-- (float)minCellHeight;
+- (double)minCellHeight;
 - (void)setCardGroupItem:(id)arg1;
-- (BOOL)shouldPerformDefaultAction;
+- (void)setLabel:(id)arg1;
+- (bool)shouldIndentWhileEditing;
+- (bool)shouldPerformDefaultAction;
 
 @end

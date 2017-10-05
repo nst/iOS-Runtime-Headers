@@ -6,18 +6,19 @@
 @required
 
 - (NSUUID *)UUIDForObjectIdentifier:(long long)arg1;
-- (BOOL)canRetainObjectReferencedByWeakLazyReference;
+- (bool)canRetainObjectReferencedByWeakLazyReference;
+- (long long)componentIdentifier;
 - (TSPData *)dataForIdentifier:(long long)arg1;
-- (BOOL)didFinishResolvingReferences;
+- (bool)didFinishResolvingReferences;
 - (unsigned long long)fileFormatVersion;
-- (BOOL)hasDocumentVersionUUID;
+- (bool)hasDocumentVersionUUID;
 - (long long)objectIdentifierForUUID:(NSUUID *)arg1;
-- (int)sourceType;
-- (void)unarchiver:(TSPUnarchiver *)arg1 didReadLazyReference:(TSPLazyReference *)arg2 isExternal:(BOOL*)arg3;
+- (long long)sourceType;
+- (void)unarchiver:(TSPUnarchiver *)arg1 didReadLazyReference:(TSPLazyReference *)arg2 isExternal:(bool*)arg3;
 
 @optional
 
-- (BOOL)isCrossAppPaste;
-- (BOOL)isCrossDocumentPaste;
+- (bool)isCrossAppPaste;
+- (bool)isCrossDocumentPaste;
 
 @end

@@ -5,8 +5,8 @@
 @interface SYStoreIncomingSessionOwner : SYStoreSessionOwner
 
 - (id)initWithIncomingSession:(id)arg1;
-- (BOOL)isResetSync;
+- (bool)isResetSync;
 - (void)syncSession:(id)arg1 applyChanges:(struct NSArray { Class x1; }*)arg2 completion:(id /* block */)arg3;
-- (BOOL)syncSession:(id)arg1 resetDataStoreWithError:(id*)arg2;
+- (bool)syncSession:(id)arg1 resetDataStoreWithError:(id*)arg2;
 
 @end

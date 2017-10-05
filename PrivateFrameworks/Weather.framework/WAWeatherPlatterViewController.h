@@ -11,7 +11,7 @@
     UIStackView * _hourlyBeltView;
     NSArray * _hourlyForecastViews;
     WATodayModel * _model;
-    int  _status;
+    long long  _status;
 }
 
 @property (nonatomic, retain) WFURLComponents *URLComponents;
@@ -20,12 +20,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIView *dividerLineView;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) WATodayHeaderView *headerView;
 @property (nonatomic, retain) UIStackView *hourlyBeltView;
 @property (nonatomic, retain) NSArray *hourlyForecastViews;
 @property (nonatomic, retain) WATodayModel *model;
-@property (nonatomic) int status;
+@property (nonatomic) long long status;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -33,7 +33,7 @@
 - (void)_buildModelForLocation:(id)arg1;
 - (void)_contentSizeDidUpdate:(id)arg1;
 - (void)_kickoffLoadingWithLocation:(id)arg1 orPerhapsALocationString:(id)arg2;
-- (void)_updateStatus:(int)arg1;
+- (void)_updateStatus:(long long)arg1;
 - (void)_updateViewContent;
 - (id)commitURL;
 - (id)constraints;
@@ -54,9 +54,9 @@
 - (void)setHourlyBeltView:(id)arg1;
 - (void)setHourlyForecastViews:(id)arg1;
 - (void)setModel:(id)arg1;
-- (void)setStatus:(int)arg1;
+- (void)setStatus:(long long)arg1;
 - (void)setURLComponents:(id)arg1;
-- (int)status;
+- (long long)status;
 - (void)temperatureUnitObserver:(id)arg1 didChangeTemperatureUnitTo:(int)arg2;
 - (void)viewDidLoad;
 

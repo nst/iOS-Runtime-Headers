@@ -5,9 +5,9 @@
 
 @required
 
-- (BOOL)autoListRecognition;
-- (BOOL)autoListTermination;
-- (int)contentWritingDirection;
-- (BOOL)textIsVertical;
+- (bool)autoListRecognition;
+- (bool)autoListTermination;
+- (long long)contentWritingDirection;
+- (bool)textIsVertical;
 
 @end

@@ -5,11 +5,11 @@
 
 @required
 
-- (BOOL)canRankContacts;
-- (BOOL)contactIsAllowed:(_CDContact *)arg1;
-- (unsigned int)rankAggregationMethod;
+- (bool)canRankContacts;
+- (bool)contactIsAllowed:(_CDContact *)arg1;
+- (unsigned long long)rankAggregationMethod;
 - (double)rankContact:(_CDContact *)arg1;
 - (_CDInteractionRank *)rankInteraction:(_CDInteraction *)arg1;
-- (void)setRankAggregationMethod:(unsigned int)arg1;
+- (void)setRankAggregationMethod:(unsigned long long)arg1;
 
 @end

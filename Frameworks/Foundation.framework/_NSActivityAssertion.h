@@ -4,8 +4,11 @@
 
 @interface _NSActivityAssertion : NSObject {
     unsigned char  _adoptPreviousVoucher;
-    long long  _ended;
+    bool  _ended;
     id /* block */  _expirationHandler;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
     unsigned long long  _options;
     NSObject<OS_voucher> * _previousVoucher;
     BKSProcessAssertion * _processAssertion;

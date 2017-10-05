@@ -6,36 +6,36 @@
     NSData * mData;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  mFrame;
-    long  mSizeInBytes;
+    int  mSizeInBytes;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  mSizeInPoints;
     int  mType;
 }
 
 - (id)data;
 - (void)dealloc;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
-- (unsigned int)hash;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frame;
+- (unsigned long long)hash;
 - (id)initWithData:(id)arg1 type:(int)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (bool)isLoaded;
 - (void)setData:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setSizeInBytes:(long)arg1;
-- (void)setSizeInPoints:(struct CGSize { float x1; float x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setSizeInBytes:(int)arg1;
+- (void)setSizeInPoints:(struct CGSize { double x1; double x2; })arg1;
 - (void)setType:(int)arg1;
-- (long)sizeInBytes;
-- (struct CGSize { float x1; float x2; })sizeInPoints;
+- (int)sizeInBytes;
+- (struct CGSize { double x1; double x2; })sizeInPoints;
 - (int)type;
 
 @end

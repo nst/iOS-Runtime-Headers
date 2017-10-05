@@ -3,10 +3,10 @@
  */
 
 @interface NSStringDrawingTextStorage : NSTextStorage <NSLayoutManagerDelegate> {
-    float  _baselineDelta;
+    double  _baselineDelta;
     CUICatalog * _catalog;
     NSConcreteNotifyingMutableAttributedString * _contents;
-    float  _defaultTighteningFactor;
+    double  _defaultTighteningFactor;
     NSLayoutManager * _layoutManager;
     struct { 
         unsigned int _typesetterBehavior : 4; 
@@ -23,58 +23,58 @@
 @property (nonatomic, retain) CUICatalog *cuiCatalog;
 @property (nonatomic, retain) CUIStyleEffectConfiguration *cuiStyleEffects;
 @property (readonly, copy) NSString *debugDescription;
-@property float defaultTighteningFactor;
+@property double defaultTighteningFactor;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (getter=_usesSimpleTextEffects, setter=_setUsesSimpleTextEffects:, nonatomic) BOOL usesSimpleTextEffects;
+@property (getter=_usesSimpleTextEffects, setter=_setUsesSimpleTextEffects:, nonatomic) bool usesSimpleTextEffects;
 
-+ (BOOL)_hasCustomSettings;
-+ (void)_setHasCustomSettings:(BOOL)arg1;
++ (bool)_hasCustomSettings;
++ (void)_setHasCustomSettings:(bool)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
 + (id)stringDrawingTextStorage;
 
-- (float)_baselineDelta;
-- (BOOL)_baselineMode;
-- (BOOL)_forceWordWrapping;
-- (BOOL)_isDeallocating;
-- (BOOL)_isStringDrawingTextStorage;
-- (void)_setBaselineDelta:(float)arg1;
-- (void)_setBaselineMode:(BOOL)arg1;
-- (void)_setForceWordWrapping:(BOOL)arg1;
-- (void)_setUsesSimpleTextEffects:(BOOL)arg1;
-- (BOOL)_shouldSetOriginalFontAttribute;
-- (BOOL)_tryRetain;
-- (BOOL)_usesSimpleTextEffects;
-- (void)addAttribute:(id)arg1 value:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
-- (id)attribute:(id)arg1 atIndex:(unsigned int)arg2 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
-- (id)attribute:(id)arg1 atIndex:(unsigned int)arg2 longestEffectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
-- (id)attributesAtIndex:(unsigned int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
+- (double)_baselineDelta;
+- (bool)_baselineMode;
+- (bool)_forceWordWrapping;
+- (bool)_isDeallocating;
+- (bool)_isStringDrawingTextStorage;
+- (void)_setBaselineDelta:(double)arg1;
+- (void)_setBaselineMode:(bool)arg1;
+- (void)_setForceWordWrapping:(bool)arg1;
+- (void)_setUsesSimpleTextEffects:(bool)arg1;
+- (bool)_shouldSetOriginalFontAttribute;
+- (bool)_tryRetain;
+- (bool)_usesSimpleTextEffects;
+- (void)addAttribute:(id)arg1 value:(id)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
+- (id)attribute:(id)arg1 atIndex:(unsigned long long)arg2 effectiveRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg3;
+- (id)attribute:(id)arg1 atIndex:(unsigned long long)arg2 longestEffectiveRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg3 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4;
+- (id)attributesAtIndex:(unsigned long long)arg1 effectiveRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg2;
 - (id)cuiCatalog;
 - (id)cuiStyleEffects;
 - (void)dealloc;
-- (struct CGPoint { float x1; float x2; })defaultTextContainerOriginForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)defaultTighteningFactor;
-- (void)drawTextContainer:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 withRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 graphicsContext:(struct CGContext { }*)arg4 baselineMode:(BOOL)arg5 scrollable:(BOOL)arg6 padding:(float)arg7;
-- (void)drawTextContainer:(id)arg1 withRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 graphicsContext:(struct CGContext { }*)arg3 baselineMode:(BOOL)arg4 scrollable:(BOOL)arg5 padding:(float)arg6;
+- (struct CGPoint { double x1; double x2; })defaultTextContainerOriginForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)defaultTighteningFactor;
+- (void)drawTextContainer:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 withRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 graphicsContext:(struct CGContext { }*)arg4 baselineMode:(bool)arg5 scrollable:(bool)arg6 padding:(double)arg7;
+- (void)drawTextContainer:(id)arg1 withRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 graphicsContext:(struct CGContext { }*)arg3 baselineMode:(bool)arg4 scrollable:(bool)arg5 padding:(double)arg6;
 - (void)fontSetChanged;
 - (id)init;
 - (id)layoutManager;
-- (unsigned int)length;
+- (unsigned long long)length;
 - (void)processEditing;
 - (oneway void)release;
-- (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withAttributedString:(id)arg2;
-- (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withString:(id)arg2;
-- (void)setAttributes:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)replaceCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withAttributedString:(id)arg2;
+- (void)replaceCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withString:(id)arg2;
+- (void)setAttributes:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)setCuiCatalog:(id)arg1;
 - (void)setCuiStyleEffects:(id)arg1;
-- (void)setDefaultTighteningFactor:(float)arg1;
+- (void)setDefaultTighteningFactor:(double)arg1;
 - (id)string;
 - (id)textContainer;
 - (id)textContainerForAttributedString:(id)arg1;
-- (id)textContainerForAttributedString:(id)arg1 containerSize:(struct CGSize { float x1; float x2; })arg2 lineFragmentPadding:(float)arg3;
-- (int)typesetterBehavior;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })usedRectForTextContainer:(id)arg1;
+- (id)textContainerForAttributedString:(id)arg1 containerSize:(struct CGSize { double x1; double x2; })arg2 lineFragmentPadding:(double)arg3;
+- (long long)typesetterBehavior;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })usedRectForTextContainer:(id)arg1;
 
 @end

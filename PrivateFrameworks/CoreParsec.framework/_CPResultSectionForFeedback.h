@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
  */
 
-@interface _CPResultSectionForFeedback : PBCodable <NSCopying> {
+@interface _CPResultSectionForFeedback : PBCodable <NSSecureCoding, _CPResultSectionForFeedback> {
     NSString * _bundleIdentifier;
     NSData * _fallbackResultSection;
     struct { 
@@ -10,46 +10,48 @@
     }  _has;
     NSString * _identifier;
     double  _rankingScore;
-    NSMutableArray * _results;
+    NSArray * _results;
 }
 
-@property (nonatomic, retain) NSString *bundleIdentifier;
-@property (nonatomic, retain) NSData *fallbackResultSection;
-@property (nonatomic, readonly) BOOL hasBundleIdentifier;
-@property (nonatomic, readonly) BOOL hasFallbackResultSection;
-@property (nonatomic, readonly) BOOL hasIdentifier;
-@property (nonatomic) BOOL hasRankingScore;
-@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, copy) NSString *bundleIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSData *fallbackResultSection;
+@property (nonatomic, readonly) bool hasBundleIdentifier;
+@property (nonatomic, readonly) bool hasFallbackResultSection;
+@property (nonatomic, readonly) bool hasIdentifier;
+@property (nonatomic, readonly) bool hasRankingScore;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, readonly) NSData *jsonData;
 @property (nonatomic) double rankingScore;
-@property (nonatomic, retain) NSMutableArray *results;
-
-+ (Class)resultsType;
+@property (nonatomic, copy) NSArray *results;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)addResults:(id)arg1;
 - (id)bundleIdentifier;
 - (void)clearResults;
-- (void)copyTo:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
 - (id)fallbackResultSection;
-- (BOOL)hasBundleIdentifier;
-- (BOOL)hasFallbackResultSection;
-- (BOOL)hasIdentifier;
-- (BOOL)hasRankingScore;
-- (unsigned int)hash;
+- (bool)hasBundleIdentifier;
+- (bool)hasFallbackResultSection;
+- (bool)hasIdentifier;
+- (bool)hasRankingScore;
+- (unsigned long long)hash;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithFacade:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)jsonData;
 - (double)rankingScore;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)results;
-- (id)resultsAtIndex:(unsigned int)arg1;
-- (unsigned int)resultsCount;
+- (id)resultsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)resultsCount;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setFallbackResultSection:(id)arg1;
-- (void)setHasRankingScore:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setRankingScore:(double)arg1;
 - (void)setResults:(id)arg1;

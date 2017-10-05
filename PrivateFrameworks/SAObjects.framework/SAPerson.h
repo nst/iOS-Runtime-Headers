@@ -7,6 +7,7 @@
 @property (nonatomic, copy) NSArray *addresses;
 @property (nonatomic, copy) NSDate *birthday;
 @property (nonatomic, copy) NSString *company;
+@property (nonatomic, copy) NSString *companyPhonetic;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSArray *emails;
@@ -14,7 +15,7 @@
 @property (nonatomic, copy) NSDictionary *firstNameAPGs;
 @property (nonatomic, copy) NSString *firstNamePhonetic;
 @property (nonatomic, copy) NSString *fullName;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *internalGUID;
 @property (nonatomic, copy) NSNumber *isBlocked;
 @property (nonatomic, copy) NSString *lastName;
@@ -41,6 +42,7 @@
 - (id)addresses;
 - (id)birthday;
 - (id)company;
+- (id)companyPhonetic;
 - (id)emails;
 - (id)encodedClassName;
 - (id)firstName;
@@ -65,6 +67,7 @@
 - (void)setAddresses:(id)arg1;
 - (void)setBirthday:(id)arg1;
 - (void)setCompany:(id)arg1;
+- (void)setCompanyPhonetic:(id)arg1;
 - (void)setEmails:(id)arg1;
 - (void)setFirstName:(id)arg1;
 - (void)setFirstNameAPGs:(id)arg1;

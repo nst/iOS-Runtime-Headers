@@ -3,51 +3,51 @@
  */
 
 @interface DTSColorWheel : UIView {
-    float  _colorWheelRadius;
+    double  _colorWheelRadius;
     <DTSColorWheelDelegate> * _delegate;
     UIButton * _doneButton;
-    float  _gradientWidth;
-    float  _hueRotation;
+    double  _gradientWidth;
+    double  _hueRotation;
     UIView * _pickerCircle;
-    float  _pickerDiameter;
-    float  _pickerRotation;
+    double  _pickerDiameter;
+    double  _pickerRotation;
 }
 
-@property (nonatomic) float colorWheelRadius;
+@property (nonatomic) double colorWheelRadius;
 @property (nonatomic) <DTSColorWheelDelegate> *delegate;
 @property (nonatomic, retain) UIButton *doneButton;
-@property (nonatomic) float gradientWidth;
-@property (nonatomic) float hueRotation;
+@property (nonatomic) double gradientWidth;
+@property (nonatomic) double hueRotation;
 @property (nonatomic, retain) UIView *pickerCircle;
-@property (nonatomic) float pickerDiameter;
-@property (nonatomic) float pickerRotation;
+@property (nonatomic) double pickerDiameter;
+@property (nonatomic) double pickerRotation;
 
 - (void).cxx_destruct;
 - (void)beganTouches:(id)arg1;
-- (float)colorWheelRadius;
-- (void)createDoneButtonWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (double)colorWheelRadius;
+- (void)createDoneButtonWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)delegate;
 - (id)doneButton;
 - (void)doneButtonTapped:(id)arg1;
 - (void)finishedTouches;
-- (float)gradientWidth;
-- (float)hueRotation;
+- (double)gradientWidth;
+- (double)hueRotation;
 - (id)pickerCircle;
-- (float)pickerDiameter;
-- (float)pickerRotation;
+- (double)pickerDiameter;
+- (double)pickerRotation;
 - (id)pickerViewHighlightedColor;
-- (void)setColorWheelRadius:(float)arg1;
+- (void)setColorWheelRadius:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDoneButton:(id)arg1;
-- (void)setGradientWidth:(float)arg1;
-- (void)setHueRotation:(float)arg1;
+- (void)setGradientWidth:(double)arg1;
+- (void)setHueRotation:(double)arg1;
 - (void)setPickerCircle:(id)arg1;
-- (void)setPickerDiameter:(float)arg1;
-- (void)setPickerRotation:(float)arg1;
+- (void)setPickerDiameter:(double)arg1;
+- (void)setPickerRotation:(double)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (void)updatePickerPositionForPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)updatePickerPositionForPoint:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly) NSString *displayName;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -16,7 +16,7 @@
 - (id)displayName;
 - (id)displayNameAndPID;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)idString;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -25,7 +25,7 @@
 - (id)initWithPID:(unsigned int)arg1 displayName:(id)arg2;
 - (id)initWithSerializedRepresentation:(id)arg1;
 - (id)internalDescription;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (unsigned int)pid;
 - (unsigned long long)pid64;
 - (id)serializedRepresentation;

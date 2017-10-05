@@ -4,28 +4,28 @@
 
 @interface ISTouchLivePhotoPlaybackFilter : ISLivePhotoPlaybackFilter {
     ISDisplayLink * __displayLink;
-    int  __playbackRequestID;
+    long long  __playbackRequestID;
     NSDate * __playbackStartDate;
-    BOOL  _touchActive;
+    bool  _touchActive;
 }
 
 @property (setter=_setDisplayLink:, nonatomic) ISDisplayLink *_displayLink;
-@property (setter=_setPlaybackReaquestID:, nonatomic) int _playbackRequestID;
+@property (setter=_setPlaybackReaquestID:, nonatomic) long long _playbackRequestID;
 @property (setter=_setPlaybackStartDate:, nonatomic, retain) NSDate *_playbackStartDate;
-@property (getter=isTouchActive, nonatomic) BOOL touchActive;
+@property (getter=isTouchActive, nonatomic) bool touchActive;
 
 - (void).cxx_destruct;
 - (id)_displayLink;
 - (void)_handleDisplayLink;
-- (int)_nextPlaybackRequestID;
-- (int)_playbackRequestID;
+- (long long)_nextPlaybackRequestID;
+- (long long)_playbackRequestID;
 - (id)_playbackStartDate;
 - (void)_setDisplayLink:(id)arg1;
-- (void)_setPlaybackReaquestID:(int)arg1;
+- (void)_setPlaybackReaquestID:(long long)arg1;
 - (void)_setPlaybackStartDate:(id)arg1;
 - (void)didPerformChanges;
-- (BOOL)isTouchActive;
+- (bool)isTouchActive;
 - (void)reset;
-- (void)setTouchActive:(BOOL)arg1;
+- (void)setTouchActive:(bool)arg1;
 
 @end

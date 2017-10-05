@@ -12,13 +12,15 @@
 @property (nonatomic, copy) NSString *providedSubscriptionInfo;
 @property (nonatomic, copy) NSString *sourceIdentifier;
 @property (nonatomic, copy) NSNumber *sourceKind;
+@property (nonatomic, copy) NSString *subscriberIdentifierHash;
 @property (nonatomic, copy) NSArray *tierIdentifiers;
 
 + (id)keyPathsForValuesAffectingDerivedSubscriptionInfo;
 
+- (void)_deriveValuesFromProvidedInfo:(id)arg1;
 - (void)_setNullResettableValue:(id)arg1 forKey:(id)arg2;
 - (void)_updateDerivedSubscriptionInfo;
-- (BOOL)_validateNullableValue:(id*)arg1 forKey:(id)arg2 error:(id*)arg3;
+- (bool)_validateNullableValue:(id*)arg1 forKey:(id)arg2 error:(id*)arg3;
 - (void)awakeFromFetch;
 - (void)awakeFromInsert;
 - (void)didChangeValueForKey:(id)arg1;
@@ -27,11 +29,13 @@
 - (void)setExpirationDate:(id)arg1;
 - (void)setMostRecentSaveDate:(id)arg1;
 - (void)setProvidedSubscriptionInfo:(id)arg1;
+- (void)setSubscriberIdentifierHash:(id)arg1;
 - (void)setTierIdentifiers:(id)arg1;
-- (BOOL)validateAccessLevel:(id*)arg1 error:(id*)arg2;
-- (BOOL)validateCreationDate:(id*)arg1 error:(id*)arg2;
-- (BOOL)validateExpirationDate:(id*)arg1 error:(id*)arg2;
-- (BOOL)validateModificationDate:(id*)arg1 error:(id*)arg2;
-- (BOOL)validateTierIdentifiers:(id*)arg1 error:(id*)arg2;
+- (bool)validateAccessLevel:(id*)arg1 error:(id*)arg2;
+- (bool)validateCreationDate:(id*)arg1 error:(id*)arg2;
+- (bool)validateExpirationDate:(id*)arg1 error:(id*)arg2;
+- (bool)validateModificationDate:(id*)arg1 error:(id*)arg2;
+- (bool)validateSubscriberIdentifierHash:(id*)arg1 error:(id*)arg2;
+- (bool)validateTierIdentifiers:(id*)arg1 error:(id*)arg2;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraStreamManagerSession : NSObject {
+@interface HMDCameraStreamManagerSession : HMFObject {
     HMFMessage * _currentMessage;
     NSString * _destinationID;
     HMDCameraSessionID * _sessionID;
@@ -23,7 +23,7 @@
 - (void).cxx_destruct;
 - (id)currentMessage;
 - (id)destinationID;
-- (id)initWithSessionID:(id)arg1 destinationID:(id)arg2 streamShowingAppIdentifier:(id)arg3 controlManager:(id)arg4 setupWaitPeriod:(unsigned int)arg5 error:(id*)arg6;
+- (id)initWithSessionID:(id)arg1 destinationID:(id)arg2 streamShowingAppIdentifier:(id)arg3 controlManager:(id)arg4 setupWaitPeriod:(unsigned long long)arg5 error:(id*)arg6;
 - (id)sessionID;
 - (void)setCurrentMessage:(id)arg1;
 - (void)setSlotIdentifier:(id)arg1;

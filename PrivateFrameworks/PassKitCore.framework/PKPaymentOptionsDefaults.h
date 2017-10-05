@@ -9,7 +9,7 @@
     CNContact * _defaultContactPhone;
     CNContact * _defaultShippingAddress;
     int  _defaultsChangedNotifyToken;
-    unsigned int  _postedNotificationCount;
+    unsigned long long  _postedNotificationCount;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -19,7 +19,7 @@
 @property (nonatomic, retain) CNContact *defaultContactPhone;
 @property (nonatomic, retain) CNContact *defaultShippingAddress;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)defaults;
@@ -55,6 +55,8 @@
 - (id)init;
 - (void)migrateToSyncable;
 - (void)setDefaultBillingAddress:(id)arg1 forPaymentPass:(id)arg2;
+- (void)setDefaultBillingAddress:(id)arg1 forPrimaryAccountIdentifier:(id)arg2;
+- (void)setDefaultBillingAddress:(id)arg1 forRemotePaymentInstrument:(id)arg2;
 - (void)setDefaultContactEmail:(id)arg1;
 - (void)setDefaultContactName:(id)arg1;
 - (void)setDefaultContactPhone:(id)arg1;

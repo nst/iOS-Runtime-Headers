@@ -19,18 +19,16 @@
 @property (nonatomic, retain) _INPBBillPayeeValue *billPayee;
 @property (nonatomic) int billType;
 @property (nonatomic, retain) _INPBDateTimeRange *dueDateRange;
-@property (nonatomic, readonly) BOOL hasBillPayee;
-@property (nonatomic) BOOL hasBillType;
-@property (nonatomic, readonly) BOOL hasDueDateRange;
-@property (nonatomic, readonly) BOOL hasIntentMetadata;
-@property (nonatomic, readonly) BOOL hasPaymentDateRange;
-@property (nonatomic) BOOL hasStatus;
+@property (nonatomic, readonly) bool hasBillPayee;
+@property (nonatomic) bool hasBillType;
+@property (nonatomic, readonly) bool hasDueDateRange;
+@property (nonatomic, readonly) bool hasIntentMetadata;
+@property (nonatomic, readonly) bool hasPaymentDateRange;
+@property (nonatomic) bool hasStatus;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic, retain) _INPBDateTimeRange *paymentDateRange;
 @property (nonatomic) int status;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -44,23 +42,23 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)dueDateRange;
-- (BOOL)hasBillPayee;
-- (BOOL)hasBillType;
-- (BOOL)hasDueDateRange;
-- (BOOL)hasIntentMetadata;
-- (BOOL)hasPaymentDateRange;
-- (BOOL)hasStatus;
-- (unsigned int)hash;
+- (bool)hasBillPayee;
+- (bool)hasBillType;
+- (bool)hasDueDateRange;
+- (bool)hasIntentMetadata;
+- (bool)hasPaymentDateRange;
+- (bool)hasStatus;
+- (unsigned long long)hash;
 - (id)intentMetadata;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)paymentDateRange;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setBillPayee:(id)arg1;
 - (void)setBillType:(int)arg1;
 - (void)setDueDateRange:(id)arg1;
-- (void)setHasBillType:(BOOL)arg1;
-- (void)setHasStatus:(BOOL)arg1;
+- (void)setHasBillType:(bool)arg1;
+- (void)setHasStatus:(bool)arg1;
 - (void)setIntentMetadata:(id)arg1;
 - (void)setPaymentDateRange:(id)arg1;
 - (void)setStatus:(int)arg1;
@@ -68,11 +66,5 @@
 - (id)statusAsString:(int)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

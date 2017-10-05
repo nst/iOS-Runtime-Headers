@@ -13,6 +13,7 @@
 + (id)settingsControllerModule;
 + (id)sharedInstance;
 
+- (id)parentSettings;
 - (double)photoAnalysisGraphInitialGraceDelay;
 - (double)photoAnalysisGraphProgressUpdateInterval;
 - (void)setDefaultValues;

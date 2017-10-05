@@ -8,7 +8,7 @@
 }
 
 - (void)dealloc;
-- (id)initWithStorageID:(unsigned long)arg1 device:(id)arg2;
+- (id)initWithStorageID:(unsigned int)arg1 device:(id)arg2;
 - (void)prime;
 - (void)refreshInfo;
 - (id)tempArrayOfAllObjectHandles;

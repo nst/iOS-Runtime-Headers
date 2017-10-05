@@ -14,7 +14,7 @@
 
 - (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
-- (BOOL)isAllowedToWriteLogging;
+- (bool)isAllowedToWriteLogging;
 - (id)loggingPayload;
 - (id)stubDictionary;
 - (id)title;

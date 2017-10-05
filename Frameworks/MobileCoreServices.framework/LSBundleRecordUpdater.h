@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@interface LSBundleRecordUpdater : NSObject {
+@interface LSBundleRecordUpdater : LSRecordBuilder {
     struct LSBundleData { 
-        unsigned long _clas; 
+        unsigned int _clas; 
         unsigned long long _bundleFlags; 
-        unsigned long _plistContentFlags; 
-        unsigned long _itemFlags; 
+        unsigned int _plistContentFlags; 
+        unsigned int _itemFlags; 
+        unsigned char _iconFlags; 
         unsigned char _highResFlags; 
         unsigned char _appNapFlags; 
         unsigned short _archFlags; 
@@ -19,12 +20,15 @@
         int _rtime; 
         unsigned long long _version; 
         unsigned long long _minSystemVersion; 
+        unsigned long long _maxSystemVersion; 
         unsigned long long _execSDKVersion; 
         unsigned long long _execMinOSVersion; 
         unsigned int machOUUIDs[4]; 
         unsigned long long sequenceNumber; 
+        unsigned long long compatibilityState; 
+        unsigned long long installFailureReason; 
         unsigned long long itemID; 
-        unsigned long deviceFamily[4]; 
+        unsigned int deviceFamilies; 
         unsigned int installType; 
         unsigned int teamID; 
         unsigned int identifier; 
@@ -32,11 +36,13 @@
         unsigned int name; 
         unsigned int displayName; 
         unsigned int companionAppID; 
+        unsigned int counterpartIdentifiers; 
         unsigned int filename; 
         unsigned int bundleVersion; 
         unsigned int shortVersionString; 
         unsigned int signerIdentity; 
         unsigned int codeInfoIdentifier; 
+        unsigned int signerOrganization; 
         unsigned int appType; 
         unsigned long long staticDiskUsage; 
         unsigned long long purchaserDSID; 
@@ -52,6 +58,7 @@
         unsigned int genre; 
         unsigned int sourceAppIdentifier; 
         unsigned int appVariant; 
+        unsigned int primaryIconName; 
         unsigned int iconsDict; 
         unsigned int iconFileNames; 
         unsigned int execPath; 
@@ -61,6 +68,7 @@
         unsigned int types; 
         unsigned int services; 
         unsigned int plugins; 
+        unsigned int extensionPoints; 
         unsigned int activityTypes; 
         unsigned int schemesWhitelist; 
         unsigned int alias; 
@@ -83,7 +91,7 @@
     struct LSContext { 
         struct LSDatabase {} *db; 
     }  _context;
-    BOOL  _hasContext;
+    bool  _hasContext;
 }
 
 @property (nonatomic, readonly) NSString *bundleIdentifier;
@@ -91,8 +99,10 @@
 - (id)bundleIdentifier;
 - (void)dealloc;
 - (id)initWithBundleIdentifier:(id)arg1;
+- (id)initWithBundleIdentifier:(id)arg1 preferPlaceholder:(bool)arg2;
+- (void)parsePlaceholderMetadata:(id)arg1;
 - (void)parseSINFDictionary:(id)arg1;
 - (void)parseiTunesMetadata:(id)arg1;
-- (long)updateBundleRecord;
+- (int)updateBundleRecord;
 
 @end

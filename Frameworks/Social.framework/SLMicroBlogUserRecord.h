@@ -14,7 +14,7 @@
 @property (nonatomic, retain) NSString *profile_image_url;
 @property (nonatomic, retain) NSString *screen_name;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)userRecordWithDictionaryRepresentation:(id)arg1;
 
 - (void).cxx_destruct;

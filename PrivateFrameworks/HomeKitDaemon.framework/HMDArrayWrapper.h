@@ -10,7 +10,7 @@
 @property (nonatomic, retain) NSArray *field;
 @property (nonatomic, copy) id /* block */ objectCreator;
 
-+ (id)wrappertlv:(unsigned int)arg1 name:(id)arg2 objectCreator:(id /* block */)arg3;
++ (id)wrappertlv:(unsigned long long)arg1 name:(id)arg2 objectCreator:(id /* block */)arg3;
 
 - (void).cxx_destruct;
 - (id)field;

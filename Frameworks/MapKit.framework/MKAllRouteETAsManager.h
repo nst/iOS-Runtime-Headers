@@ -19,7 +19,7 @@
 - (id)init;
 - (id)mapItem;
 - (id)originMapItem;
-- (id)routeETAForTransportType:(unsigned int)arg1;
+- (id)routeETAForTransportType:(unsigned long long)arg1;
 - (void)setAutomobileOptions:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setMapItem:(id)arg1;

@@ -5,40 +5,47 @@
 @interface HDSQLiteQueryDescriptor : NSObject <NSCopying> {
     Class  _entityClass;
     NSString * _groupBy;
-    int  _limitCount;
+    long long  _limitCount;
     NSArray * _orderingDirections;
     NSArray * _orderingProperties;
     HDSQLitePredicate * _predicate;
-    BOOL  _returnsDistinctEntities;
+    NSArray * _preferredEntityJoinOrder;
+    bool  _returnsDistinctEntities;
 }
 
 @property (nonatomic) Class entityClass;
 @property (nonatomic, copy) NSString *groupBy;
-@property (nonatomic) int limitCount;
+@property (nonatomic) long long limitCount;
 @property (nonatomic, copy) NSArray *orderingDirections;
 @property (nonatomic, copy) NSArray *orderingProperties;
 @property (nonatomic, copy) HDSQLitePredicate *predicate;
-@property (nonatomic) BOOL returnsDistinctEntities;
+@property (nonatomic, copy) NSArray *preferredEntityJoinOrder;
+@property (nonatomic) bool returnsDistinctEntities;
 
 - (void).cxx_destruct;
+- (id)_SQLForDeleteWithError:(id*)arg1;
+- (id)_SQLForSelectWithProperties:(id)arg1;
+- (id)_SQLForSelectWithProperties:(id)arg1 columns:(id)arg2;
+- (id /* block */)_joinClauseComparatorWithPreferredEntityOrder:(id)arg1;
 - (id)_joinClauseForProperties:(id)arg1;
-- (id)_newSelectSQLWithProperties:(id)arg1;
-- (id)_newSelectSQLWithProperties:(id)arg1 columns:(id)arg2;
-- (id)_sortedJoinClauses:(id)arg1;
+- (id)_sortedJoinClauses:(id)arg1 preferredOrder:(id)arg2 baseTables:(id)arg3;
+- (id)_sortedJoinClauses:(id)arg1 withTables:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (Class)entityClass;
 - (id)groupBy;
-- (int)limitCount;
+- (long long)limitCount;
 - (id)orderingDirections;
 - (id)orderingProperties;
 - (id)predicate;
-- (BOOL)returnsDistinctEntities;
+- (id)preferredEntityJoinOrder;
+- (bool)returnsDistinctEntities;
 - (void)setEntityClass:(Class)arg1;
 - (void)setGroupBy:(id)arg1;
-- (void)setLimitCount:(int)arg1;
+- (void)setLimitCount:(long long)arg1;
 - (void)setOrderingDirections:(id)arg1;
 - (void)setOrderingProperties:(id)arg1;
 - (void)setPredicate:(id)arg1;
-- (void)setReturnsDistinctEntities:(BOOL)arg1;
+- (void)setPreferredEntityJoinOrder:(id)arg1;
+- (void)setReturnsDistinctEntities:(bool)arg1;
 
 @end

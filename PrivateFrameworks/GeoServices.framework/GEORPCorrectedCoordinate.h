@@ -8,23 +8,23 @@
 }
 
 @property (nonatomic, retain) GEOLatLng *correctedCoordinate;
-@property (nonatomic, readonly) BOOL hasCorrectedCoordinate;
-@property (nonatomic, readonly) BOOL hasOriginalCoordinate;
+@property (nonatomic, readonly) bool hasCorrectedCoordinate;
+@property (nonatomic, readonly) bool hasOriginalCoordinate;
 @property (nonatomic, retain) GEOLatLng *originalCoordinate;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)correctedCoordinate;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCorrectedCoordinate;
-- (BOOL)hasOriginalCoordinate;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCorrectedCoordinate;
+- (bool)hasOriginalCoordinate;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)originalCoordinate;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCorrectedCoordinate:(id)arg1;
 - (void)setOriginalCoordinate:(id)arg1;
 - (void)writeTo:(id)arg1;

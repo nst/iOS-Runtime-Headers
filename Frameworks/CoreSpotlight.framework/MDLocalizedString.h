@@ -4,6 +4,6 @@
 
 @interface MDLocalizedString : CSLocalizedString
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 @end

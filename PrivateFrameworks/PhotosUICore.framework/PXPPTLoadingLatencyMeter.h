@@ -7,22 +7,32 @@
         double minValue; 
         double maxValue; 
         double totalValue; 
-        unsigned int count; 
+        unsigned long long count; 
     }  _highQualityResults;
     struct { 
         double minValue; 
         double maxValue; 
         double totalValue; 
-        unsigned int count; 
+        unsigned long long count; 
     }  _lowQualityResults;
+    struct { 
+        double minValue; 
+        double maxValue; 
+        double totalValue; 
+        unsigned long long count; 
+    }  _mediumQualityResults;
 }
+
+@property (nonatomic, readonly) NSDictionary *measurementsDictionaryRepresentation;
 
 + (id)sharedInstance;
 + (void)startMeasurements;
 + (void)stopMeasurements;
 
+- (id)_measurementsDictionaryForImageQuality:(long long)arg1;
 - (id)init;
-- (struct { double x1; double x2; double x3; unsigned int x4; })measurementsForImageQuality:(int)arg1;
-- (void)reportLatency:(double)arg1 forImageQuality:(int)arg2;
+- (id)measurementsDictionaryRepresentation;
+- (struct { double x1; double x2; double x3; unsigned long long x4; })measurementsForImageQuality:(long long)arg1;
+- (void)reportLatency:(double)arg1 forImageQuality:(long long)arg2;
 
 @end

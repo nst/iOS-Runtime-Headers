@@ -7,44 +7,44 @@
     <UIWebFindOnPageHighlighterDelegate> * _delegate;
     NSMutableArray * _highlightBubbleViews;
     UIView * _highlightHostView;
-    unsigned int  _highlightedMatchIndex;
-    unsigned int  _numberOfMatches;
+    unsigned long long  _highlightedMatchIndex;
+    unsigned long long  _numberOfMatches;
     UIWebPDFViewHandler * _pdfHandler;
     NSArray * _pdfHighlightViews;
     NSString * _searchText;
-    BOOL  _zoomToHighlightSelection;
+    bool  _zoomToHighlightSelection;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <UIWebFindOnPageHighlighterDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) unsigned int highlightedMatchIndex;
-@property (nonatomic, readonly) unsigned int numberOfMatches;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) unsigned long long highlightedMatchIndex;
+@property (nonatomic, readonly) unsigned long long numberOfMatches;
 @property (nonatomic, readonly, copy) NSString *searchText;
 @property (readonly) Class superclass;
 
-+ (BOOL)expandedRectsWouldIntersect:(id)arg1;
++ (bool)expandedRectsWouldIntersect:(id)arg1;
 
-- (void)_addContentViewAtIndex:(unsigned int)arg1 withRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)_addContentViewAtIndex:(unsigned long long)arg1 withRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (void)_clearHighlightViews;
 - (void)_commonInitialize;
 - (id)_currentPDFSearchResult;
-- (void)_highlightFindOnPageMatch:(BOOL)arg1;
-- (void)_highlightFindOnPageMatchForPDF:(BOOL)arg1 withPDFHandler:(id)arg2;
-- (BOOL)_highlightSelection;
-- (void)_setSelectionRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 textRects:(id)arg2 contentImage:(struct CGImage { }*)arg3 contentViews:(id)arg4 wobble:(BOOL)arg5;
-- (BOOL)_updateHighlightedMatchIndex:(BOOL)arg1;
+- (void)_highlightFindOnPageMatch:(bool)arg1;
+- (void)_highlightFindOnPageMatchForPDF:(bool)arg1 withPDFHandler:(id)arg2;
+- (bool)_highlightSelection;
+- (void)_setSelectionRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 textRects:(id)arg2 contentImage:(struct CGImage { }*)arg3 contentViews:(id)arg4 wobble:(bool)arg5;
+- (bool)_updateHighlightedMatchIndex:(bool)arg1;
 - (void)clearBrowserView;
 - (void)dealloc;
 - (id)delegate;
-- (unsigned int)findOnPageOptions;
+- (unsigned long long)findOnPageOptions;
 - (void)highlightNextMatch;
 - (void)highlightPreviousMatch;
-- (unsigned int)highlightedMatchIndex;
+- (unsigned long long)highlightedMatchIndex;
 - (id)initWithBrowserView:(id)arg1;
 - (id)initWithPDFViewHandler:(id)arg1;
-- (unsigned int)numberOfMatches;
+- (unsigned long long)numberOfMatches;
 - (void)search:(id)arg1 hasPartialResults:(id)arg2;
 - (void)searchDidBegin:(id)arg1;
 - (void)searchDidFinish:(id)arg1;
@@ -53,9 +53,9 @@
 - (id)searchText;
 - (void)searchWasCancelled:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setSearchText:(id)arg1 matchLimit:(unsigned int)arg2;
-- (void)setSelectionRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 textRects:(id)arg2 contentImage:(struct CGImage { }*)arg3 wobble:(BOOL)arg4;
-- (void)setSelectionRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 textRects:(id)arg2 contentViews:(id)arg3 wobble:(BOOL)arg4;
-- (BOOL)updateHighlightBubbleWobble:(BOOL)arg1;
+- (void)setSearchText:(id)arg1 matchLimit:(unsigned long long)arg2;
+- (void)setSelectionRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 textRects:(id)arg2 contentImage:(struct CGImage { }*)arg3 wobble:(bool)arg4;
+- (void)setSelectionRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 textRects:(id)arg2 contentViews:(id)arg3 wobble:(bool)arg4;
+- (bool)updateHighlightBubbleWobble:(bool)arg1;
 
 @end

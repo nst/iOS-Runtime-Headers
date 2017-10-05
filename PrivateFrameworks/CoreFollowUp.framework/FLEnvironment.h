@@ -4,13 +4,14 @@
 
 @interface FLEnvironment : NSObject
 
-@property (nonatomic) BOOL followUpExtensionSupportEnabled;
+@property (nonatomic) bool followUpExtensionSupportEnabled;
 
 + (id)currentEnvironment;
 
-- (BOOL)followUpExtensionSupportEnabled;
-- (BOOL)isInternal;
-- (BOOL)isUnlocked;
-- (void)setFollowUpExtensionSupportEnabled:(BOOL)arg1;
+- (bool)followUpExtensionSupportEnabled;
+- (bool)isInternal;
+- (bool)isUnlocked;
+- (void)setFollowUpExtensionSupportEnabled:(bool)arg1;
+- (bool)shouldHideAllFollowUps;
 
 @end

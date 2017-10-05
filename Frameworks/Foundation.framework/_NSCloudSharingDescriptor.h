@@ -3,33 +3,33 @@
  */
 
 @interface _NSCloudSharingDescriptor : NSObject <NSSecureCoding> {
-    BOOL  _invitationsSentViaThirdPartyService;
-    int  _numberOfInvitations;
-    int  _operation;
-    BOOL  _publicShare;
+    bool  _invitationsSentViaThirdPartyService;
+    long long  _numberOfInvitations;
+    long long  _operation;
+    bool  _publicShare;
     NSString * _sharedContentType;
 }
 
-@property BOOL invitationsSentViaThirdPartyService;
-@property int numberOfInvitations;
-@property int operation;
-@property BOOL publicShare;
+@property bool invitationsSentViaThirdPartyService;
+@property long long numberOfInvitations;
+@property long long operation;
+@property bool publicShare;
 @property (copy) NSString *sharedContentType;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_variantSubstrings;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)invitationsSentViaThirdPartyService;
-- (int)numberOfInvitations;
-- (int)operation;
-- (BOOL)publicShare;
-- (void)setInvitationsSentViaThirdPartyService:(BOOL)arg1;
-- (void)setNumberOfInvitations:(int)arg1;
-- (void)setOperation:(int)arg1;
-- (void)setPublicShare:(BOOL)arg1;
+- (bool)invitationsSentViaThirdPartyService;
+- (long long)numberOfInvitations;
+- (long long)operation;
+- (bool)publicShare;
+- (void)setInvitationsSentViaThirdPartyService:(bool)arg1;
+- (void)setNumberOfInvitations:(long long)arg1;
+- (void)setOperation:(long long)arg1;
+- (void)setPublicShare:(bool)arg1;
 - (void)setSharedContentType:(id)arg1;
 - (id)sharedContentType;
 

@@ -6,23 +6,23 @@
     NSString * _currentSnapshotName;
     NSString * _currentSnapshotPath;
     NSString * _fileSystemType;
-    BOOL  _supportsLocalSnapshots;
-    BOOL  _supportsSparseFiles;
+    bool  _supportsLocalSnapshots;
+    bool  _supportsSparseFiles;
 }
 
 @property (nonatomic, readonly) NSString *currentSnapshotName;
 @property (nonatomic, readonly) NSString *currentSnapshotPath;
 @property (nonatomic, retain) NSString *fileSystemType;
-@property (nonatomic, readonly) BOOL supportsLocalSnapshots;
-@property (nonatomic, readonly) BOOL supportsSparseFiles;
+@property (nonatomic, readonly) bool supportsLocalSnapshots;
+@property (nonatomic, readonly) bool supportsSparseFiles;
 
 + (unsigned long long)availableCacheSize;
 + (unsigned long long)fileSystemCapacity;
 + (id)sharedManager;
 
 - (void).cxx_destruct;
-- (BOOL)_fileSystemSupportsSnapshots;
-- (BOOL)_fileSystemSupportsSparseFiles;
+- (bool)_fileSystemSupportsSnapshots;
+- (bool)_fileSystemSupportsSparseFiles;
 - (id)_snapshotName:(id)arg1;
 - (id)currentSnapshotName;
 - (id)currentSnapshotPath;
@@ -30,15 +30,18 @@
 - (id)fileSystemType;
 - (id)init;
 - (id)listAllSnapshotsWithError:(id*)arg1;
-- (BOOL)mountSnapshot:(id)arg1 withError:(id*)arg2;
-- (BOOL)removeAllMobileBackupInternalSnapshots:(id*)arg1;
-- (BOOL)removeAllMobileBackupSnapshots:(id*)arg1;
-- (BOOL)removeSnapshot:(id)arg1 withError:(id*)arg2;
+- (bool)mountSnapshot:(id)arg1 withError:(id*)arg2;
+- (bool)removeAllMobileBackupInternalSnapshots:(id*)arg1;
+- (bool)removeAllMobileBackupSnapshots:(id*)arg1;
+- (unsigned long long)removeRestorePrefetchCache;
+- (unsigned long long)removeRestorePrefetchCacheWithEarliestDate:(id)arg1;
+- (bool)removeSnapshot:(id)arg1 withError:(id*)arg2;
 - (void)setFileSystemType:(id)arg1;
-- (BOOL)snapshotFilesystem:(id)arg1 withError:(id*)arg2;
-- (BOOL)supportsLocalSnapshots;
-- (BOOL)supportsSparseFiles;
-- (BOOL)unmountCurrentSnapshotAndRemove:(BOOL)arg1 withError:(id*)arg2;
-- (BOOL)unmountCurrentSnapshotAndRenameToInternalArchive:(id*)arg1;
+- (bool)snapshotFilesystem:(id)arg1 withError:(id*)arg2;
+- (bool)snapshotFilesystemWithSnapshotName:(id)arg1 withError:(id*)arg2;
+- (bool)supportsLocalSnapshots;
+- (bool)supportsSparseFiles;
+- (bool)unmountCurrentSnapshotAndRemove:(bool)arg1 withError:(id*)arg2;
+- (bool)unmountCurrentSnapshotAndRenameToInternalArchive:(id*)arg1;
 
 @end

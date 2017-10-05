@@ -7,12 +7,13 @@
 
 - (CNContact *)backingContact;
 - (NSString *)backingContactId;
+- (NSString *)backingContactIdentifier;
 - (NSString *)callerId;
 - (NSString *)destinationId;
 - (NSString *)displayName;
 - (NSArray *)handles;
 - (NSString *)isoCountryCode;
-- (int)mostRecentCallType;
-- (BOOL)mostRecentCallWasMissed;
+- (long long)mostRecentCallType;
+- (bool)mostRecentCallWasMissed;
 
 @end

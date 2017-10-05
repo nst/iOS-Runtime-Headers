@@ -7,6 +7,6 @@
 
 - (NSArray *)fetchedObjectIDs;
 - (NSSet *)fetchedObjectIDsSet;
-- (NSManagedObjectID *)objectIDAtIndex:(unsigned int)arg1;
+- (NSManagedObjectID *)objectIDAtIndex:(unsigned long long)arg1;
 
 @end

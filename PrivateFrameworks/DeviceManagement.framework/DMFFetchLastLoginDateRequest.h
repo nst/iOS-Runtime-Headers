@@ -8,7 +8,7 @@
 
 @property (nonatomic, copy) NSSet *appleIDs;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
 
 - (void).cxx_destruct;

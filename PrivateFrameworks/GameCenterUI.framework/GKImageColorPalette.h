@@ -3,25 +3,25 @@
  */
 
 @interface GKImageColorPalette : GKColorPalette {
-    float  _borderPercentageForBorderDetection;
-    unsigned long  _brightnessHistogram;
-    unsigned long  _brightnessSpread;
+    double  _borderPercentageForBorderDetection;
+    unsigned int  _brightnessHistogram;
+    unsigned int  _brightnessSpread;
     NSArray * _bubbleColors;
-    unsigned long  _grayscaleSpread;
-    unsigned long  _hueHistogram;
-    unsigned long  _hueSpread;
-    struct HSVColor { float x1; float x2; float x3; } * _imageHSVMap;
+    unsigned int  _grayscaleSpread;
+    unsigned int  _hueHistogram;
+    unsigned int  _hueSpread;
+    struct HSVColor { double x1; double x2; double x3; } * _imageHSVMap;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _imageSize;
-    unsigned long  _saturationHistogram;
-    unsigned long  _saturationSpread;
+    unsigned int  _saturationHistogram;
+    unsigned int  _saturationSpread;
 }
 
 @property (retain) NSArray *bubbleColors;
 
-- (BOOL)analyzeImage:(struct CGImage { }*)arg1;
+- (bool)analyzeImage:(struct CGImage { }*)arg1;
 - (id)bubbleColors;
 - (void)clearMainHistograms;
 - (void)clearSaturationAndBrightnessHistograms;
@@ -29,10 +29,10 @@
 - (void)findBrightColors;
 - (void)generateHSVMapWithContext:(struct CGContext { }*)arg1;
 - (id)initWithImage:(id)arg1;
-- (void)iterateOverPixelsWithBlock:(id /* block */)arg1 forHue:(unsigned long)arg2;
-- (void)printHistogram:(unsigned int*)arg1 ofSize:(unsigned long)arg2;
+- (void)iterateOverPixelsWithBlock:(id /* block */)arg1 forHue:(unsigned int)arg2;
+- (void)printHistogram:(unsigned int*)arg1 ofSize:(unsigned int)arg2;
 - (void)reset;
 - (void)setBubbleColors:(id)arg1;
-- (unsigned long)weightHistogram:(unsigned int*)arg1 size:(unsigned long)arg2 spread:(unsigned long)arg3;
+- (unsigned int)weightHistogram:(unsigned int*)arg1 size:(unsigned int)arg2 spread:(unsigned int)arg3;
 
 @end

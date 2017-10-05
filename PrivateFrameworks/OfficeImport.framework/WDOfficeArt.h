@@ -20,7 +20,7 @@
 - (id)imageData;
 - (id)imageName;
 - (id)initWithParagraph:(id)arg1;
-- (BOOL)isDrawableOverridden;
+- (bool)isDrawableOverridden;
 - (bool)isFloating;
 - (id)overrideDrawable;
 - (void)propagateTextTypeToDrawables;

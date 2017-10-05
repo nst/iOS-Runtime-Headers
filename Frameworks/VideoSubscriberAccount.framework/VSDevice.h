@@ -7,23 +7,23 @@
 }
 
 @property (nonatomic) int (*copyAnswer;
-@property (nonatomic, readonly) unsigned int deviceType;
-@property (getter=isRunningACustomerBuild, nonatomic, readonly) BOOL runningACustomerBuild;
-@property (getter=isRunningAnInternalBuild, nonatomic, readonly) BOOL runningAnInternalBuild;
+@property (nonatomic, readonly) unsigned long long deviceType;
+@property (getter=isRunningACustomerBuild, nonatomic, readonly) bool runningACustomerBuild;
+@property (getter=isRunningAnInternalBuild, nonatomic, readonly) bool runningAnInternalBuild;
 
-+ (unsigned int)_deviceTypeWithCopyAnswer:(int (*)arg1;
-+ (BOOL)_getMobileGestaltBoolean:(struct __CFString { }*)arg1 withCopyAnswer:(int (*)arg2;
-+ (BOOL)_runningACustomerBuildWithCopyAnswer:(int (*)arg1;
-+ (BOOL)_runningAnInternalBuildWithCopyAnswer:(int (*)arg1;
++ (unsigned long long)_deviceTypeWithCopyAnswer:(int (*)arg1;
++ (bool)_getMobileGestaltBoolean:(struct __CFString { }*)arg1 withCopyAnswer:(int (*)arg2;
++ (bool)_runningACustomerBuildWithCopyAnswer:(int (*)arg1;
++ (bool)_runningAnInternalBuildWithCopyAnswer:(int (*)arg1;
 + (id)currentDevice;
 
 - (id)accountDeletionConfirmationMessageForIdentityProviderDisplayName:(id)arg1;
 - (int (*)copyAnswer;
 - (id)developerIdentityProviderDeletionConfirmationMessage;
-- (unsigned int)deviceType;
+- (unsigned long long)deviceType;
 - (id)init;
-- (BOOL)isRunningACustomerBuild;
-- (BOOL)isRunningAnInternalBuild;
+- (bool)isRunningACustomerBuild;
+- (bool)isRunningAnInternalBuild;
 - (void)setCopyAnswer:(int (*)arg1;
 
 @end

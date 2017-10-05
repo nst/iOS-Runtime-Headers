@@ -10,7 +10,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSError *error;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HMCharacteristicRequest *request;
 @property (readonly) Class superclass;
 
@@ -19,13 +19,13 @@
 - (void).cxx_destruct;
 - (id)error;
 - (id)initWithRequest:(id)arg1 error:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)request;
 - (void)setRequest:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
-- (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
 - (id)hf_serializedStateDumpRepresentation;
 
 @end

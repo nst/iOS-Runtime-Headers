@@ -17,6 +17,6 @@
 - (id)allKeychainItems;
 - (id)init;
 - (void)migrateAllKeychainItems;
-- (BOOL)migrateKeychainItem:(id)arg1;
+- (bool)migrateKeychainItem:(id)arg1;
 
 @end

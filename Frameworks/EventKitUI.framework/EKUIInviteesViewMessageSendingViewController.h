@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) EKEvent *event;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (copy) id /* block */ messageSendingComplete;
 @property (retain) NSArray *recipients;
 @property (retain) NSString *subjectPrefix;
@@ -22,7 +22,7 @@
 
 + (id)_attendeesIgnorningMe:(id)arg1;
 + (id)_recipientEmailAddressesToDisplayNames:(id)arg1 recipients:(id)arg2;
-+ (BOOL)canShowForEvent:(id)arg1 withRecipients:(id)arg2;
++ (bool)canShowForEvent:(id)arg1 withRecipients:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)_htmlBodyForMailMessageWithNames:(id)arg1;
@@ -32,10 +32,10 @@
 - (id)initWithEvent:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
-- (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
+- (void)mailComposeController:(id)arg1 didFinishWithResult:(long long)arg2 error:(id)arg3;
 - (id /* block */)messageSendingComplete;
-- (BOOL)prefersForcedModalShowViewController;
-- (BOOL)prefersToBePresentedFromApplicationRootViewController;
+- (bool)prefersForcedModalShowViewController;
+- (bool)prefersToBePresentedFromApplicationRootViewController;
 - (id)recipients;
 - (void)setBody:(id)arg1;
 - (void)setEvent:(id)arg1;

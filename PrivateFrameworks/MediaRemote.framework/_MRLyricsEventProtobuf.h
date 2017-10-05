@@ -13,9 +13,9 @@
 }
 
 @property (nonatomic) double endTime;
-@property (nonatomic) BOOL hasEndTime;
-@property (nonatomic) BOOL hasStartTime;
-@property (nonatomic, readonly) BOOL hasToken;
+@property (nonatomic) bool hasEndTime;
+@property (nonatomic) bool hasStartTime;
+@property (nonatomic, readonly) bool hasToken;
 @property (nonatomic) double startTime;
 @property (nonatomic, retain) _MRLyricsTokenProtobuf *token;
 
@@ -25,16 +25,16 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (double)endTime;
-- (BOOL)hasEndTime;
-- (BOOL)hasStartTime;
-- (BOOL)hasToken;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasEndTime;
+- (bool)hasStartTime;
+- (bool)hasToken;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEndTime:(double)arg1;
-- (void)setHasEndTime:(BOOL)arg1;
-- (void)setHasStartTime:(BOOL)arg1;
+- (void)setHasEndTime:(bool)arg1;
+- (void)setHasStartTime:(bool)arg1;
 - (void)setStartTime:(double)arg1;
 - (void)setToken:(id)arg1;
 - (double)startTime;

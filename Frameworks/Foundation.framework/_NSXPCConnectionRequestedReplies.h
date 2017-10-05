@@ -3,15 +3,21 @@
  */
 
 @interface _NSXPCConnectionRequestedReplies : NSObject {
-    int  _lock;
-    struct __CFDictionary { } * _replyTable;
+    unsigned char  _invalid;
+    struct _opaque_pthread_mutex_t { 
+        long long __sig; 
+        BOOL __opaque[56]; 
+    }  _lock;
+    struct __CFDictionary { } * _progressTable;
+    struct __CFDictionary { } * _replyDictionaryTable;
+    unsigned long long  _requestedReplyCount;
 }
 
-- (void)addSequence:(unsigned long)arg1 withProgress:(id)arg2 cleanupBlock:(id /* block */)arg3;
-- (void)cleanup;
+- (void)beginTransactionForSequence:(unsigned long long)arg1 reply:(id)arg2 withProgress:(id)arg3;
 - (void)dealloc;
+- (void)endTransactionForSequence:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
 - (id)init;
-- (id)progressForSequence:(unsigned long)arg1;
-- (BOOL)removeSequence:(unsigned long)arg1;
+- (void)invalidate;
+- (id)progressForSequence:(unsigned long long)arg1;
 
 @end

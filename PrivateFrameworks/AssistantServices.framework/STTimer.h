@@ -3,21 +3,21 @@
  */
 
 @interface STTimer : STSiriModelObject {
-    int  _state;
+    long long  _state;
     NSNumber * _value;
 }
 
-@property (nonatomic) int state;
+@property (nonatomic) long long state;
 @property (nonatomic, copy) NSNumber *value;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setState:(int)arg1;
+- (void)setState:(long long)arg1;
 - (void)setValue:(id)arg1;
-- (int)state;
+- (long long)state;
 - (id)value;
 
 @end

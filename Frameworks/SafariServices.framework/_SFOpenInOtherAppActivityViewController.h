@@ -10,7 +10,7 @@
 
 + (id)_activityItemsForFilePath:(id)arg1 UTI:(id)arg2 sourceURL:(id)arg3;
 + (id)_applicationsForDocumentProxy:(id)arg1;
-+ (BOOL)canOpenWithFilePath:(id)arg1 UTI:(id)arg2 sourceURL:(id)arg3;
++ (bool)canOpenWithFilePath:(id)arg1 UTI:(id)arg2 sourceURL:(id)arg3;
 
 - (void).cxx_destruct;
 - (void)_prepareActivity:(id)arg1;

@@ -4,7 +4,7 @@
 
 @interface AFWatchdogTimer : NSObject {
     double  _interval;
-    BOOL  _isStopped;
+    bool  _isStopped;
     double  _remainingInterval;
     double  _startTime;
     NSObject<OS_dispatch_source> * _timerSource;
@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (void)cancel;
-- (BOOL)cancelIfNotAlreadyCanceled;
+- (bool)cancelIfNotAlreadyCanceled;
 - (void)dealloc;
 - (id)initWithTimeoutInterval:(double)arg1 onQueue:(id)arg2 timeoutHandler:(id /* block */)arg3;
 - (id)initWithTimeoutInterval:(double)arg1 timeoutHandler:(id /* block */)arg2;

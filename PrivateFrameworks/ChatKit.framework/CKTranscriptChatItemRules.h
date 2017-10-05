@@ -4,6 +4,6 @@
 
 @interface CKTranscriptChatItemRules : IMTranscriptChatItemRules
 
-- (BOOL)shouldShowRaiseMessageStatus;
+- (bool)shouldShowRaiseMessageStatus;
 
 @end

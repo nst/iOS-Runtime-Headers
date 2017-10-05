@@ -5,20 +5,20 @@
 @interface SCNNodeComponent : NSObject {
     id  component;
     SCNNodeComponent * next;
-    int  type;
+    long long  type;
 }
 
 @property (nonatomic, retain) id component;
 @property (nonatomic, retain) SCNNodeComponent *next;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
+- (void).cxx_destruct;
 - (id)component;
-- (void)dealloc;
-- (id)initWithType:(int)arg1 component:(id)arg2;
+- (id)initWithType:(long long)arg1 component:(id)arg2;
 - (id)next;
 - (void)setComponent:(id)arg1;
 - (void)setNext:(id)arg1;
-- (void)setType:(int)arg1;
-- (int)type;
+- (void)setType:(long long)arg1;
+- (long long)type;
 
 @end

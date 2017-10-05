@@ -10,8 +10,8 @@
 
 + (id)sharedManager;
 
+- (void).cxx_destruct;
 - (id)analyticsReporter;
-- (void)dealloc;
 - (void)setAnalyticsReporter:(id)arg1;
 
 @end

@@ -8,7 +8,7 @@
 }
 
 @property (nonatomic, retain) NSString *fallbackLanguageTag;
-@property (nonatomic, readonly) BOOL hasFallbackLanguageTag;
+@property (nonatomic, readonly) bool hasFallbackLanguageTag;
 @property (nonatomic, retain) NSMutableArray *languageConfigs;
 
 + (Class)languageConfigsType;
@@ -20,14 +20,14 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)fallbackLanguageTag;
-- (BOOL)hasFallbackLanguageTag;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasFallbackLanguageTag;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)languageConfigs;
-- (id)languageConfigsAtIndex:(unsigned int)arg1;
-- (unsigned int)languageConfigsCount;
+- (id)languageConfigsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)languageConfigsCount;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setFallbackLanguageTag:(id)arg1;
 - (void)setLanguageConfigs:(id)arg1;
 - (void)writeTo:(id)arg1;

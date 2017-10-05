@@ -4,7 +4,7 @@
 
 @interface NTKActivityDateComplicationLabel : NTKDateComplicationLabel
 
-- (float)_cornerRadius;
-- (struct CGSize { float x1; float x2; })_highlightInset;
+- (double)_cornerRadius;
+- (struct CGSize { double x1; double x2; })_highlightInset;
 
 @end

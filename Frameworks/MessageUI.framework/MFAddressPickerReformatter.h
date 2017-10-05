@@ -4,35 +4,35 @@
 
 @interface MFAddressPickerReformatter : NSObject {
     NSArray * _addresses;
-    BOOL  _attributesDisabled;
-    float  _fontSize;
-    float  _maximumFontSize;
-    float  _maximumWidth;
-    float  _minimumFontSize;
+    bool  _attributesDisabled;
+    double  _fontSize;
+    double  _maximumFontSize;
+    double  _maximumWidth;
+    double  _minimumFontSize;
     NSArray * _reformattedAddresses;
 }
 
 - (void)_attemptUniquingDisplayedStrings;
-- (BOOL)_attemptUniquingDisplayedStringsUsingBlock:(id /* block */)arg1;
-- (unsigned int)_defaultOptions;
-- (void)_determineFontSize:(BOOL*)arg1;
+- (bool)_attemptUniquingDisplayedStringsUsingBlock:(id /* block */)arg1;
+- (unsigned long long)_defaultOptions;
+- (void)_determineFontSize:(bool*)arg1;
 - (void)_expandAllLocalParts;
 - (void)_invalidateReformattedAddresses;
 - (id)_reformattedAddressesByDisplayedStrings;
-- (BOOL)_reformattedAddressesByDisplayedStringsAreUnique:(id)arg1;
+- (bool)_reformattedAddressesByDisplayedStringsAreUnique:(id)arg1;
 - (void)_restoreMiddleTruncationRanges:(id)arg1;
 - (id)_saveMiddleTruncationRanges;
 - (void)_truncateIdenticalLocalPartsWithDifferentDomainParts;
-- (void)_truncateIdenticalLocalPartsWithDifferentDomainPartsWithTailLength:(unsigned int)arg1 options:(unsigned int)arg2;
+- (void)_truncateIdenticalLocalPartsWithDifferentDomainPartsWithTailLength:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (void)_updateReformattedAddressesIfNecessary;
 - (void)dealloc;
-- (unsigned int)numberOfReformattedAddresses;
-- (id)reformattedAddressAtIndex:(unsigned int)arg1;
-- (id)reformattedAddressStringAtIndex:(unsigned int)arg1;
+- (unsigned long long)numberOfReformattedAddresses;
+- (id)reformattedAddressAtIndex:(unsigned long long)arg1;
+- (id)reformattedAddressStringAtIndex:(unsigned long long)arg1;
 - (void)setAddresses:(id)arg1;
-- (void)setAttributesDisabled:(BOOL)arg1;
-- (void)setFontSize:(float)arg1;
-- (void)setMaximumWidth:(float)arg1;
-- (void)setMinimumFontSize:(float)arg1 maximumFontSize:(float)arg2;
+- (void)setAttributesDisabled:(bool)arg1;
+- (void)setFontSize:(double)arg1;
+- (void)setMaximumWidth:(double)arg1;
+- (void)setMinimumFontSize:(double)arg1 maximumFontSize:(double)arg2;
 
 @end

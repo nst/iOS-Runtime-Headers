@@ -6,15 +6,17 @@
 
 + (id)_privateImageMetadataDescriptors;
 + (id)cleanImageMetadataFromData:(id)arg1;
-+ (BOOL)hasPrivateImageMetadata:(id)arg1;
++ (bool)hasPrivateImageMetadata:(id)arg1;
 
-- (BOOL)_readAnnotationsFromDataProvider:(struct CGDataProvider { }*)arg1 toController:(id)arg2;
-- (id)_readBaseImageFromDataProvider:(struct CGDataProvider { }*)arg1 providerSource:(id)arg2 baseWasValid:(BOOL*)arg3;
+- (id)_readAnnotationsFromDataProvider:(struct CGDataProvider { }*)arg1;
+- (id)_readBaseImageFromDataProvider:(struct CGDataProvider { }*)arg1 providerSource:(id)arg2 baseWasValid:(bool*)arg3;
 - (id)_readDataFromTagAtPath:(id)arg1 inMetadata:(struct CGImageMetadata { }*)arg2;
 - (void)readAnnotationsFromArchivedModelData:(id)arg1 toController:(id)arg2;
-- (BOOL)readAnnotationsFromData:(id)arg1 toController:(id)arg2;
-- (BOOL)readAnnotationsFromImageAtURL:(id)arg1 toController:(id)arg2;
-- (id)readBaseImageFromData:(id)arg1 baseWasValid:(BOOL*)arg2;
-- (id)readBaseImageFromImageAtURL:(id)arg1 baseWasValid:(BOOL*)arg2;
+- (bool)readAnnotationsFromData:(id)arg1 toController:(id)arg2;
+- (bool)readAnnotationsFromImageAtURL:(id)arg1 toController:(id)arg2;
+- (id)readArchivedModelDataFromImageData:(id)arg1;
+- (id)readArchivedModelDataFromImageURL:(id)arg1;
+- (id)readBaseImageFromData:(id)arg1 baseWasValid:(bool*)arg2;
+- (id)readBaseImageFromImageAtURL:(id)arg1 baseWasValid:(bool*)arg2;
 
 @end

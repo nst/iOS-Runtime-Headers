@@ -9,23 +9,23 @@
     double  _networkActivityStartDelay;
     <CNAutocompleteProbeProvider> * _probeProvider;
     <CNScheduler> * _scheduler;
-    BOOL  _supplementalResultsUseNetwork;
+    bool  _supplementalResultsUseNetwork;
 }
 
 @property (nonatomic, readonly) <CNAutocompleteObservableBuilderBatchingHelper> *batchingHelper;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) id /* block */ networkActivityDidStartHandler;
 @property (nonatomic, copy) id /* block */ networkActivityDidStopHandler;
 @property (nonatomic) double networkActivityStartDelay;
 @property (nonatomic, readonly) <CNAutocompleteProbeProvider> *probeProvider;
 @property (nonatomic, readonly) <CNScheduler> *scheduler;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL supplementalResultsUseNetwork;
+@property (nonatomic) bool supplementalResultsUseNetwork;
 
-+ (id)builderWithSearchType:(unsigned int)arg1 scheduler:(id)arg2 probeProvider:(id)arg3;
-+ (BOOL)supplementalResultsUseNetwork:(unsigned int)arg1;
++ (id)builderWithSearchType:(unsigned long long)arg1 scheduler:(id)arg2 probeProvider:(id)arg3;
++ (bool)supplementalResultsUseNetwork:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (void)addCalendarServerObservable:(id)arg1;
@@ -48,7 +48,7 @@
 - (void)setNetworkActivityDidStartHandler:(id /* block */)arg1;
 - (void)setNetworkActivityDidStopHandler:(id /* block */)arg1;
 - (void)setNetworkActivityStartDelay:(double)arg1;
-- (void)setSupplementalResultsUseNetwork:(BOOL)arg1;
-- (BOOL)supplementalResultsUseNetwork;
+- (void)setSupplementalResultsUseNetwork:(bool)arg1;
+- (bool)supplementalResultsUseNetwork;
 
 @end

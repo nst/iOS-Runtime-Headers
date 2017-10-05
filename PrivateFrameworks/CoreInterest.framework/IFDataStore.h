@@ -5,32 +5,32 @@
 @interface IFDataStore : NSObject {
     struct sqlite3 { } * _database;
     NSURL * _path;
-    unsigned int  _schemaVersion;
+    unsigned long long  _schemaVersion;
 }
 
 @property (nonatomic, readonly) struct sqlite3 { }*database;
 @property (nonatomic, readonly, copy) NSURL *path;
-@property (nonatomic, readonly) int version;
+@property (nonatomic, readonly) long long version;
 
 + (id)migrationPlan;
 
 - (void).cxx_destruct;
 - (void)_dropAllOfType:(id)arg1;
-- (BOOL)_reset;
+- (bool)_reset;
 - (void)_runQuery:(id)arg1 preparation:(id /* block */)arg2 step:(id /* block */)arg3 error:(id /* block */)arg4;
 - (void)clear;
 - (void)clearAll;
-- (int)configureDatabase;
+- (long long)configureDatabase;
 - (struct sqlite3 { }*)database;
 - (void)dealloc;
 - (id)initWithPath:(id)arg1;
-- (int)migrate;
-- (int)migrateToVersion:(unsigned int)arg1 withMigrationPlan:(id)arg2;
+- (long long)migrate;
+- (long long)migrateToVersion:(unsigned long long)arg1 withMigrationPlan:(id)arg2;
 - (id)path;
-- (int)runMigrationPlan:(id)arg1 toVersion:(unsigned int)arg2;
+- (long long)runMigrationPlan:(id)arg1 toVersion:(unsigned long long)arg2;
 - (void)runQuery:(id)arg1;
-- (void)runQuery:(id)arg1 inTransaction:(BOOL)arg2;
-- (void)updateSchemaVersionNumberTo:(int)arg1;
-- (int)version;
+- (void)runQuery:(id)arg1 inTransaction:(bool)arg2;
+- (void)updateSchemaVersionNumberTo:(long long)arg1;
+- (long long)version;
 
 @end

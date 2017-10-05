@@ -4,7 +4,7 @@
 
 @interface NTKPhotoAnalysisFileCache : NSObject {
     NSMutableDictionary * _cache;
-    BOOL  _cacheDirty;
+    bool  _cacheDirty;
     int  _sequenceNumber;
     NTKTaskScheduler * _taskScheduler;
 }
@@ -13,8 +13,8 @@
 
 - (void).cxx_destruct;
 - (void)_dirtyCache;
-- (BOOL)_load;
-- (BOOL)_save;
+- (bool)_load;
+- (bool)_save;
 - (void)dealloc;
 - (id)init;
 - (id)photoAnalysisForIdentifier:(id)arg1;

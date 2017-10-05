@@ -7,16 +7,21 @@
     NSMutableDictionary * _startTimes;
 }
 
-+ (BOOL)supportsSecureCoding;
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_setEndTime:(double)arg1 forIdentifier:(id)arg2;
-- (void)_setStartTime:(double)arg1 forIdentifier:(id)arg2;
+- (void)_setEndTime:(double)arg1 forIdentifiers:(id)arg2;
+- (void)_setStartTime:(double)arg1 forIdentifiers:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endTimes;
 - (id)initWithCoder:(id)arg1;
-- (id)playbackContext;
 - (id)startTimes;
+
+// Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
+
+- (id)playbackContext;
 
 @end

@@ -9,10 +9,10 @@
 
 - (void).cxx_destruct;
 - (id)description;
-- (BOOL)hasLeftValuesForRightValue:(id)arg1;
-- (BOOL)hasRightValuesForLeftValue:(id)arg1;
-- (id)initWithLeftValueOptions:(unsigned int)arg1 rightValueOptions:(unsigned int)arg2;
-- (BOOL)isEmpty;
+- (bool)hasLeftValuesForRightValue:(id)arg1;
+- (bool)hasRightValuesForLeftValue:(id)arg1;
+- (id)initWithLeftValueOptions:(unsigned long long)arg1 rightValueOptions:(unsigned long long)arg2;
+- (bool)isEmpty;
 - (id)leftValueEnumerable;
 - (id)leftValueEnumerableForRightValue:(id)arg1;
 - (id)leftValues;

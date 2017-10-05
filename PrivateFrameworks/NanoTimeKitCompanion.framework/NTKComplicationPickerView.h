@@ -9,15 +9,15 @@
     NSMutableDictionary * _displaysByComplication;
     NSMutableDictionary * _layoutRulesByComplication;
     NSMutableSet * _loadedComplications;
-    BOOL  _needsReload;
-    int  _style;
+    bool  _needsReload;
+    long long  _style;
 }
 
 @property (nonatomic, retain) NSString *complicationSlot;
 @property (nonatomic) <NTKComplicationPickerViewDataSource> *dataSource;
 @property (nonatomic, readonly) NTKComplication *selectedComplication;
 @property (nonatomic, readonly) NTKComplicationDisplayWrapperView *selectedComplicationDisplay;
-@property (nonatomic) int style;
+@property (nonatomic) long long style;
 
 - (void).cxx_destruct;
 - (void)_configureFaceView:(id)arg1 forOption:(id)arg2;
@@ -27,7 +27,7 @@
 - (void)_loadComplication:(id)arg1;
 - (void)_reloadLayoutForComplication:(id)arg1;
 - (void)_willDisplayFaceView:(id)arg1;
-- (id)complicationAtIndex:(unsigned int)arg1;
+- (id)complicationAtIndex:(unsigned long long)arg1;
 - (id)complicationSlot;
 - (id)dataSource;
 - (void)dealloc;
@@ -38,8 +38,8 @@
 - (void)setComplicationSlot:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setNeedsReload;
-- (void)setStyle:(int)arg1;
+- (void)setStyle:(long long)arg1;
 - (void)stealSelectedComplicationDisplay:(id*)arg1 controller:(id*)arg2;
-- (int)style;
+- (long long)style;
 
 @end

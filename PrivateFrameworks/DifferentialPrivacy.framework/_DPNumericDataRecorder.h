@@ -12,8 +12,8 @@
 - (id)description;
 - (id)init;
 - (id)initWithKey:(id)arg1;
-- (id)initWithKey:(id)arg1 databaseDirectoryPath:(id)arg2 readOnly:(BOOL)arg3;
-- (BOOL)record:(id)arg1;
+- (id)initWithKey:(id)arg1 databaseDirectoryPath:(id)arg2 readOnly:(bool)arg3;
+- (bool)record:(id)arg1;
 - (id)recorder;
 
 @end

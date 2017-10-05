@@ -5,13 +5,13 @@
 @interface HKOrganDonationConnectionManager : NSObject <NSURLSessionDataDelegate> {
     NSString * _accessToken;
     NSTimer * _accessTokenInvalidationTimer;
-    BOOL  _accessTokenStatus;
+    bool  _accessTokenStatus;
     NSURLSession * _defaultSession;
     <HKOrganDonationConnectionManagerDelegate> * _delegate;
-    int  _managerState;
+    long long  _managerState;
     NSString * _refreshToken;
     NSMapTable * _taskQueue;
-    int  _tokenRefreshRetryCount;
+    long long  _tokenRefreshRetryCount;
 }
 
 @property (nonatomic, retain) NSString *accessToken;
@@ -20,31 +20,31 @@
 @property (nonatomic, retain) NSURLSession *defaultSession;
 @property (nonatomic) <HKOrganDonationConnectionManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *refreshToken;
 @property (readonly) Class superclass;
 
 + (id)_gatewayHost;
 + (id)_host;
-+ (int)_hostConfiguration;
++ (long long)_hostConfiguration;
 + (id)_keychainQueryDictionaryForIdentifier:(id)arg1;
-+ (BOOL)_organDonationDisabled;
++ (bool)_organDonationDisabled;
 + (id)_port;
 + (id)_scheme;
-+ (id)_tokenWithIdentifier:(id)arg1 shouldReturnData:(BOOL)arg2;
-+ (BOOL)hasStoredRegistrant;
-+ (BOOL)isOrganDonationRegistrationAvailable;
++ (id)_tokenWithIdentifier:(id)arg1 shouldReturnData:(bool)arg2;
++ (bool)hasStoredRegistrant;
++ (bool)isOrganDonationRegistrationAvailable;
 + (void)openDonateLifeMicroSiteInSafari;
 + (void)organDonationSignificantDate:(id /* block */)arg1;
 + (void)refreshOrganDonationFeatureAvailability;
-+ (int)registrationSubmissionHostConfiguration;
-+ (BOOL)shouldShowStoreDemoOrganDonation;
++ (long long)registrationSubmissionHostConfiguration;
++ (bool)shouldShowStoreDemoOrganDonation;
 + (id)storeDemoModeModifiedDate;
 
 - (void).cxx_destruct;
 - (id)_base64URLEncoding:(id)arg1;
 - (void)_deleteTokenWithIdentifier:(id)arg1;
-- (void)_flushTokenDependentRequestsWithStatus:(int)arg1;
+- (void)_flushTokenDependentRequestsWithStatus:(long long)arg1;
 - (id)_genericJSONDataTaskWithRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)_getRequestWithURL:(id)arg1 bearerToken:(id)arg2;
 - (void)_handleServerErrorWithResponse:(id)arg1 originRequest:(id)arg2 payload:(id)arg3 completion:(id /* block */)arg4;
@@ -58,7 +58,7 @@
 - (id)_registrationJWTWithRegistrant:(id)arg1;
 - (void)_scheduleAccessTokenDependentRequest:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_sendQueuedTokenDependentRequests;
-- (void)_transitionToState:(int)arg1;
+- (void)_transitionToState:(long long)arg1;
 - (void)_updateAccessTokenAndScheduleInvalidationTimer:(id)arg1 expiresIn:(double)arg2;
 - (void)_upsertTokenInKeychain:(id)arg1 identifier:(id)arg2;
 - (id)_urlWithPath:(id)arg1;

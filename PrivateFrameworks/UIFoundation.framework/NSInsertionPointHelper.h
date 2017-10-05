@@ -3,23 +3,23 @@
  */
 
 @interface NSInsertionPointHelper : NSObject {
-    unsigned int  _altCount;
+    unsigned long long  _altCount;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _charRange;
-    unsigned int  _count;
-    unsigned int * _displayAltCharIndexes;
-    float * _displayAltPositions;
-    unsigned int * _displayCharIndexes;
-    float * _displayPositions;
-    unsigned int * _logicalAltCharIndexes;
-    float * _logicalAltPositions;
-    unsigned int * _logicalCharIndexes;
-    float * _logicalLeftBoundaries;
-    float * _logicalPositions;
-    float * _logicalRightBoundaries;
-    int  _writingDirection;
+    unsigned long long  _count;
+    unsigned long long * _displayAltCharIndexes;
+    double * _displayAltPositions;
+    unsigned long long * _displayCharIndexes;
+    double * _displayPositions;
+    unsigned long long * _logicalAltCharIndexes;
+    double * _logicalAltPositions;
+    unsigned long long * _logicalCharIndexes;
+    double * _logicalLeftBoundaries;
+    double * _logicalPositions;
+    double * _logicalRightBoundaries;
+    long long  _writingDirection;
 }
 
 - (void)dealloc;

@@ -8,7 +8,7 @@
     MKQuadTrie * _annotationsTrie;
     GEOFeatureStyleAttributes * _clusterStyleAttributes;
     <MKCustomFeatureStoreDelegate> * _delegate;
-    BOOL  _isClusteringEnabled;
+    bool  _isClusteringEnabled;
     NSHashTable * _observers;
     unsigned char  _sceneID;
     unsigned char  _sceneState;
@@ -18,8 +18,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MKCustomFeatureStoreDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isClusteringEnabled;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isClusteringEnabled;
 @property (nonatomic) unsigned char sceneID;
 @property (readonly) Class superclass;
 
@@ -30,15 +30,16 @@
 - (void)addAnnotations:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (id)allAnnotations;
-- (unsigned int)annotationCount;
+- (unsigned long long)annotationCount;
 - (id)annotationsInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)clusterStyleAttributes;
 - (id)delegate;
-- (void)getClusterAnnotationTextForClusterFeatureCount:(unsigned int)arg1 text:(id*)arg2 locale:(id*)arg3;
+- (void)getClusterAnnotationTextForClusterFeatureCount:(unsigned long long)arg1 text:(id*)arg2 locale:(id*)arg3;
+- (void)getClusterImageTextForClusterFeatureCount:(unsigned long long)arg1 text:(id*)arg2 locale:(id*)arg3;
 - (void)hideScene;
 - (id)init;
-- (id)initWithClustering:(BOOL)arg1;
-- (BOOL)isClusteringEnabled;
+- (id)initWithClustering:(bool)arg1;
+- (bool)isClusteringEnabled;
 - (void)removeAnnotations:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (unsigned char)sceneID;

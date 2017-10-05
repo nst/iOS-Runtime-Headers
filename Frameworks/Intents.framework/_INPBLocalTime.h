@@ -16,17 +16,15 @@
     PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic) BOOL hasHourOfDay;
-@property (nonatomic) BOOL hasMillisOfSecond;
-@property (nonatomic) BOOL hasMinuteOfHour;
-@property (nonatomic) BOOL hasSecondOfMinute;
+@property (nonatomic) bool hasHourOfDay;
+@property (nonatomic) bool hasMillisOfSecond;
+@property (nonatomic) bool hasMinuteOfHour;
+@property (nonatomic) bool hasSecondOfMinute;
 @property (nonatomic) long long hourOfDay;
 @property (nonatomic) long long millisOfSecond;
 @property (nonatomic) long long minuteOfHour;
 @property (nonatomic) long long secondOfMinute;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -34,33 +32,27 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasHourOfDay;
-- (BOOL)hasMillisOfSecond;
-- (BOOL)hasMinuteOfHour;
-- (BOOL)hasSecondOfMinute;
-- (unsigned int)hash;
+- (bool)hasHourOfDay;
+- (bool)hasMillisOfSecond;
+- (bool)hasMinuteOfHour;
+- (bool)hasSecondOfMinute;
+- (unsigned long long)hash;
 - (long long)hourOfDay;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (long long)millisOfSecond;
 - (long long)minuteOfHour;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (long long)secondOfMinute;
-- (void)setHasHourOfDay:(BOOL)arg1;
-- (void)setHasMillisOfSecond:(BOOL)arg1;
-- (void)setHasMinuteOfHour:(BOOL)arg1;
-- (void)setHasSecondOfMinute:(BOOL)arg1;
+- (void)setHasHourOfDay:(bool)arg1;
+- (void)setHasMillisOfSecond:(bool)arg1;
+- (void)setHasMinuteOfHour:(bool)arg1;
+- (void)setHasSecondOfMinute:(bool)arg1;
 - (void)setHourOfDay:(long long)arg1;
 - (void)setMillisOfSecond:(long long)arg1;
 - (void)setMinuteOfHour:(long long)arg1;
 - (void)setSecondOfMinute:(long long)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

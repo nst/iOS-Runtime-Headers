@@ -6,11 +6,11 @@
     STEmailMessage * _message;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_initWithMessage:(id)arg1;
-- (BOOL)_makeAppFrontmost;
+- (bool)_makeAppFrontmost;
 - (id)createResponse;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -24,6 +24,6 @@
 - (id)parseCompanyData:(id)arg1;
 - (void)registerService:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)stateDidChange:(int)arg1;
+- (void)stateDidChange:(long long)arg1;
 
 @end

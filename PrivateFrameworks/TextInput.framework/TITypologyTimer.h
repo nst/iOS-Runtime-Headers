@@ -4,23 +4,23 @@
 
 @interface TITypologyTimer : NSObject {
     double  _elapsedTime;
-    BOOL  _foundFirstInput;
+    bool  _foundFirstInput;
     double  _maxTimeIntervalBetweenInputs;
     double  _mostRecentTimestamp;
 }
 
 @property (nonatomic) double elapsedTime;
-@property (nonatomic) BOOL foundFirstInput;
+@property (nonatomic) bool foundFirstInput;
 @property (nonatomic) double maxTimeIntervalBetweenInputs;
 @property (nonatomic) double mostRecentTimestamp;
 
 - (void)addInputEventWithTimestamp:(double)arg1;
 - (double)elapsedTime;
-- (BOOL)foundFirstInput;
+- (bool)foundFirstInput;
 - (double)maxTimeIntervalBetweenInputs;
 - (double)mostRecentTimestamp;
 - (void)setElapsedTime:(double)arg1;
-- (void)setFoundFirstInput:(BOOL)arg1;
+- (void)setFoundFirstInput:(bool)arg1;
 - (void)setMaxTimeIntervalBetweenInputs:(double)arg1;
 - (void)setMostRecentTimestamp:(double)arg1;
 

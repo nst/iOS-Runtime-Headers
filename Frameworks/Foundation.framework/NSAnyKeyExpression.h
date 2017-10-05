@@ -4,26 +4,26 @@
 
 @interface NSAnyKeyExpression : NSExpression
 
-+ (BOOL)_allowsEvaluation;
++ (bool)_allowsEvaluation;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)defaultInstance;
 + (void)initialize;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_initPrivate;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
+- (bool)_isDeallocating;
+- (bool)_tryRetain;
 - (id)autorelease;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)predicateFormat;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 
 @end

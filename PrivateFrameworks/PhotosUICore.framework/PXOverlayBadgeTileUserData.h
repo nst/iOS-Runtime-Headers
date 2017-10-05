@@ -3,12 +3,12 @@
  */
 
 @interface PXOverlayBadgeTileUserData : NSObject {
-    unsigned int  _badgeOptions;
+    unsigned long long  _badgeOptions;
 }
 
-@property (nonatomic) unsigned int badgeOptions;
+@property (nonatomic) unsigned long long badgeOptions;
 
-- (unsigned int)badgeOptions;
-- (void)setBadgeOptions:(unsigned int)arg1;
+- (unsigned long long)badgeOptions;
+- (void)setBadgeOptions:(unsigned long long)arg1;
 
 @end

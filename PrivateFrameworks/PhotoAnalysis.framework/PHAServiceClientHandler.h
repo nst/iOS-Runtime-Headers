@@ -17,7 +17,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property PHAExecutive *executive;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) NSObject<OS_dispatch_semaphore> *invalidationSemaphore;
 @property (retain) PHAManager *photoAnalysisManager;
 @property (retain) id serviceUnavailableHandler;
@@ -29,7 +29,7 @@
 - (void)cancelOperationsWithIdentifiers:(id)arg1 context:(id)arg2 reply:(id /* block */)arg3;
 - (id)cancelableOperationsById;
 - (id)clientBundleID;
-- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(BOOL)arg3;
+- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(bool)arg3;
 - (id)contextInformationFromInvocation:(id)arg1;
 - (id)description;
 - (id)executive;

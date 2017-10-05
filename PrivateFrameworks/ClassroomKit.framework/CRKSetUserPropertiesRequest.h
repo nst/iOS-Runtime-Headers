@@ -24,7 +24,7 @@
 @property (nonatomic, copy) NSString *userIdentifier;
 @property (nonatomic, copy) NSString *userSource;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)courseIdentifier;

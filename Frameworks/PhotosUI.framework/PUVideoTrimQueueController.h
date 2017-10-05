@@ -33,15 +33,18 @@
 @property (nonatomic, readonly) NSArray *videosSources;
 @property (nonatomic, readonly) NSDictionary *videosSourcesSharingInfo;
 
++ (bool)areVideoSourcesStreamShareSources:(id)arg1;
+
 - (void).cxx_destruct;
 - (void)_dequeueTrimmingControl;
 - (void)_sendDidFinish;
-- (BOOL)_shouldShowVideoTooLongAlertForVideoSource:(id)arg1;
+- (bool)_shouldShowVideoTooLongAlertForVideoSource:(id)arg1;
 - (void)_showTrimViewControllerForSource:(id)arg1;
 - (void)_trimVideoSource:(id)arg1;
 - (id)_videoTooLongAlertController;
 - (id)album;
 - (id)albumName;
+- (void)cleanupResources;
 - (id)commentText;
 - (id)delegate;
 - (void)editVideoViewController:(id)arg1 didTrimVideoWithOptions:(id)arg2;

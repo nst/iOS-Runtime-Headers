@@ -14,9 +14,6 @@
 @property (nonatomic, readonly) CNReputationLogger *logger;
 @property (nonatomic, readonly) <CNSchedulerProvider> *schedulerProvider;
 
-+ (id)conflatedDomains;
-+ (id)queryHandlesForHandle:(id)arg1;
-
 - (void).cxx_destruct;
 - (id)contactsAdapter;
 - (id)coreRecentsAdapter;

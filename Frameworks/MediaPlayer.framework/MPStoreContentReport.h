@@ -5,37 +5,37 @@
 @interface MPStoreContentReport : NSObject <NSCopying> {
     NSString * _aucType;
     NSString * _commentText;
-    int  _concernItemType;
-    NSString * _concernTypeId;
-    NSString * _contentId;
+    long long  _concernItemType;
+    NSString * _concernTypeID;
+    NSString * _contentID;
     NSString * _displayText;
-    NSString * _userId;
+    NSString * _userID;
 }
 
 @property (nonatomic, copy) NSString *aucType;
 @property (nonatomic, copy) NSString *commentText;
-@property (nonatomic) int concernItemType;
-@property (nonatomic, copy) NSString *concernTypeId;
-@property (nonatomic, copy) NSString *contentId;
+@property (nonatomic) long long concernItemType;
+@property (nonatomic, copy) NSString *concernTypeID;
+@property (nonatomic, copy) NSString *contentID;
 @property (nonatomic, copy) NSString *displayText;
-@property (nonatomic, copy) NSString *userId;
+@property (nonatomic, copy) NSString *userID;
 
 - (void).cxx_destruct;
 - (id)aucType;
 - (id)commentText;
-- (int)concernItemType;
-- (id)concernTypeId;
-- (id)contentId;
+- (long long)concernItemType;
+- (id)concernTypeID;
+- (id)contentID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)displayText;
 - (void)setAucType:(id)arg1;
 - (void)setCommentText:(id)arg1;
-- (void)setConcernItemType:(int)arg1;
-- (void)setConcernTypeId:(id)arg1;
-- (void)setContentId:(id)arg1;
+- (void)setConcernItemType:(long long)arg1;
+- (void)setConcernTypeID:(id)arg1;
+- (void)setContentID:(id)arg1;
 - (void)setDisplayText:(id)arg1;
-- (void)setUserId:(id)arg1;
-- (id)userId;
+- (void)setUserID:(id)arg1;
+- (id)userID;
 
 @end

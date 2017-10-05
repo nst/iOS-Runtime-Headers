@@ -7,8 +7,8 @@
 }
 
 - (void).cxx_destruct;
-- (void)cacheNodes:(id)arg1 forPosition:(unsigned int)arg2 nonTerminal:(id)arg3 lengthAllowance:(unsigned int)arg4;
+- (void)cacheNodes:(id)arg1 forPosition:(unsigned long long)arg2 nonTerminal:(id)arg3 lengthAllowance:(unsigned long long)arg4;
 - (id)init;
-- (id)nodesForPosition:(unsigned int)arg1 nonTerminal:(id)arg2 withLengthAllowance:(unsigned int)arg3;
+- (id)nodesForPosition:(unsigned long long)arg1 nonTerminal:(id)arg2 withLengthAllowance:(unsigned long long)arg3;
 
 @end

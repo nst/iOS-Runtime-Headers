@@ -3,19 +3,19 @@
  */
 
 @interface HDTimeRange : NSObject <NSCopying> {
-    BOOL  _deleted;
+    bool  _deleted;
     double  _end;
     double  _start;
 }
 
-@property (nonatomic) BOOL deleted;
+@property (nonatomic) bool deleted;
 @property (nonatomic) double end;
 @property (nonatomic) double start;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)deleted;
+- (bool)deleted;
 - (double)end;
-- (void)setDeleted:(BOOL)arg1;
+- (void)setDeleted:(bool)arg1;
 - (void)setEnd:(double)arg1;
 - (void)setStart:(double)arg1;
 - (double)start;

@@ -4,29 +4,30 @@
 
 @interface TPPageInfo : NSObject <TSDContainerInfo> {
     TPBodyInfo * _bodyInfo;
-    TSUWeakReference * _documentRootWeakReference;
+    TPDocumentRoot * _documentRoot;
     <TPPageLayoutInfoProvider> * _layoutInfoProvider;
-    unsigned int  _pageIndex;
+    unsigned long long  _pageIndex;
 }
 
-@property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;
-@property (getter=isAttachedToBodyText, nonatomic, readonly) BOOL attachedToBodyText;
-@property (nonatomic, readonly, retain) TPBodyInfo *bodyInfo;
+@property (getter=isAnchoredToText, nonatomic, readonly) bool anchoredToText;
+@property (getter=isAttachedToBodyText, nonatomic, readonly) bool attachedToBodyText;
+@property (nonatomic, readonly) TPBodyInfo *bodyInfo;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) TPDocumentRoot *documentRoot;
-@property (getter=isFloatingAboveText, nonatomic, readonly) BOOL floatingAboveText;
+@property (getter=isFloatingAboveText, nonatomic, readonly) bool floatingAboveText;
 @property (nonatomic, copy) TSDInfoGeometry *geometry;
-@property (readonly) unsigned int hash;
-@property (getter=isInlineWithText, nonatomic, readonly) BOOL inlineWithText;
+@property (readonly) unsigned long long hash;
+@property (getter=isInlineWithText, nonatomic, readonly) bool inlineWithText;
 @property (nonatomic, readonly) <TPPageLayoutInfoProvider> *layoutInfoProvider;
-@property (nonatomic) BOOL matchesObjectPlaceholderGeometry;
+@property (nonatomic) bool matchesObjectPlaceholderGeometry;
 @property (nonatomic) TSPObject<TSDOwningAttachment> *owningAttachment;
 @property (nonatomic, readonly) TSPObject<TSDOwningAttachment> *owningAttachmentNoRecurse;
-@property (nonatomic, readonly) unsigned int pageIndex;
+@property (nonatomic, readonly) unsigned long long pageIndex;
 @property (nonatomic) NSObject<TSDContainerInfo> *parentInfo;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)bodyInfo;
 - (id)childInfos;
 - (void)clearBackPointerToParentInfoIfNeeded:(id)arg1;
@@ -34,21 +35,21 @@
 - (void)dealloc;
 - (id)documentRoot;
 - (id)geometry;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)infoForSelectionPath:(id)arg1;
-- (id)initWithPageIndex:(unsigned int)arg1 documentRoot:(id)arg2 layoutInfoProvider:(id)arg3;
-- (BOOL)isAnchoredToText;
-- (BOOL)isAttachedToBodyText;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isFloatingAboveText;
-- (BOOL)isInlineWithText;
-- (BOOL)isSelectable;
-- (BOOL)isThemeContent;
+- (id)initWithPageIndex:(unsigned long long)arg1 documentRoot:(id)arg2 layoutInfoProvider:(id)arg3;
+- (bool)isAnchoredToText;
+- (bool)isAttachedToBodyText;
+- (bool)isEqual:(id)arg1;
+- (bool)isFloatingAboveText;
+- (bool)isInlineWithText;
+- (bool)isSelectable;
+- (bool)isThemeContent;
 - (Class)layoutClass;
 - (id)layoutInfoProvider;
 - (id)owningAttachment;
 - (id)owningAttachmentNoRecurse;
-- (unsigned int)pageIndex;
+- (unsigned long long)pageIndex;
 - (id)parentInfo;
 - (Class)repClass;
 - (void)setGeometry:(id)arg1;

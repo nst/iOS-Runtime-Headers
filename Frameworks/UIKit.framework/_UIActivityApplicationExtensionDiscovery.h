@@ -5,32 +5,27 @@
 @interface _UIActivityApplicationExtensionDiscovery : NSObject {
     id  _extensionMatchingContext;
     NSArray * _extensionPointIdentifiers;
-    BOOL  _matchesOnlyUserElectedExtensions;
-    BOOL  _performsInitialMatching;
-    BOOL  _sourceIsManaged;
+    bool  _performsInitialMatching;
 }
 
 @property (retain) id extensionMatchingContext;
 @property (nonatomic, copy) NSArray *extensionPointIdentifiers;
-@property (nonatomic) BOOL matchesOnlyUserElectedExtensions;
-@property BOOL performsInitialMatching;
-@property (nonatomic) BOOL sourceIsManaged;
+@property bool performsInitialMatching;
+
++ (id)extensionBasedActivityForExtension:(id)arg1;
++ (id)extensionMatchingDictionariesForExtensionItems:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)activitiesMatchingInputItems:(id)arg1 activityItems:(id)arg2 error:(id*)arg3 updateBlock:(id /* block */)arg4;
-- (void)cancelUpdatesIfNeeded;
+- (id)activitiesForMatchingContext:(id)arg1 error:(id*)arg2 updateBlock:(id /* block */)arg3;
+- (void)cancelActivityMatchingUpdates;
 - (void)dealloc;
 - (id)extensionMatchingContext;
 - (id)extensionPointIdentifiers;
 - (id)init;
 - (id)initWithExtensionPointIdentifiers:(id)arg1;
-- (BOOL)matchesOnlyUserElectedExtensions;
-- (BOOL)performsInitialMatching;
+- (bool)performsInitialMatching;
 - (void)setExtensionMatchingContext:(id)arg1;
 - (void)setExtensionPointIdentifiers:(id)arg1;
-- (void)setMatchesOnlyUserElectedExtensions:(BOOL)arg1;
-- (void)setPerformsInitialMatching:(BOOL)arg1;
-- (void)setSourceIsManaged:(BOOL)arg1;
-- (BOOL)sourceIsManaged;
+- (void)setPerformsInitialMatching:(bool)arg1;
 
 @end

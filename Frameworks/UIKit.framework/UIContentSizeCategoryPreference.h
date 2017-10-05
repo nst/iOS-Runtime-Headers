@@ -8,8 +8,9 @@
 
 @property (nonatomic, retain) NSString *preferredContentSizeCategory;
 
-+ (void)_forceSystemPreferenceToContentSizeCategory:(id)arg1;
-+ (void)_resetSystemPreference;
++ (void)_overrideSystemPreferenceToContentSizeCategory:(id)arg1;
++ (void)_overrideSystemPreferenceToContentSizeCategory:(id)arg1 forBlock:(id /* block */)arg2;
++ (void)_resetSystemPreferenceOverride;
 + (id)system;
 
 - (void).cxx_destruct;

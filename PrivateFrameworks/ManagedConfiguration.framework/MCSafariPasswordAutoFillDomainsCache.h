@@ -14,7 +14,7 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (BOOL)isSafariPasswordAutoFillAllowedForURL:(id)arg1;
+- (bool)isSafariPasswordAutoFillAllowedForURL:(id)arg1;
 - (id)memberQueue;
 - (id)memberQueueCache;
 - (void)memberQueueRereadCache;

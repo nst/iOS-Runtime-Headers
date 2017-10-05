@@ -5,6 +5,7 @@
 @interface _MRGameControllerMessageProtobuf : PBCodable <NSCopying> {
     _MRGameControllerButtonsProtobuf * _buttons;
     unsigned long long  _controllerID;
+    _MRGameControllerDigitizerProtobuf * _digitizer;
     struct { 
         unsigned int controllerID : 1; 
     }  _has;
@@ -13,9 +14,11 @@
 
 @property (nonatomic, retain) _MRGameControllerButtonsProtobuf *buttons;
 @property (nonatomic) unsigned long long controllerID;
-@property (nonatomic, readonly) BOOL hasButtons;
-@property (nonatomic) BOOL hasControllerID;
-@property (nonatomic, readonly) BOOL hasMotion;
+@property (nonatomic, retain) _MRGameControllerDigitizerProtobuf *digitizer;
+@property (nonatomic, readonly) bool hasButtons;
+@property (nonatomic) bool hasControllerID;
+@property (nonatomic, readonly) bool hasDigitizer;
+@property (nonatomic, readonly) bool hasMotion;
 @property (nonatomic, retain) _MRGameControllerMotionProtobuf *motion;
 
 - (id)buttons;
@@ -25,17 +28,20 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasButtons;
-- (BOOL)hasControllerID;
-- (BOOL)hasMotion;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (id)digitizer;
+- (bool)hasButtons;
+- (bool)hasControllerID;
+- (bool)hasDigitizer;
+- (bool)hasMotion;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)motion;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setButtons:(id)arg1;
 - (void)setControllerID:(unsigned long long)arg1;
-- (void)setHasControllerID:(BOOL)arg1;
+- (void)setDigitizer:(id)arg1;
+- (void)setHasControllerID:(bool)arg1;
 - (void)setMotion:(id)arg1;
 - (void)writeTo:(id)arg1;
 

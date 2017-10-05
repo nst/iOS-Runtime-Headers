@@ -10,17 +10,17 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)addFootnoteReferenceStorage:(id)arg1;
-- (void)dealloc;
-- (float)footnoteHeight;
-- (id)initWithFootnoteMarkProvider:(id)arg1 maxFootnoteWidth:(float)arg2 maxFootnoteHeight:(float)arg3 footnoteSpacing:(float)arg4;
+- (double)footnoteHeight;
+- (id)initWithFootnoteMarkProvider:(id)arg1 maxFootnoteWidth:(double)arg2 maxFootnoteHeight:(double)arg3 footnoteSpacing:(double)arg4;
 - (void)p_clearFootnoteLayoutCache;
 - (void)removeAllFootnoteReferenceStorages;
 - (void)removeFootnoteReferenceStorage:(id)arg1;
-- (void)setContainerWidth:(float)arg1;
-- (void)setFootnoteSpacing:(int)arg1;
+- (void)setContainerWidth:(double)arg1;
+- (void)setFootnoteSpacing:(long long)arg1;
 
 @end

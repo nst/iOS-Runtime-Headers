@@ -3,21 +3,21 @@
  */
 
 @interface PXPhotosDetailsBarSpec : PXBarSpec {
-    unsigned int  _detailsOptions;
+    unsigned long long  _detailsOptions;
     NSSet * _includedBarItemIdentifiers;
-    BOOL  _shouldPlaceEditActionsInToolbar;
+    bool  _shouldPlaceEditActionsInToolbar;
     NSDictionary * _sortPriorityByBarItemIdentifierByPlacement;
 }
 
-@property (nonatomic) unsigned int detailsOptions;
+@property (nonatomic) unsigned long long detailsOptions;
 
 - (void).cxx_destruct;
 - (id)_placementForBarItem:(id)arg1;
-- (BOOL)_shouldIncludeItem:(id)arg1;
+- (bool)_shouldIncludeItem:(id)arg1;
 - (id)_sortPriorityForBarItem:(id)arg1 placement:(id)arg2;
-- (unsigned int)detailsOptions;
+- (unsigned long long)detailsOptions;
 - (id)initWithExtendedTraitCollection:(id)arg1;
-- (void)setDetailsOptions:(unsigned int)arg1;
+- (void)setDetailsOptions:(unsigned long long)arg1;
 - (id)sortedBarItemsByPlacement:(id)arg1;
 
 @end

@@ -4,9 +4,9 @@
 
 @interface UIFocusContainerGuide : UIFocusGuide
 
-- (BOOL)_focusRegionIsEligibleForFocus;
+- (bool)_isEligibleForFocusInteraction;
+- (bool)_legacy_isEligibleForFocusInteraction;
 - (void)_searchForFocusRegionsInContext:(id)arg1;
-- (BOOL)_shouldSearchForFocusRegionsInContext:(id)arg1;
 - (id)init;
 
 @end

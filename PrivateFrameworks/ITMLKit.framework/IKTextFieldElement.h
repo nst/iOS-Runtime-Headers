@@ -18,7 +18,7 @@
 
 // Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
 
-- (BOOL)tv_isSecure;
-- (int)tv_keyboardType;
+- (bool)tv_isSecure;
+- (long long)tv_keyboardType;
 
 @end

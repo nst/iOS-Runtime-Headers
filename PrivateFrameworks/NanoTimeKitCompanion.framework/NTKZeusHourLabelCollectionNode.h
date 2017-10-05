@@ -3,21 +3,21 @@
  */
 
 @interface NTKZeusHourLabelCollectionNode : NTKHourLabelCollectionNode {
-    unsigned int  _density;
+    unsigned long long  _density;
     NSArray * _visibleNodesForCurrentDensity;
 }
 
-@property (nonatomic) unsigned int density;
+@property (nonatomic) unsigned long long density;
 @property (nonatomic, retain) NSArray *visibleNodesForCurrentDensity;
 
 - (void).cxx_destruct;
-- (BOOL)_hourNumberAtIndex:(unsigned int)arg1 isVisibleWithDensity:(unsigned int)arg2;
+- (bool)_hourNumberAtIndex:(unsigned long long)arg1 isVisibleWithDensity:(unsigned long long)arg2;
 - (void)_setupPositions;
-- (void)applyTransitionFraction:(float)arg1 fromDensity:(unsigned int)arg2 toDensity:(unsigned int)arg3;
+- (void)applyTransitionFraction:(double)arg1 fromDensity:(unsigned long long)arg2 toDensity:(unsigned long long)arg3;
 - (void)createSubNodes;
-- (unsigned int)density;
-- (id)initWithFont:(int)arg1;
-- (void)setDensity:(unsigned int)arg1;
+- (unsigned long long)density;
+- (id)initWithFont:(long long)arg1;
+- (void)setDensity:(unsigned long long)arg1;
 - (void)setVisibleNodesForCurrentDensity:(id)arg1;
 - (id)visibleNodesForCurrentDensity;
 

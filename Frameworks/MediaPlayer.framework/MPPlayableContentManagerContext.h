@@ -3,26 +3,26 @@
  */
 
 @interface MPPlayableContentManagerContext : NSObject {
-    BOOL  _contentLimitsEnforced;
-    BOOL  _endpointAvailable;
-    int  _enforcedContentItemsCount;
-    int  _enforcedContentTreeDepth;
+    bool  _contentLimitsEnforced;
+    bool  _endpointAvailable;
+    long long  _enforcedContentItemsCount;
+    long long  _enforcedContentTreeDepth;
 }
 
-@property (nonatomic, readonly) BOOL contentLimitsEnabled;
-@property (nonatomic) BOOL contentLimitsEnforced;
-@property (nonatomic) BOOL endpointAvailable;
-@property (nonatomic) int enforcedContentItemsCount;
-@property (nonatomic) int enforcedContentTreeDepth;
+@property (nonatomic, readonly) bool contentLimitsEnabled;
+@property (nonatomic) bool contentLimitsEnforced;
+@property (nonatomic) bool endpointAvailable;
+@property (nonatomic) long long enforcedContentItemsCount;
+@property (nonatomic) long long enforcedContentTreeDepth;
 
-- (BOOL)contentLimitsEnabled;
-- (BOOL)contentLimitsEnforced;
-- (BOOL)endpointAvailable;
-- (int)enforcedContentItemsCount;
-- (int)enforcedContentTreeDepth;
-- (void)setContentLimitsEnforced:(BOOL)arg1;
-- (void)setEndpointAvailable:(BOOL)arg1;
-- (void)setEnforcedContentItemsCount:(int)arg1;
-- (void)setEnforcedContentTreeDepth:(int)arg1;
+- (bool)contentLimitsEnabled;
+- (bool)contentLimitsEnforced;
+- (bool)endpointAvailable;
+- (long long)enforcedContentItemsCount;
+- (long long)enforcedContentTreeDepth;
+- (void)setContentLimitsEnforced:(bool)arg1;
+- (void)setEndpointAvailable:(bool)arg1;
+- (void)setEnforcedContentItemsCount:(long long)arg1;
+- (void)setEnforcedContentTreeDepth:(long long)arg1;
 
 @end

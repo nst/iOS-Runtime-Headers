@@ -11,17 +11,17 @@
 @property (nonatomic, readonly) _DECItem *item;
 
 + (id)predictionItemWithItem:(id)arg1 confidence:(double)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (double)confidence;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithItem:(id)arg1 confidence:(double)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)item;
 - (void)setConfidence:(double)arg1;
 

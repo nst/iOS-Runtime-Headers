@@ -4,28 +4,28 @@
 
 @interface WLKCanonicalPlayablesResponse : NSObject {
     NSString * _canonicalID;
-    unsigned int  _contentType;
+    unsigned long long  _contentType;
     NSDictionary * _dictionary;
     NSArray * _playables;
-    BOOL  _watchListable;
-    BOOL  _watchListed;
+    bool  _watchListable;
+    bool  _watchListed;
 }
 
 @property (nonatomic, readonly, copy) NSString *canonicalID;
-@property (nonatomic, readonly) unsigned int contentType;
+@property (nonatomic, readonly) unsigned long long contentType;
 @property (nonatomic, readonly, copy) NSDictionary *dictionary;
 @property (nonatomic, readonly) NSArray *playables;
-@property (getter=isWatchListable, nonatomic, readonly) BOOL watchListable;
-@property (getter=isWatchListed, nonatomic, readonly) BOOL watchListed;
+@property (getter=isWatchListable, nonatomic, readonly) bool watchListable;
+@property (getter=isWatchListed, nonatomic, readonly) bool watchListed;
 
 - (void).cxx_destruct;
 - (id)canonicalID;
-- (unsigned int)contentType;
+- (unsigned long long)contentType;
 - (id)dictionary;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isWatchListable;
-- (BOOL)isWatchListed;
+- (bool)isWatchListable;
+- (bool)isWatchListed;
 - (id)playables;
 
 @end

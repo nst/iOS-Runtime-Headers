@@ -4,8 +4,8 @@
 
 @interface NSDateFormatter : NSFormatter <NSObservable, NSObserver> {
     NSMutableDictionary * _attributes;
-    int  _cacheGeneration;
-    unsigned int  _counter;
+    long long  _cacheGeneration;
+    unsigned long long  _counter;
     struct __CFDateFormatter { } * _formatter;
     NSObject<OS_dispatch_semaphore> * _lock;
 }
@@ -14,18 +14,18 @@
 @property (copy) NSString *PMSymbol;
 @property (copy) NSCalendar *calendar;
 @property (copy) NSString *dateFormat;
-@property unsigned int dateStyle;
+@property unsigned long long dateStyle;
 @property (readonly, copy) NSString *debugDescription;
 @property (copy) NSDate *defaultDate;
 @property (readonly, copy) NSString *description;
-@property BOOL doesRelativeDateFormatting;
+@property bool doesRelativeDateFormatting;
 @property (copy) NSArray *eraSymbols;
-@property unsigned int formatterBehavior;
-@property int formattingContext;
-@property BOOL generatesCalendarDates;
+@property unsigned long long formatterBehavior;
+@property long long formattingContext;
+@property bool generatesCalendarDates;
 @property (copy) NSDate *gregorianStartDate;
-@property (readonly) unsigned int hash;
-@property (getter=isLenient) BOOL lenient;
+@property (readonly) unsigned long long hash;
+@property (getter=isLenient) bool lenient;
 @property (copy) NSLocale *locale;
 @property (copy) NSArray *longEraSymbols;
 @property (copy) NSArray *monthSymbols;
@@ -40,7 +40,7 @@
 @property (copy) NSArray *standaloneQuarterSymbols;
 @property (copy) NSArray *standaloneWeekdaySymbols;
 @property (readonly) Class superclass;
-@property unsigned int timeStyle;
+@property unsigned long long timeStyle;
 @property (copy) NSTimeZone *timeZone;
 @property (copy) NSDate *twoDigitStartDate;
 @property (copy) NSArray *veryShortMonthSymbols;
@@ -53,51 +53,51 @@
 
 + (id)_componentsFromFormatString:(id)arg1;
 + (id)_formatStringFromComponents:(id)arg1;
-+ (id)dateFormatFromTemplate:(id)arg1 options:(unsigned int)arg2 locale:(id)arg3;
-+ (unsigned int)defaultFormatterBehavior;
++ (id)dateFormatFromTemplate:(id)arg1 options:(unsigned long long)arg2 locale:(id)arg3;
++ (unsigned long long)defaultFormatterBehavior;
 + (void)initialize;
-+ (id)localizedStringFromDate:(id)arg1 dateStyle:(unsigned int)arg2 timeStyle:(unsigned int)arg3;
-+ (void)setDefaultFormatterBehavior:(unsigned int)arg1;
++ (id)localizedStringFromDate:(id)arg1 dateStyle:(unsigned long long)arg2 timeStyle:(unsigned long long)arg3;
++ (void)setDefaultFormatterBehavior:(unsigned long long)arg1;
 
 - (id)AMSymbol;
 - (id)PMSymbol;
 - (id)_attributedStringWithFieldsFromDate:(id)arg1;
-- (int)_cacheGenerationCount;
+- (long long)_cacheGenerationCount;
 - (void)_clearFormatter;
 - (id)_dateFormat;
-- (id)_getLocaleAlreadyLocked:(BOOL)arg1;
+- (id)_getLocaleAlreadyLocked:(bool)arg1;
 - (void)_invalidateCache;
 - (id)_locale_forOldMethods;
-- (BOOL)_mayDecorateAttributedStringForObjectValue:(id)arg1;
+- (bool)_mayDecorateAttributedStringForObjectValue:(id)arg1;
 - (void)_regenerateFormatter;
 - (void)_regenerateFormatterIfAbsent;
 - (void)_reset;
 - (void)_setDateFormat:(id)arg1;
-- (void)_setDateFormat:(id)arg1 alreadyLocked:(BOOL)arg2;
-- (void)_setIsLenient:(BOOL)arg1;
-- (void)_setUsesCharacterDirection:(BOOL)arg1;
+- (void)_setDateFormat:(id)arg1 alreadyLocked:(bool)arg2;
+- (void)_setIsLenient:(bool)arg1;
+- (void)_setUsesCharacterDirection:(bool)arg1;
 - (id)_timeZone_forOldMethods;
-- (BOOL)_tracksCacheGenerationCount;
-- (BOOL)_usesCharacterDirection;
+- (bool)_tracksCacheGenerationCount;
+- (bool)_usesCharacterDirection;
 - (id)calendar;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dateFormat;
 - (id)dateFromString:(id)arg1;
-- (unsigned int)dateStyle;
+- (unsigned long long)dateStyle;
 - (void)dealloc;
 - (id)defaultDate;
-- (BOOL)doesRelativeDateFormatting;
+- (bool)doesRelativeDateFormatting;
 - (void)encodeWithCoder:(id)arg1;
 - (id)eraSymbols;
-- (unsigned int)formatterBehavior;
-- (int)formattingContext;
-- (BOOL)generatesCalendarDates;
-- (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
-- (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 range:(inout struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 error:(out id*)arg4;
+- (unsigned long long)formatterBehavior;
+- (long long)formattingContext;
+- (bool)generatesCalendarDates;
+- (bool)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
+- (bool)getObjectValue:(out id*)arg1 forString:(id)arg2 range:(inout struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg3 error:(out id*)arg4;
 - (id)gregorianStartDate;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isLenient;
+- (bool)isLenient;
 - (id)locale;
 - (id)longEraSymbols;
 - (id)monthSymbols;
@@ -106,15 +106,15 @@
 - (void)setAMSymbol:(id)arg1;
 - (void)setCalendar:(id)arg1;
 - (void)setDateFormat:(id)arg1;
-- (void)setDateStyle:(unsigned int)arg1;
+- (void)setDateStyle:(unsigned long long)arg1;
 - (void)setDefaultDate:(id)arg1;
-- (void)setDoesRelativeDateFormatting:(BOOL)arg1;
+- (void)setDoesRelativeDateFormatting:(bool)arg1;
 - (void)setEraSymbols:(id)arg1;
-- (void)setFormatterBehavior:(unsigned int)arg1;
-- (void)setFormattingContext:(int)arg1;
-- (void)setGeneratesCalendarDates:(BOOL)arg1;
+- (void)setFormatterBehavior:(unsigned long long)arg1;
+- (void)setFormattingContext:(long long)arg1;
+- (void)setGeneratesCalendarDates:(bool)arg1;
 - (void)setGregorianStartDate:(id)arg1;
-- (void)setLenient:(BOOL)arg1;
+- (void)setLenient:(bool)arg1;
 - (void)setLocale:(id)arg1;
 - (void)setLocalizedDateFormatFromTemplate:(id)arg1;
 - (void)setLongEraSymbols:(id)arg1;
@@ -130,7 +130,7 @@
 - (void)setStandaloneMonthSymbols:(id)arg1;
 - (void)setStandaloneQuarterSymbols:(id)arg1;
 - (void)setStandaloneWeekdaySymbols:(id)arg1;
-- (void)setTimeStyle:(unsigned int)arg1;
+- (void)setTimeStyle:(unsigned long long)arg1;
 - (void)setTimeZone:(id)arg1;
 - (void)setTwoDigitStartDate:(id)arg1;
 - (void)setVeryShortMonthSymbols:(id)arg1;
@@ -149,7 +149,7 @@
 - (id)standaloneWeekdaySymbols;
 - (id)stringForObjectValue:(id)arg1;
 - (id)stringFromDate:(id)arg1;
-- (unsigned int)timeStyle;
+- (unsigned long long)timeStyle;
 - (id)timeZone;
 - (id)twoDigitStartDate;
 - (id)veryShortMonthSymbols;
@@ -164,7 +164,7 @@
 
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
-+ (id)mf_formatDate:(id)arg1 shortStyle:(BOOL)arg2;
++ (id)mf_formatDate:(id)arg1 shortStyle:(bool)arg2;
 
 // Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
 
@@ -188,19 +188,23 @@
 
 // Image: /System/Library/PrivateFrameworks/Navigation.framework/Navigation
 
-+ (id)_navigation_localizedTimestampStringForDepartureArrivalDate:(id)arg1 inTimeZone:(id)arg2 canIncludeDate:(BOOL)arg3;
-+ (id)_navigation_localizedTimestampStringForDepartureArrivalDate:(id)arg1 inTimeZone:(id)arg2 canIncludeDate:(BOOL)arg3 relativeToTimeZone:(id)arg4;
-+ (id)_navigation_localizedTimestampStringForDepartureArrivalDate:(id)arg1 inTimeZone:(id)arg2 canIncludeDate:(BOOL)arg3 showTimeZone:(BOOL)arg4 useShortFormat:(BOOL)arg5;
-+ (id)_navigation_localizedTimestampStringForDepartureArrivalDate:(id)arg1 inTimeZone:(id)arg2 canIncludeDate:(BOOL)arg3 suppressTimeZoneDisplay:(BOOL)arg4 useShortFormat:(BOOL)arg5;
-+ (id)_timestampFormatterForTimeZone:(id)arg1 displayTimeZone:(BOOL)arg2;
++ (id)_navigation_localizedTimestampStringForDepartureArrivalDate:(id)arg1 inTimeZone:(id)arg2 canIncludeDate:(bool)arg3;
++ (id)_navigation_localizedTimestampStringForDepartureArrivalDate:(id)arg1 inTimeZone:(id)arg2 canIncludeDate:(bool)arg3 relativeToTimeZone:(id)arg4;
++ (id)_navigation_localizedTimestampStringForDepartureArrivalDate:(id)arg1 inTimeZone:(id)arg2 canIncludeDate:(bool)arg3 showTimeZone:(bool)arg4 useShortFormat:(bool)arg5;
++ (id)_navigation_localizedTimestampStringForDepartureArrivalDate:(id)arg1 inTimeZone:(id)arg2 canIncludeDate:(bool)arg3 suppressTimeZoneDisplay:(bool)arg4 useShortFormat:(bool)arg5;
++ (id)_timestampFormatterForTimeZone:(id)arg1 displayTimeZone:(bool)arg2;
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
-+ (id)dateFormatterWithFormat:(id)arg1;
-+ (id)dateFormatterWithFormat:(id)arg1 localeIdentifier:(id)arg2;
-+ (id)dateFormatterWithFormat:(id)arg1 localeIdentifier:(id)arg2 timezone:(id)arg3;
-+ (id)dateFormatterWithFormat:(id)arg1 timezone:(id)arg2;
++ (id)dateFormatterWithFormat:(id)arg1 forReuse:(bool)arg2;
++ (id)dateFormatterWithFormat:(id)arg1 localeIdentifier:(id)arg2 forReuse:(bool)arg3;
++ (id)dateFormatterWithFormat:(id)arg1 localeIdentifier:(id)arg2 timezone:(id)arg3 forReuse:(bool)arg4;
++ (id)dateFormatterWithFormat:(id)arg1 timezone:(id)arg2 forReuse:(bool)arg3;
 
 - (id)initWithFormat:(id)arg1 localeIdentifier:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
+
++ (id)dateFormatterWithFormat:(id)arg1;
 
 @end

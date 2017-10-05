@@ -6,8 +6,8 @@
 @required
 
 - (AXHADispatchTimer *)communicationTimer;
-- (BOOL)didValidateHIID;
+- (bool)didValidateHIID;
 - (void)setCommunicationTimer:(AXHADispatchTimer *)arg1;
-- (void)setDidValidateHIID:(BOOL)arg1;
+- (void)setDidValidateHIID:(bool)arg1;
 
 @end

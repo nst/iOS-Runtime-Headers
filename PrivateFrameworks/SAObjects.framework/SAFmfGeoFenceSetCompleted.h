@@ -8,7 +8,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) SAFmfGeoFence *geoFence;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *refId;
 @property (nonatomic, copy) NSURL *searchContext;
 @property (readonly) Class superclass;
@@ -19,7 +19,7 @@
 - (id)encodedClassName;
 - (id)geoFence;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (id)searchContext;
 - (void)setGeoFence:(id)arg1;
 - (void)setSearchContext:(id)arg1;

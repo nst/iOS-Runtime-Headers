@@ -24,7 +24,7 @@
 + (id)fileHandleWithStandardInput;
 + (id)fileHandleWithStandardOutput;
 + (void)initialize;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)_closeOnDealloc;
 - (id)availableData;
@@ -34,12 +34,12 @@
 - (int)fileDescriptor;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFileDescriptor:(int)arg1;
-- (id)initWithFileDescriptor:(int)arg1 closeOnDealloc:(BOOL)arg2;
-- (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3;
-- (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
-- (id)initWithURL:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
+- (id)initWithFileDescriptor:(int)arg1 closeOnDealloc:(bool)arg2;
+- (id)initWithPath:(id)arg1 flags:(long long)arg2 createMode:(long long)arg3;
+- (id)initWithPath:(id)arg1 flags:(long long)arg2 createMode:(long long)arg3 error:(id*)arg4;
+- (id)initWithURL:(id)arg1 flags:(long long)arg2 createMode:(long long)arg3 error:(id*)arg4;
 - (unsigned long long)offsetInFile;
-- (id)readDataOfLength:(unsigned int)arg1;
+- (id)readDataOfLength:(unsigned long long)arg1;
 - (id)readDataToEndOfFile;
 - (id /* block */)readabilityHandler;
 - (unsigned long long)seekToEndOfFile;
@@ -51,27 +51,43 @@
 - (void)writeData:(id)arg1;
 - (id /* block */)writeabilityHandler;
 
+// Image: /Developer/Library/PrivateFrameworks/DVTInstrumentsUtilities.framework/DVTInstrumentsUtilities
+
+- (bool)xr_writeStringWithFormat:(id)arg1;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
+- (void)hk_readLinesInFile:(id /* block */)arg1;
+
 // Image: /System/Library/PrivateFrameworks/AppleServiceToolkit.framework/AppleServiceToolkit
 
 + (id)fileHandleForCreatingURL:(id)arg1 protection:(id)arg2 error:(id*)arg3;
 
-- (BOOL)isOpenForUpdating;
+- (bool)isOpenForUpdating;
+
+// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
+
+- (void)writeString:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
 
-- (unsigned int)writeWithCompression:(id)arg1 andUpdateAdler32:(struct adler32_t { unsigned int x1; }*)arg2;
+- (unsigned long long)writeWithCompression:(id)arg1 andUpdateAdler32:(struct adler32_t { unsigned long long x1; }*)arg2;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
-- (BOOL)hk_readValue:(void*)arg1 ofSize:(unsigned long)arg2 error:(id*)arg3;
-- (BOOL)hk_writeValue:(const void*)arg1 size:(unsigned long)arg2 error:(id*)arg3;
+- (bool)hk_readValue:(void*)arg1 ofSize:(unsigned long long)arg2 error:(id*)arg3;
+- (bool)hk_writeValue:(const void*)arg1 size:(unsigned long long)arg2 error:(id*)arg3;
+
+// Image: /System/Library/PrivateFrameworks/MapsSupport.framework/MapsSupport
+
+- (bool)_maps_writeData:(id)arg1 error:(id*)arg2;
 
 // Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
 
 - (void)ml_lock;
 - (void)ml_unlock;
 
-// Image: /System/Library/PrivateFrameworks/Parsec.framework/Parsec
+// Image: /System/Library/PrivateFrameworks/SpotlightServices.framework/SpotlightServices
 
 - (id)prs_mappedData;
 

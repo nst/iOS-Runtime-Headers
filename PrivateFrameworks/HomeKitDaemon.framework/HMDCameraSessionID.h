@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraSessionID : NSObject <NSCopying> {
+@interface HMDCameraSessionID : HMFObject <NSCopying> {
     NSString * _accessoryName;
     NSString * _cameraProactiveSessionID;
     NSString * _cameraSessionAppID;
@@ -12,7 +12,7 @@
     NSMutableDictionary * _milestones;
     HMDDevice * _remoteDevice;
     NSString * _sessionID;
-    BOOL  _spiClient;
+    bool  _spiClient;
 }
 
 @property (nonatomic, readonly) NSString *accessoryName;
@@ -24,7 +24,7 @@
 @property (nonatomic, readonly) NSMutableDictionary *milestones;
 @property (nonatomic, readonly) HMDDevice *remoteDevice;
 @property (nonatomic, readonly) NSString *sessionID;
-@property (getter=isSPIClient, nonatomic, readonly) BOOL spiClient;
+@property (getter=isSPIClient, nonatomic, readonly) bool spiClient;
 
 + (id)millisecondsSince1970;
 
@@ -41,12 +41,12 @@
 - (id)descriptionString;
 - (id)deviceMilestones;
 - (id)deviceSectionName;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithAccessory:(id)arg1 service:(id)arg2 sessionID:(id)arg3 message:(id)arg4;
 - (id)initWithAccessory:(id)arg1 sessionID:(id)arg2 message:(id)arg3;
-- (id)initWithAccessoryName:(id)arg1 sessionID:(id)arg2 cameraSessionAppID:(id)arg3 cameraProactiveSessionID:(id)arg4 remoteDevice:(id)arg5 spiClient:(BOOL)arg6;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isSPIClient;
+- (id)initWithAccessoryName:(id)arg1 sessionID:(id)arg2 cameraSessionAppID:(id)arg3 cameraProactiveSessionID:(id)arg4 remoteDevice:(id)arg5 spiClient:(bool)arg6;
+- (bool)isEqual:(id)arg1;
+- (bool)isSPIClient;
 - (void)markMilestoneFor:(id)arg1;
 - (void)markMilestoneForPath:(id)arg1;
 - (id)milestones;

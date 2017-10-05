@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
  */
 
-@interface NTKCompanionAppLibrary : NSObject <NTKCompanionAppDelegate> {
+@interface NTKCompanionAppLibrary : NSObject <LSApplicationWorkspaceObserverProtocol, NTKCompanionAppDelegate> {
     NSMutableArray * _allApps;
     NSHashTable * _changeObservers;
     NRDevice * _device;
@@ -19,7 +19,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NRDevice *device;
 @property (nonatomic, retain) NSArray *firstPartyApps;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *internalQueue;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *observerCallbackQueue;
 @property (readonly) Class superclass;
@@ -40,6 +40,7 @@
 - (void)_queue_loadApps;
 - (void)addObserver:(id)arg1;
 - (id)allApps;
+- (void)applicationStateDidChange:(id)arg1;
 - (id)changeObservers;
 - (void)companionAppUpdatedIcon:(id)arg1;
 - (void)companionAppWasUpdated:(id)arg1;

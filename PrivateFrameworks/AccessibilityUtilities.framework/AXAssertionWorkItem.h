@@ -3,23 +3,23 @@
  */
 
 @interface AXAssertionWorkItem : NSObject {
-    BOOL  _acquire;
+    bool  _acquire;
     NSString * _identifier;
-    unsigned int  _retries;
+    unsigned long long  _retries;
     NSString * _type;
 }
 
-@property (nonatomic, readonly) BOOL acquire;
+@property (nonatomic, readonly) bool acquire;
 @property (nonatomic, readonly) NSString *identifier;
-@property (nonatomic) unsigned int retries;
+@property (nonatomic) unsigned long long retries;
 @property (nonatomic, readonly) NSString *type;
 
-- (BOOL)acquire;
-- (void)dealloc;
+- (void).cxx_destruct;
+- (bool)acquire;
 - (id)identifier;
-- (id)initWithType:(id)arg1 identifier:(id)arg2 isAcquisition:(BOOL)arg3;
-- (unsigned int)retries;
-- (void)setRetries:(unsigned int)arg1;
+- (id)initWithType:(id)arg1 identifier:(id)arg2 isAcquisition:(bool)arg3;
+- (unsigned long long)retries;
+- (void)setRetries:(unsigned long long)arg1;
 - (id)type;
 
 @end

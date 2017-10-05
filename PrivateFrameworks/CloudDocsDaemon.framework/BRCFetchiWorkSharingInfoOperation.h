@@ -8,7 +8,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CKRecordID *recordID;
 @property (readonly) Class superclass;
 
@@ -18,6 +18,6 @@
 - (void)main;
 - (id)recordID;
 - (void)setRecordID:(id)arg1;
-- (BOOL)shouldRetryForError:(id)arg1;
+- (bool)shouldRetryForError:(id)arg1;
 
 @end

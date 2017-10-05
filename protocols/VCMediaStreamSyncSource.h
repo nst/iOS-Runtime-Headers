@@ -5,7 +5,7 @@
 
 @required
 
-- (int)getSyncSourceSampleRate;
+- (long long)getSyncSourceSampleRate;
 - (void)setSyncSourceDelegate:(id <VCMediaStreamSyncSourceDelegate>)arg1;
 
 @end

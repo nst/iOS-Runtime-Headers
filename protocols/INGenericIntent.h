@@ -6,6 +6,7 @@
 @required
 
 - (NSString *)domain;
+- (bool)isGenericIntent;
 - (NSDictionary *)parametersByName;
 - (void)setDomain:(NSString *)arg1;
 - (void)setParametersByName:(NSDictionary *)arg1;

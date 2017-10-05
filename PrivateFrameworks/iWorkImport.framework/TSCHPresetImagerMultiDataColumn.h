@@ -4,7 +4,7 @@
 
 @interface TSCHPresetImagerMultiDataColumn : TSCHPresetImagerColumn
 
-- (void)p_drawShadowedContentIntoContext:(struct CGContext { }*)arg1 size:(struct CGSize { float x1; float x2; })arg2 contentsScale:(float)arg3 preset:(id)arg4 shouldCache:(BOOL*)arg5;
+- (void)p_drawShadowedContentIntoContext:(struct CGContext { }*)arg1 size:(struct CGSize { double x1; double x2; })arg2 contentsScale:(double)arg3 preset:(id)arg4 shouldCache:(bool*)arg5;
 - (id)p_shadow;
 
 @end

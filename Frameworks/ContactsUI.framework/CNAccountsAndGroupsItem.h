@@ -3,51 +3,51 @@
  */
 
 @interface CNAccountsAndGroupsItem : NSObject {
-    BOOL  _bypassIfUnique;
+    bool  _bypassIfUnique;
     NSArray * _childItems;
-    int  _containerType;
+    long long  _containerType;
     NSString * _identifier;
     NSString * _name;
     id /* block */  _nameProvider;
     CNAccountsAndGroupsItem * _parentItem;
-    BOOL  _selected;
-    BOOL  _soloSelect;
-    int  _type;
+    bool  _selected;
+    bool  _soloSelect;
+    long long  _type;
 }
 
-@property (nonatomic) BOOL bypassIfUnique;
+@property (nonatomic) bool bypassIfUnique;
 @property (nonatomic, retain) NSArray *childItems;
-@property (nonatomic) int containerType;
+@property (nonatomic) long long containerType;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, readonly, copy) id /* block */ nameProvider;
 @property (nonatomic) CNAccountsAndGroupsItem *parentItem;
-@property (getter=isSelected, nonatomic) BOOL selected;
-@property (nonatomic) BOOL soloSelect;
-@property (nonatomic, readonly) int type;
+@property (getter=isSelected, nonatomic) bool selected;
+@property (nonatomic) bool soloSelect;
+@property (nonatomic, readonly) long long type;
 
 - (void).cxx_destruct;
-- (void)_setSelected:(BOOL)arg1;
-- (id)arrayForDisplay:(BOOL)arg1;
-- (BOOL)bypassIfUnique;
+- (void)_setSelected:(bool)arg1;
+- (id)arrayForDisplay:(bool)arg1;
+- (bool)bypassIfUnique;
 - (id)childItems;
-- (int)containerType;
+- (long long)containerType;
 - (id)identifier;
-- (id)initWithType:(int)arg1 nameProvider:(id /* block */)arg2;
-- (BOOL)isSelected;
-- (int)localizedCompare:(id)arg1;
+- (id)initWithType:(long long)arg1 nameProvider:(id /* block */)arg2;
+- (bool)isSelected;
+- (long long)localizedCompare:(id)arg1;
 - (id)name;
 - (id /* block */)nameProvider;
 - (id)parentItem;
-- (void)setBypassIfUnique:(BOOL)arg1;
+- (void)setBypassIfUnique:(bool)arg1;
 - (void)setChildItems:(id)arg1;
-- (void)setContainerType:(int)arg1;
+- (void)setContainerType:(long long)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setParentItem:(id)arg1;
-- (void)setSelected:(BOOL)arg1;
-- (void)setSoloSelect:(BOOL)arg1;
-- (BOOL)soloSelect;
-- (int)type;
+- (void)setSelected:(bool)arg1;
+- (void)setSoloSelect:(bool)arg1;
+- (bool)soloSelect;
+- (long long)type;
 
 @end

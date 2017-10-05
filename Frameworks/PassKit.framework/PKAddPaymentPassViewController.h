@@ -11,8 +11,8 @@
 
 @property (nonatomic) <PKAddPaymentPassViewControllerDelegate> *delegate;
 
-+ (BOOL)_shouldForwardViewWillTransitionToSize;
-+ (BOOL)canAddPaymentPass;
++ (bool)_shouldForwardViewWillTransitionToSize;
++ (bool)canAddPaymentPass;
 
 - (void).cxx_destruct;
 - (void)_setRemoteVC:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -24,12 +24,12 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithRequestConfiguration:(id)arg1 delegate:(id)arg2;
 - (void)loadView;
-- (int)modalPresentationStyle;
-- (int)modalTransitionStyle;
+- (long long)modalPresentationStyle;
+- (long long)modalTransitionStyle;
 - (void)setDelegate:(id)arg1;
-- (BOOL)shouldAutorotate;
-- (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;
-- (unsigned int)supportedInterfaceOrientations;
+- (bool)shouldAutorotate;
+- (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)viewWillLayoutSubviews;
 
 @end

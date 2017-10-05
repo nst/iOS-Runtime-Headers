@@ -4,21 +4,21 @@
 
 @interface EKAlarmOccurrence : NSObject {
     NSDate * _acknowledgedDate;
-    EKObjectID * _alarmID;
+    CADObjectID * _alarmID;
     NSString * _externalID;
     NSDate * _fireDate;
     NSDate * _ownerDate;
-    EKObjectID * _ownerID;
+    CADObjectID * _ownerID;
     NSTimeZone * _ownerTimeZone;
     NSURL * _ownerURI;
 }
 
 @property (nonatomic, readonly) NSDate *acknowledgedDate;
-@property (nonatomic, readonly) EKObjectID *alarmID;
+@property (nonatomic, readonly) CADObjectID *alarmID;
 @property (nonatomic, readonly) NSString *externalID;
 @property (nonatomic, readonly) NSDate *fireDate;
 @property (nonatomic, readonly) NSDate *ownerDate;
-@property (nonatomic, readonly) EKObjectID *ownerID;
+@property (nonatomic, readonly) CADObjectID *ownerID;
 @property (nonatomic, readonly) NSTimeZone *ownerTimeZone;
 @property (nonatomic, readonly) NSURL *ownerURI;
 

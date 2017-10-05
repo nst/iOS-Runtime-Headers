@@ -3,38 +3,38 @@
  */
 
 @interface _DECResult : NSObject <NSSecureCoding> {
-    unsigned int  _consumer;
+    unsigned long long  _consumer;
     NSUUID * _identifier;
-    int  _reason;
+    long long  _reason;
     NSDictionary * _reasonMetadata;
     NSDictionary * _results;
 }
 
-@property (nonatomic, readonly) unsigned int consumer;
+@property (nonatomic, readonly) unsigned long long consumer;
 @property (nonatomic, readonly) NSUUID *identifier;
-@property (nonatomic) int reason;
+@property (nonatomic) long long reason;
 @property (nonatomic, retain) NSDictionary *reasonMetadata;
 @property (nonatomic, retain) NSDictionary *results;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (unsigned int)consumer;
+- (unsigned long long)consumer;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithConsumer:(unsigned int)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEquivalentToResult:(id)arg1;
-- (BOOL)isEquivalentToResult:(id)arg1 limit:(unsigned int)arg2;
-- (BOOL)isEquivalentToResultForSpotlight:(id)arg1;
-- (int)reason;
+- (id)initWithConsumer:(unsigned long long)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEquivalentToResult:(id)arg1;
+- (bool)isEquivalentToResult:(id)arg1 limit:(unsigned long long)arg2;
+- (bool)isEquivalentToResultForSpotlight:(id)arg1;
+- (long long)reason;
 - (id)reasonMetadata;
-- (id)resultForCategory:(unsigned int)arg1;
+- (id)resultForCategory:(unsigned long long)arg1;
 - (id)results;
-- (id)searchFoundationResultsForCategory:(unsigned int)arg1;
-- (void)setReason:(int)arg1;
+- (id)searchFoundationResultsForCategory:(unsigned long long)arg1;
+- (void)setReason:(long long)arg1;
 - (void)setReasonMetadata:(id)arg1;
 - (void)setResults:(id)arg1;
 

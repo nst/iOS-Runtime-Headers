@@ -5,14 +5,14 @@
 @interface DCConnectivityTracker : NSObject <NSURLSessionDataDelegate, NSURLSessionDelegate, NSURLSessionDownloadDelegate> {
     NSCountedSet * _delegates;
     SDFFreshObjectQueue * _events;
-    BOOL  _isConnected;
+    bool  _isConnected;
     NSString * _server;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) BOOL isConnected;
+@property (readonly) unsigned long long hash;
+@property (readonly) bool isConnected;
 @property (readonly) Class superclass;
 
 + (id)connectivityTrackerForService:(id)arg1;
@@ -34,7 +34,7 @@
 - (id)debugDescription;
 - (id)description;
 - (id)initWithServer:(id)arg1;
-- (BOOL)isConnected;
+- (bool)isConnected;
 - (void)removeDelegate:(id)arg1;
 
 @end

@@ -5,27 +5,27 @@
 @interface STPersonContactHandle : NSObject <NSSecureCoding> {
     NSString * _handle;
     NSString * _label;
-    unsigned int  _type;
+    unsigned long long  _type;
 }
 
 @property (nonatomic, copy) NSString *handle;
 @property (nonatomic, copy) NSString *label;
-@property (nonatomic) unsigned int type;
+@property (nonatomic) unsigned long long type;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)handle;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToPersonContactHandle:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToPersonContactHandle:(id)arg1;
 - (id)label;
 - (void)setHandle:(id)arg1;
 - (void)setLabel:(id)arg1;
-- (void)setType:(unsigned int)arg1;
-- (unsigned int)type;
+- (void)setType:(unsigned long long)arg1;
+- (unsigned long long)type;
 
 @end

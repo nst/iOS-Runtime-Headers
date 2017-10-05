@@ -2,8 +2,8 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUINowPlayingLabelContainer : SearchUIStackView
+@interface SearchUINowPlayingLabelContainer : TLKStackView
 
-- (id)initWithMovie:(id)arg1 style:(unsigned int)arg2;
+- (id)initWithMovie:(id)arg1 style:(unsigned long long)arg2;
 
 @end

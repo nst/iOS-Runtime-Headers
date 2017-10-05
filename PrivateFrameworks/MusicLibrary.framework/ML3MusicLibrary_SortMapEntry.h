@@ -3,7 +3,7 @@
  */
 
 @interface ML3MusicLibrary_SortMapEntry : NSObject {
-    BOOL  _dirty;
+    bool  _dirty;
     NSString * _name;
     long long  _nameOrder;
     int  _nameSection;
@@ -13,6 +13,6 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)initWithName:(id)arg1 nameSection:(int)arg2 sortKey:(id)arg3;
-- (id)initWithName:(id)arg1 nameSection:(int)arg2 sortKey:(id)arg3 nameOrder:(long long)arg4 dirtyFlag:(BOOL)arg5;
+- (id)initWithName:(id)arg1 nameSection:(int)arg2 sortKey:(id)arg3 nameOrder:(long long)arg4 dirtyFlag:(bool)arg5;
 
 @end

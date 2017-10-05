@@ -4,20 +4,20 @@
 
 @interface PKValueAddedMerchant : NSObject <NSSecureCoding> {
     NSData * _identifier;
-    int  _timesPresented;
+    long long  _timesPresented;
 }
 
 @property (nonatomic, retain) NSData *identifier;
-@property (nonatomic) int timesPresented;
+@property (nonatomic) long long timesPresented;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setTimesPresented:(int)arg1;
-- (int)timesPresented;
+- (void)setTimesPresented:(long long)arg1;
+- (long long)timesPresented;
 
 @end

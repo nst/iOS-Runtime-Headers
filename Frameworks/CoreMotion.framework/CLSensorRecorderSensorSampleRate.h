@@ -10,7 +10,7 @@
 @property int dataType;
 @property unsigned int rate;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (int)dataType;
 - (void)encodeWithCoder:(id)arg1;

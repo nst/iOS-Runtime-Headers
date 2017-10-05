@@ -4,20 +4,20 @@
 
 @interface UAPasteboardGeneration : NSObject {
     NSSet * _allTypes;
-    unsigned int  _generation;
+    unsigned long long  _generation;
     NSArray * _items;
 }
 
 @property (nonatomic, copy) NSSet *allTypes;
-@property (nonatomic, readonly) unsigned int generation;
+@property (nonatomic, readonly) unsigned long long generation;
 @property (nonatomic, copy) NSArray *items;
 
 - (void).cxx_destruct;
-- (BOOL)addItem:(id)arg1;
-- (BOOL)addType:(id)arg1 toItemAtIndex:(unsigned int)arg2;
+- (bool)addItem:(id)arg1;
+- (bool)addType:(id)arg1 toItemAtIndex:(unsigned long long)arg2;
 - (id)allTypes;
-- (unsigned int)generation;
-- (id)initWithGeneration:(unsigned int)arg1;
+- (unsigned long long)generation;
+- (id)initWithGeneration:(unsigned long long)arg1;
 - (id)items;
 - (void)setAllTypes:(id)arg1;
 - (void)setItems:(id)arg1;

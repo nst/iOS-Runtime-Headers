@@ -12,8 +12,8 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, copy) NSSet *topics;
 
+- (void).cxx_destruct;
 - (id)commands;
-- (void)dealloc;
 - (id)initWithQueue:(id)arg1 topics:(id)arg2 commands:(id)arg3;
 - (id)queue;
 - (void)setCommands:(id)arg1;

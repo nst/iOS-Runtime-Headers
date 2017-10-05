@@ -5,21 +5,24 @@
 @interface UIInterfaceActionViewState : UIInterfaceActionVisualStyleViewState <NSCopying> {
     UIInterfaceAction * _action;
     id  _actionViewStateContext;
-    BOOL  _isFocused;
-    BOOL  _isHighlighted;
-    BOOL  _isPreferred;
+    bool  _isFocused;
+    bool  _isHighlighted;
+    bool  _isPreferred;
+    bool  _isPressed;
     UIColor * _legacyPresentationTintColor;
-    unsigned int  _visualCornerPosition;
+    unsigned long long  _visualCornerPosition;
 }
 
 @property (nonatomic, readonly) UIInterfaceAction *action;
 @property (nonatomic, readonly) id actionViewStateContext;
-@property (nonatomic, readonly) BOOL isFocused;
-@property (nonatomic, readonly) BOOL isHighlighted;
-@property (nonatomic, readonly) BOOL isPreferred;
+@property (nonatomic, readonly) bool isFocused;
+@property (nonatomic, readonly) bool isHighlighted;
+@property (nonatomic, readonly) bool isPreferred;
+@property (nonatomic, readonly) bool isPressed;
 @property (nonatomic, readonly) UIColor *legacyPresentationTintColor;
-@property (nonatomic, readonly) unsigned int visualCornerPosition;
+@property (nonatomic, readonly) unsigned long long visualCornerPosition;
 
++ (id)_nullViewStateForActionType:(long long)arg1;
 + (id)viewStateForActionRepresentationView:(id)arg1 action:(id)arg2;
 + (id)viewStateForActionRepresentationViewDescendantView:(id)arg1 action:(id)arg2;
 + (id)viewStateForAlertControllerActionView:(id)arg1;
@@ -32,17 +35,17 @@
 - (void)_collectStateFromActionRepresentationView:(id)arg1;
 - (void)_collectStateFromActionViewState:(id)arg1;
 - (id)_legacyPresentationTintColorForActionRepresentationDescendantView:(id)arg1;
-- (BOOL)_stateEqualToActionViewState:(id)arg1;
+- (bool)_stateEqualToActionViewState:(id)arg1;
 - (id)action;
 - (id)actionViewStateContext;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (id)initWithPropertiesFromActionRepresentationView:(id)arg1 groupView:(id)arg2 action:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isFocused;
-- (BOOL)isHighlighted;
-- (BOOL)isPreferred;
+- (bool)isEqual:(id)arg1;
+- (bool)isFocused;
+- (bool)isHighlighted;
+- (bool)isPreferred;
+- (bool)isPressed;
 - (id)legacyPresentationTintColor;
-- (unsigned int)visualCornerPosition;
+- (unsigned long long)visualCornerPosition;
 
 @end

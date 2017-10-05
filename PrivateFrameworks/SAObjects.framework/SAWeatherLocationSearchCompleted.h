@@ -7,7 +7,7 @@
 @property (nonatomic, copy) NSString *aceId;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *refId;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSArray *weatherLocations;
@@ -19,6 +19,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)initWithWeatherLocations:(id)arg1;
+- (bool)requiresResponse;
 - (void)setWeatherLocations:(id)arg1;
 - (id)weatherLocations;
 

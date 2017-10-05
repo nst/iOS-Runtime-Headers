@@ -4,7 +4,8 @@
 
 @interface _CDErrorUtilities : NSObject
 
-+ (BOOL)isCoreDataFatalError:(id)arg1;
++ (bool)isCoreDataFatalError:(id)arg1;
++ (void)simulateCrashWithDescription:(id)arg1;
 + (id)transformErrorForNSSecureCoding:(id)arg1;
 
 @end

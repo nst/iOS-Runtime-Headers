@@ -3,15 +3,15 @@
  */
 
 @interface CPInterval : NSObject {
-    float  left;
-    float  right;
+    double  left;
+    double  right;
 }
 
 - (void)add:(id)arg1;
-- (BOOL)contains:(id)arg1;
-- (id)initLeft:(float)arg1 right:(float)arg2;
-- (BOOL)intersects:(id)arg1;
-- (float)left;
-- (float)right;
+- (bool)contains:(id)arg1;
+- (id)initLeft:(double)arg1 right:(double)arg2;
+- (bool)intersects:(id)arg1;
+- (double)left;
+- (double)right;
 
 @end

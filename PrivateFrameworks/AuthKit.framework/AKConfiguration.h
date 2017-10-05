@@ -10,11 +10,14 @@
 
 @property (nonatomic, copy) NSDate *lastCheckInAttemptDate;
 @property (nonatomic, copy) NSDate *lastCheckInSuccessDate;
-@property (nonatomic) int shouldAddHSA2CreateHeader;
-@property (nonatomic) int shouldDisablePETs;
-@property (nonatomic) int shouldDisablePiggybacking;
-@property (nonatomic) int shouldFakeAuthSuccess;
-@property (nonatomic) int shouldSuppressHSA2Suggestions;
+@property (nonatomic) unsigned long long lastKnownIDMSEnvironment;
+@property (nonatomic) long long shouldAddHSA2CreateHeader;
+@property (nonatomic) long long shouldAllowExperimentalMode;
+@property (nonatomic) long long shouldAllowPhoneNumberAccounts;
+@property (nonatomic) long long shouldDisablePETs;
+@property (nonatomic) long long shouldDisablePiggybacking;
+@property (nonatomic) long long shouldFakeAuthSuccess;
+@property (nonatomic) long long shouldSuppressHSA2Suggestions;
 
 + (id)sharedConfiguration;
 
@@ -24,18 +27,24 @@
 - (id)init;
 - (id)lastCheckInAttemptDate;
 - (id)lastCheckInSuccessDate;
+- (unsigned long long)lastKnownIDMSEnvironment;
 - (void)setConfigurationValue:(id)arg1 forKey:(id)arg2;
 - (void)setLastCheckInAttemptDate:(id)arg1;
 - (void)setLastCheckInSuccessDate:(id)arg1;
-- (void)setShouldAddHSA2CreateHeader:(int)arg1;
-- (void)setShouldDisablePETs:(int)arg1;
-- (void)setShouldDisablePiggybacking:(int)arg1;
-- (void)setShouldFakeAuthSuccess:(int)arg1;
-- (void)setShouldSuppressHSA2Suggestions:(int)arg1;
-- (int)shouldAddHSA2CreateHeader;
-- (int)shouldDisablePETs;
-- (int)shouldDisablePiggybacking;
-- (int)shouldFakeAuthSuccess;
-- (int)shouldSuppressHSA2Suggestions;
+- (void)setLastKnownIDMSEnvironment:(unsigned long long)arg1;
+- (void)setShouldAddHSA2CreateHeader:(long long)arg1;
+- (void)setShouldAllowExperimentalMode:(long long)arg1;
+- (void)setShouldAllowPhoneNumberAccounts:(long long)arg1;
+- (void)setShouldDisablePETs:(long long)arg1;
+- (void)setShouldDisablePiggybacking:(long long)arg1;
+- (void)setShouldFakeAuthSuccess:(long long)arg1;
+- (void)setShouldSuppressHSA2Suggestions:(long long)arg1;
+- (long long)shouldAddHSA2CreateHeader;
+- (long long)shouldAllowExperimentalMode;
+- (long long)shouldAllowPhoneNumberAccounts;
+- (long long)shouldDisablePETs;
+- (long long)shouldDisablePiggybacking;
+- (long long)shouldFakeAuthSuccess;
+- (long long)shouldSuppressHSA2Suggestions;
 
 @end

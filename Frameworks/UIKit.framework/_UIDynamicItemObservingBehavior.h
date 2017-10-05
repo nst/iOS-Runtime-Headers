@@ -5,32 +5,32 @@
 @interface _UIDynamicItemObservingBehavior : UIDynamicItemBehavior {
     id /* block */  _completionHandler;
     double  _completionHandlerInvocationDelay;
-    BOOL  _enabled;
-    int  _frameCount;
+    bool  _enabled;
+    long long  _frameCount;
     struct CGVector { 
-        float dx; 
-        float dy; 
+        double dx; 
+        double dy; 
     }  _targetVelocity;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;
 @property (nonatomic) double completionHandlerInvocationDelay;
-@property (nonatomic) BOOL enabled;
-@property (nonatomic) int frameCount;
-@property (nonatomic) struct CGVector { float x1; float x2; } targetVelocity;
+@property (nonatomic) bool enabled;
+@property (nonatomic) long long frameCount;
+@property (nonatomic) struct CGVector { double x1; double x2; } targetVelocity;
 
 - (void).cxx_destruct;
 - (void)cancel;
 - (id /* block */)completionHandler;
 - (double)completionHandlerInvocationDelay;
-- (BOOL)enabled;
-- (int)frameCount;
+- (bool)enabled;
+- (long long)frameCount;
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setCompletionHandlerInvocationDelay:(double)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setFrameCount:(int)arg1;
-- (void)setTargetVelocity:(struct CGVector { float x1; float x2; })arg1;
-- (struct CGVector { float x1; float x2; })targetVelocity;
+- (void)setEnabled:(bool)arg1;
+- (void)setFrameCount:(long long)arg1;
+- (void)setTargetVelocity:(struct CGVector { double x1; double x2; })arg1;
+- (struct CGVector { double x1; double x2; })targetVelocity;
 - (void)willMoveToAnimator:(id)arg1;
 
 @end

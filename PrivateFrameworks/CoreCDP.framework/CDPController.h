@@ -20,6 +20,7 @@
 - (id)authProvider;
 - (id)context;
 - (id)daemonConn;
+- (void)dealloc;
 - (id)init;
 - (id)initWithContext:(id)arg1;
 - (void)invalidate;

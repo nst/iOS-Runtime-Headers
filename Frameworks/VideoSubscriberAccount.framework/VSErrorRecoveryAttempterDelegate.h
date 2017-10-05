@@ -6,6 +6,6 @@
 
 + (id)sharedDelegate;
 
-- (void)didPresentErrorWithRecovery:(BOOL)arg1 contextInfo:(void*)arg2;
+- (void)didPresentErrorWithRecovery:(bool)arg1 contextInfo:(void*)arg2;
 
 @end

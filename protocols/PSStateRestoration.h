@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)canBeShownFromSuspendedState;
+- (bool)canBeShownFromSuspendedState;
 
 @end

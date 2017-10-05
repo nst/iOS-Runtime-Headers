@@ -12,8 +12,10 @@
 
 - (id)animationContextCaches;
 - (id)animations;
+- (id)bestAnimationContextCacheForKeyPath:(id)arg1 atTime:(double)arg2;
 - (void)dealloc;
 - (id)initWithAnimation:(id)arg1;
-- (void)verifyCacheWithAnimation:(id)arg1;
+- (double)p_groupTimingFactorAtTime:(double)arg1;
+- (id)valueForKeyPath:(id)arg1 atTime:(double)arg2 animationCache:(id)arg3;
 
 @end

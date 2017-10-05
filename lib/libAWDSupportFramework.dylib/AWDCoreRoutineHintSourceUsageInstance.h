@@ -13,9 +13,9 @@
     int  _isVisit;
 }
 
-@property (nonatomic) BOOL hasHintSource;
-@property (nonatomic) BOOL hasIsLOI;
-@property (nonatomic) BOOL hasIsVisit;
+@property (nonatomic) bool hasHintSource;
+@property (nonatomic) bool hasIsLOI;
+@property (nonatomic) bool hasIsVisit;
 @property (nonatomic) int hintSource;
 @property (nonatomic) int isLOI;
 @property (nonatomic) int isVisit;
@@ -24,19 +24,19 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasHintSource;
-- (BOOL)hasIsLOI;
-- (BOOL)hasIsVisit;
-- (unsigned int)hash;
+- (bool)hasHintSource;
+- (bool)hasIsLOI;
+- (bool)hasIsVisit;
+- (unsigned long long)hash;
 - (int)hintSource;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (int)isLOI;
 - (int)isVisit;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasHintSource:(BOOL)arg1;
-- (void)setHasIsLOI:(BOOL)arg1;
-- (void)setHasIsVisit:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasHintSource:(bool)arg1;
+- (void)setHasIsLOI:(bool)arg1;
+- (void)setHasIsVisit:(bool)arg1;
 - (void)setHintSource:(int)arg1;
 - (void)setIsLOI:(int)arg1;
 - (void)setIsVisit:(int)arg1;

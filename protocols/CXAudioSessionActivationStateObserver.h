@@ -5,6 +5,6 @@
 
 @required
 
-- (oneway void)handleAudioSessionActivationStateChangedTo:(BOOL)arg1;
+- (oneway void)handleAudioSessionActivationStateChangedTo:(bool)arg1;
 
 @end

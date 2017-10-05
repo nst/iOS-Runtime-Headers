@@ -14,20 +14,19 @@
 
 @property (nonatomic) <CMPocketStateDelegate> *delegate;
 
-+ (void)initialize;
-+ (BOOL)isPocketStateAvailable;
++ (bool)isPocketStateAvailable;
 
 - (void)_disableDispatcher;
 - (void)addToAggdScalarWithName:(id)arg1 andScalar:(unsigned long long)arg2;
 - (void)dealloc;
 - (id)delegate;
-- (id)externalStateToString:(int)arg1;
+- (id)externalStateToString:(long long)arg1;
 - (id)init;
 - (void)onNotification:(id)arg1;
 - (void)onPocketStateUpdated:(int)arg1;
 - (void)queryStateOntoQueue:(id)arg1 andMonitorFor:(double)arg2 withTimeout:(double)arg3 andHandler:(id /* block */)arg4;
 - (void)queryStateOntoQueue:(id)arg1 withTimeout:(double)arg2 andHandler:(id /* block */)arg3;
 - (void)setDelegate:(id)arg1;
-- (int)translateInternalState:(int)arg1;
+- (long long)translateInternalState:(int)arg1;
 
 @end

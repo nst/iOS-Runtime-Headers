@@ -18,8 +18,9 @@
 
 - (void).cxx_destruct;
 - (void)_invalidateRemainingIndexPaths;
+- (id)_items;
 - (id)dataAccessQueue;
-- (BOOL)hasRemainingItems;
+- (bool)hasRemainingItems;
 - (id)initWithPrefetchItems:(id)arg1;
 - (id)items;
 - (id)itemsDict;

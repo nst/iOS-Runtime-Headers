@@ -11,7 +11,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (BOOL)addFaceToMetric:(id)arg1 andParameters:(id)arg2 error:(id*)arg3;
+- (bool)addFaceToMetric:(id)arg1 andParameters:(id)arg2 error:(id*)arg3;
 - (id)initWithLearnedMetric:(id)arg1 error:(id*)arg2;
 - (id)initWithOptions:(id)arg1 error:(id*)arg2;
 

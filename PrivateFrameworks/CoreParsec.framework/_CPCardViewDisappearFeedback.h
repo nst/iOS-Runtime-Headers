@@ -2,32 +2,43 @@
    Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
  */
 
-@interface _CPCardViewDisappearFeedback : PBCodable <NSCopying> {
+@interface _CPCardViewDisappearFeedback : PBCodable <NSSecureCoding, _CPCardViewDisappearFeedback, _CPProcessableFeedback> {
     int  _cardDisappearEvent;
     struct { 
+        unsigned int timestamp : 1; 
         unsigned int cardDisappearEvent : 1; 
     }  _has;
     unsigned long long  _timestamp;
 }
 
 @property (nonatomic) int cardDisappearEvent;
-@property (nonatomic) BOOL hasCardDisappearEvent;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
+@property (nonatomic, readonly) id feedbackJSON;
+@property (nonatomic, readonly) bool hasCardDisappearEvent;
+@property (nonatomic, readonly) bool hasTimestamp;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSData *jsonData;
+@property (nonatomic, readonly) bool requiresQueryId;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned long long timestamp;
 @property (nonatomic) unsigned long long timestamp;
 
-- (int)StringAsCardDisappearEvent:(id)arg1;
 - (int)cardDisappearEvent;
-- (id)cardDisappearEventAsString:(int)arg1;
-- (void)copyTo:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCardDisappearEvent;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)hasCardDisappearEvent;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (id)init;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithFacade:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)jsonData;
+- (bool)readFrom:(id)arg1;
+- (bool)requiresQueryId;
 - (void)setCardDisappearEvent:(int)arg1;
-- (void)setHasCardDisappearEvent:(BOOL)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;

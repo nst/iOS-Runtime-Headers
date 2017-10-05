@@ -9,20 +9,22 @@
     int  _locationType;
 }
 
-@property (nonatomic) BOOL hasLocationType;
+@property (nonatomic) bool hasLocationType;
 @property (nonatomic) int locationType;
 
+- (int)StringAsLocationType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLocationType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasLocationType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (int)locationType;
+- (id)locationTypeAsString:(int)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasLocationType:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasLocationType:(bool)arg1;
 - (void)setLocationType:(int)arg1;
 - (void)writeTo:(id)arg1;
 

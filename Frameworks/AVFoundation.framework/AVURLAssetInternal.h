@@ -6,11 +6,12 @@
     NSURL * URL;
     AVAssetClientURLRequestHelper * URLRequestHelper;
     AVAssetCache * assetCache;
-    BOOL  hasInstanceIdentifierMapping;
+    AVAssetCustomURLBridgeForNSURLProtocol * customURLBridgeForNSURLProtocol;
+    bool  hasInstanceIdentifierMapping;
     NSDictionary * initializationOptions;
     AVAssetInspectorLoader * loader;
-    long  makeOneAssetDownloadCacheOnly;
-    long  makeOneResourceLoaderOnly;
+    long long  makeOneAssetDownloadCacheOnly;
+    long long  makeOneResourceLoaderOnly;
     AVAssetResourceLoader * resourceLoader;
     AVWeakReference * sessionReference;
     NSArray * tracks;

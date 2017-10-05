@@ -12,18 +12,19 @@
 @property (nonatomic, readonly, copy) INSpeakableString *nickname;
 @property (nonatomic, readonly, copy) INSpeakableString *organizationName;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)accountNumber;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (id)descriptionAtIndent:(unsigned long long)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNickname:(id)arg1 number:(id)arg2 organizationName:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)nickname;
 - (id)organizationName;
 

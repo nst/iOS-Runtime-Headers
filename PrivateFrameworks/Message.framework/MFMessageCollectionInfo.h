@@ -5,41 +5,41 @@
 @interface MFMessageCollectionInfo : NSObject {
     long long  _messageCollectionHash;
     MFMessageInfoOrderedSet * _messageInfoSet;
-    MFMessageInfo * _stickyPlaceholder;
 }
 
 @property (nonatomic, readonly) NSArray *allMessageInfos;
+@property (nonatomic, copy) id /* block */ duplicatePreferenceComparator;
 @property (nonatomic, readonly) MFMessageInfo *firstMessage;
-@property (nonatomic, readonly) BOOL isEmpty;
+@property (nonatomic, readonly) bool isEmpty;
 @property (nonatomic, readonly) MFMessageInfo *lastMessage;
 @property (nonatomic, readonly) long long messageCollectionHash;
-@property (nonatomic, readonly) unsigned int messageCountWithDuplicates;
-@property (nonatomic, readonly) unsigned int messagesCount;
-@property (nonatomic, retain) MFMessageInfo *stickyPlaceholder;
+@property (nonatomic, readonly) unsigned long long messageCountWithDuplicates;
+@property (nonatomic, readonly) unsigned long long messagesCount;
 @property (nonatomic, readonly) NSArray *uniqueMessageInfos;
 
-+ (unsigned int)stateForMessages:(id)arg1;
++ (unsigned long long)stateForMessages:(id)arg1;
 
-- (unsigned int)addMessageInfo:(id)arg1;
+- (unsigned long long)addMessageInfo:(id)arg1;
 - (id)allMessageInfos;
 - (void)dealloc;
+- (id)debugDescription;
+- (id /* block */)duplicatePreferenceComparator;
 - (id)duplicatesOfMessageInfo:(id)arg1;
 - (id)firstMessage;
-- (unsigned int)indexOfMessageInfo:(id)arg1;
-- (unsigned int)indexWhereMessageInfoWouldBeInserted:(id)arg1;
+- (unsigned long long)indexOfMessageInfo:(id)arg1;
+- (unsigned long long)indexWhereMessageInfoWouldBeInserted:(id)arg1;
 - (id)initWithHash:(long long)arg1 comparator:(id /* block */)arg2;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (id)lastMessage;
 - (void)mergeWithCollection:(id)arg1;
 - (long long)messageCollectionHash;
-- (unsigned int)messageCountWithDuplicates;
-- (id)messageInfoAtIndex:(unsigned int)arg1;
+- (unsigned long long)messageCountWithDuplicates;
+- (id)messageInfoAtIndex:(unsigned long long)arg1;
 - (id)messageInfoEquivalentToMessageInfo:(id)arg1;
-- (unsigned int)messagesCount;
-- (unsigned int)removeMessageInfo:(id)arg1;
-- (void)setStickyPlaceholder:(id)arg1;
-- (unsigned int)state;
-- (id)stickyPlaceholder;
+- (unsigned long long)messagesCount;
+- (unsigned long long)removeMessageInfo:(id)arg1;
+- (void)setDuplicatePreferenceComparator:(id /* block */)arg1;
+- (unsigned long long)state;
 - (id)uniqueMessageInfos;
 - (id)visibleMessageInfo;
 

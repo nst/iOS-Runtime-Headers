@@ -8,26 +8,27 @@
     NSNumber * _max;
     NSNumber * _min;
     NSNumber * _sum;
-    id  _userInfo;
+    <HKGraphSeriesBlockCoordinateInfo> * _userInfo;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) id userInfo;
+@property (nonatomic, retain) <HKGraphSeriesBlockCoordinateInfo> *userInfo;
 
 - (void).cxx_destruct;
 - (id)allYValues;
 - (id)description;
-- (id)initWithStatistics:(id)arg1 options:(unsigned int)arg2 unit:(id)arg3 dataUnit:(id)arg4;
-- (id)maxXValue;
+- (id)initWithDataSourceValue:(id)arg1 options:(unsigned long long)arg2 unit:(id)arg3 displayType:(id)arg4;
+- (id)initWithStatistics:(id)arg1 options:(unsigned long long)arg2 unit:(id)arg3 displayType:(id)arg4;
+- (id)maxXValueAsGenericType;
 - (id)maxYValue;
-- (id)minXValue;
+- (id)minXValueAsGenericType;
 - (id)minYValue;
 - (void)setUserInfo:(id)arg1;
 - (id)userInfo;
-- (id)xValue;
+- (id)xValueAsGenericType;
 - (id)yValue;
 - (id)yValueForKey:(id)arg1;
 

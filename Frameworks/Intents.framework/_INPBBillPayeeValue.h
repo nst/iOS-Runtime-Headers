@@ -11,16 +11,14 @@
 }
 
 @property (nonatomic, retain) NSString *accountNumber;
-@property (nonatomic, readonly) BOOL hasAccountNumber;
-@property (nonatomic, readonly) BOOL hasNickname;
-@property (nonatomic, readonly) BOOL hasOrganizationName;
-@property (nonatomic, readonly) BOOL hasValueMetadata;
+@property (nonatomic, readonly) bool hasAccountNumber;
+@property (nonatomic, readonly) bool hasNickname;
+@property (nonatomic, readonly) bool hasOrganizationName;
+@property (nonatomic, readonly) bool hasValueMetadata;
 @property (nonatomic, retain) _INPBDataString *nickname;
 @property (nonatomic, retain) _INPBDataString *organizationName;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) _INPBValueMetadata *valueMetadata;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -29,16 +27,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAccountNumber;
-- (BOOL)hasNickname;
-- (BOOL)hasOrganizationName;
-- (BOOL)hasValueMetadata;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAccountNumber;
+- (bool)hasNickname;
+- (bool)hasOrganizationName;
+- (bool)hasValueMetadata;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)nickname;
 - (id)organizationName;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAccountNumber:(id)arg1;
 - (void)setNickname:(id)arg1;
 - (void)setOrganizationName:(id)arg1;
@@ -46,11 +44,5 @@
 - (id)unknownFields;
 - (id)valueMetadata;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

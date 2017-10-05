@@ -4,27 +4,26 @@
 
 @interface MFStream : NSObject <NSStreamDelegate, NSURLSessionDelegate> {
     char * _buffer;
-    unsigned int  _bytesRead;
-    unsigned int  _bytesWritten;
+    unsigned long long  _bytesRead;
+    unsigned long long  _bytesWritten;
     id /* block */  _callback;
-    unsigned long  _capacity;
+    unsigned long long  _capacity;
     NSCondition * _condition;
-    BOOL  _dispatchedBytesAvailable;
-    BOOL  _enableThroughputMonitoring;
+    bool  _dispatchedBytesAvailable;
     NSError * _error;
-    unsigned long  _length;
+    unsigned long long  _length;
     NSObject<OS_dispatch_queue> * _location;
     NSMutableDictionary * _properties;
     NSInputStream * _rStream;
-    BOOL  _streamCanRead;
-    BOOL  _streamCanWrite;
+    bool  _streamCanRead;
+    bool  _streamCanWrite;
     NSOutputStream * _wStream;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isOpen;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isOpen;
 @property (nonatomic, readonly) NSError *streamError;
 @property (readonly) Class superclass;
 
@@ -34,19 +33,18 @@
 
 - (void)_closeAndReleaseStream:(id)arg1 logMessage:(id)arg2;
 - (id)_copyPropertyForKey:(id)arg1;
-- (void)_createPairWithSocketToHostName:(id)arg1 port:(int)arg2;
+- (void)_createPairWithSocketToHostName:(id)arg1 port:(long long)arg2;
 - (void)_readBytesFromStream;
 - (void)close;
 - (void)dealloc;
-- (void)enableThroughputMonitoring:(BOOL)arg1;
 - (id)initCallBack:(id /* block */)arg1 onDispatchQueue:(id)arg2;
-- (BOOL)isOpen;
-- (void)openToHostName:(id)arg1 port:(int)arg2;
+- (bool)isOpen;
+- (void)openToHostName:(id)arg1 port:(long long)arg2;
 - (id)propertyForKey:(id)arg1;
-- (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
-- (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
-- (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
+- (long long)read:(char *)arg1 maxLength:(unsigned long long)arg2;
+- (bool)setProperty:(id)arg1 forKey:(id)arg2;
+- (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (id)streamError;
-- (int)write:(const char *)arg1 maxLength:(unsigned int)arg2;
+- (long long)write:(const char *)arg1 maxLength:(unsigned long long)arg2;
 
 @end

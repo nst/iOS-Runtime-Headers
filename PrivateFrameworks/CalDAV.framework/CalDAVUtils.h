@@ -6,7 +6,6 @@
 
 + (id)dropBoxLocationForUID:(id)arg1 dropBoxPath:(id)arg2;
 + (id)headersFromHeaders:(id)arg1 replacingPreconditionsWithScheduleTag:(id)arg2;
-+ (id)preferredCalendarUserAddressFromAddresses:(id)arg1;
 + (id)stringFromUIDWithPathSafeCharacters:(id)arg1;
 
 @end

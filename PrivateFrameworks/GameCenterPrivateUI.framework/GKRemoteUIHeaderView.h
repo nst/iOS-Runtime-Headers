@@ -3,31 +3,31 @@
  */
 
 @interface GKRemoteUIHeaderView : UIView <RUIHeader> {
-    float  _bottomMargin;
-    float  _height;
-    BOOL  _isFirstSection;
+    double  _bottomMargin;
+    double  _height;
+    bool  _isFirstSection;
     GKLabel * _textLabel;
 }
 
-@property (nonatomic) float bottomMargin;
+@property (nonatomic) double bottomMargin;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) float height;
-@property (nonatomic) BOOL isFirstSection;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) double height;
+@property (nonatomic) bool isFirstSection;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) GKLabel *textLabel;
 
-- (float)bottomMargin;
+- (double)bottomMargin;
 - (void)dealloc;
-- (float)headerHeightForWidth:(float)arg1 inTableView:(id)arg2;
-- (float)height;
+- (double)headerHeightForWidth:(double)arg1 inTableView:(id)arg2;
+- (double)height;
 - (id)initWithAttributes:(id)arg1;
-- (BOOL)isFirstSection;
-- (void)setBottomMargin:(float)arg1;
-- (void)setHeight:(float)arg1;
-- (void)setIsFirstSection:(BOOL)arg1;
-- (void)setSectionIsFirst:(BOOL)arg1;
+- (bool)isFirstSection;
+- (void)setBottomMargin:(double)arg1;
+- (void)setHeight:(double)arg1;
+- (void)setIsFirstSection:(bool)arg1;
+- (void)setSectionIsFirst:(bool)arg1;
 - (void)setTextLabel:(id)arg1;
 - (id)textLabel;
 

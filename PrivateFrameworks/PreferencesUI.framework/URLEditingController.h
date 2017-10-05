@@ -4,11 +4,11 @@
 
 @interface URLEditingController : PSListController
 
-- (BOOL)canBeShownFromSuspendedState;
-- (BOOL)shouldSelectResponderOnAppearance;
+- (bool)canBeShownFromSuspendedState;
+- (bool)shouldSelectResponderOnAppearance;
 - (id)specifiers;
 - (void)suspend;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

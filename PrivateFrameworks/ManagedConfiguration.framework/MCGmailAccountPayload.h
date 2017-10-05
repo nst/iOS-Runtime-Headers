@@ -25,7 +25,7 @@
 - (id)description;
 - (id)emailAddress;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
-- (BOOL)mustInstallNonInteractively;
+- (bool)mustInstallNonInteractively;
 - (id)restrictions;
 - (id)stubDictionary;
 - (id)subtitle1Description;

@@ -20,8 +20,8 @@
 - (id)description;
 - (id)download;
 - (id)downloadAsset;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

@@ -18,11 +18,11 @@
     }  _transitEdge;
 }
 
-@property (nonatomic, readonly) unsigned long coordinateCount;
+@property (nonatomic, readonly) unsigned long long coordinateCount;
 @property (nonatomic, readonly) struct { double x1; double x2; }*coordinates;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *internalLineName;
 @property (nonatomic, readonly) double length;
 @property (nonatomic, readonly) unsigned int minimumTravelTime;
@@ -33,7 +33,6 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)dealloc;
 - (id)description;
 - (double)distanceInMetersFrom:(struct { double x1; double x2; })arg1 outClosestCoordinateOnLine:(struct { double x1; double x2; }*)arg2;
 - (id)initWithMap:(id)arg1 transitEdge:(struct shared_ptr<geo::MapEdgeTransit> { struct MapEdgeTransit {} *x1; struct __shared_weak_count {} *x2; })arg2;

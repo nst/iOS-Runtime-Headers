@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDRemoteMessageSerialization : NSObject
+@interface HMDRemoteMessageSerialization : HMFObject
 
 + (id)dictionaryForMessage:(id)arg1 error:(id*)arg2;
-+ (BOOL)legacyNotificationMessage:(id)arg1;
++ (bool)legacyNotificationMessage:(id)arg1;
 + (id)remoteMessageWithDictonary:(id)arg1 error:(id*)arg2;
 
 @end

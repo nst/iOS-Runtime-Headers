@@ -5,6 +5,6 @@
 @interface RUIHeaderElement : RUIElement
 
 - (void)configureView:(id)arg1;
-- (int)labelAlignment;
+- (long long)labelAlignment;
 
 @end

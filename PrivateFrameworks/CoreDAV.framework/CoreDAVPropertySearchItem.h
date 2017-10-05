@@ -14,7 +14,7 @@
 
 // Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 - (id)initWithSearchPropertyNameSpace:(id)arg1 andName:(id)arg2;

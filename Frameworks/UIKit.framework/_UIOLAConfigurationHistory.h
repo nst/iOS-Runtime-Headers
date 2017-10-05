@@ -3,50 +3,56 @@
  */
 
 @interface _UIOLAConfigurationHistory : _UILAConfigurationHistory <_UIOLAPropertySource> {
-    BOOL  _baselineRelativeArrangement;
-    int  _distribution;
-    BOOL  _hasEstablishedOrderingValues;
-    BOOL  _inOrderedArrangementUpdateSection;
-    BOOL  _itemFittingSizeChanged;
-    BOOL  _itemOrderingChanged;
-    float  _proportionalFillDenominator;
-    float  _spacing;
+    bool  _baselineRelativeArrangement;
+    NSMapTable * _customSpacings;
+    long long  _distribution;
+    bool  _hasEstablishedOrderingValues;
+    bool  _inOrderedArrangementUpdateSection;
+    bool  _itemFittingSizeChanged;
+    bool  _itemOrderingChanged;
+    double  _proportionalFillDenominator;
+    double  _spacing;
 }
 
-@property (setter=_setItemFittingSizeChanged:, nonatomic) BOOL _itemFittingSizeChanged;
-@property (setter=_setItemOrderingChanged:, nonatomic) BOOL _itemOrderingChanged;
+@property (setter=_setItemFittingSizeChanged:, nonatomic) bool _itemFittingSizeChanged;
+@property (setter=_setItemOrderingChanged:, nonatomic) bool _itemOrderingChanged;
 @property (nonatomic, readonly) NSSet *_newlyHiddenItems;
 @property (nonatomic, readonly) NSSet *_newlyUnhiddenItems;
-@property (nonatomic) int axis;
-@property (getter=isBaselineRelativeArrangement, nonatomic) BOOL baselineRelativeArrangement;
+@property (nonatomic) long long axis;
+@property (getter=isBaselineRelativeArrangement, nonatomic) bool baselineRelativeArrangement;
+@property (nonatomic, readonly) NSMapTable *customSpacings;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) int distribution;
-@property (nonatomic) BOOL hasEstablishedOrderingValues;
-@property (readonly) unsigned int hash;
-@property (getter=isInOrderedArrangementUpdateSection, nonatomic) BOOL inOrderedArrangementUpdateSection;
-@property (nonatomic) BOOL layoutFillsCanvas;
-@property (nonatomic) BOOL layoutUsesCanvasMarginsWhenFilling;
-@property (nonatomic) float proportionalFillDenominator;
-@property (nonatomic) float spacing;
+@property (nonatomic) long long distribution;
+@property (nonatomic) bool hasEstablishedOrderingValues;
+@property (readonly) unsigned long long hash;
+@property (getter=isInOrderedArrangementUpdateSection, nonatomic) bool inOrderedArrangementUpdateSection;
+@property (nonatomic) bool layoutFillsCanvas;
+@property (nonatomic) bool layoutUsesCanvasMarginsWhenFilling;
+@property (nonatomic) double proportionalFillDenominator;
+@property (nonatomic) double spacing;
 @property (readonly) Class superclass;
 
-- (BOOL)_itemFittingSizeChanged;
-- (BOOL)_itemOrderingChanged;
-- (void)_setItemFittingSizeChanged:(BOOL)arg1;
-- (void)_setItemOrderingChanged:(BOOL)arg1;
+- (void).cxx_destruct;
+- (bool)_itemFittingSizeChanged;
+- (bool)_itemOrderingChanged;
+- (void)_setItemFittingSizeChanged:(bool)arg1;
+- (void)_setItemOrderingChanged:(bool)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)distribution;
-- (BOOL)hasEstablishedOrderingValues;
-- (BOOL)isBaselineRelativeArrangement;
-- (BOOL)isInOrderedArrangementUpdateSection;
-- (float)proportionalFillDenominator;
-- (void)setBaselineRelativeArrangement:(BOOL)arg1;
-- (void)setDistribution:(int)arg1;
-- (void)setHasEstablishedOrderingValues:(BOOL)arg1;
-- (void)setInOrderedArrangementUpdateSection:(BOOL)arg1;
-- (void)setProportionalFillDenominator:(float)arg1;
-- (void)setSpacing:(float)arg1;
-- (float)spacing;
+- (double)customSpacingAfterItem:(id)arg1;
+- (id)customSpacings;
+- (long long)distribution;
+- (bool)hasEstablishedOrderingValues;
+- (bool)isBaselineRelativeArrangement;
+- (bool)isInOrderedArrangementUpdateSection;
+- (double)proportionalFillDenominator;
+- (void)setBaselineRelativeArrangement:(bool)arg1;
+- (void)setCustomSpacing:(double)arg1 afterItem:(id)arg2;
+- (void)setDistribution:(long long)arg1;
+- (void)setHasEstablishedOrderingValues:(bool)arg1;
+- (void)setInOrderedArrangementUpdateSection:(bool)arg1;
+- (void)setProportionalFillDenominator:(double)arg1;
+- (void)setSpacing:(double)arg1;
+- (double)spacing;
 
 @end

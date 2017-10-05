@@ -3,16 +3,16 @@
  */
 
 @interface PXPhotosDetailsHeaderSpec : PXFeatureSpec {
-    unsigned int  _contentInsetEdges;
+    unsigned long long  _contentInsetEdges;
 }
 
-@property (nonatomic, readonly) unsigned int contentInsetEdges;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } playButtonSize;
+@property (nonatomic, readonly) unsigned long long contentInsetEdges;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } playButtonSize;
 
-- (unsigned int)contentInsetEdges;
-- (id)createViewSpecWithDescriptor:(struct PXViewSpecDescriptor { int x1; unsigned int x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; })arg1;
-- (float)defaultCornerRadius;
-- (id)initWithExtendedTraitCollection:(id)arg1 options:(unsigned int)arg2;
-- (struct CGSize { float x1; float x2; })playButtonSize;
+- (unsigned long long)contentInsetEdges;
+- (id)createViewSpecWithDescriptor:(struct PXViewSpecDescriptor { long long x1; unsigned long long x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; })arg1;
+- (double)defaultCornerRadius;
+- (id)initWithExtendedTraitCollection:(id)arg1 options:(unsigned long long)arg2;
+- (struct CGSize { double x1; double x2; })playButtonSize;
 
 @end

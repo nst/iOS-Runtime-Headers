@@ -8,12 +8,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)dealloc;
 - (id)initWithEndpointManager:(struct OpaqueFigEndpointManager { }*)arg1;
-- (void)setCarPlayEnabled:(BOOL)arg1;
-- (void)setEndpoint:(struct OpaqueFigEndpoint { }*)arg1 isAllowed:(BOOL)arg2;
+- (void)setCarPlayEnabled:(bool)arg1;
+- (void)setEndpoint:(struct OpaqueFigEndpoint { }*)arg1 isAllowed:(bool)arg2;
 
 @end

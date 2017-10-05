@@ -3,6 +3,8 @@
  */
 
 @interface TPNumberPadButton : UIControl <TPNumberPadButtonProtocol> {
+    UIColor * _buttonColor;
+    UIView * _circleView;
     UIColor * _color;
     CALayer * _glyphLayer;
     CALayer * _highlightedGlyphLayer;
@@ -10,60 +12,56 @@
     unsigned int  character;
 }
 
-@property (nonatomic) float alphaOutsideAndInsideRing;
+@property (nonatomic, readonly) UIColor *buttonColor;
 @property unsigned int character;
+@property (retain) UIView *circleView;
 @property (nonatomic, retain) UIColor *color;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (retain) CALayer *glyphLayer;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) CALayer *highlightedGlyphLayer;
 @property (nonatomic, readonly) TPRevealingRingView *revealingRingView;
 @property (readonly) Class superclass;
 
-+ (struct CGSize { float x1; float x2; })defaultSize;
-+ (float)highlightCrossfadeHighlightBeginTime;
-+ (float)highlightCrossfadeHighlightFadeDuration;
-+ (float)highlightCrossfadeNormalBeginTime;
-+ (float)highlightCrossfadeNormalFadeDuration;
-+ (float)horizontalPadding;
++ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })circleBounds;
++ (struct CGSize { double x1; double x2; })defaultSize;
++ (double)highlightedCircleViewAlpha;
++ (double)horizontalPadding;
 + (id)imageForCharacter:(unsigned int)arg1;
-+ (id)imageForCharacter:(unsigned int)arg1 highlighted:(BOOL)arg2;
-+ (id)imageForCharacter:(unsigned int)arg1 highlighted:(BOOL)arg2 whiteVersion:(BOOL)arg3;
++ (id)imageForCharacter:(unsigned int)arg1 highlighted:(bool)arg2;
++ (id)imageForCharacter:(unsigned int)arg1 highlighted:(bool)arg2 whiteVersion:(bool)arg3;
 + (void)loadNumberPadKeyPrototypeView;
 + (id)localizedLettersForCharacter:(unsigned int)arg1;
-+ (float)outerCircleDiameter;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })paddingOutsideRing;
++ (double)outerCircleDiameter;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })paddingOutsideRing;
 + (void)resetLocale;
 + (void)resetLocaleIfNeeded;
 + (id)scriptKey;
-+ (float)unhighlightCrossfadeHighlightBeginTime;
-+ (float)unhighlightCrossfadeHighlightFadeDuration;
-+ (float)unhighlightCrossfadeNormalBeginTime;
-+ (float)unhighlightCrossfadeNormalFadeDuration;
-+ (BOOL)usesBoldAssets;
-+ (BOOL)usesTelephonyGlyphsWhereAvailable;
-+ (float)verticalPadding;
++ (double)unhighlightedCircleViewAlpha;
++ (bool)usesBoldAssets;
++ (bool)usesTelephonyGlyphsWhereAvailable;
++ (double)verticalPadding;
 
 - (void).cxx_destruct;
-- (float)alphaOutsideAndInsideRing;
+- (id)buttonColor;
 - (unsigned int)character;
+- (id)circleView;
 - (id)color;
 - (id)defaultColor;
 - (id)glyphLayer;
+- (void)highlightCircleView:(bool)arg1 animated:(bool)arg2;
 - (id)highlightedGlyphLayer;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)initForCharacter:(unsigned int)arg1;
 - (void)loadImagesForCurrentCharacter;
 - (id)revealingRingView;
-- (void)setAlphaOutsideAndInsideRing:(float)arg1;
 - (void)setCharacter:(unsigned int)arg1;
+- (void)setCircleView:(id)arg1;
 - (void)setColor:(id)arg1;
 - (void)setGlyphLayer:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setHighlightedGlyphLayer:(id)arg1;
-- (void)setUsesColorBurnBlending;
-- (void)setUsesColorDodgeBlending;
 - (void)touchCancelled;
 - (void)touchDown;
 - (void)touchUp;

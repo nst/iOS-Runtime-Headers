@@ -9,24 +9,24 @@
 - (void)addSignpost:(GEONameInfo *)arg1;
 - (void)clearManeuverNames;
 - (void)clearSignposts;
-- (BOOL)hasJunctionType;
-- (BOOL)hasManeuverType;
+- (bool)hasJunctionType;
+- (bool)hasManeuverType;
 - (struct GEOJunctionElement { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)junctionElements;
-- (unsigned int)junctionElementsCount;
+- (unsigned long long)junctionElementsCount;
 - (int)junctionType;
-- (GEONameInfoList *)maneuverNameAtIndex:(unsigned int)arg1;
+- (GEONameInfoList *)maneuverNameAtIndex:(unsigned long long)arg1;
 - (NSMutableArray *)maneuverNames;
-- (unsigned int)maneuverNamesCount;
+- (unsigned long long)maneuverNamesCount;
 - (int)maneuverType;
-- (void)setHasJunctionType:(BOOL)arg1;
-- (void)setHasManeuverType:(BOOL)arg1;
+- (void)setHasJunctionType:(bool)arg1;
+- (void)setHasManeuverType:(bool)arg1;
 - (void)setJunctionType:(int)arg1;
 - (void)setManeuverNames:(NSMutableArray *)arg1;
 - (void)setManeuverType:(int)arg1;
 - (void)setSignposts:(NSMutableArray *)arg1;
-- (GEONameInfo *)signpostAtIndex:(unsigned int)arg1;
+- (GEONameInfo *)signpostAtIndex:(unsigned long long)arg1;
 - (NSMutableArray *)signposts;
-- (unsigned int)signpostsCount;
+- (unsigned long long)signpostsCount;
 - (int)transportType;
 
 @end

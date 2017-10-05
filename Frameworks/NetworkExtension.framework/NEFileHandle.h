@@ -4,13 +4,13 @@
 
 @interface NEFileHandle : NSObject {
     NSFileHandle * _handle;
-    BOOL  _launchOwnerWhenReadable;
+    bool  _launchOwnerWhenReadable;
 }
 
 @property (readonly) NSObject<OS_xpc_object> *dictionary;
 @property (readonly) NSFileHandle *handle;
-@property (readonly) BOOL launchOwnerWhenReadable;
-@property (readonly) unsigned int type;
+@property (readonly) bool launchOwnerWhenReadable;
+@property (readonly) unsigned long long type;
 
 + (id)fileHandleFromDictionary:(id)arg1;
 
@@ -18,8 +18,8 @@
 - (id)dictionary;
 - (id)handle;
 - (id)initFromDictionary:(id)arg1;
-- (id)initWithFileDescriptor:(int)arg1 launchOwnerWhenReadable:(BOOL)arg2;
-- (BOOL)launchOwnerWhenReadable;
-- (unsigned int)type;
+- (id)initWithFileDescriptor:(int)arg1 launchOwnerWhenReadable:(bool)arg2;
+- (bool)launchOwnerWhenReadable;
+- (unsigned long long)type;
 
 @end

@@ -3,17 +3,17 @@
  */
 
 @interface _UIContentSizeCategoryPreferenceSystem : UIContentSizeCategoryPreference {
-    BOOL  _applicationOverridesPreferredContentSizeCategory;
-    BOOL  _didCheckForPreferredContentSizeCategoryOverride;
-    BOOL  _observingNotification;
+    bool  _applicationOverridesPreferredContentSizeCategory;
+    bool  _didCheckForPreferredContentSizeCategoryOverride;
+    bool  _observingNotification;
 }
 
 - (void)_beginObservingPreferredContentSizeChangedNotification;
 - (void)_endObservingPreferredContentSizeChangedNotification;
 - (void)_postContentSizeCategoryDidChangeNotification;
 - (void)_readAndObservePreferences;
-- (void)_updateContentSizeCategory:(id)arg1 postingNotification:(BOOL)arg2;
-- (void)_updateContentSizeCategoryFromUserDefaultsPostingNotification:(BOOL)arg1;
+- (void)_updateContentSizeCategory:(id)arg1 postingNotification:(bool)arg2;
+- (void)_updateContentSizeCategoryFromUserDefaultsPostingNotification:(bool)arg1;
 - (void)checkForChanges;
 - (void)dealloc;
 - (id)initAsSystem;

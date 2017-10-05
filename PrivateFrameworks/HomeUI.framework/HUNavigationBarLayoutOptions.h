@@ -2,49 +2,45 @@
    Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
  */
 
-@interface HUNavigationBarLayoutOptions : NSObject {
-    float  _bottomMargin;
-    UIFont * _buttonFont;
-    float  _containerLeadingMargin;
-    float  _containerTrailingMargin;
-    float  _height;
-    float  _minTextButtonWidth;
-    float  _topMargin;
-    int  _viewSizeSubclass;
+@interface HUNavigationBarLayoutOptions : NSObject <NSCopying> {
+    double  _bottomMargin;
+    HUNavigationButtonLayoutOptions * _buttonLayoutOptions;
+    double  _containerLeadingMargin;
+    double  _containerTrailingMargin;
+    double  _height;
+    double  _topMargin;
+    long long  _viewSizeSubclass;
 }
 
-@property (nonatomic) float bottomMargin;
-@property (nonatomic, retain) UIFont *buttonFont;
-@property (nonatomic) float containerLeadingMargin;
-@property (nonatomic) float containerTrailingMargin;
-@property (nonatomic) float height;
-@property (nonatomic, readonly) float leadingMargin;
-@property (nonatomic) float minTextButtonWidth;
-@property (nonatomic) float topMargin;
-@property (nonatomic, readonly) float trailingMargin;
-@property (nonatomic, readonly) int viewSizeSubclass;
+@property (nonatomic) double bottomMargin;
+@property (nonatomic, copy) HUNavigationButtonLayoutOptions *buttonLayoutOptions;
+@property (nonatomic) double containerLeadingMargin;
+@property (nonatomic) double containerTrailingMargin;
+@property (nonatomic) double height;
+@property (nonatomic, readonly) double leadingMargin;
+@property (nonatomic) double topMargin;
+@property (nonatomic, readonly) double trailingMargin;
+@property (nonatomic, readonly) long long viewSizeSubclass;
 
-+ (id)defaultOptionsForViewSizeSubclass:(int)arg1 containerLeadingMargin:(float)arg2 containerTrailingMargin:(float)arg3;
++ (id)defaultOptionsForViewSizeSubclass:(long long)arg1 containerLeadingMargin:(double)arg2 containerTrailingMargin:(double)arg3;
 
 - (void).cxx_destruct;
-- (float)bottomMargin;
-- (id)buttonFont;
-- (float)containerLeadingMargin;
-- (float)containerTrailingMargin;
+- (double)bottomMargin;
+- (id)buttonLayoutOptions;
+- (double)containerLeadingMargin;
+- (double)containerTrailingMargin;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (float)height;
-- (id)initWithViewSizeSubclass:(int)arg1;
-- (float)leadingMargin;
-- (float)minTextButtonWidth;
-- (void)setBottomMargin:(float)arg1;
-- (void)setButtonFont:(id)arg1;
-- (void)setContainerLeadingMargin:(float)arg1;
-- (void)setContainerTrailingMargin:(float)arg1;
-- (void)setHeight:(float)arg1;
-- (void)setMinTextButtonWidth:(float)arg1;
-- (void)setTopMargin:(float)arg1;
-- (float)topMargin;
-- (float)trailingMargin;
-- (int)viewSizeSubclass;
+- (double)height;
+- (id)initWithViewSizeSubclass:(long long)arg1;
+- (double)leadingMargin;
+- (void)setBottomMargin:(double)arg1;
+- (void)setButtonLayoutOptions:(id)arg1;
+- (void)setContainerLeadingMargin:(double)arg1;
+- (void)setContainerTrailingMargin:(double)arg1;
+- (void)setHeight:(double)arg1;
+- (void)setTopMargin:(double)arg1;
+- (double)topMargin;
+- (double)trailingMargin;
+- (long long)viewSizeSubclass;
 
 @end

@@ -17,7 +17,7 @@
 - (void)cloneIDAndResultHandlerFromRequest:(id)arg1;
 - (id)description;
 - (id)initVideoRequestWithAsset:(id)arg1 options:(id)arg2 domain:(id)arg3 resultHandler:(id /* block */)arg4;
-- (BOOL)isVideo;
+- (bool)isVideo;
 - (id)options;
 - (id /* block */)resultHandler;
 

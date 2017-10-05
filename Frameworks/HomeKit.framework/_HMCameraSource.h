@@ -20,7 +20,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) HMDelegateCaller *delegateCaller;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;

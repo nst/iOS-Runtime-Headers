@@ -21,7 +21,7 @@
     NSString * _identifier;
     MKMapItem * _mapItem;
     NSString * _mediaKind;
-    unsigned int  _minimumRankOfTopHitToSuppressResult;
+    unsigned long long  _minimumRankOfTopHitToSuppressResult;
     NSString * _query;
     NSString * _referrerForLoadingResult;
     NSURL * _reportProblemURL;
@@ -32,8 +32,8 @@
     NSDictionary * _styleOverrides;
     NSArray * _supportedStyleOverrides;
     NSString * _title;
-    BOOL  _topHit;
-    unsigned int  _type;
+    bool  _topHit;
+    unsigned long long  _type;
     NSString * _typeString;
     NSString * _urlString;
 }
@@ -52,16 +52,16 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *descriptionText;
-@property (nonatomic, readonly) unsigned int engagementDestination;
+@property (nonatomic, readonly) unsigned long long engagementDestination;
 @property (nonatomic, readonly) NSString *feedbackIdentifier;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *iTunesItemIdentifier;
 @property (nonatomic, readonly) WBSParsecImageRepresentation *icon;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) NSString *lastSearchQuery;
 @property (nonatomic, readonly) MKMapItem *mapItem;
 @property (nonatomic, readonly, copy) NSString *mediaKind;
-@property (nonatomic, readonly) unsigned int minimumRankOfTopHitToSuppressResult;
+@property (nonatomic, readonly) unsigned long long minimumRankOfTopHitToSuppressResult;
 @property (nonatomic, readonly) NSString *parsecDomainIdentifier;
 @property (nonatomic, readonly, copy) NSString *query;
 @property (nonatomic, readonly, copy) NSString *referrerForLoadingResult;
@@ -69,14 +69,16 @@
 @property (nonatomic, readonly) NSString *sectionHeader;
 @property (nonatomic, retain) SFResultSection *sfResultSection;
 @property (nonatomic, retain) SFSearchResult *sfSearchResultValue;
+@property (nonatomic, retain) WBSQuerySuggestion *siriSuggestion;
 @property (nonatomic, readonly) NSDictionary *styleOverrides;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSArray *supportedStyleOverrides;
 @property (nonatomic, readonly) NSString *title;
-@property (nonatomic, readonly) unsigned int type;
+@property (nonatomic, readonly) unsigned long long type;
 @property (nonatomic, readonly, copy) NSString *typeString;
 @property (nonatomic, readonly) NSString *urlString;
 
++ (Class)_resultClassForDictionary:(id)arg1;
 + (id)_specializedSchema;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (Class)replacementClass;
@@ -86,7 +88,6 @@
 + (void)setReplacementClass:(Class)arg1;
 
 - (void).cxx_destruct;
-- (unsigned int)_constructTypeMaskForTypeString:(id)arg1;
 - (id)_glyphRepresentationsFromGlyphDictionaries:(id)arg1;
 - (id)_glyphsFromGlyphRepresentations:(id)arg1 withSession:(id)arg2;
 - (void)_setStyleOverridesWithDictionary:(id)arg1;
@@ -96,7 +97,7 @@
 - (id)appInstallURL;
 - (id)appName;
 - (id)appPunchoutURL;
-- (BOOL)canBecomeTopHitForQuery:(id)arg1;
+- (bool)canBecomeTopHitForQuery:(id)arg1;
 - (id)cardLoadHint;
 - (id)cardSections;
 - (id)cardURL;
@@ -105,7 +106,7 @@
 - (id)completionIconWithSession:(id)arg1;
 - (id)description;
 - (id)descriptionText;
-- (unsigned int)engagementDestination;
+- (unsigned long long)engagementDestination;
 - (id)feedbackIdentifier;
 - (id)iTunesItemIdentifier;
 - (id)icon;
@@ -114,7 +115,7 @@
 - (id)initWithDictionary:(id)arg1;
 - (id)mapItem;
 - (id)mediaKind;
-- (unsigned int)minimumRankOfTopHitToSuppressResult;
+- (unsigned long long)minimumRankOfTopHitToSuppressResult;
 - (id)parsecDomainIdentifier;
 - (id)query;
 - (id)referrerForLoadingResult;
@@ -128,7 +129,7 @@
 - (id)styleOverrides;
 - (id)supportedStyleOverrides;
 - (id)title;
-- (unsigned int)type;
+- (unsigned long long)type;
 - (id)typeString;
 - (id)urlString;
 

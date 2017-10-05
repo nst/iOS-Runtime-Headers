@@ -4,13 +4,18 @@
 
 @interface UIStatusBarDoubleHeightItemView : UIStatusBarItemView {
     NSString * _contentsString;
-    BOOL  _ellipsize;
-    float  _letterSpacing;
+    bool  _ellipsize;
+    double  _letterSpacing;
 }
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void).cxx_destruct;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (id)contentsImage;
-- (float)extraRightPadding;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (double)extraRightPadding;
+- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

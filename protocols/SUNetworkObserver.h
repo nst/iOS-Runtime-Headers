@@ -6,7 +6,7 @@
 @optional
 
 - (void)carrierBundleChanged;
-- (void)cellularRoamingStatusChanged:(BOOL)arg1;
+- (void)cellularRoamingStatusChanged:(bool)arg1;
 - (void)networkChangedFromNetworkType:(int)arg1 toNetworkType:(int)arg2;
 - (void)operatorBundleChanged;
 

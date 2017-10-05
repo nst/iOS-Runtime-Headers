@@ -4,8 +4,8 @@
 
 @interface SCRCMathTextExpression : SCRCMathSimpleExpression
 
-- (id)latexDescriptionInMathMode:(BOOL)arg1;
+- (id)latexDescriptionInMathMode:(bool)arg1;
 - (id)mathMLString;
-- (id)speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(BOOL)arg2;
+- (id)speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(bool)arg2;
 
 @end

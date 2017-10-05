@@ -26,11 +26,11 @@
 @property (nonatomic, readonly) SBUIAppIconForceTouchController *controller;
 @property (nonatomic, readonly) <SBUIAppIconForceTouchControllerDataSource> *dataSource;
 @property (nonatomic, readonly) SBUIForceTouchGestureRecognizer *gestureRecognizer;
-@property (nonatomic, readonly) float iconImageCornerRadius;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } iconImageInsets;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } iconViewFrame;
+@property (nonatomic, readonly) double iconImageCornerRadius;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } iconImageInsets;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } iconViewFrame;
 @property (nonatomic, readonly) SBFParallaxSettings *parallaxSettings;
-@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } zoomDownCenter;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } zoomDownCenter;
 @property (nonatomic, readonly) UIView *zoomDownView;
 
 - (void).cxx_destruct;
@@ -41,14 +41,14 @@
 - (id)controller;
 - (id)dataSource;
 - (id)gestureRecognizer;
-- (float)iconImageCornerRadius;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })iconImageInsets;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })iconViewFrame;
+- (double)iconImageCornerRadius;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })iconImageInsets;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })iconViewFrame;
 - (id)init;
 - (id)initWithDataSource:(id)arg1 controller:(id)arg2 gestureRecognizer:(id)arg3;
 - (id)newIconViewCopy;
 - (id)parallaxSettings;
-- (struct CGPoint { float x1; float x2; })zoomDownCenter;
+- (struct CGPoint { double x1; double x2; })zoomDownCenter;
 - (id)zoomDownView;
 
 @end

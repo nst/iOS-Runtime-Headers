@@ -3,23 +3,23 @@
  */
 
 @interface TVStorePlaybackLaunchShroud : NSObject {
-    BOOL  _hidden;
+    bool  _hidden;
     UIWindow * _window;
 }
 
-@property (getter=isHidden, nonatomic) BOOL hidden;
+@property (getter=isHidden, nonatomic) bool hidden;
 @property (nonatomic, retain) UIWindow *window;
 
 + (id)sharedShroud;
 
 - (void).cxx_destruct;
-- (void)_hideWithFadeAnimation:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
-- (void)_showWithFadeAnimation:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)_hideWithFadeAnimation:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)_showWithFadeAnimation:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)fadeOut;
 - (id)init;
-- (BOOL)isHidden;
-- (void)setHidden:(BOOL)arg1;
-- (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2 withCompletionHandler:(id /* block */)arg3;
+- (bool)isHidden;
+- (void)setHidden:(bool)arg1;
+- (void)setHidden:(bool)arg1 animated:(bool)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)setWindow:(id)arg1;
 - (id)window;
 

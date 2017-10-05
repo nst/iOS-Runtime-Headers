@@ -10,10 +10,10 @@
 }
 
 @property (nonatomic, retain) NSString *clientVersionETag;
-@property (nonatomic, readonly) BOOL hasClientVersionETag;
-@property (nonatomic, readonly) BOOL hasRecordIdentifier;
-@property (nonatomic, readonly) BOOL hasRequestedFields;
-@property (nonatomic, readonly) BOOL hasVersionETag;
+@property (nonatomic, readonly) bool hasClientVersionETag;
+@property (nonatomic, readonly) bool hasRecordIdentifier;
+@property (nonatomic, readonly) bool hasRequestedFields;
+@property (nonatomic, readonly) bool hasVersionETag;
 @property (nonatomic, retain) FCCKPRecordIdentifier *recordIdentifier;
 @property (nonatomic, retain) FCCKPRequestedFields *requestedFields;
 @property (nonatomic, retain) NSString *versionETag;
@@ -26,14 +26,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasClientVersionETag;
-- (BOOL)hasRecordIdentifier;
-- (BOOL)hasRequestedFields;
-- (BOOL)hasVersionETag;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasClientVersionETag;
+- (bool)hasRecordIdentifier;
+- (bool)hasRequestedFields;
+- (bool)hasVersionETag;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)recordIdentifier;
 - (unsigned int)requestTypeCode;
 - (id)requestedFields;

@@ -13,9 +13,9 @@
 }
 
 @property (nonatomic, retain) NSData *address;
-@property (nonatomic, readonly) BOOL hasAddress;
-@property (nonatomic) BOOL hasNetworkType;
-@property (nonatomic) BOOL hasServerID;
+@property (nonatomic, readonly) bool hasAddress;
+@property (nonatomic) bool hasNetworkType;
+@property (nonatomic) bool hasServerID;
 @property (nonatomic) int networkType;
 @property (nonatomic) unsigned int serverID;
 
@@ -26,19 +26,19 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAddress;
-- (BOOL)hasNetworkType;
-- (BOOL)hasServerID;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAddress;
+- (bool)hasNetworkType;
+- (bool)hasServerID;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)networkType;
 - (id)networkTypeAsString:(int)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)serverID;
 - (void)setAddress:(id)arg1;
-- (void)setHasNetworkType:(BOOL)arg1;
-- (void)setHasServerID:(BOOL)arg1;
+- (void)setHasNetworkType:(bool)arg1;
+- (void)setHasServerID:(bool)arg1;
 - (void)setNetworkType:(int)arg1;
 - (void)setServerID:(unsigned int)arg1;
 - (void)writeTo:(id)arg1;

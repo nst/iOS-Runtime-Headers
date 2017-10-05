@@ -6,24 +6,29 @@
     UIKBKeyView * _keyView;
 }
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (void)dealloc;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (void)changeBackgroundToActiveIfNecessary;
 - (void)changeBackgroundToEnabled;
 - (id)contentsKeyView;
-- (void)dealloc;
 - (void)dimKeys:(id)arg1;
 - (void)displayLayer:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })drawFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })drawFrame;
 - (id)factory;
-- (BOOL)hasRendered;
-- (int)imageOrientationForLayer:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyplane:(id)arg2 key:(id)arg3;
+- (bool)hasRendered;
+- (long long)imageOrientationForLayer:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 keyplane:(id)arg2 key:(id)arg3;
 - (id)key;
 - (id)keyplane;
-- (id)layerForRenderFlags:(int)arg1;
+- (id)layerForRenderFlags:(long long)arg1;
 - (void)prepareForDisplay;
 - (id)renderConfig;
-- (BOOL)requiresSublayers;
-- (void)setDrawFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)requiresSublayers;
+- (void)setDrawFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setFactory:(id)arg1;
 - (void)setNeedsDisplay;
 - (void)setRenderConfig:(id)arg1;

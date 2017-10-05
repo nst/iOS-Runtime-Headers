@@ -3,43 +3,46 @@
  */
 
 @interface UNNotificationSettings : NSObject <NSCopying, NSSecureCoding> {
-    int  _alertSetting;
-    int  _alertStyle;
-    int  _authorizationStatus;
-    int  _badgeSetting;
-    int  _carPlaySetting;
-    int  _lockScreenSetting;
-    int  _notificationCenterSetting;
-    int  _soundSetting;
+    long long  _alertSetting;
+    long long  _alertStyle;
+    long long  _authorizationStatus;
+    long long  _badgeSetting;
+    long long  _carPlaySetting;
+    long long  _lockScreenSetting;
+    long long  _notificationCenterSetting;
+    long long  _showPreviewsSetting;
+    long long  _soundSetting;
 }
 
-@property (nonatomic, readonly) int alertSetting;
-@property (nonatomic, readonly) int alertStyle;
-@property (nonatomic, readonly) int authorizationStatus;
-@property (nonatomic, readonly) int badgeSetting;
-@property (nonatomic, readonly) int carPlaySetting;
-@property (nonatomic, readonly) int lockScreenSetting;
-@property (nonatomic, readonly) int notificationCenterSetting;
-@property (nonatomic, readonly) int soundSetting;
+@property (nonatomic, readonly) long long alertSetting;
+@property (nonatomic, readonly) long long alertStyle;
+@property (nonatomic, readonly) long long authorizationStatus;
+@property (nonatomic, readonly) long long badgeSetting;
+@property (nonatomic, readonly) long long carPlaySetting;
+@property (nonatomic, readonly) long long lockScreenSetting;
+@property (nonatomic, readonly) long long notificationCenterSetting;
+@property (nonatomic, readonly) long long showPreviewsSetting;
+@property (nonatomic, readonly) long long soundSetting;
 
 + (id)emptySettings;
-+ (id)settingsWithAuthorizationStatus:(int)arg1 soundSetting:(int)arg2 badgeSetting:(int)arg3 alertSetting:(int)arg4 notificationCenterSetting:(int)arg5 lockScreenSetting:(int)arg6 carPlaySetting:(int)arg7 alertStyle:(int)arg8;
-+ (BOOL)supportsSecureCoding;
++ (id)settingsWithAuthorizationStatus:(long long)arg1 soundSetting:(long long)arg2 badgeSetting:(long long)arg3 alertSetting:(long long)arg4 notificationCenterSetting:(long long)arg5 lockScreenSetting:(long long)arg6 carPlaySetting:(long long)arg7 alertStyle:(long long)arg8 showPreviewsSetting:(long long)arg9;
++ (bool)supportsSecureCoding;
 
-- (int)alertSetting;
-- (int)alertStyle;
-- (int)authorizationStatus;
-- (int)badgeSetting;
-- (int)carPlaySetting;
+- (long long)alertSetting;
+- (long long)alertStyle;
+- (long long)authorizationStatus;
+- (long long)badgeSetting;
+- (long long)carPlaySetting;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
-- (id)initWithAuthorizationStatus:(int)arg1 soundSetting:(int)arg2 badgeSetting:(int)arg3 alertSetting:(int)arg4 notificationCenterSetting:(int)arg5 lockScreenSetting:(int)arg6 carPlaySetting:(int)arg7 alertStyle:(int)arg8;
+- (unsigned long long)hash;
+- (id)initWithAuthorizationStatus:(long long)arg1 soundSetting:(long long)arg2 badgeSetting:(long long)arg3 alertSetting:(long long)arg4 notificationCenterSetting:(long long)arg5 lockScreenSetting:(long long)arg6 carPlaySetting:(long long)arg7 alertStyle:(long long)arg8 showPreviewsSetting:(long long)arg9;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (int)lockScreenSetting;
-- (int)notificationCenterSetting;
-- (int)soundSetting;
+- (bool)isEqual:(id)arg1;
+- (long long)lockScreenSetting;
+- (long long)notificationCenterSetting;
+- (long long)showPreviewsSetting;
+- (long long)soundSetting;
 
 @end

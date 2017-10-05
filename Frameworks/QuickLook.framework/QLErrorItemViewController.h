@@ -7,16 +7,17 @@
     QLItem * _previewItem;
 }
 
-@property (retain) NSError *error;
+@property (nonatomic, retain) NSError *error;
 @property (retain) QLItem *previewItem;
 
 - (void).cxx_destruct;
-- (BOOL)canEnterFullScreen;
-- (BOOL)canPinchToDismiss;
-- (BOOL)canSwipeToDismiss;
+- (void)_updateLabelsWithCurrentErrorIfNeeded;
+- (bool)canEnterFullScreen;
+- (bool)canPinchToDismiss;
+- (bool)canSwipeToDismiss;
 - (id)error;
 - (id)errorView;
-- (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)loadPreviewControllerWithContents:(id)arg1 context:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)loadView;
 - (id)previewItem;
 - (void)setError:(id)arg1;

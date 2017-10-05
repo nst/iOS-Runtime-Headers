@@ -5,28 +5,31 @@
 @interface OIXMLElement : OIXMLNode {
     id  _attributes;
     id  _children;
-    BOOL  _hasMultipleAttributes;
-    BOOL  _hasMultipleChildren;
+    bool  _hasMultipleAttributes;
+    bool  _hasMultipleChildren;
+    NSString * _name;
+    unsigned char  _type;
 }
 
-+ (void)_initEmptyHTMLNames;
-+ (BOOL)isEmptyHTMLElement:(id)arg1;
++ (id)elementWithType:(unsigned char)arg1;
++ (id)elementWithType:(unsigned char)arg1 stringValue:(id)arg2;
 
+- (void).cxx_destruct;
 - (void)_appendXMLStringToString:(struct __CFString { }*)arg1 level:(int)arg2;
 - (void)addAttribute:(id)arg1;
 - (void)addChild:(id)arg1;
-- (int)attributeCount;
-- (int)childrenCount;
+- (long long)attributeCount;
+- (long long)childrenCount;
 - (id)closingTagString;
 - (id)contentString;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)init;
-- (id)initWithName:(id)arg1 stringValue:(id)arg2;
-- (void)insertChild:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)objectValue;
+- (id)initWithType:(unsigned char)arg1;
+- (id)initWithType:(unsigned char)arg1 stringValue:(id)arg2;
+- (void)insertChild:(id)arg1 atIndex:(unsigned long long)arg2;
+- (bool)isEmptyHTMLElement;
+- (id)name;
 - (id)openingTagString;
-- (void)setObjectValue:(id)arg1;
+- (void)setStringValue:(id)arg1;
 - (id)stringValue;
 
 @end

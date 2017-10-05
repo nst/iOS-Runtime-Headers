@@ -3,22 +3,22 @@
  */
 
 @interface HMDPacketizationMode : HMDNumberParser <NSSecureCoding> {
-    unsigned int  _packetizationMode;
+    unsigned long long  _packetizationMode;
 }
 
-@property (nonatomic, readonly) unsigned int packetizationMode;
+@property (nonatomic, readonly) unsigned long long packetizationMode;
 
 + (id)arrayWithModes:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)description;
 - (void)description:(id)arg1 indent:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithPacketizationMode:(unsigned int)arg1;
+- (id)initWithPacketizationMode:(unsigned long long)arg1;
 - (id)initWithTLVData:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)packetizationMode;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)packetizationMode;
 
 @end

@@ -13,17 +13,15 @@
 
 @property (nonatomic, retain) _INPBBillDetailsValue *billDetails;
 @property (nonatomic, retain) _INPBFinancialAccountValue *fromAccount;
-@property (nonatomic, readonly) BOOL hasBillDetails;
-@property (nonatomic, readonly) BOOL hasFromAccount;
-@property (nonatomic, readonly) BOOL hasTransactionAmount;
-@property (nonatomic, readonly) BOOL hasTransactionNote;
-@property (nonatomic, readonly) BOOL hasTransactionScheduledDate;
+@property (nonatomic, readonly) bool hasBillDetails;
+@property (nonatomic, readonly) bool hasFromAccount;
+@property (nonatomic, readonly) bool hasTransactionAmount;
+@property (nonatomic, readonly) bool hasTransactionNote;
+@property (nonatomic, readonly) bool hasTransactionScheduledDate;
 @property (nonatomic, retain) _INPBPaymentAmountValue *transactionAmount;
 @property (nonatomic, retain) _INPBString *transactionNote;
 @property (nonatomic, retain) _INPBDateTimeRange *transactionScheduledDate;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -33,15 +31,15 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)fromAccount;
-- (BOOL)hasBillDetails;
-- (BOOL)hasFromAccount;
-- (BOOL)hasTransactionAmount;
-- (BOOL)hasTransactionNote;
-- (BOOL)hasTransactionScheduledDate;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasBillDetails;
+- (bool)hasFromAccount;
+- (bool)hasTransactionAmount;
+- (bool)hasTransactionNote;
+- (bool)hasTransactionScheduledDate;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setBillDetails:(id)arg1;
 - (void)setFromAccount:(id)arg1;
 - (void)setTransactionAmount:(id)arg1;
@@ -52,11 +50,5 @@
 - (id)transactionScheduledDate;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

@@ -13,11 +13,11 @@
 - (id)adapter;
 - (id)axisID;
 - (void)dealloc;
-- (unsigned int)numberOfValues;
+- (unsigned long long)numberOfValues;
 - (void)setAdapter:(id)arg1;
 - (void)setAxisID:(id)arg1;
-- (void)setValue:(id)arg1 atIndex:(unsigned int)arg2 multiDataSetIndex:(unsigned int)arg3;
-- (id)valueAtIndex:(unsigned int)arg1 multiDataSetIndex:(unsigned int)arg2;
-- (id*)valuesAtIndexes:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 multiDataSetIndex:(unsigned int)arg2;
+- (void)setValue:(id)arg1 atIndex:(unsigned long long)arg2 multiDataSetIndex:(unsigned long long)arg3;
+- (id)valueAtIndex:(unsigned long long)arg1 multiDataSetIndex:(unsigned long long)arg2;
+- (id*)valuesAtIndexes:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 multiDataSetIndex:(unsigned long long)arg2;
 
 @end

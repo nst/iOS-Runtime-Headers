@@ -15,6 +15,7 @@
 - (id)applicationData;
 - (id)encode;
 - (id)init;
+- (id)initWithMerchantIdentifier:(id)arg1 applicationData:(id)arg2;
 - (id)initWithPaymentRequest:(id)arg1;
 - (id)merchantIdentifier;
 

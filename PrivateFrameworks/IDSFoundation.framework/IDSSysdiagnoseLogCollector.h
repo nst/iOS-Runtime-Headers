@@ -8,7 +8,6 @@
 
 - (void)_collectSysdiagnoseLog:(id /* block */)arg1;
 - (void)collectSysdiagnoseLog:(id /* block */)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

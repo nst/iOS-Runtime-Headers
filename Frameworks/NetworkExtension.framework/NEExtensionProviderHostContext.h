@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property <NEExtensionProviderHostDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) int pid;
 @property (readonly) Class superclass;
 

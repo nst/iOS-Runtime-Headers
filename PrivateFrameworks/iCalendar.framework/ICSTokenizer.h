@@ -9,18 +9,18 @@
     int  _expectedNextTokenType;
     int  _length;
     int  _logCount;
-    BOOL  _printedICS;
+    bool  _printedICS;
     char * _token;
     int  _tokenType;
 }
 
 @property int logCount;
-@property BOOL printedICS;
+@property bool printedICS;
 
 - (void).cxx_destruct;
-- (BOOL)consumeEOL;
-- (BOOL)consumeEscaped:(const char *)arg1;
-- (BOOL)consumeFolding;
+- (bool)consumeEOL;
+- (bool)consumeEscaped:(const char *)arg1;
+- (bool)consumeFolding;
 - (void)consumeParamName;
 - (void)consumeParamValue;
 - (void)consumePropName;
@@ -32,9 +32,9 @@
 - (id)initWithData:(id)arg1;
 - (int)logCount;
 - (char *)nextToken;
-- (BOOL)printedICS;
+- (bool)printedICS;
 - (void)setLogCount:(int)arg1;
-- (void)setPrintedICS:(BOOL)arg1;
+- (void)setPrintedICS:(bool)arg1;
 - (int)tokenType;
 
 @end

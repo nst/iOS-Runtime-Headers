@@ -15,6 +15,6 @@
 - (void)migrationDidFail;
 - (void)migrationDidStart;
 - (void)migrationDidSucceed;
-- (void)wifiDidStartWithSuccess:(BOOL)arg1;
+- (void)wifiDidStartWithSuccess:(bool)arg1;
 
 @end

@@ -10,20 +10,24 @@
     UIView * _containerView;
     UIView * _contentView;
     UIImageView * _contentViewMaskView;
-    float  _croppedImageScale;
+    double  _croppedImageScale;
     UIImage * _image;
     UIImageView * _imageView;
     UIView * _innerBackgroundView;
     UIColor * _innerStrokeColor;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _intrinsicSize;
-    BOOL  _originatesAsSmallBalloon;
-    UIImageView * _shadowView;
-    float  _smallBalloonScale;
+    bool  _originatesAsSmallBalloon;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _shadowSize;
+    UIView * _shadowView;
+    double  _smallBalloonScale;
     UIColor * _strokeColor;
-    int  _style;
+    long long  _style;
     UIImageView * _tailView;
 }
 
@@ -31,41 +35,41 @@
 @property (nonatomic, retain) UIView *contentView;
 @property (nonatomic, copy) UIImage *image;
 @property (nonatomic, copy) UIColor *innerStrokeColor;
-@property (nonatomic) BOOL originatesAsSmallBalloon;
-@property (nonatomic) float smallBalloonScale;
+@property (nonatomic) bool originatesAsSmallBalloon;
+@property (nonatomic) double smallBalloonScale;
 @property (nonatomic, copy) UIColor *strokeColor;
-@property (nonatomic, readonly) int style;
+@property (nonatomic, readonly) long long style;
 
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_centerFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_centerFrame;
 - (id)_generateInnerStrokeImage;
-- (float)_innerDiameter;
+- (double)_innerDiameter;
 - (void)_updateCroppedImage;
 - (id)balloonTintColor;
-- (BOOL)calloutContainsPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (bool)calloutContainsPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)contentView;
 - (void)didMoveToWindow;
-- (void)hideCalloutAnimated:(BOOL)arg1 completionHandler:(id /* block */)arg2;
-- (void)hideCalloutAnimated:(BOOL)arg1 endVerticalOffset:(float)arg2 completionHandler:(id /* block */)arg3;
+- (void)hideCalloutAnimated:(bool)arg1 completionHandler:(id /* block */)arg2;
+- (void)hideCalloutAnimated:(bool)arg1 endVerticalOffset:(double)arg2 completionHandler:(id /* block */)arg3;
 - (id)image;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithStyle:(int)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithStyle:(long long)arg1;
 - (id)innerStrokeColor;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)layoutSubviews;
-- (BOOL)originatesAsSmallBalloon;
+- (bool)originatesAsSmallBalloon;
 - (void)setBalloonTintColor:(id)arg1;
 - (void)setContentView:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setInnerStrokeColor:(id)arg1;
-- (void)setOriginatesAsSmallBalloon:(BOOL)arg1;
-- (void)setSmallBalloonScale:(float)arg1;
+- (void)setOriginatesAsSmallBalloon:(bool)arg1;
+- (void)setSmallBalloonScale:(double)arg1;
 - (void)setStrokeColor:(id)arg1;
-- (void)showCalloutAnimated:(BOOL)arg1;
-- (void)showCalloutAnimated:(BOOL)arg1 startVerticalOffset:(float)arg2;
-- (float)smallBalloonScale;
+- (void)showCalloutAnimated:(bool)arg1;
+- (void)showCalloutAnimated:(bool)arg1 startVerticalOffset:(double)arg2;
+- (double)smallBalloonScale;
 - (id)strokeColor;
-- (int)style;
+- (long long)style;
 
 @end

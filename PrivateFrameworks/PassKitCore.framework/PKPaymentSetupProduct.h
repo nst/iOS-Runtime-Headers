@@ -15,7 +15,7 @@
     NSArray * _requiredFields;
     NSArray * _supportedProtocols;
     NSURL * _termsURL;
-    unsigned int  _type;
+    unsigned long long  _type;
 }
 
 @property (nonatomic, copy) NSURL *appLaunchURL;
@@ -31,15 +31,15 @@
 @property (nonatomic, copy) NSArray *requiredFields;
 @property (nonatomic, copy) NSArray *supportedProtocols;
 @property (nonatomic, copy) NSURL *termsURL;
-@property (nonatomic) unsigned int type;
+@property (nonatomic) unsigned long long type;
 
 + (id)partnerProductsFromArrayOfPartners:(id)arg1 andProducts:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_initWithDisplayName:(id)arg1 partnerDictionary:(id)arg2 productIdentifier:(id)arg3 readerModeMetadata:(id)arg4 requiredFields:(id)arg5 paymentOptions:(id)arg6 termsURL:(id)arg7;
 - (id)_initWithDisplayName:(id)arg1 partnerDictionary:(id)arg2 productIdentifier:(id)arg3 requiredFields:(id)arg4;
-- (int)allSupportedProtocols;
+- (long long)allSupportedProtocols;
 - (id)appLaunchURL;
 - (id)associatedStoreIdentifiers;
 - (id)displayName;
@@ -65,9 +65,9 @@
 - (void)setRequiredFields:(id)arg1;
 - (void)setSupportedProtocols:(id)arg1;
 - (void)setTermsURL:(id)arg1;
-- (void)setType:(unsigned int)arg1;
+- (void)setType:(unsigned long long)arg1;
 - (id)supportedProtocols;
 - (id)termsURL;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

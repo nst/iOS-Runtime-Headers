@@ -3,9 +3,9 @@
  */
 
 @interface NSXPCInterface : NSObject {
-    struct __CFDictionary { } * _methods2;
     Protocol * _protocol;
     id  _reserved1;
+    void * _reserved2;
 }
 
 @property Protocol *protocol;
@@ -15,23 +15,35 @@
 + (id)interfaceWithProtocol:(id)arg1;
 + (id)signatureForBlock:(id)arg1;
 
-- (id)_allowedClassesForSelector:(SEL)arg1 reply:(BOOL)arg2;
-- (id)_interfaceForArgument:(unsigned int)arg1 ofSelector:(SEL)arg2 reply:(BOOL)arg3;
-- (id)_verifiedMethodSignatureForReplyBlockOfSelector:(SEL)arg1;
-- (id)_verifiedMethodSignatureForSelector:(SEL)arg1;
-- (Class)classForSelector:(SEL)arg1 argumentIndex:(unsigned int)arg2 ofReply:(BOOL)arg3;
-- (id)classesForSelector:(SEL)arg1 argumentIndex:(unsigned int)arg2 ofReply:(BOOL)arg3;
+- (id)_allowedClassesForSelector:(SEL)arg1 reply:(bool)arg2;
+- (Class)_customSubclass;
+- (id)_generateAndCacheMethodSignatureForRemoteSelector:(SEL)arg1;
+- (bool)_hasProxiesInArgumentsOfSelector:(SEL)arg1;
+- (bool)_hasProxiesInReplyBlockArgumentsOfSelector:(SEL)arg1;
+- (id)_interfaceForArgument:(unsigned long long)arg1 ofSelector:(SEL)arg2 reply:(bool)arg3;
+- (void)_methodSignature:(id*)arg1 allowedClasses:(id*)arg2 forSelector:(SEL)arg3 isReply:(bool)arg4;
+- (id)_methodSignatureForRemoteSelector:(SEL)arg1;
+- (id)_methodSignatureForReplyBlockOfSelector:(SEL)arg1;
+- (unsigned long long)_remoteVersion;
+- (unsigned long long)_respondsToRemoteSelector:(SEL)arg1;
+- (Class)_returnClassForSelector:(SEL)arg1;
+- (Class)classForSelector:(SEL)arg1 argumentIndex:(unsigned long long)arg2 ofReply:(bool)arg3;
+- (id)classesForSelector:(SEL)arg1 argumentIndex:(unsigned long long)arg2 ofReply:(bool)arg3;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)init;
-- (id)interfaceForSelector:(SEL)arg1 argumentIndex:(unsigned int)arg2 ofReply:(BOOL)arg3;
+- (id)interfaceForSelector:(SEL)arg1 argumentIndex:(unsigned long long)arg2 ofReply:(bool)arg3;
 - (id)protocol;
 - (id)replyBlockSignatureForSelector:(SEL)arg1;
-- (void)setClass:(Class)arg1 forSelector:(SEL)arg2 argumentIndex:(unsigned int)arg3 ofReply:(BOOL)arg4;
-- (void)setClasses:(id)arg1 forSelector:(SEL)arg2 argumentIndex:(unsigned int)arg3 ofReply:(BOOL)arg4;
-- (void)setInterface:(id)arg1 forSelector:(SEL)arg2 argumentIndex:(unsigned int)arg3 ofReply:(BOOL)arg4;
+- (void)setClass:(Class)arg1 forSelector:(SEL)arg2 argumentIndex:(unsigned long long)arg3 ofReply:(bool)arg4;
+- (void)setClasses:(id)arg1 forSelector:(SEL)arg2 argumentIndex:(unsigned long long)arg3 ofReply:(bool)arg4;
+- (void)setInterface:(id)arg1 forSelector:(SEL)arg2 argumentIndex:(unsigned long long)arg3 ofReply:(bool)arg4;
 - (void)setProtocol:(id)arg1;
 - (void)setReplyBlockSignature:(id)arg1 forSelector:(SEL)arg2;
+- (void)setVersion:(unsigned long long)arg1 forSelector:(SEL)arg2;
+- (void)set_remoteVersion:(unsigned long long)arg1;
+- (unsigned long long)version;
+- (unsigned long long)versionForSelector:(SEL)arg1;
 
 // Image: /System/Library/Frameworks/CallKit.framework/CallKit
 
@@ -56,6 +68,11 @@
 - (void)cx_setAllowedClassesForProviderHostProtocol;
 - (void)cx_setAllowedClassesForProviderVendorProtocol;
 
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
+- (id)_cachedSetForArrayOfClass:(Class)arg1;
+- (id)hk_setArrayOfClass:(Class)arg1 forSelector:(SEL)arg2 argumentIndex:(unsigned long long)arg3 ofReply:(bool)arg4;
+
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
 + (id)hm_setupRemoteHostInterface;
@@ -63,10 +80,14 @@
 + (id)hm_userManagementRemoteHostInterface;
 + (id)hm_userManagementRemoteServiceInterface;
 
+// Image: /System/Library/Frameworks/IdentityLookup.framework/IdentityLookup
+
++ (id)id_messageFilterExtensionHostInterface;
++ (id)id_messageFilterExtensionVendorInterface;
++ (id)id_messageFilterHostInterface;
+
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
-+ (id)__mf_messageComposerExtensionInterface;
-+ (id)__mf_messageComposerHostInterface;
 + (id)mf_mailComposeRemoteHostInterface;
 + (id)mf_mailComposeRemoteServiceInterface;
 
@@ -77,11 +98,11 @@
 
 // Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
 
-- (void)setArgumentClasses:(id)arg1 replyClasses:(id)arg2 forSelector:(SEL)arg3;
+- (void)ls_setArgumentClasses:(id)arg1 replyClasses:(id)arg2 forSelector:(SEL)arg3;
 
 // Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
 
-- (void)atx_addClass:(Class)arg1 forSelector:(SEL)arg2 argumentIndex:(unsigned int)arg3 ofReply:(BOOL)arg4;
+- (void)atx_addClass:(Class)arg1 forSelector:(SEL)arg2 argumentIndex:(unsigned long long)arg3 ofReply:(bool)arg4;
 
 // Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
 

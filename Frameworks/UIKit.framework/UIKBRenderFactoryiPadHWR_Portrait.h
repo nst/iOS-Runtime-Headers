@@ -6,19 +6,19 @@
 
 - (void)_customizeTraits:(id)arg1 forPopupForKey:(id)arg2 withRenderingContext:(id)arg3 keycapsFontName:(id)arg4;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
-- (float)controlColumnWidthFactor;
-- (float)deleteKeyFontSize;
-- (float)dictationKeyFontSize;
-- (float)dismissKeyFontSize;
-- (struct CGPoint { float x1; float x2; })dismissKeyOffset;
-- (float)internationalKeyFontSize;
-- (float)keyCornerRadius;
+- (double)controlColumnWidthFactor;
+- (double)deleteKeyFontSize;
+- (double)dictationKeyFontSize;
+- (double)dismissKeyFontSize;
+- (struct CGPoint { double x1; double x2; })dismissKeyOffset;
+- (double)internationalKeyFontSize;
+- (double)keyCornerRadius;
 - (id)lightKeycapsFontName;
 - (id)messagesWriteboardKeyImageName;
-- (float)moreKeyFontSize;
+- (double)moreKeyFontSize;
 - (void)setupLayoutSegments;
-- (float)spaceKeyFontSize;
-- (struct CGPoint { float x1; float x2; })spaceReturnKeyTextOffset;
+- (double)spaceKeyFontSize;
+- (struct CGPoint { double x1; double x2; })spaceReturnKeyTextOffset;
 - (id)thinKeycapsFontName;
 
 @end

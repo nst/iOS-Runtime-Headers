@@ -4,6 +4,7 @@
 
 @interface HDDemoDataGenerator : NSObject <HDHealthDaemonReadyObserver> {
     HDDemoDataActivitySampleGenerator * _activitySampleGenerator;
+    NSMutableDictionary * _appProvenances;
     HDDemoDataBloodSampleGenerator * _bloodSampleGenerator;
     HDDemoDataBodySampleGenerator * _bodySampleGenerator;
     NSObject<OS_dispatch_queue> * _demoDataQueue;
@@ -13,9 +14,10 @@
     HDDemoDataGeneratorState * _generatorState;
     NSCalendar * _gregorianCalendar;
     HDDemoDataHealthDocumentSampleGenerator * _healthDocumentSampleGenerator;
-    BOOL  _isGeneratingDemoData;
+    HDDemoDataHeartSampleGenerator * _heartSampleGenerator;
+    bool  _isGeneratingDemoData;
     HDDemoDataMindfulnessSampleGenerator * _mindfulnessSampleGenerator;
-    int  _numHKSamples;
+    long long  _numHKSamples;
     HDDemoDataPathologySampleGenerator * _pathologySampleGenerator;
     HDProfile * _profile;
     HDDemoDataReproductiveHealthSampleGenerator * _reproductiveHealthSampleGenerator;
@@ -33,8 +35,9 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) HDDemoDataFoodSampleGenerator *foodSampleGenerator;
 @property (nonatomic, readonly) HDDemoDataGeneratorState *generatorState;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HDDemoDataHealthDocumentSampleGenerator *healthDocumentSampleGenerator;
+@property (nonatomic, retain) HDDemoDataHeartSampleGenerator *heartSampleGenerator;
 @property (nonatomic, retain) HDDemoDataMindfulnessSampleGenerator *mindfulnessSampleGenerator;
 @property (nonatomic, retain) HDDemoDataPathologySampleGenerator *pathologySampleGenerator;
 @property (nonatomic, retain) HDDemoDataReproductiveHealthSampleGenerator *reproductiveHealthSampleGenerator;
@@ -44,27 +47,30 @@
 @property (nonatomic, retain) HDDemoDataVitalsSampleGenerator *vitalsSampleGenerator;
 
 - (void).cxx_destruct;
-- (BOOL)_archiveObject:(id)arg1 toDirectoryPath:(id)arg2;
+- (id)_appProvenanceWithBundleIdentifier:(id)arg1;
+- (id)_appSourceWithBundleIdentifier:(id)arg1;
+- (bool)_archiveObject:(id)arg1 toDirectoryPath:(id)arg2;
 - (void)_archiveToDirectoryPath:(id)arg1;
-- (double)_initialGenerationTimeWithCurrentDate:(id)arg1;
+- (double)_initialGenerationTimeWithDate:(id)arg1;
 - (void)_insertBiographicalDataFromDemoPerson:(id)arg1;
 - (void)_insertIntoDatabaseObjectCollection:(id)arg1 fromPerson:(id)arg2;
 - (void)_insertMedicalIDForDemoPerson:(id)arg1;
 - (id)_phoneProveance;
-- (void)_queue_generateDataForDemoPerson:(id)arg1 numIntervals:(int)arg2;
-- (void)_queue_generateDataForDemoPerson:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 firstRun:(BOOL)arg4 completionHandler:(id /* block */)arg5;
+- (void)_queue_generateDataForDemoPerson:(id)arg1 numIntervals:(long long)arg2;
+- (void)_queue_generateDataForDemoPerson:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 firstRun:(bool)arg4 completionHandler:(id /* block */)arg5;
 - (void)_queue_generateDemoDataIfNeeded;
 - (void)_queue_generateFirstRunDataForDemoPerson:(id)arg1;
 - (void)_queue_initDemoDataSampleGenerators;
-- (BOOL)_queue_loadDemoDataSampleGeneratorState;
-- (void)_queue_runDemoDataGeneratorForDemoPerson:(id)arg1 currentDate:(id)arg2;
+- (bool)_queue_loadDemoDataSampleGeneratorState;
+- (void)_queue_runDemoDataGeneratorForDemoPerson:(id)arg1 endDate:(id)arg2;
 - (void)_queue_setupDemoDataSampleGenerators;
-- (BOOL)_queue_unarchiveFromDirectoryPath:(id)arg1;
+- (bool)_queue_unarchiveFromDirectoryPath:(id)arg1;
 - (void)_runAchievementDoctorWithCompletion:(id /* block */)arg1;
 - (id)_stateDirectory;
+- (double)_timeIntervalFromInitialGenerationPeriod:(long long)arg1 currentDate:(id)arg2;
 - (void)_triggerDemoDataGenerationAfterTimeInterval:(double)arg1;
 - (id)_unarchiveDataWithClass:(Class)arg1 atDirectoryPath:(id)arg2;
-- (void)_updateWorkoutConfigurationInGeneratorState;
+- (void)_updateWorkoutConfigurationInGeneratorStateWithSampleDate:(id)arg1;
 - (id)_watchProvenanceWithPerson:(id)arg1;
 - (id)activitySampleGenerator;
 - (id)bloodSampleGenerator;
@@ -73,13 +79,14 @@
 - (void)daemonReady:(id)arg1;
 - (id)demoPerson;
 - (id)firstSampleDate;
-- (int)firstSampleDayOfYear;
+- (long long)firstSampleDayOfYear;
 - (id)foodSampleGenerator;
 - (id)generatorState;
 - (id)gregorianCalendar;
 - (id)healthDocumentSampleGenerator;
+- (id)heartSampleGenerator;
 - (id)initWithProfile:(id)arg1;
-- (BOOL)isDifferentDayFromTime:(double)arg1;
+- (bool)isDifferentDayFromTime:(double)arg1;
 - (id)mindfulnessSampleGenerator;
 - (id)pathologySampleGenerator;
 - (id)reproductiveHealthSampleGenerator;
@@ -89,6 +96,7 @@
 - (void)setDemoPerson:(id)arg1;
 - (void)setFoodSampleGenerator:(id)arg1;
 - (void)setHealthDocumentSampleGenerator:(id)arg1;
+- (void)setHeartSampleGenerator:(id)arg1;
 - (void)setMindfulnessSampleGenerator:(id)arg1;
 - (void)setPathologySampleGenerator:(id)arg1;
 - (void)setReproductiveHealthSampleGenerator:(id)arg1;

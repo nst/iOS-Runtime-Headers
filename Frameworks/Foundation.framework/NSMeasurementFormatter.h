@@ -8,10 +8,10 @@
 
 @property (copy) NSLocale *locale;
 @property (copy) NSNumberFormatter *numberFormatter;
-@property unsigned int unitOptions;
-@property int unitStyle;
+@property unsigned long long unitOptions;
+@property long long unitStyle;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
@@ -22,12 +22,12 @@
 - (id)numberFormatter;
 - (void)setLocale:(id)arg1;
 - (void)setNumberFormatter:(id)arg1;
-- (void)setUnitOptions:(unsigned int)arg1;
-- (void)setUnitStyle:(int)arg1;
+- (void)setUnitOptions:(unsigned long long)arg1;
+- (void)setUnitStyle:(long long)arg1;
 - (id)stringForObjectValue:(id)arg1;
 - (id)stringFromMeasurement:(id)arg1;
 - (id)stringFromUnit:(id)arg1;
-- (unsigned int)unitOptions;
-- (int)unitStyle;
+- (unsigned long long)unitOptions;
+- (long long)unitStyle;
 
 @end

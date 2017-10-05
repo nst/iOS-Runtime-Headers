@@ -5,6 +5,6 @@
 
 @required
 
-- (void)_performScrollTest:(NSString *)arg1 withIterations:(int)arg2 rowsToScroll:(int)arg3 inComponent:(int)arg4;
+- (void)_performScrollTest:(NSString *)arg1 withIterations:(long long)arg2 rowsToScroll:(long long)arg3 inComponent:(long long)arg4;
 
 @end

@@ -22,13 +22,13 @@
 
 @property (nonatomic) double confidence;
 @property (nonatomic, retain) NSData *geoData;
-@property (nonatomic) BOOL hasConfidence;
-@property (nonatomic, readonly) BOOL hasGeoData;
-@property (nonatomic) BOOL hasLatitude;
-@property (nonatomic) BOOL hasLocationOfInterestType;
-@property (nonatomic) BOOL hasLongitude;
-@property (nonatomic) BOOL hasUncertainty;
-@property (nonatomic, readonly) BOOL hasUuid;
+@property (nonatomic) bool hasConfidence;
+@property (nonatomic, readonly) bool hasGeoData;
+@property (nonatomic) bool hasLatitude;
+@property (nonatomic) bool hasLocationOfInterestType;
+@property (nonatomic) bool hasLongitude;
+@property (nonatomic) bool hasUncertainty;
+@property (nonatomic, readonly) bool hasUuid;
 @property (nonatomic) double latitude;
 @property (nonatomic) int locationOfInterestType;
 @property (nonatomic) double longitude;
@@ -36,7 +36,10 @@
 @property (nonatomic, retain) NSString *uuid;
 @property (nonatomic, retain) NSMutableArray *visits;
 
++ (Class)visitsType;
+
 - (void).cxx_destruct;
+- (int)StringAsLocationOfInterestType:(id)arg1;
 - (void)addVisits:(id)arg1;
 - (void)clearVisits;
 - (double)confidence;
@@ -45,28 +48,28 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)geoData;
-- (BOOL)hasConfidence;
-- (BOOL)hasGeoData;
-- (BOOL)hasLatitude;
-- (BOOL)hasLocationOfInterestType;
-- (BOOL)hasLongitude;
-- (BOOL)hasUncertainty;
-- (BOOL)hasUuid;
-- (unsigned int)hash;
-- (id)initWithLocationOfInterest:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasConfidence;
+- (bool)hasGeoData;
+- (bool)hasLatitude;
+- (bool)hasLocationOfInterestType;
+- (bool)hasLongitude;
+- (bool)hasUncertainty;
+- (bool)hasUuid;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (double)latitude;
 - (int)locationOfInterestType;
+- (id)locationOfInterestTypeAsString:(int)arg1;
 - (double)longitude;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setConfidence:(double)arg1;
 - (void)setGeoData:(id)arg1;
-- (void)setHasConfidence:(BOOL)arg1;
-- (void)setHasLatitude:(BOOL)arg1;
-- (void)setHasLocationOfInterestType:(BOOL)arg1;
-- (void)setHasLongitude:(BOOL)arg1;
-- (void)setHasUncertainty:(BOOL)arg1;
+- (void)setHasConfidence:(bool)arg1;
+- (void)setHasLatitude:(bool)arg1;
+- (void)setHasLocationOfInterestType:(bool)arg1;
+- (void)setHasLongitude:(bool)arg1;
+- (void)setHasUncertainty:(bool)arg1;
 - (void)setLatitude:(double)arg1;
 - (void)setLocationOfInterestType:(int)arg1;
 - (void)setLongitude:(double)arg1;
@@ -76,8 +79,8 @@
 - (double)uncertainty;
 - (id)uuid;
 - (id)visits;
-- (id)visitsAtIndex:(unsigned int)arg1;
-- (unsigned int)visitsCount;
+- (id)visitsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)visitsCount;
 - (void)writeTo:(id)arg1;
 
 @end

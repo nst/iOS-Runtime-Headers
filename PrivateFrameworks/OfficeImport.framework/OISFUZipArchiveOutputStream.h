@@ -19,15 +19,16 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (unsigned long)approximateBytesForEntryHeaderWithName:(id)arg1;
++ (unsigned long long)approximateBytesForEntryHeaderWithName:(id)arg1;
++ (bool)createZipWithItemsAtPath:(id)arg1 zippedPath:(id)arg2 rootPathComponentName:(id)arg3;
 
-- (void)beginEntryWithName:(id)arg1 isCompressed:(BOOL)arg2 uncompressedSize:(unsigned long long)arg3;
+- (void)beginEntryWithName:(id)arg1 isCompressed:(bool)arg2 uncompressedSize:(unsigned long long)arg3;
 - (id)beginUncompressedUnknownSizeEntryWithName:(id)arg1;
-- (void)beginUnknownSizeEntryWithName:(id)arg1 isCompressed:(BOOL)arg2;
-- (BOOL)canRemoveEntryWithName:(id)arg1;
+- (void)beginUnknownSizeEntryWithName:(id)arg1 isCompressed:(bool)arg2;
+- (bool)canRemoveEntryWithName:(id)arg1;
 - (void)close;
 - (void)coalesceAndTruncateFreeSpace;
 - (unsigned int)crc32ForEntry:(id)arg1;
@@ -45,10 +46,10 @@
 - (void)reset;
 - (void)setCrc32ForCurrentEntry:(unsigned int)arg1;
 - (void)setEncryptedDocumentUuid:(id)arg1;
-- (void)writeBuffer:(const char *)arg1 size:(unsigned long)arg2;
-- (void)writeCentralFileHeaderUsingEntry:(id)arg1 isFirstEntry:(BOOL)arg2;
+- (void)writeBuffer:(const char *)arg1 size:(unsigned long long)arg2;
+- (void)writeCentralFileHeaderUsingEntry:(id)arg1 isFirstEntry:(bool)arg2;
 - (void)writeEndOfCentralDirectoryWithOffset:(long long)arg1;
-- (unsigned long)writeLocalFileHeaderForEntry:(id)arg1;
+- (unsigned long long)writeLocalFileHeaderForEntry:(id)arg1;
 - (void)writeZip64EndOfCentralDirectoryLocatorWithOffset:(long long)arg1;
 - (void)writeZip64EndOfCentralDirectoryWithOffset:(long long)arg1;
 

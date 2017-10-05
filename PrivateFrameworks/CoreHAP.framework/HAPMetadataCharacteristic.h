@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPMetadataCharacteristic : NSObject {
+@interface HAPMetadataCharacteristic : HMFObject {
     NSString * _chrDescription;
     NSString * _format;
     NSString * _name;

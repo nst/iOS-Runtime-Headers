@@ -10,7 +10,7 @@
 @property (nonatomic, retain) TIUserDictionaryEntryValue *valueToDelete;
 @property (nonatomic, retain) TIUserDictionaryEntryValue *valueToInsert;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (id)description;

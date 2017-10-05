@@ -8,7 +8,7 @@
 - (void)vibrationComponentDidEndForVibrationRecorderTouchSurface:(TKVibrationRecorderTouchSurface *)arg1;
 - (void)vibrationComponentDidStartForVibrationRecorderTouchSurface:(TKVibrationRecorderTouchSurface *)arg1;
 - (void)vibrationRecorderTouchSurface:(TKVibrationRecorderTouchSurface *)arg1 didExitRecordingModeWithContextObject:(id)arg2;
-- (BOOL)vibrationRecorderTouchSurfaceDidEnterRecordingMode:(TKVibrationRecorderTouchSurface *)arg1;
+- (bool)vibrationRecorderTouchSurfaceDidEnterRecordingMode:(TKVibrationRecorderTouchSurface *)arg1;
 - (void)vibrationRecorderTouchSurfaceDidFinishReplayingVibration:(TKVibrationRecorderTouchSurface *)arg1;
 
 @end

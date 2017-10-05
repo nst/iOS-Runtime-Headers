@@ -3,20 +3,20 @@
  */
 
 @interface PULayoutSectionListSampler : PULayoutSectionSampler {
-    int  _lastSeenSampledIndex;
-    int  _lastSeenTopUnsampledIndex;
-    int  _lastSeenUnsampledIndex;
-    int  _numberOfRealItems;
-    int  _numberOfVisibleItems;
-    int * _visibleItemIndexes;
+    long long  _lastSeenSampledIndex;
+    long long  _lastSeenTopUnsampledIndex;
+    long long  _lastSeenUnsampledIndex;
+    long long  _numberOfRealItems;
+    long long  _numberOfVisibleItems;
+    long long * _visibleItemIndexes;
 }
 
 - (void)dealloc;
 - (void)dumpInternalMemory;
-- (void)enumerateUnsampledIndexesForSampledIndexInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 usingBlock:(id /* block */)arg2;
-- (int)indexForUnsampledIndex:(int)arg1 isMainItem:(BOOL*)arg2;
-- (id)initWithNumberOfVisibleItems:(int)arg1 numberOfRealItems:(int)arg2;
-- (int)unsampledIndexForIndex:(int)arg1;
-- (int*)visibleItemIndexes;
+- (void)enumerateUnsampledIndexesForSampledIndexInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 usingBlock:(id /* block */)arg2;
+- (long long)indexForUnsampledIndex:(long long)arg1 isMainItem:(bool*)arg2;
+- (id)initWithNumberOfVisibleItems:(long long)arg1 numberOfRealItems:(long long)arg2;
+- (long long)unsampledIndexForIndex:(long long)arg1;
+- (long long*)visibleItemIndexes;
 
 @end

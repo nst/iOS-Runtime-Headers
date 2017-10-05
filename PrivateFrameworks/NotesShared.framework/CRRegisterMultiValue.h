@@ -20,7 +20,7 @@
 - (id)initWithCRCoder:(id)arg1;
 - (id)initWithContents:(id)arg1 document:(id)arg2;
 - (id)initWithValues:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeWith:(id)arg1;
 - (void)mergeWithRegisterMultiValue:(id)arg1;
 - (void)setCachedValues:(id)arg1;

@@ -6,28 +6,28 @@
     NSString * _identifier;
     NSString * _localizedContainingAppName;
     NSString * _localizedName;
-    BOOL  _onlyExtensionInContainingApp;
+    bool  _onlyExtensionInContainingApp;
     LSPlugInKitProxy * _plugInKitProxy;
     long long  _priority;
-    int  _state;
+    long long  _state;
 }
 
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) NSString *localizedContainingAppName;
 @property (nonatomic, copy) NSString *localizedName;
-@property (getter=isOnlyExtensionInContainingApp, nonatomic) BOOL onlyExtensionInContainingApp;
+@property (getter=isOnlyExtensionInContainingApp, nonatomic) bool onlyExtensionInContainingApp;
 @property (nonatomic, retain) LSPlugInKitProxy *plugInKitProxy;
 @property (nonatomic) long long priority;
-@property (nonatomic) int state;
+@property (nonatomic) long long state;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isOnlyExtensionInContainingApp;
+- (bool)isOnlyExtensionInContainingApp;
 - (id)localizedContainingAppName;
 - (id)localizedName;
 - (id)plugInKitProxy;
@@ -35,10 +35,10 @@
 - (void)setIdentifier:(id)arg1;
 - (void)setLocalizedContainingAppName:(id)arg1;
 - (void)setLocalizedName:(id)arg1;
-- (void)setOnlyExtensionInContainingApp:(BOOL)arg1;
+- (void)setOnlyExtensionInContainingApp:(bool)arg1;
 - (void)setPlugInKitProxy:(id)arg1;
 - (void)setPriority:(long long)arg1;
-- (void)setState:(int)arg1;
-- (int)state;
+- (void)setState:(long long)arg1;
+- (long long)state;
 
 @end

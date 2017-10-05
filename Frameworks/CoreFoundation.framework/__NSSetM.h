@@ -3,15 +3,15 @@
  */
 
 @interface __NSSetM : NSMutableSet {
-    unsigned long  _mutations;
-    id * _objs;
-    unsigned int  _size;
-    unsigned int  _used;
+    /* Warning: Unrecognized filer type: '^' using 'void*' */ void* cow;
+    /* Warning: unhandled struct encoding: '{?="objs"^@"state"(?="mutations"Q""{?="muts"I"used"b26"szidx"b6})}' */ struct { 
+        state **objs; 
+    }  storage;
 }
 
-+ (id)__new:(const id*)arg1 :(unsigned int)arg2 :(BOOL)arg3;
++ (id)__new:(const id*)arg1 :(unsigned long long)arg2 :(bool)arg3;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
 + (void)initialize;
 
 - (void)_mutate;
@@ -19,12 +19,13 @@
 - (double)clumpingFactor;
 - (double)clumpingInterestingThreshold;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned long long)count;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
 - (void)dealloc;
-- (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
-- (void)getObjects:(id*)arg1 count:(unsigned int)arg2;
+- (void)enumerateObjectsWithOptions:(unsigned long long)arg1 usingBlock:(id /* block */)arg2;
+- (void)getObjects:(id*)arg1 count:(unsigned long long)arg2;
 - (id)member:(id)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectEnumerator;
 - (void)removeAllObjects;
 - (void)removeObject:(id)arg1;

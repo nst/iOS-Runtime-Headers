@@ -6,16 +6,16 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_baseDataObjectPredicate;
 + (id)_objectWithCodable:(id)arg1;
 + (Class)healthEntityClass;
 + (int)nanoSyncObjectType;
-+ (unsigned int)supportedNanoSyncDirectionsForProtocolVersion:(int)arg1;
-+ (BOOL)supportsSpeculativeNanoSyncChanges;
-+ (id)syncEntityDependenciesForNanoSyncProtocolVersion:(int)arg1;
-+ (int)syncEntityType;
++ (unsigned long long)supportedNanoSyncDirectionsForProtocolVersion:(int)arg1;
++ (bool)supportsSpeculativeNanoSyncChanges;
++ (id)syncEntityDependenciesForSyncProtocolVersion:(int)arg1;
++ (long long)syncEntityType;
 
 @end

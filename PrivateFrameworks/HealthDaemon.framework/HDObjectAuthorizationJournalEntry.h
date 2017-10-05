@@ -13,7 +13,7 @@
 @property (nonatomic) long long syncProvenance;
 
 + (void)applyEntries:(id)arg1 withProfile:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

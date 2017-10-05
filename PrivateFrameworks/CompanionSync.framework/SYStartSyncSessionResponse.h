@@ -3,50 +3,50 @@
  */
 
 @interface SYStartSyncSessionResponse : PBCodable <NSCopying> {
-    BOOL  _accepted;
+    bool  _accepted;
     SYErrorInfo * _error;
     SYMessageHeader * _header;
     NSData * _metadata;
     NSString * _sessionID;
-    BOOL  _supportsRestart;
-    BOOL  _supportsRollback;
+    bool  _supportsRestart;
+    bool  _supportsRollback;
 }
 
-@property (nonatomic) BOOL accepted;
+@property (nonatomic) bool accepted;
 @property (nonatomic, retain) SYErrorInfo *error;
-@property (nonatomic, readonly) BOOL hasError;
-@property (nonatomic, readonly) BOOL hasMetadata;
+@property (nonatomic, readonly) bool hasError;
+@property (nonatomic, readonly) bool hasMetadata;
 @property (nonatomic, retain) SYMessageHeader *header;
 @property (nonatomic, retain) NSData *metadata;
 @property (nonatomic, retain) NSString *sessionID;
-@property (nonatomic) BOOL supportsRestart;
-@property (nonatomic) BOOL supportsRollback;
+@property (nonatomic) bool supportsRestart;
+@property (nonatomic) bool supportsRollback;
 
 - (void).cxx_destruct;
-- (BOOL)accepted;
+- (bool)accepted;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)error;
-- (BOOL)hasError;
-- (BOOL)hasMetadata;
-- (unsigned int)hash;
+- (bool)hasError;
+- (bool)hasMetadata;
+- (unsigned long long)hash;
 - (id)header;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)metadata;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)sessionID;
-- (void)setAccepted:(BOOL)arg1;
+- (void)setAccepted:(bool)arg1;
 - (void)setError:(id)arg1;
 - (void)setHeader:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setSessionID:(id)arg1;
-- (void)setSupportsRestart:(BOOL)arg1;
-- (void)setSupportsRollback:(BOOL)arg1;
-- (BOOL)supportsRestart;
-- (BOOL)supportsRollback;
+- (void)setSupportsRestart:(bool)arg1;
+- (void)setSupportsRollback:(bool)arg1;
+- (bool)supportsRestart;
+- (bool)supportsRollback;
 - (void)writeTo:(id)arg1;
 
 @end

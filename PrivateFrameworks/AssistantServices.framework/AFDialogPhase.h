@@ -3,24 +3,24 @@
  */
 
 @interface AFDialogPhase : NSObject <NSSecureCoding> {
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, readonly) NSString *aceDialogPhaseValue;
-@property (getter=isCancelledDialogPhase, nonatomic, readonly) BOOL cancelledDialogPhase;
-@property (getter=isClarificationDialogPhase, nonatomic, readonly) BOOL clarificationDialogPhase;
-@property (getter=isCompletionDialogPhase, nonatomic, readonly) BOOL completionDialogPhase;
-@property (getter=isConfirmationDialogPhase, nonatomic, readonly) BOOL confirmationDialogPhase;
-@property (getter=isConfirmedDialogPhase, nonatomic, readonly) BOOL confirmedDialogPhase;
-@property (getter=isErrorDialogPhase, nonatomic, readonly) BOOL errorDialogPhase;
-@property (getter=isExpository, nonatomic, readonly) BOOL expository;
-@property (getter=isReflectionDialogPhase, nonatomic, readonly) BOOL reflectionDialogPhase;
-@property (getter=isSummaryDialogPhase, nonatomic, readonly) BOOL summaryDialogPhase;
-@property (getter=isTemporary, nonatomic, readonly) BOOL temporary;
-@property (getter=_type, nonatomic, readonly) int type;
-@property (getter=isUserRequestDialogPhase, nonatomic, readonly) BOOL userRequestDialogPhase;
+@property (getter=isCancelledDialogPhase, nonatomic, readonly) bool cancelledDialogPhase;
+@property (getter=isClarificationDialogPhase, nonatomic, readonly) bool clarificationDialogPhase;
+@property (getter=isCompletionDialogPhase, nonatomic, readonly) bool completionDialogPhase;
+@property (getter=isConfirmationDialogPhase, nonatomic, readonly) bool confirmationDialogPhase;
+@property (getter=isConfirmedDialogPhase, nonatomic, readonly) bool confirmedDialogPhase;
+@property (getter=isErrorDialogPhase, nonatomic, readonly) bool errorDialogPhase;
+@property (getter=isExpository, nonatomic, readonly) bool expository;
+@property (getter=isReflectionDialogPhase, nonatomic, readonly) bool reflectionDialogPhase;
+@property (getter=isSummaryDialogPhase, nonatomic, readonly) bool summaryDialogPhase;
+@property (getter=isTemporary, nonatomic, readonly) bool temporary;
+@property (getter=_type, nonatomic, readonly) long long type;
+@property (getter=isUserRequestDialogPhase, nonatomic, readonly) bool userRequestDialogPhase;
 
-+ (id)_dialogPhaseWithType:(int)arg1;
++ (id)_dialogPhaseWithType:(long long)arg1;
 + (id)acknowledgementDialogPhase;
 + (id)cancelledDialogPhase;
 + (id)clarificationDialogPhase;
@@ -32,29 +32,30 @@
 + (id)reflectionDialogPhase;
 + (id)statusDialogPhase;
 + (id)summaryDialogPhase;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)userRequestDialogPhase;
 
-- (id)_initWithType:(int)arg1;
-- (int)_type;
+- (id)_initWithType:(long long)arg1;
+- (long long)_type;
 - (id)aceDialogPhaseValue;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isCancelledDialogPhase;
-- (BOOL)isClarificationDialogPhase;
-- (BOOL)isCompletionDialogPhase;
-- (BOOL)isConfirmationDialogPhase;
-- (BOOL)isConfirmedDialogPhase;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToDialogPhase:(id)arg1;
-- (BOOL)isErrorDialogPhase;
-- (BOOL)isExpository;
-- (BOOL)isReflectionDialogPhase;
-- (BOOL)isSummaryDialogPhase;
-- (BOOL)isTemporary;
-- (BOOL)isUserRequestDialogPhase;
-- (BOOL)replacesPreviousSnippetContents;
+- (bool)isCancelledDialogPhase;
+- (bool)isClarificationDialogPhase;
+- (bool)isCompletionDialogPhase;
+- (bool)isConfirmationDialogPhase;
+- (bool)isConfirmedDialogPhase;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToDialogPhase:(id)arg1;
+- (bool)isErrorDialogPhase;
+- (bool)isExpository;
+- (bool)isPossiblyPartOfMultiTurnRequest;
+- (bool)isReflectionDialogPhase;
+- (bool)isSummaryDialogPhase;
+- (bool)isTemporary;
+- (bool)isUserRequestDialogPhase;
+- (bool)replacesPreviousSnippetContents;
 
 @end

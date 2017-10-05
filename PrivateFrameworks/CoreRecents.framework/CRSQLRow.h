@@ -6,7 +6,7 @@
     struct sqlite3_stmt { } * _stmt;
 }
 
-+ (id)dataAtIndex:(int)arg1 copyBytes:(BOOL)arg2 statement:(struct sqlite3_stmt { }*)arg3;
++ (id)dataAtIndex:(int)arg1 copyBytes:(bool)arg2 statement:(struct sqlite3_stmt { }*)arg3;
 + (int)enumerateRowsInStatement:(struct sqlite3_stmt { }*)arg1 usingBlock:(id /* block */)arg2;
 + (id)numberWithDoubleAtIndex:(int)arg1 statement:(struct sqlite3_stmt { }*)arg2;
 + (id)numberWithIntegerAtIndex:(int)arg1 statement:(struct sqlite3_stmt { }*)arg2;
@@ -15,7 +15,7 @@
 + (int)step:(struct sqlite3_stmt { }*)arg1;
 + (id)stringAtIndex:(int)arg1 statement:(struct sqlite3_stmt { }*)arg2;
 
-- (id)dataAtIndex:(int)arg1 copyBytes:(BOOL)arg2;
+- (id)dataAtIndex:(int)arg1 copyBytes:(bool)arg2;
 - (id)initWithStatement:(struct sqlite3_stmt { }*)arg1;
 - (id)numberWithDoubleAtIndex:(int)arg1;
 - (id)numberWithIntegerAtIndex:(int)arg1;

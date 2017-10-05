@@ -2,20 +2,12 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface _HDActivityCacheUpdateJournalEntry : HDJournalEntry {
-    HKActivityCache * _activityCache;
-}
-
-@property (nonatomic, readonly) HKActivityCache *activityCache;
+@interface _HDActivityCacheUpdateJournalEntry : HDJournalEntry
 
 + (void)applyEntries:(id)arg1 withProfile:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (void).cxx_destruct;
-- (id)activityCache;
-- (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithActivityCache:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 
 @end

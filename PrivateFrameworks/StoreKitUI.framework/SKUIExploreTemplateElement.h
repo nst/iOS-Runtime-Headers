@@ -3,14 +3,14 @@
  */
 
 @interface SKUIExploreTemplateElement : SKUIViewElement {
-    BOOL  _usesSplits;
+    bool  _usesSplits;
 }
 
 @property (nonatomic, readonly) NSArray *childViewElements;
 @property (nonatomic, readonly) SKUIViewElement *leftSplit;
 @property (nonatomic, readonly) SKUINavigationBarViewElement *navigationBarElement;
 @property (nonatomic, readonly) SKUIViewElement *rightSplit;
-@property (nonatomic, readonly) BOOL usesSplits;
+@property (nonatomic, readonly) bool usesSplits;
 
 - (void)_getLeftSplit:(id*)arg1 rightSplit:(id*)arg2;
 - (id)childViewElements;
@@ -18,6 +18,6 @@
 - (id)leftSplit;
 - (id)navigationBarElement;
 - (id)rightSplit;
-- (BOOL)usesSplits;
+- (bool)usesSplits;
 
 @end

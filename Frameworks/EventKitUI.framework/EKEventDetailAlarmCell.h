@@ -6,9 +6,9 @@
 
 + (id)_alertLocalizedString;
 
-- (id)initWithEvent:(id)arg1 editable:(BOOL)arg2 platformStyle:(int)arg3;
-- (BOOL)isEditable;
+- (id)initWithEvent:(id)arg1 editable:(bool)arg2 platformStyle:(int)arg3;
+- (bool)isEditable;
 - (void)setAlarms:(id)arg1;
-- (BOOL)update;
+- (bool)update;
 
 @end

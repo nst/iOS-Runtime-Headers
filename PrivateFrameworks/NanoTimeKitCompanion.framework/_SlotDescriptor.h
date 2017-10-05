@@ -2,28 +2,31 @@
    Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
  */
 
-@interface _SlotDescriptor : NSObject <NTKRestrictedApplicationsChangeObserver> {
-    unsigned int  _allowedTypes;
-    int  _family;
-    unsigned int  _slotAllowedTypes;
+@interface _SlotDescriptor : NSObject <NTKInstalledSystemApplicationsChangeObserver> {
+    NSIndexSet * _allowedTypes;
+    long long  _family;
+    NSIndexSet * _possibleTypes;
     NSArray * _typesRankedList;
 }
 
-@property (nonatomic, readonly) unsigned int allowedTypes;
+@property (nonatomic, readonly) NSIndexSet *allowedTypes;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) int family;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) long long family;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSIndexSet *possibleTypes;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSArray *typesRankedList;
 
-+ (id)descriptorWithComplicationFamily:(int)arg1 complicationTypesRankedList:(id)arg2 allowedComplicationTypes:(unsigned int)arg3;
++ (id)descriptorWithComplicationFamily:(long long)arg1 complicationTypesRankedList:(id)arg2 allowedComplicationTypes:(id)arg3;
 
 - (void).cxx_destruct;
-- (unsigned int)allowedTypes;
-- (BOOL)allowsType:(unsigned int)arg1;
-- (int)family;
-- (void)restrictedApplicationsDidChange;
+- (id)allowedTypes;
+- (bool)allowsType:(unsigned long long)arg1;
+- (long long)family;
+- (void)installedSystemApplicationsDidChange;
+- (id)possibleTypes;
+- (bool)supportsType:(unsigned long long)arg1;
 - (id)typesRankedList;
 
 @end

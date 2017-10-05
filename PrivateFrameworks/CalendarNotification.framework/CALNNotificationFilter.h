@@ -4,6 +4,6 @@
 
 @interface CALNNotificationFilter : NSObject
 
-+ (BOOL)shouldIgnoreNotificationForEvent:(id)arg1;
++ (bool)shouldIgnoreNotificationForEvent:(id)arg1;
 
 @end

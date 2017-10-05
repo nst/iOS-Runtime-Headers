@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)CKStatusReportArray;
-- (BOOL)hasStatusToReport;
+- (bool)hasStatusToReport;
 - (id)init;
 - (void)registerWaiter:(id)arg1 forZoneIDs:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)relinquishLocksForWaiter:(id)arg1;

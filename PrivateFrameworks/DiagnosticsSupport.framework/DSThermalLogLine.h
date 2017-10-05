@@ -8,15 +8,15 @@
 }
 
 @property (nonatomic, retain) NSString *eventType;
-@property (nonatomic, readonly) BOOL isTrapEntry;
-@property (nonatomic, readonly) BOOL isTrapEvent;
+@property (nonatomic, readonly) bool isTrapEntry;
+@property (nonatomic, readonly) bool isTrapEvent;
 @property (nonatomic) float maxTemp;
 
 - (void).cxx_destruct;
 - (id)eventType;
 - (id)initWithLogLine:(id)arg1;
-- (BOOL)isTrapEntry;
-- (BOOL)isTrapEvent;
+- (bool)isTrapEntry;
+- (bool)isTrapEvent;
 - (float)maxTemp;
 - (void)setEventType:(id)arg1;
 - (void)setMaxTemp:(float)arg1;

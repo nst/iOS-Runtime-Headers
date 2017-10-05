@@ -4,36 +4,36 @@
 
 @interface UIKBSystemLayoutViewController : UIViewController {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _centeredOffsets;
     NSMutableArray * _constraints;
-    unsigned int  _horizontalLayoutType;
+    unsigned long long  _horizontalLayoutType;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _minimumInsets;
-    unsigned int  _verticalLayoutType;
+    unsigned long long  _verticalLayoutType;
 }
 
-@property (nonatomic) struct CGSize { float x1; float x2; } centeredOffsets;
-@property (nonatomic) unsigned int horizontalLayoutType;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } minimumInsets;
-@property (nonatomic) unsigned int verticalLayoutType;
+@property (nonatomic) struct CGSize { double x1; double x2; } centeredOffsets;
+@property (nonatomic) unsigned long long horizontalLayoutType;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } minimumInsets;
+@property (nonatomic) unsigned long long verticalLayoutType;
 
 + (id)systemLayoutViewControllerWithViewController:(id)arg1;
 
-- (struct CGSize { float x1; float x2; })centeredOffsets;
+- (struct CGSize { double x1; double x2; })centeredOffsets;
 - (void)dealloc;
-- (unsigned int)horizontalLayoutType;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })minimumInsets;
-- (void)setCenteredOffsets:(struct CGSize { float x1; float x2; })arg1;
-- (void)setHorizontalLayoutType:(unsigned int)arg1;
-- (void)setMinimumInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setVerticalLayoutType:(unsigned int)arg1;
+- (unsigned long long)horizontalLayoutType;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })minimumInsets;
+- (void)setCenteredOffsets:(struct CGSize { double x1; double x2; })arg1;
+- (void)setHorizontalLayoutType:(unsigned long long)arg1;
+- (void)setMinimumInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setVerticalLayoutType:(unsigned long long)arg1;
 - (void)updateViewConstraints;
-- (unsigned int)verticalLayoutType;
+- (unsigned long long)verticalLayoutType;
 
 @end

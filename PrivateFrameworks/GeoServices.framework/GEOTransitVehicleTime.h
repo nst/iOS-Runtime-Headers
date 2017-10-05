@@ -10,20 +10,20 @@
 }
 
 @property (nonatomic) unsigned int absTime;
-@property (nonatomic) BOOL hasAbsTime;
+@property (nonatomic) bool hasAbsTime;
 
 - (unsigned int)absTime;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAbsTime;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAbsTime;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAbsTime:(unsigned int)arg1;
-- (void)setHasAbsTime:(BOOL)arg1;
+- (void)setHasAbsTime:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

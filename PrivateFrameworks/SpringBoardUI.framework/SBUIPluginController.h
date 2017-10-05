@@ -4,40 +4,40 @@
 
 @interface SBUIPluginController : NSObject <SBPluginBundleController> {
     <SBUIPluginControllerHost> * _host;
-    BOOL  _isVisible;
+    bool  _isVisible;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) <SBUIPluginControllerHost> *host;
 @property (readonly) Class superclass;
-@property (getter=isVisible, nonatomic) BOOL visible;
+@property (getter=isVisible, nonatomic) bool visible;
 
 - (void).cxx_destruct;
 - (void)cancelPendingActivationEvent:(int)arg1;
-- (BOOL)handleActivationEvent:(int)arg1 eventSource:(int)arg2 context:(void*)arg3;
+- (bool)handleActivationEvent:(int)arg1 eventSource:(int)arg2 context:(void*)arg3;
 - (void)handleBluetoothDismissal;
 - (void)handlePreheatCommand;
 - (void)handleViewFullyRevealed;
-- (BOOL)handledButtonDownEventFromSource:(int)arg1;
-- (BOOL)handledButtonTapFromSource:(int)arg1;
-- (BOOL)handledButtonUpEventFromSource:(int)arg1;
-- (BOOL)handledMenuButtonDownEvent;
-- (BOOL)handledMenuButtonTap;
-- (BOOL)handledMenuButtonUpEvent;
-- (BOOL)handledPasscodeUnlockWithCompletion:(id /* block */)arg1;
-- (BOOL)handledWiredMicButtonTap;
+- (bool)handledButtonDownEventFromSource:(int)arg1;
+- (bool)handledButtonTapFromSource:(int)arg1;
+- (bool)handledButtonUpEventFromSource:(int)arg1;
+- (bool)handledMenuButtonDownEvent;
+- (bool)handledMenuButtonTap;
+- (bool)handledMenuButtonUpEvent;
+- (bool)handledPasscodeUnlockWithCompletion:(id /* block */)arg1;
+- (bool)handledWiredMicButtonTap;
 - (id)host;
-- (BOOL)isVisible;
+- (bool)isVisible;
 - (void)prepareForActivationEvent:(int)arg1 eventSource:(int)arg2 afterInterval:(double)arg3;
 - (void)registeredWithHost;
 - (void)setHost:(id)arg1;
-- (void)setVisible:(BOOL)arg1;
-- (BOOL)shouldBreadcrumbLaunchedApplicationWithBundleIdentifier:(id)arg1;
-- (BOOL)supportedAndEnabled;
+- (void)setVisible:(bool)arg1;
+- (bool)shouldBreadcrumbLaunchedApplicationWithBundleIdentifier:(id)arg1;
+- (bool)supportedAndEnabled;
 - (id)viewControllerForActivationContext:(id)arg1;
-- (void)viewPartiallyRevealedWithPercentRevealed:(float)arg1;
-- (BOOL)wantsActivationEvent:(int)arg1 eventSource:(int)arg2 interval:(double*)arg3;
+- (void)viewPartiallyRevealedWithPercentRevealed:(double)arg1;
+- (bool)wantsActivationEvent:(int)arg1 eventSource:(int)arg2 interval:(double*)arg3;
 
 @end

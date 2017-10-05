@@ -3,7 +3,7 @@
  */
 
 @interface BRCDiskSpaceReclaimer : NSObject <BRCLowDiskDelegate> {
-    BOOL  _isClosed;
+    bool  _isClosed;
     br_pacer * _purgePacer;
     struct CacheDeleteToken { } * _purgeRequest;
     NSObject<OS_dispatch_queue> * _queue;
@@ -12,7 +12,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
 
@@ -28,7 +28,6 @@
 - (long long)_doIncrementalVacuum:(id)arg1 amount:(long long)arg2;
 - (void)_enumerateItemsForEvictSyncWithBlock:(id /* block */)arg1 withTimeDelta:(double)arg2 onDiskAccessTimeDelta:(double)arg3;
 - (void)_enumerateItemsForEvictSyncWithBlock:(id /* block */)arg1 withUrgency:(int)arg2;
-- (long long)_evictableTimestampForDocument:(id)arg1 accessTime:(unsigned long long)arg2 modifyAccessTime:(unsigned long long*)arg3;
 - (long long)_fullVacuumIfPossible:(id)arg1;
 - (long long)_purgeSpaceUnderQueue:(long long)arg1 withUrgency:(int)arg2;
 - (void)_requestPurgeSpace;
@@ -40,21 +39,19 @@
 - (id)descriptionForItem:(id)arg1 context:(id)arg2;
 - (void)didAccessDocument:(id)arg1;
 - (void)didUpdateMtimeOnDocument:(id)arg1;
-- (void)document:(id)arg1 updatedIndexability:(BOOL)arg2;
-- (BOOL)documentUpdateEvictability:(id)arg1;
-- (BOOL)documentWasAccessedRecently:(id)arg1;
-- (BOOL)documentWasCreated:(id)arg1;
-- (BOOL)documentWasDeleted:(id)arg1;
+- (bool)documentUpdateEvictability:(id)arg1;
+- (bool)documentWasAccessedRecently:(id)arg1;
+- (bool)documentWasCreated:(id)arg1;
+- (bool)documentWasDeleted:(id)arg1;
 - (id)initWithAccountSession:(id)arg1;
-- (void)lowDiskStatusChangedForDevice:(int)arg1 hasEnoughSpace:(BOOL)arg2;
-- (BOOL)overwriteDocumentAccessTime:(id)arg1 atime:(unsigned long long)arg2;
-- (BOOL)performOptimizeStorageWithTimeDelta:(double)arg1 onDiskAccessTimeDelta:(double)arg2 error:(id*)arg3;
+- (void)lowDiskStatusChangedForDevice:(int)arg1 hasEnoughSpace:(bool)arg2;
+- (bool)overwriteDocumentAccessTime:(id)arg1 atime:(unsigned long long)arg2;
+- (bool)performOptimizeStorageWithTimeDelta:(double)arg1 onDiskAccessTimeDelta:(double)arg2 error:(id*)arg3;
 - (long long)periodicReclaimSpace;
 - (long long)purgeSpace:(long long)arg1 withUrgency:(int)arg2;
 - (id)queue;
-- (void)recentDocumentsListUpdated;
-- (BOOL)renameAndUnlinkInBackgroundItemAt:(int)arg1 path:(id)arg2;
-- (BOOL)renameAndUnlinkInBackgroundItemAtRelpath:(id)arg1;
+- (bool)renameAndUnlinkInBackgroundItemAt:(int)arg1 path:(id)arg2;
+- (bool)renameAndUnlinkInBackgroundItemAtRelpath:(id)arg1;
 - (void)requestPurgeSpace;
 
 @end

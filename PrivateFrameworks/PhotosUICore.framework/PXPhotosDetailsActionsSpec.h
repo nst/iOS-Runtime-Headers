@@ -3,15 +3,15 @@
  */
 
 @interface PXPhotosDetailsActionsSpec : PXFeatureSpec {
-    BOOL  _shouldInsetAllSeparators;
-    BOOL  _shouldShowSeparators;
+    bool  _shouldInsetAllSeparators;
+    bool  _shouldShowSeparators;
 }
 
-@property (nonatomic, readonly) BOOL shouldInsetAllSeparators;
-@property (nonatomic, readonly) BOOL shouldShowSeparators;
+@property (nonatomic, readonly) bool shouldInsetAllSeparators;
+@property (nonatomic, readonly) bool shouldShowSeparators;
 
-- (id)initWithExtendedTraitCollection:(id)arg1 options:(unsigned int)arg2;
-- (BOOL)shouldInsetAllSeparators;
-- (BOOL)shouldShowSeparators;
+- (id)initWithExtendedTraitCollection:(id)arg1 options:(unsigned long long)arg2;
+- (bool)shouldInsetAllSeparators;
+- (bool)shouldShowSeparators;
 
 @end

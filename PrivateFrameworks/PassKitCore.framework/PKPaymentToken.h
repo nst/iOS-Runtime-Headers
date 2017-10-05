@@ -22,8 +22,8 @@
 
 + (id)paymentTokenWithProtobuf:(id)arg1;
 + (id)simulatedTokenForNetwork:(id)arg1;
-+ (BOOL)supportsSecureCoding;
-+ (int)version;
++ (bool)supportsSecureCoding;
++ (long long)version;
 
 - (void).cxx_destruct;
 - (id)description;

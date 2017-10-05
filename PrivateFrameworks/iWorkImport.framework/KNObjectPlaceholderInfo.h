@@ -4,7 +4,7 @@
 
 @interface KNObjectPlaceholderInfo : KNPlaceholderInfo
 
-- (BOOL)displaysInstructionalText;
+- (bool)displaysInstructionalText;
 - (id)initWithKNPlaceholderInfo:(id)arg1;
 - (id)instructionalText;
 - (int)kind;

@@ -2,35 +2,29 @@
    Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
  */
 
-@interface HKMedicalIDRegisteredOrganDonorTableItem : HKEmergencyCardTableItem <HKIDIntroductionCellDelegate> {
+@interface HKMedicalIDRegisteredOrganDonorTableItem : HKEmergencyCardTableItem {
     <HKMedicalIDRegisteredOrganDonorTableItemDelegate> * _delegate;
-    HKIDIntroductionCell * _notRegisteredCell;
-    int  _organization;
-    HKIDRegisteredReviewCell * _registeredCell;
+    HKOrganDonationCallToActionTableViewCell * _notRegisteredCell;
+    long long  _organization;
 }
 
-@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HKMedicalIDRegisteredOrganDonorTableItemDelegate> *delegate;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) Class superclass;
+@property (nonatomic, retain) HKOrganDonationCallToActionTableViewCell *notRegisteredCell;
 
 - (void).cxx_destruct;
-- (id)_displayCell;
-- (BOOL)canEditRowAtIndex:(int)arg1;
+- (bool)canEditRowAtIndex:(long long)arg1;
 - (id)delegate;
-- (BOOL)hasPresentableData;
-- (id)initInEditMode:(BOOL)arg1 organDonationOrganization:(int)arg2;
-- (void)introductionCellDidTapActionButton:(id)arg1;
-- (void)introductionCellDidTapLinkButton:(id)arg1;
+- (bool)hasPresentableData;
+- (id)initInEditMode:(bool)arg1 organDonationOrganization:(long long)arg2;
+- (id)notRegisteredCell;
 - (id)organizationLogo;
-- (id)organizationLogoInline;
 - (void)presentDonateLifeRegistrationSequence;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })separatorInset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })separatorInset;
 - (void)setDelegate:(id)arg1;
-- (BOOL)shouldHighlightRowAtIndex:(int)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndex:(int)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndex:(int)arg2;
+- (void)setNotRegisteredCell:(id)arg1;
+- (bool)shouldHighlightRowAtIndex:(long long)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndex:(long long)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndex:(long long)arg2;
 - (id)title;
 - (id)titleForFooter;
 

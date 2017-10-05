@@ -19,7 +19,7 @@
 - (id)filePresenter;
 - (id)init;
 - (id)initWithMetadataStoreFileLocation:(id)arg1;
-- (BOOL)initializePersistentStoreCoordinator:(id*)arg1;
+- (bool)initializePersistentStoreCoordinator:(id*)arg1;
 - (id)metadataStoreFileLocation;
 - (id)psc;
 - (id)store;

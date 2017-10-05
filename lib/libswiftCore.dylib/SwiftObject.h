@@ -4,74 +4,73 @@
 
 @interface SwiftObject <NSObject> {
     Class  isa;
-    struct StrongRefCount { 
-        unsigned int refCount; 
-    }  refCount;
-    struct WeakRefCount { 
-        unsigned int refCount; 
-    }  weakRefCount;
+    struct RefCounts<swift::RefCountBitsT<swift::RefCountInlinedness::RefCountIsInline> > { 
+        struct atomic<swift::RefCountBitsT<swift::RefCountInlinedness::RefCountIsInline> > { 
+            /* Warning: Unrecognized filer type: '{' using 'void*' */ void*__a_; 
+        } refCounts; 
+    }  refCounts;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)_isDeallocating;
-+ (BOOL)_tryRetain;
++ (bool)_isDeallocating;
++ (bool)_tryRetain;
 + (id)alloc;
-+ (id)allocWithZone;
-+ (BOOL)allowsWeakReference;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (bool)allowsWeakReference;
 + (id)autorelease;
 + (Class)class;
-+ (BOOL)conformsToProtocol;
++ (bool)conformsToProtocol:(id)arg1;
 + (id)debugDescription;
 + (id)description;
 + (void)initialize;
-+ (BOOL)instancesRespondToSelector;
-+ (BOOL)isMemberOfClass;
-+ (BOOL)isSubclassOfClass;
++ (bool)instancesRespondToSelector:(SEL)arg1;
++ (bool)isMemberOfClass:(Class)arg1;
++ (bool)isSubclassOfClass:(Class)arg1;
 + (void)release;
-+ (BOOL)respondsToSelector;
++ (bool)respondsToSelector:(SEL)arg1;
 + (id)retain;
-+ (unsigned int)retainCount;
-+ (BOOL)retainWeakReference;
++ (unsigned long long)retainCount;
++ (bool)retainWeakReference;
 + (Class)superclass;
 
-- (unsigned long)_cfTypeID;
+- (unsigned long long)_cfTypeID;
 - (id)_copyDescription;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (BOOL)allowsWeakReference;
+- (bool)_isDeallocating;
+- (bool)_tryRetain;
+- (bool)allowsWeakReference;
 - (id)autorelease;
 - (Class)class;
-- (BOOL)conformsToProtocol;
+- (bool)conformsToProtocol:(id)arg1;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)description;
-- (void)doesNotRecognizeSelector;
-- (unsigned int)hash;
-- (BOOL)isEqual;
-- (BOOL)isKindOfClass;
-- (BOOL)isMemberOfClass;
-- (BOOL)isNSArray__;
-- (BOOL)isNSData__;
-- (BOOL)isNSDate__;
-- (BOOL)isNSDictionary__;
-- (BOOL)isNSNumber__;
-- (BOOL)isNSOrderedSet__;
-- (BOOL)isNSSet__;
-- (BOOL)isNSString__;
-- (BOOL)isNSValue__;
-- (BOOL)isProxy;
-- (id)performSelector;
-- (id)performSelectorwithObject;
-- (id)performSelectorwithObjectwithObject;
+- (void)doesNotRecognizeSelector:(SEL)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)isKindOfClass:(Class)arg1;
+- (bool)isMemberOfClass:(Class)arg1;
+- (bool)isNSArray__;
+- (bool)isNSData__;
+- (bool)isNSDate__;
+- (bool)isNSDictionary__;
+- (bool)isNSNumber__;
+- (bool)isNSOrderedSet__;
+- (bool)isNSSet__;
+- (bool)isNSString__;
+- (bool)isNSValue__;
+- (bool)isProxy;
+- (id)performSelector:(SEL)arg1;
+- (id)performSelector:(SEL)arg1 withObject:(id)arg2;
+- (id)performSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
 - (void)release;
-- (BOOL)respondsToSelector;
+- (bool)respondsToSelector:(SEL)arg1;
 - (id)retain;
-- (unsigned int)retainCount;
-- (BOOL)retainWeakReference;
+- (unsigned long long)retainCount;
+- (bool)retainWeakReference;
 - (id)self;
 - (Class)superclass;
 - (struct _NSZone { }*)zone;

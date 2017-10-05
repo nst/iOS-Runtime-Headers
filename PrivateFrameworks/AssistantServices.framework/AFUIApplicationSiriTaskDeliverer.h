@@ -14,15 +14,15 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic) AFSiriTaskmaster *taskmaster;
 
 - (void).cxx_destruct;
-- (void)_handleSuccessfulAppLaunchToBackground:(BOOL)arg1 forRequest:(id)arg2 completion:(id /* block */)arg3;
+- (void)_handleSuccessfulAppLaunchToBackground:(bool)arg1 forRequest:(id)arg2 completion:(id /* block */)arg3;
 - (void)_invalidateAssertionTimer;
 - (void)_invalidateBackboardServices;
-- (void)_processAssertionWasAcquired:(BOOL)arg1;
+- (void)_processAssertionWasAcquired:(bool)arg1;
 - (void)_processAssertionWasInvalidatedForRequest:(id)arg1;
 - (void)_startAppStateMonitoringForRequest:(id)arg1;
 - (void)dealloc;

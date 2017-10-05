@@ -4,16 +4,16 @@
 
 @interface CDPDRecoveryFlowContext : NSObject {
     CDPContext * _context;
-    BOOL  _hasPeersForRemoteApproval;
+    bool  _hasPeersForRemoteApproval;
 }
 
 @property (nonatomic, retain) CDPContext *context;
-@property (nonatomic) BOOL hasPeersForRemoteApproval;
+@property (nonatomic) bool hasPeersForRemoteApproval;
 
 - (void).cxx_destruct;
 - (id)context;
-- (BOOL)hasPeersForRemoteApproval;
+- (bool)hasPeersForRemoteApproval;
 - (void)setContext:(id)arg1;
-- (void)setHasPeersForRemoteApproval:(BOOL)arg1;
+- (void)setHasPeersForRemoteApproval:(bool)arg1;
 
 @end

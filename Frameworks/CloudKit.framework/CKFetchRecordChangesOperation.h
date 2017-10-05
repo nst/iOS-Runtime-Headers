@@ -5,7 +5,7 @@
 @interface CKFetchRecordChangesOperation : CKDatabaseOperation {
     id /* block */  _changeTokensUpdatedBlock;
     NSArray * _desiredKeys;
-    BOOL  _fetchAllChanges;
+    bool  _fetchAllChanges;
     id /* block */  _fetchRecordChangesCompletionBlock;
     CKServerChangeToken * _previousServerChangeToken;
     id /* block */  _recordChangedBlock;
@@ -14,17 +14,17 @@
     CKRecordZoneID * _recordZoneID;
     NSData * _resultClientChangeTokenData;
     CKServerChangeToken * _resultServerChangeToken;
-    unsigned int  _resultsLimit;
+    unsigned long long  _resultsLimit;
     id /* block */  _serverChangeTokenFetchedBlock;
-    BOOL  _shouldFetchAssetContents;
-    int  _status;
+    bool  _shouldFetchAssetContents;
+    long long  _status;
 }
 
 @property (nonatomic, copy) id /* block */ changeTokensUpdatedBlock;
 @property (nonatomic, copy) NSArray *desiredKeys;
-@property (nonatomic) BOOL fetchAllChanges;
+@property (nonatomic) bool fetchAllChanges;
 @property (nonatomic, copy) id /* block */ fetchRecordChangesCompletionBlock;
-@property (nonatomic, readonly) BOOL moreComing;
+@property (nonatomic, readonly) bool moreComing;
 @property (nonatomic, copy) CKServerChangeToken *previousServerChangeToken;
 @property (nonatomic, copy) id /* block */ recordChangedBlock;
 @property (nonatomic, retain) NSMutableDictionary *recordErrors;
@@ -32,28 +32,28 @@
 @property (nonatomic, copy) CKRecordZoneID *recordZoneID;
 @property (nonatomic, retain) NSData *resultClientChangeTokenData;
 @property (nonatomic, retain) CKServerChangeToken *resultServerChangeToken;
-@property (nonatomic) unsigned int resultsLimit;
+@property (nonatomic) unsigned long long resultsLimit;
 @property (nonatomic, copy) id /* block */ serverChangeTokenFetchedBlock;
-@property (nonatomic) BOOL shouldFetchAssetContents;
-@property (nonatomic) int status;
+@property (nonatomic) bool shouldFetchAssetContents;
+@property (nonatomic) long long status;
 
 - (void).cxx_destruct;
-- (BOOL)CKOperationShouldRun:(id*)arg1;
+- (bool)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleCompletionCallback:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id)activityCreate;
 - (id /* block */)changeTokensUpdatedBlock;
-- (int)changeTypesFromSetCallbacks;
+- (long long)changeTypesFromSetCallbacks;
 - (id)desiredKeys;
-- (BOOL)fetchAllChanges;
+- (bool)fetchAllChanges;
 - (id /* block */)fetchRecordChangesCompletionBlock;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
-- (BOOL)hasCKOperationCallbacksSet;
+- (bool)hasCKOperationCallbacksSet;
 - (id)init;
 - (id)initWithRecordZoneID:(id)arg1 previousServerChangeToken:(id)arg2;
-- (BOOL)moreComing;
+- (bool)moreComing;
 - (Class)operationInfoClass;
 - (void)performCKOperation;
 - (id)previousServerChangeToken;
@@ -63,11 +63,11 @@
 - (id)recordZoneID;
 - (id)resultClientChangeTokenData;
 - (id)resultServerChangeToken;
-- (unsigned int)resultsLimit;
+- (unsigned long long)resultsLimit;
 - (id /* block */)serverChangeTokenFetchedBlock;
 - (void)setChangeTokensUpdatedBlock:(id /* block */)arg1;
 - (void)setDesiredKeys:(id)arg1;
-- (void)setFetchAllChanges:(BOOL)arg1;
+- (void)setFetchAllChanges:(bool)arg1;
 - (void)setFetchRecordChangesCompletionBlock:(id /* block */)arg1;
 - (void)setPreviousServerChangeToken:(id)arg1;
 - (void)setRecordChangedBlock:(id /* block */)arg1;
@@ -76,11 +76,11 @@
 - (void)setRecordZoneID:(id)arg1;
 - (void)setResultClientChangeTokenData:(id)arg1;
 - (void)setResultServerChangeToken:(id)arg1;
-- (void)setResultsLimit:(unsigned int)arg1;
+- (void)setResultsLimit:(unsigned long long)arg1;
 - (void)setServerChangeTokenFetchedBlock:(id /* block */)arg1;
-- (void)setShouldFetchAssetContents:(BOOL)arg1;
-- (void)setStatus:(int)arg1;
-- (BOOL)shouldFetchAssetContents;
-- (int)status;
+- (void)setShouldFetchAssetContents:(bool)arg1;
+- (void)setStatus:(long long)arg1;
+- (bool)shouldFetchAssetContents;
+- (long long)status;
 
 @end

@@ -5,8 +5,6 @@
 
 @required
 
-- (struct NSString { Class x1; }*)accessoryIdentifier;
-- (unsigned int)deviceProductId;
-- (unsigned int)deviceVendor;
+- (NSObject<FMDIdentifiable> *)accessoryIdentifier;
 
 @end

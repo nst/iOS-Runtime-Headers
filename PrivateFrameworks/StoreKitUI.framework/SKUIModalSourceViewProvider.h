@@ -4,7 +4,7 @@
 
 @interface SKUIModalSourceViewProvider : NSObject {
     <SKUIModalSourceViewProviderDelegate> * _delegate;
-    BOOL  _hideOriginalSourceView;
+    bool  _hideOriginalSourceView;
     UIView * _originalSourceView;
     UIBarButtonItem * _sourceButtonBarItem;
     UIView * _sourceView;

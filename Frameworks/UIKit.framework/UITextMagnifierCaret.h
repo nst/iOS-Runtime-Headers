@@ -3,35 +3,41 @@
  */
 
 @interface UITextMagnifierCaret : UITextMagnifier {
-    int  _delayedAnimationType;
-    BOOL  _isAnimating;
+    long long  _delayedAnimationType;
+    bool  _isAnimating;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _offset;
-    float  _yOffset;
+    double  _yOffset;
 }
 
-@property (nonatomic) struct CGPoint { float x1; float x2; } offset;
-@property (nonatomic) float yOffset;
+@property (nonatomic) struct CGPoint { double x1; double x2; } offset;
+@property (nonatomic) double yOffset;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
++ (id)activeCaretMagnifier;
 + (id)sharedCaretMagnifier;
 
-- (struct CGPoint { float x1; float x2; })animationPoint;
-- (void)beginMagnifyingTarget:(id)arg1 text:(id)arg2 magnificationPoint:(struct CGPoint { float x1; float x2; })arg3 offset:(struct CGPoint { float x1; float x2; })arg4 animated:(BOOL)arg5;
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (struct CGPoint { double x1; double x2; })animationPoint;
+- (void)beginMagnifyingTarget:(id)arg1 text:(id)arg2 magnificationPoint:(struct CGPoint { double x1; double x2; })arg3 offset:(struct CGPoint { double x1; double x2; })arg4 animated:(bool)arg5;
 - (id)initWithFrame;
-- (BOOL)isHorizontal;
-- (struct CGPoint { float x1; float x2; })offset;
+- (bool)isHorizontal;
+- (struct CGPoint { double x1; double x2; })offset;
+- (double)offsetFromMagnificationPoint;
 - (void)remove;
-- (void)setAnimationPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setAnimationPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setAutoscrollDirections:(int)arg1;
-- (void)setMagnificationPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setYOffset:(float)arg1;
-- (void)stopMagnifying:(BOOL)arg1;
-- (BOOL)terminalPointPlacedCarefully;
+- (void)setMagnificationPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setYOffset:(double)arg1;
+- (void)stopMagnifying:(bool)arg1;
+- (bool)terminalPointPlacedCarefully;
 - (void)updateFrameAndOffset;
-- (float)yOffset;
+- (double)yOffset;
 - (void)zoomDownAnimation;
 - (void)zoomDownAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)zoomUpAnimation;

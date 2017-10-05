@@ -10,22 +10,22 @@
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_expressionWithSubstitutionVariables:(id)arg1;
-- (BOOL)_shouldUseParensWithDescription;
-- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
+- (bool)_shouldUseParensWithDescription;
+- (void)acceptVisitor:(id)arg1 flags:(unsigned long long)arg2;
 - (void)allowEvaluation;
 - (id)collection;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithExpression:(id)arg1 usingIteratorExpression:(id)arg2 predicate:(id)arg3;
 - (id)initWithExpression:(id)arg1 usingIteratorVariable:(id)arg2 predicate:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)predicate;
 - (id)predicateFormat;
 - (id)variable;

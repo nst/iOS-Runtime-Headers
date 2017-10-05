@@ -2,26 +2,42 @@
    Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
  */
 
-@interface _CPDidGoToSiteFeedback : PBCodable <NSCopying> {
+@interface _CPDidGoToSiteFeedback : PBCodable <NSSecureCoding, _CPDidGoToSiteFeedback, _CPProcessableFeedback> {
+    struct { 
+        unsigned int timestamp : 1; 
+    }  _has;
     NSString * _input;
     unsigned long long  _timestamp;
 }
 
-@property (nonatomic, readonly) BOOL hasInput;
-@property (nonatomic, retain) NSString *input;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
+@property (nonatomic, readonly) id feedbackJSON;
+@property (nonatomic, readonly) bool hasInput;
+@property (nonatomic, readonly) bool hasTimestamp;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSString *input;
+@property (nonatomic, readonly) NSData *jsonData;
+@property (nonatomic, readonly) bool requiresQueryId;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned long long timestamp;
 @property (nonatomic) unsigned long long timestamp;
 
 - (void).cxx_destruct;
-- (void)copyTo:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasInput;
-- (unsigned int)hash;
+- (bool)hasInput;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (id)init;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithFacade:(id)arg1;
+- (id)initWithJSON:(id)arg1;
 - (id)input;
-- (BOOL)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)jsonData;
+- (bool)readFrom:(id)arg1;
+- (bool)requiresQueryId;
 - (void)setInput:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;

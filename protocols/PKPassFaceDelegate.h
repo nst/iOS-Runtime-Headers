@@ -5,11 +5,10 @@
 
 @required
 
-- (void)passBackFaceShareButtonPressed:(PKPassBackFaceView *)arg1;
-- (BOOL)passFaceBarcodeButtonEnabled;
+- (bool)passFaceBarcodeButtonEnabled;
 - (void)passFaceBarcodeButtonPressed:(PKPassFaceView *)arg1;
-- (BOOL)passFaceDeleteButtonEnabled;
+- (bool)passFaceDeleteButtonEnabled;
 - (void)passFaceDeleteButtonPressed:(PKPassFaceView *)arg1;
-- (void)passFaceFlipButtonPressed:(PKPassFaceView *)arg1;
+- (void)passFaceInfoButtonPressed:(PKPassFaceView *)arg1;
 
 @end

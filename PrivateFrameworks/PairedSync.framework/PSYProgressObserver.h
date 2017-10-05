@@ -17,13 +17,13 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PSYProgressObserverDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int progressObserverState;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long progressObserverState;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) double totalProgress;
 
 - (void).cxx_destruct;
-- (BOOL)_shouldHandleSyncSession:(id)arg1;
+- (bool)_shouldHandleSyncSession:(id)arg1;
 - (void)_updateState;
 - (id)activityErrors;
 - (id)activityLabel;
@@ -31,8 +31,9 @@
 - (id)delegate;
 - (id)init;
 - (id)initWithQueue:(id)arg1;
-- (int)progressObserverState;
+- (long long)progressObserverState;
 - (void)setDelegate:(id)arg1;
+- (void)supportsMigrationSync;
 - (void)syncSessionObserver:(id)arg1 didInvalidateSyncSession:(id)arg2;
 - (void)syncSessionObserver:(id)arg1 didReceiveUpdate:(id)arg2;
 - (void)syncSessionObserver:(id)arg1 receivedSyncSession:(id)arg2;

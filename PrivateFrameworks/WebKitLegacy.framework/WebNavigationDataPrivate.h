@@ -4,7 +4,7 @@
 
 @interface WebNavigationDataPrivate : NSObject {
     NSString * clientRedirectSource;
-    BOOL  hasSubstituteData;
+    bool  hasSubstituteData;
     NSURLRequest * originalRequest;
     NSURLResponse * response;
     NSString * title;

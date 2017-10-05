@@ -22,10 +22,10 @@
 - (id)dataclassProperties;
 - (id)description;
 - (id)firstName;
-- (id)hostNameOfType:(int)arg1;
+- (id)hostNameOfType:(long long)arg1;
 - (id)lastName;
 - (id)personId;
-- (id)tokenOfType:(int)arg1;
+- (id)tokenOfType:(long long)arg1;
 - (id)username;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface PSIconMarginTableCell : PSTableCell
 
-- (float)iconMargin;
+- (double)iconMargin;
 - (void)layoutSubviews;
 
 @end

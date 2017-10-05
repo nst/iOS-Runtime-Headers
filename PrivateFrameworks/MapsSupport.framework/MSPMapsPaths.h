@@ -12,10 +12,12 @@
     NSString * _failedGeoSearchesSettingsPath;
     NSString * _failedSearchesSettingsPath;
     NSString * _favoritesSyncedMarkerFile;
+    NSString * _fuzzyLocationStoragePath;
     NSString * _geoBookmarksSettingsPath;
     NSString * _geoHistorySettingsPath;
     NSString * _historySettingsPath;
     NSString * _historySyncedMarkerFile;
+    id /* block */  _invalidationHandler;
     NSURL * _libraryURL;
     NSString * _mapsDirectory;
     NSString * _nanoDirectory;
@@ -36,6 +38,7 @@
 @property (nonatomic, readonly) NSString *failedGeoSearchesSettingsPath;
 @property (nonatomic, readonly) NSString *failedSearchesSettingsPath;
 @property (nonatomic, readonly) NSString *favoritesSyncedMarkerFile;
+@property (nonatomic, readonly) NSString *fuzzyLocationStoragePath;
 @property (nonatomic, readonly) NSString *geoBookmarksSettingsPath;
 @property (nonatomic, readonly) NSString *geoHistorySettingsPath;
 @property (nonatomic, readonly) NSString *historySettingsPath;
@@ -52,6 +55,7 @@
 
 + (id)bookmarksSettingsPath;
 + (id)cacheDirectory;
++ (id)currentMapsApplicationContainerURL;
 + (id)directionsCachePath;
 + (id)directionsSettingsPath;
 + (id)failedDirectionsSettingsPath;
@@ -63,10 +67,12 @@
 + (id)geoHistorySettingsPath;
 + (id)historySettingsPath;
 + (id)historySyncedMarkerFile;
++ (id)mapsApplicationContainerPaths;
++ (id)mapsApplicationContainerPathsWithInvalidationHandler:(id /* block */)arg1;
 + (id)mapsDirectory;
 + (id)nanoDirectory;
 + (id)nanoHistorySettingsPath;
-+ (id)pathsAtLocation:(int)arg1;
++ (id)pathsAtLocation:(long long)arg1;
 + (id)pinsSettingsPath;
 + (id)reportAProblemDirectionsRecordingsPath;
 + (id)reportAProblemNotificationsPath;
@@ -74,12 +80,13 @@
 + (id)transitAppRankerPath;
 
 - (void).cxx_destruct;
-- (BOOL)_deleteSyncedFileAtPath:(id)arg1;
-- (BOOL)_shouldSyncMergeAfterCheckingOrCreatingMarkerFileAtPath:(id)arg1;
+- (bool)_deleteSyncedFileAtPath:(id)arg1;
+- (void)_invalidate;
+- (bool)_shouldSyncMergeAfterCheckingOrCreatingMarkerFileAtPath:(id)arg1;
 - (id)bookmarksSettingsPath;
 - (id)cacheDirectory;
-- (BOOL)deleteFavoritesSyncedMarkerFile;
-- (BOOL)deleteHistorySyncedMarkerFile;
+- (bool)deleteFavoritesSyncedMarkerFile;
+- (bool)deleteHistorySyncedMarkerFile;
 - (id)directionsCachePath;
 - (id)directionsSettingsPath;
 - (id)failedDirectionsSettingsPath;
@@ -87,12 +94,13 @@
 - (id)failedGeoSearchesSettingsPath;
 - (id)failedSearchesSettingsPath;
 - (id)favoritesSyncedMarkerFile;
+- (id)fuzzyLocationStoragePath;
 - (id)geoBookmarksSettingsPath;
 - (id)geoHistorySettingsPath;
 - (id)historySettingsPath;
 - (id)historySyncedMarkerFile;
 - (id)homeDirectory;
-- (id)initWithLibraryDirectoryURL:(id)arg1;
+- (id)initWithLibraryDirectoryURL:(id)arg1 invalidationHandler:(id /* block */)arg2;
 - (id)mapsDirectory;
 - (id)nanoDirectory;
 - (id)nanoHistorySettingsPath;
@@ -100,8 +108,8 @@
 - (id)reportAProblemDirectionsRecordingsPath;
 - (id)reportAProblemNotificationsPath;
 - (id)reportAProblemSearchRecordingsPath;
-- (BOOL)shouldSyncMergeFavoritesAfterCheckingOrCreatingMarkerFile;
-- (BOOL)shouldSyncMergeHistoryAfterCheckingOrCreatingMarkerFile;
+- (bool)shouldSyncMergeFavoritesAfterCheckingOrCreatingMarkerFile;
+- (bool)shouldSyncMergeHistoryAfterCheckingOrCreatingMarkerFile;
 - (id)transitAppRankerPath;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface NTKModularTemplateView : NTKComplicationModuleView <NTKTemplateComplicationDisplay> {
     CLKComplicationTemplate * _complicationTemplate;
-    unsigned int  _highlightMode;
+    unsigned long long  _highlightMode;
     NSDate * _timeTravelDate;
 }
 
@@ -12,29 +12,29 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <NTKComplicationDisplayObserver> *displayObserver;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int highlightMode;
-@property (getter=isHighlighted, nonatomic) BOOL highlighted;
-@property (nonatomic) BOOL shouldUseTemplateColors;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long highlightMode;
+@property (getter=isHighlighted, nonatomic) bool highlighted;
+@property (nonatomic) bool shouldUseTemplateColors;
 @property (readonly) Class superclass;
 @property (readonly) NSDate *timeTravelDate;
 
-+ (BOOL)handlesComplicationTemplate:(id)arg1;
++ (bool)handlesComplicationTemplate:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_enumerateColoringViewsSubviewsWithBlock:(id /* block */)arg1 invertedHighlight:(BOOL)arg2;
+- (void)_enumerateColoringViewsSubviewsWithBlock:(id /* block */)arg1 invertedHighlight:(bool)arg2;
 - (void)_propagateColorSchemeToSubviews:(id)arg1;
-- (void)_setColorScheme:(id)arg1 propagateToSubviews:(BOOL)arg2;
+- (void)_setColorScheme:(id)arg1 propagateToSubviews:(bool)arg2;
 - (void)_update;
-- (BOOL)_useInvertedHighlightForColorScheme:(id)arg1;
-- (void)applyFaceColor:(unsigned int)arg1 units:(unsigned int)arg2;
-- (void)applyTransitionFraction:(float)arg1 fromFaceColor:(unsigned int)arg2 toFaceColor:(unsigned int)arg3 units:(unsigned int)arg4 brightenedUnits:(unsigned int)arg5;
+- (bool)_useInvertedHighlightForColorScheme:(id)arg1;
+- (void)applyFaceColor:(unsigned long long)arg1 units:(unsigned long long)arg2;
+- (void)applyTransitionFraction:(double)arg1 fromFaceColor:(unsigned long long)arg2 toFaceColor:(unsigned long long)arg3 units:(unsigned long long)arg4 brightenedUnits:(unsigned long long)arg5;
 - (id)complicationTemplate;
-- (unsigned int)highlightMode;
+- (unsigned long long)highlightMode;
 - (void)setComplicationTemplate:(id)arg1;
 - (void)setContainsOverrideFaceColor:(id)arg1;
-- (void)setHighlightMode:(unsigned int)arg1;
-- (void)setTimeTravelDate:(id)arg1 animated:(BOOL)arg2;
+- (void)setHighlightMode:(unsigned long long)arg1;
+- (void)setTimeTravelDate:(id)arg1 animated:(bool)arg2;
 - (id)timeTravelDate;
 
 @end

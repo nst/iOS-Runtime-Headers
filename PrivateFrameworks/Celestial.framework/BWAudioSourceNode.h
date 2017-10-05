@@ -7,16 +7,16 @@
     struct __CFString { } * _CMSessionAudioMode;
     struct opaqueCMSimpleQueue { } * _activeBuffersQueue;
     long long  _auRenderCount;
-    unsigned long  _auSubType;
+    unsigned int  _auSubType;
     int  _audioLevelUnits;
     struct OpaqueAudioComponentInstance { } * _audioUnit;
     struct { 
         unsigned int val[8]; 
     }  _clientAuditToken;
-    BOOL  _clientAuditTokenIsValid;
+    bool  _clientAuditTokenIsValid;
     int  _clientPID;
     struct OpaqueCMClock { } * _clock;
-    BOOL  _configuresSession;
+    bool  _configuresSession;
     struct TimestampedAudioBufferList { 
         struct __CFAllocator {} *allocator; 
         long long auRenderCount; 
@@ -31,19 +31,19 @@
         struct AudioBufferList {} *abl; 
         unsigned int numPrependedSilenceFrames; 
     }  _currentSilenceBuffer;
-    BOOL  _didBeginInterruption;
-    BOOL  _doEndInterruption;
+    bool  _didBeginInterruption;
+    bool  _doEndInterruption;
     struct opaqueCMFormatDescription { } * _formatDescription;
     NSObject<OS_dispatch_queue> * _generateSamplesDispatchQueue;
     struct opaqueCMSimpleQueue { } * _inactiveBuffersQueue;
-    BOOL  _isAppAudioSession;
+    bool  _isAppAudioSession;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
     }  _latencyOffset;
-    BOOL  _levelMeteringEnabled;
+    bool  _levelMeteringEnabled;
     struct { 
         long long value; 
         int timescale; 
@@ -52,55 +52,55 @@
     }  _nextExpectedSampleTime;
     unsigned int  _pullDuration;
     struct opaqueCMSimpleQueue { } * _renderProcErrorQueue;
-    BOOL  _selectsMicForFrontCamera;
+    bool  _selectsMicForFrontCamera;
     long long  _silenceFramesGeneratedSinceLastAURenderProc;
     NSObject<OS_dispatch_source> * _silenceTimer;
-    BOOL  _streamInterrupted;
-    BOOL  _streamStarted;
-    BOOL  _supportsNonStandardAudioSourceSampleRates;
-    BOOL  _useDecoupledIO;
+    bool  _streamInterrupted;
+    bool  _streamStarted;
+    bool  _supportsNonStandardAudioSourceSampleRates;
+    bool  _useDecoupledIO;
 }
 
 @property (nonatomic, readonly) NSArray *audioLevels;
-@property (nonatomic, readonly) BOOL didBeginInterruption;
-@property (nonatomic) BOOL interrupted;
+@property (nonatomic, readonly) bool didBeginInterruption;
+@property (nonatomic) bool interrupted;
 
 + (double)_desiredSampleRate;
-+ (id)audioSourceNodeWithAttributes:(id)arg1 clock:(struct OpaqueCMClock { }*)arg2 CMSession:(struct opaqueCMSession { }*)arg3 configureSession:(BOOL)arg4 doEndInterruption:(BOOL)arg5 clientToken:(id)arg6 clientPID:(int)arg7 clientVersionOfLinkedSDK:(unsigned int)arg8;
++ (id)audioSourceNodeWithAttributes:(id)arg1 clock:(struct OpaqueCMClock { }*)arg2 CMSession:(struct opaqueCMSession { }*)arg3 configureSession:(bool)arg4 doEndInterruption:(bool)arg5 clientToken:(id)arg6 clientPID:(int)arg7 clientVersionOfLinkedSDK:(unsigned int)arg8;
 + (void)initialize;
 
 - (struct __CFString { }*)CMSessionAudioMode;
 - (unsigned int)_audioCombinedLatency;
-- (BOOL)_cmSessionBooleanPropertyIsTrue:(struct __CFString { }*)arg1;
-- (long)_configureCMSessionWithDefaultHardwareSampleRate:(double)arg1 didCallDoNotNotifyOtherSessionsOnNextInactive:(BOOL*)arg2;
+- (bool)_cmSessionBooleanPropertyIsTrue:(struct __CFString { }*)arg1;
+- (int)_configureCMSessionWithDefaultHardwareSampleRate:(double)arg1 didCallDoNotNotifyOtherSessionsOnNextInactive:(bool*)arg2;
 - (struct opaqueCMSampleBuffer { }*)_createSampleBufferForTimestampedAudioBufferList:(struct TimestampedAudioBufferList { struct __CFAllocator {} *x1; long long x2; unsigned int x3; unsigned int x4; struct { long long x_5_1_1; int x_5_1_2; unsigned int x_5_1_3; long long x_5_1_4; } x5; struct AudioBufferList {} *x6; unsigned int x7; }*)arg1;
-- (long)_deactivateCMSessionIfNecessary:(BOOL*)arg1;
-- (long)_generatePullBuffers;
+- (int)_deactivateCMSessionIfNecessary:(bool*)arg1;
+- (int)_generatePullBuffers;
 - (void)_generateSamples;
 - (void)_generateSilenceIfNeeded;
-- (long)_getAudioDevicePullFrames:(unsigned int*)arg1;
-- (id)_initWithAttributes:(id)arg1 clock:(struct OpaqueCMClock { }*)arg2 CMSession:(struct opaqueCMSession { }*)arg3 configureSession:(BOOL)arg4 doEndInterruption:(BOOL)arg5 clientToken:(id)arg6 clientPID:(int)arg7 clientVersionOfLinkedSDK:(unsigned int)arg8;
-- (long)_selectMicForAudioRoute:(id)arg1;
-- (long)_setCMSessionAudioModeAndSelectMic:(BOOL*)arg1;
-- (long)_setCMSessionPropertyWithKey:(struct __CFString { }*)arg1 value:(void*)arg2;
-- (long)_setupAudioUnit;
-- (long)_updatePullFormatDescription;
+- (int)_getAudioDevicePullFrames:(unsigned int*)arg1;
+- (id)_initWithAttributes:(id)arg1 clock:(struct OpaqueCMClock { }*)arg2 CMSession:(struct opaqueCMSession { }*)arg3 configureSession:(bool)arg4 doEndInterruption:(bool)arg5 clientToken:(id)arg6 clientPID:(int)arg7 clientVersionOfLinkedSDK:(unsigned int)arg8;
+- (int)_selectMicForAudioRoute:(id)arg1;
+- (int)_setCMSessionAudioModeAndSelectMic:(bool*)arg1;
+- (int)_setCMSessionPropertyWithKey:(struct __CFString { }*)arg1 value:(void*)arg2;
+- (int)_setupAudioUnit;
+- (int)_updatePullFormatDescription;
 - (id)audioLevels;
 - (struct OpaqueCMClock { }*)clock;
 - (void)dealloc;
-- (BOOL)didBeginInterruption;
-- (BOOL)hasNonLiveConfigurationChanges;
-- (BOOL)interrupted;
-- (BOOL)levelMeteringEnabled;
+- (bool)didBeginInterruption;
+- (bool)hasNonLiveConfigurationChanges;
+- (bool)interrupted;
+- (bool)levelMeteringEnabled;
 - (void)makeCurrentConfigurationLive;
 - (id)nodeSubType;
 - (void)prepareForCurrentConfigurationToBecomeLive;
-- (BOOL)selectsMicForFrontCamera;
+- (bool)selectsMicForFrontCamera;
 - (void)setCMSessionAudioMode:(struct __CFString { }*)arg1;
-- (void)setInterrupted:(BOOL)arg1;
-- (void)setLevelMeteringEnabled:(BOOL)arg1;
-- (void)setSelectsMicForFrontCamera:(BOOL)arg1;
-- (BOOL)start:(id*)arg1;
-- (BOOL)stop:(id*)arg1;
+- (void)setInterrupted:(bool)arg1;
+- (void)setLevelMeteringEnabled:(bool)arg1;
+- (void)setSelectsMicForFrontCamera:(bool)arg1;
+- (bool)start:(id*)arg1;
+- (bool)stop:(id*)arg1;
 
 @end

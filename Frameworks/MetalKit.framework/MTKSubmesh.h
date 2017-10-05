@@ -4,28 +4,28 @@
 
 @interface MTKSubmesh : NSObject {
     MTKMeshBuffer * _indexBuffer;
-    unsigned int  _indexCount;
-    unsigned int  _indexType;
+    unsigned long long  _indexCount;
+    unsigned long long  _indexType;
     MTKMesh * _mesh;
     NSString * _name;
-    unsigned int  _primitiveType;
+    unsigned long long  _primitiveType;
 }
 
 @property (nonatomic, readonly) MTKMeshBuffer *indexBuffer;
-@property (nonatomic, readonly) unsigned int indexCount;
-@property (nonatomic, readonly) unsigned int indexType;
+@property (nonatomic, readonly) unsigned long long indexCount;
+@property (nonatomic, readonly) unsigned long long indexType;
 @property (nonatomic, readonly) MTKMesh *mesh;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, readonly) unsigned int primitiveType;
+@property (nonatomic, readonly) unsigned long long primitiveType;
 
 - (void).cxx_destruct;
 - (id)indexBuffer;
-- (unsigned int)indexCount;
-- (unsigned int)indexType;
+- (unsigned long long)indexCount;
+- (unsigned long long)indexType;
 - (id)initWithMesh:(id)arg1 submesh:(id)arg2 device:(id)arg3 error:(id*)arg4;
 - (id)mesh;
 - (id)name;
-- (unsigned int)primitiveType;
+- (unsigned long long)primitiveType;
 - (void)setName:(id)arg1;
 
 @end

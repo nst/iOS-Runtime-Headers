@@ -5,36 +5,40 @@
 @interface SiriUIAceObjectViewController : UIViewController <SiriUIViewController> {
     AceObject * _aceObject;
     <SiriUIAceObjectViewControllerDelegate> * _delegate;
-    BOOL  _virgin;
+    bool  _utteranceUserInteractionEnabled;
+    bool  _virgin;
 }
 
 @property (nonatomic, retain) AceObject *aceObject;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SiriUIAceObjectViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (getter=isVirgin, nonatomic, readonly) BOOL virgin;
+@property (getter=isUtteranceUserInteractionEnabled, nonatomic) bool utteranceUserInteractionEnabled;
+@property (getter=isVirgin, nonatomic, readonly) bool virgin;
 
 - (void).cxx_destruct;
 - (void)_aceObjectViewControllerWillBeRemoved;
-- (float)_insertionAnimatedZPosition;
-- (int)_insertionAnimation;
-- (int)_pinAnimationType;
+- (double)_insertionAnimatedZPosition;
+- (long long)_insertionAnimation;
+- (long long)_pinAnimationType;
 - (id)_privateDelegate;
-- (int)_replacementAnimation;
-- (void)_setVirgin:(BOOL)arg1;
-- (BOOL)_shouldSkipAnimationsInAlternateSpeeds;
+- (long long)_replacementAnimation;
+- (void)_setVirgin:(bool)arg1;
+- (bool)_shouldSkipAnimationsInAlternateSpeeds;
 - (id)aceObject;
 - (id)delegate;
-- (float)desiredHeight;
+- (double)desiredHeight;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)isVirgin;
-- (BOOL)removedAfterDialogProgresses;
+- (bool)isUtteranceUserInteractionEnabled;
+- (bool)isVirgin;
+- (bool)removedAfterDialogProgresses;
 - (void)setAceObject:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setUtteranceUserInteractionEnabled:(bool)arg1;
 - (void)siriDidDeactivate;
-- (void)siriWillActivateFromSource:(int)arg1;
+- (void)siriWillActivateFromSource:(long long)arg1;
 - (void)wasAddedToTranscript;
 
 @end

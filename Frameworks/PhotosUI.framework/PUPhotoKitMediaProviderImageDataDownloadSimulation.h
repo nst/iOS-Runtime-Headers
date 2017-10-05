@@ -6,7 +6,7 @@
     NSString * __resultDataUTI;
     NSData * __resultImageData;
     NSDictionary * __resultInfo;
-    int  __resultOrientaton;
+    long long  __resultOrientaton;
     id /* block */  _externalProgressHandler;
     id /* block */  _externalResultHandler;
     id /* block */  _internalProgressHandler;
@@ -16,22 +16,22 @@
 @property (setter=_setResultDataUTI:, nonatomic, retain) NSString *_resultDataUTI;
 @property (setter=_setResultImageData:, nonatomic, retain) NSData *_resultImageData;
 @property (setter=_setResultInfo:, nonatomic, copy) NSDictionary *_resultInfo;
-@property (setter=_setResultOrientation:, nonatomic) int _resultOrientaton;
+@property (setter=_setResultOrientation:, nonatomic) long long _resultOrientaton;
 @property (nonatomic, copy) id /* block */ externalProgressHandler;
 @property (nonatomic, copy) id /* block */ externalResultHandler;
 @property (nonatomic, readonly, copy) id /* block */ internalProgressHandler;
 @property (nonatomic, readonly, copy) id /* block */ internalResultHandler;
 
 - (void).cxx_destruct;
-- (void)_handleResultImageData:(id)arg1 dataUTI:(id)arg2 orientation:(int)arg3 info:(id)arg4;
+- (void)_handleResultImageData:(id)arg1 dataUTI:(id)arg2 orientation:(long long)arg3 info:(id)arg4;
 - (id)_resultDataUTI;
 - (id)_resultImageData;
 - (id)_resultInfo;
-- (int)_resultOrientaton;
+- (long long)_resultOrientaton;
 - (void)_setResultDataUTI:(id)arg1;
 - (void)_setResultImageData:(id)arg1;
 - (void)_setResultInfo:(id)arg1;
-- (void)_setResultOrientation:(int)arg1;
+- (void)_setResultOrientation:(long long)arg1;
 - (void)endSimulationWithError:(id)arg1;
 - (id /* block */)externalProgressHandler;
 - (id /* block */)externalResultHandler;

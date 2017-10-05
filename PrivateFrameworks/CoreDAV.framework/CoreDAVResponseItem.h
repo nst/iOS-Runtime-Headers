@@ -24,13 +24,13 @@
 
 + (id)copyParseRules;
 
+- (void).cxx_destruct;
 - (void)addHref:(id)arg1;
 - (void)addPropStat:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)errorItem;
 - (id)firstHref;
-- (BOOL)hasPropertyError;
+- (bool)hasPropertyError;
 - (id)hrefs;
 - (id)init;
 - (id)location;

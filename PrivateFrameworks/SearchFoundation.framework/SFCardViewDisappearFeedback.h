@@ -2,18 +2,29 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFCardViewDisappearFeedback : SFFeedback {
-    unsigned int  _cardDisappearEvent;
+@interface SFCardViewDisappearFeedback : SFFeedback <CRCardViewDisappearanceFeedback> {
+    unsigned long long  _cardDisappearEvent;
 }
 
-@property (nonatomic) unsigned int cardDisappearEvent;
+@property (nonatomic, readonly) SFFeedback *backingFeedback;
+@property (nonatomic) unsigned long long cardDisappearEvent;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
+// Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
 
-- (unsigned int)cardDisappearEvent;
++ (bool)supportsSecureCoding;
+
+- (unsigned long long)cardDisappearEvent;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithEvent:(unsigned int)arg1;
-- (void)setCardDisappearEvent:(unsigned int)arg1;
+- (id)initWithEvent:(unsigned long long)arg1;
+- (void)setCardDisappearEvent:(unsigned long long)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Cards.framework/Cards
+
+- (id)backingFeedback;
 
 @end

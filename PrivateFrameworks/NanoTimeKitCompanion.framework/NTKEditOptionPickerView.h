@@ -3,67 +3,67 @@
  */
 
 @interface NTKEditOptionPickerView : UIView {
-    BOOL  _active;
+    bool  _active;
     NTKPolygonCylinderView * _cylinderView;
-    unsigned int  _numberOfRows;
-    unsigned int  _numberOfSides;
+    unsigned long long  _numberOfRows;
+    unsigned long long  _numberOfSides;
     id /* block */  _optionToViewMapper;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _padding;
     NSArray * _rows;
     UIView * _selectedOptionView;
-    unsigned int  _selectedRowIndex;
-    unsigned int  _visibleRowBufferSize;
+    unsigned long long  _selectedRowIndex;
+    unsigned long long  _visibleRowBufferSize;
 }
 
-@property (nonatomic) BOOL active;
+@property (nonatomic) bool active;
 @property (nonatomic, readonly) NTKPolygonCylinderView *cylinderView;
-@property (nonatomic, readonly) unsigned int numberOfRows;
-@property (nonatomic) unsigned int numberOfSides;
+@property (nonatomic, readonly) unsigned long long numberOfRows;
+@property (nonatomic) unsigned long long numberOfSides;
 @property (nonatomic, copy) id /* block */ optionToViewMapper;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } padding;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } padding;
 @property (nonatomic, readonly) id selectedOption;
 @property (nonatomic, readonly) UIView *selectedOptionView;
-@property (nonatomic) unsigned int selectedRowIndex;
+@property (nonatomic) unsigned long long selectedRowIndex;
 
 - (void).cxx_destruct;
 - (void)_configureFaceView:(id)arg1 forOption:(id)arg2;
 - (Class)_cylinderFaceViewClass;
 - (void)_enumerateFaceViewsWithBlock:(id /* block */)arg1;
-- (id)_faceViewAtFaceIndex:(unsigned int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForCylinderView;
-- (void)_rotateAnimatedToSelectedRowFromRow:(unsigned int)arg1;
+- (id)_faceViewAtFaceIndex:(unsigned long long)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForCylinderView;
+- (void)_rotateAnimatedToSelectedRowFromRow:(unsigned long long)arg1;
 - (void)_rotateToSelectedRow;
 - (id)_selectedFaceView;
-- (void)_tileCylinderForRotationDirection:(int)arg1;
+- (void)_tileCylinderForRotationDirection:(long long)arg1;
 - (void)_willDisplayFaceView:(id)arg1;
-- (BOOL)active;
-- (void)applyBreathingScale:(float)arg1;
-- (void)applyRubberBandingFraction:(float)arg1;
+- (bool)active;
+- (void)applyBreathingScale:(double)arg1;
+- (void)applyRubberBandingFraction:(double)arg1;
 - (id)cylinderView;
 - (void)decrementSelection;
 - (id)description;
 - (void)incrementSelection;
 - (id)initWithOptions:(id)arg1 selectedOption:(id)arg2;
 - (void)layoutSubviews;
-- (unsigned int)numberOfRows;
-- (unsigned int)numberOfSides;
-- (id)optionAtIndex:(unsigned int)arg1;
+- (unsigned long long)numberOfRows;
+- (unsigned long long)numberOfSides;
+- (id)optionAtIndex:(unsigned long long)arg1;
 - (id /* block */)optionToViewMapper;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })padding;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })padding;
 - (id)selectedOption;
 - (id)selectedOptionView;
-- (unsigned int)selectedRowIndex;
-- (void)setActive:(BOOL)arg1;
-- (void)setNumberOfSides:(unsigned int)arg1;
+- (unsigned long long)selectedRowIndex;
+- (void)setActive:(bool)arg1;
+- (void)setNumberOfSides:(unsigned long long)arg1;
 - (void)setOptionToViewMapper:(id /* block */)arg1;
-- (void)setPadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setSelectedRowIndex:(unsigned int)arg1;
-- (void)setSelectedRowIndex:(unsigned int)arg1 animated:(BOOL)arg2;
-- (void)setTransitionFraction:(float)arg1 fromIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3;
+- (void)setPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setSelectedRowIndex:(unsigned long long)arg1;
+- (void)setSelectedRowIndex:(unsigned long long)arg1 animated:(bool)arg2;
+- (void)setTransitionFraction:(double)arg1 fromIndex:(unsigned long long)arg2 toIndex:(unsigned long long)arg3;
 
 @end

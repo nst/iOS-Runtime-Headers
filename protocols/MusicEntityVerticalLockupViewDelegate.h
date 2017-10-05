@@ -3,8 +3,4 @@
 
 @protocol MusicEntityVerticalLockupViewDelegate <NSObject>
 
-@optional
-
-- (void)verticalLockupView:(MusicEntityVerticalLockupView *)arg1 didSelectPlayButtonAction:(unsigned int)arg2;
-
 @end

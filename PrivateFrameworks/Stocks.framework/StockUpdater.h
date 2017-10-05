@@ -4,8 +4,8 @@
 
 @interface StockUpdater : YQLRequest {
     <StockUpdaterDelegate> * _delegate;
-    BOOL  _forceUpdate;
-    BOOL  _isComprehensive;
+    bool  _forceUpdate;
+    bool  _isComprehensive;
     NSError * _lastError;
     NSArray * _pendingStocks;
     NSArray * _requestStocks;
@@ -13,8 +13,8 @@
 }
 
 @property (nonatomic) <StockUpdaterDelegate> *delegate;
-@property (nonatomic, readonly) BOOL forceUpdate;
-@property (nonatomic, readonly) BOOL isComprehensive;
+@property (nonatomic, readonly) bool forceUpdate;
+@property (nonatomic, readonly) bool isComprehensive;
 @property (nonatomic, retain) NSArray *pendingStocks;
 @property (nonatomic, retain) NSArray *requestStocks;
 @property (nonatomic, copy) id /* block */ updateCompletionHandler;
@@ -23,14 +23,14 @@
 - (id)_parseDataSourceMapFromDataSourceDictionaries:(id)arg1;
 - (void)_parseExchangeDictionaries:(id)arg1;
 - (void)_parseQuoteDictionaries:(id)arg1 withDataSources:(id)arg2;
-- (BOOL)_updateStocks:(id)arg1 comprehensive:(BOOL)arg2 forceUpdate:(BOOL)arg3;
+- (bool)_updateStocks:(id)arg1 comprehensive:(bool)arg2 forceUpdate:(bool)arg3;
 - (id)aggregateDictionaryDomain;
 - (id)delegate;
 - (void)didParseData;
 - (void)failWithError:(id)arg1;
-- (BOOL)forceUpdate;
-- (BOOL)hadError;
-- (BOOL)isComprehensive;
+- (bool)forceUpdate;
+- (bool)hadError;
+- (bool)isComprehensive;
 - (void)parseData:(id)arg1;
 - (id)pendingStocks;
 - (id)requestStocks;

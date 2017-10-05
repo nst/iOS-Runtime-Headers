@@ -3,27 +3,38 @@
  */
 
 @interface TSWPDocumentRoot : TSKDocumentRoot <TSWPObjectIndex> {
-    BOOL  _didRemoveMissingAttachments;
+    bool  _didRemoveMissingAttachments;
+    NSUUID * _uuid;
 }
 
-@property (getter=isChangeTrackingEnabled, nonatomic, readonly) BOOL changeTrackingEnabled;
-@property (nonatomic) BOOL didRemoveMissingAttachments;
-@property (nonatomic, readonly) BOOL supportHeaderFooterParagraphAlignmentInInspectors;
+@property (getter=isChangeTrackingEnabled, nonatomic, readonly) bool changeTrackingEnabled;
+@property (nonatomic) bool didRemoveMissingAttachments;
+@property (nonatomic, readonly) EQKitEnvironment *equationEnvironment;
+@property (nonatomic, readonly) double stickyCommentScaleMultiplier;
+@property (nonatomic, readonly) bool supportHeaderFooterParagraphAlignmentInInspectors;
 
-- (BOOL)cellCommentsAllowedOnInfo:(id)arg1;
+- (double)bodyWidth;
+- (bool)cellCommentsAllowedOnInfo:(id)arg1;
 - (id)changeSessionManagerForModel:(id)arg1;
 - (id)changeVisibility;
-- (BOOL)didRemoveMissingAttachments;
+- (bool)didRemoveMissingAttachments;
 - (void)documentDidLoad;
 - (id)documentFonts;
+- (id)documentId;
+- (id)documentTSWPFontObjects;
+- (id)equationEnvironment;
+- (id)flowInfoContainer;
 - (struct __CFLocale { }*)hyphenationLocale;
-- (BOOL)isChangeTrackingEnabled;
-- (int)naturalAlignmentAtCharIndex:(unsigned int)arg1 inTextStorage:(id)arg2;
-- (void)setDidRemoveMissingAttachments:(BOOL)arg1;
-- (BOOL)shouldHyphenate;
-- (BOOL)supportHeaderFooterParagraphAlignmentInInspectors;
+- (bool)isChangeTrackingEnabled;
+- (bool)isDrawableOnPageMaster:(id)arg1;
+- (int)naturalAlignmentAtCharIndex:(unsigned long long)arg1 inTextStorage:(id)arg2;
+- (id)p_fontsInStylesheetUsingBlock:(id /* block */)arg1;
+- (void)setDidRemoveMissingAttachments:(bool)arg1;
+- (bool)shouldHyphenate;
+- (double)stickyCommentScaleMultiplier;
+- (bool)supportHeaderFooterParagraphAlignmentInInspectors;
 - (id)unavailableDocumentFonts;
-- (BOOL)useLigatures;
+- (bool)useLigatures;
 - (int)verticalAlignmentForTextStorage:(id)arg1;
 - (void)willClose;
 

@@ -13,7 +13,7 @@
 @property (nonatomic, retain) NSXPCConnection *connection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableDictionary *observersByBundleIdentifier;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
@@ -39,6 +39,7 @@
 - (void)didDeliverNotifications:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)didReceiveDeviceToken:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)getAllowsRemoteNotificationsForBundleIdentifier:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)getBadgeNumberForBundleIdentifier:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)getDeliveredNotificationsForBundleIdentifier:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)getNotificationCategoriesForBundleIdentifier:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)getNotificationSettingsForBundleIdentifier:(id)arg1 withCompletionHandler:(id /* block */)arg2;
@@ -53,14 +54,16 @@
 - (void)removeObserver:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)removePendingNotificationRequestsWithIdentifiers:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)removeSimilarNotificationRequests:(id)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(id /* block */)arg3;
-- (void)requestAuthorizationWithOptions:(unsigned int)arg1 forBundleIdentifier:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)requestAuthorizationWithOptions:(unsigned long long)arg1 forBundleIdentifier:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)requestTokenForRemoteNotificationsForBundleIdentifier:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)setBadgeNumber:(id)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)setBadgeString:(id)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)setCallOutQueue:(id)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setNotificationCategories:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)setNotificationRequests:(id)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)setObserversByBundleIdentifier:(id)arg1;
-- (void)setObservingUserNotifications:(BOOL)arg1 forBundleIdentifier:(id)arg2;
+- (void)setObservingUserNotifications:(bool)arg1 forBundleIdentifier:(id)arg2;
 - (void)setQueue:(id)arg1;
 
 @end

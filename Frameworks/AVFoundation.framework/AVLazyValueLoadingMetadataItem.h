@@ -9,13 +9,15 @@
 + (id)metadataItemWithPropertiesOfMetadataItem:(id)arg1 valueLoadingHandler:(id /* block */)arg2;
 
 - (id)_initWithFigMetadataDictionary:(id)arg1 valueLoadingHandler:(id /* block */)arg2;
-- (BOOL)_valueForKeyDependsOnMetadataValue:(id)arg1;
+- (bool)_valueForKeyDependsOnMetadataValue:(id)arg1;
 - (void)_valueRequestDidFinish;
-- (int)_valueStatus;
+- (long long)_valueStatus;
+- (void)_waitForLoadingOfValueDependentKey:(id)arg1;
+- (id)dataType;
 - (void)dealloc;
 - (void)finalize;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id /* block */)arg2;
-- (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
+- (long long)statusOfValueForKey:(id)arg1 error:(id*)arg2;
 - (id)value;
 
 @end

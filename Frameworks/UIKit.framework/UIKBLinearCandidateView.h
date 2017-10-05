@@ -6,11 +6,15 @@
 
 @property (nonatomic, readonly) UIKBCandidateCollectionView *candidatesCollectionView;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (Class)cellClass;
 
-- (unsigned int)focusableVariantCount;
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (unsigned long long)focusableVariantCount;
 - (void)refreshSelectedCandidate;
-- (void)reloadDataByAppendingAtEnd:(BOOL)arg1;
+- (void)reloadDataByAppendingAtEnd:(bool)arg1;
 - (void)scrollViewDidChangeContentSize:(id)arg1;
 
 @end

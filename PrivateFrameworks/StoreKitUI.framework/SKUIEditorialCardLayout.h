@@ -6,22 +6,22 @@
     NSMutableArray * _allLockups;
     SKUILockupViewElement * _primaryLockup;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _primaryLockupSize;
-    float  _secondaryLockupWidth;
+    double  _secondaryLockupWidth;
 }
 
 @property (nonatomic, readonly) NSArray *allLockups;
 @property (nonatomic, readonly) SKUILockupViewElement *primaryLockup;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } primaryLockupSize;
-@property (nonatomic, readonly) float secondaryLockupWidth;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } primaryLockupSize;
+@property (nonatomic, readonly) double secondaryLockupWidth;
 
 - (void).cxx_destruct;
 - (id)allLockups;
-- (id)initWithCard:(id)arg1 width:(float)arg2 context:(id)arg3;
+- (id)initWithCard:(id)arg1 width:(double)arg2 context:(id)arg3;
 - (id)primaryLockup;
-- (struct CGSize { float x1; float x2; })primaryLockupSize;
-- (float)secondaryLockupWidth;
+- (struct CGSize { double x1; double x2; })primaryLockupSize;
+- (double)secondaryLockupWidth;
 
 @end

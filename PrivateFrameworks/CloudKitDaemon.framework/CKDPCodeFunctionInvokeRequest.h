@@ -9,9 +9,9 @@
 }
 
 @property (nonatomic, retain) NSString *functionName;
-@property (nonatomic, readonly) BOOL hasFunctionName;
-@property (nonatomic, readonly) BOOL hasSerializedParameters;
-@property (nonatomic, readonly) BOOL hasServiceName;
+@property (nonatomic, readonly) bool hasFunctionName;
+@property (nonatomic, readonly) bool hasSerializedParameters;
+@property (nonatomic, readonly) bool hasServiceName;
 @property (nonatomic, retain) NSData *serializedParameters;
 @property (nonatomic, retain) NSString *serviceName;
 
@@ -23,13 +23,13 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)functionName;
-- (BOOL)hasFunctionName;
-- (BOOL)hasSerializedParameters;
-- (BOOL)hasServiceName;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasFunctionName;
+- (bool)hasSerializedParameters;
+- (bool)hasServiceName;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (id)serializedParameters;

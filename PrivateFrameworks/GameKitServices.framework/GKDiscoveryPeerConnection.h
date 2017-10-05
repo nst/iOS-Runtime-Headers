@@ -3,7 +3,7 @@
  */
 
 @interface GKDiscoveryPeerConnection : NSObject <GKSimpleTimerDelegate> {
-    BOOL  _connected;
+    bool  _connected;
     id /* block */  _connectedHandler;
     GKAsyncSocket * _connectionSocket;
     double  _connectionTimeoutInSeconds;
@@ -32,8 +32,8 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *targetQueue;
 
 + (void)checkConstants;
-+ (unsigned int)receiveDataLimit;
-+ (unsigned int)sendDataLimit;
++ (unsigned long long)receiveDataLimit;
++ (unsigned long long)sendDataLimit;
 
 - (void)attachSocketDescriptor:(int)arg1;
 - (void)connectToSockAddr:(const struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg1 port:(unsigned short)arg2;
@@ -51,7 +51,7 @@
 - (void)setRemoteServiceName:(id)arg1;
 - (void)setSyncQueue:(id)arg1;
 - (void)setTargetQueue:(id)arg1;
-- (BOOL)shouldDecideAboutConnection;
+- (bool)shouldDecideAboutConnection;
 - (void)syncAcceptedConnection;
 - (void)syncCloseConnectionNow;
 - (void)syncConnected:(id)arg1;
@@ -62,7 +62,7 @@
 - (void)syncSendHello;
 - (void)syncSendMessage:(int)arg1 data:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)syncSendMessageReceipt:(int)arg1 sequenceNumber:(unsigned int)arg2;
-- (BOOL)syncSetupNewSocket;
+- (bool)syncSetupNewSocket;
 - (id)targetQueue;
 - (void)timeout:(id)arg1;
 

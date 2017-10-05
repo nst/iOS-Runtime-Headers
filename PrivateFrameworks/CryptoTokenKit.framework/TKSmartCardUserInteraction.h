@@ -12,10 +12,10 @@
 @property double initialTimeout;
 @property double interactionTimeout;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)cancel;
+- (bool)cancel;
 - (id)delegate;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;

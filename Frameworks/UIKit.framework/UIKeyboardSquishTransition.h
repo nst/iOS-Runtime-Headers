@@ -3,63 +3,64 @@
  */
 
 @interface UIKeyboardSquishTransition : UIKeyboardKeyplaneTransition {
-    unsigned int  _animationType;
+    unsigned long long  _animationType;
     NSArray * _commonVisibleKeys;
-    BOOL  _disableMeshOptimization;
+    bool  _disableMeshOptimization;
     NSArray * _endGeometries;
-    float  _offsetX;
+    double  _offsetX;
     double  _opacityAnimationBeginTime;
-    BOOL  _opacityAnimationDirectionForward;
+    bool  _opacityAnimationDirectionForward;
     CADisplayLink * _opacityAnimationDisplayLink;
-    float  _previousProgress;
+    double  _previousProgress;
     NSArray * _startGeometries;
-    BOOL  _useInteractiveOpacity;
-    float  _widthRatio;
+    bool  _useInteractiveOpacity;
+    double  _widthRatio;
 }
 
-@property (nonatomic) unsigned int animationType;
+@property (nonatomic) unsigned long long animationType;
 @property (nonatomic, retain) NSArray *commonVisibleKeys;
-@property (nonatomic) BOOL disableMeshOptimization;
+@property (nonatomic) bool disableMeshOptimization;
 @property (nonatomic, retain) NSArray *endGeometries;
 @property (nonatomic) double opacityAnimationBeginTime;
-@property (nonatomic) BOOL opacityAnimationDirectionForward;
+@property (nonatomic) bool opacityAnimationDirectionForward;
 @property (nonatomic, retain) CADisplayLink *opacityAnimationDisplayLink;
-@property (nonatomic) float previousProgress;
+@property (nonatomic) double previousProgress;
 @property (nonatomic, retain) NSArray *startGeometries;
-@property (nonatomic) BOOL useInteractiveOpacity;
+@property (nonatomic) bool useInteractiveOpacity;
 
+- (bool)_allowFacesToAdjoinToAdjacentFaces;
 - (id)_animationsForEnd;
 - (id)_animationsForStart;
 - (void)_updateTransition;
-- (unsigned int)animationType;
+- (unsigned long long)animationType;
 - (void)commitTransitionRebuild;
 - (id)commonVisibleKeys;
 - (void)dealloc;
-- (BOOL)disableMeshOptimization;
+- (bool)disableMeshOptimization;
 - (id)endGeometries;
 - (id)geometriesForKeyplane:(id)arg1;
 - (id)meshTransformForKeyplane:(id)arg1 toKeyplane:(id)arg2;
 - (double)opacityAnimationBeginTime;
-- (BOOL)opacityAnimationDirectionForward;
+- (bool)opacityAnimationDirectionForward;
 - (id)opacityAnimationDisplayLink;
-- (float)previousProgress;
+- (double)previousProgress;
 - (void)rebuildWithStartKeyplane:(id)arg1 startView:(id)arg2 endKeyplane:(id)arg3 endView:(id)arg4;
 - (void)removeAllAnimations;
-- (void)setAnimationType:(unsigned int)arg1;
+- (void)setAnimationType:(unsigned long long)arg1;
 - (void)setCommonVisibleKeys:(id)arg1;
-- (void)setDisableMeshOptimization:(BOOL)arg1;
+- (void)setDisableMeshOptimization:(bool)arg1;
 - (void)setEndGeometries:(id)arg1;
 - (void)setOpacityAnimationBeginTime:(double)arg1;
-- (void)setOpacityAnimationDirectionForward:(BOOL)arg1;
+- (void)setOpacityAnimationDirectionForward:(bool)arg1;
 - (void)setOpacityAnimationDisplayLink:(id)arg1;
-- (void)setPreviousProgress:(float)arg1;
+- (void)setPreviousProgress:(double)arg1;
 - (void)setStartGeometries:(id)arg1;
-- (void)setUseInteractiveOpacity:(BOOL)arg1;
+- (void)setUseInteractiveOpacity:(bool)arg1;
 - (id)sortedCommonVisibleKeys;
 - (id)startGeometries;
 - (id)symmetricMeshTransformForKeyplane:(id)arg1;
 - (void)updateOpacityAnimation:(id)arg1;
-- (void)updateWithProgress:(float)arg1;
-- (BOOL)useInteractiveOpacity;
+- (void)updateWithProgress:(double)arg1;
+- (bool)useInteractiveOpacity;
 
 @end

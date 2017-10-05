@@ -15,9 +15,9 @@
 - (void).cxx_destruct;
 - (id)_initWithAccessorSequence:(id)arg1;
 - (id)accessorSequence;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithString:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)propertyPathByCombiningAccesserSequence:(id)arg1;
 - (id)string;
 

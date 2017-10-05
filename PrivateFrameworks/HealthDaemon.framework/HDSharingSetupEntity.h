@@ -6,10 +6,10 @@
 
 + (id)_sampleTypesForSetupWithPersistentID:(long long)arg1 database:(id)arg2 error:(id*)arg3;
 + (id)columnsDefinition;
-+ (BOOL)createShareWithProfile:(id)arg1 identifier:(id)arg2 predicate:(id)arg3 error:(id*)arg4;
++ (bool)createShareWithProfile:(id)arg1 identifier:(id)arg2 predicate:(id)arg3 error:(id*)arg4;
 + (id)databaseTable;
-+ (BOOL)enumerateSharesWithProfile:(id)arg1 error:(id*)arg2 handler:(id /* block */)arg3;
++ (bool)enumerateSharesWithProfile:(id)arg1 error:(id*)arg2 handler:(id /* block */)arg3;
 + (id)privateSubEntities;
-+ (int)protectionClass;
++ (long long)protectionClass;
 
 @end

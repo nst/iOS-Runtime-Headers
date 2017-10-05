@@ -20,12 +20,12 @@
 - (void)setLoop:(int)arg1;
 - (void)setScrollAmount:(unsigned int)arg1;
 - (void)setScrollDelay:(unsigned int)arg1;
-- (void)setTrueSpeed:(BOOL)arg1;
+- (void)setTrueSpeed:(bool)arg1;
 - (void)setVspace:(unsigned int)arg1;
 - (void)setWidth:(id)arg1;
 - (void)start;
 - (void)stop;
-- (BOOL)trueSpeed;
+- (bool)trueSpeed;
 - (unsigned int)vspace;
 - (id)width;
 

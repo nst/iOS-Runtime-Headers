@@ -7,15 +7,16 @@
 }
 
 @property (nonatomic, readonly) NSString *destination;
-@property (nonatomic) int invitationTimeOut;
-@property (nonatomic) BOOL isAudioEnabled;
-@property (nonatomic) BOOL isMuted;
+@property (nonatomic) long long invitationTimeOut;
+@property (nonatomic) bool isAudioEnabled;
+@property (nonatomic) bool isMuted;
 @property (nonatomic, readonly) unsigned int sessionEndedReason;
 @property (nonatomic, readonly) NSString *sessionID;
 @property (nonatomic, readonly) int socket;
 
-- (unsigned int)MTUForAddressFamily:(unsigned int)arg1;
-- (id)_initWithAccount:(id)arg1 destinations:(id)arg2 transportType:(int)arg3 uniqueID:(id)arg4;
+- (void).cxx_destruct;
+- (unsigned long long)MTUForAddressFamily:(unsigned long long)arg1;
+- (id)_initWithAccount:(id)arg1 destinations:(id)arg2 transportType:(long long)arg3 uniqueID:(id)arg4;
 - (id)_internal;
 - (id)_streamPreferences;
 - (void)acceptInvitation;
@@ -31,25 +32,27 @@
 - (void)endSession;
 - (void)endSessionWithData:(id)arg1;
 - (id)initWithAccount:(id)arg1 destinations:(id)arg2 options:(id)arg3;
-- (id)initWithAccount:(id)arg1 destinations:(id)arg2 transportType:(int)arg3;
-- (int)invitationTimeOut;
-- (BOOL)isAudioEnabled;
-- (BOOL)isMuted;
-- (BOOL)sendData:(id)arg1 error:(id*)arg2;
+- (id)initWithAccount:(id)arg1 destinations:(id)arg2 transportType:(long long)arg3;
+- (unsigned long long)initialLinkType;
+- (long long)invitationTimeOut;
+- (bool)isAudioEnabled;
+- (bool)isMuted;
+- (void)sendAllocationRequest:(id)arg1;
+- (bool)sendData:(id)arg1 error:(id*)arg2;
 - (void)sendInvitation;
 - (void)sendInvitationWithData:(id)arg1;
-- (void)sendInvitationWithData:(id)arg1 declineOnError:(BOOL)arg2;
+- (void)sendInvitationWithData:(id)arg1 declineOnError:(bool)arg2;
 - (void)sendInvitationWithOptions:(id)arg1;
 - (void)sendSessionMessage:(id)arg1;
 - (unsigned int)sessionEndedReason;
 - (id)sessionID;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
-- (void)setInvitationTimeOut:(int)arg1;
-- (void)setIsAudioEnabled:(BOOL)arg1;
-- (void)setIsMuted:(BOOL)arg1;
+- (void)setInvitationTimeOut:(long long)arg1;
+- (void)setIsAudioEnabled:(bool)arg1;
+- (void)setIsMuted:(bool)arg1;
 - (void)setPreferences:(id)arg1;
 - (void)setStreamPreferences:(id)arg1;
-- (BOOL)shouldUseSocketForTransport;
+- (bool)shouldUseSocketForTransport;
 - (int)socket;
 - (unsigned int)state;
 

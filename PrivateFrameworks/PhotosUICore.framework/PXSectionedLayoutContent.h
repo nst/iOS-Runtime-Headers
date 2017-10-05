@@ -3,47 +3,47 @@
  */
 
 @interface PXSectionedLayoutContent : NSObject {
-    int  _axis;
+    long long  _axis;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _contentSize;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _edgeInsets;
     NSMutableArray * _sections;
 }
 
-@property (nonatomic) int axis;
-@property (nonatomic) struct CGSize { float x1; float x2; } contentSize;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
+@property (nonatomic) long long axis;
+@property (nonatomic) struct CGSize { double x1; double x2; } contentSize;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } edgeInsets;
 @property (nonatomic, readonly, copy) NSArray *sections;
 
 - (void).cxx_destruct;
 - (void)_addSection:(id)arg1;
-- (void)_adjustSectionsFromIndex:(int)arg1;
-- (void)_exchangeSectionAtIndex:(unsigned int)arg1 withSectionAtIndex:(unsigned int)arg2;
-- (void)_insertSection:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)_adjustSectionsFromIndex:(long long)arg1;
+- (void)_exchangeSectionAtIndex:(unsigned long long)arg1 withSectionAtIndex:(unsigned long long)arg2;
+- (void)_insertSection:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)_removeSection:(id)arg1;
 - (void)addSection:(id)arg1;
-- (int)axis;
-- (struct CGSize { float x1; float x2; })contentSize;
+- (long long)axis;
+- (struct CGSize { double x1; double x2; })contentSize;
 - (id)description;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
-- (void)exchangeSectionAtIndex:(unsigned int)arg1 withSectionAtIndex:(unsigned int)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
+- (void)exchangeSectionAtIndex:(unsigned long long)arg1 withSectionAtIndex:(unsigned long long)arg2;
 - (id)init;
-- (id)initWithAxis:(int)arg1 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
-- (void)insertSection:(id)arg1 atIndex:(int)arg2;
+- (id)initWithAxis:(long long)arg1 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (void)insertSection:(id)arg1 atIndex:(long long)arg2;
 - (void)removeAllSections;
 - (void)removeSection:(id)arg1;
 - (void)removeSections:(id)arg1;
-- (id)sectionAtIndex:(unsigned int)arg1;
+- (id)sectionAtIndex:(unsigned long long)arg1;
 - (id)sections;
-- (void)setAxis:(int)arg1;
-- (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setAxis:(long long)arg1;
+- (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)updateSections:(id)arg1;
 
 @end

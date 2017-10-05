@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDFollowUpController : NSObject {
+@interface HMDFollowUpController : HMFObject {
     FLFollowUpController * _followUpController;
 }
 

@@ -4,25 +4,24 @@
 
 @interface _ATXAppLaunchLocation : NSObject {
     NSDictionary * _appLaunchCountMap;
-    Class  _deviceState;
     _ATXDuetHelper * _duetHelper;
     NSObject<OS_os_transaction> * _keepAliveUntilTrainingComplete;
     <_ATXLocationManagerWrapperProtocol> * _locationManager;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _lock;
     id  _lockStateNotificationRegistrationToken;
     NSObject<OS_dispatch_queue> * _queue;
     id  _resetPrivacyWarningsNotificationToken;
     NSDictionary * _totalLaunchCountMap;
-    BOOL  _waitingLoad;
+    bool  _waitingLoad;
 }
 
 + (id)defaultPath;
-+ (id)generateRangeArrayAndUUIDLookupFromLocationsOfInterest:(id)arg1 withStartDate:(id)arg2;
-+ (id)mergeAppLaunches:(id)arg1 withLocationOfInterestVisits:(id)arg2 withIntervalToLocationMap:(id)arg3;
++ (void)joinAppLaunches:(id)arg1 withVisits:(id)arg2 block:(id /* block */)arg3;
 + (id)sortTimeIntervals:(id)arg1;
++ (id)visitsWithLOI:(id)arg1 startDate:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)_getAppLaunchCountMap;
@@ -34,14 +33,15 @@
 - (void)dealloc;
 - (void)finishTrainWithCallback:(id /* block */)arg1;
 - (id)init;
-- (id)initWithDuetHelper:(id)arg1 locationManager:(id)arg2 andLockState:(Class)arg3;
+- (id)initWithDuetHelper:(id)arg1 locationManager:(id)arg2;
 - (int)launchCountAtCurrentLOIOfBundle:(id)arg1;
 - (double)launchProbabilityAtCurrentLOIForBundle:(id)arg1;
-- (unsigned int)loadModel;
+- (unsigned long long)loadModel;
+- (unsigned long long)loadModelAtPath:(id)arg1;
 - (void)loadOrTrain;
 - (int)totalLaunchCountAtCurrentLOI;
 - (void)train;
-- (void)trainModelWithLocationsOfInterest:(id)arg1 withStartDate:(id)arg2 callback:(id /* block */)arg3;
+- (void)trainModelWithLOI:(id)arg1 startDate:(id)arg2 callback:(id /* block */)arg3;
 - (void)trainWithCallback:(id /* block */)arg1;
 - (void)writeModel;
 

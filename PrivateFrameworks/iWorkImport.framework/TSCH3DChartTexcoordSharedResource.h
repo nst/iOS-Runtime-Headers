@@ -17,7 +17,7 @@
 - (id)generator;
 - (id)get;
 - (id)normal;
-- (void)setChildRegenerated:(BOOL)arg1;
+- (void)setChildRegenerated:(bool)arg1;
 - (void)setGenerator:(id)arg1;
 - (void)setNormal:(id)arg1;
 - (void)setVertex:(id)arg1;

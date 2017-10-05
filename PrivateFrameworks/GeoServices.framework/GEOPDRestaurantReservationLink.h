@@ -4,28 +4,31 @@
 
 @interface GEOPDRestaurantReservationLink : PBCodable <NSCopying> {
     NSMutableArray * _restaurantLinks;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) NSMutableArray *restaurantLinks;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (id)reservationLinkForPlaceData:(id)arg1;
 + (Class)restaurantLinkType;
 
+- (void).cxx_destruct;
 - (void)addRestaurantLink:(id)arg1;
 - (void)clearRestaurantLinks;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (id)restaurantLinkAtIndex:(unsigned int)arg1;
+- (bool)readFrom:(id)arg1;
+- (id)restaurantLinkAtIndex:(unsigned long long)arg1;
 - (id)restaurantLinks;
-- (unsigned int)restaurantLinksCount;
+- (unsigned long long)restaurantLinksCount;
 - (void)setRestaurantLinks:(id)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

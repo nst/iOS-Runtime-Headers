@@ -13,7 +13,7 @@
 - (void).cxx_destruct;
 - (id)initWithElementName:(id)arg1 attributes:(id)arg2;
 - (id)initWithTagSpecification:(id)arg1;
-- (BOOL)matchesElement:(id)arg1;
+- (bool)matchesElement:(id)arg1;
 - (id)specificationAttributes;
 - (id)specificationElement;
 

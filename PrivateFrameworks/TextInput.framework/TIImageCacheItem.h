@@ -6,21 +6,21 @@
     NSData * _data;
     unsigned char  _format;
     struct CGColor { } * _formatColor;
-    float  _scale;
+    double  _scale;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _size;
 }
 
 @property (nonatomic, retain) NSData *data;
 @property (nonatomic) unsigned char format;
 @property (nonatomic) struct CGColor { }*formatColor;
-@property (nonatomic) float scale;
-@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic) double scale;
+@property (nonatomic) struct CGSize { double x1; double x2; } size;
 
-+ (id)cacheItemWithSize:(struct CGSize { float x1; float x2; })arg1 format:(unsigned char)arg2 formatColor:(struct CGColor { }*)arg3 scale:(float)arg4 data:(id)arg5;
-+ (BOOL)supportsSecureCoding;
++ (id)cacheItemWithSize:(struct CGSize { double x1; double x2; })arg1 format:(unsigned char)arg2 formatColor:(struct CGColor { }*)arg3 scale:(double)arg4 data:(id)arg5;
++ (bool)supportsSecureCoding;
 
 - (id)data;
 - (void)dealloc;
@@ -28,12 +28,12 @@
 - (unsigned char)format;
 - (struct CGColor { }*)formatColor;
 - (id)initWithCoder:(id)arg1;
-- (float)scale;
+- (double)scale;
 - (void)setData:(id)arg1;
 - (void)setFormat:(unsigned char)arg1;
 - (void)setFormatColor:(struct CGColor { }*)arg1;
-- (void)setScale:(float)arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (void)setScale:(double)arg1;
+- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })size;
 
 @end

@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@interface CKDAcceptSharesOperation : CKDOperation {
+@interface CKDAcceptSharesOperation : CKDDatabaseOperation {
     id /* block */  _acceptCompletionBlock;
     NSMutableArray * _acceptedShareURLsToFetch;
     NSMutableDictionary * _clientProvidedMetadatasByURL;
-    int  _numShareAcceptAttempts;
+    unsigned long long  _numShareAcceptAttempts;
     NSMutableDictionary * _shareMetadatasToAcceptByURL;
     NSMutableArray * _shareURLsToAccept;
 }
@@ -14,37 +14,37 @@
 @property (nonatomic, copy) id /* block */ acceptCompletionBlock;
 @property (nonatomic, retain) NSMutableArray *acceptedShareURLsToFetch;
 @property (nonatomic, retain) NSMutableDictionary *clientProvidedMetadatasByURL;
-@property (nonatomic) int numShareAcceptAttempts;
+@property (nonatomic) unsigned long long numShareAcceptAttempts;
 @property (nonatomic, retain) NSMutableDictionary *shareMetadatasToAcceptByURL;
 @property (nonatomic, retain) NSMutableArray *shareURLsToAccept;
 
 - (void).cxx_destruct;
-- (BOOL)_acceptShares;
+- (bool)_acceptShares;
 - (id)_addSelfIdentityToShareMetadataPublicPCS:(id)arg1 forShareWithURL:(id)arg2 error:(id*)arg3;
-- (BOOL)_callingParticipantOONForShareMetadata:(id)arg1;
+- (bool)_callingParticipantOONForShareMetadata:(id)arg1;
 - (void)_decryptShareMetadata;
 - (void)_fetchAcceptedShares;
 - (void)_fetchMetadataForShares;
-- (BOOL)_fillInPublicKeyIntoAcceptMetadata:(id)arg1 serviceType:(unsigned int)arg2 keyVersion:(unsigned int)arg3 error:(id*)arg4;
+- (bool)_fillInPublicKeyIntoAcceptMetadata:(id)arg1 serviceType:(unsigned long long)arg2 keyVersion:(unsigned long long)arg3 error:(id*)arg4;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleShareURLAccepted:(id)arg1 forShare:(id)arg2 responseCode:(id)arg3;
 - (id)_keySwapForOONParticipant:(id)arg1;
 - (void)_performCallbackForURL:(id)arg1 withShare:(id)arg2 error:(id)arg3;
 - (void)_prepareShareMetadata;
-- (BOOL)_validateInvitedPCSCanBeDecryptedForShare:(id)arg1;
+- (bool)_validateInvitedPCSCanBeDecryptedForShare:(id)arg1;
 - (id /* block */)acceptCompletionBlock;
 - (id)acceptedShareURLsToFetch;
 - (id)activityCreate;
 - (id)clientProvidedMetadatasByURL;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
-- (BOOL)makeStateTransition;
-- (id)nameForState:(unsigned int)arg1;
-- (int)numShareAcceptAttempts;
+- (bool)makeStateTransition;
+- (id)nameForState:(unsigned long long)arg1;
+- (unsigned long long)numShareAcceptAttempts;
 - (void)setAcceptCompletionBlock:(id /* block */)arg1;
 - (void)setAcceptedShareURLsToFetch:(id)arg1;
 - (void)setClientProvidedMetadatasByURL:(id)arg1;
-- (void)setNumShareAcceptAttempts:(int)arg1;
+- (void)setNumShareAcceptAttempts:(unsigned long long)arg1;
 - (void)setShareMetadatasToAcceptByURL:(id)arg1;
 - (void)setShareURLsToAccept:(id)arg1;
 - (id)shareMetadatasToAcceptByURL;

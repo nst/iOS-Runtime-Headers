@@ -2,26 +2,22 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface _HKSampleTypeQuery : HKQuery {
+@interface _HKSampleTypeQuery : HKQuery <HKSampleTypeQueryClientInterface> {
     id /* block */  _resultsHandler;
 }
 
-@property (copy) id /* block */ resultsHandler;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
-// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
-
-+ (Class)_queryServerDataObjectClass;
++ (id)clientInterfaceProtocol;
++ (void)configureClientInterface:(id)arg1;
 
 - (void).cxx_destruct;
-- (id /* block */)_queue_errorHandler;
-- (BOOL)_requiresValidSampleType;
-- (void)deliverSampleTypes:(id)arg1 forQuery:(id)arg2;
+- (void)client_deliverSampleTypes:(id)arg1 query:(id)arg2;
 - (id)initWithPredicate:(id)arg1 resultsHandler:(id /* block */)arg2;
-- (id /* block */)resultsHandler;
-- (void)setResultsHandler:(id /* block */)arg1;
-
-// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
-
-+ (Class)hd_queryServerClass;
+- (void)queue_connectToQueryServerWithHealthStore:(id)arg1 activationUUID:(id)arg2 completion:(id /* block */)arg3;
+- (void)queue_deliverError:(id)arg1;
 
 @end

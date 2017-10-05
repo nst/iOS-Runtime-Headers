@@ -5,8 +5,8 @@
 @interface ACRemoteDeviceMessage : NSObject {
     NSData * _data;
     NSString * _identifier;
-    BOOL  _isReply;
-    BOOL  _needsReply;
+    bool  _isReply;
+    bool  _needsReply;
     NSMutableDictionary * _payload;
 }
 
@@ -15,16 +15,16 @@
 @property (nonatomic, readonly) NSData *data;
 @property (nonatomic, readonly) NSError *error;
 @property (nonatomic, readonly) NSString *identifier;
-@property (nonatomic) BOOL isReply;
-@property (nonatomic) BOOL needsReply;
+@property (nonatomic) bool isReply;
+@property (nonatomic) bool needsReply;
 @property (nonatomic, readonly) NSDictionary *options;
 @property (nonatomic, readonly) NSObject<NSCoding> *result;
 @property (nonatomic, readonly) NSString *sentMessageIdentifier;
-@property (nonatomic, readonly) BOOL success;
+@property (nonatomic, readonly) bool success;
 
 + (id)actionMessageWithCommand:(id)arg1 account:(id)arg2 options:(id)arg3;
-+ (id)replyForMessage:(id)arg1 withSuccess:(BOOL)arg2 error:(id)arg3;
-+ (id)replyForMessage:(id)arg1 withSuccess:(BOOL)arg2 result:(id)arg3 error:(id)arg4;
++ (id)replyForMessage:(id)arg1 withSuccess:(bool)arg2 error:(id)arg3;
++ (id)replyForMessage:(id)arg1 withSuccess:(bool)arg2 result:(id)arg3 error:(id)arg4;
 
 - (void).cxx_destruct;
 - (void)_invalidateCachedData;
@@ -38,13 +38,13 @@
 - (id)identifier;
 - (id)init;
 - (id)initWithData:(id)arg1;
-- (BOOL)isReply;
-- (BOOL)needsReply;
+- (bool)isReply;
+- (bool)needsReply;
 - (id)options;
 - (id)result;
 - (id)sentMessageIdentifier;
-- (void)setIsReply:(BOOL)arg1;
-- (void)setNeedsReply:(BOOL)arg1;
-- (BOOL)success;
+- (void)setIsReply:(bool)arg1;
+- (void)setNeedsReply:(bool)arg1;
+- (bool)success;
 
 @end

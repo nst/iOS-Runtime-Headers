@@ -3,42 +3,42 @@
  */
 
 @interface PTLegibleTextAssistantSettings : _UISettings {
-    BOOL  _drawingShadowDrawsText;
+    bool  _drawingShadowDrawsText;
     UIColor * _foregroundColor;
     struct { 
-        float meanRed; 
-        float meanGreen; 
-        float meanBlue; 
-        float meanHue; 
-        float meanSaturation; 
-        float meanBrightness; 
-        float meanAlpha; 
-        float standardDeviationBrightness; 
-        float standardDeviationSaturation; 
+        double meanRed; 
+        double meanGreen; 
+        double meanBlue; 
+        double meanHue; 
+        double meanSaturation; 
+        double meanBrightness; 
+        double meanAlpha; 
+        double standardDeviationBrightness; 
+        double standardDeviationSaturation; 
     }  _imageStatistics;
     NSArray * _shadowAlphas;
     NSString * _shadowCompositingFilterName;
     NSArray * _shadowRadii;
 }
 
-@property (nonatomic) BOOL drawingShadowDrawsText;
+@property (nonatomic) bool drawingShadowDrawsText;
 @property (nonatomic, retain) UIColor *foregroundColor;
-@property (nonatomic) struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; } imageStatistics;
+@property (nonatomic) struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; } imageStatistics;
 @property (nonatomic, copy) NSArray *shadowAlphas;
 @property (nonatomic, copy) NSString *shadowCompositingFilterName;
 @property (nonatomic, copy) NSArray *shadowRadii;
 
-+ (id)settingsWithImageStatistics:(struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; })arg1;
++ (id)settingsWithImageStatistics:(struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; })arg1;
 
 - (void).cxx_destruct;
-- (id)calculateForegroundColorWithImageStatistics:(struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; })arg1;
-- (BOOL)drawingShadowDrawsText;
+- (id)calculateForegroundColorWithImageStatistics:(struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; })arg1;
+- (bool)drawingShadowDrawsText;
 - (id)foregroundColor;
-- (struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; })imageStatistics;
+- (struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; })imageStatistics;
 - (void)setDefaultValues;
-- (void)setDrawingShadowDrawsText:(BOOL)arg1;
+- (void)setDrawingShadowDrawsText:(bool)arg1;
 - (void)setForegroundColor:(id)arg1;
-- (void)setImageStatistics:(struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; })arg1;
+- (void)setImageStatistics:(struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; })arg1;
 - (void)setShadowAlphas:(id)arg1;
 - (void)setShadowCompositingFilterName:(id)arg1;
 - (void)setShadowRadii:(id)arg1;

@@ -5,9 +5,9 @@
 @interface NSFileAccessNode : NSObject {
     id  _accessClaimOrClaims;
     NSMutableDictionary * _childrenByNormalizedName;
-    BOOL  _isArbitrationBoundary;
-    BOOL  _isFilePackage;
-    BOOL  _isFilePackageIsFigured;
+    bool  _isArbitrationBoundary;
+    bool  _isFilePackage;
+    bool  _isFilePackageIsFigured;
     NSFileAccessNode * _lastRequestedChild;
     NSString * _lastRequestedChildName;
     NSString * _name;
@@ -18,11 +18,12 @@
     id  _progressSubscriberOrSubscribers;
     NSFileProviderProxy * _provider;
     NSFileAccessNode * _symbolicLinkDestination;
-    unsigned int  _symbolicLinkReferenceCount;
+    unsigned long long  _symbolicLinkReferenceCount;
 }
 
-- (id)_childrenExcludingExcessNodes:(BOOL)arg1 excludingReactors:(BOOL)arg2;
-- (BOOL)_mayContainCriticalDebuggingInformationExcludingReactors:(BOOL)arg1;
+- (id)_childrenExcludingExcessNodes:(bool)arg1 excludingReactors:(bool)arg2;
+- (void)_forEachRelevantAccessClaimExcludingClaimsFromSuperarbiter:(bool)arg1 performProcedure:(id /* block */)arg2;
+- (bool)_mayContainCriticalDebuggingInformationExcludingReactors:(bool)arg1;
 - (void)addAccessClaim:(id)arg1;
 - (void)addPresenter:(id)arg1;
 - (void)addProgressPublisher:(id)arg1;
@@ -31,13 +32,13 @@
 - (void)assertDescendantsLive;
 - (void)assertLive;
 - (id)biggestFilePackageLocation;
-- (id)childForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 ofPath:(id)arg2;
+- (id)childForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 ofPath:(id)arg2;
 - (void)dealloc;
-- (id)descendantAtPath:(id)arg1 componentRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 create:(BOOL)arg3;
-- (id)descendantAtPath:(id)arg1 componentRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 forAddingLeafNode:(id)arg3 create:(BOOL)arg4;
+- (id)descendantAtPath:(id)arg1 componentRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 create:(bool)arg3;
+- (id)descendantAtPath:(id)arg1 componentRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 forAddingLeafNode:(id)arg3 create:(bool)arg4;
 - (id)descendantForFileURL:(id)arg1;
 - (id)description;
-- (id)descriptionWithIndenting:(id)arg1 excludingExcessNodes:(BOOL)arg2 excludingReactors:(BOOL)arg3;
+- (id)descriptionWithIndenting:(id)arg1 excludingExcessNodes:(bool)arg2 excludingReactors:(bool)arg3;
 - (void)forEachAccessClaimOnItemOrContainedItemPerformProcedure:(id /* block */)arg1;
 - (void)forEachAccessClaimOnItemPerformProcedure:(id /* block */)arg1;
 - (void)forEachDescendantPerformProcedure:(id /* block */)arg1;
@@ -53,18 +54,19 @@
 - (void)forEachProgressSubscriberOfItemPerformProcedure:(id /* block */)arg1;
 - (void)forEachProgressThingOfItemOrContainedItemPerformProcedure:(id /* block */)arg1;
 - (void)forEachReactorToItemOrContainedItemPerformProcedure:(id /* block */)arg1;
+- (void)forEachRelevantAccessClaimForEvaluatingAgainstClaim:(id)arg1 performProcedure:(id /* block */)arg2;
 - (void)forEachRelevantAccessClaimPerformProcedure:(id /* block */)arg1;
 - (id)initWithParent:(id)arg1 name:(id)arg2 normalizedName:(id)arg3;
-- (BOOL)itemIsFilePackage;
-- (BOOL)itemIsInItemAtLocation:(id)arg1;
-- (BOOL)itemIsItemAtLocation:(id)arg1;
-- (BOOL)itemIsSubarbitrable;
+- (bool)itemIsFilePackage;
+- (bool)itemIsInItemAtLocation:(id)arg1;
+- (bool)itemIsItemAtLocation:(id)arg1;
+- (bool)itemIsSubarbitrable;
 - (id)itemProvider;
 - (id)normalizationOfChildName:(id)arg1;
 - (id)parent;
 - (id)pathExceptPrivate;
 - (id)pathFromAncestor:(id)arg1;
-- (id)pathToDescendantForFileURL:(id)arg1 componentRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
+- (id)pathToDescendantForFileURL:(id)arg1 componentRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg2;
 - (void)removeAccessClaim:(id)arg1;
 - (void)removeChildForNormalizedName:(id)arg1;
 - (void)removePresenter:(id)arg1;
@@ -77,7 +79,7 @@
 - (void)setArbitrationBoundary;
 - (void)setChild:(id)arg1 forName:(id)arg2 normalizedName:(id)arg3;
 - (void)setParent:(id)arg1 name:(id)arg2;
-- (BOOL)setProvider:(id)arg1;
+- (bool)setProvider:(id)arg1;
 - (void)setSymbolicLinkDestination:(id)arg1;
 - (id)standardizedURL;
 - (id)subarbiterDescription;

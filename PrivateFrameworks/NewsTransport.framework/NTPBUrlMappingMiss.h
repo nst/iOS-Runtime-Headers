@@ -8,8 +8,8 @@
     NSString * _url;
 }
 
-@property (nonatomic, readonly) BOOL hasHost;
-@property (nonatomic, readonly) BOOL hasUrl;
+@property (nonatomic, readonly) bool hasHost;
+@property (nonatomic, readonly) bool hasUrl;
 @property (nonatomic, retain) NSString *host;
 @property (nonatomic, retain) NSMutableArray *paths;
 @property (nonatomic, retain) NSString *url;
@@ -22,16 +22,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasHost;
-- (BOOL)hasUrl;
-- (unsigned int)hash;
+- (bool)hasHost;
+- (bool)hasUrl;
+- (unsigned long long)hash;
 - (id)host;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)paths;
-- (id)pathsAtIndex:(unsigned int)arg1;
-- (unsigned int)pathsCount;
-- (BOOL)readFrom:(id)arg1;
+- (id)pathsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)pathsCount;
+- (bool)readFrom:(id)arg1;
 - (void)setHost:(id)arg1;
 - (void)setPaths:(id)arg1;
 - (void)setUrl:(id)arg1;

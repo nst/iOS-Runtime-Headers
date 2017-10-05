@@ -4,16 +4,16 @@
 
 @interface PUTilingLayoutInvalidationContext : NSObject {
     NSMutableDictionary * __invalidatedIndexPathsByTileKind;
-    BOOL  _invalidatedAllTiles;
-    BOOL  _invalidatedAnyTile;
-    BOOL  _invalidatedContentBounds;
+    bool  _invalidatedAllTiles;
+    bool  _invalidatedAnyTile;
+    bool  _invalidatedContentBounds;
     NSMutableSet * _invalidatedTileKinds;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *_invalidatedIndexPathsByTileKind;
-@property (nonatomic) BOOL invalidatedAllTiles;
-@property (nonatomic) BOOL invalidatedAnyTile;
-@property (nonatomic, readonly) BOOL invalidatedContentBounds;
+@property (nonatomic) bool invalidatedAllTiles;
+@property (nonatomic) bool invalidatedAnyTile;
+@property (nonatomic, readonly) bool invalidatedContentBounds;
 @property (nonatomic, readonly) NSSet *invalidatedTileKinds;
 
 - (void).cxx_destruct;
@@ -24,11 +24,11 @@
 - (void)invalidateAllTilesWithKind:(id)arg1;
 - (void)invalidateContentBounds;
 - (void)invalidateTileWithIndexPath:(id)arg1 kind:(id)arg2;
-- (BOOL)invalidatedAllTiles;
-- (BOOL)invalidatedAnyTile;
-- (BOOL)invalidatedContentBounds;
+- (bool)invalidatedAllTiles;
+- (bool)invalidatedAnyTile;
+- (bool)invalidatedContentBounds;
 - (id)invalidatedTileKinds;
-- (void)setInvalidatedAllTiles:(BOOL)arg1;
-- (void)setInvalidatedAnyTile:(BOOL)arg1;
+- (void)setInvalidatedAllTiles:(bool)arg1;
+- (void)setInvalidatedAnyTile:(bool)arg1;
 
 @end

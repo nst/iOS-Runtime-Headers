@@ -6,7 +6,7 @@
 @required
 
 - (NSString *)nameForResolverContainer:(id <TSCEResolverContainer>)arg1;
-- (<TSCEResolverContainer> *)resolverContainerForName:(NSString *)arg1 caseSensitive:(BOOL)arg2;
+- (<TSCEResolverContainer> *)resolverContainerForName:(NSString *)arg1 caseSensitive:(bool)arg2;
 - (NSString *)resolverContainerNameForResolver:(id <TSCEReferenceResolving>)arg1;
 - (NSArray *)resolverContainerNamesMatchingPrefix:(NSString *)arg1;
 - (<TSCEReferenceResolving> *)resolverMatchingName:(NSString *)arg1 contextContainerName:(NSString *)arg2;
@@ -15,6 +15,6 @@
 
 @optional
 
-- (BOOL)isPendingTableNameUniquification;
+- (bool)isPendingTableNameUniquification;
 
 @end

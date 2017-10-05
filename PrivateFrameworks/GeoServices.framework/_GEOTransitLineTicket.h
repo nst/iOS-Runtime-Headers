@@ -2,25 +2,14 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface _GEOTransitLineTicket : NSObject <GEOMapServiceTransitLineTicket> {
-    BOOL  _canceled;
-    GEOPDPlaceRequest * _request;
-    GEOPDPlaceResponse * _response;
-    GEOMapServiceTraits * _traits;
-}
+@interface _GEOTransitLineTicket : GEOAbstractRequestResponseTicket <GEOMapServiceTransitLineTicket>
 
-@property (getter=isCanceled, nonatomic, readonly) BOOL canceled;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) GEOMapServiceTraits *traits;
 
-- (void)cancel;
-- (void)dealloc;
-- (id)initWithRequest:(id)arg1 traits:(id)arg2;
-- (BOOL)isCanceled;
 - (void)submitWithHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
-- (id)traits;
 
 @end

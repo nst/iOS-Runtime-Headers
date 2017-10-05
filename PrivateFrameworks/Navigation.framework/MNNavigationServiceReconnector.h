@@ -10,12 +10,12 @@
 @property (nonatomic) <MNNavigationServiceReconnectorDelegate> *delegate;
 
 - (void).cxx_destruct;
-- (BOOL)_isValidRoutePlanningDetails:(id)arg1;
+- (bool)_isValidRoutePlanningDetails:(id)arg1;
 - (id)delegate;
 - (void)finishReconnecting;
 - (id)initWithRoutePlanningDetails:(id)arg1;
-- (BOOL)isReconnecting;
-- (BOOL)reconnect;
+- (bool)isReconnecting;
+- (bool)reconnect;
 - (void)setDelegate:(id)arg1;
 
 @end

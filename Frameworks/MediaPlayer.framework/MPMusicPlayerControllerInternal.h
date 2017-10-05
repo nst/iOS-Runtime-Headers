@@ -3,17 +3,16 @@
  */
 
 @interface MPMusicPlayerControllerInternal : MPServerObjectProxy <MPMusicPlayerController> {
-    unsigned int  _allowsBackgroundVideo;
     unsigned int  _cachedPlaybackStateIsValid;
     unsigned int  _clientPort;
     unsigned int  _didCheckIn;
-    int  _inBlockHandlingPlaybackStateChangedMessageFromServer;
+    long long  _inBlockHandlingPlaybackStateChangedMessageFromServer;
     MPMediaItemCollection * _itemCollection;
     MPMusicPlayerController * _musicPlayerController;
-    int  _playbackNotificationObservers;
-    int  _playbackState;
+    long long  _playbackNotificationObservers;
+    long long  _playbackState;
     id /* block */  _prepareToPlayCompletionHandler;
-    BOOL  _preparedToPlay;
+    bool  _preparedToPlay;
     BKSProcessAssertion * _processAssertion;
     MPMediaQuery * _query;
     struct __CFRunLoopSource { } * _runLoopSource;
@@ -22,17 +21,17 @@
     unsigned int  _wantsQueueModificationsDisabled;
 }
 
-@property BOOL inBlockHandlingPlaybackStateChangedMessageFromServer;
+@property bool inBlockHandlingPlaybackStateChangedMessageFromServer;
 
 - (void).cxx_destruct;
 - (id)_bundleIdentifier;
 - (void)acquireProcessAssertion;
 - (void)dealloc;
 - (void)didPrepareForRemoteSelectorInvocation;
-- (BOOL)inBlockHandlingPlaybackStateChangedMessageFromServer;
+- (bool)inBlockHandlingPlaybackStateChangedMessageFromServer;
 - (id)initWithMusicPlayerController:(id)arg1;
-- (BOOL)prepareForRemoteSelectorInvocation;
+- (bool)prepareForRemoteSelectorInvocation;
 - (void)serverConnectionDied;
-- (void)setInBlockHandlingPlaybackStateChangedMessageFromServer:(BOOL)arg1;
+- (void)setInBlockHandlingPlaybackStateChangedMessageFromServer:(bool)arg1;
 
 @end

@@ -9,34 +9,36 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_yearsFetchResult;
 - (struct __CFString { }*)aggregateLevelKey;
-- (id)assetsToDisplayInMapForVisualSection:(int)arg1;
+- (id)assetsToDisplayInMapForVisualSection:(long long)arg1;
 - (double)cellAspectRatioHint;
-- (int)cellFillMode;
-- (void)configureSectionHeaderView:(id)arg1 forVisualSection:(int)arg2;
-- (unsigned int)dateRangeFormatterPreset;
-- (id)diagnosticsProviderForVisualSection:(int)arg1;
+- (long long)cellFillMode;
+- (void)configureSectionHeaderView:(id)arg1 forVisualSection:(long long)arg2;
+- (unsigned long long)dateRangeFormatterPreset;
+- (id)diagnosticsProviderForVisualSection:(long long)arg1;
 - (id)displayTitle;
-- (void)getPhotosDataSource:(id*)arg1 displayTitleInfo:(id*)arg2 forDetailsForVisualSection:(int)arg3;
-- (int)imageDeliveryMode;
-- (struct CGSize { float x1; float x2; })imageRequestItemSize;
-- (id)initWithZoomLevel:(unsigned int)arg1 zoomLevelManager:(id)arg2 baseZoomLevelInfo:(id)arg3;
-- (int)maxRowsPerSection;
+- (void)getPhotosDataSource:(id*)arg1 displayTitleInfo:(id*)arg2 forDetailsForVisualSection:(long long)arg3;
+- (long long)imageDeliveryMode;
+- (struct CGSize { double x1; double x2; })imageRequestItemSize;
+- (id)initWithZoomLevel:(unsigned long long)arg1 zoomLevelManager:(id)arg2 baseZoomLevelInfo:(id)arg3;
+- (long long)maxRowsPerSection;
 - (void)modelDidChange:(id)arg1;
 - (id)momentsInCollectionList:(id)arg1;
 - (id)newCollectionViewLayout;
-- (int)numberOfVisualSectionsForSectionedGridLayout:(id)arg1;
+- (long long)numberOfVisualSectionsForSectionedGridLayout:(id)arg1;
 - (id)renderedStripsElementKind;
 - (id)sectionHeaderElementKind;
-- (id)sectionedGridLayout:(id)arg1 sectionsForVisualSection:(int)arg2;
-- (BOOL)supportsIncrementalChangeNotifications;
-- (struct CGSize { float x1; float x2; })thumbnailImageSize;
-- (void)updateLayoutMetricsForWidth:(float)arg1;
+- (double)sectionedGridLayout:(id)arg1 accessibilitySectionHeaderHeightForVisualSection:(long long)arg2;
+- (double)sectionedGridLayout:(id)arg1 sectionHeaderHeightForVisualSection:(long long)arg2;
+- (id)sectionedGridLayout:(id)arg1 sectionsForVisualSection:(long long)arg2;
+- (bool)supportsIncrementalChangeNotifications;
+- (struct CGSize { double x1; double x2; })thumbnailImageSize;
+- (void)updateLayoutMetricsForWidth:(double)arg1 safeAreaInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 - (void)willShowMagnifiedViewController:(id)arg1;
 
 @end

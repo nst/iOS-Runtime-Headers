@@ -12,12 +12,10 @@
 @property (nonatomic, retain) _INPBDouble *chargePercentRemaining;
 @property (nonatomic, retain) _INPBDistance *distanceRemaining;
 @property (nonatomic, retain) _INPBDouble *fuelPercentRemaining;
-@property (nonatomic, readonly) BOOL hasChargePercentRemaining;
-@property (nonatomic, readonly) BOOL hasDistanceRemaining;
-@property (nonatomic, readonly) BOOL hasFuelPercentRemaining;
+@property (nonatomic, readonly) bool hasChargePercentRemaining;
+@property (nonatomic, readonly) bool hasDistanceRemaining;
+@property (nonatomic, readonly) bool hasFuelPercentRemaining;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -28,23 +26,17 @@
 - (id)dictionaryRepresentation;
 - (id)distanceRemaining;
 - (id)fuelPercentRemaining;
-- (BOOL)hasChargePercentRemaining;
-- (BOOL)hasDistanceRemaining;
-- (BOOL)hasFuelPercentRemaining;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasChargePercentRemaining;
+- (bool)hasDistanceRemaining;
+- (bool)hasFuelPercentRemaining;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setChargePercentRemaining:(id)arg1;
 - (void)setDistanceRemaining:(id)arg1;
 - (void)setFuelPercentRemaining:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

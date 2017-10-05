@@ -6,7 +6,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id)backwardsCompatibleTypeForType:(id)arg1;
@@ -15,14 +15,14 @@
 - (Class)exportOptionsControllerClass;
 - (id)exportableTypes;
 - (Class)exporterClassForType:(id)arg1 options:(id)arg2;
-- (Class)importerClassForType:(id)arg1;
+- (Class)importerClassForType:(id)arg1 path:(id)arg2;
 - (id)indexXmlFilename;
-- (BOOL)isExportSupportedForType:(id)arg1 documentRoot:(id)arg2;
-- (BOOL)isSageDocumentType:(id)arg1;
-- (BOOL)isTCMessageExceptionErrorDomain:(id)arg1;
+- (bool)isExportSupportedForType:(id)arg1 exporterOptions:(id)arg2 documentRoot:(id)arg3;
+- (bool)isSageDocumentType:(id)arg1;
+- (bool)isTCMessageExceptionErrorDomain:(id)arg1;
 - (id)needNewerVersionIndexXmlContentString;
 - (id)nestedDocumentFilename;
-- (id)newExportableDocumentTypesForFlag:(unsigned int)arg1;
+- (id)newExportableDocumentTypesForFlag:(unsigned long long)arg1;
 - (id)unsupportedExportMessageStringForType:(id)arg1;
 
 @end

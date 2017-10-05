@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPBTLEResponse : NSObject {
+@interface HAPBTLEResponse : HMFObject {
     NSMutableData * __internalBody;
     NSData * _body;
-    unsigned int  _bodyLength;
-    BOOL  _headerComplete;
+    unsigned long long  _bodyLength;
+    bool  _headerComplete;
     HAPBTLETransactionIdentifier * _identifier;
     HAPBTLERequest * _request;
     unsigned char  _statusCode;
@@ -14,39 +14,39 @@
 
 @property (setter=_setInternalBody:, nonatomic, retain) NSMutableData *_internalBody;
 @property (nonatomic, copy) NSData *body;
-@property (getter=isBodyComplete, nonatomic, readonly) BOOL bodyComplete;
-@property (nonatomic, readonly) unsigned int bodyLength;
-@property (getter=isComplete, nonatomic, readonly) BOOL complete;
-@property (getter=isEncrypted, nonatomic, readonly) BOOL encrypted;
-@property (getter=isHeaderComplete, nonatomic) BOOL headerComplete;
+@property (getter=isBodyComplete, nonatomic, readonly) bool bodyComplete;
+@property (nonatomic, readonly) unsigned long long bodyLength;
+@property (getter=isComplete, nonatomic, readonly) bool complete;
+@property (getter=isEncrypted, nonatomic, readonly) bool encrypted;
+@property (getter=isHeaderComplete, nonatomic) bool headerComplete;
 @property (nonatomic, readonly) HAPBTLETransactionIdentifier *identifier;
 @property (nonatomic, readonly) HAPBTLERequest *request;
 @property (nonatomic, readonly) unsigned char statusCode;
-@property (getter=isValid, nonatomic, readonly) BOOL valid;
+@property (getter=isValid, nonatomic, readonly) bool valid;
 
 - (void).cxx_destruct;
-- (unsigned int)_deserializeHeaderBodyLengthWithData:(id)arg1 error:(id*)arg2;
-- (unsigned int)_deserializeHeaderWithData:(id)arg1 error:(id*)arg2;
+- (unsigned long long)_deserializeHeaderBodyLengthWithData:(id)arg1 error:(id*)arg2;
+- (unsigned long long)_deserializeHeaderWithData:(id)arg1 error:(id*)arg2;
 - (id)_internalBody;
-- (unsigned int)_remainingBodyLength;
+- (unsigned long long)_remainingBodyLength;
 - (void)_setInternalBody:(id)arg1;
-- (unsigned int)appendData:(id)arg1 error:(id*)arg2;
+- (unsigned long long)appendData:(id)arg1 error:(id*)arg2;
 - (id)body;
-- (unsigned int)bodyLength;
+- (unsigned long long)bodyLength;
 - (id)debugDescription;
 - (id)description;
-- (id)descriptionWithPointer:(BOOL)arg1;
+- (id)descriptionWithPointer:(bool)arg1;
 - (id)identifier;
 - (id)init;
 - (id)initWithRequest:(id)arg1;
-- (BOOL)isBodyComplete;
-- (BOOL)isComplete;
-- (BOOL)isEncrypted;
-- (BOOL)isHeaderComplete;
-- (BOOL)isValid;
+- (bool)isBodyComplete;
+- (bool)isComplete;
+- (bool)isEncrypted;
+- (bool)isHeaderComplete;
+- (bool)isValid;
 - (id)request;
 - (void)setBody:(id)arg1;
-- (void)setHeaderComplete:(BOOL)arg1;
+- (void)setHeaderComplete:(bool)arg1;
 - (id)shortDescription;
 - (unsigned char)statusCode;
 

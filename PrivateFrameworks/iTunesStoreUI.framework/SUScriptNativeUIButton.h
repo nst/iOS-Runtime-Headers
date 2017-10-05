@@ -10,13 +10,13 @@
 - (void)destroyNativeObject;
 - (void)disconnectButtonAction;
 - (id)image;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })imageInsets;
 - (void)setImage:(id)arg1;
-- (void)setImageInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setTag:(int)arg1;
+- (void)setImageInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setTag:(long long)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setupNativeObject;
-- (int)tag;
+- (long long)tag;
 - (id)title;
 
 @end

@@ -3,20 +3,20 @@
  */
 
 @interface _WKUserContentFilter : NSObject <WKObject> {
-    struct ObjectStorage<API::UserContentExtension> { 
-        struct type { 
-            unsigned char __lx[16]; 
-        } data; 
-    }  _userContentExtension;
+    struct RetainPtr<WKContentRuleList> { 
+        void *m_ptr; 
+    }  _contentRuleList;
 }
 
 @property (readonly) /* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*_apiObject;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (/* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*)_apiObject;
-- (void)dealloc;
+- (id)_initWithWKContentRuleList:(id)arg1;
 
 @end

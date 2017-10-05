@@ -13,9 +13,9 @@
 }
 
 @property (nonatomic) unsigned int deliveryPathType;
-@property (nonatomic) BOOL hasDeliveryPathType;
-@property (nonatomic, readonly) BOOL hasService;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasDeliveryPathType;
+@property (nonatomic, readonly) bool hasService;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic, retain) NSString *service;
 @property (nonatomic) unsigned long long timestamp;
 
@@ -25,17 +25,17 @@
 - (unsigned int)deliveryPathType;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDeliveryPathType;
-- (BOOL)hasService;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDeliveryPathType;
+- (bool)hasService;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)service;
 - (void)setDeliveryPathType:(unsigned int)arg1;
-- (void)setHasDeliveryPathType:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasDeliveryPathType:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setService:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;

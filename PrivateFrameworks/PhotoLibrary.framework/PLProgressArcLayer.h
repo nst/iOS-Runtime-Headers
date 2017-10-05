@@ -3,26 +3,26 @@
  */
 
 @interface PLProgressArcLayer : CALayer {
-    float  _endAngle;
-    float  _lineWidth;
-    float  _radius;
-    float  _startAngle;
+    double  _endAngle;
+    double  _lineWidth;
+    double  _radius;
+    double  _startAngle;
 }
 
-@property (nonatomic) float endAngle;
-@property (nonatomic) float lineWidth;
-@property (nonatomic) float radius;
-@property (nonatomic) float startAngle;
+@property (nonatomic) double endAngle;
+@property (nonatomic) double lineWidth;
+@property (nonatomic) double radius;
+@property (nonatomic) double startAngle;
 
 - (void)drawInContext:(struct CGContext { }*)arg1;
-- (float)endAngle;
+- (double)endAngle;
 - (id)init;
-- (float)lineWidth;
-- (float)radius;
-- (void)setEndAngle:(float)arg1;
-- (void)setLineWidth:(float)arg1;
-- (void)setRadius:(float)arg1;
-- (void)setStartAngle:(float)arg1;
-- (float)startAngle;
+- (double)lineWidth;
+- (double)radius;
+- (void)setEndAngle:(double)arg1;
+- (void)setLineWidth:(double)arg1;
+- (void)setRadius:(double)arg1;
+- (void)setStartAngle:(double)arg1;
+- (double)startAngle;
 
 @end

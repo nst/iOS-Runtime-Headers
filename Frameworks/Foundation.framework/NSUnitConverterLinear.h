@@ -10,7 +10,7 @@
 @property (readonly) double coefficient;
 @property (readonly) double constant;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (double)baseUnitValueFromValue:(double)arg1;
 - (double)coefficient;
@@ -20,7 +20,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCoefficient:(double)arg1;
 - (id)initWithCoefficient:(double)arg1 constant:(double)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (double)valueFromBaseUnitValue:(double)arg1;
 
 @end

@@ -4,28 +4,28 @@
 
 @interface _TVModalPageBezelViewController : UIViewController {
     UIColor * _bezelBackgroundColor;
-    float  _bezelCornerRadius;
+    double  _bezelCornerRadius;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _contentSize;
     UIViewController * _contentViewController;
 }
 
 @property (nonatomic, retain) UIColor *bezelBackgroundColor;
-@property (nonatomic) float bezelCornerRadius;
-@property (nonatomic) struct CGSize { float x1; float x2; } contentSize;
+@property (nonatomic) double bezelCornerRadius;
+@property (nonatomic) struct CGSize { double x1; double x2; } contentSize;
 @property (nonatomic, retain) UIViewController *contentViewController;
 
 - (void).cxx_destruct;
 - (id)bezelBackgroundColor;
-- (float)bezelCornerRadius;
-- (struct CGSize { float x1; float x2; })contentSize;
+- (double)bezelCornerRadius;
+- (struct CGSize { double x1; double x2; })contentSize;
 - (id)contentViewController;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)setBezelBackgroundColor:(id)arg1;
-- (void)setBezelCornerRadius:(float)arg1;
-- (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setBezelCornerRadius:(double)arg1;
+- (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setContentViewController:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

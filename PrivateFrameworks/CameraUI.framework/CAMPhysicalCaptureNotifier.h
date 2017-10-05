@@ -3,37 +3,37 @@
  */
 
 @interface CAMPhysicalCaptureNotifier : NSObject {
-    int  __volumeDownButtonState;
-    int  __volumeUpButtonState;
+    long long  __volumeDownButtonState;
+    long long  __volumeUpButtonState;
     <CAMPhysicalCaptureNotifierDelegate> * _delegate;
-    BOOL  _enabled;
-    int  _state;
+    bool  _enabled;
+    long long  _state;
 }
 
-@property (setter=_setVolumeDownButtonState:, nonatomic) int _volumeDownButtonState;
-@property (setter=_setVolumeUpButtonState:, nonatomic) int _volumeUpButtonState;
+@property (setter=_setVolumeDownButtonState:, nonatomic) long long _volumeDownButtonState;
+@property (setter=_setVolumeUpButtonState:, nonatomic) long long _volumeUpButtonState;
 @property (nonatomic) <CAMPhysicalCaptureNotifierDelegate> *delegate;
-@property (getter=isEnabled, nonatomic) BOOL enabled;
-@property (setter=_setState:, nonatomic) int state;
+@property (getter=isEnabled, nonatomic) bool enabled;
+@property (setter=_setState:, nonatomic) long long state;
 
 - (void).cxx_destruct;
 - (void)_handleVolumeDownButtonDownNotification:(id)arg1;
 - (void)_handleVolumeDownButtonUpNotification:(id)arg1;
 - (void)_handleVolumeUpButtonDownNotification:(id)arg1;
 - (void)_handleVolumeUpButtonUpNotification:(id)arg1;
-- (void)_setState:(int)arg1;
-- (void)_setVolumeDownButtonState:(int)arg1;
-- (void)_setVolumeUpButtonState:(int)arg1;
+- (void)_setState:(long long)arg1;
+- (void)_setVolumeDownButtonState:(long long)arg1;
+- (void)_setVolumeUpButtonState:(long long)arg1;
 - (void)_updateCaptureButtonNotifications;
 - (void)_updateStateAndNotifyDelegateIfNeeded;
-- (int)_volumeDownButtonState;
-- (int)_volumeUpButtonState;
+- (long long)_volumeDownButtonState;
+- (long long)_volumeUpButtonState;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (void)setDelegate:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (int)state;
+- (void)setEnabled:(bool)arg1;
+- (long long)state;
 
 @end

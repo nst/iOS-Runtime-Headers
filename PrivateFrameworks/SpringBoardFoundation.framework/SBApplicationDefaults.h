@@ -5,11 +5,11 @@
 @interface SBApplicationDefaults : SBAbstractSpringBoardDefaultDomain
 
 @property (nonatomic, readonly) double backgroundMultitaskingWatchdogTimeout;
-@property (nonatomic, readonly) BOOL forcesMedusaAdoption;
-@property (nonatomic, readonly) BOOL ignoresDeclaredNetworkUsage;
-@property (nonatomic, readonly) BOOL shouldAllowScreenshotsInLoginWindow;
-@property (nonatomic, readonly) BOOL shouldShowInternalApplications;
-@property (nonatomic, readonly) BOOL shouldShowNonDefaultSystemApplications;
+@property (nonatomic, readonly) bool forcesMedusaAdoption;
+@property (nonatomic, readonly) bool ignoresDeclaredNetworkUsage;
+@property (nonatomic, readonly) bool shouldAllowScreenshotsInLoginWindow;
+@property (nonatomic, readonly) bool shouldShowInternalApplications;
+@property (nonatomic, readonly) bool shouldShowNonDefaultSystemApplications;
 
 - (void)_bindAndRegisterDefaults;
 

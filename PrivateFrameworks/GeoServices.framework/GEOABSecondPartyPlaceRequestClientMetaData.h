@@ -11,34 +11,34 @@
 
 @property (nonatomic, retain) NSMutableArray *clientConfigs;
 @property (nonatomic, retain) GEOPDABClientDatasetMetadata *clientDatasetMetadata;
-@property (nonatomic, readonly) BOOL hasClientDatasetMetadata;
+@property (nonatomic, readonly) bool hasClientDatasetMetadata;
 @property (nonatomic, retain) NSMutableArray *serverAbAssignments;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)clientConfigType;
 + (Class)serverAbAssignmentType;
 
+- (void).cxx_destruct;
 - (void)addClientConfig:(id)arg1;
 - (void)addServerAbAssignment:(id)arg1;
 - (void)clearClientConfigs;
 - (void)clearServerAbAssignments;
-- (id)clientConfigAtIndex:(unsigned int)arg1;
+- (id)clientConfigAtIndex:(unsigned long long)arg1;
 - (id)clientConfigs;
-- (unsigned int)clientConfigsCount;
+- (unsigned long long)clientConfigsCount;
 - (id)clientDatasetMetadata;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasClientDatasetMetadata;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasClientDatasetMetadata;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (id)serverAbAssignmentAtIndex:(unsigned int)arg1;
+- (bool)readFrom:(id)arg1;
+- (id)serverAbAssignmentAtIndex:(unsigned long long)arg1;
 - (id)serverAbAssignments;
-- (unsigned int)serverAbAssignmentsCount;
+- (unsigned long long)serverAbAssignmentsCount;
 - (void)setClientConfigs:(id)arg1;
 - (void)setClientDatasetMetadata:(id)arg1;
 - (void)setServerAbAssignments:(id)arg1;

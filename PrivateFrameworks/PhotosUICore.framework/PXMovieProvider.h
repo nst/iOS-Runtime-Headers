@@ -9,7 +9,7 @@
 }
 
 @property (nonatomic, readonly) PHAssetCollection *assetCollection;
-@property (nonatomic, readonly) BOOL canPlayMovie;
+@property (nonatomic, readonly) bool canPlayMovie;
 @property (nonatomic) <PXMovieProviderDelegate> *delegate;
 @property (nonatomic, readonly) PXDiagnosticsItemProvider *diagnosticsItemProvider;
 @property (nonatomic, readonly) PHAsset *keyAsset;
@@ -17,7 +17,7 @@
 
 - (void).cxx_destruct;
 - (id)assetCollection;
-- (BOOL)canPlayMovie;
+- (bool)canPlayMovie;
 - (id)delegate;
 - (id)diagnosticsItemProvider;
 - (id)init;
@@ -25,7 +25,7 @@
 - (id)initWithAssetCollection:(id)arg1 keyAsset:(id)arg2;
 - (id)keyAsset;
 - (id)movieViewController;
-- (BOOL)ppt_runTest:(id)arg1 options:(id)arg2;
+- (bool)ppt_runTest:(id)arg1 options:(id)arg2;
 - (void)setDelegate:(id)arg1;
 
 @end

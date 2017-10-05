@@ -6,20 +6,20 @@
     NSString * _identifier;
 }
 
-@property (nonatomic, readonly) BOOL hasIdentifier;
+@property (nonatomic, readonly) bool hasIdentifier;
 @property (nonatomic, retain) NSString *identifier;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIdentifier;
-- (unsigned int)hash;
+- (bool)hasIdentifier;
+- (unsigned long long)hash;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)writeTo:(id)arg1;
 

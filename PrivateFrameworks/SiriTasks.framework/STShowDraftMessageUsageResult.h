@@ -3,18 +3,18 @@
  */
 
 @interface STShowDraftMessageUsageResult : AFSiriTaskUsageResult {
-    int  _resultCode;
+    long long  _resultCode;
 }
 
-@property (nonatomic) int resultCode;
+@property (nonatomic) long long resultCode;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_resultDescription;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (int)resultCode;
-- (void)setResultCode:(int)arg1;
+- (long long)resultCode;
+- (void)setResultCode:(long long)arg1;
 
 @end

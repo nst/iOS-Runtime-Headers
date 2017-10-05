@@ -17,7 +17,7 @@
 @property unsigned int profile;
 
 - (void).cxx_destruct;
-- (id)computeDistanceToFaceprint:(id)arg1 withDistanceFunction:(int)arg2 error:(id*)arg3;
+- (id)computeDistanceToFaceprint:(id)arg1 withDistanceFunction:(long long)arg2 error:(id*)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (id)faceprint;
 - (id)faceprintInputPath;

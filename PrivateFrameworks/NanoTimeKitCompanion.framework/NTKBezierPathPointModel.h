@@ -12,9 +12,9 @@
 
 - (void).cxx_destruct;
 - (id)_buildHorizontalPercentageCache;
-- (struct CGPoint { float x1; float x2; })_computePointOnPathForHorizontalPercentage:(float)arg1;
+- (struct CGPoint { double x1; double x2; })_computePointOnPathForHorizontalPercentage:(double)arg1;
 - (id)initWithPath:(id)arg1;
 - (id)path;
-- (struct CGPoint { float x1; float x2; })pointOnPathForHorizontalPercentage:(float)arg1;
+- (struct CGPoint { double x1; double x2; })pointOnPathForHorizontalPercentage:(double)arg1;
 
 @end

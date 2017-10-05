@@ -3,19 +3,18 @@
  */
 
 @interface _NSXPCConnectionExpectedReplies : NSObject {
-    int  _lock;
-    NSObject<OS_dispatch_group> * _replyGroup;
+    struct _opaque_pthread_mutex_t { 
+        long long __sig; 
+        BOOL __opaque[56]; 
+    }  _lock;
     struct __CFDictionary { } * _replyTable;
     unsigned long long  _sequence;
 }
 
-- (void)addReplyCompletionBlockOnQueue:(id)arg1 block:(id /* block */)arg2;
 - (void)dealloc;
-- (void)decrementOutstandingReplyCount;
-- (void)incrementOutstandingReplyCount;
 - (id)init;
 - (id)progressForSequence:(unsigned long long)arg1;
-- (void)removeSequence:(unsigned long long)arg1;
-- (unsigned long long)sequenceWithProgress:(id)arg1;
+- (void)removeProgressSequence:(unsigned long long)arg1;
+- (unsigned long long)sequenceForProgress:(id)arg1;
 
 @end

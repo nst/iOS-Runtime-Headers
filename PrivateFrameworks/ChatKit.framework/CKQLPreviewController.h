@@ -3,28 +3,32 @@
  */
 
 @interface CKQLPreviewController : QLPreviewController <QLPreviewControllerDataSource> {
-    BOOL  _controllerWasDismissed;
+    bool  _controllerWasDismissed;
     NSArray * _previewItems;
+    bool  _suppressRefetchingCurrentHighQualityImage;
 }
 
-@property (nonatomic) BOOL controllerWasDismissed;
+@property (nonatomic) bool controllerWasDismissed;
 @property (nonatomic, copy) NSArray *previewItems;
+@property (nonatomic) bool suppressRefetchingCurrentHighQualityImage;
 
 - (void).cxx_destruct;
-- (BOOL)controllerWasDismissed;
+- (bool)controllerWasDismissed;
 - (id)currentPreviewItem;
-- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)dismissViewControllerAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (id)init;
 - (void)loadView;
-- (int)numberOfPreviewItemsInPreviewController:(id)arg1;
-- (int)preferredStatusBarStyle;
+- (long long)numberOfPreviewItemsInPreviewController:(id)arg1;
+- (long long)preferredStatusBarStyle;
 - (id)previewActions;
-- (id)previewController:(id)arg1 previewItemAtIndex:(int)arg2;
+- (id)previewController:(id)arg1 previewItemAtIndex:(long long)arg2;
 - (id)previewItems;
-- (void)setControllerWasDismissed:(BOOL)arg1;
+- (void)setControllerWasDismissed:(bool)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setPreviewItems:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)setSuppressRefetchingCurrentHighQualityImage:(bool)arg1;
+- (bool)suppressRefetchingCurrentHighQualityImage;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

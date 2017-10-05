@@ -9,7 +9,7 @@
 @property (nonatomic) <SiriUIProfileTemplateModel> *dataSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIImageView *imageView;
 @property (readonly) Class superclass;
 @property (nonatomic) <SiriUITemplatedView> *templatedSuperview;
@@ -18,7 +18,7 @@
 - (id)imageView;
 - (id)initWithDataSource:(id)arg1;
 - (void)layoutImage;
-- (int)layoutStyle;
+- (long long)layoutStyle;
 - (void)reloadData;
 - (void)setImageView:(id)arg1;
 

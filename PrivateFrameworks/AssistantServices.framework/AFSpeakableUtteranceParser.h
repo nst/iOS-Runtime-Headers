@@ -8,28 +8,28 @@
     NSMutableDictionary * _providers;
 }
 
-@property (nonatomic) BOOL handleTTSCodes;
-@property (nonatomic) BOOL handlesFunctions;
+@property (nonatomic) bool handleTTSCodes;
+@property (nonatomic) bool handlesFunctions;
 
 // Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
 
-+ (BOOL)_shouldAutomaticallyProvideFunctions;
++ (bool)_shouldAutomaticallyProvideFunctions;
 + (id)parseUserGeneratedMessage:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)_handleControlCodeAtIndex:(unsigned int)arg1 withBuffer:(struct { unsigned short x1[64]; struct __CFString {} *x2; unsigned short *x3; char *x4; struct { int x_5_1_1; int x_5_1_2; } x5; int x6; int x7; })arg2 totalLength:(unsigned int)arg3 consumedLength:(unsigned int*)arg4 hadEmpties:(BOOL*)arg5;
-- (id)_handleOptionalAtIndex:(unsigned int)arg1 withBuffer:(struct { unsigned short x1[64]; struct __CFString {} *x2; unsigned short *x3; char *x4; struct { int x_5_1_1; int x_5_1_2; } x5; int x6; int x7; })arg2 totalLength:(unsigned int)arg3 consumedLength:(unsigned int*)arg4;
-- (id)_handleProviderAtIndex:(unsigned int)arg1 withBuffer:(struct { unsigned short x1[64]; struct __CFString {} *x2; unsigned short *x3; char *x4; struct { int x_5_1_1; int x_5_1_2; } x5; int x6; int x7; })arg2 totalLength:(unsigned int)arg3 consumedLength:(unsigned int*)arg4;
-- (BOOL)handleTTSCodes;
-- (BOOL)handlesFunctions;
+- (id)_handleControlCodeAtIndex:(unsigned int)arg1 withBuffer:(struct { unsigned short x1[64]; struct __CFString {} *x2; unsigned short *x3; char *x4; struct { long long x_5_1_1; long long x_5_1_2; } x5; long long x6; long long x7; })arg2 totalLength:(unsigned long long)arg3 consumedLength:(unsigned int*)arg4 hadEmpties:(bool*)arg5;
+- (id)_handleOptionalAtIndex:(unsigned int)arg1 withBuffer:(struct { unsigned short x1[64]; struct __CFString {} *x2; unsigned short *x3; char *x4; struct { long long x_5_1_1; long long x_5_1_2; } x5; long long x6; long long x7; })arg2 totalLength:(unsigned long long)arg3 consumedLength:(unsigned int*)arg4;
+- (id)_handleProviderAtIndex:(unsigned int)arg1 withBuffer:(struct { unsigned short x1[64]; struct __CFString {} *x2; unsigned short *x3; char *x4; struct { long long x_5_1_1; long long x_5_1_2; } x5; long long x6; long long x7; })arg2 totalLength:(unsigned long long)arg3 consumedLength:(unsigned int*)arg4;
+- (bool)handleTTSCodes;
+- (bool)handlesFunctions;
 - (id)init;
 - (id)initWithLocale:(id)arg1;
 - (id)parseStringRemovingControlCharacters:(id)arg1 error:(id*)arg2;
 - (id)parseStringWithFormat:(id)arg1 error:(id*)arg2;
-- (id)parseStringWithFormat:(id)arg1 includeControlCharacters:(BOOL)arg2 error:(id*)arg3 hadEmpties:(BOOL*)arg4;
+- (id)parseStringWithFormat:(id)arg1 includeControlCharacters:(bool)arg2 error:(id*)arg3 hadEmpties:(bool*)arg4;
 - (void)registerProvider:(id)arg1 forNamespace:(id)arg2;
-- (void)setHandleTTSCodes:(BOOL)arg1;
-- (void)setHandlesFunctions:(BOOL)arg1;
+- (void)setHandleTTSCodes:(bool)arg1;
+- (void)setHandlesFunctions:(bool)arg1;
 
 // Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
 

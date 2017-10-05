@@ -8,14 +8,14 @@
     NSString * _identifier;
     double  _score;
     SGContact * _sgContact;
-    unsigned int  _source;
+    unsigned long long  _source;
 }
 
 @property (nonatomic, retain) CNContact *contact;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic) double score;
 @property (nonatomic, retain) SGContact *sgContact;
-@property (nonatomic) unsigned int source;
+@property (nonatomic) unsigned long long source;
 
 - (void).cxx_destruct;
 - (id)birthday;
@@ -26,6 +26,7 @@
 - (id)fullName;
 - (id)givenName;
 - (id)identifier;
+- (id)nickname;
 - (id)nonGregorianBirthday;
 - (id)organizationName;
 - (id)phoneNumbers;
@@ -35,9 +36,9 @@
 - (void)setIdentifier:(id)arg1;
 - (void)setScore:(double)arg1;
 - (void)setSgContact:(id)arg1;
-- (void)setSource:(unsigned int)arg1;
+- (void)setSource:(unsigned long long)arg1;
 - (id)sgContact;
 - (id)socialProfiles;
-- (unsigned int)source;
+- (unsigned long long)source;
 
 @end

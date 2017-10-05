@@ -5,7 +5,7 @@
 @interface UIWebViewInternal : NSObject {
     UIWebBrowserView * browserView;
     UICheckeredPatternView * checkeredPatternView;
-    int  clickedAlertButtonIndex;
+    long long  clickedAlertButtonIndex;
     <UIWebViewDelegate> * delegate;
     unsigned int  didRotateEnclosingScrollView;
     unsigned int  drawInWebThread;
@@ -15,6 +15,7 @@
     unsigned int  isLoading;
     UIWebPDFViewHandler * pdfHandler;
     NSURLRequest * request;
+    unsigned int  safeAreaShouldAffectObscuredInsets;
     unsigned int  scalesPageToFit;
     UIScrollView * scroller;
     unsigned int  webSelectionEnabled;

@@ -4,36 +4,35 @@
 
 @interface PXBarAppearance : PXObservable <PXChangeObserver, PXMutableBarAppearance> {
     PXBarAnimationOptions * __animationOptions;
-    BOOL  __hasViewAppeared;
+    bool  __hasViewAppeared;
     <PXBarAppearanceImplementationDelegate> * __implementationDelegate;
-    int  __preferredStatusBarUpdateAnimation;
-    BOOL  _enabled;
+    long long  __preferredStatusBarUpdateAnimation;
+    bool  _enabled;
     <PXBarAppearanceImplementationDelegate> * _implementationDelegate;
     struct { 
-        BOOL respondsToWillUpdateBarAppearanceOnViewWillAppear; 
-        BOOL respondsToIsStatusBarVisible; 
-        BOOL respondsToPerformBottomBarsMorphAnimationWithType; 
+        bool respondsToWillUpdateBarAppearanceOnViewWillAppear; 
+        bool respondsToIsStatusBarVisible; 
     }  _implementationDelegateFlags;
-    BOOL  _prefersNavigationBarVisible;
-    BOOL  _prefersStatusBarVisible;
-    BOOL  _prefersTabBarVisible;
-    BOOL  _prefersToolbarVisible;
+    bool  _prefersNavigationBarVisible;
+    bool  _prefersStatusBarVisible;
+    bool  _prefersTabBarVisible;
+    bool  _prefersToolbarVisible;
     UIViewController * _viewController;
 }
 
 @property (setter=_setAnimationOptions:, nonatomic, copy) PXBarAnimationOptions *_animationOptions;
-@property (setter=_setHasViewAppeared:, nonatomic) BOOL _hasViewAppeared;
+@property (setter=_setHasViewAppeared:, nonatomic) bool _hasViewAppeared;
 @property (setter=_setImplementationDelegate:, nonatomic) <PXBarAppearanceImplementationDelegate> *_implementationDelegate;
-@property (setter=_setPreferredStatusBarUpdateAnimation:, nonatomic) int _preferredStatusBarUpdateAnimation;
+@property (setter=_setPreferredStatusBarUpdateAnimation:, nonatomic) long long _preferredStatusBarUpdateAnimation;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isEnabled, nonatomic) BOOL enabled;
-@property (readonly) unsigned int hash;
+@property (getter=isEnabled, nonatomic) bool enabled;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) <PXBarAppearanceImplementationDelegate> *implementationDelegate;
-@property (nonatomic, readonly) BOOL prefersNavigationBarVisible;
-@property (nonatomic, readonly) BOOL prefersStatusBarVisible;
-@property (nonatomic, readonly) BOOL prefersTabBarVisible;
-@property (nonatomic, readonly) BOOL prefersToolbarVisible;
+@property (nonatomic, readonly) bool prefersNavigationBarVisible;
+@property (nonatomic, readonly) bool prefersStatusBarVisible;
+@property (nonatomic, readonly) bool prefersTabBarVisible;
+@property (nonatomic, readonly) bool prefersToolbarVisible;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIViewController *viewController;
 
@@ -41,44 +40,44 @@
 
 - (void).cxx_destruct;
 - (id)_animationOptions;
-- (BOOL)_hasViewAppeared;
+- (bool)_hasViewAppeared;
 - (id)_implementationDelegate;
-- (int)_preferredStatusBarUpdateAnimation;
+- (long long)_preferredStatusBarUpdateAnimation;
 - (void)_setAnimationOptions:(id)arg1;
-- (void)_setHasViewAppeared:(BOOL)arg1;
+- (void)_setHasViewAppeared:(bool)arg1;
 - (void)_setImplementationDelegate:(id)arg1;
-- (void)_setNavigationBarVisible:(BOOL)arg1 withAnimationOptions:(id)arg2;
-- (void)_setPreferredStatusBarUpdateAnimation:(int)arg1;
-- (void)_setTabBarVisible:(BOOL)arg1 withAnimationOptions:(id)arg2;
-- (void)_setToolbarVisible:(BOOL)arg1 withAnimationOptions:(id)arg2;
+- (void)_setNavigationBarVisible:(bool)arg1 withAnimationOptions:(id)arg2;
+- (void)_setPreferredStatusBarUpdateAnimation:(long long)arg1;
+- (void)_setTabBarVisible:(bool)arg1 withAnimationOptions:(id)arg2;
+- (void)_setToolbarVisible:(bool)arg1 withAnimationOptions:(id)arg2;
 - (void)_update;
 - (void)_updateImplementationDelegate;
-- (void)_updateOnViewWillAppear:(BOOL)arg1;
+- (void)_updateOnViewWillAppear:(bool)arg1;
 - (void)_updateStatusBarVisibilityWithAnimationOptions:(id)arg1;
-- (void)_updateWithAnimationOptions:(id)arg1 isStatusBarHidden:(BOOL)arg2;
-- (int)adjustedPreferredStatusBarUpdateAnimation:(int)arg1;
-- (BOOL)adjustedPrefersStatusBarHidden:(BOOL)arg1;
+- (void)_updateWithAnimationOptions:(id)arg1 isStatusBarHidden:(bool)arg2;
+- (long long)adjustedPreferredStatusBarUpdateAnimation:(long long)arg1;
+- (bool)adjustedPrefersStatusBarHidden:(bool)arg1;
 - (id)implementationDelegate;
 - (id)init;
 - (id)initWithViewController:(id)arg1;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (id)mutableChangeObject;
-- (void)observable:(id)arg1 didChange:(unsigned int)arg2 context:(void*)arg3;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
 - (void)performChanges:(id /* block */)arg1;
 - (void)performChangesWithAnimationOptions:(id)arg1 changes:(id /* block */)arg2;
-- (BOOL)prefersNavigationBarVisible;
-- (BOOL)prefersStatusBarVisible;
-- (BOOL)prefersTabBarVisible;
-- (BOOL)prefersToolbarVisible;
-- (void)setEnabled:(BOOL)arg1;
+- (bool)prefersNavigationBarVisible;
+- (bool)prefersStatusBarVisible;
+- (bool)prefersTabBarVisible;
+- (bool)prefersToolbarVisible;
+- (void)setEnabled:(bool)arg1;
 - (void)setImplementationDelegate:(id)arg1;
-- (void)setPrefersNavigationBarVisible:(BOOL)arg1;
-- (void)setPrefersStatusBarVisible:(BOOL)arg1;
-- (void)setPrefersTabBarVisible:(BOOL)arg1;
-- (void)setPrefersToolbarVisible:(BOOL)arg1;
+- (void)setPrefersNavigationBarVisible:(bool)arg1;
+- (void)setPrefersStatusBarVisible:(bool)arg1;
+- (void)setPrefersTabBarVisible:(bool)arg1;
+- (void)setPrefersToolbarVisible:(bool)arg1;
 - (id)viewController;
-- (void)viewControllerViewDidDisappear:(BOOL)arg1;
-- (void)viewControllerViewWillAppear:(BOOL)arg1;
+- (void)viewControllerViewDidDisappear:(bool)arg1;
+- (void)viewControllerViewWillAppear:(bool)arg1;
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 

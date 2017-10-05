@@ -4,19 +4,19 @@
 
 @interface CKBalloonChatItem : CKChatItem
 
-@property (nonatomic, readonly) unsigned int balloonCorners;
+@property (nonatomic, readonly) unsigned long long balloonCorners;
 @property (nonatomic, readonly) BOOL balloonOrientation;
 @property (nonatomic, readonly) BOOL balloonShape;
 @property (nonatomic, readonly) Class balloonViewClass;
-@property (nonatomic, readonly) BOOL failed;
-@property (getter=isFromMe, nonatomic, readonly) BOOL fromMe;
+@property (nonatomic, readonly) bool failed;
+@property (getter=isFromMe, nonatomic, readonly) bool fromMe;
 @property (nonatomic, readonly) Class impactBalloonViewClass;
 @property (nonatomic, readonly) IMHandle *sender;
 @property (nonatomic, readonly) BOOL tailShape;
 @property (nonatomic, readonly) NSDate *time;
 
-- (unsigned int)balloonCorners;
-- (struct CKBalloonDescriptor_t { BOOL x1; BOOL x2; BOOL x3; BOOL x4; unsigned int x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; })balloonDescriptor;
+- (unsigned long long)balloonCorners;
+- (struct CKBalloonDescriptor_t { BOOL x1; BOOL x2; BOOL x3; BOOL x4; unsigned long long x5; BOOL x6; bool x7; bool x8; bool x9; })balloonDescriptor;
 - (BOOL)balloonOrientation;
 - (BOOL)balloonShape;
 - (Class)balloonViewClass;
@@ -24,22 +24,22 @@
 - (id)cellIdentifier;
 - (void)configureBalloonView:(id)arg1;
 - (id)contact;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (id)description;
-- (BOOL)displayDuringSend;
-- (BOOL)failed;
+- (bool)displayDuringSend;
+- (bool)failed;
 - (Class)impactBalloonViewClass;
-- (BOOL)isEditable;
-- (BOOL)isFromMe;
-- (struct CGSize { float x1; float x2; })loadSizeThatFits:(struct CGSize { float x1; float x2; })arg1 textAlignmentInsets:(out struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2;
+- (bool)isEditable;
+- (bool)isFromMe;
+- (struct CGSize { double x1; double x2; })loadSizeThatFits:(struct CGSize { double x1; double x2; })arg1 textAlignmentInsets:(out struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2;
 - (id)loadTranscriptDrawerText;
-- (BOOL)needsAdjustedTextAlignmentInsets;
-- (BOOL)needsPreservedAspectRatio;
+- (bool)needsAdjustedTextAlignmentInsets;
+- (bool)needsPreservedAspectRatio;
 - (id)sender;
 - (BOOL)tailShape;
 - (id)time;
 - (BOOL)transcriptOrientation;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })transcriptTextAlignmentInsets;
-- (BOOL)wantsDrawerLayout;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })transcriptTextAlignmentInsets;
+- (bool)wantsDrawerLayout;
 
 @end

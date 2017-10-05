@@ -15,13 +15,13 @@
 + (id)defaultManager;
 
 - (void).cxx_destruct;
-- (BOOL)_allowedToDeleteItemAtURL:(id)arg1;
+- (bool)_allowedToDeleteItemAtURL:(id)arg1;
 - (id)_fileManagementQueue;
 - (id)_fileManager;
-- (BOOL)_removeItemAtURL:(id)arg1 error:(id*)arg2 stackshot:(id)arg3;
+- (bool)_removeItemAtURL:(id)arg1 error:(id*)arg2 stackshot:(id)arg3;
 - (id)_safePathURL;
 - (id)initWithFileManager:(id)arg1;
 - (void)removeItemAtURL:(id)arg1 completion:(id /* block */)arg2;
-- (BOOL)removeItemAtURL:(id)arg1 error:(id*)arg2;
+- (bool)removeItemAtURL:(id)arg1 error:(id*)arg2;
 
 @end

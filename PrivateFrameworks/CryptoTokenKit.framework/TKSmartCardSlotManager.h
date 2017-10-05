@@ -17,6 +17,7 @@
 - (void)getSlotWithName:(id)arg1 reply:(id /* block */)arg2;
 - (id)init;
 - (void)setSlotWithName:(id)arg1 endpoint:(id)arg2 type:(id)arg3 reply:(id /* block */)arg4;
+- (id)slotNamed:(id)arg1;
 - (id)slotNames;
 
 @end

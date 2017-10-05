@@ -4,9 +4,9 @@
 
 @interface OADLinearShade : OADShade {
     float  mAngle;
-    BOOL  mIsAngleOverridden;
-    BOOL  mIsScaledOverridden;
-    BOOL  mScaled;
+    bool  mIsAngleOverridden;
+    bool  mIsScaledOverridden;
+    bool  mScaled;
 }
 
 + (id)defaultProperties;
@@ -14,15 +14,15 @@
 - (float)angle;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithDefaults;
-- (BOOL)isAngleOverridden;
-- (BOOL)isAnythingOverridden;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isScaledOverridden;
+- (bool)isAngleOverridden;
+- (bool)isAnythingOverridden;
+- (bool)isEqual:(id)arg1;
+- (bool)isScaledOverridden;
 - (void)removeUnnecessaryOverrides;
-- (BOOL)scaled;
+- (bool)scaled;
 - (void)setAngle:(float)arg1;
-- (void)setScaled:(BOOL)arg1;
+- (void)setScaled:(bool)arg1;
 
 @end

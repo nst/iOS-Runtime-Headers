@@ -7,18 +7,22 @@
 
 - (int)brailleInputMode;
 - (NSArray *)getInputEvents;
-- (unsigned int)interfaceVersion;
-- (BOOL)isDriverLoaded;
-- (BOOL)isInputEnabled;
-- (BOOL)isSleeping;
+- (unsigned long long)interfaceVersion;
+- (bool)isDriverLoaded;
+- (bool)isInputEnabled;
+- (bool)isSleeping;
 - (int)loadDriverWithIOElement:(id <SCROIOElementProtocol>)arg1;
-- (int)mainSize;
+- (long long)mainSize;
 - (NSString *)modelIdentifier;
-- (BOOL)postsKeyboardEvents;
-- (BOOL)setMainCells:(const char *)arg1 length:(int)arg2;
-- (BOOL)setStatusCells:(const char *)arg1 length:(int)arg2;
-- (int)statusSize;
-- (BOOL)supportsBlinkingCursor;
-- (BOOL)unloadDriver;
+- (bool)postsKeyboardEvents;
+- (bool)setMainCells:(const char *)arg1 length:(long long)arg2;
+- (bool)setStatusCells:(const char *)arg1 length:(long long)arg2;
+- (long long)statusSize;
+- (bool)supportsBlinkingCursor;
+- (bool)unloadDriver;
+
+@optional
+
+- (void)setBrailleDriverDelegate:(id <SCROBrailleDriverDelegate>)arg1;
 
 @end

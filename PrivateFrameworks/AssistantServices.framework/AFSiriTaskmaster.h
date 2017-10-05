@@ -13,7 +13,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <AFSiriTaskmasterDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)taskmasterForMachServiceForAppWithBundleIdentifier:(id)arg1;
@@ -29,7 +29,7 @@
 - (void)handleSiriRequest:(id)arg1 deliveryHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
 - (void)handleSiriTaskUsageResult:(id)arg1 fromRequest:(id)arg2;
 - (id)initWithTaskDeliverer:(id)arg1;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)setDelegate:(id)arg1;
 
 @end

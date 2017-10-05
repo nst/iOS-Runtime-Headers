@@ -5,30 +5,30 @@
 @interface ChartIntervalButtonRow : UIView {
     <ChartIntervalButtonRowDelegate> * _delegate;
     NSArray * _intervalButtons;
-    int  _maxChartInterval;
+    long long  _maxChartInterval;
     ChartIntervalButton * _selectedButton;
 }
 
 @property (nonatomic) <ChartIntervalButtonRowDelegate> *delegate;
 @property (nonatomic, retain) NSArray *intervalButtons;
-@property (nonatomic) int maxChartInterval;
+@property (nonatomic) long long maxChartInterval;
 @property (nonatomic) ChartIntervalButton *selectedButton;
 
 - (void).cxx_destruct;
 - (id)delegate;
-- (id)initWithMaxChartInterval:(int)arg1 chartIntervalButtonRowDelegate:(id)arg2;
+- (id)initWithMaxChartInterval:(long long)arg1 chartIntervalButtonRowDelegate:(id)arg2;
 - (id)intervalButtons;
 - (void)intervalButtonsTapped:(id)arg1;
-- (int)intervalForTouchLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (long long)intervalForTouchLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)layoutSubviews;
-- (int)maxChartInterval;
-- (void)selectChartIntervalButtonForInterval:(int)arg1;
+- (long long)maxChartInterval;
+- (void)selectChartIntervalButtonForInterval:(long long)arg1;
 - (id)selectedButton;
 - (void)setDelegate:(id)arg1;
 - (void)setIntervalButtons:(id)arg1;
-- (void)setMaxChartInterval:(int)arg1;
+- (void)setMaxChartInterval:(long long)arg1;
 - (void)setSelectedButton:(id)arg1;
 - (void)sizeToBoldLabels;
-- (void)updateMaxChartInterval:(int)arg1;
+- (void)updateMaxChartInterval:(long long)arg1;
 
 @end

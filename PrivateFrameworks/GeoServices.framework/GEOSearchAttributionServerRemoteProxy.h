@@ -6,17 +6,18 @@
     GEOSearchAttributionManifest * _attributionManifest;
     NSLock * _attributionManifestLock;
     int  _attributionManifestUpdatedToken;
+    NSObject<OS_dispatch_queue> * _attributionQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)_attributionManifest;
-- (void)_loadAttributionInfoForIdentifier:(id)arg1 version:(unsigned int)arg2 completionHandler:(id /* block */)arg3 errorHandler:(id /* block */)arg4;
-- (void)dealloc;
+- (void)_loadAttributionInfoForIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)init;
-- (void)loadAttributionInfoForIdentifier:(id)arg1 version:(unsigned int)arg2 completionHandler:(id /* block */)arg3 errorHandler:(id /* block */)arg4;
+- (void)loadAttributionInfoForIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface PTLegibleTextAssistantSettingsForDarkText : PTLegibleTextAssistantSettings
 
-- (id)calculateForegroundColorWithImageStatistics:(struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; })arg1;
+- (id)calculateForegroundColorWithImageStatistics:(struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; })arg1;
 - (void)setDefaultValues;
 
 @end

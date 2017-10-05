@@ -3,22 +3,22 @@
  */
 
 @interface PXTileZoomAnimationOptions : NSObject <NSCopying> {
-    unsigned int  _flags;
-    BOOL  _shouldCrossfade;
-    int  _transformType;
+    unsigned long long  _flags;
+    bool  _shouldCrossfade;
+    long long  _transformType;
 }
 
-@property (nonatomic) unsigned int flags;
-@property (nonatomic) BOOL shouldCrossfade;
-@property (nonatomic) int transformType;
+@property (nonatomic) unsigned long long flags;
+@property (nonatomic) bool shouldCrossfade;
+@property (nonatomic) long long transformType;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)flags;
+- (unsigned long long)flags;
 - (id)init;
-- (void)setFlags:(unsigned int)arg1;
-- (void)setShouldCrossfade:(BOOL)arg1;
-- (void)setTransformType:(int)arg1;
-- (BOOL)shouldCrossfade;
-- (int)transformType;
+- (void)setFlags:(unsigned long long)arg1;
+- (void)setShouldCrossfade:(bool)arg1;
+- (void)setTransformType:(long long)arg1;
+- (bool)shouldCrossfade;
+- (long long)transformType;
 
 @end

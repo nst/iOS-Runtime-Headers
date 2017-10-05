@@ -16,19 +16,22 @@
 
 + (id)pluginWithBundleIdentifier:(id)arg1;
 
+- (unsigned int)audioDeviceObjectIDWithUID:(id)arg1;
 - (id)audioDeviceObjectIDs;
+- (id)audioDeviceWithUID:(id)arg1;
 - (id)audioDevices;
+- (unsigned int)boxObjectIDWithUID:(id)arg1;
 - (id)boxObjectIDs;
-- (unsigned long)boxWithUID:(id)arg1;
+- (id)boxWithUID:(id)arg1;
 - (id)boxes;
 - (id)bundleID;
+- (unsigned int)clockDeviceObjectIDWithUID:(id)arg1;
 - (id)clockDeviceObjectIDs;
-- (unsigned long)clockDeviceWithUID:(id)arg1;
+- (id)clockDeviceWithUID:(id)arg1;
 - (id)clockDevices;
 - (id)coreAudioClassName;
 - (id)deviceObjectIDs;
-- (unsigned long)deviceWithUID:(id)arg1;
-- (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(BOOL)arg2;
+- (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(bool)arg2;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)manufacturer;
 - (id)resourceBundleURL;

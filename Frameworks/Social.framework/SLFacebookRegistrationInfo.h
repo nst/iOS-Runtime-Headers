@@ -26,7 +26,7 @@
 - (id)email;
 - (id)firstName;
 - (id)gender;
-- (BOOL)hasAllRequiredValues;
+- (bool)hasAllRequiredValues;
 - (id)lastName;
 - (id)password;
 - (id)phone;

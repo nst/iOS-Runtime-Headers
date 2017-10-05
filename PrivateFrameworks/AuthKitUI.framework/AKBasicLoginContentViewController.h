@@ -8,5 +8,6 @@
 
 - (id)contentContainerView;
 - (void)loadView;
+- (void)viewWillLayoutSubviews;
 
 @end

@@ -6,27 +6,27 @@
 @required
 
 - (double)altitude;
-- (BOOL)canZoomInForTileSize:(int)arg1;
-- (BOOL)canZoomOutForTileSize:(int)arg1;
+- (bool)canZoomInForTileSize:(long long)arg1;
+- (bool)canZoomOutForTileSize:(long long)arg1;
 - (struct { double x1; double x2; })centerCoordinate;
-- (double)currentZoomLevelForTileSize:(int)arg1;
+- (double)currentZoomLevelForTileSize:(long long)arg1;
 - (double)distanceFromCenterCoordinate;
 - (double)heading;
-- (BOOL)isFullyPitched;
-- (BOOL)isPitched;
-- (BOOL)isRotated;
+- (bool)isFullyPitched;
+- (bool)isPitched;
+- (bool)isRotated;
 - (GEOMapRegion *)mapRegion;
 - (double)maxPitch;
-- (double)maximumZoomLevelForTileSize:(int)arg1;
-- (double)minimumZoomLevelForTileSize:(int)arg1;
+- (double)maximumZoomLevelForTileSize:(long long)arg1;
+- (double)minimumZoomLevelForTileSize:(long long)arg1;
 - (double)pitch;
-- (BOOL)restoreViewportFromInfo:(VKViewportInfo *)arg1;
+- (bool)restoreViewportFromInfo:(VKViewportInfo *)arg1;
 - (void)setCenterCoordinate:(struct { double x1; double x2; })arg1;
 - (void)setDistanceFromCenterCoordinate:(double)arg1;
 - (void)setHeading:(double)arg1;
 - (void)setPitch:(double)arg1;
-- (double)topDownMinimumZoomLevelForTileSize:(int)arg1;
+- (double)topDownMinimumZoomLevelForTileSize:(long long)arg1;
 - (VKViewportInfo *)viewportInfo;
-- (double)zoomLevelAdjustmentForTileSize:(int)arg1;
+- (double)zoomLevelAdjustmentForTileSize:(long long)arg1;
 
 @end

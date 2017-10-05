@@ -18,7 +18,7 @@
 - (id)TC;
 - (id)description;
 - (id)initWithProtocol:(id)arg1;
-- (id)parseWithY:(char *)arg1 toProtocol:(id*)arg2 fromSource:(id /* block */)arg3 hasNext:(BOOL*)arg4;
+- (id)parseWithY:(char *)arg1 toProtocol:(id*)arg2 fromSource:(id /* block */)arg3 hasNext:(bool*)arg4;
 - (id)protocol;
 
 @end

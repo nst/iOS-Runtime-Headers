@@ -4,13 +4,14 @@
 
 @interface SKPaymentInternal : NSObject <NSCopying> {
     NSString * _applicationUsername;
+    bool  _isStoreOriginated;
     NSString * _partnerIdentifier;
     NSString * _partnerTransactionIdentifier;
     NSString * _productIdentifier;
-    int  _quantity;
+    long long  _quantity;
     NSData * _requestData;
     NSDictionary * _requestParameters;
-    BOOL  _simulatesAskToBuyInSandbox;
+    bool  _simulatesAskToBuyInSandbox;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

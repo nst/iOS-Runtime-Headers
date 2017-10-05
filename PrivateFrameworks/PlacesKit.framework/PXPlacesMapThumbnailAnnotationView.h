@@ -8,7 +8,7 @@
     id /* block */  _displayCompletion;
     PKExtendedTraitCollection * _extendedTraitCollection;
     id  _extendedTraitObserver;
-    int  _geotaggablesCount;
+    long long  _geotaggablesCount;
     PXPlacesImageCache * _imageCache;
 }
 
@@ -19,7 +19,7 @@
 @property (nonatomic, copy) id /* block */ displayCompletion;
 @property (nonatomic, retain) PKExtendedTraitCollection *extendedTraitCollection;
 @property (nonatomic, retain) id extendedTraitObserver;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PXPlacesImageCache *imageCache;
 @property (readonly) Class superclass;
 
@@ -28,13 +28,13 @@
 
 - (void).cxx_destruct;
 - (id)_countLabelBackgroundColor;
-- (void)_fetchImageWithNetworkAccessAllowed:(BOOL)arg1;
+- (void)_fetchImageWithNetworkAccessAllowed:(bool)arg1;
 - (void)_hideCountLabel;
-- (void)_processGeotaggable:(id)arg1 withImage:(struct CGImage { }*)arg2 popoverImageType:(unsigned int)arg3 shouldCache:(BOOL)arg4;
+- (void)_processGeotaggable:(id)arg1 withImage:(struct CGImage { }*)arg2 popoverImageType:(unsigned long long)arg3 shouldCache:(bool)arg4;
 - (void)_processPlaceHolderForGeotaggable:(id)arg1;
 - (void)_processPostImage;
-- (void)_reloadCount:(int)arg1;
-- (void)_reloadData:(BOOL)arg1;
+- (void)_reloadCount:(long long)arg1;
+- (void)_reloadData:(bool)arg1;
 - (void)_showCountLabel;
 - (id)countLabel;
 - (id)countLabelBackgroundImageView;

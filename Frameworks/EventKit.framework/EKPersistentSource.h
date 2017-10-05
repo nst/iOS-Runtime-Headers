@@ -2,52 +2,53 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@interface EKPersistentSource : EKPersistentObject {
-    CDBSourceConstraints * _constraints;
-}
+@interface EKPersistentSource : EKPersistentObject
 
 @property (nonatomic, retain) NSString *UUID;
+@property (nonatomic, readonly) NSString *UUID;
 @property (nonatomic, readonly) CDBSourceConstraints *constraints;
 @property (nonatomic, copy) NSNumber *defaultAlarmOffset;
-@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (nonatomic) bool disabled;
 @property (nonatomic, copy) NSString *externalID;
 @property (nonatomic, copy) NSString *externalModificationTag;
-@property (nonatomic) BOOL onlyCreatorCanModify;
+@property (nonatomic) bool onlyCreatorCanModify;
 @property (nonatomic) int preferredEventPrivateValue;
-@property (nonatomic) int sourceType;
+@property (nonatomic) long long sourceType;
 @property (nonatomic) int strictestEventPrivateValue;
 @property (nonatomic, copy) NSString *title;
 
-+ (int)_calEventPrivacyLevelToEKPrivacyLevel:(int)arg1;
-+ (int)_ekPrivacyLevelToCalEventPrivacyLevel:(int)arg1;
 + (id)defaultPropertiesToLoad;
 + (id)relations;
 
-- (void).cxx_destruct;
 - (id)UUID;
 - (id)constraints;
 - (id)defaultAlarmOffset;
 - (id)description;
+- (bool)disabled;
 - (int)entityType;
 - (id)externalID;
 - (id)externalModificationTag;
-- (id)init;
-- (BOOL)isEnabled;
-- (BOOL)onlyCreatorCanModify;
+- (int)flags;
+- (id)lastSyncEndDate;
+- (unsigned long long)lastSyncError;
+- (id)lastSyncStartDate;
+- (bool)onlyCreatorCanModify;
 - (int)preferredEventPrivateValue;
-- (BOOL)refresh;
-- (void)reset;
 - (void)setDefaultAlarmOffset:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setDisabled:(bool)arg1;
 - (void)setExternalID:(id)arg1;
 - (void)setExternalModificationTag:(id)arg1;
-- (void)setOnlyCreatorCanModify:(BOOL)arg1;
+- (void)setFlags:(int)arg1;
+- (void)setLastSyncEndDate:(id)arg1;
+- (void)setLastSyncError:(unsigned long long)arg1;
+- (void)setLastSyncStartDate:(id)arg1;
+- (void)setOnlyCreatorCanModify:(bool)arg1;
 - (void)setPreferredEventPrivateValue:(int)arg1;
-- (void)setSourceType:(int)arg1;
+- (void)setSourceType:(long long)arg1;
 - (void)setStrictestEventPrivateValue:(int)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUUID:(id)arg1;
-- (int)sourceType;
+- (long long)sourceType;
 - (int)strictestEventPrivateValue;
 - (id)title;
 

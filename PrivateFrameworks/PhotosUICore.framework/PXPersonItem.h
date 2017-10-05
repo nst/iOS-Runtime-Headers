@@ -8,9 +8,10 @@
     id /* block */  _faceImageLoadingCompletionBlock;
     int  _faceImageRequestID;
     id /* block */  _fastDisplayBlock;
-    id  _modelObject;
+    PHPerson * _modelObject;
     NSString * _name;
-    unsigned int  _photosCount;
+    NSNumber * _personTypeNumber;
+    unsigned long long  _photosCount;
 }
 
 @property (nonatomic, copy) NSString *displayName;
@@ -18,11 +19,11 @@
 @property (copy) id /* block */ faceImageLoadingCompletionBlock;
 @property int faceImageRequestID;
 @property (copy) id /* block */ fastDisplayBlock;
-@property (nonatomic, retain) id modelObject;
+@property (nonatomic, retain) PHPerson *modelObject;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic) unsigned int photosCount;
-
-+ (id)px_modelObjectsFromPersonItemArray:(id)arg1;
+@property (nonatomic) long long personType;
+@property (nonatomic, retain) NSNumber *personTypeNumber;
+@property (nonatomic) unsigned long long photosCount;
 
 - (void).cxx_destruct;
 - (id)displayName;
@@ -30,9 +31,12 @@
 - (id /* block */)faceImageLoadingCompletionBlock;
 - (int)faceImageRequestID;
 - (id /* block */)fastDisplayBlock;
+- (id)initWithPerson:(id)arg1;
 - (id)modelObject;
 - (id)name;
-- (unsigned int)photosCount;
+- (long long)personType;
+- (id)personTypeNumber;
+- (unsigned long long)photosCount;
 - (void)setDisplayName:(id)arg1;
 - (void)setFaceImage:(id)arg1;
 - (void)setFaceImageLoadingCompletionBlock:(id /* block */)arg1;
@@ -40,6 +44,9 @@
 - (void)setFastDisplayBlock:(id /* block */)arg1;
 - (void)setModelObject:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setPhotosCount:(unsigned int)arg1;
+- (void)setPersonType:(long long)arg1;
+- (void)setPersonTypeNumber:(id)arg1;
+- (void)setPhotosCount:(unsigned long long)arg1;
+- (void)updateWithModel:(id)arg1;
 
 @end

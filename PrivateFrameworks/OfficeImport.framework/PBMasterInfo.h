@@ -9,12 +9,12 @@
     struct ChVector<PBReaderMasterStyleInfo> { struct PBReaderMasterStyleInfo {} *x1; struct PBReaderMasterStyleInfo {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; } * mSrcTextStyling;
     NSMutableArray * mTgtSlideLayoutArray;
     unsigned int  mTitlePbRef;
-    BOOL  mUseXmlBlobs;
+    bool  mUseXmlBlobs;
     NSMutableDictionary * mXmlLayoutMap;
     unsigned int  mXmlMainMasterId;
 }
 
-@property (nonatomic) BOOL useXmlBlobs;
+@property (nonatomic) bool useXmlBlobs;
 @property (nonatomic) unsigned int xmlMainMasterId;
 
 - (id)allTargetLayoutTypes;
@@ -27,7 +27,7 @@
 - (void)setSlideLayout:(id)arg1 forXmlLayoutId:(unsigned short)arg2;
 - (void)setSlideMaster:(id)arg1;
 - (void)setTitlePbRef:(unsigned int)arg1;
-- (void)setUseXmlBlobs:(BOOL)arg1;
+- (void)setUseXmlBlobs:(bool)arg1;
 - (void)setXmlMainMasterId:(unsigned int)arg1;
 - (id)slideLayoutForSlideHolder:(id)arg1;
 - (id)slideLayoutForXmlLayoutId:(unsigned short)arg1;
@@ -35,7 +35,7 @@
 - (struct ChVector<PBReaderMasterStyleInfo> { struct PBReaderMasterStyleInfo {} *x1; struct PBReaderMasterStyleInfo {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)sourceTextStyling;
 - (unsigned int)titlePbRef;
 - (id)uniqueXmlSlideLayout;
-- (BOOL)useXmlBlobs;
+- (bool)useXmlBlobs;
 - (unsigned int)xmlMainMasterId;
 
 @end

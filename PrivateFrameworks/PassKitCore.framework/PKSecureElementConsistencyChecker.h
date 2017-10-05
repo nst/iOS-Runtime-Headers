@@ -11,10 +11,10 @@
 @property (nonatomic) <PKSecureElementConsistencyCheckerDelegate> *delegate;
 @property (nonatomic, retain) PKPaymentWebService *paymentWebService;
 
-+ (BOOL)isCheckingConsistencyForSecureElementID:(id)arg1;
++ (bool)isCheckingConsistencyForSecureElementID:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)_downloadPasses;
+- (bool)_downloadPasses;
 - (void)_rescheduleWithBackoff;
 - (void)checkConsistencyWithPaymentApplications:(id)arg1 secureElementApplets:(id)arg2 completion:(id /* block */)arg3;
 - (id)delegate;

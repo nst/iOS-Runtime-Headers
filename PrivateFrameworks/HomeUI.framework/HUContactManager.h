@@ -3,24 +3,31 @@
  */
 
 @interface HUContactManager : NSObject {
-    NSArray * _allPeople;
-    float  _monogramDiameter;
-    ABMonogrammer * _monogrammer;
+    NSDictionary * _cachedContactByEmails;
+    CNContactStore * _contactStore;
+    double  _monogramDiameter;
+    CNMonogrammer * _monogrammer;
 }
 
-@property (nonatomic, retain) NSArray *allPeople;
-@property (nonatomic) float monogramDiameter;
-@property (nonatomic, retain) ABMonogrammer *monogrammer;
+@property (nonatomic, copy) NSDictionary *cachedContactByEmails;
+@property (nonatomic, readonly) CNContactStore *contactStore;
+@property (nonatomic) double monogramDiameter;
+@property (nonatomic, retain) CNMonogrammer *monogrammer;
 
 + (id)sharedManager;
 
 - (void).cxx_destruct;
-- (id)allPeople;
-- (float)monogramDiameter;
+- (id)cachedContactByEmails;
+- (id)contactForEmailAddress:(id)arg1 keysToFetch:(id)arg2;
+- (id)contactStore;
+- (void)contactStoreDidChange:(id)arg1;
+- (void)dealloc;
+- (id)init;
+- (double)monogramDiameter;
 - (id)monogrammer;
-- (void)setAllPeople:(id)arg1;
-- (void)setMonogramDiameter:(float)arg1;
+- (void)setCachedContactByEmails:(id)arg1;
+- (void)setMonogramDiameter:(double)arg1;
 - (void)setMonogrammer:(id)arg1;
-- (id)userDataFromEmail:(id)arg1 monogramDiameter:(float)arg2;
+- (id)userDataFromEmail:(id)arg1 monogramDiameter:(double)arg2;
 
 @end

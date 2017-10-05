@@ -10,10 +10,9 @@
     }  _lock;
 }
 
-+ (BOOL)isAuthorizedToUseAddressBook;
++ (bool)isAuthorizedToUseAddressBook;
 + (id)sharedManager;
 
-- (void)_applicationResumed:(id)arg1;
 - (id)_clientWeakReferences;
 - (void)_handleAddressBookChangeNotification;
 - (void)_handleAddressBookPrefsChangeNotification;

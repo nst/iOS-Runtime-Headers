@@ -5,47 +5,47 @@
 @interface PXNumberAnimator : PXObservable <PXMutableNumberAnimator> {
     NSMutableArray * _animations;
     struct _PXValueAnimationSpec { 
-        int type; 
-        float epsilon; 
-        float stiffness; 
-        float dampingRatio; 
-        float initialVelocity; 
+        long long type; 
+        double epsilon; 
+        double stiffness; 
+        double dampingRatio; 
+        double initialVelocity; 
     }  _currentAnimationSpec;
     CADisplayLink * _displayLink;
-    float  _epsilon;
-    BOOL  _isPerformingChanges;
+    double  _epsilon;
+    bool  _isPerformingChanges;
     struct { 
-        BOOL presentationValue; 
+        bool presentationValue; 
     }  _needsUpdateFlags;
-    float  _presentationValue;
-    float  _value;
+    double  _presentationValue;
+    double  _value;
 }
 
-@property (nonatomic, readonly) float epsilon;
-@property (setter=_setPresentationValue:, nonatomic) float presentationValue;
-@property (nonatomic, readonly) float value;
+@property (nonatomic, readonly) double epsilon;
+@property (setter=_setPresentationValue:, nonatomic) double presentationValue;
+@property (nonatomic, readonly) double value;
 
 - (void).cxx_destruct;
 - (void)_handleDisplayLink:(id)arg1;
 - (void)_invalidatePresentationValue;
-- (BOOL)_needsUpdate;
-- (void)_setAnimating:(BOOL)arg1;
+- (bool)_needsUpdate;
+- (void)_setAnimating:(bool)arg1;
 - (void)_setNeedsUpdate;
-- (void)_setPresentationValue:(float)arg1;
+- (void)_setPresentationValue:(double)arg1;
 - (void)_updateIfNeeded;
 - (void)_updatePresentationValueIfNeeded;
 - (void)dealloc;
 - (void)didPerformChanges;
-- (float)epsilon;
+- (double)epsilon;
 - (id)init;
-- (id)initWithValue:(float)arg1;
+- (id)initWithValue:(double)arg1;
 - (id)mutableChangeObject;
 - (void)performChanges:(id /* block */)arg1;
-- (void)performChangesUsingDefaultSpringAnimationWithInitialVelocity:(float)arg1 changes:(id /* block */)arg2;
-- (void)performChangesUsingSpringAnimationWithStiffness:(float)arg1 dampingRatio:(float)arg2 initialVelocity:(float)arg3 changes:(id /* block */)arg4;
+- (void)performChangesUsingDefaultSpringAnimationWithInitialVelocity:(double)arg1 changes:(id /* block */)arg2;
+- (void)performChangesUsingSpringAnimationWithStiffness:(double)arg1 dampingRatio:(double)arg2 initialVelocity:(double)arg3 changes:(id /* block */)arg4;
 - (void)performChangesWithoutAnimation:(id /* block */)arg1;
-- (float)presentationValue;
-- (void)setValue:(float)arg1;
-- (float)value;
+- (double)presentationValue;
+- (void)setValue:(double)arg1;
+- (double)value;
 
 @end

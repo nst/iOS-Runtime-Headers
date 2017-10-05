@@ -4,16 +4,13 @@
 
 @interface PXMemoriesRelatedTapToRadarService : PXDiagnosticsService
 
-+ (id)_sanitizeGraphDataDictionaryForArchiving:(id)arg1 memoryLocalIdentifier:(id)arg2;
-+ (id)extractDatesAndAssetCounts:(id)arg1;
-+ (id)getSummaryFromProviderItem:(id)arg1;
-+ (BOOL)isServiceAvailableForProviders:(id)arg1;
++ (bool)isServiceAvailableForProviders:(id)arg1;
 
 - (id)_libraryStatDictionary;
 - (id)_providerItemsSummary;
-- (BOOL)canProvideConsoleDescription;
-- (BOOL)canProvideContextualViewController;
-- (BOOL)canProvideSettingsViewController;
+- (bool)canProvideConsoleDescription;
+- (bool)canProvideContextualViewController;
+- (bool)canProvideSettingsViewController;
 - (id)collectProviderItemsSummaryAndLibraryStat;
 - (id)consoleDescription;
 - (id)contextualViewController;

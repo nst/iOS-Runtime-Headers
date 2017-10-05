@@ -2,41 +2,52 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUICardSectionView : UIView {
-    SearchUICardViewController * _controller;
-    BOOL  _fullWidthSeparator;
-    BOOL  _hideSeparatorBelow;
+@interface SearchUICardSectionView : NUIContainerStackView <NUIContainerStackViewDelegate> {
+    UIView * _chevronView;
+    UIView * _contentView;
+    <SearchUIFeedbackDelegate> * _feedbackDelegate;
     SFCardSection * _section;
-    unsigned int  _style;
-    NSURL * _url;
+    bool  _spansFullWidth;
+    unsigned long long  _style;
 }
 
-@property SearchUICardViewController *controller;
-@property (nonatomic) BOOL fullWidthSeparator;
-@property (nonatomic) BOOL hideSeparatorBelow;
+@property (retain) UIView *chevronView;
+@property (retain) UIView *contentView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property <SearchUIFeedbackDelegate> *feedbackDelegate;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SFCardSection *section;
-@property unsigned int style;
-@property (retain) NSURL *url;
+@property (readonly) bool spansFullWidth;
+@property unsigned long long style;
+@property (readonly) Class superclass;
 
-+ (Class)classForSection:(id)arg1;
++ (id)dragSubtitleForCardSection:(id)arg1;
++ (id)dragTitleForCardSection:(id)arg1;
++ (Class)layerClass;
++ (double)separatorInsetForLeadingImageForSection:(id)arg1;
++ (int)separatorStyleForCardSection:(id)arg1;
++ (bool)supportsRecyclingForCardSection:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)controller;
-- (BOOL)fullWidthSeparator;
-- (BOOL)hideSeparatorBelow;
-- (id)initWithCardSection:(id)arg1 controller:(id)arg2;
-- (id)initWithCardSection:(id)arg1 controller:(id)arg2 style:(unsigned int)arg3;
-- (id)initWithCardSection:(id)arg1 style:(unsigned int)arg2;
-- (BOOL)isAutoLayoutFree;
+- (id)chevronView;
+- (id)contentView;
+- (void)didInvalidateSizeAnimate:(bool)arg1;
+- (id)feedbackDelegate;
+- (id)initWithCardSection:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
+- (void)openPunchout:(id)arg1 triggerEvent:(unsigned long long)arg2;
+- (void)presentViewController:(id)arg1;
 - (id)section;
-- (float)separatorLeftInset;
-- (void)setController:(id)arg1;
-- (void)setFullWidthSeparator:(BOOL)arg1;
-- (void)setHideSeparatorBelow:(BOOL)arg1;
+- (id)sendFeedbackForPunchout:(id)arg1 triggerEvent:(unsigned long long)arg2;
+- (void)setChevronView:(id)arg1;
+- (void)setContentView:(id)arg1;
+- (void)setFeedbackDelegate:(id)arg1;
 - (void)setSection:(id)arg1;
-- (void)setStyle:(unsigned int)arg1;
-- (void)setUrl:(id)arg1;
-- (unsigned int)style;
-- (id)url;
+- (void)setStyle:(unsigned long long)arg1;
+- (id)setupContentView;
+- (bool)spansFullWidth;
+- (unsigned long long)style;
+- (void)updateChevronVisible:(bool)arg1 leaveSpaceForChevron:(bool)arg2;
+- (void)updateWithCardSection:(id)arg1;
 
 @end

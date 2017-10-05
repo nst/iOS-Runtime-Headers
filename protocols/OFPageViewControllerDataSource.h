@@ -10,7 +10,7 @@
 
 @optional
 
-- (int)presentationCountForPageViewController:(OFPageViewController *)arg1;
-- (int)presentationIndexForPageViewController:(OFPageViewController *)arg1;
+- (long long)presentationCountForPageViewController:(OFPageViewController *)arg1;
+- (long long)presentationIndexForPageViewController:(OFPageViewController *)arg1;
 
 @end

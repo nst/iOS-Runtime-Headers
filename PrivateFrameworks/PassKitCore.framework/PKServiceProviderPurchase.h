@@ -9,7 +9,7 @@
     PKServiceProviderPurchaseData * _serviceProviderData;
     NSString * _serviceProviderIdentifier;
     NSString * _signature;
-    unsigned int  _state;
+    unsigned long long  _state;
 }
 
 @property (nonatomic, copy) NSArray *actions;
@@ -18,22 +18,22 @@
 @property (nonatomic, copy) PKServiceProviderPurchaseData *serviceProviderData;
 @property (nonatomic, copy) NSString *serviceProviderIdentifier;
 @property (nonatomic, copy) NSString *signature;
-@property (nonatomic) unsigned int state;
+@property (nonatomic) unsigned long long state;
 
 + (id)purchaseWithDictionary:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)actions;
 - (id)description;
 - (id)deviceIdentifier;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToServiceProviderPurchase:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToServiceProviderPurchase:(id)arg1;
 - (id)serviceProviderData;
 - (id)serviceProviderIdentifier;
 - (void)setActions:(id)arg1;
@@ -42,8 +42,8 @@
 - (void)setServiceProviderData:(id)arg1;
 - (void)setServiceProviderIdentifier:(id)arg1;
 - (void)setSignature:(id)arg1;
-- (void)setState:(unsigned int)arg1;
+- (void)setState:(unsigned long long)arg1;
 - (id)signature;
-- (unsigned int)state;
+- (unsigned long long)state;
 
 @end

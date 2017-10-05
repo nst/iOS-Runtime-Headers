@@ -3,23 +3,23 @@
  */
 
 @interface CertUIItemDetailsSummaryCell : UITableViewCell {
-    float  _detailLabelOriginX;
+    double  _detailLabelOriginX;
     NSArray * _detailViews;
 }
 
-@property (nonatomic) float detailLabelOriginX;
+@property (nonatomic) double detailLabelOriginX;
 @property (nonatomic, retain) NSArray *detailViews;
 
 - (void).cxx_destruct;
 - (void)createViewWithDescriptors:(id)arg1;
 - (void)createViewWithItemDetailArray:(id)arg1;
-- (float)detailLabelOriginX;
+- (double)detailLabelOriginX;
 - (id)detailViews;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (void)setDetailLabelOriginX:(float)arg1;
+- (void)setDetailLabelOriginX:(double)arg1;
 - (void)setDetailViews:(id)arg1;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setSelected:(bool)arg1 animated:(bool)arg2;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

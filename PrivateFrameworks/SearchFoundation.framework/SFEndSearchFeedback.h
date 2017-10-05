@@ -3,25 +3,25 @@
  */
 
 @interface SFEndSearchFeedback : SFFeedback {
-    unsigned int  _cancelSearchEvent;
-    BOOL  _isCanceled;
+    unsigned long long  _cancelSearchEvent;
+    bool  _isCanceled;
     NSString * _uuid;
 }
 
-@property (nonatomic) unsigned int cancelSearchEvent;
-@property (nonatomic) BOOL isCanceled;
+@property (nonatomic) unsigned long long cancelSearchEvent;
+@property (nonatomic) bool isCanceled;
 @property (nonatomic, copy) NSString *uuid;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (unsigned int)cancelSearchEvent;
+- (unsigned long long)cancelSearchEvent;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStartSearch:(id)arg1;
-- (BOOL)isCanceled;
-- (void)setCancelSearchEvent:(unsigned int)arg1;
-- (void)setIsCanceled:(BOOL)arg1;
+- (bool)isCanceled;
+- (void)setCancelSearchEvent:(unsigned long long)arg1;
+- (void)setIsCanceled:(bool)arg1;
 - (void)setUuid:(id)arg1;
 - (id)uuid;
 

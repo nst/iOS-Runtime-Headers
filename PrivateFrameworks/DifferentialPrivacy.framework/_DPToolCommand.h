@@ -6,19 +6,19 @@
     NSString * _action;
     NSString * _arguments;
     NSString * _databasePath;
-    BOOL  _readWriteDB;
     NSString * _recordKey;
     _DPStorage * _storage;
+    bool  _writeOK;
 }
 
 @property (nonatomic, readonly, copy) NSString *action;
 @property (nonatomic, readonly, copy) NSString *arguments;
 @property (nonatomic, readonly, copy) NSString *databasePath;
-@property (nonatomic, readonly) BOOL readWriteDB;
 @property (nonatomic, readonly, copy) NSString *recordKey;
 @property (nonatomic, readonly) _DPStorage *storage;
+@property (nonatomic, readonly) bool writeOK;
 
-+ (id)command:(id)arg1 arguments:(id)arg2 recordKey:(id)arg3 databasePath:(id)arg4 writeOK:(BOOL)arg5;
++ (id)command:(id)arg1 arguments:(id)arg2 recordKey:(id)arg3 databasePath:(id)arg4 writeOK:(bool)arg5;
 + (id)supportedCommands;
 
 - (void).cxx_destruct;
@@ -26,16 +26,18 @@
 - (id)arguments;
 - (id)databasePath;
 - (id)description;
-- (BOOL)executeCommand;
+- (bool)executeCommand;
 - (id)init;
-- (id)initWithAction:(id)arg1 arguments:(id)arg2 recordKey:(id)arg3 databasePath:(id)arg4 writeOK:(BOOL)arg5;
+- (id)initWithAction:(id)arg1 arguments:(id)arg2 recordKey:(id)arg3 databasePath:(id)arg4 writeOK:(bool)arg5;
+- (bool)listKeys;
+- (bool)listReportsFor:(id)arg1;
 - (id)queryForKey:(id)arg1;
-- (BOOL)readWriteDB;
 - (id)recordKey;
-- (BOOL)recordNumbers:(id)arg1 forKey:(id)arg2;
-- (BOOL)recordStrings:(id)arg1 forKey:(id)arg2;
-- (BOOL)recordWords:(id)arg1 forKey:(id)arg2;
+- (bool)recordNumbers:(id)arg1 forKey:(id)arg2;
+- (bool)recordStrings:(id)arg1 forKey:(id)arg2;
+- (bool)recordWords:(id)arg1 forKey:(id)arg2;
 - (id)storage;
-- (BOOL)submitRecordsForKey:(id)arg1;
+- (bool)submitRecordsForKey:(id)arg1;
+- (bool)writeOK;
 
 @end

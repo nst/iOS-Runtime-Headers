@@ -7,20 +7,20 @@
     UIButton * _footerButton;
     UILabel * _footerLabel;
     NSString * _generatedCode;
-    float  _keyboardHeight;
+    double  _keyboardHeight;
     int  _mode;
     int  _securityCodeType;
-    BOOL  _showsAdvancedSettings;
+    bool  _showsAdvancedSettings;
 }
 
 @property (nonatomic, retain) NSString *firstPasscodeEntry;
 @property (nonatomic) int mode;
 @property (nonatomic) int securityCodeType;
-@property (nonatomic) BOOL showsAdvancedSettings;
+@property (nonatomic) bool showsAdvancedSettings;
 
 - (void).cxx_destruct;
 - (id)_configureTextEntryCell;
-- (void)animatePasscodeFieldLeft:(BOOL)arg1;
+- (void)animatePasscodeFieldLeft:(bool)arg1;
 - (void)dealloc;
 - (void)didFinishEnteringText:(id)arg1;
 - (void)dismissAlerts;
@@ -35,9 +35,9 @@
 - (void)setFirstPasscodeEntry:(id)arg1;
 - (void)setMode:(int)arg1;
 - (void)setSecurityCodeType:(int)arg1;
-- (void)setShowsAdvancedSettings:(BOOL)arg1;
+- (void)setShowsAdvancedSettings:(bool)arg1;
 - (void)showAdvancedOptions;
-- (BOOL)showsAdvancedSettings;
+- (bool)showsAdvancedSettings;
 - (id)specifiers;
 - (id)textEntryCell;
 - (Class)textEntryCellClass;
@@ -45,6 +45,6 @@
 - (void)updateNextButton;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

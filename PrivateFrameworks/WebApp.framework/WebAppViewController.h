@@ -3,20 +3,14 @@
  */
 
 @interface WebAppViewController : UIViewController {
-    BOOL  _setupRootViewColor;
-    unsigned int  _statusBarStyle;
-    WebAppController * _webAppController;
+    bool  _setupRootViewColor;
+    unsigned long long  _statusBarStyle;
 }
 
-@property (nonatomic) unsigned int statusBarStyle;
-@property (nonatomic) WebAppController *webAppController;
+@property (nonatomic) unsigned long long statusBarStyle;
 
-- (void).cxx_destruct;
-- (int)preferredStatusBarStyle;
-- (void)setStatusBarStyle:(unsigned int)arg1;
-- (void)setWebAppController:(id)arg1;
-- (unsigned int)statusBarStyle;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
-- (id)webAppController;
+- (long long)preferredStatusBarStyle;
+- (void)setStatusBarStyle:(unsigned long long)arg1;
+- (unsigned long long)statusBarStyle;
 
 @end

@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)allowsNetworkTileLoad;
+- (bool)allowsNetworkTileLoad;
 
 @end

@@ -25,7 +25,7 @@
 + (id)baselineModelURLForUbiquityName:(id)arg1 andUbiquityLogURL:(id)arg2;
 + (id)baselineRootDirectoryForUbiquityName:(id)arg1 andUbiquityLogURL:(id)arg2;
 + (id)baselineStoreURLForUbiquityName:(id)arg1 andUbiquityLogURL:(id)arg2;
-+ (BOOL)isBaselineRootURL:(id)arg1;
++ (bool)isBaselineRootURL:(id)arg1;
 + (id)metadataForStoreWithName:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)storeMetadatasWithName:(id)arg1 inManagedObjectContext:(id)arg2;
 

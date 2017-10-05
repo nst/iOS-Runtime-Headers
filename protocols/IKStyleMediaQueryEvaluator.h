@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)evaluateStyleMediaQueryList:(NSArray *)arg1;
+- (bool)evaluateStyleMediaQueryList:(NSArray *)arg1;
 
 @end

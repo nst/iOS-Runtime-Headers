@@ -16,11 +16,11 @@
     unsigned int  _version;
 }
 
-@property (nonatomic) BOOL hasStatus;
-@property (nonatomic) BOOL hasTimeDeltaFromReference;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic, readonly) BOOL hasUuidReference;
-@property (nonatomic) BOOL hasVersion;
+@property (nonatomic) bool hasStatus;
+@property (nonatomic) bool hasTimeDeltaFromReference;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic, readonly) bool hasUuidReference;
+@property (nonatomic) bool hasVersion;
 @property (nonatomic) unsigned int status;
 @property (nonatomic) unsigned long long timeDeltaFromReference;
 @property (nonatomic) unsigned long long timestamp;
@@ -32,19 +32,19 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasStatus;
-- (BOOL)hasTimeDeltaFromReference;
-- (BOOL)hasTimestamp;
-- (BOOL)hasUuidReference;
-- (BOOL)hasVersion;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasStatus;
+- (bool)hasTimeDeltaFromReference;
+- (bool)hasTimestamp;
+- (bool)hasUuidReference;
+- (bool)hasVersion;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasStatus:(BOOL)arg1;
-- (void)setHasTimeDeltaFromReference:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setHasVersion:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasStatus:(bool)arg1;
+- (void)setHasTimeDeltaFromReference:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasVersion:(bool)arg1;
 - (void)setStatus:(unsigned int)arg1;
 - (void)setTimeDeltaFromReference:(unsigned long long)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;

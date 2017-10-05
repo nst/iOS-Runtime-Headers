@@ -5,12 +5,12 @@
 
 @required
 
-- (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
-- (int)mixingTypeWithObject:(id)arg1 context:(id <TSDMixingTypeContext>)arg2;
+- (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
+- (long long)mixingTypeWithObject:(id)arg1;
 
 @optional
 
-+ (BOOL)canMixWithNilObjects;
++ (bool)canMixWithNilObjects;
 + (NSArray *)mixableObjectClasses;
 
 - (id)mixedBaseObjectWithObject:(id)arg1;

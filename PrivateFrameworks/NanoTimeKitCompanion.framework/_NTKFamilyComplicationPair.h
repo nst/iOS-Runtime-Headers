@@ -4,19 +4,19 @@
 
 @interface _NTKFamilyComplicationPair : NSObject <NSCopying> {
     NTKComplication * _complication;
-    int  _family;
+    long long  _family;
 }
 
 @property (readonly) NTKComplication *complication;
-@property (readonly) int family;
+@property (readonly) long long family;
 
-+ (id)pairWithFamily:(int)arg1 complication:(id)arg2;
++ (id)pairWithFamily:(long long)arg1 complication:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)complication;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)family;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (long long)family;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 
 @end

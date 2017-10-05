@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)blockableScrollViewShouldAllowScrolling;
+- (bool)blockableScrollViewShouldAllowScrolling;
 
 @end

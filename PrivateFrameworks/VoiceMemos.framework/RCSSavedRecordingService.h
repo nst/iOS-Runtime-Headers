@@ -18,10 +18,10 @@
 @property (nonatomic, retain) NSSet *compositionAVURLsBeingModified;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)isRunningInSavedRecordingDaemon;
++ (bool)isRunningInSavedRecordingDaemon;
 + (id)sharedService;
 
 - (void).cxx_destruct;
@@ -52,7 +52,7 @@
 - (id)init;
 - (void)openServiceConnection;
 - (oneway void)prepareToCaptureToCompositionAVURL:(id)arg1 accessRequestHandler:(id /* block */)arg2;
-- (oneway void)prepareToExportCompositionAVURL:(id)arg1 cacheWaveform:(BOOL)arg2 accessRequestHandler:(id /* block */)arg3;
+- (oneway void)prepareToExportCompositionAVURL:(id)arg1 cacheWaveform:(bool)arg2 accessRequestHandler:(id /* block */)arg3;
 - (oneway void)prepareToPreviewCompositionAVURL:(id)arg1 accessRequestHandler:(id /* block */)arg2;
 - (oneway void)prepareToTrimCompositionAVURL:(id)arg1 accessRequestHandler:(id /* block */)arg2;
 - (oneway void)reloadExistingSearchMetadataWithCompletionBlock:(id /* block */)arg1;

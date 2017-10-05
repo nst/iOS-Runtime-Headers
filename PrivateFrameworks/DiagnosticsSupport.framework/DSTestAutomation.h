@@ -3,17 +3,17 @@
  */
 
 @interface DSTestAutomation : NSObject {
-    BOOL  _testAutomationEnabled;
+    bool  _testAutomationEnabled;
 }
 
-@property (nonatomic) BOOL testAutomationEnabled;
+@property (nonatomic) bool testAutomationEnabled;
 
 + (void)postConfiguration:(id)arg1;
 + (void)postInteractiveTestEvent:(id)arg1 info:(id)arg2;
 + (id)sharedInstance;
 
 - (id)init;
-- (void)setTestAutomationEnabled:(BOOL)arg1;
-- (BOOL)testAutomationEnabled;
+- (void)setTestAutomationEnabled:(bool)arg1;
+- (bool)testAutomationEnabled;
 
 @end

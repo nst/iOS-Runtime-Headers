@@ -3,24 +3,24 @@
  */
 
 @interface _UIKBRTDecayingObject : NSObject {
-    BOOL  _isDecaying;
-    BOOL  _isHolding;
+    bool  _isDecaying;
+    bool  _isHolding;
     double  _lastUpdate;
     NSMutableArray * _resetBlocks;
     double  _timeoutDuration;
 }
 
-@property (nonatomic, readonly) BOOL isActive;
-@property (nonatomic, readonly) BOOL isDecaying;
-@property (nonatomic, readonly) BOOL isHolding;
+@property (nonatomic, readonly) bool isActive;
+@property (nonatomic, readonly) bool isDecaying;
+@property (nonatomic, readonly) bool isHolding;
 @property (nonatomic, readonly) double lastUpdate;
 @property (nonatomic) double timeoutDuration;
 
 - (void).cxx_destruct;
 - (id)initWithTimeoutDuration:(double)arg1;
-- (BOOL)isActive;
-- (BOOL)isDecaying;
-- (BOOL)isHolding;
+- (bool)isActive;
+- (bool)isDecaying;
+- (bool)isHolding;
 - (double)lastUpdate;
 - (void)onResetDo:(id /* block */)arg1;
 - (void)reset;

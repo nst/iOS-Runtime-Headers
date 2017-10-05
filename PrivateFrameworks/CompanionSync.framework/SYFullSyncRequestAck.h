@@ -3,38 +3,38 @@
  */
 
 @interface SYFullSyncRequestAck : PBCodable <NSCopying> {
-    BOOL  _accepted;
+    bool  _accepted;
     SYErrorInfo * _error;
     SYMessageHeader * _header;
     NSString * _inProgressSyncID;
     NSString * _requestSyncID;
 }
 
-@property (nonatomic) BOOL accepted;
+@property (nonatomic) bool accepted;
 @property (nonatomic, retain) SYErrorInfo *error;
-@property (nonatomic, readonly) BOOL hasError;
-@property (nonatomic, readonly) BOOL hasInProgressSyncID;
+@property (nonatomic, readonly) bool hasError;
+@property (nonatomic, readonly) bool hasInProgressSyncID;
 @property (nonatomic, retain) SYMessageHeader *header;
 @property (nonatomic, retain) NSString *inProgressSyncID;
 @property (nonatomic, retain) NSString *requestSyncID;
 
 - (void).cxx_destruct;
-- (BOOL)accepted;
+- (bool)accepted;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)error;
-- (BOOL)hasError;
-- (BOOL)hasInProgressSyncID;
-- (unsigned int)hash;
+- (bool)hasError;
+- (bool)hasInProgressSyncID;
+- (unsigned long long)hash;
 - (id)header;
 - (id)inProgressSyncID;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)requestSyncID;
-- (void)setAccepted:(BOOL)arg1;
+- (void)setAccepted:(bool)arg1;
 - (void)setError:(id)arg1;
 - (void)setHeader:(id)arg1;
 - (void)setInProgressSyncID:(id)arg1;

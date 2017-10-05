@@ -5,6 +5,6 @@
 
 @required
 
-- (void)authorizationController:(CNFRegAccountAuthorizationController *)arg1 authorizedAccount:(BOOL)arg2;
+- (void)authorizationController:(CNFRegAccountAuthorizationController *)arg1 authorizedAccount:(bool)arg2;
 
 @end

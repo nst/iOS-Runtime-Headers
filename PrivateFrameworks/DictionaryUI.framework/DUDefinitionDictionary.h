@@ -3,52 +3,52 @@
  */
 
 @interface DUDefinitionDictionary : NSObject {
-    BOOL  _activated;
+    bool  _activated;
     ASAsset * _assetToUpgrade;
     NSString * _definitionLanguage;
     struct __DCSDictionary { } * _dictionary;
-    BOOL  _isAppleDictionary;
-    BOOL  _isTTYDictionary;
+    bool  _isAppleDictionary;
+    bool  _isTTYDictionary;
     float  _progress;
     ASAsset * _rawAsset;
 }
 
-@property (nonatomic) BOOL activated;
+@property (nonatomic) bool activated;
 @property (readonly) NSString *definitionLanguage;
-@property BOOL isAppleDictionary;
-@property BOOL isTTYDictionary;
+@property (readonly) struct __DCSDictionary { }*dictionaryRef;
+@property bool isAppleDictionary;
+@property bool isTTYDictionary;
 @property (readonly) NSString *localizedDictionaryName;
 @property (readonly) NSString *localizedLanguageName;
 @property (readonly) NSString *localizedSortName;
+@property (readonly) bool needsDownloadNewerVersion;
 @property float progress;
 @property (readonly) ASAsset *rawAsset;
 
-+ (id)displayNameForLanguageIdentifier:(id)arg1 forSorting:(BOOL)arg2;
++ (id)displayNameForLanguageIdentifier:(id)arg1 forSorting:(bool)arg2;
 
 - (void).cxx_destruct;
-- (id)_HTMLDefinitionForTerm:(id)arg1 type:(long)arg2;
-- (id)_attributedDefinitionForTerm:(id)arg1;
 - (id)_definitionValueForTerm:(id)arg1;
-- (id)_fullHTMLDefinitionForTerm:(id)arg1;
-- (BOOL)_hasDefinitionForTerm:(id)arg1;
-- (id)_shortHTMLDefinitionForTerm:(id)arg1;
-- (BOOL)activated;
+- (bool)_hasDefinitionForTerm:(id)arg1;
+- (bool)activated;
 - (void)dealloc;
 - (id)definitionLanguage;
 - (id)description;
+- (struct __DCSDictionary { }*)dictionaryRef;
 - (id)initWithAsset:(id)arg1;
-- (BOOL)isAppleDictionary;
-- (BOOL)isTTYDictionary;
+- (bool)isAppleDictionary;
+- (bool)isTTYDictionary;
 - (id)localizedDictionaryName;
 - (id)localizedLanguageName;
-- (id)localizedLanguageName:(BOOL)arg1;
+- (id)localizedLanguageName:(bool)arg1;
 - (id)localizedSortName;
+- (bool)needsDownloadNewerVersion;
 - (float)progress;
 - (id)rawAsset;
-- (void)setActivated:(BOOL)arg1;
+- (void)setActivated:(bool)arg1;
 - (void)setAssetToUpgrade:(id)arg1;
-- (void)setIsAppleDictionary:(BOOL)arg1;
-- (void)setIsTTYDictionary:(BOOL)arg1;
+- (void)setIsAppleDictionary:(bool)arg1;
+- (void)setIsTTYDictionary:(bool)arg1;
 - (void)setProgress:(float)arg1;
 
 @end

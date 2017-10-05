@@ -4,7 +4,7 @@
 
 @interface NTKComplicationImageViewProvider : NSObject
 
-+ (BOOL)existingImageView:(id)arg1 supportsImageProvider:(id)arg2;
++ (bool)existingImageView:(id)arg1 supportsImageProvider:(id)arg2;
 + (id)viewForImageProvider:(id)arg1;
 
 @end

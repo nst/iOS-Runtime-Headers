@@ -4,13 +4,13 @@
 
 @interface CDPDBackupErrorProviderImpl : NSObject <CDPDBackupRecoveryErrorProvider> {
     CDPContext * _context;
-    unsigned int  _prevailingSecret;
+    unsigned long long  _prevailingSecret;
     <CDPStateUIProviderInternal> * _uiProvider;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -22,8 +22,8 @@
 - (id)hardLimitErrorForRecord:(id)arg1;
 - (id)initWithContext:(id)arg1 uiProvider:(id)arg2;
 - (id)recordNotFoundErrorWithUnderlyingError:(id)arg1;
-- (void)setPrevailingSecret:(unsigned int)arg1;
-- (BOOL)supportsErrorPresentation;
+- (void)setPrevailingSecret:(unsigned long long)arg1;
+- (bool)supportsErrorPresentation;
 - (id)verficationFailedErrorwithUnderlyingError:(id)arg1;
 
 @end

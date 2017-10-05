@@ -3,13 +3,13 @@
  */
 
 @interface BadPasswordProxyAuthenticationURLDelegate : ProxyAuthenticationURLDelegate {
-    int  _failureCount;
+    long long  _failureCount;
 }
 
-@property int failureCount;
+@property long long failureCount;
 
 - (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(id /* block */)arg4;
-- (int)failureCount;
-- (void)setFailureCount:(int)arg1;
+- (long long)failureCount;
+- (void)setFailureCount:(long long)arg1;
 
 @end

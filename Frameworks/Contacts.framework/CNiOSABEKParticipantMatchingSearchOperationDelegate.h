@@ -9,13 +9,13 @@
 @property (nonatomic, copy) id /* block */ completionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id /* block */)completionHandler;
-- (void)dealloc;
-- (BOOL)predicateShouldContinue:(id)arg1;
-- (BOOL)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2;
+- (bool)predicateShouldContinue:(id)arg1;
+- (bool)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2;
 - (void)setCompletionHandler:(id /* block */)arg1;
 
 @end

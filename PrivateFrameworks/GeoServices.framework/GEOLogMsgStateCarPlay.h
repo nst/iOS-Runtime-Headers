@@ -7,30 +7,30 @@
     struct { 
         unsigned int isConnected : 1; 
     }  _has;
-    BOOL  _isConnected;
+    bool  _isConnected;
 }
 
 @property (nonatomic, retain) GEOCarInfo *carInfo;
-@property (nonatomic, readonly) BOOL hasCarInfo;
-@property (nonatomic) BOOL hasIsConnected;
-@property (nonatomic) BOOL isConnected;
+@property (nonatomic, readonly) bool hasCarInfo;
+@property (nonatomic) bool hasIsConnected;
+@property (nonatomic) bool isConnected;
 
+- (void).cxx_destruct;
 - (id)carInfo;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCarInfo;
-- (BOOL)hasIsConnected;
-- (unsigned int)hash;
-- (BOOL)isConnected;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCarInfo;
+- (bool)hasIsConnected;
+- (unsigned long long)hash;
+- (bool)isConnected;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCarInfo:(id)arg1;
-- (void)setHasIsConnected:(BOOL)arg1;
-- (void)setIsConnected:(BOOL)arg1;
+- (void)setHasIsConnected:(bool)arg1;
+- (void)setIsConnected:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

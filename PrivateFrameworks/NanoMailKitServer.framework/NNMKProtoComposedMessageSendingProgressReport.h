@@ -11,8 +11,8 @@
 }
 
 @property (nonatomic, retain) NSString *composedMessageId;
-@property (nonatomic, readonly) BOOL hasComposedMessageId;
-@property (nonatomic) BOOL hasProgress;
+@property (nonatomic, readonly) bool hasComposedMessageId;
+@property (nonatomic) bool hasProgress;
 @property (nonatomic) int progress;
 
 - (void).cxx_destruct;
@@ -21,15 +21,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasComposedMessageId;
-- (BOOL)hasProgress;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasComposedMessageId;
+- (bool)hasProgress;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)progress;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setComposedMessageId:(id)arg1;
-- (void)setHasProgress:(BOOL)arg1;
+- (void)setHasProgress:(bool)arg1;
 - (void)setProgress:(int)arg1;
 - (void)writeTo:(id)arg1;
 

@@ -6,7 +6,7 @@
 
 - (id)_manifestURLString;
 - (id)init;
-- (BOOL)isActive;
+- (bool)isActive;
 - (void)makeActive;
 
 @end

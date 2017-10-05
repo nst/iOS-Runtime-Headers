@@ -11,15 +11,23 @@
 @property (nonatomic, readonly) NSDictionary *characteristicsByType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) <HFCharacteristicValueSource> *valueSource;
 
++ (id)na_identity;
+
 - (void).cxx_destruct;
 - (id)allCharacteristicsForCharacteristicType:(id)arg1;
+- (void)beginTransactionWithReason:(id)arg1 readPolicy:(id)arg2 logger:(id)arg3;
 - (id)characteristics;
 - (id)characteristicsByType;
+- (void)commitTransactionWithReason:(id)arg1;
+- (id)copyWithValueSource:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (unsigned long long)hash;
 - (id)initWithValueSource:(id)arg1 characteristics:(id)arg2;
+- (bool)isEqual:(id)arg1;
 - (id)metadataForCharacteristicType:(id)arg1;
 - (id)readValuesForCharacteristicTypes:(id)arg1;
 - (id)valueSource;

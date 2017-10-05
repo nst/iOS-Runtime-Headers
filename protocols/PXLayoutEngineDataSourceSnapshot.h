@@ -5,6 +5,6 @@
 
 @required
 
-- (unsigned int)identifier;
+- (unsigned long long)identifier;
 
 @end

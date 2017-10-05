@@ -6,20 +6,20 @@
     NSString * _destinationName;
     UILabel * _destinationSubtitleLabel;
     UILabel * _destinationTitleLabel;
-    int  _style;
+    long long  _style;
     UIImageView * _videosImageView;
 }
 
 @property (nonatomic, copy) NSString *destinationName;
-@property (nonatomic) int style;
+@property (nonatomic) long long style;
 
 - (void).cxx_destruct;
 - (id)destinationName;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)setDestinationName:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setStyle:(int)arg1;
-- (int)style;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setStyle:(long long)arg1;
+- (long long)style;
 
 @end

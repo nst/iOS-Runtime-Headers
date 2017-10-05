@@ -3,12 +3,12 @@
  */
 
 @interface SFRemoteInteractionSession : NSObject <NSSecureCoding, SFXPCInterface> {
-    BOOL  _activateCalled;
+    bool  _activateCalled;
     SDRemoteInteractionAgent * _agent;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     id /* block */  _interruptionHandler;
-    BOOL  _invalidateCalled;
-    BOOL  _invalidateDone;
+    bool  _invalidateCalled;
+    bool  _invalidateDone;
     id /* block */  _invalidationHandler;
     SFDevice * _peerDevice;
     SFSession * _remoteSession;
@@ -27,7 +27,7 @@
 @property (nonatomic, copy) id /* block */ textSessionDidChange;
 @property (nonatomic, copy) id /* block */ textSessionDidEnd;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_activateWithCompletion:(id /* block */)arg1;

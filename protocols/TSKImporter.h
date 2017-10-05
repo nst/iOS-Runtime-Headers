@@ -6,23 +6,23 @@
 @required
 
 - (void)cancel;
-- (BOOL)importToDocumentRoot:(TSKDocumentRoot *)arg1 delegate:(id <TSKImportExportDelegate>)arg2 error:(id*)arg3;
+- (bool)importToDocumentRoot:(TSKDocumentRoot *)arg1 delegate:(id <TSDImportExportDelegate>)arg2 error:(id*)arg3;
 - (id)initWithURL:(NSURL *)arg1;
 - (NSString *)initialTemplateName;
 - (TSUProgressContext *)progressContext;
 - (void)quit;
 - (void)setProgressContext:(TSUProgressContext *)arg1;
 - (void)setURL:(NSURL *)arg1;
-- (BOOL)stylesheetUpdatesRequired;
+- (bool)stylesheetUpdatesRequired;
 
 @optional
 
-+ (BOOL)instancesRespondToSelector:(SEL)arg1;
++ (bool)instancesRespondToSelector:(SEL)arg1;
 
 - (NSArray *)buildVersionHistory;
-- (BOOL)importStartsWithThemeOnly;
-- (unsigned int)initialVariantIndex;
-- (BOOL)postprocessRegularDocumentRoot:(TSKDocumentRoot *)arg1 delegate:(id <TSKImportExportDelegate>)arg2;
+- (bool)importStartsWithThemeOnly;
+- (unsigned long long)initialVariantIndex;
+- (bool)postprocessRegularDocumentRoot:(TSKDocumentRoot *)arg1 delegate:(id <TSDImportExportDelegate>)arg2;
 - (TSUImage *)thumbnailImage;
 - (NSUUID *)uuidOfImportedDocument;
 

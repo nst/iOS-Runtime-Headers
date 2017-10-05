@@ -14,7 +14,7 @@
 @property (nonatomic, retain) CNAutocompleteAggdProbe *aggdProbe;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSNumber *lengthOfSearchString;
 @property (nonatomic, retain) NSNumber *returnedDuetResults;
 @property (nonatomic, retain) NSNumber *selectedIndex;
@@ -27,15 +27,16 @@
 - (id)init;
 - (id)initWithAggdProbe:(id)arg1;
 - (id)lengthOfSearchString;
-- (void)recordDuetReturnedResults:(BOOL)arg1;
+- (void)recordDuetReturnedResults:(bool)arg1;
 - (void)recordUserIgnoredPredictionAfterDelay:(double)arg1;
-- (void)recordUserIgnoredPrefixedResultAfterDelay:(double)arg1 batch:(unsigned int)arg2;
+- (void)recordUserIgnoredPrefixedResultAfterDelay:(double)arg1 batch:(unsigned long long)arg2;
+- (void)recordUserSawCuratedResults:(unsigned long long)arg1;
 - (void)recordUserSawPredictions;
-- (void)recordUserSawResultsConsideredSuggestion:(unsigned int)arg1;
-- (void)recordUserSelectedIndex:(unsigned int)arg1;
-- (void)recordUserSelectedPredictionAtIndex:(unsigned int)arg1;
-- (void)recordUserSelectedResultWithSourceType:(unsigned int)arg1;
-- (void)recordUserTypedInNumberOfCharacters:(unsigned int)arg1;
+- (void)recordUserSawResultsConsideredSuggestion:(unsigned long long)arg1;
+- (void)recordUserSelectedIndex:(unsigned long long)arg1;
+- (void)recordUserSelectedPredictionAtIndex:(unsigned long long)arg1;
+- (void)recordUserSelectedResultWithSourceType:(unsigned long long)arg1;
+- (void)recordUserTypedInNumberOfCharacters:(unsigned long long)arg1;
 - (id)returnedDuetResults;
 - (id)selectedIndex;
 - (id)selectedPredictionIndex;
@@ -46,7 +47,7 @@
 - (void)setSelectedIndex:(id)arg1;
 - (void)setSelectedPredictionIndex:(id)arg1;
 - (void)setSourceType:(id)arg1;
-- (id)sourceKeysForSourceType:(unsigned int)arg1;
+- (id)sourceKeysForSourceType:(unsigned long long)arg1;
 - (id)sourceType;
 
 @end

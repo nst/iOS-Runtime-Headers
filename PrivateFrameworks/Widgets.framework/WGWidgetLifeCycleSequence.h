@@ -3,30 +3,30 @@
  */
 
 @interface WGWidgetLifeCycleSequence : NSObject {
-    int  _currentState;
+    long long  _currentState;
     WGWidgetLifeCycleSequence * _previousSequence;
     NSString * _sequenceIdentifier;
 }
 
-@property (setter=_setCurrentState:, nonatomic) int currentState;
+@property (setter=_setCurrentState:, nonatomic) long long currentState;
 @property (getter=_previousSequence, setter=_setPreviousSequence:, nonatomic, retain) WGWidgetLifeCycleSequence *previousSequence;
 @property (nonatomic, readonly, copy) NSString *sequenceIdentifier;
 
 - (void).cxx_destruct;
-- (BOOL)_isValidTransitionToState:(int)arg1;
+- (bool)_isValidTransitionToState:(long long)arg1;
 - (id)_previousSequence;
-- (void)_setCurrentState:(int)arg1;
+- (void)_setCurrentState:(long long)arg1;
 - (void)_setPreviousSequence:(id)arg1;
-- (id /* block */)beginTransitionToState:(int)arg1 error:(id*)arg2;
-- (int)currentState;
+- (id /* block */)beginTransitionToState:(long long)arg1 error:(id*)arg2;
+- (long long)currentState;
 - (id)description;
 - (id)initWithSequenceIdentifier:(id)arg1;
-- (BOOL)isCurrentState:(int)arg1;
-- (BOOL)isCurrentStateAtLeast:(int)arg1;
-- (BOOL)isCurrentStateAtMost:(int)arg1;
-- (BOOL)isCurrentStateNotYet:(int)arg1;
+- (bool)isCurrentState:(long long)arg1;
+- (bool)isCurrentStateAtLeast:(long long)arg1;
+- (bool)isCurrentStateAtMost:(long long)arg1;
+- (bool)isCurrentStateNotYet:(long long)arg1;
 - (id)sequenceIdentifier;
 - (id)sequenceWithIdentifier:(id)arg1;
-- (id)transitionToState:(int)arg1;
+- (id)transitionToState:(long long)arg1;
 
 @end

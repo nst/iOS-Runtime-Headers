@@ -14,11 +14,11 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ fontForViewStateBlock;
 @property (nonatomic, readonly) UIInterfaceActionGroupViewState *groupViewState;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIInterfaceActionOverrideVisualStyle *visualStyleOverride;
 
-+ (id)idiomSpecificStyleForTraitCollection:(id)arg1 presentationStyle:(int)arg2;
++ (id)idiomSpecificStyleForTraitCollection:(id)arg1 presentationStyle:(long long)arg2;
 
 - (void).cxx_destruct;
 - (id)_base_actionPropertiesAffectingImageViewStyling;
@@ -33,11 +33,11 @@
 - (id)actionPropertiesAffectingActionRepresentationViewStyling;
 - (id)actionPropertiesAffectingImageViewStyling;
 - (id)actionPropertiesAffectingLabelStyling;
-- (float)actionSectionSpacing;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })actionSequenceEdgeInsets;
+- (double)actionSectionSpacing;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })actionSequenceEdgeInsets;
 - (id)actionTitleLabelColorForViewState:(id)arg1;
 - (id)actionTitleLabelFontForViewState:(id)arg1;
-- (float)actionTitleLabelMinimumScaleFactor;
+- (double)actionTitleLabelMinimumScaleFactor;
 - (id)actionViewStateForAttachingToActionRepresentationView:(id)arg1;
 - (id)concreteVisualStyle;
 - (void)configureAttributesForActionRepresentationView:(id)arg1 actionViewState:(id)arg2;
@@ -46,8 +46,8 @@
 - (void)configureAttributesForTitleLabel:(id)arg1 classificationLabel:(id)arg2 actionViewState:(id)arg3;
 - (void)configureForDismissingGroupView:(id)arg1 alongsideTransitionCoordinator:(id)arg2;
 - (void)configureForPresentingGroupView:(id)arg1 alongsideTransitionCoordinator:(id)arg2;
-- (float)contentCornerRadius;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentMargin;
+- (double)contentCornerRadius;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentMargin;
 - (id)copyWithGroupViewState:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)defaultConcreteActionTitleLabelPreferredFont;
@@ -56,22 +56,22 @@
 - (id)description;
 - (id /* block */)fontForViewStateBlock;
 - (id)groupViewState;
-- (float)horizontalImageContentSpacing;
+- (double)horizontalImageContentSpacing;
 - (id)init;
 - (id)initWithConcreteVisualStyle:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (struct CGSize { float x1; float x2; })maximumActionGroupContentSize;
-- (struct CGSize { float x1; float x2; })minimumActionContentSize;
+- (bool)isEqual:(id)arg1;
+- (struct CGSize { double x1; double x2; })maximumActionGroupContentSize;
+- (struct CGSize { double x1; double x2; })minimumActionContentSize;
 - (id)newActionBackgroundViewForViewState:(id)arg1;
 - (id)newActionSeparatorViewForGroupViewState:(id)arg1;
 - (id)newGroupBackgroundViewWithGroupViewState:(id)arg1;
 - (id)newSectionSeparatorViewForGroupViewState:(id)arg1;
-- (BOOL)selectByPressGestureRequired;
-- (BOOL)selectionFeedbackEnabled;
+- (bool)selectByPressGestureRequired;
+- (bool)selectionFeedbackEnabled;
 - (void)setConcreteVisualStyle:(id)arg1;
 - (void)setFontForViewStateBlock:(id /* block */)arg1;
 - (void)setVisualStyleOverride:(id)arg1;
-- (float)verticalImageContentSpacing;
+- (double)verticalImageContentSpacing;
 - (id)visualStyleOverride;
 
 @end

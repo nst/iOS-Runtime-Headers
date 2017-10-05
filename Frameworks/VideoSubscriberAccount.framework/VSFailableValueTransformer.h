@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) NSValueTransformer *objectValueTransformer;
 
-+ (BOOL)allowsReverseTransformation;
++ (bool)allowsReverseTransformation;
 + (Class)transformedValueClass;
 
 - (void).cxx_destruct;

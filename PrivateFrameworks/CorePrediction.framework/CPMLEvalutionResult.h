@@ -3,7 +3,7 @@
  */
 
 @interface CPMLEvalutionResult : NSObject {
-    unsigned int  count;
+    unsigned long long  count;
     NSObject * object;
 }
 

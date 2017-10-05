@@ -11,8 +11,8 @@
 - (void)_configureActionButton;
 - (void)_layoutActionButton;
 - (void)_layoutStatusView;
-- (id)initWithLightStyle:(BOOL)arg1;
-- (void)setShowsCancelButton:(BOOL)arg1;
-- (void)setShowsEmergencyCallButton:(BOOL)arg1;
+- (id)initWithLightStyle:(bool)arg1;
+- (void)setShowsCancelButton:(bool)arg1;
+- (void)setShowsEmergencyCallButton:(bool)arg1;
 
 @end

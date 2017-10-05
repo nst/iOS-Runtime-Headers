@@ -4,7 +4,7 @@
 
 @interface HDSQLiteJoinClause : NSObject {
     NSString * _joinAsName;
-    int  _joinType;
+    long long  _joinType;
     NSString * _localReferenceProperty;
     NSString * _localTable;
     Class  _targetEntityClass;
@@ -12,7 +12,7 @@
 }
 
 @property (nonatomic, readonly, copy) NSString *joinAsName;
-@property (nonatomic, readonly) int joinType;
+@property (nonatomic, readonly) long long joinType;
 @property (nonatomic, readonly, copy) NSString *localReferenceProperty;
 @property (nonatomic, readonly, copy) NSString *localTable;
 @property (nonatomic, readonly) Class targetEntityClass;
@@ -23,12 +23,13 @@
 
 - (void).cxx_destruct;
 - (id)SQLJoinClause;
-- (id)_initWithJoinType:(int)arg1 fromTable:(id)arg2 toTargetEntity:(Class)arg3 as:(id)arg4 localReference:(id)arg5 targetKey:(id)arg6;
+- (id)_initWithJoinType:(long long)arg1 fromTable:(id)arg2 toTargetEntity:(Class)arg3 as:(id)arg4 localReference:(id)arg5 targetKey:(id)arg6;
+- (id)copyWithJoinType:(long long)arg1;
 - (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)joinAsName;
-- (int)joinType;
+- (long long)joinType;
 - (id)localReferenceProperty;
 - (id)localTable;
 - (Class)targetEntityClass;

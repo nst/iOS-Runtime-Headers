@@ -2,6 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssertionServices.framework/AssertionServices
  */
 
-@interface BKSProcessAssertionDestroyEvent : BKSProcessAssertionEvent
+@interface BKSProcessAssertionDestroyEvent : BKSAssertionDestroyEvent
 
 @end

@@ -6,7 +6,7 @@
 @required
 
 - (NSArray *)availableBookings;
-- (int)code;
+- (long long)code;
 - (id)init;
 - (NSString *)localizedBookingAdvisementText;
 - (NSString *)localizedRestaurantDescriptionText;

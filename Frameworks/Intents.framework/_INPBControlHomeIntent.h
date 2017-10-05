@@ -11,12 +11,10 @@
 
 @property (nonatomic, retain) _INPBHomeAttribute *attribute;
 @property (nonatomic, retain) NSMutableArray *entities;
-@property (nonatomic, readonly) BOOL hasAttribute;
-@property (nonatomic, readonly) BOOL hasIntentMetadata;
+@property (nonatomic, readonly) bool hasAttribute;
+@property (nonatomic, readonly) bool hasIntentMetadata;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (Class)entitiesType;
 + (id)options;
@@ -29,25 +27,19 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)entities;
-- (id)entitiesAtIndex:(unsigned int)arg1;
-- (unsigned int)entitiesCount;
-- (BOOL)hasAttribute;
-- (BOOL)hasIntentMetadata;
-- (unsigned int)hash;
+- (id)entitiesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)entitiesCount;
+- (bool)hasAttribute;
+- (bool)hasIntentMetadata;
+- (unsigned long long)hash;
 - (id)intentMetadata;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAttribute:(id)arg1;
 - (void)setEntities:(id)arg1;
 - (void)setIntentMetadata:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

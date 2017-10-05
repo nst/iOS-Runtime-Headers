@@ -15,10 +15,10 @@
 }
 
 @property (nonatomic, retain) NSString *guid;
-@property (nonatomic, readonly) BOOL hasGuid;
-@property (nonatomic) BOOL hasNumberOfRecipients;
-@property (nonatomic) BOOL hasRemoteSessionEndReason;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) bool hasGuid;
+@property (nonatomic) bool hasNumberOfRecipients;
+@property (nonatomic) bool hasRemoteSessionEndReason;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) unsigned int numberOfRecipients;
 @property (nonatomic) unsigned int remoteSessionEndReason;
 @property (nonatomic) unsigned long long timestamp;
@@ -29,20 +29,20 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)guid;
-- (BOOL)hasGuid;
-- (BOOL)hasNumberOfRecipients;
-- (BOOL)hasRemoteSessionEndReason;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasGuid;
+- (bool)hasNumberOfRecipients;
+- (bool)hasRemoteSessionEndReason;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)numberOfRecipients;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)remoteSessionEndReason;
 - (void)setGuid:(id)arg1;
-- (void)setHasNumberOfRecipients:(BOOL)arg1;
-- (void)setHasRemoteSessionEndReason:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasNumberOfRecipients:(bool)arg1;
+- (void)setHasRemoteSessionEndReason:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setNumberOfRecipients:(unsigned int)arg1;
 - (void)setRemoteSessionEndReason:(unsigned int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;

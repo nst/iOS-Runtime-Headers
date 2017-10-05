@@ -8,7 +8,7 @@
 }
 
 - (id)_identifierForResource:(id)arg1;
-- (BOOL)addClientHandlerAndCreateTaskIfNecessaryForResource:(id)arg1 taskIdentifier:(id)arg2 completionHandler:(id /* block */)arg3;
+- (bool)addClientHandlerAndCreateTaskIfNecessaryForResource:(id)arg1 taskIdentifier:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)cancelTaskWithTaskIdentifier:(id)arg1;
 - (void)dealloc;
 - (id)init;

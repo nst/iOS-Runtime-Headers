@@ -7,18 +7,18 @@
     NSObject<OS_dispatch_queue> * _contactlessCardIngesterQueue;
     <PKContactlessCardIngesterDelegate> * _delegate;
     id /* block */  _disableCardCompletionHandler;
-    BOOL  _listening;
+    bool  _listening;
     NSString * _pushTopic;
     NSDictionary * _readerModeMetadata;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (id)_displayableErrorForSPStatusCode:(unsigned int)arg1 seldError:(id)arg2;
-+ (id)debugDescriptionForStatus:(unsigned int)arg1;
++ (id)_displayableErrorForSPStatusCode:(unsigned long long)arg1 seldError:(id)arg2;
++ (id)debugDescriptionForStatus:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (void)_cancelCardIngestion;
@@ -30,7 +30,7 @@
 - (void)ingestCardWithSuccessHandler:(id /* block */)arg1;
 - (id)initWithPaymentSetupProduct:(id)arg1 delegate:(id)arg2;
 - (void)invalidate;
-- (void)readerModeCardIngestionStatus:(unsigned int)arg1;
+- (void)readerModeCardIngestionStatus:(unsigned long long)arg1;
 - (void)readerModeCardSessionToken:(id)arg1;
 
 @end

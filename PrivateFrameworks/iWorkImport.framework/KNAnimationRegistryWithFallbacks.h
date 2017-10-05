@@ -7,7 +7,7 @@
     KNAnimationRegistry * mRegistry;
 }
 
-- (id)animationInfoForEffectIdentifier:(id)arg1 animationType:(int)arg2;
+- (id)animationInfoForEffectIdentifier:(id)arg1 animationType:(long long)arg2;
 - (id)init;
 - (void)registerFallbackEffectIdentifer:(id)arg1 forEffectIdentifer:(id)arg2;
 

@@ -6,7 +6,8 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSArray *mediaPlayerOrderingTerms;
 @property (nonatomic, copy) NSString *query;
 @property (nonatomic, copy) NSArray *searchProperties;
 @property (readonly) Class superclass;
@@ -16,8 +17,10 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (id)mediaPlayerOrderingTerms;
 - (id)query;
 - (id)searchProperties;
+- (void)setMediaPlayerOrderingTerms:(id)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setSearchProperties:(id)arg1;
 

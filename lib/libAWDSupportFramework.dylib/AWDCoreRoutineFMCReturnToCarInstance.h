@@ -14,10 +14,10 @@
     unsigned long long  _timestamp;
 }
 
-@property (nonatomic) BOOL hasHorizontalAccuracy;
-@property (nonatomic) BOOL hasHorizontalDistance;
-@property (nonatomic, readonly) BOOL hasParkingId;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasHorizontalAccuracy;
+@property (nonatomic) bool hasHorizontalDistance;
+@property (nonatomic, readonly) bool hasParkingId;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) int horizontalAccuracy;
 @property (nonatomic) int horizontalDistance;
 @property (nonatomic, retain) NSString *parkingId;
@@ -28,20 +28,20 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasHorizontalAccuracy;
-- (BOOL)hasHorizontalDistance;
-- (BOOL)hasParkingId;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
+- (bool)hasHorizontalAccuracy;
+- (bool)hasHorizontalDistance;
+- (bool)hasParkingId;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
 - (int)horizontalAccuracy;
 - (int)horizontalDistance;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)parkingId;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasHorizontalAccuracy:(BOOL)arg1;
-- (void)setHasHorizontalDistance:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasHorizontalAccuracy:(bool)arg1;
+- (void)setHasHorizontalDistance:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setHorizontalAccuracy:(int)arg1;
 - (void)setHorizontalDistance:(int)arg1;
 - (void)setParkingId:(id)arg1;

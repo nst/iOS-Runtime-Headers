@@ -9,6 +9,7 @@
 - (GEOMapItemTip *)_geoMapItemTIp;
 - (<GEOMapItemReview> *)_geoReview;
 - (NSString *)_localizedSnippet;
+- (NSString *)_localizedSnippetLocale;
 - (double)_maxScore;
 - (double)_normalizedScore;
 - (NSURL *)_reviewerImageURL;

@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) STTimer *timer;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

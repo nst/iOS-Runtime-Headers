@@ -3,25 +3,25 @@
  */
 
 @interface UIRepeatedAction : NSObject {
-    BOOL  _didCompleteInvocationDelay;
-    BOOL  _didCompletePreInvocationDelay;
-    BOOL  _disableRepeat;
+    bool  _didCompleteInvocationDelay;
+    bool  _didCompletePreInvocationDelay;
+    bool  _disableRepeat;
     NSInvocation * _invocation;
     id  _invocationArgument;
-    float  _invocationDelay;
-    float  _preInvocationDelay;
-    float  _repeatedDelay;
-    BOOL  _skipInitialFire;
+    double  _invocationDelay;
+    double  _preInvocationDelay;
+    double  _repeatedDelay;
+    bool  _skipInitialFire;
     NSTimer * _timer;
 }
 
-@property (nonatomic) BOOL disableRepeat;
+@property (nonatomic) bool disableRepeat;
 @property (nonatomic, retain) NSInvocation *invocation;
 @property (nonatomic, retain) id invocationArgument;
-@property (nonatomic) float invocationDelay;
-@property (nonatomic) float preInvocationDelay;
-@property (nonatomic) float repeatedDelay;
-@property (nonatomic) BOOL skipInitialFire;
+@property (nonatomic) double invocationDelay;
+@property (nonatomic) double preInvocationDelay;
+@property (nonatomic) double repeatedDelay;
+@property (nonatomic) bool skipInitialFire;
 @property (nonatomic, retain) NSTimer *timer;
 
 + (id)_invocationForTarget:(id)arg1 selector:(SEL)arg2 object:(id)arg3;
@@ -32,28 +32,28 @@
 - (void)_preInvocationTimerFire;
 - (void)_repeatedTimerFire;
 - (void)dealloc;
-- (BOOL)disableRepeat;
+- (bool)disableRepeat;
 - (id)initWithInvocation:(id)arg1;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2 object:(id)arg3;
 - (void)invalidate;
 - (id)invocation;
 - (id)invocationArgument;
-- (float)invocationDelay;
-- (BOOL)invoke;
-- (float)preInvocationDelay;
-- (float)repeatedDelay;
+- (double)invocationDelay;
+- (bool)invoke;
+- (double)preInvocationDelay;
+- (double)repeatedDelay;
 - (void)reset;
 - (void)schedule;
 - (void)scheduleWithTarget:(id)arg1 selector:(SEL)arg2 object:(id)arg3;
-- (void)setDisableRepeat:(BOOL)arg1;
+- (void)setDisableRepeat:(bool)arg1;
 - (void)setInvocation:(id)arg1;
 - (void)setInvocationArgument:(id)arg1;
-- (void)setInvocationDelay:(float)arg1;
-- (void)setPreInvocationDelay:(float)arg1;
-- (void)setRepeatedDelay:(float)arg1;
-- (void)setSkipInitialFire:(BOOL)arg1;
+- (void)setInvocationDelay:(double)arg1;
+- (void)setPreInvocationDelay:(double)arg1;
+- (void)setRepeatedDelay:(double)arg1;
+- (void)setSkipInitialFire:(bool)arg1;
 - (void)setTimer:(id)arg1;
-- (BOOL)skipInitialFire;
+- (bool)skipInitialFire;
 - (id)timer;
 
 @end

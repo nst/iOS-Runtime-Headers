@@ -7,7 +7,7 @@
 }
 
 - (void).cxx_destruct;
-- (id)initIconWithSize:(unsigned int)arg1 mapItem:(id)arg2;
+- (id)initIconWithSize:(unsigned long long)arg1 mapItem:(id)arg2;
 - (void)loadImageDataWithCompletionAndErrorHandler:(id /* block */)arg1;
 - (void)loadImageDataWithCompletionHandler:(id /* block */)arg1;
 

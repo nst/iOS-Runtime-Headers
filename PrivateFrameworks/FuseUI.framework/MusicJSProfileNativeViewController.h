@@ -11,7 +11,7 @@
     NSString * _followersText;
     IKAppDocument * _moreRelatedContentDocument;
     NSDictionary * _moreRelatedContentDocumentOptions;
-    int  _numberOfFollowers;
+    long long  _numberOfFollowers;
     NSDictionary * _profileEntityValueProviderData;
     IKAppDocument * _relatedContentDocument;
     NSDictionary * _relatedContentDocumentOptions;
@@ -23,7 +23,7 @@
     NSString * _selectedSegmentIdentifier;
     IKAppDocument * _shareDocument;
     NSDictionary * _shareDocumentOptions;
-    BOOL  _socialHidden;
+    bool  _socialHidden;
     NSArray * _visibleSegments;
 }
 
@@ -37,11 +37,11 @@
 @property (nonatomic, readonly, copy) NSString *featureName;
 @property (nonatomic, readonly) NSString *followerCountText;
 @property (nonatomic, readonly) NSString *followersText;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) IKAppDocument *moreRelatedContentDocument;
 @property (nonatomic, readonly) NSDictionary *moreRelatedContentDocumentOptions;
 @property (nonatomic, readonly) IKJSNavigationDocument *navigationDocument;
-@property (nonatomic, readonly) int numberOfFollowers;
+@property (nonatomic, readonly) long long numberOfFollowers;
 @property (nonatomic, readonly) NSDictionary *profileEntityValueProviderData;
 @property (nonatomic, readonly) IKAppDocument *relatedContentDocument;
 @property (nonatomic, readonly) NSDictionary *relatedContentDocumentOptions;
@@ -49,7 +49,7 @@
 @property (nonatomic, readonly) NSString *selectedSegmentIdentifier;
 @property (nonatomic, readonly) IKAppDocument *shareDocument;
 @property (nonatomic, readonly) NSDictionary *shareDocumentOptions;
-@property (getter=isSocialHidden, nonatomic) BOOL socialHidden;
+@property (getter=isSocialHidden, nonatomic) bool socialHidden;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSArray *visibleSegments;
 
@@ -65,12 +65,12 @@
 - (void)enumerateSegmentIdentifiersAndDocumentsUsingBlock:(id /* block */)arg1;
 - (id)followerCountText;
 - (id)followersText;
-- (BOOL)isSocialHidden;
+- (bool)isSocialHidden;
 - (id)moreRelatedContentDocument;
 - (id)moreRelatedContentDocumentOptions;
 - (id)nativeViewIdentifier;
 - (void)navigationDocumentDidChange;
-- (int)numberOfFollowers;
+- (long long)numberOfFollowers;
 - (void)presentBiographyEditorDocument:(id)arg1 :(id)arg2;
 - (void)presentShareDocument:(id)arg1 :(id)arg2;
 - (id)profileEntityValueProviderData;
@@ -82,17 +82,17 @@
 - (void)setDelegate:(id)arg1;
 - (void)setFollowerCountText:(id)arg1 :(id)arg2;
 - (void)setMoreRelatedContentDocument:(id)arg1 :(id)arg2;
-- (void)setNumberOfFollowers:(unsigned int)arg1;
+- (void)setNumberOfFollowers:(unsigned long long)arg1;
 - (void)setProfileEntityValueProvider:(id)arg1;
 - (void)setRelatedContentDocument:(id)arg1 :(id)arg2;
 - (void)setReportingInformation:(id)arg1;
 - (void)setSegmentDocument:(id)arg1 :(id)arg2 :(id)arg3;
 - (void)setSelectedSegment:(id)arg1;
-- (void)setSocialHidden:(BOOL)arg1;
+- (void)setSocialHidden:(bool)arg1;
 - (void)setVisibleSegments:(id)arg1;
 - (id)shareDocument;
 - (id)shareDocumentOptions;
-- (BOOL)supportsRelatedContentDocument;
+- (bool)supportsRelatedContentDocument;
 - (id)visibleSegments;
 
 @end

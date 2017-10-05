@@ -4,23 +4,23 @@
 
 @interface CalLogFileWriter : CalLogWriter {
     int  _fileDescriptor;
-    BOOL  _fileDescriptorIsValid;
+    bool  _fileDescriptorIsValid;
     NSString * _path;
 }
 
 @property (nonatomic) int fileDescriptor;
-@property (nonatomic) BOOL fileDescriptorIsValid;
+@property (nonatomic) bool fileDescriptorIsValid;
 @property (nonatomic, retain) NSString *path;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (int)fileDescriptor;
-- (BOOL)fileDescriptorIsValid;
+- (bool)fileDescriptorIsValid;
 - (id)initWithParameters:(id)arg1;
 - (id)path;
 - (void)setFileDescriptor:(int)arg1;
-- (void)setFileDescriptorIsValid:(BOOL)arg1;
+- (void)setFileDescriptorIsValid:(bool)arg1;
 - (void)setPath:(id)arg1;
 - (void)write:(id)arg1;
 

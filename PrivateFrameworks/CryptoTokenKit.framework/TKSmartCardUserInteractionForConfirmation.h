@@ -3,21 +3,21 @@
  */
 
 @interface TKSmartCardUserInteractionForConfirmation : TKSmartCardUserInteraction <NSSecureCoding> {
-    BOOL  _result;
+    bool  _result;
     TKSmartCardSlot * _slot;
 }
 
-@property BOOL result;
+@property bool result;
 @property TKSmartCardSlot *slot;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)result;
+- (bool)result;
 - (void)runWithReply:(id /* block */)arg1;
-- (void)setResult:(BOOL)arg1;
+- (void)setResult:(bool)arg1;
 - (void)setSlot:(id)arg1;
 - (id)slot;
 

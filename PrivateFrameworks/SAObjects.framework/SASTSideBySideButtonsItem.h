@@ -7,13 +7,13 @@
 @property (nonatomic, copy) NSString *buttonsViewStyle;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) <SASTTemplateAction> *primaryButtonAction;
-@property (nonatomic) BOOL primaryButtonEnabled;
+@property (nonatomic) bool primaryButtonEnabled;
 @property (nonatomic, copy) NSString *primaryButtonLabel;
 @property (nonatomic, retain) SAUIColor *primaryButtonTextColor;
 @property (nonatomic, retain) <SASTTemplateAction> *secondaryButtonAction;
-@property (nonatomic) BOOL secondaryButtonEnabled;
+@property (nonatomic) bool secondaryButtonEnabled;
 @property (nonatomic, copy) NSString *secondaryButtonLabel;
 @property (readonly) Class superclass;
 
@@ -24,19 +24,19 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)primaryButtonAction;
-- (BOOL)primaryButtonEnabled;
+- (bool)primaryButtonEnabled;
 - (id)primaryButtonLabel;
 - (id)primaryButtonTextColor;
 - (id)secondaryButtonAction;
-- (BOOL)secondaryButtonEnabled;
+- (bool)secondaryButtonEnabled;
 - (id)secondaryButtonLabel;
 - (void)setButtonsViewStyle:(id)arg1;
 - (void)setPrimaryButtonAction:(id)arg1;
-- (void)setPrimaryButtonEnabled:(BOOL)arg1;
+- (void)setPrimaryButtonEnabled:(bool)arg1;
 - (void)setPrimaryButtonLabel:(id)arg1;
 - (void)setPrimaryButtonTextColor:(id)arg1;
 - (void)setSecondaryButtonAction:(id)arg1;
-- (void)setSecondaryButtonEnabled:(BOOL)arg1;
+- (void)setSecondaryButtonEnabled:(bool)arg1;
 - (void)setSecondaryButtonLabel:(id)arg1;
 
 @end

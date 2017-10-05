@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) MPModelSong *song;
 
-+ (BOOL)supportsLyricsForURLBagDictionary:(id)arg1;
++ (bool)supportsLyricsForURLBagDictionary:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

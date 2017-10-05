@@ -12,7 +12,7 @@
 - (id)allVehicles;
 - (id)init;
 - (id)pairedVehicles;
-- (BOOL)removeVehicle:(id)arg1;
+- (bool)removeVehicle:(id)arg1;
 - (id)saveVehicle:(id)arg1;
 - (id)serviceClient;
 - (void)setServiceClient:(id)arg1;

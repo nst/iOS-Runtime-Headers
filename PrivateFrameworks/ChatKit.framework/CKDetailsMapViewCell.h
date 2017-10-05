@@ -8,15 +8,15 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIView *mapView;
 @property (readonly) Class superclass;
 
 + (id)reuseIdentifier;
-+ (BOOL)shouldHighlight;
++ (bool)shouldHighlight;
 
 - (void).cxx_destruct;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (id)mapView;
 - (void)setMapView:(id)arg1;

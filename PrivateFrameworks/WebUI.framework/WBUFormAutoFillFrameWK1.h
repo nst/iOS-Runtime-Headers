@@ -8,7 +8,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) WebFrame *webFrame;
 
@@ -16,7 +16,7 @@
 
 - (void).cxx_destruct;
 - (id)committedURL;
-- (BOOL)containsAnyFormElements;
+- (bool)containsAnyFormElements;
 - (void)enumerateChildFramesUsingBlock:(id /* block */)arg1;
 - (struct OpaqueFormAutoFillFrame { }*)frameRef;
 - (id)initWithWebFrame:(id)arg1;

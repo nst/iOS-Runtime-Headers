@@ -4,6 +4,6 @@
 
 @interface MDCustomAttributeKey : CSCustomAttributeKey
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 @end

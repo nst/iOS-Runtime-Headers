@@ -13,9 +13,9 @@
 }
 
 @property (nonatomic, retain) NSString *bundleName;
-@property (nonatomic, readonly) BOOL hasBundleName;
-@property (nonatomic) BOOL hasPowerMicroWatt;
-@property (nonatomic) BOOL hasRAT;
+@property (nonatomic, readonly) bool hasBundleName;
+@property (nonatomic) bool hasPowerMicroWatt;
+@property (nonatomic) bool hasRAT;
 @property (nonatomic) unsigned int powerMicroWatt;
 @property (nonatomic) int rAT;
 
@@ -26,19 +26,19 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasBundleName;
-- (BOOL)hasPowerMicroWatt;
-- (BOOL)hasRAT;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasBundleName;
+- (bool)hasPowerMicroWatt;
+- (bool)hasRAT;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)powerMicroWatt;
 - (int)rAT;
 - (id)rATAsString:(int)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setBundleName:(id)arg1;
-- (void)setHasPowerMicroWatt:(BOOL)arg1;
-- (void)setHasRAT:(BOOL)arg1;
+- (void)setHasPowerMicroWatt:(bool)arg1;
+- (void)setHasRAT:(bool)arg1;
 - (void)setPowerMicroWatt:(unsigned int)arg1;
 - (void)setRAT:(int)arg1;
 - (void)writeTo:(id)arg1;

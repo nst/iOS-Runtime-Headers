@@ -12,7 +12,7 @@
 - (void)performAccountReset:(CDPRemoteSecretEntryViewController *)arg1;
 - (void)performRecoveryKeyRecovery:(CDPRemoteSecretEntryViewController *)arg1;
 - (void)performRemoteApproval:(CDPRemoteSecretEntryViewController *)arg1;
-- (BOOL)performingAccountRecovery;
+- (bool)performingAccountRecovery;
 - (void)remoteSecretEntry:(CDPRemoteSecretEntryViewController *)arg1 depletedRemainingAttemptsForDevice:(CDPDevice *)arg2;
 - (void)remoteSecretEntry:(CDPRemoteSecretEntryViewController *)arg1 didAcceptValidRemoteSecretForDevice:(CDPDevice *)arg2;
 

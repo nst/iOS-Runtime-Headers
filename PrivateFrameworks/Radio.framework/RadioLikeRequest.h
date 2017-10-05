@@ -3,7 +3,7 @@
  */
 
 @interface RadioLikeRequest : RadioRequest {
-    BOOL  _isSeed;
+    bool  _isSeed;
     long long  _itemID;
     int  _likeStatus;
     SSURLConnectionRequest * _request;
@@ -11,7 +11,7 @@
     RadioStation * _station;
 }
 
-@property (nonatomic) BOOL isSeed;
+@property (nonatomic) bool isSeed;
 @property (nonatomic) int likeStatus;
 
 - (void).cxx_destruct;
@@ -19,9 +19,9 @@
 - (id)initWithItemID:(long long)arg1 seedType:(int)arg2 station:(id)arg3;
 - (id)initWithTrack:(id)arg1 station:(id)arg2;
 - (id)initWithTrackID:(id)arg1 station:(id)arg2;
-- (BOOL)isSeed;
+- (bool)isSeed;
 - (int)likeStatus;
-- (void)setIsSeed:(BOOL)arg1;
+- (void)setIsSeed:(bool)arg1;
 - (void)setLikeStatus:(int)arg1;
 - (void)startWithCompletionHandler:(id /* block */)arg1;
 - (void)startWithLikeCompletionHandler:(id /* block */)arg1;

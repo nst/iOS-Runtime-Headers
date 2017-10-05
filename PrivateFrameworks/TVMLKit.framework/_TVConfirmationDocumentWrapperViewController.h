@@ -2,10 +2,16 @@
    Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
  */
 
-@interface _TVConfirmationDocumentWrapperViewController : UIViewController
+@interface _TVConfirmationDocumentWrapperViewController : UIViewController <UIGestureRecognizerDelegate>
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
+- (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)loadView;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (void)tapped;
 - (void)viewDidLayoutSubviews;
 
 @end

@@ -13,7 +13,7 @@
 - (id)errorDelegate;
 - (id)nodeType;
 - (void)setErrorDelegate:(id)arg1;
-- (BOOL)start:(id*)arg1;
-- (BOOL)stop:(id*)arg1;
+- (bool)start:(id*)arg1;
+- (bool)stop:(id*)arg1;
 
 @end

@@ -6,19 +6,19 @@
     GEORouteHypothesisRequest * _request;
 }
 
-@property (nonatomic, readonly, retain) GEORouteHypothesisRequest *request;
+@property (nonatomic, readonly) GEORouteHypothesisRequest *request;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)_isEqual:(id)arg1;
+- (void).cxx_destruct;
+- (bool)_isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRouteHypothesisRequest:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)request;
 
 @end

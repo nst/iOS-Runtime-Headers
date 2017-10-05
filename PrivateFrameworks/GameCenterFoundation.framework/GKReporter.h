@@ -6,9 +6,9 @@
 
 + (id)reporter;
 
-- (void)_nativeReport:(id)arg1 signature:(id)arg2 result:(BOOL*)arg3;
+- (void)_nativeReport:(id)arg1 signature:(id)arg2 result:(bool*)arg3;
 - (void)report:(id)arg1;
 - (void)report:(id)arg1 signature:(id)arg2;
-- (void)report:(id)arg1 signature:(id)arg2 result:(BOOL)arg3;
+- (void)report:(id)arg1 signature:(id)arg2 result:(bool)arg3;
 
 @end

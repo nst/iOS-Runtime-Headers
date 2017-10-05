@@ -15,6 +15,8 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_forceDatabaseUpdateWithCompletionHandler:(id /* block */)arg1;
+- (void)_forceLoadRemoteConfigurationFromDiskWithCompletionHandler:(id /* block */)arg1;
+- (void)_forceUpdateRemoteConfigurationFromServerWithCompletionHandler:(id /* block */)arg1;
 - (void)_getDatabaseStatusWithCompletionHandler:(id /* block */)arg1;
 - (void)_getServiceStatusWithCompletionHandler:(id /* block */)arg1;
 - (void)dealloc;

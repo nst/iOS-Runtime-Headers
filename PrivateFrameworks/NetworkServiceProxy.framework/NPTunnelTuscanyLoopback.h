@@ -3,61 +3,33 @@
  */
 
 @interface NPTunnelTuscanyLoopback : NPTunnelTuscany {
-    unsigned long  _blobSizes;
-    BOOL  _connected;
-    unsigned int  _currentBlobSizeIndex;
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    }  _currentRange;
-    NSData * _dayPassBytes;
-    NSData * _doneMarker;
     NPTunnelFlow * _flow;
-    NSMutableData * _sendBuffer;
     void * _window;
 }
 
-@property BOOL connected;
-@property unsigned int currentBlobSizeIndex;
-@property (readonly) NSData *dayPassBytes;
-@property (retain) NSData *doneMarker;
 @property (retain) NPTunnelFlow *flow;
-@property (retain) NSMutableData *sendBuffer;
 @property void*window;
 
 - (void).cxx_destruct;
-- (BOOL)addNewFlow:(id)arg1;
-- (id)appRule;
-- (BOOL)canHandleMoreData;
+- (bool)addNewFlow:(id)arg1;
+- (void)cancelConnection;
 - (void)cancelConnectionTimer;
-- (BOOL)connected;
-- (BOOL)createConnectionWithInitialData:(id)arg1;
 - (void)createTuscanyClient;
-- (unsigned int)currentBlobSizeIndex;
-- (int)currentMTU;
-- (id)dayPass;
-- (id)dayPassBytes;
+- (long long)currentMTU;
+- (unsigned int)dayPassSessionCounter;
 - (void)dealloc;
-- (id)doneMarker;
 - (id)flow;
-- (id)initWithConfiguration:(id)arg1 delegate:(id)arg2;
-- (unsigned int)initialWindowSize;
-- (BOOL)isConnectionAlive;
-- (unsigned int)maxFrameSize;
-- (void)readMinimumBytes:(unsigned int)arg1 maximumBytes:(unsigned int)arg2;
+- (id)initWithConfiguration:(id)arg1 endpoint:(id)arg2 parameters:(id)arg3 appRule:(id)arg4 flowProperties:(id)arg5 delegate:(id)arg6;
+- (unsigned long long)initialWindowSize;
+- (unsigned long long)maxFrameSize;
+- (void)pingWithCompletionHandler:(id /* block */)arg1;
 - (void)removeFlow:(unsigned long long)arg1;
-- (BOOL)selectBestEdge;
-- (id)sendBuffer;
-- (void)setAppRule:(id)arg1;
-- (void)setConnected:(BOOL)arg1;
-- (void)setCurrentBlobSizeIndex:(unsigned int)arg1;
-- (void)setDayPass:(id)arg1;
-- (void)setDoneMarker:(id)arg1;
+- (bool)selectBestEdge;
+- (void)sendUsageReportWithSuccess:(bool)arg1 rtt:(unsigned long long)arg2 geohash:(id)arg3 fallbackReason:(long long)arg4;
 - (void)setFlow:(id)arg1;
-- (void)setSendBuffer:(id)arg1;
 - (void)setWindow:(void*)arg1;
 - (void)startConnectionTimer;
 - (void*)window;
-- (void)writeDataToConnection:(id)arg1;
+- (void)write:(id)arg1;
 
 @end

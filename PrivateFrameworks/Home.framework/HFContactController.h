@@ -6,30 +6,27 @@
     <HFContactControllerDelegate> * _delegate;
     NSArray * _descriptors;
     NSMutableArray * _familyMemberCallbacks;
-    NSMutableDictionary * _familyMemberDsidToContact;
+    NSDictionary * _familyMemberDsidToContact;
     NSArray * _familyMembers;
-    unsigned int  _familyMembersState;
-    float  _monogramDiameter;
-    int  _monogramStyle;
+    unsigned long long  _familyMembersState;
     NSMutableDictionary * _recipientAvailabilities;
 }
 
 @property (nonatomic) <HFContactControllerDelegate> *delegate;
 @property (nonatomic, copy) NSArray *descriptors;
-@property (nonatomic, copy) NSMutableArray *familyMemberCallbacks;
-@property (nonatomic, copy) NSMutableDictionary *familyMemberDsidToContact;
+@property (nonatomic, retain) NSMutableArray *familyMemberCallbacks;
+@property (nonatomic, copy) NSDictionary *familyMemberDsidToContact;
 @property (nonatomic, copy) NSArray *familyMembers;
-@property (nonatomic) unsigned int familyMembersState;
-@property (nonatomic) float monogramDiameter;
-@property (nonatomic) int monogramStyle;
+@property (nonatomic) unsigned long long familyMembersState;
 @property (nonatomic, readonly, copy) NSArray *pendingDestinations;
 @property (nonatomic, retain) NSMutableDictionary *recipientAvailabilities;
 
 + (id)contactForEmailAddress:(id)arg1 keyDescriptors:(id)arg2;
 + (id)contactForPhoneNumber:(id)arg1 keyDescriptors:(id)arg2;
-+ (id)stringForRecipientStatus:(unsigned int)arg1;
++ (id)stringForRecipientStatus:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
+- (id)_contactForFamilyMember:(id)arg1;
 - (void)_downloadFamilyMemberPhotos;
 - (void)_loadFamilyMembersWithCompletion:(id /* block */)arg1;
 - (id)contactForFamilyMemberWithDsid:(id)arg1;
@@ -39,13 +36,11 @@
 - (id)familyMemberCallbacks;
 - (id)familyMemberDsidToContact;
 - (id)familyMembers;
-- (unsigned int)familyMembersState;
+- (unsigned long long)familyMembersState;
 - (void)fetchFamilyMembersWithCompletion:(id /* block */)arg1;
 - (id)init;
 - (id)initWithKeyDescriptors:(id)arg1;
 - (void)markDestinationsPending:(id)arg1;
-- (float)monogramDiameter;
-- (int)monogramStyle;
 - (id)pendingDestinations;
 - (id)recipientAvailabilities;
 - (void)setDelegate:(id)arg1;
@@ -53,10 +48,8 @@
 - (void)setFamilyMemberCallbacks:(id)arg1;
 - (void)setFamilyMemberDsidToContact:(id)arg1;
 - (void)setFamilyMembers:(id)arg1;
-- (void)setFamilyMembersState:(unsigned int)arg1;
-- (void)setMonogramDiameter:(float)arg1;
-- (void)setMonogramStyle:(int)arg1;
+- (void)setFamilyMembersState:(unsigned long long)arg1;
 - (void)setRecipientAvailabilities:(id)arg1;
-- (unsigned int)statusForDestination:(id)arg1;
+- (unsigned long long)statusForDestination:(id)arg1;
 
 @end

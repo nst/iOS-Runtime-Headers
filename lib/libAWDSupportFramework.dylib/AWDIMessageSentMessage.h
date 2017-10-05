@@ -3,10 +3,12 @@
  */
 
 @interface AWDIMessageSentMessage : PBCodable <NSCopying> {
+    unsigned int  _connectionType;
     int  _fzError;
     NSString * _guid;
     struct { 
         unsigned int timestamp : 1; 
+        unsigned int connectionType : 1; 
         unsigned int fzError : 1; 
         unsigned int hasAttachments : 1; 
         unsigned int isGroupMessage : 1; 
@@ -26,19 +28,21 @@
     unsigned long long  _timestamp;
 }
 
+@property (nonatomic) unsigned int connectionType;
 @property (nonatomic) int fzError;
 @property (nonatomic, retain) NSString *guid;
 @property (nonatomic) unsigned int hasAttachments;
-@property (nonatomic) BOOL hasFzError;
-@property (nonatomic, readonly) BOOL hasGuid;
-@property (nonatomic) BOOL hasHasAttachments;
-@property (nonatomic) BOOL hasIsGroupMessage;
-@property (nonatomic) BOOL hasIsToEmail;
-@property (nonatomic) BOOL hasIsToPhoneNumber;
-@property (nonatomic) BOOL hasIsTypingIndicator;
-@property (nonatomic) BOOL hasMessageError;
-@property (nonatomic) BOOL hasSendDuration;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasConnectionType;
+@property (nonatomic) bool hasFzError;
+@property (nonatomic, readonly) bool hasGuid;
+@property (nonatomic) bool hasHasAttachments;
+@property (nonatomic) bool hasIsGroupMessage;
+@property (nonatomic) bool hasIsToEmail;
+@property (nonatomic) bool hasIsToPhoneNumber;
+@property (nonatomic) bool hasIsTypingIndicator;
+@property (nonatomic) bool hasMessageError;
+@property (nonatomic) bool hasSendDuration;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) unsigned int isGroupMessage;
 @property (nonatomic) unsigned int isToEmail;
 @property (nonatomic) unsigned int isToPhoneNumber;
@@ -47,6 +51,7 @@
 @property (nonatomic) unsigned int sendDuration;
 @property (nonatomic) unsigned long long timestamp;
 
+- (unsigned int)connectionType;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -55,38 +60,41 @@
 - (int)fzError;
 - (id)guid;
 - (unsigned int)hasAttachments;
-- (BOOL)hasFzError;
-- (BOOL)hasGuid;
-- (BOOL)hasHasAttachments;
-- (BOOL)hasIsGroupMessage;
-- (BOOL)hasIsToEmail;
-- (BOOL)hasIsToPhoneNumber;
-- (BOOL)hasIsTypingIndicator;
-- (BOOL)hasMessageError;
-- (BOOL)hasSendDuration;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasConnectionType;
+- (bool)hasFzError;
+- (bool)hasGuid;
+- (bool)hasHasAttachments;
+- (bool)hasIsGroupMessage;
+- (bool)hasIsToEmail;
+- (bool)hasIsToPhoneNumber;
+- (bool)hasIsTypingIndicator;
+- (bool)hasMessageError;
+- (bool)hasSendDuration;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (unsigned int)isGroupMessage;
 - (unsigned int)isToEmail;
 - (unsigned int)isToPhoneNumber;
 - (unsigned int)isTypingIndicator;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)messageError;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)sendDuration;
+- (void)setConnectionType:(unsigned int)arg1;
 - (void)setFzError:(int)arg1;
 - (void)setGuid:(id)arg1;
 - (void)setHasAttachments:(unsigned int)arg1;
-- (void)setHasFzError:(BOOL)arg1;
-- (void)setHasHasAttachments:(BOOL)arg1;
-- (void)setHasIsGroupMessage:(BOOL)arg1;
-- (void)setHasIsToEmail:(BOOL)arg1;
-- (void)setHasIsToPhoneNumber:(BOOL)arg1;
-- (void)setHasIsTypingIndicator:(BOOL)arg1;
-- (void)setHasMessageError:(BOOL)arg1;
-- (void)setHasSendDuration:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasConnectionType:(bool)arg1;
+- (void)setHasFzError:(bool)arg1;
+- (void)setHasHasAttachments:(bool)arg1;
+- (void)setHasIsGroupMessage:(bool)arg1;
+- (void)setHasIsToEmail:(bool)arg1;
+- (void)setHasIsToPhoneNumber:(bool)arg1;
+- (void)setHasIsTypingIndicator:(bool)arg1;
+- (void)setHasMessageError:(bool)arg1;
+- (void)setHasSendDuration:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setIsGroupMessage:(unsigned int)arg1;
 - (void)setIsToEmail:(unsigned int)arg1;
 - (void)setIsToPhoneNumber:(unsigned int)arg1;

@@ -6,7 +6,7 @@
     SLFacebookLoginInfoCellContentView * _infoView;
 }
 
-+ (float)desiredRowHeightForWidth:(float)arg1;
++ (double)desiredRowHeightForWidth:(double)arg1;
 
 - (void).cxx_destruct;
 - (void)layoutSubviews;

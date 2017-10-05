@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) FCFeedDescriptor *feedDescriptor;
 @property (nonatomic, retain) NSString *groupID;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) id /* block */ removeGroupCompletionHandler;
 @property (nonatomic, retain) FCFeedViewport *resultViewport;
 @property (readonly) Class superclass;
@@ -35,7 +35,7 @@
 - (void)setResultViewport:(id)arg1;
 - (void)setViewport:(id)arg1;
 - (void)setViewportDiff:(id)arg1;
-- (BOOL)validateOperation;
+- (bool)validateOperation;
 - (id)viewport;
 - (id)viewportDiff;
 

@@ -3,24 +3,24 @@
  */
 
 @interface _CKAcknowledgmentAnimatorModelItem : NSObject {
-    int  _ackVoteCount;
-    int  _acknowledgmentType;
+    long long  _ackVoteCount;
+    long long  _acknowledgmentType;
     CKEntity * _entity;
     NSIndexPath * _indexPath;
 }
 
-@property (nonatomic) int ackVoteCount;
-@property (nonatomic) int acknowledgmentType;
+@property (nonatomic) long long ackVoteCount;
+@property (nonatomic) long long acknowledgmentType;
 @property (nonatomic, retain) CKEntity *entity;
 @property (nonatomic, retain) NSIndexPath *indexPath;
 
 - (void).cxx_destruct;
-- (int)ackVoteCount;
-- (int)acknowledgmentType;
+- (long long)ackVoteCount;
+- (long long)acknowledgmentType;
 - (id)entity;
 - (id)indexPath;
-- (void)setAckVoteCount:(int)arg1;
-- (void)setAcknowledgmentType:(int)arg1;
+- (void)setAckVoteCount:(long long)arg1;
+- (void)setAcknowledgmentType:(long long)arg1;
 - (void)setEntity:(id)arg1;
 - (void)setIndexPath:(id)arg1;
 

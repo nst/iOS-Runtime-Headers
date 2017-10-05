@@ -5,14 +5,15 @@
 
 @required
 
+- (NSURL *)URL;
 - (NSString *)emailAddress;
 - (NSString *)firstName;
 - (NSString *)lastName;
 - (NSString *)name;
+- (NSString *)phoneNumber;
 
 @optional
 
-- (NSURL *)URL;
 - (NSPredicate *)contactPredicate;
 
 @end

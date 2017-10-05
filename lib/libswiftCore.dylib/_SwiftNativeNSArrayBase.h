@@ -3,21 +3,20 @@
  */
 
 @interface _SwiftNativeNSArrayBase : NSArray {
-    struct StrongRefCount { 
-        unsigned int refCount; 
-    }  refCount;
-    struct WeakRefCount { 
-        unsigned int refCount; 
-    }  weakRefCount;
+    struct RefCounts<swift::RefCountBitsT<swift::RefCountInlinedness::RefCountIsInline> > { 
+        struct atomic<swift::RefCountBitsT<swift::RefCountInlinedness::RefCountIsInline> > { 
+            /* Warning: Unrecognized filer type: '{' using 'void*' */ void*__a_; 
+        } refCounts; 
+    }  refCounts;
 }
 
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (BOOL)allowsWeakReference;
+- (bool)_isDeallocating;
+- (bool)_tryRetain;
+- (bool)allowsWeakReference;
 - (id)autorelease;
 - (void)dealloc;
 - (oneway void)release;
 - (id)retain;
-- (BOOL)retainWeakReference;
+- (bool)retainWeakReference;
 
 @end

@@ -6,18 +6,18 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSArray *suggestContactMatches;
 @property (nonatomic, copy) NSArray *suggestedContactsWithOrigin;
 @property (readonly) Class superclass;
 
-+ (id)newAceObjectWithDictionary:(id)arg1 context:(id)arg2;
++ (id)aceObjectWithDictionary:(id)arg1 context:(id)arg2;
 + (id)suggestedContacts;
 + (id)suggestedContactsWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setSuggestContactMatches:(id)arg1;
 - (void)setSuggestedContactsWithOrigin:(id)arg1;
 - (id)suggestContactMatches;

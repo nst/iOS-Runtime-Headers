@@ -4,7 +4,7 @@
 
 @interface SBCarPlayDefaults : SBAbstractSpringBoardDefaultDomain
 
-@property (nonatomic) BOOL carPlayEnableAllStatusBarItemsOverride;
+@property (nonatomic) bool carPlayEnableAllStatusBarItemsOverride;
 @property (nonatomic, retain) NSString *carPlayEndApplicationIdentifier;
 @property (nonatomic, retain) NSArray *carPlayRecentlyUsedApplicationIdentifiers;
 @property (nonatomic, retain) NSString *carPlayStartApplicationIdentifier;

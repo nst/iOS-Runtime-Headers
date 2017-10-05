@@ -10,7 +10,7 @@
     GKCollectionViewDataSource * _gkDataSource;
     _UIDynamicAnimation * _openAnimation;
     UIPanGestureRecognizer * _panGestureRecognizer;
-    float  _startTrackingX;
+    double  _startTrackingX;
 }
 
 @property (nonatomic, retain) UICollectionView *collectionView;
@@ -19,10 +19,10 @@
 @property (nonatomic, retain) GKCancelSwipeToEditGestureRecognizer *editModeCancelRecognizer;
 @property (nonatomic, retain) GKCollectionViewCell *editingCell;
 @property (nonatomic, retain) GKCollectionViewDataSource *gkDataSource;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _UIDynamicAnimation *openAnimation;
 @property (nonatomic, retain) UIPanGestureRecognizer *panGestureRecognizer;
-@property (nonatomic) float startTrackingX;
+@property (nonatomic) double startTrackingX;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSIndexPath *trackedIndexPath;
 
@@ -37,14 +37,14 @@
 - (void)didExitNothingState;
 - (id)editModeCancelRecognizer;
 - (id)editingCell;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)gkDataSource;
 - (void)handleCancelTap:(id)arg1;
 - (void)handlePan:(id)arg1;
 - (id)initWithCollectionView:(id)arg1;
 - (id)openAnimation;
 - (id)panGestureRecognizer;
-- (void)segmentedSectionDataSource:(id)arg1 inSection:(unsigned int)arg2 didSelectDataSourceWithIndex:(int)arg3;
+- (void)segmentedSectionDataSource:(id)arg1 inSection:(unsigned long long)arg2 didSelectDataSourceWithIndex:(long long)arg3;
 - (void)setCollectionView:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEditModeCancelRecognizer:(id)arg1;
@@ -52,11 +52,11 @@
 - (void)setGkDataSource:(id)arg1;
 - (void)setOpenAnimation:(id)arg1;
 - (void)setPanGestureRecognizer:(id)arg1;
-- (void)setStartTrackingX:(float)arg1;
-- (void)shutActionPaneForEditingCellAnimated:(BOOL)arg1;
-- (float)startTrackingX;
+- (void)setStartTrackingX:(double)arg1;
+- (void)shutActionPaneForEditingCellAnimated:(bool)arg1;
+- (double)startTrackingX;
 - (id)trackedIndexPath;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (float)xPositionForTranslation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (double)xPositionForTranslation:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

@@ -4,42 +4,38 @@
 
 @interface FCHeadlineClusteringSol : NSObject <FCHeadlineClustering> {
     NSSet * _articleIds;
-    NSDictionary * _articleScoresByTag;
     NSDictionary * _articlesByTag;
+    FCSolHeuristic * _autoFavoriteHeuristic;
     NSSet * _groupableTags;
     NSSet * _hardOrphans;
     NSDictionary * _headlinesById;
     FCSolHeuristic * _heuristic;
     FCHeadlineClusteringRules * _rules;
-    NSSet * _subscribedTagIDs;
     NSDictionary * _tagScores;
     NSDictionary * _tagsByArticle;
-    NSDictionary * _weightedArticleScoresByTag;
 }
 
 @property (nonatomic, retain) NSSet *articleIds;
-@property (nonatomic, retain) NSDictionary *articleScoresByTag;
 @property (nonatomic, retain) NSDictionary *articlesByTag;
+@property (nonatomic, retain) FCSolHeuristic *autoFavoriteHeuristic;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSSet *groupableTags;
 @property (nonatomic, retain) NSSet *hardOrphans;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSDictionary *headlinesById;
 @property (nonatomic, retain) FCSolHeuristic *heuristic;
 @property (nonatomic, retain) FCHeadlineClusteringRules *rules;
-@property (nonatomic, retain) NSSet *subscribedTagIDs;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSDictionary *tagScores;
 @property (nonatomic, retain) NSDictionary *tagsByArticle;
-@property (nonatomic, retain) NSDictionary *weightedArticleScoresByTag;
 
 - (void).cxx_destruct;
 - (id)articleIds;
-- (id)articleScoresByTag;
 - (id)articlesByTag;
-- (id)clusterHeadlinesByTopic:(id)arg1 subscribedTopicIDs:(id)arg2 blacklistedTopicIDs:(id)arg3 rules:(id)arg4 tagScoreProvider:(id /* block */)arg5;
-- (id)computeBestGrouping:(id)arg1 subscribedTagIDs:(id)arg2 articleScoresByTag:(id)arg3 tagScores:(id)arg4 headlinesById:(id)arg5;
+- (id)autoFavoriteHeuristic;
+- (id)clusterHeadlinesByTopic:(id)arg1 subscribedTags:(id)arg2 personalizer:(id)arg3 rules:(id)arg4;
+- (id)computeBestGrouping:(id)arg1 tagScores:(id)arg2 headlinesById:(id)arg3;
 - (void)computeGrouping:(id)arg1 topK:(double)arg2;
 - (double)computeGroupingUtility:(id)arg1;
 - (void)filterOverflowedOrphans:(id)arg1;
@@ -48,26 +44,20 @@
 - (id)headlinesById;
 - (id)heuristic;
 - (void)optimizeForLayout:(id)arg1;
-- (double)personalizationScoreForArticle:(id)arg1;
-- (double)rawScoreForArticle:(id)arg1 tag:(id)arg2;
 - (id)rules;
-- (id)scoredArticleWithID:(id)arg1 tag:(id)arg2;
 - (void)setArticleIds:(id)arg1;
-- (void)setArticleScoresByTag:(id)arg1;
 - (void)setArticlesByTag:(id)arg1;
+- (void)setAutoFavoriteHeuristic:(id)arg1;
 - (void)setGroupableTags:(id)arg1;
 - (void)setHardOrphans:(id)arg1;
 - (void)setHeadlinesById:(id)arg1;
 - (void)setHeuristic:(id)arg1;
 - (void)setRules:(id)arg1;
-- (void)setSubscribedTagIDs:(id)arg1;
 - (void)setTagScores:(id)arg1;
 - (void)setTagsByArticle:(id)arg1;
-- (void)setWeightedArticleScoresByTag:(id)arg1;
-- (id)sortedScoredArticles:(id)arg1 tag:(id)arg2 length:(int)arg3 asc:(BOOL)arg4;
-- (id)subscribedTagIDs;
+- (id)sortedScoredArticles:(id)arg1 length:(long long)arg2 asc:(bool)arg3;
+- (double)specificityScoreForTag:(id)arg1;
 - (id)tagScores;
 - (id)tagsByArticle;
-- (id)weightedArticleScoresByTag;
 
 @end

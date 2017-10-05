@@ -4,12 +4,4 @@
 
 @interface __NSObject_QSSupport_super : UIAccessibilitySafeCategory
 
-// Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
-
-- (id)_accessibilityTextRectsForRange:(id)arg1 singleTextRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2;
-
-// Image: /System/Library/AccessibilityBundles/QuickSpeak.bundle/QuickSpeak
-
-+ (Class)safeCategoryBaseClass;
-
 @end

@@ -20,8 +20,8 @@
 - (void)deleteDataCreatedBefore:(id)arg1;
 - (void)deleteKeyPaths:(id)arg1;
 - (void)deleteRegistration:(id)arg1;
-- (BOOL)fromEntityWithName:(id)arg1 deleteObjectsMatching:(id)arg2;
-- (BOOL)fromEntityWithName:(id)arg1 fetchAllObjectsMatchingPredicate:(id)arg2 handlingMOs:(id /* block */)arg3;
+- (bool)fromEntityWithName:(id)arg1 deleteObjectsMatching:(id)arg2;
+- (bool)fromEntityWithName:(id)arg1 fetchAllObjectsMatchingPredicate:(id)arg2 handlingMOs:(id /* block */)arg3;
 - (id)getMOC;
 - (id)initWithStorage:(id)arg1;
 - (id)keyPathRegistrationCount;
@@ -33,6 +33,6 @@
 - (id)storage;
 - (id)uniquenessPredicateForKeyPath:(id)arg1;
 - (id)uniqunessPredicateForRegistration:(id)arg1;
-- (BOOL)withMOFromEntityWithName:(id)arg1 andUniqunessPredicate:(id)arg2 insertOrUpdate:(id /* block */)arg3;
+- (bool)withMOFromEntityWithName:(id)arg1 andUniqunessPredicate:(id)arg2 insertOrUpdate:(id /* block */)arg3;
 
 @end

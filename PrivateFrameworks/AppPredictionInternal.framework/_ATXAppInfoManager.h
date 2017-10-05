@@ -9,49 +9,51 @@
     _ATXInternalInstallNotification * _installNotificationListener;
     NSString * _lastLaunch;
     NSDate * _lastLaunchDate;
-    int  _launchCount;
+    NSDate * _lastUnlockDate;
+    long long  _launchCount;
     struct _opaque_pthread_rwlock_t { 
-        long __sig; 
-        BOOL __opaque[124]; 
+        long long __sig; 
+        BOOL __opaque[192]; 
     }  _rwlock;
-    int  _spotlightLaunchCount;
+    long long  _spotlightLaunchCount;
     _ATXInternalUninstallNotification * _uninstallNotificationListener;
 }
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (void)_addLaunchInfoForBundle:(id)arg1 withDate:(id)arg2 updateLaunchBlock:(id /* block */)arg3;
+- (void)_addLaunchInfoForBundle:(id)arg1 date:(id)arg2 updateLaunchBlock:(id /* block */)arg3;
 - (id)_getInfoOrCreateForBundleId:(id)arg1;
-- (BOOL)_hasBeenLaunchedForBundleId:(id)arg1;
-- (void)addInstallForBundleId:(id)arg1 withDate:(id)arg2;
-- (void)addInstallForBundleToDateMap:(id)arg1;
-- (void)addLaunchForBundleId:(id)arg1 withDate:(id)arg2;
+- (bool)_hasBeenLaunchedForBundleId:(id)arg1;
+- (void)_setupInMemoryCacheWithAppInfoMapLocked:(id)arg1;
+- (void)addExtensionLaunchForBundleId:(id)arg1 date:(id)arg2;
+- (void)addInstallForBundleId:(id)arg1 date:(id)arg2;
+- (void)addInstallForBundleInfoMap:(id)arg1;
+- (void)addLaunchForBundleId:(id)arg1 date:(id)arg2;
 - (void)addScreenLockAtDate:(id)arg1;
-- (void)addSpotlightLaunchForBundleId:(id)arg1 withDate:(id)arg2;
+- (void)addSpotlightLaunchForBundleId:(id)arg1 date:(id)arg2;
+- (id)allApps;
 - (id)allAppsWithInstallDate;
 - (id)appInfoForBundleId:(id)arg1;
 - (void)clearAppInstallInfo;
 - (void)clearAppLaunchInfo;
 - (void)dealloc;
+- (id)genreForBundleId:(id)arg1;
+- (id)genresForBundleId:(id)arg1;
+- (id)init;
 - (id)initWithDataStore:(id)arg1;
 - (id)initWithInMemoryStore;
 - (id)lastAppLaunch;
 - (id)lastAppLaunchDate;
 - (id)lastAppLaunchWithHistory:(id)arg1;
-- (int)launchedAppCount;
-- (void)receivedDataStoreCompletedNotification:(id)arg1;
-- (void)receivedDataStoreStartedNotification:(id)arg1;
-- (void)registerForRestoreCompletionNotificationsFrom:(id)arg1;
-- (void)registerForRestoreStartedNotificationsFrom:(id)arg1;
+- (id)lastUnlockDate;
+- (long long)launchedAppCount;
 - (void)removeAppInfoForBundleId:(id)arg1;
 - (void)removeAppInfoForBundleIds:(id)arg1;
 - (void)removeAppLaunchesForBundleId:(id)arg1;
-- (void)setupInMemoryCache;
-- (void)setupInMemoryCacheWithAppInfoMapLocked:(id)arg1;
 - (void)startInstallDeltaRecording;
 - (id)stopInstallDeltaRecording;
-- (void)unregisterFromRestoreCompletionNotificationsFrom:(id)arg1;
-- (void)unregisterFromRestoreStartedNotificationsFrom:(id)arg1;
+- (id)subGenresForBundleId:(id)arg1;
+- (void)updateGenresForBundleId:(id)arg1 genre:(id)arg2 subGenres:(id)arg3;
 
 @end

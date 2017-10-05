@@ -3,15 +3,15 @@
  */
 
 @interface GLKTextureTXR : NSObject {
-    unsigned int  _API;
+    unsigned long long  _API;
     unsigned int  _GLTextureName;
     unsigned int  _arrayLength;
     unsigned int  _depth;
-    BOOL  _hasAlpha;
+    bool  _hasAlpha;
     unsigned int  _height;
     NSString * _label;
     unsigned int  _loadTarget;
-    BOOL  _lossyCompressedSource;
+    bool  _lossyCompressedSource;
     unsigned int  _mipmapLevelCount;
     unsigned int  _target;
     TXRTexture * _texture;
@@ -21,10 +21,10 @@
 @property (nonatomic) unsigned int GLTextureName;
 @property (nonatomic) unsigned int arrayLength;
 @property (nonatomic) unsigned int depth;
-@property (nonatomic) BOOL hasAlpha;
+@property (nonatomic) bool hasAlpha;
 @property (nonatomic) unsigned int height;
 @property (nonatomic, copy) NSString *label;
-@property (nonatomic) BOOL lossyCompressedSource;
+@property (nonatomic) bool lossyCompressedSource;
 @property (nonatomic) unsigned int mipmapLevelCount;
 @property (nonatomic) unsigned int target;
 @property (nonatomic) unsigned int width;
@@ -33,24 +33,24 @@
 - (unsigned int)arrayLength;
 - (void)dealloc;
 - (unsigned int)depth;
-- (BOOL)hasAlpha;
+- (bool)hasAlpha;
 - (unsigned int)height;
-- (id)initWithTexture:(id)arg1 API:(unsigned int)arg2 options:(id)arg3 error:(id*)arg4;
+- (id)initWithTexture:(id)arg1 API:(unsigned long long)arg2 options:(id)arg3 error:(id*)arg4;
 - (id)label;
-- (BOOL)lossyCompressedSource;
+- (bool)lossyCompressedSource;
 - (unsigned int)mipmapLevelCount;
 - (void)setArrayLength:(unsigned int)arg1;
 - (void)setDepth:(unsigned int)arg1;
 - (void)setGLTextureName:(unsigned int)arg1;
-- (void)setHasAlpha:(BOOL)arg1;
+- (void)setHasAlpha:(bool)arg1;
 - (void)setHeight:(unsigned int)arg1;
 - (void)setLabel:(id)arg1;
-- (void)setLossyCompressedSource:(BOOL)arg1;
+- (void)setLossyCompressedSource:(bool)arg1;
 - (void)setMipmapLevelCount:(unsigned int)arg1;
 - (void)setTarget:(unsigned int)arg1;
 - (void)setWidth:(unsigned int)arg1;
 - (unsigned int)target;
-- (BOOL)uploadToGLTexture:(unsigned int)arg1 error:(id*)arg2;
+- (bool)uploadToGLTexture:(unsigned int)arg1 error:(id*)arg2;
 - (unsigned int)width;
 
 @end

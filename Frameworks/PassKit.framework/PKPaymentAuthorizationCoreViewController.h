@@ -6,7 +6,7 @@
     PKPaymentAuthorizationDataModel * _dataModel;
     <PKPaymentAuthorizationHostProtocol> * _delegate;
     PKPaymentAuthorizationLayout * _paymentAuthorizationLayout;
-    int  _paymentAuthorizationStyle;
+    long long  _paymentAuthorizationStyle;
     PKPaymentAuthorizationStateMachine * _stateMachine;
 }
 
@@ -14,9 +14,9 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKPaymentAuthorizationHostProtocol> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PKPaymentAuthorizationLayout *paymentAuthorizationLayout;
-@property (nonatomic, readonly) int paymentAuthorizationStyle;
+@property (nonatomic, readonly) long long paymentAuthorizationStyle;
 @property (nonatomic, readonly) PKPaymentAuthorizationStateMachine *stateMachine;
 @property (readonly) Class superclass;
 
@@ -24,7 +24,7 @@
 - (id)dataModel;
 - (id)delegate;
 - (id)paymentAuthorizationLayout;
-- (int)paymentAuthorizationStyle;
+- (long long)paymentAuthorizationStyle;
 - (void)setDelegate:(id)arg1;
 - (id)stateMachine;
 

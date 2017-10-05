@@ -3,39 +3,39 @@
  */
 
 @interface PARRankingAlgorithm : NSObject {
-    BOOL  _enableSectionRanking;
+    bool  _enableSectionRanking;
     PARModelWeights * _modelWeights;
     PARRankingLogic * _rankingLogic;
     PARRankingThresholds * _rankingThresholds;
-    unsigned int  _section;
-    int  _sectionMaxResults;
+    int  _section;
+    long long  _sectionMaxResults;
     NSString * _version;
 }
 
-@property (nonatomic) BOOL enableSectionRanking;
+@property (nonatomic) bool enableSectionRanking;
 @property (nonatomic, retain) PARModelWeights *modelWeights;
 @property (nonatomic, retain) PARRankingLogic *rankingLogic;
 @property (nonatomic, retain) PARRankingThresholds *rankingThresholds;
-@property (nonatomic) unsigned int section;
-@property (nonatomic) int sectionMaxResults;
+@property (nonatomic) int section;
+@property (nonatomic) long long sectionMaxResults;
 @property (nonatomic, retain) NSString *version;
 
 + (id)defaultValue;
 + (id)responseFromJSON:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)enableSectionRanking;
+- (bool)enableSectionRanking;
 - (id)modelWeights;
 - (id)rankingLogic;
 - (id)rankingThresholds;
-- (unsigned int)section;
-- (int)sectionMaxResults;
-- (void)setEnableSectionRanking:(BOOL)arg1;
+- (int)section;
+- (long long)sectionMaxResults;
+- (void)setEnableSectionRanking:(bool)arg1;
 - (void)setModelWeights:(id)arg1;
 - (void)setRankingLogic:(id)arg1;
 - (void)setRankingThresholds:(id)arg1;
-- (void)setSection:(unsigned int)arg1;
-- (void)setSectionMaxResults:(int)arg1;
+- (void)setSection:(int)arg1;
+- (void)setSectionMaxResults:(long long)arg1;
 - (void)setVersion:(id)arg1;
 - (id)version;
 

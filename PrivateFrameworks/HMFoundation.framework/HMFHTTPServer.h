@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
  */
 
-@interface HMFHTTPServer : NSObject <HMFHTTPClientConnectionDelegate, HMFLogging, _HMFCFHTTPServerDelegate> {
+@interface HMFHTTPServer : HMFObject <HMFHTTPClientConnectionDelegate, HMFLogging, _HMFCFHTTPServerDelegate> {
     NSObject<OS_dispatch_queue> * _clientQueue;
     double  _connectionIdleTimeout;
     NSMutableArray * _connections;
@@ -10,8 +10,8 @@
     _HMFCFHTTPServer * _internal;
     NSString * _name;
     HMFMutableNetService * _netService;
-    unsigned int  _options;
-    unsigned int  _port;
+    unsigned long long  _options;
+    unsigned long long  _port;
     NSObject<OS_dispatch_queue> * _propertyQueue;
     NSMutableArray * _requestHandlers;
     NSString * _serviceType;
@@ -23,12 +23,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property <HMFHTTPServerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _HMFCFHTTPServer *internal;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly) HMFMutableNetService *netService;
-@property (nonatomic, readonly) unsigned int options;
-@property (readonly) unsigned int port;
+@property (nonatomic, readonly) unsigned long long options;
+@property (readonly) unsigned long long port;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (readonly, copy) NSArray *requestHandlers;
 @property (nonatomic, readonly, copy) NSString *serviceType;
@@ -51,15 +51,15 @@
 - (id)debugDescription;
 - (id)delegate;
 - (id)description;
-- (id)descriptionWithPointer:(BOOL)arg1;
+- (id)descriptionWithPointer:(bool)arg1;
 - (id)init;
-- (id)initWithServiceType:(id)arg1 name:(id)arg2 port:(unsigned int)arg3 options:(unsigned int)arg4;
+- (id)initWithServiceType:(id)arg1 name:(id)arg2 port:(unsigned long long)arg3 options:(unsigned long long)arg4;
 - (id)internal;
 - (id)logIdentifier;
 - (id)name;
 - (id)netService;
-- (unsigned int)options;
-- (unsigned int)port;
+- (unsigned long long)options;
+- (unsigned long long)port;
 - (id)propertyQueue;
 - (void)registerRequestHandler:(id)arg1;
 - (void)removeConnection:(id)arg1;

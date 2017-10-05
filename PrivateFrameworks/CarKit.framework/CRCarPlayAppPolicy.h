@@ -3,42 +3,42 @@
  */
 
 @interface CRCarPlayAppPolicy : NSObject {
-    BOOL  _badgesAppIcon;
-    BOOL  _canDisplayOnCarScreen;
-    BOOL  _carPlaySupported;
-    BOOL  _handlesCarIntents;
-    BOOL  _launchUsingMusicUIService;
-    BOOL  _launchUsingSiri;
-    BOOL  _showsNotifications;
+    bool  _badgesAppIcon;
+    bool  _canDisplayOnCarScreen;
+    bool  _carPlaySupported;
+    bool  _handlesCarIntents;
+    bool  _launchUsingMusicUIService;
+    bool  _launchUsingSiri;
+    bool  _showsNotifications;
     NSDictionary * _siriActivationOptions;
 }
 
-@property (nonatomic) BOOL badgesAppIcon;
-@property (nonatomic) BOOL canDisplayOnCarScreen;
-@property (getter=isCarPlaySupported, nonatomic) BOOL carPlaySupported;
-@property (nonatomic) BOOL handlesCarIntents;
-@property (nonatomic) BOOL launchUsingMusicUIService;
-@property (nonatomic) BOOL launchUsingSiri;
-@property (nonatomic) BOOL showsNotifications;
+@property (nonatomic) bool badgesAppIcon;
+@property (nonatomic) bool canDisplayOnCarScreen;
+@property (getter=isCarPlaySupported, nonatomic) bool carPlaySupported;
+@property (nonatomic) bool handlesCarIntents;
+@property (nonatomic) bool launchUsingMusicUIService;
+@property (nonatomic) bool launchUsingSiri;
+@property (nonatomic) bool showsNotifications;
 @property (nonatomic, copy) NSDictionary *siriActivationOptions;
 
 - (void).cxx_destruct;
-- (BOOL)badgesAppIcon;
-- (BOOL)canDisplayOnCarScreen;
-- (BOOL)handlesCarIntents;
+- (bool)badgesAppIcon;
+- (bool)canDisplayOnCarScreen;
+- (bool)handlesCarIntents;
 - (id)init;
-- (BOOL)isCarPlaySupported;
-- (BOOL)launchUsingMusicUIService;
-- (BOOL)launchUsingSiri;
-- (void)setBadgesAppIcon:(BOOL)arg1;
-- (void)setCanDisplayOnCarScreen:(BOOL)arg1;
-- (void)setCarPlaySupported:(BOOL)arg1;
-- (void)setHandlesCarIntents:(BOOL)arg1;
-- (void)setLaunchUsingMusicUIService:(BOOL)arg1;
-- (void)setLaunchUsingSiri:(BOOL)arg1;
-- (void)setShowsNotifications:(BOOL)arg1;
+- (bool)isCarPlaySupported;
+- (bool)launchUsingMusicUIService;
+- (bool)launchUsingSiri;
+- (void)setBadgesAppIcon:(bool)arg1;
+- (void)setCanDisplayOnCarScreen:(bool)arg1;
+- (void)setCarPlaySupported:(bool)arg1;
+- (void)setHandlesCarIntents:(bool)arg1;
+- (void)setLaunchUsingMusicUIService:(bool)arg1;
+- (void)setLaunchUsingSiri:(bool)arg1;
+- (void)setShowsNotifications:(bool)arg1;
 - (void)setSiriActivationOptions:(id)arg1;
-- (BOOL)showsNotifications;
+- (bool)showsNotifications;
 - (id)siriActivationOptions;
 
 @end

@@ -3,26 +3,26 @@
  */
 
 @interface _MPModelLibraryRegisteredTransientState : NSObject {
-    int  _addState;
-    int  _keepLocalState;
+    long long  _addState;
+    long long  _keepLocalState;
     MPSectionedCollection * _modelObjects;
     MPSectionedCollection * _relatedModelObjects;
     NSUUID * _token;
 }
 
-@property (nonatomic) int addState;
-@property (nonatomic) int keepLocalState;
+@property (nonatomic) long long addState;
+@property (nonatomic) long long keepLocalState;
 @property (nonatomic, copy) MPSectionedCollection *modelObjects;
 @property (nonatomic, copy) MPSectionedCollection *relatedModelObjects;
 @property (nonatomic, copy) NSUUID *token;
 
 - (void).cxx_destruct;
-- (int)addState;
-- (int)keepLocalState;
+- (long long)addState;
+- (long long)keepLocalState;
 - (id)modelObjects;
 - (id)relatedModelObjects;
-- (void)setAddState:(int)arg1;
-- (void)setKeepLocalState:(int)arg1;
+- (void)setAddState:(long long)arg1;
+- (void)setKeepLocalState:(long long)arg1;
 - (void)setModelObjects:(id)arg1;
 - (void)setRelatedModelObjects:(id)arg1;
 - (void)setToken:(id)arg1;

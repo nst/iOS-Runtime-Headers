@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)CPSafeDescription;
-- (id)_descriptionObfuscated:(BOOL)arg1;
+- (id)_descriptionObfuscated:(bool)arg1;
 - (void)addDescriptionFormat:(id)arg1 value:(id)arg2;
 - (void)addObfuscatedDescriptionFormat:(id)arg1 value:(id)arg2;
 - (id)description;

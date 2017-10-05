@@ -6,10 +6,16 @@
 
 @property (nonatomic, retain) DDRemoteActionViewController *viewController;
 
-- (void)adaptForPresentationInPopover:(BOOL)arg1;
++ (bool)actionAvailableForContact:(id)arg1;
+
+- (void)adaptForPresentationInPopover:(bool)arg1;
+- (id)contact;
 - (int)interactionType;
 - (void)invalidate;
 - (id)localizedName;
+- (id)notificationIconBundleIdentifier;
+- (id)notificationTitle;
+- (id)notificationURL;
 - (void)prepareViewControllerForActionController:(id)arg1;
 
 @end

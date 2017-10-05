@@ -2,53 +2,50 @@
    Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
  */
 
-@interface _CPPunchoutForFeedback : PBCodable <NSCopying> {
-    NSString * _actionTarget;
+@interface _CPPunchoutForFeedback : PBCodable <NSSecureCoding, _CPPunchoutForFeedback> {
     NSString * _bundleIdentifier;
     NSString * _label;
     NSString * _name;
-    NSMutableArray * _urls;
+    NSArray * _urls;
 }
 
-@property (nonatomic, retain) NSString *actionTarget;
-@property (nonatomic, retain) NSString *bundleIdentifier;
-@property (nonatomic, readonly) BOOL hasActionTarget;
-@property (nonatomic, readonly) BOOL hasBundleIdentifier;
-@property (nonatomic, readonly) BOOL hasLabel;
-@property (nonatomic, readonly) BOOL hasName;
-@property (nonatomic, retain) NSString *label;
-@property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSMutableArray *urls;
-
-+ (Class)urlsType;
+@property (nonatomic, copy) NSString *bundleIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) bool hasBundleIdentifier;
+@property (nonatomic, readonly) bool hasLabel;
+@property (nonatomic, readonly) bool hasName;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSData *jsonData;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic, copy) NSString *name;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSArray *urls;
 
 - (void).cxx_destruct;
-- (id)actionTarget;
 - (void)addUrls:(id)arg1;
 - (id)bundleIdentifier;
 - (void)clearUrls;
-- (void)copyTo:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasActionTarget;
-- (BOOL)hasBundleIdentifier;
-- (BOOL)hasLabel;
-- (BOOL)hasName;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasBundleIdentifier;
+- (bool)hasLabel;
+- (bool)hasName;
+- (unsigned long long)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithFacade:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)jsonData;
 - (id)label;
-- (void)mergeFrom:(id)arg1;
 - (id)name;
-- (BOOL)readFrom:(id)arg1;
-- (void)setActionTarget:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setUrls:(id)arg1;
 - (id)urls;
-- (id)urlsAtIndex:(unsigned int)arg1;
-- (unsigned int)urlsCount;
+- (id)urlsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)urlsCount;
 - (void)writeTo:(id)arg1;
 
 @end

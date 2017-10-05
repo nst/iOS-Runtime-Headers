@@ -5,6 +5,5 @@
 @interface FCRemoveReferenceToChannelMembershipCommand : FCRemoveRecordsCommand
 
 - (id)initWithReferenceToChannelMembershipID:(id)arg1;
-- (id)recordZoneName;
 
 @end

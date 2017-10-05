@@ -3,30 +3,26 @@
  */
 
 @interface SBLockScreenElementOverride : NSObject {
-    UIColor * _color;
-    int  _element;
-    BOOL  _hidden;
+    long long  _element;
+    bool  _hidden;
     NSString * _text;
 }
 
-@property (nonatomic, retain) UIColor *color;
-@property (nonatomic) int element;
-@property (getter=isHidden, nonatomic) BOOL hidden;
+@property (nonatomic) long long element;
+@property (getter=isHidden, nonatomic) bool hidden;
 @property (nonatomic, copy) NSString *text;
 
-+ (id)overrideForElement:(int)arg1;
-+ (id)overrideForHiddenElement:(int)arg1;
++ (id)overrideForElement:(long long)arg1;
++ (id)overrideForHiddenElement:(long long)arg1;
 
 - (void).cxx_destruct;
-- (id)color;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
-- (int)element;
-- (BOOL)isHidden;
-- (void)setColor:(id)arg1;
-- (void)setElement:(int)arg1;
-- (void)setHidden:(BOOL)arg1;
+- (long long)element;
+- (bool)isHidden;
+- (void)setElement:(long long)arg1;
+- (void)setHidden:(bool)arg1;
 - (void)setText:(id)arg1;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;

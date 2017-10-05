@@ -15,7 +15,7 @@
     int  _interfaceSourceFd;
     int  _interfaceTraceFd;
     NSObject<OS_dispatch_queue> * _internalQueue;
-    BOOL  _invalidated;
+    bool  _invalidated;
     unsigned int  _mgrflags;
     unsigned long long  _numSourceAddsReceived;
     unsigned long long  _numSourceAddsSkipped;
@@ -31,10 +31,10 @@
     NSMutableDictionary * _queuedQueryAlls;
     char * _readBuffer;
     NSObject<OS_dispatch_source> * _readSource;
-    BOOL  _reading;
+    bool  _reading;
     int  _sockfd;
     id  _strongDelegate;
-    BOOL  _systemInformationSubscribed;
+    bool  _systemInformationSubscribed;
 }
 
 @property (retain) NSMutableDictionary *_internalSources;
@@ -46,13 +46,13 @@
 @property (nonatomic) int interfaceSourceFd;
 @property (nonatomic) int interfaceTraceFd;
 @property (readonly) NSObject<OS_dispatch_queue> *internalQueue;
-@property (getter=isInvalidated) BOOL invalidated;
+@property (getter=isInvalidated) bool invalidated;
 @property (nonatomic) unsigned int mgrflags;
 @property unsigned long long querySequenceNumber;
 @property (retain) NSMutableDictionary *queuedQueryAlls;
 @property char *readBuffer;
 @property (retain) NSObject<OS_dispatch_source> *readSource;
-@property (getter=isReading) BOOL reading;
+@property (getter=isReading) bool reading;
 @property int sockfd;
 @property (readonly) NSSet *sources;
 @property (retain) id strongDelegate;
@@ -60,14 +60,14 @@
 - (void).cxx_destruct;
 - (id)_internalSources;
 - (unsigned long long)_nextReferenceForTarget:(unsigned long long)arg1 command:(unsigned int)arg2;
-- (BOOL)addAllForProvider:(int)arg1 filter:(unsigned long long)arg2 events:(unsigned long long)arg3 pid:(int)arg4 uuid:(unsigned char*)arg5;
-- (BOOL)addAllRoute;
-- (BOOL)addAllRoute:(unsigned long long)arg1;
-- (BOOL)addAllTCP:(unsigned long long)arg1;
-- (BOOL)addAllTCP:(unsigned long long)arg1 events:(unsigned long long)arg2 pid:(int)arg3 uuid:(unsigned char*)arg4;
-- (BOOL)addAllUDP:(unsigned long long)arg1;
-- (BOOL)addAllUDP:(unsigned long long)arg1 events:(unsigned long long)arg2 pid:(int)arg3 uuid:(unsigned char*)arg4;
-- (BOOL)addSource:(id)arg1 request:(struct nstat_msg_add_src { struct nstat_msg_hdr { unsigned long long x_1_1_1; unsigned int x_1_1_2; unsigned short x_1_1_3; unsigned short x_1_1_4; } x1; unsigned int x2; unsigned char x3[0]; }*)arg2 length:(unsigned long)arg3;
+- (bool)addAllForProvider:(int)arg1 filter:(unsigned long long)arg2 events:(unsigned long long)arg3 pid:(int)arg4 uuid:(unsigned char*)arg5;
+- (bool)addAllRoute;
+- (bool)addAllRoute:(unsigned long long)arg1;
+- (bool)addAllTCP:(unsigned long long)arg1;
+- (bool)addAllTCP:(unsigned long long)arg1 events:(unsigned long long)arg2 pid:(int)arg3 uuid:(unsigned char*)arg4;
+- (bool)addAllUDP:(unsigned long long)arg1;
+- (bool)addAllUDP:(unsigned long long)arg1 events:(unsigned long long)arg2 pid:(int)arg3 uuid:(unsigned char*)arg4;
+- (bool)addSource:(id)arg1 request:(struct nstat_msg_add_src { struct nstat_msg_hdr { unsigned long long x_1_1_1; unsigned int x_1_1_2; unsigned short x_1_1_3; unsigned short x_1_1_4; } x1; unsigned int x2; unsigned char x3[4]; unsigned char x4[0]; }*)arg2 length:(unsigned long long)arg3;
 - (id)clientQueue;
 - (unsigned int)commandFromReference:(unsigned long long)arg1;
 - (id)currentQueries;
@@ -79,9 +79,9 @@
 - (void)dispatchDidReceiveDescription:(id)arg1;
 - (void)dispatchDidReceiveType:(unsigned int)arg1 source:(id)arg2;
 - (unsigned int)filter;
-- (BOOL)handleCompletion:(unsigned long long)arg1 message:(struct nstat_msg_hdr { unsigned long long x1; unsigned int x2; unsigned short x3; unsigned short x4; }*)arg2 length:(unsigned int)arg3;
-- (BOOL)handleCompletionMessage:(struct nstat_msg_hdr { unsigned long long x1; unsigned int x2; unsigned short x3; unsigned short x4; }*)arg1 length:(unsigned int)arg2;
-- (void)handleMessage:(struct nstat_msg_hdr { unsigned long long x1; unsigned int x2; unsigned short x3; unsigned short x4; }*)arg1 length:(long)arg2;
+- (bool)handleCompletion:(unsigned long long)arg1 message:(struct nstat_msg_hdr { unsigned long long x1; unsigned int x2; unsigned short x3; unsigned short x4; }*)arg2 length:(unsigned int)arg3;
+- (bool)handleCompletionMessage:(struct nstat_msg_hdr { unsigned long long x1; unsigned int x2; unsigned short x3; unsigned short x4; }*)arg1 length:(unsigned int)arg2;
+- (void)handleMessage:(struct nstat_msg_hdr { unsigned long long x1; unsigned int x2; unsigned short x3; unsigned short x4; }*)arg1 length:(long long)arg2;
 - (void)handleReadEvent;
 - (void)handleSystemInformationCounts:(struct nstat_sysinfo_counts { unsigned int x1; unsigned int x2; unsigned char x3[0]; }*)arg1;
 - (id)init;
@@ -90,12 +90,12 @@
 - (int)interfaceTraceFd;
 - (id)internalQueue;
 - (void)invalidate;
-- (BOOL)isInvalidated;
-- (BOOL)isReading;
+- (bool)isInvalidated;
+- (bool)isReading;
 - (unsigned int)mgrflags;
 - (void)performAllCompletions:(id)arg1;
-- (BOOL)performQuery:(unsigned int)arg1 sourceRef:(unsigned long long)arg2 completion:(id /* block */)arg3;
-- (BOOL)queryAll:(id /* block */)arg1;
+- (bool)performQuery:(unsigned int)arg1 sourceRef:(unsigned long long)arg2 completion:(id /* block */)arg3;
+- (bool)queryAll:(id /* block */)arg1;
 - (void)queryAllCounts:(id /* block */)arg1;
 - (void)queryAllDescriptions:(id /* block */)arg1;
 - (unsigned long long)querySequenceNumber;
@@ -104,9 +104,9 @@
 - (char *)readBuffer;
 - (id)readSource;
 - (void)removeSource:(id)arg1;
-- (void)removeSourceInternal:(unsigned long long)arg1 isFromClient:(BOOL)arg2;
+- (void)removeSourceInternal:(unsigned long long)arg1 isFromClient:(bool)arg2;
 - (void)reportInternalCounts;
-- (BOOL)sendMessage:(struct nstat_msg_hdr { unsigned long long x1; unsigned int x2; unsigned short x3; unsigned short x4; }*)arg1 length:(long)arg2;
+- (bool)sendMessage:(struct nstat_msg_hdr { unsigned long long x1; unsigned int x2; unsigned short x3; unsigned short x4; }*)arg1 length:(long long)arg2;
 - (void)sendRemoveSourceInternal:(unsigned long long)arg1;
 - (void)sendRequestMessage:(int)arg1 sourceRef:(unsigned long long)arg2;
 - (void)setCurrentQueries:(id)arg1;
@@ -115,14 +115,14 @@
 - (void)setFilter:(unsigned int)arg1;
 - (void)setInterfaceSourceFd:(int)arg1;
 - (void)setInterfaceTraceFd:(int)arg1;
-- (void)setInvalidated:(BOOL)arg1;
+- (void)setInvalidated:(bool)arg1;
 - (void)setMgrflags:(unsigned int)arg1;
 - (void)setQuerySequenceNumber:(unsigned long long)arg1;
-- (void)setQueuePriority:(long)arg1;
+- (void)setQueuePriority:(long long)arg1;
 - (void)setQueuedQueryAlls:(id)arg1;
 - (void)setReadBuffer:(char *)arg1;
 - (void)setReadSource:(id)arg1;
-- (void)setReading:(BOOL)arg1;
+- (void)setReading:(bool)arg1;
 - (void)setSockfd:(int)arg1;
 - (void)setStrongDelegate:(id)arg1;
 - (void)set_internalSources:(id)arg1;
@@ -132,6 +132,6 @@
 - (id)strongDelegate;
 - (void)subscribeToSystemInformation;
 - (void)trace:(char *)arg1;
-- (void)traceMemoryBuf:(char *)arg1 length:(long)arg2 tag:(char *)arg3;
+- (void)traceMemoryBuf:(char *)arg1 length:(long long)arg2 tag:(char *)arg3;
 
 @end

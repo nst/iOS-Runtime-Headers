@@ -3,16 +3,15 @@
  */
 
 @interface _PFUbiquityRecordsImporter : NSObject <NSManagedObjectContextFaultingDelegate, PFUbiquityBaselineRecoveryOperationDelegate, PFUbiquityBaselineRollOperationDelegate, PFUbiquityBaselineRollResponseOperationDelegate, _PFUbiquityRecordImportOperationDelegate> {
-    BOOL  _allowBaselineRoll;
-    BOOL  _importOnlyActiveStores;
+    bool  _allowBaselineRoll;
+    bool  _importOnlyActiveStores;
     NSOperationQueue * _importQueue;
-    BOOL  _isMonitoring;
+    bool  _isMonitoring;
     NSString * _localPeerID;
     NSObject<OS_dispatch_source> * _logRestartTimer;
     NSString * _modelVersionHash;
-    unsigned int  _numPendingNotifications;
-    unsigned int  _pendingImportOperationsCount;
-    NSMutableDictionary * _pendingNotificationUserInfo;
+    unsigned long long  _numPendingNotifications;
+    unsigned long long  _pendingImportOperationsCount;
     NSPersistentStoreCoordinator * _privatePSC;
     NSObject<OS_dispatch_queue> * _privateQueue;
     NSSQLCore * _privateStore;
@@ -20,17 +19,17 @@
     NSRecursiveLock * _schedulingLock;
     PFUbiquitySwitchboardCacheWrapper * _sideLoadCacheWrapper;
     NSString * _storeName;
-    BOOL  _throttleNotifications;
+    bool  _throttleNotifications;
     PFUbiquityLocation * _ubiquityRootLocation;
 }
 
-@property BOOL allowBaselineRoll;
+@property bool allowBaselineRoll;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property BOOL importOnlyActiveStores;
+@property (readonly) unsigned long long hash;
+@property bool importOnlyActiveStores;
 @property (readonly) NSOperationQueue *importQueue;
-@property (readonly) BOOL isMonitoring;
+@property (readonly) bool isMonitoring;
 @property (readonly) NSString *localPeerID;
 @property NSObject<OS_dispatch_source> *logRestartTimer;
 @property (nonatomic, readonly) NSPersistentStoreCoordinator *privatePSC;
@@ -40,38 +39,38 @@
 @property (nonatomic, retain) PFUbiquitySwitchboardCacheWrapper *sideLoadCacheWrapper;
 @property (readonly) NSString *storeName;
 @property (readonly) Class superclass;
-@property BOOL throttleNotifications;
+@property bool throttleNotifications;
 @property (nonatomic, retain) PFUbiquityLocation *ubiquityRootLocation;
 
 + (id)addPrivateStore:(id)arg1 toCoordinator:(id)arg2 atURL:(id)arg3 error:(id*)arg4;
 + (void)afterDelay:(double)arg1 executeBlockOnRootQueue:(id /* block */)arg2;
-+ (BOOL)canProcessContentsOfUbiquityRootPath:(id)arg1;
++ (bool)canProcessContentsOfUbiquityRootPath:(id)arg1;
 + (id)createPrivateCoordinatorAndStoreForStore:(id)arg1 atURL:(id)arg2 error:(id*)arg3;
 + (id)createPrivateCoordinatorForStore:(id)arg1 error:(id*)arg2;
 + (void)executeBlockOnRootQueue:(id /* block */)arg1;
 + (void)initialize;
 
-- (BOOL)allowBaselineRoll;
+- (bool)allowBaselineRoll;
 - (void)baselineRollOperationEncounteredAnInconsistentBaselineState:(id)arg1;
 - (void)baselineRollOperationWasUnableToLockPersistentStore:(id)arg1;
-- (BOOL)batchDownloadTransactionLogsAtLocations:(id)arg1 error:(id*)arg2;
-- (BOOL)canProcessTransactionLogWithScore:(id)arg1 afterLogWithScore:(id)arg2;
-- (BOOL)checkSchedulingContextForMissingLocalPeerOperations:(id)arg1 error:(id*)arg2;
-- (int)compareScoreKnowledgeVector:(id)arg1 withScoreDictionary:(id)arg2;
-- (int)context:(id)arg1 shouldHandleInaccessibleFault:(id)arg2 forObjectID:(id)arg3 andTrigger:(id)arg4;
+- (bool)batchDownloadTransactionLogsAtLocations:(id)arg1 error:(id*)arg2;
+- (bool)canProcessTransactionLogWithScore:(id)arg1 afterLogWithScore:(id)arg2;
+- (bool)checkSchedulingContextForMissingLocalPeerOperations:(id)arg1 error:(id*)arg2;
+- (long long)compareScoreKnowledgeVector:(id)arg1 withScoreDictionary:(id)arg2;
+- (long long)context:(id)arg1 shouldHandleInaccessibleFault:(id)arg2 forObjectID:(id)arg3 andTrigger:(id)arg4;
 - (id)createNewSetOfObjectIDsForCoordinator:(id)arg1 fromObjectIDs:(id)arg2;
-- (id)createSortedOperationsArrayWithMetadata:(id)arg1 isFirstImport:(BOOL)arg2;
+- (id)createSortedOperationsArrayWithMetadata:(id)arg1 isFirstImport:(bool)arg2;
 - (void)dealloc;
 - (id)description;
-- (BOOL)discoverAndImportAllAvailableLogs:(BOOL)arg1 error:(id*)arg2;
+- (bool)discoverAndImportAllAvailableLogs:(bool)arg1 error:(id*)arg2;
 - (void)executeBlockOnPrivateQueue:(id /* block */)arg1;
-- (BOOL)importOnlyActiveStores;
+- (bool)importOnlyActiveStores;
 - (id)importQueue;
 - (id)init;
 - (id)initWithLocalPeerID:(id)arg1 andUbiquityRootLocation:(id)arg2;
 - (id)initWithLocalPeerID:(id)arg1 ubiquityRootLocation:(id)arg2 storeName:(id)arg3 andPrivateStore:(id)arg4;
-- (BOOL)isMonitoring;
-- (BOOL)isPeerForked:(id)arg1 andLocalKV:(id)arg2;
+- (bool)isMonitoring;
+- (bool)isPeerForked:(id)arg1 andLocalKV:(id)arg2;
 - (id)localPeerID;
 - (id)logRestartTimer;
 - (void)metadataInconsistencyDetectedForStore:(id)arg1;
@@ -88,23 +87,23 @@
 - (void)rollResponseOperation:(id)arg1 successfullyAdoptedBaseline:(id)arg2;
 - (void)scheduleBaselineRecoveryOperationWithActiveBaselineOperation:(id)arg1;
 - (void)scheduleBaselineRollResponseOperationForBaselineAtLocation:(id)arg1;
-- (BOOL)schedulePendingLogs:(BOOL)arg1 error:(id*)arg2;
+- (bool)schedulePendingLogs:(bool)arg1 error:(id*)arg2;
 - (void)scheduleRecoveryTimer;
-- (BOOL)scheduleTransactionLogOperations:(id)arg1 synchronous:(BOOL)arg2 error:(id*)arg3;
+- (bool)scheduleTransactionLogOperations:(id)arg1 synchronous:(bool)arg2 error:(id*)arg3;
 - (id)schedulingContext;
 - (id)schedulingLock;
-- (void)setAllowBaselineRoll:(BOOL)arg1;
-- (void)setImportOnlyActiveStores:(BOOL)arg1;
+- (void)setAllowBaselineRoll:(bool)arg1;
+- (void)setImportOnlyActiveStores:(bool)arg1;
 - (void)setLogRestartTimer:(id)arg1;
 - (void)setSideLoadCacheWrapper:(id)arg1;
-- (void)setThrottleNotifications:(BOOL)arg1;
+- (void)setThrottleNotifications:(bool)arg1;
 - (void)setUbiquityRootLocation:(id)arg1;
-- (BOOL)shouldThrottleNotificationsWithOperation:(id)arg1;
+- (bool)shouldThrottleNotificationsWithOperation:(id)arg1;
 - (id)sideLoadCacheWrapper;
-- (BOOL)startMonitor:(id*)arg1;
+- (bool)startMonitor:(id*)arg1;
 - (id)storeName;
 - (void)tearDown;
-- (BOOL)throttleNotifications;
+- (bool)throttleNotifications;
 - (id)ubiquityRootLocation;
 
 @end

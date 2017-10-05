@@ -24,6 +24,6 @@
 - (id)_strongReference;
 - (void)dealloc;
 - (void)requestRefreshAfterDate:(id)arg1 forWidgetWithBundleIdentifier:(id)arg2;
-- (void)setHasContent:(BOOL)arg1 forWidgetWithBundleIdentifier:(id)arg2;
+- (void)setHasContent:(bool)arg1 forWidgetWithBundleIdentifier:(id)arg2;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface FigSubtitleWebVTTRegionCALayer : FigBaseCALayer {
-    struct OpaqueFigSubtitleWebVTTRegionCALayerInternal { id x1; struct OpaqueFigSubtitleRenderer {} *x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct __CFDictionary {} *x4; struct __CFArray {} *x5; unsigned int x6; } * layerInternal;
+    struct OpaqueFigSubtitleWebVTTRegionCALayerInternal { id x1; struct OpaqueFigSubtitleRenderer {} *x2; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_3_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_3_1_2; } x3; struct __CFDictionary {} *x4; struct __CFArray {} *x5; unsigned int x6; } * layerInternal;
 }
 
 - (void)dealloc;
@@ -16,6 +16,6 @@
 - (void)setNeedsDisplay;
 - (void)setReLayout;
 - (void)setRenderer:(struct OpaqueFigSubtitleRenderer { }*)arg1;
-- (void)setViewport:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setViewport:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 @end

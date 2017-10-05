@@ -5,38 +5,38 @@
 @interface CMKButtonLabel : UIView {
     UILabel * __label;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _contentSize;
     NSString * _text;
-    BOOL  _wantsLegibilityShadow;
+    bool  _wantsLegibilityShadow;
 }
 
 @property (nonatomic, readonly, retain) UILabel *_label;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } contentSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } contentSize;
 @property (nonatomic, copy) NSString *text;
-@property (nonatomic) int textAlignment;
+@property (nonatomic) long long textAlignment;
 @property (nonatomic, retain) UIColor *textColor;
-@property (nonatomic) BOOL wantsLegibilityShadow;
+@property (nonatomic) bool wantsLegibilityShadow;
 
 - (void).cxx_destruct;
 - (id)_label;
 - (void)_updateAttributedText;
 - (void)_updateInternalContentSize;
-- (struct CGSize { float x1; float x2; })contentSize;
+- (struct CGSize { double x1; double x2; })contentSize;
 - (id)highlightedTextColor;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)setHighlightedTextColor:(id)arg1;
 - (void)setText:(id)arg1;
-- (void)setTextAlignment:(int)arg1;
+- (void)setTextAlignment:(long long)arg1;
 - (void)setTextColor:(id)arg1;
-- (void)setWantsLegibilityShadow:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setWantsLegibilityShadow:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)text;
-- (int)textAlignment;
+- (long long)textAlignment;
 - (id)textColor;
 - (void)updateToContentSize:(id)arg1;
-- (BOOL)wantsLegibilityShadow;
+- (bool)wantsLegibilityShadow;
 
 @end

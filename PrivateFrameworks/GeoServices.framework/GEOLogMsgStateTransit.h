@@ -6,24 +6,24 @@
     struct { 
         unsigned int transitNotAvailableAdvisoryShowing : 1; 
     }  _has;
-    BOOL  _transitNotAvailableAdvisoryShowing;
+    bool  _transitNotAvailableAdvisoryShowing;
 }
 
-@property (nonatomic) BOOL hasTransitNotAvailableAdvisoryShowing;
-@property (nonatomic) BOOL transitNotAvailableAdvisoryShowing;
+@property (nonatomic) bool hasTransitNotAvailableAdvisoryShowing;
+@property (nonatomic) bool transitNotAvailableAdvisoryShowing;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasTransitNotAvailableAdvisoryShowing;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasTransitNotAvailableAdvisoryShowing;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasTransitNotAvailableAdvisoryShowing:(BOOL)arg1;
-- (void)setTransitNotAvailableAdvisoryShowing:(BOOL)arg1;
-- (BOOL)transitNotAvailableAdvisoryShowing;
+- (bool)readFrom:(id)arg1;
+- (void)setHasTransitNotAvailableAdvisoryShowing:(bool)arg1;
+- (void)setTransitNotAvailableAdvisoryShowing:(bool)arg1;
+- (bool)transitNotAvailableAdvisoryShowing;
 - (void)writeTo:(id)arg1;
 
 @end

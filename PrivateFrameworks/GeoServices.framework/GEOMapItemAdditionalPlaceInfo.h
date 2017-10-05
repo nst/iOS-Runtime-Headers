@@ -12,9 +12,9 @@
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) int placeType;
 
+- (void).cxx_destruct;
 - (double)areaInMeters;
 - (struct { double x1; double x2; })coordinate;
-- (void)dealloc;
 - (id)initWithName:(id)arg1 placeType:(int)arg2 areaInMeters:(double)arg3;
 - (id)initWithPlace:(id)arg1;
 - (id)mapRegion;

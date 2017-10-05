@@ -4,7 +4,7 @@
 
 @interface NSExtension : NSObject <CXCallDirectoryStoreMigratorExtension, _NSExtensionContextHosting> {
     NSSet * __allowedErrorClasses;
-    int  __assertionRefCount;
+    long long  __assertionRefCount;
     NSBundle * __extensionBundle;
     NSMutableDictionary * __extensionContexts;
     NSMutableDictionary * __extensionExpirationIdentifiers;
@@ -20,7 +20,7 @@
     NSString * _extensionPointIdentifier;
     NSString * _identifier;
     NSDictionary * _infoDictionary;
-    BOOL  _observingHostAppStateChanges;
+    bool  _observingHostAppStateChanges;
     id /* block */  _requestCancellationBlock;
     id /* block */  _requestCompletionBlock;
     id /* block */  _requestInterruptionBlock;
@@ -28,14 +28,14 @@
 }
 
 @property (setter=_setAllowedErrorClasses:, nonatomic, copy) NSSet *_allowedErrorClasses;
-@property (setter=_setAssertionRefCount:, nonatomic) int _assertionRefCount;
+@property (setter=_setAssertionRefCount:, nonatomic) long long _assertionRefCount;
 @property (setter=_setExtensionBundle:, nonatomic, retain) NSBundle *_extensionBundle;
 @property (setter=_setExtensionContexts:, nonatomic, retain) NSMutableDictionary *_extensionContexts;
 @property (setter=_setExtensionExpirationsIdentifiers:, nonatomic, retain) NSMutableDictionary *_extensionExpirationIdentifiers;
-@property (setter=_setExtensionProcessAssertion:, nonatomic, retain) BKSProcessAssertion *_extensionProcessAssertion;
+@property (setter=_setExtensionProcessAssertion:, retain) BKSProcessAssertion *_extensionProcessAssertion;
 @property (setter=_setExtensionServiceConnections:, nonatomic, retain) NSMutableDictionary *_extensionServiceConnections;
 @property (getter=_extensionState, setter=_setExtensionState:, nonatomic, copy) NSDictionary *_extensionState;
-@property (getter=_isMarkedNew, nonatomic, readonly) BOOL _markedNew;
+@property (getter=_isMarkedNew, nonatomic, readonly) bool _markedNew;
 @property (setter=_setPlugIn:, nonatomic, retain) <PKPlugIn> *_plugIn;
 @property (nonatomic, copy) id /* block */ _requestPostCompletionBlock;
 @property (nonatomic, copy) id /* block */ _requestPostCompletionBlockWithItems;
@@ -46,16 +46,16 @@
 @property (nonatomic, readonly) NSURL *containingAppURL;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isEnabledViaPlugInKit, nonatomic, readonly) BOOL enabledViaPlugInKit;
+@property (getter=isEnabledViaPlugInKit, nonatomic, readonly) bool enabledViaPlugInKit;
 @property (nonatomic, copy) NSString *extensionPointIdentifier;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSArray *icons;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) NSDictionary *infoDictionary;
 @property (nonatomic, readonly) NSString *localizedContainingAppName;
 @property (nonatomic, readonly) NSString *localizedName;
-@property (getter=_isObservingHostAppStateChanges, setter=_setObservingHostAppStateChanges:, nonatomic) BOOL observingHostAppStateChanges;
-@property (nonatomic, readonly) BOOL optedIn;
+@property (getter=_isObservingHostAppStateChanges, setter=_setObservingHostAppStateChanges:, nonatomic) bool observingHostAppStateChanges;
+@property (nonatomic, readonly) bool optedIn;
 @property (nonatomic, readonly) LSPlugInKitProxy *plugInKitProxy;
 @property (nonatomic, readonly) NSIndexSet *pu_supportedMediaTypes;
 @property (nonatomic, copy) id /* block */ requestCancellationBlock;
@@ -66,12 +66,14 @@
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
-+ (BOOL)_shouldLogExtensionDiscovery;
++ (bool)_shouldLogExtensionDiscovery;
 + (id)beginMatchingExtensionsWithAttributes:(id)arg1 completion:(id /* block */)arg2;
 + (void)endMatchingExtensions:(id)arg1;
-+ (BOOL)evaluateActivationRule:(id)arg1 withExtensionItemsRepresentation:(id)arg2;
++ (bool)evaluateActivationRule:(id)arg1 withExtensionItemsRepresentation:(id)arg2;
 + (id)extensionWithIdentifier:(id)arg1 error:(id*)arg2;
-+ (id)extensionWithIdentifier:(id)arg1 excludingDisabledExtensions:(BOOL)arg2 error:(id*)arg3;
++ (id)extensionWithIdentifier:(id)arg1 excludingDisabledExtensions:(bool)arg2 error:(id*)arg3;
++ (void)extensionWithURL:(id)arg1 completion:(id /* block */)arg2;
++ (void)extensionWithUUID:(id)arg1 completion:(id /* block */)arg2;
 + (void)extensionsWithMatchingAttributes:(id)arg1 completion:(id /* block */)arg2;
 + (id)extensionsWithMatchingAttributes:(id)arg1 error:(id*)arg2;
 + (void)initialize;
@@ -79,13 +81,14 @@
 + (id)predicateForActivationRule:(id)arg1;
 
 - (id)_allowedErrorClasses;
-- (int)_assertionRefCount;
+- (long long)_assertionRefCount;
 - (id)_bareExtensionServiceConnection;
 - (void)_cancelRequestWithError:(id)arg1 forExtensionContextWithUUID:(id)arg2 completion:(id /* block */)arg3;
 - (void)_completeRequestReturningItems:(id)arg1 forExtensionContextWithUUID:(id)arg2 completion:(id /* block */)arg3;
 - (void)_didCreateExtensionContext:(id)arg1;
 - (void)_didShowExtensionManagementInterface;
 - (void)_didShowNewExtensionIndicator;
+- (void)_dropAssertion;
 - (id)_extensionBundle;
 - (id)_extensionContextForUUID:(id)arg1;
 - (id)_extensionContexts;
@@ -98,10 +101,10 @@
 - (void)_hostWillEnterForegroundNote:(id)arg1;
 - (void)_hostWillResignActiveNote:(id)arg1;
 - (id)_initWithPKPlugin:(id)arg1;
-- (BOOL)_isMarkedNew;
-- (BOOL)_isObservingHostAppStateChanges;
-- (BOOL)_isPhotoServiceAccessGranted;
-- (BOOL)_isSystemExtension;
+- (bool)_isMarkedNew;
+- (bool)_isObservingHostAppStateChanges;
+- (bool)_isPhotoServiceAccessGranted;
+- (bool)_isSystemExtension;
 - (id)_itemProviderForPayload:(id)arg1 extensionContext:(id)arg2;
 - (void)_kill:(int)arg1;
 - (void)_loadItemForPayload:(id)arg1 contextIdentifier:(id)arg2 completionHandler:(id /* block */)arg3;
@@ -118,19 +121,19 @@
 - (void)_safelyEndUsing:(id /* block */)arg1;
 - (void)_safelyEndUsingWithProcessAssertion:(id)arg1 continuation:(id /* block */)arg2;
 - (void)_setAllowedErrorClasses:(id)arg1;
-- (void)_setAssertionRefCount:(int)arg1;
+- (void)_setAssertionRefCount:(long long)arg1;
 - (void)_setExtensionBundle:(id)arg1;
 - (void)_setExtensionContexts:(id)arg1;
 - (void)_setExtensionExpirationsIdentifiers:(id)arg1;
 - (void)_setExtensionProcessAssertion:(id)arg1;
 - (void)_setExtensionServiceConnections:(id)arg1;
 - (void)_setExtensionState:(id)arg1;
-- (void)_setObservingHostAppStateChanges:(BOOL)arg1;
+- (void)_setObservingHostAppStateChanges:(bool)arg1;
 - (void)_setPlugIn:(id)arg1;
 - (id)_stashedPlugInConnection;
-- (BOOL)_wantsProcessPerRequest;
-- (BOOL)attemptOptIn:(id*)arg1;
-- (BOOL)attemptOptOut:(id*)arg1;
+- (bool)_wantsProcessPerRequest;
+- (bool)attemptOptIn:(id*)arg1;
+- (bool)attemptOptOut:(id*)arg1;
 - (id)attributes;
 - (void)beginExtensionRequestWithInputItems:(id)arg1 completion:(id /* block */)arg2;
 - (void)beginExtensionRequestWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 completion:(id /* block */)arg3;
@@ -139,14 +142,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)extensionPointIdentifier;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)icons;
 - (id)identifier;
 - (id)infoDictionary;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)objectForInfoDictionaryKey:(id)arg1;
-- (BOOL)optedIn;
+- (bool)optedIn;
 - (int)pidForRequestIdentifier:(id)arg1;
 - (id /* block */)requestCancellationBlock;
 - (id /* block */)requestCompletionBlock;
@@ -169,7 +172,7 @@
 // Image: /System/Library/Frameworks/CallKit.framework/CallKit
 
 - (id)containingAppURL;
-- (BOOL)isEnabledViaPlugInKit;
+- (bool)isEnabledViaPlugInKit;
 - (id)localizedContainingAppName;
 - (id)localizedName;
 - (id)plugInKitProxy;
@@ -177,30 +180,47 @@
 // Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)_extensionMatchingDictionaryForIntentClassNames:(id)arg1 extensionPointName:(id)arg2 launchId:(id)arg3;
-+ (void)_findAppsWithAnyIntentsExtensionCheckingSiriEnabledUseFilter:(int)arg1 completion:(id /* block */)arg2;
++ (void)_findAppsWithAnyIntentsExtensionCheckingSiriEnabledUseFilter:(long long)arg1 completion:(id /* block */)arg2;
 + (id)_intents_extensionMatchingAttributesForIntents:(id)arg1;
 + (void)_intents_findAppsWithAnIntentsServiceExtension:(id /* block */)arg1;
 + (void)_intents_findPossibleSiriEnabledAppsWithAnIntentsServiceExtension:(id /* block */)arg1;
 + (void)_intents_findSiriEntitledAppsContainingAnIntentsExtensionWithCompletion:(id /* block */)arg1;
 + (void)_intents_matchExtensionsForIntent:(id)arg1 completion:(id /* block */)arg2;
++ (void)_intents_matchExtensionsForIntent:(id)arg1 shouldIgnoreLaunchId:(bool)arg2 completion:(id /* block */)arg3;
 + (void)_intents_matchSiriExtensionsForIntent:(id)arg1 completion:(id /* block */)arg2;
 + (void)_intents_matchSiriUIExtensionsForIntent:(id)arg1 completion:(id /* block */)arg2;
++ (void)_intents_matchSiriUISnippetExtensionsWithCompletion:(id /* block */)arg1;
 + (void)_intents_matchUIExtensionsForIntent:(id)arg1 completion:(id /* block */)arg2;
 + (id)_intents_uiExtensionMatchingAttributesForIntents:(id)arg1;
-+ (void)_matchExtensionsForIntent:(id)arg1 extensionPointName:(id)arg2 shouldCheckForSiriEnabled:(BOOL)arg3 completion:(id /* block */)arg4;
-+ (BOOL)appAllowedToTalkToSiri:(id)arg1;
++ (void)_matchExtensionsForIntent:(id)arg1 extensionPointName:(id)arg2 shouldCheckForSiriEnabled:(bool)arg3 completion:(id /* block */)arg4;
++ (void)_matchExtensionsForIntent:(id)arg1 extensionPointName:(id)arg2 shouldCheckForSiriEnabled:(bool)arg3 shouldIgnoreLaunchId:(bool)arg4 completion:(id /* block */)arg5;
++ (void)_matchExtensionsWithAttributes:(id)arg1 extensionPointName:(id)arg2 completion:(id /* block */)arg3;
++ (void)_matchSnippetExtensionsWithExtensionPointName:(id)arg1 completion:(id /* block */)arg2;
++ (bool)appAllowedToTalkToSiri:(id)arg1;
 
-- (BOOL)_intents_extensionSupportsAtLeastOneSiriIntent;
+- (bool)_intents_extensionSupportsAtLeastOneSiriIntent;
 
-// Image: /System/Library/Frameworks/NotificationCenter.framework/NotificationCenter
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
-- (id)nc_description;
-- (BOOL)nc_hasExplicitUserElectionState;
+- (bool)_canSupportIntent:(id)arg1;
+- (bool)_canSupportIntentClass:(Class)arg1;
+- (id)_containingAppDisplayName;
+- (id)_containingAppIdentifer;
+- (id)_displayName;
+- (id)_extensionVendorContextForUUID:(id)arg1 withErrorHandler:(id /* block */)arg2;
+- (id)_iconWithFormat:(int)arg1;
+- (unsigned long long)_mapExtensionType;
 
-// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+// Image: /System/Library/Frameworks/ReplayKit.framework/ReplayKit
 
-- (id)pu_supportedMediaTypes;
-- (BOOL)pu_supportsMediaType:(unsigned int)arg1;
++ (void)extensionsWithMatchingPointName:(id)arg1 activationRule:(id)arg2 completion:(id /* block */)arg3;
++ (void)extensionsWithMatchingPointName:(id)arg1 baseIdentifier:(id)arg2 activationRule:(id)arg3 unwantedActivationRule:(id)arg4 completion:(id /* block */)arg5;
++ (void)extensionsWithMatchingPointName:(id)arg1 baseIdentifier:(id)arg2 completion:(id /* block */)arg3;
++ (void)extensionsWithMatchingPointName:(id)arg1 baseIdentifier:(id)arg2 unwantedActivationRule:(id)arg3 completion:(id /* block */)arg4;
++ (void)extensionsWithMatchingPointName:(id)arg1 completion:(id /* block */)arg2;
++ (void)extensionsWithMatchingPointName:(id)arg1 unwantedActivationRule:(id)arg2 completion:(id /* block */)arg3;
+
+- (long long)processMode;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
@@ -208,15 +228,40 @@
 - (void)instantiateViewControllerWithInputItems:(id)arg1 connectionHandler:(id /* block */)arg2;
 - (void)instantiateViewControllerWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 connectionHandler:(id /* block */)arg3;
 
+// Image: /System/Library/PrivateFrameworks/ContactsDonation.framework/ContactsDonation
+
+- (id)_cnd_requestWithInputItems:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/IntentsCore.framework/IntentsCore
+
+- (void)_intents_startExtensionConnectionWithExtensionInputItems:(id)arg1 intent:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
+
+// Image: /System/Library/PrivateFrameworks/PhotosEditUI.framework/PhotosEditUI
+
+- (id)pu_supportedMediaTypes;
+- (bool)pu_supportsMediaType:(unsigned long long)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
+
+- (id)_siriui_extensionIconImage;
+- (id)_siriui_iconImageWithFormat:(int)arg1;
+- (id)siriui_displayName;
+- (id)siriui_iconImage;
+
 // Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
 
 - (id)uns_extensionContainerBundleIdentifier;
 - (id)uns_extensionContainerBundleProxy;
-- (BOOL)uns_isExtensionSessionBeingDebugged:(id)arg1;
+- (bool)uns_isExtensionSessionBeingDebugged:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/UserNotificationsUIKit.framework/UserNotificationsUIKit
 
 - (id)nc_extensionContainerBundleIdentifier;
 - (id)nc_extensionContainerBundleProxy;
+
+// Image: /System/Library/PrivateFrameworks/Widgets.framework/Widgets
+
+- (id)wg_description;
+- (bool)wg_hasExplicitUserElectionState;
 
 @end

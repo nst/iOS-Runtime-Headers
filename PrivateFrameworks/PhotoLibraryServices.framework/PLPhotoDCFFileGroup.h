@@ -9,7 +9,7 @@
     PLPhotoDCFDirectory * _directory;
     NSString * _directoryPath;
     NSMutableSet * _extensions;
-    unsigned int  _hash;
+    unsigned long long  _hash;
     unsigned int  _hashComputed;
     NSString * _prebakedThumbnailPath;
     NSString * _preferredExtension;
@@ -21,7 +21,7 @@
 
 - (void)addExtension:(id)arg1;
 - (void)addExtensionsFromMetadataDirectory;
-- (int)compare:(id)arg1;
+- (long long)compare:(id)arg1;
 - (void)createMetadataDirectoryIfNecessary;
 - (id)date;
 - (void)dealloc;
@@ -32,20 +32,19 @@
 - (id)directory;
 - (id)extensions;
 - (void)forceAddExtensionsFromMetadataDirectory;
-- (BOOL)hasObsoleteFiles;
-- (BOOL)hasPrebakedLandscapeScrubberThumbnails;
-- (BOOL)hasPrebakedPortraitScrubberThumbnails;
-- (BOOL)hasPrebakedThumbnail;
-- (BOOL)hasPrebakedWildcatThumbnails;
-- (BOOL)hasThumbnail;
-- (BOOL)hasVideoFile;
-- (unsigned int)hash;
+- (bool)hasObsoleteFiles;
+- (bool)hasPrebakedLandscapeScrubberThumbnails;
+- (bool)hasPrebakedPortraitScrubberThumbnails;
+- (bool)hasPrebakedThumbnail;
+- (bool)hasPrebakedWildcatThumbnails;
+- (bool)hasThumbnail;
+- (bool)hasVideoFile;
+- (unsigned long long)hash;
 - (id)imageSourceTypeHint;
 - (id)initWithName:(id)arg1 number:(int)arg2 directory:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isValid;
-- (BOOL)isValidImage;
-- (BOOL)isWritePending;
+- (bool)isEqual:(id)arg1;
+- (bool)isValid;
+- (bool)isWritePending;
 - (id)lowResolutionFilename;
 - (id)pathForContainingDirectory;
 - (id)pathForFullSizeImage;
@@ -67,7 +66,7 @@
 - (id)prebakedWildcatThumbnailsFilename;
 - (void)setDate:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setWriteIsPending:(BOOL)arg1;
+- (void)setWriteIsPending:(bool)arg1;
 - (id)thumbnailFilename;
 - (id)videoPreviewFilename;
 

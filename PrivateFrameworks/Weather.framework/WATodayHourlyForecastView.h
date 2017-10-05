@@ -6,7 +6,9 @@
     UIImageView * _conditionsImageView;
     NSArray * _constraints;
     UILabel * _temperatureLabel;
+    UIVisualEffectView * _temperatureLabelVisualEffectView;
     UILabel * _timeLabel;
+    UIVisualEffectView * _timeLabelVisualEffectView;
 }
 
 @property (nonatomic, retain) UIImage *conditionsImage;
@@ -14,28 +16,34 @@
 @property (nonatomic, retain) NSArray *constraints;
 @property (nonatomic, copy) NSAttributedString *temperature;
 @property (nonatomic, retain) UILabel *temperatureLabel;
+@property (nonatomic, retain) UIVisualEffectView *temperatureLabelVisualEffectView;
 @property (nonatomic, copy) NSAttributedString *time;
 @property (nonatomic, retain) UILabel *timeLabel;
+@property (nonatomic, retain) UIVisualEffectView *timeLabelVisualEffectView;
 
-+ (BOOL)requiresConstraintBasedLayout;
++ (bool)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
 - (void)_setupConstraints;
-- (void)applyVibrancyToTime;
+- (void)applyVibrancyToTimeWithEffect:(id)arg1;
 - (id)conditionsImage;
 - (id)conditionsImageView;
 - (id)constraints;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setConditionsImage:(id)arg1;
 - (void)setConditionsImageView:(id)arg1;
 - (void)setConstraints:(id)arg1;
 - (void)setTemperature:(id)arg1;
 - (void)setTemperatureLabel:(id)arg1;
+- (void)setTemperatureLabelVisualEffectView:(id)arg1;
 - (void)setTime:(id)arg1;
 - (void)setTimeLabel:(id)arg1;
+- (void)setTimeLabelVisualEffectView:(id)arg1;
 - (id)temperature;
 - (id)temperatureLabel;
+- (id)temperatureLabelVisualEffectView;
 - (id)time;
 - (id)timeLabel;
+- (id)timeLabelVisualEffectView;
 
 @end

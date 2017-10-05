@@ -46,6 +46,6 @@
 - (void)setRapidUpdateRefreshTest:(id /* block */)arg1;
 - (void)setResultHeadlines:(id)arg1;
 - (void)setResultHeadlinesByFeedItem:(id)arg1;
-- (BOOL)validateOperation;
+- (bool)validateOperation;
 
 @end

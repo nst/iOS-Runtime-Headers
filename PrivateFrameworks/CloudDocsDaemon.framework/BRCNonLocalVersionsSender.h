@@ -6,7 +6,7 @@
     BRCAppLibrary * _appLibrary;
     BRCXPCClient * _client;
     NSString * _currentEtag;
-    BOOL  _includeCachedVersions;
+    bool  _includeCachedVersions;
     BRCItemID * _itemID;
     NSURL * _logicalURL;
     NSURL * _physicalURL;
@@ -21,8 +21,8 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL includeCachedVersions;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool includeCachedVersions;
 @property (nonatomic, readonly) NSURL *logicalURL;
 @property (nonatomic, readonly) NSURL *physicalURL;
 @property (readonly) Class superclass;
@@ -35,14 +35,14 @@
 - (id)_fetchVersionsOperationWithDepsOp:(id)arg1;
 - (id)createActivity;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
-- (BOOL)includeCachedVersions;
-- (id)initWithDocument:(id)arg1 serverItem:(id)arg2 relpath:(id)arg3 logicalURL:(id)arg4 client:(id)arg5 XPCReceiver:(id)arg6 error:(id*)arg7;
+- (bool)includeCachedVersions;
+- (id)initWithDocument:(id)arg1 serverItem:(id)arg2 relpath:(id)arg3 client:(id)arg4 XPCReceiver:(id)arg5 error:(id*)arg6;
 - (oneway void)invalidate;
 - (void)listNonLocalVersionsWithReply:(id /* block */)arg1;
 - (id)logicalURL;
 - (void)main;
 - (id)physicalURL;
-- (void)setIncludeCachedVersions:(BOOL)arg1;
-- (BOOL)shouldRetryForError:(id)arg1;
+- (void)setIncludeCachedVersions:(bool)arg1;
+- (bool)shouldRetryForError:(id)arg1;
 
 @end

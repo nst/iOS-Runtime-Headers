@@ -4,11 +4,8 @@
 
 @interface _GEOLocationShiftRequester : GEOServiceRequester
 
-+ (id)_serviceTypeNumber;
-+ (unsigned int)_urlType;
-
-- (id)_validateResponse:(id)arg1;
+- (id)_validateResponse:(id)arg1 userInfo:(id)arg2;
 - (void)cancelRequest:(id)arg1;
-- (void)startWithRequest:(id)arg1 traits:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)startWithRequest:(id)arg1 traits:(id)arg2 auditToken:(id)arg3 completionHandler:(id /* block */)arg4;
 
 @end

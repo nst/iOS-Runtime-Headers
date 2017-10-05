@@ -4,30 +4,35 @@
 
 @interface MFLibrarySearchableIndexItem : NSObject {
     NSData * _bodyData;
-    BOOL  _hasCompleteBodyData;
+    bool  _hasCompleteBodyData;
     NSString * _identifier;
+    long long  _indexingType;
     MFMailMessage * _message;
 }
 
 @property (nonatomic, retain) NSData *bodyData;
 @property (nonatomic, readonly, copy) NSString *domainIdentifier;
-@property (nonatomic) BOOL hasCompleteBodyData;
+@property (nonatomic) bool hasCompleteBodyData;
 @property (nonatomic, readonly, copy) NSString *identifier;
+@property (nonatomic) long long indexingType;
 @property (nonatomic, readonly, retain) MFMailMessage *message;
 @property (nonatomic, readonly, retain) CSSearchableItem *searchableItem;
 
 + (id)itemWithMessage:(id)arg1 bodyData:(id)arg2;
 + (id)transactionAttributeKey;
 
-- (BOOL)_isMessagePartOfExistingThreadWithHeaders:(id)arg1;
-- (BOOL)_shouldAutoDownloadAttachment:(id)arg1;
+- (bool)_isMessagePartOfExistingThreadWithHeaders:(id)arg1;
+- (bool)_shouldAutoDownloadAttachment:(id)arg1;
+- (void)_updateAllAttributesInAttributeSet:(id)arg1 clientState:(id)arg2;
+- (void)_updateFlagsAttributesInAttributeSet:(id)arg1;
 - (id)bodyData;
-- (int)compare:(id)arg1;
+- (long long)compare:(id)arg1;
 - (void)dealloc;
 - (id)domainIdentifier;
 - (id)fetchIndexableAttachments;
-- (BOOL)hasCompleteBodyData;
+- (bool)hasCompleteBodyData;
 - (id)identifier;
+- (long long)indexingType;
 - (id)init;
 - (id)initWithIdentifier:(id)arg1;
 - (id)initWithMessage:(id)arg1 bodyData:(id)arg2;
@@ -35,7 +40,8 @@
 - (id)searchableItem;
 - (id)searchableItemWithClientState:(id)arg1;
 - (void)setBodyData:(id)arg1;
-- (void)setHasCompleteBodyData:(BOOL)arg1;
-- (BOOL)shouldExcludeFromIndex;
+- (void)setHasCompleteBodyData:(bool)arg1;
+- (void)setIndexingType:(long long)arg1;
+- (bool)shouldExcludeFromIndex;
 
 @end

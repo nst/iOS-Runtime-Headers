@@ -6,20 +6,20 @@
     long long  _exceptionCode;
     NSString * _explanation;
     NSString * _label;
-    unsigned int  _options;
+    unsigned long long  _options;
     <FBSProcess> * _process;
-    int  _reportType;
+    long long  _reportType;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) long long exceptionCode;
 @property (nonatomic, copy) NSString *explanation;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *label;
-@property (nonatomic) unsigned int options;
+@property (nonatomic) unsigned long long options;
 @property (nonatomic) <FBSProcess> *process;
-@property (nonatomic) int reportType;
+@property (nonatomic) long long reportType;
 @property (readonly) Class superclass;
 
 + (id)requestForProcess:(id)arg1 withLabel:(id)arg2;
@@ -34,15 +34,15 @@
 - (void)execute;
 - (id)explanation;
 - (id)label;
-- (unsigned int)options;
+- (unsigned long long)options;
 - (id)process;
-- (int)reportType;
+- (long long)reportType;
 - (void)setExceptionCode:(long long)arg1;
 - (void)setExplanation:(id)arg1;
 - (void)setLabel:(id)arg1;
-- (void)setOptions:(unsigned int)arg1;
+- (void)setOptions:(unsigned long long)arg1;
 - (void)setProcess:(id)arg1;
-- (void)setReportType:(int)arg1;
+- (void)setReportType:(long long)arg1;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
 

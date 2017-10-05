@@ -4,38 +4,44 @@
 
 @interface UIStatusBarServiceItemView : UIStatusBarItemView {
     int  _contentType;
-    unsigned int  _crossfadeStep;
+    unsigned long long  _crossfadeStep;
     NSString * _crossfadeString;
-    float  _crossfadeWidth;
-    float  _letterSpacing;
-    BOOL  _loopNowIfNecessary;
-    BOOL  _loopingNecessaryForString;
-    BOOL  _loopingNow;
-    float  _maxWidth;
+    double  _crossfadeWidth;
+    double  _letterSpacing;
+    bool  _loopNowIfNecessary;
+    bool  _loopingNecessaryForString;
+    bool  _loopingNow;
+    double  _maxWidth;
     NSString * _serviceString;
-    float  _serviceWidth;
+    double  _serviceWidth;
 }
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void).cxx_destruct;
-- (id)_contentsImageFromString:(id)arg1 withWidth:(float)arg2 letterSpacing:(float)arg3;
+- (id)_contentsImageFromString:(id)arg1 withWidth:(double)arg2 letterSpacing:(double)arg3;
 - (id)_crossfadeContentsImage;
 - (void)_crossfadeStepAnimation;
-- (BOOL)_crossfaded;
+- (bool)_crossfaded;
 - (void)_finalAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_loopAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
-- (BOOL)_loopingNecessary;
+- (bool)_loopingNecessary;
 - (id)_serviceContentsImage;
-- (float)addContentOverlap:(float)arg1;
-- (BOOL)animatesDataChange;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (id)accessibilityHUDRepresentation;
+- (double)addContentOverlap:(double)arg1;
+- (bool)animatesDataChange;
 - (id)contentsImage;
-- (float)extraRightPadding;
-- (int)legibilityStyle;
+- (double)extraRightPadding;
+- (long long)legibilityStyle;
 - (void)performPendedActions;
-- (float)resetContentOverlap;
-- (void)setVisible:(BOOL)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 duration:(double)arg3;
-- (float)standardPadding;
-- (float)updateContentsAndWidth;
-- (BOOL)updateForContentType:(int)arg1 serviceString:(id)arg2 serviceCrossfadeString:(id)arg3 maxWidth:(float)arg4 actions:(int)arg5;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (double)resetContentOverlap;
+- (void)setVisible:(bool)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 duration:(double)arg3;
+- (double)standardPadding;
+- (double)updateContentsAndWidth;
+- (bool)updateForContentType:(int)arg1 serviceString:(id)arg2 serviceCrossfadeString:(id)arg3 maxWidth:(double)arg4 actions:(int)arg5;
+- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

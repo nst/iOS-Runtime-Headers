@@ -4,31 +4,27 @@
 
 @interface MCDNowPlayingButton : UIButton {
     CALayer * _focusColorLayer;
-    float  _height;
-    BOOL  _hidesLeadingBorder;
+    double  _height;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _layoutFrameSize;
     CALayer * _leadingBorder;
 }
 
-@property (nonatomic) float height;
-@property (nonatomic) BOOL hidesLeadingBorder;
+@property (nonatomic) double height;
 
-+ (id)buttonWithHeight:(float)arg1;
++ (id)buttonWithHeight:(double)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)canBecomeFocused;
-- (void)focusedViewDidChange;
-- (float)height;
-- (BOOL)hidesLeadingBorder;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)canBecomeFocused;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
+- (double)height;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setHeight:(float)arg1;
-- (void)setHidesLeadingBorder:(BOOL)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setHeight:(double)arg1;
 - (void)sizeToFit;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })titleRectForContentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 @end

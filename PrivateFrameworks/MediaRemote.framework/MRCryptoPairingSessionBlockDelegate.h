@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ exchangeCompleteBlock;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) id /* block */ hideSetupCodeBlock;
 @property (nonatomic, copy) id /* block */ promptForSetupCodeBlock;
 @property (nonatomic, copy) id /* block */ showSetupCodeBlock;

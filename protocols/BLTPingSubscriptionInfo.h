@@ -5,8 +5,8 @@
 
 @required
 
-- (BOOL)canAck;
-- (BOOL)forBulletin;
+- (bool)canAck;
+- (bool)forBulletin;
 - (NSString *)sectionID;
 
 @end

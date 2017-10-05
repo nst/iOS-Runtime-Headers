@@ -2,31 +2,26 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface _GEORPSubmissionTicket : NSObject <GEOMapServiceProblemReportTicket> {
-    BOOL  _canceled;
+@interface _GEORPSubmissionTicket : GEOAbstractTicket <GEOMapServiceProblemReportTicket> {
     NSString * _emailAddress;
-    <GEOMapItem> * _endPlace;
     <GEOMapItem> * _place;
     GEORPProblem * _problem;
     GEORPProblemRequest * _problemRequest;
     NSData * _pushToken;
     NSData * _resubmissionData;
-    <GEOMapItem> * _startPlace;
-    BOOL  _started;
-    GEOMapServiceTraits * _traits;
+    bool  _started;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) GEOMapServiceTraits *traits;
 
+- (void).cxx_destruct;
 - (void)cancel;
-- (void)dealloc;
-- (id)initWithProblem:(id)arg1 placeForProblemContext:(id)arg2 placeForStartDirectionsSearchInput:(id)arg3 placeForEndDirectionsSearchInput:(id)arg4 pushToken:(id)arg5 allowContactBackAtEmailAddress:(id)arg6 traits:(id)arg7;
+- (id)initWithProblem:(id)arg1 placeForProblemContext:(id)arg2 pushToken:(id)arg3 allowContactBackAtEmailAddress:(id)arg4 traits:(id)arg5;
 - (id)initWithResubmissionData:(id)arg1 traits:(id)arg2;
 - (void)submitWithHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
-- (id)traits;
 
 @end

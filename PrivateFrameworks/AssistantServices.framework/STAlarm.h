@@ -3,34 +3,34 @@
  */
 
 @interface STAlarm : STSiriModelObject <NSCopying> {
-    int  _daysOfWeek;
-    BOOL  _enabled;
-    int  _hourOfDay;
+    long long  _daysOfWeek;
+    bool  _enabled;
+    long long  _hourOfDay;
     NSString * _label;
-    int  _minuteOfHour;
+    long long  _minuteOfHour;
 }
 
-@property (nonatomic) int daysOfWeek;
-@property (getter=isEnabled, nonatomic) BOOL enabled;
-@property (nonatomic) int hourOfDay;
+@property (nonatomic) long long daysOfWeek;
+@property (getter=isEnabled, nonatomic) bool enabled;
+@property (nonatomic) long long hourOfDay;
 @property (nonatomic, copy) NSString *label;
-@property (nonatomic) int minuteOfHour;
+@property (nonatomic) long long minuteOfHour;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)daysOfWeek;
+- (long long)daysOfWeek;
 - (void)encodeWithCoder:(id)arg1;
-- (int)hourOfDay;
+- (long long)hourOfDay;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (id)label;
-- (int)minuteOfHour;
-- (void)setDaysOfWeek:(int)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setHourOfDay:(int)arg1;
+- (long long)minuteOfHour;
+- (void)setDaysOfWeek:(long long)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setHourOfDay:(long long)arg1;
 - (void)setLabel:(id)arg1;
-- (void)setMinuteOfHour:(int)arg1;
+- (void)setMinuteOfHour:(long long)arg1;
 
 @end

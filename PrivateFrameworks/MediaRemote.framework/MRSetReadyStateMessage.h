@@ -4,6 +4,6 @@
 
 @interface MRSetReadyStateMessage : MRProtocolMessage
 
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

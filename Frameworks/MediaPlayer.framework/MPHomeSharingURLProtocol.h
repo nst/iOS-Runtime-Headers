@@ -4,7 +4,7 @@
 
 @interface MPHomeSharingURLProtocol : NSURLProtocol
 
-+ (BOOL)canInitWithRequest:(id)arg1;
++ (bool)canInitWithRequest:(id)arg1;
 + (id)canonicalRequestForRequest:(id)arg1;
 + (void)initialize;
 

@@ -11,7 +11,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HMCameraSnapshotControlDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HMCameraSnapshot *mostRecentSnapshot;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (nonatomic, retain) _HMCameraSnapshotControl *snapshotControl;

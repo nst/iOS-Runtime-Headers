@@ -9,8 +9,8 @@
 @property (nonatomic) <CoreDAVTaskDelegate> *delegate;
 @property (nonatomic, retain) NSString *previousETag;
 
+- (void).cxx_destruct;
 - (id)additionalHeaderValues;
-- (void)dealloc;
 - (id)description;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)httpMethod;

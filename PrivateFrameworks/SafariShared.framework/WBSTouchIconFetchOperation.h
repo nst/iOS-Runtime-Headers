@@ -6,7 +6,7 @@
     id /* block */  _completionHandler;
     NSTimer * _loadingTimeoutTimer;
     NSArray * _pendingTouchIconURLs;
-    int  _state;
+    long long  _state;
     _WKRemoteObjectInterface * _touchIconObserverInterface;
     NSSet * _touchIconURLs;
 }
@@ -14,7 +14,7 @@
 @property (nonatomic, readonly, copy) id /* block */ completionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -30,10 +30,10 @@
 - (void)didCreateWebView;
 - (void)didFailFetch;
 - (void)didFetchTouchIconURLs:(id)arg1 andFaviconURLs:(id)arg2 forURL:(id)arg3;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithRequest:(id)arg1;
 - (id)initWithRequest:(id)arg1 completionHandler:(id /* block */)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)loadRequest;
 - (void)resetState;
 - (void)startOffscreenFetching;

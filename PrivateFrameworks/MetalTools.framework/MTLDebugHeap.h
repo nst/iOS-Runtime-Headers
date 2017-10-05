@@ -4,28 +4,31 @@
 
 @interface MTLDebugHeap : MTLToolsHeap {
     MTLDebugDevice * _debugDevice;
-    int  _historyLock;
-    struct HeapHistoryEvent { struct HeapHistoryEvent {} *x1; void *x2; BOOL x3; } * _latestEvent;
-    struct HeapHistoryEvent { struct HeapHistoryEvent {} *x1; void *x2; BOOL x3; } * _oldestEvent;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _historyLock;
+    struct HeapHistoryEvent { struct HeapHistoryEvent {} *x1; void *x2; bool x3; } * _latestEvent;
+    struct HeapHistoryEvent { struct HeapHistoryEvent {} *x1; void *x2; bool x3; } * _oldestEvent;
 }
 
 @property (nonatomic, readonly) MTLDebugDevice *debugDevice;
-@property (nonatomic) struct HeapHistoryEvent { struct HeapHistoryEvent {} *x1; void *x2; BOOL x3; }*latestEvent;
-@property (nonatomic) struct HeapHistoryEvent { struct HeapHistoryEvent {} *x1; void *x2; BOOL x3; }*oldestEvent;
+@property (nonatomic) struct HeapHistoryEvent { struct HeapHistoryEvent {} *x1; void *x2; bool x3; }*latestEvent;
+@property (nonatomic) struct HeapHistoryEvent { struct HeapHistoryEvent {} *x1; void *x2; bool x3; }*oldestEvent;
 
-- (void)addResourceToHistory:(id)arg1 madeAliasable:(BOOL)arg2;
+- (void)accessHistoryEventsUsingBlock:(id /* block */)arg1;
+- (void)addResourceToHistory:(id)arg1 madeAliasable:(bool)arg2;
 - (void)dealloc;
 - (id)debugDevice;
 - (id)initWithHeap:(id)arg1 device:(id)arg2;
-- (struct HeapHistoryEvent { struct HeapHistoryEvent {} *x1; void *x2; BOOL x3; }*)latestEvent;
-- (unsigned int)maxAvailableSizeWithAlignment:(unsigned int)arg1;
-- (id)newBufferWithLength:(unsigned int)arg1 options:(unsigned int)arg2;
+- (struct HeapHistoryEvent { struct HeapHistoryEvent {} *x1; void *x2; bool x3; }*)latestEvent;
+- (unsigned long long)maxAvailableSizeWithAlignment:(unsigned long long)arg1;
+- (id)newBufferWithLength:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (id)newTextureWithDescriptor:(id)arg1;
-- (struct HeapHistoryEvent { struct HeapHistoryEvent {} *x1; void *x2; BOOL x3; }*)oldestEvent;
+- (struct HeapHistoryEvent { struct HeapHistoryEvent {} *x1; void *x2; bool x3; }*)oldestEvent;
 - (void)removeResourceFromHistory:(id)arg1;
-- (void)setLatestEvent:(struct HeapHistoryEvent { struct HeapHistoryEvent {} *x1; void *x2; BOOL x3; }*)arg1;
-- (void)setOldestEvent:(struct HeapHistoryEvent { struct HeapHistoryEvent {} *x1; void *x2; BOOL x3; }*)arg1;
-- (unsigned int)setPurgeableState:(unsigned int)arg1;
-- (void)validateHeapResourceOptions:(unsigned int)arg1 isTexture:(BOOL)arg2 isIOSurface:(BOOL)arg3;
+- (void)setLatestEvent:(struct HeapHistoryEvent { struct HeapHistoryEvent {} *x1; void *x2; bool x3; }*)arg1;
+- (void)setOldestEvent:(struct HeapHistoryEvent { struct HeapHistoryEvent {} *x1; void *x2; bool x3; }*)arg1;
+- (unsigned long long)setPurgeableState:(unsigned long long)arg1;
+- (void)validateHeapResourceOptions:(unsigned long long)arg1 isTexture:(bool)arg2 isIOSurface:(bool)arg3;
 
 @end

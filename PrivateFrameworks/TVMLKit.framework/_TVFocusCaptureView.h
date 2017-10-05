@@ -4,7 +4,7 @@
 
 @interface _TVFocusCaptureView : UIView
 
-- (BOOL)canBecomeFocused;
-- (BOOL)shouldUpdateFocusInContext:(id)arg1;
+- (bool)canBecomeFocused;
+- (bool)shouldUpdateFocusInContext:(id)arg1;
 
 @end

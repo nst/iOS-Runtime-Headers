@@ -11,14 +11,14 @@
     NSMutableArray * _provisioningCompletions;
     PKPaymentDeviceProvisioningData * _provisioningData;
     PKSecureElement * _secureElement;
-    BOOL  _skipLocationCheck;
+    bool  _skipLocationCheck;
     NSTimer * _timer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL skipLocationCheck;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool skipLocationCheck;
 @property (readonly) Class superclass;
 
 + (id)clientHardwarePlatformInfoHTTPHeader;
@@ -43,8 +43,9 @@
 - (void)registrationDataWithAuthToken:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)rewrapDataWithDeviceIdentifier:(id)arg1 certificates:(id)arg2;
 - (void)setRegistrationRegionMap:(id)arg1 primaryRegionTopic:(id)arg2;
-- (void)setSkipLocationCheck:(BOOL)arg1;
-- (void)signData:(id)arg1 signatureEntanglementMode:(unsigned int)arg2 withCompletionHandler:(id /* block */)arg3;
-- (BOOL)skipLocationCheck;
+- (void)setSkipLocationCheck:(bool)arg1;
+- (void)signData:(id)arg1 signatureEntanglementMode:(unsigned long long)arg2 withCompletionHandler:(id /* block */)arg3;
+- (bool)skipLocationCheck;
+- (id)trustedDeviceEnrollmentInfo;
 
 @end

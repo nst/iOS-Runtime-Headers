@@ -10,7 +10,7 @@
 @property (retain) QLItem *activityPreviewItem;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) QLPreviewPrinter *printer;
 @property (readonly) Class superclass;
 
@@ -21,7 +21,7 @@
 - (id)activityViewController:(id)arg1 subjectForActivityType:(id)arg2;
 - (id)activityViewControllerPlaceholderItem:(id)arg1;
 - (id)activityViewControllerPlaceholderItems:(id)arg1;
-- (id)itemURL;
+- (id)mainItem;
 - (id)printInfo;
 - (id)printer;
 - (void)setActivityPreviewItem:(id)arg1;

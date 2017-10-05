@@ -10,17 +10,17 @@
     }  _has;
     unsigned long long  _timestamp;
     NSString * _type;
-    BOOL  _wasTapped;
+    bool  _wasTapped;
 }
 
 @property (nonatomic, retain) NSString *entityID;
-@property (nonatomic, readonly) BOOL hasEntityID;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic, readonly) BOOL hasType;
-@property (nonatomic) BOOL hasWasTapped;
+@property (nonatomic, readonly) bool hasEntityID;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic, readonly) bool hasType;
+@property (nonatomic) bool hasWasTapped;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic, retain) NSString *type;
-@property (nonatomic) BOOL wasTapped;
+@property (nonatomic) bool wasTapped;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -28,23 +28,23 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)entityID;
-- (BOOL)hasEntityID;
-- (BOOL)hasTimestamp;
-- (BOOL)hasType;
-- (BOOL)hasWasTapped;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasEntityID;
+- (bool)hasTimestamp;
+- (bool)hasType;
+- (bool)hasWasTapped;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEntityID:(id)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setHasWasTapped:(BOOL)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasWasTapped:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setType:(id)arg1;
-- (void)setWasTapped:(BOOL)arg1;
+- (void)setWasTapped:(bool)arg1;
 - (unsigned long long)timestamp;
 - (id)type;
-- (BOOL)wasTapped;
+- (bool)wasTapped;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -3,13 +3,13 @@
  */
 
 @interface MRSupportedProtocolMessages : NSObject {
-    unsigned int  _lastSupportedMessageType;
+    unsigned long long  _lastSupportedMessageType;
 }
 
-@property (nonatomic, readonly) unsigned int lastSupportedMessageType;
+@property (nonatomic, readonly) unsigned long long lastSupportedMessageType;
 
-- (id)initWithLastSupportedMessageType:(unsigned int)arg1;
-- (BOOL)isSupported:(unsigned int)arg1;
-- (unsigned int)lastSupportedMessageType;
+- (id)initWithLastSupportedMessageType:(unsigned long long)arg1;
+- (bool)isSupported:(unsigned long long)arg1;
+- (unsigned long long)lastSupportedMessageType;
 
 @end

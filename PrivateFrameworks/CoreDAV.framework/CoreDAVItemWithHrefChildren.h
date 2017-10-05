@@ -12,8 +12,8 @@
 
 + (id)copyParseRules;
 
+- (void).cxx_destruct;
 - (void)addHref:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)hrefs;
 - (id)hrefsAsFullURLs;

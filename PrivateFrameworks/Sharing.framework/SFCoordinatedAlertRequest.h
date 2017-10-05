@@ -5,13 +5,13 @@
 @interface SFCoordinatedAlertRequest : NSObject <NSSecureCoding, SFXPCInterface> {
     id /* block */  _completionHandler;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
-    BOOL  _invalidateCalled;
-    BOOL  _invalidateDone;
+    bool  _invalidateCalled;
+    bool  _invalidateDone;
     id /* block */  _invalidationHandler;
-    BOOL  _started;
+    bool  _started;
     double  _timeout;
     NSObject<OS_dispatch_source> * _timeoutTimer;
-    int  _type;
+    long long  _type;
     NSXPCConnection * _xpcCnx;
 }
 
@@ -19,9 +19,9 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
 @property (nonatomic, copy) id /* block */ invalidationHandler;
 @property (nonatomic) double timeout;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_ensureXPCStarted;
@@ -42,9 +42,9 @@
 - (void)setDispatchQueue:(id)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;
 - (void)setTimeout:(double)arg1;
-- (void)setType:(int)arg1;
+- (void)setType:(long long)arg1;
 - (void)start;
 - (double)timeout;
-- (int)type;
+- (long long)type;
 
 @end

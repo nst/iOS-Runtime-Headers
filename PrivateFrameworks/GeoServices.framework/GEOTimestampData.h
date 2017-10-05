@@ -3,7 +3,7 @@
  */
 
 @interface GEOTimestampData : PBCodable <GEOServerFormatTokenTimeStampValue, NSCopying> {
-    BOOL  _displayTimezone;
+    bool  _displayTimezone;
     NSString * _formatPattern;
     struct { 
         unsigned int timestampVal : 1; 
@@ -15,40 +15,40 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL displayTimezone;
+@property (nonatomic) bool displayTimezone;
 @property (nonatomic, readonly) NSString *formatPattern;
 @property (nonatomic, retain) NSString *formatPattern;
-@property (nonatomic) BOOL hasDisplayTimezone;
-@property (nonatomic, readonly) BOOL hasFormatPattern;
-@property (nonatomic) BOOL hasTimestampVal;
-@property (nonatomic, readonly) BOOL hasTimezone;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool hasDisplayTimezone;
+@property (nonatomic, readonly) bool hasFormatPattern;
+@property (nonatomic) bool hasTimestampVal;
+@property (nonatomic, readonly) bool hasTimezone;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) double timeStamp;
 @property (nonatomic, readonly) NSTimeZone *timeZone;
 @property (nonatomic) unsigned int timestampVal;
 @property (nonatomic, retain) NSString *timezone;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)displayTimeZone;
-- (BOOL)displayTimezone;
+- (bool)displayTimeZone;
+- (bool)displayTimezone;
 - (id)formatPattern;
-- (BOOL)hasDisplayTimezone;
-- (BOOL)hasFormatPattern;
-- (BOOL)hasTimestampVal;
-- (BOOL)hasTimezone;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDisplayTimezone;
+- (bool)hasFormatPattern;
+- (bool)hasTimestampVal;
+- (bool)hasTimezone;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setDisplayTimezone:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setDisplayTimezone:(bool)arg1;
 - (void)setFormatPattern:(id)arg1;
-- (void)setHasDisplayTimezone:(BOOL)arg1;
-- (void)setHasTimestampVal:(BOOL)arg1;
+- (void)setHasDisplayTimezone:(bool)arg1;
+- (void)setHasTimestampVal:(bool)arg1;
 - (void)setTimestampVal:(unsigned int)arg1;
 - (void)setTimezone:(id)arg1;
 - (double)timeStamp;

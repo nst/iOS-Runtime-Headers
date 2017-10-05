@@ -8,10 +8,10 @@
     struct NSNumber { Class x1; } * _progressUpdateToken;
 }
 
-+ (float)_imageScaleForTemplate:(id)arg1;
-+ (BOOL)handlesComplicationTemplate:(id)arg1;
++ (double)_imageScaleForTemplate:(id)arg1;
++ (bool)handlesComplicationTemplate:(id)arg1;
 + (void)load;
-+ (BOOL)supportsComplicationFamily:(int)arg1;
++ (bool)supportsComplicationFamily:(long long)arg1;
 
 - (void).cxx_destruct;
 - (void)_enumerateForegroundColoringViewsWithBlock:(id /* block */)arg1;

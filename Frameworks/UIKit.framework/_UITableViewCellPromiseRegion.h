@@ -2,38 +2,50 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UITableViewCellPromiseRegion : NSObject <_UIFocusPromiseRegionDelegate, _UIFocusRegionContainer, _UILegacyFocusRegion> {
+@interface _UITableViewCellPromiseRegion : NSObject <_UIFocusRegionContainer, _UILegacyFocusRegion> {
     NSIndexPath * _indexPath;
     UITableView * _tableView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (getter=_isEligibleForFocusInteraction, nonatomic, readonly) bool eligibleForFocusInteraction;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSIndexPath *indexPath;
+@property (getter=_linearFocusMovementSequences, nonatomic, readonly, copy) NSArray *linearFocusMovementSequences;
+@property (getter=_parentFocusEnvironment, nonatomic, readonly) <UIFocusEnvironment> *parentFocusEnvironment;
+@property (nonatomic, readonly, copy) NSArray *preferredFocusEnvironments;
+@property (getter=_preferredFocusMovementStyle, nonatomic, readonly) long long preferredFocusMovementStyle;
+@property (nonatomic, readonly) UIView *preferredFocusedView;
 @property (readonly) Class superclass;
 @property (nonatomic) UITableView *tableView;
 
 - (void).cxx_destruct;
-- (id)_childFocusRegions;
-- (id)_childFocusRegionsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)_childFocusRegionsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inCoordinateSpace:(id)arg2;
 - (id)_focusDebugOverlayParentView;
-- (BOOL)_focusRegionCanBecomeFocused;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_focusRegionFrame;
+- (id)_focusRegionFocusSystem;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_focusRegionFrame;
 - (id)_focusRegionGuides;
-- (BOOL)_focusRegionIsEligibleForFocus;
-- (id)_focusRegionItem;
 - (id)_focusRegionView;
-- (id)_fulfillFocusPromiseRegion:(id)arg1;
 - (id)_fulfillPromisedFocusRegion;
-- (BOOL)_isPromiseFocusRegion;
-- (BOOL)_isTransparentFocusRegion;
+- (bool)_isEligibleForFocusInteraction;
+- (bool)_isPromiseFocusRegion;
+- (bool)_isTransparentFocusRegion;
+- (bool)_legacy_isEligibleForFocusInteraction;
+- (id)_parentFocusEnvironment;
+- (id)_preferredFocusRegionCoordinateSpace;
+- (id)_regionForFocusedItem:(id)arg1 inCoordinateSpace:(id)arg2;
 - (void)_searchForFocusRegionsInContext:(id)arg1;
-- (BOOL)_shouldSearchForFocusRegionsInContext:(id)arg1;
+- (bool)canBecomeFocused;
 - (id)description;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)indexPath;
+- (id)preferredFocusEnvironments;
 - (void)setIndexPath:(id)arg1;
+- (void)setNeedsFocusUpdate;
 - (void)setTableView:(id)arg1;
+- (bool)shouldUpdateFocusInContext:(id)arg1;
 - (id)tableView;
+- (void)updateFocusIfNeeded;
 
 @end

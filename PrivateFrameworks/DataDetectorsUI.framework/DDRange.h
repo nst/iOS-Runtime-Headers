@@ -3,25 +3,26 @@
  */
 
 @interface DDRange : NSObject {
-    long  _endOffset;
+    long long  _endOffset;
     DOMNode * _node;
-    long  _startOffset;
+    long long  _startOffset;
 }
 
-@property (nonatomic) long endOffset;
+@property (nonatomic) long long endOffset;
 @property (nonatomic, retain) DOMNode *node;
-@property (nonatomic) long startOffset;
+@property (nonatomic) long long startOffset;
 
 + (id)rangeWithDOMRange:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
-- (long)endOffset;
+- (long long)endOffset;
 - (id)initWithDOMRange:(id)arg1;
 - (id)node;
-- (void)setEndOffset:(long)arg1;
+- (void)setEndOffset:(long long)arg1;
 - (void)setNode:(id)arg1;
-- (void)setStartOffset:(long)arg1;
-- (long)startOffset;
+- (void)setStartOffset:(long long)arg1;
+- (long long)startOffset;
 
 @end

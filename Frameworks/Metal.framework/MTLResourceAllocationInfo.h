@@ -4,13 +4,13 @@
 
 @interface MTLResourceAllocationInfo : NSObject <NSCoding, NSCopying>
 
-@property (readonly) unsigned int dirtySize;
+@property (readonly) unsigned long long dirtySize;
 @property (readonly) NSString *memoryPool;
-@property (readonly) BOOL pageoffRequired;
-@property (readonly) BOOL purgeable;
-@property (readonly) unsigned int residentSize;
+@property (readonly) bool pageoffRequired;
+@property (readonly) bool purgeable;
+@property (readonly) unsigned long long residentSize;
 @property (readonly) unsigned long long uniqueIdentifier;
-@property (readonly) unsigned int virtualSize;
+@property (readonly) unsigned long long virtualSize;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -5,15 +5,15 @@
 
 @required
 
-- (BOOL)floating;
-- (BOOL)isHeader;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })margins;
-- (float)maxTitleWidth;
-- (void)setFloating:(BOOL)arg1;
-- (void)setIsHeader:(BOOL)arg1;
-- (void)setMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setMaxTitleWidth:(float)arg1;
-- (void)setTextAlignment:(int)arg1;
-- (int)textAlignment;
+- (bool)floating;
+- (bool)isHeader;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })margins;
+- (double)maxTitleWidth;
+- (void)setFloating:(bool)arg1;
+- (void)setIsHeader:(bool)arg1;
+- (void)setMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setMaxTitleWidth:(double)arg1;
+- (void)setTextAlignment:(long long)arg1;
+- (long long)textAlignment;
 
 @end

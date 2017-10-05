@@ -4,17 +4,17 @@
 
 @interface UIKeyboardKeyplaneTransition : NSObject {
     id /* block */  _completionBlock;
-    float  _currentProgress;
+    double  _currentProgress;
     CADisplayLink * _displayLink;
     UIKBTree * _end;
     UIView * _endView;
     double  _finalTransitionStartTime;
-    float  _finishDuration;
-    float  _finishProgress;
-    BOOL  _initiallyAtEnd;
+    double  _finishDuration;
+    double  _finishProgress;
+    bool  _initiallyAtEnd;
     UIKBKeyViewAnimator * _keyViewAnimator;
     UIKBTree * _keyboard;
-    float  _liftOffProgress;
+    double  _liftOffProgress;
     UIKBTree * _start;
     UIView * _startView;
     <UIKeyboardKeyplaneTransitionDelegate> * _transitionDelegate;
@@ -22,24 +22,24 @@
 }
 
 @property (copy) id /* block */ completionBlock;
-@property (nonatomic, readonly) float endHeight;
-@property (nonatomic) BOOL initiallyAtEnd;
+@property (nonatomic, readonly) double endHeight;
+@property (nonatomic) bool initiallyAtEnd;
 @property (nonatomic, retain) UIKBKeyViewAnimator *keyViewAnimator;
 @property (nonatomic, retain) UIKBTree *keyboard;
 @property (nonatomic, readonly) double nonInteractiveDuration;
-@property (nonatomic, readonly) float startHeight;
+@property (nonatomic, readonly) double startHeight;
 @property (nonatomic) <UIKeyboardKeyplaneTransitionDelegate> *transitionDelegate;
 
-- (void)addTransitionView:(id)arg1 startFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 endFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (BOOL)canDisplayTransitionFromKeyplane:(id)arg1 toKeyplane:(id)arg2;
+- (void)addTransitionView:(id)arg1 startFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 endFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (bool)canDisplayTransitionFromKeyplane:(id)arg1 toKeyplane:(id)arg2;
 - (void)cancelNonInteractiveAnimation;
 - (void)commitTransitionRebuild;
 - (id /* block */)completionBlock;
 - (void)dealloc;
-- (float)endHeight;
+- (double)endHeight;
 - (void)finalizeTransition;
-- (void)finishWithProgress:(float)arg1 completionBlock:(id /* block */)arg2;
-- (BOOL)initiallyAtEnd;
+- (void)finishWithProgress:(double)arg1 completionBlock:(id /* block */)arg2;
+- (bool)initiallyAtEnd;
 - (id)keyViewAnimator;
 - (id)keyboard;
 - (double)nonInteractiveDuration;
@@ -47,13 +47,13 @@
 - (void)removeAllAnimations;
 - (void)runNonInteractivelyWithCompletion:(id /* block */)arg1;
 - (void)setCompletionBlock:(id /* block */)arg1;
-- (void)setInitiallyAtEnd:(BOOL)arg1;
+- (void)setInitiallyAtEnd:(bool)arg1;
 - (void)setKeyViewAnimator:(id)arg1;
 - (void)setKeyboard:(id)arg1;
 - (void)setTransitionDelegate:(id)arg1;
-- (float)startHeight;
+- (double)startHeight;
 - (id)transitionDelegate;
 - (void)transitionToFinalState:(id)arg1;
-- (void)updateWithProgress:(float)arg1;
+- (void)updateWithProgress:(double)arg1;
 
 @end

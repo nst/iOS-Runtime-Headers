@@ -23,9 +23,12 @@
         unsigned int libraryAdded : 1; 
         unsigned int libraryAddEligible : 1; 
         unsigned int shouldShowComposer : 1; 
+        unsigned int shouldExcludeFromShuffle : 1; 
         unsigned int volumeNormalization : 1; 
         unsigned int year : 1; 
         unsigned int userRating : 1; 
+        unsigned int gaplessInfo : 1; 
+        unsigned int volumeAdjustment : 1; 
         unsigned int classicalWork : 1; 
         unsigned int classicalMovement : 1; 
         unsigned int classicalMovementCount : 1; 

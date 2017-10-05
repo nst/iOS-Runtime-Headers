@@ -15,16 +15,15 @@
 @property (nonatomic, copy) NSString *plainFragment;
 
 + (id)entityName;
-+ (id)recordWithKey:(id)arg1 plainSequence:(id)arg2 sequence:(id)arg3 sequenceHashIndex:(unsigned short)arg4 plainFragment:(id)arg5 fragment:(id)arg6 fragmentHashIndex:(unsigned short)arg7 fragmentPosition:(unsigned short)arg8 creationDate:(double)arg9 submitted:(BOOL)arg10 objectId:(id)arg11;
 
 - (void).cxx_destruct;
-- (BOOL)copyFromManagedObject:(id)arg1;
-- (BOOL)copyToManagedObject:(id)arg1;
+- (bool)copyFromManagedObject:(id)arg1;
+- (bool)copyToManagedObject:(id)arg1;
 - (id)description;
 - (id)fragment;
 - (short)fragmentHashIndex;
 - (short)fragmentPosition;
-- (id)initWithKey:(id)arg1 plainSequence:(id)arg2 sequence:(id)arg3 sequenceHashIndex:(unsigned short)arg4 plainFragment:(id)arg5 fragment:(id)arg6 fragmentHashIndex:(unsigned short)arg7 fragmentPosition:(unsigned short)arg8 creationDate:(double)arg9 submitted:(BOOL)arg10 objectId:(id)arg11;
+- (id)initWithKey:(id)arg1 plainSequence:(id)arg2 sequence:(id)arg3 sequenceHashIndex:(unsigned short)arg4 plainFragment:(id)arg5 fragment:(id)arg6 fragmentHashIndex:(unsigned short)arg7 fragmentPosition:(unsigned short)arg8 creationDate:(double)arg9 submitted:(bool)arg10 objectId:(id)arg11;
 - (id)jsonString;
 - (id)plainFragment;
 - (void)setFragment:(id)arg1;

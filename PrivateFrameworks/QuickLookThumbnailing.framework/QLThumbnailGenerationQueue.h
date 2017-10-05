@@ -9,8 +9,8 @@
 
 + (id)sharedInstance;
 
-- (void)dealloc;
-- (void)enqueueThumbnailGenerationIfNeededForDocumentAtURL:(id)arg1 atBackgroundPriority:(BOOL)arg2 completionHandler:(id /* block */)arg3;
+- (void).cxx_destruct;
+- (void)enqueueThumbnailGenerationIfNeededForDocumentAtURL:(id)arg1 atBackgroundPriority:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (id)init;
 - (void)noteThumbnailGenerationQueuedExternallyForDocumentAtURL:(id)arg1;
 

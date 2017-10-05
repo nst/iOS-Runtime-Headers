@@ -7,12 +7,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SBFProceduralWallpaperDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)identifier;
 
-- (void)setAnimating:(BOOL)arg1;
+- (void)setAnimating:(bool)arg1;
 - (id)view;
 
 @end

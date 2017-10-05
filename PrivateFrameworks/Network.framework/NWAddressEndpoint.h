@@ -6,7 +6,7 @@
 
 @property (nonatomic, readonly) const struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*address;
 @property (nonatomic, readonly) NSData *addressData;
-@property (nonatomic, readonly) unsigned int addressFamily;
+@property (nonatomic, readonly) unsigned long long addressFamily;
 @property (nonatomic, readonly) NSString *addressString;
 @property (nonatomic, readonly) NSString *addressStringNoPort;
 
@@ -16,9 +16,9 @@
 
 - (const struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)address;
 - (id)addressData;
-- (unsigned int)addressFamily;
+- (unsigned long long)addressFamily;
 - (id)addressString;
 - (id)addressStringNoPort;
-- (id)descriptionWithIndent:(int)arg1 showFullContent:(BOOL)arg2;
+- (id)descriptionWithIndent:(int)arg1 showFullContent:(bool)arg2;
 
 @end

@@ -4,16 +4,16 @@
 
 @interface ASDJobManifest : NSObject <NSCopying, NSSecureCoding> {
     NSMutableArray * _activities;
-    int  _manifestType;
+    long long  _manifestType;
     NSNumber * _purchaseID;
     NSString * _storeCorrelationID;
 }
 
-@property (nonatomic, readonly) int manifestType;
+@property (nonatomic, readonly) long long manifestType;
 @property (nonatomic, copy) NSNumber *purchaseID;
 @property (nonatomic, copy) NSString *storeCorrelationID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_addActivity:(id)arg1 withIdentifier:(id)arg2 persistentID:(id)arg3;
@@ -21,14 +21,14 @@
 - (id)addActivity:(id)arg1;
 - (void)addActivity:(id)arg1 withIdentifier:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)enumerateActivitiesUsingBlock:(id /* block */)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithManifestType:(int)arg1;
-- (int)manifestType;
+- (id)initWithManifestType:(long long)arg1;
+- (long long)manifestType;
 - (id)purchaseID;
 - (void)setPurchaseID:(id)arg1;
 - (void)setStoreCorrelationID:(id)arg1;

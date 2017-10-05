@@ -13,22 +13,23 @@
     unsigned int  _protocolVersion;
     struct { 
         int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _userPaths;
 }
 
-@property (nonatomic, readonly) BOOL hasProblemContext;
-@property (nonatomic, readonly) BOOL hasProblemCorrections;
-@property (nonatomic) BOOL hasProblemType;
-@property (nonatomic) BOOL hasProtocolVersion;
+@property (nonatomic, readonly) bool hasProblemContext;
+@property (nonatomic, readonly) bool hasProblemCorrections;
+@property (nonatomic) bool hasProblemType;
+@property (nonatomic) bool hasProtocolVersion;
 @property (nonatomic, retain) GEORPProblemContext *problemContext;
 @property (nonatomic, retain) GEORPProblemCorrections *problemCorrections;
 @property (nonatomic) int problemType;
 @property (nonatomic) unsigned int protocolVersion;
 @property (nonatomic, readonly) int*userPaths;
-@property (nonatomic, readonly) unsigned int userPathsCount;
+@property (nonatomic, readonly) unsigned long long userPathsCount;
 
+- (void).cxx_destruct;
 - (int)StringAsProblemType:(id)arg1;
 - (int)StringAsUserPaths:(id)arg1;
 - (void)addUserPath:(int)arg1;
@@ -38,30 +39,30 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasProblemContext;
-- (BOOL)hasProblemCorrections;
-- (BOOL)hasProblemType;
-- (BOOL)hasProtocolVersion;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasProblemContext;
+- (bool)hasProblemCorrections;
+- (bool)hasProblemType;
+- (bool)hasProtocolVersion;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)problemContext;
 - (id)problemCorrections;
 - (int)problemType;
 - (id)problemTypeAsString:(int)arg1;
 - (unsigned int)protocolVersion;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasProblemType:(BOOL)arg1;
-- (void)setHasProtocolVersion:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasProblemType:(bool)arg1;
+- (void)setHasProtocolVersion:(bool)arg1;
 - (void)setProblemContext:(id)arg1;
 - (void)setProblemCorrections:(id)arg1;
 - (void)setProblemType:(int)arg1;
 - (void)setProtocolVersion:(unsigned int)arg1;
-- (void)setUserPaths:(int*)arg1 count:(unsigned int)arg2;
-- (int)userPathAtIndex:(unsigned int)arg1;
+- (void)setUserPaths:(int*)arg1 count:(unsigned long long)arg2;
+- (int)userPathAtIndex:(unsigned long long)arg1;
 - (int*)userPaths;
 - (id)userPathsAsString:(int)arg1;
-- (unsigned int)userPathsCount;
+- (unsigned long long)userPathsCount;
 - (void)writeTo:(id)arg1;
 
 @end

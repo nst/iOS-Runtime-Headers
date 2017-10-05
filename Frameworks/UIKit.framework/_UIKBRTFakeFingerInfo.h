@@ -4,6 +4,6 @@
 
 @interface _UIKBRTFakeFingerInfo : _UIKBRTFingerInfo
 
-- (float)feedbackAlpha;
+- (double)feedbackAlpha;
 
 @end

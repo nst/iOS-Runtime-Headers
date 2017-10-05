@@ -3,18 +3,21 @@
  */
 
 @interface CAMURLConfigurationRequest : NSObject {
-    int  _requestedCaptureDevice;
-    int  _requestedCaptureMode;
+    long long  _requestedCaptureDevice;
+    long long  _requestedCaptureMode;
+    bool  _wantsQRCodeForSession;
 }
 
-@property (nonatomic, readonly) int requestedCaptureDevice;
-@property (nonatomic, readonly) int requestedCaptureMode;
+@property (nonatomic, readonly) long long requestedCaptureDevice;
+@property (nonatomic, readonly) long long requestedCaptureMode;
+@property (nonatomic, readonly) bool wantsQRCodeForSession;
 
-- (int)_captureDeviceFromString:(id)arg1 outCaptureDevice:(int*)arg2;
-- (BOOL)_captureModeFromString:(id)arg1 outCaptureMode:(int*)arg2;
-- (BOOL)_initializeFromQueryDictionary:(id)arg1;
+- (long long)_captureDeviceFromString:(id)arg1 outCaptureDevice:(long long*)arg2;
+- (bool)_captureModeFromString:(id)arg1 outCaptureMode:(long long*)arg2;
+- (bool)_initializeFromQueryDictionary:(id)arg1;
 - (id)initWithQueryDictionary:(id)arg1;
-- (int)requestedCaptureDevice;
-- (int)requestedCaptureMode;
+- (long long)requestedCaptureDevice;
+- (long long)requestedCaptureMode;
+- (bool)wantsQRCodeForSession;
 
 @end

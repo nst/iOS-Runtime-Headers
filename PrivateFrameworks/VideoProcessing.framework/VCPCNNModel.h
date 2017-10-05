@@ -5,22 +5,24 @@
 @interface VCPCNNModel : NSObject {
     VCPCNNBlock * _blocks;
     VCPCNNMetalContext * _context;
+    bool  _executed;
     VCPCNNData * _output;
     short  _quantFactor;
-    BOOL  _useGPU;
+    bool  _useGPU;
 }
 
 @property (readonly) VCPCNNData *output;
 
 - (void).cxx_destruct;
-- (long)add:(id)arg1;
-- (long)dynamicForward:(id)arg1 paramFileUrl:(id)arg2 cancel:(id /* block */)arg3;
-- (long)forward:(id)arg1;
+- (int)add:(id)arg1;
+- (int)dynamicForward:(id)arg1 paramFileUrl:(id)arg2 cancel:(id /* block */)arg3;
+- (int)forward:(id)arg1;
 - (id)getGPUContext;
 - (id)init;
-- (id)initWithParameters:(short)arg1 useGPU:(BOOL)arg2;
-- (long)initailizeNetwork:(id)arg1 paramFileUrl:(id)arg2;
+- (id)initWithParameters:(short)arg1 useGPU:(bool)arg2;
+- (int)initializeNetwork:(id)arg1 paramFileUrl:(id)arg2;
 - (id)output;
+- (int)reinitGPUTemporalMemory:(id)arg1;
 - (int)size;
 
 @end

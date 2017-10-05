@@ -14,7 +14,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)identifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setContentsToAppend:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 

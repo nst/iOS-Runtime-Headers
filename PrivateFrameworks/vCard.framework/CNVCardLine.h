@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) NSArray *groupedLines;
 @property (readonly) NSString *groupingName;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) NSString *itemSeparator;
 @property (readonly) NSString *name;
 @property (readonly) NSArray *parameters;
@@ -28,15 +28,15 @@
 + (id)versionPlaceholderLine;
 
 - (void).cxx_destruct;
-- (void)addGroupedLine:(id)arg1 withCounter:(int*)arg2;
+- (void)addGroupedLine:(id)arg1 withCounter:(long long*)arg2;
 - (void)addParameterWithName:(id)arg1 value:(id)arg2;
-- (BOOL)canSerializeWithStrategy:(id)arg1;
+- (bool)canSerializeWithStrategy:(id)arg1;
 - (id)groupedLines;
 - (id)groupingName;
 - (id)initWithName:(id)arg1 value:(id)arg2 itemSeparator:(id)arg3;
-- (void)insertParameterWithName:(id)arg1 value:(id)arg2 atIndex:(unsigned int)arg3;
+- (void)insertParameterWithName:(id)arg1 value:(id)arg2 atIndex:(unsigned long long)arg3;
 - (id)itemSeparator;
-- (id)makeGroupingNameWithCounter:(int*)arg1;
+- (id)makeGroupingNameWithCounter:(long long*)arg1;
 - (id)name;
 - (id)parameters;
 - (void)serializeValueWithStrategy:(id)arg1;

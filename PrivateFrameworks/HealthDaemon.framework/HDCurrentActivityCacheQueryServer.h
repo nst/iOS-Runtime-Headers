@@ -13,15 +13,15 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_queue_start;
 - (void)_queue_stop;
-- (BOOL)_shouldExecuteWhenProtectedDataIsUnavailable;
-- (BOOL)_shouldListenForUpdates;
-- (void)activityCacheManager:(id)arg1 changedTodayActivityCache:(id)arg2 currentStatisticsBuilder:(id)arg3 updatedFields:(unsigned int)arg4 error:(id)arg5;
+- (bool)_shouldExecuteWhenProtectedDataIsUnavailable;
+- (bool)_shouldListenForUpdates;
+- (void)activityCacheManager:(id)arg1 changedTodayActivityCache:(id)arg2;
 - (id)initWithQueryUUID:(id)arg1 dataObject:(id)arg2 clientProxy:(id)arg3 client:(id)arg4 delegate:(id)arg5 profile:(id)arg6 activityCacheManager:(id)arg7;
 
 @end

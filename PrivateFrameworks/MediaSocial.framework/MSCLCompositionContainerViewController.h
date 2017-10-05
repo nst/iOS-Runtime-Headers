@@ -19,24 +19,24 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MSCLComposePostDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) MSCLStoreItem *item;
 @property (nonatomic) <SKUIModalDocumentController> *modalDocumentController;
-@property (nonatomic, readonly) BOOL needsNavigationDocument;
+@property (nonatomic, readonly) bool needsNavigationDocument;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_addPendingAttachments;
 - (void)_cancelButtonAction:(id)arg1;
 - (id)_composePostViewController;
-- (void)_dismissWithResult:(int)arg1;
+- (void)_dismissWithResult:(long long)arg1;
 - (void)_finishLoadWithConfiguration:(id)arg1 clientContext:(id)arg2 error:(id)arg3;
 - (id)_newLoadingViewController;
-- (void)_reloadNavigationItemForViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)_reloadNavigationItemForViewController:(id)arg1 animated:(bool)arg2;
 - (void)_sendLoadDidFailWithError:(id)arg1;
 - (void)_shareButtonAction:(id)arg1;
 - (void)addAttachments:(id)arg1;
-- (void)composePostViewController:(id)arg1 contentDidChange:(BOOL)arg2;
+- (void)composePostViewController:(id)arg1 contentDidChange:(bool)arg2;
 - (id)configuration;
 - (void)dealloc;
 - (id)delegate;
@@ -46,11 +46,11 @@
 - (id)item;
 - (void)loadView;
 - (id)modalDocumentController;
-- (BOOL)needsNavigationDocument;
-- (int)preferredStatusBarStyle;
+- (bool)needsNavigationDocument;
+- (long long)preferredStatusBarStyle;
 - (void)setDelegate:(id)arg1;
 - (void)setItem:(id)arg1;
 - (void)setModalDocumentController:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

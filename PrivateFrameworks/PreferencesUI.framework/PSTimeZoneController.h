@@ -4,6 +4,6 @@
 
 @interface PSTimeZoneController : PSDetailController
 
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 
 @end

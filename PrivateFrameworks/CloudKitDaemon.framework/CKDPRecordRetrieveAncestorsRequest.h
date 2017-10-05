@@ -6,7 +6,7 @@
     CKDPRecordIdentifier * _recordIdentifier;
 }
 
-@property (nonatomic, readonly) BOOL hasRecordIdentifier;
+@property (nonatomic, readonly) bool hasRecordIdentifier;
 @property (nonatomic, retain) CKDPRecordIdentifier *recordIdentifier;
 
 + (id)options;
@@ -16,11 +16,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasRecordIdentifier;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasRecordIdentifier;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)recordIdentifier;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;

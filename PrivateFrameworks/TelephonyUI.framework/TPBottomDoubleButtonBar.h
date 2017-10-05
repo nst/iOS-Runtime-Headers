@@ -7,11 +7,11 @@
 }
 
 - (void).cxx_destruct;
-- (float)_buttonWidth;
+- (double)_buttonWidth;
 - (void)_layoutButtons;
 - (id)button2;
 - (void)layoutSubviews;
-- (void)setButton2:(id)arg1 andStyle:(BOOL)arg2;
-- (void)setButton:(id)arg1 andStyle:(BOOL)arg2;
+- (void)setButton2:(id)arg1 andStyle:(bool)arg2;
+- (void)setButton:(id)arg1 andStyle:(bool)arg2;
 
 @end

@@ -42,10 +42,11 @@
 - (id /* block */)itemViewGenerator;
 - (id)layoutForBarButtonItem:(id)arg1;
 - (id)layoutsForSpacerItem:(id)arg1;
-- (float)minimumLayoutWidthGivenMinimumSpaceWidth:(float)arg1;
+- (double)minimumLayoutWidthGivenMinimumSpaceWidth:(double)arg1;
 - (void)setCompact:(bool)arg1;
 - (void)setItemViewGenerator:(id /* block */)arg1;
 - (void)setUseGroupSizing:(bool)arg1;
+- (bool)shouldHoriziontallyCenterView:(id)arg1;
 - (bool)useGroupSizing;
 
 @end

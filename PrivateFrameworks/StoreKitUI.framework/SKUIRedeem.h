@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIRedeem : NSObject {
+@interface SKUIRedeem : NSObject <NSSecureCoding> {
     double  _ITunesPassLearnMoreAlertInterval;
     NSString * _balance;
     NSString * _credit;
@@ -10,7 +10,7 @@
     NSArray * _downloads;
     <SKUIArtworkProviding> * _headerArtworkProvider;
     UIImage * _headerImage;
-    BOOL  _hideItemView;
+    bool  _hideItemView;
     NSString * _inAppPurchase;
     NSArray * _items;
     NSArray * _links;
@@ -27,7 +27,7 @@
 @property (nonatomic, retain) NSArray *downloads;
 @property (nonatomic, retain) <SKUIArtworkProviding> *headerArtworkProvider;
 @property (nonatomic, retain) UIImage *headerImage;
-@property (nonatomic) BOOL hideItemView;
+@property (nonatomic) bool hideItemView;
 @property (nonatomic, retain) NSString *inAppPurchase;
 @property (nonatomic, retain) NSArray *items;
 @property (nonatomic, retain) NSArray *links;
@@ -36,17 +36,21 @@
 @property (nonatomic, retain) NSDictionary *thankYouDictionary;
 @property (nonatomic, copy) NSString *title;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (double)ITunesPassLearnMoreAlertInterval;
 - (id)balance;
 - (id)credit;
 - (id)customizedThankyouURL;
 - (id)downloads;
+- (void)encodeWithCoder:(id)arg1;
 - (id)headerArtworkProvider;
 - (id)headerImage;
-- (BOOL)hideItemView;
+- (bool)hideItemView;
 - (id)inAppPurchase;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)items;
 - (id)links;
 - (id)message;
@@ -57,7 +61,7 @@
 - (void)setDownloads:(id)arg1;
 - (void)setHeaderArtworkProvider:(id)arg1;
 - (void)setHeaderImage:(id)arg1;
-- (void)setHideItemView:(BOOL)arg1;
+- (void)setHideItemView:(bool)arg1;
 - (void)setITunesPassLearnMoreAlertInterval:(double)arg1;
 - (void)setInAppPurchase:(id)arg1;
 - (void)setItems:(id)arg1;

@@ -9,44 +9,43 @@
     PKPassGroupStackView * _passGroupStackView;
     NSArray * _passes;
     NSString * _personalizatonToken;
-    unsigned int  _presentationSource;
+    unsigned long long  _presentationSource;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKAddPassesCardStackViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_addButtonPressed:(id)arg1;
 - (void)_cancelButtonPressed:(id)arg1;
-- (void)_configureAddOrNextButtonItemAsPending:(BOOL)arg1;
+- (void)_configureAddOrNextButtonItemAsPending:(bool)arg1;
 - (void)_configureNavigationItemTitle;
 - (void)_nextButtonPressedForAutomaticPresentation:(id)arg1;
 - (void)_nextButtonPressedForPersonalization:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (id)groupAtIndex:(unsigned int)arg1;
+- (id)groupAtIndex:(unsigned long long)arg1;
 - (void)groupStackView:(id)arg1 deleteConfirmedForPass:(id)arg2;
-- (void)groupStackView:(id)arg1 didTransitionToState:(int)arg2 animated:(BOOL)arg3;
+- (void)groupStackView:(id)arg1 didTransitionToState:(long long)arg2 animated:(bool)arg3;
 - (void)groupStackViewDidBeginReordering:(id)arg1;
 - (void)groupStackViewDidEndReordering:(id)arg1;
-- (void)groupsController:(id)arg1 didInsertGroup:(id)arg2 atIndex:(unsigned int)arg3;
-- (void)groupsController:(id)arg1 didMoveGroup:(id)arg2 fromIndex:(unsigned int)arg3 toIndex:(unsigned int)arg4;
-- (void)groupsController:(id)arg1 didRemoveGroup:(id)arg2 atIndex:(unsigned int)arg3;
-- (unsigned int)indexOfGroup:(id)arg1;
-- (unsigned int)indexOfSeparationGroup;
-- (id)initWithPasses:(id)arg1 passDataArray:(id)arg2 presentationSource:(unsigned int)arg3;
-- (unsigned int)numberOfGroups;
+- (void)groupsController:(id)arg1 didInsertGroup:(id)arg2 atIndex:(unsigned long long)arg3;
+- (void)groupsController:(id)arg1 didMoveGroup:(id)arg2 fromIndex:(unsigned long long)arg3 toIndex:(unsigned long long)arg4;
+- (void)groupsController:(id)arg1 didRemoveGroup:(id)arg2 atIndex:(unsigned long long)arg3;
+- (unsigned long long)indexOfGroup:(id)arg1;
+- (unsigned long long)indexOfSeparationGroup;
+- (id)initWithPasses:(id)arg1 passDataArray:(id)arg2 presentationSource:(unsigned long long)arg3;
+- (unsigned long long)numberOfGroups;
 - (void)passPersonalizationViewController:(id)arg1 didFinishPersonalizingPass:(id)arg2;
-- (BOOL)passesGrowWhenFlipped;
 - (void)reloadGroupsForGroupStackView:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (unsigned int)suppressedContent;
+- (unsigned long long)suppressedContent;
 - (void)viewControllerDidTerminateSetupFlow:(id)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
 
 @end

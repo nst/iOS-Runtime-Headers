@@ -12,9 +12,9 @@
     unsigned int  _updatedStatus;
 }
 
-@property (nonatomic, readonly) BOOL hasMessageId;
-@property (nonatomic) BOOL hasStatusVersion;
-@property (nonatomic) BOOL hasUpdatedStatus;
+@property (nonatomic, readonly) bool hasMessageId;
+@property (nonatomic) bool hasStatusVersion;
+@property (nonatomic) bool hasUpdatedStatus;
 @property (nonatomic, retain) NSString *messageId;
 @property (nonatomic) unsigned int statusVersion;
 @property (nonatomic) unsigned int updatedStatus;
@@ -24,16 +24,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasMessageId;
-- (BOOL)hasStatusVersion;
-- (BOOL)hasUpdatedStatus;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasMessageId;
+- (bool)hasStatusVersion;
+- (bool)hasUpdatedStatus;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)messageId;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasStatusVersion:(BOOL)arg1;
-- (void)setHasUpdatedStatus:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasStatusVersion:(bool)arg1;
+- (void)setHasUpdatedStatus:(bool)arg1;
 - (void)setMessageId:(id)arg1;
 - (void)setStatusVersion:(unsigned int)arg1;
 - (void)setUpdatedStatus:(unsigned int)arg1;

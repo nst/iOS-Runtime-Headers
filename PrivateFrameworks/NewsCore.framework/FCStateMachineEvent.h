@@ -19,9 +19,9 @@
 - (id)destinationState;
 - (id /* block */)fireBlock;
 - (id)fired:(id)arg1 withOwner:(id)arg2;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithName:(id)arg1 transitionFromStates:(id)arg2 toState:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)name;
 - (id)onFire:(id /* block */)arg1;
 - (void)setDestinationState:(id)arg1;

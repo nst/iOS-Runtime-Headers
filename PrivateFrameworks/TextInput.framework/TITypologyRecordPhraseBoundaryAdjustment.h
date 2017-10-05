@@ -3,13 +3,13 @@
  */
 
 @interface TITypologyRecordPhraseBoundaryAdjustment : TITypologyRecord {
-    BOOL  _forwardAdjustment;
+    bool  _forwardAdjustment;
     int  _granularity;
     TIKeyboardConfiguration * _keyboardConfig;
     TIKeyboardState * _keyboardState;
 }
 
-@property (nonatomic) BOOL forwardAdjustment;
+@property (nonatomic) bool forwardAdjustment;
 @property (nonatomic) int granularity;
 @property (nonatomic, retain) TIKeyboardConfiguration *keyboardConfig;
 @property (nonatomic, retain) TIKeyboardState *keyboardState;
@@ -17,12 +17,12 @@
 - (void)applyToStatistic:(id)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)forwardAdjustment;
+- (bool)forwardAdjustment;
 - (int)granularity;
 - (id)initWithCoder:(id)arg1;
 - (id)keyboardConfig;
 - (id)keyboardState;
-- (void)setForwardAdjustment:(BOOL)arg1;
+- (void)setForwardAdjustment:(bool)arg1;
 - (void)setGranularity:(int)arg1;
 - (void)setKeyboardConfig:(id)arg1;
 - (void)setKeyboardState:(id)arg1;

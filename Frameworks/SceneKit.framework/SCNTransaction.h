@@ -7,21 +7,23 @@
 + (double)animationDuration;
 + (id)animationTimingFunction;
 + (void)begin;
++ (void)checkUncommittedTransactions;
 + (void)commit;
 + (void)commitImmediate;
 + (id /* block */)completionBlock;
 + (unsigned int)currentState;
-+ (BOOL)disableActions;
++ (bool)disableActions;
 + (void)flush;
-+ (BOOL)immediateMode;
++ (bool)immediateMode;
 + (void)lock;
-+ (void)postCommandWithContext:(void*)arg1 object:(id)arg2 applyBlock:(id /* block */)arg3;
-+ (void)postCommandWithContext:(void*)arg1 object:(id)arg2 keyPath:(id)arg3 applyBlock:(id /* block */)arg4;
++ (void)postCommandWithContext:(struct __C3DScene { }*)arg1 object:(id)arg2 applyBlock:(id /* block */)arg3;
++ (void)postCommandWithContext:(struct __C3DScene { }*)arg1 object:(id)arg2 key:(id)arg3 applyBlock:(id /* block */)arg4;
++ (void)postCommandWithContext:(struct __C3DScene { }*)arg1 object:(id)arg2 keyPath:(id)arg3 applyBlock:(id /* block */)arg4;
 + (void)setAnimationDuration:(double)arg1;
 + (void)setAnimationTimingFunction:(id)arg1;
 + (void)setCompletionBlock:(id /* block */)arg1;
-+ (void)setDisableActions:(BOOL)arg1;
-+ (void)setImmediateMode:(BOOL)arg1;
++ (void)setDisableActions:(bool)arg1;
++ (void)setImmediateMode:(bool)arg1;
 + (void)setValue:(id)arg1 forKey:(id)arg2;
 + (void)unlock;
 + (id)valueForKey:(id)arg1;
@@ -30,12 +32,12 @@
 - (id)animationTimingFunction;
 - (void)begin;
 - (void)commit;
-- (BOOL)disableActions;
+- (bool)disableActions;
 - (void)flush;
 - (void)lock;
 - (void)setAnimationDuration:(double)arg1;
 - (void)setAnimationTimingFunction:(id)arg1;
-- (void)setDisableActions:(BOOL)arg1;
+- (void)setDisableActions:(bool)arg1;
 - (void)unlock;
 
 @end

@@ -16,7 +16,7 @@
 - (void)addCoercionToClass:(Class)arg1 block:(id /* block */)arg2;
 - (id)availableClasses;
 - (id)blockByClass;
-- (BOOL)canCoerceToObjectOfClass:(Class)arg1;
+- (bool)canCoerceToObjectOfClass:(Class)arg1;
 - (id)classOrder;
 - (id)coerceObject:(id)arg1 toObjectOfClass:(Class)arg2 outError:(id*)arg3;
 - (id)initWithClass:(Class)arg1;

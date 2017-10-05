@@ -3,17 +3,23 @@
  */
 
 @interface HFServiceGroupBuilder : HFItemBuilder <HFServiceLikeBuilder> {
+    bool  _hasSetIcon;
+    bool  _hasSetRoom;
+    <HFIconDescriptor> * _iconDescriptor;
     NSString * _name;
     HFRoomBuilder * _roomBuilder;
     HFMutableSetDiff * _serviceUUIDs;
+    bool  isFavorite;
 }
 
 @property (nonatomic, readonly) NSArray *availableIconDescriptors;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool hasSetIcon;
+@property (nonatomic) bool hasSetRoom;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) <HFIconDescriptor> *iconDescriptor;
-@property (nonatomic) BOOL isFavorite;
+@property (nonatomic) bool isFavorite;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) NSString *originalName;
 @property (nonatomic, readonly) NSString *primaryServiceType;
@@ -23,36 +29,49 @@
 @property (nonatomic, readonly) HFMutableSetDiff *serviceUUIDs;
 @property (nonatomic, readonly) NSArray *services;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL supportsFavoriting;
+@property (nonatomic, readonly) bool supportsFavoriting;
 
 + (Class)homeKitRepresentationClass;
 
 - (void).cxx_destruct;
 - (id)_createServiceGroup;
+- (id)_mostCommonIconDescriptor;
 - (id)_performValidation;
 - (id)_rooms;
+- (bool)_supportsCustomIcons;
+- (id)_updateFavorite;
+- (id)_updateIcon;
 - (id)_updateName;
+- (id)_updateRooms;
 - (id)_updateServices;
 - (id)accessories;
 - (void)addService:(id)arg1;
+- (id)availableIconDescriptors;
 - (id)commitItem;
+- (bool)hasSetIcon;
+- (bool)hasSetRoom;
+- (id)iconDescriptor;
 - (id)initWithExistingObject:(id)arg1 inHome:(id)arg2;
-- (BOOL)isFavorite;
+- (bool)isFavorite;
 - (id)name;
 - (id)originalName;
 - (id)primaryServiceType;
+- (id)removeItemFromHome;
 - (void)removeService:(id)arg1;
 - (id)room;
 - (id)roomBuilder;
 - (id)serviceGroup;
 - (id)serviceUUIDs;
 - (id)services;
-- (void)setIsFavorite:(BOOL)arg1;
+- (void)setHasSetIcon:(bool)arg1;
+- (void)setHasSetRoom:(bool)arg1;
+- (void)setIconDescriptor:(id)arg1;
+- (void)setIsFavorite:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setRoom:(id)arg1;
 - (void)setRoomBuilder:(id)arg1;
 - (void)setServiceGroup:(id)arg1;
-- (BOOL)shouldAllowAddingService:(id)arg1;
-- (BOOL)supportsFavoriting;
+- (bool)shouldAllowAddingService:(id)arg1;
+- (bool)supportsFavoriting;
 
 @end

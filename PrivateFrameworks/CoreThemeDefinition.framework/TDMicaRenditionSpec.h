@@ -11,7 +11,7 @@
 - (void)_logWarning:(id)arg1;
 - (void)copyAttributesInto:(id)arg1;
 - (id)copyDataFromAttributes;
-- (id)createCSIRepresentationWithCompression:(BOOL)arg1 colorSpaceID:(unsigned int)arg2 document:(id)arg3;
+- (id)createCSIRepresentationWithCompression:(bool)arg1 colorSpaceID:(unsigned long long)arg2 document:(id)arg3;
 - (id)debugDescription;
 - (void)setAttributesFromCopyData:(id)arg1;
 

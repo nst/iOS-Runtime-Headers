@@ -3,22 +3,22 @@
  */
 
 @interface _UIDocumentPickerCloudDirectoryObserver : _UIArrayController <_UIDocumentPickerDirectoryObserver> {
-    BOOL  _afterInitialUpdate;
+    bool  _afterInitialUpdate;
     NSURL * _firstURL;
     NSDate * _lastSnapshotDate;
     NSMetadataQuery * _query;
     NSPredicate * _queryPredicate;
     NSObject<OS_dispatch_queue> * _queryQueue;
     NSOperationQueue * _queryWorkerQueue;
-    BOOL  _recursive;
+    bool  _recursive;
     NSArray * _scopes;
     NSOrderedSet * _staticItems;
 }
 
-@property (nonatomic) BOOL afterInitialUpdate;
+@property (nonatomic) bool afterInitialUpdate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSDate *lastSnapshotDate;
 @property (nonatomic, retain) NSMetadataQuery *query;
 @property (nonatomic, retain) NSPredicate *queryPredicate;
@@ -34,7 +34,7 @@
 - (void)_queryUpdated:(id)arg1;
 - (void)_updateObservers:(id)arg1;
 - (void)_updateQuery;
-- (BOOL)afterInitialUpdate;
+- (bool)afterInitialUpdate;
 - (void)assertOnQueryQueue;
 - (void)callUpdateHandler:(id)arg1 changeDictionary:(id)arg2;
 - (void)dealloc;
@@ -44,13 +44,13 @@
 - (void)invalidate;
 - (id)isVisiblePredicate;
 - (id)lastSnapshotDate;
-- (BOOL)objectAttributeModified:(id)arg1 newObject:(id)arg2;
+- (bool)objectAttributeModified:(id)arg1 newObject:(id)arg2;
 - (id)query;
 - (id)queryPredicate;
 - (id)queryQueue;
 - (id)queryWorkerQueue;
 - (id)scopes;
-- (void)setAfterInitialUpdate:(BOOL)arg1;
+- (void)setAfterInitialUpdate:(bool)arg1;
 - (void)setLastSnapshotDate:(id)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setQueryPredicate:(id)arg1;

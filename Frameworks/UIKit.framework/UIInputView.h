@@ -3,33 +3,33 @@
  */
 
 @interface UIInputView : UIView <UISplittableInputView> {
-    BOOL  _allowsSelfSizing;
-    float  _contentRatio;
-    BOOL  _disableSplitSupport;
-    float  _gapWidth;
-    BOOL  _isTransitioning;
+    bool  _allowsSelfSizing;
+    double  _contentRatio;
+    bool  _disableSplitSupport;
+    double  _gapWidth;
+    bool  _isTransitioning;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _leftContentSize;
     _UIInputViewContent * _leftContentView;
-    float  _leftOffset;
+    double  _leftOffset;
     UIImage * _mergedImage;
     NSMutableDictionary * _mergedSliceMap;
     UIKBRenderConfig * _renderConfig;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _rightContentSize;
     _UIInputViewContent * _rightContentView;
     UIImage * _splitImage;
     NSMutableDictionary * _splitSliceMap;
-    int  _style;
-    BOOL  _suppressBackgroundStyling;
-    float  _transitionGap;
+    long long  _style;
+    bool  _suppressBackgroundStyling;
+    double  _transitionGap;
     CALayer * _transitionLayer;
-    float  _transitionLeftOffset;
-    float  _transitionRatio;
+    double  _transitionLeftOffset;
+    double  _transitionRatio;
     NSArray * _visibleLayers;
 }
 
@@ -37,74 +37,79 @@
 @property (nonatomic, retain) NSMutableDictionary *_mergedSliceMap;
 @property (nonatomic, retain) UIImage *_splitImage;
 @property (nonatomic, retain) NSMutableDictionary *_splitSliceMap;
-@property (nonatomic) BOOL allowsSelfSizing;
-@property (nonatomic) float contentRatio;
+@property (nonatomic) bool allowsSelfSizing;
+@property (nonatomic) double contentRatio;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int inputViewStyle;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long inputViewStyle;
 @property (nonatomic, readonly) UIView *leftContentView;
-@property (nonatomic) struct CGSize { float x1; float x2; } leftContentViewSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } leftContentViewSize;
 @property (nonatomic, readonly) UIView *rightContentView;
-@property (nonatomic) struct CGSize { float x1; float x2; } rightContentViewSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } rightContentViewSize;
 @property (readonly) Class superclass;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (void)_setupAppearanceIfNecessary;
 
-- (float)_additionalClipHeight;
-- (void)_beginSplitTransitionIfNeeded:(float)arg1 gapWidth:(float)arg2;
+- (double)_additionalClipHeight;
+- (void)_beginSplitTransitionIfNeeded:(double)arg1 gapWidth:(double)arg2;
 - (int)_clipCornersOfView:(id)arg1;
-- (struct CGSize { float x1; float x2; })_defaultSize;
-- (BOOL)_disableSplitSupport;
-- (void)_endSplitTransitionIfNeeded:(BOOL)arg1;
-- (BOOL)_isSplit;
-- (BOOL)_isToolbars;
-- (BOOL)_isTransitioning;
+- (struct CGSize { double x1; double x2; })_defaultSize;
+- (bool)_disableSplitSupport;
+- (void)_endSplitTransitionIfNeeded:(bool)arg1;
+- (bool)_isSplit;
+- (bool)_isToolbars;
+- (bool)_isTransitioning;
 - (id)_mergedImage;
 - (id)_mergedSliceMap;
-- (void)_setDisableSplitSupport:(BOOL)arg1;
-- (void)_setLeftOffset:(float)arg1 gapWidth:(float)arg2;
+- (void)_setDisableSplitSupport:(bool)arg1;
+- (void)_setLeftOffset:(double)arg1 gapWidth:(double)arg2;
 - (void)_setNeedsContentSizeUpdate;
-- (void)_setProgress:(float)arg1 boundedBy:(float)arg2;
+- (void)_setProgress:(double)arg1 boundedBy:(double)arg2;
 - (void)_setRenderConfig:(id)arg1;
-- (void)_setSuppressBackgroundStyling:(BOOL)arg1;
-- (id)_splitBorderedBackgroundWithCorners:(unsigned int)arg1;
+- (void)_setSuppressBackgroundStyling:(bool)arg1;
+- (id)_splitBorderedBackgroundWithCorners:(unsigned long long)arg1;
 - (id)_splitImage;
 - (id)_splitSliceMap;
-- (BOOL)_supportsSplit;
-- (BOOL)_suppressBackgroundStyling;
+- (bool)_supportsSplit;
+- (bool)_suppressBackgroundStyling;
 - (id)_toolbarBorderedBackground;
 - (void)_updateClipCorners;
-- (void)_updateWithSize:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)allowsSelfSizing;
-- (float)contentRatio;
+- (void)_updateWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)dealloc;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (bool)allowsSelfSizing;
+- (double)contentRatio;
 - (void)didEndSplitTransition;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inputViewStyle:(int)arg2;
-- (int)inputViewStyle;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inputViewStyle:(long long)arg2;
+- (long long)inputViewStyle;
 - (void)layoutMergedSubviews;
-- (void)layoutSplitSubviewsWithLeftContentSize:(struct CGSize { float x1; float x2; })arg1 rightContentSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)layoutSplitSubviewsWithLeftContentSize:(struct CGSize { double x1; double x2; })arg1 rightContentSize:(struct CGSize { double x1; double x2; })arg2;
 - (id)leftContentView;
-- (struct CGSize { float x1; float x2; })leftContentViewSize;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (struct CGSize { double x1; double x2; })leftContentViewSize;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)rightContentView;
-- (struct CGSize { float x1; float x2; })rightContentViewSize;
-- (void)setAllowsSelfSizing:(BOOL)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setContentRatio:(float)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setInputViewStyle:(int)arg1;
-- (void)setLeftContentViewSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setRightContentViewSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })rightContentViewSize;
+- (void)setAllowsSelfSizing:(bool)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setContentRatio:(double)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setInputViewStyle:(long long)arg1;
+- (void)setLeftContentViewSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setRightContentViewSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)set_mergedImage:(id)arg1;
 - (void)set_mergedSliceMap:(id)arg1;
 - (void)set_splitImage:(id)arg1;
 - (void)set_splitSliceMap:(id)arg1;
 - (id)tintColor;
 - (void)updateMergedSubviewConstraints;
-- (void)updateSplitSubviewContraintsWithLeftContentSize:(struct CGSize { float x1; float x2; })arg1 rightContentSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)updateSplitSubviewContraintsWithLeftContentSize:(struct CGSize { double x1; double x2; })arg1 rightContentSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)willBeginSplitTransition;
 
 @end

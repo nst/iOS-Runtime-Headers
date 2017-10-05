@@ -2,59 +2,76 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPAVRoutingTableViewCell : UITableViewCell {
-    BOOL  _debugCell;
+@interface MPAVRoutingTableViewCell : UITableViewCell <MPAVRoutingThemeableCellView> {
+    MPAVBatteryLevel * _batteryLevel;
+    bool  _debugCell;
     <MPAVRoutingTableViewCellDelegate> * _delegate;
+    bool  _displayIsPicked;
     UIImageView * _iconImageView;
-    unsigned int  _iconStyle;
-    UILabel * _mirroringLabel;
-    UIView * _mirroringSeparatorView;
-    unsigned int  _mirroringStyle;
-    UISwitch * _mirroringSwitch;
-    BOOL  _mirroringSwitchVisible;
-    BOOL  _pendingSelection;
-    MPAVRoute * _route;
+    unsigned long long  _iconStyle;
+    unsigned long long  _mirroringStyle;
+    bool  _mirroringSwitchVisible;
+    bool  _pendingSelection;
+    bool  _provideOwnSeparator;
     UILabel * _routeNameLabel;
+    UIImageView * _smartAudioImageView;
     UIActivityIndicatorView * _spinnerView;
     UILabel * _subtitleTextLabel;
+    bool  _useSmartAudioCheckmarkStyle;
 }
 
-@property (getter=isDebugCell, nonatomic) BOOL debugCell;
+@property (nonatomic, retain) MPAVBatteryLevel *batteryLevel;
+@property (getter=isDebugCell, nonatomic) bool debugCell;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MPAVRoutingTableViewCellDelegate> *delegate;
-@property (nonatomic) unsigned int iconStyle;
-@property (nonatomic) unsigned int mirroringStyle;
-@property (nonatomic) BOOL mirroringSwitchVisible;
-@property (getter=isPendingSelection, nonatomic) BOOL pendingSelection;
-@property (nonatomic, retain) MPAVRoute *route;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) bool displayIsPicked;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long iconStyle;
+@property (nonatomic) unsigned long long mirroringStyle;
+@property (nonatomic) bool mirroringSwitchVisible;
+@property (getter=isPendingSelection, nonatomic) bool pendingSelection;
+@property (nonatomic) bool provideOwnSeparator;
+@property (readonly) Class superclass;
+@property (nonatomic) bool useSmartAudioCheckmarkStyle;
 
 - (void).cxx_destruct;
-- (id)_airpodsIconImageName;
+- (id)_checkmarkImageForSmartAudio;
 - (void)_configureDetailLabel:(id)arg1;
 - (void)_configureLabel:(id)arg1;
-- (id)_currentDeviceRoutingIconImageName;
 - (id)_detailTextForRoute:(id)arg1;
 - (id)_iconImageForRoute:(id)arg1;
-- (void)_mirroringSwitchValueDidChange:(id)arg1;
-- (id)_routingImageStyleName;
-- (BOOL)_shouldShowMirroringAsEnabledForRoute:(id)arg1;
-- (BOOL)_shouldShowSeparateBatteryPercentagesForBatteryLevel:(id)arg1;
+- (bool)_shouldShowSeparateBatteryPercentagesForBatteryLevel:(id)arg1;
+- (void)_updateSmartAudioAccessory;
+- (void)_updateSpinnerStyle;
+- (id)batteryLevel;
 - (id)delegate;
-- (unsigned int)iconStyle;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (BOOL)isDebugCell;
-- (BOOL)isPendingSelection;
+- (bool)displayIsPicked;
+- (unsigned long long)iconStyle;
+- (id)iconView;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (bool)isDebugCell;
+- (bool)isPendingSelection;
 - (void)layoutSubviews;
-- (unsigned int)mirroringStyle;
-- (BOOL)mirroringSwitchVisible;
-- (id)route;
-- (void)setDebugCell:(BOOL)arg1;
+- (unsigned long long)mirroringStyle;
+- (bool)mirroringSwitchVisible;
+- (bool)provideOwnSeparator;
+- (id)separatorView;
+- (void)setAccessoryType:(long long)arg1;
+- (void)setBatteryLevel:(id)arg1;
+- (void)setDebugCell:(bool)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setIconStyle:(unsigned int)arg1;
-- (void)setMirroringStyle:(unsigned int)arg1;
-- (void)setMirroringSwitchVisible:(BOOL)arg1;
-- (void)setMirroringSwitchVisible:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setPendingSelection:(BOOL)arg1;
-- (void)setRoute:(id)arg1;
+- (void)setDisplayIsPicked:(bool)arg1;
+- (void)setIconStyle:(unsigned long long)arg1;
+- (void)setMirroringStyle:(unsigned long long)arg1;
+- (void)setMirroringSwitchVisible:(bool)arg1;
+- (void)setPendingSelection:(bool)arg1;
+- (void)setProvideOwnSeparator:(bool)arg1;
 - (void)setTintColor:(id)arg1;
+- (void)setUseSmartAudioCheckmarkStyle:(bool)arg1;
+- (id)subtitleView;
+- (id)titleView;
+- (void)updateForRoute:(id)arg1 inferLocalizedModelName:(bool)arg2;
+- (bool)useSmartAudioCheckmarkStyle;
 
 @end

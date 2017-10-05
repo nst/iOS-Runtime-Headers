@@ -4,17 +4,17 @@
 
 @interface _ATXAppLaunchSequence : NSObject {
     _ATXDataStore * _datastore;
-    BOOL  _previousAppDeleted;
+    bool  _previousAppDeleted;
     NSString * _previousLaunch;
     struct _opaque_pthread_rwlock_t { 
-        long __sig; 
-        BOOL __opaque[124]; 
+        long long __sig; 
+        BOOL __opaque[192]; 
     }  _rwlock;
     NSMutableDictionary * _subsequentLaunchCountMap;
     double  _subsequentLaunchTotalCount;
 }
 
-@property (nonatomic, readonly) BOOL previousAppDeleted;
+@property (nonatomic, readonly) bool previousAppDeleted;
 @property (nonatomic, readonly) double subsequentLaunchTotalCount;
 
 - (void).cxx_destruct;
@@ -27,11 +27,11 @@
 - (void)deleteDataForBundle:(id)arg1;
 - (void)deleteDataForBundles:(id)arg1;
 - (id)initWithPreviousLaunch:(id)arg1 dataStore:(id)arg2;
-- (id)initWithPreviousLaunch:(id)arg1 dataStore:(id)arg2 allowSimulatedCrashes:(BOOL)arg3;
-- (id)initWithPreviousLaunch:(id)arg1 subsequentLaunchCounts:(id)arg2 dataStore:(id)arg3 allowSimulatedCrashes:(BOOL)arg4;
+- (id)initWithPreviousLaunch:(id)arg1 dataStore:(id)arg2 allowSimulatedCrashes:(bool)arg3;
+- (id)initWithPreviousLaunch:(id)arg1 subsequentLaunchCounts:(id)arg2 dataStore:(id)arg3 allowSimulatedCrashes:(bool)arg4;
 - (double)launchCountForBundle:(id)arg1;
 - (double)likelyhoodForBundleId:(id)arg1;
-- (BOOL)previousAppDeleted;
+- (bool)previousAppDeleted;
 - (void)save;
 - (double)subsequentLaunchTotalCount;
 

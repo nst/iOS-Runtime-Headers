@@ -4,7 +4,7 @@
 
 @interface SKTextureAtlas : NSObject <NSCoding> {
     NSString * _atlasName;
-    BOOL  _isCUIImageAtlas;
+    bool  _isCUIImageAtlas;
     NSDictionary * _textureDict;
     struct unordered_map<std::__1::basic_string<char>, SKTexture *, std::__1::hash<std::__1::basic_string<char> >, std::__1::equal_to<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, SKTexture *> > > { 
         struct __hash_table<std::__1::__hash_value_type<std::__1::basic_string<char>, SKTexture *>, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, SKTexture *>, std::__1::hash<std::__1::basic_string<char> >, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, SKTexture *>, std::__1::equal_to<std::__1::basic_string<char> >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char>, SKTexture *> > > { 
@@ -13,7 +13,7 @@
                     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKTexture *>, void *> *> {} **__first_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKTexture *>, void *> *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, SKTexture *>, void *> *> *> > { 
-                            unsigned long __first_; 
+                            unsigned long long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
@@ -24,7 +24,7 @@
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, SKTexture *>, std::__1::hash<std::__1::basic_string<char> >, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, SKTexture *>, std::__1::equal_to<std::__1::basic_string<char> >, true> > { 
                 float __first_; 
@@ -36,12 +36,12 @@
 @property (nonatomic, readonly) NSArray *textureNames;
 
 + (void)_exportAtlasWithDictionary:(id)arg1 toFile:(id)arg2;
-+ (void)_exportAtlasWithDictionary:(id)arg1 toFile:(id)arg2 forcePOT:(BOOL)arg3;
++ (void)_exportAtlasWithDictionary:(id)arg1 toFile:(id)arg2 forcePOT:(bool)arg3;
 + (id)atlasFromCUIImageAtlas:(id)arg1 withName:(id)arg2;
 + (id)atlasNamed:(id)arg1;
 + (id)atlasWithDictionary:(id)arg1;
-+ (BOOL)canUseObjectForAtlas:(id)arg1;
-+ (struct CGImage { }*)createCGImageFromCUINamedImage:(struct CGImage { }*)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 atRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
++ (bool)canUseObjectForAtlas:(id)arg1;
++ (struct CGImage { }*)createCGImageFromCUINamedImage:(struct CGImage { }*)arg1 withSize:(struct CGSize { double x1; double x2; })arg2 atRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 + (id)findTextureNamed:(id)arg1;
 + (id)getSupportedPostfixes;
 + (id)lookupCachedTextureNamed:(id)arg1;

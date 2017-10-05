@@ -4,9 +4,9 @@
 
 @interface PUPhotosPickerViewControllerPadSpec : PUPhotosPickerViewControllerSpec
 
-- (unsigned int)bannerViewStyle;
+- (unsigned long long)bannerViewStyle;
 - (void)configureSessionInfo:(id)arg1;
-- (unsigned int)supportedInterfaceOrientations;
+- (unsigned long long)supportedInterfaceOrientations;
 - (id)tabbedLibraryViewControllerSpec;
 
 @end

@@ -5,10 +5,10 @@
 
 @required
 
-- (BOOL)isGroup;
+- (bool)isGroup;
 - (DOMNode *)node;
-- (BOOL)selected;
-- (void)setSelected:(BOOL)arg1;
+- (bool)selected;
+- (void)setSelected:(bool)arg1;
 - (void)unselect;
 
 @end

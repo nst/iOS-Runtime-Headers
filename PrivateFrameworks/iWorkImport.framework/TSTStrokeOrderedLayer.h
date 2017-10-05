@@ -10,21 +10,21 @@
 @property (nonatomic, retain) TSTStrokeLayer *majorStrokeLayer;
 @property (nonatomic, retain) TSTStrokeLayer *minorStrokeLayer;
 
-- (void)appendStroke:(id)arg1 inRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg2 order:(int)arg3;
-- (void)dealloc;
+- (void).cxx_destruct;
+- (void)appendStroke:(id)arg1 inRange:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg2 order:(int)arg3;
 - (void)enumerateRawStrokesSegmentsUsingBlock:(id /* block */)arg1;
 - (void)enumerateStrokesUsingBlock:(id /* block */)arg1;
-- (id)findStrokeAndRangeAtIndex:(int)arg1;
+- (id)findStrokeAndRangeAtIndex:(long long)arg1;
 - (id)initWithContext:(id)arg1 majorStrokeLayer:(id)arg2 minorStrokeLayer:(id)arg3;
-- (void)insertStroke:(id)arg1 inRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg2 order:(int)arg3;
+- (void)insertStroke:(id)arg1 inRange:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg2 order:(int)arg3;
 - (void)invalidate;
-- (void)invalidateRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg1;
+- (void)invalidateRange:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg1;
 - (id)majorStrokeLayer;
 - (id)minorStrokeLayer;
 - (id)nextStrokeAndRange:(id)arg1;
-- (id)p_findStrokeAndRangeAtIndex:(int)arg1 highOrderToken:(id)arg2 updatingLowOrderToken:(id*)arg3 lowOrderLayer:(id)arg4;
+- (id)p_findStrokeAndRangeAtIndex:(long long)arg1 highOrderToken:(id)arg2 updatingLowOrderToken:(id*)arg3 lowOrderLayer:(id)arg4;
 - (void)setMajorStrokeLayer:(id)arg1;
 - (void)setMinorStrokeLayer:(id)arg1;
-- (int)startingIndex;
+- (long long)startingIndex;
 
 @end

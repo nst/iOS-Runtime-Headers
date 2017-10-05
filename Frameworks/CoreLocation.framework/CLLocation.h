@@ -16,12 +16,13 @@
 @property (readonly, copy) NSString *description;
 @property (getter=_navigation_detailedMatchInfo, nonatomic, readonly) GEONavigationMatchInfo *detailedMatchInfo;
 @property (nonatomic, readonly, copy) CLFloor *floor;
-@property (getter=_navigation_hasMatch, nonatomic, readonly) BOOL hasMatch;
-@property (getter=_navigation_hasValidCourse, nonatomic, readonly) BOOL hasValidCourse;
-@property (readonly) unsigned int hash;
+@property (getter=_navigation_gtLog, setter=_navigation_setGtLog:, nonatomic) bool gtLog;
+@property (getter=_navigation_hasMatch, nonatomic, readonly) bool hasMatch;
+@property (getter=_navigation_hasValidCourse, nonatomic, readonly) bool hasValidCourse;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) double horizontalAccuracy;
 @property (nonatomic, readonly) unsigned int integrity;
-@property (getter=_navigation_isStale, nonatomic, readonly) BOOL isStale;
+@property (getter=_navigation_isStale, nonatomic, readonly) bool isStale;
 @property (nonatomic, readonly) NSString *iso6709Notation;
 @property (getter=_navigation_locationDescription, nonatomic, readonly) NSString *locationDescription;
 @property (nonatomic, readonly) CLLocationMatchInfo *matchInfo;
@@ -40,7 +41,7 @@
 
 // Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_initWithCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 course:(double)arg5 speed:(double)arg6 timestamp:(id)arg7 floor:(int)arg8;
 - (double)altitude;
@@ -65,6 +66,7 @@
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
 - (unsigned int)integrity;
 - (id)iso6709Notation;
+- (id)jsonObject;
 - (id)matchInfo;
 - (id)propagateLocationToTime:(double)arg1;
 - (struct CLLocationCoordinate2D { double x1; double x2; })rawCoordinate;
@@ -82,11 +84,22 @@
 - (void)unmatch;
 - (double)verticalAccuracy;
 
+// Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
+
++ (id)CKDPLocationCoordinateFromCLLocation:(id)arg1;
++ (id)CKLocationFromPLocationCoordinate:(id)arg1;
+
+- (id)CKDescriptionPropertiesWithPublic:(bool)arg1 private:(bool)arg2 shouldExpand:(bool)arg3;
+
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
 + (double)_mapkit_timeToExpire;
 
 - (int)_mapkit_source;
+
+// Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
+
+- (unsigned int)atx_locationHash;
 
 // Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
 
@@ -98,8 +111,8 @@
 
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 
-- (unsigned int)cplSpecialHash;
-- (BOOL)cplSpecialIsEqual:(id)arg1;
+- (unsigned long long)cplSpecialHash;
+- (bool)cplSpecialIsEqual:(id)arg1;
 - (id)initWithCPLArchiver:(id)arg1;
 - (id)plistArchiveWithCPLArchiver:(id)arg1;
 
@@ -107,16 +120,17 @@
 
 + (id)_navigation_stringWithType:(int)arg1;
 
-- (int)_navigation_clLocationTypeForGEOLocationType:(int)arg1;
 - (double)_navigation_courseAccuracy;
 - (id)_navigation_detailedMatchInfo;
-- (BOOL)_navigation_hasMatch;
-- (BOOL)_navigation_hasValidCourse;
-- (BOOL)_navigation_isEqualToLocationCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
-- (BOOL)_navigation_isStale;
+- (bool)_navigation_gtLog;
+- (bool)_navigation_hasMatch;
+- (bool)_navigation_hasValidCourse;
+- (bool)_navigation_isEqualToLocationCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
+- (bool)_navigation_isStale;
 - (id)_navigation_locationDescription;
 - (struct CLLocationCoordinate2D { double x1; double x2; })_navigation_rawShiftedCoordinate;
 - (id)_navigation_routeMatch;
+- (void)_navigation_setGtLog:(bool)arg1;
 - (double)_navigation_speedAccuracy;
 - (id)initWithCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 rawCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg2 course:(double)arg3 rawCourse:(double)arg4 courseAccuracy:(double)arg5 speed:(double)arg6 speedAccuracy:(double)arg7 altitude:(double)arg8 timestamp:(double)arg9 horizontalAccuracy:(double)arg10 verticalAccuracy:(double)arg11 type:(int)arg12 referenceFrame:(int)arg13;
 - (id)initWithGeoLocation:(id)arg1;
@@ -130,8 +144,12 @@
 - (int)pl_locationHash;
 - (id)pl_newSurroundingLocationsHashes;
 
+// Image: /System/Library/PrivateFrameworks/SearchAds.framework/SearchAds
+
+- (id)snappedToGrid:(double)arg1;
+
 // Image: /System/Library/PrivateFrameworks/WeatherFoundation.framework/WeatherFoundation
 
-- (BOOL)wf_isEquivalentToLocation:(id)arg1 tolerance:(double)arg2;
+- (bool)wf_isEquivalentToLocation:(id)arg1 tolerance:(double)arg2;
 
 @end

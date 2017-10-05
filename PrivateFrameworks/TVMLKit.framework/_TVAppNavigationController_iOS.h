@@ -3,40 +3,27 @@
  */
 
 @interface _TVAppNavigationController_iOS : _TVAppNavigationController {
-    BOOL  _originalValueForNavigationBarForceFullHeightInLandscape;
-    BOOL  _shouldFakeStatusBarVisible;
-    BOOL  _shouldPreventContentFromShiftingVertically;
+    bool  _originalValueForNavigationBarForceFullHeightInLandscape;
+    bool  _shouldFakeStatusBarVisible;
+    bool  _shouldPreventContentFromShiftingVertically;
 }
 
-@property (nonatomic) BOOL originalValueForNavigationBarForceFullHeightInLandscape;
-@property (nonatomic) BOOL shouldFakeStatusBarVisible;
-@property (nonatomic) BOOL shouldPreventContentFromShiftingVertically;
+@property (nonatomic) bool originalValueForNavigationBarForceFullHeightInLandscape;
+@property (nonatomic) bool shouldFakeStatusBarVisible;
+@property (nonatomic) bool shouldPreventContentFromShiftingVertically;
 
 - (id)_accessibilityButtonBackgroundDefaultTintColor;
-- (void)_configureNavigationBar:(id)arg1 withTintColor:(id)arg2 tintAdjustmentMode:(int)arg3 titleTextTintColor:(id)arg4 shouldTintTitleText:(BOOL)arg5 accessibilityButtonBackgroundTintColor:(id)arg6;
-- (void)_configureNavigationBarForViewController:(id)arg1 shouldIgnoreTransitionCoordinator:(BOOL)arg2;
-- (void)_scheduleConfigurationOfNavigationBar;
-- (void)_setContentOverlayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)_setNavigationPalette:(id)arg1 hidesPaletteShadow:(BOOL)arg2;
-- (float)_statusBarHeightAdjustmentForCurrentOrientation;
-- (void)_updateNavigationBarUserInteractionEnabledWithBackgroundViewAlpha:(float)arg1;
-- (void)_updateNavigationBarWithBackgroundViewAlpha:(float)arg1 shadowAlpha:(float)arg2;
-- (void)_viewControllerNeedsNavigationBarAppearanceUpdate:(id)arg1;
-- (void)attachPalette:(id)arg1 isPinned:(BOOL)arg2;
+- (void)_setContentOverlayInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)didPresentTraitsOverridingViewController;
-- (void)didShowViewController:(id)arg1 animated:(BOOL)arg2;
-- (BOOL)originalValueForNavigationBarForceFullHeightInLandscape;
-- (id)popToRootViewControllerAnimated:(BOOL)arg1;
-- (id)popToViewController:(id)arg1 animated:(BOOL)arg2;
-- (id)popViewControllerAnimated:(BOOL)arg1;
-- (int)preferredStatusBarStyle;
-- (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)setOriginalValueForNavigationBarForceFullHeightInLandscape:(BOOL)arg1;
-- (void)setShouldFakeStatusBarVisible:(BOOL)arg1;
-- (void)setShouldPreventContentFromShiftingVertically:(BOOL)arg1;
-- (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
-- (BOOL)shouldFakeStatusBarVisible;
-- (BOOL)shouldPreventContentFromShiftingVertically;
+- (void)didShowViewController:(id)arg1 animated:(bool)arg2;
+- (bool)originalValueForNavigationBarForceFullHeightInLandscape;
+- (long long)preferredStatusBarStyle;
+- (void)setOriginalValueForNavigationBarForceFullHeightInLandscape:(bool)arg1;
+- (void)setShouldFakeStatusBarVisible:(bool)arg1;
+- (void)setShouldPreventContentFromShiftingVertically:(bool)arg1;
+- (bool)shouldFakeStatusBarVisible;
+- (bool)shouldPreventContentFromShiftingVertically;
+- (void)viewDidLoad;
 - (void)willPresentTraitsOverridingViewController;
 
 @end

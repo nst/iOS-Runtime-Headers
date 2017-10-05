@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)downloadingItemViewControllerDidFinishLoadingPreviewItem:(QLDownloadingItemViewController *)arg1;
+- (void)downloadingItemViewControllerDidFinishLoadingPreviewItem:(QLDownloadingItemViewController *)arg1 withContents:(id)arg2;
 
 @end

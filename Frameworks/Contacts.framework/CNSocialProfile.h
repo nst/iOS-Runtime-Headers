@@ -16,7 +16,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *displayname;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *service;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *teamIdentifier;
@@ -27,23 +27,23 @@
 + (id)localizedStringForKey:(id)arg1;
 + (id)localizedStringForService:(id)arg1;
 + (id)socialProfileWithDictionaryRepresentation:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)bundleIdentifiers;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)displayname;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithUrlString:(id)arg1 username:(id)arg2 userIdentifier:(id)arg3 service:(id)arg4;
 - (id)initWithUrlString:(id)arg1 username:(id)arg2 userIdentifier:(id)arg3 service:(id)arg4 displayname:(id)arg5;
 - (id)initWithUrlString:(id)arg1 username:(id)arg2 userIdentifier:(id)arg3 service:(id)arg4 displayname:(id)arg5 teamIdentifier:(id)arg6 bundleIdentifiers:(id)arg7;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqual:(id)arg1 ignoreURLs:(BOOL)arg2;
-- (BOOL)isValid:(id*)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1 ignoreURLs:(bool)arg2;
+- (bool)isValid:(id*)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)service;
 - (void)setBundleIdentifiers:(id)arg1;

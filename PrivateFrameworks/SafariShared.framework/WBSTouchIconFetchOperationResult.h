@@ -3,28 +3,28 @@
  */
 
 @interface WBSTouchIconFetchOperationResult : NSObject {
-    BOOL  _favicon;
-    BOOL  _higherPriorityIconDownloadFailedDueToNetworkError;
+    bool  _favicon;
+    bool  _higherPriorityIconDownloadFailedDueToNetworkError;
     NSString * _host;
-    BOOL  _pageRequestDidSucceed;
+    bool  _pageRequestDidSucceed;
     UIImage * _touchIcon;
 }
 
-@property (getter=isFavicon, nonatomic, readonly) BOOL favicon;
-@property (nonatomic, readonly) BOOL higherPriorityIconDownloadFailedDueToNetworkError;
+@property (getter=isFavicon, nonatomic, readonly) bool favicon;
+@property (nonatomic, readonly) bool higherPriorityIconDownloadFailedDueToNetworkError;
 @property (nonatomic, readonly, copy) NSString *host;
-@property (nonatomic, readonly) BOOL pageRequestDidSucceed;
+@property (nonatomic, readonly) bool pageRequestDidSucceed;
 @property (nonatomic, readonly) UIImage *touchIcon;
 
-+ (id)resultForFetchFailureWithHost:(id)arg1 pageRequestDidSucceed:(BOOL)arg2;
-+ (id)resultWithTouchIcon:(id)arg1 host:(id)arg2 isFavicon:(BOOL)arg3 pageRequestDidSucceed:(BOOL)arg4 higherPriorityIconDownloadFailedDueToNetworkError:(BOOL)arg5;
++ (id)resultForFetchFailureWithHost:(id)arg1 pageRequestDidSucceed:(bool)arg2;
++ (id)resultWithTouchIcon:(id)arg1 host:(id)arg2 isFavicon:(bool)arg3 pageRequestDidSucceed:(bool)arg4 higherPriorityIconDownloadFailedDueToNetworkError:(bool)arg5;
 
 - (void).cxx_destruct;
-- (BOOL)higherPriorityIconDownloadFailedDueToNetworkError;
+- (bool)higherPriorityIconDownloadFailedDueToNetworkError;
 - (id)host;
-- (id)initWithTouchIcon:(id)arg1 host:(id)arg2 isFavicon:(BOOL)arg3 pageRequestDidSucceed:(BOOL)arg4 higherPriorityIconDownloadFailedDueToNetworkError:(BOOL)arg5;
-- (BOOL)isFavicon;
-- (BOOL)pageRequestDidSucceed;
+- (id)initWithTouchIcon:(id)arg1 host:(id)arg2 isFavicon:(bool)arg3 pageRequestDidSucceed:(bool)arg4 higherPriorityIconDownloadFailedDueToNetworkError:(bool)arg5;
+- (bool)isFavicon;
+- (bool)pageRequestDidSucceed;
 - (id)touchIcon;
 
 @end

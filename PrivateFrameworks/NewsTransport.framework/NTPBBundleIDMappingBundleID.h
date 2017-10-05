@@ -24,28 +24,28 @@
 - (void)addTopicTags:(id)arg1;
 - (id)bundleId;
 - (id)channelTags;
-- (id)channelTagsAtIndex:(unsigned int)arg1;
-- (unsigned int)channelTagsCount;
+- (id)channelTagsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)channelTagsCount;
 - (void)clearChannelTags;
 - (void)clearSectionTags;
 - (void)clearTopicTags;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)sectionTags;
-- (id)sectionTagsAtIndex:(unsigned int)arg1;
-- (unsigned int)sectionTagsCount;
+- (id)sectionTagsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)sectionTagsCount;
 - (void)setBundleId:(id)arg1;
 - (void)setChannelTags:(id)arg1;
 - (void)setSectionTags:(id)arg1;
 - (void)setTopicTags:(id)arg1;
 - (id)topicTags;
-- (id)topicTagsAtIndex:(unsigned int)arg1;
-- (unsigned int)topicTagsCount;
+- (id)topicTagsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)topicTagsCount;
 - (void)writeTo:(id)arg1;
 
 @end

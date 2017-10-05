@@ -5,8 +5,8 @@
 
 @required
 
-- (float)ascender;
-- (float)descender;
-- (float)firstLineLeading;
+- (double)ascender;
+- (double)descender;
+- (double)firstLineLeading;
 
 @end

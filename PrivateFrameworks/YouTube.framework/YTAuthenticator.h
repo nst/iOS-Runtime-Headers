@@ -12,21 +12,21 @@
 + (id)sharedAuthenticator;
 
 - (void)_addAccountAuthenticationObserers;
-- (void)_addDeferredRequest:(id)arg1 accountAuthRequired:(BOOL)arg2;
+- (void)_addDeferredRequest:(id)arg1 accountAuthRequired:(bool)arg2;
 - (void)_completeAuthenticationForDeferredRequests;
 - (void)_failedToAuthenticateAccount:(id)arg1;
 - (void)_removeAccountAuthenticationObservers;
 - (void)_removeDefferredRequests;
 - (id)accountUsername;
-- (void)addAuthenticationHeadersToRequest:(id)arg1 accountAuthRequired:(BOOL)arg2;
-- (BOOL)cachedCredentialsValid;
+- (void)addAuthenticationHeadersToRequest:(id)arg1 accountAuthRequired:(bool)arg2;
+- (bool)cachedCredentialsValid;
 - (void)clearAccountInfo;
 - (void)dealloc;
 - (void)didAuthenticateAccount;
 - (id)init;
 - (void)invalidateToken;
-- (BOOL)isAccountAuthenticated;
-- (BOOL)loadStoredCredentials;
+- (bool)isAccountAuthenticated;
+- (bool)loadStoredCredentials;
 - (void)setAuthenticatedOauth2Token:(id)arg1;
 - (void)setAuthenticatedUsername:(id)arg1 oauth2Token:(id)arg2 oauth2RefreshToken:(id)arg3 youTubeName:(id)arg4;
 - (void)setDelegate:(id)arg1;

@@ -3,14 +3,14 @@
  */
 
 @interface CABTMIDILocalPeripheralViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
-    int  advertiseTimeout;
+    long long  advertiseTimeout;
     NSTimer * advertiseTimer;
-    BOOL  advertising;
+    bool  advertising;
     AMSBTLEAdvertisementManager * advertisingManager;
-    BOOL  didCleanup;
-    int  fullRefreshCounter;
+    bool  didCleanup;
+    long long  fullRefreshCounter;
     UIActivityIndicatorView * indicator;
-    BOOL  isErrorMessage;
+    bool  isErrorMessage;
     NSTimer * messageTimer;
     UITextField * serviceNameField;
     NSString * statusString;
@@ -19,38 +19,38 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)activateController:(id)arg1;
 - (void)advertiseServiceSwitchToggled:(id)arg1;
-- (BOOL)advertiseServiceWithName:(id)arg1 completionBlock:(id /* block */)arg2 error:(id*)arg3;
+- (bool)advertiseServiceWithName:(id)arg1 completionBlock:(id /* block */)arg2 error:(id*)arg3;
 - (void)advertiseTimerFired:(id)arg1;
 - (id)advertisedServiceName;
-- (BOOL)changeServiceNameTo:(id)arg1 completionBlock:(id /* block */)arg2 error:(id*)arg3;
+- (bool)changeServiceNameTo:(id)arg1 completionBlock:(id /* block */)arg2 error:(id*)arg3;
 - (void)cleanup;
 - (void)deactivateController:(id)arg1;
 - (void)dealloc;
 - (void)didReceiveMemoryWarning;
-- (BOOL)disconnectLocalPeripheral;
+- (bool)disconnectLocalPeripheral;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
 - (void)messageTimerFired:(id)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)setStatusString:(id)arg1 animateIndicator:(BOOL)arg2 isError:(BOOL)arg3;
+- (void)setStatusString:(id)arg1 animateIndicator:(bool)arg2 isError:(bool)arg3;
 - (id)statusString;
-- (BOOL)stopAdvertisingServiceWithCompletionBlock:(id /* block */)arg1 error:(id*)arg2;
+- (bool)stopAdvertisingServiceWithCompletionBlock:(id /* block */)arg1 error:(id*)arg2;
 - (void)stopTimers;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (void)textFieldDidBeginEditing:(id)arg1;
 - (void)textFieldDidEndEditing:(id)arg1;
 - (void)textFieldDone:(id)arg1;
 - (id)title;
 - (void)updateAdvertiseUI;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
 
 @end

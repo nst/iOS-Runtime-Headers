@@ -16,9 +16,11 @@
 
 - (void).cxx_destruct;
 - (id)addedIndexes;
+- (id)changesetByConcatenatingChangeset:(id)arg1;
 - (id)initWithAddedIndexes:(id)arg1 removedIndexes:(id)arg2 movedIndexesByNewIndex:(id)arg3 updatedIndexesByNewIndex:(id)arg4;
 - (id)movedIndexesByNewIndex;
-- (int)newIndexForOldIndex:(int)arg1;
+- (long long)newIndexForOldIndex:(long long)arg1;
+- (long long)oldIndexForNewIndex:(long long)arg1;
 - (id)removedIndexes;
 - (id)updatedIndexesByNewIndex;
 

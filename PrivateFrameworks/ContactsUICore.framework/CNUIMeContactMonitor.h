@@ -3,53 +3,45 @@
  */
 
 @interface CNUIMeContactMonitor : NSObject {
-    BOOL  _hasRegistered;
-    <CNScheduler> * _lock;
-    CNContact * _meContact;
-    BOOL  _meContactIsUpToDate;
+    CNContactStore * _contactStore;
+    <CNReaderWriterScheduler> * _lock;
     <CNCancelable> * _meNotificationToken;
     NSNotificationCenter * _notificationCenter;
-    CNContactStore * _store;
     <CNMeContactComparisonStrategy> * _strategy;
 }
 
-@property (nonatomic) BOOL hasRegistered;
-@property (nonatomic, retain) <CNScheduler> *lock;
-@property (nonatomic, retain) CNContact *meContact;
-@property (nonatomic) BOOL meContactIsUpToDate;
+@property (nonatomic, retain) CNContactStore *contactStore;
+@property (nonatomic, retain) <CNReaderWriterScheduler> *lock;
+@property (nonatomic, readonly) NSArray *meContactIdentifiers;
 @property (nonatomic, retain) <CNCancelable> *meNotificationToken;
 @property (nonatomic, retain) NSNotificationCenter *notificationCenter;
-@property (nonatomic, retain) CNContactStore *store;
 @property (nonatomic, retain) <CNMeContactComparisonStrategy> *strategy;
 
++ (id)makeMeContactMonitor;
++ (id)makeUnifiedMeContactMonitor;
 + (id)meContactMonitor;
 + (id)unifiedMeContactMonitor;
 
 - (void).cxx_destruct;
-- (void)_updateMeContact;
+- (id)contactStore;
 - (void)dealloc;
-- (BOOL)hasRegistered;
 - (id)init;
 - (id)initWithComparisonStrategy:(id)arg1;
 - (id)initWithComparisonStrategy:(id)arg1 contactStore:(id)arg2;
-- (id)initWithComparisonStrategy:(id)arg1 contactStore:(id)arg2 notificationCenter:(id)arg3;
+- (id)initWithComparisonStrategy:(id)arg1 contactStore:(id)arg2 notificationCenter:(id)arg3 schedulerProvider:(id)arg4;
 - (id)initWithContactStore:(id)arg1;
-- (BOOL)isMeContact:(id)arg1;
+- (bool)isMeContact:(id)arg1;
 - (id)lock;
 - (void)meChanged:(id)arg1;
-- (id)meContact;
-- (BOOL)meContactIsUpToDate;
+- (id)meContactIdentifiers;
 - (id)meNotificationToken;
 - (id)notificationCenter;
-- (void)setHasRegistered:(BOOL)arg1;
+- (void)setContactStore:(id)arg1;
 - (void)setLock:(id)arg1;
-- (void)setMeContact:(id)arg1;
-- (void)setMeContactIsUpToDate:(BOOL)arg1;
 - (void)setMeNotificationToken:(id)arg1;
 - (void)setNotificationCenter:(id)arg1;
-- (void)setStore:(id)arg1;
 - (void)setStrategy:(id)arg1;
-- (id)store;
+- (void)startMonitoring;
 - (id)strategy;
 
 @end

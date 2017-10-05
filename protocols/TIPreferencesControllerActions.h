@@ -5,21 +5,24 @@
 
 @required
 
-- (BOOL)automaticMinimizationEnabled;
+- (bool)automaticMinimizationEnabled;
 - (void)didTriggerOneTimeAction:(NSString *)arg1;
 - (NSArray *)inputModeSelectionSequence;
-- (struct CGPoint { float x1; float x2; })keyboardPosition;
-- (BOOL)keyboardShownByTouch;
-- (BOOL)oneTimeActionCompleted:(NSString *)arg1;
-- (BOOL)predictionEnabled;
-- (void)setAutomaticMinimizationEnabled:(BOOL)arg1;
+- (struct CGPoint { double x1; double x2; })keyboardPosition;
+- (bool)keyboardShownByTouch;
+- (bool)oneTimeActionCompleted:(NSString *)arg1;
+- (bool)predictionEnabled;
+- (void)setAutomaticMinimizationEnabled:(bool)arg1;
 - (void)setInputModeSelectionSequence:(NSArray *)arg1;
-- (void)setKeyboardPosition:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setKeyboardShownByTouch:(BOOL)arg1;
-- (void)setPredictionEnabled:(BOOL)arg1;
+- (void)setKeyboardPosition:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setKeyboardShownByTouch:(bool)arg1;
+- (void)setPredictionEnabled:(bool)arg1;
+- (void)updateDidPerformFirstReachableKeyboardInteraction;
+- (void)updateEnabledDictationLanguages:(NSDictionary *)arg1;
 - (void)updateKeyboardHandBias:(NSString *)arg1;
-- (void)updateKeyboardIsFloating:(BOOL)arg1;
-- (void)updateKeyboardIsSplit:(BOOL)arg1 locked:(BOOL)arg2;
+- (void)updateKeyboardIsFloating:(bool)arg1;
+- (void)updateKeyboardIsSplit:(bool)arg1 locked:(bool)arg2;
+- (void)updateLastUsedDictationLanguages:(NSDictionary *)arg1;
 - (void)updateLastUsedInputMode:(NSString *)arg1;
 - (void)updateLastUsedKeyboards:(NSDictionary *)arg1;
 - (void)updateLastUsedLayout:(NSString *)arg1;

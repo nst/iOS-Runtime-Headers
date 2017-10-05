@@ -3,18 +3,26 @@
  */
 
 @interface NTKCompanion1stPartyApp : NTKCompanionApp {
-    unsigned int  _complicationType;
+    unsigned long long  _complicationType;
+    UIImage * _icon;
+    NSString * _iconName;
 }
 
-@property (nonatomic) unsigned int complicationType;
+@property (nonatomic) unsigned long long complicationType;
+@property (nonatomic, copy) NSString *iconName;
 
 + (id)allApps;
-+ (id)companionAppWithAppInfo:(/* Warning: unhandled struct encoding: '{_NTKCompanion1stPartyInfo=@@I@}' */ struct _NTKCompanion1stPartyInfo { id x1; unsigned int x2; id x3; })arg1;
-+ (BOOL)complicationTypeMapsToRemovedSystemApp:(unsigned int)arg1;
++ (id)companionAppWithAppInfo:(/* Warning: unhandled struct encoding: '{_NTKCompanion1stPartyInfo=@@Q@}' */ struct _NTKCompanion1stPartyInfo { id x1; unsigned long long x2; id x3; })arg1;
++ (bool)complicationTypeMapsToRemovedSystemApp:(unsigned long long)arg1;
 
+- (void).cxx_destruct;
 - (id)complication;
-- (unsigned int)complicationType;
-- (id)initWithAppInfo:(/* Warning: unhandled struct encoding: '{_NTKCompanion1stPartyInfo=@@I@}' */ struct _NTKCompanion1stPartyInfo { id x1; unsigned int x2; id x3; })arg1;
-- (void)setComplicationType:(unsigned int)arg1;
+- (unsigned long long)complicationType;
+- (id)icon;
+- (id)iconName;
+- (id)initWithAppInfo:(/* Warning: unhandled struct encoding: '{_NTKCompanion1stPartyInfo=@@Q@}' */ struct _NTKCompanion1stPartyInfo { id x1; unsigned long long x2; id x3; })arg1;
+- (void)setComplicationType:(unsigned long long)arg1;
+- (void)setIcon:(id)arg1;
+- (void)setIconName:(id)arg1;
 
 @end

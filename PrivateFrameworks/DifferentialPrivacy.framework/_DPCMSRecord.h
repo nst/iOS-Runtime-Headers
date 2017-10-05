@@ -7,33 +7,34 @@
     NSString * _key;
     NSManagedObjectID * _objectId;
     long long  _reportVersion;
-    BOOL  _submitted;
+    bool  _submitted;
 }
 
 @property (nonatomic) double creationDate;
 @property (nonatomic, copy) NSString *key;
 @property (nonatomic, retain) NSManagedObjectID *objectId;
 @property (nonatomic) long long reportVersion;
-@property (nonatomic) BOOL submitted;
+@property (nonatomic) bool submitted;
 
 + (id)createRecordFromManagedObject:(id)arg1;
 + (id)entityName;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)copyFromManagedObject:(id)arg1;
-- (BOOL)copyToManagedObject:(id)arg1;
+- (bool)copyFromManagedObject:(id)arg1;
+- (bool)copyToManagedObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)creationDate;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)entityName;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithKey:(id)arg1 creationDate:(double)arg2 submitted:(BOOL)arg3 objectId:(id)arg4;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToCMSRecord:(id)arg1;
+- (id)initWithKey:(id)arg1 creationDate:(double)arg2 submitted:(bool)arg3 objectId:(id)arg4;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToCMSRecord:(id)arg1;
+- (id)jsonString;
 - (id)key;
 - (id)objectId;
 - (long long)reportVersion;
@@ -41,7 +42,7 @@
 - (void)setKey:(id)arg1;
 - (void)setObjectId:(id)arg1;
 - (void)setReportVersion:(long long)arg1;
-- (void)setSubmitted:(BOOL)arg1;
-- (BOOL)submitted;
+- (void)setSubmitted:(bool)arg1;
+- (bool)submitted;
 
 @end

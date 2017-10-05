@@ -11,8 +11,8 @@
 - (long long)dataState;
 - (id)fileState;
 - (id)fileURL;
-- (BOOL)hasDataState;
-- (BOOL)hasFileState;
+- (bool)hasDataState;
+- (bool)hasFileState;
 - (id)initWithIdentifier:(long long)arg1 classType:(int)arg2 fileState:(id)arg3 packageURL:(id)arg4;
 
 @end

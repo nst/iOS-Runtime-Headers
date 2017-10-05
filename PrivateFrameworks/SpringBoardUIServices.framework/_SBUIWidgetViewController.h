@@ -9,8 +9,8 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } preferredViewSize;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } preferredViewSize;
 @property (readonly) Class superclass;
 @property (nonatomic) <_SBUIWidgetHost> *widgetHost;
 @property (nonatomic, copy) NSString *widgetIdentifier;
@@ -21,7 +21,7 @@
 - (void)hostWillDismiss;
 - (void)hostWillPresent;
 - (void)invalidatePreferredViewSize;
-- (struct CGSize { float x1; float x2; })preferredViewSize;
+- (struct CGSize { double x1; double x2; })preferredViewSize;
 - (void)requestLaunchOfURL:(id)arg1;
 - (void)setVisibleWidgetsIDs:(id)arg1;
 - (void)setWidgetHost:(id)arg1;

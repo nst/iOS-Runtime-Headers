@@ -5,6 +5,6 @@
 
 @required
 
-- (void)foregroundMonitor:(PLForegroundMonitor *)arg1 changedStateToForeground:(BOOL)arg2 context:(id)arg3;
+- (void)foregroundMonitor:(PLForegroundMonitor *)arg1 changedStateToForeground:(bool)arg2 forBundleIdentifier:(NSString *)arg3 context:(id)arg4;
 
 @end

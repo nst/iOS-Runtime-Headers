@@ -3,25 +3,26 @@
  */
 
 @interface AKOverlayView : UIView {
-    BOOL  _deferWasMovedToSuperviewUntilMoveToWindow;
-    BOOL  _isObserving;
+    bool  _deferWasMovedToSuperviewUntilMoveToWindow;
+    bool  _isObserving;
     AKMainEventHandler * _mainEventHandler;
     UIScrollView * _observedScrollView;
     AKPageController * _pageController;
-    BOOL  _scrollViewIsInLiveMagnify;
+    bool  _scrollViewIsInLiveMagnify;
 }
 
-@property BOOL deferWasMovedToSuperviewUntilMoveToWindow;
-@property BOOL isObserving;
+@property bool deferWasMovedToSuperviewUntilMoveToWindow;
+@property bool isObserving;
 @property AKMainEventHandler *mainEventHandler;
 @property (retain) UIScrollView *observedScrollView;
 @property AKPageController *pageController;
-@property BOOL scrollViewIsInLiveMagnify;
+@property bool scrollViewIsInLiveMagnify;
 
 + (void)initialize;
 
 - (void).cxx_destruct;
-- (void)_postScrollViewNotification;
+- (void)_postScrollViewRectChangedNotification;
+- (void)_postScrollViewScrollOrMagnifyEndNotification;
 - (void)_scrollViewDidEndAnimation:(id)arg1;
 - (void)_scrollViewDidEndDecelerating:(id)arg1;
 - (void)_scrollViewDidEndDragging:(id)arg1;
@@ -29,38 +30,35 @@
 - (void)_setupObservation;
 - (void)_teardownObservation;
 - (void)_updateLayersUsingScrollView;
-- (void)_updateLayersUsingScrollViewWithForcedUpdate:(BOOL)arg1;
+- (void)_updateLayersUsingScrollViewWithForcedUpdate:(bool)arg1;
 - (void)_wasMovedToNewSuperview;
 - (void)_willEndLiveMagnify:(id)arg1;
 - (void)_willRemoveFromOldSuperview;
 - (void)_willStartLiveMagnify:(id)arg1;
-- (BOOL)canBecomeFirstResponder;
+- (bool)canBecomeFirstResponder;
+- (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)dealloc;
-- (BOOL)deferWasMovedToSuperviewUntilMoveToWindow;
+- (bool)deferWasMovedToSuperviewUntilMoveToWindow;
+- (void)delete:(id)arg1;
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;
+- (void)duplicate:(id)arg1;
+- (void)editTextAnnotation:(id)arg1;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)initWithPageController:(id)arg1;
-- (BOOL)isObserving;
+- (bool)isObserving;
 - (void)layoutSublayersOfLayer:(id)arg1;
 - (id)mainEventHandler;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)observedScrollView;
 - (id)pageController;
-- (BOOL)scrollViewIsInLiveMagnify;
-- (void)setDeferWasMovedToSuperviewUntilMoveToWindow:(BOOL)arg1;
-- (void)setIsObserving:(BOOL)arg1;
+- (bool)scrollViewIsInLiveMagnify;
+- (void)setDeferWasMovedToSuperviewUntilMoveToWindow:(bool)arg1;
+- (void)setIsObserving:(bool)arg1;
 - (void)setMainEventHandler:(id)arg1;
 - (void)setObservedScrollView:(id)arg1;
 - (void)setPageController:(id)arg1;
-- (void)setScrollViewIsInLiveMagnify:(BOOL)arg1;
-- (void)superTouchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)superTouchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)superTouchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)superTouchesMoved:(id)arg1 withEvent:(id)arg2;
-- (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)setScrollViewIsInLiveMagnify:(bool)arg1;
 - (void)updateLayers;
 - (void)willMoveToSuperview:(id)arg1;
 

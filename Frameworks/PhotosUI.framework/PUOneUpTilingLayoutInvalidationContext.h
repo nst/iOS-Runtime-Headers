@@ -3,31 +3,31 @@
  */
 
 @interface PUOneUpTilingLayoutInvalidationContext : PUTilingLayoutInvalidationContext {
-    BOOL  _invalidatedAccessoryTile;
-    BOOL  _invalidatedCommentsTile;
-    BOOL  _invalidatedContentGuideInsets;
-    BOOL  _invalidatedContentOffset;
-    BOOL  _invalidatedVideoPlaceholderTile;
-    unsigned int  _options;
+    bool  _invalidatedAccessoryTile;
+    bool  _invalidatedCommentsTile;
+    bool  _invalidatedContentInsets;
+    bool  _invalidatedContentOffset;
+    bool  _invalidatedVideoPlaceholderTile;
+    unsigned long long  _options;
 }
 
-@property (setter=_setInvalidatedAccessoryTile:, nonatomic) BOOL invalidatedAccessoryTile;
-@property (nonatomic, readonly) BOOL invalidatedCommentsTile;
-@property (setter=_setInvalidatedContentGuideInsets:, nonatomic) BOOL invalidatedContentGuideInsets;
-@property (setter=_setInvalidatedContentOffset:, nonatomic) BOOL invalidatedContentOffset;
-@property (setter=_setInvalidatedVideoPlaceholderTile:, nonatomic) BOOL invalidatedVideoPlaceholderTile;
-@property (setter=_setOptions:, nonatomic) unsigned int options;
+@property (setter=_setInvalidatedAccessoryTile:, nonatomic) bool invalidatedAccessoryTile;
+@property (nonatomic, readonly) bool invalidatedCommentsTile;
+@property (setter=_setInvalidatedContentInsets:, nonatomic) bool invalidatedContentInsets;
+@property (setter=_setInvalidatedContentOffset:, nonatomic) bool invalidatedContentOffset;
+@property (setter=_setInvalidatedVideoPlaceholderTile:, nonatomic) bool invalidatedVideoPlaceholderTile;
+@property (setter=_setOptions:, nonatomic) unsigned long long options;
 
-- (void)_setInvalidatedAccessoryTile:(BOOL)arg1;
-- (void)_setInvalidatedContentGuideInsets:(BOOL)arg1;
-- (void)_setInvalidatedContentOffset:(BOOL)arg1;
-- (void)_setInvalidatedVideoPlaceholderTile:(BOOL)arg1;
-- (void)_setOptions:(unsigned int)arg1;
-- (BOOL)invalidatedAccessoryTile;
-- (BOOL)invalidatedCommentsTile;
-- (BOOL)invalidatedContentGuideInsets;
-- (BOOL)invalidatedContentOffset;
-- (BOOL)invalidatedVideoPlaceholderTile;
-- (unsigned int)options;
+- (void)_setInvalidatedAccessoryTile:(bool)arg1;
+- (void)_setInvalidatedContentInsets:(bool)arg1;
+- (void)_setInvalidatedContentOffset:(bool)arg1;
+- (void)_setInvalidatedVideoPlaceholderTile:(bool)arg1;
+- (void)_setOptions:(unsigned long long)arg1;
+- (bool)invalidatedAccessoryTile;
+- (bool)invalidatedCommentsTile;
+- (bool)invalidatedContentInsets;
+- (bool)invalidatedContentOffset;
+- (bool)invalidatedVideoPlaceholderTile;
+- (unsigned long long)options;
 
 @end

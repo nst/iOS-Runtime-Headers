@@ -10,11 +10,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (void)_clearCompatibilityInfoForBundleIdentifier:(id)arg1;
 - (id)_init;
 - (id)_loadCompatibilityInfoForBundleIdentifier:(id)arg1;
@@ -22,7 +23,6 @@
 - (id)_storeForBundleIdentifier:(id)arg1;
 - (void)beginAccessBlockForBundleIdentifier:(id)arg1;
 - (void)clearManifestDataForBundleIdentifier:(id)arg1;
-- (void)dealloc;
 - (void)endAccessBlockForBundleIdentifier:(id)arg1;
 - (id)init;
 - (id)loadManifestDataForBundleIdentifier:(id)arg1;

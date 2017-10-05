@@ -17,7 +17,7 @@
 - (void).cxx_destruct;
 - (void)didFinishWithResults:(id)arg1;
 - (void)didGatherResults:(id)arg1 forKeyPath:(id)arg2;
-- (BOOL)doRanges:(id)arg1 containAddress:(id)arg2;
+- (bool)doRanges:(id)arg1 containAddress:(id)arg2;
 - (id)initWithDelegate:(id)arg1 delegateQueue:(id)arg2;
 - (id)keyPath:(id)arg1 byAppendingKey:(id)arg2;
 - (id)locateServersWithOptions:(id)arg1;

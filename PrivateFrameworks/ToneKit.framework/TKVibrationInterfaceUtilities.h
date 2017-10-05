@@ -6,6 +6,6 @@
 
 + (void)configureVibrationNameTextField:(id)arg1;
 + (id)descriptionForDuration:(double)arg1;
-+ (BOOL)vibrationNameTextField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
++ (bool)vibrationNameTextField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 replacementString:(id)arg3;
 
 @end

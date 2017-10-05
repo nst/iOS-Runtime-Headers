@@ -4,35 +4,35 @@
 
 @interface _NACVolumeObserverRecord : NSObject {
     float  _EUVolumeLimit;
-    BOOL  _muted;
+    bool  _muted;
     MPAVRoutingController * _routingController;
     NACEventThrottler * _throttler;
-    BOOL  _volumeControlAvailable;
+    bool  _volumeControlAvailable;
     MPVolumeController * _volumeController;
-    BOOL  _volumeWarningEnabled;
+    bool  _volumeWarningEnabled;
 }
 
 @property (nonatomic) float EUVolumeLimit;
-@property (getter=isMuted, nonatomic) BOOL muted;
+@property (getter=isMuted, nonatomic) bool muted;
 @property (nonatomic, retain) MPAVRoutingController *routingController;
 @property (nonatomic, retain) NACEventThrottler *throttler;
-@property (getter=isVolumeControlAvailable, nonatomic) BOOL volumeControlAvailable;
+@property (getter=isVolumeControlAvailable, nonatomic) bool volumeControlAvailable;
 @property (nonatomic, retain) MPVolumeController *volumeController;
-@property (getter=isVolumeWarningEnabled, nonatomic) BOOL volumeWarningEnabled;
+@property (getter=isVolumeWarningEnabled, nonatomic) bool volumeWarningEnabled;
 
 - (void).cxx_destruct;
 - (float)EUVolumeLimit;
-- (BOOL)isMuted;
-- (BOOL)isVolumeControlAvailable;
-- (BOOL)isVolumeWarningEnabled;
+- (bool)isMuted;
+- (bool)isVolumeControlAvailable;
+- (bool)isVolumeWarningEnabled;
 - (id)routingController;
 - (void)setEUVolumeLimit:(float)arg1;
-- (void)setMuted:(BOOL)arg1;
+- (void)setMuted:(bool)arg1;
 - (void)setRoutingController:(id)arg1;
 - (void)setThrottler:(id)arg1;
-- (void)setVolumeControlAvailable:(BOOL)arg1;
+- (void)setVolumeControlAvailable:(bool)arg1;
 - (void)setVolumeController:(id)arg1;
-- (void)setVolumeWarningEnabled:(BOOL)arg1;
+- (void)setVolumeWarningEnabled:(bool)arg1;
 - (id)throttler;
 - (id)volumeController;
 

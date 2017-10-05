@@ -8,8 +8,9 @@
 + (void)_cacheImage:(id)arg1 forKey:(id)arg2;
 + (id)_cachePath;
 + (id)_cachedImageForKey:(id)arg1;
-+ (id)_imageURLForChannel:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
-+ (id)_keyForChannel:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
-+ (void)fetchIconForChannel:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 completion:(id /* block */)arg3;
++ (id)_imageURLForInstallable:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
++ (id)_keyForInstallable:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
++ (void)fetchIconForInstallable:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 completion:(id /* block */)arg3;
++ (double)iconCornerRadiusForSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

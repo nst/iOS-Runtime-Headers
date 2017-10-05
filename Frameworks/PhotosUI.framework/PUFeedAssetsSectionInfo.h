@@ -4,19 +4,20 @@
 
 @interface PUFeedAssetsSectionInfo : PUFeedSectionInfo
 
-- (BOOL)areAllAssetsLiked;
-- (id)assetForItemAtIndex:(int)arg1;
+- (bool)areAllAssetsLiked;
+- (id)assetForItemAtIndex:(long long)arg1;
 - (id)assets;
-- (unsigned int)assetsCount;
-- (id)batchIDForItemAtIndex:(int)arg1;
-- (id)captionForItemAtIndex:(int)arg1;
+- (unsigned long long)assetsCount;
+- (id)batchIDForItemAtIndex:(long long)arg1;
+- (id)captionForItemAtIndex:(long long)arg1;
 - (id)cloudFeedAssetsEntry;
-- (BOOL)containsAsset:(id)arg1;
-- (void)getPhotoCount:(out unsigned int*)arg1 videoCount:(out unsigned int*)arg2;
-- (BOOL)hasPlayableAssetForItemAtIndex:(int)arg1;
-- (int)indexOfItemWithAsset:(id)arg1;
-- (int)sectionType;
-- (int)typeForItemAtIndex:(int)arg1;
+- (bool)containsAsset:(id)arg1;
+- (id)countsByAssetDisplayType;
+- (void)getPhotoCount:(out unsigned long long*)arg1 videoCount:(out unsigned long long*)arg2;
+- (bool)hasPlayableAssetForItemAtIndex:(long long)arg1;
+- (long long)indexOfItemWithAsset:(id)arg1;
+- (long long)sectionType;
+- (long long)typeForItemAtIndex:(long long)arg1;
 - (void)updateFromCloudFeedEntry;
 
 @end

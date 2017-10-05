@@ -9,7 +9,7 @@
     NSString * _fragmentShader;
     id  _library;
     NSString * _name;
-    BOOL  _opaque;
+    bool  _opaque;
     NSMutableDictionary * _semanticInfos;
     NSString * _vertexFunctionName;
     NSString * _vertexShader;
@@ -19,13 +19,13 @@
 @property (nonatomic, copy) NSString *fragmentFunctionName;
 @property (nonatomic, copy) NSString *fragmentShader;
 @property (nonatomic, retain) <MTLLibrary> *library;
-@property (getter=isOpaque, nonatomic) BOOL opaque;
+@property (getter=isOpaque, nonatomic) bool opaque;
 @property (nonatomic, copy) NSString *vertexFunctionName;
 @property (nonatomic, copy) NSString *vertexShader;
 
 + (id)program;
 + (id)programWithLibrary:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_allSymbolsWithSceneKitSemantic;
 - (id)_bufferBindings;
@@ -39,10 +39,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)fragmentFunctionName;
 - (id)fragmentShader;
-- (void)handleBindingOfBufferNamed:(id)arg1 frequency:(int)arg2 usingBlock:(id /* block */)arg3;
+- (void)handleBindingOfBufferNamed:(id)arg1 frequency:(long long)arg2 usingBlock:(id /* block */)arg3;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isOpaque;
+- (bool)isOpaque;
 - (id)library;
 - (id)name;
 - (id)semanticForSymbol:(id)arg1;
@@ -51,7 +51,7 @@
 - (void)setFragmentShader:(id)arg1;
 - (void)setLibrary:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setOpaque:(BOOL)arg1;
+- (void)setOpaque:(bool)arg1;
 - (void)setSemantic:(id)arg1 forSymbol:(id)arg2;
 - (void)setSemantic:(id)arg1 forSymbol:(id)arg2 options:(id)arg3;
 - (void)setSemanticInfos:(id)arg1;

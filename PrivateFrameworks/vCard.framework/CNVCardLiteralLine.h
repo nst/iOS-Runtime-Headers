@@ -3,7 +3,7 @@
  */
 
 @interface CNVCardLiteralLine : CNVCardLine {
-    NSString * _literalValue;
+    NSData * _literalValue;
 }
 
 + (id)lineWithLiteralValue:(id)arg1;

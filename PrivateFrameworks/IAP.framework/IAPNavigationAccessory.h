@@ -3,25 +3,25 @@
  */
 
 @interface IAPNavigationAccessory : NSObject {
-    BOOL  __wasFoundInLastUpdate;
+    bool  __wasFoundInLastUpdate;
     NSSet * _components;
-    unsigned int  _identifier;
+    unsigned long long  _identifier;
 }
 
-@property BOOL _wasFoundInLastUpdate;
+@property bool _wasFoundInLastUpdate;
 @property (retain) NSSet *components;
-@property unsigned int identifier;
+@property unsigned long long identifier;
 
 - (void).cxx_destruct;
-- (BOOL)_wasFoundInLastUpdate;
+- (bool)_wasFoundInLastUpdate;
 - (id)components;
 - (id)description;
-- (unsigned int)hash;
-- (unsigned int)identifier;
+- (unsigned long long)hash;
+- (unsigned long long)identifier;
 - (id)initWithDict:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setComponents:(id)arg1;
-- (void)setIdentifier:(unsigned int)arg1;
-- (void)set_wasFoundInLastUpdate:(BOOL)arg1;
+- (void)setIdentifier:(unsigned long long)arg1;
+- (void)set_wasFoundInLastUpdate:(bool)arg1;
 
 @end

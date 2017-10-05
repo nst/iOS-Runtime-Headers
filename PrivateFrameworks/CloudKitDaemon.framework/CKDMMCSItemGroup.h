@@ -4,7 +4,7 @@
 
 @interface CKDMMCSItemGroup : NSObject {
     NSData * _authPutRequest;
-    BOOL  _complete;
+    bool  _complete;
     NSError * _error;
     NSMutableArray * _items;
     <MMCSOperationMetric> * _metrics;
@@ -12,7 +12,7 @@
 }
 
 @property (nonatomic, retain) NSData *authPutRequest;
-@property (nonatomic) BOOL complete;
+@property (nonatomic) bool complete;
 @property (nonatomic, readonly) NSURL *contentBaseURL;
 @property (nonatomic, retain) NSError *error;
 @property (nonatomic, readonly) NSArray *items;
@@ -20,7 +20,7 @@
 @property (nonatomic, readonly) NSString *owner;
 @property (nonatomic, readonly) NSString *requestor;
 @property (nonatomic, retain) NSArray *tuple;
-@property (nonatomic, readonly) BOOL usePerItemAuthRequests;
+@property (nonatomic, readonly) bool usePerItemAuthRequests;
 
 + (id)tupleForItem:(id)arg1;
 
@@ -28,7 +28,7 @@
 - (id)CKPropertiesDescription;
 - (void)addItem:(id)arg1;
 - (id)authPutRequest;
-- (BOOL)complete;
+- (bool)complete;
 - (id)contentBaseURL;
 - (id)description;
 - (id)error;
@@ -38,11 +38,11 @@
 - (id)owner;
 - (id)requestor;
 - (void)setAuthPutRequest:(id)arg1;
-- (void)setComplete:(BOOL)arg1;
+- (void)setComplete:(bool)arg1;
 - (void)setError:(id)arg1;
 - (void)setMetrics:(id)arg1;
 - (void)setTuple:(id)arg1;
 - (id)tuple;
-- (BOOL)usePerItemAuthRequests;
+- (bool)usePerItemAuthRequests;
 
 @end

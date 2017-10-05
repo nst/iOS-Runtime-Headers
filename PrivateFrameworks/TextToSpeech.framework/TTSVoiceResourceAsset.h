@@ -15,7 +15,7 @@
 @property (nonatomic, copy) NSDictionary *voiceConfig;
 
 + (id)legacyPlatforms;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)defaultFootprintString;

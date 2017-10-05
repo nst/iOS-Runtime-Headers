@@ -5,8 +5,8 @@
 
 @required
 
-- (BOOL)allowLocation;
-- (BOOL)needsBag;
-- (void)triggerQuery:(BOOL)arg1;
+- (bool)allowLocation;
+- (bool)needsBag;
+- (void)triggerQuery:(bool)arg1;
 
 @end

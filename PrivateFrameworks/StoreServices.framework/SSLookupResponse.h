@@ -13,10 +13,10 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSDate *expirationDate;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) SSMetricsConfiguration *metricsConfiguration;
 @property (setter=_setMetricsPageEvent:, nonatomic, retain) SSMetricsPageEvent *metricsPageEvent;
-@property (nonatomic, readonly) BOOL mpIsPersonalizedOffer;
+@property (nonatomic, readonly) bool mpIsPersonalizedOffer;
 @property (nonatomic, readonly) NSDictionary *responseDictionary;
 @property (readonly) Class superclass;
 
@@ -25,7 +25,7 @@
 - (void)_enumerateItemsWithBlock:(id /* block */)arg1;
 - (void)_setMetricsPageEvent:(id)arg1;
 - (id)allItems;
-- (id)appStoreURLWithReason:(int)arg1 initialIndex:(int)arg2;
+- (id)appStoreURLWithReason:(long long)arg1 initialIndex:(long long)arg2;
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)expirationDate;
@@ -41,13 +41,13 @@
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
-+ (BOOL)mpFakeCompletionDataForBuys;
++ (bool)mpFakeCompletionDataForBuys;
 + (id)mpLoadDebugCompletionsResponseWithStoreLookupID:(id)arg1;
-+ (BOOL)mpShowBuysWithNoCompletionOffer;
-+ (BOOL)mpVerboseCMCLogging;
++ (bool)mpShowBuysWithNoCompletionOffer;
++ (bool)mpVerboseCMCLogging;
 
 - (id)mpCompletionOfferResponseDictionaryWithLocalAlbumsCollection:(id)arg1;
-- (BOOL)mpIsPersonalizedOffer;
+- (bool)mpIsPersonalizedOffer;
 - (void)mpSaveCompletionsResponseForDebuggingIfNecessaryWithExpectedStoreLookupID:(id)arg1;
 
 @end

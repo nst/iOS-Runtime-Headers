@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) AFSpeechRecognition *rawRecognition;
 @property (nonatomic, readonly) AFSpeechRecognition *recognition;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -3,10 +3,10 @@
  */
 
 @interface AVAssetResourceLoadingContentInformationRequestInternal : NSObject {
-    BOOL  byteRangeAccessSupported;
+    bool  byteRangeAccessSupported;
     long long  contentLength;
     NSString * contentType;
-    BOOL  diskCachingPermitted;
+    bool  diskCachingPermitted;
     NSDate * renewalDate;
 }
 

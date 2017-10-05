@@ -6,10 +6,10 @@
 @required
 
 - (<IKEntityValueProviding> *)entityValueProviderAtIndexPath:(NSIndexPath *)arg1;
-- (unsigned int)numberOfEntitiesInSection:(unsigned int)arg1;
+- (unsigned long long)numberOfEntitiesInSection:(unsigned long long)arg1;
 
 @optional
 
-- (unsigned int)numberOfSections;
+- (unsigned long long)numberOfSections;
 
 @end

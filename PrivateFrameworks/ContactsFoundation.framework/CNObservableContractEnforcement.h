@@ -3,13 +3,16 @@
  */
 
 @interface CNObservableContractEnforcement : NSObject <CNObserver> {
-    unsigned int  _state;
+    unsigned long long  _state;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
+
++ (bool)shouldEnforceRxProtocols;
++ (bool)shouldSwizzleNilResults;
 
 - (void)observerDidComplete;
 - (void)observerDidFailWithError:(id)arg1;

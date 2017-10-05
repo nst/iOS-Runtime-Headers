@@ -4,8 +4,8 @@
 
 @interface PXPhotoKitAssetCollectionFileRadarActionPerformer : PXPhotoKitAssetCollectionActionPerformer
 
-+ (BOOL)canPerformOnAssetCollection:(id)arg1 people:(id)arg2;
-+ (id)localizedTitleForUseCase:(unsigned int)arg1 assetCollection:(id)arg2 person:(id)arg3;
++ (bool)canPerformOnAssetCollection:(id)arg1 people:(id)arg2;
++ (id)localizedTitleForUseCase:(unsigned long long)arg1 assetCollection:(id)arg2 person:(id)arg3;
 
 - (void)performUserInteractionTask;
 

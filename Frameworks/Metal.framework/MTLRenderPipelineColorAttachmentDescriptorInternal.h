@@ -26,30 +26,30 @@
 }
 
 - (const struct MTLRenderPipelineAttachmentDescriptorPrivate { union { struct { unsigned int x_1_2_1 : 1; unsigned int x_1_2_2 : 3; unsigned int x_1_2_3 : 3; unsigned int x_1_2_4 : 5; unsigned int x_1_2_5 : 5; unsigned int x_1_2_6 : 5; unsigned int x_1_2_7 : 5; unsigned int x_1_2_8 : 4; unsigned int x_1_2_9 : 1; unsigned int x_1_2_10 : 4; unsigned int x_1_2_11 : 28; } x_1_1_1; struct { unsigned long long x_2_2_1; } x_1_1_2; } x1; }*)_descriptorPrivate;
-- (unsigned int)alphaBlendOperation;
+- (unsigned long long)alphaBlendOperation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)destinationAlphaBlendFactor;
-- (unsigned int)destinationRGBBlendFactor;
-- (id)formattedDescription:(unsigned int)arg1;
-- (unsigned int)hash;
+- (unsigned long long)destinationAlphaBlendFactor;
+- (unsigned long long)destinationRGBBlendFactor;
+- (id)formattedDescription:(unsigned long long)arg1;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isBlendingEnabled;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)pixelFormat;
-- (unsigned int)rgbBlendOperation;
-- (void)setAlphaBlendOperation:(unsigned int)arg1;
-- (void)setBlendingEnabled:(BOOL)arg1;
-- (void)setDestinationAlphaBlendFactor:(unsigned int)arg1;
-- (void)setDestinationRGBBlendFactor:(unsigned int)arg1;
-- (void)setPixelFormat:(unsigned int)arg1;
-- (void)setRgbBlendOperation:(unsigned int)arg1;
-- (void)setSourceAlphaBlendFactor:(unsigned int)arg1;
-- (void)setSourceRGBBlendFactor:(unsigned int)arg1;
-- (void)setWriteMask:(unsigned int)arg1;
-- (unsigned int)sourceAlphaBlendFactor;
-- (unsigned int)sourceRGBBlendFactor;
-- (unsigned int)writeMask;
+- (bool)isBlendingEnabled;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)pixelFormat;
+- (unsigned long long)rgbBlendOperation;
+- (void)setAlphaBlendOperation:(unsigned long long)arg1;
+- (void)setBlendingEnabled:(bool)arg1;
+- (void)setDestinationAlphaBlendFactor:(unsigned long long)arg1;
+- (void)setDestinationRGBBlendFactor:(unsigned long long)arg1;
+- (void)setPixelFormat:(unsigned long long)arg1;
+- (void)setRgbBlendOperation:(unsigned long long)arg1;
+- (void)setSourceAlphaBlendFactor:(unsigned long long)arg1;
+- (void)setSourceRGBBlendFactor:(unsigned long long)arg1;
+- (void)setWriteMask:(unsigned long long)arg1;
+- (unsigned long long)sourceAlphaBlendFactor;
+- (unsigned long long)sourceRGBBlendFactor;
+- (unsigned long long)writeMask;
 
 @end

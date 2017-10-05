@@ -4,14 +4,14 @@
 
 @interface STMapItem : STSiriModelObject {
     NSNumber * _businessID;
-    BOOL  _isCurrentLocation;
+    bool  _isCurrentLocation;
     NSNumber * _localSearchProviderID;
     CLLocation * _location;
     NSData * _placeData;
     NSString * _title;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (Class)_aceCollectionClass;

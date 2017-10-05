@@ -4,33 +4,29 @@
 
 @interface NRSecureDevicePropertyStore : NSObject <NSCopying, NSSecureCoding> {
     NSMutableDictionary * _IDToProperty;
-    BOOL  _dirty;
+    bool  _dirty;
     NSMutableDictionary * _propertyToID;
-    NSObject<OS_dispatch_queue> * _queue;
 }
 
-@property (nonatomic, readonly) BOOL dirty;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, readonly) bool dirty;
 
 + (id)classTypes;
 + (id)enclosedClassTypes;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)allSecurePropertyIDs;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned long long)count;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
 - (id)description;
-- (BOOL)dirty;
+- (bool)dirty;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
-- (id)queue;
 - (void)removeSecureProperty:(id)arg1;
 - (id)securePropertyForID:(id)arg1;
-- (void)setQueue:(id)arg1;
 - (id)storeSecureProperty:(id)arg1;
 
 @end

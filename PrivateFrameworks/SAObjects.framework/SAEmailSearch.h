@@ -19,7 +19,7 @@
 - (id)endDate;
 - (id)fromEmail;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setEndDate:(id)arg1;
 - (void)setFromEmail:(id)arg1;
 - (void)setStartDate:(id)arg1;

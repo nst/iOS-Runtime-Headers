@@ -5,17 +5,17 @@
 @interface PDAnimateRotateBehavior : PDAnimateBehavior {
     double  mBy;
     double  mFrom;
-    BOOL  mHasBy;
-    BOOL  mHasFrom;
-    BOOL  mHasTo;
+    bool  mHasBy;
+    bool  mHasFrom;
+    bool  mHasTo;
     double  mTo;
 }
 
 - (double)by;
 - (double)from;
-- (BOOL)hasBy;
-- (BOOL)hasFrom;
-- (BOOL)hasTo;
+- (bool)hasBy;
+- (bool)hasFrom;
+- (bool)hasTo;
 - (id)init;
 - (void)setBy:(double)arg1;
 - (void)setFrom:(double)arg1;

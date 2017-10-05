@@ -3,50 +3,58 @@
  */
 
 @interface NTPBPurchaseOfferableConfiguration : PBCodable <NSCopying> {
-    BOOL  _allowsPublisherPadApp;
-    BOOL  _allowsPublisherPhoneApp;
-    BOOL  _allowsPublisherWebSite;
+    bool  _allowsPublisherPadApp;
+    bool  _allowsPublisherPhoneApp;
+    bool  _allowsPublisherWebSite;
     struct { 
         unsigned int allowsPublisherPadApp : 1; 
         unsigned int allowsPublisherPhoneApp : 1; 
         unsigned int allowsPublisherWebSite : 1; 
+        unsigned int preferredOffer : 1; 
     }  _has;
+    bool  _preferredOffer;
     NSString * _purchaseId;
 }
 
-@property (nonatomic) BOOL allowsPublisherPadApp;
-@property (nonatomic) BOOL allowsPublisherPhoneApp;
-@property (nonatomic) BOOL allowsPublisherWebSite;
-@property (nonatomic) BOOL hasAllowsPublisherPadApp;
-@property (nonatomic) BOOL hasAllowsPublisherPhoneApp;
-@property (nonatomic) BOOL hasAllowsPublisherWebSite;
-@property (nonatomic, readonly) BOOL hasPurchaseId;
+@property (nonatomic) bool allowsPublisherPadApp;
+@property (nonatomic) bool allowsPublisherPhoneApp;
+@property (nonatomic) bool allowsPublisherWebSite;
+@property (nonatomic) bool hasAllowsPublisherPadApp;
+@property (nonatomic) bool hasAllowsPublisherPhoneApp;
+@property (nonatomic) bool hasAllowsPublisherWebSite;
+@property (nonatomic) bool hasPreferredOffer;
+@property (nonatomic, readonly) bool hasPurchaseId;
+@property (nonatomic) bool preferredOffer;
 @property (nonatomic, retain) NSString *purchaseId;
 
 // Image: /System/Library/PrivateFrameworks/NewsTransport.framework/NewsTransport
 
-- (BOOL)allowsPublisherPadApp;
-- (BOOL)allowsPublisherPhoneApp;
-- (BOOL)allowsPublisherWebSite;
+- (bool)allowsPublisherPadApp;
+- (bool)allowsPublisherPhoneApp;
+- (bool)allowsPublisherWebSite;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAllowsPublisherPadApp;
-- (BOOL)hasAllowsPublisherPhoneApp;
-- (BOOL)hasAllowsPublisherWebSite;
-- (BOOL)hasPurchaseId;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAllowsPublisherPadApp;
+- (bool)hasAllowsPublisherPhoneApp;
+- (bool)hasAllowsPublisherWebSite;
+- (bool)hasPreferredOffer;
+- (bool)hasPurchaseId;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (bool)preferredOffer;
 - (id)purchaseId;
-- (BOOL)readFrom:(id)arg1;
-- (void)setAllowsPublisherPadApp:(BOOL)arg1;
-- (void)setAllowsPublisherPhoneApp:(BOOL)arg1;
-- (void)setAllowsPublisherWebSite:(BOOL)arg1;
-- (void)setHasAllowsPublisherPadApp:(BOOL)arg1;
-- (void)setHasAllowsPublisherPhoneApp:(BOOL)arg1;
-- (void)setHasAllowsPublisherWebSite:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setAllowsPublisherPadApp:(bool)arg1;
+- (void)setAllowsPublisherPhoneApp:(bool)arg1;
+- (void)setAllowsPublisherWebSite:(bool)arg1;
+- (void)setHasAllowsPublisherPadApp:(bool)arg1;
+- (void)setHasAllowsPublisherPhoneApp:(bool)arg1;
+- (void)setHasAllowsPublisherWebSite:(bool)arg1;
+- (void)setHasPreferredOffer:(bool)arg1;
+- (void)setPreferredOffer:(bool)arg1;
 - (void)setPurchaseId:(id)arg1;
 - (void)writeTo:(id)arg1;
 

@@ -6,7 +6,7 @@
 @required
 
 - (NSArray *)bills;
-- (int)code;
+- (long long)code;
 - (void)setBills:(NSArray *)arg1;
 
 @end

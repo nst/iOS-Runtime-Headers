@@ -21,7 +21,7 @@
 @property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
-- (void)_handleResponse:(unsigned long)arg1;
+- (void)_handleResponse:(unsigned long long)arg1;
 - (id)cancelButton;
 - (id)defaultButton;
 - (id)message;

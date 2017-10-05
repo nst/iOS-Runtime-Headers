@@ -6,17 +6,17 @@
     FKFriendsManager * _friendsManager;
 }
 
-@property (nonatomic, readonly) BOOL SOSLegacyContactsExist;
+@property (nonatomic, readonly) bool SOSLegacyContactsExist;
 @property (nonatomic, retain) FKFriendsManager *friendsManager;
 
-+ (BOOL)authorizedToUseContactStore;
++ (bool)authorizedToUseContactStore;
 + (id)contactStore;
 + (void)preloadContactStoreIfNecessary;
 
 - (void).cxx_destruct;
 - (id)SOSLegacyContacts;
 - (id)SOSLegacyContactsDestinations;
-- (BOOL)SOSLegacyContactsExist;
+- (bool)SOSLegacyContactsExist;
 - (id)_SOSDestinationsForFriend:(id)arg1;
 - (id)_SOSFormattedDestinationForFriend:(id)arg1 withDestinationNumber:(id)arg2;
 - (id)_SOSFriends;

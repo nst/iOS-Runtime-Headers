@@ -15,48 +15,52 @@
 - (NSDictionary *)analysisMetadata;
 - (<PLMomentAssetData> *)assetWithUniqueID:(NSObject<NSCopying> *)arg1 error:(id*)arg2;
 - (NSArray *)assetsWithUniqueIDs:(NSArray *)arg1 error:(id*)arg2;
-- (void)beginObservingNetworkReachabilityChangesWithBlock:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
-- (void)enumerateAssetsWithIDs:(void *)arg1 usingBlock:(void *)arg2; // needs 2 arg types, found 9: NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <PLMomentAssetData> *, unsigned int, BOOL*, void*
-- (<PLMomentListData> *)findOrCreateYearMomentListForYear:(int)arg1;
-- (BOOL)hasChanges;
+- (void)beginObservingNetworkReachabilityChangesWithBlock:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (void)enumerateAssetsWithIDs:(void *)arg1 usingBlock:(void *)arg2; // needs 2 arg types, found 9: NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <PLMomentAssetData> *, unsigned long long, bool*, void*
+- (<PLMomentListData> *)findOrCreateYearMomentListForYear:(long long)arg1;
+- (bool)hasChanges;
+- (bool)hasLocationsOfInterestInformation;
 - (NSDictionary *)homeAddressDictionary;
 - (<PLMomentData> *)insertNewMoment;
 - (<PLMomentListData> *)insertNewMomentListForGranularityLevel:(short)arg1;
+- (void)invalidateLocationsOfInterest;
 - (void)invalidateShiftedLocationForAllAssetsInMoments;
-- (BOOL)isMomentAnalysisNeeded;
-- (BOOL)isMomentsSupportedOnPlatform;
-- (BOOL)isNetworkReachable;
+- (bool)isMomentAnalysisNeeded;
+- (bool)isMomentsSupportedOnPlatform;
+- (bool)isNetworkReachable;
 - (NSDictionary *)locationCoordinatesForAssetIDs:(NSArray *)arg1;
+- (NSArray *)locationsOfInterest;
 - (Class)momentAssetDataClass;
 - (Class)momentDataClass;
-- (<PLMomentListData> *)momentListContainingDate:(NSDate *)arg1 forLevel:(short)arg2 wantsEarliest:(BOOL)arg3;
+- (<PLMomentListData> *)momentListContainingDate:(NSDate *)arg1 forLevel:(short)arg2 wantsEarliest:(bool)arg3;
 - (Class)momentListDataClassForGranularityLevel:(short)arg1;
 - (<PLMomentListData> *)momentListWithUniqueID:(NSObject<NSCopying> *)arg1 forLevel:(short)arg2 error:(id*)arg3;
 - (<PLMomentData> *)momentWithUniqueID:(NSObject<NSCopying> *)arg1 error:(id*)arg2;
-- (NSArray *)momentsBetweenDate:(NSDate *)arg1 andDate:(NSDate *)arg2 sorted:(BOOL)arg3;
+- (NSArray *)momentsBetweenDate:(NSDate *)arg1 andDate:(NSDate *)arg2 sorted:(bool)arg3;
 - (NSArray *)momentsBetweenDateRanges:(NSArray *)arg1;
 - (NSArray *)momentsSinceDate:(NSDate *)arg1;
-- (void)performBlock:(void *)arg1 synchronously:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 11: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*, BOOL, id /* block */, void*, void, id /* block */, void*
-- (void)performDataTransaction:(void *)arg1 synchronously:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 11: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*, BOOL, id /* block */, void*, void, id /* block */, void*
+- (bool)needsLocationsOfInterestProcessing;
+- (void)performBlock:(void *)arg1 synchronously:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 11: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*, bool, id /* block */, void*, void, id /* block */, void*
+- (void)performDataTransaction:(void *)arg1 synchronously:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 11: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*, bool, id /* block */, void*, void, id /* block */, void*
 - (void)resetOnFailure;
-- (BOOL)save:(id*)arg1;
-- (BOOL)saveAnalysisMetadata:(NSDictionary *)arg1;
-- (BOOL)saveServerVersionInfo:(NSDictionary *)arg1;
+- (bool)save:(id*)arg1;
+- (bool)saveAnalysisMetadata:(NSDictionary *)arg1;
+- (bool)saveServerVersionInfo:(NSDictionary *)arg1;
 - (NSDictionary *)serverVersionInfo;
-- (void)setMomentAnalysisNeeded:(BOOL)arg1;
+- (void)setMomentAnalysisNeeded:(bool)arg1;
 - (void)stopObservingNetworkReachabilityChanges;
-- (<PLMomentListData> *)yearMomentListForYear:(int)arg1 wantsEarliest:(BOOL)arg2;
+- (<PLMomentListData> *)yearMomentListForYear:(long long)arg1 wantsEarliest:(bool)arg2;
 
 @optional
 
-- (void)analysisCompletedWithSuccess:(BOOL)arg1;
+- (void)analysisCompletedWithSuccess:(bool)arg1;
 - (NSSet *)deletedObjects;
-- (unsigned int)hardGenerationBatchSizeLimit;
+- (unsigned long long)hardGenerationBatchSizeLimit;
 - (NSSet *)insertedObjects;
 - (<PLMomentAnalysisTransaction> *)momentAnalysisTransactionWithName:(const char *)arg1;
-- (void)pendingChangesUpdated:(unsigned int)arg1;
+- (void)pendingChangesUpdated:(unsigned long long)arg1;
 - (NSString *)replayLogPath;
 - (NSSet *)updatedObjects;
-- (BOOL)wantsMomentReplayLogging;
+- (bool)wantsMomentReplayLogging;
 
 @end

@@ -10,24 +10,22 @@
 @property (nonatomic) GKTurnBasedMatchmakerViewController *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) GKGame *game;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)dismissAutomaticallyAfterExtensionCompletion;
++ (bool)dismissAutomaticallyAfterExtensionCompletion;
 + (id)turnBasedMatchmakerExtension;
 
-- (id)contextForRequestIdentifier;
 - (void)dealloc;
 - (id)delegate;
-- (void)finishWithError:(id)arg1;
-- (void)finishWithMatch:(id)arg1;
-- (void)playerQuitMatch:(id)arg1;
+- (void)extensionIsCanceling;
+- (id)extensionObjectProxy;
+- (void)messageFromExtension:(id)arg1;
 - (void)refreshMatches;
-- (void)remoteViewControllerIsCanceling;
 - (void)setDelegate:(id)arg1;
 - (void)setMatchRequestInternal:(id)arg1;
-- (void)setShowExistingMatches:(BOOL)arg1;
-- (void)setShowPlay:(BOOL)arg1;
-- (void)setShowQuit:(BOOL)arg1;
+- (void)setShowExistingMatches:(bool)arg1;
+- (void)setShowPlay:(bool)arg1;
+- (void)setShowQuit:(bool)arg1;
 
 @end

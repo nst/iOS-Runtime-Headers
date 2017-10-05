@@ -5,7 +5,7 @@
 
 @optional
 
-- (UIViewController *)overlayViewControllerWithBackgroundStyle:(int)arg1;
-- (BOOL)shouldShowStatusOverlayForViewController:(UIViewController *)arg1;
+- (UIViewController *)overlayViewControllerWithBackgroundStyle:(long long)arg1;
+- (bool)shouldShowStatusOverlayForViewController:(UIViewController *)arg1;
 
 @end

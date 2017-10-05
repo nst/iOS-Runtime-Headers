@@ -16,7 +16,8 @@
 - (id)intent;
 - (id)intentSlotKeyPath;
 - (id)intentSlotValueIndex;
-- (BOOL)requiresResponse;
+- (bool)mutatingCommand;
+- (bool)requiresResponse;
 - (void)setIntent:(id)arg1;
 - (void)setIntentSlotKeyPath:(id)arg1;
 - (void)setIntentSlotValueIndex:(id)arg1;

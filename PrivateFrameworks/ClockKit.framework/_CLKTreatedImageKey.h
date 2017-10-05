@@ -3,23 +3,23 @@
  */
 
 @interface _CLKTreatedImageKey : NSObject <NSCopying> {
-    BOOL  _maskToCircle;
+    bool  _maskToCircle;
     UIImage * _rawImage;
-    float  _scale;
+    double  _scale;
 }
 
-@property (nonatomic, readonly) BOOL maskToCircle;
+@property (nonatomic, readonly) bool maskToCircle;
 @property (nonatomic, readonly) UIImage *rawImage;
-@property (nonatomic, readonly) float scale;
+@property (nonatomic, readonly) double scale;
 
-+ (id)keyWithRawImage:(id)arg1 scale:(float)arg2 mask:(BOOL)arg3;
++ (id)keyWithRawImage:(id)arg1 scale:(double)arg2 mask:(bool)arg3;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)maskToCircle;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)maskToCircle;
 - (id)rawImage;
-- (float)scale;
+- (double)scale;
 
 @end

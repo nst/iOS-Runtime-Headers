@@ -5,29 +5,29 @@
 @interface DOMHTMLButtonElement : DOMHTMLElement
 
 @property (copy) NSString *accessKey;
-@property BOOL autofocus;
-@property BOOL disabled;
+@property bool autofocus;
+@property bool disabled;
 @property (readonly) DOMHTMLFormElement *form;
 @property (copy) NSString *name;
 @property (copy) NSString *type;
 @property (copy) NSString *value;
-@property (readonly) BOOL willValidate;
+@property (readonly) bool willValidate;
 
 - (id)accessKey;
-- (BOOL)autofocus;
+- (bool)autofocus;
 - (void)click;
-- (BOOL)disabled;
+- (bool)disabled;
 - (id)form;
 - (id)name;
 - (void)setAccessKey:(id)arg1;
-- (void)setAutofocus:(BOOL)arg1;
-- (void)setDisabled:(BOOL)arg1;
+- (void)setAutofocus:(bool)arg1;
+- (void)setDisabled:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setType:(id)arg1;
 - (void)setValue:(id)arg1;
 - (int)structuralComplexityContribution;
 - (id)type;
 - (id)value;
-- (BOOL)willValidate;
+- (bool)willValidate;
 
 @end

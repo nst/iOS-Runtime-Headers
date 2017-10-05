@@ -4,7 +4,7 @@
 
 @interface NTKTimelineExtendDataOperation : NTKTimelineDataOperation {
     NSDate * _boundaryDate;
-    BOOL  _extendsLeft;
+    bool  _extendsLeft;
     id /* block */  _handler;
 }
 

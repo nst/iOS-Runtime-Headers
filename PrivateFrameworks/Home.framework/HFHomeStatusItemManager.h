@@ -3,47 +3,39 @@
  */
 
 @interface HFHomeStatusItemManager : HFItemManager {
-    unsigned int  _latestOverallLoadingState;
-    int  _latestOverallPriority;
-    unsigned int  _maxStatusItemCount;
+    unsigned long long  _latestOverallLoadingState;
+    long long  _latestOverallPriority;
+    unsigned long long  _maxStatusItemCount;
     HFStaticItem * _showDetailsItem;
-    HFStaticItemProvider * _staticItemProvider;
     HFStatusItemProvider * _statusItemProvider;
-    Class  _weatherStatusItemClass;
 }
 
-@property (nonatomic) unsigned int latestOverallLoadingState;
-@property (nonatomic) int latestOverallPriority;
-@property (nonatomic) unsigned int maxStatusItemCount;
+@property (nonatomic) unsigned long long latestOverallLoadingState;
+@property (nonatomic) long long latestOverallPriority;
+@property (nonatomic) unsigned long long maxStatusItemCount;
 @property (nonatomic, retain) HFStaticItem *showDetailsItem;
-@property (nonatomic, retain) HFStaticItemProvider *staticItemProvider;
 @property (nonatomic, retain) HFStatusItemProvider *statusItemProvider;
-@property (nonatomic, readonly) Class weatherStatusItemClass;
 
 - (void).cxx_destruct;
+- (id)_buildItemProvidersForHome:(id)arg1;
 - (id /* block */)_comparatorForSectionIdentifier:(id)arg1;
-- (void)_createItemProvidersWithHome:(id)arg1;
 - (void)_didFinishUpdateTransactionWithAffectedItems:(id)arg1;
-- (id)_itemProviders;
 - (id)_itemsToHideInSet:(id)arg1;
-- (int)_overallPriority;
-- (BOOL)_requiresNotificationsForCharacteristic:(id)arg1;
-- (id)_styleForItem:(id)arg1;
+- (long long)_overallPriority;
+- (unsigned long long)_overflowStatusItemCount;
+- (bool)_requiresNotificationsForCharacteristic:(id)arg1;
+- (id)_showDetailsItemTitle;
 - (id)initWithDelegate:(id)arg1 sourceItem:(id)arg2;
-- (id)initWithMaxStatusItems:(unsigned int)arg1 weatherStatusItemClass:(Class)arg2 delegate:(id)arg3;
-- (unsigned int)latestOverallLoadingState;
-- (int)latestOverallPriority;
-- (unsigned int)maxStatusItemCount;
-- (unsigned int)overflowStatusItemCount;
-- (void)setLatestOverallLoadingState:(unsigned int)arg1;
-- (void)setLatestOverallPriority:(int)arg1;
-- (void)setMaxStatusItemCount:(unsigned int)arg1;
+- (id)initWithMaxStatusItems:(unsigned long long)arg1 delegate:(id)arg2;
+- (unsigned long long)latestOverallLoadingState;
+- (long long)latestOverallPriority;
+- (unsigned long long)maxStatusItemCount;
+- (void)setLatestOverallLoadingState:(unsigned long long)arg1;
+- (void)setLatestOverallPriority:(long long)arg1;
+- (void)setMaxStatusItemCount:(unsigned long long)arg1;
 - (void)setShowDetailsItem:(id)arg1;
-- (void)setStaticItemProvider:(id)arg1;
 - (void)setStatusItemProvider:(id)arg1;
 - (id)showDetailsItem;
-- (id)staticItemProvider;
 - (id)statusItemProvider;
-- (Class)weatherStatusItemClass;
 
 @end

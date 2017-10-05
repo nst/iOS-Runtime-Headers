@@ -14,7 +14,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)data;
-- (id)initWithBookmarkAndHistoryCompletionMatch:(struct PassRefPtr<SafariShared::BookmarkAndHistoryCompletionMatch> { struct BookmarkAndHistoryCompletionMatch {} *x1; })arg1;
+- (id)initWithBookmarkAndHistoryCompletionMatch:(struct Ref<SafariShared::BookmarkAndHistoryCompletionMatch> { struct BookmarkAndHistoryCompletionMatch {} *x1; }*)arg1 userInput:(id)arg2;
 - (id)originalURLString;
 - (id)parsecDomainIdentifier;
 - (id)title;

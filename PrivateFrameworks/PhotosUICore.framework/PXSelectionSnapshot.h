@@ -15,7 +15,7 @@
 - (id)description;
 - (id)init;
 - (id)initWithDataSource:(id)arg1 selectedIndexPaths:(id)arg2;
-- (BOOL)isIndexPathSelected:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg1;
+- (bool)isIndexPathSelected:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg1;
 - (id)selectedIndexPaths;
 
 @end

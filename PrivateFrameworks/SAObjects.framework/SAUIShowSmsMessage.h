@@ -4,7 +4,7 @@
 
 @interface SAUIShowSmsMessage : SAUISnippet
 
-@property (nonatomic) BOOL showAsDraft;
+@property (nonatomic) bool showAsDraft;
 @property (nonatomic, retain) SASmsSms *sms;
 
 + (id)showSmsMessage;
@@ -12,9 +12,9 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (void)setShowAsDraft:(BOOL)arg1;
+- (void)setShowAsDraft:(bool)arg1;
 - (void)setSms:(id)arg1;
-- (BOOL)showAsDraft;
+- (bool)showAsDraft;
 - (id)sms;
 
 @end

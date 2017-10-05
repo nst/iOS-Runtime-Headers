@@ -4,35 +4,35 @@
 
 @interface CFCBNightShiftStatus : SADomainCommand <SAAceSerializable>
 
-@property (nonatomic) BOOL active;
+@property (nonatomic) bool active;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL enabled;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool enabled;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *nightShiftMode;
 @property (nonatomic, retain) CFCBNightShiftSchedule *nightShiftSchedule;
-@property (nonatomic) BOOL sunSchedulePermitted;
+@property (nonatomic) bool sunSchedulePermitted;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL supported;
+@property (nonatomic) bool supported;
 
-+ (id)newAceObjectWithDictionary:(id)arg1 context:(id)arg2;
++ (id)aceObjectWithDictionary:(id)arg1 context:(id)arg2;
 + (id)nightShiftStatus;
 + (id)nightShiftStatusWithDictionary:(id)arg1 context:(id)arg2;
 
-- (BOOL)active;
-- (BOOL)enabled;
+- (bool)active;
+- (bool)enabled;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)nightShiftMode;
 - (id)nightShiftSchedule;
-- (BOOL)requiresResponse;
-- (void)setActive:(BOOL)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (bool)requiresResponse;
+- (void)setActive:(bool)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setNightShiftMode:(id)arg1;
 - (void)setNightShiftSchedule:(id)arg1;
-- (void)setSunSchedulePermitted:(BOOL)arg1;
-- (void)setSupported:(BOOL)arg1;
-- (BOOL)sunSchedulePermitted;
-- (BOOL)supported;
+- (void)setSunSchedulePermitted:(bool)arg1;
+- (void)setSupported:(bool)arg1;
+- (bool)sunSchedulePermitted;
+- (bool)supported;
 
 @end

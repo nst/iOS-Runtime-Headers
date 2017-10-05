@@ -4,15 +4,15 @@
 
 @interface SKUIJSITunesStore : IKJSITunesStore <SKUIItemStateCenterObserver, SKUIJSITunesStore> {
     SKUIClientContext * _clientContext;
-    BOOL  _isAppPreview;
+    bool  _isAppPreview;
 }
 
-@property (nonatomic) int applicationIconBadgeNumber;
+@property (nonatomic) long long applicationIconBadgeNumber;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *hostApp;
-@property (nonatomic, readonly) BOOL isAppPreview;
+@property (nonatomic, readonly) bool isAppPreview;
 @property (nonatomic, readonly) SKUIJSAppleAccount *primaryAppleAccount;
 @property (nonatomic, readonly) SKUIJSRestrictions *restrictions;
 @property (readonly) Class superclass;
@@ -24,9 +24,9 @@
 - (id)_millisecondsFromTimeInterval:(double)arg1;
 - (void)_purchaseRequestDidSucceedNotification:(id)arg1;
 - (id)_rentalInfoFromMediaItems:(id)arg1;
-- (int)applicationIconBadgeNumber;
+- (long long)applicationIconBadgeNumber;
 - (void)approveInPerson:(id)arg1 :(id)arg2;
-- (BOOL)areVideosCloudPurchasesEnabled;
+- (bool)areVideosCloudPurchasesEnabled;
 - (void)attemptLocalAskToBuyApproval:(id)arg1;
 - (void)buy:(id)arg1;
 - (void)clearToggleStateItems;
@@ -47,7 +47,7 @@
 - (void)headsUp:(id)arg1 :(id)arg2;
 - (id)hostApp;
 - (id)initWithAppContext:(id)arg1 clientContext:(id)arg2;
-- (BOOL)isAppPreview;
+- (bool)isAppPreview;
 - (void)isInstalledApp:(id)arg1 :(id)arg2;
 - (void)isRemovedSystemApp:(id)arg1 :(id)arg2;
 - (void)itemStateCenterMediaLibrariesDidChange:(id)arg1;
@@ -58,19 +58,19 @@
 - (void)log:(id)arg1;
 - (id)primaryAppleAccount;
 - (void)resetStateForActiveDocument;
-- (BOOL)resourceExists:(id)arg1;
+- (bool)resourceExists:(id)arg1;
 - (void)restoreRemovedSystemApp:(id)arg1 :(id)arg2;
 - (id)restrictions;
-- (BOOL)sendAppPreviewStateChanged:(BOOL)arg1;
+- (bool)sendAppPreviewStateChanged:(bool)arg1;
 - (void)sendApplicationDidEnterBackground;
 - (void)sendApplicationWillEnterForeground;
-- (void)sendApplicationWindowSizeDidUpdate:(struct CGSize { float x1; float x2; })arg1;
-- (void)sendOnNavigationStackWillPop:(BOOL)arg1;
+- (void)sendApplicationWindowSizeDidUpdate:(struct CGSize { double x1; double x2; })arg1;
+- (void)sendOnNavigationStackWillPop:(bool)arg1;
 - (void)sendOnPageResponseWithDocument:(id)arg1 data:(id)arg2 URLResponse:(id)arg3 performanceMetrics:(id)arg4;
-- (BOOL)sendOnShowPageEventType:(id)arg1 data:(id)arg2;
-- (BOOL)sendOnXEventWithDictionary:(id)arg1;
-- (void)setApplicationIconBadgeNumber:(int)arg1;
+- (bool)sendOnShowPageEventType:(id)arg1 data:(id)arg2;
+- (bool)sendOnXEventWithDictionary:(id)arg1;
+- (void)setApplicationIconBadgeNumber:(long long)arg1;
 - (void)setPreviewOverlay:(id)arg1 :(id)arg2;
-- (void)updateToggleStateForItem:(id)arg1 toggled:(BOOL)arg2 :(id)arg3;
+- (void)updateToggleStateForItem:(id)arg1 toggled:(bool)arg2 :(id)arg3;
 
 @end

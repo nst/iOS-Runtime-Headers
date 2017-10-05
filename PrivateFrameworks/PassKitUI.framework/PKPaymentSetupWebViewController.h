@@ -4,27 +4,27 @@
 
 @interface PKPaymentSetupWebViewController : UIViewController <UIWebViewDelegate> {
     NSURL * _URL;
-    int  _context;
+    long long  _context;
     UIWebView * _webView;
 }
 
-@property (nonatomic) int context;
+@property (nonatomic) long long context;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_webViewDidLoad:(BOOL)arg1 withError:(id)arg2;
-- (int)context;
+- (void)_webViewDidLoad:(bool)arg1 withError:(id)arg2;
+- (long long)context;
 - (void)handleDone:(id)arg1;
-- (id)initWithURL:(id)arg1 context:(int)arg2;
-- (void)setContext:(int)arg1;
+- (id)initWithURL:(id)arg1 context:(long long)arg2;
+- (void)setContext:(long long)arg1;
 - (void)viewDidLoad;
 - (void)viewWillLayoutSubviews;
 - (id)webView;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
-- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
+- (bool)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(long long)arg3;
 - (void)webViewDidFinishLoad:(id)arg1;
 
 @end

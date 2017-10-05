@@ -3,17 +3,17 @@
  */
 
 @interface EKCalendarItemCalendarEditItem : EKCalendarItemEditItem {
-    unsigned int  _entityType;
+    unsigned long long  _entityType;
 }
 
-- (BOOL)_shouldShowSourceForCalendar:(id)arg1;
-- (BOOL)canBeConfiguredForCalendarConstraints:(id)arg1;
-- (id)cellForSubitemAtIndex:(unsigned int)arg1;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned int)arg2;
-- (BOOL)editItemViewControllerSave:(id)arg1;
+- (bool)_shouldShowSourceForCalendar:(id)arg1;
+- (bool)canBeConfiguredForCalendarConstraints:(id)arg1;
+- (id)cellForSubitemAtIndex:(unsigned long long)arg1;
+- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned long long)arg2;
+- (bool)editItemViewControllerSave:(id)arg1;
 - (id)init;
-- (id)initWithEntityType:(unsigned int)arg1;
-- (BOOL)requiresReconfigurationOnSave;
-- (BOOL)shouldAppearWithVisibility:(int)arg1;
+- (id)initWithEntityType:(unsigned long long)arg1;
+- (bool)requiresReconfigurationOnSave;
+- (bool)shouldAppearWithVisibility:(int)arg1;
 
 @end

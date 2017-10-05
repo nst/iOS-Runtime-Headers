@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)isPlaying;
+- (bool)isPlaying;
 
 @end

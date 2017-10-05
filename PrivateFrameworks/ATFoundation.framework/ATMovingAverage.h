@@ -3,20 +3,20 @@
  */
 
 @interface ATMovingAverage : NSObject {
-    unsigned int  _count;
-    unsigned int  _index;
+    unsigned long long  _count;
+    unsigned long long  _index;
     double * _values;
-    unsigned int  _window;
+    unsigned long long  _window;
 }
 
 @property (nonatomic, readonly) double average;
-@property (nonatomic, readonly) unsigned int window;
+@property (nonatomic, readonly) unsigned long long window;
 
 - (double)average;
 - (void)dealloc;
-- (id)initWithWindow:(unsigned int)arg1;
+- (id)initWithWindow:(unsigned long long)arg1;
 - (void)reset;
 - (void)update:(double)arg1;
-- (unsigned int)window;
+- (unsigned long long)window;
 
 @end

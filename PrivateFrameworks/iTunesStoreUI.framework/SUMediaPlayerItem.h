@@ -6,9 +6,9 @@
     NSURL * _backgroundImageURL;
     NSString * _bookmarkIdentifier;
     NSArray * _downloadPingURLs;
-    int  _initialOrientation;
+    long long  _initialOrientation;
     unsigned long long  _itemIdentifier;
-    int  _itemType;
+    long long  _itemType;
     double  _playableDuration;
     NSArray * _playbackPingURLs;
     NSString * _subtitle;
@@ -21,9 +21,9 @@
 @property (nonatomic, copy) NSString *bookmarkIdentifier;
 @property (nonatomic) double bookmarkedStartTime;
 @property (nonatomic, copy) NSArray *downloadPingURLs;
-@property (nonatomic) int initialOrientation;
+@property (nonatomic) long long initialOrientation;
 @property (nonatomic) unsigned long long itemIdentifier;
-@property (nonatomic) int itemType;
+@property (nonatomic) long long itemType;
 @property (nonatomic) double playableDuration;
 @property (nonatomic, copy) NSArray *playbackPingURLs;
 @property (nonatomic, copy) NSString *subtitle;
@@ -38,9 +38,9 @@
 - (void)dealloc;
 - (id)downloadPingURLs;
 - (id)initWithItem:(id)arg1;
-- (int)initialOrientation;
+- (long long)initialOrientation;
 - (unsigned long long)itemIdentifier;
-- (int)itemType;
+- (long long)itemType;
 - (double)playableDuration;
 - (id)playbackPingURLs;
 - (void)resetBookmarkedStartTime;
@@ -48,9 +48,9 @@
 - (void)setBookmarkIdentifier:(id)arg1;
 - (void)setBookmarkedStartTime:(double)arg1;
 - (void)setDownloadPingURLs:(id)arg1;
-- (void)setInitialOrientation:(int)arg1;
+- (void)setInitialOrientation:(long long)arg1;
 - (void)setItemIdentifier:(unsigned long long)arg1;
-- (void)setItemType:(int)arg1;
+- (void)setItemType:(long long)arg1;
 - (void)setPlayableDuration:(double)arg1;
 - (void)setPlaybackPingURLs:(id)arg1;
 - (void)setSubtitle:(id)arg1;

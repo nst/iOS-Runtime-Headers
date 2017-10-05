@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)preventsChangesToSublayerHierarchy;
-- (void)setPreventsChangesToSublayerHierarchy:(BOOL)arg1;
+- (bool)preventsChangesToSublayerHierarchy;
+- (void)setPreventsChangesToSublayerHierarchy:(bool)arg1;
 
 @end

@@ -4,30 +4,30 @@
 
 @interface DKOpenGLRenderer : NSObject {
     void U_COLOR;
-    BOOL  _allowWetComposite;
-    float  _backingScale;
+    bool  _allowWetComposite;
+    double  _backingScale;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _bounds;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _contentSize;
     <DKOpenGLRendererDelegate> * _delegate;
-    BOOL  _didNotifyRendererDelegate;
-    BOOL  _drawingEnabled;
-    BOOL  _ignoreFirstUndoItem;
+    bool  _didNotifyRendererDelegate;
+    bool  _drawingEnabled;
+    bool  _ignoreFirstUndoItem;
     UIColor * _inkColor;
-    float  _lineWidthScale;
-    int  _numPages;
-    BOOL  _undoEnabled;
+    double  _lineWidthScale;
+    long long  _numPages;
+    bool  _undoEnabled;
     unsigned int  mAttributes;
     int  mBufferSize;
     void mCanvasOffset;
@@ -46,12 +46,12 @@
     }  mContiguousVertexStorage;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  mDirtyCanvasRegion;
     unsigned int  mDryPaintProg;
@@ -79,8 +79,8 @@
         } __end_cap_; 
     }  mVertexHistory;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  mVertexRange;
     unsigned int  mWetPaintBufferFBO;
     void mWetPaintBufferSize;
@@ -92,31 +92,31 @@
     void mWinSize;
 }
 
-@property (nonatomic) BOOL allowWetComposite;
-@property (nonatomic) float backingScale;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } contentSize;
+@property (nonatomic) bool allowWetComposite;
+@property (nonatomic) double backingScale;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } contentSize;
 @property (nonatomic) <DKOpenGLRendererDelegate> *delegate;
-@property (nonatomic) BOOL drawingEnabled;
-@property (nonatomic) BOOL ignoreFirstUndoItem;
+@property (nonatomic) bool drawingEnabled;
+@property (nonatomic) bool ignoreFirstUndoItem;
 @property (nonatomic, retain) UIColor *inkColor;
-@property (nonatomic) float lineWidthScale;
-@property (nonatomic) int numPages;
-@property (getter=isUndoEnabled, nonatomic) BOOL undoEnabled;
+@property (nonatomic) double lineWidthScale;
+@property (nonatomic) long long numPages;
+@property (getter=isUndoEnabled, nonatomic) bool undoEnabled;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)addPoints:(id)arg1 withSegmentLength:(unsigned int)arg2;
-- (BOOL)allowWetComposite;
+- (void)addPoints:(id)arg1 withSegmentLength:(unsigned long long)arg2;
+- (bool)allowWetComposite;
 - (void)appendVertexHistoryElement;
-- (float)backingScale;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (BOOL)canvasIsEmpty;
+- (double)backingScale;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
+- (bool)canvasIsEmpty;
 - (void)clear;
 - (void)clearComposite;
 - (void)clearDryPaintBuffer;
 - (void)clearWetPaintBuffer;
-- (struct CGSize { float x1; float x2; })contentSize;
+- (struct CGSize { double x1; double x2; })contentSize;
 - (void)dealloc;
 - (id)delegate;
 - (void)destroyFrameBuffers;
@@ -126,44 +126,44 @@
 - (void)didResize;
 - (void)draw;
 - (void)drawComposite;
-- (void)drawContiguousVertexStorageImmediatelyWithLayeredBlending:(BOOL)arg1;
-- (BOOL)drawingEnabled;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })getVertexBounds;
-- (BOOL)ignoreFirstUndoItem;
+- (void)drawContiguousVertexStorageImmediatelyWithLayeredBlending:(bool)arg1;
+- (bool)drawingEnabled;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })getVertexBounds;
+- (bool)ignoreFirstUndoItem;
 - (id)init;
-- (BOOL)initGL;
-- (id)initWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 scale:(float)arg2;
-- (id)initWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 scale:(float)arg2 bufferSize:(int)arg3;
+- (bool)initGL;
+- (id)initWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 scale:(double)arg2;
+- (id)initWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 scale:(double)arg2 bufferSize:(int)arg3;
 - (void)initializeFrameBuffers;
 - (id)inkColor;
-- (BOOL)isUndoEnabled;
-- (float)lineWidthScale;
-- (int)numPages;
-- (void)redrawEntireDrawingImmediatelyWithLayeredBlending:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })regionWithVertices:(struct vector<Vertex, std::__1::allocator<Vertex> > { struct Vertex {} *x1; struct Vertex {} *x2; struct __compressed_pair<Vertex *, std::__1::allocator<Vertex> > { struct Vertex {} *x_3_1_1; } x3; })arg1 withInflationAmount:(float)arg2;
+- (bool)isUndoEnabled;
+- (double)lineWidthScale;
+- (long long)numPages;
+- (void)redrawEntireDrawingImmediatelyWithLayeredBlending:(bool)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })regionWithVertices:(struct vector<Vertex, std::__1::allocator<Vertex> > { struct Vertex {} *x1; struct Vertex {} *x2; struct __compressed_pair<Vertex *, std::__1::allocator<Vertex> > { struct Vertex {} *x_3_1_1; } x3; })arg1 withInflationAmount:(float)arg2;
 - (void)removeVertexHistoryElement;
-- (void)renderToComposite:(BOOL)arg1;
+- (void)renderToComposite:(bool)arg1;
 - (void)renderToDryPaintBuffer;
-- (void)renderToWetPaintBufferWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)renderToWetPaintBufferWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)resetRendererState;
-- (void)setAllowWetComposite:(BOOL)arg1;
-- (void)setBackingScale:(float)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setAllowWetComposite:(bool)arg1;
+- (void)setBackingScale:(double)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDrawingEnabled:(BOOL)arg1;
-- (void)setIgnoreFirstUndoItem:(BOOL)arg1;
+- (void)setDrawingEnabled:(bool)arg1;
+- (void)setIgnoreFirstUndoItem:(bool)arg1;
 - (void)setInkColor:(id)arg1;
-- (void)setLineWidthScale:(float)arg1;
-- (void)setNumPages:(int)arg1;
-- (void)setUndoEnabled:(BOOL)arg1;
+- (void)setLineWidthScale:(double)arg1;
+- (void)setNumPages:(long long)arg1;
+- (void)setUndoEnabled:(bool)arg1;
 - (id)snapshot;
 - (void)teardown;
 - (void)undo;
 - (void)update;
-- (void)updateDryCycleIncludingComposite:(BOOL)arg1;
+- (void)updateDryCycleIncludingComposite:(bool)arg1;
 - (void)updateDryForcefully;
-- (void)updateVertexControllerWithData:(struct vector<Vertex, std::__1::allocator<Vertex> > { struct Vertex {} *x1; struct Vertex {} *x2; struct __compressed_pair<Vertex *, std::__1::allocator<Vertex> > { struct Vertex {} *x_3_1_1; } x3; })arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 allowWet:(BOOL)arg3;
-- (void)updateVertexControllerWithDataRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 allowWet:(BOOL)arg2;
+- (void)updateVertexControllerWithData:(struct vector<Vertex, std::__1::allocator<Vertex> > { struct Vertex {} *x1; struct Vertex {} *x2; struct __compressed_pair<Vertex *, std::__1::allocator<Vertex> > { struct Vertex {} *x_3_1_1; } x3; })arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 allowWet:(bool)arg3;
+- (void)updateVertexControllerWithDataRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 allowWet:(bool)arg2;
 - (void)updateWet;
 
 @end

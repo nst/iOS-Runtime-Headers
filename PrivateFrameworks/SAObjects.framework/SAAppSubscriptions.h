@@ -4,21 +4,18 @@
 
 @interface SAAppSubscriptions : AceObject <SABackgroundContextObject>
 
-@property (nonatomic, copy) NSArray *activeSubscriptionBundleIds;
 @property (nonatomic, copy) NSArray *activeSubscriptions;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)appSubscriptions;
 + (id)appSubscriptionsWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)activeSubscriptionBundleIds;
 - (id)activeSubscriptions;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (void)setActiveSubscriptionBundleIds:(id)arg1;
 - (void)setActiveSubscriptions:(id)arg1;
 
 @end

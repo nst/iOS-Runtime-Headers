@@ -13,7 +13,7 @@
 @property (nonatomic, retain) NSUUID *streamUUID;
 
 + (id)loadFromClientStateInSession:(id)arg1 options:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

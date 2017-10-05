@@ -3,21 +3,21 @@
  */
 
 @interface CAMModeSwitchTestHarness : CAMModeAndDeviceConfigurationTestHarness {
-    int  _desiredMode;
-    BOOL  _testingAnimation;
+    long long  _desiredMode;
+    bool  _testingAnimation;
     CAMViewfinderViewController * _viewfinderViewController;
 }
 
-@property (nonatomic, readonly) int desiredMode;
-@property (getter=isTestingAnimation, nonatomic, readonly) BOOL testingAnimation;
+@property (nonatomic, readonly) long long desiredMode;
+@property (getter=isTestingAnimation, nonatomic, readonly) bool testingAnimation;
 @property (nonatomic, readonly) CAMViewfinderViewController *viewfinderViewController;
 
 - (void).cxx_destruct;
-- (void)_ensureCaptureMode:(int)arg1 thenPerform:(id /* block */)arg2;
-- (int)desiredMode;
-- (void)handleDidOpenViewfinderForReason:(int)arg1;
-- (id)initWithTestName:(id)arg1 viewfinderViewController:(id)arg2 mode:(int)arg3 testingAnimation:(BOOL)arg4;
-- (BOOL)isTestingAnimation;
+- (void)_ensureCaptureMode:(long long)arg1 thenPerform:(id /* block */)arg2;
+- (long long)desiredMode;
+- (void)handleDidOpenViewfinderForReason:(long long)arg1;
+- (id)initWithTestName:(id)arg1 viewfinderViewController:(id)arg2 mode:(long long)arg3 testingAnimation:(bool)arg4;
+- (bool)isTestingAnimation;
 - (void)startTesting;
 - (id)viewfinderViewController;
 

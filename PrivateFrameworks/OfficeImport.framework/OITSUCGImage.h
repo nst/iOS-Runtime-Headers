@@ -4,17 +4,17 @@
 
 @interface OITSUCGImage : OITSUImage {
     struct CGImage { } * mCGImage;
-    int  mOrientation;
-    float  mScale;
+    long long  mOrientation;
+    double  mScale;
 }
 
 - (struct CGImage { }*)CGImage;
-- (struct CGImage { }*)CGImageForSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGImage { }*)CGImageForSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (int)imageOrientation;
-- (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(float)arg2 orientation:(int)arg3;
-- (float)scale;
-- (struct CGSize { float x1; float x2; })size;
+- (long long)imageOrientation;
+- (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(double)arg2 orientation:(long long)arg3;
+- (double)scale;
+- (struct CGSize { double x1; double x2; })size;
 
 @end

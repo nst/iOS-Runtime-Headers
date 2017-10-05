@@ -9,17 +9,17 @@
 
 - (id)createHandler;
 - (id)description;
-- (int)elementCount;
-- (BOOL)getElementClassIdentifier:(id*)arg1 value:(id*)arg2 atIndex:(int)arg3;
-- (unsigned int)hash;
+- (long long)elementCount;
+- (bool)getElementClassIdentifier:(id*)arg1 value:(id*)arg2 atIndex:(long long)arg3;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)modelIdentifier;
 - (id)recognitionAction;
 - (id)recognitionResultByReplacingValueForClassIdentifier:(id)arg1 withValue:(id)arg2;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (void)setRecognitionAction:(id)arg1;
 - (id)valueOfFirstElementWithClassIdentifier:(id)arg1;
 

@@ -4,37 +4,37 @@
 
 @interface ETColorWheelView : DTSColorWheel {
     ETColorGradientView * _gradientView;
-    BOOL  _handlingTouches;
-    float  _originalPickerRotation;
-    float  _originalRotation;
+    bool  _handlingTouches;
+    double  _originalPickerRotation;
+    double  _originalRotation;
     UIColor * _selectedColor;
 }
 
 @property (nonatomic, readonly) UIColor *selectedColor;
 
-+ (float)colorWheelWidth;
++ (double)colorWheelWidth;
 + (struct CGColor { }*)pickerBorderColor;
-+ (float)pickerDiameter;
-+ (float)pickerWidth;
++ (double)pickerDiameter;
++ (double)pickerWidth;
 
 - (void).cxx_destruct;
 - (void)addPickerCircleForPaletteCircle:(id)arg1;
 - (void)animatePickerToOriginalPosition;
 - (void)beganTouches:(id)arg1;
-- (float)colorWheelDismissalRotation;
-- (float)colorWheelRadius;
+- (double)colorWheelDismissalRotation;
+- (double)colorWheelRadius;
 - (void)doneButtonTapped:(id)arg1;
 - (void)finishedTouches;
-- (float)gradientWidth;
-- (void)hideColorWheelPickingColor:(BOOL)arg1;
+- (double)gradientWidth;
+- (void)hideColorWheelPickingColor:(bool)arg1;
 - (void)hideDoneButton;
 - (void)hideDoneButtonAnimated;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)pickerDiameter;
-- (BOOL)pickerShouldDismissClockwise;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)pickerDiameter;
+- (bool)pickerShouldDismissClockwise;
 - (id)pickerViewHighlightedColor;
 - (id)selectedColor;
-- (void)showColorWheelFromPaletteCircle:(id)arg1 rotation:(float)arg2;
+- (void)showColorWheelFromPaletteCircle:(id)arg1 rotation:(double)arg2;
 - (void)showDoneButtonAnimated;
 
 @end

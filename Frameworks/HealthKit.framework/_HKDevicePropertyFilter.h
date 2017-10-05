@@ -14,21 +14,21 @@
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
-+ (BOOL)_acceptsOperatorType:(unsigned int)arg1;
++ (bool)_acceptsOperatorType:(unsigned long long)arg1;
 + (id)_keyPathForProperty:(id)arg1;
-+ (id)filterForKeyPath:(id)arg1 predicateOperatorType:(unsigned int)arg2 value:(id)arg3 dataTypes:(id)arg4;
++ (id)filterForKeyPath:(id)arg1 predicateOperatorType:(unsigned long long)arg2 value:(id)arg3 dataTypes:(id)arg4;
 + (id)filterWithDeviceProperty:(id)arg1 allowedValues:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_initWithKey:(id)arg1 allowedValues:(id)arg2;
-- (BOOL)acceptsDataObject:(id)arg1;
+- (bool)acceptsDataObject:(id)arg1;
 - (id)allowedValues;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)keyPath;
 - (id)propertyKey;
 

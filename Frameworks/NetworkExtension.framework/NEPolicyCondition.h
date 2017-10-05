@@ -5,13 +5,13 @@
 @interface NEPolicyCondition : NSObject <NEPrettyDescription> {
     NSString * _accountIdentifier;
     NSUUID * _applicationUUID;
-    int  _conditionType;
+    long long  _conditionType;
     NSString * _customEntitlement;
     NSString * _domain;
     NWAddressEndpoint * _endAddress;
     NSString * _interfaceName;
     unsigned short  _ipProtocol;
-    BOOL  _negative;
+    bool  _negative;
     int  _pid;
     unsigned char  _prefix;
     NWAddressEndpoint * _startAddress;
@@ -22,13 +22,13 @@
 
 @property (copy) NSString *accountIdentifier;
 @property (copy) NSUUID *applicationUUID;
-@property int conditionType;
+@property long long conditionType;
 @property (retain) NSString *customEntitlement;
 @property (copy) NSString *domain;
 @property (retain) NWAddressEndpoint *endAddress;
 @property (copy) NSString *interfaceName;
 @property unsigned short ipProtocol;
-@property (getter=isNegative) BOOL negative;
+@property (getter=isNegative) bool negative;
 @property int pid;
 @property unsigned char prefix;
 @property (retain) NWAddressEndpoint *startAddress;
@@ -55,32 +55,32 @@
 
 - (void).cxx_destruct;
 - (id)accountIdentifier;
-- (BOOL)addTLVsToMessage:(id)arg1;
+- (bool)addTLVsToMessage:(id)arg1;
 - (id)applicationUUID;
-- (int)conditionType;
+- (long long)conditionType;
 - (id)conditionTypeString;
 - (unsigned char)conditionTypeValue;
 - (id)customEntitlement;
 - (id)description;
-- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 - (id)domain;
 - (id)endAddress;
 - (id)init;
 - (id)initInternal;
 - (id)interfaceName;
 - (unsigned short)ipProtocol;
-- (BOOL)isNegative;
+- (bool)isNegative;
 - (int)pid;
 - (unsigned char)prefix;
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setApplicationUUID:(id)arg1;
-- (void)setConditionType:(int)arg1;
+- (void)setConditionType:(long long)arg1;
 - (void)setCustomEntitlement:(id)arg1;
 - (void)setDomain:(id)arg1;
 - (void)setEndAddress:(id)arg1;
 - (void)setInterfaceName:(id)arg1;
 - (void)setIpProtocol:(unsigned short)arg1;
-- (void)setNegative:(BOOL)arg1;
+- (void)setNegative:(bool)arg1;
 - (void)setPid:(int)arg1;
 - (void)setPrefix:(unsigned char)arg1;
 - (void)setStartAddress:(id)arg1;
@@ -91,6 +91,6 @@
 - (unsigned int)trafficClassEnd;
 - (unsigned int)trafficClassStart;
 - (unsigned int)uid;
-- (BOOL)validate;
+- (bool)validate;
 
 @end

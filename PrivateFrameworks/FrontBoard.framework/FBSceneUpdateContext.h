@@ -5,32 +5,30 @@
 @interface FBSceneUpdateContext : NSObject <BSDescriptionProviding> {
     NSString * _sceneID;
     FBSSceneSettingsDiff * _settingsDiff;
-    unsigned int  _transactionID;
+    unsigned long long  _transactionID;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, copy) NSString *sceneID;
-@property (nonatomic, retain) FBSSceneSettingsDiff *settingsDiff;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly, copy) NSString *sceneID;
+@property (nonatomic, readonly, retain) FBSSceneSettingsDiff *settingsDiff;
 @property (readonly) Class superclass;
-@property (nonatomic) unsigned int transactionID;
+@property (nonatomic, readonly) unsigned long long transactionID;
 
-+ (id)contextWithSceneID:(id)arg1 transactionID:(unsigned int)arg2 settingsDiff:(id)arg3;
++ (id)contextWithSceneID:(id)arg1 transactionID:(unsigned long long)arg2 settingsDiff:(id)arg3;
 
+- (id)_initWithSceneID:(id)arg1 transactionID:(unsigned long long)arg2 settingsDiff:(id)arg3;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)sceneID;
-- (void)setSceneID:(id)arg1;
-- (void)setSettingsDiff:(id)arg1;
-- (void)setTransactionID:(unsigned int)arg1;
 - (id)settingsDiff;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
-- (unsigned int)transactionID;
+- (unsigned long long)transactionID;
 
 @end

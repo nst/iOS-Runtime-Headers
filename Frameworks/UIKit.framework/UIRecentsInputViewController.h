@@ -3,9 +3,9 @@
  */
 
 @interface UIRecentsInputViewController : UITableViewController {
-    BOOL  _canManageList;
+    bool  _canManageList;
     NSString * _clearAllString;
-    int  _containingEffectStyle;
+    long long  _containingEffectStyle;
     UIView * _customHeaderView;
     NSString * _enterNewString;
     UIView * _headerContainerView;
@@ -18,9 +18,9 @@
     NSLayoutConstraint * _widthConstraint;
 }
 
-@property (nonatomic) BOOL canManageList;
+@property (nonatomic) bool canManageList;
 @property (nonatomic, retain) NSString *clearAllString;
-@property (nonatomic) int containingEffectStyle;
+@property (nonatomic) long long containingEffectStyle;
 @property (nonatomic, retain) UIView *customHeaderView;
 @property (nonatomic, retain) NSString *enterNewString;
 @property (nonatomic, retain) UIView *headerContainerView;
@@ -38,9 +38,9 @@
 - (id)_uiktest_FocusedCellLabel;
 - (id)_uiktest_UnfocusedCellBackgroundView;
 - (id)_uiktest_UnfocusedCellLabel;
-- (BOOL)canManageList;
+- (bool)canManageList;
 - (id)clearAllString;
-- (int)containingEffectStyle;
+- (long long)containingEffectStyle;
 - (id)customHeaderView;
 - (void)didSelectButtonAtIndexPath:(id)arg1;
 - (void)ensureConstraints;
@@ -50,15 +50,15 @@
 - (id)headerView;
 - (id)heightConstraint;
 - (id)indexPathForPreferredFocusedViewInTableView:(id)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)preferredFocusedView;
 - (id)previouslyUsedString;
 - (id)recentInputDelegate;
 - (id)recentInputs;
 - (void)scrollViewDidChangeContentSize:(id)arg1;
-- (void)setCanManageList:(BOOL)arg1;
+- (void)setCanManageList:(bool)arg1;
 - (void)setClearAllString:(id)arg1;
-- (void)setContainingEffectStyle:(int)arg1;
+- (void)setContainingEffectStyle:(long long)arg1;
 - (void)setCustomHeaderView:(id)arg1;
 - (void)setEnterNewString:(id)arg1;
 - (void)setHeaderContainerView:(id)arg1;
@@ -69,18 +69,18 @@
 - (void)setRecentInputDelegate:(id)arg1;
 - (void)setRecentInputs:(id)arg1;
 - (void)setWidthConstraint:(id)arg1;
-- (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
-- (BOOL)tableView:(id)arg1 canFocusRowAtIndexPath:(id)arg2;
-- (BOOL)tableView:(id)arg1 canMoveRowAtIndexPath:(id)arg2;
+- (bool)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
+- (bool)tableView:(id)arg1 canFocusRowAtIndexPath:(id)arg2;
+- (bool)tableView:(id)arg1 canMoveRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (void)updateTableViewWidth;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 - (id)widthConstraint;
 
 @end

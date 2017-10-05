@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITableViewFocusDelegateLegacy, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Deprecated, _UIKeyboardAutoRespondingScrollViewController> {
+@interface UITableViewController : UIViewController <DebugHierarchyObject, UITableViewDataSource, UITableViewDelegate, UITableViewFocusDelegateLegacy, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Deprecated, _UIKeyboardAutoRespondingScrollViewController> {
     _UIFilteredDataSource * _filteredDataSource;
-    int  _filteredDataType;
+    long long  _filteredDataType;
     UIAutoRespondingScrollViewControllerKeyboardSupport * _keyboardSupport;
     UITableViewDataSource * _staticDataSource;
     struct { 
@@ -12,13 +12,13 @@
         unsigned int insetsApplied : 1; 
         unsigned int adjustingInsets : 1; 
     }  _tableViewControllerFlags;
-    int  _tableViewStyle;
+    long long  _tableViewStyle;
 }
 
-@property (nonatomic) BOOL clearsSelectionOnViewWillAppear;
+@property (nonatomic) bool clearsSelectionOnViewWillAppear;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIRefreshControl *refreshControl;
 @property (getter=_scrollView, nonatomic, readonly, retain) UIScrollView<_UIKeyboardAutoRespondingScrollView> *scrollView;
 @property (getter=_staticDataSource, setter=_setStaticDataSource:, nonatomic, retain) UITableViewDataSource *staticDataSource;
@@ -30,54 +30,58 @@
 - (void).cxx_destruct;
 - (void)_applyDefaultDataSourceToTable:(id)arg1;
 - (id)_existingTableView;
-- (int)_filteredDataType;
+- (long long)_filteredDataType;
 - (void)_refreshFilteredDataSourceFilterTypeForScreen:(id)arg1;
-- (int)_resolvedDataSourceFilterTypeForScreen:(id)arg1;
+- (long long)_resolvedDataSourceFilterTypeForScreen:(id)arg1;
 - (id)_scrollView;
-- (void)_setFilteredDataType:(int)arg1;
+- (void)_setFilteredDataType:(long long)arg1;
 - (void)_setStaticDataSource:(id)arg1;
-- (BOOL)_shouldRespondToPreviewingMethods;
+- (bool)_shouldRespondToPreviewingMethods;
 - (id)_staticDataSource;
-- (BOOL)_viewControllerWasSelected;
-- (void)_willChangeToIdiom:(int)arg1 onScreen:(id)arg2;
-- (BOOL)clearsSelectionOnViewWillAppear;
+- (bool)_viewControllerWasSelected;
+- (void)_willChangeToIdiom:(long long)arg1 onScreen:(id)arg2;
+- (bool)clearsSelectionOnViewWillAppear;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (id)initWithStyle:(int)arg1;
+- (id)initWithStyle:(long long)arg1;
 - (void)loadView;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (id)previewViewControllerForLocation:(struct CGPoint { float x1; float x2; })arg1 inSourceView:(id)arg2;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (id)previewViewControllerForLocation:(struct CGPoint { double x1; double x2; })arg1 inSourceView:(id)arg2;
 - (id)previewViewControllerForRowAtIndexPath:(id)arg1;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
 - (id)refreshControl;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (void)setClearsSelectionOnViewWillAppear:(BOOL)arg1;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (bool)respondsToSelector:(SEL)arg1;
+- (void)setClearsSelectionOnViewWillAppear:(bool)arg1;
+- (void)setEditing:(bool)arg1 animated:(bool)arg2;
 - (void)setRefreshControl:(id)arg1;
 - (void)setTableView:(id)arg1;
 - (id)tableView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didEndEditingRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 indentationLevelForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 indentationLevelForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willBeginEditingRowAtIndexPath:(id)arg2;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;
-- (void)willPresentPreviewViewController:(id)arg1 forPosition:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { double x1; double x2; })arg2 inSourceView:(id)arg3;
+- (void)willPresentPreviewViewController:(id)arg1 forPosition:(struct CGPoint { double x1; double x2; })arg2 inSourceView:(id)arg3;
 - (void)willPresentPreviewViewController:(id)arg1 forRowAtIndexPath:(id)arg2;
+
+// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
+
+- (id)debugHierarchyPropertyDescriptions;
 
 // Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
 

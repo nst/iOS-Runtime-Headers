@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (void)cancel;
-- (BOOL)incrementBackoff;
+- (bool)incrementBackoff;
 - (id)initWithInterval:(double)arg1 backoffFactor:(double)arg2 maxRetries:(int)arg3 queue:(id)arg4 callout:(id /* block */)arg5;
 
 @end

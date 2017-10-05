@@ -5,9 +5,9 @@
 
 @required
 
-- (BOOL)areAssetsNeededForAchievementDefinition:(_HKAchievementDefinition *)arg1;
-- (BOOL)areStickersEarnedForAchievementDefinition:(_HKAchievementDefinition *)arg1;
-- (BOOL)areStickersNeededAtAll;
-- (BOOL)areStickersNeededForAchievementDefinition:(_HKAchievementDefinition *)arg1;
+- (bool)areAssetsNeededForAchievementDefinition:(_HKAchievementDefinition *)arg1;
+- (bool)areStickersEarnedForAchievementDefinition:(_HKAchievementDefinition *)arg1;
+- (bool)areStickersNeededAtAll;
+- (bool)areStickersNeededForAchievementDefinition:(_HKAchievementDefinition *)arg1;
 
 @end

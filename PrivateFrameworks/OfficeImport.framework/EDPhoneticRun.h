@@ -8,7 +8,7 @@
     unsigned int  mCharIndex;
 }
 
-- (void)adjustIndex:(unsigned int)arg1;
+- (void)adjustIndex:(unsigned long long)arg1;
 - (unsigned int)charBaseCount;
 - (unsigned int)charBaseIndex;
 - (unsigned int)charIndex;

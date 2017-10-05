@@ -4,14 +4,14 @@
 
 @interface _NTKCompanionFaceSnapshottingWindow : UIWindow
 
-+ (BOOL)_isSecure;
++ (bool)_isSecure;
 
-- (BOOL)_alwaysGetsContexts;
-- (BOOL)_isWindowServerHostingManaged;
-- (int)_orientationForRootTransform;
-- (int)_orientationForViewTransform;
-- (BOOL)_shouldUseRemoteContext;
-- (BOOL)_wantsSceneAssociation;
+- (bool)_alwaysGetsContexts;
+- (bool)_isWindowServerHostingManaged;
+- (long long)_orientationForRootTransform;
+- (long long)_orientationForViewTransform;
+- (bool)_shouldUseRemoteContext;
+- (bool)_wantsSceneAssociation;
 - (id)init;
 
 @end

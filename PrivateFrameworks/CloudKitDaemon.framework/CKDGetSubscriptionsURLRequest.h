@@ -15,12 +15,12 @@
 @property (nonatomic, retain) NSMutableArray *subscriptions;
 
 - (void).cxx_destruct;
+- (id)generateRequestOperations;
 - (id)initWithSubscriptionIDs:(id)arg1;
 - (int)operationType;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
-- (id)requestOperations;
 - (void)setSubscriptionFetchedBlock:(id /* block */)arg1;
 - (void)setSubscriptionIDByRequestID:(id)arg1;
 - (void)setSubscriptionIDs:(id)arg1;

@@ -14,14 +14,14 @@
 
 - (void).cxx_destruct;
 - (id)APIToken;
-- (BOOL)CKOperationShouldRun:(id*)arg1;
+- (bool)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleCompletionCallback:(id)arg1;
 - (id)activityCreate;
 - (id /* block */)fetchWebAuthTokenCompletionBlock;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
-- (BOOL)hasCKOperationCallbacksSet;
+- (bool)hasCKOperationCallbacksSet;
 - (id)init;
 - (id)initWithAPIToken:(id)arg1;
 - (Class)operationInfoClass;

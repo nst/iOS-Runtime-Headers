@@ -66,13 +66,13 @@
 - (void)setSecondButtonSpacingConstraint:(id)arg1;
 - (void)setUndoButton:(id)arg1;
 - (void)suggestionDidDisplay;
-- (void)suggestionManager:(id)arg1 hasNewSuggestionAvailable:(id)arg2;
+- (void)suggestionManager:(id)arg1 hasNewSuggestionsAvailable:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)undoButton;
 - (void)undoButtonTapped:(id)arg1;
 - (void)updateViewConstraints;
-- (void)updateViewWithViewState:(unsigned int)arg1;
+- (void)updateViewWithViewState:(unsigned long long)arg1;
 - (void)viewDidLoad;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

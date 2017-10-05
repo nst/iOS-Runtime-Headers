@@ -4,18 +4,16 @@
 
 @interface TSDCABasicAnimationContextCache : TSDCAPropertyAnimationContextCache {
     id  _fromValue;
-    BOOL  _isObjectTypeCGColor;
     id  _toValue;
 }
 
 @property (nonatomic, readonly) id fromValue;
-@property (nonatomic, readonly) BOOL isObjectTypeCGColor;
 @property (nonatomic, readonly) id toValue;
 
 - (id)fromValue;
 - (id)initWithAnimation:(id)arg1;
-- (BOOL)isObjectTypeCGColor;
+- (double)percentAtTime:(double)arg1;
 - (id)toValue;
-- (void)verifyCacheWithAnimation:(id)arg1;
+- (id)valueAtTime:(double)arg1 initialValue:(id)arg2 groupTimingFactor:(double)arg3;
 
 @end

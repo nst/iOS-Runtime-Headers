@@ -2,35 +2,56 @@
    Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
  */
 
-@interface DMFConnection : NSObject <CATTaskClientDelegate> {
-    BOOL  mConnected;
-    CATOperationQueue * mOperationQueue;
-    CATTaskClient * mTaskClient;
+@interface DMFConnection : NSObject <CATTaskClientDelegate, DMFTransportProvider> {
+    bool  _isConnected;
+    CATOperationQueue * _operationQueue;
+    CATTaskClient * _taskClient;
+    <DMFTransportProvider> * _transportProvider;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isConnected;
+@property (nonatomic, retain) CATOperationQueue *operationQueue;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) CATTaskClient *taskClient;
+@property (nonatomic) <DMFTransportProvider> *transportProvider;
 
+// Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
+
++ (id)currentPlatformRequestClasses;
++ (id)iOSRequestClasses;
++ (id)macOSRequestClasses;
 + (id)sharedConnection;
++ (id)tvOSRequestClasses;
++ (id)watchOSRequestClasses;
 
 - (void).cxx_destruct;
-- (void)client:(id)arg1 didDisconnectWithError:(id)arg2;
+- (void)_operationDidFinish:(id)arg1 completion:(id /* block */)arg2;
 - (void)client:(id)arg1 didInterruptWithError:(id)arg2;
 - (void)clientDidConnect:(id)arg1;
+- (void)clientDidDisconnect:(id)arg1;
 - (void)clientDidInvalidate:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)initWithServiceName:(id)arg1;
-- (id)initWithTransport:(id)arg1;
-- (id)initWithXPCConnection:(id)arg1;
+- (id)initWithTransportProvider:(id)arg1;
 - (void)invalidate;
-- (void)operationDidFinish:(id)arg1 completion:(id /* block */)arg2;
-- (void)operationDidFinish:(id)arg1 semaphore:(id)arg2;
+- (bool)isConnected;
+- (id)makeNewTransport;
+- (id)operationQueue;
 - (void)performRequest:(id)arg1 completion:(id /* block */)arg2;
 - (id)prepareOperationForRequest:(id)arg1;
 - (id)progressForAllInflightRequests;
-- (id)runRequest:(id)arg1 error:(id*)arg2;
+- (void)setIsConnected:(bool)arg1;
+- (void)setOperationQueue:(id)arg1;
+- (void)setTaskClient:(id)arg1;
+- (void)setTransportProvider:(id)arg1;
+- (id)taskClient;
+- (id)transportProvider;
+
+// Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/MDM.framework/MDM
+
+- (id)performRequest:(id)arg1 error:(id*)arg2;
 
 @end

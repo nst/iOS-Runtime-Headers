@@ -5,28 +5,31 @@
 @interface GEOLocalizedDisambiguationLabel : PBCodable <NSCopying> {
     NSString * _locale;
     NSString * _string;
+    PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic, readonly) BOOL hasLocale;
-@property (nonatomic, readonly) BOOL hasString;
+@property (nonatomic, readonly) bool hasLocale;
+@property (nonatomic, readonly) bool hasString;
 @property (nonatomic, retain) NSString *locale;
 @property (nonatomic, retain) NSString *string;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLocale;
-- (BOOL)hasString;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasLocale;
+- (bool)hasString;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)locale;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setLocale:(id)arg1;
 - (void)setString:(id)arg1;
 - (id)string;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

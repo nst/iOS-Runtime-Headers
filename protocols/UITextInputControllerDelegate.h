@@ -6,10 +6,10 @@
 @optional
 
 - (void)textInput:(UITextInputController *)arg1 prepareAttributedTextForInsertion:(NSMutableAttributedString *)arg2;
-- (BOOL)textInput:(UITextInputController *)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementText:(NSString *)arg3;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })textInput:(UITextInputController *)arg1 willChangeSelectionFromCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 toCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (bool)textInput:(UITextInputController *)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 replacementText:(NSString *)arg3;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })textInput:(UITextInputController *)arg1 willChangeSelectionFromCharacterRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 toCharacterRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
 - (void)textInputDidChange:(UITextInputController *)arg1;
 - (void)textInputDidChangeSelection:(UITextInputController *)arg1;
-- (BOOL)textInputShouldBeginEditing:(UITextInputController *)arg1;
+- (bool)textInputShouldBeginEditing:(UITextInputController *)arg1;
 
 @end

@@ -7,7 +7,7 @@
     NSData * mData;
     <OCDReaderDelegate> * mDelegate;
     NSString * mFileName;
-    BOOL  mIsThumbnail;
+    bool  mIsThumbnail;
     NSError * mStartError;
     TCImportTracing * mTracing;
 }
@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSData *data;
 @property (nonatomic) <OCDReaderDelegate> *delegate;
 @property (nonatomic, retain) NSString *fileName;
-@property (nonatomic) BOOL isThumbnail;
+@property (nonatomic) bool isThumbnail;
 @property (nonatomic, retain) NSError *startError;
 @property (nonatomic, retain) TCImportTracing *tracing;
 
@@ -27,19 +27,19 @@
 - (id)fileName;
 - (id)initWithCancelDelegate:(id)arg1 tracing:(id)arg2;
 - (bool)isBinaryReader;
-- (BOOL)isThumbnail;
+- (bool)isThumbnail;
 - (id)read;
 - (void)setCancelDelegate:(id)arg1;
 - (void)setData:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFileName:(id)arg1;
-- (void)setIsThumbnail:(BOOL)arg1;
+- (void)setIsThumbnail:(bool)arg1;
 - (void)setStartError:(id)arg1;
 - (void)setStartErrorMessageFromException:(id)arg1;
 - (void)setTracing:(id)arg1;
-- (BOOL)start;
+- (bool)start;
 - (id)startError;
 - (id)tracing;
-- (BOOL)verifyFileFormat;
+- (bool)verifyFileFormat;
 
 @end

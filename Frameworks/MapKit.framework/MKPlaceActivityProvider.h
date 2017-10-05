@@ -19,5 +19,7 @@
 - (id)mapItem;
 - (void)setDelegate:(id)arg1;
 - (void)setMapItem:(id)arg1;
+- (bool)shouldUseWebPlaceCardForActivityType:(id)arg1;
+- (id)webPlaceCardURL;
 
 @end

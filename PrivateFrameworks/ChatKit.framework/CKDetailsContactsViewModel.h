@@ -5,40 +5,48 @@
 @interface CKDetailsContactsViewModel : NSObject {
     CNContact * _contact;
     NSString * _entityName;
+    bool  _isPendingRecipient;
     NSString * _locationString;
     NSString * _preferredHandle;
-    BOOL  _showsFaceTimeVideoButton;
-    BOOL  _showsLocation;
-    BOOL  _showsMessageButton;
-    BOOL  _showsPhoneButton;
+    bool  _showsFaceTimeVideoButton;
+    bool  _showsLocation;
+    bool  _showsMessageButton;
+    bool  _showsPhoneButton;
+    bool  _verified;
 }
 
 @property (nonatomic, retain) CNContact *contact;
 @property (nonatomic, copy) NSString *entityName;
+@property (nonatomic) bool isPendingRecipient;
 @property (nonatomic, copy) NSString *locationString;
 @property (nonatomic, copy) NSString *preferredHandle;
-@property (nonatomic) BOOL showsFaceTimeVideoButton;
-@property (nonatomic) BOOL showsLocation;
-@property (nonatomic) BOOL showsMessageButton;
-@property (nonatomic) BOOL showsPhoneButton;
+@property (nonatomic) bool showsFaceTimeVideoButton;
+@property (nonatomic) bool showsLocation;
+@property (nonatomic) bool showsMessageButton;
+@property (nonatomic) bool showsPhoneButton;
+@property (nonatomic) bool verified;
 
 - (void).cxx_destruct;
 - (id)contact;
 - (id)entityName;
-- (id)initWithPreferredHandle:(id)arg1 entityName:(id)arg2 locationString:(id)arg3 showsLocation:(BOOL)arg4 showsMessageButton:(BOOL)arg5 showsFaceTimeVideoButton:(BOOL)arg6 showsPhoneButton:(BOOL)arg7 contact:(id)arg8;
+- (id)initWithPreferredHandle:(id)arg1 entityName:(id)arg2 locationString:(id)arg3 showsLocation:(bool)arg4 showsMessageButton:(bool)arg5 showsFaceTimeVideoButton:(bool)arg6 showsPhoneButton:(bool)arg7 contact:(id)arg8 isPendingRecipient:(bool)arg9 verified:(bool)arg10;
+- (bool)isPendingRecipient;
 - (id)locationString;
 - (id)preferredHandle;
 - (void)setContact:(id)arg1;
 - (void)setEntityName:(id)arg1;
+- (void)setIsPendingRecipient:(bool)arg1;
 - (void)setLocationString:(id)arg1;
 - (void)setPreferredHandle:(id)arg1;
-- (void)setShowsFaceTimeVideoButton:(BOOL)arg1;
-- (void)setShowsLocation:(BOOL)arg1;
-- (void)setShowsMessageButton:(BOOL)arg1;
-- (void)setShowsPhoneButton:(BOOL)arg1;
-- (BOOL)showsFaceTimeVideoButton;
-- (BOOL)showsLocation;
-- (BOOL)showsMessageButton;
-- (BOOL)showsPhoneButton;
+- (void)setShowsFaceTimeVideoButton:(bool)arg1;
+- (void)setShowsLocation:(bool)arg1;
+- (void)setShowsMessageButton:(bool)arg1;
+- (void)setShowsPhoneButton:(bool)arg1;
+- (void)setVerified:(bool)arg1;
+- (bool)showsFaceTimeVideoButton;
+- (bool)showsLocation;
+- (bool)showsMessageButton;
+- (bool)showsPhoneButton;
+- (bool)verified;
 
 @end

@@ -6,19 +6,19 @@
     GEORouteDetails * _routeDetails;
 }
 
-@property (nonatomic, readonly) BOOL hasRouteDetails;
+@property (nonatomic, readonly) bool hasRouteDetails;
 @property (nonatomic, retain) GEORouteDetails *routeDetails;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasRouteDetails;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasRouteDetails;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)routeDetails;
 - (void)setRouteDetails:(id)arg1;
 - (void)writeTo:(id)arg1;

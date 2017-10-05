@@ -3,42 +3,46 @@
  */
 
 @interface HUServiceGridViewController : HUControllableItemCollectionViewController <UICollectionViewDelegateFlowLayout> {
-    unsigned int  _contentMargins;
-    BOOL  _shouldShowLoadingState;
+    unsigned long long  _contentMargins;
+    long long  _scrollDirection;
+    bool  _shouldShowLoadingState;
 }
 
-@property (nonatomic) unsigned int contentMargins;
+@property (nonatomic) unsigned long long contentMargins;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HUGridLayoutOptions *layoutOptions;
-@property (nonatomic) BOOL shouldShowLoadingState;
+@property (nonatomic) long long scrollDirection;
+@property (nonatomic) bool shouldShowLoadingState;
 @property (readonly) Class superclass;
 
-- (id)_defaultLayoutOptionsForViewSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)_defaultLayoutOptionsForViewSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_layoutSectionHeaders;
-- (id)allCellClasses;
 - (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(int)arg3;
-- (float)collectionView:(id)arg1 layout:(id)arg2 minimumLineSpacingForSectionAtIndex:(int)arg3;
-- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(int)arg3;
-- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
+- (double)collectionView:(id)arg1 layout:(id)arg2 minimumLineSpacingForSectionAtIndex:(long long)arg3;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(long long)arg3;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (void)configureCell:(id)arg1 forItem:(id)arg2;
-- (unsigned int)contentMargins;
+- (unsigned long long)contentMargins;
 - (id)initWithItemManager:(id)arg1;
 - (id)initWithItemManager:(id)arg1 collectionViewLayout:(id)arg2;
-- (BOOL)itemManager:(id)arg1 performBatchUpdateBlock:(id /* block */)arg2;
+- (void)itemManager:(id)arg1 performUpdateRequest:(id)arg2;
 - (id)layoutOptions;
 - (void)layoutOptionsDidChange;
-- (id)layoutOptionsForSection:(int)arg1;
-- (void)setContentMargins:(unsigned int)arg1;
+- (id)layoutOptionsForSection:(long long)arg1;
+- (struct CGSize { double x1; double x2; })preferredContentSizeForCollectionViewContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (long long)scrollDirection;
+- (void)setContentMargins:(unsigned long long)arg1;
 - (void)setLayoutOptions:(id)arg1;
-- (void)setShouldShowLoadingState:(BOOL)arg1;
-- (BOOL)shouldShowLoadingState;
+- (void)setScrollDirection:(long long)arg1;
+- (void)setShouldShowLoadingState:(bool)arg1;
+- (bool)shouldShowLoadingState;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

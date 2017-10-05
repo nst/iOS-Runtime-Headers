@@ -7,7 +7,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *distanceUnits;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) NSString *precipitationUnits;
 @property (nonatomic, copy) NSString *pressureUnits;
 @property (nonatomic, copy) NSString *speedUnits;
 @property (readonly) Class superclass;
@@ -19,8 +20,10 @@
 - (id)distanceUnits;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (id)precipitationUnits;
 - (id)pressureUnits;
 - (void)setDistanceUnits:(id)arg1;
+- (void)setPrecipitationUnits:(id)arg1;
 - (void)setPressureUnits:(id)arg1;
 - (void)setSpeedUnits:(id)arg1;
 - (void)setTemperatureUnits:(id)arg1;

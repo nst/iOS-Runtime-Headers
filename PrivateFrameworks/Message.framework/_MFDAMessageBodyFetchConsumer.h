@@ -5,33 +5,33 @@
 @interface _MFDAMessageBodyFetchConsumer : NSObject <DAMailAccountStreamConsumerFactory, MFRequestQueueResponseConsumer> {
     NSData * _data;
     MFError * _error;
-    BOOL  _hasLocalCopyOfData;
+    bool  _hasLocalCopyOfData;
     <MFDAStreamingContentConsumer> * _streamConsumer;
-    BOOL  _succeeded;
+    bool  _succeeded;
 }
 
 @property (nonatomic, retain) NSData *data;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) MFError *error;
-@property (nonatomic) BOOL hasLocalCopyOfData;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool hasLocalCopyOfData;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) <MFDAStreamingContentConsumer> *streamConsumer;
-@property (nonatomic, readonly) BOOL succeeded;
+@property (nonatomic, readonly) bool succeeded;
 @property (readonly) Class superclass;
 
 - (id)data;
 - (void)dealloc;
 - (id)error;
 - (void)handleResponse:(id)arg1 error:(id)arg2;
-- (BOOL)hasLocalCopyOfData;
+- (bool)hasLocalCopyOfData;
 - (void)setData:(id)arg1;
 - (void)setError:(id)arg1;
-- (void)setHasLocalCopyOfData:(BOOL)arg1;
+- (void)setHasLocalCopyOfData:(bool)arg1;
 - (void)setStreamConsumer:(id)arg1;
 - (id)streamConsumer;
 - (id)streamingContentConsumer;
-- (BOOL)succeeded;
-- (BOOL)wantsData;
+- (bool)succeeded;
+- (bool)wantsData;
 
 @end

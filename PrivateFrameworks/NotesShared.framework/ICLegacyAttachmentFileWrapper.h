@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) NSString *attachmentIdentifier;
 @property (nonatomic, retain) NSURL *cidURL;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)attachmentIdentifier;

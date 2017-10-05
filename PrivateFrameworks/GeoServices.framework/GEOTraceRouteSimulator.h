@@ -38,19 +38,20 @@
 @property (nonatomic, retain) NSMutableArray *mutableLocations;
 @property (nonatomic) struct { double x1; double x2; } origin;
 @property (nonatomic, readonly) NSDictionary *pointTimestamps;
-@property (nonatomic, readonly, retain) GEOComposedRoute *route;
+@property (nonatomic, readonly) GEOComposedRoute *route;
 @property (nonatomic, retain) NSDate *startTime;
 @property (nonatomic) double verticalAccuracy;
 @property (nonatomic) struct { double x1; double x2; } walkingEnd;
 @property (nonatomic) struct { double x1; double x2; } walkingStart;
 
+- (void).cxx_destruct;
 - (void)addLocation:(struct { double x1; double x2; })arg1 withCourse:(double)arg2 altitude:(double)arg3 speed:(double)arg4 transport:(int)arg5;
-- (void)dealloc;
 - (double)deltaT;
 - (struct { double x1; double x2; })destination;
 - (double)duration;
 - (double)estimateDuration;
 - (void)generateLocations;
+- (void)generateLocationsWithSpeedOverride:(double)arg1;
 - (double)horizontalAccuracy;
 - (id)initWithRoute:(id)arg1;
 - (id)locations;

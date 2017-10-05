@@ -19,11 +19,11 @@
 }
 
 - (void).cxx_destruct;
-- (unsigned int)_checkSchemaVersion;
+- (unsigned long long)_checkSchemaVersion;
 - (id)_dataFromObject:(id)arg1;
 - (void)_ensureDBSchema;
 - (id)_objectFromData:(id)arg1;
-- (void)_openDBForceRecreate:(BOOL)arg1;
+- (void)_openDBForceRecreate:(bool)arg1;
 - (void)_prepareStatements;
 - (void)_withDB:(id /* block */)arg1;
 - (void)dealloc;

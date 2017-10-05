@@ -20,7 +20,7 @@
 - (id)_queue_generateUnitPreferences:(id*)arg1;
 - (void)_queue_notifyObserversWithUnitPreferences;
 - (id)_queue_unitForType:(id)arg1 preferencesDictionary:(id)arg2;
-- (id)_queue_unitPreferenceDictionary:(id*)arg1;
+- (id)_queue_unitPreferenceDictionaryWithError:(id*)arg1;
 - (void)_queue_updateUnitPreferenceCacheWithUnit:(id)arg1 type:(id)arg2;
 - (id)_stringFromQuantityType:(id)arg1;
 - (id)_unitFromValueString:(id)arg1 quantityType:(id)arg2;
@@ -30,8 +30,9 @@
 - (void)dealloc;
 - (id)initWithProfile:(id)arg1;
 - (void)removeUnitPreferenceObserver:(id)arg1;
-- (BOOL)setPreferredUnit:(id)arg1 forType:(id)arg2 error:(id*)arg3;
+- (bool)setPreferredUnit:(id)arg1 forType:(id)arg2 error:(id*)arg3;
 - (void)setPreferredUnitToDefaultIfNotSetForType:(id)arg1;
 - (id)unitPreferencesDictionaryForTypes:(id)arg1 authorizationServer:(id)arg2 error:(id*)arg3;
+- (id)unitTesting_preferredUnitForType:(id)arg1 error:(id*)arg2;
 
 @end

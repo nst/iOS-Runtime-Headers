@@ -21,9 +21,10 @@
 - (id)end;
 - (id)groupIdentifier;
 - (id)message;
+- (bool)mutatingCommand;
 - (id)outgoing;
 - (id)recipients;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (id)senders;
 - (void)setEnd:(id)arg1;
 - (void)setMessage:(id)arg1;

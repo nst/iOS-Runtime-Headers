@@ -3,32 +3,32 @@
  */
 
 @interface PAAggregatedProcessInstance : PAAggregatedTask {
-    BOOL  _combinedStacks;
+    bool  _combinedStacks;
     NSMutableSet * _concurrentDispatchQueueIds;
     unsigned int  _countSuspended;
     unsigned int  _countTerminated;
     unsigned long long  _cpuTimeNsCached;
-    unsigned int  _firstTimestampIndex;
+    unsigned long long  _firstTimestampIndex;
     unsigned long long  _mainThreadId;
     double  _mostRecentTimeSamplingOnlyMainThread;
-    BOOL  _previousThreadsWereUnchanged;
+    bool  _previousThreadsWereUnchanged;
     NSDictionary * _threadsInPreviousSample;
-    unsigned int  _timestampIndexWhenTransitionedToSamplingAllThreads;
+    unsigned long long  _timestampIndexWhenTransitionedToSamplingAllThreads;
     NSMutableArray * _timestampIndexedTasks;
     struct __CFDictionary { } * stacks;
 }
 
 @property (readonly) PAProcessInstanceAggregator *aggregator;
-@property (readonly) BOOL allowsIdleExit;
+@property (readonly) bool allowsIdleExit;
 @property (readonly) NSMutableSet *concurrentDispatchQueueIds;
 @property (readonly) unsigned int count;
 @property (readonly) unsigned int countSuspended;
 @property (readonly) unsigned int countTerminated;
-@property (readonly) unsigned int firstTimestampIndex;
-@property (readonly) BOOL isThirdParty;
-@property (readonly) BOOL isTranslocated;
-@property (readonly) BOOL isUnresponsive;
-@property (readonly) unsigned int lastTimestampIndex;
+@property (readonly) unsigned long long firstTimestampIndex;
+@property (readonly) bool isThirdParty;
+@property (readonly) bool isTranslocated;
+@property (readonly) bool isUnresponsive;
+@property (readonly) unsigned long long lastTimestampIndex;
 @property (readonly) unsigned long long mainBinaryOffset;
 @property (readonly) NSString *mainBinaryPath;
 @property (readonly) NSUUID *mainBinaryUuid;
@@ -38,26 +38,28 @@
 @property (readonly) int rpid;
 @property (retain) NSDictionary *threadsInPreviousSample;
 @property (readonly) double timeOfLastResponse;
-@property (readonly) unsigned int timestampIndexWhenTransitionedToSamplingAllThreads;
+@property (readonly) unsigned long long timestampIndexWhenTransitionedToSamplingAllThreads;
 @property (readonly) NSArray *timestampIndexedTasks;
 @property (readonly) unsigned int uid;
 @property (readonly) unsigned long long uniquePid;
-@property (readonly) BOOL usesSuddenTermination;
-@property (readonly) BOOL workQueueExceededConstrainedThreadLimit;
-@property (readonly) BOOL workQueueExceededTotalThreadLimit;
+@property (readonly) bool usesSuddenTermination;
+@property (readonly) bool workQueueExceededConstrainedThreadLimit;
+@property (readonly) bool workQueueExceededTotalThreadLimit;
 
 - (void).cxx_destruct;
+- (void)_combineAllStacks;
 - (void)_combineMainThreadStacks;
 - (void)_combineSerialDispatchQueueStacks;
-- (BOOL)_shouldDisplayStacks;
-- (void)addSampleTask:(id)arg1 atTimestampIndex:(unsigned int)arg2;
-- (void)addSampleThread:(id)arg1 atTimestampIndex:(unsigned int)arg2 fillGapInTimestampIndexWithPreviousThreads:(BOOL)arg3;
+- (void)_combineStacksByThreadID;
+- (bool)_shouldDisplayStacks;
+- (void)addSampleTask:(id)arg1 atTimestampIndex:(unsigned long long)arg2;
+- (void)addSampleThread:(id)arg1 atTimestampIndex:(unsigned long long)arg2 fillGapInTimestampIndexWithPreviousThreads:(bool)arg3;
 - (id)aggregator;
-- (BOOL)allowsIdleExit;
+- (bool)allowsIdleExit;
 - (id)architectureString;
 - (void)calculateTimeIndexes;
 - (void)combineStacks;
-- (int)compare:(id)arg1;
+- (long long)compare:(id)arg1;
 - (id)concurrentDispatchQueueIds;
 - (unsigned int)count;
 - (unsigned int)countSuspended;
@@ -67,15 +69,15 @@
 - (id)debugDescription;
 - (void)fillGaps;
 - (id)firstTask;
-- (unsigned int)firstTimestampIndex;
-- (unsigned int)hash;
+- (unsigned long long)firstTimestampIndex;
+- (unsigned long long)hash;
 - (id)initForIdentificationPurposesWithSampleTask:(id)arg1;
-- (id)initWithAggregator:(id)arg1 andSampleTask:(id)arg2 atTimestampIndex:(unsigned int)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isThirdParty;
-- (BOOL)isTranslocated;
-- (BOOL)isUnresponsive;
-- (unsigned int)lastTimestampIndex;
+- (id)initWithAggregator:(id)arg1 andSampleTask:(id)arg2 atTimestampIndex:(unsigned long long)arg3;
+- (bool)isEqual:(id)arg1;
+- (bool)isThirdParty;
+- (bool)isTranslocated;
+- (bool)isUnresponsive;
+- (unsigned long long)lastTimestampIndex;
 - (unsigned long long)mainBinaryOffset;
 - (id)mainBinaryPath;
 - (id)mainBinaryUuid;
@@ -86,17 +88,17 @@
 - (void)printStacksToOutputStream:(id)arg1;
 - (void)printToOutputStream:(id)arg1;
 - (int)rpid;
-- (id)sampleTaskAtTimestampIndex:(unsigned int)arg1;
+- (id)sampleTaskAtTimestampIndex:(unsigned long long)arg1;
 - (void)setThreadsInPreviousSample:(id)arg1;
 - (id)sortedStacks;
 - (id)threadsInPreviousSample;
 - (double)timeOfLastResponse;
-- (unsigned int)timestampIndexWhenTransitionedToSamplingAllThreads;
+- (unsigned long long)timestampIndexWhenTransitionedToSamplingAllThreads;
 - (id)timestampIndexedTasks;
 - (unsigned int)uid;
 - (unsigned long long)uniquePid;
-- (BOOL)usesSuddenTermination;
-- (BOOL)workQueueExceededConstrainedThreadLimit;
-- (BOOL)workQueueExceededTotalThreadLimit;
+- (bool)usesSuddenTermination;
+- (bool)workQueueExceededConstrainedThreadLimit;
+- (bool)workQueueExceededTotalThreadLimit;
 
 @end

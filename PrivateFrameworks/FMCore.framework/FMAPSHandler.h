@@ -6,9 +6,9 @@
     APSConnection * _apsConnection;
     NSString * _environmentName;
     NSMutableArray * _pendingPushes;
-    BOOL  _registerForDarkWake;
+    bool  _registerForDarkWake;
     NSMutableArray * _registeredDelegates;
-    BOOL  _registrationsSuspended;
+    bool  _registrationsSuspended;
 }
 
 @property (nonatomic, retain) APSConnection *apsConnection;
@@ -16,11 +16,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSString *environmentName;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableArray *pendingPushes;
-@property (nonatomic) BOOL registerForDarkWake;
+@property (nonatomic) bool registerForDarkWake;
 @property (nonatomic, retain) NSMutableArray *registeredDelegates;
-@property (nonatomic) BOOL registrationsSuspended;
+@property (nonatomic) bool registrationsSuspended;
 @property (readonly) Class superclass;
 
 + (id)constantForEnvironmentString:(id)arg1;
@@ -42,16 +42,16 @@
 - (void)invalidate;
 - (id)pendingPushes;
 - (void)registerDelegate:(id)arg1 forTopic:(id)arg2;
-- (BOOL)registerForDarkWake;
+- (bool)registerForDarkWake;
 - (id)registeredDelegates;
-- (BOOL)registrationsSuspended;
+- (bool)registrationsSuspended;
 - (void)resumeRegistrations;
 - (void)setApsConnection:(id)arg1;
 - (void)setEnvironmentName:(id)arg1;
 - (void)setPendingPushes:(id)arg1;
-- (void)setRegisterForDarkWake:(BOOL)arg1;
+- (void)setRegisterForDarkWake:(bool)arg1;
 - (void)setRegisteredDelegates:(id)arg1;
-- (void)setRegistrationsSuspended:(BOOL)arg1;
+- (void)setRegistrationsSuspended:(bool)arg1;
 - (void)suspendRegistrations;
 
 @end

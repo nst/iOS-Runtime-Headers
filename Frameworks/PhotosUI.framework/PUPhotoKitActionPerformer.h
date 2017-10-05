@@ -9,8 +9,8 @@
 @property (nonatomic, readonly, copy) NSArray *assets;
 @property (nonatomic, retain) PUPhotoKitDataSourceManager *photoKitDataSourceManager;
 
-+ (BOOL)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2;
-+ (BOOL)shouldEnableOnAsset:(id)arg1 inAssetCollection:(id)arg2;
++ (bool)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2;
++ (bool)shouldEnableOnAsset:(id)arg1 inAssetCollection:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)_indexPathsInPhotosDataSource:(id)arg1;

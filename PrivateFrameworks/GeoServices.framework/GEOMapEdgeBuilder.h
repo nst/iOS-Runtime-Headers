@@ -3,9 +3,9 @@
  */
 
 @interface GEOMapEdgeBuilder : GEOMapRequest {
-    BOOL  _buildAhead;
-    BOOL  _buildBehind;
-    unsigned int  _buildDirection;
+    bool  _buildAhead;
+    bool  _buildBehind;
+    unsigned long long  _buildDirection;
     GEOMapTileFinder * _currentTileFinder;
     id /* block */  _edgeHandler;
     struct Matrix<float, 2, 1> { 
@@ -14,7 +14,7 @@
     struct Matrix<float, 2, 1> { 
         float _e[2]; 
     }  _lastTilePoint;
-    BOOL  _searchDirection;
+    bool  _searchDirection;
     struct unordered_set<_GEOTileKey, std::__1::hash<GEOTileKey>, std::__1::equal_to<GEOTileKey>, std::__1::allocator<_GEOTileKey> > { 
         struct __hash_table<_GEOTileKey, std::__1::hash<GEOTileKey>, std::__1::equal_to<GEOTileKey>, std::__1::allocator<_GEOTileKey> > { 
             struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<_GEOTileKey, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<_GEOTileKey, void *> *> *> > > { 
@@ -22,7 +22,7 @@
                     struct __hash_node_base<std::__1::__hash_node<_GEOTileKey, void *> *> {} **__first_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<_GEOTileKey, void *> *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<_GEOTileKey, void *> *> *> > { 
-                            unsigned long __first_; 
+                            unsigned long long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
@@ -33,7 +33,7 @@
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::hash<GEOTileKey> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::equal_to<GEOTileKey> > { 
                 float __first_; 
@@ -42,37 +42,36 @@
     }  _tileKeysSeen;
 }
 
-@property (nonatomic) unsigned int buildDirection;
+@property (nonatomic) unsigned long long buildDirection;
 @property (nonatomic, copy) id /* block */ edgeHandler;
 @property (nonatomic, readonly) GEOMapAccess *map;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_buildCompleteEdge;
-- (BOOL)_edgeStart:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg1 end:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg2 connectsTo:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg3;
-- (BOOL)_findEdgeAhead;
-- (BOOL)_findEdgeAheadInTile:(id)arg1;
-- (BOOL)_findEdgeBehind;
-- (BOOL)_findEdgeBehindInTile:(id)arg1;
-- (BOOL)_findNextEdge;
-- (void)_findTilesAdjacentToTile:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 containingPoint:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg2 findAhead:(BOOL)arg3;
+- (bool)_edgeStart:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg1 end:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg2 connectsTo:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg3;
+- (bool)_findEdgeAhead;
+- (bool)_findEdgeAheadInTile:(id)arg1;
+- (bool)_findEdgeBehind;
+- (bool)_findEdgeBehindInTile:(id)arg1;
+- (bool)_findNextEdge;
+- (void)_findTilesAdjacentToTile:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 containingPoint:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg2 findAhead:(bool)arg3;
 - (struct Matrix<float, 2, 1> { float x1[2]; })_firstPoint;
 - (id)_firstTile;
 - (struct Matrix<float, 2, 1> { float x1[2]; })_lastPoint;
 - (id)_lastTile;
-- (unsigned int)_maxTileCount;
-- (BOOL)_pointConnects:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg1 rect:(const struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 to:(const struct { double x1; double x2; }*)arg3;
-- (BOOL)_shouldFindEdgeAhead;
-- (BOOL)_shouldFindEdgeBehind;
+- (unsigned long long)_maxTileCount;
+- (bool)_pointConnects:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg1 rect:(const struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 to:(const struct { double x1; double x2; }*)arg3;
+- (bool)_shouldFindEdgeAhead;
+- (bool)_shouldFindEdgeBehind;
 - (id)_tileFinderForMap:(id)arg1 center:(struct { double x1; double x2; })arg2 radius:(double)arg3;
-- (unsigned int)buildDirection;
+- (unsigned long long)buildDirection;
 - (void)buildEdge:(id /* block */)arg1;
 - (void)cancel;
-- (void)dealloc;
 - (id /* block */)edgeHandler;
 - (id)initWithMap:(id)arg1;
 - (id)map;
-- (void)setBuildDirection:(unsigned int)arg1;
+- (void)setBuildDirection:(unsigned long long)arg1;
 - (void)setEdgeHandler:(id /* block */)arg1;
 
 @end

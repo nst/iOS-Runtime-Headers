@@ -6,11 +6,16 @@
     UILabel * _textLabel;
 }
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void).cxx_destruct;
 - (id)_appBundleIdentifier;
-- (int)buttonType;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (long long)buttonType;
 - (void)layoutSubviews;
-- (float)neededSizeForImageSet:(id)arg1;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (double)neededSizeForImageSet:(id)arg1;
+- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

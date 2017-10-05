@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PUOneUpPhotosSharingTransitionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PUOneUpPhotosSharingTransitionContext *oneUpPhotosSharingTransitionContext;
 @property (nonatomic) UIViewController<PUOneUpAssetTransitionViewController> *presentingViewController;
 @property (nonatomic) UIViewController<PUOneUpPhotosSharingTransitionViewController><PUOneUpAssetTransitionViewController> *sharingTransitionViewController;

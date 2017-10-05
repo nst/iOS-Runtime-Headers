@@ -16,7 +16,7 @@
 - (id)eventOperation;
 - (id)eventValue;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setEventName:(id)arg1;
 - (void)setEventOperation:(id)arg1;
 - (void)setEventValue:(id)arg1;

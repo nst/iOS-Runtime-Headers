@@ -3,25 +3,23 @@
  */
 
 @interface MusicProfileAlbumsViewController : MusicProductTracklistTableViewController {
-    BOOL  _collapseSections;
+    bool  _collapseSections;
     MusicLibraryAlbumsViewConfiguration * _libraryAlbumsViewConfiguration;
-    MPAVController * _player;
 }
 
 @property (nonatomic, readonly) MusicLibraryAlbumsViewConfiguration *libraryAlbumsViewConfiguration;
 
 - (void).cxx_destruct;
-- (void)_setCollapseSections:(BOOL)arg1;
+- (void)_setCollapseSections:(bool)arg1;
 - (void)_updateCollapseSections;
-- (int)handleSelectionOfSectionHeaderForSectionEntityValueContext:(id)arg1;
-- (id)initWithLibraryViewConfiguration:(id)arg1;
+- (long long)handleSelectionOfSectionHeaderForSectionEntityValueContext:(id)arg1;
 - (id)libraryAlbumsViewConfiguration;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)tableViewDataDidReload;
 - (void)viewDidLoad;
-- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;
+- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { double x1; double x2; })arg2 inSourceView:(id)arg3;
 
 @end

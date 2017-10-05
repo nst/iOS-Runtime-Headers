@@ -2,8 +2,8 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUSlideshowSession : NSObject <PUSlideshowSettingsViewModelChangeObserver, PUSlideshowViewModelChangeObserver, _UISettingsKeyObserver> {
-    BOOL  __disablingIdleTimer;
+@interface PUSlideshowSession : NSObject <PUSlideshowSettingsViewModelChangeObserver, PUSlideshowViewModelChangeObserver, PXSettingsKeyObserver> {
+    bool  __disablingIdleTimer;
     id  __disablingIdleTimerToken;
     PHAssetCollection * _assetCollection;
     PUSlideshowContextRegistry * _contextRegistry;
@@ -15,13 +15,13 @@
     PUSlideshowViewModel * _viewModel;
 }
 
-@property (setter=_setDisablingIdleTimer:, nonatomic) BOOL _disablingIdleTimer;
+@property (setter=_setDisablingIdleTimer:, nonatomic) bool _disablingIdleTimer;
 @property (setter=_setDisablingIdleTimerToken:, nonatomic, retain) id _disablingIdleTimerToken;
 @property (nonatomic, readonly) PHAssetCollection *assetCollection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) PHFetchResult *fetchResult;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) OKPresentationViewController *presentationViewController;
 @property (nonatomic, readonly) PUSlideshowSettingsViewModel *settingsViewModel;
 @property (readonly) Class superclass;
@@ -30,12 +30,12 @@
 - (void).cxx_destruct;
 - (void)_beginDisablingIdleTimer;
 - (void)_configurePresentationViewController:(id)arg1;
-- (BOOL)_disablingIdleTimer;
+- (bool)_disablingIdleTimer;
 - (id)_disablingIdleTimerToken;
 - (void)_distributeSlideshowDisplayContextWithPresentationController:(id)arg1;
 - (void)_endDisablingIdleTimerIfNecessary;
 - (id)_resolutionSizes;
-- (void)_setDisablingIdleTimer:(BOOL)arg1;
+- (void)_setDisablingIdleTimer:(bool)arg1;
 - (void)_setDisablingIdleTimerToken:(id)arg1;
 - (void)_slideshowSettingsViewModel:(id)arg1 didChange:(id)arg2;
 - (void)_slideshowViewModel:(id)arg1 didChange:(id)arg2;
@@ -44,7 +44,7 @@
 - (id)fetchResult;
 - (id)init;
 - (id)initWithFetchResult:(id)arg1 assetCollection:(id)arg2;
-- (id)initWithFetchResult:(id)arg1 assetCollection:(id)arg2 startIndex:(unsigned int)arg3;
+- (id)initWithFetchResult:(id)arg1 assetCollection:(id)arg2 startIndex:(unsigned long long)arg3;
 - (id)presentationViewController;
 - (void)registerSlideshowDisplayContext:(id)arg1;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;

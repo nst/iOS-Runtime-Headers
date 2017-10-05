@@ -4,6 +4,6 @@
 
 @interface AVCaptureBracketedStillImageSettings : NSObject
 
-- (id)init;
+- (id)initSubclass;
 
 @end

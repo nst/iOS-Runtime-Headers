@@ -7,6 +7,6 @@
 
 - (void)addTemplateSubview:(UIView<SiriUITemplateView> *)arg1;
 - (void)templateSubviewWantsToBeRemovedFromHierarchy:(UIView<SiriUITemplateView> *)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })templatedContentMargins;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })templatedContentMargins;
 
 @end

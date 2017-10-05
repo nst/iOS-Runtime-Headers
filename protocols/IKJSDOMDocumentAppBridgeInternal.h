@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)_isUpdateAllowed;
+- (bool)_isUpdateAllowed;
 
 @end

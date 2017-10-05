@@ -7,7 +7,7 @@
     TSSPropertyMap * _propertyMapToSet;
 }
 
-@property (getter=isEmpty, nonatomic, readonly) BOOL empty;
+@property (getter=isEmpty, nonatomic, readonly) bool empty;
 @property (nonatomic, retain) TSSPropertyMap *propertyMapToReset;
 @property (nonatomic, retain) TSSPropertyMap *propertyMapToSet;
 
@@ -16,16 +16,16 @@
 - (id)allProperties;
 - (id)cellDiffFilteredBySetProperties:(id)arg1;
 - (void)clear;
-- (BOOL)containsAnyPropertiesInSet:(id)arg1;
+- (bool)containsAnyPropertiesInSet:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (BOOL)doesResetAnyProperties:(id)arg1;
-- (BOOL)doesResetProperty:(int)arg1;
-- (BOOL)doesSetAnyProperties:(id)arg1;
-- (BOOL)doesSetProperty:(int)arg1;
-- (id)initFromUnarchiver:(id)arg1;
+- (bool)doesResetAnyProperties:(id)arg1;
+- (bool)doesResetProperty:(int)arg1;
+- (bool)doesSetAnyProperties:(id)arg1;
+- (bool)doesSetProperty:(int)arg1;
 - (id)initWithContext:(id)arg1;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
+- (void)loadFromUnarchiver:(id)arg1;
 - (id)objectApplyingDiffToObject:(id)arg1 andUpdateInverse:(id)arg2;
 - (id)objectForResetProperty:(int)arg1;
 - (id)objectForSetProperty:(int)arg1;

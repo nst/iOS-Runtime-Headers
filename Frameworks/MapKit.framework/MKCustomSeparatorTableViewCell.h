@@ -3,28 +3,28 @@
  */
 
 @interface MKCustomSeparatorTableViewCell : MKTableViewCell {
-    float  _leftSeparatorInset;
-    float  _rightSeparatorInset;
+    double  _leftSeparatorInset;
+    double  _rightSeparatorInset;
 }
 
-@property (nonatomic) float leadingSeparatorInset;
-@property (nonatomic) float leftSeparatorInset;
-@property (nonatomic) float rightSeparatorInset;
-@property (getter=isSeparatorHidden, nonatomic) BOOL separatorHidden;
-@property (nonatomic) float trailingSeparatorInset;
+@property (nonatomic) double leadingSeparatorInset;
+@property (nonatomic) double leftSeparatorInset;
+@property (nonatomic) double rightSeparatorInset;
+@property (getter=isSeparatorHidden, nonatomic) bool separatorHidden;
+@property (nonatomic) double trailingSeparatorInset;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_separatorFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_separatorFrame;
 - (void)_updateSeparatorInset;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (BOOL)isSeparatorHidden;
-- (float)leadingSeparatorInset;
-- (float)leftSeparatorInset;
-- (float)rightSeparatorInset;
-- (void)setLeadingSeparatorInset:(float)arg1;
-- (void)setLeftSeparatorInset:(float)arg1;
-- (void)setRightSeparatorInset:(float)arg1;
-- (void)setSeparatorHidden:(BOOL)arg1;
-- (void)setTrailingSeparatorInset:(float)arg1;
-- (float)trailingSeparatorInset;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (bool)isSeparatorHidden;
+- (double)leadingSeparatorInset;
+- (double)leftSeparatorInset;
+- (double)rightSeparatorInset;
+- (void)setLeadingSeparatorInset:(double)arg1;
+- (void)setLeftSeparatorInset:(double)arg1;
+- (void)setRightSeparatorInset:(double)arg1;
+- (void)setSeparatorHidden:(bool)arg1;
+- (void)setTrailingSeparatorInset:(double)arg1;
+- (double)trailingSeparatorInset;
 
 @end

@@ -8,7 +8,7 @@
     NSURL * _contentURL;
     NKIssue * _currentlyReadingIssue;
     NSFileManager * _fileManager;
-    BOOL  _inited;
+    bool  _inited;
     NSArray * _issues;
     NSMapTable * _issuesByDirectory;
     NSMapTable * _issuesByName;
@@ -21,7 +21,7 @@
 @property (readonly) NSArray *downloadingAssets;
 @property (readonly) NSArray *issues;
 
-+ (BOOL)_isNewsstandApp;
++ (bool)_isNewsstandApp;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)sharedLibrary;
 
@@ -29,7 +29,7 @@
 - (id)_appSupportURL;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_applicationWillTerminate:(id)arg1;
-- (BOOL)_canPerformBackgroundDownloads;
+- (bool)_canPerformBackgroundDownloads;
 - (id)_contentURL;
 - (void)_didFinishLaunchingWasCalled;
 - (id)_fileManager;
@@ -56,7 +56,7 @@
 - (oneway void)release;
 - (void)removeIssue:(id)arg1;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (void)setCurrentlyReadingIssue:(id)arg1;
 
 @end

@@ -28,6 +28,8 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *version;
 
+// Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
+
 - (void).cxx_destruct;
 - (id)author;
 - (id)buyParams;
@@ -58,5 +60,14 @@
 - (id)title;
 - (void)updateBookAttributesByCopyingFromBook:(id)arg1;
 - (id)version;
+
+// Image: /System/Library/PrivateFrameworks/ManagedConfigurationUI.framework/ManagedConfigurationUI
+
+- (bool)hasManagedRestrictions;
+- (bool)isEnterpriseBook;
+- (bool)isExcludedFromBackup;
+- (bool)isExcludedFromCloudSync;
+- (bool)isUnableToExportToUnmanaged;
+- (bool)isUninstalledOnMDMRemoval;
 
 @end

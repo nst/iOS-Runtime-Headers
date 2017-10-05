@@ -9,6 +9,6 @@
 
 @optional
 
-- (BOOL)shouldReduceOptionItemsForNotifyingCharacteristics;
+- (bool)shouldReduceOptionItemsForNotifyingCharacteristics;
 
 @end

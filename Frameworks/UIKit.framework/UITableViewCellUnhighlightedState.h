@@ -4,20 +4,20 @@
 
 @interface UITableViewCellUnhighlightedState : NSObject {
     UIColor * _backgroundColor;
-    BOOL  _highlighted;
-    BOOL  _opaque;
+    bool  _highlighted;
+    bool  _opaque;
 }
 
 @property (retain) UIColor *backgroundColor;
-@property BOOL highlighted;
-@property BOOL opaque;
+@property bool highlighted;
+@property bool opaque;
 
 - (void).cxx_destruct;
 - (id)backgroundColor;
-- (BOOL)highlighted;
-- (BOOL)opaque;
+- (bool)highlighted;
+- (bool)opaque;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setOpaque:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setOpaque:(bool)arg1;
 
 @end

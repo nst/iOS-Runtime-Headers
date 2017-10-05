@@ -4,10 +4,10 @@
 
 @interface SearchUIContentAdvisoryView : SearchUIVibrantLabel
 
-- (id)initWithStyle:(unsigned int)arg1 large:(BOOL)arg2;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (struct CGSize { float x1; float x2; })makeLabelInsets:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)initWithStyle:(unsigned long long)arg1 large:(bool)arg2;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { double x1; double x2; })makeLabelInsets:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)updateAdvisoryString:(id)arg1;
 
 @end

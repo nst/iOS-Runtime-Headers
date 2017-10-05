@@ -4,6 +4,6 @@
 
 @interface AVWorkaroundNSBlockOperation : NSBlockOperation
 
-- (BOOL)isReady;
+- (bool)isReady;
 
 @end

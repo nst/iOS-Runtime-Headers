@@ -5,9 +5,9 @@
 @interface BYLicenseAgreement : NSObject
 
 + (void)_clearAcceptedLicenseVersion;
-+ (BOOL)needsToAcceptNewAgreement;
-+ (void)recordUserAcceptedAgreementVersion:(unsigned int)arg1;
-+ (unsigned int)versionOfAcceptedAgreement;
-+ (unsigned int)versionOfOnDiskAgreement;
++ (bool)needsToAcceptNewAgreement;
++ (void)recordUserAcceptedAgreementVersion:(unsigned long long)arg1;
++ (unsigned long long)versionOfAcceptedAgreement;
++ (unsigned long long)versionOfOnDiskAgreement;
 
 @end

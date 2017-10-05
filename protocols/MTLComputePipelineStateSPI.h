@@ -5,6 +5,7 @@
 
 @required
 
-- (unsigned int)staticThreadgroupMemoryLength;
+- (unsigned int)getComputeKernelTelemetryID;
+- (unsigned long long)staticThreadgroupMemoryLength;
 
 @end

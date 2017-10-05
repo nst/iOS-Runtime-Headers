@@ -5,17 +5,17 @@
 
 @required
 
-- (unsigned int)approximateCount;
+- (unsigned long long)approximateCount;
 - (NSOrderedSet *)assets;
-- (unsigned int)assetsCount;
-- (BOOL)canPerformEditOperation:(unsigned int)arg1;
-- (BOOL)canShowAvalancheStacks;
-- (BOOL)canShowComments;
-- (BOOL)isEmpty;
+- (unsigned long long)assetsCount;
+- (bool)canPerformEditOperation:(unsigned long long)arg1;
+- (bool)canShowAvalancheStacks;
+- (bool)canShowComments;
+- (bool)isEmpty;
 - (PLManagedAsset *)keyAsset;
 - (NSArray *)localizedLocationNames;
 - (NSString *)localizedTitle;
-- (unsigned int)photosCount;
+- (unsigned long long)photosCount;
 - (PLManagedAsset *)secondaryKeyAsset;
 - (void)setKeyAsset:(PLManagedAsset *)arg1;
 - (void)setSecondaryKeyAsset:(PLManagedAsset *)arg1;
@@ -23,7 +23,7 @@
 - (PLManagedAsset *)tertiaryKeyAsset;
 - (NSString *)title;
 - (NSString *)uuid;
-- (unsigned int)videosCount;
+- (unsigned long long)videosCount;
 
 @optional
 

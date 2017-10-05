@@ -4,6 +4,6 @@
 
 @interface ABPickerTableViewController : UITableViewController
 
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setEditing:(bool)arg1 animated:(bool)arg2;
 
 @end

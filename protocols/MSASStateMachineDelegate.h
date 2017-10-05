@@ -42,7 +42,7 @@
 - (void)MSASStateMachine:(MSASStateMachine *)arg1 didFinishUpdatingAlbum:(MSASAlbum *)arg2 info:(NSDictionary *)arg3 error:(NSError *)arg4;
 - (void)MSASStateMachine:(MSASStateMachine *)arg1 didFinishUpdatingAssetCollections:(NSArray *)arg2 inAlbum:(MSASAlbum *)arg3 info:(NSDictionary *)arg4 error:(NSError *)arg5;
 - (void)MSASStateMachine:(MSASStateMachine *)arg1 didFireScheduledEvent:(id)arg2 forAssetCollectionGUID:(NSString *)arg3 albumGUID:(NSString *)arg4 info:(NSDictionary *)arg5;
-- (BOOL)MSASStateMachine:(MSASStateMachine *)arg1 didQueryIsAssetCollectionWithGUIDInModel:(NSString *)arg2;
+- (bool)MSASStateMachine:(MSASStateMachine *)arg1 didQueryIsAssetCollectionWithGUIDInModel:(NSString *)arg2;
 - (void)MSASStateMachine:(MSASStateMachine *)arg1 didRequestAssetsForAddingAssetCollections:(NSArray *)arg2 inAlbum:(MSASAlbum *)arg3 specifications:(NSArray *)arg4 info:(NSDictionary *)arg5;
 - (void)MSASStateMachine:(MSASStateMachine *)arg1 willCheckForAlbumSyncedStateChangesInAlbum:(MSASAlbum *)arg2 info:(NSDictionary *)arg3;
 - (void)MSASStateMachine:(MSASStateMachine *)arg1 willCheckForUpdatesInAlbum:(MSASAlbum *)arg2 info:(NSDictionary *)arg3;

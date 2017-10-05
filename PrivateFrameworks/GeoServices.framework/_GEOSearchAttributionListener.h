@@ -6,18 +6,15 @@
     NSMutableArray * _completionHandlers;
     NSMutableArray * _errorHandlers;
     NSString * _identifier;
-    unsigned int  _version;
 }
 
 @property (nonatomic, readonly) NSString *identifier;
-@property (nonatomic, readonly) unsigned int version;
 
+- (void).cxx_destruct;
 - (void)addCompletionHandler:(id /* block */)arg1 errorHandler:(id /* block */)arg2;
-- (void)dealloc;
 - (void)handleError:(id)arg1;
-- (void)handleInfo:(id)arg1 updatedManifest:(BOOL)arg2;
+- (void)handleInfo:(id)arg1;
 - (id)identifier;
-- (id)initWithIdentifier:(id)arg1 version:(unsigned int)arg2;
-- (unsigned int)version;
+- (id)initWithIdentifier:(id)arg1;
 
 @end

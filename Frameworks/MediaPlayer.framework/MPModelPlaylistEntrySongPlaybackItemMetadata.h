@@ -9,17 +9,22 @@
 
 @property (nonatomic, retain) MPModelPlaylistEntry *playlistEntry;
 
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
 + (id)requiredProperties;
 
 - (void).cxx_destruct;
 - (void)_invalidateModelObjectPlaybackItemMetadata;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)modelGenericObject;
-- (id)mqf_playbackItemMetadataModelObject;
 - (id)playlistEntry;
 - (void)setPlaylistEntry:(id)arg1;
 - (void)setSong:(id)arg1;
 - (id)song;
+
+// Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
+
+- (id)mqf_playbackItemMetadataModelObject;
 
 @end

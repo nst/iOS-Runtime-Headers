@@ -3,22 +3,22 @@
  */
 
 @interface _NSArithmeticLayoutDimension : NSLayoutDimension <NSCompositeLayoutAnchor> {
-    float  _constant;
-    float  _multiplier;
+    double  _constant;
+    double  _multiplier;
     NSLayoutDimension * _rootLayoutDimension;
 }
 
 @property (readonly) NSArray *_childAnchors;
 
 - (id)_childAnchors;
-- (id)_expressionInContext:(/* Warning: unhandled struct encoding: '{?=i@}' */ struct { int x1; id x2; })arg1;
+- (id)_expressionInContext:(/* Warning: unhandled struct encoding: '{?=q@}' */ struct { long long x1; id x2; })arg1;
 - (id)_nearestAncestorLayoutItem;
-- (float)_valueInEngine:(id)arg1;
+- (double)_valueInEngine:(id)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)equationDescription;
 - (id)initWithAnchor:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMultiplier:(float)arg1 dimension:(id)arg2 constant:(float)arg3;
+- (id)initWithMultiplier:(double)arg1 dimension:(id)arg2 constant:(double)arg3;
 
 @end

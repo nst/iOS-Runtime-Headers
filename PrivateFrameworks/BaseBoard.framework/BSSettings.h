@@ -11,10 +11,10 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <BSSettingDescriptionProvider> *descriptionProvider;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_applyToSettings:(id)arg1;
@@ -22,15 +22,15 @@
 - (void)_enumerateSettingsForObjectsWithBlock:(id /* block */)arg1;
 - (void)_enumerateSettingsInMap:(id)arg1 withBlock:(id /* block */)arg2;
 - (id)_init;
-- (id)_keyDescriptionForSetting:(unsigned int)arg1;
+- (id)_keyDescriptionForSetting:(unsigned long long)arg1;
 - (id)_newMapTable;
 - (void)_removeAllSettings;
-- (void)_setFlag:(int)arg1 forSetting:(unsigned int)arg2;
-- (void)_setObject:(id)arg1 forSetting:(unsigned int)arg2;
-- (id)_valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3 multilinePrefix:(id)arg4;
+- (void)_setFlag:(long long)arg1 forSetting:(unsigned long long)arg2;
+- (void)_setObject:(id)arg1 forSetting:(unsigned long long)arg2;
+- (id)_valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3 multilinePrefix:(id)arg4;
 - (id)allSettings;
 - (id)basicDescriptionWithPrefix:(id)arg1;
-- (BOOL)boolForSetting:(unsigned int)arg1;
+- (bool)boolForSetting:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -41,16 +41,16 @@
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (void)enumerateFlagsWithBlock:(id /* block */)arg1;
 - (void)enumerateObjectsWithBlock:(id /* block */)arg1;
-- (int)flagForSetting:(unsigned int)arg1;
-- (unsigned int)hash;
+- (long long)flagForSetting:(unsigned long long)arg1;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
-- (BOOL)isEmpty;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isKeyedSettings;
+- (bool)isEmpty;
+- (bool)isEqual:(id)arg1;
+- (bool)isKeyedSettings;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)objectForSetting:(unsigned int)arg1;
+- (id)objectForSetting:(unsigned long long)arg1;
 - (void)setDescriptionProvider:(id)arg1;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;

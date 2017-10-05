@@ -5,6 +5,6 @@
 
 @optional
 
-- (BOOL)serviceGridItemManager:(HUServiceGridItemManager *)arg1 shouldHideItem:(HFItem *)arg2;
+- (bool)serviceGridItemManager:(HUServiceGridItemManager *)arg1 shouldHideItem:(HFItem *)arg2;
 
 @end

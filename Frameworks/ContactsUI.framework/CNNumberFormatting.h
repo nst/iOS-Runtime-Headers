@@ -4,6 +4,6 @@
 
 @interface CNNumberFormatting : NSObject
 
-+ (id)localizedStringWithInteger:(int)arg1;
++ (id)localizedStringWithInteger:(long long)arg1;
 
 @end

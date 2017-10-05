@@ -7,18 +7,18 @@
     MPStoreModelArtistBuilder * _artistBuilder;
     MPStoreModelMovieBuilder * _movieBuilder;
     MPStoreModelPlaylistBuilder * _playlistBuilder;
-    BOOL  _shouldUsePlaylistEntry;
+    bool  _shouldUsePlaylistEntry;
     MPStoreModelSongBuilder * _songBuilder;
     MPStoreModelTVEpisodeBuilder * _tvEpisodeBuilder;
     MPStoreModelTVSeasonBuilder * _tvSeasonBuilder;
     MPStoreModelTVShowBuilder * _tvShowBuilder;
 }
 
-@property (nonatomic) BOOL shouldUsePlaylistEntry;
+@property (nonatomic) bool shouldUsePlaylistEntry;
 
 - (void).cxx_destruct;
 - (id)modelObjectWithStoreItemMetadata:(id)arg1;
-- (void)setShouldUsePlaylistEntry:(BOOL)arg1;
-- (BOOL)shouldUsePlaylistEntry;
+- (void)setShouldUsePlaylistEntry:(bool)arg1;
+- (bool)shouldUsePlaylistEntry;
 
 @end

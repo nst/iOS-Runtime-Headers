@@ -14,10 +14,10 @@
 
 @property (nonatomic, retain) NSString *accessoryName;
 @property (nonatomic, retain) NSString *accessoryType;
-@property (nonatomic, readonly) BOOL hasAccessoryName;
-@property (nonatomic, readonly) BOOL hasAccessoryType;
-@property (nonatomic, readonly) BOOL hasTestName;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) bool hasAccessoryName;
+@property (nonatomic, readonly) bool hasAccessoryType;
+@property (nonatomic, readonly) bool hasTestName;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic, retain) NSString *testName;
 @property (nonatomic) unsigned long long timestamp;
 
@@ -28,17 +28,17 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAccessoryName;
-- (BOOL)hasAccessoryType;
-- (BOOL)hasTestName;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAccessoryName;
+- (bool)hasAccessoryType;
+- (bool)hasTestName;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAccessoryName:(id)arg1;
 - (void)setAccessoryType:(id)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setTestName:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (id)testName;

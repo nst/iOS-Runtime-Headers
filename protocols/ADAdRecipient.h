@@ -7,13 +7,14 @@
 
 - (NSString *)adResponseId;
 - (UIView *)adSpaceView;
-- (BOOL)displayed;
+- (bool)displayed;
 - (int)internalAdType;
-- (int)lastErrorCode;
-- (int)options;
+- (long long)lastErrorCode;
+- (long long)options;
 - (void)pauseBannerMedia;
 - (UIViewController *)presentingViewController;
 - (void)privacyButtonWasTapped;
+- (bool)reUsed;
 - (void)resumeBannerMedia;
 - (int)screenfuls;
 - (void)serverBannerViewDidFailToReceiveAdWithError:(NSError *)arg1;
@@ -21,15 +22,18 @@
 - (void)serverBannerViewWillLoad;
 - (void)serverStoryboardDidTransitionOut;
 - (void)setAdResponseId:(NSString *)arg1;
-- (void)setDisplayed:(BOOL)arg1;
-- (void)setLastErrorCode:(int)arg1;
+- (void)setDisplayed:(bool)arg1;
+- (void)setLastErrorCode:(long long)arg1;
+- (void)setReUsed:(bool)arg1;
 - (void)setScreenfuls:(int)arg1;
-- (BOOL)shouldTestVisibilityAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setSlotPosition:(int)arg1;
+- (bool)shouldTestVisibilityAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (int)slotPosition;
 - (void)storyboardViewControllerDidPresent;
 
 @optional
 
-- (void)creativeControllerViewWasTappedAtPoint:(struct CGPoint { float x1; float x2; })arg1 withMRAIDAction:(ADMRAIDAction *)arg2;
-- (void)setViewSizeInPortrait:(struct CGSize { float x1; float x2; })arg1 inLandscape:(struct CGSize { float x1; float x2; })arg2;
+- (void)creativeControllerViewWasTappedAtPoint:(struct CGPoint { double x1; double x2; })arg1 withMRAIDAction:(ADMRAIDAction *)arg2;
+- (void)setViewSizeInPortrait:(struct CGSize { double x1; double x2; })arg1 inLandscape:(struct CGSize { double x1; double x2; })arg2;
 
 @end

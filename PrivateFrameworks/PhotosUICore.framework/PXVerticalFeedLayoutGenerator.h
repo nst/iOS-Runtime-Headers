@@ -4,62 +4,62 @@
 
 @interface PXVerticalFeedLayoutGenerator : PXFeedLayoutGenerator {
     struct PXTileInfo { 
-        int index; 
+        long long index; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } imageSize; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } minimumSize; 
-        BOOL hasCaption; 
-        BOOL isBatchStart; 
+        bool hasCaption; 
+        bool isBatchStart; 
     }  _enqueuedCaptionTileInfo;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _origin;
-    float  _referenceWidth;
-    BOOL  _shouldDisplayCaptionsBelowBatches;
+    double  _referenceWidth;
+    bool  _shouldDisplayCaptionsBelowBatches;
 }
 
-@property (nonatomic) float referenceWidth;
-@property (nonatomic) BOOL shouldDisplayCaptionsBelowBatches;
+@property (nonatomic) double referenceWidth;
+@property (nonatomic) bool shouldDisplayCaptionsBelowBatches;
 
-- (BOOL)_addRowWithContiguousTiles:(struct PXTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 count:(int)arg2;
-- (BOOL)_addRowWithTiles:(struct PXTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 imageFrames:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 count:(int)arg3;
-- (BOOL)_addSpecialSequenceBlock:(struct PXTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
-- (BOOL)_dequeueCaption;
-- (void)_enqueueCaptionWithTileInfo:(struct PXTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; })arg1;
-- (void)_enumerateRowFramesWithContiguousTiles:(struct PXTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 count:(int)arg2 useMagneticGuidelines:(BOOL)arg3 block:(id /* block */)arg4;
-- (BOOL)_hasEnqueuedCaption;
-- (BOOL)_hasLeftSuboptimalRow;
-- (BOOL)_isAtEndOfRow;
-- (BOOL)_parseSingleTile;
-- (BOOL)_parseSpecialSequence;
-- (BOOL)_parseSpecialSubsequenceWithRowRequired:(BOOL)arg1 rowParsed:(BOOL*)arg2;
-- (BOOL)_parseSpecialTileTriplet;
-- (BOOL)_parseTilePair;
-- (BOOL)_parseTileRequiringFullWidth;
-- (BOOL)_parseTileTriplet;
-- (BOOL)_scanNonPanoramaSequence:(struct PXTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 count:(int)arg2;
-- (BOOL)_scanSpecialSequenceBlock:(struct PXTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
-- (BOOL)_scanSpecialSequenceRow:(struct PXTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 count:(int*)arg2;
-- (BOOL)_scanTilePair:(struct PXTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
-- (BOOL)_scanTileRequiringFullWidth:(struct PXTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
-- (BOOL)_scanTileRequiringNewRow:(struct PXTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
-- (BOOL)_scanTileTriplet:(struct PXTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
-- (BOOL)_scanTripletWithLargeLead:(struct PXTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
-- (BOOL)_scanTripletWithRearrangment:(struct PXTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
-- (void)_willAddRowWithFirstTileInfo:(struct PXTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; })arg1;
+- (bool)_addRowWithContiguousTiles:(struct PXTileInfo { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1 count:(long long)arg2;
+- (bool)_addRowWithTiles:(struct PXTileInfo { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1 imageFrames:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 count:(long long)arg3;
+- (bool)_addSpecialSequenceBlock:(struct PXTileInfo { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1;
+- (bool)_dequeueCaption;
+- (void)_enqueueCaptionWithTileInfo:(struct PXTileInfo { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; })arg1;
+- (void)_enumerateRowFramesWithContiguousTiles:(struct PXTileInfo { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1 count:(long long)arg2 useMagneticGuidelines:(bool)arg3 block:(id /* block */)arg4;
+- (bool)_hasEnqueuedCaption;
+- (bool)_hasLeftSuboptimalRow;
+- (bool)_isAtEndOfRow;
+- (bool)_parseSingleTile;
+- (bool)_parseSpecialSequence;
+- (bool)_parseSpecialSubsequenceWithRowRequired:(bool)arg1 rowParsed:(bool*)arg2;
+- (bool)_parseSpecialTileTriplet;
+- (bool)_parseTilePair;
+- (bool)_parseTileRequiringFullWidth;
+- (bool)_parseTileTriplet;
+- (bool)_scanNonPanoramaSequence:(struct PXTileInfo { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1 count:(long long)arg2;
+- (bool)_scanSpecialSequenceBlock:(struct PXTileInfo { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1;
+- (bool)_scanSpecialSequenceRow:(struct PXTileInfo { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1 count:(long long*)arg2;
+- (bool)_scanTilePair:(struct PXTileInfo { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1;
+- (bool)_scanTileRequiringFullWidth:(struct PXTileInfo { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1;
+- (bool)_scanTileRequiringNewRow:(struct PXTileInfo { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1;
+- (bool)_scanTileTriplet:(struct PXTileInfo { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1;
+- (bool)_scanTripletWithLargeLead:(struct PXTileInfo { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1;
+- (bool)_scanTripletWithRearrangment:(struct PXTileInfo { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1;
+- (void)_willAddRowWithFirstTileInfo:(struct PXTileInfo { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; })arg1;
 - (void)didParseTiles;
-- (BOOL)parseNextTiles;
-- (float)referenceDistanceForMagneticGuidelines;
-- (float)referenceWidth;
-- (void)setReferenceWidth:(float)arg1;
-- (void)setShouldDisplayCaptionsBelowBatches:(BOOL)arg1;
-- (BOOL)shouldDisplayCaptionsBelowBatches;
+- (bool)parseNextTiles;
+- (double)referenceDistanceForMagneticGuidelines;
+- (double)referenceWidth;
+- (void)setReferenceWidth:(double)arg1;
+- (void)setShouldDisplayCaptionsBelowBatches:(bool)arg1;
+- (bool)shouldDisplayCaptionsBelowBatches;
 - (void)willParseTiles;
 
 @end

@@ -12,8 +12,9 @@
 @property (readonly, copy) NSString *description;
 @property (getter=_geoMapItemTIp, nonatomic, readonly) GEOMapItemTip *geoMapItemTip;
 @property (getter=_geoReview, nonatomic, readonly) <GEOMapItemReview> *geoReview;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (getter=_localizedSnippet, nonatomic, readonly) NSString *localizedSnippet;
+@property (getter=_localizedSnippetLocale, nonatomic, readonly) NSString *localizedSnippetLocale;
 @property (getter=_maxScore, nonatomic, readonly) double maxScore;
 @property (getter=_normalizedScore, nonatomic, readonly) double normalizedScore;
 @property (getter=_reviewerImageURL, nonatomic, readonly) NSURL *reviewerImageURL;
@@ -26,6 +27,7 @@
 - (id)_geoMapItemTIp;
 - (id)_geoReview;
 - (id)_localizedSnippet;
+- (id)_localizedSnippetLocale;
 - (double)_maxScore;
 - (double)_normalizedScore;
 - (id)_reviewerImageURL;

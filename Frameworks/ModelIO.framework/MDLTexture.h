@@ -3,12 +3,12 @@
  */
 
 @interface MDLTexture : NSObject <MDLNamed> {
-    BOOL  _alphaValuesSet;
+    bool  _alphaValuesSet;
     NSData * _bottomLeftOriginData;
-    int  _channelEncoding;
-    BOOL  _hasAlphaValues;
+    long long  _channelEncoding;
+    bool  _hasAlphaValues;
     NSString * _name;
-    BOOL  _selfCreating;
+    bool  _selfCreating;
     struct MDLTextureData { 
         char *topLeftBytesForMip[16]; 
         char *bottomLeftBytesForMip[16]; 
@@ -18,14 +18,14 @@
     NSData * _topLeftOriginData;
 }
 
-@property (nonatomic, readonly) unsigned int channelCount;
-@property (nonatomic, readonly) int channelEncoding;
+@property (nonatomic, readonly) unsigned long long channelCount;
+@property (nonatomic, readonly) long long channelEncoding;
 @property (nonatomic, readonly) void dimensions;
-@property (nonatomic) BOOL hasAlphaValues;
-@property (nonatomic) BOOL isCube;
-@property (nonatomic, readonly) unsigned int mipLevelCount;
+@property (nonatomic) bool hasAlphaValues;
+@property (nonatomic) bool isCube;
+@property (nonatomic, readonly) unsigned long long mipLevelCount;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, readonly) int rowStride;
+@property (nonatomic, readonly) long long rowStride;
 
 + (id)_textureCubeWithSingleImageNamed:(id)arg1 bundle:(id)arg2;
 + (id)irradianceTextureCubeWithTexture:(void *)arg1 name:(void *)arg2 dimensions:(void *)arg3; // needs 3 arg types, found 2: id, id
@@ -36,34 +36,37 @@
 + (id)textureNamed:(id)arg1 bundle:(id)arg2;
 
 - (void).cxx_destruct;
-- (id)allocateDataAtLevel:(int)arg1;
-- (unsigned int)channelCount;
-- (int)channelEncoding;
+- (id)allocateDataAtLevel:(long long)arg1;
+- (unsigned long long)channelCount;
+- (long long)channelEncoding;
 - (void)clearTexelData;
 - (void)dimensions;
-- (id)generateDataAtLevel:(int)arg1;
-- (BOOL)hasAlphaValues;
+- (id)generateDataAtLevel:(long long)arg1;
+- (bool)hasAlphaValues;
 - (struct CGImage { }*)imageFromTexture;
+- (struct CGImage { }*)imageFromTextureAtLevel:(unsigned long long)arg1;
 - (id)init;
-- (id)initWithData:(void *)arg1 topLeftOrigin:(void *)arg2 name:(void *)arg3 dimensions:(void *)arg4 rowStride:(void *)arg5 channelCount:(void *)arg6 channelEncoding:(void *)arg7 isCube:(void *)arg8; // needs 8 arg types, found 7: id, BOOL, id, int, unsigned int, int, BOOL
-- (BOOL)isCube;
-- (void)loadDataWithBottomLeftOriginAtMipLevel:(int)arg1 create:(BOOL)arg2;
-- (void)loadDataWithTopLeftOriginAtMipLevel:(int)arg1 create:(BOOL)arg2;
-- (unsigned int)mipLevelCount;
+- (id)initWithData:(void *)arg1 topLeftOrigin:(void *)arg2 name:(void *)arg3 dimensions:(void *)arg4 rowStride:(void *)arg5 channelCount:(void *)arg6 channelEncoding:(void *)arg7 isCube:(void *)arg8; // needs 8 arg types, found 7: id, bool, id, long long, unsigned long long, long long, bool
+- (bool)isCube;
+- (void)loadDataWithBottomLeftOriginAtMipLevel:(long long)arg1 create:(bool)arg2;
+- (void)loadDataWithTopLeftOriginAtMipLevel:(long long)arg1 create:(bool)arg2;
+- (unsigned long long)mipLevelCount;
 - (id)name;
-- (int)rowStride;
-- (void)setHasAlphaValues:(BOOL)arg1;
-- (void)setIsCube:(BOOL)arg1;
+- (long long)rowStride;
+- (void)setHasAlphaValues:(bool)arg1;
+- (void)setIsCube:(bool)arg1;
 - (void)setName:(id)arg1;
-- (void)setTexelDataWithBottomLeftOrigin:(id)arg1 atMipLevel:(int)arg2;
-- (void)setTexelDataWithTopLeftOrigin:(id)arg1 atMipLevel:(int)arg2;
+- (void)setTexelDataWithBottomLeftOrigin:(id)arg1 atMipLevel:(long long)arg2;
+- (void)setTexelDataWithTopLeftOrigin:(id)arg1 atMipLevel:(long long)arg2;
 - (id)texelDataWithBottomLeftOrigin;
-- (id)texelDataWithBottomLeftOriginAtMipLevel:(int)arg1 create:(BOOL)arg2;
+- (id)texelDataWithBottomLeftOriginAtMipLevel:(long long)arg1 create:(bool)arg2;
 - (id)texelDataWithTopLeftOrigin;
-- (id)texelDataWithTopLeftOriginAtMipLevel:(int)arg1 create:(BOOL)arg2;
-- (struct MDLTextureData { char *x1[16]; char *x2[16]; int x3; unsigned int x4; bool x5; }*)textureData;
-- (BOOL)writeToFile:(id)arg1 atomically:(BOOL)arg2;
-- (BOOL)writeToURL:(id)arg1;
-- (BOOL)writeToURL:(id)arg1 type:(struct __CFString { }*)arg2;
+- (id)texelDataWithTopLeftOrigin:(unsigned long long)arg1;
+- (id)texelDataWithTopLeftOriginAtMipLevel:(long long)arg1 create:(bool)arg2;
+- (struct MDLTextureData { char *x1[16]; char *x2[16]; int x3; unsigned long long x4; bool x5; }*)textureData;
+- (bool)writeToURL:(id)arg1;
+- (bool)writeToURL:(id)arg1 level:(unsigned long long)arg2;
+- (bool)writeToURL:(id)arg1 type:(struct __CFString { }*)arg2;
+- (bool)writeToURL:(id)arg1 type:(struct __CFString { }*)arg2 level:(unsigned long long)arg3;
 
 @end

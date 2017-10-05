@@ -4,6 +4,6 @@
 
 @interface __TVAnimatedImageView : UIImageView
 
-- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
+- (bool)_shouldAnimatePropertyWithKey:(id)arg1;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface SUSUIRemoteEmergencyCallAlertAction : BSAction
 
-- (void)fireCompletionIfNecessaryForResult:(BOOL)arg1;
+- (void)fireCompletionIfNecessaryForResult:(bool)arg1;
 - (id)initWithCompletionBlock:(id /* block */)arg1;
 
 @end

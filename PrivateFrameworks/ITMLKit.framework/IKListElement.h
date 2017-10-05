@@ -4,10 +4,10 @@
 
 @interface IKListElement : IKCollectionElement
 
-@property (nonatomic, readonly) BOOL isLeftAligned;
+@property (nonatomic, readonly) bool isLeftAligned;
 @property (nonatomic, readonly, retain) IKViewElement *relatedContent;
 
-- (BOOL)isLeftAligned;
+- (bool)isLeftAligned;
 - (id)relatedContent;
 
 @end

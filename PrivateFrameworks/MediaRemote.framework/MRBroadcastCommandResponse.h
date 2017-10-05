@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) int pid;
 @property (nonatomic, readonly) NSData *responseData;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)bundleIdentifer;
 - (id)commandHandlerStatuses;

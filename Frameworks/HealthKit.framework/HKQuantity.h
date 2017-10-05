@@ -9,36 +9,40 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (getter=_unit, nonatomic, readonly) HKUnit *unit;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
++ (id)_quantityWithBeatsPerMinute:(double)arg1;
 + (id)quantityWithUnit:(id)arg1 doubleValue:(double)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (double)_beatsPerMinute;
 - (id)_foundationMeasurement;
 - (id)_initWithUnit:(id)arg1 doubleValue:(double)arg2;
-- (BOOL)_isZero;
+- (bool)_isZero;
 - (id)_quantityByAddingQuantity:(id)arg1;
 - (id)_unit;
-- (int)compare:(id)arg1;
+- (long long)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (double)doubleValueForUnit:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
+- (bool)hk_isGreaterThanQuantity:(id)arg1;
+- (bool)hk_isLessThanQuantity:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isCompatibleWithUnit:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isCompatibleWithUnit:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
 
 - (double)fiui_doubleValueByDividingByQuantity:(id)arg1;
-- (BOOL)fiui_isNonzero;
+- (bool)fiui_isNonzero;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 

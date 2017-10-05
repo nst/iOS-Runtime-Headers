@@ -3,25 +3,25 @@
  */
 
 @interface SKUIViewElementHorizontalLayout : NSObject {
-    float  _elementSpacing;
-    float  _layoutWidth;
-    int  _maximumElementsPerLine;
-    int  _maximumLines;
+    double  _elementSpacing;
+    double  _layoutWidth;
+    long long  _maximumElementsPerLine;
+    long long  _maximumLines;
 }
 
-@property (nonatomic) float elementSpacing;
-@property (nonatomic) float layoutWidth;
-@property (nonatomic) int maximumElementsPerLine;
-@property (nonatomic) int maximumLines;
+@property (nonatomic) double elementSpacing;
+@property (nonatomic) double layoutWidth;
+@property (nonatomic) long long maximumElementsPerLine;
+@property (nonatomic) long long maximumLines;
 
-- (float)elementSpacing;
+- (double)elementSpacing;
 - (id)layoutViewElements:(id)arg1 usingSizingBlock:(id /* block */)arg2;
-- (float)layoutWidth;
-- (int)maximumElementsPerLine;
-- (int)maximumLines;
-- (void)setElementSpacing:(float)arg1;
-- (void)setLayoutWidth:(float)arg1;
-- (void)setMaximumElementsPerLine:(int)arg1;
-- (void)setMaximumLines:(int)arg1;
+- (double)layoutWidth;
+- (long long)maximumElementsPerLine;
+- (long long)maximumLines;
+- (void)setElementSpacing:(double)arg1;
+- (void)setLayoutWidth:(double)arg1;
+- (void)setMaximumElementsPerLine:(long long)arg1;
+- (void)setMaximumLines:(long long)arg1;
 
 @end

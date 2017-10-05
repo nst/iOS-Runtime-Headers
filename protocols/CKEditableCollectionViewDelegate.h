@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)collectionView:(UICollectionView *)arg1 isEditableItemAtIndexPath:(NSIndexPath *)arg2;
+- (bool)collectionView:(UICollectionView *)arg1 isEditableItemAtIndexPath:(NSIndexPath *)arg2;
 
 @end

@@ -2,39 +2,51 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKPlaceHoursViewController : MKPlaceSectionViewController <MKStackingViewControllerFixedHeightAware, _MKInfoCardChildViewControllerAnalyticsDelegate> {
-    <_MKInfoCardAnaylticsDelegate> * _analyticsDelegate;
+@interface MKPlaceHoursViewController : MKPlaceSectionViewController <MKModuleViewControllerProtocol, MKStackingViewControllerFixedHeightAware, _MKInfoCardChildViewControllerAnalyticsDelegate> {
+    <_MKInfoCardAnalyticsDelegate> * _analyticsDelegate;
     NSArray * _completeHours;
+    NSString * _currentOpeningString;
+    NSMutableDictionary * _formattedData;
     MKPlaceSectionHeaderView * _headerView;
-    BOOL  _isExpanded;
+    bool  _isExpanded;
     MKMapItem * _mapItem;
-    BOOL  _resizableViewsDisabled;
+    bool  _resizableViewsDisabled;
 }
 
-@property (nonatomic) <_MKInfoCardAnaylticsDelegate> *analyticsDelegate;
+@property (nonatomic) <_MKInfoCardAnalyticsDelegate> *analyticsDelegate;
+@property (nonatomic, readonly) NSArray *completeHours;
+@property (nonatomic, readonly) NSString *currentOpeningString;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) MKMapItem *mapItem;
-@property (nonatomic) BOOL resizableViewsDisabled;
+@property (nonatomic) bool resizableViewsDisabled;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) NSTimeZone *timeZone;
+
++ (id)placeHoursWithMapItem:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_contentSizeDidChange;
-- (void)_setExpanded:(BOOL)arg1;
-- (BOOL)_shouldOnlyShowExpanded;
+- (void)_setExpanded:(bool)arg1;
+- (bool)_shouldOnlyShowExpanded;
 - (void)_toggleShowAllHours;
-- (void)_updateHoursAnimated:(BOOL)arg1;
+- (void)_updateHoursAnimated:(bool)arg1;
 - (id)analyticsDelegate;
-- (void)dealloc;
-- (float)extraHeightToReserveInLayout;
+- (void)calculateWidthsForData:(id)arg1;
+- (id)completeHours;
+- (id)currentOpeningString;
+- (id)formattedData;
 - (id)infoCardChildPossibleActions;
+- (id)initWithMapItem:(id)arg1;
 - (id)mapItem;
-- (BOOL)resizableViewsDisabled;
+- (bool)resizableViewsDisabled;
 - (void)setAnalyticsDelegate:(id)arg1;
 - (void)setMapItem:(id)arg1;
-- (void)setResizableViewsDisabled:(BOOL)arg1;
+- (void)setResizableViewsDisabled:(bool)arg1;
+- (id)timeZone;
+- (id)titleString;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

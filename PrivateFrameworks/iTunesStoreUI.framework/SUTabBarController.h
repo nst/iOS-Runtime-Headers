@@ -4,7 +4,7 @@
 
 @interface SUTabBarController : UITabBarController <SUOverlayBackgroundDelegate, _UIBasicAnimationFactory> {
     SUClientInterface * _clientInterface;
-    BOOL  _ignoreTabReselection;
+    bool  _ignoreTabReselection;
     UIImage * _moreListSelectedImage;
     NSString * _moreListTitle;
     UIImage * _moreListUnselectedImage;
@@ -14,9 +14,9 @@
     NSString * _preloadedViewControllerIdentifier;
     NSString * _preloadedViewControllerKey;
     SUPreviewOverlayViewController * _previewOverlayViewController;
-    int  _reloadingUnderneathTransientControllerCount;
+    long long  _reloadingUnderneathTransientControllerCount;
     NSArray * _sections;
-    int  _storeBarStyle;
+    long long  _storeBarStyle;
     SUNavigationBarBackgroundView * _tabBarBackdropView;
 }
 
@@ -25,7 +25,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SUTabBarControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *moreListTitle;
 @property (nonatomic, retain) NSArray *sections;
 @property (nonatomic, retain) NSString *selectedIdentifier;
@@ -33,7 +33,7 @@
 
 + (Class)_moreNavigationControllerClass;
 
-- (int)ITunesStoreUIBarStyle;
+- (long long)ITunesStoreUIBarStyle;
 - (void)_applicationDidChangeStatusBarFrame:(id)arg1;
 - (void)_applyMoreListConfiguration;
 - (id)_archivedContextsForViewController:(id)arg1;
@@ -42,56 +42,56 @@
 - (void)_endReloadingUnderneathTransientViewController;
 - (void)_fixupTabBarSelection;
 - (void)_fixupViewControllers;
-- (void)_hidePreviewOverlayAnimated:(BOOL)arg1;
-- (BOOL)_isReloadingUnderneathTransientViewController;
+- (void)_hidePreviewOverlayAnimated:(bool)arg1;
+- (bool)_isReloadingUnderneathTransientViewController;
 - (void)_longPressAction:(id)arg1;
-- (void)_moveTransientViewController:(id)arg1 toSectionWithIdentifier:(id)arg2 asRoot:(BOOL)arg3;
+- (void)_moveTransientViewController:(id)arg1 toSectionWithIdentifier:(id)arg2 asRoot:(bool)arg3;
 - (void)_moveView:(id)arg1 toView:(id)arg2;
 - (void)_partnerChanged:(id)arg1;
 - (id)_previewOverlayViewController;
-- (void)_reloadViewControllersFromSections:(id)arg1 animated:(BOOL)arg2;
+- (void)_reloadViewControllersFromSections:(id)arg1 animated:(bool)arg2;
 - (void)_restoreArchivedContexts:(id)arg1;
 - (void)_restoreArchivedTransientContexts:(id)arg1;
 - (void)_restoreOverlayContexts:(id)arg1;
 - (id)_rootViewControllerForSection:(id)arg1;
-- (BOOL)_saveNavigationPathToDefaults;
-- (BOOL)_saveTransientNavigationPathToDefaults;
+- (bool)_saveNavigationPathToDefaults;
+- (bool)_saveTransientNavigationPathToDefaults;
 - (id)_sectionForIdentifier:(id)arg1;
-- (id)_sectionForType:(int)arg1;
+- (id)_sectionForType:(long long)arg1;
 - (id)_sectionForViewController:(id)arg1;
 - (void)_setSelectedViewController:(id)arg1;
-- (void)_setStoreBarStyle:(int)arg1;
-- (void)_showPreviewOverlay:(id)arg1 animated:(BOOL)arg2;
+- (void)_setStoreBarStyle:(long long)arg1;
+- (void)_showPreviewOverlay:(id)arg1 animated:(bool)arg2;
 - (id)_timingFunctionForAnimation;
 - (void)_transitionSafeHandlePartnerChange:(id)arg1;
 - (id)_viewControllerForContext:(id)arg1;
 - (void)cancelTransientViewController:(id)arg1;
 - (id)clientInterface;
 - (void)dealloc;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)didRotateFromInterfaceOrientation:(long long)arg1;
 - (void)dismissOverlayBackgroundViewController;
-- (unsigned int)indexOfViewControllerWithSectionType:(int)arg1;
+- (unsigned long long)indexOfViewControllerWithSectionType:(long long)arg1;
 - (id)init;
 - (id)initWithClientInterface:(id)arg1;
-- (BOOL)loadFromDefaults;
-- (BOOL)loadFromDefaultsAndSetSections:(id)arg1;
+- (bool)loadFromDefaults;
+- (bool)loadFromDefaultsAndSetSections:(id)arg1;
 - (void)loadView;
 - (id)moreListTitle;
 - (id)overlayBackgroundViewController;
-- (BOOL)presentOverlayBackgroundViewController:(id)arg1;
+- (bool)presentOverlayBackgroundViewController:(id)arg1;
 - (void)pushTransientViewController:(id)arg1 onSectionWithIdentifier:(id)arg2;
-- (void)reloadSectionVisibilityAnimated:(BOOL)arg1;
+- (void)reloadSectionVisibilityAnimated:(bool)arg1;
 - (void)reloadSectionWithIdentifier:(id)arg1 URL:(id)arg2;
 - (void)resetToSystemDefaults;
 - (void)resetUserDefaults;
 - (id)rotatingFooterView;
 - (id)rotatingHeaderView;
-- (BOOL)saveOrderingToDefaults;
-- (BOOL)saveToDefaults;
+- (bool)saveOrderingToDefaults;
+- (bool)saveToDefaults;
 - (void)scriptOverlayBackgroundDidDismiss:(id)arg1;
 - (id)sections;
 - (void)selectDefaultSection;
-- (void)selectSectionOfType:(int)arg1;
+- (void)selectSectionOfType:(long long)arg1;
 - (id)selectedIdentifier;
 - (id)selectedViewController;
 - (void)setMoreListSelectedImage:(id)arg1 unselectedImage:(id)arg2;
@@ -99,21 +99,21 @@
 - (void)setSectionOrdering:(id)arg1;
 - (void)setSections:(id)arg1;
 - (void)setSelectedIdentifier:(id)arg1;
-- (void)setTransientViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)setTransientViewController:(id)arg1 animated:(bool)arg2;
 - (void)setTransientViewController:(id)arg1 onSectionWithIdentifier:(id)arg2;
-- (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
-- (unsigned int)supportedInterfaceOrientations;
-- (void)tabBar:(id)arg1 didEndCustomizingItems:(id)arg2 changed:(BOOL)arg3;
-- (void)tabBar:(id)arg1 willEndCustomizingItems:(id)arg2 changed:(BOOL)arg3;
+- (void)setViewControllers:(id)arg1 animated:(bool)arg2;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)tabBar:(id)arg1 didEndCustomizingItems:(id)arg2 changed:(bool)arg3;
+- (void)tabBar:(id)arg1 willEndCustomizingItems:(id)arg2 changed:(bool)arg3;
 - (void)tabBar:(id)arg1 willShowCustomizationSheet:(id)arg2 withNavigationBar:(id)arg3;
 - (id)viewControllerForSectionIdentifier:(id)arg1;
-- (id)viewControllerForSectionType:(int)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(int)arg2;
+- (id)viewControllerForSectionType:(long long)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
+- (bool)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(long long)arg2;
 
 @end

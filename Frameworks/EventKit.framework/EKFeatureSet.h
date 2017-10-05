@@ -4,16 +4,21 @@
 
 @interface EKFeatureSet : NSObject
 
-+ (BOOL)areApplicationBadgesSupported;
-+ (BOOL)areContextualRemindersSupported;
-+ (BOOL)areQuickActionsSupported;
-+ (BOOL)areVehicleTriggersEnabled;
-+ (BOOL)calendarListViewCellsFeaturesAttendeeInformation;
-+ (BOOL)calendarListViewCellsFeaturesExtraContent;
-+ (BOOL)eventDetailsDayPreviewEnabled;
-+ (BOOL)isConservativeEntryEnabled;
-+ (BOOL)isContinuitySupported;
-+ (BOOL)isSuggestionsEnabled;
-+ (BOOL)isTravelAdvisorySupported;
++ (unsigned long long)_currentSplashScreenVersion;
++ (bool)areApplicationBadgesSupported;
++ (bool)areContextualRemindersSupported;
++ (bool)areQuickActionsSupported;
++ (bool)areVehicleTriggersEnabled;
++ (bool)automaticGeocodingEnabled;
++ (bool)calendarListViewCellsFeaturesAttendeeInformation;
++ (bool)calendarListViewCellsFeaturesExtraContent;
++ (bool)eventDetailsDayPreviewEnabled;
++ (bool)eventsFoundInAppsEnabled;
++ (bool)isConservativeEntryEnabled;
++ (bool)isContinuitySupported;
++ (bool)isSuggestionsEnabled;
++ (bool)isTravelAdvisorySupported;
++ (bool)mustDisplaySplashScreenToUser;
++ (void)userAcknowledgedSplashScreen;
 
 @end

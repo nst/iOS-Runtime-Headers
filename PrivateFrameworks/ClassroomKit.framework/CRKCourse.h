@@ -8,7 +8,7 @@
     NSString * _courseName;
     CRKUser * _courseUser;
     NSDictionary * _instructorsByIdentifier;
-    BOOL  _managed;
+    bool  _managed;
 }
 
 @property (nonatomic, copy) NSString *courseDescription;
@@ -16,10 +16,10 @@
 @property (nonatomic, copy) NSString *courseName;
 @property (nonatomic, retain) CRKUser *courseUser;
 @property (nonatomic, copy) NSDictionary *instructorsByIdentifier;
-@property (getter=isManaged, nonatomic) BOOL managed;
+@property (getter=isManaged, nonatomic) bool managed;
 
 + (id)new;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)courseDescription;
@@ -28,19 +28,19 @@
 - (id)courseUser;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 managed:(BOOL)arg2;
+- (id)initWithIdentifier:(id)arg1 managed:(bool)arg2;
 - (id)instructorsByIdentifier;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToCourse:(id)arg1;
-- (BOOL)isManaged;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToCourse:(id)arg1;
+- (bool)isManaged;
 - (void)setCourseDescription:(id)arg1;
 - (void)setCourseIdentifier:(id)arg1;
 - (void)setCourseName:(id)arg1;
 - (void)setCourseUser:(id)arg1;
 - (void)setInstructorsByIdentifier:(id)arg1;
-- (void)setManaged:(BOOL)arg1;
+- (void)setManaged:(bool)arg1;
 
 @end

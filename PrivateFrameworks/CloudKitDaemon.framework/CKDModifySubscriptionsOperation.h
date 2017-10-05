@@ -16,6 +16,8 @@
 @property (nonatomic, retain) NSMutableDictionary *subscriptionsByServerID;
 @property (nonatomic, retain) NSArray *subscriptionsToSave;
 
++ (long long)isPredominatelyDownload;
+
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleSubscriptionDeleted:(id)arg1 responseCode:(id)arg2;

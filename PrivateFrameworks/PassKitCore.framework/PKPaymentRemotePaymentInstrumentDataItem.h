@@ -8,15 +8,18 @@
 @property (nonatomic, readonly) PKPaymentApplication *paymentApplication;
 @property (nonatomic, readonly) PKRemoteDevice *remoteDevice;
 @property (nonatomic, readonly) PKRemotePaymentInstrument *remotePaymentInstrument;
-@property (nonatomic, readonly) BOOL requiresBillingAddress;
+@property (nonatomic, readonly) bool requiresBillingAddress;
 
-+ (int)dataType;
++ (long long)dataType;
 
 - (id)billingAddress;
-- (BOOL)isValidWithError:(id*)arg1;
+- (id)errors;
+- (bool)hasAssociatedPeerPaymentAccount;
+- (bool)isValidWithError:(id*)arg1;
 - (id)paymentApplication;
+- (id)peerPaymentAccountBalance;
 - (id)remoteDevice;
 - (id)remotePaymentInstrument;
-- (BOOL)requiresBillingAddress;
+- (bool)requiresBillingAddress;
 
 @end

@@ -7,25 +7,25 @@
     AVAudioFile * _audioFile;
     NSString * _audioName;
     NSURL * _audioURL;
-    BOOL  _loaded;
-    BOOL  _loops;
-    BOOL  _shouldStream;
-    BOOL  positional;
+    bool  _loaded;
+    bool  _loops;
+    bool  _shouldStream;
+    bool  positional;
     float  rate;
     float  reverbBlend;
     float  volume;
 }
 
-@property (nonatomic) BOOL loops;
-@property (getter=isPositional, nonatomic) BOOL positional;
+@property (nonatomic) bool loops;
+@property (getter=isPositional, nonatomic) bool positional;
 @property (nonatomic) float rate;
 @property (nonatomic) float reverbBlend;
-@property (nonatomic) BOOL shouldStream;
+@property (nonatomic) bool shouldStream;
 @property (nonatomic) float volume;
 
 + (id)audioSourceNamed:(id)arg1;
 + (id)audioSourceWithAVAudioPCMBuffer:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)_customDecodingOfSCNAudioSource:(id)arg1;
 - (void)_customEncodingOfSCNAudioSource:(id)arg1;
@@ -45,20 +45,20 @@
 - (id)initWithFileNamed:(id)arg1;
 - (id)initWithFileNamed:(id)arg1 inBundle:(id)arg2;
 - (id)initWithURL:(id)arg1;
-- (BOOL)isPositional;
+- (bool)isPositional;
 - (void)load;
 - (void)loadIfNeeded;
-- (BOOL)loops;
+- (bool)loops;
 - (float)rate;
-- (int)renderingAlgorithm;
+- (long long)renderingAlgorithm;
 - (float)reverbBlend;
-- (void)setLoops:(BOOL)arg1;
-- (void)setPositional:(BOOL)arg1;
+- (void)setLoops:(bool)arg1;
+- (void)setPositional:(bool)arg1;
 - (void)setRate:(float)arg1;
 - (void)setReverbBlend:(float)arg1;
-- (void)setShouldStream:(BOOL)arg1;
+- (void)setShouldStream:(bool)arg1;
 - (void)setVolume:(float)arg1;
-- (BOOL)shouldStream;
+- (bool)shouldStream;
 - (float)volume;
 
 @end

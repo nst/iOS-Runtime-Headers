@@ -4,7 +4,7 @@
 
 @interface CRKBrowseForShareTargetsRequest : CATTaskRequest
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)init;
 

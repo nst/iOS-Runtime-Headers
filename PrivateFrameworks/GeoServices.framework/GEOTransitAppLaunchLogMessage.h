@@ -2,47 +2,16 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOTransitAppLaunchLogMessage : PBCodable <NSCopying> {
-    NSString * _bundleIdentifier;
-    GEOLatLng * _destination;
-    struct { 
-        unsigned int timestamp : 1; 
-    }  _has;
-    GEOLatLng * _source;
-    double  _timestamp;
-}
+@interface GEOTransitAppLaunchLogMessage : PBCodable <NSCopying>
 
-@property (nonatomic, retain) NSString *bundleIdentifier;
-@property (nonatomic, retain) GEOLatLng *destination;
-@property (nonatomic, readonly) BOOL hasBundleIdentifier;
-@property (nonatomic, readonly) BOOL hasDestination;
-@property (nonatomic, readonly) BOOL hasSource;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic, retain) GEOLatLng *source;
-@property (nonatomic) double timestamp;
-
-- (id)bundleIdentifier;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
-- (id)destination;
 - (id)dictionaryRepresentation;
-- (BOOL)hasBundleIdentifier;
-- (BOOL)hasDestination;
-- (BOOL)hasSource;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setBundleIdentifier:(id)arg1;
-- (void)setDestination:(id)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setSource:(id)arg1;
-- (void)setTimestamp:(double)arg1;
-- (id)source;
-- (double)timestamp;
+- (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

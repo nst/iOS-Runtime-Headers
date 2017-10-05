@@ -2,41 +2,57 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentRemoteCredentialsViewController : PKPaymentSetupTableViewController <PKPaymentSetupViewControllerCanHideSetupLaterButton> {
-    BOOL  _allowsManualEntry;
-    BOOL  _hideSetupLaterButton;
+@interface PKPaymentRemoteCredentialsViewController : PKPaymentSetupTableViewController <PKPaymentProvisioningControllerDelegate, PKPaymentSetupViewControllerCanHideSetupLaterButton> {
+    bool  _allowsManualEntry;
+    double  _cachedHeaderViewWidth;
+    bool  _hideSetupLaterButton;
+    unsigned long long  _maximumNumberOfSelectableCredentials;
+    UIImage * _placeHolder;
     PKPaymentSetupProduct * _product;
     PKPaymentProvisioningController * _provisioningController;
-    NSArray * _remoteCredentials;
+    NSMutableArray * _remoteCredentialCaches;
     <PKPaymentSetupViewControllerDelegate> * _setupDelegate;
-    PKPaymentSetupCardDetailsFooterView * _tableFooter;
+    PKPaymentRemoteCredentialTableViewCell * _sizingCell;
+    PKPaymentSetupFooterView * _tableFooter;
     PKTableHeaderView * _tableHeader;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL hideSetupLaterButton;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool hideSetupLaterButton;
 @property (nonatomic, retain) PKPaymentSetupProduct *product;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_deviceSpecificLocalizedStringKeyForKey:(id)arg1;
-- (void)_presentCardDetailsControllerForCredential:(id)arg1;
+- (void)_createPassSnapshotFromPaymentPass:(id)arg1 completion:(id /* block */)arg2;
+- (unsigned long long)_numberOfSelectedCredentials;
 - (void)_presentManualAddController;
 - (void)_presentViewController:(id)arg1 completion:(id /* block */)arg2;
-- (void)_setUserInteractionEnabled:(BOOL)arg1;
-- (BOOL)hideSetupLaterButton;
-- (id)initWithProvisioningController:(id)arg1 context:(int)arg2 delegate:(id)arg3 remoteCredentials:(id)arg4 allowsManualEntry:(BOOL)arg5;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (void)_setPassSnapshotOnCell:(id)arg1 cell:(id)arg2;
+- (void)_setUserInteractionEnabled:(bool)arg1;
+- (void)_setupLater;
+- (void)_startProvisioningForSelectedCards;
+- (void)_updateForSelectionCount;
+- (void)_updateMaximumSelectableCredentials;
+- (void)_updateRemoteCredentialCache;
+- (void)_updateTableHeaderViewSubtitle;
+- (void)dealloc;
+- (bool)hideSetupLaterButton;
+- (id)initWithProvisioningController:(id)arg1 context:(long long)arg2 delegate:(id)arg3 remoteCredentials:(id)arg4 allowsManualEntry:(bool)arg5;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (void)paymentPassUpdatedOnCredential:(id)arg1;
 - (id)product;
-- (void)setHideSetupLaterButton:(BOOL)arg1;
+- (void)setHideSetupLaterButton:(bool)arg1;
 - (void)setProduct:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didDeselectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)viewDidLayoutSubviews;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillLayoutSubviews;
 
 @end

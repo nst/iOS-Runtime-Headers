@@ -4,11 +4,13 @@
 
 @interface MTLIOAccelResourcePool : NSObject {
     MTLIOAccelDevice<MTLDevice> * _device;
-    /* Warning: unhandled struct encoding: '{_MTLIOAccelResourcePoolPrivate="queue"{resourceQueue="tqh_first"@"MTLIOAccelPooledResource""tqh_last"^@}"lock"i"count"i}' */ struct _MTLIOAccelResourcePoolPrivate { 
+    /* Warning: unhandled struct encoding: '{_MTLIOAccelResourcePoolPrivate="queue"{resourceQueue="tqh_first"@"MTLIOAccelPooledResource""tqh_last"^@}"lock"{os_unfair_lock_s="_os_unfair_lock_opaque"I}"count"i}' */ struct _MTLIOAccelResourcePoolPrivate { 
         struct resourceQueue { 
             MTLIOAccelPooledResource *tqh_first; 
             id *tqh_last; 
-            int lock; 
+            struct os_unfair_lock_s { 
+                unsigned int _os_unfair_lock_opaque; 
+            } lock; 
             int count; 
         } queue; 
     }  _priv;

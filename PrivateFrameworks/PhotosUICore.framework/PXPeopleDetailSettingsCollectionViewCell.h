@@ -5,81 +5,81 @@
 @interface PXPeopleDetailSettingsCollectionViewCell : UICollectionViewCell {
     UIView * _actionIndicatorView;
     UIImageView * _avatarView;
-    BOOL  _isFavorite;
-    BOOL  _isReordering;
+    bool  _isFavorite;
+    bool  _isReordering;
     NSString * _name;
     UILabel * _nameLabel;
-    unsigned int  _photoQuantity;
+    unsigned long long  _photoQuantity;
     UILabel * _quantityLabel;
     NSNumberFormatter * _quantityNumberFormatter;
     PXRoundedCornerOverlayView * _roundCornerOverlay;
     UIView * _selectionView;
-    float  _textAlpha;
+    double  _textAlpha;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _unitRect;
 }
 
-@property (getter=isActionIndicatorHidden, nonatomic) BOOL actionIndicatorHidden;
+@property (getter=isActionIndicatorHidden, nonatomic) bool actionIndicatorHidden;
 @property (nonatomic, retain) UIView *actionIndicatorView;
 @property (nonatomic, readonly) UIImageView *avatarView;
 @property (nonatomic, retain) UIImage *image;
-@property (nonatomic) BOOL isFavorite;
-@property (setter=setReordering:, nonatomic) BOOL isReordering;
+@property (nonatomic) bool isFavorite;
+@property (setter=setReordering:, nonatomic) bool isReordering;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, retain) UILabel *nameLabel;
-@property (nonatomic) unsigned int photoQuantity;
+@property (nonatomic) unsigned long long photoQuantity;
 @property (nonatomic, retain) UILabel *quantityLabel;
 @property (nonatomic, retain) PXRoundedCornerOverlayView *roundCornerOverlay;
 @property (nonatomic, retain) UIView *selectionView;
-@property (nonatomic) float textAlpha;
+@property (nonatomic) double textAlpha;
 
-+ (float)preferredHeightForWidth:(float)arg1 forAvatarPercentage:(float)arg2 withSizeClass:(int)arg3 isFavorite:(BOOL)arg4;
++ (double)preferredHeightForWidth:(double)arg1 forAvatarPercentage:(double)arg2 withSizeClass:(long long)arg3 isFavorite:(bool)arg4;
 
 - (void).cxx_destruct;
 - (struct UIColor { Class x1; }*)_placeHolderColor;
-- (int)_preferredSizeClass;
+- (long long)_preferredSizeClass;
 - (void)_updateType;
 - (id)actionIndicatorView;
-- (float)avatarCenterYOffset;
+- (double)avatarCenterYOffset;
 - (id)avatarView;
 - (void)contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)dealloc;
 - (id)image;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isActionIndicatorHidden;
-- (BOOL)isFavorite;
-- (BOOL)isReordering;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isActionIndicatorHidden;
+- (bool)isFavorite;
+- (bool)isReordering;
 - (void)layoutSubviews;
 - (id)name;
 - (id)nameLabel;
-- (unsigned int)photoQuantity;
+- (unsigned long long)photoQuantity;
 - (void)prepareForReuse;
 - (id)quantityLabel;
 - (id)roundCornerOverlay;
 - (id)selectionView;
-- (void)setActionIndicatorHidden:(BOOL)arg1;
+- (void)setActionIndicatorHidden:(bool)arg1;
 - (void)setActionIndicatorView:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setImage:(id)arg1 normalizedFaceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)setIsFavorite:(BOOL)arg1;
+- (void)setImage:(id)arg1 normalizedFaceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)setIsFavorite:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setNameLabel:(id)arg1;
-- (void)setPhotoQuantity:(unsigned int)arg1;
+- (void)setPhotoQuantity:(unsigned long long)arg1;
 - (void)setQuantityLabel:(id)arg1;
-- (void)setReordering:(BOOL)arg1;
+- (void)setReordering:(bool)arg1;
 - (void)setRoundCornerOverlay:(id)arg1;
-- (void)setSelected:(BOOL)arg1;
+- (void)setSelected:(bool)arg1;
 - (void)setSelectionView:(id)arg1;
-- (void)setTextAlpha:(float)arg1;
-- (float)textAlpha;
+- (void)setTextAlpha:(double)arg1;
+- (double)textAlpha;
 - (void)traitCollectionDidChange:(id)arg1;
 
 @end

@@ -3,24 +3,24 @@
  */
 
 @interface TSCHMultiDataChartRepElementIndex : NSObject <NSCopying> {
-    unsigned int  mSeriesIndex;
-    unsigned int  mValueIndex;
+    unsigned long long  mSeriesIndex;
+    unsigned long long  mValueIndex;
 }
 
-@property (nonatomic, readonly) unsigned int seriesIndex;
-@property (nonatomic, readonly) unsigned int valueIndex;
+@property (nonatomic, readonly) unsigned long long seriesIndex;
+@property (nonatomic, readonly) unsigned long long valueIndex;
 
-+ (id)repElementIndexWithSeriesIndex:(unsigned int)arg1 valueIndex:(unsigned int)arg2;
++ (id)repElementIndexWithSeriesIndex:(unsigned long long)arg1 valueIndex:(unsigned long long)arg2;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (id)initWithSeriesIndex:(unsigned int)arg1 valueIndex:(unsigned int)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)seriesIndex;
+- (id)initWithSeriesIndex:(unsigned long long)arg1 valueIndex:(unsigned long long)arg2;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)seriesIndex;
 - (id)seriesIndexSet;
-- (unsigned int)valueIndex;
+- (unsigned long long)valueIndex;
 - (id)valueIndexSet;
 
 @end

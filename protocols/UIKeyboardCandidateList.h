@@ -5,41 +5,36 @@
 
 @required
 
-- (void)candidateAcceptedAtIndex:(unsigned int)arg1;
+- (void)candidateAcceptedAtIndex:(unsigned long long)arg1;
 - (TIKeyboardCandidate *)currentCandidate;
-- (unsigned int)currentIndex;
-- (BOOL)hasCandidates;
-- (BOOL)isExtendedList;
+- (unsigned long long)currentIndex;
+- (bool)hasCandidates;
+- (bool)isExtendedList;
+- (bool)isFloatingList;
 - (TIKeyboardBehaviors *)keyboardBehaviors;
-- (unsigned int)selectedSortIndex;
-- (void)setCandidates:(TIKeyboardCandidateResultSet *)arg1 inlineText:(NSString *)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
+- (unsigned long long)selectedSortIndex;
+- (void)setCandidates:(TIKeyboardCandidateResultSet *)arg1 inlineText:(NSString *)arg2 inlineRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 maxX:(double)arg4 layout:(bool)arg5;
 - (void)setUIKeyboardCandidateListDelegate:(id <UIKeyboardCandidateListDelegate>)arg1;
-- (BOOL)showCandidate:(TIKeyboardCandidate *)arg1;
-- (void)showCandidateAtIndex:(unsigned int)arg1;
-- (void)showNextCandidate;
-- (void)showNextPage;
-- (void)showNextRow;
-- (void)showPreviousCandidate;
-- (void)showPreviousPage;
-- (void)showPreviousRow;
+- (bool)showCandidate:(TIKeyboardCandidate *)arg1;
+- (void)showCandidateAtIndex:(unsigned long long)arg1;
+- (void)showCandidateInForwardDirection:(bool)arg1 granularity:(int)arg2;
 - (NSString *)statisticsIdentifier;
 
 @optional
 
 - (TIKeyboardCandidateResultSet *)candidates;
 - (void)candidatesDidChange;
-- (BOOL)handleNumberKey:(unsigned int)arg1;
-- (BOOL)handleTabKeyWithShift:(BOOL)arg1;
-- (BOOL)hasNextPage;
-- (BOOL)hasPreviousPage;
+- (bool)handleNumberKey:(unsigned long long)arg1;
+- (bool)handleTabKeyWithShift:(bool)arg1;
+- (bool)hasCandidateInForwardDirection:(bool)arg1 granularity:(int)arg2;
 - (NSString *)inlineText;
 - (void)jumpToCompositions;
 - (void)revealHiddenCandidates;
+- (unsigned long long)rowForCandidateAtIndex:(unsigned long long)arg1;
 - (TIKeyboardSecureCandidateRenderTraits *)secureCandidateRenderTraits;
-- (void)setCandidates:(TIKeyboardCandidateResultSet *)arg1 type:(int)arg2 inlineText:(NSString *)arg3 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 maxX:(float)arg5 layout:(BOOL)arg6;
-- (void)setCompletionContext:(NSString *)arg1;
+- (void)setCandidates:(TIKeyboardCandidateResultSet *)arg1 type:(int)arg2 inlineText:(NSString *)arg3 inlineRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4 maxX:(double)arg5 layout:(bool)arg6;
 - (void)setInlineText:(NSString *)arg1;
-- (void)showCaret:(BOOL)arg1 gradually:(BOOL)arg2;
-- (unsigned int)viewOffsetForCandidateAtIndex:(unsigned int)arg1;
+- (void)showCaret:(bool)arg1 gradually:(bool)arg2;
+- (unsigned long long)viewOffsetForCandidateAtIndex:(unsigned long long)arg1;
 
 @end

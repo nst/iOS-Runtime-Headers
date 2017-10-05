@@ -9,7 +9,7 @@
 @property (nonatomic, retain) SKUICountdown *countdown;
 
 - (void).cxx_destruct;
-- (int)componentType;
+- (long long)componentType;
 - (id)countdown;
 - (id)initWithCustomPageContext:(id)arg1;
 - (void)setCountdown:(id)arg1;

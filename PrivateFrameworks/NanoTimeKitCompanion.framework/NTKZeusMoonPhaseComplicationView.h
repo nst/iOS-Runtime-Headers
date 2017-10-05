@@ -9,14 +9,15 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <NTKComplicationDisplayObserver> *displayObserver;
-@property (readonly) unsigned int hash;
-@property (getter=isHighlighted, nonatomic) BOOL highlighted;
-@property (nonatomic) BOOL shouldUseTemplateColors;
+@property (readonly) unsigned long long hash;
+@property (getter=isHighlighted, nonatomic) bool highlighted;
+@property (nonatomic) bool shouldUseTemplateColors;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)init;
-- (void)setPhaseNumber:(unsigned int)arg1 hemisphere:(int)arg2;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)layoutSubviews;
+- (void)setPhaseNumber:(unsigned long long)arg1 hemisphere:(long long)arg2;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

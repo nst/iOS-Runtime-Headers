@@ -6,6 +6,6 @@
 
 + (id)currentEnvironment;
 
-- (BOOL)isInternalBuild;
+- (bool)isInternalBuild;
 
 @end

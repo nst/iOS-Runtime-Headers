@@ -3,7 +3,6 @@
  */
 
 @interface EMBordersProperty : CMProperty <NSCopying> {
-    EDBorders * edValue;
     OITSUColor * mBorderBottomColor;
     OITSUColor * mBorderColor;
     OITSUColor * mBorderLeftColor;
@@ -13,6 +12,7 @@
     int  mBorderWidth;
 }
 
+- (void).cxx_destruct;
 - (id)borderColor;
 - (int*)borderStyles;
 - (int*)borderWidths;
@@ -20,13 +20,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)cssString;
 - (id)cssStringForName:(id)arg1;
-- (BOOL)hasSameColorsAs:(id)arg1;
-- (BOOL)hasSameStylesAs:(id)arg1;
-- (BOOL)hasSameWidthsAs:(id)arg1;
+- (bool)hasSameColorsAs:(id)arg1;
+- (bool)hasSameStylesAs:(id)arg1;
+- (bool)hasSameWidthsAs:(id)arg1;
 - (id)initWithEDBorders:(id)arg1;
 - (id)initWithOADStroke:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isNoneAtLocation:(int)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isNoneAtLocation:(int)arg1;
 - (void)setBorderStyleAndWidth:(int)arg1 location:(unsigned int)arg2;
 - (void)setNoneAtLocation:(int)arg1;
 - (id)stringFromColor:(id)arg1;

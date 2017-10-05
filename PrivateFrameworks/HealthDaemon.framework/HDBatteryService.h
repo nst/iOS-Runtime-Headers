@@ -4,25 +4,20 @@
 
 @interface HDBatteryService : HDHealthService {
     CBCharacteristic * _batteryCharacteristic;
-    HDHealthServicePropertyManager * _propertyManager;
 }
 
 @property (nonatomic, retain) CBCharacteristic *batteryCharacteristic;
-@property (nonatomic) HDHealthServicePropertyManager *propertyManager;
 
 + (id)implementedProperties;
-+ (int)serviceType;
++ (long long)serviceType;
 + (id)serviceUUID;
 
 - (void).cxx_destruct;
 - (id)batteryCharacteristic;
 - (id)handleBatteryLevel:(id)arg1;
-- (id)initWithDevicePropertyManager:(id)arg1 healthDaemon:(id)arg2 peripheral:(id)arg3;
 - (void)peripheral:(id)arg1 didDiscoverCharacteristic:(id)arg2;
-- (void)peripheral:(id)arg1 didUpdateValueForCharacteristic:(id)arg2 error:(id)arg3;
-- (id)propertyManager;
+- (void)peripheral:(id)arg1 didUpdateValueForCharacteristic:(id)arg2 updateTime:(id)arg3 error:(id)arg4;
 - (void)readProperty:(id)arg1;
 - (void)setBatteryCharacteristic:(id)arg1;
-- (void)setPropertyManager:(id)arg1;
 
 @end

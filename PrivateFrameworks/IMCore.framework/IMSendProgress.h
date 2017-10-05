@@ -8,17 +8,21 @@
     <IMSendProgressDelegate> * _delegate;
     NSTimer * _sendProgressTimer;
     NSDictionary * _sendingItems;
-    BOOL  _startSendProgressImmediately;
-    BOOL  _wasShowing;
+    bool  _startSendProgressImmediately;
+    <IMSendProgressTimeDataSource> * _timeDataSource;
+    bool  _wasShowing;
 }
 
 @property (nonatomic) id context;
 @property (nonatomic) <IMSendProgressDelegate> *delegate;
 @property (nonatomic, copy) NSDictionary *sendingItems;
-@property (nonatomic) BOOL startSendProgressImmediately;
+@property (nonatomic) bool startSendProgressImmediately;
+@property (nonatomic, retain) <IMSendProgressTimeDataSource> *timeDataSource;
+
++ (Class)_timeDataSourceClass;
 
 - (void).cxx_destruct;
-- (BOOL)_hasSendingMessages;
+- (bool)_hasSendingMessages;
 - (void)_resetSendProgress;
 - (void)_scheduleSendProgressTimerIfNeeded;
 - (void)_sendProgressTimerFired:(id)arg1;
@@ -33,8 +37,10 @@
 - (void)setContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setSendingItems:(id)arg1;
-- (void)setStartSendProgressImmediately:(BOOL)arg1;
-- (BOOL)startSendProgressImmediately;
-- (void)updateForItems:(id)arg1 forced:(BOOL)arg2;
+- (void)setStartSendProgressImmediately:(bool)arg1;
+- (void)setTimeDataSource:(id)arg1;
+- (bool)startSendProgressImmediately;
+- (id)timeDataSource;
+- (void)updateForItems:(id)arg1 forced:(bool)arg2;
 
 @end

@@ -4,23 +4,21 @@
 
 @interface _LSSpringBoardCall : NSObject <NSCopying> {
     NSString * _applicationIdentifier;
-    BOOL  _callCompletionHandlerWhenFullyComplete;
+    bool  _callCompletionHandlerWhenFullyComplete;
     NSXPCConnection * _clientXPCConnection;
     NSDictionary * _launchOptions;
-    BOOL  _promptForSchemeApprovalIfNeeded;
     NSString * _schemeIfNotFileURL;
 }
 
 @property (copy) NSString *applicationIdentifier;
-@property BOOL callCompletionHandlerWhenFullyComplete;
+@property bool callCompletionHandlerWhenFullyComplete;
 @property (retain) NSXPCConnection *clientXPCConnection;
 @property (copy) NSDictionary *launchOptions;
-@property BOOL promptForSchemeApprovalIfNeeded;
 
 + (id)springBoardQueue;
 
 - (id)applicationIdentifier;
-- (BOOL)callCompletionHandlerWhenFullyComplete;
+- (bool)callCompletionHandlerWhenFullyComplete;
 - (void)callSpringBoardWithCompletionHandler:(id /* block */)arg1;
 - (void)callWithCompletionHandler:(id /* block */)arg1;
 - (id)clientXPCConnection;
@@ -30,11 +28,9 @@
 - (id)launchOptions;
 - (void)lieWithCompletionHandler:(id /* block */)arg1;
 - (void)promptAndCallSpringBoardWithCompletionHandler:(id /* block */)arg1;
-- (BOOL)promptForSchemeApprovalIfNeeded;
 - (void)setApplicationIdentifier:(id)arg1;
-- (void)setCallCompletionHandlerWhenFullyComplete:(BOOL)arg1;
+- (void)setCallCompletionHandlerWhenFullyComplete:(bool)arg1;
 - (void)setClientXPCConnection:(id)arg1;
 - (void)setLaunchOptions:(id)arg1;
-- (void)setPromptForSchemeApprovalIfNeeded:(BOOL)arg1;
 
 @end

@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)averageNonDroppableFrameIntervalIsSupportedByDefaultEncoderForVideoCodec:(NSString *)arg1;
+- (bool)averageNonDroppableFrameIntervalIsSupportedByDefaultEncoderForVideoCodec:(NSString *)arg1;
 
 @end

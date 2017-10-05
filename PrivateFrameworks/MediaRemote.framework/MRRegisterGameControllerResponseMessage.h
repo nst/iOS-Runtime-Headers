@@ -8,6 +8,6 @@
 
 - (unsigned long long)controllerID;
 - (id)initWithControllerID:(unsigned long long)arg1;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

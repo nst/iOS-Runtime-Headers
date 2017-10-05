@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)searchFor:(NSString *)arg1 direction:(BOOL)arg2 caseSensitive:(BOOL)arg3 wrap:(BOOL)arg4 startInSelection:(BOOL)arg5;
+- (bool)searchFor:(NSString *)arg1 direction:(bool)arg2 caseSensitive:(bool)arg3 wrap:(bool)arg4 startInSelection:(bool)arg5;
 
 @end

@@ -31,7 +31,7 @@
 - (void)awakeFromNib;
 - (id)button;
 - (void)buttonPressed:(id)arg1;
-- (void)configureButtonWithTitle:(id)arg1 state:(unsigned int)arg2 imageName:(id)arg3;
+- (void)configureButtonWithTitle:(id)arg1 state:(unsigned long long)arg2 imageName:(id)arg3;
 - (id)containerSpacerLeft;
 - (id)containerSpacerRight;
 - (id)containerView;
@@ -40,8 +40,8 @@
 - (void)createLogoView;
 - (void)createSpinner;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isEnabled;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isEnabled;
 - (id)labelView;
 - (id)logoView;
 - (void)observeEnterForegroundNotification:(id)arg1;

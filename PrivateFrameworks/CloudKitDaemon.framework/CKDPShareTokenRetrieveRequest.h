@@ -3,7 +3,7 @@
  */
 
 @interface CKDPShareTokenRetrieveRequest : PBRequest <NSCopying> {
-    BOOL  _forceFetch;
+    bool  _forceFetch;
     struct { 
         unsigned int forceFetch : 1; 
     }  _has;
@@ -12,11 +12,11 @@
     NSData * _shortTokenHash;
 }
 
-@property (nonatomic) BOOL forceFetch;
-@property (nonatomic) BOOL hasForceFetch;
-@property (nonatomic, readonly) BOOL hasRoutingKey;
-@property (nonatomic, readonly) BOOL hasShareId;
-@property (nonatomic, readonly) BOOL hasShortTokenHash;
+@property (nonatomic) bool forceFetch;
+@property (nonatomic) bool hasForceFetch;
+@property (nonatomic, readonly) bool hasRoutingKey;
+@property (nonatomic, readonly) bool hasShareId;
+@property (nonatomic, readonly) bool hasShortTokenHash;
 @property (nonatomic, retain) NSString *routingKey;
 @property (nonatomic, retain) CKDPShareIdentifier *shareId;
 @property (nonatomic, retain) NSData *shortTokenHash;
@@ -28,20 +28,20 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)forceFetch;
-- (BOOL)hasForceFetch;
-- (BOOL)hasRoutingKey;
-- (BOOL)hasShareId;
-- (BOOL)hasShortTokenHash;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)forceFetch;
+- (bool)hasForceFetch;
+- (bool)hasRoutingKey;
+- (bool)hasShareId;
+- (bool)hasShortTokenHash;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (id)routingKey;
-- (void)setForceFetch:(BOOL)arg1;
-- (void)setHasForceFetch:(BOOL)arg1;
+- (void)setForceFetch:(bool)arg1;
+- (void)setHasForceFetch:(bool)arg1;
 - (void)setRoutingKey:(id)arg1;
 - (void)setShareId:(id)arg1;
 - (void)setShortTokenHash:(id)arg1;

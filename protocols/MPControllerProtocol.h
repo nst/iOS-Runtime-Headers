@@ -8,13 +8,13 @@
 - (void)clearWeakReferencesToObject:(id)arg1;
 - (id)delegate;
 - (MPAVItem *)item;
-- (void)noteIgnoredChangeTypes:(unsigned int)arg1;
-- (int)orientation;
+- (void)noteIgnoredChangeTypes:(unsigned long long)arg1;
+- (long long)orientation;
 - (MPAVController *)player;
 - (void)setDelegate:(id)arg1;
 - (void)setItem:(MPAVItem *)arg1;
-- (void)setOrientation:(int)arg1;
-- (void)setOrientation:(int)arg1 animate:(BOOL)arg2;
+- (void)setOrientation:(long long)arg1;
+- (void)setOrientation:(long long)arg1 animate:(bool)arg2;
 - (void)setPlayer:(MPAVController *)arg1;
 - (UIView *)view;
 

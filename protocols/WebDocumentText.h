@@ -9,6 +9,6 @@
 - (void)selectAll;
 - (NSString *)selectedString;
 - (NSString *)string;
-- (BOOL)supportsTextEncoding;
+- (bool)supportsTextEncoding;
 
 @end

@@ -5,7 +5,7 @@
 
 @required
 
-- (void)safeBrowsingCheckFinishedWithSecurityInfo:(_SFSecurityInfo *)arg1 canGoBack:(BOOL)arg2 localizedStrings:(NSDictionary *)arg3;
-- (void)urlPassedSafeBrowsingCheck:(NSURL *)arg1 canCache:(BOOL)arg2;
+- (void)safeBrowsingCheckFinishedWithSecurityInfo:(_SFSecurityInfo *)arg1 canGoBack:(bool)arg2 localizedStrings:(NSDictionary *)arg3;
+- (void)urlPassedSafeBrowsingCheck:(NSURL *)arg1 canCache:(bool)arg2;
 
 @end

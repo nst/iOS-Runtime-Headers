@@ -4,16 +4,16 @@
 
 @interface ICNoteListSortUtilities : NSObject
 
-+ (int)currentNoteListSortType;
-+ (id)descriptionForNoteListSortType:(int)arg1;
-+ (BOOL)isMenuItemCurrentSortTypeForTag:(int)arg1;
-+ (void)setCurrentNoteListSortType:(int)arg1;
-+ (void)setCurrentNoteListSortTypeByTag:(int)arg1;
++ (long long)currentNoteListSortType;
++ (id)descriptionForNoteListSortType:(long long)arg1;
++ (bool)isMenuItemCurrentSortTypeForTag:(long long)arg1;
++ (void)setCurrentNoteListSortType:(long long)arg1;
++ (void)setCurrentNoteListSortTypeByTag:(long long)arg1;
 + (id)sortDescriptorsForCurrentType;
-+ (id)sortDescriptorsForICSearchResultsForCurrentType;
-+ (id)sortDescriptorsForICSearchResultsForType:(int)arg1;
-+ (id)sortDescriptorsForType:(int)arg1;
-+ (int)sortTypeForTag:(int)arg1;
-+ (int)tagForSortType:(int)arg1;
++ (id)sortDescriptorsForCurrentTypeIncludingPinnedNotes:(bool)arg1;
++ (id)sortDescriptorsForPinnedNotes;
++ (id)sortDescriptorsForType:(long long)arg1;
++ (long long)sortTypeForTag:(long long)arg1;
++ (long long)tagForSortType:(long long)arg1;
 
 @end

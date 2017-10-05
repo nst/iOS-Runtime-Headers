@@ -10,6 +10,6 @@
 - (void)dealloc;
 - (id)init;
 - (void)resetFormatter;
-- (id)shortStringFromNumber:(int)arg1;
+- (id)shortStringFromNumber:(long long)arg1;
 
 @end

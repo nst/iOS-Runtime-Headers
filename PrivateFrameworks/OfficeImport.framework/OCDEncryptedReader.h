@@ -12,7 +12,7 @@
 - (id)decryptor;
 - (id)defaultPassphrase;
 - (void)restartReaderToUseDecryptedDocument;
-- (BOOL)retainDecryptorWithErrorCode:(int*)arg1;
+- (bool)retainDecryptorWithErrorCode:(int*)arg1;
 - (void)useUnencryptedDocument;
 
 @end

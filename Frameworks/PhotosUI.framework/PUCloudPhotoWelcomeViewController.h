@@ -4,9 +4,9 @@
 
 @interface PUCloudPhotoWelcomeViewController : PUWelcomeViewController <AAUIGenericTermsRemoteUIDelegate, PSCloudStorageOffersManagerDelegate, PUCloudPhotoWelcomeNavigationControllerDismissDelegate, PUCloudPhotoWelcomeViewDelegate> {
     id /* block */  __completionHandler;
-    BOOL  _enableOnAppear;
+    bool  _enableOnAppear;
     PSCloudStorageOffersManager * _offersManager;
-    BOOL  _requireStorageUpgrade;
+    bool  _requireStorageUpgrade;
     AAUIGenericTermsRemoteUI * _termsManager;
     PUCloudPhotoWelcomeView * _welcomeView;
 }
@@ -14,11 +14,11 @@
 @property (setter=_setCompletionHandler:, nonatomic, copy) id /* block */ _completionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) PUCloudPhotoWelcomeView *welcomeView;
 
-+ (BOOL)_isPhotoStreamEnabled;
++ (bool)_isPhotoStreamEnabled;
 + (void)_showWithPresentingViewController:(id)arg1 completionHandler:(id /* block */)arg2;
 + (void)presentIfNecessaryFromViewController:(id)arg1 completionHandler:(id /* block */)arg2;
 + (void)resetLastPresentationInfo;
@@ -39,19 +39,19 @@
 - (void)cloudPhotoWelcomeViewGoButtonTapped:(id)arg1;
 - (void)cloudPhotoWelcomeViewLearnMoreTapped:(id)arg1;
 - (void)cloudPhotoWelcomeViewNotNowButtonTapped:(id)arg1;
-- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
-- (void)genericTermsRemoteUI:(id)arg1 didFinishWithSuccess:(BOOL)arg2;
+- (void)dismissViewControllerAnimated:(bool)arg1 completion:(id /* block */)arg2;
+- (void)genericTermsRemoteUI:(id)arg1 didFinishWithSuccess:(bool)arg2;
 - (void)manager:(id)arg1 loadDidFailWithError:(id)arg2;
 - (void)manager:(id)arg1 willPresentViewController:(id)arg2;
 - (void)managerDidCancel:(id)arg1;
 - (void)navigationControllerDidDismissViewController:(id)arg1;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
-- (int)preferredInterfaceOrientationForPresentation;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
+- (long long)preferredInterfaceOrientationForPresentation;
 - (void)setWelcomeView:(id)arg1;
-- (BOOL)shouldAutorotate;
-- (unsigned int)supportedInterfaceOrientations;
+- (bool)shouldAutorotate;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 - (id)welcomeView;
 
 @end

@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
  */
 
-@interface CNFaceTimeCell : CNLabeledCell <CNActionViewProtocol, CNUIUserActionListConsumer> {
+@interface CNFaceTimeCell : CNLabeledCell <CNActionViewDelegate> {
     CNActionView * _actionView1;
     CNActionView * _actionView2;
     CNUIUserActionListDataSource * _actionsDataSource;
     <CNPropertyCellDelegate> * _delegate;
     UILabel * _faceTimeLabel;
-    BOOL  _isFaceTimeAudioAvailable;
+    bool  _isFaceTimeAudioAvailable;
 }
 
 @property (nonatomic, readonly) CNActionView *actionView1;
@@ -18,8 +18,8 @@
 @property (nonatomic) <CNPropertyCellDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) UILabel *faceTimeLabel;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL isFaceTimeAudioAvailable;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isFaceTimeAudioAvailable;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -28,17 +28,17 @@
 - (id)actionsDataSource;
 - (id)constantConstraints;
 - (id)delegate;
-- (void)didPressActionView:(id)arg1 longPress:(BOOL)arg2;
+- (void)didPressActionView:(id)arg1 longPress:(bool)arg2;
 - (id)faceTimeLabel;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (BOOL)isFaceTimeAudioAvailable;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (bool)isFaceTimeAudioAvailable;
 - (id)labelView;
-- (float)minCellHeight;
+- (double)minCellHeight;
 - (void)performDefaultAction;
 - (id)rightMostView;
 - (void)setActionsDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setIsFaceTimeAudioAvailable:(BOOL)arg1;
+- (void)setIsFaceTimeAudioAvailable:(bool)arg1;
 - (void)tintColorDidChange;
 - (id)variableConstraints;
 

@@ -5,7 +5,7 @@
 @interface SFContentBlockerManager : NSObject {
     id  _extensionMatchingContext;
     NSArray * _extensions;
-    BOOL  _lastExtensionDiscoveryHadError;
+    bool  _lastExtensionDiscoveryHadError;
     NSMutableSet * _observers;
     WKUserContentController * _userContentController;
 }
@@ -14,6 +14,7 @@
 @property (nonatomic, readonly) WKUserContentController *userContentController;
 
 + (id)_contentBlockerLoaderConnection;
++ (void)_createContentExtensionsDirectoryWithURL:(id)arg1;
 + (id)contentBlockerStore;
 + (void)getStateOfContentBlockerWithIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
 + (void)reloadContentBlockerWithIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -23,12 +24,13 @@
 - (void)_beginContentBlockerDiscovery;
 - (void)_loadContentBlockerWithIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)addObserver:(id)arg1;
+- (void)compileContentBlockersAfterDeviceRestore;
 - (id)displayNameForExtension:(id)arg1;
-- (BOOL)extensionIsEnabled:(id)arg1;
+- (bool)extensionIsEnabled:(id)arg1;
 - (id)extensions;
 - (void)reloadUserContentController;
 - (void)removeObserver:(id)arg1;
-- (void)setExtension:(id)arg1 isEnabled:(BOOL)arg2;
+- (void)setExtension:(id)arg1 isEnabled:(bool)arg2;
 - (id)userContentController;
 
 @end

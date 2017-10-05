@@ -5,19 +5,19 @@
 @interface DCConfiguration : NSObject {
     NSDate * _expiry;
     NSDate * _fetchDate;
-    BOOL  _hasValidSignature;
+    bool  _hasValidSignature;
 }
 
 @property (nonatomic, copy) NSDate *expiry;
 @property (nonatomic, copy) NSDate *fetchDate;
-@property (nonatomic) BOOL hasValidSignature;
+@property (nonatomic) bool hasValidSignature;
 
 - (void).cxx_destruct;
 - (id)expiry;
 - (id)fetchDate;
-- (BOOL)hasValidSignature;
+- (bool)hasValidSignature;
 - (void)setExpiry:(id)arg1;
 - (void)setFetchDate:(id)arg1;
-- (void)setHasValidSignature:(BOOL)arg1;
+- (void)setHasValidSignature:(bool)arg1;
 
 @end

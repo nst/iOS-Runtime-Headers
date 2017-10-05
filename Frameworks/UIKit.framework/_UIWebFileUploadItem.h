@@ -12,7 +12,7 @@
 - (id)displayImage;
 - (id)filePath;
 - (id)initWithFilePath:(id)arg1;
-- (BOOL)isVideo;
+- (bool)isVideo;
 - (void)setFilePath:(id)arg1;
 
 @end

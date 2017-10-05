@@ -16,15 +16,15 @@
 @property (nonatomic, readonly) UIImage *tintedImage;
 
 - (void).cxx_destruct;
-- (id)_tintedDisclosureImage:(BOOL)arg1;
-- (BOOL)beginContentAccess;
+- (id)_tintedDisclosureImage:(bool)arg1;
+- (bool)beginContentAccess;
 - (void)dealloc;
 - (void)discardContentIfPossible;
 - (void)endContentAccess;
-- (unsigned int)hash;
-- (id)initWithPressed:(BOOL)arg1 tintColor:(id)arg2;
-- (BOOL)isContentDiscarded;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithPressed:(bool)arg1 tintColor:(id)arg2;
+- (bool)isContentDiscarded;
+- (bool)isEqual:(id)arg1;
 - (id)tintColor;
 - (id)tintedImage;
 

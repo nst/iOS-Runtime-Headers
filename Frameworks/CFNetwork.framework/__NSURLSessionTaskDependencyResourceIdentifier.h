@@ -14,9 +14,9 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWitURLPath:(id)arg1 mimeType:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)mimeType;
 - (void)setMimeType:(id)arg1;
 - (void)setURLPath:(id)arg1;

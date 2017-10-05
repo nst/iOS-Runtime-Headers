@@ -5,15 +5,15 @@
 @interface AATrustedDevice : NSObject {
     NSString * _FMIPDeviceID;
     NSString * _backupUUID;
-    BOOL  _currentDevice;
+    bool  _currentDevice;
     NSString * _detailDeviceName;
     NSString * _detailSubLabel;
     NSString * _deviceDetailHttpMethod;
     NSString * _deviceDetailUri;
     NSString * _deviceID;
     NSString * _deviceQualifiedClass;
-    BOOL  _fmipEnabled;
-    BOOL  _injectNativeHeader;
+    bool  _fmipEnabled;
+    bool  _injectNativeHeader;
     NSString * _model;
     NSString * _modelDisplayName;
     NSString * _modelLargePhotoURL1x;
@@ -25,23 +25,23 @@
     NSString * _name;
     NSString * _osVersion;
     NSString * _rawLatestBackup;
-    BOOL  _showBackupRow;
-    BOOL  _showFMIPLink;
-    BOOL  _showFMIPRow;
+    bool  _showBackupRow;
+    bool  _showFMIPLink;
+    bool  _showFMIPRow;
 }
 
 @property (nonatomic, readonly) NSString *FMIPDeviceID;
 @property (nonatomic, readonly, copy) NSString *aaui_localizedDeviceLocatorLabel;
 @property (nonatomic, readonly) NSString *backupUUID;
-@property (nonatomic, readonly) BOOL currentDevice;
+@property (nonatomic, readonly) bool currentDevice;
 @property (nonatomic, readonly) NSString *detailDeviceName;
 @property (nonatomic, readonly) NSString *detailSubLabel;
 @property (nonatomic, readonly) NSString *deviceDetailHttpMethod;
 @property (nonatomic, readonly) NSString *deviceDetailUri;
 @property (nonatomic, readonly) NSString *deviceID;
 @property (nonatomic, readonly) NSString *deviceQualifiedClass;
-@property (nonatomic, readonly) BOOL fmipEnabled;
-@property (nonatomic, readonly) BOOL injectNativeHeader;
+@property (nonatomic, readonly) bool fmipEnabled;
+@property (nonatomic, readonly) bool injectNativeHeader;
 @property (nonatomic, readonly) NSString *model;
 @property (nonatomic, readonly) NSString *modelDisplayName;
 @property (nonatomic, readonly) NSString *modelLargePhotoURL1x;
@@ -53,25 +53,25 @@
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSString *osVersion;
 @property (nonatomic, readonly) NSString *rawLatestBackup;
-@property (nonatomic, readonly) BOOL showBackupRow;
-@property (nonatomic, readonly) BOOL showFMIPLink;
-@property (nonatomic, readonly) BOOL showFMIPRow;
+@property (nonatomic, readonly) bool showBackupRow;
+@property (nonatomic, readonly) bool showFMIPLink;
+@property (nonatomic, readonly) bool showFMIPRow;
 
 // Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
 
 - (void).cxx_destruct;
 - (id)FMIPDeviceID;
 - (id)backupUUID;
-- (BOOL)currentDevice;
+- (bool)currentDevice;
 - (id)detailDeviceName;
 - (id)detailSubLabel;
 - (id)deviceDetailHttpMethod;
 - (id)deviceDetailUri;
 - (id)deviceID;
 - (id)deviceQualifiedClass;
-- (BOOL)fmipEnabled;
+- (bool)fmipEnabled;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)injectNativeHeader;
+- (bool)injectNativeHeader;
 - (id)model;
 - (id)modelDisplayName;
 - (id)modelLargePhotoURL1x;
@@ -83,9 +83,9 @@
 - (id)name;
 - (id)osVersion;
 - (id)rawLatestBackup;
-- (BOOL)showBackupRow;
-- (BOOL)showFMIPLink;
-- (BOOL)showFMIPRow;
+- (bool)showBackupRow;
+- (bool)showFMIPLink;
+- (bool)showFMIPRow;
 - (void)updateWithRUIClientInfo:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI

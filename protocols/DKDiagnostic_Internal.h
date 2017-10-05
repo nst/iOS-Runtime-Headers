@@ -5,9 +5,9 @@
 
 @required
 
-- (BOOL)isCancelled;
-- (BOOL)isSetup;
-- (void)setCancelled:(BOOL)arg1;
-- (void)setSetup:(BOOL)arg1;
+- (bool)isCancelled;
+- (bool)isSetup;
+- (void)setCancelled:(bool)arg1;
+- (void)setSetup:(bool)arg1;
 
 @end

@@ -4,42 +4,41 @@
 
 @interface PXPeopleDetailSettingsSuggestionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout> {
     UICollectionView * _collectionView;
-    PXPeopleDetailSettingsDataSource * _detailSettingsDataSource;
+    NSArray * _detailSettingsDataSources;
     UIImage * _image;
     NSArray * _members;
-    PXPeoplePersonDataSource * _peopleDataSource;
+    PXPersonItem * _personItem;
 }
 
 @property (nonatomic, retain) UICollectionView *collectionView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (retain) PXPeopleDetailSettingsDataSource *detailSettingsDataSource;
-@property (readonly) unsigned int hash;
+@property (retain) NSArray *detailSettingsDataSources;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic, readonly) NSArray *members;
-@property (retain) PXPeoplePersonDataSource *peopleDataSource;
+@property (nonatomic, readonly) PXPersonItem *personItem;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)collectionView;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(int)arg3;
-- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
-- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
-- (id)detailSettingsDataSource;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(long long)arg3;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
+- (id)detailSettingsDataSources;
 - (id)image;
-- (id)init;
-- (id)initWithSuggestions:(id)arg1;
-- (id)initWithSuggestions:(id)arg1 andKeyFace:(id)arg2;
-- (void)loadFacesForSuggestion:(id)arg1;
+- (id)initWithPersonItem:(id)arg1;
+- (void)loadDataSource;
 - (id)members;
-- (id)peopleDataSource;
+- (long long)numberOfSectionsInCollectionView:(id)arg1;
+- (id)personItem;
 - (void)setCollectionView:(id)arg1;
-- (void)setDetailSettingsDataSource:(id)arg1;
+- (void)setDetailSettingsDataSources:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setPeopleDataSource:(id)arg1;
-- (void)setSuggestions:(id)arg1;
 - (void)viewDidLoad;
 
 @end

@@ -3,26 +3,26 @@
  */
 
 @interface SFPINPairSession : NSObject {
-    BOOL  _activateCalled;
+    bool  _activateCalled;
     NSData * _clientSessionUUID;
-    BOOL  _clientStarted;
+    bool  _clientStarted;
     id /* block */  _completionHandler;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     unsigned long long  _heartbeatLastTicks;
-    BOOL  _heartbeatSending;
+    bool  _heartbeatSending;
     NSObject<OS_dispatch_source> * _heartbeatTimer;
     id /* block */  _hidePINHandler;
-    BOOL  _invalidateCalled;
-    BOOL  _pairSetupDone;
+    bool  _invalidateCalled;
+    bool  _pairSetupDone;
     struct PairingSessionPrivate { } * _pairSetupSession;
-    BOOL  _pairSetupWaitingForUser;
-    BOOL  _pairVerifyDone;
+    bool  _pairSetupWaitingForUser;
+    bool  _pairVerifyDone;
     struct PairingSessionPrivate { } * _pairVerifySession;
     SFDevice * _peerDevice;
     id /* block */  _promptForPINHandler;
     SFService * _sfService;
     SFSession * _sfSession;
-    BOOL  _sfSessionActivated;
+    bool  _sfSessionActivated;
     id /* block */  _showPINHandler;
     unsigned long long  _startTicks;
     NSObject<OS_os_transaction> * _transaction;
@@ -40,12 +40,12 @@
 - (void)_activate;
 - (void)_cleanup;
 - (void)_clientHeartbeatSend;
-- (void)_clientPairSetup:(id)arg1 start:(BOOL)arg2;
-- (void)_clientPairVerify:(id)arg1 start:(BOOL)arg2;
+- (void)_clientPairSetup:(id)arg1 start:(bool)arg2;
+- (void)_clientPairVerify:(id)arg1 start:(bool)arg2;
 - (void)_clientRun;
 - (void)_clientSFSessionStart;
 - (void)_clientTryPIN:(id)arg1;
-- (void)_completed:(long)arg1;
+- (void)_completed:(int)arg1;
 - (void)_handleServerRequest:(id)arg1;
 - (void)_hearbeatTimer;
 - (void)_invalidate;
@@ -55,8 +55,8 @@
 - (void)dealloc;
 - (id)dispatchQueue;
 - (void)handleServerHeartbeat:(id)arg1;
-- (void)handleServerPairSetup:(id)arg1 reset:(BOOL)arg2;
-- (void)handleServerPairVerify:(id)arg1 reset:(BOOL)arg2;
+- (void)handleServerPairSetup:(id)arg1 reset:(bool)arg2;
+- (void)handleServerPairVerify:(id)arg1 reset:(bool)arg2;
 - (void)handleServerRequest:(id)arg1;
 - (id /* block */)hidePINHandler;
 - (id)init;

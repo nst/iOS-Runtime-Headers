@@ -9,6 +9,7 @@
     NSNumber * _expectedAction;
     NSString * _responseStatusCode;
     NSString * _responseString;
+    NSArray * _supportedAppAdamIDs;
 }
 
 @property (nonatomic, retain) VSAccountAuthentication *accountAuthentication;
@@ -17,6 +18,7 @@
 @property (nonatomic, copy) NSNumber *expectedAction;
 @property (nonatomic, copy) NSString *responseStatusCode;
 @property (nonatomic, copy) NSString *responseString;
+@property (nonatomic, copy) NSArray *supportedAppAdamIDs;
 
 - (void).cxx_destruct;
 - (id)accountAuthentication;
@@ -24,6 +26,7 @@
 - (id)authenticationScheme;
 - (id)description;
 - (id)expectedAction;
+- (id)init;
 - (id)responseStatusCode;
 - (id)responseString;
 - (void)setAccountAuthentication:(id)arg1;
@@ -32,5 +35,7 @@
 - (void)setExpectedAction:(id)arg1;
 - (void)setResponseStatusCode:(id)arg1;
 - (void)setResponseString:(id)arg1;
+- (void)setSupportedAppAdamIDs:(id)arg1;
+- (id)supportedAppAdamIDs;
 
 @end

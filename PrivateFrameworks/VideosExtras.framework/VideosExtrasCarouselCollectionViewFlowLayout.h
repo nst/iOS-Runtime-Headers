@@ -4,10 +4,9 @@
 
 @interface VideosExtrasCarouselCollectionViewFlowLayout : UICollectionViewFlowLayout <VideosExtrasCarouselCollectionViewLayout>
 
-- (unsigned int)indexOfVisibleItem;
-- (float)itemWidth;
-- (void)setIndexOfVisibleItem:(unsigned int)arg1;
-- (void)setIndexOfVisibleItem:(unsigned int)arg1 animated:(BOOL)arg2;
-- (struct CGPoint { float x1; float x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1 withScrollingVelocity:(struct CGPoint { float x1; float x2; })arg2;
+- (unsigned long long)indexOfVisibleItem;
+- (double)itemWidth;
+- (void)setIndexOfVisibleItem:(unsigned long long)arg1;
+- (void)setIndexOfVisibleItem:(unsigned long long)arg1 animated:(bool)arg2;
 
 @end

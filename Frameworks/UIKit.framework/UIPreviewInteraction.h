@@ -2,74 +2,87 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIPreviewInteraction : NSObject <UIGestureRecognizerDelegate> {
+@interface UIPreviewInteraction : NSObject {
     NSHashTable * _activeFailureRequirementGestureRecognizers;
-    NSHashTable * _activeSystemAnimators;
     CADisplayLink * _continuousEvaluationDisplayLink;
     _UIPreviewInteractionStateRecognizer * _currentInteractionStateRecognizer;
-    UITouch * _currentTouch;
     _UIDeepPressAnalyzer * _deepPressAnalyzer;
     <UIPreviewInteractionDelegate> * _delegate;
-    _UIFeedbackStatesBehavior * _feedbackBehavior;
-    BOOL  _feedbackBehaviorTurnedOn;
-    _UITouchesObservingGestureRecognizer * _modalTouchObservingGestureRecognizer;
+    _UIStatesFeedbackGenerator * _feedbackGenerator;
+    bool  _feedbackGeneratorTurnedOn;
+    _UIPreviewInteractionHighlighter * _highlighter;
     struct { 
+        unsigned int delegatePreviewInteractionShouldBegin : 1; 
+        unsigned int delegateDidUpdateCommitTransition : 1; 
+        unsigned int delegateShouldFinishTransitionToPreview : 1; 
+        unsigned int delegateShouldAutomaticallyTransitionToPreviewAfterDelay : 1; 
+        unsigned int delegateHighlighterForPreviewTransition : 1; 
+        unsigned int delegateViewForHighlight : 1; 
+        unsigned int delegateViewControllerPresentationForPresentingViewController : 1; 
+        unsigned int delegateViewControllerForPreview : 1; 
+        unsigned int delegateAppearanceTransitionForViewController : 1; 
+        unsigned int delegateDisappearanceTransitionForViewController : 1; 
         unsigned int interactive : 1; 
         unsigned int delegateDidPreventInteraction : 1; 
         unsigned int interactionRequiresRestart : 1; 
         unsigned int interactionWasCancelled : 1; 
         unsigned int previousProgressWasNegativeOrZero : 1; 
-        unsigned int interactionPaused : 1; 
         unsigned int currentState : 3; 
+        unsigned int nextUpdateShouldTransitionToPreview : 1; 
+        unsigned int nextPreviewShouldPreventHapticFeedback : 1; 
     }  _previewInteractionFlags;
-    _UITouchesObservingGestureRecognizer * _touchObservingGestureRecognizer;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _sceneReferenceLocationFromLatestUpdate;
+    <_UIPreviewInteractionTouchForceProviding> * _systemTouchForceProvider;
+    <_UIPreviewInteractionTouchForceProviding> * _touchForceProvider;
     UIView * _view;
+    _UIPreviewInteractionViewControllerHelper * _viewControllerHelper;
+    id  _viewControllerPresentationObserver;
 }
 
-@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <UIPreviewInteractionDelegate> *delegate;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) Class superclass;
+@property (nonatomic, retain) <_UIPreviewInteractionTouchForceProviding> *touchForceProvider;
 @property (nonatomic, readonly) UIView *view;
 
 - (void).cxx_destruct;
-- (void)_actuateFeedbackForStateIfNeeded:(int)arg1;
-- (void)_attachToModalViewForRemainerOfInteraction:(id)arg1;
-- (BOOL)_delegateRespondsToCommitStateTransitions;
-- (BOOL)_delegateRespondsToPreviewStateCancellations;
+- (void)_actuateFeedbackForStateIfNeeded:(long long)arg1;
+- (void)_dismissPreviewViewControllerIfNeeded;
 - (void)_endContinuousEvaluation;
+- (void)_endHighlightingIfNeeded;
 - (void)_endInteractionIfNeeded;
 - (void)_endInteractiveStateTransitions;
 - (void)_endUsingFeedbackIfNeeded;
-- (void)_handleTouchObservingGesture:(id)arg1;
-- (BOOL)_interactionIsPaused;
-- (void)_pauseInteraction;
-- (void)_prepareForInteractionWithGestureRecognizer:(id)arg1;
+- (void)_endViewControllerPresentationObserving;
+- (void)_prepareForInteractionIfNeeded;
+- (void)_prepareForViewControllerPresentationObserving;
+- (void)_prepareHighlighterIfNeeded;
 - (void)_prepareUsingFeedback;
 - (void)_prepareUsingFeedbackIfNeeded;
+- (void)_presentPreviewViewControllerIfNeeded;
 - (void)_resetAfterInteraction;
-- (void)_resumeInteraction;
-- (BOOL)_shouldCancelTransitionToState:(int)arg1;
-- (id)_touchObservingGestureRecognizerForView:(id)arg1;
-- (void)_turnOffFeedbackBehavior;
-- (void)_turnOnFeedbackBehavior;
-- (void)_updateAnimatorsIfNeeded;
+- (bool)_shouldCancelTransitionToState:(long long)arg1;
+- (void)_startPreviewAtLocation:(struct CGPoint { double x1; double x2; })arg1 inCoordinateSpace:(id)arg2;
+- (void)_turnOffFeedbackGenerator;
+- (void)_turnOnFeedbackGenerator;
 - (void)_updateFailureRequirementGestureRecognizersIfNeeded;
-- (void)_updateFeedbackTowardNextState:(int)arg1 progress:(float)arg2;
+- (void)_updateFeedbackTowardNextState:(long long)arg1 progress:(double)arg2;
 - (void)_updateForContinuousEvaluation:(id)arg1;
-- (void)_updateInteractionStateRecognizerForTouch:(id)arg1;
-- (void)_updateInteractionStateRecognizerForTouchForce:(float)arg1 atTimestamp:(double)arg2 withCentroidAtLocation:(struct CGPoint { float x1; float x2; })arg3;
+- (void)_updateForCurrentTouchForceProvider;
+- (void)_updateHighlighter:(double)arg1;
+- (void)_updateInteractionStateRecognizerForTouchForce:(double)arg1 atTimestamp:(double)arg2 withCentroidAtLocation:(struct CGPoint { double x1; double x2; })arg3;
 - (void)cancelInteraction;
+- (void)dealloc;
 - (id)delegate;
-- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (id)init;
 - (id)initWithView:(id)arg1;
-- (struct CGPoint { float x1; float x2; })locationInCoordinateSpace:(id)arg1;
-- (id)newAnimator;
-- (id)newAnimatorForViewControllerTransition;
+- (struct CGPoint { double x1; double x2; })locationInCoordinateSpace:(id)arg1;
 - (id)newGestureRecognizerForFailureRelationship;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)setDelegate:(id)arg1;
+- (void)setTouchForceProvider:(id)arg1;
+- (id)touchForceProvider;
 - (id)view;
 
 @end

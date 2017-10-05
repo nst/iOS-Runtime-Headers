@@ -16,7 +16,7 @@
 @property (readonly, copy) NSURL *_providedItemsURL;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) BRCAccountSession *session;
 @property (readonly) Class superclass;
 

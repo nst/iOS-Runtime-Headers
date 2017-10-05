@@ -7,14 +7,14 @@
     NSString * _key;
     NSValue * _maximumValue;
     NSValue * _minimumValue;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, retain) NSValue *defaultValue;
 @property (nonatomic, copy) NSString *key;
 @property (nonatomic, retain) NSValue *maximumValue;
 @property (nonatomic, retain) NSValue *minimumValue;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
 - (void).cxx_destruct;
 - (id)defaultValue;
@@ -25,7 +25,7 @@
 - (void)setKey:(id)arg1;
 - (void)setMaximumValue:(id)arg1;
 - (void)setMinimumValue:(id)arg1;
-- (void)setType:(int)arg1;
-- (int)type;
+- (void)setType:(long long)arg1;
+- (long long)type;
 
 @end

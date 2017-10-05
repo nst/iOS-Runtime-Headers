@@ -6,19 +6,21 @@
 
 - (unsigned int)adjustLabelPosition:(unsigned int)arg1 forAxisValue:(double)arg2 intercept:(double)arg3;
 - (id)axisTypesForValueLabels;
-- (BOOL)chunkedBuildsIncludeInterceptValues;
+- (bool)chunkedBuildsIncludeInterceptValues;
 - (id)elementBuilder;
+- (int)fillPropertyType;
+- (id)fillPropertyTypeName;
 - (unsigned int)filterChartLabelPosition:(unsigned int)arg1;
 - (id)g_genericToSpecificPropertyMapBar;
 - (id)genericToSpecificPropertyMap;
 - (id)init;
-- (BOOL)isVertical;
+- (bool)isVertical;
 - (id)legalChartLabelPositions;
 - (id)supportedValueLabelsAxisCombinations;
-- (BOOL)supportsBarGap;
-- (BOOL)supportsSetGap;
-- (BOOL)useInBarGapCalculations;
+- (bool)supportsBarGap;
+- (bool)supportsSetGap;
+- (bool)useInBarGapCalculations;
 - (id)userInterfaceNameForLabelPosition:(id)arg1;
-- (unsigned int)valueDimensions;
+- (unsigned long long)valueDimensions;
 
 @end

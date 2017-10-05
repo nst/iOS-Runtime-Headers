@@ -17,19 +17,18 @@
     GEOMapAccess * _map;
 }
 
-@property (nonatomic, readonly) unsigned long coordinateCount;
+@property (nonatomic, readonly) unsigned long long coordinateCount;
 @property (nonatomic, readonly) struct { double x1; double x2; }*coordinates;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) double length;
 @property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (unsigned long)coordinateCount;
+- (unsigned long long)coordinateCount;
 - (struct { double x1; double x2; }*)coordinates;
-- (void)dealloc;
 - (double)distanceFromCoordinate:(struct { double x1; double x2; })arg1 outSegmentCoordinate:(struct PolylineCoordinate { unsigned int x1; float x2; }*)arg2;
 - (id)initWithMap:(id)arg1 edge:(struct shared_ptr<geo::MapEdge> { struct MapEdge {} *x1; struct __shared_weak_count {} *x2; })arg2;
 - (double)length;

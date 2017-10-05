@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDMessageFilterChain : NSObject {
+@interface HMDMessageFilterChain : HMFObject {
     NSMutableArray * _messageFilters;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
@@ -22,7 +22,7 @@
 - (void)resetConfiguration:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setMessageFilters:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
-- (BOOL)shouldCloudSyncData;
+- (bool)shouldCloudSyncData;
 - (id)workQueue;
 
 @end

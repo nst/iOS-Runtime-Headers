@@ -10,22 +10,28 @@
 @property (readonly) double doubleValue;
 @property (readonly, copy) NSUnit *unit;
 
-+ (BOOL)supportsSecureCoding;
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
-- (id)_performOperation:(int)arg1 withMeasurement:(id)arg2;
-- (BOOL)canBeConvertedToUnit:(id)arg1;
++ (bool)supportsSecureCoding;
+
+- (id)_performOperation:(long long)arg1 withMeasurement:(id)arg2;
+- (bool)canBeConvertedToUnit:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (double)doubleValue;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDoubleValue:(double)arg1 unit:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)measurementByAddingMeasurement:(id)arg1;
 - (id)measurementByConvertingToUnit:(id)arg1;
 - (id)measurementBySubtractingMeasurement:(id)arg1;
 - (id)unit;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
+- (id)hk_equivalentQuantity;
 
 @end

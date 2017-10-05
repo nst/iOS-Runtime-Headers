@@ -3,14 +3,14 @@
  */
 
 @interface SSVDialogResponse : NSObject <NSCopying, SSXPCCoding> {
-    int  _selectedButtonIndex;
+    long long  _selectedButtonIndex;
     NSArray * _textFieldValues;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int selectedButtonIndex;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long selectedButtonIndex;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSArray *textFieldValues;
 
@@ -18,8 +18,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (int)selectedButtonIndex;
-- (void)setSelectedButtonIndex:(int)arg1;
+- (long long)selectedButtonIndex;
+- (void)setSelectedButtonIndex:(long long)arg1;
 - (void)setTextFieldValues:(id)arg1;
 - (id)textFieldValues;
 

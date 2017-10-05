@@ -2,8 +2,8 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface _PLJPEGThumbnailPreheatItem : PLJPEGPreheatItem
+@interface _PLJPEGThumbnailPreheatItem : PLFigPreheatItem
 
-- (struct __CFDictionary { }*)decodeSessionOptions;
+- (id)decodeSessionOptions;
 
 @end

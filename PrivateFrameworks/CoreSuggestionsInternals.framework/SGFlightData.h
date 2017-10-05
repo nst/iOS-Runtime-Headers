@@ -6,17 +6,15 @@
     SGOffsetDictionary * _airportDataOffsets;
     SGOffsetDictionary * _airportUpdateDataOffsets;
     <SGSeekable> * _airportsFh;
-    SGAsset * _airportsUpdateAsset;
     <SGSeekable> * _airportsUpdateFh;
+    _PASNotificationToken * _assetUpdateToken;
     NSDictionary * _carrierCodesByName;
     NSDictionary * _carrierNames;
-    SGAsset * _carrierUpdateAsset;
     NSDictionary * _carrierUpdateCodesByName;
     NSDictionary * _carrierUpdateNames;
     SGOffsetDictionary * _flightDataOffsets;
     SGOffsetDictionary * _flightUpdateDataOffsets;
     <SGSeekable> * _flightsFh;
-    SGAsset * _flightsUpdateAsset;
     <SGSeekable> * _flightsUpdateFh;
 }
 
@@ -33,6 +31,7 @@
 - (id)bestLocalizedNameForAirport:(id)arg1;
 - (id)carrierIataCodeForCarrierName:(id)arg1;
 - (id)carrierIataCodes;
+- (void)dealloc;
 - (id)init;
 - (id)latitudeAndLongitudeForAirport:(id)arg1;
 - (id)latitudeAndLongitudeForAirport:(id)arg1 withDataOffset:(id)arg2 andFileHandle:(id)arg3;

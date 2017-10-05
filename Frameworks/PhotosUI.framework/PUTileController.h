@@ -3,49 +3,52 @@
  */
 
 @interface PUTileController : NSObject {
-    BOOL  _active;
-    int  _animationCount;
-    BOOL  _detached;
+    bool  _active;
+    long long  _animationCount;
+    bool  _detached;
     PUTileLayoutInfo * _layoutInfo;
-    BOOL  _reusable;
+    bool  _reusable;
     NSString * _reuseIdentifier;
+    bool  _shouldPreserveCurrentContent;
     PUTilingView * _tilingView;
-    BOOL  _wantsVisibleRectChanges;
+    bool  _wantsVisibleRectChanges;
 }
 
-@property (getter=isActive, nonatomic) BOOL active;
-@property (nonatomic) int animationCount;
-@property (getter=isDetached, nonatomic) BOOL detached;
-@property (nonatomic, readonly) BOOL isAnimating;
-@property (nonatomic, readonly) BOOL isPresentationActive;
+@property (getter=isActive, nonatomic) bool active;
+@property (nonatomic) long long animationCount;
+@property (getter=isDetached, nonatomic) bool detached;
+@property (nonatomic, readonly) bool isAnimating;
+@property (nonatomic, readonly) bool isPresentationActive;
 @property (nonatomic, readonly) PUTileLayoutInfo *layoutInfo;
 @property (nonatomic, readonly) PUTileLayoutInfo *presentationLayoutInfo;
-@property (getter=isReusable, nonatomic) BOOL reusable;
+@property (getter=isReusable, nonatomic) bool reusable;
 @property (nonatomic, readonly) NSString *reuseIdentifier;
+@property (nonatomic, readonly) bool shouldAvoidInPlaceSnapshottedFadeOut;
+@property (nonatomic) bool shouldPreserveCurrentContent;
 @property (nonatomic, readonly) PUTilingView *tilingView;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleRect;
-@property (nonatomic, readonly) BOOL wantsVisibleRectChanges;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } visibleRect;
+@property (nonatomic, readonly) bool wantsVisibleRectChanges;
 
 - (void).cxx_destruct;
 - (void)addToTilingView:(id)arg1;
-- (BOOL)adoptAssetTransitionInfo:(id)arg1;
-- (int)animationCount;
+- (bool)adoptAssetTransitionInfo:(id)arg1;
+- (long long)animationCount;
 - (void)applyLayoutInfo:(id)arg1;
 - (void)becomeReusable;
 - (id)description;
 - (void)didChangeActive;
 - (void)didChangeAnimating;
 - (void)didChangeVisibleRect;
-- (void)didEndAnimation:(int)arg1;
+- (void)didEndAnimation:(long long)arg1;
 - (id)freeze;
 - (id)generateAssetTransitionInfo;
 - (id)init;
 - (id)initWithReuseIdentifier:(id)arg1;
-- (BOOL)isActive;
-- (BOOL)isAnimating;
-- (BOOL)isDetached;
-- (BOOL)isPresentationActive;
-- (BOOL)isReusable;
+- (bool)isActive;
+- (bool)isAnimating;
+- (bool)isDetached;
+- (bool)isPresentationActive;
+- (bool)isReusable;
 - (id)layoutInfo;
 - (void)notifyWhenReadyForDisplayWithTimeOut:(double)arg1 completionHandler:(id /* block */)arg2;
 - (void)prepareForReuse;
@@ -53,16 +56,19 @@
 - (void)removeAllAnimations;
 - (id)reuseIdentifier;
 - (void)reuseIfApplicable;
-- (void)setActive:(BOOL)arg1;
-- (void)setAnimationCount:(int)arg1;
-- (void)setDetached:(BOOL)arg1;
+- (void)setActive:(bool)arg1;
+- (void)setAnimationCount:(long long)arg1;
+- (void)setDetached:(bool)arg1;
 - (void)setLayoutInfo:(id)arg1;
 - (void)setPreloadedImage:(id)arg1;
-- (void)setReusable:(BOOL)arg1;
+- (void)setReusable:(bool)arg1;
+- (void)setShouldPreserveCurrentContent:(bool)arg1;
 - (void)setTilingView:(id)arg1;
+- (bool)shouldAvoidInPlaceSnapshottedFadeOut;
+- (bool)shouldPreserveCurrentContent;
 - (id)tilingView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
-- (BOOL)wantsVisibleRectChanges;
-- (int)willBeginAnimation;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleRect;
+- (bool)wantsVisibleRectChanges;
+- (long long)willBeginAnimation;
 
 @end

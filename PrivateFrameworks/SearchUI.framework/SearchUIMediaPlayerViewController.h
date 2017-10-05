@@ -5,6 +5,6 @@
 @interface SearchUIMediaPlayerViewController : AVPlayerViewController
 
 - (id)initWithDestination:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 
 @end

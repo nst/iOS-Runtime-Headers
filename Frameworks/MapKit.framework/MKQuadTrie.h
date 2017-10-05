@@ -25,8 +25,8 @@
 - (id)allItems;
 - (id)breadthFirstDescription;
 - (void)clearAllItemsPerforming:(id /* block */)arg1;
-- (BOOL)contains:(id)arg1;
-- (unsigned int)count;
+- (bool)contains:(id)arg1;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)depthFirstDescription;
 - (id)description;
@@ -36,6 +36,6 @@
 - (id)itemDescriptions;
 - (id)itemsInMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)itemsPassingRectTest:(id /* block */)arg1 coordinateTest:(id /* block */)arg2;
-- (BOOL)remove:(id)arg1;
+- (bool)remove:(id)arg1;
 
 @end

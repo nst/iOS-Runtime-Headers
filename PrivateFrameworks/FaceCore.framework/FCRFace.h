@@ -7,123 +7,123 @@
     NSDictionary * expressionFeatures;
     struct { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } center; 
         struct CGRect { 
             struct CGPoint { 
-                float x; 
-                float y; 
+                double x; 
+                double y; 
             } origin; 
             struct CGSize { 
-                float width; 
-                float height; 
+                double width; 
+                double height; 
             } size; 
         } bounds; 
     }  face;
-    float  faceAngle;
+    double  faceAngle;
     NSDictionary * faceLandmarkPoints;
-    float  faceSize;
+    double  faceSize;
     int  faceType;
     NSData * faceprint;
     struct { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } center; 
         struct CGRect { 
             struct CGPoint { 
-                float x; 
-                float y; 
+                double x; 
+                double y; 
             } origin; 
             struct CGSize { 
-                float width; 
-                float height; 
+                double width; 
+                double height; 
             } size; 
         } bounds; 
     }  leftEye;
     struct { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } center; 
         struct CGRect { 
             struct CGPoint { 
-                float x; 
-                float y; 
+                double x; 
+                double y; 
             } origin; 
             struct CGSize { 
-                float width; 
-                float height; 
+                double width; 
+                double height; 
             } size; 
         } bounds; 
     }  mouth;
     struct { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } center; 
         struct CGRect { 
             struct CGPoint { 
-                float x; 
-                float y; 
+                double x; 
+                double y; 
             } origin; 
             struct CGSize { 
-                float width; 
-                float height; 
+                double width; 
+                double height; 
             } size; 
         } bounds; 
     }  rightEye;
-    unsigned int  trackDuration;
-    int  trackID;
+    unsigned long long  trackDuration;
+    long long  trackID;
 }
 
 @property (retain) NSDictionary *additionalInfo;
 @property (retain) NSDictionary *expressionFeatures;
-@property struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; } face;
-@property float faceAngle;
+@property struct { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_2_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_2_1_2; } x2; } face;
+@property double faceAngle;
 @property (retain) NSDictionary *faceLandmarkPoints;
-@property float faceSize;
+@property double faceSize;
 @property int faceType;
 @property (retain) NSData *faceprint;
-@property (readonly) BOOL hasLeftEyeBounds;
-@property (readonly) BOOL hasMouthBounds;
-@property (readonly) BOOL hasRightEyeBounds;
-@property struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; } leftEye;
-@property struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; } mouth;
-@property struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; } rightEye;
-@property unsigned int trackDuration;
-@property int trackID;
+@property (readonly) bool hasLeftEyeBounds;
+@property (readonly) bool hasMouthBounds;
+@property (readonly) bool hasRightEyeBounds;
+@property struct { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_2_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_2_1_2; } x2; } leftEye;
+@property struct { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_2_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_2_1_2; } x2; } mouth;
+@property struct { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_2_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_2_1_2; } x2; } rightEye;
+@property unsigned long long trackDuration;
+@property long long trackID;
 
 - (id)additionalInfo;
 - (void)dealloc;
 - (id)expressionFeatures;
-- (struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; })face;
-- (float)faceAngle;
+- (struct { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_2_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_2_1_2; } x2; })face;
+- (double)faceAngle;
 - (id)faceLandmarkPoints;
-- (float)faceSize;
+- (double)faceSize;
 - (int)faceType;
 - (id)faceprint;
-- (BOOL)hasLeftEyeBounds;
-- (BOOL)hasMouthBounds;
-- (BOOL)hasRightEyeBounds;
-- (struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; })leftEye;
-- (struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; })mouth;
-- (struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; })rightEye;
+- (bool)hasLeftEyeBounds;
+- (bool)hasMouthBounds;
+- (bool)hasRightEyeBounds;
+- (struct { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_2_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_2_1_2; } x2; })leftEye;
+- (struct { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_2_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_2_1_2; } x2; })mouth;
+- (struct { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_2_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_2_1_2; } x2; })rightEye;
 - (void)setAdditionalInfo:(id)arg1;
 - (void)setExpressionFeatures:(id)arg1;
-- (void)setFace:(struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; })arg1;
-- (void)setFaceAngle:(float)arg1;
+- (void)setFace:(struct { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_2_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_2_1_2; } x2; })arg1;
+- (void)setFaceAngle:(double)arg1;
 - (void)setFaceLandmarkPoints:(id)arg1;
-- (void)setFaceSize:(float)arg1;
+- (void)setFaceSize:(double)arg1;
 - (void)setFaceType:(int)arg1;
 - (void)setFaceprint:(id)arg1;
-- (void)setLeftEye:(struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; })arg1;
-- (void)setMouth:(struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; })arg1;
-- (void)setRightEye:(struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; })arg1;
-- (void)setTrackDuration:(unsigned int)arg1;
-- (void)setTrackID:(int)arg1;
-- (unsigned int)trackDuration;
-- (int)trackID;
+- (void)setLeftEye:(struct { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_2_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_2_1_2; } x2; })arg1;
+- (void)setMouth:(struct { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_2_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_2_1_2; } x2; })arg1;
+- (void)setRightEye:(struct { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_2_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_2_1_2; } x2; })arg1;
+- (void)setTrackDuration:(unsigned long long)arg1;
+- (void)setTrackID:(long long)arg1;
+- (unsigned long long)trackDuration;
+- (long long)trackID;
 
 @end

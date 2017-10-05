@@ -6,15 +6,15 @@
     NSString * _UUID;
     NSString * _acceptLanguageCode;
     NSString * _buildVersion;
-    BOOL  _isNetworkReachable;
+    bool  _isNetworkReachable;
     NSString * _productVersion;
     NSString * _requestCountryCode;
     NSString * _requestLanguageCode;
-    BOOL  _serviceDebugging;
+    bool  _serviceDebugging;
 }
 
 @property (retain) NSString *acceptLanguageCode;
-@property (getter=isNetworkReachable, nonatomic) BOOL networkReachable;
+@property (getter=isNetworkReachable, nonatomic) bool networkReachable;
 @property (retain) NSString *requestCountryCode;
 @property (retain) NSString *requestLanguageCode;
 
@@ -34,16 +34,16 @@
 - (id)financeRequestAttributes;
 - (id)fullQuoteURLOverrideForStock:(id)arg1;
 - (id)init;
-- (BOOL)isNetworkReachable;
+- (bool)isNetworkReachable;
 - (id)logoBacksideImage;
 - (id)logoButtonImage;
 - (id)requestCountryCode;
 - (id)requestLanguageCode;
 - (void)resetLocale;
-- (BOOL)serviceDebugging;
+- (bool)serviceDebugging;
 - (id)serviceDebuggingPath;
 - (void)setAcceptLanguageCode:(id)arg1;
-- (void)setNetworkReachable:(BOOL)arg1;
+- (void)setNetworkReachable:(bool)arg1;
 - (void)setRequestCountryCode:(id)arg1;
 - (void)setRequestLanguageCode:(id)arg1;
 - (id)signedRequestForURL:(id)arg1 parameters:(id)arg2;

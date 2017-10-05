@@ -6,8 +6,10 @@
 @required
 
 - (void)editButtonPressed;
+- (bool)hidesSeparator;
+- (bool)minimalMode;
 - (void)predictionWasActedOn;
 - (NSDate *)proposedTime;
-- (BOOL)shouldShowEditButtonInline;
+- (bool)shouldShowEditButtonInline;
 
 @end

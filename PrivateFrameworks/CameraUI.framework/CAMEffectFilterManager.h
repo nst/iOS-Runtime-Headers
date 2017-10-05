@@ -4,9 +4,10 @@
 
 @interface CAMEffectFilterManager : NSObject
 
-+ (id)aggdNameForType:(int)arg1;
-+ (id)ciFilterNameForType:(int)arg1;
-+ (id)displayNameForType:(int)arg1;
-+ (id)newFilterForType:(int)arg1;
++ (id)aggdNameForType:(long long)arg1;
++ (id)ciFilterNameForFilterType:(long long)arg1;
++ (id)ciFilterNameForFilterType:(long long)arg1 lightingType:(long long)arg2;
++ (id)displayNameForType:(long long)arg1;
++ (id)filtersForFilterType:(long long)arg1 lightingType:(long long)arg2 applyDepthEffect:(bool)arg3;
 
 @end

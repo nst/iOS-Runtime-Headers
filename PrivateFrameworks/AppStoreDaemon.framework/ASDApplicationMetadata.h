@@ -3,7 +3,9 @@
  */
 
 @interface ASDApplicationMetadata : NSObject <NSCopying, NSSecureCoding> {
+    NSNumber * _accountID;
     NSString * _accountName;
+    NSString * _altDSID;
     NSString * _artworkPath;
     NSString * _bundleID;
     NSNumber * _externalVersionIdentifier;
@@ -15,7 +17,9 @@
     NSString * _vendorName;
 }
 
+@property (nonatomic, copy) NSNumber *accountID;
 @property (nonatomic, copy) NSString *accountName;
+@property (nonatomic, copy) NSString *altDSID;
 @property (nonatomic, copy) NSString *artworkPath;
 @property (nonatomic, readonly) NSString *bundleID;
 @property (nonatomic, copy) NSNumber *externalVersionIdentifier;
@@ -26,10 +30,12 @@
 @property (nonatomic, copy) NSNumber *storeFront;
 @property (nonatomic, copy) NSString *vendorName;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)accountID;
 - (id)accountName;
+- (id)altDSID;
 - (id)artworkPath;
 - (id)bundleID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -42,7 +48,9 @@
 - (id)itemID;
 - (id)itemName;
 - (id)purchaserDSID;
+- (void)setAccountID:(id)arg1;
 - (void)setAccountName:(id)arg1;
+- (void)setAltDSID:(id)arg1;
 - (void)setArtworkPath:(id)arg1;
 - (void)setExternalVersionIdentifier:(id)arg1;
 - (void)setInstallOrder:(id)arg1;

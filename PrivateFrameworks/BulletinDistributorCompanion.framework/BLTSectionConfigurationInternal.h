@@ -8,9 +8,12 @@
 
 - (void).cxx_destruct;
 - (id)_loadConfigurations;
-- (BOOL)hasSectionIDOptedOutOfAttachmentCoordination:(id)arg1;
-- (BOOL)hasSectionIDOptedOutOfCoordination:(id)arg1 subtype:(int)arg2;
+- (bool)hasSectionIDOptedOutOfAttachmentCoordination:(id)arg1;
+- (bool)hasSectionIDOptedOutOfCoordination:(id)arg1 subtype:(long long)arg2;
+- (bool)hasSectionIDOptedOutOfCoordination:(id)arg1 subtype:(long long)arg2 category:(id)arg3;
+- (bool)hasSectionIDOptedOutOfWaitForUserIdle:(id)arg1;
 - (id)init;
-- (BOOL)shouldSectionIDSettingsAlwaysSync:(id)arg1;
+- (bool)shouldSectionIDAlwaysAlert:(id)arg1;
+- (bool)shouldSectionIDSettingsAlwaysSync:(id)arg1;
 
 @end

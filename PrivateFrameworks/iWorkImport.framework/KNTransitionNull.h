@@ -6,19 +6,19 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (int)animationCategory;
++ (long long)animationCategory;
 + (id)animationFilter;
 + (id)animationName;
 + (id)defaultAttributes;
-+ (unsigned int)directionType;
-+ (void)fillLocalizedDirectionMenu:(id)arg1 forType:(int)arg2;
-+ (id)localizedMenuString:(int)arg1;
++ (unsigned long long)directionType;
++ (void)fillLocalizedDirectionMenu:(id)arg1 forType:(long long)arg2;
++ (id)localizedMenuString:(long long)arg1;
 + (id)supportedTypes;
-+ (id)thumbnailImageNameForType:(int)arg1;
++ (id)thumbnailImageNameForType:(long long)arg1;
 
-- (id)animationsWithContext:(id)arg1;
+- (void)addAnimationsTo:(id)arg1 context:(id)arg2;
 
 @end

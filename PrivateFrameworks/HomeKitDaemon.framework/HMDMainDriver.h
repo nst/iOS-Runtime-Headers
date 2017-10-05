@@ -4,23 +4,21 @@
 
 @interface HMDMainDriver : NSObject {
     HMDAccessoryBrowser * _accessoryBrowser;
-    HMDCloudDataSyncManager * _cloudDataSyncManager;
+    HMDCloudManager * _cloudDataSyncManager;
     HMDHomeManager * _homeManager;
     HMDRemoteIdentityRegistry * _identityRegistry;
     HMDCentralMessageDispatcher * _messageDispatcher;
     HMDMessageFilterChain * _msgFilterChain;
-    HMFMessageDispatcher * _notificationRelayDispatcher;
     NSObject<OS_dispatch_queue> * _workQueue;
     HMDXpcServer * _xpcServer;
 }
 
 @property (nonatomic, retain) HMDAccessoryBrowser *accessoryBrowser;
-@property (nonatomic, retain) HMDCloudDataSyncManager *cloudDataSyncManager;
+@property (nonatomic, retain) HMDCloudManager *cloudDataSyncManager;
 @property (nonatomic, retain) HMDHomeManager *homeManager;
 @property (nonatomic, retain) HMDRemoteIdentityRegistry *identityRegistry;
 @property (nonatomic, retain) HMDCentralMessageDispatcher *messageDispatcher;
 @property (nonatomic, retain) HMDMessageFilterChain *msgFilterChain;
-@property (nonatomic, retain) HMFMessageDispatcher *notificationRelayDispatcher;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 @property (nonatomic, retain) HMDXpcServer *xpcServer;
 
@@ -38,14 +36,12 @@
 - (void)logError:(id)arg1 component:(id)arg2;
 - (id)messageDispatcher;
 - (id)msgFilterChain;
-- (id)notificationRelayDispatcher;
 - (void)setAccessoryBrowser:(id)arg1;
 - (void)setCloudDataSyncManager:(id)arg1;
 - (void)setHomeManager:(id)arg1;
 - (void)setIdentityRegistry:(id)arg1;
 - (void)setMessageDispatcher:(id)arg1;
 - (void)setMsgFilterChain:(id)arg1;
-- (void)setNotificationRelayDispatcher:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (void)setXpcServer:(id)arg1;
 - (void)start;

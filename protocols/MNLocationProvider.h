@@ -5,8 +5,8 @@
 
 @required
 
-- (int)activityType;
-- (id /* block */)authorizationRequestBlock:(void *)arg1; // needs 1 arg types, found 10: id /* block */, id /* block */, void*, void, id /* block */, BOOL, void*, void*, id, SEL
+- (long long)activityType;
+- (id /* block */)authorizationRequestBlock:(void *)arg1; // needs 1 arg types, found 10: id /* block */, id /* block */, void*, void, id /* block */, bool, void*, void*, id, SEL
 - (int)authorizationStatus;
 - (<MNLocationProviderDelegate> *)delegate;
 - (double)desiredAccuracy;
@@ -15,23 +15,23 @@
 - (NSString *)effectiveBundleIdentifier;
 - (double)expectedGpsUpdateInterval;
 - (int)headingOrientation;
-- (BOOL)isLocationServicesPreferencesDialogEnabled;
-- (BOOL)isSimulation;
-- (BOOL)isTracePlayer;
-- (BOOL)matchInfoEnabled;
+- (bool)isLocationServicesPreferencesDialogEnabled;
+- (bool)isSimulation;
+- (bool)isTracePlayer;
+- (bool)matchInfoEnabled;
 - (void)requestWhenInUseAuthorization;
 - (void)requestWhenInUseAuthorizationWithPrompt;
 - (void)resetForActiveTileGroupChanged;
-- (void)setActivityType:(int)arg1;
-- (void)setAuthorizationRequestBlock:(void *)arg1; // needs 1 arg types, found 11: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id /* block */, void*, void, id /* block */, BOOL, void*, void*
+- (void)setActivityType:(long long)arg1;
+- (void)setAuthorizationRequestBlock:(void *)arg1; // needs 1 arg types, found 11: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id /* block */, void*, void, id /* block */, bool, void*, void*
 - (void)setDelegate:(id <MNLocationProviderDelegate>)arg1;
 - (void)setDesiredAccuracy:(double)arg1;
 - (void)setDistanceFilter:(double)arg1;
 - (void)setEffectiveBundle:(NSBundle *)arg1;
 - (void)setEffectiveBundleIdentifier:(NSString *)arg1;
 - (void)setHeadingOrientation:(int)arg1;
-- (void)setLocationServicesPreferencesDialogEnabled:(BOOL)arg1;
-- (void)setMatchInfoEnabled:(BOOL)arg1;
+- (void)setLocationServicesPreferencesDialogEnabled:(bool)arg1;
+- (void)setMatchInfoEnabled:(bool)arg1;
 - (void)startUpdatingHeading;
 - (void)startUpdatingLocation;
 - (void)startUpdatingVehicleHeading;
@@ -41,6 +41,6 @@
 - (void)stopUpdatingVehicleHeading;
 - (void)stopUpdatingVehicleSpeed;
 - (double)timeScale;
-- (BOOL)usesCLMapCorrection;
+- (bool)usesCLMapCorrection;
 
 @end

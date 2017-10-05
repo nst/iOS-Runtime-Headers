@@ -10,24 +10,24 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_commonInitWithCompletion:(id /* block */)arg1;
 - (id)_containedAlertController;
 - (id)_presentationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
-- (BOOL)_requiresCustomPresentationController;
+- (bool)_requiresCustomPresentationController;
 - (void)_setChildViewController:(id)arg1;
 - (void)dealloc;
 - (void)disconnectRoute;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (int)modalPresentationStyle;
+- (long long)modalPresentationStyle;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (id)remoteViewController;
-- (void)setCurrentOutputDeviceEnabled:(BOOL)arg1;
-- (void)setModalPresentationStyle:(int)arg1;
+- (void)setCurrentOutputDeviceEnabled:(bool)arg1;
+- (void)setModalPresentationStyle:(long long)arg1;
 
 @end

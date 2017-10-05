@@ -6,6 +6,6 @@
 @optional
 
 - (void)didReceiveNewIncomingMessage;
-- (void)didUpdateReachabilityChangeForCompanion:(BOOL)arg1;
+- (void)didUpdateReachabilityChangeForCompanion:(bool)arg1;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface UIAccessoryBackgroundTaskAction : BSAction
 
-- (int)UIActionType;
+- (long long)UIActionType;
 - (id)init;
 - (id)initWithInfo:(id)arg1 timeout:(double)arg2 forResponseOnQueue:(id)arg3 withHandler:(id /* block */)arg4;
 

@@ -6,7 +6,7 @@
 
 + (id)columnsDefinition;
 + (id)databaseTable;
-+ (int)protectionClass;
++ (long long)protectionClass;
 + (id)uniquedColumns;
 
 @end

@@ -5,9 +5,11 @@
 
 @required
 
+- (NSString *)groupTitle;
 - (NSString *)identifier;
 - (NSArray *)items;
-- (NSString *)name;
-- (BOOL)restrictionEnabled;
+- (bool)restrictionEnabled;
+- (NSString *)rowTitle;
+- (bool)shouldCoalesceItems;
 
 @end

@@ -10,15 +10,15 @@
 @property (nonatomic, readonly) BRContainer *container;
 
 - (void).cxx_destruct;
-- (id)_blockingThumbnailWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 wantsBorder:(BOOL*)arg3;
+- (id)_blockingThumbnailWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2 wantsBorder:(bool*)arg3;
 - (void)_modelChanged;
 - (id)container;
 - (id)initWithContainer:(id)arg1;
-- (id)sortDate;
+- (id)modificationDate;
 - (id)sortPath;
 - (id)subtitle;
 - (id)title;
-- (int)type;
+- (long long)type;
 - (id)url;
 
 @end

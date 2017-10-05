@@ -6,8 +6,8 @@
     unsigned long long  _cachedCompletedBytes;
     unsigned long long  _cachedTotalBytes;
     NSMapTable * _completedBytesByItems;
-    BOOL  _hasCachedCompletedBytes;
-    BOOL  _hasCachedTotalBytes;
+    bool  _hasCachedCompletedBytes;
+    bool  _hasCachedTotalBytes;
     double  _lastItemPercentage;
     NSString * _trackingID;
 }
@@ -15,8 +15,8 @@
 @property (nonatomic) unsigned long long cachedCompletedBytes;
 @property (nonatomic) unsigned long long cachedTotalBytes;
 @property (nonatomic, retain) NSMapTable *completedBytesByItems;
-@property (nonatomic) BOOL hasCachedCompletedBytes;
-@property (nonatomic) BOOL hasCachedTotalBytes;
+@property (nonatomic) bool hasCachedCompletedBytes;
+@property (nonatomic) bool hasCachedTotalBytes;
 @property (nonatomic) double lastItemPercentage;
 @property (nonatomic, retain) NSString *trackingID;
 
@@ -28,16 +28,16 @@
 - (unsigned long long)cachedCompletedBytes;
 - (unsigned long long)cachedTotalBytes;
 - (id)completedBytesByItems;
-- (BOOL)hasCachedCompletedBytes;
-- (BOOL)hasCachedTotalBytes;
+- (bool)hasCachedCompletedBytes;
+- (bool)hasCachedTotalBytes;
 - (id)init;
 - (id)initWithTrackingID:(id)arg1;
 - (double)lastItemPercentage;
 - (void)setCachedCompletedBytes:(unsigned long long)arg1;
 - (void)setCachedTotalBytes:(unsigned long long)arg1;
 - (void)setCompletedBytesByItems:(id)arg1;
-- (void)setHasCachedCompletedBytes:(BOOL)arg1;
-- (void)setHasCachedTotalBytes:(BOOL)arg1;
+- (void)setHasCachedCompletedBytes:(bool)arg1;
+- (void)setHasCachedTotalBytes:(bool)arg1;
 - (void)setLastItemPercentage:(double)arg1;
 - (void)setTrackingID:(id)arg1;
 - (void)startTrackingItems:(id)arg1;

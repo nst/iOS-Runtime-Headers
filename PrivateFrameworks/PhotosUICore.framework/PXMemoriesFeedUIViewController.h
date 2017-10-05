@@ -2,35 +2,36 @@
    Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
  */
 
-@interface PXMemoriesFeedUIViewController : UIViewController <PXActionPerformerDelegate, PXChangeObserver, PXMemoriesFeedViewControllerHelperDelegate, PXMemoriesOnboardingViewControllerDelegate, PXMemoriesUITileSourceDelegate, PXReusableObjectPoolDelegate, PXScrollViewControllerObserver, PXSectionedDataSourceManagerObserver, PXTilingControllerZoomAnimationCoordinatorDelegate, PXUIViewControllerZoomTransitionEndPoint, PXUserInterfaceFeatureViewController, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, UIViewControllerPreviewingDelegate> {
+@interface PXMemoriesFeedUIViewController : UIViewController <PXActionPerformerDelegate, PXChangeObserver, PXMemoriesFeedViewControllerHelperDelegate, PXMemoriesOnboardingViewControllerDelegate, PXMemoriesUITileSourceDelegate, PXReusableObjectPoolDelegate, PXScrollViewControllerObserver, PXSectionedDataSourceManagerObserver, PXSettingsKeyObserver, PXTilingControllerZoomAnimationCoordinatorDelegate, PXUIViewControllerZoomTransitionEndPoint, PXUserInterfaceFeatureViewController, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, UIViewControllerPreviewingDelegate> {
     _UIContentUnavailableView * __contentUnavailableView;
-    UIBarButtonItem * __feedbackBarButtonItem;
     PXPhotoAnalysisStatusController * __graphStatusController;
     PXMemoriesFeedViewControllerHelper * __helper;
     UILongPressGestureRecognizer * __longPressRecognizer;
     PXMemoriesOnboardingUIViewController * __onboardingViewController;
     <UIViewControllerPreviewing> * __previewingContext;
+    UIBarButtonItem * __refreshBarButtonItem;
     PXUIScrollViewController * __scrollViewController;
     UIBarButtonItem * __searchBarButtonItem;
     PXUITapGestureRecognizer * __tapRecognizer;
     PXBasicUIViewTileAnimator * __tileAnimator;
     PXMemoriesUITileSource * __tileSource;
     PXTouchingUIGestureRecognizer * __touchRecognizer;
-    BOOL  _hasAppeared;
-    BOOL  _isInitialized;
+    bool  _hasAppeared;
+    bool  _isInitialized;
     struct { 
-        BOOL navigationItem; 
-        BOOL contentUnavailablePlaceholder; 
+        bool navigationItem; 
+        bool contentUnavailablePlaceholder; 
     }  _needsUpdateFlags;
+    NSString * _scrollTargetMemoryUUID;
 }
 
 @property (setter=_setContentUnavailableView:, nonatomic, retain) _UIContentUnavailableView *_contentUnavailableView;
-@property (nonatomic, readonly) UIBarButtonItem *_feedbackBarButtonItem;
 @property (nonatomic, readonly) PXPhotoAnalysisStatusController *_graphStatusController;
 @property (nonatomic, readonly) PXMemoriesFeedViewControllerHelper *_helper;
 @property (setter=_setLongPressRecognizer:, nonatomic, retain) UILongPressGestureRecognizer *_longPressRecognizer;
 @property (setter=_setOnboardingViewController:, nonatomic, retain) PXMemoriesOnboardingUIViewController *_onboardingViewController;
 @property (setter=_setPreviewingContext:, nonatomic, retain) <UIViewControllerPreviewing> *_previewingContext;
+@property (nonatomic, readonly) UIBarButtonItem *_refreshBarButtonItem;
 @property (nonatomic, readonly) PXUIScrollViewController *_scrollViewController;
 @property (nonatomic, readonly) UIBarButtonItem *_searchBarButtonItem;
 @property (nonatomic, readonly) PXUITapGestureRecognizer *_tapRecognizer;
@@ -39,19 +40,23 @@
 @property (nonatomic, readonly) PXTouchingUIGestureRecognizer *_touchRecognizer;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL keepsSourceRegionOfInterestContent;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool keepsSourceRegionOfInterestContent;
+@property (nonatomic, readonly) PXSectionedDataSource *ppt_memoriesDataSource;
 @property (nonatomic, readonly) UIScrollView *ppt_scrollView;
+@property (setter=setScrollTargetMemoryUUID:, nonatomic, retain) NSString *scrollTargetMemoryUUID;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) int userInterfaceFeature;
+@property (nonatomic, readonly) long long userInterfaceFeature;
 
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
 + (void)_setCurrentFeedViewController:(id)arg1;
 
 - (void).cxx_destruct;
+- (bool)_appAllowsSupressionOfAlerts;
+- (void)_applicationDidEnterBackground:(id)arg1;
+- (void)_applicationWillEnterForeground:(id)arg1;
 - (id)_contentUnavailableView;
-- (id)_feedbackBarButtonItem;
 - (id)_graphStatusController;
 - (void)_handleScrollViewLongPress:(id)arg1;
 - (void)_handleScrollViewTap:(id)arg1;
@@ -61,16 +66,17 @@
 - (void)_invalidateContentUnavailablePlaceholder;
 - (void)_invalidateNavigationItem;
 - (id)_longPressRecognizer;
-- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })_memoryIndexPathForViewController:(id)arg1;
+- (struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })_memoryIndexPathForViewController:(id)arg1;
 - (id)_memoryObjectReferenceForPhotosDetailsContext:(id)arg1;
 - (void)_navigateToMemoryAtSectionObjectReference:(id)arg1;
-- (BOOL)_needsUpdate;
+- (bool)_needsUpdate;
 - (id)_onboardingViewController;
-- (id)_photosDetailsContextForMemory:(id)arg1;
 - (id)_photosDetailsContextForMemoryObjectReference:(id)arg1;
 - (void)_preloadFontSpecs;
 - (void)_presentActionsForMemoryReference:(id)arg1;
 - (id)_previewingContext;
+- (id)_refreshBarButtonItem;
+- (void)_refreshBarButtonItemAction:(id)arg1;
 - (id)_scrollViewController;
 - (id)_searchBarButtonItem;
 - (void)_searchBarButtonItemAction:(id)arg1;
@@ -79,9 +85,10 @@
 - (void)_setNeedsUpdate;
 - (void)_setOnboardingViewController:(id)arg1;
 - (void)_setPreviewingContext:(id)arg1;
-- (id)_showMemoryDetailsForContext:(id)arg1 animated:(BOOL)arg2;
+- (id)_showMemoryDetailsForContext:(id)arg1 animated:(bool)arg2;
 - (id)_sourceViewForMemoryActionsController;
-- (void)_startRefresh;
+- (void)_startRefreshWithCompletion:(id /* block */)arg1;
+- (id)_suppressionContexts;
 - (id)_tapRecognizer;
 - (id)_tileAnimator;
 - (id)_tileSource;
@@ -93,38 +100,48 @@
 - (void)_updateNavigationItemIfNeeded;
 - (void)_updatePreviewing;
 - (void)_updateScrollViewControllerContentInset;
-- (BOOL)actionPerformer:(id)arg1 dismissViewController:(struct NSObject { Class x1; }*)arg2 completionHandler:(id /* block */)arg3;
-- (BOOL)actionPerformer:(id)arg1 presentViewController:(struct NSObject { Class x1; }*)arg2;
+- (bool)actionPerformer:(id)arg1 dismissViewController:(struct NSObject { Class x1; }*)arg2 completionHandler:(id /* block */)arg3;
+- (bool)actionPerformer:(id)arg1 presentViewController:(struct NSObject { Class x1; }*)arg2;
+- (void)dealloc;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
-- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)memoriesFeedViewControllerHelperFeedIsVisible:(id)arg1;
+- (bool)memoriesFeedViewControllerHelperFeedIsVisible:(id)arg1;
 - (id)memoriesFeedViewControllerHelperReloadedTileKindsOnObjectChanged:(id)arg1;
 - (void)memoriesOnboardingViewControllerDidTapContinueButton:(id)arg1;
-- (id)memoriesTileSource:(id)arg1 memoryToPreheatForIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg2;
-- (void)observable:(id)arg1 didChange:(unsigned int)arg2 context:(void*)arg3;
-- (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
-- (void)ppt_navigateToLatestMemoryAnimated:(BOOL)arg1;
+- (id)memoriesTileSource:(id)arg1 memoryToPreheatForIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg2;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
+- (void)playMiroMovieWithMemoryUUID:(id)arg1;
+- (id)ppt_memoriesDataSource;
+- (void)ppt_navigateToLatestMemoryAnimated:(bool)arg1;
+- (void)ppt_navigateToMemoryWithReference:(id)arg1 animated:(bool)arg2;
+- (void)ppt_revealMemoryWithReference:(id)arg1 animated:(bool)arg2;
 - (id)ppt_scrollView;
 - (id)preferredFocusEnvironments;
+- (void)prepareForInteractiveTransition:(id)arg1;
 - (void)prepareForPopoverPresentation:(id)arg1;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
-- (BOOL)pu_handleSecondTabTap;
-- (BOOL)px_canPerformZoomTransitionWithDetailViewController:(id)arg1;
-- (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint { float x1; float x2; })arg1 inCoordinateSpace:(id)arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
+- (bool)pu_handleSecondTabTap;
+- (bool)px_canPerformZoomTransitionWithDetailViewController:(id)arg1;
+- (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint { double x1; double x2; })arg1 inCoordinateSpace:(id)arg2;
 - (id)px_endPointForTransition:(id)arg1;
 - (id)regionOfInterestForTransition:(id)arg1;
+- (void)revealMostRecentMemoryAnimated:(bool)arg1;
+- (id)scrollTargetMemoryUUID;
 - (void)scrollViewControllerWillBeginScrolling:(id)arg1;
+- (void)scrollViewControllerWillLayoutSubviews:(id)arg1;
+- (void)setScrollTargetMemoryUUID:(id)arg1;
+- (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (id)showDetailsForMemoryWithLocalIdentifier:(id)arg1;
-- (void)tilingControllerZoomAnimationCoordinator:(id)arg1 enumerateTilesToAnimateInLayerWithType:(int)arg2 layout:(id)arg3 zoomAnimationContext:(id)arg4 usingBlock:(id /* block */)arg5;
-- (int)userInterfaceFeature;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)tilingControllerZoomAnimationCoordinator:(id)arg1 enumerateTilesToAnimateInLayerWithType:(long long)arg2 layout:(id)arg3 zoomAnimationContext:(id)arg4 usingBlock:(id /* block */)arg5;
+- (long long)userInterfaceFeature;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (id)zoomAnimationCoordinatorForZoomTransition:(id)arg1;
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI

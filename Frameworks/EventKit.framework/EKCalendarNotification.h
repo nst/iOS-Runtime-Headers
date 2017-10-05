@@ -3,75 +3,80 @@
  */
 
 @interface EKCalendarNotification : NSObject <EKIdentityProtocol> {
-    NSURL * _URI;
-    BOOL  _alerted;
-    BOOL  _couldBeJunk;
+    NSURL * _URL;
+    bool  _alerted;
+    bool  _couldBeJunk;
     struct CGColor { } * _dotColor;
     NSString * _emailAddress;
     NSString * _firstName;
-    BOOL  _hiddenFromNotificationCenter;
+    bool  _hiddenFromNotificationCenter;
     NSString * _lastName;
     NSString * _name;
     EKObjectID * _objectID;
+    NSString * _phoneNumber;
     NSString * _title;
-    int  _type;
+    long long  _type;
 }
 
-@property (nonatomic, retain) NSURL *URI;
-@property (nonatomic) BOOL alerted;
-@property (nonatomic) BOOL couldBeJunk;
+@property (nonatomic, retain) NSURL *URL;
+@property (nonatomic) bool alerted;
+@property (nonatomic) bool couldBeJunk;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) struct CGColor { }*dotColor;
 @property (nonatomic, retain) NSString *emailAddress;
 @property (nonatomic, retain) NSString *firstName;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL hiddenFromNotificationCenter;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool hiddenFromNotificationCenter;
 @property (nonatomic, retain) NSString *lastName;
 @property (nonatomic, retain) NSString *name;
-@property (nonatomic, readonly) BOOL needsAlert;
+@property (nonatomic, readonly) bool needsAlert;
 @property (nonatomic, retain) EKObjectID *objectID;
+@property (nonatomic, retain) NSString *phoneNumber;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *title;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
 // Image: /System/Library/Frameworks/EventKit.framework/EventKit
 
 - (void).cxx_destruct;
-- (id)URI;
-- (BOOL)alerted;
-- (BOOL)couldBeJunk;
+- (id)URL;
+- (bool)alerted;
+- (bool)couldBeJunk;
 - (void)dealloc;
 - (struct CGColor { }*)dotColor;
 - (id)emailAddress;
 - (id)firstName;
-- (BOOL)hiddenFromNotificationCenter;
-- (id)initWithType:(int)arg1;
+- (bool)hiddenFromNotificationCenter;
+- (id)initWithType:(long long)arg1;
 - (id)lastName;
 - (id)name;
-- (BOOL)needsAlert;
+- (bool)needsAlert;
 - (id)objectID;
-- (void)setAlerted:(BOOL)arg1;
-- (void)setCouldBeJunk:(BOOL)arg1;
+- (id)phoneNumber;
+- (void)setAlerted:(bool)arg1;
+- (void)setCouldBeJunk:(bool)arg1;
 - (void)setDotColor:(struct CGColor { }*)arg1;
 - (void)setEmailAddress:(id)arg1;
 - (void)setFirstName:(id)arg1;
-- (void)setHiddenFromNotificationCenter:(BOOL)arg1;
+- (void)setHiddenFromNotificationCenter:(bool)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setObjectID:(id)arg1;
+- (void)setPhoneNumber:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setType:(int)arg1;
-- (void)setURI:(id)arg1;
+- (void)setType:(long long)arg1;
+- (void)setURL:(id)arg1;
 - (id)title;
-- (int)type;
+- (long long)type;
 
 // Image: /System/Library/PrivateFrameworks/CalendarUIKit.framework/CalendarUIKit
 
-- (id)_identityStringWithOptions:(unsigned int)arg1;
-- (id)allDescriptionStringsWithOptions:(unsigned int)arg1;
-- (id)importantDescriptionStringWithOptions:(unsigned int)arg1;
-- (BOOL)supportsDisplay;
-- (id)titleStringWithOptions:(unsigned int)arg1;
+- (id)_identityStringWithOptions:(unsigned long long)arg1;
+- (id)allDescriptionStringsWithOptions:(unsigned long long)arg1;
+- (id)importantDescriptionStringWithOptions:(unsigned long long)arg1;
+- (id)senderStringWithOptions:(unsigned long long)arg1;
+- (bool)supportsDisplay;
+- (id)titleStringWithOptions:(unsigned long long)arg1;
 
 @end

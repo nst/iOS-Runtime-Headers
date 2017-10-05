@@ -22,7 +22,7 @@
 @property (nonatomic, readonly) long long tvShowPurchasedAdamID;
 @property (nonatomic, readonly) long long tvShowSubscriptionAdamID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_copyWithClass:(Class)arg1;

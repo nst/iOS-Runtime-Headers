@@ -13,7 +13,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)clientInterface;
@@ -22,12 +22,12 @@
 - (id)_queue_connection;
 - (void)_queue_invalidate;
 - (void)_registerForPublicationNotification;
-- (void)activeBehaviorOverrideTypesChanged:(unsigned int)arg1 source:(unsigned int)arg2;
+- (void)activeBehaviorOverrideTypesChanged:(unsigned long long)arg1 source:(unsigned long long)arg2;
 - (void)dealloc;
 - (void)establishXPCConnection;
 - (id)init;
 - (void)invalidate;
-- (void)notificationPresentationFilteringChangedToEnabled:(BOOL)arg1;
+- (void)notificationPresentationFilteringChangedToEnabled:(bool)arg1;
 - (void)setActiveBehaviorOverridesChangeHandler:(id /* block */)arg1;
 - (void)setFilteringStateChangeHandler:(id /* block */)arg1;
 - (void)shouldPresentNotificationOfType:(int)arg1 fromSender:(id)arg2 withHandler:(id /* block */)arg3;

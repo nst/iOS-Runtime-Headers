@@ -5,40 +5,36 @@
 @interface _SFToolbar : UIToolbar {
     _UIBackdropView * _backgroundView;
     _UIBackdropViewSettings * _customBackdropSettings;
-    int  _placement;
+    long long  _placement;
     UIView * _separator;
-    unsigned int  _tintStyle;
-    BOOL  _usesContainedAppearance;
-    BOOL  _usesDarkTheme;
+    unsigned long long  _tintStyle;
+    bool  _usesDarkTheme;
 }
 
-@property (nonatomic, readonly) float URLFieldHorizontalMargin;
-@property (nonatomic) BOOL backdropComputesColorSettings;
+@property (nonatomic, readonly) double URLFieldHorizontalMargin;
+@property (nonatomic) bool backdropComputesColorSettings;
 @property (nonatomic, copy) NSString *backdropGroupName;
-@property (nonatomic, readonly) int placement;
-@property (nonatomic) unsigned int tintStyle;
-@property (nonatomic, readonly) int toolbarSize;
-@property (nonatomic) BOOL usesContainedAppearance;
+@property (nonatomic, readonly) long long placement;
+@property (nonatomic) unsigned long long tintStyle;
+@property (nonatomic, readonly) long long toolbarSize;
 
-+ (float)defaultHeight;
++ (double)defaultHeight;
 
 - (void).cxx_destruct;
-- (float)URLFieldHorizontalMargin;
+- (double)URLFieldHorizontalMargin;
 - (id)_backdropInputSettings;
-- (BOOL)_tintUsesDarkTheme;
-- (BOOL)backdropComputesColorSettings;
+- (bool)_tintUsesDarkTheme;
+- (bool)backdropComputesColorSettings;
 - (id)backdropGroupName;
-- (id)initWithPlacement:(int)arg1;
+- (id)initWithPlacement:(long long)arg1;
 - (void)layoutSubviews;
-- (int)placement;
-- (void)setBackdropComputesColorSettings:(BOOL)arg1;
+- (long long)placement;
+- (void)setBackdropComputesColorSettings:(bool)arg1;
 - (void)setBackdropGroupName:(id)arg1;
-- (void)setTintStyle:(unsigned int)arg1;
-- (void)setUsesContainedAppearance:(BOOL)arg1;
-- (unsigned int)tintStyle;
-- (int)toolbarSize;
+- (void)setTintStyle:(unsigned long long)arg1;
+- (unsigned long long)tintStyle;
+- (long long)toolbarSize;
 - (void)updateBackdropSettings:(id)arg1;
 - (void)updateTintColor;
-- (BOOL)usesContainedAppearance;
 
 @end

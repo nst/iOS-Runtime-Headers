@@ -5,7 +5,7 @@
 @interface LPiTunesMediaSoftwareMetadata : LPSpecializationMetadata <LPLinkMetadataPresentationTransformerAdaptor, LPLinkMetadataPreviewTransformerAdaptor, LPLinkMetadataStoreTransformerAdaptor> {
     NSString * _genre;
     LPImage * _icon;
-    BOOL  _isMessagesOnlyApp;
+    bool  _isMessagesOnlyApp;
     LPImage * _messagesAppIcon;
     NSString * _name;
     NSString * _platform;
@@ -16,7 +16,7 @@
 
 @property (nonatomic, copy) NSString *genre;
 @property (nonatomic, retain) LPImage *icon;
-@property (nonatomic) BOOL isMessagesOnlyApp;
+@property (nonatomic) bool isMessagesOnlyApp;
 @property (nonatomic, retain) LPImage *messagesAppIcon;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *platform;
@@ -24,7 +24,7 @@
 @property (nonatomic, copy) NSString *storeFrontIdentifier;
 @property (nonatomic, copy) NSString *storeIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -32,7 +32,7 @@
 - (id)genre;
 - (id)icon;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isMessagesOnlyApp;
+- (bool)isMessagesOnlyApp;
 - (id)messagesAppIcon;
 - (id)name;
 - (id)platform;
@@ -42,7 +42,7 @@
 - (id)screenshots;
 - (void)setGenre:(id)arg1;
 - (void)setIcon:(id)arg1;
-- (void)setIsMessagesOnlyApp:(BOOL)arg1;
+- (void)setIsMessagesOnlyApp:(bool)arg1;
 - (void)setMessagesAppIcon:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPlatform:(id)arg1;

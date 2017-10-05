@@ -4,46 +4,46 @@
 
 @interface PSYOptions : NSObject <NSSecureCoding> {
     NSURL * _activityInfoDirectory;
-    BOOL  _dryRun;
+    bool  _dryRun;
     NSArray * _jobs;
-    BOOL  _resetDeviceSyncState;
-    BOOL  _resumePendingJobs;
-    unsigned int  _syncSessionType;
-    unsigned int  _terminationJobCount;
+    bool  _resetDeviceSyncState;
+    bool  _resumePendingJobs;
+    unsigned long long  _syncSessionType;
+    unsigned long long  _terminationJobCount;
     NSArray * _testInputs;
 }
 
 @property (nonatomic, copy) NSURL *activityInfoDirectory;
-@property (nonatomic) BOOL dryRun;
+@property (nonatomic) bool dryRun;
 @property (nonatomic, copy) NSArray *jobs;
-@property (getter=shouldResetDeviceSyncState, nonatomic) BOOL resetDeviceSyncState;
-@property (getter=shouldResumePendingJobs, nonatomic) BOOL resumePendingJobs;
-@property (nonatomic) unsigned int syncSessionType;
-@property (nonatomic) unsigned int terminationJobCount;
+@property (getter=shouldResetDeviceSyncState, nonatomic) bool resetDeviceSyncState;
+@property (getter=shouldResumePendingJobs, nonatomic) bool resumePendingJobs;
+@property (nonatomic) unsigned long long syncSessionType;
+@property (nonatomic) unsigned long long terminationJobCount;
 @property (nonatomic, copy) NSArray *testInputs;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)activityInfoDirectory;
 - (id)description;
-- (BOOL)dryRun;
+- (bool)dryRun;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)jobs;
 - (void)setActivityInfoDirectory:(id)arg1;
-- (void)setDryRun:(BOOL)arg1;
+- (void)setDryRun:(bool)arg1;
 - (void)setJobs:(id)arg1;
-- (void)setResetDeviceSyncState:(BOOL)arg1;
-- (void)setResumePendingJobs:(BOOL)arg1;
-- (void)setSyncSessionType:(unsigned int)arg1;
-- (void)setTerminationJobCount:(unsigned int)arg1;
+- (void)setResetDeviceSyncState:(bool)arg1;
+- (void)setResumePendingJobs:(bool)arg1;
+- (void)setSyncSessionType:(unsigned long long)arg1;
+- (void)setTerminationJobCount:(unsigned long long)arg1;
 - (void)setTestInputs:(id)arg1;
-- (BOOL)shouldResetDeviceSyncState;
-- (BOOL)shouldResumePendingJobs;
-- (unsigned int)syncSessionType;
-- (unsigned int)terminationJobCount;
+- (bool)shouldResetDeviceSyncState;
+- (bool)shouldResumePendingJobs;
+- (unsigned long long)syncSessionType;
+- (unsigned long long)terminationJobCount;
 - (id)testInputs;
 
 @end

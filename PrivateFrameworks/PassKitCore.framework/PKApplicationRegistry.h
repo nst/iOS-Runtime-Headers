@@ -11,16 +11,16 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_requestArchiveToDisk;
 - (void)_validateRegisteredApplications;
-- (BOOL)applicationIsRegisteredWithBundleIdentifier:(id)arg1;
+- (bool)applicationIsRegisteredWithBundleIdentifier:(id)arg1;
 - (void)applicationsDidUninstall:(id)arg1;
 - (void)dealloc;
 - (id)initWithArchiveFileURL:(id)arg1;
-- (BOOL)registerApplicationWithBundeIdentifier:(id)arg1;
+- (bool)registerApplicationWithBundeIdentifier:(id)arg1;
 
 @end

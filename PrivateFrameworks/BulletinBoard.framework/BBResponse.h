@@ -3,11 +3,11 @@
  */
 
 @interface BBResponse : NSObject <NSSecureCoding> {
-    unsigned int  _actionActivationMode;
-    int  _actionBehavior;
+    unsigned long long  _actionActivationMode;
+    long long  _actionBehavior;
     NSString * _actionID;
-    int  _actionType;
-    BOOL  _activated;
+    long long  _actionType;
+    bool  _activated;
     NSString * _bulletinID;
     NSString * _buttonID;
     NSDictionary * _context;
@@ -16,14 +16,14 @@
     NSString * _originID;
     NSString * _replyText;
     id /* block */  _sendBlock;
-    BOOL  _sent;
+    bool  _sent;
 }
 
-@property (nonatomic) unsigned int actionActivationMode;
-@property (nonatomic) int actionBehavior;
+@property (nonatomic) unsigned long long actionActivationMode;
+@property (nonatomic) long long actionBehavior;
 @property (nonatomic, copy) NSString *actionID;
-@property (nonatomic) int actionType;
-@property (nonatomic) BOOL activated;
+@property (nonatomic) long long actionType;
+@property (nonatomic) bool activated;
 @property (nonatomic, copy) NSString *bulletinID;
 @property (nonatomic, copy) NSString *buttonID;
 @property (nonatomic, copy) NSDictionary *context;
@@ -32,14 +32,14 @@
 @property (nonatomic, copy) NSString *replyText;
 @property (nonatomic, copy) id /* block */ sendBlock;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (unsigned int)actionActivationMode;
-- (int)actionBehavior;
+- (unsigned long long)actionActivationMode;
+- (long long)actionBehavior;
 - (id)actionID;
-- (int)actionType;
-- (BOOL)activated;
+- (long long)actionType;
+- (bool)activated;
 - (id)bulletinID;
 - (id)buttonID;
 - (id)context;
@@ -50,11 +50,11 @@
 - (id)replyText;
 - (void)send;
 - (id /* block */)sendBlock;
-- (void)setActionActivationMode:(unsigned int)arg1;
-- (void)setActionBehavior:(int)arg1;
+- (void)setActionActivationMode:(unsigned long long)arg1;
+- (void)setActionBehavior:(long long)arg1;
 - (void)setActionID:(id)arg1;
-- (void)setActionType:(int)arg1;
-- (void)setActivated:(BOOL)arg1;
+- (void)setActionType:(long long)arg1;
+- (void)setActivated:(bool)arg1;
 - (void)setBulletinID:(id)arg1;
 - (void)setButtonID:(id)arg1;
 - (void)setContext:(id)arg1;

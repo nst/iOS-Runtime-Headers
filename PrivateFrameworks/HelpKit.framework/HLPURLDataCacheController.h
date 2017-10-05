@@ -3,15 +3,15 @@
  */
 
 @interface HLPURLDataCacheController : NSObject {
-    int  _URLSessionDataType;
+    long long  _URLSessionDataType;
     NSString * _cacheDirectory;
-    unsigned int  _cacheSize;
+    unsigned long long  _cacheSize;
     NSMutableArray * _dataCacheArray;
     NSMutableDictionary * _dataCacheMap;
     NSString * _identifier;
-    BOOL  _loaded;
+    bool  _loaded;
     NSString * _locale;
-    unsigned int  _maxDataCacheSize;
+    unsigned long long  _maxDataCacheSize;
 }
 
 @property (nonatomic, retain) NSMutableArray *dataCacheArray;
@@ -24,19 +24,19 @@
 - (id)cacheFileURLForDataCache:(id)arg1;
 - (id)cacheFileURLForIdentifier:(id)arg1;
 - (id)cacheFileURLForPath:(id)arg1 completionHandler:(id /* block */)arg2;
-- (BOOL)cacheValidForPath:(id)arg1;
+- (bool)cacheValidForPath:(id)arg1;
 - (void)createCacheDirectory;
 - (id)dataCacheArray;
 - (id)dataCacheForPath:(id)arg1;
 - (void)dealloc;
-- (id)initWithIdentifier:(id)arg1 directoryName:(id)arg2 maxCacheSize:(unsigned int)arg3 URLSessionDataType:(int)arg4;
+- (id)initWithIdentifier:(id)arg1 directoryName:(id)arg2 maxCacheSize:(unsigned long long)arg3 URLSessionDataType:(long long)arg4;
 - (void)load;
 - (id)locale;
 - (void)moveCacheToEnd:(id)arg1;
 - (id)newDataCache;
 - (void)removeAllDataCache;
 - (void)removeDataCache:(id)arg1;
-- (void)removeDataCache:(id)arg1 updateCache:(BOOL)arg2;
+- (void)removeDataCache:(id)arg1 updateCache:(bool)arg2;
 - (id)saveTemporaryFileToCache:(id)arg1 data:(id)arg2 lastModified:(id)arg3;
 - (void)setDataCacheArray:(id)arg1;
 - (void)setLocale:(id)arg1;

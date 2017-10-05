@@ -7,7 +7,7 @@
 
 - (void)discardAssets;
 - (UIImage *)image;
-- (BOOL)snapshotDiffers:(id <NTKAVListing>)arg1;
-- (NTKVideo *)video;
+- (bool)snapshotDiffers:(id <NTKAVListing>)arg1;
+- (CLKVideo *)video;
 
 @end

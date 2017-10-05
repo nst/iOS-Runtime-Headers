@@ -3,26 +3,30 @@
  */
 
 @interface FCPurchaseOfferableConfiguration : NSObject {
-    BOOL  _allowsPublisherPadApp;
-    BOOL  _allowsPublisherPhoneApp;
-    BOOL  _allowsPublisherWebsite;
+    bool  _allowsPublisherPadApp;
+    bool  _allowsPublisherPhoneApp;
+    bool  _allowsPublisherWebsite;
+    bool  _preferredOffer;
     NSString * _purchaseID;
 }
 
-@property (nonatomic) BOOL allowsPublisherPadApp;
-@property (nonatomic) BOOL allowsPublisherPhoneApp;
-@property (nonatomic) BOOL allowsPublisherWebsite;
+@property (nonatomic) bool allowsPublisherPadApp;
+@property (nonatomic) bool allowsPublisherPhoneApp;
+@property (nonatomic) bool allowsPublisherWebsite;
+@property (nonatomic) bool preferredOffer;
 @property (nonatomic, copy) NSString *purchaseID;
 
 - (void).cxx_destruct;
-- (BOOL)allowsPublisherPadApp;
-- (BOOL)allowsPublisherPhoneApp;
-- (BOOL)allowsPublisherWebsite;
-- (id)initWithPurchaseID:(id)arg1 allowsPublisherPhoneApp:(BOOL)arg2 allowsPublisherPadApp:(BOOL)arg3 allowsPublisherWebsite:(BOOL)arg4;
+- (bool)allowsPublisherPadApp;
+- (bool)allowsPublisherPhoneApp;
+- (bool)allowsPublisherWebsite;
+- (id)initWithPurchaseID:(id)arg1 allowsPublisherPhoneApp:(bool)arg2 allowsPublisherPadApp:(bool)arg3 allowsPublisherWebsite:(bool)arg4 preferredOffer:(bool)arg5;
+- (bool)preferredOffer;
 - (id)purchaseID;
-- (void)setAllowsPublisherPadApp:(BOOL)arg1;
-- (void)setAllowsPublisherPhoneApp:(BOOL)arg1;
-- (void)setAllowsPublisherWebsite:(BOOL)arg1;
+- (void)setAllowsPublisherPadApp:(bool)arg1;
+- (void)setAllowsPublisherPhoneApp:(bool)arg1;
+- (void)setAllowsPublisherWebsite:(bool)arg1;
+- (void)setPreferredOffer:(bool)arg1;
 - (void)setPurchaseID:(id)arg1;
 
 @end

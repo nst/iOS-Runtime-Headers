@@ -5,6 +5,6 @@
 
 @optional
 
-- (BOOL)observerShouldForwardDistributedNotification:(MSVDistributedNotificationObserver *)arg1;
+- (bool)observerShouldForwardDistributedNotification:(MSVDistributedNotificationObserver *)arg1;
 
 @end

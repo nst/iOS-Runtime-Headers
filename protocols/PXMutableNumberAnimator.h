@@ -5,7 +5,7 @@
 
 @required
 
-- (void)setValue:(float)arg1;
-- (float)value;
+- (void)setValue:(double)arg1;
+- (double)value;
 
 @end

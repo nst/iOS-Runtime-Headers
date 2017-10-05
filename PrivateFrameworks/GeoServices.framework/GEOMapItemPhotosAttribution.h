@@ -7,7 +7,7 @@
 @property (nonatomic, readonly) NSArray *addPhotoURLs;
 
 - (id)addPhotoURLs;
-- (BOOL)canShowPhotosLocally;
+- (bool)canShowPhotosLocally;
 - (id)initWithSearchAttributionInfo:(id)arg1 attributionURLs:(id)arg2 poiID:(id)arg3;
 - (id)initWithSearchAttributionInfo:(id)arg1 attributionURLs:(id)arg2 yelpID:(id)arg3;
 - (id)urlsForPhotoWithIdentifier:(id)arg1;

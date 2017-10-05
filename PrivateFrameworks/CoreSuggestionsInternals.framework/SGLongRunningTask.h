@@ -13,6 +13,6 @@
 - (id)initWithDeadline:(id)arg1 manager:(id)arg2;
 - (void)markFinished;
 - (void)requestDefer;
-- (BOOL)shouldDefer;
+- (bool)shouldDefer;
 
 @end

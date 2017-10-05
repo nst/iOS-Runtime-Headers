@@ -9,7 +9,7 @@
     UILabel * _explanationLabel;
     CAGradientLayer * _gradientOverlayLayer;
     double  _initialPlayerTime;
-    BOOL  _isTracking;
+    bool  _isTracking;
     AVPlayer * _player;
     AVPlayerItem * _playerItem;
     AVPlayerLayer * _playerLayer;

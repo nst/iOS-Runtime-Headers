@@ -4,77 +4,77 @@
 
 @interface _INPBValueMetadata : PBCodable <NSCopying> {
     NSString * _canonicalValue;
-    BOOL  _confirmed;
+    bool  _confirmed;
     struct { 
         unsigned int confirmed : 1; 
     }  _has;
     NSString * _input;
     struct { 
         int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _requiredEntitlements;
     NSString * _source;
+    NSString * _sourceAppBundleIdentifier;
     PBUnknownFields * _unknownFields;
     NSString * _uuid;
 }
 
 @property (nonatomic, retain) NSString *canonicalValue;
-@property (nonatomic) BOOL confirmed;
-@property (nonatomic, readonly) BOOL hasCanonicalValue;
-@property (nonatomic) BOOL hasConfirmed;
-@property (nonatomic, readonly) BOOL hasInput;
-@property (nonatomic, readonly) BOOL hasSource;
-@property (nonatomic, readonly) BOOL hasUuid;
+@property (nonatomic) bool confirmed;
+@property (nonatomic, readonly) bool hasCanonicalValue;
+@property (nonatomic) bool hasConfirmed;
+@property (nonatomic, readonly) bool hasInput;
+@property (nonatomic, readonly) bool hasSource;
+@property (nonatomic, readonly) bool hasSourceAppBundleIdentifier;
+@property (nonatomic, readonly) bool hasUuid;
 @property (nonatomic, retain) NSString *input;
 @property (nonatomic, readonly) int*requiredEntitlements;
-@property (nonatomic, readonly) unsigned int requiredEntitlementsCount;
+@property (nonatomic, readonly) unsigned long long requiredEntitlementsCount;
 @property (nonatomic, retain) NSString *source;
+@property (nonatomic, retain) NSString *sourceAppBundleIdentifier;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) NSString *uuid;
 
-// Image: /System/Library/Frameworks/Intents.framework/Intents
++ (id)options;
 
 - (void).cxx_destruct;
 - (int)StringAsRequiredEntitlements:(id)arg1;
 - (void)addRequiredEntitlement:(int)arg1;
 - (id)canonicalValue;
 - (void)clearRequiredEntitlements;
-- (BOOL)confirmed;
+- (bool)confirmed;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCanonicalValue;
-- (BOOL)hasConfirmed;
-- (BOOL)hasInput;
-- (BOOL)hasSource;
-- (BOOL)hasUuid;
-- (unsigned int)hash;
+- (bool)hasCanonicalValue;
+- (bool)hasConfirmed;
+- (bool)hasInput;
+- (bool)hasSource;
+- (bool)hasSourceAppBundleIdentifier;
+- (bool)hasUuid;
+- (unsigned long long)hash;
 - (id)input;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (int)requiredEntitlementAtIndex:(unsigned int)arg1;
+- (bool)readFrom:(id)arg1;
+- (int)requiredEntitlementAtIndex:(unsigned long long)arg1;
 - (int*)requiredEntitlements;
 - (id)requiredEntitlementsAsString:(int)arg1;
-- (unsigned int)requiredEntitlementsCount;
+- (unsigned long long)requiredEntitlementsCount;
 - (void)setCanonicalValue:(id)arg1;
-- (void)setConfirmed:(BOOL)arg1;
-- (void)setHasConfirmed:(BOOL)arg1;
+- (void)setConfirmed:(bool)arg1;
+- (void)setHasConfirmed:(bool)arg1;
 - (void)setInput:(id)arg1;
-- (void)setRequiredEntitlements:(int*)arg1 count:(unsigned int)arg2;
+- (void)setRequiredEntitlements:(int*)arg1 count:(unsigned long long)arg2;
 - (void)setSource:(id)arg1;
+- (void)setSourceAppBundleIdentifier:(id)arg1;
 - (void)setUuid:(id)arg1;
 - (id)source;
+- (id)sourceAppBundleIdentifier;
 - (id)unknownFields;
 - (id)uuid;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

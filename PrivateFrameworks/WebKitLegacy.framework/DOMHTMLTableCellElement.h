@@ -14,7 +14,7 @@
 @property int colSpan;
 @property (copy) NSString *headers;
 @property (copy) NSString *height;
-@property BOOL noWrap;
+@property bool noWrap;
 @property int rowSpan;
 @property (copy) NSString *scope;
 @property (copy) NSString *vAlign;
@@ -31,7 +31,7 @@
 - (int)colSpan;
 - (id)headers;
 - (id)height;
-- (BOOL)noWrap;
+- (bool)noWrap;
 - (int)rowSpan;
 - (id)scope;
 - (void)setAbbr:(id)arg1;
@@ -43,7 +43,7 @@
 - (void)setColSpan:(int)arg1;
 - (void)setHeaders:(id)arg1;
 - (void)setHeight:(id)arg1;
-- (void)setNoWrap:(BOOL)arg1;
+- (void)setNoWrap:(bool)arg1;
 - (void)setRowSpan:(int)arg1;
 - (void)setScope:(id)arg1;
 - (void)setVAlign:(id)arg1;

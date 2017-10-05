@@ -9,8 +9,8 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)bookmarkDataNeedsWriteForData:(id)arg1;
+- (bool)bookmarkDataNeedsWriteForData:(id)arg1;
 - (id)init;
-- (id)makeBookmarkDataForData:(id)arg1 filename:(id)arg2 options:(unsigned int)arg3 error:(out id*)arg4;
+- (id)makeBookmarkDataForData:(id)arg1 filename:(id)arg2 options:(unsigned long long)arg3 error:(out id*)arg4;
 
 @end

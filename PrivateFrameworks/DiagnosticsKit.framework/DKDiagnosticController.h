@@ -3,23 +3,23 @@
  */
 
 @interface DKDiagnosticController : NSObject <DKDiagnostic, DKDiagnostic_Internal, NSExtensionRequestHandling> {
-    BOOL  _cancelled;
+    bool  _cancelled;
     DKDiagnosticContext * _context;
-    BOOL  _finished;
+    bool  _finished;
     NSLock * _finishedLock;
-    DKMutableResult * _result;
-    BOOL  _setup;
+    DKMutableDiagnosticResult * _result;
+    bool  _setup;
 }
 
-@property (getter=isCancelled, nonatomic, readonly) BOOL cancelled;
+@property (getter=isCancelled, nonatomic, readonly) bool cancelled;
 @property (nonatomic, retain) DKDiagnosticContext *context;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isFinished, nonatomic) BOOL finished;
+@property (getter=isFinished, nonatomic) bool finished;
 @property (nonatomic, retain) NSLock *finishedLock;
-@property (readonly) unsigned int hash;
-@property (nonatomic, retain) DKMutableResult *result;
-@property (getter=isSetup, nonatomic) BOOL setup;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) DKMutableDiagnosticResult *result;
+@property (getter=isSetup, nonatomic) bool setup;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -28,16 +28,16 @@
 - (id)context;
 - (id)finishedLock;
 - (id)init;
-- (BOOL)isCancelled;
-- (BOOL)isFinished;
-- (BOOL)isSetup;
+- (bool)isCancelled;
+- (bool)isFinished;
+- (bool)isSetup;
 - (id)result;
-- (void)setCancelled:(BOOL)arg1;
+- (void)setCancelled:(bool)arg1;
 - (void)setContext:(id)arg1;
-- (void)setFinished:(BOOL)arg1;
+- (void)setFinished:(bool)arg1;
 - (void)setFinishedLock:(id)arg1;
 - (void)setResult:(id)arg1;
-- (void)setSetup:(BOOL)arg1;
+- (void)setSetup:(bool)arg1;
 - (void)start;
 
 @end

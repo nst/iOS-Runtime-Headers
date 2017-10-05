@@ -12,11 +12,11 @@
 - (id)currentEvent;
 - (double)fastUpdateIntervalForLogs;
 - (void)setConsumer:(id)arg1;
-- (void)setSlowUpdatesEnabled:(BOOL)arg1;
-- (BOOL)shouldLogEvents;
+- (void)setSlowUpdatesEnabled:(bool)arg1;
+- (bool)shouldLogEvents;
 - (double)slowUpdateIntervalForLogs;
 - (void)startGeneratingEvents;
 - (void)stopGeneratingEvents;
-- (BOOL)wantsSynchronizedUpdates;
+- (bool)wantsSynchronizedUpdates;
 
 @end

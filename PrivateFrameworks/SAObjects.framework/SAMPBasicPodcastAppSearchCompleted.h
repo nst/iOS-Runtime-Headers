@@ -7,7 +7,7 @@
 @property (nonatomic, copy) NSString *aceId;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSArray *podcastCollections;
 @property (nonatomic, copy) NSArray *podcastStations;
 @property (nonatomic, copy) NSString *refId;
@@ -20,6 +20,7 @@
 - (id)groupIdentifier;
 - (id)podcastCollections;
 - (id)podcastStations;
+- (bool)requiresResponse;
 - (void)setPodcastCollections:(id)arg1;
 - (void)setPodcastStations:(id)arg1;
 

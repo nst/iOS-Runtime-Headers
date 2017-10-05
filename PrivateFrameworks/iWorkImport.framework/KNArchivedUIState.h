@@ -3,17 +3,17 @@
  */
 
 @interface KNArchivedUIState : TSPObject {
-    KNUIState * mUIState;
+    KNUIState * _uiState;
 }
 
 @property (nonatomic, readonly) KNUIState *uiState;
 
-- (void)dealloc;
-- (id)initFromUnarchiver:(id)arg1;
+- (void).cxx_destruct;
 - (id)initWithUIState:(id)arg1 context:(id)arg2;
+- (void)loadFromUnarchiver:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (id)uiState;
-- (BOOL)validateDesktopViewStateWithDocumentRoot:(id)arg1;
-- (BOOL)validateMobileViewStateWithDocumentRoot:(id)arg1;
+- (bool)validateDesktopViewStateWithDocumentRoot:(id)arg1;
+- (bool)validateMobileViewStateWithDocumentRoot:(id)arg1;
 
 @end

@@ -3,14 +3,14 @@
  */
 
 @interface _UIStepperButton : UIButton {
-    BOOL  _left;
+    bool  _left;
 }
 
-@property (getter=isLeft, nonatomic) BOOL left;
+@property (getter=isLeft, nonatomic) bool left;
 
-- (BOOL)_shouldDefaultToTemplatesForImageViewBackground:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isLeft;
-- (void)setLeft:(BOOL)arg1;
+- (bool)_shouldDefaultToTemplatesForImageViewBackground:(bool)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })imageRectForContentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isLeft;
+- (void)setLeft:(bool)arg1;
 
 @end

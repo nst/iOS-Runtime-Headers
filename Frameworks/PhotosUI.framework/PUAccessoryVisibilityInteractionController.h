@@ -2,13 +2,12 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUAccessoryVisibilityInteractionController : NSObject <PXChangeObserver, UIGestureRecognizerDelegate> {
+@interface PUAccessoryVisibilityInteractionController : NSObject <PUBrowsingViewModelChangeObserver, PXChangeObserver, UIGestureRecognizerDelegate> {
     PUAssetViewModel * __assetViewModel;
     PXNumberAnimator * __contentOffsetOverrideFactor;
-    NSHashTable * __dependentScrollViews;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  __initialContentOffset;
     PXNumberAnimator * __overridingContentOffsetY;
     PUChangeDirectionValueFilter * __swipeDirectionValueFilter;
@@ -16,24 +15,24 @@
     PUBrowsingSession * _browsingSession;
     <PUAccessoryVisibilityInteractionControllerDelegate> * _delegate;
     struct { 
-        BOOL respondsToCanBeginAtLocationFromProvider; 
-        BOOL respondsToDidEnd; 
-        BOOL respondsToIsLocationFromProviderInAccessoryContent; 
-        BOOL respondsToSetAccessoryVisibleChangeReason; 
+        bool respondsToCanBeginAtLocationFromProvider; 
+        bool respondsToDidEnd; 
+        bool respondsToIsLocationFromProviderInAccessoryContent; 
+        bool respondsToSetAccessoryVisibleChangeReason; 
     }  _delegateFlags;
-    BOOL  _isPerformingChanges;
-    BOOL  _isPerformingUpdates;
-    BOOL  _isUpdateScheduled;
+    bool  _isPerformingChanges;
+    bool  _isPerformingUpdates;
+    bool  _isUpdateScheduled;
     struct { 
-        BOOL contentOffset; 
+        bool contentOffset; 
     }  _needsUpdateFlags;
     UIPanGestureRecognizer * _panGestureRecognizer;
+    PXVerticalSwipeGestureRecognizerHelper * _verticalSwipeGestureRecognizerHelper;
 }
 
 @property (setter=_setAssetViewModel:, nonatomic, retain) PUAssetViewModel *_assetViewModel;
 @property (setter=_setContentOffsetOverrideFactor:, nonatomic, retain) PXNumberAnimator *_contentOffsetOverrideFactor;
-@property (nonatomic, readonly) NSHashTable *_dependentScrollViews;
-@property (setter=_setInitialContentOffset:, nonatomic) struct CGPoint { float x1; float x2; } _initialContentOffset;
+@property (setter=_setInitialContentOffset:, nonatomic) struct CGPoint { double x1; double x2; } _initialContentOffset;
 @property (setter=_setOverridingContentOffsetY:, nonatomic, retain) PXNumberAnimator *_overridingContentOffsetY;
 @property (setter=_setSwipeDirectionValueFilter:, nonatomic, retain) PUChangeDirectionValueFilter *_swipeDirectionValueFilter;
 @property (setter=_setVerticalDirectionValueFilter:, nonatomic, retain) PUChangeDirectionValueFilter *_verticalDirectionValueFilter;
@@ -41,26 +40,26 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PUAccessoryVisibilityInteractionControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) UIPanGestureRecognizer *panGestureRecognizer;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) PXVerticalSwipeGestureRecognizerHelper *verticalSwipeGestureRecognizerHelper;
 
 - (void).cxx_destruct;
 - (id)_assetViewModel;
 - (id)_contentOffsetOverrideFactor;
 - (id)_currentAssetViewModel;
-- (id)_dependentScrollViews;
 - (void)_handlePanGestureRecognizer:(id)arg1;
 - (void)_handleScheduledUpdate;
-- (struct CGPoint { float x1; float x2; })_initialContentOffset;
+- (struct CGPoint { double x1; double x2; })_initialContentOffset;
 - (void)_invalidateContentOffset;
-- (BOOL)_needsUpdate;
+- (bool)_needsUpdate;
 - (id)_overridingContentOffsetY;
 - (void)_performChanges:(id /* block */)arg1;
-- (void)_setAccessoryVisible:(BOOL)arg1;
+- (void)_setAccessoryVisible:(bool)arg1;
 - (void)_setAssetViewModel:(id)arg1;
 - (void)_setContentOffsetOverrideFactor:(id)arg1;
-- (void)_setInitialContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_setInitialContentOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_setNeedsUpdate;
 - (void)_setOverridingContentOffsetY:(id)arg1;
 - (void)_setSwipeDirectionValueFilter:(id)arg1;
@@ -72,13 +71,15 @@
 - (id)_verticalDirectionValueFilter;
 - (id)browsingSession;
 - (id)delegate;
-- (BOOL)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)init;
 - (void)invalidateViewHostingGestureRecognizers;
-- (void)observable:(id)arg1 didChange:(unsigned int)arg2 context:(void*)arg3;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
 - (id)panGestureRecognizer;
 - (void)setBrowsingSession:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (id)verticalSwipeGestureRecognizerHelper;
+- (void)viewModel:(id)arg1 didChange:(id)arg2;
 
 @end

@@ -6,7 +6,7 @@
 
 + (void)_commonInitPasscodeView:(id)arg1 forStyle:(int)arg2;
 + (id)_defaultPasscodeBiometricResource;
-+ (id)_passcodeLockViewForStyle:(int)arg1 withLightStyle:(BOOL)arg2;
++ (id)_passcodeLockViewForStyle:(int)arg1 withLightStyle:(bool)arg2;
 + (void)_warmupKBDIfNecessary;
 + (id)installTonightPasscodeLockViewForUsersCurrentStyle;
 + (id)lightPasscodeLockViewForStyle:(int)arg1;

@@ -8,11 +8,12 @@
 
 - (void).cxx_destruct;
 - (void)addSubQueryList:(id)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)description;
-- (BOOL)evaluate;
+- (bool)evaluate;
+- (id)expressionAsString;
 - (id)init;
-- (id)subQueryAtIndex:(unsigned int)arg1;
+- (id)subQueryAtIndex:(unsigned long long)arg1;
 - (id)subQueryList;
 
 @end

@@ -16,7 +16,7 @@
 @property (readonly, copy) NSString *description;
 @property (copy) id /* block */ descriptionBlock;
 @property (copy) id /* block */ eventsBlock;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (copy) id /* block */ removedBlock;
 @property (readonly) Class superclass;
 

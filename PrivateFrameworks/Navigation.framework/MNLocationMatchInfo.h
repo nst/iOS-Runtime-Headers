@@ -9,24 +9,24 @@
     }  _matchCoordinate;
     double  _matchCourse;
     int  _matchFormOfWay;
-    int  _matchQuality;
+    long long  _matchQuality;
     int  _matchRoadClass;
-    BOOL  _matchShifted;
+    bool  _matchShifted;
 }
 
 @property (nonatomic, readonly) struct CLLocationCoordinate2D { double x1; double x2; } matchCoordinate;
 @property (nonatomic, readonly) double matchCourse;
 @property (nonatomic, readonly) int matchFormOfWay;
-@property (nonatomic, readonly) int matchQuality;
+@property (nonatomic, readonly) long long matchQuality;
 @property (nonatomic, readonly) int matchRoadClass;
-@property (nonatomic, readonly) BOOL matchShifted;
+@property (nonatomic, readonly) bool matchShifted;
 
-- (id)initWithMatchQuality:(int)arg1 matchCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg2 matchCourse:(double)arg3 matchFormOfWay:(int)arg4 matchRoadClass:(int)arg5 matchShifted:(BOOL)arg6;
+- (id)initWithMatchQuality:(long long)arg1 matchCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg2 matchCourse:(double)arg3 matchFormOfWay:(int)arg4 matchRoadClass:(int)arg5 matchShifted:(bool)arg6;
 - (struct CLLocationCoordinate2D { double x1; double x2; })matchCoordinate;
 - (double)matchCourse;
 - (int)matchFormOfWay;
-- (int)matchQuality;
+- (long long)matchQuality;
 - (int)matchRoadClass;
-- (BOOL)matchShifted;
+- (bool)matchShifted;
 
 @end

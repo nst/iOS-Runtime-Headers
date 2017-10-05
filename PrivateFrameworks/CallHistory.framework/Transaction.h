@@ -4,23 +4,23 @@
 
 @interface Transaction : NSObject <NSSecureCoding> {
     NSData * _record;
-    unsigned int  _transactionType;
+    unsigned long long  _transactionType;
 }
 
 @property (retain) NSData *record;
-@property unsigned int transactionType;
+@property unsigned long long transactionType;
 
-+ (BOOL)supportsSecureCoding;
-+ (id)toString:(unsigned int)arg1;
++ (bool)supportsSecureCoding;
++ (id)toString:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithString:(id)arg1 andRecord:(id)arg2;
-- (id)initWithType:(unsigned int)arg1 andRecord:(id)arg2;
+- (id)initWithType:(unsigned long long)arg1 andRecord:(id)arg2;
 - (id)record;
 - (void)setRecord:(id)arg1;
-- (void)setTransactionType:(unsigned int)arg1;
-- (unsigned int)transactionType;
+- (void)setTransactionType:(unsigned long long)arg1;
+- (unsigned long long)transactionType;
 
 @end

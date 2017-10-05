@@ -5,21 +5,23 @@
 @interface HDAuthorizationManager : NSObject <HDDiagnosticObject> {
     NSMutableDictionary * _activeObjectPromptSessionsBySessionIdentifier;
     NSObject<OS_dispatch_queue> * _completionQueue;
+    NSMutableDictionary * _openAppCompletionHandlersByBundleID;
     NSMutableDictionary * _pendingObjectAuthorizationRequestsByBundleIdentifier;
     NSMutableArray * _pendingRequestGroups;
     HDProfile * _profile;
     _HDAuthorizationRequestGroup * _promptingRequestGroup;
     NSObject<OS_dispatch_queue> * _queue;
+    NSMutableDictionary * _remoteAuthorizationRecordsByBundleID;
     NSMutableDictionary * _requestGroupsByBundleIdentifier;
     double  _requestSessionTimeout;
-    BOOL  _suppressAuthorizationPrompt;
+    bool  _suppressAuthorizationPrompt;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *activeObjectPromptSessionsBySessionIdentifier;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *completionQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableDictionary *pendingObjectAuthorizationRequestsByBundleIdentifier;
 @property (nonatomic, retain) NSMutableArray *pendingRequestGroups;
 @property (nonatomic) HDProfile *profile;
@@ -28,10 +30,10 @@
 @property (nonatomic, retain) NSMutableDictionary *requestGroupsByBundleIdentifier;
 @property (nonatomic) double requestSessionTimeout;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL suppressAuthorizationPrompt;
+@property (nonatomic) bool suppressAuthorizationPrompt;
 
 - (void).cxx_destruct;
-- (BOOL)_needsAuthorizationForRequestGroup:(id)arg1 overwriteAuthorizationStatus:(BOOL)arg2 error:(id*)arg3;
+- (bool)_needsAuthorizationForRequestGroup:(id)arg1 overwriteAuthorizationStatus:(bool)arg2 error:(id*)arg3;
 - (void)_performNanoSyncImmediatelyWithReason:(id)arg1;
 - (id)_queue_activePromptSessionForBundleIdentifier:(id)arg1;
 - (void)_queue_beginAuthorizationDelegateTransactionWithSessionIdentifier:(id)arg1 completion:(id /* block */)arg2;
@@ -41,7 +43,7 @@
 - (void)_queue_finishRequestGroup:(id)arg1 error:(id)arg2;
 - (void)_queue_handleNextAuthorizationRequestGroup;
 - (void)_queue_resetAllAuthorizationRecordsWithCompletion:(id /* block */)arg1;
-- (BOOL)_queue_resetAuthorizationRecordsForBundleIdentifier:(id)arg1 error:(id*)arg2;
+- (bool)_queue_resetAuthorizationRecordsForBundleIdentifier:(id)arg1 error:(id*)arg2;
 - (void)_queue_setAuthorizationStatuses:(id)arg1 forBundleIdentifier:(id)arg2 completion:(id /* block */)arg3;
 - (id)activeObjectPromptSessionsBySessionIdentifier;
 - (void)applicationsUninstalledNotification:(id)arg1;
@@ -52,7 +54,7 @@
 - (id)diagnosticDescription;
 - (void)endAuthorizationDelegateTransactionWithSessionIdentifier:(id)arg1 error:(id)arg2;
 - (id)enqueueAuthorizationRequestForBundleIdentifier:(id)arg1 writeTypes:(id)arg2 readTypes:(id)arg3 authorizationNeededHandler:(id /* block */)arg4 completion:(id /* block */)arg5;
-- (id)enqueueObjectAuthorizationRequestForBundleIdentifier:(id)arg1 samples:(id)arg2 promptIfNeeded:(BOOL)arg3 authorizationNeededHandler:(id /* block */)arg4 completion:(id /* block */)arg5;
+- (id)enqueueObjectAuthorizationRequestForBundleIdentifier:(id)arg1 samples:(id)arg2 promptIfNeeded:(bool)arg3 authorizationNeededHandler:(id /* block */)arg4 completion:(id /* block */)arg5;
 - (void)handleAuthorizationRequestsForBundleIdentifier:(id)arg1 promptHandler:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (void)handleObjectAuthorizationRequestsForBundleIdentifier:(id)arg1 promptHandler:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (id)initWithProfile:(id)arg1;
@@ -63,6 +65,7 @@
 - (id)promptingRequestGroup;
 - (id)queue;
 - (id)requestGroupsByBundleIdentifier;
+- (void)requestRemoteAuthorizationForRequestRecord:(id)arg1 requestSentHandler:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (double)requestSessionTimeout;
 - (void)resetAllAuthorizationRecordsWithCompletion:(id /* block */)arg1;
 - (void)setActiveObjectPromptSessionsBySessionIdentifier:(id)arg1;
@@ -75,7 +78,7 @@
 - (void)setQueue:(id)arg1;
 - (void)setRequestGroupsByBundleIdentifier:(id)arg1;
 - (void)setRequestSessionTimeout:(double)arg1;
-- (void)setSuppressAuthorizationPrompt:(BOOL)arg1;
-- (BOOL)suppressAuthorizationPrompt;
+- (void)setSuppressAuthorizationPrompt:(bool)arg1;
+- (bool)suppressAuthorizationPrompt;
 
 @end

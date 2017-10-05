@@ -23,6 +23,5 @@
 - (id)suggestionForSearchItem:(id)arg1;
 - (void)updateMetadataForDestinationID:(id)arg1;
 - (void)updateMetadataForRecentCalls:(id)arg1;
-- (void)updateMetadataForTUCall:(id)arg1;
 
 @end

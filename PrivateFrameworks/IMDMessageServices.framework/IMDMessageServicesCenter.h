@@ -8,8 +8,8 @@
 
 + (id)sharedInstance;
 
-- (BOOL)_connect;
-- (BOOL)_disconnect;
+- (bool)_connect;
+- (bool)_disconnect;
 - (void)_disconnected;
 - (void)_requestExpireStateWithGUID:(id)arg1 handler:(id /* block */)arg2;
 - (void)_requestRoutingWithGUID:(id)arg1 chatGUID:(id)arg2 error:(unsigned int)arg3 handler:(id /* block */)arg4;

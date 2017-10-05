@@ -15,6 +15,6 @@
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (void)invalidate;
 - (void)setDelegate:(id)arg1;
-- (void)stateDidChange:(int)arg1;
+- (void)stateDidChange:(long long)arg1;
 
 @end

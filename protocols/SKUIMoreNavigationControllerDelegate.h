@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)moreNavigationController:(SKUIMoreNavigationController *)arg1 didSelectItemAtIndex:(int)arg2;
+- (void)moreNavigationController:(SKUIMoreNavigationController *)arg1 didSelectItemAtIndex:(long long)arg2;
 
 @end

@@ -13,8 +13,8 @@
 - (void).cxx_destruct;
 - (id)copyChallengeFor:(id)arg1 error:(id*)arg2;
 - (id)copyConfirmationFor:(id)arg1 error:(id*)arg2;
-- (id)initWithUser:(id)arg1 password:(id)arg2 digestInfo:(const struct ccdigest_info { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; char *x5; void *x6; int (*x7)(); int (*x8)(); }*)arg3 group:(union { union { unsigned int *x_1_1_1; struct cczp {} *x_1_1_2; union { unsigned int *x_3_2_1; struct cczp {} *x_3_2_2; } x_1_1_3; } x1; struct { /* ? */ } *x2; union { union { unsigned int *x_1_2_1; struct cczp {} *x_1_2_2; } x_3_1_1; struct { /* ? */ } *x_3_1_2; } x3; })arg4 randomSource:(struct ccrng_state { int (*x1)(); }*)arg5;
-- (id)initWithUser:(id)arg1 salt:(id)arg2 verifier:(id)arg3 digestInfo:(const struct ccdigest_info { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; char *x5; void *x6; int (*x7)(); int (*x8)(); }*)arg4 group:(union { union { unsigned int *x_1_1_1; struct cczp {} *x_1_1_2; union { unsigned int *x_3_2_1; struct cczp {} *x_3_2_2; } x_1_1_3; } x1; struct { /* ? */ } *x2; union { union { unsigned int *x_1_2_1; struct cczp {} *x_1_2_2; } x_3_1_1; struct { /* ? */ } *x_3_1_2; } x3; })arg5 randomSource:(struct ccrng_state { int (*x1)(); }*)arg6;
+- (id)initWithUser:(id)arg1 password:(id)arg2 digestInfo:(const struct ccdigest_info { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; char *x5; void *x6; int (*x7)(); int (*x8)(); }*)arg3 group:(struct ccdh_gp { unsigned long long x1; unsigned long long x2; int (*x3)(); unsigned long long x4[0]; }*)arg4 randomSource:(struct ccrng_state { int (*x1)(); }*)arg5;
+- (id)initWithUser:(id)arg1 salt:(id)arg2 verifier:(id)arg3 digestInfo:(const struct ccdigest_info { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; char *x5; void *x6; int (*x7)(); int (*x8)(); }*)arg4 group:(struct ccdh_gp { unsigned long long x1; unsigned long long x2; int (*x3)(); unsigned long long x4[0]; }*)arg5 randomSource:(struct ccrng_state { int (*x1)(); }*)arg6;
 - (bool)resetWithPassword:(id)arg1 error:(id*)arg2;
 - (id)salt;
 - (void)setVerifier:(id)arg1;

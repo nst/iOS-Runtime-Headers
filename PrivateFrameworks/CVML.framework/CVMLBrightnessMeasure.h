@@ -4,6 +4,6 @@
 
 @interface CVMLBrightnessMeasure : NSObject
 
-+ (BOOL)computeBrightnessScore:(float*)arg1 onImage:(struct __CVBuffer { }*)arg2 error:(id*)arg3;
++ (bool)computeBrightnessScore:(float*)arg1 onImage:(struct __CVBuffer { }*)arg2 error:(id*)arg3;
 
 @end

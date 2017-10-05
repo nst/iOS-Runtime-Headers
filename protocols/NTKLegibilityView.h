@@ -5,11 +5,11 @@
 
 @required
 
-- (BOOL)legibilityEnabled;
-- (void)setLegibilityEnabled:(BOOL)arg1;
-- (void)setShadowBlur:(float)arg1;
+- (bool)legibilityEnabled;
+- (void)setLegibilityEnabled:(bool)arg1;
+- (void)setShadowBlur:(double)arg1;
 - (void)setShadowColor:(UIColor *)arg1;
-- (float)shadowBlur;
+- (double)shadowBlur;
 - (UIColor *)shadowColor;
 
 @end

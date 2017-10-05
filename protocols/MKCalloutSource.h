@@ -5,9 +5,9 @@
 
 @required
 
-- (struct CGPoint { float x1; float x2; })calloutAnchorPointWithCanvasSize:(struct CGSize { float x1; float x2; })arg1 canvasScale:(float)arg2 snapToPixels:(BOOL)arg3;
+- (struct CGPoint { double x1; double x2; })calloutAnchorPointWithCanvasSize:(struct CGSize { double x1; double x2; })arg1 canvasScale:(double)arg2 snapToPixels:(bool)arg3;
 - (NSString *)debugAnchorPointString;
-- (struct CGPoint { float x1; float x2; })screenPointToScrollRelativeToWithCanvasSize:(struct CGSize { float x1; float x2; })arg1 canvasScale:(float)arg2;
+- (struct CGPoint { double x1; double x2; })screenPointToScrollRelativeToWithCanvasSize:(struct CGSize { double x1; double x2; })arg1 canvasScale:(double)arg2;
 - (NSString *)title;
 
 @optional

@@ -14,6 +14,8 @@
 @property (nonatomic) struct __SecKey { }*publicKey;
 @property (nonatomic) struct __SecCertificate { }*remoteCertificate;
 
++ (id)generateAuthenticationCredentialsContainingSelfSignedCertificate;
+
 - (struct __SecCertificate { }*)localCertificate;
 - (struct __SecKey { }*)privateKey;
 - (struct __SecKey { }*)publicKey;

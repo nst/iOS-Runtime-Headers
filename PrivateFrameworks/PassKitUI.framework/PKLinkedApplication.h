@@ -7,56 +7,56 @@
     SSSoftwareLibraryItem * _foundLibraryItem;
     NSDictionary * _foundStoreItem;
     UIImage * _iconImage;
-    BOOL  _loaded;
-    BOOL  _loading;
-    unsigned int  _loadingToken;
+    bool  _loaded;
+    bool  _loading;
+    unsigned long long  _loadingToken;
     NSHashTable * _observers;
     SKStoreProductViewController * _presentedViewController;
     NSArray * _storeIDs;
-    BOOL  _useSmallIcon;
+    bool  _useSmallIcon;
 }
 
 @property (nonatomic, readonly) NSNumber *averageRating;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, copy) NSURL *defaultLaunchURL;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } expectedIconSize;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } expectedIconSize;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) UIImage *iconImage;
-@property (getter=isInstalled, nonatomic, readonly) BOOL installed;
+@property (getter=isInstalled, nonatomic, readonly) bool installed;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSString *price;
 @property (nonatomic, readonly) NSString *publisher;
-@property (nonatomic, readonly) int state;
+@property (nonatomic, readonly) long long state;
 @property (nonatomic, copy) NSArray *storeIDs;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL useSmallIcon;
+@property (nonatomic) bool useSmallIcon;
 
 + (void)openApplicationWithBundleID:(id)arg1 launchURL:(id)arg2;
 
 - (void).cxx_destruct;
 - (int)_iconOptionsForItem:(id)arg1;
-- (id)_iconURLFromArtwork:(id)arg1 withDesiredSize:(struct CGSize { float x1; float x2; })arg2;
-- (id)_iconURLFromArtwork:(id)arg1 withDesiredSize:(struct CGSize { float x1; float x2; })arg2 requireStrictMatch:(BOOL)arg3;
-- (int)_iconVariantForScale:(float)arg1;
-- (id)_imageForSize:(struct CGSize { float x1; float x2; })arg1 fromArtwork:(id)arg2 requireStrictMatch:(BOOL)arg3;
-- (BOOL)_itemArtNeedsShine:(id)arg1;
+- (id)_iconURLFromArtwork:(id)arg1 withDesiredSize:(struct CGSize { double x1; double x2; })arg2;
+- (id)_iconURLFromArtwork:(id)arg1 withDesiredSize:(struct CGSize { double x1; double x2; })arg2 requireStrictMatch:(bool)arg3;
+- (int)_iconVariantForScale:(double)arg1;
+- (id)_imageForSize:(struct CGSize { double x1; double x2; })arg1 fromArtwork:(id)arg2 requireStrictMatch:(bool)arg3;
+- (bool)_itemArtNeedsShine:(id)arg1;
 - (void)_notifyObserversOfStateChange;
 - (void)_performStoreLookupWithCompletion:(id /* block */)arg1;
 - (void)_unloadApplicationState;
 - (void)_updateApplicationStateWithCompletion:(id /* block */)arg1;
-- (BOOL)_useLibraryItem;
+- (bool)_useLibraryItem;
 - (void)addObserver:(id)arg1;
 - (id)averageRating;
 - (void)dealloc;
 - (id)defaultLaunchURL;
-- (struct CGSize { float x1; float x2; })expectedIconSize;
+- (struct CGSize { double x1; double x2; })expectedIconSize;
 - (id)iconImage;
 - (id)init;
 - (id)initWithPass:(id)arg1;
 - (id)initWithStoreIDs:(id)arg1 defaultLaunchURL:(id)arg2;
 - (void)installedApplicationsDidChangeNotification:(id)arg1;
-- (BOOL)isInstalled;
+- (bool)isInstalled;
 - (id)name;
 - (void)openApplication:(id)arg1;
 - (id)price;
@@ -67,9 +67,9 @@
 - (void)removeObserver:(id)arg1;
 - (void)setDefaultLaunchURL:(id)arg1;
 - (void)setStoreIDs:(id)arg1;
-- (void)setUseSmallIcon:(BOOL)arg1;
-- (int)state;
+- (void)setUseSmallIcon:(bool)arg1;
+- (long long)state;
 - (id)storeIDs;
-- (BOOL)useSmallIcon;
+- (bool)useSmallIcon;
 
 @end

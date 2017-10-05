@@ -3,32 +3,32 @@
  */
 
 @interface _CDDevice : NSObject <NSCopying, NSSecureCoding> {
-    int  _deviceClass;
-    unsigned int  _identifier;
+    long long  _deviceClass;
+    unsigned long long  _identifier;
     NSString * _name;
 }
 
-@property (nonatomic) int deviceClass;
-@property (nonatomic) unsigned int identifier;
+@property (nonatomic) long long deviceClass;
+@property (nonatomic) unsigned long long identifier;
 @property (nonatomic, copy) NSString *name;
 
-+ (unsigned int)getPlatformUUID;
++ (unsigned long long)getPlatformUUID;
 + (id)localDevice;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (int)deviceClass;
+- (long long)deviceClass;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
-- (unsigned int)identifier;
+- (unsigned long long)hash;
+- (unsigned long long)identifier;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithName:(id)arg1 identifier:(unsigned int)arg2 deviceClass:(int)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithName:(id)arg1 identifier:(unsigned long long)arg2 deviceClass:(long long)arg3;
+- (bool)isEqual:(id)arg1;
 - (id)name;
-- (void)setDeviceClass:(int)arg1;
-- (void)setIdentifier:(unsigned int)arg1;
+- (void)setDeviceClass:(long long)arg1;
+- (void)setIdentifier:(unsigned long long)arg1;
 - (void)setName:(id)arg1;
 
 @end

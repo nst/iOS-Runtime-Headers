@@ -18,8 +18,8 @@
 - (id)anisetteDataWithError:(id*)arg1;
 - (void)dealloc;
 - (void)eraseWithCompletion:(id /* block */)arg1;
-- (id)fetchAnisetteDataAndProvisionIfNecessary:(BOOL)arg1 error:(id*)arg2;
-- (void)fetchAnisetteDataAndProvisionIfNecessary:(BOOL)arg1 withCompletion:(id /* block */)arg2;
+- (id)fetchAnisetteDataAndProvisionIfNecessary:(bool)arg1 error:(id*)arg2;
+- (void)fetchAnisetteDataAndProvisionIfNecessary:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (id)init;
 - (id)initForDevice:(id)arg1;
 - (id)initWithDaemonXPCEndpoint:(id)arg1;

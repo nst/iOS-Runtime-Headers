@@ -2,19 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@interface AAUIFamilyDetailsCache : NSObject {
-    BOOL  _isValid;
-    BOOL  _isValidating;
-    unsigned int  _pendingInviteCount;
-}
+@interface AAUIFamilyDetailsCache : NSObject
 
-@property (nonatomic, readonly) unsigned int pendingInviteCount;
+@property (nonatomic, readonly) unsigned long long pendingInviteCount;
 
 + (id)sharedCache;
 
-- (void)_fetchPendingInviteCount;
-- (void)_setPendingInviteCount:(unsigned int)arg1;
 - (void)invalidate;
-- (unsigned int)pendingInviteCount;
+- (unsigned long long)pendingInviteCount;
 
 @end

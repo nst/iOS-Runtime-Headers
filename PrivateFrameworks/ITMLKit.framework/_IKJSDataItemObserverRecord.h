@@ -5,22 +5,22 @@
 @interface _IKJSDataItemObserverRecord : NSObject {
     <IKJSDataItemObserver> * _observer;
     struct { 
-        BOOL hasDidChangePropertyPath; 
-        BOOL hasDidChangeSubPropertyPath; 
+        bool hasDidChangePropertyPath; 
+        bool hasDidChangeSubPropertyPath; 
     }  _observerFlags;
     NSString * _pathString;
-    BOOL  _subscriptWildcard;
+    bool  _subscriptWildcard;
 }
 
 @property (nonatomic, readonly) <IKJSDataItemObserver> *observer;
 @property (nonatomic, readonly) NSString *pathString;
-@property (getter=isSubscriptWildcard, nonatomic, readonly) BOOL subscriptWildcard;
+@property (getter=isSubscriptWildcard, nonatomic, readonly) bool subscriptWildcard;
 
 - (void).cxx_destruct;
-- (id)initWithObserver:(id)arg1 pathString:(id)arg2 subscriptWildcard:(BOOL)arg3;
-- (BOOL)isAffectedByPropertyPathWithString:(id)arg1;
-- (BOOL)isAffectedByPropertyPathWithString:(id)arg1 subscript:(int)arg2;
-- (BOOL)isSubscriptWildcard;
+- (id)initWithObserver:(id)arg1 pathString:(id)arg2 subscriptWildcard:(bool)arg3;
+- (bool)isAffectedByPropertyPathWithString:(id)arg1;
+- (bool)isAffectedByPropertyPathWithString:(id)arg1 subscript:(long long)arg2;
+- (bool)isSubscriptWildcard;
 - (id)observer;
 - (id)pathString;
 

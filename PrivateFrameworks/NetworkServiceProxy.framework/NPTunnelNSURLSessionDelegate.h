@@ -3,29 +3,33 @@
  */
 
 @interface NPTunnelNSURLSessionDelegate : NSObject <NSURLSessionDelegate> {
-    BOOL  _enableExtendedValidation;
-    BOOL  _ignoreInvalidCerts;
+    bool  _enableExtendedValidation;
+    bool  _ignoreInvalidCerts;
     NSString * _leafOID;
+    bool  _revocationFailClosed;
     NSString * _validationHostname;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property BOOL enableExtendedValidation;
-@property (readonly) unsigned int hash;
-@property BOOL ignoreInvalidCerts;
+@property bool enableExtendedValidation;
+@property (readonly) unsigned long long hash;
+@property bool ignoreInvalidCerts;
 @property (retain) NSString *leafOID;
+@property bool revocationFailClosed;
 @property (readonly) Class superclass;
 @property (retain) NSString *validationHostname;
 
 - (void).cxx_destruct;
 - (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(id /* block */)arg3;
-- (BOOL)enableExtendedValidation;
-- (BOOL)ignoreInvalidCerts;
+- (bool)enableExtendedValidation;
+- (bool)ignoreInvalidCerts;
 - (id)leafOID;
-- (void)setEnableExtendedValidation:(BOOL)arg1;
-- (void)setIgnoreInvalidCerts:(BOOL)arg1;
+- (bool)revocationFailClosed;
+- (void)setEnableExtendedValidation:(bool)arg1;
+- (void)setIgnoreInvalidCerts:(bool)arg1;
 - (void)setLeafOID:(id)arg1;
+- (void)setRevocationFailClosed:(bool)arg1;
 - (void)setValidationHostname:(id)arg1;
 - (id)validationHostname;
 

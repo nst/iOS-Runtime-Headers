@@ -3,22 +3,22 @@
  */
 
 @interface SKUILoadResourceOperation : NSOperation {
-    int  __loadReason;
+    long long  __loadReason;
     SKUIClientContext * _clientContext;
     NSLock * _lock;
     id /* block */  _outputBlock;
     SKUIResourceRequest * _request;
 }
 
-@property (setter=_setLoadReason:, nonatomic) int _loadReason;
+@property (setter=_setLoadReason:, nonatomic) long long _loadReason;
 @property (retain) SKUIClientContext *clientContext;
 @property (copy) id /* block */ outputBlock;
 @property (readonly, copy) SKUIResourceRequest *resourceRequest;
 
 - (void).cxx_destruct;
 - (id)_initSKUILoadResourceOperation;
-- (int)_loadReason;
-- (void)_setLoadReason:(int)arg1;
+- (long long)_loadReason;
+- (void)_setLoadReason:(long long)arg1;
 - (void)cancel;
 - (id)clientContext;
 - (id)init;

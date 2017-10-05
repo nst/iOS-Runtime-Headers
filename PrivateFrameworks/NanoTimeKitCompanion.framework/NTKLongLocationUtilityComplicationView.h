@@ -7,9 +7,9 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <NTKComplicationDisplayObserver> *displayObserver;
-@property (readonly) unsigned int hash;
-@property (getter=isHighlighted, nonatomic) BOOL highlighted;
-@property (nonatomic) BOOL shouldUseTemplateColors;
+@property (readonly) unsigned long long hash;
+@property (getter=isHighlighted, nonatomic) bool highlighted;
+@property (nonatomic) bool shouldUseTemplateColors;
 @property (readonly) Class superclass;
 
 - (void)setLatitude:(id)arg1 longitude:(id)arg2;

@@ -11,7 +11,7 @@
 @property (nonatomic, readonly) PSYSyncSession *updatedSession;
 
 - (void).cxx_destruct;
-- (BOOL)didUpdateCompleteSyncSession;
+- (bool)didUpdateCompleteSyncSession;
 - (void)enumerateChangedActivitiesWithBlock:(id /* block */)arg1;
 - (void)enumerateNewlyCompletedActivitiesWithBlock:(id /* block */)arg1;
 - (void)enumerateNewlyRunningActivitiesWithBlock:(id /* block */)arg1;

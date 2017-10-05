@@ -25,18 +25,18 @@
 @property (nonatomic) double nextRespirationRateSampleTime;
 
 - (void).cxx_destruct;
-- (int)_computeBloodPressureForDemoPerson:(id)arg1 atTime:(double)arg2 baseBloodPressure:(double)arg3 stdDev:(double)arg4;
-- (double)_computeBodyTempInCelsiusForDemoPerson:(id)arg1 atTime:(double)arg2 addNoise:(BOOL)arg3;
-- (int)_computeHeartRateForDemoPerson:(id)arg1 atTime:(double)arg2;
-- (int)_computeMaxHRForDemoPerson:(id)arg1 atTime:(double)arg2;
-- (int)_computeRespirationRateForDemoPerson:(id)arg1 atTime:(double)arg2;
+- (long long)_computeBloodPressureForDemoPerson:(id)arg1 atTime:(double)arg2 baseBloodPressure:(double)arg3 stdDev:(double)arg4;
+- (double)_computeBodyTempInCelsiusForDemoPerson:(id)arg1 atTime:(double)arg2 addNoise:(bool)arg3;
+- (struct HDDemoDataHeartRate { double x1; long long x2; })_computeHeartRateForDemoPerson:(id)arg1 atTime:(double)arg2;
+- (long long)_computeMaxHRForDemoPerson:(id)arg1 atTime:(double)arg2;
+- (long long)_computeRespirationRateForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (struct HDDemoDataBloodPressure { double x1; double x2; })bloodPressureForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (id)bodyTempInCelsiusForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (id)diurnalBPVariationTable;
 - (id)diurnalTempVariationTable;
 - (void)encodeWithCoder:(id)arg1;
 - (void)generateSamplesForDemoPerson:(id)arg1 atTime:(double)arg2 sampleDate:(id)arg3 objectCollection:(id)arg4;
-- (id)heartRateForDemoPerson:(id)arg1 atTime:(double)arg2;
+- (struct HDDemoDataHeartRate { double x1; long long x2; })heartRateForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (double)lastPeripheralPerfusionIndexValue;

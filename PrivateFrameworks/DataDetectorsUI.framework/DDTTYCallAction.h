@@ -4,7 +4,7 @@
 
 @interface DDTTYCallAction : DDAssistedCallAction
 
-- (int)TTYType;
+- (long long)TTYType;
 - (id)localizedName;
 
 @end

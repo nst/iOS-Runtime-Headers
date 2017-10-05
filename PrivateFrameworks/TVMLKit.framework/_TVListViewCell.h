@@ -5,43 +5,43 @@
 @interface _TVListViewCell : UICollectionViewCell {
     UIColor * _backgroundColor;
     <_TVListViewCellDelegate> * _delegate;
-    BOOL  _disabled;
+    bool  _disabled;
     _UIFloatingContentView * _floatingView;
     UIColor * _highlightedBackgroundColor;
-    BOOL  _shouldAppearSelected;
+    bool  _shouldAppearSelected;
 }
 
 @property (nonatomic) <_TVListViewCellDelegate> *delegate;
-@property (getter=isDisabled, nonatomic) BOOL disabled;
+@property (getter=isDisabled, nonatomic) bool disabled;
 @property (nonatomic, retain) _UIFloatingContentView *floatingView;
-@property (nonatomic) BOOL shouldAppearSelected;
+@property (nonatomic) bool shouldAppearSelected;
 
 - (void).cxx_destruct;
-- (BOOL)_descendantsShouldHighlight;
-- (unsigned int)_floatingViewControlState;
-- (id)_preferredConfigurationForFocusAnimation:(int)arg1 inContext:(id)arg2;
-- (void)_updateBackgroundColor;
+- (bool)_descendantsShouldHighlight;
+- (unsigned long long)_floatingViewControlState;
+- (id)_preferredConfigurationForFocusAnimation:(long long)arg1 inContext:(id)arg2;
 - (void)_updateSelectedBackgroundColor;
-- (BOOL)canBecomeFocused;
+- (bool)canBecomeFocused;
 - (id)delegate;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)floatingView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isDisabled;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isDisabled;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setBackgroundColor:(id)arg1 forState:(unsigned int)arg2;
+- (void)setBackgroundColor:(id)arg1 forState:(unsigned long long)arg2;
 - (void)setDelegate:(id)arg1;
-- (void)setDisabled:(BOOL)arg1;
+- (void)setDisabled:(bool)arg1;
 - (void)setFloatingView:(id)arg1;
-- (void)setSelected:(BOOL)arg1;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setShouldAppearSelected:(BOOL)arg1;
-- (BOOL)shouldAppearSelected;
+- (void)setHighlighted:(bool)arg1;
+- (void)setSelected:(bool)arg1;
+- (void)setSelected:(bool)arg1 animated:(bool)arg2;
+- (void)setShouldAppearSelected:(bool)arg1;
+- (bool)shouldAppearSelected;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateFloatingViewControlStateForPreviouslyFocusedView:(id)arg1;
 

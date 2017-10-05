@@ -9,16 +9,17 @@
 @property (nonatomic, retain) NSData *mescalCert;
 
 - (void).cxx_destruct;
-- (BOOL)allowsAnonymousAccount;
-- (BOOL)hasRequestBody;
+- (bool)allowsAnonymousAccount;
+- (bool)hasRequestBody;
 - (id)httpMethod;
 - (id)mescalCert;
-- (int)partitionType;
+- (long long)partitionType;
 - (void)requestDidParse509CertObject:(id)arg1;
 - (void)requestDidParsePlaintextObject:(id)arg1;
-- (BOOL)requiresDeviceID;
-- (BOOL)requiresSignature;
-- (int)serverType;
+- (id)requestOptions;
+- (bool)requiresDeviceID;
+- (bool)requiresSignature;
+- (long long)serverType;
 - (void)setMescalCert:(id)arg1;
 - (id)url;
 

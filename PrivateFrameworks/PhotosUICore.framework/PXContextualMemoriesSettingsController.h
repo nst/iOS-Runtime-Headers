@@ -5,13 +5,13 @@
 @interface PXContextualMemoriesSettingsController : NSObject {
     NSMutableArray * _completionHandlers;
     NSMutableArray * _registrationIdentifiers;
-    BOOL  _requestingUpdates;
+    bool  _requestingUpdates;
     PXContextualMemoriesSettings * _settings;
 }
 
 @property (nonatomic, retain) NSMutableArray *completionHandlers;
 @property (nonatomic, retain) NSMutableArray *registrationIdentifiers;
-@property (getter=isRequestingUpdates, nonatomic) BOOL requestingUpdates;
+@property (getter=isRequestingUpdates, nonatomic) bool requestingUpdates;
 @property (nonatomic, readonly) PXContextualMemoriesSettings *settings;
 
 + (id)sharedController;
@@ -19,13 +19,13 @@
 - (void).cxx_destruct;
 - (id)completionHandlers;
 - (id)init;
-- (BOOL)isRequestingUpdates;
+- (bool)isRequestingUpdates;
 - (void)registerForLocationPrefetchingWithIdentifier:(id)arg1;
 - (id)registrationIdentifiers;
 - (void)requestUpdatedContextualMemoriesSettingsWithCompletionHandler:(id /* block */)arg1;
 - (void)setCompletionHandlers:(id)arg1;
 - (void)setRegistrationIdentifiers:(id)arg1;
-- (void)setRequestingUpdates:(BOOL)arg1;
+- (void)setRequestingUpdates:(bool)arg1;
 - (id)settings;
 - (void)unregisterForLocationPrefetchingWithIdentifier:(id)arg1;
 

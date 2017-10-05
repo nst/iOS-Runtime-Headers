@@ -13,8 +13,8 @@
 - (id)description;
 - (id)firstObjectInQueueForKey:(id)arg1;
 - (id)init;
-- (BOOL)isEmpty;
-- (BOOL)isQueueEmptyForKey:(id)arg1;
+- (bool)isEmpty;
+- (bool)isQueueEmptyForKey:(id)arg1;
 - (id)keyForRandomQueue;
 
 @end

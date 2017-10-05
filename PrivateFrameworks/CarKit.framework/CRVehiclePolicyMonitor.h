@@ -4,13 +4,13 @@
 
 @interface CRVehiclePolicyMonitor : NSObject <CRCarKitMonitoringClientService> {
     <CRVehiclePolicyMonitoring> * _delegate;
-    BOOL  _monitoring;
+    bool  _monitoring;
     NSXPCConnection * _serviceConnection;
     NSData * _vehicleCertificateSerial;
 }
 
 @property (nonatomic) <CRVehiclePolicyMonitoring> *delegate;
-@property (getter=isMonitoring, nonatomic) BOOL monitoring;
+@property (getter=isMonitoring, nonatomic) bool monitoring;
 @property (nonatomic, retain) NSXPCConnection *serviceConnection;
 @property (nonatomic, retain) NSData *vehicleCertificateSerial;
 
@@ -18,11 +18,11 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithVehicleCertificateSerial:(id)arg1;
-- (BOOL)isMonitoring;
+- (bool)isMonitoring;
 - (id)monitoringConnection;
 - (id)serviceConnection;
 - (void)setDelegate:(id)arg1;
-- (void)setMonitoring:(BOOL)arg1;
+- (void)setMonitoring:(bool)arg1;
 - (void)setServiceConnection:(id)arg1;
 - (void)setVehicleCertificateSerial:(id)arg1;
 - (void)startMonitoring;

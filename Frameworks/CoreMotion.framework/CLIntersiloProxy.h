@@ -3,35 +3,32 @@
  */
 
 @interface CLIntersiloProxy : NSProxy {
-    CLIntersiloProxy * _asymStrongPeer;
     <CLIntersiloProxyDelegateProtocol> * _delegate;
-    CLIntersiloInterface * _delegateInterface;
     CLSilo * _delegateSilo;
-    CLIntersiloInterfaceSelectorInfo * _last;
-    unsigned long  _opaqueTag;
-    CLIntersiloProxy * _peer;
     CLIntersiloInterface * _proxiedInterface;
 }
 
 @property (nonatomic, readonly) <CLIntersiloProxyDelegateProtocol> *delegate;
-@property (nonatomic, readonly, copy) CLIntersiloInterface *delegateInterface;
 @property (nonatomic, readonly) CLSilo *delegateSilo;
 @property (nonatomic, readonly, copy) CLIntersiloInterface *proxiedInterface;
 
-+ (id)proxyForRecipientObject:(id)arg1 inSilo:(id)arg2 withInboundInterface:(id)arg3 andOutboundInterface:(id)arg4;
++ (Class)initiatorRepresentingClass;
++ (id)proxyForRecipientObject:(id)arg1 inSilo:(id)arg2 recipientName:(id)arg3 withInboundInterface:(id)arg4 andOutboundInterface:(id)arg5;
++ (Class)recipientRepresentingClass;
 
 - (void).cxx_destruct;
-- (BOOL)conformsToProtocol:(id)arg1;
+- (bool)conformsToProtocol:(id)arg1;
 - (id)delegate;
-- (id)delegateInterface;
 - (id)delegateSilo;
 - (id)description;
 - (void)forwardInvocation:(id)arg1;
-- (id)initWithDelegateInterface:(id)arg1 proxiedInterface:(id)arg2 andUninitializedPeer:(id)arg3;
-- (id)initWithDelegateInterface:(id)arg1 proxiedInterface:(id)arg2 delegateObject:(id)arg3 delegateSilo:(id)arg4 andUninitializedPeer:(id)arg5;
+- (id)initWithProxiedInterface:(id)arg1;
+- (id)initWithProxiedInterface:(id)arg1 delegateObject:(id)arg2 delegateSilo:(id)arg3;
 - (id)methodSignatureForSelector:(SEL)arg1;
+- (bool)offsiloHandleInvocation:(id)arg1 selectorInfo:(id)arg2 peer:(id)arg3;
+- (id)peer;
 - (id)proxiedInterface;
 - (void)registerDelegate:(id)arg1 inSilo:(id)arg2;
-- (void)setOpaqueTag:(void*)arg1;
+- (void)setDelegateEntityName:(const char *)arg1;
 
 @end

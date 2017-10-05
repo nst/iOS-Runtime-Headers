@@ -9,8 +9,8 @@
 @property (nonatomic, retain) NSArray *accessControlEntities;
 @property (nonatomic) <CoreDAVACLTaskDelegate> *delegate;
 
+- (void).cxx_destruct;
 - (id)accessControlEntities;
-- (void)dealloc;
 - (id)description;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)httpMethod;

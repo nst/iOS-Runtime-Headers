@@ -10,8 +10,8 @@
     NSNumber * _inputVersion;
     float  _lastAmount;
     float  _lastSaturationHighPoint;
-    int  _lastVersion;
-    BOOL  _needsReprocess;
+    long long  _lastVersion;
+    bool  _needsReprocess;
 }
 
 @property (nonatomic, retain) CIFilter *colorCubeFilter;

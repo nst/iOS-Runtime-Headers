@@ -13,7 +13,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)recognitionText;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setRecognitionText:(id)arg1;
 - (void)setVoiceSearchResults:(id)arg1;
 - (id)voiceSearchResults;

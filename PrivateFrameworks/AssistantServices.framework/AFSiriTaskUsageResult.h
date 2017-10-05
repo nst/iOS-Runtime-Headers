@@ -6,7 +6,7 @@
     NSString * _originatingAceID;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_initWithOriginatingAceID:(id)arg1;

@@ -3,22 +3,22 @@
  */
 
 @interface NSAsynchronousFetchRequest : NSPersistentStoreRequest {
-    int  _estimatedResultCount;
+    long long  _estimatedResultCount;
     NSFetchRequest * _fetchRequest;
     id  _requestCompletionBlock;
 }
 
 @property (readonly) id /* block */ completionBlock;
-@property (nonatomic) int estimatedResultCount;
+@property (nonatomic) long long estimatedResultCount;
 @property (readonly) NSFetchRequest *fetchRequest;
 
 - (id /* block */)completionBlock;
 - (void)dealloc;
 - (id)description;
-- (int)estimatedResultCount;
+- (long long)estimatedResultCount;
 - (id)fetchRequest;
 - (id)initWithFetchRequest:(id)arg1 completionBlock:(id /* block */)arg2;
-- (unsigned int)requestType;
-- (void)setEstimatedResultCount:(int)arg1;
+- (unsigned long long)requestType;
+- (void)setEstimatedResultCount:(long long)arg1;
 
 @end

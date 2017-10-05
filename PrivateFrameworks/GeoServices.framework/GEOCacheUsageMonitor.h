@@ -13,6 +13,7 @@
 
 + (id)sharedMonitor;
 
+- (void).cxx_destruct;
 - (void)_startTimerIfNecessary;
 - (void)dealloc;
 - (void)flush;

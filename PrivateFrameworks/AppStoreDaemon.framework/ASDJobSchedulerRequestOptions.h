@@ -3,18 +3,18 @@
  */
 
 @interface ASDJobSchedulerRequestOptions : ASDRequestOptions {
-    BOOL  _verbose;
+    bool  _verbose;
 }
 
-@property (nonatomic) BOOL verbose;
+@property (nonatomic) bool verbose;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (void)setVerbose:(BOOL)arg1;
-- (BOOL)verbose;
+- (void)setVerbose:(bool)arg1;
+- (bool)verbose;
 
 @end

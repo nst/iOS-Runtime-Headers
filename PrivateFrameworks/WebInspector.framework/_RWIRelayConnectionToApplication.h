@@ -8,7 +8,7 @@
     NSString * _tag;
 }
 
-@property (nonatomic, readonly) BOOL available;
+@property (nonatomic, readonly) bool available;
 @property (nonatomic, readonly) NSObject<OS_xpc_object> *connection;
 @property (nonatomic) <_RWIRelayConnectionToApplicationDelegate> *delegate;
 @property (nonatomic, copy) NSString *tag;
@@ -16,7 +16,7 @@
 - (void).cxx_destruct;
 - (id)_deserializeMessage:(id)arg1;
 - (void)_handleEvent:(id)arg1;
-- (BOOL)available;
+- (bool)available;
 - (void)close;
 - (id)connection;
 - (void)dealloc;

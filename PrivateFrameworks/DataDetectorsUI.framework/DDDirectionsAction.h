@@ -4,10 +4,14 @@
 
 @interface DDDirectionsAction : DDAction
 
-+ (id)actionWithURL:(id)arg1 result:(struct __DDResult { }*)arg2 context:(id)arg3;
++ (bool)actionAvailableForCachedEvent:(id)arg1;
++ (bool)actionAvailableForContact:(id)arg1;
 
-- (BOOL)canBePerformedByOpeningURL;
+- (bool)canBePerformedByOpeningURL;
 - (id)localizedName;
+- (id)notificationIconBundleIdentifier;
+- (id)notificationTitle;
+- (id)notificationURL;
 - (void)performFromView:(id)arg1;
 
 @end

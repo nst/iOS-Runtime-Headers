@@ -4,15 +4,15 @@
 
 @interface PXLayoutMetrics : NSObject <NSCopying> {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _referenceSize;
 }
 
-@property (nonatomic) struct CGSize { float x1; float x2; } referenceSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } referenceSize;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (struct CGSize { float x1; float x2; })referenceSize;
-- (void)setReferenceSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })referenceSize;
+- (void)setReferenceSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

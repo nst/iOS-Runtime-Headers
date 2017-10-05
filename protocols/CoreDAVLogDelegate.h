@@ -5,12 +5,12 @@
 
 @required
 
-- (void)coreDAVLogDiagnosticMessage:(NSString *)arg1 atLevel:(int)arg2;
-- (int)coreDAVLogLevel;
+- (void)coreDAVLogDiagnosticMessage:(NSString *)arg1 atLevel:(long long)arg2;
+- (long long)coreDAVLogLevel;
 - (void)coreDAVLogTransmittedDataPartial:(NSData *)arg1;
-- (int)coreDAVOutputLevel;
+- (long long)coreDAVOutputLevel;
 - (void)coreDAVTransmittedDataFinished;
-- (BOOL)shouldLogTransmittedData;
+- (bool)shouldLogTransmittedData;
 
 @optional
 

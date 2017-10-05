@@ -3,72 +3,76 @@
  */
 
 @interface _UIInputViewControllerOutput : NSObject <NSCopying, NSSecureCoding> {
+    bool  _hasDictation;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _inputModeListFromLocation;
     double  _inputModeListTouchBegan;
-    int  _inputModeListTouchPhase;
+    long long  _inputModeListTouchPhase;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _inputModeListUpdatePoint;
     NSArray * _keyboardOutputs;
     NSString * _primaryLanguage;
-    BOOL  _requiresInputManagerSync;
-    BOOL  _shouldAdvanceInputMode;
-    BOOL  _shouldAdvanceResponder;
-    BOOL  _shouldDismiss;
-    BOOL  _shouldPostReturnKeyNotification;
+    bool  _requiresInputManagerSync;
+    bool  _shouldAdvanceInputMode;
+    bool  _shouldAdvanceResponder;
+    bool  _shouldDismiss;
+    bool  _shouldPostReturnKeyNotification;
 }
 
-@property (nonatomic) struct CGPoint { float x1; float x2; } inputModeListFromLocation;
+@property (nonatomic) bool hasDictation;
+@property (nonatomic) struct CGPoint { double x1; double x2; } inputModeListFromLocation;
 @property (nonatomic) double inputModeListTouchBegan;
-@property (nonatomic) int inputModeListTouchPhase;
-@property (nonatomic) struct CGPoint { float x1; float x2; } inputModeListUpdatePoint;
+@property (nonatomic) long long inputModeListTouchPhase;
+@property (nonatomic) struct CGPoint { double x1; double x2; } inputModeListUpdatePoint;
 @property (nonatomic, retain) NSArray *keyboardOutputs;
 @property (nonatomic, copy) NSString *primaryLanguage;
-@property (nonatomic) BOOL requiresInputManagerSync;
-@property (nonatomic) BOOL shouldAdvanceInputMode;
-@property (nonatomic) BOOL shouldAdvanceResponder;
-@property (nonatomic) BOOL shouldDismiss;
-@property (nonatomic) BOOL shouldPostReturnKeyNotification;
+@property (nonatomic) bool requiresInputManagerSync;
+@property (nonatomic) bool shouldAdvanceInputMode;
+@property (nonatomic) bool shouldAdvanceResponder;
+@property (nonatomic) bool shouldDismiss;
+@property (nonatomic) bool shouldPostReturnKeyNotification;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_currentKeyboardOutput;
 - (void)_pushNewKeyboardOutput;
-- (void)adjustTextPositionByCharacterOffset:(int)arg1;
+- (void)adjustTextPositionByCharacterOffset:(long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)deleteBackward;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (bool)hasDictation;
 - (id)initWithCoder:(id)arg1;
-- (struct CGPoint { float x1; float x2; })inputModeListFromLocation;
+- (struct CGPoint { double x1; double x2; })inputModeListFromLocation;
 - (double)inputModeListTouchBegan;
-- (int)inputModeListTouchPhase;
-- (struct CGPoint { float x1; float x2; })inputModeListUpdatePoint;
+- (long long)inputModeListTouchPhase;
+- (struct CGPoint { double x1; double x2; })inputModeListUpdatePoint;
 - (void)insertText:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)keyboardOutputs;
 - (id)primaryLanguage;
-- (BOOL)requiresInputManagerSync;
-- (void)setInputModeList:(int)arg1 touchBegan:(double)arg2 fromLocation:(struct CGPoint { float x1; float x2; })arg3 updatePoint:(struct CGPoint { float x1; float x2; })arg4;
-- (void)setInputModeListFromLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (bool)requiresInputManagerSync;
+- (void)setHasDictation:(bool)arg1;
+- (void)setInputModeList:(long long)arg1 touchBegan:(double)arg2 fromLocation:(struct CGPoint { double x1; double x2; })arg3 updatePoint:(struct CGPoint { double x1; double x2; })arg4;
+- (void)setInputModeListFromLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setInputModeListTouchBegan:(double)arg1;
-- (void)setInputModeListTouchPhase:(int)arg1;
-- (void)setInputModeListUpdatePoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setInputModeListTouchPhase:(long long)arg1;
+- (void)setInputModeListUpdatePoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setKeyboardOutputs:(id)arg1;
 - (void)setPrimaryLanguage:(id)arg1;
-- (void)setRequiresInputManagerSync:(BOOL)arg1;
-- (void)setShouldAdvanceInputMode:(BOOL)arg1;
-- (void)setShouldAdvanceResponder:(BOOL)arg1;
-- (void)setShouldDismiss:(BOOL)arg1;
-- (void)setShouldPostReturnKeyNotification:(BOOL)arg1;
-- (BOOL)shouldAdvanceInputMode;
-- (BOOL)shouldAdvanceResponder;
-- (BOOL)shouldDismiss;
-- (BOOL)shouldPostReturnKeyNotification;
+- (void)setRequiresInputManagerSync:(bool)arg1;
+- (void)setShouldAdvanceInputMode:(bool)arg1;
+- (void)setShouldAdvanceResponder:(bool)arg1;
+- (void)setShouldDismiss:(bool)arg1;
+- (void)setShouldPostReturnKeyNotification:(bool)arg1;
+- (bool)shouldAdvanceInputMode;
+- (bool)shouldAdvanceResponder;
+- (bool)shouldDismiss;
+- (bool)shouldPostReturnKeyNotification;
 
 @end

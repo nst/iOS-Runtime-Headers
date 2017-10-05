@@ -9,10 +9,10 @@
     NSObject<OS_dispatch_queue> * _writeQ;
 }
 
-- (void)_pruneToSize:(unsigned int)arg1;
+- (void).cxx_destruct;
+- (void)_pruneToSize:(unsigned long long)arg1;
 - (void)_save;
-- (void)dealloc;
-- (BOOL)getMuid:(out unsigned long long*)arg1 providerId:(out int*)arg2 forPhoneNumber:(unsigned long long)arg3;
+- (bool)getMuid:(out unsigned long long*)arg1 providerId:(out int*)arg2 forPhoneNumber:(unsigned long long)arg3;
 - (id)initWithMappingFilePath:(id)arg1;
 - (void)setMuid:(unsigned long long)arg1 providerId:(int)arg2 forPhoneNumber:(unsigned long long)arg3;
 

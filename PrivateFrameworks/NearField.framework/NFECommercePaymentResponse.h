@@ -16,7 +16,7 @@
 @property (nonatomic, readonly) NSData *transactionData;
 @property (nonatomic, readonly) NSString *transactionIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)certs;
 - (id)confirmationBlobHash;

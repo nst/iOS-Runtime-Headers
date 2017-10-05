@@ -4,7 +4,7 @@
 
 @interface NSSaveChangesRequest : NSPersistentStoreRequest {
     NSSet * _deletedObjects;
-    unsigned long  _flags;
+    unsigned long long  _flags;
     NSSet * _insertedObjects;
     NSSet * _optimisticallyLockedObjects;
     void * _reserved1;
@@ -19,18 +19,18 @@
 + (void)initialize;
 
 - (BOOL)_retryHandlerCount;
-- (BOOL)_secureOperation;
+- (bool)_secureOperation;
 - (void)_setRetryHandlerCount:(BOOL)arg1;
-- (void)_setSecureOperation:(BOOL)arg1;
+- (void)_setSecureOperation:(bool)arg1;
 - (void)dealloc;
 - (id)deletedObjects;
 - (id)description;
-- (BOOL)hasChanges;
+- (bool)hasChanges;
 - (id)init;
 - (id)initWithInsertedObjects:(id)arg1 updatedObjects:(id)arg2 deletedObjects:(id)arg3 lockedObjects:(id)arg4;
 - (id)insertedObjects;
 - (id)lockedObjects;
-- (unsigned int)requestType;
+- (unsigned long long)requestType;
 - (void)setDeletedObjects:(id)arg1;
 - (id)updatedObjects;
 

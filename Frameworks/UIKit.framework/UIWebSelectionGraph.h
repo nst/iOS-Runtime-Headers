@@ -10,7 +10,7 @@
 - (void)clearNodes;
 - (void)dealloc;
 - (void)exploreFromNode:(id)arg1;
-- (void)exploreFromNode:(id)arg1 outwards:(BOOL)arg2 maxDepth:(int)arg3;
+- (void)exploreFromNode:(id)arg1 outwards:(bool)arg2 maxDepth:(int)arg3;
 - (id)init;
 
 @end

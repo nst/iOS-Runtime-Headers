@@ -13,7 +13,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NRDevice *device;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSDictionary *installedComplications;
 @property (nonatomic, retain) NTKComplicationCollection *remoteComplications;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *serialQueue;
@@ -35,7 +35,7 @@
 - (void)complicationCollectionDidLoad:(id)arg1;
 - (void)dealloc;
 - (id)device;
-- (void)enumerateEnabledVendorsForComplicationFamily:(int)arg1 withBlock:(id /* block */)arg2;
+- (void)enumerateEnabledVendorsForComplicationFamily:(long long)arg1 withBlock:(id /* block */)arg2;
 - (id)init;
 - (id)installedComplications;
 - (id)localizedAppNameForClientIdentifier:(id)arg1;
@@ -47,6 +47,6 @@
 - (void)setSerialQueue:(id)arg1;
 - (void)setSyncedComplications:(id)arg1;
 - (id)syncedComplications;
-- (BOOL)vendorExistsWithClientIdentifier:(id)arg1 appBundleIdentifier:(id)arg2;
+- (bool)vendorExistsWithClientIdentifier:(id)arg1 appBundleIdentifier:(id)arg2;
 
 @end

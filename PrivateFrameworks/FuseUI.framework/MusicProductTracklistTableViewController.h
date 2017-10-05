@@ -3,10 +3,10 @@
  */
 
 @interface MusicProductTracklistTableViewController : MusicLibraryBrowseTableViewController {
-    float  _trackNumberColumnWidth;
+    double  _trackNumberColumnWidth;
 }
 
-- (void)_updateTrackNumberColumnWidthAllowingVisibleCellUpdate:(BOOL)arg1;
+- (void)_updateTrackNumberColumnWidthAllowingVisibleCellUpdate:(bool)arg1;
 - (void)_updateTrackNumberColumnWidthForCell:(id)arg1;
 - (void)_updateTrackNumberColumnWidthForHeader:(id)arg1;
 - (void)_updateTrackNumberColumnWidthForVisibleCells;
@@ -14,7 +14,7 @@
 - (void)handleContentSizeCategoryDidChange;
 - (void)handleEntityProviderDidInvalidate;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (void)viewDidLoad;
 
 @end

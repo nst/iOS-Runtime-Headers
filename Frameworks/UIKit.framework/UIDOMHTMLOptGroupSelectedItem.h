@@ -11,10 +11,10 @@
 - (id)_node;
 - (void)dealloc;
 - (id)initWithHTMLOptGroupNode:(id)arg1;
-- (BOOL)isGroup;
+- (bool)isGroup;
 - (id)node;
-- (BOOL)selected;
-- (void)setSelected:(BOOL)arg1;
+- (bool)selected;
+- (void)setSelected:(bool)arg1;
 - (void)set_node:(id)arg1;
 - (void)unselect;
 

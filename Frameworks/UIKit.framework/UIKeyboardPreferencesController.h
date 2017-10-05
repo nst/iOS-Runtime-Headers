@@ -4,34 +4,38 @@
 
 @interface UIKeyboardPreferencesController : NSObject
 
-@property int handBias;
+@property long long handBias;
 @property (nonatomic, readonly) UIKeyboardPreferencesController<TIPreferencesControllerActions> *preferencesActions;
 
 + (id)sharedPreferencesController;
 
 - (void)_configurePreferences;
-- (BOOL)allEnabledInputModesAreValid;
-- (BOOL)boolForKey:(int)arg1;
-- (BOOL)boolForPreferenceKey:(id)arg1;
+- (bool)allEnabledInputModesAreValid;
+- (bool)boolForKey:(int)arg1;
+- (bool)boolForPreferenceKey:(id)arg1;
 - (void)dealloc;
 - (void)forwardInvocation:(id)arg1;
-- (int)handBias;
+- (long long)handBias;
 - (id)init;
-- (BOOL)isPreferenceKeyLockedDown:(id)arg1;
+- (bool)isFirstReachableKeyboardInteraction;
+- (bool)isPreferenceKeyLockedDown:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
+- (void)performedFirstReachableKeyboardInteraction;
 - (id)preferencesActions;
 - (void)preferencesControllerChanged:(id)arg1;
-- (BOOL)respondsToSelector:(SEL)arg1;
-- (float)rivenSizeFactor:(float)arg1;
+- (bool)respondsToSelector:(SEL)arg1;
+- (double)rivenSizeFactor:(double)arg1;
 - (void)saveInputModes:(id)arg1;
-- (void)setHandBias:(int)arg1;
+- (void)setEnabledDictationLanguages:(id)arg1;
+- (void)setHandBias:(long long)arg1;
 - (void)setLanguageAwareInputModeLastUsed:(id)arg1;
+- (void)setLastUsedDictationLanguages:(id)arg1;
 - (void)setValue:(id)arg1 forKey:(int)arg2;
 - (void)setValue:(id)arg1 forPreferenceKey:(id)arg2;
-- (BOOL)spaceConfirmationEnabled;
+- (bool)spaceConfirmationEnabled;
 - (void)synchronizePreferences;
 - (void)touchSynchronizePreferencesTimer;
-- (BOOL)typologyEnabled;
+- (bool)typologyEnabled;
 - (id)valueForKey:(int)arg1;
 - (id)valueForPreferenceKey:(id)arg1;
 

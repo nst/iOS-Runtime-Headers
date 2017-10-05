@@ -8,7 +8,7 @@
     NSString * _cachedAddInviteeCellReuseIdentifier;
     NSString * _cachedInviteeCellReuseIdentifier;
     NSString * _cachedSendInviteCellReuseIdentifier;
-    BOOL  _canSeeAttendeeStatuses;
+    bool  _canSeeAttendeeStatuses;
     EKEvent * _event;
     NSMutableSet * _participantAddressesForInFlightAvailabilityOperations;
     NSMutableDictionary * _participantAddressesToAvailabilityType;
@@ -17,9 +17,9 @@
     id /* block */  _participantTapped;
     NSMutableArray * _participants;
     NSArray * _pendingParticipants;
-    unsigned int  _reuseIdentifierVersion;
+    unsigned long long  _reuseIdentifierVersion;
     id /* block */  _sendInvitesTapped;
-    BOOL  _showPending;
+    bool  _showPending;
     id /* block */  _tableViewCellHook;
 }
 
@@ -28,11 +28,11 @@
 @property (nonatomic, retain) NSString *cachedAddInviteeCellReuseIdentifier;
 @property (nonatomic, retain) NSString *cachedInviteeCellReuseIdentifier;
 @property (nonatomic, retain) NSString *cachedSendInviteCellReuseIdentifier;
-@property (nonatomic) BOOL canSeeAttendeeStatuses;
+@property (nonatomic) bool canSeeAttendeeStatuses;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) EKEvent *event;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableSet *participantAddressesForInFlightAvailabilityOperations;
 @property (nonatomic, retain) NSMutableDictionary *participantAddressesToAvailabilityType;
 @property (nonatomic, retain) NSMutableDictionary *participantAddressesToParticipantIndex;
@@ -40,9 +40,9 @@
 @property (nonatomic, copy) id /* block */ participantTapped;
 @property (nonatomic, retain) NSMutableArray *participants;
 @property (nonatomic, retain) NSArray *pendingParticipants;
-@property (nonatomic) unsigned int reuseIdentifierVersion;
+@property (nonatomic) unsigned long long reuseIdentifierVersion;
 @property (nonatomic, copy) id /* block */ sendInvitesTapped;
-@property (nonatomic) BOOL showPending;
+@property (nonatomic) bool showPending;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) id /* block */ tableViewCellHook;
 
@@ -50,9 +50,9 @@
 
 - (void).cxx_destruct;
 - (void)_addAddressToSetOfAddressesToInflightOperations:(id)arg1;
-- (BOOL)_isAddInviteesRow:(int)arg1;
-- (BOOL)_isSendInviteRow:(int)arg1;
-- (BOOL)_isValidRow:(int)arg1;
+- (bool)_isAddInviteesRow:(long long)arg1;
+- (bool)_isSendInviteRow:(long long)arg1;
+- (bool)_isValidRow:(long long)arg1;
 - (id)_lookUpAvailabilityTypeForParticipantAddress:(id)arg1;
 - (id)_lookUpParticipantIndexForParticipantAddress:(id)arg1;
 - (void)_removeAddressFromDictionaryOfAddressesToAvailabilityType:(id)arg1;
@@ -60,30 +60,30 @@
 - (void)_removeAddressFromSetOfAddressesToInflightOperations:(id)arg1;
 - (void)_removeParticipantAtIndexPath:(id)arg1;
 - (void)_setAvailabilityType:(id)arg1 forParticipantAddress:(id)arg2;
-- (BOOL)_setOfAddressesToInflightOperationsContainsAddress:(id)arg1;
+- (bool)_setOfAddressesToInflightOperationsContainsAddress:(id)arg1;
 - (void)_setParticipantIndex:(id)arg1 forParticipantAddress:(id)arg2;
-- (void)_updateCell:(id)arg1 forParticipantAtIndex:(int)arg2 animated:(BOOL)arg3;
+- (void)_updateCell:(id)arg1 forParticipantAtIndex:(long long)arg2 animated:(bool)arg3;
 - (void)_updateCellForParticipantWithAddress:(id)arg1;
 - (id /* block */)addInviteesTapped;
 - (id)availabilityRequestsQueue;
 - (id)cachedAddInviteeCellReuseIdentifier;
 - (id)cachedInviteeCellReuseIdentifier;
 - (id)cachedSendInviteCellReuseIdentifier;
-- (BOOL)canEditRow:(id)arg1;
-- (BOOL)canSeeAttendeeStatuses;
-- (BOOL)canSelectRow:(id)arg1;
+- (bool)canEditRow:(id)arg1;
+- (bool)canSeeAttendeeStatuses;
+- (bool)canSelectRow:(id)arg1;
 - (void)cancelOutstandingOperations;
 - (id)cellForIndexPath:(id)arg1 inTableView:(id)arg2;
-- (void)commitEditingStyle:(int)arg1 forRow:(id)arg2;
+- (void)commitEditingStyle:(long long)arg1 forRow:(id)arg2;
 - (void)dealloc;
 - (id)debugTitle;
-- (int)editingStyleForRow:(id)arg1;
-- (float)estimatedHeightForRow:(id)arg1;
+- (long long)editingStyleForRow:(id)arg1;
+- (double)estimatedHeightForRow:(id)arg1;
 - (id)event;
-- (BOOL)hasPendingParticipants;
+- (bool)hasPendingParticipants;
 - (id)headerTitle;
 - (id)init;
-- (unsigned int)numberOfRows;
+- (unsigned long long)numberOfRows;
 - (id)participantAddressesForInFlightAvailabilityOperations;
 - (id)participantAddressesToAvailabilityType;
 - (id)participantAddressesToParticipantIndex;
@@ -92,8 +92,8 @@
 - (id)participants;
 - (id)pendingParticipants;
 - (void)reloadAndRegisterReusableCellsWithTableView:(id)arg1;
-- (unsigned int)reuseIdentifierVersion;
-- (BOOL)sectionShouldBeShown;
+- (unsigned long long)reuseIdentifierVersion;
+- (bool)sectionShouldBeShown;
 - (void)selectRow:(id)arg1;
 - (id /* block */)sendInvitesTapped;
 - (void)setAddInviteesTapped:(id /* block */)arg1;
@@ -101,7 +101,7 @@
 - (void)setCachedAddInviteeCellReuseIdentifier:(id)arg1;
 - (void)setCachedInviteeCellReuseIdentifier:(id)arg1;
 - (void)setCachedSendInviteCellReuseIdentifier:(id)arg1;
-- (void)setCanSeeAttendeeStatuses:(BOOL)arg1;
+- (void)setCanSeeAttendeeStatuses:(bool)arg1;
 - (void)setEvent:(id)arg1;
 - (void)setParticipantAddressesForInFlightAvailabilityOperations:(id)arg1;
 - (void)setParticipantAddressesToAvailabilityType:(id)arg1;
@@ -110,13 +110,13 @@
 - (void)setParticipantTapped:(id /* block */)arg1;
 - (void)setParticipants:(id)arg1;
 - (void)setPendingParticipants:(id)arg1;
-- (void)setReuseIdentifierVersion:(unsigned int)arg1;
+- (void)setReuseIdentifierVersion:(unsigned long long)arg1;
 - (void)setSendInvitesTapped:(id /* block */)arg1;
-- (void)setShowPending:(BOOL)arg1;
+- (void)setShowPending:(bool)arg1;
 - (void)setTableViewCellHook:(id /* block */)arg1;
-- (BOOL)showPending;
+- (bool)showPending;
 - (id /* block */)tableViewCellHook;
 - (id)titleForDeleteConfirmationButtonForRow:(id)arg1;
-- (void)updateWithEvent:(id)arg1 showPending:(BOOL)arg2;
+- (void)updateWithEvent:(id)arg1 showPending:(bool)arg2;
 
 @end

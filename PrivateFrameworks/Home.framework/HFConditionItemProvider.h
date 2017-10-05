@@ -4,24 +4,22 @@
 
 @interface HFConditionItemProvider : HFItemProvider {
     NSMutableSet * _conditionItems;
-    BOOL  _includeSuggestions;
-    HFTriggerBuilder * _triggerBuilder;
+    NSSet * _conditions;
+    HMHome * _home;
 }
 
-@property (nonatomic, retain) NSMutableSet *conditionItems;
-@property (nonatomic, readonly) BOOL includeSuggestions;
-@property (nonatomic, readonly) HFTriggerBuilder *triggerBuilder;
+@property (nonatomic, readonly) NSMutableSet *conditionItems;
+@property (nonatomic, retain) NSSet *conditions;
+@property (nonatomic, readonly) HMHome *home;
 
 - (void).cxx_destruct;
-- (id)_suggestedConditionBuilders;
 - (id)conditionItems;
-- (BOOL)includeSuggestions;
-- (id)initWithHome:(id)arg1;
-- (id)initWithTriggerBuilder:(id)arg1 includeSuggestions:(BOOL)arg2;
-- (id)invalidationReasons;
+- (id)conditions;
+- (id)home;
+- (id)init;
+- (id)initWithConditions:(id)arg1 home:(id)arg2;
 - (id)items;
 - (id)reloadItems;
-- (void)setConditionItems:(id)arg1;
-- (id)triggerBuilder;
+- (void)setConditions:(id)arg1;
 
 @end

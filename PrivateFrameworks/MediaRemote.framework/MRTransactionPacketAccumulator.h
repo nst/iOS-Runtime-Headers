@@ -3,7 +3,7 @@
  */
 
 @interface MRTransactionPacketAccumulator : NSObject {
-    unsigned int  _currentLength;
+    unsigned long long  _currentLength;
     NSMutableOrderedSet * _packets;
 }
 

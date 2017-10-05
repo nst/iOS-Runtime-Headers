@@ -4,30 +4,31 @@
 
 @interface VKMapSnapshot : NSObject <NSSecureCoding> {
     VKCamera * _camera;
-    unsigned long  _height;
+    unsigned long long  _height;
     struct CGImage { } * _image;
-    float  _scale;
-    BOOL  _showingNoDataPlaceholders;
-    unsigned long  _width;
+    double  _scale;
+    bool  _showingNoDataPlaceholders;
+    unsigned long long  _width;
 }
 
 @property (nonatomic, readonly) struct CGImage { }*image;
-@property (nonatomic, readonly) float scale;
-@property (getter=isShowingNoDataPlaceholders, nonatomic, readonly) BOOL showingNoDataPlaceholders;
+@property (nonatomic, readonly) double scale;
+@property (getter=isShowingNoDataPlaceholders, nonatomic, readonly) bool showingNoDataPlaceholders;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (id)_initWithImage:(struct CGImage { }*)arg1 scale:(float)arg2 camera:(id)arg3 showingNoDataPlaceholders:(BOOL)arg4;
-- (struct { double x1; double x2; })coordinateForPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)_initWithImage:(struct CGImage { }*)arg1 scale:(double)arg2 camera:(id)arg3 showingNoDataPlaceholders:(bool)arg4;
+- (struct { double x1; double x2; })coordinateForPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (struct CGImage { }*)image;
-- (id)imageDataInFormat:(unsigned int)arg1;
+- (id)imageDataInFormat:(unsigned long long)arg1;
+- (id)imageSurface;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isShowingNoDataPlaceholders;
-- (struct CGPoint { float x1; float x2; })pointForCoordinate:(struct { double x1; double x2; })arg1;
-- (float)scale;
-- (BOOL)writeImageToFile:(id)arg1 format:(unsigned int)arg2 error:(id*)arg3;
+- (bool)isShowingNoDataPlaceholders;
+- (struct CGPoint { double x1; double x2; })pointForCoordinate:(struct { double x1; double x2; })arg1;
+- (double)scale;
+- (bool)writeImageToFile:(id)arg1 format:(unsigned long long)arg2 error:(id*)arg3;
 
 @end

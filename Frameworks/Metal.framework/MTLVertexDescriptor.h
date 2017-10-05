@@ -12,7 +12,7 @@
 + (id)vertexDescriptor;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)formattedDescription:(unsigned int)arg1;
+- (id)formattedDescription:(unsigned long long)arg1;
 - (void)reset;
 
 @end

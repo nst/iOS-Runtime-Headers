@@ -16,10 +16,10 @@
 
 @property (nonatomic) long long errorCode;
 @property (nonatomic, retain) NSString *errorDomain;
-@property (nonatomic) BOOL hasErrorCode;
-@property (nonatomic, readonly) BOOL hasErrorDomain;
-@property (nonatomic) BOOL hasRenewResult;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasErrorCode;
+@property (nonatomic, readonly) bool hasErrorDomain;
+@property (nonatomic) bool hasRenewResult;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) int renewResult;
 @property (nonatomic) unsigned long long timestamp;
 
@@ -30,20 +30,20 @@
 - (id)dictionaryRepresentation;
 - (long long)errorCode;
 - (id)errorDomain;
-- (BOOL)hasErrorCode;
-- (BOOL)hasErrorDomain;
-- (BOOL)hasRenewResult;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasErrorCode;
+- (bool)hasErrorDomain;
+- (bool)hasRenewResult;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)renewResult;
 - (void)setErrorCode:(long long)arg1;
 - (void)setErrorDomain:(id)arg1;
-- (void)setHasErrorCode:(BOOL)arg1;
-- (void)setHasRenewResult:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasErrorCode:(bool)arg1;
+- (void)setHasRenewResult:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setRenewResult:(int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;

@@ -8,7 +8,7 @@
 
 - (void).cxx_destruct;
 - (void)_prepareLayout;
-- (BOOL)matchParentHeight;
+- (bool)matchParentHeight;
 - (void)viewDidLoad;
 
 @end

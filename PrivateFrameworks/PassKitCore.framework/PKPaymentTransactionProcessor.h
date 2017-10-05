@@ -3,7 +3,7 @@
  */
 
 @interface PKPaymentTransactionProcessor : NSObject <CLLocationManagerDelegate> {
-    BOOL  _active;
+    bool  _active;
     <PKPaymentTransactionProcessorDelegate> * _delegate;
     CLGeocoder * _geocoder;
     CLLocationManager * _locationManager;
@@ -15,11 +15,11 @@
     PKUsageNotificationServer * _usageNotificationServer;
 }
 
-@property (getter=isActive, nonatomic, readonly) BOOL active;
+@property (getter=isActive, nonatomic, readonly) bool active;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKPaymentTransactionProcessorDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic) PKUsageNotificationServer *usageNotificationServer;
 
@@ -40,10 +40,10 @@
 - (void)_startUpdatingLocationIfPossible;
 - (void)_stopUpdatingLocationIfPossible;
 - (void)_updateActiveState;
-- (void)_updateLocation:(id)arg1 forLocationUpdateItem:(id)arg2 andMarkAsProcessed:(BOOL)arg3;
+- (void)_updateLocation:(id)arg1 forLocationUpdateItem:(id)arg2 andMarkAsProcessed:(bool)arg3;
 - (id)delegate;
 - (id)init;
-- (BOOL)isActive;
+- (bool)isActive;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (void)processPaymentTransaction:(id)arg1 forPassUniqueIdentifier:(id)arg2 paymentApplication:(id)arg3;

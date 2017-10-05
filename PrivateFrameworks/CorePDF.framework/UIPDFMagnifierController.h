@@ -4,10 +4,10 @@
 
 @interface UIPDFMagnifierController : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _controlPointSize;
-    float  _enlargementScale;
+    double  _enlargementScale;
     struct CGColor { } * _grabberColor;
     CALayer * _hiLayer;
     CALayer * _imageContainer;
@@ -15,28 +15,28 @@
     CALayer * _leftBar;
     CALayer * _leftGrabber;
     CALayer * _loLayer;
-    BOOL  _loupe;
+    bool  _loupe;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _magnifierSize;
     CALayer * _maskLayer;
-    unsigned int  _pageRotation;
+    unsigned long long  _pageRotation;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _pointToMagnify;
-    float  _power;
+    double  _power;
     CALayer * _rightBar;
     CALayer * _rightGrabber;
     CAShapeLayer * _selectionLayer;
     UIView * _textEffectsSubView;
     UIWindow * _textEffectsWindow;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _touchPoint;
-    BOOL  _visible;
+    bool  _visible;
     UIPDFPageView * pageView;
 }
 
@@ -45,35 +45,35 @@
 - (void)_show;
 - (void)addBling;
 - (void)addTextRangeHandles;
-- (struct CGPoint { float x1; float x2; })convertPointToEnlargedSpace:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })convertPointToRotatedPage:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRectToEnlargedSpace:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRectToRotatedPage:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGPoint { float x1; float x2; })convertViewPointToEnlargedSpace:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { double x1; double x2; })convertPointToEnlargedSpace:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })convertPointToRotatedPage:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertRectToEnlargedSpace:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertRectToRotatedPage:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGPoint { double x1; double x2; })convertViewPointToEnlargedSpace:(struct CGPoint { double x1; double x2; })arg1;
 - (void)dealloc;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (void)hide;
 - (id)imageReceived:(id)arg1 data:(id)arg2;
 - (id)init;
-- (BOOL)isSelectionUniformlyRotated:(float*)arg1;
+- (bool)isSelectionUniformlyRotated:(double*)arg1;
 - (void)move;
 - (id)pageView;
 - (void)placeImage;
-- (struct CGPoint { float x1; float x2; })pointToMagnifyInPDFSpace;
+- (struct CGPoint { double x1; double x2; })pointToMagnifyInPDFSpace;
 - (void)setImageContainerMask;
 - (void)setImageContainerPositionLoupe;
 - (void)setImageContainerPositionMagnifier;
 - (void)setLayerPositions;
 - (void)setPageView:(id)arg1;
-- (void)setPosition:(struct CGPoint { float x1; float x2; })arg1 viewPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (void)setPosition:(struct CGPoint { double x1; double x2; })arg1 viewPoint:(struct CGPoint { double x1; double x2; })arg2;
 - (void)setPower;
 - (void)setSelectionPath;
-- (void)setSelectionPath:(struct CGPath { }*)arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3;
+- (void)setSelectionPath:(struct CGPath { }*)arg1 bounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg3;
 - (void)setTextRangeHandlePositions;
 - (void)showLoupe;
 - (void)showMagnifier;
 - (void)tearDownLayers;
-- (struct CGPoint { float x1; float x2; })viewPointInTextEffectsSpace;
-- (BOOL)visible;
+- (struct CGPoint { double x1; double x2; })viewPointInTextEffectsSpace;
+- (bool)visible;
 
 @end

@@ -12,6 +12,7 @@
 
 - (id)contentProxyURL;
 - (void)contentProxyURLDidChange:(id)arg1;
+- (void)dealloc;
 - (void)setContentProxyURL:(id)arg1;
 
 @end

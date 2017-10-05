@@ -2,11 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIFeedbackButtonBehaviorConfiguration : _UIFeedbackGeneratorUserInteractionDrivenConfiguration
-
-+ (id)defaultConfiguration;
-+ (id)destructiveConfiguration;
-
-- (int)requiredSupportLevel;
+@interface _UIFeedbackButtonBehaviorConfiguration : _UIButtonFeedbackGeneratorConfiguration
 
 @end

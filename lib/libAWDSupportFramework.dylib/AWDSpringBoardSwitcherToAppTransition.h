@@ -9,17 +9,17 @@
         unsigned int timestamp : 1; 
         unsigned int isGoingToHomeScreen : 1; 
     }  _has;
-    BOOL  _isGoingToHomeScreen;
+    bool  _isGoingToHomeScreen;
     NSString * _switcherName;
     unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned long long absoluteDistanceInList;
-@property (nonatomic) BOOL hasAbsoluteDistanceInList;
-@property (nonatomic) BOOL hasIsGoingToHomeScreen;
-@property (nonatomic, readonly) BOOL hasSwitcherName;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) BOOL isGoingToHomeScreen;
+@property (nonatomic) bool hasAbsoluteDistanceInList;
+@property (nonatomic) bool hasIsGoingToHomeScreen;
+@property (nonatomic, readonly) bool hasSwitcherName;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic) bool isGoingToHomeScreen;
 @property (nonatomic, retain) NSString *switcherName;
 @property (nonatomic) unsigned long long timestamp;
 
@@ -29,20 +29,20 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAbsoluteDistanceInList;
-- (BOOL)hasIsGoingToHomeScreen;
-- (BOOL)hasSwitcherName;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isGoingToHomeScreen;
+- (bool)hasAbsoluteDistanceInList;
+- (bool)hasIsGoingToHomeScreen;
+- (bool)hasSwitcherName;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)isGoingToHomeScreen;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAbsoluteDistanceInList:(unsigned long long)arg1;
-- (void)setHasAbsoluteDistanceInList:(BOOL)arg1;
-- (void)setHasIsGoingToHomeScreen:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setIsGoingToHomeScreen:(BOOL)arg1;
+- (void)setHasAbsoluteDistanceInList:(bool)arg1;
+- (void)setHasIsGoingToHomeScreen:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setIsGoingToHomeScreen:(bool)arg1;
 - (void)setSwitcherName:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (id)switcherName;

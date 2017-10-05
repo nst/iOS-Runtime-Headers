@@ -12,6 +12,6 @@
 - (id)copyNextMetadataGroup;
 - (void)dealloc;
 - (id)initWithTrack:(id)arg1;
-- (int)status;
+- (long long)status;
 
 @end

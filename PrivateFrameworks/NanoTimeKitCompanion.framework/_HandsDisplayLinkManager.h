@@ -5,8 +5,8 @@
 @interface _HandsDisplayLinkManager : NSObject {
     CADisplayLink * _displayLink;
     NSMutableDictionary * _handlers;
-    BOOL  _inForeground;
-    unsigned int  _nextToken;
+    bool  _inForeground;
+    unsigned long long  _nextToken;
 }
 
 + (id)sharedInstance;

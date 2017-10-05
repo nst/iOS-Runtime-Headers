@@ -17,14 +17,14 @@
 - (void)didFetchUserSpecificRecord:(CKRecord *)arg1;
 - (void)didSaveUserSpecificRecord:(CKRecord *)arg1;
 - (void)fixBrokenReferences;
-- (BOOL)isInICloudAccount;
-- (BOOL)isValidObject;
+- (bool)isInICloudAccount;
+- (bool)isValidObject;
 - (NSString *)loggingDescription;
 - (void)mergeDataFromRecord:(CKRecord *)arg1;
-- (BOOL)needsToBeDeletedFromCloud;
-- (BOOL)needsToBeFetchedFromCloud;
-- (BOOL)needsToBePushedToCloud;
-- (BOOL)needsToSaveUserSpecificRecord;
+- (bool)needsToBeDeletedFromCloud;
+- (bool)needsToBeFetchedFromCloud;
+- (bool)needsToBePushedToCloud;
+- (bool)needsToSaveUserSpecificRecord;
 - (CKRecord *)newlyCreatedRecord;
 - (CKRecord *)newlyCreatedUserSpecificRecord;
 - (void)objectFailedToBePushedToCloudWithOperation:(CKModifyRecordsOperation *)arg1 record:(CKRecord *)arg2 error:(NSError *)arg3;
@@ -39,6 +39,6 @@
 - (CKRecordID *)recordID;
 - (NSString *)recordType;
 - (CKRecordID *)userSpecificRecordID;
-- (BOOL)wantsUserSpecificRecord;
+- (bool)wantsUserSpecificRecord;
 
 @end

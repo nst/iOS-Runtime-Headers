@@ -31,13 +31,15 @@
 @property (nonatomic, copy) NSData *pushToken;
 @property (nonatomic, copy) NSString *selfURI;
 @property (nonatomic, copy) NSMutableArray *userIDArray;
+@property (readonly) bool wantsIDSProtocolVersion;
 
+- (void).cxx_destruct;
 - (id)IDCertificate;
 - (void)addAuthUserID:(id)arg1 certificate:(id)arg2 privateKey:(struct __SecKey { }*)arg3 publicKey:(struct __SecKey { }*)arg4;
 - (id)additionalMessageHeaders;
 - (id)additionalMessageHeadersForOutgoingPush;
 - (id)certDataArray;
-- (int)command;
+- (long long)command;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (struct __SecKey { }*)identityPrivateKey;
@@ -49,7 +51,8 @@
 - (struct __SecKey { }*)pushPrivateKey;
 - (struct __SecKey { }*)pushPublicKey;
 - (id)pushToken;
-- (int)responseCommand;
+- (long long)responseCommand;
+- (id)retryCountKey;
 - (id)selfURI;
 - (id)serverTimestamp;
 - (id)serverTimestampReceivedDate;
@@ -68,12 +71,13 @@
 - (void)setServerTimestampReceivedDate:(id)arg1;
 - (void)setUserIDArray:(id)arg1;
 - (id)userIDArray;
-- (BOOL)wantsBagKey;
-- (BOOL)wantsBinaryPush;
-- (BOOL)wantsBodySignature;
-- (BOOL)wantsCompressedBody;
-- (BOOL)wantsHTTPHeaders;
-- (BOOL)wantsIDSServer;
-- (BOOL)wantsSignature;
+- (bool)wantsBagKey;
+- (bool)wantsBinaryPush;
+- (bool)wantsBodySignature;
+- (bool)wantsCompressedBody;
+- (bool)wantsHTTPHeaders;
+- (bool)wantsIDSProtocolVersion;
+- (bool)wantsIDSServer;
+- (bool)wantsSignature;
 
 @end

@@ -17,7 +17,7 @@
 + (void)removeKeychainPasswordForMACAddress:(id)arg1;
 
 - (id)accountName;
-- (long)addGenericPassword:(id)arg1 withLabel:(id)arg2 andDescription:(id)arg3;
+- (int)addGenericPassword:(id)arg1 withLabel:(id)arg2 andDescription:(id)arg3;
 - (void)dealloc;
 - (id)genericPassword;
 - (id)genericPasswordQuery;

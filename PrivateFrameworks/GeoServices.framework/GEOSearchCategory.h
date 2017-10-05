@@ -9,22 +9,27 @@
 }
 
 @property (getter=_autocompleteEntry, nonatomic, readonly) GEOPDAutocompleteEntry *autocompleteEntry;
+@property (nonatomic, readonly) int displayMode;
 @property (nonatomic, readonly) NSString *displayString;
 @property (nonatomic, readonly) NSURL *mapsURL;
 @property (nonatomic, readonly) NSString *popularTokenString;
 @property (nonatomic, readonly) NSString *shortDisplayString;
+@property (nonatomic, readonly) int sortOrder;
 @property (nonatomic, readonly) GEOFeatureStyleAttributes *styleAttributes;
+@property (nonatomic, readonly) int subCategoryType;
 @property (nonatomic, readonly) NSArray *subcategories;
 @property (getter=_suggestionEntryMetadata, nonatomic, readonly) NSData *suggestionEntryMetadata;
+@property (nonatomic, readonly) <GEOVenueIdentifier> *venueIdentifier;
 
 + (id)categoryForURL:(id)arg1;
 + (void)sendFeedbackForVisibleCategories:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)_autocompleteEntry;
 - (id)_browseCategory;
 - (id)_suggestionEntryMetadata;
-- (void)dealloc;
+- (int)displayMode;
 - (id)displayString;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithAutocompleteEntry:(id)arg1;
@@ -36,7 +41,10 @@
 - (void)sendFeedback;
 - (id)serverMetadata;
 - (id)shortDisplayString;
+- (int)sortOrder;
 - (id)styleAttributes;
+- (int)subCategoryType;
 - (id)subcategories;
+- (id)venueIdentifier;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface HUAnimationApplier : HUApplier {
     HUAnimationSettings * _animationSettings;
-    BOOL  _applyDynamically;
+    bool  _applyDynamically;
     CADisplayLink * _displayLink;
     NSMutableSet * _effectiveProgressObservers;
     NSMutableSet * _relativeAnimations;
@@ -12,15 +12,15 @@
 }
 
 @property (nonatomic, copy) HUAnimationSettings *animationSettings;
-@property (nonatomic) BOOL applyDynamically;
+@property (nonatomic) bool applyDynamically;
 @property (nonatomic, retain) CADisplayLink *displayLink;
-@property (nonatomic, readonly) float effectiveProgress;
+@property (nonatomic, readonly) double effectiveProgress;
 @property (nonatomic, readonly) NSMutableSet *effectiveProgressObservers;
 @property (nonatomic, readonly) NSMutableSet *relativeAnimations;
 @property (nonatomic) double startTime;
 
-+ (id)_applierWithAnimationSettings:(id)arg1 applyDynamically:(BOOL)arg2;
-+ (id)_applyAnimationSettings:(id)arg1 withApplier:(id /* block */)arg2 completion:(id /* block */)arg3 applyDynamically:(BOOL)arg4;
++ (id)_applierWithAnimationSettings:(id)arg1 applyDynamically:(bool)arg2;
++ (id)_applyAnimationSettings:(id)arg1 withApplier:(id /* block */)arg2 completion:(id /* block */)arg3 applyDynamically:(bool)arg4;
 + (id)applyAnimationSettings:(id)arg1 withDynamicApplier:(id /* block */)arg2 completion:(id /* block */)arg3;
 + (id)applyAnimationSettings:(id)arg1 withStaticApplier:(id /* block */)arg2 completion:(id /* block */)arg3;
 + (id)dynamicApplierWithAnimationSettings:(id)arg1;
@@ -30,26 +30,26 @@
 - (void)_displayLinkTick;
 - (double)_effectiveDuration;
 - (void)_invalidateDisplayLinkIfNecessary;
-- (double)_remainingTimeIntervalForEffectiveProgress:(float)arg1;
+- (double)_remainingTimeIntervalForEffectiveProgress:(double)arg1;
 - (void)_startEffectiveProgressTimerForObserver:(id)arg1;
-- (void)_updateDynamicProgress:(float)arg1;
-- (BOOL)addAlongsideAnimationApplier:(id)arg1 relativeStart:(double)arg2 relativeDuration:(double)arg3;
+- (void)_updateDynamicProgress:(double)arg1;
+- (bool)addAlongsideAnimationApplier:(id)arg1 relativeStart:(double)arg2 relativeDuration:(double)arg3;
 - (id)animationSettings;
-- (BOOL)applyDynamically;
-- (BOOL)cancel;
-- (BOOL)complete:(BOOL)arg1;
+- (bool)applyDynamically;
+- (bool)cancel;
+- (bool)complete:(bool)arg1;
 - (id)displayLink;
-- (float)effectiveProgress;
+- (double)effectiveProgress;
 - (id)effectiveProgressObservers;
 - (id)init;
 - (id)initWithAnimationSettings:(id)arg1;
-- (BOOL)notifyUponEffectiveProgress:(float)arg1 withBlock:(id /* block */)arg2;
+- (bool)notifyUponEffectiveProgress:(double)arg1 withBlock:(id /* block */)arg2;
 - (id)relativeAnimations;
 - (void)setAnimationSettings:(id)arg1;
-- (void)setApplyDynamically:(BOOL)arg1;
+- (void)setApplyDynamically:(bool)arg1;
 - (void)setDisplayLink:(id)arg1;
 - (void)setStartTime:(double)arg1;
-- (BOOL)start;
+- (bool)start;
 - (double)startTime;
 
 @end

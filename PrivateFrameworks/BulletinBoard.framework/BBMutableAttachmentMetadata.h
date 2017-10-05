@@ -6,10 +6,10 @@
 
 @property (nonatomic, copy) NSURL *URL;
 @property (nonatomic, copy) NSUUID *UUID;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setType:(int)arg1;
+- (void)setType:(long long)arg1;
 - (void)setURL:(id)arg1;
 - (void)setUUID:(id)arg1;
 

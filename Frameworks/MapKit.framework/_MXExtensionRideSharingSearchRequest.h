@@ -2,23 +2,15 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface _MXExtensionRideSharingSearchRequest : _MXExtensionObject <_MXExtensionRequestObject> {
+@interface _MXExtensionRideSharingSearchRequest : NSObject <NSSecureCoding> {
     MKMapItem * _destination;
     MKMapItem * _origin;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) MKMapItem *destination;
-@property (readonly) unsigned int hash;
 @property (nonatomic, retain) MKMapItem *origin;
-@property (readonly) Class superclass;
 
-+ (void)dispatchRequest:(id)arg1 toVendor:(id)arg2 completion:(id /* block */)arg3;
-+ (void)load;
-+ (id)serviceProtocol;
-+ (BOOL)supportedByExtensionWithCapabilities:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)destination;

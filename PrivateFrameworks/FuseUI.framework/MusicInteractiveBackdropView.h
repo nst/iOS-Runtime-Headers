@@ -3,23 +3,23 @@
  */
 
 @interface MusicInteractiveBackdropView : _UIBackdropView {
-    float  _factor;
-    float  _finalScale;
-    float  _scale;
-    float  _transitionProgress;
+    double  _factor;
+    double  _finalScale;
+    double  _scale;
+    double  _transitionProgress;
 }
 
-@property (nonatomic) float factor;
-@property (nonatomic) float scale;
+@property (nonatomic) double factor;
+@property (nonatomic) double scale;
 
 - (void)_updateInputBounds;
 - (void)applySettings:(id)arg1;
-- (float)factor;
+- (double)factor;
 - (id)gaussianBlurFilter;
-- (float)scale;
-- (void)setFactor:(float)arg1;
-- (void)setScale:(float)arg1;
+- (double)scale;
+- (void)setFactor:(double)arg1;
+- (void)setScale:(double)arg1;
 - (void)transitionComplete;
-- (void)transitionIncrementallyToSettings:(id)arg1 weighting:(float)arg2;
+- (void)transitionIncrementallyToSettings:(id)arg1 weighting:(double)arg2;
 
 @end

@@ -5,16 +5,16 @@
 
 @required
 
-- (int)audioRoute;
+- (long long)audioRoute;
 - (NSArray *)contacts;
-- (int)destinationType;
+- (long long)destinationType;
 - (id)init;
-- (int)preferredCallProvider;
-- (void)setAudioRoute:(int)arg1;
+- (long long)preferredCallProvider;
+- (void)setAudioRoute:(long long)arg1;
 - (void)setContacts:(NSArray *)arg1;
-- (void)setDestinationType:(int)arg1;
-- (void)setPreferredCallProvider:(int)arg1;
-- (void)setTTYType:(int)arg1;
-- (int)ttyType;
+- (void)setDestinationType:(long long)arg1;
+- (void)setPreferredCallProvider:(long long)arg1;
+- (void)setTTYType:(long long)arg1;
+- (long long)ttyType;
 
 @end

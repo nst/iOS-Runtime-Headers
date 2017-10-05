@@ -3,23 +3,8 @@
  */
 
 @interface CLLocationManagerInternal : NSObject {
-    int  fActivityType;
-    BOOL  fAllowsAlteredAccessoryLocations;
-    BOOL  fAllowsBackgroundLocationUpdates;
-    BOOL  fAllowsLocationPrompts;
-    BOOL  fAllowsMapCorrection;
-    BOOL  fBatchingLocation;
-    struct { 
-        double bestAccuracy; 
-    }  fCapabilities;
-    BOOL  fCapabilitiesValid;
     struct __CLClient { } * fClient;
-    BOOL  fCourtesyPromptNeeded;
     <CLLocationManagerDelegate> * fDelegate;
-    double  fDesiredAccuracy;
-    double  fDistanceFilter;
-    BOOL  fDynamicAccuracyReductionEnabled;
-    double  fHeadingFilter;
     int  fHeadingOrientation;
     struct { 
         int suitability; 
@@ -51,36 +36,26 @@
     NSString * fLocationEventType;
     double  fLocationRequestTimeout;
     struct __CFRunLoopTimer { } * fLocationRequestTimer;
-    BOOL  fMatchInfoEnabled;
-    BOOL  fPaused;
-    int  fPausesLocationUpdatesAutomatically;
-    BOOL  fPersistentMonitoringEnabled;
-    int  fPreviousAuthorizationStatus;
-    BOOL  fPreviousAuthorizationStatusValid;
     NSMutableSet * fRangedRegions;
     double  fRangingRequestTimeout;
     struct __CFRunLoopTimer { } * fRangingRequestTimer;
-    BOOL  fRequestingLocation;
-    BOOL  fRequestingRanging;
-    BOOL  fUpdatingHeading;
-    BOOL  fUpdatingLocation;
-    BOOL  fUpdatingRanging;
-    BOOL  fUpdatingVehicleHeading;
-    BOOL  fUpdatingVehicleSpeed;
+    CLLocationManagerStateTracker * fState;
 }
 
 @property (nonatomic, readonly) NSMutableSet *rangedRegions;
 
 - (int)PausesLocationUpdatesAutomatically;
-- (BOOL)allowsBackgroundLocationUpdates;
+- (bool)allowsBackgroundLocationUpdates;
 - (void)cancelLocationRequest;
 - (void)cancelRangingRequest;
 - (void)dealloc;
 - (id)initWithInfo:(id)arg1 bundleIdentifier:(id)arg2 bundle:(id)arg3;
 - (void)performCourtesyPromptIfNeeded;
 - (id)rangedRegions;
-- (void)setAllowsBackgroundLocationUpdates:(BOOL)arg1;
+- (void)setAllowsBackgroundLocationUpdates:(bool)arg1;
 - (void)setPausesLocationUpdatesAutomatically:(int)arg1;
+- (void)setShowsBackgroundLocationIndicator:(bool)arg1;
+- (bool)showsBackgroundLocationIndicator;
 - (void)stopUpdatingLocationAutoPaused;
 
 @end

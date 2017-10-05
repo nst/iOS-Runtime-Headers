@@ -3,35 +3,35 @@
  */
 
 @interface CUIKSingleDayTimelineLayoutPartition : NSObject {
-    float  _endBoundary;
-    float  _initialStartBoundary;
+    double  _endBoundary;
+    double  _initialStartBoundary;
     NSMutableArray * _stackOfOccurrences;
     double  _topBoundaryTime;
 }
 
-@property (nonatomic) float endBoundary;
-@property (nonatomic, readonly) float freeSpaceStartBoundary;
-@property (nonatomic, readonly) float freeSpaceWidth;
-@property (nonatomic) float initialStartBoundary;
+@property (nonatomic) double endBoundary;
+@property (nonatomic, readonly) double freeSpaceStartBoundary;
+@property (nonatomic, readonly) double freeSpaceWidth;
+@property (nonatomic) double initialStartBoundary;
 @property (nonatomic, readonly) NSArray *stackedOccurrences;
 @property (nonatomic) double topBoundaryTime;
-@property (nonatomic, readonly) float totalWidth;
+@property (nonatomic, readonly) double totalWidth;
 
 - (void).cxx_destruct;
 - (id)description;
-- (float)endBoundary;
-- (float)freeSpaceStartBoundary;
-- (float)freeSpaceWidth;
+- (double)endBoundary;
+- (double)freeSpaceStartBoundary;
+- (double)freeSpaceWidth;
 - (id)init;
-- (float)initialStartBoundary;
+- (double)initialStartBoundary;
 - (id)peekOccurrence;
 - (void)popOccurrence;
 - (void)pushOccurrence:(id)arg1;
-- (void)setEndBoundary:(float)arg1;
-- (void)setInitialStartBoundary:(float)arg1;
+- (void)setEndBoundary:(double)arg1;
+- (void)setInitialStartBoundary:(double)arg1;
 - (void)setTopBoundaryTime:(double)arg1;
 - (id)stackedOccurrences;
 - (double)topBoundaryTime;
-- (float)totalWidth;
+- (double)totalWidth;
 
 @end

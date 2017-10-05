@@ -24,8 +24,12 @@
 
 // Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
 
+- (id)_af_dialogIdentifier;
+- (void)af_addEntriesToAnalyticsContext:(id)arg1;
 - (id)af_dialogIdentifier;
-- (BOOL)af_isUtterance;
+- (id)af_dialogIdentifiersForAnalyticsContext;
+- (bool)af_isUtterance;
+- (id)af_speakableText;
 - (id)af_text;
 
 // Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI

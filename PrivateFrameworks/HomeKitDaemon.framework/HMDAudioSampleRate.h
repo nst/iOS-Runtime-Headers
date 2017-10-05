@@ -3,22 +3,22 @@
  */
 
 @interface HMDAudioSampleRate : HMDNumberParser <NSSecureCoding> {
-    unsigned int  _sampleRate;
+    unsigned long long  _sampleRate;
 }
 
-@property (nonatomic, readonly) unsigned int sampleRate;
+@property (nonatomic, readonly) unsigned long long sampleRate;
 
 + (id)arrayWithRates:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)description;
 - (void)description:(id)arg1 indent:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithSampleRate:(unsigned int)arg1;
+- (id)initWithSampleRate:(unsigned long long)arg1;
 - (id)initWithTLVData:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)sampleRate;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)sampleRate;
 
 @end

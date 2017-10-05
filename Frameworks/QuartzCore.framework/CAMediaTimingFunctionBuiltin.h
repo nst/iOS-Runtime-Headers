@@ -6,6 +6,8 @@
     unsigned int  _index;
 }
 
++ (bool)supportsSecureCoding;
+
 - (void)_getPoints:(double*)arg1;
 - (Class)classForCoder;
 - (id)description;

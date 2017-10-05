@@ -6,10 +6,8 @@
     ADPrivacyViewController * _adPrivacyController;
     id  _effectiveSettingsChangedObserver;
     UITableViewCell * _limitAdTrackingCell;
-    BOOL  _limitAdTrackingURLIsReachable;
-    int  _optInStatus;
+    long long  _optInStatus;
     UIView * _originalAccessoryView;
-    id  _reachabilityAsObject;
     id  _restrictionsChangedObserver;
 }
 
@@ -17,13 +15,10 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) id effectiveSettingsChangedObserver;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UITableViewCell *limitAdTrackingCell;
-@property (nonatomic) BOOL limitAdTrackingURLIsReachable;
-@property (nonatomic) int optInStatus;
+@property (nonatomic) long long optInStatus;
 @property (nonatomic, retain) UIView *originalAccessoryView;
-@property (nonatomic, readonly) struct __SCNetworkReachability { }*reachability;
-@property (nonatomic, retain) id reachabilityAsObject;
 @property (nonatomic, retain) id restrictionsChangedObserver;
 @property (readonly) Class superclass;
 
@@ -32,16 +27,13 @@
 - (void)adPrivacyViewController:(id)arg1 didFailWithError:(id)arg2;
 - (void)adPrivacyViewControllerDidDismiss:(id)arg1;
 - (void)adPrivacyViewControllerDidLoad:(id)arg1;
-- (BOOL)canChangeLimitAdTracking;
+- (bool)canChangeLimitAdTracking;
 - (void)dealloc;
 - (id)effectiveSettingsChangedObserver;
 - (id)limitAdTrackingCell;
 - (id)limitAdTrackingEnabled:(id)arg1;
-- (BOOL)limitAdTrackingURLIsReachable;
-- (int)optInStatus;
+- (long long)optInStatus;
 - (id)originalAccessoryView;
-- (struct __SCNetworkReachability { }*)reachability;
-- (id)reachabilityAsObject;
 - (void)refreshOptInStatus;
 - (void)reloadLimitAdTrackingSpecifier;
 - (void)resetAdID;
@@ -50,10 +42,8 @@
 - (void)setEffectiveSettingsChangedObserver:(id)arg1;
 - (void)setLimitAdTrackingCell:(id)arg1;
 - (void)setLimitAdTrackingEnabled:(id)arg1 specifier:(id)arg2;
-- (void)setLimitAdTrackingURLIsReachable:(BOOL)arg1;
-- (void)setOptInStatus:(int)arg1;
+- (void)setOptInStatus:(long long)arg1;
 - (void)setOriginalAccessoryView:(id)arg1;
-- (void)setReachabilityAsObject:(id)arg1;
 - (void)setRestrictionsChangedObserver:(id)arg1;
 - (id)specifiers;
 - (void)userDidTapAdPreferences:(id)arg1;

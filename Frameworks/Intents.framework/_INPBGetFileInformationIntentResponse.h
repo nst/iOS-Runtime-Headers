@@ -8,19 +8,17 @@
         unsigned int success : 1; 
     }  _has;
     _INPBFileProperty * _property;
-    BOOL  _success;
+    bool  _success;
     PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) _INPBString *entityName;
-@property (nonatomic, readonly) BOOL hasEntityName;
-@property (nonatomic, readonly) BOOL hasProperty;
-@property (nonatomic) BOOL hasSuccess;
+@property (nonatomic, readonly) bool hasEntityName;
+@property (nonatomic, readonly) bool hasProperty;
+@property (nonatomic) bool hasSuccess;
 @property (nonatomic, retain) _INPBFileProperty *property;
-@property (nonatomic) BOOL success;
+@property (nonatomic) bool success;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -29,26 +27,20 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)entityName;
-- (BOOL)hasEntityName;
-- (BOOL)hasProperty;
-- (BOOL)hasSuccess;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasEntityName;
+- (bool)hasProperty;
+- (bool)hasSuccess;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)property;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEntityName:(id)arg1;
-- (void)setHasSuccess:(BOOL)arg1;
+- (void)setHasSuccess:(bool)arg1;
 - (void)setProperty:(id)arg1;
-- (void)setSuccess:(BOOL)arg1;
-- (BOOL)success;
+- (void)setSuccess:(bool)arg1;
+- (bool)success;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

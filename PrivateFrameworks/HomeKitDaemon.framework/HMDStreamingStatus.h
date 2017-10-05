@@ -3,18 +3,18 @@
  */
 
 @interface HMDStreamingStatus : HMDCameraTLVBase <HMDCameraTLVCreateParse, NSSecureCoding> {
-    unsigned int  _streamingStatus;
+    unsigned long long  _streamingStatus;
 }
 
-@property (nonatomic, readonly) unsigned int streamingStatus;
+@property (nonatomic, readonly) unsigned long long streamingStatus;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)_parseFromTLVData;
+- (bool)_parseFromTLVData;
 - (void)description:(id)arg1 indent:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)streamingStatus;
+- (unsigned long long)streamingStatus;
 - (id)tlvData;
 
 @end

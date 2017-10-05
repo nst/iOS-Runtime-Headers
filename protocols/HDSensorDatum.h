@@ -10,7 +10,7 @@
 
 @optional
 
-- (int)recordID;
+- (long long)recordID;
 - (NSUUID *)sourceId;
 
 @end

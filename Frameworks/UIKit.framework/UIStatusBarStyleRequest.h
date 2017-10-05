@@ -3,39 +3,39 @@
  */
 
 @interface UIStatusBarStyleRequest : NSObject <NSCopying, NSMutableCopying> {
-    float  _foregroundAlpha;
+    double  _foregroundAlpha;
     UIColor * _foregroundColor;
-    BOOL  _legacy;
-    int  _legibilityStyle;
+    bool  _legacy;
+    long long  _legibilityStyle;
     NSNumber * _overrideHeight;
-    int  _style;
+    long long  _style;
 }
 
-@property (nonatomic, readonly) float foregroundAlpha;
+@property (nonatomic, readonly) double foregroundAlpha;
 @property (nonatomic, readonly, retain) UIColor *foregroundColor;
-@property (getter=isLegacy, nonatomic, readonly) BOOL legacy;
-@property (nonatomic, readonly) int legibilityStyle;
+@property (getter=isLegacy, nonatomic, readonly) bool legacy;
+@property (nonatomic, readonly) long long legibilityStyle;
 @property (nonatomic, readonly, retain) NSNumber *overrideHeight;
-@property (nonatomic, readonly) int style;
+@property (nonatomic, readonly) long long style;
 
 - (void).cxx_destruct;
 - (id)_copyWithZone:(struct _NSZone { }*)arg1 class:(Class)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (float)foregroundAlpha;
+- (double)foregroundAlpha;
 - (id)foregroundColor;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (id)initWithStyle:(int)arg1 legacy:(BOOL)arg2 legibilityStyle:(int)arg3 foregroundColor:(id)arg4;
-- (id)initWithStyle:(int)arg1 legacy:(BOOL)arg2 legibilityStyle:(int)arg3 foregroundColor:(id)arg4 foregroundAlpha:(float)arg5;
-- (id)initWithStyle:(int)arg1 legacy:(BOOL)arg2 legibilityStyle:(int)arg3 foregroundColor:(id)arg4 foregroundAlpha:(float)arg5 overrideHeight:(id)arg6;
-- (id)initWithStyle:(int)arg1 legacy:(BOOL)arg2 legibilityStyle:(int)arg3 foregroundColor:(id)arg4 overrideHeight:(id)arg5;
-- (BOOL)isDoubleHeight;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isLegacy;
-- (BOOL)isTranslucent;
-- (int)legibilityStyle;
+- (id)initWithStyle:(long long)arg1 legacy:(bool)arg2 legibilityStyle:(long long)arg3 foregroundColor:(id)arg4;
+- (id)initWithStyle:(long long)arg1 legacy:(bool)arg2 legibilityStyle:(long long)arg3 foregroundColor:(id)arg4 foregroundAlpha:(double)arg5;
+- (id)initWithStyle:(long long)arg1 legacy:(bool)arg2 legibilityStyle:(long long)arg3 foregroundColor:(id)arg4 foregroundAlpha:(double)arg5 overrideHeight:(id)arg6;
+- (id)initWithStyle:(long long)arg1 legacy:(bool)arg2 legibilityStyle:(long long)arg3 foregroundColor:(id)arg4 overrideHeight:(id)arg5;
+- (bool)isDoubleHeight;
+- (bool)isEqual:(id)arg1;
+- (bool)isLegacy;
+- (bool)isTranslucent;
+- (long long)legibilityStyle;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)overrideHeight;
-- (int)style;
+- (long long)style;
 
 @end

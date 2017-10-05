@@ -44,10 +44,11 @@
 - (bool)findHIDClients;
 - (id)init;
 - (void)registerNotificationBlock:(id /* block */)arg1;
-- (int)rootQueuePthreadAttrInit:(struct _opaque_pthread_attr_t { long x1; BOOL x2[36]; }*)arg1;
+- (int)rootQueuePthreadAttrInit:(struct _opaque_pthread_attr_t { long long x1; BOOL x2[56]; }*)arg1;
 - (bool)setBLControlPropertyWithKey:(struct __CFString { }*)arg1 property:(void*)arg2;
 - (bool)setPropertyWithKey:(struct __CFString { }*)arg1 property:(void*)arg2 client:(struct __CFNumber { }*)arg3;
 - (bool)start;
 - (void)stop;
+- (void)waitForALSArrival;
 
 @end

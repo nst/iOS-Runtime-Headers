@@ -3,23 +3,23 @@
  */
 
 @interface CKFetchNotificationChangesOperationResult : CKOperationResult <NSSecureCoding> {
-    BOOL  _moreComing;
+    bool  _moreComing;
     CKServerChangeToken * _serverChangeToken;
 }
 
-@property (nonatomic) BOOL moreComing;
+@property (nonatomic) bool moreComing;
 @property (nonatomic, retain) CKServerChangeToken *serverChangeToken;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)CKPropertiesDescription;
+- (id)CKDescriptionPropertiesWithPublic:(bool)arg1 private:(bool)arg2 shouldExpand:(bool)arg3;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)moreComing;
+- (bool)moreComing;
 - (id)serverChangeToken;
-- (void)setMoreComing:(BOOL)arg1;
+- (void)setMoreComing:(bool)arg1;
 - (void)setServerChangeToken:(id)arg1;
 
 @end

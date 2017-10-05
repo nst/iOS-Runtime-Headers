@@ -6,12 +6,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isStatusBarHidden, nonatomic, readonly) BOOL statusBarHidden;
+@property (readonly) unsigned long long hash;
+@property (getter=isStatusBarHidden, nonatomic, readonly) bool statusBarHidden;
 @property (readonly) Class superclass;
 
 - (id)_statusBarAnimationParametersForAnimationSettings:(id)arg1;
-- (BOOL)isStatusBarHidden;
-- (void)setStatusBarHidden:(BOOL)arg1 withAnimationSettings:(id)arg2;
+- (bool)isStatusBarHidden;
+- (void)setStatusBarHidden:(bool)arg1 withAnimationSettings:(id)arg2;
 
 @end

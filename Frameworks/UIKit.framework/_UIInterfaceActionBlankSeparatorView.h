@@ -6,19 +6,19 @@
     _UIInterfaceActionSeparatorConstraintController * _separatorViewConstraints;
 }
 
-@property (nonatomic) float constantAxisDimension;
+@property (nonatomic) double constantAxisDimension;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, retain) _UIInterfaceActionSeparatorConstraintController *separatorViewConstraints;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (float)constantAxisDimension;
+- (double)constantAxisDimension;
 - (id)init;
 - (id)separatorViewConstraints;
-- (void)setConstantAxisDimension:(float)arg1;
-- (void)setConstantSizedAxis:(int)arg1;
+- (void)setConstantAxisDimension:(double)arg1;
+- (void)setConstantSizedAxis:(long long)arg1;
 - (void)updateConstraints;
 
 @end

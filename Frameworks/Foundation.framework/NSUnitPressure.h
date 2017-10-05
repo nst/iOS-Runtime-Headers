@@ -4,7 +4,9 @@
 
 @interface NSUnitPressure : NSDimension <NSSecureCoding>
 
-+ (id)_measurementWithNaturalScale:(id)arg1 system:(unsigned int)arg2;
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
++ (id)_measurementWithNaturalScale:(id)arg1 system:(unsigned long long)arg2;
 + (id)bars;
 + (id)baseUnit;
 + (id)gigapascals;
@@ -16,5 +18,10 @@
 + (id)millimetersOfMercury;
 + (id)newtonsPerMetersSquared;
 + (id)poundsForcePerSquareInch;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
+- (id)hk_equivalentBaseUnit;
+- (id)hk_equivalentUnitWithConstant:(double)arg1 coefficient:(double)arg2;
 
 @end

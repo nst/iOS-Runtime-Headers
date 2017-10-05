@@ -7,7 +7,7 @@
 
 - (NSArray *)consentedBrands;
 - (NSArray *)deniedBrands;
-- (BOOL)privateModeEnabled;
+- (bool)privateModeEnabled;
 - (NSDictionary *)settings;
 
 @end

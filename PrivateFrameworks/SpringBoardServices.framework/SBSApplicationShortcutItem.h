@@ -3,7 +3,7 @@
  */
 
 @interface SBSApplicationShortcutItem : NSObject <BSXPCCoding, NSCopying> {
-    unsigned int  _activationMode;
+    unsigned long long  _activationMode;
     NSString * _bundleIdentifierToLaunch;
     SBSApplicationShortcutIcon * _icon;
     NSString * _localizedSubtitle;
@@ -12,12 +12,12 @@
     NSData * _userInfoData;
 }
 
-@property (nonatomic) unsigned int activationMode;
+@property (nonatomic) unsigned long long activationMode;
 @property (nonatomic, retain) UIView *badgeView;
 @property (nonatomic, copy) NSString *bundleIdentifierToLaunch;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) SBSApplicationShortcutIcon *icon;
 @property (nonatomic, copy) NSString *localizedSubtitle;
 @property (nonatomic, copy) NSString *localizedTitle;
@@ -32,18 +32,18 @@
 
 - (void).cxx_destruct;
 - (void)_localizeWithHandler:(id /* block */)arg1;
-- (unsigned int)activationMode;
+- (unsigned long long)activationMode;
 - (id)bundleIdentifierToLaunch;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)icon;
 - (id)initWithXPCDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)localizedSubtitle;
 - (id)localizedTitle;
-- (void)setActivationMode:(unsigned int)arg1;
+- (void)setActivationMode:(unsigned long long)arg1;
 - (void)setBundleIdentifierToLaunch:(id)arg1;
 - (void)setIcon:(id)arg1;
 - (void)setLocalizedSubtitle:(id)arg1;
@@ -59,7 +59,7 @@
 
 + (id)shortcutItemWithGKQuickAction:(id)arg1;
 
-- (BOOL)_gkIsGameCenterQuickAction;
+- (bool)_gkIsGameCenterQuickAction;
 
 // Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
 

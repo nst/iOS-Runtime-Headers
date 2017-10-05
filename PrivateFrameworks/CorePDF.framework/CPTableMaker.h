@@ -4,19 +4,19 @@
 
 @interface CPTableMaker : NSObject {
     unsigned int  cellIndex;
-    struct { float x1; float x2; } * columnXIntervals;
-    struct { float x1; float x2; } * rowYIntervals;
+    struct { double x1; double x2; } * columnXIntervals;
+    struct { double x1; double x2; } * rowYIntervals;
     CPTable * table;
     CPZone * tableZone;
 }
 
-+ (BOOL)isTable:(id)arg1;
++ (bool)isTable:(id)arg1;
 + (void)makeTableFrom:(id)arg1;
 + (void)makeTablesInPage:(id)arg1;
 + (void)makeTablesInZone:(id)arg1;
 
 - (void)dealloc;
-- (void)determineRowsAndColumns:(BOOL)arg1;
+- (void)determineRowsAndColumns:(bool)arg1;
 - (id)initWithZone:(id)arg1;
 - (void)makeTable;
 - (id)newBackgroundGraphicArrayFromRectangularZone:(id)arg1;

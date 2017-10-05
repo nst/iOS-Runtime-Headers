@@ -9,7 +9,7 @@
 @property (nonatomic, copy) NSNumber *favoriteFacetime;
 @property (nonatomic, copy) NSNumber *favoriteFacetimeAudio;
 @property (nonatomic, copy) NSNumber *favoriteVoice;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *label;
 @property (nonatomic, copy) NSString *number;
 @property (nonatomic, copy) NSNumber *pseudo;

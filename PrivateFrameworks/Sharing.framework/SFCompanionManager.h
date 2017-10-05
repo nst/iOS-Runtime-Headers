@@ -9,6 +9,7 @@
     NSString * _identifier;
     <SFCompanionServiceManagerProtocol> * _managerProxy;
     NSObject<OS_dispatch_semaphore> * _managerSemaphore;
+    NSObject<OS_dispatch_queue> * _serviceIdentifierQueue;
     NSMutableDictionary * _services;
     NSMutableDictionary * _streamHandlers;
 }
@@ -18,10 +19,11 @@
 @property (copy) NSString *deviceID;
 @property (copy) NSString *deviceIP;
 @property (copy) NSString *deviceName;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (copy) NSString *identifier;
 @property (retain) <SFCompanionServiceManagerProtocol> *managerProxy;
 @property (retain) NSObject<OS_dispatch_semaphore> *managerSemaphore;
+@property (retain) NSObject<OS_dispatch_queue> *serviceIdentifierQueue;
 @property (retain) NSMutableDictionary *services;
 @property (retain) NSMutableDictionary *streamHandlers;
 @property (readonly) Class superclass;
@@ -41,6 +43,7 @@
 - (id)managerSemaphore;
 - (void)retrieveManagerProxy;
 - (id)serviceForIdentifier:(id)arg1;
+- (id)serviceIdentifierQueue;
 - (id)services;
 - (void)setDeviceID:(id)arg1;
 - (void)setDeviceIP:(id)arg1;
@@ -48,6 +51,7 @@
 - (void)setIdentifier:(id)arg1;
 - (void)setManagerProxy:(id)arg1;
 - (void)setManagerSemaphore:(id)arg1;
+- (void)setServiceIdentifierQueue:(id)arg1;
 - (void)setServices:(id)arg1;
 - (void)setStreamHandlers:(id)arg1;
 - (void)signalSemaphore;

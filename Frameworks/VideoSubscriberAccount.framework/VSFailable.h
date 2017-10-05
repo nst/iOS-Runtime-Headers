@@ -4,18 +4,18 @@
 
 @interface VSFailable : NSObject <NSSecureCoding> {
     NSError * _error;
-    int  _kind;
+    long long  _kind;
     id  _object;
 }
 
 @property (nonatomic, copy) NSError *error;
-@property (nonatomic) int kind;
+@property (nonatomic) long long kind;
 @property (nonatomic, retain) id object;
 
 + (id)failableWithError:(id)arg1;
 + (id)failableWithObject:(id)arg1;
 + (Class)objectClass;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
@@ -25,10 +25,10 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithError:(id)arg1;
 - (id)initWithObject:(id)arg1;
-- (int)kind;
+- (long long)kind;
 - (id)object;
 - (void)setError:(id)arg1;
-- (void)setKind:(int)arg1;
+- (void)setKind:(long long)arg1;
 - (void)setObject:(id)arg1;
 - (void)unwrapObject:(id /* block */)arg1 error:(id /* block */)arg2;
 

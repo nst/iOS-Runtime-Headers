@@ -15,14 +15,14 @@
 @property (nonatomic, retain) NSArray *contacts;
 
 + (id)_allParticipantsOnItem:(id)arg1;
-+ (id)_nameComponentsForContact:(id)arg1 reverse:(BOOL)arg2;
++ (id)_nameComponentsForContact:(id)arg1 reverse:(bool)arg2;
 + (id)_nameComponentsWithGivenName:(id)arg1 familyName:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_cacheContactData;
-- (BOOL)anyContactMatchesAnyParticipant:(id)arg1;
-- (BOOL)anyContactMatchesAnyParticipantFromItem:(id)arg1;
-- (BOOL)anyContactMatchesParticipant:(id)arg1;
+- (bool)anyContactMatchesAnyParticipant:(id)arg1;
+- (bool)anyContactMatchesAnyParticipantFromItem:(id)arg1;
+- (bool)anyContactMatchesParticipant:(id)arg1;
 - (id)contactCompanyNames;
 - (id)contactEmailAddresses;
 - (id)contactNameComponents;

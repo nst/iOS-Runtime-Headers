@@ -16,6 +16,7 @@
 
 - (void).cxx_destruct;
 - (id /* block */)ancestorFetchedBlock;
+- (id)generateRequestOperations;
 - (id)initWithRecordIDs:(id)arg1;
 - (int)operationType;
 - (id)recordIDByRequestID;
@@ -23,7 +24,6 @@
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
-- (id)requestOperations;
 - (void)setAncestorFetchedBlock:(id /* block */)arg1;
 - (void)setRecordIDByRequestID:(id)arg1;
 - (void)setRecordIDs:(id)arg1;

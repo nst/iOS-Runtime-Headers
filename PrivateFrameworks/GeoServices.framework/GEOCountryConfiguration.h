@@ -5,7 +5,7 @@
 @interface GEOCountryConfiguration : NSObject <GEOResourceManifestTileGroupObserver, _GEOCountryConfigurationServerProxyDelegate> {
     NSString * _countryCode;
     NSLock * _countryCodeLock;
-    BOOL  _hasURLAuthenticationTimeToLive;
+    bool  _hasURLAuthenticationTimeToLive;
     <_GEOCountryConfigurationServerProxy> * _serverProxy;
     NSMutableDictionary * _supportedFeatures;
     NSLock * _supportedFeaturesLock;
@@ -14,36 +14,39 @@
 }
 
 @property (nonatomic, copy) NSString *countryCode;
-@property (nonatomic, readonly) BOOL currentCountrySupportsCarIntegration;
-@property (nonatomic, readonly) BOOL currentCountrySupportsDirections;
-@property (nonatomic, readonly) BOOL currentCountrySupportsNavigation;
-@property (nonatomic, readonly) BOOL currentCountrySupportsRouteGenius;
-@property (nonatomic, readonly) BOOL currentCountrySupportsTraffic;
+@property (nonatomic, readonly) bool currentCountrySupportsCarIntegration;
+@property (nonatomic, readonly) bool currentCountrySupportsCommute;
+@property (nonatomic, readonly) bool currentCountrySupportsDirections;
+@property (nonatomic, readonly) bool currentCountrySupportsNavigation;
+@property (nonatomic, readonly) bool currentCountrySupportsRouteGenius;
+@property (nonatomic, readonly) bool currentCountrySupportsTraffic;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) double urlAuthenticationTimeToLive;
 
 + (void)disableServerConnection;
-+ (void)setUseLocalProxy:(BOOL)arg1;
++ (void)setUseLocalProxy:(bool)arg1;
 + (id)sharedConfiguration;
 
-- (id)_countryDefaultForKey:(id)arg1 inCountry:(id)arg2 sourcePtr:(int*)arg3;
-- (id)_defaultForKey:(id)arg1 inCountry:(id)arg2 defaultValue:(id)arg3 sourcePtr:(int*)arg4;
+- (void).cxx_destruct;
+- (id)_countryDefaultForKey:(id)arg1 inCountry:(id)arg2 sourcePtr:(long long*)arg3;
+- (id)_defaultForKey:(id)arg1 inCountry:(id)arg2 defaultValue:(id)arg3 sourcePtr:(long long*)arg4;
 - (void)_resetSupportedFeatures;
 - (void)_updateCountryConfiguration:(id /* block */)arg1 callbackQueue:(id)arg2;
 - (id)countryCode;
-- (BOOL)countryCode:(id)arg1 supportsFeature:(int)arg2;
-- (BOOL)currentCountrySupportsCarIntegration;
-- (BOOL)currentCountrySupportsDirections;
-- (BOOL)currentCountrySupportsFeature:(int)arg1;
-- (BOOL)currentCountrySupportsNavigation;
-- (BOOL)currentCountrySupportsRouteGenius;
-- (BOOL)currentCountrySupportsTraffic;
+- (bool)countryCode:(id)arg1 supportsFeature:(long long)arg2;
+- (bool)currentCountrySupportsCarIntegration;
+- (bool)currentCountrySupportsCommute;
+- (bool)currentCountrySupportsDirections;
+- (bool)currentCountrySupportsFeature:(long long)arg1;
+- (bool)currentCountrySupportsNavigation;
+- (bool)currentCountrySupportsRouteGenius;
+- (bool)currentCountrySupportsTraffic;
 - (void)dealloc;
 - (id)defaultForKey:(id)arg1 defaultValue:(id)arg2;
-- (id)defaultForKey:(id)arg1 defaultValue:(id)arg2 sourcePtr:(int*)arg3;
+- (id)defaultForKey:(id)arg1 defaultValue:(id)arg2 sourcePtr:(long long*)arg3;
 - (id)init;
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;

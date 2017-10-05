@@ -3,32 +3,36 @@
  */
 
 @interface CKModifyRecordZonesOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    BOOL  _allowDefaultZoneSave;
-    BOOL  _markZonesAsUserPurged;
-    int  _maxZoneSaveAttempts;
+    bool  _allowDefaultZoneSave;
+    bool  _dontFetchFromServer;
+    bool  _markZonesAsUserPurged;
+    long long  _maxZoneSaveAttempts;
     NSArray * _recordZoneIDsToDelete;
     NSArray * _recordZonesToSave;
 }
 
-@property (nonatomic) BOOL allowDefaultZoneSave;
-@property (nonatomic) BOOL markZonesAsUserPurged;
-@property (nonatomic) int maxZoneSaveAttempts;
+@property (nonatomic) bool allowDefaultZoneSave;
+@property (nonatomic) bool dontFetchFromServer;
+@property (nonatomic) bool markZonesAsUserPurged;
+@property (nonatomic) long long maxZoneSaveAttempts;
 @property (nonatomic, retain) NSArray *recordZoneIDsToDelete;
 @property (nonatomic, retain) NSArray *recordZonesToSave;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)allowDefaultZoneSave;
+- (bool)allowDefaultZoneSave;
+- (bool)dontFetchFromServer;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)markZonesAsUserPurged;
-- (int)maxZoneSaveAttempts;
+- (bool)markZonesAsUserPurged;
+- (long long)maxZoneSaveAttempts;
 - (id)recordZoneIDsToDelete;
 - (id)recordZonesToSave;
-- (void)setAllowDefaultZoneSave:(BOOL)arg1;
-- (void)setMarkZonesAsUserPurged:(BOOL)arg1;
-- (void)setMaxZoneSaveAttempts:(int)arg1;
+- (void)setAllowDefaultZoneSave:(bool)arg1;
+- (void)setDontFetchFromServer:(bool)arg1;
+- (void)setMarkZonesAsUserPurged:(bool)arg1;
+- (void)setMaxZoneSaveAttempts:(long long)arg1;
 - (void)setRecordZoneIDsToDelete:(id)arg1;
 - (void)setRecordZonesToSave:(id)arg1;
 

@@ -6,16 +6,16 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (BOOL)addFollowUpItems:(id)arg1 error:(id*)arg2;
-- (BOOL)clearNotificationsForItem:(id)arg1 error:(id*)arg2;
+- (bool)addFollowUpItems:(id)arg1 error:(id*)arg2;
+- (bool)clearNotificationsForItem:(id)arg1 error:(id*)arg2;
 - (id)pendingAuthKitFollowUpItems:(id*)arg1;
 - (id)pendingAuthKitFollowUpUniqueIdentifiers:(id*)arg1;
-- (BOOL)removeAllAuthKitFollowUpItems:(id*)arg1;
-- (BOOL)removeFollowUpItems:(id)arg1 error:(id*)arg2;
-- (BOOL)removeFollowUpItemsWithIdentifiers:(id)arg1 error:(id*)arg2;
+- (bool)removeAllAuthKitFollowUpItems:(id*)arg1;
+- (bool)removeFollowUpItems:(id)arg1 error:(id*)arg2;
+- (bool)removeFollowUpItemsWithIdentifiers:(id)arg1 error:(id*)arg2;
 - (id)sharedFollowUpController;
 
 @end

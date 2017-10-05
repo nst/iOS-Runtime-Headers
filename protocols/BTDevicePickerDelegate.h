@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)devicePicker:(BTDevicePicker *)arg1 didDismissWithResult:(int)arg2 device:(BluetoothDevice *)arg3;
+- (void)devicePicker:(BTDevicePicker *)arg1 didDismissWithResult:(long long)arg2 device:(BluetoothDevice *)arg3;
 
 @end

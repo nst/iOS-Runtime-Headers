@@ -3,21 +3,21 @@
  */
 
 @interface SKReachConstraints : NSObject <NSCoding> {
-    float  _lowerAngleLimit;
-    float  _upperAngleLimit;
+    double  _lowerAngleLimit;
+    double  _upperAngleLimit;
 }
 
-@property (nonatomic) float lowerAngleLimit;
-@property (nonatomic) float upperAngleLimit;
+@property (nonatomic) double lowerAngleLimit;
+@property (nonatomic) double upperAngleLimit;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithLowerAngleLimit:(float)arg1 upperAngleLimit:(float)arg2;
-- (float)lowerAngleLimit;
-- (void)setLowerAngleLimit:(float)arg1;
-- (void)setUpperAngleLimit:(float)arg1;
-- (float)upperAngleLimit;
+- (id)initWithLowerAngleLimit:(double)arg1 upperAngleLimit:(double)arg2;
+- (double)lowerAngleLimit;
+- (void)setLowerAngleLimit:(double)arg1;
+- (void)setUpperAngleLimit:(double)arg1;
+- (double)upperAngleLimit;
 
 @end

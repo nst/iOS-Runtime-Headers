@@ -9,20 +9,22 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) double duration;
-@property (getter=isFavorite, nonatomic, readonly) BOOL favorite;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) unsigned int mediaSubtypes;
-@property (nonatomic, readonly) unsigned int mediaType;
+@property (getter=isFavorite, nonatomic, readonly) bool favorite;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) unsigned long long mediaSubtypes;
+@property (nonatomic, readonly) long long mediaType;
+@property (nonatomic, readonly) long long playbackStyle;
+@property (nonatomic, readonly) long long playbackVariation;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSURL *url;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithURL:(id)arg1;
-- (unsigned int)isContentEqualTo:(id)arg1;
-- (BOOL)isFavorite;
-- (unsigned int)mediaSubtypes;
-- (unsigned int)mediaType;
+- (long long)isContentEqualTo:(id)arg1;
+- (bool)isFavorite;
+- (unsigned long long)mediaSubtypes;
+- (long long)mediaType;
 - (id)url;
 
 @end

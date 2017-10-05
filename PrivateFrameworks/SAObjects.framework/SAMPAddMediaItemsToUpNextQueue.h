@@ -4,6 +4,7 @@
 
 @interface SAMPAddMediaItemsToUpNextQueue : SABaseClientBoundCommand
 
+@property (nonatomic, copy) NSArray *hashedRouteUIDs;
 @property (nonatomic, copy) NSString *insertLocation;
 @property (nonatomic, retain) SAMPCollection *mediaCollection;
 
@@ -12,9 +13,11 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (id)hashedRouteUIDs;
 - (id)insertLocation;
 - (id)mediaCollection;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
+- (void)setHashedRouteUIDs:(id)arg1;
 - (void)setInsertLocation:(id)arg1;
 - (void)setMediaCollection:(id)arg1;
 

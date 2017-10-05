@@ -10,7 +10,7 @@
 @property (copy) id /* block */ outputBlock;
 
 - (void).cxx_destruct;
-- (BOOL)_isAllowedURL:(id)arg1 withURLBag:(id)arg2;
+- (bool)_isAllowedURL:(id)arg1 withURLBag:(id)arg2;
 - (id)initWithRequestProperties:(id)arg1;
 - (id /* block */)outputBlock;
 - (void)run;

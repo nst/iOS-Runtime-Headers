@@ -4,8 +4,8 @@
 
 @interface SBMultiUserDefaults : SBAbstractSpringBoardDefaultDomain
 
-@property (nonatomic, readonly) BOOL disablesInternalDebugBlockingTasksUI;
-@property (nonatomic, readonly) BOOL forceLoginWindow;
+@property (nonatomic, readonly) bool disablesInternalDebugBlockingTasksUI;
+@property (nonatomic, readonly) bool forceLoginWindow;
 
 - (void)_bindAndRegisterDefaults;
 

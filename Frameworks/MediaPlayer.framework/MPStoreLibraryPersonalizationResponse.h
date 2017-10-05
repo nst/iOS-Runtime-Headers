@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) MPModelResponse *libraryResponse;
 @property (nonatomic, retain) MPSectionedCollection *representedObjectResults;
 @property (readonly) Class superclass;
@@ -18,7 +18,7 @@
 - (void)_libraryResponseDidInvalidateNotification:(id)arg1;
 - (void)dealloc;
 - (id)libraryResponse;
-- (id)newOperationForDetailedKeepLocalStatusConfigurationForSectionAtIndex:(int)arg1 responseHandler:(id /* block */)arg2;
+- (id)newOperationForDetailedKeepLocalStatusConfigurationForSectionAtIndex:(long long)arg1 responseHandler:(id /* block */)arg2;
 - (id)representedObjectResults;
 - (void)setLibraryResponse:(id)arg1;
 - (void)setRepresentedObjectResults:(id)arg1;

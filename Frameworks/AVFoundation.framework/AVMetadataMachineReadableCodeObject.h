@@ -7,15 +7,24 @@
 }
 
 @property (readonly) NSArray *corners;
+@property (readonly) CIBarcodeDescriptor *descriptor;
 @property (readonly) NSString *stringValue;
+
+// Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
 + (id)machineReadableCodeObjectWithFigEmbeddedCaptureDeviceMachineReadableCodeDictionary:(id)arg1 input:(id)arg2;
 
+- (id)basicDescriptor;
 - (id)corners;
 - (void)dealloc;
 - (id)description;
-- (id)initDerivedMetadataObjectFromMetadataObject:(id)arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 isVideoMirrored:(BOOL)arg3 rollAdjustment:(float)arg4;
+- (id)descriptor;
+- (id)initDerivedMetadataObjectFromMetadataObject:(id)arg1 withTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2 isVideoMirrored:(bool)arg3 rollAdjustment:(double)arg4;
 - (id)initWithFigEmbeddedCaptureDeviceMachineReadableCodeDictionary:(id)arg1 input:(id)arg2;
 - (id)stringValue;
+
+// Image: /System/Library/PrivateFrameworks/BarcodeSupport.framework/BarcodeSupport
+
+- (bool)_bcs_probablyContainsSameCodeInBasicDescriptor:(id)arg1;
 
 @end

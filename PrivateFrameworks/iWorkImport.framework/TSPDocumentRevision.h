@@ -16,15 +16,15 @@
 + (id)revisionWithSequence:(int)arg1 identifier:(id)arg2;
 
 - (void).cxx_destruct;
-- (int)compareSequenceFromRevision:(id)arg1;
+- (long long)compareSequenceFromRevision:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)init;
 - (id)initWithRevisionString:(id)arg1;
 - (id)initWithSequence:(int)arg1 identifier:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)nextRevisionWithIdentifier:(id)arg1;
 - (id)revisionString;
 - (int)sequence;

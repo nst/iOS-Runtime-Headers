@@ -12,7 +12,7 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setStatus:(id)arg1;
 - (void)setTargetViewId:(id)arg1;
 - (id)status;

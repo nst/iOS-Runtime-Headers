@@ -4,32 +4,32 @@
 
 @interface NETunnelProvider : NEProvider <NSExtensionRequestHandling> {
     NSArray * _appRules;
-    BOOL  _onDemandEnabled;
+    bool  _onDemandEnabled;
     NEVPNProtocol * _protocolConfiguration;
-    BOOL  _reasserting;
+    bool  _reasserting;
 }
 
 @property (retain) NSArray *appRules;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property BOOL onDemandEnabled;
+@property (readonly) unsigned long long hash;
+@property bool onDemandEnabled;
 @property (retain) NEVPNProtocol *protocolConfiguration;
-@property BOOL reasserting;
-@property (readonly) int routingMethod;
+@property bool reasserting;
+@property (readonly) long long routingMethod;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)appRules;
 - (void)handleAppMessage:(id)arg1 completionHandler:(id /* block */)arg2;
-- (BOOL)onDemandEnabled;
+- (bool)onDemandEnabled;
 - (id)protocolConfiguration;
-- (BOOL)reasserting;
-- (int)routingMethod;
+- (bool)reasserting;
+- (long long)routingMethod;
 - (void)setAppRules:(id)arg1;
-- (void)setOnDemandEnabled:(BOOL)arg1;
+- (void)setOnDemandEnabled:(bool)arg1;
 - (void)setProtocolConfiguration:(id)arg1;
-- (void)setReasserting:(BOOL)arg1;
+- (void)setReasserting:(bool)arg1;
 - (void)setTunnelNetworkSettings:(id)arg1 completionHandler:(id /* block */)arg2;
 
 @end

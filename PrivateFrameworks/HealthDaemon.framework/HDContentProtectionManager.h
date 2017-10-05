@@ -16,27 +16,27 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL shouldIgnoreUnlockedState;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool shouldIgnoreUnlockedState;
 @property (readonly) Class superclass;
 
-+ (BOOL)isProtectedDataAvailableWithState:(int)arg1;
++ (bool)isProtectedDataAvailableWithState:(long long)arg1;
 
 - (void).cxx_destruct;
-- (int)_keyBagLockState;
+- (long long)_keyBagLockState;
 - (void)_observationQueue_adjustContentProtectionStateWithBlock:(id /* block */)arg1;
 - (void)addContentProtectionObserver:(id)arg1 withQueue:(id)arg2;
 - (void)dealloc;
-- (BOOL)deviceUnlockedSinceBoot;
+- (bool)deviceUnlockedSinceBoot;
 - (id)diagnosticDescription;
 - (id)init;
-- (id)initWithNotifications:(BOOL)arg1 initialState:(int)arg2 unlockedSinceBoot:(BOOL)arg3;
-- (BOOL)isProtectedDataAvailable;
-- (int)observedState;
+- (id)initWithNotifications:(bool)arg1 initialState:(long long)arg2 unlockedSinceBoot:(bool)arg3;
+- (bool)isProtectedDataAvailable;
+- (long long)observedState;
 - (void)recheckContentProtectionState;
 - (void)removeContentProtectionObserver:(id)arg1;
-- (void)setContentProtectionState:(int)arg1;
-- (void)setShouldIgnoreUnlockedState:(BOOL)arg1;
-- (BOOL)shouldIgnoreUnlockedState;
+- (void)setContentProtectionState:(long long)arg1;
+- (void)setShouldIgnoreUnlockedState:(bool)arg1;
+- (bool)shouldIgnoreUnlockedState;
 
 @end

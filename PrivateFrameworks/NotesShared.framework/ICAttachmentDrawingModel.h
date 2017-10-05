@@ -9,35 +9,48 @@
 @property (nonatomic, readonly) ICDrawing *drawing;
 @property (nonatomic, readonly) UIImage *imageForActivityItem;
 
-+ (id)contentInfoTextWithAttachmentCount:(unsigned int)arg1;
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
++ (id)contentInfoTextWithAttachmentCount:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
-- (id)activityItem;
-- (id)activityItems;
+- (bool)canSaveURL;
 - (void)dealloc;
 - (id)drawing;
 - (id)drawingDocument;
 - (void)drawingPreviewIsUpToDate;
-- (BOOL)generatePreviewsDuringCloudActivity;
-- (void)generatePreviewsInOperation:(id)arg1;
-- (id /* block */)genericBrickThumbnailCreator;
-- (id /* block */)genericListThumbnailCreator;
-- (BOOL)hasPreviews;
-- (struct UIImage { Class x1; }*)imageForActivityItem;
+- (bool)hasPreviews;
 - (id)initWithAttachment:(id)arg1;
-- (void)mergeWithMergeableData:(id)arg1;
-- (BOOL)needToGeneratePreviews;
+- (bool)mergeWithMergeableData:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (int)previewImageOrientation;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })previewImageOrientationTransform;
+- (long long)previewImageOrientation;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })previewImageOrientationTransform;
 - (id)previewImageURL;
 - (id)previewItemTitle;
 - (id)previewItemURL;
-- (void)saveDrawing:(id)arg1 withImage:(struct UIImage { Class x1; }*)arg2 forImageDrawing:(id)arg3;
+- (id)saveURL;
 - (id)sharedDrawingController;
-- (BOOL)shouldSyncPreviewImageToCloud:(id)arg1;
-- (BOOL)showThumbnailInNoteList;
-- (BOOL)supportsQuickLook;
+- (bool)shouldSyncPreviewImageToCloud:(id)arg1;
+- (bool)showThumbnailInNoteList;
+- (bool)supportsQuickLook;
 - (void)writeMergeableData;
+
+// Image: /System/Library/PrivateFrameworks/NotesUI.framework/NotesUI
+
+- (id)activityItem;
+- (id)activityItems;
+- (id)attributesForSharingHTMLWithTagName:(id*)arg1 textContent:(id*)arg2;
+- (bool)canConvertToHTMLForSharing;
+- (id)dataForTypeIdentifier:(id)arg1;
+- (id)fileURLForTypeIdentifier:(id)arg1;
+- (bool)generatePreviewsDuringCloudActivity;
+- (void)generatePreviewsInOperation:(id)arg1;
+- (id /* block */)genericBrickThumbnailCreator;
+- (id /* block */)genericListThumbnailCreator;
+- (struct UIImage { Class x1; }*)imageForActivityItem;
+- (bool)needToGeneratePreviews;
+- (id)providerDataTypes;
+- (id)providerFileTypes;
+- (void)saveDrawing:(id)arg1 withImage:(struct UIImage { Class x1; }*)arg2 forImageDrawing:(id)arg3;
 
 @end

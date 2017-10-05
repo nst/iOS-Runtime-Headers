@@ -12,8 +12,9 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (bool)mutatingCommand;
 - (id)personSearches;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (id)resultsLimit;
 - (void)setPersonSearches:(id)arg1;
 - (void)setResultsLimit:(id)arg1;

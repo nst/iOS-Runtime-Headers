@@ -6,23 +6,24 @@
     KNBuildAttributeValue * _attributeValue;
     KNBuildChunkIdentifier * _buildChunkIdentifier;
     NSUUID * _buildId;
-    BOOL  _definedAttributeValue;
-    BOOL  _definedBuildChunkIdentifier;
-    BOOL  _definedBuildId;
+    bool  _definedAttributeValue;
+    bool  _definedBuildChunkIdentifier;
+    bool  _definedBuildId;
     NSString * _property;
 }
 
 @property (nonatomic, readonly) KNBuild *build;
 @property (nonatomic, readonly) KNBuildChunk *chunk;
-@property (nonatomic, readonly) BOOL isBuildTuple;
-@property (nonatomic, readonly) BOOL isChunkTuple;
+@property (nonatomic, readonly) bool isBuildTuple;
+@property (nonatomic, readonly) bool isChunkTuple;
 @property (nonatomic, readonly) NSString *property;
 @property (nonatomic, readonly) KNBuildAttributeValue *value;
 
 + (id)tupleForBuild:(id)arg1 property:(id)arg2 value:(id)arg3;
 + (id)tupleWithChunk:(id)arg1 property:(id)arg2 value:(id)arg3;
-+ (id)tupleWithChunk:(id)arg1 referent:(unsigned int)arg2;
++ (id)tupleWithChunk:(id)arg1 referent:(unsigned long long)arg2;
 
+- (void).cxx_destruct;
 - (id)build;
 - (id)chunk;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -30,9 +31,9 @@
 - (id)initWithBuild:(id)arg1 chunk:(id)arg2 property:(id)arg3 value:(id)arg4;
 - (id)initWithBuild:(id)arg1 property:(id)arg2 value:(id)arg3;
 - (id)initWithChunk:(id)arg1 property:(id)arg2 value:(id)arg3;
-- (BOOL)isBuildTuple;
-- (BOOL)isChunkTuple;
-- (BOOL)isValidForSlide:(id)arg1;
+- (bool)isBuildTuple;
+- (bool)isChunkTuple;
+- (bool)isValidForSlide:(id)arg1;
 - (id)property;
 - (id)value;
 

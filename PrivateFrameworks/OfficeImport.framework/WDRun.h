@@ -11,7 +11,7 @@
 - (id)description;
 - (id)init;
 - (id)initWithParagraph:(id)arg1;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (id)paragraph;
 - (int)runType;
 

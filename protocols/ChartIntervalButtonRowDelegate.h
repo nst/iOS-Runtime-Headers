@@ -5,6 +5,6 @@
 
 @required
 
-- (void)chartIntervalButtonRow:(ChartIntervalButtonRow *)arg1 didSelectChartInterval:(int)arg2;
+- (void)chartIntervalButtonRow:(ChartIntervalButtonRow *)arg1 didSelectChartInterval:(long long)arg2;
 
 @end

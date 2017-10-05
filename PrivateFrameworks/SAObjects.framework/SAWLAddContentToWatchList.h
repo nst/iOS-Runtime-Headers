@@ -12,7 +12,7 @@
 - (id)canonicalId;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setCanonicalId:(id)arg1;
 
 @end

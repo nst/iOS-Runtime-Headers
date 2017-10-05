@@ -15,9 +15,9 @@
 
 @property (nonatomic) int actionType;
 @property (nonatomic) double duration;
-@property (nonatomic) BOOL hasActionType;
-@property (nonatomic) BOOL hasDuration;
-@property (nonatomic) BOOL hasSequenceNumber;
+@property (nonatomic) bool hasActionType;
+@property (nonatomic) bool hasDuration;
+@property (nonatomic) bool hasSequenceNumber;
 @property (nonatomic) int sequenceNumber;
 
 - (int)StringAsActionType:(id)arg1;
@@ -28,19 +28,19 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (double)duration;
-- (BOOL)hasActionType;
-- (BOOL)hasDuration;
-- (BOOL)hasSequenceNumber;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasActionType;
+- (bool)hasDuration;
+- (bool)hasSequenceNumber;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)sequenceNumber;
 - (void)setActionType:(int)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setHasActionType:(BOOL)arg1;
-- (void)setHasDuration:(BOOL)arg1;
-- (void)setHasSequenceNumber:(BOOL)arg1;
+- (void)setHasActionType:(bool)arg1;
+- (void)setHasDuration:(bool)arg1;
+- (void)setHasSequenceNumber:(bool)arg1;
 - (void)setSequenceNumber:(int)arg1;
 - (void)writeTo:(id)arg1;
 

@@ -3,57 +3,48 @@
  */
 
 @interface ASTAssetConnection : NSObject <ASTDownloadConnection> {
-    NSString * _assetName;
     <ASTConnectionStatusDelegate> * _delegate;
     NSFileHandle * _destinationFileHandle;
     id /* block */  _didDownloadFile;
     id /* block */  _didReceiveResponse;
-    int  _networkDisconnectedRetryCount;
+    long long  _networkDisconnectedRetryCount;
     NSURLRequest * _request;
-    BOOL  _retryOnNetworkDisconnected;
-    unsigned int  _rootOfTrust;
-    NSString * _sessionId;
-    int  _state;
+    bool  _retryOnNetworkDisconnected;
+    unsigned long long  _rootOfTrust;
+    long long  _state;
 }
 
-@property (nonatomic, retain) NSString *assetName;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <ASTConnectionStatusDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSFileHandle *destinationFileHandle;
 @property (nonatomic, copy) id /* block */ didDownloadFile;
 @property (nonatomic, copy) id /* block */ didReceiveResponse;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int networkDisconnectedRetryCount;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long networkDisconnectedRetryCount;
 @property (nonatomic, retain) NSURLRequest *request;
-@property (nonatomic) BOOL retryOnNetworkDisconnected;
-@property (nonatomic, readonly) unsigned int rootOfTrust;
-@property (nonatomic, retain) NSString *sessionId;
-@property (nonatomic) int state;
+@property (nonatomic) bool retryOnNetworkDisconnected;
+@property (nonatomic, readonly) unsigned long long rootOfTrust;
+@property (nonatomic) long long state;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)assetName;
 - (id)delegate;
 - (id)destinationFileHandle;
 - (id /* block */)didDownloadFile;
 - (id /* block */)didReceiveResponse;
-- (id)generateRequest;
-- (id)initWithAssetName:(id)arg1 destinationFileHandle:(id)arg2 sessionId:(id)arg3;
-- (int)networkDisconnectedRetryCount;
+- (id)initWithAssetName:(id)arg1 destinationFileHandle:(id)arg2 sessionId:(id)arg3 allowsCellularAccess:(bool)arg4;
+- (long long)networkDisconnectedRetryCount;
 - (id)request;
-- (BOOL)retryOnNetworkDisconnected;
-- (unsigned int)rootOfTrust;
-- (id)sessionId;
-- (void)setAssetName:(id)arg1;
+- (bool)retryOnNetworkDisconnected;
+- (unsigned long long)rootOfTrust;
 - (void)setDelegate:(id)arg1;
 - (void)setDidDownloadFile:(id /* block */)arg1;
 - (void)setDidReceiveResponse:(id /* block */)arg1;
-- (void)setNetworkDisconnectedRetryCount:(int)arg1;
+- (void)setNetworkDisconnectedRetryCount:(long long)arg1;
 - (void)setRequest:(id)arg1;
-- (void)setRetryOnNetworkDisconnected:(BOOL)arg1;
-- (void)setSessionId:(id)arg1;
-- (void)setState:(int)arg1;
-- (int)state;
+- (void)setRetryOnNetworkDisconnected:(bool)arg1;
+- (void)setState:(long long)arg1;
+- (long long)state;
 
 @end

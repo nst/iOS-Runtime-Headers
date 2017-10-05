@@ -3,21 +3,21 @@
  */
 
 @interface PHImageManagerSettings : PHSettings {
-    BOOL  _allowCaching;
-    BOOL  _allowImageRequests;
+    bool  _allowCaching;
+    bool  _allowImageRequests;
 }
 
-@property (nonatomic) BOOL allowCaching;
-@property (nonatomic) BOOL allowImageRequests;
+@property (nonatomic) bool allowCaching;
+@property (nonatomic) bool allowImageRequests;
 
 + (id)settingsControllerModule;
 + (id)sharedSettings;
 
-- (BOOL)allowCaching;
-- (BOOL)allowImageRequests;
+- (bool)allowCaching;
+- (bool)allowImageRequests;
 - (id)parentSettings;
-- (void)setAllowCaching:(BOOL)arg1;
-- (void)setAllowImageRequests:(BOOL)arg1;
+- (void)setAllowCaching:(bool)arg1;
+- (void)setAllowImageRequests:(bool)arg1;
 - (void)setDefaultValues;
 
 @end

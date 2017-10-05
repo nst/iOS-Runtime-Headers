@@ -13,13 +13,12 @@
 - (void).cxx_destruct;
 - (void)_addFailingSamples:(id)arg1 toResultDictionary:(id)arg2;
 - (id)_failingSamples:(id)arg1 tester:(id)arg2;
-- (void)_postCorruptSearchableIndexNotificationWithErrorLog:(id)arg1 andState:(unsigned int)arg2;
 - (id)_verifySamples:(id)arg1;
 - (id)dataSource;
 - (id)initWithDataSource:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setSpotlightVerificationActivity:(id)arg1;
 - (id)spotlightVerificationActivity;
-- (unsigned int)verifyDataSamples;
+- (void)verifyDataSamplesWithCompletionHandler:(id /* block */)arg1 queue:(id)arg2;
 
 @end

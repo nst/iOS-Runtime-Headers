@@ -10,7 +10,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) id /* block */ playSoundAndLEDCompletion;
 @property (nonatomic, copy) id /* block */ playSoundCompletion;
 @property (retain) NSXPCConnection *serverConnection;
@@ -25,8 +25,8 @@
 - (void)playSoundAndLightsOnCompanionWithCompletion:(id /* block */)arg1;
 - (id /* block */)playSoundCompletion;
 - (void)playSoundOnCompanionWithCompletion:(id /* block */)arg1;
-- (void)playedSound:(BOOL)arg1;
-- (void)playedSoundAndLED:(BOOL)arg1;
+- (void)playedSound:(bool)arg1;
+- (void)playedSoundAndLED:(bool)arg1;
 - (id)serverConnection;
 - (void)setPlaySoundAndLEDCompletion:(id /* block */)arg1;
 - (void)setPlaySoundCompletion:(id /* block */)arg1;

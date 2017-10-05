@@ -7,14 +7,14 @@
 }
 
 @property (nonatomic, readonly) NSData *imageData;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } pixelSize;
-@property (getter=isPrerendered, nonatomic, readonly) BOOL prerendered;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } pixelSize;
+@property (getter=isPrerendered, nonatomic, readonly) bool prerendered;
 
 - (void)dealloc;
 - (void)finalize;
 - (id)imageData;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isPrerendered;
-- (struct CGSize { float x1; float x2; })pixelSize;
+- (bool)isPrerendered;
+- (struct CGSize { double x1; double x2; })pixelSize;
 
 @end

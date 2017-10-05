@@ -17,10 +17,10 @@
 
 @property (nonatomic) long long ageYears;
 @property (nonatomic) long long biologicalSex;
-@property (nonatomic) BOOL hasAgeYears;
-@property (nonatomic) BOOL hasBiologicalSex;
-@property (nonatomic) BOOL hasHeightCm;
-@property (nonatomic) BOOL hasWeightKg;
+@property (nonatomic) bool hasAgeYears;
+@property (nonatomic) bool hasBiologicalSex;
+@property (nonatomic) bool hasHeightCm;
+@property (nonatomic) bool hasWeightKg;
 @property (nonatomic) long long heightCm;
 @property (nonatomic) long long weightKg;
 
@@ -30,21 +30,21 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAgeYears;
-- (BOOL)hasBiologicalSex;
-- (BOOL)hasHeightCm;
-- (BOOL)hasWeightKg;
-- (unsigned int)hash;
+- (bool)hasAgeYears;
+- (bool)hasBiologicalSex;
+- (bool)hasHeightCm;
+- (bool)hasWeightKg;
+- (unsigned long long)hash;
 - (long long)heightCm;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAgeYears:(long long)arg1;
 - (void)setBiologicalSex:(long long)arg1;
-- (void)setHasAgeYears:(BOOL)arg1;
-- (void)setHasBiologicalSex:(BOOL)arg1;
-- (void)setHasHeightCm:(BOOL)arg1;
-- (void)setHasWeightKg:(BOOL)arg1;
+- (void)setHasAgeYears:(bool)arg1;
+- (void)setHasBiologicalSex:(bool)arg1;
+- (void)setHasHeightCm:(bool)arg1;
+- (void)setHasWeightKg:(bool)arg1;
 - (void)setHeightCm:(long long)arg1;
 - (void)setWeightKg:(long long)arg1;
 - (long long)weightKg;

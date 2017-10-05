@@ -15,7 +15,7 @@
 - (id)guestIdentifier;
 - (id)hostPlayerInternal;
 - (id)initWithHostPlayerInternal:(id)arg1 guestIdentifier:(id)arg2;
-- (BOOL)isGuestPlayer;
+- (bool)isGuestPlayer;
 - (id)playerID;
 - (void)setGuestIdentifier:(id)arg1;
 - (void)setHostPlayerInternal:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface PKPaymentSetupMoreInfoView : UIView {
-    int  _context;
+    long long  _context;
     UIImageView * _customImageView;
     PKTableHeaderView * _headerView;
     PKPaymentSetupMoreInfoItem * _moreInfoItem;
@@ -11,17 +11,17 @@
     PKPassView * _passView;
 }
 
-@property (nonatomic, readonly) int context;
+@property (nonatomic, readonly) long long context;
 @property (nonatomic, readonly) UIImageView *customImageView;
 @property (nonatomic, readonly) PKTableHeaderView *headerView;
 @property (nonatomic, readonly) PKPaymentSetupMoreInfoItem *moreInfoItem;
 @property (nonatomic, readonly) PKPaymentPass *pass;
 
 - (void).cxx_destruct;
-- (int)context;
+- (long long)context;
 - (id)customImageView;
 - (id)headerView;
-- (id)initWithMoreInfoItem:(id)arg1 paymentPass:(id)arg2 context:(int)arg3;
+- (id)initWithMoreInfoItem:(id)arg1 paymentPass:(id)arg2 context:(long long)arg3;
 - (void)layoutSubviews;
 - (id)moreInfoItem;
 - (id)pass;

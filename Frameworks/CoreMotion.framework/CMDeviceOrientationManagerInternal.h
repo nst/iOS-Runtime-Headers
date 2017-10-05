@@ -7,7 +7,7 @@
     id /* block */  fDeviceOrientationHandler;
     NSOperationQueue * fDeviceOrientationQueue;
     NSObject<OS_dispatch_semaphore> * fDeviceOrientationSemaphore;
-    BOOL  fDidSignalSemaphore;
+    bool  fDidSignalSemaphore;
     bool  fEnableOrientationNotification;
     struct Sample { 
         double timestamp; 

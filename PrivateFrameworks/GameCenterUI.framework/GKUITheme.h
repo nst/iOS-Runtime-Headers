@@ -6,8 +6,8 @@
     NSCache * _resourceCache;
 }
 
-@property (nonatomic, readonly) float formSheetCornerRadius;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } formSheetSize;
+@property (nonatomic, readonly) double formSheetCornerRadius;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } formSheetSize;
 @property (nonatomic, readonly, retain) GKNetworkImageSource *iconLeaderboardListSource;
 @property (nonatomic, readonly, retain) GKNetworkImageSource *iconLeaderboardSetListSource;
 @property (nonatomic, readonly, retain) UIImage *interactiveRatingStarsBackground;
@@ -23,7 +23,6 @@
 
 + (id)sharedTheme;
 
-- (id)_tabBarIconImageNamed:(id)arg1 selectedName:(id)arg2 selected:(BOOL)arg3;
 - (id)achievementsDefaultIcon;
 - (id)achievementsNotStartedIcon;
 - (id)addPlayerButtonImage;
@@ -45,8 +44,8 @@
 - (id)defaultLeaderboardIcon;
 - (id)defaultPlayerPhoto;
 - (id)eventIconImage;
-- (float)formSheetCornerRadius;
-- (struct CGSize { float x1; float x2; })formSheetSize;
+- (double)formSheetCornerRadius;
+- (struct CGSize { double x1; double x2; })formSheetSize;
 - (id)iconLeaderboardListSource;
 - (id)iconLeaderboardSetListSource;
 - (id)imageNamed:(id)arg1;
@@ -67,11 +66,6 @@
 - (id)resourceWithName:(id)arg1 missingHandler:(id /* block */)arg2;
 - (void)setResourceCache:(id)arg1;
 - (id)statusDotImage;
-- (id)tabbarIconChallengesSelected:(BOOL)arg1;
-- (id)tabbarIconFriendsSelected:(BOOL)arg1;
-- (id)tabbarIconGamesSelected:(BOOL)arg1;
-- (id)tabbarIconMeSelected:(BOOL)arg1;
-- (id)tabbarIconTurnsSelected:(BOOL)arg1;
 - (id)untreatedAchievementImageDetailSource;
 - (id)untreatedAchievementImageSource;
 

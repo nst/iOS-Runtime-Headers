@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraStreamSession : NSObject <HMFLogging> {
+@interface HMDCameraStreamSession : HMFObject <HMFLogging> {
     HMDCameraProtocolParameters * _protocolParameters;
     HMDCameraSessionID * _sessionID;
     HMDStreamingCapabilities * _streamingCapabilities;
@@ -12,7 +12,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HMDCameraProtocolParameters *protocolParameters;
 @property (nonatomic, readonly) HMDCameraSessionID *sessionID;
 @property (nonatomic, readonly) HMDStreamingCapabilities *streamingCapabilities;
@@ -23,7 +23,7 @@
 + (id)logCategory;
 
 - (void).cxx_destruct;
-- (id)initWithSessionID:(id)arg1 streamingTierType:(unsigned int)arg2 remoteCapabilities:(id)arg3 streamPreference:(id)arg4;
+- (id)initWithSessionID:(id)arg1 streamingTierType:(unsigned long long)arg2 remoteCapabilities:(id)arg3 streamPreference:(id)arg4;
 - (id)logIdentifier;
 - (id)negotiatedParameters;
 - (id)protocolParameters;

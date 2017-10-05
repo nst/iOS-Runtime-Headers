@@ -3,34 +3,34 @@
  */
 
 @interface BRCSyncOperationThrottle : NSObject <NSSecureCoding> {
-    NSString * _containerID;
     double  _delay;
-    BOOL  _isSyncDown;
+    bool  _isSyncDown;
     int  _lastErrorKind;
+    BRMangledID * _mangledID;
     double  _nextTry;
 }
 
-@property (nonatomic, retain) NSString *containerID;
 @property (nonatomic, readonly) double delay;
 @property (nonatomic, readonly) int lastErrorKind;
+@property (nonatomic, retain) BRMangledID *mangledID;
 @property (nonatomic, readonly) double nextTry;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)clear;
-- (id)containerID;
 - (double)delay;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithContainerID:(id)arg1 isSyncDown:(BOOL)arg2;
+- (id)initWithMangledID:(id)arg1 isSyncDown:(bool)arg2;
 - (int)lastErrorKind;
+- (id)mangledID;
 - (double)nextTry;
-- (void)setContainerID:(id)arg1;
+- (void)setMangledID:(id)arg1;
 - (void)updateAfterSchedulingTask;
 - (void)updateAfterSchedulingTaskWithMinimumDelay:(double)arg1;
-- (BOOL)updateForClearingOutOfQuota;
+- (bool)updateForClearingOutOfQuota;
 - (void)updateForError:(id)arg1;
 
 @end

@@ -22,7 +22,7 @@
 - (void)main;
 - (void)registerNotificationBlock:(id /* block */)arg1;
 - (void)registerNotificationBlock:(id /* block */)arg1 forProperties:(id)arg2;
-- (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
+- (bool)setProperty:(id)arg1 forKey:(id)arg2;
 - (void)timerFire:(id)arg1;
 - (void)waitForInitialization;
 

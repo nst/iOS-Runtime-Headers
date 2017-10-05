@@ -8,6 +8,6 @@
     Class  _localClass;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 
 @end

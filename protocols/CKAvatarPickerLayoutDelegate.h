@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)avatarPickerLayoutShouldShowTitle:(CKAvatarPickerLayout *)arg1;
+- (bool)avatarPickerLayoutShouldShowTitle:(CKAvatarPickerLayout *)arg1;
 
 @end

@@ -8,6 +8,6 @@
 
 - (void*)event;
 - (id)initWithEvent:(void*)arg1;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

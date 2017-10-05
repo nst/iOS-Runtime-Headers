@@ -4,6 +4,7 @@
 
 @interface SANPSetShuffleMode : SADomainCommand
 
+@property (nonatomic, copy) NSArray *hashedRouteUIDs;
 @property (nonatomic, copy) NSString *shuffleMode;
 
 + (id)setShuffleMode;
@@ -11,7 +12,9 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (id)hashedRouteUIDs;
+- (bool)requiresResponse;
+- (void)setHashedRouteUIDs:(id)arg1;
 - (void)setShuffleMode:(id)arg1;
 - (id)shuffleMode;
 

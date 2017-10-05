@@ -3,7 +3,7 @@
  */
 
 @interface HDHealthServicesServer : HDSubserver <HDHealthServicesServerInterface> {
-    <HKClientInterface> * _clientRemoteObjectProxy;
+    <HKHealthStoreClientInterface> * _clientRemoteObjectProxy;
     HDIdentifierTable * _healthDeviceSessionServerIDs;
     NSMutableSet * _healthServiceClosedSessionClientIDs;
     NSMutableSet * _healthServiceClosedSessionServerIDs;
@@ -14,10 +14,10 @@
     NSUUID * _subserverUUID;
 }
 
-@property (nonatomic, retain) <HKClientInterface> *clientRemoteObjectProxy;
+@property (nonatomic, retain) <HKHealthStoreClientInterface> *clientRemoteObjectProxy;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HDIdentifierTable *healthDeviceSessionServerIDs;
 @property (nonatomic, retain) NSMutableSet *healthServiceClosedSessionClientIDs;
 @property (nonatomic, retain) NSMutableSet *healthServiceClosedSessionServerIDs;
@@ -29,15 +29,16 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_closeDiscoveryBetweenServer:(unsigned int)arg1 andClient:(unsigned int)arg2;
-- (void)_closeSessionBetweenServer:(unsigned int)arg1 andClient:(unsigned int)arg2;
-- (unsigned int)_discoveryServerIdentifierForClientIdentifier:(unsigned int)arg1;
-- (unsigned int)_healthDeviceClientDiscoveryIdentifier:(unsigned int)arg1;
-- (unsigned int)_healthDeviceClientSessionIdentifier:(unsigned int)arg1;
-- (BOOL)_isClientSessionValid:(unsigned int)arg1;
-- (BOOL)_isServerSessionValid:(unsigned int)arg1;
-- (unsigned int)_sessionClientIdentifierForServerIdentifier:(unsigned int)arg1;
-- (unsigned int)_sessionServerIdentifierForClientIdentifier:(unsigned int)arg1;
+- (void)_closeDiscoveryBetweenServer:(unsigned long long)arg1 andClient:(unsigned long long)arg2;
+- (void)_closeSessionBetweenServer:(unsigned long long)arg1 andClient:(unsigned long long)arg2;
+- (unsigned long long)_discoveryServerIdentifierForClientIdentifier:(unsigned long long)arg1;
+- (id)_filterOnlyUserManageablePeripheralsFromServices:(id)arg1;
+- (unsigned long long)_healthDeviceClientDiscoveryIdentifier:(unsigned long long)arg1;
+- (unsigned long long)_healthDeviceClientSessionIdentifier:(unsigned long long)arg1;
+- (bool)_isClientSessionValid:(unsigned long long)arg1;
+- (bool)_isServerSessionValid:(unsigned long long)arg1;
+- (unsigned long long)_sessionClientIdentifierForServerIdentifier:(unsigned long long)arg1;
+- (unsigned long long)_sessionServerIdentifierForClientIdentifier:(unsigned long long)arg1;
 - (id)clientRemoteObjectProxy;
 - (id)healthDeviceSessionServerIDs;
 - (id)healthServiceClosedSessionClientIDs;
@@ -52,18 +53,18 @@
 - (void)remote_addPeripheral:(id)arg1 name:(id)arg2 forServices:(id)arg3 withCompletion:(id /* block */)arg4;
 - (void)remote_beginBluetoothStatusUpdates:(id /* block */)arg1 client:(id)arg2;
 - (void)remote_endBluetoothStatusUpdates;
-- (void)remote_endHealthServiceDiscovery:(unsigned int)arg1;
-- (void)remote_endHealthServiceSession:(unsigned int)arg1;
+- (void)remote_endHealthServiceDiscovery:(unsigned long long)arg1;
+- (void)remote_endHealthServiceSession:(unsigned long long)arg1;
 - (void)remote_fetchSupportedServiceIDsWithCompletion:(id /* block */)arg1;
 - (void)remote_getEnabledStatusForPeripheral:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)remote_getHealthServicePairingsWithHandler:(id /* block */)arg1;
-- (void)remote_getHealthServiceProperty:(id)arg1 forSession:(unsigned int)arg2 withHandler:(id /* block */)arg3;
+- (void)remote_getHealthPeripheralsWithFilter:(unsigned long long)arg1 handler:(id /* block */)arg2;
+- (void)remote_getHealthServiceProperty:(id)arg1 forSession:(unsigned long long)arg2 withHandler:(id /* block */)arg3;
 - (void)remote_getSupportedPropertyNamesWithHandler:(id /* block */)arg1;
-- (void)remote_performHealthServiceOperation:(id)arg1 onSession:(unsigned int)arg2 withParameters:(id)arg3 completion:(id /* block */)arg4;
+- (void)remote_performHealthServiceOperation:(id)arg1 onSession:(unsigned long long)arg2 withParameters:(id)arg3 completion:(id /* block */)arg4;
 - (void)remote_removePairingForHealthService:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)remote_removePeripheral:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)remote_setEnabledStatus:(BOOL)arg1 forPeripheral:(id)arg2 withCompletion:(id /* block */)arg3;
-- (void)remote_startHealthServiceDiscovery:(int)arg1 client:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)remote_setEnabledStatus:(bool)arg1 forPeripheral:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)remote_startHealthServiceDiscovery:(long long)arg1 client:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)remote_startHealthServiceSession:(id)arg1 client:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)setClientRemoteObjectProxy:(id)arg1;
 - (void)setHealthDeviceSessionServerIDs:(id)arg1;

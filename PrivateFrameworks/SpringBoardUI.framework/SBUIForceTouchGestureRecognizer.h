@@ -3,26 +3,26 @@
  */
 
 @interface SBUIForceTouchGestureRecognizer : UILongPressGestureRecognizer <UIInteractionProgressObserver> {
-    BOOL  _forceTouchCompleted;
+    bool  _forceTouchCompleted;
     double  _initialMediaTime;
     UIInteractionProgress * _interactionProgress;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL forceTouchCompleted;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool forceTouchCompleted;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) double pressDuration;
 @property (nonatomic, readonly) double relativeTouchForce;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) double touchForceVelocity;
 
 - (void).cxx_destruct;
-- (BOOL)_gestureRecognizerWillHandleTouches:(id)arg1;
+- (bool)_gestureRecognizerWillHandleTouches:(id)arg1;
 - (void)dealloc;
-- (BOOL)forceTouchCompleted;
+- (bool)forceTouchCompleted;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (void)interactionProgress:(id)arg1 didEnd:(BOOL)arg2;
+- (void)interactionProgress:(id)arg1 didEnd:(bool)arg2;
 - (double)pressDuration;
 - (double)relativeTouchForce;
 - (void)reset;

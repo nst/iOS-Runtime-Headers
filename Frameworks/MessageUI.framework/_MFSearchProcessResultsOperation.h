@@ -5,10 +5,10 @@
 @interface _MFSearchProcessResultsOperation : NSOperation {
     id /* block */  _completionBlock;
     <_MFSearchResultsConsumer> * _consumer;
-    unsigned int  _type;
+    unsigned long long  _type;
 }
 
-+ (id)operationWithResultsOfType:(unsigned int)arg1 completion:(id /* block */)arg2 consumer:(id)arg3;
++ (id)operationWithResultsOfType:(unsigned long long)arg1 completion:(id /* block */)arg2 consumer:(id)arg3;
 
 - (void)dealloc;
 - (void)main;

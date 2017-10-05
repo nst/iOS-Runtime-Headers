@@ -27,7 +27,7 @@
 @property (nonatomic, retain) NSDate *lastSubmittedDate;
 @property (nonatomic, retain) NSString *leaderboardSetIdentifier;
 @property (nonatomic, retain) NSString *localizedTitle;
-@property (nonatomic, readonly) unsigned int maxRange;
+@property (nonatomic, readonly) unsigned long long maxRange;
 @property (nonatomic) unsigned int maxRank;
 @property (nonatomic) unsigned int overallRank;
 @property (nonatomic) unsigned int overallRankCount;
@@ -42,14 +42,14 @@
 - (unsigned short)friendRank;
 - (unsigned short)friendRankCount;
 - (id)groupIdentifier;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)icons;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)lastSubmittedDate;
 - (id)leaderboardSetIdentifier;
 - (id)localizedTitle;
-- (unsigned int)maxRange;
+- (unsigned long long)maxRange;
 - (unsigned int)maxRank;
 - (unsigned int)overallRank;
 - (unsigned int)overallRankCount;

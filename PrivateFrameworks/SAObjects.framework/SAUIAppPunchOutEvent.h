@@ -9,7 +9,7 @@
 @property (nonatomic, copy) NSString *bundleId;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *originalCommandId;
 @property (nonatomic, copy) NSString *punchOutName;
 @property (nonatomic, copy) NSURL *punchOutUri;
@@ -28,6 +28,7 @@
 - (id)originalCommandId;
 - (id)punchOutName;
 - (id)punchOutUri;
+- (bool)requiresResponse;
 - (void)setAppDisplayName:(id)arg1;
 - (void)setBundleId:(id)arg1;
 - (void)setOriginalCommandId:(id)arg1;

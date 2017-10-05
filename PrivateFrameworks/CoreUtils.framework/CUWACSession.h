@@ -3,7 +3,7 @@
  */
 
 @interface CUWACSession : NSObject {
-    BOOL  _activateCalled;
+    bool  _activateCalled;
     NSString * _configuration;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     EasyConfigDevice * _easyConfigDevice;
@@ -32,7 +32,7 @@
     }  _easyConfigPreConfigMetrics;
     int  _easyConfigPreConfigState;
     int  _finishState;
-    BOOL  _invalidateCalled;
+    bool  _invalidateCalled;
     double  _joinSoftAPStartTime;
     int  _joinSoftAPState;
     NSString * _label;
@@ -60,12 +60,12 @@
 - (void)_runEasyConfigPreConfigStart;
 - (void)_runEasyConfigProgress:(int)arg1 info:(id)arg2;
 - (int)_runFinish;
-- (void)_runFinishRestored:(long)arg1;
+- (void)_runFinishRestored:(int)arg1;
 - (int)_runJoinSoftAP;
-- (void)_runJoinSoftAPFinished:(long)arg1;
+- (void)_runJoinSoftAPFinished:(int)arg1;
 - (void)_runJoinSoftAPStart;
 - (int)_runRestoreOriginalWiFi;
-- (void)_runRestoreOriginalWiFiFinished:(long)arg1;
+- (void)_runRestoreOriginalWiFiFinished:(int)arg1;
 - (void)_runRestoreOriginalWiFiStart;
 - (int)_runSaveOriginalWiFi;
 - (void)activate;

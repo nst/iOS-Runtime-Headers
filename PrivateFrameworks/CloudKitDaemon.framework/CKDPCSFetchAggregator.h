@@ -9,6 +9,7 @@
     NSOperationQueue * _queue;
     NSMutableArray * _queuedFetches;
     NSMutableArray * _runningFetches;
+    NSObject<OS_dispatch_source> * _timerSource;
 }
 
 @property (nonatomic) CKDClientContext *context;
@@ -17,13 +18,16 @@
 @property (nonatomic, retain) NSOperationQueue *queue;
 @property (nonatomic, retain) NSMutableArray *queuedFetches;
 @property (nonatomic, retain) NSMutableArray *runningFetches;
+@property (nonatomic, retain) NSObject<OS_dispatch_source> *timerSource;
 
 - (void).cxx_destruct;
 - (void)_lockedFetchesAreReady;
 - (id)_lockedGetQueuedFetchForOperation:(id)arg1 ofClass:(Class)arg2;
+- (void)_lockedRescheduleFetchTimer;
+- (void)_lockedTearDownFetchTimer;
 - (id)context;
 - (void)dealloc;
-- (BOOL)fetchRequestForExistingOperation:(id)arg1 isDependentOnOperation:(id)arg2;
+- (bool)fetchRequestForExistingOperation:(id)arg1 isDependentOnOperation:(id)arg2;
 - (id)fetchSource;
 - (id)init;
 - (id)initWithContext:(id)arg1;
@@ -40,5 +44,7 @@
 - (void)setQueue:(id)arg1;
 - (void)setQueuedFetches:(id)arg1;
 - (void)setRunningFetches:(id)arg1;
+- (void)setTimerSource:(id)arg1;
+- (id)timerSource;
 
 @end

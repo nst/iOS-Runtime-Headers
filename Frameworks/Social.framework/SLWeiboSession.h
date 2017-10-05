@@ -16,7 +16,7 @@
 @property (nonatomic, copy) id /* block */ connectionResetBlock;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) id /* block */ locationInformationChangedBlock;
 @property (readonly) Class superclass;
 
@@ -27,9 +27,9 @@
 - (void)acceptLocationUpdate:(id)arg1;
 - (void)beginPotentialLocationUse;
 - (id)cachedProfileImageDataForScreenName:(id)arg1;
-- (int)characterCountForText:(id)arg1 shortenedURLCost:(int)arg2;
+- (long long)characterCountForText:(id)arg1 shortenedURLCost:(long long)arg2;
 - (id /* block */)connectionResetBlock;
-- (BOOL)countMediaAttachmentsTowardCharacterCount;
+- (bool)countMediaAttachmentsTowardCharacterCount;
 - (void)deferExpensiveOperations;
 - (void)endPotentialLocationUse;
 - (void)ensureUserRecordStore;
@@ -41,13 +41,14 @@
 - (void)getPermaLinkFromLastStatusUpdate:(id /* block */)arg1;
 - (id)init;
 - (id /* block */)locationInformationChangedBlock;
+- (void)logDidSendStatusWithText:(id)arg1 attachments:(id)arg2 locationAttached:(bool)arg3 fromProcessWithPID:(int)arg4;
 - (void)recordsMatchingPrefixString:(id)arg1 completion:(id /* block */)arg2;
 - (void)sendStatus:(id)arg1 completion:(id /* block */)arg2;
 - (id)serviceAccountTypeIdentifier;
 - (void)setActiveAccountIdentifier:(id)arg1;
 - (void)setClientInfo:(id)arg1;
 - (void)setConnectionResetBlock:(id /* block */)arg1;
-- (void)setGeotagAccountSetting:(BOOL)arg1;
+- (void)setGeotagAccountSetting:(bool)arg1;
 - (void)setGeotagStatus:(int)arg1;
 - (void)setLocationInformationChangedBlock:(id /* block */)arg1;
 - (void)showSettingsIfNeeded;

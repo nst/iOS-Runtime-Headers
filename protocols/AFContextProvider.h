@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)allowContextProvider:(id <AFContextProvider>)arg1;
+- (bool)allowContextProvider:(id <AFContextProvider>)arg1;
 - (NSArray *)getCurrentContext;
 
 @end

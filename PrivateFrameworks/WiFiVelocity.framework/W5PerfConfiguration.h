@@ -5,54 +5,54 @@
 @interface W5PerfConfiguration : NSObject <NSCopying, NSSecureCoding> {
     NSString * _additionalClientParameters;
     NSString * _additionalServerParameters;
-    int  _bandwidth;
+    long long  _bandwidth;
     W5Peer * _client;
-    int  _duration;
-    int  _numberOfClientStreams;
-    BOOL  _overAWDL;
+    long long  _duration;
+    long long  _numberOfClientStreams;
+    bool  _overAWDL;
     W5Peer * _server;
-    BOOL  _upload;
-    BOOL  _usingUDP;
+    bool  _upload;
+    bool  _usingUDP;
 }
 
 @property (nonatomic, copy) NSString *additionalClientParameters;
 @property (nonatomic, copy) NSString *additionalServerParameters;
-@property (nonatomic) int bandwidth;
+@property (nonatomic) long long bandwidth;
 @property (nonatomic, copy) W5Peer *client;
-@property (nonatomic) int duration;
-@property (nonatomic) int numberOfClientStreams;
-@property (nonatomic) BOOL overAWDL;
+@property (nonatomic) long long duration;
+@property (nonatomic) long long numberOfClientStreams;
+@property (nonatomic) bool overAWDL;
 @property (nonatomic, copy) W5Peer *server;
-@property (nonatomic) BOOL upload;
-@property (nonatomic) BOOL usingUDP;
+@property (nonatomic) bool upload;
+@property (nonatomic) bool usingUDP;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)additionalClientParameters;
 - (id)additionalServerParameters;
-- (int)bandwidth;
+- (long long)bandwidth;
 - (id)client;
-- (BOOL)conformsToProtocol:(id)arg1;
+- (bool)conformsToProtocol:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (int)duration;
+- (long long)duration;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (int)numberOfClientStreams;
-- (BOOL)overAWDL;
+- (long long)numberOfClientStreams;
+- (bool)overAWDL;
 - (id)server;
 - (void)setAdditionalClientParameters:(id)arg1;
 - (void)setAdditionalServerParameters:(id)arg1;
-- (void)setBandwidth:(int)arg1;
+- (void)setBandwidth:(long long)arg1;
 - (void)setClient:(id)arg1;
-- (void)setDuration:(int)arg1;
-- (void)setNumberOfClientStreams:(int)arg1;
-- (void)setOverAWDL:(BOOL)arg1;
+- (void)setDuration:(long long)arg1;
+- (void)setNumberOfClientStreams:(long long)arg1;
+- (void)setOverAWDL:(bool)arg1;
 - (void)setServer:(id)arg1;
-- (void)setUpload:(BOOL)arg1;
-- (void)setUsingUDP:(BOOL)arg1;
-- (BOOL)upload;
-- (BOOL)usingUDP;
+- (void)setUpload:(bool)arg1;
+- (void)setUsingUDP:(bool)arg1;
+- (bool)upload;
+- (bool)usingUDP;
 
 @end

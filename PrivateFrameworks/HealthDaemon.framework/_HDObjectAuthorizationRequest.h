@@ -21,7 +21,7 @@
 - (id)identifier;
 - (id)initForSamples:(id)arg1 completion:(id /* block */)arg2;
 - (void)invokeCompletionHandlerWithAuthorizedSamples:(id)arg1 error:(id)arg2;
-- (void)invokeCompletionWithSuccess:(BOOL)arg1 sourceEntity:(id)arg2 profile:(id)arg3 error:(id)arg4;
+- (void)invokeCompletionWithSuccess:(bool)arg1 sourceEntity:(id)arg2 profile:(id)arg3 error:(id)arg4;
 - (id)samples;
 - (id)samplesRequiringAuthorization;
 - (void)setAuthorizationRecords:(id)arg1;

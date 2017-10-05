@@ -6,14 +6,12 @@
 
 + (id)sharedPreferences;
 
-- (BOOL)DESLotteryWinOverrideIsEnabled;
+- (bool)DESLotteryWinOverrideIsEnabled;
 - (id)DESPolicyCDNOverride;
-- (BOOL)DESRecognitionIsEnabled;
-- (BOOL)DESRecordingIsEnabled;
-- (void)setDESLotteryWinOverrideIsEnabled:(BOOL)arg1;
+- (bool)DESRecordingAlwaysIsEnabled;
+- (void)setDESLotteryWinOverrideIsEnabled:(bool)arg1;
 - (void)setDESPolicyCDNOverride:(id)arg1;
-- (void)setDESRecognitionIsEnabled:(BOOL)arg1;
-- (void)setDESRecordingIsEnabled:(BOOL)arg1;
+- (void)setDESRecordingAlwaysIsEnabled:(bool)arg1;
 - (void)synchronize;
 
 @end

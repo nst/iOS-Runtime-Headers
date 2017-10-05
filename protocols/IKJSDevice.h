@@ -8,8 +8,8 @@
 - (NSString *)advertisingIdentifier;
 - (NSString *)appIdentifier;
 - (NSString *)appVersion;
-- (BOOL)isAdvertisingTrackingEnabled;
-- (BOOL)isNetworkReachable;
+- (bool)isAdvertisingTrackingEnabled;
+- (bool)isNetworkReachable;
 - (NSString *)model;
 - (NSString *)productType;
 - (NSString *)systemVersion;

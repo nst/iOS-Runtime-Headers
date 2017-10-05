@@ -10,11 +10,11 @@
 - (NSNumber *)isOpenEnded;
 - (void)setGoalValue:(NSNumber *)arg1;
 - (void)setIsOpenEnded:(NSNumber *)arg1;
-- (void)setWorkoutGoalUnitType:(int)arg1;
-- (void)setWorkoutLocationType:(int)arg1;
+- (void)setWorkoutGoalUnitType:(long long)arg1;
+- (void)setWorkoutLocationType:(long long)arg1;
 - (void)setWorkoutName:(INSpeakableString *)arg1;
-- (int)workoutGoalUnitType;
-- (int)workoutLocationType;
+- (long long)workoutGoalUnitType;
+- (long long)workoutLocationType;
 - (INSpeakableString *)workoutName;
 
 @end

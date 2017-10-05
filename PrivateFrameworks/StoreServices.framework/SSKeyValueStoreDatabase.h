@@ -7,7 +7,7 @@
 }
 
 - (void)_dispatchBlockAsync:(id /* block */)arg1;
-- (id)_initReadOnly:(BOOL)arg1;
+- (id)_initReadOnly:(bool)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)initReadOnly;

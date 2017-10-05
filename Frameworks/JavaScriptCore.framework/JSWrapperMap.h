@@ -10,15 +10,14 @@
     }  m_cachedJSWrappers;
     NSMapTable * m_cachedObjCWrappers;
     NSMutableDictionary * m_classMap;
-    JSContext * m_context;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)classInfoForClass:(Class)arg1;
 - (void)dealloc;
-- (id)initWithContext:(id)arg1;
-- (id)jsWrapperForObject:(id)arg1;
-- (id)objcWrapperForJSValueRef:(struct OpaqueJSValue { }*)arg1;
+- (id)initWithGlobalContextRef:(struct OpaqueJSContext { }*)arg1;
+- (id)jsWrapperForObject:(id)arg1 inContext:(id)arg2;
+- (id)objcWrapperForJSValueRef:(struct OpaqueJSValue { }*)arg1 inContext:(id)arg2;
 
 @end

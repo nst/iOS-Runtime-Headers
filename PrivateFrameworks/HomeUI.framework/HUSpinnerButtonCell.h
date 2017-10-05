@@ -3,30 +3,31 @@
  */
 
 @interface HUSpinnerButtonCell : HUButtonCell <HUCellProtocol> {
-    BOOL  _showSpinner;
+    bool  _showSpinner;
     UIActivityIndicatorView * _spinner;
-    BOOL  _useFullWidthSeparator;
+    bool  _useFullWidthSeparator;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HFItem *item;
-@property (nonatomic) BOOL showSpinner;
+@property (nonatomic) <HUResizableCellDelegate> *resizingDelegate;
+@property (nonatomic) bool showSpinner;
 @property (nonatomic, retain) UIActivityIndicatorView *spinner;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL useFullWidthSeparator;
+@property (nonatomic) bool useFullWidthSeparator;
 
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_separatorFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_separatorFrame;
 - (void)createSpinner;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)prepareForReuse;
-- (void)setShowSpinner:(BOOL)arg1;
+- (void)setShowSpinner:(bool)arg1;
 - (void)setSpinner:(id)arg1;
-- (void)setUseFullWidthSeparator:(BOOL)arg1;
-- (BOOL)showSpinner;
+- (void)setUseFullWidthSeparator:(bool)arg1;
+- (bool)showSpinner;
 - (id)spinner;
-- (BOOL)useFullWidthSeparator;
+- (bool)useFullWidthSeparator;
 
 @end

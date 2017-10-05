@@ -9,6 +9,8 @@
 - (id)colorForTouchContentSelected;
 - (id)colorForTouchFocusLayer;
 - (id)colorForTouchFocusLayerSelected;
-- (BOOL)showBezelInTouch;
+- (bool)shouldUpdateButtonOpacityForKnobUnfocused;
+- (bool)showBezelInTouch;
+- (id)tintColorForUnhighlightedTextLabel;
 
 @end

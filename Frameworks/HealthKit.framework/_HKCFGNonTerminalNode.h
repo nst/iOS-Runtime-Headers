@@ -10,7 +10,7 @@
 
 @property (nonatomic, readonly) _HKCFGReplacementRule *rule;
 
-+ (id)nodeWithChildren:(id)arg1 rule:(id)arg2 rangeOfString:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
++ (id)nodeWithChildren:(id)arg1 rule:(id)arg2 rangeOfString:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
 
 - (void).cxx_destruct;
 - (id)evaluate;

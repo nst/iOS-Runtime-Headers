@@ -9,9 +9,9 @@
     LPImage * _image;
     LPCaptionBarPresentationProperties * _mediaBottomCaptionBar;
     LPCaptionBarPresentationProperties * _mediaTopCaptionBar;
-    BOOL  _preliminary;
+    bool  _preliminary;
     NSString * _quotedText;
-    int  _style;
+    long long  _style;
     LPVideo * _video;
 }
 
@@ -19,14 +19,14 @@
 @property (nonatomic, retain) LPCaptionBarPresentationProperties *captionBar;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) LPiTunesPlaybackInformation *iTunesPlaybackInformation;
 @property (nonatomic, retain) LPImage *image;
 @property (nonatomic, retain) LPCaptionBarPresentationProperties *mediaBottomCaptionBar;
 @property (nonatomic, retain) LPCaptionBarPresentationProperties *mediaTopCaptionBar;
-@property (getter=isPreliminary, nonatomic) BOOL preliminary;
+@property (getter=isPreliminary, nonatomic) bool preliminary;
 @property (nonatomic, copy) NSString *quotedText;
-@property (nonatomic) int style;
+@property (nonatomic) long long style;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) LPVideo *video;
 
@@ -35,7 +35,7 @@
 - (id)captionBar;
 - (id)iTunesPlaybackInformation;
 - (id)image;
-- (BOOL)isPreliminary;
+- (bool)isPreliminary;
 - (id)mediaBottomCaptionBar;
 - (id)mediaTopCaptionBar;
 - (id)quotedText;
@@ -45,11 +45,11 @@
 - (void)setImage:(id)arg1;
 - (void)setMediaBottomCaptionBar:(id)arg1;
 - (void)setMediaTopCaptionBar:(id)arg1;
-- (void)setPreliminary:(BOOL)arg1;
+- (void)setPreliminary:(bool)arg1;
 - (void)setQuotedText:(id)arg1;
-- (void)setStyle:(int)arg1;
+- (void)setStyle:(long long)arg1;
 - (void)setVideo:(id)arg1;
-- (int)style;
+- (long long)style;
 - (id)video;
 
 @end

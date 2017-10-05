@@ -4,16 +4,20 @@
 
 @interface SiriCoreErrorInfo : NSObject {
     NSError * _error;
-    BOOL  _isPeerConnectionError;
+    bool  _isPeerConnectionError;
+    bool  _isPeerNotNearbyError;
 }
 
 @property (nonatomic, retain) NSError *error;
-@property (nonatomic) BOOL isPeerConnectionError;
+@property (nonatomic) bool isPeerConnectionError;
+@property (nonatomic) bool isPeerNotNearbyError;
 
 - (void).cxx_destruct;
 - (id)error;
-- (BOOL)isPeerConnectionError;
+- (bool)isPeerConnectionError;
+- (bool)isPeerNotNearbyError;
 - (void)setError:(id)arg1;
-- (void)setIsPeerConnectionError:(BOOL)arg1;
+- (void)setIsPeerConnectionError:(bool)arg1;
+- (void)setIsPeerNotNearbyError:(bool)arg1;
 
 @end

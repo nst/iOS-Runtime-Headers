@@ -9,10 +9,11 @@
 @property (nonatomic, copy) NSArray *callbacks;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *metricsContext;
 @property (nonatomic, copy) NSString *refId;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) NSNumber *usefulnessScore;
 
 + (id)baseClientBoundCommand;
 + (id)baseClientBoundCommandWithDictionary:(id)arg1 context:(id)arg2;
@@ -22,9 +23,12 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)metricsContext;
-- (BOOL)requiresResponse;
+- (bool)mutatingCommand;
+- (bool)requiresResponse;
 - (void)setAppId:(id)arg1;
 - (void)setCallbacks:(id)arg1;
 - (void)setMetricsContext:(id)arg1;
+- (void)setUsefulnessScore:(id)arg1;
+- (id)usefulnessScore;
 
 @end

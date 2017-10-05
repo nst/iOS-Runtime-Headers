@@ -7,12 +7,12 @@
     SKUITrendingSearchPageView * _pageView;
     <SKUITrendingSearchPageViewDelegate> * _trendingSearchDelegate;
     SKUITrendingSearchProvider * _trendingSearchProvider;
-    BOOL  _trendingSearchesVisible;
+    bool  _trendingSearchesVisible;
 }
 
 @property (nonatomic) <SKUITrendingSearchPageViewDelegate> *trendingSearchDelegate;
 @property (nonatomic, retain) SKUITrendingSearchProvider *trendingSearchProvider;
-@property (nonatomic) BOOL trendingSearchesVisible;
+@property (nonatomic) bool trendingSearchesVisible;
 
 - (void).cxx_destruct;
 - (void)_reloadData;
@@ -21,9 +21,9 @@
 - (void)layoutSubviews;
 - (void)setTrendingSearchDelegate:(id)arg1;
 - (void)setTrendingSearchProvider:(id)arg1;
-- (void)setTrendingSearchesVisible:(BOOL)arg1;
+- (void)setTrendingSearchesVisible:(bool)arg1;
 - (id)trendingSearchDelegate;
 - (id)trendingSearchProvider;
-- (BOOL)trendingSearchesVisible;
+- (bool)trendingSearchesVisible;
 
 @end

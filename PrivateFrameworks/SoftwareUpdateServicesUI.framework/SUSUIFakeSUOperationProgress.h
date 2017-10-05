@@ -4,7 +4,7 @@
 
 @interface SUSUIFakeSUOperationProgress : SUOperationProgress
 
-- (BOOL)isDone;
+- (bool)isDone;
 - (float)normalizedPercentComplete;
 - (float)percentComplete;
 - (id)phase;

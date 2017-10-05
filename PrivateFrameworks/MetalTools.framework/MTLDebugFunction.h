@@ -8,9 +8,13 @@
 
 @property (nonatomic, retain) MTLFunctionConstantValues *constantValues;
 
-- (void).cxx_destruct;
 - (id)constantValues;
-- (id)formattedDescription:(unsigned int)arg1;
+- (void)dealloc;
+- (id)formattedDescription:(unsigned long long)arg1;
+- (id)newArgumentEncoderWithBufferIndex:(unsigned long long)arg1;
+- (id)newArgumentEncoderWithBufferIndex:(unsigned long long)arg1 reflection:(id*)arg2;
+- (id)newIndirectArgumentEncoderWithBufferIndex:(unsigned long long)arg1;
+- (id)newIndirectArgumentEncoderWithBufferIndex:(unsigned long long)arg1 reflection:(id*)arg2;
 - (void)setConstantValues:(id)arg1;
 
 @end

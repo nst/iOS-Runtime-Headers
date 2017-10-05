@@ -19,6 +19,6 @@
 - (id)requestBody;
 - (id)setElements;
 - (void)setSetElements:(id)arg1;
-- (void)setSupportForEvents:(BOOL)arg1 tasks:(BOOL)arg2;
+- (void)setSupportForEvents:(bool)arg1 tasks:(bool)arg2;
 
 @end

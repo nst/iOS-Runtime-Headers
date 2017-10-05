@@ -3,36 +3,36 @@
  */
 
 @interface MSStickerBrowserViewLayoutSpec : NSObject {
-    int  _interfaceOrientation;
+    long long  _interfaceOrientation;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _itemSize;
-    float  _minimumInteritemSpacing;
+    double  _minimumInteritemSpacing;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _sectionInset;
-    int  _stickerSize;
+    long long  _stickerSize;
 }
 
-@property (nonatomic, readonly) int interfaceOrientation;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } itemSize;
-@property (nonatomic, readonly) float minimumInteritemSpacing;
-@property (nonatomic, readonly) float minimumLineSpacing;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } sectionInset;
-@property (nonatomic, readonly) int stickerSize;
+@property (nonatomic, readonly) long long interfaceOrientation;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } itemSize;
+@property (nonatomic, readonly) double minimumInteritemSpacing;
+@property (nonatomic, readonly) double minimumLineSpacing;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } sectionInset;
+@property (nonatomic, readonly) long long stickerSize;
 
-+ (id)specWithSizeClass:(int)arg1 interfaceOrientation:(int)arg2;
++ (id)specWithSizeClass:(long long)arg1 interfaceOrientation:(long long)arg2;
 
-- (id)initWithSize:(int)arg1 interfaceOrientation:(int)arg2;
-- (int)interfaceOrientation;
-- (struct CGSize { float x1; float x2; })itemSize;
-- (float)minimumInteritemSpacing;
-- (float)minimumLineSpacing;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionInset;
-- (int)stickerSize;
+- (id)initWithSize:(long long)arg1 interfaceOrientation:(long long)arg2;
+- (long long)interfaceOrientation;
+- (struct CGSize { double x1; double x2; })itemSize;
+- (double)minimumInteritemSpacing;
+- (double)minimumLineSpacing;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionInset;
+- (long long)stickerSize;
 
 @end

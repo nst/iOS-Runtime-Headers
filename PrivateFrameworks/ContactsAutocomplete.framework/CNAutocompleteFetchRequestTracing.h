@@ -6,7 +6,7 @@
 
 + (id)lengthOfSearchString:(id)arg1;
 + (void)sendMessageTracersForRequest:(id)arg1;
-+ (id)signatureForSearchType:(unsigned int)arg1;
++ (id)signatureForSearchType:(unsigned long long)arg1;
 + (id)wordCountForSearchString:(id)arg1;
 
 @end

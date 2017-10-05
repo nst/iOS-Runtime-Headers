@@ -3,20 +3,25 @@
  */
 
 @interface VCPCNNMetalContext : NSObject {
+    <MTLCommandBuffer> * _commandBuffer;
     <MTLCommandQueue> * _commandQueue;
     <MTLDevice> * _device;
 }
 
+@property (retain) <MTLCommandBuffer> *commandBuffer;
 @property (retain) <MTLCommandQueue> *commandQueue;
 @property (retain) <MTLDevice> *device;
 
-+ (BOOL)supportGPU;
-+ (BOOL)supportNeon;
++ (bool)supportGPU;
++ (bool)supportVectorForward;
 
 - (void).cxx_destruct;
+- (id)commandBuffer;
 - (id)commandQueue;
 - (id)device;
+- (int)execute;
 - (id)initNewContext;
+- (void)setCommandBuffer:(id)arg1;
 - (void)setCommandQueue:(id)arg1;
 - (void)setDevice:(id)arg1;
 

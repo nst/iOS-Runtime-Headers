@@ -19,7 +19,7 @@
 - (id)imagesIsolationQueue;
 - (id)init;
 - (id)nameAtIndexPath:(id)arg1;
-- (unsigned int)numberOfAssets;
+- (unsigned long long)numberOfAssets;
 - (void)setFetchResult:(id)arg1;
 - (void)setImages:(id)arg1;
 - (void)setImagesIsolationQueue:(id)arg1;

@@ -5,13 +5,13 @@
 
 @required
 
-- (void)callbackAskUserAQuestionResult:(int)arg1 result:(long)arg2;
-- (void)callbackAskUserForPasswordResult:(long)arg1 password:(NSString *)arg2 remember:(int)arg3;
-- (void)callbackAskUserToChooseFromStringListResult:(long)arg1 selectedString:(NSString *)arg2;
+- (void)callbackAskUserAQuestionResult:(int)arg1 result:(int)arg2;
+- (void)callbackAskUserForPasswordResult:(int)arg1 password:(NSString *)arg2 remember:(int)arg3;
+- (void)callbackAskUserToChooseFromStringListResult:(int)arg1 selectedString:(NSString *)arg2;
 
 @optional
 
-- (void)callbackAskUserForSetupCodeResult:(long)arg1 password:(NSString *)arg2;
-- (void)callbackAskUserForUncertifiedResult:(long)arg1;
+- (void)callbackAskUserForSetupCodeResult:(int)arg1 password:(NSString *)arg2;
+- (void)callbackAskUserForUncertifiedResult:(int)arg1;
 
 @end

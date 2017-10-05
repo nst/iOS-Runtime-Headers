@@ -5,15 +5,15 @@
 @interface ChartUpdater : YQLRequest {
     StockChartData * _currentChartData;
     <ChartUpdaterDelegate> * _delegate;
-    int  _interval;
+    long long  _interval;
     Stock * _stock;
     id /* block */  _updateCompletionHandler;
 }
 
 @property (nonatomic) <ChartUpdaterDelegate> *delegate;
-@property (readonly) int interval;
+@property (readonly) long long interval;
 
-+ (id)_rangeStringForInterval:(int)arg1;
++ (id)_rangeStringForInterval:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)aggregateDictionaryDomain;
@@ -22,12 +22,12 @@
 - (id)delegate;
 - (void)didParseData;
 - (void)failWithError:(id)arg1;
-- (int)interval;
+- (long long)interval;
 - (void)parseData:(id)arg1;
 - (void)parseDataSeriesDictionary:(id)arg1;
-- (void)parseDataSeriesDictionary:(id)arg1 interval:(int)arg2;
+- (void)parseDataSeriesDictionary:(id)arg1 interval:(long long)arg2;
 - (void)setDelegate:(id)arg1;
-- (BOOL)updateChartForStock:(id)arg1 interval:(int)arg2;
-- (BOOL)updateChartForStock:(id)arg1 interval:(int)arg2 withCompletion:(id /* block */)arg3;
+- (bool)updateChartForStock:(id)arg1 interval:(long long)arg2;
+- (bool)updateChartForStock:(id)arg1 interval:(long long)arg2 withCompletion:(id /* block */)arg3;
 
 @end

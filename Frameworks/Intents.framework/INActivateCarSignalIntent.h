@@ -7,25 +7,24 @@
 @property (nonatomic, readonly, copy) INSpeakableString *carName;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) unsigned int signals;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) unsigned long long signals;
 @property (readonly) Class superclass;
 
 - (id)_dictionaryRepresentation;
 - (id)_metadata;
-- (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
+- (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
 - (id)_typedBackingStore;
 - (id)carName;
-- (id)description;
 - (id)domain;
-- (id)initWithCarName:(id)arg1 signals:(unsigned int)arg2;
+- (id)initWithCarName:(id)arg1 signals:(unsigned long long)arg2;
 - (id)parametersByName;
 - (void)setCarName:(id)arg1;
 - (void)setDomain:(id)arg1;
 - (void)setParametersByName:(id)arg1;
-- (void)setSignals:(unsigned int)arg1;
+- (void)setSignals:(unsigned long long)arg1;
 - (void)setVerb:(id)arg1;
-- (unsigned int)signals;
+- (unsigned long long)signals;
 - (id)verb;
 
 @end

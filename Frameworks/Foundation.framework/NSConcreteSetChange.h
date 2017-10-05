@@ -3,13 +3,13 @@
  */
 
 @interface NSConcreteSetChange : NSSetChange {
-    unsigned int  _changeType;
+    unsigned long long  _changeType;
     id  _value;
 }
 
-- (unsigned int)changeType;
+- (unsigned long long)changeType;
 - (void)dealloc;
-- (id)initWithType:(unsigned int)arg1 object:(id)arg2;
+- (id)initWithType:(unsigned long long)arg1 object:(id)arg2;
 - (id)value;
 
 @end

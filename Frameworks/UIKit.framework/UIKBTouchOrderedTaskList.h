@@ -4,36 +4,36 @@
 
 @interface UIKBTouchOrderedTaskList : NSObject {
     NSValue * _currentTouchPoint;
-    BOOL  _ignoredOnBegin;
+    bool  _ignoredOnBegin;
     double  _originalStartTime;
-    unsigned int  _pathIndex;
+    unsigned long long  _pathIndex;
     NSMutableArray * _touchStateTasks;
     NSObject<OS_dispatch_queue> * _touchStateTasksQueue;
     NSUUID * _touchUUID;
 }
 
 @property (nonatomic, readonly, retain) NSValue *currentTouchPoint;
-@property (nonatomic, readonly) BOOL hasTasks;
-@property (nonatomic) BOOL ignoredOnBegin;
+@property (nonatomic, readonly) bool hasTasks;
+@property (nonatomic) bool ignoredOnBegin;
 @property (nonatomic, readonly) double originalStartTime;
-@property (nonatomic, readonly) unsigned int pathIndex;
+@property (nonatomic, readonly) unsigned long long pathIndex;
 @property (nonatomic, readonly, retain) NSUUID *touchUUID;
 
-+ (id)taskListForTouchUUID:(id)arg1 withPathIndex:(unsigned int)arg2;
++ (id)taskListForTouchUUID:(id)arg1 withPathIndex:(unsigned long long)arg2;
 
 - (void)addTask:(id)arg1;
 - (id)currentTouchPoint;
 - (void)dealloc;
-- (BOOL)executeTasksInView:(id)arg1 withBlock:(id /* block */)arg2;
-- (id)firstTouchStateForUITouchPhase:(int)arg1;
-- (BOOL)hasTasks;
-- (BOOL)ignoredOnBegin;
-- (id)initWithTouchUUID:(id)arg1 withPathIndex:(unsigned int)arg2;
-- (BOOL)isExecutingFirstTask;
+- (bool)executeTasksInView:(id)arg1 withBlock:(id /* block */)arg2;
+- (id)firstTouchStateForUITouchPhase:(long long)arg1;
+- (bool)hasTasks;
+- (bool)ignoredOnBegin;
+- (id)initWithTouchUUID:(id)arg1 withPathIndex:(unsigned long long)arg2;
+- (bool)isExecutingFirstTask;
 - (double)originalStartTime;
-- (unsigned int)pathIndex;
+- (unsigned long long)pathIndex;
 - (void)removeTasksMatchingFilter:(id /* block */)arg1;
-- (void)setIgnoredOnBegin:(BOOL)arg1;
+- (void)setIgnoredOnBegin:(bool)arg1;
 - (id)touchUUID;
 
 @end

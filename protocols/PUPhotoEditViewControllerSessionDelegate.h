@@ -5,6 +5,6 @@
 
 @required
 
-- (void)photoEditController:(PUPhotoEditViewController *)arg1 didFinishEditingSessionForAsset:(id <PUEditableAsset>)arg2 completed:(BOOL)arg3;
+- (void)photoEditController:(PUPhotoEditViewController *)arg1 didFinishEditingSessionForAsset:(id <PUEditableAsset>)arg2 completed:(bool)arg3;
 
 @end

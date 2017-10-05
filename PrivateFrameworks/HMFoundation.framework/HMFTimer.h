@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
  */
 
-@interface HMFTimer : NSObject {
+@interface HMFTimer : HMFObject {
     NSObject<OS_dispatch_queue> * _clientQueue;
     <HMFTimerDelegate> * _delegate;
     unsigned long long  _leeway;
-    unsigned int  _options;
-    BOOL  _running;
+    unsigned long long  _options;
+    bool  _running;
     double  _timeInterval;
     NSObject<OS_dispatch_source> * _timer;
 }
@@ -15,8 +15,8 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 @property <HMFTimerDelegate> *delegate;
 @property (nonatomic, readonly) unsigned long long leeway;
-@property (nonatomic, readonly) unsigned int options;
-@property (getter=isRunning, nonatomic) BOOL running;
+@property (nonatomic, readonly) unsigned long long options;
+@property (getter=isRunning, nonatomic) bool running;
 @property (nonatomic, readonly) double timeInterval;
 @property (nonatomic, readonly) NSObject<OS_dispatch_source> *timer;
 
@@ -33,17 +33,17 @@
 - (id)debugDescription;
 - (id)delegate;
 - (id)description;
-- (id)descriptionWithPointer:(BOOL)arg1;
+- (id)descriptionWithPointer:(bool)arg1;
 - (void)fire;
 - (id)init;
-- (id)initWithTimeInterval:(double)arg1 options:(unsigned int)arg2;
-- (BOOL)isRunning;
+- (id)initWithTimeInterval:(double)arg1 options:(unsigned long long)arg2;
+- (bool)isRunning;
 - (void)kick;
 - (unsigned long long)leeway;
-- (unsigned int)options;
+- (unsigned long long)options;
 - (void)resume;
 - (void)setDelegate:(id)arg1;
-- (void)setRunning:(BOOL)arg1;
+- (void)setRunning:(bool)arg1;
 - (id)shortDescription;
 - (void)suspend;
 - (double)timeInterval;

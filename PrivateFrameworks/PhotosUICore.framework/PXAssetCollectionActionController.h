@@ -4,18 +4,18 @@
 
 @interface PXAssetCollectionActionController : NSObject {
     PXAssetCollectionActionManager * __assetCollectionActionManager;
-    BOOL  __needsUpdateActions;
+    bool  __needsUpdateActions;
     <PXActionPerformerDelegate> * _actionPerformerDelegate;
     PHAssetCollection * _assetCollection;
     PXDisplayTitleInfo * _displayTitleInfo;
     struct { 
-        BOOL assetCollectionActionManager; 
+        bool assetCollectionActionManager; 
     }  _needsUpdateFlags;
     NSArray * _previewActions;
 }
 
 @property (setter=_setAssetCollectionActionManager:, nonatomic, retain) PXAssetCollectionActionManager *_assetCollectionActionManager;
-@property (setter=_setNeedsUpdateActions:, nonatomic) BOOL _needsUpdateActions;
+@property (setter=_setNeedsUpdateActions:, nonatomic) bool _needsUpdateActions;
 @property (nonatomic) <PXActionPerformerDelegate> *actionPerformerDelegate;
 @property (nonatomic, retain) PHAssetCollection *assetCollection;
 @property (nonatomic, retain) PXDisplayTitleInfo *displayTitleInfo;
@@ -25,10 +25,10 @@
 - (id)_assetCollectionActionManager;
 - (void)_invalidateActions;
 - (void)_invalidateAssetCollectionActionManager;
-- (BOOL)_needsUpdate;
-- (BOOL)_needsUpdateActions;
+- (bool)_needsUpdate;
+- (bool)_needsUpdateActions;
 - (void)_setAssetCollectionActionManager:(id)arg1;
-- (void)_setNeedsUpdateActions:(BOOL)arg1;
+- (void)_setNeedsUpdateActions:(bool)arg1;
 - (void)_setPreviewActions:(id)arg1;
 - (void)_updateActionsIfNeeded;
 - (void)_updateIfNeeded;

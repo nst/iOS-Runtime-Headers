@@ -22,15 +22,15 @@
 - (void)_incrementRefreshCountForWaiterID:(id)arg1 operationName:(id)arg2;
 - (id)_init;
 - (void)_reloadBabysitterProperties;
-- (BOOL)accountShouldContinue:(id)arg1;
-- (BOOL)accountWithIDShouldContinue:(id)arg1;
+- (bool)accountShouldContinue:(id)arg1;
+- (bool)accountWithIDShouldContinue:(id)arg1;
 - (id)buildVersion;
 - (void)dealloc;
 - (id)failedWaiters;
 - (void)giveAccountWithIDAnotherChance:(id)arg1;
 - (id)init;
 - (id)refreshingWaiters;
-- (BOOL)registerAccount:(id)arg1 forOperationWithName:(id)arg2;
+- (bool)registerAccount:(id)arg1 forOperationWithName:(id)arg2;
 - (id)restrictedWaiters;
 - (void)setBuildVersion:(id)arg1;
 - (void)setFailedWaiters:(id)arg1;

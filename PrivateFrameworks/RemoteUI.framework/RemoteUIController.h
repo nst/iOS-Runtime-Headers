@@ -17,7 +17,7 @@
     RUIPage * _pageOriginatingLoad;
     NSURLSessionConfiguration * _sessionConfiguration;
     RUIStyle * _style;
-    BOOL  _testMode;
+    bool  _testMode;
     NSString * _userAgentString;
 }
 
@@ -26,7 +26,7 @@
 @property (nonatomic) <RemoteUIControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSArray *displayedPages;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) UIViewController *hostViewController;
 @property (nonatomic, copy) id /* block */ loadCompletion;
 @property (nonatomic, retain) RUILoader *loader;
@@ -39,7 +39,7 @@
 - (void).cxx_destruct;
 - (id)UUID;
 - (void)_beginListeningForSMSAutoFill;
-- (void)_didPresentObjectModel:(id)arg1 modally:(BOOL)arg2;
+- (void)_didPresentObjectModel:(id)arg1 modally:(bool)arg2;
 - (void)_didRemoveObjectModel:(id)arg1;
 - (void)_enableTestMode;
 - (void)_loadURL:(id)arg1 fromObjectModel:(id)arg2 postBody:(id)arg3;
@@ -48,21 +48,22 @@
 - (id)_modalObjectModels;
 - (void)_modalViewControllerWasPopped:(id)arg1;
 - (void)_objectModel:(id)arg1 receivedToken:(id)arg2;
-- (BOOL)_objectModelPageWantsHSATokens:(id)arg1;
+- (bool)_objectModelPageWantsHSATokens:(id)arg1;
 - (id)_objectModelStack;
 - (id)_objectModels;
 - (void)_removePreviousObjectModelsBackToIdentifier:(id)arg1;
 - (void)_replaceObjectModelWithObjectModel:(id)arg1;
 - (void)_setHandlerWithKey:(id)arg1 forElementsMatching:(id /* block */)arg2 handler:(id /* block */)arg3;
-- (BOOL)_shouldAnimate;
+- (bool)_shouldAnimate;
 - (void)_stopListeningForSMSAutoFill;
-- (void)_willPresentObjectModel:(id)arg1 modally:(BOOL)arg2;
+- (void)_willPresentObjectModel:(id)arg1 modally:(bool)arg2;
 - (void)dealloc;
 - (id)delegate;
-- (id)dismissObjectModelsAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
+- (id)dismissObjectModelsAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (id)displayedPages;
 - (id)hostViewController;
 - (id)init;
+- (bool)isListeningForHSATokenAutoFill;
 - (id /* block */)loadCompletion;
 - (void)loadData:(id)arg1 baseURL:(id)arg2;
 - (void)loadRequest:(id)arg1;
@@ -76,16 +77,16 @@
 - (void)loader:(id)arg1 receivedObjectModel:(id)arg2 topActionSignal:(id)arg3;
 - (id)loader:(id)arg1 willLoadRequest:(id)arg2 redirectResponse:(id)arg3;
 - (id)navigationController;
-- (void)objectModel:(id)arg1 didNavigateBackFromController:(id)arg2 withGesture:(BOOL)arg3;
+- (void)objectModel:(id)arg1 didNavigateBackFromController:(id)arg2 withGesture:(bool)arg3;
 - (void)objectModel:(id)arg1 elementDidChange:(id)arg2;
 - (void)objectModel:(id)arg1 pressedLink:(id)arg2 httpMethod:(id)arg3 completion:(id /* block */)arg4;
-- (BOOL)objectModel:(id)arg1 shouldDisplayNamedElement:(id)arg2 page:(id)arg3;
+- (bool)objectModel:(id)arg1 shouldDisplayNamedElement:(id)arg2 page:(id)arg3;
 - (void)objectModel:(id)arg1 willLoadLinkURL:(id)arg2 attributes:(id)arg3;
 - (id)parentViewControllerForObjectModel:(id)arg1;
 - (id)parser:(id)arg1 createPageWithName:(id)arg2 attributes:(id)arg3;
-- (id)popObjectModelAnimated:(BOOL)arg1;
-- (id)popObjectModelAnimated:(BOOL)arg1 stopListeningForHSATokens:(BOOL)arg2;
-- (void)pushObjectModel:(id)arg1 animated:(BOOL)arg2;
+- (id)popObjectModelAnimated:(bool)arg1;
+- (id)popObjectModelAnimated:(bool)arg1 stopListeningForHSATokens:(bool)arg2;
+- (void)pushObjectModel:(id)arg1 animated:(bool)arg2;
 - (void)refreshTopModelWithModel:(id)arg1;
 - (void)removeHandlerForKey:(id)arg1;
 - (id)sessionConfiguration;
@@ -103,8 +104,10 @@
 - (void)setStyle:(id)arg1;
 - (void)setUUID:(id)arg1;
 - (void)setUserAgentString:(id)arg1;
+- (void)startListeningForHSATokenAutoFill;
+- (void)stopListeningForHSATokenAutoFill;
 - (id)style;
-- (unsigned int)supportedInterfaceOrientationsForObjectModel:(id)arg1 page:(id)arg2;
+- (unsigned long long)supportedInterfaceOrientationsForObjectModel:(id)arg1 page:(id)arg2;
 - (id)userAgentString;
 - (id)viewControllerForAlertPresentation;
 

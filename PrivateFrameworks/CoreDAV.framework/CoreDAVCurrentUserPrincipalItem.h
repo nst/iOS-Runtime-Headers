@@ -12,7 +12,7 @@
 
 + (id)copyParseRules;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)href;
 - (id)init;

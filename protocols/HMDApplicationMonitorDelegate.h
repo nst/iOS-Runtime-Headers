@@ -5,7 +5,7 @@
 
 @optional
 
-- (void)applicationMonitorDidChangeActiveHomeKitAppStatus:(BOOL)arg1;
+- (void)applicationMonitorDidChangeActiveHomeKitAppStatus:(bool)arg1;
 - (void)applicationMonitorDidChangeAppState:(HMDProcessInfo *)arg1;
 
 @end

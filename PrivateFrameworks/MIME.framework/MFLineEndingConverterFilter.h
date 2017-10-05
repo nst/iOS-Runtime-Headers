@@ -3,10 +3,10 @@
  */
 
 @interface MFLineEndingConverterFilter : MFBaseFilterDataConsumer {
-    BOOL  _lastCR;
+    bool  _lastCR;
 }
 
-- (int)appendData:(id)arg1;
+- (long long)appendData:(id)arg1;
 - (void)done;
 
 @end

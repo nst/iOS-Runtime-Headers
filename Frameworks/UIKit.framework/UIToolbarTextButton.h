@@ -8,13 +8,18 @@
     NSString * _title;
 }
 
-- (void)_UIAppearance_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
-- (void)_setPressed:(BOOL)arg1;
-- (void)_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (void)_UIAppearance_setTitleTextAttributes:(id)arg1 forState:(unsigned long long)arg2;
+- (void)_setPressed:(bool)arg1;
+- (void)_setTitleTextAttributes:(id)arg1 forState:(unsigned long long)arg2;
 - (void)dealloc;
-- (id)initWithTitle:(id)arg1 pressedTitle:(id)arg2 withFont:(id)arg3 withBarStyle:(int)arg4 withStyle:(int)arg5 withTitleWidth:(float)arg6 possibleTitles:(id)arg7 withToolbarTintColor:(id)arg8;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
+- (id)initWithTitle:(id)arg1 pressedTitle:(id)arg2 withFont:(id)arg3 withBarStyle:(long long)arg4 withStyle:(long long)arg5 withTitleWidth:(double)arg6 possibleTitles:(id)arg7 withToolbarTintColor:(id)arg8;
 - (void)layoutSubviews;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

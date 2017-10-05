@@ -12,7 +12,7 @@
 @property (nonatomic, copy) NSDictionary *colors;
 @property (nonatomic, readonly) unsigned int version;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)URL;

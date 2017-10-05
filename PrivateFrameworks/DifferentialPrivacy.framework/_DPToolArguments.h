@@ -6,17 +6,17 @@
     NSString * _arguments;
     NSString * _command;
     NSString * _databasePath;
-    BOOL  _readWriteAccess;
     NSString * _recordKey;
-    BOOL  _verbose;
+    bool  _verbose;
+    bool  _writeOK;
 }
 
 @property (nonatomic, readonly, copy) NSString *arguments;
 @property (nonatomic, readonly, copy) NSString *command;
 @property (nonatomic, readonly, copy) NSString *databasePath;
-@property (nonatomic, readonly) BOOL readWriteAccess;
 @property (nonatomic, readonly, copy) NSString *recordKey;
-@property (nonatomic, readonly) BOOL verbose;
+@property (nonatomic, readonly) bool verbose;
+@property (nonatomic, readonly) bool writeOK;
 
 + (id)usage;
 
@@ -28,8 +28,8 @@
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
 - (id)job;
-- (BOOL)readWriteAccess;
 - (id)recordKey;
-- (BOOL)verbose;
+- (bool)verbose;
+- (bool)writeOK;
 
 @end

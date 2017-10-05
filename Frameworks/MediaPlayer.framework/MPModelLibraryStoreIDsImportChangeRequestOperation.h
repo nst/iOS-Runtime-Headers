@@ -5,13 +5,13 @@
 @interface MPModelLibraryStoreIDsImportChangeRequestOperation : MPAsyncOperation {
     MPMediaLibrary * _mediaLibrary;
     id /* block */  _responseHandler;
-    BOOL  _shouldLibraryAdd;
+    bool  _shouldLibraryAdd;
     NSArray * _storeIDs;
 }
 
 @property (nonatomic, retain) MPMediaLibrary *mediaLibrary;
 @property (nonatomic, copy) id /* block */ responseHandler;
-@property (nonatomic) BOOL shouldLibraryAdd;
+@property (nonatomic) bool shouldLibraryAdd;
 @property (nonatomic, copy) NSArray *storeIDs;
 
 - (void).cxx_destruct;
@@ -20,9 +20,9 @@
 - (id /* block */)responseHandler;
 - (void)setMediaLibrary:(id)arg1;
 - (void)setResponseHandler:(id /* block */)arg1;
-- (void)setShouldLibraryAdd:(BOOL)arg1;
+- (void)setShouldLibraryAdd:(bool)arg1;
 - (void)setStoreIDs:(id)arg1;
-- (BOOL)shouldLibraryAdd;
+- (bool)shouldLibraryAdd;
 - (id)storeIDs;
 
 @end

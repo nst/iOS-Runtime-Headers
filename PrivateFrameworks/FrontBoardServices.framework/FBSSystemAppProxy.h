@@ -9,9 +9,9 @@
 + (id)sharedInstance;
 
 - (void)_handleConnect:(id)arg1;
-- (void)_sendMessageType:(int)arg1 withMessage:(id /* block */)arg2 withReplyHandler:(id /* block */)arg3 waitForReply:(BOOL)arg4;
+- (void)_sendMessageType:(long long)arg1 withMessage:(id /* block */)arg2 withReplyHandler:(id /* block */)arg3 waitForReply:(bool)arg4;
 - (void)activeInterfaceOrientationWithCompletion:(id /* block */)arg1;
-- (void)applicationBundleID:(id)arg1 requestBrightness:(float)arg2 completion:(id /* block */)arg3;
+- (void)applicationBundleID:(id)arg1 requestBrightness:(double)arg2 completion:(id /* block */)arg3;
 - (void)badgeValueForBundleID:(id)arg1 completion:(id /* block */)arg2;
 - (void)canActivateApplication:(id)arg1 withResult:(id /* block */)arg2;
 - (void)checkInUIApplication;
@@ -21,7 +21,7 @@
 - (void)deleteAllSnapshotsForApplication:(id)arg1;
 - (void)fireCompletion:(id /* block */)arg1 bundleIDResult:(id)arg2 error:(id)arg3;
 - (void)fireCompletion:(id /* block */)arg1 error:(id)arg2;
-- (void)fireCompletion:(id /* block */)arg1 openAppErrorCode:(int)arg2;
+- (void)fireCompletion:(id /* block */)arg1 openAppErrorCode:(long long)arg2;
 - (void)fireCompletion:(id /* block */)arg1 pidResult:(int)arg2 error:(id)arg3;
 - (void)handleMessage:(id)arg1 withType:(long long)arg2;
 - (id)init;
@@ -36,7 +36,7 @@
 - (void)shutdownWithOptions:(id)arg1;
 - (void)suspendCurrentApplication;
 - (void)systemApplicationBundleIdentifierWithResult:(id /* block */)arg1;
-- (void)terminateApplication:(id)arg1 forReason:(int)arg2 andReport:(BOOL)arg3 withDescription:(id)arg4 completion:(id /* block */)arg5;
-- (void)terminateApplicationGroup:(int)arg1 forReason:(int)arg2 andReport:(BOOL)arg3 withDescription:(id)arg4 completion:(id /* block */)arg5;
+- (void)terminateApplication:(id)arg1 forReason:(int)arg2 andReport:(bool)arg3 withDescription:(id)arg4 completion:(id /* block */)arg5;
+- (void)terminateApplicationGroup:(int)arg1 forReason:(int)arg2 andReport:(bool)arg3 withDescription:(id)arg4 completion:(id /* block */)arg5;
 
 @end

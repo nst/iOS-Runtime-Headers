@@ -2,32 +2,30 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface _HKCurrentActivitySummaryQuery : HKQuery {
+@interface _HKCurrentActivitySummaryQuery : HKQuery <HKCurrentActivitySummaryQueryClientInterface> {
     NSDictionary * _collectionIntervals;
     id /* block */  _updateHandler;
 }
 
 @property (getter=_collectionIntervals, setter=_setCollectionIntervals:, nonatomic, copy) NSDictionary *collectionIntervals;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
-// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
-
-+ (Class)_queryServerDataObjectClass;
++ (id)clientInterfaceProtocol;
++ (void)configureClientInterface:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_collectionIntervals;
-- (void)_queue_cleanupAfterDeactivation;
-- (void)_queue_configureQueryServerDataObject:(id)arg1;
-- (id /* block */)_queue_errorHandler;
-- (BOOL)_queue_shouldStayAliveAfterInitialResults;
-- (void)_queue_validate;
-- (BOOL)_requiresValidSampleType;
 - (void)_setCollectionIntervals:(id)arg1;
-- (void)deliverActivitySummaries:(id)arg1 queryUUID:(id)arg2;
+- (void)client_deliverActivitySummaries:(id)arg1 queryUUID:(id)arg2;
 - (id)initWithUpdateHandler:(id /* block */)arg1;
-
-// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
-
-+ (Class)hd_queryServerClass;
-+ (BOOL)hd_requiresPrivateEntitlements;
+- (void)queue_connectToQueryServerWithHealthStore:(id)arg1 activationUUID:(id)arg2 completion:(id /* block */)arg3;
+- (void)queue_deliverError:(id)arg1;
+- (void)queue_populateConfiguration:(id)arg1;
+- (void)queue_queryDidDeactivate:(id)arg1;
+- (bool)queue_shouldDeactivateAfterInitialResults;
+- (void)queue_validate;
 
 @end

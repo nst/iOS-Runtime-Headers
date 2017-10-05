@@ -7,19 +7,19 @@
     NSMutableDictionary * _storeNameToStoreExportContext;
     PFUbiquityLocation * _ubiquityRootLocation;
     NSMutableDictionary * _ubiquityRootPathToStack;
-    BOOL  _useLocalStorage;
+    bool  _useLocalStorage;
 }
 
 @property (nonatomic, readonly) NSString *localPeerID;
-@property (nonatomic) BOOL useLocalStorage;
+@property (nonatomic) bool useLocalStorage;
 
 - (void)dealloc;
 - (id)description;
 - (id)initWithLocalPeerID:(id)arg1 andUbiquityRootLocation:(id)arg2;
 - (id)localPeerID;
-- (void)setUseLocalStorage:(BOOL)arg1;
+- (void)setUseLocalStorage:(bool)arg1;
 - (id)storeExportContextForStore:(id)arg1;
 - (id)storeExportContextForStoreName:(id)arg1;
-- (BOOL)useLocalStorage;
+- (bool)useLocalStorage;
 
 @end

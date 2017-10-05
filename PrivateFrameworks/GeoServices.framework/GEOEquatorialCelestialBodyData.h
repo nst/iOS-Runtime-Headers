@@ -11,7 +11,7 @@
 @property (nonatomic, readonly) double rightAscension;
 
 - (double)declination;
-- (id)initWithDate:(id)arg1 body:(int)arg2;
+- (id)initWithDate:(id)arg1 body:(long long)arg2;
 - (double)rightAscension;
 
 @end

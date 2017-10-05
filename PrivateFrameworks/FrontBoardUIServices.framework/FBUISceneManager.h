@@ -3,13 +3,14 @@
  */
 
 @interface FBUISceneManager : NSObject <FBUISceneManager> {
+    FBSDisplayMonitor * _displayMonitor;
     NSMutableDictionary * _sceneHostsByID;
     NSMutableDictionary * _workspacesByID;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)dealloc;
@@ -17,7 +18,7 @@
 - (void)invalidateSceneWorkspace:(id)arg1;
 - (void)registerSceneWorkspace:(id)arg1;
 - (void)workspace:(id)arg1 createSceneWithName:(id)arg2 specification:(id)arg3;
-- (void)workspace:(id)arg1 destroySceneWithIdentity:(id)arg2;
-- (id)workspace:(id)arg1 identityForSceneWithName:(id)arg2 specification:(id)arg3;
+- (void)workspace:(id)arg1 destroySceneWithIdentifier:(id)arg2;
+- (id)workspace:(id)arg1 sceneIdentifierForName:(id)arg2;
 
 @end

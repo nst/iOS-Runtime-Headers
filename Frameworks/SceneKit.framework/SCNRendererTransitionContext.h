@@ -17,10 +17,11 @@
 @property (nonatomic, retain) SKTransition *transition;
 @property (nonatomic) double transitionStartTime;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)outgoingPointOfView;
 - (id)outgoingScene;
-- (id)prepareRendererAtIndex:(int)arg1 withScene:(id)arg2 renderSize:(struct CGSize { float x1; float x2; })arg3 pointOfView:(id)arg4 parentRenderer:(id)arg5;
+- (id)prepareRendererAtIndex:(int)arg1 withScene:(id)arg2 renderSize:(struct CGSize { double x1; double x2; })arg3 pointOfView:(id)arg4 parentRenderer:(id)arg5;
 - (void)setOutgoingPointOfView:(id)arg1;
 - (void)setOutgoingScene:(id)arg1;
 - (void)setTransition:(id)arg1;

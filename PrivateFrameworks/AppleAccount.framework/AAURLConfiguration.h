@@ -9,6 +9,7 @@
 @property (nonatomic, readonly) NSString *aboutURL;
 @property (nonatomic, readonly) NSString *acceptChildTransferURL;
 @property (nonatomic, readonly) NSString *acceptFamilyInviteURL;
+@property (nonatomic, readonly) NSString *acceptFamilyInviteV2URL;
 @property (nonatomic, readonly) NSString *accountCreationUIURL;
 @property (nonatomic, readonly) NSString *accountCreationURL;
 @property (nonatomic, readonly) NSString *accountManagementUIURL;
@@ -30,6 +31,7 @@
 @property (nonatomic, readonly) NSString *emailLookupURL;
 @property (nonatomic, readonly) NSString *existingAppleIDTermsUIURL;
 @property (nonatomic, readonly) NSString *familyEligibilityURL;
+@property (nonatomic, readonly) NSString *familyInviteSentV2URL;
 @property (nonatomic, readonly) NSString *familyLearnMoreURL;
 @property (nonatomic, readonly) NSString *familyMemberDetailsUIURL;
 @property (nonatomic, readonly) NSString *familyPaymentCardUIURL;
@@ -37,6 +39,7 @@
 @property (nonatomic, readonly) NSString *familySetupUIURL;
 @property (nonatomic, readonly) NSString *familyUIURL;
 @property (nonatomic, readonly) NSString *fetchAccountSettingsURL;
+@property (nonatomic, readonly) NSString *fetchFamilyInviteV2URL;
 @property (nonatomic, readonly) NSString *finishProvisioningURL;
 @property (nonatomic, readonly) NSString *fmipAuthenticate;
 @property (nonatomic, readonly) NSString *genericTermsURL;
@@ -48,6 +51,7 @@
 @property (nonatomic, readonly) NSString *getMyPhotoURL;
 @property (nonatomic, readonly) NSString *grandslamURL;
 @property (nonatomic, readonly) NSString *iForgotUIURL;
+@property (nonatomic, readonly) NSString *initiateFamilyV2URL;
 @property (nonatomic, readonly) NSString *initiateValidateEmailURL;
 @property (nonatomic, readonly) NSString *loginDelegatesURL;
 @property (nonatomic, readonly) NSString *loginOrCreateDelegatesURL;
@@ -66,6 +70,7 @@
 @property (nonatomic, readonly) NSString *signInURL;
 @property (nonatomic, readonly) NSString *signingSessionCertURL;
 @property (nonatomic, readonly) NSString *signingSessionURL;
+@property (nonatomic, readonly) NSString *startFamilyInviteV2URL;
 @property (nonatomic, readonly) NSString *syncMachineURL;
 @property (nonatomic, readonly) NSString *unregisterDeviceURL;
 @property (nonatomic, readonly) NSString *updateAccountUIURL;
@@ -85,6 +90,7 @@
 - (id)aboutURL;
 - (id)acceptChildTransferURL;
 - (id)acceptFamilyInviteURL;
+- (id)acceptFamilyInviteV2URL;
 - (id)accountCreationUIURL;
 - (id)accountCreationURL;
 - (id)accountManagementUIURL;
@@ -106,6 +112,7 @@
 - (id)emailLookupURL;
 - (id)existingAppleIDTermsUIURL;
 - (id)familyEligibilityURL;
+- (id)familyInviteSentV2URL;
 - (id)familyLearnMoreURL;
 - (id)familyMemberDetailsUIURL;
 - (id)familyPaymentCardUIURL;
@@ -113,6 +120,7 @@
 - (id)familySetupUIURL;
 - (id)familyUIURL;
 - (id)fetchAccountSettingsURL;
+- (id)fetchFamilyInviteV2URL;
 - (id)finishProvisioningURL;
 - (id)fmipAuthenticate;
 - (id)genericTermsURL;
@@ -125,6 +133,7 @@
 - (id)grandslamURL;
 - (id)iForgotUIURL;
 - (id)initWithDictionary:(id)arg1;
+- (id)initiateFamilyV2URL;
 - (id)initiateValidateEmailURL;
 - (id)loginDelegatesURL;
 - (id)loginOrCreateDelegatesURL;
@@ -143,6 +152,7 @@
 - (id)signInURL;
 - (id)signingSessionCertURL;
 - (id)signingSessionURL;
+- (id)startFamilyInviteV2URL;
 - (id)syncMachineURL;
 - (id)unregisterDeviceURL;
 - (id)updateAccountUIURL;

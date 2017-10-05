@@ -5,23 +5,23 @@
 @interface SKTileSet : NSObject <NSCoding, NSCopying> {
     SKTileGroup * _defaultTileGroup;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _defaultTileSize;
     NSMutableArray * _definitions;
     NSMutableArray * _groups;
     NSString * _name;
     NSArray * _stamps;
-    unsigned int  _type;
+    unsigned long long  _type;
 }
 
 @property (nonatomic, retain) SKTileGroup *defaultTileGroup;
-@property (nonatomic) struct CGSize { float x1; float x2; } defaultTileSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } defaultTileSize;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, retain) NSArray *stamps;
 @property (nonatomic, readonly) NSArray *tileDefinitions;
 @property (nonatomic, copy) NSArray *tileGroups;
-@property (nonatomic) unsigned int type;
+@property (nonatomic) unsigned long long type;
 
 + (void)clearTileSetTableCache;
 + (id)findTileSetInBundleNamed:(id)arg1;
@@ -29,7 +29,7 @@
 + (id)tileSetFromURL:(id)arg1;
 + (id)tileSetNamed:(id)arg1;
 + (id)tileSetWithTileGroups:(id)arg1;
-+ (id)tileSetWithTileGroups:(id)arg1 tileSetType:(unsigned int)arg2;
++ (id)tileSetWithTileGroups:(id)arg1 tileSetType:(unsigned long long)arg2;
 
 - (void).cxx_destruct;
 - (void)calcDefaultTileSize;
@@ -38,15 +38,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)defaultTileGroup;
-- (struct CGSize { float x1; float x2; })defaultTileSize;
+- (struct CGSize { double x1; double x2; })defaultTileSize;
 - (void)encodeWithCoder:(id)arg1;
-- (id)findTileDefinitionForGroup:(id)arg1 withGroupAdjacency:(unsigned int*)arg2;
-- (id)findTileDefinitionsForGroup:(id)arg1 withGroupAdjacency:(unsigned int*)arg2;
-- (id)getCenterTileDefinitionForGroup:(id)arg1 withRequiredOutputGroupAdjacency:(unsigned int*)arg2;
+- (id)findTileDefinitionForGroup:(id)arg1 withGroupAdjacency:(unsigned long long*)arg2;
+- (id)findTileDefinitionsForGroup:(id)arg1 withGroupAdjacency:(unsigned long long*)arg2;
+- (id)getCenterTileDefinitionForGroup:(id)arg1 withRequiredOutputGroupAdjacency:(unsigned long long*)arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTileGroups:(id)arg1;
-- (id)initWithTileGroups:(id)arg1 tileSetType:(unsigned int)arg2;
+- (id)initWithTileGroups:(id)arg1 tileSetType:(unsigned long long)arg2;
 - (void)lookForMissingDefinitionsInGroups;
 - (id)name;
 - (void)observeAllTileDefinitions;
@@ -54,16 +54,16 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)removeTileDefinitionObservers:(id)arg1;
 - (void)setDefaultTileGroup:(id)arg1;
-- (void)setDefaultTileSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setDefaultTileSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setGroupParentPointers;
 - (void)setName:(id)arg1;
 - (void)setStamps:(id)arg1;
 - (void)setTileGroups:(id)arg1;
-- (void)setType:(unsigned int)arg1;
+- (void)setType:(unsigned long long)arg1;
 - (id)stamps;
 - (id)tileDefinitions;
 - (id)tileGroups;
-- (unsigned int)type;
+- (unsigned long long)type;
 - (void)unobserveAllTileDefinitions;
 - (void)updateTileDefinitionIDsInGroupRules;
 

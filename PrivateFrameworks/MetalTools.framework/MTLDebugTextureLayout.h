@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) MTLDebugDevice *debugDevice;
 @property (nonatomic, readonly, copy) MTLTextureDescriptor *descriptor;
 
-- (void).cxx_destruct;
+- (void)dealloc;
 - (id)debugDevice;
 - (id)descriptor;
 - (id)initWithBaseTextureLayout:(id)arg1 device:(id)arg2 descriptor:(id)arg3;

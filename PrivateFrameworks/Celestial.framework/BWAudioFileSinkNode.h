@@ -12,11 +12,10 @@
         long long epoch; 
     }  _curFileDuration;
     unsigned long long  _curFileSize;
-    BOOL  _didBeginFileWriterSession;
+    bool  _didBeginFileWriterSession;
     struct OpaqueFigFormatWriter { } * _formatWriter;
     char * _parentPath;
     NSObject<OS_dispatch_queue> * _propertySyncQueue;
-    BOOL  _recordingIsSubjectToDiskSpaceQuota;
     FigCaptureAudioFileRecordingSettings * _settings;
     FigStateMachine * _stateMachine;
     int  _trackID;
@@ -24,13 +23,13 @@
 
 + (void)initialize;
 
-- (long)_applyRecordingLimits;
-- (long)_handleMarkerBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
-- (long)_setupFileWriter;
+- (int)_applyRecordingLimits;
+- (int)_handleMarkerBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
+- (int)_setupFileWriter;
 - (void)_setupMinFreeDiskSpace;
 - (void)_setupStateMachine;
-- (void)_stopRecordingWithError:(long)arg1;
-- (long)_teardownFileWriter;
+- (void)_stopRecordingWithError:(int)arg1;
+- (int)_teardownFileWriter;
 - (void)_updateFilePropertiesForSbuf:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;

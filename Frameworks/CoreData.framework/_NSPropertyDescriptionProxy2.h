@@ -4,8 +4,8 @@
 
 @interface _NSPropertyDescriptionProxy2 : _NSPropertyDescriptionProxy
 
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
+- (bool)_isDeallocating;
+- (bool)_tryRetain;
 - (Class)classForArchiver;
 - (Class)classForCoder;
 - (oneway void)release;

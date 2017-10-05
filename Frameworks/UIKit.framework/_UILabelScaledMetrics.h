@@ -3,43 +3,47 @@
  */
 
 @interface _UILabelScaledMetrics : NSObject {
-    float  _actualScaleFactor;
-    float  _baselineOffset;
+    double  _actualScaleFactor;
+    double  _baselineOffset;
+    long long  _measuredNumberOfLines;
     NSAttributedString * _scaledAttributedText;
-    float  _scaledBaselineOffset;
-    float  _scaledLineHeight;
+    double  _scaledBaselineOffset;
+    double  _scaledLineHeight;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _scaledSize;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _targetSize;
 }
 
-@property (nonatomic) float actualScaleFactor;
-@property (nonatomic) float baselineOffset;
+@property (nonatomic) double actualScaleFactor;
+@property (nonatomic) double baselineOffset;
+@property (nonatomic) long long measuredNumberOfLines;
 @property (nonatomic, retain) NSAttributedString *scaledAttributedText;
-@property (nonatomic) float scaledBaselineOffset;
-@property (nonatomic) float scaledLineHeight;
-@property (nonatomic) struct CGSize { float x1; float x2; } scaledSize;
-@property (nonatomic) struct CGSize { float x1; float x2; } targetSize;
+@property (nonatomic) double scaledBaselineOffset;
+@property (nonatomic) double scaledLineHeight;
+@property (nonatomic) struct CGSize { double x1; double x2; } scaledSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } targetSize;
 
 - (void).cxx_destruct;
-- (float)actualScaleFactor;
-- (float)baselineOffset;
+- (double)actualScaleFactor;
+- (double)baselineOffset;
+- (long long)measuredNumberOfLines;
 - (id)scaledAttributedText;
-- (float)scaledBaselineOffset;
-- (float)scaledLineHeight;
-- (struct CGSize { float x1; float x2; })scaledSize;
-- (void)setActualScaleFactor:(float)arg1;
-- (void)setBaselineOffset:(float)arg1;
+- (double)scaledBaselineOffset;
+- (double)scaledLineHeight;
+- (struct CGSize { double x1; double x2; })scaledSize;
+- (void)setActualScaleFactor:(double)arg1;
+- (void)setBaselineOffset:(double)arg1;
+- (void)setMeasuredNumberOfLines:(long long)arg1;
 - (void)setScaledAttributedText:(id)arg1;
-- (void)setScaledBaselineOffset:(float)arg1;
-- (void)setScaledLineHeight:(float)arg1;
-- (void)setScaledSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setTargetSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })targetSize;
+- (void)setScaledBaselineOffset:(double)arg1;
+- (void)setScaledLineHeight:(double)arg1;
+- (void)setScaledSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setTargetSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })targetSize;
 
 @end

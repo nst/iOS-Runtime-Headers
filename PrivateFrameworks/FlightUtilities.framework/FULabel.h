@@ -8,14 +8,14 @@
     id /* block */  _onTap;
     FULabel * _realAssociatedScalingLabel;
     NSString * _stringValue;
-    BOOL  _uppercase;
-    BOOL  _useCurrentLocale;
+    bool  _uppercase;
+    bool  _useCurrentLocale;
 }
 
 @property (nonatomic) FULabel *associatedScalingLabel;
 @property (copy) id /* block */ onTap;
-@property (nonatomic, readonly) BOOL uppercase;
-@property (readonly) BOOL useCurrentLocale;
+@property (nonatomic, readonly) bool uppercase;
+@property (readonly) bool useCurrentLocale;
 
 - (void).cxx_destruct;
 - (id)_associatedScalingLabel;
@@ -28,9 +28,10 @@
 - (void)setAssociatedScalingLabel:(id)arg1;
 - (void)setAttributedText:(id)arg1;
 - (void)setOnTap:(id /* block */)arg1;
+- (void)setStyleProvider:(id)arg1 primaryStyle:(bool)arg2;
 - (void)setText:(id)arg1;
-- (void)setUppercase:(BOOL)arg1 usingCurrentLocale:(BOOL)arg2;
-- (BOOL)uppercase;
-- (BOOL)useCurrentLocale;
+- (void)setUppercase:(bool)arg1 usingCurrentLocale:(bool)arg2;
+- (bool)uppercase;
+- (bool)useCurrentLocale;
 
 @end

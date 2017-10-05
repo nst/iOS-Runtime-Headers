@@ -6,7 +6,7 @@
     PDSlideBase * _slide;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithPDSlide:(id)arg1 parent:(id)arg2;
 - (void)mapMasterGraphicsAt:(id)arg1 withState:(id)arg2;
 

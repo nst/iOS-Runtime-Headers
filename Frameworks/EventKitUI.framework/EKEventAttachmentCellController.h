@@ -7,7 +7,7 @@
     EKEventAttachmentCell * _cell;
     <EKEventAttachmentCellControllerDelegate> * _delegate;
     id  _downloadID;
-    BOOL  _sourceIsManaged;
+    bool  _sourceIsManaged;
 }
 
 @property (nonatomic, retain) EKAttachment *attachment;
@@ -15,12 +15,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <EKEventAttachmentCellControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL sourceIsManaged;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool sourceIsManaged;
 @property (readonly) Class superclass;
 
 + (id)_attachmentDownloadErrorLocalizedString;
-+ (BOOL)_attachmentIsViewable:(id)arg1;
++ (bool)_attachmentIsViewable:(id)arg1;
 + (id)_cannotOpenAttachmentLocalizedString;
 + (id)_okLocalizedString;
 + (id)cellControllersForAttachments:(id)arg1 givenExistingControllers:(id)arg2;
@@ -40,8 +40,8 @@
 - (id)initWithAttachment:(id)arg1;
 - (void)setAttachment:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setSourceIsManaged:(BOOL)arg1;
-- (BOOL)sourceIsManaged;
+- (void)setSourceIsManaged:(bool)arg1;
+- (bool)sourceIsManaged;
 - (void)tearDown;
 
 @end

@@ -8,12 +8,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIInteractionProgress *interactionProgressForPresentation;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_interactionControllerForTransitionOfType:(int)arg1 forAlertController:(id)arg2;
+- (id)_interactionControllerForTransitionOfType:(long long)arg1 forAlertController:(id)arg2;
 - (id)animationControllerForDismissedController:(id)arg1;
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (id)interactionControllerForPresentation:(id)arg1;

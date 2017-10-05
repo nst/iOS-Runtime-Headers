@@ -14,7 +14,7 @@
 }
 
 @property (nonatomic) unsigned short columnOrRowIndex;
-@property (nonatomic, readonly) BOOL isEmpty;
+@property (nonatomic, readonly) bool isEmpty;
 
 + (id)strokeLayer;
 
@@ -22,29 +22,28 @@
 - (void).cxx_destruct;
 - (unsigned short)columnOrRowIndex;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (void)enumerateStrokesInRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateStrokesInRange:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg1 usingBlock:(id /* block */)arg2;
 - (void)enumerateStrokesUsingBlock:(id /* block */)arg1;
-- (id)findStrokeAndRangeAtIndex:(int)arg1;
-- (id)initFromUnarchiver:(id)arg1;
+- (id)findStrokeAndRangeAtIndex:(long long)arg1;
 - (id)initWithContext:(id)arg1 columnOrRowIndex:(unsigned short)arg2;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
+- (void)loadFromUnarchiver:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)nextStrokeAndRange:(id)arg1;
-- (void)p_appendStroke:(id)arg1 inRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg2 order:(int)arg3;
+- (void)p_appendStroke:(id)arg1 inRange:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg2 order:(int)arg3;
 - (void)p_flattenStrokeOrder;
-- (void)p_insertSpaceAtRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg1;
+- (void)p_insertSpaceAtRange:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg1;
 - (void)p_invalidate;
-- (void)p_invalidateRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg1;
-- (void)p_mergeStrokeRunsAtPosition:(unsigned int)arg1;
-- (void)p_removeRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg1;
-- (void)p_setStroke:(id)arg1 inRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg2 order:(int)arg3;
+- (void)p_invalidateRange:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg1;
+- (void)p_mergeStrokeRunsAtPosition:(unsigned long long)arg1;
+- (void)p_removeRange:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg1;
+- (void)p_setStroke:(id)arg1 inRange:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg2 order:(int)arg3;
 - (void)p_setStrokeRuns:(struct vector<TSTStrokeLayerRun, std::__1::allocator<TSTStrokeLayerRun> > { struct TSTStrokeLayerRun {} *x1; struct TSTStrokeLayerRun {} *x2; struct __compressed_pair<TSTStrokeLayerRun *, std::__1::allocator<TSTStrokeLayerRun> > { struct TSTStrokeLayerRun {} *x_3_1_1; } x3; })arg1;
 - (void)saveToArchiver:(id)arg1;
 - (void)setColumnOrRowIndex:(unsigned short)arg1;
-- (int)startingIndex;
-- (id)strokeLayerModifiedByInsertingSpaceAt:(struct TSTSimpleRange { int x1; unsigned int x2; })arg1;
-- (id)strokeLayerModifiedByRemovingRangeAt:(struct TSTSimpleRange { int x1; unsigned int x2; })arg1;
+- (long long)startingIndex;
+- (id)strokeLayerModifiedByInsertingSpaceAt:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg1;
+- (id)strokeLayerModifiedByRemovingRangeAt:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg1;
 - (id)strokeLayerModifiedUsingMoveDelegate:(id)arg1;
 
 @end

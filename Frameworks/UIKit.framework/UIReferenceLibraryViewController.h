@@ -6,18 +6,18 @@
     UINavigationController * _baseNavController;
     NSArray * _definitionValues;
     id /* block */  _dismissCompletionHandler;
+    bool  _enableRotation;
     UIViewController * _longDefViewController;
     UITableViewController * _multiDefViewController;
-    int  _oldPopoverStyle;
-    UIWindow * _rotationDecider;
+    long long  _oldPopoverStyle;
+    bool  _previousIgnoreOrientation;
     NSString * _term;
 }
 
-@property (setter=_setRotationDecider:, nonatomic, retain) UIWindow *_rotationDecider;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ dismissCompletionHandler;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_backgroundColor;
@@ -29,10 +29,10 @@
 + (id)_localizedDictionaryTitleAttributes;
 + (id)_popoverControllerForReferenceLibraryWithString:(id)arg1;
 + (id)_pressedButtonImage;
-+ (BOOL)_shouldShowDefineForTerm:(id)arg1;
-+ (BOOL)_shouldShowDefineForTermOfLength:(int)arg1;
-+ (id)_viewControllerForReferenceWithString:(id)arg1 options:(unsigned int)arg2;
-+ (BOOL)dictionaryHasDefinitionForTerm:(id)arg1;
++ (bool)_shouldShowDefineForTerm:(id)arg1;
++ (bool)_shouldShowDefineForTermOfLength:(long long)arg1;
++ (id)_viewControllerForReferenceWithString:(id)arg1 options:(unsigned long long)arg2;
++ (bool)dictionaryHasDefinitionForTerm:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_backgroundColor;
@@ -46,30 +46,33 @@
 - (void)_installDoneButtonOnViewControllerIfNeeded:(id)arg1;
 - (void)_installRequiredElementsOnViewController:(id)arg1;
 - (id)_localizedDictionaryTitleAttributes;
+- (long long)_preferredInterfaceOrientationGivenCurrentOrientation:(long long)arg1;
 - (id)_pressedButtonImage;
-- (id)_rotationDecider;
 - (void)_searchWeb:(id)arg1;
 - (void)_setPopoverController:(id)arg1;
-- (void)_setRotationDecider:(id)arg1;
 - (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
 - (id /* block */)dismissCompletionHandler;
+- (bool)enableRotation;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithTerm:(id)arg1;
-- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(bool)arg3;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)pushDownloadManager:(id)arg1;
 - (void)setDismissCompletionHandler:(id /* block */)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (unsigned int)supportedInterfaceOrientations;
+- (void)setEnableRotation:(bool)arg1;
+- (bool)shouldAutorotate;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLoad;
 - (void)viewWillLayoutSubviews;
+- (void)window:(id)arg1 setupWithInterfaceOrientation:(long long)arg2;
 
 @end

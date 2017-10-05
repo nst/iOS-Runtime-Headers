@@ -5,9 +5,9 @@
 
 @required
 
-- (void)handleCurrentCallsChanged:(NSArray *)arg1 callDisconnected:(TUCall *)arg2;
-- (void)handleFrequencyChangedTo:(NSData *)arg1 inDirection:(int)arg2 forCallsWithUniqueProxyIdentifiers:(NSArray *)arg3;
-- (void)handleNotificationName:(NSString *)arg1 forCallWithUniqueProxyIdentifier:(NSString *)arg2 userInfo:(NSDictionary *)arg3;
-- (void)resetCallProvisionalStates;
+- (oneway void)handleCurrentCallsChanged:(NSArray *)arg1 callDisconnected:(TUCall *)arg2;
+- (oneway void)handleFrequencyChangedTo:(NSData *)arg1 inDirection:(int)arg2 forCallsWithUniqueProxyIdentifiers:(NSArray *)arg3;
+- (oneway void)handleNotificationName:(NSString *)arg1 forCallWithUniqueProxyIdentifier:(NSString *)arg2 userInfo:(NSDictionary *)arg3;
+- (oneway void)resetCallProvisionalStates;
 
 @end

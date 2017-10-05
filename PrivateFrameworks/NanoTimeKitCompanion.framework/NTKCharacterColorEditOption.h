@@ -4,21 +4,22 @@
 
 @interface NTKCharacterColorEditOption : NTKValueEditOption
 
-@property (nonatomic, readonly) unsigned int color;
+@property (nonatomic, readonly) unsigned long long color;
 @property (nonatomic, readonly) UIColor *colorValue;
-@property (nonatomic, readonly) float desaturation;
+@property (nonatomic, readonly) double desaturation;
 
-+ (id)_localizedNameForValue:(unsigned int)arg1;
-+ (id)_snapshotKeyForValue:(unsigned int)arg1;
-+ (unsigned int)indexOfOption:(id)arg1 forCharacter:(unsigned int)arg2;
-+ (unsigned int)numberOfOptionsForCharacter:(unsigned int)arg1;
-+ (id)optionAtIndex:(unsigned int)arg1 forCharacter:(unsigned int)arg2;
-+ (id)optionWithFaceColor:(unsigned int)arg1;
-+ (id)optionWithOption:(id)arg1 forCharacter:(unsigned int)arg2;
++ (id)_localizedNameForValue:(unsigned long long)arg1;
++ (id)_snapshotKeyForValue:(unsigned long long)arg1;
++ (unsigned long long)indexOfOption:(id)arg1 forCharacter:(unsigned long long)arg2;
++ (unsigned long long)numberOfOptionsForCharacter:(unsigned long long)arg1;
++ (id)optionAtIndex:(unsigned long long)arg1 forCharacter:(unsigned long long)arg2;
++ (id)optionWithFaceColor:(unsigned long long)arg1;
++ (id)optionWithOption:(id)arg1 forCharacter:(unsigned long long)arg2;
 
 - (id)_valueToFaceBundleStringDict;
-- (unsigned int)color;
+- (unsigned long long)color;
 - (id)colorValue;
-- (float)desaturation;
+- (double)desaturation;
+- (long long)swatchStyle;
 
 @end

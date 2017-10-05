@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDBulletinBoardNotification : NSObject <HMFDumpState, HMFLogging, HMFMessageReceiver, NSSecureCoding> {
-    BOOL  _enabled;
+@interface HMDBulletinBoardNotification : HMFObject <HMFDumpState, HMFLogging, HMFMessageReceiver, NSSecureCoding> {
+    NSPredicate * _condition;
+    bool  _enabled;
     HMFMessageDispatcher * _msgDispatcher;
     HMDBulletinBoardNotificationServiceGroup * _notificationServiceGroup;
     NSObject<OS_dispatch_queue> * _propertyQueue;
@@ -12,10 +13,11 @@
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
+@property (nonatomic, retain) NSPredicate *condition;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isEnabled, nonatomic) BOOL enabled;
-@property (readonly) unsigned int hash;
+@property (getter=isEnabled, nonatomic) bool enabled;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
@@ -27,12 +29,13 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 + (id)logCategory;
-+ (BOOL)supportsBulletinNotificationGroup:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsBulletinNotificationGroup:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_handleBulletinBoardNotificationCommitRequest:(id)arg1;
 - (void)_registerNotificationHandlers;
+- (id)condition;
 - (void)configureBulletinNotification:(id /* block */)arg1;
 - (void)configureMsgDispatcher:(id)arg1;
 - (void)dealloc;
@@ -41,7 +44,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithService:(id)arg1;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (id)logIdentifier;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
@@ -49,7 +52,8 @@
 - (id)notificationServiceGroup;
 - (id)propertyQueue;
 - (id)service;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setCondition:(id)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setNotificationServiceGroup:(id)arg1;
 - (void)setPropertyQueue:(id)arg1;

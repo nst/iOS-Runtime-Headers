@@ -6,10 +6,13 @@
     _IDSAccountController * _internal;
 }
 
-@property (nonatomic, readonly, retain) NSSet *accounts;
+@property (nonatomic, readonly) NSSet *accounts;
 
+- (void).cxx_destruct;
+- (void)_disableAccount:(id)arg1;
+- (void)_enableAccount:(id)arg1;
 - (id)_initWithService:(id)arg1;
-- (id)_initWithService:(id)arg1 onIDSQueue:(BOOL)arg2;
+- (id)_initWithService:(id)arg1 onIDSQueue:(bool)arg2;
 - (id)_internal;
 - (void)_removeAccount:(id)arg1;
 - (id)accountWithLoginID:(id)arg1 service:(id)arg2;

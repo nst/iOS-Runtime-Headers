@@ -7,10 +7,10 @@
 
 - (double)absoluteStart;
 - (double)absoluteStop;
-- (int)compareStartTime:(id <MMCSOperationStateTimeRange>)arg1;
-- (int)compareStopTime:(id <MMCSOperationStateTimeRange>)arg1;
+- (long long)compareStartTime:(id <MMCSOperationStateTimeRange>)arg1;
+- (long long)compareStopTime:(id <MMCSOperationStateTimeRange>)arg1;
 - (double)duration;
-- (unsigned int)operationState;
+- (unsigned long long)operationState;
 - (NSDate *)startDate;
 
 @end

@@ -9,19 +9,18 @@
                 struct __rep { 
                     union { 
                         struct __long { 
-                            unsigned int __cap_; 
-                            unsigned int __size_; 
                             char *__data_; 
+                            unsigned long long __size_; 
+                            unsigned long long __cap_; 
                         } __l; 
                         struct __short { 
-                            union { 
+                            BOOL __data_[23]; 
+                            struct { 
                                 unsigned char __size_; 
-                                BOOL __lx; 
                             } ; 
-                            BOOL __data_[11]; 
                         } __s; 
                         struct __raw { 
-                            unsigned long __words[3]; 
+                            unsigned long long __words[3]; 
                         } __r; 
                     } ; 
                 } __first_; 
@@ -38,19 +37,18 @@
                 struct __rep { 
                     union { 
                         struct __long { 
-                            unsigned int __cap_; 
-                            unsigned int __size_; 
                             char *__data_; 
+                            unsigned long long __size_; 
+                            unsigned long long __cap_; 
                         } __l; 
                         struct __short { 
-                            union { 
+                            BOOL __data_[23]; 
+                            struct { 
                                 unsigned char __size_; 
-                                BOOL __lx; 
                             } ; 
-                            BOOL __data_[11]; 
                         } __s; 
                         struct __raw { 
-                            unsigned long __words[3]; 
+                            unsigned long long __words[3]; 
                         } __r; 
                     } ; 
                 } __first_; 
@@ -61,26 +59,28 @@
 
 @property (nonatomic, readonly) double confidence;
 @property (nonatomic, readonly) double end;
-@property (nonatomic, readonly) BOOL hasSpaceAfter;
-@property (nonatomic, readonly) BOOL hasSpaceBefore;
-@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Token={basic_string<char' */ struct  quasarToken; /* unknown property attribute:  std::__1::allocator<char> >={__rep=(?={__long=II*}{__short=(?=Cc)[11c]}{__raw=[3L]})}}}} */
+@property (nonatomic, readonly) bool hasSpaceAfter;
+@property (nonatomic, readonly) bool hasSpaceBefore;
+@property (nonatomic, readonly) NSString *phoneSequence;
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Token={basic_string<char' */ struct  quasarToken; /* unknown property attribute:  std::__1::allocator<char> >={__rep=(?={__long=*QQ}{__short=[23c]{?=C}}{__raw=[3Q]})}}}} */
 @property (nonatomic, readonly) double silenceStart;
 @property (nonatomic, readonly) double start;
 @property (nonatomic, readonly, copy) NSString *tokenName;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)_initWithQuasarToken:(const struct Token { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_1_1_1; } x1; unsigned int x2; unsigned int x3; unsigned int x4; float x5; bool x6; bool x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_8_1_1; } x8; }*)arg1;
+- (id)_initWithQuasarToken:(const struct Token { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_1_1_1; } x1; unsigned int x2; unsigned int x3; unsigned int x4; float x5; bool x6; bool x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_8_1_1; } x8; }*)arg1;
 - (double)confidence;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (double)end;
-- (BOOL)hasSpaceAfter;
-- (BOOL)hasSpaceBefore;
-- (unsigned int)hash;
-- (id)initWithTokenName:(id)arg1 start:(double)arg2 end:(double)arg3 silenceStart:(double)arg4 confidence:(double)arg5 hasSpaceAfter:(BOOL)arg6 hasSpaceBefore:(BOOL)arg7 phoneSeq:(id)arg8;
-- (BOOL)isEqual:(id)arg1;
-- (struct Token { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_1_1_1; } x1; unsigned int x2; unsigned int x3; unsigned int x4; float x5; bool x6; bool x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_8_1_1; } x8; })quasarToken;
+- (bool)hasSpaceAfter;
+- (bool)hasSpaceBefore;
+- (unsigned long long)hash;
+- (id)initWithTokenName:(id)arg1 start:(double)arg2 end:(double)arg3 silenceStart:(double)arg4 confidence:(double)arg5 hasSpaceAfter:(bool)arg6 hasSpaceBefore:(bool)arg7 phoneSequence:(id)arg8;
+- (bool)isEqual:(id)arg1;
+- (id)phoneSequence;
+- (struct Token { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_1_1_1; } x1; unsigned int x2; unsigned int x3; unsigned int x4; float x5; bool x6; bool x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_8_1_1; } x8; })quasarToken;
 - (double)silenceStart;
 - (double)start;
 - (id)tokenName;

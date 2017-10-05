@@ -12,14 +12,14 @@
     PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic, readonly) <GEOTransitArtworkDataSource> *artwork;
 @property (nonatomic, retain) MSPTransitStorageArtwork *artwork;
+@property (nonatomic, readonly) <GEOTransitArtworkDataSource> *artwork;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL hasArtwork;
-@property (nonatomic) BOOL hasMuid;
-@property (nonatomic, readonly) BOOL hasName;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool hasArtwork;
+@property (nonatomic) bool hasMuid;
+@property (nonatomic, readonly) bool hasName;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) unsigned long long muid;
 @property (nonatomic) unsigned long long muid;
 @property (nonatomic, readonly) NSString *name;
@@ -27,26 +27,24 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
-+ (id)__test_mtaSystem;
-
 - (void).cxx_destruct;
 - (id)artwork;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasArtwork;
-- (BOOL)hasMuid;
-- (BOOL)hasName;
-- (unsigned int)hash;
+- (bool)hasArtwork;
+- (bool)hasMuid;
+- (bool)hasName;
+- (unsigned long long)hash;
 - (id)initWithSystem:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)muid;
 - (id)name;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setArtwork:(id)arg1;
-- (void)setHasMuid:(BOOL)arg1;
+- (void)setHasMuid:(bool)arg1;
 - (void)setMuid:(unsigned long long)arg1;
 - (void)setName:(id)arg1;
 - (id)unknownFields;

@@ -3,17 +3,25 @@
  */
 
 @interface UIClassicWindow : UIWindow {
-    BOOL  _scaleForiPads;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _sceneSizeOverride;
 }
 
-@property (nonatomic) BOOL scaleForiPads;
+@property (nonatomic) struct CGSize { double x1; double x2; } sceneSizeOverride;
 
-- (float)_adjustedWindowLevelFromLevel:(float)arg1;
-- (BOOL)_isConstrainedByScreenJail;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_sceneReferenceBounds;
-- (BOOL)_shouldZoom;
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (double)_adjustedWindowLevelFromLevel:(double)arg1;
+- (bool)_isConstrainedByScreenJail;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_sceneReferenceBounds;
+- (bool)_shouldZoom;
 - (void)_updateTransformLayerForClassicPresentation;
-- (BOOL)scaleForiPads;
-- (void)setScaleForiPads:(BOOL)arg1;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (struct CGSize { double x1; double x2; })sceneSizeOverride;
+- (void)setSceneSizeOverride:(struct CGSize { double x1; double x2; })arg1;
 
 @end

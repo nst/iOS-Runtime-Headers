@@ -4,23 +4,23 @@
 
 @interface PKRemoteAddPassesViewController : _UIRemoteViewController <PKRemoteAddPassesViewControllerProtocol> {
     <PKAddPassesViewControllerDelegate> * _delegate;
-    BOOL  _finished;
+    bool  _finished;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKAddPassesViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
-+ (BOOL)shouldPropagateAppearanceCustomizations;
++ (bool)shouldPropagateAppearanceCustomizations;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)delegate;
-- (void)ingestionDidFinishWithResult:(unsigned int)arg1;
+- (void)ingestionDidFinishWithResult:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 

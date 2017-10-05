@@ -54,7 +54,7 @@
 - (struct Box<double, 2> { struct Matrix<double, 2, 1> { double x_1_1_1[2]; } x1; struct Matrix<double, 2, 1> { double x_2_1_1[2]; } x2; })boundingRect;
 - (double)centerDepth;
 - (void)computeFromCamera:(id)arg1;
-- (BOOL)containsGroundPoint:(struct Matrix<double, 3, 1> { double x1[3]; }*)arg1;
+- (bool)containsGroundPoint:(struct Matrix<double, 3, 1> { double x1[3]; }*)arg1;
 - (struct VKFootprintConvexHull_struct { int x1; struct Matrix<double, 3, 1> { double x_2_1_1[3]; } x2[6]; struct Matrix<double, 3, 1> { double x_3_1_1[3]; } x3[6]; })convexHull;
 - (struct Matrix<double, 3, 1> { double x1[3]; }*)cornerGroundPoints;
 - (int)cornerGroundPointsCount;
@@ -62,6 +62,6 @@
 - (double)maxDepth;
 - (double)minDepth;
 - (struct Matrix<double, 3, 1> { double x1[3]; })nearestGroundPoint;
-- (BOOL)rejectsRect:(const struct Box<double, 2> { struct Matrix<double, 2, 1> { double x_1_1_1[2]; } x1; struct Matrix<double, 2, 1> { double x_2_1_1[2]; } x2; }*)arg1;
+- (bool)rejectsRect:(const struct Box<double, 2> { struct Matrix<double, 2, 1> { double x_1_1_1[2]; } x1; struct Matrix<double, 2, 1> { double x_2_1_1[2]; } x2; }*)arg1;
 
 @end

@@ -12,9 +12,9 @@
 }
 
 @property (nonatomic, retain) NTPBDate *accessDate;
-@property (nonatomic, readonly) BOOL hasAccessDate;
-@property (nonatomic, readonly) BOOL hasKey;
-@property (nonatomic) BOOL hasLifetime;
+@property (nonatomic, readonly) bool hasAccessDate;
+@property (nonatomic, readonly) bool hasKey;
+@property (nonatomic) bool hasLifetime;
 @property (nonatomic, retain) NSString *key;
 @property (nonatomic) int lifetime;
 
@@ -23,17 +23,17 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAccessDate;
-- (BOOL)hasKey;
-- (BOOL)hasLifetime;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAccessDate;
+- (bool)hasKey;
+- (bool)hasLifetime;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)key;
 - (int)lifetime;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAccessDate:(id)arg1;
-- (void)setHasLifetime:(BOOL)arg1;
+- (void)setHasLifetime:(bool)arg1;
 - (void)setKey:(id)arg1;
 - (void)setLifetime:(int)arg1;
 - (void)writeTo:(id)arg1;

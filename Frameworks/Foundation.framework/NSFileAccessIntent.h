@@ -3,25 +3,25 @@
  */
 
 @interface NSFileAccessIntent : NSObject {
-    BOOL  _isRead;
-    int  _options;
+    bool  _isRead;
+    long long  _options;
     NSURL * _url;
 }
 
 @property (copy) NSURL *URL;
-@property (readonly) BOOL isRead;
-@property (readonly) unsigned int readingOptions;
-@property (readonly) unsigned int writingOptions;
+@property (readonly) bool isRead;
+@property (readonly) unsigned long long readingOptions;
+@property (readonly) unsigned long long writingOptions;
 
-+ (id)readingIntentWithURL:(id)arg1 options:(unsigned int)arg2;
-+ (id)writingIntentWithURL:(id)arg1 options:(unsigned int)arg2;
++ (id)readingIntentWithURL:(id)arg1 options:(unsigned long long)arg2;
++ (id)writingIntentWithURL:(id)arg1 options:(unsigned long long)arg2;
 
 - (id)URL;
 - (void)dealloc;
 - (id)description;
-- (BOOL)isRead;
-- (unsigned int)readingOptions;
+- (bool)isRead;
+- (unsigned long long)readingOptions;
 - (void)setURL:(id)arg1;
-- (unsigned int)writingOptions;
+- (unsigned long long)writingOptions;
 
 @end

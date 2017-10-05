@@ -5,42 +5,44 @@
 @interface TLAlert : NSObject {
     TLAlertConfiguration * _configuration;
     long long  _instanceIndex;
+    <TLAlertPlaybackObserver> * _playbackObserver;
     NSString * _toneIdentifier;
-    int  _type;
+    long long  _type;
     NSString * _vibrationIdentifier;
 }
 
 @property (nonatomic, readonly) TLAlertConfiguration *configuration;
+@property (nonatomic) <TLAlertPlaybackObserver> *playbackObserver;
 @property (nonatomic, readonly) NSString *toneIdentifier;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 @property (nonatomic, readonly) NSString *vibrationIdentifier;
 
-+ (void)_playToneAndVibrationForType:(int)arg1 toneIdentifier:(id)arg2 vibrationIdentifier:(id)arg3 shouldOverrideMasterSwitches:(BOOL)arg4;
-+ (void)_queueAudioEventBlockIfNecessary:(id /* block */)arg1;
-+ (void)_setWatchPrefersSalientToneAndVibration:(BOOL)arg1;
-+ (BOOL)_stopAllAlerts;
-+ (BOOL)_watchPrefersSalientToneAndVibration;
++ (void)_setWatchPrefersSalientToneAndVibration:(bool)arg1;
++ (bool)_stopAllAlerts;
++ (bool)_watchPrefersSalientToneAndVibration;
 + (id)alertWithConfiguration:(id)arg1;
-+ (void)playToneAndVibrationForType:(int)arg1;
++ (void)playAlertForType:(long long)arg1;
++ (void)playToneAndVibrationForType:(long long)arg1;
 
 - (void).cxx_destruct;
-- (id)_descriptionForDebugging:(BOOL)arg1;
+- (id)_descriptionForDebugging:(bool)arg1;
 - (id)_initWithConfiguration:(id)arg1 toneIdentifier:(id)arg2 vibrationIdentifier:(id)arg3;
 - (void)_updateAudioVolumeDynamicallyToValue:(float)arg1;
 - (id)configuration;
 - (id)debugDescription;
 - (id)description;
-- (id)initWithType:(int)arg1;
-- (id)initWithType:(int)arg1 accountIdentifier:(id)arg2;
-- (id)initWithType:(int)arg1 toneIdentifier:(id)arg2 vibrationIdentifier:(id)arg3;
+- (id)initWithType:(long long)arg1;
+- (id)initWithType:(long long)arg1 accountIdentifier:(id)arg2;
+- (id)initWithType:(long long)arg1 toneIdentifier:(id)arg2 vibrationIdentifier:(id)arg3;
+- (void)play;
 - (void)playWithCompletionHandler:(id /* block */)arg1;
-- (BOOL)playWithCompletionHandler:(id /* block */)arg1 targetQueue:(id)arg2;
-- (void)startPlayingRepeatedly;
+- (bool)playWithCompletionHandler:(id /* block */)arg1 targetQueue:(id)arg2;
+- (id)playbackObserver;
+- (void)setPlaybackObserver:(id)arg1;
 - (void)stop;
-- (void)stopPlayingRepeatedlyWithOptions:(unsigned int)arg1 completionHandler:(id /* block */)arg2 targetQueue:(id)arg3;
-- (void)stopWithOptions:(struct { double x1; })arg1;
+- (void)stopWithOptions:(id)arg1;
 - (id)toneIdentifier;
-- (int)type;
+- (long long)type;
 - (id)vibrationIdentifier;
 
 @end

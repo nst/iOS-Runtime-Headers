@@ -3,40 +3,40 @@
  */
 
 @interface MCNearbyServiceAdvertiser : NSObject <NSNetServiceDelegate> {
-    BOOL  _AWDLDisabled;
+    bool  _AWDLDisabled;
     NSData * _TXTRecordData;
     <MCNearbyServiceAdvertiserDelegate> * _delegate;
     NSDictionary * _discoveryInfo;
     NSString * _formattedServiceType;
     NSMutableDictionary * _invites;
-    BOOL  _isAdvertising;
+    bool  _isAdvertising;
     MCPeerID * _myPeerID;
     NSNetService * _networkServer;
-    int  _outgoingInviteID;
+    long long  _outgoingInviteID;
     NSMutableDictionary * _peers;
     NSString * _serviceType;
     NSObject<OS_dispatch_queue> * _syncQueue;
-    BOOL  _wasAdvertising;
+    bool  _wasAdvertising;
 }
 
-@property (getter=isAWDLDisabled, nonatomic) BOOL AWDLDisabled;
+@property (getter=isAWDLDisabled, nonatomic) bool AWDLDisabled;
 @property (nonatomic, retain) NSData *TXTRecordData;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MCNearbyServiceAdvertiserDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSDictionary *discoveryInfo;
 @property (nonatomic, copy) NSString *formattedServiceType;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableDictionary *invites;
-@property (nonatomic) BOOL isAdvertising;
+@property (nonatomic) bool isAdvertising;
 @property (nonatomic, readonly) MCPeerID *myPeerID;
 @property (nonatomic, retain) NSNetService *networkServer;
-@property (nonatomic) int outgoingInviteID;
+@property (nonatomic) long long outgoingInviteID;
 @property (nonatomic, retain) NSMutableDictionary *peers;
 @property (nonatomic, copy) NSString *serviceType;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *syncQueue;
-@property (nonatomic) BOOL wasAdvertising;
+@property (nonatomic) bool wasAdvertising;
 
 - (id)TXTRecordData;
 - (void)applicationDidEnterBackgroundNotification:(id)arg1;
@@ -50,8 +50,8 @@
 - (id)init;
 - (id)initWithPeer:(id)arg1 discoveryInfo:(id)arg2 serviceType:(id)arg3;
 - (id)invites;
-- (BOOL)isAWDLDisabled;
-- (BOOL)isAdvertising;
+- (bool)isAWDLDisabled;
+- (bool)isAdvertising;
 - (id)makeTXTRecordDataWithDiscoveryInfo:(id)arg1;
 - (id)myPeerID;
 - (void)netService:(id)arg1 didAcceptConnectionWithInputStream:(id)arg2 outputStream:(id)arg3;
@@ -59,23 +59,23 @@
 - (void)netServiceDidPublish:(id)arg1;
 - (void)netServiceDidStop:(id)arg1;
 - (id)networkServer;
-- (int)outgoingInviteID;
+- (long long)outgoingInviteID;
 - (void)parseIDString:(id*)arg1 displayName:(id*)arg2 fromIdentifier:(id)arg3;
 - (id)peers;
 - (id)serviceType;
-- (void)setAWDLDisabled:(BOOL)arg1;
+- (void)setAWDLDisabled:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDiscoveryInfo:(id)arg1;
 - (void)setFormattedServiceType:(id)arg1;
 - (void)setInvites:(id)arg1;
-- (void)setIsAdvertising:(BOOL)arg1;
+- (void)setIsAdvertising:(bool)arg1;
 - (void)setNetworkServer:(id)arg1;
-- (void)setOutgoingInviteID:(int)arg1;
+- (void)setOutgoingInviteID:(long long)arg1;
 - (void)setPeers:(id)arg1;
 - (void)setServiceType:(id)arg1;
 - (void)setSyncQueue:(id)arg1;
 - (void)setTXTRecordData:(id)arg1;
-- (void)setWasAdvertising:(BOOL)arg1;
+- (void)setWasAdvertising:(bool)arg1;
 - (void)startAdvertisingPeer;
 - (void)stopAdvertisingPeer;
 - (void)syncAttachConnection:(id)arg1 toPeer:(id)arg2;
@@ -90,6 +90,6 @@
 - (void)syncStartAdvertisingPeer;
 - (void)syncStopAdvertisingPeer;
 - (id)txtRecordDataWithDiscoveryInfo:(id)arg1;
-- (BOOL)wasAdvertising;
+- (bool)wasAdvertising;
 
 @end

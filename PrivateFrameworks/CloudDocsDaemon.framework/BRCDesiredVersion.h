@@ -19,17 +19,17 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSError *downloadError;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isFault;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isFault;
 @property (nonatomic) unsigned int options;
 @property (nonatomic, readonly) NSString *serverName;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL userInitiated;
-@property (nonatomic, readonly) BOOL wantsContent;
-@property (nonatomic, readonly) BOOL wantsThumbnail;
+@property (nonatomic, readonly) bool userInitiated;
+@property (nonatomic, readonly) bool wantsContent;
+@property (nonatomic, readonly) bool wantsThumbnail;
 
-+ (id)newFromSqliteValue:(struct Mem { }*)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)newFromSqliteValue:(struct sqlite3_value { }*)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -39,15 +39,16 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDesiredVersion:(id)arg1;
 - (id)initWithServerVersion:(id)arg1 serverName:(id)arg2;
-- (BOOL)isFault;
-- (BOOL)isStillValidForEtag:(id)arg1;
+- (bool)isFault;
+- (bool)isStillValidForEtag:(id)arg1;
+- (void)markLiveAsFault;
 - (unsigned int)options;
 - (id)serverName;
 - (void)setDownloadError:(id)arg1;
 - (void)setOptions:(unsigned int)arg1;
 - (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
-- (BOOL)userInitiated;
-- (BOOL)wantsContent;
-- (BOOL)wantsThumbnail;
+- (bool)userInitiated;
+- (bool)wantsContent;
+- (bool)wantsThumbnail;
 
 @end

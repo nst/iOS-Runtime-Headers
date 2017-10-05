@@ -6,13 +6,13 @@
 @required
 
 + (<ESEditScriptData> *)EditScriptDataWithArray:(NSArray *)arg1;
-+ (<ESEditScriptData> *)EditScriptDataWithString:(NSString *)arg1 chunkSize:(int)arg2;
++ (<ESEditScriptData> *)EditScriptDataWithString:(NSString *)arg1 chunkSize:(long long)arg2;
 
-- (int)characterIndexForItem:(int)arg1;
-- (int)indexOfFirstDifferenceWithOtherData:(id <ESEditScriptData>)arg1 shouldReverseIterate:(BOOL)arg2 fallsOnWordBoundary:(BOOL*)arg3;
-- (int)length;
-- (int)lengthOfItem:(int)arg1;
-- (NSString *)stringAtIndex:(int)arg1;
+- (long long)characterIndexForItem:(long long)arg1;
+- (long long)indexOfFirstDifferenceWithOtherData:(id <ESEditScriptData>)arg1 shouldReverseIterate:(bool)arg2 fallsOnWordBoundary:(bool*)arg3;
+- (long long)length;
+- (long long)lengthOfItem:(long long)arg1;
+- (NSString *)stringAtIndex:(long long)arg1;
 - (NSString *)stringValue;
 
 @end

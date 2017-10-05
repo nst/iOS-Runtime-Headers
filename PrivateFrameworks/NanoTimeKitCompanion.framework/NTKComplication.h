@@ -3,36 +3,37 @@
  */
 
 @interface NTKComplication : NSObject <NSCopying, NSSecureCoding> {
-    unsigned int  _complicationType;
+    unsigned long long  _complicationType;
 }
 
-@property (nonatomic, readonly) unsigned int complicationType;
+@property (nonatomic, readonly) unsigned long long complicationType;
 
-+ (id)_allComplicationConfigurationsWithType:(unsigned int)arg1;
-+ (Class)_complicationClassForType:(unsigned int)arg1;
-+ (id)allComplicationsOfType:(unsigned int)arg1;
-+ (id)anyComplicationOfType:(unsigned int)arg1;
++ (id)_allComplicationConfigurationsWithType:(unsigned long long)arg1;
++ (Class)_complicationClassForType:(unsigned long long)arg1;
++ (id)allComplicationsOfType:(unsigned long long)arg1;
++ (id)anyComplicationOfType:(unsigned long long)arg1;
 + (id)complicationWithJSONObjectRepresentation:(id)arg1;
 + (id)nullComplication;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)JSONObjectRepresentation;
 - (void)_addKeysToJSONDictionary:(id)arg1;
-- (id)_initWithComplicationType:(unsigned int)arg1 JSONDictionary:(id)arg2;
-- (void)_setComplicationType:(unsigned int)arg1;
-- (BOOL)appearsInDailySnapshotForFamily:(int)arg1;
+- (id)_initWithComplicationType:(unsigned long long)arg1 JSONDictionary:(id)arg2;
+- (void)_setComplicationType:(unsigned long long)arg1;
+- (bool)appearsInDailySnapshotForFamily:(long long)arg1;
 - (id)awakeAfterUsingCoder:(id)arg1;
-- (unsigned int)complicationType;
+- (unsigned long long)complicationType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)customDailySnapshotKey;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithComplicationType:(unsigned int)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithComplicationType:(unsigned long long)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1 subclassesAllowed:(bool)arg2;
 - (id)localizedDetailText;
 - (id)localizedKeylineLabelText;
-- (BOOL)snapshotContext:(id)arg1 isStaleRelativeToContext:(id)arg2;
+- (bool)snapshotContext:(id)arg1 isStaleRelativeToContext:(id)arg2;
 
 @end

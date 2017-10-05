@@ -8,8 +8,8 @@
 - (NSString *)body;
 - (NSDate *)expirationDate;
 - (id)initWithSerializedData:(NSData *)arg1;
-- (BOOL)isOpaque;
-- (BOOL)isValid;
+- (bool)isOpaque;
+- (bool)isValid;
 - (NSData *)serializedData;
 - (void)setBody:(NSString *)arg1;
 

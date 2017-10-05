@@ -10,17 +10,16 @@
 }
 
 @property (nonatomic, readonly) float maximumStyleZ;
-@property (nonatomic, readonly) unsigned int numTiles;
+@property (nonatomic, readonly) unsigned long long numTiles;
 @property (nonatomic, readonly) id*tileList;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)addTileToList:(id)arg1;
 - (void)clearList;
-- (void)consolidateList;
 - (id)init;
 - (float)maximumStyleZ;
-- (unsigned int)numTiles;
+- (unsigned long long)numTiles;
 - (id*)tileList;
 
 @end

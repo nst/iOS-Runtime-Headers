@@ -3,37 +3,44 @@
  */
 
 @interface CPLEngineResourceStorage : CPLEngineStorage <CPLAbstractObject> {
+    NSCountedSet * _failedPruneStatsPerResourceType;
     CPLEngineFileStorage * _fileStorage;
     NSMutableSet * _identitiesToCommit;
     NSMutableSet * _identitiesToDelete;
+    NSDate * _lastPruneRequestDate;
+    NSObject<OS_dispatch_queue> * _pruneStatsQueue;
+    unsigned long long  _successfulPruneSize;
+    NSCountedSet * _successfulPruneStatsPerResourceType;
     NSURL * _tempFolderURL;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) CPLEngineFileStorage *fileStorage;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) CPLPlatformObject *platformObject;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)compactWithError:(id*)arg1;
-- (id)createFileURLForUploadForResource:(id)arg1 error:(id*)arg2;
+- (bool)checkIsEmpty;
+- (bool)compactWithError:(id*)arg1;
 - (id)createTempDestinationURLForResource:(id)arg1 error:(id*)arg2;
+- (bool)dropResourceForUpload:(id)arg1 error:(id*)arg2;
 - (id)fileStorage;
-- (BOOL)hasResource:(id)arg1;
+- (bool)hasResource:(id)arg1;
 - (id)initWithEngineStore:(id)arg1 name:(id)arg2;
-- (BOOL)markResourceAsUploaded:(id)arg1 fromURL:(id)arg2 error:(id*)arg3;
-- (BOOL)markResourceDoesNotNeedToBeUploaded:(id)arg1 error:(id*)arg2;
-- (BOOL)markResourceFailedToUpload:(id)arg1 fromURL:(id)arg2 error:(id*)arg3;
-- (BOOL)openWithError:(id*)arg1;
-- (BOOL)releaseFileURL:(id)arg1 forResource:(id)arg2 error:(id*)arg3;
-- (BOOL)resetWithError:(id*)arg1;
+- (void)notePruningRequestForResource:(id)arg1 successful:(bool)arg2;
+- (void)notePruningRequestForResource:(id)arg1 successful:(bool)arg2 prunedSize:(unsigned long long)arg3;
+- (bool)openWithError:(id*)arg1;
+- (bool)releaseFileURL:(id)arg1 forResource:(id)arg2 error:(id*)arg3;
+- (bool)resetWithError:(id*)arg1;
 - (id)retainFileURLForResource:(id)arg1 error:(id*)arg2;
 - (unsigned long long)sizeOfOriginalResourcesToUpload;
 - (unsigned long long)sizeOfResourcesToUpload;
-- (BOOL)storeDownloadedResource:(id)arg1 atURL:(id)arg2 error:(id*)arg3;
-- (BOOL)storeResourceForUpload:(id)arg1 error:(id*)arg2;
+- (id)status;
+- (id)statusDictionary;
+- (bool)storeDownloadedResource:(id)arg1 atURL:(id)arg2 error:(id*)arg3;
+- (bool)storeResourceForUpload:(id)arg1 error:(id*)arg2;
 - (void)writeTransactionDidFail;
 - (void)writeTransactionDidSucceed;
 

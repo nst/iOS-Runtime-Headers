@@ -7,6 +7,6 @@
 + (id)databaseTable;
 + (id)defaultOrderingTerms;
 + (void)initialize;
-+ (int)revisionTrackingCode;
++ (long long)revisionTrackingCode;
 
 @end

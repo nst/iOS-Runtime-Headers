@@ -4,8 +4,8 @@
 
 @interface GKRWLock : NSObject {
     struct _opaque_pthread_rwlock_t { 
-        long __sig; 
-        BOOL __opaque[124]; 
+        long long __sig; 
+        BOOL __opaque[192]; 
     }  _rwLock;
 }
 

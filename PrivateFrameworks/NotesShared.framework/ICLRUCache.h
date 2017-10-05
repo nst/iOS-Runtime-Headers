@@ -5,19 +5,22 @@
 @interface ICLRUCache : NSObject {
     <ICLRUCacheDelegate> * _delegate;
     NSMapTable * mData;
-    unsigned int  mMax;
+    unsigned long long  mMax;
     NSMutableArray * mOrderedKeys;
 }
 
 @property (nonatomic, readonly) NSArray *allKeys;
 @property (nonatomic) <ICLRUCacheDelegate> *delegate;
-@property (nonatomic, readonly) unsigned int maxSize;
+@property (nonatomic, readonly) unsigned long long maxSize;
+
++ (id)cacheCollection;
++ (void)purgeAllCaches;
 
 - (void).cxx_destruct;
 - (id)allKeys;
 - (id)delegate;
-- (id)initWithMaxSize:(unsigned int)arg1;
-- (unsigned int)maxSize;
+- (id)initWithMaxSize:(unsigned long long)arg1;
+- (unsigned long long)maxSize;
 - (id)objectForKey:(id)arg1;
 - (void)p_removeOldestObject;
 - (void)removeAllObjects;

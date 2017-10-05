@@ -6,19 +6,20 @@
     NSString * _bundleID;
     NSError * _error;
     NSNumber * _persistentID;
-    int  _status;
+    long long  _status;
 }
 
 @property (nonatomic, retain) NSString *bundleID;
 @property (nonatomic, retain) NSError *error;
 @property (nonatomic, retain) NSNumber *persistentID;
-@property (nonatomic) int status;
+@property (nonatomic) long long status;
 
-+ (id)_resultWithPersistentID:(long long)arg1 bundleID:(id)arg2 status:(int)arg3 error:(id)arg4;
++ (id)_resultWithPersistentID:(long long)arg1 bundleID:(id)arg2 status:(long long)arg3 error:(id)arg4;
 + (id)resultWithExistingActivity:(long long)arg1 bundleID:(id)arg2;
 + (id)resultWithInvalidActivity:(long long)arg1 bundleID:(id)arg2;
-+ (id)resultWithValidActivity:(long long)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)resultWithRestrictedActivity:(long long)arg1 bundleID:(id)arg2;
++ (id)resultWithValidActivity:(long long)arg1 bundleID:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bundleID;
@@ -31,7 +32,7 @@
 - (void)setBundleID:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setPersistentID:(id)arg1;
-- (void)setStatus:(int)arg1;
-- (int)status;
+- (void)setStatus:(long long)arg1;
+- (long long)status;
 
 @end

@@ -16,7 +16,7 @@
 @property (nonatomic, copy) NSArray *orphanedHeadlines;
 
 - (void).cxx_destruct;
-- (id)d_JSONRepresentationWithTagController:(id)arg1 subscribedTopicIDs:(id)arg2 blacklistedTopicIDs:(id)arg3;
+- (id)d_JSONRepresentationWithTagController:(id)arg1 subscriptionList:(id)arg2;
 - (id)d_allHeadlines;
 - (id)d_headlinesByNonWhitelistedTopicID;
 - (void)d_sanityCheckAgainstInputHeadlines:(id)arg1;

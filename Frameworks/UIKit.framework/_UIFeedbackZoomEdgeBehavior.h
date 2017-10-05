@@ -2,30 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIFeedbackZoomEdgeBehavior : _UIFeedbackEdgeBehavior {
-    float  _maximumTemporaryZoomScale;
-    float  _maximumZoomScale;
-    float  _minimumTemporaryZoomScale;
-    float  _minimumZoomScale;
-}
-
-@property (nonatomic) float maximumTemporaryZoomScale;
-@property (nonatomic) float maximumZoomScale;
-@property (nonatomic) float minimumTemporaryZoomScale;
-@property (nonatomic) float minimumZoomScale;
-
-+ (id)behaviorWithCoordinateSpace:(id)arg1;
-
-- (void)_updateMaximumValue;
-- (void)_zoomScaleUpdated:(float)arg1 withVelocity:(float)arg2;
-- (float)maximumTemporaryZoomScale;
-- (float)maximumZoomScale;
-- (float)minimumTemporaryZoomScale;
-- (float)minimumZoomScale;
-- (void)setMaximumTemporaryZoomScale:(float)arg1;
-- (void)setMaximumZoomScale:(float)arg1;
-- (void)setMinimumTemporaryZoomScale:(float)arg1;
-- (void)setMinimumZoomScale:(float)arg1;
-- (void)zoomScaleUpdated:(float)arg1;
+@interface _UIFeedbackZoomEdgeBehavior : _UIZoomEdgeFeedbackGenerator
 
 @end

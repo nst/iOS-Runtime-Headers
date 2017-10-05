@@ -4,7 +4,7 @@
 
 @interface AKPotrace : NSObject {
     struct CGPath { } * _cachedPath;
-    struct potrace_bitmap_s { int x1; int x2; int x3; unsigned int *x4; } * _potraceBitmap;
+    struct potrace_bitmap_s { int x1; int x2; int x3; unsigned long long *x4; } * _potraceBitmap;
     struct potrace_param_s { int x1; int x2; double x3; int x4; double x5; struct potrace_progress_s { int (*x_6_1_1)(); void *x_6_1_2; double x_6_1_3; double x_6_1_4; double x_6_1_5; } x6; } * _potraceParameters;
 }
 
@@ -21,7 +21,7 @@
 - (void)_generatePath;
 - (double)alphamax;
 - (void)dealloc;
-- (id)initWithCGImage:(struct CGImage { }*)arg1 flipped:(BOOL)arg2;
+- (id)initWithCGImage:(struct CGImage { }*)arg1 flipped:(bool)arg2 whiteIsInside:(bool)arg3;
 - (int)opticurve;
 - (double)opttolerance;
 - (void)setAlphamax:(double)arg1;

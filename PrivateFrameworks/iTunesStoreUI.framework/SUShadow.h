@@ -5,17 +5,17 @@
 @interface SUShadow : NSObject <NSCoding, NSCopying> {
     UIColor * _color;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _offset;
-    float  _opacity;
-    float  _radius;
+    double  _opacity;
+    double  _radius;
 }
 
 @property (nonatomic, retain) UIColor *color;
-@property (nonatomic) struct CGSize { float x1; float x2; } offset;
-@property (nonatomic) float opacity;
-@property (nonatomic) float radius;
+@property (nonatomic) struct CGSize { double x1; double x2; } offset;
+@property (nonatomic) double opacity;
+@property (nonatomic) double radius;
 
 - (void)applyToLayer:(id)arg1;
 - (id)color;
@@ -23,12 +23,12 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (struct CGSize { float x1; float x2; })offset;
-- (float)opacity;
-- (float)radius;
+- (struct CGSize { double x1; double x2; })offset;
+- (double)opacity;
+- (double)radius;
 - (void)setColor:(id)arg1;
-- (void)setOffset:(struct CGSize { float x1; float x2; })arg1;
-- (void)setOpacity:(float)arg1;
-- (void)setRadius:(float)arg1;
+- (void)setOffset:(struct CGSize { double x1; double x2; })arg1;
+- (void)setOpacity:(double)arg1;
+- (void)setRadius:(double)arg1;
 
 @end

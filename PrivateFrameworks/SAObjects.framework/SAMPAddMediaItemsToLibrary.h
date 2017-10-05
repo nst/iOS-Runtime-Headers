@@ -12,7 +12,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)mediaItems;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setMediaItems:(id)arg1;
 
 @end

@@ -6,28 +6,31 @@
     CalPreferences * _preferences;
 }
 
-@property (getter=get_enableTravelAdvisoriesForAutomaticBehavior, setter=set_enableTravelAdvisoriesForAutomaticBehavior:, nonatomic) BOOL enableTravelAdvisoriesForAutomaticBehavior;
-@property (getter=get_kCalPreferredDaysToSyncKey, setter=set_kCalPreferredDaysToSyncKey:, nonatomic) int kCalPreferredDaysToSyncKey;
-@property (getter=get_kCalRemindersPreferredDaysToSyncKey, setter=set_kCalRemindersPreferredDaysToSyncKey:, nonatomic) int kCalRemindersPreferredDaysToSyncKey;
-@property (getter=get_sqlProfileLoggingEnabled, setter=set_sqlProfileLoggingEnabled:, nonatomic) BOOL sqlProfileLoggingEnabled;
-@property (getter=get_suggestEventLocations, setter=set_suggestEventLocations:, nonatomic) BOOL suggestEventLocations;
-@property (getter=get_suggestedLocationsTestMode, setter=set_suggestedLocationsTestMode:, nonatomic) BOOL suggestedLocationsTestMode;
+@property (getter=get_LastConfirmedSplashScreenVersionViewed, setter=set_LastConfirmedSplashScreenVersionViewed:, nonatomic) long long LastConfirmedSplashScreenVersionViewed;
+@property (getter=get_enableTravelAdvisoriesForAutomaticBehavior, setter=set_enableTravelAdvisoriesForAutomaticBehavior:, nonatomic) bool enableTravelAdvisoriesForAutomaticBehavior;
+@property (getter=get_kCalPreferredDaysToSyncKey, setter=set_kCalPreferredDaysToSyncKey:, nonatomic) long long kCalPreferredDaysToSyncKey;
+@property (getter=get_kCalRemindersPreferredDaysToSyncKey, setter=set_kCalRemindersPreferredDaysToSyncKey:, nonatomic) long long kCalRemindersPreferredDaysToSyncKey;
+@property (getter=get_sqlProfileLoggingEnabled, setter=set_sqlProfileLoggingEnabled:, nonatomic) bool sqlProfileLoggingEnabled;
+@property (getter=get_suggestEventLocations, setter=set_suggestEventLocations:, nonatomic) bool suggestEventLocations;
+@property (getter=get_suggestedLocationsTestMode, setter=set_suggestedLocationsTestMode:, nonatomic) bool suggestedLocationsTestMode;
 
 + (id)shared;
 
 - (void).cxx_destruct;
-- (BOOL)get_enableTravelAdvisoriesForAutomaticBehavior;
-- (int)get_kCalPreferredDaysToSyncKey;
-- (int)get_kCalRemindersPreferredDaysToSyncKey;
-- (BOOL)get_sqlProfileLoggingEnabled;
-- (BOOL)get_suggestEventLocations;
-- (BOOL)get_suggestedLocationsTestMode;
+- (long long)get_LastConfirmedSplashScreenVersionViewed;
+- (bool)get_enableTravelAdvisoriesForAutomaticBehavior;
+- (long long)get_kCalPreferredDaysToSyncKey;
+- (long long)get_kCalRemindersPreferredDaysToSyncKey;
+- (bool)get_sqlProfileLoggingEnabled;
+- (bool)get_suggestEventLocations;
+- (bool)get_suggestedLocationsTestMode;
 - (id)init;
-- (void)set_enableTravelAdvisoriesForAutomaticBehavior:(BOOL)arg1;
-- (void)set_kCalPreferredDaysToSyncKey:(int)arg1;
-- (void)set_kCalRemindersPreferredDaysToSyncKey:(int)arg1;
-- (void)set_sqlProfileLoggingEnabled:(BOOL)arg1;
-- (void)set_suggestEventLocations:(BOOL)arg1;
-- (void)set_suggestedLocationsTestMode:(BOOL)arg1;
+- (void)set_LastConfirmedSplashScreenVersionViewed:(long long)arg1;
+- (void)set_enableTravelAdvisoriesForAutomaticBehavior:(bool)arg1;
+- (void)set_kCalPreferredDaysToSyncKey:(long long)arg1;
+- (void)set_kCalRemindersPreferredDaysToSyncKey:(long long)arg1;
+- (void)set_sqlProfileLoggingEnabled:(bool)arg1;
+- (void)set_suggestEventLocations:(bool)arg1;
+- (void)set_suggestedLocationsTestMode:(bool)arg1;
 
 @end

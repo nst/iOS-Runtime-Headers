@@ -4,19 +4,19 @@
 
 @interface MusicLibraryRecentlyAddedAlbumsViewConfiguration : MusicLibraryAdaptiveViewConfiguration {
     MusicLibraryRecentlyAddedAlbumsCollectionViewConfiguration * _collectionViewConfiguration;
-    BOOL  _shouldForwardBasePropertyValues;
+    bool  _shouldForwardBasePropertyValues;
 }
 
-@property (nonatomic, readonly) unsigned int entityLimit;
+@property (nonatomic, readonly) unsigned long long entityLimit;
 
-+ (unsigned int)defaultEntityLimit;
++ (unsigned long long)defaultEntityLimit;
 
 - (void).cxx_destruct;
-- (unsigned int)entityLimit;
+- (unsigned long long)entityLimit;
 - (id)entityViewDescriptor;
-- (int)handleSelectionOfEntityValueContext:(id)arg1 fromViewController:(id)arg2;
+- (long long)handleSelectionOfEntityValueContext:(id)arg1 fromViewController:(id)arg2;
 - (id)init;
-- (id)initWithEntityLimit:(unsigned int)arg1;
+- (id)initWithEntityLimit:(unsigned long long)arg1;
 - (id)loadCompactWidthConfiguration;
 - (id)loadRegularWidthConfiguration;
 - (void)setIconName:(id)arg1;

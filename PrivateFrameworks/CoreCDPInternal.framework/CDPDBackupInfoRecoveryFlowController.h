@@ -21,7 +21,7 @@
 - (id)resultParser;
 - (void)retrieveInflatedDevices:(id /* block */)arg1;
 - (void)secretValidator:(id)arg1 didFailRecoveryWithErrors:(id)arg2 completion:(id /* block */)arg3;
-- (BOOL)secretValidator:(id)arg1 shouldContinueValidationAfterError:(id)arg2;
+- (bool)secretValidator:(id)arg1 shouldContinueValidationAfterError:(id)arg2;
 - (void)setErrorProvider:(id)arg1;
 - (void)setRecoveryRecords:(id)arg1;
 - (void)setResultParser:(id)arg1;

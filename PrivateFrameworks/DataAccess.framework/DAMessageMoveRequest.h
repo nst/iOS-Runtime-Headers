@@ -18,9 +18,9 @@
 - (id)context;
 - (id)description;
 - (id)fromFolder;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initMoveRequestWithMessage:(id)arg1 fromFolder:(id)arg2 toFolder:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)message;
 - (void)setContext:(id)arg1;
 - (void)setFromFolder:(id)arg1;

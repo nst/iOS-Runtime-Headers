@@ -8,12 +8,13 @@
 }
 
 - (int)blendMode;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)fill;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setBlendMode:(int)arg1;
 - (void)setFill:(id)arg1;
 

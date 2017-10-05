@@ -5,6 +5,6 @@
 
 @required
 
-- (void)updatePreferredFocusedViewStateForFocus:(BOOL)arg1;
+- (void)updatePreferredFocusedViewStateForFocus:(bool)arg1;
 
 @end

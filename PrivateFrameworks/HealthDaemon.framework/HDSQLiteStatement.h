@@ -3,7 +3,7 @@
  */
 
 @interface HDSQLiteStatement : NSObject {
-    BOOL  _cache;
+    bool  _cache;
     HDSQLiteDatabase * _database;
     NSString * _sql;
 }
@@ -13,9 +13,9 @@
 - (void).cxx_destruct;
 - (id)database;
 - (id)description;
-- (BOOL)enumerateStatementWithError:(id*)arg1 bindingHandler:(id /* block */)arg2 block:(id /* block */)arg3;
+- (bool)enumerateStatementWithError:(id*)arg1 bindingHandler:(id /* block */)arg2 block:(id /* block */)arg3;
 - (void)finish;
 - (id)initWithSQL:(id)arg1 database:(id)arg2;
-- (BOOL)performStatementWithError:(id*)arg1 bindingHandler:(id /* block */)arg2;
+- (bool)performStatementWithError:(id*)arg1 bindingHandler:(id /* block */)arg2;
 
 @end

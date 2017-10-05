@@ -19,7 +19,7 @@
 - (void)_featureDidChangeNotification:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)evaluateMediaQuery:(id)arg1;
+- (bool)evaluateMediaQuery:(id)arg1;
 - (id)init;
 - (void)reloadData;
 - (void)setDelegate:(id)arg1;

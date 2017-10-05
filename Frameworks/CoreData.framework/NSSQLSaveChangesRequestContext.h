@@ -8,6 +8,7 @@
     NSSet * _objectIDsToPruneTrigger;
     NSMutableDictionary * _originalCachedRows;
     NSSQLSavePlan * _savePlan;
+    NSMutableDictionary * _updateMasksForHistoryTracking;
 }
 
 @property (nonatomic, readonly) NSFaultHandler *faultHandler;
@@ -17,14 +18,16 @@
 @property (nonatomic, readonly) NSSaveChangesRequest *request;
 @property (nonatomic, readonly) NSSQLSavePlan *savePlan;
 
+- (void)addDataMask:(id)arg1 forEntityKey:(id)arg2;
+- (id)dataMaskForKey:(id)arg1;
 - (void)dealloc;
 - (void)executeEpilogue;
 - (void)executePrologue;
-- (void)executeRequestUsingConnection:(id)arg1;
+- (void)executeRequestCore:(id*)arg1;
 - (id)faultHandler;
-- (BOOL)hasChangesForWriting;
+- (bool)hasChangesForWriting;
 - (id)initWithRequest:(id)arg1 context:(id)arg2 sqlCore:(id)arg3;
-- (BOOL)isWritingRequest;
+- (bool)isWritingRequest;
 - (id)metadataToWrite;
 - (id)model;
 - (id)originalCachedRows;

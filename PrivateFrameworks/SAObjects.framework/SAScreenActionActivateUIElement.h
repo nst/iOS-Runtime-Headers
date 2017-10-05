@@ -12,7 +12,7 @@
 - (id)elementId;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setElementId:(id)arg1;
 
 @end

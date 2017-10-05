@@ -13,6 +13,6 @@
 - (id)context;
 - (id)initWithContext:(id)arg1 handler:(id)arg2;
 - (void)userDidCancelWithError:(id)arg1;
-- (void)userDidEnterValidSecret:(id)arg1 type:(unsigned int)arg2;
+- (void)userDidEnterValidSecret:(id)arg1 type:(unsigned long long)arg2;
 
 @end

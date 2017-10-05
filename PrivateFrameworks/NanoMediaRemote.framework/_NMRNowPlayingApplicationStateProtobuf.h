@@ -14,11 +14,11 @@
 }
 
 @property (nonatomic, retain) NSString *companionBundleIdentifier;
-@property (nonatomic, readonly) BOOL hasCompanionBundleIdentifier;
-@property (nonatomic, readonly) BOOL hasIconDigest;
-@property (nonatomic, readonly) BOOL hasLocalizedDisplayName;
-@property (nonatomic) BOOL hasPlaybackState;
-@property (nonatomic, readonly) BOOL hasWatchBundleIdentifier;
+@property (nonatomic, readonly) bool hasCompanionBundleIdentifier;
+@property (nonatomic, readonly) bool hasIconDigest;
+@property (nonatomic, readonly) bool hasLocalizedDisplayName;
+@property (nonatomic) bool hasPlaybackState;
+@property (nonatomic, readonly) bool hasWatchBundleIdentifier;
 @property (nonatomic, retain) NSData *iconDigest;
 @property (nonatomic, retain) NSString *localizedDisplayName;
 @property (nonatomic) unsigned int playbackState;
@@ -30,20 +30,20 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCompanionBundleIdentifier;
-- (BOOL)hasIconDigest;
-- (BOOL)hasLocalizedDisplayName;
-- (BOOL)hasPlaybackState;
-- (BOOL)hasWatchBundleIdentifier;
-- (unsigned int)hash;
+- (bool)hasCompanionBundleIdentifier;
+- (bool)hasIconDigest;
+- (bool)hasLocalizedDisplayName;
+- (bool)hasPlaybackState;
+- (bool)hasWatchBundleIdentifier;
+- (unsigned long long)hash;
 - (id)iconDigest;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)localizedDisplayName;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)playbackState;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCompanionBundleIdentifier:(id)arg1;
-- (void)setHasPlaybackState:(BOOL)arg1;
+- (void)setHasPlaybackState:(bool)arg1;
 - (void)setIconDigest:(id)arg1;
 - (void)setLocalizedDisplayName:(id)arg1;
 - (void)setPlaybackState:(unsigned int)arg1;

@@ -12,8 +12,8 @@
 
 @property (nonatomic, retain) NSString *category;
 @property (nonatomic) float eUVolumeLimit;
-@property (nonatomic, readonly) BOOL hasCategory;
-@property (nonatomic) BOOL hasEUVolumeLimit;
+@property (nonatomic, readonly) bool hasCategory;
+@property (nonatomic) bool hasEUVolumeLimit;
 
 - (void).cxx_destruct;
 - (id)category;
@@ -22,15 +22,15 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (float)eUVolumeLimit;
-- (BOOL)hasCategory;
-- (BOOL)hasEUVolumeLimit;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCategory;
+- (bool)hasEUVolumeLimit;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCategory:(id)arg1;
 - (void)setEUVolumeLimit:(float)arg1;
-- (void)setHasEUVolumeLimit:(BOOL)arg1;
+- (void)setHasEUVolumeLimit:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

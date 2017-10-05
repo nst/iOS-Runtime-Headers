@@ -5,18 +5,18 @@
 @interface CNContactStoreFilter : CNContactFilter {
     NSSet * _containerIdentifiers;
     NSSet * _groupIdentifiers;
-    BOOL  _isServerFilter;
+    bool  _isServerFilter;
 }
 
 @property (nonatomic, retain) NSSet *containerIdentifiers;
 @property (nonatomic, retain) NSSet *groupIdentifiers;
-@property (nonatomic) BOOL isServerFilter;
-@property (nonatomic, readonly) BOOL showsEverything;
+@property (nonatomic) bool isServerFilter;
+@property (nonatomic, readonly) bool showsEverything;
 
 + (id)contactStoreFilterFromPreferencesWithContactStore:(id)arg1;
-+ (BOOL)getContainerIdentifiers:(id*)arg1 groupIdentifiers:(id*)arg2 serverFilter:(BOOL*)arg3 fromLegacyDictionary:(id)arg4 contactStore:(id)arg5;
-+ (BOOL)getContainerIdentifiers:(id*)arg1 groupIdentifiers:(id*)arg2 serverFilter:(BOOL*)arg3 fromPreSundanceDictionary:(id)arg4 contactStore:(id)arg5;
-+ (BOOL)getContainerIdentifiers:(id*)arg1 groupIdentifiers:(id*)arg2 serverFilter:(BOOL*)arg3 fromSundanceToOkemoAndAddressBookUIDictionary:(id)arg4 contactStore:(id)arg5;
++ (bool)getContainerIdentifiers:(id*)arg1 groupIdentifiers:(id*)arg2 serverFilter:(bool*)arg3 fromLegacyDictionary:(id)arg4 contactStore:(id)arg5;
++ (bool)getContainerIdentifiers:(id*)arg1 groupIdentifiers:(id*)arg2 serverFilter:(bool*)arg3 fromPreSundanceDictionary:(id)arg4 contactStore:(id)arg5;
++ (bool)getContainerIdentifiers:(id*)arg1 groupIdentifiers:(id*)arg2 serverFilter:(bool*)arg3 fromSundanceToOkemoAndAddressBookUIDictionary:(id)arg4 contactStore:(id)arg5;
 
 - (void).cxx_destruct;
 - (void)addAddressBookUIKeysToDictionaryRepresentation:(id)arg1 withAllContainers:(id)arg2 excludedContainers:(id)arg3 excludedGroups:(id)arg4;
@@ -28,14 +28,14 @@
 - (id)groupIdentifiers;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1 contactStore:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isServerFilter;
+- (bool)isEqual:(id)arg1;
+- (bool)isServerFilter;
 - (id)predicate;
 - (void)saveToPreferencesWithContactStore:(id)arg1;
 - (void)setContainerIdentifiers:(id)arg1;
 - (void)setGroupIdentifiers:(id)arg1;
-- (void)setIsServerFilter:(BOOL)arg1;
-- (BOOL)showsEverything;
-- (BOOL)supportsSections;
+- (void)setIsServerFilter:(bool)arg1;
+- (bool)showsEverything;
+- (bool)supportsSections;
 
 @end

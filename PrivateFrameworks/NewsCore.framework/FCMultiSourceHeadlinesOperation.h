@@ -5,9 +5,9 @@
 @interface FCMultiSourceHeadlinesOperation : FCOperation {
     NSSet * _articleIDs;
     NSArray * _articleListIDs;
+    FCCachePolicy * _cachePolicyForArticleLists;
     <FCContentContext> * _context;
     id /* block */  _headlinesCompletionHandler;
-    double  _maximumCachedAgeForArticleList;
     NSArray * _networkEvents;
     NSDictionary * _resultArticleIDHeadlinesByArticleID;
     NSDictionary * _resultArticleListHeadlinesByArticleListID;
@@ -16,9 +16,9 @@
 
 @property (nonatomic, copy) NSSet *articleIDs;
 @property (nonatomic, copy) NSArray *articleListIDs;
+@property (nonatomic, retain) FCCachePolicy *cachePolicyForArticleLists;
 @property (nonatomic, retain) <FCContentContext> *context;
 @property (nonatomic, copy) id /* block */ headlinesCompletionHandler;
-@property (nonatomic) double maximumCachedAgeForArticleList;
 @property (nonatomic, copy) NSArray *networkEvents;
 @property (nonatomic, retain) NSDictionary *resultArticleIDHeadlinesByArticleID;
 @property (nonatomic, retain) NSDictionary *resultArticleListHeadlinesByArticleListID;
@@ -27,10 +27,10 @@
 - (void).cxx_destruct;
 - (id)articleIDs;
 - (id)articleListIDs;
+- (id)cachePolicyForArticleLists;
 - (id)context;
 - (id /* block */)headlinesCompletionHandler;
 - (id)init;
-- (double)maximumCachedAgeForArticleList;
 - (id)networkEvents;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
@@ -39,13 +39,13 @@
 - (id)resultArticleListsByID;
 - (void)setArticleIDs:(id)arg1;
 - (void)setArticleListIDs:(id)arg1;
+- (void)setCachePolicyForArticleLists:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setHeadlinesCompletionHandler:(id /* block */)arg1;
-- (void)setMaximumCachedAgeForArticleList:(double)arg1;
 - (void)setNetworkEvents:(id)arg1;
 - (void)setResultArticleIDHeadlinesByArticleID:(id)arg1;
 - (void)setResultArticleListHeadlinesByArticleListID:(id)arg1;
 - (void)setResultArticleListsByID:(id)arg1;
-- (BOOL)validateOperation;
+- (bool)validateOperation;
 
 @end

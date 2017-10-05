@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)context;
-- (id)optionsForAnimatingTileController:(id)arg1 toLayoutInfo:(id)arg2 withAnimationType:(int)arg3;
+- (id)optionsForAnimatingTileController:(id)arg1 toLayoutInfo:(id)arg2 withAnimationType:(long long)arg3;
 - (void)setContext:(id)arg1;
 
 @end

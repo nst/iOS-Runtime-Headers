@@ -12,7 +12,7 @@
     }  _clientsUnfairLock;
     id  _delegate;
     NSString * _hostGUID;
-    unsigned long  _hostMaxConnections;
+    unsigned int  _hostMaxConnections;
     NSString * _hostName;
     unsigned short  _hostPort;
     int  _hostSecuritylevel;
@@ -26,7 +26,7 @@
 @property struct os_unfair_lock_s { unsigned int x1; } clientsUnfairLock;
 @property id delegate;
 @property (retain) NSString *hostGUID;
-@property unsigned long hostMaxConnections;
+@property unsigned int hostMaxConnections;
 @property (retain) NSString *hostName;
 @property unsigned short hostPort;
 @property int hostSecurityLevel;
@@ -41,7 +41,7 @@
 - (id)delegate;
 - (void)finalize;
 - (id)hostGUID;
-- (unsigned long)hostMaxConnections;
+- (unsigned int)hostMaxConnections;
 - (id)hostName;
 - (unsigned short)hostPort;
 - (int)hostSecurityLevel;
@@ -55,7 +55,7 @@
 - (void)setClientsUnfairLock:(struct os_unfair_lock_s { unsigned int x1; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHostGUID:(id)arg1;
-- (void)setHostMaxConnections:(unsigned long)arg1;
+- (void)setHostMaxConnections:(unsigned int)arg1;
 - (void)setHostName:(id)arg1;
 - (void)setHostPort:(unsigned short)arg1;
 - (void)setHostSecurityLevel:(int)arg1;

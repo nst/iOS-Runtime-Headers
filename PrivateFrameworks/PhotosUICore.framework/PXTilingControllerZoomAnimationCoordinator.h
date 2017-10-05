@@ -13,10 +13,10 @@
 @property (nonatomic, readonly) PXTilingController *tilingController;
 
 - (void).cxx_destruct;
-- (void)_animateTilesPassingTest:(id /* block */)arg1 forEndPointType:(int)arg2 withZoomTransitionContext:(id)arg3 tileGeometryTransformer:(id /* block */)arg4;
-- (void)_animateTilesPassingTest:(id /* block */)arg1 fromEndPointType:(int)arg2 toEndPointType:(int)arg3 alpha:(float)arg4 transform:(id)arg5 withOptions:(id)arg6 tileGeometryTransformer:(id /* block */)arg7 completionHandler:(id /* block */)arg8;
-- (void)animateContentForEndPointType:(int)arg1 inView:(struct NSObject { Class x1; }*)arg2 withLayerType:(int)arg3 zoomAnimationContext:(id)arg4;
-- (void)animateContentForEndPointType:(int)arg1 withZoomAnimationContext:(id)arg2;
+- (void)_animateTilesPassingTest:(id /* block */)arg1 forEndPointType:(long long)arg2 withZoomTransitionContext:(id)arg3 tileGeometryTransformer:(id /* block */)arg4;
+- (void)_animateTilesPassingTest:(id /* block */)arg1 fromEndPointType:(long long)arg2 toEndPointType:(long long)arg3 alpha:(double)arg4 transform:(id)arg5 withOptions:(id)arg6 tileGeometryTransformer:(id /* block */)arg7 completionHandler:(id /* block */)arg8;
+- (void)animateContentForEndPointType:(long long)arg1 inView:(struct NSObject { Class x1; }*)arg2 withLayerType:(long long)arg3 zoomAnimationContext:(id)arg4;
+- (void)animateContentForEndPointType:(long long)arg1 withZoomAnimationContext:(id)arg2;
 - (id)context;
 - (id)delegate;
 - (id)init;

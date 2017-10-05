@@ -6,31 +6,31 @@
     UIColor * _color;
 }
 
-@property (readonly) float alpha;
-@property (readonly) float blue;
-@property (readonly) float green;
+@property (readonly) double alpha;
+@property (readonly) double blue;
+@property (readonly) double green;
 @property (readonly) UIColor *nativeColor;
-@property (readonly) float red;
+@property (readonly) double red;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
 - (id)_className;
-- (float)alpha;
+- (double)alpha;
 - (id)attributeKeys;
-- (float)blue;
+- (double)blue;
 - (struct CGColor { }*)copyCGColor;
 - (void)dealloc;
-- (float)green;
+- (double)green;
 - (id)initWithStyleString:(id)arg1;
 - (id)initWithUIColor:(id)arg1;
 - (id)nativeColor;
-- (float)red;
+- (double)red;
 - (id)scriptAttributeKeys;
-- (void)setHue:(float)arg1 saturation:(float)arg2 brightness:(float)arg3 alpha:(float)arg4;
-- (void)setRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
-- (void)setWhite:(float)arg1 alpha:(float)arg2;
+- (void)setHue:(double)arg1 saturation:(double)arg2 brightness:(double)arg3 alpha:(double)arg4;
+- (void)setRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
+- (void)setWhite:(double)arg1 alpha:(double)arg2;
 - (id)stringRepresentation;
 
 @end

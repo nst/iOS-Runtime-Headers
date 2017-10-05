@@ -4,6 +4,6 @@
 
 @interface WKError : NSObject
 
-+ (id)errorWithCode:(int)arg1;
++ (id)errorWithCode:(long long)arg1;
 
 @end

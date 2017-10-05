@@ -3,39 +3,39 @@
  */
 
 @interface _TVShelfLayoutHelper : NSObject {
-    int  _actualRowCount;
-    struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } * _cellFrames;
-    struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } * _headerFrames;
-    int  _sectionCount;
-    struct UIEdgeInsets { float x1; float x2; float x3; float x4; } * _sectionInsets;
-    int * _sectionOffsets;
+    long long  _actualRowCount;
+    struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } * _cellFrames;
+    struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } * _headerFrames;
+    long long  _sectionCount;
+    struct UIEdgeInsets { double x1; double x2; double x3; double x4; } * _sectionInsets;
+    long long * _sectionOffsets;
     _TVShelfViewLayout * _shelfViewLayout;
-    float  _tallestColumnHeight;
-    float  _tallestHeaderHeight;
-    float  _tallestInsetBottom;
-    float  _tallestInsetTop;
+    double  _tallestColumnHeight;
+    double  _tallestHeaderHeight;
+    double  _tallestInsetBottom;
+    double  _tallestInsetTop;
 }
 
-@property (nonatomic, readonly) int actualRowCount;
+@property (nonatomic, readonly) long long actualRowCount;
 @property (nonatomic, readonly) _TVShelfViewLayout *shelfViewLayout;
-@property (nonatomic, readonly) float tallestColumnHeight;
-@property (nonatomic, readonly) float tallestHeaderHeight;
-@property (nonatomic, readonly) float tallestInsetBottom;
-@property (nonatomic, readonly) float tallestInsetTop;
+@property (nonatomic, readonly) double tallestColumnHeight;
+@property (nonatomic, readonly) double tallestHeaderHeight;
+@property (nonatomic, readonly) double tallestInsetBottom;
+@property (nonatomic, readonly) double tallestInsetTop;
 
 - (void).cxx_destruct;
 - (void)_compute;
 - (void)_freeBuffers;
-- (int)actualRowCount;
+- (long long)actualRowCount;
 - (void)dealloc;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForHeaderInSection:(int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForItemAtIndexPath:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForHeaderInSection:(long long)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForItemAtIndexPath:(id)arg1;
 - (id)initWithShelfViewLayout:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })insetForSection:(int)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })insetForSection:(long long)arg1;
 - (id)shelfViewLayout;
-- (float)tallestColumnHeight;
-- (float)tallestHeaderHeight;
-- (float)tallestInsetBottom;
-- (float)tallestInsetTop;
+- (double)tallestColumnHeight;
+- (double)tallestHeaderHeight;
+- (double)tallestInsetBottom;
+- (double)tallestInsetTop;
 
 @end

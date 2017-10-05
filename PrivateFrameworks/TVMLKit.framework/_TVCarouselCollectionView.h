@@ -4,6 +4,6 @@
 
 @interface _TVCarouselCollectionView : UICollectionView
 
-- (BOOL)_canScrollX;
+- (bool)_canScrollX;
 
 @end

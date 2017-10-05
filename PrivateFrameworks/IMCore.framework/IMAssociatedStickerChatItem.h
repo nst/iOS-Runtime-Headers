@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)_initWithItem:(id)arg1 sender:(id)arg2 transferGUID:(id)arg3;
-- (BOOL)canDelete;
+- (bool)canDelete;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)transferGUID;

@@ -46,7 +46,7 @@
 
 - (void).cxx_destruct;
 - (void)_generateAllCombinations;
-- (BOOL)_selectParametersFromCodec:(id)arg1 profiles:(id)arg2 levels:(id)arg3 packetizationModes:(id)arg4 videoAttributes:(id)arg5;
+- (bool)_selectParametersFromCodec:(id)arg1 profiles:(id)arg2 levels:(id)arg3 packetizationModes:(id)arg4 videoAttributes:(id)arg5;
 - (void)_setVideoResolutionPreference;
 - (id)createReselectedVideoParameters:(id)arg1;
 - (id)createSRTPParamters;
@@ -57,7 +57,7 @@
 - (id)initWithSessionID:(id)arg1 videoTierParameters:(id)arg2 supportedVideoConfiguration:(id)arg3 supportedRTPConfiguration:(id)arg4 streamingCapabilities:(id)arg5;
 - (id)logIdentifier;
 - (id)rtpConfiguration;
-- (BOOL)selectVideoParameters;
+- (bool)selectVideoParameters;
 - (id)selectedCodecType;
 - (id)selectedFramerate;
 - (id)selectedLevel;

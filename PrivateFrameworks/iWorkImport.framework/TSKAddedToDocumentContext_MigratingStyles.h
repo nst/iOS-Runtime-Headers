@@ -5,6 +5,6 @@
 @interface TSKAddedToDocumentContext_MigratingStyles : TSKAddedToDocumentContext
 
 - (id)description;
-- (BOOL)wasMigratingStyles;
+- (bool)wasMigratingStyles;
 
 @end

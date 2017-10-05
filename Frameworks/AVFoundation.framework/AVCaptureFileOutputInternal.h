@@ -11,7 +11,7 @@
     }  maxRecordedDuration;
     long long  maxRecordedFileSize;
     long long  minFreeDiskSpaceLimit;
-    BOOL  pausesRecordingOnInterruption;
+    bool  pausesRecordingOnInterruption;
 }
 
 - (id)init;

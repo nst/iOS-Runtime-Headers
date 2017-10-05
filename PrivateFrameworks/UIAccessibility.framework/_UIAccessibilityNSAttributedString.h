@@ -7,6 +7,6 @@
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
 
-- (void)drawAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)drawAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

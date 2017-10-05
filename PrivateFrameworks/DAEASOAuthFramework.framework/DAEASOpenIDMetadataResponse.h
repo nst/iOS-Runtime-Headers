@@ -6,14 +6,14 @@
     NSDictionary * _data;
     NSError * _error;
     NSString * _errorMessage;
-    int  _statusCode;
+    long long  _statusCode;
     NSString * _tokenRequestURI;
 }
 
 @property (nonatomic, readonly) NSDictionary *data;
 @property (nonatomic, readonly) NSError *error;
 @property (nonatomic, readonly) NSString *errorMessage;
-@property (nonatomic, readonly) int statusCode;
+@property (nonatomic, readonly) long long statusCode;
 @property (nonatomic, readonly) NSString *tokenRequestURI;
 
 - (void).cxx_destruct;
@@ -21,7 +21,7 @@
 - (id)error;
 - (id)errorMessage;
 - (id)initWithData:(id)arg1 urlResponse:(id)arg2 error:(id)arg3;
-- (int)statusCode;
+- (long long)statusCode;
 - (id)tokenRequestURI;
 
 @end

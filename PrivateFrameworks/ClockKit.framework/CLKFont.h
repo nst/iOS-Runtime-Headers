@@ -4,9 +4,9 @@
 
 @interface CLKFont : UIFont
 
-+ (id)fontWithDescriptor:(id)arg1 size:(float)arg2;
-+ (id)systemFontOfSize:(float)arg1;
-+ (id)systemFontOfSize:(float)arg1 weight:(float)arg2;
-+ (id)systemFontOfSize:(float)arg1 weight:(float)arg2 design:(id)arg3;
++ (id)fontWithDescriptor:(id)arg1 size:(double)arg2;
++ (id)systemFontOfSize:(double)arg1;
++ (id)systemFontOfSize:(double)arg1 weight:(double)arg2;
++ (id)systemFontOfSize:(double)arg1 weight:(double)arg2 design:(id)arg3;
 
 @end

@@ -3,28 +3,37 @@
  */
 
 @interface HKSeriesBuilder : NSObject <NSSecureCoding> {
-    long long  _count;
-    int  _state;
+    NSObject<OS_dispatch_queue> * _completionQueue;
+    HKDevice * _device;
+    bool  _hasData;
+    NSObject<OS_dispatch_queue> * _resourceQueue;
+    long long  _state;
     HKHealthStore * _store;
 }
 
-@property (setter=_setCount:) long long count;
-@property (setter=_setState:) unsigned int state;
-@property (readonly) HKHealthStore *store;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *completionQueue;
+@property (nonatomic, readonly, copy) HKDevice *device;
+@property (nonatomic) bool hasData;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *resourceQueue;
+@property (nonatomic) long long state;
+@property (nonatomic, readonly) HKHealthStore *store;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_discardWithHandler:(id /* block */)arg1;
-- (id)_initWithHealthStore:(id)arg1;
-- (void)_setCount:(long long)arg1;
-- (void)_setState:(unsigned int)arg1;
-- (long long)count;
+- (id)_initWithHealthStore:(id)arg1 device:(id)arg2;
+- (void)_resourceQueue_discardWithHandler:(id /* block */)arg1;
+- (id)completionQueue;
+- (id)device;
 - (void)discard;
 - (void)encodeWithCoder:(id)arg1;
+- (bool)hasData;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)state;
+- (id)resourceQueue;
+- (void)setHasData:(bool)arg1;
+- (void)setState:(long long)arg1;
+- (long long)state;
 - (id)store;
 
 @end

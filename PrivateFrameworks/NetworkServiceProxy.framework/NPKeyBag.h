@@ -3,7 +3,6 @@
  */
 
 @interface NPKeyBag : NSObject {
-    int  _TFOStatus;
     unsigned int  _error;
     unsigned int  _generation;
     unsigned int  _index;
@@ -12,7 +11,6 @@
     unsigned int  _timestamp;
 }
 
-@property int TFOStatus;
 @property unsigned int error;
 @property unsigned int generation;
 @property unsigned int index;
@@ -21,7 +19,6 @@
 @property unsigned int timestamp;
 
 - (void).cxx_destruct;
-- (int)TFOStatus;
 - (id)data;
 - (unsigned int)error;
 - (unsigned int)generation;
@@ -34,7 +31,6 @@
 - (void)setIndex:(unsigned int)arg1;
 - (void)setKeys:(id)arg1;
 - (void)setLastUsedTimestamp:(double)arg1;
-- (void)setTFOStatus:(int)arg1;
 - (void)setTimestamp:(unsigned int)arg1;
 - (unsigned int)timestamp;
 

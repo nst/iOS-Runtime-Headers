@@ -3,21 +3,23 @@
  */
 
 @interface HFCharacteristicValueDisplayError : NSObject {
-    unsigned int  _category;
+    unsigned long long  _category;
     <HFCharacteristicOperationContextProviding> * _contextProvider;
     NSError * _underlyingError;
 }
 
-@property (nonatomic) unsigned int category;
+@property (nonatomic) unsigned long long category;
 @property (nonatomic, retain) <HFCharacteristicOperationContextProviding> *contextProvider;
+@property (getter=isPersistentError, nonatomic, readonly) bool persistentError;
 @property (nonatomic, copy) NSError *underlyingError;
 
-+ (id)errorWithUnderlyingError:(id)arg1 contextProvider:(id)arg2;
++ (id)errorWithUnderlyingError:(id)arg1 readTraits:(id)arg2 contextProvider:(id)arg3;
 
 - (void).cxx_destruct;
-- (unsigned int)category;
+- (unsigned long long)category;
 - (id)contextProvider;
-- (void)setCategory:(unsigned int)arg1;
+- (bool)isPersistentError;
+- (void)setCategory:(unsigned long long)arg1;
 - (void)setContextProvider:(id)arg1;
 - (void)setUnderlyingError:(id)arg1;
 - (id)underlyingError;

@@ -3,22 +3,22 @@
  */
 
 @interface GEOResourceInfo : NSObject {
-    BOOL  _allowResumingPartialDownload;
+    bool  _allowResumingPartialDownload;
     NSArray * _equivalentResources;
     GEOResource * _resource;
 }
 
-@property (getter=_allowResumingPartialDownload, setter=_setAllowResumingPartialDownload:, nonatomic) BOOL allowResumingPartialDownload;
+@property (getter=_allowResumingPartialDownload, setter=_setAllowResumingPartialDownload:, nonatomic) bool allowResumingPartialDownload;
 @property (nonatomic, readonly) NSData *checksum;
 @property (nonatomic, copy) NSArray *equivalentResources;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) GEOResource *resource;
 @property (nonatomic, readonly) int type;
 
-- (BOOL)_allowResumingPartialDownload;
-- (void)_setAllowResumingPartialDownload:(BOOL)arg1;
+- (void).cxx_destruct;
+- (bool)_allowResumingPartialDownload;
+- (void)_setAllowResumingPartialDownload:(bool)arg1;
 - (id)checksum;
-- (void)dealloc;
 - (id)description;
 - (id)equivalentResources;
 - (id)initWithResource:(id)arg1;

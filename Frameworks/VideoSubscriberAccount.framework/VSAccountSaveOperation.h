@@ -3,35 +3,35 @@
  */
 
 @interface VSAccountSaveOperation : VSAsyncOperation {
-    VSAccountStore * _accountStore;
     NSOperation * _currentOperation;
     VSOptional * _result;
-    VSAccount * _unsavedAccount;
+    VSPersistentStorage * _storage;
+    NSArray * _unsavedAccounts;
     VSAccountChannels * _unsavedChannels;
 }
 
-@property (nonatomic, retain) VSAccountStore *accountStore;
 @property (nonatomic, retain) NSOperation *currentOperation;
 @property (nonatomic, retain) VSOptional *result;
-@property (nonatomic, retain) VSAccount *unsavedAccount;
+@property (nonatomic, retain) VSPersistentStorage *storage;
+@property (nonatomic, copy) NSArray *unsavedAccounts;
 @property (nonatomic, retain) VSAccountChannels *unsavedChannels;
 
 - (void).cxx_destruct;
 - (void)_startAccountChannelsSaveOperation;
 - (void)_startCredentialSaveOperation;
-- (id)accountStore;
 - (void)cancel;
 - (id)currentOperation;
 - (void)executionDidBegin;
 - (id)init;
-- (id)initWithUnsavedAccount:(id)arg1 accountStore:(id)arg2 channels:(id)arg3;
+- (id)initWithUnsavedAccounts:(id)arg1 channels:(id)arg2 storage:(id)arg3;
 - (id)result;
-- (void)setAccountStore:(id)arg1;
 - (void)setCurrentOperation:(id)arg1;
 - (void)setResult:(id)arg1;
-- (void)setUnsavedAccount:(id)arg1;
+- (void)setStorage:(id)arg1;
+- (void)setUnsavedAccounts:(id)arg1;
 - (void)setUnsavedChannels:(id)arg1;
-- (id)unsavedAccount;
+- (id)storage;
+- (id)unsavedAccounts;
 - (id)unsavedChannels;
 
 @end

@@ -6,7 +6,7 @@
 @required
 
 - (NSDate *)defaultBookingDate;
-- (unsigned int)defaultPartySize;
+- (unsigned long long)defaultPartySize;
 - (id)init;
 - (NSNumber *)maximumPartySize;
 - (NSNumber *)minimumPartySize;

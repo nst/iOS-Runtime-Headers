@@ -3,24 +3,24 @@
  */
 
 @interface GKGridLayoutInvalidationContext : UICollectionViewLayoutInvalidationContext {
-    BOOL  _invalidateBoundsChange;
-    BOOL  _invalidateIncrementalReveal;
-    BOOL  _invalidatePinnableAreas;
-    BOOL  _invalidatePlaceholderVisibility;
+    bool  _invalidateBoundsChange;
+    bool  _invalidateIncrementalReveal;
+    bool  _invalidatePinnableAreas;
+    bool  _invalidatePlaceholderVisibility;
 }
 
-@property (nonatomic) BOOL invalidateBoundsChange;
-@property (nonatomic) BOOL invalidateIncrementalReveal;
-@property (nonatomic) BOOL invalidatePinnableAreas;
-@property (nonatomic) BOOL invalidatePlaceholderVisibility;
+@property (nonatomic) bool invalidateBoundsChange;
+@property (nonatomic) bool invalidateIncrementalReveal;
+@property (nonatomic) bool invalidatePinnableAreas;
+@property (nonatomic) bool invalidatePlaceholderVisibility;
 
-- (BOOL)invalidateBoundsChange;
-- (BOOL)invalidateIncrementalReveal;
-- (BOOL)invalidatePinnableAreas;
-- (BOOL)invalidatePlaceholderVisibility;
-- (void)setInvalidateBoundsChange:(BOOL)arg1;
-- (void)setInvalidateIncrementalReveal:(BOOL)arg1;
-- (void)setInvalidatePinnableAreas:(BOOL)arg1;
-- (void)setInvalidatePlaceholderVisibility:(BOOL)arg1;
+- (bool)invalidateBoundsChange;
+- (bool)invalidateIncrementalReveal;
+- (bool)invalidatePinnableAreas;
+- (bool)invalidatePlaceholderVisibility;
+- (void)setInvalidateBoundsChange:(bool)arg1;
+- (void)setInvalidateIncrementalReveal:(bool)arg1;
+- (void)setInvalidatePinnableAreas:(bool)arg1;
+- (void)setInvalidatePlaceholderVisibility:(bool)arg1;
 
 @end

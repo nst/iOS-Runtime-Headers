@@ -6,12 +6,12 @@
     OADCharacterProperties * mProperties;
 }
 
-- (unsigned int)characterCount;
+- (unsigned long long)characterCount;
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (BOOL)isEmpty;
-- (BOOL)isSimilarToTextRun:(id)arg1;
+- (bool)isEmpty;
+- (bool)isSimilarToTextRun:(id)arg1;
 - (id)properties;
 - (void)removeUnnecessaryOverrides;
 - (void)setProperties:(id)arg1;

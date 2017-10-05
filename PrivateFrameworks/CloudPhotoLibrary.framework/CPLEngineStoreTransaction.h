@@ -5,7 +5,7 @@
 @interface CPLEngineStoreTransaction : NSObject {
     NSThread * _currentThread;
     NSError * _error;
-    BOOL  _forWrite;
+    bool  _forWrite;
     NSString * _name;
 }
 
@@ -13,15 +13,15 @@
 @property (nonatomic, copy) NSString *name;
 
 - (void).cxx_destruct;
-- (BOOL)_forWrite;
+- (bool)_forWrite;
 - (void)_transactionDidFinish;
 - (void)_transactionWillBeginOnThread:(id)arg1;
-- (BOOL)canRead;
-- (BOOL)canWrite;
+- (bool)canRead;
+- (bool)canWrite;
 - (id)description;
-- (BOOL)do:(id /* block */)arg1;
+- (bool)do:(id /* block */)arg1;
 - (id)error;
-- (id)initForWrite:(BOOL)arg1;
+- (id)initForWrite:(bool)arg1;
 - (id)name;
 - (void)setError:(id)arg1;
 - (void)setName:(id)arg1;

@@ -11,8 +11,8 @@
 }
 
 @property (nonatomic, retain) FCCKPRecordFieldIdentifier *fieldName;
-@property (nonatomic, readonly) BOOL hasFieldName;
-@property (nonatomic) BOOL hasOrder;
+@property (nonatomic, readonly) bool hasFieldName;
+@property (nonatomic) bool hasOrder;
 @property (nonatomic) int order;
 
 - (void)copyTo:(id)arg1;
@@ -21,15 +21,15 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)fieldName;
-- (BOOL)hasFieldName;
-- (BOOL)hasOrder;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasFieldName;
+- (bool)hasOrder;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)order;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setFieldName:(id)arg1;
-- (void)setHasOrder:(BOOL)arg1;
+- (void)setHasOrder:(bool)arg1;
 - (void)setOrder:(int)arg1;
 - (void)writeTo:(id)arg1;
 

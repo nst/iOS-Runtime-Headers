@@ -7,30 +7,33 @@
 }
 
 @property (nonatomic, readonly, copy) NSString *applicationUsername;
+@property (nonatomic, readonly) bool isStoreOriginated;
 @property (nonatomic, readonly, copy) NSString *partnerIdentifier;
 @property (nonatomic, readonly, copy) NSString *partnerTransactionIdentifier;
 @property (nonatomic, readonly, copy) NSString *productIdentifier;
-@property (nonatomic, readonly) int quantity;
+@property (nonatomic, readonly) long long quantity;
 @property (nonatomic, readonly, copy) NSData *requestData;
 @property (nonatomic, readonly, copy) NSDictionary *requestParameters;
-@property (nonatomic, readonly) BOOL simulatesAskToBuyInSandbox;
+@property (nonatomic, readonly) bool simulatesAskToBuyInSandbox;
 
++ (id)paymentFromPurchaseIntentWithProduct:(id)arg1;
 + (id)paymentWithProduct:(id)arg1;
 + (id)paymentWithProductIdentifier:(id)arg1;
 
 - (id)applicationUsername;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isStoreOriginated;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)partnerIdentifier;
 - (id)partnerTransactionIdentifier;
 - (id)productIdentifier;
-- (int)quantity;
+- (long long)quantity;
 - (id)requestData;
 - (id)requestParameters;
-- (BOOL)simulatesAskToBuyInSandbox;
+- (bool)simulatesAskToBuyInSandbox;
 
 @end

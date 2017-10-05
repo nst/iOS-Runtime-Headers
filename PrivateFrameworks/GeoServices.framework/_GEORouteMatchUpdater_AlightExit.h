@@ -15,9 +15,9 @@
 }
 
 - (id).cxx_construct;
-- (BOOL)_isLocationNearAlightNode:(id)arg1;
-- (void)dealloc;
+- (void).cxx_destruct;
+- (bool)_isLocationNearAlightNode:(id)arg1;
 - (id)initWithTransitRouteMatcher:(id)arg1 alightStep:(id)arg2;
-- (BOOL)updateRouteMatch:(id)arg1 previousRouteMatch:(id)arg2 forLocation:(id)arg3;
+- (bool)updateRouteMatch:(id)arg1 previousRouteMatch:(id)arg2 forLocation:(id)arg3;
 
 @end

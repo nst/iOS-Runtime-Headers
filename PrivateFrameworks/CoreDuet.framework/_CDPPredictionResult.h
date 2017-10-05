@@ -5,11 +5,11 @@
 @interface _CDPPredictionResult : NSObject {
     NSArray * _rankedMembers;
     NSMutableDictionary * _scoresForMembers;
-    float  _weight;
+    double  _weight;
 }
 
 @property (retain) NSMutableDictionary *scoresForMembers;
-@property float weight;
+@property double weight;
 
 - (void).cxx_destruct;
 - (void)commonInit;
@@ -21,7 +21,7 @@
 - (id)rankedMembersPassingThreshold:(double)arg1;
 - (id)scoresForMembers;
 - (void)setScoresForMembers:(id)arg1;
-- (void)setWeight:(float)arg1;
-- (float)weight;
+- (void)setWeight:(double)arg1;
+- (double)weight;
 
 @end

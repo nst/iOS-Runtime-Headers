@@ -12,12 +12,12 @@
 @property (nonatomic, copy) id /* block */ completionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_completedWithData:(id)arg1 MIMEType:(id)arg2 error:(id)arg3;
-- (void)_failedWithErrorCode:(int)arg1 underlyingError:(id)arg2;
+- (void)_failedWithErrorCode:(long long)arg1 underlyingError:(id)arg2;
 - (void)cancel;
 - (id /* block */)completionHandler;
 - (id)initWithResolvable:(id)arg1 webViewForProcessSharing:(id)arg2 completionHandler:(id /* block */)arg3;

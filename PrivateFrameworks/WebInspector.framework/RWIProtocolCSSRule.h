@@ -5,20 +5,20 @@
 @interface RWIProtocolCSSRule : RWIProtocolJSONObject
 
 @property (nonatomic, copy) NSArray *media;
-@property (nonatomic) int origin;
+@property (nonatomic) long long origin;
 @property (nonatomic, retain) RWIProtocolCSSRuleId *ruleId;
 @property (nonatomic, retain) RWIProtocolCSSSelectorList *selectorList;
 @property (nonatomic) int sourceLine;
 @property (nonatomic, copy) NSString *sourceURL;
 @property (nonatomic, retain) RWIProtocolCSSStyle *style;
 
-- (id)initWithSelectorList:(id)arg1 sourceLine:(int)arg2 origin:(int)arg3 style:(id)arg4;
+- (id)initWithSelectorList:(id)arg1 sourceLine:(int)arg2 origin:(long long)arg3 style:(id)arg4;
 - (id)media;
-- (int)origin;
+- (long long)origin;
 - (id)ruleId;
 - (id)selectorList;
 - (void)setMedia:(id)arg1;
-- (void)setOrigin:(int)arg1;
+- (void)setOrigin:(long long)arg1;
 - (void)setRuleId:(id)arg1;
 - (void)setSelectorList:(id)arg1;
 - (void)setSourceLine:(int)arg1;

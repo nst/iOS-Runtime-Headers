@@ -8,7 +8,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) SSVPushNotificationParameters *pushNotificationParameters;
 @property (readonly) Class superclass;
 
@@ -18,7 +18,7 @@
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)pushNotificationParameters;
 - (void)setPushNotificationParameters:(id)arg1;
-- (BOOL)start;
+- (bool)start;
 - (void)startWithCompletionBlock:(id /* block */)arg1;
 - (void)startWithResponseBlock:(id /* block */)arg1;
 

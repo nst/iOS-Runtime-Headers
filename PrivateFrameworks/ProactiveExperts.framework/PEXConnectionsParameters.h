@@ -4,32 +4,38 @@
 
 @interface PEXConnectionsParameters : NSObject {
     NSDictionary * _assets;
+    NSObject<OS_dispatch_semaphore> * _assets_sem;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (int)appSwitcherPredictionExpiry;
+- (long long)appSwitcherPredictionExpiry;
+- (id)assetValueForKey:(id)arg1;
+- (bool)boolValueForKey:(id)arg1 default:(bool)arg2;
 - (double)calendarEventLocationLookaheadTimeSeconds;
 - (id)donationBlacklistApps;
 - (id)donationBlacklistWebsites;
 - (id)donationWhitelistApps;
 - (id)donationWhitelistWebsites;
-- (int)expirySeconds;
+- (double)doubleValueForKey:(id)arg1 default:(long long)arg2;
+- (long long)expirySeconds;
 - (id)init;
+- (long long)integerValueForKey:(id)arg1 default:(long long)arg2;
 - (double)linguisticTriggerExpirySeconds;
 - (double)locationAppLastUseTimeoutSeconds;
-- (int)locationAppPredictionInstallHalflife;
-- (int)locationAppPredictionInstallMaxScore;
-- (int)locationAppPredictionLaunchTimeOfDayFactor;
-- (int)locationAppPredictionOverallLaunchFactor;
+- (long long)locationAppPredictionInstallHalflife;
+- (long long)locationAppPredictionInstallMaxScore;
+- (long long)locationAppPredictionLaunchTimeOfDayFactor;
+- (long long)locationAppPredictionOverallLaunchFactor;
 - (id)locationPredictionBlacklistApps;
 - (double)pasteboardItemExpirySeconds;
-- (unsigned int)quickTypePredictionLimit;
-- (BOOL)shouldUseWhitelistApps;
-- (BOOL)shouldUseWhitelistWebsite;
-- (unsigned int)userActivityBatchSize;
+- (unsigned long long)quickTypePredictionLimit;
+- (bool)shouldUseWhitelistApps;
+- (bool)shouldUseWhitelistWebsite;
+- (long long)unsignedIntegerValueForKey:(id)arg1 default:(long long)arg2;
+- (unsigned long long)userActivityBatchSize;
 - (double)userActivityCandidateScore;
 - (double)userActivityExpirySeconds;
 

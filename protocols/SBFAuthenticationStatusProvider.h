@@ -5,9 +5,9 @@
 
 @required
 
-- (BOOL)hasAuthenticatedAtLeastOnceSinceBoot;
-- (BOOL)hasPasscodeSet;
-- (BOOL)isAuthenticated;
-- (BOOL)isAuthenticatedCached;
+- (bool)hasAuthenticatedAtLeastOnceSinceBoot;
+- (bool)hasPasscodeSet;
+- (bool)isAuthenticated;
+- (bool)isAuthenticatedCached;
 
 @end

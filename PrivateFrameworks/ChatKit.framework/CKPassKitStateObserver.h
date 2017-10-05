@@ -3,12 +3,12 @@
  */
 
 @interface CKPassKitStateObserver : NSObject {
-    BOOL  _iTunesStoreDialogPresented;
-    BOOL  _passKitUIPresented;
+    bool  _iTunesStoreDialogPresented;
+    bool  _passKitUIPresented;
 }
 
-@property (nonatomic) BOOL iTunesStoreDialogPresented;
-@property (nonatomic) BOOL passKitUIPresented;
+@property (nonatomic) bool iTunesStoreDialogPresented;
+@property (nonatomic) bool passKitUIPresented;
 
 + (id)sharedInstance;
 
@@ -18,11 +18,11 @@
 - (void)_passKitUIPresented;
 - (void)dealloc;
 - (id)description;
-- (BOOL)iTunesStoreDialogPresented;
+- (bool)iTunesStoreDialogPresented;
 - (id)init;
-- (BOOL)passKitUIPresented;
+- (bool)passKitUIPresented;
 - (void)prepareForResume;
-- (void)setITunesStoreDialogPresented:(BOOL)arg1;
-- (void)setPassKitUIPresented:(BOOL)arg1;
+- (void)setITunesStoreDialogPresented:(bool)arg1;
+- (void)setPassKitUIPresented:(bool)arg1;
 
 @end

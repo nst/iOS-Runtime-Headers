@@ -3,12 +3,12 @@
  */
 
 @interface UIPrinterUtilityTableViewController : UITableViewController {
-    int  _identifyPrinterSection;
-    int  _mainPrinterCellSection;
+    long long  _identifyPrinterSection;
+    long long  _mainPrinterCellSection;
     PKPrinter * _printer;
-    int  _printerNameAndLocationSection;
-    int  _removeKeychainItemSection;
-    BOOL  _showSupplyDataUnderPrinterName;
+    long long  _printerNameAndLocationSection;
+    long long  _removeKeychainItemSection;
+    bool  _showSupplyDataUnderPrinterName;
     NSArray * _supplyData;
 }
 
@@ -17,15 +17,14 @@
 - (void).cxx_destruct;
 - (void)didReceiveMemoryWarning;
 - (id)initWithPrinter:(id)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (void)setShowContactingPrinter:(BOOL)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (void)setShowContactingPrinter:(bool)arg1;
 - (void)setSupplyData:(id)arg1;
 - (id)supplyData;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
-- (void)viewWillAppear:(BOOL)arg1;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

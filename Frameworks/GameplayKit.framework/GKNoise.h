@@ -40,7 +40,7 @@
 - (void)raiseToPower:(double)arg1;
 - (void)raiseToPowerWithNoise:(id)arg1;
 - (void)remapValuesToCurveWithControlPoints:(id)arg1;
-- (void)remapValuesToTerracesWithPeaks:(id)arg1 terracesInverted:(BOOL)arg2;
+- (void)remapValuesToTerracesWithPeaks:(id)arg1 terracesInverted:(bool)arg2;
 - (void)rotateBy;
 - (void)scaleBy;
 - (void)setGradientColors:(id)arg1;

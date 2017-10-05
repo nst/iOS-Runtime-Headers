@@ -10,7 +10,8 @@
 
 - (void).cxx_destruct;
 - (id)addDeviceClass:(id)arg1;
-- (id)addSecretType:(unsigned int)arg1;
+- (id)addSecretType:(unsigned long long)arg1;
+- (id)addUnqualifiedDeviceClass:(id)arg1;
 - (id)currentKey;
 - (id)localizedString;
 

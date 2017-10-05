@@ -15,15 +15,15 @@
 @property (nonatomic) <UINavigationControllerDelegate><UIVideoEditorControllerDelegate> *delegate;
 @property (nonatomic) double videoMaximumDuration;
 @property (nonatomic, copy) NSString *videoPath;
-@property (nonatomic) int videoQuality;
+@property (nonatomic) long long videoQuality;
 
-+ (BOOL)canEditVideoAtPath:(id)arg1;
++ (bool)canEditVideoAtPath:(id)arg1;
 
 - (void)_autoDismiss;
 - (id)_createInitialController;
-- (BOOL)_didRevertStatusBar;
+- (bool)_didRevertStatusBar;
 - (void)_initializeProperties;
-- (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
+- (bool)_isSupportedInterfaceOrientation:(long long)arg1;
 - (id)_properties;
 - (void)_removeAllChildren;
 - (void)_setProperties:(id)arg1;
@@ -38,13 +38,13 @@
 - (id)init;
 - (void)setVideoMaximumDuration:(double)arg1;
 - (void)setVideoPath:(id)arg1;
-- (void)setVideoQuality:(int)arg1;
+- (void)setVideoQuality:(long long)arg1;
 - (double)videoMaximumDuration;
 - (id)videoPath;
-- (int)videoQuality;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (long long)videoQuality;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillUnload;
 
 @end

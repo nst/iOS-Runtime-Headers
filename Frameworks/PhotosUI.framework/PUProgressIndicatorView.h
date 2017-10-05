@@ -3,13 +3,13 @@
  */
 
 @interface PUProgressIndicatorView : UIView {
-    int  __currentState;
+    long long  __currentState;
     double  __timestampBeganShowing;
     _UIBackdropView * _backgroundView;
     NSArray * _backgroundViewConstraints;
     id /* block */  _completionHandler;
-    float  _currentProgress;
-    BOOL  _isDeterminate;
+    double  _currentProgress;
+    bool  _isDeterminate;
     NSArray * _labelAndPieProgressConstraints;
     NSArray * _labelAndSpinnerConstraints;
     NSString * _localizedMessage;
@@ -17,51 +17,51 @@
     NSArray * _messageLabelConstraints;
     PLRoundProgressView * _pieProgressView;
     NSArray * _pieProgressViewConstraints;
-    BOOL  _showsBackground;
+    bool  _showsBackground;
     UIActivityIndicatorView * _spinnerView;
     NSArray * _spinnerViewConstraints;
-    int  _style;
-    BOOL  _wantsAnimatedHide;
-    BOOL  _wantsImmediateHide;
+    long long  _style;
+    bool  _wantsAnimatedHide;
+    bool  _wantsImmediateHide;
 }
 
-@property (setter=_setCurrentState:, nonatomic) int _currentState;
+@property (setter=_setCurrentState:, nonatomic) long long _currentState;
 @property (setter=_setTimestampBeganShowing:, nonatomic) double _timestampBeganShowing;
-@property (nonatomic) float currentProgress;
-@property (setter=setDeterminate:, nonatomic) BOOL isDeterminate;
+@property (nonatomic) double currentProgress;
+@property (setter=setDeterminate:, nonatomic) bool isDeterminate;
 @property (nonatomic, copy) NSString *localizedMessage;
-@property (getter=isShowingProgress, nonatomic, readonly) BOOL showingProgress;
-@property (nonatomic) BOOL showsBackground;
-@property (nonatomic, readonly) int style;
+@property (getter=isShowingProgress, nonatomic, readonly) bool showingProgress;
+@property (nonatomic) bool showsBackground;
+@property (nonatomic, readonly) long long style;
 
 - (void).cxx_destruct;
-- (int)_currentState;
+- (long long)_currentState;
 - (void)_endShowingProgressIfReady;
-- (void)_handleBeginShowingAnimated:(BOOL)arg1 wasImmediate:(BOOL)arg2;
+- (void)_handleBeginShowingAnimated:(bool)arg1 wasImmediate:(bool)arg2;
 - (id)_newBackdropBackgroundView;
-- (void)_setCurrentState:(int)arg1;
+- (void)_setCurrentState:(long long)arg1;
 - (void)_setTimestampBeganShowing:(double)arg1;
 - (double)_timestampBeganShowing;
 - (void)_updatePieProgress;
-- (void)_updateProgressViewsAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
-- (void)_updateProgressViewsWithAnimation:(int)arg1 completion:(id /* block */)arg2;
+- (void)_updateProgressViewsAnimated:(bool)arg1 completion:(id /* block */)arg2;
+- (void)_updateProgressViewsWithAnimation:(long long)arg1 completion:(id /* block */)arg2;
 - (void)_updateSubviewsOrdering;
-- (void)beginShowingProgressImmediately:(BOOL)arg1 animated:(BOOL)arg2;
-- (float)currentProgress;
-- (void)endShowingProgressImmediately:(BOOL)arg1 animated:(BOOL)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)beginShowingProgressImmediately:(bool)arg1 animated:(bool)arg2;
+- (double)currentProgress;
+- (void)endShowingProgressImmediately:(bool)arg1 animated:(bool)arg2 withCompletionHandler:(id /* block */)arg3;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithStyle:(int)arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (BOOL)isDeterminate;
-- (BOOL)isShowingProgress;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithStyle:(long long)arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (bool)isDeterminate;
+- (bool)isShowingProgress;
 - (id)localizedMessage;
-- (void)setCurrentProgress:(float)arg1;
-- (void)setDeterminate:(BOOL)arg1;
+- (void)setCurrentProgress:(double)arg1;
+- (void)setDeterminate:(bool)arg1;
 - (void)setLocalizedMessage:(id)arg1;
-- (void)setShowsBackground:(BOOL)arg1;
-- (BOOL)showsBackground;
-- (int)style;
+- (void)setShowsBackground:(bool)arg1;
+- (bool)showsBackground;
+- (long long)style;
 - (void)updateConstraints;
 
 @end

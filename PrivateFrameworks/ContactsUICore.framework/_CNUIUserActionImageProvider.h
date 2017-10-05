@@ -6,14 +6,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (id)imageForActionType:(id)arg1 imageStyle:(int)arg2;
-+ (id)imageForResource:(id)arg1;
++ (id)imageForActionType:(id)arg1 imageStyle:(long long)arg2;
 + (id)imageResourceBaseNameForActionType:(id)arg1;
-+ (id)imageResourceNameForActionType:(id)arg1 style:(int)arg2;
-+ (id)imageResourceVariantNameForImageStyle:(int)arg1;
-+ (id)uncachedImageForResource:(id)arg1;
++ (id)imageResourceNameForActionType:(id)arg1 style:(long long)arg2;
++ (id)imageResourceVariantNameForImageStyle:(long long)arg1;
++ (id)templateImageForActionType:(id)arg1 imageStyle:(long long)arg2;
 
 @end

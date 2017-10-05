@@ -2,38 +2,30 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUIMovieCardSectionBuyButtonView : SearchUIStackView <NUIContainerStackViewDelegate> {
+@interface SearchUIMovieCardSectionBuyButtonView : SearchUIWidthLimitedStackView {
     SKUIItemOfferButton * _button;
-    SearchUICardViewController * _controller;
+    SearchUIMovieCardSectionView * _cardSectionView;
     SFPunchout * _punchout;
-    SFMediaInfoCardSection * _section;
-    UILabel * _subtitleLabel;
+    SearchUIVibrantLabel * _subtitleLabel;
 }
 
 @property (retain) SKUIItemOfferButton *button;
-@property SearchUICardViewController *controller;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property SearchUIMovieCardSectionView *cardSectionView;
 @property (retain) SFPunchout *punchout;
-@property (retain) SFMediaInfoCardSection *section;
-@property (retain) UILabel *subtitleLabel;
-@property (readonly) Class superclass;
+@property (retain) SearchUIVibrantLabel *subtitleLabel;
 
 - (void).cxx_destruct;
 - (id)button;
 - (void)buttonPressed;
-- (id)controller;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithTitle:(id)arg1 subtitle:(id)arg2 punchout:(id)arg3 controller:(id)arg4 section:(id)arg5;
+- (id)cardSectionView;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithTitle:(id)arg1 subtitle:(id)arg2 punchout:(id)arg3 cardSectionView:(id)arg4;
 - (id)punchout;
-- (id)section;
 - (void)setButton:(id)arg1;
-- (void)setController:(id)arg1;
+- (void)setCardSectionView:(id)arg1;
 - (void)setPunchout:(id)arg1;
-- (void)setSection:(id)arg1;
 - (void)setSubtitleLabel:(id)arg1;
 - (id)subtitleLabel;
-- (struct CGSize { float x1; float x2; })systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

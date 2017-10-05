@@ -5,48 +5,48 @@
 @interface WBUFeatureManager : NSObject {
     ACAccount * _account;
     ACAccountStore * _accountStore;
-    BOOL  _autoFillAvailable;
-    BOOL  _bookmarksAvailable;
-    BOOL  _cloudSyncAvailable;
-    BOOL  _inMemoryBookmarkChangeTrackingAvailable;
+    bool  _autoFillAvailable;
+    bool  _bookmarksAvailable;
+    bool  _cloudSyncAvailable;
+    bool  _inMemoryBookmarkChangeTrackingAvailable;
     NSObject<OS_dispatch_queue> * _internalQueue;
-    BOOL  _offlineReadingListAvailable;
-    BOOL  _readingListAvailable;
+    bool  _offlineReadingListAvailable;
+    bool  _readingListAvailable;
 }
 
-@property (getter=isAutoFillAvailable, nonatomic, readonly) BOOL autoFillAvailable;
-@property (getter=isBookmarksAvailable, nonatomic, readonly) BOOL bookmarksAvailable;
-@property (getter=isCloudHistorySyncAvailable, nonatomic, readonly) BOOL cloudHistorySyncAvailable;
-@property (getter=isCloudKitBookmarksAvailable, nonatomic, readonly) BOOL cloudKitBookmarksAvailable;
-@property (getter=isCloudSyncAvailable, nonatomic, readonly) BOOL cloudSyncAvailable;
-@property (getter=isCloudTabsAvailable, nonatomic, readonly) BOOL cloudTabsAvailable;
-@property (getter=isCreditCardStorageAvailable, nonatomic, readonly) BOOL creditCardStorageAvailable;
-@property (getter=isInMemoryBookmarkChangeTrackingAvailable, nonatomic, readonly) BOOL inMemoryBookmarkChangeTrackingAvailable;
-@property (getter=isOfflineReadingListAvailable, nonatomic, readonly) BOOL offlineReadingListAvailable;
-@property (getter=isParsecITunesResultsAvailable, nonatomic, readonly) BOOL parsecITunesResultsAvailable;
-@property (getter=isReadingListAvailable, nonatomic, readonly) BOOL readingListAvailable;
+@property (getter=isAutoFillAvailable, nonatomic, readonly) bool autoFillAvailable;
+@property (getter=isBookmarksAvailable, nonatomic, readonly) bool bookmarksAvailable;
+@property (getter=isCloudHistorySyncAvailable, nonatomic, readonly) bool cloudHistorySyncAvailable;
+@property (getter=isCloudKitBookmarksAvailable, nonatomic, readonly) bool cloudKitBookmarksAvailable;
+@property (getter=isCloudSyncAvailable, nonatomic, readonly) bool cloudSyncAvailable;
+@property (getter=isCloudTabsAvailable, nonatomic, readonly) bool cloudTabsAvailable;
+@property (getter=isCreditCardStorageAvailable, nonatomic, readonly) bool creditCardStorageAvailable;
+@property (getter=isInMemoryBookmarkChangeTrackingAvailable, nonatomic, readonly) bool inMemoryBookmarkChangeTrackingAvailable;
+@property (getter=isOfflineReadingListAvailable, nonatomic, readonly) bool offlineReadingListAvailable;
+@property (getter=isParsecITunesResultsAvailable, nonatomic, readonly) bool parsecITunesResultsAvailable;
+@property (getter=isReadingListAvailable, nonatomic, readonly) bool readingListAvailable;
 
-+ (int)accessLevel;
++ (long long)accessLevel;
 + (id)webui_sharedFeatureManager;
 
 - (void).cxx_destruct;
 - (void)_accountStoreDidChange:(id)arg1;
-- (BOOL)_isUsingManagedAppleID;
+- (bool)_isUsingManagedAppleID;
 - (void)_setupAccountStore;
 - (void)_updateAppleAccount;
 - (void)_updateFeatureAvailabilityByAccessLevel;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isAutoFillAvailable;
-- (BOOL)isBookmarksAvailable;
-- (BOOL)isCloudHistorySyncAvailable;
-- (BOOL)isCloudKitBookmarksAvailable;
-- (BOOL)isCloudSyncAvailable;
-- (BOOL)isCloudTabsAvailable;
-- (BOOL)isCreditCardStorageAvailable;
-- (BOOL)isInMemoryBookmarkChangeTrackingAvailable;
-- (BOOL)isOfflineReadingListAvailable;
-- (BOOL)isParsecITunesResultsAvailable;
-- (BOOL)isReadingListAvailable;
+- (bool)isAutoFillAvailable;
+- (bool)isBookmarksAvailable;
+- (bool)isCloudHistorySyncAvailable;
+- (bool)isCloudKitBookmarksAvailable;
+- (bool)isCloudSyncAvailable;
+- (bool)isCloudTabsAvailable;
+- (bool)isCreditCardStorageAvailable;
+- (bool)isInMemoryBookmarkChangeTrackingAvailable;
+- (bool)isOfflineReadingListAvailable;
+- (bool)isParsecITunesResultsAvailable;
+- (bool)isReadingListAvailable;
 
 @end

@@ -5,9 +5,11 @@
 
 @required
 
-- (void)adjustTextPositionByCharacterOffset:(int)arg1;
+- (void)adjustTextPositionByCharacterOffset:(long long)arg1;
 - (NSString *)documentContextAfterInput;
 - (NSString *)documentContextBeforeInput;
+- (NSUUID *)documentIdentifier;
 - (UITextInputMode *)documentInputMode;
+- (NSString *)selectedText;
 
 @end

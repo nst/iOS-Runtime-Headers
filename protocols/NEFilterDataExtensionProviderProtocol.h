@@ -10,5 +10,6 @@
 - (void)provideRemediationMap:(NSDictionary *)arg1;
 - (void)provideURLAppendStringMap:(NSDictionary *)arg1;
 - (void)providerControlSocketFileHandle:(NSFileHandle *)arg1;
+- (void)report:(NEFilterReport *)arg1;
 
 @end

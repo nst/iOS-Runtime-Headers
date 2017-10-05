@@ -3,10 +3,10 @@
  */
 
 @interface BKSHIDEventRouterManager : BKSHIDEventRouterManagerBase {
-    BOOL  _needsFlush;
+    bool  _needsFlush;
 }
 
-@property (nonatomic) BOOL needsFlush;
+@property (nonatomic) bool needsFlush;
 
 + (id)sharedInstance;
 
@@ -15,8 +15,8 @@
 - (void)_routerUpdated:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (BOOL)needsFlush;
+- (bool)needsFlush;
 - (void)setEventRouters:(id)arg1;
-- (void)setNeedsFlush:(BOOL)arg1;
+- (void)setNeedsFlush:(bool)arg1;
 
 @end

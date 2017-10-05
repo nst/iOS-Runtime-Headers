@@ -3,12 +3,12 @@
  */
 
 @interface _UIViewServiceInterfaceConnectionRequest : NSObject {
-    BOOL  __automatic_invalidation_invalidated;
+    bool  __automatic_invalidation_invalidated;
     int  __automatic_invalidation_retainCount;
     NSError * _cancellationError;
     _UIAsyncInvocation * _cancellationInvocation;
     id /* block */  _connectionHandler;
-    BOOL  _isCancelled;
+    bool  _isCancelled;
     NSObject<OS_dispatch_queue> * _queue;
     _UIRemoteViewService * _service;
     NSString * _serviceBundleIdentifier;
@@ -30,12 +30,12 @@
 - (void)_createProcessAssertionForPID:(int)arg1 orBundleIdentifier:(id)arg2 acquiredHandler:(id /* block */)arg3;
 - (void)_didConnectToService;
 - (void)_establishConnection;
-- (BOOL)_isDeallocating;
+- (bool)_isDeallocating;
 - (void)_launchService;
-- (BOOL)_tryRetain;
+- (bool)_tryRetain;
 - (void)dealloc;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 
 @end

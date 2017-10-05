@@ -5,7 +5,6 @@
 @interface TSUCloudPlatform : NSObject
 
 + (void)setUbiquityPlatformVersionForContainerURL:(id)arg1;
-+ (int)sharingPlatformVersion;
-+ (int)ubiquityCloudPlatformVersion;
++ (long long)ubiquityCloudPlatformVersion;
 
 @end

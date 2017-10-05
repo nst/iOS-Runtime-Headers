@@ -5,11 +5,14 @@
 @interface IKAppMediaItemBridge : NSObject {
     IKAppContext * _appContext;
     <IKAppMediaItem> * _appMediaItem;
+    NSString * _artworkImageSrcset;
+    NSString * _artworkImageURL;
     IKJSMediaItem * _jsMediaItem;
 }
 
 @property (nonatomic, readonly) IKAppContext *appContext;
 @property (nonatomic, readonly) <IKAppMediaItem> *appMediaItem;
+@property (nonatomic, retain) NSString *artworkImageSrcset;
 @property (nonatomic, retain) NSString *artworkImageURL;
 @property (nonatomic, retain) NSArray *chapterGroups;
 @property (nonatomic) double contentProposalAutomaticAcceptanceInterval;
@@ -20,7 +23,7 @@
 @property (nonatomic, retain) NSString *externalID;
 @property (nonatomic, retain) NSDictionary *extraMetadata;
 @property (nonatomic, retain) NSArray *interstitials;
-@property (nonatomic) BOOL isExplicit;
+@property (nonatomic) bool isExplicit;
 @property (nonatomic, readonly) IKJSMediaItem *jsMediaItem;
 @property (nonatomic, retain) NSString *ratingBadge;
 @property (nonatomic, retain) NSNumber *resumeTime;
@@ -30,8 +33,10 @@
 @property (nonatomic, retain) NSString *url;
 
 - (void).cxx_destruct;
+- (void)_resolveArtworkImageURL;
 - (id)appContext;
 - (id)appMediaItem;
+- (id)artworkImageSrcset;
 - (id)artworkImageURL;
 - (id)chapterGroups;
 - (void)cleanup;
@@ -44,7 +49,7 @@
 - (id)extraMetadata;
 - (id)initWithAppContext:(id)arg1 jsMediaItem:(id)arg2;
 - (id)interstitials;
-- (BOOL)isExplicit;
+- (bool)isExplicit;
 - (id)jsMediaItem;
 - (void)loadCertificateDataForURL:(id)arg1 withCallback:(id /* block */)arg2;
 - (void)loadContentIdentifierDataForURL:(id)arg1 withCallback:(id /* block */)arg2;
@@ -52,6 +57,7 @@
 - (void)prepareForLoadingWithCallback:(id /* block */)arg1;
 - (id)ratingBadge;
 - (id)resumeTime;
+- (void)setArtworkImageSrcset:(id)arg1;
 - (void)setArtworkImageURL:(id)arg1;
 - (void)setChapterGroups:(id)arg1;
 - (void)setContentProposalAutomaticAcceptanceInterval:(double)arg1;
@@ -62,7 +68,7 @@
 - (void)setExternalID:(id)arg1;
 - (void)setExtraMetadata:(id)arg1;
 - (void)setInterstitials:(id)arg1;
-- (void)setIsExplicit:(BOOL)arg1;
+- (void)setIsExplicit:(bool)arg1;
 - (void)setRatingBadge:(id)arg1;
 - (void)setResumeTime:(id)arg1;
 - (void)setSubtitle:(id)arg1;

@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) struct _mmcs_engine { }*engine;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *personID;
 @property (readonly) Class superclass;
 
@@ -26,7 +26,7 @@
 - (void)_requestCompleted;
 - (void)abort;
 - (void)deactivate;
-- (void)deactivateRemoveAllFiles:(BOOL)arg1;
+- (void)deactivateRemoveAllFiles:(bool)arg1;
 - (void)dealloc;
 - (void)didFinishUsingAssets:(id)arg1;
 - (struct _mmcs_engine { }*)engine;

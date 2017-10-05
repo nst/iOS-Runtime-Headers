@@ -8,7 +8,7 @@
     SKUIStyledImageDataConsumer * _imageDataConsumer;
     UIImage * _placeholderImage;
     SKUIResourceLoader * _resourceLoader;
-    int  _selectedAuthorIndex;
+    long long  _selectedAuthorIndex;
     id /* block */  _selectionBlock;
     UITableView * _tableView;
 }
@@ -17,8 +17,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) SKUIMediaSocialAuthor *destinationAuthor;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int selectedAuthorIndex;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long selectedAuthorIndex;
 @property (nonatomic, copy) id /* block */ selectionBlock;
 @property (readonly) Class superclass;
 
@@ -34,15 +34,15 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
 - (void)reloadData;
-- (int)selectedAuthorIndex;
+- (long long)selectedAuthorIndex;
 - (id /* block */)selectionBlock;
 - (void)setAuthors:(id)arg1;
 - (void)setDestinationAuthor:(id)arg1;
-- (void)setSelectedAuthorIndex:(int)arg1;
+- (void)setSelectedAuthorIndex:(long long)arg1;
 - (void)setSelectionBlock:(id /* block */)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 
 @end

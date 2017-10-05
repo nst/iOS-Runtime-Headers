@@ -7,36 +7,36 @@
     NSMutableArray * _corecipientSearchResults;
     NSNumber * _corecipientSearchTaskID;
     <MFMailComposeContactsSearchControllerDelegate> * _delegate;
-    BOOL  _foundAnySearchResults;
+    bool  _foundAnySearchResults;
     MFContactsSearchManager * _manager;
     MFContactsSearchResultsModel * _model;
     NSNumber * _taskID;
-    unsigned int  _waitingOnSearchResultsCount;
+    unsigned long long  _waitingOnSearchResultsCount;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MFMailComposeContactsSearchControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSNumber *taskID;
 
-- (void)_cancelSearchAndNotify:(BOOL)arg1;
+- (void)_cancelSearchAndNotify:(bool)arg1;
 - (void)_finishSearch;
 - (void)_reset;
 - (void)beganNetworkActivity;
 - (void)cancelSearch;
 - (void)consumeAutocompleteSearchResults:(id)arg1 taskID:(id)arg2;
 - (void)consumeCorecipientSearchResults:(id)arg1 taskID:(id)arg2;
-- (void)consumeSearchResults:(id)arg1 type:(unsigned int)arg2 taskID:(id)arg3;
+- (void)consumeSearchResults:(id)arg1 type:(unsigned long long)arg2 taskID:(id)arg3;
 - (void)dealloc;
 - (id)delegate;
-- (void)didSelectRecipient:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)didSelectRecipient:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)endedNetworkActivity;
 - (void)findCorecipientsWithRecipients:(id)arg1;
 - (void)finishedSearchingForAutocompleteResults;
 - (void)finishedSearchingForCorecipients;
-- (void)finishedSearchingForType:(unsigned int)arg1;
+- (void)finishedSearchingForType:(unsigned long long)arg1;
 - (void)finishedTaskWithID:(id)arg1;
 - (id)init;
 - (void)removeRecipient:(id)arg1;

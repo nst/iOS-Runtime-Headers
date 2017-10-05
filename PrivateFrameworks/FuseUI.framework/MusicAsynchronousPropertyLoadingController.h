@@ -11,7 +11,7 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)_baseEntityValueProviderSupportsConcurrentLoadingOfEntityProperties:(id)arg1;
+- (bool)_baseEntityValueProviderSupportsConcurrentLoadingOfEntityProperties:(id)arg1;
 - (void)_cancelPendingAsynchronousPropertyLoadOperationForEntityView:(id)arg1;
 - (void)_didCompleteAsynchronousPropertyLoadForEntityView:(id)arg1 fromBaseEntityValueProvider:(id)arg2 values:(id)arg3;
 - (void)_didEndDisplayingEntityViewWithContentDescriptor:(id)arg1;

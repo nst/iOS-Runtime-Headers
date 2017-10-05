@@ -7,8 +7,8 @@
     NSData * _userData;
 }
 
-@property (nonatomic, readonly) BOOL hasIdentifier;
-@property (nonatomic, readonly) BOOL hasUserData;
+@property (nonatomic, readonly) bool hasIdentifier;
+@property (nonatomic, readonly) bool hasUserData;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSData *userData;
 
@@ -17,13 +17,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIdentifier;
-- (BOOL)hasUserData;
-- (unsigned int)hash;
+- (bool)hasIdentifier;
+- (bool)hasUserData;
+- (unsigned long long)hash;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setUserData:(id)arg1;
 - (id)userData;

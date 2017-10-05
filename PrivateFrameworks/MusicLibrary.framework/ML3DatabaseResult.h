@@ -4,7 +4,7 @@
 
 @interface ML3DatabaseResult : NSObject {
     NSDictionary * _columnNameIndexMap;
-    unsigned int  _limitIndex;
+    unsigned long long  _limitIndex;
     NSString * _limitProperty;
     long long  _limitValue;
     ML3DatabaseStatement * _statement;
@@ -17,15 +17,15 @@
 - (id)_statement;
 - (id)columnNameIndexMap;
 - (void)enumerateRowsWithBlock:(id /* block */)arg1;
-- (BOOL)hasAtLeastOneRow;
-- (unsigned int)indexForColumnName:(id)arg1;
+- (bool)hasAtLeastOneRow;
+- (unsigned long long)indexForColumnName:(id)arg1;
 - (id)init;
 - (id)initWithStatement:(id)arg1;
 - (long long)int64ValueForFirstRowAndColumn;
 - (id)limitProperty;
 - (long long)limitValue;
 - (id)objectForFirstRowAndColumn;
-- (id)objectsInColumn:(unsigned int)arg1;
+- (id)objectsInColumn:(unsigned long long)arg1;
 - (id)rows;
 - (void)setLimitProperty:(id)arg1;
 - (void)setLimitProperty:(id)arg1 limitValue:(long long)arg2;

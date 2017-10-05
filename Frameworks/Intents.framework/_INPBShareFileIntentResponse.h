@@ -3,7 +3,7 @@
  */
 
 @interface _INPBShareFileIntentResponse : PBCodable <NSCopying> {
-    BOOL  _confirm;
+    bool  _confirm;
     struct { 
         unsigned int shareMode : 1; 
         unsigned int confirm : 1; 
@@ -11,20 +11,18 @@
     }  _has;
     NSMutableArray * _recipients;
     int  _shareMode;
-    BOOL  _success;
+    bool  _success;
     PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic) BOOL confirm;
-@property (nonatomic) BOOL hasConfirm;
-@property (nonatomic) BOOL hasShareMode;
-@property (nonatomic) BOOL hasSuccess;
+@property (nonatomic) bool confirm;
+@property (nonatomic) bool hasConfirm;
+@property (nonatomic) bool hasShareMode;
+@property (nonatomic) bool hasSuccess;
 @property (nonatomic, retain) NSMutableArray *recipients;
 @property (nonatomic) int shareMode;
-@property (nonatomic) BOOL success;
+@property (nonatomic) bool success;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 + (Class)recipientsType;
@@ -33,37 +31,31 @@
 - (int)StringAsShareMode:(id)arg1;
 - (void)addRecipients:(id)arg1;
 - (void)clearRecipients;
-- (BOOL)confirm;
+- (bool)confirm;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasConfirm;
-- (BOOL)hasShareMode;
-- (BOOL)hasSuccess;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasConfirm;
+- (bool)hasShareMode;
+- (bool)hasSuccess;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)recipients;
-- (id)recipientsAtIndex:(unsigned int)arg1;
-- (unsigned int)recipientsCount;
-- (void)setConfirm:(BOOL)arg1;
-- (void)setHasConfirm:(BOOL)arg1;
-- (void)setHasShareMode:(BOOL)arg1;
-- (void)setHasSuccess:(BOOL)arg1;
+- (id)recipientsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)recipientsCount;
+- (void)setConfirm:(bool)arg1;
+- (void)setHasConfirm:(bool)arg1;
+- (void)setHasShareMode:(bool)arg1;
+- (void)setHasSuccess:(bool)arg1;
 - (void)setRecipients:(id)arg1;
 - (void)setShareMode:(int)arg1;
-- (void)setSuccess:(BOOL)arg1;
+- (void)setSuccess:(bool)arg1;
 - (int)shareMode;
 - (id)shareModeAsString:(int)arg1;
-- (BOOL)success;
+- (bool)success;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

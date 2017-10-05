@@ -3,6 +3,7 @@
  */
 
 @interface FLPreferencesController : NSObject {
+    bool  _activityIndicatorActive;
     FLPreferencesFollowUpItemListViewController * _controller;
     id /* block */  _itemChangeObserver;
     PSListController * _listViewController;
@@ -14,6 +15,14 @@
 @property (nonatomic) PSListController *listViewController;
 
 - (void).cxx_destruct;
+- (id)_extensionSupportingSpecifierWithName:(id)arg1;
+- (void)_handleEmptyRefreshResult:(id)arg1;
+- (void)_presentSpecifier:(id)arg1;
+- (void)_refreshItemsAndPresentDetailForSpecifier:(id)arg1;
+- (id)_specifierForGroup:(id)arg1;
+- (id)_specifierForItem:(id)arg1 group:(id)arg2;
+- (void)_updateSpecifier:(id)arg1 withCommonPropertiesForGroup:(id)arg2;
+- (id)_urlBasedSpecifierWithName:(id)arg1;
 - (id)init;
 - (id)initWithViewModel:(id)arg1;
 - (id /* block */)itemChangeObserver;

@@ -4,8 +4,10 @@
 
 @interface CMVehicleState : NSObject
 
-+ (BOOL)isAvailable;
++ (bool)isAvailable;
 + (id)mostRecentInVehicle;
 + (id)mostRecentVehicleConnection;
++ (unsigned long long)vehicularHints;
++ (unsigned long long)vehicularState;
 
 @end

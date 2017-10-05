@@ -11,7 +11,7 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setVolume:(id)arg1;
 - (id)volume;
 

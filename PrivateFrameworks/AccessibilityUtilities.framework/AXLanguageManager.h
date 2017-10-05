@@ -27,6 +27,7 @@
 + (id)stringByReplacingEmojiCharactersWithEmojiDescriptions:(id)arg1;
 + (id)stringByReplacingFatWidthCharactersWithBasicCharacters:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_handleUserLocaleDidChange:(id)arg1;
 - (id)_loadLangMaps;
 - (id)_preferredLanguageIDsFromUserSelectedKeyboards;
@@ -45,8 +46,8 @@
 - (id)dialectThatCanSpeakCharacter:(unsigned short)arg1;
 - (id)dialectsThatCanSpeakCharacter:(unsigned short)arg1;
 - (id)init;
-- (BOOL)isCharacterCommon:(unsigned short)arg1;
-- (BOOL)isStringComposedByCommonCharacters:(id)arg1;
+- (bool)isCharacterCommon:(unsigned short)arg1;
+- (bool)isStringComposedByCommonCharacters:(id)arg1;
 - (id)langMaps;
 - (void)setCommonCharacters:(id)arg1;
 - (void)setDialectForCurrentLocale:(id)arg1;

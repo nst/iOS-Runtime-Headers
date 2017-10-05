@@ -3,11 +3,12 @@
  */
 
 @interface PKPaymentAuthorizationClientCallbackStateParam : PKPaymentAuthorizationStateParam {
-    int  _kind;
+    long long  _kind;
     id  _object;
 }
 
-@property (nonatomic) int kind;
+@property (nonatomic, readonly) PKAuthorizedPeerPaymentQuote *authorizedPeerPaymentQuote;
+@property (nonatomic) long long kind;
 @property (nonatomic, retain) id object;
 @property (nonatomic, readonly) PKPayment *payment;
 @property (nonatomic, readonly) PKPaymentMethod *paymentMethod;
@@ -15,16 +16,17 @@
 @property (nonatomic, readonly) CNContact *shippingContact;
 @property (nonatomic, readonly) PKShippingMethod *shippingMethod;
 
-+ (id)paramWithCallbackKind:(int)arg1 object:(id)arg2;
++ (id)paramWithCallbackKind:(long long)arg1 object:(id)arg2;
 
 - (void).cxx_destruct;
+- (id)authorizedPeerPaymentQuote;
 - (id)description;
-- (int)kind;
+- (long long)kind;
 - (id)object;
 - (id)payment;
 - (id)paymentMethod;
 - (id)purchase;
-- (void)setKind:(int)arg1;
+- (void)setKind:(long long)arg1;
 - (void)setObject:(id)arg1;
 - (id)shippingContact;
 - (id)shippingMethod;

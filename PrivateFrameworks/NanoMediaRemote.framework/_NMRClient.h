@@ -13,7 +13,6 @@
 - (id)_proxy;
 - (void)fetchCompanionCloudAvailabilityWithCompletionHandler:(id /* block */)arg1;
 - (void)fetchCompanionSpecializedQueueInfoWithCompletionHandler:(id /* block */)arg1;
-- (void)fetchTrackAssetAvailabilityForTrackPID:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)init;
 - (void)prewarmCompanionSystemMusicApp;
 - (void)refreshMediaRemoteStateIfNecessary;

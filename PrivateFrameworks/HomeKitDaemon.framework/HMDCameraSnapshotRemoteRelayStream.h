@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraSnapshotRemoteRelayStream : NSObject <HMDCameraGetSnapshotProtocol, HMDCameraSnapshotReceiverProtocol, HMDCameraSnapshotRemoteRelayReceiverDelegate, HMDCameraSnapshotRemoteStreamSenderDelegate, HMDCameraSnapshotSenderProtocol, HMFLogging> {
+@interface HMDCameraSnapshotRemoteRelayStream : HMFObject <HMDCameraGetSnapshotProtocol, HMDCameraSnapshotReceiverProtocol, HMDCameraSnapshotRemoteRelayReceiverDelegate, HMDCameraSnapshotRemoteStreamSenderDelegate, HMDCameraSnapshotSenderProtocol, HMFLogging> {
     <HMDCameraSnapshotRemoteRelayStreamDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _delegateQueue;
     HMDCameraSnapshotRemoteRelayReceiver * _relayReceiver;
@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) <HMDCameraSnapshotRemoteRelayStreamDelegate> *delegate;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HMDCameraSnapshotRemoteRelayReceiver *relayReceiver;
 @property (nonatomic, readonly) HMDCameraSnapshotRemoteStreamSender *streamSender;
 @property (readonly) Class superclass;
@@ -29,7 +29,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateQueue;
-- (void)getSnapshot:(unsigned int)arg1;
+- (void)getSnapshot:(unsigned long long)arg1;
 - (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 options:(id)arg3 destinationID:(id)arg4 accessory:(id)arg5 delegate:(id)arg6 delegateQueue:(id)arg7 uniqueIdentifier:(id)arg8 snapshotRequestHandler:(id)arg9 residentMessageHandler:(id)arg10;
 - (id)logIdentifier;
 - (id)relayReceiver;

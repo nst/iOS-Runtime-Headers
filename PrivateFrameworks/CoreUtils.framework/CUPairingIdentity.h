@@ -14,7 +14,7 @@
 @property (nonatomic, copy) NSData *publicKey;
 @property (nonatomic, copy) NSData *secretKey;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)altIRK;

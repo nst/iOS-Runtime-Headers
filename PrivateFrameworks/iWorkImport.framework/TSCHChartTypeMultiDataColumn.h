@@ -4,7 +4,7 @@
 
 @interface TSCHChartTypeMultiDataColumn : TSCHMultiDataChartType
 
-- (id)defaultSeriesType:(unsigned int)arg1;
+- (id)defaultSeriesType:(unsigned long long)arg1;
 - (id)genericToSpecificPropertyMap;
 - (id)init;
 - (Class)presetImagerClass;

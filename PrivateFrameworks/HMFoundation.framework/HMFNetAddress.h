@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
  */
 
-@interface HMFNetAddress : NSObject {
+@interface HMFNetAddress : HMFObject {
     HMFNetAddressInternal * _internal;
 }
 
-@property (nonatomic, readonly) unsigned int addressFamily;
+@property (nonatomic, readonly) unsigned long long addressFamily;
 @property (nonatomic, readonly, copy) NSString *addressString;
 @property (nonatomic, readonly) HMFNetAddressInternal *internal;
 
@@ -14,17 +14,17 @@
 + (id)shortDescription;
 
 - (void).cxx_destruct;
-- (unsigned int)addressFamily;
+- (unsigned long long)addressFamily;
 - (id)addressString;
 - (id)debugDescription;
 - (id)description;
-- (id)descriptionWithPointer:(BOOL)arg1;
-- (unsigned int)hash;
+- (id)descriptionWithPointer:(bool)arg1;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithHostname:(id)arg1;
 - (id)initWithSocketAddress:(const struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg1;
 - (id)internal;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)shortDescription;
 
 @end

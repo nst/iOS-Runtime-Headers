@@ -6,56 +6,32 @@
     NSArray * _continueFormats;
     NSArray * _maneuverFormats;
     NSArray * _mergeFormats;
-    BOOL  _useNames;
 }
 
-@property (nonatomic, readonly) int context;
+@property (nonatomic, readonly) long long context;
 @property (nonatomic, retain) NSArray *continueFormats;
-@property (nonatomic, readonly) BOOL hasServerContent;
+@property (nonatomic, readonly) bool hasServerContent;
 @property (nonatomic, retain) NSArray *maneuverFormats;
 @property (nonatomic, retain) NSArray *mergeFormats;
 @property (nonatomic, retain) NSString *roadName;
-@property (nonatomic) BOOL suppressFallback;
-@property (nonatomic) BOOL suppressNames;
-@property (nonatomic) BOOL useNames;
+@property (nonatomic) bool suppressFallback;
+@property (nonatomic) bool suppressNames;
 
-+ (id)contentsWithStep:(id)arg1 transportType:(int)arg2 destination:(id)arg3 useNames:(BOOL)arg4;
++ (id)contentsWithStep:(id)arg1 transportType:(int)arg2 destination:(id)arg3;
 
 - (void).cxx_destruct;
 - (id)_instructionsForFormats:(id)arg1;
 - (void)_populateFromStep:(id)arg1;
-- (id)_signInstructionForArrivalWithShorterAlternatives:(id*)arg1;
-- (id)_signInstructionForBranchWithShorterAlternatives:(id*)arg1;
-- (id)_signInstructionForChangeHighwaysWithShorterAlternatives:(id*)arg1;
-- (id)_signInstructionForContinueWithShorterAlternatives:(id*)arg1;
-- (id)_signInstructionForExitWithShorterAlternatives:(id*)arg1;
-- (id)_signInstructionForFerryWithShorterAlternatives:(id*)arg1;
-- (id)_signInstructionForRoundaboutWithShorterAlternatives:(id*)arg1;
-- (id)_signInstructionForStartWithShorterAlternatives:(id*)arg1;
-- (id)_signInstructionForTurnWithShorterAlternatives:(id*)arg1;
-- (id)_signInstructionForUTurnWithShorterAlternatives:(id*)arg1;
-- (id)_signWalkingInstructionForContinueWithShorterAlternatives:(id*)arg1;
-- (id)_signWalkingInstructionForLeftWithShorterAlternatives:(id*)arg1;
-- (id)_signWalkingInstructionForRightWithShorterAlternatives:(id*)arg1;
-- (id)_signWalkingInstructionForRoundaboutWithShorterAlternatives:(id*)arg1;
-- (id)_signWalkingInstructionForStartWithShorterAlternatives:(id*)arg1;
-- (id)_signWalkingInstructionForTurnWithShorterAlternatives:(id*)arg1;
-- (id)_signWalkingInstructionForUTurnWithShorterAlternatives:(id*)arg1;
-- (int)context;
+- (long long)context;
 - (id)continueFormats;
-- (BOOL)hasServerContent;
-- (id)instructionForStage:(unsigned int)arg1 distance:(double)arg2;
+- (id)description;
+- (bool)hasServerContent;
+- (id)instructionForStage:(unsigned long long)arg1 distance:(double)arg2;
 - (id)instructionWithShorterAlternatives;
 - (id)maneuverFormats;
 - (id)mergeFormats;
 - (void)setContinueFormats:(id)arg1;
 - (void)setManeuverFormats:(id)arg1;
 - (void)setMergeFormats:(id)arg1;
-- (void)setUseNames:(BOOL)arg1;
-- (BOOL)useDestinationName;
-- (BOOL)useIntersectionName;
-- (BOOL)useNames;
-- (BOOL)useRoadName;
-- (BOOL)useTowardNames;
 
 @end

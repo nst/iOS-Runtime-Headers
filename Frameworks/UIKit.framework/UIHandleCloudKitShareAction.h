@@ -12,10 +12,10 @@
 + (void)loadCloudKitFramework;
 
 - (void).cxx_destruct;
-- (int)UIActionType;
+- (long long)UIActionType;
 - (id)data;
 - (id)initWithShareMetadata:(id)arg1;
-- (id)keyDescriptionForSetting:(unsigned int)arg1;
+- (id)keyDescriptionForSetting:(unsigned long long)arg1;
 - (id)shareMetadata;
 
 @end

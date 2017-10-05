@@ -13,19 +13,19 @@
     }  _has;
     long long  _secretType;
     unsigned long long  _timestamp;
-    BOOL  _userDidReset;
+    bool  _userDidReset;
 }
 
 @property (nonatomic) long long errorCode;
 @property (nonatomic, retain) NSString *errorDomain;
-@property (nonatomic) BOOL hasErrorCode;
-@property (nonatomic, readonly) BOOL hasErrorDomain;
-@property (nonatomic) BOOL hasSecretType;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) BOOL hasUserDidReset;
+@property (nonatomic) bool hasErrorCode;
+@property (nonatomic, readonly) bool hasErrorDomain;
+@property (nonatomic) bool hasSecretType;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic) bool hasUserDidReset;
 @property (nonatomic) long long secretType;
 @property (nonatomic) unsigned long long timestamp;
-@property (nonatomic) BOOL userDidReset;
+@property (nonatomic) bool userDidReset;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
@@ -34,27 +34,27 @@
 - (id)dictionaryRepresentation;
 - (long long)errorCode;
 - (id)errorDomain;
-- (BOOL)hasErrorCode;
-- (BOOL)hasErrorDomain;
-- (BOOL)hasSecretType;
-- (BOOL)hasTimestamp;
-- (BOOL)hasUserDidReset;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasErrorCode;
+- (bool)hasErrorDomain;
+- (bool)hasSecretType;
+- (bool)hasTimestamp;
+- (bool)hasUserDidReset;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (long long)secretType;
 - (void)setErrorCode:(long long)arg1;
 - (void)setErrorDomain:(id)arg1;
-- (void)setHasErrorCode:(BOOL)arg1;
-- (void)setHasSecretType:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setHasUserDidReset:(BOOL)arg1;
+- (void)setHasErrorCode:(bool)arg1;
+- (void)setHasSecretType:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasUserDidReset:(bool)arg1;
 - (void)setSecretType:(long long)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
-- (void)setUserDidReset:(BOOL)arg1;
+- (void)setUserDidReset:(bool)arg1;
 - (unsigned long long)timestamp;
-- (BOOL)userDidReset;
+- (bool)userDidReset;
 - (void)writeTo:(id)arg1;
 
 @end

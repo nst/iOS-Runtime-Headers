@@ -5,23 +5,23 @@
 @interface WFAirQualityResponse : WFResponse <NSSecureCoding> {
     WFAirQualityConditions * _airQualityConditions;
     NSData * _rawAPIData;
-    BOOL  _responseWasFromCache;
+    bool  _responseWasFromCache;
 }
 
 @property (retain) WFAirQualityConditions *airQualityConditions;
 @property (nonatomic, retain) NSData *rawAPIData;
-@property (nonatomic) BOOL responseWasFromCache;
+@property (nonatomic) bool responseWasFromCache;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)airQualityConditions;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)rawAPIData;
-- (BOOL)responseWasFromCache;
+- (bool)responseWasFromCache;
 - (void)setAirQualityConditions:(id)arg1;
 - (void)setRawAPIData:(id)arg1;
-- (void)setResponseWasFromCache:(BOOL)arg1;
+- (void)setResponseWasFromCache:(bool)arg1;
 
 @end

@@ -5,10 +5,10 @@
 @interface _DECDeviceState : NSObject
 
 + (void)blockUntilFirstUnlock;
-+ (BOOL)isClassCLocked;
-+ (BOOL)isDemoModeEnabled;
-+ (BOOL)isUnlocked;
++ (bool)isClassCLocked;
++ (bool)isDemoModeEnabled;
++ (bool)isUnlocked;
 + (void)registerBlockForFirstUnlock:(id /* block */)arg1;
-+ (void)registerBlockForFirstUnlock:(id /* block */)arg1 executeIfUnlocked:(BOOL)arg2;
++ (void)registerBlockForFirstUnlock:(id /* block */)arg1 executeIfUnlocked:(bool)arg2;
 
 @end

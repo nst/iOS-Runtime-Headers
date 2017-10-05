@@ -9,7 +9,7 @@
 @property (nonatomic, retain) id object;
 
 + (id)optionalWithObject:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)conditionallyUnwrapObject:(id /* block */)arg1;
@@ -17,11 +17,11 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)forceUnwrapObject;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithObject:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)object;
 - (void)setObject:(id)arg1;
 - (id)unwrapWithFallback:(id)arg1;

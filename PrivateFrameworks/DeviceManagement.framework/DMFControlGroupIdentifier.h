@@ -7,30 +7,28 @@
     NSUUID * _organizationUUID;
 }
 
-@property (nonatomic) unsigned short groupID;
-@property (nonatomic, copy) NSUUID *organizationUUID;
+@property (nonatomic, readonly) unsigned short groupID;
+@property (nonatomic, readonly, copy) NSUUID *organizationUUID;
 @property (nonatomic, readonly, copy) NSString *stringValue;
 
 // Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
 
 + (id)new;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned short)groupID;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithOrganizationUUID:(id)arg1 groupID:(unsigned short)arg2;
 - (id)initWithString:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToGroupIdentifier:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToGroupIdentifier:(id)arg1;
 - (id)organizationUUID;
-- (void)setGroupID:(unsigned short)arg1;
-- (void)setOrganizationUUID:(id)arg1;
 - (id)stringValue;
 
 // Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit

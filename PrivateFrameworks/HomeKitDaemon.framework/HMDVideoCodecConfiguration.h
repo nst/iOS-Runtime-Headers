@@ -12,10 +12,10 @@
 @property (nonatomic, readonly, copy) NSArray *videoAttributes;
 @property (nonatomic, readonly, copy) HMDVideoCodec *videoCodec;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_parseFromTLVData;
+- (bool)_parseFromTLVData;
 - (id)codecParameters;
 - (void)description:(id)arg1 indent:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;

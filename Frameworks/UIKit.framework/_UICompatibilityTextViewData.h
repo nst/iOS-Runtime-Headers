@@ -3,31 +3,33 @@
  */
 
 @interface _UICompatibilityTextViewData : NSObject {
-    BOOL  m_allowsEditingTextAttributes;
-    BOOL  m_becomesEditableWithGestures;
+    bool  m_allowsEditingTextAttributes;
+    bool  m_becomesEditableWithGestures;
     DOMHTMLElement * m_body;
-    BOOL  m_clearsOnInsertion;
-    BOOL  m_didFreezeTextContainerSize;
-    BOOL  m_editable;
-    BOOL  m_editing;
+    bool  m_clearsOnInsertion;
+    bool  m_didFreezeTextContainerSize;
+    UIDragInteraction * m_dragInteraction;
+    UIDropInteraction * m_dropInteraction;
+    bool  m_editable;
+    bool  m_editing;
     UIFont * m_font;
     WebFrame * m_frame;
-    BOOL  m_hasExplicitLineHeight;
-    BOOL  m_hasExplicitTextAlignment;
+    bool  m_hasExplicitLineHeight;
+    bool  m_hasExplicitTextAlignment;
     UIView * m_inputAccessoryView;
     UIView * m_inputView;
     UITextInteractionAssistant * m_interactionAssistant;
-    float  m_lineHeight;
+    double  m_lineHeight;
     UIDelayedAction * m_longPressAction;
     int  m_marginTop;
-    BOOL  m_readyForScroll;
-    BOOL  m_reentrancyGuard;
+    bool  m_readyForScroll;
+    bool  m_reentrancyGuard;
     UIDelayedAction * m_selectionTimer;
-    BOOL  m_shouldAutoscrollAboveBottom;
-    BOOL  m_skipScrollContainingView;
-    int  m_textAlignment;
+    bool  m_shouldAutoscrollAboveBottom;
+    bool  m_skipScrollContainingView;
+    long long  m_textAlignment;
     UIColor * m_textColor;
-    BOOL  m_usesAttributedText;
+    bool  m_usesAttributedText;
     UIWebDocumentView * m_webView;
 }
 

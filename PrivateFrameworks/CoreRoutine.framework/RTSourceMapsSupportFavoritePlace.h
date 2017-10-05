@@ -4,7 +4,4 @@
 
 @interface RTSourceMapsSupportFavoritePlace : RTSourceMapsSupport
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-
 @end

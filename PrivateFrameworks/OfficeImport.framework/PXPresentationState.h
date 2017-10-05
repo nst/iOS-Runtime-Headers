@@ -25,7 +25,7 @@
 - (id)commentAuthorIdToIndexMap;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isCancelled;
+- (bool)isCancelled;
 - (id)modelObjectForLocation:(id)arg1;
 - (id)oavState;
 - (id)officeArtState;
@@ -33,10 +33,10 @@
 - (void)setCancelDelegate:(id)arg1;
 - (void)setModelObject:(id)arg1 forLocation:(id)arg2;
 - (void)setPXPresentationMLNamespace:(id)arg1;
-- (void)setSlideIndex:(int)arg1 forSlideURL:(id)arg2;
+- (void)setSlideIndex:(long long)arg1 forSlideURL:(id)arg2;
 - (void)setTgtPresentation:(id)arg1;
 - (void)setupNSForXMLFormat:(int)arg1;
-- (int)slideIndexForSlideURL:(id)arg1;
+- (long long)slideIndexForSlideURL:(id)arg1;
 - (id)tableStyleCache;
 - (id)tgtPresentation;
 

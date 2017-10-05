@@ -15,6 +15,6 @@
 - (id)initWithLicenseAgreementURL:(id)arg1;
 - (void)loadView;
 - (void)reloadData;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

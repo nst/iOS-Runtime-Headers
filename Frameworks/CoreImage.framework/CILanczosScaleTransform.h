@@ -17,7 +17,7 @@
 - (id)_CILanczosDownBy2;
 - (id)_CILanczosHorizontalUpsample;
 - (id)_CILanczosVerticalUpsample;
-- (BOOL)_isIdentity;
+- (bool)_isIdentity;
 - (id)inputAspectRatio;
 - (id)inputImage;
 - (id)inputScale;

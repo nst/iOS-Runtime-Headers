@@ -5,7 +5,7 @@
 @interface MLTrackImportChapter : NSObject <NSCopying> {
     NSString * _imageCacheKey;
     NSData * _imageData;
-    unsigned int  _startTimeInMilliseconds;
+    unsigned long long  _startTimeInMilliseconds;
     NSString * _title;
     NSURL * _url;
     NSString * _urlTitle;
@@ -15,26 +15,26 @@
 @property (nonatomic, copy) NSString *URLTitle;
 @property (nonatomic, copy) NSString *imageCacheKey;
 @property (nonatomic, copy) NSData *imageData;
-@property (nonatomic) unsigned int startTimeInMilliseconds;
+@property (nonatomic) unsigned long long startTimeInMilliseconds;
 @property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (id)URL;
 - (id)URLTitle;
-- (int)compare:(id)arg1;
+- (long long)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)imageCacheKey;
 - (id)imageData;
-- (BOOL)isEqualIgnoringTimesAndTitle:(id)arg1;
+- (bool)isEqualIgnoringTimesAndTitle:(id)arg1;
 - (void)normalizeProperties;
 - (void)setImageCacheKey:(id)arg1;
 - (void)setImageData:(id)arg1;
-- (void)setStartTimeInMilliseconds:(unsigned int)arg1;
+- (void)setStartTimeInMilliseconds:(unsigned long long)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setURL:(id)arg1;
 - (void)setURLTitle:(id)arg1;
-- (unsigned int)startTimeInMilliseconds;
+- (unsigned long long)startTimeInMilliseconds;
 - (id)title;
 
 @end

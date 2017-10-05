@@ -11,28 +11,28 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)_shouldForwardViewWillTransitionToSize;
++ (bool)_shouldForwardViewWillTransitionToSize;
 
 - (void).cxx_destruct;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_chartInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_chartInsets;
 - (id)_columnViewControllers;
 - (id)_newColumnViewControllersWithReusableViewControllers:(id)arg1;
 - (id)_resourceLoader;
-- (int)_visibleColumnCountForWidth:(float)arg1;
+- (long long)_visibleColumnCountForWidth:(double)arg1;
 - (id)contentScrollView;
 - (void)documentDidUpdate:(id)arg1;
 - (void)documentMediaQueriesDidUpdate:(id)arg1;
 - (id)initWithTemplateElement:(id)arg1;
 - (void)loadView;
-- (void)resourceLoader:(id)arg1 didLoadAllForReason:(int)arg2;
+- (void)resourceLoader:(id)arg1 didLoadAllForReason:(long long)arg2;
 - (void)resourceLoaderDidBeginLoading:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;
-- (void)skui_viewWillAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)skui_viewWillAppear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraIDSSessionHandler : NSObject <HMDCameraRemoteStreamProtocol, HMFLogging, IDSServiceDelegate> {
+@interface HMDCameraIDSSessionHandler : HMFObject <HMDCameraRemoteStreamProtocol, HMFLogging, IDSServiceDelegate> {
     IDSSession * _idsSession;
     IDSService * _idsStreamService;
     HMDCameraSessionID * _sessionID;
@@ -11,7 +11,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) IDSSession *idsSession;
 @property (nonatomic, readonly) IDSService *idsStreamService;
 @property (nonatomic, readonly) HMDCameraSessionID *sessionID;

@@ -13,11 +13,11 @@
 - (id)description;
 - (id)init;
 - (id)initWithName:(id)arg1 andDelegate:(id)arg2;
-- (id)initWithName:(id)arg1 condition:(int)arg2 andDelegate:(id)arg3;
-- (BOOL)isLockedByMe;
-- (BOOL)lockBeforeDate:(id)arg1;
-- (BOOL)lockWhenCondition:(int)arg1 beforeDate:(id)arg2;
+- (id)initWithName:(id)arg1 condition:(long long)arg2 andDelegate:(id)arg3;
+- (bool)isLockedByMe;
+- (bool)lockBeforeDate:(id)arg1;
+- (bool)lockWhenCondition:(long long)arg1 beforeDate:(id)arg2;
 - (void)unlock;
-- (void)unlockWithCondition:(int)arg1;
+- (void)unlockWithCondition:(long long)arg1;
 
 @end

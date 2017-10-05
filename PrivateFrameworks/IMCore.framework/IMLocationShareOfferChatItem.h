@@ -3,16 +3,16 @@
  */
 
 @interface IMLocationShareOfferChatItem : IMTranscriptChatItem <IMMessageChatItem> {
-    BOOL  _actionableEclipsed;
+    bool  _actionableEclipsed;
     IMHandle * _sender;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL failed;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isFromMe;
-@property (nonatomic, readonly) int offerState;
+@property (nonatomic, readonly) bool failed;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isFromMe;
+@property (nonatomic, readonly) long long offerState;
 @property (nonatomic, readonly) IMHandle *sender;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSDate *time;
@@ -21,12 +21,12 @@
 
 - (void).cxx_destruct;
 - (id)_initWithItem:(id)arg1 sender:(id)arg2;
-- (BOOL)_isActionableEclipsed;
-- (void)_setActionableEclipsed:(BOOL)arg1;
+- (bool)_isActionableEclipsed;
+- (void)_setActionableEclipsed:(bool)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)failed;
-- (BOOL)isFromMe;
-- (int)offerState;
+- (bool)failed;
+- (bool)isFromMe;
+- (long long)offerState;
 - (id)sender;
 - (id)time;
 

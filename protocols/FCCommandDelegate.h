@@ -5,6 +5,6 @@
 
 @required
 
-- (void)command:(FCCommand *)arg1 didFinishWithStatus:(unsigned int)arg2;
+- (void)command:(FCCommand *)arg1 didFinishWithStatus:(unsigned long long)arg2;
 
 @end

@@ -3,9 +3,9 @@
  */
 
 @interface NEFilterProviderConfiguration : NSObject <NSCopying, NSSecureCoding> {
-    BOOL  _controlProviderInitialized;
-    BOOL  _filterBrowsers;
-    BOOL  _filterSockets;
+    bool  _controlProviderInitialized;
+    bool  _filterBrowsers;
+    bool  _filterSockets;
     NSData * _identityReference;
     NSString * _keychainAccessGroup;
     NSString * _organization;
@@ -16,9 +16,9 @@
     NSDictionary * _vendorConfiguration;
 }
 
-@property BOOL controlProviderInitialized;
-@property BOOL filterBrowsers;
-@property BOOL filterSockets;
+@property bool controlProviderInitialized;
+@property bool filterBrowsers;
+@property bool filterSockets;
 @property (copy) NSData *identityReference;
 @property (retain) NSString *keychainAccessGroup;
 @property (copy) NSString *organization;
@@ -28,16 +28,16 @@
 @property (copy) NSString *username;
 @property (copy) NSDictionary *vendorConfiguration;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)checkValidityAndCollectErrors:(id)arg1;
-- (BOOL)controlProviderInitialized;
+- (bool)checkValidityAndCollectErrors:(id)arg1;
+- (bool)controlProviderInitialized;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)filterBrowsers;
-- (BOOL)filterSockets;
+- (bool)filterBrowsers;
+- (bool)filterSockets;
 - (id)identityReference;
 - (id)initWithCoder:(id)arg1;
 - (id)keychainAccessGroup;
@@ -46,9 +46,9 @@
 - (id)passwordReference;
 - (id)pluginType;
 - (id)serverAddress;
-- (void)setControlProviderInitialized:(BOOL)arg1;
-- (void)setFilterBrowsers:(BOOL)arg1;
-- (void)setFilterSockets:(BOOL)arg1;
+- (void)setControlProviderInitialized:(bool)arg1;
+- (void)setFilterBrowsers:(bool)arg1;
+- (void)setFilterSockets:(bool)arg1;
 - (void)setIdentityReference:(id)arg1;
 - (void)setKeychainAccessGroup:(id)arg1;
 - (void)setOrganization:(id)arg1;

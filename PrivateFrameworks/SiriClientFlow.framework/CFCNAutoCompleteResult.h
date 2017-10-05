@@ -11,7 +11,7 @@
 @property (nonatomic, copy) NSString *diagnosticLog;
 @property (nonatomic, copy) NSString *displayName;
 @property (nonatomic, copy) NSString *firstName;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) NSString *instantMessageAddressService;
 @property (nonatomic, copy) NSNumber *isSourceTypeConsideredSuggestions;
@@ -25,9 +25,9 @@
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *valueIdentifier;
 
++ (id)aceObjectWithDictionary:(id)arg1 context:(id)arg2;
 + (id)autoCompleteResult;
 + (id)autoCompleteResultWithDictionary:(id)arg1 context:(id)arg2;
-+ (id)newAceObjectWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)address;
 - (id)addressType;
@@ -43,7 +43,7 @@
 - (id)lastName;
 - (id)lastSendingAddress;
 - (id)nickName;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (id)resultType;
 - (void)setAddress:(id)arg1;
 - (void)setAddressType:(id)arg1;

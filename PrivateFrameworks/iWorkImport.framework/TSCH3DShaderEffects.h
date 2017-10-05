@@ -22,17 +22,17 @@
 - (id)identifier;
 - (id)init;
 - (void)inject:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isSectionEnabled:(int)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isSectionEnabled:(int)arg1;
 - (void)prependEffect:(id)arg1;
 - (void)prependEffect:(id)arg1 toSection:(int)arg2;
 - (void)removeEffect:(id)arg1 fromSection:(int)arg2;
-- (BOOL)removeEffectOfClass:(Class)arg1 fromSection:(int)arg2;
+- (bool)removeEffectOfClass:(Class)arg1 fromSection:(int)arg2;
 - (void)reset;
 - (void)resetCacheList;
 - (void)resetSection:(int)arg1;
 - (void)resetSection:(int)arg1 toArray:(id)arg2;
 - (void)resetToArray:(id)arg1;
-- (void)setEnable:(BOOL)arg1 forSection:(int)arg2;
+- (void)setEnable:(bool)arg1 forSection:(int)arg2;
 
 @end

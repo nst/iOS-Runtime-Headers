@@ -13,7 +13,7 @@
 + (Class)responseClass;
 
 - (void).cxx_destruct;
-- (BOOL)forceGSToken;
+- (bool)forceGSToken;
 - (id)heartbeatToken;
 - (id)secondaryAuthToken;
 - (void)setHeartbeatToken:(id)arg1;

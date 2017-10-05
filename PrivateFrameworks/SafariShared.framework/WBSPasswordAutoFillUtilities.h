@@ -4,6 +4,6 @@
 
 @interface WBSPasswordAutoFillUtilities : NSObject
 
-+ (BOOL)mayAutoFillPasswordOnHost:(id)arg1;
++ (bool)mayAutoFillPasswordOnHost:(id)arg1;
 
 @end

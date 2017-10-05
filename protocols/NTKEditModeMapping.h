@@ -5,6 +5,6 @@
 
 @required
 
-- (Class)editOptionClassFromEditMode:(int)arg1;
+- (Class)editOptionClassFromEditMode:(long long)arg1 resourceDirectoryExists:(bool)arg2;
 
 @end

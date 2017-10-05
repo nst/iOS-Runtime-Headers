@@ -4,11 +4,11 @@
 
 @interface _RWITCPRelayMessage : NSObject {
     NSData * _payload;
-    BOOL  _writtenHeader;
-    unsigned int  _writtenPayloadOffset;
+    bool  _writtenHeader;
+    unsigned long long  _writtenPayloadOffset;
 }
 
-@property (nonatomic, readonly) unsigned int length;
+@property (nonatomic, readonly) unsigned long long length;
 @property (nonatomic, readonly, copy) NSData *payload;
 
 + (id)TCPRelayMessageFromDataStream:(id)arg1 error:(id*)arg2;
@@ -16,8 +16,10 @@
 
 - (void).cxx_destruct;
 - (id)initWithPayload:(id)arg1;
-- (unsigned int)length;
+- (unsigned long long)length;
 - (id)payload;
-- (int)write:(int)arg1;
+- (long long)write:(int)arg1;
+- (long long)writeInternal:(id /* block */)arg1;
+- (long long)writeLockdown:(struct _lockdown_connection { }*)arg1;
 
 @end

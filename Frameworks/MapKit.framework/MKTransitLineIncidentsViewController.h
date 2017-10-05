@@ -11,34 +11,34 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) <MKTransitLineIncidentsViewControllerDelegate> *incidentsDelegate;
 @property (nonatomic, readonly) <GEOTransitLineItem> *lineItem;
 @property (nonatomic, readonly, copy) NSDate *referenceDate;
-@property (nonatomic, readonly) BOOL requiresPreferredContentSizeInStackingView;
+@property (nonatomic, readonly) bool requiresPreferredContentSizeInStackingView;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_dismissTransitIncidents;
 - (id)_headerView;
-- (id)_incidentCellForRow:(int)arg1;
+- (id)_incidentCellForRow:(long long)arg1;
 - (id)_incidents;
 - (void)_moreIncidentDetailsSelected;
 - (id)incidentsDelegate;
 - (id)initWithLineItem:(id)arg1;
 - (id)lineItem;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)referenceDate;
-- (BOOL)requiresPreferredContentSizeInStackingView;
+- (bool)requiresPreferredContentSizeInStackingView;
 - (void)setIncidentsDelegate:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (double)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)transitUIReferenceTimeUpdated:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

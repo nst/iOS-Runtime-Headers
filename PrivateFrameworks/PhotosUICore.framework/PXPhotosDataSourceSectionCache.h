@@ -5,23 +5,23 @@
 @interface PXPhotosDataSourceSectionCache : NSObject {
     NSDictionary * _assetCollectionToSection;
     PHFetchResult * _collectionListFetchResult;
-    int  _estimatedOtherCount;
-    int  _estimatedPhotosCount;
-    int  _estimatedVideosCount;
+    long long  _estimatedOtherCount;
+    long long  _estimatedPhotosCount;
+    long long  _estimatedVideosCount;
 }
 
 @property (nonatomic, readonly) NSDictionary *assetCollectionToSection;
 @property (nonatomic, readonly) PHFetchResult *collectionListFetchResult;
-@property (nonatomic, readonly) int estimatedOtherCount;
-@property (nonatomic, readonly) int estimatedPhotosCount;
-@property (nonatomic, readonly) int estimatedVideosCount;
+@property (nonatomic, readonly) long long estimatedOtherCount;
+@property (nonatomic, readonly) long long estimatedPhotosCount;
+@property (nonatomic, readonly) long long estimatedVideosCount;
 
 - (void).cxx_destruct;
 - (id)assetCollectionToSection;
 - (id)collectionListFetchResult;
-- (int)estimatedOtherCount;
-- (int)estimatedPhotosCount;
-- (int)estimatedVideosCount;
+- (long long)estimatedOtherCount;
+- (long long)estimatedPhotosCount;
+- (long long)estimatedVideosCount;
 - (id)initWithCollectionListFetchResult:(id)arg1;
 
 @end

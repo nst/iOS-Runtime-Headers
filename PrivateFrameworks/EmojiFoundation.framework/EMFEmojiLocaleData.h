@@ -15,13 +15,13 @@
 + (id)emojiLocaleDataWithLocaleIdentifier:(id)arg1;
 
 - (void).cxx_destruct;
-- (unsigned long)cfCompareFlagsFromNSOptions:(unsigned int)arg1;
+- (unsigned long long)cfCompareFlagsFromNSOptions:(unsigned long long)arg1;
 - (void)dealloc;
 - (struct __EmojiLocaleDataWrapper { }*)emojiLocaleDataRef;
 - (id)emojiTokens;
-- (id)emojiTokensForOptions:(unsigned long)arg1 presentationStyle:(int)arg2;
-- (id)emojiTokensForText:(id)arg1 phoneticReading:(id)arg2 options:(unsigned int)arg3 searchType:(int)arg4 includePrefixMatches:(BOOL)arg5;
-- (void)enumerateSearchResultsInText:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 options:(unsigned int)arg3 searchType:(int)arg4 usingBlock:(id /* block */)arg5;
+- (id)emojiTokensForOptions:(unsigned long long)arg1 presentationStyle:(int)arg2;
+- (id)emojiTokensForText:(id)arg1 phoneticReading:(id)arg2 options:(unsigned long long)arg3 searchType:(int)arg4 includePrefixMatches:(bool)arg5;
+- (void)enumerateSearchResultsInText:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 options:(unsigned long long)arg3 searchType:(int)arg4 usingBlock:(id /* block */)arg5;
 - (id)initWithCEMEmojiLocaleData:(struct __EmojiLocaleDataWrapper { }*)arg1;
 - (id)initWithLocaleIdentifier:(id)arg1;
 - (id)localeIdentifier;

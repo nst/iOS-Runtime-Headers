@@ -3,38 +3,38 @@
  */
 
 @interface MDLVertexAttribute : NSObject <NSCopying> {
-    unsigned int  _bufferIndex;
-    unsigned int  _format;
+    unsigned long long  _bufferIndex;
+    unsigned long long  _format;
     void _initializationValue;
     NSString * _name;
-    unsigned int  _offset;
+    unsigned long long  _offset;
     double  _time;
 }
 
-@property (nonatomic) unsigned int bufferIndex;
-@property (nonatomic) unsigned int format;
+@property (nonatomic) unsigned long long bufferIndex;
+@property (nonatomic) unsigned long long format;
 @property (nonatomic) void initializationValue;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic) unsigned int offset;
+@property (nonatomic) unsigned long long offset;
 @property (nonatomic) double time;
 
 - (void).cxx_destruct;
-- (unsigned int)bufferIndex;
+- (unsigned long long)bufferIndex;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)format;
-- (unsigned int)hash;
+- (unsigned long long)format;
+- (unsigned long long)hash;
 - (id)init;
-- (id)initWithName:(id)arg1 format:(unsigned int)arg2 offset:(unsigned int)arg3 bufferIndex:(unsigned int)arg4;
+- (id)initWithName:(id)arg1 format:(unsigned long long)arg2 offset:(unsigned long long)arg3 bufferIndex:(unsigned long long)arg4;
 - (void)initializationValue;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)name;
-- (unsigned int)offset;
-- (void)setBufferIndex:(unsigned int)arg1;
-- (void)setFormat:(unsigned int)arg1;
+- (unsigned long long)offset;
+- (void)setBufferIndex:(unsigned long long)arg1;
+- (void)setFormat:(unsigned long long)arg1;
 - (void)setInitializationValue;
 - (void)setName:(id)arg1;
-- (void)setOffset:(unsigned int)arg1;
+- (void)setOffset:(unsigned long long)arg1;
 - (void)setTime:(double)arg1;
 - (double)time;
 

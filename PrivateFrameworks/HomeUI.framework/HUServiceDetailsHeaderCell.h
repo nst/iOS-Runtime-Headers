@@ -3,42 +3,48 @@
  */
 
 @interface HUServiceDetailsHeaderCell : UITableViewCell <HUCellProtocol> {
-    NSArray * _allConstraints;
     UILabel * _errorLabel;
-    NSMutableArray * _hideErrorLabelConstraints;
+    NSArray * _hiddenErrorLabelConstraints;
     HFItem * _item;
+    <HUResizableCellDelegate> * _resizingDelegate;
     HUGridServiceCell * _serviceCell;
-    NSMutableArray * _showErrorLabelConstraints;
+    NSArray * _visibleErrorLabelConstraints;
 }
 
-@property (nonatomic, retain) NSArray *allConstraints;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UILabel *errorLabel;
-@property (readonly) unsigned int hash;
-@property (nonatomic, retain) NSMutableArray *hideErrorLabelConstraints;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSArray *hiddenErrorLabelConstraints;
 @property (nonatomic, retain) HFItem *item;
+@property (nonatomic) <HUResizableCellDelegate> *resizingDelegate;
 @property (nonatomic, retain) HUGridServiceCell *serviceCell;
-@property (nonatomic, retain) NSMutableArray *showErrorLabelConstraints;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) NSArray *visibleErrorLabelConstraints;
 
-+ (BOOL)requiresConstraintBasedLayout;
++ (bool)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
 - (void)_configureConstraints;
-- (id)allConstraints;
+- (id)_hiddenErrorLabelConstraints;
+- (bool)_shouldShowServiceCell;
+- (void)_updateErrorLabelConstraints;
+- (void)_updateRequiredHeightIfNeeded;
+- (id)_visibleErrorLabelConstraints;
 - (id)errorLabel;
-- (id)hideErrorLabelConstraints;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)hiddenErrorLabelConstraints;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)item;
+- (void)layoutSubviews;
+- (id)resizingDelegate;
 - (id)serviceCell;
-- (void)setAllConstraints:(id)arg1;
 - (void)setErrorLabel:(id)arg1;
-- (void)setHideErrorLabelConstraints:(id)arg1;
+- (void)setHiddenErrorLabelConstraints:(id)arg1;
 - (void)setItem:(id)arg1;
+- (void)setResizingDelegate:(id)arg1;
 - (void)setServiceCell:(id)arg1;
-- (void)setShowErrorLabelConstraints:(id)arg1;
-- (id)showErrorLabelConstraints;
-- (void)updateUIWithAnimation:(BOOL)arg1;
+- (void)setVisibleErrorLabelConstraints:(id)arg1;
+- (void)updateUIWithAnimation:(bool)arg1;
+- (id)visibleErrorLabelConstraints;
 
 @end

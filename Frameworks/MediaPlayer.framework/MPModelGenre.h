@@ -23,7 +23,7 @@
 - (void).cxx_destruct;
 - (id)artworkCatalog;
 - (id /* block */)artworkCatalogBlock;
-- (id)descriptionWithType:(int)arg1;
+- (id)descriptionWithType:(long long)arg1;
 - (id)libraryAddedDate;
 - (id)name;
 - (void)setArtworkCatalogBlock:(id /* block */)arg1;

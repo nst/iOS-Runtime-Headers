@@ -24,7 +24,7 @@
 @property (nonatomic, copy) NSString *storeFrontIdentifier;
 @property (nonatomic, copy) NSString *storeIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)artist;

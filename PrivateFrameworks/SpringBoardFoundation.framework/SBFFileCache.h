@@ -9,8 +9,8 @@
     NSMutableArray * _manifest;
     double  _maxAllowedTimeSinceGeneration;
     double  _maxAllowedTimeSinceLastAccess;
-    unsigned int  _maxTotalFileCount;
-    unsigned int  _maxTotalFileSize;
+    unsigned long long  _maxTotalFileCount;
+    unsigned long long  _maxTotalFileSize;
     NSObject<OS_dispatch_queue> * _queue;
     <SBFFileCacheStore> * _store;
 }
@@ -20,8 +20,8 @@
 @property (nonatomic, readonly) <SBFFileCacheFaultHandler> *faultHandler;
 @property double maxAllowedTimeSinceGeneration;
 @property double maxAllowedTimeSinceLastAccess;
-@property unsigned int maxTotalFileCount;
-@property unsigned int maxTotalFileSize;
+@property unsigned long long maxTotalFileCount;
+@property unsigned long long maxTotalFileSize;
 @property (nonatomic, readonly) <SBFFileCacheStore> *store;
 
 - (void).cxx_destruct;
@@ -45,8 +45,8 @@
 - (void)loadFileWithIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
 - (double)maxAllowedTimeSinceGeneration;
 - (double)maxAllowedTimeSinceLastAccess;
-- (unsigned int)maxTotalFileCount;
-- (unsigned int)maxTotalFileSize;
+- (unsigned long long)maxTotalFileCount;
+- (unsigned long long)maxTotalFileSize;
 - (void)performOnWorkQueueUsingBlock:(id /* block */)arg1;
 - (void)removeAllFiles;
 - (void)removeFileWithIdentifier:(id)arg1;
@@ -54,8 +54,8 @@
 - (void)setDelegate:(id)arg1;
 - (void)setMaxAllowedTimeSinceGeneration:(double)arg1;
 - (void)setMaxAllowedTimeSinceLastAccess:(double)arg1;
-- (void)setMaxTotalFileCount:(unsigned int)arg1;
-- (void)setMaxTotalFileSize:(unsigned int)arg1;
+- (void)setMaxTotalFileCount:(unsigned long long)arg1;
+- (void)setMaxTotalFileSize:(unsigned long long)arg1;
 - (id)store;
 
 @end

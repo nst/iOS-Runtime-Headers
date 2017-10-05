@@ -2,24 +2,20 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPGeniusPlaybackQueue : MPRemotePlaybackQueue {
-    NSURL * _seedTrack;
-}
+@interface MPGeniusPlaybackQueue : MPRemotePlaybackQueue
 
 @property (nonatomic, readonly) NSURL *seedTrack;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
-- (void).cxx_destruct;
 - (id)description;
-- (id)initWithMediaRemotePlaybackQueue:(struct _MRSystemAppPlaybackQueue { }*)arg1;
 - (id)seedTrack;
 
-// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+// Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
 
-- (void)_createPlaybackContextFromCloudControllerWithSeedItem:(id)arg1 completion:(id /* block */)arg2;
-- (void)_createPlaybackContextFromMediaLibraryWithSeedItem:(id)arg1 completion:(id /* block */)arg2;
-- (void)_createPlaybackContextWithRecommendedContentWithSeedAdamID:(long long)arg1 completion:(id /* block */)arg2;
-- (void)createPlaybackContextWithCompletion:(id /* block */)arg1;
+- (void)_getPlaybackContextFromCloudControllerWithSeedItem:(id)arg1 completion:(id /* block */)arg2;
+- (void)_getPlaybackContextFromMediaLibraryWithSeedItem:(id)arg1 completion:(id /* block */)arg2;
+- (void)_getPlaybackContextWithRecommendedContentWithSeedAdamID:(long long)arg1 completion:(id /* block */)arg2;
+- (void)getPlaybackContextWithCompletion:(id /* block */)arg1;
 
 @end

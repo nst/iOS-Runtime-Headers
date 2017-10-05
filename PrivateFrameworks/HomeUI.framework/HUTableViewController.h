@@ -2,44 +2,46 @@
    Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
  */
 
-@interface HUTableViewController : UITableViewController {
+@interface HUTableViewController : UITableViewController <HUResizableCellDelegate> {
     NSHashTable * _childViewControllersAtViewWillAppearTime;
     NSHashTable * _childViewControllersAtViewWillDisappearTime;
     NSMapTable * _installedChildViewControllersKeyedByCell;
-    BOOL  _isUpdatingTableView;
-    NSMutableArray * _tableViewUpdateRequestQueue;
+    bool  _viewLayingOut;
 }
 
 @property (nonatomic, retain) NSHashTable *childViewControllersAtViewWillAppearTime;
 @property (nonatomic, retain) NSHashTable *childViewControllersAtViewWillDisappearTime;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMapTable *installedChildViewControllersKeyedByCell;
-@property (nonatomic) BOOL isUpdatingTableView;
-@property (nonatomic, retain) NSMutableArray *tableViewUpdateRequestQueue;
+@property (readonly) Class superclass;
+@property (getter=isViewLayingOut, nonatomic) bool viewLayingOut;
 
 - (void).cxx_destruct;
-- (void)_performTableViewUpdateBlock:(id /* block */)arg1;
-- (void)_performTableViewUpdateWithRequest:(id)arg1;
 - (id)childViewControllersAtViewWillAppearTime;
 - (id)childViewControllersAtViewWillDisappearTime;
+- (void)contentSizeCategoryDidChange;
+- (void)didUpdateRequiredHeightForCell:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (id)initWithStyle:(int)arg1;
+- (id)initWithStyle:(long long)arg1;
 - (id)installedChildViewControllersKeyedByCell;
-- (BOOL)isUpdatingTableView;
+- (bool)isViewLayingOut;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)setChildViewControllersAtViewWillAppearTime:(id)arg1;
 - (void)setChildViewControllersAtViewWillDisappearTime:(id)arg1;
 - (void)setInstalledChildViewControllersKeyedByCell:(id)arg1;
-- (void)setIsUpdatingTableView:(BOOL)arg1;
-- (void)setTableViewUpdateRequestQueue:(id)arg1;
-- (BOOL)shouldAutomaticallyForwardAppearanceMethods;
+- (void)setViewLayingOut:(bool)arg1;
+- (bool)shouldAutomaticallyForwardAppearanceMethods;
 - (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (id)tableViewUpdateRequestQueue;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+- (void)viewWillLayoutSubviews;
 
 @end

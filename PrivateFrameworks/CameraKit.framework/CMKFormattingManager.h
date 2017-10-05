@@ -3,18 +3,18 @@
  */
 
 @interface CMKFormattingManager : NSObject {
-    BOOL  _supportsVerticalText;
-    BOOL  _wantsCustomKerning;
+    bool  _supportsVerticalText;
+    bool  _wantsCustomKerning;
 }
 
-@property (nonatomic, readonly) BOOL supportsVerticalText;
-@property (nonatomic, readonly) BOOL wantsCustomKerning;
+@property (nonatomic, readonly) bool supportsVerticalText;
+@property (nonatomic, readonly) bool wantsCustomKerning;
 
 + (id)sharedManager;
 
 - (void)_commonCMKFormattingManagerInitialization;
 - (id)init;
-- (BOOL)supportsVerticalText;
-- (BOOL)wantsCustomKerning;
+- (bool)supportsVerticalText;
+- (bool)wantsCustomKerning;
 
 @end

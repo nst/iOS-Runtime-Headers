@@ -4,21 +4,21 @@
 
 @interface RUIActionSignal : NSObject {
     NSMutableArray * _subActions;
-    unsigned int  _topSignal;
+    unsigned long long  _topSignal;
 }
 
 @property (nonatomic, retain) NSMutableArray *subActions;
-@property (nonatomic) unsigned int topSignal;
+@property (nonatomic) unsigned long long topSignal;
 
-+ (id)signalWithType:(unsigned int)arg1;
-+ (id)stringForActionSignal:(unsigned int)arg1;
++ (id)signalWithType:(unsigned long long)arg1;
++ (id)stringForActionSignal:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (id)description;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setSubActions:(id)arg1;
-- (void)setTopSignal:(unsigned int)arg1;
+- (void)setTopSignal:(unsigned long long)arg1;
 - (id)subActions;
-- (unsigned int)topSignal;
+- (unsigned long long)topSignal;
 
 @end

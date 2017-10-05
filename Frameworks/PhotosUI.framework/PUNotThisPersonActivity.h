@@ -4,12 +4,12 @@
 
 @interface PUNotThisPersonActivity : PUActivity
 
-+ (int)activityCategory;
++ (long long)activityCategory;
 
 - (id)activityImage;
 - (id)activityTitle;
 - (id)activityType;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
+- (bool)canPerformWithActivityItems:(id)arg1;
 - (void)performActivity;
 
 @end

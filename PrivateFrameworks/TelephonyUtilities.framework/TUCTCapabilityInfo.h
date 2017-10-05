@@ -3,52 +3,52 @@
  */
 
 @interface TUCTCapabilityInfo : NSObject <NSCopying, NSSecureCoding, TUPubliclyAccessibleCopying> {
-    BOOL  _canEnable;
-    BOOL  _canEnableRoaming;
-    BOOL  _enabled;
+    bool  _canEnable;
+    bool  _canEnableRoaming;
+    bool  _enabled;
     NSData * _provisioningPostData;
     int  _provisioningStatus;
     NSURL * _provisioningURL;
-    BOOL  _roamingEnabled;
+    bool  _roamingEnabled;
 }
 
-@property (nonatomic) BOOL canEnable;
-@property (nonatomic) BOOL canEnableRoaming;
+@property (nonatomic) bool canEnable;
+@property (nonatomic) bool canEnableRoaming;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isEnabled, nonatomic) BOOL enabled;
-@property (readonly) unsigned int hash;
+@property (getter=isEnabled, nonatomic) bool enabled;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSData *provisioningPostData;
 @property (nonatomic) int provisioningStatus;
 @property (nonatomic, retain) NSURL *provisioningURL;
-@property (getter=isProvisioningURLInvalid, nonatomic, readonly) BOOL provisioningURLInvalid;
-@property (getter=isRoamingEnabled, nonatomic) BOOL roamingEnabled;
+@property (getter=isProvisioningURLInvalid, nonatomic, readonly) bool provisioningURLInvalid;
+@property (getter=isRoamingEnabled, nonatomic) bool roamingEnabled;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)canEnable;
-- (BOOL)canEnableRoaming;
+- (bool)canEnable;
+- (bool)canEnableRoaming;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)invalidateProvisioningURL;
-- (BOOL)isEnabled;
-- (BOOL)isProvisioningURLInvalid;
-- (BOOL)isRoamingEnabled;
+- (bool)isEnabled;
+- (bool)isProvisioningURLInvalid;
+- (bool)isRoamingEnabled;
 - (id)provisioningPostData;
 - (int)provisioningStatus;
 - (id)provisioningURL;
 - (id)publiclyAccessibleCopy;
 - (id)publiclyAccessibleCopyWithZone:(struct _NSZone { }*)arg1;
-- (void)setCanEnable:(BOOL)arg1;
-- (void)setCanEnableRoaming:(BOOL)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setCanEnable:(bool)arg1;
+- (void)setCanEnableRoaming:(bool)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setProvisioningPostData:(id)arg1;
 - (void)setProvisioningStatus:(int)arg1;
 - (void)setProvisioningURL:(id)arg1;
-- (void)setRoamingEnabled:(BOOL)arg1;
+- (void)setRoamingEnabled:(bool)arg1;
 
 @end

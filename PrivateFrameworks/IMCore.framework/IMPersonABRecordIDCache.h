@@ -16,17 +16,17 @@
 - (id)_abCache;
 - (void)_forceCachePersist;
 - (void)_persistCache;
-- (void)_persistCache:(BOOL)arg1;
+- (void)_persistCache:(bool)arg1;
 - (id)abUniqueID;
-- (int)cacheSequenceNumber;
-- (id)cachedRecordResultForQuery:(id)arg1 sequenceNumber:(int)arg2;
+- (long long)cacheSequenceNumber;
+- (id)cachedRecordResultForQuery:(id)arg1 sequenceNumber:(long long)arg2;
 - (void)clearExistingPreferencesCache;
 - (void)clearInMemoryCache;
 - (double)coalescingPeriod;
 - (id)description;
 - (id)filePath;
-- (void)setCacheSequenceNumber:(int)arg1;
-- (void)setCachedRecordResult:(int)arg1 identifier:(int)arg2 forQuery:(id)arg3 sequenceNumber:(int)arg4;
+- (void)setCacheSequenceNumber:(long long)arg1;
+- (void)setCachedRecordResult:(int)arg1 identifier:(int)arg2 forQuery:(id)arg3 sequenceNumber:(long long)arg4;
 - (void)setCoalescingPeriod:(double)arg1;
 - (void)setParentPath:(id)arg1;
 

@@ -21,7 +21,7 @@
 - (void).cxx_destruct;
 - (id)_advanceRefreshSessionToNextInterestedEmitter:(id)arg1;
 - (id)_exhaustGroupEmitter:(id)arg1 inRefreshSession:(id)arg2;
-- (BOOL)_isErrorTransient:(id)arg1;
+- (bool)_isErrorTransient:(id)arg1;
 - (id /* block */)emitGroupsCompletionHandler;
 - (id)feedGroupEmitters;
 - (id)groupEmittingContext;
@@ -36,6 +36,6 @@
 - (void)setResultRefreshSession:(id)arg1;
 - (void)setToCursorsByEmitterID:(id)arg1;
 - (id)toCursorsByEmitterID;
-- (BOOL)validateOperation;
+- (bool)validateOperation;
 
 @end

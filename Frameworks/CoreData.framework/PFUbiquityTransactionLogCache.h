@@ -14,6 +14,6 @@
 - (id)init;
 - (id)initWithLocalPeerID:(id)arg1 andGlobalIDCache:(id)arg2;
 - (void)removeLogsCachedForStoreNamed:(id)arg1 withUbiquityRootLocation:(id)arg2;
-- (id)retainedCachedLogForLocation:(id)arg1 loadWithRetry:(BOOL)arg2 error:(id*)arg3;
+- (id)retainedCachedLogForLocation:(id)arg1 loadWithRetry:(bool)arg2 error:(id*)arg3;
 
 @end

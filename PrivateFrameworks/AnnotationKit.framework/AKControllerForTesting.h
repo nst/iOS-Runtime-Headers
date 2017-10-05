@@ -6,7 +6,7 @@
     AKActionController * _testingActionController;
     AKAttributeController * _testingAttributeController;
     <AKControllerDelegateProtocol> * _testingDelegate;
-    AKIntelligentSketchController * _testingIntelligentSketchController;
+    AKLegacyDoodleController * _testingIntelligentSketchController;
     AKMainEventHandler * _testingMainEventHandler;
     AKModelController * _testingModelController;
     UIView * _testingOverlayView;
@@ -19,7 +19,7 @@
 @property (retain) AKActionController *testingActionController;
 @property (retain) AKAttributeController *testingAttributeController;
 @property (retain) <AKControllerDelegateProtocol> *testingDelegate;
-@property (retain) AKIntelligentSketchController *testingIntelligentSketchController;
+@property (retain) AKLegacyDoodleController *testingIntelligentSketchController;
 @property (retain) AKMainEventHandler *testingMainEventHandler;
 @property (retain) AKModelController *testingModelController;
 @property (retain) UIView *testingOverlayView;
@@ -35,13 +35,13 @@
 - (id)attributeController;
 - (id)delegate;
 - (id)init;
-- (id)intelligentSketchController;
+- (id)legacyDoodleController;
 - (id)mainEventHandler;
 - (id)modelController;
 - (id)overlayView;
 - (void)performActionForSender:(id)arg1;
 - (void)reloadVisibleToolbarItemIdentifiers;
-- (void)setOverlayShouldPixelate:(BOOL)arg1;
+- (void)setOverlayShouldPixelate:(bool)arg1;
 - (void)setTestingActionController:(id)arg1;
 - (void)setTestingAttributeController:(id)arg1;
 - (void)setTestingDelegate:(id)arg1;
@@ -68,7 +68,7 @@
 - (id)toolController;
 - (id)toolbarView;
 - (id)undoController;
-- (void)updateOverlayViewAtIndex:(unsigned int)arg1;
-- (BOOL)validateSender:(id)arg1;
+- (void)updateOverlayViewAtIndex:(unsigned long long)arg1;
+- (bool)validateSender:(id)arg1;
 
 @end

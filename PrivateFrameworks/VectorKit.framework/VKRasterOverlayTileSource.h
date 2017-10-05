@@ -3,38 +3,37 @@
  */
 
 @interface VKRasterOverlayTileSource : VKTileSource {
-    NSObject<OS_dispatch_queue> * _homeQ;
     NSMutableArray * _overlays;
-    BOOL  _overrideMaxZoomLevel;
+    bool  _overrideMaxZoomLevel;
     NSObject<OS_dispatch_group> * _renderGroup;
     NSMutableSet * _worldSizedOverlays;
 }
 
 @property (nonatomic, readonly) NSArray *overlays;
-@property (nonatomic) BOOL overrideMaxZoomLevel;
+@property (nonatomic) bool overrideMaxZoomLevel;
 
 - (void)_flush;
 - (void)_queueDraw:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (void)addOverlay:(id)arg1;
-- (BOOL)canFetchTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
-- (BOOL)cancelFetchForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
+- (bool)canFetchTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
+- (bool)cancelFetchForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (void)dealloc;
-- (void)exchangeOverlayAtIndex:(unsigned int)arg1 withOverlayAtIndex:(unsigned int)arg2;
+- (void)exchangeOverlayAtIndex:(unsigned long long)arg1 withOverlayAtIndex:(unsigned long long)arg2;
 - (void)fetchTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 sourceKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg2;
-- (id)init;
+- (id)initWithTaskContext:(struct shared_ptr<md::TaskContext> { struct TaskContext {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (void)insertOverlay:(id)arg1 aboveOverlay:(id)arg2;
-- (void)insertOverlay:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)insertOverlay:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)insertOverlay:(id)arg1 belowOverlay:(id)arg2;
 - (void)invalidate;
-- (void)invalidateRect:(const struct Box<double, 2> { struct Matrix<double, 2, 1> { double x_1_1_1[2]; } x1; struct Matrix<double, 2, 1> { double x_2_1_1[2]; } x2; }*)arg1 level:(int)arg2;
+- (void)invalidateRect:(const struct Box<double, 2> { struct Matrix<double, 2, 1> { double x_1_1_1[2]; } x1; struct Matrix<double, 2, 1> { double x_2_1_1[2]; } x2; }*)arg1 level:(long long)arg2;
 - (unsigned int)maximumDownloadZoomLevel;
-- (BOOL)maximumZoomLevelBoundsCamera;
+- (bool)maximumZoomLevelBoundsCamera;
 - (unsigned int)minimumDownloadZoomLevel;
-- (BOOL)minimumZoomLevelBoundsCamera;
+- (bool)minimumZoomLevelBoundsCamera;
 - (id)overlays;
-- (BOOL)overrideMaxZoomLevel;
+- (bool)overrideMaxZoomLevel;
 - (void)removeOverlay:(id)arg1;
-- (void)setOverrideMaxZoomLevel:(BOOL)arg1;
-- (int)tileSize;
+- (void)setOverrideMaxZoomLevel:(bool)arg1;
+- (long long)tileSize;
 
 @end

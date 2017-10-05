@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCharacteristicRequest : NSObject {
+@interface HMDCharacteristicRequest : HMFObject {
     HMDCharacteristic * _characteristic;
     id  _previousValue;
 }

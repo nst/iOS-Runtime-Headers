@@ -5,7 +5,7 @@
 @interface PULazyLoader : NSObject {
     <PULazyLoaderDelegate> * _delegate;
     struct { 
-        BOOL respondsToDidLoadItem; 
+        bool respondsToDidLoadItem; 
     }  _delegateFlags;
     id  _item;
     id /* block */  _loadingBlock;
@@ -18,7 +18,7 @@
 - (id)delegate;
 - (id)initWithLoadingBlock:(id /* block */)arg1;
 - (void)invalidateItem;
-- (id)itemLoadIfNeeded:(BOOL)arg1;
+- (id)itemLoadIfNeeded:(bool)arg1;
 - (id /* block */)loadingBlock;
 - (void)setDelegate:(id)arg1;
 

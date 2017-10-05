@@ -12,7 +12,7 @@
 
 // Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (int)type;
 
 - (id)autoconvertedCandidatePointerValues;
@@ -27,7 +27,7 @@
 - (void)setAutoconvertedCandidatePointerValues:(id)arg1;
 - (void)setRemainderCandidateString:(id)arg1;
 
-// Image: /System/Library/TextInput/libTextInputCore.dylib
+// Image: /System/Library/PrivateFrameworks/TextInputCore.framework/TextInputCore
 
 - (id)initWithMecabraCandidate:(const void*)arg1 autoconvertedCandidates:(id)arg2;
 

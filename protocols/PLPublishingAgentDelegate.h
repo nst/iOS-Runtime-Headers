@@ -13,7 +13,7 @@
 
 @optional
 
-- (void)publishingAgentDidEndRemaking:(PLPublishingAgent *)arg1 didSucceed:(BOOL)arg2;
+- (void)publishingAgentDidEndRemaking:(PLPublishingAgent *)arg1 didSucceed:(bool)arg2;
 - (void)publishingAgentDidStartRemaking:(PLPublishingAgent *)arg1;
 
 @end

@@ -13,6 +13,6 @@
 - (void)switchToLoginUserWithError:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: NSError *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)switchToUser:(void *)arg1 passcodeData:(void *)arg2 context:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 9: UMUser *, NSData *, UMUserSwitchContext *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)terminateSyncWithCompletionHandler:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
-- (void)unregisterStakeHolder:(id)arg1 status:(unsigned int)arg2 reason:(NSString *)arg3;
+- (void)unregisterStakeHolder:(id)arg1 status:(unsigned long long)arg2 reason:(NSString *)arg3;
 
 @end

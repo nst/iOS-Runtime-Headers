@@ -3,65 +3,65 @@
  */
 
 @interface PUSearchResultsDataSource : NSObject <PUSearchResultsValueDelegate> {
-    unsigned int  _assetFetchIndex;
+    unsigned long long  _assetFetchIndex;
     NSSet * _cachedAllAlbumUUIDs;
     NSSet * _cachedAllMemoryUUIDs;
     <PUSearchResultsDataSourceChangeObserver> * _changeObserver;
     PLSearchIndexDateFormatter * _dateFormatter;
     bool  _didMerge;
-    BOOL  _ignorePastResults;
-    unsigned int  _maxGroupedResultsCount;
-    BOOL  _needsAggdSearchLogging;
+    bool  _ignorePastResults;
+    unsigned long long  _maxGroupedResultsCount;
+    bool  _needsAggdSearchLogging;
     PLPhotoLibrary * _photoLibrary;
     PSIQuery * _query;
-    unsigned int  _queryTag;
+    unsigned long long  _queryTag;
     NSObject<OS_dispatch_queue> * _queue;
     NSArray * _results;
     PSIDatabase * _searchIndex;
-    unsigned int  _searchResultsCount;
+    unsigned long long  _searchResultsCount;
     double  _searchTime;
-    unsigned int  _uncommittedMaxGroupedResultsCount;
+    unsigned long long  _uncommittedMaxGroupedResultsCount;
     NSArray * _uncommittedResults;
-    unsigned int  _unprocessedSearchResultsCount;
+    unsigned long long  _unprocessedSearchResultsCount;
 }
 
 @property (nonatomic) <PUSearchResultsDataSourceChangeObserver> *changeObserver;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL needsAggdSearchLogging;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool needsAggdSearchLogging;
 @property (nonatomic, retain) PSIDatabase *searchIndex;
-@property (nonatomic) unsigned int searchResultsCount;
+@property (nonatomic) unsigned long long searchResultsCount;
 @property (nonatomic) double searchTime;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_asyncFetchAssetsWithQueryTag:(unsigned int)arg1;
+- (void)_asyncFetchAssetsWithQueryTag:(unsigned long long)arg1;
 - (id)_fetchObjectsWithEntityName:(id)arg1 uuids:(id)arg2;
-- (void)_inqBackgroundProcessSearchResults:(id)arg1 withTag:(unsigned int)arg2 searchString:(id)arg3;
+- (void)_inqBackgroundProcessSearchResults:(id)arg1 withTag:(unsigned long long)arg2 searchString:(id)arg3;
 - (void)_inqCancel;
-- (BOOL)_shouldCancel:(unsigned int)arg1;
+- (bool)_shouldCancel:(unsigned long long)arg1;
 - (void)cancel;
 - (id)changeObserver;
 - (id)dateFormatter;
-- (BOOL)hasPendingChanges;
+- (bool)hasPendingChanges;
 - (id)initWithSearchIndex:(id)arg1;
 - (void)mergePendingChanges;
-- (BOOL)needsAggdSearchLogging;
-- (unsigned int)numberOfSearchResults;
+- (bool)needsAggdSearchLogging;
+- (unsigned long long)numberOfSearchResults;
 - (void)performAggdSearchLogIfNeeded;
 - (id)searchIndex;
-- (BOOL)searchIsFinished:(id)arg1;
-- (unsigned int)searchResultsCount;
+- (bool)searchIsFinished:(id)arg1;
+- (unsigned long long)searchResultsCount;
 - (double)searchTime;
 - (void)setChangeObserver:(id)arg1;
-- (void)setNeedsAggdSearchLogging:(BOOL)arg1;
+- (void)setNeedsAggdSearchLogging:(bool)arg1;
 - (void)setSearchIndex:(id)arg1;
-- (void)setSearchResultsCount:(unsigned int)arg1;
+- (void)setSearchResultsCount:(unsigned long long)arg1;
 - (void)setSearchString:(id)arg1;
 - (void)setSearchString:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)setSearchString:(id)arg1 withWildcardSearch:(BOOL)arg2 andEarlyNotifyOfResults:(id /* block */)arg3 andCompletion:(id /* block */)arg4;
+- (void)setSearchString:(id)arg1 withWildcardSearch:(bool)arg2 andEarlyNotifyOfResults:(id /* block */)arg3 andCompletion:(id /* block */)arg4;
 - (void)setSearchTime:(double)arg1;
-- (id)valueAtIndex:(unsigned int)arg1;
+- (id)valueAtIndex:(unsigned long long)arg1;
 
 @end

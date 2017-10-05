@@ -4,15 +4,15 @@
 
 @interface SSVMutableMediaContentTasteItem : SSVMediaContentTasteItem
 
-@property (nonatomic) unsigned int contentType;
+@property (nonatomic) unsigned long long contentType;
 @property (nonatomic, copy) NSString *playlistGlobalID;
 @property (nonatomic) long long storeAdamID;
-@property (nonatomic) unsigned int tasteType;
+@property (nonatomic) unsigned long long tasteType;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setContentType:(unsigned int)arg1;
+- (void)setContentType:(unsigned long long)arg1;
 - (void)setPlaylistGlobalID:(id)arg1;
 - (void)setStoreAdamID:(long long)arg1;
-- (void)setTasteType:(unsigned int)arg1;
+- (void)setTasteType:(unsigned long long)arg1;
 
 @end

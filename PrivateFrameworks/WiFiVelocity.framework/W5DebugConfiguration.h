@@ -3,34 +3,30 @@
  */
 
 @interface W5DebugConfiguration : NSObject <NSCopying, NSSecureCoding> {
-    int  _bluetooth;
-    int  _dns;
-    int  _eapol;
-    int  _wifi;
+    long long  _bluetooth;
+    long long  _eapol;
+    long long  _wifi;
 }
 
-@property (nonatomic) int bluetooth;
-@property (nonatomic) int dns;
-@property (nonatomic) int eapol;
-@property (nonatomic) int wifi;
+@property (nonatomic) long long bluetooth;
+@property (nonatomic) long long eapol;
+@property (nonatomic) long long wifi;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (int)bluetooth;
-- (BOOL)conformsToProtocol:(id)arg1;
+- (long long)bluetooth;
+- (bool)conformsToProtocol:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (int)dns;
-- (int)eapol;
+- (long long)eapol;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToDebugConfiguration:(id)arg1;
-- (void)setBluetooth:(int)arg1;
-- (void)setDns:(int)arg1;
-- (void)setEapol:(int)arg1;
-- (void)setWifi:(int)arg1;
-- (int)wifi;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToDebugConfiguration:(id)arg1;
+- (void)setBluetooth:(long long)arg1;
+- (void)setEapol:(long long)arg1;
+- (void)setWifi:(long long)arg1;
+- (long long)wifi;
 
 @end

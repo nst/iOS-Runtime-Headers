@@ -5,10 +5,10 @@
 
 @required
 
-- (void)addEventListener:(NSString *)arg1 :(id <DOMEventListener>)arg2 :(BOOL)arg3;
-- (void)addEventListener:(NSString *)arg1 listener:(id <DOMEventListener>)arg2 useCapture:(BOOL)arg3;
-- (BOOL)dispatchEvent:(DOMEvent *)arg1;
-- (void)removeEventListener:(NSString *)arg1 :(id <DOMEventListener>)arg2 :(BOOL)arg3;
-- (void)removeEventListener:(NSString *)arg1 listener:(id <DOMEventListener>)arg2 useCapture:(BOOL)arg3;
+- (void)addEventListener:(NSString *)arg1 :(id <DOMEventListener>)arg2 :(bool)arg3;
+- (void)addEventListener:(NSString *)arg1 listener:(id <DOMEventListener>)arg2 useCapture:(bool)arg3;
+- (bool)dispatchEvent:(DOMEvent *)arg1;
+- (void)removeEventListener:(NSString *)arg1 :(id <DOMEventListener>)arg2 :(bool)arg3;
+- (void)removeEventListener:(NSString *)arg1 listener:(id <DOMEventListener>)arg2 useCapture:(bool)arg3;
 
 @end

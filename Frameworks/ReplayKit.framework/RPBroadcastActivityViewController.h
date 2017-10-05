@@ -15,20 +15,21 @@
 @property (nonatomic, retain) UIPopoverPresentationController *popoverPresentationControllerProxy;
 
 + (void)loadBroadcastActivityViewControllerWithHandler:(id /* block */)arg1;
-+ (void)loadBroadcastActivityViewControllerWithHandler:(id /* block */)arg1 broadcastActivitiesNotInstalledAlertTitle:(id)arg2 broadcastActivitiesNotInstalledAlertMessage:(id)arg3;
++ (void)loadBroadcastActivityViewControllerWithPreferredExtension:(id)arg1 handler:(id /* block */)arg2;
++ (void)loadBroadcastActivityViewControllerWithPreferredExtension:(id)arg1 handler:(id /* block */)arg2 broadcastActivitiesNotInstalledAlertTitle:(id)arg3 broadcastActivitiesNotInstalledAlertMessage:(id)arg4;
 + (void)viewControllerForExtension:(id)arg1 inputItems:(id)arg2 completionHandler:(id /* block */)arg3;
 
 - (void).cxx_destruct;
 - (id)delegate;
 - (id /* block */)didFinishHandler;
-- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)dismissViewControllerAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (id)hostViewController;
 - (id)popoverPresentationController;
 - (id)popoverPresentationControllerProxy;
 - (void)setDelegate:(id)arg1;
 - (void)setDidFinishHandler:(id /* block */)arg1;
 - (void)setHostViewController:(id)arg1;
-- (void)setModalPresentationStyle:(int)arg1;
+- (void)setModalPresentationStyle:(long long)arg1;
 - (void)setPopoverPresentationControllerProxy:(id)arg1;
 
 @end

@@ -12,11 +12,11 @@
 
 - (void).cxx_destruct;
 - (Class)_classForChildren;
+- (bool)hideSearchField;
 - (id)init;
 - (id)initWithModel:(id)arg1;
-- (void)itemsOrSelectionDidChange:(BOOL)arg1;
+- (void)itemsOrSelectionDidChange:(bool)arg1;
 - (id)queryString;
 - (void)setQueryString:(id)arg1;
-- (BOOL)shouldShowSearch;
 
 @end

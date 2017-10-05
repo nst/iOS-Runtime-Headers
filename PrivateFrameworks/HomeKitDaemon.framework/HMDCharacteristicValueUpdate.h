@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCharacteristicValueUpdate : NSObject {
+@interface HMDCharacteristicValueUpdate : HMFObject {
     NSError * _error;
     HMDDevice * _remoteDevice;
     NSString * _updateIdentifier;

@@ -9,7 +9,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SSPersonalizeOffersDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSArray *items;
 @property (readonly) Class superclass;
 
@@ -18,7 +18,7 @@
 - (id)initWithItems:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)items;
-- (BOOL)start;
+- (bool)start;
 - (void)startWithCompletionBlock:(id /* block */)arg1;
 - (void)startWithPersonalizedResponseBlock:(id /* block */)arg1;
 

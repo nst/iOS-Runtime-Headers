@@ -5,20 +5,23 @@
 
 @required
 
-- (BOOL)deviceInRestrictedMode;
-- (BOOL)deviceSupportsInAppPayments;
+- (bool)canRegisterForPeerPayment;
+- (bool)deviceInRestrictedMode;
+- (bool)deviceSupportsInAppPayments;
 - (<PKPaymentOptionsProtocol> *)optionsDelegate;
 - (<PKPassLibraryDataProvider> *)passLibraryDataProvider;
 - (<PKPaymentDataProvider> *)paymentDataProvider;
+- (<PKPassbookPeerPaymentSettingsDataSource> *)peerPaymentDataSource;
+- (<PKPassbookPeerPaymentSettingsDelegate> *)peerPaymentDelegate;
 - (NSString *)secureElementID;
-- (BOOL)secureElementIsProductionSigned;
+- (bool)secureElementIsProductionSigned;
 - (<PKPaymentSetupDelegate> *)setupDelegate;
 
 @optional
 
 - (NSString *)deviceName;
-- (BOOL)hasFelicaSecureElement;
-- (void)setDefaultExpressFelicaTransitPassIdentifier:(void *)arg1 visibleViewController:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: NSString *, UIViewController *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSString *, void*
+- (bool)hasFelicaSecureElement;
+- (void)setDefaultExpressFelicaTransitPassIdentifier:(void *)arg1 visibleViewController:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: NSString *, UIViewController *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSString *, void*
 - (NSArray *)setupFeaturedNetworksForDevice;
 
 @end

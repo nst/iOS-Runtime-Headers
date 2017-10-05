@@ -5,8 +5,9 @@
 
 @required
 
-- (BOOL)hf_hasSetFavorite;
-- (BOOL)hf_isFavorite;
-- (NAFuture *)hf_updateIsFavorite:(BOOL)arg1;
+- (bool)hf_hasSetFavorite;
+- (bool)hf_isFavorite;
+- (bool)hf_shouldShowInFavorites;
+- (NAFuture *)hf_updateIsFavorite:(bool)arg1;
 
 @end

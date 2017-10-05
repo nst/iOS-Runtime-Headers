@@ -6,7 +6,7 @@
 @required
 
 - (void)queue_noteInvalidWithError:(NSError *)arg1;
-- (void)queue_setActive:(BOOL)arg1;
+- (void)queue_setActive:(bool)arg1;
 - (BSMachPortSendRight *)queue_token;
 
 @end

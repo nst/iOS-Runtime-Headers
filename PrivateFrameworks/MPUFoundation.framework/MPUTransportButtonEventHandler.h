@@ -4,16 +4,16 @@
 
 @interface MPUTransportButtonEventHandler : NSObject {
     UIControl * _button;
-    BOOL  _longPress;
+    bool  _longPress;
     NSObject<OS_dispatch_source> * _longPressTimer;
     double  _minimumLongPressDuration;
-    BOOL  _shouldFakeEnabled;
-    BOOL  _supportsTapWhenDisabled;
+    bool  _shouldFakeEnabled;
+    bool  _supportsTapWhenDisabled;
 }
 
 @property (nonatomic) UIControl *button;
 @property (nonatomic) double minimumLongPressDuration;
-@property (nonatomic) BOOL supportsTapWhenDisabled;
+@property (nonatomic) bool supportsTapWhenDisabled;
 
 - (void).cxx_destruct;
 - (void)_clearLongPressTimer;
@@ -28,9 +28,9 @@
 - (id)performHitTestingBlock:(id /* block */)arg1;
 - (void)setButton:(id)arg1;
 - (void)setMinimumLongPressDuration:(double)arg1;
-- (void)setSupportsTapWhenDisabled:(BOOL)arg1;
-- (BOOL)shouldFakeEnabled;
-- (BOOL)shouldForceTrackingEnabled;
-- (BOOL)supportsTapWhenDisabled;
+- (void)setSupportsTapWhenDisabled:(bool)arg1;
+- (bool)shouldFakeEnabled;
+- (bool)shouldForceTrackingEnabled;
+- (bool)supportsTapWhenDisabled;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface _UIStoryboardUnwindChain : NSObject {
-    unsigned int  _commonAncestorIdx;
-    unsigned int  _modalAncestorContainingSourceIdx;
+    unsigned long long  _commonAncestorIdx;
+    unsigned long long  _modalAncestorContainingSourceIdx;
     NSMutableArray * _viewControllers;
 }
 

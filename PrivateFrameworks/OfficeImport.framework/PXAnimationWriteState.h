@@ -3,10 +3,10 @@
  */
 
 @interface PXAnimationWriteState : NSObject {
-    unsigned int  mCommonTimeNodeDataId;
+    unsigned long long  mCommonTimeNodeDataId;
     TCXmlPrefixStreamWriter * mFile;
-    BOOL  mHasMainSeqTimeNodeId;
-    unsigned int  mMainSeqTimeNodeId;
+    bool  mHasMainSeqTimeNodeId;
+    unsigned long long  mMainSeqTimeNodeId;
     OCXWriteState * mWriteState;
 }
 
@@ -15,12 +15,12 @@
 
 - (void)dealloc;
 - (id)file;
-- (BOOL)hasMainSeqTimeNodeId;
+- (bool)hasMainSeqTimeNodeId;
 - (id)initWithWriteState:(id)arg1 file:(id)arg2;
-- (unsigned int)mainSeqTimeNodeId;
-- (unsigned int)newCommonTimeNodeDataId;
+- (unsigned long long)mainSeqTimeNodeId;
+- (unsigned long long)newCommonTimeNodeDataId;
 - (void)setFile:(id)arg1;
-- (void)setMainSeqTimeNodeId:(unsigned int)arg1;
+- (void)setMainSeqTimeNodeId:(unsigned long long)arg1;
 - (void)setWriteState:(id)arg1;
 - (id)writeState;
 

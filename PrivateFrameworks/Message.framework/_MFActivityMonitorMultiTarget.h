@@ -7,12 +7,12 @@
     id  _primaryTarget;
 }
 
-- (BOOL)addActivityTarget:(id)arg1;
+- (bool)addActivityTarget:(id)arg1;
 - (id)allTargets;
 - (void)dealloc;
 - (id)displayName;
 - (id)primaryTarget;
-- (BOOL)removeActivityTarget:(id)arg1;
+- (bool)removeActivityTarget:(id)arg1;
 - (void)setPrimaryTarget:(id)arg1;
 
 @end

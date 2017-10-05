@@ -19,10 +19,10 @@
 - (id)initWithDAMailMessage:(id)arg1 mailbox:(id)arg2;
 - (id)mailbox;
 - (id)messageBody;
-- (BOOL)messageData:(id*)arg1 messageSize:(unsigned int*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
-- (BOOL)messageDataHolder:(id*)arg1 messageSize:(unsigned int*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
+- (bool)messageData:(id*)arg1 messageSize:(unsigned long long*)arg2 isComplete:(bool*)arg3 downloadIfNecessary:(bool)arg4;
+- (bool)messageDataHolder:(id*)arg1 messageSize:(unsigned long long*)arg2 isComplete:(bool*)arg3 downloadIfNecessary:(bool)arg4;
 - (unsigned long long)messageFlags;
-- (unsigned int)messageSize;
+- (unsigned long long)messageSize;
 - (id)remoteID;
 - (id)remoteMailboxURL;
 

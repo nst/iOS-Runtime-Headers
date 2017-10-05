@@ -15,9 +15,9 @@
 + (void)_addTaskInfoFrom:(id)arg1 toMessage:(id)arg2;
 + (void)_addUserInfoFrom:(id)arg1 toMessage:(id)arg2;
 + (id)messageWithPrivateFormat:(id)arg1;
-+ (id)messageWithPrivateFormat:(id)arg1 arguments:(void*)arg2;
++ (id)messageWithPrivateFormat:(id)arg1 arguments:(char *)arg2;
 + (id)messageWithPublicFormat:(id)arg1;
-+ (id)messageWithPublicFormat:(id)arg1 arguments:(void*)arg2;
++ (id)messageWithPublicFormat:(id)arg1 arguments:(char *)arg2;
 + (id)messageWithTask:(id)arg1;
 + (id)messageWithTask:(id)arg1 privateFormat:(id)arg2;
 + (id)messageWithTask:(id)arg1 publicFormat:(id)arg2;

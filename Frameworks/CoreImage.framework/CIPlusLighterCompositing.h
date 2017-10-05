@@ -4,7 +4,7 @@
 
 @interface CIPlusLighterCompositing : _CICompositeFilter
 
-+ (id)_kernel_source;
++ (id)_kernel;
 + (id)customAttributes;
 
 - (id)outputImage;

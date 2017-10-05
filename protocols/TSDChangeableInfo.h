@@ -7,11 +7,12 @@
 
 - (void)beginCollectingChanges;
 - (TSSPropertySetChangeDetails *)endCollectingChanges;
-- (BOOL)isUserModifiable;
+- (bool)isUserModifiable;
 - (void)willChangeProperty:(int)arg1;
 
 @optional
 
+- (Class)editorClass;
 - (void)willChangeProperties:(TSSPropertySet *)arg1;
 
 @end

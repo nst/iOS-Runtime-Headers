@@ -18,7 +18,7 @@
     NSMutableArray * _delayedMomentAssetUpdates;
     NSMutableDictionary * _delayedSearchIndexUpdateUUIDs;
     NSMutableDictionary * _delayedWorkerTypesToAnalyzeByAssetUUID;
-    BOOL  _needsUpdateUnverifiedFaceCountThreshold;
+    bool  _needsUpdateUnverifiedFaceCountThreshold;
 }
 
 @property (nonatomic, readonly, retain) PLClientServerTransaction *clientTransaction;
@@ -30,9 +30,9 @@
 + (void)delayedMomentDataFromChangeHubEvent:(id)arg1 insertsAndUpdates:(id*)arg2 deletes:(id*)arg3;
 + (void)delayedSearchIndexUpdatesFromChangeHubEvent:(id)arg1 updates:(id*)arg2;
 
-- (void)_recordAlbumUUIDForSearchIndexUpdate:(id)arg1 isInsert:(BOOL)arg2;
+- (void)_recordAlbumUUIDForSearchIndexUpdate:(id)arg1 isInsert:(bool)arg2;
 - (void)_recordAssetForSearchIndexUpdate:(id)arg1;
-- (void)_recordAssetUUIDForSearchIndexUpdate:(id)arg1 isInsert:(BOOL)arg2;
+- (void)_recordAssetUUIDForSearchIndexUpdate:(id)arg1 isInsert:(bool)arg2;
 - (void)_recordDelayedAlbumCountUpdate:(id)arg1;
 - (void)_recordDelayedCloudFeedAlbumUpdate:(id)arg1;
 - (void)_recordDelayedCloudFeedAssetInsert:(id)arg1;
@@ -44,7 +44,7 @@
 - (void)_recordDelayedMomentAssetUpdates:(id)arg1;
 - (void)_recordDetectedFaceUUIDInsertForSearchIndexUpdate:(id)arg1;
 - (void)_recordManagedObjectUUID:(id)arg1 forSearchIndexUpdateKey:(id)arg2;
-- (void)_recordMemoryUUIDForSearchIndexUpdate:(id)arg1 isInsert:(BOOL)arg2;
+- (void)_recordMemoryUUIDForSearchIndexUpdate:(id)arg1 isInsert:(bool)arg2;
 - (void)_recordNormalAssetForDupeAnalysis:(id)arg1;
 - (void)_recordPersonUUIDInsertForSearchIndexUpdate:(id)arg1;
 - (void)_recordStreamAssetForDupeAnalysis:(id)arg1;
@@ -56,6 +56,7 @@
 - (void)appendDelayedSearchIndexUpdatesToXPCMessage:(id)arg1;
 - (id)clientTransaction;
 - (void)dealloc;
+- (void)forceAlbumCountUpdate:(id)arg1;
 - (id)initWithClientTransaction:(id)arg1;
 - (void)persistDelayedActionsScope:(id)arg1;
 - (void)popDelayedAlbumCountUpdates:(id*)arg1;
@@ -65,7 +66,7 @@
 - (void)popDelayedDupeAnalysisNormalInserts:(id*)arg1 cloudInserts:(id*)arg2;
 - (void)popDelayedMomentInsertsAndUpdates:(id*)arg1 deletes:(id*)arg2;
 - (void)popDelayedSearchIndexUpdates:(id*)arg1;
-- (BOOL)popNeedsUdpateUnverifiedFaceCountThreshold;
+- (bool)popNeedsUdpateUnverifiedFaceCountThreshold;
 - (void)recordAdditionalAssetAttributesForSearchIndexUpdate:(id)arg1;
 - (void)recordAlbumCountUpdate:(id)arg1;
 - (void)recordAlbumForCloudFeedUpdate:(id)arg1;
@@ -83,6 +84,5 @@
 - (void)recordMemoryForSearchIndexUpdate:(id)arg1;
 - (void)recordNeedsUpdateUnverifiedFaceCountThreshold;
 - (void)recordPersonForSearchIndexUpdate:(id)arg1;
-- (void)recordPersonReferenceForSearchIndexUpdate:(id)arg1;
 
 @end

@@ -6,7 +6,7 @@
 @required
 
 - (NSString *)data;
-- (unsigned int)length;
+- (unsigned long long)length;
 - (void)setData:(NSString *)arg1;
 
 @end

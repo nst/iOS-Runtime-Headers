@@ -4,12 +4,12 @@
 
 @interface _KSTextReplacementManagedObject : NSManagedObject
 
-@property (nonatomic) BOOL needsSaveToCloud;
+@property (nonatomic) bool needsSaveToCloud;
 @property (nonatomic, retain) NSString *phrase;
 @property (nonatomic, retain) NSData *remoteRecordInfo;
 @property (nonatomic, retain) NSString *shortcut;
 @property (nonatomic, retain) NSDate *timestamp;
 @property (nonatomic, retain) NSString *uniqueName;
-@property (nonatomic) BOOL wasDeleted;
+@property (nonatomic) bool wasDeleted;
 
 @end

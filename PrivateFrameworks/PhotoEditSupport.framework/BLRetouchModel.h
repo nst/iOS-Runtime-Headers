@@ -8,16 +8,16 @@
     NSDictionary * _strokesDataDictionary;
 }
 
+- (void).cxx_destruct;
 - (void)buildLayerStackWithMaskSourceImage:(id)arg1;
-- (void)dealloc;
-- (BOOL)hasLayerStack;
-- (BOOL)hasRetouch;
-- (id)imageForWorkingImage:(id)arg1 workingTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 inDestRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 withPadding:(float)arg4;
-- (id)imageForWorkingImageBuffer:(id)arg1 workingTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 inDestRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 withPadding:(float)arg4;
+- (bool)hasLayerStack;
+- (bool)hasRetouch;
+- (id)imageForWorkingImage:(id)arg1 workingTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2 inDestRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 withPadding:(double)arg4;
+- (id)imageForWorkingImageBuffer:(id)arg1 workingTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2 inDestRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 withPadding:(double)arg4;
 - (id)initWithAdjustmentsDictionary:(id)arg1;
 - (id)layerStack;
-- (BOOL)needsPadding;
-- (float)paddingForSize:(struct CGSize { float x1; float x2; })arg1;
+- (bool)needsPadding;
+- (double)paddingForSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setLayerStack:(id)arg1;
 
 @end

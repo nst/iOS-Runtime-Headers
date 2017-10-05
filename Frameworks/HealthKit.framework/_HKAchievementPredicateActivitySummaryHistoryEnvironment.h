@@ -3,46 +3,22 @@
  */
 
 @interface _HKAchievementPredicateActivitySummaryHistoryEnvironment : _HKBaseAchievementPredicateEnvironment {
-    double  _bestAchievedBriskMinutes;
-    double  _bestAchievedMoveCalories;
-    double  _bestAchievedMoveGoal;
-    int  _bestConsecutiveMoveGoalsMet;
-    int  _consecutiveExerciseGoalsMet;
-    int  _consecutiveMoveGoalsMet;
-    int  _consecutiveStandGoalsMet;
-    NSSet * _earnedAchievementDefinitionIdentifiers;
+    <_HKActivitySummaryHistoryEnvironmentDataSource> * _dataSource;
     _HKAchievementPredicateActivitySummaryHistoryEnvironment * _previous;
-    int  _totalDaysOfExerciseHistory;
-    int  _totalDaysOfMoveHistory;
-    int  _totalMoveGoalsMet;
 }
 
-@property (nonatomic, readonly) double bestAchievedBriskMinutes;
-@property (nonatomic, readonly) double bestAchievedMoveCalories;
-@property (nonatomic, readonly) double bestAchievedMoveGoal;
-@property (nonatomic, readonly) int bestConsecutiveMoveGoalsMet;
-@property (nonatomic, readonly) int consecutiveExerciseGoalsMet;
-@property (nonatomic, readonly) int consecutiveMoveGoalsMet;
-@property (nonatomic, readonly) int consecutiveStandGoalsMet;
-@property (nonatomic, readonly) NSSet *earnedAchievementDefinitionIdentifiers;
+@property (nonatomic) <_HKActivitySummaryHistoryEnvironmentDataSource> *dataSource;
 @property (nonatomic, retain) _HKAchievementPredicateActivitySummaryHistoryEnvironment *previous;
-@property (nonatomic, readonly) int totalDaysOfExerciseHistory;
-@property (nonatomic, readonly) int totalDaysOfMoveHistory;
-@property (nonatomic, readonly) int totalMoveGoalsMet;
 
 - (void).cxx_destruct;
-- (double)bestAchievedBriskMinutes;
-- (double)bestAchievedMoveCalories;
-- (double)bestAchievedMoveGoal;
-- (int)bestConsecutiveMoveGoalsMet;
-- (int)consecutiveExerciseGoalsMet;
-- (int)consecutiveMoveGoalsMet;
-- (int)consecutiveStandGoalsMet;
-- (id)earnedAchievementDefinitionIdentifiers;
+- (double)_valueForGoalType:(unsigned long long)arg1 inDayEnvironment:(id)arg2;
+- (id)dailyAverageNumberForGoalType:(unsigned long long)arg1 fromTimeNumber:(id)arg2 toTimeNumber:(id)arg3;
+- (id)dataSource;
+- (id)monthlyAggregateValueForKey:(id)arg1 inMonthOfReferenceTimeNumber:(id)arg2;
 - (id)previous;
+- (void)setDataSource:(id)arg1;
 - (void)setPrevious:(id)arg1;
-- (int)totalDaysOfExerciseHistory;
-- (int)totalDaysOfMoveHistory;
-- (int)totalMoveGoalsMet;
+- (id)summaryEnvironmentsFromTimeNumber:(id)arg1 toTimeNumber:(id)arg2;
+- (id)totalNumberForGoalOfType:(unsigned long long)arg1 fromTimeNumber:(id)arg2 toTimeNumber:(id)arg3;
 
 @end

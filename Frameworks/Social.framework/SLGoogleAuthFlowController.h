@@ -4,12 +4,12 @@
 
 @interface SLGoogleAuthFlowController : NSObject <SL_OOPAuthFlowDelegate, UIWebViewDelegate> {
     id /* block */  _completion;
-    BOOL  _waitingForAuthorizationCode;
+    bool  _waitingForAuthorizationCode;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -20,7 +20,7 @@
 - (id)initialRedirectURL;
 - (id)requestForAuthURL:(id)arg1;
 - (void)setAuthFlowCompletion:(id /* block */)arg1;
-- (BOOL)shouldHideWebViewForLoadWithRequest:(id)arg1;
+- (bool)shouldHideWebViewForLoadWithRequest:(id)arg1;
 - (void)webViewDidFinishLoadWithPageTitleSupplier:(id /* block */)arg1;
 
 @end

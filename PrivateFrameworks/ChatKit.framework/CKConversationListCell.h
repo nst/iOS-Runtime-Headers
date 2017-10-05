@@ -2,63 +2,61 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKConversationListCell : UITableViewCell <CKConversationListCell, CNAvatarViewDelegate> {
-    CKAvatarView * _avatarView;
+@interface CKConversationListCell : UITableViewCell <CKConversationListCell> {
     UIImageView * _chevronImageView;
     CKConversation * _conversation;
     UIDateLabel * _dateLabel;
     NSObject<CKConversationListCellDelegate> * _delegate;
-    UILabel * _fromLabel;
-    BOOL  _isPlaceholder;
+    CKLabel * _fromLabel;
+    bool  _isPlaceholder;
     NSDate * _searchMessageDate;
     NSString * _searchMessageGUID;
     NSString * _searchSummaryText;
     UILabel * _summaryLabel;
-    UIImageView * _unreadIndicatorImageView;
+    bool  _verified;
 }
 
-@property (nonatomic, retain) CKAvatarView *avatarView;
+@property (nonatomic, readonly) CKAvatarView *avatarView;
 @property (nonatomic, retain) CKConversation *conversation;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) NSObject<CKConversationListCellDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSDate *searchMessageDate;
 @property (nonatomic, copy) NSString *searchMessageGUID;
 @property (nonatomic, copy) NSString *searchSummaryText;
 @property (readonly) Class superclass;
+@property (nonatomic) bool verified;
 
-+ (float)cellHeight;
++ (double)cellHeight;
 + (id)identifierForConversation:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_calculateLayoutFrames;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
-- (void)_updateAvatarView;
 - (id)avatarView;
-- (id)avatarView:(id)arg1 orderedPropertiesForProperties:(id)arg2 category:(id)arg3;
-- (BOOL)avatarView:(id)arg1 shouldShowContact:(id)arg2;
+- (void)contentSizeCategoryDidChange;
 - (id)conversation;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)layoutSubviews;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)prepareForReuse;
-- (id)presentingViewControllerForAvatarView:(id)arg1;
 - (id)searchMessageDate;
 - (id)searchMessageGUID;
 - (id)searchSummaryText;
-- (void)setAvatarView:(id)arg1;
 - (void)setConversation:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setEditing:(bool)arg1 animated:(bool)arg2;
 - (void)setSearchMessageDate:(id)arg1;
 - (void)setSearchMessageGUID:(id)arg1;
 - (void)setSearchSummaryText:(id)arg1;
-- (BOOL)showingEditControl;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)superLayoutSubviews;
+- (void)setVerified:(bool)arg1;
+- (bool)showingEditControl;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)updateContentsForConversation:(id)arg1;
+- (void)updateForEditing:(bool)arg1;
+- (void)updateFromLabelWithText:(id)arg1;
+- (void)updateUnreadIndicatorWithImage:(id)arg1;
 - (void)updateWithSearchResult:(id)arg1;
+- (bool)verified;
 
 @end

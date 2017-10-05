@@ -6,7 +6,7 @@
 @required
 
 - (<GEOSurchargeType> *)selectedSurchargeType;
-- (unsigned int)selectedSurchargeTypeIndex;
+- (unsigned long long)selectedSurchargeTypeIndex;
 - (NSArray *)surchargeTypes;
 
 @end

@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@interface BWSISNode : BWNode <BWBracketSettingsProvider> {
+@interface BWSISNode : BWNode {
     NSArray * _afWindowParamsArray;
-    BOOL  _allowExperimentalOverrides;
-    BOOL  _alwaysRequestsPreBracketedEV0;
+    bool  _allowExperimentalOverrides;
+    bool  _alwaysRequestsPreBracketedEV0;
     float  _bracketGainCap;
     NSDictionary * _cameraTuningDictionary;
     int (* _createSampleBufferProcessorFunction;
@@ -20,29 +20,21 @@
     int  _numberFramesReceived;
     int  _oisBracketCount;
     NSArray * _oisExposureDurationTypes;
-    BOOL  _preBracketedFrameReceived;
+    bool  _preBracketedFrameReceived;
     struct OpaqueFigSampleBufferProcessor { } * _sampleBufferProcessor;
     NSDictionary * _sensorIDDictionary;
     int  _sisBracketCount;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) Class superclass;
-
 + (void)initialize;
 
 - (void)_clearCaptureRequestState;
-- (id)_initWithCameraTuningDictionary:(id)arg1 sensorIDDictionary:(id)arg2 sbpCreationFunction:(int (*)arg3 fusionScheme:(int)arg4 allowExperimentalOverrides:(BOOL)arg5;
-- (id)_oisBracketSettingsWithCurrentFrameStats:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; unsigned int x13; int x14; int x15; unsigned int x16; float x17; float x18; float x19; double x20; int x21; int x22; int x23; float x24; int x25; int x26; int x27; float x28; int x29; int x30; int x31; int x32; long long x33; }*)arg1 stillImageSettings:(id)arg2;
-- (void)_sampleBufferProcessorOutputReady:(long)arg1 sampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2;
-- (long)_setupSampleBufferProcessor;
-- (id)_sisBracketSettingsWithCurrentFrameStats:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; unsigned int x13; int x14; int x15; unsigned int x16; float x17; float x18; float x19; double x20; int x21; int x22; int x23; float x24; int x25; int x26; int x27; float x28; int x29; int x30; int x31; int x32; long long x33; }*)arg1 stillImageSettings:(id)arg2;
-- (long)_unpackSISOptions;
-- (BOOL)alwaysRequestsPreBracketedEV0;
-- (BOOL)attachesInputBracketToOutputSampleBuffer;
-- (id)bracketSettingsForBracketingMode:(int)arg1 withCurrentFrameStats:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned char x11; unsigned int x12; unsigned int x13; int x14; int x15; unsigned int x16; float x17; float x18; float x19; double x20; int x21; int x22; int x23; float x24; int x25; int x26; int x27; float x28; int x29; int x30; int x31; int x32; long long x33; }*)arg2 stillImageSettings:(id)arg3;
+- (id)_initWithCameraTuningDictionary:(id)arg1 sensorIDDictionary:(id)arg2 sbpCreationFunction:(int (*)arg3 fusionScheme:(int)arg4 allowExperimentalOverrides:(bool)arg5;
+- (void)_sampleBufferProcessorOutputReady:(int)arg1 sampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2;
+- (int)_setupSampleBufferProcessor;
+- (int)_unpackSISOptions;
+- (bool)alwaysRequestsPreBracketedEV0;
+- (bool)attachesInputBracketToOutputSampleBuffer;
 - (void)dealloc;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
 - (void)handleNodeError:(id)arg1 forInput:(id)arg2;
@@ -51,8 +43,7 @@
 - (id)nodeType;
 - (void)prepareForCurrentConfigurationToBecomeLive;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
-- (void)setAlwaysRequestsPreBracketedEV0:(BOOL)arg1;
-- (void)setAttachesInputBracketToOutputSampleBuffer:(BOOL)arg1;
-- (int)worstCaseInitialMaxBracketCountForBracketingMode:(int)arg1;
+- (void)setAlwaysRequestsPreBracketedEV0:(bool)arg1;
+- (void)setAttachesInputBracketToOutputSampleBuffer:(bool)arg1;
 
 @end

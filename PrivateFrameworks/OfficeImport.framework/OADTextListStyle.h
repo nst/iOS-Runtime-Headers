@@ -21,10 +21,10 @@
 - (id)initWithDefaults;
 - (id)language;
 - (void)overrideWithTextStyle:(id)arg1;
-- (id)propertiesForListLevel:(unsigned int)arg1;
+- (id)propertiesForListLevel:(unsigned long long)arg1;
 - (void)removeUnnecessaryOverrides;
 - (void)setLanguage:(id)arg1;
 - (void)setParentTextListStyle:(id)arg1;
-- (void)setPropertiesForListLevel:(unsigned int)arg1 properties:(id)arg2;
+- (void)setPropertiesForListLevel:(unsigned long long)arg1 properties:(id)arg2;
 
 @end

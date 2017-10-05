@@ -10,5 +10,6 @@
 + (id)instrumentationChannel;
 + (id)interactionChannel;
 + (id)knowledgeChannel;
++ (id)syncChannel;
 
 @end

@@ -6,7 +6,7 @@
 @required
 
 - (void)appendOperation:(TSKCOAbstractOperation *)arg1;
-- (BOOL)hasOperations;
+- (bool)hasOperations;
 - (void)replaceOperation:(TSKCOAbstractOperation *)arg1;
 
 @end

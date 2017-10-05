@@ -2,21 +2,21 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UISearchControllerDidScrollDelegate : NSObject <_UIScrollNotification> {
-    <_UIScrollNotification> * _controller;
+@interface _UISearchControllerDidScrollDelegate : NSObject <_UIScrollViewScrollObserver_Internal> {
+    <_UIScrollViewScrollObserver_Internal> * _controller;
     UIScrollView * _scrollView;
 }
 
-@property (nonatomic) <_UIScrollNotification> *controller;
+@property (nonatomic) <_UIScrollViewScrollObserver_Internal> *controller;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) UIScrollView *scrollView;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_didScroll;
-- (void)_updateBackdropMaskViewsInScrollView:(id)arg1;
+- (void)_observeScrollViewDidScroll:(id)arg1;
 - (id)controller;
 - (id)scrollView;
 - (void)setController:(id)arg1;

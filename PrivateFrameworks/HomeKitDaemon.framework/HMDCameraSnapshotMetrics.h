@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraSnapshotMetrics : NSObject {
+@interface HMDCameraSnapshotMetrics : HMFObject {
     HMDCameraMetricsSnapshotLogEvent * _cameraSnapshotMetricsLogEvent;
     NSError * _error;
 }
@@ -14,7 +14,7 @@
 - (id)cameraSnapshotMetricsLogEvent;
 - (void)dealloc;
 - (id)error;
-- (id)initWithSessionID:(id)arg1 cameraAccessory:(id)arg2 isLocal:(BOOL)arg3 snapshotForNotification:(BOOL)arg4;
+- (id)initWithSessionID:(id)arg1 cameraAccessory:(id)arg2 isLocal:(bool)arg3 snapshotForNotification:(bool)arg4;
 - (void)setError:(id)arg1;
 
 @end

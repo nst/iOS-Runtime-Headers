@@ -5,6 +5,6 @@
 
 @required
 
-- (void)setClientCapabilities:(TUCallServicesClientCapabilities *)arg1;
+- (oneway void)setClientCapabilities:(TUCallServicesClientCapabilities *)arg1;
 
 @end

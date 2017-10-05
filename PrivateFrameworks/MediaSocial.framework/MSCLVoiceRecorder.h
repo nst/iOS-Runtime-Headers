@@ -18,12 +18,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MSCLVoiceRecorderDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) double maximumRecordingDuration;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_finishRecordingWithReason:(int)arg1;
+- (void)_finishRecordingWithReason:(long long)arg1;
 - (void)_startPowerMeterTimer;
 - (void)_startRecordingTimeoutTimer;
 - (void)_stopPowerMeterTimer;
@@ -35,10 +35,10 @@
 - (double)maximumRecordingDuration;
 - (void)setDelegate:(id)arg1;
 - (void)setMaximumRecordingDuration:(double)arg1;
-- (BOOL)startRecordingUsingActivationMode:(int)arg1 error:(id*)arg2;
+- (bool)startRecordingUsingActivationMode:(long long)arg1 error:(id*)arg2;
 - (void)stopRecordingWithCompletionHandler:(id /* block */)arg1;
-- (void)voiceControllerDidStartRecording:(id)arg1 successfully:(BOOL)arg2;
-- (void)voiceControllerDidStopRecording:(id)arg1 forReason:(int)arg2;
+- (void)voiceControllerDidStartRecording:(id)arg1 successfully:(bool)arg2;
+- (void)voiceControllerDidStopRecording:(id)arg1 forReason:(long long)arg2;
 - (void)voiceControllerRecordBufferAvailable:(id)arg1 buffer:(id)arg2;
 
 @end

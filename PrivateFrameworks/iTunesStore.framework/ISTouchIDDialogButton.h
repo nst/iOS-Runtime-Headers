@@ -3,12 +3,12 @@
  */
 
 @interface ISTouchIDDialogButton : ISDialogButton {
-    int  _buttonType;
+    long long  _buttonType;
 }
 
-@property (nonatomic) int buttonType;
+@property long long buttonType;
 
-- (int)buttonType;
-- (void)setButtonType:(int)arg1;
+- (long long)buttonType;
+- (void)setButtonType:(long long)arg1;
 
 @end

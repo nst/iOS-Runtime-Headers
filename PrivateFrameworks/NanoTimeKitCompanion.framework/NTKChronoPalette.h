@@ -12,10 +12,10 @@
     UIColor * _glyphColor;
     UIColor * _inlayColor;
     UIColor * _labelColor;
-    float  _largeTickValue;
-    unsigned int  _paletteColor;
-    BOOL  _showsShadows;
-    float  _smallTickValue;
+    double  _largeTickValue;
+    unsigned long long  _paletteColor;
+    bool  _showsShadows;
+    double  _smallTickValue;
     UIColor * _tickColor;
 }
 
@@ -28,16 +28,16 @@
 @property (nonatomic, readonly) UIColor *glyphColor;
 @property (nonatomic, readonly) UIColor *inlayColor;
 @property (nonatomic, readonly) UIColor *labelColor;
-@property (nonatomic, readonly) float largeTickValue;
-@property (nonatomic, readonly) BOOL showsShadows;
-@property (nonatomic, readonly) float smallTickValue;
+@property (nonatomic, readonly) double largeTickValue;
+@property (nonatomic, readonly) bool showsShadows;
+@property (nonatomic, readonly) double smallTickValue;
 @property (nonatomic, readonly) UIColor *tickColor;
 
-+ (id)interpolationFromPalette:(id)arg1 toPalette:(id)arg2 fraction:(float)arg3;
-+ (id)paletteWithColor:(unsigned int)arg1;
++ (id)interpolationFromPalette:(id)arg1 toPalette:(id)arg2 fraction:(double)arg3;
++ (id)paletteWithColor:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
-- (id)_initWithColor:(unsigned int)arg1;
+- (id)_initWithColor:(unsigned long long)arg1;
 - (id)alternativeTickColor;
 - (id)backgroundColor;
 - (id)chronoHandColor;
@@ -47,9 +47,9 @@
 - (id)glyphColor;
 - (id)inlayColor;
 - (id)labelColor;
-- (float)largeTickValue;
-- (BOOL)showsShadows;
-- (float)smallTickValue;
+- (double)largeTickValue;
+- (bool)showsShadows;
+- (double)smallTickValue;
 - (id)tickColor;
 
 @end

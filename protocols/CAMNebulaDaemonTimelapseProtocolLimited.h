@@ -5,6 +5,6 @@
 
 @required
 
-- (void)updatePendingWorkFromDiskForceEndLastSession:(BOOL)arg1;
+- (void)updatePendingWorkFromDiskForceEndLastSession:(bool)arg1;
 
 @end

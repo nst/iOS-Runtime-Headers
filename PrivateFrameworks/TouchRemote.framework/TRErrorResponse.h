@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) NSError *error;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

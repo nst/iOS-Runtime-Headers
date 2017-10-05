@@ -6,12 +6,12 @@
     NSArray * _colors;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _gradientFrame;
     CALayer * _gradientLayer;
@@ -21,7 +21,8 @@
 }
 
 @property (nonatomic, retain) NSArray *colors;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } gradientFrame;
+@property (nonatomic, readonly) UIImage *gradient;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } gradientFrame;
 @property (nonatomic, retain) CALayer *gradientLayer;
 @property (nonatomic, retain) UIImage *maskImage;
 @property (nonatomic) UIView<CKGradientReferenceView> *referenceView;
@@ -30,21 +31,21 @@
 + (id)gradientViews;
 
 - (void).cxx_destruct;
-- (void)_removeAllAnimations:(BOOL)arg1;
+- (void)_removeAllAnimations:(bool)arg1;
 - (id)colors;
 - (void)dealloc;
 - (id)description;
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;
 - (id)gradient;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })gradientFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })gradientFrame;
 - (id)gradientLayer;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)maskImage;
 - (id)referenceView;
 - (void)setColors:(id)arg1;
-- (void)setGradientFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setGradientFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setGradientLayer:(id)arg1;
 - (void)setMaskImage:(id)arg1;
 - (void)setReferenceView:(id)arg1;

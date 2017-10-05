@@ -6,6 +6,6 @@
 
 + (void)setValidator:(Class)arg1;
 
-- (BOOL)evaluateWithObject:(id)arg1;
+- (bool)evaluateWithObject:(id)arg1;
 
 @end

@@ -4,6 +4,6 @@
 
 @interface CKBrowserDragWindow : CKPresentationControllerWindow
 
-- (BOOL)_canAffectStatusBarAppearance;
+- (bool)_canAffectStatusBarAppearance;
 
 @end

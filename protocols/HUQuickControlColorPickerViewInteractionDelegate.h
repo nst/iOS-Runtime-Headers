@@ -5,6 +5,6 @@
 
 @required
 
-- (void)controlView:(HUColorPickerView *)arg1 colorPickerModeDidChange:(unsigned int)arg2;
+- (void)controlView:(HUColorPickerView *)arg1 colorPickerModeDidChange:(unsigned long long)arg2;
 
 @end

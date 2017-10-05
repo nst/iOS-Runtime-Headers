@@ -26,10 +26,11 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)me;
+- (bool)mutatingCommand;
 - (id)name;
 - (id)phone;
 - (id)relationship;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (id)scope;
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setAddress:(id)arg1;

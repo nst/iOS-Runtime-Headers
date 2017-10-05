@@ -7,12 +7,11 @@
 }
 
 @property (readonly) NSError *error;
-@property (readonly) int loopCount;
+@property (readonly) long long loopCount;
 @property (nonatomic, readonly) NSArray *loopingPlayerItems;
-@property (readonly) int status;
+@property (readonly) long long status;
 
 + (void)initialize;
-+ (id)keyPathsForValuesAffectingLoopingEnabled;
 + (id)playerLooperWithPlayer:(id)arg1 templateItem:(id)arg2;
 + (id)playerLooperWithPlayer:(id)arg1 templateItem:(id)arg2 timeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg3;
 
@@ -20,18 +19,17 @@
 - (void)_changeStatusToFailedWithError:(id)arg1;
 - (void)_cleanupAfterPlayingLastLoopingCopy;
 - (void)_configureLoopingItem:(id)arg1;
-- (BOOL)_isWaitingForLastCopyToFinishSet;
-- (BOOL)_setupLoopingReturningError:(id*)arg1;
+- (bool)_isWaitingForLastCopyToFinishSet;
+- (bool)_setupLoopingReturningError:(id*)arg1;
 - (void)_turnOffLooping;
 - (void)dealloc;
 - (void)disableLooping;
 - (id)error;
 - (id)init;
 - (id)initWithPlayer:(id)arg1 templateItem:(id)arg2 timeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg3;
-- (BOOL)isLoopingEnabled;
-- (int)loopCount;
+- (long long)loopCount;
 - (id)loopingPlayerItems;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (int)status;
+- (long long)status;
 
 @end

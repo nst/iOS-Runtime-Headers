@@ -13,7 +13,7 @@
 @property (nonatomic, copy) NSString *effect;
 @property (nonatomic, copy) NSString *groupName;
 @property (nonatomic, copy) NSString *groupNameId;
-@property (nonatomic) BOOL hasGroupName;
+@property (nonatomic) bool hasGroupName;
 @property (nonatomic, copy) NSNumber *isAudioMessage;
 @property (nonatomic, copy) NSString *message;
 @property (nonatomic, copy) NSString *messageType;
@@ -42,7 +42,7 @@
 - (id)groupIdentifier;
 - (id)groupName;
 - (id)groupNameId;
-- (BOOL)hasGroupName;
+- (bool)hasGroupName;
 - (id)isAudioMessage;
 - (id)message;
 - (id)messageType;
@@ -61,7 +61,7 @@
 - (void)setEffect:(id)arg1;
 - (void)setGroupName:(id)arg1;
 - (void)setGroupNameId:(id)arg1;
-- (void)setHasGroupName:(BOOL)arg1;
+- (void)setHasGroupName:(bool)arg1;
 - (void)setIsAudioMessage:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setMessageType:(id)arg1;

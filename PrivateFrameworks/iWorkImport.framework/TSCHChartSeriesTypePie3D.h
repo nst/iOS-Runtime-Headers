@@ -9,6 +9,7 @@
 - (id)coordinateAxisForSeries:(id)arg1;
 - (id)g_genericToSpecificPropertyMap3DPie;
 - (id)genericToSpecificPropertyMap;
+- (bool)supportsCalloutLines;
 - (id)valueAxisForSeries:(id)arg1;
 
 @end

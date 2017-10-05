@@ -15,14 +15,14 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) CNQueue *evictionQueue;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CNCache *likenessCache;
 @property (nonatomic, retain) <CNUIPRLikenessResolver> *likenessResolver;
 @property (nonatomic, retain) <CNSchedulerProvider> *mainThreadSchedulerProvider;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *memoryMonitoringSource;
 @property (nonatomic, readonly) PRPersonaStore *personaStore;
 @property (nonatomic, retain) <CNUIPlaceholderProviderFactory> *placeholderProviderFactory;
-@property (nonatomic) int prohibitedSources;
+@property (nonatomic) long long prohibitedSources;
 @property (nonatomic, readonly) CNSchedulerProvider *schedulerProvider;
 @property (readonly) Class superclass;
 
@@ -30,6 +30,7 @@
 + (id)descriptorForRequiredKeys;
 
 - (void).cxx_destruct;
+- (id)basicMonogramObservableFromString:(id)arg1;
 - (id)contactStore;
 - (void)dealloc;
 - (void)emptyCache:(id)arg1;
@@ -45,7 +46,7 @@
 - (id)memoryMonitoringSource;
 - (id)personaStore;
 - (id)placeholderProviderFactory;
-- (int)prohibitedSources;
+- (long long)prohibitedSources;
 - (void)refreshCacheKey:(id)arg1;
 - (id)resolveLikenessesForContacts:(id)arg1 withContentHandler:(id /* block */)arg2;
 - (id)schedulerProvider;
@@ -55,6 +56,6 @@
 - (void)setMainThreadSchedulerProvider:(id)arg1;
 - (void)setMemoryMonitoringSource:(id)arg1;
 - (void)setPlaceholderProviderFactory:(id)arg1;
-- (void)setProhibitedSources:(int)arg1;
+- (void)setProhibitedSources:(long long)arg1;
 
 @end

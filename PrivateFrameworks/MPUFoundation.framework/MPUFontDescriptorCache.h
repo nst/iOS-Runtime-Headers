@@ -3,7 +3,7 @@
  */
 
 @interface MPUFontDescriptorCache : NSObject {
-    unsigned int  _maximumCapacity;
+    unsigned long long  _maximumCapacity;
     NSMutableArray * _orderedCachedFontDescriptors;
     MPUMutableFontDescriptor * _reusableMutableFontDescriptor;
 }

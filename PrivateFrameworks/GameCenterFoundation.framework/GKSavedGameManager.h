@@ -6,17 +6,17 @@
     NSMutableDictionary * _documents;
     NSMutableArray * _fetchHandlers;
     NSMetadataQuery * _query;
-    int  _queryDisableCount;
+    long long  _queryDisableCount;
     NSURL * _ubiquityURL;
-    BOOL  _ubiquityUnavailable;
+    bool  _ubiquityUnavailable;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *documents;
 @property (nonatomic, retain) NSMutableArray *fetchHandlers;
 @property (nonatomic, retain) NSMetadataQuery *query;
-@property (nonatomic) int queryDisableCount;
+@property (nonatomic) long long queryDisableCount;
 @property (nonatomic, retain) NSURL *ubiquityURL;
-@property (nonatomic) BOOL ubiquityUnavailable;
+@property (nonatomic) bool ubiquityUnavailable;
 
 + (id)sharedManager;
 
@@ -41,7 +41,7 @@
 - (id)query;
 - (void)queryDidFinishGathering:(id)arg1;
 - (void)queryDidUpdate:(id)arg1;
-- (int)queryDisableCount;
+- (long long)queryDisableCount;
 - (void)removeDocument:(id)arg1;
 - (void)resolveConflictingSavedGames:(id)arg1 withData:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)saveGameData:(id)arg1 withName:(id)arg2 completionHandler:(id /* block */)arg3;
@@ -51,14 +51,14 @@
 - (void)setDocuments:(id)arg1;
 - (void)setFetchHandlers:(id)arg1;
 - (void)setQuery:(id)arg1;
-- (void)setQueryDisableCount:(int)arg1;
+- (void)setQueryDisableCount:(long long)arg1;
 - (void)setUbiquityURL:(id)arg1;
-- (void)setUbiquityUnavailable:(BOOL)arg1;
+- (void)setUbiquityUnavailable:(bool)arg1;
 - (void)setupUbiquity;
 - (void)startSavedGameQuery;
 - (void)ubiquityAvailabilityChanged:(id)arg1;
 - (id)ubiquityURL;
-- (BOOL)ubiquityUnavailable;
+- (bool)ubiquityUnavailable;
 - (void)updateSavedGameDocumentsForQueryWithHandler:(id /* block */)arg1;
 
 @end

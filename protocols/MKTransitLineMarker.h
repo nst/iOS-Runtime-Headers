@@ -6,7 +6,7 @@
 @required
 
 - (<GEOTransitArtworkDataSource> *)artwork;
-- (unsigned long long)featureID;
 - (NSString *)labelText;
+- (MKMapItemIdentifier *)mapItemIdentifier;
 
 @end

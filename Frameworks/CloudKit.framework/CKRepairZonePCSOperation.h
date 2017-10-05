@@ -15,7 +15,7 @@
 - (id)activityCreate;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
-- (BOOL)hasCKOperationCallbacksSet;
+- (bool)hasCKOperationCallbacksSet;
 - (id)initWithZoneIDsToRepair:(id)arg1;
 - (void)performCKOperation;
 - (void)setZoneIDs:(id)arg1;

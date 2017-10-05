@@ -8,22 +8,22 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) SGIdentityKey *identityKey;
 @property (readonly) Class superclass;
 
-+ (BOOL)isSupportedEntityType:(long long)arg1;
++ (bool)isSupportedEntityType:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identityKey;
 - (id)initWithEmail:(id)arg1;
 - (id)initWithIdentityKey:(id)arg1;
 - (id)initWithNormalizedEmail:(id)arg1;
 - (id)initWithSerialized:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToPseudoContactKey:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToPseudoContactKey:(id)arg1;
 - (id)serialize;
 
 @end

@@ -5,7 +5,7 @@
 
 @required
 
-- (void)setUIEnabled:(BOOL)arg1;
+- (void)setUIEnabled:(bool)arg1;
 - (void)updatePeripheralTable;
 
 @end

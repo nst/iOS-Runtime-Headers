@@ -3,22 +3,23 @@
  */
 
 @interface SearchUIAppStoreButtonViewController : SearchUIAccessoryViewController {
-    BOOL  _appIsInstalled;
+    bool  _appIsInstalled;
     SKUIItemOfferButton * _appStoreButton;
 }
 
-@property BOOL appIsInstalled;
+@property bool appIsInstalled;
 @property (retain) SKUIItemOfferButton *appStoreButton;
 
-+ (BOOL)supportsResult:(id)arg1;
++ (bool)supportsResult:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)appIsInstalled;
+- (bool)appIsInstalled;
 - (id)appStoreButton;
 - (void)buttonPressed;
-- (void)setAppIsInstalled:(BOOL)arg1;
+- (void)setAppIsInstalled:(bool)arg1;
 - (void)setAppStoreButton:(id)arg1;
-- (id)setupViewWithStyle:(unsigned int)arg1;
+- (id)setupViewWithStyle:(unsigned long long)arg1;
+- (bool)shouldTopAlignForAccessibilityContentSizes;
 - (void)updateWithResult:(id)arg1;
 
 @end

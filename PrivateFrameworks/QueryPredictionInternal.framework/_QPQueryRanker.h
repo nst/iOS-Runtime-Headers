@@ -18,7 +18,7 @@
 - (void).cxx_destruct;
 - (id)_fetchQueryEvents;
 - (id)_rankForQueryEvents:(id)arg1;
-- (void)deleteAllData;
+- (bool)deleteAllQueryEvents;
 - (id)initWithParameters:(id)arg1 store:(id)arg2;
 - (id)parameters;
 - (id)rank;

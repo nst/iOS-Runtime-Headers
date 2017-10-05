@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)initWithSpecificationString:(id)arg1;
-- (BOOL)matchesElementStack:(id)arg1;
+- (bool)matchesElementStack:(id)arg1;
 - (id)specificationElements;
 - (id)specificationString;
 

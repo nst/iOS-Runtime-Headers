@@ -12,7 +12,7 @@
 + (id)URIForWriteFileWithName:(id)arg1 parentDocumentIdentifier:(id)arg2 parentVersionIdentifier:(id)arg3 sharepointDocumentIdentifier:(id)arg4 queryItems:(id*)arg5;
 + (id)_URIFromCommand:(id)arg1;
 + (id)_documentIdentifierFromField:(id)arg1 ofQueryItems:(id)arg2;
-+ (id)_documentIdentifierFromURIComponentAtIndex:(unsigned int)arg1 pathComponents:(id)arg2;
++ (id)_documentIdentifierFromURIComponentAtIndex:(unsigned long long)arg1 pathComponents:(id)arg2;
 + (id)_stringFromField:(id)arg1 ofQueryItems:(id)arg2;
 + (id)_versionIdentifierFromField:(id)arg1 ofQueryItems:(id)arg2;
 + (id)commandFromURIComponents:(id)arg1;

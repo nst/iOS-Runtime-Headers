@@ -3,35 +3,35 @@
  */
 
 @interface GKBubbleShape : NSObject {
-    float  _controlpointVariance;
-    float  _endpointVariance;
-    unsigned int  _vertexCount;
-    struct GKVertexCurve { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; struct CGPoint { float x_5_1_1; float x_5_1_2; } x5; } * _vertexCurves;
-    float  _vertexVariance;
+    double  _controlpointVariance;
+    double  _endpointVariance;
+    unsigned long long  _vertexCount;
+    struct GKVertexCurve { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGPoint { double x_3_1_1; double x_3_1_2; } x3; struct CGPoint { double x_4_1_1; double x_4_1_2; } x4; struct CGPoint { double x_5_1_1; double x_5_1_2; } x5; } * _vertexCurves;
+    double  _vertexVariance;
 }
 
-@property (nonatomic) float controlpointVariance;
-@property (nonatomic) float endpointVariance;
-@property (nonatomic) unsigned int vertexCount;
-@property (nonatomic) struct GKVertexCurve { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; struct CGPoint { float x_5_1_1; float x_5_1_2; } x5; }*vertexCurves;
-@property (nonatomic) float vertexVariance;
+@property (nonatomic) double controlpointVariance;
+@property (nonatomic) double endpointVariance;
+@property (nonatomic) unsigned long long vertexCount;
+@property (nonatomic) struct GKVertexCurve { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGPoint { double x_3_1_1; double x_3_1_2; } x3; struct CGPoint { double x_4_1_1; double x_4_1_2; } x4; struct CGPoint { double x_5_1_1; double x_5_1_2; } x5; }*vertexCurves;
+@property (nonatomic) double vertexVariance;
 
-+ (id)standardBezierPathForSize:(struct CGSize { float x1; float x2; })arg1;
++ (id)standardBezierPathForSize:(struct CGSize { double x1; double x2; })arg1;
 + (id)standardBubbleShape;
 
-- (float)controlpointVariance;
+- (double)controlpointVariance;
 - (void)dealloc;
-- (float)endpointVariance;
+- (double)endpointVariance;
 - (void)generateVertexCurves;
-- (id)initWithVertexCount:(unsigned int)arg1 vertexVariance:(float)arg2 endpointVariance:(float)arg3 controlpointVariance:(float)arg4;
-- (id)pathForSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setControlpointVariance:(float)arg1;
-- (void)setEndpointVariance:(float)arg1;
-- (void)setVertexCount:(unsigned int)arg1;
-- (void)setVertexCurves:(struct GKVertexCurve { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; struct CGPoint { float x_5_1_1; float x_5_1_2; } x5; }*)arg1;
-- (void)setVertexVariance:(float)arg1;
-- (unsigned int)vertexCount;
-- (struct GKVertexCurve { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; struct CGPoint { float x_5_1_1; float x_5_1_2; } x5; }*)vertexCurves;
-- (float)vertexVariance;
+- (id)initWithVertexCount:(unsigned long long)arg1 vertexVariance:(double)arg2 endpointVariance:(double)arg3 controlpointVariance:(double)arg4;
+- (id)pathForSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setControlpointVariance:(double)arg1;
+- (void)setEndpointVariance:(double)arg1;
+- (void)setVertexCount:(unsigned long long)arg1;
+- (void)setVertexCurves:(struct GKVertexCurve { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGPoint { double x_3_1_1; double x_3_1_2; } x3; struct CGPoint { double x_4_1_1; double x_4_1_2; } x4; struct CGPoint { double x_5_1_1; double x_5_1_2; } x5; }*)arg1;
+- (void)setVertexVariance:(double)arg1;
+- (unsigned long long)vertexCount;
+- (struct GKVertexCurve { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGPoint { double x_3_1_1; double x_3_1_2; } x3; struct CGPoint { double x_4_1_1; double x_4_1_2; } x4; struct CGPoint { double x_5_1_1; double x_5_1_2; } x5; }*)vertexCurves;
+- (double)vertexVariance;
 
 @end

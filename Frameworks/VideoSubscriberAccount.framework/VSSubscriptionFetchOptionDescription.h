@@ -5,18 +5,18 @@
 @interface VSSubscriptionFetchOptionDescription : NSObject <NSCopying> {
     Class  _allowedClass;
     NSPredicate * _allowedValuePredicate;
-    BOOL  _container;
+    bool  _container;
     id  _defaultValue;
     NSString * _key;
-    unsigned int  _minCount;
+    unsigned long long  _minCount;
 }
 
 @property (nonatomic, retain) Class allowedClass;
 @property (nonatomic, copy) NSPredicate *allowedValuePredicate;
-@property (getter=isContainer, nonatomic) BOOL container;
+@property (getter=isContainer, nonatomic) bool container;
 @property (nonatomic, retain) id defaultValue;
 @property (nonatomic, copy) NSString *key;
-@property (nonatomic) unsigned int minCount;
+@property (nonatomic) unsigned long long minCount;
 
 - (void).cxx_destruct;
 - (Class)allowedClass;
@@ -24,14 +24,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)defaultValue;
 - (id)init;
-- (BOOL)isContainer;
+- (bool)isContainer;
 - (id)key;
-- (unsigned int)minCount;
+- (unsigned long long)minCount;
 - (void)setAllowedClass:(Class)arg1;
 - (void)setAllowedValuePredicate:(id)arg1;
-- (void)setContainer:(BOOL)arg1;
+- (void)setContainer:(bool)arg1;
 - (void)setDefaultValue:(id)arg1;
 - (void)setKey:(id)arg1;
-- (void)setMinCount:(unsigned int)arg1;
+- (void)setMinCount:(unsigned long long)arg1;
 
 @end

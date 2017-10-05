@@ -2,51 +2,52 @@
    Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
  */
 
-@interface _CPErrorFeedback : PBCodable <NSCopying> {
-    int  _code;
-    NSString * _domain;
+@interface _CPErrorFeedback : PBCodable <NSSecureCoding, _CPErrorFeedback, _CPProcessableFeedback> {
+    _CPError * _error;
     struct { 
-        unsigned int code : 1; 
+        unsigned int timestamp : 1; 
     }  _has;
-    NSString * _reason;
     unsigned long long  _timestamp;
-    NSData * _userInfo;
+    _CPError * _underlyingError;
 }
 
-@property (nonatomic) int code;
-@property (nonatomic, retain) NSString *domain;
-@property (nonatomic) BOOL hasCode;
-@property (nonatomic, readonly) BOOL hasDomain;
-@property (nonatomic, readonly) BOOL hasReason;
-@property (nonatomic, readonly) BOOL hasUserInfo;
-@property (nonatomic, retain) NSString *reason;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
+@property (nonatomic, retain) _CPError *error;
+@property (nonatomic, readonly) id feedbackJSON;
+@property (nonatomic, readonly) bool hasError;
+@property (nonatomic, readonly) bool hasTimestamp;
+@property (nonatomic, readonly) bool hasUnderlyingError;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSData *jsonData;
+@property (nonatomic, readonly) bool requiresQueryId;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned long long timestamp;
 @property (nonatomic) unsigned long long timestamp;
-@property (nonatomic, retain) NSData *userInfo;
+@property (nonatomic, retain) _CPError *underlyingError;
 
 - (void).cxx_destruct;
-- (int)code;
-- (void)copyTo:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
-- (id)domain;
-- (BOOL)hasCode;
-- (BOOL)hasDomain;
-- (BOOL)hasReason;
-- (BOOL)hasUserInfo;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (id)reason;
-- (void)setCode:(int)arg1;
-- (void)setDomain:(id)arg1;
-- (void)setHasCode:(BOOL)arg1;
-- (void)setReason:(id)arg1;
+- (id)error;
+- (bool)hasError;
+- (bool)hasTimestamp;
+- (bool)hasUnderlyingError;
+- (unsigned long long)hash;
+- (id)init;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithError:(id)arg1;
+- (id)initWithFacade:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)jsonData;
+- (bool)readFrom:(id)arg1;
+- (bool)requiresQueryId;
+- (void)setError:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
-- (void)setUserInfo:(id)arg1;
+- (void)setUnderlyingError:(id)arg1;
 - (unsigned long long)timestamp;
-- (id)userInfo;
+- (id)underlyingError;
 - (void)writeTo:(id)arg1;
 
 @end

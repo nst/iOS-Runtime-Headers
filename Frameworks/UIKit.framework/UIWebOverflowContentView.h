@@ -8,8 +8,13 @@
 
 @property (nonatomic, retain) CALayer *webLayer;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void)_setCachedSubviews:(id)arg1;
 - (void)dealloc;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (void)fixUpViewAfterInsertion;
 - (id)initWithLayer:(id)arg1;
 - (void)replaceLayer:(id)arg1;

@@ -11,12 +11,12 @@
 + (id)assetManager;
 
 - (void).cxx_destruct;
-- (id)_allAvailableDefinitionDictionariesUsingRemoteInfo:(BOOL)arg1;
+- (id)_allAvailableDefinitionDictionariesUsingRemoteInfo:(bool)arg1;
 - (id)_availableDictionaryAssets;
-- (id)_availableDictionaryAssetsUsingRemoteInfo:(BOOL)arg1;
+- (id)_availableDictionaryAssetsUsingRemoteInfo:(bool)arg1;
 - (id)_currentlyAvailableDefinitionDictionaries;
 - (id)_definitionValuesForTerm:(id)arg1;
-- (BOOL)_hasDefinitionForTerm:(id)arg1;
+- (bool)_hasDefinitionForTerm:(id)arg1;
 - (id)availableDefinitionDictionaries;
 - (id)init;
 

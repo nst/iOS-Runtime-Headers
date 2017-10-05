@@ -18,7 +18,7 @@
 
 - (int)_defaultVersion;
 - (id)_initFromProperties:(id)arg1;
-- (BOOL)_isIdentity;
+- (bool)_isIdentity;
 - (id)_kernelSH_v0;
 - (id)_kernelSH_v1;
 - (id)_kernelSH_v2;

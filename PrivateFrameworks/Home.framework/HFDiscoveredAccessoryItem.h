@@ -9,11 +9,9 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) HFDiscoveredAccessory *discoveredAccessory;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <HFHomeKitObject> *homeKitObject;
 @property (readonly) Class superclass;
-
-+ (id)_iconDescriptorForAccessoryCategory:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;

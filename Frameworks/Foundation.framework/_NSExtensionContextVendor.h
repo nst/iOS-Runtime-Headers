@@ -13,7 +13,7 @@
 @property (setter=_setExtensionServiceConnections:, nonatomic, retain) NSMutableDictionary *_extensionServiceConnections;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_completionConcurrentQueue;
@@ -24,7 +24,7 @@
 + (Class)_extensionPrincipalClass;
 + (id)_sharedExtensionContextVendor;
 + (void)_startListening;
-+ (void)_startListening:(BOOL)arg1;
++ (void)_startListening:(bool)arg1;
 
 - (void)_beginRequestWithExtensionItems:(id)arg1 listenerEndpoint:(id)arg2 withContextUUID:(id)arg3 completion:(id /* block */)arg4;
 - (id)_extensionContextForUUID:(id)arg1;
@@ -39,9 +39,9 @@
 - (void)_setExtensionPrincipalObjects:(id)arg1;
 - (void)_setExtensionServiceConnections:(id)arg1;
 - (void)_setPrincipalObject:(id)arg1 forUUID:(id)arg2;
-- (BOOL)_shouldCreatePrincipalObject;
+- (bool)_shouldCreatePrincipalObject;
 - (void)_tearDownContextWithUUID:(id)arg1;
 - (void)dealloc;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 
 @end

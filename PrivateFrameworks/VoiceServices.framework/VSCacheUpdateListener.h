@@ -5,7 +5,7 @@
 @interface VSCacheUpdateListener : NSObject {
     NSDictionary * _dataProviders;
     NSTimer * _flushTimer;
-    BOOL  _isListening;
+    bool  _isListening;
     NSLock * _lock;
     NSMutableArray * _updateRequestQueue;
 }

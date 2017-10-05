@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *featureName;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) <IKAppNavigationController> *navigationController;
 @property (readonly) Class superclass;
 

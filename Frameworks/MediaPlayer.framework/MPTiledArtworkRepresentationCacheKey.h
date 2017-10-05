@@ -2,25 +2,31 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPTiledArtworkRepresentationCacheKey : NSObject <NSCopying> {
+@interface MPTiledArtworkRepresentationCacheKey : NSObject <MPArtworkDataSourceVisualIdenticality> {
     id  _entityIdentifier;
     id  _namespaceIdentifier;
-    unsigned int  _numberOfColumns;
-    unsigned int  _numberOfRows;
+    unsigned long long  _numberOfColumns;
+    unsigned long long  _numberOfRows;
     id  _revisionIdentifier;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _scaledFittingSize;
-    float  _tileSpacing;
+    double  _tileSpacing;
 }
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (id)initWithTiledArtworkRequest:(id)arg1 scaledFittingSize:(struct CGSize { float x1; float x2; })arg2;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithTiledArtworkRequest:(id)arg1 scaledFittingSize:(struct CGSize { double x1; double x2; })arg2;
+- (bool)isEqual:(id)arg1;
+- (id)stringRepresentation;
 
 @end

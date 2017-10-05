@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AirTraffic.framework/AirTraffic
  */
 
-@interface ATStoreInfo : NSObject <NSSecureCoding> {
+@interface ATStoreInfo : NSObject <NSCopying, NSSecureCoding> {
     NSMutableDictionary * _assetDictionary;
     NSMutableDictionary * _downloadDictionary;
 }
@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSString *dimensions;
 @property (readonly) NSDictionary *downloadDictionary;
 @property (nonatomic, retain) NSNumber *drmFree;
+@property (nonatomic, retain) NSNumber *endpointType;
 @property (nonatomic, retain) NSString *flavor;
 @property (nonatomic, retain) NSNumber *matchStatus;
 @property (nonatomic, retain) NSString *podcastEpisodeGUID;
@@ -24,10 +25,11 @@
 @property (nonatomic, retain) NSNumber *redownloadStatus;
 @property (nonatomic, retain) NSNumber *sagaID;
 @property (nonatomic, retain) NSString *storefrontID;
+@property (nonatomic, retain) NSNumber *subscriptionID;
 @property (nonatomic, retain) NSString *syncID;
 @property (nonatomic, retain) NSNumber *versionID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)DSID;
@@ -37,13 +39,14 @@
 - (id)assetDictionary;
 - (id)cloudDSID;
 - (id)collectionID;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dimensions;
 - (id)downloadDictionary;
 - (id)drmFree;
 - (void)encodeWithCoder:(id)arg1;
+- (id)endpointType;
 - (id)flavor;
 - (id)init;
-- (id)initWithATStoreInfoForOlderiTunesClients:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)matchStatus;
 - (id)podcastEpisodeGUID;
@@ -57,6 +60,7 @@
 - (void)setDSID:(id)arg1;
 - (void)setDimensions:(id)arg1;
 - (void)setDrmFree:(id)arg1;
+- (void)setEndpointType:(id)arg1;
 - (void)setFlavor:(id)arg1;
 - (void)setMatchStatus:(id)arg1;
 - (void)setPodcastEpisodeGUID:(id)arg1;
@@ -64,10 +68,12 @@
 - (void)setRedownloadStatus:(id)arg1;
 - (void)setSagaID:(id)arg1;
 - (void)setStorefrontID:(id)arg1;
+- (void)setSubscriptionID:(id)arg1;
 - (void)setSyncID:(id)arg1;
 - (void)setVersionID:(id)arg1;
 - (void)setXID:(id)arg1;
 - (id)storefrontID;
+- (id)subscriptionID;
 - (id)syncID;
 - (id)versionID;
 

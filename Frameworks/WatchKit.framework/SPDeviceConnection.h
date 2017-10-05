@@ -13,7 +13,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SPDeviceConnectionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) NSHashTable *observers;
 @property (retain) NSXPCConnection *serverConnection;
 @property (readonly) Class superclass;
@@ -27,7 +27,7 @@
 - (void)activeComplicationsWithCompletion:(id /* block */)arg1;
 - (void)activeComplicationsWithErrorCompletion:(id /* block */)arg1;
 - (void)addObserver:(id)arg1;
-- (int)appInstallStateForAppConduitInstallState:(int)arg1;
+- (long long)appInstallStateForAppConduitInstallState:(long long)arg1;
 - (void)cancelPendingInstallations;
 - (id)connectionProxy:(id /* block */)arg1 caller:(const char *)arg2;
 - (id)connectionQueue;
@@ -45,9 +45,6 @@
 - (void)fetchInstalledComplicationsForPairedDevice:(id)arg1 completion:(id /* block */)arg2;
 - (void)fetchInstalledComplicationsWithCompletion:(id /* block */)arg1;
 - (void)fetchInstalledComplicationsWithErrorCompletion:(id /* block */)arg1;
-- (void)fetchInstalledGlancesForPairedDevice:(id)arg1 completion:(id /* block */)arg2;
-- (void)fetchInstalledGlancesWithCompletion:(id /* block */)arg1;
-- (void)fetchInstalledGlancesWithErrorCompletion:(id /* block */)arg1;
 - (void)fetchProvisioningProfilesForApplicationWithBundleID:(id)arg1 completion:(id /* block */)arg2;
 - (void)fetchProvisioningProfilesForApplicationWithBundleID:(id)arg1 forPairedDevice:(id)arg2 completion:(id /* block */)arg3;
 - (void)fetchProvisioningProfilesForPairedDevice:(id)arg1 completion:(id /* block */)arg2;
@@ -85,8 +82,8 @@
 - (void)setLogLevel:(id)arg1;
 - (void)setObservers:(id)arg1;
 - (void)setServerConnection:(id)arg1;
-- (void)showUserNotification:(int)arg1 applicationName:(id)arg2 extensionBundleID:(id)arg3;
-- (void)showUserNotification:(int)arg1 bundleID:(id)arg2;
+- (void)showUserNotification:(long long)arg1 applicationName:(id)arg2 extensionBundleID:(id)arg3;
+- (void)showUserNotification:(long long)arg1 bundleID:(id)arg2;
 - (void)updatePreferencesForApplicationWithIdentifier:(id)arg1 preferences:(id)arg2 completion:(id /* block */)arg3;
 - (void)updatePreferencesForApplicationWithIdentifier:(id)arg1 preferences:(id)arg2 forPairedDevice:(id)arg3 completion:(id /* block */)arg4;
 - (void)wakeExtensionForWatchApp:(id)arg1;

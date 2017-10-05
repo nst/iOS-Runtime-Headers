@@ -10,11 +10,11 @@
 @property (nonatomic, retain) NSMutableArray *resizeDestinations;
 @property (nonatomic, copy) NSURL *sourceURL;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)addDestinationWithFormat:(int)arg1 size:(struct CGSize { float x1; float x2; })arg2 url:(id)arg3;
-- (void)addJPEGDestinationWithSize:(struct CGSize { float x1; float x2; })arg1 compressionQuality:(float)arg2 url:(id)arg3;
+- (void)addDestinationWithFormat:(long long)arg1 size:(struct CGSize { double x1; double x2; })arg2 url:(id)arg3;
+- (void)addJPEGDestinationWithSize:(struct CGSize { double x1; double x2; })arg1 compressionQuality:(double)arg2 url:(id)arg3;
 - (id)debugDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (void)enumerateDestinationsUsingBlock:(id /* block */)arg1;

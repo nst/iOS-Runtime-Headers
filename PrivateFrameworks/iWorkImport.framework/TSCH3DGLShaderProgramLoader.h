@@ -11,9 +11,9 @@
 - (void)compileShaderSource:(struct IteratorRange<const char *> { struct pair<const char *, const char *> { char *x_1_1_1; char *x_1_1_2; } x1; })arg1 forHandle:(id)arg2;
 - (void)deactivateHandle:(id)arg1 insideContext:(id)arg2;
 - (id)generateHandleWithConfig:(void*)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)postbindHandle:(id)arg1 config:(void*)arg2;
-- (unsigned int)uploadDataBuffer:(id)arg1 handle:(id)arg2 insideSession:(id)arg3 config:(void*)arg4;
+- (unsigned long long)uploadDataBuffer:(id)arg1 handle:(id)arg2 insideSession:(id)arg3 config:(void*)arg4;
 
 @end

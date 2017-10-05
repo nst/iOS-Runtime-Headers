@@ -5,9 +5,9 @@
 @interface MPMediaChapter : NSObject {
     MPMediaLibraryArtworkDataSource * _artworkDataSource;
     MPMediaLibraryArtworkRequest * _artworkRequest;
-    int  _chapterType;
-    unsigned int  _indexInChaptersWithAnyType;
-    unsigned int  _indexInChaptersWithSameType;
+    long long  _chapterType;
+    unsigned long long  _indexInChaptersWithAnyType;
+    unsigned long long  _indexInChaptersWithSameType;
     double  _playbackDuration;
     double  _playbackTime;
     id  _value;
@@ -16,9 +16,9 @@
 
 @property (nonatomic) MPMediaLibraryArtworkDataSource *artworkDataSource;
 @property (nonatomic, retain) MPMediaLibraryArtworkRequest *artworkRequest;
-@property (nonatomic) int chapterType;
-@property (nonatomic) unsigned int indexInChaptersWithAnyType;
-@property (nonatomic) unsigned int indexInChaptersWithSameType;
+@property (nonatomic) long long chapterType;
+@property (nonatomic) unsigned long long indexInChaptersWithAnyType;
+@property (nonatomic) unsigned long long indexInChaptersWithSameType;
 @property (nonatomic) double playbackDuration;
 @property (nonatomic) double playbackTime;
 @property (nonatomic, retain) id value;
@@ -27,24 +27,24 @@
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 - (void).cxx_destruct;
-- (int)_sortByChapterIndex:(id)arg1;
+- (long long)_sortByChapterIndex:(id)arg1;
 - (id)artworkCatalog;
 - (id)artworkDataSource;
 - (id)artworkRequest;
-- (int)chapterType;
+- (long long)chapterType;
 - (id)description;
 - (double)duration;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)indexInChaptersWithAnyType;
-- (unsigned int)indexInChaptersWithSameType;
+- (unsigned long long)indexInChaptersWithAnyType;
+- (unsigned long long)indexInChaptersWithSameType;
 - (id)initWithCoder:(id)arg1;
 - (double)playbackDuration;
 - (double)playbackTime;
 - (void)setArtworkDataSource:(id)arg1;
 - (void)setArtworkRequest:(id)arg1;
-- (void)setChapterType:(int)arg1;
-- (void)setIndexInChaptersWithAnyType:(unsigned int)arg1;
-- (void)setIndexInChaptersWithSameType:(unsigned int)arg1;
+- (void)setChapterType:(long long)arg1;
+- (void)setIndexInChaptersWithAnyType:(unsigned long long)arg1;
+- (void)setIndexInChaptersWithSameType:(unsigned long long)arg1;
 - (void)setPlaybackDuration:(double)arg1;
 - (void)setPlaybackTime:(double)arg1;
 - (void)setValue:(id)arg1;

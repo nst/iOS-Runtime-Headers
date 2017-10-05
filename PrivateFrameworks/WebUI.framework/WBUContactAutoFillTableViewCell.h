@@ -4,23 +4,23 @@
 
 @interface WBUContactAutoFillTableViewCell : UITableViewCell {
     UILabel * _categoryLabel;
-    BOOL  _checked;
+    bool  _checked;
     UIButton * _checkmarkButton;
     UILabel * _optionLabel;
-    BOOL  _usesDetailAppearance;
+    bool  _usesDetailAppearance;
     WBUContactAutoFillValue * _value;
 }
 
-@property (nonatomic) BOOL checked;
-@property (nonatomic) BOOL usesDetailAppearance;
+@property (nonatomic) bool checked;
+@property (nonatomic) bool usesDetailAppearance;
 
 - (void).cxx_destruct;
-- (BOOL)checked;
+- (bool)checked;
 - (void)checkmarkButtonTapped:(id)arg1;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)setChecked:(BOOL)arg1;
-- (void)setUsesDetailAppearance:(BOOL)arg1;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (void)setChecked:(bool)arg1;
+- (void)setUsesDetailAppearance:(bool)arg1;
 - (void)setValue:(id)arg1 property:(id)arg2;
-- (BOOL)usesDetailAppearance;
+- (bool)usesDetailAppearance;
 
 @end

@@ -5,11 +5,11 @@
 
 @required
 
-- (<MDLMeshBuffer> *)newBuffer:(unsigned int)arg1 type:(unsigned int)arg2;
-- (<MDLMeshBuffer> *)newBufferFromZone:(id <MDLMeshBufferZone>)arg1 data:(NSData *)arg2 type:(unsigned int)arg3;
-- (<MDLMeshBuffer> *)newBufferFromZone:(id <MDLMeshBufferZone>)arg1 length:(unsigned int)arg2 type:(unsigned int)arg3;
-- (<MDLMeshBuffer> *)newBufferWithData:(NSData *)arg1 type:(unsigned int)arg2;
-- (<MDLMeshBufferZone> *)newZone:(unsigned int)arg1;
+- (<MDLMeshBuffer> *)newBuffer:(unsigned long long)arg1 type:(unsigned long long)arg2;
+- (<MDLMeshBuffer> *)newBufferFromZone:(id <MDLMeshBufferZone>)arg1 data:(NSData *)arg2 type:(unsigned long long)arg3;
+- (<MDLMeshBuffer> *)newBufferFromZone:(id <MDLMeshBufferZone>)arg1 length:(unsigned long long)arg2 type:(unsigned long long)arg3;
+- (<MDLMeshBuffer> *)newBufferWithData:(NSData *)arg1 type:(unsigned long long)arg2;
+- (<MDLMeshBufferZone> *)newZone:(unsigned long long)arg1;
 - (<MDLMeshBufferZone> *)newZoneForBuffersWithSize:(NSArray *)arg1 andType:(NSArray *)arg2;
 
 @end

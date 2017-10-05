@@ -4,16 +4,16 @@
 
 @interface GKBubblePathAnimator : NSObject
 
-@property (nonatomic, readonly) int animatorType;
+@property (nonatomic, readonly) long long animatorType;
 
 + (id)hiTimingFunction;
 + (id)sharedBubblePathAnimator;
 
 - (void)animateTransition:(id)arg1;
 - (void)animateTransition:(id)arg1 completionHandler:(id /* block */)arg2;
-- (int)animatorType;
-- (BOOL)bubblesOnscreenAtBeginning;
-- (BOOL)bubblesOnscreenAtEnd;
+- (long long)animatorType;
+- (bool)bubblesOnscreenAtBeginning;
+- (bool)bubblesOnscreenAtEnd;
 - (id)effectiveViewForContext:(id)arg1;
 - (double)minimumDurationForViewAnimations;
 

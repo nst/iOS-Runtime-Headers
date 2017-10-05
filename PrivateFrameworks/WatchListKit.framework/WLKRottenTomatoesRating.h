@@ -3,19 +3,19 @@
  */
 
 @interface WLKRottenTomatoesRating : NSObject {
-    unsigned int  _freshness;
+    unsigned long long  _freshness;
     NSNumber * _freshnessPercentage;
 }
 
-@property (nonatomic, readonly) unsigned int freshness;
+@property (nonatomic, readonly) unsigned long long freshness;
 @property (nonatomic, readonly, copy) NSNumber *freshnessPercentage;
 
-+ (unsigned int)freshnessForString:(id)arg1;
++ (unsigned long long)freshnessForString:(id)arg1;
 
 - (void).cxx_destruct;
-- (unsigned int)freshness;
+- (unsigned long long)freshness;
 - (id)freshnessPercentage;
 - (id)init;
-- (id)initWithFreshness:(unsigned int)arg1 freshnessPercentage:(id)arg2;
+- (id)initWithFreshness:(unsigned long long)arg1 freshnessPercentage:(id)arg2;
 
 @end

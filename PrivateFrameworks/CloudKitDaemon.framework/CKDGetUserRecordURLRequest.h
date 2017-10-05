@@ -11,11 +11,11 @@
 @property (nonatomic, retain) CKRecord *userRecord;
 
 - (void).cxx_destruct;
+- (id)generateRequestOperations;
 - (int)operationType;
 - (id /* block */)recordFetchedBlock;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
-- (id)requestOperations;
 - (void)setRecordFetchedBlock:(id /* block */)arg1;
 - (void)setUserRecord:(id)arg1;
 - (id)userRecord;

@@ -5,16 +5,16 @@
 
 @required
 
-- (BOOL)boolValue;
+- (bool)boolValue;
 - (double)doubleValue;
 - (id)init;
-- (void)setBoolValue:(BOOL)arg1;
+- (void)setBoolValue:(bool)arg1;
 - (void)setDoubleValue:(double)arg1;
 - (void)setStringValue:(NSString *)arg1;
-- (void)setType:(int)arg1;
-- (void)setValueType:(int)arg1;
+- (void)setType:(long long)arg1;
+- (void)setValueType:(long long)arg1;
 - (NSString *)stringValue;
-- (int)type;
-- (int)valueType;
+- (long long)type;
+- (long long)valueType;
 
 @end

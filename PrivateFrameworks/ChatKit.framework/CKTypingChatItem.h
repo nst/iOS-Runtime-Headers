@@ -4,16 +4,16 @@
 
 @interface CKTypingChatItem : CKChatItem
 
-@property (getter=isFromMe, nonatomic, readonly) BOOL fromMe;
-@property (nonatomic, readonly) CALayer<CKTypingIndicatorLayerProtocol> *indicatorLayer;
+@property (getter=isFromMe, nonatomic, readonly) bool fromMe;
+@property (nonatomic, readonly) CALayer<IMTypingIndicatorLayerProtocol> *indicatorLayer;
 
 - (Class)cellClass;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
-- (BOOL)displayDuringSend;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (bool)displayDuringSend;
 - (id)indicatorLayer;
-- (BOOL)isFromMe;
-- (struct CGSize { float x1; float x2; })loadSizeThatFits:(struct CGSize { float x1; float x2; })arg1 textAlignmentInsets:(out struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2;
+- (bool)isFromMe;
+- (struct CGSize { double x1; double x2; })loadSizeThatFits:(struct CGSize { double x1; double x2; })arg1 textAlignmentInsets:(out struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2;
 - (BOOL)transcriptOrientation;
-- (BOOL)wantsDrawerLayout;
+- (bool)wantsDrawerLayout;
 
 @end

@@ -16,6 +16,6 @@
 - (id)_offlineSecretChangeFollowUpAction;
 - (id)followUpItemWithContext:(id)arg1;
 - (id)identifierForContext:(id)arg1;
-- (unsigned int)secretType;
+- (unsigned long long)secretType;
 
 @end

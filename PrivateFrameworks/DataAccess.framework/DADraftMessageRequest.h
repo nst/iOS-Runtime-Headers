@@ -4,18 +4,18 @@
 
 @interface DADraftMessageRequest : DAMailboxRequest {
     DAMailMessage * _message;
-    BOOL  _send;
+    bool  _send;
 }
 
 @property (nonatomic, retain) DAMailMessage *message;
-@property (nonatomic) BOOL send;
+@property (nonatomic) bool send;
 
 - (void).cxx_destruct;
 - (id)description;
-- (id)initWithRequestType:(int)arg1 message:(id)arg2 send:(BOOL)arg3;
+- (id)initWithRequestType:(int)arg1 message:(id)arg2 send:(bool)arg3;
 - (id)message;
-- (BOOL)send;
+- (bool)send;
 - (void)setMessage:(id)arg1;
-- (void)setSend:(BOOL)arg1;
+- (void)setSend:(bool)arg1;
 
 @end

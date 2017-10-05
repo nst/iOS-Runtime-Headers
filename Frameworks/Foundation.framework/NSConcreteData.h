@@ -4,28 +4,23 @@
 
 @interface NSConcreteData : NSData {
     void * _bytes;
-    unsigned int  _capacity;
-    unsigned int  _isInline;
-    unsigned int  _length;
-    unsigned int  _retainCount;
-    union { 
-        unsigned char _space[12]; 
-        id /* block */ _deallocator; 
-    }  _u;
+    id /* block */  _deallocator;
+    unsigned long long  _length;
 }
 
-- (BOOL)_copyWillRetain;
+- (bool)_copyWillRetain;
 - (id)_createDispatchData;
-- (BOOL)_isCompact;
+- (bool)_isCompact;
+- (bool)_providesConcreteBacking;
 - (const void*)bytes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)getBytes:(void*)arg1;
-- (void)getBytes:(void*)arg1 length:(unsigned int)arg2;
-- (void)getBytes:(void*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)getBytes:(void*)arg1 length:(unsigned long long)arg2;
+- (void)getBytes:(void*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (id)init;
-- (id)initWithBytes:(void*)arg1 length:(unsigned int)arg2 copy:(BOOL)arg3 deallocator:(id /* block */)arg4;
-- (id)initWithBytes:(void*)arg1 length:(unsigned int)arg2 copy:(BOOL)arg3 freeWhenDone:(BOOL)arg4 bytesAreVM:(BOOL)arg5;
-- (unsigned int)length;
+- (id)initWithBytes:(void*)arg1 length:(unsigned long long)arg2 copy:(bool)arg3 deallocator:(id /* block */)arg4;
+- (id)initWithBytes:(void*)arg1 length:(unsigned long long)arg2 copy:(bool)arg3 freeWhenDone:(bool)arg4 bytesAreVM:(bool)arg5;
+- (unsigned long long)length;
 
 @end

@@ -11,9 +11,9 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <TRDeviceSetupBrowserDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) TRDeviceSetupPeripheral *peripheral;
-@property (nonatomic, readonly) int state;
+@property (nonatomic, readonly) long long state;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) TRTransferBrowser *transferBrowser;
 
@@ -30,7 +30,7 @@
 - (void)setPeripheral:(id)arg1;
 - (void)setTransferBrowser:(id)arg1;
 - (void)start;
-- (int)state;
+- (long long)state;
 - (void)stop;
 - (id)transferBrowser;
 

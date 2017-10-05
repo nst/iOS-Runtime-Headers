@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@interface GKBubbleFlowAnimator : NSObject <UINavigationControllerDelegate, UITabBarControllerDelegate> {
+@interface GKBubbleFlowAnimator : NSObject <UINavigationControllerDelegate> {
     GKBubbleSet * _mostRecentOverlayBubbleSet;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) GKBubbleSet *mostRecentOverlayBubbleSet;
 @property (readonly) Class superclass;
 
@@ -30,7 +30,7 @@
 - (void)_finalPreparationsBeforeBeginningTransitionWithInfo:(id)arg1;
 - (void)_finishTransitionWithInfo:(id)arg1;
 - (void)_moveBubblesToTransitionView:(id)arg1 forTransitionWithInfo:(id)arg2;
-- (BOOL)_navigationControllerShouldUseBuiltinInteractionController:(id)arg1;
+- (bool)_navigationControllerShouldUseBuiltinInteractionController:(id)arg1;
 - (id)_pathTransitionInfoFromPathAnimator:(id)arg1 forTransitionWithInfo:(id)arg2;
 - (void)_prepareTransitionWithInfo:(id)arg1;
 - (void)_resetContentInBubbles:(id)arg1 viewController:(id)arg2 adoptionFlags:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; })arg3;
@@ -42,15 +42,14 @@
 - (id)_transitionInfoForBubbleFlowSimpleUpdateOfViewController:(id)arg1;
 - (void)animateBubblesFromViewController:(id)arg1 toViewController:(id)arg2 completion:(id /* block */)arg3;
 - (void)dealloc;
-- (void)invalidateBubblePositionsForViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
+- (void)invalidateBubblePositionsForViewController:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 - (id)mostRecentOverlayBubbleSet;
-- (id)navigationController:(id)arg1 animationControllerForOperation:(int)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
-- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
-- (void)overlayViewNeedsUpdateForRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })restingWorldPositionForBubble:(id)arg1 viewController:(id)arg2 forTransitionWithInfo:(id)arg3 getFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4;
+- (id)navigationController:(id)arg1 animationControllerForOperation:(long long)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
+- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(bool)arg3;
+- (void)overlayViewNeedsUpdateForRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
+- (union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })restingWorldPositionForBubble:(id)arg1 viewController:(id)arg2 forTransitionWithInfo:(id)arg3 getFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg4;
 - (void)setMostRecentOverlayBubbleSet:(id)arg1;
-- (int)syncOverlayViewBubbles:(id)arg1 withViewController:(id)arg2;
-- (id)tabBarController:(id)arg1 animatorForFromViewController:(id)arg2 toViewController:(id)arg3;
+- (long long)syncOverlayViewBubbles:(id)arg1 withViewController:(id)arg2;
 - (id)transitionInfoForBubbleFlowTransitionFromViewController:(id)arg1 toViewController:(id)arg2;
 
 @end

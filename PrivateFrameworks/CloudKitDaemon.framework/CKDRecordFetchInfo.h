@@ -6,23 +6,25 @@
     id /* block */  _completionBlock;
     NSError * _error;
     NSString * _etag;
-    unsigned int  _fetchOrder;
+    unsigned long long  _fetchOrder;
+    bool  _ignoreErrors;
     CKRecord * _record;
     CKRecordID * _recordID;
     NSObject<OS_dispatch_source> * _recordReadySource;
     double  _startDate;
-    unsigned int  _state;
+    unsigned long long  _state;
 }
 
 @property (nonatomic, copy) id /* block */ completionBlock;
 @property (nonatomic, retain) NSError *error;
 @property (nonatomic, retain) NSString *etag;
-@property (nonatomic) unsigned int fetchOrder;
+@property (nonatomic) unsigned long long fetchOrder;
+@property (nonatomic) bool ignoreErrors;
 @property (nonatomic, retain) CKRecord *record;
 @property (nonatomic, retain) CKRecordID *recordID;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *recordReadySource;
 @property (nonatomic, readonly) double startDate;
-@property (nonatomic) unsigned int state;
+@property (nonatomic) unsigned long long state;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
@@ -30,7 +32,8 @@
 - (id)description;
 - (id)error;
 - (id)etag;
-- (unsigned int)fetchOrder;
+- (unsigned long long)fetchOrder;
+- (bool)ignoreErrors;
 - (id)initWithAggregator:(id)arg1;
 - (void)performCallback;
 - (id)record;
@@ -39,12 +42,13 @@
 - (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setError:(id)arg1;
 - (void)setEtag:(id)arg1;
-- (void)setFetchOrder:(unsigned int)arg1;
+- (void)setFetchOrder:(unsigned long long)arg1;
+- (void)setIgnoreErrors:(bool)arg1;
 - (void)setRecord:(id)arg1;
 - (void)setRecordID:(id)arg1;
 - (void)setRecordReadySource:(id)arg1;
-- (void)setState:(unsigned int)arg1;
+- (void)setState:(unsigned long long)arg1;
 - (double)startDate;
-- (unsigned int)state;
+- (unsigned long long)state;
 
 @end

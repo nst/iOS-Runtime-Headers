@@ -18,7 +18,7 @@
 @property (nonatomic, retain) NSMutableDictionary *focusAlbumGUIDByPersonID;
 @property (nonatomic, retain) NSMutableDictionary *focusAlbumTimerByPersonID;
 @property (nonatomic, retain) NSMutableDictionary *foregroundPingTimerContextByPersonID;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *memberQueue;
 @property (nonatomic, retain) XPCNSClientConnection *noWakeConnection;
 @property (nonatomic, retain) NSMutableDictionary *serverSideConfigurationDictionaryByPersonID;
@@ -76,7 +76,7 @@
 - (void)isInRetryStateHandler:(id /* block */)arg1;
 - (void)markAlbumGUIDAsViewed:(id)arg1 personID:(id)arg2;
 - (void)markAlbumGUIDAsViewed:(id)arg1 personID:(id)arg2 info:(id)arg3;
-- (void)markAlbumGUIDAsViewed:(id)arg1 personID:(id)arg2 moveLastViewedAssetCollectionMarker:(BOOL)arg3 info:(id)arg4;
+- (void)markAlbumGUIDAsViewed:(id)arg1 personID:(id)arg2 moveLastViewedAssetCollectionMarker:(bool)arg3 info:(id)arg4;
 - (void)markAsSpamAlbumWithGUID:(id)arg1 personID:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)markAsSpamInvitationWithGUID:(id)arg1 personID:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)markAsSpamInvitationWithToken:(id)arg1 personID:(id)arg2 completionBlock:(id /* block */)arg3;
@@ -90,12 +90,12 @@
 - (void)pingForeground;
 - (void)refreshAccessControlListForAlbumWithGUID:(id)arg1 personID:(id)arg2;
 - (void)refreshAccessControlListForAlbumWithGUID:(id)arg1 personID:(id)arg2 info:(id)arg3;
-- (void)refreshCommentsForAssetCollectionWithGUID:(id)arg1 resetSync:(BOOL)arg2 personID:(id)arg3;
-- (void)refreshCommentsForAssetCollectionWithGUID:(id)arg1 resetSync:(BOOL)arg2 personID:(id)arg3 info:(id)arg4;
-- (void)refreshContentOfAlbumWithGUID:(id)arg1 resetSync:(BOOL)arg2 personID:(id)arg3;
-- (void)refreshContentOfAlbumWithGUID:(id)arg1 resetSync:(BOOL)arg2 personID:(id)arg3 info:(id)arg4;
-- (void)refreshResetSync:(BOOL)arg1 personID:(id)arg2;
-- (void)refreshResetSync:(BOOL)arg1 personID:(id)arg2 info:(id)arg3;
+- (void)refreshCommentsForAssetCollectionWithGUID:(id)arg1 resetSync:(bool)arg2 personID:(id)arg3;
+- (void)refreshCommentsForAssetCollectionWithGUID:(id)arg1 resetSync:(bool)arg2 personID:(id)arg3 info:(id)arg4;
+- (void)refreshContentOfAlbumWithGUID:(id)arg1 resetSync:(bool)arg2 personID:(id)arg3;
+- (void)refreshContentOfAlbumWithGUID:(id)arg1 resetSync:(bool)arg2 personID:(id)arg3 info:(id)arg4;
+- (void)refreshResetSync:(bool)arg1 personID:(id)arg2;
+- (void)refreshResetSync:(bool)arg1 personID:(id)arg2 info:(id)arg3;
 - (void)rejectInvitationWithGUID:(id)arg1 personID:(id)arg2;
 - (void)rejectInvitationWithGUID:(id)arg1 personID:(id)arg2 info:(id)arg3;
 - (void)removeAccessControlEntryWithGUID:(id)arg1 personID:(id)arg2;
@@ -113,21 +113,21 @@
 - (void)setFocusAlbumTimerByPersonID:(id)arg1;
 - (void)setFocusAssetCollectionGUID:(id)arg1 forPersonID:(id)arg2;
 - (void)setForegroundPingTimerContextByPersonID:(id)arg1;
-- (void)setIsUIForeground:(BOOL)arg1 forPersonID:(id)arg2;
+- (void)setIsUIForeground:(bool)arg1 forPersonID:(id)arg2;
 - (void)setMemberQueue:(id)arg1;
-- (void)setMultipleContributorsEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 personID:(id)arg3 completionBlock:(id /* block */)arg4;
-- (void)setMultipleContributorsEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 personID:(id)arg3 info:(id)arg4 completionBlock:(id /* block */)arg5;
+- (void)setMultipleContributorsEnabled:(bool)arg1 forAlbumWithGUID:(id)arg2 personID:(id)arg3 completionBlock:(id /* block */)arg4;
+- (void)setMultipleContributorsEnabled:(bool)arg1 forAlbumWithGUID:(id)arg2 personID:(id)arg3 info:(id)arg4 completionBlock:(id /* block */)arg5;
 - (void)setNoWakeConnection:(id)arg1;
-- (void)setPublicAccessEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 personID:(id)arg3 completionBlock:(id /* block */)arg4;
-- (void)setPublicAccessEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 personID:(id)arg3 info:(id)arg4 completionBlock:(id /* block */)arg5;
+- (void)setPublicAccessEnabled:(bool)arg1 forAlbumWithGUID:(id)arg2 personID:(id)arg3 completionBlock:(id /* block */)arg4;
+- (void)setPublicAccessEnabled:(bool)arg1 forAlbumWithGUID:(id)arg2 personID:(id)arg3 info:(id)arg4 completionBlock:(id /* block */)arg5;
 - (void)setServerSideConfigurationDictionaryByPersonID:(id)arg1;
 - (void)subscribeToAlbumWithGUID:(id)arg1 personID:(id)arg2;
 - (void)subscribeToAlbumWithGUID:(id)arg1 personID:(id)arg2 info:(id)arg3;
 - (void)timerPingQueueForegroundPingTimerExpiredContext:(id)arg1 personID:(id)arg2;
-- (void)timerPingQueueSendSetUIForeground:(BOOL)arg1 personID:(id)arg2;
+- (void)timerPingQueueSendSetUIForeground:(bool)arg1 personID:(id)arg2;
 - (void)unsubscribeFromAlbumWithGUID:(id)arg1 personID:(id)arg2;
 - (void)unsubscribeFromAlbumWithGUID:(id)arg1 personID:(id)arg2 info:(id)arg3;
 - (void)videoURLForAssetCollectionWithGUID:(id)arg1 personID:(id)arg2 completionBlock:(id /* block */)arg3;
-- (void)videoURLsForAssetCollectionWithGUID:(id)arg1 forMediaAssetType:(unsigned int)arg2 personID:(id)arg3 completionBlock:(id /* block */)arg4;
+- (void)videoURLsForAssetCollectionWithGUID:(id)arg1 forMediaAssetType:(unsigned long long)arg2 personID:(id)arg3 completionBlock:(id /* block */)arg4;
 
 @end

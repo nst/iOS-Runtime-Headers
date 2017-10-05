@@ -2,32 +2,33 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@interface WKScrollView : UIWebScrollView {
+@interface WKScrollView : UIScrollView {
+    bool  _contentInsetAdjustmentBehaviorWasExternallyOverridden;
     WKScrollViewDelegateForwarder * _delegateForwarder;
     /* Warning: unhandled struct encoding: '{WeakObjCPtr<id<UIScrollViewDelegate> >="m_weakReference"@}' */ struct WeakObjCPtr<id<UIScrollViewDelegate> > { 
         id m_weakReference; 
     }  _externalDelegate;
     WKWebView<UIScrollViewDelegate> * _internalDelegate;
-    float  _preferredScrollDecelerationFactor;
 }
 
+@property (nonatomic, readonly) bool _contentInsetAdjustmentBehaviorWasExternallyOverridden;
 @property (nonatomic) WKWebView<UIScrollViewDelegate> *internalDelegate;
-@property (nonatomic, readonly) float preferredScrollDecelerationFactor;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (struct CGSize { float x1; float x2; })_currentTopLeftRubberbandAmount;
-- (void)_restoreContentOffsetWithRubberbandAmount:(struct CGSize { float x1; float x2; })arg1;
-- (float)_rubberBandOffsetForOffset:(float)arg1 maxOffset:(float)arg2 minOffset:(float)arg3 range:(float)arg4 outside:(BOOL*)arg5;
-- (void)_setContentSizePreservingContentOffsetDuringRubberband:(struct CGSize { float x1; float x2; })arg1;
+- (bool)_contentInsetAdjustmentBehaviorWasExternallyOverridden;
+- (struct CGSize { double x1; double x2; })_currentTopLeftRubberbandAmount;
+- (void)_restoreContentOffsetWithRubberbandAmount:(struct CGSize { double x1; double x2; })arg1;
+- (double)_rubberBandOffsetForOffset:(double)arg1 maxOffset:(double)arg2 minOffset:(double)arg3 range:(double)arg4 outside:(bool*)arg5;
+- (void)_setContentInsetAdjustmentBehaviorInternal:(long long)arg1;
+- (void)_setContentSizePreservingContentOffsetDuringRubberband:(struct CGSize { double x1; double x2; })arg1;
 - (void)_updateDelegate;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)internalDelegate;
-- (float)preferredScrollDecelerationFactor;
-- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setDecelerationRate:(float)arg1;
+- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setContentInsetAdjustmentBehavior:(long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInternalDelegate:(id)arg1;
 

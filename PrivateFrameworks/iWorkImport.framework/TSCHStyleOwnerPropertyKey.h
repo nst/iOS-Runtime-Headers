@@ -14,9 +14,9 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithStyleOwnerPath:(id)arg1 property:(int)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (int)property;
 - (id)styleOwnerPath;
 

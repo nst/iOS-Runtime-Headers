@@ -13,10 +13,10 @@
 - (id)profileListChangedNotificationObserver;
 - (void)setFullTrustEnabled:(id)arg1 forSpecifier:(id)arg2;
 - (void)setProfileListChangedNotificationObserver:(id)arg1;
-- (id)specifierForTrustSettings:(struct __SecCertificate { }*)arg1 isRestricted:(BOOL)arg2;
+- (id)specifierForTrustSettings:(struct __SecCertificate { }*)arg1 isRestricted:(bool)arg2;
 - (id)specifiers;
 - (id)trustVersionString:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

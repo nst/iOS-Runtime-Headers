@@ -9,7 +9,7 @@
     SKUIProductPageHeaderViewController * _headerViewController;
     UIActivityIndicatorView * _indicator;
     SKUIProductPagePlaceholderScrollView * _scrollView;
-    int  _style;
+    long long  _style;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
@@ -17,7 +17,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SKUIProductPageChildViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SKUIProductPageHeaderViewController *headerViewController;
 @property (nonatomic, readonly) UIScrollView *scrollView;
 @property (readonly) Class superclass;
@@ -28,7 +28,7 @@
 - (id)colorScheme;
 - (id)delegate;
 - (id)headerViewController;
-- (id)initWithStyle:(int)arg1;
+- (id)initWithStyle:(long long)arg1;
 - (void)loadView;
 - (id)scrollView;
 - (void)scrollViewDidScroll:(id)arg1;
@@ -36,7 +36,7 @@
 - (void)setColorScheme:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHeaderViewController:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 
 @end

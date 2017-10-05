@@ -7,7 +7,7 @@
 
 - (<NSObject><NSCopying> *)cachedIndexMapState;
 - (Class)derivedChangeNotificationClass;
-- (BOOL)mappedDataSourceChanged:(PLContainerChangeNotification *)arg1 remoteNotificationData:(NSDictionary *)arg2;
+- (bool)mappedDataSourceChanged:(PLContainerChangeNotification *)arg1 remoteNotificationData:(NSDictionary *)arg2;
 
 @optional
 

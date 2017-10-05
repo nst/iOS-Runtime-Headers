@@ -5,7 +5,7 @@
 @interface PSUIDateTimeController : PSListController <PSUIDateTimePickerCellDelegate> {
     PSSpecifier * _currentTimeSpecifier;
     struct __CFDateFormatter { } * _dateFormatter;
-    BOOL  _localeForces24HourTime;
+    bool  _localeForces24HourTime;
     PSWallClockMinuteTimer * _minuteTimer;
     NSIndexPath * _setDateAndTimeIndexPath;
     struct __CFDateFormatter { } * _timeFormatter;
@@ -21,7 +21,7 @@
 
 - (void).cxx_destruct;
 - (void)_createDateTimeFormatters;
-- (void)_setSpecifier:(id)arg1 valueEnabled:(BOOL)arg2;
+- (void)_setSpecifier:(id)arg1 valueEnabled:(bool)arg2;
 - (void)_updateCurrentTime;
 - (id)currentDateString;
 - (id)currentTimeSpecifier;
@@ -44,11 +44,11 @@
 - (void)setTimeZoneSpecifier:(id)arg1;
 - (void)setTimeZoneValue:(id)arg1 specifier:(id)arg2;
 - (void)setUseAutomaticTime:(id)arg1 specifier:(id)arg2;
-- (BOOL)shouldDisplayTimezoneSpinner;
+- (bool)shouldDisplayTimezoneSpinner;
 - (void)significantTimeChange:(id)arg1;
 - (id)specifiers;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (BOOL)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
+- (bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)timePickerSpecifier;
 - (id)timeZoneSpecifier;

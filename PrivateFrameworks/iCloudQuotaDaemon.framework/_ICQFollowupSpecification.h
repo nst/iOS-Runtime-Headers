@@ -5,7 +5,7 @@
 @interface _ICQFollowupSpecification : NSObject {
     NSString * _altMessage;
     NSString * _altNoteMessage;
-    BOOL  _forAccountGroup;
+    bool  _forAccountGroup;
     NSArray * _links;
     NSString * _message;
     ICQLink * _noteActivateLink;
@@ -19,7 +19,7 @@
 
 @property (nonatomic, retain) NSString *altMessage;
 @property (nonatomic, retain) NSString *altNoteMessage;
-@property (getter=isForAccountGroup, nonatomic) BOOL forAccountGroup;
+@property (getter=isForAccountGroup, nonatomic) bool forAccountGroup;
 @property (nonatomic, retain) NSArray *links;
 @property (nonatomic, retain) NSString *message;
 @property (nonatomic, retain) ICQLink *noteActivateLink;
@@ -36,10 +36,10 @@
 - (id)altMessage;
 - (id)altNoteMessage;
 - (id)followupActionForLink:(id)arg1;
-- (id)followupActionForLink:(id)arg1 needsFlow:(BOOL)arg2;
+- (id)followupActionForLink:(id)arg1 needsFlow:(bool)arg2;
 - (id)init;
 - (id)initWithServerDictionary:(id)arg1;
-- (BOOL)isForAccountGroup;
+- (bool)isForAccountGroup;
 - (id)links;
 - (id)message;
 - (id)noteActivateLink;
@@ -52,7 +52,7 @@
 - (id)serverDict;
 - (void)setAltMessage:(id)arg1;
 - (void)setAltNoteMessage:(id)arg1;
-- (void)setForAccountGroup:(BOOL)arg1;
+- (void)setForAccountGroup:(bool)arg1;
 - (void)setLinks:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setNoteActivateLink:(id)arg1;

@@ -13,7 +13,7 @@
 - (void).cxx_destruct;
 - (id)dictionaryToSecItemFormat:(id)arg1;
 - (id)genericPasswordQuery;
-- (id)initWithIdentifier:(id)arg1 accessGroup:(id)arg2;
+- (id)initWithIdentifier:(id)arg1 accessGroup:(id)arg2 serviceName:(id)arg3;
 - (id)keychainItemData;
 - (id)objectForKey:(id)arg1;
 - (void)resetKeychainItem;

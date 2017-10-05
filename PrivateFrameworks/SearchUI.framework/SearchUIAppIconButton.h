@@ -15,5 +15,6 @@
 - (id)init;
 - (void)setImage:(id)arg1;
 - (void)updateWithBundleID:(id)arg1;
+- (void)updateWithBundleID:(id)arg1 webClipID:(id)arg2;
 
 @end

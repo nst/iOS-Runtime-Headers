@@ -3,20 +3,20 @@
  */
 
 @interface SULoadMoreMediaCellConfiguration : SUItemCellConfiguration {
-    float  _previousCellHeight;
+    double  _previousCellHeight;
 }
 
-@property (nonatomic) float previousCellHeight;
+@property (nonatomic) double previousCellHeight;
 
-+ (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
++ (double)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
 
-- (id)colorForLabelAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
-- (id)fontForLabelAtIndex:(unsigned int)arg1;
+- (id)colorForLabelAtIndex:(unsigned long long)arg1 withModifiers:(unsigned long long)arg2;
+- (id)fontForLabelAtIndex:(unsigned long long)arg1;
 - (id)init;
-- (float)previousCellHeight;
+- (double)previousCellHeight;
 - (void)reloadImages;
 - (void)reloadLayoutInformation;
 - (void)reloadStrings;
-- (void)setPreviousCellHeight:(float)arg1;
+- (void)setPreviousCellHeight:(double)arg1;
 
 @end

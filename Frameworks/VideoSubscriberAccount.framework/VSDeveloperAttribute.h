@@ -3,40 +3,40 @@
  */
 
 @interface VSDeveloperAttribute : NSObject {
-    int  _autocorrectionType;
+    long long  _autocorrectionType;
     NSString * _displayName;
     NSString * _keyPath;
-    int  _keyboardType;
+    long long  _keyboardType;
     NSString * _placeholder;
-    int  _spellCheckingType;
+    long long  _spellCheckingType;
     NSValueTransformer * _valueTransformer;
 }
 
-@property (nonatomic) int autocorrectionType;
+@property (nonatomic) long long autocorrectionType;
 @property (nonatomic, copy) NSString *displayName;
 @property (nonatomic, copy) NSString *keyPath;
-@property (nonatomic) int keyboardType;
+@property (nonatomic) long long keyboardType;
 @property (nonatomic, copy) NSString *placeholder;
-@property (nonatomic) int spellCheckingType;
+@property (nonatomic) long long spellCheckingType;
 @property (nonatomic, retain) NSValueTransformer *valueTransformer;
 
 + (id)standardAttributes;
 
 - (void).cxx_destruct;
-- (int)autocorrectionType;
+- (long long)autocorrectionType;
 - (id)displayName;
 - (id)init;
 - (id)keyPath;
-- (int)keyboardType;
+- (long long)keyboardType;
 - (id)placeholder;
-- (void)setAutocorrectionType:(int)arg1;
+- (void)setAutocorrectionType:(long long)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setKeyPath:(id)arg1;
-- (void)setKeyboardType:(int)arg1;
+- (void)setKeyboardType:(long long)arg1;
 - (void)setPlaceholder:(id)arg1;
-- (void)setSpellCheckingType:(int)arg1;
+- (void)setSpellCheckingType:(long long)arg1;
 - (void)setValueTransformer:(id)arg1;
-- (int)spellCheckingType;
+- (long long)spellCheckingType;
 - (id)valueTransformer;
 
 @end

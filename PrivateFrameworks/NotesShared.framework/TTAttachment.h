@@ -11,16 +11,24 @@
 @property (nonatomic, retain) NSString *attachmentUTI;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) long long embeddingType;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)isAttachment:(id)arg1 equalToModelComparable:(id)arg2;
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
++ (bool)isAttachment:(id)arg1 equalToModelComparable:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)attachmentIdentifier;
+- (id)attachmentInContext:(id)arg1;
 - (id)attachmentUTI;
-- (BOOL)isEqualToModelComparable:(id)arg1;
+- (bool)isEqualToModelComparable:(id)arg1;
 - (void)setAttachmentIdentifier:(id)arg1;
 - (void)setAttachmentUTI:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NotesUI.framework/NotesUI
+
+- (long long)embeddingType;
 
 @end

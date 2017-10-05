@@ -17,8 +17,8 @@
 - (id)date;
 - (void)dealloc;
 - (id)game;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)player;
 - (void)setDate:(id)arg1;
 - (void)setGame:(id)arg1;

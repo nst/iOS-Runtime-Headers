@@ -3,17 +3,17 @@
  */
 
 @interface NTKComplicationModuleView : NTKModuleView <NTKComplicationDisplay> {
-    BOOL  _isXL;
+    bool  _isXL;
     <NTKComplicationDisplayObserver> * displayObserver;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <NTKComplicationDisplayObserver> *displayObserver;
-@property (readonly) unsigned int hash;
-@property (getter=isHighlighted, nonatomic) BOOL highlighted;
-@property (nonatomic) BOOL isXL;
-@property (nonatomic) BOOL shouldUseTemplateColors;
+@property (readonly) unsigned long long hash;
+@property (getter=isHighlighted, nonatomic) bool highlighted;
+@property (nonatomic) bool isXL;
+@property (nonatomic) bool shouldUseTemplateColors;
 @property (readonly) Class superclass;
 
 + (id)_extraLargeAlarmImageProvider;
@@ -22,19 +22,19 @@
 + (id)_modularSmallAlarmImageProvider;
 + (id)_modularSmallStopwatchImageProvider;
 + (id)_modularSmallTimerImageProvider;
-+ (id)largeModuleViewForComplicationType:(unsigned int)arg1;
-+ (id)smallModuleViewForComplicationType:(unsigned int)arg1;
++ (id)largeModuleViewForComplicationType:(unsigned long long)arg1;
++ (id)smallModuleViewForComplicationType:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
-- (id)_attributeEnDashesWithinString:(id)arg1 typographicTracking:(float)arg2 baseFont:(id)arg3;
-- (id)_attributedStringWithText:(id)arg1 typographicTracking:(float)arg2 baseFont:(id)arg3;
+- (id)_attributeEnDashesWithinString:(id)arg1 typographicTracking:(double)arg2 baseFont:(id)arg3;
+- (id)_attributedStringWithText:(id)arg1 typographicTracking:(double)arg2 baseFont:(id)arg3;
 - (id)_newImageViewSubview;
 - (id)_newLabelSubview;
 - (id)_newLabelSubviewWithFont:(id)arg1;
-- (void)_setTypographicTracking:(float)arg1 andFont:(id)arg2 onAttributedString:(id*)arg3 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
+- (void)_setTypographicTracking:(double)arg1 andFont:(id)arg2 onAttributedString:(id*)arg3 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4;
 - (id)displayObserver;
-- (BOOL)isXL;
+- (bool)isXL;
 - (void)setDisplayObserver:(id)arg1;
-- (void)setIsXL:(BOOL)arg1;
+- (void)setIsXL:(bool)arg1;
 
 @end

@@ -3,55 +3,47 @@
  */
 
 @interface MPCPlaybackIntent : NSObject {
-    int  _artworkSource;
-    <NSSecureCoding> * _artworkToken;
-    int  _kind;
+    NSString * _localizedTitle;
     NSString * _playActivityFeatureName;
     NSData * _playActivityRecommendationData;
     <MPCPlaybackIntentDataSource> * _resolvedTracklistDataSource;
-    int  _shuffleMode;
-    NSString * _title;
-    int  _tracklistSource;
+    long long  _shuffleMode;
+    long long  _tracklistSource;
     <NSSecureCoding> * _tracklistToken;
 }
 
-@property (nonatomic) int artworkSource;
-@property (nonatomic, retain) <NSSecureCoding> *artworkToken;
-@property (nonatomic) int kind;
+@property (nonatomic, copy) NSString *localizedTitle;
 @property (nonatomic, copy) NSString *playActivityFeatureName;
 @property (nonatomic, copy) NSData *playActivityRecommendationData;
-@property (nonatomic) int shuffleMode;
-@property (nonatomic, copy) NSString *title;
+@property (nonatomic) long long shuffleMode;
 @property (nonatomic, readonly) <MPCPlaybackIntentDataSource> *tracklistDataSource;
-@property (nonatomic) int tracklistSource;
+@property (nonatomic) long long tracklistSource;
 @property (nonatomic, retain) <NSSecureCoding> *tracklistToken;
 
-+ (id)tracklistDataSourceForSource:(int)arg1;
++ (id)radioPlaybackIntentFromAlbum:(id)arg1;
++ (id)radioPlaybackIntentFromArtist:(id)arg1;
++ (id)radioPlaybackIntentFromSong:(id)arg1;
++ (id)radioPlaybackIntentWithStation:(id)arg1;
++ (id)radioPlaybackIntentWithStationStringID:(id)arg1;
++ (id)radioPlaybackIntentWithStationURL:(id)arg1;
++ (id)tracklistDataSourceForSource:(long long)arg1;
 
 - (void).cxx_destruct;
-- (id)_legacyRepresentationForPlayer:(id)arg1;
-- (id)artworkCatalog;
-- (int)artworkSource;
-- (id)artworkToken;
-- (void)configureContainer:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)description;
-- (int)kind;
+- (void)getPlaybackContextWithCompletion:(id /* block */)arg1;
+- (void)getRemotePlaybackQueueRepresentationWithPlayerPath:(id)arg1 completion:(id /* block */)arg2;
+- (id)localizedTitle;
 - (id)playActivityFeatureName;
 - (id)playActivityRecommendationData;
-- (void)populateItemsForContainer:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)setArtworkSource:(int)arg1;
-- (void)setArtworkToken:(id)arg1;
-- (void)setKind:(int)arg1;
+- (void)setLocalizedTitle:(id)arg1;
 - (void)setPlayActivityFeatureName:(id)arg1;
 - (void)setPlayActivityRecommendationData:(id)arg1;
-- (void)setShuffleMode:(int)arg1;
-- (void)setTitle:(id)arg1;
-- (void)setTracklistSource:(int)arg1;
+- (void)setShuffleMode:(long long)arg1;
+- (void)setTracklistSource:(long long)arg1;
 - (void)setTracklistToken:(id)arg1;
-- (int)shuffleMode;
-- (id)title;
+- (long long)shuffleMode;
 - (id)tracklistDataSource;
-- (int)tracklistSource;
+- (long long)tracklistSource;
 - (id)tracklistToken;
 
 @end

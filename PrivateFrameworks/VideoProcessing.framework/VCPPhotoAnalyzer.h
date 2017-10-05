@@ -4,43 +4,32 @@
 
 @interface VCPPhotoAnalyzer : NSObject {
     NSMutableDictionary * _analysis;
-    NSDictionary * _exif;
+    VCPAsset * _asset;
     NSData * _featureData;
-    struct __CVBuffer { } * _image;
-    struct __CVBuffer { } * _imageLowRes;
-    unsigned int  _irisAnalyses;
+    unsigned long long  _irisAnalyses;
     AVAsset * _irisAsset;
-    float  _irisPhotoExposureSec;
     float  _irisPhotoOffsetSec;
-    BOOL  _isPano;
-    unsigned int  _phFaceFlags;
+    bool  _isPano;
+    unsigned long long  _phFaceFlags;
     NSDictionary * _phFaceResults;
-    unsigned int  _requestedAnalyses;
+    unsigned long long  _requestedAnalyses;
     NSMutableDictionary * _results;
-    BOOL  _sdof;
-    int  _status;
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    }  _transform;
+    bool  _sdof;
+    long long  _status;
 }
 
-@property (readonly) int status;
+@property (readonly) long long status;
 
-+ (BOOL)canAnalyzeUndegraded:(id)arg1 withResources:(id)arg2;
++ (bool)canAnalyzeUndegraded:(id)arg1 withResources:(id)arg2;
 + (id)resourceForAsset:(id)arg1 withResources:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)analyzeAsset:(id /* block */)arg1;
-- (long)analyzeImage:(unsigned int*)arg1 performedAnalyses:(unsigned int*)arg2 objectRect:(id)arg3 cancel:(id /* block */)arg4;
-- (void)dealloc;
-- (long)downscaleImage:(struct __CVBuffer { }*)arg1 scaledImage:(struct __CVBuffer {}**)arg2 majorDimension:(int)arg3;
-- (id)initWithImage:(struct __CVBuffer { }*)arg1 exif:(id)arg2 pairMovie:(id)arg3 forAnalysisTypes:(unsigned int)arg4;
-- (id)initWithPHAsset:(id)arg1 forAnalysisTypes:(unsigned int)arg2;
-- (int)status;
+- (int)analyzeImage:(unsigned long long*)arg1 performedAnalyses:(unsigned long long*)arg2 movingObjectResults:(id)arg3 obstruction:(id)arg4 cancel:(id /* block */)arg5;
+- (int)downscaleImage:(struct __CVBuffer { }*)arg1 scaledImage:(struct __CVBuffer {}**)arg2 majorDimension:(int)arg3;
+- (id)initWithImageURL:(id)arg1 pairMovie:(id)arg2 forAnalysisTypes:(unsigned long long)arg3;
+- (id)initWithPHAsset:(id)arg1 forAnalysisTypes:(unsigned long long)arg2;
+- (long long)status;
+- (void)updateDegradedFlagForMajorDimension:(unsigned long long)arg1;
 
 @end

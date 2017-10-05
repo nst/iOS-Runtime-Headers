@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)shouldCancel;
+- (bool)shouldCancel;
 
 @end

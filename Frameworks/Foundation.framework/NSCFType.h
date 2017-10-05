@@ -4,14 +4,14 @@
 
 @interface NSCFType : NSObject
 
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (BOOL)allowsWeakReference;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)allowsWeakReference;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
-- (BOOL)retainWeakReference;
+- (unsigned long long)retainCount;
+- (bool)retainWeakReference;
 
 @end

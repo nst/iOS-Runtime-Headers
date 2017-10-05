@@ -4,7 +4,7 @@
 
 @interface NPKProtoResyncNeededRequest : PBRequest <NSCopying> {
     NPKProtoHash * _expectedHash;
-    BOOL  _fullResyncNeeded;
+    bool  _fullResyncNeeded;
     struct { 
         unsigned int resyncID : 1; 
         unsigned int fullResyncNeeded : 1; 
@@ -15,10 +15,10 @@
 }
 
 @property (nonatomic, retain) NPKProtoHash *expectedHash;
-@property (nonatomic) BOOL fullResyncNeeded;
-@property (nonatomic, readonly) BOOL hasExpectedHash;
-@property (nonatomic) BOOL hasFullResyncNeeded;
-@property (nonatomic) BOOL hasResyncID;
+@property (nonatomic) bool fullResyncNeeded;
+@property (nonatomic, readonly) bool hasExpectedHash;
+@property (nonatomic) bool hasFullResyncNeeded;
+@property (nonatomic) bool hasResyncID;
 @property (nonatomic, retain) NSMutableArray *manifestHashes;
 @property (nonatomic) unsigned int resyncID;
 @property (nonatomic, retain) NSMutableArray *uniqueIDs;
@@ -36,28 +36,28 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)expectedHash;
-- (BOOL)fullResyncNeeded;
-- (BOOL)hasExpectedHash;
-- (BOOL)hasFullResyncNeeded;
-- (BOOL)hasResyncID;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)fullResyncNeeded;
+- (bool)hasExpectedHash;
+- (bool)hasFullResyncNeeded;
+- (bool)hasResyncID;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)manifestHashes;
-- (id)manifestHashesAtIndex:(unsigned int)arg1;
-- (unsigned int)manifestHashesCount;
+- (id)manifestHashesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)manifestHashesCount;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)resyncID;
 - (void)setExpectedHash:(id)arg1;
-- (void)setFullResyncNeeded:(BOOL)arg1;
-- (void)setHasFullResyncNeeded:(BOOL)arg1;
-- (void)setHasResyncID:(BOOL)arg1;
+- (void)setFullResyncNeeded:(bool)arg1;
+- (void)setHasFullResyncNeeded:(bool)arg1;
+- (void)setHasResyncID:(bool)arg1;
 - (void)setManifestHashes:(id)arg1;
 - (void)setResyncID:(unsigned int)arg1;
 - (void)setUniqueIDs:(id)arg1;
 - (id)uniqueIDs;
-- (id)uniqueIDsAtIndex:(unsigned int)arg1;
-- (unsigned int)uniqueIDsCount;
+- (id)uniqueIDsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)uniqueIDsCount;
 - (void)writeTo:(id)arg1;
 
 @end

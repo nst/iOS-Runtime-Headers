@@ -5,6 +5,6 @@
 
 @required
 
-- (int)database:(FCCKDatabase *)arg1 willEnqueueOperation:(CKDatabaseOperation *)arg2;
+- (long long)database:(FCCKPrivateDatabase *)arg1 willEnqueueOperation:(CKDatabaseOperation *)arg2;
 
 @end

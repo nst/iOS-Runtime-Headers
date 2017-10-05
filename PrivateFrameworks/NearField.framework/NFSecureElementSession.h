@@ -4,13 +4,13 @@
 
 @interface NFSecureElementSession : NFSession <NFAppletCollection, NFSecureElementSessionCallbacks> {
     NSMutableDictionary * _appletsById;
-    BOOL  _hasApplets;
+    bool  _hasApplets;
     NFSecureElement * _secureElement;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) NFSecureElement *secureElement;
 @property (readonly) Class superclass;
 
@@ -19,15 +19,15 @@
 - (id)allApplets;
 - (id)appletWithIdentifier:(id)arg1;
 - (void)dealloc;
-- (BOOL)deleteAllApplets:(BOOL)arg1;
-- (BOOL)deleteApplets:(id)arg1 queueServerConnection:(BOOL)arg2;
+- (bool)deleteAllApplets:(bool)arg1;
+- (bool)deleteApplets:(id)arg1 queueServerConnection:(bool)arg2;
 - (void)didExitRestrictedMode;
 - (id)dumpDomain:(unsigned char)arg1;
-- (BOOL)getCryptogram:(id*)arg1 challengeResponse:(id*)arg2;
+- (bool)getCryptogram:(id*)arg1 challengeResponse:(id*)arg2;
 - (id)getOSUpdateLog;
 - (id)initWithSecureElement:(id)arg1;
 - (id)restrictedModeLog;
-- (BOOL)runScript:(id)arg1 results:(id*)arg2 lastStatus:(unsigned int*)arg3;
+- (bool)runScript:(id)arg1 results:(id*)arg2 lastStatus:(unsigned long long*)arg3;
 - (id)secureElement;
 - (id)signChallenge:(id)arg1;
 - (id)stateInformation;

@@ -6,14 +6,14 @@
     PUAssetHidingHelper * _assetHidingHelper;
 }
 
-+ (int)activityCategory;
++ (long long)activityCategory;
 
 - (void).cxx_destruct;
 - (id)_assetHidingHelper;
 - (id)activityImage;
 - (id)activityTitle;
 - (id)activityType;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
+- (bool)canPerformWithActivityItems:(id)arg1;
 - (void)performActivity;
 - (void)setItemSourceController:(id)arg1;
 

@@ -10,11 +10,11 @@
 - (NSDictionary *)colorInfoForOutput:(BWNodeOutput *)arg1;
 - (BWNodeOutput *)detectedFacesOutput;
 - (void)setVideoCaptureOutputColorInfoOverride:(NSDictionary *)arg1;
-- (void)setVideoCaptureOutputPixelBufferAttachmentModificationAllowed:(BOOL)arg1;
+- (void)setVideoCaptureOutputPixelBufferAttachmentModificationAllowed:(bool)arg1;
 - (BWNodeOutput *)stillImageOutput;
 - (BWNodeOutput *)videoCaptureOutput;
 - (NSDictionary *)videoCaptureOutputColorInfoOverride;
-- (BOOL)videoCaptureOutputPixelBufferAttachmentModificationAllowed;
+- (bool)videoCaptureOutputPixelBufferAttachmentModificationAllowed;
 - (void)willStop;
 
 @end

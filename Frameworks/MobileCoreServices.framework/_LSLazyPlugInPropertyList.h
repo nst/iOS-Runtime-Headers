@@ -4,12 +4,17 @@
 
 @interface _LSLazyPlugInPropertyList : _LSLazyPropertyList {
     _LSLazyPropertyList * _infoPlist;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _mergeLock;
+    NSDictionary * _mergedPlist;
     _LSLazyPropertyList * _sdkPlist;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (id)_loadPropertyListPeeking:(BOOL)arg1;
+- (bool)_getPropertyList:(id*)arg1;
+- (bool)_getValue:(id*)arg1 forPropertyListKey:(id)arg2;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

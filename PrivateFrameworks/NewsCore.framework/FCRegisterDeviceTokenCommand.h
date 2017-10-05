@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (id)deviceToken;
 - (void)encodeWithCoder:(id)arg1;
-- (void)executeWithContext:(id)arg1 delegate:(id)arg2;
+- (void)executeWithContext:(id)arg1 delegate:(id)arg2 qualityOfService:(long long)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithUserID:(id)arg1 deviceToken:(id)arg2 storefrontID:(id)arg3;
 - (void)setDeviceToken:(id)arg1;

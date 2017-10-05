@@ -3,38 +3,39 @@
  */
 
 @interface _DECPredictionStore : NSObject {
-    _DECSqliteDatabase * _db;
+    _PASSqliteDatabase * _db;
     NSConditionLock * _initLock;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _queueLock;
     NSMutableArray * _queuedResults;
     _DECPredictionStoreReader * _reader;
 }
 
-+ (id)_initializeDatabase:(id)arg1 newDatabaseCreated:(BOOL*)arg2 simulateCrash:(BOOL)arg3;
-+ (BOOL)_isDatabaseIntegrityViolated:(id)arg1;
-+ (id)_recreateCorruptDatabase:(id)arg1 simulateCrash:(BOOL)arg2;
++ (id)_initializeDatabase:(id)arg1 newDatabaseCreated:(bool*)arg2 simulateCrash:(bool)arg3;
++ (bool)_isDatabaseIntegrityViolated:(id)arg1;
++ (id)_recreateCorruptDatabase:(id)arg1 simulateCrash:(bool)arg2;
 
 - (void).cxx_destruct;
 - (void)_blockUntilReady;
-- (void)_initStoreWithPath:(id)arg1 shouldSimulateCrash:(BOOL)arg2;
+- (void)_initStoreWithPath:(id)arg1 shouldSimulateCrash:(bool)arg2;
 - (void)_migrate;
 - (id)_migrationPlan;
 - (void)_writeResult:(id)arg1;
 - (void)close;
-- (id)dateOfLastPredictionForConsumer:(unsigned int)arg1 category:(unsigned int)arg2;
+- (id)dateOfLastPredictionForConsumer:(unsigned long long)arg1 category:(unsigned long long)arg2;
+- (void)dealloc;
 - (void)flushQueue;
 - (id)init;
 - (id)initWithInMemoryStore;
 - (id)initWithPath:(id)arg1;
-- (id)initWithPath:(id)arg1 shouldSimulateCrash:(BOOL)arg2;
+- (id)initWithPath:(id)arg1 shouldSimulateCrash:(bool)arg2;
 - (id)initWithSqliteDatabase:(id)arg1;
-- (int)insertResultForConsumer:(unsigned int)arg1 category:(unsigned int)arg2 result:(id)arg3;
-- (void)queuedInsertResultForConsumer:(unsigned int)arg1 category:(unsigned int)arg2 result:(id)arg3;
-- (id)resultForConsumer:(unsigned int)arg1 category:(unsigned int)arg2;
-- (id)resultForConsumer:(unsigned int)arg1 category:(unsigned int)arg2 error:(id*)arg3;
-- (unsigned int)schemaVersion;
+- (long long)insertResultForConsumer:(unsigned long long)arg1 category:(unsigned long long)arg2 result:(id)arg3;
+- (void)queuedInsertResultForConsumer:(unsigned long long)arg1 category:(unsigned long long)arg2 result:(id)arg3;
+- (id)resultForConsumer:(unsigned long long)arg1 category:(unsigned long long)arg2;
+- (id)resultForConsumer:(unsigned long long)arg1 category:(unsigned long long)arg2 error:(id*)arg3;
+- (unsigned long long)schemaVersion;
 
 @end

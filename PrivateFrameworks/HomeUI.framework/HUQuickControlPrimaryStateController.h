@@ -4,9 +4,10 @@
 
 @interface HUQuickControlPrimaryStateController : HUQuickControlController
 
-@property (nonatomic, readonly) HFPrimaryStateControlItem *controlItem;
+@property (nonatomic, readonly) HFControlItem<HFPrimaryStateWriter> *controlItem;
 
 + (Class)controlItemClass;
++ (bool)matchesControlItem:(id)arg1;
 
 - (id)controlToViewValueTransformer;
 - (id)createInteractionCoordinator;

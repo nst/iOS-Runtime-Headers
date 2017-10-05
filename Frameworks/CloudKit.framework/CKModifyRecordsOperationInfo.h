@@ -3,33 +3,33 @@
  */
 
 @interface CKModifyRecordsOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    BOOL  _atomic;
+    bool  _atomic;
     NSData * _clientChangeTokenData;
     NSDictionary * _conflictLosersToResolveByRecordID;
     NSDictionary * _pluginFieldsForRecordDeletesByID;
     NSArray * _recordIDsToDelete;
     NSDictionary * _recordIDsToDeleteToEtags;
     NSArray * _recordsToSave;
-    int  _savePolicy;
-    BOOL  _shouldOnlySaveAssetContent;
-    BOOL  _shouldReportRecordsInFlight;
+    long long  _savePolicy;
+    bool  _shouldOnlySaveAssetContent;
+    bool  _shouldReportRecordsInFlight;
 }
 
-@property (nonatomic) BOOL atomic;
+@property (nonatomic) bool atomic;
 @property (nonatomic, retain) NSData *clientChangeTokenData;
 @property (nonatomic, retain) NSDictionary *conflictLosersToResolveByRecordID;
 @property (nonatomic, copy) NSDictionary *pluginFieldsForRecordDeletesByID;
 @property (nonatomic, retain) NSArray *recordIDsToDelete;
 @property (nonatomic, copy) NSDictionary *recordIDsToDeleteToEtags;
 @property (nonatomic, retain) NSArray *recordsToSave;
-@property (nonatomic) int savePolicy;
-@property (nonatomic) BOOL shouldOnlySaveAssetContent;
-@property (nonatomic) BOOL shouldReportRecordsInFlight;
+@property (nonatomic) long long savePolicy;
+@property (nonatomic) bool shouldOnlySaveAssetContent;
+@property (nonatomic) bool shouldReportRecordsInFlight;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)atomic;
+- (bool)atomic;
 - (id)clientChangeTokenData;
 - (id)conflictLosersToResolveByRecordID;
 - (void)encodeWithCoder:(id)arg1;
@@ -38,18 +38,18 @@
 - (id)recordIDsToDelete;
 - (id)recordIDsToDeleteToEtags;
 - (id)recordsToSave;
-- (int)savePolicy;
-- (void)setAtomic:(BOOL)arg1;
+- (long long)savePolicy;
+- (void)setAtomic:(bool)arg1;
 - (void)setClientChangeTokenData:(id)arg1;
 - (void)setConflictLosersToResolveByRecordID:(id)arg1;
 - (void)setPluginFieldsForRecordDeletesByID:(id)arg1;
 - (void)setRecordIDsToDelete:(id)arg1;
 - (void)setRecordIDsToDeleteToEtags:(id)arg1;
 - (void)setRecordsToSave:(id)arg1;
-- (void)setSavePolicy:(int)arg1;
-- (void)setShouldOnlySaveAssetContent:(BOOL)arg1;
-- (void)setShouldReportRecordsInFlight:(BOOL)arg1;
-- (BOOL)shouldOnlySaveAssetContent;
-- (BOOL)shouldReportRecordsInFlight;
+- (void)setSavePolicy:(long long)arg1;
+- (void)setShouldOnlySaveAssetContent:(bool)arg1;
+- (void)setShouldReportRecordsInFlight:(bool)arg1;
+- (bool)shouldOnlySaveAssetContent;
+- (bool)shouldReportRecordsInFlight;
 
 @end

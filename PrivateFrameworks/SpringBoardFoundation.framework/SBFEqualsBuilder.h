@@ -4,13 +4,13 @@
 
 @interface SBFEqualsBuilder : NSObject
 
-+ (BOOL)evaluateBuilderBlock:(id /* block */)arg1 remainingBlocks:(void*)arg2;
-+ (BOOL)isBool:(BOOL)arg1 equalToOther:(BOOL)arg2;
-+ (BOOL)isObject:(id)arg1 equalToOther:(id)arg2;
-+ (BOOL)isObject:(id)arg1 equalToOther:(id)arg2 withBlocks:(id /* block */)arg3;
-+ (BOOL)isObject:(id)arg1 kindOfClass:(Class)arg2 andEqualToObject:(id)arg3 withBlocks:(id /* block */)arg4;
-+ (BOOL)isObject:(id)arg1 memberOfClass:(Class)arg2 andEqualToObject:(id)arg3 withBlocks:(id /* block */)arg4;
-+ (BOOL)isObject:(id)arg1 memberOfSameClassAndEqualTo:(id)arg2 withBlocks:(id /* block */)arg3;
-+ (BOOL)isSize:(struct CGSize { float x1; float x2; })arg1 equalToOther:(struct CGSize { float x1; float x2; })arg2;
++ (bool)evaluateBuilderBlock:(id /* block */)arg1 remainingBlocks:(char *)arg2;
++ (bool)isBool:(bool)arg1 equalToOther:(bool)arg2;
++ (bool)isObject:(id)arg1 equalToOther:(id)arg2;
++ (bool)isObject:(id)arg1 equalToOther:(id)arg2 withBlocks:(id /* block */)arg3;
++ (bool)isObject:(id)arg1 kindOfClass:(Class)arg2 andEqualToObject:(id)arg3 withBlocks:(id /* block */)arg4;
++ (bool)isObject:(id)arg1 memberOfClass:(Class)arg2 andEqualToObject:(id)arg3 withBlocks:(id /* block */)arg4;
++ (bool)isObject:(id)arg1 memberOfSameClassAndEqualTo:(id)arg2 withBlocks:(id /* block */)arg3;
++ (bool)isSize:(struct CGSize { double x1; double x2; })arg1 equalToOther:(struct CGSize { double x1; double x2; })arg2;
 
 @end

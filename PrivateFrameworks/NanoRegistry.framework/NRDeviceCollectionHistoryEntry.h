@@ -7,7 +7,7 @@
     NRDeviceCollectionDiff * _diff;
     NRDeviceCollectionHistory * _historyManager;
     unsigned long long  _index;
-    unsigned long  _switchIndex;
+    unsigned int  _switchIndex;
 }
 
 @property (nonatomic, retain) NSDate *date;
@@ -15,9 +15,9 @@
 @property (nonatomic) NRDeviceCollectionHistory *historyManager;
 @property (nonatomic) unsigned long long index;
 @property (nonatomic, readonly) NRMutableDeviceCollection *state;
-@property (nonatomic) unsigned long switchIndex;
+@property (nonatomic) unsigned int switchIndex;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -25,18 +25,18 @@
 - (id)description;
 - (id)diff;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)historyManager;
 - (unsigned long long)index;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithHistory:(id)arg1 index:(unsigned long long)arg2 date:(id)arg3 diff:(id)arg4 switchIndex:(unsigned long)arg5;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithHistory:(id)arg1 index:(unsigned long long)arg2 date:(id)arg3 diff:(id)arg4 switchIndex:(unsigned int)arg5;
+- (bool)isEqual:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setDiff:(id)arg1;
 - (void)setHistoryManager:(id)arg1;
 - (void)setIndex:(unsigned long long)arg1;
-- (void)setSwitchIndex:(unsigned long)arg1;
+- (void)setSwitchIndex:(unsigned int)arg1;
 - (id)state;
-- (unsigned long)switchIndex;
+- (unsigned int)switchIndex;
 
 @end

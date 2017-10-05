@@ -4,22 +4,38 @@
 
 @interface ICAttachmentImageModel : ICAttachmentModel
 
-+ (id)contentInfoTextWithAttachmentCount:(unsigned int)arg1;
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
++ (id)contentInfoTextWithAttachmentCount:(unsigned long long)arg1;
+
+- (void)addLocation;
+- (id)attributesForSharingHTMLWithTagName:(id*)arg1 textContent:(id*)arg2;
+- (bool)canConvertToHTMLForSharing;
+- (bool)canMarkup;
+- (bool)canSaveURL;
+- (id)generateHardLinkURLIfNecessaryForURL:(id)arg1;
+- (bool)hasPreviews;
+- (bool)hasThumbnailImage;
+- (bool)needsFullSizePreview;
+- (long long)previewImageOrientation;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })previewImageOrientationTransform;
+- (id)previewImageTypeUTI;
+- (id)previewItemTitle;
+- (id)saveURL;
+- (bool)shouldCropImage;
+- (bool)showThumbnailInNoteList;
+- (bool)supportsQuickLook;
+- (void)updateAttachmentSize;
+- (void)updateFileBasedAttributes;
+
+// Image: /System/Library/PrivateFrameworks/NotesUI.framework/NotesUI
 
 - (id)activityItems;
-- (BOOL)canMarkup;
+- (id)generateFullSizePreviewWithAttachmentIdentifier:(id)arg1 existingPreviewImage:(id)arg2 markupModelData:(id)arg3 imageOrientation:(long long)arg4 imageFilterType:(short)arg5 mediaDecryptedData:(id)arg6 mediaURL:(id)arg7 mediaSize:(struct CGSize { double x1; double x2; })arg8 croppingQuad:(id)arg9;
+- (bool)generatePreviewsDuringCloudActivity;
 - (void)generatePreviewsInOperation:(id)arg1;
 - (id /* block */)genericBrickThumbnailCreator;
 - (id /* block */)genericListThumbnailCreator;
-- (BOOL)hasPreviews;
-- (BOOL)hasThumbnailImage;
-- (BOOL)needToGeneratePreviews;
-- (BOOL)needsFullSizePreview;
-- (int)previewImageOrientation;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })previewImageOrientationTransform;
-- (BOOL)showThumbnailInNoteList;
-- (BOOL)supportsQuickLook;
-- (void)updateAttachmentSize;
-- (void)updateFileBasedAttributes;
+- (bool)needToGeneratePreviews;
 
 @end

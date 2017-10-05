@@ -14,9 +14,9 @@
     GEOPDViewportInfo * _viewportInfo;
 }
 
-@property (nonatomic) BOOL hasMaxResults;
-@property (nonatomic) BOOL hasRequestLocalTimestamp;
-@property (nonatomic, readonly) BOOL hasViewportInfo;
+@property (nonatomic) bool hasMaxResults;
+@property (nonatomic) bool hasRequestLocalTimestamp;
+@property (nonatomic, readonly) bool hasViewportInfo;
 @property (nonatomic) unsigned int maxResults;
 @property (nonatomic) double requestLocalTimestamp;
 @property (nonatomic, retain) NSMutableArray *suggestionEntryMetadatas;
@@ -25,31 +25,31 @@
 
 + (Class)suggestionEntryMetadataType;
 
+- (void).cxx_destruct;
 - (void)addSuggestionEntryMetadata:(id)arg1;
 - (void)clearSuggestionEntryMetadatas;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasMaxResults;
-- (BOOL)hasRequestLocalTimestamp;
-- (BOOL)hasViewportInfo;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasMaxResults;
+- (bool)hasRequestLocalTimestamp;
+- (bool)hasViewportInfo;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (unsigned int)maxResults;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (double)requestLocalTimestamp;
-- (void)setHasMaxResults:(BOOL)arg1;
-- (void)setHasRequestLocalTimestamp:(BOOL)arg1;
+- (void)setHasMaxResults:(bool)arg1;
+- (void)setHasRequestLocalTimestamp:(bool)arg1;
 - (void)setMaxResults:(unsigned int)arg1;
 - (void)setRequestLocalTimestamp:(double)arg1;
 - (void)setSuggestionEntryMetadatas:(id)arg1;
 - (void)setViewportInfo:(id)arg1;
-- (id)suggestionEntryMetadataAtIndex:(unsigned int)arg1;
+- (id)suggestionEntryMetadataAtIndex:(unsigned long long)arg1;
 - (id)suggestionEntryMetadatas;
-- (unsigned int)suggestionEntryMetadatasCount;
+- (unsigned long long)suggestionEntryMetadatasCount;
 - (id)unknownFields;
 - (id)viewportInfo;
 - (void)writeTo:(id)arg1;

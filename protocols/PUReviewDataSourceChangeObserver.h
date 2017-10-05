@@ -5,6 +5,6 @@
 
 @required
 
-- (void)reviewDataSourceDidChange:(PUReviewDataSource *)arg1;
+- (void)reviewDataSourceDidChange:(PUReviewDataSource *)arg1 changeDetails:(PXArrayChangeDetails *)arg2;
 
 @end

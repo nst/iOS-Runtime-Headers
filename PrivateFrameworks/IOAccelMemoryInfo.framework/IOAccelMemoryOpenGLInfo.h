@@ -8,7 +8,7 @@
     NSString * debugLabel;
     int  name;
     NSString * objectDescription;
-    unsigned int  objectType;
+    unsigned long long  objectType;
     int  pid;
     NSString * sharegroup;
 }
@@ -17,7 +17,7 @@
 @property (retain) NSString *debugLabel;
 @property int name;
 @property (retain) NSString *objectDescription;
-@property unsigned int objectType;
+@property unsigned long long objectType;
 @property int pid;
 @property (retain) NSString *sharegroup;
 
@@ -27,13 +27,13 @@
 - (id)description;
 - (int)name;
 - (id)objectDescription;
-- (unsigned int)objectType;
+- (unsigned long long)objectType;
 - (int)pid;
 - (void)setBlamedProcess:(int)arg1;
 - (void)setDebugLabel:(id)arg1;
 - (void)setName:(int)arg1;
 - (void)setObjectDescription:(id)arg1;
-- (void)setObjectType:(unsigned int)arg1;
+- (void)setObjectType:(unsigned long long)arg1;
 - (void)setPid:(int)arg1;
 - (void)setSharegroup:(id)arg1;
 - (id)sharegroup;

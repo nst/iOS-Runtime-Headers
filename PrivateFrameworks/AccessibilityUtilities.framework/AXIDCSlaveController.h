@@ -5,7 +5,7 @@
 @interface AXIDCSlaveController : AXIDCRemoteController <NSNetServiceDelegate> {
     struct __CFSocket { } * _ipv4socket;
     struct __CFSocket { } * _ipv6socket;
-    BOOL  _isVisible;
+    bool  _isVisible;
     AXDispatchTimer * _resolveTimer;
     id /* block */  _searchCompletion;
     double  _searchTimeout;
@@ -14,19 +14,20 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) id /* block */ searchCompletion;
 @property (nonatomic) double searchTimeout;
 @property (nonatomic, retain) NSString *serviceType;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)acceptConnection:(int)arg1;
 - (void)closeConnectionWithError:(id)arg1;
 - (void)dealloc;
 - (id)initWithServiceType:(id)arg1;
-- (BOOL)initialize;
-- (BOOL)isSlave;
-- (BOOL)isVisible;
+- (bool)initialize;
+- (bool)isSlave;
+- (bool)isVisible;
 - (void)netService:(id)arg1 didNotPublish:(id)arg2;
 - (void)netServiceDidPublish:(id)arg1;
 - (void)netServiceDidStop:(id)arg1;
@@ -40,7 +41,7 @@
 - (void)setSearchCompletion:(id /* block */)arg1;
 - (void)setSearchTimeout:(double)arg1;
 - (void)setServiceType:(id)arg1;
-- (BOOL)setVisible:(BOOL)arg1;
-- (BOOL)shouldAcceptConnection;
+- (bool)setVisible:(bool)arg1;
+- (bool)shouldAcceptConnection;
 
 @end

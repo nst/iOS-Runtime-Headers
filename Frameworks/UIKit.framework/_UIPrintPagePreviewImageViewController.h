@@ -3,12 +3,12 @@
  */
 
 @interface _UIPrintPagePreviewImageViewController : UIViewController {
-    int  _pageIndex;
+    long long  _pageIndex;
     UIPrintPreviewViewController * _printPreviewViewController;
 }
 
 - (void).cxx_destruct;
-- (id)initWithPageIndex:(int)arg1 printPreviewViewController:(id)arg2;
+- (id)initWithPageIndex:(long long)arg1 printPreviewViewController:(id)arg2;
 - (id)previewActionItems;
 
 @end

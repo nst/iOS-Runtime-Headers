@@ -7,15 +7,15 @@
     NSArray * _answers;
     NSArray * _authorities;
     NSData * _data;
-    int  _identifier;
-    BOOL  _isAuthoritativeAnswer;
-    BOOL  _isRecursionAvailable;
-    BOOL  _isRecursionDesired;
-    BOOL  _isTruncated;
-    int  _messageType;
-    int  _opCode;
+    long long  _identifier;
+    bool  _isAuthoritativeAnswer;
+    bool  _isRecursionAvailable;
+    bool  _isRecursionDesired;
+    bool  _isTruncated;
+    long long  _messageType;
+    long long  _opCode;
     NSArray * _queries;
-    int  _responseCode;
+    long long  _responseCode;
     NSDate * _timestamp;
 }
 
@@ -23,15 +23,15 @@
 @property (readonly) NSArray *answers;
 @property (readonly) NSArray *authorities;
 @property (readonly) NSData *data;
-@property (readonly) int identifier;
-@property (readonly) BOOL isAuthoritativeAnswer;
-@property (readonly) BOOL isRecursionAvailable;
-@property (readonly) BOOL isRecursionDesired;
-@property (readonly) BOOL isTruncated;
-@property (readonly) int messageType;
-@property (readonly) int opCode;
+@property (readonly) long long identifier;
+@property (readonly) bool isAuthoritativeAnswer;
+@property (readonly) bool isRecursionAvailable;
+@property (readonly) bool isRecursionDesired;
+@property (readonly) bool isTruncated;
+@property (readonly) long long messageType;
+@property (readonly) long long opCode;
 @property (readonly) NSArray *queries;
-@property (readonly) int responseCode;
+@property (readonly) long long responseCode;
 @property (readonly) NSString *responseCodeString;
 @property (readonly) NSDate *timestamp;
 
@@ -40,16 +40,16 @@
 - (id)answers;
 - (id)authorities;
 - (id)data;
-- (int)identifier;
+- (long long)identifier;
 - (id)initFromData:(id)arg1;
-- (BOOL)isAuthoritativeAnswer;
-- (BOOL)isRecursionAvailable;
-- (BOOL)isRecursionDesired;
-- (BOOL)isTruncated;
-- (int)messageType;
-- (int)opCode;
+- (bool)isAuthoritativeAnswer;
+- (bool)isRecursionAvailable;
+- (bool)isRecursionDesired;
+- (bool)isTruncated;
+- (long long)messageType;
+- (long long)opCode;
 - (id)queries;
-- (int)responseCode;
+- (long long)responseCode;
 - (id)responseCodeString;
 - (id)timestamp;
 

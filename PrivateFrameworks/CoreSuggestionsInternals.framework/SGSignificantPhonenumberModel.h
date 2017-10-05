@@ -2,38 +2,9 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@interface SGSignificantPhonenumberModel : NSObject <SGModel> {
-    SGPipelineTransformer * _covariateTransformer;
-    <PMLRegressionModelProtocol> * _model;
-    SGPipelineTransformer * _ngramtransformers;
-    SGPipelineTransformer * _transformers;
-}
+@interface SGSignificantPhonenumberModel : SGModel
 
-@property (retain) SGPipelineTransformer *covariateTransformer;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (retain) <PMLRegressionModelProtocol> *model;
-@property (retain) SGPipelineTransformer *ngramtransformers;
-@property (readonly) Class superclass;
-@property (retain) SGPipelineTransformer *transformers;
-
-- (void).cxx_destruct;
-- (id)covariateTransformer;
-- (id)covariatize:(id)arg1;
-- (id)features:(id)arg1;
-- (id)featurize:(id)arg1;
-- (id)fit:(id)arg1 toOutcome:(BOOL)arg2;
-- (id)initWithWeights:(id)arg1 isLogistic:(BOOL)arg2;
-- (id)model;
-- (id)ngrammed:(id)arg1;
-- (id)ngramtransformers;
-- (BOOL)predict:(id)arg1;
-- (void)setCovariateTransformer:(id)arg1;
-- (void)setModel:(id)arg1;
-- (void)setNgramtransformers:(id)arg1;
-- (void)setTransformers:(id)arg1;
-- (id)swapped:(id)arg1;
-- (id)transformers;
++ (id)newTransformerInstanceForLanguage:(id)arg1;
++ (id)temporaryKeyMap;
 
 @end

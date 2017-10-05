@@ -5,17 +5,19 @@
 @interface TSCHChartSeriesTypeLine : TSCHChartSeriesType
 
 - (id)elementBuilder;
+- (int)fillPropertyType;
+- (id)fillPropertyTypeName;
 - (unsigned int)filterChartLabelPosition:(unsigned int)arg1;
 - (id)g_genericToSpecificPropertyMapLine;
 - (id)genericToSpecificPropertyMap;
 - (id)init;
 - (int)legendBadgeType;
 - (id)propertiesForReferenceColors;
-- (BOOL)supportsFillSetFill;
-- (BOOL)supportsLineConnectionStyle;
-- (BOOL)supportsSeriesFill;
-- (BOOL)supportsSymbolDrawing;
-- (BOOL)supportsSymbolFillForSymbolType:(int)arg1;
-- (unsigned int)valueDimensions;
+- (bool)supportsFillSetFill;
+- (bool)supportsLineConnectionStyle;
+- (bool)supportsSeriesFill;
+- (bool)supportsSymbolDrawing;
+- (bool)supportsSymbolFillForSymbolType:(int)arg1;
+- (unsigned long long)valueDimensions;
 
 @end

@@ -6,7 +6,7 @@
 
 + (id)defaultManager;
 
-- (struct PXAssetBadgeInfo { unsigned int x1; double x2; int x3; })badgeInfoForAsset:(id)arg1 inCollection:(id)arg2 options:(unsigned int)arg3;
-- (struct PXAssetBadgeInfo { unsigned int x1; double x2; int x3; })badgeInfoForCollection:(id)arg1 options:(unsigned int)arg2;
+- (struct PXAssetBadgeInfo { unsigned long long x1; double x2; long long x3; })badgeInfoForAsset:(id)arg1 inCollection:(id)arg2 options:(unsigned long long)arg3;
+- (struct PXAssetBadgeInfo { unsigned long long x1; double x2; long long x3; })badgeInfoForCollection:(id)arg1 options:(unsigned long long)arg2;
 
 @end

@@ -3,69 +3,69 @@
  */
 
 @interface PUPhotosGridBarsHelper : NSObject <PUPhotoSelectionManagerChangeObserver> {
-    BOOL  __hadSelectionOnLastUpdate;
+    bool  __hadSelectionOnLastUpdate;
     PUPhotoSelectionManager * __photoSelectionManager;
     NSObject<OS_dispatch_queue> * __queue;
-    BOOL  __shouldUpdateBarItemsLazily;
-    BOOL  __shouldUpdateItemsWithCount;
-    BOOL  __updatingItemsWithCount;
+    bool  __shouldUpdateBarItemsLazily;
+    bool  __shouldUpdateItemsWithCount;
+    bool  __updatingItemsWithCount;
     <PUPhotosGridBarsHelperDelegate> * _delegate;
-    BOOL  _isPerformingUpdates;
+    bool  _isPerformingUpdates;
     NSArray * _leftBarButtonItems;
     struct { 
-        BOOL photoSelectionManager; 
-        BOOL shouldUpdateBarItemsLazily; 
-        BOOL barItems; 
+        bool photoSelectionManager; 
+        bool shouldUpdateBarItemsLazily; 
+        bool barItems; 
     }  _needsUpdateFlags;
     NSString * _prompt;
     NSArray * _rightBarButtonItems;
-    BOOL  _shouldHideBackButton;
-    BOOL  _swipeSelecting;
+    bool  _shouldHideBackButton;
+    bool  _swipeSelecting;
     NSString * _title;
 }
 
-@property (setter=_setHadSelectionOnLastUpdate:, nonatomic) BOOL _hadSelectionOnLastUpdate;
+@property (setter=_setHadSelectionOnLastUpdate:, nonatomic) bool _hadSelectionOnLastUpdate;
 @property (setter=_setPhotoSelectionManager:, nonatomic, retain) PUPhotoSelectionManager *_photoSelectionManager;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_queue;
-@property (setter=_setShouldUpdateBarItemsLazily:, nonatomic) BOOL _shouldUpdateBarItemsLazily;
-@property (setter=_setShouldUpdateItemsWithCount:, nonatomic) BOOL _shouldUpdateItemsWithCount;
-@property (getter=_isUpdatingItemsWithCount, setter=_setUpdatingItemsWithCount:, nonatomic) BOOL _updatingItemsWithCount;
+@property (setter=_setShouldUpdateBarItemsLazily:, nonatomic) bool _shouldUpdateBarItemsLazily;
+@property (setter=_setShouldUpdateItemsWithCount:, nonatomic) bool _shouldUpdateItemsWithCount;
+@property (getter=_isUpdatingItemsWithCount, setter=_setUpdatingItemsWithCount:, nonatomic) bool _updatingItemsWithCount;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PUPhotosGridBarsHelperDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (setter=_setLeftBarButtonItems:, nonatomic, retain) NSArray *leftBarButtonItems;
 @property (setter=_setPrompt:, nonatomic, retain) NSString *prompt;
 @property (setter=_setRightBarButtonItems:, nonatomic, retain) NSArray *rightBarButtonItems;
-@property (setter=_setShouldHideBackButton:, nonatomic) BOOL shouldHideBackButton;
+@property (setter=_setShouldHideBackButton:, nonatomic) bool shouldHideBackButton;
 @property (readonly) Class superclass;
-@property (getter=isSwipeSelecting, nonatomic) BOOL swipeSelecting;
+@property (getter=isSwipeSelecting, nonatomic) bool swipeSelecting;
 @property (setter=_setTitle:, nonatomic, retain) NSString *title;
 
 - (void).cxx_destruct;
-- (BOOL)_hadSelectionOnLastUpdate;
-- (void)_handleItemsWithCountUpdateWithTitle:(id)arg1 shouldReloadAllItems:(BOOL)arg2;
+- (bool)_hadSelectionOnLastUpdate;
+- (void)_handleItemsWithCountUpdateWithTitle:(id)arg1 shouldReloadAllItems:(bool)arg2;
 - (void)_invalidateBarItems;
 - (void)_invalidatePhotoSelectionManager;
 - (void)_invalidateShouldUpdateBarItemsLazily;
-- (BOOL)_isUpdatingItemsWithCount;
-- (BOOL)_needsUpdate;
+- (bool)_isUpdatingItemsWithCount;
+- (bool)_needsUpdate;
 - (void)_notifyBarItemsDidChange;
 - (id)_photoSelectionManager;
 - (id)_queue;
-- (void)_setHadSelectionOnLastUpdate:(BOOL)arg1;
+- (void)_setHadSelectionOnLastUpdate:(bool)arg1;
 - (void)_setLeftBarButtonItems:(id)arg1;
 - (void)_setNeedsUpdate;
 - (void)_setPhotoSelectionManager:(id)arg1;
 - (void)_setPrompt:(id)arg1;
 - (void)_setRightBarButtonItems:(id)arg1;
-- (void)_setShouldHideBackButton:(BOOL)arg1;
-- (void)_setShouldUpdateBarItemsLazily:(BOOL)arg1;
-- (void)_setShouldUpdateItemsWithCount:(BOOL)arg1;
+- (void)_setShouldHideBackButton:(bool)arg1;
+- (void)_setShouldUpdateBarItemsLazily:(bool)arg1;
+- (void)_setShouldUpdateItemsWithCount:(bool)arg1;
 - (void)_setTitle:(id)arg1;
-- (void)_setUpdatingItemsWithCount:(BOOL)arg1;
-- (BOOL)_shouldUpdateBarItemsLazily;
-- (BOOL)_shouldUpdateItemsWithCount;
+- (void)_setUpdatingItemsWithCount:(bool)arg1;
+- (bool)_shouldUpdateBarItemsLazily;
+- (bool)_shouldUpdateItemsWithCount;
 - (void)_startUpdatingItemsWithCountIfNeeded;
 - (void)_stopUpdatingItemsWithCount;
 - (void)_updateAllBarItems;
@@ -77,14 +77,14 @@
 - (id)delegate;
 - (id)init;
 - (void)invalidateNavigationBarItems;
-- (BOOL)isSwipeSelecting;
+- (bool)isSwipeSelecting;
 - (id)leftBarButtonItems;
 - (void)photoSelectionManagerSelectionDidChange:(id)arg1;
 - (id)prompt;
 - (id)rightBarButtonItems;
 - (void)setDelegate:(id)arg1;
-- (void)setSwipeSelecting:(BOOL)arg1;
-- (BOOL)shouldHideBackButton;
+- (void)setSwipeSelecting:(bool)arg1;
+- (bool)shouldHideBackButton;
 - (id)title;
 
 @end

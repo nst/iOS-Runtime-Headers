@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CKRecordID *recordID;
 @property (nonatomic, retain) CKRecordID *shareID;
 @property (readonly) Class superclass;
@@ -22,6 +22,6 @@
 - (void)setRecordID:(id)arg1;
 - (void)setShareID:(id)arg1;
 - (id)shareID;
-- (BOOL)shouldRetryForError:(id)arg1;
+- (bool)shouldRetryForError:(id)arg1;
 
 @end

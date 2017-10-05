@@ -11,43 +11,43 @@
     int  _nextArticleAffordanceType;
     NSString * _tappedNextArticleAffordanceFeedId;
     int  _userAction;
-    BOOL  _withNextArticleAffordance;
+    bool  _withNextArticleAffordance;
 }
 
-@property (nonatomic) BOOL hasNextArticleAffordanceType;
-@property (nonatomic, readonly) BOOL hasTappedNextArticleAffordanceFeedId;
-@property (nonatomic) BOOL hasUserAction;
-@property (nonatomic) BOOL hasWithNextArticleAffordance;
+@property (nonatomic) bool hasNextArticleAffordanceType;
+@property (nonatomic, readonly) bool hasTappedNextArticleAffordanceFeedId;
+@property (nonatomic) bool hasUserAction;
+@property (nonatomic) bool hasWithNextArticleAffordance;
 @property (nonatomic) int nextArticleAffordanceType;
 @property (nonatomic, retain) NSString *tappedNextArticleAffordanceFeedId;
 @property (nonatomic) int userAction;
-@property (nonatomic) BOOL withNextArticleAffordance;
+@property (nonatomic) bool withNextArticleAffordance;
 
 - (void).cxx_destruct;
 - (int)StringAsNextArticleAffordanceType:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasNextArticleAffordanceType;
-- (BOOL)hasTappedNextArticleAffordanceFeedId;
-- (BOOL)hasUserAction;
-- (BOOL)hasWithNextArticleAffordance;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasNextArticleAffordanceType;
+- (bool)hasTappedNextArticleAffordanceFeedId;
+- (bool)hasUserAction;
+- (bool)hasWithNextArticleAffordance;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)nextArticleAffordanceType;
 - (id)nextArticleAffordanceTypeAsString:(int)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasNextArticleAffordanceType:(BOOL)arg1;
-- (void)setHasUserAction:(BOOL)arg1;
-- (void)setHasWithNextArticleAffordance:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasNextArticleAffordanceType:(bool)arg1;
+- (void)setHasUserAction:(bool)arg1;
+- (void)setHasWithNextArticleAffordance:(bool)arg1;
 - (void)setNextArticleAffordanceType:(int)arg1;
 - (void)setTappedNextArticleAffordanceFeedId:(id)arg1;
 - (void)setUserAction:(int)arg1;
-- (void)setWithNextArticleAffordance:(BOOL)arg1;
+- (void)setWithNextArticleAffordance:(bool)arg1;
 - (id)tappedNextArticleAffordanceFeedId;
 - (int)userAction;
-- (BOOL)withNextArticleAffordance;
+- (bool)withNextArticleAffordance;
 - (void)writeTo:(id)arg1;
 
 @end

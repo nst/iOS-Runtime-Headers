@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPBTLETransactionIdentifier : NSObject {
+@interface HAPBTLETransactionIdentifier : HMFObject {
     unsigned char  _unsignedCharValue;
 }
 
@@ -12,11 +12,11 @@
 
 - (id)debugDescription;
 - (id)description;
-- (id)descriptionWithPointer:(BOOL)arg1;
-- (unsigned int)hash;
+- (id)descriptionWithPointer:(bool)arg1;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithUnsignedCharValue:(unsigned char)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)shortDescription;
 - (unsigned char)unsignedCharValue;
 

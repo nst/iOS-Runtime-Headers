@@ -5,7 +5,7 @@
 
 @optional
 
-- (void)editPluginSession:(PUEditPluginSession *)arg1 didEndWithCompletionType:(unsigned int)arg2;
+- (void)editPluginSession:(PUEditPluginSession *)arg1 didEndWithCompletionType:(unsigned long long)arg2;
 - (void)editPluginSessionAvailabilityDidChange:(PUEditPluginSession *)arg1;
 - (void)editPluginSessionWillBegin:(PUEditPluginSession *)arg1;
 

@@ -8,6 +8,6 @@
 - (void)handleSessionDidStartRunning;
 - (void)handleSessionDidStopRunning;
 - (void)handleSessionInterruptionEnded;
-- (void)handleSessionInterruptionForReason:(int)arg1;
+- (void)handleSessionInterruptionForReason:(long long)arg1;
 
 @end

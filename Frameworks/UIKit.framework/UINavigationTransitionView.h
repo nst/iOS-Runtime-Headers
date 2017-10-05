@@ -6,42 +6,47 @@
     id  _delegate;
     UIResponder * _firstResponderToRestore;
     UIView * _fromView;
-    float  _fromViewAlpha;
+    double  _fromViewAlpha;
     unsigned int  _isTransitioning;
     UIWindow * _originalWindow;
     unsigned int  _popoverWillCleanUpNavigationTransition;
     UIView * _toView;
-    int  _transition;
+    long long  _transition;
     unsigned int  _usesRoundedCorners;
 }
 
 @property (nonatomic) id delegate;
 @property (readonly) UIView *fromView;
-@property (readonly) BOOL isTransitioning;
-@property (nonatomic) BOOL popoverWillCleanUpNavigationTransition;
-@property (nonatomic) BOOL usesRoundedCorners;
+@property (readonly) bool isTransitioning;
+@property (nonatomic) bool popoverWillCleanUpNavigationTransition;
+@property (nonatomic) bool usesRoundedCorners;
 
-+ (double)defaultDurationForTransition:(int)arg1;
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
++ (double)defaultDurationForTransition:(long long)arg1;
 
 - (void).cxx_destruct;
 - (void)_cleanupTransition;
 - (void)_cleanupTransitionFromPopover;
-- (BOOL)_isTransitioningFromView:(id)arg1;
+- (bool)_isTransitioningFromView:(id)arg1;
 - (void)_navigationTransitionDidStop;
 - (void)_notifyDelegateTransitionDidStopWithContext:(id)arg1;
 - (void)dealloc;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (id)delegate;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fromView;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isTransitioning;
-- (BOOL)popoverWillCleanUpNavigationTransition;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isTransitioning;
+- (bool)popoverWillCleanUpNavigationTransition;
 - (void)setDelegate:(id)arg1;
-- (void)setPopoverWillCleanUpNavigationTransition:(BOOL)arg1;
-- (void)setUsesRoundedCorners:(BOOL)arg1;
-- (BOOL)transition:(int)arg1 fromView:(id)arg2 toView:(id)arg3;
-- (BOOL)transition:(int)arg1 toView:(id)arg2;
-- (BOOL)usesRoundedCorners;
+- (void)setPopoverWillCleanUpNavigationTransition:(bool)arg1;
+- (void)setUsesRoundedCorners:(bool)arg1;
+- (bool)transition:(long long)arg1 fromView:(id)arg2 toView:(id)arg3;
+- (bool)transition:(long long)arg1 toView:(id)arg2;
+- (bool)usesRoundedCorners;
 
 @end

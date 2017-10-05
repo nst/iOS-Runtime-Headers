@@ -6,8 +6,8 @@
 
 - (id)CNValueForContainer:(id)arg1;
 - (int)abPropertyID;
-- (BOOL)isNonnull;
-- (BOOL)isWritable;
+- (bool)isNonnull;
+- (bool)isWritable;
 - (id)key;
 - (void)setCNValue:(id)arg1 onContainer:(id)arg2;
 

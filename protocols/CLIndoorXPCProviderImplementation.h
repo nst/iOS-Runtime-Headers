@@ -7,7 +7,7 @@
 
 - (NSString *)endpointName;
 - (Protocol *)remoteObjectProtocol;
-- (BOOL)withinQueueCanReinitializeRemoteState;
+- (bool)withinQueueCanReinitializeRemoteState;
 - (void)withinQueueInvalidateState;
 - (NSError *)withinQueuePermanentShutdownReason;
 - (void)withinQueueReconnectInvalidatedConnectionFailed:(NSError *)arg1;

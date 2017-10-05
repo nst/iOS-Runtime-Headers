@@ -18,17 +18,15 @@
 
 @property (nonatomic, retain) _INPBString *entityName;
 @property (nonatomic) int entityType;
-@property (nonatomic, readonly) BOOL hasEntityName;
-@property (nonatomic) BOOL hasEntityType;
-@property (nonatomic, readonly) BOOL hasIntentMetadata;
-@property (nonatomic) BOOL hasPropertyName;
-@property (nonatomic) BOOL hasQualifier;
+@property (nonatomic, readonly) bool hasEntityName;
+@property (nonatomic) bool hasEntityType;
+@property (nonatomic, readonly) bool hasIntentMetadata;
+@property (nonatomic) bool hasPropertyName;
+@property (nonatomic) bool hasQualifier;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic) int propertyName;
 @property (nonatomic) int qualifier;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -42,35 +40,29 @@
 - (id)entityName;
 - (int)entityType;
 - (id)entityTypeAsString:(int)arg1;
-- (BOOL)hasEntityName;
-- (BOOL)hasEntityType;
-- (BOOL)hasIntentMetadata;
-- (BOOL)hasPropertyName;
-- (BOOL)hasQualifier;
-- (unsigned int)hash;
+- (bool)hasEntityName;
+- (bool)hasEntityType;
+- (bool)hasIntentMetadata;
+- (bool)hasPropertyName;
+- (bool)hasQualifier;
+- (unsigned long long)hash;
 - (id)intentMetadata;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)propertyName;
 - (id)propertyNameAsString:(int)arg1;
 - (int)qualifier;
 - (id)qualifierAsString:(int)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEntityName:(id)arg1;
 - (void)setEntityType:(int)arg1;
-- (void)setHasEntityType:(BOOL)arg1;
-- (void)setHasPropertyName:(BOOL)arg1;
-- (void)setHasQualifier:(BOOL)arg1;
+- (void)setHasEntityType:(bool)arg1;
+- (void)setHasPropertyName:(bool)arg1;
+- (void)setHasQualifier:(bool)arg1;
 - (void)setIntentMetadata:(id)arg1;
 - (void)setPropertyName:(int)arg1;
 - (void)setQualifier:(int)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

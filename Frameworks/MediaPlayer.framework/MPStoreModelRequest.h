@@ -3,22 +3,26 @@
  */
 
 @interface MPStoreModelRequest : MPModelRequest {
-    BOOL  _didSetTimeoutInterval;
+    NSString * _clientIdentifier;
+    NSString * _clientVersion;
+    bool  _didSetTimeoutInterval;
     double  _timeoutInterval;
-    MPStoreUserEnvironment * _userEnvironment;
 }
 
+@property (nonatomic, copy) NSString *clientIdentifier;
+@property (nonatomic, copy) NSString *clientVersion;
 @property (nonatomic) double timeoutInterval;
-@property (nonatomic, copy) MPStoreUserEnvironment *userEnvironment;
 
 - (void).cxx_destruct;
+- (id)clientIdentifier;
+- (id)clientVersion;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (void)setClientIdentifier:(id)arg1;
+- (void)setClientVersion:(id)arg1;
 - (void)setTimeoutInterval:(double)arg1;
-- (void)setUserEnvironment:(id)arg1;
 - (double)timeoutInterval;
-- (id)userEnvironment;
 
 @end

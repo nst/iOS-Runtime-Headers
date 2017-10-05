@@ -6,24 +6,24 @@
     NSString * _cachedLanguage;
     NSArray * _cachedLocalizedReplies;
     NSArray * _cannedReplies;
-    unsigned int  _category;
-    BOOL  _didLocalizeDefaultReplies;
-    BOOL  _didMigrationCheck;
+    unsigned long long  _category;
+    bool  _didLocalizeDefaultReplies;
+    bool  _didMigrationCheck;
     NPSDomainAccessor * _domainAccessor;
     WRReplyStoreInfo * _info;
     NPSManager * _npsManager;
 }
 
-+ (BOOL)supportsEnhancedEditing;
++ (bool)supportsEnhancedEditing;
 
 - (void).cxx_destruct;
 - (id)cannedReplies;
 - (void)dealloc;
 - (id)domainAccessor;
 - (void)handleStoreChange;
-- (BOOL)includeSmartReplies;
+- (bool)includeSmartReplies;
 - (id)init;
-- (id)initWithCategory:(unsigned int)arg1;
+- (id)initWithCategory:(unsigned long long)arg1;
 - (void)invalidateCachesIfNeededForLanguage:(id)arg1;
 - (void)loadCannedRepliesIfNeeded;
 - (void)localizeDefaultRepliesIfNeeded;
@@ -34,8 +34,8 @@
 - (id)repliesForLanguage:(id)arg1;
 - (void)saveReplies:(id)arg1;
 - (void)setCannedReplies:(id)arg1;
-- (void)setIncludeSmartReplies:(BOOL)arg1;
-- (BOOL)supportsSmartReplies;
-- (BOOL)usesFormalReplies;
+- (void)setIncludeSmartReplies:(bool)arg1;
+- (bool)supportsSmartReplies;
+- (bool)usesFormalReplies;
 
 @end

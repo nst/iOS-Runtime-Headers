@@ -16,7 +16,7 @@
 + (id)periodWithStart:(id)arg1 end:(id)arg2;
 
 - (void).cxx_destruct;
-- (BOOL)contains:(id)arg1;
+- (bool)contains:(id)arg1;
 - (id)description;
 - (double)duration;
 - (id)endDate;

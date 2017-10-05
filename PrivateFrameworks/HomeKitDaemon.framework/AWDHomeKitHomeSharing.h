@@ -16,10 +16,10 @@
 }
 
 @property (nonatomic) int errorCode;
-@property (nonatomic) BOOL hasErrorCode;
-@property (nonatomic) BOOL hasResponseType;
-@property (nonatomic) BOOL hasStage;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasErrorCode;
+@property (nonatomic) bool hasResponseType;
+@property (nonatomic) bool hasStage;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) int responseType;
 @property (nonatomic) int stage;
 @property (nonatomic) unsigned long long timestamp;
@@ -31,21 +31,21 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)errorCode;
-- (BOOL)hasErrorCode;
-- (BOOL)hasResponseType;
-- (BOOL)hasStage;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasErrorCode;
+- (bool)hasResponseType;
+- (bool)hasStage;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)responseType;
 - (id)responseTypeAsString:(int)arg1;
 - (void)setErrorCode:(int)arg1;
-- (void)setHasErrorCode:(BOOL)arg1;
-- (void)setHasResponseType:(BOOL)arg1;
-- (void)setHasStage:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasErrorCode:(bool)arg1;
+- (void)setHasResponseType:(bool)arg1;
+- (void)setHasStage:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setResponseType:(int)arg1;
 - (void)setStage:(int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;

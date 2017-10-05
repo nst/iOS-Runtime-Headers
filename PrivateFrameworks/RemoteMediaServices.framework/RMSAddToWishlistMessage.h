@@ -14,9 +14,9 @@
 }
 
 @property (nonatomic) unsigned long long databaseID;
-@property (nonatomic) BOOL hasDatabaseID;
-@property (nonatomic) BOOL hasItemID;
-@property (nonatomic) BOOL hasSessionIdentifier;
+@property (nonatomic) bool hasDatabaseID;
+@property (nonatomic) bool hasItemID;
+@property (nonatomic) bool hasSessionIdentifier;
 @property (nonatomic) unsigned long long itemID;
 @property (nonatomic) int sessionIdentifier;
 
@@ -25,19 +25,19 @@
 - (unsigned long long)databaseID;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDatabaseID;
-- (BOOL)hasItemID;
-- (BOOL)hasSessionIdentifier;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDatabaseID;
+- (bool)hasItemID;
+- (bool)hasSessionIdentifier;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (unsigned long long)itemID;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)sessionIdentifier;
 - (void)setDatabaseID:(unsigned long long)arg1;
-- (void)setHasDatabaseID:(BOOL)arg1;
-- (void)setHasItemID:(BOOL)arg1;
-- (void)setHasSessionIdentifier:(BOOL)arg1;
+- (void)setHasDatabaseID:(bool)arg1;
+- (void)setHasItemID:(bool)arg1;
+- (void)setHasSessionIdentifier:(bool)arg1;
 - (void)setItemID:(unsigned long long)arg1;
 - (void)setSessionIdentifier:(int)arg1;
 - (void)writeTo:(id)arg1;

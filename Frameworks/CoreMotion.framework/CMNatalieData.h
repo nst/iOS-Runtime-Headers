@@ -6,8 +6,8 @@
     double  fBasalNatalies;
     double  fMets;
     double  fNatalies;
-    int  fRecordId;
-    int  fSession;
+    long long  fRecordId;
+    long long  fSession;
     NSUUID * fSourceId;
     double  fStartDate;
 }
@@ -15,14 +15,14 @@
 @property (nonatomic, readonly) NSNumber *basalNatalies;
 @property (nonatomic, readonly) NSNumber *mets;
 @property (nonatomic, readonly) NSNumber *natalies;
-@property (nonatomic, readonly) int recordId;
-@property (nonatomic, readonly) int session;
+@property (nonatomic, readonly) long long recordId;
+@property (nonatomic, readonly) long long session;
 @property (nonatomic, readonly) NSUUID *sourceId;
 @property (nonatomic, readonly) NSDate *startDate;
 
 + (id)maxNatalieEntries;
-+ (id)sessionName:(int)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)sessionName:(long long)arg1;
++ (bool)supportsSecureCoding;
 
 - (id)basalNatalies;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -30,11 +30,11 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithStartDate:(double)arg1 recordId:(int)arg2 session:(int)arg3 mets:(double)arg4 natalies:(double)arg5 basalNatalies:(double)arg6 timestamp:(double)arg7 sourceId:(id)arg8;
+- (id)initWithStartDate:(double)arg1 recordId:(long long)arg2 session:(long long)arg3 mets:(double)arg4 natalies:(double)arg5 basalNatalies:(double)arg6 sourceId:(id)arg7;
 - (id)mets;
 - (id)natalies;
-- (int)recordId;
-- (int)session;
+- (long long)recordId;
+- (long long)session;
 - (id)sourceId;
 - (id)startDate;
 

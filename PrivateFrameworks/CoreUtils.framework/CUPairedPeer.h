@@ -22,7 +22,7 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSData *publicKey;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)acl;

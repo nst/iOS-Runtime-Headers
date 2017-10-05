@@ -7,6 +7,6 @@
 + (id)specForPad;
 + (id)specForPhone;
 
-- (BOOL)isCameraApp;
+- (bool)isCameraApp;
 
 @end

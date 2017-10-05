@@ -3,10 +3,10 @@
  */
 
 @interface FigBaseCALayerHost : CALayerHost {
-    BOOL  _preventsChangesToSublayerHierarchy;
+    bool  _preventsChangesToSublayerHierarchy;
 }
 
-@property (nonatomic) BOOL preventsChangesToSublayerHierarchy;
+@property (nonatomic) bool preventsChangesToSublayerHierarchy;
 
 + (id)defaultActionForKey:(id)arg1;
 
@@ -16,10 +16,10 @@
 - (void)insertSublayer:(id)arg1 above:(id)arg2;
 - (void)insertSublayer:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)insertSublayer:(id)arg1 below:(id)arg2;
-- (BOOL)preventsChangesToSublayerHierarchy;
+- (bool)preventsChangesToSublayerHierarchy;
 - (void)removeFromSuperlayer;
 - (void)replaceSublayer:(id)arg1 with:(id)arg2;
-- (void)setPreventsChangesToSublayerHierarchy:(BOOL)arg1;
+- (void)setPreventsChangesToSublayerHierarchy:(bool)arg1;
 - (void)setSublayers:(id)arg1;
 
 @end

@@ -4,10 +4,10 @@
 
 @interface SYIncomingFullSyncSession : SYSession {
     NSObject<OS_os_activity> * _sessionActivity;
-    int  _state;
+    long long  _state;
     NSObject<OS_dispatch_source> * _stateUpdateSource;
-    BOOL  canRestart;
-    BOOL  canRollback;
+    bool  canRestart;
+    bool  canRollback;
 }
 
 @property (nonatomic, readonly) NSObject<OS_os_activity> *sessionActivity;
@@ -23,19 +23,19 @@
 - (void)_sendEndSessionResponse:(id)arg1;
 - (void)_sessionComplete;
 - (void)_sessionEnded;
-- (void)_setStateQuietly:(int)arg1;
-- (BOOL)canRestart;
-- (BOOL)canRollback;
+- (void)_setStateQuietly:(long long)arg1;
+- (bool)canRestart;
+- (bool)canRollback;
 - (void)cancelWithError:(id)arg1;
 - (id)initWithService:(id)arg1;
-- (BOOL)isResetSync;
-- (BOOL)isSending;
-- (unsigned int)protocolVersion;
+- (bool)isResetSync;
+- (bool)isSending;
+- (unsigned long long)protocolVersion;
 - (id)sessionActivity;
-- (void)setCanRestart:(BOOL)arg1;
-- (void)setCanRollback:(BOOL)arg1;
-- (void)setState:(int)arg1;
+- (void)setCanRestart:(bool)arg1;
+- (void)setCanRollback:(bool)arg1;
+- (void)setState:(long long)arg1;
 - (void)start:(id /* block */)arg1;
-- (int)state;
+- (long long)state;
 
 @end

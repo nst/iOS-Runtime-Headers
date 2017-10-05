@@ -13,10 +13,10 @@
 
 + (id)tokenWithString:(id)arg1 level:(int)arg2 formatter:(id)arg3;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithString:(id)arg1 level:(int)arg2 formatter:(id)arg3;
 - (int)level;
 - (id)string;
-- (id)stringForIndex:(unsigned int)arg1;
+- (id)stringForIndex:(unsigned long long)arg1;
 
 @end

@@ -2,18 +2,23 @@
    Image: /System/Library/PrivateFrameworks/FlightUtilities.framework/FlightUtilities
  */
 
-@interface FUFlightCodeShare : NSObject {
+@interface FUFlightCodeShare : NSObject <NSSecureCoding> {
     FUAirline * _airline;
-    int  _flightNumber;
+    unsigned long long  _flightNumber;
 }
 
 @property (retain) FUAirline *airline;
-@property int flightNumber;
+@property unsigned long long flightNumber;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)airline;
-- (int)flightNumber;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)flightNumber;
+- (id)initWithCoder:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setAirline:(id)arg1;
-- (void)setFlightNumber:(int)arg1;
+- (void)setFlightNumber:(unsigned long long)arg1;
 
 @end

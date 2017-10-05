@@ -9,23 +9,23 @@
     NSMutableArray * _updateHandlers;
 }
 
-@property (nonatomic, readonly) BOOL afterInitialUpdate;
+@property (nonatomic, readonly) bool afterInitialUpdate;
 @property (nonatomic, readonly) NSArray *modelObjects;
 @property (nonatomic, readonly, copy) NSArray *pickableTypes;
-@property (nonatomic, readonly) unsigned int pickerMode;
+@property (nonatomic, readonly) unsigned long long pickerMode;
 @property (nonatomic) int sortOrder;
 @property (nonatomic, retain) NSOperationQueue *thumbnailQueue;
 @property (nonatomic, retain) NSMutableArray *updateHandlers;
 
 - (void).cxx_destruct;
-- (BOOL)afterInitialUpdate;
+- (bool)afterInitialUpdate;
 - (void)dealloc;
 - (id)displayTitle;
 - (id)init;
 - (id)modelObjects;
 - (id)pickableTypes;
-- (unsigned int)pickerMode;
-- (void)refreshItem:(id)arg1 thumbnailOnly:(BOOL)arg2;
+- (unsigned long long)pickerMode;
+- (void)refreshItem:(id)arg1 thumbnailOnly:(bool)arg2;
 - (void)setSortOrder:(int)arg1;
 - (void)setThumbnailQueue:(id)arg1;
 - (void)setUpdateHandlers:(id)arg1;

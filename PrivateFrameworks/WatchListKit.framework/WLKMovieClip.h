@@ -17,7 +17,7 @@
 
 - (void).cxx_destruct;
 - (id)_init;
-- (BOOL)_supportHD;
+- (bool)_supportHD;
 - (id)assets;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;

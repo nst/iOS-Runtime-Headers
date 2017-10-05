@@ -6,14 +6,14 @@
     NSString * _analysisString;
     NSArray * _characterInformation;
     NSArray * _codeLookupInformation;
-    BOOL  _emoji;
+    bool  _emoji;
     int  _language;
 }
 
 @property (nonatomic, copy) NSString *analysisString;
 @property (nonatomic, retain) NSArray *characterInformation;
 @property (nonatomic, retain) NSArray *codeLookupInformation;
-@property (getter=isEmoji, nonatomic) BOOL emoji;
+@property (getter=isEmoji, nonatomic) bool emoji;
 @property (nonatomic) int language;
 
 + (struct __IDXIndex { }*)characterInformationDictionary;
@@ -30,7 +30,7 @@
 - (void)dealloc;
 - (id)initWithString:(id)arg1 language:(int)arg2;
 - (id)initialsForStrings:(id)arg1;
-- (BOOL)isEmoji;
+- (bool)isEmoji;
 - (id)isIncludedInCurrentLanguage;
 - (int)language;
 - (id)pinyinInformationForString:(id)arg1;
@@ -39,7 +39,7 @@
 - (void)setAnalysisString:(id)arg1;
 - (void)setCharacterInformation:(id)arg1;
 - (void)setCodeLookupInformation:(id)arg1;
-- (void)setEmoji:(BOOL)arg1;
+- (void)setEmoji:(bool)arg1;
 - (void)setLanguage:(int)arg1;
 - (id)strokeInformationForString:(id)arg1;
 - (id)tonesForString:(id)arg1;

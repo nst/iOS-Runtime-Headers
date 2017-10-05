@@ -3,26 +3,27 @@
  */
 
 @interface IKCSSMediaQuery : NSObject {
-    BOOL  _evaluated;
-    BOOL  _evaluationResult;
+    bool  _evaluated;
+    bool  _evaluationResult;
     IKCSSMediaQueryList * _queryList;
 }
 
-@property (readonly) BOOL evaluated;
-@property (readonly) BOOL evaluationResult;
+@property (readonly) bool evaluated;
+@property (readonly) bool evaluationResult;
 @property (nonatomic, readonly) IKCSSMediaQueryList *queryList;
 
-+ (id)buildMediaQuery:(id)arg1 offset:(unsigned int)arg2 consumed:(unsigned int*)arg3;
++ (id)buildMediaQuery:(id)arg1 offset:(unsigned long long)arg2 consumed:(unsigned long long*)arg3;
 + (id)buildMediaQueryExpression:(id)arg1;
-+ (id)buildMediaQueryList:(id)arg1 offset:(unsigned int)arg2 consumed:(unsigned int*)arg3;
++ (id)buildMediaQueryList:(id)arg1 offset:(unsigned long long)arg2 consumed:(unsigned long long*)arg3;
 + (id)mediaQueryFromTokenList:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)description;
-- (BOOL)evaluate;
-- (BOOL)evaluated;
-- (BOOL)evaluationResult;
+- (bool)evaluate;
+- (bool)evaluated;
+- (bool)evaluationResult;
 - (id)initWithQueryList:(id)arg1;
+- (id)queryExpression;
 - (id)queryList;
 - (void)setNeedsReEvaluation;
 

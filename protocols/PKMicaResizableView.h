@@ -5,7 +5,7 @@
 
 @required
 
-- (struct CGSize { float x1; float x2; })boundsSizeToMatchPointScale:(float)arg1;
-- (float)pointScaleToMatchBoundsSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })boundsSizeToMatchPointScale:(double)arg1;
+- (double)pointScaleToMatchBoundsSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

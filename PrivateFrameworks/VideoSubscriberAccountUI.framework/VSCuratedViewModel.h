@@ -3,7 +3,7 @@
  */
 
 @interface VSCuratedViewModel : VSViewModel <VSLogoImageViewModel> {
-    BOOL  _beginValidationButtonEnabled;
+    bool  _beginValidationButtonEnabled;
     NSString * _beginValidationButtonTitle;
     NSString * _footerText;
     VSOptional * _identityProviderDisplayName;
@@ -12,38 +12,37 @@
     NSItemProvider * _logoProvider;
     NSString * _message;
     NSString * _notice;
-    BOOL  _showDeleteAccountButton;
-    BOOL  _showFooter;
+    bool  _showFooter;
 }
 
-@property (getter=isBeginValidationButtonEnabled, nonatomic) BOOL beginValidationButtonEnabled;
+@property (getter=isBeginValidationButtonEnabled, nonatomic) bool beginValidationButtonEnabled;
 @property (nonatomic, copy) NSString *beginValidationButtonTitle;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *footerText;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) VSOptional *identityProviderDisplayName;
 @property (nonatomic, retain) UIImage *logo;
 @property (nonatomic, copy) NSString *logoAccessibilityLabel;
 @property (nonatomic, retain) NSItemProvider *logoProvider;
 @property (nonatomic, copy) NSString *message;
 @property (nonatomic, copy) NSString *notice;
-@property (nonatomic) BOOL showDeleteAccountButton;
-@property (nonatomic) BOOL showFooter;
+@property (nonatomic) bool showFooter;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)beginValidationButtonTitle;
+- (void)configureWithRequest:(id)arg1;
 - (id)footerText;
 - (id)identityProviderDisplayName;
 - (id)init;
-- (BOOL)isBeginValidationButtonEnabled;
+- (bool)isBeginValidationButtonEnabled;
 - (id)logo;
 - (id)logoAccessibilityLabel;
 - (id)logoProvider;
 - (id)message;
 - (id)notice;
-- (void)setBeginValidationButtonEnabled:(BOOL)arg1;
+- (void)setBeginValidationButtonEnabled:(bool)arg1;
 - (void)setBeginValidationButtonTitle:(id)arg1;
 - (void)setFooterText:(id)arg1;
 - (void)setIdentityProviderDisplayName:(id)arg1;
@@ -52,9 +51,7 @@
 - (void)setLogoProvider:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setNotice:(id)arg1;
-- (void)setShowDeleteAccountButton:(BOOL)arg1;
-- (void)setShowFooter:(BOOL)arg1;
-- (BOOL)showDeleteAccountButton;
-- (BOOL)showFooter;
+- (void)setShowFooter:(bool)arg1;
+- (bool)showFooter;
 
 @end

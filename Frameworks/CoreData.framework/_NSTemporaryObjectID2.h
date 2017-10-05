@@ -9,14 +9,14 @@
 
 + (id)initWithEntity:(id)arg1 andUUIDString:(id)arg2;
 
-- (BOOL)_isPersistentStoreAlive;
+- (bool)_isPersistentStoreAlive;
 - (id)_referenceData;
 - (void)_setPersistentStore:(id)arg1;
 - (id)_storeIdentifier;
 - (void)dealloc;
 - (void)finalize;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)persistentStore;
 
 @end

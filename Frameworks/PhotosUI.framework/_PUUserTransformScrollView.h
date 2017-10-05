@@ -4,6 +4,8 @@
 
 @interface _PUUserTransformScrollView : UIScrollView
 
-- (void)_registerForRotation:(BOOL)arg1 ofWindow:(id)arg2;
++ (unsigned long long)_defaultEdgesScrollingContentIntoSafeArea;
+
+- (void)_registerForRotation:(bool)arg1 ofWindow:(id)arg2;
 
 @end

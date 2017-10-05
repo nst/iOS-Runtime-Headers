@@ -3,9 +3,9 @@
  */
 
 @interface FBSynchronizedTransactionGroup : FBTransaction <FBSynchronizedTransaction, FBSynchronizedTransactionDelegate> {
-    BOOL  _commitAllowed;
-    BOOL  _didCommit;
-    BOOL  _readyForCommit;
+    bool  _commitAllowed;
+    bool  _didCommit;
+    bool  _readyForCommit;
     <FBSynchronizedTransactionGroupDelegate> * _synchronizationDelegate;
     NSMutableSet * _synchronizedTransactions;
     NSMutableSet * _synchronizedTransactionsAwaitingCommitReadiness;
@@ -14,22 +14,22 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic) <FBSynchronizedTransactionDelegate> *synchronizationDelegate;
 
 - (void).cxx_destruct;
-- (BOOL)_canBeInterrupted;
+- (bool)_canBeInterrupted;
 - (void)_checkPreconditionsAndCommitIfReady;
 - (void)_childTransactionDidComplete:(id)arg1;
 - (void)_didComplete;
 - (void)_performSynchronizedCommit:(id)arg1;
 - (void)_performSynchronizedCommitIfReady;
-- (BOOL)_shouldFailForChildTransaction:(id)arg1;
+- (bool)_shouldFailForChildTransaction:(id)arg1;
 - (void)addSynchronizedTransaction:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isReadyForSynchronizedCommit;
+- (bool)isReadyForSynchronizedCommit;
 - (void)performSynchronizedCommit;
 - (void)setSynchronizationDelegate:(id)arg1;
 - (id)synchronizationDelegate;

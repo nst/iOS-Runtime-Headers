@@ -4,7 +4,7 @@
 
 @interface CRKFetchStagedAdHocIdentityCertificateRequest : CATTaskRequest
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
 
 @end

@@ -4,26 +4,21 @@
 
 @interface HFSimpleItemManager : HFItemManager {
     id /* block */  _itemComparator;
-    NSArray * _itemProviders;
     id /* block */  _itemProvidersCreator;
 }
 
 @property (nonatomic, copy) id /* block */ itemComparator;
-@property (nonatomic, retain) NSArray *itemProviders;
-@property (nonatomic, copy) id /* block */ itemProvidersCreator;
+@property (nonatomic, readonly, copy) id /* block */ itemProvidersCreator;
 
 - (void).cxx_destruct;
+- (id)_buildItemProvidersForHome:(id)arg1;
 - (id /* block */)_comparatorForSectionIdentifier:(id)arg1;
-- (void)_createItemProvidersWithHome:(id)arg1;
-- (id)_itemProviders;
+- (id)initWithDelegate:(id)arg1;
 - (id)initWithDelegate:(id)arg1 itemProvidersCreator:(id /* block */)arg2;
-- (id)initWithDelegate:(id)arg1 itemStyle:(id)arg2 itemProvidersCreator:(id /* block */)arg3;
+- (id)initWithDelegate:(id)arg1 sourceItem:(id)arg2;
 - (id)initWithDelegate:(id)arg1 sourceItem:(id)arg2 itemProvidersCreator:(id /* block */)arg3;
 - (id /* block */)itemComparator;
-- (id)itemProviders;
 - (id /* block */)itemProvidersCreator;
 - (void)setItemComparator:(id /* block */)arg1;
-- (void)setItemProviders:(id)arg1;
-- (void)setItemProvidersCreator:(id /* block */)arg1;
 
 @end

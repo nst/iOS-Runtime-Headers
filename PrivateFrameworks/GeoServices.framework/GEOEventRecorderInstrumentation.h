@@ -14,12 +14,12 @@
 + (void)endInstrumentation;
 + (id)initializeDefaultInstrumentation;
 
+- (void).cxx_destruct;
 - (void)_captureScreenVideo:(id)arg1;
 - (void)_setupLogging;
 - (void)captureEventRecorderScreenVideo;
 - (void)captureUIEvent:(id)arg1;
 - (void)captureUserActionLogMessageEvent:(id)arg1;
-- (void)dealloc;
 - (id)getRecordedFilePaths;
 - (id)init;
 - (void)initializeFilepaths;

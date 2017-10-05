@@ -4,14 +4,14 @@
 
 @interface DOMHTMLOptGroupElement : DOMHTMLElement
 
-@property BOOL disabled;
+@property bool disabled;
 @property (copy) NSString *label;
 
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 
-- (BOOL)disabled;
+- (bool)disabled;
 - (id)label;
-- (void)setDisabled:(BOOL)arg1;
+- (void)setDisabled:(bool)arg1;
 - (void)setLabel:(id)arg1;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit

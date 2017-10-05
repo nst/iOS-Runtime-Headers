@@ -8,11 +8,16 @@
 
 @property (nonatomic) UILabel *associatedLabel;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void).cxx_destruct;
 - (id)_associatedScalingLabel;
 - (id)_disabledFontColor;
 - (id)_parentSegment;
-- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
+- (bool)_shouldAnimatePropertyWithKey:(id)arg1;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (id)associatedLabel;
 - (id)init;
 - (void)setAssociatedLabel:(id)arg1;

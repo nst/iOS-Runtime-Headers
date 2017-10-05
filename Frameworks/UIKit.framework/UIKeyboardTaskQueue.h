@@ -5,7 +5,7 @@
 @interface UIKeyboardTaskQueue : NSObject {
     NSArray * _activeOriginator;
     NSMutableArray * _deferredTasks;
-    BOOL  _executingOnMainThread;
+    bool  _executingOnMainThread;
     UIKeyboardTaskExecutionContext * _executionContext;
     NSConditionLock * _lock;
     UIKeyboardTaskEntry * _mainThreadContinuation;
@@ -24,18 +24,18 @@
 - (id)executionContext;
 - (void)finishExecution;
 - (id)init;
-- (BOOL)isMainThreadExecutingTask;
+- (bool)isMainThreadExecutingTask;
 - (void)lock;
 - (void)lockWhenReadyForMainThread;
 - (void)performDeferredTaskIfIdle;
 - (void)performSingleTask:(id /* block */)arg1;
 - (void)performTask:(id /* block */)arg1;
-- (void)performTaskOnMainThread:(id /* block */)arg1 waitUntilDone:(BOOL)arg2;
+- (void)performTaskOnMainThread:(id /* block */)arg1 waitUntilDone:(bool)arg2;
 - (void)promoteDeferredTaskIfIdle;
-- (id)scheduleTask:(id /* block */)arg1 timeInterval:(double)arg2 repeats:(BOOL)arg3;
+- (id)scheduleTask:(id /* block */)arg1 timeInterval:(double)arg2 repeats:(bool)arg3;
 - (void)setActiveOriginator:(id)arg1;
 - (void)setExecutionContext:(id)arg1;
-- (BOOL)tryLockWhenReadyForMainThread;
+- (bool)tryLockWhenReadyForMainThread;
 - (void)unlock;
 - (void)waitUntilAllTasksAreFinished;
 - (void)waitUntilTaskIsFinished:(id)arg1;

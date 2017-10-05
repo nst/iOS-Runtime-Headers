@@ -15,9 +15,9 @@
 - (void).cxx_destruct;
 - (id)_remoteSuggestionManager;
 - (id)delegate;
-- (void)harvestedSuggestionsFromMessage:(id)arg1 bundleIdentifier:(id)arg2 options:(unsigned int)arg3 completionHandler:(id /* block */)arg4;
-- (void)harvestedSuggestionsFromMessage:(id)arg1 options:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
-- (void)harvestedSuggestionsFromMessages:(id)arg1 options:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
+- (void)harvestedSuggestionsFromMessage:(id)arg1 bundleIdentifier:(id)arg2 options:(unsigned long long)arg3 completionHandler:(id /* block */)arg4;
+- (void)harvestedSuggestionsFromMessage:(id)arg1 options:(unsigned long long)arg2 completionHandler:(id /* block */)arg3;
+- (void)harvestedSuggestionsFromMessages:(id)arg1 options:(unsigned long long)arg2 completionHandler:(id /* block */)arg3;
 - (id)init;
 - (id)messagesDaemonConnection;
 - (id)previousMessages;
@@ -27,6 +27,6 @@
 - (void)setMessagesDaemonConnection:(id)arg1;
 - (void)setPreviousMessages:(id)arg1;
 - (void)setupContextIfNeededForConversation:(id)arg1;
-- (void)suggestionsFromMessage:(id)arg1 options:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
+- (void)suggestionsFromMessage:(id)arg1 options:(unsigned long long)arg2 completionHandler:(id /* block */)arg3;
 
 @end

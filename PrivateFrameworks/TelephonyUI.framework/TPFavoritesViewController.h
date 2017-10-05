@@ -5,8 +5,7 @@
 @interface TPFavoritesViewController : UICollectionViewController {
     CNAvatarViewControllerSettings * _avatarViewControllerSettings;
     CNContactFormatter * _contactFormatter;
-    CNContactStore * _contactStore;
-    BOOL  _contentUnavailable;
+    bool  _contentUnavailable;
     UIView * _contentUnavailableView;
     TPFavoritesController * _favoritesController;
     NSArray * _favoritesEntries;
@@ -15,53 +14,49 @@
 
 @property (nonatomic, retain) CNAvatarViewControllerSettings *avatarViewControllerSettings;
 @property (nonatomic, retain) CNContactFormatter *contactFormatter;
-@property (nonatomic, retain) CNContactStore *contactStore;
-@property (nonatomic) BOOL contentUnavailable;
+@property (nonatomic) bool contentUnavailable;
 @property (nonatomic, retain) UIView *contentUnavailableView;
-@property (nonatomic, retain) TPFavoritesController *favoritesController;
+@property (nonatomic, readonly) TPFavoritesController *favoritesController;
 @property (nonatomic, copy) NSArray *favoritesEntries;
 @property (nonatomic, retain) NSIndexSet *sections;
 
 - (void).cxx_destruct;
 - (id)avatarViewControllerSettings;
-- (BOOL)collectionView:(id)arg1 canMoveItemAtIndexPath:(id)arg2;
+- (bool)collectionView:(id)arg1 canMoveItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
-- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
-- (BOOL)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (void)commonInit;
-- (id)contactForFavoritesEntry:(id)arg1 keyDescriptors:(id)arg2;
 - (id)contactFormatter;
-- (id)contactStore;
-- (BOOL)contentUnavailable;
+- (bool)contentUnavailable;
 - (id)contentUnavailableView;
 - (void)dealloc;
 - (void)didReceiveMemoryWarning;
 - (id)favoritesController;
 - (id)favoritesEntries;
-- (id)favoritesEntryAtIndex:(int)arg1;
+- (id)favoritesEntryAtIndex:(long long)arg1;
 - (void)handleContentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)handleFavoritesControllerFavoritesEntriesDidChangeNotification:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCollectionViewLayout:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (int)numberOfSectionsInCollectionView:(id)arg1;
+- (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (void)refreshView;
-- (void)refreshViewAnimated:(BOOL)arg1;
+- (void)refreshViewAnimated:(bool)arg1;
 - (id)sections;
 - (void)setAvatarViewControllerSettings:(id)arg1;
 - (void)setContactFormatter:(id)arg1;
-- (void)setContactStore:(id)arg1;
-- (void)setContentUnavailable:(BOOL)arg1;
-- (void)setContentUnavailable:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setContentUnavailable:(bool)arg1;
+- (void)setContentUnavailable:(bool)arg1 animated:(bool)arg2;
 - (void)setContentUnavailableView:(id)arg1;
 - (void)setFavoritesController:(id)arg1;
 - (void)setFavoritesEntries:(id)arg1;
 - (void)setFavoritesEntries:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setSections:(id)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

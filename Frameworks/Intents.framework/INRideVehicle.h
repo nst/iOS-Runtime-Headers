@@ -12,7 +12,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) CLLocation *location;
 @property (nonatomic, copy) NSString *manufacturer;
 @property (nonatomic, copy) INImage *mapAnnotationImage;
@@ -20,15 +20,19 @@
 @property (nonatomic, copy) NSString *registrationPlate;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
-- (id)cacheableObjects;
+- (id)_intents_cacheableObjects;
+- (void)_intents_updateContainerWithCache:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (id)descriptionAtIndent:(unsigned long long)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)location;
 - (id)manufacturer;
 - (id)mapAnnotationImage;

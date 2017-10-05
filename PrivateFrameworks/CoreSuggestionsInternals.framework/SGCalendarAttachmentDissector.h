@@ -8,11 +8,11 @@
 }
 
 - (void).cxx_destruct;
-- (struct SGMEventICSSourceType_ { unsigned int x1; })accountTypeFor:(id)arg1;
+- (struct SGMEventICSSourceType_ { unsigned long long x1; })accountTypeFor:(id)arg1;
 - (void)dissectInternal:(id)arg1 inContext:(id)arg2;
 - (id)downloadedCalendarAttachmentsFrom:(id)arg1;
-- (BOOL)hasCalendarAccountForOneOf:(id)arg1;
+- (bool)hasCalendarAccountForOneOf:(id)arg1;
 - (id)init;
-- (BOOL)shouldIgnoreEntity:(id)arg1;
+- (bool)shouldIgnoreEntity:(id)arg1;
 
 @end

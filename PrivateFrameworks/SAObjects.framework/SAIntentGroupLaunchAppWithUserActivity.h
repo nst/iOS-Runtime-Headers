@@ -11,7 +11,7 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setUserActivityIdentifier:(id)arg1;
 - (id)userActivityIdentifier;
 

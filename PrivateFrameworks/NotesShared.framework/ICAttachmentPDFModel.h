@@ -4,15 +4,19 @@
 
 @interface ICAttachmentPDFModel : ICAttachmentModel
 
-+ (id)contentInfoTextWithAttachmentCount:(unsigned int)arg1;
-+ (int)populateSearchStrings:(id)arg1 url:(id)arg2 maxStringLength:(unsigned int)arg3 isCancelledBlock:(id /* block */)arg4;
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
-- (BOOL)canMarkup;
++ (id)contentInfoTextWithAttachmentCount:(unsigned long long)arg1;
++ (id)contentTextFromPDFAtURL:(id)arg1;
+
+- (bool)canMarkup;
+- (bool)hasPreviews;
+- (id)searchableTextContent;
+
+// Image: /System/Library/PrivateFrameworks/NotesUI.framework/NotesUI
+
 - (void)generatePreviewsInOperation:(id)arg1;
-- (id)generateSearchIndexStringsOperation;
 - (id /* block */)genericBrickThumbnailCreator;
 - (id /* block */)genericListThumbnailCreator;
-- (BOOL)hasPreviews;
-- (int)populateSearchStrings:(id)arg1;
 
 @end

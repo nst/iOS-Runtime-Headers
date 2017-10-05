@@ -15,34 +15,34 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SKUIRedeemCameraViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL enabled;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool enabled;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIImage *image;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *text;
 
 - (void).cxx_destruct;
-- (float)_adjustVerticalSpacingForHeight:(float)arg1;
+- (double)_adjustVerticalSpacingForHeight:(double)arg1;
 - (void)_hideKeyboard;
 - (void)_landingButtonAction:(id)arg1;
 - (id)_newTextFieldWithClientContext:(id)arg1 placeholderColor:(id)arg2;
 - (void)_termsButtonAction:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)enabled;
+- (bool)enabled;
 - (id)image;
 - (id)initWithClientContext:(id)arg1;
 - (void)keyboardDidChange:(id)arg1;
 - (void)layoutSubviews;
 - (void)setDelegate:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setImage:(id)arg1;
 - (void)setText:(id)arg1;
 - (void)showKeyboard;
 - (void)start;
 - (id)text;
 - (void)textFieldDidEndEditing:(id)arg1;
-- (BOOL)textFieldShouldReturn:(id)arg1;
+- (bool)textFieldShouldReturn:(id)arg1;
 - (void)textFieldTextDidChange:(id)arg1;
 
 @end

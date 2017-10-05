@@ -8,7 +8,7 @@
     }  _delegate;
     struct ObjectStorage<WebKit::WebAutomationSession> { 
         struct type { 
-            unsigned char __lx[396]; 
+            unsigned char __lx[512]; 
         } data; 
     }  _session;
 }
@@ -17,8 +17,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <_WKAutomationSessionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isPaired, nonatomic, readonly) BOOL paired;
+@property (readonly) unsigned long long hash;
+@property (getter=isPaired, nonatomic, readonly) bool paired;
 @property (nonatomic, copy) NSString *sessionIdentifier;
 @property (readonly) Class superclass;
 
@@ -28,7 +28,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (BOOL)isPaired;
+- (bool)isPaired;
 - (id)sessionIdentifier;
 - (void)setDelegate:(id)arg1;
 - (void)setSessionIdentifier:(id)arg1;

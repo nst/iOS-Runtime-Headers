@@ -5,9 +5,12 @@
 
 @required
 
-- (void)confirmationCountUpdatedForSuggestionManager:(PXPeopleSuggestionManager *)arg1;
-- (void)loadingMoreSuggestionsForSuggestionManager:(PXPeopleSuggestionManager *)arg1;
 - (void)noMoreSuggestionsAvailableForSuggestionManager:(PXPeopleSuggestionManager *)arg1;
-- (void)suggestionManager:(PXPeopleSuggestionManager *)arg1 hasNewSuggestionAvailable:(id <PXPerson>)arg2;
+- (void)suggestionManager:(PXPeopleSuggestionManager *)arg1 hasNewSuggestionsAvailable:(NSArray *)arg2;
+
+@optional
+
+- (void)confirmationCountUpdatedForSuggestionManager:(PXPeopleSuggestionManager *)arg1;
+- (void)willLoadMoreSuggestionsForSuggestionManager:(PXPeopleSuggestionManager *)arg1;
 
 @end

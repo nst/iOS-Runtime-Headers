@@ -6,7 +6,7 @@
 
 + (id)hostAppBuild;
 + (id)hostAppVersion;
-+ (BOOL)isInternalBuild;
++ (bool)isInternalBuild;
 + (id)userAgent;
 
 @end

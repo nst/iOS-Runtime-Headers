@@ -3,12 +3,12 @@
  */
 
 @interface PSampleFrameKCDataIterator : NSObject <PASampleFrameIterator> {
-    BOOL  _hideKernelFrames;
-    BOOL  _hideUserFrames;
+    bool  _hideKernelFrames;
+    bool  _hideUserFrames;
     PASampleKernelFrame * _kernel;
     PASampleUserFrame * _user;
     unsigned long long  continuation;
-    BOOL  isUserStackTruncated;
+    bool  isUserStackTruncated;
     const struct stack_snapshot_frame32 { unsigned int x1; unsigned int x2; } * kernel32Frames;
     const unsigned int * kernel32LRs;
     const struct stack_snapshot_frame64 { unsigned long long x1; unsigned long long x2; } * kernel64Frames;
@@ -29,7 +29,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -37,7 +37,8 @@
 - (void)exposeAllFrames;
 - (void)exposeKernelFramesOnly;
 - (void)exposeUserFramesOnly;
-- (BOOL)hasStack;
+- (bool)hasStack;
+- (bool)hasUserStack;
 - (void)iterateFrames:(id /* block */)arg1;
 
 @end

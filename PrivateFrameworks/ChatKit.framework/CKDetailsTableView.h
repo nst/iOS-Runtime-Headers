@@ -4,7 +4,7 @@
 
 @interface CKDetailsTableView : UITableView
 
-- (BOOL)allowsFooterViewsToFloat;
-- (BOOL)allowsHeaderViewsToFloat;
+- (bool)allowsFooterViewsToFloat;
+- (bool)allowsHeaderViewsToFloat;
 
 @end

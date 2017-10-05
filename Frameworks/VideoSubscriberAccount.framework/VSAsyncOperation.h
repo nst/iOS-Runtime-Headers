@@ -9,9 +9,9 @@
 - (void)cancel;
 - (void)executionDidBegin;
 - (void)finishExecutionIfPossible;
-- (BOOL)isAsynchronous;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
+- (bool)isAsynchronous;
+- (bool)isExecuting;
+- (bool)isFinished;
 - (void)start;
 
 @end

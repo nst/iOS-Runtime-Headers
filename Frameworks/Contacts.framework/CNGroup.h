@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Contacts.framework/Contacts
  */
 
-@interface CNGroup : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
+@interface CNGroup : NSObject <ABSCNLegacyIdentifiable, NSCopying, NSMutableCopying, NSSecureCoding> {
     NSDate * _creationDate;
     int  _iOSLegacyIdentifier;
     NSString * _identifier;
@@ -12,11 +12,16 @@
 }
 
 @property (nonatomic, readonly, copy) NSDate *creationDate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) int iOSLegacyIdentifier;
+@property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly, copy) NSDate *modificationDate;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, copy) CNGroup *snapshot;
+@property (readonly) Class superclass;
 
 + (id)identifierProvider;
 + (id)localizedStringForKey:(id)arg1;
@@ -28,14 +33,14 @@
 + (id)predicateForGroupsWithNameMatching:(id)arg1;
 + (id)predicateForSubgroupsInGroupWithIdentifier:(id)arg1;
 + (id)predicateForiOSLegacyIdentifier:(int)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)creationDate;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (int)iOSLegacyIdentifier;
 - (id)identifier;
 - (id)init;
@@ -44,7 +49,7 @@
 - (id)initWithIdentifier:(id)arg1 name:(id)arg2;
 - (id)initWithIdentifier:(id)arg1 name:(id)arg2 creationDate:(id)arg3 modificationDate:(id)arg4;
 - (id)initWithName:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)modificationDate;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)name;

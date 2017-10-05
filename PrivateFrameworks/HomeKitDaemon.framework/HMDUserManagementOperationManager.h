@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDUserManagementOperationManager : NSObject <HMFTimerDelegate> {
+@interface HMDUserManagementOperationManager : HMFObject <HMFTimerDelegate> {
     NSObject<OS_dispatch_queue> * _clientQueue;
+    HMDHomeManager * _homeManager;
     NSHashTable * _observedAccessories;
     NSMutableArray * _operations;
     NSObject<OS_dispatch_queue> * _propertyQueue;
@@ -13,7 +14,8 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) HMDHomeManager *homeManager;
 @property (nonatomic, readonly) NSHashTable *observedAccessories;
 @property (nonatomic, readonly) NSArray *operations;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
@@ -44,6 +46,7 @@
 - (void)dealloc;
 - (id)debugDescription;
 - (id)description;
+- (id)homeManager;
 - (id)init;
 - (id)initWithOperations:(id)arg1;
 - (id)observedAccessories;
@@ -53,6 +56,7 @@
 - (id)propertyQueue;
 - (void)removeOperation:(id)arg1;
 - (id)saveTimer;
+- (void)setHomeManager:(id)arg1;
 - (id)shortDescription;
 - (void)timerDidFire:(id)arg1;
 

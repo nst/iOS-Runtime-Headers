@@ -12,15 +12,15 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *etag;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <NSSecureCoding> *itemID;
 @property (nonatomic) struct _OpaquePCSShareProtection { }*pcs;
 @property (nonatomic, copy) NSData *pcsData;
 @property (nonatomic, retain) NSString *pcsKeyID;
 @property (readonly) Class superclass;
 
-+ (id)newFromSqliteValue:(struct Mem { }*)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)newFromSqliteValue:(struct sqlite3_value { }*)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
@@ -38,6 +38,7 @@
 - (void)setPcs:(struct _OpaquePCSShareProtection { }*)arg1;
 - (void)setPcsData:(id)arg1;
 - (void)setPcsKeyID:(id)arg1;
+- (bool)shouldEncodePCSData;
 - (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 
 @end

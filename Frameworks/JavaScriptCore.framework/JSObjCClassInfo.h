@@ -9,7 +9,6 @@
     struct Weak<JSC::JSObject> { 
         struct WeakImpl {} *m_impl; 
     }  m_constructor;
-    JSContext * m_context;
     struct Weak<JSC::JSObject> { 
         struct WeakImpl {} *m_impl; 
     }  m_prototype;
@@ -17,11 +16,11 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (struct pair<JSC::JSObject *, JSC::JSObject *> { struct JSObject {} *x1; struct JSObject {} *x2; })allocateConstructorAndPrototype;
-- (struct JSObject { struct Structure {} *x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; struct AuxiliaryBarrier<JSC::Butterfly *> { struct Butterfly {} *x_6_1_1; } x6; unsigned int x7; }*)constructor;
+- (struct pair<JSC::JSObject *, JSC::JSObject *> { struct JSObject {} *x1; struct JSObject {} *x2; })allocateConstructorAndPrototypeInContext:(id)arg1;
+- (struct JSObject { unsigned int x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; struct AuxiliaryBarrier<JSC::Butterfly *> { struct Butterfly {} *x_6_1_1; } x6; }*)constructorInContext:(id)arg1;
 - (void)dealloc;
-- (id)initWithContext:(id)arg1 forClass:(Class)arg2;
-- (struct JSObject { struct Structure {} *x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; struct AuxiliaryBarrier<JSC::Butterfly *> { struct Butterfly {} *x_6_1_1; } x6; unsigned int x7; }*)prototype;
-- (struct JSObject { struct Structure {} *x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; struct AuxiliaryBarrier<JSC::Butterfly *> { struct Butterfly {} *x_6_1_1; } x6; unsigned int x7; }*)wrapperForObject:(id)arg1;
+- (id)initForClass:(Class)arg1;
+- (struct JSObject { unsigned int x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; struct AuxiliaryBarrier<JSC::Butterfly *> { struct Butterfly {} *x_6_1_1; } x6; }*)prototypeInContext:(id)arg1;
+- (struct JSObject { unsigned int x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; struct AuxiliaryBarrier<JSC::Butterfly *> { struct Butterfly {} *x_6_1_1; } x6; }*)wrapperForObject:(id)arg1 inContext:(id)arg2;
 
 @end

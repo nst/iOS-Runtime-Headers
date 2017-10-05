@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/AppStoreDaemon.framework/AppStoreDaemon
  */
 
-@interface ASDMigrationRequest : ASDRequest {
-    id /* block */  _completionBlock;
-    ASDMigrationRequestOptions * _options;
-}
+@interface ASDMigrationRequest : ASDEphemeralRequest
 
-- (void).cxx_destruct;
-- (void)_handleResponse:(id)arg1 error:(id)arg2;
+@property (nonatomic, readonly, copy) ASDMigrationRequestOptions *options;
+
++ (long long)requestType;
+
 - (id)initWithOptions:(id)arg1;
 - (void)startWithCompletionBlock:(id /* block */)arg1;
 

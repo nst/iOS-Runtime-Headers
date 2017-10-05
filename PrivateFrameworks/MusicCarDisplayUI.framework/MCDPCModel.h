@@ -7,12 +7,12 @@
     NSMapTable * _identifiersToItems;
     NSObject<OS_dispatch_queue> * _imageProcessingQueue;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _imageSize;
     NSObject<OS_dispatch_group> * _mediaRemoteGroup;
     NSObject<OS_dispatch_queue> * _mediaRemoteNotificationQueue;
-    BOOL  _needsInvalidation;
+    bool  _needsInvalidation;
     unsigned long long  _nextAllowedInvalidate;
     unsigned long long  _nextAllowedUpdate;
     NSCache * _resizedImages;
@@ -23,7 +23,7 @@
 
 @property (nonatomic, readonly) NSString *appTitle;
 @property (nonatomic, readonly, copy) NSString *bundleID;
-@property (nonatomic) struct CGSize { float x1; float x2; } imageSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } imageSize;
 @property (nonatomic, readonly) MCDPCItem *rootItem;
 
 - (void).cxx_destruct;
@@ -43,18 +43,18 @@
 - (id)bundleID;
 - (id)containerForRoot;
 - (void)dealloc;
-- (void)getChildrenAtIndexPath:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 completion:(id /* block */)arg3;
+- (void)getChildrenAtIndexPath:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 completion:(id /* block */)arg3;
 - (void)getChildrenSupportsPlaybackProgressForIndexPath:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)getCountOfChildrenAtIndexPath:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)getItemAtIndexPath:(id)arg1 completion:(id /* block */)arg2;
 - (void)getNowPlayingIdentifiersWithCompletion:(id /* block */)arg1;
 - (void)getRemoteAppIsPlaying:(id /* block */)arg1;
 - (id)imageForIdentifier:(id)arg1;
-- (struct CGSize { float x1; float x2; })imageSize;
+- (struct CGSize { double x1; double x2; })imageSize;
 - (id)initWithBundleID:(id)arg1;
 - (void)initiatePlaybackAtIndexPath:(id)arg1 completion:(id /* block */)arg2;
 - (id)itemsFromMRContentItems:(id)arg1;
 - (id)rootItem;
-- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

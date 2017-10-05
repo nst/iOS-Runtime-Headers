@@ -4,7 +4,7 @@
 
 @interface VSDataCompressionValueTransformer : NSValueTransformer
 
-+ (BOOL)allowsReverseTransformation;
++ (bool)allowsReverseTransformation;
 + (Class)transformedValueClass;
 
 - (id)_dataByPerformingOperation:(int)arg1 onData:(id)arg2;

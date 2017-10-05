@@ -4,16 +4,16 @@
 
 @interface SiriCoreSQLiteQueryOrder : NSObject <NSCopying> {
     NSArray * _columnNames;
-    int  _mode;
+    long long  _mode;
 }
 
 @property (nonatomic, readonly, copy) NSArray *columnNames;
-@property (nonatomic, readonly) int mode;
+@property (nonatomic, readonly) long long mode;
 
 - (void).cxx_destruct;
 - (id)columnNames;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithColumnNames:(id)arg1 mode:(int)arg2;
-- (int)mode;
+- (id)initWithColumnNames:(id)arg1 mode:(long long)arg2;
+- (long long)mode;
 
 @end

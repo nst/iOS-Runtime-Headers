@@ -3,10 +3,10 @@
  */
 
 @interface MomentProcessor : NSObject {
-    MPContext * _context;
+    CVMLMPContext * _context;
 }
 
-@property (nonatomic, retain) MPContext *context;
+@property (nonatomic, retain) CVMLMPContext *context;
 
 + (id)sortImageDescriptorsChronologically:(id)arg1;
 
@@ -14,7 +14,7 @@
 - (id)computeClusteringForClusteringTree:(id)arg1 intoKGroups:(int)arg2 error:(id*)arg3;
 - (id)computeClusteringForClusteringTree:(id)arg1 usingThreshold:(float)arg2 error:(id*)arg3;
 - (id)computeClusteringOfImageDescriptors:(id)arg1 intoKGroups:(int)arg2 error:(id*)arg3;
-- (id)computeClusteringTreeForImageDescriptors:(id)arg1 assumeDescriptorsAreSorted:(BOOL)arg2 error:(id*)arg3;
+- (id)computeClusteringTreeForImageDescriptors:(id)arg1 assumeDescriptorsAreSorted:(bool)arg2 error:(id*)arg3;
 - (id)computeClusteringTreeForImageDescriptors:(id)arg1 error:(id*)arg2;
 - (id)computeNaturalClusteringForClusteringTree:(id)arg1 error:(id*)arg2;
 - (id)computeNaturalClusteringOfImageDescriptors:(id)arg1 error:(id*)arg2;

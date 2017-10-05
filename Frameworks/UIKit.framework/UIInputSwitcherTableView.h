@@ -8,9 +8,11 @@
 
 @property (nonatomic) UIKeyboardMenuView *menu;
 
-- (void)deselectRowAtIndexPath:(id)arg1 animated:(BOOL)arg2;
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (void)deselectRowAtIndexPath:(id)arg1 animated:(bool)arg2;
 - (id)menu;
-- (void)selectRowAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(int)arg3;
+- (void)selectRowAtIndexPath:(id)arg1 animated:(bool)arg2 scrollPosition:(long long)arg3;
 - (void)setMenu:(id)arg1;
 
 @end

@@ -2,31 +2,33 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface MFMailComposeToField : MFMailComposeRecipientView {
+@interface MFMailComposeToField : MFComposeRecipientTextView {
+    bool  _canEncrypt;
     MFComposeSMIMELockButton * _smimeButton;
-    BOOL  _smimeButtonEnabled;
-    BOOL  _smimeButtonVisible;
+    bool  _smimeButtonEnabled;
+    bool  _smimeButtonVisible;
     <MFMailComposeToFieldDelegate> * _toFieldDelegate;
+    bool  _wantsEncryption;
 }
 
 @property (nonatomic, readonly) MFComposeSMIMELockButton *SMIMEButton;
-@property (nonatomic) BOOL smimeButtonEnabled;
-@property (nonatomic) BOOL smimeButtonVisible;
+@property (nonatomic) bool smimeButtonEnabled;
+@property (nonatomic) bool smimeButtonVisible;
 @property (nonatomic) <MFMailComposeToFieldDelegate> *toFieldDelegate;
 
 - (id)SMIMEButton;
-- (void)_setSMIMEButtonVisible:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_setSMIMEButtonVisible:(bool)arg1 animated:(bool)arg2;
 - (void)_tappedSMIMEButton:(id)arg1;
-- (id)_textContainerExclusionPathsWithAddButton:(BOOL)arg1;
+- (id)_textContainerExclusionPathsWithAddButton:(bool)arg1;
 - (void)dealloc;
 - (void)layoutSubviews;
-- (void)setExpanded:(BOOL)arg1;
-- (void)setSmimeButtonEnabled:(BOOL)arg1;
-- (void)setSmimeButtonVisible:(BOOL)arg1;
+- (void)setExpanded:(bool)arg1;
+- (void)setSmimeButtonEnabled:(bool)arg1;
+- (void)setSmimeButtonVisible:(bool)arg1;
 - (void)setToFieldDelegate:(id)arg1;
-- (void)setWantsEncryption:(BOOL)arg1 canEncrypt:(BOOL)arg2 animated:(BOOL)arg3;
-- (BOOL)smimeButtonEnabled;
-- (BOOL)smimeButtonVisible;
+- (void)setWantsEncryption:(bool)arg1 canEncrypt:(bool)arg2 animated:(bool)arg3;
+- (bool)smimeButtonEnabled;
+- (bool)smimeButtonVisible;
 - (id)toFieldDelegate;
 
 @end

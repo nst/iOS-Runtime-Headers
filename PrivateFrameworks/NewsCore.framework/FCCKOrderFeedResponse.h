@@ -6,31 +6,31 @@
     unsigned long long  _extent;
     NSString * _feedID;
     NSArray * _feedItemAndArticleRecords;
-    BOOL  _reachedEnd;
-    BOOL  _reachedMinOrder;
-    BOOL  _wasDropped;
+    bool  _reachedEnd;
+    bool  _reachedMinOrder;
+    bool  _wasDropped;
 }
 
 @property (nonatomic) unsigned long long extent;
 @property (nonatomic, copy) NSString *feedID;
 @property (nonatomic, copy) NSArray *feedItemAndArticleRecords;
-@property (nonatomic) BOOL reachedEnd;
-@property (nonatomic) BOOL reachedMinOrder;
-@property (nonatomic) BOOL wasDropped;
+@property (nonatomic) bool reachedEnd;
+@property (nonatomic) bool reachedMinOrder;
+@property (nonatomic) bool wasDropped;
 
 - (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)extent;
 - (id)feedID;
 - (id)feedItemAndArticleRecords;
-- (BOOL)reachedEnd;
-- (BOOL)reachedMinOrder;
+- (bool)reachedEnd;
+- (bool)reachedMinOrder;
 - (void)setExtent:(unsigned long long)arg1;
 - (void)setFeedID:(id)arg1;
 - (void)setFeedItemAndArticleRecords:(id)arg1;
-- (void)setReachedEnd:(BOOL)arg1;
-- (void)setReachedMinOrder:(BOOL)arg1;
-- (void)setWasDropped:(BOOL)arg1;
-- (BOOL)wasDropped;
+- (void)setReachedEnd:(bool)arg1;
+- (void)setReachedMinOrder:(bool)arg1;
+- (void)setWasDropped:(bool)arg1;
+- (bool)wasDropped;
 
 @end

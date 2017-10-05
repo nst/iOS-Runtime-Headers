@@ -10,8 +10,8 @@
     AVWeakReferencingDelegateStorage * _delegateStorage;
     struct OpaqueFigContentKeySession { } * _figContentKeySession;
     NSString * _hlsMethod;
-    BOOL  _internal;
-    BOOL  _isExpired;
+    bool  _internal;
+    bool  _isExpired;
     NSString * _keySystem;
     struct __CFData { } * _protectorSessionIdentifier;
     NSURL * _storageURL;

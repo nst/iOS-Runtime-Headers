@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) MPMediaLibraryConnectionAssertion *libraryAssertion;
 @property (nonatomic, copy) NSArray *sectionKeepLocalStatusConfigurations;
 @property (readonly) Class superclass;
@@ -19,7 +19,7 @@
 - (void)dealloc;
 - (id)initWithRequest:(id)arg1;
 - (id)libraryAssertion;
-- (id)newOperationForDetailedKeepLocalStatusConfigurationForSectionAtIndex:(int)arg1 responseHandler:(id /* block */)arg2;
+- (id)newOperationForDetailedKeepLocalStatusConfigurationForSectionAtIndex:(long long)arg1 responseHandler:(id /* block */)arg2;
 - (id)sectionKeepLocalStatusConfigurations;
 - (void)setLibraryAssertion:(id)arg1;
 - (void)setSectionKeepLocalStatusConfigurations:(id)arg1;

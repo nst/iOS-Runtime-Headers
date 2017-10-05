@@ -5,14 +5,14 @@
 @interface _UIDocumentPickerContainerURLItem : _UIDocumentPickerContainerItem {
     NSDate * _cachedContentModifiedDate;
     NSString * _cachedContentType;
-    unsigned int  _cachedIndentation;
-    BOOL  _cachedIsAlias;
+    unsigned long long  _cachedIndentation;
+    bool  _cachedIsAlias;
     NSString * _cachedSortPath;
     NSString * _cachedSubtitle;
     NSString * _cachedSubtitle2;
     NSArray * _cachedTags;
     NSString * _cachedTitle;
-    int  _cachedType;
+    long long  _cachedType;
     id  _generationIdentifier;
     NSURL * _url;
 }
@@ -23,22 +23,21 @@
 - (void)_cacheIndentationLevelWithSortPathComponents:(id)arg1;
 - (void)_modelChanged;
 - (void)_removeCachedValues;
-- (BOOL)attributesModified:(id)arg1;
+- (bool)attributesModified:(id)arg1;
 - (void)cacheValues;
 - (id)contentType;
-- (unsigned int)indentationLevel;
+- (unsigned long long)indentationLevel;
 - (id)initWithURL:(id)arg1;
-- (BOOL)isAlias;
+- (bool)isAlias;
 - (id)modificationDate;
-- (BOOL)renameable;
-- (id)sortDate;
+- (bool)renameable;
 - (id)sortPath;
 - (id)sortPathComponents;
 - (id)subtitle;
 - (id)subtitle2;
 - (id)tags;
 - (id)title;
-- (int)type;
+- (long long)type;
 - (id)url;
 - (id)urlInLocalContainer;
 

@@ -8,7 +8,7 @@
     NSString * _groupEmitterIdentifier;
     id /* block */  _groupEmittingCompletionHandler;
     <NSCoding> * _resultCursor;
-    BOOL  _resultFinished;
+    bool  _resultFinished;
     FCFeedGroup * _resultGroup;
     NSArray * _resultGroups;
     <NSCoding> * _toCursor;
@@ -19,7 +19,7 @@
 @property (nonatomic, readonly, copy) NSString *groupEmitterIdentifier;
 @property (nonatomic, copy) id /* block */ groupEmittingCompletionHandler;
 @property (nonatomic, retain) <NSCoding> *resultCursor;
-@property (nonatomic) BOOL resultFinished;
+@property (nonatomic) bool resultFinished;
 @property (nonatomic, retain) FCFeedGroup *resultGroup;
 @property (nonatomic, retain) NSArray *resultGroups;
 @property (nonatomic, readonly) <NSCoding> *toCursor;
@@ -32,12 +32,12 @@
 - (id)initWithContext:(id)arg1 cursor:(id)arg2 toCursor:(id)arg3 groupEmitterIdentifier:(id)arg4;
 - (void)operationWillFinishWithError:(id)arg1;
 - (id)resultCursor;
-- (BOOL)resultFinished;
+- (bool)resultFinished;
 - (id)resultGroup;
 - (id)resultGroups;
 - (void)setGroupEmittingCompletionHandler:(id /* block */)arg1;
 - (void)setResultCursor:(id)arg1;
-- (void)setResultFinished:(BOOL)arg1;
+- (void)setResultFinished:(bool)arg1;
 - (void)setResultGroup:(id)arg1;
 - (void)setResultGroups:(id)arg1;
 - (id)toCursor;

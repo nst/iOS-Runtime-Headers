@@ -4,26 +4,26 @@
 
 @interface TSCHChartAxisAnalyzer : NSObject {
     TSCHChartAxis * mAxis;
-    BOOL  mDidCalculateMedian;
-    BOOL  mFirstValue;
+    bool  mDidCalculateMedian;
+    bool  mFirstValue;
     double  mMax;
     double  mMedian;
     double  mMin;
-    unsigned int  mNumValues;
-    BOOL  mShouldCalculateMedian;
+    unsigned long long  mNumValues;
+    bool  mShouldCalculateMedian;
     double  mSumOfValues;
     NSMutableArray * mValues;
 }
 
-+ (id)analyzerForAxis:(id)arg1 needsMedian:(BOOL)arg2;
++ (id)analyzerForAxis:(id)arg1 needsMedian:(bool)arg2;
 
 - (void)addGridValue:(id)arg1 forSeries:(id)arg2;
 - (double)average;
 - (void)dealloc;
-- (id)initForAxis:(id)arg1 needsMedian:(BOOL)arg2;
+- (id)initForAxis:(id)arg1 needsMedian:(bool)arg2;
 - (double)max;
 - (double)median;
 - (double)min;
-- (BOOL)p_hasMedianReferenceLine;
+- (bool)p_hasMedianReferenceLine;
 
 @end

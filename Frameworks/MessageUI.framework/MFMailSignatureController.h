@@ -4,18 +4,10 @@
 
 @interface MFMailSignatureController : NSObject
 
-- (id)_createSignatureElement:(id)arg1 prepend:(BOOL)arg2 node:(id)arg3 signature:(id)arg4;
-- (id)_createSignatureForSender:(id)arg1 document:(id)arg2 prepend:(BOOL)arg3 node:(id)arg4 usingMarkup:(BOOL)arg5;
-- (id)_domDocumentForComposeBodyField:(id)arg1;
-- (BOOL)_isDraftRestore:(id)arg1;
-- (id)_locateSignatureDiv:(id)arg1;
-- (id)_prependSignatureForSender:(id)arg1 document:(id)arg2 node:(id)arg3 includeMarkup:(BOOL)arg4;
-- (id)_signatureMarkupStringForSender:(id)arg1;
 - (id)_signatureStringForSender:(id)arg1;
-- (BOOL)_updateToSignature:(id)arg1 forDocument:(id)arg2;
-- (void)addSignatureForSender:(id)arg1 bodyField:(id)arg2 prepend:(BOOL)arg3;
-- (void)finalizeSignatureForBodyField:(id)arg1;
-- (BOOL)isDefaultSignatureForSender:(id)arg1;
+- (void)addSignatureForSender:(id)arg1 bodyField:(id)arg2 prepend:(bool)arg3;
+- (void)finalizeSignatureForBodyField:(id)arg1 completionHandler:(id /* block */)arg2;
+- (bool)isDefaultSignatureForSender:(id)arg1;
 - (void)removeSignatureForSender:(id)arg1 bodyField:(id)arg2;
 - (void)updateSignatureForSender:(id)arg1 bodyField:(id)arg2;
 

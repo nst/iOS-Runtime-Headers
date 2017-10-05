@@ -4,7 +4,7 @@
 
 @interface UMTask : NSObject {
     NSString * _bundleID;
-    BOOL  _isFinished;
+    bool  _isFinished;
     NSString * _name;
     int  _pid;
     NSString * _reason;
@@ -12,7 +12,7 @@
 }
 
 @property (nonatomic, copy) NSString *bundleID;
-@property (nonatomic) BOOL isFinished;
+@property (nonatomic) bool isFinished;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) int pid;
 @property (nonatomic, copy) NSString *reason;
@@ -27,12 +27,12 @@
 - (id)description;
 - (void)end;
 - (id)init;
-- (BOOL)isFinished;
+- (bool)isFinished;
 - (id)name;
 - (int)pid;
 - (id)reason;
 - (void)setBundleID:(id)arg1;
-- (void)setIsFinished:(BOOL)arg1;
+- (void)setIsFinished:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setPid:(int)arg1;
 - (void)setReason:(id)arg1;

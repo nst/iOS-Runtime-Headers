@@ -4,74 +4,76 @@
 
 @interface PKImage : NSObject <NSSecureCoding> {
     struct PKEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _capInsets;
     NSData * _imageData;
     struct CGImage { } * _imageRef;
-    int  _orientation;
+    long long  _orientation;
     NSObject<OS_dispatch_queue> * _queue;
-    float  _scale;
-    BOOL  _shouldStretch;
-    BOOL  _shouldTile;
+    double  _scale;
+    bool  _shouldStretch;
+    bool  _shouldTile;
 }
 
-@property (nonatomic, readonly) struct PKEdgeInsets { float x1; float x2; float x3; float x4; } capInsets;
+@property (nonatomic, readonly) struct PKEdgeInsets { double x1; double x2; double x3; double x4; } capInsets;
 @property (nonatomic, readonly) NSData *imageData;
 @property (nonatomic, readonly) struct CGImage { }*imageRef;
-@property (nonatomic, readonly) int orientation;
-@property (nonatomic, readonly) float scale;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
-@property (nonatomic, readonly) BOOL stretches;
-@property (nonatomic, readonly) BOOL tiles;
+@property (nonatomic, readonly) long long orientation;
+@property (nonatomic, readonly) double scale;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
+@property (nonatomic, readonly) bool stretches;
+@property (nonatomic, readonly) bool tiles;
 
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
-+ (id)URLForImageNamed:(id)arg1 inBundle:(id)arg2 scale:(float*)arg3;
-+ (id)URLForImageNamed:(id)arg1 inBundle:(id)arg2 scale:(float*)arg3 preferredScreenScale:(float)arg4 suffix:(id)arg5;
++ (id)URLForImageNamed:(id)arg1 inBundle:(id)arg2 scale:(double*)arg3;
++ (id)URLForImageNamed:(id)arg1 inBundle:(id)arg2 scale:(double*)arg3 preferredScreenScale:(double)arg4 suffix:(id)arg5;
 + (id)hashOfImageNamed:(id)arg1 inBundle:(id)arg2;
 + (id)imageNamed:(id)arg1 inBundle:(id)arg2;
-+ (id)imageNamed:(id)arg1 inBundle:(id)arg2 screenScale:(float)arg3 suffix:(id)arg4;
++ (id)imageNamed:(id)arg1 inBundle:(id)arg2 screenScale:(double)arg3 suffix:(id)arg4;
 + (id)newImageNamed:(id)arg1 inBundle:(id)arg2;
-+ (id)newImageNamed:(id)arg1 inBundle:(id)arg2 screenScale:(float)arg3 suffix:(id)arg4;
++ (id)newImageNamed:(id)arg1 inBundle:(id)arg2 screenScale:(double)arg3 suffix:(id)arg4;
 + (id)passesImageNamed:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_isTiledWhenStretchedToSize:(struct CGSize { float x1; float x2; })arg1;
+- (bool)_isTiledWhenStretchedToSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_queue_createImageRefIfNecessary;
-- (id)blurredImageWithRadius:(unsigned int)arg1 constraints:(id)arg2;
-- (struct PKEdgeInsets { float x1; float x2; float x3; float x4; })capInsets;
-- (id)croppedImageWithInsets:(struct PKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (id)blurredImageWithRadius:(unsigned long long)arg1 constraints:(id)arg2;
+- (struct PKEdgeInsets { double x1; double x2; double x3; double x4; })capInsets;
+- (id)croppedImageWithInsets:(struct PKEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)dealloc;
-- (struct CGSize { float x1; float x2; })downscaleSizeMatchingScale:(float)arg1;
-- (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
-- (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2 withBlendMode:(int)arg3 alpha:(float)arg4;
+- (struct CGSize { double x1; double x2; })downscaleSizeMatchingScale:(double)arg1;
+- (void)drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
+- (void)drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2 withBlendMode:(int)arg3 alpha:(double)arg4;
 - (void)encodeWithCoder:(id)arg1;
 - (id)imageData;
 - (id)imageHash;
 - (struct CGImage { }*)imageRef;
 - (id)init;
-- (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(float)arg2 orientation:(int)arg3;
+- (id)initWithCGImage:(struct CGImage { }*)arg1 scale:(double)arg2 orientation:(long long)arg3;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithData:(id)arg1 scale:(float)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToImage:(id)arg1;
-- (int)orientation;
+- (id)initWithData:(id)arg1 scale:(double)arg2;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToImage:(id)arg1;
+- (long long)orientation;
 - (void)preheatBitmapData;
-- (id)resizableImageByStretchingWithCapInsets:(struct PKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (id)resizableImageByStretchingWithCapInsets:(struct PKEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (id)resizableImageByTilingCenterPixel;
-- (id)resizableImageByTilingWithCapInsets:(struct PKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (id)resizableImageByTilingWithCapInsets:(struct PKEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (id)resizedImageWithConstraints:(id)arg1;
-- (float)scale;
-- (struct CGSize { float x1; float x2; })size;
-- (BOOL)stretches;
-- (BOOL)tiles;
+- (double)scale;
+- (struct CGSize { double x1; double x2; })size;
+- (bool)stretches;
+- (bool)tiles;
 
 // Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
 
-- (id)resizedImageToCover:(struct CGSize { float x1; float x2; })arg1;
+- (id)resizedImageToCover:(struct CGSize { double x1; double x2; })arg1;
+- (id)resizedImageToFit:(struct CGSize { double x1; double x2; })arg1;
+- (id)resizedImageWithSize:(struct CGSize { double x1; double x2; })arg1 shouldCover:(bool)arg2;
 
 @end

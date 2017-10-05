@@ -3,7 +3,7 @@
  */
 
 @interface GEOCelestialEphemeris : NSObject {
-    int  _body;
+    long long  _body;
     struct { 
         double latitude; 
         double longitude; 
@@ -32,15 +32,15 @@
 @property (nonatomic, readonly) NSDate *set;
 @property (nonatomic, readonly) NSDate *transit;
 
-- (void)_getRightAscension:(double*)arg1 declination:(double*)arg2 forJulianDay:(double)arg3 forBody:(int)arg4;
-- (struct CAARiseTransitSetDetails { bool x1; double x2; bool x3; double x4; bool x5; double x6; })_riseTransitSetForBody:(int)arg1;
-- (void)dealloc;
+- (void).cxx_destruct;
+- (void)_getRightAscension:(double*)arg1 declination:(double*)arg2 forJulianDay:(double)arg3 forBody:(long long)arg4;
+- (struct CAARiseTransitSetDetails { bool x1; double x2; bool x3; double x4; bool x5; double x6; })_riseTransitSetForBody:(long long)arg1;
 - (id)eclipticCoord;
 - (double)elongation;
 - (id)equatorialCoord;
 - (id)horizontalCoord;
 - (double)illuminatedFraction;
-- (id)initWithLocation:(struct { double x1; double x2; })arg1 date:(id)arg2 body:(int)arg3;
+- (id)initWithLocation:(struct { double x1; double x2; })arg1 date:(id)arg2 body:(long long)arg3;
 - (double)parallacticAngle;
 - (double)phaseAngle;
 - (id)rise;

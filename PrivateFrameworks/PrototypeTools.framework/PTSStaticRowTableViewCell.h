@@ -4,7 +4,7 @@
 
 @interface PTSStaticRowTableViewCell : PTSRowTableViewCell
 
-+ (int)cellStyleForRow:(id)arg1;
++ (long long)cellStyleForRow:(id)arg1;
 
 - (id)textForValue:(id)arg1;
 - (void)updateDisplayedValue;

@@ -3,20 +3,20 @@
  */
 
 @interface IMDoubleLinkedList : NSObject {
-    unsigned int  _count;
+    unsigned long long  _count;
     IMDoubleLinkedListNode * _first;
     IMDoubleLinkedListNode * _last;
 }
 
-@property (readonly) unsigned int count;
+@property (readonly) unsigned long long count;
 @property (retain) IMDoubleLinkedListNode *first;
 @property (retain) IMDoubleLinkedListNode *last;
 
 - (id)allObjects;
 - (void)appendLinkedListNode:(id)arg1;
 - (void)appendObject:(id)arg1;
-- (BOOL)containsObject:(id)arg1;
-- (unsigned int)count;
+- (bool)containsObject:(id)arg1;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)first;
 - (id)init;

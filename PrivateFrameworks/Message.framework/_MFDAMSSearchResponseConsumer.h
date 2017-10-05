@@ -4,17 +4,20 @@
 
 @interface _MFDAMSSearchResponseConsumer : _MFDAMSBasicConsumer <DASearchQueryConsumer> {
     MFConditionLock * doneCondition;
+    NSDate * earliestDateAdded;
     NSDate * latestDateToAdd;
     MFMailMessageStoreSearchResult * searchResult;
     double  timeReceivedLastResponse;
     unsigned int  totalCount;
 }
 
+@property (nonatomic, readonly, retain) NSDate *earliestDateAdded;
 @property (nonatomic, retain) NSDate *latestDateToAdd;
 @property (nonatomic, readonly, retain) MFMailMessageStoreSearchResult *searchResult;
 
 - (void)dealloc;
-- (BOOL)handleItems:(id)arg1;
+- (id)earliestDateAdded;
+- (bool)handleItems:(id)arg1;
 - (id)initWithMaximumSize:(unsigned int)arg1 latency:(double)arg2;
 - (id)latestDateToAdd;
 - (void)resetDoneCondition;
@@ -24,6 +27,6 @@
 - (id)searchResult;
 - (void)setLatestDateToAdd:(id)arg1;
 - (void)waitUntilDone;
-- (BOOL)waitUntilDoneBeforeDate:(id)arg1;
+- (bool)waitUntilDoneBeforeDate:(id)arg1;
 
 @end

@@ -7,14 +7,14 @@
 }
 
 @property (nonatomic, readonly) UIColor *color;
-@property (nonatomic, readonly) int colorType;
+@property (nonatomic, readonly) long long colorType;
 @property (nonatomic, readonly) NSArray *gradientColors;
 @property (nonatomic, readonly) NSArray *gradientPoints;
 @property (nonatomic, readonly) IKColor *ikColor;
 
 - (void).cxx_destruct;
 - (id)color;
-- (int)colorType;
+- (long long)colorType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)gradientColors;
 - (id)gradientPoints;

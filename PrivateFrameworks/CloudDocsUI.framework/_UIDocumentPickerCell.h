@@ -8,7 +8,7 @@
     NSArray * _activeConstraints;
     NSArray * _availableActions;
     UIView * _cachedSelectedBackgroundView;
-    int  _cellStyle;
+    long long  _cellStyle;
     _UIDocumentPickerDocumentCollectionViewController * _collectionView;
     NSArray * _gridConstraints;
     NSLayoutConstraint * _indentationConstraint;
@@ -29,7 +29,7 @@
     NSLayoutConstraint * _thumbnailCenterWidthConstraint;
     UIImageView * _thumbnailView;
     UILabel * _titleLabel;
-    BOOL  _transitioningLayout;
+    bool  _transitioningLayout;
 }
 
 @property (nonatomic, retain) UILongPressGestureRecognizer *actionGestureRecognizer;
@@ -37,7 +37,7 @@
 @property (nonatomic, retain) NSArray *activeConstraints;
 @property (nonatomic, retain) NSArray *availableActions;
 @property (nonatomic, retain) UIView *cachedSelectedBackgroundView;
-@property (nonatomic) int cellStyle;
+@property (nonatomic) long long cellStyle;
 @property (nonatomic) _UIDocumentPickerDocumentCollectionViewController *collectionView;
 @property (nonatomic, retain) NSArray *gridConstraints;
 @property (nonatomic, retain) NSLayoutConstraint *indentationConstraint;
@@ -58,12 +58,12 @@
 @property (nonatomic, retain) NSLayoutConstraint *thumbnailCenterWidthConstraint;
 @property (nonatomic, retain) UIImageView *thumbnailView;
 @property (nonatomic, retain) UILabel *titleLabel;
-@property (getter=isTransitioningLayout, nonatomic) BOOL transitioningLayout;
+@property (getter=isTransitioningLayout, nonatomic) bool transitioningLayout;
 
-+ (id)_subtitleFontForTable:(BOOL)arg1;
-+ (id)_titleFontForTable:(BOOL)arg1;
-+ (struct CGSize { float x1; float x2; })defaultSizeForCellStyle:(int)arg1 traitCollection:(id)arg2;
-+ (struct CGSize { float x1; float x2; })thumbnailSizeForTraits:(id)arg1 cellStyle:(int)arg2;
++ (id)_subtitleFontForTable:(bool)arg1;
++ (id)_titleFontForTable:(bool)arg1;
++ (struct CGSize { double x1; double x2; })defaultSizeForCellStyle:(long long)arg1 traitCollection:(id)arg2;
++ (struct CGSize { double x1; double x2; })thumbnailSizeForTraits:(id)arg1 cellStyle:(long long)arg2;
 
 - (void).cxx_destruct;
 - (void)_activityAction:(id)arg1;
@@ -80,7 +80,7 @@
 - (void)_updateConstraintsForCellStyle;
 - (void)_updateFonts;
 - (void)_updateIconSize;
-- (void)_updateSelectionState:(BOOL)arg1;
+- (void)_updateSelectionState:(bool)arg1;
 - (void)_updateSeparatorInset;
 - (id)actionGestureRecognizer;
 - (id)actions;
@@ -88,9 +88,9 @@
 - (void)applyLayoutAttributes:(id)arg1;
 - (id)availableActions;
 - (id)cachedSelectedBackgroundView;
-- (BOOL)canBecomeFirstResponder;
-- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (int)cellStyle;
+- (bool)canBecomeFirstResponder;
+- (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (long long)cellStyle;
 - (id)collectionView;
 - (void)dealloc;
 - (void)didTransitionFromLayout:(id)arg1 toLayout:(id)arg2;
@@ -98,13 +98,13 @@
 - (id)indentationConstraint;
 - (id)indentationHelperView;
 - (id)indentedConstraints;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isTransitioningLayout;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isTransitioningLayout;
 - (id)item;
 - (id)pickableDiagnosticGestureRecognizer;
 - (void)prepareForReuse;
 - (id)progressView;
-- (void)reloadItem:(BOOL)arg1;
+- (void)reloadItem:(bool)arg1;
 - (id)selectionView;
 - (id)selectionViewConstraints;
 - (id)selectionViewsThumbnailView;
@@ -113,18 +113,18 @@
 - (void)setActiveConstraints:(id)arg1;
 - (void)setAvailableActions:(id)arg1;
 - (void)setCachedSelectedBackgroundView:(id)arg1;
-- (void)setCellStyle:(int)arg1;
+- (void)setCellStyle:(long long)arg1;
 - (void)setCollectionView:(id)arg1;
-- (void)setEditing:(BOOL)arg1;
+- (void)setEditing:(bool)arg1;
 - (void)setGridConstraints:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setIndentationConstraint:(id)arg1;
 - (void)setIndentationHelperView:(id)arg1;
 - (void)setIndentedConstraints:(id)arg1;
 - (void)setItem:(id)arg1;
 - (void)setPickableDiagnosticGestureRecognizer:(id)arg1;
 - (void)setProgressView:(id)arg1;
-- (void)setSelected:(BOOL)arg1;
+- (void)setSelected:(bool)arg1;
 - (void)setSelectionView:(id)arg1;
 - (void)setSelectionViewConstraints:(id)arg1;
 - (void)setSelectionViewsThumbnailView:(id)arg1;
@@ -137,7 +137,7 @@
 - (void)setThumbnailCenterWidthConstraint:(id)arg1;
 - (void)setThumbnailView:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
-- (void)setTransitioningLayout:(BOOL)arg1;
+- (void)setTransitioningLayout:(bool)arg1;
 - (id)subtitle2Label;
 - (id)subtitleJoiner;
 - (id)subtitleLabel;
@@ -150,7 +150,7 @@
 - (id)titleLabel;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateActionGestureRecognizer;
-- (void)updateForEditingState:(BOOL)arg1;
+- (void)updateForEditingState:(bool)arg1;
 - (void)willTransitionFromLayout:(id)arg1 toLayout:(id)arg2;
 
 @end

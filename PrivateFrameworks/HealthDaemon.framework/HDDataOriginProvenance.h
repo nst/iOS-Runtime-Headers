@@ -4,6 +4,11 @@
 
 @interface HDDataOriginProvenance : NSObject <NSCopying, NSSecureCoding> {
     NSNumber * _deviceID;
+    struct { 
+        long long majorVersion; 
+        long long minorVersion; 
+        long long patchVersion; 
+    }  _operatingSystemVersion;
     NSString * _productType;
     NSNumber * _sourceID;
     NSString * _sourceVersion;
@@ -13,6 +18,7 @@
 }
 
 @property (nonatomic, retain) NSNumber *deviceID;
+@property (nonatomic) struct { long long x1; long long x2; long long x3; } operatingSystemVersion;
 @property (nonatomic, copy) NSString *productType;
 @property (nonatomic, retain) NSNumber *sourceID;
 @property (nonatomic, copy) NSString *sourceVersion;
@@ -20,20 +26,22 @@
 @property (nonatomic, copy) NSString *systemBuild;
 @property (nonatomic, copy) NSString *timeZoneName;
 
-+ (id)dataProvenanceWithSyncProvenance:(long long)arg1 productType:(id)arg2 systemBuild:(id)arg3 sourceVersion:(id)arg4 timeZoneName:(id)arg5 sourceID:(id)arg6 deviceID:(id)arg7;
-+ (BOOL)supportsSecureCoding;
++ (id)dataProvenanceWithSyncProvenance:(long long)arg1 productType:(id)arg2 systemBuild:(id)arg3 operatingSystemVersion:(struct { long long x1; long long x2; long long x3; })arg4 sourceVersion:(id)arg5 timeZoneName:(id)arg6 sourceID:(id)arg7 deviceID:(id)arg8;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)deviceID;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isValid;
+- (bool)isEqual:(id)arg1;
+- (bool)isValid;
+- (struct { long long x1; long long x2; long long x3; })operatingSystemVersion;
 - (id)productType;
 - (void)setDeviceID:(id)arg1;
+- (void)setOperatingSystemVersion:(struct { long long x1; long long x2; long long x3; })arg1;
 - (void)setProductType:(id)arg1;
 - (void)setSourceID:(id)arg1;
 - (void)setSourceVersion:(id)arg1;

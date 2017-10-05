@@ -4,16 +4,16 @@
 
 @interface _GEOThrottleState : NSObject {
     double  _lastResetTime;
-    unsigned int  _requestCount;
+    unsigned long long  _requestCount;
 }
 
 @property (nonatomic) double lastResetTime;
-@property (nonatomic) unsigned int requestCount;
+@property (nonatomic) unsigned long long requestCount;
 
 - (id)description;
 - (double)lastResetTime;
-- (unsigned int)requestCount;
+- (unsigned long long)requestCount;
 - (void)setLastResetTime:(double)arg1;
-- (void)setRequestCount:(unsigned int)arg1;
+- (void)setRequestCount:(unsigned long long)arg1;
 
 @end

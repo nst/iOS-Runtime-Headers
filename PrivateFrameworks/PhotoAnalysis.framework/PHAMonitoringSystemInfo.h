@@ -10,7 +10,7 @@
 @property unsigned long long diskBytesReadPerInterval;
 @property unsigned long long diskBytesWritePerInterval;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (unsigned long long)diskBytesReadPerInterval;
 - (unsigned long long)diskBytesWritePerInterval;

@@ -7,11 +7,12 @@
         double avg; 
         double max; 
         double min; 
-        unsigned int count; 
+        unsigned long long count; 
     }  stats;
 }
 
 - (id)description;
-- (id)initWithStats:(const struct { double x1; double x2; double x3; unsigned int x4; }*)arg1;
+- (void)incorporateStats:(const struct { double x1; double x2; double x3; unsigned long long x4; }*)arg1;
+- (id)initWithStats:(const struct { double x1; double x2; double x3; unsigned long long x4; }*)arg1;
 
 @end

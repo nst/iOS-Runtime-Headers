@@ -12,10 +12,10 @@
 @property (nonatomic, readonly, copy) NSNumber *minimumBitrate;
 @property (nonatomic, readonly, copy) NSNumber *rtcpInterval;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_parseFromTLVData;
+- (bool)_parseFromTLVData;
 - (void)description:(id)arg1 indent:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

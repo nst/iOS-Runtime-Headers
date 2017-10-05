@@ -5,54 +5,56 @@
 @interface TSWPPageLayout : TSDLayout {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _headerFooterBorderRects;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _headerFooterClipRects;
     TSWPLayout * _headerFooterLayouts;
 }
 
-@property (nonatomic, readonly) BOOL allowsHeaderFooter;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bodyRect;
-@property (nonatomic, readonly) float footerHeight;
-@property (nonatomic, readonly) BOOL hasFooters;
-@property (nonatomic, readonly) BOOL hasHeaders;
+@property (nonatomic, readonly) bool allowsHeaderFooter;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bodyRect;
+@property (nonatomic, readonly) double footerHeight;
+@property (nonatomic, readonly) bool hasFooters;
+@property (nonatomic, readonly) bool hasHeaders;
 @property (nonatomic, readonly) <TSWPHeaderFooterProvider> *headerFooterProvider;
-@property (nonatomic, readonly) BOOL headerFooterProviderValid;
-@property (nonatomic, readonly) float headerHeight;
+@property (nonatomic, readonly) bool headerFooterProviderValid;
+@property (nonatomic, readonly) double headerHeight;
 
-- (BOOL)allowsHeaderFooter;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bodyRect;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })borderRectForHeaderFooter:(int)arg1 atIndex:(int)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })clipRectForHeaderFooter:(int)arg1 atIndex:(int)arg2;
-- (float)footerHeight;
-- (BOOL)hasFooters;
-- (BOOL)hasHeaders;
+- (void).cxx_destruct;
+- (bool)allowsHeaderFooter;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bodyRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })borderRectForHeaderFooter:(int)arg1 atIndex:(int)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })clipRectForHeaderFooter:(int)arg1 atIndex:(int)arg2;
+- (double)footerHeight;
+- (bool)hasFooters;
+- (bool)hasHeaders;
 - (id)headerFooterLayout:(int)arg1 atIndex:(int)arg2;
 - (id)headerFooterProvider;
-- (BOOL)headerFooterProviderValid;
-- (float)headerHeight;
+- (bool)headerFooterProviderValid;
+- (double)headerHeight;
 - (void)i_clearHeaderFooterLayouts;
 - (void)i_insertValidatedHeaderFooterLayouts;
-- (BOOL)i_updateHeaderFooterLayouts;
-- (BOOL)isHeaderFooterLayout:(id)arg1;
-- (BOOL)p_isHeaderFooter:(int)arg1 editingAtFragmentIndex:(int)arg2;
+- (bool)i_updateHeaderFooterLayouts;
+- (bool)isHeaderFooterLayout:(id)arg1;
+- (bool)p_isHeaderFooter:(int)arg1 editingAtFragmentIndex:(int)arg2;
 - (void)p_updateHeaderFooterClipAndBorderRect;
 - (void)p_updateHeaderFooterClipAndBorderRects:(int)arg1;
-- (BOOL)shouldHeaderFooterBeVisible:(int)arg1;
+- (void)parentWillChangeTo:(id)arg1;
+- (bool)shouldHeaderFooterBeVisible:(int)arg1;
 
 @end

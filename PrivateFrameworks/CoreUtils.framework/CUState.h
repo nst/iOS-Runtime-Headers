@@ -4,7 +4,7 @@
 
 @interface CUState : NSObject {
     id /* block */  _eventHandler;
-    unsigned int  _index;
+    unsigned long long  _index;
     NSPointerArray * _lcaMap;
     NSString * _name;
     CUState * _parent;

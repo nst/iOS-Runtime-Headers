@@ -3,21 +3,29 @@
  */
 
 @interface ADAdSpaceEventInfo : NSObject <NSSecureCoding> {
-    int  _lastErrorCode;
-    unsigned int  _screenfuls;
+    bool  _adReused;
+    long long  _lastErrorCode;
+    unsigned long long  _screenfuls;
+    unsigned long long  _slotPosition;
 }
 
-@property (nonatomic) int lastErrorCode;
-@property (nonatomic) unsigned int screenfuls;
+@property (nonatomic) bool adReused;
+@property (nonatomic) long long lastErrorCode;
+@property (nonatomic) unsigned long long screenfuls;
+@property (nonatomic) unsigned long long slotPosition;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
+- (bool)adReused;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRecipient:(id)arg1;
-- (int)lastErrorCode;
-- (unsigned int)screenfuls;
-- (void)setLastErrorCode:(int)arg1;
-- (void)setScreenfuls:(unsigned int)arg1;
+- (long long)lastErrorCode;
+- (unsigned long long)screenfuls;
+- (void)setAdReused:(bool)arg1;
+- (void)setLastErrorCode:(long long)arg1;
+- (void)setScreenfuls:(unsigned long long)arg1;
+- (void)setSlotPosition:(unsigned long long)arg1;
+- (unsigned long long)slotPosition;
 
 @end

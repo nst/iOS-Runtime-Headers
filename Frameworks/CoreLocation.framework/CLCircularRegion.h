@@ -9,10 +9,10 @@
 
 // Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (struct CLLocationCoordinate2D { double x1; double x2; })center;
-- (BOOL)containsCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
+- (bool)containsCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCenter:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 radius:(double)arg2 identifier:(id)arg3;

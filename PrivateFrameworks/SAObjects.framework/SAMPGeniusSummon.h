@@ -4,7 +4,7 @@
 
 @interface SAMPGeniusSummon : SADomainCommand
 
-@property (nonatomic, copy) NSString *airplayRouteUID;
+@property (nonatomic, copy) NSArray *hashedRouteUIDs;
 @property (nonatomic, retain) SAMPMediaItem *mediaItem;
 @property (nonatomic, copy) NSNumber *startPlaying;
 @property (nonatomic, copy) NSString *upNextQueueInsertLocation;
@@ -12,12 +12,13 @@
 + (id)geniusSummon;
 + (id)geniusSummonWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)airplayRouteUID;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (id)hashedRouteUIDs;
 - (id)mediaItem;
-- (BOOL)requiresResponse;
-- (void)setAirplayRouteUID:(id)arg1;
+- (bool)mutatingCommand;
+- (bool)requiresResponse;
+- (void)setHashedRouteUIDs:(id)arg1;
 - (void)setMediaItem:(id)arg1;
 - (void)setStartPlaying:(id)arg1;
 - (void)setUpNextQueueInsertLocation:(id)arg1;

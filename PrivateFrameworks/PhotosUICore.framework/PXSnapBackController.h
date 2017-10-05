@@ -3,15 +3,15 @@
  */
 
 @interface PXSnapBackController : NSObject <UIGestureRecognizerDelegate> {
-    BOOL  _enabled;
+    bool  _enabled;
     UILongPressGestureRecognizer * _longPressGestureRecognizer;
     UINavigationController * _navigationController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isEnabled, nonatomic) BOOL enabled;
-@property (readonly) unsigned int hash;
+@property (getter=isEnabled, nonatomic) bool enabled;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) UILongPressGestureRecognizer *longPressGestureRecognizer;
 @property (nonatomic, readonly) UINavigationController *navigationController;
 @property (readonly) Class superclass;
@@ -23,12 +23,12 @@
 - (void)_loadGestureRecognizer;
 - (void)_presentHistory;
 - (void)_unloadGestureRecognizer;
-- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (id)init;
 - (id)initWithNavigationController:(id)arg1;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (id)longPressGestureRecognizer;
 - (id)navigationController;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 
 @end

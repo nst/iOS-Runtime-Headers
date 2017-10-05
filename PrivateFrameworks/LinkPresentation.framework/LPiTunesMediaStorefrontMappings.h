@@ -5,7 +5,7 @@
 @interface LPiTunesMediaStorefrontMappings : NSObject
 
 + (id)defaultStorefrontCountryCode;
-+ (BOOL)isValidStorefrontCountryCode:(id)arg1;
++ (bool)isValidStorefrontCountryCode:(id)arg1;
 + (id)storefrontIdentifierFromCountryCode:(id)arg1;
 
 @end

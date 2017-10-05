@@ -7,7 +7,7 @@
 
 - (OKWidgetView *)collectionItemAtIndexPath:(NSIndexPath *)arg1;
 - (OKWidgetView *)collectionItemForName:(NSString *)arg1;
-- (unsigned int)collectionItemsCount;
+- (unsigned long long)collectionItemsCount;
 - (NSArray *)collectionItemsNames;
 
 @end

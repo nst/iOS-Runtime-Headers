@@ -19,6 +19,9 @@
 @property (nonatomic, retain) <CKDURLRequestPipelining> *request;
 
 - (void).cxx_destruct;
+- (void)addPerRequestCallbackBlock:(id /* block */)arg1;
+- (void)cancelAndDisablePerRequestCallbackBlocks;
+- (void)disablePerRequestCallbackBlocks;
 - (id)initWithRequest:(id)arg1 operation:(id)arg2;
 - (id)operation;
 - (id)perRequestCallbackBlocks;

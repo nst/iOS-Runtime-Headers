@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDHomeAssistantOperation : NSObject <HMFTimerDelegate> {
+@interface HMDHomeAssistantOperation : HMFObject <HMFTimerDelegate> {
     NSSet * _accessoriesToOperateOn;
     HMFTimer * _accessoryConnectivityWaitTimer;
     id /* block */  _completionHandler;
-    BOOL  _completionHandlerCalled;
+    bool  _completionHandlerCalled;
     NSMutableSet * _reachableAccessoriesToOperateOn;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
@@ -14,10 +14,10 @@
 @property (nonatomic, readonly) NSSet *accessoriesToOperateOn;
 @property (nonatomic, readonly) HMFTimer *accessoryConnectivityWaitTimer;
 @property (nonatomic, copy) id /* block */ completionHandler;
-@property (nonatomic) BOOL completionHandlerCalled;
+@property (nonatomic) bool completionHandlerCalled;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSMutableSet *reachableAccessoriesToOperateOn;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
@@ -28,17 +28,17 @@
 
 - (void).cxx_destruct;
 - (void)_callCompletion;
-- (BOOL)_testForReachability;
+- (bool)_testForReachability;
 - (id)accessoriesToOperateOn;
 - (id)accessoryConnectivityWaitTimer;
 - (id /* block */)completionHandler;
-- (BOOL)completionHandlerCalled;
+- (bool)completionHandlerCalled;
 - (void)dealloc;
 - (void)handleAccessoryIsReachable:(id)arg1;
 - (id)initWithAccessories:(id)arg1 queue:(id)arg2;
 - (id)reachableAccessoriesToOperateOn;
 - (void)setCompletionHandler:(id /* block */)arg1;
-- (void)setCompletionHandlerCalled:(BOOL)arg1;
+- (void)setCompletionHandlerCalled:(bool)arg1;
 - (void)startWithCompletion:(id /* block */)arg1;
 - (void)timerDidFire:(id)arg1;
 - (id)workQueue;

@@ -6,9 +6,14 @@
 
 @property (nonatomic, readonly) NSIndexPath *selectedItemIndexPath;
 
-- (BOOL)_selectAndScrollToItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(unsigned int)arg3;
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (bool)_selectAndScrollToItemAtIndexPath:(id)arg1 animated:(bool)arg2 scrollPosition:(unsigned long long)arg3;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (void)configureAsCandidatesBar;
-- (BOOL)delaysContentTouches;
+- (bool)delaysContentTouches;
 - (id)selectedItemIndexPath;
 
 @end

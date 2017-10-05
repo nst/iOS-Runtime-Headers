@@ -13,7 +13,7 @@
 @property unsigned int databaseSize;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSMutableArray *homeConfigurations;
 @property bool isResidentCapable;
 @property bool isResidentEnabled;
@@ -27,7 +27,7 @@
 - (unsigned int)AWDMessageType;
 - (unsigned int)databaseSize;
 - (id)homeConfigurations;
-- (id)initWithCapacity:(unsigned int)arg1;
+- (id)initWithCapacity:(unsigned long long)arg1;
 - (bool)isResidentCapable;
 - (bool)isResidentEnabled;
 - (unsigned int)metadataVersion;

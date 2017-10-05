@@ -6,7 +6,7 @@
     NSMutableString * _blockText;
     GLKShaderBlockNode * _children;
     unsigned int  _index;
-    BOOL  _indexedMask;
+    bool  _indexedMask;
     NSString * _label;
     NSString * _loopVar;
     struct GLKBigInt_s { 
@@ -24,9 +24,9 @@
 @property (nonatomic) GLKShaderBlockNode *children;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned int index;
-@property (nonatomic) BOOL indexedMask;
+@property (nonatomic) bool indexedMask;
 @property (nonatomic, copy) NSString *label;
 @property (nonatomic, copy) NSString *loopVar;
 @property (nonatomic) struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; } mask;
@@ -54,7 +54,7 @@
 - (void)dealloc;
 - (id)description;
 - (unsigned int)index;
-- (BOOL)indexedMask;
+- (bool)indexedMask;
 - (id)init;
 - (id)label;
 - (id)loopVar;
@@ -68,7 +68,7 @@
 - (void)setBlockText:(id)arg1;
 - (void)setChildren:(id)arg1;
 - (void)setIndex:(unsigned int)arg1;
-- (void)setIndexedMask:(BOOL)arg1;
+- (void)setIndexedMask:(bool)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setLoopVar:(id)arg1;
 - (void)setMask:(struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; })arg1;

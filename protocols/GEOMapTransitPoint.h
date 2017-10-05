@@ -13,7 +13,7 @@
 - (GEOMapRequest *)findGeometryWithCompletionHandler:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, GEOMapRequest *, void*
 - (NSString *)internalName;
 - (struct { double x1; double x2; }*)polygonPoints;
-- (int)polygonPointsCount;
+- (long long)polygonPointsCount;
 - (unsigned long long)transitID;
 
 @end

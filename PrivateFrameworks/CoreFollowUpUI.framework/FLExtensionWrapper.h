@@ -11,20 +11,20 @@
     FLExtensionHostContext * _hostContext;
     id /* block */  _requestInterruptionBlock;
     NSUUID * _sessionID;
-    BOOL  _supportsViewContext;
+    bool  _supportsViewContext;
 }
 
 @property (nonatomic, copy) id /* block */ requestInterruptionBlock;
-@property (nonatomic) BOOL supportsViewContext;
+@property (nonatomic) bool supportsViewContext;
 
 + (void)getAllFollowUpExtensionsWithCompletion:(id /* block */)arg1;
 + (id)sharedExtensionQueue;
 
 - (void).cxx_destruct;
 - (id)_hostContextForExtension:(id)arg1;
-- (BOOL)_loadExtension:(BOOL)arg1 error:(id*)arg2;
+- (bool)_loadExtension:(bool)arg1 error:(id*)arg2;
 - (id)_loadExtensionForIdentifier:(id)arg1 error:(id*)arg2;
-- (BOOL)_setupSessionIfNeeded:(id*)arg1;
+- (bool)_setupSessionIfNeeded:(id*)arg1;
 - (void)_setupSessionWithExtension:(id)arg1 completion:(id /* block */)arg2;
 - (id)identifier;
 - (id)initWithExtension:(id)arg1;
@@ -34,7 +34,7 @@
 - (id)remoteViewController;
 - (id /* block */)requestInterruptionBlock;
 - (void)setRequestInterruptionBlock:(id /* block */)arg1;
-- (void)setSupportsViewContext:(BOOL)arg1;
-- (BOOL)supportsViewContext;
+- (void)setSupportsViewContext:(bool)arg1;
+- (bool)supportsViewContext;
 
 @end

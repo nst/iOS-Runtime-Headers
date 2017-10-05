@@ -3,17 +3,17 @@
  */
 
 @interface CNAutocompleteInfrequentRecentResult : CNAutocompleteRecentResult {
-    unsigned int  _dateCount;
+    unsigned long long  _dateCount;
 }
 
-@property unsigned int dateCount;
+@property unsigned long long dateCount;
 
-+ (unsigned int)category;
++ (unsigned long long)category;
 + (id)comparators;
-+ (id)contactResultWithDisplayName:(id)arg1 value:(id)arg2 lastSendingAddress:(id)arg3 dateCount:(unsigned int)arg4 date:(id)arg5;
-+ (id)groupResultWithDisplayName:(id)arg1 dateCount:(unsigned int)arg2 date:(id)arg3;
++ (id)contactResultWithDisplayName:(id)arg1 value:(id)arg2 lastSendingAddress:(id)arg3 dateCount:(unsigned long long)arg4 date:(id)arg5;
++ (id)groupResultWithDisplayName:(id)arg1 dateCount:(unsigned long long)arg2 date:(id)arg3;
 
-- (unsigned int)dateCount;
-- (void)setDateCount:(unsigned int)arg1;
+- (unsigned long long)dateCount;
+- (void)setDateCount:(unsigned long long)arg1;
 
 @end

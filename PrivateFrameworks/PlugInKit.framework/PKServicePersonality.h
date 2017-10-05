@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (retain) id embeddedPrincipal;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) id hostPrincipal;
 @property (readonly) NSString *identifier;
 @property (readonly) NSDictionary *plugInDictionary;

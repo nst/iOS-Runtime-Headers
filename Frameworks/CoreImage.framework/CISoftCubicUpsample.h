@@ -12,8 +12,7 @@
 
 + (id)customAttributes;
 
-- (BOOL)_isIdentity;
-- (id)_kernel;
+- (bool)_isIdentity;
 - (struct vec2 { float x1; float x2; })_scale;
 - (id)inputImage;
 - (id)inputScale;

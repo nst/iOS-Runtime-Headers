@@ -10,17 +10,17 @@
 @property int (*isEqualFunction;
 @property int (*relinquishFunction;
 @property int (*sizeFunction;
-@property BOOL usesStrongWriteBarrier;
-@property BOOL usesWeakReadAndWriteBarriers;
+@property bool usesStrongWriteBarrier;
+@property bool usesWeakReadAndWriteBarriers;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)pointerFunctionsWithOptions:(unsigned int)arg1;
++ (id)pointerFunctionsWithOptions:(unsigned long long)arg1;
 
 - (int (*)acquireFunction;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int (*)descriptionFunction;
 - (int (*)hashFunction;
-- (id)initWithOptions:(unsigned int)arg1;
+- (id)initWithOptions:(unsigned long long)arg1;
 - (int (*)isEqualFunction;
 - (int (*)relinquishFunction;
 - (void)setAcquireFunction:(int (*)arg1;
@@ -29,10 +29,10 @@
 - (void)setIsEqualFunction:(int (*)arg1;
 - (void)setRelinquishFunction:(int (*)arg1;
 - (void)setSizeFunction:(int (*)arg1;
-- (void)setUsesStrongWriteBarrier:(BOOL)arg1;
-- (void)setUsesWeakReadAndWriteBarriers:(BOOL)arg1;
+- (void)setUsesStrongWriteBarrier:(bool)arg1;
+- (void)setUsesWeakReadAndWriteBarriers:(bool)arg1;
 - (int (*)sizeFunction;
-- (BOOL)usesStrongWriteBarrier;
-- (BOOL)usesWeakReadAndWriteBarriers;
+- (bool)usesStrongWriteBarrier;
+- (bool)usesWeakReadAndWriteBarriers;
 
 @end

@@ -14,12 +14,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_computedFrameForActivityIndicatorView;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentInset;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_computedFrameForActivityIndicatorView;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentInset;
 - (void)_hideActivityIndicator;
 - (id)_layoutCache;
 - (id)_newColumnViewControllersWithReusableViewControllers:(id)arg1;
@@ -33,7 +33,7 @@
 - (void)getModalSourceViewForElementIdentifier:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)initWithTemplateElement:(id)arg1;
 - (void)loadView;
-- (void)resourceLoader:(id)arg1 didLoadAllForReason:(int)arg2;
+- (void)resourceLoader:(id)arg1 didLoadAllForReason:(long long)arg2;
 - (void)resourceLoaderDidBeginLoading:(id)arg1;
 - (void)viewWillLayoutSubviews;
 

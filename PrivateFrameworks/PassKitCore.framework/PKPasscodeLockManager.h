@@ -4,15 +4,15 @@
 
 @interface PKPasscodeLockManager : NSObject <MCProfileConnectionObserver> {
     NSObject<OS_dispatch_queue> * _internalQueue;
-    BOOL  _isPasscodeSet;
+    bool  _isPasscodeSet;
     NSHashTable * _observers;
     MCProfileConnection * _profileConnection;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isPasscodeSet;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isPasscodeSet;
 @property (readonly) Class superclass;
 
 + (id)sharedManager;
@@ -21,7 +21,7 @@
 - (void)addObserver:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isPasscodeSet;
+- (bool)isPasscodeSet;
 - (void)profileConnectionDidReceivePasscodeChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (void)removeObserver:(id)arg1;
 

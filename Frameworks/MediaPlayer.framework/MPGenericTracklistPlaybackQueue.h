@@ -3,27 +3,30 @@
  */
 
 @interface MPGenericTracklistPlaybackQueue : MPRemotePlaybackQueue {
-    int  _repeatType;
-    int  _shuffleType;
+    NSString * _firstTrackIdentifier;
+    long long  _repeatType;
+    long long  _shuffleType;
     NSArray * _trackIdentifiers;
 }
 
-@property (nonatomic, readonly) int repeatType;
-@property (nonatomic, readonly) int shuffleType;
+@property (nonatomic, readonly) NSString *firstTrackIdentifier;
+@property (nonatomic, readonly) long long repeatType;
+@property (nonatomic, readonly) long long shuffleType;
 @property (nonatomic, readonly) NSArray *trackIdentifiers;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 - (void).cxx_destruct;
 - (id)description;
+- (id)firstTrackIdentifier;
 - (id)initWithMediaRemotePlaybackQueue:(struct _MRSystemAppPlaybackQueue { }*)arg1;
-- (int)repeatType;
-- (int)shuffleType;
+- (long long)repeatType;
+- (long long)shuffleType;
 - (id)trackIdentifiers;
-- (BOOL)verifyWithError:(id*)arg1;
+- (bool)verifyWithError:(id*)arg1;
 
-// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+// Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
 
-- (id)createPlaybackContext;
+- (void)getPlaybackContextWithCompletion:(id /* block */)arg1;
 
 @end

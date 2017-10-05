@@ -6,24 +6,28 @@
     struct { 
         unsigned int suppressSiriRating : 1; 
     }  _has;
-    BOOL  _suppressSiriRating;
+    bool  _suppressSiriRating;
+    PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic) BOOL hasSuppressSiriRating;
-@property (nonatomic) BOOL suppressSiriRating;
+@property (nonatomic) bool hasSuppressSiriRating;
+@property (nonatomic) bool suppressSiriRating;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasSuppressSiriRating;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasSuppressSiriRating;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasSuppressSiriRating:(BOOL)arg1;
-- (void)setSuppressSiriRating:(BOOL)arg1;
-- (BOOL)suppressSiriRating;
+- (bool)readFrom:(id)arg1;
+- (void)setHasSuppressSiriRating:(bool)arg1;
+- (void)setSuppressSiriRating:(bool)arg1;
+- (bool)suppressSiriRating;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

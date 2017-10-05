@@ -6,7 +6,7 @@
     NSString * _uuid;
 }
 
-@property (nonatomic, readonly) BOOL hasUuid;
+@property (nonatomic, readonly) bool hasUuid;
 @property (nonatomic, retain) NSString *uuid;
 
 + (id)options;
@@ -16,11 +16,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasUuid;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasUuid;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setUuid:(id)arg1;

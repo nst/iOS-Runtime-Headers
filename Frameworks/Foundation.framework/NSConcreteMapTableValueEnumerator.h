@@ -3,7 +3,7 @@
  */
 
 @interface NSConcreteMapTableValueEnumerator : NSEnumerator {
-    unsigned int  counter;
+    unsigned long long  counter;
     NSConcreteMapTable * mapTable;
 }
 

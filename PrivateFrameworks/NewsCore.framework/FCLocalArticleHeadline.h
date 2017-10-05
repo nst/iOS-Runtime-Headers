@@ -24,17 +24,17 @@
 - (id)contentURL;
 - (id)dictionary;
 - (id)endOfArticleTopicIDs;
-- (BOOL)hasThumbnail;
+- (bool)hasThumbnail;
 - (id)iAdCategories;
 - (id)iAdKeywords;
 - (id)iAdSectionIDs;
 - (id)identifier;
 - (id)initWithDictionary:(id)arg1 path:(id)arg2 channel:(id)arg3;
-- (BOOL)isDeleted;
-- (BOOL)isDraft;
-- (BOOL)isFeatureCandidate;
-- (BOOL)isPremium;
-- (BOOL)isSponsored;
+- (bool)isDeleted;
+- (bool)isDraft;
+- (bool)isFeatureCandidate;
+- (bool)isPremium;
+- (bool)isSponsored;
 - (id)lastModifiedDate;
 - (id)localDraftPath;
 - (id)path;
@@ -46,10 +46,10 @@
 - (id)surfacedByBinID;
 - (id)thumbnail;
 - (id)thumbnailAssetHandle;
-- (struct CGSize { float x1; float x2; })thumbnailSize;
+- (struct CGSize { double x1; double x2; })thumbnailSize;
 - (id)title;
 - (id)topicIDs;
-- (float)videoDuration;
+- (double)videoDuration;
 - (id)videoURL;
 
 @end

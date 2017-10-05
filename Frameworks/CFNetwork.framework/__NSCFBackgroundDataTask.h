@@ -3,14 +3,14 @@
  */
 
 @interface __NSCFBackgroundDataTask : __NSCFBackgroundSessionTask <NSStreamDelegate> {
-    unsigned int  _bytesRead;
-    BOOL  _finishedOpen;
+    unsigned long long  _bytesRead;
+    bool  _finishedOpen;
     NSInputStream * _initialStream;
-    BOOL  _openedStreamDuringNeedNewBodyStream;
+    bool  _openedStreamDuringNeedNewBodyStream;
     NSObject<OS_dispatch_io> * _pipeIO;
     NSFileHandle * _readHandle;
     NSInputStream * _requestBodyStream;
-    BOOL  _streamBased;
+    bool  _streamBased;
     NSObject<OS_dispatch_semaphore> * _streamOpenedSema;
     id /* block */  _streamWriteCompletion;
     NSObject<OS_dispatch_queue> * _writeQueue;
@@ -18,8 +18,8 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isStreamBased, readonly) BOOL streamBased;
+@property (readonly) unsigned long long hash;
+@property (getter=isStreamBased, readonly) bool streamBased;
 @property (copy) id /* block */ streamWriteCompletion;
 @property (readonly) Class superclass;
 
@@ -28,19 +28,19 @@
 - (void)_onqueue_didReceiveData:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_onqueue_didReceiveResponse:(id)arg1 redirectRequest:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)_onqueue_didReceiveResponse:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)_onqueue_finishStream:(BOOL)arg1;
+- (void)_onqueue_finishStream:(bool)arg1;
 - (void)_onqueue_invokeStreamWriteCompletion;
-- (void)_onqueue_needNewBodyStream:(BOOL)arg1 withCompletion:(id /* block */)arg2;
+- (void)_onqueue_needNewBodyStream:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (void)_onqueue_openStream;
 - (void)_onqueue_willBeRetried;
 - (void)_onqueue_willSendRequestForEstablishedConnection:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)dealloc;
-- (id)initWithSession:(id)arg1 remoteSession:(id)arg2 request:(id)arg3 ident:(unsigned int)arg4;
-- (BOOL)isKindOfClass:(Class)arg1;
-- (BOOL)isStreamBased;
+- (id)initWithSession:(id)arg1 remoteSession:(id)arg2 request:(id)arg3 ident:(unsigned long long)arg4;
+- (bool)isKindOfClass:(Class)arg1;
+- (bool)isStreamBased;
 - (void)readFromStream;
 - (void)setStreamWriteCompletion:(id /* block */)arg1;
-- (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
+- (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (id /* block */)streamWriteCompletion;
 
 @end

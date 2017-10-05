@@ -2,19 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIFeedbackDragSnappingBehavior : _UIFeedbackDragBehavior
+@interface _UIFeedbackDragSnappingBehavior : _UIDragSnappingFeedbackGenerator
 
-@property (getter=_dragSnappingConfiguration, nonatomic, readonly) _UIFeedbackDragSnappingBehaviorConfiguration *dragSnappingConfiguration;
++ (id)dragBehaviorWithCoordinateSpace:(id)arg1 configuration:(id)arg2;
++ (id)dragBehaviorWithStyle:(long long)arg1 coordinateSpace:(id)arg2;
++ (id)retargetBehaviorWithStyle:(long long)arg1 coordinateSpace:(id)arg2;
 
-+ (Class)_configurationClass;
-
-- (id)_dragSnappingConfiguration;
-- (void)_startLanding;
-- (void)_stopLanding;
-- (void)draggedObjectLanded;
-- (void)draggedObjectLifted;
-- (void)objectSnapped;
-- (void)userInteractionEnded;
-- (void)userInteractionStarted;
+- (void)snappedToFinalPosition;
+- (void)targetUpdated;
 
 @end

@@ -13,9 +13,9 @@
     NSMutableArray * _suggestionItems;
 }
 
-@property (nonatomic) BOOL hasRefineSearchType;
-@property (nonatomic, readonly) BOOL hasSearchString;
-@property (nonatomic) BOOL hasSearchType;
+@property (nonatomic) bool hasRefineSearchType;
+@property (nonatomic, readonly) bool hasSearchString;
+@property (nonatomic) bool hasSearchType;
 @property (nonatomic) int refineSearchType;
 @property (nonatomic, retain) NSString *searchString;
 @property (nonatomic) int searchType;
@@ -23,36 +23,36 @@
 
 + (Class)suggestionItemType;
 
+- (void).cxx_destruct;
 - (int)StringAsRefineSearchType:(id)arg1;
 - (int)StringAsSearchType:(id)arg1;
 - (void)addSuggestionItem:(id)arg1;
 - (void)clearSuggestionItems;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasRefineSearchType;
-- (BOOL)hasSearchString;
-- (BOOL)hasSearchType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasRefineSearchType;
+- (bool)hasSearchString;
+- (bool)hasSearchType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)refineSearchType;
 - (id)refineSearchTypeAsString:(int)arg1;
 - (id)searchString;
 - (int)searchType;
 - (id)searchTypeAsString:(int)arg1;
-- (void)setHasRefineSearchType:(BOOL)arg1;
-- (void)setHasSearchType:(BOOL)arg1;
+- (void)setHasRefineSearchType:(bool)arg1;
+- (void)setHasSearchType:(bool)arg1;
 - (void)setRefineSearchType:(int)arg1;
 - (void)setSearchString:(id)arg1;
 - (void)setSearchType:(int)arg1;
 - (void)setSuggestionItems:(id)arg1;
-- (id)suggestionItemAtIndex:(unsigned int)arg1;
+- (id)suggestionItemAtIndex:(unsigned long long)arg1;
 - (id)suggestionItems;
-- (unsigned int)suggestionItemsCount;
+- (unsigned long long)suggestionItemsCount;
 - (void)writeTo:(id)arg1;
 
 @end

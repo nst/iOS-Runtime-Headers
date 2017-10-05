@@ -3,34 +3,35 @@
  */
 
 @interface _UIRefreshControlModernContentView : _UIRefreshControlContentView {
-    BOOL  _animationsAreValid;
-    BOOL  _areAnimationsValid;
-    float  _currentPopStiffness;
-    BOOL  _hasFinishedRevealing;
-    float  _impactIntensity;
+    bool  _animationsAreValid;
+    bool  _areAnimationsValid;
+    double  _currentPopStiffness;
+    bool  _hasFinishedRevealing;
+    double  _impactIntensity;
     UIView * _replicatorContainer;
     _UIRefreshControlModernReplicatorView * _replicatorView;
-    BOOL  _scrollViewVerticalFeedbackBehaviorEnabled;
+    bool  _scrollViewVerticalFeedbackGeneratorEnabled;
     UIView * _seed;
     UILabel * _textLabel;
 }
 
-@property (nonatomic) BOOL areAnimationsValid;
-@property (nonatomic) float currentPopStiffness;
-@property (nonatomic) float impactIntensity;
+@property (nonatomic) bool areAnimationsValid;
+@property (nonatomic) double currentPopStiffness;
+@property (nonatomic) double impactIntensity;
 @property (nonatomic, readonly) UILabel *textLabel;
 
 - (void).cxx_destruct;
 - (void)_bloom;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_bloomedSeedTransform;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_bloomedSeedTransform;
 - (void)_cleanUpAfterRevealing;
 - (double)_currentTimeOffset;
-- (float)_effectiveScrollViewHeight;
 - (id)_effectiveTintColor;
-- (id)_effectiveTintColorWithAlpha:(float)arg1;
+- (id)_effectiveTintColorWithAlpha:(double)arg1;
 - (void)_goAway;
-- (float)_heightAtWhichNoneOfTheInterfaceElementsAreVisibleEvenIfTheControlIsStillPartiallyOnScreen;
-- (float)_percentageShowing;
+- (double)_heightAtWhichNoneOfTheInterfaceElementsAreVisibleEvenIfTheControlIsStillPartiallyOnScreen;
+- (double)_maximumSnappingHeightScalingForScrollViewHeight;
+- (double)_percentageShowing;
+- (void)_removeAllAnimations;
 - (void)_resetToRevealingState;
 - (void)_reveal;
 - (void)_setBloomedAppearance;
@@ -41,24 +42,24 @@
 - (void)_tick;
 - (void)_tickDueToProgrammaticRefresh;
 - (void)_unbloom;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_unbloomedSeedTransform;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_unbloomedSeedTransform;
 - (void)_updateTimeOffsetOfRelevantLayers;
-- (BOOL)areAnimationsValid;
+- (bool)areAnimationsValid;
 - (id)attributedTitle;
-- (float)currentPopStiffness;
-- (void)didTransitionFromState:(int)arg1 toState:(int)arg2;
-- (float)impactIntensity;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (double)currentPopStiffness;
+- (void)didTransitionFromState:(long long)arg1 toState:(long long)arg2;
+- (double)impactIntensity;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (float)maximumSnappingHeight;
-- (void)setAreAnimationsValid:(BOOL)arg1;
+- (double)maximumSnappingHeight;
+- (void)setAreAnimationsValid:(bool)arg1;
 - (void)setAttributedTitle:(id)arg1;
-- (void)setCurrentPopStiffness:(float)arg1;
-- (void)setImpactIntensity:(float)arg1;
+- (void)setCurrentPopStiffness:(double)arg1;
+- (void)setImpactIntensity:(double)arg1;
 - (void)setTintColor:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (int)style;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (long long)style;
 - (id)textLabel;
-- (void)willTransitionFromState:(int)arg1 toState:(int)arg2;
+- (void)willTransitionFromState:(long long)arg1 toState:(long long)arg2;
 
 @end

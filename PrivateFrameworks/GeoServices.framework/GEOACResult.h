@@ -2,30 +2,16 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOACResult : PBCodable <NSCopying> {
-    int  _acType;
-    struct { 
-        unsigned int acType : 1; 
-    }  _has;
-}
+@interface GEOACResult : PBCodable <NSCopying>
 
-@property (nonatomic) int acType;
-@property (nonatomic) BOOL hasAcType;
-
-- (int)StringAsAcType:(id)arg1;
-- (int)acType;
-- (id)acTypeAsString:(int)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAcType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setAcType:(int)arg1;
-- (void)setHasAcType:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

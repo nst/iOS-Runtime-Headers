@@ -5,7 +5,7 @@
 
 @required
 
-- (void)voipPayloadReceived:(NSDictionary *)arg1;
+- (void)voipPayloadReceived:(void *)arg1 withCompletionHandler:(void *)arg2; // needs 2 arg types, found 6: NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)voipRegistrationSucceededWithDeviceToken:(NSData *)arg1;
 
 @optional

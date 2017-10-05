@@ -7,7 +7,6 @@
 @property (nonatomic, copy) NSArray *aceAirQualities;
 @property (nonatomic, retain) SAUIAppPunchOut *appPunchOut;
 @property (nonatomic, retain) SAUIImageResource *attributionImage;
-@property (nonatomic, copy) NSString *title;
 
 + (id)airQualitySnippet;
 + (id)airQualitySnippetWithDictionary:(id)arg1 context:(id)arg2;
@@ -20,7 +19,5 @@
 - (void)setAceAirQualities:(id)arg1;
 - (void)setAppPunchOut:(id)arg1;
 - (void)setAttributionImage:(id)arg1;
-- (void)setTitle:(id)arg1;
-- (id)title;
 
 @end

@@ -4,31 +4,31 @@
 
 @interface SSRedeemCodesRequest : SSRequest <SSXPCCoding> {
     SSAuthenticationContext * _authenticationContext;
-    BOOL  _cameraRecognized;
-    BOOL  _headless;
+    bool  _cameraRecognized;
+    bool  _headless;
     NSArray * _redeemCodes;
 }
 
 @property (copy) SSAuthenticationContext *authenticationContext;
-@property BOOL cameraRecognized;
+@property bool cameraRecognized;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property BOOL headless;
+@property (readonly) unsigned long long hash;
+@property bool headless;
 @property (readonly) NSArray *redeemCodes;
 @property (readonly) Class superclass;
 
 - (id)authenticationContext;
-- (BOOL)cameraRecognized;
+- (bool)cameraRecognized;
 - (id)copyXPCEncoding;
 - (void)dealloc;
-- (BOOL)headless;
+- (bool)headless;
 - (id)initWithRedeemCodes:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)redeemCodes;
 - (void)setAuthenticationContext:(id)arg1;
-- (void)setCameraRecognized:(BOOL)arg1;
-- (void)setHeadless:(BOOL)arg1;
+- (void)setCameraRecognized:(bool)arg1;
+- (void)setHeadless:(bool)arg1;
 - (void)startWithCompletionBlock:(id /* block */)arg1;
 - (void)startWithRedeemResponseBlock:(id /* block */)arg1;
 

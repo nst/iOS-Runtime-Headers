@@ -6,7 +6,7 @@
     NSMutableDictionary * _results;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (void)enumerateResolutionsUsingBlock:(id /* block */)arg1;
 - (id)init;

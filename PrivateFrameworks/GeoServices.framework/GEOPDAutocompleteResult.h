@@ -3,7 +3,7 @@
  */
 
 @interface GEOPDAutocompleteResult : PBCodable <NSCopying> {
-    BOOL  _enableRap;
+    bool  _enableRap;
     struct { 
         unsigned int enableRap : 1; 
     }  _has;
@@ -11,31 +11,31 @@
     PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic) BOOL enableRap;
-@property (nonatomic) BOOL hasEnableRap;
+@property (nonatomic) bool enableRap;
+@property (nonatomic) bool hasEnableRap;
 @property (nonatomic, retain) NSMutableArray *sections;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)sectionsType;
 
+- (void).cxx_destruct;
 - (void)addSections:(id)arg1;
 - (void)clearSections;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)enableRap;
-- (BOOL)hasEnableRap;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)enableRap;
+- (bool)hasEnableRap;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)sections;
-- (id)sectionsAtIndex:(unsigned int)arg1;
-- (unsigned int)sectionsCount;
-- (void)setEnableRap:(BOOL)arg1;
-- (void)setHasEnableRap:(BOOL)arg1;
+- (id)sectionsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)sectionsCount;
+- (void)setEnableRap:(bool)arg1;
+- (void)setHasEnableRap:(bool)arg1;
 - (void)setSections:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;

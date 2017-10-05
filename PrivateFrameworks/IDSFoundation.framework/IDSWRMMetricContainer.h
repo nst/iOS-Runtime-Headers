@@ -41,7 +41,6 @@
 - (unsigned long long)StreamBytesSent;
 - (unsigned long long)StreamPacketsReceived;
 - (unsigned long long)StreamPacketsSent;
-- (void)dealloc;
 - (id)description;
 - (id)init;
 - (unsigned long long)numMessageDeliveredRTT;

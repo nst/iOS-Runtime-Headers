@@ -2,19 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DeviceManagement.framework/DeviceManagement
  */
 
-@interface DMFFetchInstalledApplicationsResultObject : CATTaskResultObject {
-    NSDictionary * _applicationsByIdentifier;
-}
-
-@property (nonatomic, copy) NSDictionary *applicationsByIdentifier;
-
-+ (BOOL)supportsSecureCoding;
-
-- (void).cxx_destruct;
-- (id)applicationsByIdentifier;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithApplicationsByIdentifier:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)setApplicationsByIdentifier:(id)arg1;
+@interface DMFFetchInstalledApplicationsResultObject : DMFFetchApplicationsResultObject
 
 @end

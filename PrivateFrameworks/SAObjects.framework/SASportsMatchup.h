@@ -117,9 +117,9 @@
 - (id)siriui_firstEntity;
 - (id)siriui_firstLineScores;
 - (id)siriui_firstScore;
-- (BOOL)siriui_homeIsFirst;
-- (BOOL)siriui_isInTheFuture;
-- (id)siriui_localizedScheduleStatusForLeague:(id)arg1 sport:(id)arg2 showTimeIfToday:(BOOL)arg3;
+- (bool)siriui_homeIsFirst;
+- (bool)siriui_isInTheFuture;
+- (id)siriui_localizedScheduleStatusForLeague:(id)arg1 sport:(id)arg2 showTimeIfToday:(bool)arg3;
 - (id)siriui_secondEntity;
 - (id)siriui_secondLineScores;
 - (id)siriui_secondScore;

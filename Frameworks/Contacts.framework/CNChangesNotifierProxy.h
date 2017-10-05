@@ -13,7 +13,7 @@
     NSMapTable * _removalBlocks;
     <CNSchedulerProvider> * _schedulerProvider;
     NSCountedSet * _supressedNotificationNames;
-    BOOL  forwardsSelfGeneratedDistributedSaveNotifications;
+    bool  forwardsSelfGeneratedDistributedSaveNotifications;
 }
 
 @property (nonatomic, retain) NSString *coalescingNotificationName;
@@ -21,8 +21,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) double externalNotificationCoalescingDelay;
-@property (nonatomic) BOOL forwardsSelfGeneratedDistributedSaveNotifications;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool forwardsSelfGeneratedDistributedSaveNotifications;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSMutableDictionary *notificationForwardingMapping;
 @property (nonatomic, retain) NSMutableDictionary *notificationsToBeSentOnceAllowed;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *notifierQueue;
@@ -32,32 +32,32 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSCountedSet *supressedNotificationNames;
 
+- (void).cxx_destruct;
 - (void)addListenerForNotificationName:(id)arg1 registration:(id /* block */)arg2 removal:(id /* block */)arg3;
 - (void)addNotificationPoster:(id /* block */)arg1 forNotificationName:(id)arg2;
 - (void)coalesceNotificationName:(id)arg1;
 - (id)coalescingNotificationName;
 - (id)coalescingTimer;
-- (void)dealloc;
 - (double)externalNotificationCoalescingDelay;
 - (void)forwardNotificationName:(id)arg1 asNotificationName:(id)arg2;
-- (BOOL)forwardsSelfGeneratedDistributedSaveNotifications;
+- (bool)forwardsSelfGeneratedDistributedSaveNotifications;
 - (id)initWithSchedulerProvider:(id)arg1;
 - (id)notificationForwardingMapping;
 - (id)notificationsToBeSentOnceAllowed;
 - (id)notifierQueue;
 - (id)notifyingBlocks;
-- (void)postNotificationName:(id)arg1 fromSender:(id)arg2 saveIdentifier:(id)arg3 isFromExternalProcess:(BOOL)arg4;
-- (void)postNotificationName:(id)arg1 fromSender:(id)arg2 saveIdentifier:(id)arg3 userInfo:(id)arg4 shouldForwardExternally:(BOOL)arg5 calledFromNotifierQueue:(BOOL)arg6 isFromExternalProcess:(BOOL)arg7;
+- (void)postNotificationName:(id)arg1 fromSender:(id)arg2 saveIdentifier:(id)arg3 isFromExternalProcess:(bool)arg4;
+- (id /* block */)postNotificationName:(id)arg1 fromSender:(id)arg2 saveIdentifier:(id)arg3 userInfo:(id)arg4 shouldForwardExternally:(bool)arg5 calledFromNotifierQueue:(bool)arg6 isFromExternalProcess:(bool)arg7;
 - (void)receiveExternalNotificationName:(id)arg1;
-- (void)receiveNotificationName:(id)arg1 fromSender:(id)arg2 saveIdentifier:(id)arg3 userInfo:(id)arg4 calledFromNotifierQueue:(BOOL)arg5 isFromExternalProcess:(BOOL)arg6;
-- (void)receiveNotificationName:(id)arg1 fromSender:(id)arg2 saveIdentifier:(id)arg3 userInfo:(id)arg4 isFromExternalProcess:(BOOL)arg5;
+- (id /* block */)receiveNotificationName:(id)arg1 fromSender:(id)arg2 saveIdentifier:(id)arg3 userInfo:(id)arg4 calledFromNotifierQueue:(bool)arg5 isFromExternalProcess:(bool)arg6;
+- (void)receiveNotificationName:(id)arg1 fromSender:(id)arg2 saveIdentifier:(id)arg3 userInfo:(id)arg4 isFromExternalProcess:(bool)arg5;
 - (id)removalBlocks;
 - (void)removeAllRegisteredNotificationSources;
 - (id)schedulerProvider;
 - (void)setCoalescingNotificationName:(id)arg1;
 - (void)setCoalescingTimer:(id)arg1;
 - (void)setExternalNotificationCoalescingDelay:(double)arg1;
-- (void)setForwardsSelfGeneratedDistributedSaveNotifications:(BOOL)arg1;
+- (void)setForwardsSelfGeneratedDistributedSaveNotifications:(bool)arg1;
 - (void)setNotificationsToBeSentOnceAllowed:(id)arg1;
 - (void)setNotifierQueue:(id)arg1;
 - (void)setNotifyingBlocks:(id)arg1;

@@ -6,18 +6,25 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+// Image: /System/Library/Frameworks/Contacts.framework/Contacts
+
 - (id)CNValueForContact:(id)arg1;
-- (int)abPropertyID:(int*)arg1;
+- (bool)abPropertyID:(int*)arg1;
+- (bool)canUnifyValue:(id)arg1 withValue:(id)arg2;
 - (void)decodeUsingCoder:(id)arg1 contact:(id)arg2;
 - (void)encodeUsingCoder:(id)arg1 contact:(id)arg2;
 - (id)init;
-- (BOOL)isEqualForContact:(id)arg1 other:(id)arg2;
-- (BOOL)isNonnull;
-- (BOOL)isValue:(id)arg1 equivalentToValue:(id)arg2;
+- (bool)isEqualForContact:(id)arg1 other:(id)arg2;
+- (bool)isNonnull;
 - (void)setCNValue:(id)arg1 onContact:(id)arg2;
 - (id)standardLabels;
+
+// Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
+
+- (bool)absPropertyID:(int*)arg1;
+- (unsigned int)absPropertyType;
 
 @end

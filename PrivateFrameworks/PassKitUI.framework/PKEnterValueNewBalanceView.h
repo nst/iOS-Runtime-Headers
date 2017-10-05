@@ -6,25 +6,38 @@
     NSDecimalNumber * _additionalAmount;
     NSDecimalNumber * _cardBalance;
     NSString * _currencyCode;
+    NSNumberFormatter * _currentAmountFormatter;
     NSDecimalNumber * _maxAmount;
+    NSDecimalNumber * _minAmount;
     UILabel * _newBalanceAmount;
     UILabel * _newBalancePrompt;
+    bool  _showSpinner;
+    UIActivityIndicatorView * _spinner;
 }
 
 @property (nonatomic, copy) NSDecimalNumber *cardBalance;
+@property (nonatomic, copy) NSString *currencyCode;
 @property (nonatomic, copy) NSDecimalNumber *maxAmount;
+@property (nonatomic, copy) NSDecimalNumber *minAmount;
 
 - (void).cxx_destruct;
 - (void)_addSubviews;
+- (void)_createAmountFormatter;
+- (id)_formattedStringForAmount:(id)arg1;
 - (void)_updateBalanceText;
 - (void)addAmountToBalance:(id)arg1;
 - (id)cardBalance;
+- (id)currencyCode;
 - (id)init;
 - (id)initWithCurrencyCode:(id)arg1;
 - (void)layoutSubviews;
 - (id)maxAmount;
+- (id)minAmount;
 - (void)setCardBalance:(id)arg1;
+- (void)setCurrencyCode:(id)arg1;
 - (void)setMaxAmount:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setMinAmount:(id)arg1;
+- (void)showSpinner:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

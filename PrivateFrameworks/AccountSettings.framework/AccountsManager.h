@@ -5,7 +5,7 @@
 @interface AccountsManager : NSObject {
     NSMutableDictionary * _childAccountIDToParentAccountID;
     NSMutableDictionary * _childAccountsByID;
-    unsigned int  _dataVersion;
+    unsigned long long  _dataVersion;
     NSMutableArray * _orderedTopLevelAccounts;
     NSMutableDictionary * _originalAccountsByID;
     NSArray * _runtimeFixers;
@@ -13,19 +13,19 @@
 }
 
 + (id)_notifierClassNamesForAccountType:(id)arg1 dataclass:(id)arg2;
-+ (BOOL)_oldDAAccountsInformationFound;
-+ (BOOL)_oldMailAccountsInformationFound;
-+ (void)_setShouldSkipNotifications:(BOOL)arg1;
++ (bool)_oldDAAccountsInformationFound;
++ (bool)_oldMailAccountsInformationFound;
++ (void)_setShouldSkipNotifications:(bool)arg1;
 + (void)accountDidChange:(id)arg1 forDataclass:(id)arg2;
-+ (BOOL)accountSettingsNeedsToBeMigrated;
++ (bool)accountSettingsNeedsToBeMigrated;
 + (void)accountWillChange:(id)arg1 forDataclass:(id)arg2;
 + (id)createAndLockMigrationLock;
-+ (unsigned int)currentVersion;
-+ (id)displayNameForGroupOfAccountType:(id)arg1 forBeginningOfSentence:(BOOL)arg2;
++ (unsigned long long)currentVersion;
++ (id)displayNameForGroupOfAccountType:(id)arg1 forBeginningOfSentence:(bool)arg2;
 + (id)fullPathToAccountSettingsPlist;
 + (void)releaseMigrationLock:(id)arg1;
 + (void)removeNewAccountSettingsToMigrateOldAccountInformation;
-+ (void)shouldMigrateOldMailAccounts:(BOOL*)arg1 oldDAAccounts:(BOOL*)arg2 newAccountSettings:(BOOL*)arg3;
++ (void)shouldMigrateOldMailAccounts:(bool*)arg1 oldDAAccounts:(bool*)arg2 newAccountSettings:(bool*)arg3;
 + (void)waitForMigrationToFinish;
 
 - (void)_addNotificationToDictionary:(id)arg1 forChangeType:(int)arg2 originalProperties:(id)arg3 currentProperties:(id)arg4;
@@ -43,9 +43,9 @@
 - (id)allBasicSyncableAccounts;
 - (id)allMailAccounts;
 - (id)basicAccountsWithTypes:(id)arg1;
-- (unsigned int)count;
-- (unsigned int)countOfBasicAccountsWithTypes:(id)arg1;
-- (unsigned int)dataVersion;
+- (unsigned long long)count;
+- (unsigned long long)countOfBasicAccountsWithTypes:(id)arg1;
+- (unsigned long long)dataVersion;
 - (void)dealloc;
 - (void)deleteAccount:(id)arg1;
 - (void)deleteAccountWithIdentifier:(id)arg1;
@@ -61,7 +61,7 @@
 - (void)replaceAccount:(id)arg1 withAccount:(id)arg2;
 - (void)replaceAccountsWithTypes:(id)arg1 withAccounts:(id)arg2;
 - (void)saveAllAccounts;
-- (void)setDataVersion:(unsigned int)arg1;
+- (void)setDataVersion:(unsigned long long)arg1;
 - (id)syncableAccountWithSyncIdentifier:(id)arg1;
 - (void)updateAccount:(id)arg1;
 

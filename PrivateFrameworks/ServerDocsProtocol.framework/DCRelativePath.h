@@ -20,7 +20,7 @@
 - (id)debugDescription;
 - (id)description;
 - (id)firstPathComponent;
-- (BOOL)isRoot;
+- (bool)isRoot;
 - (id)lastPathComponent;
 - (id)metadataPath;
 - (id)relativePathByAppendingPath:(id)arg1;

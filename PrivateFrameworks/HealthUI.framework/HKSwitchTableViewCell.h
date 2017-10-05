@@ -3,47 +3,53 @@
  */
 
 @interface HKSwitchTableViewCell : UITableViewCell {
-    BOOL  _centersIcon;
+    bool  _centersIcon;
     UILabel * _countLabel;
     <HKSwitchTableViewCellDelegate> * _delegate;
-    UILabel * _displayLabel;
-    BOOL  _enabled;
-    UIImageView * _iconImageView;
-    BOOL  _shouldHideSwitch;
+    NSString * _displayText;
+    bool  _enabled;
+    bool  _shouldHideSwitch;
     UISwitch * _switch;
 }
 
-@property (nonatomic) BOOL adjustsFontSizeToFitWidth;
-@property (nonatomic) BOOL centersIcon;
+@property (nonatomic) bool adjustsFontSizeToFitWidth;
+@property (nonatomic) bool centersIcon;
 @property (nonatomic) <HKSwitchTableViewCellDelegate> *delegate;
-@property (getter=isEnabled, nonatomic) BOOL enabled;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } iconSize;
-@property (getter=isOn, nonatomic) BOOL on;
-@property (nonatomic) BOOL shouldHideSwitch;
+@property (nonatomic, retain) NSString *displayText;
+@property (getter=isEnabled, nonatomic) bool enabled;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } iconSize;
+@property (getter=isOn, nonatomic) bool on;
+@property (nonatomic) bool shouldHideSwitch;
+
++ (id)reuseIdentifier;
 
 - (void).cxx_destruct;
 - (void)_contextSizeCategoryChanged;
 - (id)_displayLabelFont;
 - (void)_setupUI;
-- (BOOL)adjustsFontSizeToFitWidth;
-- (BOOL)centersIcon;
+- (void)_updateFont;
+- (bool)adjustsFontSizeToFitWidth;
+- (bool)centersIcon;
 - (void)dealloc;
 - (id)delegate;
-- (struct CGSize { float x1; float x2; })iconSize;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (BOOL)isEnabled;
-- (BOOL)isOn;
+- (id)displayText;
+- (struct CGSize { double x1; double x2; })iconSize;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (bool)isEnabled;
+- (bool)isOn;
 - (void)layoutSubviews;
-- (void)setAdjustsFontSizeToFitWidth:(BOOL)arg1;
-- (void)setCentersIcon:(BOOL)arg1;
+- (void)setAdjustsFontSizeToFitWidth:(bool)arg1;
+- (void)setCentersIcon:(bool)arg1;
 - (void)setCountText:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisplayText:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setIconImage:(id)arg1;
-- (void)setOn:(BOOL)arg1;
-- (void)setShouldHideSwitch:(BOOL)arg1;
-- (BOOL)shouldHideSwitch;
+- (void)setOn:(bool)arg1;
+- (void)setShouldHideSwitch:(bool)arg1;
+- (bool)shouldHideSwitch;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)switchValueChanged:(id)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 
 @end

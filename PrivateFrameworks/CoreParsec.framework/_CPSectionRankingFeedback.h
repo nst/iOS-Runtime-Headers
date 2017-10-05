@@ -2,51 +2,62 @@
    Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
  */
 
-@interface _CPSectionRankingFeedback : PBCodable <NSCopying> {
+@interface _CPSectionRankingFeedback : PBCodable <NSSecureCoding, _CPProcessableFeedback, _CPSectionRankingFeedback> {
     struct { 
-        unsigned int personalizationScore : 1; 
+        unsigned int timestamp : 1; 
         unsigned int localSectionPosition : 1; 
+        unsigned int personalizationScore : 1; 
     }  _has;
     unsigned int  _localSectionPosition;
     double  _personalizationScore;
-    NSMutableArray * _results;
+    NSArray * _results;
     _CPResultSectionForFeedback * _section;
     unsigned long long  _timestamp;
 }
 
-@property (nonatomic) BOOL hasLocalSectionPosition;
-@property (nonatomic) BOOL hasPersonalizationScore;
-@property (nonatomic, readonly) BOOL hasSection;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
+@property (nonatomic, readonly) id feedbackJSON;
+@property (nonatomic, readonly) bool hasLocalSectionPosition;
+@property (nonatomic, readonly) bool hasPersonalizationScore;
+@property (nonatomic, readonly) bool hasSection;
+@property (nonatomic, readonly) bool hasTimestamp;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSData *jsonData;
 @property (nonatomic) unsigned int localSectionPosition;
 @property (nonatomic) double personalizationScore;
-@property (nonatomic, retain) NSMutableArray *results;
+@property (nonatomic, readonly) bool requiresQueryId;
+@property (nonatomic, copy) NSArray *results;
 @property (nonatomic, retain) _CPResultSectionForFeedback *section;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned long long timestamp;
 @property (nonatomic) unsigned long long timestamp;
-
-+ (Class)resultsType;
 
 - (void).cxx_destruct;
 - (void)addResults:(id)arg1;
 - (void)clearResults;
-- (void)copyTo:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLocalSectionPosition;
-- (BOOL)hasPersonalizationScore;
-- (BOOL)hasSection;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (id)feedbackJSON;
+- (bool)hasLocalSectionPosition;
+- (bool)hasPersonalizationScore;
+- (bool)hasSection;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (id)init;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithFacade:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)jsonData;
 - (unsigned int)localSectionPosition;
-- (void)mergeFrom:(id)arg1;
 - (double)personalizationScore;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (bool)requiresQueryId;
 - (id)results;
-- (id)resultsAtIndex:(unsigned int)arg1;
-- (unsigned int)resultsCount;
+- (id)resultsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)resultsCount;
 - (id)section;
-- (void)setHasLocalSectionPosition:(BOOL)arg1;
-- (void)setHasPersonalizationScore:(BOOL)arg1;
 - (void)setLocalSectionPosition:(unsigned int)arg1;
 - (void)setPersonalizationScore:(double)arg1;
 - (void)setResults:(id)arg1;

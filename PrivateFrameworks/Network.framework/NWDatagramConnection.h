@@ -6,7 +6,7 @@
 
 + (id)connectionWithConnectedSocket:(int)arg1;
 
-- (BOOL)readDatagramsWithMinimumCount:(unsigned int)arg1 maximumCount:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
-- (BOOL)writeDatagrams:(id)arg1 completionHandler:(id /* block */)arg2;
+- (bool)readDatagramsWithMinimumCount:(unsigned long long)arg1 maximumCount:(unsigned long long)arg2 completionHandler:(id /* block */)arg3;
+- (bool)writeDatagrams:(id)arg1 completionHandler:(id /* block */)arg2;
 
 @end

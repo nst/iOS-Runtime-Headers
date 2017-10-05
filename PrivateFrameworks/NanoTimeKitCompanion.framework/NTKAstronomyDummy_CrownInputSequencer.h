@@ -10,12 +10,12 @@
 
 - (void).cxx_destruct;
 - (id)delegate;
-- (float)offset;
+- (double)offset;
 - (void)setDelegate:(id)arg1;
-- (void)setEnd:(float)arg1;
-- (void)setOffset:(float)arg1;
-- (void)setOffsetPerRevolution:(float)arg1;
-- (void)setStart:(float)arg1;
+- (void)setEnd:(double)arg1;
+- (void)setOffset:(double)arg1;
+- (void)setOffsetPerRevolution:(double)arg1;
+- (void)setStart:(double)arg1;
 - (void)updateWithCrownInputEvent:(id)arg1;
 
 @end

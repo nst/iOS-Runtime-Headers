@@ -6,10 +6,10 @@
 @required
 
 - (NSURL *)URL;
-- (BOOL)_webProcessIsResponsive;
+- (bool)_webProcessIsResponsive;
 - (double)estimatedProgress;
-- (BOOL)hasOnlySecureContent;
-- (BOOL)isLoading;
+- (bool)hasOnlySecureContent;
+- (bool)isLoading;
 - (struct __SecTrust { }*)serverTrust;
 - (NSString *)title;
 - (NSURL *)unreachableURL;

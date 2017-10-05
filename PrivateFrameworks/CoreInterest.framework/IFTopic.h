@@ -3,10 +3,10 @@
  */
 
 @interface IFTopic : NSObject {
-    unsigned int  _activations;
+    unsigned long long  _activations;
     NSUUID * _identifier;
     NSArray * _indications;
-    unsigned int  _indirectActivations;
+    unsigned long long  _indirectActivations;
     NSString * _label;
     NSString * _name;
     double  _score;
@@ -14,14 +14,14 @@
     IFTopic * parent;
 }
 
-@property (nonatomic) unsigned int activations;
+@property (nonatomic) unsigned long long activations;
 @property (nonatomic, retain) NSArray *children;
-@property (nonatomic, readonly) unsigned int height;
+@property (nonatomic, readonly) unsigned long long height;
 @property (nonatomic, retain) NSUUID *identifier;
 @property (nonatomic, retain) NSArray *indications;
-@property (nonatomic) unsigned int indirectActivations;
+@property (nonatomic) unsigned long long indirectActivations;
 @property (nonatomic, retain) NSString *label;
-@property (nonatomic, readonly) unsigned int level;
+@property (nonatomic, readonly) unsigned long long level;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) IFTopic *parent;
 @property (nonatomic, readonly) IFTopic *root;
@@ -31,26 +31,26 @@
 + (id)topicWithName:(id)arg1 label:(id)arg2 identifier:(id)arg3;
 
 - (void).cxx_destruct;
-- (unsigned int)activations;
+- (unsigned long long)activations;
 - (id)children;
 - (id)description;
-- (unsigned int)hash;
-- (unsigned int)height;
+- (unsigned long long)hash;
+- (unsigned long long)height;
 - (id)identifier;
 - (id)indications;
-- (unsigned int)indirectActivations;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)indirectActivations;
+- (bool)isEqual:(id)arg1;
 - (id)label;
-- (unsigned int)level;
+- (unsigned long long)level;
 - (id)name;
 - (id)parent;
 - (id)root;
 - (double)score;
-- (void)setActivations:(unsigned int)arg1;
+- (void)setActivations:(unsigned long long)arg1;
 - (void)setChildren:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setIndications:(id)arg1;
-- (void)setIndirectActivations:(unsigned int)arg1;
+- (void)setIndirectActivations:(unsigned long long)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setParent:(id)arg1;

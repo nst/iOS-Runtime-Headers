@@ -12,15 +12,15 @@
 @property (nonatomic, retain) UIColor *selectionTintColor;
 
 - (void).cxx_destruct;
-- (void)configureButton:(id)arg1 fromBarItem:(id)arg2;
+- (void)configureButton:(id)arg1 withAppearanceDelegate:(id)arg2 fromBarItem:(id)arg3;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)selectionBackgroundTintColor;
 - (id)selectionTintColor;
 - (void)setSelectionBackgroundTintColor:(id)arg1;
 - (void)setSelectionTintColor:(id)arg1;
-- (void)updateButton:(id)arg1 forSelectedState:(BOOL)arg2;
+- (void)updateButton:(id)arg1 forSelectedState:(bool)arg2;
 
 @end

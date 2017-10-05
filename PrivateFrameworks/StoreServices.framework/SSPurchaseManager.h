@@ -21,12 +21,12 @@
 - (void)_reconnectForDaemonLaunch;
 - (id)_requestConnection;
 - (id)_responseConnection;
-- (BOOL)_resultForReply:(id)arg1 error:(id*)arg2;
+- (bool)_resultForReply:(id)arg1 error:(id*)arg2;
 - (void)_sendCompletionBlock:(id /* block */)arg1 forGetPurchasesReply:(id)arg2;
 - (void)_sendCompletionBlock:(id /* block */)arg1 forStandardReply:(id)arg2;
 - (void)_sendMessage:(long long)arg1 withPurchaseIdentifiers:(id)arg2 afterPurchase:(id)arg3 completionBlock:(id /* block */)arg4;
 - (void)_sendMessage:(long long)arg1 withPurchases:(id)arg2 afterPurchase:(id)arg3 completionBlock:(id /* block */)arg4;
-- (BOOL)_shouldInvalidateSubscriptionStatusForPurchaseResponse:(id)arg1;
+- (bool)_shouldInvalidateSubscriptionStatusForPurchaseResponse:(id)arg1;
 - (void)addPurchases:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (void)cancelPurchases:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (void)dealloc;

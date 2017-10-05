@@ -12,14 +12,14 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSMutableDictionary *graphCache;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)graphCacheForScreen:(id)arg1;
 
 - (id)_initWithScreen:(id)arg1 options:(id)arg2;
 - (id)_intendedScreen;
-- (BOOL)_matchingOptions:(id)arg1;
+- (bool)_matchingOptions:(id)arg1;
 - (id)_options;
 - (void)dealloc;
 - (id)graphCache;

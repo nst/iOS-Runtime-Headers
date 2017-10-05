@@ -11,9 +11,9 @@
     NSString * _userInfo;
 }
 
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic, readonly) BOOL hasType;
-@property (nonatomic, readonly) BOOL hasUserInfo;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic, readonly) bool hasType;
+@property (nonatomic, readonly) bool hasUserInfo;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic, retain) NSString *type;
 @property (nonatomic, retain) NSString *userInfo;
@@ -23,14 +23,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasTimestamp;
-- (BOOL)hasType;
-- (BOOL)hasUserInfo;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasTimestamp;
+- (bool)hasType;
+- (bool)hasUserInfo;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setType:(id)arg1;
 - (void)setUserInfo:(id)arg1;

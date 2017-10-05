@@ -17,7 +17,7 @@
 
 - (void).cxx_destruct;
 - (id)initWithName:(id)arg1 andParameters:(id)arg2;
-- (BOOL)isBlocking;
+- (bool)isBlocking;
 - (id)name;
 - (long long)nsecsBeforeForgettingCounter;
 - (long long)nsecsToNextRetry:(long long)arg1 retryCount:(unsigned int*)arg2 now:(long long)arg3;

@@ -4,55 +4,57 @@
 
 @interface HUGridServiceCellTextView : UIView {
     NSString * _descriptionText;
-    float  _descriptionTextColorDimmingFactor;
+    double  _descriptionTextColorDimmingFactor;
     UIFont * _font;
-    float  _lineHeight;
-    unsigned int  _mode;
+    double  _lineHeight;
+    unsigned long long  _mode;
     HFServiceNameComponents * _serviceNameComponents;
     UIColor * _textColor;
-    BOOL  _textColorFollowsTintColor;
+    bool  _textColorFollowsTintColor;
 }
 
 @property (nonatomic, retain) NSString *descriptionText;
-@property (nonatomic) float descriptionTextColorDimmingFactor;
+@property (nonatomic) double descriptionTextColorDimmingFactor;
 @property (nonatomic, retain) UIFont *font;
-@property (nonatomic, readonly) float lastBaselineToBottomDistance;
-@property (nonatomic) float lineHeight;
-@property (nonatomic) unsigned int mode;
+@property (nonatomic, readonly) double lastBaselineToBottomDistance;
+@property (nonatomic) double lineHeight;
+@property (nonatomic) unsigned long long mode;
 @property (nonatomic, retain) HFServiceNameComponents *serviceNameComponents;
 @property (nonatomic, retain) UIColor *textColor;
-@property (nonatomic) BOOL textColorFollowsTintColor;
-@property (nonatomic, readonly) float topToFirstBaselineDistance;
+@property (nonatomic) bool textColorFollowsTintColor;
+@property (nonatomic, readonly) double topToFirstBaselineDistance;
+
++ (double)minimumDescriptionScaleFactor;
 
 - (void).cxx_destruct;
-- (id)_commonTextAttributesWithLineBreakMode:(int)arg1;
+- (id)_commonTextAttributesWithLineBreakMode:(long long)arg1;
 - (void)_drawCombinedLabel;
 - (void)_drawDescriptionLabel;
 - (void)_drawSeperateLabels;
 - (id)_effectiveTextColor;
 - (void)_updateMode;
 - (id)descriptionText;
-- (float)descriptionTextColorDimmingFactor;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (double)descriptionTextColorDimmingFactor;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)font;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (float)lastBaselineToBottomDistance;
-- (float)lineHeight;
-- (unsigned int)mode;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (double)lastBaselineToBottomDistance;
+- (double)lineHeight;
+- (unsigned long long)mode;
 - (id)serviceNameComponents;
 - (void)setDescriptionText:(id)arg1;
-- (void)setDescriptionTextColorDimmingFactor:(float)arg1;
+- (void)setDescriptionTextColorDimmingFactor:(double)arg1;
 - (void)setFont:(id)arg1;
-- (void)setLineHeight:(float)arg1;
-- (void)setMode:(unsigned int)arg1;
+- (void)setLineHeight:(double)arg1;
+- (void)setMode:(unsigned long long)arg1;
 - (void)setServiceNameComponents:(id)arg1;
 - (void)setTextColor:(id)arg1;
-- (void)setTextColorFollowsTintColor:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setTextColorFollowsTintColor:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)textColor;
-- (BOOL)textColorFollowsTintColor;
+- (bool)textColorFollowsTintColor;
 - (void)tintColorDidChange;
-- (float)topToFirstBaselineDistance;
+- (double)topToFirstBaselineDistance;
 
 @end

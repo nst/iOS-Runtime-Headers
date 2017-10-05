@@ -22,15 +22,15 @@
 
 + (id)additionalContentPathComponent;
 + (void)initialize;
-+ (BOOL)isPersistentStoreSynchronizedViaUbiquitousContentWithOptions:(id)arg1;
++ (bool)isPersistentStoreSynchronizedViaUbiquitousContentWithOptions:(id)arg1;
 + (id)persistentStoreName;
 
 - (void)_handleRelocatingStoreContentDirectoryFromNonSyncedURL:(id)arg1 toSyncedURL:(id)arg2;
 - (void)_handleRelocatingStoreContentDirectoryFromSyncedURL:(id)arg1 toNonSyncedURL:(id)arg2;
 - (id)_readMetadataFromDocumentURL:(id)arg1;
-- (BOOL)_writeMetadataToDocumentURL:(id)arg1;
+- (bool)_writeMetadataToDocumentURL:(id)arg1;
 - (id)additionalContentForURL:(id)arg1 error:(id*)arg2;
-- (BOOL)configurePersistentStoreCoordinatorForURL:(id)arg1 ofType:(id)arg2 modelConfiguration:(id)arg3 storeOptions:(id)arg4 error:(id*)arg5;
+- (bool)configurePersistentStoreCoordinatorForURL:(id)arg1 ofType:(id)arg2 modelConfiguration:(id)arg3 storeOptions:(id)arg4 error:(id*)arg5;
 - (id)contentsForType:(id)arg1 error:(id*)arg2;
 - (void)dealloc;
 - (id)initWithFileURL:(id)arg1;
@@ -39,13 +39,13 @@
 - (id)modelConfiguration;
 - (id)persistentStoreOptions;
 - (id)persistentStoreTypeForFileType:(id)arg1;
-- (BOOL)readAdditionalContentFromURL:(id)arg1 error:(id*)arg2;
-- (BOOL)readFromURL:(id)arg1 error:(id*)arg2;
+- (bool)readAdditionalContentFromURL:(id)arg1 error:(id*)arg2;
+- (bool)readFromURL:(id)arg1 error:(id*)arg2;
 - (void)revertToContentsOfURL:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setModelConfiguration:(id)arg1;
 - (void)setPersistentStoreOptions:(id)arg1;
-- (BOOL)writeAdditionalContent:(id)arg1 toURL:(id)arg2 originalContentsURL:(id)arg3 error:(id*)arg4;
-- (BOOL)writeContents:(id)arg1 andAttributes:(id)arg2 safelyToURL:(id)arg3 forSaveOperation:(int)arg4 error:(id*)arg5;
-- (BOOL)writeContents:(id)arg1 toURL:(id)arg2 forSaveOperation:(int)arg3 originalContentsURL:(id)arg4 error:(id*)arg5;
+- (bool)writeAdditionalContent:(id)arg1 toURL:(id)arg2 originalContentsURL:(id)arg3 error:(id*)arg4;
+- (bool)writeContents:(id)arg1 andAttributes:(id)arg2 safelyToURL:(id)arg3 forSaveOperation:(long long)arg4 error:(id*)arg5;
+- (bool)writeContents:(id)arg1 toURL:(id)arg2 forSaveOperation:(long long)arg3 originalContentsURL:(id)arg4 error:(id*)arg5;
 
 @end

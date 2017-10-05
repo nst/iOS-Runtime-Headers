@@ -3,7 +3,7 @@
  */
 
 @interface PKPaymentSetupAddToWatchOfferView : UIView {
-    int  _context;
+    long long  _context;
     UILabel * _instructionLabel;
     UIButton * _openAppButton;
     UIActivityIndicatorView * _openAppSpinner;
@@ -14,7 +14,7 @@
     UIImageView * _watchImageView;
 }
 
-@property (nonatomic, readonly) int context;
+@property (nonatomic, readonly) long long context;
 @property (nonatomic, readonly, retain) UILabel *instructionLabel;
 @property (nonatomic, readonly, retain) UIButton *openAppButton;
 @property (nonatomic, readonly, retain) UIActivityIndicatorView *openAppSpinner;
@@ -25,15 +25,15 @@
 @property (nonatomic, readonly, retain) UIImageView *watchImageView;
 
 - (void).cxx_destruct;
-- (float)_instructionFontSize;
-- (float)_instructionYCoordinate;
-- (struct CGSize { float x1; float x2; })_passImageSize;
-- (float)_passImageYCoordinate;
+- (double)_instructionFontSize;
+- (double)_instructionYCoordinate;
+- (struct CGSize { double x1; double x2; })_passImageSize;
+- (double)_passImageYCoordinate;
 - (id)_watchImage;
 - (id)_watchImageName;
-- (int)context;
+- (long long)context;
 - (void)dealloc;
-- (id)initWithPaymentPass:(id)arg1 context:(int)arg2;
+- (id)initWithPaymentPass:(id)arg1 context:(long long)arg2;
 - (id)instructionLabel;
 - (void)layoutSubviews;
 - (id)openAppButton;

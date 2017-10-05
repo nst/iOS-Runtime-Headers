@@ -19,9 +19,9 @@
 - (void)send:(JSValue *)arg1;
 - (void)setRequestHeader:(NSString *)arg1 :(NSString *)arg2;
 - (void)setResponseType:(NSString *)arg1;
-- (void)setTimeout:(unsigned long)arg1;
+- (void)setTimeout:(unsigned long long)arg1;
 - (unsigned int)status;
 - (NSString *)statusText;
-- (unsigned long)timeout;
+- (unsigned long long)timeout;
 
 @end

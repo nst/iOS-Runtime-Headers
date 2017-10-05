@@ -3,30 +3,30 @@
  */
 
 @interface PKServiceAddPassesViewController : PKNavigationController <PKAddPassesCardStackViewControllerDelegate, PKServiceAddPassesViewControllerProtocol> {
-    BOOL  _placeholderViewControllerDidCancel;
-    float  _screenScale;
+    bool  _placeholderViewControllerDidCancel;
+    double  _screenScale;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _screenSize;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_exportedInterface;
-+ (BOOL)_preventsAppearanceProxyCustomization;
++ (bool)_preventsAppearanceProxyCustomization;
 + (id)_remoteViewControllerInterface;
 
 - (void)addPassesCardStackViewController:(id)arg1 didCancelAddingPasses:(id)arg2;
 - (void)addPassesCardStackViewController:(id)arg1 didFinishAddingPasses:(id)arg2;
-- (void)ingestPassesWithData:(id)arg1 fromPresentationSource:(unsigned int)arg2;
-- (int)preferredStatusBarStyle;
-- (BOOL)prefersStatusBarHidden;
-- (void)setDisplayPropertiesWithScreenSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
-- (BOOL)shouldAutorotate;
-- (unsigned int)supportedInterfaceOrientations;
+- (void)ingestPassesWithData:(id)arg1 fromPresentationSource:(unsigned long long)arg2;
+- (long long)preferredStatusBarStyle;
+- (bool)prefersStatusBarHidden;
+- (void)setDisplayPropertiesWithScreenSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2;
+- (bool)shouldAutorotate;
+- (unsigned long long)supportedInterfaceOrientations;
 
 @end

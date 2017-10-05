@@ -5,14 +5,14 @@
 @interface _UIWindowRotationAnimationController : _UIWindowAnimationController {
     id /* block */  _animations;
     double  _duration;
-    BOOL  _skipCallbacks;
-    BOOL  _updateStatusBarIfNecessary;
+    bool  _skipCallbacks;
+    bool  _updateStatusBarIfNecessary;
 }
 
 @property (nonatomic, copy) id /* block */ animations;
 @property (nonatomic) double duration;
-@property (nonatomic) BOOL skipCallbacks;
-@property (nonatomic) BOOL updateStatusBarIfNecessary;
+@property (nonatomic) bool skipCallbacks;
+@property (nonatomic) bool updateStatusBarIfNecessary;
 
 - (void).cxx_destruct;
 - (void)animateTransition:(id)arg1;
@@ -21,10 +21,10 @@
 - (double)duration;
 - (void)setAnimations:(id /* block */)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setSkipCallbacks:(BOOL)arg1;
-- (void)setUpdateStatusBarIfNecessary:(BOOL)arg1;
-- (BOOL)skipCallbacks;
+- (void)setSkipCallbacks:(bool)arg1;
+- (void)setUpdateStatusBarIfNecessary:(bool)arg1;
+- (bool)skipCallbacks;
 - (double)transitionDuration:(id)arg1;
-- (BOOL)updateStatusBarIfNecessary;
+- (bool)updateStatusBarIfNecessary;
 
 @end

@@ -4,10 +4,10 @@
 
 @interface CoreSpotlightUtils : NSObject
 
-+ (BOOL)detailedLoggingEnabled;
-+ (BOOL)disabledUserActivities;
-+ (BOOL)fastUserActivites;
-+ (BOOL)forceDataMigration;
++ (bool)detailedLoggingEnabled;
++ (bool)disabledUserActivities;
++ (bool)fastUserActivites;
++ (bool)forceDataMigration;
 + (void)initialize;
 
 @end

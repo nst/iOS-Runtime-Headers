@@ -3,39 +3,39 @@
  */
 
 @interface INHomeAttribute : NSObject <INHomeAttributeExport, NSCopying, NSSecureCoding> {
-    BOOL  _boolValue;
+    bool  _boolValue;
     double  _doubleValue;
     NSString * _stringValue;
-    int  _type;
-    int  _valueType;
+    long long  _type;
+    long long  _valueType;
 }
 
-@property (nonatomic, readonly) BOOL boolValue;
+@property (nonatomic, readonly) bool boolValue;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) double doubleValue;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *stringValue;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) int type;
-@property (nonatomic, readonly) int valueType;
+@property (nonatomic, readonly) long long type;
+@property (nonatomic, readonly) long long valueType;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)boolValue;
+- (bool)boolValue;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)doubleValue;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithType:(int)arg1 boolValue:(BOOL)arg2;
-- (id)initWithType:(int)arg1 doubleValue:(double)arg2;
-- (id)initWithType:(int)arg1 stringValue:(id)arg2;
-- (id)initWithType:(int)arg1 valueType:(int)arg2 boolValue:(BOOL)arg3 doubleValue:(double)arg4 stringValue:(id)arg5;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithType:(long long)arg1 boolValue:(bool)arg2;
+- (id)initWithType:(long long)arg1 doubleValue:(double)arg2;
+- (id)initWithType:(long long)arg1 stringValue:(id)arg2;
+- (id)initWithType:(long long)arg1 valueType:(long long)arg2 boolValue:(bool)arg3 doubleValue:(double)arg4 stringValue:(id)arg5;
+- (bool)isEqual:(id)arg1;
 - (id)stringValue;
-- (int)type;
-- (int)valueType;
+- (long long)type;
+- (long long)valueType;
 
 @end

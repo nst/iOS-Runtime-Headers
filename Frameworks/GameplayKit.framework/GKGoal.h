@@ -6,7 +6,7 @@
     NSArray * _agents;
     float  _angle;
     float  _distance;
-    BOOL  _forward;
+    bool  _forward;
     NSArray * _obstacles;
     GKPath * _path;
     float  _speed;
@@ -19,7 +19,7 @@
 + (id)goalToAvoidObstacles:(id)arg1 maxPredictionTime:(double)arg2;
 + (id)goalToCohereWithAgents:(id)arg1 maxDistance:(float)arg2 maxAngle:(float)arg3;
 + (id)goalToFleeAgent:(id)arg1;
-+ (id)goalToFollowPath:(id)arg1 maxPredictionTime:(double)arg2 forward:(BOOL)arg3;
++ (id)goalToFollowPath:(id)arg1 maxPredictionTime:(double)arg2 forward:(bool)arg3;
 + (id)goalToInterceptAgent:(id)arg1 maxPredictionTime:(double)arg2;
 + (id)goalToReachTargetSpeed:(float)arg1;
 + (id)goalToSeekAgent:(id)arg1;
@@ -37,14 +37,14 @@
 - (id)initToAvoidObstacles:(id)arg1 maxPredictionTime:(double)arg2;
 - (id)initToCohereWithAgents:(id)arg1 maxDistance:(float)arg2 maxAngle:(float)arg3;
 - (id)initToFleeAgent:(id)arg1;
-- (id)initToFollowPath:(id)arg1 maxPredictionTime:(double)arg2 forward:(BOOL)arg3;
+- (id)initToFollowPath:(id)arg1 maxPredictionTime:(double)arg2 forward:(bool)arg3;
 - (id)initToInterceptAgent:(id)arg1 maxPredictionTime:(double)arg2;
 - (id)initToReachTargetSpeed:(float)arg1;
 - (id)initToSeekAgent:(id)arg1;
 - (id)initToSeparateFromAgents:(id)arg1 maxDistance:(float)arg2 maxAngle:(float)arg3;
 - (id)initToStayOnPath:(id)arg1 maxPredictionTime:(double)arg2;
 - (id)initToWander:(float)arg1;
-- (BOOL)isTargetSpeedGoal;
+- (bool)isTargetSpeedGoal;
 - (float)speed;
 
 @end

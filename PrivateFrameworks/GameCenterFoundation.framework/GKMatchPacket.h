@@ -8,7 +8,7 @@
     unsigned char  _packetType;
     unsigned int  _sequenceNumber;
     unsigned int  _totalLength;
-    BOOL  _valid;
+    bool  _valid;
     unsigned char  _version;
 }
 
@@ -17,7 +17,7 @@
 @property (nonatomic) unsigned char packetType;
 @property (nonatomic) unsigned int sequenceNumber;
 @property (nonatomic) unsigned int totalLength;
-@property (nonatomic) BOOL valid;
+@property (nonatomic) bool valid;
 @property (nonatomic) unsigned char version;
 
 - (unsigned short)checksum;
@@ -33,10 +33,10 @@
 - (void)setPacketType:(unsigned char)arg1;
 - (void)setSequenceNumber:(unsigned int)arg1;
 - (void)setTotalLength:(unsigned int)arg1;
-- (void)setValid:(BOOL)arg1;
+- (void)setValid:(bool)arg1;
 - (void)setVersion:(unsigned char)arg1;
 - (unsigned int)totalLength;
-- (BOOL)valid;
+- (bool)valid;
 - (unsigned char)version;
 
 @end

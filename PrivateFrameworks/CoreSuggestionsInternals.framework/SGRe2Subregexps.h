@@ -8,7 +8,7 @@
 }
 
 - (void).cxx_destruct;
-- (int)_enumerateMatchesInUtf8:(const char *)arg1 fromString:(id)arg2 ngroups:(unsigned int)arg3 block:(id /* block */)arg4;
+- (int)_enumerateMatchesInUtf8:(const char *)arg1 fromString:(id)arg2 ngroups:(unsigned long long)arg3 block:(id /* block */)arg4;
 - (id)description;
 - (id)existsInUtf8:(const char *)arg1;
 - (id)initWithSubregexps:(id)arg1 prefilter:(id)arg2;

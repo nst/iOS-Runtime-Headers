@@ -17,8 +17,9 @@
 + (id)loadCoordinatorForContext:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)_canPerformRelatedFetch;
-- (BOOL)_canPerformSuggestionsFetch;
+- (bool)_canPerformRelatedFetch;
+- (bool)_canPerformSuggestionsFetch;
+- (id)_createToken;
 - (id)_relatedBlocks;
 - (id)_suggestionsBlocks;
 - (void)_tokenDidComplete:(id)arg1;
@@ -29,5 +30,6 @@
 - (void)setTimeoutDelay:(double)arg1;
 - (double)timeoutDelay;
 - (id)tokenForCuratedFetch;
+- (id)tokenForLivePhotoVariations;
 
 @end

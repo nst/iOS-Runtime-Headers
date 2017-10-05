@@ -3,28 +3,28 @@
  */
 
 @interface PKExtendedPhysicsBody : PKPhysicsBody {
-    float  _areaFactor;
-    int  _associations;
+    double  _areaFactor;
+    long long  _associations;
 }
 
-@property (nonatomic) float normalizedDensity;
+@property (nonatomic) double normalizedDensity;
 
 + (id)bodyWithBodies:(id)arg1;
-+ (id)bodyWithCircleOfRadius:(float)arg1;
++ (id)bodyWithCircleOfRadius:(double)arg1;
 + (id)bodyWithEdgeChainFromPath:(struct CGPath { }*)arg1;
-+ (id)bodyWithEdgeFromPoint:(struct CGPoint { float x1; float x2; })arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2;
++ (id)bodyWithEdgeFromPoint:(struct CGPoint { double x1; double x2; })arg1 toPoint:(struct CGPoint { double x1; double x2; })arg2;
 + (id)bodyWithEdgeLoopFromPath:(struct CGPath { }*)arg1;
-+ (id)bodyWithEllipseInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
++ (id)bodyWithEllipseInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 + (id)bodyWithPolygonFromPath:(struct CGPath { }*)arg1;
-+ (id)bodyWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1;
-+ (id)bodyWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1 center:(struct CGPoint { float x1; float x2; })arg2;
++ (id)bodyWithRectangleOfSize:(struct CGSize { double x1; double x2; })arg1;
++ (id)bodyWithRectangleOfSize:(struct CGSize { double x1; double x2; })arg1 center:(struct CGPoint { double x1; double x2; })arg2;
 
 - (void)associate;
 - (id)description;
-- (BOOL)dissociate;
+- (bool)dissociate;
 - (id)init;
-- (id)initWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1;
-- (float)normalizedDensity;
-- (void)setNormalizedDensity:(float)arg1;
+- (id)initWithRectangleOfSize:(struct CGSize { double x1; double x2; })arg1;
+- (double)normalizedDensity;
+- (void)setNormalizedDensity:(double)arg1;
 
 @end

@@ -4,6 +4,6 @@
 
 @interface MTLIOAccelFragmentRenderCommandEncoder : MTLIOAccelCommandEncoder
 
-- (unsigned int)getType;
+- (unsigned long long)getType;
 
 @end

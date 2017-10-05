@@ -6,7 +6,7 @@
     NSArray * _propertyItems;
 }
 
-@property (nonatomic, readonly) BOOL canPerformAction;
+@property (nonatomic, readonly) bool canPerformAction;
 @property (nonatomic) <CNPropertyActionDelegate> *delegate;
 @property (nonatomic, readonly) CNPropertyGroupItem *propertyItem;
 @property (nonatomic, copy) NSArray *propertyItems;
@@ -14,7 +14,8 @@
 + (void)performDefaultActionForItem:(id)arg1 sender:(id)arg2;
 
 - (void).cxx_destruct;
-- (BOOL)canPerformAction;
+- (bool)canPerformAction;
+- (id)initWithContact:(id)arg1;
 - (id)initWithContact:(id)arg1 propertyItem:(id)arg2;
 - (id)initWithContact:(id)arg1 propertyItems:(id)arg2;
 - (void)performActionForItem:(id)arg1 sender:(id)arg2;

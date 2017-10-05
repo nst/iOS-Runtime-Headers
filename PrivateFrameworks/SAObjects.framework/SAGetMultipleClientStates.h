@@ -12,7 +12,8 @@
 - (id)clientStateGetters;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)mutatingCommand;
+- (bool)requiresResponse;
 - (void)setClientStateGetters:(id)arg1;
 
 @end

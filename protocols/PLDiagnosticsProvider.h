@@ -6,6 +6,6 @@
 @optional
 
 - (NSString *)diagnosticInformation;
-- (BOOL)supportsDiagnosticInformation;
+- (bool)supportsDiagnosticInformation;
 
 @end

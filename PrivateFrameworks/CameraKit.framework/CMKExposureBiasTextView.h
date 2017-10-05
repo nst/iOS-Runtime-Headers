@@ -15,10 +15,10 @@
 - (id)_text;
 - (id)_textAttributes;
 - (id)_textForExposureBias:(float)arg1;
-- (float)_textHorizontalInset;
-- (float)_textHorizontalKerningOffset;
-- (struct CGSize { float x1; float x2; })_textSize;
-- (float)_textVerticalInset;
+- (double)_textHorizontalInset;
+- (double)_textHorizontalKerningOffset;
+- (struct CGSize { double x1; double x2; })_textSize;
+- (double)_textVerticalInset;
 - (float)exposureBias;
 - (void)setExposureBias:(float)arg1;
 - (void)set_lastText:(id)arg1;

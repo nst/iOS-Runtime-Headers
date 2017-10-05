@@ -10,7 +10,7 @@
         unsigned int isOpenEnded : 1; 
     }  _has;
     _INPBIntentMetadata * _intentMetadata;
-    BOOL  _isOpenEnded;
+    bool  _isOpenEnded;
     PBUnknownFields * _unknownFields;
     int  _workoutGoalUnitType;
     int  _workoutLocationType;
@@ -18,20 +18,18 @@
 }
 
 @property (nonatomic, retain) _INPBDouble *goalValue;
-@property (nonatomic, readonly) BOOL hasGoalValue;
-@property (nonatomic, readonly) BOOL hasIntentMetadata;
-@property (nonatomic) BOOL hasIsOpenEnded;
-@property (nonatomic) BOOL hasWorkoutGoalUnitType;
-@property (nonatomic) BOOL hasWorkoutLocationType;
-@property (nonatomic, readonly) BOOL hasWorkoutName;
+@property (nonatomic, readonly) bool hasGoalValue;
+@property (nonatomic, readonly) bool hasIntentMetadata;
+@property (nonatomic) bool hasIsOpenEnded;
+@property (nonatomic) bool hasWorkoutGoalUnitType;
+@property (nonatomic) bool hasWorkoutLocationType;
+@property (nonatomic, readonly) bool hasWorkoutName;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
-@property (nonatomic) BOOL isOpenEnded;
+@property (nonatomic) bool isOpenEnded;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic) int workoutGoalUnitType;
 @property (nonatomic) int workoutLocationType;
 @property (nonatomic, retain) _INPBDataString *workoutName;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -42,24 +40,24 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)goalValue;
-- (BOOL)hasGoalValue;
-- (BOOL)hasIntentMetadata;
-- (BOOL)hasIsOpenEnded;
-- (BOOL)hasWorkoutGoalUnitType;
-- (BOOL)hasWorkoutLocationType;
-- (BOOL)hasWorkoutName;
-- (unsigned int)hash;
+- (bool)hasGoalValue;
+- (bool)hasIntentMetadata;
+- (bool)hasIsOpenEnded;
+- (bool)hasWorkoutGoalUnitType;
+- (bool)hasWorkoutLocationType;
+- (bool)hasWorkoutName;
+- (unsigned long long)hash;
 - (id)intentMetadata;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isOpenEnded;
+- (bool)isEqual:(id)arg1;
+- (bool)isOpenEnded;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setGoalValue:(id)arg1;
-- (void)setHasIsOpenEnded:(BOOL)arg1;
-- (void)setHasWorkoutGoalUnitType:(BOOL)arg1;
-- (void)setHasWorkoutLocationType:(BOOL)arg1;
+- (void)setHasIsOpenEnded:(bool)arg1;
+- (void)setHasWorkoutGoalUnitType:(bool)arg1;
+- (void)setHasWorkoutLocationType:(bool)arg1;
 - (void)setIntentMetadata:(id)arg1;
-- (void)setIsOpenEnded:(BOOL)arg1;
+- (void)setIsOpenEnded:(bool)arg1;
 - (void)setWorkoutGoalUnitType:(int)arg1;
 - (void)setWorkoutLocationType:(int)arg1;
 - (void)setWorkoutName:(id)arg1;
@@ -70,11 +68,5 @@
 - (id)workoutLocationTypeAsString:(int)arg1;
 - (id)workoutName;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

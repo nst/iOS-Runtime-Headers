@@ -41,40 +41,40 @@
         float v[3]; 
     }  _bubbleStartPositionsByType;
     GKBubbleSet * _bubbles;
-    BOOL  _couldUseFallbackAnimator;
+    bool  _couldUseFallbackAnimator;
     double  _duration;
     UIView * _effectiveView;
-    int  _focusBubbleType;
-    int  _newlyVisibleBubbles;
+    long long  _focusBubbleType;
+    long long  _newlyVisibleBubbles;
     double  _startTime;
 }
 
 @property (nonatomic, retain) NSDictionary *auxiliaryInfo;
 @property (nonatomic) GKBubbleSet *bubbles;
-@property (nonatomic) BOOL couldUseFallbackAnimator;
+@property (nonatomic) bool couldUseFallbackAnimator;
 @property (nonatomic) double duration;
 @property (nonatomic) UIView *effectiveView;
-@property (nonatomic) int focusBubbleType;
-@property (nonatomic) int newlyVisibleBubbles;
+@property (nonatomic) long long focusBubbleType;
+@property (nonatomic) long long newlyVisibleBubbles;
 @property (nonatomic) double startTime;
 
 - (id)auxiliaryInfo;
 - (id)bubbles;
-- (BOOL)couldUseFallbackAnimator;
+- (bool)couldUseFallbackAnimator;
 - (void)dealloc;
 - (id)description;
 - (double)duration;
 - (id)effectiveView;
-- (int)focusBubbleType;
+- (long long)focusBubbleType;
 - (id)init;
-- (int)newlyVisibleBubbles;
+- (long long)newlyVisibleBubbles;
 - (void)setAuxiliaryInfo:(id)arg1;
 - (void)setBubbles:(id)arg1;
-- (void)setCouldUseFallbackAnimator:(BOOL)arg1;
+- (void)setCouldUseFallbackAnimator:(bool)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setEffectiveView:(id)arg1;
-- (void)setFocusBubbleType:(int)arg1;
-- (void)setNewlyVisibleBubbles:(int)arg1;
+- (void)setFocusBubbleType:(long long)arg1;
+- (void)setNewlyVisibleBubbles:(long long)arg1;
 - (void)setStartTime:(double)arg1;
 - (double)startTime;
 

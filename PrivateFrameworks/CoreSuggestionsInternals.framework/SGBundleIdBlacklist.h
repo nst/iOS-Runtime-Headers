@@ -10,14 +10,14 @@
 
 - (void).cxx_destruct;
 - (void)blacklistBundleId:(id)arg1 startDate:(id)arg2 endDate:(id)arg3;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
 - (void)enumerateBlacklistRangesForBundleId:(id)arg1 block:(id /* block */)arg2;
 - (id)init;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithPlist:(id)arg1;
-- (BOOL)isBlacklisted:(id)arg1 date:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToBundleIdBlacklist:(id)arg1;
+- (bool)isBlacklisted:(id)arg1 date:(id)arg2;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToBundleIdBlacklist:(id)arg1;
 - (id)plist;
 
 @end

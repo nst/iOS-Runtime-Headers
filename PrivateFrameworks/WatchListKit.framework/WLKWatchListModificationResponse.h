@@ -3,13 +3,13 @@
  */
 
 @interface WLKWatchListModificationResponse : NSObject {
-    int  _responseType;
+    long long  _responseType;
 }
 
-@property (nonatomic, readonly) int responseType;
+@property (nonatomic, readonly) long long responseType;
 
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
-- (int)responseType;
+- (long long)responseType;
 
 @end

@@ -22,10 +22,10 @@
 - (void)dealloc;
 - (id)description;
 - (id)displayName;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithUrlString:(id)arg1 username:(id)arg2 userIdentifier:(id)arg3 service:(id)arg4 displayName:(id)arg5;
-- (BOOL)isEmpty;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEmpty;
+- (bool)isEqual:(id)arg1;
 - (id)service;
 - (id)urlString;
 - (id)userIdentifier;

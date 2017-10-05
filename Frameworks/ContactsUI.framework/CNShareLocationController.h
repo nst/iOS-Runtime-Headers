@@ -15,15 +15,15 @@
 
 @property (nonatomic, retain) <CNCancelable> *bestPropertyCancelable;
 @property (nonatomic, retain) CNFuture *bestPropertyFuture;
-@property (nonatomic, readonly) BOOL canShare;
+@property (nonatomic, readonly) bool canShare;
 @property (nonatomic, retain) CNContact *contact;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) FMFSession *fmfSession;
 @property (nonatomic, retain) NSSet *handles;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) CNUIIDSAvailabilityProvider *idsAvailabilityProvider;
-@property (nonatomic, readonly) BOOL isSharing;
+@property (nonatomic, readonly) bool isSharing;
 @property (nonatomic, readonly) <CNSchedulerProvider> *schedulerProvider;
 @property (nonatomic) NSObject<CNShareLocationProtocol> *shareLocationDelegate;
 @property (readonly) Class superclass;
@@ -36,7 +36,7 @@
 - (id)bestPropertyFuture;
 - (id)callerID:(id*)arg1;
 - (id)callerIDFuture;
-- (BOOL)canShare;
+- (bool)canShare;
 - (id)contact;
 - (id)endOfDayDate;
 - (id)fmfSession;
@@ -45,7 +45,7 @@
 - (id)initWithIDSAvailabilityProvider:(id)arg1;
 - (id)initWithIDSAvailabilityProvider:(id)arg1 fmfSession:(id)arg2 schedulerProvider:(id)arg3;
 - (void)initiateIDSRequest;
-- (BOOL)isSharing;
+- (bool)isSharing;
 - (void)notifySharingStatusDidChange;
 - (void)perform:(id)arg1;
 - (id)schedulerProvider;

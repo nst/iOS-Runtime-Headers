@@ -7,7 +7,7 @@
     <HMDCameraIDSDeviceConnectionSenderDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _delegateQueue;
     NSString * _destinationID;
-    HAPOSTransaction * _packetRelayTransaction;
+    HMFOSTransaction * _packetRelayTransaction;
     AVCPacketRelay * _videoPacketRelay;
 }
 
@@ -17,9 +17,9 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *destinationID;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSNumber *mtu;
-@property (nonatomic, retain) HAPOSTransaction *packetRelayTransaction;
+@property (nonatomic, retain) HMFOSTransaction *packetRelayTransaction;
 @property (nonatomic, readonly) HMDCameraSessionID *sessionID;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) AVCPacketRelay *videoPacketRelay;
@@ -29,10 +29,10 @@
 - (void).cxx_destruct;
 - (void)_callSessionEnded:(id)arg1;
 - (void)_socketOpened:(id)arg1;
-- (void)_startAudioPacketRelay:(int)arg1 ipAddress:(id)arg2 port:(unsigned int)arg3;
+- (void)_startAudioPacketRelay:(int)arg1 ipAddress:(id)arg2 port:(unsigned long long)arg3;
 - (void)_startPacketRelayWithIDSDeviceSession:(id)arg1 cameraVideoSSRC:(unsigned int)arg2 cameraAudioSSRC:(unsigned int)arg3;
 - (void)_startPacketRelayWithVideoSocket:(int)arg1 videoNetworkConfig:(id)arg2 cameraVideoSSRC:(unsigned int)arg3 audioSocket:(int)arg4 audioNetworkConfig:(id)arg5 cameraAudioSSRC:(unsigned int)arg6;
-- (void)_startVideoPacketRelay:(int)arg1 ipAddress:(id)arg2 port:(unsigned int)arg3;
+- (void)_startVideoPacketRelay:(int)arg1 ipAddress:(id)arg2 port:(unsigned long long)arg3;
 - (id)audioPacketRelay;
 - (void)dealloc;
 - (id)delegate;

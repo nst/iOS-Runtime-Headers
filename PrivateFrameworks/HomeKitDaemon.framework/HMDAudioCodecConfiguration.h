@@ -10,10 +10,10 @@
 @property (nonatomic, readonly, copy) HMDAudioCodecParameters *audioCodecParameters;
 @property (nonatomic, readonly, copy) HMDAudioCodecGroup *codecGroup;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_parseFromTLVData;
+- (bool)_parseFromTLVData;
 - (id)audioCodecParameters;
 - (id)codecGroup;
 - (void)description:(id)arg1 indent:(id)arg2;

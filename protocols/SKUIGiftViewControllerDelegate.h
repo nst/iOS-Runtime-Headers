@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)giftViewController:(SKUIGiftViewController *)arg1 didFinishWithResult:(BOOL)arg2;
+- (void)giftViewController:(SKUIGiftViewController *)arg1 didFinishWithResult:(bool)arg2;
 
 @end

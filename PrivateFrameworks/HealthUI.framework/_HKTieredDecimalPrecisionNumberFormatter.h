@@ -6,12 +6,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedInstance;
 
-- (BOOL)returnsUnitWithValueForDisplay;
-- (id)stringFromNumber:(id)arg1 dataUnit:(id)arg2 unitController:(id)arg3;
+- (bool)returnsUnitWithValueForDisplay;
+- (id)stringFromNumber:(id)arg1 displayType:(id)arg2 unitController:(id)arg3;
 
 @end

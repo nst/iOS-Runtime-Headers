@@ -4,7 +4,7 @@
 
 @interface SKFieldNode : SKNode {
     float  _animationSpeed;
-    BOOL  _exclusive;
+    bool  _exclusive;
     PKPhysicsField * _field;
     SKRegion * _region;
     float  _smoothness;
@@ -14,8 +14,8 @@
 @property (nonatomic) float animationSpeed;
 @property (nonatomic) unsigned int categoryBitMask;
 @property (nonatomic) void direction;
-@property (getter=isEnabled, nonatomic) BOOL enabled;
-@property (getter=isExclusive, nonatomic) BOOL exclusive;
+@property (getter=isEnabled, nonatomic) bool enabled;
+@property (getter=isExclusive, nonatomic) bool exclusive;
 @property (nonatomic) float falloff;
 @property (nonatomic) float minimumRadius;
 @property (nonatomic, retain) SKRegion *region;
@@ -28,10 +28,10 @@
 + (id)electricField;
 + (id)linearGravityFieldWithVector;
 + (id)magneticField;
-+ (id)noiseFieldWithSmoothness:(float)arg1 animationSpeed:(float)arg2;
++ (id)noiseFieldWithSmoothness:(double)arg1 animationSpeed:(double)arg2;
 + (id)radialGravityField;
 + (id)springField;
-+ (id)turbulenceFieldWithSmoothness:(float)arg1 animationSpeed:(float)arg2;
++ (id)turbulenceFieldWithSmoothness:(double)arg1 animationSpeed:(double)arg2;
 + (id)velocityFieldWithTexture:(id)arg1;
 + (id)velocityFieldWithVector;
 + (id)vortexField;
@@ -48,16 +48,16 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1 field:(id)arg2;
-- (BOOL)isEnabled;
-- (BOOL)isEqualToNode:(id)arg1;
-- (BOOL)isExclusive;
+- (bool)isEnabled;
+- (bool)isEqualToNode:(id)arg1;
+- (bool)isExclusive;
 - (float)minimumRadius;
 - (id)region;
 - (void)setAnimationSpeed:(float)arg1;
 - (void)setCategoryBitMask:(unsigned int)arg1;
 - (void)setDirection;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setExclusive:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setExclusive:(bool)arg1;
 - (void)setFalloff:(float)arg1;
 - (void)setMinimumRadius:(float)arg1;
 - (void)setPhysicsField:(id)arg1;

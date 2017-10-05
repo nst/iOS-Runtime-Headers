@@ -3,12 +3,21 @@
  */
 
 @interface CKDDownloadAssetsOperationInfo : CKDatabaseOperationInfo {
-    BOOL  _shouldFetchAssetContentInMemory;
+    NSArray * _assetsToDownload;
+    NSArray * _packageIndexSets;
+    bool  _shouldFetchAssetContentInMemory;
 }
 
-@property (nonatomic) BOOL shouldFetchAssetContentInMemory;
+@property (nonatomic, retain) NSArray *assetsToDownload;
+@property (nonatomic, retain) NSArray *packageIndexSets;
+@property (nonatomic) bool shouldFetchAssetContentInMemory;
 
-- (void)setShouldFetchAssetContentInMemory:(BOOL)arg1;
-- (BOOL)shouldFetchAssetContentInMemory;
+- (void).cxx_destruct;
+- (id)assetsToDownload;
+- (id)packageIndexSets;
+- (void)setAssetsToDownload:(id)arg1;
+- (void)setPackageIndexSets:(id)arg1;
+- (void)setShouldFetchAssetContentInMemory:(bool)arg1;
+- (bool)shouldFetchAssetContentInMemory;
 
 @end

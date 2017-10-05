@@ -8,19 +8,19 @@
 
 @property (nonatomic, retain) NSMutableArray *pointCharacteristics;
 
+- (void).cxx_destruct;
 - (void)addPointCharacteristic:(id)arg1;
 - (void)clearPointCharacteristics;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)pointCharacteristicAtIndex:(unsigned int)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (id)pointCharacteristicAtIndex:(unsigned long long)arg1;
 - (id)pointCharacteristics;
-- (unsigned int)pointCharacteristicsCount;
-- (BOOL)readFrom:(id)arg1;
+- (unsigned long long)pointCharacteristicsCount;
+- (bool)readFrom:(id)arg1;
 - (void)setPointCharacteristics:(id)arg1;
 - (void)writeTo:(id)arg1;
 

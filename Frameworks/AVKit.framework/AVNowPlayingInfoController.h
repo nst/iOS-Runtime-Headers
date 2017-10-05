@@ -3,30 +3,34 @@
  */
 
 @interface AVNowPlayingInfoController : NSObject {
-    BOOL  _enabled;
+    bool  _enabled;
     NSUUID * _identifier;
-    BOOL  _nowPlayingInfoNeedsUpdate;
+    bool  _nowPlayingInfoNeedsUpdate;
     AVPlayerController * _playerController;
     id  _playerControllerCurrentTimeJumpedObserver;
-    BOOL  _shouldOwnNowPlayingInfo;
+    bool  _requiresLinearPlayback;
+    bool  _shouldOwnNowPlayingInfo;
 }
 
-@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (getter=isEnabled, nonatomic) bool enabled;
 @property (nonatomic, retain) AVPlayerController *playerController;
+@property (nonatomic) bool requiresLinearPlayback;
 
 - (void).cxx_destruct;
-- (int)_handleRemoteCommandEvent:(id)arg1;
-- (BOOL)_ownsNowPlayingInfo;
+- (long long)_handleRemoteCommandEvent:(id)arg1;
+- (bool)_ownsNowPlayingInfo;
 - (void)_setNowPlayingInfoNeedsUpdate;
 - (void)_updateNowPlayingInfo;
 - (void)_updateNowPlayingInfoIfNeeded;
 - (void)_updateRegisteredRemoteCommandEnabledStatesWithPlayerController:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)playerController;
-- (void)setEnabled:(BOOL)arg1;
+- (bool)requiresLinearPlayback;
+- (void)setEnabled:(bool)arg1;
 - (void)setPlayerController:(id)arg1;
+- (void)setRequiresLinearPlayback:(bool)arg1;
 
 @end

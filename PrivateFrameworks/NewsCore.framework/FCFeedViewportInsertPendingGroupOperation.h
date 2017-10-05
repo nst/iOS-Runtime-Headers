@@ -39,6 +39,6 @@
 - (void)setInsertGroupCompletionHandler:(id /* block */)arg1;
 - (void)setInternalElements:(id)arg1;
 - (void)setRefreshSession:(id)arg1;
-- (BOOL)validateOperation;
+- (bool)validateOperation;
 
 @end

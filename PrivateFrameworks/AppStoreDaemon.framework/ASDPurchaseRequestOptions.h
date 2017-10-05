@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly) NSArray *purchases;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

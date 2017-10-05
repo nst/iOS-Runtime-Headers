@@ -3,67 +3,67 @@
  */
 
 @interface TVModalPresenterConfiguration : NSObject {
-    BOOL  _allowsModalOverModal;
+    bool  _allowsModalOverModal;
     NSString * _barButtonID;
-    unsigned int  _configurationType;
+    unsigned long long  _configurationType;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _formSheetSize;
-    BOOL  _navigationBarHidden;
+    bool  _navigationBarHidden;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _popoverSize;
-    unsigned int  _preferredInterfaceOrientation;
-    int  _presentationStyle;
+    unsigned long long  _preferredInterfaceOrientation;
+    long long  _presentationStyle;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _sourceRect;
     UIView * _sourceView;
 }
 
-@property (nonatomic) BOOL allowsModalOverModal;
+@property (nonatomic) bool allowsModalOverModal;
 @property (nonatomic, copy) NSString *barButtonID;
-@property (nonatomic) unsigned int configurationType;
-@property (nonatomic) struct CGSize { float x1; float x2; } formSheetSize;
-@property (nonatomic) BOOL navigationBarHidden;
-@property (nonatomic) struct CGSize { float x1; float x2; } popoverSize;
-@property (nonatomic) unsigned int preferredInterfaceOrientation;
-@property (nonatomic) int presentationStyle;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } sourceRect;
+@property (nonatomic) unsigned long long configurationType;
+@property (nonatomic) struct CGSize { double x1; double x2; } formSheetSize;
+@property (nonatomic) bool navigationBarHidden;
+@property (nonatomic) struct CGSize { double x1; double x2; } popoverSize;
+@property (nonatomic) unsigned long long preferredInterfaceOrientation;
+@property (nonatomic) long long presentationStyle;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } sourceRect;
 @property (nonatomic, retain) UIView *sourceView;
 
 - (void).cxx_destruct;
 - (void)_configureWithDictionary:(id)arg1;
-- (BOOL)allowsModalOverModal;
+- (bool)allowsModalOverModal;
 - (id)barButtonID;
-- (unsigned int)configurationType;
-- (struct CGSize { float x1; float x2; })formSheetSize;
+- (unsigned long long)configurationType;
+- (struct CGSize { double x1; double x2; })formSheetSize;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)navigationBarHidden;
-- (struct CGSize { float x1; float x2; })popoverSize;
-- (unsigned int)preferredInterfaceOrientation;
-- (int)presentationStyle;
-- (void)setAllowsModalOverModal:(BOOL)arg1;
+- (bool)navigationBarHidden;
+- (struct CGSize { double x1; double x2; })popoverSize;
+- (unsigned long long)preferredInterfaceOrientation;
+- (long long)presentationStyle;
+- (void)setAllowsModalOverModal:(bool)arg1;
 - (void)setBarButtonID:(id)arg1;
-- (void)setConfigurationType:(unsigned int)arg1;
-- (void)setFormSheetSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setNavigationBarHidden:(BOOL)arg1;
-- (void)setPopoverSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setPreferredInterfaceOrientation:(unsigned int)arg1;
-- (void)setPresentationStyle:(int)arg1;
-- (void)setSourceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setConfigurationType:(unsigned long long)arg1;
+- (void)setFormSheetSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setNavigationBarHidden:(bool)arg1;
+- (void)setPopoverSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPreferredInterfaceOrientation:(unsigned long long)arg1;
+- (void)setPresentationStyle:(long long)arg1;
+- (void)setSourceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setSourceView:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sourceRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })sourceRect;
 - (id)sourceView;
 
 @end

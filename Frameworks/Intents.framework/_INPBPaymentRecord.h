@@ -18,21 +18,19 @@
 
 @property (nonatomic, retain) _INPBCurrencyAmount *currencyAmount;
 @property (nonatomic, retain) _INPBCurrencyAmount *feeAmount;
-@property (nonatomic, readonly) BOOL hasCurrencyAmount;
-@property (nonatomic, readonly) BOOL hasFeeAmount;
-@property (nonatomic, readonly) BOOL hasNote;
-@property (nonatomic, readonly) BOOL hasPayee;
-@property (nonatomic, readonly) BOOL hasPayer;
-@property (nonatomic, readonly) BOOL hasPaymentMethod;
-@property (nonatomic) BOOL hasStatus;
+@property (nonatomic, readonly) bool hasCurrencyAmount;
+@property (nonatomic, readonly) bool hasFeeAmount;
+@property (nonatomic, readonly) bool hasNote;
+@property (nonatomic, readonly) bool hasPayee;
+@property (nonatomic, readonly) bool hasPayer;
+@property (nonatomic, readonly) bool hasPaymentMethod;
+@property (nonatomic) bool hasStatus;
 @property (nonatomic, retain) _INPBString *note;
 @property (nonatomic, retain) _INPBContact *payee;
 @property (nonatomic, retain) _INPBContact *payer;
 @property (nonatomic, retain) _INPBPaymentMethodValue *paymentMethod;
 @property (nonatomic) int status;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -43,24 +41,24 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)feeAmount;
-- (BOOL)hasCurrencyAmount;
-- (BOOL)hasFeeAmount;
-- (BOOL)hasNote;
-- (BOOL)hasPayee;
-- (BOOL)hasPayer;
-- (BOOL)hasPaymentMethod;
-- (BOOL)hasStatus;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCurrencyAmount;
+- (bool)hasFeeAmount;
+- (bool)hasNote;
+- (bool)hasPayee;
+- (bool)hasPayer;
+- (bool)hasPaymentMethod;
+- (bool)hasStatus;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)note;
 - (id)payee;
 - (id)payer;
 - (id)paymentMethod;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCurrencyAmount:(id)arg1;
 - (void)setFeeAmount:(id)arg1;
-- (void)setHasStatus:(BOOL)arg1;
+- (void)setHasStatus:(bool)arg1;
 - (void)setNote:(id)arg1;
 - (void)setPayee:(id)arg1;
 - (void)setPayer:(id)arg1;
@@ -70,11 +68,5 @@
 - (id)statusAsString:(int)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

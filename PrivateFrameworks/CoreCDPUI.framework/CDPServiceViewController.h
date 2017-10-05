@@ -4,7 +4,7 @@
 
 @interface CDPServiceViewController : UIViewController <CDPServiceInterface> {
     UIViewController * _contentViewController;
-    BOOL  _inlineMode;
+    bool  _inlineMode;
 }
 
 + (id)_exportedInterface;
@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (void)offsetForCurrentKeyboard:(id /* block */)arg1;
-- (unsigned int)supportedInterfaceOrientations;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)viewDidLoad;
 
 @end

@@ -12,9 +12,9 @@
 
 - (void).cxx_destruct;
 - (id)articleID;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithArticleID:(id)arg1 topics:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setArticleID:(id)arg1;
 - (void)setTopics:(id)arg1;
 - (id)topics;

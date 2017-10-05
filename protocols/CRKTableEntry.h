@@ -6,6 +6,6 @@
 @required
 
 - (NSString *)rawStringValue;
-- (NSString *)stringValueWithLength:(unsigned int)arg1;
+- (NSString *)stringValueWithLength:(unsigned long long)arg1;
 
 @end

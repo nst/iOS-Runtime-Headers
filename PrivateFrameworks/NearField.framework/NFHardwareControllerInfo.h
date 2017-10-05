@@ -3,40 +3,47 @@
  */
 
 @interface NFHardwareControllerInfo : NSObject <NSSecureCoding> {
-    unsigned int  _ROMVersion;
-    unsigned int  _firmwareRevision;
-    unsigned int  _firmwareVersion;
-    BOOL  _hasAntenna;
-    BOOL  _hasBooster;
-    BOOL  _hasIcfResistor;
-    unsigned int  _middlewareVersion;
-    unsigned int  _siliconName;
-    unsigned int  _siliconVersion;
+    unsigned long long  _ROMVersion;
+    unsigned long long  _firmwareRevision;
+    unsigned long long  _firmwareVersion;
+    bool  _hasAntenna;
+    bool  _hasBooster;
+    bool  _hasExpressAccessMode;
+    bool  _hasExpressTransitMode;
+    bool  _hasIcfResistor;
+    unsigned long long  _middlewareVersion;
+    unsigned long long  _siliconName;
+    unsigned long long  _siliconVersion;
 }
 
-@property (nonatomic, readonly) unsigned int ROMVersion;
-@property (nonatomic, readonly) unsigned int firmwareRevision;
-@property (nonatomic, readonly) unsigned int firmwareVersion;
-@property (nonatomic, readonly) BOOL hasAntenna;
-@property (nonatomic, readonly) BOOL hasBooster;
-@property (nonatomic, readonly) BOOL hasIcfResistor;
-@property (nonatomic, readonly) unsigned int middlewareVersion;
-@property (nonatomic, readonly) unsigned int siliconName;
-@property (nonatomic, readonly) unsigned int siliconVersion;
+@property (nonatomic, readonly) unsigned long long ROMVersion;
+@property (nonatomic, readonly) unsigned long long firmwareRevision;
+@property (nonatomic, readonly) unsigned long long firmwareVersion;
+@property (nonatomic, readonly) bool hasAntenna;
+@property (nonatomic, readonly) bool hasBooster;
+@property (nonatomic, readonly) bool hasExpressAccessMode;
+@property (nonatomic, readonly) bool hasExpressTransitMode;
+@property (nonatomic, readonly) bool hasIcfResistor;
+@property (nonatomic, readonly) unsigned long long middlewareVersion;
+@property (nonatomic, readonly) unsigned long long siliconName;
+@property (nonatomic, readonly) unsigned long long siliconVersion;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (unsigned int)ROMVersion;
+- (unsigned long long)ROMVersion;
+- (id)asDictionary;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)firmwareRevision;
-- (unsigned int)firmwareVersion;
-- (BOOL)hasAntenna;
-- (BOOL)hasBooster;
-- (BOOL)hasIcfResistor;
+- (unsigned long long)firmwareRevision;
+- (unsigned long long)firmwareVersion;
+- (bool)hasAntenna;
+- (bool)hasBooster;
+- (bool)hasExpressAccessMode;
+- (bool)hasExpressTransitMode;
+- (bool)hasIcfResistor;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
-- (unsigned int)middlewareVersion;
-- (unsigned int)siliconName;
-- (unsigned int)siliconVersion;
+- (unsigned long long)middlewareVersion;
+- (unsigned long long)siliconName;
+- (unsigned long long)siliconVersion;
 
 @end

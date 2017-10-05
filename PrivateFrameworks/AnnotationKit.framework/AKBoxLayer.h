@@ -2,8 +2,24 @@
    Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
  */
 
-@interface AKBoxLayer : CALayer
+@interface AKBoxLayer : CAShapeLayer {
+    double  _borderWidthScale;
+    double  _boxCornerRadius;
+    double  _nominalBorderWidth;
+}
 
-- (id)init;
+@property (nonatomic) double borderWidthScale;
+@property double boxCornerRadius;
+@property double nominalBorderWidth;
+
+- (void)_updateBoxPath;
+- (double)borderWidthScale;
+- (double)boxCornerRadius;
+- (id)initWithBorderWidth:(double)arg1 cornerRadius:(double)arg2;
+- (double)nominalBorderWidth;
+- (void)setBorderWidthScale:(double)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBoxCornerRadius:(double)arg1;
+- (void)setNominalBorderWidth:(double)arg1;
 
 @end

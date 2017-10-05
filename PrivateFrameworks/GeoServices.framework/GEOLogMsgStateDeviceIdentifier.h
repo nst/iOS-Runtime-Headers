@@ -9,22 +9,22 @@
 
 @property (nonatomic, retain) NSString *deviceHwIdentifier;
 @property (nonatomic, retain) NSString *deviceOsVersion;
-@property (nonatomic, readonly) BOOL hasDeviceHwIdentifier;
-@property (nonatomic, readonly) BOOL hasDeviceOsVersion;
+@property (nonatomic, readonly) bool hasDeviceHwIdentifier;
+@property (nonatomic, readonly) bool hasDeviceOsVersion;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)deviceHwIdentifier;
 - (id)deviceOsVersion;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDeviceHwIdentifier;
-- (BOOL)hasDeviceOsVersion;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDeviceHwIdentifier;
+- (bool)hasDeviceOsVersion;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDeviceHwIdentifier:(id)arg1;
 - (void)setDeviceOsVersion:(id)arg1;
 - (void)writeTo:(id)arg1;

@@ -4,28 +4,28 @@
 
 @interface TXRImageInfo : NSObject {
     <TXRBuffer> * _buffer;
-    unsigned int  _bytesPerImage;
-    unsigned int  _bytesPerRow;
+    unsigned long long  _bytesPerImage;
+    unsigned long long  _bytesPerRow;
     NSError * _error;
-    unsigned int  _offset;
+    unsigned long long  _offset;
 }
 
 @property (nonatomic, retain) <TXRBuffer> *buffer;
-@property (nonatomic) unsigned int bytesPerImage;
-@property (nonatomic) unsigned int bytesPerRow;
+@property (nonatomic) unsigned long long bytesPerImage;
+@property (nonatomic) unsigned long long bytesPerRow;
 @property (retain) NSError *error;
-@property (nonatomic) unsigned int offset;
+@property (nonatomic) unsigned long long offset;
 
 - (void).cxx_destruct;
 - (id)buffer;
-- (unsigned int)bytesPerImage;
-- (unsigned int)bytesPerRow;
+- (unsigned long long)bytesPerImage;
+- (unsigned long long)bytesPerRow;
 - (id)error;
-- (unsigned int)offset;
+- (unsigned long long)offset;
 - (void)setBuffer:(id)arg1;
-- (void)setBytesPerImage:(unsigned int)arg1;
-- (void)setBytesPerRow:(unsigned int)arg1;
+- (void)setBytesPerImage:(unsigned long long)arg1;
+- (void)setBytesPerRow:(unsigned long long)arg1;
 - (void)setError:(id)arg1;
-- (void)setOffset:(unsigned int)arg1;
+- (void)setOffset:(unsigned long long)arg1;
 
 @end

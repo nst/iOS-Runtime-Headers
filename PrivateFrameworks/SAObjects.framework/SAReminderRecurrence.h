@@ -10,8 +10,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *frequencyTimeUnit;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int interval;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long interval;
 @property (nonatomic, copy) NSArray *monthsOfTheYear;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSArray *weeksOfTheYear;
@@ -25,13 +25,13 @@
 - (id)encodedClassName;
 - (id)frequencyTimeUnit;
 - (id)groupIdentifier;
-- (int)interval;
+- (long long)interval;
 - (id)monthsOfTheYear;
 - (void)setDaysOfTheMonth:(id)arg1;
 - (void)setDaysOfTheWeek:(id)arg1;
 - (void)setDaysOfTheYear:(id)arg1;
 - (void)setFrequencyTimeUnit:(id)arg1;
-- (void)setInterval:(int)arg1;
+- (void)setInterval:(long long)arg1;
 - (void)setMonthsOfTheYear:(id)arg1;
 - (void)setWeeksOfTheYear:(id)arg1;
 - (id)weeksOfTheYear;

@@ -3,7 +3,7 @@
  */
 
 @interface HFAccessoryBuilder : HFItemBuilder <HFServiceLikeBuilder> {
-    BOOL  isFavorite;
+    bool  isFavorite;
     NSString * name;
     HFRoomBuilder * room;
 }
@@ -12,14 +12,14 @@
 @property (nonatomic, readonly) NSArray *availableIconDescriptors;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) <HFIconDescriptor> *iconDescriptor;
-@property (nonatomic) BOOL isFavorite;
+@property (nonatomic) bool isFavorite;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) NSString *originalName;
 @property (nonatomic, retain) HFRoomBuilder *room;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL supportsFavoriting;
+@property (nonatomic, readonly) bool supportsFavoriting;
 
 + (Class)homeKitRepresentationClass;
 
@@ -32,13 +32,14 @@
 - (id)accessory;
 - (id)commitItem;
 - (id)initWithExistingObject:(id)arg1 inHome:(id)arg2;
-- (BOOL)isFavorite;
+- (bool)isFavorite;
 - (id)name;
 - (id)originalName;
+- (id)removeItemFromHome;
 - (id)room;
-- (void)setIsFavorite:(BOOL)arg1;
+- (void)setIsFavorite:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setRoom:(id)arg1;
-- (BOOL)supportsFavoriting;
+- (bool)supportsFavoriting;
 
 @end

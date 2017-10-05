@@ -3,20 +3,20 @@
  */
 
 @interface CLKComplicationTemplateCircularSmallSimpleText : CLKComplicationTemplate {
-    int  _maxDynamicFontSize;
+    long long  _maxDynamicFontSize;
     CLKTextProvider * _textProvider;
 }
 
-@property (nonatomic) int maxDynamicFontSize;
+@property (nonatomic) long long maxDynamicFontSize;
 @property (nonatomic, copy) CLKTextProvider *textProvider;
 
 - (void).cxx_destruct;
 - (void)_enumerateIntegerKeysWithBlock:(id /* block */)arg1;
 - (void)_enumerateTextProviderKeysWithBlock:(id /* block */)arg1;
 - (id)init;
-- (BOOL)isCompatibleWithFamily:(int)arg1;
-- (int)maxDynamicFontSize;
-- (void)setMaxDynamicFontSize:(int)arg1;
+- (bool)isCompatibleWithFamily:(long long)arg1;
+- (long long)maxDynamicFontSize;
+- (void)setMaxDynamicFontSize:(long long)arg1;
 - (void)setTextProvider:(id)arg1;
 - (id)textProvider;
 

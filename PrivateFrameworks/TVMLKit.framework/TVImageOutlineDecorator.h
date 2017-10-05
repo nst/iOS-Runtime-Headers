@@ -5,23 +5,23 @@
 @interface TVImageOutlineDecorator : TVImageScaleDecorator {
     UIColor * _outlineColor;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _outlineWidths;
 }
 
 @property (nonatomic, readonly, copy) UIColor *outlineColor;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } outlineWidths;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } outlineWidths;
 
-+ (id)decoratorWithOutlineColor:(id)arg1 outlineWidths:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
++ (id)decoratorWithOutlineColor:(id)arg1 outlineWidths:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 
 - (void).cxx_destruct;
-- (void)_drawInScaledContext:(struct CGContext { }*)arg1;
 - (id)decoratorIdentifier;
-- (id)initWithOutlineColor:(id)arg1 outlineWidths:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
+- (void)drawInContext:(id)arg1 imageRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (id)initWithOutlineColor:(id)arg1 outlineWidths:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 - (id)outlineColor;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })outlineWidths;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })outlineWidths;
 
 @end

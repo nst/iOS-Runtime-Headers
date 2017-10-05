@@ -8,8 +8,8 @@
     id  _owner;
     FCStateMachineState * _state;
     NSMutableDictionary * _states;
-    unsigned int  _status;
-    int  _statusToken;
+    unsigned long long  _status;
+    long long  _statusToken;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *events;
@@ -17,8 +17,8 @@
 @property (nonatomic) id owner;
 @property (nonatomic, retain) FCStateMachineState *state;
 @property (nonatomic, retain) NSMutableDictionary *states;
-@property (nonatomic) unsigned int status;
-@property (nonatomic) int statusToken;
+@property (nonatomic) unsigned long long status;
+@property (nonatomic) long long statusToken;
 
 - (void).cxx_destruct;
 - (void)activate;
@@ -39,11 +39,11 @@
 - (void)setOwner:(id)arg1;
 - (void)setState:(id)arg1;
 - (void)setStates:(id)arg1;
-- (void)setStatus:(unsigned int)arg1;
-- (void)setStatusToken:(int)arg1;
+- (void)setStatus:(unsigned long long)arg1;
+- (void)setStatusToken:(long long)arg1;
 - (id)state;
 - (id)states;
-- (unsigned int)status;
-- (int)statusToken;
+- (unsigned long long)status;
+- (long long)statusToken;
 
 @end

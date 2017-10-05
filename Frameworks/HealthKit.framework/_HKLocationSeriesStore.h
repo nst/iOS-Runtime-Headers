@@ -5,7 +5,7 @@
 @interface _HKLocationSeriesStore : NSObject {
     HKHealthStore * _healthStore;
     id /* block */  _loadingCompletionBlock;
-    int  _loadingCount;
+    long long  _loadingCount;
     NSObject<OS_dispatch_queue> * _locationQueue;
     NSMutableDictionary * _locations;
     NSMutableDictionary * _series;
@@ -18,7 +18,7 @@
 - (id)_queue_locations;
 - (void)_setLocations:(id)arg1 forUUID:(id)arg2;
 - (void)addLocationSeriesSamples:(id)arg1;
-- (BOOL)containsSameValuesAs:(id)arg1;
+- (bool)containsSameValuesAs:(id)arg1;
 - (void)fetchAllLocationsWithCompletion:(id /* block */)arg1;
 - (id)init;
 - (id)initWithHealthStore:(id)arg1;

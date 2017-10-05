@@ -3,13 +3,14 @@
  */
 
 @interface GEOLazyRouteSetIterator : NSObject {
-    unsigned int  _contingencyRouteIndex;
+    unsigned long long  _contingencyRouteIndex;
     GEORouteSet * _routeSet;
 }
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithRouteSet:(id)arg1;
 - (id)nextLazyRoute;
-- (void)setContingencyRouteIndex:(unsigned int)arg1;
+- (void)setContingencyRouteIndex:(unsigned long long)arg1;
 
 @end

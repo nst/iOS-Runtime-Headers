@@ -10,15 +10,15 @@
 + (id)countingQueryForBaseQuery:(id)arg1 countProperty:(id)arg2 forIdentifier:(long long)arg3;
 + (id)databaseTable;
 + (id)defaultOrderingTerms;
-+ (BOOL)deleteFromLibrary:(id)arg1 deletionType:(int)arg2 persistentIDs:(const long long*)arg3 count:(unsigned int)arg4 usingConnection:(id)arg5;
++ (bool)deleteFromLibrary:(id)arg1 deletionType:(int)arg2 persistentIDs:(const long long*)arg3 count:(unsigned long long)arg4 usingConnection:(id)arg5;
 + (id)foreignPropertyForProperty:(id)arg1 entityClass:(Class)arg2;
 + (void)initialize;
 + (id)predisambiguatedProperties;
 + (id)propertiesForGroupingKey;
 + (id)propertiesForGroupingUniqueCollections;
-+ (BOOL)propertyIsCountProperty:(id)arg1;
++ (bool)propertyIsCountProperty:(id)arg1;
 + (id)protocolItemWithProperties:(id)arg1 inLibrary:(id)arg2;
-+ (int)revisionTrackingCode;
++ (long long)revisionTrackingCode;
 + (id)sectionPropertyForProperty:(id)arg1;
 + (id)trackForeignPersistentID;
 

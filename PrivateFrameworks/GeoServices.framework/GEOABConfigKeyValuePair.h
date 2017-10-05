@@ -15,11 +15,12 @@
 @property (nonatomic, retain) NSString *abConfigKey;
 @property (nonatomic, retain) GEOABConfigValue *abConfigValue;
 @property (nonatomic) int abConfigValueType;
-@property (nonatomic, readonly) BOOL hasAbConfigKey;
-@property (nonatomic, readonly) BOOL hasAbConfigValue;
-@property (nonatomic) BOOL hasAbConfigValueType;
+@property (nonatomic, readonly) bool hasAbConfigKey;
+@property (nonatomic, readonly) bool hasAbConfigValue;
+@property (nonatomic) bool hasAbConfigValueType;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+- (void).cxx_destruct;
 - (int)StringAsAbConfigValueType:(id)arg1;
 - (id)abConfigKey;
 - (id)abConfigValue;
@@ -27,20 +28,19 @@
 - (id)abConfigValueTypeAsString:(int)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAbConfigKey;
-- (BOOL)hasAbConfigValue;
-- (BOOL)hasAbConfigValueType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAbConfigKey;
+- (bool)hasAbConfigValue;
+- (bool)hasAbConfigValueType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAbConfigKey:(id)arg1;
 - (void)setAbConfigValue:(id)arg1;
 - (void)setAbConfigValueType:(int)arg1;
-- (void)setHasAbConfigValueType:(BOOL)arg1;
+- (void)setHasAbConfigValueType:(bool)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
 

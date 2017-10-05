@@ -3,56 +3,68 @@
  */
 
 @interface HKAxisStyle : NSObject <NSCopying> {
-    unsigned int  _axisLabelPosition;
+    unsigned long long  _axisLabelPosition;
     HKStrokeStyle * _axisLineStyle;
-    float  _fillInnerPadding;
-    float  _fillOuterPadding;
+    HKStrokeStyle * _borderStyleForFill;
+    double  _fillInnerPadding;
+    double  _fillOuterPadding;
     HKFillStyle * _fillStyle;
     HKStrokeStyle * _gridLineStyle;
     HKAxisLabelStyle * _labelStyle;
-    int  _location;
-    BOOL  _showGridLines;
-    unsigned int  _tickPositions;
+    long long  _location;
+    HKStrokeStyle * _minorGridLineStyle;
+    HKStrokeStyle * _referenceGridLineStyle;
+    bool  _showGridLines;
+    unsigned long long  _tickPositions;
     HKTickStyle * _tickStyle;
 }
 
-@property (nonatomic) unsigned int axisLabelPosition;
+@property (nonatomic) unsigned long long axisLabelPosition;
 @property (nonatomic, retain) HKStrokeStyle *axisLineStyle;
-@property (nonatomic) float fillInnerPadding;
-@property (nonatomic) float fillOuterPadding;
+@property (nonatomic, retain) HKStrokeStyle *borderStyleForFill;
+@property (nonatomic) double fillInnerPadding;
+@property (nonatomic) double fillOuterPadding;
 @property (nonatomic, retain) HKFillStyle *fillStyle;
 @property (nonatomic, retain) HKStrokeStyle *gridLineStyle;
 @property (nonatomic, retain) HKAxisLabelStyle *labelStyle;
-@property (nonatomic) int location;
-@property (nonatomic) BOOL showGridLines;
-@property (nonatomic) unsigned int tickPositions;
+@property (nonatomic) long long location;
+@property (nonatomic, retain) HKStrokeStyle *minorGridLineStyle;
+@property (nonatomic, retain) HKStrokeStyle *referenceGridLineStyle;
+@property (nonatomic) bool showGridLines;
+@property (nonatomic) unsigned long long tickPositions;
 @property (nonatomic, retain) HKTickStyle *tickStyle;
 
 + (id)defaultStyle;
 
 - (void).cxx_destruct;
-- (unsigned int)axisLabelPosition;
+- (unsigned long long)axisLabelPosition;
 - (id)axisLineStyle;
+- (id)borderStyleForFill;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (float)fillInnerPadding;
-- (float)fillOuterPadding;
+- (double)fillInnerPadding;
+- (double)fillOuterPadding;
 - (id)fillStyle;
 - (id)gridLineStyle;
 - (id)labelStyle;
-- (int)location;
-- (void)setAxisLabelPosition:(unsigned int)arg1;
+- (long long)location;
+- (id)minorGridLineStyle;
+- (id)referenceGridLineStyle;
+- (void)setAxisLabelPosition:(unsigned long long)arg1;
 - (void)setAxisLineStyle:(id)arg1;
-- (void)setFillInnerPadding:(float)arg1;
-- (void)setFillOuterPadding:(float)arg1;
+- (void)setBorderStyleForFill:(id)arg1;
+- (void)setFillInnerPadding:(double)arg1;
+- (void)setFillOuterPadding:(double)arg1;
 - (void)setFillStyle:(id)arg1;
 - (void)setGridLineStyle:(id)arg1;
 - (void)setLabelStyle:(id)arg1;
-- (void)setLocation:(int)arg1;
-- (void)setShowGridLines:(BOOL)arg1;
-- (void)setTickPositions:(unsigned int)arg1;
+- (void)setLocation:(long long)arg1;
+- (void)setMinorGridLineStyle:(id)arg1;
+- (void)setReferenceGridLineStyle:(id)arg1;
+- (void)setShowGridLines:(bool)arg1;
+- (void)setTickPositions:(unsigned long long)arg1;
 - (void)setTickStyle:(id)arg1;
-- (BOOL)showGridLines;
-- (unsigned int)tickPositions;
+- (bool)showGridLines;
+- (unsigned long long)tickPositions;
 - (id)tickStyle;
 
 @end

@@ -4,13 +4,13 @@
 
 @interface HUEditableTextViewCell : HUIconCell {
     NSString * _placeholderText;
-    BOOL  _showingPlaceholder;
+    bool  _showingPlaceholder;
     NSString * _text;
     UITextView * _textView;
 }
 
 @property (nonatomic, copy) NSString *placeholderText;
-@property (nonatomic) BOOL showingPlaceholder;
+@property (nonatomic) bool showingPlaceholder;
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic, retain) UITextView *textView;
 @property (nonatomic) <UITextViewDelegate> *textViewDelegate;
@@ -18,18 +18,18 @@
 - (void).cxx_destruct;
 - (void)handleUITextViewTextDidBeginEditingNotification:(id)arg1;
 - (void)handleUITextViewTextDidEndEditingNotification:(id)arg1;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)placeholderText;
 - (void)prepareForReuse;
-- (void)setDisabled:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setDisabled:(bool)arg1;
+- (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
 - (void)setPlaceholderText:(id)arg1;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setShowingPlaceholder:(BOOL)arg1;
+- (void)setSelected:(bool)arg1 animated:(bool)arg2;
+- (void)setShowingPlaceholder:(bool)arg1;
 - (void)setText:(id)arg1;
 - (void)setTextView:(id)arg1;
 - (void)setTextViewDelegate:(id)arg1;
-- (BOOL)showingPlaceholder;
+- (bool)showingPlaceholder;
 - (id)text;
 - (id)textView;
 - (id)textViewDelegate;

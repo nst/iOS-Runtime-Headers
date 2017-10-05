@@ -9,7 +9,7 @@
     AXIPCClient * _client;
     AXIPCServer * _server;
     NSString * _serverIdentifier;
-    BOOL  _shouldRegisterClientCallbackSourceOnMainRunloop;
+    bool  _shouldRegisterClientCallbackSourceOnMainRunloop;
 }
 
 @property (nonatomic, retain) AXDispatchTimer *assertionRetryTimer;
@@ -18,9 +18,10 @@
 @property (nonatomic, retain) AXIPCClient *client;
 @property (nonatomic, retain) AXIPCServer *server;
 @property (nonatomic, copy) NSString *serverIdentifier;
-@property (nonatomic) BOOL shouldRegisterClientCallbackSourceOnMainRunloop;
+@property (nonatomic) bool shouldRegisterClientCallbackSourceOnMainRunloop;
 
-- (BOOL)_connectIfNecessary;
+- (void).cxx_destruct;
+- (bool)_connectIfNecessary;
 - (void)_connectServerIfNecessary;
 - (void)_didConnectToClient;
 - (void)_didConnectToServer;
@@ -42,9 +43,9 @@
 - (void)sendAsynchronousMessage:(id)arg1 replyOnQueue:(id)arg2 objectResultHandler:(id /* block */)arg3;
 - (id)sendMessage:(id)arg1;
 - (void)sendSimpleMessage:(id)arg1;
-- (BOOL)sendSimpleMessage:(id)arg1 enqueueError:(id*)arg2;
+- (bool)sendSimpleMessage:(id)arg1 enqueueError:(id*)arg2;
 - (id)sendSimpleMessageWithObjectResult:(id)arg1;
-- (BOOL)sendSimpleMessageWithResult:(id)arg1;
+- (bool)sendSimpleMessageWithResult:(id)arg1;
 - (id)server;
 - (id)serverIdentifier;
 - (void)setAssertionRetryTimer:(id)arg1;
@@ -53,7 +54,7 @@
 - (void)setClient:(id)arg1;
 - (void)setServer:(id)arg1;
 - (void)setServerIdentifier:(id)arg1;
-- (void)setShouldRegisterClientCallbackSourceOnMainRunloop:(BOOL)arg1;
-- (BOOL)shouldRegisterClientCallbackSourceOnMainRunloop;
+- (void)setShouldRegisterClientCallbackSourceOnMainRunloop:(bool)arg1;
+- (bool)shouldRegisterClientCallbackSourceOnMainRunloop;
 
 @end

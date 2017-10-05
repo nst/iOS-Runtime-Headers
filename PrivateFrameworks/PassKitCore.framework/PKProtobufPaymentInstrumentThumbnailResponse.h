@@ -11,9 +11,9 @@
     NSData * _thumbnailImage;
 }
 
-@property (nonatomic, readonly) BOOL hasManifestHash;
-@property (nonatomic) BOOL hasStatus;
-@property (nonatomic, readonly) BOOL hasThumbnailImage;
+@property (nonatomic, readonly) bool hasManifestHash;
+@property (nonatomic) bool hasStatus;
+@property (nonatomic, readonly) bool hasThumbnailImage;
 @property (nonatomic, retain) NSString *manifestHash;
 @property (nonatomic) int status;
 @property (nonatomic, retain) NSData *thumbnailImage;
@@ -24,15 +24,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasManifestHash;
-- (BOOL)hasStatus;
-- (BOOL)hasThumbnailImage;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasManifestHash;
+- (bool)hasStatus;
+- (bool)hasThumbnailImage;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)manifestHash;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasStatus:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasStatus:(bool)arg1;
 - (void)setManifestHash:(id)arg1;
 - (void)setStatus:(int)arg1;
 - (void)setThumbnailImage:(id)arg1;

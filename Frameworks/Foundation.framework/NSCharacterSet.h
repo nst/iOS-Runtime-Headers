@@ -20,7 +20,7 @@
 + (id)characterSetWithBitmapRepresentation:(id)arg1;
 + (id)characterSetWithCharactersInString:(id)arg1;
 + (id)characterSetWithContentsOfFile:(id)arg1;
-+ (id)characterSetWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
++ (id)characterSetWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 + (id)controlCharacterSet;
 + (id)decimalDigitCharacterSet;
 + (id)decomposableCharacterSet;
@@ -31,30 +31,30 @@
 + (id)newlineCharacterSet;
 + (id)nonBaseCharacterSet;
 + (id)punctuationCharacterSet;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)symbolCharacterSet;
 + (id)uppercaseLetterCharacterSet;
 + (id)whitespaceAndNewlineCharacterSet;
 + (id)whitespaceCharacterSet;
 
-- (unsigned long)_cfTypeID;
+- (unsigned long long)_cfTypeID;
 - (struct __CFCharacterSet { }*)_expandedCFCharacterSet;
 - (id)_retainedBitmapRepresentation;
 - (id)bitmapRepresentation;
-- (BOOL)characterIsMember:(unsigned short)arg1;
+- (bool)characterIsMember:(unsigned short)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasMemberInPlane:(unsigned char)arg1;
-- (unsigned int)hash;
+- (bool)hasMemberInPlane:(unsigned char)arg1;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)invertedSet;
-- (BOOL)isEmpty;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isMutable;
-- (BOOL)isSupersetOfSet:(id)arg1;
-- (BOOL)longCharacterIsMember:(unsigned long)arg1;
+- (bool)isEmpty;
+- (bool)isEqual:(id)arg1;
+- (bool)isMutable;
+- (bool)isSupersetOfSet:(id)arg1;
+- (bool)longCharacterIsMember:(unsigned int)arg1;
 - (void)makeImmutable;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)replacementObjectForPortCoder:(id)arg1;
@@ -84,13 +84,35 @@
 // Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
 
 + (id)emojiCharacterSet;
++ (id)passwordBulletCharacterSet;
 + (id)whitespaceNewlineAndSpecialCharacterSet;
 + (id)wordBreakCharacterSet;
+
+// Image: /System/Library/PrivateFrameworks/TSReading.framework/TSReading
+
++ (id)allQuotesCharacterSetExcludingLeft;
++ (id)allQuotesCharacterSetExcludingRight;
++ (id)breakingSpaceCharacterSet;
++ (id)invisibleCharacterSet;
++ (id)lineBreakingCharacterSet;
++ (id)normalQuotesCharacterSet;
++ (id)postSmartSet;
++ (id)preSmartSet;
++ (id)smartDoubleQuotesCharacterSet;
++ (id)smartQuotesCharacterSet;
++ (id)smartSingleQuotesCharacterSet;
++ (id)spaceCharacterSet;
 
 // Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
 
 + (id)phoneNumberSeparatorCharacterSet;
 + (id)phoneNumberSeparatorCharacterSet;
+
+// Image: /System/Library/PrivateFrameworks/TextInputCore.framework/TextInputCore
+
++ (id)pinyinInputCharacterSet;
++ (id)punctuationAndWhitespaceCharacterSet;
++ (id)sentenceDelimiterCharacterSet;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
@@ -105,18 +127,16 @@
 + (id)tswp_allQuotesCharacterSetExcludingLeft;
 + (id)tswp_allQuotesCharacterSetExcludingRight;
 + (id)tswp_breakingSpaceCharacterSet;
++ (id)tswp_characterSetWithCharactersInArray:(const unsigned short*)arg1 length:(unsigned long long)arg2;
++ (id)tswp_curlyQuotesCharacterSet;
 + (id)tswp_invisibleCharacterSet;
 + (id)tswp_lineBreakingCharacterSet;
 + (id)tswp_postSmartSet;
 + (id)tswp_preSmartSet;
++ (id)tswp_singleLeftQuoteCharacterSet;
++ (id)tswp_singleRightQuoteCharacterSet;
 + (id)tswp_smartSingleQuotesCharacterSet;
 + (id)tswp_spaceCharacterSet;
 + (id)tswp_variationSelectorCharacterSet;
-
-// Image: /System/Library/TextInput/libTextInputCore.dylib
-
-+ (id)pinyinInputCharacterSet;
-+ (id)punctuationAndWhitespaceCharacterSet;
-+ (id)sentenceDelimiterCharacterSet;
 
 @end

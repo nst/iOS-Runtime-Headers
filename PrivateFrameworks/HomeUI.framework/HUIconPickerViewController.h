@@ -19,12 +19,12 @@
 - (void)_done:(id)arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
-- (BOOL)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (bool)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
 - (id)delegate;
 - (id)iconDescriptors;
 - (id)initWithIconDescriptors:(id)arg1 selectedIconDescriptor:(id)arg2 delegate:(id)arg3;
-- (int)numberOfSectionsInCollectionView:(id)arg1;
+- (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (id)selectedIconDescriptor;
 - (void)setDelegate:(id)arg1;
 - (void)setSelectedIconDescriptor:(id)arg1;

@@ -8,15 +8,15 @@
 }
 
 + (id)groupWithActions:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)finished;
+- (bool)finished;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isCustom;
+- (bool)isCustom;
 - (id)reversedAction;
 - (void)setupWithActions:(id)arg1;
 

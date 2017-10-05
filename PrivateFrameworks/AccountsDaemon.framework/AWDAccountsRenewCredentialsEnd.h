@@ -13,9 +13,9 @@
 }
 
 @property (nonatomic, retain) NSString *accountType;
-@property (nonatomic, readonly) BOOL hasAccountType;
-@property (nonatomic) BOOL hasResult;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) bool hasAccountType;
+@property (nonatomic) bool hasResult;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) unsigned int result;
 @property (nonatomic) unsigned long long timestamp;
 
@@ -25,17 +25,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAccountType;
-- (BOOL)hasResult;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAccountType;
+- (bool)hasResult;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)result;
 - (void)setAccountType:(id)arg1;
-- (void)setHasResult:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasResult:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setResult:(unsigned int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;

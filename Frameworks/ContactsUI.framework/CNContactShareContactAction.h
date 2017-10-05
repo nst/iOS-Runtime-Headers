@@ -4,7 +4,7 @@
 
 @interface CNContactShareContactAction : CNContactAction
 
-- (BOOL)canPerformAction;
+- (bool)canPerformAction;
 - (void)performActionWithSender:(id)arg1;
 
 @end

@@ -4,34 +4,34 @@
 
 @interface DKDiagnosticViewController : UIViewController <CAAnimationDelegate, CXCallObserverDelegate, DKDiagnostic, DKDiagnostic_Internal, NSExtensionRequestHandling> {
     CXCallObserver * _callObserver;
-    BOOL  _cancelled;
+    bool  _cancelled;
     DKDiagnosticContext * _context;
-    BOOL  _finished;
+    bool  _finished;
     NSLock * _finishedLock;
     CAGradientLayer * _gradientLayer;
     _UILegibilityLabel * _pressHomeLabel;
-    DKMutableResult * _result;
-    BOOL  _setup;
-    BOOL  _shouldShowPressHomeLabel;
+    DKMutableDiagnosticResult * _result;
+    bool  _setup;
+    bool  _shouldShowPressHomeLabel;
 }
 
 @property (nonatomic, retain) CXCallObserver *callObserver;
-@property (getter=isCancelled, nonatomic, readonly) BOOL cancelled;
+@property (getter=isCancelled, nonatomic, readonly) bool cancelled;
 @property (nonatomic, retain) DKDiagnosticContext *context;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isFinished, nonatomic) BOOL finished;
+@property (getter=isFinished, nonatomic) bool finished;
 @property (nonatomic, retain) NSLock *finishedLock;
 @property (nonatomic, retain) CAGradientLayer *gradientLayer;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _UILegibilityLabel *pressHomeLabel;
-@property (nonatomic, retain) DKMutableResult *result;
-@property (getter=isSetup, nonatomic) BOOL setup;
-@property (nonatomic) BOOL shouldShowPressHomeLabel;
+@property (nonatomic, retain) DKMutableDiagnosticResult *result;
+@property (getter=isSetup, nonatomic) bool setup;
+@property (nonatomic) bool shouldShowPressHomeLabel;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
 - (void)beginRequestWithExtensionContext:(id)arg1;
 - (id)callObserver;
 - (void)callObserver:(id)arg1 callChanged:(id)arg2;
@@ -42,24 +42,25 @@
 - (id)finishedLock;
 - (id)gradientLayer;
 - (id)init;
-- (BOOL)isCancelled;
-- (BOOL)isFinished;
-- (BOOL)isSetup;
+- (bool)isCancelled;
+- (bool)isFinished;
+- (bool)isSetup;
 - (void)monitorIncomingCall;
 - (id)pressHomeLabel;
-- (void)resetGradientAndLabelBefore:(BOOL)arg1;
+- (void)resetGradientAndLabelBefore:(bool)arg1;
 - (id)result;
 - (void)setCallObserver:(id)arg1;
-- (void)setCancelled:(BOOL)arg1;
+- (void)setCancelled:(bool)arg1;
 - (void)setContext:(id)arg1;
-- (void)setFinished:(BOOL)arg1;
+- (void)setFinished:(bool)arg1;
 - (void)setFinishedLock:(id)arg1;
 - (void)setGradientLayer:(id)arg1;
 - (void)setPressHomeLabel:(id)arg1;
 - (void)setResult:(id)arg1;
-- (void)setSetup:(BOOL)arg1;
-- (void)setShouldShowPressHomeLabel:(BOOL)arg1;
-- (BOOL)shouldShowPressHomeLabel;
+- (void)setSetup:(bool)arg1;
+- (void)setShouldShowPressHomeLabel:(bool)arg1;
+- (bool)shouldShowPressHomeLabel;
 - (void)start;
+- (void)viewDidLoad;
 
 @end

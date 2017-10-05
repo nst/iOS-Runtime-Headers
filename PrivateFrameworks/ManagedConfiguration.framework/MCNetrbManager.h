@@ -3,7 +3,7 @@
  */
 
 @interface MCNetrbManager : NSObject {
-    BOOL  _needStateUpdate;
+    bool  _needStateUpdate;
     struct NETRBClient { } * _netClient;
     RadiosPreferences * _radioPrefs;
     int  _reason;
@@ -19,7 +19,7 @@
 - (void)authenticate;
 - (void)cellDataChangedNotification:(id)arg1;
 - (void)detachMIS;
-- (BOOL)didUserPreventData;
+- (bool)didUserPreventData;
 - (void)getState:(int*)arg1 andReason:(int*)arg2;
 - (id)init;
 - (void)readMISState:(int*)arg1 andReason:(int*)arg2;

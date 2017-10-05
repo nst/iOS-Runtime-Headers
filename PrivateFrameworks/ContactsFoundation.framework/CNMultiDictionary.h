@@ -7,24 +7,24 @@
 }
 
 @property (nonatomic, readonly) NSArray *allKeys;
-@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly) unsigned long long count;
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 
 + (id)multiDictionary;
 + (id)multiDictionaryWithObject:(id)arg1 forKey:(id)arg2;
 
 - (id)allKeys;
-- (BOOL)containsKey:(id)arg1;
+- (bool)containsKey:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (void)eachObject:(id /* block */)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithEntries:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectsForKey:(id)arg1;
 - (id)objectsForKeys:(id)arg1;

@@ -3,6 +3,7 @@
  */
 
 @interface PAPidAndName : NSObject {
+    unsigned long long  machAbsTime;
     const char * name;
     int  pid;
 }

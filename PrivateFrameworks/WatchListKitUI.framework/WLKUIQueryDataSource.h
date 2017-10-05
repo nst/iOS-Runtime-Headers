@@ -3,12 +3,12 @@
  */
 
 @interface WLKUIQueryDataSource : MPUQueryDataSource {
-    int  _sourceType;
+    long long  _sourceType;
 }
 
-@property (nonatomic) int sourceType;
+@property (nonatomic) long long sourceType;
 
-- (void)setSourceType:(int)arg1;
-- (int)sourceType;
+- (void)setSourceType:(long long)arg1;
+- (long long)sourceType;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDServiceNameComponents : NSObject {
+@interface HMDServiceNameComponents : HMFObject {
     NSString * _format;
     NSString * _rawServiceName;
     NSString * _roomName;

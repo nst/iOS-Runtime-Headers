@@ -17,14 +17,17 @@
 - (id)_archiveLogsInDirectoryAtURL:(id)arg1 matchingPatterns:(id)arg2 archiveName:(id)arg3 error:(id*)arg4;
 - (id)_baseLogDirectoryURL;
 - (void)_captureLogsAtURL:(id)arg1 logName:(id)arg2 sinceTime:(double)arg3 completion:(id /* block */)arg4;
-- (id)_captureLogsInDirectoryAtURL:(id)arg1 matchingPattern:(id)arg2 withMimeType:(id)arg3 attemptCompression:(BOOL)arg4 limit:(int)arg5 error:(id*)arg6;
+- (void)_captureLogsAtURL:(id)arg1 logName:(id)arg2 sinceTime:(double)arg3 pattern:(id)arg4 mimeType:(id)arg5 completion:(id /* block */)arg6;
+- (id)_captureLogsInDirectoryAtURL:(id)arg1 matchingPattern:(id)arg2 withMimeType:(id)arg3 attemptCompression:(bool)arg4 limit:(long long)arg5 error:(id*)arg6;
 - (id)_contentsOfDirectoryAtURL:(id)arg1 matchingPattern:(id)arg2 includingPropertiesForKeys:(id)arg3 error:(id*)arg4;
 - (id)_contentsOfDirectoryAtURL:(id)arg1 matchingPattern:(id)arg2 sortedByDateWithResourceKey:(id)arg3 error:(id*)arg4;
 - (id)_queue;
+- (id)_siriCardLogDirectoryURL;
 - (id)_siriLogDirectoryURL;
 - (id)_uniqueTemporaryFileURL;
 - (void)captureAVVoiceControllerLogsSinceTime:(double)arg1 completion:(id /* block */)arg2;
 - (void)captureBasebandLogWithCompletion:(id /* block */)arg1;
+- (void)captureCardLogsSinceTime:(double)arg1 completion:(id /* block */)arg2;
 - (void)captureLocationLogWithCompletion:(id /* block */)arg1;
 - (void)capturePreviousConversationWithCompletion:(id /* block */)arg1;
 - (void)captureSiriCFNetworkLogsWithCompletion:(id /* block */)arg1;
@@ -33,6 +36,7 @@
 - (void)captureSiriSpeechLogsWithCompletion:(id /* block */)arg1;
 - (void)captureSiriVoiceTriggerLogsWithCompletion:(id /* block */)arg1;
 - (void)captureSystemLogSinceTime:(double)arg1 completion:(id /* block */)arg2;
+- (void)captureViewHierarchyLogWithDefaultViewHierarchy:(id)arg1 completion:(id /* block */)arg2;
 - (void)captureVoiceServicesLogsSinceTime:(double)arg1 completion:(id /* block */)arg2;
 - (void)captureWiFiLogWithCompletion:(id /* block */)arg1;
 - (id)init;

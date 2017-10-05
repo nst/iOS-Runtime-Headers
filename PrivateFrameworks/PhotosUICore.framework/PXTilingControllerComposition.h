@@ -4,7 +4,7 @@
 
 @interface PXTilingControllerComposition : NSObject {
     <PXTilingScrollController> * __scrollController;
-    BOOL  _active;
+    bool  _active;
     <PXTilingControllerCompositionInput> * _input;
     <PXTilingControllerCompositionObserver> * _observer;
     <PXTilingControllerCompositionOutput> * _output;
@@ -12,7 +12,7 @@
 }
 
 @property (setter=_setScrollController:, nonatomic) <PXTilingScrollController> *_scrollController;
-@property (getter=isActive, nonatomic) BOOL active;
+@property (getter=isActive, nonatomic) bool active;
 @property (nonatomic) <PXTilingControllerCompositionInput> *input;
 @property (nonatomic) <PXTilingControllerCompositionObserver> *observer;
 @property (nonatomic) <PXTilingControllerCompositionOutput> *output;
@@ -24,10 +24,10 @@
 - (id)input;
 - (void)invalidateComposition;
 - (void)invalidateCompositionWithContext:(id)arg1;
-- (BOOL)isActive;
+- (bool)isActive;
 - (id)observer;
 - (id)output;
-- (void)setActive:(BOOL)arg1;
+- (void)setActive:(bool)arg1;
 - (void)setInput:(id)arg1;
 - (void)setObserver:(id)arg1;
 - (void)setOutput:(id)arg1;

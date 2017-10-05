@@ -6,6 +6,6 @@
 
 + (id)defaultConverter;
 
-- (BOOL)shouldReloadTileControllerFromAsset:(id)arg1 toAsset:(id)arg2 tileKind:(id)arg3;
+- (bool)shouldReloadTileControllerFromAsset:(id)arg1 toAsset:(id)arg2 tileKind:(id)arg3;
 
 @end

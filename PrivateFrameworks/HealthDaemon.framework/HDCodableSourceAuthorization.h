@@ -8,25 +8,27 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *authorizations;
-@property (nonatomic, readonly) BOOL hasSourceUUID;
+@property (nonatomic, readonly) bool hasSourceUUID;
 @property (nonatomic, retain) NSData *sourceUUID;
+
++ (Class)authorizationsType;
 
 - (void).cxx_destruct;
 - (void)addAuthorizations:(id)arg1;
 - (id)authorizations;
-- (id)authorizationsAtIndex:(unsigned int)arg1;
-- (unsigned int)authorizationsCount;
+- (id)authorizationsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)authorizationsCount;
 - (void)clearAuthorizations;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)decodedSourceUUID;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasSourceUUID;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasSourceUUID;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAuthorizations:(id)arg1;
 - (void)setSourceUUID:(id)arg1;
 - (id)sourceUUID;

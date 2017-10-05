@@ -5,7 +5,7 @@
 
 @required
 
-- (NSObject<OS_dispatch_semaphore> *)grantAccessClaim:(NSFileAccessClaim *)arg1 synchronouslyIfPossible:(BOOL)arg2;
+- (NSObject<OS_dispatch_semaphore> *)grantAccessClaim:(NSFileAccessClaim *)arg1 synchronouslyIfPossible:(bool)arg2;
 - (void)grantSubarbitrationClaim:(NSFileSubarbitrationClaim *)arg1 withServer:(NSXPCListener *)arg2;
 
 @end

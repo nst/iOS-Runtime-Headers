@@ -5,7 +5,7 @@
 
 @required
 
-- (void)searchResultsDataSource:(PUSearchResultsDataSource *)arg1 didFetchAssetsForSearchResultsValue:(PUSearchResultsValue *)arg2 atIndex:(unsigned int)arg3;
+- (void)searchResultsDataSource:(PUSearchResultsDataSource *)arg1 didFetchAssetsForSearchResultsValue:(PUSearchResultsValue *)arg2 atIndex:(unsigned long long)arg3;
 - (void)searchResultsDataSourceHasPendingChanges:(PUSearchResultsDataSource *)arg1;
 
 @end

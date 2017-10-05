@@ -10,6 +10,7 @@
 @property (nonatomic, readonly, copy) NSDictionary *entitlementValues;
 
 + (id)_allowedEntitlementsSet;
++ (id)_containerAppExtensionEntitlementsForCurrentTask;
 + (id)_entitlementsWithSecTask:(struct __SecTask { }*)arg1 valueOverrides:(id)arg2 error:(id*)arg3;
 + (void)_setEntitlementsForCurrentTask:(id)arg1;
 + (id)entitlementsForCurrentTaskWithError:(id*)arg1;
@@ -22,7 +23,7 @@
 - (id)_typesFromIdentifierArray:(id)arg1;
 - (id)applicationIdentifier;
 - (id)entitlementValues;
-- (BOOL)hasEntitlement:(id)arg1;
+- (bool)hasEntitlement:(id)arg1;
 - (id)init;
 - (id)stringForEntitlement:(id)arg1;
 - (id)typesForReadAuthorizationOverride;

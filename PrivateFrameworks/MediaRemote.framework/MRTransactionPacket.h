@@ -6,25 +6,25 @@
     NSMutableData * _data;
     NSString * _identifier;
     struct _MRTransactionKeyProtobuf { Class x1; id x2; } * _key;
-    unsigned int  _totalLength;
-    unsigned int  _totalWritePosition;
-    unsigned int  _writeLength;
-    unsigned int  _writePosition;
+    unsigned long long  _totalLength;
+    unsigned long long  _totalWritePosition;
+    unsigned long long  _writeLength;
+    unsigned long long  _writePosition;
 }
 
-@property (nonatomic, readonly) unsigned int actualLength;
+@property (nonatomic, readonly) unsigned long long actualLength;
 @property (nonatomic, readonly, retain) NSData *data;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly, retain) _MRTransactionKeyProtobuf *key;
 @property (nonatomic, readonly) _MRTransactionPacketProtobuf *protobuf;
-@property (getter=isReadComplete, nonatomic, readonly) BOOL readComplete;
-@property (nonatomic, readonly) unsigned int totalLength;
-@property (nonatomic, readonly) unsigned int totalWritePosition;
-@property (getter=isWriteComplete, nonatomic, readonly) BOOL writeComplete;
-@property (nonatomic) unsigned int writeLength;
-@property (nonatomic, readonly) unsigned int writePosition;
+@property (getter=isReadComplete, nonatomic, readonly) bool readComplete;
+@property (nonatomic, readonly) unsigned long long totalLength;
+@property (nonatomic, readonly) unsigned long long totalWritePosition;
+@property (getter=isWriteComplete, nonatomic, readonly) bool writeComplete;
+@property (nonatomic) unsigned long long writeLength;
+@property (nonatomic, readonly) unsigned long long writePosition;
 
-- (unsigned int)actualLength;
+- (unsigned long long)actualLength;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)data;
 - (void)dealloc;
@@ -33,16 +33,16 @@
 - (id)initWithData:(id)arg1 forKey:(struct _MRTransactionKeyProtobuf { Class x1; id x2; }*)arg2;
 - (id)initWithPackets:(id)arg1;
 - (id)initWithProtobuf:(id)arg1;
-- (BOOL)isComplete;
-- (BOOL)isReadComplete;
-- (BOOL)isWriteComplete;
+- (bool)isComplete;
+- (bool)isReadComplete;
+- (bool)isWriteComplete;
 - (struct _MRTransactionKeyProtobuf { Class x1; id x2; }*)key;
 - (id)protobuf;
-- (void)setWriteLength:(unsigned int)arg1;
-- (unsigned int)totalLength;
-- (unsigned int)totalWritePosition;
+- (void)setWriteLength:(unsigned long long)arg1;
+- (unsigned long long)totalLength;
+- (unsigned long long)totalWritePosition;
 - (void)writeComplete;
-- (unsigned int)writeLength;
-- (unsigned int)writePosition;
+- (unsigned long long)writeLength;
+- (unsigned long long)writePosition;
 
 @end

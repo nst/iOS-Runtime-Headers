@@ -5,9 +5,9 @@
 
 @required
 
-- (BOOL)isReady:(BOOL)arg1;
+- (bool)isReady:(bool)arg1;
 - (void)notifyWhenBecomesReady:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
-- (float)readyProgress:(BOOL)arg1;
+- (double)readyProgress:(bool)arg1;
 - (void)removeAllReadyNotifications;
 
 @end

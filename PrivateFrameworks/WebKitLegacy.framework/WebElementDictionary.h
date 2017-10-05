@@ -4,7 +4,7 @@
 
 @interface WebElementDictionary : NSDictionary {
     NSMutableDictionary * _cache;
-    BOOL  _cacheComplete;
+    bool  _cacheComplete;
     NSMutableSet * _nilValues;
     struct HitTestResult { struct HitTestLocation { struct LayoutPoint { struct LayoutUnit { int x_1_3_1; } x_1_2_1; struct LayoutUnit { int x_2_3_1; } x_1_2_2; } x_1_1_1; struct IntRect { struct IntPoint { int x_1_3_1; int x_1_3_2; } x_2_2_1; struct IntSize { int x_2_3_1; int x_2_3_2; } x_2_2_2; } x_1_1_2; struct FloatPoint { float x_3_2_1; float x_3_2_2; } x_1_1_3; struct FloatQuad { struct FloatPoint { float x_1_3_1; float x_1_3_2; } x_4_2_1; struct FloatPoint { float x_2_3_1; float x_2_3_2; } x_4_2_2; struct FloatPoint { float x_3_3_1; float x_3_3_2; } x_4_2_3; struct FloatPoint { float x_4_3_1; float x_4_3_2; } x_4_2_4; } x_1_1_4; bool x_1_1_5; bool x_1_1_6; } x1; struct RefPtr<WebCore::Node> { struct Node {} *x_2_1_1; } x2; struct RefPtr<WebCore::Node> { struct Node {} *x_3_1_1; } x3; struct LayoutPoint { struct LayoutUnit { int x_1_2_1; } x_4_1_1; struct LayoutUnit { int x_2_2_1; } x_4_1_2; } x4; struct LayoutPoint { struct LayoutUnit { int x_1_2_1; } x_5_1_1; struct LayoutUnit { int x_2_2_1; } x_5_1_2; } x5; struct RefPtr<WebCore::Element> { struct Element {} *x_6_1_1; } x6; } * _result;
 }
@@ -28,7 +28,7 @@
 - (id)_title;
 - (id)_titleDisplayString;
 - (id)_webFrame;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)initWithHitTestResult:(const struct HitTestResult { struct HitTestLocation { struct LayoutPoint { struct LayoutUnit { int x_1_3_1; } x_1_2_1; struct LayoutUnit { int x_2_3_1; } x_1_2_2; } x_1_1_1; struct IntRect { struct IntPoint { int x_1_3_1; int x_1_3_2; } x_2_2_1; struct IntSize { int x_2_3_1; int x_2_3_2; } x_2_2_2; } x_1_1_2; struct FloatPoint { float x_3_2_1; float x_3_2_2; } x_1_1_3; struct FloatQuad { struct FloatPoint { float x_1_3_1; float x_1_3_2; } x_4_2_1; struct FloatPoint { float x_2_3_1; float x_2_3_2; } x_4_2_2; struct FloatPoint { float x_3_3_1; float x_3_3_2; } x_4_2_3; struct FloatPoint { float x_4_3_1; float x_4_3_2; } x_4_2_4; } x_1_1_4; bool x_1_1_5; bool x_1_1_6; } x1; struct RefPtr<WebCore::Node> { struct Node {} *x_2_1_1; } x2; struct RefPtr<WebCore::Node> { struct Node {} *x_3_1_1; } x3; struct LayoutPoint { struct LayoutUnit { int x_1_2_1; } x_4_1_1; struct LayoutUnit { int x_2_2_1; } x_4_1_2; } x4; struct LayoutPoint { struct LayoutUnit { int x_1_2_1; } x_5_1_1; struct LayoutUnit { int x_2_2_1; } x_5_1_2; } x5; struct RefPtr<WebCore::Element> { struct Element {} *x_6_1_1; } x6; }*)arg1;
 - (id)keyEnumerator;

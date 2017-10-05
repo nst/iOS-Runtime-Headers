@@ -10,7 +10,7 @@
     CLGeocoder * _geocoder;
     UIButton * _mapButton;
     MKMapView * _mapView;
-    BOOL  _needsToNotifyDelegateOfLocationUpdate;
+    bool  _needsToNotifyDelegateOfLocationUpdate;
     MKPinAnnotationView * _pinAnnotationView;
     UITapGestureRecognizer * _tapRecognizer;
 }
@@ -19,7 +19,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SiriUIMapTemplateViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -30,10 +30,10 @@
 - (void)_mapButtonPressed:(id)arg1;
 - (void)_notifyDelegateOfLocationUpdateIfNeededWithPlacemark:(id)arg1;
 - (id)delegate;
-- (float)desiredHeight;
+- (double)desiredHeight;
 - (id)initWithDataSource:(id)arg1;
 - (void)layoutSubviews;
-- (void)mapView:(id)arg1 regionDidChangeAnimated:(BOOL)arg2;
+- (void)mapView:(id)arg1 regionDidChangeAnimated:(bool)arg2;
 - (void)prepareForDismissal;
 - (void)reloadData;
 - (void)setDelegate:(id)arg1;

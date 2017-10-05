@@ -22,6 +22,7 @@
 - (id)bagDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithBagDictionary:(id)arg1;
+- (id)initWithLookupURL:(id)arg1 unpersonalizedLookupURL:(id)arg2 signedHeaders:(id)arg3 signedQueryParameters:(id)arg4;
 - (id)lookupURLString;
 - (void)setSAPContext:(id)arg1;
 - (id)signedHeaders;

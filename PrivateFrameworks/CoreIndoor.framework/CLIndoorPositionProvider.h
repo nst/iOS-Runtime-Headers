@@ -8,7 +8,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) ServiceState *state;
 @property (readonly) Class superclass;
 
@@ -32,9 +32,11 @@
 - (void)setState:(id)arg1;
 - (void)setVenues:(id)arg1;
 - (void)startUpdatingLocation;
+- (void)startUpdatingLocationWithMode:(long long)arg1;
 - (id)state;
 - (void)stopUpdatingLocation;
-- (BOOL)withinQueueCanReinitializeRemoteState;
+- (void)updateOperatingMode:(long long)arg1;
+- (bool)withinQueueCanReinitializeRemoteState;
 - (void)withinQueueInvalidateState;
 - (id)withinQueuePermanentShutdownReason;
 - (void)withinQueueReconnectInvalidatedConnectionFailed:(id)arg1;

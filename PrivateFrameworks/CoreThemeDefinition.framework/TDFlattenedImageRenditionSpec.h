@@ -8,8 +8,8 @@
 @property (nonatomic, retain) TDRadiosityImageRenditionSpec *radiosityImage;
 
 - (void)addLayerReferencesObject:(id)arg1;
-- (id)createCSIRepresentationWithCompression:(BOOL)arg1 colorSpaceID:(unsigned int)arg2 document:(id)arg3;
+- (id)createCSIRepresentationWithCompression:(bool)arg1 colorSpaceID:(unsigned long long)arg2 document:(id)arg3;
 - (void)drawFlattenedImageIntoContext:(struct CGContext { }*)arg1 document:(id)arg2;
-- (void)updatePackingPropertiesWithDocument:(id)arg1;
+- (bool)updatePackingPropertiesWithDocument:(id)arg1;
 
 @end

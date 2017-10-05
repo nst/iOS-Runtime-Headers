@@ -12,8 +12,8 @@
 - (id)identifiersToIndex;
 - (id)initWithSearchableIndex:(id)arg1 dataSources:(id)arg2;
 - (id)initWithSearchableIndex:(id)arg1 dataSources:(id)arg2 identifiersToIndex:(id)arg3;
+- (id)objectIDsToIndexFromDataSource:(id)arg1;
 - (id)searchableItemIdentifiersToDeleteFromDataSource:(id)arg1;
-- (id)searchableItemsToIndexFromDataSource:(id)arg1;
 - (void)setIdentifiersToIndex:(id)arg1;
 
 @end

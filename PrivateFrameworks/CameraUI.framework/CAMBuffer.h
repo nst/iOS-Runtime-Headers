@@ -8,7 +8,7 @@
     NSMutableArray * __bufferQueueObservances;
     NSMutableDictionary * __bufferQueueObservers;
     <NSCopying> * _bufferQueueCurrentValue;
-    BOOL  _bufferQueueEnabled;
+    bool  _bufferQueueEnabled;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_bufferQueue;
@@ -16,19 +16,19 @@
 @property (nonatomic, readonly) NSMutableArray *_bufferQueueObservances;
 @property (nonatomic, readonly) NSMutableDictionary *_bufferQueueObservers;
 @property (nonatomic, retain) <NSCopying> *bufferQueueCurrentValue;
-@property (getter=isBufferQueueEnabled, nonatomic) BOOL bufferQueueEnabled;
+@property (getter=isBufferQueueEnabled, nonatomic) bool bufferQueueEnabled;
 @property (nonatomic, readonly) NSArray *bufferedValues;
 @property (nonatomic, readonly) id currentValue;
-@property (getter=isEnabled, nonatomic, readonly) BOOL enabled;
+@property (getter=isEnabled, nonatomic, readonly) bool enabled;
 @property (nonatomic, readonly) id firstBufferedValue;
-@property (nonatomic, readonly) BOOL isBufferEmpty;
+@property (nonatomic, readonly) bool isBufferEmpty;
 @property (nonatomic, readonly) id lastBufferedValue;
 
 + (id)keyPathsForValuesAffectingCurrentValue;
 + (id)keyPathsForValuesAffectingEnabled;
 
 - (void).cxx_destruct;
-- (id)_addObserver:(id /* block */)arg1 onMainQueue:(BOOL)arg2;
+- (id)_addObserver:(id /* block */)arg1 onMainQueue:(bool)arg2;
 - (id)_bufferQueue;
 - (id)_bufferQueueBufferedValues;
 - (void)_bufferQueueEvaluateObservances;
@@ -40,7 +40,7 @@
 - (void)_bufferQueueTeardownObservance:(id)arg1;
 - (void)_bufferQueueTeardownObservances:(id)arg1;
 - (void)_emitBufferedValues;
-- (BOOL)_isBufferQueue;
+- (bool)_isBufferQueue;
 - (id)addMainQueueObserver:(id /* block */)arg1;
 - (id)addObserver:(id /* block */)arg1;
 - (id)bufferQueueCurrentValue;
@@ -56,9 +56,9 @@
 - (id)firstBufferedValue;
 - (void)handleObservedNotification:(id)arg1;
 - (id)init;
-- (BOOL)isBufferEmpty;
-- (BOOL)isBufferQueueEnabled;
-- (BOOL)isEnabled;
+- (bool)isBufferEmpty;
+- (bool)isBufferQueueEnabled;
+- (bool)isEnabled;
 - (id)lastBufferedValue;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)push:(id)arg1;
@@ -66,6 +66,6 @@
 - (void)removeObserverForKey:(id)arg1;
 - (void)replaceWith:(id)arg1;
 - (void)setBufferQueueCurrentValue:(id)arg1;
-- (void)setBufferQueueEnabled:(BOOL)arg1;
+- (void)setBufferQueueEnabled:(bool)arg1;
 
 @end

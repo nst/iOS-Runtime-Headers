@@ -18,7 +18,7 @@
 @property (nonatomic, copy) NSData *instructorImageData;
 @property (nonatomic, copy) NSString *instructorName;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)anchorCertificates;

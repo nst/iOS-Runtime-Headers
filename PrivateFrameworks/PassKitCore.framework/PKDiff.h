@@ -9,25 +9,25 @@
 
 @property (nonatomic, copy) NSString *passUniqueID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (unsigned int)_hunkIndexForKey:(id)arg1;
+- (unsigned long long)_hunkIndexForKey:(id)arg1;
 - (void)addHunkWithKey:(id)arg1 oldValue:(id)arg2 newValue:(id)arg3 message:(id)arg4;
 - (void)addHunksFromDiff:(id)arg1;
 - (id)anyKey;
-- (int)compare:(id)arg1;
+- (long long)compare:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)enumerateHunks:(id /* block */)arg1;
-- (BOOL)getHunkForKey:(id)arg1 oldValue:(id*)arg2 newValue:(id*)arg3 message:(id*)arg4;
-- (unsigned int)hash;
-- (int)hunkCount;
+- (bool)getHunkForKey:(id)arg1 oldValue:(id*)arg2 newValue:(id*)arg3 message:(id*)arg4;
+- (unsigned long long)hash;
+- (long long)hunkCount;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToDiff:(id)arg1;
-- (void)key:(id*)arg1 oldValue:(id*)arg2 newValue:(id*)arg3 message:(id*)arg4 forHunkAtIndex:(int)arg5;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToDiff:(id)arg1;
+- (void)key:(id*)arg1 oldValue:(id*)arg2 newValue:(id*)arg3 message:(id*)arg4 forHunkAtIndex:(long long)arg5;
 - (id)passUniqueID;
 - (void)removeHunkForKey:(id)arg1;
 - (void)setPassUniqueID:(id)arg1;

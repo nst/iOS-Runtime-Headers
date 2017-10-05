@@ -11,7 +11,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <AFSiriTaskServiceDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic) AFSiriTaskService *service;
 @property (readonly) Class superclass;

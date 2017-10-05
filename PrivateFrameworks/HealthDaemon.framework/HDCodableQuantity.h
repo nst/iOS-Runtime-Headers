@@ -10,8 +10,8 @@
     double  _value;
 }
 
-@property (nonatomic, readonly) BOOL hasUnitString;
-@property (nonatomic) BOOL hasValue;
+@property (nonatomic, readonly) bool hasUnitString;
+@property (nonatomic) bool hasValue;
 @property (nonatomic, retain) NSString *unitString;
 @property (nonatomic) double value;
 
@@ -20,13 +20,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasUnitString;
-- (BOOL)hasValue;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasUnitString;
+- (bool)hasValue;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasValue:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasValue:(bool)arg1;
 - (void)setUnitString:(id)arg1;
 - (void)setValue:(double)arg1;
 - (id)unitString;

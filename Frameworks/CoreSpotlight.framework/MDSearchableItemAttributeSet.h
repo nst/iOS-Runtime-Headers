@@ -8,7 +8,7 @@
 @property (copy) NSArray *primaryRecipientPersons;
 @property (copy) NSArray *recipients;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)authorPersons;
 - (id)primaryRecipientPersons;

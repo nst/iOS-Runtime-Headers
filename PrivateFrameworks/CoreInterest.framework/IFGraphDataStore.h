@@ -15,8 +15,8 @@
 - (id)_topicFromStatement:(struct sqlite3_stmt { }*)arg1;
 - (void)clear;
 - (id)initWithPath:(id)arg1;
-- (BOOL)insertIndication:(id)arg1 topic:(id)arg2;
-- (BOOL)insertTopicWithName:(id)arg1 label:(id)arg2 identifier:(id)arg3 parent:(id)arg4;
+- (bool)insertIndication:(id)arg1 topic:(id)arg2;
+- (bool)insertTopicWithName:(id)arg1 label:(id)arg2 identifier:(id)arg3 parent:(id)arg4;
 - (id)selectTopicsForQuery:(id)arg1;
 - (id)topicWithName:(id)arg1 label:(id)arg2 identifier:(id)arg3;
 

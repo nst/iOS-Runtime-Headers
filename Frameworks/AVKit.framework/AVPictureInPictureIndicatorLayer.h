@@ -4,39 +4,26 @@
 
 @interface AVPictureInPictureIndicatorLayer : CALayer {
     NSAttributedString * _attributedText;
-    CALayer * _containerLayer;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    }  _containerLayerUncompressedBounds;
+    double  _baselineOffset;
     CALayer * _imageLayer;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _imageSize;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _languageAwareOutsets;
+    double  _lineHeight;
     CATextLayer * _textLayer;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    }  _textLayerUncompressedBounds;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    }  _textLayerUncompressedPosition;
 }
 
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_textBoundsForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)init;
-- (id)initWithTraitCollection:(id)arg1 opaque:(BOOL)arg2;
+- (id)initWithTraitCollection:(id)arg1 opaque:(bool)arg2;
 - (void)layoutSublayers;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })textBoundingRectWhenDrawnInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 @end

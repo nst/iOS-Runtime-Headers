@@ -5,23 +5,23 @@
 @interface CLKComplicationTemplateModularSmallProgressRingImage : CLKComplicationTemplate {
     CLKImageProvider * _imageProvider;
     CLKProgressProvider * _progressProvider;
-    int  _ringStyle;
+    long long  _ringStyle;
 }
 
 @property (nonatomic, copy) CLKImageProvider *imageProvider;
 @property (nonatomic, copy) CLKProgressProvider *progressProvider;
-@property (nonatomic) int ringStyle;
+@property (nonatomic) long long ringStyle;
 
 - (void).cxx_destruct;
 - (void)_enumerateImageProviderKeysWithBlock:(id /* block */)arg1;
 - (void)_enumerateIntegerKeysWithBlock:(id /* block */)arg1;
 - (void)_enumerateProgressProviderKeysWithBlock:(id /* block */)arg1;
 - (id)imageProvider;
-- (BOOL)isCompatibleWithFamily:(int)arg1;
+- (bool)isCompatibleWithFamily:(long long)arg1;
 - (id)progressProvider;
-- (int)ringStyle;
+- (long long)ringStyle;
 - (void)setImageProvider:(id)arg1;
 - (void)setProgressProvider:(id)arg1;
-- (void)setRingStyle:(int)arg1;
+- (void)setRingStyle:(long long)arg1;
 
 @end

@@ -15,19 +15,19 @@
 + (id)featureMatchWithType:(id)arg1 term:(id)arg2 client:(id)arg3;
 + (id)featureMatchWithValuesFromFeature:(id)arg1;
 + (double)scaleValueForFeature:(id)arg1 scaling:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)client;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithType:(id)arg1 term:(id)arg2 client:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToFeatureMatch:(id)arg1;
-- (BOOL)matches:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToFeatureMatch:(id)arg1;
+- (bool)matches:(id)arg1;
 - (void)setClient:(id)arg1;
 - (void)setTerm:(id)arg1;
 - (void)setType:(id)arg1;

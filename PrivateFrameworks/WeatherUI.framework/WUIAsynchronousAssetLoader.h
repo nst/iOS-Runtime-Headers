@@ -23,8 +23,8 @@
 - (void).cxx_destruct;
 - (Class)CAMLParser:(id)arg1 didFailToFindClassWithName:(id)arg2;
 - (void)CAMLParser:(id)arg1 didLoadResource:(id)arg2 fromURL:(id)arg3;
-- (void)CAMLParser:(id)arg1 formatErrorString:(const char *)arg2 arguments:(void*)arg3 lineNumber:(unsigned long)arg4;
-- (void)CAMLParser:(id)arg1 formatWarningString:(const char *)arg2 arguments:(void*)arg3 lineNumber:(unsigned long)arg4;
+- (void)CAMLParser:(id)arg1 formatErrorString:(const char *)arg2 arguments:(char *)arg3 lineNumber:(unsigned long long)arg4;
+- (void)CAMLParser:(id)arg1 formatWarningString:(const char *)arg2 arguments:(char *)arg3 lineNumber:(unsigned long long)arg4;
 - (id)CAMLParser:(id)arg1 resourceForURL:(id)arg2;
 - (void)_asynchronouslyPreheatCADataForCity:(id)arg1;
 - (void)_opportunisticallyLoad;
@@ -37,7 +37,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)didReceivedMemoryWarning;
-- (id)filenameForCondition:(int)arg1 isDay:(BOOL)arg2;
+- (id)filenameForCondition:(long long)arg1 isDay:(bool)arg2;
 - (id)init;
 - (void)loadRootLayerForFile:(id)arg1 completion:(id /* block */)arg2;
 - (id)opportunityTimer;

@@ -6,24 +6,24 @@
     NSURLSessionTask * _cacheTask;
     NSArray * _cachedResponseDataArray;
     NSCachedURLResponse * _cachedResponseForConditionalRequest;
-    BOOL  _clientWantsCacheOnly;
-    BOOL  _completedLocalCacheLookup;
+    bool  _clientWantsCacheOnly;
+    bool  _completedLocalCacheLookup;
     NSURLRequest * _conditionalRequest;
-    BOOL  _handledNeedNewBodyStream;
+    bool  _handledNeedNewBodyStream;
     NSString * _originalUploadFilePath;
     NSURLSessionTask * _proxyTask;
-    BOOL  _requestIsUncacheable;
-    BOOL  _shouldCancelOnCacheTaskCompletion;
+    bool  _requestIsUncacheable;
+    bool  _shouldCancelOnCacheTaskCompletion;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
-- (void)URLSession:(id)arg1 task:(id)arg2 _conditionalRequirementsChanged:(BOOL)arg3;
+- (void)URLSession:(id)arg1 task:(id)arg2 _conditionalRequirementsChanged:(bool)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 _isWaitingForConnectionWithReason:(long long)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 _willSendRequestForEstablishedConnection:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
@@ -41,7 +41,7 @@
 - (void)dealloc;
 - (id)initWithTask:(id)arg1 delegate:(id)arg2 delegateQueue:(id)arg3;
 - (void)resume;
-- (void)setIsDownload:(BOOL)arg1;
+- (void)setIsDownload:(bool)arg1;
 - (void)setPoolPriority:(long long)arg1;
 - (void)setPriorityHint:(float)arg1;
 - (void)suspend;

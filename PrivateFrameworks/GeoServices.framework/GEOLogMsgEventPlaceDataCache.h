@@ -6,20 +6,20 @@
     NSString * _placeDataRequestingAppIdentifier;
 }
 
-@property (nonatomic, readonly) BOOL hasPlaceDataRequestingAppIdentifier;
+@property (nonatomic, readonly) bool hasPlaceDataRequestingAppIdentifier;
 @property (nonatomic, retain) NSString *placeDataRequestingAppIdentifier;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPlaceDataRequestingAppIdentifier;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasPlaceDataRequestingAppIdentifier;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)placeDataRequestingAppIdentifier;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setPlaceDataRequestingAppIdentifier:(id)arg1;
 - (void)writeTo:(id)arg1;
 

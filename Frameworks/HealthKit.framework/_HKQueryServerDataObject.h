@@ -2,38 +2,20 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface _HKQueryServerDataObject : NSObject <NSSecureCoding> {
+@interface _HKQueryServerDataObject : HKQueryServerConfiguration {
     double  _collectionInterval;
-    _HKFilter * _filter;
-    HKObjectType * _objectType;
-    int  _samplesDeliveredBeforeSuspend;
-    BOOL  _shouldStayAliveAfterInitialResults;
-    BOOL  _waitForStart;
 }
 
 @property (nonatomic) double collectionInterval;
-@property (nonatomic, retain) _HKFilter *filter;
-@property (nonatomic, retain) HKObjectType *objectType;
-@property (nonatomic) int samplesDeliveredBeforeSuspend;
-@property (nonatomic) BOOL shouldStayAliveAfterInitialResults;
-@property (nonatomic) BOOL waitForStart;
+@property (nonatomic) bool shouldStayAliveAfterInitialResults;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (void).cxx_destruct;
 - (double)collectionInterval;
 - (void)encodeWithCoder:(id)arg1;
-- (id)filter;
 - (id)initWithCoder:(id)arg1;
-- (id)objectType;
-- (int)samplesDeliveredBeforeSuspend;
 - (void)setCollectionInterval:(double)arg1;
-- (void)setFilter:(id)arg1;
-- (void)setObjectType:(id)arg1;
-- (void)setSamplesDeliveredBeforeSuspend:(int)arg1;
-- (void)setShouldStayAliveAfterInitialResults:(BOOL)arg1;
-- (void)setWaitForStart:(BOOL)arg1;
-- (BOOL)shouldStayAliveAfterInitialResults;
-- (BOOL)waitForStart;
+- (void)setShouldStayAliveAfterInitialResults:(bool)arg1;
+- (bool)shouldStayAliveAfterInitialResults;
 
 @end

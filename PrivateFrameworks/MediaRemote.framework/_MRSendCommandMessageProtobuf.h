@@ -8,12 +8,15 @@
         unsigned int command : 1; 
     }  _has;
     _MRCommandOptionsProtobuf * _options;
+    _MRNowPlayingPlayerPathProtobuf * _playerPath;
 }
 
 @property (nonatomic) int command;
-@property (nonatomic) BOOL hasCommand;
-@property (nonatomic, readonly) BOOL hasOptions;
+@property (nonatomic) bool hasCommand;
+@property (nonatomic, readonly) bool hasOptions;
+@property (nonatomic, readonly) bool hasPlayerPath;
 @property (nonatomic, retain) _MRCommandOptionsProtobuf *options;
+@property (nonatomic, retain) _MRNowPlayingPlayerPathProtobuf *playerPath;
 
 - (int)StringAsCommand:(id)arg1;
 - (int)command;
@@ -23,16 +26,19 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCommand;
-- (BOOL)hasOptions;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCommand;
+- (bool)hasOptions;
+- (bool)hasPlayerPath;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)options;
-- (BOOL)readFrom:(id)arg1;
+- (id)playerPath;
+- (bool)readFrom:(id)arg1;
 - (void)setCommand:(int)arg1;
-- (void)setHasCommand:(BOOL)arg1;
+- (void)setHasCommand:(bool)arg1;
 - (void)setOptions:(id)arg1;
+- (void)setPlayerPath:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

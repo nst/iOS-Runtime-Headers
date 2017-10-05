@@ -4,25 +4,25 @@
 
 @interface NSTruePredicate : NSPredicate
 
-+ (BOOL)_allowsEvaluation;
++ (bool)_allowsEvaluation;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)defaultInstance;
 + (void)initialize;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
+- (bool)_isDeallocating;
+- (bool)_tryRetain;
+- (void)acceptVisitor:(id)arg1 flags:(unsigned long long)arg2;
 - (id)autorelease;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)evaluateWithObject:(id)arg1 substitutionVariables:(id)arg2;
-- (unsigned int)hash;
+- (bool)evaluateWithObject:(id)arg1 substitutionVariables:(id)arg2;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)predicateFormat;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 
 @end

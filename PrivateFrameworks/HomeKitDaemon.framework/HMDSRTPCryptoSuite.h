@@ -3,22 +3,22 @@
  */
 
 @interface HMDSRTPCryptoSuite : HMDNumberParser <NSSecureCoding> {
-    unsigned int  _srtpCryptoSuite;
+    unsigned long long  _srtpCryptoSuite;
 }
 
-@property (nonatomic, readonly) unsigned int srtpCryptoSuite;
+@property (nonatomic, readonly) unsigned long long srtpCryptoSuite;
 
 + (id)arrayWithSuites:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)description;
 - (void)description:(id)arg1 indent:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithCryptoSuite:(unsigned int)arg1;
+- (id)initWithCryptoSuite:(unsigned long long)arg1;
 - (id)initWithTLVData:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)srtpCryptoSuite;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)srtpCryptoSuite;
 
 @end

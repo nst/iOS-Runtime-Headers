@@ -8,8 +8,8 @@
     SGDHarvestQueueLegacy * _legacyHighPriority;
     SGDHarvestQueueLegacy * _legacyLowPriority;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _lock;
     SGDHarvestQueueOnDisk * _onDisk;
 }
@@ -20,11 +20,11 @@
 @property (nonatomic, readonly) SGDHarvestQueueOnDisk *onDisk;
 
 - (void).cxx_destruct;
-- (void)addItemWithSourceKey:(id)arg1 messageId:(id)arg2 highPriority:(BOOL)arg3 item:(id)arg4 callback:(id /* block */)arg5;
+- (void)addItemWithSourceKey:(id)arg1 messageId:(id)arg2 highPriority:(bool)arg3 item:(id)arg4 callback:(id /* block */)arg5;
 - (id)backends;
 - (void)close;
-- (unsigned int)count;
-- (void)countHighPriorityItems:(unsigned int*)arg1 lowPriorityItems:(unsigned int*)arg2;
+- (unsigned long long)count;
+- (void)countHighPriorityItems:(unsigned long long*)arg1 lowPriorityItems:(unsigned long long*)arg2;
 - (void)dealloc;
 - (id)inMemory;
 - (id)initWithOnDiskQueue:(id)arg1 legacyHighPriority:(id)arg2 legacyLowPriority:(id)arg3 inMemoryCache:(id)arg4;

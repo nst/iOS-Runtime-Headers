@@ -11,7 +11,7 @@
 
 @optional
 
-- (BOOL)shouldShowSectionTitleForItem:(HFControlPanelItem *)arg1;
+- (bool)shouldShowSectionTitleForItem:(HFControlPanelItem *)arg1;
 - (HFValueTransformer *)valueTransformerForControlItem:(HFControlItem *)arg1;
 
 @end

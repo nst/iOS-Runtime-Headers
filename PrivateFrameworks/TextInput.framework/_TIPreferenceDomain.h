@@ -5,15 +5,15 @@
 @interface _TIPreferenceDomain : NSObject {
     NSString * _domain;
     double  _lastSynchronizedTime;
-    BOOL  _needsGetSync;
-    BOOL  _needsSetSync;
+    bool  _needsGetSync;
+    bool  _needsSetSync;
     NSString * _notification;
 }
 
 @property (nonatomic, retain) NSString *domain;
 @property (nonatomic) double lastSynchronizedTime;
-@property (nonatomic) BOOL needsGetSync;
-@property (nonatomic) BOOL needsSetSync;
+@property (nonatomic) bool needsGetSync;
+@property (nonatomic) bool needsSetSync;
 @property (nonatomic, retain) NSString *notification;
 
 + (id)domainWithName:(id)arg1 notification:(id)arg2;
@@ -21,13 +21,13 @@
 - (void)dealloc;
 - (id)domain;
 - (double)lastSynchronizedTime;
-- (BOOL)needsGetSync;
-- (BOOL)needsSetSync;
+- (bool)needsGetSync;
+- (bool)needsSetSync;
 - (id)notification;
 - (void)setDomain:(id)arg1;
 - (void)setLastSynchronizedTime:(double)arg1;
-- (void)setNeedsGetSync:(BOOL)arg1;
-- (void)setNeedsSetSync:(BOOL)arg1;
+- (void)setNeedsGetSync:(bool)arg1;
+- (void)setNeedsSetSync:(bool)arg1;
 - (void)setNotification:(id)arg1;
 
 @end

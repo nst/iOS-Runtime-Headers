@@ -4,9 +4,9 @@
 
 @interface PUPhotoKitRestoreNoConfirmActionPerformer : PUPhotoKitDestructiveActionsPerformer
 
-+ (BOOL)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2;
++ (bool)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2;
 
-- (int)destructivePhotosAction;
-- (BOOL)shouldConfirmDestructiveAction;
+- (long long)destructivePhotosAction;
+- (bool)shouldConfirmDestructiveAction;
 
 @end

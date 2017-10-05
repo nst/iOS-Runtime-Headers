@@ -7,7 +7,8 @@
 + (void)fetchAndSetMigrationStateWithCompletionHandler:(id /* block */)arg1;
 + (void)fetchMigrationStateAndUserRecordWithCompletionHandler:(id /* block */)arg1;
 + (void)fetchMigrationStateWithCompletionHandler:(id /* block */)arg1;
-+ (void)saveDidChooseToMigrate:(BOOL)arg1 didFinishMigration:(BOOL)arg2 didMigrateOnMac:(BOOL)arg3 toACAccount:(id)arg4 inStore:(id)arg5 completionHandler:(id /* block */)arg6;
++ (void)saveDidChooseToMigrate:(bool)arg1 didFinishMigration:(bool)arg2 didMigrateOnMac:(bool)arg3 toACAccount:(id)arg4 inStore:(id)arg5 completionHandler:(id /* block */)arg6;
++ (void)updateAllLegacyAccountMigrationStates;
 + (void)updateLegacyAccountMigrationStateForModernAccount:(id)arg1;
 
 @end

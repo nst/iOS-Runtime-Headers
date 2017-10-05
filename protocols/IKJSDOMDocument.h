@@ -20,12 +20,12 @@
 - (IKJSNavigationDocument *)navigationDocument;
 - (void)setDocumentURI:(NSString *)arg1;
 - (void)setNeedsUpdate;
-- (void)setStrictErrorChecking:(BOOL)arg1;
-- (void)setXmlStandalone:(BOOL)arg1;
+- (void)setStrictErrorChecking:(bool)arg1;
+- (void)setXmlStandalone:(bool)arg1;
 - (void)setXmlVersion:(NSString *)arg1;
-- (BOOL)strictErrorChecking;
+- (bool)strictErrorChecking;
 - (NSString *)xmlEncoding;
-- (BOOL)xmlStandalone;
+- (bool)xmlStandalone;
 - (NSString *)xmlVersion;
 
 @end

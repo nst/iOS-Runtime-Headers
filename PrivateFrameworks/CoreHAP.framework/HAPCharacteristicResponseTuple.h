@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPCharacteristicResponseTuple : NSObject {
+@interface HAPCharacteristicResponseTuple : HMFObject {
     HAPCharacteristic * _characteristic;
     NSError * _error;
 }

@@ -13,9 +13,9 @@
     int  _stateType;
 }
 
-@property (nonatomic) BOOL hasNewValue;
-@property (nonatomic) BOOL hasOldValue;
-@property (nonatomic) BOOL hasStateType;
+@property (nonatomic) bool hasNewValue;
+@property (nonatomic) bool hasOldValue;
+@property (nonatomic) bool hasStateType;
 @property (nonatomic) int newValue;
 @property (nonatomic) int oldValue;
 @property (nonatomic) int stateType;
@@ -27,20 +27,20 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasNewValue;
-- (BOOL)hasOldValue;
-- (BOOL)hasStateType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasNewValue;
+- (bool)hasOldValue;
+- (bool)hasStateType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)newValue;
 - (id)newValueAsString:(int)arg1;
 - (int)oldValue;
 - (id)oldValueAsString:(int)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasNewValue:(BOOL)arg1;
-- (void)setHasOldValue:(BOOL)arg1;
-- (void)setHasStateType:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasNewValue:(bool)arg1;
+- (void)setHasOldValue:(bool)arg1;
+- (void)setHasStateType:(bool)arg1;
 - (void)setNewValue:(int)arg1;
 - (void)setOldValue:(int)arg1;
 - (void)setStateType:(int)arg1;

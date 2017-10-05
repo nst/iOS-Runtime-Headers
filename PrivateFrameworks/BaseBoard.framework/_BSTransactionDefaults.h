@@ -4,7 +4,7 @@
 
 @interface _BSTransactionDefaults : BSAbstractDefaultDomain
 
-@property (getter=isAuditHistoryEnabled, nonatomic) BOOL auditHistoryEnabled;
+@property (getter=isAuditHistoryEnabled, nonatomic) bool auditHistoryEnabled;
 
 + (id)sharedInstance;
 

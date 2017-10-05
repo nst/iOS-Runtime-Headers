@@ -7,12 +7,12 @@
 + (id)storeBookkeeperPreferences;
 
 - (void)_preferencesDidChange;
-- (BOOL)boolForKey:(id)arg1;
+- (bool)boolForKey:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)objectForKey:(id)arg1 withDefaultValue:(id)arg2;
 - (void)registerDefaultsIfKeyNotSet:(id)arg1 registrationBlock:(id /* block */)arg2;
-- (void)setBool:(BOOL)arg1 forKey:(id)arg2;
+- (void)setBool:(bool)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 
 @end

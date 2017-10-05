@@ -8,13 +8,13 @@
 
 + (id)sharedInstance;
 
-- (void)_notifyObserver:(BOOL)arg1;
+- (void)_notifyObserver:(bool)arg1;
 - (void)_startMonitoringWithQueue:(id)arg1;
 - (void)_stopMonitoring;
 - (void)dealloc;
 - (void)disableAssertionReceived;
 - (void)enableAssertionReceived;
 - (id)init;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 
 @end

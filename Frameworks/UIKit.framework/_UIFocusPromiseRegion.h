@@ -3,22 +3,23 @@
  */
 
 @interface _UIFocusPromiseRegion : _UIFocusRegion {
-    <_UIFocusPromiseRegionDelegate> * _delegate;
+    <_UIFocusRegionContainer> * _contentFocusRegionContainer;
+    id /* block */  _contentFulfillmentHandler;
 }
 
-@property (nonatomic) <_UIFocusPromiseRegionDelegate> *delegate;
+@property (nonatomic, copy) id /* block */ contentFulfillmentHandler;
 
 - (void).cxx_destruct;
-- (id)_delegateFulfillFocusPromiseRegion;
-- (id)_destinationItemForFocusMovement:(id)arg1 inMap:(id)arg2;
 - (void)_drawDebugQuickLookImageWithInfo:(id)arg1 inContext:(struct CGContext { }*)arg2;
-- (unsigned int)_focusableBoundaries;
-- (BOOL)_shouldCropRegionToSearchArea;
-- (BOOL)_shouldDrawDebugQuickLookImageWithInfo:(id)arg1;
+- (unsigned long long)_focusableBoundaries;
+- (id)_loadContentFocusRegionContainer;
+- (id)_nextFocusedItemForFocusMovementRequest:(id)arg1 inMap:(id)arg2;
+- (bool)_shouldCropRegionToSearchArea;
+- (bool)_shouldDrawDebugQuickLookImageWithInfo:(id)arg1;
 - (id)_visualRepresentationColor;
-- (int)_visualRepresentationPatternType;
+- (long long)_visualRepresentationPatternType;
+- (id /* block */)contentFulfillmentHandler;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
+- (void)setContentFulfillmentHandler:(id /* block */)arg1;
 
 @end

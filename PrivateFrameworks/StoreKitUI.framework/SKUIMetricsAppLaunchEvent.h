@@ -11,7 +11,7 @@
 @property (nonatomic) double clientConfigurationLoadTime;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) double initialTabRequestStartTime;
 @property (nonatomic) double initialTabResponseEndTime;
 @property (nonatomic) double initialTabResponseStartTime;
@@ -21,10 +21,10 @@
 @property (nonatomic) double launchEndTime;
 @property (nonatomic) double launchFailureTime;
 @property (nonatomic) double mainTime;
-@property (nonatomic) BOOL requiredBlockingBagLoad;
+@property (nonatomic) bool requiredBlockingBagLoad;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSDictionary *templateMetrics;
-@property (nonatomic) BOOL usedBootstrapFallback;
+@property (nonatomic) bool usedBootstrapFallback;
 
 + (id)consumePendingLaunchEvent;
 + (void)createPendingLaunchEvent;
@@ -51,7 +51,7 @@
 - (double)launchFailureTime;
 - (double)mainTime;
 - (void)populateObjectInspector:(id)arg1;
-- (BOOL)requiredBlockingBagLoad;
+- (bool)requiredBlockingBagLoad;
 - (void)setBootstrapEndTime:(double)arg1;
 - (void)setBootstrapStartTime:(double)arg1;
 - (void)setClientConfigurationLoadTime:(double)arg1;
@@ -64,9 +64,9 @@
 - (void)setLaunchEndTime:(double)arg1;
 - (void)setLaunchFailureTime:(double)arg1;
 - (void)setMainTime:(double)arg1;
-- (void)setRequiredBlockingBagLoad:(BOOL)arg1;
-- (void)setUsedBootstrapFallback:(BOOL)arg1;
+- (void)setRequiredBlockingBagLoad:(bool)arg1;
+- (void)setUsedBootstrapFallback:(bool)arg1;
 - (id)templateMetrics;
-- (BOOL)usedBootstrapFallback;
+- (bool)usedBootstrapFallback;
 
 @end

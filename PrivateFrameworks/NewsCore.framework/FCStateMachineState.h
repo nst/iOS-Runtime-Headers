@@ -19,16 +19,16 @@
 @property (nonatomic, copy) id /* block */ willExitBlock;
 
 - (void).cxx_destruct;
-- (BOOL)canTry:(id)arg1 withOwner:(id)arg2;
+- (bool)canTry:(id)arg1 withOwner:(id)arg2;
 - (id /* block */)canTryBlock;
 - (id)description;
 - (id)didEnter:(id)arg1 withOwner:(id)arg2;
 - (id /* block */)didEnterBlock;
 - (id)didExit:(id)arg1 withOwner:(id)arg2;
 - (id /* block */)didExitBlock;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithName:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)name;
 - (id)onCanTry:(id /* block */)arg1;
 - (id)onDidEnter:(id /* block */)arg1;

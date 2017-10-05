@@ -12,13 +12,11 @@
     PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic) BOOL hasNanos;
-@property (nonatomic) BOOL hasSeconds;
+@property (nonatomic) bool hasNanos;
+@property (nonatomic) bool hasSeconds;
 @property (nonatomic) int nanos;
 @property (nonatomic) long long seconds;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -26,25 +24,19 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasNanos;
-- (BOOL)hasSeconds;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasNanos;
+- (bool)hasSeconds;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)nanos;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (long long)seconds;
-- (void)setHasNanos:(BOOL)arg1;
-- (void)setHasSeconds:(BOOL)arg1;
+- (void)setHasNanos:(bool)arg1;
+- (void)setHasSeconds:(bool)arg1;
 - (void)setNanos:(int)arg1;
 - (void)setSeconds:(long long)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

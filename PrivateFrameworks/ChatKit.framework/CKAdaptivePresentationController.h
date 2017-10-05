@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ dismissalHandler;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) id /* block */ presentationHandler;
 @property (nonatomic, retain) CKPresentationControllerWindow *presentationWindow;
 @property (nonatomic, retain) UIViewController *presentedViewController;
@@ -27,11 +27,11 @@
 - (void)alertControllerViewDidDisappear:(id)arg1;
 - (id)currentPresentationController;
 - (void)dealloc;
-- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)dismissViewControllerAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (id /* block */)dismissalHandler;
-- (void)popoverPresentationController:(id)arg1 willRepositionPopoverToRect:(inout struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 inView:(inout id*)arg3;
+- (void)popoverPresentationController:(id)arg1 willRepositionPopoverToRect:(inout struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 inView:(inout id*)arg3;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
-- (void)presentViewController:(id)arg1 fromViewController:(id)arg2 presentationHandler:(id /* block */)arg3 dismissalHandler:(id /* block */)arg4 animated:(BOOL)arg5 completion:(id /* block */)arg6;
+- (void)presentViewController:(id)arg1 fromViewController:(id)arg2 presentationHandler:(id /* block */)arg3 dismissalHandler:(id /* block */)arg4 animated:(bool)arg5 completion:(id /* block */)arg6;
 - (id /* block */)presentationHandler;
 - (id)presentationWindow;
 - (id)presentedViewController;

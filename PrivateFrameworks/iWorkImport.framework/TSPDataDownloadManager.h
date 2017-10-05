@@ -5,7 +5,6 @@
 @interface TSPDataDownloadManager : NSObject {
     TSPObjectContext * _context;
     <TSPDataDownloadManagerDelegate> * _delegate;
-    TSPDocumentResourceDataProvider * _docServerDataProvider;
 }
 
 @property (nonatomic) <TSPDataDownloadManagerDelegate> *delegate;

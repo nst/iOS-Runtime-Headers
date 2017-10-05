@@ -3,11 +3,11 @@
  */
 
 @interface MPModelPerson : MPModelObject {
-    BOOL  _hasSocialPosts;
+    bool  _hasSocialPosts;
     NSString * _name;
 }
 
-@property (nonatomic) BOOL hasSocialPosts;
+@property (nonatomic) bool hasSocialPosts;
 @property (nonatomic, copy) NSString *name;
 
 + (id)__MPModelPropertyPersonHasSocialPosts__PROPERTY;
@@ -16,10 +16,10 @@
 + (id)__name__KEY;
 
 - (void).cxx_destruct;
-- (id)descriptionWithType:(int)arg1;
-- (BOOL)hasSocialPosts;
+- (id)descriptionWithType:(long long)arg1;
+- (bool)hasSocialPosts;
 - (id)name;
-- (void)setHasSocialPosts:(BOOL)arg1;
+- (void)setHasSocialPosts:(bool)arg1;
 - (void)setName:(id)arg1;
 
 @end

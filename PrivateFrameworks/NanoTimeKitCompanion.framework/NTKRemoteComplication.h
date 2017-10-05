@@ -10,24 +10,24 @@
 @property (nonatomic, readonly) NSString *appBundleIdentifier;
 @property (nonatomic, readonly) NSString *clientIdentifier;
 
-+ (id)_allComplicationConfigurationsWithType:(unsigned int)arg1;
++ (id)_allComplicationConfigurationsWithType:(unsigned long long)arg1;
 + (id)_remoteStocksComplication;
 + (id)complicationWithClientIdentifier:(id)arg1 appBundleIdentifier:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_addKeysToJSONDictionary:(id)arg1;
-- (id)_initWithComplicationType:(unsigned int)arg1 JSONDictionary:(id)arg2;
+- (id)_initWithComplicationType:(unsigned long long)arg1 JSONDictionary:(id)arg2;
 - (id)appBundleIdentifier;
 - (id)clientIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)customDailySnapshotKey;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithComplicationType:(unsigned int)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithComplicationType:(unsigned long long)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)localizedDetailText;
 - (id)localizedKeylineLabelText;
 

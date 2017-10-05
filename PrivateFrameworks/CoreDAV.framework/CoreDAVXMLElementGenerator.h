@@ -7,10 +7,10 @@
     NSMutableData * _cDATA;
     NSDictionary * _cachedElementParseRules;
     NSMutableData * _characters;
-    BOOL  _checkedElementValidityIfRootElement;
+    bool  _checkedElementValidityIfRootElement;
     CoreDAVXMLElementGenerator * _currentlyParsingSubItem;
     CoreDAVItem * _element;
-    BOOL  _isUnrecognized;
+    bool  _isUnrecognized;
     CoreDAVItem * _parentElement;
     SEL  _parentElementSetter;
     CoreDAVXMLElementGenerator * _parentGenerator;
@@ -21,30 +21,30 @@
 @property (nonatomic, retain) NSMutableData *cDATA;
 @property (nonatomic, retain) NSDictionary *cachedElementParseRules;
 @property (nonatomic, retain) NSMutableData *characters;
-@property (nonatomic) BOOL checkedElementValidityIfRootElement;
+@property (nonatomic) bool checkedElementValidityIfRootElement;
 @property (nonatomic, retain) CoreDAVXMLElementGenerator *currentlyParsingSubItem;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) CoreDAVItem *element;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL isUnrecognized;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isUnrecognized;
 @property (nonatomic) SEL parentElementSetter;
 @property (nonatomic) CoreDAVXMLElementGenerator *parentGenerator;
 @property (nonatomic) int parsingState;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)baseURL;
 - (id)cDATA;
 - (id)cachedElementParseRules;
 - (id)characters;
-- (BOOL)checkedElementValidityIfRootElement;
+- (bool)checkedElementValidityIfRootElement;
 - (id)currentlyParsingSubItem;
-- (void)dealloc;
 - (id)element;
 - (id)initWithParser:(id)arg1 baseURL:(id)arg2 rootElementNameSpace:(id)arg3 elementName:(id)arg4 parseClass:(Class)arg5;
 - (id)initWithParser:(id)arg1 parentGenerator:(id)arg2 parentElementSetter:(SEL)arg3 element:(id)arg4;
-- (BOOL)isExpectedNameSpace:(id)arg1 andElementName:(id)arg2;
-- (BOOL)isUnrecognized;
+- (bool)isExpectedNameSpace:(id)arg1 andElementName:(id)arg2;
+- (bool)isUnrecognized;
 - (void)noteChildCascadingFailure;
 - (void)notifyElement:(id)arg1 ofAttributesFound:(id)arg2;
 - (SEL)parentElementSetter;
@@ -62,13 +62,13 @@
 - (void)setCDATA:(id)arg1;
 - (void)setCachedElementParseRules:(id)arg1;
 - (void)setCharacters:(id)arg1;
-- (void)setCheckedElementValidityIfRootElement:(BOOL)arg1;
+- (void)setCheckedElementValidityIfRootElement:(bool)arg1;
 - (void)setCurrentlyParsingSubItem:(id)arg1;
 - (void)setElement:(id)arg1;
-- (void)setIsUnrecognized:(BOOL)arg1;
+- (void)setIsUnrecognized:(bool)arg1;
 - (void)setParentElementSetter:(SEL)arg1;
 - (void)setParentGenerator:(id)arg1;
 - (void)setParsingState:(int)arg1;
-- (BOOL)tracksRootElement;
+- (bool)tracksRootElement;
 
 @end

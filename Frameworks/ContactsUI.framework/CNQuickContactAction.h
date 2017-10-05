@@ -13,7 +13,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CNQuickContactActionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -26,12 +26,12 @@
 - (void)actionWasCanceled:(id)arg1;
 - (id /* block */)completionBlock;
 - (id)contactAction;
+- (id)contactViewCache;
 - (id)delegate;
 - (id)initWithContactAction:(id)arg1;
 - (void)performWithCompletionBlock:(id /* block */)arg1;
 - (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setContactAction:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (id)storeForAction:(id)arg1;
 
 @end

@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPBTLEControlPacket : NSObject {
-    BOOL  _continuationPacket;
+@interface HAPBTLEControlPacket : HMFObject {
+    bool  _continuationPacket;
     NSData * _payload;
     HAPBTLETransactionIdentifier * _transactionIdentifier;
     unsigned char  _type;
 }
 
-@property (getter=isContinuationPacket, nonatomic, readonly) BOOL continuationPacket;
+@property (getter=isContinuationPacket, nonatomic, readonly) bool continuationPacket;
 @property (nonatomic, readonly, copy) NSData *payload;
 @property (nonatomic, readonly) HAPBTLETransactionIdentifier *transactionIdentifier;
 @property (nonatomic, readonly) unsigned char type;
@@ -20,10 +20,10 @@
 - (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
-- (id)descriptionWithPointer:(BOOL)arg1;
+- (id)descriptionWithPointer:(bool)arg1;
 - (id)init;
-- (id)initWithControlType:(unsigned char)arg1 transactionIdentifier:(id)arg2 continuationPacket:(BOOL)arg3 packetPayload:(id)arg4 maximumLength:(unsigned int)arg5;
-- (BOOL)isContinuationPacket;
+- (id)initWithControlType:(unsigned char)arg1 transactionIdentifier:(id)arg2 continuationPacket:(bool)arg3 packetPayload:(id)arg4 maximumLength:(unsigned long long)arg5;
+- (bool)isContinuationPacket;
 - (id)payload;
 - (id)serialize;
 - (id)shortDescription;

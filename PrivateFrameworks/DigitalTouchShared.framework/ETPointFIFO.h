@@ -9,9 +9,9 @@
 @property (nonatomic, retain) ETPointFIFO *nextFIFO;
 
 - (void).cxx_destruct;
-- (void)addPoints:(/* Warning: Unrecognized filer type: '8' using 'void*' */ void**)arg1 count:(unsigned long)arg2;
+- (void)addPoints:(/* Warning: Unrecognized filer type: '1' using 'void*' */ void**)arg1 count:(unsigned long long)arg2;
 - (void)clear;
-- (void)emitPoints:(/* Warning: Unrecognized filer type: '8' using 'void*' */ void**)arg1 count:(unsigned long)arg2;
+- (void)emitPoints:(/* Warning: Unrecognized filer type: '1' using 'void*' */ void**)arg1 count:(unsigned long long)arg2;
 - (void)flush;
 - (id)initWithFIFO:(id)arg1;
 - (id)nextFIFO;

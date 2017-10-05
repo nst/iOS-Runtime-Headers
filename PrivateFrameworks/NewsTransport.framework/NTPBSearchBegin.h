@@ -15,10 +15,10 @@
 @property (nonatomic, retain) NSString *campaignId;
 @property (nonatomic, retain) NSString *campaignType;
 @property (nonatomic, retain) NSString *creativeId;
-@property (nonatomic, readonly) BOOL hasCampaignId;
-@property (nonatomic, readonly) BOOL hasCampaignType;
-@property (nonatomic, readonly) BOOL hasCreativeId;
-@property (nonatomic) BOOL hasSearchLocation;
+@property (nonatomic, readonly) bool hasCampaignId;
+@property (nonatomic, readonly) bool hasCampaignType;
+@property (nonatomic, readonly) bool hasCreativeId;
+@property (nonatomic) bool hasSearchLocation;
 @property (nonatomic) int searchLocation;
 
 - (void).cxx_destruct;
@@ -29,20 +29,20 @@
 - (id)creativeId;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCampaignId;
-- (BOOL)hasCampaignType;
-- (BOOL)hasCreativeId;
-- (BOOL)hasSearchLocation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCampaignId;
+- (bool)hasCampaignType;
+- (bool)hasCreativeId;
+- (bool)hasSearchLocation;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)searchLocation;
 - (id)searchLocationAsString:(int)arg1;
 - (void)setCampaignId:(id)arg1;
 - (void)setCampaignType:(id)arg1;
 - (void)setCreativeId:(id)arg1;
-- (void)setHasSearchLocation:(BOOL)arg1;
+- (void)setHasSearchLocation:(bool)arg1;
 - (void)setSearchLocation:(int)arg1;
 - (void)writeTo:(id)arg1;
 

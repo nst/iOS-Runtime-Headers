@@ -6,10 +6,10 @@
     NSString * _sandboxExtensionClass;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_allowsDirectEncoding;
+- (bool)_allowsDirectEncoding;
 - (id)_issueSandboxExtension;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;

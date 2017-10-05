@@ -10,7 +10,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -24,7 +24,7 @@
 - (void)_performSecondaryWithCompletion:(id /* block */)arg1;
 - (void)_processPendingCameraCaptureObjects;
 - (void)_pushSecondaryPaymentSetupViewControllerWithCompletion:(id /* block */)arg1;
-- (BOOL)_shouldUseInlineSecondaryProvisioningFlow;
+- (bool)_shouldUseInlineSecondaryProvisioningFlow;
 - (void)browseProductsViewController:(id)arg1 didSelectProduct:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)cameraCaptureViewController:(id)arg1 didRecognizeObjects:(id)arg2;
 - (void)cameraCaptureViewControllerDidFail:(id)arg1;
@@ -37,15 +37,15 @@
 - (void)findCardWithoutNumber:(id)arg1;
 - (id)footerView;
 - (id)newPaymentEligibilityRequest;
-- (void)performNextActionForProvisioningState:(int)arg1 withCompletion:(id /* block */)arg2;
+- (void)performNextActionForProvisioningState:(long long)arg1 withCompletion:(id /* block */)arg2;
 - (id)readonlyFieldIdentifiers;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)updateFieldsModelWithCameraCaptureObjects:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (id)visibleFieldIdentifiers;
 
 @end

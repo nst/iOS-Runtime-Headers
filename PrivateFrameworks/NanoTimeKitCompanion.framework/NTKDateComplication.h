@@ -3,25 +3,25 @@
  */
 
 @interface NTKDateComplication : NTKComplication {
-    unsigned int  _dateStyle;
+    unsigned long long  _dateStyle;
 }
 
-@property (nonatomic, readonly) unsigned int dateStyle;
+@property (nonatomic, readonly) unsigned long long dateStyle;
 
-+ (id)complicationWithDateStyle:(unsigned int)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)complicationWithDateStyle:(unsigned long long)arg1;
++ (bool)supportsSecureCoding;
 
 - (void)_addKeysToJSONDictionary:(id)arg1;
-- (id)_initWithComplicationType:(unsigned int)arg1 JSONDictionary:(id)arg2;
+- (id)_initWithComplicationType:(unsigned long long)arg1 JSONDictionary:(id)arg2;
 - (void)_migrateFromSkiHillWithCoder:(id)arg1;
-- (BOOL)appearsInDailySnapshotForFamily:(int)arg1;
+- (bool)appearsInDailySnapshotForFamily:(long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)customDailySnapshotKey;
-- (unsigned int)dateStyle;
+- (unsigned long long)dateStyle;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)snapshotContext:(id)arg1 isStaleRelativeToContext:(id)arg2;
+- (bool)isEqual:(id)arg1;
+- (bool)snapshotContext:(id)arg1 isStaleRelativeToContext:(id)arg2;
 
 @end

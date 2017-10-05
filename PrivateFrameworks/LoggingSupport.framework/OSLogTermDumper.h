@@ -4,7 +4,7 @@
 
 @interface OSLogTermDumper : NSObject {
     unsigned short  _cur_attrs;
-    BOOL  _fancy;
+    bool  _fancy;
     int  _fd;
     unsigned short  _last_attrs;
     struct os_trace_blob_s { 
@@ -24,12 +24,12 @@
 }
 
 @property (nonatomic) unsigned char bgColor;
-@property (getter=isBold, nonatomic) BOOL bold;
-@property (getter=isFancy, nonatomic, readonly) BOOL fancy;
+@property (getter=isBold, nonatomic) bool bold;
+@property (getter=isFancy, nonatomic, readonly) bool fancy;
 @property (nonatomic) unsigned char fgColor;
-@property (getter=isOblique, nonatomic) BOOL oblique;
+@property (getter=isOblique, nonatomic) bool oblique;
 @property (nonatomic) unsigned short style;
-@property (getter=isUnderlined, nonatomic) BOOL underline;
+@property (getter=isUnderlined, nonatomic) bool underline;
 
 - (void)_flushAttrs;
 - (void)beginEditing;
@@ -38,30 +38,30 @@
 - (void)dealloc;
 - (void)endEditing;
 - (unsigned char)fgColor;
-- (void)flush:(BOOL)arg1;
+- (void)flush:(bool)arg1;
 - (unsigned int)format:(const char *)arg1;
-- (void)hexdump:(const void*)arg1 length:(unsigned long)arg2;
+- (void)hexdump:(const void*)arg1 length:(unsigned long long)arg2;
 - (id)init;
-- (id)initWithFd:(int)arg1 forceFancy:(BOOL)arg2;
-- (BOOL)isBold;
-- (BOOL)isFancy;
-- (BOOL)isOblique;
-- (BOOL)isUnderlined;
-- (void)pad:(int)arg1 count:(unsigned long)arg2;
+- (id)initWithFd:(int)arg1 forceFancy:(bool)arg2;
+- (bool)isBold;
+- (bool)isFancy;
+- (bool)isOblique;
+- (bool)isUnderlined;
+- (void)pad:(int)arg1 count:(unsigned long long)arg2;
 - (void)putUUID:(unsigned char)arg1;
 - (void)putc:(int)arg1;
 - (void)puts:(const char *)arg1;
 - (void)resetStyle;
 - (void)setBgColor:(unsigned char)arg1;
-- (void)setBold:(BOOL)arg1;
+- (void)setBold:(bool)arg1;
 - (void)setFgColor:(unsigned char)arg1;
-- (void)setOblique:(BOOL)arg1;
+- (void)setOblique:(bool)arg1;
 - (void)setStyle:(unsigned short)arg1;
-- (void)setUnderline:(BOOL)arg1;
+- (void)setUnderline:(bool)arg1;
 - (void)startPager;
 - (unsigned short)style;
-- (unsigned int)vformat:(const char *)arg1 args:(void*)arg2;
-- (void)write:(const void*)arg1 size:(unsigned long)arg2;
+- (unsigned int)vformat:(const char *)arg1 args:(char *)arg2;
+- (void)write:(const void*)arg1 size:(unsigned long long)arg2;
 - (void)writeln;
 
 @end

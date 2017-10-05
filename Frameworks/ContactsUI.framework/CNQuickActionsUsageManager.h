@@ -8,7 +8,7 @@
     NSDate * _cachedInteractionsDate;
     CNContact * _contact;
     NSMutableSet * _enabledActionIdentifiers;
-    BOOL  _sortsWithDuet;
+    bool  _sortsWithDuet;
 }
 
 @property (nonatomic, retain) NSCountedSet *actionsUsageSet;
@@ -16,10 +16,10 @@
 @property (nonatomic, retain) NSDate *cachedInteractionsDate;
 @property (nonatomic, retain) CNContact *contact;
 @property (nonatomic, retain) NSMutableSet *enabledActionIdentifiers;
-@property (nonatomic) BOOL sortsWithDuet;
+@property (nonatomic) bool sortsWithDuet;
 
 + (id)managerForContact:(id)arg1;
-+ (BOOL)sortUsingCoreDuetAvailable;
++ (bool)sortUsingCoreDuetAvailable;
 
 - (void).cxx_destruct;
 - (void)_updateDuetInteractionsIfNeeded;
@@ -37,9 +37,9 @@
 - (void)setCachedInteractionsDate:(id)arg1;
 - (void)setContact:(id)arg1;
 - (void)setEnabledActionIdentifiers:(id)arg1;
-- (void)setSortsWithDuet:(BOOL)arg1;
+- (void)setSortsWithDuet:(bool)arg1;
 - (id)sortedActions:(id)arg1;
-- (BOOL)sortsWithDuet;
+- (bool)sortsWithDuet;
 - (void)updateCachedEnabledStateForAction:(id)arg1;
 
 @end

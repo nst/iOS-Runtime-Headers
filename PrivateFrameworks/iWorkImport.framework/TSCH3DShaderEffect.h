@@ -9,9 +9,9 @@
 + (id)stateSharingID;
 
 - (void)addVariables:(id)arg1;
-- (BOOL)alwaysUploadData;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)alwaysUploadData;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (Class)stateClass;
 - (id)stateSharingID;
 - (void)updateState:(id)arg1 effectsStates:(id)arg2;

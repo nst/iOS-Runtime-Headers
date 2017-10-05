@@ -4,9 +4,9 @@
 
 @interface UIActivityViewPopoverBackgroundView : _UIPopoverStandardChromeView
 
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentViewInsets;
-+ (void)useNormalContentViewInsets:(BOOL)arg1;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentViewInsets;
++ (void)useNormalContentViewInsets:(bool)arg1;
 
-- (float)_shadowOpacity;
+- (double)_shadowOpacity;
 
 @end

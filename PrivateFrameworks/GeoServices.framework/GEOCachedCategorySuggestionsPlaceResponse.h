@@ -11,44 +11,47 @@
     GEOPDPlaceResponse * _response;
     NSString * _sourceURL;
     double  _timestamp;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) NSString *countryCode;
-@property (nonatomic, readonly) BOOL hasCountryCode;
-@property (nonatomic, readonly) BOOL hasLanguage;
-@property (nonatomic, readonly) BOOL hasResponse;
-@property (nonatomic, readonly) BOOL hasSourceURL;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) bool hasCountryCode;
+@property (nonatomic, readonly) bool hasLanguage;
+@property (nonatomic, readonly) bool hasResponse;
+@property (nonatomic, readonly) bool hasSourceURL;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic, retain) NSString *language;
 @property (nonatomic, retain) GEOPDPlaceResponse *response;
 @property (nonatomic, retain) NSString *sourceURL;
 @property (nonatomic) double timestamp;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)countryCode;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCountryCode;
-- (BOOL)hasLanguage;
-- (BOOL)hasResponse;
-- (BOOL)hasSourceURL;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCountryCode;
+- (bool)hasLanguage;
+- (bool)hasResponse;
+- (bool)hasSourceURL;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)language;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)response;
 - (void)setCountryCode:(id)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setLanguage:(id)arg1;
 - (void)setResponse:(id)arg1;
 - (void)setSourceURL:(id)arg1;
 - (void)setTimestamp:(double)arg1;
 - (id)sourceURL;
 - (double)timestamp;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

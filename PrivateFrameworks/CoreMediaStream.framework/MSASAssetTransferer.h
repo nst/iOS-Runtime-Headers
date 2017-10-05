@@ -10,7 +10,7 @@
     NSObject<OS_dispatch_queue> * _eventQueue;
     NSString * _focusAlbumGUID;
     NSString * _focusAssetCollectionGUID;
-    BOOL  _hasShutDown;
+    bool  _hasShutDown;
     int  _maxBatchCount;
     double  _maxMMCSTokenValidityTimeInterval;
     int  _maxRetryCount;
@@ -28,8 +28,8 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *eventQueue;
 @property (nonatomic, copy) NSString *focusAlbumGUID;
 @property (nonatomic, copy) NSString *focusAssetCollectionGUID;
-@property (nonatomic) BOOL hasShutDown;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool hasShutDown;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) int maxBatchCount;
 @property (nonatomic) double maxMMCSTokenValidityTimeInterval;
 @property (nonatomic) int maxRetryCount;
@@ -46,7 +46,7 @@
 - (void)MMCSEngine:(id)arg1 didMakePutProgress:(float)arg2 state:(int)arg3 onAsset:(id)arg4;
 - (void)MMCSEngine:(id)arg1 logMessage:(id)arg2 logLevel:(int)arg3;
 - (void)MMCSEngine:(id)arg1 logPerformanceMetrics:(id)arg2;
-- (BOOL)MMCSEngine:(id)arg1 shouldLogAtLogLevel:(int)arg2;
+- (bool)MMCSEngine:(id)arg1 shouldLogAtLogLevel:(int)arg2;
 - (id)_MMCSTokenTooOldError;
 - (id)_canceledError;
 - (id)_missingMMCSTokenError;
@@ -65,7 +65,7 @@
 - (id)eventQueue;
 - (id)focusAlbumGUID;
 - (id)focusAssetCollectionGUID;
-- (BOOL)hasShutDown;
+- (bool)hasShutDown;
 - (id)initWithPersonID:(id)arg1;
 - (id)initWithPersonID:(id)arg1 eventQueue:(id)arg2;
 - (int)maxBatchCount;
@@ -80,7 +80,7 @@
 - (void)setEventQueue:(id)arg1;
 - (void)setFocusAlbumGUID:(id)arg1;
 - (void)setFocusAssetCollectionGUID:(id)arg1;
-- (void)setHasShutDown:(BOOL)arg1;
+- (void)setHasShutDown:(bool)arg1;
 - (void)setMaxBatchCount:(int)arg1;
 - (void)setMaxMMCSTokenValidityTimeInterval:(double)arg1;
 - (void)setMaxRetryCount:(int)arg1;

@@ -11,7 +11,7 @@
     NSObject<OS_dispatch_source> * _idleTimerSource;
     id /* block */  _lockdownHandler;
     id /* block */  _shutdownHandler;
-    BOOL  _timerHasFiredSinceLastMessage;
+    bool  _timerHasFiredSinceLastMessage;
     NSObject<OS_dispatch_queue> * _timerQueue;
 }
 
@@ -23,7 +23,7 @@
 
 - (void).cxx_destruct;
 - (id)_connections;
-- (BOOL)_doingWork;
+- (bool)_doingWork;
 - (void)_handleNewConnection:(id)arg1;
 - (id /* block */)_handlerForMessageName:(id)arg1;
 - (id)_highAvailabilityQueue;

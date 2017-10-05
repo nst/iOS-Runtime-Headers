@@ -5,9 +5,9 @@
 
 @required
 
-- (unsigned int)leftEntryCount;
+- (unsigned long long)leftEntryCount;
 - (NSDate *)leftmostContiguousEntryDate;
-- (unsigned int)rightEntryCount;
+- (unsigned long long)rightEntryCount;
 - (NSDate *)rightmostContiguousEntryDate;
 
 @end

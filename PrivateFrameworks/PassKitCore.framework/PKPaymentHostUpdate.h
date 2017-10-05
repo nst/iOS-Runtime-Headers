@@ -13,7 +13,7 @@
 @property (nonatomic, readonly) PKShippingMethod *shippingMethod;
 
 + (id)paymentUpdateWithProtobuf:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

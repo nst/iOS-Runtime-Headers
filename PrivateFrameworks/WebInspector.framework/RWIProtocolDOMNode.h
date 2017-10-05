@@ -10,7 +10,7 @@
 @property (nonatomic, copy) NSArray *children;
 @property (nonatomic, retain) RWIProtocolDOMNode *contentDocument;
 @property (nonatomic, copy) NSString *contentSecurityPolicyHash;
-@property (nonatomic) int customElementState;
+@property (nonatomic) long long customElementState;
 @property (nonatomic, copy) NSString *documentURL;
 @property (nonatomic, copy) NSString *frameId;
 @property (nonatomic, copy) NSString *localName;
@@ -20,15 +20,17 @@
 @property (nonatomic) int nodeType;
 @property (nonatomic, copy) NSString *nodeValue;
 @property (nonatomic, copy) NSArray *pseudoElements;
-@property (nonatomic) int pseudoType;
+@property (nonatomic) long long pseudoType;
 @property (nonatomic, copy) NSString *publicId;
 @property (nonatomic, copy) NSString *role;
-@property (nonatomic) int shadowRootType;
+@property (nonatomic) long long shadowRootType;
 @property (nonatomic, copy) NSArray *shadowRoots;
 @property (nonatomic, copy) NSString *systemId;
 @property (nonatomic, retain) RWIProtocolDOMNode *templateContent;
 @property (nonatomic, copy) NSString *value;
 @property (nonatomic, copy) NSString *xmlVersion;
+
+// Image: /System/Library/PrivateFrameworks/WebInspector.framework/WebInspector
 
 - (id)attributes;
 - (id)baseURL;
@@ -36,7 +38,7 @@
 - (id)children;
 - (id)contentDocument;
 - (id)contentSecurityPolicyHash;
-- (int)customElementState;
+- (long long)customElementState;
 - (id)documentURL;
 - (id)frameId;
 - (id)initWithNodeId:(int)arg1 nodeType:(int)arg2 nodeName:(id)arg3 localName:(id)arg4 nodeValue:(id)arg5;
@@ -47,7 +49,7 @@
 - (int)nodeType;
 - (id)nodeValue;
 - (id)pseudoElements;
-- (int)pseudoType;
+- (long long)pseudoType;
 - (id)publicId;
 - (id)role;
 - (void)setAttributes:(id)arg1;
@@ -56,7 +58,7 @@
 - (void)setChildren:(id)arg1;
 - (void)setContentDocument:(id)arg1;
 - (void)setContentSecurityPolicyHash:(id)arg1;
-- (void)setCustomElementState:(int)arg1;
+- (void)setCustomElementState:(long long)arg1;
 - (void)setDocumentURL:(id)arg1;
 - (void)setFrameId:(id)arg1;
 - (void)setLocalName:(id)arg1;
@@ -66,20 +68,29 @@
 - (void)setNodeType:(int)arg1;
 - (void)setNodeValue:(id)arg1;
 - (void)setPseudoElements:(id)arg1;
-- (void)setPseudoType:(int)arg1;
+- (void)setPseudoType:(long long)arg1;
 - (void)setPublicId:(id)arg1;
 - (void)setRole:(id)arg1;
-- (void)setShadowRootType:(int)arg1;
+- (void)setShadowRootType:(long long)arg1;
 - (void)setShadowRoots:(id)arg1;
 - (void)setSystemId:(id)arg1;
 - (void)setTemplateContent:(id)arg1;
 - (void)setValue:(id)arg1;
 - (void)setXmlVersion:(id)arg1;
-- (int)shadowRootType;
+- (long long)shadowRootType;
 - (id)shadowRoots;
 - (id)systemId;
 - (id)templateContent;
 - (id)value;
 - (id)xmlVersion;
+
+// Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
+
+- (id)ik_attributesDictionary;
+- (id)ik_description;
+- (void)ik_insertChild:(id)arg1 before:(id)arg2;
+- (void)ik_removeAttributeNamed:(id)arg1;
+- (void)ik_removeChildWithId:(int)arg1;
+- (void)ik_setAttributeValue:(id)arg1 name:(id)arg2;
 
 @end

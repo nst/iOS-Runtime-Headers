@@ -19,12 +19,12 @@
 
 - (void).cxx_destruct;
 - (void)_continueConnectionWithResponse:(int)arg1 challenge:(id)arg2 service:(id)arg3;
-- (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
+- (bool)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
 - (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
 - (id)connectionDisplayName;
 - (id)forwardingDelegate;
 - (id)forwardingTargetForSelector:(SEL)arg1;
-- (BOOL)respondsToSelector:(SEL)arg1;
+- (bool)respondsToSelector:(SEL)arg1;
 - (void)setConnectionDisplayName:(id)arg1;
 - (void)setForwardingDelegate:(id)arg1;
 

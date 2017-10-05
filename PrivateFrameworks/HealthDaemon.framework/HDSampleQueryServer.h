@@ -2,20 +2,25 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDSampleQueryServer : HDQueryServer {
+@interface HDSampleQueryServer : HDBatchedQueryServer {
     NSObject<OS_dispatch_queue> * _batchQueue;
-    unsigned int  _maxResults;
+    bool  _includeTimeZones;
+    unsigned long long  _limit;
     NSArray * _sortDescriptors;
-    BOOL  _suspended;
+    bool  _suspended;
 }
 
-@property (nonatomic, readonly) unsigned int maxResults;
+@property (nonatomic, readonly) bool includeTimeZones;
+@property (nonatomic, readonly) unsigned long long limit;
 @property (nonatomic, readonly) NSArray *sortDescriptors;
 
 - (void).cxx_destruct;
 - (void)_queue_start;
-- (id)initWithQueryUUID:(id)arg1 dataObject:(id)arg2 clientProxy:(id)arg3 client:(id)arg4 delegate:(id)arg5 profile:(id)arg6;
-- (unsigned int)maxResults;
+- (bool)includeTimeZones;
+- (id)initWithQueryUUID:(id)arg1 configuration:(id)arg2 clientProxy:(id)arg3 client:(id)arg4 delegate:(id)arg5 profile:(id)arg6;
+- (unsigned long long)limit;
+- (id)requiredEntitlements;
+- (id)sampleClientProxy;
 - (id)sortDescriptors;
 
 @end

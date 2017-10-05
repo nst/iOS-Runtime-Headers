@@ -5,7 +5,7 @@
 @interface VKDynamicAnimation : VKAnimation {
     id /* block */  _dynamicStepHandler;
     double  _lastTimestamp;
-    BOOL  _resuming;
+    bool  _resuming;
 }
 
 @property (nonatomic, copy) id /* block */ dynamicStepHandler;
@@ -16,9 +16,9 @@
 - (void)onTimerFired:(double)arg1;
 - (void)pause;
 - (void)resume;
-- (BOOL)runsForever;
+- (bool)runsForever;
 - (void)setDynamicStepHandler:(id /* block */)arg1;
-- (void)setRunsForever:(BOOL)arg1;
-- (void)stopAnimation:(BOOL)arg1;
+- (void)setRunsForever:(bool)arg1;
+- (void)stopAnimation:(bool)arg1;
 
 @end

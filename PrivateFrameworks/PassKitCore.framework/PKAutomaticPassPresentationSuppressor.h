@@ -5,15 +5,15 @@
 @interface PKAutomaticPassPresentationSuppressor : NSObject {
     NSDate * _backgroundedDate;
     NSMutableIndexSet * _backgrounedSuppressionIdentifiers;
-    unsigned int  _nextRequestToken;
+    unsigned long long  _nextRequestToken;
     NSMutableSet * _permissionRequestCompletionBlocks;
-    int  _permissionState;
+    long long  _permissionState;
     PKAssertion * _suppressionAssertion;
     NSMutableIndexSet * _suppressionRequestTokens;
     NSObject<OS_dispatch_queue> * _suppressorQueue;
 }
 
-@property (nonatomic, readonly) BOOL isSuppressing;
+@property (nonatomic, readonly) bool isSuppressing;
 
 + (id)sharedInstance;
 
@@ -23,9 +23,9 @@
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_requestPermissionAndAquireSupressionAssertionIfNeededWithCompletion:(id /* block */)arg1;
 - (void)dealloc;
-- (void)endSuppressionWithRequestToken:(unsigned int)arg1;
+- (void)endSuppressionWithRequestToken:(unsigned long long)arg1;
 - (id)init;
-- (BOOL)isSuppressing;
-- (unsigned int)requestSuppressionWithResponseHandler:(id /* block */)arg1;
+- (bool)isSuppressing;
+- (unsigned long long)requestSuppressionWithResponseHandler:(id /* block */)arg1;
 
 @end

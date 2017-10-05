@@ -4,28 +4,27 @@
 
 @interface CNContactMatchInfo : NSObject <NSSecureCoding> {
     NSAttributedString * _excerpt;
-    BOOL  _matchedNameProperty;
+    bool  _matchedNameProperty;
     NSDictionary * _matchedProperties;
     NSNumber * _relevanceScore;
 }
 
 @property (nonatomic, retain) NSAttributedString *excerpt;
-@property (nonatomic) BOOL matchedNameProperty;
+@property (nonatomic) bool matchedNameProperty;
 @property (nonatomic, copy) NSDictionary *matchedProperties;
 @property (nonatomic, copy) NSNumber *relevanceScore;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)excerpt;
-- (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)matchedNameProperty;
+- (bool)matchedNameProperty;
 - (id)matchedProperties;
 - (id)relevanceScore;
 - (void)setExcerpt:(id)arg1;
-- (void)setMatchedNameProperty:(BOOL)arg1;
+- (void)setMatchedNameProperty:(bool)arg1;
 - (void)setMatchedProperties:(id)arg1;
 - (void)setRelevanceScore:(id)arg1;
 

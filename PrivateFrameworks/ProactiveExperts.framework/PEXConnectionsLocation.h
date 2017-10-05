@@ -19,7 +19,7 @@
     NSURL * _originatingWebsiteURL;
     NSString * _postalCode;
     NSString * _shortValue;
-    BOOL  _shouldAggregate;
+    bool  _shouldAggregate;
     NSString * _source;
     NSString * _subThoroughfare;
     NSString * _thoroughfare;
@@ -43,22 +43,25 @@
 @property (nonatomic, copy) NSURL *originatingWebsiteURL;
 @property (nonatomic, copy) NSString *postalCode;
 @property (nonatomic, copy) NSString *shortValue;
-@property (nonatomic) BOOL shouldAggregate;
+@property (nonatomic) bool shouldAggregate;
 @property (nonatomic, copy) NSString *source;
 @property (nonatomic, copy) NSString *subThoroughfare;
 @property (nonatomic, copy) NSString *thoroughfare;
 @property (nonatomic, copy) NSString *trigger;
 @property (nonatomic, copy) NSString *value;
 
-+ (unsigned int)round:(double)arg1 toNearest:(double)arg2;
++ (unsigned long long)round:(double)arg1 toNearest:(double)arg2;
 
 - (void).cxx_destruct;
+- (unsigned char)_pexItemSource;
+- (unsigned long long)_roundedPredictionAge;
 - (id)addressComponents;
 - (id)addressDictionary;
 - (id)administrativeArea;
 - (id)country;
 - (id)createdAt;
 - (id)decLocationItem;
+- (id)description;
 - (id)fullFormattedAddress;
 - (id)label;
 - (id)latitude;
@@ -70,6 +73,7 @@
 - (id)originatingBundleID;
 - (id)originatingWebsiteURL;
 - (id)postalCode;
+- (id)quickTypeItem;
 - (void)setAddressComponents:(id)arg1;
 - (void)setAdministrativeArea:(id)arg1;
 - (void)setCountry:(id)arg1;
@@ -86,14 +90,14 @@
 - (void)setOriginatingWebsiteURL:(id)arg1;
 - (void)setPostalCode:(id)arg1;
 - (void)setShortValue:(id)arg1;
-- (void)setShouldAggregate:(BOOL)arg1;
+- (void)setShouldAggregate:(bool)arg1;
 - (void)setSource:(id)arg1;
 - (void)setSubThoroughfare:(id)arg1;
 - (void)setThoroughfare:(id)arg1;
 - (void)setTrigger:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)shortValue;
-- (BOOL)shouldAggregate;
+- (bool)shouldAggregate;
 - (id)source;
 - (id)subThoroughfare;
 - (id)thoroughfare;

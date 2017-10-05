@@ -3,12 +3,12 @@
  */
 
 @interface RadioRecentStationsGroup : NSObject <NSCopying, NSMutableCopying> {
-    BOOL  _active;
+    bool  _active;
     NSString * _localizedTitle;
     NSArray * _stations;
 }
 
-@property (getter=isActive, nonatomic, readonly) BOOL active;
+@property (getter=isActive, nonatomic, readonly) bool active;
 @property (nonatomic, readonly, copy) NSString *localizedTitle;
 @property (nonatomic, readonly, copy) NSArray *stations;
 
@@ -16,9 +16,9 @@
 - (id)_copyWithRecentStationsGroupClass:(Class)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
-- (BOOL)isActive;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isActive;
+- (bool)isEqual:(id)arg1;
 - (id)localizedTitle;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)stations;

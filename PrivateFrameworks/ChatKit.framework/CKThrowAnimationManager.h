@@ -17,7 +17,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) CKTranscriptTypingIndicatorCell *fakeTypingIndicatorCell;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) <CKSendAnimationBalloonProvider> *sendAnimationBalloonProvider;
 @property (nonatomic) <CKSendAnimationManagerDelegate> *sendAnimationManagerDelegate;
 @property (nonatomic, retain) CKSendAnimationWindow *sendAnimationWindow;
@@ -25,7 +25,7 @@
 @property (nonatomic) <CKThrowAnimationManagerDelegate> *throwManagerDelegate;
 
 - (void).cxx_destruct;
-- (float)_changeInEntryViewHeight;
+- (double)_changeInEntryViewHeight;
 - (id)_collectionViewController;
 - (id)_entryView;
 - (void)_hideAddedChatItems;
@@ -36,12 +36,13 @@
 - (void)_setupThrowBalloonViews;
 - (void)_setupThrowFrames;
 - (void)_shiftFakeTypingIndicator;
-- (BOOL)_transcriptWillShiftDueToThrowAnimation;
+- (void)_snapshotLiveBubbleIfNecessary;
+- (bool)_transcriptWillShiftDueToThrowAnimation;
 - (void)animateMessages:(id)arg1;
 - (void)animationDidFinishWithContext:(id)arg1;
 - (void)animationWillBeginWithContext:(id)arg1;
 - (id)animator;
-- (struct CGPoint { float x1; float x2; })bestVisibleOffsetForBubbleAtIndex:(int)arg1;
+- (struct CGPoint { double x1; double x2; })bestVisibleOffsetForBubbleAtIndex:(long long)arg1;
 - (id)currentContext;
 - (id)fakeTypingIndicatorCell;
 - (id)init;

@@ -4,7 +4,7 @@
 
 @interface _UIScrollViewGestureSimulator : NSObject {
     CADisplayLink * _displayLink;
-    BOOL  _hasSimulatedGestures;
+    bool  _hasSimulatedGestures;
     double  _lastWakeUpTime;
     struct __CFRunLoopSource { } * _mainThreadRunLoopSource;
     NSMutableArray * _simulatedGestures;

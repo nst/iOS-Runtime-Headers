@@ -13,10 +13,10 @@
 @property (nonatomic, retain) NSMutableDictionary *supplementalArticleIDs;
 
 - (void).cxx_destruct;
-- (unsigned int)countForFeedItem:(id)arg1;
+- (unsigned long long)countForFeedItem:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)expiredChannelIDs;
-- (unsigned int)expiredGroupEmitCountForChannelWithIdentifier:(id)arg1;
+- (unsigned long long)expiredGroupEmitCountForChannelWithIdentifier:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)processedChannelIDs;

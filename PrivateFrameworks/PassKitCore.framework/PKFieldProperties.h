@@ -5,26 +5,30 @@
 @interface PKFieldProperties : NSObject <NSSecureCoding> {
     NSError * _error;
     NSArray * _merchantIdentifiers;
-    unsigned int  _mode;
-    unsigned int  _technology;
+    unsigned long long  _technology;
+    long long  _terminalType;
+    long long  _valueAddedServiceMode;
 }
 
-@property (nonatomic, readonly) NSError *error;
-@property (nonatomic, readonly) NSArray *merchantIdentifiers;
-@property (nonatomic, readonly) unsigned int mode;
-@property (nonatomic, readonly) unsigned int technology;
+@property (nonatomic, copy) NSError *error;
+@property (nonatomic, copy) NSArray *merchantIdentifiers;
+@property (nonatomic, readonly) unsigned long long technology;
+@property (nonatomic, readonly) long long terminalType;
+@property (nonatomic, readonly) long long valueAddedServiceMode;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)error;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithTechnology:(unsigned int)arg1 mode:(unsigned int)arg2 error:(id)arg3;
-- (id)initWithTechnology:(unsigned int)arg1 mode:(unsigned int)arg2 merchantIdentifiers:(id)arg3;
+- (id)initWithTechnology:(unsigned long long)arg1 terminalType:(long long)arg2 valueAddedServiceMode:(long long)arg3;
 - (id)merchantIdentifiers;
-- (unsigned int)mode;
-- (unsigned int)technology;
+- (void)setError:(id)arg1;
+- (void)setMerchantIdentifiers:(id)arg1;
+- (unsigned long long)technology;
+- (long long)terminalType;
+- (long long)valueAddedServiceMode;
 
 @end

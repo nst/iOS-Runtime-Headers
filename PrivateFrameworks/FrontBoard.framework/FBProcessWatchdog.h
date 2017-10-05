@@ -3,12 +3,12 @@
  */
 
 @interface FBProcessWatchdog : FBSProcessWatchdog {
-    int  _event;
+    long long  _event;
 }
 
-@property (nonatomic, readonly) int event;
+@property (nonatomic, readonly) long long event;
 
-- (int)event;
-- (id)initWithProcess:(id)arg1 event:(int)arg2 policy:(id)arg3;
+- (long long)event;
+- (id)initWithProcess:(id)arg1 event:(long long)arg2 policy:(id)arg3;
 
 @end

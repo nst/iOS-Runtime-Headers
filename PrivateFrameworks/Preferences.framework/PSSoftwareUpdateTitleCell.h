@@ -4,7 +4,7 @@
 
 @interface PSSoftwareUpdateTitleCell : PSTableCell {
     PSSoftwareUpdateAnimatedIcon * _animatedGearView;
-    BOOL  _animatingGearView;
+    bool  _animatingGearView;
     UIImageView * _gearBackgroundImageView;
     UIProgressView * _progressBar;
     int  _progressStyle;
@@ -21,31 +21,32 @@
 @property (nonatomic, readonly) UILabel *updateStatusLabel;
 @property (nonatomic, retain) NSLayoutConstraint *updateStatusLabelVerticalConstraint;
 
-+ (int)cellStyle;
++ (long long)cellStyle;
 
 - (void).cxx_destruct;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (void)configureAnimatedGearViewFromImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
+- (void)configureAnimatedGearViewFromImageSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)configureImageView;
-- (void)configureProgressBar;
-- (void)configurePublisherLabel;
-- (void)configureReleaseNotesSummaryView;
-- (void)configureUpdateNameLabel;
-- (void)configureUpdateStatusLabel;
+- (void)configureProgressBar:(bool)arg1;
+- (void)configurePublisherLabel:(bool)arg1;
+- (void)configureReleaseNotesSummaryView:(bool)arg1;
+- (void)configureUpdateNameLabel:(bool)arg1;
+- (void)configureUpdateStatusLabel:(bool)arg1;
 - (void)createGearIconConstraints;
 - (void)didMoveToSuperview;
 - (id)gearBackgroundImage;
 - (id)gearBackgroundImageView;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (void)layoutSubviews;
 - (id)newGearBackgroundImageView;
 - (id)newProgressBar;
-- (id)newSoftwareUpdateAnimatedIconWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)newSoftwareUpdateAnimatedIconWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)newUpdateStatusLabel;
-- (float)preferredHeightWithTable:(id)arg1;
+- (double)preferredHeightWithTable:(id)arg1;
 - (id)progressBar;
 - (int)progressDisplayStyle;
 - (id)releaseNotesSummaryView;
-- (void)setAnimatingGearView:(BOOL)arg1;
+- (void)setAnimatingGearView:(bool)arg1;
 - (void)setGearBackgroundImageView:(id)arg1;
 - (void)setProgress:(float)arg1;
 - (void)setProgressDisplayStyle:(int)arg1;

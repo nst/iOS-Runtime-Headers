@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPFragmentationPacket : NSObject {
+@interface HAPFragmentationPacket : HMFObject {
     NSData * _data;
     unsigned int  _length;
     unsigned int  _offset;
@@ -18,11 +18,11 @@
 - (id)data;
 - (id)debugDescription;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithData:(id)arg1 transactionIdentifier:(unsigned short)arg2 length:(unsigned int)arg3 offset:(unsigned int)arg4;
 - (id)initWithFragmentedPacketData:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (unsigned int)length;
 - (unsigned int)offset;
 - (id)serialize;

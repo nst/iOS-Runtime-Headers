@@ -15,15 +15,14 @@
 @property (nonatomic, retain) <CDPStateUIProviderInternal> *uiProvider;
 
 - (void).cxx_destruct;
-- (void)_joinCDPCircleIgnoringBackups:(BOOL)arg1 completion:(id /* block */)arg2;
-- (unsigned int)_peerCount;
+- (void)_joinCircleIgnoringBackups:(bool)arg1 completion:(id /* block */)arg2;
+- (unsigned long long)_peerCount;
 - (id)_peerDeviceNamesByPeerID;
 - (void)_requestCircleJoinWithObserver:(id)arg1 requestBlock:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (void)_requestToJoinAfterRestoreAndWaitForSuccessWithHandler:(id /* block */)arg1;
 - (void)_requestToJoinAndWaitForSuccessWithHandler:(id /* block */)arg1;
 - (void)_requestToJoinWithObserver:(id)arg1 completion:(id /* block */)arg2;
 - (void)_requestToJoinWithRequestBlock:(id /* block */)arg1 completion:(id /* block */)arg2;
-- (void)_resetCicleToResolvePendingAfterRecoveryWithCompletion:(id /* block */)arg1;
 - (void)applyToJoinCircleWithJoinHandler:(id /* block */)arg1;
 - (void)cancelApplicationToJoinCircle;
 - (id)circleProxy;
@@ -31,15 +30,17 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithUiProvider:(id)arg1 delegate:(id)arg2 circleProxy:(id)arg3;
-- (void)joinCDPCircleIgnoringBackups:(BOOL)arg1 completion:(id /* block */)arg2;
-- (void)joinCDPCircleWithCompletion:(id /* block */)arg1;
 - (void)joinCircleAfterRecoveryWithCompletion:(id /* block */)arg1;
+- (void)joinCircleIgnoringBackups:(bool)arg1 completion:(id /* block */)arg2;
+- (void)joinCircleWithCompletion:(id /* block */)arg1;
 - (id)peerID;
 - (void)prepareCircleStateForRecovery;
+- (void)promptForCredentials:(id /* block */)arg1;
+- (void)resetCircleIncludingCloudKitData:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (void)setCircleProxy:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setUiProvider:(id)arg1;
-- (BOOL)synchronizeCircleViews;
+- (bool)synchronizeCircleViews;
 - (id)uiProvider;
 - (void)useCircleInfoToUpdateNameForDevices:(id)arg1;
 

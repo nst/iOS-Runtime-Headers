@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableArray *networkEvents;
 @property (nonatomic, retain) NSMutableArray *networkSessions;
 @property (readonly) Class superclass;
@@ -27,16 +27,16 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)networkEvents;
-- (id)networkEventsAtIndex:(unsigned int)arg1;
-- (unsigned int)networkEventsCount;
+- (id)networkEventsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)networkEventsCount;
 - (id)networkSessions;
-- (id)networkSessionsAtIndex:(unsigned int)arg1;
-- (unsigned int)networkSessionsCount;
-- (BOOL)readFrom:(id)arg1;
+- (id)networkSessionsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)networkSessionsCount;
+- (bool)readFrom:(id)arg1;
 - (void)setNetworkEvents:(id)arg1;
 - (void)setNetworkSessions:(id)arg1;
 - (void)writeTo:(id)arg1;

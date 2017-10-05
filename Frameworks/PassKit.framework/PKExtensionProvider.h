@@ -3,7 +3,7 @@
  */
 
 @interface PKExtensionProvider : NSObject {
-    BOOL  _didReceiveExtensions;
+    bool  _didReceiveExtensions;
     NSObject<OS_dispatch_queue> * _extensionQueue;
     NSObject<OS_dispatch_semaphore> * _extensionSema;
     NSDictionary * _extensions;
@@ -12,7 +12,7 @@
 }
 
 @property (nonatomic, readonly) NSArray *allExtensions;
-@property (nonatomic) BOOL didReceiveExtensions;
+@property (nonatomic) bool didReceiveExtensions;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *extensionQueue;
 @property (nonatomic, retain) NSObject<OS_dispatch_semaphore> *extensionSema;
 @property (nonatomic, retain) NSDictionary *extensions;
@@ -29,7 +29,7 @@
 - (id)allExtensions;
 - (void)beginMatchingExtensions;
 - (void)dealloc;
-- (BOOL)didReceiveExtensions;
+- (bool)didReceiveExtensions;
 - (void)endMatchingExtensions;
 - (id)extensionQueue;
 - (id)extensionSema;
@@ -39,7 +39,7 @@
 - (id)init;
 - (id)matchingContext;
 - (id)passKitExtensions;
-- (void)setDidReceiveExtensions:(BOOL)arg1;
+- (void)setDidReceiveExtensions:(bool)arg1;
 - (void)setExtensionQueue:(id)arg1;
 - (void)setExtensionSema:(id)arg1;
 - (void)setExtensions:(id)arg1;

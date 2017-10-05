@@ -3,6 +3,7 @@
  */
 
 @interface AFRequestInfo : NSObject <NSSecureCoding> {
+    long long  _activationEvent;
     NSNumber * _combinedRank;
     NSNumber * _combinedScore;
     NSString * _correctedSpeech;
@@ -17,10 +18,13 @@
     NSNumber * _originalScore;
     NSString * _previousUtterance;
     NSString * _sessionId;
+    SAStartLocalRequest * _startLocalRequest;
+    SAStartRequest * _startRequest;
     NSString * _text;
     NSString * _utteranceSource;
 }
 
+@property (nonatomic) long long activationEvent;
 @property (nonatomic, copy) NSNumber *combinedRank;
 @property (nonatomic, copy) NSNumber *combinedScore;
 @property (nonatomic, copy) NSString *correctedSpeech;
@@ -35,12 +39,15 @@
 @property (nonatomic, copy) NSNumber *originalScore;
 @property (nonatomic, copy) NSString *previousUtterance;
 @property (nonatomic, copy) NSString *sessionId;
+@property (nonatomic, copy) SAStartLocalRequest *startLocalRequest;
+@property (nonatomic, copy) SAStartRequest *startRequest;
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic, copy) NSString *utteranceSource;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (long long)activationEvent;
 - (id)combinedRank;
 - (id)combinedScore;
 - (id)correctedSpeech;
@@ -58,6 +65,7 @@
 - (id)originalScore;
 - (id)previousUtterance;
 - (id)sessionId;
+- (void)setActivationEvent:(long long)arg1;
 - (void)setCombinedRank:(id)arg1;
 - (void)setCombinedScore:(id)arg1;
 - (void)setCorrectedSpeech:(id)arg1;
@@ -72,8 +80,12 @@
 - (void)setOriginalScore:(id)arg1;
 - (void)setPreviousUtterance:(id)arg1;
 - (void)setSessionId:(id)arg1;
+- (void)setStartLocalRequest:(id)arg1;
+- (void)setStartRequest:(id)arg1;
 - (void)setText:(id)arg1;
 - (void)setUtteranceSource:(id)arg1;
+- (id)startLocalRequest;
+- (id)startRequest;
 - (id)text;
 - (id)utteranceSource;
 

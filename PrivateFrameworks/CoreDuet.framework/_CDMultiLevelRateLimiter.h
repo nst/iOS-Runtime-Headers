@@ -6,7 +6,7 @@
     NSMutableArray * _balances;
     NSDate * _lastRecorded;
     NSArray * _maxCounts;
-    int  _numberOfRateLimitPolicies;
+    long long  _numberOfRateLimitPolicies;
     NSMutableArray * _periodStart;
     NSArray * _periods;
     NSObject<OS_dispatch_queue> * _queue;
@@ -14,19 +14,19 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, retain) NSDate *lastRecorded;
-@property (nonatomic, readonly) int numOfRateLimitPolicies;
+@property (nonatomic, readonly) long long numOfRateLimitPolicies;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)credit;
-- (BOOL)debited;
+- (bool)credit;
+- (bool)debited;
 - (id)description;
 - (id)init;
 - (id)initWithPeriodToCountMap:(id)arg1;
 - (id)lastRecorded;
-- (int)numOfRateLimitPolicies;
+- (long long)numOfRateLimitPolicies;
 - (void)recordTimeAndRefillIfNeededRaw;
 
 @end

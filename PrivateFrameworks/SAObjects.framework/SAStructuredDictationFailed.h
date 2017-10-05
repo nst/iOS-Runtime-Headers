@@ -5,7 +5,7 @@
 @interface SAStructuredDictationFailed : SABaseClientBoundCommand
 
 @property (nonatomic, copy) NSString *dialogIdentifier;
-@property (nonatomic) int errorCode;
+@property (nonatomic) long long errorCode;
 @property (nonatomic, copy) NSString *recognition;
 @property (nonatomic, copy) NSString *userFacingReasonDescription;
 @property (nonatomic, copy) NSString *userFacingReasonTitle;
@@ -17,12 +17,12 @@
 
 - (id)dialogIdentifier;
 - (id)encodedClassName;
-- (int)errorCode;
+- (long long)errorCode;
 - (id)groupIdentifier;
 - (id)recognition;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setDialogIdentifier:(id)arg1;
-- (void)setErrorCode:(int)arg1;
+- (void)setErrorCode:(long long)arg1;
 - (void)setRecognition:(id)arg1;
 - (void)setUserFacingReasonDescription:(id)arg1;
 - (void)setUserFacingReasonTitle:(id)arg1;

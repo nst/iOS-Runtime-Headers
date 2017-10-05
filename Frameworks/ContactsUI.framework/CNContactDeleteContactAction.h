@@ -2,11 +2,20 @@
    Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
  */
 
-@interface CNContactDeleteContactAction : CNContactAction
+@interface CNContactDeleteContactAction : CNContactAction {
+    CNUIExternalComponentsFactory * _componentsFactory;
+    CNUICoreRecentsManager * _recentsManager;
+}
 
-- (BOOL)deleteContact;
-- (id)initWithContact:(id)arg1;
+@property (nonatomic, readonly) CNUIExternalComponentsFactory *componentsFactory;
+@property (nonatomic, readonly) CNUICoreRecentsManager *recentsManager;
+
+- (void).cxx_destruct;
+- (id)componentsFactory;
+- (bool)deleteContact;
+- (id)initWithContact:(id)arg1 recentsManager:(id)arg2 componentsFactory:(id)arg3;
 - (void)performActionWithSender:(id)arg1;
+- (id)recentsManager;
 - (void)showDeleteFailureAlert;
 
 @end

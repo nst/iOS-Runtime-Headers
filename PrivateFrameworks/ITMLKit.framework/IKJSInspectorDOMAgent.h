@@ -4,20 +4,30 @@
 
 @interface IKJSInspectorDOMAgent : NSObject <RWIProtocolDOMDomainHandler> {
     IKJSInspectorController * _controller;
+    RWIProtocolDOMNode * _rootNode;
+    NSMutableDictionary * _searches;
 }
 
 @property (nonatomic, readonly) IKJSInspectorController *controller;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
++ (void)_buildNodePath:(id)arg1 rootProtocolNode:(id)arg2 rootDOMNode:(id)arg3 withDispatcher:(id)arg4;
++ (id)_buildNodeTreeForNode:(id)arg1 depth:(int)arg2;
++ (id)_findNodeWithNodeId:(int)arg1 node:(id)arg2;
++ (id)_nodeIDsFromNodePaths:(id)arg1;
++ (id)_parseAttributeString:(id)arg1;
++ (id)_procotolNodeForDOMNode:(id)arg1;
++ (id)_searchNode:(id)arg1 query:(id)arg2 currentPath:(id)arg3;
++ (void)_updateProtocolNode:(id)arg1 withDOMNode:(id)arg2 dispatcher:(id)arg3;
+
 - (void).cxx_destruct;
-- (id)_buildNodeTreeForNode:(id)arg1 depth:(int)arg2;
-- (id)_parseAttributeString:(id)arg1;
 - (id)controller;
 - (void)discardSearchResultsWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 searchId:(id)arg3;
-- (void)documentUpdated;
+- (void)documentDidChange;
+- (void)documentDidUpdate;
 - (void)focusWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3;
 - (void)getAccessibilityPropertiesForNodeWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3;
 - (void)getAttributesWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3;
@@ -25,11 +35,13 @@
 - (void)getEventListenersForNodeWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3 objectGroup:(id*)arg4;
 - (void)getOuterHTMLWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3;
 - (void)getSearchResultsWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 searchId:(id)arg3 fromIndex:(int)arg4 toIndex:(int)arg5;
+- (bool)hideHighlight;
 - (void)hideHighlightWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2;
 - (void)highlightFrameWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 frameId:(id)arg3 contentColor:(id*)arg4 contentOutlineColor:(id*)arg5;
+- (void)highlightNodeListWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeIds:(id)arg3 highlightConfig:(id)arg4;
 - (void)highlightNodeWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 highlightConfig:(id)arg3 nodeId:(int*)arg4 objectId:(id*)arg5;
-- (void)highlightQuadWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 quad:(id)arg3 color:(id*)arg4 outlineColor:(id*)arg5 usePageCoordinates:(BOOL*)arg6;
-- (void)highlightRectWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 x:(int)arg3 y:(int)arg4 width:(int)arg5 height:(int)arg6 color:(id*)arg7 outlineColor:(id*)arg8 usePageCoordinates:(BOOL*)arg9;
+- (void)highlightQuadWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 quad:(id)arg3 color:(id*)arg4 outlineColor:(id*)arg5 usePageCoordinates:(bool*)arg6;
+- (void)highlightRectWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 x:(int)arg3 y:(int)arg4 width:(int)arg5 height:(int)arg6 color:(id*)arg7 outlineColor:(id*)arg8 usePageCoordinates:(bool*)arg9;
 - (void)highlightSelectorWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 highlightConfig:(id)arg3 selectorString:(id)arg4 frameId:(id*)arg5;
 - (id)initWithInspectorController:(id)arg1;
 - (void)markUndoableStateWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2;
@@ -48,8 +60,7 @@
 - (void)resolveNodeWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3 objectGroup:(id*)arg4;
 - (void)setAttributeValueWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3 name:(id)arg4 value:(id)arg5;
 - (void)setAttributesAsTextWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3 text:(id)arg4 name:(id*)arg5;
-- (void)setChildNodesWithParentId:(int)arg1 nodes:(id)arg2;
-- (void)setInspectModeEnabledWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 enabled:(BOOL)arg3 highlightConfig:(id*)arg4;
+- (void)setInspectModeEnabledWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 enabled:(bool)arg3 highlightConfig:(id*)arg4;
 - (void)setNodeNameWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3 name:(id)arg4;
 - (void)setNodeValueWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3 value:(id)arg4;
 - (void)setOuterHTMLWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3 outerHTML:(id)arg4;

@@ -6,16 +6,16 @@
 
 @property (nonatomic, copy) NSString *aceId;
 @property (nonatomic, copy) NSString *audioSource;
-@property (nonatomic) BOOL clearContext;
+@property (nonatomic) bool clearContext;
 @property (nonatomic) int codec;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *deviceIdentifier;
 @property (nonatomic, copy) NSString *deviceModel;
-@property (nonatomic) BOOL disableAutoEndpointing;
+@property (nonatomic) bool disableAutoEndpointing;
 @property (nonatomic, copy) NSString *dspStatus;
-@property (nonatomic) BOOL enablePartialResults;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool enablePartialResults;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *headsetAddress;
 @property (nonatomic, copy) NSString *headsetId;
 @property (nonatomic, copy) NSString *headsetName;
@@ -34,13 +34,13 @@
 + (id)startSpeechWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)audioSource;
-- (BOOL)clearContext;
+- (bool)clearContext;
 - (int)codec;
 - (id)deviceIdentifier;
 - (id)deviceModel;
-- (BOOL)disableAutoEndpointing;
+- (bool)disableAutoEndpointing;
 - (id)dspStatus;
-- (BOOL)enablePartialResults;
+- (bool)enablePartialResults;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)headsetAddress;
@@ -51,14 +51,15 @@
 - (id)motionConfidence;
 - (id)noiseReductionLevel;
 - (id)origin;
+- (bool)requiresResponse;
 - (void)setAudioSource:(id)arg1;
-- (void)setClearContext:(BOOL)arg1;
+- (void)setClearContext:(bool)arg1;
 - (void)setCodec:(int)arg1;
 - (void)setDeviceIdentifier:(id)arg1;
 - (void)setDeviceModel:(id)arg1;
-- (void)setDisableAutoEndpointing:(BOOL)arg1;
+- (void)setDisableAutoEndpointing:(bool)arg1;
 - (void)setDspStatus:(id)arg1;
-- (void)setEnablePartialResults:(BOOL)arg1;
+- (void)setEnablePartialResults:(bool)arg1;
 - (void)setHeadsetAddress:(id)arg1;
 - (void)setHeadsetId:(id)arg1;
 - (void)setHeadsetName:(id)arg1;
@@ -72,6 +73,6 @@
 
 // Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
 
-- (BOOL)siriCore_isRestartable;
+- (bool)siriCore_isRestartable;
 
 @end

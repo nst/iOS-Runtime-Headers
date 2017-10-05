@@ -4,7 +4,7 @@
 
 @interface ISDynamicValueFilter : NSObject {
     CADisplayLink * __displayLink;
-    BOOL  __isPerformingInputChanges;
+    bool  __isPerformingInputChanges;
     double  __speed;
     double  __time;
     double  _maximumDeceleration;
@@ -15,7 +15,7 @@
 }
 
 @property (setter=_setDisplayLink:, nonatomic, retain) CADisplayLink *_displayLink;
-@property (setter=_setPerformingInputChanges:, nonatomic) BOOL _isPerformingInputChanges;
+@property (setter=_setPerformingInputChanges:, nonatomic) bool _isPerformingInputChanges;
 @property (setter=_setSpeed:, nonatomic) double _speed;
 @property (setter=_setTime:, nonatomic) double _time;
 @property (nonatomic) double maximumDeceleration;
@@ -28,10 +28,10 @@
 - (id)_displayLink;
 - (void)_handleDisplayLink:(id)arg1;
 - (void)_inputDidChange;
-- (BOOL)_isPerformingInputChanges;
+- (bool)_isPerformingInputChanges;
 - (void)_setDisplayLink:(id)arg1;
 - (void)_setOutputValue:(double)arg1;
-- (void)_setPerformingInputChanges:(BOOL)arg1;
+- (void)_setPerformingInputChanges:(bool)arg1;
 - (void)_setSpeed:(double)arg1;
 - (void)_setTime:(double)arg1;
 - (double)_speed;

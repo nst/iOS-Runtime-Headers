@@ -3,21 +3,21 @@
  */
 
 @interface CATTaskMessageIncrementalProgress : CATTaskMessage {
-    int  _completedUnitCount;
-    int  _totalUnitCount;
+    long long  _completedUnitCount;
+    long long  _totalUnitCount;
 }
 
-@property (nonatomic) int completedUnitCount;
-@property (nonatomic) int totalUnitCount;
+@property (nonatomic) long long completedUnitCount;
+@property (nonatomic) long long totalUnitCount;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (int)completedUnitCount;
+- (long long)completedUnitCount;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithTaskUUID:(id)arg1 completedUnitCount:(int)arg2 totalUnitCount:(int)arg3;
-- (void)setCompletedUnitCount:(int)arg1;
-- (void)setTotalUnitCount:(int)arg1;
-- (int)totalUnitCount;
+- (id)initWithTaskUUID:(id)arg1 completedUnitCount:(long long)arg2 totalUnitCount:(long long)arg3;
+- (void)setCompletedUnitCount:(long long)arg1;
+- (void)setTotalUnitCount:(long long)arg1;
+- (long long)totalUnitCount;
 
 @end

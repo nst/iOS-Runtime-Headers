@@ -3,33 +3,33 @@
  */
 
 @interface CKQueryNotification : CKNotification <NSSecureCoding> {
-    int  _databaseScope;
-    int  _queryNotificationReason;
+    long long  _databaseScope;
+    long long  _queryNotificationReason;
     NSDictionary * _recordFields;
     CKRecordID * _recordID;
 }
 
-@property (nonatomic) int databaseScope;
-@property (nonatomic, readonly) BOOL isPublicDatabase;
-@property (nonatomic) int queryNotificationReason;
+@property (nonatomic) long long databaseScope;
+@property (nonatomic, readonly) bool isPublicDatabase;
+@property (nonatomic) long long queryNotificationReason;
 @property (nonatomic, copy) NSDictionary *recordFields;
 @property (nonatomic, copy) CKRecordID *recordID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
-- (int)databaseScope;
+- (long long)databaseScope;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRemoteNotificationDictionary:(id)arg1;
-- (BOOL)isPublicDatabase;
-- (int)queryNotificationReason;
+- (bool)isPublicDatabase;
+- (long long)queryNotificationReason;
 - (id)recordFields;
 - (id)recordID;
-- (void)setDatabaseScope:(int)arg1;
-- (void)setQueryNotificationReason:(int)arg1;
+- (void)setDatabaseScope:(long long)arg1;
+- (void)setQueryNotificationReason:(long long)arg1;
 - (void)setRecordFields:(id)arg1;
 - (void)setRecordID:(id)arg1;
 

@@ -24,8 +24,8 @@
 - (void)deregisterHandlerForDistributedNotification:(id)arg1;
 - (id)distributedNotificationHandlers;
 - (id)init;
-- (BOOL)isHandlerRegisteredForDarwinNotification:(id)arg1;
-- (BOOL)isHandlerRegisteredForDistributedNotification:(id)arg1;
+- (bool)isHandlerRegisteredForDarwinNotification:(id)arg1;
+- (bool)isHandlerRegisteredForDistributedNotification:(id)arg1;
 - (id)modificationQueue;
 - (void)registerHandler:(id /* block */)arg1 forDarwinNotification:(id)arg2;
 - (void)registerHandler:(id /* block */)arg1 forDistributedNotification:(id)arg2;

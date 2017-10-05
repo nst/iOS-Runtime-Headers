@@ -8,7 +8,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PKPaymentSummaryItem *item;
 @property (readonly) Class superclass;
 
@@ -17,7 +17,7 @@
 
 - (void).cxx_destruct;
 - (id)initWithPaymentSummaryItem:(id)arg1;
-- (BOOL)isValidWithError:(id*)arg1;
+- (bool)isValidWithError:(id*)arg1;
 - (id)item;
 
 @end

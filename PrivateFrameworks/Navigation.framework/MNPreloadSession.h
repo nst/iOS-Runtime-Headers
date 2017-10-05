@@ -4,7 +4,6 @@
 
 @interface MNPreloadSession : NSObject
 
-+ (id)preloadSessionForRoute:(id)arg1 loggingEnabled:(BOOL)arg2 minimalDebugging:(BOOL)arg3 fullDebugging:(BOOL)arg4 delegate:(id)arg5 traits:(id)arg6 withBatteryHandler:(id /* block */)arg7;
-+ (void)updatePreloader:(id)arg1 withGuidanceLevel:(int)arg2;
++ (id)preloadSessionForRoute:(id)arg1 loggingEnabled:(bool)arg2 minimalDebugging:(bool)arg3 fullDebugging:(bool)arg4 delegate:(id)arg5 traits:(id)arg6 withBatteryHandler:(id /* block */)arg7;
 
 @end

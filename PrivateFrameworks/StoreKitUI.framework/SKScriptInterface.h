@@ -15,6 +15,6 @@
 - (id)makeStoreSheetRequest;
 - (id)parentProductPageViewController;
 - (void)setParentProductPageViewController:(id)arg1;
-- (void)showStoreSheetWithRequest:(id)arg1 animated:(BOOL)arg2;
+- (void)showStoreSheetWithRequest:(id)arg1 animated:(bool)arg2;
 
 @end

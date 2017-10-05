@@ -4,12 +4,12 @@
 
 @interface _MFDAMessageStoreDeleteRequest : DAMailboxDeleteMessageRequest <MFDAMailAccountRequest>
 
-@property (nonatomic, readonly) BOOL isUserRequested;
-@property (nonatomic, readonly) BOOL shouldSend;
+@property (nonatomic, readonly) bool isUserRequested;
+@property (nonatomic, readonly) bool shouldSend;
 
 - (id)deferredOperation;
 - (unsigned long long)generationNumber;
-- (BOOL)isUserRequested;
-- (BOOL)shouldSend;
+- (bool)isUserRequested;
+- (bool)shouldSend;
 
 @end

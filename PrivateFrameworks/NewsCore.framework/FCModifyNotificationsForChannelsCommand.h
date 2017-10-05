@@ -19,13 +19,13 @@
 @property (nonatomic, copy) NSString *userID;
 
 - (void).cxx_destruct;
-- (BOOL)canCoalesceWithCommand:(id)arg1;
+- (bool)canCoalesceWithCommand:(id)arg1;
 - (id)channelIDsToAdd;
 - (id)channelIDsToRemove;
 - (void)coalesceWithCommand:(id)arg1;
 - (id)deviceToken;
 - (void)encodeWithCoder:(id)arg1;
-- (void)executeWithContext:(id)arg1 delegate:(id)arg2;
+- (void)executeWithContext:(id)arg1 delegate:(id)arg2 qualityOfService:(long long)arg3;
 - (id)initWithChannelIDsToAdd:(id)arg1 paidChannelIDsToAdd:(id)arg2 channelIDsToRemove:(id)arg3 userID:(id)arg4 deviceToken:(id)arg5 storefrontID:(id)arg6;
 - (id)initWithCoder:(id)arg1;
 - (id)paidChannelIDsToAdd;

@@ -16,9 +16,9 @@
     NSString * _primaryStatusText;
     HFItem * _reachabilityItem;
     HFSimpleItemManager * _reachabilityItemManager;
-    BOOL  _reachable;
+    bool  _reachable;
     NSString * _secondaryStatusText;
-    BOOL  _showIconOffState;
+    bool  _showIconOffState;
     HFOverrideCharacteristicValueSource * _valueSource;
 }
 
@@ -29,7 +29,7 @@
 @property (nonatomic) <HUQuickControlControllerCoordinatorDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) <NACancelable> *enqueuedSourceItemUpdateCancellationToken;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HMHome *home;
 @property (nonatomic, readonly) <HFIconDescriptor> *iconDescriptor;
 @property (nonatomic) <HUQuickControlInteractionHost> *interactionHost;
@@ -39,22 +39,20 @@
 @property (nonatomic, copy) NSString *primaryStatusText;
 @property (nonatomic, readonly) HFItem *reachabilityItem;
 @property (nonatomic, readonly) HFSimpleItemManager *reachabilityItemManager;
-@property (getter=isReachable, nonatomic, readonly) BOOL reachable;
+@property (getter=isReachable, nonatomic, readonly) bool reachable;
 @property (nonatomic, copy) NSString *secondaryStatusText;
-@property (nonatomic, readonly) BOOL showIconOffState;
+@property (nonatomic, readonly) bool showIconOffState;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) HFOverrideCharacteristicValueSource *valueSource;
-
-+ (id)_prioritizedControlControllers;
 
 - (void).cxx_destruct;
 - (id)_characteristicUpdateSuppressionReasonForController:(id)arg1;
 - (id)_controllerForControllableCharacteristic:(id)arg1;
-- (void)_createControlControllers;
+- (void)_createControlControllersForControlItems:(id)arg1;
 - (id)_itemToUseForIconAndStatus;
-- (void)_updateIconDescriptorNotifyingDelegate:(BOOL)arg1;
-- (void)_updateReachabilityStateNotifiyingDelegate:(BOOL)arg1;
-- (void)_updateStatusTextNotifyingDelegate:(BOOL)arg1;
+- (void)_updateIconDescriptorNotifyingDelegate:(bool)arg1;
+- (void)_updateReachabilityStateNotifiyingDelegate:(bool)arg1;
+- (void)_updateStatusTextNotifyingDelegate:(bool)arg1;
 - (id)activeController;
 - (id)allControllers;
 - (id)alternateController;
@@ -63,9 +61,9 @@
 - (id)enqueuedSourceItemUpdateCancellationToken;
 - (id)home;
 - (id)iconDescriptor;
-- (id)initWithItem:(id)arg1 home:(id)arg2 delegate:(id)arg3;
+- (id)initWithItem:(id)arg1 controlItems:(id)arg2 home:(id)arg3 delegate:(id)arg4;
 - (id)interactionHost;
-- (BOOL)isReachable;
+- (bool)isReachable;
 - (id)item;
 - (id)itemManager;
 - (void)itemManager:(id)arg1 didUpdateResultsForItem:(id)arg2 atIndexPath:(id)arg3;
@@ -85,9 +83,9 @@
 - (void)setInteractionHost:(id)arg1;
 - (void)setPrimaryStatusText:(id)arg1;
 - (void)setSecondaryStatusText:(id)arg1;
-- (BOOL)showIconOffState;
+- (bool)showIconOffState;
 - (id)valueSource;
 - (id)valueSource:(id)arg1 overrideValueForCharacteristic:(id)arg2;
-- (BOOL)valueSource:(id)arg1 shouldOverrideValueForCharacteristic:(id)arg2;
+- (bool)valueSource:(id)arg1 shouldOverrideValueForCharacteristic:(id)arg2;
 
 @end

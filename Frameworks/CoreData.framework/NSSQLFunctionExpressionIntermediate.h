@@ -4,7 +4,7 @@
 
 @interface NSSQLFunctionExpressionIntermediate : NSSQLExpressionIntermediate
 
-+ (BOOL)functionIsAcceptableAsAggregate:(id)arg1;
++ (bool)functionIsAcceptableAsAggregate:(id)arg1;
 
 - (id)_generateArgumentStringForCollection:(id)arg1 inContext:(id)arg2;
 - (id)_generateCorrelatedSubqueryStringWithSymbol:(id)arg1 forExpression:(id)arg2 inContext:(id)arg3;
@@ -12,6 +12,7 @@
 - (id)_generateLengthStringInContext:(id)arg1;
 - (id)_generateMathStringWithSymbol:(id)arg1 inContext:(id)arg2;
 - (id)_generateNowStringInContext:(id)arg1;
+- (id)_generateRtreeIndexStringInContext:(id)arg1;
 - (id)_generateSQLForCountInContext:(id)arg1;
 - (id)_generateSelectForAggregateStringWithSymbol:(id)arg1 argument:(id)arg2 inContext:(id)arg3;
 - (id)_generateType4SQLForSymbol:(id)arg1 inContext:(id)arg2;
@@ -19,7 +20,7 @@
 - (id)generateSQLStringInContext:(id)arg1;
 - (id)generateType1SQLString:(id)arg1 inContext:(id)arg2;
 - (id)generateType2SQLString:(id)arg1 inContext:(id)arg2;
-- (id)generateType3SQLString:(id)arg1 keypathOnly:(BOOL)arg2 inContext:(id)arg3;
-- (BOOL)isFunctionScoped;
+- (id)generateType3SQLString:(id)arg1 keypathOnly:(bool)arg2 inContext:(id)arg3;
+- (bool)isFunctionScoped;
 
 @end

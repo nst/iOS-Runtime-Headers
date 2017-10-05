@@ -6,6 +6,6 @@
 @required
 
 - (NSString *)label;
-- (id)value;
+- (NSString *)value;
 
 @end

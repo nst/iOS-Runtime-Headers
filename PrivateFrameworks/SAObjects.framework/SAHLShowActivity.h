@@ -14,7 +14,7 @@
 - (id)activityView;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setActivityDataType:(id)arg1;
 - (void)setActivityView:(id)arg1;
 

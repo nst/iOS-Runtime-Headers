@@ -14,7 +14,7 @@
 @property (nonatomic, readonly, retain) NSDictionary *attributesToMerge;
 @property (nonatomic, readonly, retain) NSArray *attributesToPreserve;
 @property (nonatomic, readonly, retain) NSError *error;
-@property (nonatomic, readonly, retain) NSString *outContent;
+@property (nonatomic, readonly, copy) NSString *outContent;
 
 - (id)_inContent;
 - (void)_setOutContent:(id)arg1 error:(id)arg2;

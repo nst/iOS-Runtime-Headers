@@ -5,14 +5,14 @@
 @interface MPLocalMediaQueryRemotePlaybackQueue : MPRemotePlaybackQueue {
     MPMediaItem * _firstItem;
     MPMediaQuery * _mediaQuery;
-    int  _repeatType;
-    int  _shuffleType;
+    long long  _repeatType;
+    long long  _shuffleType;
 }
 
 @property (nonatomic, readonly) MPMediaItem *firstItem;
 @property (nonatomic, readonly) MPMediaQuery *mediaQuery;
-@property (nonatomic, readonly) int repeatType;
-@property (nonatomic, readonly) int shuffleType;
+@property (nonatomic, readonly) long long repeatType;
+@property (nonatomic, readonly) long long shuffleType;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
@@ -22,12 +22,12 @@
 - (id)initWithMediaRemotePlaybackQueue:(struct _MRSystemAppPlaybackQueue { }*)arg1;
 - (id)mediaQuery;
 - (id)playbackItemMetadataForMediaItem:(id)arg1;
-- (int)repeatType;
-- (int)shuffleType;
-- (BOOL)verifyWithError:(id*)arg1;
+- (long long)repeatType;
+- (long long)shuffleType;
+- (bool)verifyWithError:(id*)arg1;
 
-// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+// Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
 
-- (id)createPlaybackContext;
+- (void)getPlaybackContextWithCompletion:(id /* block */)arg1;
 
 @end

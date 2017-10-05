@@ -11,9 +11,9 @@
     NSData * _playingMessagesData;
 }
 
-@property (nonatomic, readonly) BOOL hasIntroMessageData;
-@property (nonatomic) BOOL hasMediaType;
-@property (nonatomic, readonly) BOOL hasPlayingMessagesData;
+@property (nonatomic, readonly) bool hasIntroMessageData;
+@property (nonatomic) bool hasMediaType;
+@property (nonatomic, readonly) bool hasPlayingMessagesData;
 @property (nonatomic, retain) NSData *introMessageData;
 @property (nonatomic) int mediaType;
 @property (nonatomic, retain) NSData *playingMessagesData;
@@ -23,18 +23,18 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIntroMessageData;
-- (BOOL)hasMediaType;
-- (BOOL)hasPlayingMessagesData;
-- (unsigned int)hash;
+- (bool)hasIntroMessageData;
+- (bool)hasMediaType;
+- (bool)hasPlayingMessagesData;
+- (unsigned long long)hash;
 - (id)introMessageData;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (int)mediaType;
 - (id)mediaTypeAsString:(int)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)playingMessagesData;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasMediaType:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasMediaType:(bool)arg1;
 - (void)setIntroMessageData:(id)arg1;
 - (void)setMediaType:(int)arg1;
 - (void)setPlayingMessagesData:(id)arg1;

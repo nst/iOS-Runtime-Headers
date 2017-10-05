@@ -5,9 +5,9 @@
 
 @required
 
-- (unsigned int)countMessagesMatchingQuery:(unsigned int)arg1 variable:(id)arg2;
-- (NSDictionary *)countMessagesMatchingQuery:(unsigned int)arg1 variable:(id)arg2 groupBy:(unsigned int)arg3;
-- (NSArray *)mailboxesMatchingQuery:(unsigned int)arg1 variable:(id)arg2;
-- (NSArray *)messagesMatchingQuery:(unsigned int)arg1 variable:(id)arg2 limit:(unsigned int)arg3;
+- (unsigned long long)countMessagesMatchingQuery:(unsigned long long)arg1 variable:(id)arg2;
+- (NSDictionary *)countMessagesMatchingQuery:(unsigned long long)arg1 variable:(id)arg2 groupBy:(unsigned long long)arg3;
+- (NSArray *)mailboxesMatchingQuery:(unsigned long long)arg1 variable:(id)arg2;
+- (NSArray *)messagesMatchingQuery:(unsigned long long)arg1 variable:(id)arg2 limit:(unsigned long long)arg3;
 
 @end

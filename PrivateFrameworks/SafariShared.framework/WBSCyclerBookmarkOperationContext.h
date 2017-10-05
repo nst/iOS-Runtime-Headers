@@ -15,11 +15,11 @@
 - (void).cxx_destruct;
 - (id)_buildDictionaryOfDescendantIdentifiersToParentIdentifiersFromList:(id)arg1;
 - (id)_copyBookmark:(id)arg1 filteringWithIdentifierWhitelist:(id)arg2;
-- (BOOL)_isBookmarkPrefixed:(id)arg1;
-- (BOOL)_isBookmarkValid:(id)arg1;
+- (bool)_isBookmarkPrefixed:(id)arg1;
+- (bool)_isBookmarkValid:(id)arg1;
 - (id)filterOutBookmarksWithoutTitlePrefixInList:(id)arg1;
 - (id)randomBookmarkTitle;
-- (id)randomDescendantOfList:(id)arg1 enforcingTitlePrefixValidity:(BOOL)arg2 passingTest:(id /* block */)arg3;
+- (id)randomDescendantOfList:(id)arg1 enforcingTitlePrefixValidity:(bool)arg2 passingTest:(id /* block */)arg3;
 - (id)randomValidStrictDescendantOfList:(id)arg1;
 - (id)randomValidStrictDescendantOfTopLevelBookmark;
 - (void)setTestTarget:(id)arg1;

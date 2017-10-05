@@ -4,19 +4,19 @@
 
 @interface PTSImageLoader : NSObject {
     <PTSImageLoaderDelegate> * _delegate;
-    BOOL  _loading;
+    bool  _loading;
     NSString * _path;
 }
 
 @property (nonatomic) <PTSImageLoaderDelegate> *delegate;
-@property (getter=isLoading) BOOL loading;
+@property (getter=isLoading) bool loading;
 
 - (void).cxx_destruct;
 - (id)delegate;
 - (id)initWithPath:(id)arg1;
-- (BOOL)isLoading;
+- (bool)isLoading;
 - (void)setDelegate:(id)arg1;
-- (void)setLoading:(BOOL)arg1;
+- (void)setLoading:(bool)arg1;
 - (void)startLoading;
 - (void)stopLoading;
 

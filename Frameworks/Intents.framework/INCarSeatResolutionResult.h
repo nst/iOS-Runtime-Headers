@@ -4,7 +4,9 @@
 
 @interface INCarSeatResolutionResult : INIntentResolutionResult
 
-+ (id)confirmationRequiredWithValueToConfirm:(int)arg1;
-+ (id)successWithResolvedValue:(int)arg1;
++ (id)confirmationRequiredWithCarSeatToConfirm:(long long)arg1;
++ (id)confirmationRequiredWithValueToConfirm:(long long)arg1;
++ (id)successWithResolvedCarSeat:(long long)arg1;
++ (id)successWithResolvedValue:(long long)arg1;
 
 @end

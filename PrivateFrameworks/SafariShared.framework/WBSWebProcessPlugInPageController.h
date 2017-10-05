@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) WKWebProcessPlugInBrowserContextController *browserContextController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) WKWebProcessPlugInFrame *mainFrame;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) WBSWebProcessPlugIn *webProcessPlugIn;

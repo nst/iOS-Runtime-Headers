@@ -14,7 +14,7 @@
 - (void).cxx_destruct;
 - (void)_handleConnectionEvent:(id)arg1;
 - (void)_handleIncomingMessage:(id)arg1;
-- (void)_reallySendMessage:(id)arg1 handler:(id /* block */)arg2 sequence:(unsigned long)arg3 retryCount:(unsigned long)arg4;
+- (void)_reallySendMessage:(id)arg1 handler:(id /* block */)arg2 sequence:(unsigned long long)arg3 retryCount:(unsigned long long)arg4;
 - (id)debugDescription;
 - (id)delegate;
 - (id)initWithServiceName:(id)arg1 delegate:(id)arg2;

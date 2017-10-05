@@ -6,16 +6,16 @@
     NSURLCredentialInternal * _internal;
 }
 
-@property (readonly) unsigned int persistence;
+@property (readonly) unsigned long long persistence;
 
 + (id)credentialForTrust:(struct __SecTrust { }*)arg1;
-+ (id)credentialWithIdentity:(struct __SecIdentity { }*)arg1 certificates:(id)arg2 persistence:(unsigned int)arg3;
-+ (id)credentialWithUser:(id)arg1 password:(id)arg2 persistence:(unsigned int)arg3;
-+ (BOOL)supportsSecureCoding;
++ (id)credentialWithIdentity:(struct __SecIdentity { }*)arg1 certificates:(id)arg2 persistence:(unsigned long long)arg3;
++ (id)credentialWithUser:(id)arg1 password:(id)arg2 persistence:(unsigned long long)arg3;
++ (bool)supportsSecureCoding;
 
 - (const struct _CFURLCredential { }*)_CFURLCredential;
 - (const struct _CFURLCredential { }*)_cfurlcredential;
-- (BOOL)_hasSWCACreatorAttribute;
+- (bool)_hasSWCACreatorAttribute;
 - (id)_initWithCFURLCredential:(struct _CFURLCredential { }*)arg1;
 - (void)_removeSWCACreatorAttribute;
 - (id)certificates;
@@ -23,16 +23,16 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasPassword;
-- (unsigned int)hash;
+- (bool)hasPassword;
+- (unsigned long long)hash;
 - (struct __SecIdentity { }*)identity;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIdentity:(struct __SecIdentity { }*)arg1 certificates:(id)arg2 persistence:(unsigned int)arg3;
+- (id)initWithIdentity:(struct __SecIdentity { }*)arg1 certificates:(id)arg2 persistence:(unsigned long long)arg3;
 - (id)initWithTrust:(struct __SecTrust { }*)arg1;
-- (id)initWithUser:(id)arg1 password:(id)arg2 persistence:(unsigned int)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithUser:(id)arg1 password:(id)arg2 persistence:(unsigned long long)arg3;
+- (bool)isEqual:(id)arg1;
 - (id)password;
-- (unsigned int)persistence;
+- (unsigned long long)persistence;
 - (id)user;
 
 @end

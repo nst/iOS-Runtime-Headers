@@ -4,27 +4,19 @@
 
 @interface _WGCAPackageView : _UICAPackageView {
     NSURL * _archiveURL;
-    UILabel * _debugLabel;
 }
 
 @property (nonatomic, copy) NSURL *archiveURL;
-@property (getter=_debugLabel, setter=_setDebugLabel:, nonatomic) UILabel *debugLabel;
-@property (nonatomic) BOOL showsDebugLabel;
 @property (nonatomic, readonly, copy) NSString *snapshotIdentifier;
 
 + (void)loadPackageViewWithContentsOfURL:(id)arg1 publishedObjectViewClassMap:(id)arg2 completion:(id /* block */)arg3;
 
 - (void).cxx_destruct;
-- (id)_debugLabel;
-- (void)_setContinuousCornerRadius:(float)arg1;
-- (void)_setDebugLabel:(id)arg1;
-- (BOOL)_supportsPushingBottomCornerRadiusToSubviews:(float)arg1;
+- (void)_setContinuousCornerRadius:(double)arg1;
+- (bool)_supportsPushingBottomCornerRadiusToSubviews:(double)arg1;
 - (id)archiveURL;
-- (id)debugLabel;
 - (id)description;
 - (void)setArchiveURL:(id)arg1;
-- (void)setShowsDebugLabel:(BOOL)arg1;
-- (BOOL)showsDebugLabel;
 - (id)snapshotIdentifier;
 
 @end

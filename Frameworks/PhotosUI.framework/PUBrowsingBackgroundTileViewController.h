@@ -4,21 +4,21 @@
 
 @interface PUBrowsingBackgroundTileViewController : PUTileViewController <PUBrowsingViewModelChangeObserver> {
     _UIContentUnavailableView * __emptyPlaceholderView;
-    BOOL  __needsUpdateColor;
+    bool  __needsUpdateColor;
     id /* block */  __nextColorUpdateAnimatorBlock;
     UIColor * _backgroundColorOverride;
-    BOOL  _shouldDisplayEmptyPlaceholder;
+    bool  _shouldDisplayEmptyPlaceholder;
     PUBrowsingViewModel * _viewModel;
 }
 
 @property (setter=_setEmptyPlaceholderView:, nonatomic, retain) _UIContentUnavailableView *_emptyPlaceholderView;
-@property (setter=_setNeedsUpdateColor:, nonatomic) BOOL _needsUpdateColor;
+@property (setter=_setNeedsUpdateColor:, nonatomic) bool _needsUpdateColor;
 @property (setter=_setNextColorUpdateAnimatorBlock:, nonatomic, copy) id /* block */ _nextColorUpdateAnimatorBlock;
 @property (nonatomic, retain) UIColor *backgroundColorOverride;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL shouldDisplayEmptyPlaceholder;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool shouldDisplayEmptyPlaceholder;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) PUBrowsingViewModel *viewModel;
 
@@ -26,19 +26,19 @@
 - (id)_emptyPlaceholderView;
 - (void)_invalidateColor;
 - (void)_invalidateColorWithAnimatorBlock:(id /* block */)arg1;
-- (BOOL)_needsUpdateColor;
+- (bool)_needsUpdateColor;
 - (id /* block */)_nextColorUpdateAnimatorBlock;
 - (void)_setEmptyPlaceholderView:(id)arg1;
-- (void)_setNeedsUpdateColor:(BOOL)arg1;
+- (void)_setNeedsUpdateColor:(bool)arg1;
 - (void)_setNextColorUpdateAnimatorBlock:(id /* block */)arg1;
 - (void)_updateColorIfNeeded;
-- (void)_updateEmptyPlaceholderAnimated:(BOOL)arg1;
+- (void)_updateEmptyPlaceholderAnimated:(bool)arg1;
 - (void)applyLayoutInfo:(id)arg1;
 - (id)backgroundColorOverride;
 - (void)setBackgroundColorOverride:(id)arg1;
-- (void)setShouldDisplayEmptyPlaceholder:(BOOL)arg1;
+- (void)setShouldDisplayEmptyPlaceholder:(bool)arg1;
 - (void)setViewModel:(id)arg1;
-- (BOOL)shouldDisplayEmptyPlaceholder;
+- (bool)shouldDisplayEmptyPlaceholder;
 - (void)viewDidLoad;
 - (id)viewModel;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;

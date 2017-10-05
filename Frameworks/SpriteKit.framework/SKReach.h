@@ -4,20 +4,20 @@
 
 @interface SKReach : SKAction {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _goalPosition;
     NSMutableArray * _ikChain;
     SKNode * _ikRoot;
-    BOOL  _timeConstrained;
-    float  _velocity;
-    float  _zRotationSpeed;
+    bool  _timeConstrained;
+    double  _velocity;
+    double  _zRotationSpeed;
 }
 
-+ (id)reachTo:(struct CGPoint { float x1; float x2; })arg1 rootNode:(id)arg2 duration:(double)arg3;
-+ (id)reachTo:(struct CGPoint { float x1; float x2; })arg1 rootNode:(id)arg2 duration:(double)arg3 maxZRotationSpeed:(float)arg4;
-+ (id)reachTo:(struct CGPoint { float x1; float x2; })arg1 rootNode:(id)arg2 velocity:(float)arg3;
-+ (id)reachTo:(struct CGPoint { float x1; float x2; })arg1 rootNode:(id)arg2 zRotationSpeed:(float)arg3 maxDuration:(double)arg4;
++ (id)reachTo:(struct CGPoint { double x1; double x2; })arg1 rootNode:(id)arg2 duration:(double)arg3;
++ (id)reachTo:(struct CGPoint { double x1; double x2; })arg1 rootNode:(id)arg2 duration:(double)arg3 maxZRotationSpeed:(double)arg4;
++ (id)reachTo:(struct CGPoint { double x1; double x2; })arg1 rootNode:(id)arg2 velocity:(double)arg3;
++ (id)reachTo:(struct CGPoint { double x1; double x2; })arg1 rootNode:(id)arg2 zRotationSpeed:(double)arg3 maxDuration:(double)arg4;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

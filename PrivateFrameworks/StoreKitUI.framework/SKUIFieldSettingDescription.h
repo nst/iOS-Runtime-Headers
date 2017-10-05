@@ -4,26 +4,26 @@
 
 @interface SKUIFieldSettingDescription : SKUISettingDescription <SKUIControllableSettingDescription> {
     SKUISettingsGroupController * _controller;
-    int  _fieldType;
+    long long  _fieldType;
     NSMutableDictionary * _fieldValues;
 }
 
 @property (nonatomic) SKUISettingsGroupController *controller;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) int fieldType;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) long long fieldType;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (int)_fieldTypeFromElement:(id)arg1;
++ (long long)_fieldTypeFromElement:(id)arg1;
 + (id)_inputViewElementFromElement:(id)arg1;
 + (Class)_viewClassForSettingDescription:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_dispatchEventOfType:(unsigned int)arg1 extraInfo:(id)arg2;
-- (BOOL)allowsSelection;
+- (void)_dispatchEventOfType:(unsigned long long)arg1 extraInfo:(id)arg2;
+- (bool)allowsSelection;
 - (id)controller;
-- (int)fieldType;
+- (long long)fieldType;
 - (id)fieldValueForKey:(id)arg1;
 - (void)handleSelectionOnCompletion:(id /* block */)arg1;
 - (id)initWithViewElement:(id)arg1 parent:(id)arg2;

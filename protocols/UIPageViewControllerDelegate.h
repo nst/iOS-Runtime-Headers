@@ -5,10 +5,10 @@
 
 @optional
 
-- (void)pageViewController:(UIPageViewController *)arg1 didFinishAnimating:(BOOL)arg2 previousViewControllers:(NSArray *)arg3 transitionCompleted:(BOOL)arg4;
-- (int)pageViewController:(UIPageViewController *)arg1 spineLocationForInterfaceOrientation:(int)arg2;
+- (void)pageViewController:(UIPageViewController *)arg1 didFinishAnimating:(bool)arg2 previousViewControllers:(NSArray *)arg3 transitionCompleted:(bool)arg4;
+- (long long)pageViewController:(UIPageViewController *)arg1 spineLocationForInterfaceOrientation:(long long)arg2;
 - (void)pageViewController:(UIPageViewController *)arg1 willTransitionToViewControllers:(NSArray *)arg2;
-- (int)pageViewControllerPreferredInterfaceOrientationForPresentation:(UIPageViewController *)arg1;
-- (unsigned int)pageViewControllerSupportedInterfaceOrientations:(UIPageViewController *)arg1;
+- (long long)pageViewControllerPreferredInterfaceOrientationForPresentation:(UIPageViewController *)arg1;
+- (unsigned long long)pageViewControllerSupportedInterfaceOrientations:(UIPageViewController *)arg1;
 
 @end

@@ -16,7 +16,7 @@
 @property (readonly) unsigned long long identifier;
 @property (readonly) NSDate *startDate;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (struct { double x1; double x2; double x3; })acceleration;
 - (void)dealloc;

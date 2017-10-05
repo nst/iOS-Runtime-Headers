@@ -5,26 +5,26 @@
 
 @required
 
-- (int)compareToAsset:(id <PLMomentAssetData>)arg1;
+- (long long)compareToAsset:(id <PLMomentAssetData>)arg1;
 - (NSDate *)dateCreated;
 - (NSString *)globalUUID;
-- (BOOL)isDeleted;
+- (bool)isDeleted;
 - (CLLocation *)location;
 - (<PLMomentData> *)moment;
 - (NSData *)placeAnnotationData;
 - (NSData *)reverseLocationData;
-- (BOOL)reverseLocationDataIsValid;
+- (bool)reverseLocationDataIsValid;
 - (void)setDateCreated:(NSDate *)arg1;
 - (void)setLocation:(CLLocation *)arg1;
 - (void)setMoment:(id <PLMomentData>)arg1;
 - (void)setReverseLocationData:(NSData *)arg1;
-- (void)setReverseLocationDataIsValid:(BOOL)arg1;
+- (void)setReverseLocationDataIsValid:(bool)arg1;
 - (void)setShiftedLocation:(CLLocation *)arg1;
-- (void)setShiftedLocationIsValid:(BOOL)arg1;
+- (void)setShiftedLocationIsValid:(bool)arg1;
 - (CLLocation *)shiftedLocation;
-- (BOOL)shiftedLocationIsValid;
+- (bool)shiftedLocationIsValid;
 - (NSObject<NSCopying> *)uniqueObjectID;
-- (BOOL)visibilityStateIsEqualToState:(short)arg1;
+- (bool)visibilityStateIsEqualToState:(short)arg1;
 
 @optional
 
@@ -34,8 +34,8 @@
 - (NSString *)customMomentName;
 - (NSString *)customMomentUUID;
 - (double)duration;
-- (BOOL)favorite;
-- (short)height;
+- (bool)favorite;
+- (long long)height;
 - (short)kind;
 - (short)kindSubtype;
 - (NSDate *)modificationDate;
@@ -44,13 +44,13 @@
 - (void)setCustomMomentName:(NSString *)arg1;
 - (void)setCustomMomentUUID:(NSString *)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setFavorite:(BOOL)arg1;
-- (void)setHeight:(short)arg1;
+- (void)setFavorite:(bool)arg1;
+- (void)setHeight:(long long)arg1;
 - (void)setKind:(short)arg1;
 - (void)setKindSubtype:(short)arg1;
 - (void)setModificationDate:(NSDate *)arg1;
-- (void)setWidth:(short)arg1;
+- (void)setWidth:(long long)arg1;
 - (NSString *)uuid;
-- (short)width;
+- (long long)width;
 
 @end

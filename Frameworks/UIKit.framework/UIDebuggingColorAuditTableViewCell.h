@@ -4,22 +4,27 @@
 
 @interface UIDebuggingColorAuditTableViewCell : UITableViewCell {
     UIColor * _color;
-    BOOL  _expanded;
+    bool  _expanded;
     NSString * _symbol;
     UIView * colorView;
     NSLayoutConstraint * heightConstraint;
 }
 
 @property (nonatomic, retain) UIColor *color;
-@property (nonatomic) BOOL expanded;
+@property (nonatomic) bool expanded;
 @property (nonatomic, copy) NSString *symbol;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void).cxx_destruct;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (id)color;
-- (BOOL)expanded;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (bool)expanded;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)setColor:(id)arg1;
-- (void)setExpanded:(BOOL)arg1;
+- (void)setExpanded:(bool)arg1;
 - (void)setSymbol:(id)arg1;
 - (id)symbol;
 

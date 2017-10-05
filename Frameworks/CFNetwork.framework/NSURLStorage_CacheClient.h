@@ -9,13 +9,13 @@
     }  _cfWeakCacheCpp;
     NSXPCInterface * _netStoreInterface;
     NSXPCConnection * _networkStorageConnection;
-    BOOL  _networkStorageConnectionInterrupted;
+    bool  _networkStorageConnectionInterrupted;
     NSString * _path;
     NSData * _sandboxExtensionToken;
-    int  _storageSize;
+    long long  _storageSize;
 }
 
-@property BOOL networkStorageConnectionInterrupted;
+@property bool networkStorageConnectionInterrupted;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -24,21 +24,22 @@
 - (void)addCachedResponseWithDictionary:(id)arg1 key:(id)arg2;
 - (void)copyAllPartitionNamesWithCompletionHandler:(id /* block */)arg1;
 - (void)copyHostNamesForOptionalPartition:(id)arg1 handler:(id /* block */)arg2;
-- (BOOL)createStorageTaskManagerForPath:(id)arg1 maxSize:(int)arg2 extension:(id)arg3;
-- (int)currentDiskUsage;
+- (bool)createStorageTaskManagerForPath:(id)arg1 maxSize:(long long)arg2 extension:(id)arg3;
+- (long long)currentDiskUsage;
 - (void)dealloc;
 - (void)deleteAllHostNames:(id)arg1 forOptionalPartition:(id)arg2;
 - (void)deleteAllResponses;
 - (void)deleteResponseForRequestWithKey:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)deleteResponsesSinceDate:(id)arg1;
-- (BOOL)ensureNetworkStorageDaemonConnection;
+- (bool)ensureNetworkStorageDaemonConnection;
 - (id)getPath;
 - (id)initWithCache:(struct shared_ptr<__CFURLCache> { struct __CFURLCache {} *x1; struct __shared_weak_count {} *x2; })arg1;
-- (BOOL)networkStorageConnectionInterrupted;
+- (bool)networkStorageConnectionInterrupted;
 - (void)notifyCacheClientOfTimeRelativeResponses:(id)arg1;
 - (void)notifyCachedURLResponseBecameFileBacked:(id)arg1 filePath:(id)arg2 forUUID:(id)arg3;
-- (void)setMaxSize:(int)arg1;
-- (void)setMinSizeForVMCachedResource:(int)arg1;
-- (void)setNetworkStorageConnectionInterrupted:(BOOL)arg1;
+- (void)performSchemaCheckAndUpdate;
+- (void)setMaxSize:(long long)arg1;
+- (void)setMinSizeForVMCachedResource:(long long)arg1;
+- (void)setNetworkStorageConnectionInterrupted:(bool)arg1;
 
 @end

@@ -3,96 +3,96 @@
  */
 
 @interface SKUIAttributedStringView : UIView <SKUIReusableView> {
-    int  _badgePlacement;
-    float  _calculatedTopInset;
-    BOOL  _containsLinks;
-    int  _firstLineTopInset;
+    long long  _badgePlacement;
+    double  _calculatedTopInset;
+    bool  _containsLinks;
+    long long  _firstLineTopInset;
     SKUIAttributedStringLayout * _layout;
     NSLayoutManager * _layoutManager;
     <SKUILinkHandler> * _linkDelegate;
     NSArray * _requiredBadges;
-    int  _stringTreatment;
+    long long  _stringTreatment;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _textBounds;
     UIColor * _textColor;
-    BOOL  _textColorFollowsTintColor;
+    bool  _textColorFollowsTintColor;
     NSTextContainer * _textContainer;
     NSTextStorage * _textStorage;
-    BOOL  _touchInside;
+    bool  _touchInside;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _trackingRange;
-    BOOL  _trackingTouch;
+    bool  _trackingTouch;
     UIColor * _treatmentColor;
 }
 
-@property (nonatomic) int badgePlacement;
-@property (nonatomic, readonly) float baselineOffset;
-@property (nonatomic) BOOL containsLinks;
+@property (nonatomic) long long badgePlacement;
+@property (nonatomic, readonly) double baselineOffset;
+@property (nonatomic) bool containsLinks;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) float firstBaselineOffset;
-@property (nonatomic) int firstLineTopInset;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) double firstBaselineOffset;
+@property (nonatomic) long long firstLineTopInset;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SKUIAttributedStringLayout *layout;
 @property (nonatomic) <SKUILinkHandler> *linkDelegate;
 @property (nonatomic, copy) NSArray *requiredBadges;
-@property (nonatomic) int stringTreatment;
+@property (nonatomic) long long stringTreatment;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIColor *textColor;
-@property (nonatomic) BOOL textColorFollowsTintColor;
+@property (nonatomic) bool textColorFollowsTintColor;
 @property (nonatomic, retain) UIColor *treatmentColor;
-@property (nonatomic, readonly) BOOL usesTallCharacterSet;
+@property (nonatomic, readonly) bool usesTallCharacterSet;
 
-+ (struct CGSize { float x1; float x2; })sizeWithLayout:(id)arg1 treatment:(int)arg2;
++ (struct CGSize { double x1; double x2; })sizeWithLayout:(id)arg1 treatment:(long long)arg2;
 
 - (void).cxx_destruct;
 - (void)_reloadTopInset;
-- (void)_setTouchInside:(BOOL)arg1;
-- (void)_setTrackingTouch:(BOOL)arg1;
+- (void)_setTouchInside:(bool)arg1;
+- (void)_setTrackingTouch:(bool)arg1;
 - (void)_setupTapLocatorContainer;
-- (BOOL)_touchInsideLinkText:(struct CGPoint { float x1; float x2; })arg1 linkTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
-- (int)badgePlacement;
-- (float)baselineOffset;
-- (BOOL)containsLinks;
+- (bool)_touchInsideLinkText:(struct CGPoint { double x1; double x2; })arg1 linkTextRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg2;
+- (long long)badgePlacement;
+- (double)baselineOffset;
+- (bool)containsLinks;
 - (id)description;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)firstBaselineOffset;
-- (int)firstLineTopInset;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)firstBaselineOffset;
+- (long long)firstLineTopInset;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)layout;
 - (id)linkDelegate;
 - (id)requiredBadges;
-- (void)setBadgePlacement:(int)arg1;
-- (void)setContainsLinks:(BOOL)arg1;
-- (void)setFirstLineTopInset:(int)arg1;
+- (void)setBadgePlacement:(long long)arg1;
+- (void)setContainsLinks:(bool)arg1;
+- (void)setFirstLineTopInset:(long long)arg1;
 - (void)setLayout:(id)arg1;
 - (void)setLinkDelegate:(id)arg1;
 - (void)setRequiredBadges:(id)arg1;
-- (void)setStringTreatment:(int)arg1;
+- (void)setStringTreatment:(long long)arg1;
 - (void)setTextColor:(id)arg1;
-- (void)setTextColorFollowsTintColor:(BOOL)arg1;
+- (void)setTextColorFollowsTintColor:(bool)arg1;
 - (void)setTreatmentColor:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (int)stringTreatment;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (long long)stringTreatment;
 - (id)textColor;
-- (BOOL)textColorFollowsTintColor;
+- (bool)textColorFollowsTintColor;
 - (void)tintColorDidChange;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (id)treatmentColor;
-- (BOOL)usesTallCharacterSet;
+- (bool)usesTallCharacterSet;
 - (void)viewWasRecycled;
 
 @end

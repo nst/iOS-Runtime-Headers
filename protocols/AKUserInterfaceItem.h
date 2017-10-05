@@ -5,10 +5,10 @@
 
 @required
 
-- (int)tag;
+- (long long)tag;
 
 @optional
 
-- (int)tagForSegment:(int)arg1;
+- (long long)tagForSegment:(long long)arg1;
 
 @end

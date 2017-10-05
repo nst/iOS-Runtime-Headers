@@ -11,7 +11,7 @@
     NSObject<OS_dispatch_queue> * _eventQueue;
     NSMutableDictionary * _handlerMap;
     double  _idleTimerInterval;
-    BOOL  _shutdown;
+    bool  _shutdown;
     NSObject<OS_dispatch_queue> * _timerQueue;
 }
 
@@ -30,7 +30,7 @@
 - (void)setDefaultMessageHandler:(id /* block */)arg1;
 - (void)setDisconnectHandler:(id /* block */)arg1;
 - (void)setHandlerForMessageName:(id)arg1 handler:(id /* block */)arg2;
-- (BOOL)shutdown;
+- (bool)shutdown;
 - (void)startListening;
 
 @end

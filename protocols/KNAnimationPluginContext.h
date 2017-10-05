@@ -7,21 +7,22 @@
 
 - (TSDGLState *)GLState;
 - (KNAnimatedBuild *)animatedBuild;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRect;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectOnCanvas;
-- (unsigned int)direction;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundingRectOnCanvas;
+- (unsigned long long)direction;
 - (double)duration;
-- (BOOL)isBuild;
-- (BOOL)isFrameRenderer;
-- (BOOL)isMagicMove;
-- (BOOL)isMotionBlurred;
-- (BOOL)isPreview;
-- (BOOL)isTransition;
-- (BOOL)isWarmingUp;
+- (bool)isBuild;
+- (bool)isFrameRenderer;
+- (bool)isMagicMove;
+- (bool)isMotionBlurred;
+- (bool)isPreview;
+- (bool)isTransition;
+- (bool)isWarmingUp;
 - (NSArray *)magicMoveMatches;
 - (double)percent;
 - (KNAnimationRandomGenerator *)randomGenerator;
-- (void)setBoundingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setBoundingRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (NSArray *)tags;
 - (NSArray *)textures;
 - (NSDictionary *)transitionAttributes;
 

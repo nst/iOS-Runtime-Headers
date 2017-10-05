@@ -4,14 +4,15 @@
 
 @interface AUV2BridgeBus : AUAudioUnitBus {
     struct OpaqueAudioComponentInstance { } * _audioUnit;
-    unsigned long  _element;
+    unsigned int  _element;
     AUAudioUnitV2Bridge * _owner;
-    unsigned long  _scope;
+    unsigned int  _scope;
 }
 
+- (void).cxx_destruct;
 - (id)format;
-- (id)initWithOwner:(id)arg1 au:(struct OpaqueAudioComponentInstance { }*)arg2 scope:(unsigned long)arg3 element:(unsigned long)arg4;
-- (void)setEnabled:(BOOL)arg1;
-- (BOOL)setFormat:(id)arg1 error:(id*)arg2;
+- (id)initWithOwner:(id)arg1 au:(struct OpaqueAudioComponentInstance { }*)arg2 scope:(unsigned int)arg3 element:(unsigned int)arg4;
+- (void)setEnabled:(bool)arg1;
+- (bool)setFormat:(id)arg1 error:(id*)arg2;
 
 @end

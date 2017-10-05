@@ -17,50 +17,58 @@
     UIKBSplitImageView * _keyCaps;
     UIKBKeyViewAnimator * _keyViewAnimator;
     UIKBTree * _keyplane;
-    BOOL  _performingDeactivation;
+    bool  _performingDeactivation;
     UIKBRenderConfig * _renderConfig;
     NSMutableDictionary * _renderedKeyViews;
-    BOOL  _shouldDrawRect;
+    UIKBRenderingContext * _renderingContext;
+    bool  _shouldDrawRect;
     NSMutableDictionary * _subviewIndex;
 }
 
-@property (nonatomic, readonly) BOOL cacheDeferable;
+@property (nonatomic, readonly) bool cacheDeferable;
 @property (nonatomic, readonly) NSString *cacheKey;
 @property (nonatomic, retain) UIKBCacheToken *cacheToken;
-@property (nonatomic, readonly) float cachedWidth;
+@property (nonatomic, readonly) double cachedWidth;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) UIKBTree *defaultKeyplane;
 @property (nonatomic, retain) UIKBCacheToken *defaultKeyplaneCacheToken;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIKeyboardEmojiKeyDisplayController *emojiKeyManager;
 @property (nonatomic, retain) UIKBRenderFactory *factory;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL keepNonPersistent;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool keepNonPersistent;
 @property (nonatomic, retain) UIKBKeyViewAnimator *keyViewAnimator;
 @property (nonatomic, retain) UIKBTree *keyplane;
 @property (nonatomic, retain) UIKBRenderConfig *renderConfig;
+@property (nonatomic, retain) UIKBRenderingContext *renderingContext;
 @property (readonly) Class superclass;
 
-- (BOOL)_canDrawContent;
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (bool)_canDrawContent;
 - (void)_generateFactoryIfNeeded;
-- (BOOL)_shouldAllowKey:(id)arg1;
+- (void)_generateRenderingContextIfNeeded;
+- (bool)_shouldAllowKey:(id)arg1;
+- (void)dealloc;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (void)activateKeys;
 - (id)activeKeyViews;
 - (void)addKeyToDelayedDeactivationSet:(id)arg1;
-- (BOOL)cacheDeferable;
+- (bool)cacheDeferable;
 - (id)cacheIdentifierForKey:(id)arg1;
 - (id)cacheIdentifierForKey:(id)arg1 withState:(int)arg2;
 - (id)cacheKey;
 - (id)cacheKeysForRenderFlags:(id)arg1;
 - (id)cacheToken;
-- (float)cachedWidth;
+- (double)cachedWidth;
 - (void)cancelDelayedDeactivation;
 - (id)containingViewForKey:(id)arg1 withState:(int)arg2;
-- (int)cornerMaskForKey:(id)arg1 recursive:(BOOL)arg2;
+- (int)cornerMaskForKey:(id)arg1 recursive:(bool)arg2;
 - (void)deactivateAdaptiveKey:(id)arg1;
 - (void)deactivateKey:(id)arg1 previousState:(int)arg2;
 - (void)deactivateKeys;
-- (void)dealloc;
 - (id)defaultKeyplane;
 - (id)defaultKeyplaneCacheToken;
 - (void)dimKeys:(id)arg1;
@@ -68,10 +76,10 @@
 - (void)drawContentsOfRenderers:(id)arg1;
 - (id)emojiKeyManager;
 - (id)factory;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyplane:(id)arg2;
-- (BOOL)isPasscodeStyle;
-- (BOOL)keepNonPersistent;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 keyplane:(id)arg2;
+- (bool)isPasscodeStyle;
+- (bool)keepNonPersistent;
 - (id)keyViewAnimator;
 - (id)keyplane;
 - (void)performDelayedDeactivation:(id)arg1;
@@ -83,6 +91,7 @@
 - (void)removeFromSuperview;
 - (void)removeKeyFromDelayedDeactivationSet:(id)arg1;
 - (id)renderConfig;
+- (id)renderingContext;
 - (void)scheduleDelayedDeactivation;
 - (void)setCacheToken:(id)arg1;
 - (void)setDefaultKeyplane:(id)arg1;
@@ -92,12 +101,13 @@
 - (void)setKeyViewAnimator:(id)arg1;
 - (void)setKeyplane:(id)arg1;
 - (void)setRenderConfig:(id)arg1;
+- (void)setRenderingContext:(id)arg1;
 - (void)setState:(int)arg1 forKey:(id)arg2;
-- (BOOL)shouldAnimateInKeyView:(id)arg1;
-- (BOOL)shouldAnimateOutKeyView:(id)arg1;
+- (bool)shouldAnimateInKeyView:(id)arg1;
+- (bool)shouldAnimateOutKeyView:(id)arg1;
 - (int)stateForKey:(id)arg1;
-- (BOOL)useDefaultKeyplaneCacheTokenForRenderFlags:(int)arg1;
-- (BOOL)validForKeyplane:(id)arg1 withVisualStyle:(int)arg2;
+- (bool)useDefaultKeyplaneCacheTokenForRenderFlags:(long long)arg1;
+- (bool)validForKeyplane:(id)arg1 withVisualStyle:(int)arg2;
 - (id)viewForKey:(id)arg1;
 - (id)viewForKey:(id)arg1 state:(int)arg2;
 - (void)willMoveToWindow:(id)arg1;

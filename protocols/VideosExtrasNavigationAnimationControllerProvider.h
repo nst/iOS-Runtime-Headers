@@ -5,6 +5,6 @@
 
 @required
 
-- (<UIViewControllerAnimatedTransitioning> *)animationControllerForNavigationOperation:(int)arg1 fromViewController:(UIViewController *)arg2 toViewController:(UIViewController *)arg3;
+- (<UIViewControllerAnimatedTransitioning> *)animationControllerForNavigationOperation:(long long)arg1 fromViewController:(UIViewController *)arg2 toViewController:(UIViewController *)arg3;
 
 @end

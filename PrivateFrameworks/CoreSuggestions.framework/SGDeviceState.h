@@ -6,9 +6,9 @@
 
 + (void)blockUntilFirstUnlock;
 + (id)currentOsBuild;
-+ (BOOL)isClassCLocked;
-+ (BOOL)isDeviceFormattedForProtection;
-+ (BOOL)isUnlocked;
++ (bool)isClassCLocked;
++ (bool)isDeviceFormattedForProtection;
++ (bool)isUnlocked;
 + (int)lockState;
 + (id)registerForLockStateChangeNotifications:(id /* block */)arg1;
 + (void)runBlockWhenDeviceIsReadyForSuggestions:(id /* block */)arg1;

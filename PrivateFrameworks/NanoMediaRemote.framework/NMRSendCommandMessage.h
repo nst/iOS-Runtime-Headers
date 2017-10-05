@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) unsigned int command;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSDictionary *options;
 @property (nonatomic, readonly) NSDate *serializationDate;
 @property (readonly) Class superclass;

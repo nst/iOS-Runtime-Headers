@@ -11,7 +11,8 @@
 
 @optional
 
-- (NSString *)displayableName;
+- (NSString *)displayableNameForLibraryManager:(CPLLibraryManager *)arg1;
 - (void)libraryManagerDidChangeConfiguration:(CPLLibraryManager *)arg1;
+- (void)libraryManagerHasStatusChanges:(CPLLibraryManager *)arg1;
 
 @end

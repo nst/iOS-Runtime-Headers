@@ -5,8 +5,6 @@
 
 @optional
 
-- (void)tracklistItemView:(MusicEntityTracklistItemView *)arg1 didSelectPlayButtonAction:(unsigned int)arg2;
-- (void)tracklistItemViewDidSelectContextualActionsButton:(MusicEntityTracklistItemView *)arg1;
-- (BOOL)tracklistItemViewShouldLayoutAsEditing:(MusicEntityTracklistItemView *)arg1;
+- (bool)tracklistItemViewShouldLayoutAsEditing:(MusicEntityTracklistItemView *)arg1;
 
 @end

@@ -5,34 +5,35 @@
 
 @required
 
-- (void)cameraConnection:(CCCameraConnection *)arg1 takePhotoWithCountdown:(unsigned int)arg2;
+- (void)cameraConnection:(CCCameraConnection *)arg1 takePhotoWithCountdown:(unsigned long long)arg2;
 
 @optional
 
-- (void)cameraConnection:(CCCameraConnection *)arg1 setFlashMode:(int)arg2;
-- (void)cameraConnection:(CCCameraConnection *)arg1 setFocusPoint:(struct CGPoint { float x1; float x2; })arg2;
-- (void)cameraConnection:(CCCameraConnection *)arg1 setHDRMode:(int)arg2;
-- (void)cameraConnection:(CCCameraConnection *)arg1 setIrisMode:(int)arg2;
-- (unsigned int)cameraConnection:(CCCameraConnection *)arg1 setMode:(unsigned int)arg2 interruptCapture:(BOOL)arg3;
-- (void)cameraConnection:(CCCameraConnection *)arg1 setZoomAmount:(float)arg2;
-- (BOOL)cameraConnectionBeginBurstCapture:(CCCameraConnection *)arg1;
-- (void)cameraConnectionBeginVideo:(CCCameraConnection *)arg1;
-- (BOOL)cameraConnectionBurstSupport:(CCCameraConnection *)arg1;
+- (bool)cameraConnection:(CCCameraConnection *)arg1 setCaptureMode:(long long)arg2;
+- (void)cameraConnection:(CCCameraConnection *)arg1 setFlashMode:(long long)arg2;
+- (void)cameraConnection:(CCCameraConnection *)arg1 setFocusPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (void)cameraConnection:(CCCameraConnection *)arg1 setHDRMode:(long long)arg2;
+- (void)cameraConnection:(CCCameraConnection *)arg1 setIrisMode:(long long)arg2;
+- (void)cameraConnection:(CCCameraConnection *)arg1 setZoomAmount:(double)arg2;
+- (bool)cameraConnectionBeginBurstCapture:(CCCameraConnection *)arg1;
+- (bool)cameraConnectionBurstSupport:(CCCameraConnection *)arg1;
 - (void)cameraConnectionCancelCountdown:(CCCameraConnection *)arg1;
-- (BOOL)cameraConnectionEndBurstCapture:(CCCameraConnection *)arg1;
-- (void)cameraConnectionEndVideo:(CCCameraConnection *)arg1;
-- (int)cameraConnectionFlashMode:(CCCameraConnection *)arg1;
-- (int)cameraConnectionFlashSupport:(CCCameraConnection *)arg1;
-- (int)cameraConnectionHDRMode:(CCCameraConnection *)arg1;
-- (int)cameraConnectionHDRSupport:(CCCameraConnection *)arg1;
-- (int)cameraConnectionIrisMode:(CCCameraConnection *)arg1;
-- (int)cameraConnectionIrisSupport:(CCCameraConnection *)arg1;
-- (unsigned int)cameraConnectionMode:(CCCameraConnection *)arg1;
-- (int)cameraConnectionOrientation:(CCCameraConnection *)arg1;
-- (unsigned int)cameraConnectionSupportedModes:(CCCameraConnection *)arg1;
+- (long long)cameraConnectionCaptureMode:(CCCameraConnection *)arg1;
+- (bool)cameraConnectionEndBurstCapture:(CCCameraConnection *)arg1;
+- (long long)cameraConnectionFlashMode:(CCCameraConnection *)arg1;
+- (long long)cameraConnectionFlashSupport:(CCCameraConnection *)arg1;
+- (long long)cameraConnectionHDRMode:(CCCameraConnection *)arg1;
+- (long long)cameraConnectionHDRSupport:(CCCameraConnection *)arg1;
+- (long long)cameraConnectionIrisMode:(CCCameraConnection *)arg1;
+- (long long)cameraConnectionIrisSupport:(CCCameraConnection *)arg1;
+- (bool)cameraConnectionIsShowingLivePreview:(CCCameraConnection *)arg1;
+- (long long)cameraConnectionOrientation:(CCCameraConnection *)arg1;
+- (bool)cameraConnectionStartCapture:(CCCameraConnection *)arg1;
+- (bool)cameraConnectionStopCapture:(CCCameraConnection *)arg1;
+- (NSArray *)cameraConnectionSupportedCaptureModes:(CCCameraConnection *)arg1;
 - (void)cameraConnectionToggleCameraDevice:(CCCameraConnection *)arg1;
-- (BOOL)cameraConnectionToggleCameraDeviceSupport:(CCCameraConnection *)arg1;
-- (float)cameraConnectionZoomAmount:(CCCameraConnection *)arg1;
-- (BOOL)cameraConnectionZoomSupport:(CCCameraConnection *)arg1;
+- (bool)cameraConnectionToggleCameraDeviceSupport:(CCCameraConnection *)arg1;
+- (double)cameraConnectionZoomAmount:(CCCameraConnection *)arg1;
+- (bool)cameraConnectionZoomSupport:(CCCameraConnection *)arg1;
 
 @end

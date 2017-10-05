@@ -5,10 +5,10 @@
 @interface MPMediaLibraryAlbumAppData : NSObject {
     NSDictionary * _appDataDict;
     NSMutableDictionary * _dirtyPopularityDict;
-    int  _version;
+    long long  _version;
 }
 
-@property (nonatomic, readonly) int version;
+@property (nonatomic, readonly) long long version;
 
 - (void).cxx_destruct;
 - (id)createAppDataDictionary;
@@ -18,6 +18,6 @@
 - (void)setSongPopularity:(id)arg1 forIdentifierSet:(id)arg2;
 - (id)songPopularityForAdamID:(long long)arg1;
 - (id)songPopularityForIdentifiers:(id)arg1;
-- (int)version;
+- (long long)version;
 
 @end

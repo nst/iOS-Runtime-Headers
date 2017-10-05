@@ -9,34 +9,37 @@
     NSString * _labelLanguage;
     NSString * _labelText;
     unsigned int  _minZoom;
+    PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic, readonly) BOOL hasLabelLanguage;
-@property (nonatomic, readonly) BOOL hasLabelText;
-@property (nonatomic) BOOL hasMinZoom;
+@property (nonatomic, readonly) bool hasLabelLanguage;
+@property (nonatomic, readonly) bool hasLabelText;
+@property (nonatomic) bool hasMinZoom;
 @property (nonatomic, retain) NSString *labelLanguage;
 @property (nonatomic, retain) NSString *labelText;
 @property (nonatomic) unsigned int minZoom;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLabelLanguage;
-- (BOOL)hasLabelText;
-- (BOOL)hasMinZoom;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasLabelLanguage;
+- (bool)hasLabelText;
+- (bool)hasMinZoom;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)labelLanguage;
 - (id)labelText;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)minZoom;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasMinZoom:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasMinZoom:(bool)arg1;
 - (void)setLabelLanguage:(id)arg1;
 - (void)setLabelText:(id)arg1;
 - (void)setMinZoom:(unsigned int)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

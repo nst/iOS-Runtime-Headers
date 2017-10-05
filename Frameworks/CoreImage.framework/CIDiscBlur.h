@@ -3,15 +3,15 @@
  */
 
 @interface CIDiscBlur : CIFilter {
+    NSMutableArray * _recipe;
     CIImage * inputImage;
     NSNumber * inputRadius;
 }
 
 + (id)customAttributes;
 
-- (id)_CICombine_results;
+- (void)dealloc;
 - (id)outputImage;
-- (id)outputImageEnhanced;
-- (id)outputImageOriginal;
+- (void)setValue:(id)arg1 forKey:(id)arg2;
 
 @end

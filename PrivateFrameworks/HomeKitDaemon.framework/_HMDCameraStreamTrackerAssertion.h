@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface _HMDCameraStreamTrackerAssertion : NSObject {
+@interface _HMDCameraStreamTrackerAssertion : HMFObject {
     HMDCameraSessionID * _streamSessionID;
     HMDCameraStreamTracker * _streamTracker;
 }

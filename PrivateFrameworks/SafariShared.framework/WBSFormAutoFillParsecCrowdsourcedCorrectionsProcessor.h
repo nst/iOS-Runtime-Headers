@@ -5,6 +5,8 @@
 @interface WBSFormAutoFillParsecCrowdsourcedCorrectionsProcessor : NSObject
 
 + (id)_correctionsSchema;
++ (id)_schemaWithExpectedClass:(Class)arg1 errorCode:(long long)arg2 isOptional:(bool)arg3;
++ (id)test_correctionsSchema;
 
 - (id)_correctionsStore;
 - (void)getLastCorrectionsRetrievalURLStringWithResultHandler:(id /* block */)arg1;

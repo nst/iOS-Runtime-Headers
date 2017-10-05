@@ -3,7 +3,7 @@
  */
 
 @interface BLTPBAppearance : PBCodable <NSCopying> {
-    BOOL  _destructive;
+    bool  _destructive;
     struct { 
         unsigned int destructive : 1; 
     }  _has;
@@ -11,10 +11,10 @@
     NSString * _title;
 }
 
-@property (nonatomic) BOOL destructive;
-@property (nonatomic) BOOL hasDestructive;
-@property (nonatomic, readonly) BOOL hasImage;
-@property (nonatomic, readonly) BOOL hasTitle;
+@property (nonatomic) bool destructive;
+@property (nonatomic) bool hasDestructive;
+@property (nonatomic, readonly) bool hasImage;
+@property (nonatomic, readonly) bool hasTitle;
 @property (nonatomic, retain) BLTPBImage *image;
 @property (nonatomic, retain) NSString *title;
 
@@ -23,18 +23,18 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)description;
-- (BOOL)destructive;
+- (bool)destructive;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDestructive;
-- (BOOL)hasImage;
-- (BOOL)hasTitle;
-- (unsigned int)hash;
+- (bool)hasDestructive;
+- (bool)hasImage;
+- (bool)hasTitle;
+- (unsigned long long)hash;
 - (id)image;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setDestructive:(BOOL)arg1;
-- (void)setHasDestructive:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setDestructive:(bool)arg1;
+- (void)setHasDestructive:(bool)arg1;
 - (void)setImage:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;

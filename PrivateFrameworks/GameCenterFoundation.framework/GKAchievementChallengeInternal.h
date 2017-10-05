@@ -16,6 +16,6 @@
 - (id)serverRepresentationForReceivingPlayer:(id)arg1;
 - (void)setAchievement:(id)arg1;
 - (id)titleText;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

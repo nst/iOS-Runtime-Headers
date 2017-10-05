@@ -9,13 +9,13 @@
     NSArray * _contentItemsChangedIndexPaths;
     NSArray * _deletedIndexPaths;
     NSIndexSet * _deletedSections;
-    BOOL  _hasIncrementalChanges;
-    BOOL  _hasMoves;
+    bool  _hasIncrementalChanges;
+    bool  _hasMoves;
     NSArray * _insertedIndexPaths;
     NSIndexSet * _insertedSections;
-    BOOL  _prepared;
+    bool  _prepared;
     PXSectionedDataSourceChangeDetails * _sectionedDataSourceChangeDetails;
-    int  _shiftingSectionLocation;
+    long long  _shiftingSectionLocation;
 }
 
 @property (nonatomic, readonly) NSArray *changedItemsIndexPaths;
@@ -23,8 +23,8 @@
 @property (nonatomic, readonly) NSArray *contentItemsChangedIndexPaths;
 @property (nonatomic, readonly) NSArray *deletedItemsIndexPaths;
 @property (nonatomic, readonly) NSIndexSet *deletedSections;
-@property (nonatomic, readonly) BOOL hasIncrementalChanges;
-@property (nonatomic, readonly) BOOL hasMoves;
+@property (nonatomic, readonly) bool hasIncrementalChanges;
+@property (nonatomic, readonly) bool hasMoves;
 @property (nonatomic, readonly) NSArray *insertedItemsIndexPaths;
 @property (nonatomic, readonly) NSIndexSet *insertedSections;
 @property (nonatomic, readonly) PXSectionedDataSourceChangeDetails *sectionedDataSourceChangeDetails;
@@ -39,9 +39,9 @@
 - (id)deletedSections;
 - (id)description;
 - (void)enumerateMovedIndexPathsUsingBlock:(id /* block */)arg1;
-- (BOOL)hasIncrementalChanges;
-- (BOOL)hasMoves;
-- (id)initWithSectionedDataSourceChangeDetails:(id)arg1 shiftedSection:(int)arg2;
+- (bool)hasIncrementalChanges;
+- (bool)hasMoves;
+- (id)initWithSectionedDataSourceChangeDetails:(id)arg1 shiftedSection:(long long)arg2;
 - (id)insertedItemsIndexPaths;
 - (id)insertedSections;
 - (void)prepareIfNeeded;

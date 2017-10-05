@@ -3,14 +3,14 @@
  */
 
 @interface IKDOMLSException : IKJSObject <IKDOMLSException> {
-    int  code;
+    long long  code;
 }
 
-@property (nonatomic) int code;
+@property (nonatomic) long long code;
 
-+ (id)exceptionWithAppContext:(id)arg1 code:(int)arg2;
++ (id)exceptionWithAppContext:(id)arg1 code:(long long)arg2;
 
-- (int)code;
-- (void)setCode:(int)arg1;
+- (long long)code;
+- (void)setCode:(long long)arg1;
 
 @end

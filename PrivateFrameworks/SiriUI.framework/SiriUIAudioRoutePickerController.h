@@ -4,9 +4,9 @@
 
 @interface SiriUIAudioRoutePickerController : NSObject {
     NSString * _audioCategory;
-    BOOL  _bluetoothIsPicked;
+    bool  _bluetoothIsPicked;
     <SiriUIAudioRoutePickerControllerDelegate> * _delegate;
-    BOOL  _hasRoutesToPick;
+    bool  _hasRoutesToPick;
     SiriRoutePickerAlertController * _pickerAlertController;
     UIWindow * _window;
 }
@@ -14,27 +14,27 @@
 @property (nonatomic) <SiriUIAudioRoutePickerControllerDelegate> *delegate;
 @property (nonatomic, retain) SiriRoutePickerAlertController *pickerAlertController;
 
-+ (id)_nameForRouteInfo:(id)arg1 isSelected:(BOOL*)arg2 isBluetooth:(BOOL*)arg3 isOverride:(BOOL*)arg4 audioRouteName:(id*)arg5;
++ (id)_nameForRouteInfo:(id)arg1 isSelected:(bool*)arg2 isBluetooth:(bool*)arg3 isOverride:(bool*)arg4 audioRouteName:(id*)arg5;
 
 - (void).cxx_destruct;
-- (void)_dismissAlertController:(BOOL)arg1;
+- (void)_dismissAlertController:(bool)arg1;
 - (void)_fetchPickableRoutesForCategory:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_pickableRoutesChanged:(id)arg1;
 - (void)_removeWindow;
 - (void)_routeChanged:(id)arg1;
 - (void)_selectRouteWithInfo:(id)arg1;
-- (void)_showAlertControllerFromViewController:(id)arg1 animated:(BOOL)arg2;
-- (BOOL)bluetoothIsPicked;
-- (void)cancelPickerAnimated:(BOOL)arg1;
+- (void)_showAlertControllerFromViewController:(id)arg1 animated:(bool)arg2;
+- (bool)bluetoothIsPicked;
+- (void)cancelPickerAnimated:(bool)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)hasRoutesToPick;
+- (bool)hasRoutesToPick;
 - (id)initWithCategory:(id)arg1 delegate:(id)arg2;
-- (BOOL)isShowingPicker;
+- (bool)isShowingPicker;
 - (id)pickerAlertController;
 - (void)refreshRoutes;
 - (void)setDelegate:(id)arg1;
 - (void)setPickerAlertController:(id)arg1;
-- (void)showPickerFromViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)showPickerFromViewController:(id)arg1 animated:(bool)arg2;
 
 @end

@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@interface BRCTransferStream : NSObject <BRCLifeCycle> {
-    BOOL  _hasReachedCap;
+@interface BRCTransferStream : NSObject <BRCLifeCycle, BRCSuspendable> {
+    bool  _hasReachedCap;
     NSMutableDictionary * _inFlightOpByID;
     unsigned long long  _inFlightSize;
-    BOOL  _isCancelled;
-    BOOL  _isWaitingForTransferBatch;
-    unsigned int  _maxCountOfBatchesInFlight;
+    bool  _isCancelled;
+    bool  _isWaitingForTransferBatch;
+    unsigned long long  _maxCountOfBatchesInFlight;
     int  _multipleItemsInteractiveSchedulingCount;
     long long  _nextFire;
     BRCDeadlineSource * _schedulingSource;
@@ -21,10 +21,10 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) unsigned long long inFlightSize;
-@property (nonatomic, readonly) BOOL isCancelled;
-@property (nonatomic) unsigned int maxCountOfBatchesInFlight;
+@property (nonatomic, readonly) bool isCancelled;
+@property (nonatomic) unsigned long long maxCountOfBatchesInFlight;
 @property (readonly) NSArray *operations;
 @property (nonatomic, copy) id /* block */ streamDidBecomeReadyToTransferRecords;
 @property (readonly) Class superclass;
@@ -33,8 +33,8 @@
 - (void)_addBatchOperation:(id)arg1;
 - (void)_evaluateCap;
 - (void)_schedule;
-- (void)_scheduleOneBatchWithQoS:(int)arg1;
-- (void)_setReachedCap:(BOOL)arg1;
+- (void)_scheduleOneBatchWithQoS:(long long)arg1;
+- (void)_setReachedCap:(bool)arg1;
 - (void)addAliasItem:(id)arg1 toTransferWithID:(id)arg2 operationID:(id)arg3;
 - (void)addBatchOperation:(id)arg1;
 - (void)cancel;
@@ -44,12 +44,12 @@
 - (void)forceSchedulingPendingInteractiveTransfers;
 - (unsigned long long)inFlightSize;
 - (id)initWithSyncContext:(id)arg1 name:(id)arg2 scheduler:(id)arg3;
-- (BOOL)isCancelled;
-- (unsigned int)maxCountOfBatchesInFlight;
+- (bool)isCancelled;
+- (unsigned long long)maxCountOfBatchesInFlight;
 - (id)operations;
 - (double)progressForTransferID:(id)arg1 operationID:(id)arg2;
 - (void)resume;
-- (void)setMaxCountOfBatchesInFlight:(unsigned int)arg1;
+- (void)setMaxCountOfBatchesInFlight:(unsigned long long)arg1;
 - (void)setStreamDidBecomeReadyToTransferRecords:(id /* block */)arg1;
 - (void)signal;
 - (void)signalWithDeadline:(long long)arg1;

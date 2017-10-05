@@ -18,7 +18,7 @@
 - (void).cxx_destruct;
 - (id)document;
 - (void)mergeVersion:(unsigned int)arg1 fromData:(id)arg2;
-- (unsigned int)mergeWithIdentifierOrderedSetVersionedDocument:(id)arg1;
+- (unsigned long long)mergeWithIdentifierOrderedSetVersionedDocument:(id)arg1;
 - (id)orderedSet;
 - (id)replica;
 - (id)serializeCurrentVersion:(unsigned int*)arg1;

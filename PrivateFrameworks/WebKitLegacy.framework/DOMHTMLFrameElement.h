@@ -14,7 +14,7 @@
 @property (copy) NSString *marginHeight;
 @property (copy) NSString *marginWidth;
 @property (copy) NSString *name;
-@property BOOL noResize;
+@property bool noResize;
 @property (copy) NSString *scrolling;
 @property (copy) NSString *src;
 @property (readonly) int width;
@@ -29,7 +29,7 @@
 - (id)marginHeight;
 - (id)marginWidth;
 - (id)name;
-- (BOOL)noResize;
+- (bool)noResize;
 - (id)scrolling;
 - (void)setFrameBorder:(id)arg1;
 - (void)setLocation:(id)arg1;
@@ -37,7 +37,7 @@
 - (void)setMarginHeight:(id)arg1;
 - (void)setMarginWidth:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setNoResize:(BOOL)arg1;
+- (void)setNoResize:(bool)arg1;
 - (void)setScrolling:(id)arg1;
 - (void)setSrc:(id)arg1;
 - (id)src;

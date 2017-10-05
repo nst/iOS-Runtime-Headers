@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIFallbackPresentationWindow : UIWindow
+@interface _UIFallbackPresentationWindow : UIApplicationRotationFollowingWindow
 
-+ (BOOL)_isSystemWindow;
++ (bool)_isSystemWindow;
 
-- (BOOL)_canAffectStatusBarAppearance;
-- (BOOL)_includeInDefaultImageSnapshot;
+- (bool)_canAffectStatusBarAppearance;
+- (bool)_includeInDefaultImageSnapshot;
 
 @end

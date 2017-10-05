@@ -16,25 +16,25 @@
 }
 
 @property (readonly) NSExpression *contextExpression;
-@property (getter=isCountOnlyRequest, readonly) BOOL countOnlyRequest;
+@property (getter=isCountOnlyRequest, readonly) bool countOnlyRequest;
 @property (readonly) NSExpression *requestExpression;
 
-+ (id)expressionForFetch:(id)arg1 context:(id)arg2 countOnly:(BOOL)arg3;
++ (id)expressionForFetch:(id)arg1 context:(id)arg2 countOnly:(bool)arg3;
 
 - (id)_expressionWithSubstitutionVariables:(id)arg1;
-- (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
+- (void)acceptVisitor:(id)arg1 flags:(unsigned long long)arg2;
 - (id)contextExpression;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)expressionType;
+- (unsigned long long)expressionType;
 - (id)expressionValueWithObject:(id)arg1 context:(id)arg2;
-- (unsigned int)hash;
-- (id)initForFetch:(id)arg1 context:(id)arg2 countOnly:(BOOL)arg3;
+- (unsigned long long)hash;
+- (id)initForFetch:(id)arg1 context:(id)arg2 countOnly:(bool)arg3;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isCountOnlyRequest;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isCountOnlyRequest;
+- (bool)isEqual:(id)arg1;
 - (id)predicateFormat;
 - (id)requestExpression;
 

@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) NSString *filename;
 
-+ (BOOL)enabled;
++ (bool)enabled;
 
 - (void).cxx_destruct;
 - (void)_ensureCustomLogFile;

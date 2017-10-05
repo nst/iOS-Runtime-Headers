@@ -6,11 +6,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedManager;
 
+- (void)cardViewDidAppear:(id)arg1;
 - (void)cardViewDidDisappear:(id)arg1;
 - (void)didAppendLateSections:(id)arg1;
 - (void)didClearInput:(id)arg1;

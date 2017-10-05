@@ -52,7 +52,7 @@
 - (void)setViewport:(id)arg1;
 - (id)toBookmark;
 - (id /* block */)updateHeadlinesCompletionHandler;
-- (BOOL)validateOperation;
+- (bool)validateOperation;
 - (id)viewport;
 
 @end

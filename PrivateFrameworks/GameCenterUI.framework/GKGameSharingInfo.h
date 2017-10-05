@@ -3,7 +3,7 @@
  */
 
 @interface GKGameSharingInfo : NSObject {
-    BOOL  _complete;
+    bool  _complete;
     NSString * _developerName;
     NSString * _emailBody;
     NSString * _emailSubject;
@@ -13,7 +13,7 @@
     NSURL * _viewItemURL;
 }
 
-@property (nonatomic) BOOL complete;
+@property (nonatomic) bool complete;
 @property (nonatomic, retain) NSString *developerName;
 @property (nonatomic, retain) NSString *emailBody;
 @property (nonatomic, retain) NSString *emailSubject;
@@ -22,7 +22,7 @@
 @property (nonatomic, retain) NSURL *shortViewItemURL;
 @property (nonatomic, retain) NSURL *viewItemURL;
 
-- (BOOL)complete;
+- (bool)complete;
 - (void)dealloc;
 - (id)developerName;
 - (id)emailBody;
@@ -32,7 +32,7 @@
 - (id)initWithGame:(id)arg1;
 - (id)itemsForActivityType:(id)arg1;
 - (id)operationThatBlocksUntilLoaded;
-- (void)setComplete:(BOOL)arg1;
+- (void)setComplete:(bool)arg1;
 - (void)setDeveloperName:(id)arg1;
 - (void)setEmailBody:(id)arg1;
 - (void)setEmailSubject:(id)arg1;

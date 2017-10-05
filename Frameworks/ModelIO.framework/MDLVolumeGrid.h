@@ -15,7 +15,7 @@
 - (id)initWithAsset:(id)arg1 divisions:(int)arg2;
 - (id)initWithAsset:(id)arg1 divisions:(int)arg2 interiorWidth:(float)arg3 exteriorWidth:(float)arg4 patchRadius:(float)arg5;
 - (id)initWithObject:(id)arg1 divisions:(int)arg2;
-- (id)meshWithStyle:(unsigned int)arg1;
-- (unsigned int*)trianglesIntersectingRayWithOrigin:(void *)arg1 direction:(void *)arg2 count:(void *)arg3; // needs 3 arg types, found 1: unsigned int*
+- (id)meshWithStyle:(unsigned long long)arg1;
+- (unsigned long long*)trianglesIntersectingRayWithOrigin:(void *)arg1 direction:(void *)arg2 count:(void *)arg3; // needs 3 arg types, found 1: unsigned long long*
 
 @end

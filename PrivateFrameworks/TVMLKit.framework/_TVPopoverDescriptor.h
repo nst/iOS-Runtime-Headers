@@ -8,21 +8,21 @@
     IKViewElement * _popoverElement;
     NSArray * _popoverEntries;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _popoverSize;
     UIColor * _tintColor;
     NSString * _title;
-    unsigned int  _type;
+    unsigned long long  _type;
 }
 
 @property (nonatomic, readonly) IKViewElement *buttonElement;
 @property (nonatomic, readonly) IKViewElement *popoverElement;
 @property (nonatomic, readonly, copy) NSArray *popoverEntries;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } popoverSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } popoverSize;
 @property (nonatomic, readonly) UIColor *tintColor;
 @property (nonatomic, readonly, copy) NSString *title;
-@property (nonatomic, readonly) unsigned int type;
+@property (nonatomic, readonly) unsigned long long type;
 
 - (void).cxx_destruct;
 - (id)_init;
@@ -32,9 +32,9 @@
 - (id)initWithViewElement:(id)arg1;
 - (id)popoverElement;
 - (id)popoverEntries;
-- (struct CGSize { float x1; float x2; })popoverSize;
+- (struct CGSize { double x1; double x2; })popoverSize;
 - (id)tintColor;
 - (id)title;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

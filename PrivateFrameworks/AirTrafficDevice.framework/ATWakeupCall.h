@@ -6,18 +6,18 @@
     NSNetServiceBrowser * _browser;
     id /* block */  _completion;
     NSMutableArray * _hostLibraryIdentifiers;
-    unsigned int  _hostsToResolve;
+    unsigned long long  _hostsToResolve;
     NSMutableArray * _resolvedLibraryIdentifiers;
     NSMutableArray * _resolvedLibraryServices;
     int  _resolving;
     NSMutableArray * _resolvingHosts;
-    BOOL  _searching;
+    bool  _searching;
     NSThread * _wakeThread;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (void)sendWakeupCall:(id)arg1;
@@ -27,9 +27,9 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)netService:(id)arg1 didNotResolve:(id)arg2;
-- (void)netServiceBrowser:(id)arg1 didFindService:(id)arg2 moreComing:(BOOL)arg3;
+- (void)netServiceBrowser:(id)arg1 didFindService:(id)arg2 moreComing:(bool)arg3;
 - (void)netServiceBrowser:(id)arg1 didNotSearch:(id)arg2;
-- (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(BOOL)arg3;
+- (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(bool)arg3;
 - (void)netServiceBrowserDidStopSearch:(id)arg1;
 - (void)netServiceDidResolveAddress:(id)arg1;
 - (void)stop;

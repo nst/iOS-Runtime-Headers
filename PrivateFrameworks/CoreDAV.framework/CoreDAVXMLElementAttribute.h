@@ -12,7 +12,7 @@
 @property (nonatomic, retain) NSString *nameSpace;
 @property (nonatomic, retain) NSString *value;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 - (id)initWithNameSpace:(id)arg1 name:(id)arg2 value:(id)arg3;

@@ -4,7 +4,7 @@
 
 @interface AKDoodleAnnotationEventHandler : AKRectangularAnnotationEventHandler
 
-- (BOOL)alwaysLockAspectRatio;
-- (struct CGSize { float x1; float x2; })naturalSizeForAnnotation;
+- (bool)alwaysLockAspectRatio;
+- (struct CGSize { double x1; double x2; })naturalSizeForAnnotation;
 
 @end

@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)createReplacementForMissingObject:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
@@ -19,25 +19,25 @@
 + (int)styleTypeForNodeName:(const char *)arg1;
 
 - (void)dealloc;
-- (BOOL)hasValueForBoolProperty:(int)arg1 value:(BOOL*)arg2;
-- (BOOL)hasValueForBoolProperty:(int)arg1 value:(BOOL*)arg2 wasOverriddenWithNull:(BOOL*)arg3;
-- (BOOL)hasValueForDoubleProperty:(int)arg1 value:(double*)arg2;
-- (BOOL)hasValueForDoubleProperty:(int)arg1 value:(double*)arg2 wasOverriddenWithNull:(BOOL*)arg3;
-- (BOOL)hasValueForFloatProperty:(int)arg1 value:(float*)arg2;
-- (BOOL)hasValueForFloatProperty:(int)arg1 value:(float*)arg2 wasOverriddenWithNull:(BOOL*)arg3;
-- (BOOL)hasValueForIntProperty:(int)arg1 value:(int*)arg2;
-- (BOOL)hasValueForIntProperty:(int)arg1 value:(int*)arg2 wasOverriddenWithNull:(BOOL*)arg3;
-- (BOOL)hasValueForObjectProperty:(int)arg1 value:(id*)arg2;
-- (BOOL)hasValueForObjectProperty:(int)arg1 value:(id*)arg2 wasOverriddenWithNull:(BOOL*)arg3;
-- (BOOL)overridesBoolProperty:(int)arg1 value:(BOOL*)arg2;
-- (BOOL)overridesDoubleProperty:(int)arg1 value:(double*)arg2;
-- (BOOL)overridesFloatProperty:(int)arg1 value:(float*)arg2;
-- (BOOL)overridesIntProperty:(int)arg1 value:(int*)arg2;
-- (BOOL)overridesObjectProperty:(int)arg1 value:(id*)arg2;
+- (bool)hasValueForBoolProperty:(int)arg1 value:(bool*)arg2;
+- (bool)hasValueForBoolProperty:(int)arg1 value:(bool*)arg2 wasOverriddenWithNull:(bool*)arg3;
+- (bool)hasValueForDoubleProperty:(int)arg1 value:(double*)arg2;
+- (bool)hasValueForDoubleProperty:(int)arg1 value:(double*)arg2 wasOverriddenWithNull:(bool*)arg3;
+- (bool)hasValueForFloatProperty:(int)arg1 value:(float*)arg2;
+- (bool)hasValueForFloatProperty:(int)arg1 value:(float*)arg2 wasOverriddenWithNull:(bool*)arg3;
+- (bool)hasValueForIntProperty:(int)arg1 value:(int*)arg2;
+- (bool)hasValueForIntProperty:(int)arg1 value:(int*)arg2 wasOverriddenWithNull:(bool*)arg3;
+- (bool)hasValueForObjectProperty:(int)arg1 value:(id*)arg2;
+- (bool)hasValueForObjectProperty:(int)arg1 value:(id*)arg2 wasOverriddenWithNull:(bool*)arg3;
+- (bool)overridesBoolProperty:(int)arg1 value:(bool*)arg2;
+- (bool)overridesDoubleProperty:(int)arg1 value:(double*)arg2;
+- (bool)overridesFloatProperty:(int)arg1 value:(float*)arg2;
+- (bool)overridesIntProperty:(int)arg1 value:(int*)arg2;
+- (bool)overridesObjectProperty:(int)arg1 value:(id*)arg2;
 - (id)parent;
 - (void)setParent:(id)arg1;
 - (void)setPropertyMap:(struct GQDSMap { }*)arg1;
-- (BOOL)valueForBoolProperty:(int)arg1;
+- (bool)valueForBoolProperty:(int)arg1;
 - (double)valueForDoubleProperty:(int)arg1;
 - (float)valueForFloatProperty:(int)arg1;
 - (int)valueForIntProperty:(int)arg1;

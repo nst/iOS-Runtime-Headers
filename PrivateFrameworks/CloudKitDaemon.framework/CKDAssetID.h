@@ -19,9 +19,9 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)fileSignature;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithRecordID:(id)arg1 fileSignature:(id)arg2 referenceSignature:(id)arg3 size:(id)arg4;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)recordID;
 - (id)referenceSignature;
 - (id)size;

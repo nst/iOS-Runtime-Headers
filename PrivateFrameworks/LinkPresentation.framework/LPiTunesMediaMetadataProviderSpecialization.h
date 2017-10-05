@@ -4,30 +4,31 @@
 
 @interface LPiTunesMediaMetadataProviderSpecialization : LPMetadataProviderSpecialization {
     NSMutableSet * _assetsStillResolving;
-    BOOL  _canceled;
+    bool  _canceled;
     NSString * _identifier;
     LPiTunesMediaLookupTask * _lookupTask;
+    NSMutableArray * _pendingResolvers;
     LPSpecializationMetadata * _resolvedMetadata;
     NSURLSession * _session;
     NSString * _storefrontCountryCode;
-    NSString * _storefrontIdentifier;
-    int  _type;
     <LPiTunesMediaUnresolvedMetadata> * _unresolvedMetadata;
 }
 
 + (id)assetArrayFromScreenshotArray:(id)arg1;
 + (id)assetArrayFromScreenshotDictionary:(id)arg1 usingPreferredPlatformArray:(id)arg2;
 + (id)assetArrayScreenshotArray:(id)arg1;
-+ (int)determineOrientationOfScreenshotsInArray:(id)arg1;
++ (long long)determineOrientationOfScreenshotsInArray:(id)arg1;
 + (id)extractOffers:(id)arg1;
++ (id)specializedMetadataProviderForMetadata:(id)arg1 URL:(id)arg2;
 + (id)specializedMetadataProviderForURL:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)cancel;
+- (void)completed;
 - (void)done;
 - (void)fail;
-- (id)initWithIdentifier:(id)arg1 type:(int)arg2 storefrontCountryCode:(id)arg3 forURL:(id)arg4;
-- (id)processResponseDictionary:(id)arg1;
+- (id)initWithIdentifier:(id)arg1 storefrontCountryCode:(id)arg2 forURL:(id)arg3;
+- (id)processResponseDictionary:(id)arg1 withStorefrontIdentifier:(id)arg2;
 - (void)resolve;
 - (id)schema;
 - (void)start;

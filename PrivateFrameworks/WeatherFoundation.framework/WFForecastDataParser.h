@@ -8,8 +8,8 @@
 + (id)componentsForCurrentForecast;
 + (id)componentsForDailyForecasts;
 + (id)componentsForHourlyForecasts;
-+ (unsigned int)expectedDailyForecastCount;
-+ (unsigned int)expectedHourlyForecastCount;
++ (unsigned long long)expectedDailyForecastCount;
++ (unsigned long long)expectedHourlyForecastCount;
 
 - (id)parseForecastData:(id)arg1 date:(id)arg2 error:(id*)arg3;
 - (id)stringFromKeyPath:(id)arg1;

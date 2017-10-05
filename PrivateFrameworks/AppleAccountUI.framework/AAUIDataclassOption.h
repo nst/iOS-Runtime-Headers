@@ -3,22 +3,22 @@
  */
 
 @interface AAUIDataclassOption : NSObject <NSCoding, NSSecureCoding> {
-    BOOL  _editable;
-    BOOL  _enabled;
+    bool  _editable;
+    bool  _enabled;
 }
 
-@property (getter=isEditable, nonatomic) BOOL editable;
-@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (getter=isEditable, nonatomic) bool editable;
+@property (getter=isEnabled, nonatomic) bool enabled;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithActions:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEditable;
-- (BOOL)isEnabled;
-- (void)setEditable:(BOOL)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (bool)isEditable;
+- (bool)isEnabled;
+- (void)setEditable:(bool)arg1;
+- (void)setEnabled:(bool)arg1;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface TSPObjectSerializationEncoder : NSObject <TSPEncoder> {
     NSObject<OS_dispatch_queue> * _accessQueue;
-    BOOL  _alwaysDefragmentData;
+    bool  _alwaysDefragmentData;
     struct ObjectSerializationDirectory { 
         int (**_vptr$MessageLite)(); 
         struct UnknownFieldSet { 
@@ -22,14 +22,14 @@
     NSObject<OS_dispatch_data> * _encodedData;
     NSError * _error;
     NSObject<OS_dispatch_queue> * _ioQueue;
-    BOOL  _isFinished;
+    bool  _isFinished;
     TSPMemoryComponentWriteChannel * _metadataWriteChannel;
     TSPMemoryComponentWriteChannel * _rootComponentWriteChannel;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id).cxx_construct;
@@ -37,7 +37,7 @@
 - (void)appendData:(id)arg1 completion:(id /* block */)arg2;
 - (void)finishEncodingWithCompletion:(id /* block */)arg1;
 - (id)init;
-- (id)initWithAlwaysDefragmentData:(BOOL)arg1;
+- (id)initWithAlwaysDefragmentData:(bool)arg1;
 - (id)newMetadataComponentWriteChannel;
 - (id)newRootObjectComponentWriteChannel;
 

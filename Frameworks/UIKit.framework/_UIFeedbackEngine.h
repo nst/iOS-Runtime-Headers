@@ -3,26 +3,26 @@
  */
 
 @interface _UIFeedbackEngine : NSObject {
-    unsigned int  _backgroundTaskIdentifier;
+    unsigned long long  _backgroundTaskIdentifier;
     NSMutableDictionary * _completionBlocks;
-    unsigned int  _numberOfClients;
-    int  _prewarmCount;
-    int  _state;
-    BOOL  _suspended;
-    int  _suspensionState;
+    unsigned long long  _numberOfClients;
+    long long  _prewarmCount;
+    long long  _state;
+    bool  _suspended;
+    long long  _suspensionState;
     NSTimer * _suspensionTimer;
 }
 
 @property (nonatomic, readonly) NSString *_stats_key;
-@property (getter=_backgroundTaskIdentifier, setter=_setBackgroundTaskIdentifier:, nonatomic) unsigned int backgroundTaskIdentifier;
+@property (getter=_backgroundTaskIdentifier, setter=_setBackgroundTaskIdentifier:, nonatomic) unsigned long long backgroundTaskIdentifier;
 @property (nonatomic, readonly) double currentTime;
-@property (nonatomic, readonly) unsigned int numberOfClients;
-@property (nonatomic) int prewarmCount;
-@property (getter=_state, setter=_setState:, nonatomic) int state;
-@property (getter=_isSuspended, setter=_setSuspended:, nonatomic) BOOL suspended;
-@property (getter=_suspensionState, nonatomic, readonly) int suspensionState;
+@property (nonatomic, readonly) unsigned long long numberOfClients;
+@property (nonatomic) long long prewarmCount;
+@property (getter=_state, setter=_setState:, nonatomic) long long state;
+@property (getter=_isSuspended, setter=_setSuspended:, nonatomic) bool suspended;
+@property (getter=_suspensionState, nonatomic, readonly) long long suspensionState;
 
-+ (BOOL)_supportsPlayingFeedback:(id)arg1;
++ (bool)_supportsPlayingFeedback:(id)arg1;
 + (id)engineForFeedback:(id)arg1;
 + (id)sharedEngine;
 
@@ -36,50 +36,50 @@
 - (void)_applicationDidResume:(id)arg1;
 - (void)_applicationWillResignActive:(id)arg1;
 - (void)_applicationWillSuspend:(id)arg1;
-- (unsigned int)_backgroundTaskIdentifier;
-- (BOOL)_canPlayFeedback:(id)arg1;
+- (unsigned long long)_backgroundTaskIdentifier;
+- (bool)_canPlayFeedback:(id)arg1;
 - (void)_cooldown;
 - (void)_cooldownEngineIfPossible;
-- (BOOL)_cooldownUnderlyingPlayerIfPossible;
+- (bool)_cooldownUnderlyingPlayerIfPossible;
 - (void)_deactivate;
 - (void)_deactivateEngineIfPossible;
 - (void)_dequeueReusableFeedbackPlayerWithCompletionBlock:(id /* block */)arg1;
 - (void)_hostDidEnterBackground:(id)arg1;
 - (void)_hostWillEnterForeground:(id)arg1;
-- (BOOL)_isSuspended;
+- (bool)_isSuspended;
 - (id)_outOfChannelsCountStatistics;
-- (void)_performAtState:(int)arg1 block:(id /* block */)arg2;
+- (void)_performAtState:(long long)arg1 block:(id /* block */)arg2;
 - (id)_prewarmCountStatistics;
 - (id)_prewarmDurationStatistics;
 - (void)_prewarmEngine;
 - (void)_prewarmUnderlyingPlayerWithCompletion:(id /* block */)arg1;
 - (void)_prewarmWithCompletionBlock:(id /* block */)arg1;
 - (void)_removeViewControllerWillDisconnect:(id)arg1;
-- (void)_serviceBlocksForState:(int)arg1 withSuccess:(BOOL)arg2;
-- (void)_setBackgroundTaskIdentifier:(unsigned int)arg1;
-- (void)_setState:(int)arg1;
-- (void)_setSuspended:(BOOL)arg1;
+- (void)_serviceBlocksForState:(long long)arg1 withSuccess:(bool)arg2;
+- (void)_setBackgroundTaskIdentifier:(unsigned long long)arg1;
+- (void)_setState:(long long)arg1;
+- (void)_setSuspended:(bool)arg1;
 - (void)_setupBackgroundTask;
-- (void)_startPreparingToUseFeedbacks:(id)arg1;
-- (int)_state;
+- (void)_startWarmingFeedbacks:(id)arg1;
+- (long long)_state;
 - (id)_statsSuffix;
 - (id)_stats_key;
 - (void)_stats_outOfChannels;
-- (void)_stats_stateDidChangeFrom:(int)arg1 to:(int)arg2;
-- (void)_stopPreparingToUseFeedbacks:(id)arg1;
+- (void)_stats_stateDidChangeFrom:(long long)arg1 to:(long long)arg2;
+- (void)_stopWarmingFeedbacks:(id)arg1;
 - (void)_suspendEngineNow;
-- (int)_suspensionState;
+- (long long)_suspensionState;
 - (void)_teardownBackgroundTask;
-- (BOOL)_teardownUnderlyingPlayerIfPossible;
+- (bool)_teardownUnderlyingPlayerIfPossible;
 - (void)_updateSuspension;
 - (void)_willCancelFeedback:(id)arg1;
 - (void)_willPlayFeedback:(id)arg1 atTime:(double)arg2;
 - (double)currentTime;
 - (id)description;
 - (id)init;
-- (unsigned int)numberOfClients;
-- (int)prewarmCount;
+- (unsigned long long)numberOfClients;
+- (long long)prewarmCount;
 - (void)runWhenReady:(id /* block */)arg1;
-- (void)setPrewarmCount:(int)arg1;
+- (void)setPrewarmCount:(long long)arg1;
 
 @end

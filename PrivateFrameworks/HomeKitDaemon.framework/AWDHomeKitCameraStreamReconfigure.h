@@ -7,13 +7,13 @@
         unsigned int reconfigurationTimestamp : 1; 
         unsigned int resolution : 1; 
     }  _has;
-    unsigned long long  _reconfigurationTimestamp;
+    unsigned int  _reconfigurationTimestamp;
     int  _resolution;
 }
 
-@property (nonatomic) BOOL hasReconfigurationTimestamp;
-@property (nonatomic) BOOL hasResolution;
-@property (nonatomic) unsigned long long reconfigurationTimestamp;
+@property (nonatomic) bool hasReconfigurationTimestamp;
+@property (nonatomic) bool hasResolution;
+@property (nonatomic) unsigned int reconfigurationTimestamp;
 @property (nonatomic) int resolution;
 
 - (int)StringAsResolution:(id)arg1;
@@ -21,18 +21,18 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasReconfigurationTimestamp;
-- (BOOL)hasResolution;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasReconfigurationTimestamp;
+- (bool)hasResolution;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (unsigned long long)reconfigurationTimestamp;
+- (bool)readFrom:(id)arg1;
+- (unsigned int)reconfigurationTimestamp;
 - (int)resolution;
 - (id)resolutionAsString:(int)arg1;
-- (void)setHasReconfigurationTimestamp:(BOOL)arg1;
-- (void)setHasResolution:(BOOL)arg1;
-- (void)setReconfigurationTimestamp:(unsigned long long)arg1;
+- (void)setHasReconfigurationTimestamp:(bool)arg1;
+- (void)setHasResolution:(bool)arg1;
+- (void)setReconfigurationTimestamp:(unsigned int)arg1;
 - (void)setResolution:(int)arg1;
 - (void)writeTo:(id)arg1;
 

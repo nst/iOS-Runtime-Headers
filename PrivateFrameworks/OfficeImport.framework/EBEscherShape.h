@@ -5,7 +5,7 @@
 @interface EBEscherShape : ESDObject {
     CHDChart * mChart;
     NSData * mChartData;
-    BOOL  mShowLegend;
+    bool  mShowLegend;
 }
 
 - (id)chart;
@@ -13,7 +13,7 @@
 - (void)dealloc;
 - (void)setChart:(id)arg1;
 - (void)setChartData:(id)arg1;
-- (void)setShowLegend:(BOOL)arg1;
-- (BOOL)showLegend;
+- (void)setShowLegend:(bool)arg1;
+- (bool)showLegend;
 
 @end

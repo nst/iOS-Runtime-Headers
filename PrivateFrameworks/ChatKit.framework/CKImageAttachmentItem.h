@@ -3,32 +3,31 @@
  */
 
 @interface CKImageAttachmentItem : CKAttachmentItem {
-    BOOL  _backgroundEnqueued;
+    bool  _backgroundEnqueued;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _imageSize;
-    BOOL  _useDefaultSize;
+    bool  _useDefaultSize;
 }
 
-@property (nonatomic) BOOL backgroundEnqueued;
-@property struct CGSize { float x1; float x2; } imageSize;
-@property (nonatomic, retain) NSString *transferGUID;
-@property (nonatomic) BOOL useDefaultSize;
+@property (nonatomic) bool backgroundEnqueued;
+@property struct CGSize { double x1; double x2; } imageSize;
+@property (nonatomic) bool useDefaultSize;
 
 + (id)UTITypes;
 
-- (struct CGSize { float x1; float x2; })_calculateImageSize;
+- (struct CGSize { double x1; double x2; })_calculateImageSize;
 - (id)_newImageData;
-- (BOOL)backgroundEnqueued;
+- (bool)backgroundEnqueued;
 - (void)generatePreviewWithCompletion:(id /* block */)arg1;
 - (id)imageData;
-- (struct CGSize { float x1; float x2; })imageSize;
-- (void)setBackgroundEnqueued:(BOOL)arg1;
-- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setUseDefaultSize:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { double x1; double x2; })imageSize;
+- (void)setBackgroundEnqueued:(bool)arg1;
+- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setUseDefaultSize:(bool)arg1;
+- (struct CGSize { double x1; double x2; })size;
 - (void)startDeferredSetup;
-- (BOOL)useDefaultSize;
+- (bool)useDefaultSize;
 
 @end

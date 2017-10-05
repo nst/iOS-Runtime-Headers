@@ -10,7 +10,7 @@
     _CDContextualKeyPath * _duetKeyPath;
     _CDContextualChangeRegistration * _duetRegistration;
     int  _logLevel;
-    BOOL  _sunriseSunsetNotificationEnabled;
+    bool  _sunriseSunsetNotificationEnabled;
 }
 
 @property int logLevel;

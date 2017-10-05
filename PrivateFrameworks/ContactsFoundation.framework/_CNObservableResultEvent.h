@@ -9,11 +9,11 @@
 - (void).cxx_destruct;
 - (void)dematerializeWithObserver:(id)arg1;
 - (id)error;
-- (unsigned int)eventType;
-- (BOOL)hasValue;
-- (unsigned int)hash;
+- (unsigned long long)eventType;
+- (bool)hasValue;
+- (unsigned long long)hash;
 - (id)initWithResult:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)value;
 
 @end

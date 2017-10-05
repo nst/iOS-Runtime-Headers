@@ -4,29 +4,25 @@
 
 @interface VMVoicemailTranscriptionController : NSObject {
     SFSpeechRecognizer * _recognizer;
-    VMVoicemailSanitizeTranscriptionDatabaseOperation * _sanitizeOperation;
+    VMVoicemailTranscriptionSanitizeDatabaseOperation * _sanitizeOperation;
     NSOperationQueue * _transcriptionQueue;
 }
 
-@property (nonatomic, retain) SFSpeechRecognizer *recognizer;
-@property (nonatomic, retain) VMVoicemailSanitizeTranscriptionDatabaseOperation *sanitizeOperation;
-@property (nonatomic, retain) NSOperationQueue *transcriptionQueue;
-
-+ (id)sharedTranscriptionController;
+@property (nonatomic, readonly) SFSpeechRecognizer *recognizer;
+@property (nonatomic, retain) VMVoicemailTranscriptionSanitizeDatabaseOperation *sanitizeOperation;
+@property (nonatomic, readonly) NSOperationQueue *transcriptionQueue;
 
 - (void).cxx_destruct;
-- (void)_afPrefsChanged:(id)arg1;
 - (void)_setupRecognizer;
 - (void)cancelQueuedTranscriptions;
-- (void)enqueueTranscriptionOperationWithURL:(id)arg1 andHandler:(id /* block */)arg2 priority:(int)arg3 timeout:(double)arg4;
+- (void)dealloc;
+- (void)enqueueTranscriptionOperationWithURL:(id)arg1 andHandler:(id /* block */)arg2 priority:(long long)arg3 timeout:(double)arg4;
 - (id)init;
 - (id)recognizer;
 - (void)reportDictationProblemForFileAtURL:(id)arg1;
-- (void)retrieveDictationResultForFileAtURL:(id)arg1 withCompletionHandler:(id /* block */)arg2 priority:(int)arg3 timeout:(double)arg4;
+- (void)retrieveDictationResultForFileAtURL:(id)arg1 withCompletionHandler:(id /* block */)arg2 priority:(long long)arg3 timeout:(double)arg4;
 - (id)sanitizeOperation;
-- (void)setRecognizer:(id)arg1;
 - (void)setSanitizeOperation:(id)arg1;
-- (void)setTranscriptionQueue:(id)arg1;
 - (void)startDatabaseSanitizationTask;
 - (id)transcriptionQueue;
 

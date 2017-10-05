@@ -3,24 +3,24 @@
  */
 
 @interface NRDeviceDiffType : NSObject <NSCopying, NSSecureCoding> {
-    unsigned int  _changeType;
+    unsigned long long  _changeType;
     NRDeviceDiff * _diff;
 }
 
-@property (nonatomic, readonly) unsigned int changeType;
+@property (nonatomic, readonly) unsigned long long changeType;
 @property (nonatomic, readonly) NRDeviceDiff *diff;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (unsigned int)changeType;
+- (unsigned long long)changeType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)diff;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDiff:(id)arg1 andChangeType:(unsigned int)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithDiff:(id)arg1 andChangeType:(unsigned long long)arg2;
+- (bool)isEqual:(id)arg1;
 
 @end

@@ -4,10 +4,10 @@
 
 @interface SKUIStackItemView : SKUIViewReuseView <SKUIViewElementView> {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _contentInset;
     NSMapTable * _imageViewToImageResourceCacheKey;
     NSArray * _imageViews;
@@ -16,44 +16,44 @@
     SKUIStackItemViewElement * _viewElement;
 }
 
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInset;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMapTable *imageViewToImageResourceCacheKey;
 @property (nonatomic, copy) NSArray *imageViews;
 @property (nonatomic, retain) SKUIViewElementLayoutContext *lastContext;
-@property (nonatomic, readonly) unsigned int numberOfLines;
+@property (nonatomic, readonly) unsigned long long numberOfLines;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) SKUIAttributedStringView *textView;
 @property (nonatomic, retain) SKUIStackItemViewElement *viewElement;
 
 + (id)_attributedStringForLabel:(id)arg1 context:(id)arg2;
-+ (id)_textViewLayoutWithWidth:(float)arg1 string:(id)arg2;
-+ (struct CGSize { float x1; float x2; })preferredSizeForViewElement:(id)arg1 context:(id)arg2;
-+ (BOOL)prefetchResourcesForViewElement:(id)arg1 reason:(int)arg2 context:(id)arg3;
-+ (void)requestLayoutForViewElement:(id)arg1 width:(float)arg2 context:(id)arg3;
-+ (struct CGSize { float x1; float x2; })sizeThatFitsWidth:(float)arg1 viewElement:(id)arg2 context:(id)arg3;
-+ (struct CGSize { float x1; float x2; })sizeThatFitsWidth:(float)arg1 viewElement:(id)arg2 context:(id)arg3 numberOfLines:(unsigned int*)arg4;
++ (id)_textViewLayoutWithWidth:(double)arg1 string:(id)arg2;
++ (struct CGSize { double x1; double x2; })preferredSizeForViewElement:(id)arg1 context:(id)arg2;
++ (bool)prefetchResourcesForViewElement:(id)arg1 reason:(long long)arg2 context:(id)arg3;
++ (void)requestLayoutForViewElement:(id)arg1 width:(double)arg2 context:(id)arg3;
++ (struct CGSize { double x1; double x2; })sizeThatFitsWidth:(double)arg1 viewElement:(id)arg2 context:(id)arg3;
++ (struct CGSize { double x1; double x2; })sizeThatFitsWidth:(double)arg1 viewElement:(id)arg2 context:(id)arg3 numberOfLines:(unsigned long long*)arg4;
 
 - (void).cxx_destruct;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
 - (id)imageViewToImageResourceCacheKey;
 - (id)imageViews;
 - (id)lastContext;
 - (void)layoutSubviews;
-- (unsigned int)numberOfLines;
-- (void)reloadWithViewElement:(id)arg1 width:(float)arg2 context:(id)arg3;
-- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (BOOL)setImage:(id)arg1 forArtworkRequest:(id)arg2 context:(id)arg3;
+- (unsigned long long)numberOfLines;
+- (void)reloadWithViewElement:(id)arg1 width:(double)arg2 context:(id)arg3;
+- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (bool)setImage:(id)arg1 forArtworkRequest:(id)arg2 context:(id)arg3;
 - (void)setImageViewToImageResourceCacheKey:(id)arg1;
 - (void)setImageViews:(id)arg1;
 - (void)setLastContext:(id)arg1;
 - (void)setTextView:(id)arg1;
 - (void)setViewElement:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)textView;
-- (BOOL)updateWithItemState:(id)arg1 context:(id)arg2 animated:(BOOL)arg3;
+- (bool)updateWithItemState:(id)arg1 context:(id)arg2 animated:(bool)arg3;
 - (id)viewElement;
 - (id)viewForElementIdentifier:(id)arg1;
 

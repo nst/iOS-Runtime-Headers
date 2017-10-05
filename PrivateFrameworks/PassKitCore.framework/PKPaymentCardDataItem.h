@@ -7,15 +7,16 @@
 @property (nonatomic, readonly) CNContact *billingAddress;
 @property (nonatomic, readonly) PKPaymentPass *pass;
 @property (nonatomic, readonly) PKPaymentApplication *paymentApplication;
-@property (nonatomic, readonly) BOOL requiresBillingAddress;
+@property (nonatomic, readonly) bool requiresBillingAddress;
 
-+ (int)dataType;
++ (long long)dataType;
 
 - (id)billingAddress;
-- (BOOL)isValidWithError:(id*)arg1;
+- (id)errors;
+- (bool)isValidWithError:(id*)arg1;
 - (id)pass;
 - (id)paymentApplication;
-- (BOOL)requiresBillingAddress;
-- (int)status;
+- (bool)requiresBillingAddress;
+- (long long)status;
 
 @end

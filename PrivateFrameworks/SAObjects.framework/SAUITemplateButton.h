@@ -5,7 +5,6 @@
 @interface SAUITemplateButton : SAUITemplateBaseItem
 
 @property (nonatomic, copy) NSArray *commands;
-@property (nonatomic, copy) NSString *text;
 
 + (id)button;
 + (id)buttonWithDictionary:(id)arg1 context:(id)arg2;
@@ -14,7 +13,5 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (void)setCommands:(id)arg1;
-- (void)setText:(id)arg1;
-- (id)text;
 
 @end

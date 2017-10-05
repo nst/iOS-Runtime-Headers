@@ -5,13 +5,13 @@
 @interface CATRemoteTransport : CATTransport <CATRemoteConnectionDelegate> {
     <CATRemoteTransportDelegate> * _remoteTransportDelegate;
     CATRemoteConnection * mConnection;
-    BOOL  mConnectionHasOpened;
+    bool  mConnectionHasOpened;
     NSMutableDictionary * mOperationByUUID;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) struct __SecTrust { }*peerTrust;
 @property (nonatomic) <CATRemoteTransportDelegate> *remoteTransportDelegate;
 @property (readonly) Class superclass;
@@ -31,11 +31,13 @@
 - (id)init;
 - (id)initWithRemoteConnection:(id)arg1;
 - (void)invalidateConnection;
+- (id)name;
 - (id)operationToSendMessage:(id)arg1;
 - (struct __SecTrust { }*)peerTrust;
 - (id)remoteTransportDelegate;
 - (void)remoteTransportSendMessageOperation:(id)arg1 sendData:(id)arg2;
 - (void)resumeConnection;
+- (void)setName:(id)arg1;
 - (void)setRemoteTransportDelegate:(id)arg1;
 - (void)suspendConnection;
 

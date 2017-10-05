@@ -16,7 +16,7 @@
 - (id)challenge;
 - (id)credential;
 - (void)dealloc;
-- (void)handleButtonSelected:(int)arg1 withResponseDictionary:(id)arg2;
+- (void)handleButtonSelected:(long long)arg1 withResponseDictionary:(id)arg2;
 - (void)run;
 - (void)setChallenge:(id)arg1;
 - (void)setCredential:(id)arg1;

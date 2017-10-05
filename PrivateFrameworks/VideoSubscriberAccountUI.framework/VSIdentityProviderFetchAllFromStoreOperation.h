@@ -2,26 +2,25 @@
    Image: /System/Library/PrivateFrameworks/VideoSubscriberAccountUI.framework/VideoSubscriberAccountUI
  */
 
-@interface VSIdentityProviderFetchAllFromStoreOperation : VSAsyncOperation <VSIdentityProviderFetchAllResult> {
-    VSStoreRequestOperation * _requestOperation;
+@interface VSIdentityProviderFetchAllFromStoreOperation : VSAsyncOperation {
+    VSAuditToken * _auditToken;
+    NSOperationQueue * _privateQueue;
     VSOptional * _result;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, retain) VSStoreRequestOperation *requestOperation;
+@property (nonatomic, copy) VSAuditToken *auditToken;
+@property (nonatomic, retain) NSOperationQueue *privateQueue;
 @property (nonatomic, retain) VSOptional *result;
-@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_handleResult:(id)arg1;
+- (id)auditToken;
 - (void)cancel;
 - (void)executionDidBegin;
 - (id)init;
-- (id)requestOperation;
+- (id)privateQueue;
 - (id)result;
-- (void)setRequestOperation:(id)arg1;
+- (void)setAuditToken:(id)arg1;
+- (void)setPrivateQueue:(id)arg1;
 - (void)setResult:(id)arg1;
 
 @end

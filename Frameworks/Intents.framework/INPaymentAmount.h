@@ -4,24 +4,25 @@
 
 @interface INPaymentAmount : NSObject <NSCopying, NSSecureCoding> {
     INCurrencyAmount * _amount;
-    int  _amountType;
+    long long  _amountType;
 }
 
 @property (nonatomic, readonly, copy) INCurrencyAmount *amount;
-@property (nonatomic, readonly) int amountType;
+@property (nonatomic, readonly) long long amountType;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)amount;
-- (int)amountType;
+- (long long)amountType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (id)descriptionAtIndent:(unsigned long long)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
-- (id)initWithAmountType:(int)arg1 amount:(id)arg2;
+- (unsigned long long)hash;
+- (id)initWithAmountType:(long long)arg1 amount:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

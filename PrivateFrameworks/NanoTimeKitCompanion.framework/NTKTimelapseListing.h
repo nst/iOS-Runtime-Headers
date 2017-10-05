@@ -6,33 +6,34 @@
     UIImage * _image;
     NSString * _imageName;
     NTKPhotoAnalysis * _photoAnalysis;
-    unsigned int  _theme;
-    NTKVideo * _video;
-    int  _videoIndex;
+    unsigned long long  _theme;
+    CLKVideo * _video;
+    long long  _videoIndex;
     NSString * _videoName;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) UIImage *image;
 @property (nonatomic, readonly) NTKPhotoAnalysis *photoAnalysis;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) unsigned int theme;
-@property (nonatomic, readonly) NTKVideo *video;
-@property (nonatomic, readonly) int videoIndex;
+@property (nonatomic, readonly) unsigned long long theme;
+@property (nonatomic, readonly) CLKVideo *video;
+@property (nonatomic, readonly) long long videoIndex;
 
 - (void).cxx_destruct;
 - (void)_setHasAssets;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)discardAssets;
 - (id)image;
-- (id)initWithTheme:(unsigned int)arg1 videoIndex:(int)arg2 photoAnalysis:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithTheme:(unsigned long long)arg1 videoIndex:(long long)arg2 photoAnalysis:(id)arg3;
+- (bool)isEqual:(id)arg1;
+- (bool)isSimilarTo:(id)arg1;
 - (id)photoAnalysis;
-- (BOOL)snapshotDiffers:(id)arg1;
-- (unsigned int)theme;
+- (bool)snapshotDiffers:(id)arg1;
+- (unsigned long long)theme;
 - (id)video;
-- (int)videoIndex;
+- (long long)videoIndex;
 
 @end

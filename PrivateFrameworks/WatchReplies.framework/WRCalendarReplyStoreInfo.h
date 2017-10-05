@@ -4,6 +4,6 @@
 
 @interface WRCalendarReplyStoreInfo : WRReplyStoreInfo
 
-- (unsigned int)defaultCount;
+- (unsigned long long)defaultCount;
 
 @end

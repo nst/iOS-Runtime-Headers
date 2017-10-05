@@ -4,22 +4,22 @@
 
 @interface CRKUserEditorTableViewController : UITableViewController <CRKSwitchTableViewCellDelegate> {
     <CRKUserEditorTableViewControllerDelegate> * _delegate;
-    BOOL  _showsFamilyNameName;
-    BOOL  _showsPhoneticName;
+    bool  _showsFamilyNameName;
+    bool  _showsPhoneticName;
     CRKUser * _user;
-    int  mMeCardSwitchCellSection;
+    long long  mMeCardSwitchCellSection;
     CRKUser * mMeCardUser;
-    int  mNumberOfSections;
-    BOOL  mUseMeCardUser;
-    int  mUserCellSection;
+    long long  mNumberOfSections;
+    bool  mUseMeCardUser;
+    long long  mUserCellSection;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CRKUserEditorTableViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL showsFamilyNameName;
-@property (nonatomic) BOOL showsPhoneticName;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool showsFamilyNameName;
+@property (nonatomic) bool showsPhoneticName;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) CRKUser *user;
 
@@ -27,19 +27,20 @@
 - (id)delegate;
 - (void)editorTextFieldDidChange:(id)arg1;
 - (id)init;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (void)loadView;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setShowsFamilyNameName:(BOOL)arg1;
-- (void)setShowsPhoneticName:(BOOL)arg1;
+- (void)setShowsFamilyNameName:(bool)arg1;
+- (void)setShowsPhoneticName:(bool)arg1;
 - (void)setUser:(id)arg1;
-- (BOOL)showsFamilyNameName;
-- (BOOL)showsPhoneticName;
+- (bool)showsFamilyNameName;
+- (bool)showsPhoneticName;
 - (void)switchCellValueDidChange:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)updateTableView;
 - (id)user;
 - (void)viewDidLoad;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

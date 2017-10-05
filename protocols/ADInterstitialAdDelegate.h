@@ -11,7 +11,7 @@
 @optional
 
 - (void)interstitialAdActionDidFinish:(ADInterstitialAd *)arg1;
-- (BOOL)interstitialAdActionShouldBegin:(ADInterstitialAd *)arg1 willLeaveApplication:(BOOL)arg2;
+- (bool)interstitialAdActionShouldBegin:(ADInterstitialAd *)arg1 willLeaveApplication:(bool)arg2;
 - (void)interstitialAdDidLoad:(ADInterstitialAd *)arg1;
 - (void)interstitialAdWillLoad:(ADInterstitialAd *)arg1;
 

@@ -3,21 +3,21 @@
  */
 
 @interface PSSearchResultsCell : UITableViewCell {
-    BOOL  _shouldIndentContent;
-    BOOL  _shouldIndentSeparator;
+    bool  _shouldIndentContent;
+    bool  _shouldIndentSeparator;
 }
 
-@property (nonatomic) BOOL shouldIndentContent;
-@property (nonatomic) BOOL shouldIndentSeparator;
+@property (nonatomic) bool shouldIndentContent;
+@property (nonatomic) bool shouldIndentSeparator;
 
 + (id)reuseIdentifier;
 
 - (void)_resetIndentation;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)prepareForReuse;
-- (void)setShouldIndentContent:(BOOL)arg1;
-- (void)setShouldIndentSeparator:(BOOL)arg1;
-- (BOOL)shouldIndentContent;
-- (BOOL)shouldIndentSeparator;
+- (void)setShouldIndentContent:(bool)arg1;
+- (void)setShouldIndentSeparator:(bool)arg1;
+- (bool)shouldIndentContent;
+- (bool)shouldIndentSeparator;
 
 @end

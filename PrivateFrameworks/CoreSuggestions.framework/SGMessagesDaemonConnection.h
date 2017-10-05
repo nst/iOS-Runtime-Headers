@@ -11,7 +11,7 @@
 - (void)connectionInterrupted;
 - (void)dealloc;
 - (void)didSendContextForConversation:(id)arg1;
-- (BOOL)hasContextBeenSentForConversation:(id)arg1;
+- (bool)hasContextBeenSentForConversation:(id)arg1;
 - (id)initWithDaemonConnection:(id)arg1;
 - (id)remoteSuggestionManager;
 - (void)setManagerForTesting:(id)arg1;

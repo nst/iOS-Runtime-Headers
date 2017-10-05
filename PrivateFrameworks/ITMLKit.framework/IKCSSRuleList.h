@@ -8,9 +8,11 @@
 
 - (void).cxx_destruct;
 - (void)addRule:(id)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)description;
+- (id)firstRule;
 - (id)init;
-- (id)ruleAtIndex:(unsigned int)arg1;
+- (id)lastRule;
+- (id)ruleAtIndex:(unsigned long long)arg1;
 
 @end

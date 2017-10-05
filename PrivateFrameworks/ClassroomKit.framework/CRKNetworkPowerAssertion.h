@@ -3,12 +3,12 @@
  */
 
 @interface CRKNetworkPowerAssertion : NSObject {
-    unsigned int  _count;
+    unsigned long long  _count;
     NSString * _name;
     unsigned int  mPowerAssertion;
 }
 
-@property (nonatomic) unsigned int count;
+@property (nonatomic) unsigned long long count;
 @property (nonatomic, readonly, copy) NSString *name;
 
 + (void)decrement;
@@ -16,11 +16,11 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)decrement;
 - (void)increment;
 - (id)init;
 - (id)name;
-- (void)setCount:(unsigned int)arg1;
+- (void)setCount:(unsigned long long)arg1;
 
 @end

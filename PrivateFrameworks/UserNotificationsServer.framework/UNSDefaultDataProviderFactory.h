@@ -13,14 +13,13 @@
     UNSNotificationRepository * _notificationRepository;
     NSMutableArray * _observers;
     NSObject<OS_dispatch_queue> * _queue;
-    NSMutableSet * _registeredBundleIdentifiers;
     BBSettingsGateway * _settingsGateway;
     BBObserver * _settingsObserver;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -34,7 +33,7 @@
 - (void)_queue_createDataProviderWithBundleIdentifier:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_queue_createNewDefaultDataProviders;
 - (id)_queue_dataProviderForBundleIdentifier:(id)arg1;
-- (void)_queue_enableNotifications:(BOOL)arg1 withAuthorizationOptions:(unsigned int)arg2 forBundleIdentifier:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)_queue_enableNotifications:(bool)arg1 withAuthorizationOptions:(unsigned long long)arg2 forBundleIdentifier:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_queue_getAuthorizedBundleIdentifiersForBundleIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_queue_getNotificationSettingsForBundleIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_queue_getSectionInfoForBundleIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -53,7 +52,7 @@
 - (id)initWithApplicationLauncher:(id)arg1 categoryRepository:(id)arg2 notificationRepository:(id)arg3 attachmentsService:(id)arg4;
 - (void)observer:(id)arg1 updateSectionInfo:(id)arg2;
 - (void)removeObserver:(id)arg1;
-- (void)requestAuthorizationWithOptions:(unsigned int)arg1 forBundleIdentifier:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)updateAuthorizationWithOptions:(unsigned int)arg1 forBundleIdentifier:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)requestAuthorizationWithOptions:(unsigned long long)arg1 forBundleIdentifier:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)updateAuthorizationWithOptions:(unsigned long long)arg1 forBundleIdentifier:(id)arg2 completionHandler:(id /* block */)arg3;
 
 @end

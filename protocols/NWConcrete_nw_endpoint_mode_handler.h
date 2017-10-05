@@ -5,7 +5,7 @@
 
 @required
 
-- (void)cancelWithHandler:(NWConcrete_nw_endpoint_handler *)arg1 forced:(BOOL)arg2;
+- (void)cancelWithHandler:(NWConcrete_nw_endpoint_handler *)arg1 forced:(bool)arg2;
 - (void)startWithHandler:(NWConcrete_nw_endpoint_handler *)arg1;
 - (void)updatePathWithHandler:(NWConcrete_nw_endpoint_handler *)arg1;
 

@@ -8,7 +8,7 @@
 
 - (void).cxx_destruct;
 - (void)addQueryFilterPredicate:(id)arg1;
-- (int)handleSelectionOfEntityValueContext:(id)arg1 fromViewController:(id)arg2;
+- (long long)handleSelectionOfEntityValueContext:(id)arg1 fromViewController:(id)arg2;
 - (id)init;
 - (id)loadEntityViewDescriptor;
 

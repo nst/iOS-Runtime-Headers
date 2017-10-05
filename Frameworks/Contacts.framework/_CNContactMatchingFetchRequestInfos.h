@@ -12,7 +12,7 @@
 
 + (id)fetchRequestInfoForPredicate:(id)arg1 properties:(id)arg2;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)predicate;
 - (id)properties;
 - (void)setPredicate:(id)arg1;

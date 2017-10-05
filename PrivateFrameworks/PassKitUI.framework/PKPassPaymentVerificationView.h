@@ -7,14 +7,14 @@
     UIButton * _alternateButton;
     UILabel * _bodyLabel;
     UIView * _bottomRule;
-    UIButton * _button;
+    PKContinuousButton * _button;
     PKPaymentVerificationController * _controller;
     UILabel * _titleLabel;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -29,6 +29,6 @@
 - (void)didChangeVerificationPresentation;
 - (id)initWithPass:(id)arg1 passView:(id)arg2;
 - (void)layoutSubviews;
-- (void)presentVerificationViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)presentVerificationViewController:(id)arg1 animated:(bool)arg2;
 
 @end

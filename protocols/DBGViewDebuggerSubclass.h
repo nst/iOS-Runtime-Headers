@@ -8,12 +8,12 @@
 + (NSArray *)additionalRootLevelViewsToArchive;
 + (NSArray *)appWindows;
 + (NSString *)displayNameForView:(id)arg1;
-+ (BOOL)isViewSubclass:(id)arg1;
-+ (BOOL)isWindowSubclass:(id)arg1;
++ (bool)isViewSubclass:(id)arg1;
++ (bool)isWindowSubclass:(id)arg1;
 + (CALayer *)layerForView:(id)arg1;
 + (id)primaryWindowFromWindows:(NSArray *)arg1;
-+ (float)screenBackingScaleForView:(id)arg1;
-+ (float)screenBackingScaleForWindow:(id)arg1;
++ (double)screenBackingScaleForView:(id)arg1;
++ (double)screenBackingScaleForWindow:(id)arg1;
 + (NSString *)snapshotMethodForView:(id)arg1;
 + (NSData *)snapshotView:(id)arg1 errorString:(id*)arg2;
 + (id)windowContentViewForWindow:(id)arg1;

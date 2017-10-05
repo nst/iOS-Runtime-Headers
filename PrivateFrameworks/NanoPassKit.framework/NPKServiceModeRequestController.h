@@ -3,14 +3,14 @@
  */
 
 @interface NPKServiceModeRequestController : NSObject {
-    BOOL  _serviceModeRequested;
+    bool  _serviceModeRequested;
 }
 
-@property (nonatomic) BOOL serviceModeRequested;
+@property (nonatomic) bool serviceModeRequested;
 
 + (id)sharedServiceModeRequestController;
 
-- (BOOL)serviceModeRequested;
-- (void)setServiceModeRequested:(BOOL)arg1;
+- (bool)serviceModeRequested;
+- (void)setServiceModeRequested:(bool)arg1;
 
 @end

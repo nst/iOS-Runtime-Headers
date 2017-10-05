@@ -6,7 +6,7 @@
 @required
 
 - (UIView *)containerView;
-- (BOOL)isContainedByItem:(id <SearchUIAutoLayoutItem>)arg1;
+- (bool)isContainedByItem:(id <SearchUIAutoLayoutItem>)arg1;
 - (UIView *)view;
 
 @end

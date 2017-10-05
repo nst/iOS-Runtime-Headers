@@ -5,6 +5,6 @@
 @interface MFSearchInAccountWithIDOperation : MFContactsSearchOperation
 
 - (void)main;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

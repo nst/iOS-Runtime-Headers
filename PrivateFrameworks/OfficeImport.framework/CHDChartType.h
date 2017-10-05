@@ -16,7 +16,7 @@
 - (id)axes;
 - (id)axisForClass:(Class)arg1;
 - (id)axisIds;
-- (unsigned int)categoryCount;
+- (unsigned long long)categoryCount;
 - (id)chart;
 - (id)contentFormat;
 - (void)dealloc;
@@ -29,9 +29,10 @@
 - (bool)isPlotedOnSecondaryAxis;
 - (bool)isVaryColors;
 - (id)seriesCollection;
-- (unsigned int)seriesCount;
+- (unsigned long long)seriesCount;
 - (void)setDefaultDataLabel:(id)arg1;
 - (void)setSeriesCollection:(id)arg1;
 - (void)setVaryColors:(bool)arg1;
+- (void)switchAxes:(id)arg1;
 
 @end

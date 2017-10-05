@@ -8,22 +8,22 @@
 }
 
 @property (readonly) NSSet *blamedProcesses;
-@property (readonly) BOOL cacheDirty;
-@property (readonly) BOOL cachedCopy;
+@property (readonly) bool cacheDirty;
+@property (readonly) bool cachedCopy;
 @property (readonly) NSArray *devices;
 @property (readonly) unsigned long long dirtyLength;
 @property (readonly) NSArray *formattedDescriptions;
 @property (readonly) unsigned long long length;
 @property (readonly) NSArray *mappings;
-@property (readonly) unsigned int memoryPool;
+@property (readonly) unsigned long long memoryPool;
 @property (readonly) NSArray *openclObjects;
 @property (readonly) NSArray *openglObjects;
-@property (readonly) BOOL orphaned;
+@property (readonly) bool orphaned;
 @property (readonly) NSSet *processIDs;
-@property (readonly) BOOL purgeable;
+@property (readonly) bool purgeable;
 @property (readonly) unsigned long long residentLength;
 @property (readonly) unsigned int surfaceID;
-@property (readonly) BOOL wired;
+@property (readonly) bool wired;
 
 + (void)collectAllocationTotalsWithOptions:(id)arg1 queue:(id)arg2 completionBlock:(id /* block */)arg3;
 + (void)collectDataWithCompletionQueue:(id)arg1 completionBlock:(id /* block */)arg2;
@@ -34,8 +34,8 @@
 
 - (id)blamedProcesses;
 - (id)blamedProcessesForProcess:(int)arg1;
-- (BOOL)cacheDirty;
-- (BOOL)cachedCopy;
+- (bool)cacheDirty;
+- (bool)cachedCopy;
 - (void)dealloc;
 - (id)description;
 - (id)devices;
@@ -44,14 +44,14 @@
 - (id)initWithDictionary:(id)arg1;
 - (unsigned long long)length;
 - (id)mappings;
-- (unsigned int)memoryPool;
+- (unsigned long long)memoryPool;
 - (id)openclObjects;
 - (id)openglObjects;
-- (BOOL)orphaned;
+- (bool)orphaned;
 - (id)processIDs;
-- (BOOL)purgeable;
+- (bool)purgeable;
 - (unsigned long long)residentLength;
 - (unsigned int)surfaceID;
-- (BOOL)wired;
+- (bool)wired;
 
 @end

@@ -14,11 +14,11 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)commandPhraseTagForIndex:(int)arg1;
+- (id)commandPhraseTagForIndex:(long long)arg1;
 - (id)commandTaggingFromRecognitionResult:(id)arg1 activeCommands:(id)arg2;
-- (id)initWithConfiguration:(id)arg1 usage:(long)arg2;
-- (BOOL)isCommandPhraseTag:(id)arg1;
-- (BOOL)isParameterTag:(id)arg1;
-- (id)parameterTagForIndex:(int)arg1;
+- (id)initWithConfiguration:(id)arg1 usage:(long long)arg2;
+- (bool)isCommandPhraseTag:(id)arg1;
+- (bool)isParameterTag:(id)arg1;
+- (id)parameterTagForIndex:(long long)arg1;
 
 @end

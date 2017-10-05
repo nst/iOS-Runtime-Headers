@@ -4,20 +4,23 @@
 
 @interface FigCaptureThermalMonitor : NSObject {
     float  _maxTorchLevel;
-    struct OpaqueFigSimpleMutex { } * _maxTorchLevelLock;
     NSObject<OS_dispatch_queue> * _notificationQueue;
     int  _registrationToken;
-    id /* block */  _torchHandler;
+    id /* block */  _thermalHandler;
+    int  _thermalLevel;
+    struct OpaqueFigSimpleMutex { } * _thermalNotificationLock;
 }
 
 @property (readonly) float maxTorchLevel;
+@property (readonly) int thermalLevel;
 
 + (void)initialize;
 
 - (void)_thermalNotification:(int)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)initWithThermalHandler:(id /* block */)arg1;
 - (float)maxTorchLevel;
+- (void)setThermalHandler:(id /* block */)arg1;
+- (int)thermalLevel;
 
 @end

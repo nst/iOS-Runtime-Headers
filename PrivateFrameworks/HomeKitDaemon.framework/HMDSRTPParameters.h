@@ -12,11 +12,11 @@
 @property (nonatomic, readonly, copy) NSData *srtpMasterKey;
 @property (nonatomic, readonly, copy) NSData *srtpMasterSalt;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_parseFromTLVData;
-- (BOOL)compatibleWithRemoteEndPoint:(id)arg1;
+- (bool)_parseFromTLVData;
+- (bool)compatibleWithRemoteEndPoint:(id)arg1;
 - (void)description:(id)arg1 indent:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

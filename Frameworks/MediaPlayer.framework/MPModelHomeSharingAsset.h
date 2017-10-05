@@ -4,12 +4,12 @@
 
 @interface MPModelHomeSharingAsset : MPModelObject {
     NSURL * _URL;
-    BOOL  _available;
+    bool  _available;
     NSURL * _protectedContentSupportStorageFileURL;
 }
 
 @property (nonatomic, copy) NSURL *URL;
-@property (getter=isAvailable, nonatomic) BOOL available;
+@property (getter=isAvailable, nonatomic) bool available;
 @property (nonatomic, copy) NSURL *protectedContentSupportStorageFileURL;
 
 + (id)__MPModelPropertyHomeSharingAssetAvailable__PROPERTY;
@@ -21,10 +21,10 @@
 
 - (void).cxx_destruct;
 - (id)URL;
-- (id)descriptionWithType:(int)arg1;
-- (BOOL)isAvailable;
+- (id)descriptionWithType:(long long)arg1;
+- (bool)isAvailable;
 - (id)protectedContentSupportStorageFileURL;
-- (void)setAvailable:(BOOL)arg1;
+- (void)setAvailable:(bool)arg1;
 - (void)setProtectedContentSupportStorageFileURL:(id)arg1;
 - (void)setURL:(id)arg1;
 

@@ -4,14 +4,14 @@
 
 @interface HMDCameraMetricsSnapshotLogEvent : HMDCameraMetricsLogEvent <HMDAWDLogEvent> {
     NSNumber * _referenceTimestamp;
-    BOOL  _snapshotForNotification;
+    bool  _snapshotForNotification;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSNumber *referenceTimestamp;
-@property (nonatomic, readonly) BOOL snapshotForNotification;
+@property (nonatomic, readonly) bool snapshotForNotification;
 @property (readonly) Class superclass;
 
 + (void)initialize;
@@ -22,11 +22,11 @@
 - (void)addIDSSession:(id)arg1;
 - (void)addIDSTransfer:(id)arg1;
 - (void)addSnapshotMessaging:(id)arg1;
-- (id)initWithSessionID:(id)arg1 cameraAccessory:(id)arg2 isLocal:(BOOL)arg3 snapshotForNotification:(BOOL)arg4;
+- (id)initWithSessionID:(id)arg1 cameraAccessory:(id)arg2 isLocal:(bool)arg3 snapshotForNotification:(bool)arg4;
 - (id)metricForAWD;
 - (id)referenceTimestamp;
 - (void)setReferenceTimestamp:(id)arg1;
-- (BOOL)snapshotForNotification;
+- (bool)snapshotForNotification;
 - (unsigned int)timeSinceReference:(id)arg1;
 
 @end

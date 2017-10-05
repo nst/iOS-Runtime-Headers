@@ -3,7 +3,7 @@
  */
 
 @interface GEONavigationWalkingMapMatcher : GEONavigationMapMatcher {
-    unsigned int  _numProgressionsOffRoute;
+    unsigned long long  _numProgressionsOffRoute;
 }
 
 - (id)_routeMatcherForRoute:(id)arg1;

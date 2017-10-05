@@ -5,36 +5,36 @@
 @interface TSTSortRuleReferenceTracker : NSObject <TSCEReferenceTrackerDelegate> {
     TSCEReferenceTracker * mReferenceTracker;
     NSMutableSet * mReferences;
-    TSTTableInfo * mTableInfo;
+    TSTInfo * mTableInfo;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (nonatomic) TSTTableInfo *tableInfo;
+@property (nonatomic) TSTInfo *tableInfo;
 
-- (id)cellRangeWasInserted:(struct { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct TSUCellCoord { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg1;
+- (id)cellRangeWasInserted:(const struct TSCERangeRef { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct TSUCellCoord { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_2_1_1; } x2; }*)arg1;
 - (void)dealloc;
 - (void)encodeToArchive:(struct SortRuleReferenceTrackerArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; }*)arg1 archiver:(id)arg2;
 - (id)initFromArchive:(const struct SortRuleReferenceTrackerArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithTableInfo:(id)arg1 context:(id)arg2;
-- (struct __CFUUID { }*)ownerID;
-- (struct TSCECReference { unsigned short x1; union { struct { struct TSUCellCoord { unsigned short x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; } x_1_2_1; struct __CFUUID {} *x_1_2_2; } x_2_1_1; struct { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_4_1; unsigned char x_1_4_2; unsigned char x_1_4_3; } x_1_3_1; struct TSUCellCoord { unsigned short x_2_4_1; unsigned char x_2_4_2; unsigned char x_2_4_3; } x_1_3_2; } x_2_2_1; struct __CFUUID {} *x_2_2_2; } x_2_1_2; struct { struct { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_5_1; unsigned char x_1_5_2; unsigned char x_1_5_3; } x_1_4_1; struct TSUCellCoord { unsigned short x_2_5_1; unsigned char x_2_5_2; unsigned char x_2_5_3; } x_1_4_2; } x_1_3_1; struct __CFUUID {} *x_1_3_2; } x_3_2_1; unsigned char x_3_2_2; } x_2_1_3; struct __CFUUID {} *x_2_1_4; struct { unsigned long long x_5_2_1; unsigned long long x_5_2_2; } x_2_1_5; } x2; })p_cReferenceForColumnIndex:(unsigned char)arg1;
+- (struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; })ownerUID;
 - (unsigned char)p_columnForTrackedReference:(id)arg1;
+- (struct TSCESpanningRangeRef { struct TSCERangeRef { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; } x_1_2_1; struct TSUCellCoord { unsigned short x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; } x_1_2_2; } x_1_1_1; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_3_1[16]; struct { unsigned char x_2_4_1; unsigned char x_2_4_2; unsigned char x_2_4_3; unsigned char x_2_4_4; unsigned char x_2_4_5; unsigned char x_2_4_6; unsigned char x_2_4_7; unsigned char x_2_4_8; unsigned char x_2_4_9; unsigned char x_2_4_10; unsigned char x_2_4_11; unsigned char x_2_4_12; unsigned char x_2_4_13; unsigned char x_2_4_14; unsigned char x_2_4_15; unsigned char x_2_4_16; } x_1_3_2; struct { unsigned long long x_3_4_1; unsigned long long x_3_4_2; } x_1_3_3; } x_2_2_1; } x_1_1_2; } x1; unsigned char x2; })p_referenceForColumnIndex:(unsigned char)arg1;
 - (id)p_ruleReferenceForTrackedReference:(id)arg1;
 - (void)referencedCellWasModified:(id)arg1;
 - (void)registerWithCalculationEngine:(id)arg1;
-- (void)setOwnerID:(struct __CFUUID { }*)arg1;
+- (void)setOwnerUID:(const struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; }*)arg1;
 - (void)setTableInfo:(id)arg1;
-- (BOOL)shouldRewriteOnCellMerge;
-- (BOOL)shouldRewriteOnRangeMove;
-- (BOOL)shouldRewriteOnSort;
-- (BOOL)shouldRewriteOnTableIDReassignment;
-- (BOOL)shouldRewriteOnTectonicShift;
-- (BOOL)shouldRewriteOnTranspose;
+- (bool)shouldRewriteOnCellMerge;
+- (bool)shouldRewriteOnRangeMove;
+- (bool)shouldRewriteOnSort;
+- (bool)shouldRewriteOnTableIDReassignment;
+- (bool)shouldRewriteOnTectonicShift;
+- (bool)shouldRewriteOnTranspose;
 - (id)tableInfo;
-- (void)trackedReferenceWasDeleted:(id)arg1 fromOwnerID:(struct __CFUUID { }*)arg2;
+- (void)trackedReferenceWasDeleted:(id)arg1 fromOwnerUID:(const struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; }*)arg2;
 - (void)unregisterFromCalculationEngine;
 - (void)updateForSortRules:(id)arg1;
 

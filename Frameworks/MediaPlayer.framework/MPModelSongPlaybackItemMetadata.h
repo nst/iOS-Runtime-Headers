@@ -9,6 +9,8 @@
 
 @property (nonatomic, retain) MPModelSong *song;
 
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
 + (id)requiredProperties;
 
 - (void).cxx_destruct;
@@ -16,31 +18,34 @@
 - (id)albumArtistName;
 - (long long)albumStoreAdamID;
 - (id)albumTitle;
-- (BOOL)allowsInitiatingPlayWhileDownload;
+- (bool)allowsInitiatingPlayWhileDownload;
 - (id)artistName;
 - (long long)artistStoreAdamID;
 - (id)artworkCatalogForPlaybackTime:(double)arg1;
 - (id)composerName;
 - (id)contentTitle;
-- (unsigned int)contentType;
+- (unsigned long long)contentType;
 - (id)copyrightText;
 - (double)expectedDuration;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)homeSharingAsset;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isExplicitTrack;
+- (bool)isEqual:(id)arg1;
+- (bool)isExplicitTrack;
 - (id)localFileAsset;
 - (id)mediaItem;
 - (id)modelGenericObject;
-- (id)mqf_playbackItemMetadataModelObject;
 - (id)playbackPosition;
 - (void)setSong:(id)arg1;
-- (BOOL)showComposer;
+- (bool)showComposer;
 - (id)song;
 - (long long)storeAdamID;
 - (id)storeAsset;
 - (unsigned long long)storeSagaID;
 - (long long)storeSubscriptionAdamID;
 - (float)volumeNormalization;
+
+// Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
+
+- (id)mqf_playbackItemMetadataModelObject;
 
 @end

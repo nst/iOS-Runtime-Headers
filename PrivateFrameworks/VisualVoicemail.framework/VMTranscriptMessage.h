@@ -10,8 +10,8 @@
     NSData * _transcriptionData;
 }
 
-@property (nonatomic) BOOL hasProtocolVersion;
-@property (nonatomic, readonly) BOOL hasTranscriptionData;
+@property (nonatomic) bool hasProtocolVersion;
+@property (nonatomic, readonly) bool hasTranscriptionData;
 @property (nonatomic) unsigned int protocolVersion;
 @property (nonatomic, retain) NSData *transcriptionData;
 
@@ -20,14 +20,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasProtocolVersion;
-- (BOOL)hasTranscriptionData;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasProtocolVersion;
+- (bool)hasTranscriptionData;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)protocolVersion;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasProtocolVersion:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasProtocolVersion:(bool)arg1;
 - (void)setProtocolVersion:(unsigned int)arg1;
 - (void)setTranscriptionData:(id)arg1;
 - (id)transcriptionData;

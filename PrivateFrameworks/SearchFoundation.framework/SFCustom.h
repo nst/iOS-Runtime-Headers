@@ -4,7 +4,7 @@
 
 @interface SFCustom : NSObject <NSSecureCoding>
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;

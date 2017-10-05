@@ -20,20 +20,20 @@
 - (id)init;
 - (id)initWithCertificate:(struct __SecCertificate { }*)arg1;
 - (id)initWithCertificateProperties:(id)arg1;
-- (id)initWithStyle:(int)arg1;
+- (id)initWithStyle:(long long)arg1;
 - (id)initWithTrust:(struct __SecTrust { }*)arg1;
 - (id)keyValueSectionTitles;
 - (id)keyValueSections;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)preferredContentSizeChanged:(id)arg1;
 - (void)setCertificateProperties:(id)arg1;
 - (void)setCertificateTrust:(id)arg1;
 - (void)setKeyValueSectionTitles:(id)arg1;
 - (void)setKeyValueSections:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (double)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (void)viewDidLoad;
 
 @end

@@ -3,17 +3,18 @@
  */
 
 @interface AFAudioState : NSObject <NSCopying, NSSecureCoding> {
-    unsigned int  _opaqueSessionID;
+    unsigned int  _audioSessionID;
 }
 
-@property (nonatomic) unsigned int opaqueSessionID;
+@property (nonatomic) unsigned int audioSessionID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
+- (unsigned int)audioSessionID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)opaqueSessionID;
-- (void)setOpaqueSessionID:(unsigned int)arg1;
+- (void)setAudioSessionID:(unsigned int)arg1;
 
 @end

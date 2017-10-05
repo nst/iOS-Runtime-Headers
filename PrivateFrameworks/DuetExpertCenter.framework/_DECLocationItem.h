@@ -16,7 +16,7 @@
     NSURL * _originatingWebsiteURL;
     NSString * _postalCode;
     NSString * _shortValue;
-    BOOL  _shouldAggregate;
+    bool  _shouldAggregate;
     NSString * _subThoroughfare;
     NSString * _thoroughfare;
     NSString * _value;
@@ -35,30 +35,29 @@
 @property (nonatomic, readonly, copy) NSURL *originatingWebsiteURL;
 @property (nonatomic, readonly, copy) NSString *postalCode;
 @property (nonatomic, readonly, copy) NSString *shortValue;
-@property (nonatomic, readonly) BOOL shouldAggregate;
+@property (nonatomic, readonly) bool shouldAggregate;
 @property (nonatomic, readonly, copy) NSString *subThoroughfare;
 @property (nonatomic, readonly, copy) NSString *thoroughfare;
 @property (nonatomic, readonly, copy) NSString *value;
 
-+ (id)locationWithName:(id)arg1 label:(id)arg2 value:(id)arg3 shortValue:(id)arg4 originatingBundleID:(id)arg5 originatingWebsiteURL:(id)arg6 shouldAggregate:(BOOL)arg7 fullFormattedAddress:(id)arg8 thoroughfare:(id)arg9 subThoroughfare:(id)arg10 locality:(id)arg11 administrativeArea:(id)arg12 postalCode:(id)arg13 country:(id)arg14 latitude:(id)arg15 longitude:(id)arg16 mapItemURL:(id)arg17;
-+ (id)locationWithName:(id)arg1 label:(id)arg2 value:(id)arg3 shortValue:(id)arg4 originatingBundleID:(id)arg5 shouldAggregate:(BOOL)arg6;
-+ (id)locationWithName:(id)arg1 label:(id)arg2 value:(id)arg3 shortValue:(id)arg4 originatingBundleID:(id)arg5 shouldAggregate:(BOOL)arg6 fullFormattedAddress:(id)arg7 thoroughfare:(id)arg8 subThoroughfare:(id)arg9 locality:(id)arg10 administrativeArea:(id)arg11 postalCode:(id)arg12 country:(id)arg13 latitude:(id)arg14 longitude:(id)arg15;
-+ (BOOL)supportsSecureCoding;
++ (id)locationWithName:(id)arg1 label:(id)arg2 value:(id)arg3 shortValue:(id)arg4 originatingBundleID:(id)arg5 originatingWebsiteURL:(id)arg6 shouldAggregate:(bool)arg7 fullFormattedAddress:(id)arg8 thoroughfare:(id)arg9 subThoroughfare:(id)arg10 locality:(id)arg11 administrativeArea:(id)arg12 postalCode:(id)arg13 country:(id)arg14 latitude:(id)arg15 longitude:(id)arg16 mapItemURL:(id)arg17;
++ (id)locationWithName:(id)arg1 label:(id)arg2 value:(id)arg3 shortValue:(id)arg4 originatingBundleID:(id)arg5 shouldAggregate:(bool)arg6;
++ (id)locationWithName:(id)arg1 label:(id)arg2 value:(id)arg3 shortValue:(id)arg4 originatingBundleID:(id)arg5 shouldAggregate:(bool)arg6 fullFormattedAddress:(id)arg7 thoroughfare:(id)arg8 subThoroughfare:(id)arg9 locality:(id)arg10 administrativeArea:(id)arg11 postalCode:(id)arg12 country:(id)arg13 latitude:(id)arg14 longitude:(id)arg15;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_isEqualToDECLocationItem:(id)arg1;
+- (bool)_isEqualToDECLocationItem:(id)arg1;
 - (id)administrativeArea;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)country;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fullFormattedAddress;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithName:(id)arg1 label:(id)arg2 value:(id)arg3 shortValue:(id)arg4 originatingBundleID:(id)arg5 originatingWebsiteURL:(id)arg6 shouldAggregate:(BOOL)arg7 fullFormattedAddress:(id)arg8 thoroughfare:(id)arg9 subThoroughfare:(id)arg10 locality:(id)arg11 administrativeArea:(id)arg12 postalCode:(id)arg13 country:(id)arg14 latitude:(id)arg15 longitude:(id)arg16 mapItemURL:(id)arg17;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEquivalent:(id)arg1;
-- (BOOL)isEquivalent:(id)arg1;
+- (id)initWithName:(id)arg1 label:(id)arg2 value:(id)arg3 shortValue:(id)arg4 originatingBundleID:(id)arg5 originatingWebsiteURL:(id)arg6 shouldAggregate:(bool)arg7 fullFormattedAddress:(id)arg8 thoroughfare:(id)arg9 subThoroughfare:(id)arg10 locality:(id)arg11 administrativeArea:(id)arg12 postalCode:(id)arg13 country:(id)arg14 latitude:(id)arg15 longitude:(id)arg16 mapItemURL:(id)arg17;
+- (bool)isEqual:(id)arg1;
+- (bool)isEquivalent:(id)arg1;
 - (id)label;
 - (id)latitude;
 - (id)locality;
@@ -69,7 +68,7 @@
 - (id)originatingWebsiteURL;
 - (id)postalCode;
 - (id)shortValue;
-- (BOOL)shouldAggregate;
+- (bool)shouldAggregate;
 - (id)subThoroughfare;
 - (id)thoroughfare;
 - (id)value;

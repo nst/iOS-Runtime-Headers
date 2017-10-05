@@ -3,61 +3,61 @@
  */
 
 @interface NEVPNProtocolIPSec : NEVPNProtocol {
-    int  _authenticationMethod;
-    BOOL  _extendedAuthPasswordPrompt;
+    long long  _authenticationMethod;
+    bool  _extendedAuthPasswordPrompt;
     NSArray * _legacyExchangeMode;
     NSArray * _legacyProposals;
     NSString * _localIdentifier;
     NSString * _remoteIdentifier;
     NEKeychainItem * _sharedSecretKeychainItem;
     NSData * _sharedSecretReference;
-    BOOL  _useExtendedAuthentication;
+    bool  _useExtendedAuthentication;
 }
 
-@property int authenticationMethod;
-@property BOOL extendedAuthPasswordPrompt;
+@property long long authenticationMethod;
+@property bool extendedAuthPasswordPrompt;
 @property (copy) NSArray *legacyExchangeMode;
 @property (copy) NSArray *legacyProposals;
 @property (copy) NSString *localIdentifier;
 @property (copy) NSString *remoteIdentifier;
 @property (copy) NEKeychainItem *sharedSecretKeychainItem;
 @property (copy) NSData *sharedSecretReference;
-@property BOOL useExtendedAuthentication;
+@property bool useExtendedAuthentication;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (int)authenticationMethod;
-- (BOOL)checkValidityAndCollectErrors:(id)arg1;
+- (long long)authenticationMethod;
+- (bool)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyLegacyDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct __SCNetworkInterface { }*)createInterface;
-- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)extendedAuthPasswordPrompt;
+- (bool)extendedAuthPasswordPrompt;
 - (id)init;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithType:(int)arg1;
+- (id)initWithType:(long long)arg1;
 - (id)legacyExchangeMode;
 - (id)legacyProposals;
 - (id)localIdentifier;
 - (void)migratePasswordsFromPreferences:(struct __SCPreferences { }*)arg1;
-- (BOOL)needToUpdateKeychain;
+- (bool)needToUpdateKeychain;
 - (id)remoteIdentifier;
-- (void)removeKeychainItemsInDomain:(int)arg1 keepIdentity:(bool)arg2;
-- (void)setAuthenticationMethod:(int)arg1;
-- (void)setExtendedAuthPasswordPrompt:(BOOL)arg1;
+- (void)removeKeychainItemsInDomain:(long long)arg1 keepIdentity:(bool)arg2;
+- (void)setAuthenticationMethod:(long long)arg1;
+- (void)setExtendedAuthPasswordPrompt:(bool)arg1;
 - (void)setLegacyExchangeMode:(id)arg1;
 - (void)setLegacyProposals:(id)arg1;
 - (void)setLocalIdentifier:(id)arg1;
 - (void)setRemoteIdentifier:(id)arg1;
 - (void)setSharedSecretKeychainItem:(id)arg1;
 - (void)setSharedSecretReference:(id)arg1;
-- (void)setUseExtendedAuthentication:(BOOL)arg1;
+- (void)setUseExtendedAuthentication:(bool)arg1;
 - (id)sharedSecretKeychainItem;
 - (id)sharedSecretReference;
-- (void)syncWithKeychainInDomain:(int)arg1 configuration:(id)arg2 suffix:(id)arg3;
-- (BOOL)useExtendedAuthentication;
+- (void)syncWithKeychainInDomain:(long long)arg1 configuration:(id)arg2 suffix:(id)arg3;
+- (bool)useExtendedAuthentication;
 
 @end

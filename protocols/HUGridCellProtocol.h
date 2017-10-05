@@ -7,14 +7,14 @@
 
 + (Class)layoutOptionsClass;
 
-- (BOOL)areCellContentsHidden;
+- (bool)areCellContentsHidden;
 - (HUGridCellLayoutOptions *)layoutOptions;
-- (void)setCellContentsHidden:(BOOL)arg1;
+- (void)setCellContentsHidden:(bool)arg1;
 - (void)setLayoutOptions:(HUGridCellLayoutOptions *)arg1;
 
 @optional
 
-- (BOOL)isRearranging;
-- (void)setRearranging:(BOOL)arg1;
+- (bool)isRearranging;
+- (void)setRearranging:(bool)arg1;
 
 @end

@@ -5,17 +5,17 @@
 @interface RadioStationSkipController : NSObject {
     NSObject<OS_dispatch_queue> * _accessSerialQueue;
     NSObject<OS_dispatch_source> * _availableSkipsInvalidationTimer;
-    BOOL  _hasValidNumberOfAvailableSkips;
-    BOOL  _hasValidSkipInvalidationDate;
-    unsigned int  _monitoringCount;
-    int  _numberOfAvailableSkips;
+    bool  _hasValidNumberOfAvailableSkips;
+    bool  _hasValidSkipInvalidationDate;
+    unsigned long long  _monitoringCount;
+    long long  _numberOfAvailableSkips;
     NSDate * _skipInvalidationDate;
     unsigned int  _skipsEnabled;
     RadioStation * _station;
 }
 
-@property (nonatomic, readonly) int numberOfAvailableSkips;
-@property (getter=hasSkipsEnabled, nonatomic, readonly) BOOL skipsEnabled;
+@property (nonatomic, readonly) long long numberOfAvailableSkips;
+@property (getter=hasSkipsEnabled, nonatomic, readonly) bool skipsEnabled;
 @property (nonatomic, readonly) RadioStation *station;
 
 - (void).cxx_destruct;
@@ -27,10 +27,10 @@
 - (void)beginMonitoring;
 - (void)dealloc;
 - (void)endMonitoring;
-- (BOOL)hasSkipsEnabled;
+- (bool)hasSkipsEnabled;
 - (id)initWithStation:(id)arg1;
-- (BOOL)isMonitoring;
-- (int)numberOfAvailableSkips;
+- (bool)isMonitoring;
+- (long long)numberOfAvailableSkips;
 - (id)station;
 
 @end

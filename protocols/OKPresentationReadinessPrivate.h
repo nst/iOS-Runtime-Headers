@@ -6,8 +6,8 @@
 @required
 
 - (void)becomeReady;
-- (void)readinessDidChange:(BOOL)arg1;
+- (void)readinessDidChange:(bool)arg1;
 - (void)resignReady;
-- (BOOL)supportsReadiness;
+- (bool)supportsReadiness;
 
 @end

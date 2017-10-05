@@ -5,25 +5,25 @@
 @interface UIBoxcarFilterPointFIFO : UIPointFIFO {
     _UIPointVector * _prevPoints;
     float  _spacing;
-    unsigned int  _width;
+    unsigned long long  _width;
 }
 
 @property (nonatomic) _UIPointVector *prevPoints;
 @property (nonatomic) float spacing;
-@property (nonatomic) unsigned int width;
+@property (nonatomic) unsigned long long width;
 
 - (void)addPoint;
 - (void)clear;
 - (void)dealloc;
 - (void)emitAveragedPoint;
 - (void)flush;
-- (id)initWithFIFO:(id)arg1 width:(unsigned int)arg2;
-- (id)initWithFIFO:(id)arg1 width:(unsigned int)arg2 spacing:(float)arg3;
+- (id)initWithFIFO:(id)arg1 width:(unsigned long long)arg2;
+- (id)initWithFIFO:(id)arg1 width:(unsigned long long)arg2 spacing:(float)arg3;
 - (id)prevPoints;
 - (void)setPrevPoints:(id)arg1;
 - (void)setSpacing:(float)arg1;
-- (void)setWidth:(unsigned int)arg1;
+- (void)setWidth:(unsigned long long)arg1;
 - (float)spacing;
-- (unsigned int)width;
+- (unsigned long long)width;
 
 @end

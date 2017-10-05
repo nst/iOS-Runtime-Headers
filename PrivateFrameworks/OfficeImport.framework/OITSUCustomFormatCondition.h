@@ -17,8 +17,9 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)data;
 - (void)dealloc;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithType:(int)arg1 value:(double)arg2 data:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

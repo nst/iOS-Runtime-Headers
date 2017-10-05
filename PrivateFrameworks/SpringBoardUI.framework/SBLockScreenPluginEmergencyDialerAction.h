@@ -4,6 +4,6 @@
 
 @interface SBLockScreenPluginEmergencyDialerAction : SBLockScreenPluginAction
 
-- (BOOL)isEmergencyDialerAction;
+- (bool)isEmergencyDialerAction;
 
 @end

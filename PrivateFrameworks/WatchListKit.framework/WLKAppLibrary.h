@@ -5,28 +5,30 @@
 @interface WLKAppLibrary : NSObject <LSApplicationWorkspaceObserverProtocol> {
     NSObject<OS_dispatch_queue> * _accessQueue;
     NSArray * _allAppBundleIdentifiers;
-    BOOL  _appLibraryNeedsRefresh;
-    int  _ignoreAppLibraryChangesCount;
+    bool  _appLibraryNeedsRefresh;
+    NSDictionary * _appProxies;
+    int  _didChangeNotificationToken;
+    long long  _ignoreAppLibraryChangesCount;
     NSArray * _installedAppBundleIdentifiers;
     NSObject<OS_dispatch_queue> * _refreshQueue;
     NSArray * _subscribedAppBundleIdentifiers;
-    NSDictionary * _subscriptionInfoByIdentifier;
-    PSSSSubscriptionManagerInternal * _subscriptionManager;
     NSArray * _testAppBundleIdentifiers;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)defaultAppLibrary;
-+ (id)localizedNameForBundle:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)_bundleIdentifiersfromProxies:(id)arg1;
+- (void)_handleInvalidationWithReason:(id)arg1;
 - (id)_refreshAppLibrary;
 - (void)_subscriptionsDidChangeNotification:(id)arg1;
 - (id)allAppBundleIdentifiers;
+- (id)allAppProxies;
 - (void)applicationsDidInstall:(id)arg1;
 - (void)applicationsDidUninstall:(id)arg1;
 - (void)beginIgnoringAppLibraryChanges;
@@ -35,9 +37,13 @@
 - (void)endIgnoringAppLibraryChanges;
 - (id)init;
 - (id)installedAppBundleIdentifiers;
+- (id)installedAppProxies;
+- (id)localizedNameForBundle:(id)arg1;
 - (id)refresh;
 - (id)subscribedAppBundleIdentifiers;
-- (id)subscriptionInfoByBundleIdentifier;
+- (id)subscribedAppProxies;
+- (id)subscriptionInfoForBundle:(id)arg1;
 - (id)testAppBundleIdentifiers;
+- (id)testAppProxies;
 
 @end

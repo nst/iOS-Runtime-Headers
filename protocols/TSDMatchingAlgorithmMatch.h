@@ -5,10 +5,10 @@
 
 @required
 
-- (int)compareToMatch:(id <TSDMatchingAlgorithmMatch>)arg1;
-- (BOOL)conflictsWithMatch:(id <TSDMatchingAlgorithmMatch>)arg1;
+- (long long)compareToMatch:(id <TSDMatchingAlgorithmMatch>)arg1;
+- (bool)conflictsWithMatch:(id <TSDMatchingAlgorithmMatch>)arg1;
 - (id)incomingMatchObject;
-- (int)matchCost;
+- (long long)matchCost;
 - (id)outgoingMatchObject;
 
 @end

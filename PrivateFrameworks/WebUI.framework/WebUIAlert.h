@@ -9,7 +9,7 @@
     int  _defaultAction;
     int  _hideAction;
     NSArray * _identities;
-    int  _indexOfSelectedIdentity;
+    long long  _indexOfSelectedIdentity;
     int  _otherAction;
     int  _tableAction;
     NSString * _title;
@@ -32,7 +32,7 @@
 
 - (void).cxx_destruct;
 - (id)_buttonTitleForAction:(int)arg1;
-- (int)actionForButtonTag:(int)arg1;
+- (int)actionForButtonTag:(long long)arg1;
 - (id /* block */)actionHandler;
 - (id)bodyText;
 - (id)buttonTitles;
@@ -49,7 +49,7 @@
 - (void)setContext:(id)arg1;
 - (void)setHideAction:(int)arg1;
 - (void)setIdentities:(id)arg1;
-- (void)setSelectedTableItemIndex:(int)arg1;
+- (void)setSelectedTableItemIndex:(long long)arg1;
 - (int)tableAction;
 - (id)title;
 - (id)titles;

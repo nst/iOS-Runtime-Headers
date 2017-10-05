@@ -14,9 +14,9 @@
 @property (retain) NSString *portType;
 @property (retain) NSArray *ttsChannels;
 
+- (void).cxx_destruct;
 - (id)UID;
 - (id)channels;
-- (void)dealloc;
 - (id)portName;
 - (id)portType;
 - (void)setPortName:(id)arg1;

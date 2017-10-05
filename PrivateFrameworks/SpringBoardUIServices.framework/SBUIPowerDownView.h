@@ -16,7 +16,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SBUIPowerDownViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -24,28 +24,28 @@
 - (void)_cancelAutoDismissTimer;
 - (void)_cancelButtonTapped;
 - (void)_idleTimerFired;
-- (BOOL)_isLandscapeAspectRatio;
+- (bool)_isLandscapeAspectRatio;
 - (void)_notifyDelegateCancelled;
 - (void)_notifyDelegatePowerDown;
 - (void)_powerDownSliderDidBeginSlide;
 - (void)_powerDownSliderDidCancelSlide;
 - (void)_powerDownSliderDidCompleteSlide;
-- (void)_powerDownSliderDidUpdateSlideWithValue:(float)arg1;
+- (void)_powerDownSliderDidUpdateSlideWithValue:(double)arg1;
 - (void)_resetAutoDismissTimer;
 - (void)_updateSliderExclusionPath;
 - (void)_willAnimateIn;
 - (void)_willAnimateOut;
-- (void)actionSlider:(id)arg1 didUpdateSlideWithValue:(float)arg2;
+- (void)actionSlider:(id)arg1 didUpdateSlideWithValue:(double)arg2;
 - (void)actionSliderDidBeginSlide:(id)arg1;
 - (void)actionSliderDidCancelSlide:(id)arg1;
 - (void)actionSliderDidCompleteSlide:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)hideAnimated:(BOOL)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 vibrantSettings:(id)arg2;
+- (void)hideAnimated:(bool)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 vibrantSettings:(id)arg2;
 - (void)layoutSubviews;
 - (void)setDelegate:(id)arg1;
-- (void)showAnimated:(BOOL)arg1;
+- (void)showAnimated:(bool)arg1;
 
 @end

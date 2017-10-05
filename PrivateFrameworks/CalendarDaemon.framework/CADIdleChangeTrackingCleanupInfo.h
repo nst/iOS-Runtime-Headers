@@ -14,8 +14,8 @@
 
 - (id)description;
 - (id)initWithLanguishPeriod:(double)arg1 numberOfChanges:(int)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToInfo:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToInfo:(id)arg1;
 - (double)languishPeriod;
 - (int)numberOfChanges;
 - (void)setLanguishPeriod:(double)arg1;

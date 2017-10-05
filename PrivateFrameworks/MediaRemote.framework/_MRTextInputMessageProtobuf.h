@@ -13,9 +13,9 @@
 }
 
 @property (nonatomic) int actionType;
-@property (nonatomic) BOOL hasActionType;
-@property (nonatomic, readonly) BOOL hasText;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasActionType;
+@property (nonatomic, readonly) bool hasText;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic, retain) NSString *text;
 @property (nonatomic) double timestamp;
 
@@ -27,16 +27,16 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasActionType;
-- (BOOL)hasText;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasActionType;
+- (bool)hasText;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setActionType:(int)arg1;
-- (void)setHasActionType:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasActionType:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setText:(id)arg1;
 - (void)setTimestamp:(double)arg1;
 - (id)text;

@@ -5,18 +5,18 @@
 @interface TSCHChartFeatureStackedBar : TSCHChartFeatureBar
 
 - (id)defaultDataFileName;
-- (BOOL)drawValueLabelsForZero;
+- (bool)drawValueLabelsForZero;
 - (id)genericToSpecificPropertyMap;
-- (float)maxDepthRatio;
+- (double)maxDepthRatio;
 - (Class)presetImagerClass;
-- (float)sageMaxDepthRatio;
-- (float)spiceMaxDepthRatio;
+- (double)sageMaxDepthRatio;
+- (double)spiceMaxDepthRatio;
 - (int)stackingSignRule;
 - (id)supportedAxisScales;
-- (BOOL)supportsCategoryAxisSeriesNames;
-- (BOOL)supportsReferenceLines;
-- (BOOL)supportsSeriesLabels;
-- (BOOL)supportsTrendLines;
+- (bool)supportsCategoryAxisSeriesNames;
+- (bool)supportsReferenceLines;
+- (bool)supportsSeriesLabels;
+- (bool)supportsTrendLines;
 - (id)userInterfaceName;
 - (Class)valueAxisClassForID:(id)arg1 scale:(int)arg2;
 

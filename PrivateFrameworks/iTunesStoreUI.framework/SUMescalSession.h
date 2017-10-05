@@ -3,7 +3,7 @@
  */
 
 @interface SUMescalSession : NSObject {
-    BOOL  _complete;
+    bool  _complete;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     struct FairPlayHWInfo_ { 
         unsigned int IDLength; 
@@ -12,16 +12,16 @@
     struct FPSAPContextOpaque_ { } * _session;
 }
 
-@property (getter=isComplete, readonly) BOOL complete;
+@property (getter=isComplete, readonly) bool complete;
 
-- (id)_newDataWithBytes:(char *)arg1 length:(unsigned long)arg2;
+- (id)_newDataWithBytes:(char *)arg1 length:(unsigned int)arg2;
 - (void)_teardownSession;
 - (void)dealloc;
 - (id)exchangeData:(id)arg1 error:(id*)arg2;
 - (id)init;
-- (BOOL)isComplete;
+- (bool)isComplete;
 - (id)primeForAccountCreationWithData:(id)arg1 error:(id*)arg2;
 - (id)signData:(id)arg1 error:(id*)arg2;
-- (BOOL)verifyPrimeSignature:(id)arg1 error:(id*)arg2;
+- (bool)verifyPrimeSignature:(id)arg1 error:(id*)arg2;
 
 @end

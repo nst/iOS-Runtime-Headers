@@ -4,18 +4,18 @@
 
 @interface NSCFError : NSError
 
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (BOOL)allowsWeakReference;
+- (bool)allowsWeakReference;
 - (Class)classForCoder;
-- (int)code;
+- (long long)code;
 - (id)domain;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
-- (BOOL)retainWeakReference;
+- (unsigned long long)retainCount;
+- (bool)retainWeakReference;
 - (id)userInfo;
 
 @end

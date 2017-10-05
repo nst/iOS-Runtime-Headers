@@ -4,63 +4,63 @@
 
 @interface SFCollectionViewLayout : UICollectionViewLayout {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _evaluatedContentSize;
-    float  _evaluatedHorizontalItemOffset;
+    double  _evaluatedHorizontalItemOffset;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _evaluatedInset;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _evaluatedItemSize;
     NSArray * _preparedLayoutAttributes;
     NSArray * _preparedUpdateItems;
 }
 
-@property (nonatomic) struct CGSize { float x1; float x2; } evaluatedContentSize;
-@property (nonatomic) float evaluatedHorizontalItemOffset;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } evaluatedInset;
-@property (nonatomic) struct CGSize { float x1; float x2; } evaluatedItemSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } evaluatedContentSize;
+@property (nonatomic) double evaluatedHorizontalItemOffset;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } evaluatedInset;
+@property (nonatomic) struct CGSize { double x1; double x2; } evaluatedItemSize;
 @property (nonatomic, copy) NSArray *preparedLayoutAttributes;
 @property (nonatomic, copy) NSArray *preparedUpdateItems;
 
 - (void).cxx_destruct;
-- (float)_evaluateHorizontalItemOffsetForItemSize:(struct CGSize { float x1; float x2; })arg1 containerWidth:(float)arg2 inset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_evaluateInsetForSectionAtIndex:(int)arg1;
-- (struct CGSize { float x1; float x2; })_evaluatePreferredItemSizeForItemsAtIndexPaths:(id)arg1;
-- (id)_indexPathsForItemsInSection:(int)arg1;
-- (id)_layoutAttributesForItemAtIndexPath:(id)arg1 numberOfItemsInSection:(unsigned int)arg2;
-- (BOOL)_shouldScrollToContentBeginningInRightToLeft;
-- (void)calculateLayoutValuesForIndexPaths:(id)arg1 containerWidth:(float)arg2;
-- (struct CGSize { float x1; float x2; })collectionViewContentSize;
-- (struct CGSize { float x1; float x2; })evaluatedContentSize;
-- (float)evaluatedHorizontalItemOffset;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })evaluatedInset;
-- (struct CGSize { float x1; float x2; })evaluatedItemSize;
+- (double)_evaluateHorizontalItemOffsetForItemSize:(struct CGSize { double x1; double x2; })arg1 inset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2 containerWidth:(double)arg3 offscreenPeekInFactor:(float)arg4;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_evaluateInsetForSectionAtIndex:(long long)arg1;
+- (struct CGSize { double x1; double x2; })_evaluatePreferredItemSizeForItemsAtIndexPaths:(id)arg1;
+- (id)_indexPathsForItemsInSection:(long long)arg1;
+- (id)_layoutAttributesForItemAtIndexPath:(id)arg1 numberOfItemsInSection:(unsigned long long)arg2;
+- (bool)_shouldScrollToContentBeginningInRightToLeft;
+- (void)calculateLayoutValuesForIndexPaths:(id)arg1 containerWidth:(double)arg2;
+- (struct CGSize { double x1; double x2; })collectionViewContentSize;
+- (struct CGSize { double x1; double x2; })evaluatedContentSize;
+- (double)evaluatedHorizontalItemOffset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })evaluatedInset;
+- (struct CGSize { double x1; double x2; })evaluatedItemSize;
 - (id)finalLayoutAttributesForDisappearingItemAtIndexPath:(id)arg1;
 - (void)finalizeCollectionViewUpdates;
-- (struct CGPoint { float x1; float x2; })firstItemCenterForContainerWidth:(float)arg1;
+- (struct CGPoint { double x1; double x2; })firstItemCenterForContainerWidth:(double)arg1;
 - (id)init;
 - (id)initialLayoutAttributesForAppearingItemAtIndexPath:(id)arg1;
-- (void)invalidateGroupViewLayoutAnimated:(BOOL)arg1;
-- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)invalidateGroupViewLayoutAnimated:(bool)arg1;
+- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (void)prepareForCollectionViewUpdates:(id)arg1;
 - (void)prepareLayout;
 - (id)preparedLayoutAttributes;
 - (id)preparedUpdateItems;
-- (void)setEvaluatedContentSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setEvaluatedHorizontalItemOffset:(float)arg1;
-- (void)setEvaluatedInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setEvaluatedItemSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setEvaluatedContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setEvaluatedHorizontalItemOffset:(double)arg1;
+- (void)setEvaluatedInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setEvaluatedItemSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setPreparedLayoutAttributes:(id)arg1;
 - (void)setPreparedUpdateItems:(id)arg1;
-- (BOOL)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)shouldReverseLayoutDirection;
+- (bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)shouldReverseLayoutDirection;
 
 @end

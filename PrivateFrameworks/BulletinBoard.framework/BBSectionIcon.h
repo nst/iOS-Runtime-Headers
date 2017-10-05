@@ -8,17 +8,17 @@
 
 @property (nonatomic, copy) NSSet *variants;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_bestVariantForFormat:(int)arg1;
+- (id)_bestVariantForFormat:(long long)arg1;
 - (id)_bestVariantForUIFormat:(int)arg1;
 - (void)addVariant:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setVariants:(id)arg1;
 - (id)variants;
 

@@ -3,16 +3,25 @@
  */
 
 @interface _UITouchObservation : NSObject {
-    unsigned int  _observedTouchCount;
-    unsigned int  _observedTouchOffset;
-    UITouch * _observedTouches;
+    unsigned long long  _observedTouchCount;
+    unsigned long long  _observedTouchOffset;
+    struct { 
+        int phase; 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } position; 
+        double timestamp; 
+        double azimuth; 
+        double altitude; 
+        double pressure; 
+    }  _observedTouches;
 }
 
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)enumerateTouchesWithBlock:(id /* block */)arg1;
 - (void)observeTouch:(id)arg1;
 - (void)reset;
-- (unsigned int)touchCount;
+- (unsigned long long)touchCount;
 
 @end

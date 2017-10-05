@@ -4,31 +4,31 @@
 
 @interface DOMKeyboardEvent : DOMUIEvent
 
-@property (readonly) BOOL altGraphKey;
-@property (readonly) BOOL altKey;
+@property (readonly) bool altGraphKey;
+@property (readonly) bool altKey;
 @property (readonly) int charCode;
-@property (readonly) BOOL ctrlKey;
+@property (readonly) bool ctrlKey;
 @property (readonly) int keyCode;
 @property (readonly, copy) NSString *keyIdentifier;
 @property (readonly) unsigned int keyLocation;
 @property (readonly) unsigned int location;
-@property (readonly) BOOL metaKey;
-@property (readonly) BOOL shiftKey;
+@property (readonly) bool metaKey;
+@property (readonly) bool shiftKey;
 
-- (BOOL)altGraphKey;
-- (BOOL)altKey;
+- (bool)altGraphKey;
+- (bool)altKey;
 - (int)charCode;
-- (BOOL)ctrlKey;
-- (BOOL)getModifierState:(id)arg1;
-- (void)initKeyboardEvent:(id)arg1 canBubble:(BOOL)arg2 cancelable:(BOOL)arg3 view:(id)arg4 keyIdentifier:(id)arg5 keyLocation:(unsigned int)arg6 ctrlKey:(BOOL)arg7 altKey:(BOOL)arg8 shiftKey:(BOOL)arg9 metaKey:(BOOL)arg10;
-- (void)initKeyboardEvent:(id)arg1 canBubble:(BOOL)arg2 cancelable:(BOOL)arg3 view:(id)arg4 keyIdentifier:(id)arg5 keyLocation:(unsigned int)arg6 ctrlKey:(BOOL)arg7 altKey:(BOOL)arg8 shiftKey:(BOOL)arg9 metaKey:(BOOL)arg10 altGraphKey:(BOOL)arg11;
-- (void)initKeyboardEvent:(id)arg1 canBubble:(BOOL)arg2 cancelable:(BOOL)arg3 view:(id)arg4 keyIdentifier:(id)arg5 location:(unsigned int)arg6 ctrlKey:(BOOL)arg7 altKey:(BOOL)arg8 shiftKey:(BOOL)arg9 metaKey:(BOOL)arg10;
-- (void)initKeyboardEvent:(id)arg1 canBubble:(BOOL)arg2 cancelable:(BOOL)arg3 view:(id)arg4 keyIdentifier:(id)arg5 location:(unsigned int)arg6 ctrlKey:(BOOL)arg7 altKey:(BOOL)arg8 shiftKey:(BOOL)arg9 metaKey:(BOOL)arg10 altGraphKey:(BOOL)arg11;
+- (bool)ctrlKey;
+- (bool)getModifierState:(id)arg1;
+- (void)initKeyboardEvent:(id)arg1 canBubble:(bool)arg2 cancelable:(bool)arg3 view:(id)arg4 keyIdentifier:(id)arg5 keyLocation:(unsigned int)arg6 ctrlKey:(bool)arg7 altKey:(bool)arg8 shiftKey:(bool)arg9 metaKey:(bool)arg10;
+- (void)initKeyboardEvent:(id)arg1 canBubble:(bool)arg2 cancelable:(bool)arg3 view:(id)arg4 keyIdentifier:(id)arg5 keyLocation:(unsigned int)arg6 ctrlKey:(bool)arg7 altKey:(bool)arg8 shiftKey:(bool)arg9 metaKey:(bool)arg10 altGraphKey:(bool)arg11;
+- (void)initKeyboardEvent:(id)arg1 canBubble:(bool)arg2 cancelable:(bool)arg3 view:(id)arg4 keyIdentifier:(id)arg5 location:(unsigned int)arg6 ctrlKey:(bool)arg7 altKey:(bool)arg8 shiftKey:(bool)arg9 metaKey:(bool)arg10;
+- (void)initKeyboardEvent:(id)arg1 canBubble:(bool)arg2 cancelable:(bool)arg3 view:(id)arg4 keyIdentifier:(id)arg5 location:(unsigned int)arg6 ctrlKey:(bool)arg7 altKey:(bool)arg8 shiftKey:(bool)arg9 metaKey:(bool)arg10 altGraphKey:(bool)arg11;
 - (int)keyCode;
 - (id)keyIdentifier;
 - (unsigned int)keyLocation;
 - (unsigned int)location;
-- (BOOL)metaKey;
-- (BOOL)shiftKey;
+- (bool)metaKey;
+- (bool)shiftKey;
 
 @end

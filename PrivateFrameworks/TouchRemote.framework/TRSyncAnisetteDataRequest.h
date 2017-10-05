@@ -8,7 +8,7 @@
 
 @property (nonatomic, copy) NSData *simData;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

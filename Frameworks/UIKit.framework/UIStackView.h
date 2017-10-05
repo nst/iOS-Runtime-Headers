@@ -4,73 +4,77 @@
 
 @interface UIStackView : UIView {
     _UIAlignedLayoutArrangement * _alignmentArrangement;
-    BOOL  _didRequestTallestBaselineViewForFirst;
-    BOOL  _didRequestTallestBaselineViewForLast;
+    bool  _didRequestTallestBaselineViewForFirst;
+    bool  _didRequestTallestBaselineViewForLast;
     _UIOrderedLayoutArrangement * _distributionArrangement;
-    BOOL  _layoutMarginsRelativeArrangement;
+    bool  _layoutMarginsRelativeArrangement;
     NSMutableArray * _mutableLayoutArrangements;
-    BOOL  _viewForFirstBaselineLayoutDidChange;
-    BOOL  _viewForLastBaselineLayoutDidChange;
+    bool  _viewForFirstBaselineLayoutDidChange;
+    bool  _viewForLastBaselineLayoutDidChange;
 }
 
-@property (nonatomic) int _mk_axis;
-@property (nonatomic) int alignment;
+@property (nonatomic) long long _mk_axis;
+@property (nonatomic) long long alignment;
 @property (nonatomic, readonly, copy) NSArray *arrangedSubviews;
-@property (nonatomic) int axis;
-@property (getter=isBaselineRelativeArrangement, nonatomic) BOOL baselineRelativeArrangement;
-@property (nonatomic) int distribution;
-@property (getter=isLayoutMarginsRelativeArrangement, nonatomic) BOOL layoutMarginsRelativeArrangement;
-@property (nonatomic) float spacing;
+@property (nonatomic) long long axis;
+@property (getter=isBaselineRelativeArrangement, nonatomic) bool baselineRelativeArrangement;
+@property (nonatomic) long long distribution;
+@property (getter=isLayoutMarginsRelativeArrangement, nonatomic) bool layoutMarginsRelativeArrangement;
+@property (nonatomic) double spacing;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (Class)layerClass;
 
 - (void).cxx_destruct;
-- (id)_baselineViewForFirst:(BOOL)arg1;
-- (float)_calculatedIntrinsicHeight;
+- (id)_baselineViewForFirst:(bool)arg1;
+- (double)_calculatedIntrinsicHeight;
 - (void)_commonStackViewInitializationWithArrangedSubviews:(id)arg1;
-- (BOOL)_hasLayoutArrangements;
+- (bool)_hasLayoutArrangements;
 - (void)_intrinsicContentSizeInvalidatedForChildView:(id)arg1;
 - (id)_mutableLayoutArrangements;
-- (float)_proportionalFillLengthForOrderedArrangement:(id)arg1 relevantParentAxis:(int)arg2;
-- (BOOL)_recordBaselineLoweringInfo;
-- (BOOL)_shouldRequestTallestBaselineViewForFirst:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })_systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3 hasIntentionallyCollapsedHeight:(BOOL*)arg4;
-- (void)_vendedBaselineViewDidMoveForFirst:(BOOL)arg1;
+- (double)_proportionalFillLengthForOrderedArrangement:(id)arg1 relevantParentAxis:(long long)arg2;
+- (bool)_recordBaselineLoweringInfo;
+- (bool)_shouldRequestTallestBaselineViewForFirst:(bool)arg1;
+- (struct CGSize { double x1; double x2; })_systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3 hasIntentionallyCollapsedHeight:(bool*)arg4;
+- (void)_vendedBaselineViewDidMoveForFirst:(bool)arg1;
 - (void)_vendedBaselineViewParametersDidChange;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (void)addArrangedSubview:(id)arg1;
-- (int)alignment;
+- (long long)alignment;
 - (id)arrangedSubviews;
-- (int)axis;
-- (void)dealloc;
-- (int)distribution;
+- (long long)axis;
+- (double)customSpacingAfterView:(id)arg1;
+- (long long)distribution;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithArrangedSubviews:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)insertArrangedSubview:(id)arg1 atIndex:(unsigned int)arg2;
-- (BOOL)isBaselineRelativeArrangement;
-- (BOOL)isLayoutMarginsRelativeArrangement;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)insertArrangedSubview:(id)arg1 atIndex:(unsigned long long)arg2;
+- (bool)isBaselineRelativeArrangement;
+- (bool)isLayoutMarginsRelativeArrangement;
 - (void)removeArrangedSubview:(id)arg1;
-- (void)setAlignment:(int)arg1;
+- (void)setAlignment:(long long)arg1;
 - (void)setArrangedSubviews:(id)arg1;
-- (void)setAxis:(int)arg1;
+- (void)setAxis:(long long)arg1;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setBaselineRelativeArrangement:(BOOL)arg1;
-- (void)setDistribution:(int)arg1;
-- (void)setLayoutMarginsRelativeArrangement:(BOOL)arg1;
-- (void)setOpaque:(BOOL)arg1;
-- (void)setSpacing:(float)arg1;
-- (void)setTranslatesAutoresizingMaskIntoConstraints:(BOOL)arg1;
-- (float)spacing;
+- (void)setBaselineRelativeArrangement:(bool)arg1;
+- (void)setCustomSpacing:(double)arg1 afterView:(id)arg2;
+- (void)setDistribution:(long long)arg1;
+- (void)setLayoutMarginsRelativeArrangement:(bool)arg1;
+- (void)setOpaque:(bool)arg1;
+- (void)setSpacing:(double)arg1;
+- (void)setTranslatesAutoresizingMaskIntoConstraints:(bool)arg1;
+- (double)spacing;
 - (void)updateConstraints;
 - (id)viewForFirstBaselineLayout;
 - (id)viewForLastBaselineLayout;
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
-- (int)_mk_axis;
-- (void)set_mk_axis:(int)arg1;
+- (long long)_mk_axis;
+- (void)set_mk_axis:(long long)arg1;
 
 @end

@@ -7,16 +7,16 @@
 }
 
 @property (nonatomic, retain) UIImageView *newlyAddedView;
-@property (nonatomic) BOOL showNewlyAdded;
+@property (nonatomic) bool showNewlyAdded;
 
 - (void).cxx_destruct;
 - (id)_dotImage;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (id)newlyAddedView;
 - (void)prepareForReuse;
 - (void)setNewlyAddedView:(id)arg1;
-- (void)setShowNewlyAdded:(BOOL)arg1;
-- (BOOL)showNewlyAdded;
+- (void)setShowNewlyAdded:(bool)arg1;
+- (bool)showNewlyAdded;
 
 @end

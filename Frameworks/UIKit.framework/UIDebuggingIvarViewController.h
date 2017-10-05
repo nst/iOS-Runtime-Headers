@@ -9,18 +9,18 @@
 @property (nonatomic) NSObject *inspectedObject;
 
 - (void).cxx_destruct;
-- (Class)_classForTableSection:(int)arg1;
+- (Class)_classForTableSection:(long long)arg1;
 - (id)_classHierarchyForInspectedObject;
 - (id)_ivarForIndexPath:(id)arg1;
 - (id)_ivarsForInspectedObjectInClass:(Class)arg1;
 - (id)init;
 - (id)inspectedObject;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)prepareForDisplayAsTopLevelDebuggingViewController;
 - (void)setInspectedObject:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 
 @end

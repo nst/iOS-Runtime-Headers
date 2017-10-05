@@ -5,11 +5,11 @@
 @interface GEOComponentAction : PBCodable <NSCopying> {
     struct { 
         int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _actions;
     int  _component;
-    BOOL  _handleLocally;
+    bool  _handleLocally;
     struct { 
         unsigned int component : 1; 
         unsigned int handleLocally : 1; 
@@ -17,18 +17,18 @@
 }
 
 @property (nonatomic, readonly) int*actions;
-@property (nonatomic, readonly) unsigned int actionsCount;
+@property (nonatomic, readonly) unsigned long long actionsCount;
 @property (nonatomic) int component;
-@property (nonatomic) BOOL handleLocally;
-@property (nonatomic) BOOL hasComponent;
-@property (nonatomic) BOOL hasHandleLocally;
+@property (nonatomic) bool handleLocally;
+@property (nonatomic) bool hasComponent;
+@property (nonatomic) bool hasHandleLocally;
 
 - (int)StringAsActions:(id)arg1;
 - (int)StringAsComponent:(id)arg1;
 - (int*)actions;
 - (id)actionsAsString:(int)arg1;
-- (int)actionsAtIndex:(unsigned int)arg1;
-- (unsigned int)actionsCount;
+- (int)actionsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)actionsCount;
 - (void)addActions:(int)arg1;
 - (void)clearActions;
 - (int)component;
@@ -38,18 +38,18 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)handleLocally;
-- (BOOL)hasComponent;
-- (BOOL)hasHandleLocally;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)handleLocally;
+- (bool)hasComponent;
+- (bool)hasHandleLocally;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setActions:(int*)arg1 count:(unsigned int)arg2;
+- (bool)readFrom:(id)arg1;
+- (void)setActions:(int*)arg1 count:(unsigned long long)arg2;
 - (void)setComponent:(int)arg1;
-- (void)setHandleLocally:(BOOL)arg1;
-- (void)setHasComponent:(BOOL)arg1;
-- (void)setHasHandleLocally:(BOOL)arg1;
+- (void)setHandleLocally:(bool)arg1;
+- (void)setHasComponent:(bool)arg1;
+- (void)setHasHandleLocally:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

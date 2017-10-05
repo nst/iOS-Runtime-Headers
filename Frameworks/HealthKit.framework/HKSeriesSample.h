@@ -4,22 +4,22 @@
 
 @interface HKSeriesSample : HKSample {
     long long  _count;
-    BOOL  _frozen;
+    bool  _frozen;
 }
 
-@property (readonly) unsigned int count;
-@property (getter=_isFrozen, setter=_setFrozen:, nonatomic) BOOL frozen;
+@property (readonly) unsigned long long count;
+@property (getter=_isFrozen, setter=_setFrozen:, nonatomic) bool frozen;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)_isFrozen;
-- (void)_setCount:(unsigned int)arg1;
-- (void)_setFrozen:(BOOL)arg1;
-- (BOOL)_shouldNotifyOnInsert;
+- (bool)_isFrozen;
+- (void)_setCount:(unsigned long long)arg1;
+- (void)_setFrozen:(bool)arg1;
+- (bool)_shouldNotifyOnInsert;
 - (id)_validateConfiguration;
 - (id)_validateSample;
 - (id)_valueDescription;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

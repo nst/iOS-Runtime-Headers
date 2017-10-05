@@ -8,18 +8,19 @@
 
 @property (nonatomic, readonly) NSString *appleID;
 @property (nonatomic, readonly) NSArray *appleIDAliases;
+@property (getter=isCloudDocsMigrated, nonatomic, readonly) bool cloudDocsMigrated;
 @property (nonatomic, readonly) NSDictionary *dataclassProperties;
 @property (nonatomic, readonly) NSString *firstName;
 @property (nonatomic, readonly) NSString *fmipAuthToken;
 @property (nonatomic, readonly) NSString *fmipSiriToken;
 @property (nonatomic, readonly) NSString *iCloudAuthToken;
-@property (nonatomic, readonly) BOOL isManagedAppleID;
-@property (nonatomic, readonly) BOOL isSandboxAccount;
 @property (nonatomic, readonly) NSString *lastName;
-@property (nonatomic, readonly) BOOL notesMigrated;
+@property (getter=isManagedAppleID, nonatomic, readonly) bool managedAppleID;
+@property (getter=isNotesMigrated, nonatomic, readonly) bool notesMigrated;
 @property (nonatomic, readonly) NSString *primaryEmail;
 @property (nonatomic, readonly) NSNumber *primaryEmailVerified;
 @property (nonatomic, readonly) NSArray *provisionedDataclasses;
+@property (getter=isSandboxAccount, nonatomic, readonly) bool sandboxAccount;
 
 - (void).cxx_destruct;
 - (id)appleID;
@@ -31,10 +32,11 @@
 - (id)iCloudAuthToken;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
-- (BOOL)isManagedAppleID;
-- (BOOL)isSandboxAccount;
+- (bool)isCloudDocsMigrated;
+- (bool)isManagedAppleID;
+- (bool)isNotesMigrated;
+- (bool)isSandboxAccount;
 - (id)lastName;
-- (BOOL)notesMigrated;
 - (id)primaryEmail;
 - (id)primaryEmailVerified;
 - (id)provisionedDataclasses;

@@ -3,7 +3,7 @@
  */
 
 @interface CommunicationsFilterBlockListCache : NSObject {
-    BOOL  _listIsEmpty;
+    bool  _listIsEmpty;
     int  _notifyEmptyListToken;
     NSMutableArray * _recentItems;
 }
@@ -12,7 +12,7 @@
 - (long long)cachedResponseForItem:(id)arg1;
 - (id)init;
 - (void)removeItemFromCache:(id)arg1;
-- (void)setResponse:(BOOL)arg1 forItem:(id)arg2;
+- (void)setResponse:(bool)arg1 forItem:(id)arg2;
 - (void)syncListEmptyState;
 
 @end

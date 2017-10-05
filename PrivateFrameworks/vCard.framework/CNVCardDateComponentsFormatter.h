@@ -19,11 +19,11 @@
 - (id)compactYearMonthDayDateHourMinuteSecondZFormatter;
 - (id)dateComponentsFromALTBDAYString:(id)arg1;
 - (id)dateComponentsFromString:(id)arg1;
-- (BOOL)getObjectValue:(id*)arg1 forString:(id)arg2 errorDescription:(id*)arg3;
+- (bool)getObjectValue:(id*)arg1 forString:(id)arg2 errorDescription:(id*)arg3;
 - (id)gregorianCalendar;
 - (id)monthDayDateFormatter;
 - (id)monthDayStringFromDateComponents:(id)arg1;
-- (id)stringForComponentValue:(int)arg1 format:(id)arg2;
+- (id)stringForComponentValue:(long long)arg1 format:(id)arg2;
 - (id)stringForObjectValue:(id)arg1;
 - (id)stringFromDateComponents:(id)arg1;
 - (id)yearMonthDayDateFormatter;

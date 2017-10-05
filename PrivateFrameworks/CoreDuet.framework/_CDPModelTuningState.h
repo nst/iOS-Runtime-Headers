@@ -20,7 +20,7 @@
 @property (nonatomic, readonly) float progress;
 
 + (id)initialTuningState;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (float)bestLogLambda;
 - (float)bestScore;

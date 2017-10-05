@@ -5,6 +5,6 @@
 
 @required
 
-- (void)subscriptionList:(FCSubscriptionList *)arg1 didAddSubscriptions:(NSSet *)arg2 changeSubscriptions:(NSSet *)arg3 removeSubscriptions:(NSSet *)arg4 eventInitiationLevel:(int)arg5;
+- (void)subscriptionList:(FCSubscriptionList *)arg1 didAddSubscriptions:(NSSet *)arg2 changeSubscriptions:(NSSet *)arg3 removeSubscriptions:(NSSet *)arg4 eventInitiationLevel:(long long)arg5;
 
 @end

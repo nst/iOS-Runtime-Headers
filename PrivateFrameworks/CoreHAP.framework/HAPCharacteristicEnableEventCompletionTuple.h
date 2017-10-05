@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPCharacteristicEnableEventCompletionTuple : NSObject {
+@interface HAPCharacteristicEnableEventCompletionTuple : HMFObject {
     NSObject<OS_dispatch_queue> * _completionQueue;
     id /* block */  _handler;
 }

@@ -3,35 +3,35 @@
  */
 
 @interface PHAJobConstraints : NSObject <NSCopying> {
-    BOOL  _canRunAutomaticBackgroundAnalysis;
-    BOOL  _canRunAutomaticForegroundAnalysis;
-    BOOL  _canRunUserInitiatedForegroundAnalysis;
-    BOOL  _canUseNetwork;
-    BOOL  _turboMode;
+    bool  _canRunAutomaticBackgroundAnalysis;
+    bool  _canRunAutomaticForegroundAnalysis;
+    bool  _canRunUserInitiatedForegroundAnalysis;
+    bool  _canUseNetwork;
+    bool  _turboMode;
 }
 
-@property (nonatomic, readonly) BOOL canRunAutomaticBackgroundAnalysis;
-@property (nonatomic, readonly) BOOL canRunAutomaticForegroundAnalysis;
-@property (nonatomic, readonly) BOOL canRunUserInitiatedForegroundAnalysis;
-@property (nonatomic, readonly) BOOL canUseNetwork;
-@property (getter=isTurboMode, nonatomic) BOOL turboMode;
+@property (nonatomic, readonly) bool canRunAutomaticBackgroundAnalysis;
+@property (nonatomic, readonly) bool canRunAutomaticForegroundAnalysis;
+@property (nonatomic, readonly) bool canRunUserInitiatedForegroundAnalysis;
+@property (nonatomic, readonly) bool canUseNetwork;
+@property (getter=isTurboMode, nonatomic) bool turboMode;
 
 + (id)constraintsWithAllAllowances;
 + (id)constraintsWithNoAllowances;
 
 - (void)applyConstraints:(id)arg1 usingMask:(id)arg2;
 - (id)asBitString;
-- (BOOL)canRunAutomaticBackgroundAnalysis;
-- (BOOL)canRunAutomaticForegroundAnalysis;
-- (BOOL)canRunUserInitiatedForegroundAnalysis;
-- (BOOL)canUseNetwork;
+- (bool)canRunAutomaticBackgroundAnalysis;
+- (bool)canRunAutomaticForegroundAnalysis;
+- (bool)canRunUserInitiatedForegroundAnalysis;
+- (bool)canUseNetwork;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)initFromBitString:(id)arg1;
-- (id)initWithCanRunAutomaticBackgroundAnalysis:(BOOL)arg1 canRunAutomaticForegroundAnalysis:(BOOL)arg2 canRunUserInitiatedForegroundAnalysis:(BOOL)arg3 canUseNetwork:(BOOL)arg4;
-- (BOOL)isEqualToConstraints:(id)arg1;
-- (BOOL)isTurboMode;
-- (void)setTurboMode:(BOOL)arg1;
+- (id)initWithCanRunAutomaticBackgroundAnalysis:(bool)arg1 canRunAutomaticForegroundAnalysis:(bool)arg2 canRunUserInitiatedForegroundAnalysis:(bool)arg3 canUseNetwork:(bool)arg4;
+- (bool)isEqualToConstraints:(id)arg1;
+- (bool)isTurboMode;
+- (void)setTurboMode:(bool)arg1;
 - (id)statusAsDictionary;
 
 @end

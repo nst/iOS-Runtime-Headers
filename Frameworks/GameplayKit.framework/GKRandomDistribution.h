@@ -3,29 +3,29 @@
  */
 
 @interface GKRandomDistribution : NSObject <GKRandom> {
-    int  _highest;
-    int  _lowest;
+    long long  _highest;
+    long long  _lowest;
     <GKRandom> * _source;
 }
 
-@property (nonatomic, readonly) int highestValue;
-@property (nonatomic, readonly) int lowestValue;
-@property (nonatomic, readonly) unsigned int numberOfPossibleOutcomes;
+@property (nonatomic, readonly) long long highestValue;
+@property (nonatomic, readonly) long long lowestValue;
+@property (nonatomic, readonly) unsigned long long numberOfPossibleOutcomes;
 
 + (id)d20;
 + (id)d6;
-+ (id)distributionForDieWithSideCount:(int)arg1;
-+ (id)distributionWithLowestValue:(int)arg1 highestValue:(int)arg2;
++ (id)distributionForDieWithSideCount:(long long)arg1;
++ (id)distributionWithLowestValue:(long long)arg1 highestValue:(long long)arg2;
 
 - (void).cxx_destruct;
-- (int)highestValue;
+- (long long)highestValue;
 - (id)init;
-- (id)initWithRandomSource:(id)arg1 lowestValue:(int)arg2 highestValue:(int)arg3;
-- (int)lowestValue;
-- (BOOL)nextBool;
-- (int)nextInt;
-- (unsigned int)nextIntWithUpperBound:(unsigned int)arg1;
+- (id)initWithRandomSource:(id)arg1 lowestValue:(long long)arg2 highestValue:(long long)arg3;
+- (long long)lowestValue;
+- (bool)nextBool;
+- (long long)nextInt;
+- (unsigned long long)nextIntWithUpperBound:(unsigned long long)arg1;
 - (float)nextUniform;
-- (unsigned int)numberOfPossibleOutcomes;
+- (unsigned long long)numberOfPossibleOutcomes;
 
 @end

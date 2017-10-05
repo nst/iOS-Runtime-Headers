@@ -4,7 +4,7 @@
 
 @interface CKDCancelToken : NSObject <CKDCancelling> {
     id /* block */  _cancelAction;
-    BOOL  _isCancelled;
+    bool  _isCancelled;
 }
 
 @property (nonatomic, copy) id /* block */ cancelAction;
@@ -12,7 +12,7 @@
 - (void).cxx_destruct;
 - (void)cancel;
 - (id /* block */)cancelAction;
-- (BOOL)isCancelled;
+- (bool)isCancelled;
 - (void)setCancelAction:(id /* block */)arg1;
 
 @end

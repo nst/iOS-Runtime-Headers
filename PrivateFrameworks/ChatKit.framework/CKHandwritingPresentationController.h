@@ -3,38 +3,38 @@
  */
 
 @interface CKHandwritingPresentationController : NSObject {
-    BOOL  _actualVisibility;
+    bool  _actualVisibility;
     CKScheduledUpdater * _animationScheduledUpdater;
     UIViewController<CKHandwritingBrowserViewControllerProtocol> * _browserViewController;
     CKBrowserItemPayload * _cachedPluginPayload;
     NSObject<CKHandwritingViewControllerSendDelegate> * _cachedSendDelegate;
     NSObject<CKHandwritingPresentationControllerDelegate> * _delegate;
     CKDeviceOrientationManager * _deviceOrientationManager;
-    BOOL  _foregrounded;
+    bool  _foregrounded;
     CKHandwritingWindow * _handwritingWindow;
-    int  _initialInterfaceOrientation;
-    BOOL  _requestedVisibility;
-    BOOL  _requestedVisibilityShouldBeAnimated;
-    BOOL  _suppressAppearanceCallbacksBecauseOfFirstInitialization;
+    long long  _initialInterfaceOrientation;
+    bool  _requestedVisibility;
+    bool  _requestedVisibilityShouldBeAnimated;
+    bool  _suppressAppearanceCallbacksBecauseOfFirstInitialization;
 }
 
-@property (nonatomic) BOOL actualVisibility;
+@property (nonatomic) bool actualVisibility;
 @property (nonatomic, retain) CKScheduledUpdater *animationScheduledUpdater;
 @property (nonatomic, retain) UIViewController<CKHandwritingBrowserViewControllerProtocol> *browserViewController;
 @property (nonatomic, retain) CKBrowserItemPayload *cachedPluginPayload;
 @property (nonatomic) NSObject<CKHandwritingViewControllerSendDelegate> *cachedSendDelegate;
 @property (nonatomic) NSObject<CKHandwritingPresentationControllerDelegate> *delegate;
 @property (nonatomic, retain) CKDeviceOrientationManager *deviceOrientationManager;
-@property (nonatomic) BOOL foregrounded;
+@property (nonatomic) bool foregrounded;
 @property (nonatomic, retain) CKHandwritingWindow *handwritingWindow;
-@property (nonatomic) int initialInterfaceOrientation;
+@property (nonatomic) long long initialInterfaceOrientation;
 @property (readonly) NSString *pluginBundleID;
 @property (nonatomic, retain) CKBrowserItemPayload *pluginPayload;
-@property (nonatomic) BOOL requestedVisibility;
-@property (nonatomic) BOOL requestedVisibilityShouldBeAnimated;
+@property (nonatomic) bool requestedVisibility;
+@property (nonatomic) bool requestedVisibilityShouldBeAnimated;
 @property (nonatomic) NSObject<CKHandwritingViewControllerSendDelegate> *sendDelegate;
-@property (nonatomic) BOOL suppressAppearanceCallbacksBecauseOfFirstInitialization;
-@property (nonatomic) BOOL visible;
+@property (nonatomic) bool suppressAppearanceCallbacksBecauseOfFirstInitialization;
+@property (nonatomic) bool visible;
 
 - (void).cxx_destruct;
 - (void)_doInitialization;
@@ -43,7 +43,7 @@
 - (void)_handleApplicationWillEnterForeground:(id)arg1;
 - (void)_loadCachedPayloadIntoBrowser;
 - (void)_updateVisibilityState;
-- (BOOL)actualVisibility;
+- (bool)actualVisibility;
 - (id)animationScheduledUpdater;
 - (id)browserViewController;
 - (id)cachedPluginPayload;
@@ -51,33 +51,33 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)deviceOrientationManager;
-- (BOOL)foregrounded;
+- (bool)foregrounded;
 - (id)handwritingWindow;
 - (id)init;
-- (int)initialInterfaceOrientation;
+- (long long)initialInterfaceOrientation;
 - (id)pluginBundleID;
 - (id)pluginPayload;
-- (BOOL)requestedVisibility;
-- (BOOL)requestedVisibilityShouldBeAnimated;
+- (bool)requestedVisibility;
+- (bool)requestedVisibilityShouldBeAnimated;
 - (id)sendDelegate;
-- (void)setActualVisibility:(BOOL)arg1;
+- (void)setActualVisibility:(bool)arg1;
 - (void)setAnimationScheduledUpdater:(id)arg1;
 - (void)setBrowserViewController:(id)arg1;
 - (void)setCachedPluginPayload:(id)arg1;
 - (void)setCachedSendDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDeviceOrientationManager:(id)arg1;
-- (void)setForegrounded:(BOOL)arg1;
+- (void)setForegrounded:(bool)arg1;
 - (void)setHandwritingWindow:(id)arg1;
-- (void)setInitialInterfaceOrientation:(int)arg1;
+- (void)setInitialInterfaceOrientation:(long long)arg1;
 - (void)setPluginPayload:(id)arg1;
-- (void)setRequestedVisibility:(BOOL)arg1;
-- (void)setRequestedVisibilityShouldBeAnimated:(BOOL)arg1;
+- (void)setRequestedVisibility:(bool)arg1;
+- (void)setRequestedVisibilityShouldBeAnimated:(bool)arg1;
 - (void)setSendDelegate:(id)arg1;
-- (void)setSuppressAppearanceCallbacksBecauseOfFirstInitialization:(BOOL)arg1;
-- (void)setVisible:(BOOL)arg1;
-- (void)setVisible:(BOOL)arg1 animated:(BOOL)arg2;
-- (BOOL)suppressAppearanceCallbacksBecauseOfFirstInitialization;
-- (BOOL)visible;
+- (void)setSuppressAppearanceCallbacksBecauseOfFirstInitialization:(bool)arg1;
+- (void)setVisible:(bool)arg1;
+- (void)setVisible:(bool)arg1 animated:(bool)arg2;
+- (bool)suppressAppearanceCallbacksBecauseOfFirstInitialization;
+- (bool)visible;
 
 @end

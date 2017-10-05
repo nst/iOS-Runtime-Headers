@@ -14,21 +14,23 @@
 @property (nonatomic) <GEOExperimentServerProxyDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) GEOABAssignmentResponse *experimentsInfo;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_debug_fetchAllAvailableExperiments:(id /* block */)arg1;
 - (void)_debug_setActiveExperimentBranchDictionaryRepresentation:(id)arg1;
 - (void)_debug_setBucketIdDictionaryRepresentation:(id)arg1;
-- (void)_debug_setQuerySubstring:(id)arg1 forExperimentType:(int)arg2 dispatcherRequestType:(int)arg3;
+- (void)_debug_setQuerySubstring:(id)arg1 forExperimentType:(long long)arg2 dispatcherRequestType:(int)arg3;
 - (void)_deleteExperimentInfoFromDisk;
 - (void)_executeRefreshWithinTime:(double)arg1;
-- (void)_invalidateTileCache:(BOOL)arg1 placesCache:(BOOL)arg2;
+- (void)_invalidateTileCache:(bool)arg1 placesCache:(bool)arg2;
 - (void)_loadExperimentsConfiguration:(id /* block */)arg1;
-- (BOOL)_removeOldExperimentsInfoIfNecessary;
+- (bool)_removeOldExperimentsInfoIfNecessary;
 - (void)_setupRefreshActivity;
 - (void)_updateIfNecessary;
 - (void)_writeExperimentInfoToDisk:(id)arg1;
+- (void)abAssignUUIDWithCompletionHandler:(id /* block */)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)experimentsInfo;

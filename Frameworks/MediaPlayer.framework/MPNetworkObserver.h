@@ -4,18 +4,18 @@
 
 @interface MPNetworkObserver : NSObject {
     NSObject<OS_dispatch_queue> * _accessQueue;
-    BOOL  _isMusicCellularDownloadingAllowed;
+    bool  _isMusicCellularDownloadingAllowed;
     int  _musicCellularNetworkingAllowedNotifyToken;
-    int  _networkUsageCount;
-    BOOL  _videosAllowsCellularStreaming;
+    long long  _networkUsageCount;
+    bool  _videosAllowsCellularStreaming;
     int  _videosPreferencesChangedToken;
 }
 
-@property (nonatomic, readonly) BOOL isMusicCellularDownloadingAllowed;
-@property (nonatomic, readonly) BOOL isMusicCellularStreamingAllowed;
-@property (nonatomic, readonly) BOOL isStoreCellularNetworkingAllowed;
-@property (nonatomic, readonly) BOOL isUsingNetwork;
-@property (getter=isVideoCellularStreamingAllowed, nonatomic) BOOL videoCellularStreamingAllowed;
+@property (nonatomic, readonly) bool isMusicCellularDownloadingAllowed;
+@property (nonatomic, readonly) bool isMusicCellularStreamingAllowed;
+@property (nonatomic, readonly) bool isStoreCellularNetworkingAllowed;
+@property (nonatomic, readonly) bool isUsingNetwork;
+@property (getter=isVideoCellularStreamingAllowed, nonatomic) bool videoCellularStreamingAllowed;
 
 + (id)sharedNetworkObserver;
 
@@ -26,12 +26,12 @@
 - (void)dealloc;
 - (void)endUsingNetwork;
 - (id)init;
-- (BOOL)isMusicCellularDownloadingAllowed;
-- (BOOL)isMusicCellularDownloadsAllowed;
-- (BOOL)isMusicCellularStreamingAllowed;
-- (BOOL)isStoreCellularNetworkingAllowed;
-- (BOOL)isUsingNetwork;
-- (BOOL)isVideoCellularStreamingAllowed;
-- (void)setVideoCellularStreamingAllowed:(BOOL)arg1;
+- (bool)isMusicCellularDownloadingAllowed;
+- (bool)isMusicCellularDownloadsAllowed;
+- (bool)isMusicCellularStreamingAllowed;
+- (bool)isStoreCellularNetworkingAllowed;
+- (bool)isUsingNetwork;
+- (bool)isVideoCellularStreamingAllowed;
+- (void)setVideoCellularStreamingAllowed:(bool)arg1;
 
 @end

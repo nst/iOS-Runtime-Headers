@@ -4,7 +4,7 @@
 
 @interface NSURLSessionTaskMetrics : NSObject
 
-@property unsigned int redirectCount;
+@property unsigned long long redirectCount;
 @property (copy) NSDateInterval *taskInterval;
 @property (copy) NSArray *transactionMetrics;
 
@@ -17,7 +17,7 @@
 
 // Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
 
-- (id)_geo_defaultTransactionMetrics;
+- (id)_geo_clientMetrics;
 - (id)_geo_remoteAddressAndPort;
 
 @end

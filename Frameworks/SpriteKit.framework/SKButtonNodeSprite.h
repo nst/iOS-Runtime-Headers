@@ -31,9 +31,9 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDownAction:(id)arg1;
 - (void)setUpAction:(id)arg1;
-- (void)touchBegan:(unsigned int)arg1 location:(struct CGPoint { float x1; float x2; })arg2;
-- (void)touchEnded:(unsigned int)arg1 location:(struct CGPoint { float x1; float x2; })arg2;
-- (void)touchMoved:(unsigned int)arg1 location:(struct CGPoint { float x1; float x2; })arg2;
+- (void)touchBegan:(unsigned long long)arg1 location:(struct CGPoint { double x1; double x2; })arg2;
+- (void)touchEnded:(unsigned long long)arg1 location:(struct CGPoint { double x1; double x2; })arg2;
+- (void)touchMoved:(unsigned long long)arg1 location:(struct CGPoint { double x1; double x2; })arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (id)upAction;

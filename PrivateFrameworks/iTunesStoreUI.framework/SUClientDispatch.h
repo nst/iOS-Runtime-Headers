@@ -6,25 +6,25 @@
 
 + (id)clientInterface;
 + (void)composeEmailWithSubject:(id)arg1 body:(id)arg2;
-+ (BOOL)composeReviewWithViewController:(id)arg1 animated:(BOOL)arg2;
++ (bool)composeReviewWithViewController:(id)arg1 animated:(bool)arg2;
 + (void)dismissOverlayBackgroundViewController;
-+ (BOOL)enterAccountFlowWithViewController:(id)arg1 animated:(BOOL)arg2;
++ (bool)enterAccountFlowWithViewController:(id)arg1 animated:(bool)arg2;
 + (id)exitStoreButtonTitle;
-+ (BOOL)hidePreviewOverlayAnimated:(BOOL)arg1;
++ (bool)hidePreviewOverlayAnimated:(bool)arg1;
 + (id)imageCache;
 + (id)imagePool;
-+ (BOOL)isTabBarControllerLoaded;
-+ (BOOL)matchesClientApplication:(id)arg1;
++ (bool)isTabBarControllerLoaded;
++ (bool)matchesClientApplication:(id)arg1;
 + (id)newScriptInterface;
 + (id)overlayBackgroundViewController;
 + (id)overlayConfigurationForStorePage:(id)arg1;
-+ (BOOL)presentOverlayBackgroundViewController:(id)arg1;
++ (bool)presentOverlayBackgroundViewController:(id)arg1;
 + (id)previewOverlayViewController;
 + (id)scriptExecutionContext;
-+ (BOOL)sendActionForDialog:(id)arg1 button:(id)arg2;
++ (bool)sendActionForDialog:(id)arg1 button:(id)arg2;
 + (void)setClientBridge:(id)arg1;
-+ (BOOL)showPreviewOverlayAnimated:(BOOL)arg1;
++ (bool)showPreviewOverlayAnimated:(bool)arg1;
 + (id)tabBarController;
-+ (BOOL)wasLaunchedFromLibrary;
++ (bool)wasLaunchedFromLibrary;
 
 @end

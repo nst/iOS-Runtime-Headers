@@ -17,12 +17,12 @@
 @property (readonly) double frameDuration;
 @property (readonly) double frameEndTime;
 @property (readonly) double frameStartTime;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (readonly) double waitDuration;
 @property (readonly) double waitEndTime;
 @property (readonly) double waitStartTime;
-@property (readonly) BOOL wasIdle;
+@property (readonly) bool wasIdle;
 @property (readonly) double workDuration;
 @property (readonly) double workEndTime;
 @property (readonly) double workStartTime;
@@ -31,7 +31,7 @@
 + (id)newInstanceWithoutReferencesFromBufferPosition:(const void*)arg1;
 + (void)printASCIIBarLegendToStream:(id)arg1;
 
-- (BOOL)addSelfToBufferAtPosition:(void*)arg1 withCompletedSerializationDictionary:(struct NSMutableDictionary { Class x1; }*)arg2;
+- (bool)addSelfToBufferAtPosition:(void*)arg1 withCompletedSerializationDictionary:(struct NSMutableDictionary { Class x1; }*)arg2;
 - (void)addSelfToSerializationDictionary:(struct NSMutableDictionary { Class x1; }*)arg1;
 - (double)deferDuration;
 - (double)deferEndTime;
@@ -41,11 +41,11 @@
 - (double)frameStartTime;
 - (void)populateReferencesUsingBufferPosition:(const void*)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;
 - (void)printFPSASCIIBarToStream:(id)arg1;
-- (unsigned long)sizeInBytesForSerializedVersion;
+- (unsigned long long)sizeInBytesForSerializedVersion;
 - (double)waitDuration;
 - (double)waitEndTime;
 - (double)waitStartTime;
-- (BOOL)wasIdle;
+- (bool)wasIdle;
 - (double)workDuration;
 - (double)workEndTime;
 - (double)workStartTime;

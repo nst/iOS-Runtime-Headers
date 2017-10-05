@@ -5,15 +5,15 @@
 
 @required
 
-- (int)brushStyle;
-- (BOOL)hasShadow;
-- (BOOL)isDashed;
-- (void)setBrushStyle:(int)arg1;
-- (void)setDashed:(BOOL)arg1;
-- (void)setHasShadow:(BOOL)arg1;
+- (long long)brushStyle;
+- (bool)hasShadow;
+- (bool)isDashed;
+- (void)setBrushStyle:(long long)arg1;
+- (void)setDashed:(bool)arg1;
+- (void)setHasShadow:(bool)arg1;
 - (void)setStrokeColor:(UIColor *)arg1;
-- (void)setStrokeWidth:(float)arg1;
+- (void)setStrokeWidth:(double)arg1;
 - (UIColor *)strokeColor;
-- (float)strokeWidth;
+- (double)strokeWidth;
 
 @end

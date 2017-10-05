@@ -7,14 +7,14 @@
 }
 
 - (void).cxx_destruct;
-- (float)_actionTitleFontSize;
+- (double)_actionTitleFontSize;
 - (id)_preferredActionFont;
 - (id)_regularActionFont;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentMargin;
-- (float)horizontalImageContentSpacing;
-- (struct CGSize { float x1; float x2; })minimumActionContentSize;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentMargin;
+- (double)horizontalImageContentSpacing;
+- (struct CGSize { double x1; double x2; })minimumActionContentSize;
 - (id)newActionBackgroundViewForViewState:(id)arg1;
 - (id)newGroupBackgroundViewWithGroupViewState:(id)arg1;
-- (float)verticalImageContentSpacing;
+- (double)verticalImageContentSpacing;
 
 @end

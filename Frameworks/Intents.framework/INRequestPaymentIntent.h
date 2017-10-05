@@ -7,17 +7,18 @@
 @property (nonatomic, readonly, copy) INCurrencyAmount *currencyAmount;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *note;
 @property (nonatomic, readonly, copy) INPerson *payer;
 @property (readonly) Class superclass;
 
+// Image: /System/Library/Frameworks/Intents.framework/Intents
+
 - (id)_dictionaryRepresentation;
 - (id)_metadata;
-- (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
+- (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
 - (id)_typedBackingStore;
 - (id)currencyAmount;
-- (id)description;
 - (id)domain;
 - (id)initWithPayer:(id)arg1 currencyAmount:(id)arg2 note:(id)arg3;
 - (id)note;
@@ -30,5 +31,9 @@
 - (void)setPayer:(id)arg1;
 - (void)setVerb:(id)arg1;
 - (id)verb;
+
+// Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
+
+- (void)apr_getArgsInto:(id)arg1;
 
 @end

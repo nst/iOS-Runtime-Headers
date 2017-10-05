@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property <NFContactlessSessionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id)activeApplet;
@@ -20,7 +20,7 @@
 - (id)appletWithIdentifier:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)didDetectField:(BOOL)arg1;
+- (void)didDetectField:(bool)arg1;
 - (void)didDetectTechnology:(id)arg1;
 - (void)didEndUnexpectedly;
 - (void)didFelicaStateChange:(id)arg1;
@@ -28,10 +28,14 @@
 - (void)didStartSession:(id)arg1;
 - (void)endSession;
 - (void)endSessionWithCompletion:(id /* block */)arg1;
-- (BOOL)setActiveApplet:(id)arg1;
+- (bool)setActiveApplet:(id)arg1;
+- (bool)setActiveApplet:(id)arg1 error:(id*)arg2;
 - (void)setDelegate:(id)arg1;
-- (BOOL)startCardEmulation;
-- (BOOL)startHostCardEmulation;
-- (BOOL)stopCardEmulation;
+- (bool)startCardEmulation;
+- (bool)startCardEmulation:(id*)arg1;
+- (bool)startHostCardEmulation;
+- (bool)startHostCardEmulation:(id*)arg1;
+- (bool)stopCardEmulation;
+- (bool)stopCardEmulation:(id*)arg1;
 
 @end

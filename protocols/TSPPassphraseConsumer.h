@@ -3,18 +3,10 @@
 
 @protocol TSPPassphraseConsumer <NSObject>
 
-@required
-
-- (NSString *)lastPasswordAttempted;
-- (BOOL)setPassphrase:(NSString *)arg1;
-
 @optional
 
-- (void)cancel;
 - (NSData *)keychainGenericItem;
 - (NSString *)passphraseHint;
 - (NSString *)service;
-- (BOOL)setDecryptionKey:(SFUCryptoKey *)arg1;
-- (void)setPassphrase:(void *)arg1 completionQueue:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: NSString *, NSObject<OS_dispatch_queue> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 
 @end

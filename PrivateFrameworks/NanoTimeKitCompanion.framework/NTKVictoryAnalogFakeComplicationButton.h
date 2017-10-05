@@ -10,6 +10,6 @@
 - (id)init;
 - (void)layoutSubviews;
 - (void)setHighlightColor:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
 
 @end

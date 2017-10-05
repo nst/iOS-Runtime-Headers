@@ -10,7 +10,7 @@
     CATOperationQueue * mDelegationQueue;
     NSMutableArray * mEnqueuedMessages;
     CATStateMachine * mFSM;
-    BOOL  mIsStarting;
+    bool  mIsStarting;
     NSMutableDictionary * mOperationByRemoteUUID;
     NSMutableSet * mOperations;
     CATOperationQueue * mOrphanedOperationQueue;
@@ -26,7 +26,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CATTaskSessionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSUUID *sessionUUID;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) CATTransport *transport;
@@ -50,7 +50,7 @@
 - (void)delegateDidInvalidateAndFinalize;
 - (void)delegateEnqueueOperation:(id)arg1;
 - (id)delegatePrepareOperationWithRequest:(id)arg1 error:(id*)arg2;
-- (BOOL)delegateShouldAcceptConnection;
+- (bool)delegateShouldAcceptConnection;
 - (void)delegateWillInvalidate;
 - (void)delegateWillInvalidateAndInvalidateSessionWithError:(id)arg1;
 - (void)delegatedidReceiveNotificationWithName:(id)arg1;

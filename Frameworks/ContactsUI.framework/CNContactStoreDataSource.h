@@ -4,9 +4,10 @@
 
 @interface CNContactStoreDataSource : NSObject <CNContactDataSource> {
     CNContactStoreSnapshot * _currentSnapshot;
+    bool  _fetchUnified;
     CNContactStoreFilter * _filter;
     NSArray * _keysToFetch;
-    BOOL  _loadingSnapshot;
+    bool  _loadingSnapshot;
     CNContact * _meContact;
     NSObject<OS_dispatch_queue> * _queue;
     NSDictionary * _sectionHeadersDictionary;
@@ -17,7 +18,7 @@
 
 @property (nonatomic, readonly) unsigned int abSortOrder;
 @property (nonatomic, readonly) CNiOSAddressBook *addressBook;
-@property (nonatomic, readonly) BOOL canReload;
+@property (nonatomic, readonly) bool canReload;
 @property (nonatomic, retain) CNContactFormatter *contactFormatter;
 @property (nonatomic, readonly) NSDictionary *contactMatchInfos;
 @property (nonatomic, readonly) NSArray *contacts;
@@ -27,31 +28,31 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *displayName;
 @property (nonatomic, readonly) CNContactFilter *effectiveFilter;
+@property (nonatomic) bool fetchUnified;
 @property (nonatomic, copy) CNContactStoreFilter *filter;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSArray *indexSections;
 @property (nonatomic, readonly) NSArray *indexSectionsArray;
 @property (nonatomic, retain) NSArray *keysToFetch;
 @property (nonatomic, readonly) NSDictionary *localizedSectionHeaders;
 @property (nonatomic, readonly) NSDictionary *localizedSectionIndices;
-@property (nonatomic, readonly) NSString *mainStorePreferredForNameMeContactIdentifier;
 @property (nonatomic, copy) CNContact *meContact;
-@property (nonatomic, readonly) NSString *meContactIdentifier;
 @property (nonatomic, readonly) NSDictionary *sectionHeadersDictionary;
 @property (nonatomic, readonly) NSArray *sections;
-@property (nonatomic, readonly) BOOL shouldReturnToAccountsAndGroupsViewAfterSearchIsCanceled;
-@property (nonatomic, readonly) int sortOrder;
+@property (nonatomic, readonly) bool shouldReturnToAccountsAndGroupsViewAfterSearchIsCanceled;
+@property (nonatomic, readonly) long long sortOrder;
 @property (nonatomic, retain) CNContactStore *store;
 @property (readonly) Class superclass;
 
++ (bool)isErrorPossiblyRelatedToExtraStores:(id)arg1;
 + (id)keyPathsForValuesAffectingEffectiveFilter;
 
 - (void).cxx_destruct;
-- (void)_reloadSynchronously:(BOOL)arg1;
+- (void)_reloadSynchronously:(bool)arg1;
 - (unsigned int)abSortOrder;
 - (id)addressBook;
-- (BOOL)canReload;
-- (id)completeContactFromContact:(id)arg1 fromMainStoreOnly:(BOOL)arg2 keysToFetch:(id)arg3;
+- (bool)canReload;
+- (id)completeContactFromContact:(id)arg1 fromMainStoreOnly:(bool)arg2 keysToFetch:(id)arg3;
 - (id)contactFormatter;
 - (id)contactMatchInfos;
 - (void)contactStoreDidChange:(id)arg1;
@@ -63,35 +64,37 @@
 - (id)delegate;
 - (id)displayName;
 - (id)effectiveFilter;
+- (bool)fetchUnified;
 - (id)filter;
 - (id)indexPathForContact:(id)arg1;
 - (id)indexSections;
 - (id)indexSectionsArray;
 - (id)initWithStore:(id)arg1;
 - (void)invalidate;
-- (BOOL)isLoading;
+- (bool)isLoading;
 - (id)keysToFetch;
 - (id)localizedSectionHeaders;
 - (id)localizedSectionIndices;
-- (id)mainStorePreferredForNameMeContactIdentifier;
-- (id)mainStorePreferredForNameMeContactWithKeysToFetch:(id)arg1;
 - (id)meContact;
-- (id)meContactIdentifier;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)preferredForNameMeContactIdentifier;
+- (id)preferredForNameMeContactWithKeysToFetch:(id)arg1;
 - (void)reload;
 - (void)reloadAsynchronously;
 - (void)reset;
+- (void)resetPreferredForNameMeContact;
 - (id)sectionHeadersDictionary;
 - (id)sections;
 - (void)setContactFormatter:(id)arg1;
 - (void)setCurrentSnapshot:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setFetchUnified:(bool)arg1;
 - (void)setFilter:(id)arg1;
 - (void)setKeysToFetch:(id)arg1;
 - (void)setMeContact:(id)arg1;
-- (BOOL)setMeContact:(id)arg1 error:(id*)arg2;
+- (bool)setMeContact:(id)arg1 error:(id*)arg2;
 - (void)setStore:(id)arg1;
-- (int)sortOrder;
+- (long long)sortOrder;
 - (id)store;
 
 @end

@@ -4,38 +4,41 @@
 
 @interface _DECQueryItem : _DECItem {
     NSString * _abGroupIdentifier;
+    NSString * _contactIdentifier;
     NSString * _queryText;
     NSSet * _reasonCodes;
     NSSet * _reasons;
 }
 
 @property (nonatomic, retain) NSString *abGroupIdentifier;
+@property (nonatomic, retain) NSString *contactIdentifier;
 @property (nonatomic, readonly) NSString *queryText;
 @property (nonatomic, readonly) NSSet *reasonCodes;
 @property (nonatomic, readonly) NSSet *reasons;
 
-+ (unsigned int)category;
++ (unsigned long long)category;
 + (id)createFromSearchResult:(id)arg1;
-+ (BOOL)isSearchFoundationCompliant;
++ (bool)isSearchFoundationCompliant;
 + (id)queryWithText:(id)arg1 reasons:(id)arg2 reasonCodes:(id)arg3;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_isEqualToDECQueryItem:(id)arg1;
+- (bool)_isEqualToDECQueryItem:(id)arg1;
 - (id)abGroupIdentifier;
+- (id)contactIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithText:(id)arg1 reasons:(id)arg2 reasonCodes:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEquivalent:(id)arg1;
-- (BOOL)isEquivalent:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEquivalent:(id)arg1;
 - (id)queryText;
 - (id)reasonCodes;
 - (id)reasons;
 - (void)setAbGroupIdentifier:(id)arg1;
+- (void)setContactIdentifier:(id)arg1;
 - (id)toSearchResult;
 
 @end

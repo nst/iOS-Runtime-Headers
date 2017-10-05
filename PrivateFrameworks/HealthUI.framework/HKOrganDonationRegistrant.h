@@ -11,7 +11,7 @@
     NSString * _dob;
     NSString * _email;
     NSString * _firstname;
-    BOOL  _hasEdits;
+    bool  _hasEdits;
     NSString * _last4SSN;
     NSString * _lastname;
     NSString * _middlename;
@@ -30,8 +30,8 @@
 @property (nonatomic, retain) NSString *dob;
 @property (nonatomic, retain) NSString *email;
 @property (nonatomic, retain) NSString *firstname;
-@property (nonatomic, readonly) BOOL hasEdits;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool hasEdits;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *last4SSN;
 @property (nonatomic, retain) NSString *lastname;
 @property (nonatomic, retain) NSString *middlename;
@@ -41,20 +41,20 @@
 @property (nonatomic, retain) NSString *zip;
 
 + (id)_importNumberFormatter;
-+ (BOOL)_isNumericStringValid:(id)arg1 withLength:(int)arg2;
++ (bool)_isNumericStringValid:(id)arg1 withLength:(long long)arg2;
 + (void)_loadStateInformationIfNeeded;
 + (id)convertLocalizedNumericStringToLatin:(id)arg1 withNumberFormatter:(id)arg2;
 + (id)exportDateFormatter;
 + (id)organDonationRegistrantWithDemographicsInformation:(id)arg1;
 + (id)organDonationRegistrantWithJSONDictionary:(id)arg1;
 + (id)ssnNumberFormatter;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)zipcodeNumberFormatter;
 
 - (void).cxx_destruct;
-- (void)_addDataEntryItemIntoArray:(id)arg1 validOnly:(BOOL)arg2 forField:(int)arg3;
+- (void)_addDataEntryItemIntoArray:(id)arg1 validOnly:(bool)arg2 forField:(long long)arg3;
 - (id)_createDateOfBirthEntryItem;
-- (unsigned int)_placeHolderTypeForField:(int)arg1;
+- (unsigned long long)_placeHolderTypeForField:(long long)arg1;
 - (id)_stateChoiceDisplayNames;
 - (id)_stateChoiceValues;
 - (id)_todayBirthdayDateComponents;
@@ -64,18 +64,18 @@
 - (id)city;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dataEntryItemDidUpdateValue:(id)arg1;
-- (id)dataEntryItemForRegistrantField:(int)arg1;
-- (id)dataEntryItemsValidOnly:(BOOL)arg1;
+- (id)dataEntryItemForRegistrantField:(long long)arg1;
+- (id)dataEntryItemsValidOnly:(bool)arg1;
 - (id)delegate;
 - (id)dob;
 - (id)email;
 - (void)encodeWithCoder:(id)arg1;
 - (id)firstname;
-- (BOOL)hasEdits;
+- (bool)hasEdits;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isFieldValid:(int)arg1;
-- (BOOL)isRegistrantValid;
+- (bool)isFieldValid:(long long)arg1;
+- (bool)isRegistrantValid;
 - (id)jsonDictionaryRepresentation;
 - (id)last4SSN;
 - (id)lastname;

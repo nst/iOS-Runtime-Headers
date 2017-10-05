@@ -16,8 +16,9 @@
 
 - (void).cxx_destruct;
 - (id)casePercentage;
+- (id)initWithOutputDevice:(void*)arg1;
 - (id)initWithRouteDescription:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)leftPercentage;
 - (id)rightPercentage;
 - (id)singlePercentage;

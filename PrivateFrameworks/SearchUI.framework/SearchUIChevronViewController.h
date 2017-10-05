@@ -4,9 +4,10 @@
 
 @interface SearchUIChevronViewController : SearchUIAccessoryViewController
 
-+ (BOOL)supportsResult:(id)arg1;
++ (bool)supportsResult:(id)arg1;
 
 - (id)chevronImageWithColor:(id)arg1;
-- (id)setupViewWithStyle:(unsigned int)arg1;
+- (id)setupViewWithStyle:(unsigned long long)arg1;
+- (bool)shouldTopAlignForAccessibilityContentSizes;
 
 @end

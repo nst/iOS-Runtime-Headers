@@ -14,7 +14,7 @@
 - (id)referringAppName;
 - (id)referringURL;
 - (void)setEnterType:(id)arg1;
-- (void)setEnterTypeWithLaunchReason:(int)arg1;
+- (void)setEnterTypeWithLaunchReason:(long long)arg1;
 - (void)setReferringAppName:(id)arg1;
 - (void)setReferringURL:(id)arg1;
 

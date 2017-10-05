@@ -7,7 +7,7 @@
     double  _eventTime;
 }
 
-+ (id)animationEventWithKeyTime:(float)arg1 block:(id /* block */)arg2;
++ (id)animationEventWithKeyTime:(double)arg1 block:(id /* block */)arg2;
 
 - (void)dealloc;
 - (id /* block */)eventBlock;

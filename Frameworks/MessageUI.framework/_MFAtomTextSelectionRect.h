@@ -3,29 +3,29 @@
  */
 
 @interface _MFAtomTextSelectionRect : UITextSelectionRect {
-    BOOL  containsEnd;
-    BOOL  containsStart;
+    bool  containsEnd;
+    bool  containsStart;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  rect;
 }
 
-@property (nonatomic) BOOL containsEnd;
-@property (nonatomic) BOOL containsStart;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rect;
+@property (nonatomic) bool containsEnd;
+@property (nonatomic) bool containsStart;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } rect;
 
-- (BOOL)containsEnd;
-- (BOOL)containsStart;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rect;
-- (void)setContainsEnd:(BOOL)arg1;
-- (void)setContainsStart:(BOOL)arg1;
-- (void)setRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)containsEnd;
+- (bool)containsStart;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rect;
+- (void)setContainsEnd:(bool)arg1;
+- (void)setContainsStart:(bool)arg1;
+- (void)setRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 @end

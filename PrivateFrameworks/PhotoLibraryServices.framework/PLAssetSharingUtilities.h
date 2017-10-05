@@ -9,7 +9,7 @@
 + (long long)_estimatedOutputFileLengthForDuration:(double)arg1 exportPreset:(id)arg2 exportProperties:(id)arg3;
 + (id)_objectBuilderFromVideoFilePath:(id)arg1 metadata:(id)arg2;
 + (id)_playerItemForVideoAssetURL:(id)arg1;
-+ (struct CGImage { }*)_thumbnailForAssetURL:(id)arg1 useAspect:(BOOL)arg2;
++ (struct CGImage { }*)_thumbnailForAssetURL:(id)arg1 useAspect:(bool)arg2;
 + (struct CGImage { }*)aspectRatioThumbnailForAssetURL:(id)arg1;
 + (id)assetForVideoURL:(id)arg1 metadata:(id)arg2 outAudioMix:(id*)arg3 outVideoComposition:(id*)arg4;
 + (long long)estimatedOutputFileLengthForVideoFilePath:(id)arg1 metadata:(id)arg2 exportPreset:(id)arg3 exportProperties:(id)arg4;

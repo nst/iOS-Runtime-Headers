@@ -3,17 +3,19 @@
  */
 
 @interface SGSMFeedbackListener : NSObject <SFFeedbackListener> {
+    NSCache * _eventLastInteractionTime;
     SGSMutableSearchState * _previousState;
     SGSMutableSearchState * _searchState;
+    <SGSuggestionsServiceEventsProtocol> * _suggestionsService;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_eventIsOnFoundInAppsCalendar:(id)arg1;
+- (id)_eventIdentifierFromSearchResult:(id)arg1;
 - (void)_resetState;
 - (void)_restoreStateIfUnset;
 - (void)_saveAndUnsetState;

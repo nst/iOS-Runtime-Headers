@@ -5,9 +5,10 @@
 
 @required
 
-- (BOOL)areTelephonyCallsSupported;
-- (BOOL)isFaceTimeAudioSupported;
-- (BOOL)isFaceTimeVideoSupported;
-- (BOOL)isiMessageSupported;
+- (bool)areTelephonyCallsSupported;
+- (bool)isFaceTimeAudioSupported;
+- (bool)isFaceTimeVideoSupported;
+- (bool)isPaySupported;
+- (bool)isiMessageSupported;
 
 @end

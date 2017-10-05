@@ -4,34 +4,34 @@
 
 @interface PKImageSet : NSObject <NSSecureCoding> {
     NSURL * _originCacheURL;
-    int  _version;
+    long long  _version;
 }
 
 @property (nonatomic, copy) NSURL *originCacheURL;
-@property (nonatomic) int version;
+@property (nonatomic) long long version;
 
 + (id)_archiveURL:(id)arg1;
-+ (id)_createXPCContainerForImageSetWithType:(int)arg1 displayProfile:(id)arg2 screenScale:(float)arg3 screenSize:(struct CGSize { float x1; float x2; })arg4 suffix:(id)arg5 fileURL:(id)arg6 cacheURL:(id)arg7 imageSetOut:(id*)arg8;
++ (id)_createXPCContainerForImageSetWithType:(long long)arg1 displayProfile:(id)arg2 screenScale:(double)arg3 screenSize:(struct CGSize { double x1; double x2; })arg4 suffix:(id)arg5 fileURL:(id)arg6 cacheURL:(id)arg7 imageSetOut:(id*)arg8;
 + (id)archiveName;
-+ (Class)classForDisplayProfile:(id)arg1 imageSetType:(int)arg2;
-+ (Class)classForImageSetType:(int)arg1;
-+ (id)createXPCContainerForImageSetWithType:(int)arg1 displayProfile:(id)arg2 screenScale:(float)arg3 screenSize:(struct CGSize { float x1; float x2; })arg4 suffix:(id)arg5 fileURL:(id)arg6 cacheURL:(id)arg7;
++ (Class)classForDisplayProfile:(id)arg1 imageSetType:(long long)arg2;
++ (Class)classForImageSetType:(long long)arg1;
++ (id)createXPCContainerForImageSetWithType:(long long)arg1 displayProfile:(id)arg2 screenScale:(double)arg3 screenSize:(struct CGSize { double x1; double x2; })arg4 suffix:(id)arg5 fileURL:(id)arg6 cacheURL:(id)arg7;
 + (unsigned int)currentVersion;
-+ (id)imageSetForType:(int)arg1 displayProfile:(id)arg2 fileURL:(id)arg3 cacheURL:(id)arg4;
-+ (id)imageSetForType:(int)arg1 screenScale:(float)arg2 suffix:(id)arg3 displayProfile:(id)arg4 fileURL:(id)arg5 cacheURL:(id)arg6;
-+ (int)imageSetType;
-+ (BOOL)shouldCache;
-+ (BOOL)supportsSecureCoding;
++ (id)imageSetForType:(long long)arg1 displayProfile:(id)arg2 fileURL:(id)arg3 cacheURL:(id)arg4;
++ (id)imageSetForType:(long long)arg1 screenScale:(double)arg2 suffix:(id)arg3 displayProfile:(id)arg4 fileURL:(id)arg5 cacheURL:(id)arg6;
++ (long long)imageSetType;
++ (bool)shouldCache;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_isSetImage:(id)arg1 equalToImage:(id)arg2;
+- (bool)_isSetImage:(id)arg1 equalToImage:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDisplayProfile:(id)arg1 fileURL:(id)arg2 screenScale:(float)arg3 suffix:(id)arg4;
+- (id)initWithDisplayProfile:(id)arg1 fileURL:(id)arg2 screenScale:(double)arg3 suffix:(id)arg4;
 - (id)originCacheURL;
 - (void)preheatImages;
 - (void)setOriginCacheURL:(id)arg1;
-- (void)setVersion:(int)arg1;
-- (int)version;
+- (void)setVersion:(long long)arg1;
+- (long long)version;
 
 @end

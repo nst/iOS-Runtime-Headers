@@ -11,10 +11,10 @@
 
 @property (nonatomic, retain) NSString *backgroundColor;
 @property (nonatomic, retain) NSString *foregroundColor;
-@property (nonatomic, readonly) BOOL hasBackgroundColor;
-@property (nonatomic, readonly) BOOL hasForegroundColor;
-@property (nonatomic, readonly) BOOL hasLabel;
-@property (nonatomic, readonly) BOOL hasType;
+@property (nonatomic, readonly) bool hasBackgroundColor;
+@property (nonatomic, readonly) bool hasForegroundColor;
+@property (nonatomic, readonly) bool hasLabel;
+@property (nonatomic, readonly) bool hasType;
 @property (nonatomic, retain) NSString *label;
 @property (nonatomic, retain) NSString *type;
 
@@ -24,15 +24,15 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)foregroundColor;
-- (BOOL)hasBackgroundColor;
-- (BOOL)hasForegroundColor;
-- (BOOL)hasLabel;
-- (BOOL)hasType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasBackgroundColor;
+- (bool)hasForegroundColor;
+- (bool)hasLabel;
+- (bool)hasType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)label;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setForegroundColor:(id)arg1;
 - (void)setLabel:(id)arg1;

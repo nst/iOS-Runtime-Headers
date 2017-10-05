@@ -10,7 +10,7 @@
 @property (nonatomic) double delay;
 @property (nonatomic, retain) NSString *sound;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (double)delay;
 - (id)description;
 - (void)setDelay:(double)arg1;

@@ -4,78 +4,82 @@
 
 @interface MSMessage : NSObject <NSCopying, NSSecureCoding> {
     NSURL * _URL;
+    NSData * __data;
     NSString * _accessibilityLabel;
     NSString * _breadcrumbText;
     NSError * _error;
-    BOOL  _isFromMe;
+    bool  _isFromMe;
     MSMessageLayout * _layout;
+    bool  _pending;
+    bool  _requiresValidation;
     NSUUID * _senderParticipantIdentifier;
     MSSession * _session;
-    BOOL  _shouldExpire;
+    bool  _shouldExpire;
     NSString * _statusText;
     NSString * _summaryText;
-    NSString * _text;
 }
 
 @property (nonatomic, copy) NSURL *URL;
+@property (nonatomic, copy) NSData *_data;
 @property (nonatomic, copy) NSString *accessibilityLabel;
-@property (nonatomic, copy) <MSBalloonLayout> *balloonLayout;
 @property (nonatomic, copy) NSString *breadcrumbText;
 @property (nonatomic, copy) NSError *error;
-@property (nonatomic, readonly, copy) NSUUID *identifier;
-@property (nonatomic, retain) UIImage *image;
-@property (nonatomic) BOOL isFromMe;
+@property (nonatomic) bool isFromMe;
 @property (nonatomic, copy) MSMessageLayout *layout;
-@property (nonatomic, copy) NSURL *mediaURL;
+@property (getter=isPending, nonatomic) bool pending;
+@property (nonatomic) bool requiresValidation;
 @property (nonatomic, retain) NSUUID *senderParticipantIdentifier;
 @property (nonatomic, readonly) MSSession *session;
-@property (nonatomic) BOOL shouldExpire;
+@property (nonatomic) bool shouldExpire;
 @property (nonatomic, copy) NSString *statusText;
 @property (nonatomic, copy) NSString *summaryText;
-@property (nonatomic, copy) NSString *text;
 
-+ (BOOL)supportsSecureCoding;
+// Image: /System/Library/Frameworks/Messages.framework/Messages
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)URL;
+- (id)_data;
+- (void)_mergeSanitizedDataFromMessage:(id)arg1;
+- (void)_sanitize;
+- (id)_sanitizedCopy;
+- (id)_shallowCopy;
 - (id)accessibilityLabel;
-- (id)balloonLayout;
 - (id)breadcrumbText;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)error;
-- (unsigned int)hash;
-- (id)identifier;
-- (id)image;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIdentifier:(id)arg1;
 - (id)initWithSession:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isFromMe;
+- (bool)isEqual:(id)arg1;
+- (bool)isFromMe;
+- (bool)isPending;
 - (id)layout;
-- (id)mediaURL;
-- (void)sanitize;
-- (id)sanitizedCopy;
+- (bool)requiresValidation;
 - (id)senderParticipantIdentifier;
 - (id)session;
 - (void)setAccessibilityLabel:(id)arg1;
-- (void)setBalloonLayout:(id)arg1;
 - (void)setBreadcrumbText:(id)arg1;
 - (void)setError:(id)arg1;
-- (void)setImage:(id)arg1;
-- (void)setIsFromMe:(BOOL)arg1;
+- (void)setIsFromMe:(bool)arg1;
 - (void)setLayout:(id)arg1;
-- (void)setMediaURL:(id)arg1;
+- (void)setPending:(bool)arg1;
+- (void)setRequiresValidation:(bool)arg1;
 - (void)setSenderParticipantIdentifier:(id)arg1;
-- (void)setShouldExpire:(BOOL)arg1;
+- (void)setShouldExpire:(bool)arg1;
 - (void)setStatusText:(id)arg1;
 - (void)setSummaryText:(id)arg1;
-- (void)setText:(id)arg1;
 - (void)setURL:(id)arg1;
-- (BOOL)shouldExpire;
+- (void)set_data:(id)arg1;
+- (bool)shouldExpire;
 - (id)statusText;
 - (id)summaryText;
-- (id)text;
+
+// Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
+
+- (id)peerPaymentMessage;
 
 @end

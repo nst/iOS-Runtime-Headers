@@ -4,17 +4,22 @@
 
 @interface HFServiceGroupItemProvider : HFItemProvider {
     id /* block */  _filter;
+    HMHome * _home;
     <HFCharacteristicValueSource> * _overrideValueSource;
     NSMutableSet * _serviceGroupItems;
 }
 
 @property (nonatomic, copy) id /* block */ filter;
+@property (nonatomic, readonly) HMHome *home;
 @property (nonatomic, retain) <HFCharacteristicValueSource> *overrideValueSource;
 @property (nonatomic, retain) NSMutableSet *serviceGroupItems;
 @property (nonatomic, retain) <HFCharacteristicValueSource> *valueSource;
 
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id /* block */)filter;
+- (id)home;
+- (id)init;
 - (id)initWithHome:(id)arg1;
 - (id)invalidationReasons;
 - (id)items;

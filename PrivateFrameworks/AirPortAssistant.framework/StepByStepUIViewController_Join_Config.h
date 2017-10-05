@@ -6,7 +6,7 @@
     int  deviceKind;
     NSString * personalizedBaseName;
     unsigned int  productID;
-    BOOL  supportsSpruce;
+    bool  supportsSpruce;
 }
 
 @property (nonatomic, retain) NSString *personalizedBaseName;
@@ -17,16 +17,16 @@
 - (void)loadView;
 - (id)personalizedBaseName;
 - (void)prepareParams;
-- (void)primaryActionSelected:(BOOL)arg1;
+- (void)primaryActionSelected:(bool)arg1;
 - (void)selectedDeviceUpdated;
 - (void)setPersonalizedBaseName:(id)arg1;
 - (void)setupDevices;
 - (void)setupEditableBaseStationName;
 - (void)setupHeaderAndFooter;
 - (void)setupTable;
-- (BOOL)shouldChangeTextField:(id)arg1 atIndexPath:(id)arg2 forTextIndex:(unsigned int)arg3 toString:(id)arg4;
-- (BOOL)shouldEnableNextButton;
-- (BOOL)showMoreOptions;
+- (bool)shouldChangeTextField:(id)arg1 atIndexPath:(id)arg2 forTextIndex:(unsigned long long)arg3 toString:(id)arg4;
+- (bool)shouldEnableNextButton;
+- (bool)showMoreOptions;
 - (void)syncTopoUIForTarget:(id)arg1 andSource:(id)arg2 andNetwork:(id)arg3 connectionType:(id)arg4;
 - (void)textFieldDidChangeAtIndexPath:(id)arg1;
 - (void)updateNavigationButtons;

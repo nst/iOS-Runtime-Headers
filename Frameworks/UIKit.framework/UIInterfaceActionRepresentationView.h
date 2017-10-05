@@ -2,44 +2,52 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIInterfaceActionRepresentationView : UIView <UIFocusEnvironment, UIInterfaceActionDisplayPropertyObserver> {
+@interface UIInterfaceActionRepresentationView : UIView <UIFocusEnvironment, UIInterfaceActionDisplayPropertyObserver, UISpringLoadedInteractionSupporting> {
     UIInterfaceAction * _action;
     id  _actionViewStateContext;
     UIView<UIInterfaceActionVisualBackgroundDisplaying> * _backgroundHighlightView;
-    BOOL  _canKeepContentsInHierarchy;
-    BOOL  _contentsInsertedIntoViewHierarchy;
-    BOOL  _enforcedOnlyKeepVisibleContentInHierarchy;
-    BOOL  _enforcedOnlyKeepVisibleContentInHierarchyValue;
-    BOOL  _hasLoadedBackgroundView;
-    BOOL  _hasLoadedContentFirstTime;
-    BOOL  _highlighted;
+    bool  _canKeepContentsInHierarchy;
+    bool  _canRemoveContentFromHierarchyWhenNotVisible;
+    bool  _contentsInsertedIntoViewHierarchy;
+    bool  _enforcedCanRemoveContentFromHierarchyWhenNotVisible;
+    bool  _enforcedCanRemoveContentFromHierarchyWhenNotVisibleValue;
+    bool  _hasLoadedBackgroundView;
+    bool  _hasLoadedContentFirstTime;
+    bool  _highlighted;
+    UISpringLoadedInteraction * _interactionForSpringLoading;
     NSLayoutConstraint * _minimumHeightConstraint;
     NSLayoutConstraint * _minimumWidthConstraint;
-    BOOL  _onlyKeepVisibleContentInHierarchy;
+    bool  _ownsActionContent;
+    bool  _pressed;
     NSString * _sectionID;
-    BOOL  _showingAsPressed;
     NSArray * _viewsToDisappearWhenHighlighted;
-    unsigned int  _visualCornerPosition;
+    unsigned long long  _visualCornerPosition;
 }
 
+@property (setter=_setContentsInsertedIntoViewHierarchy:, nonatomic) bool _contentsInsertedIntoViewHierarchy;
 @property (nonatomic, readonly) UIInterfaceAction *action;
 @property (nonatomic, retain) id actionViewStateContext;
 @property (nonatomic, readonly) UIView<UIInterfaceActionVisualBackgroundDisplaying> *backgroundHighlightView;
-@property (nonatomic) BOOL contentsInsertedIntoViewHierarchy;
+@property (nonatomic) bool canRemoveContentFromHierarchyWhenNotVisible;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isHighlighted, nonatomic) BOOL highlighted;
+@property (readonly) unsigned long long hash;
+@property (getter=isHighlighted, nonatomic) bool highlighted;
+@property (nonatomic, retain) UISpringLoadedInteraction *interactionForSpringLoading;
 @property (nonatomic, readonly) NSLayoutConstraint *minimumHeightConstraint;
 @property (nonatomic, readonly) NSLayoutConstraint *minimumWidthConstraint;
-@property (nonatomic) BOOL onlyKeepVisibleContentInHierarchy;
+@property (nonatomic) bool ownsActionContent;
 @property (nonatomic, readonly, copy) NSArray *preferredFocusEnvironments;
 @property (nonatomic, readonly) UIView *preferredFocusedView;
+@property (getter=isPressed, nonatomic) bool pressed;
 @property (nonatomic, retain) NSString *sectionID;
+@property (getter=isSpringLoaded, nonatomic) bool springLoaded;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSArray *viewsToDisappearWhenHighlighted;
-@property (nonatomic) unsigned int visualCornerPosition;
+@property (nonatomic) unsigned long long visualCornerPosition;
 @property (nonatomic, readonly) UIInterfaceActionVisualStyle *visualStyle;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (void).cxx_destruct;
 - (id)__fittingContentSizingViewAllowingSelf;
@@ -51,70 +59,81 @@
 - (void)_applyVisualStyleToBackgroundViewAndHighlighting;
 - (void)_applyVisualStyleToLayoutMargins;
 - (void)_applyVisualStyleToMinimumSizeConstraints;
-- (BOOL)_canLoadContentsIntoHierarchy;
+- (bool)_canLoadContentsIntoHierarchy;
 - (void)_clearBackgroundPressedState;
+- (bool)_contentsInsertedIntoViewHierarchy;
 - (void)_didScroll;
-- (void)_enforceActionRepresentationViewsOnlyKeepVisibleContentInHierarchy:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })_fittingContentSizeWithFittingViewSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)_enforceActionRepresentationViewsCanRemoveContentFromHierarchyWhenNotVisible:(bool)arg1;
+- (struct CGSize { double x1; double x2; })_fittingContentSizeWithFittingViewSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)_fittingContentSizingView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_fittingContentSizingViewFrameInBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)_fittingContentSizingViewIsAlertControllerRepresentation;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_fittingContentSizingViewMargins;
-- (BOOL)_handleVisualFeedbackForPress:(id)arg1 pressed:(BOOL)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_fittingContentSizingViewFrameInBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_fittingContentSizingViewMargins;
+- (bool)_fittingContentViewHasItsOwnActiveMinimumSizeConstraintsWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (bool)_handleVisualFeedbackForPress:(id)arg1 pressed:(bool)arg2;
 - (void)_initializeHorizontalMarginsForAction;
-- (BOOL)_isVisibleWithinContainmentAncestor;
+- (bool)_isVisibleWithinContainmentAncestor;
 - (void)_loadContentsIntoHierarchyAndPrepareIfNecessary;
 - (void)_reloadBackgroundHighlightView;
 - (void)_removeLoadedContentsFromHierarchyIfNotVisible;
-- (void)_setHorizontalMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 preservesSuperviewLayoutMargins:(BOOL)arg2;
-- (BOOL)_shouldShowPressFeedbackForEventWithPresses:(id)arg1;
-- (void)_showVisualFeedbackForPressed:(BOOL)arg1;
-- (BOOL)_showsFocusForFocusedView:(id)arg1;
+- (void)_setContentsInsertedIntoViewHierarchy:(bool)arg1;
+- (void)_setHorizontalMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 preservesSuperviewLayoutMargins:(bool)arg2;
+- (bool)_shouldShowPressFeedbackForEventWithPresses:(id)arg1;
+- (void)_showVisualFeedbackForPressed:(bool)arg1;
+- (bool)_showsFocusForFocusedView:(id)arg1;
 - (void)_updateFittingContentSizingViewToFitSize;
 - (void)_updateHighlightAndPressedFeedback;
 - (void)_updateLoadedContentsHierarchyByInsertingOrRemovingIfNecessary;
 - (id)_viewDisplayingBackground;
+- (void)dealloc;
+- (id)description;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
 - (id)action;
 - (id)actionViewStateContext;
 - (id)backgroundHighlightView;
-- (BOOL)canBecomeFocused;
-- (BOOL)contentsInsertedIntoViewHierarchy;
-- (void)dealloc;
-- (id)description;
+- (bool)canBecomeFocused;
+- (bool)canRemoveContentFromHierarchyWhenNotVisible;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
-- (BOOL)hasLayoutHeightConstraintsIdenticalToRepresentationView:(id)arg1;
+- (bool)hasLayoutHeightConstraintsIdenticalToRepresentationView:(id)arg1;
 - (id)initWithAction:(id)arg1;
+- (id)interactionForSpringLoading;
 - (void)interfaceAction:(id)arg1 reloadDisplayedContentActionProperties:(id)arg2;
 - (void)interfaceAction:(id)arg1 reloadDisplayedContentVisualStyle:(id)arg2;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)invalidateIntrinsicContentSize;
 - (void)invokeInterfaceAction;
-- (BOOL)isFocused;
-- (BOOL)isHighlighted;
+- (bool)isFocused;
+- (bool)isHighlighted;
+- (bool)isPressed;
+- (bool)isSpringLoaded;
 - (void)layoutMarginsDidChange;
 - (void)layoutSubviews;
 - (void)loadContents;
 - (id)minimumHeightConstraint;
 - (id)minimumWidthConstraint;
-- (BOOL)onlyKeepVisibleContentInHierarchy;
+- (bool)ownsActionContent;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)pressesChanged:(id)arg1 withEvent:(id)arg2;
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
 - (id)sectionID;
 - (void)setActionViewStateContext:(id)arg1;
-- (void)setContentsInsertedIntoViewHierarchy:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setOnlyKeepVisibleContentInHierarchy:(BOOL)arg1;
+- (void)setCanRemoveContentFromHierarchyWhenNotVisible:(bool)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setInteractionForSpringLoading:(id)arg1;
+- (void)setOwnsActionContent:(bool)arg1;
+- (void)setPressed:(bool)arg1;
 - (void)setSectionID:(id)arg1;
+- (void)setSpringLoaded:(bool)arg1;
 - (void)setViewsToDisappearWhenHighlighted:(id)arg1;
-- (void)setVisualCornerPosition:(unsigned int)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
+- (void)setVisualCornerPosition:(unsigned long long)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (void)updateConstraints;
 - (void)updateContentsInsertedIntoHierarchy;
 - (id)viewsToDisappearWhenHighlighted;
-- (unsigned int)visualCornerPosition;
+- (unsigned long long)visualCornerPosition;
 - (id)visualStyle;
 
 @end

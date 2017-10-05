@@ -4,7 +4,7 @@
 
 @interface _NSURLBDOnce : NSObject {
     id /* block */  fBlock;
-    BOOL  fDone;
+    bool  fDone;
 }
 
 - (void)dealloc;

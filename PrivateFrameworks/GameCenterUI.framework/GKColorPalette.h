@@ -28,7 +28,7 @@
 @property (readonly) UIColor *systemInteractionColor;
 @property (readonly) UIColor *textOnDarkBackgroundColor;
 @property (readonly) UIColor *viewBackgroundColor;
-@property (readonly) int windowBackgroundBlurStyle;
+@property (readonly) long long windowBackgroundBlurStyle;
 @property (readonly) UIColor *windowBackgroundColor;
 
 + (id)paletteFromImage:(id)arg1;
@@ -58,7 +58,7 @@
 - (id)systemInteractionColor;
 - (id)textOnDarkBackgroundColor;
 - (id)viewBackgroundColor;
-- (int)windowBackgroundBlurStyle;
+- (long long)windowBackgroundBlurStyle;
 - (id)windowBackgroundColor;
 
 @end

@@ -7,9 +7,9 @@
     NSMapTable * _nodesByLabel;
 }
 
-@property (nonatomic, readonly) unsigned int edgeCount;
+@property (nonatomic, readonly) unsigned long long edgeCount;
 @property (nonatomic, readonly) NSSet *edgeLabels;
-@property (nonatomic, readonly) unsigned int nodeCount;
+@property (nonatomic, readonly) unsigned long long nodeCount;
 @property (nonatomic, readonly) NSSet *nodeLabels;
 
 - (void).cxx_destruct;
@@ -19,14 +19,14 @@
 - (id)_allNodes;
 - (id)_edgesForLabel:(id)arg1;
 - (id)_nodesForLabel:(id)arg1;
-- (id)addEdgeWithLabel:(id)arg1 sourceNode:(id)arg2 targetNode:(id)arg3 directed:(BOOL)arg4;
+- (id)addEdgeWithLabel:(id)arg1 sourceNode:(id)arg2 targetNode:(id)arg3 directed:(bool)arg4;
 - (id)addNodeWithLabel:(id)arg1;
 - (id)addNodeWithLabel:(id)arg1 properties:(id)arg2;
-- (id)addUniqueEdgeWithLabel:(id)arg1 sourceNode:(id)arg2 targetNode:(id)arg3 directed:(BOOL)arg4 properties:(id)arg5;
+- (id)addUniqueEdgeWithLabel:(id)arg1 sourceNode:(id)arg2 targetNode:(id)arg3 directed:(bool)arg4 properties:(id)arg5;
 - (id)addUniqueNodeWithLabel:(id)arg1 properties:(id)arg2;
 - (id)description;
-- (unsigned int)edgeCount;
-- (unsigned int)edgeCountForLabel:(id)arg1;
+- (unsigned long long)edgeCount;
+- (unsigned long long)edgeCountForLabel:(id)arg1;
 - (id)edgeLabels;
 - (id)edgesForLabel:(id)arg1;
 - (id)edgesForLabel:(id)arg1 properties:(id)arg2;
@@ -35,8 +35,8 @@
 - (void)enumerateNodesWithBlock:(id /* block */)arg1;
 - (void)enumerateNodesWithLabel:(id)arg1 usingBlock:(id /* block */)arg2;
 - (id)init;
-- (unsigned int)nodeCount;
-- (unsigned int)nodeCountForLabel:(id)arg1;
+- (unsigned long long)nodeCount;
+- (unsigned long long)nodeCountForLabel:(id)arg1;
 - (id)nodeLabels;
 - (id)nodesForLabel:(id)arg1;
 - (id)nodesForLabel:(id)arg1 properties:(id)arg2;
@@ -46,7 +46,7 @@
 - (void)removeNode:(id)arg1;
 - (void)removeNodeEdges:(id)arg1;
 - (void)removeNodes:(id)arg1;
-- (void)traverseGraphBreadthFirstFromNode:(id)arg1 directed:(BOOL)arg2 usingBlock:(id /* block */)arg3;
-- (void)traverseGraphDepthFirstFromNode:(id)arg1 directed:(BOOL)arg2 usingBlock:(id /* block */)arg3;
+- (void)traverseGraphBreadthFirstFromNode:(id)arg1 directed:(bool)arg2 usingBlock:(id /* block */)arg3;
+- (void)traverseGraphDepthFirstFromNode:(id)arg1 directed:(bool)arg2 usingBlock:(id /* block */)arg3;
 
 @end

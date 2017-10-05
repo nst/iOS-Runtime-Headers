@@ -3,37 +3,37 @@
  */
 
 @interface NSFileMultipleAccessClaim : NSFileAccessClaim {
-    unsigned int  _currentlyLinkResolvingURLIndex;
-    int  _readingLinkResolutionCount;
+    unsigned long long  _currentlyLinkResolvingURLIndex;
+    long long  _readingLinkResolutionCount;
     NSMutableArray * _readingLocations;
-    unsigned int * _readingOptions;
+    unsigned long long * _readingOptions;
     NSMutableArray * _readingURLs;
-    BOOL * _readingURLsDidChange;
+    bool * _readingURLsDidChange;
     NSFileAccessNode * _rootNode;
     NSMutableArray * _writingLocations;
-    unsigned int * _writingOptions;
+    unsigned long long * _writingOptions;
     NSMutableArray * _writingURLs;
-    BOOL * _writingURLsDidChange;
+    bool * _writingURLsDidChange;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)allURLs;
-- (BOOL)blocksClaim:(id)arg1;
+- (bool)blocksClaim:(id)arg1;
 - (void)dealloc;
 - (void)devalueSelf;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)evaluateSelfWithRootNode:(id)arg1 checkSubarbitrability:(BOOL)arg2;
+- (bool)evaluateSelfWithRootNode:(id)arg1 checkSubarbitrability:(bool)arg2;
 - (void)forwardUsingConnection:(id)arg1 crashHandler:(id /* block */)arg2;
 - (void)granted;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPurposeID:(id)arg1 intents:(id)arg2 claimer:(id /* block */)arg3;
 - (void)invokeClaimer;
-- (BOOL)isBlockedByReadingItemAtLocation:(id)arg1 options:(unsigned int)arg2;
-- (BOOL)isBlockedByWritingItemAtLocation:(id)arg1 options:(unsigned int)arg2;
+- (bool)isBlockedByReadingItemAtLocation:(id)arg1 options:(unsigned long long)arg2;
+- (bool)isBlockedByWritingItemAtLocation:(id)arg1 options:(unsigned long long)arg2;
 - (void)itemAtLocation:(id)arg1 wasReplacedByItemAtLocation:(id)arg2;
 - (void)resolveURLsThenMaybeContinueInvokingClaimer:(id /* block */)arg1;
-- (BOOL)shouldBeRevokedPriorToInvokingAccessor;
-- (BOOL)shouldCancelInsteadOfWaiting;
+- (bool)shouldBeRevokedPriorToInvokingAccessor;
+- (bool)shouldCancelInsteadOfWaiting;
 
 @end

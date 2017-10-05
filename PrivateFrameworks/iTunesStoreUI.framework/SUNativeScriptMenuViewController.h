@@ -13,12 +13,12 @@
 - (id)action;
 - (id)copyScriptViewController;
 - (void)dealloc;
-- (BOOL)isMenuItemEnabledAtIndex:(int)arg1;
+- (bool)isMenuItemEnabledAtIndex:(long long)arg1;
 - (id)menuItems;
-- (int)numberOfMenuItems;
-- (void)performActionForMenuItemAtIndex:(int)arg1;
+- (long long)numberOfMenuItems;
+- (void)performActionForMenuItemAtIndex:(long long)arg1;
 - (void)setAction:(id)arg1;
 - (void)setMenuItems:(id)arg1;
-- (id)titleOfMenuItemAtIndex:(int)arg1;
+- (id)titleOfMenuItemAtIndex:(long long)arg1;
 
 @end

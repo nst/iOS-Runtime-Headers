@@ -4,17 +4,17 @@
 
 @interface DeserializedTransaction : NSObject {
     CHRecentCall * _call;
-    unsigned int  _type;
+    unsigned long long  _type;
 }
 
 @property (retain) CHRecentCall *call;
-@property unsigned int type;
+@property unsigned long long type;
 
 - (void).cxx_destruct;
 - (id)call;
-- (id)initWithCall:(id)arg1 andType:(unsigned int)arg2;
+- (id)initWithCall:(id)arg1 andType:(unsigned long long)arg2;
 - (void)setCall:(id)arg1;
-- (void)setType:(unsigned int)arg1;
-- (unsigned int)type;
+- (void)setType:(unsigned long long)arg1;
+- (unsigned long long)type;
 
 @end

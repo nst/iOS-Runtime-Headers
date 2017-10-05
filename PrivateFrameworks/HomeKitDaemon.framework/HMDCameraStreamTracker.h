@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraStreamTracker : NSObject <HMFLogging> {
+@interface HMDCameraStreamTracker : HMFObject <HMFLogging> {
     NSMutableSet * _currentStreamIdentifiers;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
@@ -10,7 +10,7 @@
 @property (nonatomic, retain) NSMutableSet *currentStreamIdentifiers;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
 
@@ -22,7 +22,7 @@
 - (void)endStream:(id)arg1;
 - (id)init;
 - (void)setCurrentStreamIdentifiers:(id)arg1;
-- (BOOL)startStream:(id)arg1;
+- (bool)startStream:(id)arg1;
 - (id)workQueue;
 
 @end

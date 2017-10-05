@@ -2,16 +2,24 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@interface _LSQueryContext : NSObject
+@interface _LSQueryContext : NSObject {
+    id  _resolver;
+}
+
+@property (readonly) <_LSQueryResolving> *_resolver;
 
 + (id)defaultContext;
++ (void)setSimulateLimitedMappingForXCTests:(bool)arg1;
++ (bool)simulateLimitedMappingForXCTests;
 
 - (id)_init;
-- (void)_resolveQueries:(id)arg1 cachingStrategy:(int)arg2 synchronously:(BOOL)arg3 XPCConnection:(id)arg4 completionHandler:(id /* block */)arg5;
+- (id)_resolveQueries:(id)arg1 cachingStrategy:(long long)arg2 XPCConnection:(id)arg3 error:(id*)arg4;
+- (id)_resolver;
 - (void)clearCaches;
+- (void)dealloc;
+- (id)debugDescription;
 - (void)enumerateResolvedResultsOfQuery:(id)arg1 withBlock:(id /* block */)arg2;
 - (id)init;
-- (void)resolveQueries:(id)arg1 cachingStrategy:(int)arg2 completionHandler:(id /* block */)arg3;
-- (id)resolveQueries:(id)arg1 cachingStrategy:(int)arg2 error:(id*)arg3;
+- (id)resolveQueries:(id)arg1 cachingStrategy:(long long)arg2 error:(id*)arg3;
 
 @end

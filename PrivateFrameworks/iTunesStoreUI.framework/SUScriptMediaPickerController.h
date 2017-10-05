@@ -4,7 +4,7 @@
 
 @interface SUScriptMediaPickerController : SUScriptViewController
 
-@property BOOL allowsPickingMultipleItems;
+@property bool allowsPickingMultipleItems;
 @property (readonly) NSArray *mediaTypes;
 @property (retain) NSString *prompt;
 
@@ -12,14 +12,14 @@
 + (id)webScriptNameForKeyName:(id)arg1;
 
 - (id)_className;
-- (BOOL)allowsPickingMultipleItems;
+- (bool)allowsPickingMultipleItems;
 - (id)attributeKeys;
 - (id)initWithMediaTypes:(id)arg1;
 - (id)mediaTypes;
 - (id)newNativeViewController;
 - (id)prompt;
 - (id)scriptAttributeKeys;
-- (void)setAllowsPickingMultipleItems:(BOOL)arg1;
+- (void)setAllowsPickingMultipleItems:(bool)arg1;
 - (void)setNativeViewController:(id)arg1;
 - (void)setPrompt:(id)arg1;
 

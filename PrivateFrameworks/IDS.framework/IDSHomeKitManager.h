@@ -12,11 +12,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (void)adminAccessTokens:(id)arg1 error:(id)arg2;
 - (void)consentTokens:(id)arg1 error:(id)arg2;
 - (void)dealloc;

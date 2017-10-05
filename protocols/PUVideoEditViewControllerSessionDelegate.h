@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)videoEditViewController:(PUVideoEditViewController *)arg1 didFinishEditingSessionForAsset:(id <PUEditableAsset>)arg2 completed:(BOOL)arg3;
+- (void)videoEditViewController:(PUVideoEditViewController *)arg1 didFinishEditingSessionForAsset:(id <PUEditableAsset>)arg2 completed:(bool)arg3;
 
 @end

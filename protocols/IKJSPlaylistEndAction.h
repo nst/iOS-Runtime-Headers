@@ -5,8 +5,8 @@
 
 @required
 
-- (int)PAUSE;
-- (int)STOP;
-- (int)WAIT_FOR_MORE_ITEMS;
+- (long long)PAUSE;
+- (long long)STOP;
+- (long long)WAIT_FOR_MORE_ITEMS;
 
 @end

@@ -6,7 +6,7 @@
     NSData * _ckFromCursor;
     unsigned long long  _ckFromOrder;
     unsigned long long  _ckToOrder;
-    BOOL  _exhaustedRange;
+    bool  _exhaustedRange;
     NSArray * _feedItems;
     FCFeedRange * _feedRange;
     id  _insertionToken;
@@ -15,10 +15,10 @@
 @property (nonatomic, copy) NSData *ckFromCursor;
 @property (nonatomic) unsigned long long ckFromOrder;
 @property (nonatomic) unsigned long long ckToOrder;
-@property (nonatomic) BOOL exhaustedRange;
+@property (nonatomic) bool exhaustedRange;
 @property (nonatomic, copy) NSArray *feedItems;
 @property (nonatomic, copy) FCFeedRange *feedRange;
-@property (nonatomic, readonly) BOOL hasCKCursor;
+@property (nonatomic, readonly) bool hasCKCursor;
 @property (nonatomic, retain) id insertionToken;
 
 - (void).cxx_destruct;
@@ -26,15 +26,15 @@
 - (unsigned long long)ckFromOrder;
 - (unsigned long long)ckToOrder;
 - (id)description;
-- (BOOL)exhaustedRange;
+- (bool)exhaustedRange;
 - (id)feedItems;
 - (id)feedRange;
-- (BOOL)hasCKCursor;
+- (bool)hasCKCursor;
 - (id)insertionToken;
 - (void)setCkFromCursor:(id)arg1;
 - (void)setCkFromOrder:(unsigned long long)arg1;
 - (void)setCkToOrder:(unsigned long long)arg1;
-- (void)setExhaustedRange:(BOOL)arg1;
+- (void)setExhaustedRange:(bool)arg1;
 - (void)setFeedItems:(id)arg1;
 - (void)setFeedRange:(id)arg1;
 - (void)setInsertionToken:(id)arg1;

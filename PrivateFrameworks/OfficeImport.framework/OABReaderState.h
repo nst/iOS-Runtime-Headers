@@ -23,16 +23,16 @@
 - (id)groupStackReference;
 - (id)init;
 - (id)initWithClient:(Class)arg1;
-- (BOOL)isInsideGroup;
+- (bool)isInsideGroup;
 - (id)peekGroup;
 - (id)popGroup;
 - (void)pushGroup:(id)arg1;
 - (void)resetForNewDrawing;
 - (void)setBstoreContainerHolder:(id)arg1;
 - (void)setColorPalette:(id)arg1;
-- (void)setDrawable:(id)arg1 forShapeId:(unsigned long)arg2;
+- (void)setDrawable:(id)arg1 forShapeId:(unsigned int)arg2;
 - (void)setEshContent:(struct EshContent { }*)arg1 forId:(int)arg2;
-- (BOOL)useXmlBlobs;
+- (bool)useXmlBlobs;
 - (id)xmlDrawingState;
 
 @end

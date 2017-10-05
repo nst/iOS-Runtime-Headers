@@ -2,7 +2,9 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-@interface CACodingProxy : NSObject <NSCoding>
+@interface CACodingProxy : NSObject <NSSecureCoding>
+
++ (bool)supportsSecureCoding;
 
 - (id)decodedObject;
 - (void)encodeWithCoder:(id)arg1;

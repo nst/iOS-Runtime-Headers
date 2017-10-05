@@ -4,24 +4,27 @@
 
 @interface CMWorkout : NSObject <NSCopying, NSSecureCoding> {
     NSUUID * fSessionId;
-    int  fType;
+    long long  fType;
 }
 
 @property (nonatomic, readonly) NSUUID *sessionId;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 
-+ (int)natalieDataSessionFromWorkoutType:(int)arg1;
-+ (BOOL)supportsSecureCoding;
-+ (id)workoutName:(int)arg1;
-+ (int)workoutTypeFromNatalieDataSession:(int)arg1;
++ (int)CLMotionActivityTypeFromCMWorkoutType:(long long)arg1;
++ (long long)CMWorkoutTypeFromCLMotionActivityType:(int)arg1;
++ (bool)isAvailable;
++ (long long)natalieDataSessionFromWorkoutType:(long long)arg1;
++ (bool)supportsSecureCoding;
++ (id)workoutName:(long long)arg1;
++ (long long)workoutTypeFromNatalieDataSession:(long long)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithSessionId:(id)arg1 type:(int)arg2;
+- (id)initWithSessionId:(id)arg1 type:(long long)arg2;
 - (id)sessionId;
-- (int)type;
+- (long long)type;
 
 @end

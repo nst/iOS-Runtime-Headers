@@ -20,7 +20,7 @@
 - (id)accountTypesWithDefaultAccountID:(id)arg1;
 - (id)activeiCloudAccount;
 - (id)activeiTunesStoreAccount;
-- (id)defaultAccountIDForAuthenticationAccountType:(unsigned int)arg1;
+- (id)defaultAccountIDForAuthenticationAccountType:(unsigned long long)arg1;
 - (id)deviceName;
 - (id)homeSharingAppleID;
 - (id)homeSharingGroupID;

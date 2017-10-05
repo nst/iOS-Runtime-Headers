@@ -5,7 +5,7 @@
 @interface SASportsTeam : SASportsEntity
 
 @property (nonatomic, copy) NSString *abbreviatedName;
-@property (nonatomic) BOOL alwaysUseAthleteFullName;
+@property (nonatomic) bool alwaysUseAthleteFullName;
 @property (nonatomic, copy) NSArray *athletes;
 @property (nonatomic, copy) NSString *awayLosses;
 @property (nonatomic, copy) NSString *awayOvertimeLosses;
@@ -53,7 +53,7 @@
 + (id)teamWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)abbreviatedName;
-- (BOOL)alwaysUseAthleteFullName;
+- (bool)alwaysUseAthleteFullName;
 - (id)athletes;
 - (id)awayLosses;
 - (id)awayOvertimeLosses;
@@ -89,7 +89,7 @@
 - (id)rankings;
 - (id)secondaryColor;
 - (void)setAbbreviatedName:(id)arg1;
-- (void)setAlwaysUseAthleteFullName:(BOOL)arg1;
+- (void)setAlwaysUseAthleteFullName:(bool)arg1;
 - (void)setAthletes:(id)arg1;
 - (void)setAwayLosses:(id)arg1;
 - (void)setAwayOvertimeLosses:(id)arg1;

@@ -4,9 +4,9 @@
 
 @interface UNSAudioAttachmentData : UNSAttachmentData
 
-+ (BOOL)isFileValid:(id)arg1;
++ (bool)isFileValid:(id)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

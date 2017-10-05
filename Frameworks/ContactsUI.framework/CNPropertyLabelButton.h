@@ -6,4 +6,6 @@
 
 + (id)propertyLabelButton;
 
+- (void)updateConstraints;
+
 @end

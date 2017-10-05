@@ -5,7 +5,7 @@
 
 @required
 
-- (void)setStyle:(unsigned int)arg1;
-- (unsigned int)style;
+- (void)setStyle:(unsigned long long)arg1;
+- (unsigned long long)style;
 
 @end

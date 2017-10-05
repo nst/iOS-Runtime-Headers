@@ -4,7 +4,7 @@
 
 @interface SASiriPresentationClientState : SAAceClientState
 
-@property (nonatomic) BOOL isFullScreen;
+@property (nonatomic) bool isFullScreen;
 
 + (id)deliveryDeadline;
 + (id)persistencePolicy;
@@ -13,7 +13,7 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)isFullScreen;
-- (void)setIsFullScreen:(BOOL)arg1;
+- (bool)isFullScreen;
+- (void)setIsFullScreen:(bool)arg1;
 
 @end

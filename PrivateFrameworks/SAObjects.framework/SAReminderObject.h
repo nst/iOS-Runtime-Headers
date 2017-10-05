@@ -5,10 +5,10 @@
 @interface SAReminderObject : SADomainObject
 
 @property (nonatomic, copy) NSString *alternateSubject;
-@property (nonatomic) BOOL completed;
+@property (nonatomic) bool completed;
 @property (nonatomic, copy) NSDate *dueDate;
 @property (nonatomic, copy) NSString *dueDateTimeZoneId;
-@property (nonatomic) BOOL important;
+@property (nonatomic) bool important;
 @property (nonatomic, copy) NSArray *lists;
 @property (nonatomic, retain) <SAReminderPayload> *payload;
 @property (nonatomic, retain) SAReminderRecurrence *recurrence;
@@ -20,20 +20,20 @@
 + (id)objectWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)alternateSubject;
-- (BOOL)completed;
+- (bool)completed;
 - (id)dueDate;
 - (id)dueDateTimeZoneId;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)important;
+- (bool)important;
 - (id)lists;
 - (id)payload;
 - (id)recurrence;
 - (void)setAlternateSubject:(id)arg1;
-- (void)setCompleted:(BOOL)arg1;
+- (void)setCompleted:(bool)arg1;
 - (void)setDueDate:(id)arg1;
 - (void)setDueDateTimeZoneId:(id)arg1;
-- (void)setImportant:(BOOL)arg1;
+- (void)setImportant:(bool)arg1;
 - (void)setLists:(id)arg1;
 - (void)setPayload:(id)arg1;
 - (void)setRecurrence:(id)arg1;

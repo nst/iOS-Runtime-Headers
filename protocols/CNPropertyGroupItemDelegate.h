@@ -5,7 +5,7 @@
 
 @optional
 
+- (CNContactViewCache *)contactViewCache;
 - (void)propertyItem:(CNPropertyGroupItem *)arg1 willChangeValue:(id)arg2;
-- (CNContactStore *)storeForPropertyItem:(CNPropertyGroupItem *)arg1;
 
 @end

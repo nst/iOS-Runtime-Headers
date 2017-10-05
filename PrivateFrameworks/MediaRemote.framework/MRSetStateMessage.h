@@ -2,26 +2,12 @@
    Image: /System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
  */
 
-@interface MRSetStateMessage : MRProtocolMessage {
-    NSDictionary * _nowPlayingInfo;
-    NSArray * _supportedCommands;
-}
+@interface MRSetStateMessage : MRProtocolMessage
 
-@property (nonatomic, readonly) NSString *displayID;
-@property (nonatomic, readonly) NSString *displayName;
-@property (nonatomic, readonly) NSDictionary *nowPlayingInfo;
-@property (nonatomic, readonly) void*playbackQueue;
-@property (nonatomic, readonly) unsigned int playbackState;
-@property (nonatomic, readonly) NSArray *supportedCommands;
+@property (nonatomic, readonly) void*state;
 
-- (void)dealloc;
-- (id)displayID;
-- (id)displayName;
-- (id)initWithNowPlayingState:(id)arg1;
-- (id)nowPlayingInfo;
-- (void*)playbackQueue;
-- (unsigned int)playbackState;
-- (id)supportedCommands;
-- (unsigned int)type;
+- (id)initWithNowPlayingState:(void*)arg1;
+- (void*)state;
+- (unsigned long long)type;
 
 @end

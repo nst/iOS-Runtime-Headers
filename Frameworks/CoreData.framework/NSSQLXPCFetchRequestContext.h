@@ -5,6 +5,6 @@
 @interface NSSQLXPCFetchRequestContext : NSSQLFetchRequestContext
 
 - (void)executeEpilogue;
-- (void)executeRequestUsingConnection:(id)arg1;
+- (void)executeRequestCore:(id*)arg1;
 
 @end

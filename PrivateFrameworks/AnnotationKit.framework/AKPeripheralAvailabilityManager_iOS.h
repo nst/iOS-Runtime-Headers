@@ -3,17 +3,17 @@
  */
 
 @interface AKPeripheralAvailabilityManager_iOS : NSObject {
-    unsigned int  _currentAvailability;
+    unsigned long long  _currentAvailability;
     struct __IOHIDManager { } * stylusHidManager;
 }
 
-@property unsigned int currentAvailability;
+@property unsigned long long currentAvailability;
 
-- (unsigned int)currentAvailability;
+- (unsigned long long)currentAvailability;
 - (void)dealloc;
 - (id)init;
 - (void)postConnectionStatusNotification;
-- (void)setCurrentAvailability:(unsigned int)arg1;
+- (void)setCurrentAvailability:(unsigned long long)arg1;
 - (void)startMonitoringForPeripheralConnection;
 - (void)stopMonitoringForPeripheralConnection;
 - (void)teardown;

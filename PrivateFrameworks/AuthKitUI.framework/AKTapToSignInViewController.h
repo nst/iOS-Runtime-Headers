@@ -4,6 +4,6 @@
 
 @interface AKTapToSignInViewController : AKInlineSignInViewController
 
-- (void)provideDelegateWithAuthResults:(id)arg1 error:(id)arg2;
+- (void)_provideDelegateWithAuthResults:(id)arg1 error:(id)arg2;
 
 @end

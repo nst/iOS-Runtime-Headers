@@ -8,6 +8,6 @@
 - (void)_applyToTitleLabel:(id)arg1;
 - (id)_backgroundColor;
 - (void)applyToObjectModel:(id)arg1;
-- (int)navBarActivityIndicatorStyle;
+- (long long)navBarActivityIndicatorStyle;
 
 @end

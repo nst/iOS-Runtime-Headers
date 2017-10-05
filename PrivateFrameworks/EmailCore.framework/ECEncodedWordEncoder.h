@@ -5,46 +5,46 @@
 @interface ECEncodedWordEncoder : NSObject {
     NSString * _characterSet;
     NSData * _decodedText;
-    int  _encodedWordEncoding;
+    long long  _encodedWordEncoding;
     NSString * _language;
-    unsigned int  _singleEncodedWordLength;
+    unsigned long long  _singleEncodedWordLength;
     NSString * _string;
-    unsigned int  _stringEncoding;
+    unsigned long long  _stringEncoding;
 }
 
 @property (nonatomic, copy) NSString *characterSet;
 @property (nonatomic, copy) NSData *decodedText;
-@property (nonatomic) int encodedWordEncoding;
+@property (nonatomic) long long encodedWordEncoding;
 @property (nonatomic, readonly, copy) NSString *language;
-@property (nonatomic, readonly) unsigned int minimumLengthOfEncodedWord;
-@property (nonatomic) unsigned int singleEncodedWordLength;
+@property (nonatomic, readonly) unsigned long long minimumLengthOfEncodedWord;
+@property (nonatomic) unsigned long long singleEncodedWordLength;
 @property (nonatomic, readonly, copy) NSString *string;
-@property (nonatomic, readonly) unsigned int stringEncoding;
+@property (nonatomic, readonly) unsigned long long stringEncoding;
 
 - (void).cxx_destruct;
-- (unsigned int)_bEncodeToHeaderData:(id)arg1 currentLineLength:(unsigned int)arg2;
+- (unsigned long long)_bEncodeToHeaderData:(id)arg1 currentLineLength:(unsigned long long)arg2;
 - (const char *)_findNextByteThatNeedsQEncodingBetweenStartByte:(const char *)arg1 endByte:(const char *)arg2;
-- (BOOL)_getBytesWithoutSplittingComposedCharacters:(void*)arg1 targetQEncodedTextLength:(unsigned int)arg2 usedLength:(unsigned int*)arg3 splitComposedCharacterSequence:(BOOL*)arg4 usedQEncodedTextLength:(unsigned int*)arg5 extraLength:(unsigned int*)arg6 extraQEncodedTextLength:(unsigned int*)arg7 fromString:(id)arg8 stringEncoding:(unsigned int)arg9 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg10 remainingRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg11;
-- (unsigned int)_lengthOfQEncodedTextForBytes:(const char *)arg1 length:(unsigned int)arg2;
+- (bool)_getBytesWithoutSplittingComposedCharacters:(void*)arg1 targetQEncodedTextLength:(unsigned long long)arg2 usedLength:(unsigned long long*)arg3 splitComposedCharacterSequence:(bool*)arg4 usedQEncodedTextLength:(unsigned long long*)arg5 extraLength:(unsigned long long*)arg6 extraQEncodedTextLength:(unsigned long long*)arg7 fromString:(id)arg8 stringEncoding:(unsigned long long)arg9 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg10 remainingRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg11;
+- (unsigned long long)_lengthOfQEncodedTextForBytes:(const char *)arg1 length:(unsigned long long)arg2;
 - (void)_prepareForEncoding;
-- (unsigned int)_qEncodeToHeaderData:(id)arg1 currentLineLength:(unsigned int)arg2;
-- (unsigned int)_writeEncodedWordPreambleToBuffer:(char *)arg1 length:(unsigned int)arg2;
-- (void)_writeQEncodedTextAndEndSequenceToHeaderBytes:(char *)arg1 fromDecodedBytes:(const char *)arg2 length:(unsigned int)arg3;
+- (unsigned long long)_qEncodeToHeaderData:(id)arg1 currentLineLength:(unsigned long long)arg2;
+- (unsigned long long)_writeEncodedWordPreambleToBuffer:(char *)arg1 length:(unsigned long long)arg2;
+- (void)_writeQEncodedTextAndEndSequenceToHeaderBytes:(char *)arg1 fromDecodedBytes:(const char *)arg2 length:(unsigned long long)arg3;
 - (id)characterSet;
 - (id)decodedText;
 - (id)description;
-- (unsigned int)encodeToHeaderData:(id)arg1 currentLineLength:(unsigned int)arg2;
-- (int)encodedWordEncoding;
+- (unsigned long long)encodeToHeaderData:(id)arg1 currentLineLength:(unsigned long long)arg2;
+- (long long)encodedWordEncoding;
 - (id)init;
-- (id)initWithString:(id)arg1 stringEncoding:(unsigned int)arg2 language:(id)arg3;
+- (id)initWithString:(id)arg1 stringEncoding:(unsigned long long)arg2 language:(id)arg3;
 - (id)language;
-- (unsigned int)minimumLengthOfEncodedWord;
+- (unsigned long long)minimumLengthOfEncodedWord;
 - (void)setCharacterSet:(id)arg1;
 - (void)setDecodedText:(id)arg1;
-- (void)setEncodedWordEncoding:(int)arg1;
-- (void)setSingleEncodedWordLength:(unsigned int)arg1;
-- (unsigned int)singleEncodedWordLength;
+- (void)setEncodedWordEncoding:(long long)arg1;
+- (void)setSingleEncodedWordLength:(unsigned long long)arg1;
+- (unsigned long long)singleEncodedWordLength;
 - (id)string;
-- (unsigned int)stringEncoding;
+- (unsigned long long)stringEncoding;
 
 @end

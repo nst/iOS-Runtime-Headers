@@ -4,41 +4,41 @@
 
 @interface AVFormatReaderInspector : AVAssetInspector {
     struct OpaqueFigFormatReader { } * _formatReader;
-    BOOL  didCheckForSaveRestriction;
-    BOOL  hasSaveRestriction;
+    bool  didCheckForSaveRestriction;
+    bool  hasSaveRestriction;
 }
 
 @property (getter=_formatReader, setter=_setFormatReader:, nonatomic, retain) struct OpaqueFigFormatReader { }*formatReader;
 
 - (struct OpaqueFigFormatReader { }*)_formatReader;
-- (BOOL)_hasQTSaveRestriction;
+- (bool)_hasQTSaveRestriction;
 - (void)_setFormatReader:(struct OpaqueFigFormatReader { }*)arg1;
 - (void*)_valueAsCFTypeForProperty:(struct __CFString { }*)arg1;
 - (id)alternateTrackGroups;
 - (id)availableMetadataFormats;
-- (BOOL)canContainFragments;
+- (bool)canContainFragments;
 - (id)commonMetadata;
-- (BOOL)containsFragments;
+- (bool)containsFragments;
 - (void)dealloc;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (void)finalize;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithFormatReader:(struct OpaqueFigFormatReader { }*)arg1;
-- (BOOL)isComposable;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isExportable;
-- (BOOL)isReadable;
+- (bool)isComposable;
+- (bool)isEqual:(id)arg1;
+- (bool)isExportable;
+- (bool)isReadable;
 - (id)lyrics;
 - (id)metadataForFormat:(id)arg1;
-- (struct CGSize { float x1; float x2; })naturalSize;
+- (struct CGSize { double x1; double x2; })naturalSize;
 - (int)naturalTimeScale;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })overallDurationHint;
 - (float)preferredRate;
 - (float)preferredSoundCheckVolumeNormalization;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })preferredTransform;
 - (float)preferredVolume;
-- (BOOL)providesPreciseDurationAndTiming;
-- (long)trackCount;
+- (bool)providesPreciseDurationAndTiming;
+- (long long)trackCount;
 - (id)trackReferences;
 
 @end

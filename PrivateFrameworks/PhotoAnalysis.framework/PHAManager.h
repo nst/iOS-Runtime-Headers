@@ -20,13 +20,14 @@
 @property (retain) NSURL *libraryURL;
 @property (retain) NSDictionary *photoAnalysisWorkersByType;
 @property (retain) PHPhotoLibrary *photoLibrary;
-@property (getter=isQuiescent, readonly) BOOL quiescent;
-@property (getter=isTurboMode, readonly) BOOL turboMode;
+@property (getter=isQuiescent, readonly) bool quiescent;
+@property (getter=isTurboMode, readonly) bool turboMode;
 
 + (id)allWorkerClasses;
 + (void)enumerateWorkerClassesUsingBlock:(id /* block */)arg1;
 
 - (void).cxx_destruct;
+- (id)autoloopServiceWorker;
 - (void)backgroundActivityDidBegin;
 - (id)changeListener;
 - (void)checkForQuiescence;
@@ -38,12 +39,11 @@
 - (id)graphServiceWorker;
 - (id)init;
 - (id)initWithPhotoLibraryURL:(id)arg1 executiveStateQueue:(id)arg2 delegate:(id)arg3;
-- (BOOL)isQuiescent;
-- (BOOL)isTurboMode;
+- (bool)isQuiescent;
+- (bool)isTurboMode;
 - (id)jobCoordinator;
 - (id)libraryURL;
 - (id)monitoring;
-- (void)notifyPhotoLibraryOpenedWithContext:(id)arg1 reply:(id /* block */)arg2;
 - (id)photoAnalysisWorkersByType;
 - (id)photoLibrary;
 - (id)sceneClassificationServiceWorker;

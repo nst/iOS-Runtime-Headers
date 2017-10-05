@@ -13,12 +13,13 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (bool)requiresResponse;
 - (void)setUpdateContext:(id)arg1;
 - (id)updateContext;
 
 // Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
 
-+ (id)clientFlowCompletedWithRefId:(id)arg1 status:(int)arg2 context:(id)arg3 contextVersion:(id)arg4 logs:(id)arg5;
++ (id)clientFlowCompletedWithRefId:(id)arg1 status:(long long)arg2 context:(id)arg3 contextVersion:(id)arg4 logs:(id)arg5;
 + (id)failureResponseWithAceId:(id)arg1 logs:(id)arg2;
 + (id)successResponseWithAceId:(id)arg1 logs:(id)arg2;
 

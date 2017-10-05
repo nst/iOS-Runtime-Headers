@@ -4,24 +4,23 @@
 
 @interface INSetMessageAttributeIntent : INIntent <INSetMessageAttributeIntentExport>
 
-@property (nonatomic, readonly) int attribute;
+@property (nonatomic, readonly) long long attribute;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSArray *identifiers;
 @property (readonly) Class superclass;
 
 - (id)_dictionaryRepresentation;
 - (id)_metadata;
-- (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
+- (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
 - (id)_typedBackingStore;
-- (int)attribute;
-- (id)description;
+- (long long)attribute;
 - (id)domain;
 - (id)identifiers;
-- (id)initWithIdentifiers:(id)arg1 attribute:(int)arg2;
+- (id)initWithIdentifiers:(id)arg1 attribute:(long long)arg2;
 - (id)parametersByName;
-- (void)setAttribute:(int)arg1;
+- (void)setAttribute:(long long)arg1;
 - (void)setDomain:(id)arg1;
 - (void)setIdentifiers:(id)arg1;
 - (void)setParametersByName:(id)arg1;

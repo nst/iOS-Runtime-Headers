@@ -2,8 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAUIDisambiguationList : SAAceView
+@interface SAUIDisambiguationList : SAAceView <AFDisambiguationAssistancePrivate>
 
+@property (nonatomic, readonly) NSData *af_disambiguationIdentifier;
+@property (setter=af_setDisambiguationInfo:, nonatomic, retain) AFDisambiguationInfo *af_disambiguationInfo;
+@property (nonatomic) bool autoDisambiguationDisabled;
 @property (nonatomic, copy) NSString *disambiguationKey;
 @property (nonatomic, retain) SAUIDomainObjectPicker *domainObjectPicker;
 @property (nonatomic, copy) NSArray *fallbackCommands;
@@ -16,9 +19,12 @@
 @property (nonatomic, copy) NSString *speakableSuffix;
 @property (nonatomic, copy) NSString *title;
 
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
+
 + (id)disambiguationList;
 + (id)disambiguationListWithDictionary:(id)arg1 context:(id)arg2;
 
+- (bool)autoDisambiguationDisabled;
 - (id)disambiguationKey;
 - (id)domainObjectPicker;
 - (id)encodedClassName;
@@ -27,6 +33,7 @@
 - (id)groupTitle;
 - (id)items;
 - (id)selectionResponse;
+- (void)setAutoDisambiguationDisabled:(bool)arg1;
 - (void)setDisambiguationKey:(id)arg1;
 - (void)setDomainObjectPicker:(id)arg1;
 - (void)setFallbackCommands:(id)arg1;
@@ -43,5 +50,15 @@
 - (id)speakableSelectionResponse;
 - (id)speakableSuffix;
 - (id)title;
+
+// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
+
+- (id)af_assistedSelectionItem;
+- (id)af_disambiguationIdentifier;
+- (id)af_disambiguationInfo;
+- (id)af_indexIdentifierForItem:(id)arg1;
+- (id)af_itemForIndexIdentifier:(id)arg1;
+- (void)af_saveItemSelection:(id)arg1 forType:(long long)arg2;
+- (void)af_setDisambiguationInfo:(id)arg1;
 
 @end

@@ -10,12 +10,12 @@
 @property (setter=_setRequestProgressController:, nonatomic, retain) PUActivityProgressController *_requestProgressController;
 @property (nonatomic, copy) id /* block */ performUserInteractionTaskBlock;
 
-+ (BOOL)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2;
-+ (BOOL)shouldEnableOnAsset:(id)arg1 inAssetCollection:(id)arg2;
++ (bool)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2;
++ (bool)shouldEnableOnAsset:(id)arg1 inAssetCollection:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_handleProgressControllerCanceled:(id)arg1;
-- (void)_handleReviewAssetRequestCompletedWithSuccess:(BOOL)arg1 canceled:(BOOL)arg2 error:(id)arg3 reviewAsset:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)_handleReviewAssetRequestCompletedWithSuccess:(bool)arg1 canceled:(bool)arg2 error:(id)arg3 reviewAsset:(id)arg4 completionHandler:(id /* block */)arg5;
 - (id)_requestProgressController;
 - (void)_setRequestProgressController:(id)arg1;
 - (id)_setupProgressControllerForProgress:(id)arg1;

@@ -8,19 +8,19 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) INRestaurant *restaurant;
 @property (readonly) Class superclass;
 
 + (id)intentDescription;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
-- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithRestaurant:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)restaurant;
 - (void)setRestaurant:(id)arg1;
 

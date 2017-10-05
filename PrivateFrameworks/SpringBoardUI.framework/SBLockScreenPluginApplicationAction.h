@@ -4,12 +4,12 @@
 
 @interface SBLockScreenPluginApplicationAction : SBLockScreenPluginAction {
     NSString * _bundleID;
-    unsigned int  _transitionStyle;
+    unsigned long long  _transitionStyle;
     NSURL * _url;
 }
 
 @property (nonatomic, copy) NSString *bundleID;
-@property (nonatomic) unsigned int transitionStyle;
+@property (nonatomic) unsigned long long transitionStyle;
 @property (setter=setURL:, nonatomic, retain) NSURL *url;
 
 + (id)actionWithBundleID:(id)arg1;
@@ -20,13 +20,13 @@
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
-- (BOOL)isApplicationAction;
+- (bool)isApplicationAction;
 - (void)setBundleID:(id)arg1;
-- (void)setTransitionStyle:(unsigned int)arg1;
+- (void)setTransitionStyle:(unsigned long long)arg1;
 - (void)setURL:(id)arg1;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
-- (unsigned int)transitionStyle;
+- (unsigned long long)transitionStyle;
 - (id)url;
 
 @end

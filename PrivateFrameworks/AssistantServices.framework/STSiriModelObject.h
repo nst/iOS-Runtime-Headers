@@ -6,7 +6,7 @@
     NSString * _identifier;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (Class)_aceCollectionClass;

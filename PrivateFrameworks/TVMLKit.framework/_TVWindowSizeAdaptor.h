@@ -3,19 +3,19 @@
  */
 
 @interface _TVWindowSizeAdaptor : NSObject {
-    unsigned int  _allowedInterfaceOrientations;
+    unsigned long long  _allowedInterfaceOrientations;
     UIWindow * _window;
 }
 
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } adjustedWindowSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } adjustedWindowSize;
 @property (nonatomic, readonly) UIWindow *window;
 
 - (void).cxx_destruct;
-- (BOOL)_shouldSwapDimensions;
-- (unsigned int)_supportedOrientations;
-- (struct CGSize { float x1; float x2; })adjustedWindowSize;
+- (bool)_shouldSwapDimensions;
+- (unsigned long long)_supportedOrientations;
+- (struct CGSize { double x1; double x2; })adjustedWindowSize;
 - (id)initWithWindow:(id)arg1;
-- (BOOL)update;
+- (bool)update;
 - (id)window;
 
 @end

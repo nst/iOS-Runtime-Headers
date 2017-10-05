@@ -4,18 +4,18 @@
 
 @interface _DPDataProtectionMaster : NSObject {
     NSMutableDictionary * _availableState;
-    BOOL  _deviceFormatedForContentProtection;
+    bool  _deviceFormatedForContentProtection;
     NSMutableDictionary * _handlers;
-    BOOL  _notifyEnabled;
+    bool  _notifyEnabled;
     NSObject<OS_dispatch_queue> * _notifyQueue;
     int  _notifyToken;
     NSObject<OS_dispatch_queue> * _stateQueue;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *availableState;
-@property (nonatomic, readonly) BOOL deviceFormatedForContentProtection;
+@property (nonatomic, readonly) bool deviceFormatedForContentProtection;
 @property (nonatomic, readonly) NSMutableDictionary *handlers;
-@property (nonatomic, readonly) BOOL notifyEnabled;
+@property (nonatomic, readonly) bool notifyEnabled;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *notifyQueue;
 @property (nonatomic, readonly) int notifyToken;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *stateQueue;
@@ -26,17 +26,17 @@
 - (id)availableState;
 - (void)dealloc;
 - (void)deregisterStateChangeHandler:(id)arg1;
-- (BOOL)deviceFormatedForContentProtection;
-- (BOOL)deviceHasBeenUnlockedSinceBoot;
-- (BOOL)deviceIsLocked;
-- (BOOL)deviceIsPasswordConfigured;
+- (bool)deviceFormatedForContentProtection;
+- (bool)deviceHasBeenUnlockedSinceBoot;
+- (bool)deviceIsLocked;
+- (bool)deviceIsPasswordConfigured;
 - (void)handleKeyBagLockNotification;
 - (id)handlers;
 - (id)init;
-- (BOOL)isDataAvailableFor:(id)arg1;
-- (BOOL)isDataAvailableForClassA;
-- (BOOL)isDataAvailableForClassC;
-- (BOOL)notifyEnabled;
+- (bool)isDataAvailableFor:(id)arg1;
+- (bool)isDataAvailableForClassA;
+- (bool)isDataAvailableForClassC;
+- (bool)notifyEnabled;
 - (id)notifyQueue;
 - (int)notifyToken;
 - (id)registerStateChangeHandler:(id /* block */)arg1;

@@ -6,10 +6,10 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (void)captureActionForItem:(id)arg1 withEvent:(unsigned int)arg2 source:(unsigned int)arg3;
+- (void)captureActionForItem:(id)arg1 withEvent:(unsigned long long)arg2 source:(unsigned long long)arg3;
 - (void)captureClientAddition:(id)arg1;
 - (void)captureClientRemoval:(id)arg1;
 - (void)captureGroupAddition:(id)arg1;

@@ -26,12 +26,12 @@
 
 + (id)copyParseRules;
 
+- (void).cxx_destruct;
 - (id)addressBook;
 - (id)collection;
-- (void)dealloc;
 - (id)description;
 - (id)init;
-- (BOOL)isTypeWithNameSpace:(id)arg1 andName:(id)arg2;
+- (bool)isTypeWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)principal;
 - (id)searchAddressBook;
 - (void)setAddressBook:(id)arg1;

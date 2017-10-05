@@ -10,10 +10,10 @@
 @property (nonatomic, retain) NSData *certificatePersistentID;
 @property (nonatomic, readonly, retain) NSDate *expiry;
 @property (nonatomic, copy) NSString *installedOnDeviceID;
-@property (nonatomic, readonly) BOOL isFullyTrustedRootCert;
-@property (nonatomic, readonly) BOOL isIdentity;
-@property (nonatomic, readonly) BOOL isRoot;
-@property (nonatomic, readonly) BOOL isSigned;
+@property (nonatomic, readonly) bool isFullyTrustedRootCert;
+@property (nonatomic, readonly) bool isIdentity;
+@property (nonatomic, readonly) bool isRoot;
+@property (nonatomic, readonly) bool isSigned;
 
 - (void).cxx_destruct;
 - (id)certificatePersistentID;
@@ -23,10 +23,10 @@
 - (id)expiry;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)installedOnDeviceID;
-- (BOOL)isFullyTrustedRootCert;
-- (BOOL)isIdentity;
-- (BOOL)isRoot;
-- (BOOL)isSigned;
+- (bool)isFullyTrustedRootCert;
+- (bool)isIdentity;
+- (bool)isRoot;
+- (bool)isSigned;
 - (void)setCertificatePersistentID:(id)arg1;
 - (void)setInstalledOnDeviceID:(id)arg1;
 - (id)stubDictionary;

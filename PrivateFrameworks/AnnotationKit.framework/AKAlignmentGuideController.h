@@ -3,30 +3,30 @@
  */
 
 @interface AKAlignmentGuideController : NSObject {
-    BOOL  _exifHasFlippedAxes;
+    bool  _exifHasFlippedAxes;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _initialDraggedAnnotationsCombinedCenter;
-    struct CGPoint { float x1; float x2; } * _otherAnnotationCenters;
-    unsigned int  _otherAnnotationCentersCount;
+    struct CGPoint { double x1; double x2; } * _otherAnnotationCenters;
+    unsigned long long  _otherAnnotationCentersCount;
     AKPageController * _pageController;
-    float  _screenToModelScaleFactor;
+    double  _screenToModelScaleFactor;
 }
 
-@property BOOL exifHasFlippedAxes;
+@property bool exifHasFlippedAxes;
 @property AKPageController *pageController;
-@property float screenToModelScaleFactor;
+@property double screenToModelScaleFactor;
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (BOOL)exifHasFlippedAxes;
-- (struct CGPoint { float x1; float x2; })guideAlignedPointForPoint:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2 orRecognizer:(id)arg3;
+- (bool)exifHasFlippedAxes;
+- (struct CGPoint { double x1; double x2; })guideAlignedPointForPoint:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2 orRecognizer:(id)arg3;
 - (id)initWithPageController:(id)arg1;
 - (id)pageController;
-- (float)screenToModelScaleFactor;
-- (void)setExifHasFlippedAxes:(BOOL)arg1;
+- (double)screenToModelScaleFactor;
+- (void)setExifHasFlippedAxes:(bool)arg1;
 - (void)setPageController:(id)arg1;
-- (void)setScreenToModelScaleFactor:(float)arg1;
+- (void)setScreenToModelScaleFactor:(double)arg1;
 
 @end

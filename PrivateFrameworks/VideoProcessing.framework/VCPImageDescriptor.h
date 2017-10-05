@@ -6,14 +6,14 @@
     CVMLImageprintObservation * _imagePrint;
 }
 
-+ (id)descriptorWithData:(id)arg1 isRaw:(BOOL)arg2;
++ (id)descriptorWithData:(id)arg1 isRaw:(bool)arg2;
 + (id)descriptorWithImage:(struct __CVBuffer { }*)arg1;
 + (int)preferredPixelFormat;
-+ (BOOL)useDistanceIdentity;
++ (bool)useDistanceIdentity;
 
 - (void).cxx_destruct;
-- (long)computeDistanceWith:(id)arg1 distance:(float*)arg2;
-- (id)initWithData:(id)arg1 isRaw:(BOOL)arg2;
+- (int)computeDistanceWith:(id)arg1 distance:(float*)arg2;
+- (id)initWithData:(id)arg1 isRaw:(bool)arg2;
 - (id)initWithImage:(struct __CVBuffer { }*)arg1;
 - (id)serialize;
 

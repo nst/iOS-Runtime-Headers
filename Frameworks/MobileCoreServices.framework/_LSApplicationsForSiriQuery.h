@@ -7,9 +7,10 @@
 }
 
 + (id)query;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)_enumerateWithXPCConnection:(id)arg1 block:(id /* block */)arg2;
+- (bool)_requiresDatabaseMappingEntitlement;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

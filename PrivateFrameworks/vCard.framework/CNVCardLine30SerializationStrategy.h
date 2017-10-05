@@ -3,7 +3,7 @@
  */
 
 @interface CNVCardLine30SerializationStrategy : CNVCardLineSerializationStrategyImpl {
-    unsigned int  _startingLineLength;
+    unsigned long long  _startingLineLength;
 }
 
 - (void)_addAutomagicParametersForData:(id)arg1;

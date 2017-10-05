@@ -5,16 +5,16 @@
 
 @required
 
-- (void)finishAnimationAtPosition:(int)arg1;
-- (float)fractionComplete;
-- (BOOL)isReversed;
-- (BOOL)isRunning;
+- (void)finishAnimationAtPosition:(long long)arg1;
+- (double)fractionComplete;
+- (bool)isReversed;
+- (bool)isRunning;
 - (void)pauseAnimation;
-- (void)setFractionComplete:(float)arg1;
-- (void)setReversed:(BOOL)arg1;
+- (void)setFractionComplete:(double)arg1;
+- (void)setReversed:(bool)arg1;
 - (void)startAnimation;
 - (void)startAnimationAfterDelay:(double)arg1;
-- (int)state;
-- (void)stopAnimation:(BOOL)arg1;
+- (long long)state;
+- (void)stopAnimation:(bool)arg1;
 
 @end

@@ -3,12 +3,12 @@
  */
 
 @interface SKUIJSTelephony : IKJSObject <SKUIJSTelephony> {
-    BOOL  _isObserving;
+    bool  _isObserving;
     NSObject<OS_dispatch_queue> * _telephonyQueue;
     struct __CTServerConnection { } * _telephonyServer;
 }
 
-@property (getter=isCellularRoaming, nonatomic, readonly) BOOL cellularRoaming;
+@property (getter=isCellularRoaming, nonatomic, readonly) bool cellularRoaming;
 @property (nonatomic, readonly) NSString *countryCode;
 @property (nonatomic, readonly) NSString *mobileCountryCode;
 @property (nonatomic, readonly) NSString *mobileNetworkCode;
@@ -23,7 +23,7 @@
 - (void)dealloc;
 - (id)formattedPhoneNumber:(id)arg1;
 - (id)initWithAppContext:(id)arg1;
-- (BOOL)isCellularRoaming;
+- (bool)isCellularRoaming;
 - (id)mobileCountryCode;
 - (id)mobileNetworkCode;
 - (id)operatorName;

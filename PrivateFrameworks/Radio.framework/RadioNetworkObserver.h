@@ -3,12 +3,12 @@
  */
 
 @interface RadioNetworkObserver : NSObject {
-    int  _networkUsageCount;
+    long long  _networkUsageCount;
     NSObject<OS_dispatch_queue> * _networkUsageQueue;
 }
 
-@property (nonatomic, readonly) BOOL isCellularNetworkingAllowed;
-@property (nonatomic, readonly) BOOL isUsingNetwork;
+@property (nonatomic, readonly) bool isCellularNetworkingAllowed;
+@property (nonatomic, readonly) bool isUsingNetwork;
 
 + (id)sharedNetworkObserver;
 
@@ -19,7 +19,7 @@
 - (void)dealloc;
 - (void)endUsingNetwork;
 - (id)init;
-- (BOOL)isCellularNetworkingAllowed;
-- (BOOL)isUsingNetwork;
+- (bool)isCellularNetworkingAllowed;
+- (bool)isUsingNetwork;
 
 @end

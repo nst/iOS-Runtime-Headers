@@ -3,23 +3,23 @@
  */
 
 @interface _TVUberBlurImageDecorator : TVImageDecorator {
-    unsigned int  _blurStyle;
-    unsigned int  _blurType;
+    unsigned long long  _blurStyle;
+    unsigned long long  _blurType;
     UIColor * _gradientColor;
 }
 
-@property (nonatomic) unsigned int blurStyle;
-@property (nonatomic) unsigned int blurType;
+@property (nonatomic) unsigned long long blurStyle;
+@property (nonatomic) unsigned long long blurType;
 @property (nonatomic, retain) UIColor *gradientColor;
 
 - (void).cxx_destruct;
-- (unsigned int)blurStyle;
-- (unsigned int)blurType;
-- (id)decorate:(id)arg1 scaledWithSize:(struct CGSize { float x1; float x2; })arg2 croppedToFit:(BOOL)arg3;
+- (unsigned long long)blurStyle;
+- (unsigned long long)blurType;
+- (id)decorate:(id)arg1 scaledWithSize:(struct CGSize { double x1; double x2; })arg2 croppedToFit:(bool)arg3;
 - (id)decoratorIdentifier;
 - (id)gradientColor;
-- (void)setBlurStyle:(unsigned int)arg1;
-- (void)setBlurType:(unsigned int)arg1;
+- (void)setBlurStyle:(unsigned long long)arg1;
+- (void)setBlurType:(unsigned long long)arg1;
 - (void)setGradientColor:(id)arg1;
 
 @end

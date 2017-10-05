@@ -4,7 +4,7 @@
 
 @interface AVCapturePhotoBracketSettingsInternal : NSObject {
     NSArray * bracketedSettings;
-    BOOL  lensStabilizationEnabled;
+    bool  lensStabilizationEnabled;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

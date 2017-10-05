@@ -17,11 +17,11 @@
 - (void)setLocalizedSubtitle:(NSString *)arg1;
 - (void)setLocalizedTitle:(NSString *)arg1;
 - (void)setPeople:(PHFetchResult *)arg1;
-- (void)setShouldShowMovieHeader:(BOOL)arg1;
+- (void)setShouldShowMovieHeader:(bool)arg1;
 - (void)setTitleFontName:(NSString *)arg1;
-- (void)setViewSourceOrigin:(unsigned int)arg1;
-- (BOOL)shouldShowMovieHeader;
+- (void)setViewSourceOrigin:(unsigned long long)arg1;
+- (bool)shouldShowMovieHeader;
 - (NSString *)titleFontName;
-- (unsigned int)viewSourceOrigin;
+- (unsigned long long)viewSourceOrigin;
 
 @end

@@ -3,24 +3,25 @@
  */
 
 @interface _MFDataCollector : NSObject <MFGuaranteedCollectingDataConsumer> {
+    MFFileCompressionQueue * _compressionQueue;
     MFBufferedDataConsumer * _consumer;
-    BOOL  _incomplete;
+    bool  _incomplete;
     MFMailMessageLibrary * _library;
     MFLibraryMessage * _message;
     NSString * _part;
-    BOOL  _partial;
+    bool  _partial;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (int)appendData:(id)arg1;
+- (long long)appendData:(id)arg1;
 - (id)data;
 - (void)dealloc;
 - (void)done;
-- (id)initWithLibrary:(id)arg1 message:(id)arg2 part:(id)arg3 partial:(BOOL)arg4 incomplete:(BOOL)arg5;
+- (id)initWithLibrary:(id)arg1 message:(id)arg2 part:(id)arg3 partial:(bool)arg4 incomplete:(bool)arg5 compressionQueue:(id)arg6;
 - (id)pathForStorage;
 
 @end

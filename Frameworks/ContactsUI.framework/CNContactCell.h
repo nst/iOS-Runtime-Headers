@@ -5,42 +5,33 @@
 @interface CNContactCell : UITableViewCell {
     CNCardGroupItem * _cardGroupItem;
     NSArray * _constantConstraints;
-    BOOL  _hasBeenDisplayed;
-    float  _leftContentMargin;
-    float  _rightContentMargin;
-    BOOL  _shouldUseExpandedContentStyle;
     NSArray * _variableConstraints;
 }
 
 @property (nonatomic, retain) CNCardGroupItem *cardGroupItem;
-@property (nonatomic) BOOL hasBeenDisplayed;
-@property (nonatomic) float leftContentMargin;
-@property (nonatomic) float rightContentMargin;
-@property (nonatomic) BOOL shouldUseExpandedContentStyle;
-@property (nonatomic) BOOL showSeparator;
+@property (nonatomic, readonly) NSArray *constantConstraints;
+@property (nonatomic, readonly) bool hasGapBetweenSeparatorAndTrailingEdge;
+@property (nonatomic, readonly) double minCellHeight;
+@property (nonatomic) bool showSeparator;
+@property (nonatomic, readonly) NSArray *variableConstraints;
 
 - (void).cxx_destruct;
 - (id)cardGroupItem;
 - (id)constantConstraints;
+- (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)dealloc;
-- (BOOL)hasBeenDisplayed;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (float)leftContentMargin;
-- (float)minCellHeight;
+- (bool)hasGapBetweenSeparatorAndTrailingEdge;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (void)layoutSubviews;
+- (double)minCellHeight;
 - (void)performAccessoryAction;
 - (void)performDefaultAction;
 - (void)prepareForReuse;
-- (float)rightContentMargin;
 - (void)setCardGroupItem:(id)arg1;
-- (void)setHasBeenDisplayed:(BOOL)arg1;
-- (void)setLeftContentMargin:(float)arg1;
-- (void)setRightContentMargin:(float)arg1;
-- (void)setShouldUseExpandedContentStyle:(BOOL)arg1;
-- (void)setShowSeparator:(BOOL)arg1;
-- (BOOL)shouldPerformAccessoryAction;
-- (BOOL)shouldPerformDefaultAction;
-- (BOOL)shouldUseExpandedContentStyle;
-- (BOOL)showSeparator;
+- (void)setShowSeparator:(bool)arg1;
+- (bool)shouldPerformAccessoryAction;
+- (bool)shouldPerformDefaultAction;
+- (bool)showSeparator;
 - (void)updateConstraints;
 - (id)variableConstraints;
 

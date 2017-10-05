@@ -3,25 +3,25 @@
  */
 
 @interface PLCloudPendingResourceTask : NSObject {
-    BOOL  _completed;
-    BOOL  _highPriority;
+    bool  _completed;
+    bool  _highPriority;
     float  _lastReportedProgress;
     NSDate * _lastUpdated;
     NSMutableDictionary * _pendingTasks;
-    BOOL  _transferStarted;
+    bool  _transferStarted;
     CPLResourceTransferTask * _transferTask;
-    BOOL  _transferTaskRemoved;
+    bool  _transferTaskRemoved;
 }
 
-@property (getter=isHighPriority, nonatomic, readonly) BOOL highPriority;
+@property (getter=isHighPriority, nonatomic, readonly) bool highPriority;
 @property (nonatomic, readonly) float lastReportedProgress;
-@property (nonatomic, readonly) BOOL transferStarted;
+@property (nonatomic, readonly) bool transferStarted;
 
 - (void)addProgressBlock:(id /* block */)arg1 completionHandler:(id /* block */)arg2 withTaskIdentifier:(id)arg3;
 - (void)cancelTaskWithIdentifier:(id)arg1;
 - (void)dealloc;
-- (id)initWithProgressBlock:(id /* block */)arg1 completionHandler:(id /* block */)arg2 forTaskIdentifier:(id)arg3 highPriority:(BOOL)arg4;
-- (BOOL)isHighPriority;
+- (id)initWithProgressBlock:(id /* block */)arg1 completionHandler:(id /* block */)arg2 forTaskIdentifier:(id)arg3 highPriority:(bool)arg4;
+- (bool)isHighPriority;
 - (void)keepAlive;
 - (float)lastReportedProgress;
 - (id)lastUpdated;
@@ -29,6 +29,6 @@
 - (void)reportProgress:(float)arg1;
 - (void)setTransferTask:(id)arg1;
 - (id)taskIDs;
-- (BOOL)transferStarted;
+- (bool)transferStarted;
 
 @end

@@ -3,14 +3,14 @@
  */
 
 @interface SiriUITemplateViewController : UIViewController {
-    BOOL  _active;
-    BOOL  _compressed;
+    bool  _active;
+    bool  _compressed;
     <SiriUITemplateViewControllerDelegate> * _delegate;
     <SiriUITemplateModel> * _templateModel;
 }
 
-@property (getter=isActive, nonatomic) BOOL active;
-@property (getter=isCompressed, nonatomic) BOOL compressed;
+@property (getter=isActive, nonatomic) bool active;
+@property (getter=isCompressed, nonatomic) bool compressed;
 @property (nonatomic) <SiriUITemplateViewControllerDelegate> *delegate;
 @property (nonatomic, retain) <SiriUITemplateModel> *templateModel;
 @property (nonatomic, readonly) <SiriUITemplateModelPrivate> *templateModelPrivate;
@@ -21,12 +21,12 @@
 - (void).cxx_destruct;
 - (id)_initWithTemplateModel:(id)arg1;
 - (id)delegate;
-- (BOOL)isActive;
-- (BOOL)isCompressed;
+- (bool)isActive;
+- (bool)isCompressed;
 - (void)loadView;
 - (void)prepareForDismissal;
-- (void)setActive:(BOOL)arg1;
-- (void)setCompressed:(BOOL)arg1;
+- (void)setActive:(bool)arg1;
+- (void)setCompressed:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setTemplateModel:(id)arg1;
 - (id)templateModel;

@@ -4,15 +4,17 @@
 
 @interface MKPlaceSectionHeaderView : MKPlaceSectionItemView {
     SEL  _action;
+    NSLayoutConstraint * _baselineToBaselineConstraint;
     NSLayoutConstraint * _baselineToBottomConstraint;
     NSLayoutConstraint * _baselineToTopConstraint;
+    NSArray * _constraints;
+    bool  _contentChanged;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _iconDisplaySize;
     NSLayoutConstraint * _iconHeightConstraint;
     NSLayoutConstraint * _iconWidthConstraint;
-    NSArray * _marginConstraints;
     NSString * _providerName;
     _MKUILabel * _sectionHeaderLabel;
     NSLayoutConstraint * _seeMoreBaselineConstraint;
@@ -20,61 +22,55 @@
     NSArray * _seeMoreButtonConstraints;
     NSString * _seeMoreButtonText;
     NSLayoutConstraint * _seeMoreCenterYConstraint;
-    UIView * _separator;
-    BOOL  _showSeeMoreButton;
-    BOOL  _showSeparator;
+    bool  _showSeeMoreButton;
     id  _target;
+    double  _width;
 }
 
 @property (nonatomic) SEL action;
+@property (nonatomic, retain) NSArray *constraints;
 @property (nonatomic, retain) UIImage *icon;
-@property (nonatomic) struct CGSize { float x1; float x2; } iconDisplaySize;
-@property (nonatomic, retain) NSArray *marginConstraints;
+@property (nonatomic) struct CGSize { double x1; double x2; } iconDisplaySize;
 @property (nonatomic, retain) NSString *providerName;
 @property (nonatomic, retain) _MKUILabel *sectionHeaderLabel;
 @property (nonatomic, retain) _MKRightImageButton *seeMoreButton;
 @property (nonatomic, retain) NSArray *seeMoreButtonConstraints;
 @property (nonatomic, retain) NSString *seeMoreButtonText;
-@property (nonatomic, retain) UIView *separator;
-@property (nonatomic) BOOL showSeeMoreButton;
-@property (nonatomic) BOOL showSeparator;
+@property (nonatomic) bool showSeeMoreButton;
 @property (nonatomic) id target;
 @property (nonatomic, retain) NSString *title;
 
 - (void).cxx_destruct;
 - (SEL)action;
+- (id)constraints;
 - (void)contentSizeDidChange;
-- (void)dealloc;
+- (void)createConstraints;
 - (id)icon;
-- (struct CGSize { float x1; float x2; })iconDisplaySize;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)layoutSubviews;
-- (id)marginConstraints;
+- (struct CGSize { double x1; double x2; })iconDisplaySize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)providerName;
 - (id)sectionHeaderLabel;
 - (id)seeMoreButton;
 - (id)seeMoreButtonConstraints;
 - (id)seeMoreButtonText;
-- (id)separator;
 - (void)setAction:(SEL)arg1;
+- (void)setConstraints:(id)arg1;
 - (void)setIcon:(id)arg1;
-- (void)setIconDisplaySize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setMarginConstraints:(id)arg1;
+- (void)setIconDisplaySize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setProviderName:(id)arg1;
 - (void)setSectionHeaderLabel:(id)arg1;
 - (void)setSeeMoreButton:(id)arg1;
 - (void)setSeeMoreButtonConstraints:(id)arg1;
 - (void)setSeeMoreButtonText:(id)arg1;
-- (void)setSeparator:(id)arg1;
-- (void)setShowSeeMoreButton:(BOOL)arg1;
-- (void)setShowSeparator:(BOOL)arg1;
+- (void)setShowSeeMoreButton:(bool)arg1;
 - (void)setTarget:(id)arg1;
 - (void)setTarget:(id)arg1 action:(SEL)arg2;
 - (void)setTitle:(id)arg1;
-- (BOOL)showSeeMoreButton;
-- (BOOL)showSeparator;
+- (bool)shouldStack;
+- (bool)showSeeMoreButton;
 - (id)target;
 - (id)title;
 - (void)updateConstraints;
+- (void)updateContent;
 
 @end

@@ -6,24 +6,24 @@
     struct { 
         unsigned int isAirQualityShown : 1; 
     }  _has;
-    BOOL  _isAirQualityShown;
+    bool  _isAirQualityShown;
 }
 
-@property (nonatomic) BOOL hasIsAirQualityShown;
-@property (nonatomic) BOOL isAirQualityShown;
+@property (nonatomic) bool hasIsAirQualityShown;
+@property (nonatomic) bool isAirQualityShown;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIsAirQualityShown;
-- (unsigned int)hash;
-- (BOOL)isAirQualityShown;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasIsAirQualityShown;
+- (unsigned long long)hash;
+- (bool)isAirQualityShown;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasIsAirQualityShown:(BOOL)arg1;
-- (void)setIsAirQualityShown:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasIsAirQualityShown:(bool)arg1;
+- (void)setIsAirQualityShown:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

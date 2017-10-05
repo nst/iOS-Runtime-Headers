@@ -3,42 +3,37 @@
  */
 
 @interface HFCharacteristicTriggerBuilder : HFTriggerBuilder {
-    NSMutableSet * _characteristicEvents;
-    BOOL  _markTriggerAsHomeAppCreated;
+    bool  _markTriggerAsHomeAppCreated;
+    NSMutableSet * _triggerEvents;
 }
 
-@property (nonatomic, retain) NSMutableSet *characteristicEvents;
 @property (nonatomic, readonly) NSSet *characteristics;
-@property (nonatomic) BOOL markTriggerAsHomeAppCreated;
-@property (nonatomic, readonly) <NSCopying> *mostCommonTriggerValue;
-@property (nonatomic, readonly) NSSet *triggerValues;
-
-+ (BOOL)supportsConditions;
+@property (nonatomic) bool markTriggerAsHomeAppCreated;
+@property (nonatomic, retain) NSMutableSet *triggerEvents;
 
 - (void).cxx_destruct;
 - (id)_allTriggerValuesForCharacteristic:(id)arg1 similarToValue:(id)arg2;
+- (id)_existingEventsForCharacteristic:(id)arg1;
 - (id)_lazilyMarkTriggerAsHomeAppCreated;
 - (id)_performValidation;
-- (id)_triggerEventForCharacteristic:(id)arg1;
 - (id)_updateEvents;
-- (id)characteristicEvents;
 - (id)characteristics;
 - (id)commitCreateTrigger;
 - (id)commitEditTrigger;
 - (id)commitItem;
 - (id)deleteTrigger;
 - (id)initWithExistingObject:(id)arg1 inHome:(id)arg2 context:(id)arg3;
-- (BOOL)markTriggerAsHomeAppCreated;
-- (id)mostCommonTriggerValue;
-- (id)naturalLanguageNameOfType:(unsigned int)arg1;
+- (bool)markTriggerAsHomeAppCreated;
+- (id)naturalLanguageNameOfType:(unsigned long long)arg1;
 - (void)removeAllCharacteristics;
 - (void)removeCharacteristic:(id)arg1;
-- (void)removeCharacteristics:(id)arg1;
-- (void)reset;
 - (void)setCharacteristic:(id)arg1 triggerValue:(id)arg2;
-- (void)setCharacteristicEvents:(id)arg1;
-- (void)setCharacteristics:(id)arg1 triggerValue:(id)arg2;
-- (void)setMarkTriggerAsHomeAppCreated:(BOOL)arg1;
-- (id)triggerValues;
+- (void)setCharacteristic:(id)arg1 triggerValueRange:(id)arg2;
+- (void)setMarkTriggerAsHomeAppCreated:(bool)arg1;
+- (void)setTriggerEvents:(id)arg1;
+- (bool)supportsConditions;
+- (bool)supportsEndEvents;
+- (id)triggerEvents;
+- (bool)wouldFireForCharacteristic:(id)arg1 value:(id)arg2;
 
 @end

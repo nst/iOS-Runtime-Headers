@@ -5,7 +5,7 @@
 @interface SAUSGenericResult : SADomainObject
 
 @property (nonatomic, retain) SAUIAppPunchOut *actionButton;
-@property (nonatomic) BOOL centered;
+@property (nonatomic) bool centered;
 @property (nonatomic, copy) NSArray *descriptions;
 @property (nonatomic, copy) NSString *footnote;
 @property (nonatomic, copy) NSString *secondaryTitle;
@@ -17,14 +17,14 @@
 + (id)genericResultWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)actionButton;
-- (BOOL)centered;
+- (bool)centered;
 - (id)descriptions;
 - (id)encodedClassName;
 - (id)footnote;
 - (id)groupIdentifier;
 - (id)secondaryTitle;
 - (void)setActionButton:(id)arg1;
-- (void)setCentered:(BOOL)arg1;
+- (void)setCentered:(bool)arg1;
 - (void)setDescriptions:(id)arg1;
 - (void)setFootnote:(id)arg1;
 - (void)setSecondaryTitle:(id)arg1;

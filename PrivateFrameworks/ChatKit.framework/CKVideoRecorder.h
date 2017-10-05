@@ -5,14 +5,14 @@
 @interface CKVideoRecorder : UIViewController <AVCaptureFileOutputRecordingDelegate> {
     AVCaptureDeviceInput * _audioInput;
     NSObject<OS_dispatch_queue> * _avCaptureSessionDispatchQueue;
-    BOOL  _canceled;
+    bool  _canceled;
     AVCaptureVideoPreviewLayer * _captureVideoPreviewLayer;
-    int  _currentDevice;
+    long long  _currentDevice;
     <CKVideoRecorderDelegate> * _delegate;
     AVCaptureDevice * _frontFacingCamera;
     AVCaptureDeviceInput * _frontVideoInput;
     NSURL * _outputFileURL;
-    BOOL  _previousStatusBarHidden;
+    bool  _previousStatusBarHidden;
     AVCaptureDevice * _rearFacingCamera;
     AVCaptureDeviceInput * _rearVideoInput;
     AVCaptureSession * _session;
@@ -21,14 +21,14 @@
 }
 
 @property (nonatomic, retain) AVCaptureDeviceInput *audioInput;
-@property (nonatomic) int cameraDevice;
-@property (nonatomic) BOOL canceled;
+@property (nonatomic) long long cameraDevice;
+@property (nonatomic) bool canceled;
 @property (nonatomic, retain) AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CKVideoRecorderDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) AVCaptureDeviceInput *frontVideoInput;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSURL *outputFileURL;
 @property (nonatomic, retain) AVCaptureDeviceInput *rearVideoInput;
 @property (nonatomic, retain) AVCaptureSession *session;
@@ -37,14 +37,14 @@
 @property (nonatomic, retain) AVCaptureMovieFileOutput *videoOutput;
 
 - (void).cxx_destruct;
-- (id)_cameraWithPosition:(int)arg1;
+- (id)_cameraWithPosition:(long long)arg1;
 - (id)_configureFrontVideoInput;
 - (id)_configureRearVideoInput;
 - (id)audioDevice;
 - (id)audioInput;
-- (int)cameraDevice;
+- (long long)cameraDevice;
 - (void)cancel;
-- (BOOL)canceled;
+- (bool)canceled;
 - (void)captureOutput:(id)arg1 didFinishRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3 error:(id)arg4;
 - (void)captureOutput:(id)arg1 didStartRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3;
 - (id)captureVideoPreviewLayer;
@@ -59,8 +59,8 @@
 - (id)rearVideoInput;
 - (id)session;
 - (void)setAudioInput:(id)arg1;
-- (void)setCameraDevice:(int)arg1;
-- (void)setCanceled:(BOOL)arg1;
+- (void)setCameraDevice:(long long)arg1;
+- (void)setCanceled:(bool)arg1;
 - (void)setCaptureVideoPreviewLayer:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFrontVideoInput:(id)arg1;
@@ -70,11 +70,11 @@
 - (void)setStillImageOutput:(id)arg1;
 - (void)setVideoOutput:(id)arg1;
 - (void)setupCamera:(id)arg1;
-- (BOOL)startVideoCapture;
+- (bool)startVideoCapture;
 - (id)stillImageOutput;
 - (void)stopVideoCapture;
 - (void)takePicture;
 - (id)videoOutput;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

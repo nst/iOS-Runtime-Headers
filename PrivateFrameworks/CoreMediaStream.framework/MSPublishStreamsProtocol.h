@@ -57,7 +57,7 @@
 - (void)_coreProtocolDidFailAuthenticationError:(id)arg1;
 - (void)_coreProtocolDidFinishResponse:(id)arg1 error:(id)arg2;
 - (void)_coreProtocolDidFinishUCResults:(id)arg1 error:(id)arg2;
-- (BOOL)_insertInfoAboutAsset:(id)arg1 intoDictionary:(id)arg2 outError:(id*)arg3;
+- (bool)_insertInfoAboutAsset:(id)arg1 intoDictionary:(id)arg2 outError:(id*)arg3;
 - (id)_metadataDictForAsset:(id)arg1 outError:(id*)arg2;
 - (id)_metadataDictForAssetCollection:(id)arg1 outError:(id*)arg2;
 - (id)_missingAssetFieldErrorWithFieldName:(id)arg1;

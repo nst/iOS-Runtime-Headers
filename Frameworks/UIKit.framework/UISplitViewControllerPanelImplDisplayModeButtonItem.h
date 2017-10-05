@@ -4,17 +4,17 @@
 
 @interface UISplitViewControllerPanelImplDisplayModeButtonItem : UIBarButtonItem {
     UISplitViewControllerPanelImpl * _panelImpl;
-    BOOL  _wasAddedToNavigationItem;
+    bool  _wasAddedToNavigationItem;
 }
 
 @property (getter=_panelImpl, setter=_setPanelImpl:, nonatomic) UISplitViewControllerPanelImpl *panelImpl;
-@property (getter=_wasAddedToNavigationItem, setter=_setWasAddedToNavigationItem:, nonatomic) BOOL wasAddedToNavigationItem;
+@property (getter=_wasAddedToNavigationItem, setter=_setWasAddedToNavigationItem:, nonatomic) bool wasAddedToNavigationItem;
 
 - (void).cxx_destruct;
 - (id)_panelImpl;
 - (void)_setOwningNavigationItem:(id)arg1;
 - (void)_setPanelImpl:(id)arg1;
-- (void)_setWasAddedToNavigationItem:(BOOL)arg1;
-- (BOOL)_wasAddedToNavigationItem;
+- (void)_setWasAddedToNavigationItem:(bool)arg1;
+- (bool)_wasAddedToNavigationItem;
 
 @end

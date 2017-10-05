@@ -3,18 +3,22 @@
  */
 
 @interface _UIUCBGroupBarButtonVisualProviderIOS : _UIUCBBarButtonVisualProviderIOS {
-    BOOL  _lightKeyboard;
+    bool  _lightKeyboard;
     _UIUCBKBSelectionBackground * _selectionBackgroundView;
 }
+
+@property (nonatomic) bool lightKeyboard;
 
 + (id)darkKeyboardProvider;
 + (id)lightKeyboardProvider;
 
 - (void).cxx_destruct;
-- (void)configureButton:(id)arg1 fromBarItem:(id)arg2;
+- (void)configureButton:(id)arg1 withAppearanceDelegate:(id)arg2 fromBarItem:(id)arg3;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (void)updateButton:(id)arg1 forSelectedState:(BOOL)arg2;
-- (void)updateButton:(id)arg1 toUseButtonShapes:(BOOL)arg2;
+- (bool)isEqual:(id)arg1;
+- (bool)lightKeyboard;
+- (void)setLightKeyboard:(bool)arg1;
+- (void)updateButton:(id)arg1 forSelectedState:(bool)arg2;
+- (void)updateButton:(id)arg1 toUseButtonShapes:(bool)arg2;
 
 @end

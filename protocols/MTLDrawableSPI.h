@@ -5,6 +5,6 @@
 
 @required
 
-- (unsigned int)status;
+- (unsigned long long)status;
 
 @end

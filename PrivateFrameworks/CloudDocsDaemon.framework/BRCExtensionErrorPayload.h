@@ -6,7 +6,7 @@
     NSString * _minimumOSName;
 }
 
-@property (nonatomic, readonly) BOOL hasMinimumOSName;
+@property (nonatomic, readonly) bool hasMinimumOSName;
 @property (nonatomic, retain) NSString *minimumOSName;
 
 - (void).cxx_destruct;
@@ -14,12 +14,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasMinimumOSName;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasMinimumOSName;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)minimumOSName;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setMinimumOSName:(id)arg1;
 - (void)writeTo:(id)arg1;
 

@@ -5,7 +5,7 @@
 
 @optional
 
-- (void)composeHeaderView:(MFComposeHeaderView *)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)composeHeaderView:(MFComposeHeaderView *)arg1 didChangeSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)composeHeaderViewClicked:(MFComposeHeaderView *)arg1;
 - (void)composeHeaderViewDidChangeValue:(MFComposeHeaderView *)arg1;
 - (void)composeHeaderViewDidConfirmValue:(MFComposeHeaderView *)arg1;

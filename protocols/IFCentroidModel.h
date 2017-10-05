@@ -11,6 +11,6 @@
 - (IFCentroidModelParameters *)parameters;
 - (double)scoreForFeatureVector:(IFFeatureVector *)arg1 scoringParameters:(IFCentroidScoringParameters *)arg2;
 - (<IFCentroidStore> *)store;
-- (BOOL)update;
+- (bool)update;
 
 @end

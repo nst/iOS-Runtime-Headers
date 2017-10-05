@@ -10,6 +10,6 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)initWithCoreGeolocationPosition:(struct PassRefPtr<WebCore::GeolocationPosition> { struct GeolocationPosition {} *x1; })arg1;
+- (id)initWithCoreGeolocationPosition:(struct RefPtr<WebCore::GeolocationPosition> { struct GeolocationPosition {} *x1; }*)arg1;
 
 @end

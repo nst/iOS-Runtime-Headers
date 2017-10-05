@@ -4,6 +4,6 @@
 
 @interface SSItemAvailableCondition : SSProtocolCondition
 
-- (BOOL)evaluateWithContext:(id)arg1;
+- (bool)evaluateWithContext:(id)arg1;
 
 @end

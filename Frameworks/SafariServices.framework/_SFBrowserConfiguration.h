@@ -3,49 +3,49 @@
  */
 
 @interface _SFBrowserConfiguration : NSObject {
-    int  _configuration;
+    long long  _configuration;
 }
 
-@property (nonatomic, readonly) BOOL allowsAutoFill;
-@property (nonatomic, readonly) BOOL allowsClosingLastTab;
-@property (nonatomic, readonly) BOOL allowsKeyboardCorrectionLearning;
-@property (nonatomic, readonly) BOOL allowsPersistingTabState;
-@property (nonatomic, readonly) BOOL allowsReopeningClosedTabs;
-@property (nonatomic, readonly) BOOL allowsRestoringEducationTabs;
-@property (nonatomic, readonly) BOOL allowsSearchFeedback;
-@property (nonatomic, readonly) BOOL allowsSearchSuggestions;
-@property (nonatomic, readonly) BOOL allowsSiteSpecificSearch;
-@property (nonatomic, readonly) BOOL allowsSpeculativeLoading;
-@property (nonatomic, readonly) BOOL allowsUserActivityFeedback;
-@property (nonatomic, readonly) BOOL forcesDoNotTrack;
-@property (nonatomic, readonly) unsigned int navigationBarTintStyle;
-@property (getter=isPrivateBrowsingEnabled, nonatomic, readonly) BOOL privateBrowsingEnabled;
-@property (nonatomic, readonly) unsigned int toolbarTintStyle;
-@property (nonatomic, readonly) BOOL usesDarkTheme;
-@property (nonatomic, readonly) BOOL usesExtraBarGradients;
-@property (nonatomic, readonly) BOOL usesPersistentDataStore;
+@property (nonatomic, readonly) bool allowsAutoFill;
+@property (nonatomic, readonly) bool allowsClosingLastTab;
+@property (nonatomic, readonly) bool allowsKeyboardCorrectionLearning;
+@property (nonatomic, readonly) bool allowsPersistingTabState;
+@property (nonatomic, readonly) bool allowsReopeningClosedTabs;
+@property (nonatomic, readonly) bool allowsRestoringEducationTabs;
+@property (nonatomic, readonly) bool allowsSearchFeedback;
+@property (nonatomic, readonly) bool allowsSearchSuggestions;
+@property (nonatomic, readonly) bool allowsSiteSpecificSearch;
+@property (nonatomic, readonly) bool allowsSpeculativeLoading;
+@property (nonatomic, readonly) bool allowsUserActivityFeedback;
+@property (nonatomic, readonly) bool forcesDoNotTrack;
+@property (nonatomic, readonly) unsigned long long navigationBarTintStyle;
+@property (getter=isPrivateBrowsingEnabled, nonatomic, readonly) bool privateBrowsingEnabled;
+@property (nonatomic, readonly) unsigned long long toolbarTintStyle;
+@property (nonatomic, readonly) bool usesDarkTheme;
+@property (nonatomic, readonly) bool usesExtraBarGradients;
+@property (nonatomic, readonly) bool usesPersistentDataStore;
 
-- (BOOL)allowsAutoFill;
-- (BOOL)allowsClosingLastTab;
-- (BOOL)allowsKeyboardCorrectionLearning;
-- (BOOL)allowsPersistingTabState;
-- (BOOL)allowsReopeningClosedTabs;
-- (BOOL)allowsRestoringEducationTabs;
-- (BOOL)allowsSearchFeedback;
-- (BOOL)allowsSearchSuggestions;
-- (BOOL)allowsSiteSpecificSearch;
-- (BOOL)allowsSpeculativeLoading;
-- (BOOL)allowsUserActivityFeedback;
+- (bool)allowsAutoFill;
+- (bool)allowsClosingLastTab;
+- (bool)allowsKeyboardCorrectionLearning;
+- (bool)allowsPersistingTabState;
+- (bool)allowsReopeningClosedTabs;
+- (bool)allowsRestoringEducationTabs;
+- (bool)allowsSearchFeedback;
+- (bool)allowsSearchSuggestions;
+- (bool)allowsSiteSpecificSearch;
+- (bool)allowsSpeculativeLoading;
+- (bool)allowsUserActivityFeedback;
 - (id)description;
-- (BOOL)forcesDoNotTrack;
-- (unsigned int)hash;
-- (id)initWithPrivateBrowsingEnabled:(BOOL)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isPrivateBrowsingEnabled;
-- (unsigned int)navigationBarTintStyle;
-- (unsigned int)toolbarTintStyle;
-- (BOOL)usesDarkTheme;
-- (BOOL)usesExtraBarGradients;
-- (BOOL)usesPersistentDataStore;
+- (bool)forcesDoNotTrack;
+- (unsigned long long)hash;
+- (id)initWithPrivateBrowsingEnabled:(bool)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isPrivateBrowsingEnabled;
+- (unsigned long long)navigationBarTintStyle;
+- (unsigned long long)toolbarTintStyle;
+- (bool)usesDarkTheme;
+- (bool)usesExtraBarGradients;
+- (bool)usesPersistentDataStore;
 
 @end

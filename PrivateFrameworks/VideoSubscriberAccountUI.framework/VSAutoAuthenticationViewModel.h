@@ -18,6 +18,7 @@
 
 - (void).cxx_destruct;
 - (id)accountName;
+- (void)configureWithRequest:(id)arg1;
 - (id)delegate;
 - (void)didSelectManualSignInButton;
 - (id)init;

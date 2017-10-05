@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDVendorModelEntry : NSObject {
+@interface HMDVendorModelEntry : HMFObject {
     NSString * _appBundleID;
     NSString * _appStoreID;
     HMDAccessoryVersion * _firmwareVersion;
@@ -22,7 +22,7 @@
 - (id)description;
 - (id)firmwareVersion;
 - (id)initWithModelName:(id)arg1 manufacturer:(id)arg2 appBundleID:(id)arg3 appStoreID:(id)arg4 firmwareVersion:(id)arg5;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)manufacturer;
 - (id)modelName;
 

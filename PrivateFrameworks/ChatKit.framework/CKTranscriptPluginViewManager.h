@@ -10,7 +10,7 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (BOOL)_objectSupportsPluginViewReuse:(id)arg1;
+- (bool)_objectSupportsPluginViewReuse:(id)arg1;
 - (id)_pointerKeyForPluginView:(id)arg1;
 - (void)_registerPluginView:(id)arg1 withReuseDelegate:(id)arg2;
 - (void)dealloc;

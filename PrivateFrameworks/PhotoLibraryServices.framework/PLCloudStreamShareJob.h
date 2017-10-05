@@ -24,6 +24,7 @@
 - (id)albumName;
 - (id)commentText;
 - (long long)daemonOperation;
+- (void)dealloc;
 - (id)description;
 - (void)encodeToXPCObject:(id)arg1;
 - (void)executeDaemonOperation;
@@ -37,6 +38,6 @@
 - (void)setCommentText:(id)arg1;
 - (void)setMediaSources:(id)arg1;
 - (void)setRecipientsInfo:(id)arg1;
-- (BOOL)shouldArchiveXPCToDisk;
+- (bool)shouldArchiveXPCToDisk;
 
 @end

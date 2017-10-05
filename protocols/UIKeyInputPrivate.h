@@ -5,6 +5,6 @@
 
 @optional
 
-- (struct _NSRange { unsigned int x1; unsigned int x2; })insertFilteredText:(NSString *)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })insertFilteredText:(NSString *)arg1;
 
 @end

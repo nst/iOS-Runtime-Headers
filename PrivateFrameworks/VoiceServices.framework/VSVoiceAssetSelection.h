@@ -20,5 +20,6 @@
 - (void)setBuiltInVoicePath:(id)arg1;
 - (void)setVoiceData:(id)arg1;
 - (id)voiceData;
+- (id)voicePath;
 
 @end

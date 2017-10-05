@@ -26,7 +26,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) HMDelegateCaller *delegateCaller;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *logID;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
@@ -37,14 +37,14 @@
 @property (nonatomic, readonly, copy) NSUUID *uniqueIdentifier;
 
 + (id)logCategory;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_callServiceGroupUpdate;
 - (void)_configureClientQueue:(id)arg1 delegateCaller:(id)arg2 msgDispatcher:(id)arg3;
 - (void)_findObjects;
 - (void)_handleBulletinBoardNotificationServiceGroupUpdateNotification:(id)arg1;
-- (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
+- (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)_registerNotificationHandlers;
 - (void)_requestServiceGroup;
 - (id)associatedServiceUUIDs;

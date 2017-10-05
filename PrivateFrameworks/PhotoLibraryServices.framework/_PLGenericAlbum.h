@@ -9,7 +9,7 @@
 @property (nonatomic) int cachedPhotosCount;
 @property (nonatomic) int cachedVideosCount;
 @property (nonatomic, retain) PLManagedAsset *customKeyAsset;
-@property (nonatomic) BOOL customSortAscending;
+@property (nonatomic) bool customSortAscending;
 @property (nonatomic) int customSortKey;
 @property (nonatomic, retain) NSNumber *kind;
 @property (nonatomic, retain) PLManagedFolder *parentFolder;

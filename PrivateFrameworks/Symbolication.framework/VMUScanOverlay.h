@@ -9,9 +9,10 @@
 @property (nonatomic, readonly) NSArray *refinementRules;
 
 + (id)defaultOverlay;
++ (id)defaultOverlayWithScanner:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)addMetadataRefinementRule:(id /* block */)arg1;
-- (void)dealloc;
 - (id)init;
 - (id)refinementRules;
 

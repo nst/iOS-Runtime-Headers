@@ -3,19 +3,19 @@
  */
 
 @interface IDSSocketPairAppAckMessage : IDSSocketPairMessage {
-    unsigned int  _offset;
+    unsigned long long  _offset;
     NSString * _peerResponseIdentifier;
     unsigned int  _sequenceNumber;
     unsigned short  _streamID;
 }
 
-@property (nonatomic, readonly, retain) NSString *peerResponseIdentifier;
+@property (nonatomic, readonly) NSString *peerResponseIdentifier;
 @property (nonatomic) unsigned int sequenceNumber;
 @property (nonatomic) unsigned short streamID;
 
+- (void).cxx_destruct;
 - (id)_nonHeaderData;
 - (unsigned char)command;
-- (void)dealloc;
 - (id)initWithCommand:(unsigned char)arg1 underlyingData:(id)arg2;
 - (id)initWithSequenceNumber:(unsigned int)arg1 streamID:(unsigned short)arg2 peerResponseIdentifier:(id)arg3;
 - (id)peerResponseIdentifier;

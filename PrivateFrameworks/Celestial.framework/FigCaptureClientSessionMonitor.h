@@ -8,18 +8,19 @@
     int  _applicationState;
     id  _applicationStateChangeNotificationToken;
     NSString * _cachedApplicationIDToInheritAppStateFrom;
-    BOOL  _clientCanInheritApplicationState;
+    bool  _clientCanInheritApplicationState;
     int  _clientType;
     FigCaptureDisplayLayoutMonitor * _displayLayoutMonitor;
-    BOOL  _haveExternalCMSession;
+    NSString * _extensionHostApplicationID;
+    int  _extensionHostApplicationState;
+    bool  _haveExternalCMSession;
     id /* block */  _interruptionHandler;
     id  _interruptionStateChangeNotificationToken;
-    BOOL  _invalid;
+    bool  _invalid;
     int  _layoutState;
-    int  _messagesApplicationState;
     int  _pid;
     int  _pidToInheritAppStateFrom;
-    int  _resolvedMessagesExtensionApplicationState;
+    int  _resolvedExtensionApplicationState;
     struct opaqueCMSession { } * _session;
     struct OpaqueFigSimpleMutex { } * _sessionLock;
     struct OpaqueFigSimpleMutex { } * _stateChangeLock;
@@ -28,7 +29,7 @@
 @property (readonly) NSString *applicationID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) struct opaqueCMSession { }*session;
 @property (readonly) Class superclass;
 
@@ -40,17 +41,18 @@
 + (void)startPrewarmingMonitor;
 + (void)stopPrewarmingMonitor;
 
-- (void)_copyClientType:(int*)arg1 applicationID:(id*)arg2;
-- (long)_createAndObserveCMSession;
+- (int)_createAndObserveCMSession;
 - (void)_deregisterAndReleaseCMSession;
 - (void)_handleApplicationStateChange:(unsigned int)arg1;
 - (void)_handleAudioInterruptionChange:(int)arg1;
 - (void)_handleCMSessionManagerNofification:(id)arg1;
+- (bool)_isSupportedExtensionClientType;
 - (id)_logString;
-- (long)_registerCMSessionForObservation;
+- (void)_notifyIfResolvedSupportedExtensionApplicationStateOrLayoutStateDidChangeUsingLayoutStateChanged:(bool)arg1;
+- (int)_registerCMSessionForObservation;
 - (id)_resolveApplicationID;
-- (void)_resolveMessagesExtensionApplicationStateAndNotifyIfChanged;
-- (long)_updateApplicationState;
+- (void)_setUpApplicationInfo;
+- (void)_updateApplicationState;
 - (id)applicationID;
 - (void)dealloc;
 - (id)description;
@@ -58,7 +60,7 @@
 - (id)initWithPID:(int)arg1 applicationAndLayoutStateHandler:(id /* block */)arg2 interruptionHandler:(id /* block */)arg3;
 - (void)invalidate;
 - (void)layoutMonitor:(id)arg1 didUpdateLayoutWithForegroundApps:(id)arg2 layoutState:(int)arg3;
-- (long)observeSession:(struct opaqueCMSession { }*)arg1;
+- (int)observeSession:(struct opaqueCMSession { }*)arg1;
 - (struct opaqueCMSession { }*)session;
 
 @end

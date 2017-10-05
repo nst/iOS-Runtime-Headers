@@ -12,9 +12,9 @@
 }
 
 - (id).cxx_construct;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithTransitRouteMatcher:(id)arg1 tripLeg:(id)arg2;
-- (unsigned int)priority;
-- (BOOL)updateRouteMatch:(id)arg1 previousRouteMatch:(id)arg2 forLocation:(id)arg3;
+- (unsigned long long)priority;
+- (bool)updateRouteMatch:(id)arg1 previousRouteMatch:(id)arg2 forLocation:(id)arg3;
 
 @end

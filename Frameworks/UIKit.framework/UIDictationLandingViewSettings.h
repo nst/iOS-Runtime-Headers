@@ -3,39 +3,39 @@
  */
 
 @interface UIDictationLandingViewSettings : NSObject {
-    float  _circleRPM;
-    float  _colorTransitionInDuration;
-    float  _colorTransitionOutDuration;
-    float  _fadeInDuration;
-    float  _fadeOutDuration;
-    float  _shrinkDuration;
-    BOOL  _useBlackWave;
+    double  _circleRPM;
+    double  _colorTransitionInDuration;
+    double  _colorTransitionOutDuration;
+    double  _fadeInDuration;
+    double  _fadeOutDuration;
+    double  _shrinkDuration;
+    bool  _useBlackWave;
 }
 
-@property (nonatomic) float circleRPM;
-@property (nonatomic) float colorTransitionInDuration;
-@property (nonatomic) float colorTransitionOutDuration;
-@property (nonatomic) float fadeInDuration;
-@property (nonatomic) float fadeOutDuration;
-@property (nonatomic) float shrinkDuration;
-@property (nonatomic) BOOL useBlackWave;
+@property (nonatomic) double circleRPM;
+@property (nonatomic) double colorTransitionInDuration;
+@property (nonatomic) double colorTransitionOutDuration;
+@property (nonatomic) double fadeInDuration;
+@property (nonatomic) double fadeOutDuration;
+@property (nonatomic) double shrinkDuration;
+@property (nonatomic) bool useBlackWave;
 
 + (id)sharedInstance;
 
-- (float)circleRPM;
-- (float)colorTransitionInDuration;
-- (float)colorTransitionOutDuration;
-- (float)fadeInDuration;
-- (float)fadeOutDuration;
+- (double)circleRPM;
+- (double)colorTransitionInDuration;
+- (double)colorTransitionOutDuration;
+- (double)fadeInDuration;
+- (double)fadeOutDuration;
 - (id)init;
-- (void)setCircleRPM:(float)arg1;
-- (void)setColorTransitionInDuration:(float)arg1;
-- (void)setColorTransitionOutDuration:(float)arg1;
-- (void)setFadeInDuration:(float)arg1;
-- (void)setFadeOutDuration:(float)arg1;
-- (void)setShrinkDuration:(float)arg1;
-- (void)setUseBlackWave:(BOOL)arg1;
-- (float)shrinkDuration;
-- (BOOL)useBlackWave;
+- (void)setCircleRPM:(double)arg1;
+- (void)setColorTransitionInDuration:(double)arg1;
+- (void)setColorTransitionOutDuration:(double)arg1;
+- (void)setFadeInDuration:(double)arg1;
+- (void)setFadeOutDuration:(double)arg1;
+- (void)setShrinkDuration:(double)arg1;
+- (void)setUseBlackWave:(bool)arg1;
+- (double)shrinkDuration;
+- (bool)useBlackWave;
 
 @end

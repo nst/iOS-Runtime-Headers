@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@interface MSASAssetCollection : NSObject <NSCopying> {
+@interface MSASAssetCollection : NSObject <NSCopying, NSSecureCoding> {
     NSString * _GUID;
     NSString * _albumGUID;
     NSArray * _assets;
@@ -11,9 +11,9 @@
     NSString * _fileName;
     NSString * _firstName;
     NSString * _fullName;
-    BOOL  _hasComments;
-    BOOL  _isDeletable;
-    BOOL  _isMine;
+    bool  _hasComments;
+    bool  _isDeletable;
+    bool  _isMine;
     NSString * _lastName;
     NSDictionary * _metadata;
     NSString * _path;
@@ -31,9 +31,9 @@
 @property (nonatomic, retain) NSString *fileName;
 @property (nonatomic, retain) NSString *firstName;
 @property (nonatomic, retain) NSString *fullName;
-@property (nonatomic) BOOL hasComments;
-@property (nonatomic) BOOL isDeletable;
-@property (nonatomic) BOOL isMine;
+@property (nonatomic) bool hasComments;
+@property (nonatomic) bool isDeletable;
+@property (nonatomic) bool isMine;
 @property (nonatomic, retain) NSString *lastName;
 @property (nonatomic, retain) NSDictionary *metadata;
 @property (nonatomic, retain) NSString *path;
@@ -44,7 +44,7 @@
 
 + (id)MSASPAssetCollectionFromProtocolDictionary:(id)arg1;
 + (id)assetCollectionWithAssetCollection:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)GUID;
@@ -59,16 +59,17 @@
 - (id)fileName;
 - (id)firstName;
 - (id)fullName;
-- (BOOL)hasComments;
-- (BOOL)hasVideoAsset;
-- (unsigned int)hash;
+- (bool)hasComments;
+- (bool)hasVideoAsset;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFileName:(id)arg1 path:(id)arg2;
-- (BOOL)isDeletable;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isMine;
-- (BOOL)isPhotoIris;
-- (BOOL)isVideo;
+- (bool)isAutoloopVideo;
+- (bool)isDeletable;
+- (bool)isEqual:(id)arg1;
+- (bool)isMine;
+- (bool)isPhotoIris;
+- (bool)isVideo;
 - (id)lastName;
 - (id)mediaAssetType;
 - (id)metadata;
@@ -83,9 +84,9 @@
 - (void)setFirstName:(id)arg1;
 - (void)setFullName:(id)arg1;
 - (void)setGUID:(id)arg1;
-- (void)setHasComments:(BOOL)arg1;
-- (void)setIsDeletable:(BOOL)arg1;
-- (void)setIsMine:(BOOL)arg1;
+- (void)setHasComments:(bool)arg1;
+- (void)setIsDeletable:(bool)arg1;
+- (void)setIsMine:(bool)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setMetadataValue:(id)arg1 forKey:(id)arg2;

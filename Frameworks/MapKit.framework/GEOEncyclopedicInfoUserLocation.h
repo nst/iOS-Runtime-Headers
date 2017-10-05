@@ -10,9 +10,9 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) GEOMapItemAttribution *encyclopedicAttribution;
 @property (nonatomic, readonly) NSArray *factoids;
-@property (nonatomic, readonly) BOOL hasPairOfFactoids;
-@property (nonatomic, readonly) BOOL hasTextBlock;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool hasPairOfFactoids;
+@property (nonatomic, readonly) bool hasTextBlock;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) MKMapItem *mapItem;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *textBlockText;
@@ -21,8 +21,8 @@
 - (void).cxx_destruct;
 - (id)encyclopedicAttribution;
 - (id)factoids;
-- (BOOL)hasPairOfFactoids;
-- (BOOL)hasTextBlock;
+- (bool)hasPairOfFactoids;
+- (bool)hasTextBlock;
 - (id)initWithMapItem:(id)arg1;
 - (id)mapItem;
 - (void)setMapItem:(id)arg1;

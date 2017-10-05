@@ -3,54 +3,54 @@
  */
 
 @interface PRLikenessView : UIView {
-    BOOL  _circular;
+    bool  _circular;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _cropRect;
-    BOOL  _highlighted;
+    bool  _highlighted;
     PRImageView * _imageView;
     PRLikeness * _likeness;
-    unsigned int  _likenessType;
+    unsigned long long  _likenessType;
     PRMonogramView * _monogramView;
     NSData * _recipe;
-    BOOL  _shouldDecode;
+    bool  _shouldDecode;
     struct CGImage { } * _staticRepresentation;
 }
 
-@property (getter=isCircular, nonatomic) BOOL circular;
-@property (nonatomic) BOOL highlighted;
+@property (getter=isCircular, nonatomic) bool circular;
+@property (nonatomic) bool highlighted;
 @property (nonatomic, retain) PRLikeness *likeness;
-@property (nonatomic) BOOL shouldDecode;
+@property (nonatomic) bool shouldDecode;
 
 + (void)initialize;
 
 - (void).cxx_destruct;
 - (void)_imageForLikeness:(id)arg1 completion:(id /* block */)arg2;
 - (id)_imageView;
-- (BOOL)_isLikenessEqual:(id)arg1;
+- (bool)_isLikenessEqual:(id)arg1;
 - (id)_monogramView;
 - (void)_setDisplayedView:(id)arg1;
-- (BOOL)_shouldRenderStaticRepresentation;
-- (void)_updateViewForLikeness:(BOOL)arg1;
+- (bool)_shouldRenderStaticRepresentation;
+- (void)_updateViewForLikeness:(bool)arg1;
 - (void)dealloc;
-- (BOOL)highlighted;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)highlighted;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithLikeness:(id)arg1;
-- (BOOL)isCircular;
+- (bool)isCircular;
 - (void)layoutSubviews;
 - (id)likeness;
-- (void)setCircular:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setCircular:(bool)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setLikeness:(id)arg1;
 - (void)setNeedsRedraw;
-- (void)setShouldDecode:(BOOL)arg1;
-- (BOOL)shouldDecode;
+- (void)setShouldDecode:(bool)arg1;
+- (bool)shouldDecode;
 
 @end

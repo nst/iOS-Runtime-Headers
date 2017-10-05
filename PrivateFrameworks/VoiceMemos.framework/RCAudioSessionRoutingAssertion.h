@@ -4,28 +4,28 @@
 
 @interface RCAudioSessionRoutingAssertion : NSObject {
     NSString * _debugLabel;
-    int  _priority;
-    BOOL  _requireAudioCategoryActive;
-    int  _routeDirection;
+    long long  _priority;
+    bool  _requireAudioCategoryActive;
+    long long  _routeDirection;
 }
 
-@property (nonatomic, readonly) int priority;
-@property (nonatomic, readonly) BOOL requireAudioCategoryActive;
-@property (nonatomic, readonly) int routeDirection;
+@property (nonatomic, readonly) long long priority;
+@property (nonatomic, readonly) bool requireAudioCategoryActive;
+@property (nonatomic, readonly) long long routeDirection;
 
 + (id)newCaptureAssertionNamed:(id)arg1;
 + (id)newForegroundAppAssertion;
-+ (id)newForegroundAppAssertionRequiringActiveAudioSession:(BOOL)arg1;
++ (id)newForegroundAppAssertionRequiringActiveAudioSession:(bool)arg1;
 + (id)newPreviewAssertionNamed:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (id)initWithDebugLabel:(id)arg1 routeDirection:(int)arg2 priority:(int)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (int)priority;
-- (BOOL)requireAudioCategoryActive;
-- (int)routeDirection;
+- (id)initWithDebugLabel:(id)arg1 routeDirection:(long long)arg2 priority:(long long)arg3;
+- (bool)isEqual:(id)arg1;
+- (long long)priority;
+- (bool)requireAudioCategoryActive;
+- (long long)routeDirection;
 
 @end

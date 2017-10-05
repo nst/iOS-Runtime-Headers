@@ -3,6 +3,7 @@
  */
 
 @interface SUScriptOperation : ISOperation {
+    WebScriptObject * _callbackFunction;
     id  _options;
     ISOperation * _wrappedOperation;
 }
@@ -13,6 +14,7 @@
 - (id)_scriptOptions;
 - (void)_sendCompletionCallback;
 - (void)dealloc;
+- (id)initWithOperation:(id)arg1 callback:(id)arg2;
 - (id)initWithOperation:(id)arg1 options:(id)arg2;
 - (id)initWithPostType:(id)arg1 options:(id)arg2;
 - (void)run;

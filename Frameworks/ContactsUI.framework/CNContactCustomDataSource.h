@@ -4,18 +4,18 @@
 
 @interface CNContactCustomDataSource : NSObject <CNContactChangesObserver, CNContactDataSource> {
     NSMutableArray * _allContacts;
-    BOOL  _autoUpdateContacts;
+    bool  _autoUpdateContacts;
     CNContactFilter * _filter;
     NSArray * _filteredContacts;
     NSMapTable * _identifiersToIndexes;
     NSArray * _keysToFetch;
-    BOOL  _observingContacts;
+    bool  _observingContacts;
     <CNContactDataSourceDelegate> * delegate;
 }
 
 @property (nonatomic, retain) NSMutableArray *allContacts;
-@property (nonatomic) BOOL autoUpdateContacts;
-@property (nonatomic, readonly) BOOL canReload;
+@property (nonatomic) bool autoUpdateContacts;
+@property (nonatomic, readonly) bool canReload;
 @property (nonatomic, retain) CNContactFormatter *contactFormatter;
 @property (nonatomic, readonly) NSDictionary *contactMatchInfos;
 @property (nonatomic, readonly) NSArray *contacts;
@@ -26,14 +26,13 @@
 @property (nonatomic, readonly) CNContactFilter *effectiveFilter;
 @property (nonatomic, copy) CNContactFilter *filter;
 @property (nonatomic, retain) NSArray *filteredContacts;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMapTable *identifiersToIndexes;
 @property (nonatomic, readonly) NSArray *indexSections;
 @property (nonatomic, retain) NSArray *keysToFetch;
-@property (nonatomic, readonly) NSString *mainStorePreferredForNameMeContactIdentifier;
-@property (nonatomic) BOOL observingContacts;
+@property (nonatomic) bool observingContacts;
 @property (nonatomic, readonly) NSArray *sections;
-@property (nonatomic, readonly) BOOL shouldReturnToAccountsAndGroupsViewAfterSearchIsCanceled;
+@property (nonatomic, readonly) bool shouldReturnToAccountsAndGroupsViewAfterSearchIsCanceled;
 @property (nonatomic, readonly) CNContactStore *store;
 @property (readonly) Class superclass;
 
@@ -44,9 +43,9 @@
 - (void)_updateContactsObserving;
 - (void)_updateFilter;
 - (id)allContacts;
-- (BOOL)autoUpdateContacts;
-- (BOOL)canReload;
-- (id)completeContactFromContact:(id)arg1 fromMainStoreOnly:(BOOL)arg2 keysToFetch:(id)arg3;
+- (bool)autoUpdateContacts;
+- (bool)canReload;
+- (id)completeContactFromContact:(id)arg1 fromMainStoreOnly:(bool)arg2 keysToFetch:(id)arg3;
 - (void)contactDidChange:(id)arg1;
 - (id)contactMatchInfos;
 - (id)contacts;
@@ -63,16 +62,16 @@
 - (id)initWithContacts:(id)arg1 keysToFetch:(id)arg2;
 - (id)initWithContacts:(id)arg1 keysToFetch:(id)arg2 filter:(id)arg3;
 - (id)keysToFetch;
-- (id)mainStorePreferredForNameMeContactIdentifier;
-- (BOOL)observingContacts;
+- (bool)observingContacts;
+- (id)preferredForNameMeContactIdentifier;
 - (id)sections;
 - (void)setAllContacts:(id)arg1;
-- (void)setAutoUpdateContacts:(BOOL)arg1;
+- (void)setAutoUpdateContacts:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFilter:(id)arg1;
 - (void)setFilteredContacts:(id)arg1;
 - (void)setIdentifiersToIndexes:(id)arg1;
 - (void)setKeysToFetch:(id)arg1;
-- (void)setObservingContacts:(BOOL)arg1;
+- (void)setObservingContacts:(bool)arg1;
 
 @end

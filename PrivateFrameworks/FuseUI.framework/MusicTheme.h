@@ -5,7 +5,6 @@
 @interface MusicTheme : MPUTheme
 
 + (id)availableOfflineBadgeDefaultTintColor;
-+ (id)contextualActionsButtonDefaultTintColor;
 + (id)librarySwitcherContentColor;
 + (id)placeholderArtworkBackgroundColor;
 + (id)subtitleColor;

@@ -3,43 +3,43 @@
  */
 
 @interface HKWorkoutConfiguration : NSObject <HDCoding, NSCopying, NSSecureCoding> {
-    unsigned int  _activityType;
+    unsigned long long  _activityType;
     HKQuantity * _lapLength;
-    int  _locationType;
-    int  _swimmingLocationType;
+    long long  _locationType;
+    long long  _swimmingLocationType;
 }
 
-@property unsigned int activityType;
+@property unsigned long long activityType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (copy) HKQuantity *lapLength;
-@property int locationType;
+@property long long locationType;
 @property (readonly) Class superclass;
-@property int swimmingLocationType;
+@property long long swimmingLocationType;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (id)_workoutConfigurationFromDictionary:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
-- (unsigned int)activityType;
+- (unsigned long long)activityType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)lapLength;
-- (int)locationType;
-- (void)setActivityType:(unsigned int)arg1;
+- (long long)locationType;
+- (void)setActivityType:(unsigned long long)arg1;
 - (void)setLapLength:(id)arg1;
-- (void)setLocationType:(int)arg1;
-- (void)setSwimmingLocationType:(int)arg1;
-- (int)swimmingLocationType;
+- (void)setLocationType:(long long)arg1;
+- (void)setSwimmingLocationType:(long long)arg1;
+- (long long)swimmingLocationType;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 

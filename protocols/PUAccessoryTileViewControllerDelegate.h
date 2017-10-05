@@ -11,6 +11,6 @@
 @optional
 
 - (UIView *)accessoryTileViewControllerViewHostingGestureRecognizers:(PUAccessoryTileViewController *)arg1;
-- (BOOL)accessoryTileViewControllerWillHideToolbarWhenShowingAccessoryView:(PUAccessoryTileViewController *)arg1;
+- (bool)accessoryTileViewControllerWillHideToolbarWhenShowingAccessoryView:(PUAccessoryTileViewController *)arg1;
 
 @end

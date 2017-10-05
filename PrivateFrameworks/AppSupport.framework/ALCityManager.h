@@ -22,7 +22,7 @@
 - (id)allLocales;
 - (id)bestCityForLegacyCity:(struct __CFArray { }*)arg1;
 - (id)citiesMatchingName:(id)arg1;
-- (id)citiesMatchingName:(id)arg1 localized:(BOOL)arg2;
+- (id)citiesMatchingName:(id)arg1 localized:(bool)arg2;
 - (id)citiesMatchingQualifier:(id)arg1;
 - (id)citiesWithIdentifiers:(id)arg1;
 - (id)citiesWithTimeZone:(id)arg1;

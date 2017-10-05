@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) unsigned int version;
 @property (nonatomic, readonly) NSArray *versionDomains;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithTimestamp:(double)arg1 ttl:(double)arg2 version:(unsigned int)arg3 domains:(id)arg4;
 - (double)timestamp;
 - (double)ttl;

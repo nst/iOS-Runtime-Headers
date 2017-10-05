@@ -4,23 +4,24 @@
 
 @interface PLConstraintsDirector : NSObject <PLForegroundObserver> {
     NSObject<OS_dispatch_source> * _bonusTimer;
-    BOOL  _didTransitionToOpportunisticDisallowed;
-    BOOL  _photosAppInForeground;
+    bool  _didTransitionToOpportunisticDisallowed;
+    bool  _photosAppInForeground;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)_photoanalysisdIsRunning;
++ (bool)_photoanalysisdIsRunning;
 + (id)sharedConstraintsDirector;
 
 - (void)_addBonusTime;
 - (void)_disableAutoFGAndUserFGConstraints;
 - (void)dealloc;
-- (void)foregroundMonitor:(id)arg1 changedStateToForeground:(BOOL)arg2 context:(id)arg3;
-- (void)informOpportunisticTasksAllowed:(BOOL)arg1;
+- (void)foregroundMonitor:(id)arg1 changedStateToForeground:(bool)arg2 forBundleIdentifier:(id)arg3 context:(id)arg4;
+- (void)informCameraAppCameraViewControllerVisibilityChanged:(bool)arg1;
+- (void)informOpportunisticTasksAllowed:(bool)arg1;
 - (id)init;
 
 @end

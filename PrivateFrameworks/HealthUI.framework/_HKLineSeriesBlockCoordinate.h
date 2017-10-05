@@ -4,30 +4,30 @@
 
 @interface _HKLineSeriesBlockCoordinate : NSObject <HKGraphSeriesBlockCoordinate> {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _coordinate;
-    id  _userInfo;
+    <HKGraphSeriesBlockCoordinateInfo> * _userInfo;
 }
 
-@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } coordinate;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } coordinate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) float endXValue;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) float startXValue;
+@property (nonatomic, readonly) double endXValue;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) double startXValue;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) id userInfo;
+@property (nonatomic, readonly) <HKGraphSeriesBlockCoordinateInfo> *userInfo;
 
 - (void).cxx_destruct;
-- (struct CGPoint { float x1; float x2; })coordinate;
-- (id)copyWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 roundToViewScale:(BOOL)arg2;
+- (struct CGPoint { double x1; double x2; })coordinate;
+- (id)copyWithTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 roundToViewScale:(bool)arg2;
 - (id)description;
-- (float)endXValue;
-- (id)initWithCoordinate:(struct CGPoint { float x1; float x2; })arg1 userInfo:(id)arg2;
-- (float)maxYValue;
-- (float)minYValue;
-- (float)startXValue;
+- (double)endXValue;
+- (id)initWithCoordinate:(struct CGPoint { double x1; double x2; })arg1 userInfo:(id)arg2;
+- (double)maxYValue;
+- (double)minYValue;
+- (double)startXValue;
 - (id)userInfo;
 
 @end

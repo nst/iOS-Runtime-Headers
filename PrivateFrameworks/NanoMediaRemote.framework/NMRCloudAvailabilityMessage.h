@@ -6,20 +6,20 @@
     _NMRCloudAvailabilityProtobuf * _protobuf;
 }
 
-@property (nonatomic) BOOL canShowCloudMusic;
+@property (nonatomic) bool canShowCloudMusic;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL hasProperNetworkConditionsToPlayMedia;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool hasProperNetworkConditionsToPlayMedia;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)canShowCloudMusic;
-- (BOOL)hasProperNetworkConditionsToPlayMedia;
+- (bool)canShowCloudMusic;
+- (bool)hasProperNetworkConditionsToPlayMedia;
 - (id)init;
 - (id)initWithProtobufData:(id)arg1;
 - (id)protobufData;
-- (void)setCanShowCloudMusic:(BOOL)arg1;
-- (void)setHasProperNetworkConditionsToPlayMedia:(BOOL)arg1;
+- (void)setCanShowCloudMusic:(bool)arg1;
+- (void)setHasProperNetworkConditionsToPlayMedia:(bool)arg1;
 
 @end

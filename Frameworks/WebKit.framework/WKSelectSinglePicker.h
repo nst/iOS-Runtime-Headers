@@ -3,13 +3,13 @@
  */
 
 @interface WKSelectSinglePicker : UIPickerView <UIPickerViewDataSource, UIPickerViewDelegate, WKFormControl> {
-    int  _selectedIndex;
+    long long  _selectedIndex;
     WKContentView * _view;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)controlBeginEditing;
@@ -17,10 +17,10 @@
 - (id)controlView;
 - (void)dealloc;
 - (id)initWithView:(id)arg1;
-- (int)numberOfComponentsInPickerView:(id)arg1;
-- (id)pickerView:(id)arg1 attributedTitleForRow:(int)arg2 forComponent:(int)arg3;
-- (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
-- (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
-- (void)selectRow:(int)arg1 inComponent:(int)arg2 extendingSelection:(BOOL)arg3;
+- (long long)numberOfComponentsInPickerView:(id)arg1;
+- (id)pickerView:(id)arg1 attributedTitleForRow:(long long)arg2 forComponent:(long long)arg3;
+- (void)pickerView:(id)arg1 didSelectRow:(long long)arg2 inComponent:(long long)arg3;
+- (long long)pickerView:(id)arg1 numberOfRowsInComponent:(long long)arg2;
+- (void)selectRow:(long long)arg1 inComponent:(long long)arg2 extendingSelection:(bool)arg3;
 
 @end

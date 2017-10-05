@@ -6,9 +6,9 @@
     NSUUID * _agentUUID;
     unsigned int  _controlUnit;
     NSString * _interfaceName;
-    int  _resultType;
+    long long  _resultType;
     NSArray * _routeRules;
-    int  _secondaryResultType;
+    long long  _secondaryResultType;
     unsigned int  _serviceData;
     NSUUID * _serviceUUID;
     unsigned int  _skipOrder;
@@ -17,9 +17,9 @@
 @property (copy) NSUUID *agentUUID;
 @property unsigned int controlUnit;
 @property (copy) NSString *interfaceName;
-@property int resultType;
+@property long long resultType;
 @property (copy) NSArray *routeRules;
-@property int secondaryResultType;
+@property long long secondaryResultType;
 @property unsigned int serviceData;
 @property (copy) NSUUID *serviceUUID;
 @property unsigned int skipOrder;
@@ -33,22 +33,22 @@
 + (id)scopeSocketToInterfaceName:(id)arg1;
 + (id)skipWithOrder:(unsigned int)arg1;
 + (id)triggerScopedService:(id)arg1 data:(unsigned int)arg2;
-+ (id)tunnelIPToInterfaceName:(id)arg1 secondaryResultType:(int)arg2;
++ (id)tunnelIPToInterfaceName:(id)arg1 secondaryResultType:(long long)arg2;
 
 - (void).cxx_destruct;
-- (BOOL)addTLVsToMessage:(id)arg1;
+- (bool)addTLVsToMessage:(id)arg1;
 - (id)agentUUID;
 - (unsigned int)controlUnit;
 - (id)description;
-- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 - (id)init;
 - (id)initInternal;
 - (id)interfaceName;
-- (int)resultType;
+- (long long)resultType;
 - (id)resultTypeString;
 - (unsigned char)resultTypeValue;
 - (id)routeRules;
-- (int)secondaryResultType;
+- (long long)secondaryResultType;
 - (id)secondaryResultTypeString;
 - (unsigned char)secondaryResultTypeValue;
 - (unsigned int)serviceData;
@@ -56,13 +56,13 @@
 - (void)setAgentUUID:(id)arg1;
 - (void)setControlUnit:(unsigned int)arg1;
 - (void)setInterfaceName:(id)arg1;
-- (void)setResultType:(int)arg1;
+- (void)setResultType:(long long)arg1;
 - (void)setRouteRules:(id)arg1;
-- (void)setSecondaryResultType:(int)arg1;
+- (void)setSecondaryResultType:(long long)arg1;
 - (void)setServiceData:(unsigned int)arg1;
 - (void)setServiceUUID:(id)arg1;
 - (void)setSkipOrder:(unsigned int)arg1;
 - (unsigned int)skipOrder;
-- (BOOL)validate;
+- (bool)validate;
 
 @end

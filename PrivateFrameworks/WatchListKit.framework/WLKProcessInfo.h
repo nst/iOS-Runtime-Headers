@@ -9,14 +9,13 @@
 @property (nonatomic) struct __SecTask { }*currentTask;
 
 + (id)currentProcessInfo;
-+ (BOOL)isSandboxed;
 
-- (BOOL)boolValueForEntitlement:(id)arg1;
+- (bool)boolValueForEntitlement:(id)arg1;
 - (struct __SecTask { }*)currentTask;
 - (void)dealloc;
 - (id)init;
 - (void)setCurrentTask:(struct __SecTask { }*)arg1;
 - (id)valueForEntitlement:(id)arg1;
-- (BOOL)valueForEntitlement:(id)arg1 containsObject:(id)arg2;
+- (bool)valueForEntitlement:(id)arg1 containsObject:(id)arg2;
 
 @end

@@ -12,13 +12,13 @@
 
 - (void).cxx_destruct;
 - (void)addPlaceholderForEmptyReplacements:(id)arg1;
-- (BOOL)isStringToReplaceMisspelled;
+- (bool)isStringToReplaceMisspelled;
 - (id)replacementRange;
 - (id)replacementWithText:(id)arg1;
 - (id)replacements;
 - (void)setReplacementRange:(id)arg1;
 - (void)setStringToReplace:(id)arg1;
-- (BOOL)shouldAllowString:(id)arg1 intoReplacements:(id)arg2;
+- (bool)shouldAllowString:(id)arg1 intoReplacements:(id)arg2;
 - (id)stringToReplace;
 
 @end

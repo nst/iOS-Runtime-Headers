@@ -6,7 +6,7 @@
     PFUbiquityContainerIdentifier * _containerIdentifier;
     int  _containerState;
     <NSObject><NSCopying><NSCoding> * _currentIdentityToken;
-    BOOL  _hasScheduledCheckBlock;
+    bool  _hasScheduledCheckBlock;
     NSString * _identityTokenOverride;
     NSString * _localPeerID;
     int  _monitorState;
@@ -29,20 +29,20 @@
 - (id)currentIdentityToken;
 - (void)dealloc;
 - (id)description;
-- (void)didChangeContainerIdentifier:(unsigned int)arg1;
+- (void)didChangeContainerIdentifier:(unsigned long long)arg1;
 - (void)didChangeContainerState;
 - (void)didChangeMonitorState;
 - (id)init;
 - (id)initWithProcessingQueue:(id)arg1 localPeerID:(id)arg2 storeName:(id)arg3 andUbiquityRootLocation:(id)arg4;
 - (int)monitorState;
 - (void)scheduleCheckBlock:(id)arg1;
-- (void)setContainerIdentifier:(id)arg1 transitionType:(unsigned int)arg2;
+- (void)setContainerIdentifier:(id)arg1 transitionType:(unsigned long long)arg2;
 - (void)setContainerState:(int)arg1;
 - (void)setMonitorState:(int)arg1;
-- (BOOL)startMonitor:(id*)arg1;
+- (bool)startMonitor:(id*)arg1;
 - (void)stopMonitor;
 - (void)ubiquityIdentityChanged:(id)arg1;
-- (void)willChangeContainerIdentifier:(unsigned int)arg1;
+- (void)willChangeContainerIdentifier:(unsigned long long)arg1;
 - (void)willChangeContainerState;
 - (void)willChangeMonitorState;
 

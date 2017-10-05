@@ -16,10 +16,10 @@
     ALAssetsLibrary * _assetsLibrary;
     UIViewController<SLFacebookAudienceViewController> * _audienceViewController;
     id /* block */  _completionHandler;
-    BOOL  _didFetchPrivilegedAccount;
-    BOOL  _hasAccessToAccount;
-    BOOL  _hasCheckedAccess;
-    BOOL  _hasShowedLocationDeniedAlert;
+    bool  _didFetchPrivilegedAccount;
+    bool  _hasAccessToAccount;
+    bool  _hasCheckedAccess;
+    bool  _hasShowedLocationDeniedAlert;
     CLInUseAssertion * _locationInUseAssertion;
     SLComposeSheetConfigurationItem * _placeConfigurationItem;
     SLFacebookPlaceManager * _placeManager;
@@ -38,7 +38,7 @@
 @property (nonatomic, copy) id /* block */ completionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) ACAccount *privilegedAccount;
 @property (readonly) Class superclass;
 
@@ -46,10 +46,10 @@
 
 - (void).cxx_destruct;
 - (id)_albumConfigurationItem;
-- (void)_handlePostPrivacyResultWithSuccess:(BOOL)arg1 error:(id)arg2;
+- (void)_handlePostPrivacyResultWithSuccess:(bool)arg1 error:(id)arg2;
 - (void)_hostApplicationDidEnterBackground;
 - (void)_hostApplicationWillEnterForeground;
-- (BOOL)_isLocationAuthorizationDenied;
+- (bool)_isLocationAuthorizationDenied;
 - (id)_placeConfigurationItem;
 - (id)_postPrivacyManager;
 - (void)_presentAlbumViewController;
@@ -70,16 +70,16 @@
 - (void)albumChooserViewController:(id)arg1 didSelectAlbum:(id)arg2;
 - (id)albumManager;
 - (void)audienceViewController:(id)arg1 didSelectPostPrivacySetting:(id)arg2;
-- (void)callCompletionHandlerWithResult:(int)arg1;
+- (void)callCompletionHandlerWithResult:(long long)arg1;
 - (id /* block */)completionHandler;
 - (id)configurationItems;
 - (void)didReceiveMemoryWarning;
 - (void)didSelectPost;
 - (void)handleImagePostWithURL;
-- (BOOL)hasAccountAccess;
+- (bool)hasAccountAccess;
 - (id)init;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)isContentValid;
+- (bool)isContentValid;
 - (void)placeManager:(id)arg1 failedWithError:(id)arg2;
 - (void)placeManager:(id)arg1 updatedPlaces:(id)arg2;
 - (void)placeViewController:(id)arg1 didSelectPlace:(id)arg2;
@@ -89,8 +89,8 @@
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setupCommonUI;
 - (void)videoOptionsViewController:(id)arg1 didSelectVideoQualityOption:(id)arg2;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

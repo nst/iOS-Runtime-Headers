@@ -8,7 +8,7 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)evaluatePredicateWithSystem:(id)arg1;
+- (bool)evaluatePredicateWithSystem:(id)arg1;
 - (id)initWithPredicate:(id /* block */)arg1 action:(id /* block */)arg2;
 - (void)performActionWithSystem:(id)arg1;
 

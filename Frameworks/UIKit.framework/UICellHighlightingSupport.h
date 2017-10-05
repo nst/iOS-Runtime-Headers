@@ -8,8 +8,8 @@
 }
 
 - (void).cxx_destruct;
-- (void)applyState:(unsigned int)arg1 toView:(id)arg2;
-- (void)cacheState:(unsigned int)arg1 forView:(id)arg2;
+- (void)applyState:(unsigned long long)arg1 toView:(id)arg2;
+- (void)cacheState:(unsigned long long)arg1 forView:(id)arg2;
 - (void)dealloc;
 - (void)highlightView:(id)arg1;
 - (id)initWithCell:(id)arg1;

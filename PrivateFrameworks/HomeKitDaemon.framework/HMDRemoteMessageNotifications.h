@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDRemoteMessageNotifications : NSObject {
+@interface HMDRemoteMessageNotifications : HMFObject {
     NSObject<OS_dispatch_queue> * _propertyQueue;
     NSMapTable * _sessionNotificationPayloads;
 }
@@ -11,7 +11,7 @@
 @property (nonatomic, retain) NSMapTable *sessionNotificationPayloads;
 
 + (void)initialize;
-+ (BOOL)messageExpectsNotificationResponse:(id)arg1;
++ (bool)messageExpectsNotificationResponse:(id)arg1;
 + (id)messagesWithNotificationResponses;
 
 - (void).cxx_destruct;

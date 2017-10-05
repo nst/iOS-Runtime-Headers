@@ -7,47 +7,47 @@
     CKImageData * _backgroundImageData;
     CKImageData * _imageData;
     NSString * _irisVideoPath;
-    BOOL  _isSticker;
+    bool  _isSticker;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _originalSize;
     UIImage * _thumbnail;
 }
 
 @property (nonatomic, readonly) CKImageData *imageData;
-@property (nonatomic, readonly) BOOL isIrisAsset;
-@property (nonatomic, readonly) BOOL isSticker;
+@property (nonatomic, readonly) bool isIrisAsset;
+@property (nonatomic, readonly) bool isSticker;
 @property (nonatomic, retain) UIImage *thumbnail;
 
 + (id)UTITypes;
 + (Class)__ck_attachmentItemClass;
-+ (id)attachmentSummary:(unsigned int)arg1;
++ (id)attachmentSummary:(unsigned long long)arg1;
 + (id)fallbackFilenamePrefix;
 + (Class)imageDataClass;
-+ (BOOL)isPreviewable;
++ (bool)isPreviewable;
 
 - (void).cxx_destruct;
 - (id)_getIrisBundleURL;
 - (id)_getTempIrisBundleLocation;
 - (id)_getTempIrisFolder;
 - (void)_removeAppendedBundle;
-- (struct CGSize { float x1; float x2; })bbSize;
+- (struct CGSize { double x1; double x2; })bbSize;
 - (id)calculateIrisVideoPath;
-- (BOOL)canExport;
-- (BOOL)canShareItem;
+- (bool)canExport;
+- (bool)canShareItem;
 - (void)dealloc;
 - (void)export:(id)arg1;
-- (id)generateThumbnailFillToSize:(struct CGSize { float x1; float x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
-- (id)generateThumbnailForWidth:(float)arg1 orientation:(BOOL)arg2;
+- (id)generateThumbnailFillToSize:(struct CGSize { double x1; double x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (id)generateThumbnailForWidth:(double)arg1 orientation:(BOOL)arg2;
 - (id)getIrisVideoPath;
 - (id)imageData;
 - (id)initWithTransfer:(id)arg1;
-- (BOOL)isIrisAsset;
-- (BOOL)isSticker;
+- (bool)isIrisAsset;
+- (bool)isSticker;
 - (id)location;
 - (int)mediaType;
-- (struct CGSize { float x1; float x2; })originalSize;
+- (struct CGSize { double x1; double x2; })originalSize;
 - (id)pasteboardItem;
 - (id)previewItemTitle;
 - (id)previewItemURL;

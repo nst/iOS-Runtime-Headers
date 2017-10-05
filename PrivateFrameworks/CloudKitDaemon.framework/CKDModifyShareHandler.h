@@ -3,13 +3,13 @@
  */
 
 @interface CKDModifyShareHandler : CKDModifyRecordHandler {
-    BOOL  _haveAddedOwnerToShare;
-    BOOL  _isALegacyPublicShareThatNeedsOwnerPPPCSUpgrade;
+    bool  _haveAddedOwnerToShare;
+    bool  _isALegacyPublicShareThatNeedsOwnerPPPCSUpgrade;
     CKDModifyShareTokenURLRequest * _request;
 }
 
-@property (nonatomic) BOOL haveAddedOwnerToShare;
-@property (nonatomic) BOOL isALegacyPublicShareThatNeedsOwnerPPPCSUpgrade;
+@property (nonatomic) bool haveAddedOwnerToShare;
+@property (nonatomic) bool isALegacyPublicShareThatNeedsOwnerPPPCSUpgrade;
 @property (nonatomic, retain) CKDModifyShareTokenURLRequest *request;
 @property (nonatomic, readonly) CKShare *share;
 @property (nonatomic, readonly) CKRecordID *shareID;
@@ -20,35 +20,35 @@
 - (void).cxx_destruct;
 - (void)_addPublicKeyToSelfParticipant;
 - (void)_alignParticipantPermissions;
-- (BOOL)_cleanPublicPCSforShareWithError:(id*)arg1;
+- (bool)_cleanPublicPCSforShareWithError:(id*)arg1;
 - (id)_createNewSharePCSDataWithError:(id*)arg1;
-- (BOOL)_decryptSharePCSData;
+- (bool)_decryptSharePCSData;
 - (id)_ensurePrivateParticipant:(id)arg1 isInInvitedSharePCS:(struct _OpaquePCSShareProtection { }*)arg2;
 - (void)_fetchRootRecordPublicSharingIdentityWithCompletionHandler:(id /* block */)arg1;
 - (void)_fetchSharePCSData;
 - (void)_handleSharePCSData:(id)arg1 withError:(id)arg2;
 - (id)_publicKeyForParticipant:(id)arg1 error:(id*)arg2;
 - (id)_removePrivateParticipant:(id)arg1 fromInvitedSharePCS:(struct _OpaquePCSShareProtection { }*)arg2;
-- (BOOL)_removePrivateParticipantsFromInvitedPCS:(struct _OpaquePCSShareProtection { }*)arg1 error:(id*)arg2;
+- (bool)_removePrivateParticipantsFromInvitedPCS:(struct _OpaquePCSShareProtection { }*)arg1 error:(id*)arg2;
 - (id)_removePublicKey:(id)arg1 fromInvitedPCS:(struct _OpaquePCSShareProtection { }*)arg2;
-- (BOOL)_serializePCSDataForShareWithError:(id*)arg1;
+- (bool)_serializePCSDataForShareWithError:(id*)arg1;
 - (void)_setupParticipantsProtectionInfos;
-- (BOOL)_updateSharePublicPCSWithError:(id*)arg1;
+- (bool)_updateSharePublicPCSWithError:(id*)arg1;
 - (void)clearProtectionDataForRecord;
 - (void)fetchSharePCSData;
-- (BOOL)haveAddedOwnerToShare;
-- (BOOL)isALegacyPublicShareThatNeedsOwnerPPPCSUpgrade;
-- (BOOL)isCloudDocsContainer;
-- (BOOL)isShare;
+- (bool)haveAddedOwnerToShare;
+- (bool)isALegacyPublicShareThatNeedsOwnerPPPCSUpgrade;
+- (bool)isCloudDocsContainer;
+- (bool)isShare;
 - (void)noteSideEffectRecordAbsent:(id)arg1;
 - (void)noteSideEffectRecordPendingDelete:(id)arg1;
 - (void)noteSideEffectRecordPendingModify:(id)arg1;
 - (void)prepareForSave;
 - (id)request;
 - (void)savePCSDataToCache;
-- (unsigned int)serviceType;
-- (void)setHaveAddedOwnerToShare:(BOOL)arg1;
-- (void)setIsALegacyPublicShareThatNeedsOwnerPPPCSUpgrade:(BOOL)arg1;
+- (unsigned long long)serviceType;
+- (void)setHaveAddedOwnerToShare:(bool)arg1;
+- (void)setIsALegacyPublicShareThatNeedsOwnerPPPCSUpgrade:(bool)arg1;
 - (void)setRequest:(id)arg1;
 - (void)setServerRecord:(id)arg1;
 - (id)share;

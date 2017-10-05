@@ -3,15 +3,38 @@
  */
 
 @interface HDPrimaryProfile : HDProfile {
+    HDAppSubscriptionManager * _appSubscriptionManager;
+    HDAWDSubmissionManager * _awdSubmissionManager;
+    HDCloudSyncManager * _cloudSyncManager;
+    HDCurrentActivitySummaryHelper * _currentActivitySummaryHelper;
     HDDataCollectionManager * _dataCollectionManager;
+    HDFitnessMachineManager * _fitnessMachineManager;
+    HDNanoSyncManager * _nanoSyncManager;
+    HDNotificationManager * _notificationManager;
+    HDServiceConnectionManager * _serviceConnectionManager;
+    HDHealthServiceManager * _serviceManager;
     HDWorkoutManager * _workoutManager;
 }
 
 - (void).cxx_destruct;
-- (id)createActiveWorkoutServerWithClientServer:(id)arg1 serverConfiguration:(id)arg2 server:(id)arg3 client:(id)arg4 delegate:(id)arg5;
+- (void)_applyPPTUpdates;
+- (id)_newAWDSubmissionManager;
+- (id)_newAppSubscriptionManager;
+- (id)_newCloudSyncManager;
+- (id)_newNanoSyncManager;
+- (id)_newNotificationManager;
+- (id)_newWorkoutManager;
+- (id)appSubscriptionManager;
+- (id)awdSubmissionManager;
+- (id)cloudSyncManager;
+- (id)currentActivitySummaryHelper;
 - (id)dataCollectionManager;
-- (id)healthDataCollectionManager;
-- (id)initWithHomeDirectory:(id)arg1 daemon:(id)arg2;
+- (id)fitnessMachineManager;
+- (id)initWithDirectoryPath:(id)arg1 medicalIDDirectoryPath:(id)arg2 daemon:(id)arg3;
+- (id)nanoSyncManager;
+- (id)notificationManager;
+- (id)serviceConnectionManager;
+- (id)serviceManager;
 - (void)terminationCleanup;
 - (id)workoutManager;
 

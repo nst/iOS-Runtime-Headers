@@ -5,6 +5,6 @@
 
 @required
 
-- (void)textView:(MSCLTokenTextView *)arg1 didChange:(int)arg2;
+- (void)textView:(MSCLTokenTextView *)arg1 didChange:(long long)arg2;
 
 @end

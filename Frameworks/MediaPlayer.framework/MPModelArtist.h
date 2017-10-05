@@ -3,22 +3,22 @@
  */
 
 @interface MPModelArtist : MPModelPerson {
-    int  _albumCount;
+    long long  _albumCount;
     id /* block */  _artworkCatalogBlock;
     id /* block */  _editorialArtworkCatalogBlock;
     MPModelGenre * _genre;
-    BOOL  _hasBiography;
+    bool  _hasBiography;
     NSDate * _libraryAddedDate;
-    int  _songCount;
+    long long  _songCount;
 }
 
-@property (nonatomic) int albumCount;
+@property (nonatomic) long long albumCount;
 @property (nonatomic, copy) id /* block */ artworkCatalogBlock;
 @property (nonatomic, copy) id /* block */ editorialArtworkCatalogBlock;
 @property (nonatomic, copy) MPModelGenre *genre;
-@property (nonatomic) BOOL hasBiography;
+@property (nonatomic) bool hasBiography;
 @property (nonatomic, copy) NSDate *libraryAddedDate;
-@property (nonatomic) int songCount;
+@property (nonatomic) long long songCount;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
@@ -39,26 +39,27 @@
 + (id)kindWithAlbumKind:(id)arg1;
 
 - (void).cxx_destruct;
-- (int)albumCount;
+- (long long)albumCount;
 - (id)artworkCatalog;
 - (id /* block */)artworkCatalogBlock;
 - (id)editorialArtworkCatalog;
 - (id /* block */)editorialArtworkCatalogBlock;
 - (id)genre;
-- (BOOL)hasBiography;
+- (bool)hasBiography;
 - (id)libraryAddedDate;
-- (void)setAlbumCount:(int)arg1;
+- (void)setAlbumCount:(long long)arg1;
 - (void)setArtworkCatalogBlock:(id /* block */)arg1;
 - (void)setEditorialArtworkCatalogBlock:(id /* block */)arg1;
 - (void)setGenre:(id)arg1;
-- (void)setHasBiography:(BOOL)arg1;
+- (void)setHasBiography:(bool)arg1;
 - (void)setLibraryAddedDate:(id)arg1;
-- (void)setSongCount:(int)arg1;
-- (int)songCount;
+- (void)setSongCount:(long long)arg1;
+- (long long)songCount;
 
 // Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
 
 - (id)_radioStationMatchMetadata;
-- (BOOL)_shouldMatchArtist;
+- (bool)_shouldMatchArtist;
+- (id)mpc_radioContentReference;
 
 @end

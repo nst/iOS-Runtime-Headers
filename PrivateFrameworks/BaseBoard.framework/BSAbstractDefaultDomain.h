@@ -3,7 +3,7 @@
  */
 
 @interface BSAbstractDefaultDomain : NSObject {
-    BOOL  _boundDefaults;
+    bool  _boundDefaults;
     NSMutableDictionary * _defaultKeyToDefaultValue;
     NSObject<OS_dispatch_queue> * _observerQueue;
     NSMutableSet * _observerQueue_observers;
@@ -13,9 +13,9 @@
 + (void)__assignPropertyImplementations:(id)arg1;
 + (Class)__classFromPropertyType:(id)arg1;
 + (id)__getPropertyMetadataForProperty:(struct objc_property { }*)arg1;
-+ (BOOL)__isPropertyTypeValid:(BOOL)arg1 class:(Class)arg2;
++ (bool)__isPropertyTypeValid:(BOOL)arg1 class:(Class)arg2;
 + (void)__processPropertyMetadata:(id)arg1;
-+ (BOOL)__useDynamicMethodResolution;
++ (bool)__useDynamicMethodResolution;
 + (void)initialize;
 
 - (void)_addObserver:(id)arg1;
@@ -23,11 +23,11 @@
 - (void)_bindDefaultsIfNecessary;
 - (void)_bindProperty:(id)arg1 withDefaultKey:(id)arg2;
 - (void)_bindProperty:(id)arg1 withDefaultKey:(id)arg2 toDefaultValue:(id)arg3;
-- (void)_bindProperty:(id)arg1 withDefaultKey:(id)arg2 toDefaultValue:(id)arg3 options:(unsigned int)arg4;
+- (void)_bindProperty:(id)arg1 withDefaultKey:(id)arg2 toDefaultValue:(id)arg3 options:(unsigned long long)arg4;
 - (id)_defaultKeyFromPropertyName:(id)arg1;
 - (id)_initWithDefaults:(id)arg1;
 - (id)_initWithDomain:(id)arg1;
-- (BOOL)_isCollectionEmpty:(id)arg1;
+- (bool)_isCollectionEmpty:(id)arg1;
 - (id)_propertyFromSelector:(SEL)arg1;
 - (void)_removeObserver:(id)arg1;
 - (void)_setUserDefaults:(id)arg1;

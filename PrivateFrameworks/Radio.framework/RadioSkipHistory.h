@@ -3,7 +3,7 @@
  */
 
 @interface RadioSkipHistory : NSObject <RadioManagedObjectWrapperProtocol> {
-    BOOL  _databaseBacked;
+    bool  _databaseBacked;
     NSManagedObject * _managedObject;
     RadioModel * _model;
     NSString * _skipIdentifier;
@@ -12,10 +12,10 @@
     long long  _stationID;
 }
 
-@property (getter=isDatabaseBacked, nonatomic, readonly) BOOL databaseBacked;
+@property (getter=isDatabaseBacked, nonatomic, readonly) bool databaseBacked;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSManagedObject *managedObject;
 @property (nonatomic, readonly) RadioModel *model;
 @property (nonatomic, copy) NSString *skipIdentifier;
@@ -27,10 +27,10 @@
 - (void).cxx_destruct;
 - (void)_radioModelWasDeletedNotification:(id)arg1;
 - (void)dealloc;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithModel:(id)arg1 managedObject:(id)arg2;
-- (BOOL)isDatabaseBacked;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isDatabaseBacked;
+- (bool)isEqual:(id)arg1;
 - (id)managedObject;
 - (id)model;
 - (void)setSkipIdentifier:(id)arg1;

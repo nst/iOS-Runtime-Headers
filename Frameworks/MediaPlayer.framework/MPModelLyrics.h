@@ -3,11 +3,11 @@
  */
 
 @interface MPModelLyrics : MPModelObject {
-    BOOL  _hasStoreLyrics;
+    bool  _hasStoreLyrics;
     NSString * _text;
 }
 
-@property (nonatomic) BOOL hasStoreLyrics;
+@property (nonatomic) bool hasStoreLyrics;
 @property (nonatomic, copy) NSString *text;
 
 + (id)__MPModelPropertyLyricsHasStoreLyrics__PROPERTY;
@@ -16,9 +16,9 @@
 + (id)__text__KEY;
 
 - (void).cxx_destruct;
-- (id)descriptionWithType:(int)arg1;
-- (BOOL)hasStoreLyrics;
-- (void)setHasStoreLyrics:(BOOL)arg1;
+- (id)descriptionWithType:(long long)arg1;
+- (bool)hasStoreLyrics;
+- (void)setHasStoreLyrics:(bool)arg1;
 - (void)setText:(id)arg1;
 - (id)text;
 

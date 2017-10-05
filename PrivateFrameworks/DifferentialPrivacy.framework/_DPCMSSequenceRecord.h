@@ -13,13 +13,12 @@
 @property (nonatomic) short sequenceHashIndex;
 
 + (id)entityName;
-+ (id)recordWithKey:(id)arg1 plainSequence:(id)arg2 sequence:(id)arg3 sequenceHashIndex:(unsigned short)arg4 creationDate:(double)arg5 submitted:(BOOL)arg6 objectId:(id)arg7;
 
 - (void).cxx_destruct;
-- (BOOL)copyFromManagedObject:(id)arg1;
-- (BOOL)copyToManagedObject:(id)arg1;
+- (bool)copyFromManagedObject:(id)arg1;
+- (bool)copyToManagedObject:(id)arg1;
 - (id)description;
-- (id)initWithKey:(id)arg1 plainSequence:(id)arg2 sequence:(id)arg3 sequenceHashIndex:(unsigned short)arg4 creationDate:(double)arg5 submitted:(BOOL)arg6 objectId:(id)arg7;
+- (id)initWithKey:(id)arg1 plainSequence:(id)arg2 sequence:(id)arg3 sequenceHashIndex:(unsigned short)arg4 creationDate:(double)arg5 submitted:(bool)arg6 objectId:(id)arg7;
 - (id)jsonString;
 - (id)plainSequence;
 - (id)sequence;

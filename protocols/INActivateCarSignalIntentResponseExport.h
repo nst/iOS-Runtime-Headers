@@ -5,8 +5,8 @@
 
 @required
 
-- (int)code;
-- (void)setSignals:(unsigned int)arg1;
-- (unsigned int)signals;
+- (long long)code;
+- (void)setSignals:(unsigned long long)arg1;
+- (unsigned long long)signals;
 
 @end

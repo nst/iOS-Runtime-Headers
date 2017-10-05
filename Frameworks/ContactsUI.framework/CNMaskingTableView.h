@@ -3,16 +3,16 @@
  */
 
 @interface CNMaskingTableView : UITableView {
-    float  _maskingInset;
+    double  _maskingInset;
     UIView * _tableMaskView;
 }
 
-@property (nonatomic) float maskingInset;
+@property (nonatomic) double maskingInset;
 @property (nonatomic, retain) UIView *tableMaskView;
 
 - (void).cxx_destruct;
-- (float)maskingInset;
-- (void)setMaskingInset:(float)arg1;
+- (double)maskingInset;
+- (void)setMaskingInset:(double)arg1;
 - (void)setTableMaskView:(id)arg1;
 - (id)tableMaskView;
 

@@ -11,24 +11,24 @@
     id  _delegate;
     MFMutableMessageHeaders * _headers;
     NSString * _htmlString;
-    BOOL  _isUserRequested;
+    bool  _isUserRequested;
     MFMessage * _message;
     NSArray * _mixedContent;
     NSArray * _otherStringsAndAttachments;
     MFPlainTextDocument * _plainTextAlternative;
     MFDeliveryResult * _result;
-    BOOL  _textPartsAreHTML;
+    bool  _textPartsAreHTML;
     unsigned int  _threaded;
     unsigned int  _useCellDataOnly;
 }
 
 @property (nonatomic, retain) NSDictionary *compositionSpecification;
 @property (nonatomic) unsigned long long conversationFlags;
-@property (nonatomic) BOOL isUserRequested;
+@property (nonatomic) bool isUserRequested;
 
-+ (BOOL)deliverMessage:(id)arg1;
++ (bool)deliverMessage:(id)arg1;
 + (id)newWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4 charsets:(id)arg5;
-+ (id)newWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(BOOL)arg3;
++ (id)newWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(bool)arg3;
 + (id)newWithMessage:(id)arg1;
 
 - (id)account;
@@ -42,24 +42,24 @@
 - (id)deliverMessageData:(id)arg1 toRecipients:(id)arg2;
 - (id)deliverSynchronously;
 - (id)deliveryResult;
-- (int)deliveryStatus;
+- (long long)deliveryStatus;
 - (id)headersForDelivery;
 - (id)init;
 - (id)initWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4 charsets:(id)arg5;
-- (id)initWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(BOOL)arg3;
+- (id)initWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(bool)arg3;
 - (id)initWithMessage:(id)arg1;
-- (BOOL)isUserRequested;
+- (bool)isUserRequested;
 - (id)message;
 - (id)newMessageWriter;
 - (id)originalHeaders;
 - (void)setAccount:(id)arg1;
 - (void)setArchiveAccount:(id)arg1;
-- (void)setCellDataOnly:(BOOL)arg1;
+- (void)setCellDataOnly:(bool)arg1;
 - (void)setCompositionSpecification:(id)arg1;
 - (void)setConversationFlags:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setIsUserRequested:(BOOL)arg1;
-- (BOOL)shouldEncryptMessage;
-- (BOOL)shouldSignMessage;
+- (void)setIsUserRequested:(bool)arg1;
+- (bool)shouldEncryptMessage;
+- (bool)shouldSignMessage;
 
 @end

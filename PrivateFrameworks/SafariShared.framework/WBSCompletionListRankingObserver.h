@@ -10,14 +10,14 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <WBSCompletionListRankingObserverDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) SFRankingFeedback *rankingFeedback;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_createFeedbackGenerator;
 - (Class)_feedbackGeneratorClass;
-- (unsigned int)completionListRankingObserverFeedbackGenerator:(id)arg1 frequentlyVisitedSitesIndexOfItem:(id)arg2 hidingItem:(id)arg3;
+- (unsigned long long)completionListRankingObserverFeedbackGenerator:(id)arg1 frequentlyVisitedSitesIndexOfItem:(id)arg2 hidingItem:(id)arg3;
 - (id)delegate;
 - (void)didAddItem:(id)arg1;
 - (void)didAddItem:(id)arg1 hidingOutrankedResults:(id)arg2 hidingDuplicateResults:(id)arg3;

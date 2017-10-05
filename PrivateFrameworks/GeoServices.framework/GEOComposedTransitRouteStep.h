@@ -34,12 +34,12 @@
 @property (nonatomic, readonly) <GEOTransitRoutingIncidentMessage> *steppingIncidentMessage;
 @property (nonatomic, readonly) GEOTransitStep *transitStep;
 
+- (void).cxx_destruct;
 - (id)_intermediateListNameForStop:(id)arg1;
 - (id)_largestEntityAtStop:(id)arg1 passingTest:(id /* block */)arg2;
 - (unsigned long long)_muidForStop:(id)arg1;
 - (void)_populateArtworksWithDecoderData:(id)arg1;
 - (void)_populateIncidentsWithDecoderData:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)destinationHall;
 - (id)destinationStop;
@@ -49,10 +49,10 @@
 - (unsigned int)duration;
 - (struct { double x1; double x2; })endGeoCoordinate;
 - (id)endingStop;
-- (BOOL)hasDuration;
-- (id)initWithComposedRoute:(id)arg1 routeLegType:(int)arg2 step:(id)arg3 stepIndex:(unsigned int)arg4 duration:(unsigned int)arg5 pointRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg6;
+- (bool)hasDuration;
+- (id)initWithComposedRoute:(id)arg1 routeLegType:(long long)arg2 step:(id)arg3 stepIndex:(unsigned long long)arg4 duration:(unsigned int)arg5 pointRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg6;
 - (id)instructions;
-- (BOOL)isArrivalStep;
+- (bool)isArrivalStep;
 - (int)maneuver;
 - (id)nextAlightingStep;
 - (id)nextBoardingStep;

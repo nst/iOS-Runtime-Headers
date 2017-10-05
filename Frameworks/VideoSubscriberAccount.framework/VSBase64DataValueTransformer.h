@@ -4,7 +4,7 @@
 
 @interface VSBase64DataValueTransformer : NSValueTransformer
 
-+ (BOOL)allowsReverseTransformation;
++ (bool)allowsReverseTransformation;
 + (Class)transformedValueClass;
 
 - (id)reverseTransformedValue:(id)arg1;

@@ -4,8 +4,10 @@
 
 @interface AWDSafariPageLoadCompleteEvent : PBCodable <NSCopying> {
     unsigned long long  _configurationID;
+    long long  _errorCode;
     struct { 
         unsigned int configurationID : 1; 
+        unsigned int errorCode : 1; 
         unsigned int pageID : 1; 
         unsigned int pageLoadTime : 1; 
         unsigned int timestamp : 1; 
@@ -16,10 +18,12 @@
 }
 
 @property (nonatomic) unsigned long long configurationID;
-@property (nonatomic) BOOL hasConfigurationID;
-@property (nonatomic) BOOL hasPageID;
-@property (nonatomic) BOOL hasPageLoadTime;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) long long errorCode;
+@property (nonatomic) bool hasConfigurationID;
+@property (nonatomic) bool hasErrorCode;
+@property (nonatomic) bool hasPageID;
+@property (nonatomic) bool hasPageLoadTime;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) unsigned long long pageID;
 @property (nonatomic) unsigned long long pageLoadTime;
 @property (nonatomic) unsigned long long timestamp;
@@ -29,21 +33,25 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasConfigurationID;
-- (BOOL)hasPageID;
-- (BOOL)hasPageLoadTime;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (long long)errorCode;
+- (bool)hasConfigurationID;
+- (bool)hasErrorCode;
+- (bool)hasPageID;
+- (bool)hasPageLoadTime;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)pageID;
 - (unsigned long long)pageLoadTime;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setConfigurationID:(unsigned long long)arg1;
-- (void)setHasConfigurationID:(BOOL)arg1;
-- (void)setHasPageID:(BOOL)arg1;
-- (void)setHasPageLoadTime:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setErrorCode:(long long)arg1;
+- (void)setHasConfigurationID:(bool)arg1;
+- (void)setHasErrorCode:(bool)arg1;
+- (void)setHasPageID:(bool)arg1;
+- (void)setHasPageLoadTime:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setPageID:(unsigned long long)arg1;
 - (void)setPageLoadTime:(unsigned long long)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;

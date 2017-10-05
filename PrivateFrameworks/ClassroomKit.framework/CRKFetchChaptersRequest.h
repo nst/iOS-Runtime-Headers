@@ -12,7 +12,7 @@
 @property (nonatomic, copy) NSString *identifierType;
 @property (nonatomic, copy) NSString *path;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
 
 - (void).cxx_destruct;

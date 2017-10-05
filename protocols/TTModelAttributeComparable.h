@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)isEqualToModelComparable:(id <TTModelAttributeComparable>)arg1;
+- (bool)isEqualToModelComparable:(id <TTModelAttributeComparable>)arg1;
 
 @end

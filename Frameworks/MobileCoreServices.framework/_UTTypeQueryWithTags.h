@@ -4,20 +4,20 @@
 
 @interface _UTTypeQueryWithTags : _UTTypeQuery {
     NSString * _conformsTo;
-    int  _limit;
+    long long  _limit;
     NSString * _tag;
     NSString * _tagClass;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (void)_enumerateWithXPCConnection:(id)arg1 block:(id /* block */)arg2;
-- (void)dealloc;
 - (id)debugDescription;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithTag:(id)arg1 ofClass:(id)arg2 conformsTo:(id)arg3 limit:(int)arg4;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithTag:(id)arg1 ofClass:(id)arg2 conformsTo:(id)arg3 limit:(long long)arg4;
+- (bool)isEqual:(id)arg1;
 
 @end

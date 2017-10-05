@@ -62,8 +62,8 @@
             } ; 
         } _row; 
     }  _currentCellUID;
-    unsigned int  _index;
-    BOOL  _oneToMany;
+    unsigned long long  _index;
+    bool  _oneToMany;
 }
 
 - (id).cxx_construct;

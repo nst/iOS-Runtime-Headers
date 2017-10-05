@@ -3,17 +3,21 @@
  */
 
 @interface QLZipItemViewController : QLDetailItemViewController {
-    unsigned int  _numberOfContainedFiles;
+    unsigned long long  _numberOfContainedFiles;
     QLDetailItemViewControllerState * _readyToUnzipState;
     QLDetailItemViewControllerState * _unableToUnzipState;
     QLDetailItemViewControllerState * _unzippingState;
 }
 
++ (bool)shouldBeRemoteForContentType:(id)arg1;
++ (id)supportedContentTypes;
++ (Class)transformerClass;
+
 - (void).cxx_destruct;
-- (void)_updateZipInformation;
-- (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_updateZipInformationWithZipSize:(id)arg1;
+- (void)loadPreviewControllerWithContents:(id)arg1 context:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)performAction;
-- (void)setAppearance:(id)arg1 animated:(BOOL)arg2;
+- (void)setAppearance:(id)arg1 animated:(bool)arg2;
 - (void)viewDidLoad;
 
 @end

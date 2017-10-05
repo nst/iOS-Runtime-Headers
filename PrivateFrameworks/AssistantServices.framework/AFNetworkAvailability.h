@@ -23,7 +23,7 @@
 - (void)_updateState;
 - (void)addObserver:(id)arg1;
 - (id)init;
-- (BOOL)isAvailable;
+- (bool)isAvailable;
 - (void)removeObserver:(id)arg1;
 
 @end

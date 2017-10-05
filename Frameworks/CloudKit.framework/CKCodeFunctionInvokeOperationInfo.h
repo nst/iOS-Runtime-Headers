@@ -12,7 +12,7 @@
 @property (nonatomic, copy) NSData *serializedParameters;
 @property (nonatomic, copy) NSString *serviceName;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

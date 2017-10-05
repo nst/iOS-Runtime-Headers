@@ -5,7 +5,7 @@
 
 @required
 
-- (void)graph:(BWGraph *)arg1 didFinishStartingWithError:(long)arg2;
+- (void)graph:(BWGraph *)arg1 didFinishStartingWithError:(int)arg2;
 - (void)graphDidPrepareNodes:(BWGraph *)arg1;
 
 @end

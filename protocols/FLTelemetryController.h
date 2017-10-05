@@ -5,7 +5,7 @@
 
 @required
 
-- (void)captureActionForItem:(FLFollowUpItem *)arg1 withEvent:(unsigned int)arg2 source:(unsigned int)arg3;
+- (void)captureActionForItem:(FLFollowUpItem *)arg1 withEvent:(unsigned long long)arg2 source:(unsigned long long)arg3;
 - (void)captureClientAddition:(NSString *)arg1;
 - (void)captureClientRemoval:(NSString *)arg1;
 - (void)captureGroupAddition:(NSString *)arg1;

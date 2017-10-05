@@ -14,13 +14,13 @@
 }
 
 @property (nonatomic, retain) _INPBLocation *dropOffLocation;
-@property (nonatomic, readonly) BOOL hasDropOffLocation;
-@property (nonatomic, readonly) BOOL hasIntentMetadata;
-@property (nonatomic, readonly) BOOL hasPartySize;
-@property (nonatomic, readonly) BOOL hasPaymentMethod;
-@property (nonatomic, readonly) BOOL hasPickupLocation;
-@property (nonatomic, readonly) BOOL hasRideOptionName;
-@property (nonatomic, readonly) BOOL hasScheduledPickupTime;
+@property (nonatomic, readonly) bool hasDropOffLocation;
+@property (nonatomic, readonly) bool hasIntentMetadata;
+@property (nonatomic, readonly) bool hasPartySize;
+@property (nonatomic, readonly) bool hasPaymentMethod;
+@property (nonatomic, readonly) bool hasPickupLocation;
+@property (nonatomic, readonly) bool hasRideOptionName;
+@property (nonatomic, readonly) bool hasScheduledPickupTime;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic, retain) _INPBInteger *partySize;
 @property (nonatomic, retain) _INPBPaymentMethod *paymentMethod;
@@ -29,8 +29,6 @@
 @property (nonatomic, retain) _INPBDateTimeRange *scheduledPickupTime;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
-// Image: /System/Library/Frameworks/Intents.framework/Intents
-
 + (id)options;
 
 - (void).cxx_destruct;
@@ -38,21 +36,21 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)dropOffLocation;
-- (BOOL)hasDropOffLocation;
-- (BOOL)hasIntentMetadata;
-- (BOOL)hasPartySize;
-- (BOOL)hasPaymentMethod;
-- (BOOL)hasPickupLocation;
-- (BOOL)hasRideOptionName;
-- (BOOL)hasScheduledPickupTime;
-- (unsigned int)hash;
+- (bool)hasDropOffLocation;
+- (bool)hasIntentMetadata;
+- (bool)hasPartySize;
+- (bool)hasPaymentMethod;
+- (bool)hasPickupLocation;
+- (bool)hasRideOptionName;
+- (bool)hasScheduledPickupTime;
+- (unsigned long long)hash;
 - (id)intentMetadata;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)partySize;
 - (id)paymentMethod;
 - (id)pickupLocation;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)rideOptionName;
 - (id)scheduledPickupTime;
 - (void)setDropOffLocation:(id)arg1;
@@ -64,11 +62,5 @@
 - (void)setScheduledPickupTime:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

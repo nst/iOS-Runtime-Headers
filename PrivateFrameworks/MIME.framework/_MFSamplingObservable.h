@@ -7,7 +7,7 @@
     <MFObservable> * _sampler;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithObservable:(id)arg1 sampler:(id)arg2;
 - (id)subscribe:(id)arg1;
 

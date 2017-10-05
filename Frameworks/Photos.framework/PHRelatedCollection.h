@@ -6,32 +6,32 @@
     NSArray * _debugInfo;
     NSArray * _momentLocalIdentifiers;
     PHObject * _relatedObject;
-    unsigned int  _relationType;
+    unsigned long long  _relationType;
     NSString * _subtitle;
-    int  _titleCategory;
+    long long  _titleCategory;
 }
 
 @property (nonatomic, readonly) NSArray *debugInfo;
 @property (nonatomic, readonly) NSArray *momentLocalIdentifiers;
 @property (nonatomic, readonly) PHObject *relatedObject;
-@property (nonatomic, readonly) unsigned int relationType;
+@property (nonatomic, readonly) unsigned long long relationType;
 @property (nonatomic, readonly) NSString *subtitle;
 
 + (id)_relatedCollectionsFromInfos:(id)arg1 relatedObject:(id)arg2;
-+ (id)_transientCollectionListWithCollectionsRelatedToIdentifiers:(id)arg1 relationType:(unsigned int)arg2 options:(id)arg3;
-+ (id)transientCollectionListWithCollectionsRelatedToFaceCollections:(id)arg1 relationType:(unsigned int)arg2 options:(id)arg3;
-+ (id)transientCollectionListWithCollectionsRelatedToObject:(id)arg1 relationType:(unsigned int)arg2 options:(id)arg3;
-+ (id)transientCollectionListWithCollectionsRelatedToPersons:(id)arg1 relationType:(unsigned int)arg2 options:(id)arg3;
++ (id)_transientCollectionListWithCollectionsRelatedToIdentifiers:(id)arg1 relationType:(unsigned long long)arg2 options:(id)arg3;
++ (id)transientCollectionListWithCollectionsRelatedToObject:(id)arg1 relationType:(unsigned long long)arg2 options:(id)arg3;
++ (id)transientCollectionListWithCollectionsRelatedToPersonSuggestions:(id)arg1 relationType:(unsigned long long)arg2 options:(id)arg3;
++ (id)transientCollectionListWithCollectionsRelatedToPersons:(id)arg1 relationType:(unsigned long long)arg2 options:(id)arg3;
 
 - (void).cxx_destruct;
-- (BOOL)canPerformEditOperation:(int)arg1;
+- (bool)canPerformEditOperation:(long long)arg1;
 - (id)debugInfo;
-- (id)initTransientWithAssets:(id)arg1 orFetchResult:(id)arg2 relationType:(unsigned int)arg3 relatedObject:(id)arg4 title:(id)arg5 subtitle:(id)arg6 titleCategory:(int)arg7 momentLocalIdentifiers:(id)arg8 debugInfo:(id)arg9;
+- (id)initTransientWithAssets:(id)arg1 orFetchResult:(id)arg2 relationType:(unsigned long long)arg3 relatedObject:(id)arg4 title:(id)arg5 subtitle:(id)arg6 titleCategory:(long long)arg7 momentLocalIdentifiers:(id)arg8 debugInfo:(id)arg9;
 - (id)localizedSubtitle;
 - (id)momentLocalIdentifiers;
 - (id)relatedObject;
-- (unsigned int)relationType;
+- (unsigned long long)relationType;
 - (id)subtitle;
-- (int)titleCategory;
+- (long long)titleCategory;
 
 @end

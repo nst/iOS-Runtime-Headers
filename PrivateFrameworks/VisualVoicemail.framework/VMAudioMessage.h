@@ -11,8 +11,8 @@
 }
 
 @property (nonatomic, retain) NSData *audioData;
-@property (nonatomic, readonly) BOOL hasAudioData;
-@property (nonatomic) BOOL hasProtocolVersion;
+@property (nonatomic, readonly) bool hasAudioData;
+@property (nonatomic) bool hasProtocolVersion;
 @property (nonatomic) unsigned int protocolVersion;
 
 - (void).cxx_destruct;
@@ -21,15 +21,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAudioData;
-- (BOOL)hasProtocolVersion;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAudioData;
+- (bool)hasProtocolVersion;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)protocolVersion;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAudioData:(id)arg1;
-- (void)setHasProtocolVersion:(BOOL)arg1;
+- (void)setHasProtocolVersion:(bool)arg1;
 - (void)setProtocolVersion:(unsigned int)arg1;
 - (void)writeTo:(id)arg1;
 

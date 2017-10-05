@@ -10,7 +10,7 @@
 @property (copy) NSDictionary *URLAppendStringMap;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (copy) NSDictionary *remediationMap;
 @property (readonly) Class superclass;
 
@@ -18,6 +18,7 @@
 - (id)URLAppendStringMap;
 - (void)handleNewFlow:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)handleRemediationForFlow:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)handleReport:(id)arg1;
 - (void)notifyRulesChanged;
 - (id)remediationMap;
 - (void)setRemediationMap:(id)arg1;

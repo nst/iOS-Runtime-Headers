@@ -18,7 +18,7 @@
         int num; 
     }  _md5Context;
     long long  _numberOfBytesToHash;
-    BOOL  _shouldResumeFromLocalBytes;
+    bool  _shouldResumeFromLocalBytes;
     long long  _totalBytesWritten;
     long long  _validatedBytes;
 }
@@ -27,38 +27,38 @@
 @property (copy) ISHashError *lastHashError;
 @property (retain) NSString *localFilePath;
 @property long long numberOfBytesToHash;
-@property BOOL shouldResumeFromLocalBytes;
+@property bool shouldResumeFromLocalBytes;
 @property long long streamedBytes;
 @property long long validatedBytes;
 
-- (BOOL)_checkHashForByteCount:(long long)arg1;
+- (bool)_checkHashForByteCount:(long long)arg1;
 - (void)_closeFile;
-- (BOOL)_openFile;
-- (BOOL)_truncateToSize:(long long)arg1;
+- (bool)_openFile;
+- (bool)_truncateToSize:(long long)arg1;
 - (long long)_verifiedBytesByInitializingHashForFileSize:(long long)arg1;
-- (BOOL)_writeDataWithHashing:(id)arg1 returningError:(id*)arg2;
-- (BOOL)_writeDataWithoutHashing:(id)arg1 returningError:(id*)arg2;
-- (BOOL)canStreamContentLength:(long long)arg1 error:(id*)arg2;
+- (bool)_writeDataWithHashing:(id)arg1 returningError:(id*)arg2;
+- (bool)_writeDataWithoutHashing:(id)arg1 returningError:(id*)arg2;
+- (bool)canStreamContentLength:(long long)arg1 error:(id*)arg2;
 - (id)closeStream;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)hashes;
 - (id)init;
-- (BOOL)isStream;
+- (bool)isStream;
 - (id)lastHashError;
 - (id)localFilePath;
 - (long long)numberOfBytesToHash;
-- (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
+- (bool)parseData:(id)arg1 returningError:(id*)arg2;
 - (void)resetStream;
 - (void)setHashes:(id)arg1;
 - (void)setLastHashError:(id)arg1;
 - (void)setLocalFilePath:(id)arg1;
 - (void)setNumberOfBytesToHash:(long long)arg1;
-- (void)setShouldResumeFromLocalBytes:(BOOL)arg1;
+- (void)setShouldResumeFromLocalBytes:(bool)arg1;
 - (void)setStreamedBytes:(long long)arg1;
 - (void)setValidatedBytes:(long long)arg1;
 - (void)setup;
-- (BOOL)shouldResumeFromLocalBytes;
+- (bool)shouldResumeFromLocalBytes;
 - (long long)streamedBytes;
 - (long long)validatedBytes;
 

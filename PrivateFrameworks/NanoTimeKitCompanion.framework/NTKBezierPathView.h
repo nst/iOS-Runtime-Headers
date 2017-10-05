@@ -11,7 +11,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIBezierPath *path;
 @property (nonatomic, retain) UIColor *pathColor;
 @property (nonatomic, readonly) NTKBezierPathPointModel *pointModel;
@@ -21,12 +21,12 @@
 
 - (void).cxx_destruct;
 - (id)_shapeLayer;
-- (void)animateToPath:(id)arg1 duration:(double)arg2 curve:(int)arg3;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)animateToPath:(id)arg1 duration:(double)arg2 curve:(long long)arg3;
+- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
 - (id)path;
 - (id)pathColor;
 - (id)pointModel;
-- (struct CGPoint { float x1; float x2; })pointOnPathForHorizontalPercentage:(float)arg1;
+- (struct CGPoint { double x1; double x2; })pointOnPathForHorizontalPercentage:(double)arg1;
 - (void)setPath:(id)arg1;
 - (void)setPathColor:(id)arg1;
 

@@ -4,16 +4,16 @@
 
 @interface CANodeButton : UIButton {
     NSURL * _url;
-    BOOL  hasLabel;
+    bool  hasLabel;
 }
 
-@property BOOL hasLabel;
+@property bool hasLabel;
 @property (retain) NSURL *url;
 
-- (BOOL)hasLabel;
+- (bool)hasLabel;
 - (id)init;
 - (void)layoutSubviews;
-- (void)setHasLabel:(BOOL)arg1;
+- (void)setHasLabel:(bool)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;
 

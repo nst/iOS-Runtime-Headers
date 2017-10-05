@@ -12,7 +12,7 @@
     <FMFSessionDelegate> * _delegate;
     NSOperationQueue * _delegateQueue;
     NSMutableSet * _internalHandles;
-    BOOL  _isModelInitialized;
+    bool  _isModelInitialized;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *cachedCanShareLocationWithHandleByHandle;
@@ -26,19 +26,19 @@
 @property (nonatomic, retain) NSOperationQueue *delegateQueue;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSSet *handles;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableSet *internalHandles;
-@property (nonatomic) BOOL isModelInitialized;
+@property (nonatomic) bool isModelInitialized;
 @property (readonly) Class superclass;
 
-+ (BOOL)FMFAllowed;
-+ (BOOL)FMFRestricted;
-+ (BOOL)isProvisionedForLocationSharing;
++ (bool)FMFAllowed;
++ (bool)FMFRestricted;
++ (bool)isProvisionedForLocationSharing;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
 - (void)_checkAndDisplayMeDeviceSwitchAlert;
-- (BOOL)_isNoMappingPacketReturnedError:(id)arg1;
+- (bool)_isNoMappingPacketReturnedError:(id)arg1;
 - (void)_registerForFMFDLaunchedNotification;
 - (void)_sendAutoSwitchMeDevice;
 - (void)_sendFriendshipOfferToHandles:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 endDate:(id)arg4 completion:(id /* block */)arg5;
@@ -52,10 +52,10 @@
 - (id)cachedLocationForHandle:(id)arg1;
 - (id)cachedLocationForHandleByHandle;
 - (id)cachedOfferExpirationForHandleByHandle;
-- (BOOL)canGetLocationForHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3;
+- (bool)canGetLocationForHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3;
 - (void)canGetLocationForHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 completion:(id /* block */)arg4;
 - (void)canOfferToHandles:(id)arg1 completion:(id /* block */)arg2;
-- (BOOL)canShareLocationWithHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3;
+- (bool)canShareLocationWithHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3;
 - (void)canShareLocationWithHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 completion:(id /* block */)arg4;
 - (id)connection;
 - (void)contactForPayload:(id)arg1 completion:(id /* block */)arg2;
@@ -77,7 +77,7 @@
 - (oneway void)didUpdateFavorites:(id)arg1;
 - (oneway void)didUpdateFollowers:(id)arg1;
 - (oneway void)didUpdateFollowing:(id)arg1;
-- (oneway void)didUpdateHideFromFollowersStatus:(BOOL)arg1;
+- (oneway void)didUpdateHideFromFollowersStatus:(bool)arg1;
 - (oneway void)didUpdateLocations:(id)arg1;
 - (oneway void)didUpdatePendingOffersForHandles:(id)arg1;
 - (void)dispatchOnDelegateQueue:(id /* block */)arg1;
@@ -112,7 +112,7 @@
 - (void)handleAndLocationForPayload:(id)arg1 completion:(id /* block */)arg2;
 - (void)handleIncomingAirDropURL:(id)arg1 completion:(id /* block */)arg2;
 - (id)handles;
-- (BOOL)hasModelInitialized;
+- (bool)hasModelInitialized;
 - (oneway void)iCloudAccountNameWithCompletion:(id /* block */)arg1;
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
@@ -121,10 +121,10 @@
 - (id)internalHandles;
 - (void)invalidate;
 - (void)invalidateWithError:(id)arg1;
-- (BOOL)is5XXError:(id)arg1;
+- (bool)is5XXError:(id)arg1;
 - (void)isIn5XXGracePeriodWithCompletion:(id /* block */)arg1;
-- (BOOL)isModelInitialized;
-- (BOOL)isMyLocationEnabled;
+- (bool)isModelInitialized;
+- (bool)isMyLocationEnabled;
 - (void)isMyLocationEnabled:(id /* block */)arg1;
 - (void)locatingInProgressChanged:(id)arg1;
 - (void)locationForHandle:(id)arg1 completion:(id /* block */)arg2;
@@ -132,10 +132,10 @@
 - (double)maxLocatingInterval;
 - (oneway void)modelDidLoad;
 - (void)nearbyLocationsWithCompletion:(id /* block */)arg1;
-- (oneway void)networkReachabilityUpdated:(BOOL)arg1;
+- (oneway void)networkReachabilityUpdated:(bool)arg1;
 - (void)receivedMappingPacket:(id)arg1 completion:(id /* block */)arg2;
-- (void)refreshLocationForHandle:(id)arg1 callerId:(id)arg2 priority:(int)arg3 completion:(id /* block */)arg4;
-- (void)refreshLocationForHandles:(id)arg1 callerId:(id)arg2 priority:(int)arg3 completion:(id /* block */)arg4;
+- (void)refreshLocationForHandle:(id)arg1 callerId:(id)arg2 priority:(long long)arg3 completion:(id /* block */)arg4;
+- (void)refreshLocationForHandles:(id)arg1 callerId:(id)arg2 priority:(long long)arg3 completion:(id /* block */)arg4;
 - (void)reloadDataIfNotLoaded;
 - (void)removeDevice:(id)arg1 completion:(id /* block */)arg2;
 - (void)removeHandles:(id)arg1;
@@ -158,11 +158,11 @@
 - (void)setDelegateQueue:(id)arg1;
 - (void)setExpiredInitTimestamp;
 - (void)setHandles:(id)arg1;
-- (void)setHideMyLocationEnabled:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)setHideMyLocationEnabled:(bool)arg1 completion:(id /* block */)arg2;
 - (void)setInternalHandles:(id)arg1;
-- (void)setIsModelInitialized:(BOOL)arg1;
+- (void)setIsModelInitialized:(bool)arg1;
 - (oneway void)setLocations:(id)arg1;
-- (BOOL)shouldHandleErrorInFWK:(id)arg1;
+- (bool)shouldHandleErrorInFWK:(id)arg1;
 - (void)stopSharingMyLocationWithHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 completion:(id /* block */)arg4;
 - (void)stopSharingMyLocationWithHandles:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 completion:(id /* block */)arg4;
 - (id)verifyRestrictionsAndShowDialogIfRequired;

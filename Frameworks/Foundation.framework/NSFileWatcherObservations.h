@@ -3,12 +3,12 @@
  */
 
 @interface NSFileWatcherObservations : NSObject {
-    BOOL  _attributesChanged;
-    BOOL  _contentsChanged;
-    BOOL  _deleted;
-    BOOL  _didResetPath;
+    bool  _attributesChanged;
+    bool  _contentsChanged;
+    bool  _deleted;
+    bool  _didResetPath;
     NSString * _lastObservedPath;
-    BOOL  _moved;
+    bool  _moved;
     NSString * _path;
 }
 

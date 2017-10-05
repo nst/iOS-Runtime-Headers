@@ -3,14 +3,14 @@
  */
 
 @interface IKCSSSimpleParseBlock : IKCSSParseBlock {
-    int  _associatedToken;
+    long long  _associatedToken;
 }
 
-@property (nonatomic) int associatedToken;
+@property (nonatomic) long long associatedToken;
 
-- (int)associatedToken;
+- (long long)associatedToken;
 - (id)description;
 - (id)init;
-- (void)setAssociatedToken:(int)arg1;
+- (void)setAssociatedToken:(long long)arg1;
 
 @end

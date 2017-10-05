@@ -19,13 +19,13 @@
 - (void).cxx_destruct;
 - (id)baseToken;
 - (id)encryptedKey;
+- (id)generateRequestOperations;
 - (id)initWithShareRecordID:(id)arg1 encryptedKey:(id)arg2 participantID:(id)arg3 baseToken:(id)arg4;
 - (int)operationType;
 - (id)participantID;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
-- (id)requestOperations;
 - (void)setBaseToken:(id)arg1;
 - (void)setEncryptedKey:(id)arg1;
 - (void)setParticipantID:(id)arg1;

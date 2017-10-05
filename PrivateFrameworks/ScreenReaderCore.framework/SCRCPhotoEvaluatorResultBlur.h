@@ -3,13 +3,13 @@
  */
 
 @interface SCRCPhotoEvaluatorResultBlur : SCRCPhotoEvaluatorResult {
-    float  _blurLevel;
+    double  _blurLevel;
 }
 
-@property (nonatomic, readonly) float blurLevel;
+@property (nonatomic, readonly) double blurLevel;
 
-- (float)blurLevel;
+- (double)blurLevel;
 - (id)humanReadableResult;
-- (id)initWithBlurLevel:(float)arg1;
+- (id)initWithBlurLevel:(double)arg1;
 
 @end

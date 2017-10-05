@@ -3,27 +3,27 @@
  */
 
 @interface BSBlockSentinelSignalContext : NSObject <BSBlockSentinelSignalContext> {
-    BOOL  _complete;
+    bool  _complete;
     id  _context;
-    BOOL  _failed;
+    bool  _failed;
 }
 
-@property (getter=isComplete, nonatomic) BOOL complete;
+@property (getter=isComplete, nonatomic) bool complete;
 @property (nonatomic) id context;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isFailed, nonatomic) BOOL failed;
-@property (readonly) unsigned int hash;
+@property (getter=isFailed, nonatomic) bool failed;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)context;
 + (id)failureContext;
 
 - (id)context;
-- (BOOL)isComplete;
-- (BOOL)isFailed;
-- (void)setComplete:(BOOL)arg1;
+- (bool)isComplete;
+- (bool)isFailed;
+- (void)setComplete:(bool)arg1;
 - (void)setContext:(id)arg1;
-- (void)setFailed:(BOOL)arg1;
+- (void)setFailed:(bool)arg1;
 
 @end

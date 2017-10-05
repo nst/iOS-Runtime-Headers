@@ -3,27 +3,27 @@
  */
 
 @interface NCNotificationCollapsingQueue : NSObject {
-    unsigned int  _collapsingThreshold;
+    unsigned long long  _collapsingThreshold;
     NSMutableArray * _requests;
 }
 
-@property (nonatomic) unsigned int collapsingThreshold;
-@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic) unsigned long long collapsingThreshold;
+@property (nonatomic, readonly) unsigned long long count;
 @property (nonatomic, readonly) NSArray *enqueuedRequestIdentifiers;
 @property (nonatomic, retain) NSMutableArray *requests;
 
 - (void).cxx_destruct;
-- (unsigned int)_collapsedCountForCollapsibleRequests:(id)arg1;
-- (id)_collapsedNotificationRequestForNotificationRequest:(id)arg1 atIndex:(unsigned int)arg2;
+- (unsigned long long)_collapsedCountForCollapsibleRequests:(id)arg1;
+- (id)_collapsedNotificationRequestForNotificationRequest:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)_collapsedNotificationRequestFromCollapsibleRequests:(id)arg1;
-- (unsigned int)_indexOfRequestMatchingNotificationRequest:(id)arg1;
+- (unsigned long long)_indexOfRequestMatchingNotificationRequest:(id)arg1;
 - (void)_insertPreemptingNotificationRequest:(id)arg1;
 - (id)_requestsCollapsibleWithNotificationRequest:(id)arg1;
 - (void)addNotificationRequest:(id)arg1;
-- (unsigned int)collapsingThreshold;
-- (BOOL)containsNotificationRequest:(id)arg1;
-- (BOOL)containsNotificationRequestMatchingRequest:(id)arg1;
-- (unsigned int)count;
+- (unsigned long long)collapsingThreshold;
+- (bool)containsNotificationRequest:(id)arg1;
+- (bool)containsNotificationRequestMatchingRequest:(id)arg1;
+- (unsigned long long)count;
 - (id)enqueuedRequestIdentifiers;
 - (id)init;
 - (id)notificationRequestsCoalescebleWithCoalescedRequest:(id)arg1;
@@ -32,7 +32,7 @@
 - (void)removeNotificationRequest:(id)arg1;
 - (void)replaceNotificationRequest:(id)arg1;
 - (id)requests;
-- (void)setCollapsingThreshold:(unsigned int)arg1;
+- (void)setCollapsingThreshold:(unsigned long long)arg1;
 - (void)setRequests:(id)arg1;
 
 @end

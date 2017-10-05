@@ -3,17 +3,17 @@
  */
 
 @interface CRKFetchBooksRequest : CATTaskRequest {
-    BOOL  _includeImages;
+    bool  _includeImages;
 }
 
-@property (nonatomic) BOOL includeImages;
+@property (nonatomic) bool includeImages;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
 
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)includeImages;
+- (bool)includeImages;
 - (id)initWithCoder:(id)arg1;
-- (void)setIncludeImages:(BOOL)arg1;
+- (void)setIncludeImages:(bool)arg1;
 
 @end

@@ -11,15 +11,15 @@
 @property (nonatomic, readonly) NSString *URLString;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int height;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long height;
 @property (nonatomic, copy) NSString *imageKind;
-@property (nonatomic, readonly) int imageOrientation;
-@property (nonatomic, readonly) float imageScale;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } imageSize;
-@property (getter=isPrerendered, nonatomic, readonly) BOOL prerendered;
+@property (nonatomic, readonly) long long imageOrientation;
+@property (nonatomic, readonly) double imageScale;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } imageSize;
+@property (getter=isPrerendered, nonatomic, readonly) bool prerendered;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) int width;
+@property (nonatomic, readonly) long long width;
 
 - (id)URL;
 - (id)URLString;
@@ -28,21 +28,21 @@
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
-- (int)height;
+- (unsigned long long)hash;
+- (long long)height;
 - (id)imageKind;
-- (int)imageOrientation;
-- (float)imageScale;
-- (struct CGSize { float x1; float x2; })imageSize;
+- (long long)imageOrientation;
+- (double)imageScale;
+- (struct CGSize { double x1; double x2; })imageSize;
 - (id)initWithArtworkDictionary:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isPrerendered;
+- (bool)isEqual:(id)arg1;
+- (bool)isPrerendered;
 - (void)setImageKind:(id)arg1;
 - (void)setImageKindWithTypeName:(id)arg1 variantName:(id)arg2;
 - (void)setURL:(id)arg1;
 - (void)setValue:(id)arg1 forProperty:(id)arg2;
 - (id)valueForProperty:(id)arg1;
-- (int)width;
+- (long long)width;
 
 @end

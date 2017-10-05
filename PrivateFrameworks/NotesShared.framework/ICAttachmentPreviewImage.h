@@ -2,24 +2,33 @@
    Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
  */
 
-@interface ICAttachmentPreviewImage : ICCloudSyncingObject {
+@interface ICAttachmentPreviewImage : ICCloudSyncingObject <ICAttachmentPreviewImageUI> {
     NSObject<OS_dispatch_queue> * _fileQueue;
-    unsigned int  _imageID;
+    unsigned long long  _imageID;
 }
 
 @property (nonatomic, retain) ICAttachment *attachment;
 @property (nonatomic, retain) NSData *cryptoMetadataInitializationVector;
 @property (nonatomic, retain) NSData *cryptoMetadataTag;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSData *encryptedMetadata;
 @property (readonly) NSObject<OS_dispatch_queue> *fileQueue;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) double height;
+@property (nonatomic, readonly) UIImage *image;
+@property (nonatomic) unsigned long long imageID;
 @property (nonatomic, retain) NSData *metadata;
 @property (nonatomic, retain) NSDate *modifiedDate;
+@property (nonatomic, readonly) UIImage *orientedImage;
 @property (nonatomic) double scale;
-@property (nonatomic) BOOL scaleWhenDrawing;
+@property (nonatomic) bool scaleWhenDrawing;
+@property (readonly) Class superclass;
 @property (nonatomic) short version;
-@property (nonatomic) BOOL versionOutOfDate;
+@property (nonatomic) bool versionOutOfDate;
 @property (nonatomic) double width;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
 + (id)allAttachmentPreviewImagesInContext:(id)arg1;
 + (id)attachmentPreviewImageIdentifiersForAccount:(id)arg1;
@@ -29,67 +38,82 @@
 + (void)deleteStrandedAttachmentPreviewImagesInContext:(id)arg1;
 + (id)fileGlobalQueue;
 + (id)fileQueueGroup;
-+ (id)identifierForContentIdentifier:(id)arg1 scale:(float)arg2 width:(float)arg3 height:(float)arg4;
-+ (id)imageCache;
-+ (id)newAttachmentPreviewImageInContext:(id)arg1;
-+ (struct UIImage { Class x1; }*)orientedImage:(struct UIImage { Class x1; }*)arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 background:(int)arg3 backgroundTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg4;
++ (id)identifierForContentIdentifier:(id)arg1 scale:(double)arg2 width:(double)arg3 height:(double)arg4;
++ (id)newAttachmentPreviewImageWithIdentifier:(id)arg1 inContext:(id)arg2;
 + (id)previewImageDirectoryURL;
 + (id)previewImageURLsForIdentifier:(id)arg1;
 + (void)purgeAllAttachmentPreviewImagesInContext:(id)arg1;
 + (void)purgeAllPreviewImageFiles;
 + (void)purgePreviewImageFilesForIdentifiers:(id)arg1;
++ (long long)updateFileWriteCounterBy:(long long)arg1 identifier:(id)arg2;
 + (id)visibleAttachmentPreviewImagesInContext:(id)arg1;
 + (void)waitUntilAllFileWritesAreFinished;
 
 - (void).cxx_destruct;
 - (id)_decryptedImageData;
-- (BOOL)_writeEncryptedImageFromData:(id)arg1;
-- (id /* block */)asyncImage:(id /* block */)arg1 aboutToLoadHandler:(id /* block */)arg2;
-- (struct UIImage { Class x1; }*)cachedImage;
-- (struct UIImage { Class x1; }*)cachedOrientedImage;
+- (void)createOrientedPreviewIfNeeded;
 - (id)decryptedImageData;
 - (void)deleteFromLocalDatabase;
 - (id)encryptedPreviewImageURL;
 - (id)fileQueue;
+- (bool)hasAnyPNGPreviewImageFiles;
 - (id)ic_loggingValues;
-- (struct UIImage { Class x1; }*)image;
-- (BOOL)imageIsValid;
-- (struct UIImage { Class x1; }*)imageWithBackground:(int)arg1;
+- (unsigned long long)imageID;
+- (bool)imageIsValid;
+- (bool)imageIsWriting;
 - (id)initWithEntity:(id)arg1 insertIntoManagedObjectContext:(id)arg2;
 - (void)invalidateCache;
 - (void)invalidateImage;
 - (void)invalidateOrientedImage;
-- (BOOL)makeSurePreviewImageDirectoryExists:(id*)arg1;
+- (bool)makeSurePreviewImageDirectoryExists:(id*)arg1;
 - (id)metadata;
-- (BOOL)needsInitialFetchFromCloud;
-- (BOOL)needsToBeDeletedFromCloud;
-- (BOOL)needsToBeFetchedFromCloud;
-- (BOOL)needsToBePushedToCloud;
-- (id)newImageLoaderForUpdatingImageOnCompletion:(BOOL)arg1;
-- (id)newImageLoaderForUpdatingImageOnCompletion:(BOOL)arg1 asyncDataLoading:(BOOL)arg2;
-- (id)oldPreviewImageURL;
-- (struct UIImage { Class x1; }*)orientedImage;
-- (id)orientedImageID;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })orientedImageTransform;
-- (struct UIImage { Class x1; }*)orientedImageWithBackground:(int)arg1;
+- (bool)needsInitialFetchFromCloud;
+- (bool)needsToBeDeletedFromCloud;
+- (bool)needsToBeFetchedFromCloud;
+- (bool)needsToBePushedToCloud;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })orientedImageTransform;
 - (id)orientedPreviewImageURL;
-- (id)orientedPreviewImageURLCreateIfNeeded:(BOOL)arg1;
+- (id)orientedPreviewImageURLWithoutCreating;
 - (id)parentEncryptableObject;
 - (void)prepareForDeletion;
-- (int)previewImageOrientation;
+- (id)previewImagePathExtension;
 - (id)previewImageURL;
 - (void)removeItemAtURL:(id)arg1;
 - (void)saveAndClearDecryptedData;
 - (void)saveScaledImageFromImageSrc:(struct CGImageSource { }*)arg1 typeUTI:(struct __CFString { }*)arg2 completion:(id /* block */)arg3;
+- (void)setImageData:(id)arg1 withSize:(struct CGSize { double x1; double x2; })arg2 scale:(double)arg3 completion:(id /* block */)arg4;
+- (void)setImageID:(unsigned long long)arg1;
+- (void)setMetadata:(id)arg1;
+- (bool)shouldSyncToCloud;
+- (struct CGSize { double x1; double x2; })size;
+- (void)updateFlagToExcludeFromBackup;
+- (void)updateFlagToExcludeFromBackupForURL:(id)arg1 touchFileIfNecessary:(bool)arg2;
+- (void)updateFlagToExcludeFromBackupTouchFileIfNecessary:(bool)arg1;
+- (void)willTurnIntoFault;
+- (bool)writeEncryptedImageFromData:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NotesUI.framework/NotesUI
+
++ (id)imageCache;
++ (struct UIImage { Class x1; }*)orientedImage:(struct UIImage { Class x1; }*)arg1 withTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2 background:(int)arg3 backgroundTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg4;
+
+- (id /* block */)asyncImage:(id /* block */)arg1 aboutToLoadHandler:(id /* block */)arg2;
+- (struct UIImage { Class x1; }*)cachedImage;
+- (struct UIImage { Class x1; }*)cachedOrientedImage;
+- (void)clearCachedImage;
+- (void)clearCachedOrientedImage;
+- (bool)hasCachedImage;
+- (struct UIImage { Class x1; }*)image;
+- (struct UIImage { Class x1; }*)imageWithBackground:(int)arg1;
+- (id)newImageLoaderForUpdatingImageOnCompletion:(bool)arg1;
+- (id)newImageLoaderForUpdatingImageOnCompletion:(bool)arg1 asyncDataLoading:(bool)arg2;
+- (struct UIImage { Class x1; }*)orientedImage;
+- (id)orientedImageID;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })orientedImageTransform;
+- (struct UIImage { Class x1; }*)orientedImageWithBackground:(int)arg1;
+- (long long)previewImageOrientation;
 - (void)setCachedImage:(struct UIImage { Class x1; }*)arg1;
 - (void)setCachedOrientedImage:(struct UIImage { Class x1; }*)arg1;
-- (void)setImage:(struct UIImage { Class x1; }*)arg1 withScale:(float)arg2 completion:(id /* block */)arg3;
-- (void)setMetadata:(id)arg1;
-- (BOOL)shouldSyncToCloud;
-- (struct CGSize { float x1; float x2; })size;
-- (void)updateFlagToExcludeFromBackup;
-- (void)updateFlagToExcludeFromBackupForURL:(id)arg1 touchFileIfNecessary:(BOOL)arg2;
-- (void)updateFlagToExcludeFromBackupTouchFileIfNecessary:(BOOL)arg1;
-- (BOOL)writeEncryptedImageFromData:(id)arg1;
+- (void)writeOrientedPreviewToDisk;
 
 @end

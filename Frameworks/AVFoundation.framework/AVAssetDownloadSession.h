@@ -14,9 +14,9 @@
 @property (nonatomic, readonly) NSError *error;
 @property (nonatomic, readonly) unsigned long long fileSize;
 @property (nonatomic, readonly) NSArray *loadedTimeRanges;
-@property (nonatomic, readonly) int priority;
+@property (nonatomic, readonly) long long priority;
 @property (nonatomic, readonly) AVMediaSelection *resolvedMediaSelection;
-@property (nonatomic, readonly) int status;
+@property (nonatomic, readonly) long long status;
 
 + (id)assetDownloadSessionWithAsset:(id)arg1 destinationURL:(id)arg2 options:(id)arg3;
 + (id)assetDownloadSessionWithDownloadToken:(unsigned long long)arg1;
@@ -36,15 +36,15 @@
 - (void)_forwardLoadedTimeRangesChangedNotification:(id)arg1;
 - (id)_loadedTimeRangesFromFigLoadedTimeRanges:(id)arg1;
 - (struct OpaqueFigPlaybackItem { }*)_playbackItem;
-- (long)_primeCache;
+- (int)_primeCache;
 - (void)_primeCacheOnDispatchQueue;
-- (long)_readyForInspection;
+- (int)_readyForInspection;
 - (void)_removeFigAssetDownloaderListeners;
 - (void)_removeFigAssetListeners;
 - (void)_removeFigPlaybackItemListeners;
 - (void)_selectMediaOptionsFromMediaSelection:(id)arg1;
-- (long)_setFileFigAsset:(struct OpaqueFigAsset { }*)arg1;
-- (void)_transitionToTerminalStatus:(int)arg1 error:(id)arg2;
+- (int)_setFileFigAsset:(struct OpaqueFigAsset { }*)arg1;
+- (void)_transitionToTerminalStatus:(long long)arg1 error:(id)arg2;
 - (id)_verifyDownloadConfigurationForAssetType;
 - (id)_weakReference;
 - (unsigned long long)availableFileSize;
@@ -61,11 +61,11 @@
 - (id)initWithURL:(id)arg1 destinationURL:(id)arg2 options:(id)arg3;
 - (id)loadedTimeRanges;
 - (void)pause;
-- (int)priority;
+- (long long)priority;
 - (id)resolvedMediaSelection;
 - (void)start;
 - (void)startLoadingMetadata;
-- (int)status;
+- (long long)status;
 - (void)stop;
 
 @end

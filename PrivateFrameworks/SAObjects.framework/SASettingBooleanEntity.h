@@ -5,18 +5,18 @@
 @interface SASettingBooleanEntity : SASettingEntity
 
 @property (nonatomic, copy) NSNumber *previousValue;
-@property (nonatomic) BOOL value;
+@property (nonatomic) bool value;
 
 + (id)booleanEntity;
 + (id)booleanEntityWithDictionary:(id)arg1 context:(id)arg2;
-+ (id)booleanEntityWithValue:(BOOL)arg1;
++ (id)booleanEntityWithValue:(bool)arg1;
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (id)initWithValue:(BOOL)arg1;
+- (id)initWithValue:(bool)arg1;
 - (id)previousValue;
 - (void)setPreviousValue:(id)arg1;
-- (void)setValue:(BOOL)arg1;
-- (BOOL)value;
+- (void)setValue:(bool)arg1;
+- (bool)value;
 
 @end

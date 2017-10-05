@@ -3,7 +3,7 @@
  */
 
 @interface SKUIComposeReviewViewController : SUNavigationController <SKUIComposeReviewFormDelegate, UITextFieldDelegate> {
-    BOOL  _edit;
+    bool  _edit;
     SKUIComposeReviewFormViewController * _formViewController;
     NSString * _nickname;
     UIAlertAction * _nicknameOKAction;
@@ -14,13 +14,13 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SKUIComposeReviewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (getter=isEdit, nonatomic) BOOL edit;
+@property (getter=isEdit, nonatomic) bool edit;
 @property (nonatomic, readonly, copy) SKUIReviewMetadata *editedReviewMetadata;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) SKUIWriteAReviewTemplateViewElement *templateViewElement;
 
-+ (BOOL)_preventsAppearanceProxyCustomization;
++ (bool)_preventsAppearanceProxyCustomization;
 
 - (void).cxx_destruct;
 - (void)_attemptReviewSubmission;
@@ -36,14 +36,14 @@
 - (void)dealloc;
 - (id)editedReviewMetadata;
 - (id)init;
-- (BOOL)isEdit;
+- (bool)isEdit;
 - (void)loadReviewWithURL:(id)arg1 completionBlock:(id /* block */)arg2;
-- (int)preferredStatusBarStyle;
-- (void)setEdit:(BOOL)arg1;
+- (long long)preferredStatusBarStyle;
+- (void)setEdit:(bool)arg1;
 - (void)setRating:(float)arg1;
 - (void)setTemplateViewElement:(id)arg1;
 - (void)submitReview;
 - (id)templateViewElement;
-- (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
+- (bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 replacementString:(id)arg3;
 
 @end

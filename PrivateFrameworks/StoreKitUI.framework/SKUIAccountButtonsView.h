@@ -7,9 +7,9 @@
     SKUIRoundedRectButton * _appleIDButton;
     SKUIClientContext * _clientContext;
     SKUILinkButton * _ecommerceButton;
-    BOOL  _ecommerceVisibilityHidden;
+    bool  _ecommerceVisibilityHidden;
     SKUIRoundedRectButton * _giftingButton;
-    BOOL  _giftingVisibilityHidden;
+    bool  _giftingVisibilityHidden;
     UIButton * _redeemButton;
     UIButton * _termsAndConditionsButton;
     SKUIRoundedRectButton * _usernameButton;
@@ -20,10 +20,10 @@
 @property (nonatomic, copy) NSString *accountCredits;
 @property (nonatomic, readonly) UIButton *appleIDButton;
 @property (nonatomic, readonly) UIButton *giftingButton;
-@property (getter=isGiftingHidden, nonatomic) BOOL giftingHidden;
+@property (getter=isGiftingHidden, nonatomic) bool giftingHidden;
 @property (nonatomic, readonly) UIButton *redeemButton;
 @property (nonatomic, readonly) UIButton *termsAndConditionsButton;
-@property (getter=isTermsAndConditionsHidden, nonatomic) BOOL termsAndConditionsHidden;
+@property (getter=isTermsAndConditionsHidden, nonatomic) bool termsAndConditionsHidden;
 
 - (void).cxx_destruct;
 - (id)ECommerceButton;
@@ -37,17 +37,17 @@
 - (void)dealloc;
 - (id)giftingButton;
 - (id)initWithClientContext:(id)arg1;
-- (BOOL)isEcommerceHidden;
-- (BOOL)isGiftingHidden;
-- (BOOL)isRedeemHidden;
-- (BOOL)isTermsAndConditionsHidden;
+- (bool)isEcommerceHidden;
+- (bool)isGiftingHidden;
+- (bool)isRedeemHidden;
+- (bool)isTermsAndConditionsHidden;
 - (void)layoutSubviews;
 - (id)redeemButton;
 - (void)setAccountCredits:(id)arg1;
 - (void)setECommerceLinkTitle:(id)arg1;
-- (void)setGiftingHidden:(BOOL)arg1;
-- (void)setTermsAndConditionsHidden:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setGiftingHidden:(bool)arg1;
+- (void)setTermsAndConditionsHidden:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)termsAndConditionsButton;
 - (void)tintColorDidChange;
 

@@ -8,6 +8,7 @@
     AVAssetReaderSampleReferenceOutput * _assetReaderOutput;
     id /* block */  _resultHandler;
     int  _trackID;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic, readonly) AVAsset *asset;

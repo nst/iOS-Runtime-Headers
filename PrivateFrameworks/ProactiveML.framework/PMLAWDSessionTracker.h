@@ -2,15 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ProactiveML.framework/ProactiveML
  */
 
-@interface PMLAWDSessionTracker : NSObject {
-    AWDProactiveModelFittingModelInfo * _modelInfo;
-}
+@interface PMLAWDSessionTracker : PMLAWDBaseTracker
 
 + (id)trackerForModelName:(id)arg1 modelVersion:(id)arg2;
 
-- (void).cxx_destruct;
-- (void)_postMetricId:(unsigned int)arg1 message:(id)arg2;
-- (id)initWithModel:(id)arg1;
-- (void)trackSessionWithCovariates:(id)arg1 label:(unsigned int)arg2 locale:(id)arg3;
+- (void)trackSessionWithCovariates:(id)arg1 label:(unsigned long long)arg2 locale:(id)arg3;
+- (void)trackSessionWithCovariates:(id)arg1 label:(unsigned long long)arg2 locale:(id)arg3 supervisionType:(unsigned long long)arg4;
 
 @end

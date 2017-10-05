@@ -9,7 +9,7 @@
     NSArray * _articleIDsOfInterest;
     FCCloudContext * _context;
     NSMutableSet * _fetchResults;
-    BOOL  _hasBeenEnabled;
+    bool  _hasBeenEnabled;
     NSDictionary * _holdInterestTokensByArticleID;
     NSOperationQueue * _operationSerialQueue;
     NSMutableDictionary * _outstandingOperationsByArticleID;
@@ -27,8 +27,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSMutableSet *fetchResults;
-@property (nonatomic) BOOL hasBeenEnabled;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool hasBeenEnabled;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSDictionary *holdInterestTokensByArticleID;
 @property (nonatomic) <FCReadingListContentControllerObserving> *observer;
 @property (nonatomic, retain) NSOperationQueue *operationSerialQueue;
@@ -51,11 +51,11 @@
 - (void)enableDownloadingForOfflineReading;
 - (void)expressInterestInOfflineArticlesWithCompletionHandler:(id /* block */)arg1;
 - (id)fetchResults;
-- (BOOL)hasBeenEnabled;
+- (bool)hasBeenEnabled;
 - (id)holdInterestTokensByArticleID;
 - (id)init;
 - (id)initWithContext:(id)arg1;
-- (BOOL)isArticleAvailableForOfflineReading:(id)arg1;
+- (bool)isArticleAvailableForOfflineReading:(id)arg1;
 - (id)keyedOperationQueue:(id)arg1 performAsyncOperationForKey:(id)arg2 completion:(id /* block */)arg3;
 - (void)networkReachabilityDidChange:(id)arg1;
 - (void)notifyWhenFinishedDownloadingForOfflineReadingWithTimeout:(unsigned long long)arg1 block:(id /* block */)arg2;
@@ -71,7 +71,7 @@
 - (void)setArticleIDsOfInterest:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setFetchResults:(id)arg1;
-- (void)setHasBeenEnabled:(BOOL)arg1;
+- (void)setHasBeenEnabled:(bool)arg1;
 - (void)setHoldInterestTokensByArticleID:(id)arg1;
 - (void)setObserver:(id)arg1;
 - (void)setOperationSerialQueue:(id)arg1;

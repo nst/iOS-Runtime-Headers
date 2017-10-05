@@ -5,48 +5,48 @@
 @interface ASDClaimApplicationsRequestOptions : ASDRequestOptions {
     NSNumber * _accountID;
     NSArray * _bundleIdentifiers;
-    int  _claimStyle;
+    long long  _claimStyle;
     NSData * _clientAuditTokenData;
-    BOOL  _establishesActiveAccount;
+    bool  _establishesActiveAccount;
     NSDictionary * _httpHeaders;
-    BOOL  _ignoresPreviousClaimAttempts;
+    bool  _ignoresPreviousClaimAttempts;
     NSNumber * _purchaseID;
-    BOOL  _suppressErrorDialogs;
+    bool  _suppressErrorDialogs;
 }
 
 @property (nonatomic, copy) NSNumber *accountID;
 @property (nonatomic, readonly) NSArray *bundleIdentifiers;
-@property (nonatomic, readonly) int claimStyle;
+@property (nonatomic, readonly) long long claimStyle;
 @property (nonatomic, copy) NSData *clientAuditTokenData;
-@property (nonatomic) BOOL establishesActiveAccount;
+@property (nonatomic) bool establishesActiveAccount;
 @property (nonatomic, copy) NSDictionary *httpHeaders;
-@property (nonatomic) BOOL ignoresPreviousClaimAttempts;
+@property (nonatomic) bool ignoresPreviousClaimAttempts;
 @property (nonatomic, copy) NSNumber *purchaseID;
-@property (nonatomic) BOOL suppressErrorDialogs;
+@property (nonatomic) bool suppressErrorDialogs;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)accountID;
 - (id)bundleIdentifiers;
-- (int)claimStyle;
+- (long long)claimStyle;
 - (id)clientAuditTokenData;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)establishesActiveAccount;
+- (bool)establishesActiveAccount;
 - (id)httpHeaders;
-- (BOOL)ignoresPreviousClaimAttempts;
+- (bool)ignoresPreviousClaimAttempts;
 - (id)initWithBundleIdentifiers:(id)arg1;
-- (id)initWithClaimStyle:(int)arg1;
+- (id)initWithClaimStyle:(long long)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)purchaseID;
 - (void)setAccountID:(id)arg1;
 - (void)setClientAuditTokenData:(id)arg1;
-- (void)setEstablishesActiveAccount:(BOOL)arg1;
+- (void)setEstablishesActiveAccount:(bool)arg1;
 - (void)setHttpHeaders:(id)arg1;
-- (void)setIgnoresPreviousClaimAttempts:(BOOL)arg1;
+- (void)setIgnoresPreviousClaimAttempts:(bool)arg1;
 - (void)setPurchaseID:(id)arg1;
-- (void)setSuppressErrorDialogs:(BOOL)arg1;
-- (BOOL)suppressErrorDialogs;
+- (void)setSuppressErrorDialogs:(bool)arg1;
+- (bool)suppressErrorDialogs;
 
 @end

@@ -11,7 +11,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -20,7 +20,7 @@
 - (void)clearCaches;
 - (id)convertAutocompleteResultToContact:(id)arg1;
 - (id)init;
-- (id)lookupCachedContactWithNamePrefix:(id)arg1 recipients:(id)arg2;
+- (id)lookupCachedContactsWithNamePrefix:(id)arg1 recipients:(id)arg2;
 - (id)queryForPrefix:(id)arg1 recipients:(id)arg2;
 
 @end

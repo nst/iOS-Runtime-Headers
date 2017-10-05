@@ -6,8 +6,8 @@
     AVAssetWriterInputPixelBufferAdaptor * _adaptor;
     AVAssetReaderOutput * _assetReaderOutput;
     AVAssetWriterInput * _assetWriterInput;
-    BOOL  _finished;
-    BOOL  _useAdaptor;
+    bool  _finished;
+    bool  _useAdaptor;
     id /* block */  completionHandler;
     NSObject<OS_dispatch_queue> * serializationQueue;
 }
@@ -15,8 +15,8 @@
 @property (nonatomic, retain) AVAssetWriterInputPixelBufferAdaptor *adaptor;
 @property (nonatomic, retain) AVAssetReaderOutput *assetReaderOutput;
 @property (nonatomic, retain) AVAssetWriterInput *assetWriterInput;
-@property (nonatomic) BOOL finished;
-@property (nonatomic) BOOL useAdaptor;
+@property (nonatomic) bool finished;
+@property (nonatomic) bool useAdaptor;
 
 - (void).cxx_destruct;
 - (id)adaptor;
@@ -24,15 +24,15 @@
 - (id)assetWriterInput;
 - (void)callCompletionHandlerIfNecessary;
 - (void)cancel;
-- (BOOL)finished;
+- (bool)finished;
 - (id)init;
-- (id)initWithAssetReaderOutput:(id)arg1 assetWriterInput:(id)arg2 useAdaptor:(BOOL)arg3;
+- (id)initWithAssetReaderOutput:(id)arg1 assetWriterInput:(id)arg2 useAdaptor:(bool)arg3;
 - (void)setAdaptor:(id)arg1;
 - (void)setAssetReaderOutput:(id)arg1;
 - (void)setAssetWriterInput:(id)arg1;
-- (void)setFinished:(BOOL)arg1;
-- (void)setUseAdaptor:(BOOL)arg1;
+- (void)setFinished:(bool)arg1;
+- (void)setUseAdaptor:(bool)arg1;
 - (void)startWithDelegate:(id)arg1 completionHandler:(id /* block */)arg2;
-- (BOOL)useAdaptor;
+- (bool)useAdaptor;
 
 @end

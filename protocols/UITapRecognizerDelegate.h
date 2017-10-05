@@ -5,8 +5,8 @@
 
 @required
 
-- (float)_touchSloppinessFactor;
-- (BOOL)tapIsPossibleForTapRecognizer:(UITapRecognizer *)arg1;
+- (double)_touchSloppinessFactor;
+- (bool)tapIsPossibleForTapRecognizer:(UITapRecognizer *)arg1;
 - (void)tapRecognizerFailedToRecognizeTap:(UITapRecognizer *)arg1;
 - (void)tapRecognizerRecognizedTap:(UITapRecognizer *)arg1;
 

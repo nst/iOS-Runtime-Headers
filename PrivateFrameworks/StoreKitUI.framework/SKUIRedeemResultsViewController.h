@@ -4,13 +4,13 @@
 
 @interface SKUIRedeemResultsViewController : SKUIRedeemStepViewController {
     SKUIRedeem * _redeem;
-    int  _redeemCategory;
+    long long  _redeemCategory;
 }
 
 @property (nonatomic, retain) SKUIRedeem *redeem;
-@property (nonatomic) int redeemCategory;
+@property (nonatomic) long long redeemCategory;
 
-+ (BOOL)canShowResultsForRedeem:(id)arg1;
++ (bool)canShowResultsForRedeem:(id)arg1;
 + (id)redeemResultsControllerForRedeem:(id)arg1;
 
 - (void).cxx_destruct;
@@ -19,9 +19,9 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithRedeem:(id)arg1;
 - (id)redeem;
-- (int)redeemCategory;
+- (long long)redeemCategory;
 - (void)setRedeem:(id)arg1;
-- (void)setRedeemCategory:(int)arg1;
+- (void)setRedeemCategory:(long long)arg1;
 - (void)viewDidLoad;
 
 @end

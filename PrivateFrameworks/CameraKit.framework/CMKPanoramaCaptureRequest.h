@@ -3,16 +3,16 @@
  */
 
 @interface CMKPanoramaCaptureRequest : CMKCaptureRequest <NSCopying, NSMutableCopying> {
-    int  _captureDevice;
-    int  _deviceOrientation;
+    long long  _captureDevice;
+    long long  _deviceOrientation;
 }
 
-@property (nonatomic, readonly) int captureDevice;
-@property (nonatomic, readonly) int deviceOrientation;
+@property (nonatomic, readonly) long long captureDevice;
+@property (nonatomic, readonly) long long deviceOrientation;
 
-- (int)captureDevice;
+- (long long)captureDevice;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)deviceOrientation;
+- (long long)deviceOrientation;
 - (id)init;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 

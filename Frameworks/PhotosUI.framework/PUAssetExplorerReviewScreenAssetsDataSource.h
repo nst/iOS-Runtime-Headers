@@ -23,6 +23,6 @@
 - (id)indexPathForAssetCollection:(id)arg1;
 - (id)indexPathForAssetReference:(id)arg1;
 - (id)initWithDataSource:(id)arg1 substitutedAssets:(id)arg2;
-- (int)numberOfSubItemsAtIndexPath:(id)arg1;
+- (long long)numberOfSubItemsAtIndexPath:(id)arg1;
 
 @end

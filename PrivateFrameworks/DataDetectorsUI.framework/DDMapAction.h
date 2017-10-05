@@ -7,7 +7,8 @@
     NSURL * _commitURL;
 }
 
-+ (BOOL)handlesUrl:(id)arg1 result:(struct __DDResult { }*)arg2;
++ (bool)actionAvailableForContact:(id)arg1;
++ (bool)handlesUrl:(id)arg1 result:(struct __DDResult { }*)arg2;
 + (id)viewControllerProviderClass;
 
 - (void).cxx_destruct;

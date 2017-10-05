@@ -2,59 +2,66 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@interface QLItemPresenterViewController : QLItemAggregatedViewController <QLDownloadingItemViewControllerDelegate> {
+@interface QLItemPresenterViewController : QLItemAggregatedViewController <QLDownloadingItemViewControllerDelegate, QLItemViewControllerPresentingDelegate> {
     id /* block */  _completionHandler;
     QLDownloadingItemViewController * _downloadingController;
     QLErrorItemViewController * _errorViewController;
-    BOOL  _isPeekingSession;
-    BOOL  _isReadyForDisplay;
+    bool  _failedToShowPreview;
+    bool  _isPeekingSession;
+    bool  _isReadyForDisplay;
     QLLoadingItemViewController * _loadingViewController;
     QLItem * _previewItem;
     QLItemViewController * _previewProvider;
     id /* block */  _readyBlock;
-    BOOL  _shouldDeferAppearanceUpdates;
+    bool  _shouldDeferAppearanceUpdates;
 }
 
+@property (nonatomic, copy) id /* block */ completionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) QLDownloadingItemViewController *downloadingController;
 @property (nonatomic, retain) QLErrorItemViewController *errorViewController;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (readonly) QLItemPresenterViewController *itemPresenterViewController;
 @property (nonatomic, retain) QLLoadingItemViewController *loadingViewController;
 @property (nonatomic, retain) QLItemViewController *previewProvider;
 @property (readonly) Class superclass;
-
-+ (void)preloadPreviewItem:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 
 - (void).cxx_destruct;
 - (void)_cancelAllDeferredApperanceUpdates;
 - (void)_performReadyBlockIfNedded;
 - (void)_showLoadingViewControllerDeferred;
-- (void)_startLoadingPreview;
+- (void)_startLoadingPreviewWithContents:(id)arg1;
+- (id /* block */)completionHandler;
 - (id)downloadingController;
-- (void)downloadingItemViewControllerDidFinishLoadingPreviewItem:(id)arg1;
+- (void)downloadingItemViewControllerDidFinishLoadingPreviewItem:(id)arg1 withContents:(id)arg2;
 - (id)errorViewController;
 - (id)init;
-- (BOOL)isLoaded;
-- (BOOL)isLoading;
+- (bool)isLoaded;
+- (bool)isLoading;
+- (bool)isPresentingPreviewItemViewController:(id)arg1;
 - (void)isReadyForDisplayWithCompletionHandler:(id /* block */)arg1;
-- (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
-- (BOOL)loadingFailed;
+- (id)itemPresenterViewController;
+- (void)loadPreviewControllerWithContents:(id)arg1 context:(id)arg2 completionHandler:(id /* block */)arg3;
+- (bool)loadingFailed;
 - (id)loadingViewController;
-- (void)previewDidAppear:(BOOL)arg1;
-- (void)previewDidDisappear:(BOOL)arg1;
+- (void)previewDidAppear:(bool)arg1;
+- (void)previewDidDisappear:(bool)arg1;
 - (id)previewItem;
+- (void)previewItemViewController:(id)arg1 didFailWithError:(id)arg2;
 - (id)previewProvider;
-- (void)previewWillAppear:(BOOL)arg1;
-- (void)previewWillDisappear:(BOOL)arg1;
-- (void)setAppearance:(id)arg1 animated:(BOOL)arg2;
+- (void)previewWillAppear:(bool)arg1;
+- (void)previewWillDisappear:(bool)arg1;
+- (void)setAppearance:(id)arg1 animated:(bool)arg2;
+- (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setDownloadingController:(id)arg1;
 - (void)setErrorViewController:(id)arg1;
 - (void)setLoadingViewController:(id)arg1;
 - (void)setPreviewProvider:(id)arg1;
+- (void)showErrorViewController;
 - (void)showPreviewViewController:(id)arg1;
-- (void)transitionDidFinish:(BOOL)arg1 didComplete:(BOOL)arg2;
-- (void)transitionDidStart:(BOOL)arg1;
-- (void)transitionWillFinish:(BOOL)arg1 didComplete:(BOOL)arg2;
+- (void)transitionDidFinish:(bool)arg1 didComplete:(bool)arg2;
+- (void)transitionDidStart:(bool)arg1;
+- (void)transitionWillFinish:(bool)arg1 didComplete:(bool)arg2;
 
 @end

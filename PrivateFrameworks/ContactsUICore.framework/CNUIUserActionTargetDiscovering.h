@@ -11,11 +11,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) <CNUIUserActionDiscoveringEnvironment> *discoveringEnvironment;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)applicationProxiesForIntent:(id)arg1 environment:(id)arg2;
-+ (BOOL)isSkypeAvailableWithEnvironment:(id)arg1;
++ (bool)isSkypeAvailableWithEnvironment:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_targetsForActionType:(id)arg1;
@@ -34,6 +34,7 @@
 - (id)targetForVoiceWithTelephony;
 - (id)targetsForActionType:(id)arg1;
 - (id)targetsForEmail;
+- (id)targetsForPay;
 - (id)targetsForSendMessageIntent;
 - (id)targetsForStartAudioCallIntent;
 - (id)targetsForStartVideoCallIntent;

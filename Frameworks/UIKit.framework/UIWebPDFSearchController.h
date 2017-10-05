@@ -4,38 +4,38 @@
 
 @interface UIWebPDFSearchController : NSObject <UIWebPDFSearchOperationDelegate> {
     UIPDFDocument * _documentToSearch;
-    BOOL  _notifiedThatSearchBegin;
-    unsigned int  _pageIndexWhenLimitHit;
-    unsigned int  _resultIndexWhenLimitHit;
+    bool  _notifiedThatSearchBegin;
+    unsigned long long  _pageIndexWhenLimitHit;
+    unsigned long long  _resultIndexWhenLimitHit;
     NSMutableArray * _results;
     NSOperationQueue * _searchQueue;
     NSString * _searchString;
-    float  documentScale;
-    unsigned int  resultLimit;
+    double  documentScale;
+    unsigned long long  resultLimit;
     NSObject<UIWebPDFSearchControllerDelegate> * searchDelegate;
-    unsigned int  startingPageIndex;
+    unsigned long long  startingPageIndex;
 }
 
-@property (nonatomic) float documentScale;
+@property (nonatomic) double documentScale;
 @property (nonatomic, retain) UIPDFDocument *documentToSearch;
-@property (nonatomic, readonly) BOOL paused;
-@property (nonatomic) unsigned int resultLimit;
+@property (nonatomic, readonly) bool paused;
+@property (nonatomic) unsigned long long resultLimit;
 @property (nonatomic, retain) NSArray *results;
 @property (nonatomic) NSObject<UIWebPDFSearchControllerDelegate> *searchDelegate;
 @property (nonatomic, retain) NSString *searchString;
-@property (nonatomic, readonly) BOOL searching;
-@property (nonatomic) unsigned int startingPageIndex;
+@property (nonatomic, readonly) bool searching;
+@property (nonatomic) unsigned long long startingPageIndex;
 
-- (unsigned int)_actualStartingPageIndex;
+- (unsigned long long)_actualStartingPageIndex;
 - (void)_clearSearchQueue;
 - (void)cancel;
 - (void)dealloc;
-- (float)documentScale;
+- (double)documentScale;
 - (id)documentToSearch;
 - (id)init;
 - (void)pause;
-- (BOOL)paused;
-- (unsigned int)resultLimit;
+- (bool)paused;
+- (unsigned long long)resultLimit;
 - (id)results;
 - (void)resume;
 - (void)search:(id)arg1;
@@ -47,14 +47,14 @@
 - (void)searchLimitHit:(id)arg1;
 - (id)searchString;
 - (void)searchWasCancelled:(id)arg1;
-- (BOOL)searching;
-- (void)setDocumentScale:(float)arg1;
+- (bool)searching;
+- (void)setDocumentScale:(double)arg1;
 - (void)setDocumentToSearch:(id)arg1;
-- (void)setResultLimit:(unsigned int)arg1;
+- (void)setResultLimit:(unsigned long long)arg1;
 - (void)setResults:(id)arg1;
 - (void)setSearchDelegate:(id)arg1;
 - (void)setSearchString:(id)arg1;
-- (void)setStartingPageIndex:(unsigned int)arg1;
-- (unsigned int)startingPageIndex;
+- (void)setStartingPageIndex:(unsigned long long)arg1;
+- (unsigned long long)startingPageIndex;
 
 @end

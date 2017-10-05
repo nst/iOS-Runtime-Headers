@@ -5,9 +5,9 @@
 @interface EKEventDetailLocationDisambiguationContentViewController : UIViewController <MKMapViewDelegate, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate> {
     MKCircleRenderer * _circleRenderer;
     id /* block */  _completionBlock;
-    unsigned int  _currentLayoutParadigm;
-    BOOL  _done;
-    BOOL  _geocoding;
+    unsigned long long  _currentLayoutParadigm;
+    bool  _done;
+    bool  _geocoding;
     NSSet * _iPadConstraints;
     NSCache * _iconCache;
     NSObject<OS_dispatch_queue> * _iconRenderQueue;
@@ -15,27 +15,27 @@
     MKMapView * _mapView;
     MKPointAnnotation * _pin;
     NSMutableArray * _pois;
-    BOOL  _rowSelectionInitialized;
+    bool  _rowSelectionInitialized;
     UISearchBar * _searchBar;
     UIView * _separatorLine;
     NSSet * _splitConstraints;
     UITableView * _tableView;
     NSSet * _tallConstraints;
-    BOOL  _textChanged;
+    bool  _textChanged;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_constraintsForParadigm:(unsigned int)arg1;
+- (id)_constraintsForParadigm:(unsigned long long)arg1;
 - (void)_createConstraints;
 - (void)_deselectCircle;
 - (void)_selectCircle;
-- (void)_selectRow:(unsigned int)arg1;
-- (BOOL)_shouldEnableAddButton;
+- (void)_selectRow:(unsigned long long)arg1;
+- (bool)_shouldEnableAddButton;
 - (void)_updateMapRegion;
 - (void)cancelTapped:(id)arg1;
 - (void)doneTapped:(id)arg1;
@@ -43,14 +43,14 @@
 - (id)mapView:(id)arg1 rendererForOverlay:(id)arg2;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (void)searchBarSearchButtonClicked:(id)arg1;
-- (BOOL)searchBarShouldBeginEditing:(id)arg1;
+- (bool)searchBarShouldBeginEditing:(id)arg1;
 - (void)searchBarTextDidEndEditing:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didDeselectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateViewConstraints;
 - (void)viewDidLayoutSubviews;

@@ -7,6 +7,7 @@
     NSArray * _disallowedParsecDomains;
     NSString * _expansionRegularExpression;
     NSNumber * _minimumPrefixLengthToSuggest;
+    NSNumber * _minimumPunctuationOnlyLengthForEngagement;
     NSNumber * _suggestApplications;
     NSNumber * _suggestExpandedPrefix;
     NSNumber * _suggestPrefixAlways;
@@ -19,6 +20,7 @@
 @property (nonatomic, readonly) NSArray *disallowedParsecDomains;
 @property (nonatomic, readonly) NSString *expansionRegularExpression;
 @property (nonatomic, readonly) NSNumber *minimumPrefixLengthToSuggest;
+@property (nonatomic, readonly) NSNumber *minimumPunctuationOnlyLengthForEngagement;
 @property (nonatomic, readonly) NSNumber *suggestApplications;
 @property (nonatomic, readonly) NSNumber *suggestExpandedPrefix;
 @property (nonatomic, readonly) NSNumber *suggestPrefixAlways;
@@ -32,6 +34,7 @@
 - (id)disallowedParsecDomains;
 - (id)expansionRegularExpression;
 - (id)minimumPrefixLengthToSuggest;
+- (id)minimumPunctuationOnlyLengthForEngagement;
 - (id)suggestApplications;
 - (id)suggestExpandedPrefix;
 - (id)suggestPrefixAlways;

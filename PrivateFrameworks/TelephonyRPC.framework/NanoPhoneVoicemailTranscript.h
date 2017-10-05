@@ -7,7 +7,7 @@
     long long  _voicemailNumber;
 }
 
-@property (nonatomic, readonly) BOOL hasTranscriptionString;
+@property (nonatomic, readonly) bool hasTranscriptionString;
 @property (nonatomic, retain) NSString *transcriptionString;
 @property (nonatomic) long long voicemailNumber;
 
@@ -16,11 +16,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasTranscriptionString;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasTranscriptionString;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setTranscriptionString:(id)arg1;
 - (void)setVoicemailNumber:(long long)arg1;
 - (id)transcriptionString;

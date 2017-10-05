@@ -11,7 +11,7 @@
 + (id)dateFromComponents:(id)arg1 destinationCalendar:(id)arg2;
 + (id)gregorianCalendarGMT;
 + (void)initialize;
-+ (BOOL)isYearlessComponents:(id)arg1;
++ (bool)isYearlessComponents:(id)arg1;
 + (void)localeDidChange:(id)arg1;
 + (id)yearlessComponentsFromDate:(id)arg1;
 + (id)yearlessComponentsFromDate:(id)arg1 calendar:(id)arg2;

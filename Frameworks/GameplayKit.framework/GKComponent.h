@@ -12,7 +12,7 @@
 @property (nonatomic) NSString *componentName;
 @property (nonatomic) GKComponentSystem *componentSystem;
 @property (nonatomic, readonly) GKEntity *entity;
-@property (nonatomic) BOOL usesPerComponentUpdate;
+@property (nonatomic) bool usesPerComponentUpdate;
 
 - (void).cxx_destruct;
 - (id)componentName;
@@ -28,9 +28,9 @@
 - (void)setComponentName:(id)arg1;
 - (void)setComponentSystem:(id)arg1;
 - (void)setEntity:(id)arg1;
-- (void)setUsesPerComponentUpdate:(BOOL)arg1;
+- (void)setUsesPerComponentUpdate:(bool)arg1;
 - (void)updateWithDeltaTime:(double)arg1;
-- (BOOL)usesPerComponentUpdate;
+- (bool)usesPerComponentUpdate;
 - (void)willRemoveFromEntity;
 
 @end

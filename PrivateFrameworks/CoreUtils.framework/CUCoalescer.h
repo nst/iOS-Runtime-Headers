@@ -5,7 +5,7 @@
 @interface CUCoalescer : NSObject {
     id /* block */  _actionHandler;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
-    BOOL  _invalidateCalled;
+    bool  _invalidateCalled;
     id /* block */  _invalidationHandler;
     double  _leeway;
     double  _maxDelay;

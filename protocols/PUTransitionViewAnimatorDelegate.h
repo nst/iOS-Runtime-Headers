@@ -5,8 +5,8 @@
 
 @optional
 
-- (void)transitionViewAnimatorDidEnd:(PUTransitionViewAnimator *)arg1 finished:(BOOL)arg2;
+- (void)transitionViewAnimatorDidEnd:(PUTransitionViewAnimator *)arg1 finished:(bool)arg2;
 - (void)transitionViewAnimatorDidUpdate:(PUTransitionViewAnimator *)arg1;
-- (void)transitionViewAnimatorWillEnd:(PUTransitionViewAnimator *)arg1 withTargetTranslation:(inout struct CGPoint { float x1; float x2; }*)arg2;
+- (void)transitionViewAnimatorWillEnd:(PUTransitionViewAnimator *)arg1 withTargetTranslation:(inout struct CGPoint { double x1; double x2; }*)arg2;
 
 @end

@@ -3,15 +3,15 @@
  */
 
 @interface MSTimerGate : NSObject {
-    BOOL  _enabled;
+    bool  _enabled;
 }
 
-@property (nonatomic) BOOL enabled;
+@property (nonatomic) bool enabled;
 
 - (void)disable;
 - (void)enable;
-- (BOOL)enabled;
+- (bool)enabled;
 - (id)init;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 
 @end

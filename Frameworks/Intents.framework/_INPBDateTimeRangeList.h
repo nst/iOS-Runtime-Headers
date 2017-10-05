@@ -10,10 +10,8 @@
 
 @property (nonatomic, retain) _INPBCondition *condition;
 @property (nonatomic, retain) NSMutableArray *dateRanges;
-@property (nonatomic, readonly) BOOL hasCondition;
+@property (nonatomic, readonly) bool hasCondition;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (Class)dateRangeType;
 + (id)options;
@@ -23,25 +21,19 @@
 - (void)clearDateRanges;
 - (id)condition;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)dateRangeAtIndex:(unsigned int)arg1;
+- (id)dateRangeAtIndex:(unsigned long long)arg1;
 - (id)dateRanges;
-- (unsigned int)dateRangesCount;
+- (unsigned long long)dateRangesCount;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCondition;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCondition;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCondition:(id)arg1;
 - (void)setDateRanges:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

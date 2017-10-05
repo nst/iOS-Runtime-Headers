@@ -7,7 +7,7 @@
     id /* block */  _stateChangedCallback;
 }
 
-@property (nonatomic, readonly) BOOL dataIsAccessible;
+@property (nonatomic, readonly) bool dataIsAccessible;
 @property (nonatomic, retain) CDBDataProtectionObserver *dataProtectionObserver;
 @property (nonatomic, copy) id /* block */ stateChangedCallback;
 
@@ -15,7 +15,7 @@
 
 - (void).cxx_destruct;
 - (void)_dataProtectionStateChanged;
-- (BOOL)dataIsAccessible;
+- (bool)dataIsAccessible;
 - (id)dataProtectionObserver;
 - (id)init;
 - (void)setDataProtectionObserver:(id)arg1;

@@ -3,37 +3,37 @@
  */
 
 @interface NRPairingCompatibilityVersionInfo : NSObject <NSCopying, NSSecureCoding> {
-    BOOL  _isOverrideActive;
-    int  _maxPairingCompatibilityVersion;
-    int  _minPairingCompatibilityVersion;
-    int  _minQuickSwitchCompatibilityVersion;
-    int  _pairingCompatibilityVersion;
+    bool  _isOverrideActive;
+    long long  _maxPairingCompatibilityVersion;
+    long long  _minPairingCompatibilityVersion;
+    long long  _minQuickSwitchCompatibilityVersion;
+    long long  _pairingCompatibilityVersion;
 }
 
-@property (nonatomic) BOOL isOverrideActive;
-@property (nonatomic) int maxPairingCompatibilityVersion;
-@property (nonatomic) int minPairingCompatibilityVersion;
-@property (nonatomic) int minQuickSwitchCompatibilityVersion;
-@property (nonatomic) int pairingCompatibilityVersion;
+@property (nonatomic) bool isOverrideActive;
+@property (nonatomic) long long maxPairingCompatibilityVersion;
+@property (nonatomic) long long minPairingCompatibilityVersion;
+@property (nonatomic) long long minQuickSwitchCompatibilityVersion;
+@property (nonatomic) long long pairingCompatibilityVersion;
 
 + (void)setValue:(unsigned long long)arg1 forToken:(int)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)systemVersions;
 + (unsigned long long)valueForToken:(int)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isOverrideActive;
-- (int)maxPairingCompatibilityVersion;
-- (int)minPairingCompatibilityVersion;
-- (int)minQuickSwitchCompatibilityVersion;
-- (int)pairingCompatibilityVersion;
-- (void)setIsOverrideActive:(BOOL)arg1;
-- (void)setMaxPairingCompatibilityVersion:(int)arg1;
-- (void)setMinPairingCompatibilityVersion:(int)arg1;
-- (void)setMinQuickSwitchCompatibilityVersion:(int)arg1;
-- (void)setPairingCompatibilityVersion:(int)arg1;
+- (bool)isOverrideActive;
+- (long long)maxPairingCompatibilityVersion;
+- (long long)minPairingCompatibilityVersion;
+- (long long)minQuickSwitchCompatibilityVersion;
+- (long long)pairingCompatibilityVersion;
+- (void)setIsOverrideActive:(bool)arg1;
+- (void)setMaxPairingCompatibilityVersion:(long long)arg1;
+- (void)setMinPairingCompatibilityVersion:(long long)arg1;
+- (void)setMinQuickSwitchCompatibilityVersion:(long long)arg1;
+- (void)setPairingCompatibilityVersion:(long long)arg1;
 
 @end

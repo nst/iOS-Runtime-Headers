@@ -10,12 +10,12 @@
 + (id)cache;
 + (id)cacheFromScene:(id)arg1;
 
-- (BOOL)cacheEnabledForKey:(id)arg1;
-- (id)cacheObjectForKey:(id)arg1 cacheID:(id)arg2 created:(BOOL*)arg3 ifAbsent:(id /* block */)arg4;
+- (bool)cacheEnabledForKey:(id)arg1;
+- (id)cacheObjectForKey:(id)arg1 cacheID:(id)arg2 created:(bool*)arg3 ifAbsent:(id /* block */)arg4;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)enableCache:(BOOL)arg1 forKey:(id)arg2;
+- (void)enableCache:(bool)arg1 forKey:(id)arg2;
 - (id)init;
 - (void)setCacheObject:(id)arg1 forKey:(id)arg2 cacheID:(id)arg3;
 

@@ -58,7 +58,7 @@
 @property unsigned int bucket_90_msecs;
 @property unsigned int bucket_above_5_secs;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)addBuckets:(id)arg1;
 - (unsigned int)bucket_100_msecs;

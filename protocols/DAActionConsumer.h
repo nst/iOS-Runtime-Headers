@@ -5,6 +5,6 @@
 
 @required
 
-- (void)actionFailed:(int)arg1 forTask:(id)arg2 error:(NSError *)arg3;
+- (void)actionFailed:(long long)arg1 forTask:(id)arg2 error:(NSError *)arg3;
 
 @end

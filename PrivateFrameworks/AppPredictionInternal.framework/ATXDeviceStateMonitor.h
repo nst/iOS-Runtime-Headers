@@ -5,10 +5,10 @@
 @interface ATXDeviceStateMonitor : NSObject
 
 + (id)SSID;
-+ (BOOL)airplaneMode;
++ (bool)airplaneMode;
 + (void)asyncSSID:(id /* block */)arg1;
-+ (BOOL)onWifi;
-+ (void)setAirplaneMode:(BOOL)arg1;
++ (bool)onWifi;
++ (void)setAirplaneMode:(bool)arg1;
 + (void)setSSID:(id)arg1;
 + (void)startMockingSystem;
 + (void)stopMockingSystem;

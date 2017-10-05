@@ -4,8 +4,8 @@
 
 @interface PUCameraTransientAssetActionManager : PUAssetActionManager
 
-- (BOOL)canPerformActionType:(unsigned int)arg1 onAsset:(id)arg2 inAssetCollection:(id)arg3;
-- (unsigned int)preferredTrashActionTypeOnAssetsByAssetCollection:(id)arg1;
-- (BOOL)shouldEnableActionType:(unsigned int)arg1 onAsset:(id)arg2 inAssetCollection:(id)arg3;
+- (bool)canPerformActionType:(unsigned long long)arg1 onAsset:(id)arg2 inAssetCollection:(id)arg3;
+- (unsigned long long)preferredTrashActionTypeOnAssetsByAssetCollection:(id)arg1;
+- (bool)shouldEnableActionType:(unsigned long long)arg1 onAsset:(id)arg2 inAssetCollection:(id)arg3;
 
 @end

@@ -7,6 +7,7 @@
 
 - (void)_remote_actionViewControllerReadyForPresentationForAdSpaceWithIdentifier:(NSString *)arg1;
 - (void)_remote_adImpressionDidLoadWithPublicAttributes:(ADAdImpressionPublicAttributes *)arg1 identifier:(NSString *)arg2;
+- (void)_remote_adImpressionReportedWithIdentifier:(NSString *)arg1;
 - (void)_remote_closeClientAdSpaceWithIdentifier:(NSString *)arg1;
 - (void)_remote_contentProxyURLDidChange:(NSURL *)arg1;
 - (void)_remote_creativeWithAdSpaceIdentifier:(NSString *)arg1 didFailWithError:(NSError *)arg2;
@@ -15,7 +16,7 @@
 - (void)_remote_openURL:(NSURL *)arg1 forAdSpaceWithIdentifier:(NSString *)arg2;
 - (void)_remote_policyEngineDidIdleDisable;
 - (void)_remote_requestViewControllerWithClassName:(NSString *)arg1 forAdSpaceControllerWithIdentifier:(NSString *)arg2 forAdSpaceWithIdentifier:(NSString *)arg3;
-- (void)_remote_setRequiresFastVisibilityTestOnly:(BOOL)arg1 withIdentifier:(NSString *)arg2;
-- (void)_remote_updateActionViewControllerOrientation:(unsigned int)arg1 forAdSpaceWithIdentifier:(NSString *)arg2;
+- (void)_remote_setRequiresFastVisibilityTestOnly:(bool)arg1 withIdentifier:(NSString *)arg2;
+- (void)_remote_updateActionViewControllerOrientation:(unsigned long long)arg1 forAdSpaceWithIdentifier:(NSString *)arg2;
 
 @end

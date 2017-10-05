@@ -4,7 +4,7 @@
 
 @interface MBSystemContainer : MBContainer
 
-+ (id)systemContainerWithDomainName:(id)arg1 containerDir:(id)arg2 isShared:(BOOL)arg3;
++ (id)systemContainerWithDomainName:(id)arg1 containerDir:(id)arg2 isShared:(bool)arg3;
 + (id)systemContainerWithPropertyList:(id)arg1;
 
 - (id)domain;

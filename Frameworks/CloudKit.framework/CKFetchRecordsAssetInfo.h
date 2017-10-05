@@ -14,11 +14,11 @@
 
 - (void).cxx_destruct;
 - (id)assetContent;
-- (id)assetContentWithError:(id*)arg1;
+- (id)assetContentWithError:(id*)arg1 expectedSignature:(id)arg2;
 - (id)byteRanges;
 - (id)error;
 - (id)init;
-- (BOOL)isContiguous;
+- (bool)isContiguous;
 - (void)setAssetContent:(id)arg1;
 - (void)setByteRanges:(id)arg1;
 - (void)setError:(id)arg1;

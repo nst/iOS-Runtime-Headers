@@ -3,12 +3,12 @@
  */
 
 @interface CKDMMCSGetOperationInfo : NSObject {
-    BOOL  _shouldFetchAssetContentInMemory;
+    bool  _shouldFetchAssetContentInMemory;
 }
 
-@property (nonatomic) BOOL shouldFetchAssetContentInMemory;
+@property (nonatomic) bool shouldFetchAssetContentInMemory;
 
-- (void)setShouldFetchAssetContentInMemory:(BOOL)arg1;
-- (BOOL)shouldFetchAssetContentInMemory;
+- (void)setShouldFetchAssetContentInMemory:(bool)arg1;
+- (bool)shouldFetchAssetContentInMemory;
 
 @end

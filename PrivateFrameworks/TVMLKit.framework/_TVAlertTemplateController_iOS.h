@@ -8,20 +8,20 @@
     NSArray * _buttonElements;
     TVImageProxy * _imageProxy;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _imageSize;
     NSString * _message;
     NSString * _title;
 }
 
 - (void).cxx_destruct;
-- (void)_dismissAlertControllerAnimated:(BOOL)arg1;
+- (void)_dismissAlertControllerAnimated:(bool)arg1;
 - (void)_presentAlertController;
 - (void)didMoveToParentViewController:(id)arg1;
 - (void)updateWithTemplateElement:(id)arg1;
 - (void)updateWithViewElement:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

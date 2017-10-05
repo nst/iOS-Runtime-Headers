@@ -11,7 +11,7 @@
 @property (nonatomic, readonly) NSString *key;
 
 + (void)applyEntries:(id)arg1 withProfile:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bundleIdentifier;

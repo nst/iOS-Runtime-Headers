@@ -10,6 +10,6 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
-- (void)postPackedMechanisms:(unsigned int)arg1;
+- (void)postPackedMechanisms:(unsigned long long)arg1;
 
 @end

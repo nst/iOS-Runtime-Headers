@@ -3,27 +3,27 @@
  */
 
 @interface CKDPQLUpgradeInfo : NSObject {
-    BOOL  _shouldTruncateDatabase;
-    BOOL  _shouldVacuum;
+    bool  _shouldTruncateDatabase;
+    bool  _shouldVacuum;
     int (* _upgradeFunction;
-    unsigned int  _version;
+    unsigned long long  _version;
 }
 
-@property (nonatomic) BOOL shouldTruncateDatabase;
-@property (nonatomic) BOOL shouldVacuum;
+@property (nonatomic) bool shouldTruncateDatabase;
+@property (nonatomic) bool shouldVacuum;
 @property (nonatomic) int (*upgradeFunction;
-@property (nonatomic) unsigned int version;
+@property (nonatomic) unsigned long long version;
 
-+ (id)upgradeInfoWithVersion:(unsigned int)arg1 function:(int (*)arg2 shouldVacuum:(BOOL)arg3 shouldTruncate:(BOOL)arg4;
++ (id)upgradeInfoWithVersion:(unsigned long long)arg1 function:(int (*)arg2 shouldVacuum:(bool)arg3 shouldTruncate:(bool)arg4;
 
-- (id)initWithVersion:(unsigned int)arg1 function:(int (*)arg2 shouldVacuum:(BOOL)arg3 shouldTruncate:(BOOL)arg4;
-- (void)setShouldTruncateDatabase:(BOOL)arg1;
-- (void)setShouldVacuum:(BOOL)arg1;
+- (id)initWithVersion:(unsigned long long)arg1 function:(int (*)arg2 shouldVacuum:(bool)arg3 shouldTruncate:(bool)arg4;
+- (void)setShouldTruncateDatabase:(bool)arg1;
+- (void)setShouldVacuum:(bool)arg1;
 - (void)setUpgradeFunction:(int (*)arg1;
-- (void)setVersion:(unsigned int)arg1;
-- (BOOL)shouldTruncateDatabase;
-- (BOOL)shouldVacuum;
+- (void)setVersion:(unsigned long long)arg1;
+- (bool)shouldTruncateDatabase;
+- (bool)shouldVacuum;
 - (int (*)upgradeFunction;
-- (unsigned int)version;
+- (unsigned long long)version;
 
 @end

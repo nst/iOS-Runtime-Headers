@@ -5,19 +5,19 @@
 @interface CDPDRecoveryOption : NSObject {
     NSString * _localizedRecoveryOption;
     id /* block */  _recoveryHandler;
-    int  _recoveryOptionIndex;
+    long long  _recoveryOptionIndex;
 }
 
 @property (nonatomic, copy) NSString *localizedRecoveryOption;
 @property (nonatomic, copy) id /* block */ recoveryHandler;
-@property (nonatomic) int recoveryOptionIndex;
+@property (nonatomic) long long recoveryOptionIndex;
 
 - (void).cxx_destruct;
 - (id)localizedRecoveryOption;
 - (id /* block */)recoveryHandler;
-- (int)recoveryOptionIndex;
+- (long long)recoveryOptionIndex;
 - (void)setLocalizedRecoveryOption:(id)arg1;
 - (void)setRecoveryHandler:(id /* block */)arg1;
-- (void)setRecoveryOptionIndex:(int)arg1;
+- (void)setRecoveryOptionIndex:(long long)arg1;
 
 @end

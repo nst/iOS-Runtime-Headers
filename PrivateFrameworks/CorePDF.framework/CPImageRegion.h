@@ -5,6 +5,6 @@
 @interface CPImageRegion : CPGraphicRegion
 
 - (void)accept:(id)arg1;
-- (BOOL)isImageRegion;
+- (bool)isImageRegion;
 
 @end

@@ -8,7 +8,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property AKTextAttributesViewController *parentController;
 @property (readonly) Class superclass;
 
@@ -17,6 +17,6 @@
 - (id)parentController;
 - (void)setParentController:(id)arg1;
 - (void)syncFontsToUI:(id)arg1;
-- (int)tag;
+- (long long)tag;
 
 @end

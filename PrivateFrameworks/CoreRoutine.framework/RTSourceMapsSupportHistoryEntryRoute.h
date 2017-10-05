@@ -3,18 +3,19 @@
  */
 
 @interface RTSourceMapsSupportHistoryEntryRoute : RTSourceMapsSupportHistoryEntry {
-    BOOL  _navigationWasInterrupted;
+    bool  _navigationWasInterrupted;
 }
 
-@property (nonatomic, readonly) BOOL navigationWasInterrupted;
+@property (nonatomic, readonly) bool navigationWasInterrupted;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithUsageDate:(id)arg1 navigationWasInterrupted:(BOOL)arg2;
-- (BOOL)navigationWasInterrupted;
+- (id)initWithUsageDate:(id)arg1 navigationWasInterrupted:(bool)arg2;
+- (bool)isEqual:(id)arg1;
+- (bool)navigationWasInterrupted;
 
 @end

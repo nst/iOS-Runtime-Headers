@@ -8,7 +8,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) long long persistentID;
 @property (readonly) Class superclass;
 
@@ -21,24 +21,24 @@
 + (id)aggregateValuesForProperty:(id)arg1 functions:(id)arg2 queryDescriptor:(id)arg3 database:(id)arg4 error:(id*)arg5;
 + (id)allDatabaseColumnNames;
 + (id)anyInDatabase:(id)arg1 predicate:(id)arg2 error:(id*)arg3;
-+ (id)associationPropertyForEntityClass:(Class)arg1;
 + (id)columnsDefinition;
 + (id)countDistinctForProperty:(id)arg1 predicate:(id)arg2 database:(id)arg3 error:(id*)arg4;
 + (id)countValueForProperty:(id)arg1 predicate:(id)arg2 database:(id)arg3 error:(id*)arg4;
 + (id)databaseName;
 + (id)databaseTable;
-+ (BOOL)deleteEntitiesInDatabase:(id)arg1 predicate:(id)arg2;
++ (bool)deleteEntitiesInDatabase:(id)arg1 predicate:(id)arg2 error:(id*)arg3;
 + (id)deleteStatementWithProperty:(id)arg1 database:(id)arg2;
 + (id)disambiguatedDatabaseTable;
 + (id)disambiguatedSQLForProperty:(id)arg1;
 + (id)distinctProperty:(id)arg1 predicate:(id)arg2 database:(id)arg3 error:(id*)arg4;
 + (Class)entityForProperty:(id)arg1;
 + (id)entityWithPersistentID:(id)arg1;
-+ (BOOL)enumerateEntitiesInDatabase:(id)arg1 predicate:(id)arg2 error:(id*)arg3 enumerationHandler:(id /* block */)arg4;
-+ (BOOL)enumerateQueryResultsFromColumns:(id)arg1 properties:(id)arg2 predicate:(id)arg3 groupBy:(id)arg4 orderingProperties:(id)arg5 limit:(int)arg6 database:(id)arg7 error:(id*)arg8 enumerationHandler:(id /* block */)arg9;
++ (bool)enumerateEntitiesInDatabase:(id)arg1 predicate:(id)arg2 error:(id*)arg3 enumerationHandler:(id /* block */)arg4;
++ (bool)enumerateQueryResultsFromColumns:(id)arg1 properties:(id)arg2 predicate:(id)arg3 groupBy:(id)arg4 orderingProperties:(id)arg5 limit:(long long)arg6 database:(id)arg7 error:(id*)arg8 enumerationHandler:(id /* block */)arg9;
++ (id)firstInDatabase:(id)arg1 predicate:(id)arg2 orderingProperties:(id)arg3 orderingDirections:(id)arg4 error:(id*)arg5;
 + (id)indices;
-+ (id)insertOrReplaceEntity:(BOOL)arg1 database:(id)arg2 properties:(id)arg3 error:(id*)arg4 bindingHandler:(id /* block */)arg5;
-+ (id)insertSQLForProperties:(id)arg1 shouldReplace:(BOOL)arg2;
++ (id)insertOrReplaceEntity:(bool)arg1 database:(id)arg2 properties:(id)arg3 error:(id*)arg4 bindingHandler:(id /* block */)arg5;
++ (id)insertSQLForProperties:(id)arg1 shouldReplace:(bool)arg2;
 + (id)joinClausesForProperty:(id)arg1;
 + (id)maxPersistentIDWithPredicate:(id)arg1 database:(id)arg2 error:(id*)arg3;
 + (id)maxValueForProperty:(id)arg1 predicate:(id)arg2 database:(id)arg3 error:(id*)arg4;
@@ -46,24 +46,25 @@
 + (id)propertyValueForAnyInDatabase:(id)arg1 property:(id)arg2 predicate:(id)arg3 error:(id*)arg4;
 + (id)queryStatementWithPredicate:(id)arg1 properties:(id)arg2 database:(id)arg3;
 + (id)queryWithDatabase:(id)arg1 predicate:(id)arg2;
-+ (id)queryWithDatabase:(id)arg1 predicate:(id)arg2 limit:(unsigned int)arg3 orderingProperties:(id)arg4 orderingDirections:(id)arg5 groupBy:(id)arg6;
++ (id)queryWithDatabase:(id)arg1 predicate:(id)arg2 limit:(unsigned long long)arg3 orderingProperties:(id)arg4 orderingDirections:(id)arg5 groupBy:(id)arg6;
 + (id)tableAliases;
-+ (BOOL)updateProperties:(id)arg1 predicate:(id)arg2 database:(id)arg3 error:(id*)arg4 bindingHandler:(id /* block */)arg5;
++ (bool)updateProperties:(id)arg1 predicate:(id)arg2 database:(id)arg3 error:(id*)arg4 bindingHandler:(id /* block */)arg5;
 + (id)updateSQLForProperties:(id)arg1 predicate:(id)arg2;
 + (id)updateSQLForPropertiesOnEntity:(id)arg1;
 
 - (id)UUIDForProperty:(id)arg1 database:(id)arg2;
-- (BOOL)_deleteRowFromTable:(id)arg1 usingColumn:(id)arg2 database:(id)arg3;
-- (BOOL)booleanForProperty:(id)arg1 database:(id)arg2;
+- (bool)_deleteRowFromTable:(id)arg1 usingColumn:(id)arg2 database:(id)arg3;
+- (bool)booleanForProperty:(id)arg1 database:(id)arg2;
 - (id)dateForProperty:(id)arg1 database:(id)arg2;
-- (BOOL)deleteFromDatabase:(id)arg1 error:(id*)arg2;
+- (bool)deleteFromDatabase:(id)arg1 error:(id*)arg2;
 - (id)description;
-- (BOOL)existsInDatabase:(id)arg1;
-- (BOOL)getValuesForProperties:(id)arg1 database:(id)arg2 handler:(id /* block */)arg3;
-- (BOOL)getValuesForProperties:(id)arg1 withDatabase:(id)arg2 applier:(id /* block */)arg3;
+- (bool)existsInDatabase:(id)arg1;
+- (bool)getValuesForProperties:(id)arg1 database:(id)arg2 handler:(id /* block */)arg3;
 - (id)initWithPersistentID:(long long)arg1;
+- (id)numberForProperty:(id)arg1 database:(id)arg2;
 - (long long)persistentID;
-- (BOOL)updateProperties:(id)arg1 database:(id)arg2 error:(id*)arg3 bindingHandler:(id /* block */)arg4;
+- (id)stringForProperty:(id)arg1 database:(id)arg2;
+- (bool)updateProperties:(id)arg1 database:(id)arg2 error:(id*)arg3 bindingHandler:(id /* block */)arg4;
 - (id)valueForProperty:(id)arg1 database:(id)arg2;
 
 @end

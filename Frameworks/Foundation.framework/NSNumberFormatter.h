@@ -4,17 +4,17 @@
 
 @interface NSNumberFormatter : NSFormatter <HKNumberFormatter, NSObservable, NSObserver> {
     NSMutableDictionary * _attributes;
-    unsigned int  _behavior;
-    int  _cacheGeneration;
-    unsigned int  _counter;
+    unsigned long long  _behavior;
+    long long  _cacheGeneration;
+    unsigned long long  _counter;
     struct __CFNumberFormatter { } * _formatter;
     NSRecursiveLock * _lock;
     void * _reserved;
-    unsigned long  _stateBitMask;
+    unsigned long long  _stateBitMask;
 }
 
-@property BOOL allowsFloats;
-@property BOOL alwaysShowsDecimalSeparator;
+@property bool allowsFloats;
+@property bool alwaysShowsDecimalSeparator;
 @property (copy) NSString *currencyCode;
 @property (copy) NSString *currencyDecimalSeparator;
 @property (copy) NSString *currencyGroupingSeparator;
@@ -23,24 +23,24 @@
 @property (copy) NSString *decimalSeparator;
 @property (readonly, copy) NSString *description;
 @property (copy) NSString *exponentSymbol;
-@property unsigned int formatWidth;
-@property unsigned int formatterBehavior;
-@property int formattingContext;
-@property BOOL generatesDecimalNumbers;
+@property unsigned long long formatWidth;
+@property unsigned long long formatterBehavior;
+@property long long formattingContext;
+@property bool generatesDecimalNumbers;
 @property (copy) NSString *groupingSeparator;
-@property unsigned int groupingSize;
-@property (readonly) unsigned int hash;
+@property unsigned long long groupingSize;
+@property (readonly) unsigned long long hash;
 @property (copy) NSString *internationalCurrencySymbol;
-@property (getter=isLenient) BOOL lenient;
+@property (getter=isLenient) bool lenient;
 @property (copy) NSLocale *locale;
 @property (copy) NSNumber *maximum;
-@property unsigned int maximumFractionDigits;
-@property unsigned int maximumIntegerDigits;
-@property unsigned int maximumSignificantDigits;
+@property unsigned long long maximumFractionDigits;
+@property unsigned long long maximumIntegerDigits;
+@property unsigned long long maximumSignificantDigits;
 @property (copy) NSNumber *minimum;
-@property unsigned int minimumFractionDigits;
-@property unsigned int minimumIntegerDigits;
-@property unsigned int minimumSignificantDigits;
+@property unsigned long long minimumFractionDigits;
+@property unsigned long long minimumIntegerDigits;
+@property unsigned long long minimumSignificantDigits;
 @property (copy) NSString *minusSign;
 @property (copy) NSNumber *multiplier;
 @property (copy) NSString *negativeFormat;
@@ -49,10 +49,10 @@
 @property (copy) NSString *negativeSuffix;
 @property (copy) NSString *nilSymbol;
 @property (copy) NSString *notANumberSymbol;
-@property unsigned int numberStyle;
+@property unsigned long long numberStyle;
 @property (copy) NSString *paddingCharacter;
-@property unsigned int paddingPosition;
-@property (getter=isPartialStringValidationEnabled) BOOL partialStringValidationEnabled;
+@property unsigned long long paddingPosition;
+@property (getter=isPartialStringValidationEnabled) bool partialStringValidationEnabled;
 @property (copy) NSString *perMillSymbol;
 @property (copy) NSString *percentSymbol;
 @property (copy) NSString *plusSign;
@@ -61,8 +61,8 @@
 @property (copy) NSString *positivePrefix;
 @property (copy) NSString *positiveSuffix;
 @property (copy) NSNumber *roundingIncrement;
-@property unsigned int roundingMode;
-@property unsigned int secondaryGroupingSize;
+@property unsigned long long roundingMode;
+@property unsigned long long secondaryGroupingSize;
 @property (readonly) Class superclass;
 @property (copy) NSDictionary *textAttributesForNegativeInfinity;
 @property (copy) NSDictionary *textAttributesForNegativeValues;
@@ -71,35 +71,35 @@
 @property (copy) NSDictionary *textAttributesForPositiveInfinity;
 @property (copy) NSDictionary *textAttributesForPositiveValues;
 @property (copy) NSDictionary *textAttributesForZero;
-@property BOOL usesGroupingSeparator;
-@property BOOL usesSignificantDigits;
+@property bool usesGroupingSeparator;
+@property bool usesSignificantDigits;
 @property (copy) NSString *zeroSymbol;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
-+ (unsigned int)defaultFormatterBehavior;
++ (unsigned long long)defaultFormatterBehavior;
 + (void)initialize;
-+ (id)localizedStringFromNumber:(id)arg1 numberStyle:(unsigned int)arg2;
-+ (void)setDefaultFormatterBehavior:(unsigned int)arg1;
++ (id)localizedStringFromNumber:(id)arg1 numberStyle:(unsigned long long)arg2;
++ (void)setDefaultFormatterBehavior:(unsigned long long)arg1;
 
 - (void*)__Keynote_NOOP;
-- (int)_cacheGenerationCount;
+- (long long)_cacheGenerationCount;
 - (void)_clearFormatter;
-- (BOOL)_hasSetCurrencyCode;
-- (BOOL)_hasSetCurrencySymbol;
-- (BOOL)_hasSetInternationalCurrencySymbol;
+- (bool)_hasSetCurrencyCode;
+- (bool)_hasSetCurrencySymbol;
+- (bool)_hasSetInternationalCurrencySymbol;
 - (void)_invalidateCache;
-- (BOOL)_mayDecorateAttributedStringForObjectValue:(id)arg1;
+- (bool)_mayDecorateAttributedStringForObjectValue:(id)arg1;
 - (void)_regenerateFormatter;
 - (void)_reset;
-- (void)_setUsesCharacterDirection:(BOOL)arg1;
-- (BOOL)_tracksCacheGenerationCount;
-- (BOOL)_usesCharacterDirection;
-- (BOOL)allowsFloats;
-- (BOOL)alwaysShowsDecimalSeparator;
+- (void)_setUsesCharacterDirection:(bool)arg1;
+- (bool)_tracksCacheGenerationCount;
+- (bool)_usesCharacterDirection;
+- (bool)allowsFloats;
+- (bool)alwaysShowsDecimalSeparator;
 - (id)attributedStringForObjectValue:(id)arg1 withDefaultAttributes:(id)arg2;
-- (BOOL)checkLocaleChange;
-- (BOOL)checkModify;
+- (bool)checkLocaleChange;
+- (bool)checkModify;
 - (void)clearPropertyBit;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currencyCode;
@@ -110,29 +110,29 @@
 - (id)decimalSeparator;
 - (void)encodeWithCoder:(id)arg1;
 - (id)exponentSymbol;
-- (unsigned int)formatWidth;
-- (unsigned int)formatterBehavior;
-- (int)formattingContext;
-- (BOOL)generatesDecimalNumbers;
+- (unsigned long long)formatWidth;
+- (unsigned long long)formatterBehavior;
+- (long long)formattingContext;
+- (bool)generatesDecimalNumbers;
 - (void*)getFormatter;
-- (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
-- (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 range:(inout struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 error:(out id*)arg4;
+- (bool)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
+- (bool)getObjectValue:(out id*)arg1 forString:(id)arg2 range:(inout struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg3 error:(out id*)arg4;
 - (id)groupingSeparator;
-- (unsigned int)groupingSize;
+- (unsigned long long)groupingSize;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)internationalCurrencySymbol;
-- (BOOL)isLenient;
-- (BOOL)isPartialStringValidationEnabled;
+- (bool)isLenient;
+- (bool)isPartialStringValidationEnabled;
 - (id)locale;
 - (id)maximum;
-- (unsigned int)maximumFractionDigits;
-- (unsigned int)maximumIntegerDigits;
-- (unsigned int)maximumSignificantDigits;
+- (unsigned long long)maximumFractionDigits;
+- (unsigned long long)maximumIntegerDigits;
+- (unsigned long long)maximumSignificantDigits;
 - (id)minimum;
-- (unsigned int)minimumFractionDigits;
-- (unsigned int)minimumIntegerDigits;
-- (unsigned int)minimumSignificantDigits;
+- (unsigned long long)minimumFractionDigits;
+- (unsigned long long)minimumIntegerDigits;
+- (unsigned long long)minimumSignificantDigits;
 - (id)minusSign;
 - (id)multiplier;
 - (id)negativeFormat;
@@ -142,9 +142,9 @@
 - (id)nilSymbol;
 - (id)notANumberSymbol;
 - (id)numberFromString:(id)arg1;
-- (unsigned int)numberStyle;
+- (unsigned long long)numberStyle;
 - (id)paddingCharacter;
-- (unsigned int)paddingPosition;
+- (unsigned long long)paddingPosition;
 - (id)perMillSymbol;
 - (id)percentSymbol;
 - (id)plusSign;
@@ -156,33 +156,33 @@
 - (void)resetCheckLocaleChange;
 - (void)resetCheckModify;
 - (id)roundingIncrement;
-- (unsigned int)roundingMode;
-- (unsigned int)secondaryGroupingSize;
-- (void)setAllowsFloats:(BOOL)arg1;
-- (void)setAlwaysShowsDecimalSeparator:(BOOL)arg1;
+- (unsigned long long)roundingMode;
+- (unsigned long long)secondaryGroupingSize;
+- (void)setAllowsFloats:(bool)arg1;
+- (void)setAlwaysShowsDecimalSeparator:(bool)arg1;
 - (void)setCurrencyCode:(id)arg1;
 - (void)setCurrencyDecimalSeparator:(id)arg1;
 - (void)setCurrencyGroupingSeparator:(id)arg1;
 - (void)setCurrencySymbol:(id)arg1;
 - (void)setDecimalSeparator:(id)arg1;
 - (void)setExponentSymbol:(id)arg1;
-- (void)setFormatWidth:(unsigned int)arg1;
-- (void)setFormatterBehavior:(unsigned int)arg1;
-- (void)setFormattingContext:(int)arg1;
-- (void)setGeneratesDecimalNumbers:(BOOL)arg1;
+- (void)setFormatWidth:(unsigned long long)arg1;
+- (void)setFormatterBehavior:(unsigned long long)arg1;
+- (void)setFormattingContext:(long long)arg1;
+- (void)setGeneratesDecimalNumbers:(bool)arg1;
 - (void)setGroupingSeparator:(id)arg1;
-- (void)setGroupingSize:(unsigned int)arg1;
+- (void)setGroupingSize:(unsigned long long)arg1;
 - (void)setInternationalCurrencySymbol:(id)arg1;
-- (void)setLenient:(BOOL)arg1;
+- (void)setLenient:(bool)arg1;
 - (void)setLocale:(id)arg1;
 - (void)setMaximum:(id)arg1;
-- (void)setMaximumFractionDigits:(unsigned int)arg1;
-- (void)setMaximumIntegerDigits:(unsigned int)arg1;
-- (void)setMaximumSignificantDigits:(unsigned int)arg1;
+- (void)setMaximumFractionDigits:(unsigned long long)arg1;
+- (void)setMaximumIntegerDigits:(unsigned long long)arg1;
+- (void)setMaximumSignificantDigits:(unsigned long long)arg1;
 - (void)setMinimum:(id)arg1;
-- (void)setMinimumFractionDigits:(unsigned int)arg1;
-- (void)setMinimumIntegerDigits:(unsigned int)arg1;
-- (void)setMinimumSignificantDigits:(unsigned int)arg1;
+- (void)setMinimumFractionDigits:(unsigned long long)arg1;
+- (void)setMinimumIntegerDigits:(unsigned long long)arg1;
+- (void)setMinimumSignificantDigits:(unsigned long long)arg1;
 - (void)setMinusSign:(id)arg1;
 - (void)setMultiplier:(id)arg1;
 - (void)setNegativeFormat:(id)arg1;
@@ -191,10 +191,10 @@
 - (void)setNegativeSuffix:(id)arg1;
 - (void)setNilSymbol:(id)arg1;
 - (void)setNotANumberSymbol:(id)arg1;
-- (void)setNumberStyle:(unsigned int)arg1;
+- (void)setNumberStyle:(unsigned long long)arg1;
 - (void)setPaddingCharacter:(id)arg1;
-- (void)setPaddingPosition:(unsigned int)arg1;
-- (void)setPartialStringValidationEnabled:(BOOL)arg1;
+- (void)setPaddingPosition:(unsigned long long)arg1;
+- (void)setPartialStringValidationEnabled:(bool)arg1;
 - (void)setPerMillSymbol:(id)arg1;
 - (void)setPercentSymbol:(id)arg1;
 - (void)setPlusSign:(id)arg1;
@@ -204,8 +204,8 @@
 - (void)setPositiveSuffix:(id)arg1;
 - (void)setPropertyBit;
 - (void)setRoundingIncrement:(id)arg1;
-- (void)setRoundingMode:(unsigned int)arg1;
-- (void)setSecondaryGroupingSize:(unsigned int)arg1;
+- (void)setRoundingMode:(unsigned long long)arg1;
+- (void)setSecondaryGroupingSize:(unsigned long long)arg1;
 - (void)setTextAttributesForNegativeInfinity:(id)arg1;
 - (void)setTextAttributesForNegativeValues:(id)arg1;
 - (void)setTextAttributesForNil:(id)arg1;
@@ -213,8 +213,8 @@
 - (void)setTextAttributesForPositiveInfinity:(id)arg1;
 - (void)setTextAttributesForPositiveValues:(id)arg1;
 - (void)setTextAttributesForZero:(id)arg1;
-- (void)setUsesGroupingSeparator:(BOOL)arg1;
-- (void)setUsesSignificantDigits:(BOOL)arg1;
+- (void)setUsesGroupingSeparator:(bool)arg1;
+- (void)setUsesSignificantDigits:(bool)arg1;
 - (void)setZeroSymbol:(id)arg1;
 - (id)stringForObjectValue:(id)arg1;
 - (id)stringFromNumber:(id)arg1;
@@ -225,79 +225,46 @@
 - (id)textAttributesForPositiveInfinity;
 - (id)textAttributesForPositiveValues;
 - (id)textAttributesForZero;
-- (BOOL)usesGroupingSeparator;
-- (BOOL)usesSignificantDigits;
+- (bool)usesGroupingSeparator;
+- (bool)usesSignificantDigits;
 - (id)zeroSymbol;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
++ (id)hk_heartRateNumberFormatter;
++ (id)hk_percentNumberFormatter;
 
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
-+ (id)mf_formatInteger:(int)arg1 withGrouping:(BOOL)arg2;
-+ (id)mf_formatUnsignedInteger:(unsigned int)arg1 withGrouping:(BOOL)arg2;
++ (id)mf_formatInteger:(long long)arg1 withGrouping:(bool)arg2;
++ (id)mf_formatUnsignedInteger:(unsigned long long)arg1 withGrouping:(bool)arg2;
 
 // Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
 
-- (id)stringFromInteger:(int)arg1;
-
-// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
-
-+ (id)FU_adaptiveLocalizedDistanceStringWithDistance:(double)arg1 distanceType:(int)arg2 unitStyle:(int)arg3 usedUnit:(int*)arg4;
-+ (double)FU_caloriesForEnergyBurnedInUserUnit:(double)arg1;
-+ (id)FU_decimalSeparator;
-+ (double)FU_distanceInDistanceUnit:(int)arg1 forDistanceInMeters:(double)arg2;
-+ (double)FU_distanceInMetersForDistanceInUserUnit:(double)arg1 distanceType:(int)arg2;
-+ (double)FU_distanceInUserDistanceUnitForDistanceInMeters:(double)arg1 distanceType:(int)arg2;
-+ (double)FU_energyBurnedInUserUnitForCalories:(double)arg1;
-+ (BOOL)FU_localeUsesMetricForPersonHeight;
-+ (id)FU_localizedDistinguishingShortEnergyStringForEnergyMetricType:(unsigned int)arg1;
-+ (id)FU_localizedLongActiveEnergyUnitString;
-+ (id)FU_localizedLongActiveEnergyUnitStringCapitalized:(BOOL)arg1;
-+ (id)FU_localizedLongActiveEnergyUnitStringUppercase:(BOOL)arg1;
-+ (id)FU_localizedLongUnitStringWithDistanceUnit:(int)arg1 distance:(double)arg2;
-+ (id)FU_localizedLongUnitStringWithDistanceUnit:(int)arg1 distance:(double)arg2 uppercase:(BOOL)arg3;
-+ (id)FU_localizedPaceStringForDuration:(double)arg1 distance:(id)arg2 paceFormatType:(int)arg3;
-+ (id)FU_localizedShortActiveEnergyUnitString;
-+ (id)FU_localizedShortUnitStringWithDistanceUnit:(int)arg1;
-+ (id)FU_localizedShortUnitStringWithDistanceUnit:(int)arg1 uppercase:(BOOL)arg2;
-+ (id)FU_localizedSpeedValueForDistance:(id)arg1 overTime:(double)arg2;
-+ (id)FU_localizedStringForPaceAsTimeInterval:(double)arg1 gateInvalidPaceValues:(BOOL)arg2;
-+ (id)FU_localizedStringWithActiveEnergy:(id)arg1;
-+ (id)FU_localizedStringWithActiveEnergy:(id)arg1 unitStyle:(int)arg2;
-+ (id)FU_localizedStringWithDistance:(double)arg1 distanceType:(int)arg2 unitStyle:(int)arg3;
-+ (id)FU_localizedStringWithDistance:(double)arg1 distanceUnit:(int)arg2 unitStyle:(int)arg3 decimalPrecision:(int)arg4;
-+ (id)FU_localizedStringWithEnergy:(id)arg1 energyType:(int)arg2 unitStyle:(int)arg3;
-+ (id)FU_localizedStringWithEnergyInCalories:(double)arg1 energyType:(int)arg2 unitStyle:(int)arg3;
-+ (id)FU_localizedWorkoutCount:(int)arg1;
-+ (id)FU_percentStringWithNumber:(id)arg1;
-+ (double)FU_roundCaloriesForDailyGoal:(double)arg1;
-+ (id)FU_stringForHeight:(long)arg1 withUnitString:(id)arg2;
-+ (id)FU_stringForHeightInInches:(long)arg1;
-+ (id)FU_stringWithNumber:(id)arg1 decimalPrecision:(int)arg2;
-+ (id)FU_stringWithTimeInterval:(double)arg1 formatType:(unsigned int)arg2;
-+ (int)FU_userDistanceUnitForLapLength;
-+ (id)_FU_doubleFractionNumberFormatter;
-+ (id)_FU_energyFormatter;
-+ (id)_FU_integerNumberFormatter;
-+ (id)_FU_integerPercentNumberFormatter;
-+ (id)_FU_lengthFormatterWithDecimalPrecision:(int)arg1 unitStyle:(int)arg2;
-+ (id)_FU_roundedDoubleFractionNumberFormatter;
-+ (id)_FU_roundedIntegerNumberFormatter;
-+ (id)_FU_roundedSingleFractionNumberFormatter;
-+ (id)_FU_singleFractionNumberFormatter;
-+ (id)_FU_zeroPaddedIntegerNumberFormatter;
-+ (id)_durationSeperator;
-+ (id)_energyBurnedUnitStringForUnit:(id)arg1 useShortString:(BOOL)arg2;
-+ (id)_localizedStringWithDistanceUnit:(int)arg1 distanceInDistanceUnit:(double)arg2 unitStyle:(int)arg3 withDecimalPrecision:(int)arg4;
+- (id)stringFromInteger:(long long)arg1;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
 + (id)gkRankFormatter;
-+ (id)gk_formatInteger:(int)arg1 withGrouping:(BOOL)arg2;
-+ (id)gk_formatUnsignedInteger:(unsigned int)arg1 withGrouping:(BOOL)arg2;
++ (id)gk_formatInteger:(long long)arg1 withGrouping:(bool)arg2;
++ (id)gk_formatUnsignedInteger:(unsigned long long)arg1 withGrouping:(bool)arg2;
 
 // Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
-- (BOOL)returnsUnitWithValueForDisplay;
-- (id)stringFromNumber:(id)arg1 dataUnit:(id)arg2 unitController:(id)arg3;
+- (bool)returnsUnitWithValueForDisplay;
+- (id)stringFromNumber:(id)arg1 displayType:(id)arg2 unitController:(id)arg3;
+
+// Image: /System/Library/PrivateFrameworks/PencilKit.framework/PencilKit
+
++ (id)pkaxLocalizedDouble:(double)arg1;
++ (id)pkaxLocalizedDouble:(double)arg1 maximumNumberOfDigitsAfterDecimalSeparator:(unsigned long long)arg2;
++ (id)pkaxLocalizedNumber:(id)arg1;
++ (id)pkaxLocalizedNumber:(id)arg1 maximumNumberOfDigitsAfterDecimalSeparator:(unsigned long long)arg2;
++ (id)pkaxLocalizedNumber:(id)arg1 numberStyle:(unsigned long long)arg2;
++ (id)pkaxLocalizedNumber:(id)arg1 numberStyle:(unsigned long long)arg2 maximumNumberOfDigitsAfterDecimalSeparator:(unsigned long long)arg3;
++ (id)pkaxLocalizedPercentage:(double)arg1;
++ (id)pkaxLocalizedPercentage:(double)arg1 maximumNumberOfDigitsAfterDecimalSeparator:(unsigned long long)arg2;
++ (id)pkaxLocalizedUnsignedInteger:(unsigned long long)arg1;
 
 // Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
 

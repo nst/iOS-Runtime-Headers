@@ -5,7 +5,7 @@
 @interface TSCH3DShaderAssignment : NSObject <TSCH3DShaderStatement> {
     TSCH3DShaderVariableLinkage * mAssignee;
     struct TSCH3DShaderVariableScopeType { 
-        unsigned int mValue; 
+        unsigned long long mValue; 
     }  mAssigneeScope;
     struct vector<TSCH3DShaderVariableScopeType, std::__1::allocator<TSCH3DShaderVariableScopeType> > { 
         struct TSCH3DShaderVariableScopeType {} *__begin_; 
@@ -16,20 +16,20 @@
     }  mDependeeScopes;
     NSArray * mDependees;
     struct TSCH3DShaderType { 
-        unsigned int mValue; 
+        unsigned long long mValue; 
     }  mLinkageType;
     TSCH3DShaderProgram * mProgram;
     NSString * mStatement;
 }
 
 @property (nonatomic, readonly) TSCH3DShaderVariableLinkage *assignee;
-@property (nonatomic, readonly) struct TSCH3DShaderVariableScopeType { unsigned int x1; } assigneeScope;
+@property (nonatomic, readonly) struct TSCH3DShaderVariableScopeType { unsigned long long x1; } assigneeScope;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) NSArray *dependees;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isLinked;
-@property (nonatomic) struct TSCH3DShaderType { unsigned int x1; } linkageType;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isLinked;
+@property (nonatomic) struct TSCH3DShaderType { unsigned long long x1; } linkageType;
 @property (nonatomic, readonly) NSString *string;
 @property (readonly) Class superclass;
 
@@ -38,25 +38,25 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)assignee;
-- (struct TSCH3DShaderVariableScopeType { unsigned int x1; })assigneeScope;
+- (struct TSCH3DShaderVariableScopeType { unsigned long long x1; })assigneeScope;
 - (void)dealloc;
 - (struct vector<TSCH3DShaderVariableScopeType, std::__1::allocator<TSCH3DShaderVariableScopeType> > { struct TSCH3DShaderVariableScopeType {} *x1; struct TSCH3DShaderVariableScopeType {} *x2; struct __compressed_pair<TSCH3DShaderVariableScopeType *, std::__1::allocator<TSCH3DShaderVariableScopeType> > { struct TSCH3DShaderVariableScopeType {} *x_3_1_1; } x3; }*)dependeeScopes;
 - (id)dependees;
 - (id)description;
-- (struct TSCH3DShaderType { unsigned int x1; })dominantDependeeLinkageType;
-- (id)expressionStringForType:(struct TSCH3DShaderType { unsigned int x1; })arg1;
-- (id)forceLinkageForType:(struct TSCH3DShaderType { unsigned int x1; })arg1;
+- (struct TSCH3DShaderType { unsigned long long x1; })dominantDependeeLinkageType;
+- (id)expressionStringForType:(struct TSCH3DShaderType { unsigned long long x1; })arg1;
+- (id)forceLinkageForType:(struct TSCH3DShaderType { unsigned long long x1; })arg1;
 - (id)initWithAssigneeLinkage:(id)arg1 statement:(id)arg2 dependees:(id)arg3 program:(id)arg4;
-- (BOOL)isLinked;
-- (struct TSCH3DShaderType { unsigned int x1; })linkageType;
+- (bool)isLinked;
+- (struct TSCH3DShaderType { unsigned long long x1; })linkageType;
 - (id)resolve;
-- (id)resolveDependeesWithPreviousType:(struct TSCH3DShaderType { unsigned int x1; })arg1;
-- (void)setAssigneeScopeToType:(struct TSCH3DShaderVariableScopeType { unsigned int x1; })arg1;
-- (void)setGeneratedForType:(struct TSCH3DShaderType { unsigned int x1; })arg1;
-- (void)setLinkageType:(struct TSCH3DShaderType { unsigned int x1; })arg1;
+- (id)resolveDependeesWithPreviousType:(struct TSCH3DShaderType { unsigned long long x1; })arg1;
+- (void)setAssigneeScopeToType:(struct TSCH3DShaderVariableScopeType { unsigned long long x1; })arg1;
+- (void)setGeneratedForType:(struct TSCH3DShaderType { unsigned long long x1; })arg1;
+- (void)setLinkageType:(struct TSCH3DShaderType { unsigned long long x1; })arg1;
 - (id)string;
-- (id)updateDependeesWithPreviousType:(struct TSCH3DShaderType { unsigned int x1; })arg1;
-- (BOOL)updateLinkageTypeAddVaryingToAdditions:(id)arg1;
+- (id)updateDependeesWithPreviousType:(struct TSCH3DShaderType { unsigned long long x1; })arg1;
+- (bool)updateLinkageTypeAddVaryingToAdditions:(id)arg1;
 - (id)updateVaryingAssignmentForLinkage:(id)arg1;
 - (id)varyingAssignmentForLinkage:(id)arg1;
 

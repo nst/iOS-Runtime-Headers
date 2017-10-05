@@ -4,24 +4,28 @@
 
 @interface SAMPLoadPredefinedQueue : SADomainCommand
 
-@property (nonatomic, copy) NSString *airplayRouteUID;
+@property (nonatomic) bool dryRun;
+@property (nonatomic, copy) NSArray *hashedRouteUIDs;
 @property (nonatomic) int mediaItemType;
-@property (nonatomic) BOOL shouldShuffle;
+@property (nonatomic) bool shouldShuffle;
 @property (nonatomic, copy) NSNumber *startPlaying;
 
 + (id)loadPredefinedQueue;
 + (id)loadPredefinedQueueWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)airplayRouteUID;
+- (bool)dryRun;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (id)hashedRouteUIDs;
 - (int)mediaItemType;
-- (BOOL)requiresResponse;
-- (void)setAirplayRouteUID:(id)arg1;
+- (bool)mutatingCommand;
+- (bool)requiresResponse;
+- (void)setDryRun:(bool)arg1;
+- (void)setHashedRouteUIDs:(id)arg1;
 - (void)setMediaItemType:(int)arg1;
-- (void)setShouldShuffle:(BOOL)arg1;
+- (void)setShouldShuffle:(bool)arg1;
 - (void)setStartPlaying:(id)arg1;
-- (BOOL)shouldShuffle;
+- (bool)shouldShuffle;
 - (id)startPlaying;
 
 @end

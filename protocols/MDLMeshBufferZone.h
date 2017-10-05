@@ -6,6 +6,6 @@
 @required
 
 - (<MDLMeshBufferAllocator> *)allocator;
-- (unsigned int)capacity;
+- (unsigned long long)capacity;
 
 @end

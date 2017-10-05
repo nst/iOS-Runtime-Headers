@@ -5,7 +5,7 @@
 
 @required
 
-+ (BOOL)reloadOnStylesheetChange;
++ (bool)reloadOnStylesheetChange;
 
 - (struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { struct StylesheetManager<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; })styleManager;
 

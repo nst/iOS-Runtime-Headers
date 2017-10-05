@@ -8,7 +8,7 @@
     NSObject<OS_dispatch_queue> * _clientQueue;
     HMThreadSafeMutableArrayCollection * _currentActions;
     HMDelegateCaller * _delegateCaller;
-    BOOL  _executionInProgress;
+    bool  _executionInProgress;
     HMHome * _home;
     NSDate * _lastExecutionDate;
     HMFMessageDispatcher * _msgDispatcher;
@@ -26,15 +26,16 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) HMDelegateCaller *delegateCaller;
 @property (readonly, copy) NSString *description;
-@property (getter=isExecuting, nonatomic, readonly) BOOL executing;
-@property (nonatomic) BOOL executionInProgress;
-@property (readonly) unsigned int hash;
+@property (getter=isExecuting, nonatomic, readonly) bool executing;
+@property (nonatomic) bool executionInProgress;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSDate *hf_dateAdded;
 @property (nonatomic, readonly, copy) NSString *hf_displayName;
-@property (nonatomic, readonly) BOOL hf_hasSetFavorite;
+@property (nonatomic, readonly) bool hf_hasSetFavorite;
 @property (nonatomic, readonly) <HFIconDescriptor> *hf_iconDescriptor;
-@property (nonatomic, readonly) BOOL hf_isFavorite;
-@property (nonatomic, readonly) BOOL hf_requiresDeviceUnlock;
+@property (nonatomic, readonly) bool hf_isFavorite;
+@property (nonatomic, readonly) bool hf_requiresDeviceUnlock;
+@property (nonatomic, readonly) bool hf_shouldShowInFavorites;
 @property (nonatomic) HMHome *home;
 @property (nonatomic, readonly, copy) NSDate *lastExecutionDate;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
@@ -48,7 +49,7 @@
 
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_addAction:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -61,7 +62,7 @@
 - (void)_handleActionUpdatedNotification:(id)arg1;
 - (void)_invalidate;
 - (id)_lookupActionWithInfo:(id)arg1;
-- (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
+- (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)_registerNotificationHandlers;
 - (void)_removeAction:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_unconfigure;
@@ -76,12 +77,12 @@
 - (void)dealloc;
 - (id)delegateCaller;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)executionInProgress;
+- (bool)executionInProgress;
 - (id)home;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1 type:(id)arg2 uuid:(id)arg3;
-- (BOOL)isExecuting;
+- (bool)isExecuting;
 - (id)lastExecutionDate;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
@@ -93,7 +94,7 @@
 - (void)setClientQueue:(id)arg1;
 - (void)setCurrentActions:(id)arg1;
 - (void)setDelegateCaller:(id)arg1;
-- (void)setExecutionInProgress:(BOOL)arg1;
+- (void)setExecutionInProgress:(bool)arg1;
 - (void)setHome:(id)arg1;
 - (void)setLastExecutionDate:(id)arg1;
 - (void)setMsgDispatcher:(id)arg1;
@@ -110,18 +111,19 @@
 
 - (id)hf_affectedCharacteristics;
 - (id)hf_affectedServices;
-- (BOOL)hf_affectsServiceWithIdentifier:(id)arg1;
+- (bool)hf_affectsServiceWithIdentifier:(id)arg1;
 - (id)hf_dateAdded;
 - (id)hf_displayName;
-- (BOOL)hf_hasSetFavorite;
+- (bool)hf_hasSetFavorite;
 - (id)hf_iconDescriptor;
-- (BOOL)hf_isAnonymous;
-- (BOOL)hf_isFavorite;
-- (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
-- (BOOL)hf_requiresDeviceUnlock;
+- (bool)hf_isAnonymous;
+- (bool)hf_isFavorite;
+- (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
+- (bool)hf_requiresDeviceUnlock;
 - (id)hf_serializedStateDumpRepresentation;
+- (bool)hf_shouldShowInFavorites;
 - (id)hf_updateDateAdded:(id)arg1;
 - (id)hf_updateIconDescriptor:(id)arg1;
-- (id)hf_updateIsFavorite:(BOOL)arg1;
+- (id)hf_updateIsFavorite:(bool)arg1;
 
 @end

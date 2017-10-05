@@ -13,9 +13,9 @@
     double  _wifidBootTimeDiff;
 }
 
-@property (nonatomic) BOOL hasPid;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) BOOL hasWifidBootTimeDiff;
+@property (nonatomic) bool hasPid;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic) bool hasWifidBootTimeDiff;
 @property (nonatomic) unsigned int pid;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) double wifidBootTimeDiff;
@@ -24,17 +24,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPid;
-- (BOOL)hasTimestamp;
-- (BOOL)hasWifidBootTimeDiff;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasPid;
+- (bool)hasTimestamp;
+- (bool)hasWifidBootTimeDiff;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)pid;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasPid:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setHasWifidBootTimeDiff:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasPid:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasWifidBootTimeDiff:(bool)arg1;
 - (void)setPid:(unsigned int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setWifidBootTimeDiff:(double)arg1;

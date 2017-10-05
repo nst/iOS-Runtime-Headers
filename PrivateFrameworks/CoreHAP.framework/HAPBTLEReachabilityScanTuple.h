@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPBTLEReachabilityScanTuple : NSObject {
+@interface HAPBTLEReachabilityScanTuple : HMFObject {
     id /* block */  _completion;
     NSString * _identifier;
     NSObject<OS_dispatch_queue> * _queue;

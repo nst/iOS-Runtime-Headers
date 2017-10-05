@@ -10,7 +10,7 @@
 - (id)description;
 - (id)generationTokens;
 - (id)initWithGenerationTokens:(id)arg1;
-- (unsigned int)requestType;
+- (unsigned long long)requestType;
 - (void)setGenerationTokens:(id)arg1;
 
 @end

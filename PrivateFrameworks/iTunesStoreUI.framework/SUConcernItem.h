@@ -3,20 +3,20 @@
  */
 
 @interface SUConcernItem : NSObject {
-    BOOL  _default;
+    bool  _default;
     NSString * _identifier;
     NSString * _title;
 }
 
-@property (getter=isDefaultConcern, nonatomic) BOOL defaultConcern;
+@property (getter=isDefaultConcern, nonatomic) bool defaultConcern;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSString *title;
 
 - (void)dealloc;
 - (id)identifier;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isDefaultConcern;
-- (void)setDefaultConcern:(BOOL)arg1;
+- (bool)isDefaultConcern;
+- (void)setDefaultConcern:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;

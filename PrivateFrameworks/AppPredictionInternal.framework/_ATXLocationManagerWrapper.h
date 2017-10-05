@@ -2,33 +2,31 @@
    Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
  */
 
-@interface _ATXLocationManagerWrapper : NSObject <_ATXLocationManagerWrapperProtocol> {
-    RTLocationOfInterest * _currentLOI;
+@interface _ATXLocationManagerWrapper : NSObject <CLLocationManagerDelegate, _ATXLocationManagerWrapperProtocol> {
+    _ATXLocation * _currentLOI;
     CLLocation * _currentLocation;
     NSDate * _lastLOIUpdateTimestamp;
     CLLocationManager * _locationManager;
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
-    }  _lock;
     RTRoutineManager * _routineManager;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (retain) CLLocationManager *locationManager;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)_getCurrentLocation;
+- (void)_updateCurrentLocationOfInterest;
 - (void)clearLocationOfInterest;
-- (void)fetchAllLocationsOfInterestWithHandler:(id /* block */)arg1;
-- (id)fetchLocationOfInterestAtCurrentLocation;
-- (id)getCurrentLocation;
+- (void)fetchAllLocationsOfInterest:(id /* block */)arg1;
 - (id)init;
-- (id)locationFromVisit:(id)arg1;
+- (id)locationManager;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
-- (void)updateCurrentLocationOfInterest;
+- (id)locationOfInterestAtCurrentLocation;
+- (void)setLocationManager:(id)arg1;
 
 @end

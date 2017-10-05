@@ -3,36 +3,37 @@
  */
 
 @interface WBSTabDialogInformation : NSObject {
-    BOOL  _blockingWebProcess;
-    unsigned int  _cancellationExceptions;
+    bool  _blockingWebProcess;
+    NSArray * _cancellationExemptions;
     id /* block */  _dismissalBlock;
-    BOOL  _dismissed;
-    BOOL  _isInvokingPresentationBlock;
+    bool  _dismissed;
+    bool  _isInvokingPresentationBlock;
     id /* block */  _presentationBlock;
-    BOOL  _presented;
+    bool  _presented;
     struct { 
         int webProcessID; 
-        unsigned int tabID; 
+        unsigned long long tabID; 
     }  _slot;
 }
 
-@property (getter=isBlockingWebProcess, nonatomic, readonly) BOOL blockingWebProcess;
-@property (nonatomic) unsigned int cancellationExceptions;
-@property (getter=isDismissed, nonatomic, readonly) BOOL dismissed;
-@property (getter=isPresented, nonatomic, readonly) BOOL presented;
-@property (nonatomic) struct { int x1; unsigned int x2; } slot;
+@property (getter=isBlockingWebProcess, nonatomic, readonly) bool blockingWebProcess;
+@property (nonatomic, copy) NSArray *cancellationExemptions;
+@property (getter=isDismissed, nonatomic, readonly) bool dismissed;
+@property (getter=isPresented, nonatomic, readonly) bool presented;
+@property (nonatomic) struct { int x1; unsigned long long x2; } slot;
 
 - (void).cxx_destruct;
-- (unsigned int)cancellationExceptions;
+- (id)cancellationExemptions;
 - (id)description;
 - (void)dismissWithResponse:(id)arg1;
-- (id)initWithPresentationBlock:(id /* block */)arg1 dismissalBlock:(id /* block */)arg2 blocksWebProcessUntilDismissed:(BOOL)arg3;
-- (BOOL)isBlockingWebProcess;
-- (BOOL)isDismissed;
-- (BOOL)isPresented;
+- (id)initWithPresentationBlock:(id /* block */)arg1 dismissalBlock:(id /* block */)arg2 blocksWebProcessUntilDismissed:(bool)arg3;
+- (bool)isBlockingWebProcess;
+- (bool)isDismissed;
+- (bool)isExemptFromCancellationInContext:(id)arg1;
+- (bool)isPresented;
 - (void)presentIfNeeded;
-- (void)setCancellationExceptions:(unsigned int)arg1;
-- (void)setSlot:(struct { int x1; unsigned int x2; })arg1;
-- (struct { int x1; unsigned int x2; })slot;
+- (void)setCancellationExemptions:(id)arg1;
+- (void)setSlot:(struct { int x1; unsigned long long x2; })arg1;
+- (struct { int x1; unsigned long long x2; })slot;
 
 @end

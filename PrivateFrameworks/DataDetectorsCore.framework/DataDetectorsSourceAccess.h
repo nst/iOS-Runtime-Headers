@@ -8,12 +8,12 @@
     }  _auditToken;
     int  _clientpid;
     unsigned int  _clientuid;
-    BOOL  _privacySystemWriteEntitled;
-    long  _privacySystemWriteEntitlementChecked;
-    BOOL  _privacyUserReadEntitled;
-    long  _privacyUserReadEntitlementChecked;
-    BOOL  _privacyUserWriteEntitled;
-    long  _privacyUserWriteEntitlementChecked;
+    bool  _privacySystemWriteEntitled;
+    long long  _privacySystemWriteEntitlementChecked;
+    bool  _privacyUserReadEntitled;
+    long long  _privacyUserReadEntitlementChecked;
+    bool  _privacyUserWriteEntitled;
+    long long  _privacyUserWriteEntitlementChecked;
 }
 
 @property struct { unsigned int x1[8]; } auditToken;
@@ -21,15 +21,15 @@
 @property unsigned int userIdentifier;
 
 - (struct { unsigned int x1[8]; })auditToken;
-- (BOOL)clientCanWriteSource:(int)arg1;
+- (bool)clientCanWriteSource:(int)arg1;
 - (void)fileForSourceRead:(id)arg1 withReply:(id /* block */)arg2;
 - (id)fileHandleForSourceRead:(int)arg1;
 - (void)filesForSourceRead:(id)arg1 withReply:(id /* block */)arg2;
-- (BOOL)privacySystemWriteEntitled;
-- (BOOL)privacyUserReadEntitled;
-- (BOOL)privacyUserWriteEntitled;
+- (bool)privacySystemWriteEntitled;
+- (bool)privacyUserReadEntitled;
+- (bool)privacyUserWriteEntitled;
 - (int)processIdentifier;
-- (BOOL)pushSourcesContent:(id)arg1 forSource:(int)arg2 signature:(id)arg3;
+- (bool)pushSourcesContent:(id)arg1 forSource:(int)arg2 signature:(id)arg3;
 - (void)setAuditToken:(struct { unsigned int x1[8]; })arg1;
 - (void)setProcessIdentifier:(int)arg1;
 - (void)setUserIdentifier:(unsigned int)arg1;

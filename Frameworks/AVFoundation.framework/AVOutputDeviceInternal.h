@@ -3,8 +3,14 @@
  */
 
 @interface AVOutputDeviceInternal : NSObject {
-    struct OpaqueFigEndpoint { } * _figEndpoint;
-    AVWeakReference * _weakReference;
+    NSString * ID;
+    NSData * MACAddress;
+    unsigned long long  deviceFeatures;
+    long long  deviceSubType;
+    long long  deviceType;
+    <AVOutputDeviceImpl> * impl;
+    NSString * modelID;
+    NSString * name;
 }
 
 @end

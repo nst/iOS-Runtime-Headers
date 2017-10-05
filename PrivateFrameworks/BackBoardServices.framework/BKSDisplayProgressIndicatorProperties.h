@@ -4,32 +4,32 @@
 
 @interface BKSDisplayProgressIndicatorProperties : NSObject <BSDescriptionProviding, NSSecureCoding> {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _position;
-    int  _style;
+    long long  _style;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } position;
-@property (nonatomic, readonly) int style;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } position;
+@property (nonatomic, readonly) long long style;
 @property (readonly) Class superclass;
 
-+ (id)progressIndicatorWithStyle:(int)arg1 position:(struct CGPoint { float x1; float x2; })arg2;
-+ (BOOL)supportsSecureCoding;
++ (id)progressIndicatorWithStyle:(long long)arg1 position:(struct CGPoint { double x1; double x2; })arg2;
++ (bool)supportsSecureCoding;
 
-- (id)_initWithStyle:(int)arg1 position:(struct CGPoint { float x1; float x2; })arg2;
+- (id)_initWithStyle:(long long)arg1 position:(struct CGPoint { double x1; double x2; })arg2;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (struct CGPoint { float x1; float x2; })position;
-- (int)style;
+- (bool)isEqual:(id)arg1;
+- (struct CGPoint { double x1; double x2; })position;
+- (long long)style;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
 

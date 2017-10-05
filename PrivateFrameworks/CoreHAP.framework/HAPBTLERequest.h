@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPBTLERequest : NSObject {
+@interface HAPBTLERequest : HMFObject {
     NSData * _body;
     HAPCharacteristic * _characteristic;
     HAPBTLEControlOutputStream * _controlOutputStream;
-    BOOL  _encrypted;
-    BOOL  _finished;
+    bool  _encrypted;
+    bool  _finished;
     HAPBTLETransactionIdentifier * _identifier;
     HMFBlockOperation * _operation;
     HMFTimer * _responseTimer;
@@ -19,8 +19,8 @@
 @property (nonatomic, readonly, copy) NSData *body;
 @property (nonatomic, readonly) HAPCharacteristic *characteristic;
 @property (nonatomic, retain) HAPBTLEControlOutputStream *controlOutputStream;
-@property (getter=isEncrypted, nonatomic, readonly) BOOL encrypted;
-@property (getter=isFinished, nonatomic, readonly) BOOL finished;
+@property (getter=isEncrypted, nonatomic, readonly) bool encrypted;
+@property (getter=isFinished, nonatomic, readonly) bool finished;
 @property (nonatomic, readonly) HAPBTLETransactionIdentifier *identifier;
 @property (nonatomic) HMFBlockOperation *operation;
 @property (nonatomic, retain) HMFTimer *responseTimer;
@@ -36,12 +36,12 @@
 - (id)controlOutputStream;
 - (id)debugDescription;
 - (id)description;
-- (id)descriptionWithPointer:(BOOL)arg1;
+- (id)descriptionWithPointer:(bool)arg1;
 - (id)identifier;
 - (id)init;
-- (id)initWithCharacteristic:(id)arg1 requestType:(unsigned char)arg2 bodyData:(id)arg3 shouldEncrypt:(BOOL)arg4 timeoutInterval:(double)arg5;
-- (BOOL)isEncrypted;
-- (BOOL)isFinished;
+- (id)initWithCharacteristic:(id)arg1 requestType:(unsigned char)arg2 bodyData:(id)arg3 shouldEncrypt:(bool)arg4 timeoutInterval:(double)arg5;
+- (bool)isEncrypted;
+- (bool)isFinished;
 - (id)operation;
 - (id)responseTimer;
 - (id)serialize;

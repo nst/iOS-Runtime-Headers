@@ -5,11 +5,13 @@
 @interface _HKSleepQueryResultBuilder : NSObject {
     NSDateInterval * _resultInterval;
     NSMutableDictionary * _samplesByCategoryValue;
+    NSMutableDictionary * _samplesBySource;
     NSArray * _sourceOrder;
 }
 
 - (void).cxx_destruct;
-- (id)_categorySampleBufferForCategoryValue:(int)arg1;
+- (id)_categorySampleBufferForCategoryValue:(long long)arg1;
+- (id)_categorySampleBufferForSource:(id)arg1;
 - (id)_createDateIntervalsFromSamples:(id)arg1 startDate:(id)arg2 endDate:(id)arg3;
 - (id)_organizeSamplesBySource:(id)arg1;
 - (void)addSleepSamples:(id)arg1;

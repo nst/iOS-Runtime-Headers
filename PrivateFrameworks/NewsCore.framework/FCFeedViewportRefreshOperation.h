@@ -28,7 +28,7 @@
 - (void)setResultDiff:(id)arg1;
 - (void)setResultViewport:(id)arg1;
 - (void)setViewport:(id)arg1;
-- (BOOL)validateOperation;
+- (bool)validateOperation;
 - (id)viewport;
 
 @end

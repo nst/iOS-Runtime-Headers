@@ -4,6 +4,6 @@
 
 @interface MSStickerBrowserViewLayoutSpeciPhonePlus : MSStickerBrowserViewLayoutSpeciPhone
 
-- (float)minimumInteritemSpacing;
+- (double)minimumInteritemSpacing;
 
 @end

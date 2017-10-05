@@ -10,18 +10,17 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly, retain) NSOrderedSet *layers;
 @property (readonly) Class superclass;
 
 - (void)_enumerateObserversWithBlock:(id /* block */)arg1;
-- (void)_observer_didRepositionLayer:(id)arg1 fromIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3;
+- (void)_observer_didRepositionLayer:(id)arg1 fromIndex:(unsigned long long)arg2 toIndex:(unsigned long long)arg3;
 - (void)_observer_didStopTrackingLayers;
 - (void)_observer_willStartTrackingLayers;
 - (void)addLayer:(id)arg1;
 - (void)addObserver:(id)arg1;
-- (id)contexts;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

@@ -7,9 +7,9 @@
 
 + (id)get;
 
-- (NSString *)getLocalizedCallerIdLabelForRecord:(const void*)arg1 withMultiValueId:(NSString *)arg2 withCallerIdIsEmail:(BOOL)arg3;
-- (NSString *)getPersonsNameForRecord:(const void*)arg1;
-- (NSDictionary *)getRecordId:(NSString *)arg1 andISOCountryCode:(NSString *)arg2 isEmail:(BOOL)arg3;
-- (BOOL)isABContactASuggestion;
+- (NSString *)getLocalizedCallerIdLabelForContact:(CNContact *)arg1 forCallerId:(NSString *)arg2 withCallerIdIsEmail:(bool)arg3;
+- (NSString *)getPersonsNameForContact:(CNContact *)arg1;
+- (NSDictionary *)getRecordId:(NSString *)arg1 isEmail:(bool)arg2;
+- (bool)isABContactASuggestion;
 
 @end

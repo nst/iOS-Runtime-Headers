@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptPopOverNativeObject : SUScriptNativeObject {
-    BOOL  _redisplayAfterRotation;
+    bool  _redisplayAfterRotation;
     UIBarButtonItem * _sourceButtonItem;
     SUDOMElement * _sourceDOMElement;
 }
@@ -11,7 +11,7 @@
 @property (nonatomic, retain) UIBarButtonItem *sourceButtonItem;
 @property (nonatomic, retain) SUDOMElement *sourceDOMElement;
 
-- (BOOL)_isAffectedByWindowNotification:(id)arg1;
+- (bool)_isAffectedByWindowNotification:(id)arg1;
 - (void)_windowDidRotateNotification:(id)arg1;
 - (void)_windowWillRotateNotification:(id)arg1;
 - (void)dealloc;

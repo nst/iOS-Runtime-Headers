@@ -4,9 +4,9 @@
 
 @interface MPSwipableView : UIView <UIGestureRecognizerDelegate> {
     MPActivityGestureRecognizer * _activityGestureRecognizer;
-    int  _enabledGestureTypes;
+    long long  _enabledGestureTypes;
     UIPinchGestureRecognizer * _pinchGestureRecognizer;
-    int  _simultaneousGestureTypes;
+    long long  _simultaneousGestureTypes;
     <MPSwipableViewDelegate> * _swipeDelegate;
     MPSwipeGestureRecognizer * _swipeGestureRecognizer;
     MPTapGestureRecognizer * _tapGestureRecognizer;
@@ -14,9 +14,9 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) int enabledGestureTypes;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int simultaneousGestureTypes;
+@property (nonatomic) long long enabledGestureTypes;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long simultaneousGestureTypes;
 @property (readonly) Class superclass;
 @property (nonatomic) <MPSwipableViewDelegate> *swipeDelegate;
 
@@ -29,15 +29,15 @@
 - (void)addGestureRecognizer:(id)arg1;
 - (void)dealloc;
 - (void)didMoveToSuperview;
-- (int)enabledGestureTypes;
-- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (long long)enabledGestureTypes;
+- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)removeGestureRecognizer:(id)arg1;
-- (void)setEnabledGestureTypes:(int)arg1;
-- (void)setSimultaneousGestureTypes:(int)arg1;
+- (void)setEnabledGestureTypes:(long long)arg1;
+- (void)setSimultaneousGestureTypes:(long long)arg1;
 - (void)setSwipeDelegate:(id)arg1;
-- (int)simultaneousGestureTypes;
+- (long long)simultaneousGestureTypes;
 - (id)swipeDelegate;
 - (void)willMoveToSuperview:(id)arg1;
 - (void)willMoveToWindow:(id)arg1;

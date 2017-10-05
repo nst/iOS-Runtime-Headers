@@ -10,8 +10,8 @@
 
 - (void).cxx_destruct;
 - (id)artworkVariants;
-- (id)bestArtworkVariantForSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)bestArtworkVariantOfType:(int)arg1 forSize:(struct CGSize { float x1; float x2; })arg2;
+- (id)bestArtworkVariantForSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)bestArtworkVariantOfType:(long long)arg1 forSize:(struct CGSize { double x1; double x2; })arg2;
 - (id)initWithArtworkDictionary:(id)arg1;
 
 @end

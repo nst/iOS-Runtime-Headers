@@ -13,7 +13,7 @@
                 } __first_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, RemoteAUHandleInfo>, std::__1::less<unsigned int>, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __pair3_; 
         } __tree_; 
     }  mAUHandlesToInfo;
@@ -27,7 +27,7 @@
                 } __first_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, AUProcessingBlock>, std::__1::less<unsigned int>, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __pair3_; 
         } __tree_; 
     }  mBlockHandlesToMethods;
@@ -39,7 +39,6 @@
         } __ptr_; 
     }  mLock;
     int  mNotifyToken;
-    BOOL  mPrevRegistrarNeeded;
     <AUPBRegistrarHosting> * mProxyInterface;
     NSXPCConnection * mRegistrarConnection;
     struct unique_ptr<TestAUProcessingBlock, std::__1::default_delete<TestAUProcessingBlock> > { 
@@ -47,12 +46,12 @@
             struct TestAUProcessingBlock {} *__first_; 
         } __ptr_; 
     }  mTestBlock;
-    BOOL  mValidToken;
+    bool  mValidToken;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
@@ -67,28 +66,28 @@
 - (id)autorelease;
 - (void)blockListChanged;
 - (void)checkConnectRegistrar;
-- (void)copyProcessingBlock:(unsigned int)arg1 property:(unsigned long)arg2 intoReply:(id /* block */)arg3;
+- (void)copyProcessingBlock:(unsigned int)arg1 property:(unsigned int)arg2 intoReply:(id /* block */)arg3;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)getAudioUnit:(unsigned int)arg1 parameter:(unsigned long)arg2 onScope:(unsigned long)arg3 element:(unsigned long)arg4 inReply:(id /* block */)arg5;
-- (void)getAudioUnit:(unsigned int)arg1 property:(unsigned long)arg2 onScope:(unsigned long)arg3 element:(unsigned long)arg4 inReply:(id /* block */)arg5;
-- (void)getAudioUnit:(unsigned int)arg1 propertyInfo:(unsigned long)arg2 onScope:(unsigned long)arg3 element:(unsigned long)arg4 inReply:(id /* block */)arg5;
+- (void)getAudioUnit:(unsigned int)arg1 parameter:(unsigned int)arg2 onScope:(unsigned int)arg3 element:(unsigned int)arg4 inReply:(id /* block */)arg5;
+- (void)getAudioUnit:(unsigned int)arg1 property:(unsigned int)arg2 onScope:(unsigned int)arg3 element:(unsigned int)arg4 inReply:(id /* block */)arg5;
+- (void)getAudioUnit:(unsigned int)arg1 propertyInfo:(unsigned int)arg2 onScope:(unsigned int)arg3 element:(unsigned int)arg4 inReply:(id /* block */)arg5;
 - (unsigned int)handleFromAUPBRef:(struct OpaqueAUPB { }*)arg1;
 - (void)handleRegistrarCrash;
 - (id)init;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (void)processingBlock:(struct OpaqueAUPB { }*)arg1 properties:(const unsigned int*)arg2 count:(unsigned long)arg3 changedWithQualifierData:(void*)arg4 length:(unsigned long)arg5;
-- (void)processingBlockRef:(struct OpaqueAUPB { }*)arg1 propertyChanged:(unsigned long)arg2;
-- (long)registerAU:(struct OpaqueRemoteAudioUnit { }*)arg1 inBlock:(struct OpaqueAUPB { }*)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)processingBlock:(struct OpaqueAUPB { }*)arg1 properties:(const unsigned int*)arg2 count:(unsigned int)arg3 changedWithQualifierData:(void*)arg4 length:(unsigned int)arg5;
+- (void)processingBlockRef:(struct OpaqueAUPB { }*)arg1 propertyChanged:(unsigned int)arg2;
+- (int)registerAU:(struct OpaqueRemoteAudioUnit { }*)arg1 inBlock:(struct OpaqueAUPB { }*)arg2;
 - (struct OpaqueAUPB { }*)registerBlock:(const struct AUPBMethods { unsigned int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); }*)arg1 withUserData:(void*)arg2;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
-- (void)setAudioUnit:(unsigned int)arg1 parameter:(unsigned long)arg2 onScope:(unsigned long)arg3 element:(unsigned long)arg4 value:(float)arg5 withReply:(id /* block */)arg6;
-- (void)setAudioUnit:(unsigned int)arg1 property:(unsigned long)arg2 onScope:(unsigned long)arg3 element:(unsigned long)arg4 value:(id)arg5 withReply:(id /* block */)arg6;
-- (void)setProcessingBlock:(unsigned int)arg1 property:(unsigned long)arg2 value:(id)arg3 withReply:(id /* block */)arg4;
+- (unsigned long long)retainCount;
+- (void)setAudioUnit:(unsigned int)arg1 parameter:(unsigned int)arg2 onScope:(unsigned int)arg3 element:(unsigned int)arg4 value:(float)arg5 withReply:(id /* block */)arg6;
+- (void)setAudioUnit:(unsigned int)arg1 property:(unsigned int)arg2 onScope:(unsigned int)arg3 element:(unsigned int)arg4 value:(id)arg5 withReply:(id /* block */)arg6;
+- (void)setProcessingBlock:(unsigned int)arg1 property:(unsigned int)arg2 value:(id)arg3 withReply:(id /* block */)arg4;
 - (void)startRegistrarConnection;
-- (long)unregisterAU:(struct OpaqueRemoteAudioUnit { }*)arg1;
-- (long)unregisterBlock:(struct OpaqueAUPB { }*)arg1;
+- (int)unregisterAU:(struct OpaqueRemoteAudioUnit { }*)arg1;
+- (int)unregisterBlock:(struct OpaqueAUPB { }*)arg1;
 
 @end

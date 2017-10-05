@@ -3,13 +3,13 @@
  */
 
 @interface GQHWrapSandbag : NSObject {
-    BOOL  mFloatsLeft;
+    bool  mFloatsLeft;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  mSize;
 }
 
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 floatsLeft:(BOOL)arg2;
+- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 floatsLeft:(bool)arg2;
 
 @end

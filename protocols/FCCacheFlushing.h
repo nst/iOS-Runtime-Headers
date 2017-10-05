@@ -5,6 +5,6 @@
 
 @required
 
-- (void)enableFlushingWithFlushingThreshold:(unsigned int)arg1;
+- (void)enableFlushingWithFlushingThreshold:(unsigned long long)arg1;
 
 @end

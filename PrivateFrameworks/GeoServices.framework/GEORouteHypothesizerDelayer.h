@@ -10,6 +10,7 @@
 
 + (void)checkin;
 
+- (void).cxx_destruct;
 - (void)_setNextHypothesizer:(id)arg1;
 - (void)_startValidHypothesizers;
 - (void)dealloc;

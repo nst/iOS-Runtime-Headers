@@ -15,14 +15,14 @@
 + (id)valueRangeWithMinValue:(id)arg1 maxValue:(id)arg2;
 
 - (void).cxx_destruct;
-- (BOOL)containsValue:(id)arg1;
+- (bool)containsValue:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)endDate;
-- (unsigned int)hash;
-- (BOOL)hk_animatable;
-- (id)hk_midPointToValue:(id)arg1 percentage:(float)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)hk_animatable;
+- (id)hk_midPointToValue:(id)arg1 percentage:(double)arg2;
+- (bool)isEqual:(id)arg1;
 - (id)maxValue;
 - (id)minValue;
 - (void)setMaxValue:(id)arg1;

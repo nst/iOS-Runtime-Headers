@@ -12,13 +12,13 @@
                 } __first_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::__map_value_compare<TSUCellCoord, std::__1::__value_type<TSUCellCoord, SFUtility::ObjcSharedPtr<NSObject> >, std::__1::less<TSUCellCoord>, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __pair3_; 
         } __tree_; 
     }  _pageCoordinateDictionary;
     struct _opaque_pthread_rwlock_t { 
-        long __sig; 
-        BOOL __opaque[124]; 
+        long long __sig; 
+        BOOL __opaque[192]; 
     }  _rwlock;
 }
 

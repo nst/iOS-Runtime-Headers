@@ -9,7 +9,7 @@
     id /* block */  _disconnectHandler;
     NSObject<OS_dispatch_queue> * _eventQueue;
     id /* block */  _messageHandler;
-    BOOL  _ownsQueue;
+    bool  _ownsQueue;
 }
 
 @property (readonly) NSString *bundleID;

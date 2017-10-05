@@ -4,45 +4,46 @@
 
 @interface MPRestrictionsMonitor : NSObject <MCProfileConnectionObserver> {
     NSObject<OS_dispatch_queue> * _accessQueue;
-    BOOL  _allowsAccountModification;
-    BOOL  _allowsDeletion;
-    BOOL  _allowsExplicitContent;
-    BOOL  _allowsRadioPurchases;
-    BOOL  _allowsStorePurchases;
+    bool  _allowsAccountModification;
+    bool  _allowsDeletion;
+    bool  _allowsExplicitContent;
+    bool  _allowsRadioPurchases;
+    bool  _allowsStorePurchases;
     NSMutableDictionary * _cachedSettings;
     MCProfileConnection * _connection;
 }
 
-@property (nonatomic, readonly) BOOL allowsAccountModification;
-@property (nonatomic, readonly) BOOL allowsDeletion;
-@property (nonatomic, readonly) BOOL allowsExplicitContent;
-@property (nonatomic, readonly) BOOL allowsRadioPurchases;
-@property (nonatomic, readonly) BOOL allowsStorePurchases;
+@property (nonatomic, readonly) bool allowsAccountModification;
+@property (nonatomic, readonly) bool allowsDeletion;
+@property (nonatomic, readonly) bool allowsExplicitContent;
+@property (nonatomic, readonly) bool allowsRadioPurchases;
+@property (nonatomic, readonly) bool allowsStorePurchases;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL hasRestrictionsPasscode;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int maximumMovieRating;
-@property (nonatomic, readonly) int maximumTVShowRating;
+@property (nonatomic, readonly) bool hasRestrictionsPasscode;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long maximumMovieRating;
+@property (nonatomic, readonly) long long maximumTVShowRating;
 @property (readonly) Class superclass;
 
 + (id)sharedRestrictionsMonitor;
 
 - (void).cxx_destruct;
 - (void)_cacheValue:(id)arg1 forSetting:(id)arg2;
-- (BOOL)_isRunningInStoreDemoMode;
-- (void)_updateWithCanPostNotifications:(BOOL)arg1;
-- (BOOL)allowsAccountModification;
-- (BOOL)allowsDeletion;
-- (BOOL)allowsExplicitContent;
-- (BOOL)allowsRadioPurchases;
-- (BOOL)allowsStorePurchases;
+- (bool)_isRunningInStoreDemoMode;
+- (void)_updateWithCanPostNotifications:(bool)arg1;
+- (bool)allowsAccountModification;
+- (bool)allowsDeletion;
+- (bool)allowsExplicitContent;
+- (bool)allowsRadioPurchases;
+- (bool)allowsStorePurchases;
 - (void)dealloc;
 - (id)effectiveValueForSetting:(id)arg1;
-- (BOOL)hasRestrictionsPasscode;
+- (bool)hasRestrictionsPasscode;
 - (id)init;
-- (int)maximumMovieRating;
-- (int)maximumTVShowRating;
+- (long long)maximumMovieRating;
+- (long long)maximumTVShowRating;
 - (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
+- (void)synchronizeWithCompletionHandler:(id /* block */)arg1;
 
 @end

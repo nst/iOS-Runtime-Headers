@@ -3,12 +3,12 @@
  */
 
 @interface MPAdvanceRepeatModeCommandEvent : MPRemoteCommandEvent {
-    BOOL  _preservesRepeatMode;
+    bool  _preservesRepeatMode;
 }
 
-@property (nonatomic, readonly) BOOL preservesRepeatMode;
+@property (nonatomic, readonly) bool preservesRepeatMode;
 
 - (id)initWithCommand:(id)arg1 mediaRemoteType:(unsigned int)arg2 options:(id)arg3;
-- (BOOL)preservesRepeatMode;
+- (bool)preservesRepeatMode;
 
 @end

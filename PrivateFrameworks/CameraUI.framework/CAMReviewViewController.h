@@ -18,7 +18,7 @@
 @property (nonatomic, readonly) PUReviewDataSource *_reviewDataSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) <CAMCameraReviewDelegate> *reviewDelegate;
 @property (readonly) Class superclass;
 
@@ -28,9 +28,9 @@
 - (id)_internalReviewMediaProvider;
 - (id)_internalReviewViewController;
 - (id)_reviewDataSource;
-- (BOOL)assetExplorerReviewScreenViewController:(id)arg1 canPerformActionType:(unsigned int)arg2 onAsset:(id)arg3 inAssetCollection:(id)arg4;
+- (bool)assetExplorerReviewScreenViewController:(id)arg1 canPerformActionType:(unsigned long long)arg2 onAsset:(id)arg3 inAssetCollection:(id)arg4;
 - (void)assetExplorerReviewScreenViewController:(id)arg1 didPressDoneWithSelectedAssetUUIDs:(id)arg2 livePhotoDisabledAssetUUIDs:(id)arg3 substituteAssetsByUUID:(id)arg4;
-- (BOOL)assetExplorerReviewScreenViewController:(id)arg1 shouldEnableActionType:(unsigned int)arg2 onAsset:(id)arg3 inAssetCollection:(id)arg4;
+- (bool)assetExplorerReviewScreenViewController:(id)arg1 shouldEnableActionType:(unsigned long long)arg2 onAsset:(id)arg3 inAssetCollection:(id)arg4;
 - (void)assetExplorerReviewScreenViewControllerDidPressCancel:(id)arg1;
 - (void)assetExplorerReviewScreenViewControllerDidPressRetake:(id)arg1;
 - (id)initWithAssets:(id)arg1;

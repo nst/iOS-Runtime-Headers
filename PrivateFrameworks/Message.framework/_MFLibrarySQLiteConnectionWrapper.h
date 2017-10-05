@@ -4,27 +4,27 @@
 
 @interface _MFLibrarySQLiteConnectionWrapper : NSObject {
     MFProtectedSQLiteConnection * _connection;
-    BOOL  _invalid;
-    unsigned int  _refcount;
+    bool  _invalid;
+    unsigned long long  _refcount;
     NSArray * _stack;
-    BOOL  _writer;
+    bool  _writer;
 }
 
 @property (nonatomic, readonly) MFProtectedSQLiteConnection *connection;
-@property (nonatomic) BOOL invalid;
-@property (nonatomic, readonly) unsigned int refcount;
-@property (nonatomic, readonly) BOOL writer;
+@property (nonatomic) bool invalid;
+@property (nonatomic, readonly) unsigned long long refcount;
+@property (nonatomic, readonly) bool writer;
 
-+ (id)wrapperWithConnection:(id)arg1 forWriting:(BOOL)arg2;
++ (id)wrapperWithConnection:(id)arg1 forWriting:(bool)arg2;
 
 - (id)connection;
 - (void)dealloc;
-- (unsigned int)decrementRefcount;
-- (unsigned int)incrementRefcount;
-- (id)initWithConnection:(id)arg1 forWriting:(BOOL)arg2;
-- (BOOL)invalid;
-- (unsigned int)refcount;
-- (void)setInvalid:(BOOL)arg1;
-- (BOOL)writer;
+- (unsigned long long)decrementRefcount;
+- (unsigned long long)incrementRefcount;
+- (id)initWithConnection:(id)arg1 forWriting:(bool)arg2;
+- (bool)invalid;
+- (unsigned long long)refcount;
+- (void)setInvalid:(bool)arg1;
+- (bool)writer;
 
 @end

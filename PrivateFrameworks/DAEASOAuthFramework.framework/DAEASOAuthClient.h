@@ -4,9 +4,10 @@
 
 @interface DAEASOAuthClient : NSObject
 
-+ (id)clientIDForOAuthType:(unsigned int)arg1;
++ (id)clientIDForOAuthType:(unsigned long long)arg1;
 + (id)clientRedirect;
-+ (id)defaultScopeForOAuthType:(unsigned int)arg1;
++ (id)clientRedirectForOAuthType:(unsigned long long)arg1;
++ (id)defaultScopeForOAuthType:(unsigned long long)arg1;
 + (id)scopeForUpgradingFromBasicCreds;
 
 @end

@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 - (id)_entryIDForTagID:(id)arg1;
 - (id)accessTokenForTagID:(id)arg1;
+- (id)allTagSettingsRecords;
 - (id)authenticatedAccessTokensByTagID;
 - (id)delegate;
 - (id)fontSizeForTagID:(id)arg1;
@@ -24,12 +25,14 @@
 - (id)initWithStore:(id)arg1 tagSettingsDelegate:(id)arg2;
 - (void)loadLocalCachesFromStore;
 - (id)localStore;
-- (void)setAccessTokenForTagID:(id)arg1 accessToken:(id)arg2;
+- (void)setAccessTokenForTagID:(id)arg1 accessToken:(id)arg2 userInitiated:(bool)arg3;
 - (void)setDelegate:(id)arg1;
 - (void)setFontSizeForTagID:(id)arg1 fontSize:(id)arg2;
 - (void)setLocalStore:(id)arg1;
 - (void)setTagSettingsEntriesByTagID:(id)arg1;
+- (void)setWebAccessOptInForTagID:(id)arg1 webAccessOptIn:(bool)arg2;
 - (void)syncFontSizeForTagID:(id)arg1;
 - (id)tagSettingsEntriesByTagID;
+- (id)webAccessOptedInTagIDs;
 
 @end

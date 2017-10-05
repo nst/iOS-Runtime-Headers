@@ -2,17 +2,17 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIPageControl : UIControl {
+@interface UIPageControl : UIControl <DebugHierarchyObject> {
     UIVisualEffectView * _backgroundVisualEffectView;
-    int  _currentPage;
+    long long  _currentPage;
     UIImage * _currentPageImage;
     NSMutableArray * _currentPageImages;
     UIColor * _currentPageIndicatorTintColor;
-    int  _displayedPage;
+    long long  _displayedPage;
     NSMutableArray * _indicators;
-    int  _lastUserInterfaceIdiom;
+    long long  _lastUserInterfaceIdiom;
     _UILegibilitySettings * _legibilitySettings;
-    int  _numberOfPages;
+    long long  _numberOfPages;
     struct { 
         unsigned int hideForSinglePage : 1; 
         unsigned int defersCurrentPageDisplay : 1; 
@@ -22,80 +22,93 @@
     UIColor * _pageIndicatorTintColor;
 }
 
-@property (nonatomic) int currentPage;
+@property (nonatomic) long long currentPage;
 @property (nonatomic, retain) UIColor *currentPageIndicatorTintColor;
-@property (nonatomic) BOOL defersCurrentPageDisplay;
-@property (nonatomic) BOOL hidesForSinglePage;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) bool defersCurrentPageDisplay;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool hidesForSinglePage;
 @property (getter=_legibilitySettings, setter=_setLegibilitySettings:, nonatomic, retain) _UILegibilitySettings *legibilitySettings;
-@property (getter=_legibilityStyle, setter=_setLegibilityStyle:, nonatomic) int legibilityStyle;
-@property (nonatomic) int numberOfPages;
+@property (getter=_legibilityStyle, setter=_setLegibilityStyle:, nonatomic) long long legibilityStyle;
+@property (nonatomic) long long numberOfPages;
 @property (nonatomic, retain) UIColor *pageIndicatorTintColor;
+@property (readonly) Class superclass;
 
-+ (BOOL)doesOverrideMethod:(SEL)arg1 inBaseClass:(Class)arg2;
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
++ (bool)doesOverrideMethod:(SEL)arg1 inBaseClass:(Class)arg2;
 
 - (void).cxx_destruct;
 - (id)__scalarStatisticsForUserValueChangedEvent;
 - (id)_activePageIndicatorImage;
 - (void)_cachePageIndicatorImages;
-- (id)_cachedPageIndicatorCurrentImageForPage:(int)arg1;
-- (id)_cachedPageIndicatorImageForPage:(int)arg1;
+- (id)_cachedPageIndicatorCurrentImageForPage:(long long)arg1;
+- (id)_cachedPageIndicatorImageForPage:(long long)arg1;
 - (void)_commonPageControlInit;
-- (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
-- (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
-- (unsigned int)_controlEventsForActionTriggered;
+- (bool)_contentHuggingDefault_isUsuallyFixedHeight;
+- (bool)_contentHuggingDefault_isUsuallyFixedWidth;
+- (unsigned long long)_controlEventsForActionTriggered;
 - (id)_createModernIndicatorImageFromView:(id)arg1;
-- (void)_didChangeFromIdiom:(int)arg1 onScreen:(id)arg2 traverseHierarchy:(BOOL)arg3;
-- (int)_displayedPage;
-- (void)_drawModernIndicatorInView:(id)arg1 enabled:(BOOL)arg2;
+- (void)_didChangeFromIdiom:(long long)arg1 onScreen:(id)arg2 traverseHierarchy:(bool)arg3;
+- (long long)_displayedPage;
+- (void)_drawModernIndicatorInView:(id)arg1 enabled:(bool)arg2;
 - (id)_effectiveContentView;
-- (BOOL)_hasCustomImageForPage:(int)arg1 enabled:(BOOL)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_indicatorFrameAtIndex:(int)arg1;
-- (float)_indicatorSpacing;
-- (id)_indicatorViewEnabled:(BOOL)arg1 index:(int)arg2;
-- (id)_indicatorViewEnabled:(BOOL)arg1 index:(int)arg2 legible:(BOOL)arg3;
+- (bool)_hasCustomImageForPage:(long long)arg1 enabled:(bool)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_indicatorFrameAtIndex:(long long)arg1;
+- (double)_indicatorSpacing;
+- (id)_indicatorViewEnabled:(bool)arg1 index:(long long)arg2;
+- (id)_indicatorViewEnabled:(bool)arg1 index:(long long)arg2 legible:(bool)arg3;
 - (void)_invalidateIndicators;
 - (id)_legibilitySettings;
-- (int)_legibilityStyle;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_modernBounds;
-- (id)_modernColorEnabled:(BOOL)arg1;
-- (float)_modernCornerRadius;
-- (id)_modernIndicatorImageEnabled:(BOOL)arg1;
-- (void)_modernTransitionIndicator:(id)arg1 toEnabled:(BOOL)arg2 index:(int)arg3 legible:(BOOL)arg4;
-- (id)_pageIndicatorCurrentImageForPage:(int)arg1;
+- (long long)_legibilityStyle;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_modernBounds;
+- (id)_modernColorEnabled:(bool)arg1;
+- (double)_modernCornerRadius;
+- (id)_modernIndicatorImageEnabled:(bool)arg1;
+- (void)_modernTransitionIndicator:(id)arg1 toEnabled:(bool)arg2 index:(long long)arg3 legible:(bool)arg4;
+- (id)_pageIndicatorCurrentImageForPage:(long long)arg1;
 - (id)_pageIndicatorImage;
-- (id)_pageIndicatorImageForPage:(int)arg1;
+- (id)_pageIndicatorImageForPage:(long long)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
-- (void)_setCurrentPage:(int)arg1;
-- (void)_setDisplayedPage:(int)arg1;
+- (void)_setCurrentPage:(long long)arg1;
+- (void)_setDisplayedPage:(long long)arg1;
 - (void)_setLegibilitySettings:(id)arg1;
-- (void)_setLegibilityStyle:(int)arg1;
-- (BOOL)_shouldDrawLegibly;
-- (void)_transitionIndicator:(id)arg1 toEnabled:(BOOL)arg2 index:(int)arg3;
-- (void)_transitionIndicator:(id)arg1 toEnabled:(BOOL)arg2 index:(int)arg3 legible:(BOOL)arg4;
+- (void)_setLegibilityStyle:(long long)arg1;
+- (bool)_shouldDrawLegibly;
+- (void)_transitionIndicator:(id)arg1 toEnabled:(bool)arg2 index:(long long)arg3;
+- (void)_transitionIndicator:(id)arg1 toEnabled:(bool)arg2 index:(long long)arg3 legible:(bool)arg4;
 - (void)_updateCurrentPageDisplay;
-- (BOOL)canBecomeFocused;
-- (int)currentPage;
+
+// Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
+
+- (id)debugHierarchyPropertyDescriptions;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (bool)canBecomeFocused;
+- (long long)currentPage;
 - (id)currentPageIndicatorTintColor;
-- (BOOL)defersCurrentPageDisplay;
+- (bool)defersCurrentPageDisplay;
 - (void)encodeWithCoder:(id)arg1;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
-- (BOOL)hidesForSinglePage;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (bool)hidesForSinglePage;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (bool)isElementAccessibilityExposedToInterfaceBuilder;
 - (void)layoutSubviews;
-- (int)numberOfPages;
+- (long long)numberOfPages;
 - (id)pageIndicatorTintColor;
-- (void)setCurrentPage:(int)arg1;
+- (void)setCurrentPage:(long long)arg1;
 - (void)setCurrentPageIndicatorTintColor:(id)arg1;
-- (void)setDefersCurrentPageDisplay:(BOOL)arg1;
-- (void)setHidesForSinglePage:(BOOL)arg1;
-- (void)setNumberOfPages:(int)arg1;
+- (void)setDefersCurrentPageDisplay:(bool)arg1;
+- (void)setHidesForSinglePage:(bool)arg1;
+- (void)setNumberOfPages:(long long)arg1;
 - (void)setPageIndicatorTintColor:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeForNumberOfPages:(int)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeForNumberOfPages:(long long)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)updateCurrentPageDisplay;
 
 @end

@@ -9,13 +9,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)ruleWithPortraitRule:(id)arg1 landscapeRule:(id)arg2;
 
 - (void).cxx_destruct;
-- (id)portraitYValueRangeForRange:(id)arg1 zoomLevel:(int)arg2 allowedDecimalPrecision:(int)arg3;
-- (id)yValueRangeForRange:(id)arg1 zoomLevel:(int)arg2;
+- (id)portraitYValueRangeForRange:(id)arg1 zoomLevel:(long long)arg2 allowedDecimalPrecision:(long long)arg3;
+- (id)yValueRangeForRange:(id)arg1 zoomLevel:(long long)arg2;
 
 @end

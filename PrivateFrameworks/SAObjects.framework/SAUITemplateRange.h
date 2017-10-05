@@ -6,9 +6,9 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int length;
-@property (nonatomic) int location;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long length;
+@property (nonatomic) long long location;
 @property (readonly) Class superclass;
 
 + (id)range;
@@ -16,9 +16,9 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (int)length;
-- (int)location;
-- (void)setLength:(int)arg1;
-- (void)setLocation:(int)arg1;
+- (long long)length;
+- (long long)location;
+- (void)setLength:(long long)arg1;
+- (void)setLocation:(long long)arg1;
 
 @end

@@ -6,24 +6,24 @@
 @required
 
 - (id)collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 batchIDForTileAtIndexPath:(NSIndexPath *)arg3;
-- (struct CGSize { float x1; float x2; })collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 captionSizeForTileAtIndexPath:(NSIndexPath *)arg3 proposedSize:(struct CGSize { float x1; float x2; })arg4;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 contentInsetsForSection:(int)arg3;
-- (id)collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 groupIDForSection:(int)arg3;
-- (struct CGSize { float x1; float x2; })collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 headerSizeForGroupID:(id)arg3 proposedSize:(struct CGSize { float x1; float x2; })arg4;
-- (struct CGSize { float x1; float x2; })collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 imageSizeForTileAtIndexPath:(NSIndexPath *)arg3;
-- (struct CKFeedSeparatorMetrics { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct UIEdgeInsets { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; })collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 metricsForSeparatorBetweenRowAtIndexPath:(NSIndexPath *)arg3 andRowAtIndexPath:(NSIndexPath *)arg4 proposedMetrics:(struct CKFeedSeparatorMetrics { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct UIEdgeInsets { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; })arg5;
-- (struct CKFeedSeparatorMetrics { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct UIEdgeInsets { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; })collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 metricsForSeparatorBetweenSection:(int)arg3 andSection:(int)arg4 proposedMetrics:(struct CKFeedSeparatorMetrics { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct UIEdgeInsets { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; })arg5;
-- (struct CGSize { float x1; float x2; })collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 mininumSizeForTileAtIndexPath:(NSIndexPath *)arg3;
-- (void)collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 referenceMaximumLength:(float*)arg3 minimumNumberOfTilesToOmit:(int*)arg4 forSection:(int)arg5;
-- (BOOL)collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 shouldHideHeaderInSection:(int)arg3;
-- (BOOL)collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 shouldHideSection:(int)arg3;
-- (BOOL)collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 shouldJoinSection:(int)arg3 withSection:(int)arg4;
-- (BOOL)collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 shouldShowCaptionForTileAtIndexPath:(NSIndexPath *)arg3;
-- (struct CGSize { float x1; float x2; })collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 sizeForFooterInSection:(int)arg3 proposedSize:(struct CGSize { float x1; float x2; })arg4;
-- (struct CGSize { float x1; float x2; })collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 sizeForHeaderOfSections:(NSIndexSet *)arg3 proposedSize:(struct CGSize { float x1; float x2; })arg4;
-- (struct CGSize { float x1; float x2; })collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 sizeForRowAtIndexPath:(NSIndexPath *)arg3 proposedSize:(struct CGSize { float x1; float x2; })arg4;
-- (struct CGSize { float x1; float x2; })collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 sizeForThumbnailInSection:(int)arg3;
-- (float)collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 spacingBetweenSection:(int)arg3 andHeaderForGroupID:(id)arg4;
-- (int)collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 typeForSection:(int)arg3;
+- (struct CGSize { double x1; double x2; })collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 captionSizeForTileAtIndexPath:(NSIndexPath *)arg3 proposedSize:(struct CGSize { double x1; double x2; })arg4;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 contentInsetsForSection:(long long)arg3;
+- (id)collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 groupIDForSection:(long long)arg3;
+- (struct CGSize { double x1; double x2; })collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 headerSizeForGroupID:(id)arg3 proposedSize:(struct CGSize { double x1; double x2; })arg4;
+- (struct CGSize { double x1; double x2; })collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 imageSizeForTileAtIndexPath:(NSIndexPath *)arg3;
+- (struct CKFeedSeparatorMetrics { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct UIEdgeInsets { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; })collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 metricsForSeparatorBetweenRowAtIndexPath:(NSIndexPath *)arg3 andRowAtIndexPath:(NSIndexPath *)arg4 proposedMetrics:(struct CKFeedSeparatorMetrics { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct UIEdgeInsets { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; })arg5;
+- (struct CKFeedSeparatorMetrics { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct UIEdgeInsets { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; })collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 metricsForSeparatorBetweenSection:(long long)arg3 andSection:(long long)arg4 proposedMetrics:(struct CKFeedSeparatorMetrics { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct UIEdgeInsets { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; })arg5;
+- (struct CGSize { double x1; double x2; })collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 mininumSizeForTileAtIndexPath:(NSIndexPath *)arg3;
+- (void)collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 referenceMaximumLength:(double*)arg3 minimumNumberOfTilesToOmit:(long long*)arg4 forSection:(long long)arg5;
+- (bool)collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 shouldHideHeaderInSection:(long long)arg3;
+- (bool)collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 shouldHideSection:(long long)arg3;
+- (bool)collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 shouldJoinSection:(long long)arg3 withSection:(long long)arg4;
+- (bool)collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 shouldShowCaptionForTileAtIndexPath:(NSIndexPath *)arg3;
+- (struct CGSize { double x1; double x2; })collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 sizeForFooterInSection:(long long)arg3 proposedSize:(struct CGSize { double x1; double x2; })arg4;
+- (struct CGSize { double x1; double x2; })collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 sizeForHeaderOfSections:(NSIndexSet *)arg3 proposedSize:(struct CGSize { double x1; double x2; })arg4;
+- (struct CGSize { double x1; double x2; })collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 sizeForRowAtIndexPath:(NSIndexPath *)arg3 proposedSize:(struct CGSize { double x1; double x2; })arg4;
+- (struct CGSize { double x1; double x2; })collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 sizeForThumbnailInSection:(long long)arg3;
+- (double)collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 spacingBetweenSection:(long long)arg3 andHeaderForGroupID:(id)arg4;
+- (long long)collectionView:(UICollectionView *)arg1 layout:(CKFeedCollectionViewLayout *)arg2 typeForSection:(long long)arg3;
 
 @end

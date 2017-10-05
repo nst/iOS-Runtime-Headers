@@ -3,20 +3,20 @@
  */
 
 @interface VTSoftwareUpdateCheckingMonitor : VTEventMonitor {
-    BOOL  _isSoftwareUpdateCheckingRunning;
+    bool  _isSoftwareUpdateCheckingRunning;
     int  _notifyToken;
 }
 
 + (id)sharedInstance;
 
-- (BOOL)_checkSoftwareUpdateCheckingState;
-- (void)_didReceiveSoftwareUpdateCheckingStateChanged:(BOOL)arg1;
-- (void)_didReceiveSoftwareUpdateCheckingStateChangedInQueue:(BOOL)arg1;
-- (void)_notifyObserver:(id)arg1 withSoftwareUpdateCheckingRunning:(BOOL)arg2;
+- (bool)_checkSoftwareUpdateCheckingState;
+- (void)_didReceiveSoftwareUpdateCheckingStateChanged:(bool)arg1;
+- (void)_didReceiveSoftwareUpdateCheckingStateChangedInQueue:(bool)arg1;
+- (void)_notifyObserver:(id)arg1 withSoftwareUpdateCheckingRunning:(bool)arg2;
 - (unsigned char)_softwareUpdateCheckingState;
 - (void)_startMonitoringWithQueue:(id)arg1;
 - (void)_stopMonitoring;
 - (id)init;
-- (BOOL)isSoftwareUpdateCheckingRunning;
+- (bool)isSoftwareUpdateCheckingRunning;
 
 @end

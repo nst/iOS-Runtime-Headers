@@ -5,9 +5,9 @@
 
 @required
 
-- (void)setSubdivisionLevels:(int)arg1;
+- (void)setSubdivisionLevels:(long long)arg1;
 - (void)setWarpGeometry:(SKWarpGeometry *)arg1;
-- (int)subdivisionLevels;
+- (long long)subdivisionLevels;
 - (SKWarpGeometry *)warpGeometry;
 
 @end

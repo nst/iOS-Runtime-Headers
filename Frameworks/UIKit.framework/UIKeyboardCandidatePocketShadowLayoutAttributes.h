@@ -3,12 +3,12 @@
  */
 
 @interface UIKeyboardCandidatePocketShadowLayoutAttributes : UICollectionViewLayoutAttributes <NSCopying> {
-    BOOL  _drawsShadow;
+    bool  _drawsShadow;
 }
 
-@property (nonatomic) BOOL drawsShadow;
+@property (nonatomic) bool drawsShadow;
 
-- (BOOL)drawsShadow;
-- (void)setDrawsShadow:(BOOL)arg1;
+- (bool)drawsShadow;
+- (void)setDrawsShadow:(bool)arg1;
 
 @end

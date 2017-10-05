@@ -3,24 +3,25 @@
  */
 
 @interface RTSourceAudio : RTSource <NSCopying, NSSecureCoding> {
-    int  _audioSource;
+    long long  _audioSource;
     NSString * _deviceName;
 }
 
-@property (nonatomic, readonly) int audioSource;
+@property (nonatomic, readonly) long long audioSource;
 @property (nonatomic, readonly) NSString *deviceName;
 
-+ (id)allowedKeys;
-+ (id)stringFromAudioSource:(int)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)stringFromAudioSource:(long long)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (int)audioSource;
+- (long long)audioSource;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)deviceName;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDeviceName:(id)arg1 audioSource:(int)arg2;
+- (id)initWithDeviceName:(id)arg1 audioSource:(long long)arg2;
+- (bool)isEqual:(id)arg1;
 
 @end

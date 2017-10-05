@@ -5,7 +5,7 @@
 @interface MFPColorAdjust : NSObject {
     struct MFPColorMatrix { float x1[5][5]; } * mColorMatrix;
     int  mColorMatrixFlags;
-    BOOL  mEnabled;
+    bool  mEnabled;
     float  mGamma;
     struct MFPColorMatrix { float x1[5][5]; } * mGrayMatrix;
     NSDictionary * mRecolorMap;
@@ -22,11 +22,11 @@
 - (float)gamma;
 - (struct MFPColorMatrix { float x1[5][5]; }*)grayMatrix;
 - (id)init;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (id)recolorMap;
 - (void)setColorMatrix:(struct MFPColorMatrix { float x1[5][5]; }*)arg1;
 - (void)setColorMatrixFlags:(int)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setGamma:(float)arg1;
 - (void)setGrayMatrix:(struct MFPColorMatrix { float x1[5][5]; }*)arg1;
 - (void)setRecolorMap:(id)arg1;

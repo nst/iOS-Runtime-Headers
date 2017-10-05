@@ -3,9 +3,9 @@
  */
 
 @interface NSPersistentStoreCache : NSObject {
-    unsigned int  _capacity;
+    unsigned long long  _capacity;
     id  _externalData;
-    struct { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); } * _externalDataValueCallbacks;
+    struct { long long x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); } * _externalDataValueCallbacks;
     int  _lock;
     struct persistentStoreCacheFlags { 
         unsigned int _preserveToManyRelationships : 1; 
@@ -24,11 +24,11 @@
 - (void)decrementRefCountForObjectID:(id)arg1;
 - (void)forgetAllExternalData;
 - (void)forgetRowForObjectID:(id)arg1;
-- (void)growRegistrationCollectionTo:(unsigned int)arg1;
+- (void)growRegistrationCollectionTo:(unsigned long long)arg1;
 - (void)incrementRefCountForObjectID:(id)arg1;
 - (id)init;
 - (id)initWithPersistentStore:(id)arg1;
-- (id)initWithValueCallbacks:(void*)arg1 preserveToManyRelationships:(BOOL)arg2;
+- (id)initWithValueCallbacks:(void*)arg1 preserveToManyRelationships:(bool)arg2;
 - (int)refCountForObjectID:(id)arg1;
 - (void)registerRow:(id)arg1 forObjectID:(id)arg2;
 - (void)registerRow:(id)arg1 forObjectID:(id)arg2 options:(unsigned int)arg3;

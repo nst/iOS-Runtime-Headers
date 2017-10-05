@@ -2,24 +2,24 @@
    Image: /System/Library/Frameworks/NotificationCenter.framework/NotificationCenter
  */
 
-@interface _NCWidgetViewControllerView : SBUISizeObservingView <UIScrollViewDelayedTouchesBeganGestureRecognizerClient>
+@interface _NCWidgetViewControllerView : NCSizeObservingView <UIScrollViewDelayedTouchesBeganGestureRecognizerClient>
 
-@property (getter=_canScrollX, nonatomic, readonly) BOOL canScrollX;
-@property (getter=_canScrollY, nonatomic, readonly) BOOL canScrollY;
+@property (getter=_canScrollX, nonatomic, readonly) bool canScrollX;
+@property (getter=_canScrollY, nonatomic, readonly) bool canScrollY;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, readonly) BOOL delaysContentTouches;
+@property (nonatomic, readonly) bool delaysContentTouches;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=_scrollHysteresis, nonatomic, readonly) float scrollHysteresis;
+@property (readonly) unsigned long long hash;
+@property (getter=_scrollHysteresis, nonatomic, readonly) double scrollHysteresis;
 @property (readonly) Class superclass;
 @property (getter=_touchDelayForScrollDetection, nonatomic, readonly) double touchDelayForScrollDetection;
 
-- (BOOL)_canScrollX;
-- (BOOL)_canScrollY;
-- (float)_scrollHysteresis;
+- (bool)_canScrollX;
+- (bool)_canScrollY;
+- (double)_scrollHysteresis;
 - (double)_touchDelayForScrollDetection;
-- (BOOL)delaysContentTouches;
+- (bool)delaysContentTouches;
 - (void)didMoveToWindow;
-- (BOOL)touchesShouldBegin:(id)arg1 withEvent:(id)arg2 inContentView:(id)arg3;
+- (bool)touchesShouldBegin:(id)arg1 withEvent:(id)arg2 inContentView:(id)arg3;
 
 @end

@@ -4,50 +4,50 @@
 
 @interface PXImageRequest : NSObject {
     <PXDisplayAsset> * _asset;
-    BOOL  _canceled;
+    bool  _canceled;
     NSError * _error;
-    BOOL  _gotFullQualityImage;
+    bool  _gotFullQualityImage;
     UIImage * _image;
     PXUIMediaProvider * _mediaProvider;
     PHImageRequestOptions * _options;
-    int  _requestID;
-    BOOL  _resultIsInCloud;
+    long long  _requestID;
+    bool  _resultIsInCloud;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _targetSize;
 }
 
 @property (nonatomic, readonly) <PXDisplayAsset> *asset;
-@property (getter=isCanceled, nonatomic, readonly) BOOL canceled;
+@property (getter=isCanceled, nonatomic, readonly) bool canceled;
 @property (nonatomic, retain) NSError *error;
-@property (nonatomic) BOOL gotFullQualityImage;
+@property (nonatomic) bool gotFullQualityImage;
 @property (nonatomic) UIImage *image;
 @property (nonatomic, readonly) PXUIMediaProvider *mediaProvider;
 @property (nonatomic, readonly) PHImageRequestOptions *options;
-@property (nonatomic) int requestID;
-@property (nonatomic) BOOL resultIsInCloud;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } targetSize;
+@property (nonatomic) long long requestID;
+@property (nonatomic) bool resultIsInCloud;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } targetSize;
 
 - (void).cxx_destruct;
 - (id)asset;
 - (void)cancel;
 - (id)description;
 - (id)error;
-- (BOOL)gotFullQualityImage;
+- (bool)gotFullQualityImage;
 - (id)image;
-- (id)initWithMediaProvider:(id)arg1 asset:(id)arg2 targetSize:(struct CGSize { float x1; float x2; })arg3 options:(id)arg4;
-- (BOOL)isCanceled;
+- (id)initWithMediaProvider:(id)arg1 asset:(id)arg2 targetSize:(struct CGSize { double x1; double x2; })arg3 options:(id)arg4;
+- (bool)isCanceled;
 - (id)mediaProvider;
 - (id)options;
 - (void)performWithResultHandler:(id /* block */)arg1;
-- (int)requestID;
-- (BOOL)resultIsInCloud;
+- (long long)requestID;
+- (bool)resultIsInCloud;
 - (void)setError:(id)arg1;
-- (void)setGotFullQualityImage:(BOOL)arg1;
+- (void)setGotFullQualityImage:(bool)arg1;
 - (void)setImage:(id)arg1;
-- (void)setRequestID:(int)arg1;
-- (void)setResultIsInCloud:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })targetSize;
+- (void)setRequestID:(long long)arg1;
+- (void)setResultIsInCloud:(bool)arg1;
+- (struct CGSize { double x1; double x2; })targetSize;
 
 @end

@@ -13,9 +13,9 @@
 
 @property (nonatomic) unsigned long long code;
 @property (nonatomic, retain) NSString *domain;
-@property (nonatomic) BOOL hasCode;
-@property (nonatomic, readonly) BOOL hasDomain;
-@property (nonatomic, readonly) BOOL hasLocalizedDescription;
+@property (nonatomic) bool hasCode;
+@property (nonatomic, readonly) bool hasDomain;
+@property (nonatomic, readonly) bool hasLocalizedDescription;
 @property (nonatomic, retain) NSString *localizedDescription;
 
 - (unsigned long long)code;
@@ -25,17 +25,17 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)domain;
-- (BOOL)hasCode;
-- (BOOL)hasDomain;
-- (BOOL)hasLocalizedDescription;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCode;
+- (bool)hasDomain;
+- (bool)hasLocalizedDescription;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)localizedDescription;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCode:(unsigned long long)arg1;
 - (void)setDomain:(id)arg1;
-- (void)setHasCode:(BOOL)arg1;
+- (void)setHasCode:(bool)arg1;
 - (void)setLocalizedDescription:(id)arg1;
 - (void)writeTo:(id)arg1;
 

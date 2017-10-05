@@ -5,18 +5,18 @@
 @interface UASharedPasteboardTypeInfo : NSObject <NSCopying, NSSecureCoding> {
     NSFileHandle * _dataFile;
     NSNumber * _offset;
-    int  _size;
+    long long  _size;
     NSString * _type;
     NSUUID * _uuid;
 }
 
 @property (retain) NSFileHandle *dataFile;
 @property (copy) NSNumber *offset;
-@property int size;
+@property long long size;
 @property (copy) NSString *type;
 @property (copy) NSUUID *uuid;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -24,14 +24,14 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)offset;
 - (void)setDataFile:(id)arg1;
 - (void)setOffset:(id)arg1;
-- (void)setSize:(int)arg1;
+- (void)setSize:(long long)arg1;
 - (void)setType:(id)arg1;
 - (void)setUuid:(id)arg1;
-- (int)size;
+- (long long)size;
 - (id)type;
 - (id)uuid;
 

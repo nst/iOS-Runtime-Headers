@@ -18,7 +18,7 @@
 @property (nonatomic) unsigned int minimumNumberOfPlayers;
 @property (nonatomic) unsigned int numberOfPlayers;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -12,9 +12,9 @@
     NSData * _uuidReference;
 }
 
-@property (nonatomic) BOOL hasTimeDeltaFromReference;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic, readonly) BOOL hasUuidReference;
+@property (nonatomic) bool hasTimeDeltaFromReference;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic, readonly) bool hasUuidReference;
 @property (nonatomic) unsigned long long timeDeltaFromReference;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic, retain) NSData *uuidReference;
@@ -24,15 +24,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasTimeDeltaFromReference;
-- (BOOL)hasTimestamp;
-- (BOOL)hasUuidReference;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasTimeDeltaFromReference;
+- (bool)hasTimestamp;
+- (bool)hasUuidReference;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasTimeDeltaFromReference:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasTimeDeltaFromReference:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setTimeDeltaFromReference:(unsigned long long)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setUuidReference:(id)arg1;

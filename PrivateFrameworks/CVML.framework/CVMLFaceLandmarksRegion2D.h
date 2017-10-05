@@ -3,15 +3,15 @@
  */
 
 @interface CVMLFaceLandmarksRegion2D : CVMLFaceLandmarksRegion {
-    const struct CGPoint { float x1; float x2; } * _points;
+    const struct CGPoint { double x1; double x2; } * _points;
 }
 
-@property const struct CGPoint { float x1; float x2; }*points;
+@property const struct CGPoint { double x1; double x2; }*points;
 
 - (void)dealloc;
-- (id)initWithPoints:(struct CGPoint { float x1; float x2; }*)arg1 pointCount:(unsigned int)arg2;
-- (struct CGPoint { float x1; float x2; })pointAtIndex:(unsigned int)arg1;
-- (const struct CGPoint { float x1; float x2; }*)points;
-- (void)setPoints:(const struct CGPoint { float x1; float x2; }*)arg1;
+- (id)initWithPoints:(struct CGPoint { double x1; double x2; }*)arg1 pointCount:(unsigned long long)arg2;
+- (struct CGPoint { double x1; double x2; })pointAtIndex:(unsigned long long)arg1;
+- (const struct CGPoint { double x1; double x2; }*)points;
+- (void)setPoints:(const struct CGPoint { double x1; double x2; }*)arg1;
 
 @end

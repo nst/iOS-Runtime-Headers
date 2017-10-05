@@ -7,7 +7,7 @@
 }
 
 - (void).cxx_destruct;
-- (id)initWithHealthStore:(id)arg1 dataUnitController:(id)arg2 device:(id)arg3;
+- (id)initWithHealthStore:(id)arg1 displayTypeController:(id)arg2 device:(id)arg3;
 - (void)viewDidLoad;
 
 @end

@@ -5,10 +5,10 @@
 @interface _DECPaths : NSObject
 
 + (id)decDirectory;
-+ (id)decDirectoryAfterCreatingIfNeeded:(BOOL)arg1;
++ (id)decDirectoryAfterCreatingIfNeeded:(bool)arg1;
 + (id)decDirectoryFile:(id)arg1;
-+ (id)decDirectoryFile:(id)arg1 creatingDecDirectoryIfNeeded:(BOOL)arg2;
++ (id)decDirectoryFile:(id)arg1 creatingDecDirectoryIfNeeded:(bool)arg2;
 + (id)decSubdirectory:(id)arg1;
-+ (id)decSubdirectory:(id)arg1 creatingDirectoriesIfNeeded:(BOOL)arg2;
++ (id)decSubdirectory:(id)arg1 creatingDirectoriesIfNeeded:(bool)arg2;
 
 @end

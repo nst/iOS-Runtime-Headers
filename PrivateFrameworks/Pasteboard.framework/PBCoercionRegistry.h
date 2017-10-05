@@ -30,9 +30,9 @@
 - (id)_newObjectOfClass:(Class)arg1 fromData:(id)arg2 URL:(id)arg3 ofType:(id)arg4 outError:(id*)arg5;
 - (id)acceptableRepresentationTypesForCreatingObjectOfClass:(Class)arg1;
 - (id)availableRepresentationTypesForClass:(Class)arg1;
-- (BOOL)canCoerceFromRepresentationConformingToType:(id)arg1 toObjectOfClass:(Class)arg2;
-- (BOOL)canCoerceObjectOfClass:(Class)arg1 toObjectOfClass:(Class)arg2;
-- (BOOL)canCoerceObjectOfClass:(Class)arg1 toRepresentationConformingToType:(id)arg2;
+- (bool)canCoerceFromRepresentationConformingToType:(id)arg1 toObjectOfClass:(Class)arg2;
+- (bool)canCoerceObjectOfClass:(Class)arg1 toObjectOfClass:(Class)arg2;
+- (bool)canCoerceObjectOfClass:(Class)arg1 toRepresentationConformingToType:(id)arg2;
 - (id)init;
 - (void)loadRepresentationOfObject:(id)arg1 asType:(id)arg2 completionBlock:(id /* block */)arg3;
 - (id)memberQueue;

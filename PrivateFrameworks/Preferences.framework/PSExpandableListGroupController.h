@@ -3,10 +3,10 @@
  */
 
 @interface PSExpandableListGroupController : NSObject <PSSpecifierGroupController> {
-    int  _collaspeAfterCount;
+    long long  _collaspeAfterCount;
     PSSpecifier * _groupSpecifier;
     PSListController * _listController;
-    BOOL  _showAll;
+    bool  _showAll;
     PSSpecifier * _showAllSpecifier;
     NSMutableArray * _specifiers;
     PSSpecifier * _spinnerSpecifier;
@@ -14,15 +14,16 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (int)_groupIndex;
+- (long long)_groupIndex;
 - (void)addSpecifiers:(id)arg1;
 - (id)initWithListController:(id)arg1 groupSpecifier:(id)arg2;
-- (id)initWithListController:(id)arg1 groupSpecifier:(id)arg2 collapseAfterCount:(int)arg3;
+- (id)initWithListController:(id)arg1 groupSpecifier:(id)arg2 collapseAfterCount:(long long)arg3;
 - (void)reloadSpecifier:(id)arg1;
+- (void)reloadSpecifiers;
 - (void)removeAllSpecifiers;
 - (void)showAll;
 - (id)showAllSpecifier;

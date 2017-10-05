@@ -12,7 +12,7 @@
 @property (nonatomic, copy) NSUUID *taskUUID;
 @property (nonatomic, copy) NSDictionary *userInfo;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

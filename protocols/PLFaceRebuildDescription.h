@@ -7,11 +7,12 @@
 
 - (double)centerX;
 - (double)centerY;
-- (int)faceAlgorithmVersion;
-- (BOOL)isHidden;
-- (BOOL)isManual;
-- (BOOL)isNameSourceAuto;
-- (BOOL)isRepresentative;
+- (int)cloudNameSource;
+- (bool)isClusterRejected;
+- (bool)isHidden;
+- (bool)isManual;
+- (bool)isRepresentative;
+- (int)nameSource;
 - (double)size;
 
 @end

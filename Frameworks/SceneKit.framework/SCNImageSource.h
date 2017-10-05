@@ -5,8 +5,8 @@
 @interface SCNImageSource : NSObject
 
 - (void)connectToProxy:(struct __C3DImageProxy { }*)arg1;
-- (BOOL)isOpaque;
-- (BOOL)isPremultiplied;
+- (bool)isOpaque;
+- (bool)isPremultiplied;
 - (id)textureSource;
 
 @end

@@ -6,10 +6,10 @@
 @required
 
 - (void)clearFluidProgressState;
-- (BOOL)createFluidProgressState;
+- (bool)createFluidProgressState;
 - (double)estimatedProgress;
 - (NSURL *)expectedOrCurrentURL;
-- (BOOL)hasFailedURL;
+- (bool)hasFailedURL;
 - (WBSFluidProgressState *)progressState;
 
 @end

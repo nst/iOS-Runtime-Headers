@@ -2,71 +2,66 @@
    Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
  */
 
-@interface PXPeopleProgressDatasource : NSObject <PXPeopleProgressDatasource, PXPhotoLibraryUIChangeObserver> {
-    unsigned int  _cachedUnlockValue;
-    BOOL  _countCacheValid;
-    PHFetchResult * _favResult;
+@interface PXPeopleProgressDatasource : NSObject <PXPeopleProgressDataSource, PXPhotoLibraryUIChangeObserver> {
+    unsigned long long  _cachedUnlockValue;
+    bool  _countCacheValid;
+    bool  _faceProcessingComplete;
     PHFetchResult * _homeResult;
-    unsigned int  _pendingCount;
-    PHFetchResult * _plusResult;
-    unsigned int  _processedCount;
+    unsigned long long  _pendingCount;
+    unsigned long long  _processedCount;
     NSObject<OS_dispatch_queue> * _scanningProgressQueue;
-    unsigned int  _totalCount;
+    unsigned long long  _totalCount;
+    NSObject<OS_dispatch_queue> * _userInteractiveQueue;
     PHFetchResult * _verifyResult;
 }
 
-@property unsigned int cachedUnlockValue;
-@property (getter=isCountCacheValid) BOOL countCacheValid;
+@property unsigned long long cachedUnlockValue;
+@property (getter=isCountCacheValid) bool countCacheValid;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, retain) PHFetchResult *favResult;
-@property BOOL featureUnlockUserDefault;
-@property (readonly) unsigned int hash;
+@property (getter=isFaceProcessingComplete, nonatomic) bool faceProcessingComplete;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PHFetchResult *homeResult;
-@property (nonatomic) unsigned int pendingCount;
-@property (nonatomic, retain) PHFetchResult *plusResult;
-@property (nonatomic) unsigned int processedCount;
+@property (nonatomic) unsigned long long pendingCount;
+@property (nonatomic) unsigned long long processedCount;
 @property (readonly) NSObject<OS_dispatch_queue> *scanningProgressQueue;
 @property (readonly) Class superclass;
-@property (nonatomic) unsigned int totalCount;
+@property (nonatomic) unsigned long long totalCount;
+@property (readonly) NSObject<OS_dispatch_queue> *userInteractiveQueue;
 @property (nonatomic, retain) PHFetchResult *verifyResult;
 
 - (void).cxx_destruct;
 - (void)_appWillEnterForeground;
-- (float)_progressFromWorkerDictionary:(id)arg1;
+- (double)_progressFromWorkerDictionary:(id)arg1;
 - (void)asyncPeopleScanningProgress:(id /* block */)arg1;
-- (unsigned int)cachedUnlockValue;
+- (unsigned long long)cachedUnlockValue;
 - (void)dealloc;
-- (id)favResult;
-- (BOOL)featureUnlockUserDefault;
-- (unsigned int)homeMembersCount;
+- (unsigned long long)homeMembersCount;
 - (id)homeResult;
 - (id)init;
-- (BOOL)isCountCacheValid;
+- (bool)isCountCacheValid;
+- (bool)isFaceProcessingComplete;
+- (bool)isPersonPromoterDone;
 - (void)loadQueryData;
-- (unsigned int)pendingAssetCount;
-- (unsigned int)pendingCount;
+- (unsigned long long)pendingAssetCount;
+- (unsigned long long)pendingCount;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1 withPreparedInfo:(id)arg2;
-- (unsigned int)plusMembersCount;
-- (id)plusResult;
-- (unsigned int)processedAssetCount;
-- (unsigned int)processedCount;
+- (unsigned long long)processedAssetCount;
+- (unsigned long long)processedCount;
 - (id)scanningProgressQueue;
-- (void)setCachedUnlockValue:(unsigned int)arg1;
-- (void)setCountCacheValid:(BOOL)arg1;
-- (void)setFavResult:(id)arg1;
-- (void)setFeatureUnlockUserDefault:(BOOL)arg1;
+- (void)setCachedUnlockValue:(unsigned long long)arg1;
+- (void)setCountCacheValid:(bool)arg1;
+- (void)setFaceProcessingComplete:(bool)arg1;
 - (void)setHomeResult:(id)arg1;
-- (void)setPendingCount:(unsigned int)arg1;
-- (void)setPlusResult:(id)arg1;
-- (void)setProcessedCount:(unsigned int)arg1;
-- (void)setTotalCount:(unsigned int)arg1;
+- (void)setPendingCount:(unsigned long long)arg1;
+- (void)setProcessedCount:(unsigned long long)arg1;
+- (void)setTotalCount:(unsigned long long)arg1;
 - (void)setVerifyResult:(id)arg1;
-- (float)syncPeopleScanningProgress;
-- (unsigned int)totalAssetCount;
-- (unsigned int)totalCount;
-- (void)updateProgressIfNeeded;
-- (unsigned int)verifiedCount;
+- (void)syncPeopleScanningProgress:(id /* block */)arg1;
+- (unsigned long long)totalAssetCount;
+- (unsigned long long)totalCount;
+- (void)updateProgressIfNeededWithWorkBlock:(id /* block */)arg1;
+- (id)userInteractiveQueue;
 - (id)verifyResult;
 
 @end

@@ -4,8 +4,8 @@
 
 @interface AUV2BridgeBusArray : AUAudioUnitBusArray
 
-- (id)initWithOwner:(id)arg1 scope:(unsigned long)arg2;
-- (BOOL)isCountChangeable;
-- (BOOL)setBusCount:(unsigned int)arg1 error:(id*)arg2;
+- (id)initWithOwner:(id)arg1 scope:(unsigned int)arg2;
+- (bool)isCountChangeable;
+- (bool)setBusCount:(unsigned long long)arg1 error:(id*)arg2;
 
 @end

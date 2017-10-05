@@ -4,14 +4,14 @@
 
 @interface MusicAlbumTracklistTableViewHeaderFooterView : MusicEntityHorizontalLockupTableViewHeaderFooterView
 
-@property (nonatomic) float leadingTextColumnWidth;
+@property (nonatomic) double leadingTextColumnWidth;
 
 + (Class)lockupViewClass;
 
 - (id)initWithReuseIdentifier:(id)arg1;
-- (float)leadingTextColumnWidth;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setLeadingTextColumnWidth:(float)arg1;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (double)leadingTextColumnWidth;
+- (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
+- (void)setLeadingTextColumnWidth:(double)arg1;
+- (void)setSelected:(bool)arg1 animated:(bool)arg2;
 
 @end

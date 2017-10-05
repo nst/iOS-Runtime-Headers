@@ -3,11 +3,11 @@
  */
 
 @interface FCReachability : NSObject {
-    BOOL  _alwaysReturnLocalWiFiStatus;
+    bool  _alwaysReturnLocalWiFiStatus;
     struct __SCNetworkReachability { } * _reachabilityRef;
 }
 
-@property (nonatomic) BOOL alwaysReturnLocalWiFiStatus;
+@property (nonatomic) bool alwaysReturnLocalWiFiStatus;
 @property (nonatomic) struct __SCNetworkReachability { }*reachabilityRef;
 
 + (id)reachabilityForInternetConnection;
@@ -15,16 +15,16 @@
 + (id)reachabilityWithAddress:(const struct sockaddr_in { unsigned char x1; unsigned char x2; unsigned short x3; struct in_addr { unsigned int x_4_1_1; } x4; BOOL x5[8]; }*)arg1;
 + (id)reachabilityWithHostName:(id)arg1;
 
-- (BOOL)alwaysReturnLocalWiFiStatus;
-- (BOOL)connectionRequired;
-- (int)currentReachabilityStatus;
+- (bool)alwaysReturnLocalWiFiStatus;
+- (bool)connectionRequired;
+- (long long)currentReachabilityStatus;
 - (void)dealloc;
-- (int)localWiFiStatusForFlags:(unsigned int)arg1;
-- (int)networkStatusForFlags:(unsigned int)arg1;
+- (long long)localWiFiStatusForFlags:(unsigned int)arg1;
+- (long long)networkStatusForFlags:(unsigned int)arg1;
 - (struct __SCNetworkReachability { }*)reachabilityRef;
-- (void)setAlwaysReturnLocalWiFiStatus:(BOOL)arg1;
+- (void)setAlwaysReturnLocalWiFiStatus:(bool)arg1;
 - (void)setReachabilityRef:(struct __SCNetworkReachability { }*)arg1;
-- (BOOL)startNotifier;
+- (bool)startNotifier;
 - (void)stopNotifier;
 
 @end

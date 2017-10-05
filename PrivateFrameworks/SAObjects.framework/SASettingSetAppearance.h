@@ -12,7 +12,8 @@
 - (id)appearance;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)mutatingCommand;
+- (bool)requiresResponse;
 - (void)setAppearance:(id)arg1;
 
 @end

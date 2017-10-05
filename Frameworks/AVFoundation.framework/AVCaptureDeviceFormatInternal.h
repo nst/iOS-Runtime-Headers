@@ -16,6 +16,7 @@
         long long epoch; 
     }  defaultActiveMinFrameDuration;
     FigCaptureSourceFormat * sourceFormat;
+    NSArray * supportedDepthDataFormats;
     NSArray * videoSupportedFrameRateRanges;
 }
 

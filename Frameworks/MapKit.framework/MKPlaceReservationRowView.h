@@ -13,29 +13,28 @@
 }
 
 @property (nonatomic, readonly) _MKPlaceReservationInfo *reservationInfo;
-@property (nonatomic) unsigned int selectedTimeIndex;
+@property (nonatomic) unsigned long long selectedTimeIndex;
 @property (nonatomic, retain) NSString *selectedTimeString;
 
 - (void).cxx_destruct;
 - (void)_actionMakeReservation;
-- (id)_attributedStringFromButtonTitle:(id)arg1 useSmallFont:(BOOL)arg2;
-- (float)_buttonBottomMargin;
+- (id)_attributedStringFromButtonTitle:(id)arg1 useSmallFont:(bool)arg2;
+- (double)_buttonBottomMargin;
 - (id)_buttonFontLarge;
 - (id)_buttonFontSmall;
-- (float)_buttonTopMargin;
+- (double)_buttonTopMargin;
 - (void)_contentSizeDidChange;
-- (id)_newButtonForAttribution:(BOOL)arg1;
+- (id)_newButtonForAttribution:(bool)arg1;
 - (void)_setupImmutableConstraints;
 - (void)_updateButtonTitleAttributes;
 - (void)_updateMutableConstraints;
 - (void)_updateTintColor;
 - (void)_updateWithReservationInfo;
-- (void)dealloc;
 - (id)initWithReservationInfo:(id)arg1;
 - (id)reservationInfo;
-- (unsigned int)selectedTimeIndex;
+- (unsigned long long)selectedTimeIndex;
 - (id)selectedTimeString;
-- (void)setSelectedTimeIndex:(unsigned int)arg1;
+- (void)setSelectedTimeIndex:(unsigned long long)arg1;
 - (void)setSelectedTimeString:(id)arg1;
 - (void)tintColorDidChange;
 

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFMediaItem : NSObject <NSSecureCoding> {
+@interface SFMediaItem : NSObject <NSCopying, NSSecureCoding, SFMediaItem> {
     NSArray * _buyOptions;
     NSString * _contentAdvisory;
     SFImage * _contentAdvisoryImage;
@@ -16,26 +16,36 @@
     NSString * _title;
 }
 
-@property (nonatomic, retain) NSArray *buyOptions;
+@property (nonatomic, copy) NSArray *buyOptions;
 @property (nonatomic, copy) NSString *contentAdvisory;
 @property (nonatomic, retain) SFImage *contentAdvisoryImage;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSData *jsonData;
 @property (nonatomic, retain) SFImage *overlayImage;
 @property (nonatomic, retain) SFPunchout *punchout;
 @property (nonatomic, retain) SFImage *reviewGlyph;
 @property (nonatomic, copy) NSString *reviewText;
-@property (nonatomic, retain) NSArray *subtitleCustomLineBreaking;
+@property (nonatomic, copy) NSArray *subtitleCustomLineBreaking;
 @property (nonatomic, retain) SFText *subtitleText;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) SFImage *thumbnail;
 @property (nonatomic, copy) NSString *title;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)buyOptions;
 - (id)contentAdvisory;
 - (id)contentAdvisoryImage;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithProtobuf:(id)arg1;
+- (id)jsonData;
 - (id)overlayImage;
 - (id)punchout;
 - (id)reviewGlyph;

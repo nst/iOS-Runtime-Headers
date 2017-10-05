@@ -3,35 +3,35 @@
  */
 
 @interface ISStoreAuthenticationChallenge : ISAuthenticationChallenge {
-    int  _failureCount;
-    BOOL  _hasPassword;
+    long long  _failureCount;
+    bool  _hasPassword;
     NSString * _password;
     <NSURLAuthenticationChallengeSender> * _sender;
     NSString * _user;
-    BOOL  _userNameIsEditable;
+    bool  _userNameIsEditable;
 }
 
-@property int failureCount;
-@property BOOL hasPassword;
+@property long long failureCount;
+@property bool hasPassword;
 @property (retain) NSString *password;
 @property <NSURLAuthenticationChallengeSender> *sender;
 @property (retain) NSString *user;
-@property BOOL userNameIsEditable;
+@property bool userNameIsEditable;
 
 - (void)dealloc;
-- (int)failureCount;
-- (BOOL)hasPassword;
+- (long long)failureCount;
+- (bool)hasPassword;
 - (id)init;
 - (id)password;
 - (id)sender;
-- (void)setFailureCount:(int)arg1;
-- (void)setHasPassword:(BOOL)arg1;
+- (void)setFailureCount:(long long)arg1;
+- (void)setHasPassword:(bool)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setSender:(id)arg1;
 - (void)setUser:(id)arg1;
-- (void)setUserNameIsEditable:(BOOL)arg1;
+- (void)setUserNameIsEditable:(bool)arg1;
 - (id)user;
-- (BOOL)userNameIsEditable;
-- (BOOL)userNameIsEmail;
+- (bool)userNameIsEditable;
+- (bool)userNameIsEmail;
 
 @end

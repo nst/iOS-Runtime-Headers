@@ -12,7 +12,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) IFCentroidModelParameters *parameters;
 @property (readonly) Class superclass;
 
@@ -20,30 +20,30 @@
 
 - (void).cxx_destruct;
 - (id)_documentsContainingFeaturesLike:(id)arg1;
-- (id)_featureOccurrencesInDocuments:(id)arg1 interactionType:(int)arg2;
-- (id)_featuresSortedByCountAscending:(BOOL)arg1;
+- (id)_featureOccurrencesInDocuments:(id)arg1 interactionType:(long long)arg2;
+- (id)_featuresSortedByCountAscending:(bool)arg1;
 - (id)_vectorFromDictionary:(id)arg1;
-- (BOOL)addFeatureVectors:(id)arg1;
+- (bool)addFeatureVectors:(id)arg1;
 - (id)centroid;
 - (double)centroidScoreForFeature:(id)arg1;
 - (id)centroidWithScaling:(id)arg1;
-- (unsigned int)deleteFeatureVectors;
-- (unsigned int)deleteFeatureVectorsInExcessOf:(unsigned int)arg1;
-- (unsigned int)deleteFeatureVectorsOlderThan:(id)arg1;
-- (unsigned int)deleteFeatureVectorsWithFeatureLike:(id)arg1;
-- (unsigned int)documentCount;
-- (unsigned int)documentCountContainsFeatureLike:(id)arg1;
+- (unsigned long long)deleteFeatureVectors;
+- (unsigned long long)deleteFeatureVectorsInExcessOf:(unsigned long long)arg1;
+- (unsigned long long)deleteFeatureVectorsOlderThan:(id)arg1;
+- (unsigned long long)deleteFeatureVectorsWithFeatureLike:(id)arg1;
+- (unsigned long long)documentCount;
+- (unsigned long long)documentCountContainsFeatureLike:(id)arg1;
 - (void)enumerateStateWithBlock:(id /* block */)arg1;
-- (unsigned int)featureCount;
-- (id)featureForIndex:(unsigned int)arg1;
-- (unsigned int)indexForFeature:(id)arg1;
+- (unsigned long long)featureCount;
+- (id)featureForIndex:(unsigned long long)arg1;
+- (unsigned long long)indexForFeature:(id)arg1;
 - (id)init;
 - (id)leastFrequentFeature;
-- (unsigned int)leastFrequentFeatureCount;
+- (unsigned long long)leastFrequentFeatureCount;
 - (id)mostFrequentFeature;
-- (unsigned int)mostFrequentFeatureCount;
+- (unsigned long long)mostFrequentFeatureCount;
 - (id)parameters;
-- (BOOL)setCentroidFeature:(id)arg1;
+- (bool)setCentroidFeature:(id)arg1;
 - (void)setParameters:(id)arg1;
 - (id)vectorFromFeatureVector:(id)arg1;
 

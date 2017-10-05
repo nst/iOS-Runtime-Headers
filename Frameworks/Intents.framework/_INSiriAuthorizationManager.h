@@ -6,13 +6,14 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)_isSiriAuthorizationRestricted;
++ (bool)_isSiriAuthorizationRestricted;
++ (long long)_rawSiriAuthorizationStatusForAppID:(id)arg1;
 + (void)_requestSiriAuthorization:(id /* block */)arg1 auditToken:(struct { unsigned int x1[8]; })arg2;
-+ (int)_siriAuthorizationStatusForAppID:(id)arg1;
-+ (BOOL)_siriEnabled;
++ (long long)_siriAuthorizationStatusForAppID:(id)arg1;
++ (bool)_siriEnabled;
 + (id)_tccAccessInfoForBundle:(id)arg1;
 
 @end

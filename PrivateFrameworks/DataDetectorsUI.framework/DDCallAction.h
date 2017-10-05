@@ -4,19 +4,22 @@
 
 @interface DDCallAction : DDTelephoneNumberAction
 
-+ (BOOL)isAvailable;
++ (bool)isAvailable;
 
-- (int)TTYType;
-- (float)_systemFontSize;
-- (BOOL)_titleFitsInActionSheet:(id)arg1;
+- (long long)TTYType;
+- (double)_systemFontSize;
+- (bool)_titleFitsInActionSheet:(id)arg1;
 - (id)callProvider;
-- (BOOL)canBePerformedByOpeningURL;
-- (id)contactAndLabelForPhoneNumber:(id*)arg1;
-- (id)contactsMatchingPhoneNumber:(id)arg1 inContactStore:(id)arg2;
+- (bool)canBePerformedByOpeningURL;
+- (id)dialRequest;
 - (int)interactionType;
-- (id)labelToUseForPhoneNumber:(id)arg1 ofContact:(id)arg2;
-- (id)localizedCallStringForName:(id)arg1 usingCallRelay:(BOOL)arg2;
+- (bool)isEmail;
+- (id)localizedCallStringForName:(id)arg1 usingCallRelay:(bool)arg2;
 - (id)localizedName;
+- (id)notificationIconBundleIdentifier;
+- (id)notificationTitle;
+- (id)notificationTitleTargetString;
+- (id)notificationURL;
 - (void)performFromView:(id)arg1;
 
 @end

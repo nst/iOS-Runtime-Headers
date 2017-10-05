@@ -19,7 +19,7 @@
 @property (nonatomic) double contentDuration;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic) struct { double x1; double x2; } timeRangeInComposition;
 @property (nonatomic) struct { double x1; double x2; } timeRangeInContentToUse;
@@ -32,7 +32,7 @@
 - (void)deleteFromFilesystem;
 - (id)description;
 - (id)dictionaryPListRepresentation;
-- (unsigned long long)fileSizeOfAssetsIncludingRelatedResources:(BOOL)arg1;
+- (unsigned long long)fileSizeOfAssetsIncludingRelatedResources:(bool)arg1;
 - (id)fragmentByIntersectingTimeRangeInCompositionWithTimeRange:(struct { double x1; double x2; })arg1;
 - (id)initWithAVOutputURL:(id)arg1 contentDuration:(double)arg2 timeRangeInContentToUse:(struct { double x1; double x2; })arg3 timeRangeInComposition:(struct { double x1; double x2; })arg4;
 - (id)initWithDictionaryPListRepresentation:(id)arg1;

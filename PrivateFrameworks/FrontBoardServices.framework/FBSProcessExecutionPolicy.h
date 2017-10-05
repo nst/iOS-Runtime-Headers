@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSArray *provisions;
 @property (nonatomic, copy) FBSProcessExecutionStrategy *strategy;
 @property (readonly) Class superclass;

@@ -16,7 +16,7 @@
 - (id)messages;
 - (void)newMessagesAvailable:(id)arg1;
 - (void)setTransmogrifier:(id /* block */)arg1;
-- (BOOL)shouldCancel;
+- (bool)shouldCancel;
 - (id /* block */)transmogrifier;
 
 @end

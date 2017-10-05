@@ -11,8 +11,8 @@
 @property (readonly) NSArray *blockedThreadIDs;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) BOOL isUnresponsive;
+@property (readonly) unsigned long long hash;
+@property (readonly) bool isUnresponsive;
 @property (readonly) double machTimestampOfLastResponse;
 @property (readonly) double machTimestampWhenMeasured;
 @property (readonly) Class superclass;
@@ -21,16 +21,16 @@
 + (id)newInstanceWithoutReferencesFromBufferPosition:(const void*)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)addSelfToBufferAtPosition:(void*)arg1 withCompletedSerializationDictionary:(id)arg2;
+- (bool)addSelfToBufferAtPosition:(void*)arg1 withCompletedSerializationDictionary:(id)arg2;
 - (void)addSelfToSerializationDictionary:(id)arg1;
 - (id)blockedThreadIDs;
 - (id)initWithSerializedMountSnapshot:(const struct { unsigned long long x1; double x2; double x3; unsigned int x4; }*)arg1;
 - (id)initWithStatus:(struct netfs_status { unsigned int x1; BOOL x2[512]; unsigned int x3; unsigned int x4; unsigned long long x5[0]; }*)arg1 atMachTime:(double)arg2;
-- (BOOL)isBlockingThread:(unsigned long long)arg1;
-- (BOOL)isUnresponsive;
+- (bool)isBlockingThread:(unsigned long long)arg1;
+- (bool)isUnresponsive;
 - (double)machTimestampOfLastResponse;
 - (double)machTimestampWhenMeasured;
 - (void)populateReferencesUsingBufferPosition:(const void*)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;
-- (unsigned long)sizeInBytesForSerializedVersion;
+- (unsigned long long)sizeInBytesForSerializedVersion;
 
 @end

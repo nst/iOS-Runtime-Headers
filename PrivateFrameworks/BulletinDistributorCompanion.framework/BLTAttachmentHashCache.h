@@ -7,11 +7,7 @@
 }
 
 - (void).cxx_destruct;
-- (id)_hashAttachment:(id)arg1 forSectionID:(id)arg2 matchID:(id)arg3;
-- (void)cacheAttachment:(id)arg1 forSectionID:(id)arg2 matchID:(id)arg3;
-- (BOOL)hasAttachmentForSectionID:(id)arg1 matchID:(id)arg2;
 - (id)init;
-- (BOOL)isAttachmentCached:(id)arg1 forSectionID:(id)arg2 matchID:(id)arg3;
-- (void)removeAttachmentForSectionID:(id)arg1 matchID:(id)arg2;
+- (void)updateCacheWithItems:(id)arg1 forSectionID:(id)arg2 matchID:(id)arg3 result:(id /* block */)arg4;
 
 @end

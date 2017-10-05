@@ -3,31 +3,31 @@
  */
 
 @interface NSPDNSResourceRecord : NSObject {
-    unsigned int  _dataLength;
+    unsigned long long  _dataLength;
     NSString * _name;
-    int  _recordClass;
+    long long  _recordClass;
     NSString * _resourceString;
-    unsigned int  _timeToLive;
-    int  _type;
+    unsigned long long  _timeToLive;
+    long long  _type;
 }
 
-@property (readonly) unsigned int dataLength;
+@property (readonly) unsigned long long dataLength;
 @property (readonly) NSString *name;
-@property (readonly) int recordClass;
+@property (readonly) long long recordClass;
 @property (readonly) NSString *resourceString;
-@property (readonly) unsigned int timeToLive;
-@property (readonly) int type;
+@property (readonly) unsigned long long timeToLive;
+@property (readonly) long long type;
 
-+ (id)typeToString:(int)arg1;
++ (id)typeToString:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)copyStateDictionary;
-- (unsigned int)dataLength;
+- (unsigned long long)dataLength;
 - (id)initFromByteParser:(id)arg1;
 - (id)name;
-- (int)recordClass;
+- (long long)recordClass;
 - (id)resourceString;
-- (unsigned int)timeToLive;
-- (int)type;
+- (unsigned long long)timeToLive;
+- (long long)type;
 
 @end

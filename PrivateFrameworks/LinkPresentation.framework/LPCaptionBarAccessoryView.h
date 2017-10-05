@@ -4,23 +4,23 @@
 
 @interface LPCaptionBarAccessoryView : LPComponentView {
     UIView * _accessoryView;
-    BOOL  _shouldFlipHorizontally;
+    bool  _shouldFlipHorizontally;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _size;
-    int  _type;
+    long long  _type;
 }
 
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
 
 - (void).cxx_destruct;
 - (id)_createImageViewWithImage:(id)arg1;
 - (void)componentViewDidMoveToWindow;
 - (id)init;
-- (id)initWithType:(int)arg1 side:(int)arg2;
+- (id)initWithType:(long long)arg1 side:(long long)arg2;
 - (void)layoutComponentView;
-- (struct CGSize { float x1; float x2; })size;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

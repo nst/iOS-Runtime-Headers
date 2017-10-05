@@ -5,45 +5,46 @@
 @interface UIPreviewForceInteractionProgress : UIInteractionProgress <_UIForceLevelClassifierDelegate> {
     _UIForceLevelClassifier * _classifier;
     NSObservation * _classifierObservation;
-    BOOL  _completesAtTargetState;
-    BOOL  _didEnd;
-    BOOL  _enteredMinimumState;
+    bool  _completesAtTargetState;
+    bool  _didEnd;
+    bool  _enteredMinimumState;
     NSObservation * _gestureBeganObservation;
-    int  _minimumState;
+    long long  _minimumState;
     _UITouchForceObservable * _observable;
     NSObservation * _progressObservation;
-    int  _targetState;
+    long long  _targetState;
     NSObservation * _targetStateUpdateObservation;
-    BOOL  _updateMinimumStateWithTargetState;
+    bool  _updateMinimumStateWithTargetState;
 }
 
-@property (setter=_setClassifierShouldRespectSystemGestureTouchFiltering:, nonatomic) BOOL _classifierShouldRespectSystemGestureTouchFiltering;
-@property (setter=_setTargetState:, nonatomic) int _targetState;
-@property (nonatomic) BOOL completesAtTargetState;
+@property (setter=_setClassifierShouldRespectSystemGestureTouchFiltering:, nonatomic) bool _classifierShouldRespectSystemGestureTouchFiltering;
+@property (setter=_setTargetState:, nonatomic) long long _targetState;
+@property (nonatomic) bool completesAtTargetState;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_classifierShouldRespectSystemGestureTouchFiltering;
-- (void)_forceLevelClassifier:(id)arg1 currentForceLevelDidChange:(int)arg2;
+- (bool)_classifierShouldRespectSystemGestureTouchFiltering;
+- (void)_forceLevelClassifier:(id)arg1 currentForceLevelDidChange:(long long)arg2;
 - (void)_forceLevelClassifierDidReset:(id)arg1;
-- (void)_gestureRecognizerBegan:(BOOL)arg1;
-- (id)_initWithObservable:(id)arg1 targetState:(int)arg2 minimumRequiredState:(int)arg3;
-- (id)_initWithObservable:(id)arg1 targetState:(int)arg2 minimumRequiredState:(int)arg3 useLinearClassifier:(BOOL)arg4;
-- (id)_initWithView:(id)arg1 targetState:(int)arg2 minimumRequiredState:(int)arg3 useLinearClassifier:(BOOL)arg4;
+- (void)_gestureRecognizerBegan:(bool)arg1;
+- (id)_initWithObservable:(id)arg1 targetState:(long long)arg2 minimumRequiredState:(long long)arg3;
+- (id)_initWithObservable:(id)arg1 targetState:(long long)arg2 minimumRequiredState:(long long)arg3 useLinearClassifier:(bool)arg4;
+- (id)_initWithView:(id)arg1 targetState:(long long)arg2 minimumRequiredState:(long long)arg3 useLinearClassifier:(bool)arg4;
 - (void)_installProgressObserver;
-- (void)_setClassifierShouldRespectSystemGestureTouchFiltering:(BOOL)arg1;
-- (void)_setTargetState:(int)arg1;
-- (int)_targetState;
-- (BOOL)completesAtTargetState;
-- (BOOL)didEnd;
-- (BOOL)enteredMinimumState;
+- (void)_setClassifierShouldRespectSystemGestureTouchFiltering:(bool)arg1;
+- (void)_setGestureBeginObservable:(id)arg1;
+- (void)_setTargetState:(long long)arg1;
+- (long long)_targetState;
+- (bool)completesAtTargetState;
+- (bool)didEnd;
+- (bool)enteredMinimumState;
 - (id)initWithGestureRecognizer:(id)arg1;
-- (id)initWithGestureRecognizer:(id)arg1 minimumRequiredState:(int)arg2;
-- (id)initWithView:(id)arg1 targetState:(int)arg2;
-- (id)initWithView:(id)arg1 targetState:(int)arg2 minimumRequiredState:(int)arg3;
-- (void)setCompletesAtTargetState:(BOOL)arg1;
+- (id)initWithGestureRecognizer:(id)arg1 minimumRequiredState:(long long)arg2;
+- (id)initWithView:(id)arg1 targetState:(long long)arg2;
+- (id)initWithView:(id)arg1 targetState:(long long)arg2 minimumRequiredState:(long long)arg3;
+- (void)setCompletesAtTargetState:(bool)arg1;
 
 @end

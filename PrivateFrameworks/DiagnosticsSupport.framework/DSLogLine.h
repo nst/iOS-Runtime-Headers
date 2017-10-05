@@ -7,7 +7,7 @@
     NSDate * _date;
     NSString * _exception;
     NSArray * _fields;
-    BOOL  _isUsable;
+    bool  _isUsable;
     NSString * _type;
 }
 
@@ -15,14 +15,14 @@
 @property (nonatomic, readonly) NSDate *date;
 @property (nonatomic, readonly) NSString *exception;
 @property (nonatomic, readonly) NSArray *fields;
-@property (nonatomic, readonly) BOOL isUsable;
+@property (nonatomic, readonly) bool isUsable;
 @property (nonatomic, retain) NSString *type;
 
 + (id)logLinesFromArray:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)blankingStringFromFieldAtIndex:(int)arg1;
-- (BOOL)boolFromFieldAtIndex:(int)arg1;
+- (bool)boolFromFieldAtIndex:(int)arg1;
 - (id)bundleID;
 - (id)date;
 - (double)doubleFromFieldAtIndex:(int)arg1;
@@ -31,7 +31,7 @@
 - (id)initWithLine:(id)arg1;
 - (id)initWithLogLine:(id)arg1;
 - (int)integerFromFieldAtIndex:(int)arg1;
-- (BOOL)isUsable;
+- (bool)isUsable;
 - (long long)longLongFromFieldAtIndex:(int)arg1;
 - (id)nilableStringFromFieldAtIndex:(int)arg1;
 - (void)setType:(id)arg1;

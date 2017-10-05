@@ -7,16 +7,16 @@
         int width; 
         int height; 
     }  _fesDimensions;
-    int  _videoFormatIndex;
+    int  _formatIndex;
 }
 
 @property (readonly) struct { int x1; int x2; } fesDimensions;
-@property (readonly) int videoFormatIndex;
+@property (readonly) int formatIndex;
 
 - (void)dealloc;
 - (id)description;
 - (struct { int x1; int x2; })fesDimensions;
+- (int)formatIndex;
 - (id)initWithFESCompanionFormatDictionary:(id)arg1;
-- (int)videoFormatIndex;
 
 @end

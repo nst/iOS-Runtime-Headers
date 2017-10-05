@@ -3,14 +3,14 @@
  */
 
 @interface MusicSearchRecentsStorage : NSObject {
-    BOOL  _hasChanges;
-    int  _limit;
-    int  _maximumNumberOfRecents;
+    bool  _hasChanges;
+    long long  _limit;
+    long long  _maximumNumberOfRecents;
     NSURL * _persistenceURL;
     NSMutableArray * _recents;
 }
 
-@property (readonly) int maximumNumberOfRecents;
+@property (readonly) long long maximumNumberOfRecents;
 
 + (id)sharedRecentsStorage;
 
@@ -18,9 +18,9 @@
 - (void)_addRecent:(id)arg1 replacingRecent:(id)arg2;
 - (void)addRecent:(id)arg1;
 - (void)clear;
-- (id)initWithLimit:(int)arg1 persistenceURL:(id)arg2;
+- (id)initWithLimit:(long long)arg1 persistenceURL:(id)arg2;
 - (void)load;
-- (int)maximumNumberOfRecents;
+- (long long)maximumNumberOfRecents;
 - (id)recentSearches;
 - (void)replaceRecent:(id)arg1 withRecent:(id)arg2;
 - (void)save;

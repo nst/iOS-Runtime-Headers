@@ -6,7 +6,7 @@
     NSObject<OS_dispatch_group> * _group;
     id /* block */  _handler;
     NSObject<OS_dispatch_queue> * _queue;
-    int  isCanceled;
+    bool  isCanceled;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *group;

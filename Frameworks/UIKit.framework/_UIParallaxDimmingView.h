@@ -4,33 +4,29 @@
 
 @interface _UIParallaxDimmingView : UIView {
     UIView * _addingSubview;
-    BOOL  _backgroundIsDimmed;
+    bool  _backgroundIsDimmed;
     UIColor * _dimmingColor;
     UIImageView * leftEdgeFade;
 }
 
 @property (nonatomic, retain) UIView *addingSubview;
-@property (nonatomic) BOOL backgroundIsDimmed;
+@property (nonatomic) bool backgroundIsDimmed;
 @property (nonatomic, retain) UIColor *dimmingColor;
-
-+ (id)newDimmingViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-+ (id)newDimmingViewWrappingView:(id)arg1 withLeftBorder:(float)arg2;
-+ (id)newDimmingViewWrappingView:(id)arg1 withLeftBorder:(float)arg2 shouldReverseLayoutDirection:(BOOL)arg3;
 
 - (void).cxx_destruct;
 - (id)_basicAnimationWithKeyPath:(id)arg1;
-- (void)_updateLeftEdgeFade:(BOOL)arg1;
+- (void)_updateLeftEdgeFade:(bool)arg1;
 - (id)addingSubview;
-- (BOOL)backgroundIsDimmed;
+- (bool)backgroundIsDimmed;
 - (void)crossFade;
 - (id)defaultBorderColor;
 - (void)didMoveToWindow;
 - (id)dimmingColor;
-- (id)initViewWrappingView:(id)arg1 withLeftBorder:(float)arg2;
-- (id)initViewWrappingView:(id)arg1 withLeftBorder:(float)arg2 shouldReverseLayoutDirection:(BOOL)arg3;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initViewWrappingView:(id)arg1 withLeftBorder:(double)arg2 shouldReverseLayoutDirection:(bool)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 overrideDimmingColor:(id)arg2;
 - (void)setAddingSubview:(id)arg1;
-- (void)setBackgroundIsDimmed:(BOOL)arg1;
+- (void)setBackgroundIsDimmed:(bool)arg1;
 - (void)setDimmingColor:(id)arg1;
 
 @end

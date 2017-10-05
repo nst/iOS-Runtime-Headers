@@ -4,20 +4,20 @@
 
 @interface __NSCFLocalDownloadTask : __NSCFLocalSessionTask <NSURLSessionDownloadTaskSubclass, __NSCFLocalDownloadFileOpener> {
     id /* block */  _afterDidReportProgressOnQueue;
-    BOOL  _canWrite;
+    bool  _canWrite;
     id /* block */  _dataAckCompletion;
-    BOOL  _didIssueNeedFinish;
+    bool  _didIssueNeedFinish;
     __NSCFLocalDownloadFile * _downloadFile;
     id /* block */  _fileCompletion;
     long long  _initialResumeSize;
-    unsigned int  _ioSuspend;
-    BOOL  _needFinish;
+    unsigned long long  _ioSuspend;
+    bool  _needFinish;
     NSDictionary * _originalResumeInfo;
     id /* block */  _resumeCallback;
     int  _seqNo;
-    BOOL  _suppressProgress;
-    unsigned long  _totalWrote;
-    unsigned long  _transientWriteProgress;
+    bool  _suppressProgress;
+    unsigned long long  _totalWrote;
+    unsigned long long  _transientWriteProgress;
     NSObject<OS_dispatch_data> * _writeBuffer;
 }
 
@@ -27,7 +27,7 @@
 @property (readonly, copy) NSString *description;
 @property (retain) __NSCFLocalDownloadFile *downloadFile;
 @property (copy) id /* block */ fileCompletion;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (copy) id /* block */ resumeCallback;
 @property (readonly) Class superclass;
 
@@ -54,13 +54,13 @@
 - (id)downloadFile;
 - (id)explicitDownloadDirectory;
 - (id /* block */)fileCompletion;
-- (id)initWithSession:(id)arg1 request:(id)arg2 filePath:(id)arg3 ident:(unsigned int)arg4;
-- (id)initWithSession:(id)arg1 request:(id)arg2 ident:(unsigned int)arg3;
-- (id)initWithSession:(id)arg1 resumeData:(id)arg2 ident:(unsigned int)arg3;
+- (id)initWithSession:(id)arg1 request:(id)arg2 filePath:(id)arg3 ident:(unsigned long long)arg4;
+- (id)initWithSession:(id)arg1 request:(id)arg2 ident:(unsigned long long)arg3;
+- (id)initWithSession:(id)arg1 resumeData:(id)arg2 ident:(unsigned long long)arg3;
 - (id)initWithTask:(id)arg1;
-- (BOOL)isKindOfClass:(Class)arg1;
+- (bool)isKindOfClass:(Class)arg1;
 - (int)openItemForPath:(id)arg1 mode:(int)arg2;
-- (void)reportProgress:(unsigned long)arg1;
+- (void)reportProgress:(unsigned long long)arg1;
 - (id /* block */)resumeCallback;
 - (void)setDataAckCompletion:(id /* block */)arg1;
 - (void)setDownloadFile:(id)arg1;
@@ -68,6 +68,8 @@
 - (void)setResumeCallback:(id /* block */)arg1;
 - (void)set_afterDidReportProgressOnQueue:(id /* block */)arg1;
 - (bool)setupForNewDownload:(id)arg1;
+- (void)suspendExtractor;
+- (void)terminateExtractorWithError:(id)arg1;
 - (void)writeAndResume;
 
 @end

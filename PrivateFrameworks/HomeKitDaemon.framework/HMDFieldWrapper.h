@@ -2,18 +2,19 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDFieldWrapper : NSObject {
+@interface HMDFieldWrapper : HMFObject {
     NSString * _name;
-    int  _tlvid;
+    long long  _tlvid;
 }
 
-@property (nonatomic) NSString *name;
-@property (nonatomic) int tlvid;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) long long tlvid;
 
-- (id)initWithTlvId:(unsigned int)arg1 name:(id)arg2;
+- (void).cxx_destruct;
+- (id)initWithTlvId:(unsigned long long)arg1 name:(id)arg2;
 - (id)name;
 - (void)setName:(id)arg1;
-- (void)setTlvid:(int)arg1;
-- (int)tlvid;
+- (void)setTlvid:(long long)arg1;
+- (long long)tlvid;
 
 @end

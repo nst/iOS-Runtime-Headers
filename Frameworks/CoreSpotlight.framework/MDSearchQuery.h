@@ -8,7 +8,7 @@
     NSPredicate * _predicate;
     CSSearchQuery * _query;
     NSObject<OS_dispatch_queue> * _queue;
-    unsigned int  _status;
+    unsigned long long  _status;
 }
 
 @property (retain) NSString *clientBundleID;
@@ -17,7 +17,7 @@
 @property (copy) NSPredicate *predicate;
 @property (nonatomic, retain) CSSearchQuery *query;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
-@property unsigned int status;
+@property unsigned long long status;
 
 - (void).cxx_destruct;
 - (void)_didFinishWithError:(id)arg1;
@@ -37,8 +37,8 @@
 - (void)setPredicate:(id)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (void)setStatus:(unsigned int)arg1;
+- (void)setStatus:(unsigned long long)arg1;
 - (void)start;
-- (unsigned int)status;
+- (unsigned long long)status;
 
 @end

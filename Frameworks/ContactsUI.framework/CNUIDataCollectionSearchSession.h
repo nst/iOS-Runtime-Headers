@@ -3,23 +3,23 @@
  */
 
 @interface CNUIDataCollectionSearchSession : NSObject {
-    BOOL  _pendingResults;
-    BOOL  _pendingSuggestionsResults;
+    bool  _pendingResults;
+    bool  _pendingSuggestionsResults;
 }
 
-@property (nonatomic) BOOL pendingResults;
-@property (nonatomic) BOOL pendingSuggestionsResults;
+@property (nonatomic) bool pendingResults;
+@property (nonatomic) bool pendingSuggestionsResults;
 
 + (void)begin;
 + (id)currentSession;
 + (void)end;
 
-- (void)didFetchResultSuggested:(BOOL)arg1;
+- (void)didFetchResultSuggested:(bool)arg1;
 - (void)didSelectResult:(id)arg1;
-- (BOOL)pendingResults;
-- (BOOL)pendingSuggestionsResults;
+- (bool)pendingResults;
+- (bool)pendingSuggestionsResults;
 - (void)searchStringDidChange;
-- (void)setPendingResults:(BOOL)arg1;
-- (void)setPendingSuggestionsResults:(BOOL)arg1;
+- (void)setPendingResults:(bool)arg1;
+- (void)setPendingSuggestionsResults:(bool)arg1;
 
 @end

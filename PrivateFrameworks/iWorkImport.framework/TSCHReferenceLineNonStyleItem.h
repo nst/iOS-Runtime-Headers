@@ -12,10 +12,10 @@
 
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initFromUnarchiver:(id)arg1 message:(const struct ChartReferenceLineNonStyleItem { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct UUID {} *x6; }*)arg2;
 - (id)initWithNonStyle:(id)arg1 uuid:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)nonStyle;
 - (void)saveToArchiver:(id)arg1 message:(struct ChartReferenceLineNonStyleItem { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct UUID {} *x6; }*)arg2;
 - (void)setNonStyle:(id)arg1;

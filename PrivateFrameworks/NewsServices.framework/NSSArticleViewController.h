@@ -2,36 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NewsServices.framework/NewsServices
  */
 
-@interface NSSArticleViewController : UIViewController {
-    NSSArticle * _article;
-    BOOL  _articleLoading;
-    NSSArticleView * _articleView;
-    UIActivityIndicatorView * _spinner;
-}
-
-@property (nonatomic, retain) NSSArticle *article;
-@property (nonatomic) BOOL articleLoading;
-@property (nonatomic, retain) NSSArticleView *articleView;
-@property (nonatomic, retain) UIActivityIndicatorView *spinner;
-
-- (void).cxx_destruct;
-- (void)_tickleArticleView;
-- (void)_tickleSpinner;
-- (id)article;
-- (BOOL)articleLoading;
-- (id)articleView;
-- (id)initWithArticle:(id)arg1;
-- (id)initWithNotification:(id)arg1;
-- (id)initWithSpotlightIdentifier:(id)arg1;
-- (BOOL)prefersStatusBarHidden;
-- (void)presentArticle:(id)arg1 completion:(id /* block */)arg2;
-- (void)setArticle:(id)arg1;
-- (void)setArticleLoading:(BOOL)arg1;
-- (void)setArticleView:(id)arg1;
-- (void)setSpinner:(id)arg1;
-- (id)spinner;
-- (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillLayoutSubviews;
+@interface NSSArticleViewController : NSSArticleViewControllerInternal
 
 @end

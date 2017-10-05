@@ -14,19 +14,17 @@
 @property (nonatomic, readonly) NSDate *representativeDate;
 @property (nonatomic, readonly) NSDate *startDate;
 
-+ (unsigned int)_categoryRankForMemoryInfo:(id)arg1;
-+ (id)_rankForCategory:(int)arg1;
-+ (int)compareMemoryInfo:(id)arg1 toMemoryInfo:(id)arg2;
++ (long long)compareMemoryInfo:(id)arg1 toMemoryInfo:(id)arg2;
 
 - (void).cxx_destruct;
-- (int)compare:(id)arg1;
+- (long long)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)endDate;
 - (id)entryByAddingMemory:(id)arg1;
 - (id)entryByRemovingMemory:(id)arg1;
-- (id)entryByReplacingMemoryInfoAtIndex:(int)arg1 withMemoryInfo:(id)arg2;
-- (unsigned int)indexOfMemory:(id)arg1;
+- (id)entryByReplacingMemoryInfoAtIndex:(long long)arg1 withMemoryInfo:(id)arg2;
+- (unsigned long long)indexOfMemory:(id)arg1;
 - (id)initWithMemories:(id)arg1;
 - (id)initWithSortedMemories:(id)arg1;
 - (id)memories;

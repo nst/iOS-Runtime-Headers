@@ -3,17 +3,17 @@
  */
 
 @interface HDServiceConnectionManager : NSObject <HDDatabaseProtectedDataObserver, HDDiagnosticObject, HDHealthDaemonReadyObserver> {
-    BOOL  _BTLEEnabled;
+    bool  _BTLEEnabled;
     NSMutableDictionary * _activeServices;
-    BOOL  _connecting;
-    HDDaemon * _daemon;
+    bool  _connecting;
     NSObject<OS_dispatch_queue> * _deviceQueue;
+    HDProfile * _profile;
+    HDHealthServiceManager * _serviceManager;
 }
 
-@property (nonatomic) HDDaemon *daemon;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_transactionName:(id)arg1;
@@ -23,19 +23,17 @@
 - (void)_connectToServices;
 - (void)_disconnectFromService:(id)arg1;
 - (void)_disconnectFromServices;
-- (void)_handleBluetoothUpdates:(int)arg1;
+- (void)_handleBluetoothUpdates:(long long)arg1;
 - (void)_subscribeBluetoothStateUpdates;
 - (void)connectToService:(id)arg1;
-- (id)daemon;
 - (void)daemonReady:(id)arg1;
-- (void)database:(id)arg1 protectedDataDidBecomeAvailable:(BOOL)arg2;
+- (void)database:(id)arg1 protectedDataDidBecomeAvailable:(bool)arg2;
 - (void)dealloc;
 - (id)diagnosticDescription;
 - (void)disconnectFromService:(id)arg1;
 - (void)disconnectFromServices;
 - (id)init;
-- (id)initWithDaemon:(id)arg1;
+- (id)initWithProfile:(id)arg1;
 - (void)reconnectToServices;
-- (void)setDaemon:(id)arg1;
 
 @end

@@ -7,6 +7,6 @@
 }
 
 - (struct __CFString { }*)container;
-- (id)initWithDomain:(struct __CFString { }*)arg1 userName:(struct __CFString { }*)arg2 container:(struct __CFString { }*)arg3 byHost:(BOOL)arg4 managed:(BOOL)arg5 shmemIndex:(short)arg6 daemon:(id)arg7;
+- (id)initWithDomain:(struct __CFString { }*)arg1 userName:(struct __CFString { }*)arg2 container:(struct __CFString { }*)arg3 byHost:(bool)arg4 managed:(bool)arg5 shmemIndex:(short)arg6 daemon:(id)arg7;
 
 @end

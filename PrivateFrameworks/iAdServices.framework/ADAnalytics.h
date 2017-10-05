@@ -9,7 +9,7 @@
 @property (nonatomic, retain) ADAdSheetConnection *connection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedInstance;
@@ -19,8 +19,7 @@
 - (void)configureConnection:(id)arg1;
 - (id)connection;
 - (id)init;
-- (void)reportIngestionForPassWithTeamIdentifier:(id)arg1 passTypeIdentifier:(id)arg2 serialNumber:(id)arg3 iAdReportingIdentifier:(id)arg4;
 - (void)setConnection:(id)arg1;
-- (BOOL)shouldLaunchAdSheet;
+- (bool)shouldLaunchAdSheet;
 
 @end

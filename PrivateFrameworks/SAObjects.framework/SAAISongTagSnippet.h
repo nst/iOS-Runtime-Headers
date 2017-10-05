@@ -4,7 +4,6 @@
 
 @interface SAAISongTagSnippet : SAUISnippet
 
-@property (nonatomic, retain) SAUIButton *addButton;
 @property (nonatomic, retain) SAUIAppPunchOut *attributionPunchOut;
 @property (nonatomic, retain) SAMPPlaybackButton *playbackButton;
 @property (nonatomic, retain) SAUIAppPunchOut *purchaseSongPunchOut;
@@ -14,13 +13,11 @@
 + (id)songTagSnippet;
 + (id)songTagSnippetWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)addButton;
 - (id)attributionPunchOut;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)playbackButton;
 - (id)purchaseSongPunchOut;
-- (void)setAddButton:(id)arg1;
 - (void)setAttributionPunchOut:(id)arg1;
 - (void)setPlaybackButton:(id)arg1;
 - (void)setPurchaseSongPunchOut:(id)arg1;

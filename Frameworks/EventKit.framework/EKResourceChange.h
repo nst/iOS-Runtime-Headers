@@ -4,7 +4,7 @@
 
 @interface EKResourceChange : EKObject <EKIdentityProtocol>
 
-@property (nonatomic, readonly) BOOL alerted;
+@property (nonatomic, readonly) bool alerted;
 @property (nonatomic, readonly, retain) EKCalendar *calendar;
 @property (nonatomic, readonly, retain) EKCalendarItem *calendarItem;
 @property (nonatomic, readonly) unsigned int changeType;
@@ -13,23 +13,26 @@
 @property (nonatomic, readonly, copy) NSString *changedByFirstName;
 @property (nonatomic, readonly, copy) NSString *changedByLastName;
 @property (nonatomic, readonly) NSNumber *createCount;
-@property (nonatomic, readonly) BOOL dateChanged;
+@property (nonatomic, readonly) bool dateChanged;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) NSNumber *deleteCount;
 @property (nonatomic, readonly) NSString *deletedTitle;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL locationChanged;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool locationChanged;
 @property (nonatomic, readonly) unsigned int publicStatus;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL timeChanged;
+@property (nonatomic, readonly) bool timeChanged;
 @property (nonatomic, readonly, copy) NSDate *timestamp;
-@property (nonatomic, readonly) BOOL titleChanged;
+@property (nonatomic, readonly) bool titleChanged;
 @property (nonatomic, readonly) NSNumber *updateCount;
 
-- (id)_calendarItemRelation;
-- (id)_persistentResourceChange;
-- (BOOL)alerted;
++ (Class)frozenClass;
++ (id)knownRelationshipSingleValueKeys;
+
+- (id)URL;
+- (bool)_propertyWithFlagDidChange:(unsigned int)arg1;
+- (bool)alerted;
 - (id)calendar;
 - (id)calendarItem;
 - (unsigned int)changeType;
@@ -37,21 +40,22 @@
 - (id)changedByDisplayName;
 - (id)changedByFirstName;
 - (id)changedByLastName;
+- (unsigned int)changedProperties;
 - (void)clearAlertedStatus;
 - (id)createCount;
-- (BOOL)dateChanged;
+- (bool)dateChanged;
 - (id)deleteCount;
 - (id)deletedTitle;
 - (id)emailAddress;
 - (id)firstName;
 - (id)lastName;
-- (id)lazyLoadRelationForKey:(id)arg1;
-- (BOOL)locationChanged;
+- (bool)locationChanged;
 - (id)name;
+- (id)phoneNumber;
 - (unsigned int)publicStatus;
-- (BOOL)timeChanged;
+- (bool)timeChanged;
 - (id)timestamp;
-- (BOOL)titleChanged;
+- (bool)titleChanged;
 - (id)updateCount;
 
 @end

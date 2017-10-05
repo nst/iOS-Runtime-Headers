@@ -3,28 +3,28 @@
  */
 
 @interface _TimelineSegment : NSObject {
-    unsigned int  _count;
+    unsigned long long  _count;
     _TimelineEntryNode * _leftmostNode;
     _TimelineEntryNode * _rightmostNode;
 }
 
-@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly) unsigned long long count;
 @property (nonatomic, readonly) double duration;
 @property (nonatomic, readonly) _TimelineEntryNode *leftmostNode;
 @property (nonatomic, readonly) _TimelineEntryNode *rightmostNode;
 
 - (void).cxx_destruct;
-- (BOOL)containsNode:(id)arg1;
-- (BOOL)contractFromLeft;
-- (BOOL)contractFromRight;
-- (unsigned int)count;
+- (bool)containsNode:(id)arg1;
+- (bool)contractFromLeft;
+- (bool)contractFromRight;
+- (unsigned long long)count;
 - (double)duration;
-- (BOOL)expandToLeft;
-- (BOOL)expandToRight;
-- (id)initWithLeftmostNode:(id)arg1 rightmostNode:(id)arg2 count:(unsigned int)arg3;
+- (bool)expandToLeft;
+- (bool)expandToRight;
+- (id)initWithLeftmostNode:(id)arg1 rightmostNode:(id)arg2 count:(unsigned long long)arg3;
 - (id)leftmostNode;
 - (id)rightmostNode;
-- (BOOL)shiftLeft;
-- (BOOL)shiftRight;
+- (bool)shiftLeft;
+- (bool)shiftRight;
 
 @end

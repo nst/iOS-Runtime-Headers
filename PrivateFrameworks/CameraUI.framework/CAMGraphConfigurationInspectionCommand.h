@@ -13,7 +13,7 @@
 - (void).cxx_destruct;
 - (id)_knownGraphConfiguration;
 - (id)_resolvedGraphConfiguration;
-- (int)_resolvedVideoConfigurationFromContext:(id)arg1;
+- (long long)_resolvedVideoConfigurationFromContext:(id)arg1;
 - (void)_setResolvedGraphConfiguration:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -4,10 +4,10 @@
 
 @interface NSScanner : NSObject <NSCopying>
 
-@property BOOL caseSensitive;
+@property bool caseSensitive;
 @property (copy) NSCharacterSet *charactersToBeSkipped;
 @property (retain) id locale;
-@property unsigned int scanLocation;
+@property unsigned long long scanLocation;
 @property (readonly, copy) NSString *string;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
@@ -18,57 +18,72 @@
 
 - (id)_invertedSkipSet;
 - (id)_remainingString;
-- (BOOL)_scanDecimal:(unsigned int)arg1 into:(int*)arg2;
-- (BOOL)caseSensitive;
+- (bool)_scanDecimal:(unsigned long long)arg1 into:(long long*)arg2;
+- (bool)caseSensitive;
 - (id)charactersToBeSkipped;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithString:(id)arg1;
-- (BOOL)isAtEnd;
+- (bool)isAtEnd;
 - (id)locale;
-- (BOOL)scanCharactersFromSet:(id)arg1 intoString:(id*)arg2;
-- (BOOL)scanDecimal:(struct { unsigned int x1 : 8; unsigned int x2 : 4; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 18; unsigned short x6[8]; }*)arg1;
-- (BOOL)scanDouble:(double*)arg1;
-- (BOOL)scanFloat:(float*)arg1;
-- (BOOL)scanHexDouble:(double*)arg1;
-- (BOOL)scanHexFloat:(float*)arg1;
-- (BOOL)scanHexInt:(unsigned int*)arg1;
-- (BOOL)scanHexLongLong:(unsigned long long*)arg1;
-- (BOOL)scanInt:(int*)arg1;
-- (BOOL)scanInteger:(int*)arg1;
-- (unsigned int)scanLocation;
-- (BOOL)scanLongLong:(long long*)arg1;
-- (BOOL)scanString:(id)arg1 intoString:(id*)arg2;
-- (BOOL)scanUnsignedInteger:(unsigned int*)arg1;
-- (BOOL)scanUnsignedLongLong:(unsigned long long*)arg1;
-- (BOOL)scanUpToCharactersFromSet:(id)arg1 intoString:(id*)arg2;
-- (BOOL)scanUpToString:(id)arg1 intoString:(id*)arg2;
-- (void)setCaseSensitive:(BOOL)arg1;
+- (bool)scanCharactersFromSet:(id)arg1 intoString:(id*)arg2;
+- (bool)scanDecimal:(struct { unsigned int x1 : 8; unsigned int x2 : 4; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 18; unsigned short x6[8]; }*)arg1;
+- (bool)scanDouble:(double*)arg1;
+- (bool)scanFloat:(float*)arg1;
+- (bool)scanHexDouble:(double*)arg1;
+- (bool)scanHexFloat:(float*)arg1;
+- (bool)scanHexInt:(unsigned int*)arg1;
+- (bool)scanHexLongLong:(unsigned long long*)arg1;
+- (bool)scanInt:(int*)arg1;
+- (bool)scanInteger:(long long*)arg1;
+- (unsigned long long)scanLocation;
+- (bool)scanLongLong:(long long*)arg1;
+- (bool)scanString:(id)arg1 intoString:(id*)arg2;
+- (bool)scanUnsignedInteger:(unsigned long long*)arg1;
+- (bool)scanUnsignedLongLong:(unsigned long long*)arg1;
+- (bool)scanUpToCharactersFromSet:(id)arg1 intoString:(id*)arg2;
+- (bool)scanUpToString:(id)arg1 intoString:(id*)arg2;
+- (void)setCaseSensitive:(bool)arg1;
 - (void)setCharactersToBeSkipped:(id)arg1;
 - (void)setLocale:(id)arg1;
-- (void)setScanLocation:(unsigned int)arg1;
+- (void)setScanLocation:(unsigned long long)arg1;
 - (id)string;
 
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_rangeOfFirstMatchWithRegularExpression:(id)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })_rangeOfFirstMatchWithRegularExpression:(id)arg1;
 - (id)mf_remainingString;
-- (BOOL)mf_scanUpToRegularExpression:(id)arg1;
+- (bool)mf_scanUpToRegularExpression:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
 
-- (BOOL)scanCGFloat:(float*)arg1;
+- (bool)scanCGFloat:(double*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
 
 - (id)mf_nextTokenWithPunctuation:(struct __CFCharacterSet { }*)arg1;
-- (BOOL)mf_scanUpAndOverString:(id)arg1;
+- (bool)mf_scanUpAndOverString:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NeutrinoCore.framework/NeutrinoCore
+
+- (bool)scanChoicePattern:(out id*)arg1 error:(out id*)arg2;
+- (bool)scanGroupPattern:(out id*)arg1 error:(out id*)arg2;
+- (bool)scanListPattern:(out id*)arg1 error:(out id*)arg2;
+- (bool)scanPattern:(out id*)arg1 error:(out id*)arg2;
+- (bool)scanPatterns:(out id*)arg1 from:(id)arg2 to:(id)arg3 delimiter:(id)arg4 error:(out id*)arg5;
+- (bool)scanRepeatPattern:(inout id*)arg1 error:(out id*)arg2;
+- (bool)scanTokenPattern:(out id*)arg1 error:(out id*)arg2;
+- (id)substringFromScanLocation;
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
-- (BOOL)tsu_scanCGFloat:(float*)arg1;
+- (bool)tsu_scanCGFloat:(double*)arg1;
+
+// Image: /System/Library/PrivateFrameworks/TSUtility.framework/TSUtility
+
+- (bool)tsu_scanCGFloat:(double*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
-- (BOOL)tsu_scanCGFloat:(float*)arg1;
+- (bool)tsu_scanCGFloat:(double*)arg1;
 
 @end

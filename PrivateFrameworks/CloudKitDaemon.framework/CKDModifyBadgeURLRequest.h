@@ -3,16 +3,16 @@
  */
 
 @interface CKDModifyBadgeURLRequest : CKDURLRequest {
-    unsigned int  _badgeValue;
+    unsigned long long  _badgeValue;
 }
 
-@property (nonatomic, readonly) unsigned int badgeValue;
+@property (nonatomic, readonly) unsigned long long badgeValue;
 
-- (unsigned int)badgeValue;
-- (id)initWithBadgeValue:(unsigned int)arg1;
+- (unsigned long long)badgeValue;
+- (id)generateRequestOperations;
+- (id)initWithBadgeValue:(unsigned long long)arg1;
 - (int)operationType;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
-- (id)requestOperations;
 
 @end

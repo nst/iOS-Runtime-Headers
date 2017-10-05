@@ -9,7 +9,7 @@
     int  _statusCode;
     NSString * _statusDescription;
     NSString * _trackingDescription;
-    unsigned int  _written;
+    unsigned long long  _written;
 }
 
 @property (nonatomic, retain) HTSHTTPMessageRequest *request;
@@ -18,7 +18,7 @@
 @property (nonatomic) int statusCode;
 @property (nonatomic, copy) NSString *statusDescription;
 @property (nonatomic, copy) NSString *trackingDescription;
-@property (nonatomic) unsigned int written;
+@property (nonatomic) unsigned long long written;
 
 - (struct __CFHTTPMessage { }*)copyMessage;
 - (void)dealloc;
@@ -31,10 +31,10 @@
 - (void)setStatusCode:(int)arg1;
 - (void)setStatusDescription:(id)arg1;
 - (void)setTrackingDescription:(id)arg1;
-- (void)setWritten:(unsigned int)arg1;
+- (void)setWritten:(unsigned long long)arg1;
 - (int)statusCode;
 - (id)statusDescription;
 - (id)trackingDescription;
-- (unsigned int)written;
+- (unsigned long long)written;
 
 @end

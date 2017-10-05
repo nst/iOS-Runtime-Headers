@@ -5,6 +5,6 @@
 
 @required
 
-- (void)writeBuffer:(const char *)arg1 size:(unsigned long)arg2;
+- (void)writeBuffer:(const char *)arg1 size:(unsigned long long)arg2;
 
 @end

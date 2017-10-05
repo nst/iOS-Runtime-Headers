@@ -3,8 +3,8 @@
  */
 
 @interface GEOProactiveItem : PBCodable <NSCopying> {
-    BOOL  _deleted;
-    BOOL  _edited;
+    bool  _deleted;
+    bool  _edited;
     struct { 
         unsigned int proactiveItemType : 1; 
         unsigned int timeSinceStart : 1; 
@@ -15,65 +15,65 @@
         unsigned int visible : 1; 
     }  _has;
     int  _proactiveItemType;
-    BOOL  _shared;
-    BOOL  _tapped;
+    bool  _shared;
+    bool  _tapped;
     int  _timeSinceStart;
-    BOOL  _visible;
+    bool  _visible;
 }
 
-@property (nonatomic) BOOL deleted;
-@property (nonatomic) BOOL edited;
-@property (nonatomic) BOOL hasDeleted;
-@property (nonatomic) BOOL hasEdited;
-@property (nonatomic) BOOL hasProactiveItemType;
-@property (nonatomic) BOOL hasShared;
-@property (nonatomic) BOOL hasTapped;
-@property (nonatomic) BOOL hasTimeSinceStart;
-@property (nonatomic) BOOL hasVisible;
+@property (nonatomic) bool deleted;
+@property (nonatomic) bool edited;
+@property (nonatomic) bool hasDeleted;
+@property (nonatomic) bool hasEdited;
+@property (nonatomic) bool hasProactiveItemType;
+@property (nonatomic) bool hasShared;
+@property (nonatomic) bool hasTapped;
+@property (nonatomic) bool hasTimeSinceStart;
+@property (nonatomic) bool hasVisible;
 @property (nonatomic) int proactiveItemType;
-@property (nonatomic) BOOL shared;
-@property (nonatomic) BOOL tapped;
+@property (nonatomic) bool shared;
+@property (nonatomic) bool tapped;
 @property (nonatomic) int timeSinceStart;
-@property (nonatomic) BOOL visible;
+@property (nonatomic) bool visible;
 
 - (int)StringAsProactiveItemType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)deleted;
+- (bool)deleted;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)edited;
-- (BOOL)hasDeleted;
-- (BOOL)hasEdited;
-- (BOOL)hasProactiveItemType;
-- (BOOL)hasShared;
-- (BOOL)hasTapped;
-- (BOOL)hasTimeSinceStart;
-- (BOOL)hasVisible;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)edited;
+- (bool)hasDeleted;
+- (bool)hasEdited;
+- (bool)hasProactiveItemType;
+- (bool)hasShared;
+- (bool)hasTapped;
+- (bool)hasTimeSinceStart;
+- (bool)hasVisible;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)proactiveItemType;
 - (id)proactiveItemTypeAsString:(int)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setDeleted:(BOOL)arg1;
-- (void)setEdited:(BOOL)arg1;
-- (void)setHasDeleted:(BOOL)arg1;
-- (void)setHasEdited:(BOOL)arg1;
-- (void)setHasProactiveItemType:(BOOL)arg1;
-- (void)setHasShared:(BOOL)arg1;
-- (void)setHasTapped:(BOOL)arg1;
-- (void)setHasTimeSinceStart:(BOOL)arg1;
-- (void)setHasVisible:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setDeleted:(bool)arg1;
+- (void)setEdited:(bool)arg1;
+- (void)setHasDeleted:(bool)arg1;
+- (void)setHasEdited:(bool)arg1;
+- (void)setHasProactiveItemType:(bool)arg1;
+- (void)setHasShared:(bool)arg1;
+- (void)setHasTapped:(bool)arg1;
+- (void)setHasTimeSinceStart:(bool)arg1;
+- (void)setHasVisible:(bool)arg1;
 - (void)setProactiveItemType:(int)arg1;
-- (void)setShared:(BOOL)arg1;
-- (void)setTapped:(BOOL)arg1;
+- (void)setShared:(bool)arg1;
+- (void)setTapped:(bool)arg1;
 - (void)setTimeSinceStart:(int)arg1;
-- (void)setVisible:(BOOL)arg1;
-- (BOOL)shared;
-- (BOOL)tapped;
+- (void)setVisible:(bool)arg1;
+- (bool)shared;
+- (bool)tapped;
 - (int)timeSinceStart;
-- (BOOL)visible;
+- (bool)visible;
 - (void)writeTo:(id)arg1;
 
 @end

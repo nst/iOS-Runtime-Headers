@@ -9,6 +9,6 @@
 
 @optional
 
-- (void)placeViewController:(SLSheetPlaceViewController *)arg1 willDisappear:(BOOL)arg2;
+- (void)placeViewController:(SLSheetPlaceViewController *)arg1 willDisappear:(bool)arg2;
 
 @end

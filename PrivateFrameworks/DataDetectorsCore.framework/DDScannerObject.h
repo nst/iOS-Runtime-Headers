@@ -7,12 +7,12 @@
     int  _type;
 }
 
-- (id)ddResultsWithOptions:(long)arg1;
+- (id)ddResultsWithOptions:(long long)arg1;
 - (void)dealloc;
 - (id)initWithType:(int)arg1;
 - (void)reset;
-- (id)resultsWithOptions:(long)arg1;
-- (int)scanString:(id)arg1;
+- (id)resultsWithOptions:(long long)arg1;
+- (long long)scanString:(id)arg1;
 - (int)type;
 
 @end

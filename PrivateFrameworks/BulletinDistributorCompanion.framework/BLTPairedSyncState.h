@@ -3,25 +3,25 @@
  */
 
 @interface BLTPairedSyncState : NSObject {
-    BOOL  _initialSyncComplete;
-    unsigned int  _state;
+    bool  _initialSyncComplete;
+    unsigned long long  _state;
 }
 
-@property (getter=isInitialSyncComplete, nonatomic, readonly) BOOL initialSyncComplete;
-@property (nonatomic) unsigned int state;
-@property (getter=isSyncRestricted, nonatomic, readonly) BOOL syncRestricted;
-@property (getter=isTrafficRestricted, nonatomic, readonly) BOOL trafficRestricted;
+@property (getter=isInitialSyncComplete, nonatomic, readonly) bool initialSyncComplete;
+@property (nonatomic) unsigned long long state;
+@property (getter=isSyncRestricted, nonatomic, readonly) bool syncRestricted;
+@property (getter=isTrafficRestricted, nonatomic, readonly) bool trafficRestricted;
 
 + (id)sharedInstance;
 
-- (BOOL)becameSyncUnrestricted:(id)arg1;
-- (BOOL)becameTrafficUnrestricted:(id)arg1;
-- (BOOL)isInitialSyncComplete;
-- (BOOL)isSyncRestricted;
-- (BOOL)isTrafficRestricted;
-- (void)leaveState:(unsigned int)arg1;
-- (void)setInitialSyncComplete:(BOOL)arg1;
-- (void)setState:(unsigned int)arg1;
-- (unsigned int)state;
+- (bool)becameSyncUnrestricted:(id)arg1;
+- (bool)becameTrafficUnrestricted:(id)arg1;
+- (bool)isInitialSyncComplete;
+- (bool)isSyncRestricted;
+- (bool)isTrafficRestricted;
+- (void)leaveState:(unsigned long long)arg1;
+- (void)setInitialSyncComplete:(bool)arg1;
+- (void)setState:(unsigned long long)arg1;
+- (unsigned long long)state;
 
 @end

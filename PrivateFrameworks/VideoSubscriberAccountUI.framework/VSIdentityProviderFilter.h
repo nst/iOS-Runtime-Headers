@@ -4,13 +4,13 @@
 
 @interface VSIdentityProviderFilter : NSObject {
     NSArray * _allIdentityProviders;
-    BOOL  _shouldExcludeUnsupportedProviders;
+    NSString * _searchQuery;
     NSArray * _supportedAccountProviderIDs;
 }
 
 @property (nonatomic, copy) NSArray *allIdentityProviders;
 @property (nonatomic, readonly, copy) NSArray *filteredIdentityProviders;
-@property (nonatomic) BOOL shouldExcludeUnsupportedProviders;
+@property (nonatomic, copy) NSString *searchQuery;
 @property (nonatomic, copy) NSArray *supportedAccountProviderIDs;
 
 + (id)keyPathsForValuesAffectingFilteredIdentityProviders;
@@ -19,10 +19,10 @@
 - (id)allIdentityProviders;
 - (id)filteredIdentityProviders;
 - (id)init;
+- (id)searchQuery;
 - (void)setAllIdentityProviders:(id)arg1;
-- (void)setShouldExcludeUnsupportedProviders:(BOOL)arg1;
+- (void)setSearchQuery:(id)arg1;
 - (void)setSupportedAccountProviderIDs:(id)arg1;
-- (BOOL)shouldExcludeUnsupportedProviders;
 - (id)supportedAccountProviderIDs;
 
 @end

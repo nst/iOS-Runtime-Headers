@@ -4,6 +4,7 @@
 
 @interface MNSteppingLocationTracker : MNLocationTracker {
     GEORouteMatcher * _routeMatcher;
+    MNTransitLocationCoordinator * _transitLocationCoordinator;
 }
 
 - (void).cxx_destruct;
@@ -11,6 +12,8 @@
 - (id)initWithNavigationSession:(id)arg1;
 - (id)matchedLocationForLocation:(id)arg1;
 - (void)resetForTracePlayerAtLocation:(id)arg1;
+- (void)startTracking;
+- (void)stopTracking;
 - (int)transportType;
 
 @end

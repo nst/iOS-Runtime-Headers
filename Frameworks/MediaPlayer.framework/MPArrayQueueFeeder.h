@@ -9,16 +9,16 @@
 @property (nonatomic, readonly) NSArray *items;
 
 - (void).cxx_destruct;
-- (id)copyRawItemAtIndex:(unsigned int)arg1;
+- (id)copyRawItemAtIndex:(unsigned long long)arg1;
 - (void)dealloc;
-- (id)identifierAtIndex:(unsigned int)arg1;
-- (unsigned int)indexOfItemWithIdentifier:(id)arg1;
+- (id)identifierAtIndex:(unsigned long long)arg1;
+- (unsigned long long)indexOfItemWithIdentifier:(id)arg1;
 - (id)initWithItems:(id)arg1;
-- (unsigned int)itemCount;
+- (unsigned long long)itemCount;
 - (id)items;
-- (id)pathAtIndex:(unsigned int)arg1;
+- (id)pathAtIndex:(unsigned long long)arg1;
 - (id)playbackInfoForIdentifier:(id)arg1;
-- (int)playbackMode;
+- (long long)playbackMode;
 - (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(id /* block */)arg2;
 
 @end

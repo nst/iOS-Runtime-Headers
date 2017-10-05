@@ -16,7 +16,7 @@
 @property (nonatomic) <CXCallObserverDelegate> *delegate;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

@@ -10,7 +10,7 @@
 @property (nonatomic, retain) SKUIMenuBarViewElementConfiguration *configuration;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (Class)_shelfMenuBarViewElementClass;
@@ -24,6 +24,6 @@
 - (id)configuration;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (void)setConfiguration:(id)arg1;
-- (id)titleForMenuItemAtIndex:(unsigned int)arg1;
+- (id)titleForMenuItemAtIndex:(unsigned long long)arg1;
 
 @end

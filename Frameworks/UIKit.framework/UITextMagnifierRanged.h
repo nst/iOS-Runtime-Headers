@@ -3,34 +3,43 @@
  */
 
 @interface UITextMagnifierRanged : UITextMagnifier {
-    int  _delayedAnimationType;
-    BOOL  _isAnimating;
-    BOOL  _isHorizontal;
-    float  _magnifierOffsetFromTouch;
-    float  _touchOffsetFromMagnificationPoint;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _delayedAnimationPoint;
+    long long  _delayedAnimationType;
+    bool  _isAnimating;
+    bool  _isHorizontal;
+    double  _magnifierOffsetFromTouch;
+    double  _touchOffsetFromMagnificationPoint;
 }
 
-@property (nonatomic) BOOL isHorizontal;
+@property (nonatomic) bool isHorizontal;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
++ (id)activeRangedMagnifier;
 + (id)sharedRangedMagnifier;
 
-- (void)beginMagnifyingTarget:(id)arg1 text:(id)arg2 magnificationPoint:(struct CGPoint { float x1; float x2; })arg3 offset:(struct CGPoint { float x1; float x2; })arg4 animated:(BOOL)arg5;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRectClosestToPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })clipPoint:(struct CGPoint { float x1; float x2; })arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (void)beginMagnifyingTarget:(id)arg1 text:(id)arg2 magnificationPoint:(struct CGPoint { double x1; double x2; })arg3 offset:(struct CGPoint { double x1; double x2; })arg4 animated:(bool)arg5;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })caretRectClosestToPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })clipPoint:(struct CGPoint { double x1; double x2; })arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (int)horizontalMovement;
 - (int)horizontalMovementAtTime:(double)arg1;
 - (id)initWithFrame;
-- (BOOL)isHorizontal;
-- (float)offsetFromMagnificationPoint;
+- (bool)isHorizontal;
+- (double)offsetFromMagnificationPoint;
 - (void)remove;
 - (void)setAutoscrollDirections:(int)arg1;
-- (void)setIsHorizontal:(BOOL)arg1;
-- (void)setMagnificationPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })snappedPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)stopMagnifying:(BOOL)arg1;
-- (BOOL)terminalPointPlacedCarefully;
+- (void)setIsHorizontal:(bool)arg1;
+- (void)setMagnificationPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })snappedPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)stopMagnifying:(bool)arg1;
+- (bool)terminalPointPlacedCarefully;
 - (void)updateFrame;
-- (BOOL)wasPlacedCarefullyAtTime:(double)arg1;
+- (bool)wasPlacedCarefullyAtTime:(double)arg1;
 - (void)zoomDownAnimation;
 - (void)zoomDownAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)zoomUpAnimation;

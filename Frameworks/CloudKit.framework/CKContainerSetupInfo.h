@@ -3,41 +3,65 @@
  */
 
 @interface CKContainerSetupInfo : NSObject <NSSecureCoding> {
-    CKAccountInfo * _accountInfoOverride;
-    BOOL  _captureResponseHTTPHeaders;
+    CKAccountOverrideInfo * _accountInfoOverride;
+    bool  _bypassPCSEncryption;
+    bool  _captureResponseHTTPHeaders;
+    unsigned int  _clientSDKVersion;
     CKContainerID * _containerID;
     NSDictionary * _fakeEntitlements;
-    BOOL  _holdAllOperations;
+    bool  _holdAllOperations;
+    bool  _masqueradeAsThirdPartyApp;
+    bool  _returnPCSMetadata;
     NSString * _sourceApplicationBundleIdentifier;
-    BOOL  _wantsSiloedContext;
+    bool  _useMMCSEncryptionV2;
+    bool  _useZoneWidePCS;
+    bool  _wantsSiloedContext;
 }
 
-@property (nonatomic, retain) CKAccountInfo *accountInfoOverride;
-@property (nonatomic) BOOL captureResponseHTTPHeaders;
+@property (nonatomic, retain) CKAccountOverrideInfo *accountInfoOverride;
+@property (nonatomic) bool bypassPCSEncryption;
+@property (nonatomic) bool captureResponseHTTPHeaders;
+@property (nonatomic) unsigned int clientSDKVersion;
 @property (nonatomic, retain) CKContainerID *containerID;
 @property (nonatomic, retain) NSDictionary *fakeEntitlements;
-@property (nonatomic) BOOL holdAllOperations;
+@property (nonatomic) bool holdAllOperations;
+@property (nonatomic) bool masqueradeAsThirdPartyApp;
+@property (nonatomic) bool returnPCSMetadata;
 @property (nonatomic, retain) NSString *sourceApplicationBundleIdentifier;
-@property (nonatomic) BOOL wantsSiloedContext;
+@property (nonatomic) bool useMMCSEncryptionV2;
+@property (nonatomic) bool useZoneWidePCS;
+@property (nonatomic) bool wantsSiloedContext;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)accountInfoOverride;
-- (BOOL)captureResponseHTTPHeaders;
+- (bool)bypassPCSEncryption;
+- (bool)captureResponseHTTPHeaders;
+- (unsigned int)clientSDKVersion;
 - (id)containerID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fakeEntitlements;
-- (BOOL)holdAllOperations;
+- (bool)holdAllOperations;
 - (id)initWithCoder:(id)arg1;
+- (bool)masqueradeAsThirdPartyApp;
+- (bool)returnPCSMetadata;
 - (void)setAccountInfoOverride:(id)arg1;
-- (void)setCaptureResponseHTTPHeaders:(BOOL)arg1;
+- (void)setBypassPCSEncryption:(bool)arg1;
+- (void)setCaptureResponseHTTPHeaders:(bool)arg1;
+- (void)setClientSDKVersion:(unsigned int)arg1;
 - (void)setContainerID:(id)arg1;
 - (void)setFakeEntitlements:(id)arg1;
-- (void)setHoldAllOperations:(BOOL)arg1;
+- (void)setHoldAllOperations:(bool)arg1;
+- (void)setMasqueradeAsThirdPartyApp:(bool)arg1;
+- (void)setReturnPCSMetadata:(bool)arg1;
 - (void)setSourceApplicationBundleIdentifier:(id)arg1;
-- (void)setWantsSiloedContext:(BOOL)arg1;
+- (void)setUseMMCSEncryptionV2:(bool)arg1;
+- (void)setUseZoneWidePCS:(bool)arg1;
+- (void)setWantsSiloedContext:(bool)arg1;
 - (id)sourceApplicationBundleIdentifier;
-- (BOOL)wantsSiloedContext;
+- (bool)useMMCSEncryptionV2;
+- (bool)useZoneWidePCS;
+- (bool)wantsSiloedContext;
 
 @end

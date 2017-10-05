@@ -6,14 +6,14 @@
     id /* block */  _callback;
     NSObject<OS_dispatch_group> * _decryptGroup;
     NSError * _error;
-    unsigned int  _numUnwrapAttempts;
+    unsigned long long  _numUnwrapAttempts;
     CKRecord * _record;
 }
 
 @property (nonatomic, copy) id /* block */ callback;
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *decryptGroup;
 @property (nonatomic, retain) NSError *error;
-@property unsigned int numUnwrapAttempts;
+@property unsigned long long numUnwrapAttempts;
 @property (nonatomic, readonly) CKRecord *record;
 
 - (void).cxx_destruct;
@@ -23,11 +23,11 @@
 - (id)error;
 - (id)init;
 - (id)initWithRecord:(id)arg1 callbackQueue:(id)arg2;
-- (unsigned int)numUnwrapAttempts;
+- (unsigned long long)numUnwrapAttempts;
 - (id)record;
 - (void)setCallback:(id /* block */)arg1;
 - (void)setDecryptGroup:(id)arg1;
 - (void)setError:(id)arg1;
-- (void)setNumUnwrapAttempts:(unsigned int)arg1;
+- (void)setNumUnwrapAttempts:(unsigned long long)arg1;
 
 @end

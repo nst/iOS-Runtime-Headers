@@ -12,7 +12,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)contextWithAccount:(struct AOSAccount { }*)arg1 andTransaction:(struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id /* block */ x7; id x8; void x9; id x10; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x11; int (*x12)(); }*)arg2;
@@ -24,7 +24,7 @@
 - (void)finalize;
 - (id)info;
 - (id)init;
-- (BOOL)scheduleCallback;
+- (bool)scheduleCallback;
 - (void)setAccount:(struct AOSAccount { }*)arg1;
 - (void)setInfo:(id)arg1;
 - (void)setTransaction:(struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id /* block */ x7; id x8; void x9; id x10; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x11; int (*x12)(); }*)arg1;

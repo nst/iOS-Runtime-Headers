@@ -3,13 +3,13 @@
  */
 
 @interface SKUISegmentedControlViewElement : SKUIViewElement {
-    int  _maximumNumberOfVisibleItems;
+    long long  _maximumNumberOfVisibleItems;
     NSString * _moreListTitle;
 }
 
 @property (nonatomic, readonly) SKUIDividerViewElement *bottomDivider;
-@property (nonatomic, readonly) int initialSelectedItemIndex;
-@property (nonatomic, readonly) int maximumNumberOfVisibleItems;
+@property (nonatomic, readonly) long long initialSelectedItemIndex;
+@property (nonatomic, readonly) long long maximumNumberOfVisibleItems;
 @property (nonatomic, readonly) NSString *moreListTitle;
 @property (nonatomic, readonly) NSArray *segmentItemTitles;
 
@@ -17,12 +17,12 @@
 - (void)_enumerateItemElementsUsingBlock:(id /* block */)arg1;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)bottomDivider;
-- (void)dispatchEventOfType:(unsigned int)arg1 forItemAtIndex:(int)arg2;
+- (void)dispatchEventOfType:(unsigned long long)arg1 forItemAtIndex:(long long)arg2;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (int)initialSelectedItemIndex;
-- (int)maximumNumberOfVisibleItems;
+- (long long)initialSelectedItemIndex;
+- (long long)maximumNumberOfVisibleItems;
 - (id)moreListTitle;
-- (int)pageComponentType;
+- (long long)pageComponentType;
 - (id)segmentItemTitles;
 
 @end

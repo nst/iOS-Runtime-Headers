@@ -4,6 +4,6 @@
 
 @interface TSPDeepCopyArchiver : TSPWeakAsStrongCopyArchiver
 
-- (int)targetType;
+- (long long)targetType;
 
 @end

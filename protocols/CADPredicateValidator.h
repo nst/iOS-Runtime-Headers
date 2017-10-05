@@ -5,6 +5,6 @@
 
 @required
 
-+ (BOOL)evaluatePredicate:(NSPredicate *)arg1 withObject:(id)arg2;
++ (bool)evaluatePredicate:(NSPredicate *)arg1 withObject:(id)arg2;
 
 @end

@@ -6,7 +6,7 @@
     NSData * _backingData;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)awakeAfterUsingCoder:(id)arg1;

@@ -8,6 +8,6 @@
 - (void)bindInSession:(TSCH3DSession *)arg1;
 - (void)deactivateInContext:(TSCH3DGLContext *)arg1;
 - (void)destroyResourcesInContext:(TSCH3DGLContext *)arg1;
-- (BOOL)valid;
+- (bool)valid;
 
 @end

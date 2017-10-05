@@ -3,13 +3,13 @@
  */
 
 @interface PXWidgetCompositionTilingControllerElement : PXWidgetCompositionElement {
-    BOOL  __didLoadContent;
+    bool  __didLoadContent;
 }
 
-@property (setter=_setDidLoadContent:, nonatomic) BOOL _didLoadContent;
+@property (setter=_setDidLoadContent:, nonatomic) bool _didLoadContent;
 
-- (BOOL)_didLoadContent;
-- (void)_setDidLoadContent:(BOOL)arg1;
+- (bool)_didLoadContent;
+- (void)_setDidLoadContent:(bool)arg1;
 - (id)animationOptionsOriginatingTilingController;
 - (id)contentTilingController;
 

@@ -2,37 +2,16 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOAppConfig : PBCodable <NSCopying> {
-    NSString * _appIdentifier;
-    NSString * _appMajorVersion;
-    NSString * _appMinorVersion;
-}
+@interface GEOAppConfig : PBCodable <NSCopying>
 
-@property (nonatomic, retain) NSString *appIdentifier;
-@property (nonatomic, retain) NSString *appMajorVersion;
-@property (nonatomic, retain) NSString *appMinorVersion;
-@property (nonatomic, readonly) BOOL hasAppIdentifier;
-@property (nonatomic, readonly) BOOL hasAppMajorVersion;
-@property (nonatomic, readonly) BOOL hasAppMinorVersion;
-
-- (id)appIdentifier;
-- (id)appMajorVersion;
-- (id)appMinorVersion;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAppIdentifier;
-- (BOOL)hasAppMajorVersion;
-- (BOOL)hasAppMinorVersion;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setAppIdentifier:(id)arg1;
-- (void)setAppMajorVersion:(id)arg1;
-- (void)setAppMinorVersion:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

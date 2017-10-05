@@ -5,14 +5,14 @@
 @interface MCAggregateLogProfileRestrictionKey : MCAggregateLogProfileKey {
     NSString * _feature;
     NSString * _nameSuffix;
-    unsigned int  _type;
+    unsigned long long  _type;
 }
 
 @property (nonatomic, retain) NSString *feature;
 @property (nonatomic, retain) NSString *nameSuffix;
-@property (nonatomic) unsigned int type;
+@property (nonatomic) unsigned long long type;
 
-+ (id)_feature:(id)arg1 name:(id)arg2 type:(unsigned int)arg3;
++ (id)_feature:(id)arg1 name:(id)arg2 type:(unsigned long long)arg3;
 + (id)falseFeature:(id)arg1;
 + (id)falseFeature:(id)arg1 name:(id)arg2;
 + (id)intersectionFeature:(id)arg1;
@@ -31,8 +31,8 @@
 - (id)nameSuffix;
 - (void)setFeature:(id)arg1;
 - (void)setNameSuffix:(id)arg1;
-- (void)setType:(unsigned int)arg1;
-- (unsigned int)type;
-- (unsigned int)value;
+- (void)setType:(unsigned long long)arg1;
+- (unsigned long long)type;
+- (unsigned long long)value;
 
 @end

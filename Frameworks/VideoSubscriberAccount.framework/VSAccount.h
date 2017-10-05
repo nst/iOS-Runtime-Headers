@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
  */
 
-@interface VSAccount : NSObject {
+@interface VSAccount : NSObject <NSSecureCoding> {
     NSString * _accountDescription;
     VSAccountStore * _accountStore;
     NSString * _accountTypeDescription;
@@ -22,15 +22,21 @@
 @property (nonatomic, retain) VSOptional *optionalIdentityProviderDisplayName;
 @property (nonatomic, copy) NSString *username;
 
++ (bool)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)accountDescription;
 - (id)accountStore;
 - (id)accountTypeDescription;
 - (id)authenticationToken;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
 - (id)identityProviderDisplayName;
 - (id)identityProviderID;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)keychainItem;
 - (id)optionalIdentityProviderDisplayName;
 - (void)setAccountDescription:(id)arg1;

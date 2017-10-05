@@ -4,9 +4,9 @@
 
 @interface _DKDataProtectionMaster : NSObject {
     NSMutableDictionary * _availableState;
-    BOOL  _deviceFormatedForContentProtection;
+    bool  _deviceFormatedForContentProtection;
     NSMutableDictionary * _handlers;
-    BOOL  _notifyEnabled;
+    bool  _notifyEnabled;
     NSObject<OS_dispatch_queue> * _notifyQueue;
     int  _notifyToken;
     NSObject<OS_dispatch_queue> * _stateQueue;
@@ -17,14 +17,14 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)deregisterStateChangeHandler:(id)arg1;
-- (BOOL)deviceHasBeenUnlockedSinceBoot;
-- (BOOL)deviceIsLocked;
-- (BOOL)deviceIsPasswordConfigured;
+- (bool)deviceHasBeenUnlockedSinceBoot;
+- (bool)deviceIsLocked;
+- (bool)deviceIsPasswordConfigured;
 - (void)handleKeyBagLockNotification;
 - (id)init;
-- (BOOL)isDataAvailableFor:(id)arg1;
-- (BOOL)isDataAvailableForClassA;
-- (BOOL)isDataAvailableForClassC;
+- (bool)isDataAvailableFor:(id)arg1;
+- (bool)isDataAvailableForClassA;
+- (bool)isDataAvailableForClassC;
 - (id)registerStateChangeHandler:(id /* block */)arg1;
 
 @end

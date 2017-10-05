@@ -13,11 +13,11 @@
 @property (nonatomic, readonly) unsigned long long writeVersion;
 
 - (void).cxx_destruct;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)init;
-- (id)initWithIdentifier:(id)arg1 readVersion:(unsigned long long)arg2 writeVersion:(unsigned long long)arg3 fromArchiver:(BOOL)arg4;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithIdentifier:(id)arg1 readVersion:(unsigned long long)arg2 writeVersion:(unsigned long long)arg3 fromArchiver:(bool)arg4;
+- (bool)isEqual:(id)arg1;
 - (unsigned long long)readVersion;
 - (unsigned long long)writeVersion;
 

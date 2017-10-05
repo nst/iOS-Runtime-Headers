@@ -16,9 +16,9 @@
 - (id)description;
 - (double)entryTime;
 - (double)exitTime;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToVisit:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToVisit:(id)arg1;
 - (id)locationId;
 - (void)setEntryTime:(double)arg1;
 - (void)setExitTime:(double)arg1;

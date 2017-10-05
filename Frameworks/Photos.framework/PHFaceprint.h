@@ -4,17 +4,17 @@
 
 @interface PHFaceprint : NSObject {
     NSData * _faceprintData;
-    int  _faceprintVersion;
+    long long  _faceprintVersion;
 }
 
 @property (nonatomic, readonly, retain) NSData *faceprintData;
-@property (nonatomic, readonly) int faceprintVersion;
+@property (nonatomic, readonly) long long faceprintVersion;
 
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)faceprintData;
-- (int)faceprintVersion;
+- (long long)faceprintVersion;
 - (id)initWithDictionaryRepresentation:(id)arg1;
-- (id)initWithFaceprintData:(id)arg1 faceprintVersion:(int)arg2;
+- (id)initWithFaceprintData:(id)arg1 faceprintVersion:(long long)arg2;
 
 @end

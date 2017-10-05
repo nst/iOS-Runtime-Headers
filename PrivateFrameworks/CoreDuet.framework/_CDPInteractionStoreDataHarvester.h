@@ -11,7 +11,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSArray *interactions;
 @property (nonatomic, retain) NSPredicate *predicate;
 @property (nonatomic, retain) _CDInteractionStore *store;
@@ -20,7 +20,7 @@
 - (void).cxx_destruct;
 - (id)contactForIdentifier:(id)arg1;
 - (id)interactions;
-- (void)loadWithLimit:(unsigned int)arg1 dataPointReader:(id /* block */)arg2 completion:(id /* block */)arg3;
+- (void)loadWithLimit:(unsigned long long)arg1 dataPointReader:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (id)predicate;
 - (void)setPredicate:(id)arg1;
 - (void)setStore:(id)arg1;

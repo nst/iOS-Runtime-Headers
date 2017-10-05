@@ -7,15 +7,15 @@
 
 - (int)audioSource;
 - (float)averagePower;
-- (BOOL)hasAudioRoute;
-- (BOOL)hasCorrectAudioRoute;
-- (BOOL)isRecording;
-- (BOOL)prepareRecord;
+- (bool)hasAudioRoute;
+- (bool)hasCorrectAudioRoute;
+- (bool)isRecording;
+- (bool)prepareRecord;
 - (void)releaseAudioSession;
 - (void)resetEndPointer;
 - (void)setDelegate:(id <VTUIAudioSessionDelegate>)arg1;
 - (void)setEndpointerDelegate:(id <Endpointer>)arg1;
-- (BOOL)startRecording;
+- (bool)startRecording;
 - (void)stopRecording;
 - (void)updateMeters;
 

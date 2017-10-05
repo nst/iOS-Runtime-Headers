@@ -6,8 +6,8 @@
     NSString * _deviceName;
     NSURL * _fileURL;
     NSFileVersion * _fileVersion;
-    BOOL  _hasConflict;
-    BOOL  _isConflictVersion;
+    bool  _hasConflict;
+    bool  _isConflictVersion;
     NSDate * _modificationDate;
     NSString * _name;
 }
@@ -17,11 +17,12 @@
 @property (nonatomic, retain) NSString *deviceName;
 @property (nonatomic, retain) NSURL *fileURL;
 @property (nonatomic, retain) NSFileVersion *fileVersion;
-@property (nonatomic) BOOL hasConflict;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL isConflictVersion;
+@property (nonatomic) bool hasConflict;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isConflictVersion;
 @property (nonatomic, retain) NSDate *modificationDate;
 @property (nonatomic, retain) NSString *name;
+@property (readonly) NSSet *observedPresentedItemUbiquityAttributes;
 @property (readonly, retain) NSOperationQueue *presentedItemOperationQueue;
 @property (readonly, copy) NSURL *presentedItemURL;
 @property (readonly, copy) NSURL *primaryPresentedItemURL;
@@ -30,15 +31,15 @@
 + (id)currentDeviceName;
 
 - (void)dealloc;
-- (void)deleteAllVersionsIncludingCurrent:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)deleteAllVersionsIncludingCurrent:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)deleteConflictVersion:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)description;
 - (id)deviceName;
 - (id)fileURL;
 - (id)fileVersion;
-- (BOOL)hasConflict;
+- (bool)hasConflict;
 - (id)initWithFileURL:(id)arg1;
-- (BOOL)isConflictVersion;
+- (bool)isConflictVersion;
 - (void)loadDataWithCompletionHandler:(id /* block */)arg1;
 - (void)loadMetadataWithCompletionHandler:(id /* block */)arg1;
 - (void)loadWrapperDataWithFilename:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -55,8 +56,8 @@
 - (void)setDeviceName:(id)arg1;
 - (void)setFileURL:(id)arg1;
 - (void)setFileVersion:(id)arg1;
-- (void)setHasConflict:(BOOL)arg1;
-- (void)setIsConflictVersion:(BOOL)arg1;
+- (void)setHasConflict:(bool)arg1;
+- (void)setIsConflictVersion:(bool)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setModificationDate:(id)arg1;
 - (void)setName:(id)arg1;

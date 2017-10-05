@@ -13,14 +13,14 @@
 - (void).cxx_destruct;
 - (id)_artworksBySortingArtworks:(id)arg1;
 - (id)artworks;
-- (id)bestArtworkForPixelSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)bestArtworkForPointSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)bestArtworkForPixelSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)bestArtworkForPointSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithArtworkVariants:(id)arg1;
 - (id)initWithArtworks:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
 

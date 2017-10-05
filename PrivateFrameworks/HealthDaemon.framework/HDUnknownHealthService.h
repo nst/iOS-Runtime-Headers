@@ -4,7 +4,7 @@
 
 @interface HDUnknownHealthService : HDHealthService
 
-+ (int)serviceType;
++ (long long)serviceType;
 + (id)serviceUUID;
 
 @end

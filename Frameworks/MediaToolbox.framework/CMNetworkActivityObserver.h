@@ -6,8 +6,8 @@
     CMNetworkActivityMonitor * _activityMonitor;
     int  _cmActivityPollingToken;
     int  _cmActivityToken;
-    BOOL  _registered;
-    BOOL  _valid;
+    bool  _registered;
+    bool  _valid;
 }
 
 @property (nonatomic, readonly) CMNetworkActivityMonitor *activityMonitor;

@@ -8,8 +8,8 @@
 }
 
 - (void).cxx_destruct;
-- (void)_handleImageCreated:(id)arg1 forAsset:(id)arg2 targetSize:(struct CGSize { float x1; float x2; })arg3 imageKey:(id)arg4 resultHandler:(id /* block */)arg5;
+- (void)_handleImageCreated:(id)arg1 forAsset:(id)arg2 targetSize:(struct CGSize { double x1; double x2; })arg3 imageKey:(id)arg4 resultHandler:(id /* block */)arg5;
 - (id)init;
-- (int)requestImageForAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 contentMode:(int)arg3 options:(id)arg4 resultHandler:(id /* block */)arg5;
+- (long long)requestImageForAsset:(id)arg1 targetSize:(struct CGSize { double x1; double x2; })arg2 contentMode:(long long)arg3 options:(id)arg4 resultHandler:(id /* block */)arg5;
 
 @end

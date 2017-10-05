@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) NSData *signature;
 
 - (void).cxx_destruct;
-- (void)addItem:(id)arg1;
+- (bool)addItem:(id)arg1 error:(id*)arg2;
 - (void)done;
 - (id)init;
 - (id)signature;

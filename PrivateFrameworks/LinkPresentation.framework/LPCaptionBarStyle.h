@@ -3,6 +3,7 @@
  */
 
 @interface LPCaptionBarStyle : NSObject {
+    LPImageViewStyle * _belowLeadingIcon;
     LPCaptionBarAccessoryStyle * _leadingAccessory;
     LPImageViewStyle * _leadingIcon;
     LPPointUnit * _minimumWidth;
@@ -14,6 +15,7 @@
     LPImageViewStyle * _trailingIcon;
 }
 
+@property (nonatomic, readonly) LPImageViewStyle *belowLeadingIcon;
 @property (nonatomic, readonly) LPCaptionBarAccessoryStyle *leadingAccessory;
 @property (nonatomic, readonly) LPImageViewStyle *leadingIcon;
 @property (nonatomic, retain) LPPointUnit *minimumWidth;
@@ -25,7 +27,10 @@
 @property (nonatomic, readonly) LPImageViewStyle *trailingIcon;
 
 - (void).cxx_destruct;
-- (id)initWithPlatform:(int)arg1;
+- (id)belowLeadingIcon;
+- (id)belowLeftIcon;
+- (id)belowRightIcon;
+- (id)initWithPlatform:(long long)arg1;
 - (id)leadingAccessory;
 - (id)leadingIcon;
 - (id)leftAccessory;

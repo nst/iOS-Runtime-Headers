@@ -12,7 +12,7 @@
 @property (nonatomic, copy) NSString *stateName;
 
 + (id)contextWithState:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)animationName;

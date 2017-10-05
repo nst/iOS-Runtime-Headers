@@ -3,31 +3,31 @@
  */
 
 @interface NTKNumeralsHourViewsManager : NSObject {
-    BOOL  _adjustingForStatusIndicator;
-    BOOL  _areComplicationsOff;
-    BOOL  _hasUpperComplication;
+    bool  _adjustingForStatusIndicator;
+    bool  _areComplicationsOff;
+    bool  _hasUpperComplication;
     NSArray * _hourViews;
-    int  _visibleComplicationSlot;
-    int  _visibleHour;
+    long long  _visibleComplicationSlot;
+    long long  _visibleHour;
 }
 
 - (void).cxx_destruct;
-- (struct CGPoint { float x1; float x2; })_currentHourViewPlacementForEditMode:(int)arg1 faceConfiguration:(id)arg2;
-- (float)_hourAlphaForEditMode:(int)arg1;
-- (id)_hourViewForHour:(int)arg1 loadIfNeeded:(BOOL)arg2;
+- (struct CGPoint { double x1; double x2; })_currentHourViewPlacementForEditMode:(long long)arg1 faceConfiguration:(id)arg2;
+- (double)_hourAlphaForEditMode:(long long)arg1;
+- (id)_hourViewForHour:(long long)arg1 loadIfNeeded:(bool)arg2;
 - (void)_update12AdjustmentForStatusIndicator;
 - (id)_visibleHourView;
 - (void)addHourViewsToSuperview:(id)arg1;
-- (void)applyBreathingFraction:(float)arg1 forCustomEditMode:(int)arg2;
+- (void)applyBreathingFraction:(double)arg1 forCustomEditMode:(long long)arg2;
 - (void)applyFaceColorFromFaceConfiguration:(id)arg1;
-- (void)applyRubberBandingFraction:(float)arg1 forCustomEditMode:(int)arg2;
-- (void)applyTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3 faceConfiguration:(id)arg4;
-- (void)applyTransitionFraction:(float)arg1 fromFaceColor:(unsigned int)arg2 toFaceColor:(unsigned int)arg3 faceConfiguration:(id)arg4;
-- (void)configureForEditMode:(int)arg1;
+- (void)applyRubberBandingFraction:(double)arg1 forCustomEditMode:(long long)arg2;
+- (void)applyTransitionFraction:(double)arg1 fromEditMode:(long long)arg2 toEditMode:(long long)arg3 faceConfiguration:(id)arg4;
+- (void)applyTransitionFraction:(double)arg1 fromFaceColor:(unsigned long long)arg2 toFaceColor:(unsigned long long)arg3 faceConfiguration:(id)arg4;
+- (void)configureForEditMode:(long long)arg1;
 - (id)initWithStyleFromFaceConfiguration:(id)arg1;
-- (BOOL)needHourAnimationForChangeToHour:(int)arg1 toFaceConfiguration:(id)arg2;
+- (bool)needHourAnimationForChangeToHour:(long long)arg1 toFaceConfiguration:(id)arg2;
 - (void)removeHourViews;
-- (void)setAdjustsForStatusIndicator:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)updateVisibleHour:(int)arg1 targetUtilitySlot:(int)arg2 faceConfiguration:(id)arg3 animationProgress:(float)arg4;
+- (void)setAdjustsForStatusIndicator:(bool)arg1 animated:(bool)arg2;
+- (void)updateVisibleHour:(long long)arg1 targetUtilitySlot:(long long)arg2 faceConfiguration:(id)arg3 animationProgress:(double)arg4;
 
 @end

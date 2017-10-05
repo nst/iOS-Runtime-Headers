@@ -6,11 +6,11 @@
     id /* block */  _connectedHandler;
     int  _connectionSocket;
     NSMutableData * _dataToSend;
-    BOOL  _invalidated;
+    bool  _invalidated;
     id /* block */  _receiveDataHandler;
     NSObject<OS_dispatch_source> * _receiveSource;
     NSObject<OS_dispatch_source> * _sendSource;
-    BOOL  _sendSourceSuspended;
+    bool  _sendSourceSuspended;
     NSString * _socketName;
     NSObject<OS_dispatch_queue> * _syncQueue;
     NSObject<OS_dispatch_queue> * _targetQueue;
@@ -31,7 +31,7 @@
 - (void)setReceiveDataHandler:(id /* block */)arg1;
 - (void)setSocketName:(id)arg1;
 - (void)setTargetQueue:(id)arg1;
-- (BOOL)setupSourcesWithSocket:(int)arg1 receiveEventHandler:(id /* block */)arg2 sendEventHandler:(id /* block */)arg3;
+- (bool)setupSourcesWithSocket:(int)arg1 receiveEventHandler:(id /* block */)arg2 sendEventHandler:(id /* block */)arg3;
 - (id)socketName;
 - (id)targetQueue;
 - (void)tcpAttachSocketDescriptor:(int)arg1;

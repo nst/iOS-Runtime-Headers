@@ -4,12 +4,12 @@
 
 @interface SSMetricsTimingDefaults : NSObject {
     NSDictionary * _cachedValues;
-    BOOL  _runningTests;
+    bool  _runningTests;
     SSCoalescingQueue * _updateQueue;
 }
 
 @property (nonatomic, retain) NSDictionary *cachedValues;
-@property (getter=isRunningTests, nonatomic) BOOL runningTests;
+@property (getter=isRunningTests, nonatomic) bool runningTests;
 @property (readonly) double samplingPercentageCachedResponsesLoadURL;
 @property (readonly) double samplingPercentageUsersLoadURL;
 @property (readonly) double samplingPercentageUsersPageRender;
@@ -19,18 +19,19 @@
 @property (readonly) NSDictionary *values;
 
 + (id)sharedInstance;
++ (id)sharedInstanceWithSessionDelegate:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)cachedValues;
-- (id)init;
-- (BOOL)isRunningTests;
+- (id)initWithSessionDelegate:(id)arg1;
+- (bool)isRunningTests;
 - (double)samplingPercentageCachedResponsesLoadURL;
 - (double)samplingPercentageUsersLoadURL;
 - (double)samplingPercentageUsersPageRender;
 - (double)sessionDurationLoadURL;
 - (double)sessionDurationPageRender;
 - (void)setCachedValues:(id)arg1;
-- (void)setRunningTests:(BOOL)arg1;
+- (void)setRunningTests:(bool)arg1;
 - (void)setUpdateQueue:(id)arg1;
 - (void)update;
 - (id)updateQueue;

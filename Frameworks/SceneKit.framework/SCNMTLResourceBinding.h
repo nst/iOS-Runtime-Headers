@@ -9,7 +9,7 @@
         BOOL vertexIndex; 
         BOOL fragmentIndex; 
     }  _indices;
-    BOOL  _needsRenderResource;
+    bool  _needsRenderResource;
     struct { 
         BOOL vertexIndex; 
         BOOL fragmentIndex; 
@@ -19,18 +19,19 @@
 @property (nonatomic, retain) MTLArgument *argument;
 @property (nonatomic, copy) id bindBlock;
 @property (nonatomic, readonly) NSString *name;
-@property (nonatomic) BOOL needsRenderResource;
-@property (nonatomic, readonly) unsigned int type;
+@property (nonatomic) bool needsRenderResource;
+@property (nonatomic, readonly) unsigned long long type;
 
 - (id)argument;
 - (id)bindBlock;
 - (void)dealloc;
+- (id)description;
 - (id)init;
 - (id)name;
-- (BOOL)needsRenderResource;
+- (bool)needsRenderResource;
 - (void)setArgument:(id)arg1;
 - (void)setBindBlock:(id)arg1;
-- (void)setNeedsRenderResource:(BOOL)arg1;
-- (unsigned int)type;
+- (void)setNeedsRenderResource:(bool)arg1;
+- (unsigned long long)type;
 
 @end

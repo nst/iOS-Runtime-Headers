@@ -4,13 +4,14 @@
 
 @interface CKSignatureGenerator : NSObject {
     void * _generator;
-    BOOL  _valid;
+    bool  _valid;
 }
 
 @property (nonatomic) void*generator;
-@property (getter=isValid, nonatomic) BOOL valid;
+@property (getter=isValid, nonatomic) bool valid;
 
-+ (BOOL)isValidSignature:(id)arg1;
++ (bool)isValidSignature:(id)arg1;
++ (bool)isValidV2Signature:(id)arg1;
 + (id)signatureWithFileDescriptor:(int)arg1 error:(id*)arg2;
 
 - (char *)_newSignatureByFinishingGenerator;
@@ -18,10 +19,10 @@
 - (void)dealloc;
 - (void*)generator;
 - (id)init;
-- (BOOL)isValid;
+- (bool)isValid;
 - (void)setGenerator:(void*)arg1;
-- (void)setValid:(BOOL)arg1;
-- (void)updateWithBytes:(const void*)arg1 length:(unsigned int)arg2;
+- (void)setValid:(bool)arg1;
+- (void)updateWithBytes:(const void*)arg1 length:(unsigned long long)arg2;
 - (void)updateWithData:(id)arg1;
 
 @end

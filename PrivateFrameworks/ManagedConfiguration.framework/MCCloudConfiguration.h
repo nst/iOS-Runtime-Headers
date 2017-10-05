@@ -5,26 +5,36 @@
 @interface MCCloudConfiguration : NSObject {
     NSObject<OS_dispatch_queue> * _memberQueue;
     NSDictionary * _memberQueueDetails;
+    NSDictionary * _memberQueueSetAsideDetails;
 }
 
 @property (nonatomic, copy) NSDictionary *details;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *memberQueue;
 @property (nonatomic, retain) NSDictionary *memberQueueDetails;
+@property (nonatomic, retain) NSDictionary *memberQueueSetAsideDetails;
+@property (nonatomic, copy) NSDictionary *setAsideDetails;
 
 + (id)sharedConfiguration;
 
 - (void).cxx_destruct;
 - (id)details;
+- (id)diagnosticsUploadURL;
 - (id)init;
-- (BOOL)isAwaitingConfiguration;
-- (BOOL)isSupervised;
-- (BOOL)isTeslaEnrolled;
+- (bool)isAwaitingConfiguration;
+- (bool)isProvisionallyEnrolled;
+- (bool)isSupervised;
+- (bool)isTeslaEnrolled;
 - (id)memberQueue;
 - (id)memberQueueDetails;
+- (id)memberQueueSetAsideDetails;
+- (id)provisionalEnrollmentExpirationDate;
 - (void)refreshDetailsFromDisk;
+- (id)setAsideDetails;
 - (void)setDetails:(id)arg1;
 - (void)setMemberQueue:(id)arg1;
 - (void)setMemberQueueDetails:(id)arg1;
+- (void)setMemberQueueSetAsideDetails:(id)arg1;
+- (void)setSetAsideDetails:(id)arg1;
 - (int)userMode;
 
 @end

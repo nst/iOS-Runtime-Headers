@@ -14,9 +14,9 @@
 
 @property (nonatomic, retain) NSMutableArray *articleIDs;
 @property (nonatomic, retain) NTPBRecordBase *base;
-@property (nonatomic, readonly) BOOL hasBase;
-@property (nonatomic, readonly) BOOL hasMetadata;
-@property (nonatomic) BOOL hasType;
+@property (nonatomic, readonly) bool hasBase;
+@property (nonatomic, readonly) bool hasMetadata;
+@property (nonatomic) bool hasType;
 @property (nonatomic, retain) NSString *metadata;
 @property (nonatomic) int type;
 
@@ -24,25 +24,25 @@
 
 - (void)addArticleIDs:(id)arg1;
 - (id)articleIDs;
-- (id)articleIDsAtIndex:(unsigned int)arg1;
-- (unsigned int)articleIDsCount;
+- (id)articleIDsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)articleIDsCount;
 - (id)base;
 - (void)clearArticleIDs;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasBase;
-- (BOOL)hasMetadata;
-- (BOOL)hasType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasBase;
+- (bool)hasMetadata;
+- (bool)hasType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)metadata;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setArticleIDs:(id)arg1;
 - (void)setBase:(id)arg1;
-- (void)setHasType:(BOOL)arg1;
+- (void)setHasType:(bool)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setType:(int)arg1;
 - (int)type;

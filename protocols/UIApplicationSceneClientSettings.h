@@ -5,26 +5,34 @@
 
 @required
 
-- (int)backgroundStyle;
-- (int)compatibilityMode;
-- (int)controlCenterRevealMode;
+- (long long)backgroundStyle;
+- (long long)compatibilityMode;
+- (double)controlCenterAmbiguousActivationMargin;
+- (long long)controlCenterRevealMode;
 - (double)defaultPNGExpirationTime;
 - (NSString *)defaultPNGName;
-- (BOOL)defaultStatusBarHidden;
-- (int)defaultStatusBarStyle;
-- (BOOL)deviceOrientationEventsEnabled;
-- (BOOL)idleModeVisualEffectsEnabled;
-- (BOOL)idleTimerDisabled;
-- (int)interfaceOrientation;
-- (BOOL)interfaceOrientationChangesDisabled;
-- (BOOL)isStatusBarForegroundTransparent;
-- (int)notificationCenterRevealMode;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })primaryWindowOverlayInsets;
-- (unsigned int)proximityDetectionModes;
+- (bool)defaultStatusBarHidden;
+- (long long)defaultStatusBarStyle;
+- (bool)deviceOrientationEventsEnabled;
+- (bool)homeIndicatorAutoHidden;
+- (bool)idleModeVisualEffectsEnabled;
+- (bool)idleTimerDisabled;
+- (long long)interfaceOrientation;
+- (bool)interfaceOrientationChangesDisabled;
+- (bool)isReachabilitySupported;
+- (bool)isStatusBarForegroundTransparent;
+- (long long)notificationCenterRevealMode;
+- (long long)overscanCompensation;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })primaryWindowOverlayInsets;
+- (unsigned long long)proximityDetectionModes;
+- (FBSDisplayMode *)requestedDisplayMode;
+- (unsigned long long)screenEdgesDeferringSystemGestures;
 - (unsigned int)statusBarContextID;
-- (BOOL)statusBarHidden;
-- (int)statusBarStyle;
-- (unsigned int)supportedInterfaceOrientations;
-- (int)whitePointAdaptivityStyle;
+- (bool)statusBarHidden;
+- (long long)statusBarStyle;
+- (unsigned long long)supportedInterfaceOrientations;
+- (long long)userInterfaceStyle;
+- (bool)wantsExclusiveForeground;
+- (long long)whitePointAdaptivityStyle;
 
 @end

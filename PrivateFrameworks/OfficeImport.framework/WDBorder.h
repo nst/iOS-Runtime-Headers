@@ -4,8 +4,8 @@
 
 @interface WDBorder : NSObject <NSCopying> {
     OITSUColor * mColor;
-    BOOL  mFrame;
-    BOOL  mShadow;
+    bool  mFrame;
+    bool  mShadow;
     unsigned char  mSpace;
     int  mStyle;
     unsigned char  mWidth;
@@ -15,20 +15,21 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (BOOL)frame;
+- (bool)frame;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToBorder:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToBorder:(id)arg1;
 - (void)setBorder:(id)arg1;
 - (void)setColor:(id)arg1;
-- (void)setFrame:(BOOL)arg1;
+- (void)setFrame:(bool)arg1;
 - (void)setNullBorder;
-- (void)setShadow:(BOOL)arg1;
+- (void)setShadow:(bool)arg1;
 - (void)setSingleBlackBorder;
 - (void)setSpace:(unsigned char)arg1;
 - (void)setStyle:(int)arg1;
 - (void)setWidth:(unsigned char)arg1;
-- (BOOL)shadow;
+- (bool)shadow;
 - (unsigned char)space;
 - (int)style;
 - (unsigned char)width;

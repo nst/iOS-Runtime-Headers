@@ -5,13 +5,13 @@
 @interface MPMediaDownloadManager : NSObject <ATDownloadProgressObserver, MPStoreDownloadManagerObserver, NSXPCListenerDelegate> {
     NSXPCConnection * __downloadProgressConnection;
     NSXPCConnection * __keepLocalTaskConnection;
-    NSMutableDictionary * _cachedATAssetMap;
-    NSMutableArray * _cachedATDownloads;
+    NSMutableOrderedSet * _cachedATDownloads;
     NSMutableOrderedSet * _cachedATUnEnqueuedDownloads;
-    BOOL  _callerCanConnectToAirTraffic;
+    NSMutableDictionary * _cachedProgressMap;
+    bool  _callerCanConnectToAirTraffic;
     NSObject<OS_dispatch_queue> * _calloutQueue;
     NSHashTable * _downloadObservers;
-    BOOL  _prefetchATAssets;
+    bool  _prefetchATAssets;
     NSObject<OS_dispatch_queue> * _queue;
     MPStoreDownloadManager * _storeDownloadManager;
     NSObject<OS_dispatch_queue> * _xpcConnectionQueue;
@@ -20,20 +20,25 @@
 @property (nonatomic, readonly) NSArray *allMediaDownloadLibraryIdentifiers;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedManager;
 
 - (void).cxx_destruct;
-- (id)_cachedATAssets;
 - (void)_checkEntitlementToConnectToAirTraffic;
 - (id)_downloadProgressConnection;
 - (id)_init;
+- (bool)_isValidMediaAsset:(id)arg1;
 - (id)_keepLocalTaskConnection;
+- (void)_notifyObserversOfAssetDownloadProgress:(id)arg1;
+- (void)_notifyObserversOfDownloadCompleteForAssets:(id)arg1 withError:(id)arg2;
 - (void)_prefectchAllATDownloads;
 - (id)_statusChangeObservers;
-- (id)_storeDownloadForATAsset:(id)arg1 withIdentifier:(long long)arg2;
+- (id)_updateCacheAndGetMediaDownloadToReportForATAssetDownloadProgress:(id)arg1;
+- (id)_updateCacheAndGetMediaDownloadToReportForStoreDownloadProgress:(id)arg1;
+- (id)activeDownloadForMediaItemPersistentID:(long long)arg1;
+- (id)activeDownloadForStoreID:(long long)arg1;
 - (void)addObserver:(id)arg1;
 - (id)allMediaDownloadLibraryIdentifiers;
 - (void)atcDidDownloadAsset:(id)arg1 withError:(id)arg2;
@@ -43,11 +48,14 @@
 - (void)cancelDownloads:(id)arg1;
 - (void)dealloc;
 - (void)downloadManager:(id)arg1 didAddDownloads:(id)arg2 removeDownloads:(id)arg3;
+- (void)downloadManager:(id)arg1 downloadDidFinish:(id)arg2;
+- (void)downloadManager:(id)arg1 downloadDidProgress:(id)arg2;
+- (void)downloadManager:(id)arg1 downloadsDidProgress:(id)arg2;
 - (void)enqueueAssetForDownload:(long long)arg1 withCompletionHandler:(id /* block */)arg2;
-- (BOOL)hasActiveDownloads;
+- (bool)hasActiveDownloads;
 - (id)init;
 - (void)prioritizeDownload:(long long)arg1;
 - (void)removeObserver:(id)arg1;
-- (void)sendKeepLocalStatusChanged:(int)arg1 forLibraryIdentifier:(long long)arg2 entityType:(int)arg3 withCompletionHandler:(id /* block */)arg4;
+- (void)sendKeepLocalStatusChanged:(long long)arg1 forLibraryIdentifier:(long long)arg2 entityType:(long long)arg3 withCompletionHandler:(id /* block */)arg4;
 
 @end

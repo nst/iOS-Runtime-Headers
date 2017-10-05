@@ -5,6 +5,7 @@
 @interface _ICQUpgradeOfferPageSpecification : _ICQPageSpecification {
     NSString * _altMessage;
     ICQLink * _bottomLink;
+    NSString * _bottomLinkVisibleKey;
     NSString * _finePrintFormat;
     NSArray * _finePrintLinks;
     NSString * _iconBundleIdentifier;
@@ -17,6 +18,7 @@
 
 @property (nonatomic, retain) NSString *altMessage;
 @property (nonatomic, retain) ICQLink *bottomLink;
+@property (nonatomic, retain) NSString *bottomLinkVisibleKey;
 @property (nonatomic, retain) NSString *finePrintFormat;
 @property (nonatomic, retain) NSArray *finePrintLinks;
 @property (nonatomic, retain) NSString *iconBundleIdentifier;
@@ -26,11 +28,14 @@
 @property (nonatomic, retain) NSArray *services;
 @property (nonatomic, retain) NSString *title;
 
-+ (id)upgradeOfferPageSpecificationSampleForLevel:(int)arg1;
++ (id)upgradeOfferPageSpecificationSampleForLevel:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)altMessage;
 - (id)bottomLink;
+- (id)bottomLinkVisibleKey;
+- (id)copy;
+- (id)copyWithBindings:(id)arg1;
 - (id)debugDescription;
 - (id)finePrintFormat;
 - (id)finePrintLinks;
@@ -43,6 +48,7 @@
 - (id)services;
 - (void)setAltMessage:(id)arg1;
 - (void)setBottomLink:(id)arg1;
+- (void)setBottomLinkVisibleKey:(id)arg1;
 - (void)setFinePrintFormat:(id)arg1;
 - (void)setFinePrintLinks:(id)arg1;
 - (void)setIconBundleIdentifier:(id)arg1;

@@ -5,7 +5,7 @@
 @interface MKMapItemMetadataRequester : NSObject <NSURLSessionDataDelegate, NSURLSessionDelegate, NSURLSessionTaskDelegate> {
     ACAccountStore * _accountStore;
     NSMapTable * _dataForTasks;
-    BOOL  _hasCheckedYelpAccountCredentials;
+    bool  _hasCheckedYelpAccountCredentials;
     NSMapTable * _requestsForURLs;
     NSURLSession * _session;
     OAURLRequestSigner * _signer;
@@ -15,7 +15,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) OAURLRequestSigner *signer;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) ACAccountCredential *yelpAccountCredentials;

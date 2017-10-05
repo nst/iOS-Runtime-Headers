@@ -7,9 +7,9 @@
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
 
+- (bool)_accessibilityAutomationHitTest;
 - (id)_accessibilityHitTestStartsAtElement;
-- (BOOL)_accessibilityHitTestsAnyElement;
+- (void)_setAccessibilityAutomationHitTest:(bool)arg1;
 - (void)_setAccessibilityHitTestStartsAtElement:(id)arg1;
-- (void)_setAccessibilityHitTestsAnyElement:(BOOL)arg1;
 
 @end

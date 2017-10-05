@@ -3,22 +3,22 @@
  */
 
 @interface DMFFetchControlGroupIdentifiersRequest : CATTaskRequest {
-    BOOL  _includeTemporary;
+    bool  _includeTemporary;
     NSString * _leaderIdentifier;
 }
 
-@property (nonatomic) BOOL includeTemporary;
+@property (nonatomic) bool includeTemporary;
 @property (nonatomic, copy) NSString *leaderIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)includeTemporary;
+- (bool)includeTemporary;
 - (id)initWithCoder:(id)arg1;
 - (id)leaderIdentifier;
-- (void)setIncludeTemporary:(BOOL)arg1;
+- (void)setIncludeTemporary:(bool)arg1;
 - (void)setLeaderIdentifier:(id)arg1;
 
 @end

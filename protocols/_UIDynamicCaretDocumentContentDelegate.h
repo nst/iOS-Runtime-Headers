@@ -5,6 +5,6 @@
 
 @required
 
-- (void)setDocumentHasContent:(BOOL)arg1;
+- (void)setDocumentHasContent:(bool)arg1;
 
 @end

@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)_keepsFirstResponderVisibleOnBoundsChange;
-- (void)_setKeepsFirstResponderVisibleOnBoundsChange:(BOOL)arg1;
+- (bool)_keepsFirstResponderVisibleOnBoundsChange;
+- (void)_setKeepsFirstResponderVisibleOnBoundsChange:(bool)arg1;
 
 @end

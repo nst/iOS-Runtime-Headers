@@ -6,8 +6,8 @@
 
 @property (nonatomic, retain) NSDate *creationDate;
 @property (nonatomic) unsigned long long deviceID;
-@property (nonatomic) BOOL isEphemeral;
-@property (nonatomic) BOOL isUserCentric;
+@property (nonatomic) bool isEphemeral;
+@property (nonatomic) bool isUserCentric;
 @property (nonatomic, retain) NSString *key;
 @property (nonatomic, retain) NSDate *lastModifiedDate;
 @property (nonatomic, retain) NSData *value;

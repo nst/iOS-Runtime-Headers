@@ -14,7 +14,7 @@
 @property (nonatomic) int clipContainerType;
 @property (nonatomic, retain) UIView *view;
 
-+ (id)extraView:(id)arg1 withAlignment:(int)arg2 animation:(id /* block */)arg3 onSnapshot:(BOOL)arg4;
++ (id)extraView:(id)arg1 withAlignment:(int)arg2 animation:(id /* block */)arg3 onSnapshot:(bool)arg4;
 
 - (int)alignment;
 - (id /* block */)animation;

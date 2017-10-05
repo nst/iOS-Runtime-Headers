@@ -5,6 +5,6 @@
 @interface MSPrivacy : NSObject
 
 + (id)dateByRemovingTimeComponentsFromDate:(id)arg1;
-+ (int)weeksSinceDate:(id)arg1;
++ (long long)weeksSinceDate:(id)arg1;
 
 @end

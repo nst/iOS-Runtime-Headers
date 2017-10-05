@@ -3,91 +3,91 @@
  */
 
 @interface PXUIPlayButtonTile : NSObject <PXChangeObserver, PXMutableUIPlayButtonTile, PXUIViewBasicTile> {
-    BOOL  __animatingGeometry;
-    unsigned int  __animationCount;
+    bool  __animatingGeometry;
+    unsigned long long  __animationCount;
     UIImage * __backgroundImage;
-    int  __style;
-    BOOL  _allowsBackdropStatisticsSuppression;
+    long long  __style;
+    bool  _allowsBackdropStatisticsSuppression;
     <PXDisplayAsset> * _assetForImageExtraction;
     <PXUIPlayButtonTileDelegate> * _delegate;
     UIView<PXVideoOverlayButton> * _hifiPlayButtonView;
     PXImageExtraction * _imageExtraction;
     PXImageRequester * _imageRequester;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _imageViewportLocation;
-    BOOL  _isPerformingChanges;
+    bool  _isPerformingChanges;
     struct { 
-        BOOL backgroundImage; 
-        BOOL playButton; 
+        bool backgroundImage; 
+        bool playButton; 
     }  _needsUpdate;
     UIImageView * _playButtonBackgroundImageView;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _playButtonSize;
-    int  _playButtonStyle;
+    long long  _playButtonStyle;
     UIView<PXVideoOverlayButton> * _playButtonView;
     UIView * _view;
 }
 
-@property (getter=_isAnimatingGeometry, setter=_setAnimatingGeometry:, nonatomic) BOOL _animatingGeometry;
-@property (setter=_setAnimationCount:, nonatomic) unsigned int _animationCount;
+@property (getter=_isAnimatingGeometry, setter=_setAnimatingGeometry:, nonatomic) bool _animatingGeometry;
+@property (setter=_setAnimationCount:, nonatomic) unsigned long long _animationCount;
 @property (setter=_setBackgroundImage:, nonatomic, retain) UIImage *_backgroundImage;
-@property (setter=_setStyle:, nonatomic) int _style;
-@property (nonatomic, readonly) BOOL allowsBackdropStatisticsSuppression;
+@property (setter=_setStyle:, nonatomic) long long _style;
+@property (nonatomic, readonly) bool allowsBackdropStatisticsSuppression;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PXUIPlayButtonTileDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PXImageRequester *imageRequester;
-@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } imageViewportLocation;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } playButtonSize;
-@property (nonatomic, readonly) int playButtonStyle;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } imageViewportLocation;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } playButtonSize;
+@property (nonatomic, readonly) long long playButtonStyle;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIView *view;
 
-+ (struct CGSize { float x1; float x2; })preferredSize;
++ (struct CGSize { double x1; double x2; })preferredSize;
 
 - (void).cxx_destruct;
-- (unsigned int)_animationCount;
+- (unsigned long long)_animationCount;
 - (id)_backgroundImage;
-- (void)_handleExtractionResult:(id)arg1 isPlaceholder:(BOOL)arg2 extraction:(id)arg3;
+- (void)_handleExtractionResult:(id)arg1 isPlaceholder:(bool)arg2 extraction:(id)arg3;
 - (void)_invalidateBackgroundImage;
 - (void)_invalidatePlayButton;
-- (BOOL)_isAnimatingGeometry;
-- (BOOL)_needsUpdate;
+- (bool)_isAnimatingGeometry;
+- (bool)_needsUpdate;
 - (void)_resetHifiPlayButton;
-- (void)_setAnimatingGeometry:(BOOL)arg1;
-- (void)_setAnimationCount:(unsigned int)arg1;
+- (void)_setAnimatingGeometry:(bool)arg1;
+- (void)_setAnimationCount:(unsigned long long)arg1;
 - (void)_setBackgroundImage:(id)arg1;
-- (void)_setStyle:(int)arg1;
-- (int)_style;
+- (void)_setStyle:(long long)arg1;
+- (long long)_style;
 - (void)_updateBackgroundImageIfNeeded;
 - (void)_updateIfNeeded;
 - (void)_updatePlayButtonViewIfNeeded;
-- (BOOL)allowsBackdropStatisticsSuppression;
+- (bool)allowsBackdropStatisticsSuppression;
 - (void)becomeReusable;
 - (id)delegate;
-- (void)didAnimateToGeometry:(struct PXTileGeometry { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; struct CGAffineTransform { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; float x5; float x6; BOOL x7; struct CGSize { float x_8_1_1; float x_8_1_2; } x8; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; void *x10; })arg1 toUserData:(id)arg2 withOptions:(id)arg3;
-- (void)didApplyGeometry:(struct PXTileGeometry { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; struct CGAffineTransform { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; float x5; float x6; BOOL x7; struct CGSize { float x_8_1_1; float x_8_1_2; } x8; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; void *x10; })arg1 withUserData:(id)arg2;
+- (void)didAnimateToGeometry:(struct PXTileGeometry { struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; struct CGAffineTransform { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; double x_4_1_5; double x_4_1_6; } x4; double x5; double x6; bool x7; struct CGSize { double x_8_1_1; double x_8_1_2; } x8; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_9_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_9_1_2; } x9; void *x10; })arg1 toUserData:(id)arg2 withOptions:(id)arg3;
+- (void)didApplyGeometry:(struct PXTileGeometry { struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; struct CGAffineTransform { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; double x_4_1_5; double x_4_1_6; } x4; double x5; double x6; bool x7; struct CGSize { double x_8_1_1; double x_8_1_2; } x8; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_9_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_9_1_2; } x9; void *x10; })arg1 withUserData:(id)arg2;
 - (void)didTapButton:(id)arg1;
 - (id)imageRequester;
-- (struct CGPoint { float x1; float x2; })imageViewportLocation;
+- (struct CGPoint { double x1; double x2; })imageViewportLocation;
 - (id)init;
-- (void)observable:(id)arg1 didChange:(unsigned int)arg2 context:(void*)arg3;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
 - (void)performChanges:(id /* block */)arg1;
-- (struct CGSize { float x1; float x2; })playButtonSize;
-- (int)playButtonStyle;
+- (struct CGSize { double x1; double x2; })playButtonSize;
+- (long long)playButtonStyle;
 - (void)prepareForReuse;
-- (void)setAllowsBackdropStatisticsSuppression:(BOOL)arg1;
+- (void)setAllowsBackdropStatisticsSuppression:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setImageRequester:(id)arg1;
-- (void)setImageViewportLocation:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setPlayButtonSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setPlayButtonStyle:(int)arg1;
+- (void)setImageViewportLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setPlayButtonSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPlayButtonStyle:(long long)arg1;
 - (id)view;
-- (void)willAnimateToGeometry:(struct PXTileGeometry { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; struct CGAffineTransform { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; float x_4_1_5; float x_4_1_6; } x4; float x5; float x6; BOOL x7; struct CGSize { float x_8_1_1; float x_8_1_2; } x8; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_9_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_9_1_2; } x9; void *x10; })arg1 toUserData:(id)arg2 withOptions:(id)arg3;
+- (void)willAnimateToGeometry:(struct PXTileGeometry { struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; struct CGPoint { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; struct CGAffineTransform { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; double x_4_1_5; double x_4_1_6; } x4; double x5; double x6; bool x7; struct CGSize { double x_8_1_1; double x_8_1_2; } x8; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_9_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_9_1_2; } x9; void *x10; })arg1 toUserData:(id)arg2 withOptions:(id)arg3;
 
 @end

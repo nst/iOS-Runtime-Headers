@@ -3,28 +3,28 @@
  */
 
 @interface PUSectionedGridLayoutAttributes : UICollectionViewLayoutAttributes {
-    BOOL  _exists;
-    BOOL  _extendsTopContent;
-    BOOL  _floating;
-    float  _interactiveTransitionProgress;
+    bool  _exists;
+    bool  _extendsTopContent;
+    bool  _floating;
+    double  _interactiveTransitionProgress;
 }
 
-@property (nonatomic) BOOL exists;
-@property (nonatomic) BOOL extendsTopContent;
-@property (nonatomic) BOOL floating;
-@property (nonatomic) float interactiveTransitionProgress;
+@property (nonatomic) bool exists;
+@property (nonatomic) bool extendsTopContent;
+@property (nonatomic) bool floating;
+@property (nonatomic) double interactiveTransitionProgress;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (BOOL)exists;
-- (BOOL)extendsTopContent;
-- (BOOL)floating;
+- (bool)exists;
+- (bool)extendsTopContent;
+- (bool)floating;
 - (id)init;
-- (float)interactiveTransitionProgress;
-- (BOOL)isEqual:(id)arg1;
-- (void)setExists:(BOOL)arg1;
-- (void)setExtendsTopContent:(BOOL)arg1;
-- (void)setFloating:(BOOL)arg1;
-- (void)setInteractiveTransitionProgress:(float)arg1;
+- (double)interactiveTransitionProgress;
+- (bool)isEqual:(id)arg1;
+- (void)setExists:(bool)arg1;
+- (void)setExtendsTopContent:(bool)arg1;
+- (void)setFloating:(bool)arg1;
+- (void)setInteractiveTransitionProgress:(double)arg1;
 
 @end

@@ -4,41 +4,41 @@
 
 @interface DOMHTMLSelectElement : DOMHTMLElement
 
-@property BOOL autofocus;
-@property BOOL disabled;
+@property bool autofocus;
+@property bool disabled;
 @property (readonly) DOMHTMLFormElement *form;
 @property (readonly) int length;
-@property BOOL multiple;
+@property bool multiple;
 @property (copy) NSString *name;
 @property (readonly) DOMHTMLOptionsCollection *options;
 @property int selectedIndex;
 @property int size;
 @property (readonly, copy) NSString *type;
 @property (copy) NSString *value;
-@property (readonly) BOOL willValidate;
+@property (readonly) bool willValidate;
 
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 
 - (void)_activateItemAtIndex:(int)arg1;
-- (void)_activateItemAtIndex:(int)arg1 allowMultipleSelection:(BOOL)arg2;
+- (void)_activateItemAtIndex:(int)arg1 allowMultipleSelection:(bool)arg2;
 - (void)add:(id)arg1 :(id)arg2;
 - (void)add:(id)arg1 before:(id)arg2;
-- (BOOL)autofocus;
+- (bool)autofocus;
 - (unsigned int)completeLength;
-- (BOOL)disabled;
+- (bool)disabled;
 - (id)form;
 - (id)item:(unsigned int)arg1;
 - (int)length;
 - (id)listItemAtIndex:(int)arg1;
-- (BOOL)multiple;
+- (bool)multiple;
 - (id)name;
 - (id)namedItem:(id)arg1;
 - (id)options;
 - (void)remove:(int)arg1;
 - (int)selectedIndex;
-- (void)setAutofocus:(BOOL)arg1;
-- (void)setDisabled:(BOOL)arg1;
-- (void)setMultiple:(BOOL)arg1;
+- (void)setAutofocus:(bool)arg1;
+- (void)setDisabled:(bool)arg1;
+- (void)setMultiple:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setSelectedIndex:(int)arg1;
 - (void)setSize:(int)arg1;
@@ -47,16 +47,16 @@
 - (int)structuralComplexityContribution;
 - (id)type;
 - (id)value;
-- (BOOL)willValidate;
+- (bool)willValidate;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-- (BOOL)_requiresAccessoryView;
-- (BOOL)_requiresInputView;
+- (bool)_requiresAccessoryView;
+- (bool)_requiresInputView;
 - (void)_startAssistingDocumentView:(id)arg1;
 - (void)_stopAssistingDocumentView:(id)arg1;
-- (BOOL)_supportsAutoFill;
+- (bool)_supportsAutoFill;
 - (id)createPeripheral;
-- (BOOL)nodeCanBecomeFirstResponder;
+- (bool)nodeCanBecomeFirstResponder;
 
 @end

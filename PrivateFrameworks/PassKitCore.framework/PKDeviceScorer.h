@@ -4,17 +4,19 @@
 
 @interface PKDeviceScorer : NSObject {
     PKDSPContext * _context;
+    CdQwUTvJnDEPQgR8 * _scorer;
 }
 
 @property (nonatomic, readonly, copy) PKDSPContext *context;
 
-+ (BOOL)deviceScoringSupported;
++ (bool)deviceScoringSupported;
 
 - (void).cxx_destruct;
 - (id)context;
+- (id)createScorer;
 - (void)deviceScoreWithNonce:(id)arg1 completion:(id /* block */)arg2;
 - (id)init;
 - (id)initWithContext:(id)arg1;
-- (id)scorerWithNonce:(id)arg1;
+- (void)peerPaymentDeviceScoreWithCompletion:(id /* block */)arg1;
 
 @end

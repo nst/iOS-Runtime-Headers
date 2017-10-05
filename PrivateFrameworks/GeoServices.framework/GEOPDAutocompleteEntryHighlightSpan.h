@@ -12,26 +12,26 @@
     PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic) BOOL hasLength;
-@property (nonatomic) BOOL hasStartIndex;
+@property (nonatomic) bool hasLength;
+@property (nonatomic) bool hasStartIndex;
 @property (nonatomic) unsigned int length;
 @property (nonatomic) unsigned int startIndex;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLength;
-- (BOOL)hasStartIndex;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasLength;
+- (bool)hasStartIndex;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (unsigned int)length;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasLength:(BOOL)arg1;
-- (void)setHasStartIndex:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasLength:(bool)arg1;
+- (void)setHasStartIndex:(bool)arg1;
 - (void)setLength:(unsigned int)arg1;
 - (void)setStartIndex:(unsigned int)arg1;
 - (unsigned int)startIndex;

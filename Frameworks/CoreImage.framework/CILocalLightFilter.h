@@ -7,6 +7,7 @@
     CIImage * inputImage;
     NSData * inputLightMap;
     NSNumber * inputLightMapHeight;
+    CIImage * inputLightMapImage;
     NSNumber * inputLightMapWidth;
     NSNumber * inputLocalLight;
 }

@@ -12,7 +12,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -23,6 +23,7 @@
 - (id)initWithRemoteAlertControllerClass:(Class)arg1;
 - (void)noteClientDidDisconnect:(id)arg1;
 - (void)noteDidReceiveMessage:(id)arg1 withType:(long long)arg2 fromClient:(id)arg3;
+- (id)prerequisiteMilestones;
 - (void)queue_remoteAlertController:(id)arg1 didInvalidateWithReason:(long long)arg2 underlyingError:(id)arg3;
 - (void)queue_remoteAlertControllerDidChangeActivationState:(id)arg1;
 

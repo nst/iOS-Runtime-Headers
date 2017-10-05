@@ -12,11 +12,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) id delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)anyRequestLoading;
-+ (id)errorWithCode:(unsigned int)arg1;
++ (bool)anyRequestLoading;
++ (id)errorWithCode:(unsigned long long)arg1;
 + (id)invalidResponseErrorWithResponse:(id)arg1;
 + (id)nonSecureConnectionNotAllowedError;
 + (id)safeBaseURL;
@@ -34,11 +34,11 @@
 - (void)failWithError:(id)arg1;
 - (id)handleWillLoadRequest:(id)arg1;
 - (id)init;
-- (BOOL)isLoading;
+- (bool)isLoading;
 - (void)loadRequest:(id)arg1;
 - (void)loadStatusChanged;
 - (void)parseData:(id)arg1;
-- (BOOL)receivedValidResponse:(id)arg1;
+- (bool)receivedValidResponse:(id)arg1;
 - (id)request;
 - (id)sessionConfiguration;
 - (void)setDelegate:(id)arg1;

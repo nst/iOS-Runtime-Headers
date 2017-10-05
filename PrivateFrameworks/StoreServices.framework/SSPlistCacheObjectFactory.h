@@ -6,10 +6,10 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id)cachedObjectWithDataRepresentation:(id)arg1 typeIdentifier:(id)arg2;
-- (BOOL)supportsTypeIdentifier:(id)arg1;
+- (bool)supportsTypeIdentifier:(id)arg1;
 
 @end

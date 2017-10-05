@@ -4,27 +4,27 @@
 
 @interface DOMHTMLOptionElement : DOMHTMLElement
 
-@property BOOL defaultSelected;
-@property BOOL disabled;
+@property bool defaultSelected;
+@property bool disabled;
 @property (readonly) DOMHTMLFormElement *form;
 @property (readonly) int index;
 @property (copy) NSString *label;
-@property BOOL selected;
+@property bool selected;
 @property (readonly, copy) NSString *text;
 @property (copy) NSString *value;
 
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 
-- (BOOL)defaultSelected;
-- (BOOL)disabled;
+- (bool)defaultSelected;
+- (bool)disabled;
 - (id)form;
 - (int)index;
 - (id)label;
-- (BOOL)selected;
-- (void)setDefaultSelected:(BOOL)arg1;
-- (void)setDisabled:(BOOL)arg1;
+- (bool)selected;
+- (void)setDefaultSelected:(bool)arg1;
+- (void)setDisabled:(bool)arg1;
 - (void)setLabel:(id)arg1;
-- (void)setSelected:(BOOL)arg1;
+- (void)setSelected:(bool)arg1;
 - (void)setValue:(id)arg1;
 - (id)text;
 - (id)value;

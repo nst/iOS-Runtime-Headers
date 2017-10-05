@@ -2,8 +2,8 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKOfficialAppViewController : MKPlaceSectionViewController <MKOfficialAppViewDelegate, _MKInfoCardChildViewControllerAnalyticsDelegate> {
-    BOOL  _isShowing;
+@interface MKOfficialAppViewController : MKPlaceSectionViewController <MKModuleViewControllerProtocol, MKOfficialAppViewDelegate, _MKInfoCardChildViewControllerAnalyticsDelegate> {
+    bool  _isShowing;
     MKMapItem * _mapItem;
     <MKOfficialAppViewControllerDelegate> * _officialAppDelegate;
     MKPlaceSectionHeaderView * _officialAppHeaderView;
@@ -12,8 +12,8 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL isShowing;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isShowing;
 @property (nonatomic, retain) MKMapItem *mapItem;
 @property (nonatomic) <MKOfficialAppViewControllerDelegate> *officialAppDelegate;
 @property (nonatomic, retain) MKPlaceSectionHeaderView *officialAppHeaderView;
@@ -22,16 +22,15 @@
 
 - (void).cxx_destruct;
 - (void)_beginFindingOfficialApp;
-- (void)dealloc;
 - (id)infoCardChildPossibleActions;
 - (id)initWithMKMapItem:(id)arg1;
-- (BOOL)isShowing;
+- (bool)isShowing;
 - (id)mapItem;
 - (id)officialAppDelegate;
 - (id)officialAppHeaderView;
 - (id)officialAppView;
 - (void)officialAppViewDidSelectPunchOutButton:(id)arg1;
-- (void)setIsShowing:(BOOL)arg1;
+- (void)setIsShowing:(bool)arg1;
 - (void)setMapItem:(id)arg1;
 - (void)setOfficialAppDelegate:(id)arg1;
 - (void)setOfficialAppHeaderView:(id)arg1;

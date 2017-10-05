@@ -10,7 +10,7 @@
 @property (nonatomic, retain) id contents;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CRSet *set;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSMapTable *timestamps;

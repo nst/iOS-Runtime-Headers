@@ -11,6 +11,7 @@
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
 - (void).cxx_destruct;
+- (bool)CKOperationShouldRun:(id*)arg1;
 - (id)database;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;

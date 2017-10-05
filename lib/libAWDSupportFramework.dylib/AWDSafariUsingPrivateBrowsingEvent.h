@@ -7,29 +7,29 @@
         unsigned int timestamp : 1; 
         unsigned int inPrivateBrowsing : 1; 
     }  _has;
-    BOOL  _inPrivateBrowsing;
+    bool  _inPrivateBrowsing;
     unsigned long long  _timestamp;
 }
 
-@property (nonatomic) BOOL hasInPrivateBrowsing;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) BOOL inPrivateBrowsing;
+@property (nonatomic) bool hasInPrivateBrowsing;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic) bool inPrivateBrowsing;
 @property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasInPrivateBrowsing;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)inPrivateBrowsing;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasInPrivateBrowsing;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)inPrivateBrowsing;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasInPrivateBrowsing:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setInPrivateBrowsing:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasInPrivateBrowsing:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setInPrivateBrowsing:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;

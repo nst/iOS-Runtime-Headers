@@ -6,41 +6,41 @@
     SKUILockupSwooshArtworkLoader * _artworkLoader;
     SKUIMissingItemLoader * _missingItemLoader;
     SKUIProductPageOverlayController * _overlayController;
-    int  _overlaySourceIndex;
+    long long  _overlaySourceIndex;
     SKUILockupSwooshViewController * _swooshViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) SKUISwooshPageComponent *pageComponent;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_addImpressionForItemIndex:(int)arg1 toSession:(id)arg2;
+- (void)_addImpressionForItemIndex:(long long)arg1 toSession:(id)arg2;
 - (id)_artworkLoader;
-- (void)_loadMissingItemsFromIndex:(int)arg1 withReason:(int)arg2;
+- (void)_loadMissingItemsFromIndex:(long long)arg1 withReason:(long long)arg2;
 - (id)_missingItemLoader;
 - (id)_popSourceViewForOverlayController:(id)arg1;
-- (void)_showProductPageForItem:(id)arg1 index:(int)arg2 animated:(BOOL)arg3;
+- (void)_showProductPageForItem:(id)arg1 index:(long long)arg2 animated:(bool)arg3;
 - (id)_swooshViewController;
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
 - (id)cellForIndexPath:(id)arg1;
-- (struct CGSize { float x1; float x2; })cellSizeForIndexPath:(id)arg1;
+- (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
 - (void)collectionViewDidEndDisplayingCellForItemAtIndexPath:(id)arg1;
 - (void)dealloc;
 - (id)initWithPageComponent:(id)arg1;
 - (void)missingItemLoader:(id)arg1 didLoadItems:(id)arg2 invalidItemIdentifiers:(id)arg3;
-- (int)numberOfCells;
-- (void)prefetchResourcesWithReason:(int)arg1;
+- (long long)numberOfCells;
+- (void)prefetchResourcesWithReason:(long long)arg1;
 - (id)productPageOverlay:(id)arg1 flipSourceViewToDismissItem:(id)arg2;
 - (id)productPageOverlay:(id)arg1 flipSourceViewToPresentItem:(id)arg2;
 - (void)productPageOverlayDidDismiss:(id)arg1;
 - (void)setImage:(id)arg1 forRequest:(id)arg2;
-- (void)swoosh:(id)arg1 didSelectCellAtIndex:(int)arg2;
-- (id)swoosh:(id)arg1 imageForCellAtIndex:(int)arg2;
-- (id)swoosh:(id)arg1 videoThumbnailForCellAtIndex:(int)arg2;
-- (void)swoosh:(id)arg1 willDisplayCellAtIndex:(int)arg2;
+- (void)swoosh:(id)arg1 didSelectCellAtIndex:(long long)arg2;
+- (id)swoosh:(id)arg1 imageForCellAtIndex:(long long)arg2;
+- (id)swoosh:(id)arg1 videoThumbnailForCellAtIndex:(long long)arg2;
+- (void)swoosh:(id)arg1 willDisplayCellAtIndex:(long long)arg2;
 - (void)swooshDidSelectSeeAll:(id)arg1;
 - (void)willAppearInContext:(id)arg1;
 

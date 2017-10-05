@@ -2,70 +2,57 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKPlaceInfoViewController : MKPlaceSectionViewController <MKOfflineModeViewController, MKPlaceAttributionProvider, UIGestureRecognizerDelegate, _MKInfoCardChildViewControllerAnalyticsDelegate> {
-    <MKPlaceInfoViewControllerDelegate> * _infoDelegate;
+@interface MKPlaceInfoViewController : MKPlaceSectionViewController <MKModuleViewControllerProtocol, MKOfflineModeViewController, UIGestureRecognizerDelegate, _MKInfoCardChildViewControllerAnalyticsDelegate> {
+    <MKPlaceActionManagerProtocol> * _actionDelegate;
+    bool  _bottomHairlineHidden;
     UILongPressGestureRecognizer * _longPressRecognizer;
     MKMapItem * _mapItem;
-    BOOL  _offlineMode;
-    _MKPlaceViewController * _owner;
+    bool  _offlineMode;
     <_MKPlaceItem> * _placeItem;
     NSMutableArray * _rows;
     MKPlaceSectionRowView * _selectedRow;
-    BOOL  _shouldHideContactInfo;
-    NSMutableArray * _unusedRows;
 }
 
+@property (nonatomic) <MKPlaceActionManagerProtocol> *actionDelegate;
+@property (nonatomic) bool bottomHairlineHidden;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL hasContent;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) NSAttributedString *infoAttributionString;
-@property (nonatomic) <MKPlaceInfoViewControllerDelegate> *infoDelegate;
+@property (nonatomic, readonly) bool hasContent;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) MKMapItem *mapItem;
-@property (nonatomic) BOOL offlineMode;
-@property (nonatomic) _MKPlaceViewController *owner;
+@property (nonatomic) bool offlineMode;
 @property (nonatomic, retain) <_MKPlaceItem> *placeItem;
-@property (nonatomic) BOOL shouldHideContactInfo;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_addContactRow:(id)arg1 ofType:(unsigned int)arg2 toViews:(id)arg3 forceTitles:(BOOL)arg4;
-- (id)_addRowForType:(unsigned int)arg1 toViews:(id)arg2;
-- (id)_addRowForType:(unsigned int)arg1 withValue:(id)arg2 toViews:(id)arg3;
-- (void)_canMakeCalls:(id /* block */)arg1;
-- (void)_configureRow:(id)arg1 ofType:(unsigned int)arg2 withValue:(id)arg3;
-- (id)_createViewForInfoRow:(unsigned int)arg1;
-- (void)_directionsToAddress:(unsigned int)arg1;
-- (id)_firstRowOfType:(unsigned int)arg1;
-- (id)_firstUnusedRowOfType:(unsigned int)arg1;
-- (void)_launchMaps;
+- (void)_addContactRow:(id)arg1 ofType:(unsigned long long)arg2 toViews:(id)arg3 defaultTitle:(id)arg4;
+- (id)_addRowForType:(unsigned long long)arg1 withValue:(id)arg2 toViews:(id)arg3;
+- (void)_configureRow:(id)arg1 ofType:(unsigned long long)arg2 withValue:(id)arg3;
+- (id)_createViewForInfoRow:(unsigned long long)arg1;
 - (void)_launchMapsDirectionsWithSource:(id)arg1 destination:(id)arg2 directionsMode:(id)arg3;
 - (void)_menuDismissed:(id)arg1;
 - (void)_rowLongPressed:(id)arg1;
 - (void)_shareAddress:(id)arg1 fromView:(id)arg2;
-- (void)_updateViewsAnimated:(BOOL)arg1;
-- (void)attributionLinkWasClicked:(id)arg1;
+- (void)_updateViewsAnimated:(bool)arg1;
+- (id)actionDelegate;
+- (unsigned long long)actionTypeFromRowType:(unsigned long long)arg1;
+- (bool)bottomHairlineHidden;
 - (id)contact;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
-- (id)getAttributionDisplayString;
-- (BOOL)hasContent;
-- (id)infoAttributionString;
+- (id)draggableContent;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (bool)hasContent;
 - (id)infoCardChildPossibleActions;
-- (id)infoDelegate;
 - (id)initWithPlaceItem:(id)arg1;
 - (id)mapItem;
-- (BOOL)offlineMode;
-- (id)owner;
+- (bool)offlineMode;
 - (id)placeItem;
-- (void)sectionView:(id)arg1 didSelectRow:(id)arg2 atIndex:(unsigned int)arg3;
-- (void)setInfoDelegate:(id)arg1;
+- (void)sectionView:(id)arg1 didSelectRow:(id)arg2 atIndex:(unsigned long long)arg3;
+- (void)setActionDelegate:(id)arg1;
+- (void)setBottomHairlineHidden:(bool)arg1;
 - (void)setMapItem:(id)arg1;
-- (void)setOfflineMode:(BOOL)arg1;
-- (void)setOwner:(id)arg1;
+- (void)setOfflineMode:(bool)arg1;
 - (void)setPlaceItem:(id)arg1;
-- (void)setShouldHideContactInfo:(BOOL)arg1;
-- (BOOL)shouldHideContactInfo;
-- (BOOL)shouldShowDetails;
+- (bool)shouldShowDetails;
 - (void)viewDidLoad;
 
 @end

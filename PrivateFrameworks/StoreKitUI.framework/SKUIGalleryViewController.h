@@ -17,16 +17,16 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <SKUIEmbeddedMediaViewDelegate> *embeddedMediaDelegate;
 @property (nonatomic, readonly) SKUIGalleryPageComponent *galleryComponent;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) SKUIMediaComponent *selectedMediaComponent;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_finishPaneAnimation;
-- (id)_newViewControllerWithIndex:(int)arg1;
+- (id)_newViewControllerWithIndex:(long long)arg1;
 - (id)_newViewWithMediaComponent:(id)arg1;
 - (id)_selectedViewController;
-- (void)_showNextPaneAnimated:(BOOL)arg1;
+- (void)_showNextPaneAnimated:(bool)arg1;
 - (void)_startCycleTimer;
 - (void)_stopCycleTimer;
 - (void)_tapAction:(id)arg1;
@@ -35,18 +35,18 @@
 - (id)embeddedMediaDelegate;
 - (id)galleryComponent;
 - (id)initWithGalleryComponent:(id)arg1 artworkLoader:(id)arg2;
-- (void)loadArtworkForChildComponent:(id)arg1 reason:(int)arg2 constraintWidth:(float)arg3;
+- (void)loadArtworkForChildComponent:(id)arg1 reason:(long long)arg2 constraintWidth:(double)arg3;
 - (void)loadView;
-- (void)pageViewController:(id)arg1 didFinishAnimating:(BOOL)arg2 previousViewControllers:(id)arg3 transitionCompleted:(BOOL)arg4;
+- (void)pageViewController:(id)arg1 didFinishAnimating:(bool)arg2 previousViewControllers:(id)arg3 transitionCompleted:(bool)arg4;
 - (id)pageViewController:(id)arg1 viewControllerAfterViewController:(id)arg2;
 - (id)pageViewController:(id)arg1 viewControllerBeforeViewController:(id)arg2;
-- (void)performActionForSelectedComponentAnimated:(BOOL)arg1;
+- (void)performActionForSelectedComponentAnimated:(bool)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (id)selectedMediaComponent;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setEmbeddedMediaDelegate:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

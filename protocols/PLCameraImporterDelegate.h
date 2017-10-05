@@ -5,7 +5,7 @@
 
 @required
 
-- (void)importer:(PLCameraImporter *)arg1 didAddImportItem:(PLCameraImportItem *)arg2 atIndex:(unsigned int)arg3;
+- (void)importer:(PLCameraImporter *)arg1 didAddImportItem:(PLCameraImportItem *)arg2 atIndex:(unsigned long long)arg3;
 - (void)importer:(PLCameraImporter *)arg1 didChangeImportItem:(PLCameraImportItem *)arg2 changeType:(int)arg3 error:(NSError *)arg4;
 - (void)importer:(PLCameraImporter *)arg1 didCompleteImportForItems:(NSArray *)arg2;
 - (void)importer:(PLCameraImporter *)arg1 didCompleteRemovalOfItems:(NSArray *)arg2;

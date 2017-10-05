@@ -4,8 +4,8 @@
 
 @interface CNDateComponentsEquivalence : NSObject
 
-+ (BOOL)areComponents:(id)arg1 equivalentToComponents:(id)arg2;
-+ (BOOL)isCalendar:(id)arg1 equivalentToCalendar:(id)arg2;
-+ (BOOL)isComponent:(int)arg1 equivalentToComponent:(int)arg2;
++ (bool)canUnifyComponents:(id)arg1 withComponents:(id)arg2;
++ (bool)isCalendar:(id)arg1 equivalentToCalendar:(id)arg2;
++ (bool)isComponent:(long long)arg1 equivalentToComponent:(long long)arg2;
 
 @end

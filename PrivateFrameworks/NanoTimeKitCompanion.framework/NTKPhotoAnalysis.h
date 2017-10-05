@@ -4,8 +4,8 @@
 
 @interface NTKPhotoAnalysis : NSObject <NSCopying, NSSecureCoding> {
     struct { 
-        BOOL isComplexBackground; 
-        BOOL isColoredText; 
+        bool isComplexBackground; 
+        bool isColoredText; 
         float textHue; 
         float textSaturation; 
         float textBrightness; 
@@ -22,12 +22,12 @@
 @property (nonatomic, readonly) float bgBrightness;
 @property (nonatomic, readonly) float bgHue;
 @property (nonatomic, readonly) float bgSaturation;
-@property (getter=isColoredText, nonatomic, readonly) BOOL coloredText;
-@property (getter=isComplexBackground, nonatomic, readonly) BOOL complexBackground;
+@property (getter=isColoredText, nonatomic, readonly) bool coloredText;
+@property (getter=isComplexBackground, nonatomic, readonly) bool complexBackground;
 @property (nonatomic, readonly) float shadowBrightness;
 @property (nonatomic, readonly) float shadowHue;
 @property (nonatomic, readonly) float shadowSaturation;
-@property (nonatomic, readonly) struct { BOOL x1; BOOL x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; } structure;
+@property (nonatomic, readonly) struct { bool x1; bool x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; } structure;
 @property (nonatomic, readonly) float textBrightness;
 @property (nonatomic, readonly) float textHue;
 @property (nonatomic, readonly) float textSaturation;
@@ -35,7 +35,7 @@
 
 + (id)analysisWithImage:(id)arg1 alignment:(id)arg2;
 + (id)defaultAnalysis;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (float)bgBrightness;
 - (float)bgHue;
@@ -45,13 +45,13 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initFromDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithStructure:(struct { BOOL x1; BOOL x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; })arg1;
-- (BOOL)isColoredText;
-- (BOOL)isComplexBackground;
+- (id)initWithStructure:(struct { bool x1; bool x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; })arg1;
+- (bool)isColoredText;
+- (bool)isComplexBackground;
 - (float)shadowBrightness;
 - (float)shadowHue;
 - (float)shadowSaturation;
-- (struct { BOOL x1; BOOL x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; })structure;
+- (struct { bool x1; bool x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; })structure;
 - (float)textBrightness;
 - (float)textHue;
 - (float)textSaturation;

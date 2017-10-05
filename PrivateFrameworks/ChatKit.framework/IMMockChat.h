@@ -15,11 +15,11 @@
 @property (nonatomic, retain) IMHandle *outgoingHandle;
 
 - (void).cxx_destruct;
-- (id)_chatItemFromMockItemInfo:(id)arg1 atIndex:(unsigned int)arg2;
+- (id)_chatItemFromMockItemInfo:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)_messageFromMockItemInfo:(id)arg1;
 - (void)appendMockItemWithInfo:(id)arg1;
 - (id)chatItems;
-- (BOOL)deleteAllHistory;
+- (bool)deleteAllHistory;
 - (void)deleteChatItems:(id)arg1;
 - (id)displayName;
 - (id)incomingHandle;
@@ -27,8 +27,8 @@
 - (id)lastFinishedMessage;
 - (id)lastFinishedMessageDate;
 - (id)lastMockIMMessage;
-- (id)loadMessagesBeforeDate:(id)arg1 limit:(unsigned int)arg2 loadImmediately:(BOOL)arg3;
-- (unsigned int)messageCount;
+- (id)loadMessagesBeforeDate:(id)arg1 limit:(unsigned long long)arg2 loadImmediately:(bool)arg3;
+- (unsigned long long)messageCount;
 - (id)mockChatItems;
 - (id)outgoingHandle;
 - (id)participants;

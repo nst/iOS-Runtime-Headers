@@ -4,10 +4,8 @@
 
 @interface TSCEReferenceResolver : NSObject
 
-+ (Class)resolverClass;
 + (id)resolverContainerMatchingName:(id)arg1 inDocumentRoot:(id)arg2;
 + (id)resolverMatchingName:(id)arg1 inDocumentRoot:(id)arg2 contextResolver:(id)arg3;
 + (id)resolverMatchingNameWithContextContainer:(id)arg1 inDocumentRoot:(id)arg2 contextContainerName:(id)arg3;
-+ (void)setResolverClass:(Class)arg1;
 
 @end

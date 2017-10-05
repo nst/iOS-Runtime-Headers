@@ -10,13 +10,13 @@
 @property (nonatomic, readonly, copy) NSDate *creationDate;
 @property (nonatomic, copy) NSNumber *creatorCode;
 @property (nonatomic, copy) NSString *generic;
-@property (getter=isInvisible, nonatomic) BOOL invisible;
+@property (getter=isInvisible, nonatomic) bool invisible;
 @property (nonatomic, copy) NSString *itemDescription;
 @property (nonatomic, copy) NSString *label;
 @property (nonatomic, readonly, copy) NSDate *modificationDate;
-@property (getter=isNegative, nonatomic) BOOL negative;
+@property (getter=isNegative, nonatomic) bool negative;
 @property (nonatomic, copy) NSString *service;
-@property (getter=isSynchronizable, nonatomic) BOOL synchronizable;
+@property (getter=isSynchronizable, nonatomic) bool synchronizable;
 @property (nonatomic, copy) NSNumber *typeCode;
 
 - (id)_faultWhileAccessingPrimitiveValueForKey:(id)arg1;
@@ -28,9 +28,9 @@
 - (id)creatorCode;
 - (id)generic;
 - (id)init;
-- (BOOL)isInvisible;
-- (BOOL)isNegative;
-- (BOOL)isSynchronizable;
+- (bool)isInvisible;
+- (bool)isNegative;
+- (bool)isSynchronizable;
 - (id)itemDescription;
 - (id)label;
 - (id)modificationDate;
@@ -40,12 +40,12 @@
 - (void)setComment:(id)arg1;
 - (void)setCreatorCode:(id)arg1;
 - (void)setGeneric:(id)arg1;
-- (void)setInvisible:(BOOL)arg1;
+- (void)setInvisible:(bool)arg1;
 - (void)setItemDescription:(id)arg1;
 - (void)setLabel:(id)arg1;
-- (void)setNegative:(BOOL)arg1;
+- (void)setNegative:(bool)arg1;
 - (void)setService:(id)arg1;
-- (void)setSynchronizable:(BOOL)arg1;
+- (void)setSynchronizable:(bool)arg1;
 - (void)setTypeCode:(id)arg1;
 - (id)typeCode;
 

@@ -8,11 +8,11 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (void)enumerateManagersUsingBlock:(id /* block */)arg1;
-+ (id)managerForWindow:(id)arg1 createIfNeeded:(BOOL)arg2;
++ (id)managerForWindow:(id)arg1 createIfNeeded:(bool)arg2;
 
 - (id)_init;
 - (void)addPassthroughViewProvider:(id)arg1;

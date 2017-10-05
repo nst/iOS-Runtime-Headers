@@ -5,6 +5,6 @@
 @interface __NSCFLocalDataTask : __NSCFLocalSessionTask
 
 - (void)_onqueue_didReceiveResponse:(id)arg1 completion:(id /* block */)arg2;
-- (BOOL)isKindOfClass:(Class)arg1;
+- (bool)isKindOfClass:(Class)arg1;
 
 @end

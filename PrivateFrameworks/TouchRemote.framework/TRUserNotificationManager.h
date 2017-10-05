@@ -11,14 +11,14 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (void)_showUserNotificationWithDictionary:(id)arg1 options:(unsigned long)arg2 completion:(id /* block */)arg3;
+- (void)_showUserNotificationWithDictionary:(id)arg1 options:(unsigned long long)arg2 completion:(id /* block */)arg3;
 - (id)activeUserNotification;
 - (void)cancel;
 - (void)dealloc;
 - (void)presentAuthenticationFailureWithMessage:(id)arg1 completion:(id /* block */)arg2;
 - (void)presentErrorWithTitle:(id)arg1 message:(id)arg2 completion:(id /* block */)arg3;
 - (void)presentLegacyAuthenticationFailedDialogWithMessage:(id)arg1 completion:(id /* block */)arg2;
-- (void)presentWiFiNetworkConnectionError:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)presentWiFiNetworkConnectionError:(bool)arg1 completion:(id /* block */)arg2;
 - (void)requestAppleIDAuthenticationWithAccountID:(id)arg1 completion:(id /* block */)arg2;
 - (void)requestAuthenticationWithAccountID:(id)arg1 message:(id)arg2 completion:(id /* block */)arg3;
 - (void)requestLegacyAuthenticationWithAccountID:(id)arg1 completion:(id /* block */)arg2;

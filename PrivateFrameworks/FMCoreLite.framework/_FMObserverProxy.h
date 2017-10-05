@@ -3,18 +3,18 @@
  */
 
 @interface _FMObserverProxy : NSObject {
-    BOOL  _valid;
+    bool  _valid;
     id  _weakObserver;
 }
 
-@property (getter=isValid, nonatomic, readonly) BOOL valid;
+@property (getter=isValid, nonatomic, readonly) bool valid;
 @property (nonatomic, readonly) id weakObserver;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithWeakObserver:(id)arg1;
 - (void)invalidate;
-- (BOOL)isValid;
+- (bool)isValid;
 - (id)weakObserver;
 
 @end

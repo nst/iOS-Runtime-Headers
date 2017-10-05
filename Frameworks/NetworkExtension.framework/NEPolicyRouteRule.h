@@ -3,34 +3,34 @@
  */
 
 @interface NEPolicyRouteRule : NSObject <NEPrettyDescription> {
-    int  _action;
+    long long  _action;
     NSString * _interfaceName;
-    int  _type;
+    long long  _type;
 }
 
-@property int action;
+@property long long action;
 @property (copy) NSString *interfaceName;
-@property int type;
+@property long long type;
 
-+ (id)routeRuleWithAction:(int)arg1 forInterfaceName:(id)arg2;
-+ (id)routeRuleWithAction:(int)arg1 forType:(int)arg2;
++ (id)routeRuleWithAction:(long long)arg1 forInterfaceName:(id)arg2;
++ (id)routeRuleWithAction:(long long)arg1 forType:(long long)arg2;
 
 - (void).cxx_destruct;
-- (int)action;
+- (long long)action;
 - (id)actionString;
 - (unsigned char)actionValue;
-- (BOOL)addTLVsToMessage:(id)arg1;
+- (bool)addTLVsToMessage:(id)arg1;
 - (id)description;
-- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 - (id)init;
 - (id)initInternal;
 - (id)interfaceName;
-- (void)setAction:(int)arg1;
+- (void)setAction:(long long)arg1;
 - (void)setInterfaceName:(id)arg1;
-- (void)setType:(int)arg1;
-- (int)type;
+- (void)setType:(long long)arg1;
+- (long long)type;
 - (id)typeString;
 - (unsigned char)typeValue;
-- (BOOL)validate;
+- (bool)validate;
 
 @end

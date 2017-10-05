@@ -4,12 +4,12 @@
 
 @interface MTLVertexAttribute : NSObject
 
-@property (getter=isActive, readonly) BOOL active;
-@property (readonly) unsigned int attributeIndex;
-@property (readonly) unsigned int attributeType;
+@property (getter=isActive, readonly) bool active;
+@property (readonly) unsigned long long attributeIndex;
+@property (readonly) unsigned long long attributeType;
 @property (readonly) NSString *name;
-@property (getter=isPatchControlPointData, readonly) BOOL patchControlPointData;
-@property (getter=isPatchData, readonly) BOOL patchData;
+@property (getter=isPatchControlPointData, readonly) bool patchControlPointData;
+@property (getter=isPatchData, readonly) bool patchData;
 
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

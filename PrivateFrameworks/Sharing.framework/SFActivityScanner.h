@@ -10,19 +10,19 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly) <SFActivityScannerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) NSUUID *identifier;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)activityPayloadFromDevice:(id)arg1 forAdvertisementPayload:(id)arg2 command:(id)arg3 timeout:(int)arg4 withCompletionHandler:(id /* block */)arg5;
+- (void)activityPayloadFromDevice:(id)arg1 forAdvertisementPayload:(id)arg2 command:(id)arg3 timeout:(long long)arg4 withCompletionHandler:(id /* block */)arg5;
 - (void)activityPayloadFromDevice:(id)arg1 forAdvertisementPayload:(id)arg2 command:(id)arg3 withCompletionHandler:(id /* block */)arg4;
 - (void)dealloc;
 - (id)delegate;
 - (id)identifier;
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
-- (void)scanForTypes:(unsigned int)arg1;
+- (void)scanForTypes:(unsigned long long)arg1;
 - (void)scanManager:(id)arg1 foundDeviceWithDevice:(id)arg2;
 - (void)scanManager:(id)arg1 lostDeviceWithDevice:(id)arg2;
 - (void)scanManager:(id)arg1 pairedDevicesChanged:(id)arg2;

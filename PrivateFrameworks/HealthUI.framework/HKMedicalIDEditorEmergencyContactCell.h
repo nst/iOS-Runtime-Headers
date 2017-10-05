@@ -12,7 +12,7 @@
 - (void)_labelTapped:(id)arg1;
 - (id)contact;
 - (id)formattedValue;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)setContact:(id)arg1;
 
 @end

@@ -4,14 +4,14 @@
 
 @interface CalPersistentLRUCache : NSObject {
     NSMutableDictionary * _cacheItemsByKey;
-    unsigned int  _capacity;
+    unsigned long long  _capacity;
     NSDate * _expirationDate;
     double  _expirationInterval;
     NSObject<OS_dispatch_source> * _expirationSource;
     CalFileSensor * _fileSensor;
     CalPersistentLRUCacheItem * _firstCacheItem;
     CalPersistentLRUCacheItem * _lastCacheItem;
-    unsigned int  _numItems;
+    unsigned long long  _numItems;
     NSString * _path;
     NSObject<OS_dispatch_queue> * _queue;
     CalLimitingQueue * _saveQueue;
@@ -32,6 +32,6 @@
 - (id)cachedObjectForKey:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)initWithPath:(id)arg1 capacity:(unsigned int)arg2 expirationInterval:(double)arg3;
+- (id)initWithPath:(id)arg1 capacity:(unsigned long long)arg2 expirationInterval:(double)arg3;
 
 @end

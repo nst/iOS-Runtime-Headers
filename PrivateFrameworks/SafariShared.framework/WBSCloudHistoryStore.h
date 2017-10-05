@@ -12,20 +12,20 @@
 
 - (void).cxx_destruct;
 - (void)_appendRecord:(id)arg1 toResult:(id)arg2;
-- (void)_batchSaveRecords:(id)arg1 useLongLivedOperation:(BOOL)arg2 longLivedOperationPersistenceCompletion:(id /* block */)arg3 completion:(id /* block */)arg4;
+- (void)_batchSaveRecords:(id)arg1 useLongLivedOperation:(bool)arg2 longLivedOperationPersistenceCompletion:(id /* block */)arg3 completion:(id /* block */)arg4;
 - (void)_configureFetchChangesOperation:(id)arg1;
 - (id)_dictionaryForRecordData:(id)arg1;
-- (void)_fetchRecordsWithServerChangeToken:(id)arg1 numberOfFetchRecordsOperationsPerformedSoFar:(unsigned int)arg2 result:(id)arg3 completion:(id /* block */)arg4;
+- (void)_fetchRecordsWithServerChangeToken:(id)arg1 numberOfFetchRecordsOperationsPerformedSoFar:(unsigned long long)arg2 result:(id)arg3 completion:(id /* block */)arg4;
 - (void)_prepareRecordZoneWithCompletion:(id /* block */)arg1;
 - (id)_recordDataForDictionary:(id)arg1;
 - (id)_recordWithCloudHistoryVisits:(id)arg1;
-- (id)_recordWithHistoryTombstones:(id)arg1 version:(unsigned int)arg2;
-- (id)_recordWithType:(id)arg1 version:(unsigned int)arg2 dataDictionary:(id)arg3;
+- (id)_recordWithHistoryTombstones:(id)arg1 version:(unsigned long long)arg2;
+- (id)_recordWithType:(id)arg1 version:(unsigned long long)arg2 dataDictionary:(id)arg3;
 - (id)_recordsWithCloudHistoryVisits:(id)arg1;
 - (void)_resetRecordZone;
 - (void)_saveCloudHistoryVisits:(id)arg1 tombstones:(id)arg2 longLivedOperationPersistenceCompletion:(id /* block */)arg3 completion:(id /* block */)arg4;
 - (void)_saveRecords:(id)arg1 withCompletion:(id /* block */)arg2;
-- (BOOL)_shouldTryToResetRecordZoneForError:(id)arg1;
+- (bool)_shouldTryToResetRecordZoneForError:(id)arg1;
 - (void)fetchNumberOfDevicesInSyncCircleWithCompletion:(id /* block */)arg1;
 - (void)fetchRecordsWithServerChangeTokenData:(id)arg1 completion:(id /* block */)arg2;
 - (id)initWithConfiguration:(id)arg1;

@@ -5,6 +5,6 @@
 
 @required
 
-- (void)_didChangeSourceWithContents:(NSArray *)arg1 unmappedContents:(NSArray *)arg2 map:(NSMapTable *)arg3 forContext:(id <NSObject><NSCopying>)arg4;
+- (void)_didChangeSourceWithNewState:(_MSPQueryState *)arg1 context:(id <NSObject><NSCopying>)arg2 inContainer:(MSPContainer *)arg3;
 
 @end

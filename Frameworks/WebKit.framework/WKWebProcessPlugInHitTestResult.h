@@ -5,7 +5,7 @@
 @interface WKWebProcessPlugInHitTestResult : NSObject <WKObject> {
     struct ObjectStorage<WebKit::InjectedBundleHitTestResult> { 
         struct type { 
-            unsigned char __lx[116]; 
+            unsigned char __lx[152]; 
         } data; 
     }  _hitTestResult;
 }
@@ -13,7 +13,7 @@
 @property (readonly) /* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*_apiObject;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) WKWebProcessPlugInNodeHandle *nodeHandle;
 @property (readonly) Class superclass;
 

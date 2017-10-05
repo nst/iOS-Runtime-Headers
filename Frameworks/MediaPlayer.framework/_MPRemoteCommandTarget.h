@@ -11,7 +11,7 @@
 - (void).cxx_destruct;
 - (id /* block */)block;
 - (id)initWithTargetBlock:(id /* block */)arg1;
-- (int)invokeWithRemoteCommandEvent:(id)arg1;
+- (long long)invokeWithRemoteCommandEvent:(id)arg1;
 - (void)setBlock:(id /* block */)arg1;
 
 @end

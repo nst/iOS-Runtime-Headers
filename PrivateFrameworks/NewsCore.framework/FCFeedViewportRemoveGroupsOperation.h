@@ -31,7 +31,7 @@
 - (void)setResultViewport:(id)arg1;
 - (void)setViewport:(id)arg1;
 - (void)setViewportDiff:(id)arg1;
-- (BOOL)validateOperation;
+- (bool)validateOperation;
 - (id)viewport;
 - (id)viewportDiff;
 

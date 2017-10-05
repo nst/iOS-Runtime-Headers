@@ -3,16 +3,16 @@
  */
 
 @interface WLKServerConfigurationRequestOperation : NSOperation {
-    <WLKServerConfigurationRequestOperationDelegate> * _delegate;
     NSError * _error;
     NSString * _nextEK;
+    id /* block */  _requestCompletionBlock;
     WLKServerConfigurationResponse * _response;
     WLKUserEnvironment * _userEnvironment;
 }
 
-@property (nonatomic) <WLKServerConfigurationRequestOperationDelegate> *delegate;
 @property (nonatomic, readonly) NSError *error;
 @property (nonatomic, retain) NSString *nextEK;
+@property (nonatomic, copy) id /* block */ requestCompletionBlock;
 @property (nonatomic, readonly) WLKServerConfigurationResponse *response;
 @property (nonatomic, readonly) WLKUserEnvironment *userEnvironment;
 
@@ -27,13 +27,14 @@
 - (id)_queryStringForKey:(id)arg1 values:(id)arg2;
 - (id)_requestProperties;
 - (id)_runNetworkOperationAndReturnError:(id*)arg1;
-- (id)delegate;
 - (id)error;
+- (id)init;
 - (void)main;
 - (id)nextEK;
+- (id /* block */)requestCompletionBlock;
 - (id)response;
-- (void)setDelegate:(id)arg1;
 - (void)setNextEK:(id)arg1;
+- (void)setRequestCompletionBlock:(id /* block */)arg1;
 - (id)userEnvironment;
 
 @end

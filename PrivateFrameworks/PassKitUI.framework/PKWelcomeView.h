@@ -2,8 +2,8 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKWelcomeView : UIView {
-    UIButton * _actionButton;
+@interface PKWelcomeView : UIView <PKPGSVSectionSubheaderView> {
+    NSMutableArray * _actionButtons;
     UIActivityIndicatorView * _activityIndicator;
     UIImageView * _backgroundView;
     UIImage * _headerImage;
@@ -11,41 +11,46 @@
     NSAttributedString * _message;
     UITextView * _messageView;
     UIImageView * _shadowView;
-    BOOL  _showActivityIndicator;
-    NSAttributedString * _title;
-    UITextView * _titleView;
+    bool  _showActivityIndicator;
 }
 
-@property (nonatomic, retain) UIButton *actionButton;
+@property (nonatomic, retain) NSMutableArray *actionButtons;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIImage *headerImage;
 @property (nonatomic, copy) NSAttributedString *message;
-@property (nonatomic) BOOL showActivityIndicator;
-@property (nonatomic, copy) NSAttributedString *title;
+@property (nonatomic) bool showActivityIndicator;
+@property (readonly) Class superclass;
 
-+ (float)bodySeparation;
-+ (float)defaultHeight;
-+ (float)headerImageRegionHeight;
-+ (BOOL)isAvailable;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })margins;
++ (double)bottomMargin;
++ (double)buttonHeight;
++ (double)buttonSpacing;
++ (id)buttonWithTitle:(id)arg1;
++ (double)defaultHeight;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })headerImageMargins;
++ (struct CGSize { double x1; double x2; })headerImageSize;
++ (double)indicatorSpacing;
++ (bool)isAvailable;
 + (id)messageFont;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textInsets;
-+ (id)titleFont;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })textInsets;
++ (double)textToButtonSpacing;
 
 - (void).cxx_destruct;
-- (id)actionButton;
+- (id)actionButtons;
+- (void)addActionButton:(id)arg1;
 - (void)dealloc;
 - (id)headerImage;
 - (id)init;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithHeight:(float)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithHeight:(double)arg1;
 - (void)layoutSubviews;
 - (id)message;
-- (void)setActionButton:(id)arg1;
+- (bool)needsUpdate;
+- (void)setActionButtons:(id)arg1;
 - (void)setHeaderImage:(id)arg1;
 - (void)setMessage:(id)arg1;
-- (void)setShowActivityIndicator:(BOOL)arg1;
-- (void)setTitle:(id)arg1;
-- (BOOL)showActivityIndicator;
-- (id)title;
+- (void)setShowActivityIndicator:(bool)arg1;
+- (bool)showActivityIndicator;
 
 @end

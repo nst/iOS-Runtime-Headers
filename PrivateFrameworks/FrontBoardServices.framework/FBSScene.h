@@ -2,21 +2,22 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@interface FBSScene : NSObject
+@interface FBSScene : NSObject <BSDescriptionProviding, FBSSceneLayerDelegate, FBSSceneUpdaterDelegate>
 
 @property (nonatomic, readonly, retain) FBSSceneClientSettings *clientSettings;
-@property (nonatomic, readonly, retain) NSArray *contexts;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FBSSceneDelegate> *delegate;
-@property (nonatomic, readonly) CADisplay *display;
-@property (nonatomic, readonly, retain) FBSDisplay *fbsDisplay;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly, retain) NSArray *layers;
 @property (nonatomic, readonly, retain) FBSSceneSettings *settings;
+@property (readonly) Class superclass;
 
 // Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
 
 - (void)_didCreateWithTransitionContext:(id)arg1 completion:(id /* block */)arg2;
-- (BOOL)_hasAgent;
+- (bool)_hasAgent;
 - (id)_init;
 - (void)_willDestroyWithTransitionContext:(id)arg1 completion:(id /* block */)arg2;
 - (void)attachContext:(id)arg1;
@@ -34,22 +35,31 @@
 - (id)fbsDisplay;
 - (id)identifier;
 - (id)init;
+- (id)initWithCallOutQueue:(id)arg1 identifier:(id)arg2 parameters:(id)arg3;
 - (id)initWithQueue:(id)arg1 identifier:(id)arg2 display:(id)arg3 settings:(id)arg4 clientSettings:(id)arg5;
 - (void)invalidate;
-- (BOOL)invalidateSnapshotWithContext:(id)arg1;
+- (bool)invalidateSnapshotWithContext:(id)arg1;
 - (id)layers;
-- (BOOL)performSnapshotWithContext:(id)arg1;
+- (bool)performSnapshotWithContext:(id)arg1;
+- (void)sceneLayerDidInvalidate:(id)arg1;
+- (void)sceneLayerDidUpdate:(id)arg1;
+- (bool)sceneLayerShouldObserveUpdates:(id)arg1;
 - (void)sendActions:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)settings;
 - (id)snapshotRequest;
+- (id)succinctDescription;
+- (id)succinctDescriptionBuilder;
 - (void)updateClientSettings:(id)arg1 withTransitionContext:(id)arg2;
 - (void)updateClientSettingsWithBlock:(id /* block */)arg1;
 - (void)updateClientSettingsWithTransitionBlock:(id /* block */)arg1;
+- (void)updater:(id)arg1 didReceiveActions:(id)arg2;
+- (void)updater:(id)arg1 didReceiveMessage:(id)arg2 withResponse:(id /* block */)arg3;
+- (void)updater:(id)arg1 didUpdateSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4 completion:(id /* block */)arg5;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-- (BOOL)uiCanReceiveDeviceOrientationEvents;
+- (bool)uiCanReceiveDeviceOrientationEvents;
 - (id)uiClientSettings;
 - (id)uiSettings;
 - (void)updateUIClientSettingsWithBlock:(id /* block */)arg1;

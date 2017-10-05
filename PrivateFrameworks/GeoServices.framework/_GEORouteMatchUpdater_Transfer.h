@@ -12,10 +12,10 @@
     GEOComposedRouteStep * _transferStep;
 }
 
-- (BOOL)_isLocation:(id)arg1 nearStation:(id)arg2;
-- (BOOL)_isLocation:(id)arg1 nearStop:(id)arg2;
-- (void)dealloc;
+- (void).cxx_destruct;
+- (bool)_isLocation:(id)arg1 nearStation:(id)arg2;
+- (bool)_isLocation:(id)arg1 nearStop:(id)arg2;
 - (id)initWithTransitRouteMatcher:(id)arg1 alightStep:(id)arg2 transferStep:(id)arg3 boardStep:(id)arg4;
-- (BOOL)updateRouteMatch:(id)arg1 previousRouteMatch:(id)arg2 forLocation:(id)arg3;
+- (bool)updateRouteMatch:(id)arg1 previousRouteMatch:(id)arg2 forLocation:(id)arg3;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDRemoteDeviceConfirmationHandler : NSObject <HMFTimerDelegate> {
+@interface HMDRemoteDeviceConfirmationHandler : HMFObject <HMFTimerDelegate> {
     id /* block */  _completionHandler;
     double  _timeout;
     HMFTimer * _timer;
@@ -12,7 +12,7 @@
 @property (copy) id /* block */ completionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (readonly) double timeout;
 @property (readonly) HMFTimer *timer;

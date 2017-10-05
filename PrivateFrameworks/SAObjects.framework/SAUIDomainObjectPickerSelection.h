@@ -13,6 +13,7 @@
 - (id)domainObjectPicker;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (bool)requiresResponse;
 - (id)selectedItem;
 - (void)setDomainObjectPicker:(id)arg1;
 - (void)setSelectedItem:(id)arg1;

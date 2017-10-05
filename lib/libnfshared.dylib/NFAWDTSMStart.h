@@ -12,7 +12,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned int memoryIndexTable;
 @property (nonatomic) unsigned int memoryPersistent;
 @property (nonatomic) unsigned int memoryTransientDeselect;
@@ -23,7 +23,7 @@
 
 - (void)dealloc;
 - (id)getMetric;
-- (unsigned long)getMetricId;
+- (unsigned int)getMetricId;
 - (id)init;
 - (unsigned int)memoryIndexTable;
 - (unsigned int)memoryPersistent;

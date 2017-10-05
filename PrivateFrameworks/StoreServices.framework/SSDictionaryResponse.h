@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) NSNumber *failureType;
 @property (nonatomic, readonly) NSArray *pingURLs;
 @property (nonatomic, readonly) NSDictionary *responseDictionary;
-@property (getter=isSupportedProtocolVersion, nonatomic, readonly) BOOL supportedProtocolVersion;
+@property (getter=isSupportedProtocolVersion, nonatomic, readonly) bool supportedProtocolVersion;
 @property (nonatomic, readonly) NSURL *versionMismatchURL;
 
 - (void).cxx_destruct;
@@ -22,7 +22,7 @@
 - (id)failureType;
 - (id)init;
 - (id)initWithResponseDictionary:(id)arg1;
-- (BOOL)isSupportedProtocolVersion;
+- (bool)isSupportedProtocolVersion;
 - (id)pingURLs;
 - (id)responseDictionary;
 - (id)versionMismatchURL;

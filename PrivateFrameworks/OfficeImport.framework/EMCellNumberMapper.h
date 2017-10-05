@@ -11,6 +11,7 @@
 
 @property double columnWidth;
 
+- (void).cxx_destruct;
 - (double)columnWidth;
 - (id)formatValueAsNumber;
 - (id)initWithDoubleValue:(double)arg1 style:(id)arg2 columnWidth:(double)arg3 workbook:(id)arg4 parent:(id)arg5;

@@ -13,22 +13,22 @@
 @property (retain) NSArray *tokens;
 
 + (id)componentsFromString:(id)arg1;
-+ (BOOL)isNamePrefix:(id)arg1;
-+ (BOOL)isNameSuffix:(id)arg1;
-+ (BOOL)isNobiliaryParticle:(id)arg1;
++ (bool)isNamePrefix:(id)arg1;
++ (bool)isNameSuffix:(id)arg1;
++ (bool)isNobiliaryParticle:(id)arg1;
 + (id)nameComponentElements;
 + (id)namePrefixElements;
 + (id)nameSuffixElements;
 + (id)nobiliaryParticleElements;
 + (id)tokensByAdjustingForNobiliaryParticles:(id)arg1;
-+ (id)tokensFromString:(id)arg1 nameOrder:(int*)arg2;
++ (id)tokensFromString:(id)arg1 nameOrder:(long long*)arg2;
 + (id)uncachedNameComponentElements;
 + (id)whitespaceTokens:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)adjustTokensForNobiliaryParticles;
 - (id)components;
-- (void)dealloc;
-- (void)extractGivenMiddleFamilyNamesFromWhatsLeftUsingOrder:(int)arg1;
+- (void)extractGivenMiddleFamilyNamesFromWhatsLeftUsingOrder:(long long)arg1;
 - (void)extractNamePrefixFromBeginning;
 - (void)extractNameSuffixFromEnd;
 - (void)extractNicknameFromQuotedContent;

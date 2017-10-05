@@ -4,69 +4,69 @@
 
 @interface GKVoiceChatServiceFocus : GKVoiceChatServicePrivate {
     NSString * currentFocus;
-    BOOL  hasMic;
+    bool  hasMic;
     NSMutableArray * incomingCallDictList;
-    int  incomingUID;
+    long long  incomingUID;
     NSMutableArray * outgoingCallDictList;
     int  packetsPerBundle;
 }
 
 @property (nonatomic, copy) NSString *currentFocus;
-@property BOOL hasMic;
+@property bool hasMic;
 @property int packetsPerBundle;
 
 + (id)defaultVoiceChatService;
 
-- (BOOL)acceptCallID:(unsigned long)arg1 error:(id*)arg2;
+- (bool)acceptCallID:(unsigned int)arg1 error:(id*)arg2;
 - (id)currentFocus;
 - (void)dealloc;
-- (void)denyCallID:(unsigned long)arg1;
-- (id)dictionaryForCallID:(unsigned long)arg1 isIncomingDictonary:(BOOL)arg2;
-- (id)dictionaryForNonce:(int)arg1 participantID:(id)arg2 isIncomingDictonary:(BOOL)arg3;
-- (id)dictionaryForParticipantID:(id)arg1 isIncomingDictonary:(BOOL)arg2;
-- (BOOL)hasMic;
-- (id)incomingDictionaryMatchingOriginalCallID:(unsigned long)arg1 participantID:(id)arg2;
+- (void)denyCallID:(unsigned int)arg1;
+- (id)dictionaryForCallID:(unsigned int)arg1 isIncomingDictonary:(bool)arg2;
+- (id)dictionaryForNonce:(long long)arg1 participantID:(id)arg2 isIncomingDictonary:(bool)arg3;
+- (id)dictionaryForParticipantID:(id)arg1 isIncomingDictonary:(bool)arg2;
+- (bool)hasMic;
+- (id)incomingDictionaryMatchingOriginalCallID:(unsigned int)arg1 participantID:(id)arg2;
 - (id)init;
-- (BOOL)isAudioPausedToParticipantID:(id)arg1;
+- (bool)isAudioPausedToParticipantID:(id)arg1;
 - (double)localBitrate;
-- (id)localDisplayNameForCallID:(unsigned long)arg1;
+- (id)localDisplayNameForCallID:(unsigned int)arg1;
 - (double)localFramerate;
 - (void*)localVideoLayer;
 - (id)openOutgoingDictionaryForParticipantID:(id)arg1;
 - (int)packetsPerBundle;
-- (void)pauseAudio:(BOOL)arg1 toParticipantID:(id)arg2;
-- (BOOL)processCancelDict:(id)arg1;
-- (BOOL)processFocusChange:(id)arg1 fromParticipantID:(id)arg2;
-- (BOOL)processFocusDict:(id)arg1 fromParticipantID:(id)arg2;
-- (BOOL)processInviteDictionary:(id)arg1 fromParticipantID:(id)arg2;
-- (BOOL)processInviteDictionaryForTie:(id)arg1 fromParticipantID:(id)arg2;
-- (BOOL)processReplyDict:(id)arg1;
+- (void)pauseAudio:(bool)arg1 toParticipantID:(id)arg2;
+- (bool)processCancelDict:(id)arg1;
+- (bool)processFocusChange:(id)arg1 fromParticipantID:(id)arg2;
+- (bool)processFocusDict:(id)arg1 fromParticipantID:(id)arg2;
+- (bool)processInviteDictionary:(id)arg1 fromParticipantID:(id)arg2;
+- (bool)processInviteDictionaryForTie:(id)arg1 fromParticipantID:(id)arg2;
+- (bool)processReplyDict:(id)arg1;
 - (void)receivedData:(id)arg1 fromParticipantID:(id)arg2;
 - (double)remoteBitrate;
 - (void)remoteCancelled:(id)arg1;
 - (void)remoteCancelledProc:(id)arg1;
-- (id)remoteDisplayNameForCallID:(unsigned long)arg1;
+- (id)remoteDisplayNameForCallID:(unsigned int)arg1;
 - (double)remoteFramerate;
 - (void*)remoteVideoLayer;
-- (void)sendFocusChange:(BOOL)arg1;
+- (void)sendFocusChange:(bool)arg1;
 - (void)setChatMode:(int)arg1;
 - (void)setCurrentFocus:(id)arg1;
-- (void)setFocus:(BOOL)arg1;
-- (void)setHasMic:(BOOL)arg1;
-- (void)setIsUsingSuppression:(BOOL)arg1;
+- (void)setFocus:(bool)arg1;
+- (void)setHasMic:(bool)arg1;
+- (void)setIsUsingSuppression:(bool)arg1;
 - (void)setLocalVideoLayer:(void*)arg1;
 - (void)setPacketsPerBundle:(int)arg1;
 - (void)setQualityDelegate:(id)arg1;
 - (void)setRemoteVideoLayer:(void*)arg1;
-- (void)setShouldTimeoutPackets:(BOOL)arg1;
+- (void)setShouldTimeoutPackets:(bool)arg1;
 - (void)setSpeakingDelegate:(id)arg1;
 - (void)setTalkingPeersLimit:(unsigned int)arg1;
-- (BOOL)startVoiceChatWithParticipantID:(id)arg1 error:(id*)arg2;
+- (bool)startVoiceChatWithParticipantID:(id)arg1 error:(id*)arg2;
 - (void)stopVoiceChatProc:(id)arg1;
-- (void)stopVoiceChatProc:(id)arg1 participantDidCancel:(BOOL)arg2;
+- (void)stopVoiceChatProc:(id)arg1 participantDidCancel:(bool)arg2;
 - (void)updatedConnectedPeers:(id)arg1;
 - (void)updatedMutedPeers:(id)arg1 forParticipantID:(id)arg2;
-- (void)videoConference:(id)arg1 didStartSession:(BOOL)arg2 withCallID:(unsigned long)arg3 error:(id)arg4;
-- (void)videoConference:(id)arg1 didStopWithCallID:(unsigned long)arg2 error:(id)arg3;
+- (void)videoConference:(id)arg1 didStartSession:(bool)arg2 withCallID:(unsigned int)arg3 error:(id)arg4;
+- (void)videoConference:(id)arg1 didStopWithCallID:(unsigned int)arg2 error:(id)arg3;
 
 @end

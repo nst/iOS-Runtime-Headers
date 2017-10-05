@@ -4,18 +4,18 @@
 
 @interface _UIResponder_Override_Host_Entry : NSObject {
     UIResponder * _overridden;
-    int  _type;
+    long long  _type;
 }
 
 @property (readonly) UIResponder *overridden;
-@property (readonly) int type;
+@property (readonly) long long type;
 
-+ (id)entryWithResponder:(id)arg1 forType:(int)arg2;
++ (id)entryWithResponder:(id)arg1 forType:(long long)arg2;
 
 - (void).cxx_destruct;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)overridden;
-- (int)type;
+- (long long)type;
 
 @end

@@ -8,7 +8,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *descriptionText;
 @property (nonatomic, copy) NSString *displayLink;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSURL *link;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, retain) SAUIAppPunchOut *punchOut;

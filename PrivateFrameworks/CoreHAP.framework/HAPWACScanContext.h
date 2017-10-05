@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPWACScanContext : NSObject {
+@interface HAPWACScanContext : HMFObject {
     id /* block */  _completion;
     HAPWACScanner * _originator;
     struct __CFRunLoop { } * _runLoop;

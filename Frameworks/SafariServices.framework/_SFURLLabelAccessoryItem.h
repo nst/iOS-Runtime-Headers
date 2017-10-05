@@ -3,46 +3,54 @@
  */
 
 @interface _SFURLLabelAccessoryItem : NSObject {
+    bool  _centerAligned;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _interpolatedSize;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _size;
-    float  _spacing;
+    double  _spacing;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _squishedSize;
-    float  _squishedSpacing;
-    float  _verticalOffset;
+    double  _squishedSpacing;
+    double  _squishedVerticalOffset;
+    double  _verticalOffset;
     SFCrossfadingImageView * _view;
 }
 
-@property (nonatomic) struct CGSize { float x1; float x2; } interpolatedSize;
-@property (nonatomic) struct CGSize { float x1; float x2; } size;
-@property (nonatomic) float spacing;
-@property (nonatomic) struct CGSize { float x1; float x2; } squishedSize;
-@property (nonatomic) float squishedSpacing;
-@property (nonatomic) float verticalOffset;
+@property (nonatomic) bool centerAligned;
+@property (nonatomic) struct CGSize { double x1; double x2; } interpolatedSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } size;
+@property (nonatomic) double spacing;
+@property (nonatomic) struct CGSize { double x1; double x2; } squishedSize;
+@property (nonatomic) double squishedSpacing;
+@property (nonatomic) double squishedVerticalOffset;
+@property (nonatomic) double verticalOffset;
 @property (nonatomic, retain) SFCrossfadingImageView *view;
 
 - (void).cxx_destruct;
-- (struct CGSize { float x1; float x2; })interpolatedSize;
-- (void)setInterpolatedSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setSpacing:(float)arg1;
-- (void)setSquishedSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setSquishedSpacing:(float)arg1;
-- (void)setVerticalOffset:(float)arg1;
+- (bool)centerAligned;
+- (struct CGSize { double x1; double x2; })interpolatedSize;
+- (void)setCenterAligned:(bool)arg1;
+- (void)setInterpolatedSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSpacing:(double)arg1;
+- (void)setSquishedSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSquishedSpacing:(double)arg1;
+- (void)setSquishedVerticalOffset:(double)arg1;
+- (void)setVerticalOffset:(double)arg1;
 - (void)setView:(id)arg1;
-- (struct CGSize { float x1; float x2; })size;
-- (float)spacing;
-- (struct CGSize { float x1; float x2; })squishedSize;
-- (float)squishedSpacing;
-- (float)verticalOffset;
+- (struct CGSize { double x1; double x2; })size;
+- (double)spacing;
+- (struct CGSize { double x1; double x2; })squishedSize;
+- (double)squishedSpacing;
+- (double)squishedVerticalOffset;
+- (double)verticalOffset;
 - (id)view;
 
 @end

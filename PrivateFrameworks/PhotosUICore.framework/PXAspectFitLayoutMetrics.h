@@ -4,34 +4,34 @@
 
 @interface PXAspectFitLayoutMetrics : PXLayoutMetrics {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _contentInsets;
-    float  _interTileSpacing;
-    int  _maxTilesPerRow;
-    float  _minRowAspectRatio;
-    int  _minTilesPerRow;
+    double  _interTileSpacing;
+    long long  _maxTilesPerRow;
+    double  _minRowAspectRatio;
+    long long  _minTilesPerRow;
 }
 
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
-@property (nonatomic) float interTileSpacing;
-@property (nonatomic) int maxTilesPerRow;
-@property (nonatomic) float minRowAspectRatio;
-@property (nonatomic) int minTilesPerRow;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
+@property (nonatomic) double interTileSpacing;
+@property (nonatomic) long long maxTilesPerRow;
+@property (nonatomic) double minRowAspectRatio;
+@property (nonatomic) long long minTilesPerRow;
 
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (float)interTileSpacing;
-- (int)maxTilesPerRow;
-- (float)minRowAspectRatio;
-- (int)minTilesPerRow;
-- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setInterTileSpacing:(float)arg1;
-- (void)setMaxTilesPerRow:(int)arg1;
-- (void)setMinRowAspectRatio:(float)arg1;
-- (void)setMinTilesPerRow:(int)arg1;
+- (double)interTileSpacing;
+- (long long)maxTilesPerRow;
+- (double)minRowAspectRatio;
+- (long long)minTilesPerRow;
+- (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setInterTileSpacing:(double)arg1;
+- (void)setMaxTilesPerRow:(long long)arg1;
+- (void)setMinRowAspectRatio:(double)arg1;
+- (void)setMinTilesPerRow:(long long)arg1;
 
 @end

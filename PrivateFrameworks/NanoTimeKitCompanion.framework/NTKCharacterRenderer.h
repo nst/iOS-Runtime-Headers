@@ -3,16 +3,16 @@
  */
 
 @interface NTKCharacterRenderer : NSObject {
-    BOOL  _active;
-    BOOL  _animatingIntoOrb;
-    BOOL  _animatingToNewDate;
+    bool  _active;
+    bool  _animatingIntoOrb;
+    bool  _animatingToNewDate;
     float  _animationFrameInterval;
-    BOOL  _applyInstantTimeWarp;
+    bool  _applyInstantTimeWarp;
     _Arms * _arms;
     _Background * _background;
-    float  _backgroundBrightness;
+    double  _backgroundBrightness;
     _Body * _body;
-    float  _brightness;
+    double  _brightness;
     NSCalendar * _cal;
     float  _characterScale;
     UIColor * _clothingColor;
@@ -23,12 +23,12 @@
     float  _curTimeMod15Sec;
     float  _curTimeMod1Sec;
     unsigned int  _curVAO;
-    float  _desaturation;
+    double  _desaturation;
     int  _endPose;
     int  _endState;
     _Foot * _foot;
-    float  _fromHourPercent;
-    float  _fromMinutePercent;
+    double  _fromHourPercent;
+    double  _fromMinutePercent;
     void _globalOffset;
     void _globalScale;
     _Head * _head;
@@ -56,7 +56,7 @@
     float  _hourHandPos;
     int  _idealPose;
     int  _idealState;
-    BOOL  _inTimeTravel;
+    bool  _inTimeTravel;
     NTKCharacterResourceLoader * _loader;
     float  _minHandPos;
     int  _modelMatrixLoc;
@@ -81,7 +81,7 @@
     NSString * _prefix;
     int  _prevPose;
     int  _prevState;
-    BOOL  _sayCheese;
+    bool  _sayCheese;
     float  _scrubOffset;
     struct CharacterStateSpecs { 
         unsigned int bodyTexIdx; 
@@ -98,23 +98,23 @@
         float hourElbowBend; 
     }  _stateSpecs;
     NSDate * _timeTravelEnterDate;
-    float  _toHourPercent;
-    float  _toMinutePercent;
+    double  _toHourPercent;
+    double  _toMinutePercent;
     float  _zoomFraction;
 }
 
-@property (nonatomic, readonly) BOOL active;
+@property (nonatomic, readonly) bool active;
 @property (retain) _Arms *arms;
 @property (retain) _Background *background;
-@property (nonatomic) float backgroundBrightness;
+@property (nonatomic) double backgroundBrightness;
 @property (retain) _Body *body;
-@property (nonatomic) float brightness;
+@property (nonatomic) double brightness;
 @property (readonly) float characterScale;
 @property (readonly) UIColor *clothingColor;
 @property (readonly) int clothingColorLoc;
 @property (readonly) float curTimeMod15Sec;
 @property (readonly) float curTimeMod1Sec;
-@property (readonly) float desaturation;
+@property (readonly) double desaturation;
 @property (retain) _Foot *foot;
 @property void globalOffset;
 @property void globalScale;
@@ -126,7 +126,7 @@
 @property (nonatomic, readonly) NSString *prefix;
 @property (readonly) float zoomFraction;
 
-+ (id)rendererWithCharacter:(unsigned int)arg1 loader:(id)arg2;
++ (id)rendererWithCharacter:(unsigned long long)arg1 loader:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_applyClothingColor;
@@ -140,7 +140,7 @@
 - (void)_drawHourHand;
 - (void)_drawMinuteHand;
 - (void)_drawTappingFoot;
-- (BOOL)_footIsRaisedEnoughToStartAnimation;
+- (bool)_footIsRaisedEnoughToStartAnimation;
 - (float)_getElbowScaleForPosition:(float)arg1;
 - (void)_idleBodyAfterAnimation;
 - (void)_lowerFootAfterBodyAnimation;
@@ -152,12 +152,12 @@
 - (void)_updateTimeVariables;
 - (void)_updateWaitingForFootRaise;
 - (void)activate;
-- (BOOL)active;
+- (bool)active;
 - (id)arms;
 - (id)background;
-- (float)backgroundBrightness;
+- (double)backgroundBrightness;
 - (id)body;
-- (float)brightness;
+- (double)brightness;
 - (float)characterScale;
 - (void)cleanupAfterZoom;
 - (void)cleanupToOverrideDate:(id)arg1;
@@ -170,14 +170,14 @@
 - (float)curTimeMod1Sec;
 - (void)deactivate;
 - (void)dealloc;
-- (float)desaturation;
+- (double)desaturation;
 - (id)foot;
 - (void)forceUpdateTimeVariables;
 - (void)globalOffset;
 - (void)globalScale;
 - (id)head;
 - (union _GLKMatrix4 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; float x_1_1_5; float x_1_1_6; float x_1_1_7; float x_1_1_8; float x_1_1_9; float x_1_1_10; float x_1_1_11; float x_1_1_12; float x_1_1_13; float x_1_1_14; float x_1_1_15; float x_1_1_16; } x1; float x2[16]; })headMatrix;
-- (id)initWithCharacter:(unsigned int)arg1 loader:(id)arg2 prefix:(id)arg3;
+- (id)initWithCharacter:(unsigned long long)arg1 loader:(id)arg2 prefix:(id)arg3;
 - (void)loadBackgroundTextures;
 - (void)loadBodyTextures;
 - (void)loadFootTextures;
@@ -189,25 +189,25 @@
 - (int)modelMatrixLoc;
 - (union _GLKVector2 { struct { float x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; float x3[2]; })neckBone;
 - (id)prefix;
-- (void)prepareToAnimateToDate:(id)arg1 forOrb:(BOOL)arg2;
+- (void)prepareToAnimateToDate:(id)arg1 forOrb:(bool)arg2;
 - (void)prepareToZoom;
 - (void)render;
 - (void)scrubToDate:(id)arg1;
 - (void)setAnimationFrameInterval:(float)arg1;
 - (void)setArms:(id)arg1;
 - (void)setBackground:(id)arg1;
-- (void)setBackgroundBrightness:(float)arg1;
+- (void)setBackgroundBrightness:(double)arg1;
 - (void)setBody:(id)arg1;
-- (void)setBrightness:(float)arg1;
-- (void)setClothingColor:(id)arg1 andDesaturation:(float)arg2;
+- (void)setBrightness:(double)arg1;
+- (void)setClothingColor:(id)arg1 andDesaturation:(double)arg2;
 - (void)setFoot:(id)arg1;
 - (void)setGlobalOffset;
 - (void)setGlobalScale;
 - (void)setHead:(id)arg1;
-- (void)setOverrideDateFraction:(float)arg1;
+- (void)setOverrideDateFraction:(double)arg1;
 - (void)setScrubOffset:(float)arg1;
 - (void)setTimeOffset:(double)arg1;
-- (void)setZoomFraction:(float)arg1 diameter:(float)arg2;
+- (void)setZoomFraction:(double)arg1 diameter:(double)arg2;
 - (void)setupBodyState;
 - (void)setupTextures;
 - (void)setupVAOs;

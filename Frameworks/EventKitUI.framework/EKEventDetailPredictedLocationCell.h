@@ -8,13 +8,13 @@
     UIButton * _dismissButton;
     EKEvent * _event;
     EKStructuredLocation * _location;
-    BOOL  _showsTopSeparator;
+    bool  _showsTopSeparator;
     EKEventDetailsHighlightControl * _titleControl;
     UIView * _topSeparator;
 }
 
 @property <EKEventDetailPredictedLocationCellDelegate> *delegate;
-@property (nonatomic) BOOL showsTopSeparator;
+@property (nonatomic) bool showsTopSeparator;
 
 + (id)_separatorColor;
 
@@ -24,11 +24,11 @@
 - (void)confirmLocationTapped:(id)arg1;
 - (id)delegate;
 - (id)init;
-- (id)initEditable:(BOOL)arg1;
+- (id)initEditable:(bool)arg1;
 - (void)rejectLocationTapped:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEvent:(id)arg1;
-- (void)setShowsTopSeparator:(BOOL)arg1;
-- (BOOL)showsTopSeparator;
+- (void)setShowsTopSeparator:(bool)arg1;
+- (bool)showsTopSeparator;
 
 @end

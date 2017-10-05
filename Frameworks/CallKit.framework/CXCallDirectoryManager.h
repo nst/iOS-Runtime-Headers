@@ -29,7 +29,7 @@
 - (id)queue;
 - (void)reloadExtensionWithIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setDefaultConnection:(id)arg1;
-- (void)setEnabled:(BOOL)arg1 forExtensionWithIdentifier:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)setEnabled:(bool)arg1 forExtensionWithIdentifier:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)setMaintenanceConnection:(id)arg1;
 - (void)setPrioritizedExtensionIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setQueue:(id)arg1;

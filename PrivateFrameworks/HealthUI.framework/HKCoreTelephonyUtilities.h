@@ -14,7 +14,7 @@
 - (id)ctServerQueue;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isEmergencyServicePhoneNumber:(id)arg1;
+- (bool)isEmergencyServicePhoneNumber:(id)arg1;
 - (void)setCtServerQueue:(id)arg1;
 
 @end

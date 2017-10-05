@@ -4,6 +4,7 @@
 
 @interface CKAnimatedStickerMediaObject : CKAnimatedImageMediaObject
 
-+ (id)attachmentSummary:(unsigned int)arg1;
++ (id)attachmentSummary:(unsigned long long)arg1;
++ (bool)shouldShadePreview;
 
 @end

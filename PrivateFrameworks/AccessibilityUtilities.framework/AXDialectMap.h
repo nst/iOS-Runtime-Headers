@@ -25,15 +25,15 @@
 @property (nonatomic, copy) NSString *specificLanguageID;
 @property (nonatomic, copy) NSString *voiceName;
 
+- (void).cxx_destruct;
 - (id)basicDescription;
-- (BOOL)canSpeakCharacter:(unsigned short)arg1;
-- (BOOL)canSpeakLongCharacter:(unsigned long)arg1;
-- (BOOL)canSpeakString:(id)arg1;
-- (void)dealloc;
+- (bool)canSpeakCharacter:(unsigned short)arg1;
+- (bool)canSpeakLongCharacter:(unsigned int)arg1;
+- (bool)canSpeakString:(id)arg1;
 - (id)debugDescription;
 - (id)description;
 - (id)initWithLocale:(id)arg1 voiceName:(id)arg2 specificLanguageID:(id)arg3 speakableCharacters:(id)arg4 secondaryLanguageRange:(id)arg5;
-- (BOOL)isDialectSecondaryForCharacter:(unsigned short)arg1;
+- (bool)isDialectSecondaryForCharacter:(unsigned short)arg1;
 - (id)langManager;
 - (id)langMap;
 - (id)languageNameAndLocaleInCurrentLocale;

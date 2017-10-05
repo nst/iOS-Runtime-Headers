@@ -14,7 +14,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableDictionary *prefetchedKeyValues;
 @property (readonly) Class superclass;
 
@@ -33,11 +33,11 @@
 - (id)init;
 - (id)initWithDataStore:(id)arg1;
 - (void)invalidate;
-- (id)objectForKey:(id)arg1 forApplication:(id)arg2 checkPrefetch:(BOOL)arg3;
+- (id)objectForKey:(id)arg1 forApplication:(id)arg2 checkPrefetch:(bool)arg3;
 - (void)objectForKey:(id)arg1 forApplication:(id)arg2 withResult:(id /* block */)arg3;
-- (void)objectForKey:(id)arg1 forApplication:(id)arg2 withResult:(id /* block */)arg3 checkPrefetch:(BOOL)arg4;
+- (void)objectForKey:(id)arg1 forApplication:(id)arg2 withResult:(id /* block */)arg3 checkPrefetch:(bool)arg4;
 - (struct NSMutableDictionary { Class x1; }*)prefetchedKeyValues;
-- (BOOL)prefetchedObjectIfAvailableForKey:(id)arg1 application:(id)arg2 outObject:(id*)arg3;
+- (bool)prefetchedObjectIfAvailableForKey:(id)arg1 application:(id)arg2 outObject:(id*)arg3;
 - (void)removeAllObjectsForApplication:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)removeObjectForKey:(id)arg1 forApplication:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)removeObserver:(id)arg1;

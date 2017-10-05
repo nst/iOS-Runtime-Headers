@@ -11,7 +11,7 @@
 
 - (void).cxx_destruct;
 - (id)_loadHandlers;
-- (BOOL)hasItemForIdentifier:(id)arg1;
+- (bool)hasItemForIdentifier:(id)arg1;
 - (id)init;
 - (id)itemForIdentifier:(id)arg1;
 - (void)registerItemForIdentifier:(id)arg1 loadHandler:(id /* block */)arg2;

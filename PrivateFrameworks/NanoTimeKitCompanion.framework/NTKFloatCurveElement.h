@@ -3,25 +3,25 @@
  */
 
 @interface NTKFloatCurveElement : NSObject {
-    int  _curve;
-    float  _floatValue;
-    float  _fraction;
+    long long  _curve;
+    double  _floatValue;
+    double  _fraction;
     CAMediaTimingFunction * _timingFunction;
 }
 
-@property (nonatomic) int curve;
-@property (nonatomic) float floatValue;
-@property (nonatomic) float fraction;
+@property (nonatomic) long long curve;
+@property (nonatomic) double floatValue;
+@property (nonatomic) double fraction;
 @property (nonatomic, retain) CAMediaTimingFunction *timingFunction;
 
 - (void).cxx_destruct;
-- (int)curve;
-- (float)floatValue;
-- (float)fraction;
-- (id)initWithFloatValue:(float)arg1 fraction:(float)arg2;
-- (void)setCurve:(int)arg1;
-- (void)setFloatValue:(float)arg1;
-- (void)setFraction:(float)arg1;
+- (long long)curve;
+- (double)floatValue;
+- (double)fraction;
+- (id)initWithFloatValue:(double)arg1 fraction:(double)arg2;
+- (void)setCurve:(long long)arg1;
+- (void)setFloatValue:(double)arg1;
+- (void)setFraction:(double)arg1;
 - (void)setTimingFunction:(id)arg1;
 - (id)timingFunction;
 

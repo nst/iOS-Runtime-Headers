@@ -4,12 +4,16 @@
 
 @interface UIKBRenderFactory10Key_Landscape : UIKBRenderFactory10Key_Portrait
 
-- (struct CGPoint { float x1; float x2; })abcKeyTextOffset;
-- (float)controlColumnWidthFactor;
-- (float)numberPadKeyPrimarySymbolSize;
-- (struct CGPoint { float x1; float x2; })numberPadKeyPrimaryTextOffset;
-- (struct CGPoint { float x1; float x2; })numberPadKeySecondaryTextOffset;
-- (struct CGPoint { float x1; float x2; })numberPadVBarSecondaryTextOffset;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })wideShadowPaddleInsets;
+- (struct CGPoint { double x1; double x2; })abcKeyTextOffset;
+- (double)capitalAbcSymbolSize;
+- (double)centerColumnWidthFactor;
+- (double)controlColumnWidthFactor;
+- (struct CGPoint { double x1; double x2; })longVowelSignKeyTextOffset;
+- (double)numberPadKeyPrimarySymbolSize;
+- (struct CGPoint { double x1; double x2; })numberPadKeyPrimaryTextOffset;
+- (struct CGPoint { double x1; double x2; })numberPadKeySecondaryTextOffset;
+- (struct CGPoint { double x1; double x2; })numberPadVBarSecondaryTextOffset;
+- (void)setupColumnLayoutSegmentsWithControlWidth:(double)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })wideShadowPaddleInsets;
 
 @end

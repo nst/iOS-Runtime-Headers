@@ -4,37 +4,55 @@
 
 @interface UIStatusBarBatteryItemView : UIStatusBarItemView {
     UIView * _accessoryView;
-    BOOL  _batterySaverModeActive;
-    unsigned int  _cachedBatteryStyle;
+    bool  _batterySaverModeActive;
+    int  _cachedAXHUDCapacity;
+    UIImage * _cachedAXHUDImage;
+    unsigned long long  _cachedAXHUDStyle;
+    unsigned long long  _cachedBatteryStyle;
     int  _cachedCapacity;
-    BOOL  _cachedImageHasAccessoryImage;
+    bool  _cachedImageHasAccessoryImage;
     _UILegibilityImageSet * _cachedImageSet;
     int  _capacity;
     int  _state;
 }
 
-@property (nonatomic) unsigned int cachedBatteryStyle;
+@property (nonatomic) int cachedAXHUDCapacity;
+@property (nonatomic, retain) UIImage *cachedAXHUDImage;
+@property (nonatomic) unsigned long long cachedAXHUDStyle;
+@property (nonatomic) unsigned long long cachedBatteryStyle;
 @property (nonatomic) int cachedCapacity;
-@property (nonatomic) BOOL cachedImageHasAccessoryImage;
+@property (nonatomic) bool cachedImageHasAccessoryImage;
 @property (nonatomic, retain) _UILegibilityImageSet *cachedImageSet;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (void).cxx_destruct;
 - (id)_accessoryImage;
-- (struct CGSize { float x1; float x2; })_batteryOffsetWithBackground:(id)arg1;
+- (struct CGSize { double x1; double x2; })_batteryOffsetWithBackground:(id)arg1;
 - (id)_contentsImage;
-- (BOOL)_needsAccessoryImage;
+- (bool)_needsAccessoryImage;
 - (void)_updateAccessoryImage;
-- (unsigned int)cachedBatteryStyle;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (id)accessibilityHUDRepresentation;
+- (int)cachedAXHUDCapacity;
+- (id)cachedAXHUDImage;
+- (unsigned long long)cachedAXHUDStyle;
+- (unsigned long long)cachedBatteryStyle;
 - (int)cachedCapacity;
-- (BOOL)cachedImageHasAccessoryImage;
+- (bool)cachedImageHasAccessoryImage;
 - (id)cachedImageSet;
 - (id)contentsImage;
-- (float)extraRightPadding;
-- (float)legibilityStrength;
-- (void)setCachedBatteryStyle:(unsigned int)arg1;
+- (double)extraRightPadding;
+- (double)legibilityStrength;
+- (void)setCachedAXHUDCapacity:(int)arg1;
+- (void)setCachedAXHUDImage:(id)arg1;
+- (void)setCachedAXHUDStyle:(unsigned long long)arg1;
+- (void)setCachedBatteryStyle:(unsigned long long)arg1;
 - (void)setCachedCapacity:(int)arg1;
-- (void)setCachedImageHasAccessoryImage:(BOOL)arg1;
+- (void)setCachedImageHasAccessoryImage:(bool)arg1;
 - (void)setCachedImageSet:(id)arg1;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

@@ -6,17 +6,17 @@
     unsigned int  _qosClass;
     NSObject<OS_dispatch_queue> * _queue;
     NSObject<OS_dispatch_semaphore> * _queueSema;
-    unsigned int  _width;
+    unsigned long long  _width;
 }
 
 @property (nonatomic) unsigned int qosClass;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, retain) NSObject<OS_dispatch_semaphore> *queueSema;
-@property (nonatomic) unsigned int width;
+@property (nonatomic) unsigned long long width;
 
 - (void).cxx_destruct;
-- (id)initWithWidth:(unsigned int)arg1;
-- (id)initWithWidth:(unsigned int)arg1 qosClass:(unsigned int)arg2;
+- (id)initWithWidth:(unsigned long long)arg1;
+- (id)initWithWidth:(unsigned long long)arg1 qosClass:(unsigned int)arg2;
 - (void)performBarrierBlock:(id /* block */)arg1;
 - (void)performBlock:(id /* block */)arg1;
 - (unsigned int)qosClass;
@@ -25,7 +25,7 @@
 - (void)setQosClass:(unsigned int)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setQueueSema:(id)arg1;
-- (void)setWidth:(unsigned int)arg1;
-- (unsigned int)width;
+- (void)setWidth:(unsigned long long)arg1;
+- (unsigned long long)width;
 
 @end

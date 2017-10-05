@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UICloudSharingActivity : UIActivity <_UICloudSharingControllerDelegate_Private, _UIDocumentSharingControllerDelegate_Private> {
+@interface _UICloudSharingActivity : UIActivity <_UICloudSharingControllerDelegate_Internal, _UIDocumentSharingControllerDelegate_Private> {
     UIImage * _activityImage;
     NSString * _activityTitle;
     UIViewController * _activityViewController;
@@ -13,14 +13,16 @@
 @property (nonatomic, retain) UIViewController *activityViewController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)_allowDocumentSharing;
-+ (int)activityCategory;
++ (bool)_allowDocumentSharing;
++ (bool)_allowFolderSharing;
++ (unsigned long long)_xpcAttributes;
++ (long long)activityCategory;
 
 - (void).cxx_destruct;
-- (BOOL)_activitySupportsPromiseURLs;
+- (bool)_activitySupportsPromiseURLs;
 - (void)_cloudShareControllerDidDismiss:(id)arg1;
 - (void)_documentSharingControllerDidDismiss:(id)arg1;
 - (void)_setupForInitialSharing;
@@ -29,7 +31,7 @@
 - (id)activityTitle;
 - (id)activityType;
 - (id)activityViewController;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
+- (bool)canPerformWithActivityItems:(id)arg1;
 - (void)performActivity;
 - (void)prepareWithActivityItems:(id)arg1;
 - (void)setActivityImage:(id)arg1;

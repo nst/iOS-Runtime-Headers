@@ -12,7 +12,7 @@
 - (void).cxx_destruct;
 - (Class)balloonViewClass;
 - (id)composition;
-- (id)initWithIMChatItem:(id)arg1 maxWidth:(float)arg2;
+- (id)initWithIMChatItem:(id)arg1 maxWidth:(double)arg2;
 - (id)pasteboardItems;
 - (void)setSubparts:(id)arg1;
 - (id)subparts;

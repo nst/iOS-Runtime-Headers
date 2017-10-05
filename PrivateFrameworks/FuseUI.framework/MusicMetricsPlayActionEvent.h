@@ -3,27 +3,27 @@
  */
 
 @interface MusicMetricsPlayActionEvent : MusicMetricsEvent {
-    unsigned int  _index;
-    unsigned int  _playActionEventType;
-    int  _shuffleType;
+    unsigned long long  _index;
+    unsigned long long  _playActionEventType;
+    long long  _shuffleType;
     NSDictionary * _storePlatformDictionary;
 }
 
-@property (nonatomic) unsigned int index;
-@property (nonatomic) unsigned int playActionEventType;
-@property (nonatomic) int shuffleType;
+@property (nonatomic) unsigned long long index;
+@property (nonatomic) unsigned long long playActionEventType;
+@property (nonatomic) long long shuffleType;
 @property (nonatomic, copy) NSDictionary *storePlatformDictionary;
 
 - (void).cxx_destruct;
 - (id)copyJSExtraInfo;
-- (unsigned int)index;
+- (unsigned long long)index;
 - (id)init;
-- (unsigned int)playActionEventType;
-- (void)setIndex:(unsigned int)arg1;
-- (void)setPlayActionEventType:(unsigned int)arg1;
-- (void)setShuffleType:(int)arg1;
+- (unsigned long long)playActionEventType;
+- (void)setIndex:(unsigned long long)arg1;
+- (void)setPlayActionEventType:(unsigned long long)arg1;
+- (void)setShuffleType:(long long)arg1;
 - (void)setStorePlatformDictionary:(id)arg1;
-- (int)shuffleType;
+- (long long)shuffleType;
 - (id)storePlatformDictionary;
 
 @end

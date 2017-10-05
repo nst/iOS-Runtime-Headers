@@ -12,8 +12,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) id /* block */ evaluationBlock;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int length;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long length;
 @property (nonatomic, copy) NSArray *nodes;
 @property (readonly) Class superclass;
 
@@ -25,8 +25,8 @@
 - (void)domDidUpdateForContextNode:(id)arg1;
 - (id /* block */)evaluationBlock;
 - (id)initWithAppContext:(id)arg1 contextNode:(id)arg2 evaluationBlock:(id /* block */)arg3;
-- (id)item:(int)arg1;
-- (int)length;
+- (id)item:(long long)arg1;
+- (long long)length;
 - (id)nodes;
 - (void)setContextNode:(id)arg1;
 - (void)setNodes:(id)arg1;

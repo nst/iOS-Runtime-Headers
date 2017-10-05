@@ -6,7 +6,7 @@
     id /* block */  _dataSourceBlock;
     <WBSCoalescedAsynchronousWriterDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _diskAccessQueue;
-    BOOL  _done;
+    bool  _done;
     NSURL * _fileURL;
     NSObject<OS_dispatch_queue> * _internalQueue;
     struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
@@ -25,7 +25,6 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_cancelPendingWriteSynchronouslyLeavingSuddenTerminationIntact;
-- (id)_dataFromDataSource;
 - (id)_initWithName:(id)arg1 fileURL:(id)arg2 writerBlock:(id /* block */)arg3 dataSourceBlock:(id /* block */)arg4;
 - (void)_invalidateTimer;
 - (void)_scheduleTimer;
@@ -33,6 +32,7 @@
 - (void)_waitForWriteCompletion;
 - (void)_writeData:(id)arg1;
 - (void)_writeDataAsynchronously:(id)arg1;
+- (void)_writeDataFromDataSourceAsynchronously;
 - (void)cancelPendingWriteSynchronously;
 - (void)completePendingWriteSynchronously;
 - (void)dealloc;

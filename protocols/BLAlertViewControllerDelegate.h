@@ -5,6 +5,6 @@
 
 @required
 
-- (void)alertViewController:(BLAlertViewController *)arg1 didPressButtonAtIndex:(int)arg2;
+- (void)alertViewController:(BLAlertViewController *)arg1 didPressButtonAtIndex:(long long)arg2;
 
 @end

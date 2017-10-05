@@ -14,18 +14,18 @@
 - (void)canvasView:(ETCanvasView *)arg1 willEndPlayingMessage:(ETMessage *)arg2;
 - (void)canvasViewDidBeginStroke:(ETCanvasView *)arg1;
 - (void)canvasViewDidEndStroke:(ETCanvasView *)arg1;
-- (BOOL)canvasViewShouldSendWithTimer:(ETCanvasView *)arg1;
+- (bool)canvasViewShouldSendWithTimer:(ETCanvasView *)arg1;
 - (void)canvasViewWillReachComposingSizeLimit:(ETCanvasView *)arg1;
-- (int)recentHeartRate;
+- (long long)recentHeartRate;
 
 @optional
 
-- (void)canvasView:(ETCanvasView *)arg1 angerUsesForceTouch:(BOOL)arg2;
-- (BOOL)canvasView:(ETCanvasView *)arg1 tapRecognizerShouldBegin:(UITapGestureRecognizer *)arg2;
+- (void)canvasView:(ETCanvasView *)arg1 angerUsesForceTouch:(bool)arg2;
+- (bool)canvasView:(ETCanvasView *)arg1 tapRecognizerShouldBegin:(UITapGestureRecognizer *)arg2;
 - (void)canvasViewDidEndMediaAppearance:(ETCanvasView *)arg1;
 - (void)canvasViewDidPause:(ETCanvasView *)arg1;
 - (void)canvasViewDidStartMediaAppearance:(ETCanvasView *)arg1;
 - (void)canvasViewDidUnpause:(ETCanvasView *)arg1;
-- (BOOL)canvasViewShouldUseFastVerticalWisp:(ETCanvasView *)arg1;
+- (bool)canvasViewShouldUseFastVerticalWisp:(ETCanvasView *)arg1;
 
 @end

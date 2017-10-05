@@ -16,8 +16,8 @@
 - (id)accessoryBrowsingManager;
 - (id)discoveredAccessoryItems;
 - (id /* block */)filter;
+- (id)init;
 - (id)initWithAccessoryBrowsingManager:(id)arg1;
-- (id)initWithHome:(id)arg1;
 - (id)invalidationReasons;
 - (id)items;
 - (id)reloadItems;

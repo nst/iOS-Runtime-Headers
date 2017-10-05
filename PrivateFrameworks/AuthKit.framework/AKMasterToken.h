@@ -25,6 +25,6 @@
 - (id)sessionKey;
 - (void)setStringValue:(id)arg1;
 - (id)stringValue;
-- (BOOL)updateWithHTTPURLResponse:(id)arg1;
+- (bool)updateWithHTTPURLResponse:(id)arg1;
 
 @end

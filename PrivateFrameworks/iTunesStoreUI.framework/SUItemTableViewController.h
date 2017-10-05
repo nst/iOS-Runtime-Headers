@@ -20,9 +20,9 @@
 - (id)init;
 - (id)itemAtIndexPath:(id)arg1;
 - (void)itemOfferButtonAction:(id)arg1;
-- (BOOL)openDocumentForItemAtIndexPath:(id)arg1 withApplication:(id)arg2;
-- (BOOL)purchaseItemAtIndexPath:(id)arg1;
+- (bool)openDocumentForItemAtIndexPath:(id)arg1 withApplication:(id)arg2;
+- (bool)purchaseItemAtIndexPath:(id)arg1;
 - (void)reloadData;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

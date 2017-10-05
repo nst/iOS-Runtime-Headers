@@ -11,10 +11,10 @@
 
 @property (nonatomic, retain) NTPBRecordBase *base;
 @property (nonatomic, retain) NSString *encoding;
-@property (nonatomic, readonly) BOOL hasBase;
-@property (nonatomic, readonly) BOOL hasEncoding;
-@property (nonatomic, readonly) BOOL hasMimeType;
-@property (nonatomic, readonly) BOOL hasUrl;
+@property (nonatomic, readonly) bool hasBase;
+@property (nonatomic, readonly) bool hasEncoding;
+@property (nonatomic, readonly) bool hasMimeType;
+@property (nonatomic, readonly) bool hasUrl;
 @property (nonatomic, retain) NSString *mimeType;
 @property (nonatomic, retain) NSString *url;
 
@@ -24,15 +24,15 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)encoding;
-- (BOOL)hasBase;
-- (BOOL)hasEncoding;
-- (BOOL)hasMimeType;
-- (BOOL)hasUrl;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasBase;
+- (bool)hasEncoding;
+- (bool)hasMimeType;
+- (bool)hasUrl;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)mimeType;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setBase:(id)arg1;
 - (void)setEncoding:(id)arg1;
 - (void)setMimeType:(id)arg1;

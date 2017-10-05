@@ -4,6 +4,6 @@
 
 @interface CIDarkenBlendMode : CIBlendModeFilter
 
-+ (id)_kernel;
+- (id)_kernel;
 
 @end

@@ -5,6 +5,6 @@
 
 @required
 
-- (void)finishPresentation:(UIViewController<HUPresentationDelegateHost> *)arg1 animated:(BOOL)arg2;
+- (NAFuture *)finishPresentation:(UIViewController<HUPresentationDelegateHost> *)arg1 animated:(bool)arg2;
 
 @end

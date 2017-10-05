@@ -9,21 +9,21 @@
 @property (nonatomic, readonly) WorldClockCity *city;
 
 + (id)_allCities;
-+ (id)_allComplicationConfigurationsWithType:(unsigned int)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)_allComplicationConfigurationsWithType:(unsigned long long)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_addKeysToJSONDictionary:(id)arg1;
-- (id)_initWithComplicationType:(unsigned int)arg1 JSONDictionary:(id)arg2;
-- (BOOL)appearsInDailySnapshotForFamily:(int)arg1;
+- (id)_initWithComplicationType:(unsigned long long)arg1 JSONDictionary:(id)arg2;
+- (bool)appearsInDailySnapshotForFamily:(long long)arg1;
 - (id)city;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)customDailySnapshotKey;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)localizedDetailText;
-- (BOOL)snapshotContext:(id)arg1 isStaleRelativeToContext:(id)arg2;
+- (bool)snapshotContext:(id)arg1 isStaleRelativeToContext:(id)arg2;
 
 @end

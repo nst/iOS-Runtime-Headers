@@ -5,7 +5,7 @@
 
 @required
 
-+ (void)presentCell:(UITableViewCell *)arg1 withDataItem:(PKPaymentDataItem *)arg2;
++ (void)presentCell:(UITableViewCell *)arg1 withDataItem:(PKPaymentDataItem *)arg2 shouldShowSeperator:(bool)arg3;
 
 @optional
 

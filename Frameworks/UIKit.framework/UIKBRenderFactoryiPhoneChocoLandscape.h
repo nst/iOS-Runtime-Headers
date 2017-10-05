@@ -4,25 +4,28 @@
 
 @interface UIKBRenderFactoryiPhoneChocoLandscape : UIKBRenderFactoryiPhoneLandscape
 
-- (float)assistKeyFontSize;
-- (struct CGPoint { float x1; float x2; })dictationKeyOffset;
-- (struct CGPoint { float x1; float x2; })dismissKeyOffset;
-- (struct CGPoint { float x1; float x2; })internationalKeyOffset;
-- (BOOL)isTallPopup;
-- (struct CGPoint { float x1; float x2; })leftArrowKeyOffset;
+- (double)_row4ControlSegmentWidthLeft;
+- (double)_row4ControlSegmentWidthRight;
+- (double)assistKeyFontSize;
+- (struct CGPoint { double x1; double x2; })dictationKeyOffset;
+- (struct CGPoint { double x1; double x2; })dismissKeyOffset;
+- (struct CGPoint { double x1; double x2; })internationalKeyOffset;
+- (bool)isTallPopup;
+- (struct CGPoint { double x1; double x2; })leftArrowKeyOffset;
 - (id)lightKeycapsFontName;
-- (float)moreABCKeyFontSize;
-- (struct CGPoint { float x1; float x2; })moreABCKeyOffset;
-- (float)moreKeyFontSize;
-- (float)popupFontSize;
-- (struct CGPoint { float x1; float x2; })popupSymbolTextOffset;
-- (struct CGPoint { float x1; float x2; })realEmojiKeyOffset;
-- (struct CGPoint { float x1; float x2; })returnKeyOffset;
-- (struct CGPoint { float x1; float x2; })rightArrowKeyOffset;
-- (float)stringKeyFontSize;
+- (double)moreABCKeyFontSize;
+- (struct CGPoint { double x1; double x2; })moreABCKeyOffset;
+- (double)moreKeyFontSize;
+- (double)popupFontSize;
+- (struct CGPoint { double x1; double x2; })popupSymbolTextOffset;
+- (struct CGPoint { double x1; double x2; })realEmojiKeyOffset;
+- (struct CGPoint { double x1; double x2; })returnKeyOffset;
+- (struct CGPoint { double x1; double x2; })rightArrowKeyOffset;
+- (double)stringKeyFontSize;
 - (id)thinKeycapsFontName;
-- (struct CGPoint { float x1; float x2; })undoKeyOffset;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })variantSymbolFrameInsets;
-- (struct CGPoint { float x1; float x2; })variantSymbolTextOffset;
+- (struct CGPoint { double x1; double x2; })undoKeyOffset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })variantSymbolFrameInsets;
+- (struct CGPoint { double x1; double x2; })variantSymbolTextOffset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })wideShadowPopupMenuInsets;
 
 @end

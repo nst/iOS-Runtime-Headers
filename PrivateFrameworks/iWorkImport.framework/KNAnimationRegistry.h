@@ -14,18 +14,18 @@
 + (id)animationsInBundle;
 + (id)categoryNameForPluginClass:(Class)arg1;
 + (id)instance;
-+ (id)localizedCategoryNameForCategory:(int)arg1;
++ (id)localizedCategoryNameForCategory:(long long)arg1;
 + (id)localizedNameForUnsupportedAnimation:(id)arg1;
 
 - (id)allAnimationInfos;
-- (id)animationInfoForEffectIdentifier:(id)arg1 animationType:(int)arg2;
-- (id)animationInfoForEffectIdentifier:(id)arg1 animationType:(int)arg2 includeObsoleteNames:(BOOL)arg3;
-- (id)animationInfoForEffectIdentifier:(id)arg1 animationType:(int)arg2 includeObsoleteNames:(BOOL)arg3 drawable:(id)arg4;
-- (id)animationInfosForAnimationType:(int)arg1 category:(id)arg2;
-- (id)animationInfosForAnimationType:(int)arg1 filter:(id)arg2;
-- (BOOL)canMapEffectIdentifier:(id)arg1 animationType:(int)arg2 toEffectIdentifier:(id)arg3 includeObsoleteNames:(BOOL)arg4 forDrawable:(id)arg5;
+- (id)animationInfoForEffectIdentifier:(id)arg1 animationType:(long long)arg2;
+- (id)animationInfoForEffectIdentifier:(id)arg1 animationType:(long long)arg2 includeObsoleteNames:(bool)arg3;
+- (id)animationInfoForEffectIdentifier:(id)arg1 animationType:(long long)arg2 includeObsoleteNames:(bool)arg3 drawable:(id)arg4;
+- (id)animationInfosForAnimationType:(long long)arg1 category:(id)arg2;
+- (id)animationInfosForAnimationType:(long long)arg1 filter:(id)arg2;
+- (bool)canMapEffectIdentifier:(id)arg1 animationType:(long long)arg2 toEffectIdentifier:(id)arg3 includeObsoleteNames:(bool)arg4 forDrawable:(id)arg5;
 - (void)dealloc;
-- (id)distinctCategoriesForType:(int)arg1;
+- (id)distinctCategoriesForType:(long long)arg1;
 - (id)init;
 - (id)p_buildAlternateFilterMap;
 

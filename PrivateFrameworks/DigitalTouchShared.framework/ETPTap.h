@@ -9,9 +9,9 @@
 }
 
 @property (nonatomic, retain) NSData *colors;
-@property (nonatomic, readonly) BOOL hasColors;
-@property (nonatomic, readonly) BOOL hasPoints;
-@property (nonatomic, readonly) BOOL hasTimeDeltas;
+@property (nonatomic, readonly) bool hasColors;
+@property (nonatomic, readonly) bool hasPoints;
+@property (nonatomic, readonly) bool hasTimeDeltas;
 @property (nonatomic, retain) NSData *points;
 @property (nonatomic, retain) NSData *timeDeltas;
 
@@ -20,14 +20,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasColors;
-- (BOOL)hasPoints;
-- (BOOL)hasTimeDeltas;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasColors;
+- (bool)hasPoints;
+- (bool)hasTimeDeltas;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)points;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setColors:(id)arg1;
 - (void)setPoints:(id)arg1;
 - (void)setTimeDeltas:(id)arg1;

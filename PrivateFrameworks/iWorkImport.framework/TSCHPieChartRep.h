@@ -3,7 +3,7 @@
  */
 
 @interface TSCHPieChartRep : TSCHChartRep {
-    BOOL  mHasDrawnSinceWedgeKnobTrackerCreated;
+    bool  mHasDrawnSinceWedgeKnobTrackerCreated;
     TSCHChartPieElementsRenderer * mPieElementRenderer;
     NSDictionary * mSeriesIndexedPieWedgeDraggingLayers;
     NSArray * mWedgeKnobs;
@@ -11,11 +11,11 @@
 
 - (void)clearRenderers;
 - (void)dealloc;
-- (float)dragTravelAlongBisectorBetweenStartPoint:(struct CGPoint { float x1; float x2; })arg1 andEndingPoint:(struct CGPoint { float x1; float x2; })arg2 forSeries:(unsigned int)arg3;
-- (BOOL)forceRenderBlankBackground;
+- (double)dragTravelAlongBisectorBetweenStartPoint:(struct CGPoint { double x1; double x2; })arg1 andEndingPoint:(struct CGPoint { double x1; double x2; })arg2 forSeries:(unsigned long long)arg3;
+- (bool)forceRenderBlankBackground;
 - (id)initWithLayout:(id)arg1 canvas:(id)arg2;
-- (float)p_radius;
+- (double)p_radius;
 - (id)pieElementRenderer;
-- (void)renderIntoContext:(struct CGContext { }*)arg1 visible:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)renderIntoContext:(struct CGContext { }*)arg1 visible:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 
 @end

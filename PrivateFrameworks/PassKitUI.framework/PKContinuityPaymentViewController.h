@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKContinuityPaymentViewController : UIViewController <PKAuthenticatorDelegate, PKPaymentAuthorizationStateMachineDelegate> {
-    BOOL  _attemptedTimeout;
+@interface PKContinuityPaymentViewController : UIViewController <PKAuthenticatorDelegate, PKPaymentAuthorizationFooterViewDelegate, PKPaymentAuthorizationStateMachineDelegate> {
+    bool  _attemptedTimeout;
+    bool  _authenticating;
     PKAuthenticator * _authenticator;
     PKPaymentAuthorizationFooterView * _authorizationView;
     _UIBackdropView * _backdropView;
@@ -25,12 +26,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKPaymentAuthorizationHostProtocol> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PKRemotePaymentRequest *remoteRequest;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (int)_authenticatorPolicy;
+- (long long)_authenticatorPolicy;
 - (void)_cancelPassphrasePressed;
 - (void)_didCancel;
 - (void)_didFailWithError:(id)arg1;
@@ -38,32 +39,35 @@
 - (void)_didSucceed;
 - (id)_evaluationRequest;
 - (void)_invalidPaymentDataWithParam:(id)arg1;
-- (void)_payWithPasscodePressed:(id)arg1;
 - (void)_processClientCallback:(id)arg1;
 - (void)_resetAndScheduleTimeout;
 - (void)_resumeAuthenticationWithPreviousError:(id)arg1;
 - (void)_startEvaluation;
 - (void)_suspendAuthentication;
 - (void)_timeoutFired;
+- (void)authenticator:(id)arg1 didRequestUserAction:(long long)arg2;
+- (void)authenticator:(id)arg1 didTransitionToPearlState:(long long)arg2;
 - (void)authenticatorDidEncounterFingerOff:(id)arg1;
 - (void)authenticatorDidEncounterFingerOn:(id)arg1;
 - (void)authenticatorDidEncounterMatchMiss:(id)arg1;
-- (void)authorizationDidAuthorizePaymentCompleteWithStatus:(int)arg1;
-- (void)cancelPressed;
+- (void)authorizationDidAuthorizePaymentCompleteWithResult:(id)arg1;
+- (void)authorizationFooterViewPasscodeButtonPressed:(id)arg1;
+- (void)cancelPressed:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)dismissPasscodeViewController;
 - (void)dismissPassphraseViewController;
 - (id)initWithRemotePaymentRequest:(id)arg1;
 - (void)loadView;
-- (BOOL)paymentAuthorizationStateMachine:(id)arg1 didTransitionFromState:(unsigned int)arg2 toState:(unsigned int)arg3 withParam:(id)arg4;
+- (bool)paymentAuthorizationStateMachine:(id)arg1 didTransitionFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3 withParam:(id)arg4;
+- (bool)paymentPass:(id*)arg1 paymentApplication:(id*)arg2 fromAID:(id)arg3;
 - (void)presentPasscodeViewController:(id)arg1 completionHandler:(id /* block */)arg2 reply:(id /* block */)arg3;
 - (void)presentPassphraseViewController:(id)arg1 completionHandler:(id /* block */)arg2 reply:(id /* block */)arg3;
 - (id)remoteRequest;
 - (void)setDelegate:(id)arg1;
 - (void)updatePaymentWithClientUpdate:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

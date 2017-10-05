@@ -2,32 +2,45 @@
    Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
  */
 
-@interface _CPSessionMissingSuggestionsFeedback : PBCodable <NSCopying> {
-    NSMutableArray * _suggestions;
+@interface _CPSessionMissingSuggestionsFeedback : PBCodable <NSSecureCoding, _CPProcessableFeedback, _CPSessionMissingSuggestionsFeedback> {
+    struct { 
+        unsigned int timestamp : 1; 
+    }  _has;
+    NSArray * _suggestions;
     unsigned long long  _timestamp;
 }
 
-@property (nonatomic, retain) NSMutableArray *suggestions;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
+@property (nonatomic, readonly) id feedbackJSON;
+@property (nonatomic, readonly) bool hasTimestamp;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSData *jsonData;
+@property (nonatomic, readonly) bool requiresQueryId;
+@property (nonatomic, copy) NSArray *suggestions;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned long long timestamp;
 @property (nonatomic) unsigned long long timestamp;
-
-+ (Class)suggestionsType;
 
 - (void).cxx_destruct;
 - (void)addSuggestions:(id)arg1;
 - (void)clearSuggestions;
-- (void)copyTo:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (id)init;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)jsonData;
+- (bool)readFrom:(id)arg1;
+- (bool)requiresQueryId;
 - (void)setSuggestions:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (id)suggestions;
-- (id)suggestionsAtIndex:(unsigned int)arg1;
-- (unsigned int)suggestionsCount;
+- (id)suggestionsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)suggestionsCount;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 

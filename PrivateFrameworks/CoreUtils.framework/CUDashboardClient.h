@@ -45,16 +45,16 @@
 @property (nonatomic, copy) NSString *server;
 
 - (void).cxx_destruct;
-- (long)_activate;
-- (long)_logCStr:(const char *)arg1 length:(unsigned long)arg2;
-- (long)_setupSocket;
-- (long)activate;
+- (int)_activate;
+- (int)_logCStr:(const char *)arg1 length:(unsigned long long)arg2;
+- (int)_setupSocket;
+- (int)activate;
 - (void)dealloc;
 - (id)init;
 - (void)invalidate;
-- (long)logJSON:(id)arg1;
-- (long)logf:(const char *)arg1;
-- (long)logv:(const char *)arg1 args:(void*)arg2;
+- (int)logJSON:(id)arg1;
+- (int)logf:(const char *)arg1;
+- (int)logv:(const char *)arg1 args:(char *)arg2;
 - (id)server;
 - (void)setServer:(id)arg1;
 

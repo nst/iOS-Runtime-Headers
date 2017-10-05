@@ -5,10 +5,10 @@
 
 @required
 
-- (MPNowPlayingContentItem *)contentItemForOffset:(int)arg1;
+- (MPNowPlayingContentItem *)contentItemForOffset:(long long)arg1;
 
 @optional
 
-- (MPNowPlayingContentItem *)childContentItemAtIndex:(int)arg1 ofItem:(MPNowPlayingContentItem *)arg2;
+- (MPNowPlayingContentItem *)childContentItemAtIndex:(long long)arg1 ofItem:(MPNowPlayingContentItem *)arg2;
 
 @end

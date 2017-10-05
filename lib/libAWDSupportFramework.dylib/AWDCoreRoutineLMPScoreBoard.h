@@ -11,7 +11,7 @@
     unsigned long long  _timestamp;
 }
 
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic, retain) NSMutableArray *instances;
 @property (nonatomic, retain) NSMutableArray *secondaryInstances;
 @property (nonatomic) unsigned long long timestamp;
@@ -28,18 +28,18 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
 - (id)instances;
-- (id)instancesAtIndex:(unsigned int)arg1;
-- (unsigned int)instancesCount;
-- (BOOL)isEqual:(id)arg1;
+- (id)instancesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)instancesCount;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)secondaryInstances;
-- (id)secondaryInstancesAtIndex:(unsigned int)arg1;
-- (unsigned int)secondaryInstancesCount;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (id)secondaryInstancesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)secondaryInstancesCount;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setInstances:(id)arg1;
 - (void)setSecondaryInstances:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;

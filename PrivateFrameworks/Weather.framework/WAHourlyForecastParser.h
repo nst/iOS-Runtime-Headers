@@ -4,6 +4,6 @@
 
 @interface WAHourlyForecastParser : NSObject
 
-+ (id)parseForecasts:(id)arg1 temperature:(id)arg2 hour:(int)arg3 condition:(int)arg4 sunrise:(unsigned int)arg5 sunset:(unsigned int)arg6;
++ (id)parseForecasts:(id)arg1 temperature:(id)arg2 hour:(long long)arg3 condition:(long long)arg4 sunrise:(unsigned long long)arg5 sunset:(unsigned long long)arg6;
 
 @end

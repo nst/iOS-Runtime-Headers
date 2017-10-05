@@ -5,6 +5,6 @@
 
 @required
 
-- (void)gkVoiceChatSession:(id)arg1 stateUpdate:(unsigned int)arg2 forPeer:(NSString *)arg3;
+- (void)gkVoiceChatSession:(id)arg1 stateUpdate:(unsigned long long)arg2 forPeer:(NSString *)arg3;
 
 @end

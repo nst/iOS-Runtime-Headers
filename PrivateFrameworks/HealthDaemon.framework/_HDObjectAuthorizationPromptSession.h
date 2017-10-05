@@ -5,7 +5,7 @@
 @interface _HDObjectAuthorizationPromptSession : NSObject {
     NSString * _bundleIdentifier;
     NSMutableArray * _completions;
-    BOOL  _didStartTransaction;
+    bool  _didStartTransaction;
     HDProfile * _profile;
     NSMutableArray * _requests;
     id /* block */  _sessionCompletion;
@@ -13,7 +13,7 @@
 }
 
 @property (nonatomic, readonly, copy) NSString *bundleIdentifier;
-@property (nonatomic, readonly) unsigned int requestCount;
+@property (nonatomic, readonly) unsigned long long requestCount;
 @property (nonatomic, copy) id /* block */ sessionCompletion;
 @property (nonatomic, readonly, copy) NSUUID *sessionIdentifier;
 
@@ -23,9 +23,9 @@
 - (void)beginPromptSessionWithCompletion:(id /* block */)arg1;
 - (void)beginPromptTransactionWithCompletion:(id /* block */)arg1;
 - (id)bundleIdentifier;
-- (void)endPromptTransactionWithSuccess:(BOOL)arg1 error:(id)arg2;
+- (void)endPromptTransactionWithSuccess:(bool)arg1 error:(id)arg2;
 - (id)initWithBundleIdentifier:(id)arg1 profile:(id)arg2;
-- (unsigned int)requestCount;
+- (unsigned long long)requestCount;
 - (id /* block */)sessionCompletion;
 - (id)sessionDescriptor;
 - (id)sessionIdentifier;

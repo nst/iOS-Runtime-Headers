@@ -15,13 +15,12 @@
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 @property (nonatomic, readonly) NSDate *lastModified;
 @property (nonatomic, readonly) NSUUID *requestUUID;
-@property (nonatomic, readonly) NSUUID *sourceDeviceUUID;
 @property (nonatomic, readonly) NSUUID *tabUUID;
 @property (nonatomic, readonly) NSURL *url;
 
 + (id)_dictionaryWithURL:(id)arg1 tabUUID:(id)arg2 lastModified:(id)arg3 sourceDeviceUUID:(id)arg4 destinationDeviceUUID:(id)arg5;
 + (id)destinationDeviceUUIDInDictionary:(id)arg1;
-+ (BOOL)isCloudTabCloseRequestDictionary:(id)arg1;
++ (bool)isCloudTabCloseRequestDictionary:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -31,9 +30,8 @@
 - (id)initWithDictionary:(id)arg1 requestUUID:(id)arg2;
 - (id)initWithURL:(id)arg1 tabUUID:(id)arg2 lastModified:(id)arg3 sourceDeviceUUID:(id)arg4 destinationDeviceUUID:(id)arg5 requestUUID:(id)arg6;
 - (id)lastModified;
-- (BOOL)matchesCloudTab:(id)arg1;
+- (bool)matchesCloudTab:(id)arg1;
 - (id)requestUUID;
-- (id)sourceDeviceUUID;
 - (id)tabUUID;
 - (id)url;
 

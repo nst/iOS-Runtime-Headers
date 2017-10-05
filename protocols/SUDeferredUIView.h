@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)isDeferringInterfaceUpdates;
-- (void)setDeferringInterfaceUpdates:(BOOL)arg1;
+- (bool)isDeferringInterfaceUpdates;
+- (void)setDeferringInterfaceUpdates:(bool)arg1;
 
 @end

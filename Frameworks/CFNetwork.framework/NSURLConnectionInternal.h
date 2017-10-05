@@ -4,7 +4,7 @@
 
 @interface NSURLConnectionInternal : NSObject <NSURLAuthenticationChallengeSender, NSURLConnectionRequired> {
     NSURLConnection * _connection;
-    BOOL  _connectionActive;
+    bool  _connectionActive;
     NSDictionary * _connectionProperties;
     NSURLRequest * _currentRequest;
     id  _delegate;
@@ -15,7 +15,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id)_connectionProperties;
@@ -25,19 +25,19 @@
 - (id)_timingData;
 - (void)_withActiveConnectionAndDelegate:(id /* block */)arg1;
 - (void)_withConnectionAndDelegate:(id /* block */)arg1;
-- (void)_withConnectionAndDelegate:(id /* block */)arg1 onlyActive:(BOOL)arg2;
+- (void)_withConnectionAndDelegate:(id /* block */)arg1 onlyActive:(bool)arg2;
 - (void)_withConnectionDisconnectFromConnection;
 - (void)cancelAuthenticationChallenge:(id)arg1;
 - (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
 - (id)currentRequest;
 - (void)dealloc;
-- (id)initWithInfo:(const struct InternalInit { id x1; id x2; BOOL x3; long long x4; }*)arg1;
+- (id)initWithInfo:(const struct InternalInit { id x1; id x2; bool x3; long long x4; }*)arg1;
 - (void)invokeForDelegate:(id /* block */)arg1;
-- (BOOL)isConnectionActive;
+- (bool)isConnectionActive;
 - (id)originalRequest;
 - (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
 - (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;
-- (void)setConnectionActive:(BOOL)arg1;
+- (void)setConnectionActive:(bool)arg1;
 - (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
 
 @end

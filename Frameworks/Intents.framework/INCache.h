@@ -3,12 +3,15 @@
  */
 
 @interface INCache : NSObject {
-    NSMutableDictionary * _cacheableObjectsForIdentifiers;
+    NSMutableDictionary * _cacheDictionary;
 }
+
+@property (nonatomic, readonly) NSDictionary *_cacheDictionary;
 
 + (id)sharedCache;
 
 - (void).cxx_destruct;
+- (id)_cacheDictionary;
 - (id)_init;
 - (void)addCacheableObject:(id)arg1;
 - (id)cacheableObjectForIdentifier:(id)arg1;

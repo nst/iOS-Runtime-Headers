@@ -9,6 +9,7 @@
         unsigned int endCalendar : 1; 
         unsigned int startCalendar : 1; 
     }  _has;
+    _INPBRecurrenceValue * _recurrence;
     long long  _startCalendar;
     _INPBDateTime * _startDateTime;
     PBUnknownFields * _unknownFields;
@@ -17,17 +18,17 @@
 
 @property (nonatomic) long long endCalendar;
 @property (nonatomic, retain) _INPBDateTime *endDateTime;
-@property (nonatomic) BOOL hasEndCalendar;
-@property (nonatomic, readonly) BOOL hasEndDateTime;
-@property (nonatomic) BOOL hasStartCalendar;
-@property (nonatomic, readonly) BOOL hasStartDateTime;
-@property (nonatomic, readonly) BOOL hasValueMetadata;
+@property (nonatomic) bool hasEndCalendar;
+@property (nonatomic, readonly) bool hasEndDateTime;
+@property (nonatomic, readonly) bool hasRecurrence;
+@property (nonatomic) bool hasStartCalendar;
+@property (nonatomic, readonly) bool hasStartDateTime;
+@property (nonatomic, readonly) bool hasValueMetadata;
+@property (nonatomic, retain) _INPBRecurrenceValue *recurrence;
 @property (nonatomic) long long startCalendar;
 @property (nonatomic, retain) _INPBDateTime *startDateTime;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) _INPBValueMetadata *valueMetadata;
-
-// Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)options;
 
@@ -37,19 +38,22 @@
 - (id)dictionaryRepresentation;
 - (long long)endCalendar;
 - (id)endDateTime;
-- (BOOL)hasEndCalendar;
-- (BOOL)hasEndDateTime;
-- (BOOL)hasStartCalendar;
-- (BOOL)hasStartDateTime;
-- (BOOL)hasValueMetadata;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasEndCalendar;
+- (bool)hasEndDateTime;
+- (bool)hasRecurrence;
+- (bool)hasStartCalendar;
+- (bool)hasStartDateTime;
+- (bool)hasValueMetadata;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (id)recurrence;
 - (void)setEndCalendar:(long long)arg1;
 - (void)setEndDateTime:(id)arg1;
-- (void)setHasEndCalendar:(BOOL)arg1;
-- (void)setHasStartCalendar:(BOOL)arg1;
+- (void)setHasEndCalendar:(bool)arg1;
+- (void)setHasStartCalendar:(bool)arg1;
+- (void)setRecurrence:(id)arg1;
 - (void)setStartCalendar:(long long)arg1;
 - (void)setStartDateTime:(id)arg1;
 - (void)setValueMetadata:(id)arg1;
@@ -58,11 +62,5 @@
 - (id)unknownFields;
 - (id)valueMetadata;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/SiriClientFlow.framework/SiriClientFlow
-
-+ (id)fromJSONProtoDictionary:(id)arg1;
-
-- (id)toJSONProtoDictionary;
 
 @end

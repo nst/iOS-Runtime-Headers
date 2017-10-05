@@ -6,24 +6,24 @@
     struct { 
         unsigned int isAvailable : 1; 
     }  _has;
-    BOOL  _isAvailable;
+    bool  _isAvailable;
 }
 
-@property (nonatomic) BOOL hasIsAvailable;
-@property (nonatomic) BOOL isAvailable;
+@property (nonatomic) bool hasIsAvailable;
+@property (nonatomic) bool isAvailable;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIsAvailable;
-- (unsigned int)hash;
-- (BOOL)isAvailable;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasIsAvailable;
+- (unsigned long long)hash;
+- (bool)isAvailable;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasIsAvailable:(BOOL)arg1;
-- (void)setIsAvailable:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasIsAvailable:(bool)arg1;
+- (void)setIsAvailable:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

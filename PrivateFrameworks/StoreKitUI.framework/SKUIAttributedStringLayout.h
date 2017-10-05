@@ -5,47 +5,47 @@
 @interface SKUIAttributedStringLayout : NSObject <SKUICachedLayout> {
     NSAttributedString * _attributedString;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _boundingSize;
     NSStringDrawingContext * _context;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _edgeInsetsForShadow;
     NSShadow * _shadow;
-    float  _topInset;
-    BOOL  _usesTallCharacterSet;
+    double  _topInset;
+    bool  _usesTallCharacterSet;
 }
 
 @property (nonatomic, readonly) NSAttributedString *attributedString;
-@property (nonatomic, readonly) float baselineOffset;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } boundingSize;
+@property (nonatomic, readonly) double baselineOffset;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } boundingSize;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsetsForShadow;
-@property (nonatomic, readonly) float firstBaselineOffset;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int numberOfLines;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } edgeInsetsForShadow;
+@property (nonatomic, readonly) double firstBaselineOffset;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long numberOfLines;
 @property (nonatomic, readonly) NSShadow *shadow;
 @property (nonatomic, readonly) NSStringDrawingContext *stringDrawingContext;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) float topInset;
-@property (nonatomic, readonly) BOOL usesTallCharacterSet;
+@property (nonatomic, readonly) double topInset;
+@property (nonatomic, readonly) bool usesTallCharacterSet;
 
 - (void).cxx_destruct;
 - (id)attributedString;
-- (float)baselineOffset;
-- (struct CGSize { float x1; float x2; })boundingSize;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsetsForShadow;
-- (float)firstBaselineOffset;
+- (double)baselineOffset;
+- (struct CGSize { double x1; double x2; })boundingSize;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsetsForShadow;
+- (double)firstBaselineOffset;
 - (id)initWithLayoutRequest:(id)arg1;
-- (int)numberOfLines;
+- (long long)numberOfLines;
 - (id)shadow;
 - (id)stringDrawingContext;
-- (float)topInset;
-- (BOOL)usesTallCharacterSet;
+- (double)topInset;
+- (bool)usesTallCharacterSet;
 
 @end

@@ -4,6 +4,6 @@
 
 @interface HKCorrelationType : HKSampleType
 
-- (BOOL)_requiresAuthorization;
+- (bool)_requiresAuthorization;
 
 @end

@@ -4,34 +4,34 @@
 
 @interface PXHorizontalFeedLayoutGenerator : PXFeedLayoutGenerator {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _origin;
-    float  _referenceHeight;
+    double  _referenceHeight;
 }
 
-@property (nonatomic) float referenceHeight;
+@property (nonatomic) double referenceHeight;
 
-- (BOOL)_addColumnWithContiguousTiles:(struct PXTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 count:(int)arg2;
-- (BOOL)_addColumnWithTiles:(struct PXTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 imageFrames:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 count:(int)arg3;
-- (BOOL)_addSpecialSequenceBlock:(struct PXTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
-- (void)_enumerateColumnFramesWithContiguousTiles:(struct PXTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 count:(int)arg2 useMagneticGuidelines:(BOOL)arg3 block:(id /* block */)arg4;
-- (BOOL)_hasLeftSuboptimalColumn;
-- (BOOL)_isAtEndOfColumn;
-- (BOOL)_parseSingleTile;
-- (BOOL)_parseSpecialSequence;
-- (BOOL)_parseSpecialSubsequenceWithColumnRequired:(BOOL)arg1 columnParsed:(BOOL*)arg2;
-- (BOOL)_parseSpecialTileTriplet;
-- (BOOL)_parseTilePair;
-- (BOOL)_parseTileTriplet;
-- (BOOL)_scanNonPanoramaSequence:(struct PXTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 count:(int)arg2;
-- (BOOL)_scanSpecialSequenceBlock:(struct PXTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
-- (BOOL)_scanSpecialSequenceColumn:(struct PXTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 count:(int*)arg2;
-- (BOOL)_scanTripletWithLargeLead:(struct PXTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
-- (BOOL)parseNextTiles;
-- (float)referenceDistanceForMagneticGuidelines;
-- (float)referenceHeight;
-- (void)setReferenceHeight:(float)arg1;
+- (bool)_addColumnWithContiguousTiles:(struct PXTileInfo { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1 count:(long long)arg2;
+- (bool)_addColumnWithTiles:(struct PXTileInfo { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1 imageFrames:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 count:(long long)arg3;
+- (bool)_addSpecialSequenceBlock:(struct PXTileInfo { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1;
+- (void)_enumerateColumnFramesWithContiguousTiles:(struct PXTileInfo { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1 count:(long long)arg2 useMagneticGuidelines:(bool)arg3 block:(id /* block */)arg4;
+- (bool)_hasLeftSuboptimalColumn;
+- (bool)_isAtEndOfColumn;
+- (bool)_parseSingleTile;
+- (bool)_parseSpecialSequence;
+- (bool)_parseSpecialSubsequenceWithColumnRequired:(bool)arg1 columnParsed:(bool*)arg2;
+- (bool)_parseSpecialTileTriplet;
+- (bool)_parseTilePair;
+- (bool)_parseTileTriplet;
+- (bool)_scanNonPanoramaSequence:(struct PXTileInfo { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1 count:(long long)arg2;
+- (bool)_scanSpecialSequenceBlock:(struct PXTileInfo { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1;
+- (bool)_scanSpecialSequenceColumn:(struct PXTileInfo { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1 count:(long long*)arg2;
+- (bool)_scanTripletWithLargeLead:(struct PXTileInfo { long long x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; struct CGSize { double x_3_1_1; double x_3_1_2; } x3; bool x4; bool x5; }*)arg1;
+- (bool)parseNextTiles;
+- (double)referenceDistanceForMagneticGuidelines;
+- (double)referenceHeight;
+- (void)setReferenceHeight:(double)arg1;
 - (void)willParseTiles;
 
 @end

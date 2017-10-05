@@ -5,10 +5,10 @@
 
 @required
 
-- (BOOL)isShowingNavigationStackRootContent;
+- (bool)isShowingNavigationStackRootContent;
 - (<SKUINavigationStackObserver> *)navigationStackObserver;
-- (void)popToNavigationStackRootContentAnimated:(BOOL)arg1 withBehavior:(int)arg2;
+- (void)popToNavigationStackRootContentAnimated:(bool)arg1 withBehavior:(long long)arg2;
 - (void)setNavigationStackObserver:(id <SKUINavigationStackObserver>)arg1;
-- (void)setShowingNavigationStackRootContent:(BOOL)arg1;
+- (void)setShowingNavigationStackRootContent:(bool)arg1;
 
 @end

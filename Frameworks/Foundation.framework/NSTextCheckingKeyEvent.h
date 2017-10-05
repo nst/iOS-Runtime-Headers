@@ -3,11 +3,11 @@
  */
 
 @interface NSTextCheckingKeyEvent : NSObject <NSCopying, NSSecureCoding> {
-    unsigned int  _flags;
+    unsigned long long  _flags;
     NSString * _identifier;
-    unsigned int  _keyboardType;
+    unsigned long long  _keyboardType;
     NSString * _keys;
-    int  _layoutType;
+    long long  _layoutType;
     NSString * _primaryLanguage;
     double  _time;
     NSString * _ukeys;
@@ -15,14 +15,14 @@
 
 @property (readonly, copy) NSString *characters;
 @property (readonly, copy) NSString *charactersIgnoringModifiers;
-@property (readonly) unsigned int flags;
+@property (readonly) unsigned long long flags;
 @property (readonly, copy) NSString *keyboardLayoutIdentifier;
-@property (readonly) int keyboardLayoutType;
-@property (readonly) unsigned int keyboardType;
+@property (readonly) long long keyboardLayoutType;
+@property (readonly) unsigned long long keyboardType;
 @property (readonly, copy) NSString *primaryLanguage;
 @property (readonly) double timestamp;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)characters;
 - (id)charactersIgnoringModifiers;
@@ -30,14 +30,14 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)flags;
-- (unsigned int)hash;
+- (unsigned long long)flags;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithKeyboardLayoutType:(int)arg1 keyboardType:(unsigned int)arg2 identifier:(id)arg3 primaryLanguage:(id)arg4 flags:(unsigned int)arg5 timestamp:(double)arg6 characters:(id)arg7 charactersIgnoringModifiers:(id)arg8;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithKeyboardLayoutType:(long long)arg1 keyboardType:(unsigned long long)arg2 identifier:(id)arg3 primaryLanguage:(id)arg4 flags:(unsigned long long)arg5 timestamp:(double)arg6 characters:(id)arg7 charactersIgnoringModifiers:(id)arg8;
+- (bool)isEqual:(id)arg1;
 - (id)keyboardLayoutIdentifier;
-- (int)keyboardLayoutType;
-- (unsigned int)keyboardType;
+- (long long)keyboardLayoutType;
+- (unsigned long long)keyboardType;
 - (id)primaryLanguage;
 - (double)timestamp;
 

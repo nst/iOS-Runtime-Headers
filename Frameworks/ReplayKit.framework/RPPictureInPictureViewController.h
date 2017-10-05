@@ -4,27 +4,27 @@
 
 @interface RPPictureInPictureViewController : UIViewController {
     UIView * _contentView;
-    int  _currentAlignment;
+    long long  _currentAlignment;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _lastTouchPoint;
 }
 
 @property (nonatomic) UIView *contentView;
-@property (nonatomic) int currentAlignment;
-@property (nonatomic) struct CGPoint { float x1; float x2; } lastTouchPoint;
+@property (nonatomic) long long currentAlignment;
+@property (nonatomic) struct CGPoint { double x1; double x2; } lastTouchPoint;
 
 - (id)contentView;
-- (int)currentAlignment;
-- (struct CGPoint { float x1; float x2; })lastTouchPoint;
+- (long long)currentAlignment;
+- (struct CGPoint { double x1; double x2; })lastTouchPoint;
 - (void)setContentView:(id)arg1;
-- (void)setCurrentAlignment:(int)arg1;
-- (void)setLastTouchPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)shouldAutorotate;
-- (unsigned int)supportedInterfaceOrientations;
-- (void)updateContentViewWithAlignment:(int)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (void)setCurrentAlignment:(long long)arg1;
+- (void)setLastTouchPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (bool)shouldAutorotate;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)updateContentViewWithAlignment:(long long)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 - (void)viewDidPan:(id)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

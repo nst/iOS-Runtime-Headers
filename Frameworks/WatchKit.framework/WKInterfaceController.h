@@ -5,12 +5,12 @@
 @interface WKInterfaceController : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _contentFrame;
     WKCrownSequencer * _crownSequencer;
@@ -22,7 +22,7 @@
     NSString * _viewControllerID;
 }
 
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } contentFrame;
 @property (nonatomic, readonly) WKCrownSequencer *crownSequencer;
 @property (nonatomic, retain) NSMutableDictionary *gestureRecognizers;
 @property (nonatomic, retain) NSMutableArray *pendingGestureInstallationFinishedBlocks;
@@ -32,31 +32,33 @@
 @property (nonatomic, retain) NSString *viewControllerID;
 
 + (void)_insertPageControllersAtIndexes:(id)arg1 withNames:(id)arg2 contexts:(id)arg3;
-+ (void)_movePageControllerAtIndex:(int)arg1 toIndex:(int)arg2;
++ (void)_movePageControllerAtIndex:(long long)arg1 toIndex:(long long)arg2;
 + (void)_removePageControllersAtIndexes:(id)arg1;
-+ (BOOL)openParentApplication:(id)arg1 reply:(id /* block */)arg2;
++ (bool)openParentApplication:(id)arg1 reply:(id /* block */)arg2;
 + (void)reloadRootControllersWithNames:(id)arg1 contexts:(id)arg2;
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })screenBounds;
-+ (float)screenScale;
++ (void)reloadRootPageControllersWithNames:(id)arg1 contexts:(id)arg2 orientation:(long long)arg3 pageIndex:(long long)arg4;
++ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })screenBounds;
++ (double)screenScale;
 
 - (void).cxx_destruct;
 - (void)_handleActionWithIdentifier:(id)arg1 forNotification:(id)arg2 remoteNotification:(id)arg3 localNotification:(id)arg4;
 - (void)addMenuItemWithImage:(id)arg1 title:(id)arg2 action:(SEL)arg3;
 - (void)addMenuItemWithImageNamed:(id)arg1 title:(id)arg2 action:(SEL)arg3;
-- (void)addMenuItemWithItemIcon:(int)arg1 title:(id)arg2 action:(SEL)arg3;
+- (void)addMenuItemWithItemIcon:(long long)arg1 title:(id)arg2 action:(SEL)arg3;
 - (void)animateWithDuration:(double)arg1 animations:(id /* block */)arg2;
 - (void)awakeWithContext:(id)arg1;
 - (void)becomeCurrentPage;
 - (void)beginGlanceUpdates;
 - (void)clearAllMenuItems;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentFrame;
 - (id)contextForSegueWithIdentifier:(id)arg1;
-- (id)contextForSegueWithIdentifier:(id)arg1 inTable:(id)arg2 rowIndex:(int)arg3;
+- (id)contextForSegueWithIdentifier:(id)arg1 inTable:(id)arg2 rowIndex:(long long)arg3;
 - (id)contextsForSegueWithIdentifier:(id)arg1;
-- (id)contextsForSegueWithIdentifier:(id)arg1 inTable:(id)arg2 rowIndex:(int)arg3;
+- (id)contextsForSegueWithIdentifier:(id)arg1 inTable:(id)arg2 rowIndex:(long long)arg3;
 - (id)crownSequencer;
 - (void)didAppear;
 - (void)didDeactivate;
+- (void)didRegisterWithRemoteInterface;
 - (void)dismissAddPassesController;
 - (void)dismissAudioRecorderController;
 - (void)dismissController;
@@ -70,6 +72,9 @@
 - (void)handleUserActivity:(id)arg1;
 - (id)init;
 - (id)initWithContext:(id)arg1;
+- (void)interfaceDidScrollToTop;
+- (void)interfaceOffsetDidScrollToBottom;
+- (void)interfaceOffsetDidScrollToTop;
 - (void)invalidateUserActivity;
 - (id)pendingGestureInstallationFinishedBlocks;
 - (void)pickerDidFocus:(id)arg1;
@@ -78,15 +83,16 @@
 - (void)popController;
 - (void)popToRootController;
 - (void)presentAddPassesControllerWithPasses:(id)arg1 completion:(id /* block */)arg2;
-- (void)presentAudioRecorderControllerWithOutputURL:(id)arg1 preset:(int)arg2 options:(id)arg3 completion:(id /* block */)arg4;
+- (void)presentAudioRecorderControllerWithOutputURL:(id)arg1 preset:(long long)arg2 options:(id)arg3 completion:(id /* block */)arg4;
 - (void)presentControllerWithName:(id)arg1 context:(id)arg2;
 - (void)presentControllerWithNames:(id)arg1 contexts:(id)arg2;
 - (void)presentMediaPlayerControllerWithURL:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;
-- (void)presentTextInputControllerWithSuggestions:(id)arg1 allowedInputMode:(int)arg2 completion:(id /* block */)arg3;
-- (void)presentTextInputControllerWithSuggestionsForLanguage:(id /* block */)arg1 allowedInputMode:(int)arg2 completion:(id /* block */)arg3;
+- (void)presentTextInputControllerWithSuggestions:(id)arg1 allowedInputMode:(long long)arg2 completion:(id /* block */)arg3;
+- (void)presentTextInputControllerWithSuggestionsForLanguage:(id /* block */)arg1 allowedInputMode:(long long)arg2 completion:(id /* block */)arg3;
 - (id)properties;
 - (void)pushControllerWithName:(id)arg1 context:(id)arg2;
-- (void)setContentFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)scrollToObject:(id)arg1 atScrollPosition:(long long)arg2 animated:(bool)arg3;
+- (void)setContentFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setGestureRecognizers:(id)arg1;
 - (void)setPendingGestureInstallationFinishedBlocks:(id)arg1;
 - (void)setProperties:(id)arg1;
@@ -94,7 +100,7 @@
 - (void)setTopLevelObjects:(id)arg1;
 - (void)setUninstalledGestureIDs:(id)arg1;
 - (void)setViewControllerID:(id)arg1;
-- (void)table:(id)arg1 didSelectRowAtIndex:(int)arg2;
+- (void)table:(id)arg1 didSelectRowAtIndex:(long long)arg2;
 - (id)topLevelObjects;
 - (id)uninstalledGestureIDs;
 - (void)updateUserActivity:(id)arg1 userInfo:(id)arg2;

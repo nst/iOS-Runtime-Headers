@@ -4,6 +4,6 @@
 
 @interface PXPeopleCommon : NSObject
 
-+ (id)stringFromContact:(id)arg1 preferGivenName:(BOOL)arg2;
++ (id)stringFromContact:(id)arg1 preferGivenName:(bool)arg2;
 
 @end

@@ -17,9 +17,10 @@
 
 - (void).cxx_destruct;
 - (id)backgroundImage;
-- (void)configureSupplementaryCellLayoutAttributesWithAutomaticInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)configureSupplementaryCellLayoutAttributesWithAutomaticInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (id)headerSupplementaryViews;
 - (id)preferredFocusEnvironments;
+- (void)safeAreaInsetsDidChange;
 - (void)setBackgroundImage:(id)arg1;
 - (void)setHeaderSupplementaryViews:(id)arg1;
 - (void)setStackView:(id)arg1;

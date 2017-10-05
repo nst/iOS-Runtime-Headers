@@ -8,7 +8,7 @@
 
 + (void)initialize;
 + (id)orthographyWithFlags:(unsigned int)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)allLanguages;
 - (id)allScripts;

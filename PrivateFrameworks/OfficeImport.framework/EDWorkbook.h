@@ -3,7 +3,7 @@
  */
 
 @interface EDWorkbook : OCDDocument {
-    unsigned int  mActiveSheetIndex;
+    unsigned long long  mActiveSheetIndex;
     NSMutableArray * mBulletBlips;
     int  mDateBase;
     NSDate * mDateBaseDate;
@@ -22,7 +22,7 @@
 + (id)impliedColorMap;
 
 - (id)activeSheet;
-- (unsigned int)activeSheetIndex;
+- (unsigned long long)activeSheetIndex;
 - (void)addOtherResources:(id)arg1;
 - (void)addSheet:(id)arg1;
 - (void)applyProcessors;
@@ -33,8 +33,8 @@
 - (id)description;
 - (id)escherDrawingGroup;
 - (id)fileName;
-- (unsigned int)indexOfSheet:(id)arg1;
-- (unsigned int)indexOfSheetWithName:(id)arg1;
+- (unsigned long long)indexOfSheet:(id)arg1;
+- (unsigned long long)indexOfSheetWithName:(id)arg1;
 - (id)init;
 - (id)initWithFileName:(id)arg1 andStringOptimization:(bool)arg2;
 - (id)initWithStringOptimization:(bool)arg1;
@@ -42,20 +42,20 @@
 - (id)mappingContext;
 - (id)processors;
 - (void)reduceMemoryIfPossible;
-- (void)removeSheetAtIndex:(unsigned int)arg1;
+- (void)removeSheetAtIndex:(unsigned long long)arg1;
 - (void)removeWorksheetAtIndex:(unsigned int)arg1;
 - (id)resources;
 - (void)setActiveSheet:(id)arg1;
-- (void)setActiveSheetIndex:(unsigned int)arg1;
+- (void)setActiveSheetIndex:(unsigned long long)arg1;
 - (void)setDateBase:(int)arg1;
 - (void)setEscherDrawingGroup:(id)arg1;
 - (void)setMappingContext:(id)arg1;
 - (void)setResources:(id)arg1;
 - (void)setTemporaryDirectory:(id)arg1;
 - (void)setVisibleRange:(id)arg1;
-- (id)sheetAtIndex:(unsigned int)arg1;
-- (id)sheetAtIndex:(unsigned int)arg1 loadIfNeeded:(bool)arg2;
-- (unsigned int)sheetCount;
+- (id)sheetAtIndex:(unsigned long long)arg1;
+- (id)sheetAtIndex:(unsigned long long)arg1 loadIfNeeded:(bool)arg2;
+- (unsigned long long)sheetCount;
 - (id)temporaryDirectory;
 - (id)visibleRange;
 - (id)warnings;

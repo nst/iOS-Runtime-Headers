@@ -11,17 +11,17 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) unsigned int defaultTransitType;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) unsigned int iconAttributeKey;
 @property (nonatomic, readonly) unsigned int iconAttributeValue;
-@property (nonatomic, readonly) int iconType;
+@property (nonatomic, readonly) long long iconType;
 @property (readonly) Class superclass;
 
 - (unsigned int)cartoID;
 - (unsigned int)defaultTransitType;
 - (unsigned int)iconAttributeKey;
 - (unsigned int)iconAttributeValue;
-- (int)iconType;
+- (long long)iconType;
 - (id)initWithCartoId:(unsigned int)arg1 defaultTransitType:(unsigned int)arg2;
 
 @end

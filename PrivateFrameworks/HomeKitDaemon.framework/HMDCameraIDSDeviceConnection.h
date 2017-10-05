@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraIDSDeviceConnection : NSObject <HMDCameraRemoteStreamProtocol, HMFLogging, HMFTimerDelegate, IDSServiceDelegate> {
+@interface HMDCameraIDSDeviceConnection : HMFObject <HMDCameraRemoteStreamProtocol, HMFLogging, HMFTimerDelegate, IDSServiceDelegate> {
     IDSDevice * _device;
     NSObject<OS_dispatch_queue> * _highPriorityQueue;
     IDSService * _idsProxyStreamService;
@@ -20,7 +20,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) IDSDevice *device;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *highPriorityQueue;
 @property (nonatomic, readonly) IDSService *idsProxyStreamService;
 @property (nonatomic, retain) HMFTimer *keepAliveByteReceiveTimeoutTimer;

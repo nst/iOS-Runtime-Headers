@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDSnapshotSlotManager : NSObject <HMFLogging> {
+@interface HMDSnapshotSlotManager : HMFObject <HMFLogging> {
     HMDAccessory * _accessory;
     NSMutableArray * _filesToCleanup;
     NSString * _imageCacheDirectory;
@@ -20,11 +20,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSMutableArray *filesToCleanup;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *imageCacheDirectory;
 @property (nonatomic, readonly) NSString *logID;
 @property (nonatomic, retain) HMDSnapshotFile *mostRecentSnapshot;
-@property (getter=isMostRecentSnapshotValid, nonatomic, readonly) BOOL mostRecentSnapshotValid;
+@property (getter=isMostRecentSnapshotValid, nonatomic, readonly) bool mostRecentSnapshotValid;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, readonly) HMDNotificationRegistration *notificationRegistration;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
@@ -36,10 +36,11 @@
 + (id)logCategory;
 
 - (void).cxx_destruct;
-- (void)_updateMostRecentSnapshot:(id)arg1 updateGenerationCounter:(BOOL)arg2;
+- (void)_updateMostRecentSnapshot:(id)arg1 updateGenerationCounter:(bool)arg2;
 - (id)accessory;
 - (id)addReferenceToMostRecentSnapshotFileForMessage:(id)arg1;
-- (id)createSlotForSnapshotFile:(id)arg1 requestMessages:(id)arg2 updateGenerationCounter:(BOOL)arg3;
+- (void)backboardServicesRelaunched:(id)arg1;
+- (id)createSlotForSnapshotFile:(id)arg1 requestMessages:(id)arg2 updateGenerationCounter:(bool)arg3;
 - (void)dealloc;
 - (id)filesToCleanup;
 - (void)findMostRecentSnapshot;
@@ -47,7 +48,7 @@
 - (void)handleReleaseSnapshot:(id)arg1;
 - (id)imageCacheDirectory;
 - (id)initWithAccessory:(id)arg1 workQueue:(id)arg2 imageCacheDirectory:(id)arg3 logID:(id)arg4 uniqueIdentifier:(id)arg5 msgDispatcher:(id)arg6;
-- (BOOL)isMostRecentSnapshotValid;
+- (bool)isMostRecentSnapshotValid;
 - (id)logID;
 - (id)logIdentifier;
 - (id)mostRecentSnapshot;

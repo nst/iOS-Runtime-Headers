@@ -9,14 +9,14 @@
 @property (nonatomic, readonly) TSDCommentStorage *commentStorage;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)cellDiffProperties;
 
+- (void).cxx_destruct;
 - (void)applyToCell:(id)arg1;
 - (id)commentStorage;
-- (void)dealloc;
 - (void)didInitFromSOS;
 - (id)initFromPropertyCommandMessage:(const struct Message { int (**x1)(); }*)arg1 unarchiver:(id)arg2;
 - (id)initWithCommentStorage:(id)arg1;

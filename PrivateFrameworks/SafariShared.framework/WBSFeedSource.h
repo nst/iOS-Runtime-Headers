@@ -6,8 +6,8 @@
     NSURL * _feedURL;
     NSArray * _siteIconURLs;
     NSURL * _sourceURL;
-    int  _state;
-    BOOL  _subscribedWhenSyncWasOff;
+    long long  _state;
+    bool  _subscribedWhenSyncWasOff;
     NSString * _title;
 }
 
@@ -15,8 +15,8 @@
 @property (nonatomic, readonly) NSURL *feedURL;
 @property (nonatomic, readonly) NSArray *siteIconURLs;
 @property (nonatomic, readonly) NSURL *sourceURL;
-@property (nonatomic, readonly) int state;
-@property (nonatomic) BOOL subscribedWhenSyncWasOff;
+@property (nonatomic, readonly) long long state;
+@property (nonatomic) bool subscribedWhenSyncWasOff;
 @property (nonatomic, retain) NSString *title;
 
 - (void).cxx_destruct;
@@ -25,17 +25,17 @@
 - (id)dictionaryRepresentationForSyncing;
 - (id)displayName;
 - (id)feedURL;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initFromDictionaryRepresentation:(id)arg1;
-- (id)initWithFeedURL:(id)arg1 sourceURL:(id)arg2 siteIconURLs:(id)arg3 title:(id)arg4 state:(int)arg5;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualIgnoringTitle:(id)arg1;
-- (void)setSubscribedWhenSyncWasOff:(BOOL)arg1;
+- (id)initWithFeedURL:(id)arg1 sourceURL:(id)arg2 siteIconURLs:(id)arg3 title:(id)arg4 state:(long long)arg5;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualIgnoringTitle:(id)arg1;
+- (void)setSubscribedWhenSyncWasOff:(bool)arg1;
 - (void)setTitle:(id)arg1;
 - (id)siteIconURLs;
 - (id)sourceURL;
-- (int)state;
-- (BOOL)subscribedWhenSyncWasOff;
+- (long long)state;
+- (bool)subscribedWhenSyncWasOff;
 - (id)title;
 
 @end

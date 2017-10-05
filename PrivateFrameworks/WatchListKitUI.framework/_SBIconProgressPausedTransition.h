@@ -4,22 +4,22 @@
 
 @interface _SBIconProgressPausedTransition : _SBIconProgressTransition {
     double  _duration;
-    float  _fraction;
+    double  _fraction;
     CAMediaTimingFunction * _timingFunction;
-    BOOL  _toPaused;
+    bool  _toPaused;
     double  _totalElapsedTime;
 }
 
-+ (id)newTransitionToPaused:(BOOL)arg1;
++ (id)newTransitionToPaused:(bool)arg1;
 
-- (id)_initToPaused:(BOOL)arg1;
+- (id)_initToPaused:(bool)arg1;
 - (void)_updateElapsedTimeFromFraction;
 - (void)_updateTimingFunction;
 - (void)_updateView:(id)arg1;
 - (void)completeTransitionAndUpdateView:(id)arg1;
 - (void)dealloc;
-- (BOOL)isCompleteWithView:(id)arg1;
-- (void)updateToPaused:(BOOL)arg1;
+- (bool)isCompleteWithView:(id)arg1;
+- (void)updateToPaused:(bool)arg1;
 - (void)updateView:(id)arg1 withElapsedTime:(double)arg2;
 
 @end

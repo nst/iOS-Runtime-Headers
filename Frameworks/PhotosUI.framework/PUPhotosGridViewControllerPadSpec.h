@@ -5,25 +5,23 @@
 @interface PUPhotosGridViewControllerPadSpec : PUPhotosGridViewControllerSpec
 
 - (id)albumPickerViewControllerSpec;
-- (struct CGSize { float x1; float x2; })baseInterItemSpacing;
-- (BOOL)canDisplayEditActionsInNavigationBar;
-- (BOOL)canDisplayOptionsInPopover;
-- (BOOL)canDisplaySearchActionInNavigationBar;
-- (BOOL)canDisplaySlideshowButton;
-- (int)cellBannerTextAlignment;
-- (int)cellFillMode;
-- (void)configureCollectionViewGridLayout:(id)arg1 forWidth:(float)arg2;
-- (float)globalFooterHeight;
-- (float)maxSearchBarWidth;
+- (struct CGSize { double x1; double x2; })baseInterItemSpacing;
+- (bool)canDisplayEditActionsInNavigationBar;
+- (bool)canDisplayOptionsInPopover;
+- (bool)canDisplaySearchActionInNavigationBar;
+- (bool)canDisplaySlideshowButton;
+- (long long)cellBannerTextAlignment;
+- (long long)cellFillMode;
+- (void)configureCollectionViewGridLayout:(id)arg1 forWidth:(double)arg2 safeAreaInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3;
+- (double)maxSearchBarWidth;
 - (id)photosPickerViewControllerSpec;
-- (float)sectionHeaderHeight;
-- (int)sectionHeaderStyle;
-- (BOOL)shouldPlaceDeleteInCenterToolbarPosition;
-- (BOOL)shouldPlaceSelectAllButtonInRightNavigationBar;
-- (unsigned int)supportedInterfaceOrientations;
+- (long long)sectionHeaderStyle;
+- (bool)shouldPlaceDeleteInCenterToolbarPosition;
+- (bool)shouldPlaceSelectAllButtonInRightNavigationBar;
+- (unsigned long long)supportedInterfaceOrientations;
 - (int)thumbnailImageFormat;
-- (BOOL)usesStackPopTransition;
-- (BOOL)wantsBackButtonTitleForPhotoBrowser;
-- (BOOL)wantsCustomNavigationTransition;
+- (bool)usesStackPopTransition;
+- (bool)wantsBackButtonTitleForPhotoBrowser;
+- (bool)wantsCustomNavigationTransition;
 
 @end

@@ -3,26 +3,26 @@
  */
 
 @interface NEFilterControlVerdict : NEFilterNewFlowVerdict <NSCopying, NSSecureCoding> {
-    BOOL  _handledByDataProvider;
-    BOOL  _updateRules;
+    bool  _handledByDataProvider;
+    bool  _updateRules;
 }
 
-@property BOOL handledByDataProvider;
-@property BOOL updateRules;
+@property bool handledByDataProvider;
+@property bool updateRules;
 
-+ (id)allowVerdictWithUpdateRules:(BOOL)arg1;
-+ (id)dropVerdictWithUpdateRules:(BOOL)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)allowVerdictWithUpdateRules:(bool)arg1;
++ (id)dropVerdictWithUpdateRules:(bool)arg1;
++ (bool)supportsSecureCoding;
 + (id)updateRules;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)handledByDataProvider;
+- (bool)handledByDataProvider;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (void)setHandledByDataProvider:(BOOL)arg1;
-- (void)setUpdateRules:(BOOL)arg1;
-- (BOOL)updateRules;
+- (void)setHandledByDataProvider:(bool)arg1;
+- (void)setUpdateRules:(bool)arg1;
+- (bool)updateRules;
 
 @end

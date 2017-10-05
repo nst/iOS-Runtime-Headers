@@ -5,6 +5,6 @@
 
 @required
 
-- (FCClusteredHeadlines *)clusterHeadlinesByTopic:(void *)arg1 subscribedTopicIDs:(void *)arg2 blacklistedTopicIDs:(void *)arg3 rules:(void *)arg4 tagScoreProvider:(void *)arg5; // needs 5 arg types, found 10: NSArray *, NSSet *, NSSet *, FCHeadlineClusteringRules *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, NSDictionary *, id /* block */, NSArray *, void*
+- (FCClusteredHeadlines *)clusterHeadlinesByTopic:(NSArray *)arg1 subscribedTags:(FCSubscribedTags *)arg2 personalizer:(id <FCFeedPersonalizing>)arg3 rules:(FCHeadlineClusteringRules *)arg4;
 
 @end

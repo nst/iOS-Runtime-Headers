@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -17,8 +17,8 @@
 - (id)dataForKey:(id)arg1 error:(id*)arg2;
 - (id)init;
 - (id)initWithDirectoryURL:(id)arg1;
-- (BOOL)isKeyValid:(id)arg1;
-- (BOOL)removeDataForKey:(id)arg1 error:(id*)arg2;
-- (BOOL)setData:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
+- (bool)isKeyValid:(id)arg1;
+- (bool)removeDataForKey:(id)arg1 error:(id*)arg2;
+- (bool)setData:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
 
 @end

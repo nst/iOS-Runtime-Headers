@@ -4,49 +4,49 @@
 
 @interface _SFBrowserWindowStateData : NSObject {
     NSString * _UUIDString;
-    int  _activeDocumentIndex;
-    int  _activePrivateDocumentIndex;
-    int  _databaseID;
-    BOOL  _isActiveDocumentValid;
-    BOOL  _isTabStateSuccessfullyLoaded;
-    int  _legacyPlistFileVersion;
-    BOOL  _needsQuickUpdate;
-    int  _type;
+    long long  _activeDocumentIndex;
+    long long  _activePrivateDocumentIndex;
+    long long  _databaseID;
+    bool  _isActiveDocumentValid;
+    bool  _isTabStateSuccessfullyLoaded;
+    long long  _legacyPlistFileVersion;
+    bool  _needsQuickUpdate;
+    long long  _type;
 }
 
 @property (nonatomic, retain) NSString *UUIDString;
-@property (nonatomic) int activeDocumentIndex;
-@property (nonatomic) int activePrivateDocumentIndex;
-@property (nonatomic) int databaseID;
-@property (nonatomic) BOOL isActiveDocumentValid;
-@property (nonatomic, readonly) BOOL isInDatabase;
-@property (nonatomic) BOOL isTabStateSuccessfullyLoaded;
-@property (nonatomic) int legacyPlistFileVersion;
-@property (nonatomic) BOOL needsQuickUpdate;
-@property (nonatomic) int type;
+@property (nonatomic) long long activeDocumentIndex;
+@property (nonatomic) long long activePrivateDocumentIndex;
+@property (nonatomic) long long databaseID;
+@property (nonatomic) bool isActiveDocumentValid;
+@property (nonatomic, readonly) bool isInDatabase;
+@property (nonatomic) bool isTabStateSuccessfullyLoaded;
+@property (nonatomic) long long legacyPlistFileVersion;
+@property (nonatomic) bool needsQuickUpdate;
+@property (nonatomic) long long type;
 
 - (void).cxx_destruct;
 - (id)UUIDString;
-- (int)activeDocumentIndex;
-- (int)activePrivateDocumentIndex;
-- (int)databaseID;
+- (long long)activeDocumentIndex;
+- (long long)activePrivateDocumentIndex;
+- (long long)databaseID;
 - (id)dictionaryPresentation;
 - (id)initWithDictionaryPresentation:(id)arg1;
 - (id)initWithSQLiteRow:(id)arg1;
-- (BOOL)isActiveDocumentValid;
-- (BOOL)isInDatabase;
-- (BOOL)isTabStateSuccessfullyLoaded;
-- (int)legacyPlistFileVersion;
-- (BOOL)needsQuickUpdate;
-- (void)setActiveDocumentIndex:(int)arg1;
-- (void)setActivePrivateDocumentIndex:(int)arg1;
-- (void)setDatabaseID:(int)arg1;
-- (void)setIsActiveDocumentValid:(BOOL)arg1;
-- (void)setIsTabStateSuccessfullyLoaded:(BOOL)arg1;
-- (void)setLegacyPlistFileVersion:(int)arg1;
-- (void)setNeedsQuickUpdate:(BOOL)arg1;
-- (void)setType:(int)arg1;
+- (bool)isActiveDocumentValid;
+- (bool)isInDatabase;
+- (bool)isTabStateSuccessfullyLoaded;
+- (long long)legacyPlistFileVersion;
+- (bool)needsQuickUpdate;
+- (void)setActiveDocumentIndex:(long long)arg1;
+- (void)setActivePrivateDocumentIndex:(long long)arg1;
+- (void)setDatabaseID:(long long)arg1;
+- (void)setIsActiveDocumentValid:(bool)arg1;
+- (void)setIsTabStateSuccessfullyLoaded:(bool)arg1;
+- (void)setLegacyPlistFileVersion:(long long)arg1;
+- (void)setNeedsQuickUpdate:(bool)arg1;
+- (void)setType:(long long)arg1;
 - (void)setUUIDString:(id)arg1;
-- (int)type;
+- (long long)type;
 
 @end

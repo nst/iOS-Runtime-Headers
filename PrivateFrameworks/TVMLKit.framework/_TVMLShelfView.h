@@ -2,22 +2,23 @@
    Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
  */
 
-@interface _TVMLShelfView : _TVShelfView <TVRowHosting>
+@interface _TVMLShelfView : _TVShelfView <TVRowHosting_Collection>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL shouldBindRowsTogether;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool shouldBindRowsTogether;
 @property (readonly) Class superclass;
 
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_selectionMarginsForCell:(id)arg1;
-- (BOOL)_shouldFadeCellsForBoundChangeWhileRotating;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_selectionMarginsForCell:(id)arg1;
+- (bool)_shouldFadeCellsForBoundChangeWhileRotating;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 _shelfViewLayout:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 shelfViewLayout:(id)arg2;
-- (id)rowMetricsForExpectedWidth:(float)arg1 firstItemRowIndex:(int*)arg2;
-- (BOOL)shouldBindRowsTogether;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 _shelfViewLayout:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 shelfViewLayout:(id)arg2;
+- (id)rowMetricsForExpectedWidth:(double)arg1 firstItemRowIndex:(long long*)arg2;
+- (id)rowMetricsForExpectedWidth:(double)arg1 withContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2 firstItemRowIndex:(long long*)arg3;
+- (bool)shouldBindRowsTogether;
 
 @end

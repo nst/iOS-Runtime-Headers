@@ -3,51 +3,56 @@
  */
 
 @interface BFFLinkLabelFooterView : UIView {
-    float  _flexibleHeight;
+    NSAttributedString * _attributedSubtitleText;
+    double  _flexibleHeight;
     UILabel * _label;
     NSMutableArray * _linkHandlers;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _margins;
+    UILabel * _subtitleLabel;
     UIView * _topLine;
-    BOOL  _wantsFromBottomLayout;
-    BOOL  _wantsSideBySideLayout;
+    bool  _wantsFromBottomLayout;
+    bool  _wantsSideBySideLayout;
 }
 
-@property (nonatomic) float flexibleHeight;
+@property (nonatomic, retain) NSAttributedString *attributedSubtitleText;
+@property (nonatomic) double flexibleHeight;
 @property (nonatomic, retain) NSString *labelText;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } margins;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } margins;
 @property (nonatomic, retain) UIColor *topLineColor;
-@property (nonatomic) BOOL wantsFromBottomLayout;
-@property (nonatomic) BOOL wantsSideBySideLayout;
+@property (nonatomic) bool wantsFromBottomLayout;
+@property (nonatomic) bool wantsSideBySideLayout;
 
 + (void)initialize;
 
 - (void).cxx_destruct;
 - (void)addLinkWithTitle:(id)arg1 handler:(id /* block */)arg2;
 - (void)addLinkWithTitle:(id)arg1 textStyle:(id)arg2 handler:(id /* block */)arg3;
-- (float)flexibleHeight;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)attributedSubtitleText;
+- (double)flexibleHeight;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)labelText;
 - (void)layoutSubviews;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })margins;
-- (unsigned int)numberOfLinks;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })margins;
+- (unsigned long long)numberOfLinks;
 - (void)removeAllLinks;
-- (void)removeLinkAtIndex:(unsigned int)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setFlexibleHeight:(float)arg1;
+- (void)removeLinkAtIndex:(unsigned long long)arg1;
+- (void)setAttributedSubtitleText:(id)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setFlexibleHeight:(double)arg1;
 - (void)setLabelText:(id)arg1;
-- (void)setMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setTopLineColor:(id)arg1;
-- (void)setWantsFromBottomLayout:(BOOL)arg1;
-- (void)setWantsSideBySideLayout:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 shouldSetSize:(BOOL)arg2;
+- (void)setWantsFromBottomLayout:(bool)arg1;
+- (void)setWantsSideBySideLayout:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1 shouldSetSize:(bool)arg2;
 - (id)topLineColor;
-- (BOOL)wantsFromBottomLayout;
-- (BOOL)wantsSideBySideLayout;
+- (bool)wantsFromBottomLayout;
+- (bool)wantsSideBySideLayout;
 
 @end

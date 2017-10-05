@@ -3,10 +3,10 @@
  */
 
 @interface MSASPersonModel : MSASModelBase {
-    BOOL  _shouldDownloadEarliestPhotosFirst;
+    bool  _shouldDownloadEarliestPhotosFirst;
 }
 
-@property (nonatomic) BOOL shouldDownloadEarliestPhotosFirst;
+@property (nonatomic) bool shouldDownloadEarliestPhotosFirst;
 
 - (id)_commandWithMinimumIdentifier:(id)arg1 outParams:(id*)arg2 outCommandIdentifier:(long long*)arg3 outPersonID:(id*)arg4 outAlbumGUID:(id*)arg5 outAssetCollectionGUID:(id*)arg6;
 - (void)addPendingAssetCollectionGUID:(id)arg1 albumGUID:(id)arg2;
@@ -21,8 +21,8 @@
 - (int)dbQueueAssetCountAlbumGUID:(id)arg1 inQueue:(id)arg2;
 - (void)dbQueueEnqueueCommand:(id)arg1 params:(id)arg2 personID:(id)arg3 albumGUID:(id)arg4 assetCollectionGUID:(id)arg5;
 - (void)dbQueueEnqueueCommand:(id)arg1 params:(id)arg2 personID:(id)arg3 albumGUID:(id)arg4 assetCollectionGUID:(id)arg5 sequenceNumber:(long long)arg6;
-- (BOOL)dbQueueIsAssetCollectionWithGUIDPending:(id)arg1;
-- (BOOL)dbQueueIsGUIDQueued:(id)arg1 inQueue:(id)arg2;
+- (bool)dbQueueIsAssetCollectionWithGUIDPending:(id)arg1;
+- (bool)dbQueueIsGUIDQueued:(id)arg1 inQueue:(id)arg2;
 - (long long)dbQueueNextCommandSequenceNumber;
 - (void)dbQueueRemoveAllEntriesFromTable:(id)arg1;
 - (void)dbQueueRemoveCommandAtHeadOfQueue;
@@ -33,19 +33,19 @@
 - (void)dbQueueRequeuePendingCommandsWithQueryStatement:(struct sqlite3_stmt { }*)arg1 deleteStatement:(struct sqlite3_stmt { }*)arg2;
 - (void)dbQueueSetErrorCount:(int)arg1 forGUID:(id)arg2 inQueue:(id)arg3;
 - (long long)dbQueueSmallestCommandSequenceNumber;
-- (BOOL)dbQueueUpgradeFromDatabaseVersion:(int)arg1 currentVersion:(int)arg2;
+- (bool)dbQueueUpgradeFromDatabaseVersion:(int)arg1 currentVersion:(int)arg2;
 - (void)enqueueAssetCollectionForUpload:(id)arg1 album:(id)arg2;
 - (void)enqueueAssetForDownload:(id)arg1 inAlbumWithGUID:(id)arg2;
 - (void)enqueueCommand:(id)arg1 params:(id)arg2 personID:(id)arg3 albumGUID:(id)arg4 assetCollectionGUID:(id)arg5;
 - (void)enqueueCommand:(id)arg1 params:(id)arg2 personID:(id)arg3 albumGUID:(id)arg4 pendingOnAssetCollectionGUID:(id)arg5;
 - (void)enqueueCommandAtHeadOfQueue:(id)arg1 params:(id)arg2 personID:(id)arg3 albumGUID:(id)arg4 assetCollectionGUID:(id)arg5;
-- (BOOL)hasItemsForDownloadCountFocusAlbumGUID:(id)arg1 focusAssetCollectionGUID:(id)arg2;
+- (bool)hasItemsForDownloadCountFocusAlbumGUID:(id)arg1 focusAssetCollectionGUID:(id)arg2;
 - (id)initWithPersonID:(id)arg1;
-- (BOOL)isAssetCollectionWithGUIDPending:(id)arg1;
+- (bool)isAssetCollectionWithGUIDPending:(id)arg1;
 - (int)itemsForDownloadCountFocusAlbumGUID:(id)arg1 focusAssetCollectionGUID:(id)arg2;
 - (id)itemsForUpload;
 - (id)nextItemsForDownloadFocusAlbumGUID:(id)arg1 focusAssetCollectionGUID:(id)arg2 maxCount:(int)arg3;
-- (id)nextItemsForDownloadFocusAlbumGUID:(id)arg1 focusAssetCollectionGUID:(id)arg2 thumbnails:(BOOL)arg3 maxCount:(int)arg4 isInflight:(BOOL)arg5;
+- (id)nextItemsForDownloadFocusAlbumGUID:(id)arg1 focusAssetCollectionGUID:(id)arg2 thumbnails:(bool)arg3 maxCount:(int)arg4 isInflight:(bool)arg5;
 - (id)nextItemsForUploadAlbumGUID:(id)arg1 maxPriority:(int)arg2 maxCount:(int)arg3;
 - (id)nextItemsForUploadMaxCount:(int)arg1;
 - (long long)nextMMCSItemID;
@@ -59,7 +59,7 @@
 - (void)setErrorCount:(int)arg1 forAssetInDownloadQueue:(id)arg2;
 - (void)setInFlightAssets:(id)arg1;
 - (void)setParams:(id)arg1 forCommandWithIdentifier:(long long)arg2;
-- (void)setShouldDownloadEarliestPhotosFirst:(BOOL)arg1;
-- (BOOL)shouldDownloadEarliestPhotosFirst;
+- (void)setShouldDownloadEarliestPhotosFirst:(bool)arg1;
+- (bool)shouldDownloadEarliestPhotosFirst;
 
 @end

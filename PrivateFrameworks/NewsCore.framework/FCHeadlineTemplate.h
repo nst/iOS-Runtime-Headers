@@ -3,14 +3,14 @@
  */
 
 @interface FCHeadlineTemplate : NSObject <NSCopying> {
-    UIColor * _backgroundColor;
+    FCColor * _backgroundColor;
     FCTextInfo * _headlineBylineTextInfo;
     FCTextInfo * _headlineExcerptTextInfo;
     FCTextInfo * _headlineTitleTextInfo;
     NSArray * _loadableFonts;
 }
 
-@property (nonatomic, copy) UIColor *backgroundColor;
+@property (nonatomic, copy) FCColor *backgroundColor;
 @property (nonatomic, copy) FCTextInfo *headlineBylineTextInfo;
 @property (nonatomic, copy) FCTextInfo *headlineExcerptTextInfo;
 @property (nonatomic, copy) FCTextInfo *headlineTitleTextInfo;
@@ -26,13 +26,13 @@
 - (id)_allThemePropertyNames;
 - (id)backgroundColor;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)headlineBylineTextInfo;
 - (id)headlineExcerptTextInfo;
 - (id)headlineTitleTextInfo;
 - (id)init;
-- (id)initWithJSONDictionary:(id)arg1 versionNumber:(int)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithJSONDictionary:(id)arg1 versionNumber:(long long)arg2;
+- (bool)isEqual:(id)arg1;
 - (id)loadableFonts;
 - (void)mergeFromTemplate:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;

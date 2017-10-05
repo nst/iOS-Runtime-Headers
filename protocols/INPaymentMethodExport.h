@@ -12,7 +12,7 @@
 - (void)setIcon:(INImage *)arg1;
 - (void)setIdentificationHint:(NSString *)arg1;
 - (void)setName:(NSString *)arg1;
-- (void)setType:(int)arg1;
-- (int)type;
+- (void)setType:(long long)arg1;
+- (long long)type;
 
 @end

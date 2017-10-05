@@ -4,13 +4,13 @@
 
 @interface _CDSharedMemoryContextPersisting : NSObject <_CDContextPersisting> {
     NSCountedSet * _keyPathRegistrationCount;
-    unsigned int  _localDeviceID;
+    unsigned long long  _localDeviceID;
     NSObject<OS_dispatch_queue> * _queue;
     _CDSharedMemoryKeyValueStore * _store;
 }
 
 @property (nonatomic, retain) NSCountedSet *keyPathRegistrationCount;
-@property (nonatomic) unsigned int localDeviceID;
+@property (nonatomic) unsigned long long localDeviceID;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, retain) _CDSharedMemoryKeyValueStore *store;
 
@@ -28,12 +28,12 @@
 - (id)keyPathRegistrationCount;
 - (id)loadRegistrations;
 - (id)loadValues;
-- (unsigned int)localDeviceID;
+- (unsigned long long)localDeviceID;
 - (id)queue;
 - (void)saveRegistration:(id)arg1;
 - (void)saveValue:(id)arg1 forKeyPath:(id)arg2;
 - (void)setKeyPathRegistrationCount:(id)arg1;
-- (void)setLocalDeviceID:(unsigned int)arg1;
+- (void)setLocalDeviceID:(unsigned long long)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setStore:(id)arg1;
 - (id)store;

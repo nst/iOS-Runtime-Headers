@@ -9,6 +9,8 @@
     NSUserActivity * _passListUserActivity;
     NSUserActivity * _provisionPassUserActivity;
     NSObject<OS_dispatch_queue> * _queue;
+    NSUserActivity * _setUpPeerPaymentUserActivity;
+    NSUserActivity * _viewPeerPaymentUserActivity;
 }
 
 @property (nonatomic) NSUserActivity *currentUserActivity;
@@ -17,6 +19,8 @@
 @property (nonatomic, retain) NSUserActivity *passListUserActivity;
 @property (nonatomic, retain) NSUserActivity *provisionPassUserActivity;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, retain) NSUserActivity *setUpPeerPaymentUserActivity;
+@property (nonatomic, retain) NSUserActivity *viewPeerPaymentUserActivity;
 
 + (id)sharedContinuityCoordinator;
 
@@ -39,10 +43,16 @@
 - (void)setPassListUserActivity:(id)arg1;
 - (void)setProvisionPassUserActivity:(id)arg1;
 - (void)setQueue:(id)arg1;
+- (void)setSetUpPeerPaymentUserActivity:(id)arg1;
+- (id)setUpPeerPaymentUserActivity;
+- (void)setViewPeerPaymentUserActivity:(id)arg1;
 - (id)userActivityForPassWithUniqueID:(id)arg1;
 - (void)userNeedsPaymentPasses;
 - (void)userNeedsToProvisionPassWithUniqueID:(id)arg1;
+- (void)userNeedsToSetUpPeerPayment;
+- (void)userNeedsToViewPeerPaymentForHandle:(id)arg1;
 - (void)userViewingPassList;
-- (void)userViewingPassWithUniqueID:(id)arg1 isPaymentPass:(BOOL)arg2;
+- (void)userViewingPassWithUniqueID:(id)arg1 isPaymentPass:(bool)arg2;
+- (id)viewPeerPaymentUserActivity;
 
 @end

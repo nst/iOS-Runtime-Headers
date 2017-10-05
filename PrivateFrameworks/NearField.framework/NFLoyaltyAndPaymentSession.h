@@ -7,28 +7,28 @@
     NSDictionary * _appletsById;
     NFApplet * _defaultApplet;
     NFWeakReference * _delegate;
-    BOOL  _emulationActive;
-    unsigned int  _numActiveSEs;
-    BOOL  _pendingServerRequest;
+    bool  _emulationActive;
+    unsigned long long  _numActiveSEs;
+    bool  _pendingServerRequest;
     NFTechnologyEvent * _technologyEvent;
-    BOOL  _vasTransactionInProgress;
+    bool  _vasTransactionInProgress;
 }
 
 @property (readonly) NFApplet *activeApplet;
 @property (readonly) NFApplet *defaultApplet;
 @property <NFLoyaltyAndPaymentSessionDelegate> *delegate;
-@property (readonly) unsigned int numberOfActiveSecureElements;
+@property (readonly) unsigned long long numberOfActiveSecureElements;
 
-- (BOOL)_startCardEmulationWithAuthorization:(id)arg1;
-- (BOOL)_startDeferredCardEmulationWithAuthorization:(id)arg1;
-- (BOOL)_startHostCardEmulation;
+- (bool)_startCardEmulationWithAuthorization:(id)arg1 error:(id*)arg2;
+- (bool)_startDeferredCardEmulationWithAuthorization:(id)arg1 error:(id*)arg2;
+- (bool)_startHostCardEmulation:(id*)arg1;
 - (id)activeApplet;
 - (id)allApplets;
 - (id)appletWithIdentifier:(id)arg1;
 - (void)dealloc;
 - (id)defaultApplet;
 - (id)delegate;
-- (void)didDetectField:(BOOL)arg1;
+- (void)didDetectField:(bool)arg1;
 - (void)didDetectTechnology:(id)arg1;
 - (void)didEndTransaction:(id)arg1;
 - (void)didEndUnexpectedly;
@@ -41,21 +41,28 @@
 - (void)didReceiveButtonPressForApplet:(id)arg1;
 - (void)didReceivePendingServerRequest;
 - (void)didSelectApplet:(id)arg1;
-- (void)didSelectValueAddedService:(BOOL)arg1;
+- (void)didSelectValueAddedService:(bool)arg1;
 - (void)didStartSession:(id)arg1;
 - (void)didStartTransaction:(id)arg1;
-- (BOOL)enablePlasticCardMode:(BOOL)arg1;
+- (bool)enablePlasticCardMode:(bool)arg1;
+- (bool)enablePlasticCardMode:(bool)arg1 error:(id*)arg2;
 - (void)endSession;
 - (void)endSessionWithCompletion:(id /* block */)arg1;
 - (id)felicaAppletState:(id)arg1;
-- (unsigned int)numberOfActiveSecureElements;
-- (BOOL)setActivePaymentApplet:(id)arg1;
-- (BOOL)setActivePaymentApplet:(id)arg1 makeDefault:(BOOL)arg2;
+- (id)felicaAppletState:(id)arg1 error:(id*)arg2;
+- (unsigned long long)numberOfActiveSecureElements;
+- (bool)setActivePaymentApplet:(id)arg1;
+- (bool)setActivePaymentApplet:(id)arg1 error:(id*)arg2;
+- (bool)setActivePaymentApplet:(id)arg1 makeDefault:(bool)arg2;
 - (void)setDelegate:(id)arg1;
-- (BOOL)setHostCards:(id)arg1;
-- (BOOL)startCardEmulation:(unsigned char)arg1 authorization:(id)arg2;
-- (BOOL)startDeferredCardEmulation:(unsigned char)arg1 authorization:(id)arg2;
-- (BOOL)startHostCardEmulation;
-- (BOOL)stopCardEmulation;
+- (bool)setHostCards:(id)arg1;
+- (bool)startCardEmulation:(unsigned char)arg1 authorization:(id)arg2;
+- (bool)startCardEmulation:(unsigned char)arg1 authorization:(id)arg2 error:(id*)arg3;
+- (bool)startDeferredCardEmulation:(unsigned char)arg1 authorization:(id)arg2;
+- (bool)startDeferredCardEmulation:(unsigned char)arg1 authorization:(id)arg2 error:(id*)arg3;
+- (bool)startHostCardEmulation;
+- (bool)startHostCardEmulation:(id*)arg1;
+- (bool)stopCardEmulation;
+- (bool)stopCardEmulation:(id*)arg1;
 
 @end

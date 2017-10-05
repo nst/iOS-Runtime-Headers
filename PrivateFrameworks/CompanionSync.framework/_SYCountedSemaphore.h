@@ -11,11 +11,11 @@
 
 - (void)_ensureSemaphore;
 - (void)_signalSemaphore;
-- (BOOL)_waitSemaphoreWithTimeout:(double)arg1;
+- (bool)_waitSemaphoreWithTimeout:(double)arg1;
 - (id)init;
-- (id)initWithCount:(int)arg1;
+- (id)initWithCount:(long long)arg1;
 - (void)invalidate;
 - (void)signal;
-- (BOOL)waitWithTimeout:(double)arg1;
+- (bool)waitWithTimeout:(double)arg1;
 
 @end

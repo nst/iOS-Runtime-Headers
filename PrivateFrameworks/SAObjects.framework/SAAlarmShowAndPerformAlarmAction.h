@@ -12,7 +12,7 @@
 - (id)alarmAction;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setAlarmAction:(id)arg1;
 
 @end

@@ -3,53 +3,53 @@
  */
 
 @interface FCSolConfiguration : NSObject {
-    double  _articleEntityScoreWeightRatio;
-    int  _heuristicOption;
-    unsigned int  _heuristicSampleSize;
-    double  _importanceScalar;
-    unsigned int  _maxArticleCombos;
+    long long  _heuristicOption;
+    unsigned long long  _heuristicSampleSize;
+    unsigned long long  _maxArticleCombos;
+    double  _optionalTagSpecificityScore;
     double  _searchBranchDecay;
-    unsigned int  _searchBranchMultiplier;
+    unsigned long long  _searchBranchMultiplier;
     double  _searchTimeLimit;
     double  _tagArticleScoreCoeff;
+    double  _tagAutoFavoritedCoeff;
     double  _tagFavoritedCoeff;
+    double  _tagGroupableCoeff;
     double  _tagPersonalizationCoeff;
     double  _tagSizeCoeff;
-    double  _utilityWeightAlpha;
-    double  _utilityWeightBeta;
+    double  _tagSpecificityCoeff;
 }
 
-@property (nonatomic, readonly) double articleEntityScoreWeightRatio;
-@property (nonatomic, readonly) int heuristicOption;
-@property (nonatomic, readonly) unsigned int heuristicSampleSize;
-@property (nonatomic, readonly) double importanceScalar;
-@property (nonatomic, readonly) unsigned int maxArticleCombos;
+@property (nonatomic, readonly) long long heuristicOption;
+@property (nonatomic, readonly) unsigned long long heuristicSampleSize;
+@property (nonatomic, readonly) unsigned long long maxArticleCombos;
+@property (nonatomic, readonly) double optionalTagSpecificityScore;
 @property (nonatomic, readonly) double searchBranchDecay;
-@property (nonatomic, readonly) unsigned int searchBranchMultiplier;
+@property (nonatomic, readonly) unsigned long long searchBranchMultiplier;
 @property (nonatomic, readonly) double searchTimeLimit;
 @property (nonatomic, readonly) double tagArticleScoreCoeff;
+@property (nonatomic, readonly) double tagAutoFavoritedCoeff;
 @property (nonatomic, readonly) double tagFavoritedCoeff;
+@property (nonatomic, readonly) double tagGroupableCoeff;
 @property (nonatomic, readonly) double tagPersonalizationCoeff;
 @property (nonatomic, readonly) double tagSizeCoeff;
-@property (nonatomic, readonly) double utilityWeightAlpha;
-@property (nonatomic, readonly) double utilityWeightBeta;
+@property (nonatomic, readonly) double tagSpecificityCoeff;
 
-+ (id)configurationWithTreatment:(id)arg1;
++ (id)configurationWithTreatment:(id)arg1 deviceIsiPad:(bool)arg2;
 
-- (double)articleEntityScoreWeightRatio;
-- (int)heuristicOption;
-- (unsigned int)heuristicSampleSize;
-- (double)importanceScalar;
-- (id)initWithHeuristicSampleSize:(unsigned int)arg1 searchBranchMultiplier:(unsigned int)arg2 searchBranchDecay:(double)arg3 searchTimeLimit:(double)arg4 tagSizeCoeff:(double)arg5 tagFavoritedCoeff:(double)arg6 tagArticleScoreCoeff:(double)arg7 tagPersonalizationCoeff:(double)arg8 articleEntityScoreWeightRatio:(double)arg9 utilityWeightAlpha:(double)arg10 utilityWeightBeta:(double)arg11 importanceScalar:(double)arg12 heuristicOption:(int)arg13;
-- (unsigned int)maxArticleCombos;
+- (long long)heuristicOption;
+- (unsigned long long)heuristicSampleSize;
+- (id)initWithHeuristicSampleSize:(unsigned long long)arg1 searchBranchMultiplier:(unsigned long long)arg2 searchBranchDecay:(double)arg3 searchTimeLimit:(double)arg4 tagSizeCoeff:(double)arg5 tagFavoritedCoeff:(double)arg6 tagAutoFavoritedCoeff:(double)arg7 tagGroupableCoeff:(double)arg8 tagArticleScoreCoeff:(double)arg9 tagPersonalizationCoeff:(double)arg10 tagSpecificityCoeff:(double)arg11 optionalTagSpecificityScore:(double)arg12 heuristicOption:(long long)arg13;
+- (unsigned long long)maxArticleCombos;
+- (double)optionalTagSpecificityScore;
 - (double)searchBranchDecay;
-- (unsigned int)searchBranchMultiplier;
+- (unsigned long long)searchBranchMultiplier;
 - (double)searchTimeLimit;
 - (double)tagArticleScoreCoeff;
+- (double)tagAutoFavoritedCoeff;
 - (double)tagFavoritedCoeff;
+- (double)tagGroupableCoeff;
 - (double)tagPersonalizationCoeff;
 - (double)tagSizeCoeff;
-- (double)utilityWeightAlpha;
-- (double)utilityWeightBeta;
+- (double)tagSpecificityCoeff;
 
 @end

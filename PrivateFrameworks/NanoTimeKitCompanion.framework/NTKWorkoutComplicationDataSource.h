@@ -5,38 +5,38 @@
 @interface NTKWorkoutComplicationDataSource : NTKComplicationDataSource {
     _HKFirstPartyWorkoutSnapshot * _activeWorkoutSnapshot;
     NSArray * _animationImages;
-    BOOL  _deviceIsLocked;
-    BOOL  _frozen;
-    BOOL  _hasKnownLastWorkoutState;
+    bool  _deviceIsLocked;
+    bool  _frozen;
+    bool  _hasKnownLastWorkoutState;
     NSObject<OS_dispatch_queue> * _healthQueue;
     HKHealthStore * _healthStore;
     HKWorkout * _lastWorkout;
     HKSampleQuery * _lastWorkoutQuery;
-    BOOL  _loadingLastWorkout;
+    bool  _loadingLastWorkout;
     int  _lockStateNotifyToken;
     HKObserverQuery * _workoutObservationQuery;
     int  _workoutStateNotifyToken;
 }
 
 @property (nonatomic, retain) _HKFirstPartyWorkoutSnapshot *activeWorkoutSnapshot;
-@property (nonatomic) BOOL hasKnownLastWorkoutState;
+@property (nonatomic) bool hasKnownLastWorkoutState;
 @property (nonatomic, retain) HKHealthStore *healthStore;
 @property (nonatomic, retain) HKWorkout *lastWorkout;
 @property (nonatomic, retain) HKSampleQuery *lastWorkoutQuery;
-@property (getter=isLoadingLastWorkout, nonatomic) BOOL loadingLastWorkout;
+@property (getter=isLoadingLastWorkout, nonatomic) bool loadingLastWorkout;
 @property (nonatomic, retain) HKObserverQuery *workoutObservationQuery;
 
-+ (id)_templateForWorkout:(id)arg1 family:(int)arg2;
-+ (id)_unknownTemplateForFamily:(int)arg1;
++ (id)_templateForWorkout:(id)arg1 family:(long long)arg2;
++ (id)_unknownTemplateForFamily:(long long)arg1;
 + (id)_workoutTintColor;
-+ (BOOL)acceptsComplicationFamily:(int)arg1;
-+ (BOOL)acceptsComplicationType:(unsigned int)arg1;
++ (bool)acceptsComplicationFamily:(long long)arg1;
++ (bool)acceptsComplicationType:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (id)_animationImages;
 - (void)_handleDeviceLockChange;
-- (BOOL)_hasActiveWorkout;
-- (BOOL)_hasPausedActiveWorkout;
+- (bool)_hasActiveWorkout;
+- (bool)_hasPausedActiveWorkout;
 - (void)_invalidate;
 - (id)_makeAnimatedImageProvider;
 - (id)_makeLastWorkoutQuery;
@@ -44,8 +44,8 @@
 - (id)_noWorkoutsTemplate;
 - (void)_startLastWorkoutQueryIfPossible;
 - (void)_startObserving;
-- (void)_stopLastWorkoutQuerySynchronously:(BOOL)arg1;
-- (void)_stopObservingSynchronously:(BOOL)arg1;
+- (void)_stopLastWorkoutQuerySynchronously:(bool)arg1;
+- (void)_stopObservingSynchronously:(bool)arg1;
 - (id)_templateForActiveWorkout;
 - (void)_updateActiveWorkoutState;
 - (id)activeWorkoutSnapshot;
@@ -55,21 +55,21 @@
 - (void)getCurrentTimelineEntryWithHandler:(id /* block */)arg1;
 - (void)getLaunchURLForTimelineEntryDate:(id)arg1 timeTravelDate:(id)arg2 withHandler:(id /* block */)arg3;
 - (void)getSupportedTimeTravelDirectionsWithHandler:(id /* block */)arg1;
-- (BOOL)hasKnownLastWorkoutState;
+- (bool)hasKnownLastWorkoutState;
 - (id)healthStore;
-- (id)initWithComplication:(id)arg1 family:(int)arg2;
-- (BOOL)isLoadingLastWorkout;
+- (id)initWithComplication:(id)arg1 family:(long long)arg2;
+- (bool)isLoadingLastWorkout;
 - (id)lastWorkout;
 - (id)lastWorkoutQuery;
 - (id)lockedTemplate;
 - (void)pause;
 - (void)resume;
 - (void)setActiveWorkoutSnapshot:(id)arg1;
-- (void)setHasKnownLastWorkoutState:(BOOL)arg1;
+- (void)setHasKnownLastWorkoutState:(bool)arg1;
 - (void)setHealthStore:(id)arg1;
 - (void)setLastWorkout:(id)arg1;
 - (void)setLastWorkoutQuery:(id)arg1;
-- (void)setLoadingLastWorkout:(BOOL)arg1;
+- (void)setLoadingLastWorkout:(bool)arg1;
 - (void)setWorkoutObservationQuery:(id)arg1;
 - (id)workoutObservationQuery;
 

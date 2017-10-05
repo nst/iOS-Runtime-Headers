@@ -7,20 +7,20 @@
 
 - (id)autorelease;
 - (Class)class;
-- (BOOL)conformsToProtocol:(Protocol *)arg1;
+- (bool)conformsToProtocol:(Protocol *)arg1;
 - (NSString *)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isKindOfClass:(Class)arg1;
-- (BOOL)isMemberOfClass:(Class)arg1;
-- (BOOL)isProxy;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)isKindOfClass:(Class)arg1;
+- (bool)isMemberOfClass:(Class)arg1;
+- (bool)isProxy;
 - (id)performSelector:(SEL)arg1;
 - (id)performSelector:(SEL)arg1 withObject:(id)arg2;
 - (id)performSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
 - (oneway void)release;
-- (BOOL)respondsToSelector:(SEL)arg1;
+- (bool)respondsToSelector:(SEL)arg1;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (id)self;
 - (Class)superclass;
 - (struct _NSZone { }*)zone;

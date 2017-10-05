@@ -5,8 +5,8 @@
 @interface AWDMailSearchEngagement : PBCodable <NSCopying> {
     struct { 
         int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _atoms;
     NSMutableArray * _engagements;
     struct { 
@@ -15,15 +15,18 @@
     }  _has;
     unsigned long long  _numSearchResults;
     int  _searchScope;
+    AWDMailUserSuggestionsEngagment * _suggestionsEngagement;
 }
 
 @property (nonatomic, readonly) int*atoms;
-@property (nonatomic, readonly) unsigned int atomsCount;
+@property (nonatomic, readonly) unsigned long long atomsCount;
 @property (nonatomic, retain) NSMutableArray *engagements;
-@property (nonatomic) BOOL hasNumSearchResults;
-@property (nonatomic) BOOL hasSearchScope;
+@property (nonatomic) bool hasNumSearchResults;
+@property (nonatomic) bool hasSearchScope;
+@property (nonatomic, readonly) bool hasSuggestionsEngagement;
 @property (nonatomic) unsigned long long numSearchResults;
 @property (nonatomic) int searchScope;
+@property (nonatomic, retain) AWDMailUserSuggestionsEngagment *suggestionsEngagement;
 
 + (Class)engagementsType;
 
@@ -34,8 +37,8 @@
 - (void)addEngagements:(id)arg1;
 - (int*)atoms;
 - (id)atomsAsString:(int)arg1;
-- (int)atomsAtIndex:(unsigned int)arg1;
-- (unsigned int)atomsCount;
+- (int)atomsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)atomsCount;
 - (void)clearAtoms;
 - (void)clearEngagements;
 - (void)copyTo:(id)arg1;
@@ -44,24 +47,27 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)engagements;
-- (id)engagementsAtIndex:(unsigned int)arg1;
-- (unsigned int)engagementsCount;
-- (BOOL)hasNumSearchResults;
-- (BOOL)hasSearchScope;
-- (unsigned int)hash;
-- (id)initWithAtoms:(id)arg1 searchScope:(BOOL)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (id)engagementsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)engagementsCount;
+- (bool)hasNumSearchResults;
+- (bool)hasSearchScope;
+- (bool)hasSuggestionsEngagement;
+- (unsigned long long)hash;
+- (id)initWithAtoms:(id)arg1 searchScope:(bool)arg2 suggestionsEngagement:(id)arg3;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)numSearchResults;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)searchScope;
 - (id)searchScopeAsString:(int)arg1;
-- (void)setAtoms:(int*)arg1 count:(unsigned int)arg2;
+- (void)setAtoms:(int*)arg1 count:(unsigned long long)arg2;
 - (void)setEngagements:(id)arg1;
-- (void)setHasNumSearchResults:(BOOL)arg1;
-- (void)setHasSearchScope:(BOOL)arg1;
+- (void)setHasNumSearchResults:(bool)arg1;
+- (void)setHasSearchScope:(bool)arg1;
 - (void)setNumSearchResults:(unsigned long long)arg1;
 - (void)setSearchScope:(int)arg1;
+- (void)setSuggestionsEngagement:(id)arg1;
+- (id)suggestionsEngagement;
 - (void)writeTo:(id)arg1;
 
 @end

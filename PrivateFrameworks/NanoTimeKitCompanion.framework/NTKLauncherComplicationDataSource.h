@@ -4,14 +4,14 @@
 
 @interface NTKLauncherComplicationDataSource : NTKComplicationDataSource
 
-+ (BOOL)acceptsComplicationFamily:(int)arg1;
-+ (BOOL)acceptsComplicationType:(unsigned int)arg1;
++ (bool)acceptsComplicationFamily:(long long)arg1;
++ (bool)acceptsComplicationType:(unsigned long long)arg1;
 
 - (id)_appImage;
 - (id)_appImageProvider;
 - (id)_appTintColor;
 - (id)_appTitle;
-- (id)_circularTemplateMedium:(BOOL)arg1;
+- (id)_circularTemplateMedium:(bool)arg1;
 - (id)_complicationApplicationIdentifier;
 - (id)_currentTimelineEntry;
 - (id)_extraLarge;
@@ -25,9 +25,9 @@
 - (void)getLaunchURLForTimelineEntryDate:(id)arg1 timeTravelDate:(id)arg2 withHandler:(id /* block */)arg3;
 - (void)getSupportedTimeTravelDirectionsWithHandler:(id /* block */)arg1;
 - (void)getTimelineEndDateWithHandler:(id /* block */)arg1;
-- (void)getTimelineEntriesAfterDate:(id)arg1 limit:(unsigned int)arg2 withHandler:(id /* block */)arg3;
-- (void)getTimelineEntriesBeforeDate:(id)arg1 limit:(unsigned int)arg2 withHandler:(id /* block */)arg3;
+- (void)getTimelineEntriesAfterDate:(id)arg1 limit:(unsigned long long)arg2 withHandler:(id /* block */)arg3;
+- (void)getTimelineEntriesBeforeDate:(id)arg1 limit:(unsigned long long)arg2 withHandler:(id /* block */)arg3;
 - (void)getTimelineStartDateWithHandler:(id /* block */)arg1;
-- (unsigned int)timelineAnimationBehavior;
+- (unsigned long long)timelineAnimationBehavior;
 
 @end

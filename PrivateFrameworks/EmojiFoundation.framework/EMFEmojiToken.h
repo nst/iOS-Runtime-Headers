@@ -3,7 +3,7 @@
  */
 
 @interface EMFEmojiToken : NSObject <NSCopying, NSSecureCoding> {
-    BOOL  _didFailCEM;
+    bool  _didFailCEM;
     struct __EmojiTokenWrapper { } * _emojiTokenRef;
     NSString * _localeIdentifier;
     NSString * _string;
@@ -12,20 +12,20 @@
 @property (nonatomic, readonly) NSString *_baseString;
 @property (nonatomic, readonly, copy) NSArray *_skinToneVariantStrings;
 @property (nonatomic, readonly) const struct __EmojiTokenWrapper { }*emojiTokenRef;
-@property (nonatomic, readonly) BOOL isCommon;
+@property (nonatomic, readonly) bool isCommon;
 @property (nonatomic, readonly) EMFEmojiLocaleData *localeData;
 @property (nonatomic, retain) NSString *localeIdentifier;
 @property (nonatomic, readonly) int presentationStyle;
 @property (nonatomic, readonly) int skinTone;
 @property (nonatomic, readonly, copy) NSArray *skinToneVariants;
 @property (nonatomic, copy) NSString *string;
-@property (nonatomic, readonly) BOOL supportsSkinToneVariants;
+@property (nonatomic, readonly) bool supportsSkinToneVariants;
 
 + (id)emojiTokenWithCEMEmojiToken:(struct __EmojiTokenWrapper { }*)arg1;
-+ (id)emojiTokenWithLongCharacter:(unsigned long)arg1 localeData:(id)arg2;
++ (id)emojiTokenWithLongCharacter:(unsigned int)arg1 localeData:(id)arg2;
 + (id)emojiTokenWithString:(id)arg1 localeData:(id)arg2;
 + (id)emojiTokensForCEMEmojiTokens:(struct __CFArray { }*)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_baseString;
@@ -38,23 +38,24 @@
 - (void)dealloc;
 - (struct __EmojiTokenWrapper { }*)emojiTokenRef;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
 - (id)initWithCEMEmojiToken:(struct __EmojiTokenWrapper { }*)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithString:(id)arg1 localeIdentifier:(id)arg2;
-- (BOOL)isCommon;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualIgnoringModifiers:(id)arg1;
+- (bool)isCommon;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualIgnoringModifiers:(id)arg1;
 - (id)localeData;
 - (id)localeIdentifier;
 - (id)nameForType:(int)arg1;
 - (int)presentationStyle;
-- (id)relatedEmojiTokens:(unsigned long)arg1;
+- (id)relatedEmojiTokens:(unsigned long long)arg1;
 - (void)setLocaleIdentifier:(id)arg1;
 - (void)setString:(id)arg1;
 - (int)skinTone;
 - (id)skinToneVariants;
 - (id)string;
-- (BOOL)supportsPresentationStyle:(int)arg1;
-- (BOOL)supportsSkinToneVariants;
+- (bool)supportsPresentationStyle:(int)arg1;
+- (bool)supportsSkinToneVariants;
 
 @end

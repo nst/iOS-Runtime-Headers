@@ -6,21 +6,26 @@
     UIView * _wrappedView;
     UIView * _wrappedViewContainer;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _wrappedViewSize;
 }
 
 @property (nonatomic, retain) UIView *wrappedView;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void).cxx_destruct;
 - (id)_anyDateLabel;
-- (void)_setIsCenterCell:(BOOL)arg1 shouldModifyAlphaOfView:(BOOL)arg2;
+- (void)_setIsCenterCell:(bool)arg1 shouldModifyAlphaOfView:(bool)arg2;
 - (void)_updateWrappedView;
 - (void)_updateWrappedViewFrame;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+
+// Image: /Developer/usr/lib/libMainThreadChecker.dylib
+
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)prepareForReuse;
-- (void)resizeSubviewsWithOldSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)resizeSubviewsWithOldSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setWrappedView:(id)arg1;
 - (id)wrappedView;
 

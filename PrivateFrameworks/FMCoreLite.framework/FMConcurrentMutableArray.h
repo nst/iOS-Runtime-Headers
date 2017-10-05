@@ -7,22 +7,22 @@
     NSMutableArray * _underlyingArray;
 }
 
-@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly) unsigned long long count;
 @property (nonatomic, retain) FMReadWriteLock *lock;
 @property (nonatomic, retain) NSMutableArray *underlyingArray;
 
 - (void).cxx_destruct;
 - (void)addObject:(id)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)init;
 - (id)initWithArray:(id)arg1;
-- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)insertObject:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)lock;
 - (id)nativeArray;
-- (id)objectAtIndex:(unsigned int)arg1;
-- (id)objectAtIndexedSubscript:(unsigned int)arg1;
-- (void)removeObjectAtIndex:(unsigned int)arg1;
-- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
+- (id)objectAtIndex:(unsigned long long)arg1;
+- (id)objectAtIndexedSubscript:(unsigned long long)arg1;
+- (void)removeObjectAtIndex:(unsigned long long)arg1;
+- (void)replaceObjectAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 - (void)setLock:(id)arg1;
 - (void)setUnderlyingArray:(id)arg1;
 - (id)underlyingArray;

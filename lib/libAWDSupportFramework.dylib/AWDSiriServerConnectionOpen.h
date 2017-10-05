@@ -15,9 +15,9 @@
 
 @property (nonatomic) int connectionType;
 @property (nonatomic) unsigned long long duration;
-@property (nonatomic) BOOL hasConnectionType;
-@property (nonatomic) BOOL hasDuration;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasConnectionType;
+@property (nonatomic) bool hasDuration;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) unsigned long long timestamp;
 
 - (int)connectionType;
@@ -26,18 +26,18 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned long long)duration;
-- (BOOL)hasConnectionType;
-- (BOOL)hasDuration;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasConnectionType;
+- (bool)hasDuration;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setConnectionType:(int)arg1;
 - (void)setDuration:(unsigned long long)arg1;
-- (void)setHasConnectionType:(BOOL)arg1;
-- (void)setHasDuration:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasConnectionType:(bool)arg1;
+- (void)setHasDuration:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;

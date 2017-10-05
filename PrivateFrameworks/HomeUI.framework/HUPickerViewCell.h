@@ -5,33 +5,33 @@
 @interface HUPickerViewCell : UITableViewCell <UIPickerViewDataSource, UIPickerViewDelegate> {
     NSArray * _data;
     UIPickerView * _pickerView;
-    BOOL  _shouldPostNotifications;
+    bool  _shouldPostNotifications;
 }
 
 @property (nonatomic, retain) NSArray *data;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIPickerView *pickerView;
 @property (nonatomic, readonly) id selectedValue;
-@property (nonatomic) BOOL shouldPostNotifications;
+@property (nonatomic) bool shouldPostNotifications;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_resizeCellForPickerView;
 - (id)_setupPickerView;
 - (id)data;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (int)numberOfComponentsInPickerView:(id)arg1;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (long long)numberOfComponentsInPickerView:(id)arg1;
 - (id)pickerView;
-- (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
-- (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
-- (id)pickerView:(id)arg1 titleForRow:(int)arg2 forComponent:(int)arg3;
+- (void)pickerView:(id)arg1 didSelectRow:(long long)arg2 inComponent:(long long)arg3;
+- (long long)pickerView:(id)arg1 numberOfRowsInComponent:(long long)arg2;
+- (id)pickerView:(id)arg1 titleForRow:(long long)arg2 forComponent:(long long)arg3;
 - (void)prepareForReuse;
 - (id)selectedValue;
 - (void)setData:(id)arg1;
 - (void)setPickerView:(id)arg1;
-- (void)setShouldPostNotifications:(BOOL)arg1;
-- (BOOL)shouldPostNotifications;
+- (void)setShouldPostNotifications:(bool)arg1;
+- (bool)shouldPostNotifications;
 
 @end

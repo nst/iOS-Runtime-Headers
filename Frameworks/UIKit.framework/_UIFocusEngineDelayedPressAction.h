@@ -3,21 +3,21 @@
  */
 
 @interface _UIFocusEngineDelayedPressAction : NSObject {
-    int  _pressType;
-    _UIFocusEngine * _sender;
+    long long  _pressType;
+    _UIFocusEventRecognizer * _sender;
     double  _timestamp;
 }
 
-@property (nonatomic, readonly) int pressType;
-@property (nonatomic, readonly) _UIFocusEngine *sender;
+@property (nonatomic, readonly) long long pressType;
+@property (nonatomic, readonly) _UIFocusEventRecognizer *sender;
 @property (nonatomic, readonly) double timestamp;
 
-+ (void)sendDelayedPressWithType:(int)arg1 timestamp:(double)arg2 sender:(id)arg3;
++ (void)sendDelayedPressWithType:(long long)arg1 timestamp:(double)arg2 sender:(id)arg3;
 
 - (void).cxx_destruct;
-- (id)_initWithPressType:(int)arg1 timestamp:(double)arg2 sender:(id)arg3;
+- (id)_initWithPressType:(long long)arg1 timestamp:(double)arg2 sender:(id)arg3;
 - (void)_sendPressEvent;
-- (int)pressType;
+- (long long)pressType;
 - (id)sender;
 - (double)timestamp;
 

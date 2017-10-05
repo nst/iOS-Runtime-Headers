@@ -12,7 +12,7 @@
 - (id)encodedClassName;
 - (id)flowScripts;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setFlowScripts:(id)arg1;
 
 @end

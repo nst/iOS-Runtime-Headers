@@ -10,8 +10,8 @@
 @property (nonatomic) <PUPhotoMarkupViewControllerObserver> *markupObserver;
 @property (nonatomic, retain) <PUReviewAssetProvider> *reviewAssetProvider;
 
-+ (BOOL)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2;
-+ (BOOL)shouldEnableOnAsset:(id)arg1 inAssetCollection:(id)arg2;
++ (bool)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2;
++ (bool)shouldEnableOnAsset:(id)arg1 inAssetCollection:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_presentMarkupViewControllerForReviewAsset:(id)arg1;

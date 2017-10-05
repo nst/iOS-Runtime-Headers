@@ -4,15 +4,15 @@
 
 @interface MTLRenderPipelineColorAttachmentDescriptor : NSObject <NSCopying>
 
-@property (nonatomic) unsigned int alphaBlendOperation;
-@property (getter=isBlendingEnabled, nonatomic) BOOL blendingEnabled;
-@property (nonatomic) unsigned int destinationAlphaBlendFactor;
-@property (nonatomic) unsigned int destinationRGBBlendFactor;
-@property (nonatomic) unsigned int pixelFormat;
-@property (nonatomic) unsigned int rgbBlendOperation;
-@property (nonatomic) unsigned int sourceAlphaBlendFactor;
-@property (nonatomic) unsigned int sourceRGBBlendFactor;
-@property (nonatomic) unsigned int writeMask;
+@property (nonatomic) unsigned long long alphaBlendOperation;
+@property (getter=isBlendingEnabled, nonatomic) bool blendingEnabled;
+@property (nonatomic) unsigned long long destinationAlphaBlendFactor;
+@property (nonatomic) unsigned long long destinationRGBBlendFactor;
+@property (nonatomic) unsigned long long pixelFormat;
+@property (nonatomic) unsigned long long rgbBlendOperation;
+@property (nonatomic) unsigned long long sourceAlphaBlendFactor;
+@property (nonatomic) unsigned long long sourceRGBBlendFactor;
+@property (nonatomic) unsigned long long writeMask;
 
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

@@ -6,14 +6,14 @@
 
 @property (nonatomic, copy) NSString *data;
 @property (nonatomic) int identifier;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
 - (id)data;
 - (int)identifier;
-- (id)initWithType:(int)arg1;
+- (id)initWithType:(long long)arg1;
 - (void)setData:(id)arg1;
 - (void)setIdentifier:(int)arg1;
-- (void)setType:(int)arg1;
-- (int)type;
+- (void)setType:(long long)arg1;
+- (long long)type;
 
 @end

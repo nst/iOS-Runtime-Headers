@@ -3,7 +3,7 @@
  */
 
 @interface SGPreparedStatement : NSObject <NSCopying, NSDiscardableContent> {
-    BOOL  _isFinalized;
+    bool  _isFinalized;
     SGSqliteDatabase * _owner;
     struct sqlite3_stmt { } * _stmt;
     unsigned int  _useCount;
@@ -13,13 +13,13 @@
 
 - (void).cxx_destruct;
 - (void)_finalizeWithLogWarning:(id)arg1;
-- (BOOL)beginContentAccess;
+- (bool)beginContentAccess;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)discardContentIfPossible;
 - (void)endContentAccess;
 - (id)initWithStatementPointer:(struct sqlite3_stmt { }*)arg1 owner:(id)arg2;
-- (BOOL)isContentDiscarded;
+- (bool)isContentDiscarded;
 - (struct sqlite3_stmt { }*)stmt;
 
 @end

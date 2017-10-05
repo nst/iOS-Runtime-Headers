@@ -6,30 +6,26 @@
     PHAssetCollection * _assetCollection;
     PHPhotoLibrary * _library;
     NPTOLocketReader * _reader;
-    BOOL  _registeredAsPhotoLibraryChangeObserver;
+    bool  _registeredAsPhotoLibraryChangeObserver;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, retain) PHPhotoLibrary *library;
+@property (readonly) unsigned long long hash;
 @property (retain) NPTOLocketReader *reader;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_changeDetailsToDictionary:(id)arg1;
-- (id)_getChangeDetailsIfNecessary:(id)arg1;
+- (id)_makeFetchOptions;
 - (id)_makeReaderWithFetchResult:(id)arg1;
 - (void)_registerPhotoLibraryChangeObserverIfNeeded;
 - (void)_unregisterPhotoLibraryChangeObserverIfNeeded;
-- (void)_updateReaderWithSyncProgress:(BOOL)arg1;
 - (id)allAssets;
 - (void)dealloc;
 - (id)initWithAssetCollection:(id)arg1;
-- (id)library;
 - (void)photoLibraryDidChange:(id)arg1;
 - (id)reader;
-- (void)setLibrary:(id)arg1;
 - (void)setReader:(id)arg1;
 
 @end

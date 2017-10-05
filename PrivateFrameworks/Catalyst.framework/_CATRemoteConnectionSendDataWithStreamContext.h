@@ -3,36 +3,38 @@
  */
 
 @interface _CATRemoteConnectionSendDataWithStreamContext : NSObject <_CATRemoteConnectionSendContext> {
-    unsigned int  _bufferSize;
-    unsigned int  _bytesWritten;
-    unsigned int  _dataLength;
+    unsigned long long  _bufferSize;
+    unsigned long long  _bytesWritten;
+    unsigned long long  _dataLength;
     NSInputStream * _stream;
     id  _userInfo;
     NSMutableData * mBuffer;
-    unsigned int  mBytesRead;
+    unsigned long long  mBytesRead;
     NSData * mHeaderData;
 }
 
-@property (nonatomic, readonly) unsigned int bufferSize;
-@property (nonatomic) unsigned int bytesWritten;
-@property (nonatomic, readonly) unsigned int dataLength;
+@property (nonatomic, readonly) unsigned long long bufferSize;
+@property (nonatomic) unsigned long long bytesWritten;
+@property (nonatomic, readonly) unsigned long long clientBytesWritten;
+@property (nonatomic, readonly) unsigned long long dataLength;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL hasBytesRemaining;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool hasBytesRemaining;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSInputStream *stream;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) id userInfo;
 
 - (void).cxx_destruct;
-- (unsigned int)bufferSize;
+- (unsigned long long)bufferSize;
 - (id)bufferedDataWithError:(id*)arg1;
-- (unsigned int)bytesWritten;
-- (unsigned int)dataLength;
+- (unsigned long long)bytesWritten;
+- (unsigned long long)clientBytesWritten;
+- (unsigned long long)dataLength;
 - (void)dealloc;
-- (BOOL)hasBytesRemaining;
-- (id)initWithStream:(id)arg1 length:(unsigned int)arg2 bufferSize:(unsigned int)arg3 userInfo:(id)arg4;
-- (void)setBytesWritten:(unsigned int)arg1;
+- (bool)hasBytesRemaining;
+- (id)initWithStream:(id)arg1 length:(unsigned long long)arg2 bufferSize:(unsigned long long)arg3 userInfo:(id)arg4;
+- (void)setBytesWritten:(unsigned long long)arg1;
 - (id)stream;
 - (id)userInfo;
 

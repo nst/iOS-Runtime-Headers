@@ -4,36 +4,40 @@
 
 @interface _DKCategory : _DKObject <_DKHasComparableValue, _DKHasObjectType, _DKHasPrimaryValue> {
     _DKCategoryType * _categoryType;
-    int  _integerValue;
+    long long  _integerValue;
 }
 
 @property (retain) _DKCategoryType *categoryType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property int integerValue;
+@property (readonly) unsigned long long hash;
+@property long long integerValue;
 @property (readonly) Class superclass;
 
-+ (id)_categoryFromManagedObject:(id)arg1 readMetadata:(BOOL)arg2 cache:(id)arg3;
-+ (id)categoryWithInteger:(int)arg1 type:(id)arg2;
++ (id)_categoryFromManagedObject:(id)arg1 readMetadata:(bool)arg2 cache:(id)arg3;
++ (id)categoryWithInteger:(long long)arg1 type:(id)arg2;
 + (id)entityName;
-+ (id)objectFromManagedObject:(id)arg1 readMetadata:(BOOL)arg2 cache:(id)arg3;
-+ (BOOL)supportsSecureCoding;
++ (id)fromPBCodable:(id)arg1;
++ (id)objectFromManagedObject:(id)arg1 readMetadata:(bool)arg2 cache:(id)arg3;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)categoryType;
-- (int)compareValue:(id)arg1;
-- (BOOL)copyToManagedObject:(id)arg1;
+- (long long)compareValue:(id)arg1;
+- (bool)copyToManagedObject:(id)arg1;
 - (id)description;
 - (double)doubleValue;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithInteger:(int)arg1 type:(id)arg2 cache:(id)arg3;
-- (int)integerValue;
+- (id)initWithInteger:(long long)arg1 type:(id)arg2 cache:(id)arg3;
+- (long long)integerValue;
+- (bool)isEqual:(id)arg1;
 - (id)objectType;
 - (id)primaryValue;
 - (void)setCategoryType:(id)arg1;
-- (void)setIntegerValue:(int)arg1;
+- (void)setIntegerValue:(long long)arg1;
 - (id)stringValue;
+- (id)toPBCodable;
+- (long long)typeCode;
 
 @end

@@ -8,14 +8,14 @@
 
 + (id)resourceWithSharedResource:(id)arg1;
 
-- (struct DataBufferInfo { int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })bufferInfo;
+- (struct DataBufferInfo { int x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; })bufferInfo;
 - (int)caching;
 - (void)dealloc;
 - (void)flushMemory;
 - (id)get;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithSharedResource:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (unsigned long long)uniqueIdentifier;
 
 @end

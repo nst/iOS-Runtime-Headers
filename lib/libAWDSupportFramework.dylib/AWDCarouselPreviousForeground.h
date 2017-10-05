@@ -12,8 +12,8 @@
 }
 
 @property (nonatomic) unsigned long long elapsedTime;
-@property (nonatomic) BOOL hasElapsedTime;
-@property (nonatomic) BOOL hasReason;
+@property (nonatomic) bool hasElapsedTime;
+@property (nonatomic) bool hasReason;
 @property (nonatomic) unsigned int reason;
 
 - (void)copyTo:(id)arg1;
@@ -21,16 +21,16 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned long long)elapsedTime;
-- (BOOL)hasElapsedTime;
-- (BOOL)hasReason;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasElapsedTime;
+- (bool)hasReason;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)reason;
 - (void)setElapsedTime:(unsigned long long)arg1;
-- (void)setHasElapsedTime:(BOOL)arg1;
-- (void)setHasReason:(BOOL)arg1;
+- (void)setHasElapsedTime:(bool)arg1;
+- (void)setHasReason:(bool)arg1;
 - (void)setReason:(unsigned int)arg1;
 - (void)writeTo:(id)arg1;
 

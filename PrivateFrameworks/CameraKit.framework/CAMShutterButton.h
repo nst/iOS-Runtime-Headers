@@ -6,23 +6,23 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int mode;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long mode;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
 
-+ (id)shutterButtonWithSpec:(struct CAMShutterButtonSpec { float x1; float x2; float x3; float x4; })arg1;
++ (id)shutterButtonWithSpec:(struct CAMShutterButtonSpec { double x1; double x2; double x3; double x4; })arg1;
 
-- (int)mode;
-- (void)setMode:(int)arg1 animated:(BOOL)arg2;
+- (long long)mode;
+- (void)setMode:(long long)arg1 animated:(bool)arg2;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
 + (id)actionMenuShutterButton;
 
-- (void)setEnabled:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setEnabled:(bool)arg1 animated:(bool)arg2;
+- (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
+- (void)setSelected:(bool)arg1 animated:(bool)arg2;
 
 @end

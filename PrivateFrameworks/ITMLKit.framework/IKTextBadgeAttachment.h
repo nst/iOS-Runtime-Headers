@@ -11,7 +11,7 @@
 @property (nonatomic, retain) IKColor *tintColor;
 @property (setter=tv_setCurrentTintColor:, nonatomic, retain) IKColor *tv_currentTintColor;
 @property (setter=tv_setHighlightColor:, nonatomic, retain) IKColor *tv_highlightColor;
-@property (getter=tv_isResolving, nonatomic, readonly) BOOL tv_resolving;
+@property (getter=tv_isResolving, nonatomic, readonly) bool tv_resolving;
 
 // Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
 
@@ -26,12 +26,12 @@
 - (id)tv_currentTintColor;
 - (id)tv_highlightColor;
 - (id)tv_imageProxy;
-- (BOOL)tv_isResolving;
-- (void)tv_resolveWithTextLayoutObserver:(id /* block */)arg1;
+- (bool)tv_isResolving;
+- (void)tv_resolveWithTextLayoutDirection:(long long)arg1 layoutObserver:(id /* block */)arg2;
 - (void)tv_setCurrentTintColor:(id)arg1;
 - (void)tv_setHighlightColor:(id)arg1;
 - (void)tv_setImage:(id)arg1;
 - (void)tv_setImageProxy:(id)arg1;
-- (void)tv_setResolving:(BOOL)arg1;
+- (void)tv_setResolving:(bool)arg1;
 
 @end

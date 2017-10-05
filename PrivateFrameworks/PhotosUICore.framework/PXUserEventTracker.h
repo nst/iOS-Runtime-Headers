@@ -3,28 +3,28 @@
  */
 
 @interface PXUserEventTracker : PXUserEventTrackerCommon {
-    unsigned int  _MaxDepthOfRelatedJumps;
+    unsigned long long  _MaxDepthOfRelatedJumps;
     NSHashTable * __relatedLookupTable;
     double  _timeLoggedOnDetailViewWillAppear;
     double  _timeLoggedOnMemoriesFeedWillAppear;
-    unsigned int  _totalNumberOfRelatedJumps;
+    unsigned long long  _totalNumberOfRelatedJumps;
 }
 
 @property (setter=_setRelatedLookupTable:, nonatomic, retain) NSHashTable *_relatedLookupTable;
 
-+ (BOOL)_isMemoryTriggered:(id)arg1;
++ (bool)_isMemoryTriggered:(id)arg1;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (void)_aggdDurationLoggingDryrun:(unsigned int)arg1 duration:(double)arg2;
-- (void)_aggdDurationLoggingDryrunForSubState:(unsigned int)arg1 duration:(double)arg2;
-- (void)_aggdJumpCountLoggingDryrun:(unsigned int)arg1 totalJumpCount:(unsigned int)arg2;
+- (void)_aggdDurationLoggingDryrun:(unsigned long long)arg1 duration:(double)arg2;
+- (void)_aggdDurationLoggingDryrunForSubState:(unsigned long long)arg1 duration:(double)arg2;
+- (void)_aggdJumpCountLoggingDryrun:(unsigned long long)arg1 totalJumpCount:(unsigned long long)arg2;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_logAggdAddValueForScalarKey:(struct __CFString { }*)arg1 value:(long long)arg2;
-- (void)_logAggdDurationCounterForLogState:(unsigned int)arg1 duration:(double)arg2;
-- (void)_logAggdDurationCounterForLogSubState:(unsigned int)arg1 duration:(double)arg2;
-- (void)_logAggdRelatedJumpStatistics:(unsigned int)arg1 totalJumpCount:(unsigned int)arg2;
+- (void)_logAggdDurationCounterForLogState:(unsigned long long)arg1 duration:(double)arg2;
+- (void)_logAggdDurationCounterForLogSubState:(unsigned long long)arg1 duration:(double)arg2;
+- (void)_logAggdRelatedJumpStatistics:(unsigned long long)arg1 totalJumpCount:(unsigned long long)arg2;
 - (id)_relatedLookupTable;
 - (void)_resetDetailViewTraversalStatistics;
 - (void)_setRelatedLookupTable:(id)arg1;
@@ -36,8 +36,28 @@
 - (void)didPlayMiroMovieForAssetCollection:(id)arg1;
 - (void)didViewDetailsForAssetCollection:(id)arg1;
 - (id)init;
-- (void)logCounterValuesForLogState:(unsigned int)arg1 duration:(double)arg2;
-- (void)logCounterValuesForLogSubState:(unsigned int)arg1 duration:(double)arg2;
+- (void)logBootstrapMergeCandidateFaceCountVerifiedConfirmed:(unsigned long long)arg1 verifiedRejected:(unsigned long long)arg2 unverifiedConfirmed:(unsigned long long)arg3 unverifiedRejected:(unsigned long long)arg4;
+- (void)logBootstrapMergeCandidatesVerifiedConfirmed:(unsigned long long)arg1 verifiedRejected:(unsigned long long)arg2 unverifiedConfirmed:(unsigned long long)arg3 unverifiedRejected:(unsigned long long)arg4;
+- (void)logConfirmAdditionalCVMLFaceCountConfirmed:(unsigned long long)arg1 rejected:(unsigned long long)arg2;
+- (void)logConfirmAdditionalMergeCandidateFaceCountVerifiedConfirmed:(unsigned long long)arg1 verifiedRejected:(unsigned long long)arg2 unverifiedConfirmed:(unsigned long long)arg3 unverifiedRejected:(unsigned long long)arg4;
+- (void)logConfirmAdditionalMergeCandidatesVerifiedConfirmed:(unsigned long long)arg1 verifiedRejected:(unsigned long long)arg2 unverifiedConfirmed:(unsigned long long)arg3 unverifiedRejected:(unsigned long long)arg4;
+- (void)logConfirmAdditionalSuggestionsConfirmed:(unsigned long long)arg1 rejected:(unsigned long long)arg2;
+- (void)logCounterValuesForLogState:(unsigned long long)arg1 duration:(double)arg2;
+- (void)logCounterValuesForLogSubState:(unsigned long long)arg1 duration:(double)arg2;
+- (void)logInterestingMemoryNotificationRespondedCount;
+- (void)logInterestingMemoryNotificationSeenCount;
+- (void)logMergeCandidateInlineControlWithSignature:(unsigned long long)arg1;
+- (void)logNamingTypeSelection:(unsigned long long)arg1;
+- (void)logPeopleAddToPeopleHome;
+- (void)logPeopleConfirmAdditionalViewCount;
+- (void)logPeopleDetailCount;
+- (void)logPeopleDetailKeyPhotoChanged;
+- (void)logPeopleDetailNotThisPerson;
+- (void)logPeopleDetailShowFaces;
+- (void)logPeopleHomeCount;
+- (void)logPeopleHomeFavoritePersonCount:(unsigned long long)arg1 totalPersonCount:(unsigned long long)arg2;
+- (void)logPeopleMeSuggestionConfirmed:(bool)arg1;
+- (void)logPeopleRemoveFromPeopleHome;
 - (void)willViewDetailsWithCurrentContext:(id)arg1;
 - (void)willViewMemoriesFeedView;
 

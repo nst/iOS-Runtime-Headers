@@ -44,7 +44,7 @@
 @property (readonly) NSNumber *timeOfWeekWeight;
 @property (readonly) NSNumber *timeWeight;
 
-+ (id)parametersForModel:(unsigned int)arg1;
++ (id)parametersForModel:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (id)aggregationFunction;

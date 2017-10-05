@@ -2,40 +2,16 @@
    Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
  */
 
-@interface NTKLocationManager : NSObject {
-    CLLocation * _currentLocation;
-    BOOL  _enableLogging;
-    CLLocation * _forcedLocation;
-    CLLocation * _lastLocation;
-    NSDate * _lastLocationUpdateTime;
-}
-
-@property (nonatomic, retain) CLLocation *currentLocation;
-@property (nonatomic, retain) CLLocation *forcedLocation;
-@property (nonatomic, retain) CLLocation *lastLocation;
-@property (nonatomic, retain) NSDate *lastLocationUpdateTime;
+@interface NTKLocationManager : NSObject
 
 + (id)fallbackLocation;
-+ (id)lastLocationUpdateTimeFromDefaults;
-+ (id)locationFromDefaults;
 + (id)sharedLocationManager;
-+ (void)updateDefaultsLocation:(id)arg1;
-+ (void)updateLastLocationUpdateTime:(id)arg1;
 
-- (void).cxx_destruct;
+- (id)anyLocation;
 - (id)currentLocation;
-- (void)forceLocation:(id)arg1;
-- (id)forcedLocation;
-- (id)init;
-- (id)lastLocation;
-- (id)lastLocationUpdateTime;
-- (id)nameOfCurrentLocation;
-- (void)placemarkForCurrentLocationWithHandler:(id /* block */)arg1;
-- (void)setCurrentLocation:(id)arg1;
-- (void)setForcedLocation:(id)arg1;
-- (void)setLastLocation:(id)arg1;
-- (void)setLastLocationUpdateTime:(id)arg1;
-- (struct NSNumber { Class x1; }*)startLocationUpdatesWithHandler:(id /* block */)arg1;
-- (void)stopLocationUpdatesForToken:(struct NSNumber { Class x1; }*)arg1;
+- (id)previousLocation;
+- (struct NSString { Class x1; }*)startLocationUpdatesWithHandler:(id /* block */)arg1;
+- (struct NSString { Class x1; }*)startLocationUpdatesWithIdentifier:(id)arg1 handler:(id /* block */)arg2;
+- (void)stopLocationUpdatesForToken:(struct NSString { Class x1; }*)arg1;
 
 @end

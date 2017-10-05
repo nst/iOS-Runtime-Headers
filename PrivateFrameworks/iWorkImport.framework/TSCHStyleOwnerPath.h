@@ -20,10 +20,10 @@
 - (void)dealloc;
 - (void)didInitFromSOS;
 - (Class)genericPropertyMapClass;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithArchive:(const struct StyleOwnerPath { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::UUID> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithUUIDs:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)p_axisStyleOwnerForChart:(id)arg1;
 - (id)p_createUUIDDecoder;
 - (id)p_referenceLineStyleOwnerForChart:(id)arg1;

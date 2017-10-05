@@ -4,11 +4,11 @@
 
 @interface PDCmdBehavior : PDAnimateBehavior {
     int  mBehaviorType;
-    BOOL  mHasBehaviorType;
+    bool  mHasBehaviorType;
 }
 
 - (int)behaviorType;
-- (BOOL)hasBehaviorType;
+- (bool)hasBehaviorType;
 - (void)setBehaviorType:(int)arg1;
 
 @end

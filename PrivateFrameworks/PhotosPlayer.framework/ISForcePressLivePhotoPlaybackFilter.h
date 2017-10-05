@@ -3,40 +3,40 @@
  */
 
 @interface ISForcePressLivePhotoPlaybackFilter : ISLivePhotoPlaybackFilter {
-    BOOL  __aboveTimeoutThreshold;
-    int  __currentTimeoutRequestId;
-    BOOL  __forceAboveThresholdLongEnough;
-    BOOL  __hasCrossedHintThreshold;
+    bool  __aboveTimeoutThreshold;
+    long long  __currentTimeoutRequestId;
+    bool  __forceAboveThresholdLongEnough;
+    bool  __hasCrossedHintThreshold;
     struct { 
-        BOOL respondsToHintWithProgress; 
-        BOOL respondsToStartPlayback; 
-        BOOL respondsToStopPlayback; 
+        bool respondsToHintWithProgress; 
+        bool respondsToStartPlayback; 
+        bool respondsToStopPlayback; 
     }  _delegateFlags;
-    BOOL  _didReachMaxForce;
-    float  _forceProgress;
-    BOOL  _touchActive;
+    bool  _didReachMaxForce;
+    double  _forceProgress;
+    bool  _touchActive;
 }
 
-@property (setter=_setAboveTimeoutThreshold:, nonatomic) BOOL _aboveTimeoutThreshold;
-@property (setter=_setCurrentTimeoutRequestId:, nonatomic) int _currentTimeoutRequestId;
-@property (setter=_setForceAboveThresholdLongEnough:, nonatomic) BOOL _forceAboveThresholdLongEnough;
-@property (setter=_setHasCrossedHintThreshold:, nonatomic) BOOL _hasCrossedHintThreshold;
-@property (nonatomic) float forceProgress;
-@property (getter=isTouchActive, nonatomic) BOOL touchActive;
+@property (setter=_setAboveTimeoutThreshold:, nonatomic) bool _aboveTimeoutThreshold;
+@property (setter=_setCurrentTimeoutRequestId:, nonatomic) long long _currentTimeoutRequestId;
+@property (setter=_setForceAboveThresholdLongEnough:, nonatomic) bool _forceAboveThresholdLongEnough;
+@property (setter=_setHasCrossedHintThreshold:, nonatomic) bool _hasCrossedHintThreshold;
+@property (nonatomic) double forceProgress;
+@property (getter=isTouchActive, nonatomic) bool touchActive;
 
-- (BOOL)_aboveTimeoutThreshold;
-- (int)_currentTimeoutRequestId;
-- (BOOL)_forceAboveThresholdLongEnough;
-- (BOOL)_hasCrossedHintThreshold;
-- (void)_setAboveTimeoutThreshold:(BOOL)arg1;
-- (void)_setCurrentTimeoutRequestId:(int)arg1;
-- (void)_setForceAboveThresholdLongEnough:(BOOL)arg1;
-- (void)_setHasCrossedHintThreshold:(BOOL)arg1;
+- (bool)_aboveTimeoutThreshold;
+- (long long)_currentTimeoutRequestId;
+- (bool)_forceAboveThresholdLongEnough;
+- (bool)_hasCrossedHintThreshold;
+- (void)_setAboveTimeoutThreshold:(bool)arg1;
+- (void)_setCurrentTimeoutRequestId:(long long)arg1;
+- (void)_setForceAboveThresholdLongEnough:(bool)arg1;
+- (void)_setHasCrossedHintThreshold:(bool)arg1;
 - (void)didPerformChanges;
-- (float)forceProgress;
-- (BOOL)isTouchActive;
-- (void)setForceProgress:(float)arg1;
-- (void)setState:(int)arg1;
-- (void)setTouchActive:(BOOL)arg1;
+- (double)forceProgress;
+- (bool)isTouchActive;
+- (void)setForceProgress:(double)arg1;
+- (void)setState:(long long)arg1;
+- (void)setTouchActive:(bool)arg1;
 
 @end

@@ -8,6 +8,6 @@
 
 - (struct _MRHIDButtonEvent { unsigned int x1; unsigned int x2; bool x3; })buttonEvent;
 - (id)initWithButtonEvent:(struct _MRHIDButtonEvent { unsigned int x1; unsigned int x2; bool x3; })arg1;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

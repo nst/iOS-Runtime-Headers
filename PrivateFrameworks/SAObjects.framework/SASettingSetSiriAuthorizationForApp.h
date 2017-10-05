@@ -12,7 +12,8 @@
 - (id)bundleId;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)mutatingCommand;
+- (bool)requiresResponse;
 - (void)setBundleId:(id)arg1;
 
 @end

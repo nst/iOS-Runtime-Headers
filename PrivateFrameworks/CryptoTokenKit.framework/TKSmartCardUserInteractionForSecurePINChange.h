@@ -4,39 +4,39 @@
 
 @interface TKSmartCardUserInteractionForSecurePINChange : TKSmartCardUserInteractionForPINOperation <NSSecureCoding> {
     NSData * _APDU;
-    unsigned int  _PINConfirmation;
+    unsigned long long  _PINConfirmation;
     TKSmartCardPINFormat * _PINFormat;
-    int  _currentPINByteOffset;
-    int  _newPINByteOffset;
+    long long  _currentPINByteOffset;
+    long long  _newPINByteOffset;
     TKSmartCardSlot * _slot;
 }
 
 @property (retain) NSData *APDU;
-@property unsigned int PINConfirmation;
+@property unsigned long long PINConfirmation;
 @property (retain) TKSmartCardPINFormat *PINFormat;
-@property int currentPINByteOffset;
-@property int newPINByteOffset;
+@property long long currentPINByteOffset;
+@property long long newPINByteOffset;
 @property TKSmartCardSlot *slot;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)APDU;
-- (unsigned int)PINConfirmation;
+- (unsigned long long)PINConfirmation;
 - (id)PINFormat;
-- (int)currentPINByteOffset;
+- (long long)currentPINByteOffset;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (int)newPINByteOffset;
+- (long long)newPINByteOffset;
 - (void)runWithReply:(id /* block */)arg1;
 - (void)setAPDU:(id)arg1;
-- (void)setCurrentPINByteOffset:(int)arg1;
-- (void)setNewPINByteOffset:(int)arg1;
-- (void)setPINConfirmation:(unsigned int)arg1;
+- (void)setCurrentPINByteOffset:(long long)arg1;
+- (void)setNewPINByteOffset:(long long)arg1;
+- (void)setPINConfirmation:(unsigned long long)arg1;
 - (void)setPINFormat:(id)arg1;
 - (void)setSlot:(id)arg1;
-- (void)setSlot:(id)arg1 PINFormat:(id)arg2 APDU:(id)arg3 currentPINByteOffset:(int)arg4 newPINByteOffset:(int)arg5;
+- (void)setSlot:(id)arg1 PINFormat:(id)arg2 APDU:(id)arg3 currentPINByteOffset:(long long)arg4 newPINByteOffset:(long long)arg5;
 - (id)slot;
 
 @end

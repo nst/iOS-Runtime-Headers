@@ -3,7 +3,7 @@
  */
 
 @interface PBBridgeBarcodeScannerView : UIView <AVCaptureMetadataOutputObjectsDelegate> {
-    BOOL  _canUseCamera;
+    bool  _canUseCamera;
     AVCaptureSession * _captureSession;
     <PBBridgeCaptureDelegate> * _delegate;
     AVCaptureDeviceInput * _deviceInput;
@@ -11,25 +11,25 @@
     AVCaptureVideoPreviewLayer * _previewLayer;
 }
 
-@property (nonatomic, readonly) BOOL canUseCamera;
+@property (nonatomic, readonly) bool canUseCamera;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PBBridgeCaptureDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isRunning;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isRunning;
 @property (nonatomic, readonly) AVCaptureVideoPreviewLayer *previewLayer;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_changeCameraConfiguration;
-- (void)autoExposeAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)autoFocusAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)canUseCamera;
+- (void)autoExposeAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)autoFocusAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (bool)canUseCamera;
 - (void)dealloc;
 - (id)delegate;
 - (void)handleRuntimeError:(id)arg1;
 - (id)initWithDelegate:(id)arg1;
-- (BOOL)isRunning;
+- (bool)isRunning;
 - (void)layoutSubviews;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)previewLayer;

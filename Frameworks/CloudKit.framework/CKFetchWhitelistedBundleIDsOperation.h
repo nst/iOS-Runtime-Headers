@@ -16,7 +16,7 @@
 - (id)activityCreate;
 - (id)bundleIDs;
 - (id /* block */)fetchWhitelistedBundleIDsCompletionBlock;
-- (BOOL)hasCKOperationCallbacksSet;
+- (bool)hasCKOperationCallbacksSet;
 - (Class)operationInfoClass;
 - (void)performCKOperation;
 - (void)setBundleIDs:(id)arg1;

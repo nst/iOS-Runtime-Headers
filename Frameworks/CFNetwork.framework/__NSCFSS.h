@@ -12,6 +12,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)initWithTrustChallenge:(int (*)arg1 capture:(id /* block */)arg2;
-- (BOOL)shouldTrust:(struct __SecTrust { }*)arg1;
+- (bool)shouldTrust:(struct __SecTrust { }*)arg1;
 
 @end

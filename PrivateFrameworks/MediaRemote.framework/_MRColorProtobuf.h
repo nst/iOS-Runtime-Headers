@@ -18,10 +18,10 @@
 @property (nonatomic) float alpha;
 @property (nonatomic) float blue;
 @property (nonatomic) float green;
-@property (nonatomic) BOOL hasAlpha;
-@property (nonatomic) BOOL hasBlue;
-@property (nonatomic) BOOL hasGreen;
-@property (nonatomic) BOOL hasRed;
+@property (nonatomic) bool hasAlpha;
+@property (nonatomic) bool hasBlue;
+@property (nonatomic) bool hasGreen;
+@property (nonatomic) bool hasRed;
 @property (nonatomic) float red;
 
 - (float)alpha;
@@ -31,22 +31,22 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (float)green;
-- (BOOL)hasAlpha;
-- (BOOL)hasBlue;
-- (BOOL)hasGreen;
-- (BOOL)hasRed;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAlpha;
+- (bool)hasBlue;
+- (bool)hasGreen;
+- (bool)hasRed;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (float)red;
 - (void)setAlpha:(float)arg1;
 - (void)setBlue:(float)arg1;
 - (void)setGreen:(float)arg1;
-- (void)setHasAlpha:(BOOL)arg1;
-- (void)setHasBlue:(BOOL)arg1;
-- (void)setHasGreen:(BOOL)arg1;
-- (void)setHasRed:(BOOL)arg1;
+- (void)setHasAlpha:(bool)arg1;
+- (void)setHasBlue:(bool)arg1;
+- (void)setHasGreen:(bool)arg1;
+- (void)setHasRed:(bool)arg1;
 - (void)setRed:(float)arg1;
 - (void)writeTo:(id)arg1;
 

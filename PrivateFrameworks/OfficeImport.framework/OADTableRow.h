@@ -8,8 +8,8 @@
 }
 
 - (id)addCell;
-- (id)cellAtIndex:(unsigned int)arg1;
-- (unsigned int)cellCount;
+- (id)cellAtIndex:(unsigned long long)arg1;
+- (unsigned long long)cellCount;
 - (void)dealloc;
 - (id)description;
 - (void)flipCellsRTL;

@@ -22,9 +22,9 @@
 - (id)addTextField;
 - (id)chevron;
 - (id)componentConstraints;
+- (void)contentSizeCategoryDidChange:(id)arg1;
 - (id)currentConstraintsForMetrics:(id)arg1;
-- (void)dealloc;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)prepareForReuse;
 - (void)setChevron:(id)arg1;
 - (void)setComponentConstraints:(id)arg1;

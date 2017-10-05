@@ -6,20 +6,20 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int hour;
-@property (nonatomic) int minute;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long hour;
+@property (nonatomic) long long minute;
 @property (readonly) Class superclass;
 
-+ (id)newAceObjectWithDictionary:(id)arg1 context:(id)arg2;
++ (id)aceObjectWithDictionary:(id)arg1 context:(id)arg2;
 + (id)nightShiftTransitionTime;
 + (id)nightShiftTransitionTimeWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (int)hour;
-- (int)minute;
-- (void)setHour:(int)arg1;
-- (void)setMinute:(int)arg1;
+- (long long)hour;
+- (long long)minute;
+- (void)setHour:(long long)arg1;
+- (void)setMinute:(long long)arg1;
 
 @end

@@ -25,7 +25,7 @@
 - (id)elementFadingLayers;
 - (id)elementLayers;
 - (id)layersAlreadyHaveProperTransforms;
-- (id)layersRequiringGeometryTransformsBackgroundOnly:(BOOL)arg1;
+- (id)layersRequiringGeometryTransformsBackgroundOnly:(bool)arg1;
 - (id)legendLayer;
 - (id)referenceLineLayers;
 - (void)setBackgroundLayer:(id)arg1;

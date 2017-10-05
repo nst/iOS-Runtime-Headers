@@ -3,7 +3,7 @@
  */
 
 @interface NTKModularSmallColumnTemplateView : NTKModularTemplateView {
-    BOOL  _calculatedFontSize;
+    bool  _calculatedFontSize;
     NTKColoringLabel * _row1Column1Label;
     NTKColoringLabel * _row1Column2Label;
     NTKColoringLabel * _row2Column1Label;
@@ -12,18 +12,18 @@
 
 @property (nonatomic, readonly) CLKComplicationTemplateModularSmallColumnsText *complicationTemplate;
 
-+ (BOOL)handlesComplicationTemplate:(id)arg1;
++ (bool)handlesComplicationTemplate:(id)arg1;
 + (void)load;
-+ (BOOL)supportsComplicationFamily:(int)arg1;
++ (bool)supportsComplicationFamily:(long long)arg1;
 
 - (void).cxx_destruct;
-- (id)_bodyFontOfSize:(float)arg1;
+- (id)_bodyFontOfSize:(double)arg1;
 - (void)_enumerateForegroundColoringViewsWithBlock:(id /* block */)arg1;
 - (void)_enumerateSecondaryForegroundColoringViewsWithBlock:(id /* block */)arg1;
-- (id)_headerFontOfSize:(float)arg1;
+- (id)_headerFontOfSize:(double)arg1;
 - (void)_layoutContentView;
 - (id)_newLabelSubview;
 - (void)_update;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 @end

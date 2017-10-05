@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly) CNLabeledValue *value;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)initWithValue:(id)arg1;
 - (id)value;

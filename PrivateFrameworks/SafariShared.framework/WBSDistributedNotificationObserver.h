@@ -6,8 +6,8 @@
     NSObject<OS_dispatch_queue> * _internalQueue;
     id /* block */  _notificationHandler;
     NSString * _notificationName;
-    int  _notificationType;
-    BOOL  _observing;
+    long long  _notificationType;
+    bool  _observing;
     id /* block */  _timeoutHandler;
     NSObject<OS_dispatch_source> * _timeoutTimer;
 }
@@ -24,10 +24,11 @@
 - (void)_stopObserving;
 - (id)init;
 - (id)initWithNotificationName:(id)arg1;
-- (id)initWithNotificationName:(id)arg1 type:(int)arg2;
+- (id)initWithNotificationName:(id)arg1 type:(long long)arg2;
 - (id /* block */)notificationHandler;
 - (void)setNotificationHandler:(id /* block */)arg1;
 - (void)setTimeoutHandler:(id /* block */)arg1;
+- (void)stopWaiting;
 - (id /* block */)timeoutHandler;
 - (void)waitWithTimeout:(double)arg1;
 

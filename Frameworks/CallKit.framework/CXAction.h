@@ -6,24 +6,24 @@
     NSUUID * _UUID;
     NSDate * _commitDate;
     <CXActionDelegate> * _delegate;
-    int  _failureReason;
-    int  _state;
+    long long  _failureReason;
+    long long  _state;
 }
 
 @property (nonatomic, copy) NSUUID *UUID;
 @property (nonatomic, retain) NSDate *commitDate;
-@property (getter=isComplete, nonatomic, readonly) BOOL complete;
+@property (getter=isComplete, nonatomic, readonly) bool complete;
 @property (nonatomic, readonly, copy) NSMutableString *customDescription;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CXActionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) int failureReason;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int state;
+@property (nonatomic) long long failureReason;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long state;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSDate *timeoutDate;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (double)timeout;
 
 - (void).cxx_destruct;
@@ -35,22 +35,21 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)fail;
-- (void)failWithError:(id)arg1;
-- (int)failureReason;
+- (long long)failureReason;
 - (void)fulfill;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isComplete;
+- (bool)isComplete;
 - (id)sanitizedCopy;
 - (id)sanitizedCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)setCommitDate:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setFailureReason:(int)arg1;
-- (void)setState:(int)arg1;
+- (void)setFailureReason:(long long)arg1;
+- (void)setState:(long long)arg1;
 - (void)setUUID:(id)arg1;
-- (int)state;
+- (long long)state;
 - (id)timeoutDate;
-- (void)updateAsFailedWithReason:(int)arg1;
+- (void)updateAsFailedWithReason:(long long)arg1;
 - (void)updateAsFulfilled;
 - (void)updateCopy:(id)arg1 withZone:(struct _NSZone { }*)arg2;
 - (void)updateSanitizedCopy:(id)arg1 withZone:(struct _NSZone { }*)arg2;

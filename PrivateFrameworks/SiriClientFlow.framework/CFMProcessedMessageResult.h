@@ -7,11 +7,11 @@
 @property (nonatomic, copy) NSArray *dataDetectorResults;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SASmsSms *sms;
 @property (readonly) Class superclass;
 
-+ (id)newAceObjectWithDictionary:(id)arg1 context:(id)arg2;
++ (id)aceObjectWithDictionary:(id)arg1 context:(id)arg2;
 + (id)processedMessageResult;
 + (id)processedMessageResultWithDictionary:(id)arg1 context:(id)arg2;
 

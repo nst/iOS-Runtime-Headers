@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)shouldCancelTouchesInScrollview;
+- (bool)shouldCancelTouchesInScrollview;
 
 @end

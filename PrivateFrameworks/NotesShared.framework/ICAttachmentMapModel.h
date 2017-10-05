@@ -4,15 +4,23 @@
 
 @interface ICAttachmentMapModel : ICAttachmentModel
 
-+ (id)contentInfoTextWithAttachmentCount:(unsigned int)arg1;
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
-- (BOOL)generateAsynchronousPreviews;
++ (id)contentInfoTextWithAttachmentCount:(unsigned long long)arg1;
+
+- (id)MKMapItem;
+- (void)addLocation;
+- (id)attributesForSharingHTMLWithTagName:(id*)arg1 textContent:(id*)arg2;
+- (bool)canConvertToHTMLForSharing;
+- (bool)hasPreviews;
+
+// Image: /System/Library/PrivateFrameworks/NotesUI.framework/NotesUI
+
+- (bool)generateAsynchronousPreviews;
 - (void)generatePreviewsInOperation:(id)arg1;
 - (id /* block */)genericBrickThumbnailCreator;
 - (id /* block */)genericListThumbnailCreator;
-- (BOOL)hasPreviews;
-- (BOOL)needToGeneratePreviews;
-- (BOOL)requiresNetworkToGeneratePreview;
-- (BOOL)shouldSyncPreviewImageToCloud:(id)arg1;
+- (bool)needToGeneratePreviews;
+- (bool)requiresNetworkToGeneratePreview;
 
 @end

@@ -8,7 +8,7 @@
     NSString * _key;
     NSString * _mediaType;
     NSString * _stringValue;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, retain) NSString *dimension;
@@ -16,13 +16,14 @@
 @property (nonatomic, retain) NSString *key;
 @property (nonatomic, retain) NSString *mediaType;
 @property (nonatomic, retain) NSString *stringValue;
-@property int type;
+@property long long type;
 
 - (void).cxx_destruct;
 - (id)description;
 - (id)dimension;
 - (double)doubleValue;
-- (BOOL)evaluate;
+- (bool)evaluate;
+- (id)expressionAsString;
 - (id)key;
 - (id)mediaType;
 - (void)setDimension:(id)arg1;
@@ -30,9 +31,9 @@
 - (void)setKey:(id)arg1;
 - (void)setMediaType:(id)arg1;
 - (void)setStringValue:(id)arg1;
-- (void)setType:(int)arg1;
+- (void)setType:(long long)arg1;
 - (id)stringValue;
-- (int)type;
+- (long long)type;
 - (id)valueAsString;
 
 @end

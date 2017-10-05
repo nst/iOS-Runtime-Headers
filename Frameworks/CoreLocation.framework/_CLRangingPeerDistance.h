@@ -3,19 +3,19 @@
  */
 
 @interface _CLRangingPeerDistance : NSObject <NSCopying, NSSecureCoding> {
-    BOOL  _initiator;
+    bool  _initiator;
     id  _internal;
 }
 
 @property (nonatomic, readonly, copy) NSNumber *accuracyMeters;
 @property (nonatomic, readonly, copy) NSDate *date;
 @property (nonatomic, readonly, copy) NSNumber *distanceMeters;
-@property (getter=isInitiator, nonatomic, readonly) BOOL initiator;
+@property (getter=isInitiator, nonatomic, readonly) bool initiator;
 @property (nonatomic, readonly, copy) _CLRangingPeer *peer;
-@property (nonatomic, readonly) BOOL shouldUnlock;
+@property (nonatomic, readonly) bool shouldUnlock;
 @property (nonatomic, readonly, copy) NSDate *timestamp;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)accuracyMeters;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -26,13 +26,13 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithPeer:(id)arg1 date:(id)arg2 distanceMeters:(id)arg3 accuracyMeters:(id)arg4 initiator:(BOOL)arg5;
-- (id)initWithPeer:(id)arg1 date:(id)arg2 distanceMeters:(id)arg3 accuracyMeters:(id)arg4 initiator:(BOOL)arg5 shouldUnlock:(BOOL)arg6;
-- (id)initWithPeer:(id)arg1 timestamp:(id)arg2 distanceMeters:(id)arg3 accuracyMeters:(id)arg4 initiator:(BOOL)arg5;
-- (BOOL)initiator;
-- (BOOL)isInitiator;
+- (id)initWithPeer:(id)arg1 date:(id)arg2 distanceMeters:(id)arg3 accuracyMeters:(id)arg4 initiator:(bool)arg5;
+- (id)initWithPeer:(id)arg1 date:(id)arg2 distanceMeters:(id)arg3 accuracyMeters:(id)arg4 initiator:(bool)arg5 shouldUnlock:(bool)arg6;
+- (id)initWithPeer:(id)arg1 timestamp:(id)arg2 distanceMeters:(id)arg3 accuracyMeters:(id)arg4 initiator:(bool)arg5;
+- (bool)initiator;
+- (bool)isInitiator;
 - (id)peer;
-- (BOOL)shouldUnlock;
+- (bool)shouldUnlock;
 - (id)timestamp;
 
 @end

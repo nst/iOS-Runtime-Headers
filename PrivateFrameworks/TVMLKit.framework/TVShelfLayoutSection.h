@@ -6,53 +6,53 @@
     NSArray * _itemFrames;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _itemsBoundingFrame;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _sectionHeaderFrame;
-    float  _sectionHeaderHorizontalOffset;
-    float  _sectionHeaderVerticalBump;
+    double  _sectionHeaderHorizontalOffset;
+    double  _sectionHeaderVerticalBump;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _sectionInset;
 }
 
 @property (nonatomic, retain) NSArray *itemFrames;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } itemsBoundingFrame;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } sectionHeaderFrame;
-@property (nonatomic) float sectionHeaderHorizontalOffset;
-@property (nonatomic) float sectionHeaderVerticalBump;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } sectionInset;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } itemsBoundingFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } sectionHeaderFrame;
+@property (nonatomic) double sectionHeaderHorizontalOffset;
+@property (nonatomic) double sectionHeaderVerticalBump;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } sectionInset;
 
 - (void).cxx_destruct;
 - (id)itemFrames;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })itemsBoundingFrame;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sectionHeaderFrame;
-- (float)sectionHeaderHorizontalOffset;
-- (float)sectionHeaderVerticalBump;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionInset;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })itemsBoundingFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })sectionHeaderFrame;
+- (double)sectionHeaderHorizontalOffset;
+- (double)sectionHeaderVerticalBump;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionInset;
 - (void)setItemFrames:(id)arg1;
-- (void)setItemsBoundingFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setSectionHeaderFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setSectionHeaderHorizontalOffset:(float)arg1;
-- (void)setSectionHeaderVerticalBump:(float)arg1;
-- (void)setSectionInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setItemsBoundingFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setSectionHeaderFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setSectionHeaderHorizontalOffset:(double)arg1;
+- (void)setSectionHeaderVerticalBump:(double)arg1;
+- (void)setSectionInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 
 @end

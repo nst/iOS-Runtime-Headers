@@ -3,6 +3,9 @@
  */
 
 @interface CMMotionManagerInternal : NSObject {
+    NSOperationQueue * _fDeviceMotionLiteClientQueue;
+    id /* block */  _fDeviceMotionLiteFusedHandler;
+    NSString * _fDeviceMotionLitePhysicalDeviceID;
     /* Warning: unhandled struct encoding: '{Dispatcher=^^?@}' */ struct Dispatcher { int (**x1)(); id x2; } * fAccelerometerDispatcher;
     id /* block */  fAccelerometerHandler;
     NSOperationQueue * fAccelerometerQueue;
@@ -11,13 +14,23 @@
     id /* block */  fAmbientPressureHandler;
     NSOperationQueue * fAmbientPressureQueue;
     double  fAmbientPressureUpdateInterval;
-    unsigned int  fAttitudeReferenceFrame;
-    int  fCaptureMode;
+    unsigned long long  fAttitudeReferenceFrame;
+    long long  fCaptureMode;
     bool  fCompassCalibrationHud;
-    struct CLConnectionClient { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_1_1_1; } x1; id x2; id x3; struct CLConnection {} x4; bool x5; struct CLNameValuePair { int (**x_6_1_1)(); struct __CFDictionary {} *x_6_1_2; } x6; struct CLNameValuePair { int (**x_7_1_1)(); struct __CFDictionary {} *x_7_1_2; } x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_8_1_1; } x8; } * fConnection;
+    /* Warning: unhandled struct encoding: '{Dispatcher=^^?@}' */ struct Dispatcher { int (**x1)(); id x2; } * fCompensatedAmbientPressureDispatcher;
+    id /* block */  fCompensatedAmbientPressureHandler;
+    NSOperationQueue * fCompensatedAmbientPressureQueue;
+    double  fCompensatedAmbientPressureUpdateInterval;
+    struct CLConnectionClient { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_1_1_1; } x1; id x2; id x3; struct CLConnection {} x4; bool x5; struct CLNameValuePair { int (**x_6_1_1)(); struct __CFDictionary {} *x_6_1_2; } x6; struct CLNameValuePair { int (**x_7_1_1)(); struct __CFDictionary {} *x_7_1_2; } x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_5_1; unsigned long long x_1_5_2; unsigned long long x_1_5_3; } x_1_4_1; struct __short { BOOL x_2_5_1[23]; struct { unsigned char x_2_6_1; } x_2_5_2; } x_1_4_2; struct __raw { unsigned long long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_8_1_1; } x8; } * fConnection;
     NSObject<OS_dispatch_queue> * fConnectionQueue;
     /* Warning: unhandled struct encoding: '{Dispatcher=^^?@}' */ struct Dispatcher { int (**x1)(); id x2; } * fDeviceMotionDispatcher;
     id /* block */  fDeviceMotionHandler;
+    struct unique_ptr<CLDeviceMotionLiteService, std::__1::default_delete<CLDeviceMotionLiteService> > { 
+        struct __compressed_pair<CLDeviceMotionLiteService *, std::__1::default_delete<CLDeviceMotionLiteService> > { 
+            struct CLDeviceMotionLiteService {} *__first_; 
+        } __ptr_; 
+    }  fDeviceMotionLiteService;
+    int  fDeviceMotionMode;
     NSOperationQueue * fDeviceMotionQueue;
     double  fDeviceMotionStartTimestamp;
     double  fDeviceMotionUpdateInterval;
@@ -42,9 +55,12 @@
     double  fGyroUpdateInterval;
     bool  fHaveSentDeviceRequiresMovementError;
     bool  fHaveSentTrueNorthUnavailableError;
-    bool  fInactive;
+    bool  fIsApplicationActive;
+    bool  fIsCompassCalibrated;
+    bool  fIsUsingCalibratedCompass;
     double  fLastAccelerometerNotificationTimestamp;
     double  fLastAmbientPressureNotificationTimestamp;
+    double  fLastCompensatedAmbientPressureNotificationTimestamp;
     double  fLastDeviceMotionNotificationTimestamp;
     double  fLastGyroNotificationTimestamp;
     double  fLastMagnetometerNotificationTimestamp;
@@ -66,34 +82,10 @@
     struct Sample { 
         double timestamp; 
         struct { 
-            struct { 
-                double w; 
-                double x; 
-                double y; 
-                double z; 
-            } quaternion; 
-            struct { 
-                float x; 
-                float y; 
-                float z; 
-            } userAcceleration; 
-            struct { 
-                float x; 
-                float y; 
-                float z; 
-            } rotationRate; 
-            struct { 
-                float x; 
-                float y; 
-                float z; 
-            } magneticField; 
-            int magneticFieldCalibrationLevel; 
-            bool doingYawCorrection; 
-            bool doingBiasEstimation; 
-            bool isInitialized; 
-        } deviceMotion; 
-        bool fsync; 
-    }  fLatestDeviceMotionSample;
+            float pressure; 
+            float temperature; 
+        } pressureData; 
+    }  fLatestCompensatedAmbientPressureSample;
     struct Sample { 
         double timestamp; 
         struct { 
@@ -137,7 +129,6 @@
     struct os_unfair_lock_s { 
         unsigned int _os_unfair_lock_opaque; 
     }  fSampleLock;
-    bool  fShowCompassCalibrationHudOnResume;
     bool  fShowsDeviceMovementDisplay;
     bool  fSidebandSensorFusionEnabled;
     bool  fSidebandSensorFusionLatency;
@@ -150,10 +141,20 @@
     struct __CFRunLoopTimer { } * fWatchdogTimer;
 }
 
+@property (nonatomic, retain) NSOperationQueue *fDeviceMotionLiteClientQueue;
+@property (nonatomic, copy) id /* block */ fDeviceMotionLiteFusedHandler;
+@property (nonatomic, retain) NSString *fDeviceMotionLitePhysicalDeviceID;
+
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)dealloc;
+- (id)fDeviceMotionLiteClientQueue;
+- (id /* block */)fDeviceMotionLiteFusedHandler;
+- (id)fDeviceMotionLitePhysicalDeviceID;
 - (id)init;
+- (void)setFDeviceMotionLiteClientQueue:(id)arg1;
+- (void)setFDeviceMotionLiteFusedHandler:(id /* block */)arg1;
+- (void)setFDeviceMotionLitePhysicalDeviceID:(id)arg1;
 - (void)teardownPrivate;
 
 @end

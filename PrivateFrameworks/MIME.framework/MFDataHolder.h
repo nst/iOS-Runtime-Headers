@@ -4,10 +4,10 @@
 
 @interface MFDataHolder : NSObject {
     NSMutableArray * _datas;
-    unsigned int  _length;
+    unsigned long long  _length;
 }
 
-@property (nonatomic, readonly) unsigned int length;
+@property (nonatomic, readonly) unsigned long long length;
 
 + (id)dataHolder;
 + (id)dataHolderWithData:(id)arg1;
@@ -20,7 +20,7 @@
 - (void)enumerateDatasUsingBlock:(id /* block */)arg1;
 - (id)init;
 - (id)initWithData:(id)arg1;
-- (unsigned int)length;
-- (unsigned int)numberOfNewlinesNeedingConversion:(BOOL)arg1;
+- (unsigned long long)length;
+- (unsigned long long)numberOfNewlinesNeedingConversion:(bool)arg1;
 
 @end

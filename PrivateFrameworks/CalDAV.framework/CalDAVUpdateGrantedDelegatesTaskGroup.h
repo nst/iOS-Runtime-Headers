@@ -17,7 +17,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) CalDAVGetGrantedDelegatesTaskGroup *getGrantedDelegatesTaskGroup;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSSet *removeURLs;
 @property (nonatomic) int state;
 @property (readonly) Class superclass;
@@ -27,8 +27,8 @@
 - (void).cxx_destruct;
 - (void)_fetchExistingGrantedDelegates;
 - (void)_finishWithError:(id)arg1 state:(int)arg2;
-- (void)_populateUpdatesFromFetched:(id)arg1 allowWrite:(BOOL)arg2;
-- (void)_updateDelegatesWithAllowWrite:(BOOL)arg1;
+- (void)_populateUpdatesFromFetched:(id)arg1 allowWrite:(bool)arg2;
+- (void)_updateDelegatesWithAllowWrite:(bool)arg1;
 - (id)addReadURLs;
 - (id)addWriteURLs;
 - (id)getGrantedDelegatesTaskGroup;

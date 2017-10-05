@@ -9,12 +9,13 @@
 }
 
 @property (nonatomic) <EKEditItemViewControllerDelegate> *editDelegate;
-@property (nonatomic) BOOL editItemShouldBeAskedForInjectableViewController;
-@property (nonatomic) BOOL presentModally;
-@property (nonatomic) BOOL useCustomBackButton;
+@property (nonatomic) bool editItemShouldBeAskedForInjectableViewController;
+@property (nonatomic) bool presentModally;
+@property (nonatomic) bool useCustomBackButton;
 
 - (void).cxx_destruct;
 - (id)CNContactEmailAddressesKey;
+- (id)CNContactPhoneNumbersKey;
 - (id)CNLabelWork;
 - (Class)_CNContactClass;
 - (Class)_CNContactStoreClass;
@@ -25,6 +26,6 @@
 - (id)initWithIdentity:(id)arg1;
 - (void)loadView;
 - (void)setIdentity:(id)arg1;
-- (void)updateControllerWithContact:(id)arg1 isNew:(BOOL)arg2;
+- (void)updateControllerWithContact:(id)arg1 isNew:(bool)arg2;
 
 @end

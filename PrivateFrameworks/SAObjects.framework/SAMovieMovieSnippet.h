@@ -5,7 +5,7 @@
 @interface SAMovieMovieSnippet : SAUISnippet
 
 @property (nonatomic, retain) SAMovieMovie *movie;
-@property (nonatomic) BOOL playTrailer;
+@property (nonatomic) bool playTrailer;
 
 + (id)movieSnippet;
 + (id)movieSnippetWithDictionary:(id)arg1 context:(id)arg2;
@@ -13,8 +13,8 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)movie;
-- (BOOL)playTrailer;
+- (bool)playTrailer;
 - (void)setMovie:(id)arg1;
-- (void)setPlayTrailer:(BOOL)arg1;
+- (void)setPlayTrailer:(bool)arg1;
 
 @end

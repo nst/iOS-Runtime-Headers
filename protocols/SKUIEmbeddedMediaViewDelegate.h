@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)mediaView:(SKUIEmbeddedMediaView *)arg1 playbackStateDidChange:(int)arg2;
+- (void)mediaView:(SKUIEmbeddedMediaView *)arg1 playbackStateDidChange:(long long)arg2;
 
 @end

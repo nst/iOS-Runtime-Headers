@@ -14,10 +14,13 @@
 @property (nonatomic, readonly, copy) NSString *country;
 @property (nonatomic, readonly) NSString *fullAdministrativeArea;
 @property (nonatomic, readonly, copy) NSString *inlandWater;
+@property (nonatomic, readonly) bool isIsland;
+@property (nonatomic, readonly) bool isOcean;
 @property (nonatomic, readonly, copy) NSString *locality;
 @property (nonatomic, readonly, copy) CLLocation *location;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSString *ocean;
+@property (nonatomic, readonly) CNPostalAddress *postalAddress;
 @property (nonatomic, readonly, copy) NSString *postalCode;
 @property (nonatomic, readonly, copy) CLRegion *region;
 @property (nonatomic, readonly, copy) NSString *subAdministrativeArea;
@@ -29,7 +32,7 @@
 // Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
 
 + (id)placemarkWithGEOMapItem:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)ISOcountryCode;
 - (id)_geoMapItem;
@@ -52,6 +55,7 @@
 - (id)location;
 - (id)name;
 - (id)ocean;
+- (id)postalAddress;
 - (id)postalCode;
 - (id)region;
 - (id)subAdministrativeArea;
@@ -68,15 +72,18 @@
 
 // Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotosGraph.framework/Frameworks/MediaMiningKit.framework/MediaMiningKit
 
-+ (id)commonPresentationStringWithPlacemarks:(id)arg1 options:(unsigned int*)arg2;
++ (id)commonPresentationStringWithPlacemarks:(id)arg1 options:(unsigned long long*)arg2;
 + (id)placemarkFromLitePlacemark:(id)arg1;
-+ (unsigned int)presentationOptionsForPlacemarks:(id)arg1;
-+ (id)presentationStringForPlacemarks:(id)arg1 options:(unsigned int)arg2;
++ (unsigned long long)presentationOptionsForPlacemarks:(id)arg1;
++ (id)presentationStringForPlacemarks:(id)arg1 options:(unsigned long long)arg2;
 
 - (id)administrativeAreaCode;
+- (int)cls_precisePlaceType;
 - (id)fullAdministrativeArea;
-- (BOOL)isEqualToPlacemark:(id)arg1;
-- (id)presentationString:(unsigned int*)arg1;
+- (bool)isEqualToPlacemark:(id)arg1;
+- (bool)isIsland;
+- (bool)isOcean;
+- (id)presentationString:(unsigned long long*)arg1;
 - (id)timeZone;
 
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore

@@ -5,7 +5,7 @@
 
 @optional
 
-- (void)glyphView:(PKGlyphView *)arg1 revealingCheckmark:(BOOL)arg2;
-- (void)glyphView:(PKGlyphView *)arg1 transitioningToState:(int)arg2;
+- (void)glyphView:(PKGlyphView *)arg1 revealingCheckmark:(bool)arg2;
+- (void)glyphView:(PKGlyphView *)arg1 transitioningToState:(long long)arg2;
 
 @end

@@ -3,43 +3,43 @@
  */
 
 @interface _TVStackRow : NSObject {
-    BOOL  _bounded;
-    BOOL  _hosted;
+    bool  _bounded;
+    bool  _hosted;
     struct TVRowMetrics { 
-        int rowType; 
-        float rowHeight; 
+        long long rowType; 
+        double rowHeight; 
         struct { 
-            float top; 
-            float bottom; 
+            double top; 
+            double bottom; 
         } rowPadding; 
         struct { 
-            float top; 
-            float bottom; 
+            double top; 
+            double bottom; 
         } rowInset; 
         struct { 
-            float top; 
-            float bottom; 
+            double top; 
+            double bottom; 
         } rowInsetAlt; 
         struct { 
-            float top; 
-            float bottom; 
+            double top; 
+            double bottom; 
         } rowMargin; 
     }  _rowMetrics;
-    int  _sectionIndex;
+    long long  _sectionIndex;
 }
 
-@property (getter=isBounded, nonatomic) BOOL bounded;
-@property (getter=isHosted, nonatomic) BOOL hosted;
-@property (nonatomic) struct TVRowMetrics { int x1; float x2; struct { float x_3_1_1; float x_3_1_2; } x3; struct { float x_4_1_1; float x_4_1_2; } x4; struct { float x_5_1_1; float x_5_1_2; } x5; struct { float x_6_1_1; float x_6_1_2; } x6; } rowMetrics;
-@property (nonatomic) int sectionIndex;
+@property (getter=isBounded, nonatomic) bool bounded;
+@property (getter=isHosted, nonatomic) bool hosted;
+@property (nonatomic) struct TVRowMetrics { long long x1; double x2; struct { double x_3_1_1; double x_3_1_2; } x3; struct { double x_4_1_1; double x_4_1_2; } x4; struct { double x_5_1_1; double x_5_1_2; } x5; struct { double x_6_1_1; double x_6_1_2; } x6; } rowMetrics;
+@property (nonatomic) long long sectionIndex;
 
-- (BOOL)isBounded;
-- (BOOL)isHosted;
-- (struct TVRowMetrics { int x1; float x2; struct { float x_3_1_1; float x_3_1_2; } x3; struct { float x_4_1_1; float x_4_1_2; } x4; struct { float x_5_1_1; float x_5_1_2; } x5; struct { float x_6_1_1; float x_6_1_2; } x6; })rowMetrics;
-- (int)sectionIndex;
-- (void)setBounded:(BOOL)arg1;
-- (void)setHosted:(BOOL)arg1;
-- (void)setRowMetrics:(struct TVRowMetrics { int x1; float x2; struct { float x_3_1_1; float x_3_1_2; } x3; struct { float x_4_1_1; float x_4_1_2; } x4; struct { float x_5_1_1; float x_5_1_2; } x5; struct { float x_6_1_1; float x_6_1_2; } x6; })arg1;
-- (void)setSectionIndex:(int)arg1;
+- (bool)isBounded;
+- (bool)isHosted;
+- (struct TVRowMetrics { long long x1; double x2; struct { double x_3_1_1; double x_3_1_2; } x3; struct { double x_4_1_1; double x_4_1_2; } x4; struct { double x_5_1_1; double x_5_1_2; } x5; struct { double x_6_1_1; double x_6_1_2; } x6; })rowMetrics;
+- (long long)sectionIndex;
+- (void)setBounded:(bool)arg1;
+- (void)setHosted:(bool)arg1;
+- (void)setRowMetrics:(struct TVRowMetrics { long long x1; double x2; struct { double x_3_1_1; double x_3_1_2; } x3; struct { double x_4_1_1; double x_4_1_2; } x4; struct { double x_5_1_1; double x_5_1_2; } x5; struct { double x_6_1_1; double x_6_1_2; } x6; })arg1;
+- (void)setSectionIndex:(long long)arg1;
 
 @end

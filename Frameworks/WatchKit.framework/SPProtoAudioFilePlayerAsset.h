@@ -8,8 +8,8 @@
 }
 
 @property (nonatomic, retain) SPProtoObjectMessage *destroy;
-@property (nonatomic, readonly) BOOL hasDestroy;
-@property (nonatomic, readonly) BOOL hasUpsertWithMetaData;
+@property (nonatomic, readonly) bool hasDestroy;
+@property (nonatomic, readonly) bool hasUpsertWithMetaData;
 @property (nonatomic, retain) SPProtoAudioFilePlayerAssetUpdateMetaData *upsertWithMetaData;
 
 - (void).cxx_destruct;
@@ -18,12 +18,12 @@
 - (id)description;
 - (id)destroy;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDestroy;
-- (BOOL)hasUpsertWithMetaData;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDestroy;
+- (bool)hasUpsertWithMetaData;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDestroy:(id)arg1;
 - (void)setUpsertWithMetaData:(id)arg1;
 - (id)sockPuppetMessage;

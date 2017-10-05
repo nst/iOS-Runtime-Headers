@@ -11,18 +11,19 @@
     unsigned char  _volumeUUID;
 }
 
+- (void).cxx_destruct;
 - (void)_connectionWithDaemonWasLost;
-- (void)_invalidate:(BOOL)arg1;
-- (BOOL)_refreshWithError:(id*)arg1;
+- (void)_invalidate:(bool)arg1;
+- (bool)_refreshWithError:(id*)arg1;
 - (void)cleanupStagingPath:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)finalize;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithDocumentID:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isStagedPath:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isStagedPath:(id)arg1;
 - (id)stagingPathforCreatingAdditionWithError:(id*)arg1;
 
 @end

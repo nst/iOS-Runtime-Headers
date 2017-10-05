@@ -5,9 +5,9 @@
 
 @required
 
-- (unsigned int)fragmentWidth;
+- (unsigned long long)fragmentWidth;
 - (NSString *)keyName;
 - (double)privacyParameter;
-- (unsigned int)range;
+- (unsigned long long)range;
 
 @end

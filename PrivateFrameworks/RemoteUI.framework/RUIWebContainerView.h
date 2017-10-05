@@ -4,32 +4,32 @@
 
 @interface RUIWebContainerView : UIView <UIWebViewDelegate> {
     <RUIWebContainerViewDelegate> * _delegate;
-    BOOL  _highlighted;
-    BOOL  _reallyHighlighted;
+    bool  _highlighted;
+    bool  _reallyHighlighted;
     UIWebView * _webView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <RUIWebContainerViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isHighlighted, nonatomic) BOOL highlighted;
+@property (readonly) unsigned long long hash;
+@property (getter=isHighlighted, nonatomic) bool highlighted;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIWebView *webView;
 
 - (void).cxx_destruct;
 - (void)_setHighlightedNow;
 - (id)delegate;
-- (float)heightForWidth:(float)arg1;
+- (double)heightForWidth:(double)arg1;
 - (id)initWithContent:(id)arg1 baseURL:(id)arg2;
-- (BOOL)isHighlighted;
+- (bool)isHighlighted;
 - (void)layoutSubviews;
 - (void)setDelegate:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setUserStyleSheet:(id)arg1;
-- (BOOL)uiWebView:(id)arg1 previewIsAllowedForPosition:(struct CGPoint { float x1; float x2; })arg2;
+- (bool)uiWebView:(id)arg1 previewIsAllowedForPosition:(struct CGPoint { double x1; double x2; })arg2;
 - (id)webView;
-- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
+- (bool)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(long long)arg3;
 - (void)webViewDidFinishLoad:(id)arg1;
 
 @end

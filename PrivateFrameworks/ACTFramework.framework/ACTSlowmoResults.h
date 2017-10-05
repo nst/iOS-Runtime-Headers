@@ -5,12 +5,12 @@
 @interface ACTSlowmoResults : NSObject {
     double  _minTimeBetweenFrames;
     NSMutableDictionary * _results;
-    BOOL  _verbose;
+    bool  _verbose;
 }
 
 @property double minTimeBetweenFrames;
 @property (readonly) NSDictionary *results;
-@property BOOL verbose;
+@property bool verbose;
 
 - (void)addFrame:(double)arg1 frameValue:(int)arg2;
 - (void)addVerboseResult:(id)arg1;
@@ -26,8 +26,8 @@
 - (id)results;
 - (void)setMinTimeBetweenFrames:(double)arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
-- (void)setVerbose:(BOOL)arg1;
-- (BOOL)verbose;
+- (void)setVerbose:(bool)arg1;
+- (bool)verbose;
 - (void)writeToFile:(id)arg1;
 
 @end

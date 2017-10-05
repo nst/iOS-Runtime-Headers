@@ -4,12 +4,15 @@
 
 @interface CNUIContactsEnvironmentServicesProvider : NSObject
 
-+ (id)defaultProvider;
-
-- (id)accountsFacade;
-- (id)duetConsumer;
-- (id)fmfFacade;
-- (id)personaStore;
-- (id)suggestionsService;
++ (id)accountsFacade;
++ (id)applicationWorkspace;
++ (id)capabilities;
++ (id)defaultUserActionFetcher;
++ (id)duetConsumer;
++ (id)fmfFacade;
++ (id)idsIDQueryControllerWrapper;
++ (id)personaStore;
++ (id)recentsManagerWithSchedulerProvider:(id)arg1;
++ (id)suggestionsService;
 
 @end

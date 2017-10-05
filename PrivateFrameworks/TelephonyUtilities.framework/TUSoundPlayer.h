@@ -5,27 +5,27 @@
 @interface TUSoundPlayer : NSObject {
     NSObject<OS_dispatch_queue> * _queue;
     TURepeatingActor * _repeatingActor;
-    unsigned long  _soundID;
+    unsigned int  _soundID;
 }
 
-@property (getter=isPlaying, nonatomic, readonly) BOOL playing;
+@property (getter=isPlaying, nonatomic, readonly) bool playing;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, retain) TURepeatingActor *repeatingActor;
-@property (nonatomic) unsigned long soundID;
+@property (nonatomic) unsigned int soundID;
 
 - (void).cxx_destruct;
 - (id)init;
-- (BOOL)isPlaying;
-- (void)playSound:(unsigned long)arg1;
-- (void)playSound:(unsigned long)arg1 iterations:(unsigned int)arg2 pauseDurationBetweenIterations:(double)arg3;
-- (void)playSound:(unsigned long)arg1 iterations:(unsigned int)arg2 pauseDurationBetweenIterations:(double)arg3 completion:(id /* block */)arg4;
-- (void)playSoundIndefinitely:(unsigned long)arg1 pauseDurationBetweenIterations:(double)arg2;
+- (bool)isPlaying;
+- (void)playSound:(unsigned int)arg1;
+- (void)playSound:(unsigned int)arg1 iterations:(unsigned long long)arg2 pauseDurationBetweenIterations:(double)arg3;
+- (void)playSound:(unsigned int)arg1 iterations:(unsigned long long)arg2 pauseDurationBetweenIterations:(double)arg3 completion:(id /* block */)arg4;
+- (void)playSoundIndefinitely:(unsigned int)arg1 pauseDurationBetweenIterations:(double)arg2;
 - (id)queue;
 - (id)repeatingActor;
 - (void)setQueue:(id)arg1;
 - (void)setRepeatingActor:(id)arg1;
-- (void)setSoundID:(unsigned long)arg1;
-- (unsigned long)soundID;
+- (void)setSoundID:(unsigned int)arg1;
+- (unsigned int)soundID;
 - (void)stopPlaying;
 
 @end

@@ -16,17 +16,21 @@
 @property (nonatomic, readonly) int referenceFrame;
 @property (nonatomic, readonly) double uncertainty;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)coordinateToString;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
 - (id)initWithCLLocation:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2 uncertainty:(double)arg3 date:(id)arg4;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2 uncertainty:(double)arg3 date:(id)arg4 referenceFrame:(int)arg5;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToLocation:(id)arg1;
 - (double)latitude;
 - (double)longitude;
 - (int)referenceFrame;

@@ -14,6 +14,6 @@
 - (void)locationProviderDidChangeAuthorizationStatus:(id <MKLocationProvider>)arg1;
 - (void)locationProviderDidPauseLocationUpdates:(id <MKLocationProvider>)arg1;
 - (void)locationProviderDidResumeLocationUpdates:(id <MKLocationProvider>)arg1;
-- (BOOL)locationProviderShouldPauseLocationUpdates:(id <MKLocationProvider>)arg1;
+- (bool)locationProviderShouldPauseLocationUpdates:(id <MKLocationProvider>)arg1;
 
 @end

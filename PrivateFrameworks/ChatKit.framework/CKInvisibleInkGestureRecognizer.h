@@ -5,28 +5,28 @@
 @interface CKInvisibleInkGestureRecognizer : UIGestureRecognizer {
     UITouch * _firstTouch;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _startLocation;
     double  _startTime;
 }
 
 @property (nonatomic, retain) UITouch *firstTouch;
-@property (nonatomic) struct CGPoint { float x1; float x2; } startLocation;
+@property (nonatomic) struct CGPoint { double x1; double x2; } startLocation;
 @property (nonatomic) double startTime;
 
 - (void).cxx_destruct;
-- (BOOL)_hasActiveTouchesInEvent:(id)arg1;
-- (BOOL)canBePreventedByGestureRecognizer:(id)arg1;
-- (BOOL)canPreventGestureRecognizer:(id)arg1;
+- (bool)_hasActiveTouchesInEvent:(id)arg1;
+- (bool)canBePreventedByGestureRecognizer:(id)arg1;
+- (bool)canPreventGestureRecognizer:(id)arg1;
 - (id)firstTouch;
 - (void)reset;
 - (void)setFirstTouch:(id)arg1;
-- (void)setStartLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setStartLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setStartTime:(double)arg1;
-- (BOOL)shouldBeRequiredToFailByGestureRecognizer:(id)arg1;
-- (BOOL)shouldRequireFailureOfGestureRecognizer:(id)arg1;
-- (struct CGPoint { float x1; float x2; })startLocation;
+- (bool)shouldBeRequiredToFailByGestureRecognizer:(id)arg1;
+- (bool)shouldRequireFailureOfGestureRecognizer:(id)arg1;
+- (struct CGPoint { double x1; double x2; })startLocation;
 - (double)startTime;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

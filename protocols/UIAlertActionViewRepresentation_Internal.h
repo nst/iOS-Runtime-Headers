@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)isHighlighted;
-- (void)setHighlighted:(BOOL)arg1;
+- (bool)isHighlighted;
+- (void)setHighlighted:(bool)arg1;
 
 @end

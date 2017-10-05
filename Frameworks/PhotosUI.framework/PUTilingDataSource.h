@@ -13,12 +13,12 @@
 - (void).cxx_destruct;
 - (id)_changeObservers;
 - (id)description;
-- (void)enumerateIndexPathsStartingAtIndexPath:(id)arg1 reverseDirection:(BOOL)arg2 usingBlock:(id /* block */)arg3;
-- (unsigned int)hash;
+- (void)enumerateIndexPathsStartingAtIndexPath:(id)arg1 reverseDirection:(bool)arg2 usingBlock:(id /* block */)arg3;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
-- (int)numberOfSubItemsAtIndexPath:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (long long)numberOfSubItemsAtIndexPath:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 
 @end

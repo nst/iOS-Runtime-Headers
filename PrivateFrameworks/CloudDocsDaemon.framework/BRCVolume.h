@@ -4,11 +4,11 @@
 
 @interface BRCVolume : NSObject {
     int  _deviceID;
-    BOOL  _hasCloning;
-    BOOL  _hasRenameExcl;
-    BOOL  _hasRenameSwap;
-    BOOL  _isCaseSensitive;
-    BOOL  _isIgnoringOwnership;
+    bool  _hasCloning;
+    bool  _hasRenameExcl;
+    bool  _hasRenameSwap;
+    bool  _isCaseSensitive;
+    bool  _isIgnoringOwnership;
     struct statfs { 
         unsigned int f_bsize; 
         int f_iosize; 
@@ -34,11 +34,11 @@
 @property (nonatomic, readonly) int deviceID;
 @property (nonatomic, readonly) NSNumber *freeSize;
 @property (nonatomic, readonly) NSString *fsTypeName;
-@property (nonatomic, readonly) BOOL hasCloning;
-@property (nonatomic, readonly) BOOL hasRenameExcl;
-@property (nonatomic, readonly) BOOL hasRenameSwap;
-@property (nonatomic, readonly) BOOL isCaseSensitive;
-@property (nonatomic, readonly) BOOL isIgnoringOwnership;
+@property (nonatomic, readonly) bool hasCloning;
+@property (nonatomic, readonly) bool hasRenameExcl;
+@property (nonatomic, readonly) bool hasRenameSwap;
+@property (nonatomic, readonly) bool isCaseSensitive;
+@property (nonatomic, readonly) bool isIgnoringOwnership;
 @property (nonatomic, readonly) NSString *mountPath;
 @property (nonatomic, readonly) NSNumber *totalSize;
 
@@ -46,13 +46,13 @@
 - (int)deviceID;
 - (id)freeSize;
 - (id)fsTypeName;
-- (BOOL)hasCloning;
-- (BOOL)hasRenameExcl;
-- (BOOL)hasRenameSwap;
-- (BOOL)isCaseSensitive;
-- (BOOL)isIgnoringOwnership;
+- (bool)hasCloning;
+- (bool)hasRenameExcl;
+- (bool)hasRenameSwap;
+- (bool)isCaseSensitive;
+- (bool)isIgnoringOwnership;
 - (id)mountPath;
-- (BOOL)setUpForRelPath:(id)arg1 session:(id)arg2 error:(id*)arg3;
+- (bool)setUpForRelPath:(id)arg1 session:(id)arg2 error:(id*)arg3;
 - (id)totalSize;
 
 @end

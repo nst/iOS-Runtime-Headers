@@ -12,12 +12,12 @@
 + (id)serviceViewControllerInterface;
 
 - (void).cxx_destruct;
-- (float)_keyboardHeightOffset;
+- (double)_keyboardHeightOffset;
 - (void)hostKeyboardOffset:(id /* block */)arg1;
 - (void)setViewServiceTerminationBlock:(id /* block */)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (id /* block */)viewServiceTerminationBlock;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

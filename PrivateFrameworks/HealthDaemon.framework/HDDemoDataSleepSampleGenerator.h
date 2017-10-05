@@ -10,8 +10,8 @@
 
 - (double)_computeAwakeTimeForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (double)_computeSleepTimeFromCurrentTime:(double)arg1 mean:(double)arg2 stdDev:(double)arg3;
-- (BOOL)_isDemoPersonAwake:(id)arg1 atTime:(double)arg2;
-- (BOOL)_isDemoPersonSleeping:(id)arg1 atTime:(double)arg2;
+- (bool)_isDemoPersonAwake:(id)arg1 atTime:(double)arg2;
+- (bool)_isDemoPersonSleeping:(id)arg1 atTime:(double)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (void)generateSamplesForDemoPerson:(id)arg1 atTime:(double)arg2 sampleDate:(id)arg3 objectCollection:(id)arg4;
 - (id)init;

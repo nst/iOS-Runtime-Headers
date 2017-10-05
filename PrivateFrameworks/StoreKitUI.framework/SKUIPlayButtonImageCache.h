@@ -19,10 +19,10 @@
 @property (readonly) UIImage *playImage;
 @property (readonly) UIImage *stopImage;
 
-+ (id)imageCacheForStyle:(int)arg1;
++ (id)imageCacheForStyle:(long long)arg1;
 
 - (void).cxx_destruct;
-- (id)initWithStyle:(int)arg1;
+- (id)initWithStyle:(long long)arg1;
 - (id)pauseImage;
 - (id)playImage;
 - (void)preloadImages;

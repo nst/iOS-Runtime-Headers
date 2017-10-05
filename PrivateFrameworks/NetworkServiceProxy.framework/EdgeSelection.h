@@ -7,18 +7,18 @@
     NSMutableDictionary * _edgeAttributesDict;
     NSNumber * _interfaceType;
     NSData * _networkSignature;
-    int  _trialCount;
-    int  _windowSize;
+    long long  _trialCount;
+    long long  _windowSize;
 }
 
 @property (nonatomic) double alpha;
 @property (nonatomic, retain) NSMutableDictionary *edgeAttributesDict;
 @property (nonatomic, retain) NSNumber *interfaceType;
 @property (nonatomic, retain) NSData *networkSignature;
-@property (nonatomic) int trialCount;
-@property (nonatomic) int windowSize;
+@property (nonatomic) long long trialCount;
+@property (nonatomic) long long windowSize;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (double)_stochasticRewardFromRTT:(double)arg1;
@@ -36,10 +36,10 @@
 - (void)setEdgeAttributesDict:(id)arg1;
 - (void)setInterfaceType:(id)arg1;
 - (void)setNetworkSignature:(id)arg1;
-- (void)setTrialCount:(int)arg1;
-- (void)setWindowSize:(int)arg1;
+- (void)setTrialCount:(long long)arg1;
+- (void)setWindowSize:(long long)arg1;
 - (void)trainEdgeSelectionModel:(id)arg1 reply:(id /* block */)arg2;
-- (int)trialCount;
-- (int)windowSize;
+- (long long)trialCount;
+- (long long)windowSize;
 
 @end

@@ -3,54 +3,54 @@
  */
 
 @interface SKUIItemState : NSObject <NSCopying> {
-    unsigned int  _downloadContentFlags;
+    unsigned long long  _downloadContentFlags;
     NSArray * _downloadIdentifiers;
     NSString * _downloadPhase;
     float  _downloadProgress;
     NSNumber * _itemIdentifier;
-    unsigned int  _libraryContentFlags;
-    int  _mediaCategory;
-    unsigned int  _state;
+    unsigned long long  _libraryContentFlags;
+    long long  _mediaCategory;
+    unsigned long long  _state;
     SKUIStoreIdentifier * _storeIdentifier;
     NSString * _variantIdentifier;
 }
 
-@property (nonatomic, readonly) BOOL activeStateIsPreview;
-@property (nonatomic, readonly) unsigned int allContentFlags;
-@property (nonatomic) unsigned int downloadContentFlags;
+@property (nonatomic, readonly) bool activeStateIsPreview;
+@property (nonatomic, readonly) unsigned long long allContentFlags;
+@property (nonatomic) unsigned long long downloadContentFlags;
 @property (nonatomic, copy) NSArray *downloadIdentifiers;
 @property (nonatomic, copy) NSString *downloadPhase;
 @property (nonatomic) float downloadProgress;
 @property (nonatomic, copy) NSNumber *itemIdentifier;
-@property (nonatomic) unsigned int libraryContentFlags;
-@property (nonatomic) int mediaCategory;
-@property (nonatomic) unsigned int state;
+@property (nonatomic) unsigned long long libraryContentFlags;
+@property (nonatomic) long long mediaCategory;
+@property (nonatomic) unsigned long long state;
 @property (nonatomic, copy) SKUIStoreIdentifier *storeIdentifier;
 @property (nonatomic, copy) NSString *variantIdentifier;
 
 - (void).cxx_destruct;
-- (BOOL)activeStateIsPreview;
-- (unsigned int)allContentFlags;
+- (bool)activeStateIsPreview;
+- (unsigned long long)allContentFlags;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)downloadContentFlags;
+- (unsigned long long)downloadContentFlags;
 - (id)downloadIdentifiers;
 - (id)downloadPhase;
 - (float)downloadProgress;
 - (id)itemIdentifier;
-- (unsigned int)libraryContentFlags;
-- (int)mediaCategory;
-- (void)setDownloadContentFlags:(unsigned int)arg1;
+- (unsigned long long)libraryContentFlags;
+- (long long)mediaCategory;
+- (void)setDownloadContentFlags:(unsigned long long)arg1;
 - (void)setDownloadIdentifiers:(id)arg1;
 - (void)setDownloadPhase:(id)arg1;
 - (void)setDownloadProgress:(float)arg1;
 - (void)setItemIdentifier:(id)arg1;
-- (void)setLibraryContentFlags:(unsigned int)arg1;
-- (void)setMediaCategory:(int)arg1;
-- (void)setState:(unsigned int)arg1;
+- (void)setLibraryContentFlags:(unsigned long long)arg1;
+- (void)setMediaCategory:(long long)arg1;
+- (void)setState:(unsigned long long)arg1;
 - (void)setStoreIdentifier:(id)arg1;
 - (void)setVariantIdentifier:(id)arg1;
-- (unsigned int)state;
+- (unsigned long long)state;
 - (id)storeIdentifier;
 - (id)variantIdentifier;
 

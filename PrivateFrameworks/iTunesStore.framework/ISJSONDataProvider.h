@@ -3,13 +3,13 @@
  */
 
 @interface ISJSONDataProvider : ISDataProvider {
-    unsigned int  _options;
+    unsigned long long  _options;
 }
 
-@property unsigned int parserOptions;
+@property unsigned long long parserOptions;
 
-- (BOOL)parseData:(id)arg1 returningError:(id*)arg2;
-- (unsigned int)parserOptions;
-- (void)setParserOptions:(unsigned int)arg1;
+- (bool)parseData:(id)arg1 returningError:(id*)arg2;
+- (unsigned long long)parserOptions;
+- (void)setParserOptions:(unsigned long long)arg1;
 
 @end

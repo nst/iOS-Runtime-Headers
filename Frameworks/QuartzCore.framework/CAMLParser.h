@@ -14,7 +14,7 @@
 + (id)parseContentsOfURL:(id)arg1;
 + (id)parser;
 
-- (id)attributeForKey:(id)arg1 remove:(BOOL)arg2;
+- (id)attributeForKey:(id)arg1 remove:(bool)arg2;
 - (id)baseURL;
 - (void)dealloc;
 - (id)delegate;
@@ -24,7 +24,7 @@
 - (id)error;
 - (id)init;
 - (id)objectById:(id)arg1;
-- (bool)parseBytes:(const char *)arg1 length:(unsigned long)arg2;
+- (bool)parseBytes:(const char *)arg1 length:(unsigned long long)arg2;
 - (bool)parseContentsOfURL:(id)arg1;
 - (bool)parseData:(id)arg1;
 - (bool)parseString:(id)arg1;

@@ -7,6 +7,6 @@
 + (id)compositionWithMediaObject:(id)arg1 subject:(id)arg2;
 + (id)compositionWithMediaObjects:(id)arg1 subject:(id)arg2;
 
-- (BOOL)isSendAnimated;
+- (bool)isSendAnimated;
 
 @end

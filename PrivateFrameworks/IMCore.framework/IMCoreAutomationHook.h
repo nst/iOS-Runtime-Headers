@@ -8,7 +8,7 @@
 
 @property (readonly) IMAccount *bestiMessageAccount;
 
-+ (id)stringFromAutomationErrorCode:(int)arg1;
++ (id)stringFromAutomationErrorCode:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)bestiMessageAccount;

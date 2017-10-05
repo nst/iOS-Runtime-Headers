@@ -5,7 +5,7 @@
 @interface _UIAsyncInvocation : NSObject {
     id /* block */  _invocationBlock;
     bool  _invocationBlockHasBeenCalled;
-    int  _invokeCallCount;
+    long long  _invokeCallCount;
     /* Warning: Unrecognized filer type: '^' using 'void*' */ void* _observer;
 }
 

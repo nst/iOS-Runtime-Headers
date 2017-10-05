@@ -8,26 +8,31 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (void)addAttribute:(id)arg1 value:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
-- (void)addAttributes:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)addAttributesWeakly:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)addAttribute:(id)arg1 value:(id)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
+- (void)addAttributes:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (void)addAttributesWeakly:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)appendAttributedString:(id)arg1;
 - (void)beginEditing;
-- (void)deleteCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)deleteCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)endEditing;
-- (void)insertAttributedString:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)insertAttributedString:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)mutableString;
-- (void)removeAttribute:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withAttributedString:(id)arg2;
-- (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withString:(id)arg2;
+- (void)removeAttribute:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (void)replaceCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withAttributedString:(id)arg2;
+- (void)replaceCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withString:(id)arg2;
 - (void)setAttributedString:(id)arg1;
-- (void)setAttributes:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)setAttributes:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
 - (void)mf_addAttribute:(id)arg1 value:(id)arg2;
 - (void)mf_removeAttribute:(id)arg1;
 - (void)mf_setString:(id)arg1;
+
+// Image: /System/Library/Frameworks/UIKit.framework/Frameworks/DocumentManager.framework/DocumentManager
+
++ (id)_doc_attributedStringForTitle:(id)arg1 textAttributes:(id)arg2 tagColors:(id)arg3 tagDiameter:(double)arg4 position:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg5;
++ (id)_doc_gridAttributedStringForTitle:(id)arg1 tagColors:(id)arg2 font:(id)arg3;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
@@ -37,22 +42,25 @@
 
 - (void)dd_appendAttributedString:(id)arg1;
 - (void)dd_chopResults;
-- (void)dd_offsetResultsBy:(int)arg1;
+- (void)dd_offsetResultsBy:(long long)arg1;
 
 // Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
 
-- (void)dd_makeLinksForResultsInAttributesOfType:(unsigned int)arg1 context:(id)arg2;
-- (void)dd_makeLinksForResultsInAttributesOfType:(unsigned int)arg1 usingURLificationBlock:(id /* block */)arg2 context:(id)arg3;
-- (void)dd_replaceResultAttributesWithSimpleLinksForTypes:(unsigned int)arg1 context:(id)arg2;
+- (void)dd_appendUrl:(id)arg1 context:(id)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 backedAttributes:(id)arg4;
+- (void)dd_makeLinksForResultsInAttributesOfType:(unsigned long long)arg1 context:(id)arg2;
+- (void)dd_makeLinksForResultsInAttributesOfType:(unsigned long long)arg1 context:(id)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
+- (void)dd_makeLinksForResultsInAttributesOfType:(unsigned long long)arg1 usingURLificationBlock:(id /* block */)arg2 context:(id)arg3 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4;
+- (void)dd_replaceResultAttributesWithSimpleLinksForTypes:(unsigned long long)arg1 context:(id)arg2;
 - (void)dd_resetResults;
-- (BOOL)dd_urlifyResult:(id)arg1 withBlock:(id /* block */)arg2 referenceDate:(id)arg3 context:(id)arg4;
+- (void)dd_resetResults:(bool)arg1;
+- (bool)dd_urlifyResult:(id)arg1 withBlock:(id /* block */)arg2 referenceDate:(id)arg3 context:(id)arg4;
 
 // Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
 
-- (struct CGSize { float x1; float x2; })scaleFontAndKerningToFitSize:(struct CGSize { float x1; float x2; })arg1 minimumFontSize:(float)arg2 minimumKerning:(float)arg3 stillDidntFit:(BOOL*)arg4;
-- (float)scaleFontSizeByAmount:(float)arg1 minimumFontSize:(float)arg2;
-- (float)scaleNumericAttribute:(id)arg1 byAmount:(float)arg2;
-- (void)scaleToFitWidth:(float)arg1;
+- (struct CGSize { double x1; double x2; })scaleFontAndKerningToFitSize:(struct CGSize { double x1; double x2; })arg1 minimumFontSize:(double)arg2 minimumKerning:(double)arg3 stillDidntFit:(bool*)arg4;
+- (double)scaleFontSizeByAmount:(double)arg1 minimumFontSize:(double)arg2;
+- (double)scaleNumericAttribute:(id)arg1 byAmount:(double)arg2;
+- (void)scaleToFitWidth:(double)arg1;
 
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
@@ -63,14 +71,25 @@
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
-- (void)appendAttributedSubstring:(id)arg1 fromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)appendAttributedSubstring:(id)arg1 fromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)appendString:(id)arg1;
-- (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withAttributedSubstring:(id)arg2 fromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
-- (void)setParagraphStyleForWritingDirection:(int)arg1 andAlignment:(BOOL)arg2;
+- (void)replaceCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withAttributedSubstring:(id)arg2 fromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
+
+// Image: /System/Library/PrivateFrameworks/NotesUI.framework/NotesUI
+
+- (void)ic_addTextBlocks:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (void)ic_convertParagraphStyleToBodyInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setParagraphStyleForWritingDirection:(long long)arg1 andAlignment:(bool)arg2;
 
 // Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
 
+- (id)attributedStringByTrimmingEmptySpaceEdges;
+- (unsigned long long)replaceOccurrencesOfString:(id)arg1 withString:(id)arg2;
 - (void)scrcAppendFormat:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
+
+- (void)sxaxApplyLowerPitchTokenToRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 
 // Image: /System/Library/PrivateFrameworks/TextToSpeech.framework/TextToSpeech
 
@@ -78,30 +97,30 @@
 
 // Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
 
-- (BOOL)_attributeFixingInProgress;
-- (void)_changeIntAttribute:(id)arg1 by:(int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
-- (void)_fixGlyphInfo:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)_setAttributeFixingInProgress:(BOOL)arg1;
-- (BOOL)_shouldSetOriginalFontAttribute;
+- (bool)_attributeFixingInProgress;
+- (void)_changeIntAttribute:(id)arg1 by:(long long)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
+- (void)_fixGlyphInfo:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (void)_setAttributeFixingInProgress:(bool)arg1;
+- (bool)_shouldSetOriginalFontAttribute;
 - (void)convertBidiControlCharactersToWritingDirection;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })convertBidiControlCharactersToWritingDirectionForParagraphAtIndex:(unsigned int)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })convertBidiControlCharactersToWritingDirectionForParagraphAtIndex:(unsigned long long)arg1;
 - (void)convertWritingDirectionToBidiControlCharacters;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })convertWritingDirectionToBidiControlCharactersForParagraphAtIndex:(unsigned int)arg1;
-- (void)fixAttachmentAttributeInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)fixAttributesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)fixFontAttributeInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)fixGlyphInfoAttributeInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)fixParagraphStyleAttributeInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (BOOL)readFromData:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3;
-- (BOOL)readFromData:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3 error:(id*)arg4;
-- (BOOL)readFromFileURL:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3 error:(id*)arg4;
-- (BOOL)readFromURL:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3;
-- (BOOL)readFromURL:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3 error:(id*)arg4;
-- (void)setAlignment:(int)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)setBaseWritingDirection:(int)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)subscriptRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)superscriptRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)unscriptRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })convertWritingDirectionToBidiControlCharactersForParagraphAtIndex:(unsigned long long)arg1;
+- (void)fixAttachmentAttributeInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)fixAttributesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)fixFontAttributeInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)fixGlyphInfoAttributeInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)fixParagraphStyleAttributeInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (bool)readFromData:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3;
+- (bool)readFromData:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3 error:(id*)arg4;
+- (bool)readFromFileURL:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3 error:(id*)arg4;
+- (bool)readFromURL:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3;
+- (bool)readFromURL:(id)arg1 options:(id)arg2 documentAttributes:(id*)arg3 error:(id*)arg4;
+- (void)setAlignment:(long long)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (void)setBaseWritingDirection:(long long)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (void)subscriptRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)superscriptRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)unscriptRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 
 // Image: /System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices
 

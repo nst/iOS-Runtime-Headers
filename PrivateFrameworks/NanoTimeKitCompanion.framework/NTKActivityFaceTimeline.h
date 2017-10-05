@@ -4,7 +4,7 @@
 
 @interface NTKActivityFaceTimeline : NTKComplicationTimeline
 
-- (int)nowWindowNodeCapacity;
-- (int)timeTravelWindowNodeCapacity;
+- (long long)nowWindowNodeCapacity;
+- (long long)timeTravelWindowNodeCapacity;
 
 @end

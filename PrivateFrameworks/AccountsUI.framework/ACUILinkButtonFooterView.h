@@ -3,18 +3,18 @@
  */
 
 @interface ACUILinkButtonFooterView : UIView <PSHeaderFooterView> {
-    int  _desiredTextAlignment;
+    long long  _desiredTextAlignment;
     ACUILinkButton * _linkButton;
 }
 
-@property (nonatomic) int alignment;
+@property (nonatomic) long long alignment;
 
 - (void).cxx_destruct;
-- (int)alignment;
+- (long long)alignment;
 - (id)initWithButton:(id)arg1;
 - (id)initWithSpecifier:(id)arg1;
 - (void)layoutSubviews;
-- (float)preferredHeightForWidth:(float)arg1;
-- (void)setAlignment:(int)arg1;
+- (double)preferredHeightForWidth:(double)arg1;
+- (void)setAlignment:(long long)arg1;
 
 @end

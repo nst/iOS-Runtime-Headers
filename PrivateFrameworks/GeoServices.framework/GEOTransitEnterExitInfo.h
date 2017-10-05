@@ -4,7 +4,7 @@
 
 @interface GEOTransitEnterExitInfo : PBCodable <NSCopying> {
     unsigned int  _accessPointIndex;
-    BOOL  _displayStop;
+    bool  _displayStop;
     struct { 
         unsigned int accessPointIndex : 1; 
         unsigned int stopIndex : 1; 
@@ -14,48 +14,48 @@
     }  _has;
     unsigned int  _stopIndex;
     unsigned int  _transferTime;
-    BOOL  _uncertainArrival;
+    bool  _uncertainArrival;
 }
 
 @property (nonatomic) unsigned int accessPointIndex;
-@property (nonatomic) BOOL displayStop;
-@property (nonatomic) BOOL hasAccessPointIndex;
-@property (nonatomic) BOOL hasDisplayStop;
-@property (nonatomic) BOOL hasStopIndex;
-@property (nonatomic) BOOL hasTransferTime;
-@property (nonatomic) BOOL hasUncertainArrival;
+@property (nonatomic) bool displayStop;
+@property (nonatomic) bool hasAccessPointIndex;
+@property (nonatomic) bool hasDisplayStop;
+@property (nonatomic) bool hasStopIndex;
+@property (nonatomic) bool hasTransferTime;
+@property (nonatomic) bool hasUncertainArrival;
 @property (nonatomic) unsigned int stopIndex;
 @property (nonatomic) unsigned int transferTime;
-@property (nonatomic) BOOL uncertainArrival;
+@property (nonatomic) bool uncertainArrival;
 
 - (unsigned int)accessPointIndex;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)displayStop;
-- (BOOL)hasAccessPointIndex;
-- (BOOL)hasDisplayStop;
-- (BOOL)hasStopIndex;
-- (BOOL)hasTransferTime;
-- (BOOL)hasUncertainArrival;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)displayStop;
+- (bool)hasAccessPointIndex;
+- (bool)hasDisplayStop;
+- (bool)hasStopIndex;
+- (bool)hasTransferTime;
+- (bool)hasUncertainArrival;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAccessPointIndex:(unsigned int)arg1;
-- (void)setDisplayStop:(BOOL)arg1;
-- (void)setHasAccessPointIndex:(BOOL)arg1;
-- (void)setHasDisplayStop:(BOOL)arg1;
-- (void)setHasStopIndex:(BOOL)arg1;
-- (void)setHasTransferTime:(BOOL)arg1;
-- (void)setHasUncertainArrival:(BOOL)arg1;
+- (void)setDisplayStop:(bool)arg1;
+- (void)setHasAccessPointIndex:(bool)arg1;
+- (void)setHasDisplayStop:(bool)arg1;
+- (void)setHasStopIndex:(bool)arg1;
+- (void)setHasTransferTime:(bool)arg1;
+- (void)setHasUncertainArrival:(bool)arg1;
 - (void)setStopIndex:(unsigned int)arg1;
 - (void)setTransferTime:(unsigned int)arg1;
-- (void)setUncertainArrival:(BOOL)arg1;
+- (void)setUncertainArrival:(bool)arg1;
 - (unsigned int)stopIndex;
 - (unsigned int)transferTime;
-- (BOOL)uncertainArrival;
+- (bool)uncertainArrival;
 - (void)writeTo:(id)arg1;
 
 @end

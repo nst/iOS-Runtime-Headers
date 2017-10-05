@@ -10,7 +10,7 @@
 
 @optional
 
-- (void)routeHypothesizerUpdater:(GEORouteHypothesizerUpdater *)arg1 didChangeTravelState:(BOOL)arg2;
+- (void)routeHypothesizerUpdater:(GEORouteHypothesizerUpdater *)arg1 didChangeTravelState:(bool)arg2;
 - (void)routeHypothesizerUpdater:(GEORouteHypothesizerUpdater *)arg1 faultedWithError:(NSError *)arg2;
 - (void)routeHypothesizerUpdaterDidArrive:(GEORouteHypothesizerUpdater *)arg1;
 

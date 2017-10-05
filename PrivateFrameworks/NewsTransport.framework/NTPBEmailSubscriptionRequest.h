@@ -12,9 +12,9 @@
 }
 
 @property (nonatomic) long long dsId;
-@property (nonatomic) BOOL hasDsId;
-@property (nonatomic, readonly) BOOL hasLanguageCode;
-@property (nonatomic, readonly) BOOL hasUserStorefrontId;
+@property (nonatomic) bool hasDsId;
+@property (nonatomic, readonly) bool hasLanguageCode;
+@property (nonatomic, readonly) bool hasUserStorefrontId;
 @property (nonatomic, retain) NSString *languageCode;
 @property (nonatomic, retain) NSString *userStorefrontId;
 
@@ -23,16 +23,16 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (long long)dsId;
-- (BOOL)hasDsId;
-- (BOOL)hasLanguageCode;
-- (BOOL)hasUserStorefrontId;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDsId;
+- (bool)hasLanguageCode;
+- (bool)hasUserStorefrontId;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)languageCode;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDsId:(long long)arg1;
-- (void)setHasDsId:(BOOL)arg1;
+- (void)setHasDsId:(bool)arg1;
 - (void)setLanguageCode:(id)arg1;
 - (void)setUserStorefrontId:(id)arg1;
 - (id)userStorefrontId;

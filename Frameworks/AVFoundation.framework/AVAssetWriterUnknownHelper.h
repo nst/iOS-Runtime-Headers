@@ -6,12 +6,12 @@
     short  _alternateGroupID;
 }
 
-- (BOOL)_canAddInput:(id)arg1 exceptionReason:(id*)arg2;
-- (BOOL)_canAddInputGroup:(id)arg1 exceptionReason:(id*)arg2;
+- (bool)_canAddInput:(id)arg1 exceptionReason:(id*)arg2;
+- (bool)_canAddInputGroup:(id)arg1 exceptionReason:(id*)arg2;
 - (void)addInput:(id)arg1;
 - (void)addInputGroup:(id)arg1;
-- (BOOL)canAddInput:(id)arg1;
-- (BOOL)canAddInputGroup:(id)arg1;
+- (bool)canAddInput:(id)arg1;
+- (bool)canAddInputGroup:(id)arg1;
 - (void)cancelWriting;
 - (id)initWithConfigurationState:(id)arg1;
 - (id)initWithURL:(id)arg1 fileType:(id)arg2;
@@ -21,10 +21,12 @@
 - (void)setMovieTimeScale:(int)arg1;
 - (void)setOverallDurationHint:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setPreferredRate:(float)arg1;
-- (void)setPreferredTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setPreferredTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (void)setPreferredVolume:(float)arg1;
-- (void)setShouldOptimizeForNetworkUse:(BOOL)arg1;
+- (void)setShouldOptimizeForNetworkUse:(bool)arg1;
+- (void)setSinglePassFileSize:(long long)arg1;
+- (void)setSinglePassMediaDataSize:(long long)arg1;
 - (void)startWriting;
-- (int)status;
+- (long long)status;
 
 @end

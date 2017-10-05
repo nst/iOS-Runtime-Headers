@@ -3,37 +3,36 @@
  */
 
 @interface HFItem : NSObject {
+    bool  __debug_isChildItem;
     HFItemManager * __debug_owningItemManager;
     NAFuture * _cancellableInFlightUpdateFuture;
-    NSString * _itemStyle;
     NSDictionary * _latestResults;
-    unsigned int  _loadingState;
+    unsigned long long  _loadingState;
 }
 
+@property (nonatomic) bool _debug_isChildItem;
 @property (nonatomic) HFItemManager *_debug_owningItemManager;
 @property (nonatomic) NAFuture *cancellableInFlightUpdateFuture;
-@property (nonatomic, copy) NSString *itemStyle;
 @property (nonatomic, retain) NSDictionary *latestResults;
-@property (nonatomic) unsigned int loadingState;
+@property (nonatomic) unsigned long long loadingState;
 
 - (void).cxx_destruct;
+- (bool)_debug_isChildItem;
 - (id)_debug_owningItemManager;
-- (unsigned int)_effectiveLoadingStateForSuggestedLoadingState:(unsigned int)arg1;
+- (unsigned long long)_effectiveLoadingStateForSuggestedLoadingState:(unsigned long long)arg1;
 - (id)_finalOutcomeForSubclassOutcome:(id)arg1 previousResults:(id)arg2 updateOptions:(id)arg3;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)cancellableInFlightUpdateFuture;
 - (void)copyLatestResultsFromItem:(id)arg1;
 - (id)debugDescription;
 - (id)description;
-- (id)init;
-- (id)itemStyle;
 - (id)latestResults;
-- (unsigned int)loadingState;
-- (BOOL)resultsContainRequiredProperties:(id)arg1;
+- (unsigned long long)loadingState;
+- (bool)resultsContainRequiredProperties:(id)arg1;
 - (void)setCancellableInFlightUpdateFuture:(id)arg1;
-- (void)setItemStyle:(id)arg1;
 - (void)setLatestResults:(id)arg1;
-- (void)setLoadingState:(unsigned int)arg1;
+- (void)setLoadingState:(unsigned long long)arg1;
+- (void)set_debug_isChildItem:(bool)arg1;
 - (void)set_debug_owningItemManager:(id)arg1;
 - (id)updateWithOptions:(id)arg1;
 

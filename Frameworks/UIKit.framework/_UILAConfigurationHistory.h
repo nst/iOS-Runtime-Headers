@@ -3,41 +3,41 @@
  */
 
 @interface _UILAConfigurationHistory : NSObject <NSCopying, _UILAPropertySource> {
-    int  _axis;
-    BOOL  _hasEstablishedBaseValues;
-    BOOL  _inLayoutArrangementUpdateSection;
-    BOOL  _layoutFillsCanvas;
-    BOOL  _layoutUsesCanvasMarginsWhenFilling;
+    long long  _axis;
+    bool  _hasEstablishedBaseValues;
+    bool  _inLayoutArrangementUpdateSection;
+    bool  _layoutFillsCanvas;
+    bool  _layoutUsesCanvasMarginsWhenFilling;
     NSMutableSet * _newlyHiddenItems;
     NSMutableSet * _newlyUnhiddenItems;
 }
 
 @property (nonatomic, readonly) NSSet *_newlyHiddenItems;
 @property (nonatomic, readonly) NSSet *_newlyUnhiddenItems;
-@property (nonatomic) int axis;
+@property (nonatomic) long long axis;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL hasEstablishedBaseValues;
-@property (readonly) unsigned int hash;
-@property (getter=isInLayoutArrangementUpdateSection, nonatomic) BOOL inLayoutArrangementUpdateSection;
-@property (nonatomic) BOOL layoutFillsCanvas;
-@property (nonatomic) BOOL layoutUsesCanvasMarginsWhenFilling;
+@property (nonatomic) bool hasEstablishedBaseValues;
+@property (readonly) unsigned long long hash;
+@property (getter=isInLayoutArrangementUpdateSection, nonatomic) bool inLayoutArrangementUpdateSection;
+@property (nonatomic) bool layoutFillsCanvas;
+@property (nonatomic) bool layoutUsesCanvasMarginsWhenFilling;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_newlyHiddenItems;
 - (id)_newlyUnhiddenItems;
-- (int)axis;
+- (long long)axis;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)hasEstablishedBaseValues;
+- (bool)hasEstablishedBaseValues;
 - (id)init;
-- (BOOL)isInLayoutArrangementUpdateSection;
-- (BOOL)layoutFillsCanvas;
-- (BOOL)layoutUsesCanvasMarginsWhenFilling;
-- (void)setAxis:(int)arg1;
-- (void)setHasEstablishedBaseValues:(BOOL)arg1;
-- (void)setInLayoutArrangementUpdateSection:(BOOL)arg1;
-- (void)setLayoutFillsCanvas:(BOOL)arg1;
-- (void)setLayoutUsesCanvasMarginsWhenFilling:(BOOL)arg1;
+- (bool)isInLayoutArrangementUpdateSection;
+- (bool)layoutFillsCanvas;
+- (bool)layoutUsesCanvasMarginsWhenFilling;
+- (void)setAxis:(long long)arg1;
+- (void)setHasEstablishedBaseValues:(bool)arg1;
+- (void)setInLayoutArrangementUpdateSection:(bool)arg1;
+- (void)setLayoutFillsCanvas:(bool)arg1;
+- (void)setLayoutUsesCanvasMarginsWhenFilling:(bool)arg1;
 
 @end

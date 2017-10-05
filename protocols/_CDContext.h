@@ -6,7 +6,7 @@
 @required
 
 - (void)deregisterCallback:(_CDContextualChangeRegistration *)arg1;
-- (BOOL)hasKnowledgeOfContextualKeyPath:(_CDContextualKeyPath *)arg1;
+- (bool)hasKnowledgeOfContextualKeyPath:(_CDContextualKeyPath *)arg1;
 - (NSDate *)lastModifiedDateForContextualKeyPath:(_CDContextualKeyPath *)arg1;
 - (NSObject<NSCopying><NSSecureCoding> *)objectForContextualKeyPath:(_CDContextualKeyPath *)arg1;
 - (NSObject<NSCopying><NSSecureCoding> *)objectForKeyedSubscript:(_CDContextualKeyPath *)arg1;
@@ -14,6 +14,6 @@
 
 @optional
 
-- (BOOL)evaluatePredicate:(_CDContextualPredicate *)arg1;
+- (bool)evaluatePredicate:(_CDContextualPredicate *)arg1;
 
 @end

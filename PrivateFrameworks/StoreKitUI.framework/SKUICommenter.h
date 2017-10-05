@@ -4,29 +4,29 @@
 
 @interface SKUICommenter : SKUIMediaSocialAuthor {
     NSString * _attributedName;
-    BOOL  _isAttributed;
-    BOOL  _isMySelf;
+    bool  _isAttributed;
+    bool  _isMySelf;
     UIImage * _thumbnailImage;
-    BOOL  _useImageCopy;
+    bool  _useImageCopy;
 }
 
 @property (nonatomic, retain) NSString *attributedName;
-@property (nonatomic) BOOL isAttributed;
-@property (nonatomic) BOOL isMySelf;
+@property (nonatomic) bool isAttributed;
+@property (nonatomic) bool isMySelf;
 @property (nonatomic, copy) UIImage *thumbnailImage;
-@property (nonatomic) BOOL useImageCopy;
+@property (nonatomic) bool useImageCopy;
 
 - (void).cxx_destruct;
 - (id)attributedName;
 - (id)initWithAuthor:(id)arg1;
-- (BOOL)isAttributed;
-- (BOOL)isMySelf;
+- (bool)isAttributed;
+- (bool)isMySelf;
 - (void)setAttributedName:(id)arg1;
-- (void)setIsAttributed:(BOOL)arg1;
-- (void)setIsMySelf:(BOOL)arg1;
+- (void)setIsAttributed:(bool)arg1;
+- (void)setIsMySelf:(bool)arg1;
 - (void)setThumbnailImage:(id)arg1;
-- (void)setUseImageCopy:(BOOL)arg1;
+- (void)setUseImageCopy:(bool)arg1;
 - (id)thumbnailImage;
-- (BOOL)useImageCopy;
+- (bool)useImageCopy;
 
 @end

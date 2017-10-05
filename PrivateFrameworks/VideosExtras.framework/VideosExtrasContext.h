@@ -20,7 +20,7 @@
 @property (nonatomic, readonly) VideosExtrasRootViewController *extrasRootViewController;
 @property (nonatomic, retain) MPPlaybackContext *featurePlaybackContext;
 @property (nonatomic, retain) UIViewController *featurePlaybackViewController;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSURL *javascriptURL;
 @property (nonatomic, readonly) MPMediaItem *mediaItem;
 @property (nonatomic, readonly) long long storeID;
@@ -35,7 +35,7 @@
 - (id)buyParameters;
 - (id)delegate;
 - (void)extrasRequestReloadWithContext:(id)arg1;
-- (void)extrasRequestsMediaPlayback:(id)arg1 isBackground:(BOOL)arg2;
+- (void)extrasRequestsMediaPlayback:(id)arg1 isBackground:(bool)arg2;
 - (void)extrasRequestsPlaybackStop;
 - (id)extrasRootViewController;
 - (void)failWithError:(id)arg1;

@@ -18,9 +18,9 @@
 
 - (void)addChild:(id)arg1;
 - (void)dealloc;
-- (BOOL)enumerate:(id /* block */)arg1;
+- (bool)enumerate:(id /* block */)arg1;
 - (id)initWithParent:(id)arg1;
-- (id)initWithParent:(id)arg1 childKeyCallbacks:(const struct { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); }*)arg2;
+- (id)initWithParent:(id)arg1 childKeyCallbacks:(const struct { long long x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); }*)arg2;
 - (void)invalidate;
 - (void)removeChild:(id)arg1;
 - (void)resetChildren;

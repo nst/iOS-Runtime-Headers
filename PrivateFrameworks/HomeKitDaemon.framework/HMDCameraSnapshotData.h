@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraSnapshotData : NSObject {
+@interface HMDCameraSnapshotData : HMFObject {
     NSData * _snapshotData;
-    HAPOSTransaction * _snapshotDataTrasaction;
+    HMFOSTransaction * _snapshotDataTrasaction;
     HMDVideoResolution * _videoResolution;
 }
 
 @property (nonatomic, readonly) NSData *snapshotData;
-@property (nonatomic, readonly) HAPOSTransaction *snapshotDataTrasaction;
+@property (nonatomic, readonly) HMFOSTransaction *snapshotDataTrasaction;
 @property (nonatomic, readonly) HMDVideoResolution *videoResolution;
 
 - (void).cxx_destruct;

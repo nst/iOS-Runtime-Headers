@@ -11,12 +11,12 @@
 }
 
 @property (nonatomic, retain) NSData *changeData;
-@property (nonatomic, readonly) int changeType;
+@property (nonatomic, readonly) long long changeType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL hasChangeData;
-@property (nonatomic, readonly) BOOL hasSequencer;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool hasChangeData;
+@property (nonatomic, readonly) bool hasSequencer;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *objectId;
 @property (nonatomic, readonly) NSString *objectIdentifier;
 @property (nonatomic, readonly) NSString *sequencer;
@@ -26,28 +26,28 @@
 @property (nonatomic) unsigned long long version;
 
 + (id)changeWithChangeObject:(id)arg1 serializer:(id)arg2;
-+ (id)changeWithChangeObject:(id)arg1 serializer:(id)arg2 encodeUsingVersion:(int)arg3;
++ (id)changeWithChangeObject:(id)arg1 serializer:(id)arg2 encodeUsingVersion:(long long)arg3;
 + (id)changeWithObject:(id)arg1 updateType:(int)arg2 store:(id)arg3;
 
 - (void).cxx_destruct;
 - (int)StringAsType:(id)arg1;
 - (id)changeData;
 - (id)changeObjectWithSerializer:(id)arg1;
-- (id)changeObjectWithSerializer:(id)arg1 encodedByVersion:(int)arg2;
-- (int)changeType;
+- (id)changeObjectWithSerializer:(id)arg1 encodedByVersion:(long long)arg2;
+- (long long)changeType;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasChangeData;
-- (BOOL)hasSequencer;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasChangeData;
+- (bool)hasSequencer;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)objectForStore:(id)arg1;
 - (id)objectId;
 - (id)objectIdentifier;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)sequencer;
 - (void)setChangeData:(id)arg1;
 - (void)setObjectId:(id)arg1;

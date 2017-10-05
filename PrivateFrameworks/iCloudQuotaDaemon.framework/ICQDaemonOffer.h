@@ -10,24 +10,24 @@
 }
 
 @property (nonatomic, readonly) _ICQAlertSpecification *alertSpecification;
-@property (getter=isBuddyOffer, nonatomic, readonly) BOOL buddyOffer;
+@property (getter=isBuddyOffer, nonatomic, readonly) bool buddyOffer;
 @property (nonatomic, readonly) _ICQFollowupSpecification *followupSpecification;
 @property (nonatomic, retain) _ICQAlertSpecification *internalAlertSpecification;
 @property (nonatomic, retain) _ICQFollowupSpecification *internalFollowupSpecification;
-@property (nonatomic, readonly) int level;
+@property (nonatomic, readonly) long long level;
 @property (nonatomic, retain) NSString *notificationID;
 @property (nonatomic, copy) NSString *offerId;
 
 + (id)defaultPlaceholderKeys;
 + (id)persistenceKey;
-+ (BOOL)placeholderExistsInString:(id)arg1;
++ (bool)placeholderExistsInString:(id)arg1;
 + (id)placeholderKeysInString:(id)arg1 fromKeys:(id)arg2;
 + (id)stringWithPlaceholderFormat:(id)arg1;
 + (id)stringWithPlaceholderFormat:(id)arg1 alternateString:(id)arg2;
 + (id)stringWithPlaceholderFormat:(id)arg1 substitutions:(id)arg2;
-+ (id)substitutionForPlaceholderKey:(id)arg1 outIsBelowMin:(BOOL*)arg2;
++ (id)substitutionForPlaceholderKey:(id)arg1 outIsBelowMin:(bool*)arg2;
 + (id)substitutionsForPlaceholderKeys:(id)arg1;
-+ (id)substitutionsForPlaceholderKeys:(id)arg1 checkIfBelowMin:(BOOL)arg2 outIsMissingSubstitution:(BOOL*)arg3;
++ (id)substitutionsForPlaceholderKeys:(id)arg1 checkIfBelowMin:(bool)arg2 outIsMissingSubstitution:(bool*)arg3;
 
 - (void).cxx_destruct;
 - (void)_addSampleAlert;
@@ -41,8 +41,8 @@
 - (id)initWithDictionary:(id)arg1;
 - (id)internalAlertSpecification;
 - (id)internalFollowupSpecification;
-- (BOOL)isBuddyOffer;
-- (int)level;
+- (bool)isBuddyOffer;
+- (long long)level;
 - (id)notificationID;
 - (id)offerId;
 - (void)setInternalAlertSpecification:(id)arg1;

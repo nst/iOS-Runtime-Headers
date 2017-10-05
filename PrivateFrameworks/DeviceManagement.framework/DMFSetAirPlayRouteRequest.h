@@ -5,14 +5,14 @@
 @interface DMFSetAirPlayRouteRequest : CATTaskRequest {
     NSString * _password;
     NSString * _routeUID;
-    BOOL  _suppressPasscodePrompt;
+    bool  _suppressPasscodePrompt;
 }
 
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic, copy) NSString *routeUID;
-@property (nonatomic) BOOL suppressPasscodePrompt;
+@property (nonatomic) bool suppressPasscodePrompt;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
@@ -21,7 +21,7 @@
 - (id)routeUID;
 - (void)setPassword:(id)arg1;
 - (void)setRouteUID:(id)arg1;
-- (void)setSuppressPasscodePrompt:(BOOL)arg1;
-- (BOOL)suppressPasscodePrompt;
+- (void)setSuppressPasscodePrompt:(bool)arg1;
+- (bool)suppressPasscodePrompt;
 
 @end

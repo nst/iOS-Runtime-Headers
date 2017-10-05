@@ -6,7 +6,7 @@
 @required
 
 - (NSArray *)allKeysForDictionaryProxy:(OKCollectionProxy *)arg1;
-- (unsigned int)countOfDictionaryProxy:(OKCollectionProxy *)arg1;
+- (unsigned long long)countOfDictionaryProxy:(OKCollectionProxy *)arg1;
 - (id)dictionaryProxy:(OKCollectionProxy *)arg1 objectForKey:(id)arg2;
 
 @optional

@@ -19,6 +19,7 @@
     bool  _floating;
     long long  _indentationLevel;
     double  _indexBarExtentFromEdge;
+    bool  _insetsContentViewsToSafeArea;
     bool  _isHeader;
     bool  _layoutMarginsFollowReadableWidth;
     struct UIEdgeInsets { 
@@ -56,6 +57,7 @@
 @property (nonatomic) bool floating;
 @property (nonatomic) long long indentationLevel;
 @property (nonatomic) double indexBarExtentFromEdge;
+@property (nonatomic) bool insetsContentViewsToSafeArea;
 @property (nonatomic) bool isHeader;
 @property (nonatomic) bool layoutMarginsFollowReadableWidth;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } margins;
@@ -87,6 +89,7 @@
 - (bool)floating;
 - (long long)indentationLevel;
 - (double)indexBarExtentFromEdge;
+- (bool)insetsContentViewsToSafeArea;
 - (bool)isEqual:(id)arg1;
 - (bool)isHeader;
 - (bool)layoutMarginsFollowReadableWidth;
@@ -110,6 +113,7 @@
 - (void)setFloating:(bool)arg1;
 - (void)setIndentationLevel:(long long)arg1;
 - (void)setIndexBarExtentFromEdge:(double)arg1;
+- (void)setInsetsContentViewsToSafeArea:(bool)arg1;
 - (void)setIsHeader:(bool)arg1;
 - (void)setLayoutMarginsFollowReadableWidth:(bool)arg1;
 - (void)setMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;

@@ -19,10 +19,15 @@
 
 - (void).cxx_destruct;
 - (void)addCloudRecord:(id)arg1 ownerID:(id)arg2;
+- (void)cloudRecordWithObjectID:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)cloudRecordWithObjectIDs:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)cloudRecordsForParentID:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)createCloudZoneChangeTemporaryCache:(bool)arg1;
 - (id)description;
+- (void)fetchMigratedObjects:(id /* block */)arg1;
 - (bool)isRootRecord:(id)arg1;
 - (bool)isSharedHome;
+- (void)markMigratedObjectsAsMigrated;
 - (id)perUserShareGroups;
 - (void)setServerChangeToken:(id)arg1;
 - (void)setShareGroup:(id)arg1;

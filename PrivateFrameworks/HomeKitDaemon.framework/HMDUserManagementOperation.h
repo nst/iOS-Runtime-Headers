@@ -60,10 +60,10 @@
 
 - (void).cxx_destruct;
 - (long long)_accessoryInvitationState;
-- (void)_addPairingToAccessory:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_addPairingToHAPAccessory:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_endBackoffTimer;
 - (bool)_isFinished;
-- (void)_removePairingFromAccessory:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_removePairingFromHAPAccessory:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_setupExpirationTimer;
 - (void)_startBackoffTimer;
 - (id)accessory;

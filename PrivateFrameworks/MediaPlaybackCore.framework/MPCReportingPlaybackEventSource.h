@@ -6,7 +6,6 @@
     long long  _equivalencySourceAdamID;
     double  _eventDuration;
     NSString * _featureName;
-    NSString * _householdID;
     <MPCReportingIdentityPropertiesLoading> * _identityPropertiesLoader;
     MPModelGenericObject * _itemGenericObject;
     NSData * _jingleTimedMetadata;
@@ -25,7 +24,6 @@
 @property (nonatomic) long long equivalencySourceAdamID;
 @property (nonatomic) double eventDuration;
 @property (nonatomic, copy) NSString *featureName;
-@property (nonatomic, copy) NSString *householdID;
 @property (nonatomic, retain) <MPCReportingIdentityPropertiesLoading> *identityPropertiesLoader;
 @property (nonatomic, retain) MPModelGenericObject *itemGenericObject;
 @property (nonatomic, copy) NSData *jingleTimedMetadata;
@@ -44,7 +42,6 @@
 - (long long)equivalencySourceAdamID;
 - (double)eventDuration;
 - (id)featureName;
-- (id)householdID;
 - (id)identityPropertiesLoader;
 - (id)init;
 - (id)initWithAVItem:(id)arg1;
@@ -61,7 +58,6 @@
 - (void)setEquivalencySourceAdamID:(long long)arg1;
 - (void)setEventDuration:(double)arg1;
 - (void)setFeatureName:(id)arg1;
-- (void)setHouseholdID:(id)arg1;
 - (void)setIdentityPropertiesLoader:(id)arg1;
 - (void)setItemGenericObject:(id)arg1;
 - (void)setJingleTimedMetadata:(id)arg1;

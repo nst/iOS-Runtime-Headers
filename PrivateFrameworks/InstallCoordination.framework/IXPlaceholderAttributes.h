@@ -10,6 +10,7 @@
     NSString * _minimumOSVersion;
     NSDictionary * _requiredDeviceCapabilities;
     NSArray * _sbAppTags;
+    NSString * _sbIconMasqueradeIdentifier;
 }
 
 @property (nonatomic, copy) NSString *bundleVersion;
@@ -19,6 +20,7 @@
 @property (nonatomic, copy) NSString *minimumOSVersion;
 @property (nonatomic, copy) NSDictionary *requiredDeviceCapabilities;
 @property (nonatomic, copy) NSArray *sbAppTags;
+@property (nonatomic, copy) NSString *sbIconMasqueradeIdentifier;
 
 + (bool)supportsSecureCoding;
 
@@ -42,6 +44,7 @@
 - (id)minimumOSVersion;
 - (id)requiredDeviceCapabilities;
 - (id)sbAppTags;
+- (id)sbIconMasqueradeIdentifier;
 - (void)setBundleVersion:(id)arg1;
 - (void)setExtensionDictionary:(id)arg1;
 - (void)setLaunchProhibited:(bool)arg1;
@@ -50,5 +53,6 @@
 - (void)setRequiredDeviceCapabilities:(id)arg1;
 - (void)setRequiredDeviceCapabilitiesWithArray:(id)arg1;
 - (void)setSbAppTags:(id)arg1;
+- (void)setSbIconMasqueradeIdentifier:(id)arg1;
 
 @end

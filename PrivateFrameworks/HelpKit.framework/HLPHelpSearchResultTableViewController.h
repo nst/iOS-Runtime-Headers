@@ -12,8 +12,6 @@
 @property (nonatomic, retain) NSArray *searchResults;
 
 - (void).cxx_destruct;
-- (void)contentSizeCategoryDidChange:(id)arg1;
-- (void)dealloc;
 - (id)footerView;
 - (id)searchResults;
 - (void)setFooterView:(id)arg1;

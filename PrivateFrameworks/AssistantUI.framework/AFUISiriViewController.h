@@ -41,6 +41,7 @@
     AFUISiriRemoteViewController * _remoteViewController;
     NSObject<OS_dispatch_queue> * _remoteViewControllerDispatchQueue;
     bool  _remoteViewControllerDispatchQueueSuspended;
+    bool  _remoteViewControllerIsPresenting;
     SiriUIAudioRoutePickerController * _routePickerController;
     AFUISiriSession * _session;
     bool  _showsStatusBar;
@@ -166,6 +167,7 @@
 - (bool)canBecomeFirstResponder;
 - (void)cancelTTS;
 - (bool)carDNDActive;
+- (id)childViewControllerForHomeIndicatorAutoHidden;
 - (void)commandCache:(id)arg1 didInvalidateDelayedActionCommand:(id)arg2;
 - (void)commandCache:(id)arg1 didPerformDelayedActionCommand:(id)arg2;
 - (id)contextAppInfosForSiriSession:(id)arg1;
@@ -237,16 +239,18 @@
 - (void)shortTapAction;
 - (bool)shouldAutomaticallyForwardAppearanceMethods;
 - (bool)shouldAutorotate;
-- (bool)shouldTurnOnScreenOnAppearance;
 - (void)showPresentationWithIdentifier:(id)arg1 properties:(id)arg2 lockState:(unsigned long long)arg3;
 - (bool)showsStatusBar;
 - (void)siriDidActivateFromSource:(long long)arg1;
 - (void)siriDidDeactivate;
 - (id)siriRemoteViewController:(id)arg1 bulletinWithIdentifier:(id)arg2;
 - (void)siriRemoteViewController:(id)arg1 didChangePresentationPeekMode:(unsigned long long)arg2;
+- (void)siriRemoteViewController:(id)arg1 didDismissViewControllerWithStatusBarStyle:(long long)arg2;
 - (void)siriRemoteViewController:(id)arg1 didEncounterUnexpectedServiceError:(id)arg2;
 - (void)siriRemoteViewController:(id)arg1 didFinishTest:(id)arg2;
+- (void)siriRemoteViewController:(id)arg1 didPresentViewControllerWithStatusBarStyle:(long long)arg2;
 - (void)siriRemoteViewController:(id)arg1 didReadBulletinWithIdentifier:(id)arg2;
+- (void)siriRemoteViewController:(id)arg1 didRequestCurrentTextInputWithReplyHandler:(id /* block */)arg2;
 - (void)siriRemoteViewController:(id)arg1 didRequestKeyboard:(bool)arg2;
 - (void)siriRemoteViewController:(id)arg1 didRequestKeyboard:(bool)arg2 minimized:(bool)arg3;
 - (void)siriRemoteViewController:(id)arg1 handlePasscodeUnlockWithCompletion:(id /* block */)arg2;
@@ -315,10 +319,12 @@
 - (void)updateContexts:(long long)arg1;
 - (void)updateRequestOptions:(id)arg1;
 - (void)updateViewForPercentageRevealed:(double)arg1;
+- (long long)userAccountCountForSiriView:(id)arg1;
 - (void)userInteractionDidOccur;
 - (void)userRelevantEventDidOccurInSiriRemoteViewController:(id)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
+- (void)viewSafeAreaInsetsDidChange;
 - (id)viewServiceApplicationInfo;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillAppearFinishedForSiriRemoteViewController:(id)arg1;

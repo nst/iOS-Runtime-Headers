@@ -12,6 +12,13 @@
     struct os_unfair_lock_s { 
         unsigned int _os_unfair_lock_opaque; 
     }  _stateMachineLock;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _timeOfFirstReceivedSystemStatus;
+    double  _timeout;
 }
 
 @property (getter=isCalibrationComplete, nonatomic, readonly) bool calibrationComplete;
@@ -25,7 +32,7 @@
 - (id)initWithCaptureDevice:(id)arg1 device:(struct OpaqueFigCaptureDevice { }*)arg2;
 - (bool)isCalibrationComplete;
 - (void)startCalibration;
-- (void)updateWithDepthSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
+- (void)updateWithPearlSystemStatus:(int)arg1 facesDetected:(bool)arg2;
 - (void)updateWithVideoSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 
 @end

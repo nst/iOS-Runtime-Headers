@@ -109,6 +109,7 @@
 
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
++ (id)generateMediaPasswordWithError:(id*)arg1;
 + (bool)isValidMediaPassword:(id)arg1 error:(id*)arg2;
 + (bool)supportsSecureCoding;
 
@@ -150,10 +151,10 @@
 - (void)_handleAddedResidentDevice:(id)arg1;
 - (void)_handleAppDataUpdatedNotification:(id)arg1;
 - (void)_handleBlockedStateNotification:(id)arg1;
-- (void)_handleCacheMissUpdatesNotification:(id)arg1;
 - (void)_handleEventTriggerAddedNotification:(id)arg1;
 - (void)_handleEventTriggerOwnerDeviceNotification:(id)arg1;
 - (void)_handleEventTriggerOwnerUserNotification:(id)arg1;
+- (void)_handleHomeHubStateUpdatedNotification:(id)arg1;
 - (void)_handleHomeLocationUpdateNotificaton:(id)arg1;
 - (void)_handleHomeRenamedNotification:(id)arg1;
 - (void)_handleMultipleCharacteristicValuesUpdated:(id)arg1;
@@ -163,6 +164,7 @@
 - (void)_handleRequestAccessorySetupCodeRequestKey:(id)arg1;
 - (void)_handleRoomAddedNotification:(id)arg1;
 - (void)_handleRoomRemovedNotification:(id)arg1;
+- (void)_handleRuntimeStateUpdate:(id)arg1;
 - (void)_handleServiceGroupAddedNotification:(id)arg1;
 - (void)_handleServiceGroupRemovedNotification:(id)arg1;
 - (void)_handleTimerTriggerAddedNotification:(id)arg1;
@@ -198,6 +200,7 @@
 - (void)_notifyDelegateOfAppDataUpdateForActionSet:(id)arg1;
 - (void)_notifyDelegateOfAppDataUpdateForRoom:(id)arg1;
 - (void)_notifyDelegateOfAppDataUpdateForServiceGroup:(id)arg1;
+- (void)_notifyDelegateOfHomeHubStateUpdate;
 - (void)_notifyDelegateOfTriggerAdded:(id)arg1;
 - (void)_notifyDelegateOfTriggerRemoved:(id)arg1;
 - (void)_notifyDelegateOfTriggerUpdated:(id)arg1;
@@ -209,6 +212,7 @@
 - (void)_removeActionSet:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_removeIdentifier:(id)arg1 bridgeUUID:(id)arg2;
 - (void)_removeIncompatibleTrigger:(id)arg1;
+- (void)_removeMediaSystem:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_removeRoom:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_removeServiceGroup:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_removeServices:(id)arg1;
@@ -284,6 +288,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)executeActionSet:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)handleDaemonInterruptedNotification:(id)arg1;
+- (void)handleRuntimeStateUpdate:(id)arg1;
 - (void)handleUIApplicationWillResignActiveNotification:(id)arg1;
 - (id)homeAccessControlForUser:(id)arg1;
 - (id)homeAsRoom;
@@ -309,6 +314,7 @@
 - (void)manageUsersWithCompletionHandler:(id /* block */)arg1;
 - (id)mediaPassword;
 - (id)mediaPassword;
+- (id)mediaSystems;
 - (void)mergeWithNewObjectNoMergeCount:(id)arg1;
 - (id)messageDestination;
 - (id)messageReceiveQueue;
@@ -327,14 +333,15 @@
 - (void)notifyDelegateOfAppDataUpdateForServiceGroup:(id)arg1;
 - (void)notifyDelegatesOfExecution:(id)arg1 actionSet:(id)arg2;
 - (id)outgoingInvitations;
+- (id)owner;
 - (id)pendingRequests;
 - (void)performBatchCharacteristicRequest:(id)arg1;
 - (id)propertyQueue;
 - (void)queryRemoteAccessWithCompletionHandler:(id /* block */)arg1;
 - (void)reEnableNotifications;
-- (void)reEvaluateHomeHubState;
 - (void)removeAccessory:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)removeActionSet:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)removeMediaSystem:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)removeRoom:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)removeServiceGroup:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)removeServices:(id)arg1;
@@ -431,6 +438,9 @@
 + (id)_hf_appDataKeyForColorPaletteOfType:(unsigned long long)arg1;
 
 - (id)hf_accessControlDescriptor;
+- (id)hf_accessoriesMatchingCategoryType:(id)arg1;
+- (id)hf_accessoriesSupportingSoftwareUpdate;
+- (id)hf_accessoryForSymptomsHandler:(id)arg1;
 - (id)hf_accessoryWithIdentifier:(id)arg1;
 - (id)hf_actionSetWithUUID:(id)arg1;
 - (id)hf_allBridgeAccessories;
@@ -451,14 +461,19 @@
 - (id)hf_dateAdded;
 - (id)hf_displayName;
 - (id)hf_handleForUser:(id)arg1;
+- (bool)hf_hasAcceptedTermsAndConditionsForHomePodVersion:(id)arg1;
 - (bool)hf_hasMediaAccessories;
 - (id)hf_home;
 - (bool)hf_homeHasOnboarded;
 - (bool)hf_isCurrentLocationHome;
+- (bool)hf_isMediaAccessoryProfileValid:(id)arg1;
 - (bool)hf_isPresenceAuthorizedForUser:(id)arg1;
 - (bool)hf_isUserAtHome;
+- (id)hf_markTermsAndConditionsAsAcceptedForHomePodWithLicenseAgreementVersion:(id)arg1;
 - (id)hf_mediaAccessories;
+- (id)hf_mediaSystemForAccessory:(id)arg1;
 - (id)hf_notesApplicationData;
+- (id)hf_personalRequestAccessories;
 - (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
 - (id)hf_primaryResidentDevice;
 - (unsigned long long)hf_remoteAccessState;

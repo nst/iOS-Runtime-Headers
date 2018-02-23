@@ -55,7 +55,6 @@
     NSString * _lastImplicitlyTrainedAudioFile;
     double  _lastScore;
     double  _lastSupervecScore;
-    float  _lastTdSpeakerRecognizerSATScore;
     unsigned char  _lastTriggerType;
     double  _lastUptime;
     NSObject<OS_dispatch_queue> * _loggingQueue;
@@ -90,7 +89,11 @@
     unsigned int  _samplecountAtRealTriggerStart;
     unsigned long long  _samplerate;
     NSString * _satAudioDirectory;
+    VTTextDependentSpeakerRecognizer * _satDetectionTdSr;
+    NSObject<OS_dispatch_semaphore> * _satDetectionTdSrSemaphore;
     NSString * _satModelDirectory;
+    VTTextDependentSpeakerRecognizer * _satRetrainingTdSr;
+    NSObject<OS_dispatch_semaphore> * _satRetrainingTdSrSemaphore;
     bool  _secondPassAccepted;
     bool  _secondPassAudioLoggingEnabled;
     double  _secondPassBestScore;
@@ -98,10 +101,8 @@
     bool  _secondPassStopSent;
     double  _secondPassTrailingTime;
     bool  _secondPassTriggered;
-    VTTextDependentSpeakerRecognizer * _tdSpeakerRecognizer;
     double  _tdSpeakerRecognizerCombinationWeight;
     double  _tdSpeakerRecognizerSATThreshold;
-    NSObject<OS_dispatch_semaphore> * _tdSpeakerRecognizerSemaphore;
     double  _threshold;
     double  _thresholdLogNearMisses;
     double  _thresholdPreSuperVector;
@@ -162,6 +163,7 @@
 - (id)_desRecordFromTriggerData:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; float x5; bool x6; bool x7; }*)arg1 sampleCount:(unsigned long long*)arg2;
 - (void)_firstUnlockedAndSpringBoardStarted;
 - (id)_getAssetHashFromConfigPath:(id)arg1;
+- (long long)_getNumberOfAudioFilesInDirectory:(id)arg1;
 - (id)_getSATDirectory;
 - (bool)_getSecondChanceEffective;
 - (id)_getSortedEnrollmentUtterances;
@@ -192,6 +194,7 @@
 - (void)_setDeviceHandHeld;
 - (void)_setSecondChance;
 - (bool)_shouldCreateAudioBuffer;
+- (bool)_shouldPerformRetrainingWithAnalyzerNDAPI:(id)arg1 resourcePath:(id)arg2;
 - (void)_storeFirstChanceAudio;
 - (void)_voiceTriggerEnabledDidChange;
 - (id)analyze:(struct AudioBuffer { unsigned int x1; unsigned int x2; void *x3; })arg1;
@@ -211,6 +214,7 @@
 - (id)getLanguageCode;
 - (id)getSATDirectory;
 - (id)init;
+- (id)initWithConfig:(id)arg1 assetDir:(id)arg2 runMode:(unsigned long long)arg3;
 - (id)initWithConfig:(id)arg1 resourcePath:(id)arg2;
 - (id)initWithHardwareSampleRate:(double)arg1;
 - (id)initWithHardwareSampleRate:(double)arg1 readyCompletion:(id /* block */)arg2;
@@ -232,6 +236,7 @@
 - (void)setBypass:(bool)arg1;
 - (void)startAudioCapture;
 - (void)stopAudioCapture;
+- (void)textDependentSpeakerRecognizer:(id)arg1 failedWithError:(id)arg2;
 - (void)textDependentSpeakerRecognizer:(id)arg1 hasSatScore:(float)arg2;
 - (long long)triggerCount;
 

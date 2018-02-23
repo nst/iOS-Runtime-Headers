@@ -3,6 +3,7 @@
  */
 
 @interface VCMediaNegotiator : NSObject {
+    bool  _isCellular16x9Capable;
     VCMediaNegotiatorLocalConfiguration * _localSettings;
     VCMediaNegotiatorAudioResults * _negotiatedAudioSettings;
     VCMediaNegotiatorCaptionsResults * _negotiatedCaptionsSettings;
@@ -33,7 +34,9 @@
 - (id)getPreferredVideoPayloadList:(id)arg1;
 - (id)initWithLocalSettings:(id)arg1;
 - (bool)isCaller;
+- (bool)isCellular16x9EncodeCapable;
 - (id)localSettings;
+- (void)negotateAudioUseSBR:(id)arg1 audioRuleCollection:(id)arg2;
 - (void)negotiateAudioAllowRecording:(id)arg1;
 - (bool)negotiateAudioDTXPayload:(id)arg1;
 - (bool)negotiateAudioPrimaryPayload:(id)arg1;
@@ -44,7 +47,7 @@
 - (bool)negotiateMomentsWithMomentsSettings:(id)arg1;
 - (void)negotiateRTCPFB:(id)arg1;
 - (bool)negotiateScreenSettings:(id)arg1;
-- (id)negotiateVideoMaxResolutionWithLocalRules:(id)arg1 remoteRules:(id)arg2;
+- (id)negotiateVideoMaxResolutionWithEncodeRules:(id)arg1 decodeRules:(id)arg2 isEncoder:(bool)arg3;
 - (bool)negotiateVideoSettings:(id)arg1;
 - (id)negotiatedAudioSettings;
 - (id)negotiatedCaptionsSettings;

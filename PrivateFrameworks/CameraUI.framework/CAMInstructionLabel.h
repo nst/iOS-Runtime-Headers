@@ -7,6 +7,7 @@
     <CAMInstructionLabelDelegate> * _delegate;
     long long  _style;
     NSString * _text;
+    bool  _useModeDialFontSize;
 }
 
 @property (nonatomic, readonly) double _backgroundAlpha;
@@ -15,6 +16,7 @@
 @property (nonatomic) <CAMInstructionLabelDelegate> *delegate;
 @property (nonatomic) long long style;
 @property (nonatomic, copy) NSString *text;
+@property (nonatomic) bool useModeDialFontSize;
 
 - (void).cxx_destruct;
 - (double)_backgroundAlpha;
@@ -30,9 +32,11 @@
 - (void)setDelegate:(id)arg1;
 - (void)setStyle:(long long)arg1;
 - (void)setText:(id)arg1;
+- (void)setUseModeDialFontSize:(bool)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (long long)style;
 - (id)text;
 - (void)updateToContentSize:(id)arg1;
+- (bool)useModeDialFontSize;
 
 @end

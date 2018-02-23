@@ -4,7 +4,7 @@
 
 @interface FPCreateFolderOperation : FPActionOperation {
     id /* block */  _createFolderCompletionBlock;
-    NSString * _folderName;
+    NSString * _folderFilename;
     FPItem * _parentItem;
     FPItemID * _placeholderID;
 }

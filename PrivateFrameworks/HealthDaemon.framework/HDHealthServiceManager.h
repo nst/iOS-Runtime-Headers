@@ -6,7 +6,6 @@
     NSMutableArray * _allServicesArray;
     CBUUID * _allServicesUUID;
     NSMutableDictionary * _bluetoothUpdateHandlers;
-    NSData * _btAdvertisingAddress;
     CBCentralManager * _central;
     NSMutableDictionary * _connectedPeripheralsByPeripheralUUID;
     NSMutableDictionary * _connectionInfosByPeripheralUUID;
@@ -25,7 +24,6 @@
 @property (nonatomic, retain) NSMutableArray *allServicesArray;
 @property (nonatomic, retain) CBUUID *allServicesUUID;
 @property (nonatomic, retain) NSMutableDictionary *bluetoothUpdateHandlers;
-@property (nonatomic, retain) NSData *btAdvertisingAddress;
 @property (nonatomic, retain) CBCentralManager *central;
 @property (nonatomic, retain) NSMutableDictionary *connectedPeripheralsByPeripheralUUID;
 @property (nonatomic, retain) NSMutableDictionary *connectionInfosByPeripheralUUID;
@@ -62,11 +60,11 @@
 - (void)_removeConnectedPeripheral:(unsigned long long)arg1 withError:(id)arg2;
 - (void)_reportExistingDiscoveriesForService:(id)arg1;
 - (id)_reportPeripheral:(id)arg1 serviceUUID:(id)arg2 serviceAdvertisementData:(id)arg3 peripheralAdvertisementData:(id)arg4;
+- (id)_scanOptionsForDiscoveryInfos:(id)arg1;
 - (id)_serviceFromUUID:(id)arg1 peripheral:(id)arg2 serviceAdvertisementData:(id)arg3 peripheralAdvertisementData:(id)arg4;
 - (id)allServicesArray;
 - (id)allServicesUUID;
 - (id)bluetoothUpdateHandlers;
-- (id)btAdvertisingAddress;
 - (id)central;
 - (void)centralManager:(id)arg1 didConnectPeripheral:(id)arg2;
 - (void)centralManager:(id)arg1 didDisconnectPeripheral:(id)arg2 error:(id)arg3;
@@ -76,15 +74,14 @@
 - (void)centralManagerDidUpdateState:(id)arg1;
 - (void)characteristicReceived:(id)arg1 device:(id)arg2;
 - (unsigned long long)connectHealthService:(id)arg1 connectionOptions:(unsigned long long)arg2 sessionHandler:(id /* block */)arg3 dataHandler:(id /* block */)arg4 mfaSuccessHandler:(id /* block */)arg5 autoPairData:(id)arg6 error:(id*)arg7;
+- (unsigned long long)connectHealthService:(id)arg1 sessionHandler:(id /* block */)arg2 dataHandler:(id /* block */)arg3 characteristicsHandler:(id /* block */)arg4 error:(id*)arg5;
 - (unsigned long long)connectHealthService:(id)arg1 sessionHandler:(id /* block */)arg2 dataHandler:(id /* block */)arg3 error:(id*)arg4;
-- (unsigned long long)connectHealthService:(id)arg1 sessionHandler:(id /* block */)arg2 dataHandler:(id /* block */)arg3 transitoryHandler:(id /* block */)arg4 characteristicsHandler:(id /* block */)arg5 error:(id*)arg6;
 - (id)connectedPeripheralsByPeripheralUUID;
 - (id)connectionInfosByPeripheralUUID;
 - (id)connectionInfosTable;
 - (id)connectionLock;
 - (id)dataCollectionManager;
 - (void)dataReceived:(id)arg1 deviceEntity:(id)arg2;
-- (void)dealloc;
 - (void)disconnectHealthService:(unsigned long long)arg1;
 - (unsigned long long)discoverHealthServicesWithType:(long long)arg1 timeout:(unsigned long long)arg2 alwaysNotify:(bool)arg3 handler:(id /* block */)arg4 error:(id*)arg5;
 - (void)discoveredCharacteristics:(id)arg1 forDevice:(id)arg2 service:(id)arg3;
@@ -98,7 +95,6 @@
 - (bool)healthUpdatesEnabledFromDevice:(id)arg1 error:(id*)arg2;
 - (id)initWithProfile:(id)arg1;
 - (id)initWithProfile:(id)arg1 centralManager:(id)arg2 queue:(id)arg3;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)pairingAgent:(id)arg1 peerDidCompletePairing:(id)arg2;
 - (void)pairingAgent:(id)arg1 peerDidFailToCompletePairing:(id)arg2 error:(id)arg3;
 - (void)pairingAgent:(id)arg1 peerDidRequestPairing:(id)arg2 type:(long long)arg3 passkey:(id)arg4;
@@ -108,8 +104,8 @@
 - (id)queue;
 - (void)removeAllDisconnectedPeripherals;
 - (void)removeConnectingPeripheralsWithError:(id)arg1;
-- (void)reportTransitoryData:(id)arg1 fromDevice:(id)arg2 withError:(id)arg3;
-- (id)retrieveOOBData;
+- (void)resetOOBState;
+- (id)retrieveOOBData:(id*)arg1;
 - (id)reviewSavedHealthServiceSessionsWithError:(id*)arg1;
 - (id)scanServiceUUIDs;
 - (void)sendBluetoothStatusUpdatesForServer:(id)arg1 updateHandler:(id /* block */)arg2 completion:(id /* block */)arg3;
@@ -117,7 +113,6 @@
 - (void)setAllServicesArray:(id)arg1;
 - (void)setAllServicesUUID:(id)arg1;
 - (void)setBluetoothUpdateHandlers:(id)arg1;
-- (void)setBtAdvertisingAddress:(id)arg1;
 - (void)setCentral:(id)arg1;
 - (void)setConnectedPeripheralsByPeripheralUUID:(id)arg1;
 - (void)setConnectionInfosByPeripheralUUID:(id)arg1;
@@ -133,6 +128,8 @@
 - (void)setScanServiceUUIDs:(id)arg1;
 - (id)shortDescription;
 - (void)stopDiscoveryWithIdentifier:(unsigned long long)arg1;
+- (void)unpairHealthServiceIfNecessary:(id)arg1;
+- (void)updateConnectionInfosForPeripheralUUID:(id)arg1 withMutation:(id /* block */)arg2;
 - (void)writeCharacteristic:(id)arg1 onSession:(unsigned long long)arg2 expectResponse:(bool)arg3 completion:(id /* block */)arg4;
 
 @end

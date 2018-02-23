@@ -60,6 +60,7 @@
 - (bool)dismissPresentedViewControllerAndClearNotification:(bool)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 - (void)expandAndPlayAudioMessage;
 - (bool)hasCommittedToPresentingCustomContentProvidingViewController;
+- (id)hideHomeAffordanceAnimationSettingsForLongLookPresentationController:(id)arg1;
 - (bool)isContentExtensionVisible:(id)arg1;
 - (bool)isShortLook;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })longLookPresentationController:(id)arg1 frameForTransitionViewInPresentationSuperview:(id)arg2;
@@ -78,10 +79,13 @@
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(bool)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)setCustomContentHomeAffordanceGestureRecognizer:(id)arg1;
+- (void)setCustomContentHomeAffordanceVisible:(bool)arg1;
 - (void)setInteractionEnabled:(bool)arg1;
 - (void)setPreviewInteractionManager:(id)arg1;
 - (bool)shouldRestorePresentingShortLookOnDismiss;
+- (id)unhideHomeAffordanceAnimationSettingsForLongLookPresentationController:(id)arg1;
 - (void)viewWillLayoutSubviews;
-- (bool)wantsUseableContainerHeightForTransitionWithDelegate:(id)arg1;
+- (bool)wantsUseableContainerBoundsForTransitionWithDelegate:(id)arg1;
 
 @end

@@ -20,6 +20,7 @@
 + (bool)_followsTerrain;
 
 - (void).cxx_destruct;
+- (void)_addAnchorDotViewIfNeeded;
 - (void)_addBalloonCalloutView:(id)arg1;
 - (bool)_balloonCalloutShouldOriginateFromSmallSize:(double*)arg1;
 - (long long)_balloonCalloutStyle;

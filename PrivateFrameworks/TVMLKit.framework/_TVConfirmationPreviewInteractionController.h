@@ -13,7 +13,7 @@
     UIPreviewInteraction * _previewInteraction;
     UIViewPropertyAnimator * _previewPropertyAnimator;
     bool  _previewTransitionEnded;
-    UICollectionView * _stashedCell;
+    UICollectionViewCell * _stashedCell;
     _TVConfirmationDocumentWrapperViewController * _wrapperController;
 }
 

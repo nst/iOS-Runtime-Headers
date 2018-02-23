@@ -35,14 +35,18 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)_assetHandleForCKAssetURLComponents:(id)arg1 lifetimeHint:(long long)arg2;
 - (id)_assetKeyForRemoteURL:(id)arg1;
+- (bool)_dataIsGzipped:(id)arg1;
 - (void)_initStores;
-- (void)_prepareForUse;
+- (void)_prepareForUseIfNeeded;
 - (id)_transformerForAssetAtPath:(id)arg1 fromNetworkEvent:(id)arg2;
+- (id)assetHandleForCKAssetURL:(id)arg1 lifetimeHint:(long long)arg2;
 - (id)assetHandleForCKAssetURLString:(id)arg1 lifetimeHint:(long long)arg2;
-- (id)assetHandleForData:(id)arg1 lifetimeHint:(long long)arg2;
+- (id)assetHandleForCKAssetURLString:(id)arg1 prefetchedData:(id)arg2 unzipIfNeeded:(bool)arg3 lifetimeHint:(long long)arg4;
 - (id)assetHandleForRecordID:(id)arg1 field:(long long)arg2 lifetimeHint:(long long)arg3 contentDatabase:(id)arg4;
 - (id)assetHandleForURL:(id)arg1 lifetimeHint:(long long)arg2;
+- (id)assetHandleForURL:(id)arg1 prefetchedFileURL:(id)arg2 lifetimeHint:(long long)arg3;
 - (id)assetHandles;
 - (id)assetHandlesQueue;
 - (id)assetStore;

@@ -39,6 +39,7 @@
 - (id)overriddenSettings;
 - (id)overrideProvider;
 - (id)overrides;
+- (void)reloadBBSection:(id)arg1 completion:(id /* block */)arg2;
 - (void)reloadWithCompletion:(id /* block */)arg1;
 - (void)removedSectionWithSectionID:(id)arg1;
 - (id)sectionIDs;

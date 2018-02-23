@@ -19,6 +19,7 @@
 + (id)_assetForCKRecord:(id)arg1 error:(id*)arg2;
 + (id)assetKeys;
 + (long long)bytesPerChangeRecordAssetThreshold;
++ (long long)bytesPerChangeRecordAssetThresholdHardLimit;
 + (id)changesetArchiveContentDataForCKRecord:(id)arg1 error:(id*)arg2;
 + (id)changesetArchiveURLForCKRecord:(id)arg1 error:(id*)arg2;
 + (bool)hasFutureSchema:(id)arg1;

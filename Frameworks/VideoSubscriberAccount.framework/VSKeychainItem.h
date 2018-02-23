@@ -26,6 +26,7 @@
 @property (getter=isUpdated, nonatomic) bool updated;
 
 - (void).cxx_destruct;
+- (void)_setCommittedValues:(id)arg1 registeringUndo:(bool)arg2;
 - (id)changedValues;
 - (id)committedValueForKey:(id)arg1;
 - (id)committedValues;

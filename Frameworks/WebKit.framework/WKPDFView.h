@@ -15,6 +15,7 @@
         struct RetainPtr<UIPDFSelection> {} *m_buffer; 
         unsigned int m_capacity; 
         unsigned int m_size; 
+        unsigned int m_mask; 
     }  _cachedFindMatches;
     unsigned int  _cachedFindMaximumCount;
     unsigned long long  _cachedFindOptionsAffectingResults;
@@ -34,6 +35,13 @@
     UIView * _fixedOverlayView;
     bool  _isPerformingSameDocumentNavigation;
     bool  _isStartingZoom;
+    double  _lastLayoutWidth;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _lastUnobscuredSafeAreaInset;
     struct CGSize { 
         double width; 
         double height; 
@@ -57,6 +65,7 @@
         struct { /* ? */ } *m_buffer; 
         unsigned int m_capacity; 
         unsigned int m_size; 
+        unsigned int m_mask; 
     }  _pages;
     struct RetainPtr<UIPDFDocument> { 
         void *m_ptr; 
@@ -191,6 +200,7 @@
                 struct FloatRect {} *m_buffer; 
                 unsigned int m_capacity; 
                 unsigned int m_size; 
+                unsigned int m_mask; 
             } textRectsInBoundingRectCoordinates; 
             float contentImageScaleFactor; 
             struct RefPtr<WebCore::Image> { 
@@ -258,6 +268,7 @@
 - (void)_revalidateViews;
 - (void)_scrollToFragment:(id)arg1;
 - (void)_showPasswordEntryField;
+- (void)_updateDocumentFrame;
 - (void)_updatePageNumberIndicator;
 - (unsigned long long)_wk_pageCountForPrintFormatter:(id)arg1;
 - (struct CGPDFDocument { }*)_wk_printedDocument;

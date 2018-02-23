@@ -4,6 +4,7 @@
 
 @interface CVAVideoPipelineLibrary : NSObject
 
++ (id)colorCubePortraitRequestForPortraitVideoPipeline:(id)arg1 withWithSourceColorPixelBuffer:(struct __CVBuffer { }*)arg2 destinationColorPixelBuffer:(struct __CVBuffer { }*)arg3 cubeData:(id)arg4;
 + (id)disparityPostprocessingVideoPipelineWithProperties:(id)arg1;
 + (id)mattingVideoPipelineWithProperties:(id)arg1;
 + (id)portraitVideoPipelineWithProperties:(id)arg1;

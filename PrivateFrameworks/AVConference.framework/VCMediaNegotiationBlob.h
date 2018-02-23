@@ -9,10 +9,12 @@
     NSMutableArray * _bandwidthSettings;
     NSString * _basebandCodec;
     unsigned int  _basebandCodecSampleRate;
+    unsigned int  _blobVersion;
     VCMediaNegotiationBlobCaptionsSettings * _captionsSettings;
     struct { 
         unsigned int ntpTime : 1; 
         unsigned int basebandCodecSampleRate : 1; 
+        unsigned int blobVersion : 1; 
         unsigned int allowDynamicMaxBitrate : 1; 
         unsigned int allowsContentsChangeWithAspectPreservation : 1; 
     }  _has;
@@ -30,12 +32,14 @@
 @property (nonatomic, retain) NSMutableArray *bandwidthSettings;
 @property (nonatomic, retain) NSString *basebandCodec;
 @property (nonatomic) unsigned int basebandCodecSampleRate;
+@property (nonatomic) unsigned int blobVersion;
 @property (nonatomic, retain) VCMediaNegotiationBlobCaptionsSettings *captionsSettings;
 @property (nonatomic) bool hasAllowDynamicMaxBitrate;
 @property (nonatomic) bool hasAllowsContentsChangeWithAspectPreservation;
 @property (nonatomic, readonly) bool hasAudioSettings;
 @property (nonatomic, readonly) bool hasBasebandCodec;
 @property (nonatomic) bool hasBasebandCodecSampleRate;
+@property (nonatomic) bool hasBlobVersion;
 @property (nonatomic, readonly) bool hasCaptionsSettings;
 @property (nonatomic, readonly) bool hasMomentsSettings;
 @property (nonatomic) bool hasNtpTime;
@@ -62,6 +66,7 @@
 - (unsigned long long)bandwidthSettingsCount;
 - (id)basebandCodec;
 - (unsigned int)basebandCodecSampleRate;
+- (unsigned int)blobVersion;
 - (id)captionsSettings;
 - (void)clearBandwidthSettings;
 - (void)clearMultiwayAudioStreams;
@@ -75,6 +80,7 @@
 - (bool)hasAudioSettings;
 - (bool)hasBasebandCodec;
 - (bool)hasBasebandCodecSampleRate;
+- (bool)hasBlobVersion;
 - (bool)hasCaptionsSettings;
 - (bool)hasMomentsSettings;
 - (bool)hasNtpTime;
@@ -101,10 +107,12 @@
 - (void)setBandwidthSettings:(id)arg1;
 - (void)setBasebandCodec:(id)arg1;
 - (void)setBasebandCodecSampleRate:(unsigned int)arg1;
+- (void)setBlobVersion:(unsigned int)arg1;
 - (void)setCaptionsSettings:(id)arg1;
 - (void)setHasAllowDynamicMaxBitrate:(bool)arg1;
 - (void)setHasAllowsContentsChangeWithAspectPreservation:(bool)arg1;
 - (void)setHasBasebandCodecSampleRate:(bool)arg1;
+- (void)setHasBlobVersion:(bool)arg1;
 - (void)setHasNtpTime:(bool)arg1;
 - (void)setMomentsSettings:(id)arg1;
 - (void)setMultiwayAudioStreams:(id)arg1;

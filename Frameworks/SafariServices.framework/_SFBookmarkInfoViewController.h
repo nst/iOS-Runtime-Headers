@@ -32,6 +32,7 @@
 - (void)_addActionsForTextFields;
 - (void)_bookmarksDidReload:(id)arg1;
 - (bool)_canEditFieldsInCurrentViewController;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_cellInset;
 - (struct CGPoint { double x1; double x2; })_centerForIconView;
 - (void)_createCellsIfNeeded;
 - (void)_didBeginEditingTextField:(id)arg1;

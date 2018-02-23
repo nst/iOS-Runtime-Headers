@@ -4,7 +4,7 @@
 
 @interface NFLHeadlineTileInfo : NSObject <NFLFeedTileInfo> {
     NSString * _groupIdentifier;
-    NSObject<FCHeadlineProviding> * _headline;
+    <FCHeadlineProviding> * _headline;
     NSString * _namespacedIdentifier;
 }
 
@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *groupIdentifier;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, copy) NSObject<FCHeadlineProviding> *headline;
+@property (nonatomic, copy) <FCHeadlineProviding> *headline;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, copy) NSString *namespacedIdentifier;
 @property (nonatomic, readonly) bool pageable;

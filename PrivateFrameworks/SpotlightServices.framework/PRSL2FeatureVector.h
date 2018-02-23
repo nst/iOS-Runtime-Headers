@@ -5,18 +5,23 @@
 @interface PRSL2FeatureVector : NSObject <NSCopying, NSSecureCoding> {
     NSString * _bundleID;
     NSString * _device_type;
-    double * _expanded_floating_point_features;
+    float * _expanded_floating_point_features;
     unsigned long long  _expanded_floating_point_features_count;
-    double  _experimentalScore;
-    double  _features;
-    double  _originalL2Score;
+    float  _experimentalScore;
+    float  _features;
+    struct ranking_index_score_t { 
+        unsigned long long lsb; 
+        unsigned long long msb; 
+    }  _indexScore;
+    float  _originalL2Score;
     NSDictionary * _searchThroughCEPData;
 }
 
 @property (nonatomic, retain) NSString *bundleID;
 @property (nonatomic, retain) NSString *device_type;
-@property (nonatomic) double experimentalScore;
-@property (nonatomic) double originalL2Score;
+@property (nonatomic) float experimentalScore;
+@property (nonatomic) struct ranking_index_score_t { unsigned long long x1; unsigned long long x2; } indexScore;
+@property (nonatomic) float originalL2Score;
 @property (nonatomic, retain) NSDictionary *searchThroughCEPData;
 
 + (id)contextWithFeatureOrder:(id)arg1 withInflation:(unsigned long long)arg2 withInflatedIndexToSize:(id)arg3;
@@ -36,21 +41,23 @@
 - (id)dictionaryRepresentationWithoutDefaultValues;
 - (void)encodeWithCoder:(id)arg1;
 - (id)expandedArrayRepresentation;
-- (double)experimentalScore;
+- (float)experimentalScore;
+- (struct ranking_index_score_t { unsigned long long x1; unsigned long long x2; })indexScore;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (double)originalL2Score;
+- (float)originalL2Score;
 - (id)searchThroughCEPData;
 - (void)setBundleID:(id)arg1;
 - (void)setDevice_type:(id)arg1;
-- (void)setDouble:(double)arg1 forFeature:(unsigned long long)arg2;
-- (void)setExpandedSet:(double*)arg1 expandedCount:(unsigned long long)arg2;
-- (void)setExperimentalScore:(double)arg1;
-- (void)setFeatureName:(id)arg1 value:(double)arg2;
-- (void)setOriginalL2Score:(double)arg1;
+- (void)setExpandedSet:(float*)arg1 expandedCount:(unsigned long long)arg2;
+- (void)setExperimentalScore:(float)arg1;
+- (void)setFeatureName:(id)arg1 value:(float)arg2;
+- (void)setFloat:(float)arg1 forFeature:(unsigned long long)arg2;
+- (void)setIndexScore:(struct ranking_index_score_t { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setOriginalL2Score:(float)arg1;
 - (void)setSearchThroughCEPData:(id)arg1;
 - (void)setValue:(id)arg1 forFeature:(unsigned long long)arg2;
-- (double)valueForFeature:(unsigned long long)arg1;
-- (double)valueForFeatureName:(id)arg1;
+- (float)valueForFeature:(unsigned long long)arg1;
+- (float)valueForFeatureName:(id)arg1;
 
 @end

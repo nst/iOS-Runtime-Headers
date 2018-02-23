@@ -8,11 +8,10 @@
     double  _EDRHeadroomRequestSustainDuration;
     long long  _HDRConsideration;
     double  _HDRModulationIntensity;
+    double  _SDRModulationIntensity;
     bool  _enabled;
     long long  _filterType;
     double  _highEDRRequestedHeadroomStops;
-    long long  _highQualitySDRConsideration;
-    double  _highQualitySDRModulationIntensity;
     double  _lowEDRRequestedHeadroomStops;
     double  _manualEDRHeadroomRequestStops;
     double  _videoComplementModulationIntensity;
@@ -23,11 +22,10 @@
 @property (nonatomic) double EDRHeadroomRequestSustainDuration;
 @property (nonatomic) long long HDRConsideration;
 @property (nonatomic) double HDRModulationIntensity;
+@property (nonatomic) double SDRModulationIntensity;
 @property (getter=isEnabled, nonatomic) bool enabled;
 @property (nonatomic) long long filterType;
 @property (nonatomic) double highEDRRequestedHeadroomStops;
-@property (nonatomic) long long highQualitySDRConsideration;
-@property (nonatomic) double highQualitySDRModulationIntensity;
 @property (nonatomic) double lowEDRRequestedHeadroomStops;
 @property (nonatomic) double manualEDRHeadroomRequestStops;
 @property (nonatomic) double videoComplementModulationIntensity;
@@ -40,10 +38,9 @@
 - (double)EDRHeadroomRequestSustainDuration;
 - (long long)HDRConsideration;
 - (double)HDRModulationIntensity;
+- (double)SDRModulationIntensity;
 - (long long)filterType;
 - (double)highEDRRequestedHeadroomStops;
-- (long long)highQualitySDRConsideration;
-- (double)highQualitySDRModulationIntensity;
 - (bool)isEnabled;
 - (double)lowEDRRequestedHeadroomStops;
 - (double)manualEDRHeadroomRequestStops;
@@ -57,10 +54,9 @@
 - (void)setHDRConsideration:(long long)arg1;
 - (void)setHDRModulationIntensity:(double)arg1;
 - (void)setHighEDRRequestedHeadroomStops:(double)arg1;
-- (void)setHighQualitySDRConsideration:(long long)arg1;
-- (void)setHighQualitySDRModulationIntensity:(double)arg1;
 - (void)setLowEDRRequestedHeadroomStops:(double)arg1;
 - (void)setManualEDRHeadroomRequestStops:(double)arg1;
+- (void)setSDRModulationIntensity:(double)arg1;
 - (void)setVideoComplementModulationIntensity:(double)arg1;
 - (double)videoComplementModulationIntensity;
 

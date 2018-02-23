@@ -11,6 +11,7 @@
     bool  _hasSectionIcon;
     NSURL * _helpBookURL;
     NSMutableDictionary * _helpItemMap;
+    NSString * _iconBasePath;
     HLPURLImageCacheController * _imageCacheController;
     HLPHelpLocale * _locale;
     NSString * _remoteSearchPath;
@@ -28,6 +29,7 @@
 @property (nonatomic) bool hasSectionIcon;
 @property (nonatomic, retain) NSURL *helpBookURL;
 @property (nonatomic, retain) NSMutableDictionary *helpItemMap;
+@property (nonatomic, retain) NSString *iconBasePath;
 @property (nonatomic, retain) HLPURLImageCacheController *imageCacheController;
 @property (nonatomic, retain) HLPHelpLocale *locale;
 @property (nonatomic, retain) NSString *remoteSearchPath;
@@ -53,6 +55,7 @@
 - (id)helpItemMap;
 - (id)helpTopicItemForID:(id)arg1;
 - (id)helpTopicItemForName:(id)arg1;
+- (id)iconBasePath;
 - (id)imageCacheController;
 - (bool)isSemanticHTML;
 - (id)locale;
@@ -70,6 +73,7 @@
 - (void)setHasSectionIcon:(bool)arg1;
 - (void)setHelpBookURL:(id)arg1;
 - (void)setHelpItemMap:(id)arg1;
+- (void)setIconBasePath:(id)arg1;
 - (void)setImageCacheController:(id)arg1;
 - (void)setLocale:(id)arg1;
 - (void)setRemoteSearchPath:(id)arg1;

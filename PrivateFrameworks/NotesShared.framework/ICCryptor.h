@@ -31,7 +31,7 @@
 + (bool)key:(id)arg1 decryptsObject:(id)arg2;
 + (id)masterKeysByAccountIdentifier;
 + (id)newWrappedKeyForObject:(id)arg1;
-+ (void)removeItemFromTouchID:(id)arg1;
++ (void)removeItemFromBiometricID:(id)arg1;
 + (void)removePassphraseForAccount:(id)arg1;
 + (void)removePassphraseForNotesInAccount:(id)arg1;
 + (void)rewrapKeyForObject:(id)arg1 newMasterKey:(id)arg2 salt:(id)arg3 iterationCount:(unsigned int)arg4 hint:(id)arg5;

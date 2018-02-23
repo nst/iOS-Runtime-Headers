@@ -3,26 +3,28 @@
  */
 
 @interface PKIDSManager : NSObject <IDSServiceDelegate> {
+    NSObject<OS_dispatch_queue> * _callbackQueue;
     NSMutableDictionary * _completionHandlers;
     <PKIDSManagerDataSource> * _dataSource;
     NSHashTable * _delegates;
-    NSObject<OS_dispatch_queue> * _idsQueue;
+    NSObject<OS_dispatch_queue> * _internalQueue;
     NSMutableArray * _paymentRequests;
     NSMutableArray * _pendingCancellations;
     NSMutableDictionary * _pendingDiscoveries;
     PKProximityAdvertiser * _proximityAdvertiser;
     NSMutableDictionary * _recentlySeenUUIDs;
     NSMutableArray * _remoteDevices;
+    int  _requestCLTMThrottleUncapToken;
     IDSService * _service;
-    NSObject<OS_dispatch_queue> * _stateQueue;
     NSMutableDictionary * _thumbnailCompletionHandlers;
 }
 
 @property (nonatomic) <PKIDSManagerDataSource> *dataSource;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, readonly) NSArray<PKIDSManagerDelegate> *delegates;
+@property (nonatomic, readonly) NSArray *delegates;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *internalQueue;
 @property (nonatomic, readonly) NSArray *paymentRequests;
 @property (nonatomic, retain) NSMutableArray *pendingCancellations;
 @property (nonatomic, retain) NSMutableDictionary *pendingDiscoveries;
@@ -33,10 +35,7 @@
 
 - (void).cxx_destruct;
 - (void)_archiveDevicesToDisk;
-- (bool)_deviceIsRegistered:(id)arg1;
-- (id)_fetchPaymentInstruments;
-- (bool)_hasRegisteredAccounts;
-- (void)_logCloudPairingState;
+- (id)_fetchPaymentInstrumentsForRequestingDevice:(id)arg1;
 - (void)_paymentCancellationReceived:(id)arg1 service:(id)arg2 account:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)_paymentClientUpdateReceived:(id)arg1 service:(id)arg2 account:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)_paymentDiscoveryRequestReceived:(id)arg1 service:(id)arg2 account:(id)arg3 fromID:(id)arg4 context:(id)arg5;
@@ -47,15 +46,25 @@
 - (void)_paymentResultReceived:(id)arg1 service:(id)arg2 account:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)_paymentSetupRequestReceived:(id)arg1 service:(id)arg2 account:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)_populateDevicesIfNeeded;
-- (id)_preparePaymentDeviceResponse;
+- (void)_postCTLMThrottleUncapNotification;
+- (id)_preparePaymentDeviceResponseForRequestingDevice:(id)arg1;
 - (void)_queue_addThumbnailCompletionHandler:(id /* block */)arg1 forKey:(id)arg2;
+- (id)_queue_cancelRemotePaymentRequest:(id)arg1 completion:(id /* block */)arg2;
+- (bool)_queue_deviceIsRegistered:(id)arg1;
+- (bool)_queue_hasRegisteredAccounts;
+- (bool)_queue_hasRemoteDevices;
+- (void)_queue_logCloudPairingState;
 - (void)_queue_removeThumbnailCompletionHandlersForKeys:(id)arg1;
+- (id)_queue_requestForIdentifier:(id)arg1;
+- (void)_queue_sendDeviceDiscoveryRequestToAllDevicesWithProximity:(bool)arg1;
+- (void)_queue_sendDeviceDiscoveryRequestWithProximity:(bool)arg1 devices:(id)arg2;
+- (void)_queue_sendDiscoveryResponse:(id)arg1 toDeviceWithFromID:(id)arg2;
+- (void)_registerCTLMThrottleUncapNotification;
 - (void)_registerListeners;
 - (id)_remoteDevicesWithArchive;
-- (void)_sendDeviceDiscoveryRequestWithProximity:(bool)arg1 devices:(id)arg2;
-- (void)_sendDiscoveryResponse:(id)arg1 toDeviceWithFromID:(id)arg2;
 - (void)_thumbnailRequestReceived:(id)arg1 service:(id)arg2 account:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)_thumbnailResponseReceived:(id)arg1 service:(id)arg2 account:(id)arg3 fromID:(id)arg4 context:(id)arg5;
+- (void)_unregisterCTLMThrottleUncapNotification;
 - (void)addDelegate:(id)arg1;
 - (id)cancelRemotePaymentRequest:(id)arg1 completion:(id /* block */)arg2;
 - (id)dataSource;
@@ -68,6 +77,7 @@
 - (id)init;
 - (id)initWithIDSService:(id)arg1;
 - (id)initWithTargetQueue:(id)arg1;
+- (id)internalQueue;
 - (void)invalidateMessage:(id)arg1;
 - (id)paymentRequests;
 - (id)pendingCancellations;
@@ -91,6 +101,7 @@
 - (void)service:(id)arg1 activeAccountsChanged:(id)arg2;
 - (void)service:(id)arg1 devicesChanged:(id)arg2;
 - (void)setDataSource:(id)arg1;
+- (void)setInternalQueue:(id)arg1;
 - (void)setPendingCancellations:(id)arg1;
 - (void)setPendingDiscoveries:(id)arg1;
 - (void)setRecentlySeenUUIDs:(id)arg1;

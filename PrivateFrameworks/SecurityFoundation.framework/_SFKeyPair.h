@@ -20,6 +20,7 @@
 - (id)initWithAttributes:(id)arg1;
 - (id)initWithData:(id)arg1 specifier:(id)arg2 error:(id*)arg3;
 - (id)initWithSecKey:(struct __SecKey { }*)arg1;
+- (id)keyData;
 - (struct NSString { Class x1; }*)privateKeyDomain;
 - (id)publicKey;
 

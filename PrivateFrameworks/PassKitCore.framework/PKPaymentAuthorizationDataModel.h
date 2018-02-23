@@ -25,14 +25,14 @@
     PKPaymentPass * _pass;
     PKPayment * _payment;
     PKPaymentApplication * _paymentApplication;
+    NSString * _paymentApplicationIdentifierForErrors;
     NSArray * _paymentContentItems;
     NSArray * _paymentErrors;
-    PKPaymentPass * _paymentPassForErrors;
     PKPaymentRequest * _paymentRequest;
     PKPaymentWebService * _paymentWebService;
     PKPeerPaymentQuote * _peerPaymentQuote;
     PKPeerPaymentService * _peerPaymentService;
-    PKPaymentTransaction * _pendingTransaction;
+    NSArray * _pendingTransactions;
     PKPaymentOptionsRecents * _recents;
     PKRemoteDevice * _remoteDevice;
     NSMutableDictionary * _remoteDeviceToAcceptedInstruments;
@@ -82,7 +82,7 @@
 @property (nonatomic, retain) PKPaymentWebService *paymentWebService;
 @property (nonatomic, retain) PKPeerPaymentQuote *peerPaymentQuote;
 @property (nonatomic, retain) PKPeerPaymentService *peerPaymentService;
-@property (nonatomic, retain) PKPaymentTransaction *pendingTransaction;
+@property (nonatomic, retain) NSArray *pendingTransactions;
 @property (nonatomic, readonly) bool pinRequired;
 @property (nonatomic, retain) PKPaymentOptionsRecents *recents;
 @property (nonatomic, retain) PKRemoteDevice *remoteDevice;
@@ -158,7 +158,7 @@
 - (id)paymentWebService;
 - (id)peerPaymentQuote;
 - (id)peerPaymentService;
-- (id)pendingTransaction;
+- (id)pendingTransactions;
 - (bool)pinRequired;
 - (id)recents;
 - (id)remoteDevice;
@@ -183,7 +183,7 @@
 - (void)setPaymentWebService:(id)arg1;
 - (void)setPeerPaymentQuote:(id)arg1;
 - (void)setPeerPaymentService:(id)arg1;
-- (void)setPendingTransaction:(id)arg1;
+- (void)setPendingTransactions:(id)arg1;
 - (void)setRecents:(id)arg1;
 - (void)setRemoteDevice:(id)arg1;
 - (void)setRemotePaymentInstrument:(id)arg1;
@@ -210,8 +210,8 @@
 - (id)transactionAmount;
 - (id)unavailablePasses;
 - (id)unavailablePaymentApplicationsForPass:(id)arg1;
+- (void)updateBillingErrors;
 - (id /* block */)updateHandler;
-- (void)updatePass:(id)arg1;
 - (void)updateRemoteDevices:(id)arg1;
 - (void)updateRemoteDevices:(id)arg1 ignoreProximity:(bool)arg2;
 - (bool)wantsInstructions;
@@ -220,6 +220,7 @@
 
 - (bool)_hasNonPeerPaymentAcceptedPasses;
 - (bool)npkIsPeerPayment;
+- (bool)npkIsSkeletonPeerPayment;
 - (bool)npkIsSplitPeerPayment;
 - (bool)npkIsSplitPeerPaymentWithAnotherPaymentMethod;
 - (bool)npkIsSplitPeerPaymentWithoutAnotherPaymentMethod;

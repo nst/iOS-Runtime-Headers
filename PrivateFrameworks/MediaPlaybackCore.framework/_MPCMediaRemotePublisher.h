@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
  */
 
-@interface _MPCMediaRemotePublisher : NSObject <MPCPlaybackEngineEventObserving, MPNowPlayingInfoLyricsDelegate, MPNowPlayingPlaybackQueueDataSource_Private> {
+@interface _MPCMediaRemotePublisher : NSObject <MPCPlaybackEngineEventObserving, MPNowPlayingInfoLyricsDelegate, MPNowPlayingPlaybackQueueDataSourcePrivate> {
     MPRemoteCommandCenter * _commandCenter;
     bool  _engineRestoringState;
     MPNowPlayingInfoCenter * _infoCenter;
     bool  _initializedSupportedCommands;
+    NSString * _lastContextID;
     MPLibraryAddStatusObserver * _libraryAddStatusObserver;
     MPCPlaybackEngine * _playbackEngine;
 }
@@ -22,16 +23,15 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_contentItemForMPAVItem:(id)arg1;
 - (void)_disableQueueModificationsChangedNotification:(id)arg1;
 - (void)_durationAvailableNotification:(id)arg1;
 - (void)_likedStateChangedNotification:(id)arg1;
 - (void)_performCommandEvent:(id)arg1 completion:(id /* block */)arg2;
 - (void)_updateSupportedCommands;
+- (void)_updateUpNextItemCount;
 - (void)addSupportedSpecializedQueueIdentifier:(id)arg1 localizedName:(id)arg2 queueType:(long long)arg3 queueParameters:(id)arg4;
 - (void)becomeActive;
 - (id)commandCenter;
-- (id)contentItemForOffset:(long long)arg1;
 - (void)engine:(id)arg1 didChangeQueueWithReason:(id)arg2;
 - (void)engine:(id)arg1 didChangeRepeatType:(long long)arg2;
 - (void)engine:(id)arg1 didChangeShuffleType:(long long)arg2;
@@ -43,10 +43,13 @@
 - (id)infoCenter;
 - (id)initWithPlaybackEngine:(id)arg1;
 - (bool)isEngineRestoringState;
-- (id)nowPlayingContentItemForIdentifier:(id)arg1;
-- (id)nowPlayingContentItemsForRequest:(void*)arg1 range:(struct { long long x1; long long x2; }*)arg2;
+- (id)nowPlayingInfoCenter:(id)arg1 artworkCatalogForContentItem:(id)arg2;
+- (id)nowPlayingInfoCenter:(id)arg1 artworkForContentItem:(id)arg2 size:(struct CGSize { double x1; double x2; })arg3 completion:(id /* block */)arg4;
+- (id)nowPlayingInfoCenter:(id)arg1 contentItemForID:(id)arg2;
+- (id)nowPlayingInfoCenter:(id)arg1 contentItemIDForOffset:(long long)arg2;
 - (void)nowPlayingInfoCenter:(id)arg1 didBeginLyricsEvent:(id)arg2;
 - (void)nowPlayingInfoCenter:(id)arg1 didEndLyricsEvent:(id)arg2;
+- (id)nowPlayingInfoCenter:(id)arg1 lyricsForContentItem:(id)arg2 completion:(id /* block */)arg3;
 - (id)playbackEngine;
 - (void)publishIfNeeded;
 - (void)removeSupportedSpecializedQueueIdentifier:(id)arg1;

@@ -14,6 +14,7 @@
     AKDevice * _proxiedDevice;
     AKAnisetteData * _proxiedDeviceAnisetteData;
     NSString * _proxyAppName;
+    NSString * _securityUpgradeContext;
     NSString * _serviceToken;
     long long  _serviceType;
     bool  _shouldSendAbsintheHeader;
@@ -33,6 +34,7 @@
 @property (nonatomic, retain) AKDevice *proxiedDevice;
 @property (nonatomic, retain) AKAnisetteData *proxiedDeviceAnisetteData;
 @property (nonatomic, copy) NSString *proxyAppName;
+@property (nonatomic, copy) NSString *securityUpgradeContext;
 @property (nonatomic, copy) NSString *serviceToken;
 @property (nonatomic) long long serviceType;
 @property (nonatomic) bool shouldSendAbsintheHeader;
@@ -64,6 +66,7 @@
 - (id)proxiedDevice;
 - (id)proxiedDeviceAnisetteData;
 - (id)proxyAppName;
+- (id)securityUpgradeContext;
 - (id)serviceToken;
 - (long long)serviceType;
 - (void)setAltDSID:(id)arg1;
@@ -77,6 +80,7 @@
 - (void)setProxiedDevice:(id)arg1;
 - (void)setProxiedDeviceAnisetteData:(id)arg1;
 - (void)setProxyAppName:(id)arg1;
+- (void)setSecurityUpgradeContext:(id)arg1;
 - (void)setServiceToken:(id)arg1;
 - (void)setServiceType:(long long)arg1;
 - (void)setShouldSendAbsintheHeader:(bool)arg1;

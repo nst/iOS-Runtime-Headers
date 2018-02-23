@@ -4,7 +4,6 @@
 
 @interface SXAddition : SXJSONObject <SXClassFactoryProtocol>
 
-@property (nonatomic, readonly) SXAction *action;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -13,7 +12,5 @@
 
 + (void)initializeObject;
 + (id)typeString;
-
-- (id)action;
 
 @end

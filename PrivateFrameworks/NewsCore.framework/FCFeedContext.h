@@ -22,6 +22,7 @@
 @property (nonatomic, copy) NSString *sectionID;
 @property (nonatomic, copy) NSString *topicID;
 
++ (id)feedContextForBreakingNewsChannelID:(id)arg1;
 + (id)feedContextForChannel:(id)arg1 sectionID:(id)arg2;
 + (id)feedContextForCoverArticlesFeed;
 + (id)feedContextForEditorialChannel:(id)arg1 editorialGemsSectionID:(id)arg2;

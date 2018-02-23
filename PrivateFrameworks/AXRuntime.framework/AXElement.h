@@ -239,6 +239,7 @@
 - (id)localizedStringKey;
 - (id)localizedStringTableName;
 - (bool)longPress;
+- (id)makeLookingGlassRequest:(id)arg1;
 - (id)nativeFocusElement;
 - (id)nativeFocusPreferredElement;
 - (id)nativeFocusableElements;

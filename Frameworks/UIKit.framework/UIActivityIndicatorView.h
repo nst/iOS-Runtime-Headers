@@ -31,6 +31,7 @@
     double  _width;
 }
 
+@property (nonatomic, readonly) UIAccessibilityHUDItem *accessibilityHUDRepresentation;
 @property (nonatomic) long long activityIndicatorViewStyle;
 @property (getter=isAnimating, nonatomic, readonly) bool animating;
 @property (nonatomic, readonly) NSString *artBackupKeyString;

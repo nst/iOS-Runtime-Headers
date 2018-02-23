@@ -7,6 +7,7 @@
     NSString * _contactIdentifier;
     bool  _dialAssisted;
     long long  _dialType;
+    NSString * _endpointIDSDestinationURI;
     bool  _endpointOnCurrentDevice;
     TUHandle * _handle;
     bool  _hostOnCurrentDevice;
@@ -44,6 +45,8 @@
 @property (nonatomic, copy) NSString *destinationID;
 @property (getter=isDialAssisted, nonatomic) bool dialAssisted;
 @property (nonatomic) long long dialType;
+@property (nonatomic, readonly) IDSDestination *endpointIDSDestination;
+@property (nonatomic, copy) NSString *endpointIDSDestinationURI;
 @property (nonatomic) bool endpointOnCurrentDevice;
 @property (nonatomic, retain) TUHandle *handle;
 @property (readonly) unsigned long long hash;
@@ -114,6 +117,9 @@
 - (id)dialRequestByReplacingProvider:(id)arg1;
 - (long long)dialType;
 - (void)encodeWithCoder:(id)arg1;
+- (id)endpointIDSDestination;
+- (id)endpointIDSDestinationURI;
+- (id)endpointIDSDestinationURIQueryItem;
 - (bool)endpointOnCurrentDevice;
 - (id)forceAssistURLQueryItem;
 - (id)handle;
@@ -157,6 +163,7 @@
 - (void)setDestinationID:(id)arg1;
 - (void)setDialAssisted:(bool)arg1;
 - (void)setDialType:(long long)arg1;
+- (void)setEndpointIDSDestinationURI:(id)arg1;
 - (void)setEndpointOnCurrentDevice:(bool)arg1;
 - (void)setHandle:(id)arg1;
 - (void)setHostOnCurrentDevice:(bool)arg1;

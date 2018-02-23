@@ -29,6 +29,7 @@
 - (unsigned char)deviceClass;
 - (unsigned char)deviceGroup;
 - (id)deviceID;
+- (void)generateRandomConfidence;
 - (void)generateTiebreaker;
 - (unsigned char)goodness;
 - (id)init;
@@ -39,6 +40,7 @@
 - (bool)isAnEmergency;
 - (bool)isAnEmergencyHandled;
 - (bool)isMe;
+- (bool)isSane;
 - (unsigned short)pHash;
 - (void)setDeviceClass:(unsigned char)arg1;
 - (void)setDeviceGroup:(unsigned char)arg1;

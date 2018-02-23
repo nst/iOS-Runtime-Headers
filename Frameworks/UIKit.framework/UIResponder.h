@@ -204,6 +204,7 @@
 - (void)_setSelectedTextRange:(id)arg1 withAffinityDownstream:(bool)arg2;
 - (id)_setSelectionRangeWithHistory:(id)arg1;
 - (bool)_shouldPerformUICalloutBarButtonReplaceAction:(SEL)arg1 forText:(id)arg2 checkAutocorrection:(bool)arg3;
+- (bool)_shouldRestorationInputViewsOnlyWhenKeepingFirstResponder;
 - (id)_showServiceForText:(id)arg1 selectedTextRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 type:(long long)arg3 fromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4 inView:(id)arg5;
 - (id)_showServiceForText:(id)arg1 type:(long long)arg2 fromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 inView:(id)arg4;
 - (bool)_supportsBecomeFirstResponderWhenPossible;

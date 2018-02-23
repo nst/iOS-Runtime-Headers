@@ -33,6 +33,7 @@
     SCNNode * _worldOriginNode;
 }
 
+@property (nonatomic) long long actualPreferredFramesPerSecond;
 @property (nonatomic) bool automaticallyUpdatesLighting;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <ARSCNViewDelegate> *delegate;
@@ -56,7 +57,6 @@
 - (void)_removeAnchors;
 - (void)_renderCapturedPixelBuffer:(struct __CVBuffer { }*)arg1;
 - (void)_renderer:(id)arg1 updateAtTime:(double)arg2;
-- (id)_sphericalHarmonicsForLightEstimate:(id)arg1;
 - (void)_updateAnchors;
 - (void)_updateCamera:(id)arg1;
 - (void)_updateDebugVisualization:(id)arg1;
@@ -64,6 +64,7 @@
 - (void)_updateLighting:(id)arg1;
 - (void)_updateNode:(id)arg1 forAnchor:(id)arg2;
 - (void)_updatePreferredFramesPerSecond;
+- (long long)actualPreferredFramesPerSecond;
 - (id)anchorForNode:(id)arg1;
 - (bool)automaticallyUpdatesLighting;
 - (void)cleanupLingeringRotationState;
@@ -93,6 +94,7 @@
 - (void)session:(id)arg1 didUpdateFrame:(id)arg2;
 - (void)sessionInterruptionEnded:(id)arg1;
 - (void)sessionWasInterrupted:(id)arg1;
+- (void)setActualPreferredFramesPerSecond:(long long)arg1;
 - (void)setAutomaticallyUpdatesLighting:(bool)arg1;
 - (void)setDebugOptions:(unsigned long long)arg1;
 - (void)setDeveloperPreferredFramesPerSecond:(long long)arg1;

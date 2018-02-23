@@ -11,9 +11,11 @@
 - (float)backgroundSeparationLikelihood;
 - (float)closeCanonicalDisparityAverage;
 - (float)deltaCanonicalDisparity;
+- (float)erodedForegroundRatio;
 - (NSArray *)faceCanonicalDisparityAverage;
 - (NSArray *)faceInvalidDisparityRatio;
 - (float)focusDisparity;
+- (float)foregroundRatio;
 - (float)invalidDisparityRatio;
 - (float)invalidDisparityRatioVariance;
 - (struct __CVBuffer { }*)postprocessedDisparityPixelBuffer;

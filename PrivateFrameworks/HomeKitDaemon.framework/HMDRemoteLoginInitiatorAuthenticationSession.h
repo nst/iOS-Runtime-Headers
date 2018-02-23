@@ -14,7 +14,7 @@
 - (id /* block */)completion;
 - (void)dealloc;
 - (id)description;
-- (id)initWithSessionID:(id)arg1 remoteAuthentication:(id)arg2 completion:(id /* block */)arg3;
+- (id)initWithSessionID:(id)arg1 remoteAuthentication:(id)arg2 completion:(id /* block */)arg3 home:(id)arg4;
 - (id)remoteAuthentication;
 
 @end

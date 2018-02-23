@@ -33,10 +33,6 @@
     Class  _originalPopoverBackgroundViewClass;
     bool  _performActivityForStateRestoration;
     id /* block */  _preCompletionHandler;
-    struct CGSize { 
-        double width; 
-        double height; 
-    }  _preferredContentSizeWithoutSafeInsets;
     _UIShareExtensionRemoteViewController * _remoteContentViewController;
     NSArray * _resolvedActivityItemsForCurrentActivity;
     NSExtension * _shareExtension;
@@ -85,7 +81,6 @@
 @property (nonatomic, retain) Class originalPopoverBackgroundViewClass;
 @property (nonatomic) bool performActivityForStateRestoration;
 @property (nonatomic, copy) id /* block */ preCompletionHandler;
-@property (nonatomic) struct CGSize { double x1; double x2; } preferredContentSizeWithoutSafeInsets;
 @property (nonatomic, retain) _UIShareExtensionRemoteViewController *remoteContentViewController;
 @property (nonatomic, readonly) NSArray *resolvedActivityItemsForCurrentActivity;
 @property (nonatomic, retain) NSExtension *shareExtension;
@@ -158,9 +153,7 @@
 - (bool)_shouldShowSystemActivityType:(id)arg1;
 - (id)_titleForActivity:(id)arg1;
 - (void)_updateActivityItems:(id)arg1;
-- (void)_updatePreferredContentSizeByAddingSafeAreaInsetsIfNecessary;
 - (void)_updatePreferredContentSizes;
-- (void)_updateRootViewGeometry;
 - (void)_updateSourceIsManagedForURLs;
 - (bool)_waitForShareExtensionServiceWithTimeout:(double)arg1 requireValidShareServicePreferredContentSize:(bool)arg2;
 - (void)_willPerformInServiceActivityType:(id)arg1 activitySpecificMetadata:(id)arg2;
@@ -207,7 +200,6 @@
 - (bool)performActivityForStateRestoration;
 - (id /* block */)preCompletionHandler;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
-- (struct CGSize { double x1; double x2; })preferredContentSizeWithoutSafeInsets;
 - (void)presentViewController:(id)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 - (id)remoteContentViewController;
 - (id)resolvedActivityItemsForCurrentActivity;
@@ -242,7 +234,6 @@
 - (void)setOriginalPopoverBackgroundViewClass:(Class)arg1;
 - (void)setPerformActivityForStateRestoration:(bool)arg1;
 - (void)setPreCompletionHandler:(id /* block */)arg1;
-- (void)setPreferredContentSizeWithoutSafeInsets:(struct CGSize { double x1; double x2; })arg1;
 - (void)setRemoteContentViewController:(id)arg1;
 - (void)setShareExtension:(id)arg1;
 - (void)setShareExtensionService:(id)arg1;
@@ -277,7 +268,6 @@
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewSafeAreaInsetsDidChange;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;

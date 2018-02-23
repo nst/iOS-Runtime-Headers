@@ -8,6 +8,7 @@
     id /* block */  _deviceChangedHandler;
     id /* block */  _deviceFoundHandler;
     id /* block */  _deviceLostHandler;
+    unsigned int  _discoveryFlags;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     bool  _invalidateCalled;
     id /* block */  _invalidationHandler;
@@ -18,6 +19,7 @@
 @property (nonatomic, copy) id /* block */ deviceChangedHandler;
 @property (nonatomic, copy) id /* block */ deviceFoundHandler;
 @property (nonatomic, copy) id /* block */ deviceLostHandler;
+@property (nonatomic) unsigned int discoveryFlags;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
 @property (nonatomic, copy) id /* block */ invalidationHandler;
 
@@ -32,6 +34,7 @@
 - (id /* block */)deviceChangedHandler;
 - (id /* block */)deviceFoundHandler;
 - (id /* block */)deviceLostHandler;
+- (unsigned int)discoveryFlags;
 - (id)dispatchQueue;
 - (id)init;
 - (void)invalidate;
@@ -40,6 +43,7 @@
 - (void)setDeviceChangedHandler:(id /* block */)arg1;
 - (void)setDeviceFoundHandler:(id /* block */)arg1;
 - (void)setDeviceLostHandler:(id /* block */)arg1;
+- (void)setDiscoveryFlags:(unsigned int)arg1;
 - (void)setDispatchQueue:(id)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;
 

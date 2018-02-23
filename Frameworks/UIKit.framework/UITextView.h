@@ -269,6 +269,7 @@
 - (void)_interactionStoppedFromPreviewItemController:(id)arg1;
 - (struct CGSize { double x1; double x2; })_intrinsicSizeWithinSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_invalidateContainerViewSize;
+- (bool)_isContentFormatEvaluationEnabled;
 - (bool)_isDisplayingLookupViewController;
 - (bool)_isDisplayingReferenceLibraryViewController;
 - (bool)_isDisplayingShareViewController;
@@ -320,6 +321,7 @@
 - (void)_scrollViewDidEndDraggingWithDeceleration:(bool)arg1;
 - (void)_scrollViewWillEndDraggingWithVelocity:(struct CGPoint { double x1; double x2; })arg1 targetContentOffset:(struct CGPoint { double x1; double x2; }*)arg2;
 - (void)_selectionMayChange:(id)arg1;
+- (void)_setContentFormatEvaluationEnabled:(bool)arg1;
 - (void)_setContentOffsetWithoutRecordingScrollPosition:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_setCuiCatalog:(id)arg1;
 - (void)_setCuiStyleEffectConfiguration:(id)arg1;
@@ -376,6 +378,7 @@
 - (void)addGhostedRange:(id)arg1;
 - (void)addSnapshotSeparation:(double)arg1 withAffinity:(long long)arg2;
 - (void)addTextAlternativesDisplayStyleToRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)adjustedContentInsetDidChange;
 - (bool)adjustsFontForContentSizeCategory;
 - (bool)allowsAttachments;
 - (bool)allowsDraggingAttachments;

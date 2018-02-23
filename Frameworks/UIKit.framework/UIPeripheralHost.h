@@ -14,7 +14,6 @@
     UIKeyboardAutomatic * _automaticKeyboard;
     bool  _automaticKeyboardAnimatingIn;
     bool  _automaticKeyboardAnimatingOut;
-    int  _automaticKeyboardState;
     bool  _blockedReloadInputViewsForDictation;
     id /* block */  _bounceCompletionBlock;
     struct CGRect { 
@@ -39,6 +38,7 @@
     }  _clippingKeyboardAdjustmentStart;
     int  _clippingKeyboardMode;
     UITextEffectsWindow * _containerWindow;
+    int  _currentState;
     UIInputViewTransition * _currentTransition;
     int  _deactivationCount;
     id /* block */  _deferredTransitionTask;
@@ -239,6 +239,7 @@
 - (bool)_isSuppressedByManualKeyboard;
 - (bool)_isTrackingResponder:(id)arg1;
 - (bool)_isTransitioning;
+- (void)_onScreenStateDidChange;
 - (void)_performRefreshCorners;
 - (void)_preserveInputViewsWithId:(id)arg1;
 - (void)_preserveInputViewsWithId:(id)arg1 animated:(bool)arg2;

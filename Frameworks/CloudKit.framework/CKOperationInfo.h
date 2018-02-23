@@ -40,6 +40,7 @@
 @property (nonatomic, readonly) long long qualityOfService;
 @property (nonatomic, readonly) CKOperationConfiguration *resolvedConfiguration;
 @property (nonatomic, retain) CKContainerSetupInfo *setupInfo;
+@property (nonatomic, readonly) bool shouldSkipZonePCSUpdate;
 @property (nonatomic, readonly) NSString *sourceApplicationBundleIdentifier;
 @property (nonatomic, readonly) NSString *sourceApplicationSecondaryIdentifier;
 @property (nonatomic, readonly) double timeoutIntervalForRequest;
@@ -87,6 +88,7 @@
 - (void)setSetupInfo:(id)arg1;
 - (void)setWantsRequestStatistics:(bool)arg1;
 - (id)setupInfo;
+- (bool)shouldSkipZonePCSUpdate;
 - (id)sourceApplicationBundleIdentifier;
 - (id)sourceApplicationSecondaryIdentifier;
 - (void)takeValuesFrom:(id)arg1;

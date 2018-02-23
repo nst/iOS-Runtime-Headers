@@ -125,7 +125,7 @@
 - (void)_autoScaleYAxisIfNecessaryForGroupRow:(long long)arg1;
 - (bool)_axisRangeIsDateRange;
 - (void)_clearRenderViewIfNecessary;
-- (struct { struct { long long x_1_1_1; long long x_1_1_2; } x1; long long x2; })_closestDataPointPathToPoint:(struct CGPoint { double x1; double x2; })arg1 seriesGroupRow:(long long)arg2 minimumXDistance:(double)arg3;
+- (struct { struct { long long x_1_1_1; long long x_1_1_2; } x1; long long x2; })_closestDataPointPathToPoint:(struct CGPoint { double x1; double x2; })arg1 seriesGroupRow:(long long)arg2 minimumXDistance:(double)arg3 xDistanceOut:(double*)arg4;
 - (id)_closestSeriesToPoint:(struct CGPoint { double x1; double x2; })arg1 allSeries:(id)arg2;
 - (bool)_configureYAxisViewIfNeeded;
 - (double)_contentWidth;
@@ -172,7 +172,7 @@
 - (void)_notifyDidEndSelection;
 - (void)_notifyDidUpdateSelectionWithPointContext:(id)arg1;
 - (void)_pauseChartInteraction;
-- (id)_pointSelectionContextWithTouchPoints:(id)arg1 seriesGroupRow:(long long)arg2 updateViewStates:(bool)arg3;
+- (id)_pointSelectionContextWithTouchPoints:(id)arg1 updateViewStates:(bool)arg2;
 - (void)_preserveDestinationActiveRange:(id)arg1;
 - (id)_rangeFromRange:(id)arg1 withStartOfRange:(id)arg2;
 - (void)_reloadViewScope;

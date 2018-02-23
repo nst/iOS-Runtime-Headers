@@ -25,6 +25,7 @@
 }
 
 @property (nonatomic, copy) id /* block */ notificationCallback;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *nowPlayingNotificationQueue;
 @property (nonatomic) bool receivesExternalScreenTypeChangedNotifications;
 @property (nonatomic) bool receivesOriginChangedNotifications;
 @property (nonatomic) bool receivesPlaybackErrorNotifications;
@@ -40,6 +41,7 @@
 - (id)initWithNotificationCallback:(id /* block */)arg1;
 - (bool)isRegisteredForNowPlayingNotifications;
 - (id /* block */)notificationCallback;
+- (id)nowPlayingNotificationQueue;
 - (bool)postNotification:(id)arg1 userInfo:(id)arg2 object:(id)arg3;
 - (bool)receivesExternalScreenTypeChangedNotifications;
 - (bool)receivesOriginChangedNotifications;

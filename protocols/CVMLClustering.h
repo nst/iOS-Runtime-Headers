@@ -5,6 +5,8 @@
 
 @required
 
++ (NSArray *)clustererModelFileNamesFromState:(NSData *)arg1 storedInPath:(NSString *)arg2 error:(id*)arg3;
+
 - (bool)addDescriptorIds:(NSArray *)arg1 withSimilarityMatrix:(CVMLSimilarityMatrix *)arg2 error:(id*)arg3;
 - (NSArray *)getClustersWithOptions:(NSDictionary *)arg1 error:(id*)arg2;
 - (NSArray *)suggestionsForClusterIds:(NSArray *)arg1 affinityThreshold:(float)arg2 error:(id*)arg3;

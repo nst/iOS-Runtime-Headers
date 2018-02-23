@@ -89,6 +89,7 @@
     bool  _showAppStrip;
     CAMShutterButton * _shutterButton;
     long long  _style;
+    UISwipeGestureRecognizer * _swipeGestureRecognizer;
     bool  _unreachableEmergencyRecipient;
     CKMessageEntryWaveformView * _waveformView;
     struct CGSize { 
@@ -167,6 +168,7 @@
 @property (nonatomic, retain) CAMShutterButton *shutterButton;
 @property (nonatomic) long long style;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) UISwipeGestureRecognizer *swipeGestureRecognizer;
 @property (getter=hasUnreachableEmergencyRecipient, nonatomic) bool unreachableEmergencyRecipient;
 @property (nonatomic, retain) CKMessageEntryWaveformView *waveformView;
 @property (nonatomic) struct CGSize { double x1; double x2; } waveformViewSize;
@@ -184,11 +186,13 @@
 - (void)_animateExpand;
 - (void)_animateToCompactLayoutCollapsing:(bool)arg1;
 - (void)_initializeInputContextHistory;
+- (bool)_isRunningInMVS;
 - (bool)_isSURFInShelf;
 - (void)_participantsDidChange:(id)arg1;
 - (BOOL)_sendButtonColor;
 - (void)_setupWaveformView;
 - (bool)_shouldNotAnimateCollapseInteractive;
+- (void)_swipeDownGestureRecognized:(id)arg1;
 - (void)_updateUIForEntryFieldCollapsedStateChange;
 - (void)actionMenuControllerDidDismissActionMenu:(id)arg1;
 - (void)actionMenuControllerWillDismissActionMenu:(id)arg1 animated:(bool)arg2;
@@ -295,6 +299,7 @@
 - (void)messageEntryContentViewWasTapped:(id)arg1 isLongPress:(bool)arg2;
 - (void)messageEntryRecordedAudioView:(id)arg1 mediaObjectDidFinishPlaying:(id)arg2;
 - (void)messageReceived:(id)arg1;
+- (void)minifyAppStrip;
 - (id)pasteBoardTextFromComposition:(id)arg1;
 - (void)pauseMenuItemAction:(id)arg1;
 - (id)photoButton;
@@ -306,6 +311,7 @@
 - (id)previewInteractionDelegate;
 - (id)recordedAudioView;
 - (id)recorder;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })safeAreaInsets;
 - (void)safeAreaInsetsDidChange;
 - (id)sendButton;
 - (struct CGPoint { double x1; double x2; })sendButtonConvertPointToScreen:(struct CGPoint { double x1; double x2; })arg1;
@@ -379,6 +385,7 @@
 - (void)setShowAppStrip:(bool)arg1;
 - (void)setShutterButton:(id)arg1;
 - (void)setStyle:(long long)arg1;
+- (void)setSwipeGestureRecognizer:(id)arg1;
 - (void)setUnreachableEmergencyRecipient:(bool)arg1;
 - (void)setWaveformView:(id)arg1;
 - (void)setWaveformViewSize:(struct CGSize { double x1; double x2; })arg1;
@@ -401,6 +408,7 @@
 - (void)startRecordingForRaiseGesture;
 - (void)stopRecordingForRaiseGestureWithFailure:(bool)arg1;
 - (long long)style;
+- (id)swipeGestureRecognizer;
 - (void)switcherView:(id)arg1 didMagnify:(bool)arg2;
 - (void)switcherView:(id)arg1 didSelectPluginAtIndex:(id)arg2;
 - (void)touchUpInsideDeleteAudioRecordingButton:(id)arg1;

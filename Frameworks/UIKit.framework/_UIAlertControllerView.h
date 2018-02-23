@@ -61,6 +61,7 @@
         double width; 
         double height; 
     }  _largestActionDimension;
+    long long  _layoutRequiresPositionUpdateCount;
     struct CGSize { 
         double width; 
         double height; 
@@ -165,6 +166,7 @@
 - (void)_addContentViewControllerToViewHierarchy;
 - (void)_applyContentViewControllerContainerViewConstraints;
 - (void)_applyDetailMessageConstraints;
+- (void)_applyISEngineLayoutValuesToBoundsOnly:(bool)arg1;
 - (void)_applyKeyboardAlignmentViewsConstraints;
 - (void)_applyMessageConstraints;
 - (void)_applyTextFieldViewControllerContainerViewConstraints;
@@ -203,7 +205,9 @@
 - (struct CGSize { double x1; double x2; })_itemSizeForHorizontalLayout:(bool)arg1;
 - (struct CGSize { double x1; double x2; })_itemSizeForHorizontalLayout:(bool)arg1 visualStyleRequiresActionRepresentationToFitItemSize:(bool*)arg2;
 - (double)_labelHorizontalInsets;
+- (void)_layoutAndPositionInParentIfNeeded;
 - (struct CGSize { double x1; double x2; })_layoutSize;
+- (id)_layoutWidthDeterminationViewToSizeAgainst;
 - (double)_layoutWidthForHorizontalLayout:(bool)arg1;
 - (struct CGSize { double x1; double x2; })_mainActionButtonSequenceViewSizeForHorizontalLayout:(bool)arg1 itemSize:(struct CGSize { double x1; double x2; })arg2;
 - (double)_marginBetweenContentAndDiscreteCancelAction;

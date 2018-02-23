@@ -7,11 +7,13 @@
     <GEOCompletionItem> * _item;
     NSString * _localizedSectionHeader;
     MKMapItem * _mapItem;
+    bool  _shouldDisplayNoResults;
     NSString * _sourceID;
 }
 
 @property (getter=_alreadySentFeedback, nonatomic, readonly) bool alreadySentFeedback;
 @property (nonatomic, readonly) GEOSearchCategory *category;
+@property (nonatomic, readonly) GEOResolvedItem *clientResolved;
 @property (nonatomic, readonly) NSArray *displayLines;
 @property (nonatomic, readonly) <GEOCompletionItem> *geoCompletionItem;
 @property (nonatomic, copy) NSString *localizedSectionHeader;
@@ -28,6 +30,7 @@
 - (long long)_type;
 - (id)calloutTitle;
 - (id)category;
+- (id)clientResolved;
 - (id)copyStorage;
 - (id)description;
 - (id)displayLines;

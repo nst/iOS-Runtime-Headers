@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDEventTriggerSession : HMFObject <HMFDumpState, HMFLogging, HMFMessageReceiver> {
+@interface HMDEventTriggerSession : HMFObject <HMDHomeMessageReceiver, HMFDumpState, HMFLogging> {
     HMDDevice * _currentDevice;
     HMDEventTrigger * _eventTrigger;
     NSUUID * _eventTriggerUUID;
@@ -20,12 +20,14 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *logString;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (readonly, copy) NSSet *messageReceiverChildren;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, readonly) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, readonly) NSUUID *sessionID;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
 
++ (bool)hasMessageReceiverChildren;
 + (id)logCategory;
 
 - (void).cxx_destruct;

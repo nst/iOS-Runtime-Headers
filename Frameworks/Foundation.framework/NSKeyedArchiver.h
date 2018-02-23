@@ -85,6 +85,10 @@
 
 + (id)xr_deepCopy:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/AVConference.framework/AVConference
+
++ (id)secureArchiveObjectOfClass:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/DigitalTouchShared.framework/DigitalTouchShared
 
 + (id)_et_secureArchivedDataWithRootObject:(id)arg1;

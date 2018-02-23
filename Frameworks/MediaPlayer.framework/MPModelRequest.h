@@ -61,6 +61,8 @@
 
 // Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
 
++ (void)MPC_consumeSiriAssetInfo:(id)arg1 withCompletion:(id /* block */)arg2;
+
 - (id)playbackIntentWithStartItemIdentifiers:(id)arg1;
 
 @end

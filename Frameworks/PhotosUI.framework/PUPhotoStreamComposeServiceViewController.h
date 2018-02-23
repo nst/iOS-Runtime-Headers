@@ -13,7 +13,6 @@
         unsigned int hasDidPost : 1; 
         unsigned int hasDidCancel : 1; 
     }  _delegateFlags;
-    bool  _hasPushedTitleController;
     bool  _inCreateNewAlbum;
     NSString * _itemCountString;
     NSArray * _recipients;
@@ -66,7 +65,6 @@
 - (void)userDidCancel;
 - (void)userDidCancelWithoutAnimation;
 - (void)userDidPost;
-- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
 
 @end

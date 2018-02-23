@@ -13,12 +13,12 @@
     NSString * _localizedAdditionalDescription;
     NSString * _localizedDescription;
     long long  _portionOfParent;
+    double  _remoteFractionCompleted;
     _NSProgressFraction * _selfFraction;
     NSMutableDictionary * _userInfo;
     bool  _usingChildUserInfo;
 }
 
-+ (id)_derivedKeys;
 + (id)_importantKeys;
 + (id)decodableClasses;
 + (bool)supportsSecureCoding;

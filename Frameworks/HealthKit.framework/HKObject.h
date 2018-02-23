@@ -30,6 +30,7 @@
 
 - (void).cxx_destruct;
 - (id)UUID;
+- (id)_copyByArchiving;
 - (id)_creationDate;
 - (double)_creationTimestamp;
 - (long long)_externalSyncObjectCode;

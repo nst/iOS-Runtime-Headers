@@ -9,5 +9,6 @@
 - (NSArray *)deniedBrands;
 - (bool)privateModeEnabled;
 - (NSDictionary *)settings;
+- (bool)sportsScoreSpoilersAllowed;
 
 @end

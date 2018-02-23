@@ -23,7 +23,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (id)highConfidenceTextWithLocalePreference:(id)arg1 rejectionRate:(double*)arg2;
+- (id)highConfidenceTextForSessionResult:(id)arg1 rejectionRate:(double*)arg2;
 - (id)init;
 - (id)initWithResultsByLocale:(id)arg1 languageFitnessByLocale:(id)arg2 inputStrokeIdentifiers:(id)arg3;
 - (id)initWithResultsByLocale:(id)arg1 languageFitnessByLocale:(id)arg2 inputStrokeIdentifiers:(id)arg3 inputDrawing:(id)arg4 inputDrawingCutPoints:(id)arg5;

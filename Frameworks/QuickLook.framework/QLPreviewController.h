@@ -243,6 +243,7 @@
 - (id)internalNavigationController;
 - (bool)itemStore:(id)arg1 canEditItem:(id)arg2;
 - (bool)itemStore:(id)arg1 canShareItem:(id)arg2;
+- (unsigned long long)itemStore:(id)arg1 editedFileBehaviorForItem:(id)arg2;
 - (id)keyCommands;
 - (void)loadView;
 - (int)mode;
@@ -257,6 +258,7 @@
 - (id)pinchRotationTracker;
 - (struct CGSize { double x1; double x2; })preferredContentSize;
 - (long long)preferredStatusBarUpdateAnimation;
+- (bool)prefersHomeIndicatorAutoHidden;
 - (bool)prefersStatusBarHidden;
 - (void)prepareForActionSheetPresentationWithCompletionHandler:(id /* block */)arg1;
 - (void)presentAlertControllerForScenario:(long long)arg1;

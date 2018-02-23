@@ -10,6 +10,7 @@
 - (id)_collectUnreportedPIDsFromDatabase:(id)arg1 matchingReportURLString:(id)arg2 since:(long long)arg3 suppressUserInfo:(bool)arg4;
 - (int)_maximumUnreportedToSelect;
 - (void)_serialQueueInsertEvents:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (long long)countUnreportedEventsBefore:(long long)arg1;
 - (bool)deleteEventsInsertedBefore:(long long)arg1;
 - (bool)deleteReportedEvents;
 - (void)flushUnreportedEventsWithCompletionHandler:(id /* block */)arg1;

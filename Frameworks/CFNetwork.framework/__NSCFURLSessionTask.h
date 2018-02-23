@@ -4,6 +4,7 @@
 
 @interface __NSCFURLSessionTask : NSURLSessionTask {
     NSDictionary * _DuetActivityProperties;
+    unsigned short  _TLSNegotiatedCipherSuite;
     NSData * __TCPConnectionMetadata;
     long long  __countOfBytesReceivedEncoded;
     long long  __countOfPendingBytesReceivedEncoded;
@@ -40,6 +41,7 @@
     NSDictionary * _dependencyInfo;
     NSURLSessionTaskDependencyTree * _dependencyTree;
     bool  _disallowCellular;
+    bool  _doesSZExtractorConsumeExtractedData;
     NSProgress * _downloadProgress;
     NSDate * _earliestBeginDate;
     NSError * _error;
@@ -47,6 +49,7 @@
     <SZExtractor> * _extractor;
     bool  _extractorFinishedDecoding;
     bool  _extractorPreparedForExtraction;
+    bool  _hasSZExtractor;
     NSURLSessionTaskMetrics * _incompleteTaskMetrics;
     bool  _isInUpload;
     NSURL * _ledBellyFallbackURL;
@@ -107,6 +110,7 @@
 
 - (id)_DuetActivityProperties;
 - (id)_TCPConnectionMetadata;
+- (unsigned short)_TLSNegotiatedCipherSuite;
 - (unsigned long long)_allowedProtocolTypes;
 - (bool)_allowsCellular;
 - (bool)_allowsQUIC;
@@ -143,6 +147,7 @@
 - (unsigned int)_darkWakePowerAssertion;
 - (id)_dependencyInfo;
 - (bool)_disallowCellular;
+- (bool)_doesSZExtractorConsumeExtractedData;
 - (long long)_expectedWorkload;
 - (id)_extractor;
 - (bool)_extractorFinishedDecoding;
@@ -150,6 +155,7 @@
 - (void)_finishProgressReporting;
 - (void)_getAuthenticationHeadersForResponse:(struct _CFURLResponse { }*)arg1 completionHandler:(id /* block */)arg2;
 - (struct __CFSet { }*)_getAuthenticatorStatusCodes;
+- (bool)_hasSZExtractor;
 - (id)_incompleteTaskMetrics;
 - (void)_initializeTimingDataWithSessionConfiguration:(id)arg1;
 - (id)_ledBellyFallbackURL;
@@ -221,8 +227,6 @@
 - (id)description;
 - (id)earliestBeginDate;
 - (id)error;
-- (id)getExtractor;
-- (bool)hasExtractor;
 - (id)initWithOriginalRequest:(id)arg1 updatedRequest:(id)arg2 ident:(unsigned long long)arg3 session:(id)arg4;
 - (id)initWithTask:(id)arg1;
 - (void)initializeHTTPAuthenticatorWithAppleIDContext:(id)arg1 statusCodes:(id)arg2;
@@ -255,6 +259,7 @@
 - (void)setTaskIdentifier:(unsigned long long)arg1;
 - (void)set_DuetActivityProperties:(id)arg1;
 - (void)set_TCPConnectionMetadata:(id)arg1;
+- (void)set_TLSNegotiatedCipherSuite:(unsigned short)arg1;
 - (void)set_allowedProtocolTypes:(unsigned long long)arg1;
 - (void)set_allowsCellular:(bool)arg1;
 - (void)set_allowsQUIC:(bool)arg1;
@@ -277,10 +282,12 @@
 - (void)set_darkWakePowerAssertion:(unsigned int)arg1;
 - (void)set_dependencyInfo:(id)arg1;
 - (void)set_disallowCellular:(bool)arg1;
+- (void)set_doesSZExtractorConsumeExtractedData:(bool)arg1;
 - (void)set_expectedWorkload:(long long)arg1;
 - (void)set_extractor:(id)arg1;
 - (void)set_extractorFinishedDecoding:(bool)arg1;
 - (void)set_extractorPreparedForExtraction:(bool)arg1;
+- (void)set_hasSZExtractor:(bool)arg1;
 - (void)set_incompleteTaskMetrics:(id)arg1;
 - (void)set_ledBellyFallbackURL:(id)arg1;
 - (void)set_ledBellyServiceIdentifier:(id)arg1;

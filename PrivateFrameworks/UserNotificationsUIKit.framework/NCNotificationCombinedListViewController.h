@@ -4,7 +4,6 @@
 
 @interface NCNotificationCombinedListViewController : NCNotificationListViewController <NCNotificationListSectionHeaderViewDelegate, NCNotificationSectionListDelegate, UIGestureRecognizerDelegate> {
     bool  _collectionViewRectExpanded;
-    double  _contentOffsetBeforeRevealHintingAnimation;
     bool  _didPlayRevealHaptic;
     NCNotificationListSectionHeaderView * _headerViewInClearState;
     NCNotificationListSectionHeaderView * _headerViewInForceTouchState;
@@ -21,17 +20,15 @@
     NCAnimationCoordinator * _requestOperationAnimationCoordinator;
     _UIStatesFeedbackGenerator * _revealFeedbackGenerator;
     NCNotificationListSectionRevealHintView * _revealHintView;
-    UIViewFloatAnimatableProperty * _revealHintingAnimatableProperty;
     int  _revealListTriggerState;
+    double  _revealPercentage;
     bool  _shouldAllowNotificationsHistoryReveal;
     bool  _shouldLimitTargetContentOffsetForNotificationListReveal;
     bool  _shouldPerformReloadForBatchedOperations;
-    bool  _shouldPerformRevealHintingAnimation;
     bool  _showingNotificationsHistory;
 }
 
 @property (getter=isCollectionViewRectExpanded, nonatomic) bool collectionViewRectExpanded;
-@property (nonatomic) double contentOffsetBeforeRevealHintingAnimation;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool didPlayRevealHaptic;
@@ -52,12 +49,11 @@
 @property (nonatomic, retain) NCAnimationCoordinator *requestOperationAnimationCoordinator;
 @property (nonatomic, retain) _UIStatesFeedbackGenerator *revealFeedbackGenerator;
 @property (nonatomic, retain) NCNotificationListSectionRevealHintView *revealHintView;
-@property (nonatomic, retain) UIViewFloatAnimatableProperty *revealHintingAnimatableProperty;
 @property (nonatomic) int revealListTriggerState;
+@property (nonatomic) double revealPercentage;
 @property (nonatomic) bool shouldAllowNotificationsHistoryReveal;
 @property (nonatomic) bool shouldLimitTargetContentOffsetForNotificationListReveal;
 @property (nonatomic) bool shouldPerformReloadForBatchedOperations;
-@property (nonatomic) bool shouldPerformRevealHintingAnimation;
 @property (getter=isShowingNotificationsHistory, nonatomic) bool showingNotificationsHistory;
 @property (readonly) Class superclass;
 
@@ -94,7 +90,6 @@
 - (void)_performRequestOperationAlongsideAnimations;
 - (void)_performRevealAnimationForNotificationCellsWithCompletion:(id /* block */)arg1;
 - (void)_performRevealAnimationForSectionHeaders;
-- (void)_performRevealHintingAnimation;
 - (void)_reloadNotificationHistorySectionIfNecessary;
 - (id)_requestSectionsForNotificationRequests:(id)arg1;
 - (void)_resetCollectionViewVisibleRectEdgeInsets;
@@ -109,10 +104,8 @@
 - (void)_setShowingNotificationsHistory:(bool)arg1;
 - (void)_setShowingNotificationsHistory:(bool)arg1 animated:(bool)arg2;
 - (double)_settlingYPositionForRevealForScrollView:(id)arg1;
-- (void)_setupHintingFloatAnimatableProperties;
 - (bool)_shouldShowRevealHintView;
 - (void)_updateCellForRevealPercentage:(double)arg1 atIndexPath:(id)arg2;
-- (void)_updateContentOffsetForHintingValue:(double)arg1;
 - (void)_updateNotificationCellsRevealHintingForRevealPercentage:(double)arg1;
 - (void)_updateNotificationHistoryRevealStateIfEmpty;
 - (void)_updatePrioritySectionLowestPosition;
@@ -137,7 +130,6 @@
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (void)collectionView:(id)arg1 performUpdatesAlongsideLayout:(id)arg2;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
-- (double)contentOffsetBeforeRevealHintingAnimation;
 - (bool)didPlayRevealHaptic;
 - (bool)dismissModalFullScreenAnimated:(bool)arg1;
 - (struct CGSize { double x1; double x2; })effectiveContentSize;
@@ -150,6 +142,7 @@
 - (id)headerViewInForceTouchState;
 - (void)hideNotificationsFromIncomingSectionListForSectionIdentifier:(id)arg1 subSectionIdentifer:(id)arg2;
 - (void)hideRequestsForNotificationSectionIdentifier:(id)arg1 subSectionIdentifier:(id)arg2;
+- (void)hideRequestsForNotificationSectionSettings:(id)arg1;
 - (id)indexPathForNotificationRequest:(id)arg1;
 - (id)init;
 - (bool)insertNotificationRequest:(id)arg1 forCoalescedNotification:(id)arg2;
@@ -186,8 +179,6 @@
 - (long long)notificationViewControllerDateFormatStyle:(id)arg1;
 - (bool)notificationViewControllerShouldInterpretTapAsDefaultAction:(id)arg1;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
-- (void)performNotificationListRevealGestureHintingAnimated:(bool)arg1 withFadeOut:(bool)arg2;
-- (void)performNotificationListRevealGestureHintingFadeOutAnimated:(bool)arg1;
 - (double)prioritySectionLowestPosition;
 - (void)reloadNotificationRequestsInIncomingSection:(id)arg1;
 - (void)reloadNotificationRequestsInNotificationHistorySection:(id)arg1;
@@ -199,8 +190,8 @@
 - (id)requestOperationAnimationCoordinator;
 - (id)revealFeedbackGenerator;
 - (id)revealHintView;
-- (id)revealHintingAnimatableProperty;
 - (int)revealListTriggerState;
+- (double)revealPercentage;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
@@ -211,7 +202,6 @@
 - (void)sectionHeaderViewDidReceiveClearAllAction:(id)arg1;
 - (void)sectionHeaderViewDidTransitionToClearState:(id)arg1;
 - (void)setCollectionViewRectExpanded:(bool)arg1;
-- (void)setContentOffsetBeforeRevealHintingAnimation:(double)arg1;
 - (void)setDidPlayRevealHaptic:(bool)arg1;
 - (void)setHeaderViewInClearState:(id)arg1;
 - (void)setHeaderViewInForceTouchState:(id)arg1;
@@ -228,21 +218,21 @@
 - (void)setRequestOperationAnimationCoordinator:(id)arg1;
 - (void)setRevealFeedbackGenerator:(id)arg1;
 - (void)setRevealHintView:(id)arg1;
-- (void)setRevealHintingAnimatableProperty:(id)arg1;
 - (void)setRevealListTriggerState:(int)arg1;
+- (void)setRevealPercentage:(double)arg1;
 - (void)setShouldAllowNotificationsHistoryReveal:(bool)arg1;
 - (void)setShouldLimitTargetContentOffsetForNotificationListReveal:(bool)arg1;
 - (void)setShouldPerformReloadForBatchedOperations:(bool)arg1;
-- (void)setShouldPerformRevealHintingAnimation:(bool)arg1;
 - (void)setShowingNotificationsHistory:(bool)arg1;
 - (bool)shouldAllowNotificationsHistoryReveal;
 - (bool)shouldLimitTargetContentOffsetForNotificationListReveal;
 - (bool)shouldPerformReloadForBatchedOperations;
-- (bool)shouldPerformRevealHintingAnimation;
 - (bool)shouldReceiveTouch:(id)arg1 forGestureRecognizer:(id)arg2;
 - (void)showRequestsForNotificationSectionIdentifier:(id)arg1 subSectionIdentifier:(id)arg2;
+- (void)showRequestsForNotificationSectionSettings:(id)arg1;
 - (void)updateForLegibilitySettings:(id)arg1;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 
 @end

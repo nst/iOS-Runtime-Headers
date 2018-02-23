@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDDurationEvent : HMDTimeEvent <HMFDumpState, HMFLogging, HMFMessageReceiver, NSSecureCoding> {
+@interface HMDDurationEvent : HMDTimeEvent <HMDHomeMessageReceiver, HMFDumpState, HMFLogging, NSSecureCoding> {
     NSNumber * _duration;
 }
 
@@ -11,6 +11,7 @@
 @property (nonatomic, retain) NSNumber *duration;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (readonly, copy) NSSet *messageReceiverChildren;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (readonly) Class superclass;
 

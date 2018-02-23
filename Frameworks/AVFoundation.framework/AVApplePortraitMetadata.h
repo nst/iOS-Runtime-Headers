@@ -16,6 +16,7 @@
 + (bool)supportsSecureCoding;
 
 - (float)apertureFocalRatio;
+- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)faceObservationsData;
 - (int)faceOrientation;

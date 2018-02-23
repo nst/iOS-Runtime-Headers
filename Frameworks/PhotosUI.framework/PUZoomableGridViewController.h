@@ -23,6 +23,7 @@
     NSTimer * _globalFooterAutoScrollMinimumIdleTimer;
     bool  _globalFooterDidAutoScroll;
     NSTimer * _globalFooterImportantInformationUpdatesTimer;
+    bool  _isDisplayingEmptyPlaceholderView;
     bool  _isDisplayingGlobalFooterView;
     PUGridMagnifiedImageViewController * _magnifiedImageViewController;
     bool  _simulateGlobalFooterImportantInformationUpdates;
@@ -57,7 +58,7 @@
 - (id)_beginInteractiveTransitionWithReferenceItemPath:(id)arg1 zoomingOut:(bool)arg2;
 - (bool)_collectionView:(id)arg1 shouldApplyTransitionContentOffset:(struct CGPoint { double x1; double x2; })arg2 contentSize:(struct CGSize { double x1; double x2; })arg3;
 - (void)_conditionallyRevealPhotosGlobalFooterView;
-- (void)_conditionallyRevealPhotosGlobalFooterViewWithContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_conditionallyRevealPhotosGlobalFooterViewWithLastUserScrollTime:(double)arg1;
 - (void)_configureGlobalFooterImportantInformationUpdatesTimer;
 - (void)_configureMagnifiedImageViewController:(id)arg1 forIndexPath:(id)arg2 gestureLocationInWindow:(struct CGPoint { double x1; double x2; })arg3;
 - (void)_didEndDisplayingGlobalFooterView;
@@ -80,6 +81,7 @@
 - (double)_lastUpdateWidth;
 - (id)_lastZoomInTransitionAnchorIndexPath;
 - (unsigned long long)_magnifierState;
+- (void)_needsCPLInformationDidChange;
 - (void)_reclaimCollectionView;
 - (void)_setCurrentGridZoomTransitionInfo:(id)arg1;
 - (void)_setDynamicLayoutTransitionAnchorIndexPath:(id)arg1;
@@ -116,7 +118,7 @@
 - (bool)collectionViewPointInSectionHeader:(struct CGPoint { double x1; double x2; })arg1;
 - (void)configureGlobalFooterView:(id)arg1;
 - (void)configureGridCell:(id)arg1 forItemAtIndexPath:(id)arg2;
-- (void)configureSupplementaryView:(id)arg1 ofKind:(id)arg2 forIndexPath:(id)arg3 animated:(bool)arg4;
+- (void)configureSupplementaryView:(id)arg1 ofKind:(id)arg2 forIndexPath:(id)arg3;
 - (struct CGPoint { double x1; double x2; })contentOffsetForPreheating;
 - (struct CGSize { double x1; double x2; })contentSizeForPreheating;
 - (id)currentGridZoomTransitionInfo;
@@ -124,10 +126,11 @@
 - (void)dealloc;
 - (id)description;
 - (void)didDismissPreviewViewController:(id)arg1 committing:(bool)arg2;
+- (void)didEndDisplayingEmptyPlaceholderView;
 - (void)didReceiveMemoryWarning;
 - (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
-- (void)getEmptyPlaceholderViewTitle:(id*)arg1 message:(id*)arg2;
+- (void)getEmptyPlaceholderViewTitle:(id*)arg1 message:(id*)arg2 buttonTitle:(id*)arg3 buttonAction:(id /* block */*)arg4;
 - (void)getTitle:(out id*)arg1 prompt:(out id*)arg2 shouldHideBackButton:(out bool*)arg3 leftBarButtonItems:(out id*)arg4 rightBarButtonItems:(out id*)arg5;
 - (void)gridSettings:(id)arg1 changedValueForKey:(id)arg2;
 - (void)gridZoomTransitionDidFinish:(bool)arg1;
@@ -179,6 +182,8 @@
 - (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (bool)wantsGlobalFooter;
+- (bool)wantsPlaceholderView;
+- (void)willDisplayEmptyPlaceholderView;
 - (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { double x1; double x2; })arg2 inSourceView:(id)arg3;
 - (unsigned long long)zoomLevel;
 - (id)zoomLevelManager;

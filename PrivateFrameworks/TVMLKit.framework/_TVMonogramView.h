@@ -32,6 +32,7 @@
 @property (nonatomic) double unfocusedImageAlpha;
 
 - (void).cxx_destruct;
+- (id)_copyMonogramDescriptionWithoutImageURL:(id)arg1;
 - (void)_loadWithMonogramDescription:(id)arg1 imageProxy:(id)arg2;
 - (void)_updateAppearanceForSelectionStateWithCoordinator:(id)arg1;
 - (id)configuration;

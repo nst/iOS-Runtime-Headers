@@ -76,6 +76,7 @@
 - (bool)_isPalettePinningBarHidden;
 - (bool)_paletteOverridesPinningBar;
 - (id)_pinningBar;
+- (void)_propagateBackgroundToContents;
 - (void)_resetConstraintConstants:(double)arg1;
 - (void)_resetHeightConstraintConstant;
 - (void)_resetVisibilityStateIfNecessary;
@@ -99,6 +100,7 @@
 - (void)_setVisualAltitudeBias:(struct CGSize { double x1; double x2; })arg1;
 - (void)_setupBackgroundViewIfNecessary;
 - (bool)_shouldHideWhenScrolling;
+- (bool)_shouldUpdateBackground;
 - (struct CGSize { double x1; double x2; })_size;
 - (bool)_supportsSpecialSearchBarTransitions;
 - (id)_unpinnedController;

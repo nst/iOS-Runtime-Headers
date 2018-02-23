@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentSetupBrowseProductsViewController : PKPaymentSetupTableViewController <PKPaymentSetupActivitySpinnerViewControllerProtocol, UITableViewDelegate, UITextFieldDelegate> {
+@interface PKPaymentSetupBrowseProductsViewController : PKPaymentSetupTableViewController <PKPaymentSetupActivitySpinnerProtocol, UITableViewDelegate, UITextFieldDelegate> {
     <PKPaymentSetupBrowseProductsViewControllerDelegate> * _delegate;
     PKSearchableTableHeaderView * _headerView;
     PKPaymentSetupBrowseProductsModel * _model;
@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PKPaymentSetupBrowseProductsModel *model;
-@property (nonatomic, readonly, retain) PKPaymentSetupProduct *selectedProduct;
+@property (nonatomic, readonly) PKPaymentSetupProduct *selectedProduct;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

@@ -23,9 +23,12 @@
 - (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToPeerPaymentAccountFeatureDescriptor:(id)arg1;
 - (id)maximumAmount;
 - (unsigned long long)merchantCapabilities;
 - (id)merchantIdentifier;

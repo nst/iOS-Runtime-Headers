@@ -12,8 +12,12 @@
 - (UIFont *)brandTitleFont;
 - (UIColor *)disabledActionRowBackgroundColor;
 - (UIColor *)disabledActionRowTextColor;
+- (UIColor *)headerPrimaryButtonHighlightedColor;
+- (UIColor *)headerPrimaryButtonNormalColor;
+- (UIColor *)headerSecondaryButtonHighlightedColor;
+- (UIColor *)headerSecondaryButtonNormalColor;
 - (UIColor *)highlightedActionRowTextColor;
-- (UIColor *)highlightedRowColor;
+- (UIColor *)highlightedTintColor;
 - (UIFont *)iconFontToMatch:(UIFont *)arg1;
 - (bool)isDarkTheme;
 - (bool)isVibrantTheme;

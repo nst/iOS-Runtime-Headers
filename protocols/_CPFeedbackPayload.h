@@ -10,7 +10,9 @@
 - (_CPCardSectionFeedback *)cardSectionFeedback;
 - (_CPCardViewAppearFeedback *)cardViewAppearFeedback;
 - (_CPCardViewDisappearFeedback *)cardViewDisappearFeedback;
+- (_CPCBAEngagementFeedback *)cbaEngagementFeedback;
 - (_CPClearInputFeedback *)clearInputFeedback;
+- (_CPClientTimingFeedback *)clientTimingFeedback;
 - (_CPConnectionInvalidatedFeedback *)connectionInvalidatedFeedback;
 - (_CPCustomFeedback *)customFeedback;
 - (_CPDidGoToSearchFeedback *)didGoToSearchFeedback;
@@ -25,7 +27,9 @@
 - (bool)hasCardSectionFeedback;
 - (bool)hasCardViewAppearFeedback;
 - (bool)hasCardViewDisappearFeedback;
+- (bool)hasCbaEngagementFeedback;
 - (bool)hasClearInputFeedback;
+- (bool)hasClientTimingFeedback;
 - (bool)hasConnectionInvalidatedFeedback;
 - (bool)hasCustomFeedback;
 - (bool)hasDidGoToSearchFeedback;
@@ -84,7 +88,9 @@
 - (void)setCardSectionFeedback:(_CPCardSectionFeedback *)arg1;
 - (void)setCardViewAppearFeedback:(_CPCardViewAppearFeedback *)arg1;
 - (void)setCardViewDisappearFeedback:(_CPCardViewDisappearFeedback *)arg1;
+- (void)setCbaEngagementFeedback:(_CPCBAEngagementFeedback *)arg1;
 - (void)setClearInputFeedback:(_CPClearInputFeedback *)arg1;
+- (void)setClientTimingFeedback:(_CPClientTimingFeedback *)arg1;
 - (void)setConnectionInvalidatedFeedback:(_CPConnectionInvalidatedFeedback *)arg1;
 - (void)setCustomFeedback:(_CPCustomFeedback *)arg1;
 - (void)setDidGoToSearchFeedback:(_CPDidGoToSearchFeedback *)arg1;

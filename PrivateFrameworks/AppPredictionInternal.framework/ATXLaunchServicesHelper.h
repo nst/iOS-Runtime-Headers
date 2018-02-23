@@ -5,7 +5,7 @@
 @interface ATXLaunchServicesHelper : NSObject
 
 + (bool)bundleIsExtension:(id)arg1;
-+ (id)getGenresForBundleId:(id)arg1;
-+ (id)getGenresForProxy:(id)arg1;
++ (id)getGenreIdsForBundleId:(id)arg1;
++ (id)getGenreIdsForProxy:(id)arg1;
 
 @end

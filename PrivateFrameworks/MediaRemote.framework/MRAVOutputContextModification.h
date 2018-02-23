@@ -3,14 +3,14 @@
  */
 
 @interface MRAVOutputContextModification : NSObject {
-    MRStandardCallback * _callback;
+    MSVCallback * _callback;
     unsigned long long  _modificationType;
     NSArray * _outputDevices;
     NSObject<OS_dispatch_source> * _timerSource;
     bool  _valid;
 }
 
-@property (nonatomic, readonly) MRStandardCallback *callback;
+@property (nonatomic, readonly) MSVCallback *callback;
 @property (nonatomic, readonly) unsigned long long modificationType;
 @property (nonatomic, readonly) NSArray *outputDevices;
 @property (nonatomic, readonly) bool valid;

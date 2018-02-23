@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXFullScreenCanvasController : NSObject <SXDragManagerDataSource, SXFullScreenCaptionViewDelegate, SXFullScreenImageViewDelegate, SXFullscreenNavigationBarViewDelegate, SXItemizedScrollViewDataSource, SXItemizedScrollViewDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate> {
+@interface SXFullscreenCanvasController : NSObject <SXDragManagerDataSource, SXFullscreenCaptionViewDelegate, SXFullscreenImageViewDelegate, SXFullscreenNavigationBarViewDelegate, SXItemizedScrollViewDataSource, SXItemizedScrollViewDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate> {
     UIView * _backgroundView;
     UIView * _canvasView;
-    SXFullScreenCaptionView * _captionView;
+    SXFullscreenCaptionView * _captionView;
+    <SXFullscreenCaptionViewFactory> * _captionViewFactory;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -53,7 +54,7 @@
     UIRotationGestureRecognizer * _rotationGestureRecognizer;
     bool  _rotationIsActive;
     unsigned long long  _sharingPolicy;
-    <SXFullScreenCanvasShowable> * _showable;
+    <SXFullscreenCanvasShowable> * _showable;
     struct CGPoint { 
         double x; 
         double y; 
@@ -67,7 +68,8 @@
 @property (nonatomic, retain) UIColor *backgroundColor;
 @property (nonatomic, readonly) UIView *backgroundView;
 @property (nonatomic, retain) UIView *canvasView;
-@property (nonatomic, retain) SXFullScreenCaptionView *captionView;
+@property (nonatomic, retain) SXFullscreenCaptionView *captionView;
+@property (nonatomic, readonly) <SXFullscreenCaptionViewFactory> *captionViewFactory;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } currentDestinationFrame;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } currentOriginFrame;
 @property (nonatomic, readonly) double currentRotation;
@@ -97,7 +99,7 @@
 @property (nonatomic, readonly) UIRotationGestureRecognizer *rotationGestureRecognizer;
 @property (nonatomic, readonly) bool rotationIsActive;
 @property (nonatomic, readonly) unsigned long long sharingPolicy;
-@property (nonatomic, readonly) <SXFullScreenCanvasShowable> *showable;
+@property (nonatomic, readonly) <SXFullscreenCanvasShowable> *showable;
 @property (nonatomic, readonly) struct CGPoint { double x1; double x2; } startingAnchorPoint;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UITapGestureRecognizer *tapGestureRecognizer;
@@ -112,6 +114,7 @@
 - (id)canvasView;
 - (id)captionView;
 - (bool)captionView:(id)arg1 tapGestureRecognizerShouldBegin:(id)arg2;
+- (id)captionViewFactory;
 - (void)changeCaptionViewForViewWithIndex:(unsigned long long)arg1 expanded:(bool)arg2 animated:(bool)arg3;
 - (bool)comparePoint:(struct CGPoint { double x1; double x2; })arg1 withPoint:(struct CGPoint { double x1; double x2; })arg2 maxDelta:(double)arg3;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })currentDestinationFrame;
@@ -144,7 +147,7 @@
 - (void)handlePinchGestureRecognizer:(id)arg1;
 - (void)handleRotationGestureRecognizer:(id)arg1;
 - (void)handleTap:(id)arg1;
-- (id)initWithShowable:(id)arg1 sharingPolicy:(unsigned long long)arg2;
+- (id)initWithShowable:(id)arg1 captionViewFactory:(id)arg2 sharingPolicy:(unsigned long long)arg3;
 - (bool)isFullscreen;
 - (bool)isStoppingVerticalSwiping;
 - (bool)isSupressingColorSettings;

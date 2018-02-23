@@ -12,10 +12,14 @@
 
 + (id)_sharedOpenAppService;
 + (id)_sharedOpenApplicationOptions;
++ (bool)areAnimationsPermitted;
 + (void)initialize;
++ (void)performWithoutAnimationWhileHidden:(id /* block */)arg1;
++ (void)setAnimationsPermitted:(bool)arg1;
 
 - (void).cxx_destruct;
 - (id)delegate;
+- (void)dismissControlCenter;
 - (void)dismissModule;
 - (void)enqueueStatusUpdate:(id)arg1;
 - (id)initWithModuleIdentifier:(id)arg1;

@@ -38,7 +38,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (bool)decideSegmentPointBasedOn:(float)arg1;
-- (int)finalize;
+- (int)finalizeAnalysis;
 - (id)init;
 - (void)mergeSimilarSegments;
 - (int)processFrameMetadata:(id)arg1;

@@ -9,6 +9,8 @@
 
 @optional
 
+- (void)didAppear;
+- (void)didDisappear;
 - (void)muteStateChanged:(bool)arg1;
 - (void)playbackFailedWithError:(NSError *)arg1;
 - (void)playbackFinished;
@@ -17,5 +19,7 @@
 - (void)playbackResumed;
 - (void)playbackStarted;
 - (void)timeElapsed:(double)arg1 duration:(double)arg2;
+- (void)willAppear;
+- (void)willDisappear;
 
 @end

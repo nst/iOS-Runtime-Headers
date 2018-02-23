@@ -22,7 +22,7 @@
 - (void)_sendFeedbackMessage:(id)arg1 object:(id)arg2 info:(id)arg3 reply:(id /* block */)arg4;
 - (void)_sendMessage:(id)arg1 object:(id)arg2 info:(id)arg3 reply:(id /* block */)arg4;
 - (void)activate;
-- (void)activate:(id)arg1;
+- (void)activate:(id /* block */)arg1;
 - (void)cancelQuery:(id)arg1;
 - (id)daemonName;
 - (void)deactivate;

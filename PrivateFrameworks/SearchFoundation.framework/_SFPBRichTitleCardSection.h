@@ -12,6 +12,7 @@
     bool  _canBeHidden;
     NSString * _contentAdvisory;
     NSString * _descriptionText;
+    NSString * _footnote;
     struct { 
         unsigned int canBeHidden : 1; 
         unsigned int hasTopPadding : 1; 
@@ -68,6 +69,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *descriptionText;
+@property (nonatomic, copy) NSString *footnote;
 @property (nonatomic, readonly) bool hasAuxiliaryAlignment;
 @property (nonatomic, readonly) bool hasAuxiliaryBottomText;
 @property (nonatomic, readonly) bool hasAuxiliaryBottomTextColor;
@@ -78,6 +80,7 @@
 @property (nonatomic, readonly) bool hasCanBeHidden;
 @property (nonatomic, readonly) bool hasContentAdvisory;
 @property (nonatomic, readonly) bool hasDescriptionText;
+@property (nonatomic, readonly) bool hasFootnote;
 @property (nonatomic, readonly) bool hasHasBottomPadding;
 @property (nonatomic, readonly) bool hasHasTopPadding;
 @property (nonatomic, readonly) bool hasHideVerticalDivider;
@@ -147,6 +150,7 @@
 - (id)contentAdvisory;
 - (id)descriptionText;
 - (id)dictionaryRepresentation;
+- (id)footnote;
 - (bool)hasAuxiliaryAlignment;
 - (bool)hasAuxiliaryBottomText;
 - (bool)hasAuxiliaryBottomTextColor;
@@ -157,6 +161,7 @@
 - (bool)hasCanBeHidden;
 - (bool)hasContentAdvisory;
 - (bool)hasDescriptionText;
+- (bool)hasFootnote;
 - (bool)hasHasBottomPadding;
 - (bool)hasHasTopPadding;
 - (bool)hasHideVerticalDivider;
@@ -219,6 +224,7 @@
 - (void)setCanBeHidden:(bool)arg1;
 - (void)setContentAdvisory:(id)arg1;
 - (void)setDescriptionText:(id)arg1;
+- (void)setFootnote:(id)arg1;
 - (void)setHasBottomPadding:(bool)arg1;
 - (void)setHasTopPadding:(bool)arg1;
 - (void)setHideVerticalDivider:(bool)arg1;

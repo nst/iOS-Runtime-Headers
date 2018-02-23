@@ -15,6 +15,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)description;
 - (id)fontAttributes;
 - (id)fontAttributesForMetadata:(id)arg1;
 - (id)fontName;

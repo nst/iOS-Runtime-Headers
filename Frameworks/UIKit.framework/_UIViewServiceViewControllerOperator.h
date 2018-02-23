@@ -60,8 +60,8 @@
 - (void).cxx_destruct;
 - (int)__automatic_invalidation_logic;
 - (void)__cancelAlertActionWithToken:(long long)arg1;
-- (void)__createViewController:(id)arg1 withAppearanceSerializedRepresentations:(id)arg2 legacyAppearance:(bool)arg3 hostAccessibilityServerPort:(id)arg4 canShowTextServices:(bool)arg5 replyHandler:(id /* block */)arg6;
-- (void)__createViewController:(id)arg1 withContextToken:(id)arg2 fbsDisplays:(id)arg3 appearanceSerializedRepresentations:(id)arg4 legacyAppearance:(bool)arg5 traitCollection:(id)arg6 initialInterfaceOrientation:(long long)arg7 hostAccessibilityServerPort:(id)arg8 canShowTextServices:(bool)arg9 replyHandler:(id /* block */)arg10;
+- (void)__createViewController:(id)arg1 withAppearanceSerializedRepresentations:(id)arg2 legacyAppearance:(bool)arg3 hostAccessibilityServerPort:(id)arg4 replyHandler:(id /* block */)arg5;
+- (void)__createViewController:(id)arg1 withContextToken:(id)arg2 fbsDisplays:(id)arg3 appearanceSerializedRepresentations:(id)arg4 legacyAppearance:(bool)arg5 traitCollection:(id)arg6 initialInterfaceOrientation:(long long)arg7 hostAccessibilityServerPort:(id)arg8 replyHandler:(id /* block */)arg9;
 - (void)__dimmingViewWasTapped;
 - (void)__exchangeAccessibilityPortInformation:(id)arg1 replyHandler:(id /* block */)arg2;
 - (void)__hostDidAttachDisplay:(id)arg1;
@@ -73,7 +73,7 @@
 - (void)__hostDidPromoteFirstResponder;
 - (void)__hostDidRotateFromInterfaceOrientation:(long long)arg1 skipSelf:(bool)arg2;
 - (void)__hostDidSetContentOverlayInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 andLeftMargin:(double)arg2 rightMargin:(double)arg3;
-- (void)__hostDidSetPresentationControllerClassName:(id)arg1;
+- (void)__hostDidSetPresentationControllerClassName:(id)arg1 canShowTextServices:(bool)arg2;
 - (void)__hostDidUpdateAppearanceWithSerializedRepresentations:(id)arg1 originalSource:(id)arg2 legacyAppearance:(bool)arg3;
 - (void)__hostDidUpdateDisplay:(id)arg1;
 - (void)__hostDisablesAutomaticKeyboardBehavior:(bool)arg1;
@@ -106,7 +106,7 @@
 - (void)__undoActionWithToken:(long long)arg1;
 - (id)_appearanceSource;
 - (bool)_canShowTextServices;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_customBasePresentationInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_customBasePresentationInsetsForView:(id)arg1;
 - (id)_dataFromPressesEvent:(id)arg1;
 - (void)_didBecomeContentViewControllerOfPopover:(id)arg1;
 - (void)_didResignContentViewControllerOfPopover:(id)arg1;
@@ -142,6 +142,7 @@
 - (void)_updateSupportedInterfaceOrientationsIfNecessary;
 - (bool)_validateSessionIdentifier:(id)arg1 restorationAnchor:(id)arg2 functionName:(const char *)arg3;
 - (id)_viewControllersForRotationCallbacks;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_viewSafeAreaInsetsFromScene;
 - (void)_viewServiceIsDisplayingPopoverController:(id)arg1;
 - (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
 - (void)_willResignContentViewControllerOfPopover:(id)arg1;
@@ -188,7 +189,6 @@
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)systemLayoutFittingSizeDidChangeForChildViewController:(id)arg1;
 - (void)viewDidLoad;
-- (void)viewWillMoveToWindow:(id)arg1;
 - (void)window:(id)arg1 statusBarWillChangeFromHeight:(double)arg2 toHeight:(double)arg3;
 
 @end

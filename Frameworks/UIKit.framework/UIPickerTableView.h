@@ -4,6 +4,7 @@
 
 @interface UIPickerTableView : UITableView <UITableViewDelegate> {
     NSMutableIndexSet * _checkedRows;
+    bool  _generatorActivated;
     double  _lastClickedOffset;
     long long  _lastSelectedRow;
     struct { 
@@ -47,6 +48,7 @@
 @property (getter=_usesModernStyle, setter=_setUsesModernStyle:) bool _usesModernStyle;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) bool generatorActivated;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) long long lastSelectedRow;
 @property (getter=_playsFeedback, setter=_setPlaysFeedback:) bool playsFeedback;
@@ -62,6 +64,7 @@
 - (id)_checkedRows;
 - (id)_containerView;
 - (long long)_contentInsetAdjustmentBehavior;
+- (void)_deactivateFeedbackGeneratorIfNeeded;
 - (double)_distanceToCenterForY:(double)arg1;
 - (void)_notifyContentOffsetChange;
 - (id)_pickerView;
@@ -97,6 +100,7 @@
 
 - (struct CGPoint { double x1; double x2; })contentOffsetForRowAtIndexPath:(id)arg1;
 - (bool)didSelectDisabled:(bool)arg1;
+- (bool)generatorActivated;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(long long)arg2 visibleRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 - (bool)isRowChecked:(long long)arg1;
 - (long long)lastSelectedRow;
@@ -114,6 +118,7 @@
 - (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setGeneratorActivated:(bool)arg1;
 - (void)setLastSelectedRow:(long long)arg1;
 - (void)setSelectionBarRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

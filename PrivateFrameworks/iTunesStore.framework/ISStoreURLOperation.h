@@ -16,7 +16,9 @@
     bool  _needsTermsAndConditionsAcceptance;
     bool  _needsURLBag;
     SSVFairPlaySAPSession * _sapSession;
+    bool  _shouldAppendAuthKitHeaders;
     bool  _shouldAppendStorefrontToURL;
+    bool  _shouldSendAKClientInfoHeaders;
     bool  _shouldSendDSIDHeader;
     bool  _shouldSendXTokenHeader;
     bool  _shouldSuppressUserInfo;
@@ -42,7 +44,9 @@
 @property bool needsTermsAndConditionsAcceptance;
 @property bool needsURLBag;
 @property bool performsMachineDataActions;
+@property (nonatomic) bool shouldAppendAuthKitHeaders;
 @property (nonatomic) bool shouldAppendStorefrontToURL;
+@property bool shouldSendAKClientInfoHeaders;
 @property bool shouldSendDSIDHeader;
 @property bool shouldSendXTokenHeader;
 @property bool shouldSuppressUserInfo;
@@ -52,11 +56,11 @@
 
 + (void)_addAccountDSID:(id)arg1 toRequest:(id)arg2;
 + (void)_addPrimaryiCloudDSIDToRequest:(id)arg1;
-+ (void)_addiTunesStoreHeadersToRequest:(id)arg1 withAccount:(id)arg2 appendStorefrontToURL:(bool)arg3 clientBundleIdentifier:(id)arg4 extraHeaders:(id)arg5 storefrontSuffix:(id)arg6;
-+ (void)_addiTunesStoreHeadersToRequest:(id)arg1 withSSBag:(id)arg2 account:(id)arg3 appendStorefrontToURL:(bool)arg4 clientBundleIdentifier:(id)arg5;
-+ (void)_addiTunesStoreHeadersToRequest:(id)arg1 withSSBag:(id)arg2 accountIdentifier:(id)arg3 appendStorefrontToURL:(bool)arg4 clientBundleIdentifier:(id)arg5;
-+ (void)_addiTunesStoreHeadersToRequest:(id)arg1 withURLBag:(id)arg2 account:(id)arg3 appendStorefrontToURL:(bool)arg4 clientBundleIdentifier:(id)arg5;
-+ (void)_addiTunesStoreHeadersToRequest:(id)arg1 withURLBag:(id)arg2 accountIdentifier:(id)arg3 appendStorefrontToURL:(bool)arg4 clientBundleIdentifier:(id)arg5;
++ (void)_addiTunesStoreHeadersToRequest:(id)arg1 withAccount:(id)arg2 appendAuthKitHeaders:(bool)arg3 appendStorefrontToURL:(bool)arg4 clientBundleIdentifier:(id)arg5 extraHeaders:(id)arg6 storefrontSuffix:(id)arg7;
++ (void)_addiTunesStoreHeadersToRequest:(id)arg1 withSSBag:(id)arg2 account:(id)arg3 appendAuthKitHeaders:(bool)arg4 appendStorefrontToURL:(bool)arg5 clientBundleIdentifier:(id)arg6;
++ (void)_addiTunesStoreHeadersToRequest:(id)arg1 withSSBag:(id)arg2 accountIdentifier:(id)arg3 appendAuthKitHeaders:(bool)arg4 appendStorefrontToURL:(bool)arg5 clientBundleIdentifier:(id)arg6;
++ (void)_addiTunesStoreHeadersToRequest:(id)arg1 withURLBag:(id)arg2 account:(id)arg3 appendAuthKitHeaders:(bool)arg4 appendStorefrontToURL:(bool)arg5 clientBundleIdentifier:(id)arg6;
++ (void)_addiTunesStoreHeadersToRequest:(id)arg1 withURLBag:(id)arg2 accountIdentifier:(id)arg3 appendAuthKitHeaders:(bool)arg4 appendStorefrontToURL:(bool)arg5 clientBundleIdentifier:(id)arg6;
 + (void)_appendStorefront:(id)arg1 toRequestURL:(id)arg2;
 + (id)_authKitSession;
 + (void)_handleResponseHeaders:(id)arg1 response:(id)arg2 request:(id)arg3 account:(id)arg4 performsMachineDataActions:(bool)arg5 shouldRetry:(bool*)arg6;
@@ -126,15 +130,19 @@
 - (void)setNeedsURLBag:(bool)arg1;
 - (void)setPerformsMachineDataActions:(bool)arg1;
 - (void)setSAPSession:(id)arg1;
+- (void)setShouldAppendAuthKitHeaders:(bool)arg1;
 - (void)setShouldAppendStorefrontToURL:(bool)arg1;
+- (void)setShouldSendAKClientInfoHeaders:(bool)arg1;
 - (void)setShouldSendDSIDHeader:(bool)arg1;
 - (void)setShouldSendXTokenHeader:(bool)arg1;
 - (void)setShouldSuppressUserInfo:(bool)arg1;
 - (void)setURLBagRequest:(bool)arg1;
 - (void)setUrlKnownToBeTrusted:(bool)arg1;
 - (void)setUseUserSpecificURLBag:(bool)arg1;
+- (bool)shouldAppendAuthKitHeaders;
 - (bool)shouldAppendStorefrontToURL;
 - (bool)shouldFollowRedirectWithRequest:(id)arg1 returningError:(id*)arg2;
+- (bool)shouldSendAKClientInfoHeaders;
 - (bool)shouldSendDSIDHeader;
 - (bool)shouldSendXTokenHeader;
 - (bool)shouldSuppressUserInfo;

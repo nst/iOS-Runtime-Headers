@@ -29,12 +29,12 @@
 - (void).cxx_destruct;
 - (id)_clientIDForMetrics;
 - (id)_clientIDForUserID:(id)arg1;
-- (id)_dialogIDForMetrics;
 - (void)_findSelectedButtonForButtons:(id)arg1;
 - (void)_loadURLBag;
 - (void)_performMetricsWithBiometricMatch:(unsigned long long)arg1 didBiometricsFail:(bool)arg2;
 - (bool)_runAuthkitOperationWithError:(id)arg1 returningError:(id*)arg2;
 - (bool)_runSignatureOperationReturningError:(id*)arg1;
+- (bool)_shouldFallbackToAuthKitForError:(id)arg1;
 - (id)biometricAuthenticationContext;
 - (id)buyParams;
 - (id)dialog;

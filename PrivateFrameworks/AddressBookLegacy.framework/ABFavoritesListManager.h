@@ -46,7 +46,9 @@
 - (void)recacheIdentitiesSoon;
 - (void)removeAllEntries;
 - (void)removeEntryAtIndex:(long long)arg1;
+- (void)reportFavoritesIssue:(id)arg1;
 - (void)save;
 - (void)saveImmediately;
+- (bool)shouldNotReportFavoritesError:(id)arg1;
 
 @end

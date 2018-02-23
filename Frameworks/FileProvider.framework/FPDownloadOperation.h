@@ -6,6 +6,8 @@
     id /* block */  _downloadCompletionBlock;
     NSFileCoordinator * _fileCoordinator;
     NSArray * _items;
+    NSMutableSet * _itemsPendingCoordination;
+    NSObject<OS_dispatch_source> * _stitchingTimer;
 }
 
 @property (nonatomic, copy) id /* block */ downloadCompletionBlock;
@@ -18,5 +20,6 @@
 - (void)main;
 - (void)presendNotifications;
 - (void)setDownloadCompletionBlock:(id /* block */)arg1;
+- (void)showItemsAsDownloadingEvenIfDownloaded:(bool)arg1;
 
 @end

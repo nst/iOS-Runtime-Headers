@@ -35,6 +35,7 @@
 - (id)initWithStyler:(id)arg1;
 - (void)layoutSubviews;
 - (id)lingerSemaphore;
+- (void)relayoutWithAnimation:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIncomingTitleView:(id)arg1;
 - (void)setLingerSemaphore:(id)arg1;

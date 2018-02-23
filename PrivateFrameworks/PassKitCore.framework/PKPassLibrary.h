@@ -51,6 +51,7 @@
 - (id)_remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (id)_remoteObjectProxyWithFailureHandler:(id /* block */)arg1;
 - (bool)_setSetting:(unsigned long long)arg1 enabled:(bool)arg2 forPass:(id)arg3;
+- (id)_sortedPaymentPassesForPaymentRequest:(id)arg1;
 - (id)_synchronousExtendedRemoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (id)_synchronousInAppRemoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (id)_synchronousRemoteObjectProxyWithErrorHandler:(id /* block */)arg1;
@@ -80,6 +81,7 @@
 - (void)fetchCurrentRelevantPassInfo:(id /* block */)arg1;
 - (void)fetchHasCandidatePasses:(id /* block */)arg1;
 - (void)fetchImageSetForUniqueID:(id)arg1 ofType:(long long)arg2 displayProfile:(id)arg3 withCompletion:(id /* block */)arg4;
+- (void)forceImmediateRevocationCheck;
 - (void)getContainmentStatusAndSettingsForPass:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)getPassUniqueIdentifiersForFieldProperties:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)getPassesAndCatalog:(bool)arg1 synchronously:(bool)arg2 withHandler:(id /* block */)arg3;

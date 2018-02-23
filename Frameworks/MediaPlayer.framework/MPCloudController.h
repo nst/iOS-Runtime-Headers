@@ -78,6 +78,7 @@
 - (bool)isJaliscoGeniusEnabled;
 - (bool)isUpdateInProgress;
 - (void)loadArtworkForEntityPersistentID:(long long)arg1 entityType:(long long)arg2 artworkType:(long long)arg3 artworkSourceType:(long long)arg4 completionHandler:(id /* block */)arg5;
+- (void)loadArtworkInfoForEntityPersistentID:(long long)arg1 entityType:(long long)arg2 artworkType:(long long)arg3 artworkSourceType:(long long)arg4 completionHandler:(id /* block */)arg5;
 - (void)loadGeniusItemsForSagaID:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
 - (void)loadJaliscoGeniusTermsAndConditionsWithCompletionHandler:(id /* block */)arg1;
 - (void)loadUpdateProgressWithCompletionHandler:(id /* block */)arg1;

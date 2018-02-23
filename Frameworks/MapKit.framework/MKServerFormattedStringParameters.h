@@ -2,13 +2,15 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKServerFormattedStringParameters : NSObject <NSCoding, NSCopying> {
+@interface MKServerFormattedStringParameters : NSObject <NSCopying, NSSecureCoding> {
     long long  _instructionsDistanceDetailLevel;
     NSDictionary * _variableOverides;
 }
 
 @property (nonatomic, readonly) long long instructionsDistanceDetailLevel;
 @property (nonatomic, readonly, copy) NSDictionary *variableOverides;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

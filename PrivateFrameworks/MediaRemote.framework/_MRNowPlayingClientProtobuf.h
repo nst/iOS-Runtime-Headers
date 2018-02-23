@@ -4,6 +4,7 @@
 
 @interface _MRNowPlayingClientProtobuf : PBCodable <NSCopying> {
     NSString * _bundleIdentifier;
+    NSMutableArray * _bundleIdentifierHierarchys;
     NSString * _displayName;
     struct { 
         unsigned int nowPlayingVisibility : 1; 
@@ -18,6 +19,7 @@
 }
 
 @property (nonatomic, retain) NSString *bundleIdentifier;
+@property (nonatomic, retain) NSMutableArray *bundleIdentifierHierarchys;
 @property (nonatomic, retain) NSString *displayName;
 @property (nonatomic, readonly) bool hasBundleIdentifier;
 @property (nonatomic, readonly) bool hasDisplayName;
@@ -32,8 +34,15 @@
 @property (nonatomic) int processUserIdentifier;
 @property (nonatomic, retain) _MRColorProtobuf *tintColor;
 
++ (Class)bundleIdentifierHierarchyType;
+
 - (int)StringAsNowPlayingVisibility:(id)arg1;
+- (void)addBundleIdentifierHierarchy:(id)arg1;
 - (id)bundleIdentifier;
+- (id)bundleIdentifierHierarchyAtIndex:(unsigned long long)arg1;
+- (id)bundleIdentifierHierarchys;
+- (unsigned long long)bundleIdentifierHierarchysCount;
+- (void)clearBundleIdentifierHierarchys;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -57,6 +66,7 @@
 - (int)processUserIdentifier;
 - (bool)readFrom:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
+- (void)setBundleIdentifierHierarchys:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setHasNowPlayingVisibility:(bool)arg1;
 - (void)setHasProcessIdentifier:(bool)arg1;

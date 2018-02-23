@@ -36,9 +36,9 @@
 - (id)categoryEngagements;
 - (id)cepBlacklistSet;
 - (bool)disableResultTruncation;
-- (double)enagementProbabilityForCategoryCooked:(id)arg1;
-- (double)engagementProbabilityForCategory:(id)arg1;
-- (double)engagementProbabilityForCategory:(id)arg1 alowDefault:(bool)arg2;
+- (float)enagementProbabilityForCategoryCooked:(id)arg1;
+- (float)engagementProbabilityForCategory:(id)arg1;
+- (float)engagementProbabilityForCategory:(id)arg1 allowDefault:(bool)arg2;
 - (id)init;
 - (void)mergeWith:(id)arg1;
 - (id)parsecCategoryOrder;

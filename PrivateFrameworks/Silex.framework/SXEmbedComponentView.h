@@ -4,6 +4,7 @@
 
 @interface SXEmbedComponentView : SXComponentView <SXViewportChangeListener, UIGestureRecognizerDelegate, UIScrollViewDelegate, WKNavigationDelegate, WKScriptMessageHandler, WKUIDelegate> {
     NSString * _HTML;
+    <SXComponentActionHandler> * _actionHandler;
     UIActivityIndicatorView * _activityIndicator;
     struct CGSize { 
         double width; 
@@ -17,8 +18,9 @@
         double width; 
         double height; 
     }  _currentlyLayoutingForSize;
-    <SXEmbedType> * _embedDataSource;
+    <SXEmbedType> * _embedConfiguration;
     SXEmbedResource * _embedResource;
+    <SXEmbedService> * _embedService;
     UILabel * _errorLabel;
     NSMutableSet * _expectedMessages;
     bool  _failedLoading;
@@ -28,6 +30,7 @@
         double x; 
         double y; 
     }  _lastKnownTouchPoint;
+    <SXReachabilityProvider> * _reachabilityProvider;
     NSString * _userScript;
     SXWebCrashRetryThrottler * _webCrashRetryThrottler;
     WKWebView * _webView;
@@ -35,14 +38,16 @@
 }
 
 @property (nonatomic, retain) NSString *HTML;
+@property (nonatomic, readonly) <SXComponentActionHandler> *actionHandler;
 @property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
 @property (nonatomic) struct CGSize { double x1; double x2; } currentLayoutSize;
 @property (nonatomic) struct CGSize { double x1; double x2; } currentViewportSize;
 @property (nonatomic) struct CGSize { double x1; double x2; } currentlyLayoutingForSize;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, retain) <SXEmbedType> *embedDataSource;
+@property (nonatomic, retain) <SXEmbedType> *embedConfiguration;
 @property (nonatomic, retain) SXEmbedResource *embedResource;
+@property (nonatomic, readonly) <SXEmbedService> *embedService;
 @property (nonatomic, retain) UILabel *errorLabel;
 @property (nonatomic, retain) NSMutableSet *expectedMessages;
 @property (nonatomic) bool failedLoading;
@@ -50,6 +55,7 @@
 @property (nonatomic, retain) WKNavigation *initialNavigation;
 @property (nonatomic) bool isCurrentlyLoadingEmbedData;
 @property (nonatomic) struct CGPoint { double x1; double x2; } lastKnownTouchPoint;
+@property (nonatomic, readonly) <SXReachabilityProvider> *reachabilityProvider;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *userScript;
 @property (nonatomic, retain) SXWebCrashRetryThrottler *webCrashRetryThrottler;
@@ -62,6 +68,7 @@
 - (void)_webViewDidEnterFullscreen:(id)arg1;
 - (void)_webViewDidExitFullscreen:(id)arg1;
 - (void)_webViewWebProcessDidCrash:(id)arg1;
+- (id)actionHandler;
 - (id)activityIndicator;
 - (bool)allowHierarchyRemoval;
 - (struct CGSize { double x1; double x2; })currentLayoutSize;
@@ -69,8 +76,9 @@
 - (struct CGSize { double x1; double x2; })currentlyLayoutingForSize;
 - (void)discardContents;
 - (void)displayEmbedIfNeeded;
-- (id)embedDataSource;
+- (id)embedConfiguration;
 - (id)embedResource;
+- (id)embedService;
 - (id)enclosingHTML;
 - (id)errorLabel;
 - (id)expectedMessages;
@@ -80,7 +88,7 @@
 - (void)handleError:(id)arg1;
 - (void)handleLongPress:(id)arg1;
 - (bool)hasLoadedEmbedData;
-- (id)initWithComponent:(id)arg1 configuration:(id)arg2 context:(id)arg3 analyticsReporting:(id)arg4 appStateMonitor:(id)arg5;
+- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 reachabilityProvider:(id)arg6 embedService:(id)arg7 actionHandler:(id)arg8;
 - (id)initialNavigation;
 - (double)initialScale;
 - (bool)isCurrentlyLoadingEmbedData;
@@ -89,7 +97,8 @@
 - (void)loadEmbedData;
 - (void)loadEmbedIfNeeded;
 - (void)loadWebViewIfNeeded;
-- (void)presentComponent;
+- (void)presentComponentWithChanges:(struct { bool x1; bool x2; })arg1;
+- (id)reachabilityProvider;
 - (void)reloadEmbed;
 - (void)renderContents;
 - (void)scrollViewWillBeginZooming:(id)arg1 withView:(id)arg2;
@@ -97,7 +106,7 @@
 - (void)setCurrentLayoutSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setCurrentViewportSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setCurrentlyLayoutingForSize:(struct CGSize { double x1; double x2; })arg1;
-- (void)setEmbedDataSource:(id)arg1;
+- (void)setEmbedConfiguration:(id)arg1;
 - (void)setEmbedResource:(id)arg1;
 - (void)setErrorLabel:(id)arg1;
 - (void)setExpectedMessages:(id)arg1;

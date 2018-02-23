@@ -5,7 +5,6 @@
 @interface HMDAccessorySettingModel : HMDBackingStoreModelObject
 
 @property (nonatomic, retain) NSNumber *configurationVersion;
-@property (nonatomic, retain) NSData *constraints;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSNumber *properties;
 @property (nonatomic, retain) NSNumber *type;

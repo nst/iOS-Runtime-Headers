@@ -2,18 +2,24 @@
    Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-@interface BROperation : NSOperation {
+@interface BROperation : NSOperation <BROperationClient> {
     id  _executionTransation;
     bool  _finished;
     NSObject<OS_dispatch_queue> * _queue;
     id  _remoteOperation;
     unsigned char  _uuid;
+    bool  _waitForRemoteToBeCancelled;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *callbackQueue;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (getter=isExecuting, readonly) bool executing;
 @property (getter=isFinished, readonly) bool finished;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSObject<BRCancellable> *remoteOperation;
+@property (readonly) Class superclass;
+@property (nonatomic) bool waitForRemoteToBeCancelled;
 
 - (void).cxx_destruct;
 - (bool)_finishIfCancelled;
@@ -36,6 +42,8 @@
 - (id)remoteOperation;
 - (void)setRemoteOperation:(id)arg1;
 - (oneway void)setRemoteOperationProxy:(id)arg1 userInfo:(id)arg2;
+- (void)setWaitForRemoteToBeCancelled:(bool)arg1;
 - (void)start;
+- (bool)waitForRemoteToBeCancelled;
 
 @end

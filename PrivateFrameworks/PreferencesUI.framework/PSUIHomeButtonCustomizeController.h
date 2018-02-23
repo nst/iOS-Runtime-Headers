@@ -25,8 +25,7 @@
 - (void)_makeConstraints;
 - (void)_updateDetailText;
 - (void)barButtonTapped;
-- (void)consumeDoublePressDownForButtonKind:(long long)arg1;
-- (void)consumeTriplePressUpForButtonKind:(long long)arg1;
+- (void)consumeAnyPressEventForButtonKind:(long long)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (unsigned long long)getForceFeel;

@@ -15,6 +15,7 @@
 @property (nonatomic, readonly) NSString *version;
 
 + (id)extensionPointForIdentifier:(id)arg1;
++ (id)identifierForCurrentProcess;
 + (bool)supportsSecureCoding;
 
 - (id)_initWithIdentifier:(id)arg1 andData:(id)arg2;

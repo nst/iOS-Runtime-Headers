@@ -283,6 +283,17 @@
 - (void)tsu_setNonNilObject:(id)arg1 forKey:(id)arg2;
 - (void)tsu_setNonNilValueForKey:(id)arg1 fromDictionary:(id)arg2;
 
+// Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
+
+- (void)safelySetObject:(id)arg1 forKey:(id)arg2;
+- (void)setBool:(bool)arg1 forKey:(id)arg2;
+- (void)setDouble:(double)arg1 forKey:(id)arg2;
+- (void)setInt32:(int)arg1 forKey:(id)arg2;
+- (void)setInteger:(long long)arg1 forKey:(id)arg2;
+- (void)setLongLong:(long long)arg1 forKey:(id)arg2;
+- (void)setObjectOrNull:(id)arg1 forKey:(id)arg2;
+- (void)setUnsignedLongLong:(unsigned long long)arg1 forKey:(id)arg2;
+
 // Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
 
 - (void)bl_copyObjectFromDictionary:(id)arg1 forKey:(id)arg2;
@@ -385,6 +396,10 @@
 - (void)vcp_setTimerange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1;
 - (void)vcp_setTypes:(unsigned long long)arg1;
 - (void)vcp_setVersion:(int)arg1;
+
+// Image: /System/Library/PrivateFrameworks/WatchListKit.framework/WatchListKit
+
+- (void)wlk_setObjectUnlessNil:(id)arg1 forKey:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 

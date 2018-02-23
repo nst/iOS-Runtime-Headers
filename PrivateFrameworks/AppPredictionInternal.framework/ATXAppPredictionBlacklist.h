@@ -3,7 +3,7 @@
  */
 
 @interface ATXAppPredictionBlacklist : NSObject {
-    NSSet * _blacklist;
+    NSMutableSet * _blacklist;
     id  _blacklistNotificationToken;
     NSObject<OS_dispatch_queue> * _queue;
 }

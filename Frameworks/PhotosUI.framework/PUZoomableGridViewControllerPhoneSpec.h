@@ -5,7 +5,6 @@
 @interface PUZoomableGridViewControllerPhoneSpec : PUZoomableGridViewControllerSpec
 
 - (bool)canDisplayMultipleRightBarButtonItems;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })collectionsLevelSectionHeaderContentInset;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })collectionsLevelSectionHeaderHighlightInset;
 - (struct CGSize { double x1; double x2; })collectionsLevelThumbnailSize;
 - (long long)collectionsSectionHeaderStyle;
@@ -21,7 +20,6 @@
 - (double)magnifiedYOffset;
 - (id)newGridSpec;
 - (void)updateGridLayoutUsingFloatingHeaders:(id)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })yearsLevelSectionHeaderContentInset;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })yearsLevelSectionHeaderHighlightInset;
 - (struct CGSize { double x1; double x2; })yearsLevelThumbnailSize;
 - (long long)yearsSectionHeaderStyle;

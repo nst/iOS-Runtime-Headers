@@ -22,9 +22,9 @@
 - (void)_installDoneButtonOnNavigationItem:(id)arg1;
 - (void)_popViewControllerFromBackButton;
 - (void)_presentDialogTemplate:(id)arg1;
-- (void)_setContentOverlayInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (id)_viewControllerForDocument:(id)arg1 index:(long long*)arg2;
 - (void)applyMainTemplateOffset:(struct CGPoint { double x1; double x2; })arg1 animated:(bool)arg2;
+- (id)childViewControllerForHomeIndicatorAutoHidden;
 - (id)context;
 - (id)documents;
 - (void)finalizeMainTemplateOffset:(bool)arg1;

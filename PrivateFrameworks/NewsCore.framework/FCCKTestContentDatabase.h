@@ -3,6 +3,7 @@
  */
 
 @interface FCCKTestContentDatabase : FCCKContentDatabase {
+    NSMutableSet * _droppedFeeds;
     FCCKTestFeedQueryEndpoint * _feedQueryEndpoint;
     FCCKTestMultiFetchQueryEndpoint * _multiFetchQueryEndpoint;
     FCCKTestOrderFeedQueryEndpoint * _orderFeedQueryEndpoint;
@@ -10,6 +11,7 @@
     bool  _simulateNetworkError;
 }
 
+@property (nonatomic, retain) NSMutableSet *droppedFeeds;
 @property (nonatomic, retain) FCCKTestFeedQueryEndpoint *feedQueryEndpoint;
 @property (nonatomic, retain) FCCKTestMultiFetchQueryEndpoint *multiFetchQueryEndpoint;
 @property (nonatomic, retain) FCCKTestOrderFeedQueryEndpoint *orderFeedQueryEndpoint;
@@ -23,6 +25,7 @@
 - (void)addOperation:(id)arg1;
 - (void)deleteArticleWithID:(id)arg1;
 - (void)deleteFeedID:(id)arg1;
+- (id)droppedFeeds;
 - (id)feedQueryEndpoint;
 - (id)initWithContainerIdentifier:(id)arg1 productionEnvironment:(bool)arg2 networkBehaviorMonitor:(id)arg3;
 - (void)insertArticleID:(id)arg1 atBottomOfFeedID:(id)arg2;
@@ -40,12 +43,14 @@
 - (unsigned long long)orderForArticleID:(id)arg1 feedID:(id)arg2;
 - (void)populateWithBasicTestFeeds;
 - (id)records;
+- (void)setDroppedFeeds:(id)arg1;
 - (void)setFeedQueryEndpoint:(id)arg1;
 - (void)setMultiFetchQueryEndpoint:(id)arg1;
 - (void)setOrderFeedQueryEndpoint:(id)arg1;
 - (void)setRecords:(id)arg1;
 - (void)setSimulateNetworkError:(bool)arg1;
 - (bool)shouldUseCloudd;
+- (void)simulateDroppedFeedForFeedID:(id)arg1;
 - (bool)simulateNetworkError;
 - (void)updateArticleID:(id)arg1 inFeedID:(id)arg2 withProperties:(id)arg3;
 - (void)updateArticleWithID:(id)arg1 modDate:(id)arg2 properties:(id)arg3;

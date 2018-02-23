@@ -3,7 +3,6 @@
  */
 
 @interface BWFrameRateGovernorNode : BWNode {
-    int  _activeBracketCaptureType;
     int  _activeBracketSequenceRate;
     bool  _dropsStillBracketFramesToMaintainConsistentFrameRate;
     struct { 
@@ -12,6 +11,12 @@
         unsigned int flags; 
         long long epoch; 
     }  _lastEmittedPTS;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    }  _lastEmittedStreamingFrameDuration;
     BWMotionDataPreserver * _motionDataPreserver;
     bool  _preservesMotionDataFromDroppedStillBracketFrames;
 }

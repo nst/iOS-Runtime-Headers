@@ -12,6 +12,7 @@
 @property (nonatomic, copy) NSNumber *maximumValue;
 @property (nonatomic, copy) NSNumber *minimumValue;
 @property (nonatomic) unsigned long long mode;
+@property (nonatomic, readonly) HFNumberRange *numberRange;
 @property (nonatomic, copy) NSNumber *targetValue;
 
 + (id)targetValueWithValue:(id)arg1;
@@ -24,6 +25,7 @@
 - (id)maximumValue;
 - (id)minimumValue;
 - (unsigned long long)mode;
+- (id)numberRange;
 - (void)setMaximumValue:(id)arg1;
 - (void)setMinimumValue:(id)arg1;
 - (void)setMode:(unsigned long long)arg1;

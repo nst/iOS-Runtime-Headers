@@ -22,6 +22,8 @@
 - (id)initWithCoder:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToForeignExchangeInformation:(id)arg1;
+- (bool)isValid;
+- (id)jsonDictionaryRepresentation;
 - (id)jsonString;
 - (id)recordTypesAndNames;
 - (void)setDestinationCurrencyAmount:(id)arg1;

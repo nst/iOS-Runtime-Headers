@@ -19,6 +19,7 @@
 @property (nonatomic, readonly) NSDictionary *appLibraryAliasRemovalThrottleParams;
 @property (nonatomic, readonly) NSDictionary *appLibraryResetThrottleParams;
 @property (nonatomic, readonly) NSDictionary *appLibraryScanThrottleParams;
+@property (nonatomic, readonly) unsigned long long applyCountToSignalFaultsLive;
 @property (nonatomic, readonly) NSDictionary *applyThrottleParams;
 @property (nonatomic, readonly) double appsFetchPacerDelay;
 @property (nonatomic, readonly) NSSet *autoEvictableUTIs;
@@ -230,6 +231,7 @@
 - (id)appLibraryAliasRemovalThrottleParams;
 - (id)appLibraryResetThrottleParams;
 - (id)appLibraryScanThrottleParams;
+- (unsigned long long)applyCountToSignalFaultsLive;
 - (id)applyThrottleParams;
 - (double)appsFetchPacerDelay;
 - (id)autoEvictableUTIs;

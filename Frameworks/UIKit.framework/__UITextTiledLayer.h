@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface __UITextTiledLayer : CALayer {
+@interface __UITextTiledLayer : CALayer <CALayerDelegate> {
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -21,6 +21,7 @@
         unsigned int suspendLayout : 4; 
         unsigned int delegateConstrainsTileableBounds : 1; 
         unsigned int delegateSupportsMaskedRects : 1; 
+        unsigned int delegateImplementsWillDraw : 1; 
     }  _tcTiledLayerFlags;
     struct CGSize { 
         double width; 
@@ -30,7 +31,11 @@
     NSMutableArray * _visibleTiles;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) double maxTileHeight;
+@property (readonly) Class superclass;
 @property (nonatomic) bool usesTiledLayers;
 
 - (void).cxx_destruct;
@@ -42,11 +47,13 @@
 - (void)drawDirtyLayer:(id)arg1 intoContext:(struct CGContext { }*)arg2;
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (id)init;
+- (void)layerWillDraw:(id)arg1;
 - (void)layoutSublayers;
 - (double)maxTileHeight;
 - (void)resumeTiling;
 - (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setContentsFormat:(id)arg1;
+- (void)setContentsMultiplyColor:(struct CGColor { }*)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDrawsAsynchronously:(bool)arg1;
 - (void)setMaxTileHeight:(double)arg1;

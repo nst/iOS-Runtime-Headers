@@ -6,7 +6,7 @@
 
 @property (retain) TLKStackView *contentView;
 
-- (id)initWithCardSection:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
+- (id)initWithRowModel:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
 - (id)setupContentView;
 
 @end

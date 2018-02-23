@@ -10,6 +10,7 @@
     int  lineCap;
     int  lineJoin;
     double  lineWidth;
+    long long  mcid;
     double  miterLimit;
     struct CGAffineTransform { 
         double a; 
@@ -42,7 +43,7 @@
 - (bool)hasSamePathAs:(id)arg1;
 - (bool)hasStroke;
 - (id)init;
-- (id)initWithPDFShape:(struct CPPDFShape { struct CPPDFObject { struct CGRect { struct CGPoint { double x_1_3_1; double x_1_3_2; } x_1_2_1; struct CGSize { double x_2_3_1; double x_2_3_2; } x_1_2_2; } x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; unsigned int x2; struct CPPDFStyle {} *x3; int x4; struct CGPath {} *x5; bool x6; struct CGAffineTransform { double x_7_1_1; double x_7_1_2; double x_7_1_3; double x_7_1_4; double x_7_1_5; double x_7_1_6; } x7; struct CGAffineTransform { double x_8_1_1; double x_8_1_2; double x_8_1_3; double x_8_1_4; double x_8_1_5; double x_8_1_6; } x8; }*)arg1;
+- (id)initWithPDFShape:(struct CPPDFShape { struct CPPDFObject { struct CGRect { struct CGPoint { double x_1_3_1; double x_1_3_2; } x_1_2_1; struct CGSize { double x_2_3_1; double x_2_3_2; } x_1_2_2; } x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; unsigned int x2; struct CPPDFStyle {} *x3; int x4; struct CGPath {} *x5; bool x6; struct CGAffineTransform { double x_7_1_1; double x_7_1_2; double x_7_1_3; double x_7_1_4; double x_7_1_5; double x_7_1_6; } x7; struct CGAffineTransform { double x_8_1_1; double x_8_1_2; double x_8_1_3; double x_8_1_4; double x_8_1_5; double x_8_1_6; } x8; long long x9; }*)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })innerBounds;
 - (bool)isStrokeFor:(id)arg1;
 - (bool)isUprightRectangle;
@@ -51,6 +52,7 @@
 - (int)lineJoin;
 - (double)lineWidth;
 - (void)makeLineFromVertex:(struct CGPoint { double x1; double x2; })arg1 toVertex:(struct CGPoint { double x1; double x2; })arg2;
+- (long long)mcid;
 - (double)miterLimit;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })paintTransform;
 - (struct CGPath { }*)path;

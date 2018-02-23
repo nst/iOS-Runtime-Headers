@@ -43,6 +43,7 @@
 @property (nonatomic, retain) HMDEventTriggerUserConfirmationSession *userConfirmationSession;
 
 + (bool)__validateRecurrences:(id)arg1;
++ (bool)hasMessageReceiverChildren;
 + (id)logCategory;
 + (bool)supportsSecureCoding;
 
@@ -118,6 +119,7 @@
 - (bool)isEventTriggerOnLocalDeviceForAccessory:(id)arg1;
 - (bool)isEventTriggerOnRemoteGatewayForAccessory:(id)arg1;
 - (id)locationEvents;
+- (id)messageReceiverChildren;
 - (id)metric:(bool)arg1;
 - (bool)migratedEventsToRecords;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1 version:(long long)arg2;

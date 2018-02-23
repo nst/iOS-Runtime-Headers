@@ -19,17 +19,13 @@
     UISelectionFeedbackGenerator * _selectionFeedbackGenerator;
     NSArray * _separatorViews;
     double  _startingHeight;
-    struct CGPoint { 
-        double x; 
-        double y; 
-    }  _startingLocation;
     float  _startingValue;
     unsigned long long  _step;
     NSArray * _stepBackgroundViews;
     bool  _throttleUpdates;
     NSTimer * _updatesCommitTimer;
     float  _value;
-    UILongPressGestureRecognizer * _valueChangeGestureRecognizer;
+    UIPanGestureRecognizer * _valueChangeGestureRecognizer;
 }
 
 @property (getter=isContentClippingRequired, nonatomic, readonly) bool contentClippingRequired;
@@ -78,8 +74,8 @@
 - (double)_sliderHeightForValue:(float)arg1;
 - (unsigned long long)_stepFromValue:(float)arg1;
 - (void)_updateStepFromValue:(float)arg1 playHaptic:(bool)arg2;
-- (void)_updateValueForTouchLocation:(struct CGPoint { double x1; double x2; })arg1 withAbsoluteReference:(bool)arg2 forContinuedGesture:(bool)arg3;
-- (float)_valueForTouchLocation:(struct CGPoint { double x1; double x2; })arg1 withAbsoluteReference:(bool)arg2;
+- (void)_updateValueForPanGestureRecognizer:(id)arg1 withAbsoluteReference:(bool)arg2 forContinuedGesture:(bool)arg3;
+- (float)_valueForPanGestureRecognizer:(id)arg1 withAbsoluteReference:(bool)arg2;
 - (float)_valueFromStep:(unsigned long long)arg1;
 - (void)contentModuleWillTransitionToExpandedContentMode:(bool)arg1;
 - (bool)firstStepIsDisabled;

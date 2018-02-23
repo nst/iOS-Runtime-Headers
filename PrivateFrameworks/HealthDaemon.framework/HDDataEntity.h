@@ -55,7 +55,7 @@
 + (id)propertyForSyncProvenance;
 + (long long)protectionClass;
 + (bool)requiresSampleTypePredicate;
-+ (long long)shouldInsertObject:(id)arg1 localSourceID:(id)arg2 profile:(id)arg3 objectToReplace:(id*)arg4 objectID:(id*)arg5 error:(id*)arg6;
++ (long long)shouldInsertObject:(id)arg1 sourceID:(id)arg2 profile:(id)arg3 objectToReplace:(id*)arg4 objectID:(id*)arg5 error:(id*)arg6;
 + (id)sourceIDForObjectID:(id)arg1 type:(long long)arg2 profile:(id)arg3 errorOut:(id*)arg4;
 + (id)sourceIDsForObjectsOfType:(long long)arg1 profile:(id)arg2 predicate:(id)arg3 error:(id*)arg4;
 + (bool)supportsObjectMerging;

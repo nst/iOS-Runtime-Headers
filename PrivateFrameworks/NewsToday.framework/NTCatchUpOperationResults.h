@@ -3,33 +3,27 @@
  */
 
 @interface NTCatchUpOperationResults : NSObject <NSCopying> {
-    NSDictionary * _headlineCacheExpirationDatesByArticleID;
-    NSArray * _headlines;
+    NSArray * _items;
     SFRankingFeedback * _rankingFeedback;
-    NSDictionary * _searchResultsByArticleID;
+    NSObject * _supplementalInterestToken;
 }
 
-@property (nonatomic, copy) NSDictionary *headlineCacheExpirationDatesByArticleID;
-@property (nonatomic, copy) NSArray *headlines;
-@property (nonatomic, copy) SFRankingFeedback *rankingFeedback;
-@property (nonatomic, copy) NSDictionary *searchResultsByArticleID;
+@property (nonatomic, readonly, copy) NSArray *items;
+@property (nonatomic, readonly, copy) SFRankingFeedback *rankingFeedback;
+@property (nonatomic, readonly) NSObject *supplementalInterestToken;
 
 - (void).cxx_destruct;
-- (id)copyWithHeadlines:(id)arg1;
+- (id)copyWithItems:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned long long)hash;
-- (id)headlineCacheExpirationDatesByArticleID;
-- (id)headlines;
 - (id)init;
-- (id)initWithHeadlines:(id)arg1 headlineCacheExpirationDatesByArticleID:(id)arg2 searchResultsByArticleID:(id)arg3 rankingFeedback:(id)arg4;
-- (id)initWithHeadlines:(id)arg1 searchResultsByArticleID:(id)arg2 rankingFeedback:(id)arg3;
+- (id)initWithFeedItems:(id)arg1 supplementalInterestToken:(id)arg2;
+- (id)initWithHeadlines:(id)arg1 rankingFeedback:(id)arg2;
+- (id)initWithItems:(id)arg1 rankingFeedback:(id)arg2 supplementalInterestToken:(id)arg3;
 - (bool)isEqual:(id)arg1;
+- (id)items;
 - (id)rankingFeedback;
 - (id)resultsByCombiningWithResults:(id)arg1;
-- (id)searchResultsByArticleID;
-- (void)setHeadlineCacheExpirationDatesByArticleID:(id)arg1;
-- (void)setHeadlines:(id)arg1;
-- (void)setRankingFeedback:(id)arg1;
-- (void)setSearchResultsByArticleID:(id)arg1;
+- (id)supplementalInterestToken;
 
 @end

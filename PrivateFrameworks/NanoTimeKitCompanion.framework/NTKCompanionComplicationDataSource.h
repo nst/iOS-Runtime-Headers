@@ -21,6 +21,7 @@
 - (id)_newsTemplate;
 - (id)_nextEventTemplate;
 - (id)_nowPlayingTemplate;
+- (id)_radioTemplate;
 - (id)_reminderTemplate;
 - (id)_siriTemplate;
 - (id)_stocksTemplate;

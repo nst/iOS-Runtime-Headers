@@ -17,6 +17,7 @@
         float mostRecentDeltaDisparity; 
         float mostRecentPortraitStability; 
         int numberOfFramesSinceLastStableFocus; 
+        bool mostRecentStructuredLightOcclusion; 
         NSArray *mostRecentDetectedFaces; 
         NSArray *mostRecentFilteredFaces; 
     }  _sharedContext;

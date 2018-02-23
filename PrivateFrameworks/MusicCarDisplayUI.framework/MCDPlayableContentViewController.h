@@ -19,8 +19,6 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_browsableContentEndpointChangedNotification:(id)arg1;
-- (void)_checkAndSetupView;
 - (id)_createRootViewController;
 - (id)_createSectionedRootViewController;
 - (void)_modelDidInvalidate:(id)arg1;
@@ -35,8 +33,6 @@
 - (id)initWithBundleID:(id)arg1 stack:(id)arg2;
 - (void)refreshNavigationStackForLaunch;
 - (void)setViewControllers:(id)arg1 animated:(bool)arg2;
-- (void)traitCollectionDidChange:(id)arg1;
-- (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 

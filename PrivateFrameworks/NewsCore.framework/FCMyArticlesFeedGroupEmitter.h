@@ -15,7 +15,7 @@
 @property (nonatomic, retain) <FCHeadlineClusterOrdering> *headlineClusterOrderer;
 @property (nonatomic, retain) <FCHeadlineClustering> *headlineClusterer;
 @property (nonatomic, readonly) bool isRequiredByFollowingEmitters;
-@property (nonatomic, readonly) bool requiresForYouCatchUpOperation;
+@property (nonatomic, readonly) long long requiredForYouContentTypes;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -26,7 +26,7 @@
 - (id)headlineClusterer;
 - (id)initWithHeadlineClusterer:(id)arg1 headlineClusterOrderer:(id)arg2;
 - (id)operationToEmitGroupWithContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
-- (bool)requiresForYouCatchUpOperation;
+- (long long)requiredForYouContentTypes;
 - (void)setHeadlineClusterOrderer:(id)arg1;
 - (void)setHeadlineClusterer:(id)arg1;
 - (bool)supportsPagination;

@@ -4,6 +4,7 @@
 
 @interface CSAudioRecorder : NSObject <AVVoiceControllerPlaybackDelegate, AVVoiceControllerRecordDelegate, CSBeepCancellerDelegate> {
     CSBeepCanceller * _beepCanceller;
+    CSAudioZeroCounter * _continuousZeroCounter;
     struct OpaqueAudioConverter { } * _deinterleaver;
     <CSAudioRecorderDelegate> * _delegate;
     struct AudioBufferList { 
@@ -14,10 +15,13 @@
             void *mData; 
         } mBuffers[1]; 
     }  _interleavedABL;
+    NSDictionary * _latestContext;
     bool  _needSampleRateConversion;
     unsigned long long  _numSamplesProcessed;
     struct AudioBufferList { unsigned int x1; struct AudioBuffer { unsigned int x_2_1_1; unsigned int x_2_1_2; void *x_2_1_3; } x2[1]; } * _pNonInterleavedABL;
+    CSRemoteRecordClient * _remoteRecordClient;
     CSAudioSampleRateConverter * _sampleRateConverter;
+    bool  _shouldUseRemoteRecord;
     AVVoiceController * _voiceController;
     unsigned long long  _vtEndInSampleCount;
     CSAudioZeroFilter * _zeroFilter;
@@ -31,16 +35,20 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_audioRecorderDidStartRecordingSuccessfully:(bool)arg1 error:(id)arg2;
+- (void)_audioRecorderDidStopRecordingForReason:(long long)arg1;
 - (id)_beepCanceller;
 - (void)_createDeInterleaverIfNeeded;
 - (void)_createSampleRateConverterIfNeeded;
 - (id)_deinterleaveBufferIfNeeded:(id)arg1;
+- (void)_destroyVoiceController;
 - (void)_processAudioChain:(id)arg1 atTime:(unsigned long long)arg2;
 - (void)_processAudioChainWithZeroFiltering:(id)arg1 atTime:(unsigned long long)arg2;
 - (float)_recordingSampleRate;
 - (void)_resetZeroFilter;
 - (id)_samplingRateConvertIfNeeded:(id)arg1;
 - (bool)_shouldRunZeroFilter;
+- (bool)_shouldUseRemoteRecordForContext:(id)arg1;
 - (id)_voiceControllerWithContext:(id)arg1 error:(id*)arg2;
 - (unsigned long long)alertStartTime;
 - (float)averagePowerForChannel:(unsigned long long)arg1;
@@ -94,5 +102,6 @@
 - (void)voiceControllerRecordHardwareConfigurationDidChange:(id)arg1 toConfiguration:(int)arg2;
 - (id)voiceTriggerInfo;
 - (void)voiceTriggerOccuredNotification:(id)arg1;
+- (void)willDestroy;
 
 @end

@@ -13,6 +13,7 @@
     bool  _enablePartialClientization;
     struct { 
         unsigned int dymSuggestionVisibleTime : 1; 
+        unsigned int retainSearchTime : 1; 
         unsigned int searchResultType : 1; 
         unsigned int enablePartialClientization : 1; 
         unsigned int isChainResultSet : 1; 
@@ -22,6 +23,7 @@
     NSMutableArray * _relatedSearchSuggestions;
     NSMutableArray * _resultDetourInfos;
     NSString * _resultDisplayHeader;
+    unsigned int  _retainSearchTime;
     GEOPDSearchClientBehavior * _searchClientBehavior;
     int  _searchResultType;
     bool  _showDymSuggestionCloseButton;
@@ -44,6 +46,7 @@
 @property (nonatomic) bool hasEnablePartialClientization;
 @property (nonatomic) bool hasIsChainResultSet;
 @property (nonatomic, readonly) bool hasResultDisplayHeader;
+@property (nonatomic) bool hasRetainSearchTime;
 @property (nonatomic, readonly) bool hasSearchClientBehavior;
 @property (nonatomic) bool hasSearchResultType;
 @property (nonatomic) bool hasShowDymSuggestionCloseButton;
@@ -51,6 +54,7 @@
 @property (nonatomic, retain) NSMutableArray *relatedSearchSuggestions;
 @property (nonatomic, retain) NSMutableArray *resultDetourInfos;
 @property (nonatomic, retain) NSString *resultDisplayHeader;
+@property (nonatomic) unsigned int retainSearchTime;
 @property (nonatomic, retain) GEOPDSearchClientBehavior *searchClientBehavior;
 @property (nonatomic) int searchResultType;
 @property (nonatomic) bool showDymSuggestionCloseButton;
@@ -95,6 +99,7 @@
 - (bool)hasEnablePartialClientization;
 - (bool)hasIsChainResultSet;
 - (bool)hasResultDisplayHeader;
+- (bool)hasRetainSearchTime;
 - (bool)hasSearchClientBehavior;
 - (bool)hasSearchResultType;
 - (bool)hasShowDymSuggestionCloseButton;
@@ -110,6 +115,7 @@
 - (id)resultDetourInfos;
 - (unsigned long long)resultDetourInfosCount;
 - (id)resultDisplayHeader;
+- (unsigned int)retainSearchTime;
 - (id)searchClientBehavior;
 - (int)searchResultType;
 - (id)searchResultTypeAsString:(int)arg1;
@@ -124,12 +130,14 @@
 - (void)setHasDymSuggestionVisibleTime:(bool)arg1;
 - (void)setHasEnablePartialClientization:(bool)arg1;
 - (void)setHasIsChainResultSet:(bool)arg1;
+- (void)setHasRetainSearchTime:(bool)arg1;
 - (void)setHasSearchResultType:(bool)arg1;
 - (void)setHasShowDymSuggestionCloseButton:(bool)arg1;
 - (void)setIsChainResultSet:(bool)arg1;
 - (void)setRelatedSearchSuggestions:(id)arg1;
 - (void)setResultDetourInfos:(id)arg1;
 - (void)setResultDisplayHeader:(id)arg1;
+- (void)setRetainSearchTime:(unsigned int)arg1;
 - (void)setSearchClientBehavior:(id)arg1;
 - (void)setSearchResultType:(int)arg1;
 - (void)setShowDymSuggestionCloseButton:(bool)arg1;

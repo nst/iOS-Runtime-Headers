@@ -16,7 +16,8 @@
     id /* block */  _requestCompletionHandler;
     id /* block */  _requestCompletionHandlerWithInterestToken;
     NSMutableDictionary * _resultFeedResponses;
-    NSMutableArray * _resultHeldArticleAndTagRecords;
+    FCHeldRecords * _resultHeldArticleRecords;
+    FCHeldRecords * _resultHeldTagRecords;
 }
 
 @property (nonatomic, retain) <FCContentContext> *context;
@@ -33,13 +34,15 @@
 @property (nonatomic, copy) id /* block */ requestCompletionHandler;
 @property (nonatomic, copy) id /* block */ requestCompletionHandlerWithInterestToken;
 @property (nonatomic, retain) NSMutableDictionary *resultFeedResponses;
-@property (nonatomic, retain) NSMutableArray *resultHeldArticleAndTagRecords;
+@property (nonatomic, retain) FCHeldRecords *resultHeldArticleRecords;
+@property (nonatomic, retain) FCHeldRecords *resultHeldTagRecords;
 
 + (bool)_orderFeedTopKEnabled;
 + (id)feedRequestContentEnvironmentTokenWithContext:(id)arg1;
 + (void)initialize;
 
 - (void).cxx_destruct;
+- (bool)_countOfDroppedFeeds;
 - (id)_failureResponseForRequest:(id)arg1 error:(id)arg2;
 - (void)_gatherAllFeedResponsesWithCompletionHandler:(id /* block */)arg1;
 - (void)_gatherAllOrderFeedResponsesWithCompletionHandler:(id /* block */)arg1;
@@ -64,7 +67,8 @@
 - (id /* block */)requestCompletionHandler;
 - (id /* block */)requestCompletionHandlerWithInterestToken;
 - (id)resultFeedResponses;
-- (id)resultHeldArticleAndTagRecords;
+- (id)resultHeldArticleRecords;
+- (id)resultHeldTagRecords;
 - (void)setContext:(id)arg1;
 - (void)setDatabaseLookupsByFeedID:(id)arg1;
 - (void)setExpectedNetworkEventCount:(unsigned long long)arg1;
@@ -78,7 +82,8 @@
 - (void)setRequestCompletionHandler:(id /* block */)arg1;
 - (void)setRequestCompletionHandlerWithInterestToken:(id /* block */)arg1;
 - (void)setResultFeedResponses:(id)arg1;
-- (void)setResultHeldArticleAndTagRecords:(id)arg1;
+- (void)setResultHeldArticleRecords:(id)arg1;
+- (void)setResultHeldTagRecords:(id)arg1;
 - (bool)validateOperation;
 
 @end

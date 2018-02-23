@@ -27,6 +27,11 @@
         int *list; 
         unsigned long long count; 
         unsigned long long size; 
+    }  _knownClientResolvedTypeDeprecateds;
+    struct { 
+        int *list; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _knownClientResolvedTypes;
     int  _requiredVersion;
     int  _resultListAttributionSupport;
@@ -60,6 +65,8 @@
 @property (nonatomic) bool hasResultListAttributionSupport;
 @property (nonatomic) bool hasTimeSinceMapEnteredForeground;
 @property (nonatomic) unsigned int hourOfDay;
+@property (nonatomic, readonly) int*knownClientResolvedTypeDeprecateds;
+@property (nonatomic, readonly) unsigned long long knownClientResolvedTypeDeprecatedsCount;
 @property (nonatomic, readonly) int*knownClientResolvedTypes;
 @property (nonatomic, readonly) unsigned long long knownClientResolvedTypesCount;
 @property (nonatomic) int requiredVersion;
@@ -70,14 +77,17 @@
 + (Class)deviceHistoricalLocationType;
 
 - (void).cxx_destruct;
+- (int)StringAsKnownClientResolvedTypeDeprecateds:(id)arg1;
 - (int)StringAsKnownClientResolvedTypes:(id)arg1;
 - (int)StringAsRequiredVersion:(id)arg1;
 - (int)StringAsResultListAttributionSupport:(id)arg1;
 - (id)abClientMetadata;
 - (void)addDeviceHistoricalLocation:(id)arg1;
 - (void)addKnownClientResolvedType:(int)arg1;
+- (void)addKnownClientResolvedTypeDeprecated:(int)arg1;
 - (id)additionalEnabledMarkets;
 - (void)clearDeviceHistoricalLocations;
+- (void)clearKnownClientResolvedTypeDeprecateds;
 - (void)clearKnownClientResolvedTypes;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -114,6 +124,10 @@
 - (id)initWithTraits:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (int)knownClientResolvedTypeAtIndex:(unsigned long long)arg1;
+- (int)knownClientResolvedTypeDeprecatedAtIndex:(unsigned long long)arg1;
+- (int*)knownClientResolvedTypeDeprecateds;
+- (id)knownClientResolvedTypeDeprecatedsAsString:(int)arg1;
+- (unsigned long long)knownClientResolvedTypeDeprecatedsCount;
 - (int*)knownClientResolvedTypes;
 - (id)knownClientResolvedTypesAsString:(int)arg1;
 - (unsigned long long)knownClientResolvedTypesCount;
@@ -141,6 +155,7 @@
 - (void)setHasResultListAttributionSupport:(bool)arg1;
 - (void)setHasTimeSinceMapEnteredForeground:(bool)arg1;
 - (void)setHourOfDay:(unsigned int)arg1;
+- (void)setKnownClientResolvedTypeDeprecateds:(int*)arg1 count:(unsigned long long)arg2;
 - (void)setKnownClientResolvedTypes:(int*)arg1 count:(unsigned long long)arg2;
 - (void)setRequiredVersion:(int)arg1;
 - (void)setResultListAttributionSupport:(int)arg1;

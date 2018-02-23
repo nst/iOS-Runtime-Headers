@@ -20,6 +20,11 @@
     int  _surfacedByBinIDRef;
     int  _surfacedByChannelIDRef;
     int  _surfacedBySectionIDRef;
+    struct { 
+        int *list; 
+        unsigned long long count; 
+        unsigned long long size; 
+    }  _surfacedByTagIDsRefs;
     int  _surfacedByTopicIDRef;
     double  _tileProminenceScore;
     int  _topStoryType;
@@ -44,12 +49,16 @@
 @property (nonatomic) int surfacedByBinIDRef;
 @property (nonatomic) int surfacedByChannelIDRef;
 @property (nonatomic) int surfacedBySectionIDRef;
+@property (nonatomic, readonly) int*surfacedByTagIDsRefs;
+@property (nonatomic, readonly) unsigned long long surfacedByTagIDsRefsCount;
 @property (nonatomic) int surfacedByTopicIDRef;
 @property (nonatomic) double tileProminenceScore;
 @property (nonatomic) int topStoryType;
 @property (nonatomic) bool usesImageOnTopLayout;
 
+- (void)addSurfacedByTagIDsRefs:(int)arg1;
 - (id)articleID;
+- (void)clearSurfacedByTagIDsRefs;
 - (id)clusterID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -86,6 +95,7 @@
 - (void)setSurfacedByBinIDRef:(int)arg1;
 - (void)setSurfacedByChannelIDRef:(int)arg1;
 - (void)setSurfacedBySectionIDRef:(int)arg1;
+- (void)setSurfacedByTagIDsRefs:(int*)arg1 count:(unsigned long long)arg2;
 - (void)setSurfacedByTopicIDRef:(int)arg1;
 - (void)setTileProminenceScore:(double)arg1;
 - (void)setTopStoryType:(int)arg1;
@@ -94,6 +104,9 @@
 - (int)surfacedByBinIDRef;
 - (int)surfacedByChannelIDRef;
 - (int)surfacedBySectionIDRef;
+- (int*)surfacedByTagIDsRefs;
+- (int)surfacedByTagIDsRefsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)surfacedByTagIDsRefsCount;
 - (int)surfacedByTopicIDRef;
 - (double)tileProminenceScore;
 - (int)topStoryType;

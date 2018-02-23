@@ -3,24 +3,28 @@
  */
 
 @interface FCTrendingOperation : FCOperation {
+    <FCAppConfiguration> * _appConfiguration;
     id /* block */  _catchUpCompletionHandler;
     FCCloudContext * _context;
     NSError * _error;
     NSArray * _headlines;
 }
 
+@property (nonatomic, copy) <FCAppConfiguration> *appConfiguration;
 @property (copy) id /* block */ catchUpCompletionHandler;
 @property (nonatomic, retain) FCCloudContext *context;
 @property (retain) NSError *error;
 @property (copy) NSArray *headlines;
 
 - (void).cxx_destruct;
+- (id)appConfiguration;
 - (id /* block */)catchUpCompletionHandler;
 - (id)context;
 - (id)error;
 - (id)headlines;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
+- (void)setAppConfiguration:(id)arg1;
 - (void)setCatchUpCompletionHandler:(id /* block */)arg1;
 - (void)setContext:(id)arg1;
 - (void)setError:(id)arg1;

@@ -3,6 +3,7 @@
  */
 
 @interface UITextMagnifierCommonRenderer : UIView {
+    bool  _isRegisteredForGeometryChanges;
     CALayer * m_back;
     CALayer * m_content;
     CALayer * m_front;

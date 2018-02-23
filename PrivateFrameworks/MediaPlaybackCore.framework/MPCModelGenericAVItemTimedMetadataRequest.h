@@ -20,7 +20,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)genericObject;
 - (id)initWithGenericObject:(id)arg1 timedMetadataGroups:(id)arg2 storeRequestContext:(id)arg3;
-- (void)performWithResponseHandler:(id /* block */)arg1;
+- (id)newOperationWithResponseHandler:(id /* block */)arg1;
 - (id)previousResponse;
 - (void)setPreviousResponse:(id)arg1;
 - (id)storeRequestContext;

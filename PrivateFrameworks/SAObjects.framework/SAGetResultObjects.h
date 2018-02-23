@@ -12,6 +12,8 @@
 @property (nonatomic, copy) NSString *refId;
 @property (readonly) Class superclass;
 
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
+
 + (id)getResultObjects;
 + (id)getResultObjectsWithDictionary:(id)arg1 context:(id)arg2;
 
@@ -20,5 +22,10 @@
 - (id)objectIdentifiers;
 - (bool)requiresResponse;
 - (void)setObjectIdentifiers:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
+
+- (bool)siriCore_canBeRemapped;
+- (bool)siriCore_isRetryable;
 
 @end

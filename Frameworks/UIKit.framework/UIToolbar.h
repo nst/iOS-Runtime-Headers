@@ -77,10 +77,10 @@
 - (void)_frameOrCenterChanged;
 - (bool)_hasCustomAutolayoutNeighborSpacingForAttribute:(long long*)arg1;
 - (bool)_hidesShadow;
+- (bool)_hostsLayoutEngineAllowsTAMIC_NO;
 - (bool)_isLocked;
 - (id)_itemAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (bool)_linkedBeforeWhitetailAndInitializedFromCoder;
-- (void)_performBlockAllowingConstraintManipulation:(id /* block */)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_positionToolbarButtonsAndResetFontScaleAdjustment:(bool)arg1;
 - (void)_sendAction:(id)arg1 withEvent:(id)arg2;

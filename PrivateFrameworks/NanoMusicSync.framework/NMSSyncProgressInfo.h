@@ -22,8 +22,9 @@
 
 // Image: /System/Library/PrivateFrameworks/NanoMusicSync.framework/NanoMusicSync
 
++ (id)_stringFromSyncState:(unsigned long long)arg1;
+
 - (void).cxx_destruct;
-- (id)_stringFromSyncState:(unsigned long long)arg1;
 - (unsigned long long)aggregateAssetItemBytesAdded;
 - (id)assetType;
 - (id)description;
@@ -42,7 +43,7 @@
 
 // Image: /System/Library/PrivateFrameworks/NanoMediaBridgeUI.framework/NanoMediaBridgeUI
 
-- (id)_percentageProgressText;
 - (id)_trackProgressText;
+- (id)_trackProgressTextWithFormat:(id)arg1;
 
 @end

@@ -18,6 +18,7 @@
     }  _localPortraitAspectRatio;
     TUCallProviderManager * _providerManager;
     NSObject<OS_dispatch_queue> * _queue;
+    TURouteController * _routeController;
     TUVideoDeviceController * _videoDeviceController;
 }
 
@@ -64,6 +65,7 @@
 @property (nonatomic) struct CGSize { double x1; double x2; } localPortraitAspectRatio;
 @property (nonatomic, retain) TUCallProviderManager *providerManager;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, retain) TURouteController *routeController;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) TUVideoDeviceController *videoDeviceController;
 
@@ -190,13 +192,14 @@
 - (void)pullCallFromClientUsingHandoffActivityUserInfo:(id)arg1 completion:(id /* block */)arg2;
 - (void)pullHostedCallsFromPairedHostDevice;
 - (void)pullRelayingCallsFromClient;
-- (void)pushHostedCallsToPairedClientDevice;
+- (void)pushHostedCallsToDestination:(id)arg1;
 - (void)pushRelayingCallsToHost;
 - (void)pushRelayingCallsToHostWithSourceIdentifier:(id)arg1;
 - (id)queue;
 - (void)registerWithCompletionHandler:(id /* block */)arg1;
 - (void)reportLocalPreviewStoppedForCall:(id)arg1;
 - (void)resumeCall:(id)arg1;
+- (id)routeController;
 - (void)sendFieldModeDigits:(id)arg1 forProvider:(id)arg2;
 - (void)setAudioDeviceController:(id)arg1;
 - (void)setCallServicesInterface:(id)arg1;
@@ -207,6 +210,7 @@
 - (void)setLocalPortraitAspectRatio:(struct CGSize { double x1; double x2; })arg1;
 - (void)setProviderManager:(id)arg1;
 - (void)setQueue:(id)arg1;
+- (void)setRouteController:(id)arg1;
 - (void)setTTYType:(int)arg1 forCall:(id)arg2;
 - (void)setVideoDeviceController:(id)arg1;
 - (bool)shouldPreferRelayOverDirectSecondaryCallingForProvider:(id)arg1 isVideo:(bool)arg2;

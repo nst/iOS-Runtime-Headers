@@ -12,6 +12,7 @@
     NSMutableDictionary * _loadingStatusCache;
     double  _opacity;
     AVPlayer * _player;
+    AVPlayerLayer * _playerLayer;
     long long  _prevStallCount;
     long long  _prevVariantIdx;
     bool  _showCompleteURI;
@@ -20,9 +21,13 @@
     bool  _updateUISettings;
 }
 
+@property AVPlayer *player;
+@property AVPlayerLayer *playerLayer;
+
 + (id)convertBitrate:(double)arg1;
 + (bool)runningAnInternalBuild;
 
+- (void).cxx_destruct;
 - (void)_hudUpdate;
 - (void)currentItemChanged;
 - (void)currentItemTracksChanged;
@@ -33,9 +38,12 @@
 - (id)getVideoRange:(struct opaqueCMFormatDescription { }*)arg1;
 - (bool)hudEnabled;
 - (id)init;
+- (id)player;
+- (id)playerLayer;
 - (void)readHudSettingsAndCallCompletionHandler:(id /* block */)arg1;
 - (void)setColor:(int)arg1;
 - (void)setPlayer:(id)arg1;
+- (void)setPlayerLayer:(id)arg1;
 - (void)startDispatchTimer;
 - (void)updateBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)valueLoadedForKey:(id)arg1 onObject:(id)arg2;

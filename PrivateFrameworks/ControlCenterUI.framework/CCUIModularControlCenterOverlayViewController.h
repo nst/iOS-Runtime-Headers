@@ -2,51 +2,56 @@
    Image: /System/Library/PrivateFrameworks/ControlCenterUI.framework/ControlCenterUI
  */
 
-@interface CCUIModularControlCenterOverlayViewController : CCUIModularControlCenterViewController <CCUIScrollViewDelegate, CCUIStatusLabelViewControllerDelegate, UIGestureRecognizerDelegate> {
+@interface CCUIModularControlCenterOverlayViewController : CCUIModularControlCenterViewController <CCUIOverlayMetricsProvider, CCUIOverlayViewProvider, CCUIScrollViewDelegate, CCUIStatusBarDelegate, CCUIStatusLabelViewControllerDelegate, UIGestureRecognizerDelegate> {
     MTMaterialView * _backgroundView;
     NSHashTable * _blockingGestureRecognizers;
-    struct CGRect { 
-        struct CGPoint { 
-            double x; 
-            double y; 
-        } origin; 
-        struct CGSize { 
-            double width; 
-            double height; 
-        } size; 
-    }  _cachedSourcePresentationFrame;
-    struct CGRect { 
-        struct CGPoint { 
-            double x; 
-            double y; 
-        } origin; 
-        struct CGSize { 
-            double width; 
-            double height; 
-        } size; 
-    }  _cachedTargetPresentationFrame;
-    double  _chevronAlpha;
     CCUIFlickGestureRecognizer * _collectionViewDismissalFlickGesture;
     UIPanGestureRecognizer * _collectionViewDismissalPanGesture;
     UITapGestureRecognizer * _collectionViewDismissalTapGesture;
     UIPanGestureRecognizer * _collectionViewScrollPanGesture;
+    UIStatusBar * _compactLeadingStatusBar;
     UIView * _containerView;
     NSUUID * _currentTransitionUUID;
-    double  _dismissalGestureYOffset;
     CCUIHeaderPocketView * _headerPocketView;
     UIPanGestureRecognizer * _headerPocketViewDismissalPanGesture;
     UITapGestureRecognizer * _headerPocketViewDismissalTapGesture;
-    bool  _interactiveTransition;
+    <CCUIHostStatusBarStyleProvider> * _hostStatusBarStyleProvider;
+    CCUIStatusBarStyleSnapshot * _hostStatusBarStyleSnapshot;
+    bool  _presentationPanGestureActive;
+    <CCUIOverlayPresentationProvider> * _presentationProvider;
     unsigned long long  _presentationState;
+    CCUIOverlayTransitionState * _previousTransitionState;
+    CCUIAnimationRunner * _primaryAnimationRunner;
+    bool  _reachabilityActive;
     CCUIScrollView * _scrollView;
+    CCUIAnimationRunner * _secondaryAnimationRunner;
+    unsigned long long  _transitionState;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CCUIModularControlCenterOverlayViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic) <CCUIHostStatusBarStyleProvider> *hostStatusBarStyleProvider;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } overlayBackgroundFrame;
+@property (nonatomic, readonly) MTMaterialView *overlayBackgroundView;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } overlayContainerFrame;
+@property (nonatomic, readonly) UIView *overlayContainerView;
+@property (nonatomic, readonly) CCUIHeaderPocketView *overlayHeaderView;
+@property (nonatomic, readonly) long long overlayInterfaceOrientation;
+@property (nonatomic, readonly) UIStatusBar *overlayLeadingStatusBar;
+@property (nonatomic, readonly) CCUIModuleCollectionView *overlayModuleCollectionView;
+@property (nonatomic, readonly) bool overlayReachabilityAffectsHeader;
+@property (nonatomic, readonly) double overlayReachabilityHeight;
+@property (nonatomic, readonly) UIScrollView *overlayScrollView;
+@property (nonatomic, readonly, copy) CCUIStatusBarStyleSnapshot *overlayStatusBarStyle;
+@property (nonatomic, readonly) CCUIStatusLabelViewController *overlayStatusLabelViewController;
 @property (nonatomic) unsigned long long presentationState;
+@property (getter=isReachabilityActive, nonatomic) bool reachabilityActive;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned long long transitionState;
+
++ (id)_presentationProviderForDevice;
 
 - (void).cxx_destruct;
 - (unsigned long long)__supportedInterfaceOrientations;
@@ -56,7 +61,6 @@
 - (bool)_dismissalFlickGestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (bool)_dismissalFlickGestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (bool)_dismissalFlickGestureRecognizerShouldBegin:(id)arg1;
-- (double)_dismissalGestureActivationMinimumYOffset;
 - (void)_dismissalPanGestureRecognizerBegan:(id)arg1;
 - (void)_dismissalPanGestureRecognizerCancelled:(id)arg1;
 - (void)_dismissalPanGestureRecognizerChanged:(id)arg1;
@@ -66,53 +70,68 @@
 - (bool)_dismissalTapGestureRecognizerShouldBegin:(id)arg1;
 - (void)_endDismissalWithUUID:(id)arg1 animated:(bool)arg2 success:(bool)arg3;
 - (void)_endPresentationWithUUID:(id)arg1 success:(bool)arg2;
+- (bool)_gestureRecognizerIsActive:(id)arg1;
 - (void)_handleDismissalFlickGestureRecognizer:(id)arg1;
 - (void)_handleDismissalPanGestureRecognizer:(id)arg1;
 - (void)_handleDismissalTapGestureRecognizer:(id)arg1;
-- (void)_makePresentationFramesDirty;
+- (id)_initWithSystemAgent:(id)arg1 presentationProvider:(id)arg2;
 - (id)_moduleCollectionViewContainerView;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_moduleCollectionViewFrame;
-- (double)_pocketViewHeight;
-- (double)_presentationGestureActivationMinimumYOffset;
 - (void)_reparentAndBecomeActive;
 - (bool)_scrollPanGestureRecognizerCanBeginForGestureVelocity:(struct CGPoint { double x1; double x2; })arg1;
 - (bool)_scrollPanGestureRecognizerShouldBegin:(id)arg1;
 - (bool)_scrollViewCanAcceptDownwardsPan;
 - (bool)_scrollViewIsScrollable;
-- (void)_setCollectionViewOrigin:(struct CGPoint { double x1; double x2; })arg1;
-- (void)_setPocketViewOriginFromCollectionOriginY:(double)arg1;
 - (void)_setupPanGestureFailureRequirements;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_sourcePresentationFrame;
 - (id)_statusLabelViewContainerView;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_statusLabelViewFrame;
-- (unsigned long long)_statusTextAlignment;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_targetPresentationFrame;
+- (void)_updateChevronStateForTransitionState:(id)arg1;
+- (void)_updateHotPocket:(bool)arg1 animated:(bool)arg2;
 - (void)_updateHotPocketAnimated:(bool)arg1;
-- (void)_updatePresentationForLocationY:(double)arg1;
-- (void)_updatePresentationForRevealPercentage:(double)arg1;
-- (void)beginPresentationWithLocation:(struct CGPoint { double x1; double x2; })arg1 velocity:(struct CGPoint { double x1; double x2; })arg2;
-- (void)cancelPresentationWithLocation:(struct CGPoint { double x1; double x2; })arg1 velocity:(struct CGPoint { double x1; double x2; })arg2;
+- (void)_updatePresentationForTransitionState:(id)arg1 withCompletionHander:(id /* block */)arg2;
+- (void)_updatePresentationForTransitionType:(unsigned long long)arg1 translation:(struct CGPoint { double x1; double x2; })arg2 interactive:(bool)arg3;
+- (void)beginPresentationWithLocation:(struct CGPoint { double x1; double x2; })arg1 translation:(struct CGPoint { double x1; double x2; })arg2 velocity:(struct CGPoint { double x1; double x2; })arg3;
+- (void)cancelPresentationWithLocation:(struct CGPoint { double x1; double x2; })arg1 translation:(struct CGPoint { double x1; double x2; })arg2 velocity:(struct CGPoint { double x1; double x2; })arg3;
+- (id)compactStyleRequestForStatusBar:(id)arg1;
 - (void)dismissAnimated:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
-- (void)endPresentationWithLocation:(struct CGPoint { double x1; double x2; })arg1 velocity:(struct CGPoint { double x1; double x2; })arg2;
+- (void)dismissControlCenterForContentModuleContext:(id)arg1;
+- (void)endPresentationWithLocation:(struct CGPoint { double x1; double x2; })arg1 translation:(struct CGPoint { double x1; double x2; })arg2 velocity:(struct CGPoint { double x1; double x2; })arg3;
 - (bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (id)hostStatusBarStyleProvider;
 - (id)initWithSystemAgent:(id)arg1;
+- (bool)isReachabilityActive;
 - (void)moduleCollectionViewController:(id)arg1 didAddModuleContainerViewController:(id)arg2;
 - (void)moduleCollectionViewController:(id)arg1 willCloseExpandedModule:(id)arg2;
 - (void)moduleCollectionViewController:(id)arg1 willOpenExpandedModule:(id)arg2;
 - (void)moduleInstancesChangedForModuleInstanceManager:(id)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })overlayAdditionalEdgeInsets;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })overlayBackgroundFrame;
+- (id)overlayBackgroundView;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })overlayContainerFrame;
+- (id)overlayContainerView;
+- (id)overlayHeaderView;
+- (long long)overlayInterfaceOrientation;
+- (id)overlayLeadingStatusBar;
+- (id)overlayModuleCollectionView;
+- (bool)overlayReachabilityAffectsHeader;
+- (double)overlayReachabilityHeight;
+- (id)overlayScrollView;
+- (id)overlayStatusBarStyle;
+- (id)overlayStatusLabelViewController;
 - (unsigned long long)preferredScreenEdgesDeferringSystemGestures;
 - (void)presentAnimated:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
 - (unsigned long long)presentationState;
 - (bool)scrollView:(id)arg1 gestureRecognizerShouldBegin:(id)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)setHostStatusBarStyleProvider:(id)arg1;
+- (void)setOverlayStatusBarHidden:(bool)arg1;
 - (void)setPresentationState:(unsigned long long)arg1;
+- (void)setReachabilityActive:(bool)arg1;
 - (void)statusLabelViewControllerDidFinishStatusUpdates:(id)arg1;
 - (void)statusLabelViewControllerWillBeginStatusUpdates:(id)arg1;
 - (unsigned long long)supportedInterfaceOrientations;
-- (void)updatePresentationWithLocation:(struct CGPoint { double x1; double x2; })arg1 velocity:(struct CGPoint { double x1; double x2; })arg2;
+- (unsigned long long)transitionState;
+- (void)updatePresentationWithLocation:(struct CGPoint { double x1; double x2; })arg1 translation:(struct CGPoint { double x1; double x2; })arg2 velocity:(struct CGPoint { double x1; double x2; })arg3;
 - (void)viewDidLoad;
 - (void)viewWillLayoutSubviews;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;

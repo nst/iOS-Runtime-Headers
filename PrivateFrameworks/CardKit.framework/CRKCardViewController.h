@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/CardKit.framework/CardKit
  */
 
-@interface CRKCardViewController : UIViewController <CRKCardSectionViewControllerDataSource, CRKCardSectionViewControllerDelegate, SearchUIFeedbackDelegate> {
+@interface CRKCardViewController : UIViewController <CRKCardSectionViewControllerDataSource, CRKCardSectionViewControllerDelegate, CRKCardSectionViewProviderHelping, CRKFeedbackDelegate, SearchUIFeedbackDelegate> {
     <CRCard> * _card;
     NSMutableArray * _cardSectionViewControllers;
+    <CRKCardSectionViewProviderManaging> * _cardSectionViewProviderManager;
     NSMapTable * _cardSectionsToCardSectionViewControllersMapTable;
     <CRKCardViewControllerDelegate> * _delegate;
     NSMapTable * _handledParametersForInteraction;
@@ -13,7 +14,6 @@
     NSMutableArray * _loadingCardSections;
     NSMutableArray * _pendingDismissalCommands;
     long long  _preferredPunchoutIndex;
-    NSMutableArray * _tableCardSections;
 }
 
 @property (nonatomic, retain) <CRCard> *card;
@@ -38,7 +38,6 @@
 - (void)_cancelTouchesIfNecessary;
 - (id)_cardSectionViewControllerForCardSection:(id)arg1;
 - (void)_configureCardSectionViewController:(id)arg1 forCardSection:(id)arg2;
-- (void)_configureTableRowCardSections:(id)arg1;
 - (long long)_convertSFSeparatorStyleToCRKKeylineStyle:(int)arg1;
 - (long long)_defaultKeylineStyleBetweenLeadingCardSection:(id)arg1 andTrailingCardSection:(id)arg2;
 - (void)_finishLoading;
@@ -65,7 +64,9 @@
 - (void)cardSectionViewControllerShouldBeRemoved:(id)arg1;
 - (void)cardSectionViewDidAppearForCardSection:(id)arg1 withAppearanceFeedback:(id)arg2;
 - (void)cardSectionViewDidDisappearForCardSection:(id)arg1 withDisappearanceFeedback:(id)arg2;
+- (void)cardSectionViewDidSelectPreferredPunchoutIndex:(long long)arg1;
 - (void)cardSectionViewWillAppearForCardSection:(id)arg1 withAppearanceFeedback:(id)arg2;
+- (id)defaultFeedbackDelegate;
 - (id)delegate;
 - (void)didEngageCardSection:(id)arg1;
 - (void)didMoveToParentViewController:(id)arg1;
@@ -80,6 +81,7 @@
 - (bool)performCommand:(id)arg1 forCardSectionViewController:(id)arg2;
 - (long long)preferredPunchoutIndex;
 - (long long)preferredPunchoutIndexForCardSectionViewController:(id)arg1;
+- (void)presentViewController:(id)arg1;
 - (void)presentViewController:(id)arg1 forCardSectionViewController:(id)arg2;
 - (void)setCard:(id)arg1;
 - (void)setDelegate:(id)arg1;

@@ -164,6 +164,7 @@
 - (bool)supportsPeerPayment;
 - (bool)supportsSerialNumberBasedProvisioning;
 - (bool)supportsWebPaymentMode:(long long)arg1 withExclusionList:(id)arg2;
+- (bool)supportsWebPaymentMode:(long long)arg1 withExclusionList:(id)arg2 clientOSVersion:(id)arg3;
 - (id)transactionPushTopic;
 - (id)transactionServiceURL;
 - (void)updateDevicePaymentApplicationsWithSecureElementIdentifiers:(id)arg1;

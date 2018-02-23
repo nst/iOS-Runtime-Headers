@@ -14,8 +14,10 @@
 @property (nonatomic, readonly) bool hasSynchronizedVibrationsCapability;
 @property (nonatomic, readonly) bool hasUserGeneratedVibrationsCapability;
 @property (nonatomic, readonly) bool hasVibratorCapability;
+@property (getter=isHomePod, nonatomic, readonly) bool homePod;
 @property (getter=isRingtoneStoreAvailable, nonatomic, readonly) bool ringtoneStoreAvailable;
 @property (nonatomic, readonly) NSString *simplifiedDeviceCodeName;
+@property (nonatomic, readonly) bool wantsModernDefaultRingtone;
 
 + (id)sharedCapabilitiesManager;
 
@@ -32,7 +34,9 @@
 - (bool)hasVibratorCapability;
 - (id)init;
 - (bool)isAlertToneStoreAvailable;
+- (bool)isHomePod;
 - (bool)isRingtoneStoreAvailable;
 - (id)simplifiedDeviceCodeName;
+- (bool)wantsModernDefaultRingtone;
 
 @end

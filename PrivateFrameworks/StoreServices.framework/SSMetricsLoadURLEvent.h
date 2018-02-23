@@ -5,6 +5,7 @@
 @interface SSMetricsLoadURLEvent : SSMetricsMutableEvent
 
 @property (nonatomic, retain) NSString *DNSServers;
+@property (nonatomic, retain) NSString *TIDState;
 @property (nonatomic, retain) NSString *clientCorrelationKey;
 @property (nonatomic, retain) NSString *clientError;
 @property (nonatomic) double connectionEndTime;
@@ -24,10 +25,12 @@
 @property (nonatomic) unsigned long long redirectCount;
 @property (nonatomic) double redirectEndTime;
 @property (nonatomic) double redirectStartTime;
+@property (nonatomic) unsigned long long requestMessageSize;
 @property (nonatomic) double requestStartTime;
 @property (nonatomic, retain) NSString *requestURL;
 @property (nonatomic, retain) NSString *resolvedIPAddress;
 @property (nonatomic) double responseEndTime;
+@property (nonatomic) unsigned long long responseMessageSize;
 @property (nonatomic) double responseStartTime;
 @property (nonatomic) double secureConnectionStartTime;
 @property (nonatomic) long long statusCode;
@@ -47,6 +50,7 @@
 + (bool)shouldReportCachedEventWithSamplingPercentage:(double)arg1;
 
 - (id)DNSServers;
+- (id)TIDState;
 - (id)clientCorrelationKey;
 - (id)clientError;
 - (double)connectionEndTime;
@@ -68,10 +72,12 @@
 - (unsigned long long)redirectCount;
 - (double)redirectEndTime;
 - (double)redirectStartTime;
+- (unsigned long long)requestMessageSize;
 - (double)requestStartTime;
 - (id)requestURL;
 - (id)resolvedIPAddress;
 - (double)responseEndTime;
+- (unsigned long long)responseMessageSize;
 - (double)responseStartTime;
 - (double)secureConnectionStartTime;
 - (void)setClientCorrelationKey:(id)arg1;
@@ -94,13 +100,16 @@
 - (void)setRedirectCount:(unsigned long long)arg1;
 - (void)setRedirectEndTime:(double)arg1;
 - (void)setRedirectStartTime:(double)arg1;
+- (void)setRequestMessageSize:(unsigned long long)arg1;
 - (void)setRequestStartTime:(double)arg1;
 - (void)setRequestURL:(id)arg1;
 - (void)setResolvedIPAddress:(id)arg1;
 - (void)setResponseEndTime:(double)arg1;
+- (void)setResponseMessageSize:(unsigned long long)arg1;
 - (void)setResponseStartTime:(double)arg1;
 - (void)setSecureConnectionStartTime:(double)arg1;
 - (void)setStatusCode:(long long)arg1;
+- (void)setTIDState:(id)arg1;
 - (void)setXPSamplingForced:(bool)arg1;
 - (void)setXPSamplingPercentageCachedResponses:(double)arg1;
 - (void)setXPSamplingPercentageUsers:(double)arg1;

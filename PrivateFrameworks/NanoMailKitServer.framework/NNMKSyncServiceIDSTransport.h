@@ -6,6 +6,7 @@
     unsigned long long  _connectivityState;
     <NNMKSyncServiceTransportDelegate> * _delegate;
     IDSService * _idsService;
+    NSString * _serviceName;
 }
 
 @property (nonatomic) unsigned long long connectivityState;
@@ -15,6 +16,7 @@
 @property (nonatomic) bool forceFailureForAllRequests;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) IDSService *idsService;
+@property (nonatomic, retain) NSString *serviceName;
 @property (nonatomic) bool simulateCloudConnectedOnly;
 @property (readonly) Class superclass;
 
@@ -34,9 +36,11 @@
 - (void)service:(id)arg1 activeAccountsChanged:(id)arg2;
 - (void)service:(id)arg1 devicesChanged:(id)arg2;
 - (void)service:(id)arg1 nearbyDevicesChanged:(id)arg2;
+- (id)serviceName;
 - (void)serviceSpaceDidBecomeAvailable:(id)arg1;
 - (void)setConnectivityState:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIdsService:(id)arg1;
+- (void)setServiceName:(id)arg1;
 
 @end

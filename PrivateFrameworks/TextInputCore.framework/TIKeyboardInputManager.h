@@ -281,7 +281,7 @@
 - (id)pathToStaticDictionary;
 - (long long)performHitTestForTouchEvent:(id)arg1 keyboardState:(id)arg2;
 - (unsigned long long)phraseBoundary;
-- (id)phraseCandidateCompletedByWord:(const struct String { unsigned short x1; unsigned short x2; unsigned short x3; unsigned char x4; char *x5; BOOL x6[16]; }*)arg1 allowNoSuggest:(bool)arg2;
+- (id)phraseCandidateCompletedByWord:(const struct String { unsigned short x1; unsigned short x2; unsigned short x3; unsigned char x4; char *x5; BOOL x6[16]; }*)arg1 allowNoSuggest:(bool)arg2 forAutocorrection:(bool)arg3;
 - (id)phraseDictionaryPathForInputMode:(id)arg1;
 - (const struct USet { }*)precomposedCharacterSet;
 - (id)predictionCandidates:(unsigned long long)arg1;

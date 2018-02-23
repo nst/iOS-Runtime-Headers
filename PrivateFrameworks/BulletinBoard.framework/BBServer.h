@@ -40,7 +40,6 @@
     NSObject<OS_dispatch_source> * _expirationTimer;
     NSMutableArray * _expiringBulletinIDs;
     ABFavoritesListManager * _favoritesListManager;
-    long long  _globalContentPreviewsSetting;
     unsigned long long  _globalCounter;
     bool  _isRunning;
     NSMutableDictionary * _lastContactTimeForSender;
@@ -148,7 +147,6 @@
 - (id)_defaultSectionOrderForTopLevelCollection:(id)arg1;
 - (id)_defaultSectionOrders;
 - (bool)_deviceSupportsFavorites;
-- (void)_didEffectiveSettingsChange:(id)arg1;
 - (bool)_didNotificationCenterSettingsChangeWithSectionInfo:(id)arg1 replacingSectionInfo:(id)arg2;
 - (void)_didReceiveResponseForBulletin:(id)arg1;
 - (bool)_doesAddressBookContainDestinationID:(id)arg1;
@@ -168,6 +166,7 @@
 - (unsigned long long)_feedsForBulletin:(id)arg1 destinations:(unsigned long long)arg2;
 - (unsigned long long)_feedsForBulletin:(id)arg1 destinations:(unsigned long long)arg2 alwaysToLockScreen:(bool)arg3;
 - (unsigned long long)_filtersForSectionID:(id)arg1;
+- (long long)_globalContentPreviewsSetting;
 - (void)_handleSignificantTimeChange;
 - (void)_handleSystemSleep;
 - (void)_handleSystemWake;
@@ -204,6 +203,7 @@
 - (void)_publishBulletinRequest:(id)arg1 forSectionID:(id)arg2 forDestinations:(unsigned long long)arg3;
 - (void)_publishBulletinRequest:(id)arg1 forSectionID:(id)arg2 forDestinations:(unsigned long long)arg3 alwaysToLockScreen:(bool)arg4;
 - (void)_publishBulletinsForAllDataProviders;
+- (void)_queue_managedUserNotificationsSetttingsDidChange;
 - (void)_queue_setPrivilegedSenderTypes:(unsigned long long)arg1 source:(unsigned long long)arg2;
 - (void)_reloadReloadSectionInfoForSectionID:(id)arg1;
 - (void)_reloadSectionParametersForSectionID:(id)arg1;
@@ -248,6 +248,7 @@
 - (void)_setBehaviorOverridesTimer;
 - (void)_setClearedInfo:(id)arg1 forSectionID:(id)arg2;
 - (void)_setDefaultExpirationComponents:(id)arg1;
+- (void)_setGlobalContentPreviewsSetting:(long long)arg1;
 - (void)_setPrivilegedSenderTypes:(unsigned long long)arg1 source:(unsigned long long)arg2;
 - (void)_setSectionInfo:(id)arg1 forSectionID:(id)arg2;
 - (void)_setSectionInfoNoteSettingsChanged:(id)arg1 forSectionID:(id)arg2;

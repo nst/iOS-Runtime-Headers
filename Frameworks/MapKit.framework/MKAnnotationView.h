@@ -54,7 +54,6 @@
         unsigned int tracking : 1; 
         unsigned int pendingOffsetAnimation : 1; 
         unsigned int pendingHideAnimation : 1; 
-        unsigned int pendingPrepareForDisplay : 1; 
     }  _flags;
     NSMutableArray * _hiddenCompletionBlocks;
     unsigned long long  _hiddenReasons;
@@ -156,11 +155,11 @@
 + (float)_defaultDisplayPriority;
 + (id)_disclosureCalloutButton;
 + (bool)_followsTerrain;
++ (bool)_isInitiallyHiddenWhenAdded;
 + (unsigned long long)_selectedZIndex;
 + (unsigned long long)_zIndex;
 + (bool)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)currentLocationTitle;
-+ (Class)layerClass;
 
 - (void).cxx_destruct;
 - (void)_addBalloonCalloutView:(id)arg1;

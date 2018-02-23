@@ -23,6 +23,7 @@
 - (void).cxx_destruct;
 - (void)_dismissForLastViewController;
 - (void)_dismissForLastViewController:(bool)arg1;
+- (id)childViewControllerForHomeIndicatorAutoHidden;
 - (void)didShowViewController:(id)arg1 animated:(bool)arg2;
 - (id /* block */)dismissalBlock;
 - (id)initWithRootViewController:(id)arg1;

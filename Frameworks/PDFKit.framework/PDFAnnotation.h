@@ -30,6 +30,7 @@
 @property (nonatomic, readonly) bool hasAppearanceStream;
 @property (getter=isHighlighted, nonatomic) bool highlighted;
 @property (nonatomic) long long iconType;
+@property (nonatomic, copy) UIColor *interiorColor;
 @property (nonatomic, readonly) bool isPasswordField;
 @property (getter=isListChoice, nonatomic) bool listChoice;
 @property (nonatomic) long long markupType;
@@ -45,6 +46,7 @@
 @property (getter=isReadOnly, nonatomic) bool readOnly;
 @property (nonatomic) bool shouldDisplay;
 @property (nonatomic) bool shouldPrint;
+@property (nonatomic, copy) NSString *stampName;
 @property (nonatomic) long long startLineStyle;
 @property (nonatomic) struct CGPoint { double x1; double x2; } startPoint;
 @property (nonatomic, copy) NSString *type;
@@ -148,6 +150,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)createDefaultAppearanceStringWithFont:(id)arg1 fontColor:(id)arg2;
 - (void)dealloc;
+- (id)debugQuickLookObject;
 - (void)derotateContext:(struct CGContext { }*)arg1;
 - (id)description;
 - (id)destination;
@@ -184,7 +187,7 @@
 - (id)initWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forType:(id)arg2 withProperties:(id)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1 forPage:(id)arg2;
-- (bool)isEditingTextWidget;
+- (id)interiorColor;
 - (bool)isFullyConstructed;
 - (bool)isHidden;
 - (bool)isHighlighted;
@@ -202,9 +205,10 @@
 - (bool)isSignature;
 - (bool)isWidgetOrMarkupAnnotation;
 - (long long)markupType;
-- (unsigned long long)maximumLength;
+- (long long)maximumLength;
 - (id)modificationDate;
 - (id)mouseDownAction;
+- (id)mouseHoverBackgroundColor;
 - (id)mouseUpAction;
 - (id)newUserControlWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)page;
@@ -252,7 +256,6 @@
 - (void)setControl:(id)arg1;
 - (void)setDestination:(id)arg1;
 - (void)setDictionaryRef:(struct __CFDictionary { }*)arg1;
-- (void)setEditingTextWidget:(bool)arg1;
 - (void)setEndLineStyle:(long long)arg1;
 - (void)setEndPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setFieldName:(id)arg1;
@@ -262,6 +265,7 @@
 - (void)setHidden:(bool)arg1;
 - (void)setHighlighted:(bool)arg1;
 - (void)setIconType:(long long)arg1;
+- (void)setInteriorColor:(id)arg1;
 - (void)setInvisible:(bool)arg1;
 - (void)setIsFullyConstructed:(bool)arg1;
 - (void)setIsSelected:(bool)arg1;
@@ -269,9 +273,10 @@
 - (void)setListChoice:(bool)arg1;
 - (void)setLocked:(bool)arg1;
 - (void)setMarkupType:(long long)arg1;
-- (void)setMaximumLength:(unsigned long long)arg1;
+- (void)setMaximumLength:(long long)arg1;
 - (void)setModificationDate:(id)arg1;
 - (void)setMouseDownAction:(id)arg1;
+- (void)setMouseHoverBackgroundColor:(id)arg1;
 - (void)setMouseUpAction:(id)arg1;
 - (void)setMultiline:(bool)arg1;
 - (void)setOpen:(bool)arg1;
@@ -295,6 +300,7 @@
 - (void)setShouldNotZoom:(bool)arg1;
 - (void)setShouldPrint:(bool)arg1;
 - (void)setShouldToggleNoView:(bool)arg1;
+- (void)setStampName:(id)arg1;
 - (void)setStartLineStyle:(long long)arg1;
 - (void)setStartPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setType:(id)arg1;
@@ -316,6 +322,7 @@
 - (bool)shouldPrint;
 - (bool)shouldToggleNoView;
 - (struct CGPDFDictionary { }*)sourceDictionary;
+- (id)stampName;
 - (long long)startLineStyle;
 - (struct CGPoint { double x1; double x2; })startPoint;
 - (bool)supportsNSCoding;

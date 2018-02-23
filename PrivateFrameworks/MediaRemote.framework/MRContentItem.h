@@ -4,12 +4,14 @@
 
 @interface MRContentItem : _MRContentItemProtobuf
 
+@property (nonatomic, copy) NSArray *artworkURLTemplates;
 @property (nonatomic, readonly) bool hasAvailableLanguageOptions;
 @property (nonatomic, readonly) bool hasCurrentLanguageOptions;
 @property (nonatomic, readonly) MRContentItemMetadata *itemMetadata;
 
 + (void)initialize;
 
+- (id)artworkURLTemplates;
 - (id)customDictionaryRepresentation;
 - (bool)hasAvailableLanguageOptions;
 - (bool)hasCurrentLanguageOptions;
@@ -17,6 +19,8 @@
 - (id)initWithData:(id)arg1;
 - (id)itemMetadata;
 - (void)setArtworkData:(id)arg1;
+- (void)setArtworkURLTemplates:(id)arg1;
+- (void)setArtworkURLTemplatesData:(id)arg1;
 - (void)setAvailableLanguageOptions:(id)arg1;
 - (void)setCurrentLanguageOptions:(id)arg1;
 - (void)setInfo:(id)arg1;

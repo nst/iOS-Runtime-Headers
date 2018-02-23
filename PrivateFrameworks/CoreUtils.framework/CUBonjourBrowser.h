@@ -44,7 +44,7 @@
 - (unsigned int)changeFlags;
 - (void)dealloc;
 - (id)description;
-- (id)detailedDescription;
+- (id)descriptionWithLevel:(int)arg1;
 - (id /* block */)deviceChangedHandler;
 - (id /* block */)deviceFoundHandler;
 - (id /* block */)deviceLostHandler;

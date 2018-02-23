@@ -40,6 +40,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned long long supportedTechnologies;
 
+// Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
+
 + (id)primarySecureElementIdentifier;
 + (id)secureElementIdentifiers;
 
@@ -55,6 +57,7 @@
 - (void)connectToServerWithPushTopic:(id)arg1 completion:(id /* block */)arg2;
 - (void)dealloc;
 - (unsigned long long)hardwareVersion;
+- (bool)hasRegistrationInformation;
 - (id)init;
 - (void)initializeSecureElementQueuingServerConnection:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (bool)isDeletingAllApplets;
@@ -91,5 +94,9 @@
 - (unsigned long long)supportedTechnologies;
 - (bool)supportsExpressModeForExpressPassType:(long long)arg1;
 - (void)unregisterObserver:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
+
+- (void)npkSafePairingStateWithCompletion:(id /* block */)arg1;
 
 @end

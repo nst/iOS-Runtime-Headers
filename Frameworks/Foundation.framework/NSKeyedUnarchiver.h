@@ -44,6 +44,7 @@
 - (unsigned int)_currentUniqueIdentifier;
 - (id)_decodeArrayOfObjectsForKey:(id)arg1;
 - (id)_decodePropertyListForKey:(id)arg1;
+- (id)_initForReadingFromData:(id)arg1 error:(id*)arg2 throwLegacyExceptions:(bool)arg3;
 - (id)_initWithStream:(struct __CFReadStream { }*)arg1 data:(id)arg2 topDict:(struct __CFDictionary { }*)arg3;
 - (void)_replaceObject:(id)arg1 withObject:(id)arg2;
 - (void)_setAllowedClassNames:(id)arg1;
@@ -97,6 +98,10 @@
 
 + (id)__ms_unarchiveObjectOfClasses:(id)arg1 data:(id)arg2;
 
+// Image: /System/Library/PrivateFrameworks/AVConference.framework/AVConference
+
++ (id)secureUnarchiveObjectOfClass:(Class)arg1 withData:(id)arg2;
+
 // Image: /System/Library/PrivateFrameworks/AXMediaUtilities.framework/AXMediaUtilities
 
 + (id)axmSecurelyUnarchiveData:(id)arg1 withExpectedClass:(Class)arg2 otherAllowedClasses:(id)arg3 error:(id*)arg4;
@@ -130,6 +135,11 @@
 + (id)_et_secureUnarchiveObjectOfClass:(Class)arg1 withData:(id)arg2;
 + (id)_et_secureUnarchiveObjectOfClasses:(id)arg1 withData:(id)arg2;
 
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
++ (id)_geo_unarchiveSecureCodingObjectOfClass:(Class)arg1 withData:(id)arg2;
++ (id)_geo_unarchiveSecureCodingObjectOfClasses:(id)arg1 withData:(id)arg2;
+
 // Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
 
 + (id)deserializeObjectWithData:(id)arg1 allowedClass:(Class)arg2 frameworkClasses:(id)arg3;
@@ -141,6 +151,7 @@
 
 // Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
 
++ (id)nnmk_whitelistedClasses;
 + (id)unarchiveObjectOfClass:(Class)arg1 withData:(id)arg2;
 + (id)unarchiveObjectOfClasses:(id)arg1 withData:(id)arg2;
 

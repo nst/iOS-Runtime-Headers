@@ -18,13 +18,11 @@
     int  _faceTimeIDStatus;
     NSString * _hardPauseDigits;
     int  _hardPauseDigitsState;
-    bool  _hasBegunAudioInterruption;
     bool  _hasUpdatedAudio;
     double  _hostCreationTime;
     double  _hostMessageSendTime;
     NSString * _isoCountryCode;
     TUCallModel * _model;
-    NSString * _prematurelySelectedAudioRouteUID;
     NSDictionary * _providerContext;
     long long  _provisionalHoldStatus;
     NSObject<OS_dispatch_queue> * _queue;
@@ -98,7 +96,6 @@
 @property (nonatomic, copy) NSString *hardPauseDigits;
 @property (nonatomic, readonly) NSString *hardPauseDigitsDisplayString;
 @property (nonatomic) int hardPauseDigitsState;
-@property (nonatomic) bool hasBegunAudioInterruption;
 @property (nonatomic, readonly) bool hasSentInvitation;
 @property (nonatomic) bool hasUpdatedAudio;
 @property (nonatomic) double hostCreationTime;
@@ -118,7 +115,6 @@
 @property (nonatomic, readonly) bool needsManualInCallSounds;
 @property (getter=isOutgoing, nonatomic, readonly) bool outgoing;
 @property (nonatomic, readonly) bool prefersExclusiveAccessToCellularNetwork;
-@property (nonatomic, retain) NSString *prematurelySelectedAudioRouteUID;
 @property (nonatomic, readonly) TUCallProvider *provider;
 @property (nonatomic, readonly) NSDictionary *providerContext;
 @property (nonatomic) long long provisionalHoldStatus;
@@ -134,6 +130,7 @@
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } remoteVideoContentRect;
 @property (nonatomic) bool requiresRemoteVideo;
 @property (nonatomic) bool ringtoneSuppressedRemotely;
+@property (getter=isRTT, nonatomic, readonly) bool rtt;
 @property (nonatomic, readonly) int service;
 @property (nonatomic, readonly) bool shouldDisplayLocationIfAvailable;
 @property (nonatomic, readonly) bool shouldPlayDTMFTone;
@@ -228,7 +225,6 @@
 - (id)hardPauseDigits;
 - (id)hardPauseDigitsDisplayString;
 - (int)hardPauseDigitsState;
-- (bool)hasBegunAudioInterruption;
 - (bool)hasRelaySupport:(int)arg1;
 - (bool)hasSentInvitation;
 - (bool)hasUpdatedAudio;
@@ -260,6 +256,7 @@
 - (bool)isMuted;
 - (bool)isOnHold;
 - (bool)isOutgoing;
+- (bool)isRTT;
 - (bool)isRemoteUplinkMuted;
 - (bool)isSOS;
 - (bool)isSendingAudio;
@@ -283,7 +280,6 @@
 - (bool)needsManualInCallSounds;
 - (void)playDTMFToneForKey:(unsigned char)arg1;
 - (bool)prefersExclusiveAccessToCellularNetwork;
-- (id)prematurelySelectedAudioRouteUID;
 - (id)provider;
 - (id)providerContext;
 - (long long)provisionalHoldStatus;
@@ -317,7 +313,6 @@
 - (void)setFaceTimeIDStatus:(int)arg1;
 - (void)setHardPauseDigits:(id)arg1;
 - (void)setHardPauseDigitsState:(int)arg1;
-- (void)setHasBegunAudioInterruption:(bool)arg1;
 - (void)setHasUpdatedAudio:(bool)arg1;
 - (void)setHostCreationTime:(double)arg1;
 - (void)setHostMessageSendTime:(double)arg1;
@@ -327,7 +322,6 @@
 - (void)setLocalVideoLayer:(id)arg1 forMode:(long long)arg2;
 - (void)setModel:(id)arg1;
 - (bool)setMuted:(bool)arg1;
-- (void)setPrematurelySelectedAudioRouteUID:(id)arg1;
 - (void)setProvisionalHoldStatus:(long long)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setRemoteVideoLayer:(id)arg1 forMode:(long long)arg2;

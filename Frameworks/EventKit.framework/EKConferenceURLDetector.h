@@ -4,10 +4,12 @@
 
 @interface EKConferenceURLDetector : NSObject
 
-+ (bool)_url:(id)arg1 hasDomain:(id)arg2;
-+ (id)conferenceURLFromConferenceSources:(id)arg1;
-+ (bool)isPreferredURL:(id)arg1;
++ (id)_dataDetector;
++ (bool)_isPreferredURL:(id)arg1;
++ (bool)_isValidTelURL:(id)arg1;
++ (id)_linksInSource:(id)arg1;
++ (id)_preferredHostSuffixes;
++ (id)conferenceURLFromSources:(id)arg1;
 + (id)logHandle;
-+ (id)preferredDomainList;
 
 @end

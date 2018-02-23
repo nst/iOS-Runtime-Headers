@@ -7,6 +7,7 @@
     FBSDisplayConfiguration * __displayConfiguration;
     UIWindow<UIFocusEnvironment> * __focusedWindow;
     NSArray * _availableDisplayModes;
+    _UIScreenBoundingPathUtilities * _boundingPathUtilities;
     NSDictionary * _capabilities;
     bool  _captured;
     struct { 
@@ -77,6 +78,7 @@
 @property (setter=_setSoftwareDimmingWindow:, nonatomic, retain) UISoftwareDimmingWindow *_softwareDimmingWindow;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } applicationFrame;
 @property (nonatomic, readonly, copy) NSArray *availableModes;
+@property (getter=_boundingPathUtilities, setter=_setBoundingPathUtilities:, nonatomic, retain) _UIScreenBoundingPathUtilities *boundingPathUtilities;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
 @property (nonatomic) double brightness;
 @property (getter=isCaptured, setter=_setCaptured:, nonatomic) bool captured;
@@ -164,6 +166,7 @@
 - (bool)_areListsLimited;
 - (bool)_areMusicListsLimited;
 - (void)_beginObservingBacklightLevelNotifications;
+- (id)_boundingPathUtilities;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_boundsForInterfaceOrientation:(long long)arg1;
 - (id)_capabilities;
 - (id)_capabilityForKey:(id)arg1;
@@ -245,6 +248,7 @@
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_sceneSafeAreaInsets;
 - (void)_searchForFocusRegionsInContext:(id)arg1;
 - (unsigned int)_seed;
+- (void)_setBoundingPathUtilities:(id)arg1;
 - (void)_setCapability:(id)arg1 forKey:(id)arg2;
 - (void)_setCaptured:(bool)arg1;
 - (void)_setCarPlayHumanPresenceInRange:(bool)arg1;
@@ -340,7 +344,12 @@
 
 // Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
 
+- (double)__dbg_traitCollectionDisplayCornerRadius;
 - (id)debugHierarchyPropertyDescriptions;
+
+// Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
+
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })cn_mainScreenPeripheryInsets;
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 

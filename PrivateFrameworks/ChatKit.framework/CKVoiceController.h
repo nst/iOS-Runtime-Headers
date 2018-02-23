@@ -28,6 +28,7 @@
 - (long long)_activationMode;
 - (void)_setActivationMode:(long long)arg1;
 - (id)audioAnalyzer;
+- (void)cleanup;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithActivationMode:(long long)arg1 recordSettings:(id)arg2 queue:(id)arg3;

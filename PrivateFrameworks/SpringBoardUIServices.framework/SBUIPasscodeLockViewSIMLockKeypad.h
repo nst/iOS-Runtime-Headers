@@ -17,6 +17,7 @@
 - (double)_distanceToFirstLineBaseline:(id)arg1;
 - (double)_expectedDistanceBetweenTitleAndSubtitleBaselines;
 - (double)_expectedYOffsetBetweenTitleAndSubtitleViews;
+- (void)_layoutEntryField;
 - (void)_layoutStatusView;
 - (void)_setHasInput:(bool)arg1;
 - (void)_setText:(id)arg1 onLabel:(id)arg2;

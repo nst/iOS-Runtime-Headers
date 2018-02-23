@@ -11,9 +11,21 @@
     bool  _canDisplayEditActionsInNavigationBar;
     bool  _canDisplayOptionsInPopover;
     bool  _canDisplaySlideshowButton;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _layoutMargins;
     long long  _layoutVariant;
     double  _maxSearchBarWidth;
     PUPhotosPickerViewControllerSpec * _photosPickerViewControllerSpec;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _safeAreaInsets;
     bool  _usesStackPopTransition;
 }
 
@@ -29,10 +41,14 @@
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } contentSizeForViewInPopover;
 @property (nonatomic, readonly) bool displaysAvalancheStacks;
 @property (nonatomic, readonly) long long forceLoadInitialSectionCount;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } gridContentInsets;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } layoutMargins;
 @property (nonatomic, readonly) long long layoutVariant;
 @property (nonatomic, readonly) double maxSearchBarWidth;
 @property (nonatomic, readonly) PUPhotosPickerViewControllerSpec *photosPickerViewControllerSpec;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } safeAreaInsets;
 @property (nonatomic, readonly) double sectionHeaderHeight;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } sectionHeaderInsets;
 @property (nonatomic, readonly) long long sectionHeaderStyle;
 @property (nonatomic, readonly) bool shouldPlaceDeleteInCenterToolbarPosition;
 @property (nonatomic, readonly) bool shouldPlaceSelectAllButtonInRightNavigationBar;
@@ -55,12 +71,17 @@
 - (struct CGSize { double x1; double x2; })contentSizeForViewInPopover;
 - (bool)displaysAvalancheStacks;
 - (long long)forceLoadInitialSectionCount;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })gridContentInsets;
 - (id)init;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })layoutMargins;
 - (long long)layoutVariant;
 - (double)maxSearchBarWidth;
 - (id)photosPickerViewControllerSpec;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })safeAreaInsets;
 - (double)sectionHeaderHeight;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionHeaderInsets;
 - (long long)sectionHeaderStyle;
+- (void)setSafeAreaInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (bool)shouldPlaceDeleteInCenterToolbarPosition;
 - (bool)shouldPlaceSelectAllButtonInRightNavigationBar;
 - (unsigned long long)supportedInterfaceOrientations;

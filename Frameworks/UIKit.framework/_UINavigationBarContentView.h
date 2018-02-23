@@ -9,8 +9,14 @@
     double  _backButtonMaximumWidth;
     UIImage * _backIndicatorImage;
     long long  _barMetrics;
+    NSMutableArray * _currentAnimations;
+    NSMutableArray * _currentCompletions;
     bool  _deferResolvedSizeChange;
     <_UINavigationBarContentViewDelegate> * _delegate;
+    bool  _hitTestingExtensionsAreValid;
+    bool  _isHidingBackButton;
+    bool  _isHidingLeadingBar;
+    bool  _isShowingBackButton;
     _UINavigationBarContentViewLayout * _layout;
     NSArray * _leadingBarButtonItems;
     bool  _leadingItemsSupplementBackItem;
@@ -56,11 +62,14 @@
 
 - (void).cxx_destruct;
 - (void)__backButtonAction:(id)arg1;
+- (bool)__setupTitleViewCanSkipUpdates;
 - (id)_accessibility_HUDItemForPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)_accessibility_barButtonItemAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)_accessibility_controlToActivateForHUDGestureLiftAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_addCoordinatedAnimation:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (void)_appearanceChanged;
 - (void)_applyTitleAttributesToLabel:(id)arg1 withString:(id)arg2;
+- (void)_clearAllAnimations;
 - (long long)_currentContentSize;
 - (id)_defaultInlineTitleAttributes;
 - (void)_intrinsicContentSizeInvalidatedForChildView:(id)arg1;
@@ -72,10 +81,11 @@
 - (void)_itemStandardViewNeedsUpdate:(id)arg1;
 - (id)_newLayout;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_overlayRectForView:(id)arg1 inTargetView:(id)arg2;
+- (void)_runAllScheduledAnimations;
 - (void)_setBackButtonMaximumWidth:(double)arg1;
 - (void)_setupBackButtonAnimated:(bool)arg1;
 - (void)_setupLeadingButtonBarAnimated:(bool)arg1;
-- (void)_setupTitleView;
+- (void)_setupTitleViewAnimated:(bool)arg1;
 - (void)_setupTrailingButtonBarAnimated:(bool)arg1;
 - (void)_updateLayoutMarginsForLayout:(id)arg1;
 - (id)accessibilityBackButtonView;
@@ -94,6 +104,7 @@
 - (id)defaultFontDescriptor;
 - (id)delegate;
 - (unsigned long long)edgesPaddingBarButtonItem:(id)arg1;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (bool)isRTL;

@@ -38,6 +38,7 @@
 - (id)delegate;
 - (void)disableDESWithCompletion:(id /* block */)arg1;
 - (void)fetchAssetsForLanguage:(id)arg1 completion:(id /* block */)arg2;
+- (void)fetchUserDataForLanguage:(id)arg1 completion:(id /* block */)arg2;
 - (void)finishAudio;
 - (void)getOfflineDictationStatusIgnoringCache:(bool)arg1 withCompletion:(id /* block */)arg2;
 - (void)getOfflineDictationStatusWithCompletion:(id /* block */)arg1;

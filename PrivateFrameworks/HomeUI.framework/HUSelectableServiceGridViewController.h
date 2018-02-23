@@ -20,6 +20,7 @@
 @property (readonly) Class superclass;
 
 + (id /* block */)defaultItemProviderCreatorWithOptions:(unsigned long long)arg1;
++ (id)itemServiceTypesToHide;
 
 - (void).cxx_destruct;
 - (void)_addAllServicesInSectionFromButton:(id)arg1;
@@ -29,6 +30,7 @@
 - (void)_setSelected:(bool)arg1 forItemsInSection:(long long)arg2;
 - (void)_updateSelectionState:(bool)arg1 forCell:(id)arg2;
 - (void)_updateToggleStateForSection:(long long)arg1 headerView:(id)arg2;
+- (void)addItemToSelection:(id)arg1;
 - (bool)allowsEmptySelection;
 - (bool)allowsMultipleSelection;
 - (bool)canSelectItem:(id)arg1 indexPath:(id)arg2;
@@ -37,6 +39,7 @@
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)configureCell:(id)arg1 forItem:(id)arg2;
+- (void)deleteItemFromSelection:(id)arg1;
 - (void)didChangeSelection;
 - (void)didDeselectItem:(id)arg1;
 - (void)didSelectItem:(id)arg1;
@@ -47,6 +50,7 @@
 - (bool)presentationCoordinator:(id)arg1 shouldBeginInteractivePresentationWithTouchLocation:(struct CGPoint { double x1; double x2; })arg2;
 - (id)selectedItems;
 - (id)serviceGridItemManager;
+- (bool)serviceGridItemManager:(id)arg1 shouldHideItem:(id)arg2;
 - (void)setAllowsEmptySelection:(bool)arg1;
 - (void)setAllowsMultipleSelection:(bool)arg1;
 - (void)setMutableSelectedItems:(id)arg1;

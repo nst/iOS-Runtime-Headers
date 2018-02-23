@@ -9,9 +9,8 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (bool)_isValidCertificateTrust:(struct __SecTrust { }*)arg1 forPinningPolicy:(struct __SecPolicy { }*)arg2;
 + (bool)isSetupServiceHost:(id)arg1;
-+ (bool)isValidCertificateTrust:(struct __SecTrust { }*)arg1 forSetupServiceHost:(id)arg2;
++ (bool)isValidCertificateTrust:(struct __SecTrust { }*)arg1;
 + (id)sharedPinner;
 
 - (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(id /* block */)arg3;

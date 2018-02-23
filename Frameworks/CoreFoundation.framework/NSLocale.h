@@ -112,9 +112,24 @@
 
 + (id)currentDeviceLanguageForFacebook;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
++ (id)_UIKBPreferredLocale;
+
 // Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
 
 + (id)vs_systemLanaguage;
+
+// Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
+
+- (bool)CalLanguageIsSimplifiedChinese;
+- (bool)CalPrefersFullMonthDisplayNames;
+- (bool)CalRegionIsChina;
+- (bool)CalShouldUseAbbreviatedDayNames;
+- (bool)CalUnableToAbbreviateMonthNames;
+- (bool)CalUsesCelsius;
+- (bool)_calendarIsIslamic;
+- (bool)_languageIsArabic;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
@@ -207,6 +222,10 @@
 
 + (id)tsu_firstPreferredLocalization;
 
+// Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
+
++ (id)pk_preferredLocale;
+
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
 + (unsigned long long)px_currentCharacterDirection;
@@ -222,6 +241,10 @@
 // Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
 
 + (long long)_vk_indexForLocale:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
+
+- (bool)isEqualToLocaleForWeather:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/WeatherFoundation.framework/WeatherFoundation
 

@@ -9,7 +9,7 @@
     AAGrandSlamSigner * _grandSlamSigner;
     AAFamilyInvite * _invite;
     NSOperationQueue * _inviteOperationQueue;
-    RemoteUIController * _remoteUIController;
+    AAUIRemoteUIController * _remoteUIController;
     NSMutableURLRequest * _startRemoteUIRequest;
 }
 

@@ -10,6 +10,7 @@
     NSString * _descriptiveText;
     WLKArtworkVariantListing * _images;
     bool  _isEvod;
+    NSString * _shortTitle;
     NSString * _title;
 }
 
@@ -20,6 +21,7 @@
 @property (nonatomic, readonly, copy) NSString *descriptiveText;
 @property (nonatomic, readonly) WLKArtworkVariantListing *images;
 @property (nonatomic, readonly) bool isEvod;
+@property (nonatomic, readonly, copy) NSString *shortTitle;
 @property (nonatomic, readonly, copy) NSString *title;
 
 + (Class)_classForContentType:(unsigned long long)arg1;
@@ -35,6 +37,7 @@
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
 - (bool)isEvod;
+- (id)shortTitle;
 - (id)title;
 
 @end

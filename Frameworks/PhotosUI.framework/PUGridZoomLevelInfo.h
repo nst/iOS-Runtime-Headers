@@ -68,7 +68,7 @@
 - (id)collectionViewLayout;
 - (bool)configureGridCell:(id)arg1 forIndexPath:(id)arg2;
 - (void)configureSectionHeaderView:(id)arg1 forVisualSection:(long long)arg2;
-- (bool)configureSupplementaryView:(id)arg1 ofKind:(id)arg2 forIndexPath:(id)arg3 animated:(bool)arg4;
+- (bool)configureSupplementaryView:(id)arg1 ofKind:(id)arg2 forIndexPath:(id)arg3;
 - (unsigned long long)dateRangeFormatterPreset;
 - (id)diagnosticsProviderForVisualSection:(long long)arg1;
 - (void)didFinishZoomLevelTransition;

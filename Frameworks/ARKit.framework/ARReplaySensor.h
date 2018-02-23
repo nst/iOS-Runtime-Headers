@@ -25,6 +25,7 @@
     struct opaqueCMSampleBuffer { } * _nextDepthSampleBuffer;
     struct opaqueCMSampleBuffer { } * _nextSampleBuffer;
     AVAssetReaderOutputMetadataAdaptor * _oldMotionOutputMetadataAdaptor;
+    unsigned long long  _recordedSensorTypes;
     bool  _replayInProgress;
     NSObject<OS_dispatch_queue> * _replayQueue;
     <ARReplaySensorDelegate> * _replaySensorDelegate;
@@ -39,6 +40,7 @@
 @property (nonatomic, readonly) NSString *deviceModel;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned long long powerUsage;
+@property (nonatomic, readonly) unsigned long long recordedSensorTypes;
 @property (nonatomic) <ARReplaySensorDelegate> *replaySensorDelegate;
 @property (readonly) Class superclass;
 
@@ -64,6 +66,7 @@
 - (unsigned long long)providedDataTypes;
 - (void)readFileMetadataFromAsset:(id)arg1;
 - (void)readMetadataIntoArrays;
+- (unsigned long long)recordedSensorTypes;
 - (void)replayData;
 - (id)replaySensorDelegate;
 - (struct __CVBuffer { }*)requestNextDepthPixelBufferForTimestamp:(double)arg1;

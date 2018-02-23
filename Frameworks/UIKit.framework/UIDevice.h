@@ -112,6 +112,10 @@
 
 - (id)debugHierarchyPropertyDescriptions;
 
+// Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
+
+- (bool)cn_isD22;
+
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
 - (id)mf_batteryLevelObservable;
@@ -129,6 +133,12 @@
 // Image: /System/Library/PrivateFrameworks/DrawingKit.framework/DrawingKit
 
 - (bool)dk_deviceSupportsGL;
+
+// Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
+
++ (id)hu_modelSpecificLocalizedStringKeyWithGreenTeaForKey:(id)arg1;
+
+- (bool)hu_isHomeAffordancePresent;
 
 // Image: /System/Library/PrivateFrameworks/MaterialKit.framework/MaterialKit
 

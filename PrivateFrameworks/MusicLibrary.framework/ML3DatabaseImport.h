@@ -14,6 +14,7 @@
     bool  _resetSync;
     bool  _sagaEnabled;
     long long  _storeAccountID;
+    bool  _suspendable;
     NSString * _syncAnchor;
     NSString * _syncLibraryID;
     NSData * _trackData;
@@ -31,6 +32,7 @@
 @property (getter=isResetSync, nonatomic, readonly) bool resetSync;
 @property (getter=isSagaEnabled, nonatomic, readonly) bool sagaEnabled;
 @property (nonatomic, readonly) long long storeAccountID;
+@property (getter=isSuspendable, nonatomic, readonly) bool suspendable;
 @property (nonatomic, readonly) NSString *syncAnchor;
 @property (nonatomic, readonly) NSString *syncLibraryID;
 @property (nonatomic, readonly) NSData *trackData;
@@ -52,6 +54,7 @@
 - (bool)isResetSync;
 - (bool)isSagaEnabled;
 - (bool)isServerImport;
+- (bool)isSuspendable;
 - (id)libraryPath;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)playlistData;

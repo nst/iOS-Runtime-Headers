@@ -29,6 +29,7 @@
 - (void)cancelConnectionsOfClass:(Class)arg1;
 - (id)init;
 - (void)invalidate;
+- (int)networkDisconnectRetryCount;
 - (id)networkStorage;
 - (id)session;
 - (void)setNetworkStorage:(id)arg1;

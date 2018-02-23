@@ -7,6 +7,8 @@
     ICURLBag * _URLBag;
     ICDelegateToken * _delegateToken;
     NSNumber * _delegatedDSID;
+    NSString * _delegatedStorefrontIdentifier;
+    ICURLBag * _delegatedURLBag;
     NSString * _iCloudPersonID;
     NSString * _storefrontIdentifier;
 }
@@ -15,6 +17,8 @@
 @property (nonatomic, retain) ICURLBag *URLBag;
 @property (nonatomic, copy) ICDelegateToken *delegateToken;
 @property (nonatomic, copy) NSNumber *delegatedDSID;
+@property (nonatomic, copy) NSString *delegatedStorefrontIdentifier;
+@property (nonatomic, retain) ICURLBag *delegatedURLBag;
 @property (nonatomic, copy) NSString *iCloudPersonID;
 @property (nonatomic, copy) NSString *storefrontIdentifier;
 
@@ -23,10 +27,14 @@
 - (id)URLBag;
 - (id)delegateToken;
 - (id)delegatedDSID;
+- (id)delegatedStorefrontIdentifier;
+- (id)delegatedURLBag;
 - (id)iCloudPersonID;
 - (void)setDSID:(id)arg1;
 - (void)setDelegateToken:(id)arg1;
 - (void)setDelegatedDSID:(id)arg1;
+- (void)setDelegatedStorefrontIdentifier:(id)arg1;
+- (void)setDelegatedURLBag:(id)arg1;
 - (void)setICloudPersonID:(id)arg1;
 - (void)setStorefrontIdentifier:(id)arg1;
 - (void)setURLBag:(id)arg1;

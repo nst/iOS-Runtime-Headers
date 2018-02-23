@@ -29,6 +29,6 @@
 - (void)observer:(id)arg1 updateSectionInfo:(id)arg2;
 - (void)reloadWithCompletion:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)updateSectionInfoBySectionIDs:(id)arg1;
+- (void)updateSectionInfoBySectionIDs:(id)arg1 completion:(id /* block */)arg2;
 
 @end

@@ -15,7 +15,7 @@
 + (id)logCategory;
 
 - (void).cxx_destruct;
-- (void)_auditLoggedInAccount;
+- (void)_auditLoggedInAccountFor:(id)arg1;
 - (void)_authenticate:(id)arg1 message:(id)arg2;
 - (void)_callCompletion:(id)arg1;
 - (void)_handleCompanionAuthenticationRequest:(id)arg1;
@@ -23,6 +23,7 @@
 - (void)_handleProxyDeviceRequest:(id)arg1;
 - (void)_handleSignoutRequest:(id)arg1;
 - (void)auditLoggedInAccount;
+- (void)auditLoggedInAccountFor:(id)arg1;
 - (void)configureWithWorkQueue:(id)arg1 messageDispatcher:(id)arg2;
 - (void)didCompleteAuthentication:(id)arg1 response:(id)arg2;
 - (id)loginSession;

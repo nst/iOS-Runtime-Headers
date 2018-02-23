@@ -23,6 +23,7 @@
 - (long long)softFailureCountForEventType:(id)arg1;
 - (long long)successCountForEventType:(id)arg1;
 - (id)summaryCounts;
+- (bool)tryToOpenDatabase;
 - (id)uploadDate;
 
 @end

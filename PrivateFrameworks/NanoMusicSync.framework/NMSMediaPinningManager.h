@@ -28,6 +28,8 @@
 + (id)_cachedIdentifiersDirectoryPath;
 + (id)_cachedPlaylistIdentifiersFilePath;
 + (id)_fetchMusicRecommendations;
++ (void)_persistNewClientToken;
++ (id)_tokenForInstance:(id)arg1;
 + (unsigned long long)mediaStorageSizeForCurrentWatch;
 + (bool)playlistPIDValidForPinning:(id)arg1;
 + (id)sharedManager;
@@ -39,11 +41,13 @@
 - (void)_handlePinningSelectionsDidChangeNotification:(id)arg1;
 - (void)_handlePinningSettingsDidChangeNotification:(id)arg1;
 - (void)_handleRecommendationLibraryContentsDidChangeNotification:(id)arg1;
-- (void)_handleRecommendationsDidChangeNotification:(id)arg1;
+- (void)_handleRecommendationSelectionsDidChangeNotification:(id)arg1;
+- (void)_handleRecommendationsDidUpdateNotification:(id)arg1;
 - (void)_invalidateCachedSongs;
 - (bool)_isAlbumPinned:(id)arg1;
 - (bool)_isPlaylistPinned:(id)arg1;
 - (id)_musicContainerList;
+- (void)_notePinningSettingsChangedLocally;
 - (unsigned int)_pairedWatchVersion;
 - (void)_refreshAlbumIdentifiersWithPath:(id)arg1;
 - (void)_refreshPlaylistIdentifiersWithPath:(id)arg1;

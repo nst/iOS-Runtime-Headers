@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Home.framework/Home
  */
 
-@interface HFItemManager : NSObject <HFAccessoryObserver, HFCameraObserver, HFHomeManagerObserver, HFHomeObserver, HFItemUpdating, HFMediaProfileObserver, HFMediaSessionObserver, HFResidentDeviceObserver, HFSoftwareUpdateControllerObserver, HFSoftwareUpdateObserver, HFStateDumpSerializable, HFTemperatureUnitObserver> {
+@interface HFItemManager : NSObject <HFAVRoutingControllerObserver, HFAccessoryObserver, HFCameraObserver, HFHomeManagerObserver, HFHomeObserver, HFItemUpdating, HFMediaObjectObserver, HFMediaSessionObserver, HFResidentDeviceObserver, HFSoftwareUpdateControllerObserver, HFSoftwareUpdateObserver, HFStateDumpSerializable, HFSymptomsHandlerObserver, HFTemperatureUnitObserver, HFUserObserver> {
     HFItemManagerBatchedDelegateAdapter * _batchedDelegateAdapterAllowingReads;
     HFItemManagerBatchedDelegateAdapter * _batchedDelegateAdapterDisallowingReads;
     NSMapTable * _childItemsByParentItem;
@@ -47,7 +47,6 @@
 + (bool)_canReloadDuringUnitTests;
 
 - (void).cxx_destruct;
-- (void)_accessorySettingUpdated:(id)arg1;
 - (id)_allDisplayedItemsIncludingInternalItems;
 - (id)_allItemsIncludingInternalItems;
 - (id)_allSuppressedCharacteristics;
@@ -72,6 +71,7 @@
 - (id)_indexPathForItem:(id)arg1 inDisplayedItemsArray:(id)arg2;
 - (id)_internalItems;
 - (id)_invalidationReasonsForAddedOrRemovedAccessory:(id)arg1;
+- (id)_invalidationReasonsForAddedOrRemovedMediaSystem:(id)arg1;
 - (id)_itemForSorting;
 - (id)_itemsOfClass:(Class)arg1 inItems:(id)arg2 allowTransformedItems:(bool)arg3;
 - (id)_itemsToHideInSet:(id)arg1;
@@ -80,16 +80,20 @@
 - (id)_itemsToUpdateForAccessorySettingsChange:(id)arg1;
 - (id)_itemsToUpdateForAllowAccessWhileLockedSettingChange;
 - (id)_itemsToUpdateForIncomingInvitation:(id)arg1;
+- (id)_itemsToUpdateForMediaObjectChange:(id)arg1;
 - (id)_itemsToUpdateForMediaSessionChange:(id)arg1;
+- (id)_itemsToUpdateForMediaSystemChange:(id)arg1;
 - (id)_itemsToUpdateForModifiedAccessories:(id)arg1;
 - (id)_itemsToUpdateForModifiedActionSets:(id)arg1;
 - (id)_itemsToUpdateForModifiedActions:(id)arg1;
 - (id)_itemsToUpdateForModifiedCameras:(id)arg1;
 - (id)_itemsToUpdateForModifiedCharacteristics:(id)arg1;
+- (id)_itemsToUpdateForModifiedCharacteristics:(id)arg1 includeSuppressedCharacteristics:(bool)arg2;
 - (id)_itemsToUpdateForModifiedEvents:(id)arg1;
 - (id)_itemsToUpdateForModifiedMetadataForHomes:(id)arg1;
 - (id)_itemsToUpdateForModifiedResidentDevices:(id)arg1;
 - (id)_itemsToUpdateForModifiedRooms:(id)arg1;
+- (id)_itemsToUpdateForModifiedRoutes:(id)arg1;
 - (id)_itemsToUpdateForModifiedServiceGroups:(id)arg1;
 - (id)_itemsToUpdateForModifiedServiceTypes:(id)arg1;
 - (id)_itemsToUpdateForModifiedServices:(id)arg1;
@@ -140,14 +144,21 @@
 - (void)accessory:(id)arg1 didUpdateApplicationDataForService:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateAssociatedServiceTypeForService:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateBundleID:(id)arg2;
+- (void)accessory:(id)arg1 didUpdateConfigurationStateForService:(id)arg2;
+- (void)accessory:(id)arg1 didUpdateConfiguredNameForService:(id)arg2;
+- (void)accessory:(id)arg1 didUpdateDefaultNameForService:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateFirmwareUpdateAvailable:(bool)arg2;
 - (void)accessory:(id)arg1 didUpdateFirmwareVersion:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateHasAuthorizationDataForCharacteristic:(id)arg2;
+- (void)accessory:(id)arg1 didUpdateLoggedInAccount:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateNameForService:(id)arg2;
+- (void)accessory:(id)arg1 didUpdateServiceSubtypeForService:(id)arg2;
+- (void)accessory:(id)arg1 didUpdateSoftwareVersion:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateStoreID:(id)arg2;
 - (void)accessory:(id)arg1 service:(id)arg2 didUpdateValueForCharacteristic:(id)arg3;
 - (void)accessoryDidUpdateAdditionalSetupRequired:(id)arg1;
 - (void)accessoryDidUpdateApplicationData:(id)arg1;
+- (void)accessoryDidUpdateControllable:(id)arg1;
 - (void)accessoryDidUpdateName:(id)arg1;
 - (void)accessoryDidUpdateReachability:(id)arg1;
 - (void)accessoryDidUpdateServices:(id)arg1;
@@ -155,6 +166,7 @@
 - (void)accessorySettings:(id)arg1 willWriteValueForSettings:(id)arg2;
 - (id)allDisplayedItems;
 - (id)allItems;
+- (id)attributedFooterTitleForSection:(unsigned long long)arg1;
 - (id)batchedDelegateAdapterAllowingReads;
 - (id)batchedDelegateAdapterDisallowingReads;
 - (void)beginSuppressingUpdatesForCharacteristics:(id)arg1 withReason:(id)arg2;
@@ -186,6 +198,7 @@
 - (id)home;
 - (void)home:(id)arg1 didAddAccessory:(id)arg2;
 - (void)home:(id)arg1 didAddActionSet:(id)arg2;
+- (void)home:(id)arg1 didAddMediaSystem:(id)arg2;
 - (void)home:(id)arg1 didAddResidentDevice:(id)arg2;
 - (void)home:(id)arg1 didAddRoom:(id)arg2;
 - (void)home:(id)arg1 didAddRoom:(id)arg2 toZone:(id)arg3;
@@ -199,6 +212,7 @@
 - (void)home:(id)arg1 didReadValuesForCharacteristics:(id)arg2 failedCharacteristics:(id)arg3;
 - (void)home:(id)arg1 didRemoveAccessory:(id)arg2;
 - (void)home:(id)arg1 didRemoveActionSet:(id)arg2;
+- (void)home:(id)arg1 didRemoveMediaSystem:(id)arg2;
 - (void)home:(id)arg1 didRemoveResidentDevice:(id)arg2;
 - (void)home:(id)arg1 didRemoveRoom:(id)arg2;
 - (void)home:(id)arg1 didRemoveRoom:(id)arg2 fromZone:(id)arg3;
@@ -214,6 +228,7 @@
 - (void)home:(id)arg1 didUpdateApplicationDataForActionSet:(id)arg2;
 - (void)home:(id)arg1 didUpdateApplicationDataForRoom:(id)arg2;
 - (void)home:(id)arg1 didUpdateApplicationDataForServiceGroup:(id)arg2;
+- (void)home:(id)arg1 didUpdateMediaSystem:(id)arg2;
 - (void)home:(id)arg1 didUpdateNameForActionSet:(id)arg2;
 - (void)home:(id)arg1 didUpdateNameForRoom:(id)arg2;
 - (void)home:(id)arg1 didUpdateNameForServiceGroup:(id)arg2;
@@ -248,8 +263,13 @@
 - (id)initWithDelegate:(id)arg1 sourceItem:(id)arg2;
 - (id)itemProviders;
 - (id)lastUpdatedHome;
-- (void)mediaProfile:(id)arg1 didUpdateSettings:(id)arg2;
+- (void)mediaObject:(id)arg1 didUpdateMediaSession:(id)arg2;
+- (void)mediaObject:(id)arg1 didUpdateSettings:(id)arg2;
 - (void)mediaSession:(id)arg1 didUpdatePlaybackState:(long long)arg2;
+- (void)mediaSession:(id)arg1 failedToUpdatePlaybackStateWithError:(id)arg2;
+- (void)mediaSession:(id)arg1 willUpdatePlaybackState:(long long)arg2;
+- (void)mediaSystem:(id)arg1 didUpdateComponents:(id)arg2;
+- (void)mediaSystem:(id)arg1 didUpdateName:(id)arg2;
 - (void)notificationSettingsInvalidatedForManager:(id)arg1;
 - (unsigned long long)numberOfSections;
 - (unsigned long long)overallLoadingState;
@@ -263,6 +283,8 @@
 - (void)residentDevice:(id)arg1 didUpdateEnabled:(bool)arg2;
 - (void)residentDevice:(id)arg1 didUpdateName:(id)arg2;
 - (void)residentDevice:(id)arg1 didUpdateStatus:(unsigned long long)arg2;
+- (void)routingController:(id)arg1 pickedRouteDidChange:(id)arg2;
+- (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (unsigned long long)sectionIndexForDisplayedSectionIdentifier:(id)arg1;
 - (id)sections;
 - (void)setBatchedDelegateAdapterAllowingReads:(id)arg1;
@@ -278,13 +300,20 @@
 - (void)setSections:(id)arg1;
 - (void)setSourceItem:(id)arg1;
 - (void)setSuppressedCharacteristicUpdatesByReason:(id)arg1;
+- (void)settingsDidUpdate:(id)arg1;
+- (void)softwareUpdate:(id)arg1 didUpdateDocumentation:(id)arg2;
+- (void)softwareUpdate:(id)arg1 didUpdateDocumentationAvailable:(bool)arg2;
 - (void)softwareUpdate:(id)arg1 didUpdateState:(long long)arg2;
 - (void)softwareUpdateController:(id)arg1 didUpdateAvailableUpdate:(id)arg2;
 - (void)sortDisplayedItemsInSection:(long long)arg1;
 - (id)sourceItem;
 - (id)suppressedCharacteristicUpdatesByReason;
+- (void)symptomsHandler:(id)arg1 didUpdateCanInitiateFix:(long long)arg2;
+- (void)symptomsHandler:(id)arg1 didUpdateFixState:(long long)arg2;
+- (void)symptomsHandler:(id)arg1 didUpdateSymptoms:(id)arg2;
 - (void)temperatureUnitObserver:(id)arg1 didChangeTemperatureUnit:(bool)arg2;
 - (id)titleForSection:(unsigned long long)arg1;
 - (id)updateResultsForItems:(id)arg1 senderSelector:(SEL)arg2;
+- (void)user:(id)arg1 didUpdateAssistantAccessControl:(id)arg2 forHome:(id)arg3;
 
 @end

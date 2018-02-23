@@ -12,7 +12,7 @@
     UIActivityContinuationManager * _activityContinuationManager;
     bool  _alwaysHitTestsForMainScreen;
     struct { 
-        unsigned int deactivatingReasonFlags : 13; 
+        unsigned int deactivatingReasonFlags : 14; 
         unsigned int isLaunchedSuspended : 1; 
         unsigned int calledNonSuspendedLaunchDelegate : 1; 
         unsigned int calledSuspendedLaunchDelegate : 1; 
@@ -204,7 +204,6 @@
 + (bool)_isSystemUIService;
 + (void)_screensHaveConnected;
 + (bool)_shouldBigify;
-+ (bool)_shouldForceClassicForExtensions;
 + (void)_startStatusBarServerIfNecessary;
 + (void)_startWindowServerIfNecessary;
 + (Class)_statusBarClass;
@@ -299,7 +298,7 @@
 - (void)_createStatusBarWithRequestedStyle:(long long)arg1 orientation:(long long)arg2 hidden:(bool)arg3;
 - (long long)_currentExpectedInterfaceOrientation;
 - (id)_currentFrameCountForTestDisplay;
-- (unsigned long long)_currentScreenEdgesDeferringSystemGesturesAffectedByStatusBar:(bool)arg1;
+- (unsigned long long)_currentScreenEdgesDeferringSystemGestures;
 - (id)_currentTests;
 - (double)_currentTintViewDuration;
 - (id)_currentTintViewWindow;
@@ -405,6 +404,7 @@
 - (bool)_isShowingRemoteSheet;
 - (bool)_isSpringBoard;
 - (bool)_isSpringBoardShowingAnAlert;
+- (bool)_isStatusBarEffectivelyHiddenForContentOverlayInsets;
 - (bool)_isStatusBarHiddenForOrientation:(long long)arg1;
 - (bool)_isStatusBarTintColorLocked;
 - (bool)_isSupportedOrientation:(long long)arg1;
@@ -570,7 +570,6 @@
 - (void)_sheetWithRemoteIdentifierDidDismiss:(id)arg1;
 - (bool)_shouldAllowKeyboardArbiter;
 - (bool)_shouldAttemptOpenURL:(id)arg1;
-- (bool)_shouldDelayTouchesForControlCenter;
 - (bool)_shouldForceClassicMode;
 - (bool)_shouldHandleTestURL:(id)arg1;
 - (bool)_shouldIgnoreHeadsetClicks;
@@ -939,7 +938,6 @@
 - (id)statusBar;
 - (void)statusBar:(id)arg1 didAnimateFromHeight:(double)arg2 toHeight:(double)arg3 animation:(int)arg4;
 - (int)statusBar:(id)arg1 effectiveStyleOverridesForRequestedStyle:(long long)arg2 overrides:(int)arg3;
-- (long long)statusBar:(id)arg1 styleForRequestedStyle:(long long)arg2 overrides:(int)arg3;
 - (void)statusBar:(id)arg1 willAnimateFromHeight:(double)arg2 toHeight:(double)arg3 duration:(double)arg4 animation:(int)arg5;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })statusBarFrame;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })statusBarFrameForOrientation:(long long)arg1;
@@ -1010,6 +1008,10 @@
 
 + (void)shouldShowNetworkActivityIndicatorInRemoteApplication:(bool)arg1;
 
+// Image: /System/Library/Frameworks/iAd.framework/iAd
+
++ (bool)uiApplicationHasNewsClientEntitlement;
+
 // Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
 
 - (bool)_gkSendAction:(SEL)arg1 viaResponder:(id)arg2 withObject:(id)arg3;
@@ -1067,9 +1069,6 @@
 - (id)_accessibilityViewChildrenWithOptions:(id)arg1 referenceWindow:(id)arg2;
 - (id)accessibilityLastGesturedTextInputStatusChange;
 - (id)accessibilityPresentingViewController;
-- (id)ax_descriptionWithIndentation:(long long)arg1 includeAXInfo:(bool)arg2;
-- (void)ax_initializeDebugging;
-- (id)ax_recursiveDescriptionWithIndentation:(long long)arg1 includeLayers:(bool)arg2 includeAXInfo:(bool)arg3;
 - (void)setAccessibilityLastGesturedTextInputStatusChange:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos

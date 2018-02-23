@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
  */
 
-@interface PXImageModulationManager : PXObservable <PXChangeObserver, PXSettingsKeyObserver> {
+@interface PXImageModulationManager : PXObservable <PXChangeObserver, PXPreferencesObserver, PXSettingsKeyObserver> {
     double  _HDRFocus;
     bool  _active;
+    bool  _applicationActive;
     CAContext * _coreAnimationContext;
     bool  _enabled;
     NSHashTable * _imageLayerModulators;
@@ -15,10 +16,12 @@
     struct { 
         bool enabled; 
         bool lowPowerModeEnabled; 
+        bool active; 
         bool HDRFocus; 
         bool imageModulationIntensity; 
         bool requestedEDRHeadroomFactor; 
         bool finalRequestedEDRHeadroomFactor; 
+        bool desiredDynamicRange; 
         bool imageLayerModulators; 
     }  _needsUpdateFlags;
     double  _requestedEDRHeadroomFactor;
@@ -28,7 +31,8 @@
 }
 
 @property (nonatomic, readonly) double HDRFocus;
-@property (getter=isActive, nonatomic) bool active;
+@property (getter=isActive, nonatomic, readonly) bool active;
+@property (getter=isApplicationActive, nonatomic) bool applicationActive;
 @property (nonatomic, retain) CAContext *coreAnimationContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -52,6 +56,8 @@
 - (double)HDRFocus;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_applicationDidResignActive:(id)arg1;
+- (void)_invalidateActive;
+- (void)_invalidateDesiredDynamicRange;
 - (void)_invalidateEnabled;
 - (void)_invalidateFinalRequestedEDRHeadroomFactor;
 - (void)_invalidateHDRFocus;
@@ -62,7 +68,9 @@
 - (bool)_needsUpdate;
 - (void)_processInfoPowerStateDidChange:(id)arg1;
 - (void)_setNeedsUpdate;
+- (void)_updateActiveIfNeeded;
 - (void)_updateCoreAnimationContext;
+- (void)_updateDesiredDynamicRangeIfNeeded;
 - (void)_updateEnabledIfNeeded;
 - (void)_updateFinalRequestedEDRHeadroomFactorIfNeeded;
 - (void)_updateHDRFocusIfNeeded;
@@ -82,15 +90,18 @@
 - (id)init;
 - (id)initWithRootViewController:(id)arg1 mainScreen:(bool)arg2;
 - (bool)isActive;
+- (bool)isApplicationActive;
 - (bool)isEnabled;
 - (bool)isLowPowerModeEnabled;
 - (bool)isMainScreen;
 - (id)mutableChangeObject;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
+- (void)preferencesDidChange;
 - (double)requestedEDRHeadroomFactor;
 - (id)requestedEDRHeadroomFactorFilter;
 - (id)rootViewController;
 - (void)setActive:(bool)arg1;
+- (void)setApplicationActive:(bool)arg1;
 - (void)setCoreAnimationContext:(id)arg1;
 - (void)setEnabled:(bool)arg1;
 - (void)setHDRFocus:(double)arg1;

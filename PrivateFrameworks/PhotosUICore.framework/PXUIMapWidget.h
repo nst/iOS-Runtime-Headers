@@ -8,7 +8,7 @@
     UIView * __containerView;
     UIView * __contentView;
     PXPlacesSnapshotFactory * __factory;
-    PXUIImageView * __imageView;
+    PXImageUIView * __imageView;
     PXPlacesMapFetchResultViewController * __mapViewController;
     NSMutableArray * __nearbyCountCompletionBlocks;
     PHAsset * _assetUsedForFooterTitle;
@@ -39,7 +39,7 @@
 @property (nonatomic, readonly) UIView *_containerView;
 @property (nonatomic, readonly) UIView *_contentView;
 @property (nonatomic, retain) PXPlacesSnapshotFactory *_factory;
-@property (nonatomic, readonly) PXUIImageView *_imageView;
+@property (nonatomic, readonly) PXImageUIView *_imageView;
 @property (nonatomic, readonly) PXPlacesMapFetchResultViewController *_mapViewController;
 @property (nonatomic, retain) NSMutableArray *_nearbyCountCompletionBlocks;
 @property (nonatomic, readonly) bool allowUserInteractionWithSubtitle;

@@ -81,7 +81,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSDate *expirationDate;
 @property (getter=isExpired, nonatomic, readonly) bool expired;
-@property (nonatomic, copy) NSDictionary *extendedData;
+@property (copy) NSDictionary *extendedData;
 @property (nonatomic, readonly) bool fileExists;
 @property (nonatomic, readonly) long long fileFormat;
 @property (nonatomic) long long fileLocation;

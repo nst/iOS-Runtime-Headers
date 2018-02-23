@@ -35,6 +35,8 @@
     UIColor * _progressIndicatorColor;
     id  _progressIndicatorCompositingFilter;
     SKUIPlayButtonShapeView * _selectedLayer;
+    UIColor * _selectionColor;
+    id  _selectionCompositingFilter;
     bool  _showBorder;
     bool  _showOuterBorder;
     bool  _showingPlayIndicator;
@@ -139,6 +141,7 @@
 - (void)setProgressIndicatorColor:(id)arg1;
 - (void)setProgressIndicatorColor:(id)arg1 withCompositingFilter:(id)arg2;
 - (void)setSelected:(bool)arg1;
+- (void)setSelectionColor:(id)arg1 withCompositingFilter:(id)arg2;
 - (void)setShowBorder:(bool)arg1;
 - (void)setShowOuterBorder:(bool)arg1;
 - (bool)showOuterBorder;

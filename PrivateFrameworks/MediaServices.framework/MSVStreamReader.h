@@ -31,6 +31,7 @@
 
 - (void).cxx_destruct;
 - (id)_compressedDataForData:(id)arg1;
+- (bool)_shouldHandleEvent;
 - (void)dealloc;
 - (id /* block */)didEncounterErrorBlock;
 - (id /* block */)didFinishReadingBlock;

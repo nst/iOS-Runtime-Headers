@@ -3,6 +3,7 @@
  */
 
 @interface BiometricKitXPCClient : NSObject {
+    unsigned long long  _clientID;
     long long  _clientType;
     BiometricKitXPCClientConnection * _connection;
     bool  _connectionInitialized;
@@ -13,6 +14,8 @@
 @property (nonatomic, readonly) unsigned long long clientID;
 @property (nonatomic, readonly) unsigned long long connectionId;
 @property (nonatomic) <BiometricKitDelegateXpcProtocol> *delegate;
+
++ (void)initialize;
 
 - (void).cxx_destruct;
 - (void)cancel;
@@ -29,8 +32,10 @@
 - (int)enableBackgroundFdet:(bool)arg1;
 - (void)enroll:(int)arg1 forUser:(unsigned int)arg2 withOptions:(id)arg3 async:(bool)arg4 withReply:(id /* block */)arg5;
 - (int)enrollContinue;
+- (int)fieldDiagnosticsControl:(unsigned int)arg1 inData:(id)arg2 outData:(id*)arg3;
 - (bool)fileRadarWithLogs:(id)arg1 withDescription:(id)arg2;
 - (int)forceBioLockoutForUser:(unsigned int)arg1 withOptions:(id)arg2;
+- (int)getAugmentationEligibility:(bool*)arg1 forIdentity:(id)arg2;
 - (long long)getBioLockoutStateForUser:(unsigned int)arg1;
 - (int)getBiometryAvailability:(long long*)arg1 forUser:(unsigned int)arg2;
 - (id)getCalibrationDataInfo;
@@ -65,6 +70,7 @@
 - (id)pullCaptureBuffer;
 - (id)pullDebugImageData:(bool)arg1 rotated:(bool)arg2 imageWidth:(unsigned int*)arg3 imageHeight:(unsigned int*)arg4;
 - (id)pullMatchPolicyInfoData;
+- (int)queryIdentityMigrationFailureForUser:(unsigned int)arg1 failed:(bool*)arg2 clear:(bool)arg3;
 - (int)registerDSID:(unsigned long long)arg1 withOptions:(id)arg2;
 - (void)registerDelegate:(bool)arg1;
 - (void)registerDelegateCall:(bool)arg1;

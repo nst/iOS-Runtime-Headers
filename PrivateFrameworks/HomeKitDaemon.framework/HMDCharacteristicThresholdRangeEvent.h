@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCharacteristicThresholdRangeEvent : HMDCharacteristicEventBase <HMFDumpState, HMFLogging, HMFMessageReceiver, NSSecureCoding> {
+@interface HMDCharacteristicThresholdRangeEvent : HMDCharacteristicEventBase <HMDHomeMessageReceiver, HMFDumpState, HMFLogging, NSSecureCoding> {
     NSNumber * _max;
     NSNumber * _min;
 }
@@ -12,6 +12,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSNumber *max;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (readonly, copy) NSSet *messageReceiverChildren;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, retain) NSNumber *min;
 @property (readonly) Class superclass;

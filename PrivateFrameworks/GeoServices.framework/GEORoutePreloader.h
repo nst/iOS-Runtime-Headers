@@ -6,6 +6,12 @@
     id /* block */  _batteryHandler;
     double  _currentRoutePosition;
     <GEORoutePreloadSessionDelegate> * _delegate;
+    struct GEOOnce_s { 
+        struct os_unfair_lock_s { 
+            unsigned int _os_unfair_lock_opaque; 
+        } lock; 
+        bool didRun; 
+    }  _didTearDown;
     int  _downloadState;
     bool  _enabled;
     bool  _fullDebuggingEnabled;
@@ -51,6 +57,7 @@
 - (bool)loggingEnabled;
 - (bool)minimalDebuggingEnabled;
 - (unsigned long long)networkQuality;
+- (void)performTearDown;
 - (int)preloadStateForTile:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (id)preloaderLog;
 - (void)reachabilityChanged:(id)arg1;
@@ -64,6 +71,7 @@
 - (void)start;
 - (void)stop;
 - (void)stopLoading;
+- (void)tearDown;
 - (id /* block */)tileKeyIsDownloadedPredicate;
 - (void)tilesChanged;
 - (void)updateWithRouteMatch:(id)arg1;

@@ -5,7 +5,7 @@
 @interface _WKProcessPoolConfiguration : NSObject <NSCopying, WKObject> {
     struct ObjectStorage<API::ProcessPoolConfiguration> { 
         struct type { 
-            unsigned char __lx[232]; 
+            unsigned char __lx[264]; 
         } data; 
     }  _processPoolConfiguration;
 }

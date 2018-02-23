@@ -27,6 +27,7 @@
 @property (nonatomic, readonly) <ADSSession_RPC> *rpcProxy;
 @property (readonly) Class superclass;
 
++ (bool)adShouldCreateADSession;
 + (id)sharedInstance;
 
 - (id)_adSpaceForIdentifier:(id)arg1;

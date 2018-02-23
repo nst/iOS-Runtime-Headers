@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/BatteryCenter.framework/BatteryCenter
  */
 
-@interface BCBatteryDevice : NSObject <NSCoding, NSCopying> {
+@interface BCBatteryDevice : NSObject <NSCopying, NSSecureCoding> {
     unsigned long long  _accessoryCategory;
     NSString * _accessoryIdentifier;
     bool  _approximatesPercentCharge;
@@ -49,6 +49,7 @@
 @property (nonatomic, readonly) long long vendor;
 
 + (id)batteryDeviceWithIdentifier:(id)arg1 vendor:(long long)arg2 productIdentifier:(long long)arg3 parts:(unsigned long long)arg4 matchIdentifier:(id)arg5;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_lazyGlyph;

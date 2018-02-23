@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCPersonalizationWhitelist : NSObject <NSCopying, NSSecureCoding> {
+@interface FCPersonalizationWhitelist : NSObject <FCJSONEncodableObjectProviding, NSCopying, NSSecureCoding> {
     NTPBPersonalizationWhitelist * _pbWhitelist;
     NSSet * _portraitDisabledTagIDs;
     NSDictionary * _whitelist;
@@ -24,6 +24,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPBPersonalizationWhitelist:(id)arg1;
+- (id)jsonEncodableObject;
 - (id)optionalTags;
 - (id)portraitDisabledTagIDs;
 - (void)setPortraitDisabledTagIDs:(id)arg1;

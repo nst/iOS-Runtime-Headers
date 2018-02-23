@@ -24,6 +24,7 @@
     long long  _messageID;
     NSAttributedString * _messageSubject;
     NSDictionary * _messageSummaryInfo;
+    NSString * _notificationIDSTokenURI;
     NSData * _payloadData;
     NSString * _plainBody;
     IMHandle * _sender;
@@ -78,6 +79,7 @@
 @property (nonatomic, readonly) NSAttributedString *messageSubject;
 @property (nonatomic, readonly, copy) NSDictionary *messageSummaryInfo;
 @property (setter=_messageSummaryInfo:, nonatomic, copy) NSDictionary *messageSummaryInfo;
+@property (nonatomic, retain) NSString *notificationIDSTokenURI;
 @property (nonatomic, retain) NSData *payloadData;
 @property (nonatomic, readonly) NSString *plainBody;
 @property (setter=_updateSender:, nonatomic, retain) IMHandle *sender;
@@ -185,6 +187,7 @@
 - (id)messageSubject;
 - (id)messageSummaryInfo;
 - (id)messagesBySeparatingRichLinks;
+- (id)notificationIDSTokenURI;
 - (id)payloadData;
 - (id)plainBody;
 - (id)sender;
@@ -196,6 +199,7 @@
 - (void)setIsAddressedToMe:(bool)arg1;
 - (void)setIsInvitationMessage:(bool)arg1;
 - (void)setIsSOS:(bool)arg1;
+- (void)setNotificationIDSTokenURI:(id)arg1;
 - (void)setPayloadData:(id)arg1;
 - (void)setTimeExpressiveSendPlayed:(id)arg1;
 - (id)subject;

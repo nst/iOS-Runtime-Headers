@@ -67,6 +67,7 @@
 - (void)_handleEndedTouches:(id)arg1 withFinalStateAdjustments:(id /* block */)arg2;
 - (double)_hysteresis;
 - (void)_ignoreTouchForTouchIdentifier:(unsigned int)arg1;
+- (void)_ignoreTouches:(id)arg1 forEvent:(id)arg2;
 - (bool)_ignoresStationaryTouches;
 - (long long)_lastTouchCount;
 - (struct UIOffset { double x1; double x2; })_offsetInViewFromSceneReferenceLocation:(struct CGPoint { double x1; double x2; })arg1 toSceneReferenceLocation:(struct CGPoint { double x1; double x2; })arg2;

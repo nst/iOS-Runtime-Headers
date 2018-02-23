@@ -54,6 +54,5 @@
 - (bool)isPeriodValid:(id)arg1;
 - (id)offerName;
 - (id)subscriptionPeriodInISO_8601;
-- (id)trialPeriodInISO_8601;
 
 @end

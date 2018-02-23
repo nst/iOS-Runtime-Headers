@@ -51,10 +51,13 @@
 + (id)_bagValueForKey:(id)arg1;
 + (id)_fetchNetworkQualityReports;
 + (double)_localTimeIntervalToServerTimeInterval:(double)arg1;
++ (unsigned long long)_messageSizeFromTask:(id)arg1 isRequest:(bool)arg2 delegate:(id)arg3;
 + (id)_resolvedIPAddressFromTask:(id)arg1;
 + (bool)_shouldCollectNetworkLogs;
 + (bool)_shouldCreateLocalCache;
++ (id)_tidStateForTask:(id)arg1 delegate:(id)arg2;
 + (double)_timingDataMetricToServerTimeInterval:(id)arg1;
++ (id)eventFromTimingData:(id)arg1 delegate:(id)arg2 task:(id)arg3 error:(id)arg4;
 + (id)eventFromTimingData:(id)arg1 requestProperties:(id)arg2 task:(id)arg3 error:(id)arg4;
 + (id)eventFromTimingData:(id)arg1 task:(id)arg2;
 + (id)eventFromTimingData:(id)arg1 task:(id)arg2 error:(id)arg3;

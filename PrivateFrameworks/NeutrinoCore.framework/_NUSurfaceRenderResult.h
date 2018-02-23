@@ -16,6 +16,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)debugDescription;
 - (id)image;
 - (void)setImage:(id)arg1;
 

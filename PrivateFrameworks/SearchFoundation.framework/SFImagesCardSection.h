@@ -4,12 +4,14 @@
 
 @interface SFImagesCardSection : SFCardSection <NSCopying, NSSecureCoding, SFImagesCardSection> {
     SFColor * _backgroundColor;
+    bool  _borderless;
     bool  _canBeHidden;
     struct { 
         unsigned int canBeHidden : 1; 
         unsigned int hasTopPadding : 1; 
         unsigned int hasBottomPadding : 1; 
         unsigned int separatorStyle : 1; 
+        unsigned int borderless : 1; 
     }  _has;
     bool  _hasBottomPadding;
     bool  _hasTopPadding;
@@ -22,6 +24,7 @@
 }
 
 @property (nonatomic, retain) SFColor *backgroundColor;
+@property (nonatomic) bool borderless;
 @property (nonatomic) bool canBeHidden;
 @property (nonatomic, copy) NSString *cardSectionId;
 @property (nonatomic, copy) NSArray *commands;
@@ -48,10 +51,12 @@
 
 - (void).cxx_destruct;
 - (id)backgroundColor;
+- (bool)borderless;
 - (bool)canBeHidden;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
+- (bool)hasBorderless;
 - (bool)hasBottomPadding;
 - (bool)hasCanBeHidden;
 - (bool)hasHasBottomPadding;
@@ -67,6 +72,7 @@
 - (id)punchoutPickerTitle;
 - (int)separatorStyle;
 - (void)setBackgroundColor:(id)arg1;
+- (void)setBorderless:(bool)arg1;
 - (void)setCanBeHidden:(bool)arg1;
 - (void)setHasBottomPadding:(bool)arg1;
 - (void)setHasTopPadding:(bool)arg1;

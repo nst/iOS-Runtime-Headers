@@ -74,6 +74,7 @@
 - (void)_dismissCompactSwitcherOverKeyboardWithCompletion:(id /* block */)arg1;
 - (id)_entryViewSnapshotWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_handleOrientation;
+- (bool)_isRunningInMVS;
 - (bool)_isRunningPPT;
 - (void)_launchAppExtensionForDebugging;
 - (void)_loadPhotosBrowser;
@@ -171,12 +172,12 @@
 - (void)presentAppManager;
 - (void)presentAppStoreForAdamID:(id)arg1;
 - (void)presentAppStoreForURL:(id)arg1;
-- (void)presentAppStoreToManagedTabForPlugin:(id)arg1;
+- (void)presentAppStoreForURL:(id)arg1 fromSourceApplication:(id)arg2;
 - (void)presentPluginWithBundleID:(id)arg1 appLaunchPayload:(id)arg2;
 - (void)presentViewControllerWithPluginChatItem:(id)arg1 expanded:(bool)arg2;
 - (id)presentedBrowserNavigationController;
 - (bool)presentsHandwritingOnRotation;
-- (void)registerForTextInputPayloadHandling;
+- (void)registerForTextInputPayloadHandling:(bool)arg1;
 - (void)requestPhotoBrowserInitFromDraft:(id)arg1;
 - (void)requestPhotoBrowserToAppendFinalImagesToComposition;
 - (void)requestPhotoBrowserToPrepareForDraft;
@@ -194,6 +195,7 @@
 - (void)setInCollapseOrExpandAnimation:(bool)arg1;
 - (void)setInputViewVisible:(bool)arg1;
 - (void)setInputViewVisible:(bool)arg1 entryFieldCollapsed:(bool)arg2 animated:(bool)arg3;
+- (void)setInputViewVisible:(bool)arg1 entryFieldCollapsed:(bool)arg2 animated:(bool)arg3 messageDelegate:(bool)arg4;
 - (void)setInsertPayloadCompletionHandler:(id /* block */)arg1;
 - (void)setKeyboardIsHiding:(bool)arg1;
 - (void)setLastSeenOrientation:(long long)arg1;
@@ -224,6 +226,7 @@
 - (void)startEditingPayload:(id)arg1 dismiss:(bool)arg2 forPlugin:(id)arg3;
 - (void)startEditingPayload:(id)arg1 dismiss:(bool)arg2 forPlugin:(id)arg3 completion:(id /* block */)arg4;
 - (id)statusBarStyleViewController;
+- (void)swipeDismissBrowser;
 - (id)switcherInputViewController;
 - (id)switcherLastTouchDate;
 - (void)switcherViewController:(id)arg1 hasUpdatedLastTouchDate:(id)arg2;

@@ -21,6 +21,7 @@
 - (id)failureButton;
 - (bool)failureButtonAdjustsContentAlignmentRect;
 - (void)layoutSubviewsForContents;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })safeAreaInsets;
 - (void)setFailed:(bool)arg1;
 - (void)setFailureButton:(id)arg1;
 - (void)setWantsContactImageLayout:(bool)arg1;

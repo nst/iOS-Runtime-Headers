@@ -38,7 +38,7 @@
 - (void)_preflightAccountStateWithContext:(id)arg1 completion:(id /* block */)arg2;
 - (void)_recoverSecureBackupWithCircleJoinResult:(id)arg1 completion:(id /* block */)arg2;
 - (void)_recoverSecureBackupWithHasPeersForRemoteApproval:(bool)arg1 completion:(id /* block */)arg2;
-- (void)_refreshWithContext:(id)arg1;
+- (void)_refreshAndAuthenticateWithContext:(id)arg1;
 - (void)_resetAccountCDPStateWithCompletion:(id /* block */)arg1;
 - (bool)attemptedCDPEnable;
 - (id)circleController;

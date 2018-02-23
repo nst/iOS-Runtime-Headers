@@ -10,8 +10,6 @@
     bool  _didCancelSelection;
     bool  _disableWideGamut;
     CADisplayLink * _displayLink;
-    id /* block */  _drawTimerBlock;
-    NSObject<OS_dispatch_queue> * _drawTimerQueue;
     struct CGPoint { 
         double x; 
         double y; 
@@ -73,8 +71,6 @@
     UIView * _transitionImageView;
     PKUndoSwipeGestureRecognizer * _undoGestureRecognizer;
     long long  _undoGroupCount;
-    <NSObject> * _undoManagerBeginGroupObserver;
-    <NSObject> * _undoManagerEndGroupObserver;
     SEL  _undoSelector;
     id  _undoTarget;
     bool  _zooming;
@@ -126,7 +122,7 @@
 
 - (void).cxx_destruct;
 - (void)_closeLassoForTouch:(id)arg1;
-- (void)_drawingDisplay;
+- (void)_drawingDisplay:(double)arg1;
 - (void)_gestureRecognizerFailed:(id)arg1;
 - (void)_rebuildOpenGLView;
 - (void)_setDrawing:(id)arg1 tiles:(id)arg2 setupComplete:(id /* block */)arg3 completionBlock:(id /* block */)arg4;
@@ -150,6 +146,7 @@
 - (void)copy:(id)arg1;
 - (void)cut:(id)arg1;
 - (void)dealloc;
+- (void)decrementUndoGroupCount;
 - (void)delayCompletionBlockUntilPresentation:(id /* block */)arg1;
 - (id)delegate;
 - (void)delete:(id)arg1;
@@ -158,7 +155,6 @@
 - (bool)disableWideGamut;
 - (void)dismissEditMenuIfNecessary;
 - (void)done;
-- (void)drawNowIfNeeded;
 - (void)drawStrokeWithPath:(struct CGPath { }*)arg1;
 - (void)drawingBegan:(id)arg1;
 - (void)drawingBeganForHIDPoint:(id)arg1;
@@ -192,6 +188,7 @@
 - (void)handleDrawingShouldPause:(bool)arg1;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })imageTransform;
 - (id)imageTransformTimer;
+- (void)incrementUndoGroupCount;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 editable:(bool)arg2 pixelSize:(struct CGSize { double x1; double x2; })arg3 drawingScale:(double)arg4 layerFixedPixelSize:(bool)arg5 drawingController:(id)arg6 selectionController:(id)arg7;
@@ -287,7 +284,6 @@
 - (void)updateImageTransform:(id)arg1;
 - (void)updatePanEdgesForTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (void)updateZoomScaleCaps;
-- (void)willMoveToWindow:(id)arg1;
 - (bool)zooming;
 
 @end

@@ -24,6 +24,7 @@
 @property (nonatomic, readonly) double locationUpdatesDesiredAccuracyForWalking;
 @property (nonatomic, readonly) double locationUpdatesDesiredAccuracyWhileStationaryForDriving;
 @property (nonatomic, readonly) double locationUpdatesDesiredAccuracyWhileStationaryForWalking;
+@property (nonatomic, readonly) double maxDistanceFromOriginToSuppressReroute;
 @property (nonatomic, readonly) unsigned long long maxRandomJitterForHypothesisWakeup;
 @property (nonatomic, readonly) long long maximumNumberOfDestinationsToMonitor;
 @property (nonatomic, readonly) unsigned long long maximumNumberOfEntriesInTheCacheUnderMemoryPressure;
@@ -84,6 +85,7 @@
 - (double)locationUpdatesDesiredAccuracyForWalking;
 - (double)locationUpdatesDesiredAccuracyWhileStationaryForDriving;
 - (double)locationUpdatesDesiredAccuracyWhileStationaryForWalking;
+- (double)maxDistanceFromOriginToSuppressReroute;
 - (unsigned long long)maxRandomJitterForHypothesisWakeup;
 - (long long)maximumNumberOfDestinationsToMonitor;
 - (unsigned long long)maximumNumberOfEntriesInTheCacheUnderMemoryPressure;

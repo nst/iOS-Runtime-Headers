@@ -4,6 +4,9 @@
 
 @interface ICPasswordChangeViewController : UIViewController <ICScrollViewKeyboardResizerDelegate, UITextFieldDelegate> {
     NSArray * _alternateConstraintsForAXLargerTextSizes;
+    UIView * _biometricIDContainer;
+    NSLayoutConstraint * _biometricIDTopConstraint;
+    NSLayoutConstraint * _biometricIDZeroHeightConstraint;
     UIBarButtonItem * _cancelButton;
     id /* block */  _completionHandler;
     NSArray * _defaultConstraints;
@@ -26,16 +29,17 @@
     ICPasswordUtilities * _passwordUtilities;
     UIScrollView * _scrollView;
     ICScrollViewKeyboardResizer * _scrollViewResizer;
-    UIView * _touchIDContainer;
-    NSLayoutConstraint * _touchIDZeroHeightConstraint;
-    UILabel * _useTouchIDLabel;
-    UISwitch * _useTouchIDSwitch;
+    UILabel * _useBiometricIDLabel;
+    UISwitch * _useBiometricIDSwitch;
     bool  _usingLargerAXSizes;
     UILabel * _verifyLabel;
     UITextField * _verifyTextField;
 }
 
 @property (nonatomic, retain) NSArray *alternateConstraintsForAXLargerTextSizes;
+@property (nonatomic) UIView *biometricIDContainer;
+@property (nonatomic) NSLayoutConstraint *biometricIDTopConstraint;
+@property (nonatomic) NSLayoutConstraint *biometricIDZeroHeightConstraint;
 @property (nonatomic) UIBarButtonItem *cancelButton;
 @property (nonatomic, copy) id /* block */ completionHandler;
 @property (readonly, copy) NSString *debugDescription;
@@ -63,16 +67,17 @@
 @property (nonatomic) UIScrollView *scrollView;
 @property (nonatomic, retain) ICScrollViewKeyboardResizer *scrollViewResizer;
 @property (readonly) Class superclass;
-@property (nonatomic) UIView *touchIDContainer;
-@property (nonatomic) NSLayoutConstraint *touchIDZeroHeightConstraint;
-@property (nonatomic) UILabel *useTouchIDLabel;
-@property (nonatomic) UISwitch *useTouchIDSwitch;
+@property (nonatomic) UILabel *useBiometricIDLabel;
+@property (nonatomic) UISwitch *useBiometricIDSwitch;
 @property (nonatomic) bool usingLargerAXSizes;
 @property (nonatomic) UILabel *verifyLabel;
 @property (nonatomic) UITextField *verifyTextField;
 
 - (void).cxx_destruct;
 - (id)alternateConstraintsForAXLargerTextSizes;
+- (id)biometricIDContainer;
+- (id)biometricIDTopConstraint;
+- (id)biometricIDZeroHeightConstraint;
 - (id)cancelButton;
 - (void)cancelButtonPressed:(id)arg1;
 - (id /* block */)completionHandler;
@@ -106,6 +111,9 @@
 - (id)scrollView;
 - (id)scrollViewResizer;
 - (void)setAlternateConstraintsForAXLargerTextSizes:(id)arg1;
+- (void)setBiometricIDContainer:(id)arg1;
+- (void)setBiometricIDTopConstraint:(id)arg1;
+- (void)setBiometricIDZeroHeightConstraint:(id)arg1;
 - (void)setCancelButton:(id)arg1;
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setDefaultConstraints:(id)arg1;
@@ -127,13 +135,11 @@
 - (void)setPasswordUtilities:(id)arg1;
 - (void)setScrollView:(id)arg1;
 - (void)setScrollViewResizer:(id)arg1;
-- (void)setTouchIDContainer:(id)arg1;
-- (void)setTouchIDZeroHeightConstraint:(id)arg1;
 - (void)setUpForChangePassword;
 - (void)setUpForInitialPassword;
 - (void)setUpNavigationBar;
-- (void)setUseTouchIDLabel:(id)arg1;
-- (void)setUseTouchIDSwitch:(id)arg1;
+- (void)setUseBiometricIDLabel:(id)arg1;
+- (void)setUseBiometricIDSwitch:(id)arg1;
 - (void)setUsingLargerAXSizes:(bool)arg1;
 - (void)setVerifyLabel:(id)arg1;
 - (void)setVerifyTextField:(id)arg1;
@@ -145,12 +151,10 @@
 - (void)showUnableToSetPasswordAlert;
 - (bool)textFieldShouldReturn:(id)arg1;
 - (double)topInsetForResizer:(id)arg1;
-- (id)touchIDContainer;
-- (id)touchIDZeroHeightConstraint;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateFonts;
-- (id)useTouchIDLabel;
-- (id)useTouchIDSwitch;
+- (id)useBiometricIDLabel;
+- (id)useBiometricIDSwitch;
 - (bool)usingLargerAXSizes;
 - (bool)validateInput;
 - (id)verifyLabel;

@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@interface AAUIGenericTermsRemoteUI : NSObject <RUIObjectModelDelegate> {
+@interface AAUIGenericTermsRemoteUI : NSObject <RUILoaderDelegate, RUIObjectModelDelegate> {
     ACAccount * _account;
     ACAccountStore * _accountStore;
-    NSString * _agreeURL;
     <AAUIGenericTermsRemoteUIDelegate> * _delegate;
     UINavigationController * _genericTermsUIViewController;
     bool  _isModal;
@@ -27,7 +26,7 @@
 - (void).cxx_destruct;
 - (void)_addHeadersToRequest:(id)arg1;
 - (void)_cancelButtonTapped:(id)arg1;
-- (void)_cleanUpAndDismissWithSuccess:(bool)arg1;
+- (void)_cleanUpAndDismissWithSuccess:(bool)arg1 agreeURL:(id)arg2;
 - (void)_cleanupRUILoader;
 - (void)_displayConnectionErrorAndDismiss;
 - (void)_loadRequestPreferingPassword:(bool)arg1;
@@ -43,6 +42,7 @@
 - (void)objectModelPressedBack:(id)arg1;
 - (id)parentViewControllerForObjectModel:(id)arg1;
 - (void)presentFromViewController:(id)arg1 modal:(bool)arg2;
+- (id)sessionConfigurationForLoader:(id)arg1;
 - (void)setAccount:(id)arg1;
 - (void)setAccountStore:(id)arg1;
 - (void)setDelegate:(id)arg1;

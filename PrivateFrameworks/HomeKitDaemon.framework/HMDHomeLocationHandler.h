@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDHomeLocationHandler : HMFObject <HMDLocationDelegate, HMFMessageReceiver, NSSecureCoding> {
+@interface HMDHomeLocationHandler : HMFObject <HMDHomeMessageReceiver, HMDLocationDelegate, NSSecureCoding> {
     HMDHome * _home;
     bool  _isExtractingCurrentLocation;
     CLLocation * _location;
@@ -24,6 +24,7 @@
 @property (nonatomic, readonly) HMDHomeLocationData *locationData;
 @property (nonatomic, retain) NSDate *locationUpdateTimestamp;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (readonly, copy) NSSet *messageReceiverChildren;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, retain) CLRegion *region;
@@ -31,6 +32,7 @@
 @property (nonatomic, retain) NSTimeZone *timeZone;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
++ (bool)hasMessageReceiverChildren;
 + (bool)mergeLocationDataForLocalHome:(id)arg1 withCloudHome:(id)arg2;
 + (bool)supportsSecureCoding;
 
@@ -56,7 +58,7 @@
 - (void)didDetermineLocation:(id)arg1;
 - (void)didDetermineState:(long long)arg1 forRegion:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
-- (void)getReachableIPAccessory:(unsigned long long*)arg1 btleAccessory:(unsigned long long*)arg2;
+- (void)getReachableIPAccessory:(unsigned long long*)arg1 btleAccessory:(unsigned long long*)arg2 mediaAccessory:(unsigned long long*)arg3;
 - (id)home;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

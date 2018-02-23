@@ -26,7 +26,6 @@
         unsigned int showsRefreshButton : 1; 
         unsigned int allowsPullToRefresh : 1; 
     }  _flags;
-    UIToolbar * _footerToolbar;
     NSMutableArray * _groups;
     long long  _lastAuthorizationStatus;
     EKSource * _limitedToSource;
@@ -57,7 +56,6 @@
 @property (nonatomic) unsigned long long entityType;
 @property (nonatomic, retain) EKEventStore *eventStore;
 @property (nonatomic) struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; } flags;
-@property (nonatomic, retain) UIToolbar *footerToolbar;
 @property (nonatomic, retain) NSMutableArray *groups;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) long long lastAuthorizationStatus;
@@ -133,7 +131,6 @@
 - (unsigned long long)entityType;
 - (id)eventStore;
 - (struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; })flags;
-- (id)footerToolbar;
 - (void)groupShowAllTapped:(id)arg1;
 - (id)groups;
 - (bool)hasAccountThatCanCreateCalendars;
@@ -165,7 +162,6 @@
 - (void)setEntityType:(unsigned long long)arg1;
 - (void)setEventStore:(id)arg1;
 - (void)setFlags:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; })arg1;
-- (void)setFooterToolbar:(id)arg1;
 - (void)setGroups:(id)arg1;
 - (void)setLastAuthorizationStatus:(long long)arg1;
 - (void)setLimitedToSource:(id)arg1;

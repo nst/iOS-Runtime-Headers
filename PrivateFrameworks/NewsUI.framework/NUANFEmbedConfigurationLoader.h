@@ -2,16 +2,21 @@
    Image: /System/Library/PrivateFrameworks/NewsUI.framework/NewsUI
  */
 
-@interface NUANFEmbedConfigurationLoader : NSObject {
+@interface NUANFEmbedConfigurationLoader : NSObject <NUEmbedConfigurationLoader> {
     FCAppConfigurationManager * _appConfigurationManager;
     FCAsyncOnceOperation * _asyncOnceOperation;
+    SXJSONDictionary * _embedConfiguration;
     FCFlintResourceManager * _flintResourceManager;
 }
 
 @property (nonatomic, retain) FCAppConfigurationManager *appConfigurationManager;
 @property (nonatomic, retain) FCAsyncOnceOperation *asyncOnceOperation;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) SXJSONDictionary *embedConfiguration;
 @property (nonatomic, retain) FCFlintResourceManager *flintResourceManager;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)appConfigurationManager;

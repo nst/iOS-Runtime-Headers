@@ -6,6 +6,8 @@
     bool  _allowAnonymousDataCollection;
     unsigned long long  _dominantRankingQueryCount;
     unsigned long long  _dominatedRankingQueryCount;
+    /* Warning: Unrecognized filer type: 'T' using 'void*' */ void* _fuzzyMatchCheck;
+    /* Warning: Unrecognized filer type: 'T' using 'void*' */ void* _fuzzyMatchMask;
     unsigned long long  _rankingBitCount;
     NSArray * _rankingQueries;
     NSSet * _requiredAttributes;
@@ -15,6 +17,8 @@
 @property bool allowAnonymousDataCollection;
 @property unsigned long long dominantRankingQueryCount;
 @property unsigned long long dominatedRankingQueryCount;
+@property /* Warning: Unrecognized filer type: 'T' using 'void*' */ void*fuzzyMatchCheck;
+@property /* Warning: Unrecognized filer type: 'T' using 'void*' */ void*fuzzyMatchMask;
 @property unsigned long long rankingBitCount;
 @property (retain) NSArray *rankingQueries;
 @property (retain) NSSet *requiredAttributes;
@@ -26,12 +30,16 @@
 - (bool)allowAnonymousDataCollection;
 - (unsigned long long)dominantRankingQueryCount;
 - (unsigned long long)dominatedRankingQueryCount;
+- (/* Warning: Unrecognized filer type: 'T' using 'void*' */ void*)fuzzyMatchCheck;
+- (/* Warning: Unrecognized filer type: 'T' using 'void*' */ void*)fuzzyMatchMask;
 - (unsigned long long)rankingBitCount;
 - (id)rankingQueries;
 - (id)requiredAttributes;
 - (void)setAllowAnonymousDataCollection:(bool)arg1;
 - (void)setDominantRankingQueryCount:(unsigned long long)arg1;
 - (void)setDominatedRankingQueryCount:(unsigned long long)arg1;
+- (void)setFuzzyMatchCheck:(/* Warning: Unrecognized filer type: 'T' using 'void*' */ void*)arg1;
+- (void)setFuzzyMatchMask:(/* Warning: Unrecognized filer type: 'T' using 'void*' */ void*)arg1;
 - (void)setRankingBitCount:(unsigned long long)arg1;
 - (void)setRankingQueries:(id)arg1;
 - (void)setRequiredAttributes:(id)arg1;

@@ -24,6 +24,7 @@
 - (bool)isPeerPaired:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)pairPeer:(id)arg1;
+- (void)pairPeer:(id)arg1 options:(id)arg2;
 - (void)pairPeer:(id)arg1 useMITM:(bool)arg2;
 - (id)parentManager;
 - (void)respondToPairingRequest:(id)arg1 type:(long long)arg2 accept:(bool)arg3 data:(id)arg4;

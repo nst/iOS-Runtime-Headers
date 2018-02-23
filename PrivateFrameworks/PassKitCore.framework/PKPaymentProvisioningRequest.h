@@ -7,7 +7,9 @@
     NSString * _cardSecurityCode;
     NSString * _cardholderName;
     NSArray * _certChain;
+    NSData * _challengeResponse;
     PKDSPContext * _context;
+    NSData * _cryptogram;
     bool  _devSigned;
     PKPaymentDeviceProvisioningData * _deviceData;
     PKPaymentEligibilityResponse * _eligibilityResponse;
@@ -19,7 +21,9 @@
 @property (nonatomic, copy) NSData *activationData;
 @property (nonatomic, copy) NSString *cardSecurityCode;
 @property (nonatomic, copy) NSString *cardholderName;
+@property (nonatomic, copy) NSData *challengeResponse;
 @property (nonatomic, copy) PKDSPContext *context;
+@property (nonatomic, copy) NSData *cryptogram;
 @property (nonatomic, retain) PKPaymentEligibilityResponse *eligibilityResponse;
 @property (nonatomic, copy) NSString *nonce;
 @property (nonatomic, copy) NSString *referrerIdentifier;
@@ -34,7 +38,9 @@
 - (id)activationData;
 - (id)cardSecurityCode;
 - (id)cardholderName;
+- (id)challengeResponse;
 - (id)context;
+- (id)cryptogram;
 - (id)eligibilityResponse;
 - (id)initWithEligibilityResponse:(id)arg1;
 - (id)nonce;
@@ -42,7 +48,9 @@
 - (void)setActivationData:(id)arg1;
 - (void)setCardSecurityCode:(id)arg1;
 - (void)setCardholderName:(id)arg1;
+- (void)setChallengeResponse:(id)arg1;
 - (void)setContext:(id)arg1;
+- (void)setCryptogram:(id)arg1;
 - (void)setEligibilityResponse:(id)arg1;
 - (void)setNonce:(id)arg1;
 - (void)setReferrerIdentifier:(id)arg1;

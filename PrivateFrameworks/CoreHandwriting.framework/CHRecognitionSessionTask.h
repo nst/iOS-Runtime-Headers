@@ -9,6 +9,7 @@
     <CHRecognitionSessionTaskDelegate> * _delegate;
     NSArray * _locales;
     CHRecognitionSessionResult * _outputResult;
+    NSArray * _preferredLocales;
     bool  _saveInputDrawings;
     long long  _status;
     <CHStrokeProvider> * _strokeProvider;
@@ -20,6 +21,7 @@
 @property (nonatomic) <CHRecognitionSessionTaskDelegate> *delegate;
 @property (nonatomic, readonly, copy) NSArray *locales;
 @property (setter=_setOutputResult:, nonatomic, retain) CHRecognitionSessionResult *outputResult;
+@property (nonatomic, readonly, copy) NSArray *preferredLocales;
 @property (nonatomic) bool saveInputDrawings;
 @property (setter=_setStatus:, nonatomic) long long status;
 @property (nonatomic, readonly, retain) <CHStrokeProvider> *strokeProvider;
@@ -37,10 +39,11 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (id)initWithLocales:(id)arg1 strokeProvider:(id)arg2 inputResult:(id)arg3;
+- (id)initWithLocales:(id)arg1 preferredLocales:(id)arg2 strokeProvider:(id)arg3 inputResult:(id)arg4;
 - (id)locales;
 - (void)main;
 - (id)outputResult;
+- (id)preferredLocales;
 - (bool)saveInputDrawings;
 - (void)setCancelled:(bool)arg1;
 - (void)setDelegate:(id)arg1;

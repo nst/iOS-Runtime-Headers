@@ -3,7 +3,7 @@
  */
 
 @interface NFLFeedLayoutOperation : FCOperation {
-    NSObject<NFLFeedLayoutSearchConfiguration> * _feedLayoutSearchConfiguration;
+    <NFLFeedLayoutSearchConfiguration> * _feedLayoutSearchConfiguration;
     NFLFeedSettings * _feedSettings;
     <NFLFontManager> * _fontManager;
     id /* block */  _layoutCompletion;
@@ -14,7 +14,7 @@
     double  _tileProminenceScoreBalanceValue;
 }
 
-@property (nonatomic, copy) NSObject<NFLFeedLayoutSearchConfiguration> *feedLayoutSearchConfiguration;
+@property (nonatomic, copy) <NFLFeedLayoutSearchConfiguration> *feedLayoutSearchConfiguration;
 @property (nonatomic, copy) NFLFeedSettings *feedSettings;
 @property (nonatomic, retain) <NFLFontManager> *fontManager;
 @property (copy) id /* block */ layoutCompletion;

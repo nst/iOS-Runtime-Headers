@@ -3,13 +3,13 @@
  */
 
 @interface HKChartCache : NSObject {
+    NSArray * _bufferedIdentifiers;
     NSMutableDictionary * _cachedResultsByIdentifier;
     <HKChartCacheDataSource> * _dataSource;
     long long  _maxRetryCount;
     NSHashTable * _observers;
     HKOutstandingFetchOperationManager * _operationManager;
     _HKChartCachePendingFetchOperationManager * _pendingFetchOperationsManager;
-    NSArray * _pendingIdentifiers;
     NSMutableDictionary * _resultsLoadedByIdentifier;
     bool  _shouldBufferFetchOperations;
 }

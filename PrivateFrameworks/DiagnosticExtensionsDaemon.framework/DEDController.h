@@ -8,9 +8,9 @@
     <DEDClientProtocol> * _clientDelegate;
     NSMutableDictionary * _devices;
     id /* block */  _devicesCompletion;
+    id /* block */  _didCancelCompletion;
     bool  _embeddedInApp;
     bool  _isDaemon;
-    DEDBugSession * _lastCancelledSession;
     NSObject<OS_os_log> * _log;
     <DEDPairingProtocol> * _pairingDelegate;
     id /* block */  _pongBlock;
@@ -36,10 +36,10 @@
 @property (readonly, copy) NSString *description;
 @property (retain) NSMutableDictionary *devices;
 @property (copy) id /* block */ devicesCompletion;
+@property (copy) id /* block */ didCancelCompletion;
 @property bool embeddedInApp;
 @property (readonly) unsigned long long hash;
 @property bool isDaemon;
-@property (retain) DEDBugSession *lastCancelledSession;
 @property (retain) NSObject<OS_os_log> *log;
 @property <DEDPairingProtocol> *pairingDelegate;
 @property (copy) id /* block */ pongBlock;
@@ -64,6 +64,7 @@
 - (id)_sharingConnection;
 - (void)_timeOutSessionStartBlockWithIdentifier:(id)arg1 timeout:(double)arg2;
 - (void)abortSession:(id)arg1;
+- (void)abortSession:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)addDevice:(id)arg1;
 - (void)addDidStartSessionCompletion:(id /* block */)arg1 withIdentifier:(id)arg2;
 - (void)addSessionStartCompletion:(id /* block */)arg1 withIdentifier:(id)arg2;
@@ -78,6 +79,7 @@
 - (id)deviceForIdentifier:(id)arg1;
 - (id)devices;
 - (id /* block */)devicesCompletion;
+- (id /* block */)didCancelCompletion;
 - (void)didDiscoverDevices:(id)arg1;
 - (void)didStartBugSessionWithInfo:(id)arg1;
 - (void)discoverAllAvailableDevices;
@@ -90,7 +92,6 @@
 - (bool)isDaemon;
 - (id)knownDevices;
 - (id)knownSessions;
-- (id)lastCancelledSession;
 - (id)log;
 - (id)pairingDelegate;
 - (id)persistence;
@@ -113,9 +114,9 @@
 - (void)setClientDelegate:(id)arg1;
 - (void)setDevices:(id)arg1;
 - (void)setDevicesCompletion:(id /* block */)arg1;
+- (void)setDidCancelCompletion:(id /* block */)arg1;
 - (void)setEmbeddedInApp:(bool)arg1;
 - (void)setIsDaemon:(bool)arg1;
-- (void)setLastCancelledSession:(id)arg1;
 - (void)setLog:(id)arg1;
 - (void)setPairingDelegate:(id)arg1;
 - (void)setPongBlock:(id /* block */)arg1;

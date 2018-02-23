@@ -68,7 +68,7 @@
 - (bool)_handleAuthenticationRequest:(id)arg1 didCompleteWithResponse:(id)arg2;
 - (bool)_handleLogoutRequestDidComplete:(id)arg1;
 - (bool)_handleSilentAuthenticationRequest:(id)arg1 didCompleteWithResponse:(id)arg2;
-- (void)_notifyDidAuthenticateAccount:(id)arg1 supportingApps:(id)arg2;
+- (void)_notifyDidAuthenticateAccount:(id)arg1;
 - (void)_processRequestContext:(id)arg1;
 - (double)_requestCompletionDelay;
 - (bool)_requestRequiresApplicationController:(id)arg1;

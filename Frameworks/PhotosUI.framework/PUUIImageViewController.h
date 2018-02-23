@@ -16,7 +16,6 @@
     bool  _isAutoloop;
     bool  _isIris;
     <PUPhotoPicker> * _photoPicker;
-    PUPhotoPickerAppearance * _previousPhotoPickerAppearance;
     bool  _wantsLivePhotoResult;
     bool  _wantsVideoURLResult;
 }
@@ -33,7 +32,6 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) <PUPhotoPicker> *photoPicker;
-@property (nonatomic, retain) PUPhotoPickerAppearance *previousPhotoPickerAppearance;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -69,6 +67,7 @@
 - (id)_videoAssetURL;
 - (id)chooseButtonTitle;
 - (void)cropOverlayWasOKed:(id)arg1;
+- (void)didUpdateNavigationBarAppearance;
 - (bool)disableVideoTrimMessage;
 - (bool)doNotTranscode;
 - (id)exportPreset;
@@ -87,11 +86,9 @@
 - (void)loadView;
 - (void)performPhotoPickerSelection;
 - (id)photoPicker;
-- (id)previousPhotoPickerAppearance;
 - (void)setIrisPlayer:(id)arg1;
 - (void)setPhotoPicker:(id)arg1;
 - (void)setPhotoPickerMediaTypes:(id)arg1;
-- (void)setPreviousPhotoPickerAppearance:(id)arg1;
 - (void)set_irisPlayer:(id)arg1;
 - (void)setupNavigationItem;
 - (bool)uiipc_useTelephonyUI;
@@ -101,7 +98,6 @@
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (bool)viewImageBeforeSelecting;
-- (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 - (bool)wantsAutoloopUI;
 - (bool)wantsLegacyImageUI;

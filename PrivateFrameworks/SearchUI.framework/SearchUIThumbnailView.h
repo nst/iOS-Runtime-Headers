@@ -5,13 +5,13 @@
 @interface SearchUIThumbnailView : UIView {
     SFDetailedRowCardSection * _detailedCardSection;
     SearchUIImageView * _imageView;
-    UIView * _overlayPlayButton;
+    SearchUIButton * _overlayPlayButton;
     SFSearchResult * _result;
 }
 
 @property (retain) SFDetailedRowCardSection *detailedCardSection;
 @property (retain) SearchUIImageView *imageView;
-@property (retain) UIView *overlayPlayButton;
+@property (retain) SearchUIButton *overlayPlayButton;
 @property (retain) SFSearchResult *result;
 
 + (id)thumbnailForResult:(id)arg1;
@@ -32,8 +32,8 @@
 - (void)setOverlayPlayButton:(id)arg1;
 - (void)setResult:(id)arg1;
 - (bool)shouldVerticallyCenter;
+- (void)showOverlayPlayButton;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
-- (void)updateOverlayPlayButtonForThumbnail:(id)arg1 overlayButton:(bool)arg2;
 - (void)updateWithCardSection:(id)arg1;
 - (void)updateWithResult:(id)arg1;
 

@@ -15,7 +15,7 @@
     NSHashTable * _observers;
     bool  _playbackRequested;
     SXAVPlayer * _player;
-    SXKeyValueObserver * _playerItemTracksObserver;
+    SXKeyValueObserver * _playerItemPresentationSizeObserver;
     SXKeyValueObserver * _readyForDisplayObserver;
     bool  _requiresReadyToDisplay;
     unsigned long long  _state;
@@ -39,7 +39,7 @@
 @property (nonatomic, readonly) bool playbackLikelyToKeepUp;
 @property (nonatomic) bool playbackRequested;
 @property (nonatomic, retain) SXAVPlayer *player;
-@property (nonatomic, retain) SXKeyValueObserver *playerItemTracksObserver;
+@property (nonatomic, retain) SXKeyValueObserver *playerItemPresentationSizeObserver;
 @property (nonatomic, retain) SXKeyValueObserver *readyForDisplayObserver;
 @property (nonatomic) bool requiresReadyToDisplay;
 @property (nonatomic) unsigned long long state;
@@ -51,7 +51,7 @@
 
 - (void).cxx_destruct;
 - (void)addPlaybackObserver:(id)arg1;
-- (void)addPlayerItemTracksObserver;
+- (void)addPlayerItemPresentationSizeObserver;
 - (void)addReadyForDisplayObserver;
 - (id /* block */)cancelHandler;
 - (struct CGSize { double x1; double x2; })dimensions;
@@ -62,7 +62,6 @@
 - (id)initWithVideo:(id)arg1;
 - (bool)initiatedPlayback;
 - (void)loadAvailableMediaCharacteristics;
-- (void)loadVideoDimensions;
 - (void)loadVideoIfNeeded;
 - (id)loadedTimeRanges;
 - (void)loadedTimeRangesChanged;
@@ -86,11 +85,11 @@
 - (void)playbackResumed;
 - (void)playbackStarted;
 - (id)player;
-- (id)playerItemTracksObserver;
+- (id)playerItemPresentationSizeObserver;
 - (void)prefetch;
 - (id)readyForDisplayObserver;
 - (void)removePlaybackObserver:(id)arg1;
-- (void)removePlayerItemTracksObserver;
+- (void)removePlayerItemPresentationSizeObserver;
 - (void)removeReadyForDisplayObserver;
 - (bool)requiresReadyToDisplay;
 - (void)seekToTime:(double)arg1 withCompletionBlock:(id /* block */)arg2;
@@ -102,7 +101,7 @@
 - (void)setMuted:(bool)arg1;
 - (void)setPlaybackRequested:(bool)arg1;
 - (void)setPlayer:(id)arg1;
-- (void)setPlayerItemTracksObserver:(id)arg1;
+- (void)setPlayerItemPresentationSizeObserver:(id)arg1;
 - (void)setReadyForDisplayObserver:(id)arg1;
 - (void)setRequiresReadyToDisplay:(bool)arg1;
 - (void)setState:(unsigned long long)arg1;

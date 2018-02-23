@@ -7,6 +7,8 @@
     NSNumber * _adamId;
     NSNumber * _appAdamId;
     NSNumber * _expirationTimestamp;
+    bool  _hasUsedFreeOffer;
+    bool  _hasUsedIntroPricingOffer;
     NSNumber * _lastModifiedTimestamp;
     NSNumber * _purchaseTimestamp;
     unsigned char  _type;
@@ -16,6 +18,8 @@
 @property (nonatomic, retain) NSNumber *adamId;
 @property (nonatomic, retain) NSNumber *appAdamId;
 @property (nonatomic, retain) NSNumber *expirationTimestamp;
+@property (nonatomic) bool hasUsedFreeOffer;
+@property (nonatomic) bool hasUsedIntroPricingOffer;
 @property (nonatomic, retain) NSNumber *lastModifiedTimestamp;
 @property (nonatomic, retain) NSNumber *purchaseTimestamp;
 @property (nonatomic) unsigned char type;
@@ -30,6 +34,8 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)expirationTimestamp;
+- (bool)hasUsedFreeOffer;
+- (bool)hasUsedIntroPricingOffer;
 - (id)initWithCoder:(id)arg1;
 - (id)lastModifiedTimestamp;
 - (id)purchaseTimestamp;
@@ -37,6 +43,8 @@
 - (void)setAdamId:(id)arg1;
 - (void)setAppAdamId:(id)arg1;
 - (void)setExpirationTimestamp:(id)arg1;
+- (void)setHasUsedFreeOffer:(bool)arg1;
+- (void)setHasUsedIntroPricingOffer:(bool)arg1;
 - (void)setLastModifiedTimestamp:(id)arg1;
 - (void)setPurchaseTimestamp:(id)arg1;
 - (void)setType:(unsigned char)arg1;

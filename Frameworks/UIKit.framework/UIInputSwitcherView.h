@@ -31,7 +31,7 @@
 
 // Image: /Developer/usr/lib/libMainThreadChecker.dylib
 
-- (void)buttonPressed:(id)arg1 withEvent:(id)arg2 location:(struct CGPoint { double x1; double x2; })arg3 isForDictation:(bool)arg4 tapAction:(id /* block */)arg5;
+- (id)buttonPressed:(id)arg1 withEvent:(id)arg2 location:(struct CGPoint { double x1; double x2; })arg3 isForDictation:(bool)arg4 tapAction:(id /* block */)arg5;
 - (void)customizeCell:(id)arg1 forItemAtIndex:(unsigned long long)arg2;
 - (id)defaultInputMode;
 - (unsigned long long)defaultSelectedIndex;

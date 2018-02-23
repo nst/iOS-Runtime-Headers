@@ -51,10 +51,10 @@
 
 - (long long)SRTCPCipherSuite;
 - (long long)SRTPCipherSuite;
-- (void)addRxCodecType:(long long)arg1;
-- (void)addRxCodecType:(long long)arg1 networkPayload:(unsigned int)arg2;
-- (void)addTxCodecType:(long long)arg1;
-- (void)addTxCodecType:(long long)arg1 networkPayload:(unsigned int)arg2;
+- (void)addRxPayloadType:(int)arg1;
+- (void)addRxPayloadType:(int)arg1 networkPayload:(unsigned int)arg2;
+- (void)addTxPayloadType:(int)arg1;
+- (void)addTxPayloadType:(int)arg1 networkPayload:(unsigned int)arg2;
 - (void)applyMediaStreamClientDictionary:(id)arg1;
 - (id)cName;
 - (unsigned int)datagramChannelToken;

@@ -20,19 +20,18 @@
 + (id)serviceItemForService:(id)arg1 valueSource:(id)arg2;
 
 - (void).cxx_destruct;
-- (id)_allRepresentedCharacteristics;
+- (id)_actionableCharacteristics;
 - (id)_allRepresentedServices;
 - (id)_augmentedStandardResultsForUpdateResponse:(id)arg1 controlItems:(id)arg2;
 - (unsigned long long)_effectiveLoadingStateForSuggestedLoadingState:(unsigned long long)arg1;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)accessories;
 - (bool)actionsMayRequireDeviceUnlock;
-- (id)allControlItems;
+- (id)characteristicsToReadForCharacteristicTypes:(id)arg1 controlItems:(id)arg2;
 - (bool)containsActionableCharacteristics;
 - (id)controlDescriptionForCharacteristic:(id)arg1 withValue:(id)arg2;
 - (id)controlItemValueSourceForPrimaryService;
 - (id)controlItemValueSourceForServices:(id)arg1;
-- (id)controlPanelItems;
 - (id)copyWithValueSource:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)createControlItems;
@@ -40,16 +39,14 @@
 - (id)description;
 - (id)descriptionForCharacteristic:(id)arg1 withValue:(id)arg2;
 - (id)homeKitObject;
-- (id)incrementalStateControlItem;
 - (id)incrementalStateIconDescriptorForPrimaryState:(long long)arg1 incrementalValue:(id)arg2;
 - (id)init;
 - (id)initWithValueSource:(id)arg1 service:(id)arg2;
 - (id)performStandardUpdateWithCharacteristicTypes:(id)arg1 options:(id)arg2;
-- (id)primaryStateControlItem;
-- (id)readValuesForCharacteristicTypes:(id)arg1;
 - (id)service;
 - (id)serviceLikeBuilderInHome:(id)arg1;
 - (id)services;
+- (id)servicesToReadForCharacteristicType:(id)arg1;
 - (id)valueSource;
 
 @end

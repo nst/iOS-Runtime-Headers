@@ -22,6 +22,6 @@
 - (void)setSuggestionLabel:(id)arg1;
 - (id)setupContentView;
 - (id)suggestionLabel;
-- (void)updateWithCardSection:(id)arg1;
+- (void)updateWithRowModel:(id)arg1;
 
 @end

@@ -5,6 +5,8 @@
 
 @required
 
+- (<NFResolver> *)currentObjectGraphResolver:(unsigned long long)arg1;
+- (void)linkResolverWithLinkBlock:(void *)arg1; // needs 1 arg types, found 10: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id /* block */, void*, void, id /* block */, void*, void*
 - (id)resolveClass:(Class)arg1;
 - (id)resolveClass:(Class)arg1 name:(NSString *)arg2;
 - (id)resolveProtocol:(Protocol *)arg1;

@@ -10,6 +10,7 @@
 
 @optional
 
+- (BSAnimationSettings *)hideHomeAffordanceAnimationSettingsForNotificationViewController:(NCNotificationViewController *)arg1;
 - (NSDictionary *)notificationUsageTrackingStateForNotificationViewController:(NCNotificationViewController *)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })notificationViewController:(NCNotificationViewController *)arg1 convertRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 toLocalWindowSpaceFromView:(UIView *)arg3;
 - (void)notificationViewController:(void *)arg1 shouldFinishLongLookTransitionWithCompletionBlock:(void *)arg2; // needs 2 arg types, found 7: NCNotificationViewController *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
@@ -21,7 +22,9 @@
 - (bool)notificationViewControllerShouldInterpretTapAsDefaultAction:(NCNotificationViewController *)arg1;
 - (bool)notificationViewControllerShouldPan:(NCNotificationViewController *)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })presentationFrameForNotificationViewController:(NCNotificationViewController *)arg1;
+- (<UIViewSpringAnimationBehaviorDescribing> *)settleHomeAffordanceAnimationBehaviorDescriptionForNotificationViewController:(NCNotificationViewController *)arg1;
 - (bool)shouldLoadAudioAccessoryViewForNotificationViewController:(NCNotificationViewController *)arg1;
 - (bool)showAdditionalMessageLinesForNotificationViewController:(NCNotificationViewController *)arg1;
+- (BSAnimationSettings *)unhideHomeAffordanceAnimationSettingsForNotificationViewController:(NCNotificationViewController *)arg1;
 
 @end

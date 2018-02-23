@@ -96,6 +96,7 @@
         unsigned int preventNotificationOfRebaseObserversWhenApplyingUpdates : 1; 
         unsigned int allowsVisibleCellUpdatesDuringUpdateAnimations : 1; 
         unsigned int isCompletingInteractiveMovement : 1; 
+        unsigned int isRegisteredForGeometryChanges : 1; 
     }  _collectionViewFlags;
     long long  _containerScrollViewVisitationCount;
     UIFocusContainerGuide * _contentFocusContainerGuide;
@@ -304,6 +305,7 @@
 - (bool)_canEditItemAtIndexPath:(id)arg1;
 - (bool)_canPerformAction:(SEL)arg1 forCell:(id)arg2 sender:(id)arg3;
 - (bool)_canReorderItemAtIndexPath:(id)arg1;
+- (void)_cancelInteractiveMovementWithCompletion:(id /* block */)arg1;
 - (void)_cancelInteractiveTransitionWithFinalAnimation:(bool)arg1;
 - (void)_cancelReordering;
 - (void)_cancelTouches;
@@ -319,7 +321,7 @@
 - (id)_childFocusRegionsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inCoordinateSpace:(id)arg2;
 - (void)_cleanUpAfterInteractiveTransitionDidFinish:(bool)arg1;
 - (id)_collectionViewData;
-- (void)_completeInteractiveMovementWithDisposition:(long long)arg1;
+- (void)_completeInteractiveMovementWithDisposition:(long long)arg1 completion:(id /* block */)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_computeFutureVisibleBoundsForPrefetchVelocity:(struct CGVector { double x1; double x2; })arg1 visibleBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_computePrefetchCacheValidationBoundsForPrefetchVelocity:(struct CGVector { double x1; double x2; })arg1 visibleBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (void)_computePrefetchCandidatesForVelocity:(struct CGVector { double x1; double x2; })arg1 notifyDelegateIfNeeded:(bool)arg2;
@@ -370,6 +372,7 @@
 - (id)_dropDelegateActual;
 - (id)_dropDelegateProxy;
 - (id)_dynamicAnimationsForTrackValues;
+- (void)_endInteractiveMovementWithCompletion:(id /* block */)arg1;
 - (void)_endItemAnimationsWithInvalidationContext:(id)arg1;
 - (void)_endItemAnimationsWithInvalidationContext:(id)arg1 tentativelyForReordering:(bool)arg2;
 - (void)_endItemAnimationsWithInvalidationContext:(id)arg1 tentativelyForReordering:(bool)arg2 animator:(id)arg3;
@@ -438,8 +441,8 @@
 - (void)_moveItemAtIndexPath:(id)arg1 toIndexPath:(id)arg2;
 - (void)_moveSection:(long long)arg1 toSection:(long long)arg2;
 - (id /* block */)_navigationCompletion;
-- (void)_notifyDidEndDisplayingCell:(id)arg1 forIndexPath:(id)arg2;
-- (void)_notifyWillDisplayCell:(id)arg1 forIndexPath:(id)arg2;
+- (void)_notifyDidEndDisplayingCellIfNeeded:(id)arg1 forIndexPath:(id)arg2;
+- (void)_notifyWillDisplayCellIfNeeded:(id)arg1 forIndexPath:(id)arg2;
 - (long long)_numberOfItemsInSection:(long long)arg1;
 - (long long)_numberOfSections;
 - (id)_objectInDictionary:(id)arg1 forKind:(id)arg2 indexPath:(id)arg3;
@@ -562,6 +565,7 @@
 - (void)_unhighlightSpringLoadedItem;
 - (struct CGVector { double x1; double x2; })_unitVectorForVector:(struct CGVector { double x1; double x2; })arg1;
 - (void)_unpinReorderedItemsIfNeeded;
+- (void)_unregisterForGeometryChangesIfNeeded;
 - (void)_updateAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_updateBackgroundView;
 - (void)_updateContainerScrollViewsForNotifications;

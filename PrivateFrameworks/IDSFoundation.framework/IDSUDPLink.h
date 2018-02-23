@@ -97,6 +97,7 @@
 - (void)setLastDestinationSent:(double)arg1;
 - (void)setPort:(unsigned short)arg1;
 - (void)setSkipTransportThread:(bool)arg1;
+- (bool)setTrafficClass:(int)arg1;
 - (void)setUseDefaultInterfaceOnly:(bool)arg1;
 - (bool)skipTransportThread;
 - (int)socket;

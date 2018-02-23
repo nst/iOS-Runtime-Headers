@@ -17,6 +17,7 @@
 @property (nonatomic, readonly) <SXFontIndex> *fontIndex;
 @property (nonatomic, retain) SXImageController *imageController;
 @property (nonatomic, readonly) SXMetaData *metaData;
+@property (nonatomic, readonly) UIColor *topBackgroundColor;
 
 - (void).cxx_destruct;
 - (id)allImageResources;
@@ -48,5 +49,6 @@
 - (void)setComponentTextStyles:(id)arg1;
 - (void)setImageController:(id)arg1;
 - (id)textStyleForIdentifier:(id)arg1;
+- (id)topBackgroundColor;
 
 @end

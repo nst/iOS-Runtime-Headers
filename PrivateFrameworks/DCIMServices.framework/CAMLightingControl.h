@@ -185,5 +185,6 @@
 - (void)setShowAllItemsWhenCollapsed:(bool)arg1;
 - (void)setShowAllItemsWhenCollapsed:(bool)arg1 animated:(bool)arg2;
 - (bool)showAllItemsWhenCollapsed;
+- (void)updateToContentSize:(id)arg1;
 
 @end

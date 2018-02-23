@@ -61,6 +61,7 @@
 - (id)createAttributedStringCP;
 - (id)dataRepresentation;
 - (void)dealloc;
+- (id)debugQuickLookObject;
 - (id)description;
 - (bool)didChangeBounds;
 - (bool)displaysAnnotations;

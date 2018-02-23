@@ -22,6 +22,7 @@
     _UIContentUnavailableView * __emptyPlaceholderView;
     PUFeedSectionInfosManager * __feedSectionInfosManager;
     bool  __flowDirectionReversed;
+    bool  __hasAppeared;
     NSIndexPath * __indexPathForImageHiddenDuringZoomTransition;
     bool  __interfaceBatchUpdateScheduled;
     UIBarButtonItem * __invitationsBarButtonItem;
@@ -90,6 +91,7 @@
 @property (setter=_setEmptyPlaceholderView:, nonatomic, retain) _UIContentUnavailableView *_emptyPlaceholderView;
 @property (nonatomic, readonly) PUFeedSectionInfosManager *_feedSectionInfosManager;
 @property (getter=_isFlowDirectionReversed, setter=_setFlowDirectionReversed:, nonatomic) bool _flowDirectionReversed;
+@property (setter=_setHasAppeared:, nonatomic) bool _hasAppeared;
 @property (setter=_setIndexPathForImageHiddenDuringZoomTransition:, nonatomic, copy) NSIndexPath *_indexPathForImageHiddenDuringZoomTransition;
 @property (getter=_isInterfaceBatchUpdateScheduled, setter=_setInterfaceBatchUpdateScheduled:, nonatomic) bool _interfaceBatchUpdateScheduled;
 @property (setter=_setInvitationsBarButtonItem:, nonatomic, retain) UIBarButtonItem *_invitationsBarButtonItem;
@@ -207,6 +209,7 @@
 - (void)_handlePinch:(id)arg1;
 - (void)_handlePlaceholderAction;
 - (void)_handleTap:(id)arg1;
+- (bool)_hasAppeared;
 - (id)_indexPathForImageHiddenDuringZoomTransition;
 - (id)_indexPathForItemWithAsset:(id)arg1 inCollectionView:(id)arg2;
 - (id)_indexPathForPosition:(struct CGPoint { double x1; double x2; })arg1 inCollectionView:(id)arg2 outHitCell:(id*)arg3;
@@ -284,6 +287,7 @@
 - (void)_setCurrentCollectionViewType:(long long)arg1;
 - (void)_setEmptyPlaceholderView:(id)arg1;
 - (void)_setFlowDirectionReversed:(bool)arg1;
+- (void)_setHasAppeared:(bool)arg1;
 - (void)_setIndexPathForImageHiddenDuringZoomTransition:(id)arg1;
 - (void)_setInterfaceBatchUpdateScheduled:(bool)arg1;
 - (void)_setInvitationsBarButtonItem:(id)arg1;
@@ -361,6 +365,7 @@
 - (void)_userDidScrollFeed;
 - (void)_userDidViewFeed;
 - (bool)_viewDidAppear;
+- (void)_viewWillLayoutBeforeAppearing;
 - (void)assetContainerListDidChange:(id)arg1;
 - (bool)canBecomeFirstResponder;
 - (bool)canDragOut;

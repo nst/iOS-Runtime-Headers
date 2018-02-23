@@ -10,6 +10,7 @@
     <PKAuthenticatorDelegate> * _delegate;
     double  _fingerPresentTimeout;
     <BSInvalidatable> * _hintSupressionAssertion;
+    bool  _invalidated;
 }
 
 @property (nonatomic, readonly) unsigned long long authenticationIdentifier;
@@ -41,9 +42,11 @@
 - (bool)_delegateSupportsPasscodePresentation;
 - (bool)_delegateSupportsPassphrasePresentation;
 - (id)_swapContext:(id)arg1;
+- (id)_swapContext:(id)arg1 withOptions:(unsigned long long)arg2;
 - (void)accessExternalizedContextWithCompletion:(id /* block */)arg1;
 - (unsigned long long)authenticationIdentifier;
 - (void)cancelEvaluation;
+- (void)cancelEvaluationWithOptions:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)evaluatePolicy:(long long)arg1 completion:(id /* block */)arg2;
@@ -55,6 +58,7 @@
 - (bool)fingerPresentTimeoutRequired;
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
+- (void)invalidate;
 - (bool)passcodeActive;
 - (bool)passcodeWasPresented;
 - (bool)passphraseActive;

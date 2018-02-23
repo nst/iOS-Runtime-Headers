@@ -138,6 +138,8 @@
 - (id)deviceDescription;
 - (id)deviceName;
 - (id)deviceUID;
+- (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(bool)arg2;
+- (id)driverClassName;
 - (id /* block */)endIOOperationBlock;
 - (id /* block */*)endIOOperationBlockUnretainedPtr;
 - (id)getProperty:(id)arg1;

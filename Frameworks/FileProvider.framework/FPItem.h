@@ -125,6 +125,7 @@
 @property (getter=isWritable, nonatomic, readonly) bool writable;
 
 + (id)allUbiquitousResourceKeys;
++ (id)fp_queryFetchAttributes;
 + (id)generatePlaceholderIdentifier;
 + (id)generatePlaceholderIdentifierWithOriginalID:(id)arg1;
 + (id)placeholderWithCopyOfExistingItem:(id)arg1 lastUsageUpdatePolicy:(unsigned long long)arg2 underParent:(id)arg3 inProvider:(id)arg4;

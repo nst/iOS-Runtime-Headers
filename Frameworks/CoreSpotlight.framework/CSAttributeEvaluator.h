@@ -28,6 +28,7 @@
 - (void).cxx_destruct;
 - (unsigned long long)attributeTokenCount;
 - (void)dealloc;
+- (unsigned long long)evaluateAttribute:(id)arg1 ignoreSubtokens:(bool)arg2 withFuzzyHandler:(id /* block */)arg3;
 - (unsigned long long)evaluateAttribute:(id)arg1 ignoreSubtokens:(bool)arg2 withHandler:(id /* block */)arg3;
 - (bool)fuzzyMatching;
 - (id /* block */)handler;

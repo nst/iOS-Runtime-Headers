@@ -28,6 +28,7 @@
     id /* block */  _promptForHomeHandler;
     id /* block */  _promptForPINHandler;
     id /* block */  _promptForRoomHandler;
+    int  _proxSetupActiveToken;
     SFSession * _sfSession;
     int  _sfSessionState;
     double  _trActivationSecs;

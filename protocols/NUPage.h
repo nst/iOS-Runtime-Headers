@@ -10,6 +10,6 @@
 - (NSString *)identifier;
 - (void)prepare;
 - (void)unprepare;
-- (UIViewController<NUPagable> *)viewController;
+- (UIViewController<NUPageable> *)viewController;
 
 @end

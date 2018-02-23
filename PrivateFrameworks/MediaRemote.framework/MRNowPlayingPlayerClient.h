@@ -3,6 +3,7 @@
  */
 
 @interface MRNowPlayingPlayerClient : NSObject <MRNowPlayingClientState, MRTransactionSourceDelegate> {
+    NSMutableDictionary * _cachedContentItemUpdates;
     void * _capabilities;
     MRNowPlayingPlayerClientCallbacks * _clientCallbacks;
     bool  _coalescingInvalidations;
@@ -34,11 +35,14 @@
 @property (nonatomic, readonly) void*playerPath;
 @property (nonatomic, copy) NSArray *supportedCommands;
 
+- (void*)_onQueue_nowPlayingContentItem;
 - (void)_onQueue_sendTransaction:(unsigned long long)arg1 withPackets:(id)arg2;
+- (void)addPendingRequest:(void*)arg1;
 - (void)beginSendingTransactions;
+- (void)cacheContentItemUpdates:(id)arg1;
 - (void*)capabilities;
+- (void)clearCachedContentItemArtworkForItems:(id)arg1;
 - (id)clientCallbacks;
-- (void)contentItemsUpdatedNotification:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)endSendingTransactions;
@@ -62,13 +66,16 @@
 - (void)setPlaybackQueue:(void*)arg1;
 - (void)setPlaybackState:(unsigned int)arg1;
 - (void)setSupportedCommands:(id)arg1;
+- (void)startCachingContentItemUpdatesForItem:(void*)arg1 forPendingRequest:(void*)arg2;
 - (id)supportedCommands;
 - (bool)testAndSetCoalescingInvalidations;
 - (bool)testAndSetCoalescingRequests;
 - (void)transactionDidEnd:(id)arg1;
 - (void)unsetCoalescingInvalidations;
 - (bool)unsetCoalescingRequests;
+- (void)updateCacheWithContentItems:(id)arg1;
 - (void)updateCacheWithItem:(void*)arg1;
 - (void)updateCacheWithPlaybackQueue:(void*)arg1;
+- (void)updatePlaybackQueueWithCachedUpdates:(void*)arg1 forPendingRequest:(void*)arg2;
 
 @end

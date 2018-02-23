@@ -22,6 +22,7 @@
 + (id)_recoveryQueue;
 
 - (void).cxx_destruct;
+- (void)_checkIdResultForTCC:(id)arg1 error:(id)arg2 retryBlock:(id /* block */)arg3 finally:(id /* block */)arg4;
 - (void)_performCallBool:(id /* block */)arg1 finally:(id /* block */)arg2;
 - (void)_performCallId:(id /* block */)arg1 finally:(id /* block */)arg2;
 - (void)_performCallIdCore:(id /* block */)arg1 finally:(id /* block */)arg2;
@@ -54,6 +55,7 @@
 - (bool)setServerPropertyForOption:(long long)arg1 value:(id)arg2 error:(id*)arg3;
 - (void)setServerPropertyForOption:(long long)arg1 value:(id)arg2 reply:(id /* block */)arg3;
 - (void)setUiDelegate:(id)arg1;
+- (void)tccPreflightWithService:(id)arg1 reply:(id /* block */)arg2;
 - (id)uiDelegate;
 
 @end

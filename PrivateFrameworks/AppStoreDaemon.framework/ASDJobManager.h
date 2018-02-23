@@ -2,17 +2,16 @@
    Image: /System/Library/PrivateFrameworks/AppStoreDaemon.framework/AppStoreDaemon
  */
 
-@interface ASDJobManager : ASDBaseClient <ASDApplicationProgressDelegate, ASDJobManagerClient, NSXPCListenerDelegate> {
+@interface ASDJobManager : ASDBaseClient <ASDJobManagerClient, LSApplicationWorkspaceObserverProtocol, NSXPCListenerDelegate> {
     NSObject<OS_dispatch_queue> * _accessQueue;
-    NSMutableDictionary * _applicationProgress;
     NSXPCConnection * _connection;
     NSArray * _jobs;
     int  _launchNotificationToken;
     NSObject<OS_dispatch_queue> * _observerQueue;
     NSHashTable * _observers;
     ASDJobManagerOptions * _options;
-    ASDApplicationProgressObserver * _progressObserver;
     NSMutableSet * _removedJobs;
+    bool  _useLaunchServicesProgress;
     NSObject<OS_dispatch_queue> * _xpcQueue;
 }
 
@@ -38,16 +37,15 @@
 - (void)_sendStatesUpdated:(id)arg1;
 - (void)_setupConnection;
 - (bool)_shouldAutomaticallyReconnect;
-- (bool)_trackProgressForBundleID:(id)arg1;
 - (void)_updateActiveIDs:(id)arg1;
 - (void)_willFinishJobs:(id)arg1;
 - (void)addObserver:(id)arg1;
+- (void)applicationInstallsDidChange:(id)arg1;
 - (void)cancelJobsWithIDs:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)dealloc;
 - (void)didChangeJobs:(id)arg1;
 - (void)didCompleteJobs:(id)arg1;
 - (void)didCompleteJobs:(id)arg1 finalPhases:(id)arg2;
-- (void)didUpdateApplicationProgress:(id)arg1;
 - (void)didUpdateProgress:(id)arg1;
 - (void)didUpdateStates:(id)arg1;
 - (void)finishJobs:(id)arg1;

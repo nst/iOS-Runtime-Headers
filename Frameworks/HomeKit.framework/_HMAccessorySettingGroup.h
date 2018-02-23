@@ -31,6 +31,7 @@
 @property (readonly) Class superclass;
 
 + (id)logCategory;
++ (id)shortDescription;
 + (id)supportedGroupsClasses;
 + (id)supportedSettingsClasses;
 + (bool)supportsSecureCoding;
@@ -50,7 +51,10 @@
 - (void)configureWithAccessorySettings:(id)arg1 context:(id)arg2;
 - (id)context;
 - (void)dealloc;
+- (id)debugDescription;
 - (id)delegate;
+- (id)description;
+- (id)descriptionWithPointer:(bool)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)groupWithIdentifier:(id)arg1;
 - (id)groups;
@@ -83,5 +87,6 @@
 - (void)setDelegate:(id)arg1;
 - (id)settingWithIdentifier:(id)arg1;
 - (id)settings;
+- (id)shortDescription;
 
 @end

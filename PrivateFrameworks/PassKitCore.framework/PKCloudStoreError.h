@@ -15,6 +15,7 @@
 - (bool)isKeychainSyncingInProgress;
 - (bool)isManateeNotAvailableError;
 - (bool)isNetworkUnavailable;
+- (bool)isPCSError;
 - (bool)isPartialError;
 - (bool)isUnrecoverableDecryptionError;
 

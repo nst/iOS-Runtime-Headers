@@ -6,6 +6,7 @@
 @required
 
 - (NSString *)calloutTitle;
+- (GEOResolvedItem *)clientResolved;
 - (NSArray *)displayLines;
 - (NSData *)entryMetadata;
 - (<GEOMapItem> *)geoMapItem;

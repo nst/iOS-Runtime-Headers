@@ -18,7 +18,7 @@
 - (bool)canMergeHeadlinesFromGroup:(id <FCFeedGroupOutlining>)arg1 intoGroup:(id <FCFeedGroupOutlining>)arg2;
 - (bool)emitsSingletonGroups;
 - (bool)isRequiredByFollowingEmitters;
-- (bool)requiresForYouCatchUpOperation;
+- (long long)requiredForYouContentTypes;
 - (bool)supportsPagination;
 
 @end

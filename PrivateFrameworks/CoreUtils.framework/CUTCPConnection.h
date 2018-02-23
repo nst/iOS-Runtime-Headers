@@ -23,7 +23,10 @@
     bool  _invalidateCalled;
     bool  _invalidateDone;
     id /* block */  _invalidationHandler;
+    int  _keepAliveSeconds;
     NSString * _label;
+    CUNetLinkEndpoint * _netLinkEndpoint;
+    CUNetLinkManager * _netLinkManager;
     union { 
         struct sockaddr { 
             unsigned char sa_len; 
@@ -106,7 +109,9 @@
 @property (nonatomic, copy) id /* block */ errorHandler;
 @property (nonatomic) unsigned int flags;
 @property (nonatomic, copy) id /* block */ invalidationHandler;
+@property (nonatomic) int keepAliveSeconds;
 @property (nonatomic, copy) NSString *label;
+@property (nonatomic, retain) CUNetLinkManager *netLinkManager;
 @property (nonatomic, copy) id /* block */ serverInvalidationHandler;
 @property (nonatomic) int socketFD;
 
@@ -117,6 +122,7 @@
 - (void)_completeWriteRequest:(id)arg1 error:(id)arg2;
 - (void)_invalidate;
 - (void)_invalidated;
+- (void)_netLinkStateChanged;
 - (void)_prepareReadRequest:(id)arg1;
 - (bool)_prepareWriteRequest:(id)arg1 error:(id*)arg2;
 - (bool)_processReadStatus;
@@ -139,7 +145,9 @@
 - (id)init;
 - (void)invalidate;
 - (id /* block */)invalidationHandler;
+- (int)keepAliveSeconds;
 - (id)label;
+- (id)netLinkManager;
 - (void)readWithRequest:(id)arg1;
 - (id /* block */)serverInvalidationHandler;
 - (void)setConnectTimeoutSecs:(double)arg1;
@@ -151,7 +159,9 @@
 - (void)setErrorHandler:(id /* block */)arg1;
 - (void)setFlags:(unsigned int)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;
+- (void)setKeepAliveSeconds:(int)arg1;
 - (void)setLabel:(id)arg1;
+- (void)setNetLinkManager:(id)arg1;
 - (void)setServerInvalidationHandler:(id /* block */)arg1;
 - (void)setSocketFD:(int)arg1;
 - (int)socketFD;

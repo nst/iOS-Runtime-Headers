@@ -10,7 +10,9 @@
     NSURLSessionTaskMetrics * __backgroundTaskMetrics;
     NSDictionary * __backgroundTaskTimingData;
     NSDictionary * __backgroundTrailers;
+    bool  __doesSZExtractorConsumeExtractedData;
     <SZExtractor> * __extractor;
+    bool  __hasSZExtractor;
     NSDictionary * _additionalProperties;
     NSData * _assetArtworkData;
     NSString * _assetTitle;
@@ -68,7 +70,9 @@
 @property (retain) NSURLSessionTaskMetrics *_backgroundTaskMetrics;
 @property (copy) NSDictionary *_backgroundTaskTimingData;
 @property (retain) NSDictionary *_backgroundTrailers;
+@property (nonatomic) bool _doesSZExtractorConsumeExtractedData;
 @property (nonatomic, retain) <SZExtractor> *_extractor;
+@property (nonatomic) bool _hasSZExtractor;
 @property (copy) NSDictionary *additionalProperties;
 @property (copy) NSData *assetArtworkData;
 @property (copy) NSString *assetTitle;
@@ -127,7 +131,9 @@
 - (id)_backgroundTaskMetrics;
 - (id)_backgroundTaskTimingData;
 - (id)_backgroundTrailers;
+- (bool)_doesSZExtractorConsumeExtractedData;
 - (id)_extractor;
+- (bool)_hasSZExtractor;
 - (void)_logTaskUUIDMapping;
 - (id)_loggableDescription;
 - (id)additionalProperties;
@@ -233,7 +239,9 @@
 - (void)set_backgroundTaskMetrics:(id)arg1;
 - (void)set_backgroundTaskTimingData:(id)arg1;
 - (void)set_backgroundTrailers:(id)arg1;
+- (void)set_doesSZExtractorConsumeExtractedData:(bool)arg1;
 - (void)set_extractor:(id)arg1;
+- (void)set_hasSZExtractor:(bool)arg1;
 - (bool)shouldCancelOnDisconnect;
 - (long long)state;
 - (id)storagePartitionIdentifier;

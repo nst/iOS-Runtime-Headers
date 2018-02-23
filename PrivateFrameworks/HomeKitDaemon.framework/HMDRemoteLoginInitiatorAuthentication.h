@@ -15,5 +15,6 @@
 - (void)authenticate;
 - (id)delegate;
 - (id)initWithSessionID:(id)arg1 remoteDevice:(id)arg2 workQueue:(id)arg3 remoteMessageSender:(id)arg4 delegate:(id)arg5;
+- (int)loginType;
 
 @end

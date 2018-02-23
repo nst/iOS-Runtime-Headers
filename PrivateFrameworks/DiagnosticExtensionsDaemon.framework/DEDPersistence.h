@@ -18,6 +18,7 @@
 - (id)bugSessionIdentifiers;
 - (id)init;
 - (id)loadSavedBugSessions;
+- (id)loadSavedSessionsFromPlist:(id)arg1;
 - (void)removeBugSession:(id)arg1;
 - (void)setBugSessionIdentifiers:(id)arg1;
 - (void)setUserDefaults:(id)arg1;

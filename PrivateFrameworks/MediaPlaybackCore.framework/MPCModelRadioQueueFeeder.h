@@ -18,6 +18,7 @@
     MPCModelRadioPlaybackQueue * _playbackQueue;
     MPCPlaybackRequestEnvironment * _playbackRequestEnvironment;
     long long  _queueGeneration;
+    NSString * _siriAssetInfo;
     ICStoreRequestContext * _storeRequestContext;
 }
 
@@ -50,6 +51,7 @@
 - (void)_responseDidInvalidateNotification:(id)arg1;
 - (void)_savePlaybackHistoryWithCurrentIndex:(long long)arg1;
 - (id)_startPlaybackRequestWithPlaybackContext:(id)arg1;
+- (bool)allowsQueueResetWhenReachingEnd;
 - (bool)allowsUserVisibleUpcomingItems;
 - (id)audioSessionModeForItemAtIndex:(unsigned long long)arg1;
 - (bool)canReorder;
@@ -68,7 +70,6 @@
 - (unsigned long long)itemCount;
 - (id)modelPlayEvent;
 - (void)player:(id)arg1 currentItemDidChangeToItem:(id)arg2;
-- (bool)player:(id)arg1 shouldContinuePlaybackForNetworkType:(long long)arg2 returningError:(id*)arg3;
 - (bool)playerPreparesItemsForPlaybackAsynchronously;
 - (bool)preventsHardQueueModificationsForItem:(id)arg1;
 - (long long)realRepeatType;

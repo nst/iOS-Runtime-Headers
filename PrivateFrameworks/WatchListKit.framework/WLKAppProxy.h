@@ -8,7 +8,6 @@
     bool  _isEntitled;
     bool  _isSystemApp;
     NSNumber * _itemID;
-    NSString * _localizedName;
     NSString * _subscriptionInfo;
     bool  _supportsTVApp;
     NSString * _version;
@@ -19,7 +18,6 @@
 @property (nonatomic, readonly) bool isEntitled;
 @property (nonatomic, readonly) bool isSystemApp;
 @property (nonatomic, readonly, copy) NSNumber *itemID;
-@property (nonatomic, readonly, copy) NSString *localizedName;
 @property (nonatomic, readonly, copy) NSString *subscriptionInfo;
 @property (nonatomic, readonly) bool supportsTVApp;
 @property (nonatomic, readonly, copy) NSString *version;
@@ -37,7 +35,6 @@
 - (bool)isEntitled;
 - (bool)isSystemApp;
 - (id)itemID;
-- (id)localizedName;
 - (id)subscriptionInfo;
 - (bool)supportsTVApp;
 - (id)version;

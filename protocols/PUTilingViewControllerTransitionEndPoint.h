@@ -14,5 +14,6 @@
 
 - (long long)tilingViewControllerTransitionPreferredBarStyle:(id <PUTilingViewControllerTransition>)arg1;
 - (bool)tilingViewControllerTransitionUsesTransientTilingView:(id <PUTilingViewControllerTransition>)arg1;
+- (void)tilingViewControllerTransitionWasAborted:(id <PUTilingViewControllerTransition>)arg1;
 
 @end

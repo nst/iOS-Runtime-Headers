@@ -7,12 +7,13 @@
     NSObject<OS_dispatch_queue> * _acquireQueue;
     bool  _acquired;
     int  _acquisitionFailure;
+    NSMutableArray * _audioDevices;
     NSString * _boxName;
     NSString * _boxUID;
     bool  _canChangeBoxName;
     bool  _canSetIdentify;
+    NSMutableArray * _clockDevices;
     NSObject<OS_dispatch_queue> * _deviceQueue;
-    NSMutableArray * _devices;
     NSString * _firmwareVersion;
     bool  _hasAudio;
     bool  _hasMIDI;
@@ -36,6 +37,7 @@
 @property (nonatomic, readonly, copy) NSString *boxUID;
 @property (nonatomic) bool canChangeBoxName;
 @property (nonatomic) bool canSetIdentify;
+@property (nonatomic, readonly, retain) NSArray *clockDevices;
 @property (nonatomic, readonly, retain) NSArray *devices;
 @property (nonatomic, copy) NSString *firmwareVersion;
 @property (nonatomic) bool hasAudio;
@@ -58,6 +60,7 @@
 - (bool)acquired;
 - (int)acquisitionFailure;
 - (void)addAudioDevice:(id)arg1;
+- (void)addClockDevice:(id)arg1;
 - (void)addDevice:(id)arg1;
 - (void)addDevicesToPlugin;
 - (id)audioDevices;
@@ -66,8 +69,11 @@
 - (bool)canChangeBoxName;
 - (bool)canSetIdentify;
 - (bool)changeBoxName:(id)arg1;
+- (id)clockDevices;
 - (unsigned int)dataSizeForProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned int)arg2 andQualifierData:(const void*)arg3;
 - (id)devices;
+- (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(bool)arg2;
+- (id)driverClassName;
 - (id)firmwareVersion;
 - (bool)getProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned int)arg2 qualifierData:(const void*)arg3 dataSize:(unsigned int*)arg4 andData:(void*)arg5 forClient:(int)arg6;
 - (bool)hasAudio;
@@ -86,8 +92,10 @@
 - (id)modelUID;
 - (unsigned int)objectClass;
 - (void)removeAllAudioDevices;
+- (void)removeAllClockDevices;
 - (void)removeAllDevices;
 - (void)removeAudioDevice:(id)arg1;
+- (void)removeClockDevice:(id)arg1;
 - (void)removeDevice:(id)arg1;
 - (void)removeDevicesFromPlugin;
 - (bool)requiresAuthentication;

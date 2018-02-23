@@ -23,6 +23,7 @@
     NSString * _protocolString;
     NSTimer * _reconnectTimer;
     EASession * _session;
+    bool  _skipDFUMode;
     NSString * _updateBundleFilename;
     NSURL * _updateBundleURL;
 }
@@ -41,6 +42,7 @@
 @property (nonatomic, retain) NSString *protocolString;
 @property (nonatomic, retain) iAUPServer *server;
 @property (nonatomic, retain) EASession *session;
+@property (nonatomic) bool skipDFUMode;
 @property (readonly) Class superclass;
 
 + (id)appProtocolStringWithProductIDCode:(unsigned int)arg1;
@@ -64,7 +66,7 @@
 - (id)flushOutput;
 - (bool)forceSilentUpdate;
 - (void)handleInputData;
-- (id)initWithProductIDCode:(unsigned int)arg1 assetType:(id)arg2;
+- (id)initWithProductIDCode:(unsigned int)arg1 assetType:(id)arg2 skipDFU:(bool)arg3;
 - (void)logStatusString:(id)arg1;
 - (id)openSession;
 - (id)overrideQueryPredicateFromDict:(id)arg1;
@@ -85,6 +87,8 @@
 - (void)setProtocolString:(id)arg1;
 - (void)setServer:(id)arg1;
 - (void)setSession:(id)arg1;
+- (void)setSkipDFUMode:(bool)arg1;
+- (bool)skipDFUMode;
 - (void)startReconnectTimer:(int)arg1;
 - (void)stopReconnectTimer;
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;

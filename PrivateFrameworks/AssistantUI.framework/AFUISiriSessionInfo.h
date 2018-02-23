@@ -6,11 +6,13 @@
     AFAccount * _activeAccount;
     NSString * _assistantVersion;
     NSString * _identifier;
+    NSNumber * _userAccountCount;
 }
 
 @property (nonatomic, copy) AFAccount *activeAccount;
 @property (nonatomic, copy) NSString *assistantVersion;
 @property (nonatomic, readonly, copy) NSString *identifier;
+@property (nonatomic, copy) NSNumber *userAccountCount;
 
 + (bool)supportsSecureCoding;
 
@@ -32,5 +34,8 @@
 - (id)setActiveAccountAndGenerateLightweightInfo:(id)arg1;
 - (void)setAssistantVersion:(id)arg1;
 - (id)setAssistantVersionAndGenerateLightweightInfo:(id)arg1;
+- (void)setUserAccountCount:(id)arg1;
+- (id)setUserAccountCountGenerateLightweightInfo:(long long)arg1;
+- (id)userAccountCount;
 
 @end

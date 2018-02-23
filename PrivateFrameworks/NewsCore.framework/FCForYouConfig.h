@@ -3,17 +3,18 @@
  */
 
 @interface FCForYouConfig : NSObject <NSCopying> {
-    FCGroupConfig * _breakingNewsGroupConfig;
+    FCSpecialEventGroupConfig * _breakingNewsGroupConfig;
     FCGroupConfig * _coverArticlesGroupConfig;
     NSArray * _editorialGroupConfigs;
     NTPBForYouConfigRecord * _forYouConfigRecord;
     FCInterestToken * _interestToken;
+    FCSpecialEventGroupConfig * _specialEventGroupConfig;
     FCTopStoriesGroupConfig * _topStoriesGroupConfig;
     FCGroupConfig * _trendingGroupConfig;
 }
 
 @property (nonatomic, readonly) NSArray *breakingNewsArticleIDs;
-@property (nonatomic, retain) FCGroupConfig *breakingNewsGroupConfig;
+@property (nonatomic, retain) FCSpecialEventGroupConfig *breakingNewsGroupConfig;
 @property (nonatomic, readonly) NSString *coverArticlesArticleListID;
 @property (nonatomic, retain) FCGroupConfig *coverArticlesGroupConfig;
 @property (nonatomic, readonly) NSArray *editorialArticleListIDs;
@@ -22,6 +23,8 @@
 @property (nonatomic, readonly) NSDate *fetchedDate;
 @property (nonatomic, retain) NTPBForYouConfigRecord *forYouConfigRecord;
 @property (nonatomic, retain) FCInterestToken *interestToken;
+@property (nonatomic, readonly) NSArray *specialEventArticleIDs;
+@property (nonatomic, retain) FCSpecialEventGroupConfig *specialEventGroupConfig;
 @property (nonatomic, readonly) NSArray *topStoriesCombinedArticleIDs;
 @property (nonatomic, retain) FCTopStoriesGroupConfig *topStoriesGroupConfig;
 @property (nonatomic, readonly) NSString *trendingArticleListID;
@@ -45,8 +48,11 @@
 - (void)setEditorialGroupConfigs:(id)arg1;
 - (void)setForYouConfigRecord:(id)arg1;
 - (void)setInterestToken:(id)arg1;
+- (void)setSpecialEventGroupConfig:(id)arg1;
 - (void)setTopStoriesGroupConfig:(id)arg1;
 - (void)setTrendingGroupConfig:(id)arg1;
+- (id)specialEventArticleIDs;
+- (id)specialEventGroupConfig;
 - (id)topStoriesCombinedArticleIDs;
 - (id)topStoriesGroupConfig;
 - (id)trendingArticleListID;

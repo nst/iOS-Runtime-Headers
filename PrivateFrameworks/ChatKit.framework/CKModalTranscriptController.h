@@ -17,7 +17,9 @@
 
 - (void).cxx_destruct;
 - (void)_conversationListDidFinishLoading:(id)arg1;
+- (bool)_deviceIsLocked;
 - (bool)_insertMediaObject:(id)arg1;
+- (void)_setConversationDeferredSetup;
 - (void)_setEntryViewVisible:(bool)arg1;
 - (bool)_shouldAllowCameraAttachments;
 - (bool)_shouldUseDefaultFirstResponder;

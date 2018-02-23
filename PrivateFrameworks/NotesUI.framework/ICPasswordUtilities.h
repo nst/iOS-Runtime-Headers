@@ -14,13 +14,24 @@
 
 + (bool)authenticateDevicePasscodeIfNecessaryWithReason:(id)arg1;
 + (void)authenticateiCloudPasswordFromRootViewController:(id)arg1 confirmButtonTitle:(id)arg2 reason:(id)arg3 completionHandler:(id /* block */)arg4;
++ (bool)biometricIDEnabledForSharedPassword;
++ (bool)biometricIDHardwareIsAvailable;
++ (bool)biometricIDIsEnrolled;
 + (bool)deviceHasPasscode;
++ (bool)deviceSupportsFaceID;
++ (bool)deviceSupportsTouchID;
++ (unsigned long long)faceIDAccess;
++ (bool)faceIDAccessAllowedViaTCC;
++ (bool)faceIDEnabledForSharedPassword;
++ (id)faceIDFailurePrompt;
++ (bool)faceIDIsEnrolled;
 + (struct UIImage { Class x1; }*)imageForCurrentDecryptedStatusForNote:(id)arg1;
++ (void)requestAllowFaceIDIfRequired:(id /* block */)arg1;
++ (void)setFaceIDEnabledForSharedPassword:(bool)arg1;
 + (void)setTouchIDEnabledForSharedPassword:(bool)arg1;
 + (id)sharedInstance;
 + (void)showFirstTimePasswordProtectNoteAlertForDisplayWindow:(id)arg1;
 + (bool)touchIDEnabledForSharedPassword;
-+ (bool)touchIDHardwareIsAvailable;
 + (bool)touchIDIsEnrolled;
 + (void)warnUserCannotPasswordProtectDueToManagedAppleIDInViewController:(id)arg1;
 + (void)warnUserCannotPasswordProtectNoteDueToSharedNoteInViewController:(id)arg1;
@@ -38,8 +49,8 @@
 - (void)authenticatePasswordForDeletingNotes:(id)arg1 displayWindow:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)authenticatePasswordWithIntent:(unsigned long long)arg1 note:(id)arg2 displayWindow:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)authenticateUsingAlternateMethodForDeletingNotes:(id)arg1 displayWindow:(struct UIWindow { Class x1; }*)arg2 completionHandler:(id /* block */)arg3;
-- (void)authenticateWithTouchIDForDeletingNotes:(id)arg1 displayWindow:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)authenticateWithTouchIDWithReason:(id)arg1 intent:(unsigned long long)arg2 note:(id)arg3 displayWindow:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)authenticateWithBiometricIDForDeletingNotes:(id)arg1 displayWindow:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)authenticateWithBiometricIDWithReason:(id)arg1 intent:(unsigned long long)arg2 note:(id)arg3 displayWindow:(id)arg4 completionHandler:(id /* block */)arg5;
 - (bool)authenticationInProgress;
 - (void)dealloc;
 - (id)displayedAlertController;

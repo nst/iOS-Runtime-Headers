@@ -43,7 +43,7 @@
     _MKUserTrackingButton * _userTrackingButton;
     UIBarButtonItem * _userTrackingButtonItem;
     bool  _viewWillAppearCalled;
-    bool  _wasToobarPreviouslyHidden;
+    bool  _wasToolbarPreviouslyHidden;
 }
 
 @property (nonatomic) bool _blockDidReceiveAnimation;
@@ -86,7 +86,7 @@
 @property (nonatomic, retain) _MKUserTrackingButton *userTrackingButton;
 @property (nonatomic, retain) UIBarButtonItem *userTrackingButtonItem;
 @property (nonatomic) bool viewWillAppearCalled;
-@property (nonatomic) bool wasToobarPreviouslyHidden;
+@property (nonatomic) bool wasToolbarPreviouslyHidden;
 
 + (struct CGSize { double x1; double x2; })annotationImageSize;
 + (bool)hasUserLocation;
@@ -211,7 +211,7 @@
 - (void)setUserTrackingButton:(id)arg1;
 - (void)setUserTrackingButtonItem:(id)arg1;
 - (void)setViewWillAppearCalled:(bool)arg1;
-- (void)setWasToobarPreviouslyHidden:(bool)arg1;
+- (void)setWasToolbarPreviouslyHidden:(bool)arg1;
 - (void)set_blockDidReceiveAnimation:(bool)arg1;
 - (void)set_internalHandlesShowingLocations:(id)arg1;
 - (void)set_isRenderingInitialMap:(bool)arg1;
@@ -245,7 +245,7 @@
 - (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
-- (bool)wasToobarPreviouslyHidden;
+- (bool)wasToolbarPreviouslyHidden;
 - (void)willMoveToParentViewController:(id)arg1;
 - (void)zoomAndSelectHandle:(id)arg1;
 - (void)zoomToFit;

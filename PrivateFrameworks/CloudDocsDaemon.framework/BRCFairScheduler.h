@@ -7,6 +7,7 @@
     unsigned long long  _maxRegistedSourceBit;
     NSString * _name;
     NSObject<OS_dispatch_queue> * _queue;
+    bool  _resumed;
     NSObject<OS_dispatch_source> * _source;
     NSMutableDictionary * _sourceForBitIndex;
 }
@@ -17,6 +18,7 @@
 - (void)addSource:(id)arg1;
 - (void)cancel;
 - (void)close;
+- (void)dealloc;
 - (id)initWithQueue:(id)arg1 name:(id)arg2;
 - (id)queue;
 - (void)resume;

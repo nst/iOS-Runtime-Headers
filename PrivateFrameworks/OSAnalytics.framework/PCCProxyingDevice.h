@@ -8,6 +8,7 @@
     bool  _preserveFiles;
     NSObject<OS_dispatch_queue> * _serial_job_queue;
     NSDictionary * _statusInfo;
+    NSObject<OS_dispatch_queue> * _sync_proxy_queue;
     NSMutableDictionary * _tracker_jobs;
 }
 

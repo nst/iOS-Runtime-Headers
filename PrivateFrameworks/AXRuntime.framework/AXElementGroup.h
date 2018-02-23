@@ -8,6 +8,7 @@
     <AXElementGroupGenerator> * _generator;
     NSHashTable * _groupObservers;
     unsigned long long  _groupTraits;
+    NSString * _identifier;
     NSString * _label;
     AXElementGroup * _parentGroup;
     bool  _rootGroup;
@@ -26,7 +27,8 @@
 @property (nonatomic, retain) NSHashTable *groupObservers;
 @property (nonatomic) unsigned long long groupTraits;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) NSString *label;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSString *label;
 @property (nonatomic, readonly) unsigned long long numberOfElements;
 @property (nonatomic) AXElementGroup *parentGroup;
 @property (getter=isRootGroup, nonatomic) bool rootGroup;
@@ -84,8 +86,10 @@
 - (id)groupObservers;
 - (unsigned long long)groupTraits;
 - (id)highestAncestorGroup;
+- (id)identifier;
 - (id)initWithElements:(id)arg1 label:(id)arg2;
 - (id)initWithGenerator:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (bool)isGroup;
 - (bool)isKeyboardContainer;
 - (bool)isKeyboardRow;
@@ -108,6 +112,8 @@
 - (void)setGenerator:(id)arg1;
 - (void)setGroupObservers:(id)arg1;
 - (void)setGroupTraits:(unsigned long long)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)setLabel:(id)arg1;
 - (void)setParentGroup:(id)arg1;
 - (void)setRootGroup:(bool)arg1;
 - (void)setUserDefinedScanningBehaviorTraits:(unsigned long long)arg1;

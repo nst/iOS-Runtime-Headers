@@ -16,6 +16,7 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)description;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;

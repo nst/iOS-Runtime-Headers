@@ -28,6 +28,7 @@
 - (void)beginDelayingCallbacks;
 - (id)delayCallbacksGroup;
 - (id)delegate;
+- (void)didEncounterAuthorizationEvent:(unsigned long long)arg1;
 - (void)endDelayingCallbacks;
 - (id)initWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 contextUUID:(id)arg3;
 - (void)setDelayCallbacksGroup:(id)arg1;

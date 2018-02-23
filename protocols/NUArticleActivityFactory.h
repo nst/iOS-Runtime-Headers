@@ -5,6 +5,6 @@
 
 @required
 
-- (<NUActivityProvider> *)activityProviderForHeadline:(id <FCHeadlineProviding>)arg1;
+- (<NUActivityProvider> *)activityProviderForHeadline:(id <FCHeadlineProviding>)arg1 reportConcernViewPresenter:(id <NUReportConcernViewPresenter>)arg2;
 
 @end

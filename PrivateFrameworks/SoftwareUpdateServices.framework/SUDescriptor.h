@@ -4,6 +4,8 @@
 
 @interface SUDescriptor : NSObject <NSCopying, NSSecureCoding> {
     bool  _autoDownloadAllowableForCellular;
+    NSString * _criticalDownloadPolicy;
+    bool  _criticalOutOfBoxOnly;
     bool  _disableAppDemotion;
     bool  _disableCDLevel4;
     bool  _disableIntallTonight;
@@ -27,6 +29,7 @@
     NSString * _releaseType;
     NSData * _rsepDigest;
     NSData * _sepDigest;
+    NSString * _setupCritical;
     bool  _streamingZipCapable;
     NSDictionary * _systemPartitionPadding;
     unsigned long long  _unarchiveSize;
@@ -34,6 +37,8 @@
 }
 
 @property (nonatomic) bool autoDownloadAllowableForCellular;
+@property (nonatomic, retain) NSString *criticalDownloadPolicy;
+@property (nonatomic) bool criticalOutOfBoxOnly;
 @property (getter=appDemotionDisabled, setter=_setDisableAppDemotion:, nonatomic) bool disableAppDemotion;
 @property (getter=cdLevel4Disabled, setter=_setDisableCDLevel4:, nonatomic) bool disableCDLevel4;
 @property (getter=installTonightDisabled, setter=_setDisableInstallTonight:, nonatomic) bool disableInstallTonight;
@@ -55,6 +60,7 @@
 @property (nonatomic, retain) NSString *releaseType;
 @property (setter=setRSEPDigest:, nonatomic, retain) NSData *rsepDigest;
 @property (setter=setSEPDigest:, nonatomic, retain) NSData *sepDigest;
+@property (nonatomic, retain) NSString *setupCritical;
 @property (getter=_isStreamingZipCapable, setter=_setStreamingZipCapable:, nonatomic) bool streamingZipCapable;
 @property (nonatomic, retain) NSDictionary *systemPartitionPadding;
 @property (getter=_unarchiveSize, setter=_setUnarchiveSize:, nonatomic) unsigned long long unarchiveSize;
@@ -78,6 +84,8 @@
 - (bool)autoDownloadAllowableForCellular;
 - (bool)cdLevel4Disabled;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)criticalDownloadPolicy;
+- (bool)criticalOutOfBoxOnly;
 - (void)dealloc;
 - (id)description;
 - (id)documentation;
@@ -91,6 +99,7 @@
 - (unsigned long long)installationSize;
 - (bool)isDownloadable;
 - (bool)isDownloadableOverCellular;
+- (bool)isEmergencyOrCritical;
 - (bool)isEqual:(id)arg1;
 - (bool)isValidDescriptor;
 - (unsigned long long)mdmDelayInterval;
@@ -106,6 +115,8 @@
 - (id)rsepDigest;
 - (id)sepDigest;
 - (void)setAutoDownloadAllowableForCellular:(bool)arg1;
+- (void)setCriticalDownloadPolicy:(id)arg1;
+- (void)setCriticalOutOfBoxOnly:(bool)arg1;
 - (void)setDocumentation:(id)arg1;
 - (void)setDownloadSize:(unsigned long long)arg1;
 - (void)setDownloadable:(bool)arg1;
@@ -122,8 +133,10 @@
 - (void)setReleaseDate:(id)arg1;
 - (void)setReleaseType:(id)arg1;
 - (void)setSEPDigest:(id)arg1;
+- (void)setSetupCritical:(id)arg1;
 - (void)setSystemPartitionPadding:(id)arg1;
 - (void)setUpdateType:(int)arg1;
+- (id)setupCritical;
 - (bool)siriVoiceDeletionDisabled;
 - (id)systemPartitionPadding;
 - (unsigned long long)totalRequiredFreeSpace;

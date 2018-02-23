@@ -3,11 +3,13 @@
  */
 
 @interface UITextGestureClusterPreview : UITextGestureCluster {
+    bool  _detachOnDealloc;
     UIPreviewItemController * _previewItemController;
 }
 
 - (void).cxx_destruct;
 - (void)_resetForLink;
+- (void)dealloc;
 - (void)detach;
 - (bool)doesControlDelegate;
 - (id)initWithView:(id)arg1;

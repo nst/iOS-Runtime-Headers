@@ -3,6 +3,7 @@
  */
 
 @interface UIVisualEffectView : UIView <NSSecureCoding> {
+    _UIVisualEffectViewCapturedState * __capturedStateDuringAnimation;
     bool  __useKeyframeWorkaround;
     double  _backdropViewBackgroundColorAlpha;
     NSArray * _backgroundEffects;
@@ -27,6 +28,7 @@
 
 @property (getter=_backdropViewBackgroundColorAlpha, setter=_setBackdropViewBackgroundColorAlpha:, nonatomic) double _backdropViewBackgroundColorAlpha;
 @property (setter=_setCaptureView:, nonatomic) _UIVisualEffectBackdropView *_captureView;
+@property (getter=_capturedStateDuringAnimation, setter=_setCapturedStateDuringAnimation:, nonatomic, retain) _UIVisualEffectViewCapturedState *_capturedStateDuringAnimation;
 @property (setter=_setCornerRadius:, nonatomic) double _cornerRadius;
 @property (setter=_setGroupName:, nonatomic, copy) NSString *_groupName;
 @property (setter=_setMaskImage:, nonatomic, retain) UIImage *_maskImage;
@@ -48,7 +50,9 @@
 - (id)_backdropSubview;
 - (double)_backdropViewBackgroundColorAlpha;
 - (id)_backgroundHost;
+- (id)_captureStateForCurrentAnimationBlockCreatingIfNecessary:(bool)arg1 clearingCache:(bool)arg2;
 - (id)_captureView;
+- (id)_capturedStateDuringAnimation;
 - (void)_commonInit;
 - (void)_configureAllEffects;
 - (void)_configureEffects;
@@ -69,9 +73,11 @@
 - (id)_maskImageForMaskView:(id)arg1;
 - (id)_maskView;
 - (void)_populateArchivedSubviews:(id)arg1;
+- (void)_registerNotifications;
 - (void)_resetEffect;
 - (void)_setBackdropViewBackgroundColorAlpha:(double)arg1;
 - (void)_setCaptureView:(id)arg1;
+- (void)_setCapturedStateDuringAnimation:(id)arg1;
 - (void)_setContinuousCornerRadius:(double)arg1;
 - (void)_setCornerRadius:(double)arg1;
 - (void)_setEffect:(id)arg1;
@@ -84,6 +90,7 @@
 - (void)_setUseLiveMasking:(bool)arg1;
 - (void)_setUseReducedTransparencyForContentEffects:(bool)arg1;
 - (bool)_shouldManageCornerRadiusForEffectSubview:(id)arg1;
+- (void)_unregisterNotifications;
 - (void)_updateEffectBackgroundColor;
 - (void)_updateEffectForAccessibilityChanges:(id)arg1;
 - (void)_updateEffectForAlphaTransitionDidEnd:(id)arg1;

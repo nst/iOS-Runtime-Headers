@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
  */
 
-@interface CAMViewfinderViewController : UIViewController <CAMAvailabilityDelegate, CAMBarsAccessibilityHUDManagerDelegate, CAMBurstDelegate, CAMCameraRollControllerImageWellDelegate, CAMCameraRollControllerPresentationDelegate, CAMCameraRollControllerSessionDelegate, CAMCaptureInterruptionDelegate, CAMCaptureRecoveryDelegate, CAMCaptureRunningDelegate, CAMClosedViewfinderControllerDelegate, CAMConfigurationDelegate, CAMControlVisibilityDelegate, CAMControlVisibilityUpdateDelegate, CAMFacesDelegate, CAMFilterScrubberViewDelegate, CAMLightingControlDelegate, CAMMachineReadableCodeDelegate, CAMModeDialDataSource, CAMPanoramaCaptureRequestDelegate, CAMPhysicalCaptureNotifierDelegate, CAMPortraitModeDescriptionOverlayViewDelegate, CAMPreviewViewControllerDelegate, CAMRemoteShutterDelegate, CAMShallowDepthOfFieldStatusDelegate, CAMStillImageCaptureRequestDelegate, CAMStillImageCapturingVideoDelegate, CAMSuggestionDelegate, CAMTimelapseControllerDelegate, CAMTimerButtonDelegate, CAMVideoCaptureRequestDelegate, CAMVideoThumbnailContentsDelegate, CAMZoomControlDelegate, CAMZoomDelegate, CAMZoomSliderDelegate, UIGestureRecognizerDelegate> {
+@interface CAMViewfinderViewController : UIViewController <CAMAvailabilityDelegate, CAMBarsAccessibilityHUDManagerDelegate, CAMBurstDelegate, CAMCameraRollControllerImageWellDelegate, CAMCameraRollControllerPresentationDelegate, CAMCameraRollControllerSessionDelegate, CAMCaptureInterruptionDelegate, CAMCaptureRecoveryDelegate, CAMCaptureRunningDelegate, CAMClosedViewfinderControllerDelegate, CAMConfigurationDelegate, CAMControlVisibilityDelegate, CAMControlVisibilityUpdateDelegate, CAMDisabledPreviewControllerDelegate, CAMFacesDelegate, CAMFilterScrubberViewDelegate, CAMLightingControlDelegate, CAMMachineReadableCodeDelegate, CAMModeDialDataSource, CAMPanoramaCaptureRequestDelegate, CAMPhysicalCaptureNotifierDelegate, CAMPortraitModeDescriptionOverlayViewDelegate, CAMPreviewViewControllerDelegate, CAMRemoteShutterDelegate, CAMShallowDepthOfFieldStatusDelegate, CAMStillImageCaptureRequestDelegate, CAMStillImageCapturingVideoDelegate, CAMSuggestionDelegate, CAMTimelapseControllerDelegate, CAMTimerButtonDelegate, CAMVideoCaptureRequestDelegate, CAMVideoThumbnailContentsDelegate, CAMZoomControlDelegate, CAMZoomDelegate, CAMZoomSliderDelegate, UIGestureRecognizerDelegate> {
     CAMHDRBadge * __HDRBadge;
     CAMHDRButton * __HDRButton;
     bool  __animatingFilterScrubberDismissal;
@@ -30,6 +30,7 @@
     long long  __desiredLivePhotoMode;
     long long  __desiredTorchMode;
     CAMDisabledModeOverlayView * __disabledModeOverlayView;
+    CAMDisabledPreviewController * __disabledPreviewController;
     UIAlertController * __diskSpaceAlertController;
     CAMElapsedTimeView * __elapsedTimeView;
     CAMFilterButton * __filterButton;
@@ -186,6 +187,7 @@
 @property (setter=_setDesiredLivePhotoMode:, nonatomic) long long _desiredLivePhotoMode;
 @property (setter=_setDesiredTorchMode:, nonatomic) long long _desiredTorchMode;
 @property (setter=_setDisabledModeOverlayView:, nonatomic, retain) CAMDisabledModeOverlayView *_disabledModeOverlayView;
+@property (nonatomic, readonly) CAMDisabledPreviewController *_disabledPreviewController;
 @property (setter=_setDiskSpaceAlertController:, nonatomic, retain) UIAlertController *_diskSpaceAlertController;
 @property (nonatomic, readonly) CAMElapsedTimeView *_elapsedTimeView;
 @property (nonatomic, readonly) CAMFilterButton *_filterButton;
@@ -440,6 +442,7 @@
 - (long long)_deviceForModeChange;
 - (void)_didChangeToGraphConfiguration:(id)arg1 forDesiredConfiguration:(id)arg2 requestID:(int)arg3;
 - (id)_disabledModeOverlayView;
+- (id)_disabledPreviewController;
 - (id)_diskSpaceAlertController;
 - (void)_dismissDiskSpaceAlertViewAnimated:(bool)arg1;
 - (void)_dismissFlashOrTorchUnavailableAlertViewAnimated:(bool)arg1;
@@ -592,6 +595,7 @@
 - (id)_lightingControl;
 - (id)_lightingNameBadge;
 - (long long)_lightingTypeForMode:(long long)arg1;
+- (double)_linearMappingForX:(double)arg1 x1:(double)arg2 y1:(double)arg3 x2:(double)arg4 y2:(double)arg5 clamp:(bool)arg6;
 - (id)_livePhotoBadge;
 - (id)_locationController;
 - (id)_machineReadableCodeLoggingController;
@@ -655,7 +659,7 @@
 - (long long)_resolvedTorchMode;
 - (id)_reviewButton;
 - (void)_rotateTopBarAndControlsToOrientation:(long long)arg1 shouldAnimate:(bool)arg2;
-- (long long)_sanitizedVideoConfigurationForMode:(long long)arg1 device:(long long)arg2 encodingBehavior:(long long)arg3;
+- (long long)_sanitizedVideoConfigurationForMode:(long long)arg1 device:(long long)arg2;
 - (void)_setAnimatingFilterScrubberDismissal:(bool)arg1;
 - (void)_setBarcodeParsingSession:(id)arg1;
 - (void)_setBottomBarAccessibilityHUDManager:(id)arg1;
@@ -825,6 +829,7 @@
 - (void)_stopFlashingLivePhotoBadge;
 - (void)_stopGeneratingDominantPhysicalButtonNotificationsIfSupported;
 - (bool)_stopTimelapse;
+- (unsigned long long)_supportedInterfaceOrientationsForLayoutStyle:(long long)arg1;
 - (void)_swipedToNextCameraMode;
 - (void)_swipedToPreviousCameraMode;
 - (id)_synchronizedCaptureTimerDelegate;
@@ -875,6 +880,7 @@
 - (void)_updateFramerateIndicatorTextAndVisibility;
 - (void)_updateFramerateIndicatorTextForGraphConfiguration:(id)arg1;
 - (void)_updateHDRSuggestionMonitoringForGraphConfiguration:(id)arg1;
+- (void)_updateHomeIndicatorBehaviorsForCaptureOrientation;
 - (void)_updateImageWellWithImage:(id)arg1 forUUID:(id)arg2 animated:(bool)arg3;
 - (void)_updateImageWellWithStillImageResponse:(id)arg1 forRequest:(id)arg2 error:(id)arg3;
 - (void)_updateLayoutStyleForSize:(struct CGSize { double x1; double x2; })arg1;
@@ -905,7 +911,7 @@
 - (void)_updateZoomAggregateDictionaryForMode:(long long)arg1 device:(long long)arg2 videoConfiguration:(long long)arg3 zoomFactor:(double)arg4;
 - (void)_updateZoomAggregateDictionaryForRequest:(id)arg1 response:(id)arg2;
 - (void)_updateZoomButtonTelephotoToggleForDevice:(long long)arg1;
-- (void)_updateZoomControlWithZoomFactor:(double)arg1 forDevice:(long long)arg2;
+- (void)_updateZoomControlWithZoomFactor:(double)arg1 forGraphConfiguration:(id)arg2;
 - (void)_updateZoomSliderWithZoomFactor:(double)arg1 animated:(bool)arg2;
 - (id)_utilityBar;
 - (id)_videoCaptureRequestWithCurrentSettings;
@@ -916,7 +922,8 @@
 - (void)_willChangeToGraphConfiguration:(id)arg1 fromGraphConfiguration:(id)arg2 animated:(bool)arg3;
 - (void)_writeUserPreferences;
 - (id)_zoomControl;
-- (double)_zoomControlDisplayValueForZoomFactor:(double)arg1 device:(long long)arg2;
+- (double)_zoomControlDisplayValueForZoomFactor:(double)arg1 graphConfiguration:(id)arg2;
+- (double)_zoomFactorForZoomControlDisplayValue:(double)arg1 graphConfiguration:(id)arg2;
 - (double)_zoomFactorForZoomSliderValue:(double)arg1;
 - (id)_zoomPinchGestureRecognizer;
 - (id)_zoomSlider;
@@ -938,6 +945,7 @@
 - (void)cameraRollControllerDidFullyPresentCameraRoll:(id)arg1;
 - (void)cameraRollControllerDidStartSession:(id)arg1;
 - (id)cameraRollControllerImageForReveal:(id)arg1;
+- (long long)cameraRollControllerPreferredPresentationOrientation:(id)arg1;
 - (void)cameraRollControllerPrefersPresentingStatusbarHiddenDidChange:(id)arg1;
 - (id)cameraRollControllerPresentingViewController:(id)arg1;
 - (void)cameraRollControllerPreviewGestureDidBecomeAvailable:(id)arg1;
@@ -986,6 +994,8 @@
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })customPreviewViewTransform;
 - (void)dealloc;
 - (void)didCompleteCapturingVideoForStillImageRequests;
+- (void)disabledPreviewController:(id)arg1 wantsPreviewDisabledForReason:(long long)arg2;
+- (void)disabledPreviewController:(id)arg1 wantsPreviewEnabledForReason:(long long)arg2;
 - (void)dismissAccessibilityHUDViewForAccessibilityHUDManager:(id)arg1;
 - (long long)emulationMode;
 - (void)filterScrubberViewDidChangeSelectedFilterType:(id)arg1;

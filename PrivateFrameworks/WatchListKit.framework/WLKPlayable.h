@@ -5,6 +5,7 @@
 @interface WLKPlayable : NSObject {
     NSArray * _SDHLocales;
     NSArray * _adLocales;
+    long long  _airingType;
     bool  _appInstalled;
     NSArray * _audioTrackFormats;
     NSArray * _audioTrackLocales;
@@ -17,7 +18,7 @@
     long long  _contentSourceType;
     NSDictionary * _dictionary;
     NSNumber * _duration;
-    NSDate * _endTime;
+    NSDate * _endAirTime;
     bool  _entitled;
     NSString * _externalID;
     NSString * _externalServiceID;
@@ -29,7 +30,7 @@
     NSString * _playableID;
     WLKLocale * _primaryLocale;
     NSDictionary * _punchoutUrls;
-    NSDate * _startTime;
+    NSDate * _startAirTime;
     bool  _subtitled;
     NSArray * _subtitledLocales;
     NSString * _videoQuality;
@@ -37,6 +38,7 @@
 
 @property (nonatomic, readonly, copy) NSArray *SDHLocales;
 @property (nonatomic, readonly, copy) NSArray *adLocales;
+@property (nonatomic, readonly) long long airingType;
 @property (getter=isAppInstalled, nonatomic, readonly) bool appInstalled;
 @property (nonatomic, readonly, copy) NSArray *audioTrackFormats;
 @property (nonatomic, readonly, copy) NSArray *audioTrackLocales;
@@ -51,7 +53,7 @@
 @property (nonatomic, readonly) long long contentSourceType;
 @property (nonatomic, readonly, copy) NSDictionary *dictionary;
 @property (nonatomic, readonly) NSNumber *duration;
-@property (nonatomic, readonly, copy) NSDate *endTime;
+@property (nonatomic, readonly, copy) NSDate *endAirTime;
 @property (getter=isEntitled, nonatomic, readonly) bool entitled;
 @property (nonatomic, readonly, copy) NSString *externalID;
 @property (nonatomic, readonly, copy) NSString *externalServiceID;
@@ -64,7 +66,7 @@
 @property (nonatomic, readonly, copy) NSString *playableID;
 @property (nonatomic, readonly, copy) WLKLocale *primaryLocale;
 @property (nonatomic, readonly, copy) NSDictionary *punchoutUrls;
-@property (nonatomic, readonly, copy) NSDate *startTime;
+@property (nonatomic, readonly, copy) NSDate *startAirTime;
 @property (getter=isSubtitled, nonatomic, readonly) bool subtitled;
 @property (nonatomic, readonly, copy) NSArray *subtitledLocales;
 @property (nonatomic, readonly, copy) NSString *videoQuality;
@@ -77,6 +79,7 @@
 - (id)_localesArrayForDictionary:(id)arg1 andKey:(id)arg2;
 - (bool)_supportsHD;
 - (id)adLocales;
+- (long long)airingType;
 - (id)audioTrackFormats;
 - (id)audioTrackLocales;
 - (id)bestBuyOffer;
@@ -91,7 +94,7 @@
 - (id)description;
 - (id)dictionary;
 - (id)duration;
-- (id)endTime;
+- (id)endAirTime;
 - (id)externalID;
 - (id)externalServiceID;
 - (unsigned long long)hash;
@@ -111,7 +114,7 @@
 - (id)playableID;
 - (id)primaryLocale;
 - (id)punchoutUrls;
-- (id)startTime;
+- (id)startAirTime;
 - (id)subtitledLocales;
 - (id)videoQuality;
 

@@ -25,6 +25,7 @@
         } span; 
     }  _region;
     NSArray * _results;
+    bool  _shouldDisplayNoResults;
     <MKLocationManagerOperation> * _singleLocationUpdate;
     int  _source;
     <GEOMapServiceCompletionTicket> * _ticket;
@@ -48,17 +49,19 @@
 @property (nonatomic) struct { struct CLLocationCoordinate2D { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } region;
 @property (nonatomic, readonly) NSArray *results;
 @property (getter=isSearching, nonatomic, readonly) bool searching;
+@property (getter=_shouldDisplayNoResults, nonatomic, readonly) bool shouldDisplayNoResults;
 @property (nonatomic) double timeSinceLastInBoundingRegion;
 @property (nonatomic, retain) GEOMapServiceTraits *traits;
 
 - (void).cxx_destruct;
 - (void)_cancelTimer;
 - (void)_fireRequest;
-- (void)_handleCompletion:(id)arg1 forTicket:(id)arg2;
+- (void)_handleCompletion:(id)arg1 shouldDisplayNoResults:(bool)arg2 forTicket:(id)arg3;
 - (void)_handleError:(id)arg1 forTicket:(id)arg2;
 - (void)_markDirty;
 - (void)_schedulePendingRequest;
 - (void)_scheduleRequest;
+- (bool)_shouldDisplayNoResults;
 - (struct { struct CLLocationCoordinate2D { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })boundingRegion;
 - (void)cancel;
 - (id)categoryFilter;

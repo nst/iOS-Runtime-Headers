@@ -5,6 +5,7 @@
 @interface ARFaceGeometry : NSObject <NSCopying> {
     struct vector<float __attribute__((ext_vector_type(3))), std::__1::allocator<float __attribute__((ext_vector_type(3)))> >="__begin_"^"__end_"^"__end_cap_"{__compressed_pair<float * __attribute__((ext_vector_type(3))), std::__1::allocator<float __attribute__((ext_vector_type(3)))> >="__first_"^ {}  _customVertices;
     struct vector<float __attribute__((ext_vector_type(3))), std::__1::allocator<float __attribute__((ext_vector_type(3)))> >="__begin_"^"__end_"^"__end_cap_"{__compressed_pair<float * __attribute__((ext_vector_type(3))), std::__1::allocator<float __attribute__((ext_vector_type(3)))> >="__first_"^ {}  _normals;
+    NSObject<OS_dispatch_semaphore> * _normalsSemaphore;
     ARFaceTrackingData * _trackingData;
 }
 
@@ -18,7 +19,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
+- (id)initPrivate;
 - (id)initWithBlendShapes:(id)arg1;
 - (id)initWithCustomVertices:(const /* Warning: Unrecognized filer type: '1' using 'void*' */ void**)arg1 verticesCount:(unsigned long long)arg2;
 - (id)initWithFaceTrackingData:(id)arg1;

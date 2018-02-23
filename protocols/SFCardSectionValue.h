@@ -53,6 +53,7 @@
 - (void)setTextColumnsCardSection:(SFTextColumnsCardSection *)arg1;
 - (void)setTitleCardSection:(SFTitleCardSection *)arg1;
 - (void)setTrackListCardSection:(SFTrackListCardSection *)arg1;
+- (void)setWatchListCardSection:(SFWatchListCardSection *)arg1;
 - (void)setWebCardSection:(SFWebCardSection *)arg1;
 - (SFSocialMediaPostCardSection *)socialMediaPostCardSection;
 - (SFStockChartCardSection *)stockChartCardSection;
@@ -62,6 +63,7 @@
 - (SFTextColumnsCardSection *)textColumnsCardSection;
 - (SFTitleCardSection *)titleCardSection;
 - (SFTrackListCardSection *)trackListCardSection;
+- (SFWatchListCardSection *)watchListCardSection;
 - (SFWebCardSection *)webCardSection;
 
 @end

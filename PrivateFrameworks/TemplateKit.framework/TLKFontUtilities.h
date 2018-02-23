@@ -5,6 +5,7 @@
 @interface TLKFontUtilities : NSObject
 
 + (id)boldBodyFont;
++ (id)boldCaptionFont;
 + (id)boldFootnoteFont;
 + (id)captionFont;
 + (id)colorWithRed:(unsigned long long)arg1 green:(unsigned long long)arg2 blue:(unsigned long long)arg3;
@@ -21,5 +22,6 @@
 + (id)subheadFont;
 + (id)textColorForColor:(long long)arg1 style:(unsigned long long)arg2;
 + (id)textColorForStyle:(unsigned long long)arg1;
++ (id)thinFontOfSize:(double)arg1 grade:(unsigned long long)arg2;
 
 @end

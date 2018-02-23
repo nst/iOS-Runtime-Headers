@@ -5,6 +5,7 @@
 @interface VSUtilities : NSObject
 
 + (id)hardwarePlatform;
++ (bool)isAudioAccessory;
 + (id)legacyPlatforms;
 
 @end

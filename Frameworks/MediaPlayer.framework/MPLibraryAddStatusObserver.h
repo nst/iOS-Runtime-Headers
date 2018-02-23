@@ -12,6 +12,7 @@
     }  _configuration;
     unsigned long long  _currentStatus;
     MPModelObject * _identifyingModelObject;
+    bool  _needsStatusUpdate;
     id /* block */  _statusBlock;
 }
 

@@ -12,6 +12,7 @@
     unsigned long long  _playActivitySessionToken;
     ICRadioGetTracksRequest * _request;
     ICRadioGetTracksResponse * _response;
+    ICRadioGetTracksResponse * _siriAssetInfoGetTracksResponse;
 }
 
 @property (nonatomic, readonly, copy) ICUserIdentityProperties *delegatedIdentityProperties;
@@ -22,6 +23,7 @@
 @property (nonatomic, readonly, copy) SSVPlayActivityController *playActivityController;
 @property (nonatomic, readonly, copy) ICRadioGetTracksRequest *request;
 @property (nonatomic, readonly, copy) ICRadioGetTracksResponse *response;
+@property (nonatomic, readonly) ICRadioGetTracksResponse *siriAssetInfoGetTracksResponse;
 
 - (void).cxx_destruct;
 - (void)_fireAndForgetServerDialog:(id)arg1;
@@ -30,7 +32,7 @@
 - (id)delegatedIdentityProperties;
 - (id)error;
 - (id)identityProperties;
-- (id)initWithGetTracksRequest:(id)arg1 playActivityController:(id)arg2;
+- (id)initWithGetTracksRequest:(id)arg1 siriAssetInfo:(id)arg2 playActivityController:(id)arg3;
 - (id)initWithPreviousStep:(id)arg1;
 - (bool)isFinished;
 - (id)nextStepWithError:(id)arg1;
@@ -39,5 +41,6 @@
 - (id)playActivityController;
 - (id)request;
 - (id)response;
+- (id)siriAssetInfoGetTracksResponse;
 
 @end

@@ -83,6 +83,7 @@
 - (void)_transferView:(id)arg1 toSuperview:(id)arg2;
 - (double)_transitionProgressOffset;
 - (id)_transitionProgressValueFilter;
+- (bool)_validateTransitionFromEndPoint:(id)arg1 toEndPoint:(id)arg2;
 - (void)animateTransitionWithOperation:(long long)arg1 startedInteractively:(bool)arg2;
 - (double)dismissalDuration;
 - (bool)hasStarted;

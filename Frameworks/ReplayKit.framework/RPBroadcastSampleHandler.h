@@ -21,6 +21,7 @@
 - (void)_setupListenerWithEndpoint:(id)arg1;
 - (id)audioQueue;
 - (void)beginRequestWithExtensionContext:(id)arg1;
+- (void)broadcastAnnotatedWithApplicationInfo:(id)arg1;
 - (void)broadcastFinished;
 - (void)broadcastPaused;
 - (void)broadcastResumed;
@@ -28,6 +29,7 @@
 - (id)daemonProxy;
 - (void)extensionContext:(id)arg1 setEndpoint:(id)arg2;
 - (void)finishBroadcastWithError:(id)arg1;
+- (id)group;
 - (void)processPayload:(id)arg1 completion:(id /* block */)arg2;
 - (void)processSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 withType:(long long)arg2;
 - (void)setDaemonProxy:(id)arg1;

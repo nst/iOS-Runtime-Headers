@@ -4,8 +4,11 @@
 
 @interface CPLEnginePushRepository : CPLEngineStorage <CPLAbstractObject, CPLBatchExtractionStrategyStorage> {
     CPLBatchExtractionStrategy * _extractionStrategy;
+    double  _lastApproximativeUploadRate;
     NSString * _lastStrategyName;
+    NSDate * _lastUploadRateUpdateDate;
     NSMutableDictionary * _propertiesPerClass;
+    NSObject<OS_dispatch_queue> * _uploadRateQueue;
 }
 
 @property (nonatomic, readonly) unsigned long long countOfChanges;
@@ -14,6 +17,7 @@
 @property (nonatomic, retain) CPLBatchExtractionStrategy *extractionStrategy;
 @property (nonatomic, readonly) bool hasChanges;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) unsigned long long maximumResourceSizePerBatch;
 @property (nonatomic, readonly) CPLPlatformObject *platformObject;
 @property (readonly) Class superclass;
 
@@ -34,6 +38,7 @@
 - (bool)hasChanges;
 - (bool)hasSomeChangeWithIdentifier:(id)arg1;
 - (id)initWithEngineStore:(id)arg1 name:(id)arg2;
+- (unsigned long long)maximumResourceSizePerBatch;
 - (bool)reinjectChange:(id)arg1 dequeueOrder:(long long)arg2 overwrittenRecord:(bool*)arg3 error:(id*)arg4;
 - (bool)reinjectExtractedBatch:(id)arg1 overwrittenRecordIdentifiers:(id*)arg2 error:(id*)arg3;
 - (bool)removeChange:(id)arg1 error:(id*)arg2;
@@ -42,5 +47,6 @@
 - (bool)storeChange:(id)arg1 uploadIdentifier:(id)arg2 error:(id*)arg3;
 - (bool)storeExtractedBatch:(id)arg1 error:(id*)arg2;
 - (id)storedExtractedBatch;
+- (void)updateApproximativeUploadRate:(double)arg1;
 
 @end

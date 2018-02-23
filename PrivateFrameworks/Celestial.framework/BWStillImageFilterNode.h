@@ -31,15 +31,14 @@
 - (id)_debugStringForBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)_emitNodeErrorForErrorStatus:(int)arg1 numberOfNodeErrors:(int)arg2 requestedStillImageCaptureSettings:(id)arg3 resolvedStillImageCaptureSettings:(id)arg4;
 - (void)_emitSampleBufferAsync:(struct opaqueCMSampleBuffer { }*)arg1;
-- (id)_initWithResourceProvider:(id)arg1;
+- (id)_initWithDepthDataDeliveryEnabled:(bool)arg1 renderResourceProvider:(id)arg2;
 - (void)_prepareStillImageFilterRenderersForOriginalFilters:(id)arg1 processedFilters:(id)arg2;
 - (void)dealloc;
-- (bool)depthDataDeliveryEnabled;
 - (void)didReachEndOfDataForInput:(id)arg1;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2 forAttachedMediaKey:(id)arg3;
 - (void)handleNodeError:(id)arg1 forInput:(id)arg2;
 - (void)handleStillImagePrewarmWithRequestedStillImageCaptureSettings:(id)arg1 resolvedStillImageCaptureSettings:(id)arg2 resolvedPhotoManifest:(id)arg3 forInput:(id)arg4;
-- (id)init;
+- (id)initWithDepthDataDeliveryEnabled:(bool)arg1;
 - (id)nodeSubType;
 - (id)nodeType;
 - (void)prepareForCurrentConfigurationToBecomeLive;
@@ -51,7 +50,6 @@
 - (id)provideStreamingCVAFilterRenderer;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
 - (id)sensorIDDictionary;
-- (void)setDepthDataDeliveryEnabled:(bool)arg1;
 - (void)setSensorIDDictionary:(id)arg1;
 
 @end

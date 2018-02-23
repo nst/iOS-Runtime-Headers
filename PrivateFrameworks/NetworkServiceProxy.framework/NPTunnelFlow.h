@@ -68,6 +68,7 @@
 - (id)combineStateInfo:(id)arg1 andConnectionInfo:(id)arg2;
 - (id)copyConnectionInfo;
 - (void)copyConnectionInfoWithCompletionHandler:(id /* block */)arg1;
+- (id)createFallbackConnectionInfoWithFallbackReason:(long long)arg1;
 - (void)createTelemetryDataWithCompletionHandler:(id /* block */)arg1;
 - (void)dealloc;
 - (bool)enableDirectRace;
@@ -81,6 +82,7 @@
 - (void)handleTunnelCanHandleMoreData;
 - (void)handleTunnelConnected;
 - (void)handleTunnelDisconnected;
+- (void)handleTunnelReadyForData;
 - (bool)hasTunnel;
 - (unsigned long long)hashKey;
 - (unsigned long long)identifier;

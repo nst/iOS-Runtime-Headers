@@ -168,6 +168,7 @@
 - (id)fp_itemIDs;
 - (id)fp_itemIdentifiers;
 - (id)fp_map:(id /* block */)arg1;
+- (id)fp_pickItemsFromArray:(id)arg1 correspondingToIndexesOfItemsInArray:(id)arg2;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
@@ -246,7 +247,7 @@
 - (id)_intents_cacheableObjects;
 - (void)_intents_updateContainerWithCache:(id)arg1;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
-- (id)resolutionResultDataForIntent:(id)arg1 intentSlotDescription:(id)arg2;
+- (id)resolutionResultDataForIntent:(id)arg1 intentSlotDescription:(id)arg2 error:(id*)arg3;
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
@@ -374,6 +375,7 @@
 
 // Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
 
+- (id)aa_firstObjectPassingTest:(id /* block */)arg1;
 - (bool)aa_isSubsetOfArray:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
@@ -593,6 +595,11 @@
 - (id)cr_insertionSortedArrayUsingComparator:(id /* block */)arg1;
 - (id)cr_map:(id /* block */)arg1;
 
+// Image: /System/Library/PrivateFrameworks/CoreSpeech.framework/CoreSpeech
+
+- (id)initWithXPCObject:(id)arg1;
+- (id)xpcObject;
+
 // Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
 
 - (void)enumerateChunksOfSize:(unsigned long long)arg1 usingBlock:(id /* block */)arg2;
@@ -687,6 +694,7 @@
 
 - (id)describeElements:(id /* block */)arg1;
 - (bool)hmf_isEmpty;
+- (bool)hmf_objectsAreKindOfClass:(Class)arg1;
 - (id)secureDescriptionWithBlacklistKeys:(id)arg1;
 - (id)secureDescriptionWithIndent:(id)arg1 newLine:(bool)arg2 blacklistedKeys:(id)arg3;
 - (id)shortDescription;
@@ -756,6 +764,7 @@
 - (unsigned long long)mf_countObjectsPassingTest:(id /* block */)arg1;
 - (id)mf_dictionaryWithMessagesSortedByStore;
 - (id)mf_diffWithArray:(id)arg1;
+- (id)mf_displayEmailAddressList;
 - (void)mf_enumerateObjectsInBatchesOfSize:(unsigned long long)arg1 block:(id /* block */)arg2;
 - (id)mf_filter:(id /* block */)arg1;
 - (id)mf_firstObjectPassingTest:(id /* block */)arg1;
@@ -788,6 +797,10 @@
 - (unsigned long long)_maps_indexOfObjectCorrespondingToIdentifiableObject:(id)arg1;
 - (id)_maps_indexesOfObjectsCorrespondingToIdentifiableObjects:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
+
+- (bool)mr_isEqualToOutputDevicesArray:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
 
 - (bool)boolAtIndex:(int)arg1;
@@ -818,6 +831,7 @@
 
 // Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
 
+- (id)nnmk_description;
 - (id)nnmk_filter:(id /* block */)arg1;
 - (id)nnmk_map:(id /* block */)arg1;
 
@@ -840,6 +854,7 @@
 - (bool)na_any:(id /* block */)arg1;
 - (id)na_arrayByFlattening;
 - (id)na_arrayWithResultsOfBlock:(id /* block */)arg1;
+- (id)na_dictionaryByBucketingObjectsUsingKeyGenerator:(id /* block */)arg1;
 - (id)na_dictionaryWithKeyGenerator:(id /* block */)arg1;
 - (void)na_each:(id /* block */)arg1;
 - (id)na_filter:(id /* block */)arg1;
@@ -910,6 +925,7 @@
 - (id)fc_firstObjectWithValue:(id)arg1 forKey:(id)arg2;
 - (unsigned long long)fc_indexOfFirstObjectWithValue:(id)arg1 forKey:(id)arg2;
 - (id)fc_indexesOfObjectsIdenticalTo:(id)arg1;
+- (bool)fc_isEqualToArray:(id)arg1;
 - (bool)fc_isEqualToArray:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (bool)fc_isSortedUsingComparator:(id /* block */)arg1;
 - (id)fc_onlyObject;
@@ -937,6 +953,7 @@
 - (id)fc_subarrayWithMaxCount:(unsigned long long)arg1;
 - (id)fc_subarrayWithPercentFromBeginning:(double)arg1;
 - (id)fc_subarrayWithPercentToEnd:(double)arg1;
+- (id)fc_uniqueByValueBlock:(id /* block */)arg1;
 - (unsigned long long)fc_uniqueCount;
 - (void)fc_visitSubarraysWithMaxCount:(unsigned long long)arg1 block:(id /* block */)arg2;
 

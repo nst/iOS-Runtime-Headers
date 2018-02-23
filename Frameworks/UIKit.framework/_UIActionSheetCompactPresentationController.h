@@ -42,6 +42,7 @@
 - (void)_layoutViews;
 - (struct CGSize { double x1; double x2; })_minimumSizeForDismissButton;
 - (double)_resizeAnimationDuration;
+- (bool)_shouldDisableAvoidsKeyboard;
 - (bool)_shouldOccludeDuringPresentation;
 - (bool)_shouldPresentedViewControllerControlStatusBarAppearance;
 - (void)_subscribeToKeyboardNotifications;

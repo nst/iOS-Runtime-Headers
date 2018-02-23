@@ -16,6 +16,7 @@
     int  _itemType;
     _INPBLocation * _location;
     int  _locationSearchType;
+    NSString * _notebookItemIdentifier;
     int  _status;
     _INPBDataString * _title;
     PBUnknownFields * _unknownFields;
@@ -31,12 +32,14 @@
 @property (nonatomic) bool hasItemType;
 @property (nonatomic, readonly) bool hasLocation;
 @property (nonatomic) bool hasLocationSearchType;
+@property (nonatomic, readonly) bool hasNotebookItemIdentifier;
 @property (nonatomic) bool hasStatus;
 @property (nonatomic, readonly) bool hasTitle;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic) int itemType;
 @property (nonatomic, retain) _INPBLocation *location;
 @property (nonatomic) int locationSearchType;
+@property (nonatomic, retain) NSString *notebookItemIdentifier;
 @property (nonatomic) int status;
 @property (nonatomic, retain) _INPBDataString *title;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
@@ -62,6 +65,7 @@
 - (bool)hasItemType;
 - (bool)hasLocation;
 - (bool)hasLocationSearchType;
+- (bool)hasNotebookItemIdentifier;
 - (bool)hasStatus;
 - (bool)hasTitle;
 - (unsigned long long)hash;
@@ -73,6 +77,7 @@
 - (int)locationSearchType;
 - (id)locationSearchTypeAsString:(int)arg1;
 - (void)mergeFrom:(id)arg1;
+- (id)notebookItemIdentifier;
 - (bool)readFrom:(id)arg1;
 - (void)setContent:(id)arg1;
 - (void)setDateSearchType:(int)arg1;
@@ -85,6 +90,7 @@
 - (void)setItemType:(int)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setLocationSearchType:(int)arg1;
+- (void)setNotebookItemIdentifier:(id)arg1;
 - (void)setStatus:(int)arg1;
 - (void)setTitle:(id)arg1;
 - (int)status;

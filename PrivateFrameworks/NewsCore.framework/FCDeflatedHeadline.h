@@ -13,6 +13,7 @@
 @property (nonatomic, readonly, copy) NSString *articleID;
 @property (nonatomic, readonly) <FCNativeAdProviding> *associatedAd;
 @property (nonatomic, readonly) long long backendArticleVersion;
+@property (nonatomic, readonly) NSData *backingArticleRecordData;
 @property (nonatomic, readonly, copy) NSArray *blockedStorefrontIDs;
 @property (nonatomic, readonly) bool canBePurchased;
 @property (nonatomic, readonly, copy) NSString *clusterID;
@@ -66,8 +67,9 @@
 @property (nonatomic, readonly) FCFeedPersonalizedArticleScoreProfile *scoreProfile;
 @property (nonatomic, readonly) FCSharedStringIndex *sharedStrings;
 @property (nonatomic, readonly, copy) NSString *shortExcerpt;
+@property (nonatomic, readonly) bool showMinimalChrome;
 @property (nonatomic, readonly) bool showSubscriptionRequiredText;
-@property (nonatomic, readonly, copy) NSObject<FCChannelProviding> *sourceChannel;
+@property (nonatomic, readonly, copy) <FCChannelProviding> *sourceChannel;
 @property (nonatomic, readonly, copy) NSString *sourceChannelID;
 @property (nonatomic, readonly, copy) NSString *sourceFeedID;
 @property (nonatomic, readonly, copy) NSString *sourceName;
@@ -79,6 +81,7 @@
 @property (nonatomic, readonly, copy) NSString *surfacedByBinID;
 @property (nonatomic, readonly, copy) NSString *surfacedByChannelID;
 @property (nonatomic, readonly, copy) NSString *surfacedBySectionID;
+@property (nonatomic, readonly, copy) NSSet *surfacedByTagIDs;
 @property (nonatomic, readonly, copy) NSString *surfacedByTopicID;
 @property (nonatomic, readonly) FCHeadlineThumbnail *thumbnail;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } thumbnailFocalFrame;
@@ -91,6 +94,7 @@
 @property (nonatomic, readonly) FCHeadlineThumbnail *thumbnailWidgetLQ;
 @property (nonatomic, readonly) double tileProminenceScore;
 @property (nonatomic, readonly, copy) NSString *title;
+@property (nonatomic, readonly, copy) NSString *titleCompact;
 @property (nonatomic, readonly) unsigned long long topStoryType;
 @property (nonatomic, readonly, copy) NSArray *topicIDs;
 @property (nonatomic, readonly, copy) NSArray *topics;
@@ -163,6 +167,7 @@
 - (id)scoreProfile;
 - (id)sharedStrings;
 - (id)shortExcerpt;
+- (bool)showMinimalChrome;
 - (bool)showSubscriptionRequiredText;
 - (id)sourceChannel;
 - (id)sourceChannelID;
@@ -174,6 +179,7 @@
 - (id)surfacedByBinID;
 - (id)surfacedByChannelID;
 - (id)surfacedBySectionID;
+- (id)surfacedByTagIDs;
 - (id)surfacedByTopicID;
 - (id)thumbnail;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })thumbnailFocalFrame;
@@ -189,6 +195,7 @@
 - (id)thumbnailWidgetTagged;
 - (double)tileProminenceScore;
 - (id)title;
+- (id)titleCompact;
 - (unsigned long long)topStoryType;
 - (id)topicIDs;
 - (id)topics;

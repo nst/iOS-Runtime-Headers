@@ -39,7 +39,6 @@
 @property (nonatomic, retain) id secondaryValue;
 @property (nonatomic) struct { double x1; double x2; double x3; double x4; } selectedColor;
 @property (nonatomic) struct { double x1; double x2; } selectedColorCoordinate;
-@property (nonatomic) long long sizeSubclass;
 @property (readonly) Class superclass;
 @property (nonatomic) double touchDownTimestamp;
 @property (getter=isUserInteractionActive, nonatomic) bool userInteractionActive;
@@ -64,6 +63,7 @@
 - (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (id)initWithProfile:(id)arg1;
 - (id)interactionDelegate;
+- (id)intrinsicSizeDescriptorForControlSize:(unsigned long long)arg1;
 - (bool)isUserInteractionActive;
 - (void)layoutSubviews;
 - (struct CGPoint { double x1; double x2; })magnifierLocation;

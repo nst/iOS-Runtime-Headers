@@ -27,6 +27,7 @@
         } size; 
     }  _indexFrame;
     NSMutableArray * _insertIndexPaths;
+    bool  _insetsContentViewsToSafeArea;
     UIColor * _multiselectCheckmarkColor;
     bool  _overlapsSectionHeaderViews;
     UITableViewRowData * _rowData;
@@ -93,6 +94,7 @@
 @property (getter=_indexBarExtentFromEdge, nonatomic, readonly) double indexBarExtentFromEdge;
 @property (getter=_indexFrame, nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } indexFrame;
 @property (nonatomic, retain) NSMutableArray *insertIndexPaths;
+@property (nonatomic) bool insetsContentViewsToSafeArea;
 @property (getter=_isTableHeaderAutohiding, nonatomic, readonly) bool isTableHeaderAutohiding;
 @property (nonatomic, readonly) UIColor *multiselectCheckmarkColor;
 @property (getter=_numberOfSections, nonatomic, readonly) long long numberOfSections;
@@ -256,6 +258,7 @@
 - (id)gestureRecognizerViewForSwipeActionController:(id)arg1;
 - (id)init;
 - (id)insertIndexPaths;
+- (bool)insetsContentViewsToSafeArea;
 - (void)invalidateLayoutWithContext:(id)arg1;
 - (id)invalidationContextForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)invalidationContextForInteractivelyMovingItems:(id)arg1 withTargetPosition:(struct CGPoint { double x1; double x2; })arg2 previousIndexPaths:(id)arg3 previousPosition:(struct CGPoint { double x1; double x2; })arg4;
@@ -290,6 +293,7 @@
 - (void)setDeletedIndexPath:(id)arg1;
 - (void)setEditing:(bool)arg1;
 - (void)setInsertIndexPaths:(id)arg1;
+- (void)setInsetsContentViewsToSafeArea:(bool)arg1;
 - (void)setRowData:(id)arg1;
 - (void)setRowHeight:(double)arg1;
 - (void)setSectionFooterHeight:(double)arg1;

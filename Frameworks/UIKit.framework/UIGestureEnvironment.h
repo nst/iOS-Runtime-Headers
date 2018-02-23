@@ -14,6 +14,7 @@
     NSMutableSet * _gestureRecognizersNeedingRemoval;
     NSMutableSet * _gestureRecognizersNeedingReset;
     NSMutableSet * _gestureRecognizersNeedingUpdate;
+    bool  _isUpdatingGestureEnvironment;
     NSMapTable * _nodesByGestureRecognizer;
     NSMutableArray * _preUpdateActions;
     bool  _updateExclusivity;
@@ -35,6 +36,7 @@
 - (void)_deliverEvent:(id)arg1 toGestureRecognizers:(id)arg2 usingBlock:(id /* block */)arg3;
 - (void)_enqueueDelayedPressToSend:(id)arg1;
 - (void)_enqueueDelayedTouchToSend:(id)arg1;
+- (void)_forceUpdateForSpringBoardOnly;
 - (void)_gestureNeedsReset:(id)arg1;
 - (id)_gestureRecognizerForNode:(id)arg1;
 - (id)_graphDictionary:(bool)arg1;

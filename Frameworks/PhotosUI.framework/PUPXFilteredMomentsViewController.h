@@ -16,7 +16,7 @@
 
 - (void).cxx_destruct;
 - (id)containerViewController;
-- (void)getEmptyPlaceholderViewTitle:(id*)arg1 message:(id*)arg2;
+- (void)getEmptyPlaceholderViewTitle:(id*)arg1 message:(id*)arg2 buttonTitle:(id*)arg3 buttonAction:(id /* block */*)arg4;
 - (bool)isInPlaces:(id)arg1;
 - (void)loadView;
 - (id)navigationItemDelegate;

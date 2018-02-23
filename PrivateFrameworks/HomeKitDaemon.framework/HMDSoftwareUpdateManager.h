@@ -43,5 +43,6 @@
 - (void)registerForMessages;
 - (void)setAccessory:(id)arg1;
 - (void)startUpdate:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)updateAvailableUpdate:(id)arg1;
 
 @end

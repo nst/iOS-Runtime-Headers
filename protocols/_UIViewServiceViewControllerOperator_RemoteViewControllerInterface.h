@@ -6,8 +6,8 @@
 @required
 
 - (void)__cancelAlertActionWithToken:(long long)arg1;
-- (void)__createViewController:(void *)arg1 withAppearanceSerializedRepresentations:(void *)arg2 legacyAppearance:(void *)arg3 hostAccessibilityServerPort:(void *)arg4 canShowTextServices:(void *)arg5 replyHandler:(void *)arg6; // needs 6 arg types, found 16: NSString *, NSArray *, bool, BSMachPortSendRight *, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, _UIHostedWindowHostingHandle *, NSArray *, long long, int, BSMachPortSendRight *, NSError *, void*
-- (void)__createViewController:(void *)arg1 withContextToken:(void *)arg2 fbsDisplays:(void *)arg3 appearanceSerializedRepresentations:(void *)arg4 legacyAppearance:(void *)arg5 traitCollection:(void *)arg6 initialInterfaceOrientation:(void *)arg7 hostAccessibilityServerPort:(void *)arg8 canShowTextServices:(void *)arg9 replyHandler:(void *)arg10; // needs 10 arg types, found 20: NSString *, NSUUID *, NSArray *, NSArray *, bool, UITraitCollection *, long long, BSMachPortSendRight *, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, _UIHostedWindowHostingHandle *, NSArray *, long long, int, BSMachPortSendRight *, NSError *, void*
+- (void)__createViewController:(void *)arg1 withAppearanceSerializedRepresentations:(void *)arg2 legacyAppearance:(void *)arg3 hostAccessibilityServerPort:(void *)arg4 replyHandler:(void *)arg5; // needs 5 arg types, found 15: NSString *, NSArray *, bool, BSMachPortSendRight *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, _UIHostedWindowHostingHandle *, NSArray *, long long, int, BSMachPortSendRight *, NSError *, void*
+- (void)__createViewController:(void *)arg1 withContextToken:(void *)arg2 fbsDisplays:(void *)arg3 appearanceSerializedRepresentations:(void *)arg4 legacyAppearance:(void *)arg5 traitCollection:(void *)arg6 initialInterfaceOrientation:(void *)arg7 hostAccessibilityServerPort:(void *)arg8 replyHandler:(void *)arg9; // needs 9 arg types, found 19: NSString *, NSUUID *, NSArray *, NSArray *, bool, UITraitCollection *, long long, BSMachPortSendRight *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, _UIHostedWindowHostingHandle *, NSArray *, long long, int, BSMachPortSendRight *, NSError *, void*
 - (void)__dimmingViewWasTapped;
 - (void)__exchangeAccessibilityPortInformation:(void *)arg1 replyHandler:(void *)arg2; // needs 2 arg types, found 8: BSMachPortSendRight *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BSMachPortSendRight *, NSError *, void*
 - (void)__hostDidAttachDisplay:(FBSDisplayConfiguration *)arg1;
@@ -19,7 +19,7 @@
 - (void)__hostDidPromoteFirstResponder;
 - (void)__hostDidRotateFromInterfaceOrientation:(long long)arg1 skipSelf:(bool)arg2;
 - (void)__hostDidSetContentOverlayInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 andLeftMargin:(double)arg2 rightMargin:(double)arg3;
-- (void)__hostDidSetPresentationControllerClassName:(NSString *)arg1;
+- (void)__hostDidSetPresentationControllerClassName:(NSString *)arg1 canShowTextServices:(bool)arg2;
 - (void)__hostDidUpdateAppearanceWithSerializedRepresentations:(NSArray *)arg1 originalSource:(id)arg2 legacyAppearance:(bool)arg3;
 - (void)__hostDidUpdateDisplay:(FBSDisplayConfiguration *)arg1;
 - (void)__hostDisablesAutomaticKeyboardBehavior:(bool)arg1;

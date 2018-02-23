@@ -9,10 +9,14 @@
 
 @property (nonatomic, readonly) NSArray *playbackQueueClients;
 
+- (void)_handleApplicationRemovedNotification:(id)arg1;
+- (void)_handleOriginRemovedNotification:(id)arg1;
+- (void)_handlePlayerPathRemovedNotification:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)initWithQueue:(id)arg1;
 - (id)playbackQueueClientForPlayerPath:(void*)arg1;
 - (id)playbackQueueClients;
+- (void)removeClientIfPredicate:(id /* block */)arg1;
 
 @end

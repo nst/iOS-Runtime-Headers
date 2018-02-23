@@ -11,6 +11,12 @@
     int  _candidatesVisualStyle;
     UIKeyboardCandidateGridCollectionViewController * _collectionViewController;
     NSMutableDictionary * _collectionViewControllers;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _contentInsets;
     bool  _drawBottomShadow;
     bool  _drawTopShadow;
     UIKeyboardCandidateGridHeader * _gridHeader;
@@ -29,6 +35,7 @@
 @property (nonatomic) int candidatesVisualStyle;
 @property (nonatomic, retain) UIKeyboardCandidateGridCollectionViewController *collectionViewController;
 @property (nonatomic, readonly) NSMutableDictionary *collectionViewControllers;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool drawBottomShadow;
@@ -64,6 +71,7 @@
 - (void)clearViews;
 - (id)collectionViewController;
 - (id)collectionViewControllers;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (id)currentCandidate;
 - (unsigned long long)currentIndex;
 - (bool)drawBottomShadow;
@@ -98,6 +106,7 @@
 - (void)setCandidates:(id)arg1 type:(int)arg2 inlineText:(id)arg3 inlineRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4 maxX:(double)arg5 layout:(bool)arg6;
 - (void)setCandidatesVisualStyle:(int)arg1;
 - (void)setCollectionViewController:(id)arg1;
+- (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setDrawBottomShadow:(bool)arg1;
 - (void)setDrawTopShadow:(bool)arg1;
 - (void)setGridHeader:(id)arg1;

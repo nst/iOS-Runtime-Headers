@@ -27,6 +27,7 @@
 - (void)setInvalidationHandler:(id /* block */)arg1;
 - (void)setRetrievedDataHandler:(id /* block */)arg1;
 - (void)startListening;
+- (void)startListeningWithError:(id*)arg1;
 - (void)stopListening;
 
 @end

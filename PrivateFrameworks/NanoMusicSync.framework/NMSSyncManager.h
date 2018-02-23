@@ -16,6 +16,11 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
++ (unsigned long long)_gizmoSyncState;
++ (bool)_isPendingAssetSyncForMediaType:(unsigned int)arg1;
++ (unsigned int)_mediaTypeForAssetType:(id)arg1;
++ (unsigned long long)_syncStateForProgressInfo:(id)arg1 session:(id)arg2;
+
 - (void).cxx_destruct;
 - (id)_addedTracksPredicateForMediaType:(unsigned int)arg1;
 - (id)_addedTracksQueryForMediaType:(unsigned int)arg1;
@@ -24,14 +29,12 @@
 - (id)_defaultProgressInfoDict;
 - (unsigned long long)_estimatedAssetAggregateItemSizeInBytesWithQuery:(id)arg1;
 - (void)_handleSyncPreferencesDidChangeNotification;
+- (void)_handleSyncStateDidChangeNotification;
 - (void)_invokeOnMainThread:(id /* block */)arg1;
-- (bool)_isPendingAssetSyncForMediaType:(unsigned int)arg1;
-- (unsigned int)_mediaTypeForAssetType:(id)arg1;
 - (unsigned long long)_numberOfItemsNeedingDownloadForAssetType:(id)arg1;
 - (void)_startObservingSyncSession;
 - (void)_stopObservingSyncSession;
 - (id)_syncProgressInfoByAssetType:(id)arg1;
-- (unsigned long long)_syncStateForProgressInfo:(id)arg1;
 - (id)_tracksPredicateWithPersistentIDs:(id)arg1;
 - (id)_tracksQueryWithPredicate:(id)arg1;
 - (void)_updateCachedAssetsInfo;

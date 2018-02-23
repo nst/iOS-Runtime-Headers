@@ -58,7 +58,6 @@
 - (id)_defaultPaymentSpecifier;
 - (id)_defaultShippingAddressSpecifier;
 - (id)_defaultsGroupSpecifiers;
-- (void)_displayAlertForError:(id)arg1;
 - (id)_displayableStringForLabeledValue:(id)arg1;
 - (void)_felicaPropertiesForPaymentPass:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_finishDefaultExpressFelicaTransitUpdateWithContainer:(id)arg1 preference:(id)arg2;
@@ -83,6 +82,7 @@
 - (id)_peerPaymentGroupSpecifiers;
 - (id)_peerPaymentSwitchSpecifier;
 - (void)_performPhoneToWatchProvisioningForPaymentPass:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)_presentPeerPaymentReOpenCardFlowForSpecifier:(id)arg1;
 - (void)_presentPeerPaymentSetupFlowForSpecifier:(id)arg1;
 - (void)_presentPeerPaymentSetupFlowForSpecifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)_presentProvisioningPaymentPassNavController:(id)arg1 paymentPass:(id)arg2;

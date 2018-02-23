@@ -20,6 +20,7 @@
 - (void)clearPunchoutOptions;
 - (NSString *)contentAdvisory;
 - (NSString *)descriptionText;
+- (NSString *)footnote;
 - (bool)hasAuxiliaryAlignment;
 - (bool)hasAuxiliaryBottomText;
 - (bool)hasAuxiliaryBottomTextColor;
@@ -30,6 +31,7 @@
 - (bool)hasCanBeHidden;
 - (bool)hasContentAdvisory;
 - (bool)hasDescriptionText;
+- (bool)hasFootnote;
 - (bool)hasHasBottomPadding;
 - (bool)hasHasTopPadding;
 - (bool)hasHideVerticalDivider;
@@ -88,6 +90,7 @@
 - (void)setCanBeHidden:(bool)arg1;
 - (void)setContentAdvisory:(NSString *)arg1;
 - (void)setDescriptionText:(NSString *)arg1;
+- (void)setFootnote:(NSString *)arg1;
 - (void)setHasBottomPadding:(bool)arg1;
 - (void)setHasTopPadding:(bool)arg1;
 - (void)setHideVerticalDivider:(bool)arg1;

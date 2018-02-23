@@ -24,7 +24,6 @@
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)widgetDiscoveryController:(id)arg1 widgetWithIdentifier:(id)arg2 shouldBecomeHiddenInGroup:(id)arg3;
 - (void)widgetDiscoveryController:(id)arg1 widgetWithIdentifier:(id)arg2 shouldBecomeVisibleInGroup:(id)arg3;
-- (id)widgetListFooterView:(id)arg1 customBackgroundViewForItem:(id)arg2;
 - (void)widgetListFooterViewAvailableNewWidgetsUpdated:(id)arg1;
 
 @end

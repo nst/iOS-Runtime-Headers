@@ -121,7 +121,7 @@
 - (struct LabelSettings { }*)labelSettings;
 - (id)map;
 - (void)mapModel:(id)arg1 didUpdateContainsOverlay:(bool)arg2;
-- (void)mapModel:(id)arg1 selectedLabelMarkerDidChangeState:(const struct shared_ptr<md::LabelMarker> { }*)arg2;
+- (void)mapModel:(id)arg1 labelMarkerDidChangeState:(const struct shared_ptr<md::LabelMarker> { }*)arg2;
 - (void)mapModel:(id)arg1 selectedLabelMarkerWillDisappear:(const struct shared_ptr<md::LabelMarker> { }*)arg2;
 - (void)mapModel:(id)arg1 willTransitionFrom:(long long)arg2 to:(long long)arg3 duration:(double)arg4;
 - (void)mapModelDidBecomeFullyDrawn:(id)arg1 hasFailedTiles:(bool)arg2;

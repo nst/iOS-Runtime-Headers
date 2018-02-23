@@ -22,10 +22,15 @@
 @property (nonatomic, readonly) PKPeerPaymentWebService *webService;
 
 - (void).cxx_destruct;
+- (id)_accountLockedErrorViewController;
+- (id)_accountRestrictedErrorViewController;
 - (void)_formViewControllersWithExplanationView:(bool)arg1;
 - (id)_generateFieldsModel;
 - (bool)_hasRequiredFields;
+- (void)_identityVerificationResquestWithCompletion:(id /* block */)arg1;
 - (id)_nextLocalViewController;
+- (void)_resetViewControllers;
+- (id)_verificationErrorViewController;
 - (id)captureController;
 - (long long)context;
 - (id)fieldsModel;

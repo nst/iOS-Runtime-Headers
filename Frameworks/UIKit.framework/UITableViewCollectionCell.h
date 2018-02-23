@@ -14,6 +14,7 @@
 @property (nonatomic) long long editingStyle;
 @property (nonatomic) long long indentationLevel;
 @property (nonatomic) double indexBarExtentFromEdge;
+@property (nonatomic) bool insetsContentViewsToSafeArea;
 @property (nonatomic) bool layoutMarginsFollowReadableWidth;
 @property (nonatomic) double sectionBorderWidth;
 @property (nonatomic) int sectionLocation;
@@ -33,6 +34,7 @@
 - (bool)drawsSeparatorAtBottomOfSection;
 - (bool)drawsSeparatorAtTopOfSection;
 - (double)indexBarExtentFromEdge;
+- (bool)insetsContentViewsToSafeArea;
 - (double)sectionBorderWidth;
 - (id)separatorEffect;
 - (bool)separatorInsetIsRelativeToCellEdges;
@@ -42,6 +44,7 @@
 - (void)setDrawsSeparatorAtBottomOfSection:(bool)arg1;
 - (void)setDrawsSeparatorAtTopOfSection:(bool)arg1;
 - (void)setIndexBarExtentFromEdge:(double)arg1;
+- (void)setInsetsContentViewsToSafeArea:(bool)arg1;
 - (void)setSectionBorderWidth:(double)arg1;
 - (void)setSeparatorEffect:(id)arg1;
 - (void)setSeparatorInsetIsRelativeToCellEdges:(bool)arg1;

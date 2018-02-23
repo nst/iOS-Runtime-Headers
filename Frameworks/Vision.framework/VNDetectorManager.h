@@ -25,6 +25,8 @@
     NSObject<OS_dispatch_queue> * _junkIdentifierSerialQueue;
     VNSceneClassifier * _sceneClassifier;
     NSObject<OS_dispatch_queue> * _sceneClassifierSerialQueue;
+    VNSmartCamClassifier * _smartCamClassifier;
+    NSObject<OS_dispatch_queue> * _smartCamClassifierSerialQueue;
 }
 
 + (id)manager;
@@ -36,6 +38,7 @@
 - (void)forcedCleanupFacePipelineWithLevel:(id)arg1;
 - (void)forcedCleanupJunkPipelineWithLevel:(id)arg1;
 - (void)forcedCleanupScenePipelineWithLevel:(id)arg1;
+- (void)forcedCleanupSmartCamPipelineWithLevel:(id)arg1;
 - (void)forcedCleanupWithOptions:(id)arg1;
 - (id)getSerialDispatchQueueFaceBoxAligner;
 - (id)getSerialDispatchQueueFaceDetectorAccurate;
@@ -48,6 +51,7 @@
 - (id)getSerialDispatchQueueImageprintGenerator;
 - (id)getSerialDispatchQueueJunkDetector;
 - (id)getSerialDispatchQueueSceneDetector;
+- (id)getSerialDispatchQueueSmartCamDetector;
 - (id)init;
 
 @end

@@ -19,6 +19,7 @@
 - (id)appearance;
 - (bool)automaticallyUpdateScrollViewContentInset;
 - (bool)automaticallyUpdateScrollViewContentOffset;
+- (bool)automaticallyUpdateScrollViewIndicatorInset;
 - (void)buttonPressedWithIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
 - (bool)canEnterFullScreen;
 - (bool)canPerformFirstTimeAppearanceActions:(unsigned long long)arg1;
@@ -29,6 +30,7 @@
 - (id)delegate;
 - (id)draggableView;
 - (id)excludedToolbarButtonIdentifiersForTraitCollection:(id)arg1;
+- (id)fullscreenBackgroundColor;
 - (id)parallaxView;
 - (void)performFirstTimeAppearanceActions:(unsigned long long)arg1;
 - (struct CGSize { double x1; double x2; })preferredContentSize;

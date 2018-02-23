@@ -10,6 +10,7 @@
     NSDictionary * _assistantUnits;
     HAPMetadata * _hapMetadata;
     NSDictionary * _hmAccessoryCategories;
+    NSDictionary * _hmAllowableSecuringWrites;
     NSSet * _hmBlacklistedCharacteristics;
     NSSet * _hmBlacklistedCharacteristicsFromApp;
     NSSet * _hmBlacklistedServices;
@@ -34,6 +35,7 @@
 @property (nonatomic, retain) HAPMetadata *hapMetadata;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSDictionary *hmAccessoryCategories;
+@property (nonatomic, retain) NSDictionary *hmAllowableSecuringWrites;
 @property (nonatomic, retain) NSSet *hmBlacklistedCharacteristics;
 @property (nonatomic, retain) NSSet *hmBlacklistedCharacteristicsFromApp;
 @property (nonatomic, retain) NSSet *hmBlacklistedServices;
@@ -64,6 +66,7 @@
 - (void).cxx_destruct;
 - (id)aliasedHAPCharacteristicTypes;
 - (id)aliasedHAPServiceTypes;
+- (bool)allowsSecuringWriteFor:(id)arg1 withValue:(id)arg2;
 - (id)assistantCharacteristics;
 - (id)assistantChrHAPTypeNameMap;
 - (id)assistantServiceHAPTypeNameMap;
@@ -83,9 +86,10 @@
 - (id)getAliasedServiceType:(id)arg1;
 - (id)getCharacteristicTypeAlias:(id)arg1;
 - (id)getServiceTypeAlias:(id)arg1;
-- (id)getStatusCharacteristicTypes:(id)arg1;
+- (id)getStatusCharacteristicTypes:(id)arg1 forServiceType:(id)arg2;
 - (id)hapMetadata;
 - (id)hmAccessoryCategories;
+- (id)hmAllowableSecuringWrites;
 - (id)hmBlacklistedCharacteristics;
 - (id)hmBlacklistedCharacteristicsFromApp;
 - (id)hmBlacklistedServices;
@@ -106,8 +110,10 @@
 - (id)mapToAssistantCharacteristicName:(id)arg1;
 - (id)mapToAssistantCharacteristicValue:(id)arg1 name:(id)arg2 getActionType:(bool)arg3;
 - (id)mapToAssistantServiceName:(id)arg1;
+- (id)mapToAssistantServiceSubtypeName:(id)arg1;
 - (id)mapToAssistantUnitName:(id)arg1;
 - (id)mapWriteCharacteristicFromAssistantName:(id)arg1;
+- (void)parseAndSetAllowableSecuringWrites:(id)arg1;
 - (bool)parseAndSetAssistantCharacteristics:(id)arg1;
 - (bool)parseAndSetAssistantMetadataWithAssistantPlist:(id)arg1;
 - (bool)parseAndSetAssistantServices:(id)arg1;
@@ -124,6 +130,7 @@
 - (bool)requiresTimedWrite:(id)arg1 forService:(id)arg2;
 - (id)schemaVersion;
 - (id)serviceNameFromType:(id)arg1;
+- (id)serviceSubtypeForValue:(id)arg1 forServiceType:(id)arg2;
 - (id)serviceTypeFromName:(id)arg1;
 - (void)setAssistantCharacteristics:(id)arg1;
 - (void)setAssistantChrHAPTypeNameMap:(id)arg1;
@@ -132,6 +139,7 @@
 - (void)setAssistantUnits:(id)arg1;
 - (void)setHapMetadata:(id)arg1;
 - (void)setHmAccessoryCategories:(id)arg1;
+- (void)setHmAllowableSecuringWrites:(id)arg1;
 - (void)setHmBlacklistedCharacteristics:(id)arg1;
 - (void)setHmBlacklistedCharacteristicsFromApp:(id)arg1;
 - (void)setHmBlacklistedServices:(id)arg1;
@@ -152,7 +160,7 @@
 - (bool)shouldFilterServiceOfTypeFromApp:(id)arg1;
 - (bool)shouldHomeAppShowTileForServiceType:(id)arg1;
 - (bool)shouldNotCacheCharacteristicOfType:(id)arg1;
-- (id)statusHAPCharacteristicTypes;
+- (id)statusHAPCharacteristicTypesForServiceType;
 - (bool)supportsAuthorizationData:(id)arg1 forService:(id)arg2;
 - (bool)supportsLocalization:(id)arg1;
 - (id)validateAssociatedServiceType:(id)arg1 forService:(id)arg2;

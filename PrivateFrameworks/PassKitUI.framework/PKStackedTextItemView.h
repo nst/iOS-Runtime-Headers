@@ -50,6 +50,7 @@
 @property (nonatomic) long long textAlignment;
 
 - (void).cxx_destruct;
+- (id)_attributedStringWithText:(id)arg1 strikethrough:(bool)arg2;
 - (double)_prepareViewForReuse:(id)arg1;
 - (void)_updateAlignmentAnimated:(bool)arg1;
 - (void)_updateSubviewsAnimated:(bool)arg1;

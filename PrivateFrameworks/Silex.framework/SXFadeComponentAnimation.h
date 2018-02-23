@@ -9,5 +9,6 @@
 + (id)typeString;
 
 - (Class)handlerClass;
+- (int)transitionBehavior;
 
 @end

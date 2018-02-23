@@ -19,7 +19,6 @@
 @property (retain) UITraitCollection *traitCollection;
 
 - (void).cxx_destruct;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_safeAreaScreenPeripheryInsets;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (double)cornerRadius;
 - (id)dimmingViewColor;

@@ -8,6 +8,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)_animateAsTwoPartsIfNecessaryPartOne:(id /* block */)arg1 partTwo:(id /* block */)arg2;
 - (void)_animateCanvasViews;
 - (void)_animateContentView;
 - (void)_animateLargeTitleView;

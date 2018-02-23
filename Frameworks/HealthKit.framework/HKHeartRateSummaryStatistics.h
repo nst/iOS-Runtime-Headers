@@ -4,9 +4,7 @@
 
 @interface HKHeartRateSummaryStatistics : NSObject <NSSecureCoding> {
     NSDateInterval * _dateInterval;
-    NSDate * _earliestReadingDate;
     NSArray * _highlightedReadings;
-    NSDate * _latestReadingDate;
     long long  _numberOfBuckets;
     long long  _numberOfReadings;
     NSUUID * _sessionUUID;
@@ -17,7 +15,6 @@
 @property (setter=_setHighlightedReadings:, nonatomic, retain) NSArray *highlightedReadings;
 @property (nonatomic, readonly) long long numberOfBuckets;
 @property (nonatomic, readonly) long long numberOfReadings;
-@property (nonatomic, readonly) NSDateInterval *readingsDateInterval;
 @property (nonatomic, readonly) NSUUID *sessionUUID;
 
 + (bool)supportsSecureCoding;
@@ -27,7 +24,7 @@
 - (id)_bucketsDescription;
 - (id)_dictionaryRepresentation;
 - (void)_setHighlightedReadings:(id)arg1;
-- (void)addHeartRateInBeatsPerMinute:(double)arg1 forDate:(id)arg2;
+- (void)addHeartRateInBeatsPerMinute:(double)arg1 forTime:(double)arg2;
 - (id)bucketAtIndex:(long long)arg1;
 - (id)dateInterval;
 - (id)description;
@@ -40,7 +37,6 @@
 - (bool)isEqual:(id)arg1;
 - (long long)numberOfBuckets;
 - (long long)numberOfReadings;
-- (id)readingsDateInterval;
 - (id)sessionUUID;
 
 @end

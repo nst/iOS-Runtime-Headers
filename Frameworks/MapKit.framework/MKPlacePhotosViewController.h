@@ -14,6 +14,7 @@
     unsigned long long  _mode;
     unsigned long long  _originalMode;
     _MKPlaceViewController * _owner;
+    UIScrollView * _parentScrollView;
     bool  _photoLoaded;
     bool  _photoScrollViewScrollingLeft;
     bool  _photoScrollViewScrollingRight;
@@ -36,11 +37,13 @@
 - (void).cxx_destruct;
 - (void)_callPhotoDelegateForPhotoAt:(unsigned long long)arg1;
 - (void)_cancelLoadPhotos;
+- (void)_catchScrollNotification:(id)arg1;
 - (void)_createImageViews;
 - (void)_didBecomeActive:(id)arg1;
 - (void)_loadPhotos;
 - (void)_photoSelected:(id)arg1;
 - (void)_photoTappedAtIndex:(unsigned long long)arg1;
+- (void)_updateAlphaAttribution;
 - (void)_updatePhotoBackgroundColor:(id)arg1;
 - (void)_willResignActive:(id)arg1;
 - (void)addAttributionCell;

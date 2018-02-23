@@ -42,6 +42,7 @@
 - (id)lastExpiryAttempt;
 - (void)open;
 - (id)queue;
+- (unsigned long long)recordCacheSizeLimit;
 - (id)recordWithID:(id)arg1 requiredKeys:(id)arg2;
 - (id)recordsWithIDs:(id)arg1 requiredKeys:(id)arg2;
 - (void)releaseDatabase;
@@ -53,5 +54,6 @@
 - (void)setLastExpiryAttempt:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setScope:(long long)arg1;
+- (unsigned long long)sqlBatchCount;
 
 @end

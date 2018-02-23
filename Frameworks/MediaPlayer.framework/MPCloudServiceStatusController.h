@@ -9,6 +9,8 @@
     unsigned long long  _automaticLeaseRefreshCount;
     NSObject<OS_dispatch_queue> * _calloutQueue;
     unsigned long long  _cloudLibraryObservationCount;
+    long long  _cloudLibraryStatus;
+    NSObject<OS_dispatch_queue> * _cloudLibraryStatusAccessQueue;
     NSOperationQueue * _fairPlayOperationQueue;
     SSVFairPlaySubscriptionController * _fairPlaySubscriptionController;
     unsigned long long  _fairPlaySubscriptionStatusObservationCount;
@@ -70,6 +72,7 @@
 - (void)_updateMatchStatus;
 - (void)_updateSubscriptionInformationWithEndReasonType:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
 - (void)_updateWithURLBagDictionary:(id)arg1;
+- (void)_userIdentityStoreDidChange:(id)arg1;
 - (void)acquireSubscriptionLeaseWithCompletionHandler:(id /* block */)arg1;
 - (void)bagDidChange:(id)arg1;
 - (void)beginAutomaticallyRefreshingSubscriptionLease;

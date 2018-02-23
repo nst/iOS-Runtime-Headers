@@ -101,6 +101,7 @@
 - (void)brailleDidStartEditingWithDisplay:(id)arg1;
 - (void)brailleDisplay:(id)arg1 deletedUntranslatedText:(id)arg2 speakLiterally:(bool)arg3;
 - (void)brailleDisplay:(id)arg1 didDisplay:(id)arg2;
+- (void)brailleDisplay:(id)arg1 didMoveSelection:(unsigned long long)arg2;
 - (void)brailleDisplay:(id)arg1 didPanLeft:(id)arg2 elementToken:(id)arg3 appToken:(id)arg4;
 - (void)brailleDisplay:(id)arg1 didPanRight:(id)arg2 elementToken:(id)arg3 appToken:(id)arg4;
 - (void)brailleDisplay:(id)arg1 didReplaceRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 withString:(id)arg3 cursor:(unsigned long long)arg4;

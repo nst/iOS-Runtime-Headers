@@ -14,6 +14,7 @@
     UIColor * _strokeColor;
 }
 
+@property (nonatomic, readonly) UIAccessibilityHUDItem *accessibilityHUDRepresentation;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } alignmentRectInsets;
 @property (nonatomic, readonly) double baselineOffset;
 @property (nonatomic, retain) UIBezierPath *bezierPath;

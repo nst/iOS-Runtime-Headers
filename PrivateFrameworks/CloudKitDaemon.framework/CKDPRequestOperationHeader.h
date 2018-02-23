@@ -20,6 +20,7 @@
     NSString * _deviceLibraryName;
     NSString * _deviceLibraryVersion;
     unsigned long long  _deviceProtocolVersion;
+    bool  _deviceSoftwareIsAppleInternal;
     NSString * _deviceSoftwareVersion;
     unsigned long long  _globalConfigVersion;
     struct { 
@@ -33,6 +34,7 @@
         unsigned int deviceFlowControlRegeneration : 1; 
         unsigned int isolationLevel : 1; 
         unsigned int targetDatabase : 1; 
+        unsigned int deviceSoftwareIsAppleInternal : 1; 
     }  _has;
     int  _isolationLevel;
     CKDPLocale * _locale;
@@ -62,6 +64,7 @@
 @property (nonatomic, retain) NSString *deviceLibraryName;
 @property (nonatomic, retain) NSString *deviceLibraryVersion;
 @property (nonatomic) unsigned long long deviceProtocolVersion;
+@property (nonatomic) bool deviceSoftwareIsAppleInternal;
 @property (nonatomic, retain) NSString *deviceSoftwareVersion;
 @property (nonatomic) unsigned long long globalConfigVersion;
 @property (nonatomic, readonly) bool hasApplicationBundle;
@@ -81,6 +84,7 @@
 @property (nonatomic, readonly) bool hasDeviceLibraryName;
 @property (nonatomic, readonly) bool hasDeviceLibraryVersion;
 @property (nonatomic) bool hasDeviceProtocolVersion;
+@property (nonatomic) bool hasDeviceSoftwareIsAppleInternal;
 @property (nonatomic, readonly) bool hasDeviceSoftwareVersion;
 @property (nonatomic) bool hasGlobalConfigVersion;
 @property (nonatomic) bool hasIsolationLevel;
@@ -133,6 +137,7 @@
 - (id)deviceLibraryName;
 - (id)deviceLibraryVersion;
 - (unsigned long long)deviceProtocolVersion;
+- (bool)deviceSoftwareIsAppleInternal;
 - (id)deviceSoftwareVersion;
 - (id)dictionaryRepresentation;
 - (unsigned long long)globalConfigVersion;
@@ -153,6 +158,7 @@
 - (bool)hasDeviceLibraryName;
 - (bool)hasDeviceLibraryVersion;
 - (bool)hasDeviceProtocolVersion;
+- (bool)hasDeviceSoftwareIsAppleInternal;
 - (bool)hasDeviceSoftwareVersion;
 - (bool)hasGlobalConfigVersion;
 - (bool)hasIsolationLevel;
@@ -193,6 +199,7 @@
 - (void)setDeviceLibraryName:(id)arg1;
 - (void)setDeviceLibraryVersion:(id)arg1;
 - (void)setDeviceProtocolVersion:(unsigned long long)arg1;
+- (void)setDeviceSoftwareIsAppleInternal:(bool)arg1;
 - (void)setDeviceSoftwareVersion:(id)arg1;
 - (void)setGlobalConfigVersion:(unsigned long long)arg1;
 - (void)setHasApplicationConfigVersion:(bool)arg1;
@@ -201,6 +208,7 @@
 - (void)setHasDeviceFlowControlBudgetCap:(bool)arg1;
 - (void)setHasDeviceFlowControlRegeneration:(bool)arg1;
 - (void)setHasDeviceProtocolVersion:(bool)arg1;
+- (void)setHasDeviceSoftwareIsAppleInternal:(bool)arg1;
 - (void)setHasGlobalConfigVersion:(bool)arg1;
 - (void)setHasIsolationLevel:(bool)arg1;
 - (void)setHasOperationGroupQuantity:(bool)arg1;

@@ -58,6 +58,7 @@
         unsigned int forceRequirementSatisfied : 1; 
         unsigned int wantsDragEvents : 1; 
         unsigned int isDynamicGesture : 1; 
+        unsigned int canExcludeWithActiveRequirements : 1; 
     }  _gestureFlags;
     long long  _initialTouchType;
     NSMutableSet * _internalActiveTouches;
@@ -125,6 +126,7 @@
 - (id)_beganObservable;
 - (id)_briefDescription;
 - (bool)_canExcludeOtherExcludables;
+- (bool)_canExcludeWithActiveRequirements;
 - (void)_cancelRecognition;
 - (struct CGPoint { double x1; double x2; })_centroidOfTouches:(id)arg1 excludingEnded:(bool)arg2;
 - (void)_clearDelayedPresses;
@@ -165,6 +167,7 @@
 - (void)_forceLevelClassifier:(id)arg1 currentForceLevelDidChange:(long long)arg2;
 - (unsigned long long)_forcePressCount;
 - (bool)_forceRequirementSatisfied;
+- (bool)_hasUnmetRequirementsPreventingExclusion;
 - (void)_ignoreActiveEvents;
 - (bool)_inForceCapableEnvironment;
 - (void)_invalidateInitialTouchType;
@@ -192,6 +195,7 @@
 - (bool)_requiresSystemGesturesToFail;
 - (void)_resetGestureRecognizer;
 - (void)_setAcceptsFailureRequiments:(bool)arg1;
+- (void)_setCanExcludeWithActiveRequirements:(bool)arg1;
 - (void)_setDirty;
 - (void)_setForceLevelClassifier:(id)arg1;
 - (void)_setInitialTouchType:(long long)arg1;

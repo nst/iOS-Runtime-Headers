@@ -11,7 +11,9 @@
         unsigned int accountID : 1; 
         unsigned int delegateInfoID : 1; 
         unsigned int systemReleaseType : 1; 
+        unsigned int privateListeningEnabled : 1; 
     }  _has;
+    bool  _privateListeningEnabled;
     NSString * _requestUserAgent;
     int  _systemReleaseType;
     NSString * _timeZoneName;
@@ -26,10 +28,12 @@
 @property (nonatomic) bool hasDelegateInfoID;
 @property (nonatomic, readonly) bool hasDeviceGUID;
 @property (nonatomic, readonly) bool hasDeviceName;
+@property (nonatomic) bool hasPrivateListeningEnabled;
 @property (nonatomic, readonly) bool hasRequestUserAgent;
 @property (nonatomic) bool hasSystemReleaseType;
 @property (nonatomic, readonly) bool hasTimeZoneName;
 @property (nonatomic, readonly) bool hasUuid;
+@property (nonatomic) bool privateListeningEnabled;
 @property (nonatomic, retain) NSString *requestUserAgent;
 @property (nonatomic) int systemReleaseType;
 @property (nonatomic, retain) NSString *timeZoneName;
@@ -50,6 +54,7 @@
 - (bool)hasDelegateInfoID;
 - (bool)hasDeviceGUID;
 - (bool)hasDeviceName;
+- (bool)hasPrivateListeningEnabled;
 - (bool)hasRequestUserAgent;
 - (bool)hasSystemReleaseType;
 - (bool)hasTimeZoneName;
@@ -57,6 +62,7 @@
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (bool)privateListeningEnabled;
 - (bool)readFrom:(id)arg1;
 - (id)requestUserAgent;
 - (void)setAccountID:(unsigned long long)arg1;
@@ -65,7 +71,9 @@
 - (void)setDeviceName:(id)arg1;
 - (void)setHasAccountID:(bool)arg1;
 - (void)setHasDelegateInfoID:(bool)arg1;
+- (void)setHasPrivateListeningEnabled:(bool)arg1;
 - (void)setHasSystemReleaseType:(bool)arg1;
+- (void)setPrivateListeningEnabled:(bool)arg1;
 - (void)setRequestUserAgent:(id)arg1;
 - (void)setSystemReleaseType:(int)arg1;
 - (void)setTimeZoneName:(id)arg1;

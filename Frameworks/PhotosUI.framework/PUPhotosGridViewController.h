@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotosGridViewController : UICollectionViewController <PHAssetCollectionDataSource, PLDismissableViewController, PLNavigableAssetContainerViewController, PUCollectionViewSelectionDelegate, PUDeletePhotosActionControllerDelegate, PUOneUpPresentationHelperDelegate, PUPhotosGlobalFooterViewDelegate, PUPhotosGridBarsHelperDelegate, PUPhotosSharingViewControllerDelegate, PUScrollViewSpeedometerDelegate, PUSessionInfoObserver, PUSlideshowViewControllerDelegate, PUStackedAlbumControllerTransition, PUSwipeSelectionManagerDataSource, PUSwipeSelectionManagerDelegate, PXAutoScrollerDelegate, PXPhotosDataSourceChangeObserver, PXSettingsKeyObserver, UICollectionViewDragDestination, UICollectionViewDragSource, UIDropInteractionDelegate, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate> {
+@interface PUPhotosGridViewController : UICollectionViewController <PHAssetCollectionDataSource, PLDismissableViewController, PLNavigableAssetContainerViewController, PUCollectionViewSelectionDelegate, PUDeletePhotosActionControllerDelegate, PUOneUpPresentationHelperDelegate, PUPhotosGlobalFooterViewDelegate, PUPhotosGlobalFooterViewLayoutDelegate, PUPhotosGridBarsHelperDelegate, PUPhotosSharingViewControllerDelegate, PUScrollViewSpeedometerDelegate, PUSessionInfoObserver, PUSlideshowViewControllerDelegate, PUStackedAlbumControllerTransition, PUSwipeSelectionManagerDataSource, PUSwipeSelectionManagerDelegate, PXAutoScrollerDelegate, PXPhotosDataSourceChangeObserver, PXSettingsKeyObserver, UICollectionViewDragDestination, UICollectionViewDragSource, UIDropInteractionDelegate, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate> {
     UIAlertController * __actionConfirmationAlert;
     UICollectionViewLayout * __albumListTransitionLayout;
     PUAlbumPickerViewController * __albumPickerViewController;
@@ -86,6 +86,7 @@
     bool  _initiallyScrolledToBottom;
     bool  _isMenuIndexPathExact;
     double  _lastTransitionWidth;
+    double  _lastUserScrollTime;
     UILongPressGestureRecognizer * _longPressGestureRecognizer;
     UICollectionViewLayout<PUGridLayoutProtocol> * _mainGridLayout;
     PUPhotosGlobalFooterView * _measuringGlobalFooterView;
@@ -103,7 +104,7 @@
     NSMutableDictionary * _progressInfosByIdentifier;
     UIBarButtonItem * _removeToolbarButton;
     UIBarButtonItem * _restoreToolbarButton;
-    PUSearchButtonItem * _searchButton;
+    UIBarButtonItem * _searchButton;
     UIBarButtonItem * _selectAllBarButtonItem;
     UIBarButtonItem * _selectSessionDoneBarButtonItem;
     UINavigationButton * _selectionButton;
@@ -265,7 +266,6 @@
 - (id)_pendingViewSizeTransitionContext;
 - (void)_performAutomaticContentOffsetAdjustment;
 - (id)_performDuplicateActivityWithAssets:(id)arg1;
-- (void)_performGroupActivityWithAssets:(id)arg1;
 - (id)_performHideActivityWithAssets:(id)arg1;
 - (id)_photoBrowserOneUpPresentationAdaptor;
 - (id)_pickerBannerView;
@@ -356,6 +356,7 @@
 - (void)_updateSubviewsOrderingAndVisibility;
 - (void)_updateToolbarContentsAnimated:(bool)arg1;
 - (bool)_updateTransitionWidthOnAppearance;
+- (void)_userDidStartScrolling;
 - (id)albumListTransitionContext;
 - (bool)allowSelectAllButton;
 - (bool)allowSlideshowButton;
@@ -400,7 +401,7 @@
 - (void)configureGlobalHeaderView:(id)arg1;
 - (void)configureGridCell:(id)arg1 forItemAtIndexPath:(id)arg2;
 - (void)configureGridCell:(id)arg1 forItemAtIndexPath:(id)arg2 assetMayHaveChanged:(bool)arg3;
-- (void)configureSupplementaryView:(id)arg1 ofKind:(id)arg2 forIndexPath:(id)arg3 animated:(bool)arg4;
+- (void)configureSupplementaryView:(id)arg1 ofKind:(id)arg2 forIndexPath:(id)arg3;
 - (struct CGPoint { double x1; double x2; })contentOffsetForPreheating;
 - (id)contentScrollView;
 - (struct CGSize { double x1; double x2; })contentSizeForPreheating;
@@ -410,6 +411,7 @@
 - (void)dealloc;
 - (void)deletePhotosActionController:(id)arg1 presentConfirmationViewController:(id)arg2;
 - (void)didDismissPreviewViewController:(id)arg1 committing:(bool)arg2;
+- (void)didEndDisplayingEmptyPlaceholderView;
 - (void)didSelectAddPlaceholderInSection:(long long)arg1;
 - (id)displayTitleInfoForDetailsOfAssetCollection:(id)arg1 withTitleCategory:(long long)arg2 preferredAttributesPromise:(id /* block */)arg3;
 - (bool)dropInteraction:(id)arg1 canHandleSession:(id)arg2;
@@ -419,7 +421,7 @@
 - (void)endSuppressingColorSettingsUpdate;
 - (void)forceDataSourceIfNeeded;
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
-- (void)getEmptyPlaceholderViewTitle:(id*)arg1 message:(id*)arg2;
+- (void)getEmptyPlaceholderViewTitle:(id*)arg1 message:(id*)arg2 buttonTitle:(id*)arg3 buttonAction:(id /* block */*)arg4;
 - (void)getTitle:(out id*)arg1 prompt:(out id*)arg2 shouldHideBackButton:(out bool*)arg3 leftBarButtonItems:(out id*)arg4 rightBarButtonItems:(out id*)arg5;
 - (double)globalHeaderHeight;
 - (id)gridLayout;
@@ -458,6 +460,7 @@
 - (bool)isTrashBinViewController;
 - (id)itemIndexPathAtPoint:(struct CGPoint { double x1; double x2; })arg1 outClosestMatch:(id*)arg2;
 - (id)itemIndexPathAtPoint:(struct CGPoint { double x1; double x2; })arg1 outClosestMatch:(id*)arg2 outLeftClosestMatch:(id*)arg3 outAboveClosestMatch:(id*)arg4;
+- (double)lastUserScrollTime;
 - (void)loadView;
 - (id)localizedSelectionTitle;
 - (id)localizedTitleForAssetCollection:(id)arg1;
@@ -583,6 +586,7 @@
 - (long long)swipeSelectionManager:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (id)swipeSelectionManager:(id)arg1 photoCollectionAtIndex:(unsigned long long)arg2;
 - (void)swipeSelectionManager:(id)arg1 updatePhotoSelectionWithIndexes:(id)arg2 inSection:(long long)arg3 selectionMode:(long long)arg4;
+- (double)topMarginForPhotosGlobalFooterView:(id)arg1;
 - (void)uninstallGestureRecognizers;
 - (void)updateEmptyPlaceholderViewAnimated:(bool)arg1;
 - (void)updateGlobalFooter;
@@ -596,7 +600,7 @@
 - (bool)updateSpec;
 - (void)updateTitle;
 - (void)updateVisibleSectionHeadersAtIndexes:(id)arg1;
-- (void)updateVisibleSupplementaryViewsOfKind:(id)arg1 animated:(bool)arg2;
+- (void)updateVisibleSupplementaryViewsOfKind:(id)arg1;
 - (unsigned long long)userEventSourceType;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
@@ -609,6 +613,8 @@
 - (bool)wantsAddContentInToolbar;
 - (bool)wantsAddPlaceholderAtEndOfSection:(long long)arg1;
 - (bool)wantsGlobalFooter;
+- (bool)wantsPlaceholderView;
+- (void)willDisplayEmptyPlaceholderView;
 - (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { double x1; double x2; })arg2 inSourceView:(id)arg3;
 - (void)zoomTransition:(id)arg1 didFinishForOperation:(long long)arg2 animated:(bool)arg3 interactive:(bool)arg4;
 - (bool)zoomTransition:(id)arg1 getFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 contentMode:(long long*)arg3 cropInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg4 forPhotoToken:(id)arg5 operation:(long long)arg6;

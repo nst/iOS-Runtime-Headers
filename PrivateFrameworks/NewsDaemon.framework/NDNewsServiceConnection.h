@@ -25,11 +25,11 @@
 - (id)connection;
 - (id)daemon;
 - (void)dealloc;
-- (void)fetchLatestHeadlinesWithParameters:(id)arg1 completion:(id /* block */)arg2;
+- (void)fetchLatestResultsWithParameters:(id)arg1 completion:(id /* block */)arg2;
 - (id)initWithClient:(id)arg1;
 - (void)markAnalyticsElement:(id)arg1 asReadAtDate:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)markAnalyticsElements:(id)arg1 asSeenAtDate:(id)arg2 withCompletion:(id /* block */)arg3;
-- (void)serviceHasNewHeadlineResults;
+- (void)serviceHasNewTodayResults;
 - (void)setAccessQueue:(id)arg1;
 - (void)setClient:(id)arg1;
 - (void)setConnection:(id)arg1;

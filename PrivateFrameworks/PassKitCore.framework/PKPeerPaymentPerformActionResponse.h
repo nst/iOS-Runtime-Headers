@@ -3,15 +3,15 @@
  */
 
 @interface PKPeerPaymentPerformActionResponse : PKPeerPaymentWebServiceResponse {
-    unsigned long long  _status;
+    long long  _status;
     bool  _success;
 }
 
-@property (nonatomic, readonly) unsigned long long status;
+@property (nonatomic, readonly) long long status;
 @property (nonatomic, readonly) bool success;
 
 - (id)initWithData:(id)arg1;
-- (unsigned long long)status;
+- (long long)status;
 - (bool)success;
 
 @end

@@ -22,6 +22,7 @@
 - (void)layoutSubviews;
 - (id)mapView:(id)arg1 rendererForOverlay:(id)arg2;
 - (id)mapView:(id)arg1 viewForAnnotation:(id)arg2;
+- (id)routeImageForSharing;
 - (void)setLocationReadings:(id)arg1;
 - (void)setToggleMapTypeButton:(id)arg1;
 - (id)toggleMapTypeButton;

@@ -20,6 +20,7 @@
 - (void)mapLayer:(VKMapView *)arg1 flyoverModeDidChange:(int)arg2;
 - (void)mapLayer:(VKMapView *)arg1 flyoverModeWillChange:(int)arg2;
 - (void)mapLayer:(VKMapView *)arg1 flyoverTourLabelDidChange:(NSString *)arg2;
+- (void)mapLayer:(VKMapView *)arg1 labelMarkerDidChangeState:(VKLabelMarker *)arg2;
 - (<VKTrackableAnnotationPresentation> *)mapLayer:(VKMapView *)arg1 presentationForAnnotation:(id <VKTrackableAnnotation>)arg2;
 - (void)mapLayer:(VKMapView *)arg1 selectedLabelMarkerDidChangeState:(VKLabelMarker *)arg2;
 - (void)mapLayer:(VKMapView *)arg1 selectedLabelMarkerWillDisappear:(VKLabelMarker *)arg2;

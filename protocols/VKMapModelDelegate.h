@@ -5,7 +5,7 @@
 
 @required
 
-- (void)mapModel:(VKMapModel *)arg1 selectedLabelMarkerDidChangeState:(const struct shared_ptr<md::LabelMarker> { }*)arg2;
+- (void)mapModel:(VKMapModel *)arg1 labelMarkerDidChangeState:(const struct shared_ptr<md::LabelMarker> { }*)arg2;
 - (void)mapModel:(VKMapModel *)arg1 selectedLabelMarkerWillDisappear:(const struct shared_ptr<md::LabelMarker> { }*)arg2;
 - (void)mapModel:(VKMapModel *)arg1 willTransitionFrom:(long long)arg2 to:(long long)arg3 duration:(double)arg4;
 - (void)mapModelDidBecomeFullyDrawn:(VKMapModel *)arg1 hasFailedTiles:(bool)arg2;

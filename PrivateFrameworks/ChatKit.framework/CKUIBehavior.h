@@ -11,7 +11,6 @@
     UIImage * _messageReplyImage;
     UIImage * _surfReplyImage;
     double  _waveformMaxWidth;
-    UIImage * _whiteQuestionMarkDotAckImage;
 }
 
 @property (nonatomic) long long HUDStyle;
@@ -73,8 +72,10 @@
 @property (nonatomic, readonly) UIFont *bigEmojiFont;
 @property (nonatomic, readonly) double bottomConversationListSpace;
 @property (nonatomic, readonly) double bottomTranscriptSpace;
+@property (nonatomic, readonly) double browserSwitcherCompactGrabberHeaderHeight;
+@property (nonatomic, readonly) double browserSwitcherCompactGrabberVisibleHeight;
 @property (nonatomic, readonly) double browserSwitcherExpandThreshold;
-@property (nonatomic, readonly) double browserSwitcherGrabberHeaderHeight;
+@property (nonatomic, readonly) double browserSwitcherExpandedGrabberHeaderHeight;
 @property (nonatomic, readonly) double browserSwitcherGutterWidth;
 @property (nonatomic, readonly) double browserSwitcherScrollerHeight;
 @property (nonatomic, readonly) Class businessChatControllerClass;
@@ -180,8 +181,8 @@
 @property (nonatomic, readonly) UIImage *grayH2AckImage;
 @property (nonatomic, readonly) UIImage *grayHaAckImage;
 @property (nonatomic, readonly) UIImage *grayHeartAckImage;
-@property (nonatomic, readonly) UIImage *grayQuestionMarkAckImage;
 @property (nonatomic, readonly) UIImage *grayQuestionMarkDotAckImage;
+@property (nonatomic, readonly) UIImage *grayQuestionMarkGlyphAckImage;
 @property (nonatomic, readonly) UIImage *grayThumbsDownAckImage;
 @property (nonatomic, readonly) UIImage *grayThumbsUpAckImage;
 @property (nonatomic, readonly) bool handlesBalloonViewTitleTapsSeparately;
@@ -196,6 +197,7 @@
 @property (nonatomic, readonly) bool isRunningInStoreDemoMode;
 @property (nonatomic, readonly) bool isSizeConstrained;
 @property (nonatomic, readonly) bool joystickUsesWindow;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } landscapeKeyboardInsets;
 @property (nonatomic, readonly) double largeTextTopConversationListSpace;
 @property (nonatomic, readonly) double largeTranscriptSpace;
 @property (nonatomic, readonly) UIImage *locationShareActionIcon;
@@ -430,8 +432,8 @@
 @property (nonatomic, readonly) UIImage *whiteH1AckImage;
 @property (nonatomic, readonly) UIImage *whiteH2AckImage;
 @property (nonatomic, readonly) UIImage *whiteHaAckImage;
-@property (nonatomic, readonly) UIImage *whiteQuestionMarkAckImage;
 @property (nonatomic, readonly) UIImage *whiteQuestionMarkDotAckImage;
+@property (nonatomic, readonly) UIImage *whiteQuestionMarkGlyphAckImage;
 @property (nonatomic, readonly) UIImage *whiteThumbsDownAckImage;
 @property (nonatomic, readonly) UIImage *whiteThumbsUpAckImage;
 
@@ -525,8 +527,10 @@
 - (double)bottomConversationListSpace;
 - (double)bottomTranscriptSpace;
 - (id)breadcrumbTranscriptTextAttributes;
+- (double)browserSwitcherCompactGrabberHeaderHeight;
+- (double)browserSwitcherCompactGrabberVisibleHeight;
 - (double)browserSwitcherExpandThreshold;
-- (double)browserSwitcherGrabberHeaderHeight;
+- (double)browserSwitcherExpandedGrabberHeaderHeight;
 - (double)browserSwitcherGutterWidth;
 - (double)browserSwitcherScrollerHeight;
 - (Class)businessChatControllerClass;
@@ -640,8 +644,8 @@
 - (id)grayH2AckImage;
 - (id)grayHaAckImage;
 - (id)grayHeartAckImage;
-- (id)grayQuestionMarkAckImage;
 - (id)grayQuestionMarkDotAckImage;
+- (id)grayQuestionMarkGlyphAckImage;
 - (id)grayThumbsDownAckImage;
 - (id)grayThumbsUpAckImage;
 - (id)gray_chevronImage;
@@ -664,6 +668,7 @@
 - (bool)isRunningInStoreDemoMode;
 - (bool)isSizeConstrained;
 - (bool)joystickUsesWindow;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })landscapeKeyboardInsets;
 - (id)largeMessageAcknowledgmentPollingImageNameForAcknowledgmentType:(long long)arg1;
 - (double)largeTextTopConversationListSpace;
 - (double)largeTranscriptSpace;
@@ -942,9 +947,8 @@
 - (id)whiteH1AckImage;
 - (id)whiteH2AckImage;
 - (id)whiteHaAckImage;
-- (id)whiteQuestionDotAckImage;
-- (id)whiteQuestionMarkAckImage;
 - (id)whiteQuestionMarkDotAckImage;
+- (id)whiteQuestionMarkGlyphAckImage;
 - (id)whiteThumbsDownAckImage;
 - (id)whiteThumbsUpAckImage;
 - (id)white_chevronImage;

@@ -3,18 +3,22 @@
  */
 
 @interface HMDBackingStoreOperation : NSOperation {
+    NSUUID * _operationUUID;
     id /* block */  _resultBlock;
     HMDBackingStore * _store;
 }
 
+@property (nonatomic, readonly) NSUUID *operationUUID;
 @property (nonatomic, copy) id /* block */ resultBlock;
 @property (nonatomic, retain) HMDBackingStore *store;
 
 - (void).cxx_destruct;
+- (id)description;
 - (id)init;
 - (id)initWithResultBlock:(id /* block */)arg1;
 - (void)main;
 - (id)mainReturningError;
+- (id)operationUUID;
 - (id /* block */)resultBlock;
 - (void)setResultBlock:(id /* block */)arg1;
 - (void)setStore:(id)arg1;

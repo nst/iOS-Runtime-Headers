@@ -10,6 +10,7 @@
     NSBundle * _auxTranslatorBundle;
     NSRecursiveLock * _contentLock;
     <SCROBrailleTranslatorProtocol> * _nemethTranslator;
+    NSString * _primaryTranslationTableIdentifier;
     bool  _tableSupportsContractedBraille;
     bool  _tableSupportsEightDotBraille;
     <SCROBrailleTranslatorProtocol> * _translator;
@@ -25,6 +26,7 @@
 + (id)sharedManager;
 
 - (void).cxx_destruct;
+- (void)_loadPrimaryTableIfNecessary;
 - (id)_loadTableIdentifier:(id)arg1 bundle:(id*)arg2 existingBundle:(id)arg3 existingTranslator:(id)arg4;
 - (id)_printBrailleForText:(id)arg1 primaryTable:(bool)arg2 contracted:(bool)arg3 eightDot:(bool)arg4 locations:(id*)arg5 isTechnical:(bool)arg6 textPositionsRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg7;
 - (bool)alwaysUsesNemethCodeForTechnicalText;
@@ -33,6 +35,7 @@
 - (bool)auxiliaryTableSupportsEightDotBraille;
 - (id)init;
 - (void)lockAuxiliaryTable;
+- (unsigned long long)numberOfTranslatorsLoaded;
 - (bool)primaryAndAuxiliaryTranslatorsAreIdentical;
 - (id)primaryTableIdentifier;
 - (bool)primaryTableSupportsContractedBraille;

@@ -5,25 +5,30 @@
 @interface BFFOnBoardingVideoView : UIView {
     bool  _displayingVideo;
     UIImageView * _imageView;
+    bool  _playVideo;
     AVPlayer * _videoPlayer;
     AVPlayerViewController * _videoViewController;
 }
 
 @property bool displayingVideo;
 @property (retain) UIImageView *imageView;
+@property bool playVideo;
 @property (retain) AVPlayer *videoPlayer;
 @property (retain) AVPlayerViewController *videoViewController;
+
++ (id)backgroundColor;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (bool)displayingVideo;
-- (id)grayColor;
 - (id)imageView;
 - (id)initWithPlaceholderImage:(id)arg1;
 - (void)layoutSubviews;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (bool)playVideo;
 - (void)setDisplayingVideo:(bool)arg1;
 - (void)setImageView:(id)arg1;
+- (void)setPlayVideo:(bool)arg1;
 - (void)setVideoPlayer:(id)arg1;
 - (void)setVideoViewController:(id)arg1;
 - (void)showVideo:(id)arg1;

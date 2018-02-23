@@ -6,6 +6,9 @@
     bool  _advancingOnCommitDisabled;
     NSObject<OS_dispatch_queue> * _animationAdvancerWaitingFlagQueue;
     NSMutableArray * _animationBlocksToStart;
+    NSThread * _animationThread;
+    NSObject<OS_dispatch_semaphore> * _animationThreadKeepAliveSemaphore;
+    NSRunLoop * _animationThreadRunLoop;
     bool  _animationsShouldCompleteImmediately;
     bool  _animationsSuspended;
     <_UIViewInProcessAnimationManagerDriver> * _animatorAdvancer;
@@ -44,6 +47,9 @@
 }
 
 @property (nonatomic) bool advancingOnCommitDisabled;
+@property NSThread *animationThread;
+@property (retain) NSObject<OS_dispatch_semaphore> *animationThreadKeepAliveSemaphore;
+@property NSRunLoop *animationThreadRunLoop;
 @property (nonatomic) bool commitsSynchronously;
 @property NSThread *currentTickThread;
 @property (readonly, copy) NSString *debugDescription;
@@ -84,8 +90,12 @@
 - (void)_setAnimationExecutionParameters;
 - (void)_setCurrentMediaTime:(double)arg1;
 - (void)_setPerformScheduledBlocksManually:(bool)arg1;
+- (bool)_shouldKeepAnimationThreadAlive;
 - (void)addEntry:(id /* block */)arg1;
 - (bool)advancingOnCommitDisabled;
+- (id)animationThread;
+- (id)animationThreadKeepAliveSemaphore;
+- (id)animationThreadRunLoop;
 - (bool)commitsSynchronously;
 - (id)currentTickThread;
 - (void)dealloc;
@@ -100,6 +110,9 @@
 - (double)refreshInterval;
 - (void)scheduleAnimatorAdvancerToStart;
 - (void)setAdvancingOnCommitDisabled:(bool)arg1;
+- (void)setAnimationThread:(id)arg1;
+- (void)setAnimationThreadKeepAliveSemaphore:(id)arg1;
+- (void)setAnimationThreadRunLoop:(id)arg1;
 - (void)setCommitsSynchronously:(bool)arg1;
 - (void)setCurrentTickThread:(id)arg1;
 - (void)setExecutionMode:(unsigned long long)arg1;

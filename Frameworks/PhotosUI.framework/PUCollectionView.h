@@ -15,6 +15,7 @@
     }  _draggedViewCenterOffset;
     <PUCollectionViewReorderDelegate> * _reorderDelegate;
     <PUCollectionViewSelectionDelegate> * _selectionDelegate;
+    bool  _shouldWorkaround34630932;
 }
 
 @property (nonatomic, readonly) _UIDragSnappingFeedbackGenerator *_feedbackDragBehavior;
@@ -28,6 +29,7 @@
 + (id)_reuseKeyForSupplementaryViewOfKind:(id)arg1 withReuseIdentifier:(id)arg2;
 
 - (void).cxx_destruct;
+- (void)_applyAutomaticAdjustedContentOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (id)_feedbackDragBehavior;
 - (void)_handleDrag:(id)arg1;
 - (id)_reorderableLayout;
@@ -35,6 +37,7 @@
 - (void)adjustedContentInsetDidChange;
 - (void)dealloc;
 - (void)deleteItemsAtIndexPaths:(id)arg1;
+- (void)didScrollToInitialPosition;
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)indexPathsForSelectedItems;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 collectionViewLayout:(id)arg2;

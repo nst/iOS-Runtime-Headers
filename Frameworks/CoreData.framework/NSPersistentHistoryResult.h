@@ -11,6 +11,7 @@
 @property (readonly) long long resultType;
 
 - (void)dealloc;
+- (id)description;
 - (id)initWithResultType:(long long)arg1 andResult:(id)arg2;
 - (id)initWithSubresults:(id)arg1;
 - (id)result;

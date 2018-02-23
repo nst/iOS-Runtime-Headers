@@ -21,8 +21,6 @@
 - (bool)requiresSignature;
 - (long long)serverType;
 - (void)setConfiguration:(id)arg1;
-- (id)sourceApplicationBundleIdentifier;
-- (id)sourceApplicationSecondaryIdentifier;
 - (id)url;
 
 @end

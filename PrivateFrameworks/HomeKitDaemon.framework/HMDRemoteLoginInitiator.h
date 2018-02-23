@@ -16,6 +16,7 @@
 @property (nonatomic, retain) HMDRemoteLoginMessageSender *remoteMessageSender;
 @property (readonly) Class superclass;
 
++ (bool)hasMessageReceiverChildren;
 + (id)logCategory;
 
 - (void).cxx_destruct;
@@ -28,11 +29,13 @@
 - (void)_handleRemoteLoginSignout:(id)arg1;
 - (void)_handleSignoutResponse:(id)arg1 error:(id)arg2 message:(id)arg3;
 - (void)_proxyLoginWithSessionID:(id)arg1 authResults:(id)arg2 remoteDevice:(id)arg3 completion:(id /* block */)arg4;
+- (void)_resetCurrentSession:(id)arg1;
 - (id)anisetteProviderBridge;
 - (void)configureWithWorkQueue:(id)arg1 messageDispatcher:(id)arg2;
 - (void)didCompleteAuthentication:(id)arg1 error:(id)arg2 loggedInAccount:(id)arg3;
 - (id)initWithUUID:(id)arg1 accessory:(id)arg2 remoteLoginHandler:(id)arg3;
 - (id)loginSession;
+- (id)messageReceiverChildren;
 - (void)registerForMessages;
 - (id)remoteMessageSender;
 - (void)setAnisetteProviderBridge:(id)arg1;

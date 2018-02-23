@@ -22,8 +22,10 @@
         unsigned int topStoryMandatoryArticleCount : 1; 
         unsigned int topStoryOptionalArticleCount : 1; 
         unsigned int isSubscribedToGroupFeed : 1; 
+        unsigned int reachedEndOfGroup : 1; 
     }  _has;
     bool  _isSubscribedToGroupFeed;
+    bool  _reachedEndOfGroup;
     int  _topStoryMandatoryArticleCount;
     int  _topStoryOptionalArticleCount;
 }
@@ -46,9 +48,11 @@
 @property (nonatomic) bool hasGroupPresentationReason;
 @property (nonatomic) bool hasGroupType;
 @property (nonatomic) bool hasIsSubscribedToGroupFeed;
+@property (nonatomic) bool hasReachedEndOfGroup;
 @property (nonatomic) bool hasTopStoryMandatoryArticleCount;
 @property (nonatomic) bool hasTopStoryOptionalArticleCount;
 @property (nonatomic) bool isSubscribedToGroupFeed;
+@property (nonatomic) bool reachedEndOfGroup;
 @property (nonatomic) int topStoryMandatoryArticleCount;
 @property (nonatomic) int topStoryOptionalArticleCount;
 
@@ -88,12 +92,14 @@
 - (bool)hasGroupPresentationReason;
 - (bool)hasGroupType;
 - (bool)hasIsSubscribedToGroupFeed;
+- (bool)hasReachedEndOfGroup;
 - (bool)hasTopStoryMandatoryArticleCount;
 - (bool)hasTopStoryOptionalArticleCount;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
 - (bool)isSubscribedToGroupFeed;
 - (void)mergeFrom:(id)arg1;
+- (bool)reachedEndOfGroup;
 - (bool)readFrom:(id)arg1;
 - (void)setFeedAutoSubscribeType:(int)arg1;
 - (void)setFeedViewExposureId:(id)arg1;
@@ -111,9 +117,11 @@
 - (void)setHasGroupPresentationReason:(bool)arg1;
 - (void)setHasGroupType:(bool)arg1;
 - (void)setHasIsSubscribedToGroupFeed:(bool)arg1;
+- (void)setHasReachedEndOfGroup:(bool)arg1;
 - (void)setHasTopStoryMandatoryArticleCount:(bool)arg1;
 - (void)setHasTopStoryOptionalArticleCount:(bool)arg1;
 - (void)setIsSubscribedToGroupFeed:(bool)arg1;
+- (void)setReachedEndOfGroup:(bool)arg1;
 - (void)setTopStoryMandatoryArticleCount:(int)arg1;
 - (void)setTopStoryOptionalArticleCount:(int)arg1;
 - (int)topStoryMandatoryArticleCount;

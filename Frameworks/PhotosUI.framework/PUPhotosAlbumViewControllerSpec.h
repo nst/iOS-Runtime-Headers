@@ -7,7 +7,6 @@
 }
 
 @property (nonatomic, readonly) double contentCornerRadius;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } fullMomentsLevelSectionHeaderContentInset;
 @property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } fullMomentsLevelSectionHeaderHighlightInset;
 @property (nonatomic, readonly) unsigned long long fullMomentsSectionHeaderBackgroundStyle;
 @property (nonatomic, readonly) long long fullMomentsSectionHeaderStyle;
@@ -16,7 +15,6 @@
 - (long long)cellFillMode;
 - (void)configureCollectionViewGridLayout:(id)arg1;
 - (double)contentCornerRadius;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })fullMomentsLevelSectionHeaderContentInset;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })fullMomentsLevelSectionHeaderHighlightInset;
 - (unsigned long long)fullMomentsSectionHeaderBackgroundStyle;
 - (long long)fullMomentsSectionHeaderStyle;

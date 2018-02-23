@@ -4,7 +4,6 @@
 
 @interface UIKeyboardCandidateGridCollectionView : UIKBCandidateCollectionView {
     UITableViewIndex * _index;
-    double  _indexMaximumHeight;
     UIKeyboardCandidateGridCollectionViewController * _parentViewController;
     double  _previousGroupBarStartingY;
 }

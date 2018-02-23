@@ -17,6 +17,7 @@
 
 - (void)cameraRollController:(CAMCameraRollController *)arg1 shouldHideSourceAsset:(bool)arg2;
 - (UIImage *)cameraRollControllerImageForReveal:(CAMCameraRollController *)arg1;
+- (long long)cameraRollControllerPreferredPresentationOrientation:(CAMCameraRollController *)arg1;
 - (void)cameraRollControllerPrefersPresentingStatusbarHiddenDidChange:(CAMCameraRollController *)arg1;
 - (void)cameraRollControllerPreviewGestureDidBecomeAvailable:(CAMCameraRollController *)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cameraRollControllerPreviewSourceRect:(CAMCameraRollController *)arg1;

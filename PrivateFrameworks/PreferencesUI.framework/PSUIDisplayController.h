@@ -7,7 +7,6 @@
     NSArray * _autoLockValues;
     CBClient * _brightnessClient;
     NSMutableDictionary * _localizedAutoLockTitleDictionary;
-    BKDevicePearl * _pearlDevice;
     NSDateFormatter * _timeFormatter;
 }
 

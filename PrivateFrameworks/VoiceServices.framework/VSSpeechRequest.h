@@ -17,6 +17,7 @@
     NSURL * _outputPath;
     id /* block */  _pauseHandler;
     double  _pitch;
+    long long  _pointer;
     double  _rate;
     unsigned long long  _requestCreatedTimestamp;
     NSURL * _resourceListURL;
@@ -44,6 +45,7 @@
 @property (nonatomic, copy) NSURL *outputPath;
 @property (nonatomic, copy) id /* block */ pauseHandler;
 @property (nonatomic) double pitch;
+@property (nonatomic) long long pointer;
 @property (nonatomic) double rate;
 @property (nonatomic) unsigned long long requestCreatedTimestamp;
 @property (nonatomic, copy) NSURL *resourceListURL;
@@ -79,6 +81,7 @@
 - (id)outputPath;
 - (id /* block */)pauseHandler;
 - (double)pitch;
+- (long long)pointer;
 - (double)rate;
 - (unsigned long long)requestCreatedTimestamp;
 - (id)resourceListURL;
@@ -97,6 +100,7 @@
 - (void)setOutputPath:(id)arg1;
 - (void)setPauseHandler:(id /* block */)arg1;
 - (void)setPitch:(double)arg1;
+- (void)setPointer:(long long)arg1;
 - (void)setRate:(double)arg1;
 - (void)setRequestCreatedTimestamp:(unsigned long long)arg1;
 - (void)setResourceListURL:(id)arg1;

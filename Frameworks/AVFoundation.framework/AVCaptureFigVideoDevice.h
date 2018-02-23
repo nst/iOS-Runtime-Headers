@@ -136,6 +136,7 @@
     bool  _smoothAutoFocusEnabled;
     bool  _subjectMonitoringEnabled;
     NSDictionary * _supportedOptionalFaceDetectionFeatures;
+    AVCaptureSystemPressureState * _systemPressureState;
     bool  _torchActive;
     bool  _torchAvailable;
     float  _torchLevel;
@@ -199,6 +200,7 @@
 - (void)_performBlockOnMainThread:(id /* block */)arg1;
 - (double)_predictedTempForGains:(struct { float x1; float x2; float x3; })arg1;
 - (void)_rampToVideoZoomFactor:(double)arg1 withRate:(float)arg2 duration:(double)arg3 rampType:(int)arg4;
+- (id)_recommendedFrameRateRangeForVideoFormat:(id)arg1 depthFormat:(id)arg2 systemPressureLevel:(id)arg3;
 - (void)_reconnectToFigCaptureSource:(struct OpaqueFigCaptureSource { }*)arg1;
 - (void)_restoreFigCaptureSourceProperties;
 - (void)_setActiveFormat:(id)arg1 resetVideoZoomFactorAndMinMaxFrameDurations:(bool)arg2;
@@ -402,6 +404,7 @@
 - (bool)smileDetectionEnabled;
 - (id)supportedMetadataObjectIdentifiers;
 - (bool)supportsAVCaptureSessionPreset:(id)arg1;
+- (id)systemPressureState;
 - (struct { float x1; float x2; })temperatureAndTintValuesForDeviceWhiteBalanceGains:(struct { float x1; float x2; float x3; })arg1;
 - (float)torchLevel;
 - (long long)torchMode;

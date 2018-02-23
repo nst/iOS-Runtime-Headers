@@ -32,7 +32,6 @@
 @property (nonatomic, retain) HFItem *usersItem;
 @property (nonatomic, retain) HFItem *wallpaperThumbnailItem;
 
-+ (bool)_isICloudEnabled;
 + (id /* block */)residentDeviceItemComparator;
 
 - (void).cxx_destruct;

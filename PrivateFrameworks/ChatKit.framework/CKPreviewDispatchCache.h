@@ -40,7 +40,6 @@
 - (void)setPendingBlocks:(id)arg1;
 - (bool)shouldReplaceCachedPreview:(id)arg1 withPreview:(id)arg2;
 - (void)systemApplicationDidSuspend;
-- (void)systemApplicationDidSuspendForEventsOnly;
 - (void)transferFinished:(id)arg1;
 - (void)transferRemoved:(id)arg1;
 

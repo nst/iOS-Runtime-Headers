@@ -27,6 +27,7 @@
 @property (nonatomic, readonly) MPCContentItemIdentifierCollection *MPC_contentItemIdentifierCollection;
 @property (nonatomic, readonly) MPUContentItemIdentifierCollection *MPU_contentItemIdentifierCollection;
 @property (nonatomic) long long activeShuffleType;
+@property (nonatomic, readonly) bool allowsQueueResetWhenReachingEnd;
 @property (nonatomic, readonly) bool allowsUserVisibleUpcomingItems;
 @property (nonatomic, readonly) bool canReorder;
 @property (nonatomic, readonly) bool canSeek;
@@ -63,6 +64,7 @@
 - (bool)_canPurgeNextStartTimes;
 - (id)_itemForIndex:(long long)arg1 queueIdentifier:(id)arg2;
 - (long long)activeShuffleType;
+- (bool)allowsQueueResetWhenReachingEnd;
 - (bool)allowsUserVisibleUpcomingItems;
 - (void)applyVolumeNormalizationForItem:(id)arg1;
 - (id)audioSessionModeForItemAtIndex:(unsigned long long)arg1;

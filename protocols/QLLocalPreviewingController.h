@@ -15,6 +15,7 @@
 - (bool)canPinchToDismiss;
 - (bool)canShowToolBar;
 - (bool)canSwipeToDismiss;
+- (bool)canToggleFullScreen;
 - (void)prepareForActionSheetPresentation;
 - (void)previewBecameFullScreen:(bool)arg1 animated:(bool)arg2;
 - (void)previewDidAppear:(bool)arg1;

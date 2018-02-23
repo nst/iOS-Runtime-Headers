@@ -17,6 +17,8 @@
 - (void)setLastBuildVersionPref:(id)arg1;
 - (void)setLastMigrationResultsPref:(id)arg1;
 - (void)setUserDataDispositionPref:(id)arg1;
+- (bool)suppressMigrationPluginWrapperExitMarkerPref;
 - (id)userDataDispositionPref;
+- (bool)waitForExecutePluginsSignalMarkerPref;
 
 @end

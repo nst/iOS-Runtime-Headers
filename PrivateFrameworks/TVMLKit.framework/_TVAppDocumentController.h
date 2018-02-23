@@ -5,8 +5,6 @@
 @interface _TVAppDocumentController : UIViewController <UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, _TVIKAppDocumentDelegate, _TVModalPresenterFocusing, _TVPagePerformanceDelegate> {
     IKAppDocument * _appDocument;
     bool  _applicationDeactivatedOnMenu;
-    CABackdropLayer * _backdropLayer;
-    bool  _backdropLayerNeeded;
     <_TVAppDocumentControllerDelegate> * _delegate;
     struct { 
         unsigned int mediaQueryEvaluatorForAppDocumentController : 1; 
@@ -21,12 +19,11 @@
     bool  _shouldMarkStylesDirtyBeforeLayout;
     UIViewController * _templateViewController;
     bool  _transitioning;
+    bool  _visualEffectDisablementNeeded;
 }
 
 @property (nonatomic, retain) IKAppDocument *appDocument;
 @property (nonatomic, readonly) bool applicationDeactivatedOnMenu;
-@property (nonatomic) CABackdropLayer *backdropLayer;
-@property (getter=isBackdropLayerNeeded, nonatomic) bool backdropLayerNeeded;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <_TVAppDocumentControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -43,9 +40,11 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIViewController *templateViewController;
 @property (getter=isTransitioning, nonatomic) bool transitioning;
+@property (getter=isVisualEffectDisablementNeeded, nonatomic) bool visualEffectDisablementNeeded;
 
 - (void).cxx_destruct;
 - (id)_alertControllerWithError:(id)arg1;
+- (void)_darkerSystemColorStatusChanged:(id)arg1;
 - (bool)_isFlowcaseStack;
 - (void)_markAndNotifyStylesDirty;
 - (id)_mediaQueryEvaluator;
@@ -57,7 +56,7 @@
 - (id)appDocument;
 - (bool)applicationDeactivatedOnMenu;
 - (bool)automaticallyAdjustsScrollViewInsets;
-- (id)backdropLayer;
+- (id)childViewControllerForHomeIndicatorAutoHidden;
 - (id)childViewControllerForStatusBarHidden;
 - (id)customAnimatorForNavigationControllerOperation:(long long)arg1 fromViewController:(id)arg2;
 - (id)customAnimatorForNavigationControllerOperation:(long long)arg1 toViewController:(id)arg2;
@@ -71,8 +70,8 @@
 - (struct CGSize { double x1; double x2; })formSize;
 - (id)impressionableViewElementsForDocument:(id)arg1;
 - (id)initWithAppDocument:(id)arg1;
-- (bool)isBackdropLayerNeeded;
 - (bool)isTransitioning;
+- (bool)isVisualEffectDisablementNeeded;
 - (void)loadView;
 - (id)mediaQueryEvaluator;
 - (id /* block */)menuGestureHandler;
@@ -89,8 +88,6 @@
 - (void)replaceAppDocumentWithAppDocument:(id)arg1;
 - (void)scrollToTop;
 - (void)setAppDocument:(id)arg1;
-- (void)setBackdropLayer:(id)arg1;
-- (void)setBackdropLayerNeeded:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDismissAppOnMenu:(bool)arg1;
 - (void)setMediaQueryEvaluator:(id)arg1;
@@ -101,6 +98,7 @@
 - (void)setPagePerformanceView:(id)arg1;
 - (void)setTemplateViewController:(id)arg1;
 - (void)setTransitioning:(bool)arg1;
+- (void)setVisualEffectDisablementNeeded:(bool)arg1;
 - (bool)shouldAutomaticallyForwardAppearanceMethods;
 - (unsigned long long)supportedInterfaceOrientations;
 - (id)templateViewController;

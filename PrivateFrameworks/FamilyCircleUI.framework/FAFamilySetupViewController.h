@@ -10,7 +10,7 @@
     bool  _isShowingSpinner;
     UINavigationItem * _navigationItemShowingSpinner;
     NSArray * _originalRightBarButtonItems;
-    RemoteUIController * _remoteUIController;
+    AAUIRemoteUIController * _remoteUIController;
     UIActivityIndicatorView * _spinnerView;
     NSMutableURLRequest * _startRemoteUIRequest;
 }

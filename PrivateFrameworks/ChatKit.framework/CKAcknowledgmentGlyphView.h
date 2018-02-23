@@ -22,7 +22,7 @@
 
 - (void).cxx_destruct;
 - (long long)acknowledgmentType;
-- (void)animateWithDelay:(double)arg1 completionDelay:(double)arg2 completion:(id /* block */)arg3;
+- (void)animateWithBeginTime:(double)arg1 completionDelay:(double)arg2 completion:(id /* block */)arg3;
 - (double)animationDuration;
 - (id)glyphColor;
 - (struct CGPoint { double x1; double x2; })glyphOffset;

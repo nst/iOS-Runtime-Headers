@@ -24,7 +24,6 @@
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)changeState:(long long)arg1;
-- (void)changeState:(long long)arg1 dispatchOnQueue:(bool)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (id)device;

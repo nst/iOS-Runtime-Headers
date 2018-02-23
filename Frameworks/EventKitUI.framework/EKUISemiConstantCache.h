@@ -47,6 +47,7 @@
 - (void)_localeChanged:(id)arg1;
 - (void)_orientationChanged:(id)arg1;
 - (id)birthdayImageForFont:(id)arg1;
+- (id)birthdayImageForFont:(id)arg1 withColor:(id)arg2;
 - (bool)calInterfaceIsLeftToRight;
 - (id)commentIconStringForFont:(id)arg1;
 - (double)currentScaleFactor;

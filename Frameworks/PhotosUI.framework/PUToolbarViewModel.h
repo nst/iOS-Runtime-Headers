@@ -8,6 +8,7 @@
     double  _accessoryViewMaximumHeight;
     double  _accessoryViewTopOutset;
     double  _maximumHeight;
+    bool  _needsToUpdateToolbarSize;
     NSArray * _toolbarItems;
 }
 
@@ -17,6 +18,7 @@
 @property (nonatomic) double accessoryViewTopOutset;
 @property (nonatomic, readonly) PUToolbarViewModelChange *currentChange;
 @property (nonatomic) double maximumHeight;
+@property (nonatomic) bool needsToUpdateToolbarSize;
 @property (nonatomic, copy) NSArray *toolbarItems;
 
 - (void).cxx_destruct;
@@ -26,12 +28,15 @@
 - (double)accessoryViewMaximumHeight;
 - (double)accessoryViewTopOutset;
 - (id)currentChange;
+- (void)didPublishChanges;
 - (double)maximumHeight;
+- (bool)needsToUpdateToolbarSize;
 - (id)newViewModelChange;
 - (void)setAccessoryView:(id)arg1;
 - (void)setAccessoryViewMaximumHeight:(double)arg1;
 - (void)setAccessoryViewTopOutset:(double)arg1;
 - (void)setMaximumHeight:(double)arg1;
+- (void)setNeedsToUpdateToolbarSize:(bool)arg1;
 - (void)setToolbarItems:(id)arg1;
 - (id)toolbarItems;
 

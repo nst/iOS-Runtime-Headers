@@ -26,13 +26,12 @@
 @property (retain) TLKTextAreaView *textAreaView;
 @property (retain) TLKRichText *title;
 
-+ (id)detailsFont;
-
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)details;
 - (id)detailsObserver;
 - (void)disableUnbatchedUpdates;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })effectiveAlignmentRectInsets;
 - (id)footnote;
 - (id)footnoteLabelString;
 - (id)init;

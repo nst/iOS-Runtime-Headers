@@ -8,6 +8,7 @@
     PKPeerPaymentControllerInternalState * _is;
     PKPaymentPass * _peerPaymentPass;
     PKPaymentAuthorizationCoordinator * _performQuoteAuthorizationCoordinator;
+    NSObject<OS_dispatch_queue> * _performQuoteCallbackQueue;
     NSError * _performQuoteError;
     NSObject<OS_dispatch_group> * _performQuoteGroup;
     bool  _performQuoteSuccess;
@@ -25,7 +26,7 @@
 @property (nonatomic, readonly, copy) PKPeerPaymentRecipient *recipient;
 @property (nonatomic, readonly, copy) NSString *recipientDisplayName;
 @property (nonatomic, readonly, copy) NSString *recipientPhoneOrEmail;
-@property (nonatomic, readonly) NSString *requestToken;
+@property (nonatomic, readonly) PKPeerPaymentRequestToken *requestToken;
 @property (nonatomic, readonly, copy) NSString *senderPhoneOrEmail;
 @property (nonatomic, readonly) unsigned long long state;
 @property (readonly) Class superclass;
@@ -33,26 +34,32 @@
 
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
++ (id)_displayableErrorOverrideForUnderlyingError:(id)arg1;
++ (id)_peerPaymentPassURL;
++ (id)displayableErrorForError:(id)arg1;
 + (bool)errorIsIdentityVerificationRequiredError:(id)arg1;
 + (bool)errorIsTermsAcceptanceRequiredError:(id)arg1;
++ (unsigned long long)proposedResolutionForError:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_completePerformQuote;
 - (id)_defaultAlternateFundingSourceForMode:(unsigned long long)arg1;
-- (id)_displayableErrorOverrideForUnderlyingError:(id)arg1;
 - (bool)_ensureState:(unsigned long long)arg1;
 - (void)_handleAccountChanged:(id)arg1;
 - (void)_refreshRecipientWithCompletion:(id /* block */)arg1;
+- (void)_requestQuoteWithRequest:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_resetToState:(unsigned long long)arg1;
 - (void)_setPerformQuoteSuccess:(bool)arg1;
 - (void)_setState:(unsigned long long)arg1 notify:(bool)arg2;
+- (void)_updateLastUsedAlternateFundingSource;
 - (id)account;
+- (void)aggDAuthorizedQuoteWithSuccess:(bool)arg1 authorizedQuote:(id)arg2;
 - (void)dealloc;
 - (id)description;
 - (id)displayNameForRecipientAddress:(id)arg1;
 - (id)displayNameForRecipientAddress:(id)arg1 foundInContacts:(bool*)arg2;
 - (id)displayableErrorForError:(id)arg1;
 - (id)externalizedControllerState;
+- (void)formalRequestTokenForAmount:(id)arg1 completion:(id /* block */)arg2;
 - (void)handleIdentityVerificationWithError:(id)arg1 completion:(id /* block */)arg2;
 - (void)handleTermsAcceptanceRequiredWithError:(id)arg1 completion:(id /* block */)arg2;
 - (void)identifyRecipientSelf;
@@ -87,7 +94,7 @@
 - (id)senderPhoneOrEmail;
 - (unsigned long long)state;
 - (void)statusForPaymentIdentifier:(id)arg1 withCompletion:(id /* block */)arg2;
-- (id)summaryItemsForQuote:(id)arg1 withAlternateFundingSource:(id)arg2;
+- (id)summaryItemsForQuote:(id)arg1;
 - (id)webService;
 
 // Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI

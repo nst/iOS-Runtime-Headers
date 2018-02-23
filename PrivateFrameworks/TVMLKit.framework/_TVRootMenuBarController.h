@@ -23,6 +23,7 @@
 - (id)appTabBar;
 - (id)appTabBarItems;
 - (void)dealloc;
+- (void)dismissViewControllerAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (id)init;
 - (unsigned long long)numberOfTabsInTabBar:(id)arg1;
 - (unsigned long long)previousSelectedIndex;
@@ -37,7 +38,6 @@
 - (void)tabBarController:(id)arg1 didSelectViewController:(id)arg2;
 - (unsigned long long)tabBarControllerSupportedInterfaceOrientations:(id)arg1;
 - (id)transientTabItemForTabBar:(id)arg1;
-- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 
 @end

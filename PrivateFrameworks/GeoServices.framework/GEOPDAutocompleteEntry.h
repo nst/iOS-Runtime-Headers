@@ -7,6 +7,7 @@
     GEOPDAutocompleteEntryBrandProfile * _brandProfile;
     GEOPDAutocompleteEntryBusiness * _business;
     GEOPDAutocompleteEntryCategory * _category;
+    GEOPDAutocompleteEntryClientResolved * _clientResolved;
     struct { 
         unsigned int type : 1; 
     }  _has;
@@ -21,10 +22,12 @@
 @property (nonatomic, retain) GEOPDAutocompleteEntryBrandProfile *brandProfile;
 @property (nonatomic, retain) GEOPDAutocompleteEntryBusiness *business;
 @property (nonatomic, retain) GEOPDAutocompleteEntryCategory *category;
+@property (nonatomic, retain) GEOPDAutocompleteEntryClientResolved *clientResolved;
 @property (nonatomic, readonly) bool hasAddress;
 @property (nonatomic, readonly) bool hasBrandProfile;
 @property (nonatomic, readonly) bool hasBusiness;
 @property (nonatomic, readonly) bool hasCategory;
+@property (nonatomic, readonly) bool hasClientResolved;
 @property (nonatomic, readonly) bool hasHighlightExtra;
 @property (nonatomic, readonly) bool hasHighlightMain;
 @property (nonatomic, readonly) bool hasQuery;
@@ -41,6 +44,7 @@
 - (id)brandProfile;
 - (id)business;
 - (id)category;
+- (id)clientResolved;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -49,6 +53,7 @@
 - (bool)hasBrandProfile;
 - (bool)hasBusiness;
 - (bool)hasCategory;
+- (bool)hasClientResolved;
 - (bool)hasHighlightExtra;
 - (bool)hasHighlightMain;
 - (bool)hasQuery;
@@ -64,6 +69,7 @@
 - (void)setBrandProfile:(id)arg1;
 - (void)setBusiness:(id)arg1;
 - (void)setCategory:(id)arg1;
+- (void)setClientResolved:(id)arg1;
 - (void)setHasType:(bool)arg1;
 - (void)setHighlightExtra:(id)arg1;
 - (void)setHighlightMain:(id)arg1;

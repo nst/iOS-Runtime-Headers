@@ -63,6 +63,7 @@
     }  _faceUniformBindings;
     int * _groupTriangleCounts;
     unsigned int  _indexBuffer;
+    UILongPressGestureRecognizer * _longPressRecognizer;
     bool  _magnetsEngaged;
     int * _materialIndices;
     union _GLKVector3 { 
@@ -229,9 +230,11 @@
 - (void)_engageMagnets;
 - (void)_forEachProgram:(id /* block */)arg1;
 - (void)_generateBackTexture;
+- (void)_longPressInternalOnly:(id)arg1;
 - (float)_normalizeAngle:(float)arg1;
 - (void)_panned:(id)arg1;
 - (void)_setBackTextureNeedsRegeneration;
+- (void)_spin360Degrees;
 - (void)_tapped:(id)arg1;
 - (id)_valueForTweak:(id)arg1;
 - (id)badgeDelegate;

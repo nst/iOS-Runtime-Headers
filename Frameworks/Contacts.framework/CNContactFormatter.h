@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Contacts.framework/Contacts
  */
 
-@interface CNContactFormatter : NSFormatter {
+@interface CNContactFormatter : NSFormatter <NSSecureCoding> {
     bool  _emphasizesPrimaryNameComponent;
     unsigned long long  _fallbackStyle;
     bool  _ignoresNickname;
@@ -30,6 +30,7 @@
 + (long long)nameOrderForContact:(id)arg1;
 + (id)stringFromContact:(id)arg1 style:(long long)arg2;
 + (bool)styleSupportsFallBackToFullNameStyle:(long long)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)abbreviatedNameForContact:(id)arg1 attributes:(id)arg2;

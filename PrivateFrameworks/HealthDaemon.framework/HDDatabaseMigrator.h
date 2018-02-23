@@ -59,6 +59,11 @@
 - (long long)_addWheelchairUseColumnToFitnessFriendsTableWithError:(id*)arg1;
 - (long long)_addWorkoutSourceAndBundleIDToFitnessFriendsWorkoutsTableWithError:(id*)arg1;
 - (long long)_changeWorkoutActivityTypeOther:(id*)arg1;
+- (long long)_cinar_addObjectAuthorizationAndActivityCacheIndicesWithError:(id*)arg1;
+- (long long)_cinar_addSourceAndDeviceIndicesWithError:(id*)arg1;
+- (long long)_cinar_addSyncPrimaryColumnToSourcesWithError:(id*)arg1;
+- (long long)_cinar_convertLocalDevicePlaceholderSourcesWithError:(id*)arg1;
+- (long long)_cinar_removeDetailsFromDeletedSourcesWithError:(id*)arg1;
 - (long long)_cleanupOrphanedRowsWithError:(id*)arg1;
 - (long long)_clearMenstrualFlowAndSexualActivitySamples:(id*)arg1;
 - (long long)_clearSamplesWithoutSourcesWithError:(id*)arg1;
@@ -144,7 +149,6 @@
 - (long long)_tigris_addPreferredSourceOptionToConnectedGymSources:(out id*)arg1;
 - (long long)_tigris_addRebaseDeadlineColumnWithError:(id*)arg1;
 - (long long)_tigris_addSourcesBundleIdentifierUUIDIndexWithError:(id*)arg1;
-- (long long)_tigris_createLocalSourceCopiesWithError:(id*)arg1;
 - (bool)_updateDataCollectorKeyValueContextWithObject:(id)arg1 domain:(id)arg2 error:(id*)arg3;
 - (long long)_updateDataIDColumnForBinarySamplesTableWithError:(id*)arg1;
 - (long long)_updateDeviceEnabledWithError:(id*)arg1;
@@ -157,6 +161,8 @@
 - (id)boulderUnprotectedMigrationSteps;
 - (id)butlerProtectedMigrationSteps;
 - (id)butlerUnprotectedMigrationSteps;
+- (id)cinarProtectedMigrationSteps;
+- (id)cinarUnprotectedMigrationSteps;
 - (id)corryProtectedMigrationSteps;
 - (id)corryUnprotectedMigrationSteps;
 - (id)database;

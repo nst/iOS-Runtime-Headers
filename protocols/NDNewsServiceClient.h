@@ -5,6 +5,6 @@
 
 @required
 
-- (void)serviceHasNewHeadlineResults;
+- (void)serviceHasNewTodayResults;
 
 @end

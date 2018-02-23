@@ -23,13 +23,13 @@
 @property (nonatomic, copy) NSNumber *fetchableArtworkSource;
 @property (nonatomic, copy) NSString *fetchableArtworkToken;
 @property (nonatomic, readonly) ML3MusicLibrary *library;
-@property (nonatomic, retain) MPMediaLibraryArtwork *libraryArtwork;
+@property (nonatomic, readonly) MPMediaLibraryArtwork *libraryArtwork;
 @property (nonatomic, readonly) unsigned long long libraryID;
 @property (nonatomic, readonly) unsigned long long mediaType;
 @property (nonatomic) double retrievalTime;
 
 - (void).cxx_destruct;
-- (void)_updateTokens;
+- (void)_onQueue_updateTokens;
 - (long long)artworkType;
 - (id)availableArtworkToken;
 - (void)clearFailedFetchableToken;

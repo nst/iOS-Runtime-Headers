@@ -4,6 +4,10 @@
 
 @interface TLKImage : TLKObject {
     double  _cornerRadius;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _forcedSize;
     bool  _isTemplate;
     bool  _shouldCropToCircle;
     struct CGSize { 
@@ -14,6 +18,7 @@
 }
 
 @property double cornerRadius;
+@property struct CGSize { double x1; double x2; } forcedSize;
 @property bool isTemplate;
 @property bool shouldCropToCircle;
 @property struct CGSize { double x1; double x2; } size;
@@ -21,11 +26,13 @@
 
 - (void).cxx_destruct;
 - (double)cornerRadius;
+- (struct CGSize { double x1; double x2; })forcedSize;
 - (id)init;
 - (id)initWithImage:(id)arg1;
 - (bool)isTemplate;
 - (id)observableProperties;
 - (void)setCornerRadius:(double)arg1;
+- (void)setForcedSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setIsTemplate:(bool)arg1;
 - (void)setShouldCropToCircle:(bool)arg1;
 - (void)setSize:(struct CGSize { double x1; double x2; })arg1;

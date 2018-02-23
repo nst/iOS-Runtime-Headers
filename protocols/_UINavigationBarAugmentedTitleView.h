@@ -18,5 +18,7 @@
 - (void)_transitionCompleted:(long long)arg1 willBeDisplayed:(bool)arg2;
 - (void)_transitionWillBegin:(long long)arg1 willBeDisplayed:(bool)arg2;
 - (bool)_underlayNavigationBarContent;
+- (bool)_wantsTwoPartTransition;
+- (int)preferredAlignment;
 
 @end

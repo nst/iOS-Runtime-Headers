@@ -81,6 +81,7 @@
 @property (nonatomic, copy) NSString *uniqueIdentifier;
 
 + (unsigned long long)getAWDTransportTypeWithLinkType:(long long)arg1;
++ (bool)hasMessageReceiverChildren;
 + (bool)supportsSecureCoding;
 + (Class)transactionClass;
 
@@ -95,7 +96,7 @@
 - (void)_enableBroadcastNotifications:(bool)arg1 hapAccessory:(id)arg2 forCharacteristics:(id)arg3;
 - (void)_enableNotification:(bool)arg1 forCharacteristics:(id)arg2 hapAccessory:(id)arg3 completion:(id /* block */)arg4;
 - (void)_enableNotification:(bool)arg1 forCharacteristics:(id)arg2 message:(id)arg3 clientIdentifier:(id)arg4;
-- (void)_enableNotification:(bool)arg1 matchingHAPAccessory:(id)arg2 unconditionallyDeregister:(bool)arg3 ignoreDeviceUnlockRequirement:(bool)arg4 clientIdentifier:(id)arg5 forCharacteristics:(id)arg6;
+- (void)_enableNotification:(bool)arg1 matchingHAPAccessory:(id)arg2 ignoreDeviceUnlockRequirement:(bool)arg3 clientIdentifier:(id)arg4 forCharacteristics:(id)arg5;
 - (bool)_enableNotificationOnResident:(bool)arg1 characteristic:(id)arg2 clientIdentifier:(id)arg3 ignoreDeviceUnlockRequirement:(bool)arg4;
 - (void)_handleAddServiceTransaction:(id)arg1 message:(id)arg2;
 - (void)_handleCharacteristicError:(id)arg1 characteristic:(id)arg2 message:(id)arg3 read:(bool)arg4;
@@ -103,10 +104,8 @@
 - (void)_handleCharacteristicWrite:(id)arg1;
 - (void)_handleCharacteristicsChangedNotification:(id)arg1;
 - (void)_handleDiscoveryBackoffTimerFired;
-- (void)_handleGetAccessoryAdvertisingParams:(id)arg1;
 - (void)_handleIdentify:(id)arg1;
 - (void)_handleKeyRefreshTimerFired;
-- (void)_handleListPairings:(id)arg1;
 - (void)_handleMultipleCharacteristicsUpdated:(id)arg1 message:(id)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_handleRenameService:(id)arg1;
 - (void)_handleServiceRemovedTransaction:(id)arg1 message:(id)arg2;
@@ -200,12 +199,13 @@
 - (id)dumpState;
 - (void)enableNotification:(bool)arg1 forCharacteristicIDs:(id)arg2 message:(id)arg3 clientIdentifier:(id)arg4;
 - (void)enableNotification:(bool)arg1 forCharacteristics:(id)arg2 message:(id)arg3 clientIdentifier:(id)arg4;
-- (void)enableNotification:(bool)arg1 unconditionallyDeregister:(bool)arg2 ignoreDeviceUnlockRequirement:(bool)arg3 clientIdentifier:(id)arg4 forCharacteristics:(id)arg5;
+- (void)enableNotification:(bool)arg1 ignoreDeviceUnlockRequirement:(bool)arg2 clientIdentifier:(id)arg3 forCharacteristics:(id)arg4;
 - (void)encodeWithCoder:(id)arg1;
 - (id)findCharacteristic:(id)arg1;
 - (id)findCharacteristic:(id)arg1 forService:(id)arg2;
 - (id)findCharacteristicType:(id)arg1 forServiceType:(id)arg2;
 - (id)findService:(id)arg1;
+- (id)getOrCreateServiceUpdateTransactionForKey:(id)arg1 fromDictionary:(id)arg2;
 - (id)getPrimaryHAPAccessories;
 - (id)getTransportInformationArray;
 - (void)handleMultipleCharacteristicsUpdated:(id)arg1 message:(id)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;
@@ -213,6 +213,7 @@
 - (void)handleRemoteGatewayNotificationRegistration:(id)arg1 enable:(bool)arg2 enableTime:(id)arg3;
 - (id)hapCharacteristicWriteRequests:(id)arg1 hapAccessory:(id)arg2 hmdResponses:(id*)arg3 mapping:(id*)arg4;
 - (bool)hasBTLELink;
+- (bool)hasIPLink;
 - (unsigned long long)hash;
 - (id)hmdCharacteristicForInstanceId:(id)arg1;
 - (id)hmdCharacteristicFromHapCharacteristic:(id)arg1;
@@ -227,7 +228,7 @@
 - (bool)isNotificationEnabledForClientIdentifier:(id)arg1;
 - (bool)isPaired;
 - (bool)isPrimary;
-- (bool)isReadingRequiredAccessoryInformationCharacteristic:(id)arg1 providedName:(id)arg2 forceReadFWVersion:(bool)arg3;
+- (bool)isReadingRequiredForBTLEAccessoryCharacteristic:(id)arg1 forceReadFWVersion:(bool)arg2;
 - (bool)isRelayEnabled;
 - (bool)isSecuritySessionOpen;
 - (bool)keyGenerationInProgress;
@@ -247,12 +248,14 @@
 - (id)matchingTransportInformationWithServerIdentifier:(id)arg1;
 - (id)matchingTransportInformationWithServerIdentifier:(id)arg1 linkType:(long long)arg2;
 - (void)mergeTransportInformationInstances:(id)arg1;
+- (id)messageReceiverChildren;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1;
 - (id)namesOfServicesShowingTilesInHomeApp;
 - (void)notifyValue:(id)arg1 previousValue:(id)arg2 error:(id)arg3 forCharacteristic:(id)arg4 requestMessage:(id)arg5;
 - (unsigned long long)pairingAttempts;
 - (id)pairingIdentity;
 - (id)pairingUsername;
+- (void)pairingsWithCompletionHandler:(id /* block */)arg1;
 - (void)performOperation:(long long)arg1 linkType:(long long)arg2 operationBlock:(id /* block */)arg3 errorBlock:(id /* block */)arg4;
 - (void)populateHMDCharacteristicResponses:(id)arg1 hapResponses:(id)arg2 mapping:(id)arg3 overallError:(id)arg4 requests:(id)arg5;
 - (void)populateModelObject:(id)arg1 version:(long long)arg2;
@@ -302,7 +305,6 @@
 - (void)setReachability:(bool)arg1 serverIdentifier:(id)arg2 linkType:(long long)arg3;
 - (void)setRelayEnabled:(bool)arg1;
 - (void)setRelayIdentifier:(id)arg1;
-- (void)setRemotelyReachable:(bool)arg1;
 - (void)setServerIDToHAPAccessoryTable:(id)arg1;
 - (void)setSetupHash:(id)arg1;
 - (void)setSupportsRelay:(bool)arg1;
@@ -317,6 +319,7 @@
 - (void)startRelayActivationWithActivationClient:(id)arg1;
 - (void)startRelayPairingWithPairingClient:(id)arg1;
 - (bool)supportsRelay;
+- (bool)supportsUserManagement;
 - (id)systemTimeInformationTimer;
 - (bool)systemTimeNeedsUpdate;
 - (void)takeOwnershipOfAppData:(id)arg1;
@@ -337,7 +340,6 @@
 - (id)updateAccessoryFlagsAndNotifyClients:(id)arg1;
 - (bool)updateAccessoryInformation:(id)arg1;
 - (void)updateNotificationEnabled:(bool)arg1 forCharacteristics:(id)arg2 onBehalfOf:(id)arg3;
-- (void)updateReachability;
 - (bool)updateTimeInformationCharacteristicsForAccessory:(id)arg1;
 - (bool)updateTransportInformation:(id)arg1;
 - (void)verifyPairingWithCompletionHandler:(id /* block */)arg1;

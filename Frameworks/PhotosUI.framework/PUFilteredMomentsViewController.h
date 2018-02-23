@@ -16,9 +16,9 @@
 
 - (void).cxx_destruct;
 - (void)_getDataForVisualSection:(long long)arg1 hasActionButton:(bool*)arg2 actionButtonTitle:(id*)arg3 hasDisclosure:(bool*)arg4 locations:(id*)arg5 title:(id*)arg6 startDate:(id*)arg7 endDate:(id*)arg8;
-- (void)_reloadVisibleMomentHeadersAnimated:(bool)arg1;
+- (void)_reloadVisibleMomentHeaders;
 - (bool)allowSlideshowButton;
-- (void)configureSupplementaryView:(id)arg1 ofKind:(id)arg2 forIndexPath:(id)arg3 animated:(bool)arg4;
+- (void)configureSupplementaryView:(id)arg1 ofKind:(id)arg2 forIndexPath:(id)arg3;
 - (void)didTapHeaderView:(id)arg1;
 - (id)emptyPlaceholderText;
 - (id)filteredMomentsDataSource;

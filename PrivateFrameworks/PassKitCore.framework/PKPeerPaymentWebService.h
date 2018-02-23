@@ -6,6 +6,8 @@
     <PKPeerPaymentWebServiceArchiver> * _archiver;
     PKPeerPaymentWebServiceContext * _context;
     PKPeerPaymentService * _peerPaymentService;
+    NSMutableDictionary * _prewarmedDeviceScorers;
+    NSObject<OS_dispatch_queue> * _prewarmedDeviceScorersQueue;
     PKSecureElement * _secureElement;
     bool  _sharedService;
     <PKPeerPaymentWebServiceTargetDeviceProtocol> * _targetDevice;
@@ -27,7 +29,9 @@
 
 - (void).cxx_destruct;
 - (void)_archiveContext;
+- (id)_createDeviceScorerForEndpoint:(id)arg1 recipientAddress:(id)arg2;
 - (id)_deviceIdentifier;
+- (id)_deviceMetadata;
 - (void)_deviceRegistrationDataWithCompletion:(id /* block */)arg1;
 - (void)_deviceScoreForEndpoint:(id)arg1 recipientAddress:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)_deviceScoreForEndpoint:(id)arg1 withCompletion:(id /* block */)arg2;
@@ -58,19 +62,24 @@
 - (unsigned long long)peerPaymentPreferencesWithCompletion:(id /* block */)arg1;
 - (unsigned long long)peerPaymentQuoteCertificatesForDestination:(unsigned long long)arg1 completion:(id /* block */)arg2;
 - (unsigned long long)peerPaymentQuoteWithRequest:(id)arg1 completion:(id /* block */)arg2;
-- (unsigned long long)peerPaymentRecipientForRecipientAddress:(id)arg1 source:(unsigned long long)arg2 completion:(id /* block */)arg3;
+- (unsigned long long)peerPaymentReOpenAccountWithCompletion:(id /* block */)arg1;
+- (unsigned long long)peerPaymentRecipientForRecipientAddress:(id)arg1 senderAddress:(id)arg2 source:(unsigned long long)arg3 completion:(id /* block */)arg4;
 - (unsigned long long)peerPaymentRegisterWithURL:(id)arg1 pushToken:(id)arg2 completion:(id /* block */)arg3;
 - (unsigned long long)peerPaymentRequestStatementWithCompletion:(id /* block */)arg1;
-- (unsigned long long)peerPaymentRequestTokenWithRequst:(id)arg1 completion:(id /* block */)arg2;
+- (unsigned long long)peerPaymentRequestTokenWithRequest:(id)arg1 completion:(id /* block */)arg2;
 - (id)peerPaymentService;
 - (id)peerPaymentServiceURL;
 - (unsigned long long)peerPaymentStatusWithPaymentIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (unsigned long long)peerPaymentUnregisterWithCompletion:(id /* block */)arg1;
 - (unsigned long long)peerPaymentUpdatePreferencesWithRequest:(id)arg1 completion:(id /* block */)arg2;
+- (void)performRequest:(id)arg1 taskIdentifier:(unsigned long long)arg2 completionHandler:(id /* block */)arg3;
+- (void)prewarmDeviceScoreForEndpoint:(id)arg1;
+- (void)prewarmDeviceScoreForEndpoint:(id)arg1 recipientAddress:(id)arg2;
 - (void)setContext:(id)arg1;
 - (void)setPeerPaymentService:(id)arg1;
 - (void)setSharedService:(bool)arg1;
 - (void)sharedPeerPaymentServiceChanged:(id)arg1;
+- (unsigned long long)submitDeviceScoreIdentifiersWithRequest:(id)arg1 completion:(id /* block */)arg2;
 - (id)targetDevice;
 
 @end

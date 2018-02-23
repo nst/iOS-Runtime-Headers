@@ -37,6 +37,7 @@
 - (unsigned long long)hashForBlacklist:(id)arg1;
 - (id)identifier;
 - (id)init;
+- (bool)interestedInSearchableItem:(id)arg1;
 - (bool)logDailyMetricsWithError:(id*)arg1;
 - (void)logDonationErrorForReason:(struct PPMTopicDonationErrorReason_ { unsigned long long x1; })arg1;
 - (void)logDonationForTopics:(id)arg1 isReader:(bool)arg2 bundleId:(id)arg3;

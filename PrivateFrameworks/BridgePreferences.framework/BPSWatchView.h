@@ -8,6 +8,7 @@
     unsigned long long  _sizeOverride;
     unsigned long long  _style;
     NSString * _styleVersionSuffix;
+    bool  _wantsLightenBlendedScreen;
     BPSRemoteImageView * _watchImageView;
     UIImageView * _watchScreenImageView;
 }
@@ -17,6 +18,7 @@
 @property (nonatomic) unsigned long long sizeOverride;
 @property (nonatomic) unsigned long long style;
 @property (nonatomic, copy) NSString *styleVersionSuffix;
+@property (nonatomic) bool wantsLightenBlendedScreen;
 @property (nonatomic, retain) BPSRemoteImageView *watchImageView;
 @property (nonatomic, readonly) UIImageView *watchScreenImageView;
 
@@ -31,6 +33,7 @@
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 - (void)overrideMaterial:(unsigned long long)arg1 size:(unsigned long long)arg2;
+- (id)screenBackground:(struct CGSize { double x1; double x2; })arg1;
 - (id)screenImageName;
 - (id)screenImageSearchBundleIdentifier;
 - (struct CGSize { double x1; double x2; })screenImageSize;
@@ -39,11 +42,13 @@
 - (void)setSizeOverride:(unsigned long long)arg1;
 - (void)setStyle:(unsigned long long)arg1;
 - (void)setStyleVersionSuffix:(id)arg1;
+- (void)setWantsLightenBlendedScreen:(bool)arg1;
 - (void)setWatchImageView:(id)arg1;
 - (unsigned long long)sizeOverride;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (unsigned long long)style;
 - (id)styleVersionSuffix;
+- (bool)wantsLightenBlendedScreen;
 - (id)watchAssetBundle;
 - (id)watchImageView;
 - (id)watchScreenImageView;

@@ -15,11 +15,13 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)_createVoiceTriggerEventInfoString:(id)arg1;
 - (void)_notifyKeywordDetect;
 - (void)_notifyNearMissEvent:(id)arg1;
 - (void)_notifySpeakerReject:(id)arg1;
 - (void)_notifyTriggerEvent:(id)arg1;
 - (void)_notifyTwoShotDetectionAt:(double)arg1;
+- (void)dealloc;
 - (id)init;
 - (bool)isContinuousRunningMode;
 - (void)keywordDetectorDidDetectKeyword;

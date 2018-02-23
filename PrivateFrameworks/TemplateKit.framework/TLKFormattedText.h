@@ -23,6 +23,7 @@
 - (void).cxx_destruct;
 - (long long)color;
 - (id)description;
+- (bool)hasContent;
 - (bool)isBold;
 - (bool)isEmphasized;
 - (unsigned long long)maxLines;

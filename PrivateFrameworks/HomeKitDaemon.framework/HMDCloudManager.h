@@ -19,6 +19,7 @@
     NSMutableArray * _currentBackoffTimerValuesInMinutes;
     id /* block */  _dataDecryptionFailedHandler;
     CKDatabase * _database;
+    CKServerChangeToken * _databaseServerChangeToken;
     id /* block */  _fetchCompletionHandler;
     bool  _firstV3Fetch;
     HMDHomeManager * _homeManager;
@@ -28,6 +29,8 @@
     APSConnection * _pushConnection;
     NSObject<OS_dispatch_source> * _retryTimer;
     NSUUID * _uuid;
+    NSObject<OS_dispatch_source> * _watchdogControllerKeyPollTimer;
+    int  _whaProxSetupNotificationToken;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
@@ -47,6 +50,7 @@
 @property (nonatomic, retain) NSMutableArray *currentBackoffTimerValuesInMinutes;
 @property (nonatomic, copy) id /* block */ dataDecryptionFailedHandler;
 @property (nonatomic, retain) CKDatabase *database;
+@property (nonatomic, retain) CKServerChangeToken *databaseServerChangeToken;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) bool decryptionFailed;
 @property (readonly, copy) NSString *description;
@@ -65,6 +69,8 @@
 @property (nonatomic, readonly) NSData *serverTokenData;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSUUID *uuid;
+@property (nonatomic, retain) NSObject<OS_dispatch_source> *watchdogControllerKeyPollTimer;
+@property (nonatomic) int whaProxSetupNotificationToken;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 + (bool)isControllerKeyAvailable;
@@ -72,20 +78,24 @@
 - (void).cxx_destruct;
 - (void)_accountIsActive;
 - (void)_addHomeZoneName:(id)arg1 owner:(id)arg2;
+- (void)_auditWHAProxSetupNotification;
 - (id)_changeTokenFromData:(id)arg1;
 - (void)_checkZoneAndUploadTransaction:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_createZoneAndFetchChanges:(id /* block */)arg1;
 - (void)_createZoneAndUploadTransaction:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_fetchAndVerifyZoneRootRecord:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_fetchDatabaseZoneChanges;
 - (void)_fetchLegacyTransaction:(id)arg1 forceFetch:(bool)arg2 accountCompletionHandler:(id /* block */)arg3 dataCompletionHandler:(id /* block */)arg4;
 - (void)_fetchTransaction:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_forceCleanCloud:(bool)arg1 fetchTransaction:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_handleAccountStatus:(long long)arg1 completionHandler:(id /* block */)arg2 error:(id)arg3;
 - (void)_handleControllerKeyAvailable;
 - (void)_handleKeychainSyncStateChanged:(bool)arg1;
+- (bool)_isWHAProxSetupRunning;
 - (void)_processFetchCompletedWithError:(id)arg1 serverToken:(id)arg2 fetchTransaction:(id)arg3 migrationOptions:(long long)arg4 completionHandler:(id /* block */)arg5 moreRecordsComing:(bool)arg6 emptyRecord:(bool)arg7;
 - (bool)_processFetchedTransaction:(id)arg1;
 - (void)_registerForPushNotifications;
+- (void)_registerForWHAProxSetupNotifications;
 - (void)_removeAllHomeZonesCompletionHandler:(id /* block */)arg1;
 - (void)_removeHomeZoneName:(id)arg1;
 - (void)_removeZones:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -95,6 +105,7 @@
 - (void)_resetCloudServerTokenData;
 - (void)_resetCloudZonesIgnoreHomeManager:(bool)arg1 completionHandler:(id /* block */)arg2;
 - (void)_resetHomeDataRecordState;
+- (void)_scheduleZoneFetch:(id)arg1;
 - (id)_serverTokenData;
 - (void)_setupSubscriptionForZone:(id)arg1;
 - (void)_startControllerKeyPollTimer;
@@ -102,10 +113,11 @@
 - (void)_startControllerKeyPollTimerWithValue:(long long)arg1;
 - (void)_startFetchPollTimer;
 - (void)_startFetchRetryTimer;
+- (void)_startWatchdogControllerKeyPollTimer;
 - (void)_stopControllerKeyPollTimer;
 - (void)_stopFetchPollTimer;
 - (void)_stopFetchRetryTimer;
-- (void)_updateCloudDataSyncFilterState:(bool)arg1;
+- (void)_stopWatchdogControllerKeyPollTimer;
 - (void)_updateServerTokenStatusOnCloudFilter;
 - (void)_uploadLegacyTransaction:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_uploadTransaction:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -132,10 +144,12 @@
 - (id)currentBackoffTimerValuesInMinutes;
 - (id /* block */)dataDecryptionFailedHandler;
 - (id)database;
+- (id)databaseServerChangeToken;
 - (void)dealloc;
 - (bool)decryptionFailed;
 - (id /* block */)fetchCompletionHandler;
 - (void)fetchCurrentAccountStateWithCompletionHandler:(id /* block */)arg1;
+- (void)fetchDatabaseZoneChanges;
 - (void)fetchLegacyTransaction:(id)arg1 forceFetch:(bool)arg2 accountCompletionHandler:(id /* block */)arg3 dataCompletionHandler:(id /* block */)arg4;
 - (void)fetchTransaction:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)handleKeychainStateChangedNotification:(id)arg1;
@@ -180,6 +194,7 @@
 - (void)setDataDecryptionFailedCompletionBlock:(id /* block */)arg1;
 - (void)setDataDecryptionFailedHandler:(id /* block */)arg1;
 - (void)setDatabase:(id)arg1;
+- (void)setDatabaseServerChangeToken:(id)arg1;
 - (void)setFetchCompletionHandler:(id /* block */)arg1;
 - (void)setFirstV3Fetch:(bool)arg1;
 - (void)setHomeManager:(id)arg1;
@@ -189,12 +204,17 @@
 - (void)setPushConnection:(id)arg1;
 - (void)setRetryTimer:(id)arg1;
 - (void)setUuid:(id)arg1;
+- (void)setWatchdogControllerKeyPollTimer:(id)arg1;
+- (void)setWhaProxSetupNotificationToken:(int)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (void)updateAccountStatusChanged:(bool)arg1 completionHandler:(id /* block */)arg2;
+- (void)updateCloudDataSyncFilterState:(bool)arg1;
 - (void)updateServerTokenStatusOnCloudFilter;
 - (void)uploadLegacyTransaction:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)uploadTransaction:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)uuid;
+- (id)watchdogControllerKeyPollTimer;
+- (int)whaProxSetupNotificationToken;
 - (id)workQueue;
 
 @end

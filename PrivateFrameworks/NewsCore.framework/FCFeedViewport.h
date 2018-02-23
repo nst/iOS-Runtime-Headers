@@ -9,6 +9,7 @@
     NSArray * _internalElements;
 }
 
+@property (nonatomic, readonly) double ageOfTopmostGroup;
 @property (nonatomic, readonly, copy) NSArray *externalElements;
 @property (nonatomic, readonly, copy) NSArray *groupElements;
 @property (nonatomic, readonly, copy) NSString *identifier;
@@ -21,6 +22,7 @@
 + (id)viewportFromPBViewport:(id)arg1;
 
 - (void).cxx_destruct;
+- (double)ageOfTopmostGroup;
 - (id)archiveWithPruning:(bool)arg1 preserveBookmark:(id)arg2;
 - (id)bookmarkForFirstHeadline;
 - (id)bookmarkForGroup:(id)arg1 headline:(id)arg2;

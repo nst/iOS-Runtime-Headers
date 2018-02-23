@@ -11,7 +11,10 @@
 
 - (void).cxx_destruct;
 - (id)authenticationCode;
+- (id)debugDescription;
+- (void)encodeWithCoder:(id)arg1;
 - (id)initWithCiphertext:(id)arg1 authenticationCode:(id)arg2 initializationVector:(id)arg3;
+- (id)initWithCoder:(id)arg1;
 - (id)initializationVector;
 
 @end

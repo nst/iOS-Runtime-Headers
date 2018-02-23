@@ -15,7 +15,9 @@
 
 + (id)availablegPTPClockIdentifiers;
 + (unsigned long long)clockIdentifierForInterfaceName:(id)arg1;
++ (id)clockNameForClockIdentifier:(unsigned long long)arg1;
 + (id)diagnosticDescriptionForService:(unsigned int)arg1 withIndent:(id)arg2;
++ (id)diagnosticInfoForService:(unsigned int)arg1;
 + (id)iokitInterfaceMatchingDictionaryForInterfaceName:(id)arg1;
 + (id)iokitMatchingDictionaryForClockIdentifier:(unsigned long long)arg1;
 + (id)iokitMatchingDictionaryForInterfaceName:(id)arg1;
@@ -37,10 +39,12 @@
 - (id)clockName;
 - (unsigned char)clockPriority1;
 - (unsigned char)clockPriority2;
+- (unsigned long long)convertFrom128BitgPTPTimeToMachAbsoluteTime:(struct { unsigned long long x1; unsigned long long x2; })arg1 grandmasterUsed:(unsigned long long*)arg2;
 - (bool)convertFrom32BitASTime:(unsigned int*)arg1 toMachAbsoluteTime:(unsigned long long*)arg2 withCount:(unsigned int)arg3;
 - (unsigned long long)convertFrom32BitASToMachAbsoluteTime:(unsigned int)arg1;
 - (unsigned long long)convertFrom32BitASToMachAbsoluteTime:(unsigned int)arg1 withFlags:(unsigned int*)arg2;
 - (unsigned long long)convertFromDomainToMachAbsoluteTime:(unsigned long long)arg1 grandmasterUsed:(unsigned long long*)arg2;
+- (struct { unsigned long long x1; unsigned long long x2; })convertFromMachAbsoluteTo128BitgPTPTime:(unsigned long long)arg1 grandmasterUsed:(unsigned long long*)arg2;
 - (unsigned long long)convertFromMachAbsoluteToDomainTime:(unsigned long long)arg1 grandmasterUsed:(unsigned long long*)arg2;
 - (void)dealloc;
 - (id)gPTPTimeFromMachAbsoluteTime:(unsigned long long)arg1;

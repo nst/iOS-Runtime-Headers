@@ -23,6 +23,7 @@
 @property (nonatomic, retain) NSDictionary *transparencyDetailsDictionary;
 
 - (void)_addRemoteView;
+- (void)_appDidChangeStatusBarFrameNotification;
 - (void)_clientApplicationDidEnterBackground;
 - (void)_commonInit;
 - (void)_connectionWithAdSheetWasLost;
@@ -38,8 +39,10 @@
 - (void)adPrivacyRemoteViewControllerDidLoad;
 - (void)adPrivacyRemoteViewControllerDidRenderTransparency;
 - (void)adPrivacyRemoteViewControllerDidTerminateWithError:(id)arg1;
+- (void)adjustRemoteViews;
 - (void)dealloc;
 - (id)delegate;
+- (void)didRotateFromInterfaceOrientation:(long long)arg1;
 - (id)init;
 - (id)initWithTransparencyDetails:(id)arg1;
 - (id)initWithTransparencyDetailsDictionary:(id)arg1;
@@ -56,5 +59,6 @@
 - (void)setTransparencyDetailsDictionary:(id)arg1;
 - (id)transparencyDetails;
 - (id)transparencyDetailsDictionary;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

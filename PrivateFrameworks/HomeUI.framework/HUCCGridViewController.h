@@ -3,6 +3,7 @@
  */
 
 @interface HUCCGridViewController : HUControllableItemCollectionViewController <HUPrototypeLayoutOptionsEditorViewControllerDelegate> {
+    <HUOpenURLHandling> * _URLHandler;
     <HUCCGridViewControllerDelegate> * _delegate;
     unsigned long long  _designType;
     unsigned long long  _itemType;
@@ -12,6 +13,7 @@
     bool  _viewVisible;
 }
 
+@property (nonatomic, retain) <HUOpenURLHandling> *URLHandler;
 @property (nonatomic, readonly) HUGridFlowLayout *collectionViewLayout;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HUCCGridViewControllerDelegate> *delegate;
@@ -28,6 +30,7 @@
 @property (getter=isViewVisible, nonatomic) bool viewVisible;
 
 - (void).cxx_destruct;
+- (id)URLHandler;
 - (id)_cellLayoutOptionsForItem:(id)arg1;
 - (void)_enqueueLayoutOptionsUpdate;
 - (struct { unsigned long long x1; unsigned long long x2; })_gridLayout;
@@ -42,7 +45,10 @@
 - (id)delegate;
 - (id)description;
 - (unsigned long long)designType;
+- (id)detailViewURLHandlerForPresentationCoordinator:(id)arg1;
+- (id)detailsViewControllerForPresentationCoordinator:(id)arg1 item:(id)arg2;
 - (id)dismissQuickControlAnimated:(bool)arg1 wasDismissed:(bool*)arg2;
+- (bool)hasDetailsActionForPresentationCoordinator:(id)arg1 item:(id)arg2;
 - (id)initWithItemType:(unsigned long long)arg1 designType:(unsigned long long)arg2 delegate:(id)arg3;
 - (bool)isViewVisible;
 - (id)itemManager:(id)arg1 futureToUpdateItems:(id)arg2 itemUpdateOptions:(id)arg3;
@@ -63,6 +69,7 @@
 - (void)setLayoutStyle:(long long)arg1;
 - (void)setNeedsLayoutOptionsUpdate:(bool)arg1;
 - (void)setOverrideCellLayoutOptionsByItem:(id)arg1;
+- (void)setURLHandler:(id)arg1;
 - (void)setViewVisible:(bool)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;

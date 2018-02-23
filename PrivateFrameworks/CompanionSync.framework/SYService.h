@@ -50,7 +50,7 @@
 }
 
 @property (nonatomic, readonly, copy) NSArray *aggdKeys;
-@property (nonatomic, readonly) SYSession *currentSession;
+@property (readonly) SYSession *currentSession;
 @property (nonatomic, copy) NSDictionary *customIDSOptions;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) double defaultMessageTimeout;

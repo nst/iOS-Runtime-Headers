@@ -4,10 +4,10 @@
 
 @interface MRVolumeControlAvailabilityMessage : MRProtocolMessage
 
-@property (nonatomic, readonly) bool volumeControlAvailable;
+@property (nonatomic, readonly) int capabilities;
 
-- (id)initWithAvailableFlag:(bool)arg1;
+- (int)capabilities;
+- (id)initWithCapabilities:(int)arg1;
 - (unsigned long long)type;
-- (bool)volumeControlAvailable;
 
 @end

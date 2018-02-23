@@ -20,6 +20,7 @@
     double  _minimumLineSpacing;
     long long  _prepolulatedRecentCount;
     double  _rightBiasPercentage;
+    double  _scrollSnapOffset;
     double  _scrubViewTopPadding;
     double  _sectionOffset;
 }
@@ -38,6 +39,7 @@
 @property (nonatomic, readonly) double minimumLineSpacing;
 @property (nonatomic, readonly) long long prepolulatedRecentCount;
 @property (nonatomic, readonly) double rightBiasPercentage;
+@property (nonatomic, readonly) double scrollSnapOffset;
 @property (nonatomic, readonly) double scrubViewTopPadding;
 @property (nonatomic, readonly) double sectionOffset;
 
@@ -58,6 +60,7 @@
 - (double)minimumLineSpacing;
 - (long long)prepolulatedRecentCount;
 - (double)rightBiasPercentage;
+- (double)scrollSnapOffset;
 - (double)scrubViewTopPadding;
 - (double)sectionOffset;
 

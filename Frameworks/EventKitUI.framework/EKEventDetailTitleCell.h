@@ -39,6 +39,7 @@
 - (void).cxx_destruct;
 - (id)_dateTimeViewForLine:(unsigned long long)arg1;
 - (id)_editButton;
+- (double)_layoutForWidth:(double)arg1;
 - (id)_locationView;
 - (id)_predictedLocationView;
 - (void)_promptForSpanWithCompletionBlock:(id /* block */)arg1;
@@ -58,6 +59,7 @@
 - (id)initAsRejectionReasonCellWithEvent:(id)arg1;
 - (id)initWithEvent:(id)arg1 editable:(bool)arg2 style:(long long)arg3;
 - (void)layoutForWidth:(double)arg1 position:(int)arg2;
+- (void)layoutSubviews;
 - (void)setColor:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHasMapItemLaunchOptionFromTimeToLeaveNotification:(bool)arg1;

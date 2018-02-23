@@ -7,6 +7,7 @@
     PETScalarEventTracker * _appOutcomeTracker;
     long long  _buildType;
     _ATXBundleIdSet * _bundleIdSet;
+    PETDistributionEventTracker * _consumerOutcomeCacheAgeHistogram;
     PETScalarEventTracker * _conversionPositionTracker;
     PETScalarEventTracker * _conversionTracker;
     PETScalarEventTracker * _expertOutcomeTracker;
@@ -14,6 +15,7 @@
     PETDistributionEventTracker * _inputsTracker;
     PETScalarEventTracker * _itemsShownTracker;
     PETScalarEventTracker * _outcomeConsumerTracker;
+    PETDistributionEventTracker * _outcomeConsumerTrackerWithCacheAge;
     PETScalarEventTracker * _outcomeTracker;
     PETScalarEventTracker * _predictUninstalledAppsTracker;
     PETScalarEventTracker * _predictionTracker;

@@ -21,7 +21,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)_hitTestFromOriginwithDirection;
+- (id)_hitTestPointFromOrigin:(void *)arg1 withDirection:(void *)arg2 maximumAngle:(void *)arg3; // needs 3 arg types, found 1: float
 - (unsigned long long)count;
 - (id)description;
 - (const unsigned long long*)identifiers;

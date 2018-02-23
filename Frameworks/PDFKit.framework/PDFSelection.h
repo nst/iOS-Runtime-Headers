@@ -61,6 +61,7 @@
 - (id)pages;
 - (unsigned long long)pdfKitIndexOfFirstCharacterOnPage:(id)arg1;
 - (unsigned long long)pdfKitIndexOfLastCharacterOnPage:(id)arg1;
+- (id)pdfSelectionUUID;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })previewRangeAtIndex:(unsigned long long)arg1 onPage:(id)arg2;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeAtIndex:(unsigned long long)arg1 onPage:(id)arg2;
 - (struct CGPoint { double x1; double x2; })rightMostCharCenter;

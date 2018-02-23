@@ -14,6 +14,8 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool hasMobileMeSuffix;
 @property (readonly) unsigned long long hash;
+@property (getter=hmf_isInteger, readonly) bool hmf_integer;
+@property (getter=hmf_isNumeric, readonly) bool hmf_mumeric;
 @property (nonatomic, readonly) NSString *ic_sanitizedFilenameString;
 @property (nonatomic, readonly) NSString *ic_trimmedString;
 @property (nonatomic, readonly) NSString *ic_whitespaceAndNewlineCoalescedString;
@@ -27,7 +29,9 @@
 @property (nonatomic, readonly) NSString *px_stringByIndentingNewLines;
 @property (nonatomic, readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } range;
 @property (nonatomic, readonly) bool safari_isSpecialFolderRecordName;
+@property (nonatomic, readonly, copy) NSString *safari_stringByNormalizingVersionString;
 @property (nonatomic, readonly, copy) NSString *safari_stringByRemovingExcessWhitespace;
+@property (nonatomic, readonly, copy) NSString *safari_userVisibleSafariBundleVersionFromFullVersion;
 @property (nonatomic, readonly) NSString *sf_URLScheme;
 @property (nonatomic, readonly) bool sf_isFeedScheme;
 @property (readonly) NSString *stringByEscapingXMLEntities;
@@ -391,7 +395,9 @@
 + (id)fp_representableHFSFileNameWithBase:(id)arg1 suffix:(id)arg2 extension:(id)arg3 makeDotFile:(bool)arg4;
 
 - (id)fp_bouncedNameWithIndex:(long long)arg1;
+- (id)fp_displayNameFromFilenameOfFolder:(bool)arg1;
 - (const char *)fp_fileSystemRepresentation;
+- (id)fp_filenameFromDisplayNameWithExtension:(id)arg1;
 - (id)fp_libnotifyPerUserNotificationName;
 - (id)fp_pathExtension;
 - (id)fp_realpath;
@@ -572,6 +578,10 @@
 - (id)un_stringWithMaxLength:(unsigned long long)arg1;
 - (unsigned long long)un_unsignedLongLongValue;
 
+// Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
+
+- (unsigned long long)vs_unsignedLongLongValue;
+
 // Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
 
 - (id)_sp_stringByEncodingIllegalFilenameCharacters;
@@ -580,6 +590,7 @@
 
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_axUnit:(unsigned long long)arg1 fromPosition:(long long)arg2 inDirection:(unsigned long long)arg3;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })_ax_rangeOfNextUnitWithStartPosition:(long long)arg1 direction:(unsigned long long)arg2 withCharacterSet:(id)arg3;
+- (id)axAttributedStringWithAttributes:(id)arg1;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })ax_lineFromPosition:(long long)arg1 inDirection:(unsigned long long)arg2;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })ax_lineRangeForPosition:(long long)arg1;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })ax_paragraphFromPosition:(long long)arg1 inDirection:(unsigned long long)arg2;
@@ -1017,10 +1028,18 @@
 - (id)_stringByStrippingLeadingNoise:(id)arg1;
 - (id)_stringByStrippingNoiseLeadingNoise:(id)arg1 TrailingNoise:(id)arg2;
 - (id)_stringByStrippingTrailingNoise:(id)arg1;
+- (id)initWithXPCObject:(id)arg1;
+- (id)xpcObject;
 
 // Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
 
 - (id)sg_deepCopy;
+
+// Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
+
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })expandRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 by:(unsigned long long)arg2;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })range;
+- (id)stringByReplacingMatches:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 withBlock:(id /* block */)arg3;
 
 // Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
 
@@ -1194,6 +1213,11 @@
 - (id)serverFormattedString;
 - (struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { char *x_1_4_1; unsigned long long x_1_4_2; unsigned long long x_1_4_3; } x_1_3_1; struct __short { BOOL x_2_4_1[23]; struct { unsigned char x_2_5_1; } x_2_4_2; } x_1_3_2; struct __raw { unsigned long long x_3_4_1[3]; } x_1_3_3; } x_1_2_1; } x_1_1_1; } x1; })stdString;
 
+// Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
+
+- (bool)hmf_isInteger;
+- (bool)hmf_isNumeric;
+
 // Image: /System/Library/PrivateFrameworks/HardwareDiagnostics.framework/HardwareDiagnostics
 
 - (bool)isAlphaNumeric;
@@ -1231,6 +1255,11 @@
 + (id)stringWithSQLite3Column:(struct sqlite3_stmt { }*)arg1 column:(int)arg2;
 
 - (id)generateSHA1;
+
+// Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
+
+- (id)destinationURIs;
+- (id)groupID;
 
 // Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
@@ -1319,6 +1348,10 @@
 - (bool)ik_attributeBoolValue;
 - (id)ik_stringByTrimmingControlChars;
 
+// Image: /System/Library/PrivateFrameworks/InputContext.framework/InputContext
+
+- (bool)_ICEnumerateLongCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 usingBlock:(id /* block */)arg2;
+
 // Image: /System/Library/PrivateFrameworks/InstallCoordination.framework/InstallCoordination
 
 + (id)stringWithFileSystemRepresentation:(const char *)arg1;
@@ -1376,6 +1409,9 @@
 - (id)mf_bestMimeCharsetUsingHint:(unsigned int)arg1;
 - (long long)mf_caseInsensitiveCompareExcludingXDash:(id)arg1;
 - (id)mf_copyAddressComment;
+- (id)mf_copyDisplayEmailAddress;
+- (id)mf_copyDisplayString;
+- (id)mf_copyDisplayStringInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)mf_copyIDNADecodedEmailAddress;
 - (id)mf_copyIDNAEncodedEmailAddress;
 - (id)mf_copyStringByDecodingIDNA;
@@ -1681,6 +1717,7 @@
 - (id)_FCCKPIdentifierWithType:(int)arg1;
 - (bool)fc_hasArticleIDPrefix;
 - (bool)fc_hasTagIDPrefix;
+- (bool)fc_isValidColorHexString;
 - (id)fc_lowerCaseStringByTrimmingWhiteSpace;
 - (id)fc_lowercaseTokensWithMinimumLength:(unsigned long long)arg1;
 - (id)fc_numberFollowingString:(id)arg1;
@@ -1916,6 +1953,7 @@
 - (id)pk_capitalizedStringForPreferredLocale;
 - (id)pk_lowercaseStringForPreferredLocale;
 - (id)pk_uppercaseAttributedString;
+- (id)pk_uppercaseFirstStringForLocale:(id)arg1;
 - (id)pk_uppercaseFirstStringForPreferredLocale;
 - (id)pk_uppercaseStringForPreferredLocale;
 
@@ -2039,8 +2077,10 @@
 - (bool)safari_isSpecialFolderRecordName;
 - (id)safari_simplifiedUserVisibleURLString;
 - (id)safari_simplifiedUserVisibleURLStringWithSimplifications:(unsigned long long)arg1 forDisplayOnly:(bool)arg2 simplifiedStringOffset:(unsigned long long*)arg3;
+- (id)safari_stringByNormalizingVersionString;
 - (id)safari_stringByTrimmingWhitespace;
 - (id)safari_topLevelDomainUsingCFFromComponents:(id)arg1;
+- (id)safari_userVisibleSafariBundleVersionFromFullVersion;
 
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 
@@ -2577,6 +2617,10 @@
 - (void)drawAtPoint:(struct CGPoint { double x1; double x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 fontColor:(id)arg4 shadowColor:(id)arg5;
 - (void)drawWithDegreeAtPoint:(struct CGPoint { double x1; double x2; })arg1 font:(id)arg2 degreeFont:(id)arg3 degreeOffset:(struct CGSize { double x1; double x2; })arg4;
 - (struct CGSize { double x1; double x2; })sizeWithDegreeWithFont:(id)arg1 degreeFont:(id)arg2 degreeOffset:(struct CGSize { double x1; double x2; })arg3;
+
+// Image: /System/Library/PrivateFrameworks/WeatherFoundation.framework/WeatherFoundation
+
+- (id)stringWithTemperatureUnit:(int)arg1;
 
 // Image: /System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
 

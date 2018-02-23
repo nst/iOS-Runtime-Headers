@@ -8,6 +8,7 @@
     long long  _lastSavedEditNumber;
     QLMUViewController * _markupViewController;
     QLDelegateProxy * _pdfDocumentDelegateProxy;
+    NSNumber * _shouldAllowEditingContents;
     bool  _showingSignatureView;
     double  _topInset;
 }
@@ -19,6 +20,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) QLMUViewController *markupViewController;
 @property (nonatomic, retain) QLDelegateProxy *pdfDocumentDelegateProxy;
+@property (nonatomic, retain) NSNumber *shouldAllowEditingContents;
 @property (readonly) Class superclass;
 @property double topInset;
 
@@ -49,8 +51,10 @@
 - (void)setHasChangesToUndo:(bool)arg1;
 - (void)setMarkupViewController:(id)arg1;
 - (void)setPdfDocumentDelegateProxy:(id)arg1;
+- (void)setShouldAllowEditingContents:(id)arg1;
 - (void)setTopInset:(double)arg1;
 - (bool)shouldAcceptTouch:(id)arg1 ofGestureRecognizer:(id)arg2;
+- (id)shouldAllowEditingContents;
 - (void)showingSignatureView:(bool)arg1;
 - (id)toolbarButtonsForTraitCollection:(id)arg1;
 - (double)topInset;

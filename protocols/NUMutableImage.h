@@ -5,7 +5,7 @@
 
 @required
 
-- (bool)copyBufferStorage:(id <NUImageStorage>)arg1 region:(NURegion *)arg2 atPoint:(struct { long long x1; long long x2; })arg3;
-- (bool)copySurfaceStorage:(id <NUSurfaceStorage>)arg1 device:(id <NUDevice>)arg2 region:(NURegion *)arg3 atPoint:(struct { long long x1; long long x2; })arg4;
+- (bool)copyBufferStorage:(id <NUImageStorage>)arg1 fromRect:(struct { struct { long long x_1_1_1; long long x_1_1_2; } x1; struct { long long x_2_1_1; long long x_2_1_2; } x2; })arg2 toPoint:(struct { long long x1; long long x2; })arg3;
+- (bool)copySurfaceStorage:(id <NUSurfaceStorage>)arg1 fromRect:(struct { struct { long long x_1_1_1; long long x_1_1_2; } x1; struct { long long x_2_1_1; long long x_2_1_2; } x2; })arg2 toPoint:(struct { long long x1; long long x2; })arg3 device:(id <NUDevice>)arg4;
 
 @end

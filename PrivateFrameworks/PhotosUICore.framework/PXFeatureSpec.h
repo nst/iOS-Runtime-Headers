@@ -19,6 +19,12 @@
         double left; 
         double bottom; 
         double right; 
+    }  _layoutMargins;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _safeAreaInsets;
     bool  _shouldInsetAllPhotoDetailsContent;
     long long  _sizeClass;
@@ -39,6 +45,7 @@
 @property (nonatomic, readonly) double defaultCornerRadius;
 @property (nonatomic, readonly) UIColor *defaultPlaceholderColor;
 @property (nonatomic, readonly) UIColor *defaultPlacesPlaceholderColor;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } layoutMargins;
 @property (nonatomic, readonly) long long localizedLeadingTextAlignment;
 @property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } safeAreaInsets;
 @property (nonatomic, readonly) bool shouldInsetAllPhotoDetailsContent;
@@ -70,6 +77,7 @@
 - (id)init;
 - (id)initWithExtendedTraitCollection:(id)arg1;
 - (id)initWithExtendedTraitCollection:(id)arg1 options:(unsigned long long)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })layoutMargins;
 - (long long)localizedLeadingTextAlignment;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })safeAreaInsets;
 - (bool)shouldInsetAllPhotoDetailsContent;

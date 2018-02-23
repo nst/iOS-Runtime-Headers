@@ -6,9 +6,13 @@
     AFClientConfiguration * _baseObject;
     struct _builderFlags { 
         unsigned int isDirty : 1; 
+        unsigned int hasIsDeviceInSetupFlow : 1; 
+        unsigned int hasIsDeviceInCarDNDMode : 1; 
         unsigned int hasTapToSiriAudioPlaybackRequest : 1; 
         unsigned int hasTwoShotAudioPlaybackRequest : 1; 
     }  _builderFlags;
+    bool  _isDeviceInCarDNDMode;
+    bool  _isDeviceInSetupFlow;
     AFAudioPlaybackRequest * _tapToSiriAudioPlaybackRequest;
     AFAudioPlaybackRequest * _twoShotAudioPlaybackRequest;
 }
@@ -17,6 +21,8 @@
 - (id)build;
 - (id)init;
 - (id)initWithBaseObject:(id)arg1;
+- (id)setIsDeviceInCarDNDMode:(bool)arg1;
+- (id)setIsDeviceInSetupFlow:(bool)arg1;
 - (id)setTapToSiriAudioPlaybackRequest:(id)arg1;
 - (id)setTwoShotAudioPlaybackRequest:(id)arg1;
 

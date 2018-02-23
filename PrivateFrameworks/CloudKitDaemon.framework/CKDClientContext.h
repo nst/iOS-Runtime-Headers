@@ -56,6 +56,7 @@
     NSURL * _publicCodeServiceURL;
     NSURL * _publicDeviceServiceURL;
     CKDKeyValueDiskCache * _publicIdentitiesDiskCache;
+    NSURL * _publicMetricsServiceURL;
     NSURL * _publicShareServiceURL;
     bool  _returnPCSMetadata;
     bool  _sandboxed;
@@ -95,6 +96,8 @@
 @property (nonatomic, retain) CKDPublicIdentityLookupService *backgroundPublicIdentityLookupService;
 @property (nonatomic, retain) CKDZoneGatekeeper *backgroundZoneGatekeeper;
 @property (nonatomic) bool bypassPCSEncryption;
+@property (nonatomic, readonly) unsigned long long c2MetricsReportFrequency;
+@property (nonatomic, readonly) unsigned long long c2MetricsReportFrequencyBase;
 @property (nonatomic, retain) CKDCachePurger *cachePurger;
 @property long long cachedEnvironment;
 @property (nonatomic, readonly) bool canAccessAccount;
@@ -141,6 +144,7 @@
 @property (nonatomic, retain) NSURL *publicCodeServiceURL;
 @property (nonatomic, retain) NSURL *publicDeviceServiceURL;
 @property (nonatomic, retain) CKDKeyValueDiskCache *publicIdentitiesDiskCache;
+@property (nonatomic, retain) NSURL *publicMetricsServiceURL;
 @property (nonatomic, retain) NSURL *publicShareServiceURL;
 @property (nonatomic) bool returnPCSMetadata;
 @property (getter=isSandboxed, nonatomic) bool sandboxed;
@@ -201,6 +205,8 @@
 - (id)backgroundPublicIdentityLookupService;
 - (id)backgroundZoneGatekeeper;
 - (bool)bypassPCSEncryption;
+- (unsigned long long)c2MetricsReportFrequency;
+- (unsigned long long)c2MetricsReportFrequencyBase;
 - (id)cachePurger;
 - (long long)cachedEnvironment;
 - (bool)canAccessAccount;
@@ -263,6 +269,7 @@
 - (id)publicDeviceServiceURL;
 - (id)publicIdentitiesDiskCache;
 - (double)publicIdentitiesExpirationTimeout;
+- (id)publicMetricsServiceURL;
 - (id)publicShareServiceURL;
 - (void)removeClientProxy:(id)arg1;
 - (bool)returnPCSMetadata;
@@ -329,6 +336,7 @@
 - (void)setPublicCodeServiceURL:(id)arg1;
 - (void)setPublicDeviceServiceURL:(id)arg1;
 - (void)setPublicIdentitiesDiskCache:(id)arg1;
+- (void)setPublicMetricsServiceURL:(id)arg1;
 - (void)setPublicShareServiceURL:(id)arg1;
 - (void)setReturnPCSMetadata:(bool)arg1;
 - (void)setSandboxed:(bool)arg1;

@@ -37,6 +37,7 @@
     bool  _doubleTapZoomAreaExcludesBackground;
     bool  _doubleTapZoomAreaExcludesBars;
     double  _doubleTapZoomFactor;
+    bool  _enableFigPhotoBackgroundSizeBasedDisplay;
     bool  _enableFigPhotoTiledLayer;
     bool  _enableSuggestionsAnalysis;
     bool  _forceURLWithFigPhotoTiledLayer;
@@ -72,6 +73,7 @@
     bool  _showLoadingIndicatorDuringDownload;
     bool  _simulateAssetContentDownload;
     bool  _simulateAssetContentDownloadFailure;
+    bool  _simulateWorstCaseFigPhotoBackgroundSize;
     long long  _simulatedAssetVariationSuggestion;
     long long  _suggestionMinimumAssetAgeInDays;
     long long  _suggestionsStyle;
@@ -124,6 +126,7 @@
 @property (nonatomic) bool doubleTapZoomAreaExcludesBackground;
 @property (nonatomic) bool doubleTapZoomAreaExcludesBars;
 @property (nonatomic) double doubleTapZoomFactor;
+@property (nonatomic) bool enableFigPhotoBackgroundSizeBasedDisplay;
 @property (nonatomic) bool enableFigPhotoTiledLayer;
 @property (nonatomic) bool enableSuggestionsAnalysis;
 @property (nonatomic) bool forceURLWithFigPhotoTiledLayer;
@@ -159,6 +162,7 @@
 @property (nonatomic) bool showLoadingIndicatorDuringDownload;
 @property (nonatomic) bool simulateAssetContentDownload;
 @property (nonatomic) bool simulateAssetContentDownloadFailure;
+@property (nonatomic) bool simulateWorstCaseFigPhotoBackgroundSize;
 @property (nonatomic) long long simulatedAssetVariationSuggestion;
 @property (nonatomic) long long suggestionMinimumAssetAgeInDays;
 @property (nonatomic) long long suggestionsStyle;
@@ -216,6 +220,7 @@
 - (bool)doubleTapZoomAreaExcludesBackground;
 - (bool)doubleTapZoomAreaExcludesBars;
 - (double)doubleTapZoomFactor;
+- (bool)enableFigPhotoBackgroundSizeBasedDisplay;
 - (bool)enableFigPhotoTiledLayer;
 - (bool)enableSuggestionsAnalysis;
 - (bool)forceURLWithFigPhotoTiledLayer;
@@ -280,6 +285,7 @@
 - (void)setDoubleTapZoomAreaExcludesBackground:(bool)arg1;
 - (void)setDoubleTapZoomAreaExcludesBars:(bool)arg1;
 - (void)setDoubleTapZoomFactor:(double)arg1;
+- (void)setEnableFigPhotoBackgroundSizeBasedDisplay:(bool)arg1;
 - (void)setEnableFigPhotoTiledLayer:(bool)arg1;
 - (void)setEnableSuggestionsAnalysis:(bool)arg1;
 - (void)setForceURLWithFigPhotoTiledLayer:(bool)arg1;
@@ -315,6 +321,7 @@
 - (void)setShowLoadingIndicatorDuringDownload:(bool)arg1;
 - (void)setSimulateAssetContentDownload:(bool)arg1;
 - (void)setSimulateAssetContentDownloadFailure:(bool)arg1;
+- (void)setSimulateWorstCaseFigPhotoBackgroundSize:(bool)arg1;
 - (void)setSimulatedAssetVariationSuggestion:(long long)arg1;
 - (void)setSuggestionMinimumAssetAgeInDays:(long long)arg1;
 - (void)setSuggestionsStyle:(long long)arg1;
@@ -338,6 +345,7 @@
 - (bool)showLoadingIndicatorDuringDownload;
 - (bool)simulateAssetContentDownload;
 - (bool)simulateAssetContentDownloadFailure;
+- (bool)simulateWorstCaseFigPhotoBackgroundSize;
 - (long long)simulatedAssetVariationSuggestion;
 - (long long)suggestionMinimumAssetAgeInDays;
 - (long long)suggestionsStyle;

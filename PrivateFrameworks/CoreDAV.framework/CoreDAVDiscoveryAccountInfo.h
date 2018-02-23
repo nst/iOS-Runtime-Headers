@@ -54,6 +54,7 @@
 - (struct __CFURLStorageSession { }*)copyStorageSession;
 - (id)description;
 - (id)error;
+- (id)getAppleIDSession;
 - (bool)handleAuthenticateAgainstProtectionSpace:(id)arg1;
 - (bool)handleAuthenticateAgainstProtectionSpace:(id)arg1 withConnection:(id)arg2;
 - (bool)handleCertificateError:(id)arg1;

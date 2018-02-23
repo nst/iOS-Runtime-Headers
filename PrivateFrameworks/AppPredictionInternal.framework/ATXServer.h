@@ -20,14 +20,15 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
+- (double)_cacheAgeForCache:(id)arg1 withCurrentTime:(double)arg2;
 - (bool)_shouldUpdateCache:(id)arg1 withRefreshRate:(double)arg2;
 - (bool)_shouldUpdateCache:(id)arg1 withRefreshRate:(double)arg2 currentTime:(double)arg3;
+- (double)cacheAgeForConsumerType:(unsigned char)arg1;
 - (id)cacheFilePaths;
 - (id)cachePathForConsumerSubtype:(unsigned char)arg1;
 - (id)consumerSubTypesToUpdate;
 - (void)dealloc;
 - (void)generateNewAppPredictionsForConsumerSubType:(unsigned char)arg1 intent:(id)arg2 candidateBundleIdentifiers:(id)arg3 reply:(id /* block */)arg4;
-- (void)generateNewAppPredictionsWithReply:(id /* block */)arg1;
 - (void)getAppPredictorAssetMappingDescriptionWithReply:(id /* block */)arg1;
 - (id)init;
 - (id)initWithCacheFileBasePath:(id)arg1 machServiceName:(id)arg2;

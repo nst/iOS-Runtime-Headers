@@ -45,7 +45,6 @@
 - (id)detailTextViewText;
 - (id)detailsTextView;
 - (id)exclusionPathsForTextView;
-- (struct CGSize { double x1; double x2; })idealFittingSizeOfImageViewForFittingSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)image;
 - (id)imageAndDescriptionBoxView;
 - (id)imageExclusionPath;

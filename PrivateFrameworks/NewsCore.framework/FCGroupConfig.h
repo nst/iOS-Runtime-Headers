@@ -7,6 +7,7 @@
     unsigned long long  _cutoffCount;
     unsigned long long  _cutoffTimeSecs;
     NSDictionary * _dictionary;
+    NSArray * _groupFonts;
     FCColor * _groupTitleColor;
 }
 
@@ -17,8 +18,20 @@
 @property (nonatomic) unsigned long long cutoffTimeSecs;
 @property (nonatomic, retain) NSDictionary *dictionary;
 @property (nonatomic, readonly) NSString *feedID;
+@property (nonatomic, readonly) NSString *groupActionTitle;
+@property (nonatomic, readonly) NSString *groupActionUrlString;
+@property (nonatomic, retain) NSArray *groupFonts;
 @property (nonatomic, readonly) NSString *groupName;
 @property (nonatomic, retain) FCColor *groupTitleColor;
+@property (nonatomic, readonly) NSString *groupTitleFontName;
+@property (nonatomic, readonly) double groupTitleFontSize;
+@property (nonatomic, readonly) double groupTitleFontSizeiPad;
+@property (nonatomic, readonly) double groupTitleFontTracking;
+@property (nonatomic, readonly) double groupTitleFontTrackingiPad;
+@property (nonatomic, readonly) double groupTitleOffsetHeight;
+@property (nonatomic, readonly) double groupTitleOffsetHeightiPad;
+@property (nonatomic, readonly) double groupTitleOffsetY;
+@property (nonatomic, readonly) double groupTitleOffsetYiPad;
 @property (nonatomic, readonly) NSString *sectionID;
 
 - (void).cxx_destruct;
@@ -29,14 +42,27 @@
 - (unsigned long long)cutoffTimeSecs;
 - (id)dictionary;
 - (id)feedID;
+- (id)groupActionTitle;
+- (id)groupActionUrlString;
+- (id)groupFonts;
 - (id)groupName;
 - (id)groupTitleColor;
+- (id)groupTitleFontName;
+- (double)groupTitleFontSize;
+- (double)groupTitleFontSizeiPad;
+- (double)groupTitleFontTracking;
+- (double)groupTitleFontTrackingiPad;
+- (double)groupTitleOffsetHeight;
+- (double)groupTitleOffsetHeightiPad;
+- (double)groupTitleOffsetY;
+- (double)groupTitleOffsetYiPad;
 - (id)initWithDictionary:(id)arg1;
 - (id)sectionID;
 - (void)setArticleMetadataByArticleID:(id)arg1;
 - (void)setCutoffCount:(unsigned long long)arg1;
 - (void)setCutoffTimeSecs:(unsigned long long)arg1;
 - (void)setDictionary:(id)arg1;
+- (void)setGroupFonts:(id)arg1;
 - (void)setGroupTitleColor:(id)arg1;
 
 @end

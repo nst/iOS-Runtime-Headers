@@ -15,6 +15,7 @@
 @property (getter=isResetSync, nonatomic) bool resetSync;
 @property (getter=isSagaEnabled, nonatomic) bool sagaEnabled;
 @property (nonatomic) long long storeAccountID;
+@property (getter=isSuspendable, nonatomic) bool suspendable;
 @property (nonatomic, copy) NSString *syncAnchor;
 @property (nonatomic, copy) NSString *syncLibraryID;
 @property (nonatomic, copy) NSData *trackData;
@@ -31,6 +32,7 @@
 - (void)setResetSync:(bool)arg1;
 - (void)setSagaEnabled:(bool)arg1;
 - (void)setStoreAccountID:(long long)arg1;
+- (void)setSuspendable:(bool)arg1;
 - (void)setSyncAnchor:(id)arg1;
 - (void)setSyncLibraryID:(id)arg1;
 - (void)setTrackData:(id)arg1;

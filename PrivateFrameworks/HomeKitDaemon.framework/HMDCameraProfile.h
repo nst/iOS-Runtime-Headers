@@ -26,6 +26,7 @@
 @property (nonatomic, readonly) HMDCameraStreamSnapshotHandler *streamSnapshotHandler;
 @property (readonly) Class superclass;
 
++ (bool)hasMessageReceiverChildren;
 + (id)logCategory;
 + (bool)supportsSecureCoding;
 
@@ -46,6 +47,7 @@
 - (bool)isMicrophonePresent;
 - (bool)isSpeakerPresent;
 - (id)logIdentifier;
+- (id)messageReceiverChildren;
 - (void)monitorForEventsForServices:(id)arg1;
 - (id)networkMonitor;
 - (void)registerForMessages;

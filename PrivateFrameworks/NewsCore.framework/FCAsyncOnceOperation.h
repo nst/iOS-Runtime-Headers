@@ -7,7 +7,7 @@
     <FCOperationCanceling><FCOperationPrioritizing> * _activeOperation;
     bool  _finished;
     unsigned long long  _interest;
-    FCMutexLock * _lock;
+    NFMutexLock * _lock;
     long long  _relativePriority;
     bool  _succeeded;
     id /* block */  _workBlock;
@@ -19,7 +19,7 @@
 @property (nonatomic, readonly) bool finishedExecuting;
 @property (nonatomic, readonly) bool finishedExecutingWithFailure;
 @property (nonatomic) unsigned long long interest;
-@property (nonatomic, retain) FCMutexLock *lock;
+@property (nonatomic, retain) NFMutexLock *lock;
 @property (nonatomic) long long relativePriority;
 @property (nonatomic) bool succeeded;
 @property (nonatomic, copy) id /* block */ workBlock;

@@ -5,7 +5,6 @@
 @interface MCDBrowsableContentNavigationController : UITabBarController <MCDPCContainerDelegate, UITabBarControllerDelegate> {
     NSString * _bundleID;
     MCDPCContainer * _container;
-    bool  _deferReload;
     bool  _didFinishInitialLoad;
     AVExternalDevice * _externalDevice;
     bool  _hasCarScreen;
@@ -19,7 +18,6 @@
 @property (nonatomic, retain) NSString *bundleID;
 @property (nonatomic, retain) MCDPCContainer *container;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) bool deferReload;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool didFinishInitialLoad;
 @property (nonatomic, retain) AVExternalDevice *externalDevice;
@@ -41,7 +39,6 @@
 - (id)bundleID;
 - (id)container;
 - (void)container:(id)arg1 didInvalidateIndicies:(id)arg2;
-- (bool)deferReload;
 - (bool)didFinishInitialLoad;
 - (id)externalDevice;
 - (bool)hasCarScreen;
@@ -52,7 +49,6 @@
 - (void)reloadTabs;
 - (void)setBundleID:(id)arg1;
 - (void)setContainer:(id)arg1;
-- (void)setDeferReload:(bool)arg1;
 - (void)setDidFinishInitialLoad:(bool)arg1;
 - (void)setExternalDevice:(id)arg1;
 - (void)setHasCarScreen:(bool)arg1;

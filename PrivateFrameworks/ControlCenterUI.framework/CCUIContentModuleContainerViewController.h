@@ -42,7 +42,6 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIView *highlightWrapperView;
 @property (nonatomic, retain) UIView *maskView;
-@property (nonatomic, readonly) CCUIContentModuleContainerView *moduleContainerView;
 @property (nonatomic, readonly) CCUIContentModuleContentContainerView *moduleContentView;
 @property (nonatomic, copy) NSString *moduleIdentifier;
 @property (nonatomic, retain) UIPreviewInteraction *previewInteraction;
@@ -92,7 +91,6 @@
 - (bool)isExpanded;
 - (void)loadView;
 - (id)maskView;
-- (id)moduleContainerView;
 - (id)moduleContentView;
 - (id)moduleIdentifier;
 - (id)previewInteraction;

@@ -9,6 +9,8 @@
     bool  _full;
     NSMutableSet * _mutableUntrustableIndentifiers;
     NSMutableDictionary * _mutableUploadIdentifiers;
+    unsigned long long  _resourceSize;
+    bool  _resourceSizeIsCalculated;
     NSSet * _untrustableIdentifiers;
     NSMutableDictionary * _uploadIdentifiers;
 }
@@ -17,6 +19,7 @@
 @property (nonatomic, readonly) bool batchCanLowerQuota;
 @property (nonatomic, copy) NSString *clientCacheIdentifier;
 @property (getter=isFull, nonatomic) bool full;
+@property (nonatomic, readonly) unsigned long long resourceSize;
 
 + (bool)supportsSecureCoding;
 
@@ -29,6 +32,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (bool)isFull;
+- (unsigned long long)resourceSize;
 - (void)setClientCacheIdentifier:(id)arg1;
 - (void)setFull:(bool)arg1;
 - (id)uploadIdentifierForChange:(id)arg1;

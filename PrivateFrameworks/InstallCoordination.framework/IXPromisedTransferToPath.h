@@ -9,6 +9,7 @@
 @property (nonatomic, retain) IXPromisedTransferToPathSeed *seed;
 @property (nonatomic) bool shouldCopy;
 @property (nonatomic, retain) NSURL *transferPath;
+@property (nonatomic) bool tryDeltaCopy;
 
 + (bool)supportsSecureCoding;
 
@@ -22,7 +23,9 @@
 - (void)setComplete:(bool)arg1;
 - (void)setShouldCopy:(bool)arg1;
 - (void)setTransferPath:(id)arg1;
+- (void)setTryDeltaCopy:(bool)arg1;
 - (bool)shouldCopy;
 - (id)transferPath;
+- (bool)tryDeltaCopy;
 
 @end

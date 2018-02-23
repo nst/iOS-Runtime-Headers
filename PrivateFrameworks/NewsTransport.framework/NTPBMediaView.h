@@ -15,9 +15,11 @@
     int  _feedType;
     NSData * _feedViewExposureId;
     NSMutableArray * _fractionalCohortMemberships;
+    NSString * _galleryId;
     int  _galleryImageCount;
     NSMutableArray * _galleryImageIds;
     int  _galleryType;
+    NSData * _galleryViewingSessionId;
     struct { 
         unsigned int backendArticleVersionInt64 : 1; 
         unsigned int personalizationTreatmentId : 1; 
@@ -70,9 +72,11 @@
 @property (nonatomic) int feedType;
 @property (nonatomic, retain) NSData *feedViewExposureId;
 @property (nonatomic, retain) NSMutableArray *fractionalCohortMemberships;
+@property (nonatomic, retain) NSString *galleryId;
 @property (nonatomic) int galleryImageCount;
 @property (nonatomic, retain) NSMutableArray *galleryImageIds;
 @property (nonatomic) int galleryType;
+@property (nonatomic, retain) NSData *galleryViewingSessionId;
 @property (nonatomic) bool hasAdSupportedChannel;
 @property (nonatomic, readonly) bool hasArticleId;
 @property (nonatomic, readonly) bool hasArticleSessionId;
@@ -84,8 +88,10 @@
 @property (nonatomic, readonly) bool hasFeedId;
 @property (nonatomic) bool hasFeedType;
 @property (nonatomic, readonly) bool hasFeedViewExposureId;
+@property (nonatomic, readonly) bool hasGalleryId;
 @property (nonatomic) bool hasGalleryImageCount;
 @property (nonatomic) bool hasGalleryType;
+@property (nonatomic, readonly) bool hasGalleryViewingSessionId;
 @property (nonatomic) bool hasIsDigitalReplicaAd;
 @property (nonatomic) bool hasIsNativeAd;
 @property (nonatomic) bool hasIsUserSubscribedToFeed;
@@ -162,12 +168,14 @@
 - (id)fractionalCohortMembershipAtIndex:(unsigned long long)arg1;
 - (id)fractionalCohortMemberships;
 - (unsigned long long)fractionalCohortMembershipsCount;
+- (id)galleryId;
 - (int)galleryImageCount;
 - (id)galleryImageIds;
 - (id)galleryImageIdsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)galleryImageIdsCount;
 - (int)galleryType;
 - (id)galleryTypeAsString:(int)arg1;
+- (id)galleryViewingSessionId;
 - (bool)hasAdSupportedChannel;
 - (bool)hasArticleId;
 - (bool)hasArticleSessionId;
@@ -179,8 +187,10 @@
 - (bool)hasFeedId;
 - (bool)hasFeedType;
 - (bool)hasFeedViewExposureId;
+- (bool)hasGalleryId;
 - (bool)hasGalleryImageCount;
 - (bool)hasGalleryType;
+- (bool)hasGalleryViewingSessionId;
 - (bool)hasIsDigitalReplicaAd;
 - (bool)hasIsNativeAd;
 - (bool)hasIsUserSubscribedToFeed;
@@ -234,9 +244,11 @@
 - (void)setFeedType:(int)arg1;
 - (void)setFeedViewExposureId:(id)arg1;
 - (void)setFractionalCohortMemberships:(id)arg1;
+- (void)setGalleryId:(id)arg1;
 - (void)setGalleryImageCount:(int)arg1;
 - (void)setGalleryImageIds:(id)arg1;
 - (void)setGalleryType:(int)arg1;
+- (void)setGalleryViewingSessionId:(id)arg1;
 - (void)setHasAdSupportedChannel:(bool)arg1;
 - (void)setHasArticleType:(bool)arg1;
 - (void)setHasBackendArticleVersion:(bool)arg1;

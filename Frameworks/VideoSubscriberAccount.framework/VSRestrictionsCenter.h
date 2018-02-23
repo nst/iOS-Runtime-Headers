@@ -17,7 +17,9 @@
 + (id)defaultRestrictionsCenter;
 
 - (void).cxx_destruct;
+- (bool)_canInstallAppsAtAll;
 - (void)_updateAccountModificationAllowed;
+- (bool)canInstallAppWithRating:(long long)arg1;
 - (void)dealloc;
 - (id)init;
 - (bool)isAcountModificationAllowed;

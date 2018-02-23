@@ -15,8 +15,12 @@
 @property (nonatomic, readonly) bool serviceIsAlive;
 
 + (id)availableKernelClockIdentifiers;
++ (id)clockNameForClockIdentifier:(unsigned long long)arg1;
 + (id)diagnosticDescriptionForService:(unsigned int)arg1 withIndent:(id)arg2;
++ (id)diagnosticInfoForClockIdentifier:(unsigned long long)arg1;
++ (id)diagnosticInfoForService:(unsigned int)arg1;
 + (id)iokitMatchingDictionaryForClockIdentifier:(unsigned long long)arg1;
++ (unsigned int)serviceForClockIdentifier:(unsigned long long)arg1;
 
 - (void)_handleInterestNotification:(unsigned int)arg1 withArgument:(void*)arg2;
 - (void)_handleNotification:(unsigned int)arg1 withArg1:(unsigned long long)arg2 andArg2:(unsigned long long)arg3;

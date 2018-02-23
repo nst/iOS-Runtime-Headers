@@ -2,18 +2,19 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@interface TUCallServicesInterface : NSObject <TUCallServicesClient, TUCallServicesProtocol> {
+@interface TUCallServicesInterface : NSObject <TUAudioDeviceControllerActions, TUCallServicesClientCapabilitiesActions, TUCallServicesProxyCallActions, TUCallServicesXPCClient, TURouteControllerActions> {
     TUCallCenter * _callCenter;
     TUCallNotificationManager * _callNotificationManager;
     TUCallServicesClientCapabilities * _callServicesClientCapabilities;
     int  _connectionRequestNotificationToken;
     NSArray * _currentCalls;
-    <TUCallServicesDaemonDelegate> * _daemonDelegate;
+    <TUCallServicesXPCServer> * _daemonDelegate;
     bool  _hasDaemonDelegateLaunched;
     bool  _hasRequestedInitialState;
     NSObject<OS_dispatch_semaphore> * _initialStateSemaphore;
     NSArray * _localProxyCalls;
     NSObject<OS_dispatch_queue> * _queue;
+    <TURouteControllerClient> * _routeControllerClient;
     NSMapTable * _uniqueProxyIdentifierToProxyCall;
     NSXPCConnection * _xpcConnection;
 }
@@ -24,7 +25,7 @@
 @property (nonatomic, retain) TUCallServicesClientCapabilities *callServicesClientCapabilities;
 @property (nonatomic) int connectionRequestNotificationToken;
 @property (nonatomic, copy) NSArray *currentCalls;
-@property (nonatomic) <TUCallServicesDaemonDelegate> *daemonDelegate;
+@property (nonatomic) <TUCallServicesXPCServer> *daemonDelegate;
 @property (nonatomic, readonly) bool daemonDelegateIsLocal;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -35,6 +36,8 @@
 @property (nonatomic, copy) NSArray *localProxyCalls;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, readonly) void*queueContext;
+@property (nonatomic, retain) <TURouteControllerClient> *routeControllerClient;
+@property (nonatomic, readonly) NSDictionary *routesByUniqueIdentifier;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSMapTable *uniqueProxyIdentifierToProxyCall;
 @property (nonatomic, retain) NSXPCConnection *xpcConnection;
@@ -54,7 +57,6 @@
 - (id)callContainer;
 - (id)callNotificationManager;
 - (id)callServicesClientCapabilities;
-- (void)cleanUpAllCallsForUnexpectedServerDisconnect;
 - (int)connectionRequestNotificationToken;
 - (id)currentCalls;
 - (id)daemonDelegate;
@@ -72,6 +74,9 @@
 - (oneway void)handleCurrentCallsChanged:(id)arg1 callDisconnected:(id)arg2;
 - (oneway void)handleFrequencyChangedTo:(id)arg1 inDirection:(int)arg2 forCallsWithUniqueProxyIdentifiers:(id)arg3;
 - (oneway void)handleNotificationName:(id)arg1 forCallWithUniqueProxyIdentifier:(id)arg2 userInfo:(id)arg3;
+- (oneway void)handleRoutesByUniqueIdentifierUpdated:(id)arg1;
+- (void)handleServerDisconnect;
+- (void)handleServerReconnect;
 - (bool)hasDaemonDelegateLaunched;
 - (bool)hasRequestedInitialState;
 - (oneway void)holdCallWithUniqueProxyIdentifier:(id)arg1;
@@ -82,17 +87,21 @@
 - (id)localProxyCalls;
 - (void)performBlockOnQueue:(id /* block */)arg1;
 - (void)performBlockOnQueue:(id /* block */)arg1 andWait:(bool)arg2;
+- (oneway void)pickRouteWithUniqueIdentifier:(id)arg1;
 - (oneway void)playDTMFToneForCallWithUniqueProxyIdentifier:(id)arg1 key:(unsigned char)arg2;
 - (oneway void)pullCallFromClientUsingHandoffActivityUserInfo:(id)arg1 completion:(id /* block */)arg2;
 - (oneway void)pullHostedCallsFromPairedHostDevice;
 - (oneway void)pullRelayingCallsFromClient;
-- (oneway void)pushHostedCallsToPairedClientDevice;
+- (oneway void)pushHostedCallsToDestination:(id)arg1;
 - (oneway void)pushRelayingCallsToHostWithSourceIdentifier:(id)arg1;
 - (id)queue;
 - (void*)queueContext;
 - (void)registerCall:(id)arg1;
 - (void)requestCurrentStateWithCompletionHandler:(id /* block */)arg1;
 - (oneway void)resetCallProvisionalStates;
+- (id)routeControllerClient;
+- (id)routesByUniqueIdentifier;
+- (oneway void)routesByUniqueIdentifier:(id /* block */)arg1;
 - (oneway void)sendHardPauseDigitsForCallWithUniqueProxyIdentifier:(id)arg1;
 - (oneway void)sendMMIOrUSSDCodeWithRequest:(id)arg1;
 - (void)setCallCenter:(id)arg1;
@@ -112,6 +121,7 @@
 - (void)setQueue:(id)arg1;
 - (oneway void)setRemoteVideoPresentationSizeForCallWithUniqueProxyIdentifier:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 - (oneway void)setRemoteVideoPresentationStateForCallWithUniqueProxyIdentifier:(id)arg1 presentationState:(int)arg2;
+- (void)setRouteControllerClient:(id)arg1;
 - (oneway void)setTTYType:(int)arg1 forCallWithUniqueProxyIdentifier:(id)arg2;
 - (void)setUniqueProxyIdentifierToProxyCall:(id)arg1;
 - (oneway void)setUplinkMuted:(bool)arg1 forCallWithUniqueProxyIdentifier:(id)arg2;

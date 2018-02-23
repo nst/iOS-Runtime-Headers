@@ -7,6 +7,7 @@
     NSURL * _appStoreRoomURL;
     NSURL * _authenticationURL;
     bool  _developer;
+    NSString * _displayName;
     NSString * _nameForSorting;
     bool  _prohibitedByStore;
     VSOptional * _providerID;
@@ -33,7 +34,6 @@
 @property (nonatomic, readonly) bool supportsTemplatesSufficientForSomeKnownPlatform;
 @property (nonatomic, retain) VSOptional *uniqueID;
 
-+ (id)keyPathsForValuesAffectingDisplayName;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;

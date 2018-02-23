@@ -4,20 +4,21 @@
 
 @interface WBSDeviceEligibilityInformation : NSObject {
     NSDate * _dateOfLatestDAVAccessByIneligibleWindowsDevice;
-    unsigned long long  _numberOfDevicesPotentiallyEligibleAfterUpdate;
-    unsigned long long  _numberOfPotentiallyEligibleDevices;
+    NSArray * _devices;
+    bool  _hasWindowsDevices;
 }
 
 @property (nonatomic, readonly) NSDate *dateOfLatestDAVAccessByIneligibleWindowsDevice;
-@property (nonatomic, readonly) unsigned long long numberOfDevicesPotentiallyEligibleAfterUpdate;
-@property (nonatomic, readonly) unsigned long long numberOfPotentiallyEligibleDevices;
+@property (nonatomic, readonly) NSArray *devices;
+@property (nonatomic, readonly) bool hasWindowsDevices;
 
 - (void).cxx_destruct;
 - (id)dateOfLatestDAVAccessByIneligibleWindowsDevice;
 - (id)description;
-- (id)initWithDateOfLatestDAVAccessByIneligibleWindowsDevice:(id)arg1 numberOfPotentiallyEligibleDevices:(unsigned long long)arg2 numberOfDevicesPotentiallyEligibleAfterUpdate:(unsigned long long)arg3;
+- (id)devices;
+- (bool)hasWindowsDevices;
+- (id)initWithDateOfLatestDAVAccessByIneligibleWindowsDevice:(id)arg1 devices:(id)arg2 hasWindowsDevices:(bool)arg3;
 - (id)initWithDeviceListResponseDictionary:(id)arg1;
-- (unsigned long long)numberOfDevicesPotentiallyEligibleAfterUpdate;
-- (unsigned long long)numberOfPotentiallyEligibleDevices;
+- (struct { unsigned long long x1; unsigned long long x2; })potentiallyEligibleDevicesWithEligibleOperatingSystemVersionRanges:(id)arg1;
 
 @end

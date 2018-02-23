@@ -12,7 +12,6 @@
     unsigned int  _clientStateIsInSync;
     NSXPCConnection * _connection;
     <AFAssistantUIService> * _delegate;
-    bool  _hasActiveTimeout;
     unsigned int  _hasOutstandingRequest;
     AFAudioPowerUpdater * _inputAudioPowerUpdater;
     unsigned int  _isCapturingSpeech;
@@ -21,6 +20,7 @@
     unsigned long long  _pendingSpeechRequestCounter;
     NSMutableDictionary * _replyHandlerForAceId;
     AFOneArgumentSafetyBlock * _requestCompletion;
+    NSObject<OS_dispatch_source> * _requestTimeoutTimer;
     unsigned int  _shouldSpeak;
     NSObject<OS_dispatch_group> * _speechCallbackGroup;
     <AFSpeechDelegate> * _speechDelegate;
@@ -77,6 +77,7 @@
 - (void)_setShouldSpeak:(bool)arg1;
 - (void)_speechRecordingDidFailWithError:(id)arg1;
 - (bool)_startInputAudioPowerUpdatesWithXPCWrapper:(id)arg1;
+- (void)_startRequestWithAceCommand:(id)arg1 suppressAlert:(bool)arg2;
 - (void)_startRequestWithInfo:(id)arg1;
 - (void)_startUIRequestWithText:(id)arg1 completion:(id /* block */)arg2;
 - (void)_stopInputAudioPowerUpdates;
@@ -97,6 +98,8 @@
 - (void)_tellDelegateRequestWillStart;
 - (void)_tellDelegateSetUserActivityInfo:(id)arg1 webpageURL:(id)arg2;
 - (void)_tellDelegateShouldSpeakChanged:(bool)arg1;
+- (void)_tellDelegateStartPlaybackDidFail:(long long)arg1;
+- (void)_tellDelegateWillProcessStartPlayback:(long long)arg1;
 - (void)_tellDelegateWillStartAcousticIDRequest;
 - (void)_tellSpeechDelegateDidRecognizePhrases:(id)arg1 utterances:(id)arg2;
 - (void)_tellSpeechDelegateRecognitionDidFail:(id)arg1;
@@ -140,8 +143,9 @@
 - (void)endUpdateOutputAudioPower;
 - (void)failRequestWithError:(id)arg1;
 - (void)forceAudioSessionActive;
-- (void)forceAudioSessionActiveWithCompletion:(id /* block */)arg1;
+- (void)forceAudioSessionActiveWithOptions:(unsigned long long)arg1 completion:(id /* block */)arg2;
 - (void)forceAudioSessionInactive;
+- (void)forceAudioSessionInactiveWithCompletion:(id /* block */)arg1;
 - (void)getCachedObjectsWithIdentifiers:(id)arg1 completion:(id /* block */)arg2;
 - (void)getDeferredObjectsWithIdentifiers:(id)arg1 completion:(id /* block */)arg2;
 - (bool)hasActiveRequest;
@@ -171,13 +175,15 @@
 - (void)setDelegate:(id)arg1;
 - (void)setIsStark:(bool)arg1;
 - (void)setLockState:(bool)arg1 screenLocked:(bool)arg2;
+- (void)setMyriadDecisionResult:(bool)arg1;
 - (void)setOverriddenApplicationContext:(id)arg1 withContext:(id)arg2;
+- (void)setShouldWaitForMyriad:(bool)arg1;
 - (void)setSpeechDelegate:(id)arg1;
 - (void)setVoiceOverIsActive:(bool)arg1;
 - (bool)shouldSpeak;
 - (id)speechDelegate;
 - (void)startAcousticIDRequestWithOptions:(id)arg1;
-- (void)startAudioPlaybackRequest:(id)arg1 completion:(id /* block */)arg2;
+- (void)startAudioPlaybackRequest:(id)arg1 options:(unsigned long long)arg2 completion:(id /* block */)arg3;
 - (void)startContinuationRequestWithUserInfo:(id)arg1;
 - (void)startDirectActionRequestWithString:(id)arg1;
 - (id /* block */)startRecordingAndGetContinueBlockForPendingSpeechRequestWithOptions:(id)arg1;

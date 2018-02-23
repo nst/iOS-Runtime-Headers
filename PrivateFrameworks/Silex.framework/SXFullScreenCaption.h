@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXFullScreenCaption : NSObject <SXTextSourceDataSource> {
+@interface SXFullscreenCaption : NSObject <SXTextSourceDataSource> {
     SXFormattedText * _caption;
     NSString * _text;
     <SXTextSourceDataSource> * _textSourceDataSource;

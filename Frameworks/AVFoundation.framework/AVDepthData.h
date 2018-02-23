@@ -41,5 +41,7 @@
 - (id)initWithPixelBuffer:(struct __CVBuffer { }*)arg1 auxiliaryMetadata:(struct CGImageMetadata { }*)arg2;
 - (id)initWithPixelBuffer:(struct __CVBuffer { }*)arg1 depthMetadataDictionary:(id)arg2;
 - (bool)isDepthDataFiltered;
+- (float)portraitScore;
+- (bool)portraitScoreIsHigh;
 
 @end

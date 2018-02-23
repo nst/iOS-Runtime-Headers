@@ -15,6 +15,7 @@
 @property (nonatomic, readonly) unsigned int service;
 
 + (id)diagnosticDescriptionForService:(unsigned int)arg1 withIndent:(id)arg2;
++ (id)diagnosticInfoForService:(unsigned int)arg1;
 + (id)gPTPPortWithService:(unsigned int)arg1;
 
 - (bool)_commonInitWithService:(unsigned int)arg1;

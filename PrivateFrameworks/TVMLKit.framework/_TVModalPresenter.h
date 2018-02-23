@@ -3,6 +3,7 @@
  */
 
 @interface _TVModalPresenter : NSObject <UIGestureRecognizerDelegate, UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate, UIViewControllerTransitioningDelegate> {
+    bool  _dismissing;
     _UIProgressiveBlurPresentationAnimator * _dismissingAnimator;
     UINavigationController * _modalRootViewController;
     _TVPlaybackFadeAnimator * _playbackAnimator;
@@ -22,6 +23,7 @@
 - (void)_configureModalController:(id)arg1 withFromController:(id)arg2 andConfiguration:(id)arg3;
 - (void)_dismissAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (id)_hidden;
+- (bool)_isDismissing;
 - (void)_willRotateNotification:(id)arg1;
 - (id)animationControllerForDismissedController:(id)arg1;
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;

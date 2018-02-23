@@ -23,14 +23,15 @@
 - (void)_connectionStateDidChange:(unsigned int)arg1 error:(id)arg2;
 - (void)becomeActiveOriginWithCompletionHandler:(id /* block */)arg1;
 - (void)connectWithCompletion:(id /* block */)arg1;
+- (void)connectWithOptions:(unsigned long long)arg1 completion:(id /* block */)arg2;
 - (void)dealloc;
 - (void*)externalDevice;
 - (id)initWithExternalDevice:(void*)arg1;
-- (void)invalidate;
 - (id /* block */)invalidationHandler;
 - (bool)isConnected;
 - (bool)isInvalidated;
 - (id /* block */)receivedCustomDataHandler;
+- (void)reset;
 - (void)resignActiveOriginWithCompletionHandler:(id /* block */)arg1;
 - (void)sendCustomData:(id)arg1;
 - (void)sendMediaRemoteCommand:(unsigned int)arg1 withOptions:(id)arg2 completionHandler:(id /* block */)arg3;

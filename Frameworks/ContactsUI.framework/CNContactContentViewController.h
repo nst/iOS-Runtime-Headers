@@ -99,6 +99,12 @@
     bool  _outOfProcessSetupComplete;
     CNContainer * _parentContainer;
     CNGroup * _parentGroup;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _peripheryInsets;
     UIViewController * _personHeaderViewController;
     CNPolicy * _policy;
     <CNContactViewControllerPPTDelegate> * _pptDelegate;
@@ -217,6 +223,7 @@
 @property (nonatomic) bool outOfProcessSetupComplete;
 @property (nonatomic, retain) CNContainer *parentContainer;
 @property (nonatomic, retain) CNGroup *parentGroup;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } peripheryInsets;
 @property (nonatomic, retain) UIView *personHeaderView;
 @property (nonatomic, retain) UIViewController *personHeaderViewController;
 @property (nonatomic, retain) CNPolicy *policy;
@@ -487,6 +494,7 @@
 - (bool)outOfProcessSetupComplete;
 - (id)parentContainer;
 - (id)parentGroup;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })peripheryInsets;
 - (id)personHeaderView;
 - (id)personHeaderViewController;
 - (id)policy;
@@ -699,6 +707,7 @@
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
+- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(bool)arg2;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 

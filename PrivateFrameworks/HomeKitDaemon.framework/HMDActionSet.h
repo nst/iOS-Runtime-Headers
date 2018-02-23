@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDActionSet : HMFObject <HMDBackingStoreObjectProtocol, HMFDumpState, HMFMessageReceiver, NSSecureCoding> {
+@interface HMDActionSet : HMFObject <HMDBackingStoreObjectProtocol, HMDHomeMessageReceiver, HMFDumpState, NSSecureCoding> {
     HMDApplicationData * _appData;
     NSMutableArray * _currentActions;
     bool  _executionInProgress;
@@ -25,6 +25,7 @@
 @property (nonatomic) HMDHome *home;
 @property (nonatomic, retain) NSDate *lastExecutionDate;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (readonly, copy) NSSet *messageReceiverChildren;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, retain) NSString *name;
@@ -34,6 +35,7 @@
 @property (nonatomic, readonly) NSUUID *uuid;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
++ (bool)hasMessageReceiverChildren;
 + (bool)isBuiltinActionSetType:(id)arg1;
 + (bool)supportsSecureCoding;
 
@@ -41,7 +43,7 @@
 - (void)_execute:(id)arg1 captureCurrentState:(bool)arg2 writeRequestTuples:(id)arg3;
 - (void)_executeWriteAction:(id)arg1 captureCurrentState:(bool)arg2 writeRequestTuples:(id)arg3;
 - (bool)_fixupActions;
-- (id)_generateOverallError:(id)arg1;
+- (id)_generateOverallError:(id)arg1 forSource:(unsigned long long)arg2;
 - (void)_handleAddActionRequest:(id)arg1;
 - (void)_handleAddActionTransaction:(id)arg1 message:(id)arg2;
 - (void)_handleRemoveAction:(id)arg1 message:(id)arg2;
@@ -68,6 +70,7 @@
 - (id)backingStoreObjects:(long long)arg1;
 - (bool)configure:(id)arg1 messageDispatcher:(id)arg2 queue:(id)arg3;
 - (bool)containsSecureCharacteristic;
+- (bool)containsUnsecuringAction;
 - (id)currentActions;
 - (void)dealloc;
 - (id)description;

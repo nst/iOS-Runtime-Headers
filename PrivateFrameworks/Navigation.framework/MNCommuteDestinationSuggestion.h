@@ -3,6 +3,7 @@
  */
 
 @interface MNCommuteDestinationSuggestion : NSObject <NSCopying, NSSecureCoding> {
+    bool  _allDay;
     NSDate * _endDate;
     NSDate * _expires;
     NSString * _name;
@@ -14,6 +15,7 @@
     double  _weight;
 }
 
+@property (getter=isAllDay, nonatomic) bool allDay;
 @property (nonatomic, copy) NSDate *endDate;
 @property (nonatomic, copy) NSDate *expires;
 @property (nonatomic, copy) NSString *name;
@@ -38,8 +40,10 @@
 - (id)endDate;
 - (id)expires;
 - (id)initWithCoder:(id)arg1;
+- (bool)isAllDay;
 - (id)name;
 - (id)rawSuggestion;
+- (void)setAllDay:(bool)arg1;
 - (void)setEndDate:(id)arg1;
 - (void)setExpires:(id)arg1;
 - (void)setName:(id)arg1;

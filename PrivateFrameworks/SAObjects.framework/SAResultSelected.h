@@ -13,6 +13,8 @@
 @property (nonatomic, copy) NSString *resultId;
 @property (readonly) Class superclass;
 
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
+
 + (id)resultSelected;
 + (id)resultSelectedWithDictionary:(id)arg1 context:(id)arg2;
 
@@ -23,5 +25,10 @@
 - (id)resultId;
 - (void)setProcessedAudioDuration:(id)arg1;
 - (void)setResultId:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
+
+- (bool)siriCore_canBeRemapped;
+- (bool)siriCore_isRetryable;
 
 @end

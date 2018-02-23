@@ -3,6 +3,7 @@
  */
 
 @interface SBUIPasscodeLockNumberPad : UIView <CAAnimationDelegate, SBNumberPadDelegate> {
+    double  _ancillaryButtonOffset;
     SBUIButton * _backspaceButton;
     SBUIButton * _cancelButton;
     UIColor * _customBackgroundColor;
@@ -17,6 +18,7 @@
     bool  _visible;
 }
 
+@property (nonatomic) double ancillaryButtonOffset;
 @property (nonatomic, readonly) SBUIButton *backspaceButton;
 @property (nonatomic, readonly) NSArray *buttons;
 @property (nonatomic, readonly) SBUIButton *cancelButton;
@@ -46,6 +48,7 @@
 - (void)_numberPadTouchDown:(id)arg1 forEvent:(id)arg2;
 - (void)_numberPadTouchDrag:(id)arg1 forEvent:(id)arg2;
 - (void)_numberPadTouchUp:(id)arg1 forEvent:(id)arg2;
+- (double)ancillaryButtonOffset;
 - (id)backspaceButton;
 - (id)buttons;
 - (id)cancelButton;
@@ -53,6 +56,7 @@
 - (id)downButton;
 - (id)emergencyCallButton;
 - (id)initWithDefaultSizeAndLightStyle:(bool)arg1;
+- (void)setAncillaryButtonOffset:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDownButton:(id)arg1;
 - (void)setShowsBackspaceButton:(bool)arg1;

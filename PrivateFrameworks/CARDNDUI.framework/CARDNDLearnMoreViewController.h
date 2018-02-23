@@ -3,14 +3,19 @@
  */
 
 @interface CARDNDLearnMoreViewController : UIViewController {
+    NSLayoutConstraint * _bottomMarginConstraint;
     UITextView * _textView;
 }
 
+@property (nonatomic, retain) NSLayoutConstraint *bottomMarginConstraint;
 @property (nonatomic, retain) UITextView *textView;
 
 - (void).cxx_destruct;
+- (id)bottomMarginConstraint;
+- (void)setBottomMarginConstraint:(id)arg1;
 - (void)setTextView:(id)arg1;
 - (id)textView;
 - (void)viewDidLoad;
+- (void)viewSafeAreaInsetsDidChange;
 
 @end

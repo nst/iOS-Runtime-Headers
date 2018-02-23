@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Home.framework/Home
  */
 
-@interface HFHomeKitTransformItem : HFTransformItem <HFHomeKitItemProtocol>
+@interface HFHomeKitTransformItem : HFTransformItem <HFAccessoryVendor, HFHomeKitItemProtocol>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -11,6 +11,7 @@
 @property (nonatomic, readonly) HFItem<HFHomeKitItemProtocol> *sourceHomeKitItem;
 @property (readonly) Class superclass;
 
+- (id)accessories;
 - (id)homeKitObject;
 - (id)sourceHomeKitItem;
 

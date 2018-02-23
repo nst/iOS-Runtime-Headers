@@ -80,7 +80,7 @@
     PHCollection * _pushedAlbum;
     UIViewController * _pushedController;
     PHCollection * _retitlingCollection;
-    PUSearchButtonItem * _searchButtonItem;
+    UIBarButtonItem * _searchButtonItem;
     PUAlbumListSectionHeaderView * _sectionHeaderView;
     PUSessionInfo * _sessionInfo;
     bool  _showAddNewAlbumPlaceholder;
@@ -326,7 +326,7 @@
 - (id)collectionView:(id)arg1 transitionLayoutForOldLayout:(id)arg2 newLayout:(id)arg3;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (void)configureDataSourceManagerConfiguration:(id)arg1;
-- (void)configureSupplementaryView:(id)arg1 ofKind:(id)arg2 forIndexPath:(id)arg3 animated:(bool)arg4;
+- (void)configureSupplementaryView:(id)arg1 ofKind:(id)arg2 forIndexPath:(id)arg3;
 - (void)controller:(id)arg1 didCancelTrimmingVideoSources:(id)arg2;
 - (void)controller:(id)arg1 didFinishTrimmingVideoSources:(id)arg2;
 - (id)dataSource;

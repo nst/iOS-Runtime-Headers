@@ -46,6 +46,7 @@
 @property (nonatomic, readonly) long long variationType;
 
 - (void).cxx_destruct;
+- (void)_incrementProgressWithStartDate:(id)arg1;
 - (void)_timeout;
 - (id)adjustedEditModel;
 - (id)analysisResult;

@@ -21,6 +21,7 @@
 + (id)fetchBudgetKeyNamesFrom:(id)arg1;
 + (id)fetchBudgetRecordFrom:(id)arg1 key:(id)arg2;
 + (void)initialize;
++ (void)resetLastUpdateDateForName:(id)arg1;
 + (void)updateAllBudgetsIn:(id)arg1;
 + (void)updateAllBudgetsUnsafeIn:(id)arg1;
 

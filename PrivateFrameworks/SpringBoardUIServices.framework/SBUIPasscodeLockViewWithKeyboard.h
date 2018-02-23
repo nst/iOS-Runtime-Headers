@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@interface SBUIPasscodeLockViewWithKeyboard : SBUIPasscodeLockViewBase <SBPasscodeKeyboardAnimatorDelegate, SBUIPasscodeEntryFieldDelegate> {
+@interface SBUIPasscodeLockViewWithKeyboard : SBUIPasscodeLockViewBase <SBUIPasscodeEntryFieldDelegate> {
     SBUIAlphanumericPasscodeEntryField * _alphaEntryField;
-    SBUIRingViewLabelButton * _emergencyCallButton;
+    UIControl * _emergencyCallButton;
     bool  _isResigningResponderStatus;
     SBPasscodeKeyboardAnimator * _keyboardAnimator;
     double  _keyboardHeightOffset;
@@ -64,7 +64,6 @@
 - (void)passcodeEntryFieldDidCancelEntry:(id)arg1;
 - (bool)passcodeEntryFieldShouldShowSystemKeyboard:(id)arg1;
 - (void)passcodeEntryFieldTextDidChange:(id)arg1;
-- (void)passcodeKeyboardAnimatorAnimationDidComplete:(id)arg1;
 - (bool)resignFirstResponder;
 - (void)setShowsEmergencyCallButton:(bool)arg1;
 - (void)setShowsStatusField:(bool)arg1;

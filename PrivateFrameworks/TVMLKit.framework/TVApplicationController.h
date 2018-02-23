@@ -11,6 +11,7 @@
     bool  _doLaunchOpenURLHandling;
     _TVInspectorHighlightView * _inspectorView;
     long long  _interfaceOrientation;
+    <UITraitEnvironment> * _keyTraitEnvironment;
     NSDictionary * _launchOpenURLOptions;
     _TVRootMenuBarController * _menuBarController;
     _TVAppNavigationController * _navigationController;
@@ -24,7 +25,6 @@
     NSXPCListener * _serviceListener;
     bool  _suspended;
     IKAppTabBar * _tabBar;
-    UIView * _viewServiceKeyView;
     UIWindow * _window;
 }
 
@@ -34,6 +34,7 @@
 @property (nonatomic, readonly) <TVApplicationControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic) <UITraitEnvironment> *keyTraitEnvironment;
 @property (nonatomic, readonly) UINavigationController *navigationController;
 @property (nonatomic, readonly) UIViewController *rootViewController;
 @property (readonly) Class superclass;
@@ -79,6 +80,7 @@
 - (id)initWithContext:(id)arg1 window:(id)arg2 delegate:(id)arg3;
 - (bool)isTimeZoneSet;
 - (bool)jsOpenURL:(id)arg1 options:(id)arg2;
+- (id)keyTraitEnvironment;
 - (id)modalControllerForContext:(id)arg1;
 - (id)navigationController;
 - (id)navigationControllerForContext:(id)arg1;
@@ -88,6 +90,7 @@
 - (void)reload;
 - (id)rootViewController;
 - (struct CGSize { double x1; double x2; })screenSize;
+- (void)setKeyTraitEnvironment:(id)arg1;
 - (void)setViewServiceKeyView:(id)arg1;
 - (void)stop;
 - (id)storeFrontCountryCode;

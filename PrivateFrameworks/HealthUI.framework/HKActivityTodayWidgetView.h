@@ -31,7 +31,7 @@
 - (void)_constrainLabels;
 - (void)_renderRingImage;
 - (void)_textSizeDidUpdate:(id)arg1;
-- (void)_updateForCurrentSizeCategory;
+- (void)_updateForCurrentSizeCategoryAndSystemLanguage;
 - (void)_updateMoveValueLabelWithSummary:(id)arg1;
 - (void)_updateStandTitleLabelWithSummary:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -44,6 +44,7 @@
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSArray *interestingRegistrationProperties;
 @property (nonatomic) bool isProxiedOutgoingMessage;
+@property (nonatomic) bool liveMessageDelivery;
 @property (nonatomic) bool localDelivery;
 @property (nonatomic, retain) NSString *localDestinationDeviceUUID;
 @property (nonatomic, retain) NSString *mainAccountUUID;
@@ -61,6 +62,7 @@
 @property (nonatomic, retain) NSArray *requireAllRegistrationProperties;
 @property (nonatomic) bool requireBluetooth;
 @property (nonatomic, retain) NSArray *requireLackOfRegistrationProperties;
+@property (nonatomic) bool requireLocalWiFi;
 @property (nonatomic, retain) NSDictionary *resourceMetadata;
 @property (nonatomic, retain) NSString *resourcePath;
 @property (nonatomic, retain) NSString *sessionID;
@@ -116,6 +118,7 @@
 - (id)initWithDictionary:(id)arg1;
 - (id)interestingRegistrationProperties;
 - (bool)isProxiedOutgoingMessage;
+- (bool)liveMessageDelivery;
 - (bool)localDelivery;
 - (id)localDestinationDeviceUUID;
 - (id)mainAccountUUID;
@@ -134,6 +137,7 @@
 - (id)requireAllRegistrationProperties;
 - (bool)requireBluetooth;
 - (id)requireLackOfRegistrationProperties;
+- (bool)requireLocalWiFi;
 - (id)resourceMetadata;
 - (id)resourcePath;
 - (id)sessionID;
@@ -172,6 +176,7 @@
 - (void)setIdentifier:(id)arg1;
 - (void)setInterestingRegistrationProperties:(id)arg1;
 - (void)setIsProxiedOutgoingMessage:(bool)arg1;
+- (void)setLiveMessageDelivery:(bool)arg1;
 - (void)setLocalDelivery:(bool)arg1;
 - (void)setLocalDestinationDeviceUUID:(id)arg1;
 - (void)setMainAccountUUID:(id)arg1;
@@ -190,6 +195,7 @@
 - (void)setRequireAllRegistrationProperties:(id)arg1;
 - (void)setRequireBluetooth:(bool)arg1;
 - (void)setRequireLackOfRegistrationProperties:(id)arg1;
+- (void)setRequireLocalWiFi:(bool)arg1;
 - (void)setResourceMetadata:(id)arg1;
 - (void)setResourcePath:(id)arg1;
 - (void)setSessionID:(id)arg1;

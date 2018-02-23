@@ -31,6 +31,7 @@
 - (void)popApplyFeedTitleViewUpdateWithAnimation:(unsigned long long)arg1 force:(bool)arg2;
 - (void)pushApplyFeedTitleViewUpdate:(id)arg1 animation:(unsigned long long)arg2;
 - (void)pushApplyFeedTitleViewUpdate:(id)arg1 animation:(unsigned long long)arg2 force:(bool)arg3;
+- (void)relayoutWithAnimation:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLastQueuedTitleViewUpdate:(id)arg1;
 - (void)setStyler:(id)arg1;

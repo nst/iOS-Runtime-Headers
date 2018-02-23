@@ -23,6 +23,7 @@
     NSDictionary * _iconCache;
     NSObject<OS_dispatch_queue> * _iconCacheQueue;
     bool  _initiallyLoadingThirdPartySpecifiers;
+    NSObject<OS_dispatch_queue> * _loadAllSpecifiersQueue;
     PSSpecifier * _messagesSpecifier;
     NSDictionary * _movedThirdPartySpecifiers;
     PSSpecifier * _notificationsSpecifier;
@@ -43,6 +44,7 @@
     PSKeyboardNavigationSearchController * _spotlightSearchController;
     NSArray * _thirdPartySpecifiers;
     VSAccountStore * _videoSubscriberAccountStore;
+    PSSpecifier * _videoSubscriberGroupSpecifier;
     PSSpecifier * _videoSubscriberSpecifier;
     PSSpecifier * _wallpaperSpecifier;
     NSString * _wifiString;
@@ -123,11 +125,11 @@
 - (id)dndGlobalState:(id)arg1;
 - (id)generalViewController;
 - (id)getAirplaneMode:(id)arg1;
+- (id)getAllSpecifiers;
 - (id)getTetheringStatus:(id)arg1;
 - (bool)handlePendingURL;
 - (void)iMessageSupportMayHaveChanged;
 - (id)identifierForSelectedIndex;
-- (void)indexIfNeeded;
 - (id)init;
 - (void)insertMovedThirdPartySpecifiersAnimated:(bool)arg1;
 - (void)insertOrderedSpecifier:(id)arg1 animated:(bool)arg2;

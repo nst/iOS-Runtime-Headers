@@ -81,6 +81,8 @@
 - (void)dealloc;
 - (id)deviceName;
 - (id)deviceUID;
+- (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(bool)arg2;
+- (id)driverClassName;
 - (id /* block */)endIOOperationBlock;
 - (id /* block */*)endIOOperationBlockUnretainedPtr;
 - (bool)getProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned int)arg2 qualifierData:(const void*)arg3 dataSize:(unsigned int*)arg4 andData:(void*)arg5 forClient:(int)arg6;

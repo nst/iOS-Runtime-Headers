@@ -82,7 +82,6 @@
 - (void)setWriteQueue:(id)arg1;
 - (bool)supportsOperation:(id)arg1;
 - (bool)supportsWritingCharacteristic:(id)arg1;
-- (void)transitoryDataReceived:(id)arg1 withError:(id)arg2;
 - (id)writableCharacteristics;
 - (void)writeCharacteristic:(id)arg1 expectResponse:(bool)arg2 completion:(id /* block */)arg3;
 - (id)writeQueue;

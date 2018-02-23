@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
  */
 
-@interface HUQuickControlPresentationCoordinator : NSObject <HUPresentationDelegate, HUQuickControlViewControllerDelegate, UIGestureRecognizerDelegate, UITraitEnvironment> {
+@interface HUQuickControlPresentationCoordinator : NSObject <HUPresentationDelegate, HUQuickControlContainerViewControllerDelegate, UIGestureRecognizerDelegate, UITraitEnvironment> {
     <HUQuickControlPresentationCoordinatorDelegate> * _delegate;
     NSMutableSet * _mutuallyExclusiveGestureRecognizers;
     HUQuickControlPresentationContext * _presentationContext;
     <NACancelable> * _pressGestureActiveTimerCancellationToken;
     HUForceInterpolatedPressGestureRecognizer * _pressGestureRecognizer;
     NSMapTable * _pressedItemContexts;
-    HUQuickControlViewController * _quickControlViewController;
+    HUQuickControlContainerViewController * _quickControlViewController;
     UIView * _targetView;
 }
 
@@ -25,14 +25,14 @@
 @property (nonatomic, retain) HUForceInterpolatedPressGestureRecognizer *pressGestureRecognizer;
 @property (nonatomic, readonly) NSMapTable *pressedItemContexts;
 @property (getter=isQuickControlPresented, nonatomic, readonly) bool quickControlIsPresented;
-@property (nonatomic, retain) HUQuickControlViewController *quickControlViewController;
+@property (nonatomic, retain) HUQuickControlContainerViewController *quickControlViewController;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIView *targetView;
 @property (nonatomic, readonly) UITraitCollection *traitCollection;
 
 - (void).cxx_destruct;
 - (void)_actuateTapticFeedbackIfAvailable;
-- (void)_beginControlPresentation;
+- (id)_beginControlPresentationAnimated:(bool)arg1;
 - (void)_cleanupForQuickControlDismissal;
 - (void)_configureInitialStateForPressedItemContext:(id)arg1 userInitiated:(bool)arg2;
 - (id)_createPressedContextForItem:(id)arg1 userInitiated:(bool)arg2;
@@ -66,7 +66,7 @@
 - (bool)isQuickControlPresented;
 - (id)mutuallyExclusiveGestureRecognizers;
 - (void)playBounceForItem:(id)arg1;
-- (void)presentQuickControlAnimatedWithContext:(id)arg1;
+- (id)presentQuickControlWithContext:(id)arg1 animated:(bool)arg2;
 - (id)presentationContext;
 - (id)presentingViewController;
 - (id)pressGestureActiveTimerCancellationToken;

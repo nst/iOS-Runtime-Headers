@@ -16,7 +16,7 @@
     long long  _paymentNetwork;
     PKPeerPaymentQuoteCertificatesResponse * _quoteCertificatesResponse;
     NSString * _recipientIdentifier;
-    NSString * _requestToken;
+    PKPeerPaymentRequestToken * _requestToken;
     NSString * _routingNumber;
     NSString * _senderAddress;
 }
@@ -34,7 +34,7 @@
 @property (nonatomic) long long paymentNetwork;
 @property (nonatomic, retain) PKPeerPaymentQuoteCertificatesResponse *quoteCertificatesResponse;
 @property (nonatomic, copy) NSString *recipientIdentifier;
-@property (nonatomic, copy) NSString *requestToken;
+@property (nonatomic, retain) PKPeerPaymentRequestToken *requestToken;
 @property (nonatomic, copy) NSString *routingNumber;
 @property (nonatomic, copy) NSString *senderAddress;
 

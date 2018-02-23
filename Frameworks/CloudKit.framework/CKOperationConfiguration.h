@@ -14,6 +14,7 @@
     bool  _hasLongLived;
     bool  _hasPreferAnonymousRequests;
     bool  _hasQualityOfService;
+    bool  _hasShouldSkipZonePCSUpdate;
     bool  _hasSourceApplicationBundleIdentifier;
     bool  _hasSourceApplicationSecondaryIdentifier;
     bool  _hasTimeoutIntervalForRequest;
@@ -21,6 +22,7 @@
     bool  _longLived;
     bool  _preferAnonymousRequests;
     long long  _qualityOfService;
+    bool  _shouldSkipZonePCSUpdate;
     NSString * _sourceApplicationBundleIdentifier;
     NSString * _sourceApplicationSecondaryIdentifier;
     double  _timeoutIntervalForRequest;
@@ -38,6 +40,7 @@
 @property (nonatomic) bool hasLongLived;
 @property (nonatomic) bool hasPreferAnonymousRequests;
 @property (nonatomic) bool hasQualityOfService;
+@property (nonatomic) bool hasShouldSkipZonePCSUpdate;
 @property (nonatomic) bool hasSourceApplicationBundleIdentifier;
 @property (nonatomic) bool hasSourceApplicationSecondaryIdentifier;
 @property (nonatomic) bool hasTimeoutIntervalForRequest;
@@ -45,6 +48,7 @@
 @property (getter=isLongLived, nonatomic) bool longLived;
 @property (nonatomic) bool preferAnonymousRequests;
 @property (nonatomic) long long qualityOfService;
+@property (nonatomic) bool shouldSkipZonePCSUpdate;
 @property (nonatomic, retain) NSString *sourceApplicationBundleIdentifier;
 @property (nonatomic, retain) NSString *sourceApplicationSecondaryIdentifier;
 @property (nonatomic) double timeoutIntervalForRequest;
@@ -66,6 +70,7 @@
 - (bool)hasLongLived;
 - (bool)hasPreferAnonymousRequests;
 - (bool)hasQualityOfService;
+- (bool)hasShouldSkipZonePCSUpdate;
 - (bool)hasSourceApplicationBundleIdentifier;
 - (bool)hasSourceApplicationSecondaryIdentifier;
 - (bool)hasTimeoutIntervalForRequest;
@@ -87,6 +92,7 @@
 - (void)setHasLongLived:(bool)arg1;
 - (void)setHasPreferAnonymousRequests:(bool)arg1;
 - (void)setHasQualityOfService:(bool)arg1;
+- (void)setHasShouldSkipZonePCSUpdate:(bool)arg1;
 - (void)setHasSourceApplicationBundleIdentifier:(bool)arg1;
 - (void)setHasSourceApplicationSecondaryIdentifier:(bool)arg1;
 - (void)setHasTimeoutIntervalForRequest:(bool)arg1;
@@ -94,10 +100,12 @@
 - (void)setLongLived:(bool)arg1;
 - (void)setPreferAnonymousRequests:(bool)arg1;
 - (void)setQualityOfService:(long long)arg1;
+- (void)setShouldSkipZonePCSUpdate:(bool)arg1;
 - (void)setSourceApplicationBundleIdentifier:(id)arg1;
 - (void)setSourceApplicationSecondaryIdentifier:(id)arg1;
 - (void)setTimeoutIntervalForRequest:(double)arg1;
 - (void)setTimeoutIntervalForResource:(double)arg1;
+- (bool)shouldSkipZonePCSUpdate;
 - (id)sourceApplicationBundleIdentifier;
 - (id)sourceApplicationSecondaryIdentifier;
 - (double)timeoutIntervalForRequest;

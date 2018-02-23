@@ -8,11 +8,13 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) int transitionBehavior;
 @property (nonatomic, readonly) bool userControllable;
 
 + (void)initializeObject;
 + (id)typeString;
 
 - (Class)handlerClass;
+- (int)transitionBehavior;
 
 @end

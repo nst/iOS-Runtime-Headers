@@ -19,5 +19,6 @@
 - (bool)isPearlDetectEnabled;
 - (void)refreshMatchMode;
 - (void)removeObserver:(id <SBUIBiometricResourceObserver>)arg1;
+- (void)restartMatchingIfNeededForAssertion:(id <BSInvalidatable>)arg1;
 
 @end

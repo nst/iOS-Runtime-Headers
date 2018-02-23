@@ -41,6 +41,7 @@
 - (bool)bookmarkable;
 - (void)commonInit;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (unsigned long long)hash;
 - (id)identifier;
 - (id)init;

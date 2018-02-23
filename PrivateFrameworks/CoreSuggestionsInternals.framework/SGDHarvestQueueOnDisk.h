@@ -5,6 +5,7 @@
 @interface SGDHarvestQueueOnDisk : SGDHarvestQueue {
     NSObject<OS_dispatch_queue> * _backingQueue;
     unsigned long long  _count;
+    unsigned long long  _countHighPriority;
     SGSqliteDatabase * _db;
     NSString * _dirPath;
     long long  _idCounter;

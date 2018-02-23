@@ -18,6 +18,7 @@
 - (void)contactlessInterfaceSessionDidSelectPayment:(PKContactlessInterfaceSession *)arg1;
 - (void)contactlessInterfaceSessionDidSelectValueAddedService:(PKContactlessInterfaceSession *)arg1;
 - (void)contactlessInterfaceSessionDidStartTransaction:(PKContactlessInterfaceSession *)arg1;
+- (void)contactlessInterfaceSessionDidTerminate:(PKContactlessInterfaceSession *)arg1;
 - (void)contactlessInterfaceSessionDidTimeout:(PKContactlessInterfaceSession *)arg1 forPaymentApplication:(PKPaymentApplication *)arg2 paymentPass:(PKPaymentPass *)arg3 valueAddedServicePasses:(NSArray *)arg4;
 - (void)contactlessInterfaceSessionHasPendingServerRequest:(PKContactlessInterfaceSession *)arg1;
 

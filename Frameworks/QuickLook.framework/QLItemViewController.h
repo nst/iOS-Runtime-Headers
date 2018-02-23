@@ -13,6 +13,7 @@
     UIDragInteraction * _dragInteraction;
     bool  _isLoaded;
     bool  _isLoading;
+    long long  _lastScrollViewUpdateInterfaceOrientation;
     bool  _loadingFailed;
     <QLItemViewControllerPresentingDelegate> * _presentingDelegate;
 }
@@ -51,12 +52,14 @@
 - (id)appearance;
 - (bool)automaticallyUpdateScrollViewContentInset;
 - (bool)automaticallyUpdateScrollViewContentOffset;
+- (bool)automaticallyUpdateScrollViewIndicatorInset;
 - (void)buttonPressedWithIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
 - (bool)canEnterFullScreen;
 - (bool)canPerformFirstTimeAppearanceActions:(unsigned long long)arg1;
 - (bool)canPinchToDismiss;
 - (bool)canShowToolBar;
 - (bool)canSwipeToDismiss;
+- (bool)canToggleFullScreen;
 - (id)contents;
 - (id)context;
 - (id)delegate;
@@ -65,6 +68,7 @@
 - (id)dragInteraction:(id)arg1 itemsForBeginningSession:(id)arg2;
 - (id)draggableView;
 - (id)excludedToolbarButtonIdentifiersForTraitCollection:(id)arg1;
+- (id)fullscreenBackgroundColor;
 - (id)init;
 - (bool)isLoaded;
 - (bool)isLoading;

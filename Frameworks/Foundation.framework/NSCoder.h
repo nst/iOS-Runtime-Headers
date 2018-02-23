@@ -4,6 +4,10 @@
 
 @interface NSCoder : NSObject <MTCoder>
 
+@property (readonly) unsigned long long hmd_homeManagerOptions;
+@property (readonly) HMFMessage *hmd_message;
+@property (getter=isXPCTransport, readonly) bool xpcTransport;
+
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 + (bool)__categorizeException:(id)arg1 intoError:(id*)arg2;
@@ -205,6 +209,8 @@
 - (id)decodeSetOfConditionalObjects:(Class)arg1 forKey:(id)arg2;
 - (void)encodeArrayOfConditionalObjects:(id)arg1 forKey:(id)arg2;
 - (void)encodeSetOfConditionalObjects:(id)arg1 forKey:(id)arg2;
+- (unsigned long long)hmd_homeManagerOptions;
+- (id)hmd_message;
 - (bool)isAuthorizedForLocationAccess;
 - (bool)isEntitledForSPIAccess;
 - (bool)isForNonAdminSharedUser;

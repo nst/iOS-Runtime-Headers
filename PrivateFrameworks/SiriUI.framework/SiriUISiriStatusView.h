@@ -13,7 +13,10 @@
     SUICFlamesView * _flamesView;
     bool  _flamesViewDeferred;
     double  _flamesViewWidth;
+    AVAudioSession * _glyphAuxiliaryAudioSession;
+    NSObject<OS_dispatch_group> * _glyphConfigurationGroup;
     AVPlayerLayer * _glyphLayer;
+    AVPlayerItem * _glyphPlayerItem;
     AVPlayerLooper * _glyphPlayerLooper;
     AVQueuePlayer * _glyphQueuePlayer;
     UIView * _glyphView;
@@ -37,13 +40,15 @@
 @property (getter=isInUITrackingMode, nonatomic) bool inUITrackingMode;
 @property (nonatomic) long long mode;
 @property (nonatomic) bool paused;
+@property (nonatomic, readonly) double statusViewHeight;
 @property (readonly) Class superclass;
 
-+ (double)statusViewHeightForWidthSizeClass:(bool)arg1;
-
 - (void).cxx_destruct;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_adjustedInsetRectForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_animateSiriGlyphHidden:(bool)arg1;
 - (void)_attachFlamesViewIfNeeded;
+- (void)_configureGlyph;
+- (void)_createLooperIfNeeded;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_flamesFrame;
 - (id)_flamesView;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_flamesViewFrame;
@@ -56,9 +61,11 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_siriGlyphTappableRect;
 - (id)animationDelegate;
 - (float)audioLevelForFlamesView:(id)arg1;
+- (void)configureGlyphWithCompletion:(id /* block */)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (double)disabledMicOpacity;
+- (void)fadeOutCurrentAura;
 - (id)flamesContainerView;
 - (bool)flamesViewDeferred;
 - (double)flamesViewWidth;
@@ -70,6 +77,8 @@
 - (long long)mode;
 - (bool)paused;
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })safeAreaInsets;
+- (void)safeAreaInsetsDidChange;
 - (void)setAnimationDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisabledMicOpacity:(double)arg1;
@@ -79,5 +88,6 @@
 - (void)setMode:(long long)arg1;
 - (void)setPaused:(bool)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (double)statusViewHeight;
 
 @end

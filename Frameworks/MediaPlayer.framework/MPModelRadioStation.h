@@ -10,6 +10,7 @@
     bool  _hasExplicitContent;
     NSString * _name;
     NSString * _shortEditorNotes;
+    long long  _type;
 }
 
 @property (nonatomic) bool allowsItemLiking;
@@ -19,6 +20,7 @@
 @property (nonatomic) bool hasExplicitContent;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *shortEditorNotes;
+@property (nonatomic) long long type;
 
 + (id)__MPModelPropertyRadioStationAllowsItemLiking__PROPERTY;
 + (id)__MPModelPropertyRadioStationArtwork__PROPERTY;
@@ -27,6 +29,7 @@
 + (id)__MPModelPropertyRadioStationHasExplicitContent__PROPERTY;
 + (id)__MPModelPropertyRadioStationName__PROPERTY;
 + (id)__MPModelPropertyRadioStationShortEditorNotes__PROPERTY;
++ (id)__MPModelPropertyRadioStationType__PROPERTY;
 + (id)__allowsItemLiking__KEY;
 + (id)__artworkCatalogBlock__KEY;
 + (id)__beats1__KEY;
@@ -34,6 +37,7 @@
 + (id)__hasExplicitContent__KEY;
 + (id)__name__KEY;
 + (id)__shortEditorNotes__KEY;
++ (id)__type__KEY;
 + (id)storeItemMetadataRequestItemIdentifierForIdentifiers:(id)arg1;
 
 - (void).cxx_destruct;
@@ -53,6 +57,8 @@
 - (void)setHasExplicitContent:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setShortEditorNotes:(id)arg1;
+- (void)setType:(long long)arg1;
 - (id)shortEditorNotes;
+- (long long)type;
 
 @end

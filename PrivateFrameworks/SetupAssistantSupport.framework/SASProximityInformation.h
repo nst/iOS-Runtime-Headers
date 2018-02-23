@@ -6,6 +6,7 @@
     NSNumber * _appAnalyticsOptIn;
     NSString * _appleID;
     bool  _automaticTimeZoneEnabled;
+    NSData * _backupMetadata;
     NSString * _backupUUID;
     NSNumber * _deviceAnalyticsOptIn;
     NSString * _deviceClass;
@@ -30,6 +31,7 @@
 @property (retain) NSNumber *appAnalyticsOptIn;
 @property (copy) NSString *appleID;
 @property bool automaticTimeZoneEnabled;
+@property (retain) NSData *backupMetadata;
 @property (copy) NSString *backupUUID;
 @property (retain) NSNumber *deviceAnalyticsOptIn;
 @property (copy) NSString *deviceClass;
@@ -57,6 +59,7 @@
 - (id)appAnalyticsOptIn;
 - (id)appleID;
 - (bool)automaticTimeZoneEnabled;
+- (id)backupMetadata;
 - (id)backupUUID;
 - (id)deviceAnalyticsOptIn;
 - (id)deviceClass;
@@ -81,6 +84,7 @@
 - (void)setAppAnalyticsOptIn:(id)arg1;
 - (void)setAppleID:(id)arg1;
 - (void)setAutomaticTimeZoneEnabled:(bool)arg1;
+- (void)setBackupMetadata:(id)arg1;
 - (void)setBackupUUID:(id)arg1;
 - (void)setDeviceAnalyticsOptIn:(id)arg1;
 - (void)setDeviceClass:(id)arg1;

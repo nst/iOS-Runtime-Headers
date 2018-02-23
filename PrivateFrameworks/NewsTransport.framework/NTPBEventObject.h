@@ -3,14 +3,18 @@
  */
 
 @interface NTPBEventObject : PBCodable <NSCopying> {
+    NTPBAdCtaEngagement * _adCtaEngagement;
+    NTPBAdEngagement * _adEngagement;
     NTPBAdExposureIneligible * _adExposureIneligible;
     NTPBAdExposureOpportunity * _adExposureOpportunity;
+    NTPBAdImpression * _adImpression;
     NTPBAlreadySubscriberSignIn * _alreadySubscriberSignIn;
     NTPBAnfComponentExposure * _anfComponentExposure;
     NTPBAppSessionEnd * _appSessionEnd;
     NTPBAppSessionEndWatch * _appSessionEndWatch;
     NTPBAppSessionStart * _appSessionStart;
     NTPBAppSessionStartWatch * _appSessionStartWatch;
+    NTPBArticleEngagement * _articleEngagement;
     NTPBArticleHostViewExposure * _articleHostViewExposure;
     NTPBArticleLikeDislike * _articleLikeDislike;
     NTPBArticleScroll * _articleScroll;
@@ -33,6 +37,8 @@
     NTPBFeedSubscribeUnsubscribe * _feedSubscribeUnsubscribe;
     NTPBFeedViewExposure * _feedViewExposure;
     NTPBGroupViewExposure * _groupViewExposure;
+    NTPBInAppWebEmbedExposure * _inAppWebEmbedExposure;
+    NTPBLinkTap * _linkTap;
     NTPBLinkTapArticle * _linkTapArticle;
     NTPBLocalNotificationReceived * _localNotificationReceived;
     NTPBLocalNotificationReturn * _localNotificationReturn;
@@ -67,6 +73,7 @@
     NTPBTodayWidgetExposure * _todayWidgetExposure;
     NTPBTodayWidgetHeadlineExposure * _todayWidgetHeadlineExposure;
     NTPBTodayWidgetSession * _todayWidgetSession;
+    NTPBTopOfFeedModuleExposure * _topOfFeedModuleExposure;
     NTPBUrlMappingMiss * _urlMappingMiss;
     NTPBUserIgnoreFavoritesSuggestion * _userIgnoreFavoritesSuggestion;
     NTPBUserOnboardingBegin * _userOnboardingBegin;
@@ -78,14 +85,18 @@
     NTPBWidgetEngagement * _widgetEngagement;
 }
 
+@property (nonatomic, retain) NTPBAdCtaEngagement *adCtaEngagement;
+@property (nonatomic, retain) NTPBAdEngagement *adEngagement;
 @property (nonatomic, retain) NTPBAdExposureIneligible *adExposureIneligible;
 @property (nonatomic, retain) NTPBAdExposureOpportunity *adExposureOpportunity;
+@property (nonatomic, retain) NTPBAdImpression *adImpression;
 @property (nonatomic, retain) NTPBAlreadySubscriberSignIn *alreadySubscriberSignIn;
 @property (nonatomic, retain) NTPBAnfComponentExposure *anfComponentExposure;
 @property (nonatomic, retain) NTPBAppSessionEnd *appSessionEnd;
 @property (nonatomic, retain) NTPBAppSessionEndWatch *appSessionEndWatch;
 @property (nonatomic, retain) NTPBAppSessionStart *appSessionStart;
 @property (nonatomic, retain) NTPBAppSessionStartWatch *appSessionStartWatch;
+@property (nonatomic, retain) NTPBArticleEngagement *articleEngagement;
 @property (nonatomic, retain) NTPBArticleHostViewExposure *articleHostViewExposure;
 @property (nonatomic, retain) NTPBArticleLikeDislike *articleLikeDislike;
 @property (nonatomic, retain) NTPBArticleScroll *articleScroll;
@@ -108,14 +119,18 @@
 @property (nonatomic, retain) NTPBFeedSubscribeUnsubscribe *feedSubscribeUnsubscribe;
 @property (nonatomic, retain) NTPBFeedViewExposure *feedViewExposure;
 @property (nonatomic, retain) NTPBGroupViewExposure *groupViewExposure;
+@property (nonatomic, readonly) bool hasAdCtaEngagement;
+@property (nonatomic, readonly) bool hasAdEngagement;
 @property (nonatomic, readonly) bool hasAdExposureIneligible;
 @property (nonatomic, readonly) bool hasAdExposureOpportunity;
+@property (nonatomic, readonly) bool hasAdImpression;
 @property (nonatomic, readonly) bool hasAlreadySubscriberSignIn;
 @property (nonatomic, readonly) bool hasAnfComponentExposure;
 @property (nonatomic, readonly) bool hasAppSessionEnd;
 @property (nonatomic, readonly) bool hasAppSessionEndWatch;
 @property (nonatomic, readonly) bool hasAppSessionStart;
 @property (nonatomic, readonly) bool hasAppSessionStartWatch;
+@property (nonatomic, readonly) bool hasArticleEngagement;
 @property (nonatomic, readonly) bool hasArticleHostViewExposure;
 @property (nonatomic, readonly) bool hasArticleLikeDislike;
 @property (nonatomic, readonly) bool hasArticleScroll;
@@ -138,6 +153,8 @@
 @property (nonatomic, readonly) bool hasFeedSubscribeUnsubscribe;
 @property (nonatomic, readonly) bool hasFeedViewExposure;
 @property (nonatomic, readonly) bool hasGroupViewExposure;
+@property (nonatomic, readonly) bool hasInAppWebEmbedExposure;
+@property (nonatomic, readonly) bool hasLinkTap;
 @property (nonatomic, readonly) bool hasLinkTapArticle;
 @property (nonatomic, readonly) bool hasLocalNotificationReceived;
 @property (nonatomic, readonly) bool hasLocalNotificationReturn;
@@ -172,6 +189,7 @@
 @property (nonatomic, readonly) bool hasTodayWidgetExposure;
 @property (nonatomic, readonly) bool hasTodayWidgetHeadlineExposure;
 @property (nonatomic, readonly) bool hasTodayWidgetSession;
+@property (nonatomic, readonly) bool hasTopOfFeedModuleExposure;
 @property (nonatomic, readonly) bool hasUrlMappingMiss;
 @property (nonatomic, readonly) bool hasUserIgnoreFavoritesSuggestion;
 @property (nonatomic, readonly) bool hasUserOnboardingBegin;
@@ -181,6 +199,8 @@
 @property (nonatomic, readonly) bool hasUserOnboardingScreenView;
 @property (nonatomic, readonly) bool hasWebAccessScreenView;
 @property (nonatomic, readonly) bool hasWidgetEngagement;
+@property (nonatomic, retain) NTPBInAppWebEmbedExposure *inAppWebEmbedExposure;
+@property (nonatomic, retain) NTPBLinkTap *linkTap;
 @property (nonatomic, retain) NTPBLinkTapArticle *linkTapArticle;
 @property (nonatomic, retain) NTPBLocalNotificationReceived *localNotificationReceived;
 @property (nonatomic, retain) NTPBLocalNotificationReturn *localNotificationReturn;
@@ -215,6 +235,7 @@
 @property (nonatomic, retain) NTPBTodayWidgetExposure *todayWidgetExposure;
 @property (nonatomic, retain) NTPBTodayWidgetHeadlineExposure *todayWidgetHeadlineExposure;
 @property (nonatomic, retain) NTPBTodayWidgetSession *todayWidgetSession;
+@property (nonatomic, retain) NTPBTopOfFeedModuleExposure *topOfFeedModuleExposure;
 @property (nonatomic, retain) NTPBUrlMappingMiss *urlMappingMiss;
 @property (nonatomic, retain) NTPBUserIgnoreFavoritesSuggestion *userIgnoreFavoritesSuggestion;
 @property (nonatomic, retain) NTPBUserOnboardingBegin *userOnboardingBegin;
@@ -226,14 +247,18 @@
 @property (nonatomic, retain) NTPBWidgetEngagement *widgetEngagement;
 
 - (void).cxx_destruct;
+- (id)adCtaEngagement;
+- (id)adEngagement;
 - (id)adExposureIneligible;
 - (id)adExposureOpportunity;
+- (id)adImpression;
 - (id)alreadySubscriberSignIn;
 - (id)anfComponentExposure;
 - (id)appSessionEnd;
 - (id)appSessionEndWatch;
 - (id)appSessionStart;
 - (id)appSessionStartWatch;
+- (id)articleEngagement;
 - (id)articleHostViewExposure;
 - (id)articleLikeDislike;
 - (id)articleScroll;
@@ -259,14 +284,18 @@
 - (id)feedSubscribeUnsubscribe;
 - (id)feedViewExposure;
 - (id)groupViewExposure;
+- (bool)hasAdCtaEngagement;
+- (bool)hasAdEngagement;
 - (bool)hasAdExposureIneligible;
 - (bool)hasAdExposureOpportunity;
+- (bool)hasAdImpression;
 - (bool)hasAlreadySubscriberSignIn;
 - (bool)hasAnfComponentExposure;
 - (bool)hasAppSessionEnd;
 - (bool)hasAppSessionEndWatch;
 - (bool)hasAppSessionStart;
 - (bool)hasAppSessionStartWatch;
+- (bool)hasArticleEngagement;
 - (bool)hasArticleHostViewExposure;
 - (bool)hasArticleLikeDislike;
 - (bool)hasArticleScroll;
@@ -289,6 +318,8 @@
 - (bool)hasFeedSubscribeUnsubscribe;
 - (bool)hasFeedViewExposure;
 - (bool)hasGroupViewExposure;
+- (bool)hasInAppWebEmbedExposure;
+- (bool)hasLinkTap;
 - (bool)hasLinkTapArticle;
 - (bool)hasLocalNotificationReceived;
 - (bool)hasLocalNotificationReturn;
@@ -323,6 +354,7 @@
 - (bool)hasTodayWidgetExposure;
 - (bool)hasTodayWidgetHeadlineExposure;
 - (bool)hasTodayWidgetSession;
+- (bool)hasTopOfFeedModuleExposure;
 - (bool)hasUrlMappingMiss;
 - (bool)hasUserIgnoreFavoritesSuggestion;
 - (bool)hasUserOnboardingBegin;
@@ -333,7 +365,9 @@
 - (bool)hasWebAccessScreenView;
 - (bool)hasWidgetEngagement;
 - (unsigned long long)hash;
+- (id)inAppWebEmbedExposure;
 - (bool)isEqual:(id)arg1;
+- (id)linkTap;
 - (id)linkTapArticle;
 - (id)localNotificationReceived;
 - (id)localNotificationReturn;
@@ -361,14 +395,18 @@
 - (id)searchExecute;
 - (id)searchResultSelect;
 - (id)searchViewExposure;
+- (void)setAdCtaEngagement:(id)arg1;
+- (void)setAdEngagement:(id)arg1;
 - (void)setAdExposureIneligible:(id)arg1;
 - (void)setAdExposureOpportunity:(id)arg1;
+- (void)setAdImpression:(id)arg1;
 - (void)setAlreadySubscriberSignIn:(id)arg1;
 - (void)setAnfComponentExposure:(id)arg1;
 - (void)setAppSessionEnd:(id)arg1;
 - (void)setAppSessionEndWatch:(id)arg1;
 - (void)setAppSessionStart:(id)arg1;
 - (void)setAppSessionStartWatch:(id)arg1;
+- (void)setArticleEngagement:(id)arg1;
 - (void)setArticleHostViewExposure:(id)arg1;
 - (void)setArticleLikeDislike:(id)arg1;
 - (void)setArticleScroll:(id)arg1;
@@ -391,6 +429,8 @@
 - (void)setFeedSubscribeUnsubscribe:(id)arg1;
 - (void)setFeedViewExposure:(id)arg1;
 - (void)setGroupViewExposure:(id)arg1;
+- (void)setInAppWebEmbedExposure:(id)arg1;
+- (void)setLinkTap:(id)arg1;
 - (void)setLinkTapArticle:(id)arg1;
 - (void)setLocalNotificationReceived:(id)arg1;
 - (void)setLocalNotificationReturn:(id)arg1;
@@ -425,6 +465,7 @@
 - (void)setTodayWidgetExposure:(id)arg1;
 - (void)setTodayWidgetHeadlineExposure:(id)arg1;
 - (void)setTodayWidgetSession:(id)arg1;
+- (void)setTopOfFeedModuleExposure:(id)arg1;
 - (void)setUrlMappingMiss:(id)arg1;
 - (void)setUserIgnoreFavoritesSuggestion:(id)arg1;
 - (void)setUserOnboardingBegin:(id)arg1;
@@ -443,6 +484,7 @@
 - (id)todayWidgetExposure;
 - (id)todayWidgetHeadlineExposure;
 - (id)todayWidgetSession;
+- (id)topOfFeedModuleExposure;
 - (id)urlMappingMiss;
 - (id)userIgnoreFavoritesSuggestion;
 - (id)userOnboardingBegin;

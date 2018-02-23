@@ -5,14 +5,13 @@
 @interface _UIStackedImageContainerLayer : CALayer <CALayerDelegate> {
     bool  _animatingStateChange;
     bool  _animatingToNormalState;
-    double  _animationDelay;
-    double  _animationDelayReference;
     UIView * _animationView;
     _UIStackedImageConfiguration * _configuration;
     unsigned long long  _controlState;
     CALayer * _cursorLayer;
     CALayer * _cursorLayerContainer;
     CATransformLayer * _cursorRotationTransformLayer;
+    bool  _deferredInflationPending;
     id  _flatImage;
     CALayer * _flatLayer;
     struct CGPoint { 

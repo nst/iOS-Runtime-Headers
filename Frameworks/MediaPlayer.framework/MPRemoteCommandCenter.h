@@ -33,6 +33,7 @@
     NSString * _playerID;
     void * _playerPath;
     MPPurchaseCommand * _preOrderAlbumCommand;
+    MPRemoteCommand * _prepareForSetPlaybackQueueCommand;
     MPRemoteCommand * _previousTrackCommand;
     MPRatingCommand * _ratingCommand;
     MPRemoteCommand * _removeFromPlaybackQueueCommand;
@@ -79,6 +80,7 @@
 @property (nonatomic, readonly) MPRemoteCommand *playItemInQueueCommand;
 @property (nonatomic, readonly, copy) NSString *playerID;
 @property (nonatomic, readonly) MPPurchaseCommand *preOrderAlbumCommand;
+@property (nonatomic, readonly) MPRemoteCommand *prepareForSetPlaybackQueueCommand;
 @property (nonatomic, readonly) MPRemoteCommand *previousTrackCommand;
 @property (nonatomic, readonly) MPRatingCommand *ratingCommand;
 @property (nonatomic, readonly) MPRemoteCommand *removeFromPlaybackQueueCommand;
@@ -97,6 +99,7 @@
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
++ (long long)_numberOfCommandCentersWithTargets;
 + (id)commandCenterForPlayerID:(id)arg1;
 + (id)sharedCommandCenter;
 
@@ -105,10 +108,6 @@
 - (void)_commandTargetsDidChangeNotification:(id)arg1;
 - (const struct __CFArray { }*)_copySupportedCommands;
 - (id)_createRemoteCommandWithConcreteClass:(Class)arg1 mediaRemoteType:(unsigned int)arg2;
-- (long long)_handlePlayItemCommand:(id)arg1;
-- (long long)_handleRemoveCommand:(id)arg1;
-- (long long)_handleReorderCommand:(id)arg1;
-- (void)_playbackQueueDelegateDidChangeNotification:(id)arg1;
 - (id)_pushMediaRemoteCommand:(unsigned int)arg1 withOptions:(struct __CFDictionary { }*)arg2;
 - (void)_pushMediaRemoteCommand:(unsigned int)arg1 withOptions:(struct __CFDictionary { }*)arg2 completion:(id /* block */)arg3;
 - (void)_scheduleSupportedCommandsChanged;
@@ -144,6 +143,7 @@
 - (id)playItemInQueueCommand;
 - (id)playerID;
 - (id)preOrderAlbumCommand;
+- (id)prepareForSetPlaybackQueueCommand;
 - (id)previousTrackCommand;
 - (id)ratingCommand;
 - (void)remoteCommandDidMutatePropagatableProperty:(id)arg1;

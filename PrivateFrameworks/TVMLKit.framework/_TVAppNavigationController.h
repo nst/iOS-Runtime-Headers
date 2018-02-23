@@ -13,7 +13,6 @@
     UITapGestureRecognizer * _menuRecognizer;
     <NSObject> * _modalPresenterObserverToken;
     UIViewController * _presentedModalViewController;
-    bool  _workAroundNavigationBarMaterialPopIn;
 }
 
 @property (nonatomic) <_TVAppNavigationControllerDelegate> *appNavigationControllerDelegate;

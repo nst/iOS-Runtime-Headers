@@ -5,7 +5,7 @@
 @interface MPAVRoutingController : NSObject {
     NSMutableArray * _asyncFetchingCompletionHandlers;
     bool  _asyncFetchingRoutes;
-    MPAVRoute * _cachedPickedRoute;
+    NSArray * _cachedPickedRoutes;
     NSArray * _cachedRoutes;
     NSString * _category;
     MPAVRoutingDataSource * _dataSource;
@@ -17,11 +17,11 @@
     bool  _hasExternalScreenType;
     MPAVRoute * _legacyCachedRoute;
     NSString * _name;
-    MPAVRoute * _pendingPickedRoute;
+    NSMutableSet * _pendingPickedRoutes;
     long long  _routeTypes;
     bool  _scheduledSendDelegateRoutesChanged;
     NSObject<OS_dispatch_queue> * _serialQueue;
-    unsigned long long  _volumeControlStateForPickedRoute;
+    long long  _volumeControlStateForPickedRoute;
 }
 
 @property (nonatomic, readonly, copy) NSArray *availableRoutes;
@@ -30,18 +30,29 @@
 @property (nonatomic) <MPAVRoutingControllerDelegate> *delegate;
 @property (nonatomic) long long discoveryMode;
 @property (nonatomic, readonly) long long externalScreenType;
+@property (nonatomic, readonly) bool hasPendingPickedRoutes;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) MPAVRoute *pendingPickedRoute;
+@property (nonatomic, readonly) NSSet *pendingPickedRoutes;
 @property (nonatomic, readonly) MPAVRoute *pickedRoute;
+@property (nonatomic, readonly) NSArray *pickedRoutes;
 @property (nonatomic) long long routeTypes;
+@property (nonatomic, readonly) bool supportsMultipleSelection;
 @property (nonatomic, readonly) bool volumeControlIsAvailable;
 
 + (id)_currentDeviceRoutingIconImage;
 + (id)_currentDeviceRoutingIconImageName;
++ (void)_getActiveRouteWithTimeout:(double)arg1 discoveredRoutes:(id)arg2 completion:(id /* block */)arg3;
 + (id)_iconImageForRoute:(id)arg1;
++ (void)getActiveRouteWithCompletion:(id /* block */)arg1;
++ (void)getActiveRouteWithTimeout:(double)arg1 completion:(id /* block */)arg2;
++ (void)setActiveRoute:(id)arg1 completion:(id /* block */)arg2;
++ (id)systemRoute;
++ (id)systemRouteWithContextUID:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_activeAudioRouteDidChangeNotification:(id)arg1;
+- (void)_addPendingRoute:(id)arg1;
 - (bool)_deviceAvailabilityOverrideState;
 - (long long)_externalScreenType:(bool*)arg1;
 - (void)_externalScreenTypeDidChangeNotification:(id)arg1;
@@ -50,15 +61,23 @@
 - (void)_onQueueSetExternalScreenType:(long long)arg1;
 - (void)_pickableRoutesDidChangeNotification:(id)arg1;
 - (id)_pickedRouteInArray:(id)arg1;
+- (id)_pickedRoutesInArray:(id)arg1;
+- (void)_refreshPendingRoutes;
 - (void)_registerNotifications;
+- (void)_removePendingRoute:(id)arg1;
 - (void)_routeStatusDidChangeNotification:(id)arg1;
 - (void)_scheduleSendDelegateRoutesChanged;
+- (void)_sendDelegateFailedToPickRouteWithError:(id)arg1;
+- (void)_sendDelegatePickedRoutesChanged;
 - (void)_setExternalScreenType:(long long)arg1;
-- (void)_setVolumeControlStateForPickedRoute:(unsigned long long)arg1;
+- (void)_setVolumeControlStateForPickedRoute:(long long)arg1;
 - (void)_unregisterNotifications;
 - (void)_updateCachedRoutes;
+- (bool)_updateGroupMembership:(long long)arg1 forRoute:(id)arg2 completion:(id /* block */)arg3;
 - (void)_volumeControlAvailabilityDidChangeNotification:(id)arg1;
-- (unsigned long long)_volumeControlStateForPickedRoute;
+- (long long)_volumeControlStateForPickedRoute;
+- (bool)addPickedRoute:(id)arg1;
+- (bool)addPickedRoute:(id)arg1 completion:(id /* block */)arg2;
 - (bool)airtunesRouteIsPicked;
 - (id)availableRoutes;
 - (id)category;
@@ -70,20 +89,29 @@
 - (long long)discoveryMode;
 - (long long)externalScreenType;
 - (void)fetchAvailableRoutesWithCompletionHandler:(id /* block */)arg1;
+- (void)getActiveRouteWithTimeout:(double)arg1 completion:(id /* block */)arg2;
 - (bool)handsetRouteIsPicked;
+- (bool)hasPendingPickedRoutes;
 - (id)init;
 - (id)initWithDataSource:(id)arg1 name:(id)arg2;
 - (id)initWithName:(id)arg1;
 - (void)logCurrentRoutes;
 - (id)name;
 - (id)pendingPickedRoute;
+- (id)pendingPickedRoutes;
 - (bool)pickBestDeviceRoute;
 - (bool)pickHandsetRoute;
 - (bool)pickRoute:(id)arg1;
 - (bool)pickRoute:(id)arg1 withPassword:(id)arg2;
+- (bool)pickRoute:(id)arg1 withPassword:(id)arg2 completion:(id /* block */)arg3;
 - (bool)pickSpeakerRoute;
 - (id)pickedRoute;
+- (id)pickedRoutes;
 - (bool)receiverRouteIsPicked;
+- (bool)removePickedRoute:(id)arg1;
+- (bool)removePickedRoute:(id)arg1 completion:(id /* block */)arg2;
+- (bool)routeIsLeaderOfEndpoint:(id)arg1;
+- (bool)routeIsPendingPick:(id)arg1;
 - (bool)routeOtherThanHandsetAndSpeakerAvailable;
 - (bool)routeOtherThanHandsetAvailable;
 - (long long)routeTypes;
@@ -93,6 +121,7 @@
 - (void)setName:(id)arg1;
 - (void)setRouteTypes:(long long)arg1;
 - (bool)speakerRouteIsPicked;
+- (bool)supportsMultipleSelection;
 - (void)unpickAirPlayScreenRouteWithCompletion:(id /* block */)arg1;
 - (id)videoRouteForRoute:(id)arg1;
 - (bool)volumeControlIsAvailable;

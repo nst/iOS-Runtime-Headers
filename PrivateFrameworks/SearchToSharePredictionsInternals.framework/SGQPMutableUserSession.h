@@ -7,6 +7,7 @@
     NSString * _engagedSuggestion;
     SGQPMutablePredictionsSession * _queryPredictions;
     SGQPMutablePredictionsSession * _rankedCategories;
+    bool  _resultEngaged;
     unsigned long long  _searchAction;
     bool  _searchPerformed;
 }
@@ -15,6 +16,7 @@
 @property (retain) NSString *engagedSuggestion;
 @property (retain) SGQPMutablePredictionsSession *queryPredictions;
 @property (retain) SGQPMutablePredictionsSession *rankedCategories;
+@property bool resultEngaged;
 @property unsigned long long searchAction;
 @property bool searchPerformed;
 
@@ -27,6 +29,7 @@
 - (id)initWithConversationId:(id)arg1;
 - (id)queryPredictions;
 - (id)rankedCategories;
+- (bool)resultEngaged;
 - (unsigned long long)searchAction;
 - (bool)searchPerformed;
 - (void)setEngagedSuggestion:(id)arg1;
@@ -34,6 +37,8 @@
 - (void)setQueryPredictions:(id)arg1 messages:(id)arg2 language:(id)arg3 abGroup:(id)arg4;
 - (void)setRankedCategories:(id)arg1;
 - (void)setRankedCategories:(id)arg1 messages:(id)arg2 language:(id)arg3 abGroup:(id)arg4;
+- (void)setResultEngaged;
+- (void)setResultEngaged:(bool)arg1;
 - (void)setSearchAction:(unsigned long long)arg1;
 - (void)setSearchPerformed;
 - (void)setSearchPerformed:(bool)arg1;

@@ -37,5 +37,6 @@
 - (bool)isPearlDetectEnabled;
 - (void)refreshMatchMode;
 - (void)removeObserver:(id)arg1;
+- (void)restartMatchingIfNeededForAssertion:(id)arg1;
 
 @end

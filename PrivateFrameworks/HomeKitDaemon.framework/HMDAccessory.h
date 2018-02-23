@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDAccessory : HMFObject <HMDBackingStoreObjectProtocol, HMDBulletinIdentifiers, HMFDumpState, HMFLogging, HMFMessageReceiver, NSSecureCoding> {
+@interface HMDAccessory : HMFObject <HMDBackingStoreObjectProtocol, HMDBulletinIdentifiers, HMDHomeMessageReceiver, HMFDumpState, HMFLogging, NSSecureCoding> {
     NSMutableSet * _accessoryProfiles;
     HMDApplicationData * _appData;
     HMDApplicationRegistry * _appRegistry;
@@ -11,13 +11,13 @@
     NSNumber * _categoryIdentifier;
     unsigned long long  _configNumber;
     NSString * _configurationAppIdentifier;
+    NSString * _configuredName;
     HMDAccessoryVersion * _firmwareVersion;
     HMDHome * _home;
     NSString * _identifier;
     NSString * _manufacturer;
     NSString * _model;
     HMFMessageDispatcher * _msgDispatcher;
-    NSString * _name;
     bool  _primary;
     NSObject<OS_dispatch_queue> * _propertyQueue;
     NSString * _providedName;
@@ -40,6 +40,7 @@
 @property (nonatomic, retain) NSNumber *categoryIdentifier;
 @property (nonatomic) unsigned long long configNumber;
 @property (nonatomic, copy) NSString *configurationAppIdentifier;
+@property (nonatomic, retain) NSString *configuredName;
 @property (nonatomic, readonly, copy) NSString *contextID;
 @property (nonatomic, readonly, copy) NSUUID *contextSPIUniqueIdentifier;
 @property (getter=isCurrentAccessory, readonly) bool currentAccessory;
@@ -51,10 +52,11 @@
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, readonly, copy) NSString *manufacturer;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (readonly, copy) NSSet *messageReceiverChildren;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, readonly, copy) NSString *model;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
-@property (nonatomic, copy) NSString *name;
+@property (nonatomic, readonly, copy) NSString *name;
 @property (getter=isPrimary, nonatomic) bool primary;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (nonatomic, copy) NSString *providedName;
@@ -62,20 +64,25 @@
 @property (nonatomic, readonly) long long reachableTransports;
 @property (getter=isRemoteAccessEnabled, nonatomic) bool remoteAccessEnabled;
 @property (getter=isRemotelyReachable, nonatomic) bool remotelyReachable;
+@property (readonly) bool requiresHomeAppForManagement;
 @property (nonatomic, retain) HMDRoom *room;
 @property (nonatomic, readonly, copy) NSString *serialNumber;
 @property (readonly) Class superclass;
+@property (readonly) bool supportsUserManagement;
 @property (nonatomic, retain) HMDAccessoryTransaction *transaction;
 @property (nonatomic) bool unblockPending;
 @property (nonatomic, retain) NSUUID *uuid;
 @property (nonatomic, readonly, copy) HMDVendorModelEntry *vendorInfo;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
 
++ (bool)hasMessageReceiverChildren;
 + (id)logCategory;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_createCameraProfiles:(id)arg1;
+- (void)_handleGetAccessoryAdvertisingParams:(id)arg1;
+- (void)_handleListPairings:(id)arg1;
 - (void)_handleRename:(id)arg1;
 - (void)_handleSetAppData:(id)arg1;
 - (void)_handleUpdateRoom:(id)arg1;
@@ -83,9 +90,7 @@
 - (void)_registerForMessages;
 - (void)_remoteAccessEnabled:(bool)arg1;
 - (void)_sendBlockedNotification:(bool)arg1 withError:(id)arg2 withIdentifier:(id)arg3 withCompletion:(id /* block */)arg4;
-- (id)_updateAccessoryName:(id)arg1;
 - (id)_updateCategory:(id)arg1 notifyClients:(bool)arg2;
-- (id)_updateProvidedName:(id)arg1;
 - (id)_updateRoom:(id)arg1 message:(id*)arg2;
 - (id)accessoryProfiles;
 - (void)addAccessoryProfile:(id)arg1;
@@ -103,6 +108,7 @@
 - (unsigned long long)configNumber;
 - (id)configurationAppIdentifier;
 - (void)configure:(id)arg1 msgDispatcher:(id)arg2 accessoryConfigureGroup:(id)arg3;
+- (id)configuredName;
 - (id)contextID;
 - (id)contextSPIUniqueIdentifier;
 - (void)dealloc;
@@ -125,18 +131,21 @@
 - (bool)isCurrentAccessory;
 - (bool)isPrimary;
 - (bool)isReachable;
+- (bool)isReachableForXPCClients;
 - (bool)isRemoteAccessEnabled;
-- (bool)isRemoteReachable;
 - (bool)isRemotelyReachable;
 - (void)logDuetRoomEvent;
 - (id)logIdentifier;
 - (id)manufacturer;
 - (id)messageDestination;
 - (id)messageReceiveQueue;
+- (id)messageReceiverChildren;
 - (id)messageTargetUUID;
 - (id)model;
 - (id)msgDispatcher;
 - (id)name;
+- (void)notifyAccessoryNameChanged:(bool)arg1;
+- (void)pairingsWithCompletionHandler:(id /* block */)arg1;
 - (void)populateModelObject:(id)arg1 version:(long long)arg2;
 - (id)propertyQueue;
 - (id)providedName;
@@ -145,6 +154,7 @@
 - (void)remoteAccessEnabled:(bool)arg1;
 - (void)removeAccessoryProfile:(id)arg1;
 - (void)removeAdvertisement:(id)arg1;
+- (bool)requiresHomeAppForManagement;
 - (id)room;
 - (id)serialNumber;
 - (void)setAccessoryProfiles:(id)arg1;
@@ -155,13 +165,13 @@
 - (void)setCategoryIdentifier:(id)arg1;
 - (void)setConfigNumber:(unsigned long long)arg1;
 - (void)setConfigurationAppIdentifier:(id)arg1;
+- (void)setConfiguredName:(id)arg1;
 - (void)setFirmwareVersion:(id)arg1;
 - (void)setHome:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setManufacturer:(id)arg1;
 - (void)setModel:(id)arg1;
 - (void)setMsgDispatcher:(id)arg1;
-- (void)setName:(id)arg1;
 - (void)setPrimary:(bool)arg1;
 - (void)setProvidedName:(id)arg1;
 - (void)setReachable:(bool)arg1;
@@ -173,6 +183,7 @@
 - (void)setUnblockPending:(bool)arg1;
 - (void)setUuid:(id)arg1;
 - (bool)shouldEnableDaemonRelaunch;
+- (bool)supportsUserManagement;
 - (void)takeOwnershipOfAppData:(id)arg1;
 - (id)transaction;
 - (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
@@ -185,7 +196,7 @@
 - (void)updateCategory:(id)arg1;
 - (void)updateManufacturer:(id)arg1 model:(id)arg2 firmwareVersion:(id)arg3 serialNumber:(id)arg4;
 - (void)updateMediaSession:(id)arg1;
-- (void)updateName:(id)arg1;
+- (void)updateProvidedName:(id)arg1;
 - (void)updateRoom:(id)arg1;
 - (void)updateRoom:(id)arg1 message:(id)arg2;
 - (id)url;

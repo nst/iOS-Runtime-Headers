@@ -9,7 +9,7 @@
     bool  _accessRestrictedBecauseOfOSVersion;
     NSString * _currentCellularCarrierName;
     long long  _currentRadioAccessTechnology;
-    FCReachability * _internetReachability;
+    NFReachability * _internetReachability;
     bool  _isCloudKitAccessAllowed;
     bool  _isNetworkReachable;
     bool  _isNetworkReachableViaCellular;
@@ -27,7 +27,7 @@
 @property (nonatomic, readonly) long long cellularRadioAccessTechnology;
 @property (nonatomic, retain) NSString *currentCellularCarrierName;
 @property (nonatomic) long long currentRadioAccessTechnology;
-@property (nonatomic, retain) FCReachability *internetReachability;
+@property (nonatomic, retain) NFReachability *internetReachability;
 @property (nonatomic) bool isCloudKitAccessAllowed;
 @property (nonatomic, readonly) bool isCloudKitReachable;
 @property (nonatomic, readonly) bool isNetworkOnlyReachableViaCellular;

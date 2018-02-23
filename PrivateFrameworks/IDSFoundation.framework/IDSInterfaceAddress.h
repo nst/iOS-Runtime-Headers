@@ -7,6 +7,8 @@
     bool  _Cellular;
     IDSSockAddrWrapper * _address;
     NSData * _bssid;
+    unsigned int  _delegatedIndex;
+    NSString * _delegatedName;
     IDSSockAddrWrapper * _destination;
     IDSSockAddrWrapper * _external;
     unsigned int  _index;
@@ -20,6 +22,8 @@
 @property (readonly) unsigned long long IPVersion;
 @property (readonly) IDSSockAddrWrapper *address;
 @property (readonly) NSData *bssid;
+@property (readonly) unsigned int delegatedIndex;
+@property (readonly) NSString *delegatedName;
 @property (readonly) IDSSockAddrWrapper *destination;
 @property (copy) IDSSockAddrWrapper *external;
 @property (readonly) unsigned int index;
@@ -35,6 +39,8 @@
 - (unsigned long long)IPVersion;
 - (id)address;
 - (id)bssid;
+- (unsigned int)delegatedIndex;
+- (id)delegatedName;
 - (id)description;
 - (id)destination;
 - (id)external;

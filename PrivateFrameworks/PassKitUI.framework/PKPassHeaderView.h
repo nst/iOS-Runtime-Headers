@@ -21,6 +21,7 @@
     UILabel * _title;
     UILabel * _type;
     UILabel * _value;
+    bool  _valueLabelsShouldStack;
     UILabel * _valueTitle;
 }
 
@@ -35,6 +36,7 @@
 @property (nonatomic, retain) UIColor *secondaryTextColor;
 @property (nonatomic) bool showModificationDate;
 @property (nonatomic) unsigned long long suppressedContent;
+@property (nonatomic) bool valueLabelsShouldStack;
 
 - (void).cxx_destruct;
 - (void)_passLibraryDidChange:(id)arg1;
@@ -65,9 +67,13 @@
 - (void)setSecondaryTextColor:(id)arg1;
 - (void)setShowModificationDate:(bool)arg1;
 - (void)setSuppressedContent:(unsigned long long)arg1;
+- (void)setValueLabelsShouldStack:(bool)arg1;
 - (bool)showModificationDate;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (unsigned long long)suppressedContent;
+- (bool)titleAndValueLabelCouldOverlapAtHeaderViewSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)updateModifiedDate;
 - (void)updateShadow:(double)arg1;
+- (bool)valueLabelsShouldStack;
 
 @end

@@ -18,6 +18,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) <HDPeriodicActivityDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) long long errorCount;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) double interval;
 @property (nonatomic, readonly) NSObject<OS_os_log> *loggingCategory;
@@ -34,6 +35,7 @@
 - (void)_queue_activityFinishedWithResult:(long long)arg1 minimumRetryInterval:(double)arg2 error:(id)arg3;
 - (id)_queue_criteriaForInterval:(double)arg1;
 - (double)_queue_currentInterval;
+- (long long)_queue_errorCount;
 - (void)_queue_incrementErrorCount;
 - (void)_queue_performActivityIfPossibleWithCompletion:(id /* block */)arg1;
 - (void)_queue_performActivityIfWaitingWithCompletion:(id /* block */)arg1;
@@ -49,6 +51,7 @@
 - (id)delegate;
 - (id)diagnosticDescription;
 - (void)didPerformActivityWithResult:(long long)arg1 minimumRetryInterval:(double)arg2 error:(id)arg3;
+- (long long)errorCount;
 - (id)initWithProfile:(id)arg1 name:(id)arg2 interval:(double)arg3 delegate:(id)arg4 loggingCategory:(id)arg5;
 - (double)interval;
 - (bool)isWaitingToRun;

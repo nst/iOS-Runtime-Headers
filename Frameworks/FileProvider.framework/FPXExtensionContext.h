@@ -8,6 +8,7 @@
     NSMutableDictionary * _contextByDomainID;
     FPXDomainContext * _defaultDomainContext;
     NSMutableDictionary * _domainContextByURL;
+    bool  _isBeingDeallocated;
     NSMutableSet * _listenerDelegates;
     NSObject<OS_dispatch_queue> * _notificationQueue;
     NSString * _providerIdentifier;
@@ -34,6 +35,7 @@
 - (void)_startObservingCollectionWithProperties:(id)arg1 observer:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)addListenerDelegate:(id)arg1;
 - (id)alternateContentsURLForItemID:(id)arg1;
+- (void)dealloc;
 - (id)defaultDomainContext;
 - (id)defaultInstance;
 - (void)deleteSearchableItemsWithDomainIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -77,7 +79,7 @@
 - (void)startOperation:(id)arg1 toDeleteItems:(id)arg2 reply:(id /* block */)arg3;
 - (void)startOperation:(id)arg1 toFetchDefaultContainerForBundleIdentifier:(id)arg2 englishName:(id)arg3 inDomainIdentifier:(id)arg4 reply:(id /* block */)arg5;
 - (void)startOperation:(id)arg1 toFetchItemID:(id)arg2 reply:(id /* block */)arg3;
-- (void)startOperation:(id)arg1 toFetchParentForItem:(id)arg2 reply:(id /* block */)arg3;
+- (void)startOperation:(id)arg1 toFetchParentForItem:(id)arg2 recursively:(bool)arg3 reply:(id /* block */)arg4;
 - (void)startOperation:(id)arg1 toFetchThumbnailsForItemIdentifiers:(id)arg2 size:(struct CGSize { double x1; double x2; })arg3 completionHandler:(id /* block */)arg4;
 - (void)startOperation:(id)arg1 toImportDocumentsAtURLs:(id)arg2 withSandboxExtensions:(id)arg3 lastUsedDates:(id)arg4 intoFolderWithIdentifier:(id)arg5 bounceOnCollision:(bool)arg6 reply:(id /* block */)arg7;
 - (void)startOperation:(id)arg1 toRenameItem:(id)arg2 toNewName:(id)arg3 reply:(id /* block */)arg4;

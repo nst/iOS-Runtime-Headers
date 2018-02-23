@@ -3,15 +3,19 @@
  */
 
 @interface HMDRemoteLoginInitiatorSession : HMFObject {
+    <HomeKitEventRemoteLoginMetricProtocol> * _metric;
     NSString * _sessionID;
 }
 
+@property (nonatomic, retain) <HomeKitEventRemoteLoginMetricProtocol> *metric;
 @property (nonatomic, readonly) NSString *sessionID;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (id)initWithSessionID:(id)arg1;
+- (id)metric;
 - (id)sessionID;
+- (void)setMetric:(id)arg1;
 
 @end

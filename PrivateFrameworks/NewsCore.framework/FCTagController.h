@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCTagController : NSObject <FCAppConfigurationObserving, FCOperationThrottlerDelegate, FCTagsFetchOperationDelegate> {
+@interface FCTagController : NSObject <FCAppConfigurationObserving, FCJSONEncodableObjectProviding, FCOperationThrottlerDelegate, FCTagsFetchOperationDelegate> {
     FCAppConfigurationManager * _appConfigurationManager;
     FCAssetManager * _assetManager;
     FCCKContentDatabase * _contentDatabase;
@@ -34,8 +34,8 @@
 - (void)_fetchTagForTagID:(id)arg1 qualityOfService:(long long)arg2 callbackQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_fetchTagsForTagIDs:(id)arg1 qualityOfService:(long long)arg2 callbackQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_refreshTagsBasedOnAgeForTagIDs:(id)arg1;
-- (void)appConfigurationDidChange:(id)arg1;
 - (id)appConfigurationManager;
+- (void)appConfigurationManager:(id)arg1 appConfigurationDidChange:(id)arg2;
 - (id)assetManager;
 - (id)contentDatabase;
 - (void)dealloc;
@@ -52,6 +52,7 @@
 - (void)fetchTagsForTagIDs:(id)arg1 qualityOfService:(long long)arg2 callbackQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)init;
 - (id)initWithContentDatabase:(id)arg1 assetManager:(id)arg2 tagRecordSource:(id)arg3 appConfigurationManager:(id)arg4;
+- (id)jsonEncodableObject;
 - (void)operationThrottler:(id)arg1 performAsyncOperationWithCompletion:(id /* block */)arg2;
 - (id)prefetchedTags;
 - (void)saveTagsToCache:(id)arg1;

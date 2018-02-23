@@ -9,6 +9,7 @@
     int  _activationRetries;
     int  _activationState;
     NSTimer * _activationTimeout;
+    NSDictionary * _allHeaders;
     bool  _allowAnyHTTPSCertificate;
     bool  _awaitingCustomResponse;
     bool  _connectionFailed;
@@ -39,6 +40,7 @@
 @property (nonatomic) int activationRetries;
 @property (nonatomic) int activationState;
 @property (nonatomic, retain) NSTimer *activationTimeout;
+@property (nonatomic, retain) NSDictionary *allHeaders;
 @property (nonatomic) bool allowAnyHTTPSCertificate;
 @property (nonatomic) bool awaitingCustomResponse;
 @property (nonatomic) bool connectionFailed;
@@ -83,6 +85,7 @@
 - (int)activationState;
 - (id)activationTimeout;
 - (void)activationTimeout:(id)arg1;
+- (id)allHeaders;
 - (bool)allowAnyHTTPSCertificate;
 - (bool)awaitingCustomResponse;
 - (void)beganWaitingForPresentationOfActivationEvent;
@@ -150,6 +153,7 @@
 - (void)setActivationRetries:(int)arg1;
 - (void)setActivationState:(int)arg1;
 - (void)setActivationTimeout:(id)arg1;
+- (void)setAllHeaders:(id)arg1;
 - (void)setAllowAnyHTTPSCertificate:(bool)arg1;
 - (void)setAwaitingCustomResponse:(bool)arg1;
 - (void)setConnectionFailed:(bool)arg1;

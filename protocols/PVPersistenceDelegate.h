@@ -10,7 +10,8 @@
 - (NSArray *)allPersons:(id*)arg1;
 - (NSString *)associateFace:(PVFace *)arg1 withFaceCrop:(PVFaceCrop *)arg2 error:(id*)arg3;
 - (void)buildPersonsWithFaceClusterer:(void *)arg1 keyFaceUpdateBlock:(void *)arg2 canceler:(void *)arg3 context:(void *)arg4; // needs 4 arg types, found 9: <PVFaceClusteringProtocol> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, void*, PVCanceler *, PVContext *
-- (bool)cleanupInconsistentlyClusteredFacesWithCanceler:(PVCanceler *)arg1 error:(id*)arg2;
+- (bool)cleanupGroupedFacesWithClusterSequenceNumberSetToZeroWithCanceler:(PVCanceler *)arg1 error:(id*)arg2;
+- (bool)cleanupUngroupedFacesWithNonZeroClusterSequenceNumbersWithCanceler:(PVCanceler *)arg1 error:(id*)arg2;
 - (bool)clearDirtyStateOnFaceCrops:(NSArray *)arg1 error:(id*)arg2;
 - (NSNumber *)clusterSequenceNumberForFaceGroupWithLocalIdentifier:(NSString *)arg1;
 - (unsigned long long)countOfAlgorithmicFaceGroups;
@@ -57,8 +58,8 @@
 - (bool)resetLibraryClustersWithCanceler:(PVCanceler *)arg1 error:(id*)arg2;
 - (bool)setKeyFaceOfAlgorithmicFaceGroupToFaceWithClusterSequenceNumbers:(NSArray *)arg1 error:(id*)arg2;
 - (NSString *)suggestedPersonLocalIdentifierForPersonLocalIdentifier:(NSString *)arg1 faceClusterer:(id <PVFaceClusteringProtocol>)arg2 canceler:(PVCanceler *)arg3 context:(PVContext *)arg4 error:(id*)arg5;
-- (bool)unclusterFaces:(NSArray *)arg1 canceler:(PVCanceler *)arg2 error:(id*)arg3;
 - (NSSet *)unclusteredClusteringEligibleFaceLocalIdentifiers:(id*)arg1;
+- (bool)ungroupFaceClusterSequenceNumbers:(NSArray *)arg1 batchSizeForUnclusteringFaces:(unsigned long long)arg2 canceler:(PVCanceler *)arg3 error:(id*)arg4;
 - (NSSet *)unverifiedVisibleFacesFromFaceGroupContainingFacesWithClusterSequenceNumbers:(NSArray *)arg1 withFaceprintVersion:(unsigned int)arg2;
 - (bool)updateFaceprint:(PVFaceprint *)arg1 ofPersistedFace:(PVFace *)arg2 error:(id*)arg3;
 - (bool)updateKeyFacesOfPersonsWithLocalIdentifiers:(NSArray *)arg1 forceUpdate:(bool)arg2 canceler:(PVCanceler *)arg3 error:(id*)arg4;

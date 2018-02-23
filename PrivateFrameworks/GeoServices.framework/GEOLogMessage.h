@@ -59,6 +59,7 @@
 - (unsigned long long)logMsgEventsCount;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
+- (void)removeUnsupportedStatesFromEvent;
 - (void)setGroupRetryCount:(unsigned int)arg1;
 - (void)setHasGroupRetryCount:(bool)arg1;
 - (void)setHasLogMessageType:(bool)arg1;

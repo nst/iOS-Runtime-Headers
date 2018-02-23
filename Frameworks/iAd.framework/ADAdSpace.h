@@ -123,6 +123,7 @@
 - (id)connectionAssertionIdentifier;
 - (id)context;
 - (id)creativeController;
+- (void)creativeControllerTapGestureTimerDidExpireBeforePrimaryActionWasInvoked;
 - (void)creativeControllerViewDidRequestCloseWithTapLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)creativeControllerViewDidRequestCreateCalendarEvent:(id)arg1 withTapLocation:(struct CGPoint { double x1; double x2; })arg2;
 - (void)creativeControllerViewDidRequestExpandURL:(id)arg1 withMaximumSize:(struct CGSize { double x1; double x2; })arg2 withTapLocation:(struct CGPoint { double x1; double x2; })arg3;

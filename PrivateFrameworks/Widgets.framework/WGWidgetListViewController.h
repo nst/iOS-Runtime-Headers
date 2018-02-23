@@ -6,6 +6,10 @@
     NSMutableDictionary * _cancelTouchesAssertionsByWidgetID;
     <WGWidgetListViewControllerDelegate> * _delegate;
     WGWidgetDiscoveryController * _discoveryController;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _maxVisibleContentSize;
     NSArray * _previouslyVisibleWidgetIDs;
     bool  _shouldBlurContent;
     UIStackView * _stackView;
@@ -37,6 +41,7 @@
 - (void)_invokeBlockWithPlatterViewsVisibleInBounds:(id /* block */)arg1;
 - (void)_invokeBlockWithPlatterViewsVisibleInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 block:(id /* block */)arg2;
 - (id)_listItemViewControllerForWidgetWithIdentifier:(id)arg1 creatingIfNecessary:(bool)arg2;
+- (struct CGSize { double x1; double x2; })_maxVisibleContentSize;
 - (id)_platterViewAtLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (id)_platterViewForWidgetWithIdentifier:(id)arg1 creatingIfNecessary:(bool)arg2;
 - (id)_previouslyVisibleWidgetIDs;
@@ -47,6 +52,7 @@
 - (void)_setPreviouslyVisibleWidgetIDs:(id)arg1;
 - (void)_updateBackgroundViewForPlatter:(id)arg1;
 - (void)_updateWidgetViewStateWithPreviouslyVisibleWidgetIdentifiers:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_visibleContentFrameForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withContentOccludingInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 - (id)_widgetIdentifiersForPlatterViewsVisibleInBounds;
 - (void)brokenViewDidAppearForWidget:(id)arg1;
 - (void)dealloc;
@@ -84,6 +90,7 @@
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleFrameForWidget:(id)arg1;
 - (id)visibleWidgetIdentifiers;
 - (void)widget:(id)arg1 didChangeLargestSupportedDisplayMode:(long long)arg2;
 - (unsigned long long)widgetCount;

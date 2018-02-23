@@ -3,13 +3,13 @@
  */
 
 @interface CKDPQLCache : NSObject {
-    CKDClientContext * _context;
+    NSHashTable * _contexts;
     NSObject<OS_dispatch_queue> * _dbQueue;
     unsigned long long  _openHandles;
     PQLConnection * _pdb;
 }
 
-@property (nonatomic, readonly) CKDClientContext *context;
+@property (nonatomic, readonly) NSHashTable *contexts;
 @property (nonatomic, readonly) NSArray *createInitialTablesSQL;
 @property (nonatomic, readonly) PQLConnection *database;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dbQueue;
@@ -25,7 +25,7 @@
 - (bool)_setupConnectionWithError:(id*)arg1;
 - (bool)_truncateAndReconnectToDatabaseWithError:(id*)arg1;
 - (bool)closeWithError:(id*)arg1;
-- (id)context;
+- (id)contexts;
 - (id)createInitialTablesSQL;
 - (id)database;
 - (id)dbQueue;

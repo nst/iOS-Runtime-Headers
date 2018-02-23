@@ -6,18 +6,25 @@
     bool  _barsHidden;
     HFCameraAudioManager * _cameraAudioManager;
     HUCameraStreamContentViewController * _cameraStreamContentViewController;
+    struct UIOffset { 
+        double horizontal; 
+        double vertical; 
+    }  _defaultCameraBadgeOffset;
     <HUCameraStreamViewControllerDelegate> * _delegate;
+    bool  _didSetupMicrophoneButtonConstraints;
+    bool  _didSetupVolumeSliderConstraints;
     HFItemManager * _itemManager;
     UIViewController * _lastPresentingViewController;
     UIBarButtonItem * _microphoneBarButtonItem;
     HUCameraMicrophoneButton * _microphoneButton;
-    NSArray * _microphoneButtonConstraints;
     bool  _navigationControllerSetup;
     PGPictureInPictureProxy * _pipProxy;
     <HUPresentationDelegate> * _presentationDelegate;
     UIBarButtonItem * _volumeBarButtonItem;
     MPVolumeSlider * _volumeSlider;
-    NSArray * _volumeSliderConstraints;
+    NSLayoutConstraint * _volumeSliderCenterXConstraint;
+    NSLayoutConstraint * _volumeSliderLeadingConstraint;
+    NSLayoutConstraint * _volumeSliderWidthConstraint;
 }
 
 @property (getter=areBarsHidden, nonatomic) bool barsHidden;
@@ -25,15 +32,17 @@
 @property (nonatomic, readonly) HFCameraItem *cameraItem;
 @property (nonatomic, readonly) HUCameraStreamContentViewController *cameraStreamContentViewController;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) struct UIOffset { double x1; double x2; } defaultCameraBadgeOffset;
 @property (nonatomic) <HUCameraStreamViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) bool didSetupMicrophoneButtonConstraints;
+@property (nonatomic) bool didSetupVolumeSliderConstraints;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HFItem *hu_presentedItem;
 @property (nonatomic, readonly) HFItemManager *itemManager;
 @property (nonatomic) UIViewController *lastPresentingViewController;
 @property (nonatomic, retain) UIBarButtonItem *microphoneBarButtonItem;
 @property (nonatomic, retain) HUCameraMicrophoneButton *microphoneButton;
-@property (nonatomic, retain) NSArray *microphoneButtonConstraints;
 @property (getter=isNavigationControllerSetup, nonatomic) bool navigationControllerSetup;
 @property (nonatomic, retain) PGPictureInPictureProxy *pipProxy;
 @property (nonatomic) <HUPresentationDelegate> *presentationDelegate;
@@ -41,9 +50,12 @@
 @property (nonatomic) unsigned long long viewAppearanceState;
 @property (nonatomic, retain) UIBarButtonItem *volumeBarButtonItem;
 @property (nonatomic, retain) MPVolumeSlider *volumeSlider;
-@property (nonatomic, retain) NSArray *volumeSliderConstraints;
+@property (nonatomic, retain) NSLayoutConstraint *volumeSliderCenterXConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *volumeSliderLeadingConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *volumeSliderWidthConstraint;
 
 - (void).cxx_destruct;
+- (void)_adjustVolumeSliderToAccomodateHomeAffordance;
 - (void)_attachCameraStreamViewController;
 - (id)_barBackgroundView;
 - (id)_cameraProfile;
@@ -53,16 +65,23 @@
 - (void)_handleBarHideTapGesture:(id)arg1;
 - (void)_microphoneButtonPressed;
 - (void)_presentCameraDetailsWithViewController:(id)arg1;
+- (void)_setupMicrophoneConstraintsIfNeeded;
 - (void)_setupNavigationController;
+- (void)_setupVolumeSliderConstraintsIfNeeded;
 - (unsigned long long)_streamState;
 - (void)_updateCameraAudioManager;
+- (void)_updateCameraBadgeOffset;
 - (void)_updateMicrophoneButton;
 - (void)_updateNavigationItemTitle;
+- (void)_updateVolumeSliderConstraintsIfNeeded;
 - (bool)areBarsHidden;
 - (id)cameraAudioManager;
 - (id)cameraItem;
 - (id)cameraStreamContentViewController;
+- (struct UIOffset { double x1; double x2; })defaultCameraBadgeOffset;
 - (id)delegate;
+- (bool)didSetupMicrophoneButtonConstraints;
+- (bool)didSetupVolumeSliderConstraints;
 - (id)finishPresentation:(id)arg1 animated:(bool)arg2;
 - (id)hu_presentedItem;
 - (id)initWithCameraItem:(id)arg1;
@@ -72,7 +91,6 @@
 - (id)lastPresentingViewController;
 - (id)microphoneBarButtonItem;
 - (id)microphoneButton;
-- (id)microphoneButtonConstraints;
 - (void)pictureInPictureProxy:(id)arg1 didStopPictureInPictureWithAnimationType:(long long)arg2 reason:(long long)arg3;
 - (void)pictureInPictureProxy:(id)arg1 willStartPictureInPictureWithAnimationType:(long long)arg2;
 - (void)pictureInPictureProxy:(id)arg1 willStopPictureInPictureWithAnimationType:(long long)arg2 reason:(long long)arg3;
@@ -89,17 +107,20 @@
 - (void)setBarsHidden:(bool)arg1;
 - (void)setCameraAudioManager:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDidSetupMicrophoneButtonConstraints:(bool)arg1;
+- (void)setDidSetupVolumeSliderConstraints:(bool)arg1;
 - (void)setLastPresentingViewController:(id)arg1;
 - (void)setMicrophoneBarButtonItem:(id)arg1;
 - (void)setMicrophoneButton:(id)arg1;
-- (void)setMicrophoneButtonConstraints:(id)arg1;
 - (void)setNavigationControllerSetup:(bool)arg1;
 - (void)setPipProxy:(id)arg1;
 - (void)setPresentationDelegate:(id)arg1;
 - (void)setViewAppearanceState:(unsigned long long)arg1;
 - (void)setVolumeBarButtonItem:(id)arg1;
 - (void)setVolumeSlider:(id)arg1;
-- (void)setVolumeSliderConstraints:(id)arg1;
+- (void)setVolumeSliderCenterXConstraint:(id)arg1;
+- (void)setVolumeSliderLeadingConstraint:(id)arg1;
+- (void)setVolumeSliderWidthConstraint:(id)arg1;
 - (unsigned long long)viewAppearanceState;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
@@ -108,6 +129,8 @@
 - (void)viewWillLayoutSubviews;
 - (id)volumeBarButtonItem;
 - (id)volumeSlider;
-- (id)volumeSliderConstraints;
+- (id)volumeSliderCenterXConstraint;
+- (id)volumeSliderLeadingConstraint;
+- (id)volumeSliderWidthConstraint;
 
 @end

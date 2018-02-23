@@ -3,6 +3,7 @@
  */
 
 @interface SXTextSource : NSObject {
+    <SXActionProvider> * _actionProvider;
     <SXTextSourceDataSource> * _dataSource;
     <SXTextStyleFontDescribing> * _defaultFontDescribing;
     NSMutableIndexSet * _deletedRangeOffsets;
@@ -12,6 +13,7 @@
     NSString * _string;
 }
 
+@property (nonatomic, readonly) <SXActionProvider> *actionProvider;
 @property (nonatomic, readonly) <SXTextSourceDataSource> *dataSource;
 @property (nonatomic, readonly) <SXTextStyleFontDescribing> *defaultFontDescribing;
 @property (nonatomic, retain) NSMutableIndexSet *deletedRangeOffsets;
@@ -22,6 +24,7 @@
 @property (nonatomic, readonly) NSString *string;
 
 - (void).cxx_destruct;
+- (id)actionProvider;
 - (void)applyAdditionsOnTextTangierStorage:(id)arg1;
 - (void)applyListStylingOnTextTangierStorage:(id)arg1 usingAttributesMap:(id)arg2;
 - (void)applyStylingOnTextTangierStorage:(id)arg1;
@@ -34,7 +37,7 @@
 - (id)description;
 - (id)fontAttributeConstructor;
 - (id)fontFaceForTextDescribing:(id)arg1 inheritingFromTextStyle:(id)arg2;
-- (id)initWithString:(id)arg1 dataSource:(id)arg2;
+- (id)initWithString:(id)arg1 actionProvider:(id)arg2 dataSource:(id)arg3;
 - (id)insertedRangeOffsets;
 - (int)listLabelTypeForListType:(unsigned long long)arg1;
 - (int)listNumberTypeForListType:(unsigned long long)arg1;

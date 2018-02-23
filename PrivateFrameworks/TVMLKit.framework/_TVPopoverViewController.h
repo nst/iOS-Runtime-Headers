@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
  */
 
-@interface _TVPopoverViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface _TVPopoverViewController : _TVBgImageLoadingViewController <UITableViewDataSource, UITableViewDelegate> {
     UIBarButtonItem * _cancelButtonItem;
     long long  _expandedRow;
     bool  _ignoreDismissalOnExpansionOrContraction;

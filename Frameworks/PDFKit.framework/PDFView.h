@@ -58,8 +58,10 @@
 - (id)_getDocumentAKController;
 - (void)_goToPage:(id)arg1 animated:(bool)arg2 withBackgroundUpdate:(bool)arg3;
 - (bool)_hasDraggableSelectionAtLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (bool)_isOverWidgetAnnotation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_releaseDocument;
 - (void)_setupPageViewController;
+- (bool)_shouldHandleAnnotationAtLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_syncPageIndexToScrollView;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_transformFromPageToPageView:(id)arg1;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_transformFromPageViewToPage:(id)arg1;
@@ -85,6 +87,7 @@
 - (bool)autoScales;
 - (bool)automaticallyHandleGutter;
 - (id)backgroundColor;
+- (void)beginPDFViewRotation;
 - (void)callPageVisibilityDelegateMethod:(int)arg1 forPageView:(id)arg2 atPageIndex:(unsigned long long)arg3;
 - (void)callPageVisibilityDelegateMethodForOverlayAdaptorOnly:(int)arg1 forPageView:(id)arg2 atPageIndex:(unsigned long long)arg3;
 - (bool)canBecomeFirstResponder;
@@ -147,6 +150,7 @@
 - (void)enableTextSelectionHandles;
 - (void)encodeWithCoder:(id)arg1;
 - (void)endEditingAnnotation;
+- (void)endPDFViewRotation;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })extendedRootViewBounds;
 - (void)findVisiblePages;
 - (bool)flipsTileContents;
@@ -184,7 +188,6 @@
 - (bool)isDrawingAccessibilityNodeType:(int)arg1;
 - (bool)isForcingWebKitMainThread;
 - (bool)isOverLinkAnnotation:(struct CGPoint { double x1; double x2; })arg1;
-- (bool)isOverWidgetAnnotation:(struct CGPoint { double x1; double x2; })arg1;
 - (bool)isRectVisible:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 onPage:(id)arg2;
 - (bool)isUsingPageViewController;
 - (unsigned long long)lastPageIndex;
@@ -212,6 +215,7 @@
 - (id)previousPage;
 - (void)pushDestination:(id)arg1;
 - (void)reflectNewPageOn;
+- (void)removeActiveAnnotation;
 - (void)removeFromSuperview;
 - (void)removePasswordUI;
 - (id)renderingProperties;

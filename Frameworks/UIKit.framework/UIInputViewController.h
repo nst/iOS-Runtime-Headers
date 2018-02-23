@@ -6,6 +6,7 @@
     bool  _alignsToContentViewController;
     bool  _autosizeToCurrentKeyboard;
     bool  _commitInputModeOnTouchEnd;
+    bool  _hasDictationKey;
     bool  _inputModeListIsShown;
     NSString * _primaryLanguage;
     <UITextDocumentProxy> * _textDocumentProxy;
@@ -19,6 +20,7 @@
 @property (nonatomic, readonly) UIKeyboard *_keyboard;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) bool hasDictationKey;
 @property (nonatomic, readonly) bool hasFullAccess;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIInputView *inputView;
@@ -56,6 +58,7 @@
 - (void)didReceiveMemoryWarning;
 - (void)dismissKeyboard;
 - (void)handleInputModeListFromView:(id)arg1 withEvent:(id)arg2;
+- (bool)hasDictationKey;
 - (bool)hasFullAccess;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
@@ -67,7 +70,7 @@
 - (void)returnToPreviousInputMode;
 - (void)selectionDidChange:(id)arg1;
 - (void)selectionWillChange:(id)arg1;
-- (void)setHasDictation:(bool)arg1;
+- (void)setHasDictationKey:(bool)arg1;
 - (void)setInputView:(id)arg1;
 - (void)setPrimaryLanguage:(id)arg1;
 - (void)setView:(id)arg1;

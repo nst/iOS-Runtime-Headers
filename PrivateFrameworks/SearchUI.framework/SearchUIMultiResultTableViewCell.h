@@ -5,6 +5,7 @@
 @interface SearchUIMultiResultTableViewCell : SearchUITableViewCell {
     SearchUIIconViewContainer * _bottomContainer;
     NSLayoutConstraint * _doubleRowConstraint;
+    TLKAuxilliaryTextView * _folderLabelView;
     long long  _indexOfSelectedKeyboardIcon;
     NSArray * _results;
     NSLayoutConstraint * _singleRowConstraint;
@@ -13,6 +14,7 @@
 
 @property (retain) SearchUIIconViewContainer *bottomContainer;
 @property (retain) NSLayoutConstraint *doubleRowConstraint;
+@property (retain) TLKAuxilliaryTextView *folderLabelView;
 @property (nonatomic) long long indexOfSelectedKeyboardIcon;
 @property (retain) NSArray *results;
 @property (retain) NSLayoutConstraint *singleRowConstraint;
@@ -25,6 +27,7 @@
 - (id)bottomContainer;
 - (bool)canSetupKeyboardHandler;
 - (id)doubleRowConstraint;
+- (id)folderLabelView;
 - (id)iconContainers;
 - (long long)indexOfSelectedKeyboardIcon;
 - (id)initWithRowModel:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
@@ -39,6 +42,7 @@
 - (void)returnKeyPressed;
 - (void)setBottomContainer:(id)arg1;
 - (void)setDoubleRowConstraint:(id)arg1;
+- (void)setFolderLabelView:(id)arg1;
 - (void)setIndexOfSelectedKeyboardIcon:(long long)arg1;
 - (void)setResults:(id)arg1;
 - (void)setSelected:(bool)arg1 animated:(bool)arg2;

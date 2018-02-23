@@ -24,6 +24,7 @@
 - (void)chatInputDidUpdateWithNewInputViewController:(UIInputViewController *)arg1;
 - (void)chatInputSentComposition:(CKComposition *)arg1;
 - (void)chatInputWillChangeHeightForCompactPresentation:(double)arg1;
+- (void)chatInputWillUpdateInputViewShowingBrowser;
 - (<CKBrowserDragControllerTranscriptDelegate> *)dragControllerTranscriptDelegate;
 - (bool)keyboardIsVisibleForChatInputController:(CKChatInputController *)arg1;
 - (void)sendCurrentLocation;

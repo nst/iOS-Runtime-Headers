@@ -9,8 +9,6 @@
 + (id)typeString;
 
 - (Class)componentModelClass;
-- (Class)componentSizerClass;
-- (Class)componentViewClass;
 - (bool)hasAffiliationWithClassification:(id)arg1 forDirection:(long long)arg2;
 - (id)layoutRules;
 

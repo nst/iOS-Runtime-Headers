@@ -19,6 +19,7 @@
     _UINavigationBarItemStack * _stack;
     _UINavigationBarContentViewLayout * _toContentLayout;
     _UINavigationBarLargeTitleViewLayout * _toLargeTitleLayout;
+    bool  _twoPart;
 }
 
 @property (nonatomic) bool allowLargeTitles;
@@ -38,6 +39,7 @@
 @property (nonatomic, retain) _UINavigationBarContentViewLayout *toContentLayout;
 @property (nonatomic, retain) _UINavigationBarLargeTitleViewLayout *toLargeTitleLayout;
 @property (nonatomic, readonly) int transition;
+@property (nonatomic) bool twoPart;
 @property (nonatomic, readonly) UIView *viewFadingInFromCustomAlpha;
 @property (nonatomic, readonly) UIView *viewUsingEaseInCurve;
 @property (nonatomic, readonly) UIView *viewUsingEaseOutCurve;
@@ -80,9 +82,11 @@
 - (void)setStack:(id)arg1;
 - (void)setToContentLayout:(id)arg1;
 - (void)setToLargeTitleLayout:(id)arg1;
+- (void)setTwoPart:(bool)arg1;
 - (id)stack;
 - (id)toContentLayout;
 - (id)toLargeTitleLayout;
+- (bool)twoPart;
 - (id)viewFadingInFromCustomAlpha;
 - (id)viewUsingEaseInCurve;
 - (id)viewUsingEaseOutCurve;

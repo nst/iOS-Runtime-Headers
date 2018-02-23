@@ -111,7 +111,6 @@
 - (void)updateWithViewElement:(id)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
-- (void)viewDidLayoutSubviews;
 - (id)viewElement;
 
 @end

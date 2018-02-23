@@ -7,10 +7,10 @@
     SiriCoreSiriBackgroundConnection * _activeBackgroundConnection;
     NSObject<OS_dispatch_group> * _activeConnectionGroup;
     NSString * _assistantIdentifier;
+    NSMutableSet * _comatoseBackgroundConnections;
     NSMutableArray * _connMethodUsedHistory;
     NSString * _connectionId;
     SAConnectionPolicy * _connectionPolicy;
-    NSMutableSet * _deadBackgroundConnections;
     <SiriCoreSiriConnectionDelegate> * _delegate;
     bool  _deviceIsInWalkaboutExperimentGroup;
     NWPathEvaluator * _evaluator;
@@ -68,6 +68,7 @@
 - (void).cxx_destruct;
 - (void)_accessPotentiallyActiveConnections:(id /* block */)arg1;
 - (id)_activeOrAnyPendingConnection;
+- (void)_cancelSynchronously:(id /* block */)arg1;
 - (id)_connectionInfoForRoute:(id)arg1;
 - (void)_handleLastEventFromBackgroundConnection:(id)arg1 pendingConnectionExhaustionHandler:(id /* block */)arg2;
 - (id)_pathEvaluator:(id)arg1 port:(id)arg2;
@@ -79,14 +80,14 @@
 - (id)analysisInfo;
 - (id)assistantIdentifier;
 - (void)barrier:(id /* block */)arg1;
-- (void)cancelSynchronously:(bool)arg1 completion:(id /* block */)arg2;
+- (void)cancelSynchronously:(bool)arg1 onQueue:(bool)arg2 completion:(id /* block */)arg3;
 - (id)connectionId;
 - (id)connectionPolicy;
 - (void)dealloc;
 - (id)delegate;
 - (bool)deviceIsInWalkaboutExperimentGroup;
 - (void)getAnalysisInfo:(id /* block */)arg1;
-- (void)getConnectionMetrics:(id /* block */)arg1;
+- (void)getConnectionMetricsSynchronously:(bool)arg1 completion:(id /* block */)arg2;
 - (bool)imposePolicyBan;
 - (id)init;
 - (id)initWithQueue:(id)arg1;
@@ -99,6 +100,7 @@
 - (void)probeConnection;
 - (id)productTypePrefix;
 - (void)sendCommand:(id)arg1 errorHandler:(id /* block */)arg2;
+- (void)sendCommands:(id)arg1 errorHandler:(id /* block */)arg2;
 - (void)setAceHost:(id)arg1;
 - (void)setAssistantIdentifier:(id)arg1;
 - (void)setConnectionId:(id)arg1;

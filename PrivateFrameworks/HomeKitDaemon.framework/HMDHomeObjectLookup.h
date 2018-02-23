@@ -20,8 +20,10 @@
 - (void)_scanResidentDevices;
 - (void)_scanRooms;
 - (void)_scanServiceGroups;
+- (void)_scanSetting:(id)arg1;
 - (void)_scanSettingGroup:(id)arg1;
 - (void)_scanTriggers;
+- (void)_scanUsers;
 - (void)_scanZones;
 - (id)home;
 - (id)initWithHome:(id)arg1;

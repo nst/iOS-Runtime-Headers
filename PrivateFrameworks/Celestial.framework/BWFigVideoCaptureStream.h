@@ -56,7 +56,9 @@
     bool  _lumaHistogramMetadataEnabled;
     int  _masterToSlaveFrameRateRatio;
     float  _maximumFrameRate;
+    float  _maximumSupportedFrameRate;
     float  _minimumFrameRate;
+    float  _minimumSupportedFrameRate;
     NSDictionary * _moduleInfo;
     bool  _motionDataInvalid;
     bool  _multiBandNoiseReductionEnabled;
@@ -137,10 +139,10 @@
 @property (nonatomic) bool lowPowerSphereModeEnabled;
 @property (nonatomic) bool ltmLookUpTableMetadataEnabled;
 @property (nonatomic) bool lumaHistogramMetadataEnabled;
-@property (nonatomic, readonly) float maximumAllowedFrameRate;
 @property (nonatomic) float maximumFrameRate;
-@property (nonatomic, readonly) float minimumAllowedFrameRate;
+@property (nonatomic) float maximumSupportedFrameRate;
 @property (nonatomic) float minimumFrameRate;
+@property (nonatomic) float minimumSupportedFrameRate;
 @property (readonly) NSDictionary *moduleInfo;
 @property (readonly) bool motionDataInvalid;
 @property (nonatomic) bool multiBandNoiseReductionEnabled;
@@ -173,7 +175,6 @@
 
 + (void)initialize;
 
-- (id)_activeFormatNumberValueForKey:(struct __CFString { }*)arg1;
 - (void)_addCaptureStreamAttachmentsToSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)_addStillImageBracketFrameMetadataToSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (id)_aeTables;
@@ -209,7 +210,7 @@
 - (void)dealloc;
 - (bool)defersFaceDetectionStartup;
 - (id)delegate;
-- (void)enableFaceDetectionForAutoFocus;
+- (void)enableFaceDetection;
 - (bool)enablesSphereWhenAvailable;
 - (id)extrinsicMatrix;
 - (id)faceDetector;
@@ -228,10 +229,10 @@
 - (bool)lowPowerSphereModeEnabled;
 - (bool)ltmLookUpTableMetadataEnabled;
 - (bool)lumaHistogramMetadataEnabled;
-- (float)maximumAllowedFrameRate;
 - (float)maximumFrameRate;
-- (float)minimumAllowedFrameRate;
+- (float)maximumSupportedFrameRate;
 - (float)minimumFrameRate;
+- (float)minimumSupportedFrameRate;
 - (id)moduleInfo;
 - (bool)motionDataInvalid;
 - (bool)multiBandNoiseReductionEnabled;
@@ -260,7 +261,9 @@
 - (void)setLtmLookUpTableMetadataEnabled:(bool)arg1;
 - (void)setLumaHistogramMetadataEnabled:(bool)arg1;
 - (void)setMaximumFrameRate:(float)arg1;
+- (void)setMaximumSupportedFrameRate:(float)arg1;
 - (void)setMinimumFrameRate:(float)arg1;
+- (void)setMinimumSupportedFrameRate:(float)arg1;
 - (void)setMotionDataInvalid:(bool)arg1;
 - (void)setMultiBandNoiseReductionEnabled:(bool)arg1;
 - (void)setPeopleAndMotionFrameScoreWeights:(struct FigPAMFrameScoreWeightsStruct { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;

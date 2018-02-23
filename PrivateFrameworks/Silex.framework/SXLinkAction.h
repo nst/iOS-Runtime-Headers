@@ -10,9 +10,6 @@
 
 - (void).cxx_destruct;
 - (id)URL;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (Class)handlerClass;
-- (id)initWithAddition:(id)arg1;
-- (id)initWithURL:(id)arg1 addition:(id)arg2;
+- (id)initWithURL:(id)arg1;
 
 @end

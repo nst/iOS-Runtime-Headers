@@ -7,6 +7,7 @@
     MPProtocolProxy<MPCPlaybackEngineEventObserving> * _eventObserver;
     MPCPlaybackIntent * _fallbackPlaybackIntent;
     _MPCAVController * _implementation;
+    bool  _isPreparingForImminentPlaybackIntent;
     _MPCLeaseManager * _leaseManager;
     _MPCMediaRemotePublisher * _mediaRemotePublisher;
     bool  _pictureInPictureSupported;
@@ -33,6 +34,8 @@
 @property (getter=isVideoSupported, nonatomic) bool videoSupported;
 @property (nonatomic, readonly) UIView *videoView;
 
++ (void)preheatPlayback;
+
 - (void).cxx_destruct;
 - (id)_playerForMusicPlayerServer;
 - (void)_preservePlaybackStateImmediately;
@@ -53,8 +56,10 @@
 - (id)leaseManager;
 - (id)mediaRemotePublisher;
 - (id)playerID;
+- (void)prepareForImminentPlaybackIntent;
 - (void)removeEngineObserver:(id)arg1;
 - (void)removeSupportedSpecializedQueueIdentifier:(id)arg1;
+- (void)reportUserSeekFromTime:(double)arg1 toTime:(double)arg2;
 - (id)reportingController;
 - (void)restoreStateWithCompletion:(id /* block */)arg1;
 - (void)schedulePlaybackStatePreservation;

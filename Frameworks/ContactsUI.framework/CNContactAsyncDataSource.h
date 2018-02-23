@@ -67,6 +67,7 @@
 - (void)setContactFormatter:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFilter:(id)arg1;
+- (void)setNetworkActivityIndicatorVisible:(bool)arg1;
 - (void)setReloadSchedulerProvider:(id)arg1;
 - (void)setReloadStream:(id)arg1;
 - (void)setResultingContacts:(id)arg1;

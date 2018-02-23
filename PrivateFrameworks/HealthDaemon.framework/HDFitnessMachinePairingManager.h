@@ -18,6 +18,7 @@
 - (void)forbidConnectionForFitnessMachineSessionUUID:(id)arg1 withConnectionUUID:(id)arg2;
 - (void)handleBLEConnectionCompletedSuccessfully:(bool)arg1;
 - (id)initWithProfile:(id)arg1;
+- (void)permitConnectionForFitnessMachineSessionUUID:(id)arg1 activityType:(unsigned long long)arg2 withConnectionUUID:(id)arg3;
 - (void)permitConnectionForFitnessMachineSessionUUID:(id)arg1 withConnectionUUID:(id)arg2;
 - (void)registerConnectionInitiatorClient:(id)arg1 withConnectionUUID:(id)arg2;
 - (void)reset;

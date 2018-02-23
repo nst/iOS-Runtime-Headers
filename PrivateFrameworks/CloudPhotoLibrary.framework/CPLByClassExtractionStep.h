@@ -15,7 +15,7 @@
 @property (nonatomic, readonly, copy) NSString *queryDescription;
 
 - (void).cxx_destruct;
-- (bool)extractToBatch:(id)arg1 maximumCount:(unsigned long long)arg2 error:(id*)arg3;
+- (bool)extractToBatch:(id)arg1 maximumCount:(unsigned long long)arg2 maximumResourceSize:(unsigned long long)arg3 error:(id*)arg4;
 - (Class)extractionClass;
 - (id)initWithStorage:(id)arg1 description:(id)arg2 class:(Class)arg3 maximumCount:(unsigned long long)arg4 query:(int (*)arg5;
 - (unsigned long long)maximumCount;

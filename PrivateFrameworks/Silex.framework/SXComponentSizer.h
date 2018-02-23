@@ -6,7 +6,7 @@
     SXComponent * _component;
     SXComponentLayout * _componentLayout;
     SXComponentStyle * _componentStyle;
-    SXContext * _context;
+    SXDocumentController * _documentController;
     NSMutableDictionary * _infoForRendering;
     SXLayoutAttributes * _layoutAttributes;
     struct CGSize { 
@@ -18,7 +18,7 @@
 @property (nonatomic, readonly) SXComponent *component;
 @property (nonatomic, readonly) SXComponentLayout *componentLayout;
 @property (nonatomic, readonly) SXComponentStyle *componentStyle;
-@property (nonatomic, readonly) SXContext *context;
+@property (nonatomic, readonly) SXDocumentController *documentController;
 @property (nonatomic, readonly) NSMutableDictionary *infoForRendering;
 @property (nonatomic, retain) SXLayoutAttributes *layoutAttributes;
 @property (nonatomic) struct CGSize { double x1; double x2; } suggestedSize;
@@ -31,9 +31,9 @@
 - (id)componentStyle;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentFrameForSize:(struct CGSize { double x1; double x2; })arg1 contentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsetsForSize:(struct CGSize { double x1; double x2; })arg1;
-- (id)context;
+- (id)documentController;
 - (id)infoForRendering;
-- (id)initWithComponent:(id)arg1 componentLayout:(id)arg2 componentStyle:(id)arg3 context:(id)arg4 layoutAttributes:(id)arg5;
+- (id)initWithComponent:(id)arg1 componentLayout:(id)arg2 componentStyle:(id)arg3 documentController:(id)arg4 layoutAttributes:(id)arg5;
 - (id)layoutAttributes;
 - (long long)minimumColumnLength;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })overrideColumnLayoutForColumnRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 inColumnLayout:(id)arg2;

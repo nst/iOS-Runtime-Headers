@@ -17,6 +17,7 @@
 - (id)initWithDictionary:(id)arg1 error:(id*)arg2;
 - (id)initWithFeatureProvider:(id)arg1;
 - (id)initWithFeatureProvider:(id)arg1 featureNames:(id)arg2;
+- (id)initWithFeatureValueDictionary:(id)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (void)setDictionary:(id)arg1;
 

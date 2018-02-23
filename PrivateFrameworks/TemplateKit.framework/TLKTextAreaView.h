@@ -26,7 +26,6 @@
 
 - (void).cxx_destruct;
 - (id)concurrentQueue;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })containerStackView:(id)arg1 minimumSpacingAdjecentToArrangedSubview:(id)arg2;
 - (id)detailsFields;
 - (bool)disableAllObservers;
 - (void)disableObserversOnLabels:(bool)arg1;

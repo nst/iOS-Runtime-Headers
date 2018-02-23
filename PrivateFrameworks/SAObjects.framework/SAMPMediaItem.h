@@ -15,6 +15,8 @@
 @property (nonatomic, copy) NSString *sortAlbum;
 @property (nonatomic, copy) NSString *sortArtist;
 
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
+
 + (id)mediaItem;
 + (id)mediaItemWithDictionary:(id)arg1 context:(id)arg2;
 
@@ -40,5 +42,9 @@
 - (void)setSortArtist:(id)arg1;
 - (id)sortAlbum;
 - (id)sortArtist;
+
+// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
+
++ (id)_af_mediaItemWithMRContentItemRef:(void*)arg1;
 
 @end

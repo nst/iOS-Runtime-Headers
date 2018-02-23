@@ -32,7 +32,6 @@
 @property (nonatomic, retain) NSArray *segmentViews;
 @property (nonatomic, retain) NSNumber *selectedSegmentIndex;
 @property (nonatomic, retain) NSArray *separatorViews;
-@property (nonatomic) long long sizeSubclass;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSNumber *trackingSegmentIndex;
 @property (getter=isUserInteractionActive, nonatomic) bool userInteractionActive;
@@ -51,6 +50,7 @@
 - (id)gestureRecognizer;
 - (id)initWithProfile:(id)arg1;
 - (id)interactionDelegate;
+- (id)intrinsicSizeDescriptorForControlSize:(unsigned long long)arg1;
 - (bool)isUserInteractionActive;
 - (struct CGPoint { double x1; double x2; })lastTouchLocation;
 - (void)layoutSubviews;

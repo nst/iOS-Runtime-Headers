@@ -37,6 +37,7 @@
 - (unsigned long long)lastUsageUpdatePolicy;
 - (void)mainWithExtensionProxy:(id)arg1;
 - (id)operationDescription;
+- (bool)preflightOperation;
 - (void)presendNotifications;
 - (id)progress;
 - (void)setLastUsageUpdatePolicy:(unsigned long long)arg1;

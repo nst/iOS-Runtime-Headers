@@ -27,6 +27,8 @@
 - (void)_queue_addObserver:(id)arg1;
 - (void)_queue_applicationDidDisableNotificationSettings:(id)arg1;
 - (void)_queue_applicationDidEnableNotificationSettings:(id)arg1;
+- (void)_queue_applicationDidInstall:(id)arg1;
+- (void)_queue_applicationDidUninstall:(id)arg1;
 - (void)_queue_applicationsDidInstall:(id)arg1;
 - (void)_queue_applicationsDidUninstall:(id)arg1;
 - (void)_queue_createDataProviderWithBundleIdentifier:(id)arg1;

@@ -43,6 +43,7 @@
 - (id)messageDisplayView;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })messageDisplayViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inContainerFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (struct CGSize { double x1; double x2; })messageDisplayViewRequestedSize;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })safeAreaInsets;
 - (void)setAnimationPauseReasons:(long long)arg1;
 - (void)setDrawerLabel:(id)arg1;
 - (void)setDrawerText:(id)arg1;

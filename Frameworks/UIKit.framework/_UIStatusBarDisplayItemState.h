@@ -7,7 +7,6 @@
     NSMutableSet * _animations;
     long long  _currentPlacementStateIndex;
     bool  _dataEnabled;
-    long long  _enabilityOverride;
     long long  _enabilityStatus;
     bool  _floating;
     NSString * _identifier;
@@ -22,11 +21,11 @@
 }
 
 @property (nonatomic, retain) _UIStatusBarAnimation *addingAnimation;
+@property (getter=_animationType, nonatomic, readonly) long long animationType;
 @property (nonatomic, readonly) NSMutableSet *animations;
 @property (nonatomic, readonly) _UIStatusBarDisplayItemPlacementState *currentPlacementState;
 @property (nonatomic) long long currentPlacementStateIndex;
 @property (nonatomic) bool dataEnabled;
-@property (nonatomic) long long enabilityOverride;
 @property (nonatomic) long long enabilityStatus;
 @property (getter=isEnabled, nonatomic, readonly) bool enabled;
 @property (getter=isEnabledIgnoringAnimations, nonatomic, readonly) bool enabledIgnoringAnimations;
@@ -48,6 +47,7 @@
 
 - (void).cxx_destruct;
 - (id)_animationForDisplayItem:(id)arg1 withUpdateAnimation:(id)arg2;
+- (long long)_animationType;
 - (void)_cancelObsoleteAnimations;
 - (bool)_itemMayBeEnabled:(id)arg1;
 - (id)_updateForItem:(id)arg1 data:(id)arg2 styleAttributes:(id)arg3;
@@ -62,7 +62,6 @@
 - (long long)currentPlacementStateIndex;
 - (bool)dataEnabled;
 - (id)description;
-- (long long)enabilityOverride;
 - (long long)enabilityStatus;
 - (bool)floating;
 - (bool)hasRunningAnimations;
@@ -81,7 +80,6 @@
 - (void)setAddingAnimation:(id)arg1;
 - (void)setCurrentPlacementStateIndex:(long long)arg1;
 - (void)setDataEnabled:(bool)arg1;
-- (void)setEnabilityOverride:(long long)arg1;
 - (void)setEnabilityStatus:(long long)arg1;
 - (void)setFloating:(bool)arg1;
 - (void)setIdentifier:(id)arg1;

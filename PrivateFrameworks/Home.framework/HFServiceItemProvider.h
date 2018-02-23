@@ -8,6 +8,7 @@
     <HFCharacteristicValueSource> * _overrideValueSource;
     NSMutableSet * _serviceItems;
     NSArray * _serviceTypes;
+    id /* block */  _sourceServiceGenerator;
 }
 
 @property (nonatomic, copy) id /* block */ filter;
@@ -15,6 +16,7 @@
 @property (nonatomic, retain) <HFCharacteristicValueSource> *overrideValueSource;
 @property (nonatomic, retain) NSMutableSet *serviceItems;
 @property (nonatomic, retain) NSArray *serviceTypes;
+@property (nonatomic, copy) id /* block */ sourceServiceGenerator;
 @property (nonatomic, retain) <HFCharacteristicValueSource> *valueSource;
 
 + (id)standardServices;
@@ -35,7 +37,9 @@
 - (void)setOverrideValueSource:(id)arg1;
 - (void)setServiceItems:(id)arg1;
 - (void)setServiceTypes:(id)arg1;
+- (void)setSourceServiceGenerator:(id /* block */)arg1;
 - (void)setValueSource:(id)arg1;
+- (id /* block */)sourceServiceGenerator;
 - (id)valueSource;
 
 @end

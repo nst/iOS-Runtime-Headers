@@ -142,6 +142,7 @@
 - (void)_adjustAfterRebaseForMovingFromOldSource:(id)arg1 toNewSource:(id)arg2 committingItem:(id)arg3;
 - (void)_adjustForNewCalendarBeforeCommit;
 - (void)_applyTimeChangesToMaster;
+- (bool)_canWriteConferenceURL;
 - (void)_cancelDetachedEventsWithSpan:(long long)arg1;
 - (bool)_cancelWithSpan:(long long)arg1 error:(id*)arg2;
 - (bool)_checkStartDateConstraintAgainstDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 timeZone:(id)arg2 error:(id*)arg3;
@@ -155,12 +156,14 @@
 - (void)_deleteThisOccurrence;
 - (bool)_deleteWithSpan:(long long)arg1 error:(id*)arg2;
 - (void)_detachWithStartDate:(id)arg1 newStartDate:(id)arg2 future:(bool)arg3;
+- (id)_detectConferenceURL;
 - (id)_effectiveTimeZone;
 - (bool)_eventIsTheOnlyRemainingOccurrence;
 - (bool)_fetchedEventIsConflict:(id)arg1 forStartDate:(id)arg2 endDate:(id)arg3;
 - (void)_filterExceptionDates;
 - (id)_generateNewUniqueID;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })_gregorianDateCorrectedForTimeZoneFromCalendarDate:(id)arg1 orNSDate:(id)arg2;
+- (bool)_hasChangesForConferenceURLDetection;
 - (bool)_hasExternalIDOrDeliverySource;
 - (bool)_invitationChangedPropertyForFlag:(unsigned int)arg1;
 - (bool)_isAllDay;
@@ -171,13 +174,16 @@
 - (bool)_noRemainingEarlierOccurrences;
 - (bool)_occurrenceExistsOnDate:(double)arg1 timeZone:(id)arg2;
 - (long long)_parentParticipationStatus;
+- (id)_prioritizedConferencesSources;
 - (id)_refreshDateForKey:(id)arg1;
+- (bool)_reset;
 - (void)_sendModifiedNote;
 - (void)_setInvitationChangedProperty:(bool)arg1 forFlag:(unsigned int)arg2;
 - (void)_setStartDate:(id)arg1 andClearProposedTimes:(bool)arg2;
 - (bool)_shouldCancelInsteadOfDeleteWithSpan:(long long)arg1;
 - (bool)_shouldDeclineInsteadOfDelete;
 - (id)_travelTimeInternalDescription;
+- (void)_updateConferenceURL;
 - (id)_updateMasterDate:(id)arg1 forChangeToOccurrenceDate:(id)arg2 fromOriginalOccurrenceDate:(id)arg3;
 - (id)_updatePredictedLocationCacheIfNeeded;
 - (id)_updatePredictedLocationCacheIfNeededHoldingLock;
@@ -211,6 +217,7 @@
 - (bool)canForward;
 - (bool)canMoveToCalendar:(id)arg1 fromCalendar:(id)arg2 error:(id*)arg3;
 - (bool)changingAllDayPropertyIsAllowed;
+- (void)clearDetectedConferenceURL;
 - (void)clearInvitationStatus;
 - (bool)commitWithSpan:(long long)arg1 error:(id*)arg2;
 - (id)committedCopy;
@@ -218,12 +225,13 @@
 - (long long)compareStartDateIncludingTravelWithEvent:(id)arg1;
 - (long long)compareStartDateWithEvent:(id)arg1;
 - (id)conferenceURL;
+- (id)conferenceURLDetected;
+- (id)conferenceURLForDisplay;
 - (void)confirmPredictedLocation:(id)arg1;
 - (bool)conformsToRecurrenceRules:(id)arg1;
 - (bool)couldBeJunk;
 - (bool)dateChanged;
 - (id)description;
-- (id)detectedConferenceURL;
 - (double)duration;
 - (double)durationIncludingTravel;
 - (bool)eligibleForTravelAdvisories;
@@ -326,6 +334,8 @@
 - (void)setLocationPredictionState:(long long)arg1;
 - (void)setLocations:(id)arg1;
 - (void)setNeedsOccurrenceCacheUpdate:(bool)arg1;
+- (void)setNotes:(id)arg1;
+- (void)setNotesCommon:(id)arg1;
 - (void)setOccurrenceEndDate:(id)arg1;
 - (void)setOccurrenceIsAllDay:(bool)arg1;
 - (void)setOccurrenceStartDate:(id)arg1;
@@ -352,6 +362,8 @@
 - (void)setTitleChanged:(bool)arg1;
 - (void)setTravelAdvisoryBehavior:(long long)arg1;
 - (void)setTravelTime:(double)arg1;
+- (void)setURL:(id)arg1;
+- (void)setURLCommon:(id)arg1;
 - (void)snoozeAlarm:(id)arg1 withTimeIntervalFromNow:(double)arg2;
 - (id)startCalendarDate;
 - (id)startCalendarDateIncludingTravelTime;
@@ -373,6 +385,7 @@
 - (long long)travelRoutingMode;
 - (double)travelTime;
 - (id)uniqueId;
+- (void)updateConferenceURLIfNeeded;
 - (bool)updateEventToEvent:(id)arg1;
 - (bool)updateEventToEvent:(id)arg1 commit:(bool)arg2;
 - (bool)updateWithGeocodedMapItemAndSaveWithCommit:(id)arg1 eventStore:(id)arg2 error:(id*)arg3;

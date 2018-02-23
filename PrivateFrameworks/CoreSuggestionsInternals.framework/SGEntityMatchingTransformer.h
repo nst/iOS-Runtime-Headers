@@ -4,32 +4,32 @@
 
 @interface SGEntityMatchingTransformer : NSObject <PMLTransformerProtocol> {
     NSString * _addressMapping;
-    NSDataDetector * _dataDetector;
     NSString * _dateMapping;
     NSString * _emailMapping;
     NSString * _phoneMapping;
+    NSString * _targetMapping;
 }
 
 @property (retain) NSString *addressMapping;
-@property (retain) NSDataDetector *dataDetector;
 @property (retain) NSString *dateMapping;
 @property (retain) NSString *emailMapping;
 @property (retain) NSString *phoneMapping;
+@property (retain) NSString *targetMapping;
 
-+ (id)withPhoneMapping:(id)arg1 emailMapping:(id)arg2 addressMapping:(id)arg3 andDateMapping:(id)arg4;
++ (id)withTargetMapping:(id)arg1 phoneMapping:(id)arg2 emailMapping:(id)arg3 addressMapping:(id)arg4 andDateMapping:(id)arg5;
 
 - (void).cxx_destruct;
 - (id)addressMapping;
-- (id)dataDetector;
 - (id)dateMapping;
 - (id)emailMapping;
-- (id)initWithPhoneMapping:(id)arg1 emailMapping:(id)arg2 addressMapping:(id)arg3 andDateMapping:(id)arg4;
+- (id)initWithTargetMapping:(id)arg1 phoneMapping:(id)arg2 emailMapping:(id)arg3 addressMapping:(id)arg4 andDateMapping:(id)arg5;
 - (id)phoneMapping;
 - (void)setAddressMapping:(id)arg1;
-- (void)setDataDetector:(id)arg1;
 - (void)setDateMapping:(id)arg1;
 - (void)setEmailMapping:(id)arg1;
 - (void)setPhoneMapping:(id)arg1;
+- (void)setTargetMapping:(id)arg1;
+- (id)targetMapping;
 - (id)transform:(id)arg1;
 
 @end

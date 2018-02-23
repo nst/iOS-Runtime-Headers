@@ -12,6 +12,7 @@
 @property (nonatomic) long long replaceIntent;
 @property (getter=isRequestingImmediatePlayback, nonatomic) bool requestingImmediatePlayback;
 @property (nonatomic) bool shouldOverrideManuallyCuratedQueue;
+@property (nonatomic, readonly, copy) NSString *siriAssetInfo;
 @property (nonatomic, copy) NSString *siriRecommendationIdentifier;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSDictionary *userInfo;
@@ -33,6 +34,7 @@
 - (void)setSiriRecommendationIdentifier:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (bool)shouldOverrideManuallyCuratedQueue;
+- (id)siriAssetInfo;
 - (id)siriRecommendationIdentifier;
 - (id)userInfo;
 - (bool)verifyWithError:(id*)arg1;

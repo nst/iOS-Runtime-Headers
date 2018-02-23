@@ -7,12 +7,16 @@
 + (id)TVKitBundle;
 + (id)TVMLKitBundle;
 + (id)_bgImageElementForProductTemplate:(id)arg1;
++ (bool)_cornerRadiiFromElement:(id)arg1 cornerRadii:(struct TVCornerRadii { double x1; double x2; double x3; double x4; }*)arg2 circle:(bool*)arg3;
 + (bool)_cornerRadiiFromImgTreatmentValue:(id)arg1 width:(double)arg2 cornerRadii:(struct TVCornerRadii { double x1; double x2; double x3; double x4; }*)arg3 circle:(bool*)arg4;
 + (id)_defaultPlaceholderImageForUserInterfaceStyle:(long long)arg1;
 + (id)_defaultPlaceholderImageForUserInterfaceStyle:(long long)arg1 withCornerRadii:(struct TVCornerRadii { double x1; double x2; double x3; double x4; })arg2 andSize:(struct CGSize { double x1; double x2; })arg3;
 + (id)_mobileGestaltStringForKey:(struct __CFString { }*)arg1;
 + (id)_placeholderImageForValue:(id)arg1 userInterfaceStyle:(long long)arg2;
 + (id)_placeholderImageForValue:(id)arg1 userInterfaceStyle:(long long)arg2 withCornerRadii:(struct TVCornerRadii { double x1; double x2; double x3; double x4; })arg3 andScaledSize:(struct CGSize { double x1; double x2; })arg4;
++ (id)_placeholderImageForViewElement:(id)arg1;
++ (id)_placeholderImageForViewElement:(id)arg1 withCornerRadii:(struct TVCornerRadii { double x1; double x2; double x3; double x4; })arg2 andScaledSize:(struct CGSize { double x1; double x2; })arg3;
++ (struct CGPath { }*)_shadowPathForViewElement:(id)arg1 withCornerRadii:(struct TVCornerRadii { double x1; double x2; double x3; double x4; })arg2 andScaledSize:(struct CGSize { double x1; double x2; })arg3;
 + (bool)canHandleDecodingOnRenderThread;
 + (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })centerRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 + (long long)contentModeForPosition:(long long)arg1 defaultMode:(long long)arg2;

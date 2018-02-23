@@ -14,9 +14,9 @@
 
 - (void).cxx_destruct;
 - (id)articleListRequest;
+- (id)assembleResultsWithCatchUpOperation:(id)arg1;
 - (void)configureCatchUpOperationWithFetchRequest:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)extractResultsFromCatchUpOperation:(id)arg1;
 - (id)incrementalLimitTransformationWithFeedPersonalizer:(id)arg1 limit:(unsigned long long)arg2 priorFeedItems:(id)arg3;
 - (id)incrementalSortTransformationWithFeedPersonalizer:(id)arg1;
 - (id)init;

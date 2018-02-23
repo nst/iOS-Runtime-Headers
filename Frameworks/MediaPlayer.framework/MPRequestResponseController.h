@@ -10,6 +10,7 @@
     long long  _numberOfObservers;
     NSObject<OS_dispatch_queue> * _queue;
     id  _request;
+    long long  _requestRevision;
     id  _response;
     double  _retryInterval;
     NSObject<OS_dispatch_source> * _retryTimer;
@@ -37,6 +38,7 @@
 - (id)response;
 - (void)setDelegate:(id)arg1;
 - (void)setNeedsReload;
+- (void)setNeedsReloadForSignificantRequestChange;
 - (void)setRequest:(id)arg1;
 - (void)setResponse:(id)arg1;
 

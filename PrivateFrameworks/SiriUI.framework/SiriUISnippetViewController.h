@@ -143,6 +143,7 @@
 - (void)setTitleTextColor:(id)arg1;
 - (void)setTopKeylineHidden:(bool)arg1;
 - (void)setWantsConfirmationInsets:(bool)arg1;
+- (bool)shouldHidePriorViews;
 - (bool)showHeaderChevron;
 - (void)siriDidLayoutSnippetView;
 - (void)siriWillLayoutSnippetView;

@@ -8,6 +8,7 @@
     <MTLTexture> * _aoTexture;
     <MTLComputePipelineState> * _blurXPipelineState;
     <MTLComputePipelineState> * _blurYPipelineState;
+    bool  _cameraOrtho;
     <MTLTexture> * _depthMinMaxOffsetTexture;
     unsigned long long  _downsample;
     <MTLComputePipelineState> * _downsamplePipelineState;

@@ -22,6 +22,8 @@
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
++ (bool)isPlaceholder;
+
 - (void).cxx_destruct;
 - (id)album;
 - (id)artist;

@@ -10,6 +10,7 @@
     double  _spacing;
     NUIContainerStackView * _stackView;
     long long  _style;
+    UIFont * _titleFont;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *actionItemsByType;
@@ -23,6 +24,7 @@
 @property (nonatomic, retain) NUIContainerStackView *stackView;
 @property (nonatomic) long long style;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) UIFont *titleFont;
 
 + (long long)axisWithTitlesPresent:(bool)arg1;
 + (struct CGSize { double x1; double x2; })intrinsicContentSizeForHorizontalLayoutForActionsViews:(id)arg1 spacing:(double)arg2;
@@ -49,10 +51,12 @@
 - (void)setSpacing:(double)arg1;
 - (void)setStackView:(id)arg1;
 - (void)setStyle:(long long)arg1;
+- (void)setTitleFont:(id)arg1;
 - (id)sortedActionTypes;
 - (double)spacing;
 - (id)stackView;
 - (long long)style;
+- (id)titleFont;
 - (void)updateActionItem:(id)arg1;
 - (void)updateAxis;
 

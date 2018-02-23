@@ -29,6 +29,7 @@
 - (id)initWithContext:(id)arg1 options:(unsigned long long)arg2;
 - (unsigned long long)occludedContentEdges;
 - (struct CGSize { double x1; double x2; })preferredContentSize;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })px_safeAreaInsets;
 - (void)scrollViewControllerContentBoundsDidChange:(id)arg1;
 - (void)scrollViewControllerDidScroll:(id)arg1;
 - (void)setAccessoryContentViewControllerDelegate:(id)arg1;

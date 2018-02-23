@@ -9,6 +9,7 @@
     UILabel * _primaryLabel;
     NSString * _primaryString;
     UIColor * _secondaryColor;
+    UIFont * _secondaryFont;
     UILabel * _secondaryLabel;
     NSString * _secondaryString;
     bool  _showsAvatarView;
@@ -17,10 +18,8 @@
     UILabel * _tertiaryLabel;
     NSString * _tertiaryString;
     NSString * _transactionIdentifier;
-    UIColor * _transactionValueColor;
-    UIFont * _transactionValueFont;
+    NSAttributedString * _transactionValueAttributedText;
     UILabel * _transactionValueLabel;
-    NSString * _transactionValueString;
 }
 
 @property (nonatomic, readonly) CNAvatarView *avatarView;
@@ -28,19 +27,17 @@
 @property (nonatomic, retain) UIFont *primaryFont;
 @property (nonatomic, retain) NSString *primaryString;
 @property (nonatomic, retain) UIColor *secondaryColor;
+@property (nonatomic, retain) UIFont *secondaryFont;
 @property (nonatomic, retain) NSString *secondaryString;
 @property (nonatomic) bool showsAvatarView;
 @property (nonatomic, retain) UIColor *tertiaryColor;
 @property (nonatomic, retain) NSString *tertiaryString;
 @property (nonatomic, retain) NSString *transactionIdentifier;
-@property (nonatomic, retain) UIColor *transactionValueColor;
-@property (nonatomic, retain) UIFont *transactionValueFont;
-@property (nonatomic, retain) NSString *transactionValueString;
+@property (nonatomic, retain) NSAttributedString *transactionValueAttributedText;
 
 + (id)defaultPrimaryLabelFont;
-+ (id)defaultTransactionValueFont;
-+ (double)rowHeightWithTransactionValueFont:(id)arg1;
-+ (id)secondaryLabelFont;
++ (id)defaultSecondaryLabelFont;
++ (double)rowHeightWithTransactionValueFont:(id)arg1 secondaryLabelFont:(id)arg2;
 + (id)tertiaryLabelFont;
 
 - (void).cxx_destruct;
@@ -49,7 +46,6 @@
 - (id)defaultPrimaryColor;
 - (id)defaultSecondaryColor;
 - (id)defaultTertiaryColor;
-- (id)defaultTransactionValueColor;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
@@ -57,25 +53,24 @@
 - (id)primaryFont;
 - (id)primaryString;
 - (id)secondaryColor;
+- (id)secondaryFont;
 - (id)secondaryString;
 - (void)setPrimaryColor:(id)arg1;
 - (void)setPrimaryFont:(id)arg1;
 - (void)setPrimaryString:(id)arg1;
 - (void)setSecondaryColor:(id)arg1;
+- (void)setSecondaryFont:(id)arg1;
 - (void)setSecondaryString:(id)arg1;
 - (void)setShowsAvatarView:(bool)arg1;
 - (void)setTertiaryColor:(id)arg1;
 - (void)setTertiaryString:(id)arg1;
 - (void)setTransactionIdentifier:(id)arg1;
-- (void)setTransactionValueColor:(id)arg1;
-- (void)setTransactionValueFont:(id)arg1;
-- (void)setTransactionValueString:(id)arg1;
+- (void)setTransactionValueAttributedText:(id)arg1;
+- (bool)shouldShowTransactionPreviewForTouchAtPoint:(struct CGPoint { double x1; double x2; })arg1 inView:(id)arg2;
 - (bool)showsAvatarView;
 - (id)tertiaryColor;
 - (id)tertiaryString;
 - (id)transactionIdentifier;
-- (id)transactionValueColor;
-- (id)transactionValueFont;
-- (id)transactionValueString;
+- (id)transactionValueAttributedText;
 
 @end

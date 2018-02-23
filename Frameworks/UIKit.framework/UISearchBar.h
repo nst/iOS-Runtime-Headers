@@ -22,12 +22,6 @@
         double left; 
         double bottom; 
         double right; 
-    }  _contentInsetInternal;
-    struct UIEdgeInsets { 
-        double top; 
-        double left; 
-        double bottom; 
-        double right; 
     }  _contentInsetPrivate;
     id  _controller;
     <_UINavigationBarTitleViewDataSource> * _dataSource;
@@ -38,6 +32,7 @@
         double bottom; 
         double right; 
     }  _effectiveContentInset;
+    double  _indexWidth;
     UIView * _inputAccessoryView;
     UIButton * _leftButton;
     UIView * _maskView;
@@ -83,6 +78,7 @@
 }
 
 @property (nonatomic, copy) NSIndexSet *PINEntrySeparatorIndexes;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } _effectiveContentInset;
 @property (nonatomic) bool _forceCenteredPlaceholderLayout;
 @property (nonatomic, readonly) bool _hideNavigationBarBackButton;
 @property (nonatomic, readonly) bool _hideNavigationBarLeadingBarButtons;
@@ -139,6 +135,7 @@
 @property (nonatomic) bool learnsCorrections;
 @property (nonatomic) bool loadKeyboardsForSiriLanguage;
 @property (nonatomic, copy) NSString *placeholder;
+@property (nonatomic, readonly) int preferredAlignment;
 @property (nonatomic, copy) NSString *prompt;
 @property (nonatomic, copy) NSString *recentInputIdentifier;
 @property (nonatomic, copy) NSString *responseContext;
@@ -196,7 +193,7 @@
 - (id)_backgroundView;
 - (double)_barHeightForBarMetrics:(long long)arg1;
 - (double)_barHeightForBarMetrics:(long long)arg1 barPosition:(long long)arg2;
-- (double)_barHeightForBarMetrics:(long long)arg1 withInternalInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
+- (double)_barHeightForBarMetrics:(long long)arg1 withEffectiveInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 - (long long)_barMetricsForOrientation:(long long)arg1;
 - (long long)_barPosition;
 - (void)_bookmarkButtonPressed;
@@ -212,6 +209,7 @@
 - (id)_currentSeparatorImage;
 - (double)_defaultAutolayoutSpacing;
 - (double)_defaultHeight;
+- (double)_defaultHeightForOrientation:(long long)arg1;
 - (id)_defaultPromptString;
 - (double)_defaultWidth;
 - (void)_destroyCancelButton;
@@ -220,9 +218,12 @@
 - (void)_displayNavBarCancelButton:(bool)arg1 animated:(bool)arg2;
 - (id)_effectiveBarTintColor;
 - (void)_effectiveBarTintColorDidChange:(bool)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_effectiveContentInset;
 - (bool)_enableAutomaticKeyboardPressDone;
 - (bool)_forceCenteredPlaceholderLayout;
+- (bool)_getNavigationTitleLeadingInset:(double*)arg1 trailingInset:(double*)arg2 isRTL:(bool)arg3;
 - (void)_getScopeBarHeight:(double*)arg1 containerHeight:(double*)arg2;
+- (void)_getTopInset:(double*)arg1 bottomInset:(double*)arg2 forBarMetrics:(long long)arg3 barPosition:(long long)arg4;
 - (bool)_hasCustomAutolayoutNeighborSpacingForAttribute:(long long*)arg1;
 - (bool)_hasDarkUIAppearance;
 - (bool)_hideNavigationBarBackButton;
@@ -232,8 +233,6 @@
 - (void)_identifyBarContainer;
 - (id)_imageForSearchBarIcon:(long long)arg1 state:(unsigned long long)arg2;
 - (id)_imageForSearchBarIcon:(long long)arg1 state:(unsigned long long)arg2 customImage:(bool*)arg3;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_internalInsets;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_internalInsetsForBarMetrics:(long long)arg1 barPosition:(long long)arg2;
 - (bool)_isAtTop;
 - (bool)_isEnabled;
 - (bool)_isInBar;
@@ -250,7 +249,6 @@
 - (void)_populateArchivedSubviews:(id)arg1;
 - (long long)_preferredContentSizeForSize:(long long)arg1;
 - (id)_presentationBackgroundBlurEffectForTraitCollection:(id)arg1;
-- (void)_removeMarginsIfNecessary;
 - (void)_resultsListButtonPressed;
 - (id)_scopeBar;
 - (id)_scopeBarBackgroundView;
@@ -283,7 +281,6 @@
 - (void)_setDisableFocus:(bool)arg1;
 - (void)_setEnabled:(bool)arg1;
 - (void)_setEnabled:(bool)arg1 animated:(bool)arg2;
-- (void)_setInternalInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)_setMaskActive:(bool)arg1;
 - (void)_setMaskBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_setScopeBarHidden:(bool)arg1;
@@ -317,7 +314,6 @@
 - (id)_uiktest_placeholderLabelColor;
 - (bool)_underlayNavigationBarContent;
 - (void)_updateBackgroundToBackdropStyle:(long long)arg1;
-- (void)_updateContentInset;
 - (void)_updateEffectiveContentInset;
 - (void)_updateInsetsForCurrentContainerViewAndBarPosition;
 - (void)_updateInsetsForTableView:(id)arg1;
@@ -329,7 +325,9 @@
 - (void)_updateScopeBarBackground;
 - (void)_updateScopeBarFrame;
 - (void)_updateSearchFieldArt;
+- (bool)_useRelaxedScopeLayout;
 - (id)_viewForChildViews;
+- (bool)_wantsTwoPartTransition;
 - (bool)_wouldCombineLandscapeBarsForSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)dealloc;
 
@@ -377,15 +375,18 @@
 - (bool)isTranslucent;
 - (void)layoutMarginsDidChange;
 - (void)layoutSubviews;
+- (void)layoutSubviewsInBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)placeholder;
 - (struct UIOffset { double x1; double x2; })positionAdjustmentForSearchBarIcon:(long long)arg1;
+- (int)preferredAlignment;
 - (id)preferredFocusedView;
 - (bool)pretendsIsInBar;
 - (id)prompt;
 - (void)reloadInputViews;
 - (bool)resignFirstResponder;
 - (bool)respondsToSelector:(SEL)arg1;
+- (void)safeAreaInsetsDidChange;
 - (id)scopeBarBackgroundImage;
 - (id)scopeBarButtonBackgroundImageForState:(unsigned long long)arg1;
 - (id)scopeBarButtonDividerImageForLeftSegmentState:(unsigned long long)arg1 rightSegmentState:(unsigned long long)arg2;

@@ -318,7 +318,7 @@
 - (id)px_clearedDepthCopy;
 - (id)px_clearedDepthCopyIncludingGeometry:(bool)arg1;
 - (bool)px_hasDepthEdits;
-- (bool)px_isAdjustedBeyondDepth;
+- (bool)px_isAdjustedBeyondDepthAndStatistics;
 - (id)px_photoEditModelByApplyingAssetVariation:(unsigned int)arg1 withRecipe:(id)arg2;
 
 @end

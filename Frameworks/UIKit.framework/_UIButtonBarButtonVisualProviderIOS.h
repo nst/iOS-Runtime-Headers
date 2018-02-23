@@ -69,7 +69,6 @@
 - (void)button:(id)arg1 traitCollectionDidChange:(id)arg2;
 - (void)buttonLayoutSubviews:(id)arg1 baseImplementation:(id /* block */)arg2;
 - (bool)buttonSelectionState:(id)arg1 forRequestedState:(bool)arg2;
-- (void)buttonWillMoveToWindow:(id)arg1;
 - (void)configureButton:(id)arg1 fromBarButtonItem:(id)arg2;
 - (void)configureButton:(id)arg1 withAppearanceDelegate:(id)arg2 fromBarItem:(id)arg3;
 - (id)contentView;

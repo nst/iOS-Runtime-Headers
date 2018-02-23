@@ -4,7 +4,7 @@
 
 @interface PDFTimerPrivate : NSObject {
     bool  isRequested;
-    SEL  selector;
+    NSInvocation * methodInvocation;
     NSObject * target;
     double  timeInterval;
     NSTimer * timer;

@@ -111,6 +111,7 @@
 + (id)hf_currentStateCharacteristicTypeForTargetStateCharacteristicType:(id)arg1;
 + (id)hf_descriptionForCharacteristicType:(id)arg1;
 + (id)hf_powerStateCharacteristicTypes;
++ (bool)hf_shouldCaptureCharacteristicTypeInActionSets:(id)arg1;
 + (long long)hf_sortPriorityForCharacteristicType:(id)arg1;
 + (id)hf_targetStateCharacteristicTypeForCurrentStateCharacteristicType:(id)arg1;
 
@@ -127,6 +128,7 @@
 - (id)hf_programmableSwitchTriggerValueToEventTriggersMap;
 - (id)hf_programmableSwitchValidValueSet;
 - (id)hf_serializedStateDumpRepresentation;
+- (bool)hf_shouldCaptureInActionSets;
 - (long long)hf_sortPriority;
 
 @end

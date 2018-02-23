@@ -3,6 +3,7 @@
  */
 
 @interface MPCModelStorePlaybackItemsRequestOperation : MPAsyncOperation {
+    NSProgress * _activeProgress;
     NSOperationQueue * _operationQueue;
     MPCModelStorePlaybackItemsRequest * _request;
     id /* block */  _responseHandler;
@@ -13,6 +14,7 @@
 
 - (void).cxx_destruct;
 - (void)_getShouldLibraryPersonalizeRequest:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)cancel;
 - (void)execute;
 - (id)initWithRequest:(id)arg1 responseHandler:(id /* block */)arg2;
 - (id)request;

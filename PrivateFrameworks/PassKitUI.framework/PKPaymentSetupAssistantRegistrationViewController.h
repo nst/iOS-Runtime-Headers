@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentSetupAssistantRegistrationViewController : PKPaymentSetupViewController <PKPaymentSetupViewControllerDelegate> {
+@interface PKPaymentSetupAssistantRegistrationViewController : PKPaymentSetupHeroViewController <PKPaymentSetupViewControllerDelegate> {
     <PKPaymentSetupViewControllerDelegate> * _externalDelegate;
     NSObject<OS_dispatch_group> * _preflightGroup;
     bool  _preflightResult;
@@ -21,12 +21,10 @@
 + (bool)setupAssistantNeedsToRunReturningRequirements:(unsigned long long*)arg1;
 
 - (void).cxx_destruct;
-- (id)_deviceSpecificLocalizedStringKeyForKey:(id)arg1;
 - (void)_setExternalDelegate:(id)arg1;
 - (id)delegate;
 - (id)initWithPaymentWebService:(id)arg1 context:(long long)arg2 delegate:(id)arg3;
 - (void)preflightWithCompletion:(id /* block */)arg1;
-- (void)privacyButtonTouched:(id)arg1;
 - (id)requiredPaymentSetupFileURLs;
 - (void)setDelegate:(id)arg1;
 - (void)viewController:(id)arg1 didShowProvisioningError:(id)arg2;

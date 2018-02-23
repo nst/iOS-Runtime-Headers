@@ -9,6 +9,7 @@
 }
 
 @property (nonatomic, readonly, copy) ICStoreDialogResponse *dialog;
+@property (nonatomic, readonly, copy) NSString *householdID;
 @property (nonatomic, readonly, copy) NSArray *items;
 @property (nonatomic, readonly, copy) NSDate *leaseExpirationDate;
 @property (nonatomic, readonly, copy) NSData *leaseInfoData;
@@ -17,6 +18,7 @@
 
 - (void).cxx_destruct;
 - (id)dialog;
+- (id)householdID;
 - (id)initWithResponseDictionary:(id)arg1 requestDate:(id)arg2 urlBag:(id)arg3;
 - (id)itemWithStoreAdamID:(long long)arg1;
 - (id)items;

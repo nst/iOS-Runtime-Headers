@@ -15,11 +15,12 @@
     double  _currentTouchForce;
     unsigned long long  _deepPressCount;
     double  _highPopThreshold;
-    double  _hintAndPeekInterval;
     double  _hintReductionForce;
     double  _lowpassForceAlpha;
     double  _maximumForce;
     double  _minimumPreviewDuration;
+    double  _peekDecayAlpha;
+    double  _peekDecayingOffset;
     double  _popAlwaysThreshold;
     double  _popDecayingOffset;
     double  _popForceReductionThreshold;
@@ -32,12 +33,12 @@
     double  _previousTime;
     double  _progressToStrongThreshold;
     double  _revealThreshold;
+    double  _revealThresholdInitial;
     double  _saturationForce;
     bool  _shouldDelayReveal;
+    bool  _shouldPopLater;
     double  _smoothedForce;
     double  _standardThreshold;
-    double  _strongThreshold;
-    double  _timeMark;
 }
 
 @property (nonatomic) long long currentState;

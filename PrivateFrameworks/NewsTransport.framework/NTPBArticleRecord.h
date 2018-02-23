@@ -13,7 +13,6 @@
     int  _contentType;
     NSString * _contentURL;
     NSString * _coverArt;
-    NSString * _displayTopicTagID;
     NSString * _excerptURL;
     NSString * _flintDocumentURL;
     NSMutableArray * _flintFontResourceIDs;
@@ -80,6 +79,7 @@
     NSString * _thumbnailWidgetTaggedURL;
     NSString * _thumbnailWidgetURL;
     NSString * _title;
+    NSString * _titleCompact;
     NSMutableArray * _topics;
     double  _videoDuration;
     NSString * _videoURL;
@@ -95,7 +95,6 @@
 @property (nonatomic) int contentType;
 @property (nonatomic, retain) NSString *contentURL;
 @property (nonatomic, retain) NSString *coverArt;
-@property (nonatomic, retain) NSString *displayTopicTagID;
 @property (nonatomic, readonly) NSArray *endOfArticleTopicIDs;
 @property (nonatomic, retain) NSString *excerptURL;
 @property (nonatomic, retain) NSString *flintDocumentURL;
@@ -109,7 +108,6 @@
 @property (nonatomic) bool hasContentType;
 @property (nonatomic, readonly) bool hasContentURL;
 @property (nonatomic, readonly) bool hasCoverArt;
-@property (nonatomic, readonly) bool hasDisplayTopicTagID;
 @property (nonatomic, readonly) bool hasExcerptURL;
 @property (nonatomic, readonly) bool hasFlintDocumentURL;
 @property (nonatomic, readonly) bool hasGlobalCohort;
@@ -148,6 +146,7 @@
 @property (nonatomic, readonly) bool hasThumbnailWidgetTaggedURL;
 @property (nonatomic, readonly) bool hasThumbnailWidgetURL;
 @property (nonatomic, readonly) bool hasTitle;
+@property (nonatomic, readonly) bool hasTitleCompact;
 @property (nonatomic) bool hasVideoDuration;
 @property (nonatomic, readonly) bool hasVideoURL;
 @property (nonatomic, retain) NSMutableArray *iAdCategories;
@@ -190,6 +189,7 @@
 @property (nonatomic, retain) NSString *thumbnailWidgetTaggedURL;
 @property (nonatomic, retain) NSString *thumbnailWidgetURL;
 @property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSString *titleCompact;
 @property (nonatomic, readonly) NSArray *topicIDs;
 @property (nonatomic, retain) NSMutableArray *topics;
 @property (nonatomic) double videoDuration;
@@ -243,7 +243,6 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)displayTopicTagID;
 - (id)excerptURL;
 - (id)flintDocumentURL;
 - (id)flintFontResourceIDs;
@@ -258,7 +257,6 @@
 - (bool)hasContentType;
 - (bool)hasContentURL;
 - (bool)hasCoverArt;
-- (bool)hasDisplayTopicTagID;
 - (bool)hasExcerptURL;
 - (bool)hasFlintDocumentURL;
 - (bool)hasGlobalCohort;
@@ -297,6 +295,7 @@
 - (bool)hasThumbnailWidgetTaggedURL;
 - (bool)hasThumbnailWidgetURL;
 - (bool)hasTitle;
+- (bool)hasTitleCompact;
 - (bool)hasVideoDuration;
 - (bool)hasVideoURL;
 - (unsigned long long)hash;
@@ -337,7 +336,6 @@
 - (void)setContentType:(int)arg1;
 - (void)setContentURL:(id)arg1;
 - (void)setCoverArt:(id)arg1;
-- (void)setDisplayTopicTagID:(id)arg1;
 - (void)setExcerptURL:(id)arg1;
 - (void)setFlintDocumentURL:(id)arg1;
 - (void)setFlintFontResourceIDs:(id)arg1;
@@ -402,6 +400,7 @@
 - (void)setThumbnailWidgetTaggedURL:(id)arg1;
 - (void)setThumbnailWidgetURL:(id)arg1;
 - (void)setTitle:(id)arg1;
+- (void)setTitleCompact:(id)arg1;
 - (void)setTopics:(id)arg1;
 - (void)setVideoDuration:(double)arg1;
 - (void)setVideoURL:(id)arg1;
@@ -431,6 +430,7 @@
 - (id)thumbnailWidgetTaggedURL;
 - (id)thumbnailWidgetURL;
 - (id)title;
+- (id)titleCompact;
 - (id)topics;
 - (id)topicsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)topicsCount;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKJunction : NSObject <NSCoding> {
+@interface MKJunction : NSObject <NSSecureCoding> {
     unsigned long long  _count;
     int  _drivingSide;
     struct GEOJunctionElement { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; } * _elements;
@@ -12,6 +12,8 @@
 }
 
 @property (nonatomic, readonly) int type;
+
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

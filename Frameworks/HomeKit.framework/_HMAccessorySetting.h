@@ -34,6 +34,7 @@
 @property (copy) <NSCopying><NSSecureCoding> *value;
 
 + (id)logCategory;
++ (id)shortDescription;
 + (id)supportedConstraintClasses;
 + (id)supportedValueClasses;
 + (bool)supportsSecureCoding;
@@ -52,7 +53,10 @@
 - (id)constraints;
 - (id)context;
 - (void)dealloc;
+- (id)debugDescription;
 - (id)delegate;
+- (id)description;
+- (id)descriptionWithPointer:(bool)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
 - (id)identifier;
@@ -72,11 +76,15 @@
 - (id)propertyQueue;
 - (void)removeConstraint:(id)arg1;
 - (void)removeConstraint:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)replaceConstraints:(id)arg1 withConstraints:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)setAccessorySettings:(id)arg1;
+- (void)setConstraints:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setValue:(id)arg1;
+- (id)shortDescription;
 - (long long)type;
+- (void)updateConstraints:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)updateValue:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)value;
 

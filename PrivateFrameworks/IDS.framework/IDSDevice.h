@@ -7,6 +7,7 @@
 }
 
 @property (getter=isConnected, nonatomic, readonly) bool connected;
+@property (nonatomic, readonly) IDSDestination *destination;
 @property (nonatomic, readonly) NSString *deviceColor;
 @property (nonatomic, readonly) NSString *enclosureColor;
 @property (nonatomic, readonly) HMDDeviceCapabilities *hmd_capabilities;
@@ -57,6 +58,7 @@
 - (void)closeSocketForDomain:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)destination;
 - (id)deviceColor;
 - (id)enclosureColor;
 - (void)establishStreamPairWithOptions:(id)arg1 completionHandler:(id /* block */)arg2 onQueue:(id)arg3;

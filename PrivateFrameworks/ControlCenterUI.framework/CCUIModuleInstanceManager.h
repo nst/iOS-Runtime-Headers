@@ -31,6 +31,7 @@
 - (void)addObserver:(id)arg1;
 - (void)contentModuleContext:(id)arg1 enqueueStatusUpdate:(id)arg2;
 - (id)contextDelegate;
+- (void)dismissControlCenterForContentModuleContext:(id)arg1;
 - (void)dismissExpandedViewForContentModuleContext:(id)arg1;
 - (id)enabledModuleIdentifiers;
 - (void)loadableModulesChangedForModuleRepository:(id)arg1;

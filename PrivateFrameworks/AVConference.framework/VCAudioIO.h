@@ -70,6 +70,7 @@
 @property (getter=isMuted, nonatomic) bool muted;
 @property (getter=isOutputMeteringEnabled, nonatomic) bool outputMeteringEnabled;
 @property (nonatomic, readonly) unsigned int samplesPerFrame;
+@property (nonatomic, readonly) unsigned int state;
 @property (readonly) Class superclass;
 
 + (id)controllerForDeviceRole:(int)arg1;
@@ -105,6 +106,7 @@
 - (void)setOutputMeteringEnabled:(bool)arg1;
 - (void)setRemoteCodecType:(unsigned int)arg1 sampleRate:(double)arg2;
 - (void)startWithCompletionHandler:(id /* block */)arg1;
+- (unsigned int)state;
 - (void)stopWithCompletionHandler:(id /* block */)arg1;
 
 @end

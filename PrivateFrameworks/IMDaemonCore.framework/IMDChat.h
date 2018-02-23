@@ -165,6 +165,7 @@
 - (long long)state;
 - (void)storeAndBroadcastChatChanges;
 - (unsigned char)style;
+- (void)tearDownToneNotificationSessionIfNeeded;
 - (unsigned long long)unreadCount;
 - (void)updateCKRecordSystemPropertiesBlob:(id)arg1;
 - (void)updateCloudKitSyncState:(long long)arg1;

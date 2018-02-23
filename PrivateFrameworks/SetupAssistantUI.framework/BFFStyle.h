@@ -35,7 +35,7 @@
 - (double)screenHeaderFooterSideInsetForView:(id)arg1;
 - (double)screenHeaderHeightForView:(id)arg1;
 - (double)singleLineCellHeightForTable:(id)arg1;
-- (struct CGSize { double x1; double x2; })sizeForContinueButtonInParent:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeForContinueButtonInAncestor:(id)arg1;
 - (id)tableCellFont;
 - (double)tallRowHeight;
 

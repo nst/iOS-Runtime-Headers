@@ -6,6 +6,7 @@
 @required
 
 - (long long)_indexForStringIdentifier:(NSString *)arg1;
+- (bool)allowsQueueResetWhenReachingEnd;
 - (MPAVController *)avController;
 - (bool)canSeekItem:(MPAVItem *)arg1;
 - (bool)canSkipItem:(MPAVItem *)arg1;
@@ -38,7 +39,10 @@
 - (void)setCurrentIndex:(long long)arg1 selectionDirection:(long long)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setRepeatMode:(long long)arg1;
+- (void)setShouldDeferItemLoading:(bool)arg1;
+- (bool)shouldDeferItemLoading;
 - (long long)upNextItemCount;
 - (void)updateForSoundCheckDefaultsChange;
+- (void)updateLocationDependentPropertiesForItem:(MPAVItem *)arg1;
 
 @end

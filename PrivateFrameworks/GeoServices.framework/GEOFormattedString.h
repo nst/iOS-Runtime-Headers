@@ -42,6 +42,7 @@
 - (unsigned long long)formatStringsCount;
 - (id)formatTokens;
 - (unsigned long long)hash;
+- (id)initWithString:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;

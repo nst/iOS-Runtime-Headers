@@ -14,6 +14,8 @@
     NSArray * _fetchAttributes;
     NSString * _filterQuery;
     unsigned char  _flags;
+    /* Warning: Unrecognized filer type: 'T' using 'void*' */ void* _fuzzyMask;
+    /* Warning: Unrecognized filer type: 'T' using 'void*' */ void* _fuzzyMatch;
     NSString * _keyboardLanguage;
     NSArray * _markedTextArray;
     long long  _maxCount;
@@ -39,6 +41,8 @@
 @property (nonatomic, retain) NSArray *fetchAttributes;
 @property (nonatomic, retain) NSString *filterQuery;
 @property (nonatomic) unsigned char flags;
+@property (nonatomic) /* Warning: Unrecognized filer type: 'T' using 'void*' */ void*fuzzyMask;
+@property (nonatomic) /* Warning: Unrecognized filer type: 'T' using 'void*' */ void*fuzzyMatch;
 @property (nonatomic) bool grouped;
 @property (nonatomic) bool internal;
 @property (nonatomic, retain) NSString *keyboardLanguage;
@@ -75,6 +79,8 @@
 - (id)fetchAttributes;
 - (id)filterQuery;
 - (unsigned char)flags;
+- (/* Warning: Unrecognized filer type: 'T' using 'void*' */ void*)fuzzyMask;
+- (/* Warning: Unrecognized filer type: 'T' using 'void*' */ void*)fuzzyMatch;
 - (bool)grouped;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -104,6 +110,8 @@
 - (void)setFetchAttributes:(id)arg1;
 - (void)setFilterQuery:(id)arg1;
 - (void)setFlags:(unsigned char)arg1;
+- (void)setFuzzyMask:(/* Warning: Unrecognized filer type: 'T' using 'void*' */ void*)arg1;
+- (void)setFuzzyMatch:(/* Warning: Unrecognized filer type: 'T' using 'void*' */ void*)arg1;
 - (void)setGrouped:(bool)arg1;
 - (void)setInternal:(bool)arg1;
 - (void)setKeyboardLanguage:(id)arg1;

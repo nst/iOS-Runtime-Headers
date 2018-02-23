@@ -3,6 +3,7 @@
  */
 
 @interface FBApplicationPlaceholderProgress : NSObject <BSDescriptionProviding, BSInvalidatable, FBApplicationPlaceholderProgress> {
+    long long  _cancellationAllowed;
     unsigned long long  _installPhase;
     unsigned long long  _installState;
     int  _invalidated;
@@ -39,6 +40,7 @@
 - (double)percentComplete;
 - (id)placeholder;
 - (bool)queue_canPerformAction:(unsigned long long)arg1;
+- (bool)queue_isCancellationAllowed;
 - (bool)queue_isValid;
 - (unsigned long long)queue_supportedActions;
 - (bool)queue_updateProxy:(id)arg1;

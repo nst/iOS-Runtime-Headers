@@ -3,6 +3,7 @@
  */
 
 @interface NUStoragePoolStats : NSObject <NSCopying> {
+    long long  _discardedCount;
     long long  _migrationBytes;
     long long  _migrationCount;
     long long  _nonPurgeableBytes;
@@ -22,6 +23,7 @@
     long long  _volatileCount;
 }
 
+@property (nonatomic) long long discardedCount;
 @property (nonatomic) long long migrationBytes;
 @property (nonatomic) long long migrationCount;
 @property (nonatomic) long long nonPurgeableBytes;
@@ -46,6 +48,7 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (long long)discardedCount;
 - (long long)migrationBytes;
 - (long long)migrationCount;
 - (long long)nonPurgeableBytes;
@@ -61,6 +64,7 @@
 - (long long)reusedNonPurgeableCount;
 - (float)reusedRate;
 - (long long)reusedVolatileCount;
+- (void)setDiscardedCount:(long long)arg1;
 - (void)setMigrationBytes:(long long)arg1;
 - (void)setMigrationCount:(long long)arg1;
 - (void)setNonPurgeableBytes:(long long)arg1;

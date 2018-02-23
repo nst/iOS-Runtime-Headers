@@ -10,11 +10,12 @@
 @property (readonly) Class superclass;
 
 - (void)deferringReindexAsFailedToPrepareForReindexing;
-- (void)didNotFinishIndexingForDeltaSync:(id)arg1;
-- (void)didNotFinishIndexingForFullSync:(id)arg1;
+- (void)didNotFinishIndexingForDeltaSyncWithError:(id)arg1;
+- (void)didNotFinishIndexingForFullSyncWithError:(id)arg1;
 - (void)failedToBeginIndexBatchWithSpotlight:(id)arg1;
 - (void)failedToClearChangeHistory:(id)arg1 toChangeAnchor:(id)arg2 error:(id)arg3;
 - (void)failedToCreateSearchableItemForContactIdentifier:(id)arg1;
+- (void)failedToCreateUnarchiverForClientStateWithError:(id)arg1;
 - (void)failedToDeleteAllSearchableItemsWithSpotlight:(id)arg1 willRetry:(bool)arg2;
 - (void)failedToEndIndexBatchWithSpotlight:(id)arg1 willRetry:(bool)arg2;
 - (void)failedToFetchClientStateFromSpotlight:(id)arg1 willRetry:(bool)arg2;
@@ -23,12 +24,15 @@
 - (void)failedToJournalItemIdentifiersForDeletionWithSpotlight:(id)arg1 identifiers:(id)arg2 willRetry:(bool)arg3;
 - (void)failedToJournalSearchableItemsForIndexingWithSpotlight:(id)arg1 identifiers:(id)arg2 willRetry:(bool)arg3;
 - (void)failedToUnarchiveClientStateData:(id)arg1;
+- (void)finishedBatchIndexWithUpdateIdentifiers:(id)arg1 deleteIdentifiers:(id)arg2;
 - (void)finishedIndexingForDeltaSyncWithUpdateCount:(unsigned long long)arg1 deleteCount:(unsigned long long)arg2;
-- (void)finishedIndexingForFullSync;
+- (void)finishedIndexingForFullSyncWithCount:(unsigned long long)arg1;
 - (void)indexingContacts:(id /* block */)arg1;
 - (void)noContactChangesToIndex;
 - (void)reindexingAllSearchableItems:(id /* block */)arg1;
 - (void)reindexingSearchableItemsWithIdentifiers:(id /* block */)arg1;
+- (void)verifiedIndexWithSummmary:(id)arg1;
+- (void)verifyingIndex:(id /* block */)arg1;
 - (void)willBatchIndexForDeltaSyncWithUpdateCount:(unsigned long long)arg1 deleteCount:(unsigned long long)arg2;
 - (void)willBatchIndexForFullSyncWithCount:(unsigned long long)arg1 lastOffset:(long long)arg2 doneFullSync:(bool)arg3;
 - (void)willClearChangeHistory:(id)arg1 toChangeAnchor:(id)arg2;

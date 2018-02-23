@@ -7,6 +7,7 @@
     bool  _allowAuthentication;
     NSURL * _baseURL;
     NSString * _callerOverride;
+    NSXPCConnection * _connection;
     <WLKNetworkRequestOperationDelegate> * _delegate;
     bool  _encodeQueryParams;
     NSString * _endpoint;
@@ -19,6 +20,7 @@
     id /* block */  _requestCompletionBlock;
     bool  _requiresMescal;
     id  _response;
+    bool  _runsInDaemon;
     NSString * _serverRouteKey;
     NSDictionary * _serverRouteReplacements;
     double  _timeout;
@@ -40,14 +42,18 @@
 @property (nonatomic, copy) id /* block */ requestCompletionBlock;
 @property (nonatomic) bool requiresMescal;
 @property (nonatomic, readonly) id response;
+@property (nonatomic) bool runsInDaemon;
 @property (nonatomic, readonly, copy) NSString *serverRouteKey;
 @property (nonatomic, readonly, copy) NSDictionary *serverRouteReplacements;
 @property (nonatomic, readonly) double timeout;
 
 + (id)_defaultBaseURL;
++ (void)_networkRequest:(id)arg1 completion:(id /* block */)arg2;
++ (void)logNetworkHeaders:(id)arg1 identifier:(id)arg2;
 + (unsigned long long)preferredCachePolicy;
 
 - (void).cxx_destruct;
+- (id)_connection;
 - (void)_didFailWithError:(id)arg1;
 - (void)_didFinishWithResponse:(id)arg1;
 - (void)_failWithError:(id)arg1;
@@ -83,6 +89,7 @@
 - (bool)requiresMescal;
 - (id)response;
 - (id)responseProcessor;
+- (bool)runsInDaemon;
 - (id)serverRouteKey;
 - (id)serverRouteReplacements;
 - (void)setAdditionalHeaderFields:(id)arg1;
@@ -93,6 +100,7 @@
 - (void)setEncodeQueryParams:(bool)arg1;
 - (void)setRequestCompletionBlock:(id /* block */)arg1;
 - (void)setRequiresMescal:(bool)arg1;
+- (void)setRunsInDaemon:(bool)arg1;
 - (double)timeout;
 
 @end

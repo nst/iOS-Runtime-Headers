@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WiFiKitUI.framework/WiFiKitUI
  */
 
-@interface WFOtherNetworkViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, WFAccessoryViewController> {
+@interface WFOtherNetworkViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, WFAccessoryViewController> {
     NSArray * _TLSIdentities;
     struct __SecIdentity { } * _TLSIdentity;
     bool  _WAPIEnabled;
@@ -152,6 +152,7 @@
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (void)textFieldDidBeginEditing:(id)arg1;
 - (id)username;
 - (id)usernameCell;
 - (void)viewDidAppear:(bool)arg1;

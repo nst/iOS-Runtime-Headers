@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDEventTriggerUserConfirmationSession : HMDEventTriggerSession <HMFDumpState, HMFLogging, HMFMessageReceiver, HMFTimerDelegate> {
+@interface HMDEventTriggerUserConfirmationSession : HMDEventTriggerSession <HMDHomeMessageReceiver, HMFDumpState, HMFLogging, HMFTimerDelegate> {
     HMDEventTriggerExecutionSession * _executionSession;
     HomeKitEventTriggerUserConfirmationReceiverSessionEvent * _metricEvent;
     NSMutableArray * _metricSendEvents;
@@ -15,6 +15,7 @@
 @property (nonatomic) HMDEventTriggerExecutionSession *executionSession;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (readonly, copy) NSSet *messageReceiverChildren;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, retain) HomeKitEventTriggerUserConfirmationReceiverSessionEvent *metricEvent;
 @property (nonatomic, retain) NSMutableArray *metricSendEvents;

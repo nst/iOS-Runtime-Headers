@@ -24,6 +24,10 @@
     NSString * _lookupFirstUseDescription2;
     NSString * _lookupFirstUseLearnMore;
     PRSRankingServerKnobs * _ranking_server_knobs;
+    NSObject<OS_dispatch_queue> * _resourceFetchQueue;
+    NSMutableDictionary * _resourceMetadata;
+    bool  _resourceMetadataNeedsWrite;
+    NSString * _resourceMetadataPath;
     double  _searchRenderTimeout;
     long long  _status;
     NSArray * _suggestionRankerModelParams;
@@ -49,6 +53,10 @@
 @property (nonatomic, readonly) NSString *lookupFirstUseDescription2;
 @property (nonatomic, readonly) NSString *lookupFirstUseLearnMore;
 @property (retain) PRSRankingServerKnobs *ranking_server_knobs;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *resourceFetchQueue;
+@property (nonatomic, retain) NSMutableDictionary *resourceMetadata;
+@property (nonatomic) bool resourceMetadataNeedsWrite;
+@property (nonatomic, retain) NSString *resourceMetadataPath;
 @property (readonly) double searchRenderTimeout;
 @property (nonatomic) long long status;
 @property (nonatomic, retain) NSArray *suggestionRankerModelParams;
@@ -73,6 +81,7 @@
 - (bool)disableAsTypedSuggestion;
 - (id)enabledDomains;
 - (id)excludedDomainIdentifiers;
+- (void)fetchModifiedResourceFromSession:(id)arg1 resource:(id)arg2 completion:(id /* block */)arg3;
 - (id)fteContinueString;
 - (id)fteLearnMoreString;
 - (id)fteLocString;
@@ -88,6 +97,10 @@
 - (id)ranking_server_knobs;
 - (void)refreshGUID;
 - (void)removeTask:(id)arg1;
+- (id)resourceFetchQueue;
+- (id)resourceMetadata;
+- (bool)resourceMetadataNeedsWrite;
+- (id)resourceMetadataPath;
 - (double)searchRenderTimeout;
 - (bool)searchSupported:(bool)arg1;
 - (bool)sessionReady;
@@ -104,6 +117,10 @@
 - (void)setFteLearnMoreString:(id)arg1;
 - (void)setFteLocString:(id)arg1;
 - (void)setRanking_server_knobs:(id)arg1;
+- (void)setResourceFetchQueue:(id)arg1;
+- (void)setResourceMetadata:(id)arg1;
+- (void)setResourceMetadataNeedsWrite:(bool)arg1;
+- (void)setResourceMetadataPath:(id)arg1;
 - (void)setStatus:(long long)arg1;
 - (void)setSuggestionRankerModelParams:(id)arg1;
 - (void)setUse2LayerRanking:(bool)arg1;

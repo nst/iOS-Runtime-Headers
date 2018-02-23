@@ -13,8 +13,9 @@
 @property struct _PCSIdentitySetData { }*set;
 
 - (void).cxx_destruct;
-- (id)createIdentityOperation:(id)arg1 roll:(bool)arg2;
+- (id)createIdentityOperation:(id)arg1;
 - (void)createNewIdentity:(id)arg1 roll:(bool)arg2 complete:(id /* block */)arg3;
+- (void)createNewIdentity:(id)arg1 roll:(bool)arg2 sync:(bool)arg3 complete:(id /* block */)arg4;
 - (void)dealloc;
 - (id)dsid;
 - (id)ensurePCSFieldsOperation:(id)arg1;
@@ -25,8 +26,9 @@
 - (void)setDsid:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setSet:(struct _PCSIdentitySetData { }*)arg1;
+- (bool)shouldRetryWithSync:(id)arg1;
 - (id)stripOperationErrorIfPCSError:(id)arg1;
+- (void)submitRequest:(id)arg1 complete:(id /* block */)arg2;
 - (id)syncViewOperation:(id)arg1;
-- (void)syncWithServer:(id)arg1 complete:(id /* block */)arg2;
 
 @end

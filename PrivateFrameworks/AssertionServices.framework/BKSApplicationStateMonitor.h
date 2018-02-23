@@ -23,7 +23,9 @@
 
 - (id)_connection;
 - (void)_setEndpoint:(id)arg1;
+- (id)applicationInfoForApplication:(id)arg1;
 - (void)applicationInfoForApplication:(id)arg1 completion:(id /* block */)arg2;
+- (id)applicationInfoForPID:(int)arg1;
 - (void)applicationInfoForPID:(int)arg1 completion:(id /* block */)arg2;
 - (unsigned int)applicationStateForApplication:(id)arg1;
 - (id)bundleInfoValueForKey:(id)arg1 PID:(int)arg2;

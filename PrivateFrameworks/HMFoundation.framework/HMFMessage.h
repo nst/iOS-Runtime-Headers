@@ -11,6 +11,7 @@
 @property (getter=isAuthorizedForLocationAccess, nonatomic, readonly) bool authorizedForLocationAccess;
 @property (getter=isAuthorizedForMicrophoneAccess, nonatomic, readonly) bool authorizedForMicrophoneAccess;
 @property (getter=isBackground, nonatomic, readonly) bool background;
+@property (readonly) NSString *clientName;
 @property (nonatomic, readonly, copy) NSString *companionAppBundleIdentifier;
 @property (nonatomic, retain) HMFMessageDestination *destination;
 @property (nonatomic, readonly, copy) NSString *effectiveLocationBundleIdentifier;
@@ -24,13 +25,17 @@
 @property (getter=isLocationAuthorized, nonatomic, readonly) bool locationAuthorized;
 @property (nonatomic, copy) NSDictionary *messagePayload;
 @property (nonatomic, readonly, copy) NSString *name;
+@property (readonly) HMDConnectionProxy *proxyConnection;
 @property (nonatomic, readonly) long long qualityOfService;
 @property (getter=isRemote, nonatomic, readonly) bool remote;
+@property (nonatomic, readonly) unsigned long long remoteRestriction;
 @property (nonatomic, readonly) HMDDevice *remoteSourceDevice;
 @property (nonatomic, readonly) NSString *remoteSourceID;
 @property (nonatomic, readonly) HAPPairingIdentity *remoteUserPairingIdentity;
+@property (nonatomic, readonly) bool requiresNoSPIEntitlement;
 @property (nonatomic, readonly) bool requiresSPIEntitlement;
 @property (nonatomic, copy) id /* block */ responseHandler;
+@property (getter=isSecureRemote, nonatomic, readonly) bool secureRemote;
 @property (nonatomic, readonly) int sourcePid;
 @property (nonatomic, readonly, copy) NSString *teamIdentifier;
 @property (nonatomic, readonly) HMFMessageTransport *transport;
@@ -101,9 +106,11 @@
 + (id)internalMessageWithName:(id)arg1 messagePayload:(id)arg2;
 + (id)internalMessageWithName:(id)arg1 messagePayload:(id)arg2 responseHandler:(id /* block */)arg3;
 + (id)locationAuthorizedMessageWithName:(id)arg1 messagePayload:(id)arg2;
++ (id)nonSPIEntitledMessageWithName:(id)arg1 messagePayload:(id)arg2;
 
 - (bool)_supportsFeature:(unsigned long long)arg1 forCapabilitiesKey:(id)arg2;
 - (id)applicationBundleIdentifier;
+- (id)clientName;
 - (id)companionAppBundleIdentifier;
 - (id)effectiveLocationBundleIdentifier;
 - (bool)isAuthorizedForHomeDataAccess;
@@ -116,10 +123,13 @@
 - (bool)isInternal;
 - (bool)isLocationAuthorized;
 - (bool)isRemote;
+- (bool)isSecureRemote;
 - (id)proxyConnection;
+- (unsigned long long)remoteRestriction;
 - (id)remoteSourceDevice;
 - (id)remoteSourceID;
 - (id)remoteUserPairingIdentity;
+- (bool)requiresNoSPIEntitlement;
 - (bool)requiresSPIEntitlement;
 - (int)sourcePid;
 - (bool)supportsRequestedFeature:(unsigned long long)arg1;

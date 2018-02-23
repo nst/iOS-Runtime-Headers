@@ -19,9 +19,13 @@
 @property (readonly) NSArray *users;
 
 - (void).cxx_destruct;
+- (void)_fetchObjects:(bool)arg1 migration:(bool)arg2 result:(id /* block */)arg3;
 - (id)dumpDebug;
+- (void)fetchAllObjects:(id /* block */)arg1;
+- (void)fetchMigratedObjects:(id /* block */)arg1;
 - (id)group;
 - (id)initWithShareID:(long long)arg1 group:(id)arg2 rootRecord:(id)arg3 targetOwner:(id)arg4 share:(id)arg5 users:(id)arg6;
+- (void)markAsMigrated:(id /* block */)arg1;
 - (id)rootRecordName;
 - (void)setShareID:(long long)arg1;
 - (id)share;

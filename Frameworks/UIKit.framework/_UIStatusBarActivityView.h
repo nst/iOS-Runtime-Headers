@@ -12,6 +12,7 @@
     double  _thickness;
 }
 
+@property (nonatomic, readonly) UIAccessibilityHUDItem *accessibilityHUDRepresentation;
 @property (nonatomic, retain) CAGradientLayer *barLayer;
 @property (nonatomic, readonly) double baselineOffset;
 @property (nonatomic, copy) UIColor *color;

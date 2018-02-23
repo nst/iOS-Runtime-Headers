@@ -36,6 +36,7 @@
 - (bool)cancelForReason:(id)arg1 error:(id*)arg2;
 - (unsigned long long)creatorIdentifier;
 - (void)dealloc;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)error;
 - (id)errorOccurred;

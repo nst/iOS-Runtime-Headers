@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDPresenceEvent : HMDEvent <HMDTriggerEventProtocol, HMFDumpState, HMFLogging, HMFMessageReceiver, NSSecureCoding> {
+@interface HMDPresenceEvent : HMDEvent <HMDHomeMessageReceiver, HMDTriggerEventProtocol, HMFDumpState, HMFLogging, NSSecureCoding> {
     HMPresenceEventActivation * _activation;
     bool  _currentStatus;
     HMDEventTriggerExecutionSession * _executionSession;
@@ -19,6 +19,7 @@
 @property (nonatomic) HMDEventTriggerExecutionSession *executionSession;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (readonly, copy) NSSet *messageReceiverChildren;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, retain) NSString *presenceType;
 @property (readonly) Class superclass;

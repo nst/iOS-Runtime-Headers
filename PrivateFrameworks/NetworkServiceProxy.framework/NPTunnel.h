@@ -16,6 +16,7 @@
     NSUUID * _identifier;
     void * _idleTimer;
     bool  _isCancelled;
+    bool  _isReadyForData;
     bool  _isTFOProbeSucceeded;
     NSObject<OS_nw_endpoint> * _localEndpoint;
     NSObject<OS_nw_parameters> * _parameters;
@@ -54,6 +55,7 @@
 @property (readonly) unsigned long long initialWindowSize;
 @property bool isCancelled;
 @property (readonly) bool isConnectionAlive;
+@property bool isReadyForData;
 @property (readonly) bool isTFOProbeSucceeded;
 @property (retain) NSObject<OS_nw_endpoint> *localEndpoint;
 @property (readonly) NSObject<OS_nw_interface> *outputInterface;
@@ -111,6 +113,7 @@
 - (unsigned long long)initialWindowSize;
 - (bool)isCancelled;
 - (bool)isConnectionAlive;
+- (bool)isReadyForData;
 - (bool)isTFOProbeSucceeded;
 - (id)localEndpoint;
 - (unsigned long long)maxDataSendSizeForFlow:(id)arg1;
@@ -132,6 +135,7 @@
 - (void)setHandledDisconnected:(bool)arg1;
 - (void)setIdleTimer:(void*)arg1;
 - (void)setIsCancelled:(bool)arg1;
+- (void)setIsReadyForData:(bool)arg1;
 - (void)setLocalEndpoint:(id)arg1;
 - (void)setPath:(id)arg1;
 - (void)setPersistMetrics:(bool)arg1;

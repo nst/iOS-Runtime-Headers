@@ -16,6 +16,7 @@
     NSObject<OS_dispatch_queue> * _internalQueue;
     bool  _isAdvertising;
     bool  _isEnabled;
+    bool  _isP2PAllowed;
     bool  _isScanning;
     /* Warning: unhandled struct encoding: '{OpaqueAPAdvertiserBTLEManager={__CFRuntimeBase=QAQ}@}' */ struct OpaqueAPAdvertiserBTLEManager { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned long long x_1_1_2; } x1; id x2; } * _managerRef;
     bool  _p2pSolo;
@@ -79,8 +80,10 @@
 - (void)setEventHandlerFunc:(int (*)arg1;
 - (void)setIsAdvertising:(bool)arg1;
 - (void)setIsEnabled:(bool)arg1;
+- (int)setIsP2PAllowed:(bool)arg1;
 - (void)setIsScanning:(bool)arg1;
 - (void)setManagerRef:(/* Warning: unhandled struct encoding: '{OpaqueAPAdvertiserBTLEManager={__CFRuntimeBase=QAQ}@}' */ struct OpaqueAPAdvertiserBTLEManager { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned long long x_1_1_2; } x1; id x2; }*)arg1;
+- (int)setProperty:(id)arg1 withValue:(id)arg2;
 - (void)setScStore:(struct __SCDynamicStore { }*)arg1;
 - (void)setSeed:(unsigned char)arg1;
 - (void)setSoloDevices:(id)arg1;

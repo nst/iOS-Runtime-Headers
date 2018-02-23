@@ -3,8 +3,6 @@
  */
 
 @interface HMDRemoteMessage : HMFMessage {
-    unsigned long long  _restriction;
-    bool  _secure;
     HMDHomeKitVersion * _sourceVersion;
     double  _timeout;
     NSUUID * _transactionIdentifier;

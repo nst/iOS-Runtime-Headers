@@ -36,6 +36,7 @@
 - (void)__handleReceivedExchangeData:(id)arg1;
 - (void)__registerForMessages;
 - (void)_closeWithError:(id)arg1;
+- (void)_handleDisconnection:(id)arg1;
 - (void)_handleOpenedSession;
 - (void)_reallySendExchangeData:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)clientQueue;

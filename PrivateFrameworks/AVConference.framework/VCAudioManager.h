@@ -41,6 +41,7 @@
 @property (getter=isMicrophoneMuted, nonatomic) bool microphoneMuted;
 @property (getter=isSpeakerPhoneEnabled, nonatomic) bool speakerPhoneEnabled;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) NSDictionary *vpOperatingModeToAudioSessionMediaFormatMapping;
 
 + (id)sharedInstance;
 
@@ -50,7 +51,6 @@
 - (bool)addClient:(id)arg1;
 - (void)addSinkClient:(id)arg1;
 - (void)addSourceClient:(id)arg1;
-- (void)computeHardwarePreferences;
 - (id)currentAudioSessionMediaProperties;
 - (id)currentAudioUnitProperties;
 - (id)currentInputDevice;
@@ -105,6 +105,7 @@
 - (void)stopClient:(id)arg1;
 - (void)updateClient:(id)arg1;
 - (bool)updateStateWithAudioIOClient:(id)arg1;
+- (id)vpOperatingModeToAudioSessionMediaFormatMapping;
 - (unsigned int)vpOperationModeForConferenceOperatingMode:(int)arg1 deviceRole:(int)arg2;
 
 @end

@@ -6,6 +6,7 @@
     bool  _activateCalled;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     int  _finishState;
+    bool  _homeKitDoFullSetup;
     SFDeviceOperationHomeKitSetup * _homeKitSetup;
     int  _homeKitState;
     int  _infoExchangeState;

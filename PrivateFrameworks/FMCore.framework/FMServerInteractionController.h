@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FMCore.framework/FMCore
  */
 
-@interface FMServerInteractionController : NSObject <NSURLSessionDelegate, NSURLSessionTaskDelegate> {
+@interface FMServerInteractionController : NSObject <NSURLSessionDelegate> {
     NSOperationQueue * _queue;
     NSURLSession * _session;
     NSURLSessionConfiguration * _sessionConfiguration;
@@ -19,6 +19,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
 - (double)_simulatedLatency;
 - (void)cancelAllCommands;
 - (void)cancelCommand:(id)arg1;

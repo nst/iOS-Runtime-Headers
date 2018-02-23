@@ -75,7 +75,7 @@
 - (id)_findGroupableMatchingBlock:(id /* block */)arg1 inElementGroup:(id)arg2;
 - (id)_findGroupableMatchingGroupable:(id)arg1 inElementGroup:(id)arg2;
 - (id)_groupWithDictionary:(id)arg1 currentPid:(int)arg2;
-- (id)_groupWithItems:(id)arg1 groupTraits:(unsigned long long)arg2 scanningBehaviorTraits:(unsigned long long)arg3 label:(id)arg4 currentPid:(int)arg5;
+- (id)_groupWithItems:(id)arg1 groupTraits:(unsigned long long)arg2 scanningBehaviorTraits:(unsigned long long)arg3 label:(id)arg4 identifier:(id)arg5 currentPid:(int)arg6;
 - (void)_handleApplicationWasActivated:(id)arg1;
 - (void)_handleMediaDidBegin:(struct __CFData { }*)arg1;
 - (void)_handleNativeFocusItemDidChange:(struct __CFData { }*)arg1;

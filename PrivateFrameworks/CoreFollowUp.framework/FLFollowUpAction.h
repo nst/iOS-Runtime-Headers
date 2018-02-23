@@ -3,6 +3,7 @@
  */
 
 @interface FLFollowUpAction : NSObject <NSSecureCoding> {
+    unsigned long long  _eventSource;
     NSString * _identifier;
     NSString * _label;
     NSData * _launchActionArguments;
@@ -13,6 +14,7 @@
 }
 
 @property (nonatomic, retain) NSData *_userInfoData;
+@property (nonatomic) unsigned long long eventSource;
 @property (nonatomic, copy) NSString *identifier;
 @property (copy) NSString *label;
 @property (nonatomic, copy) NSData *launchActionArguments;
@@ -29,12 +31,14 @@
 - (id)_userInfoData;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)eventSource;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLabel:(id)arg1 url:(id)arg2;
 - (id)label;
 - (id)launchActionArguments;
 - (id)launchActionURL;
+- (void)setEventSource:(unsigned long long)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setLaunchActionArguments:(id)arg1;

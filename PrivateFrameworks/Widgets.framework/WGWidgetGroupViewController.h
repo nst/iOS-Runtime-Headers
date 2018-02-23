@@ -34,7 +34,6 @@
 - (void)_loadWidgetListViewController;
 - (id)_scrollViewForListViewController:(id)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentOccludingInset;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentOccludingInsetForWidgetListViewController:(id)arg1;
 - (id)delegate;
 - (void)editViewDidAppear:(id)arg1;
 - (void)editViewDidDisappear:(id)arg1;
@@ -71,6 +70,7 @@
 - (unsigned long long)widgetCount;
 - (void)widgetDiscoveryController:(id)arg1 widgetWithIdentifier:(id)arg2 shouldBecomeHiddenInGroup:(id)arg3;
 - (void)widgetDiscoveryController:(id)arg1 widgetWithIdentifier:(id)arg2 shouldBecomeVisibleInGroup:(id)arg3;
-- (id)widgetListViewController:(id)arg1 newCustomBackgroundViewForItemInList:(id)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })widgetListViewController:(id)arg1 contentOccludingInsetsForInterfaceOrientation:(long long)arg2;
+- (struct CGSize { double x1; double x2; })widgetListViewController:(id)arg1 sizeForInterfaceOrientation:(long long)arg2;
 
 @end

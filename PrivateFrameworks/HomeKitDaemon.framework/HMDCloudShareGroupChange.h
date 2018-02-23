@@ -53,6 +53,7 @@
 - (id)objectChanges;
 - (id)processedTransactionStoreRowIDs;
 - (void)removeChangeWithObjectID:(id)arg1;
+- (void)resetRecordWithRecordID:(id)arg1;
 - (id)rootRecordModelObject;
 - (void)setChangedObjectIDs:(id)arg1;
 - (void)setChangedRecordNames:(id)arg1;

@@ -11,7 +11,6 @@
     NSObject<OS_dispatch_queue> * _callbackQueue;
     ICUserIdentityStoreCoding * _codingHelper;
     ICDelegateAccountStore * _delegateAccountStore;
-    bool  _delegateAccountStoreDidOpenOnce;
     NSError * _delegateAccountStoreError;
     ICDelegateAccountStoreOptions * _delegateAccountStoreOptions;
 }
@@ -30,20 +29,23 @@
 
 - (void).cxx_destruct;
 - (bool)_allowsDelegationForUserIdentity:(id)arg1;
+- (void)_delegateAccountStoreDidChangeNotification:(id)arg1;
 - (id)_delegateAccountStorePath;
-- (void)_dispatchDidChange:(bool)arg1 result:(bool)arg2 error:(id)arg3 handler:(id /* block */)arg4;
+- (void)_dispatchDidChange:(bool)arg1 didDelegateAccountStoreChange:(bool)arg2 result:(bool)arg3 error:(id)arg4 handler:(id /* block */)arg5;
 - (id)_dsidForTimestamp:(unsigned long long)arg1 history:(id)arg2;
 - (id)_dsidForUserIdentity:(id)arg1;
 - (id)_existingIdentityPropertiesForUserIdentity:(id)arg1;
 - (void)_importValuesFromCodingHelper:(id)arg1;
 - (id)_initCommon;
 - (id)_initWithStyle:(long long)arg1 delegateAccountStoreOptions:(id)arg2;
-- (void)_openDelegateAccountStoreOnce;
-- (void)_openDelegateAccountStoreOnceIfNecessaryForUserIdentity:(id)arg1;
+- (void)_openDelegateAccountStoreIfNeeded;
+- (void)_openDelegateAccountStoreIfNeededIfNecessaryForUserIdentity:(id)arg1;
 - (void)_prepareDelegateAccountStoreWithCompletionHandler:(id /* block */)arg1;
+- (void)_registerForDelegateAccountStoreNotifications:(id)arg1;
 - (void)_reloadForExternalChange;
 - (void)_resetDelegateAccountStoreWithCompletionHandler:(id /* block */)arg1;
 - (void)_saveIdentityProperties:(id)arg1 forUserIdentity:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_unregisterForDelegateAccountStoreNotifications:(id)arg1;
 - (id)_unsafeBackend;
 - (void)_unsafe_deleteDelegateAccountStore;
 - (void)_updateDelegateAccountStoreUsingBlock:(id /* block */)arg1;

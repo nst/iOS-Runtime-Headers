@@ -7,6 +7,7 @@
     ICQUpgradeOfferViewController * _busyOfferViewController;
     bool  _completedFamilySetup;
     <ICQUpgradeFlowManagerDelegate> * _delegate;
+    ICQUpgradeFlowOptions * _flowOptions;
     UINavigationController * _hostingNavigationController;
     ICQOffer * _offer;
     bool  _shouldNavigationControllerBeDismissed;
@@ -18,6 +19,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <ICQUpgradeFlowManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, copy) ICQUpgradeFlowOptions *flowOptions;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UINavigationController *hostingNavigationController;
 @property (nonatomic, readonly) ICQOffer *offer;
@@ -52,6 +54,7 @@
 - (id)bindings;
 - (bool)completedFamilySetup;
 - (id)delegate;
+- (id)flowOptions;
 - (id)hostingNavigationController;
 - (id)init;
 - (id)initBaseclassWithOffer:(id)arg1;
@@ -62,10 +65,10 @@
 - (id)offer;
 - (void)presentFlowHostedInNavigationController:(id)arg1;
 - (void)sender:(id)arg1 action:(long long)arg2 parameters:(id)arg3;
-- (double)senderGetTopMargin:(id)arg1;
 - (void)setBindings:(id)arg1;
 - (void)setCompletedFamilySetup:(bool)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setFlowOptions:(id)arg1;
 - (void)setHostingNavigationController:(id)arg1;
 - (void)setShouldNavigationControllerBeDismissed:(bool)arg1;
 - (void)setUpgradeAlertController:(id)arg1;

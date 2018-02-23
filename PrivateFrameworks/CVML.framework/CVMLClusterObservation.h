@@ -3,6 +3,7 @@
  */
 
 @interface CVMLClusterObservation : CVMLObservation {
+    NSArray * _clusterCacheFileNames;
     NSData * _clusterState;
     NSSet * _clusteredFaceIds;
     NSArray * _clusters;
@@ -13,6 +14,7 @@
     NSArray * _suggestionsForCluster;
 }
 
+@property (retain) NSArray *clusterCacheFileNames;
 @property (retain) NSData *clusterState;
 @property (retain) NSSet *clusteredFaceIds;
 @property (retain) NSArray *clusters;
@@ -23,6 +25,7 @@
 @property (retain) NSArray *suggestionsForCluster;
 
 - (void).cxx_destruct;
+- (id)clusterCacheFileNames;
 - (id)clusterState;
 - (id)clusteredFaceIds;
 - (id)clusters;
@@ -30,6 +33,7 @@
 - (id)distances;
 - (id)distancesById;
 - (id)groupedClusteredFaceIdsForCluster;
+- (void)setClusterCacheFileNames:(id)arg1;
 - (void)setClusterState:(id)arg1;
 - (void)setClusteredFaceIds:(id)arg1;
 - (void)setClusters:(id)arg1;

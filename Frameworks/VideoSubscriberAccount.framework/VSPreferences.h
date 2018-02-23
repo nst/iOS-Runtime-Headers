@@ -22,13 +22,14 @@
 
 - (void).cxx_destruct;
 - (void)_updateShouldSkipSetupWithNumber:(id)arg1;
+- (void)_updateValue:(id)arg1 forKey:(id)arg2;
 - (long long)cachedAvailabilityStatus;
 - (long long)cachedDeveloperProviderStatus;
 - (long long)cachedStoreProviderStatus;
 - (id)device;
-- (bool)hasAcknowledgedUnsupportedIdentityProvider:(id)arg1;
+- (bool)hasChosenDesiredApp;
 - (bool)hasSentWelcomeMessage;
-- (void)noteDidAcknowledgeUnsupportedIdentityProvider:(id)arg1;
+- (void)noteDesiredApp:(id)arg1;
 - (void)noteDidSendWelcomeMessage;
 - (void)noteShouldSkipSetup;
 - (id)overridingAppBootURL;

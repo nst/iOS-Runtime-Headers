@@ -174,6 +174,7 @@
 - (id)_presentedViewControllerForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (bool)_preserveResponderAcrossWindows;
 - (void)_releaseSnapshot;
+- (id)_rootPresentingViewControllerForNestedPresentation;
 - (void)_sendDelegateWillPresentWithAdaptiveStyle:(long long)arg1 transitionCoordinator:(id)arg2;
 - (void)_sendPresentationControllerNotification:(id)arg1;
 - (void)_setAdaptiveTransitionContext:(id)arg1;

@@ -42,6 +42,8 @@
         bool respondsToPreviewScrubberDidBecomeAvailable; 
         bool respondsToShouldAutoPlay; 
         bool respondsToPreventRevealInMomentAction; 
+        bool respondsToPreferredPresentationOrientation; 
+        bool respondsToEnableFreezeLayoutOnOrientationChange; 
     }  _delegateFlags;
     struct { 
         bool presentationInfo; 
@@ -91,6 +93,7 @@
 - (id)_cameraPreviewTransitionDelegate;
 - (void)_cleanUpAfterTilingViewTransitionAnimated:(bool)arg1;
 - (void)_cleanupOneUpViewControllerForDismissalIfNeeded;
+- (void)_configureNavigationController:(id)arg1;
 - (id)_createOneUpViewControllerWithBrowsingSession:(id)arg1 options:(unsigned long long)arg2;
 - (long long)_currentNavigationControllerOperation;
 - (id)_currentTilingViewControllerTransition;
@@ -138,6 +141,7 @@
 - (long long)_state;
 - (id)_tapGestureRecognizer;
 - (id)_tilingView;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_tilingViewTransitionTransform;
 - (id)_transitionHostingView;
 - (id)_transitioningTilingView;
 - (void)_updateAssetReferencesDisplayedInTilingView;
@@ -205,6 +209,7 @@
 - (long long)tilingViewControllerTransitionPreferredBarStyle:(id)arg1;
 - (id)tilingViewControllerTransitionTilingViewHostView:(id)arg1;
 - (bool)tilingViewControllerTransitionUsesTransientTilingView:(id)arg1;
+- (void)tilingViewControllerTransitionWasAborted:(id)arg1;
 - (void)tilingViewDidEndAnimatingTileControllers:(id)arg1;
 - (void)tilingViewDidUpdateTileControllers:(id)arg1;
 - (long long)transitionType;

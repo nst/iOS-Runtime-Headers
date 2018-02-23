@@ -99,6 +99,7 @@
 - (double)throttleDelay;
 - (id)tokens;
 - (void)updateActionItem:(id)arg1 withDefaultAction:(id)arg2;
+- (void)updateDesiredTitleFontSizeIfNeeded;
 - (void)updateVisibleActionItems:(id)arg1;
 - (void)viewDidLoad;
 - (long long)viewStyle;

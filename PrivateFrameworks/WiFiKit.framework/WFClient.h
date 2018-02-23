@@ -17,8 +17,10 @@
     bool  _networkRestrictionActive;
     bool  _powered;
     NSNumber * _rssiThresholdNumber;
+    NSObject<OS_dispatch_queue> * _serialClientQueue;
     bool  _showAllHS20Networks;
     bool  _userAutoJoinState;
+    NSString * _whitelistingUUID;
     bool  _wiFiHealthUIDisabled;
 }
 
@@ -36,8 +38,10 @@
 @property (getter=isNetworkRestrictionActive, nonatomic) bool networkRestrictionActive;
 @property bool powered;
 @property (retain) NSNumber *rssiThresholdNumber;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *serialClientQueue;
 @property bool showAllHS20Networks;
 @property (nonatomic) bool userAutoJoinState;
+@property (nonatomic, readonly) NSString *whitelistingUUID;
 @property (getter=isWiFiHealthUIDisabled) bool wiFiHealthUIDisabled;
 
 + (id)sharedInstance;
@@ -89,6 +93,7 @@
 - (void)reloadConfiguration;
 - (long long)rssiThreshold;
 - (id)rssiThresholdNumber;
+- (id)serialClientQueue;
 - (void)setAirplaneModeBehavior:(unsigned long long)arg1;
 - (void)setAskToJoinEnabled:(bool)arg1;
 - (void)setAutoJoinEnabled:(bool)arg1;
@@ -105,11 +110,13 @@
 - (void)setNetworkRestrictionActive:(bool)arg1;
 - (void)setPowered:(bool)arg1;
 - (void)setRssiThresholdNumber:(id)arg1;
+- (void)setSerialClientQueue:(id)arg1;
 - (void)setShowAllHS20Networks:(bool)arg1;
 - (void)setUserAutoJoinState:(bool)arg1;
 - (void)setWAPIEnabled:(bool)arg1;
 - (void)setWiFiHealthUIDisabled:(bool)arg1;
 - (bool)showAllHS20Networks;
 - (bool)userAutoJoinState;
+- (id)whitelistingUUID;
 
 @end

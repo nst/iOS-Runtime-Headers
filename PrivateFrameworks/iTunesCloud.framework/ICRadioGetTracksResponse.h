@@ -13,7 +13,7 @@
 
 - (void).cxx_destruct;
 - (id)assetExpirationDate;
-- (id)initWithURLResponse:(id)arg1;
+- (id)initWithResponseDictionary:(id)arg1 expirationDate:(id)arg2;
 - (id)stationMetadata;
 - (long long)tracklistActionType;
 - (id)tracks;

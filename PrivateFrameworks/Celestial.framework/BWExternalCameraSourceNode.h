@@ -43,6 +43,7 @@
 - (id)detectedFacesOutput;
 - (bool)detectedFacesOutputEnabled;
 - (int)livePreviewFormatIndex;
+- (void)makeOutputsLiveIfNeeded;
 - (struct { int x1; int x2; })outputDimensions;
 - (void)setDetectedFacesOutputEnabled:(bool)arg1;
 - (void)setLivePreviewFormatIndex:(int)arg1;
@@ -57,6 +58,5 @@
 - (id)videoCaptureOutput;
 - (id)videoCaptureOutputColorInfoOverride;
 - (bool)videoCaptureOutputPixelBufferAttachmentModificationAllowed;
-- (void)willStop;
 
 @end

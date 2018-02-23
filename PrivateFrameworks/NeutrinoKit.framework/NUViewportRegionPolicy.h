@@ -12,6 +12,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)debugDescription;
 - (id)init;
 - (id)initWithViewport:(id)arg1;
 - (id)regionForGeometry:(id)arg1;

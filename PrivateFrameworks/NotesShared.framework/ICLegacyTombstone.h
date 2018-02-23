@@ -12,7 +12,7 @@
 + (void)addLegacyTombstoneForFolder:(id)arg1;
 + (void)addLegacyTombstoneForNote:(id)arg1;
 + (id)addLegacyTombstoneWithObjectIdentifier:(id)arg1 type:(short)arg2 account:(id)arg3;
-+ (id)allLegacyTombstones;
++ (id)allLegacyTombstonesInContext:(id)arg1;
 + (id)existingCloudObjectForRecordID:(id)arg1 context:(id)arg2;
 + (bool)hasTombstonePrefix:(id)arg1;
 + (id)legacyTombstoneWithIdentifier:(id)arg1 context:(id)arg2;
@@ -21,7 +21,7 @@
 + (id)newLegacyTombstoneWithIdentifier:(id)arg1 type:(short)arg2 context:(id)arg3;
 + (void)removeLegacyTombstoneForFolder:(id)arg1;
 + (void)removeLegacyTombstoneForNote:(id)arg1;
-+ (void)removeLegacyTombstoneWithObjectIdentifier:(id)arg1 type:(short)arg2;
++ (void)removeLegacyTombstoneWithObjectIdentifier:(id)arg1 type:(short)arg2 context:(id)arg3;
 + (id)tombstoneIdentifierForObjectIdentifier:(id)arg1 type:(short)arg2;
 + (short)tombstoneTypeFromRecordName:(id)arg1;
 

@@ -12,6 +12,7 @@
     NSString * _passIdentifier;
     NSArray * _paymentApplications;
     PKCurrencyAmount * _peerPaymentAccountBalance;
+    unsigned long long  _peerPaymentAccountState;
     NSString * _primaryAccountIdentifier;
     NSString * _primaryAccountNumberSuffix;
     PKPaymentApplication * _primaryPaymentApplication;
@@ -27,6 +28,7 @@
 @property (nonatomic, copy) NSString *passIdentifier;
 @property (nonatomic, retain) NSArray *paymentApplications;
 @property (nonatomic, retain) PKCurrencyAmount *peerPaymentAccountBalance;
+@property (nonatomic) unsigned long long peerPaymentAccountState;
 @property (nonatomic, copy) NSString *primaryAccountIdentifier;
 @property (nonatomic, copy) NSString *primaryAccountNumberSuffix;
 @property (nonatomic, retain) PKPaymentApplication *primaryPaymentApplication;
@@ -55,6 +57,7 @@
 - (id)passIdentifier;
 - (id)paymentApplications;
 - (id)peerPaymentAccountBalance;
+- (unsigned long long)peerPaymentAccountState;
 - (id)primaryAccountIdentifier;
 - (id)primaryAccountNumberSuffix;
 - (id)primaryPaymentApplication;
@@ -68,6 +71,7 @@
 - (void)setPassIdentifier:(id)arg1;
 - (void)setPaymentApplications:(id)arg1;
 - (void)setPeerPaymentAccountBalance:(id)arg1;
+- (void)setPeerPaymentAccountState:(unsigned long long)arg1;
 - (void)setPrimaryAccountIdentifier:(id)arg1;
 - (void)setPrimaryAccountNumberSuffix:(id)arg1;
 - (void)setPrimaryPaymentApplication:(id)arg1;

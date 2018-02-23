@@ -13,10 +13,20 @@
     int  _pairVerifyState;
     SFDevice * _peerDevice;
     int  _preflightWiFiState;
+    UIViewController * _presentingViewController;
     unsigned long long  _problemFlags;
     id /* block */  _progressHandler;
     SFSession * _sfSession;
     int  _sfSessionState;
+    unsigned long long  _startTicks;
+    double  _trAuthenticationSecs;
+    unsigned long long  _trAuthenticationStartTicks;
+    int  _trAuthenticationState;
+    TROperationQueue * _trOperationQueue;
+    NSMutableArray * _trOperations;
+    TRSession * _trSession;
+    int  _trSessionState;
+    unsigned long long  _triggerMs;
     bool  _wifiSetupEnabled;
     SFDeviceOperationWiFiSetup * _wifiSetupOperation;
     double  _wifiSetupSecs;
@@ -25,7 +35,9 @@
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
 @property (nonatomic, retain) SFDevice *peerDevice;
+@property (nonatomic, retain) UIViewController *presentingViewController;
 @property (nonatomic, copy) id /* block */ progressHandler;
+@property (nonatomic) unsigned long long triggerMs;
 
 - (void).cxx_destruct;
 - (void)_cleanup;
@@ -37,6 +49,8 @@
 - (int)_runPairVerify;
 - (int)_runPreflightWiFi;
 - (int)_runSFSessionStart;
+- (int)_runTRAuthentication;
+- (int)_runTRSessionStart;
 - (int)_runWiFiSetup;
 - (void)activate;
 - (void)dealloc;
@@ -44,9 +58,13 @@
 - (id)init;
 - (void)invalidate;
 - (id)peerDevice;
+- (id)presentingViewController;
 - (id /* block */)progressHandler;
 - (void)setDispatchQueue:(id)arg1;
 - (void)setPeerDevice:(id)arg1;
+- (void)setPresentingViewController:(id)arg1;
 - (void)setProgressHandler:(id /* block */)arg1;
+- (void)setTriggerMs:(unsigned long long)arg1;
+- (unsigned long long)triggerMs;
 
 @end

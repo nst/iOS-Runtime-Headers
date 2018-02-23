@@ -10,6 +10,8 @@
     long long  _socketMode;
     NSObject<OS_dispatch_source> * _source;
     unsigned long long  _suggestedBufferSize;
+    unsigned long long  _totalBytesReceived;
+    unsigned long long  _totalBytesSent;
     int  _transportUpdgradeExceptionCount;
     id  _userInfo;
     char * _writeBuffer;

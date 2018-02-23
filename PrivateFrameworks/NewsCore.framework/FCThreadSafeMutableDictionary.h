@@ -4,7 +4,7 @@
 
 @interface FCThreadSafeMutableDictionary : NSObject {
     NSMutableDictionary * _dictionary;
-    FCMutexLock * _mutexLock;
+    NFMutexLock * _mutexLock;
 }
 
 @property (nonatomic, readonly, copy) NSArray *allKeys;

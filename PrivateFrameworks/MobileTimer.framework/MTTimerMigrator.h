@@ -10,6 +10,7 @@
 
 - (void).cxx_destruct;
 - (void)migrateFromOldStorage;
+- (void)removeFromOldStorage;
 - (void)setTimer:(id)arg1;
 - (id)timer;
 

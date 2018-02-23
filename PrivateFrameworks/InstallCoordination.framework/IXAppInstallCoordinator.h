@@ -64,6 +64,7 @@
 + (void)resumeCoordinatorForAppWithBundleID:(id)arg1 completion:(id /* block */)arg2;
 + (bool)resumeCoordinatorForAppWithBundleID:(id)arg1 error:(id*)arg2;
 + (void)setRemovability:(unsigned long long)arg1 forAppWithBundleID:(id)arg2 completion:(id /* block */)arg3;
++ (bool)setTestModeForBundleWithPrefix:(id)arg1 testMode:(unsigned long long)arg2;
 + (bool)setTestingEnabled:(bool)arg1;
 + (bool)uninstallAppWithBundleID:(id)arg1 error:(id*)arg2;
 + (void)uninstallAppWithBundleID:(id)arg1 requestUserConfirmation:(bool)arg2 completion:(id /* block */)arg3;

@@ -24,7 +24,7 @@
     bool  _applyBlurEffect;
     UIVisualEffectView * _blurEffectView;
     PXImageRequester * _imageRequester;
-    PXUIImageView * _imageView;
+    PXImageUIView * _imageView;
     bool  _isPerformingChanges;
     bool  _isPerformingUpdates;
     struct { 

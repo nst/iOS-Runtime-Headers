@@ -7,7 +7,7 @@
     FCArticle * _article;
     <NUArticleActivityFactory> * _articleActivityFactory;
     <NUArticleHostViewControllerFactory> * _articleHostViewControllerFactory;
-    UIViewController<NUPagable> * _articleViewController;
+    UIViewController<NUPageable> * _articleViewController;
     <FCOperationCanceling> * _asyncOnceCancelHandler;
     FCAsyncOnceOperation * _asyncOnceOperation;
     unsigned long long  _pageNextAction;
@@ -19,7 +19,7 @@
 @property (nonatomic, readonly) FCArticle *article;
 @property (nonatomic, readonly) <NUArticleActivityFactory> *articleActivityFactory;
 @property (nonatomic, readonly) <NUArticleHostViewControllerFactory> *articleHostViewControllerFactory;
-@property (nonatomic, retain) UIViewController<NUPagable> *articleViewController;
+@property (nonatomic, retain) UIViewController<NUPageable> *articleViewController;
 @property (nonatomic, retain) <FCOperationCanceling> *asyncOnceCancelHandler;
 @property (nonatomic, retain) FCAsyncOnceOperation *asyncOnceOperation;
 @property (readonly, copy) NSString *debugDescription;

@@ -10,6 +10,4 @@
 
 + (id)typeString;
 
-- (id)action;
-
 @end

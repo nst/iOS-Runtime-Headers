@@ -14,6 +14,7 @@
     SXVideoPlaybackQueue * _queue;
     SXScreenDimmingManager * _screenDimmingManager;
     SXVideoView * _videoView;
+    SXVideoVisibilityMonitor * _videoVisibilityMonitor;
     NSMutableArray * _videos;
     SXVolumeController * _volumeController;
 }
@@ -34,6 +35,7 @@
 @property (nonatomic, readonly) SXScreenDimmingManager *screenDimmingManager;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) SXVideoView *videoView;
+@property (nonatomic, readonly) SXVideoVisibilityMonitor *videoVisibilityMonitor;
 @property (nonatomic, retain) NSMutableArray *videos;
 @property (nonatomic, readonly) SXVolumeController *volumeController;
 
@@ -44,6 +46,7 @@
 - (id)configuration;
 - (id)controlsViewController;
 - (id)dataSource;
+- (void)dealloc;
 - (id)delegate;
 - (unsigned long long)indexOfVideo:(id)arg1;
 - (unsigned long long)indexOfVideoForAd:(id)arg1;
@@ -56,6 +59,7 @@
 - (unsigned long long)numberOfVideos;
 - (void)pause;
 - (void)play;
+- (bool)playbackAllowed:(id)arg1;
 - (id)playbackCoordinator;
 - (void)playbackCoordinator:(id)arg1 loadingProgressed:(double)arg2;
 - (void)playbackCoordinator:(id)arg1 playbackFailedWithError:(id)arg2;
@@ -94,8 +98,11 @@
 - (bool)videoControlsViewControllerWantsToSkipToPreviousVideo:(id)arg1;
 - (void)videoControlsViewControllsWantsToToggleVolume:(id)arg1;
 - (id)videoView;
+- (id)videoVisibilityMonitor;
 - (id)videos;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
+- (void)viewWillDisappear:(bool)arg1;
 - (id)volumeController;
 - (void)volumeLevelChanged:(double)arg1;
 

@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDSoftwareUpdate : HMFObject <HMDBackingStoreObjectProtocol, HMFMessageReceiver, HMFObject, NSSecureCoding> {
+@interface HMDSoftwareUpdate : HMFObject <HMDBackingStoreObjectProtocol, HMDHomeMessageReceiver, HMFLogging, HMFObject, NSSecureCoding> {
     HMDAccessory * _accessory;
     NSObject<OS_dispatch_queue> * _clientQueue;
+    HMSoftwareUpdateDocumentationMetadata * _documentationMetadata;
     unsigned long long  _downloadSize;
     NSUUID * _identifier;
     HMFMessageDispatcher * _messageDispatcher;
@@ -17,11 +18,13 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (readonly) HMSoftwareUpdateDocumentationMetadata *documentationMetadata;
 @property (readonly) unsigned long long downloadSize;
 @property (readonly) unsigned long long hash;
 @property (copy) NSUUID *identifier;
 @property (nonatomic, retain) HMFMessageDispatcher *messageDispatcher;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (readonly, copy) NSSet *messageReceiverChildren;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (readonly, copy) HMDSoftwareUpdateModel *model;
 @property (readonly, copy) NSString *propertyDescription;
@@ -30,15 +33,22 @@
 @property (readonly) Class superclass;
 @property (readonly, copy) HMFSoftwareVersion *version;
 
++ (bool)hasMessageReceiverChildren;
++ (id)logCategory;
 + (id)modelNamespace;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)__init;
+- (void)_handleDocumentationRequest:(id)arg1;
+- (void)_handleDocumentationStateNotification:(id)arg1;
+- (void)_handleUpdateDocumentationMetadata:(id)arg1;
 - (void)_handleUpdateState:(id)arg1;
 - (id)accessory;
 - (id)clientQueue;
 - (void)configureWithAccessory:(id)arg1 messageDispatcher:(id)arg2;
+- (void)dealloc;
+- (id)documentationMetadata;
 - (unsigned long long)downloadSize;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
@@ -46,6 +56,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithModel:(id)arg1;
 - (bool)isEqual:(id)arg1;
+- (id)logIdentifier;
 - (id)messageDestination;
 - (id)messageDispatcher;
 - (id)messageReceiveQueue;
@@ -55,11 +66,11 @@
 - (id)propertyQueue;
 - (void)registerForMessages;
 - (void)setAccessory:(id)arg1;
+- (void)setDocumentationMetadata:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setMessageDispatcher:(id)arg1;
 - (void)setState:(long long)arg1;
 - (long long)state;
-- (id)stateUpdateNotificationWithMessage:(id)arg1;
 - (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
 - (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
 - (id)transactionWithObjectChangeType:(unsigned long long)arg1;

@@ -20,8 +20,10 @@
 - (void)assistantConnection:(AFConnection *)arg1 requestFailedWithError:(NSError *)arg2 requestClass:(NSString *)arg3;
 - (void)assistantConnection:(AFConnection *)arg1 setUserActivtiyInfoAndMakeCurrent:(NSDictionary *)arg2 webpageURL:(NSURL *)arg3;
 - (void)assistantConnection:(AFConnection *)arg1 shouldSpeak:(bool)arg2;
+- (void)assistantConnection:(AFConnection *)arg1 startPlaybackDidFail:(long long)arg2;
 - (void)assistantConnection:(void *)arg1 startUIRequestWithText:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: AFConnection *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
 - (void)assistantConnection:(AFConnection *)arg1 wantsToCacheImage:(INImage *)arg2;
+- (void)assistantConnection:(AFConnection *)arg1 willProcessStartPlayback:(long long)arg2;
 - (void)assistantConnection:(AFConnection *)arg1 willStartAudioPlaybackRequest:(AFAudioPlaybackRequest *)arg2;
 - (void)assistantConnectionAudioSessionDidBeginInterruption:(AFConnection *)arg1;
 - (void)assistantConnectionAudioSessionDidEndInterruption:(AFConnection *)arg1 shouldResume:(bool)arg2;

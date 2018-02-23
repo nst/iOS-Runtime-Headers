@@ -46,8 +46,9 @@
     NSArray * _relatedArticleIDs;
     FCFeedPersonalizedArticleScoreProfile * _scoreProfile;
     NSString * _shortExcerpt;
+    bool  _showMinimalChrome;
     bool  _showSubscriptionRequiredText;
-    NSObject<FCChannelProviding> * _sourceChannel;
+    <FCChannelProviding> * _sourceChannel;
     NSString * _sourceName;
     bool  _sponsored;
     NSString * _sponsoredBy;
@@ -56,6 +57,7 @@
     NSString * _surfacedByBinID;
     NSString * _surfacedByChannelID;
     NSString * _surfacedBySectionID;
+    NSSet * _surfacedByTagIDs;
     NSString * _surfacedByTopicID;
     FCHeadlineThumbnail * _thumbnail;
     struct CGRect { 
@@ -76,6 +78,7 @@
     FCHeadlineThumbnail * _thumbnailWidgetHQ;
     FCHeadlineThumbnail * _thumbnailWidgetLQ;
     NSString * _title;
+    NSString * _titleCompact;
     unsigned long long  _topStoryType;
     NSArray * _topicIDs;
     NSArray * _topics;
@@ -90,6 +93,7 @@
 @property (nonatomic, copy) NSString *articleID;
 @property (nonatomic, retain) <FCNativeAdProviding> *associatedAd;
 @property (nonatomic, readonly) long long backendArticleVersion;
+@property (nonatomic, readonly) NSData *backingArticleRecordData;
 @property (nonatomic, readonly, copy) NSArray *blockedStorefrontIDs;
 @property (nonatomic, readonly) bool canBePurchased;
 @property (nonatomic, readonly, copy) NSString *clusterID;
@@ -143,8 +147,9 @@
 @property (nonatomic, readonly, copy) NSArray *relatedArticleIDs;
 @property (nonatomic, retain) FCFeedPersonalizedArticleScoreProfile *scoreProfile;
 @property (nonatomic, copy) NSString *shortExcerpt;
+@property (nonatomic, readonly) bool showMinimalChrome;
 @property (nonatomic) bool showSubscriptionRequiredText;
-@property (nonatomic, copy) NSObject<FCChannelProviding> *sourceChannel;
+@property (nonatomic, copy) <FCChannelProviding> *sourceChannel;
 @property (nonatomic, readonly, copy) NSString *sourceChannelID;
 @property (nonatomic, readonly, copy) NSString *sourceFeedID;
 @property (nonatomic, copy) NSString *sourceName;
@@ -156,6 +161,7 @@
 @property (nonatomic, copy) NSString *surfacedByBinID;
 @property (nonatomic, copy) NSString *surfacedByChannelID;
 @property (nonatomic, copy) NSString *surfacedBySectionID;
+@property (nonatomic, copy) NSSet *surfacedByTagIDs;
 @property (nonatomic, copy) NSString *surfacedByTopicID;
 @property (nonatomic, retain) FCHeadlineThumbnail *thumbnail;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } thumbnailFocalFrame;
@@ -168,6 +174,7 @@
 @property (nonatomic, readonly) FCHeadlineThumbnail *thumbnailWidgetLQ;
 @property (nonatomic) double tileProminenceScore;
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *titleCompact;
 @property (nonatomic) unsigned long long topStoryType;
 @property (nonatomic, copy) NSArray *topicIDs;
 @property (nonatomic, readonly, copy) NSArray *topics;
@@ -269,6 +276,7 @@
 - (void)setSurfacedByBinID:(id)arg1;
 - (void)setSurfacedByChannelID:(id)arg1;
 - (void)setSurfacedBySectionID:(id)arg1;
+- (void)setSurfacedByTagIDs:(id)arg1;
 - (void)setSurfacedByTopicID:(id)arg1;
 - (void)setThumbnail:(id)arg1;
 - (void)setThumbnailFocalFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -278,10 +286,12 @@
 - (void)setThumbnailUltraHQ:(id)arg1;
 - (void)setTileProminenceScore:(double)arg1;
 - (void)setTitle:(id)arg1;
+- (void)setTitleCompact:(id)arg1;
 - (void)setTopStoryType:(unsigned long long)arg1;
 - (void)setTopicIDs:(id)arg1;
 - (void)setUsesImageOnTopLayout:(bool)arg1;
 - (id)shortExcerpt;
+- (bool)showMinimalChrome;
 - (bool)showSubscriptionRequiredText;
 - (id)sourceChannel;
 - (id)sourceChannelID;
@@ -293,6 +303,7 @@
 - (id)surfacedByBinID;
 - (id)surfacedByChannelID;
 - (id)surfacedBySectionID;
+- (id)surfacedByTagIDs;
 - (id)surfacedByTopicID;
 - (id)thumbnail;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })thumbnailFocalFrame;
@@ -305,6 +316,7 @@
 - (id)thumbnailWidgetLQ;
 - (double)tileProminenceScore;
 - (id)title;
+- (id)titleCompact;
 - (unsigned long long)topStoryType;
 - (id)topicIDs;
 - (id)topics;

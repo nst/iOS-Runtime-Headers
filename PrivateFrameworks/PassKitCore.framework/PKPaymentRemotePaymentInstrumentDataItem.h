@@ -18,6 +18,7 @@
 - (bool)isValidWithError:(id*)arg1;
 - (id)paymentApplication;
 - (id)peerPaymentAccountBalance;
+- (unsigned long long)peerPaymentAccountState;
 - (id)remoteDevice;
 - (id)remotePaymentInstrument;
 - (bool)requiresBillingAddress;

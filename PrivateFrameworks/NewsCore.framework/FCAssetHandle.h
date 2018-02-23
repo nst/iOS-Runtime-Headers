@@ -10,12 +10,12 @@
     NSError * _downloadError;
     NSHashTable * _downloadRequests;
     NSObject<OS_dispatch_group> * _fetchGroup;
-    <FCOperationCanceling><FCOperationPrioritizing> * _fetchOperation;
+    FCOperation * _fetchOperation;
     NSString * _filePath;
     FCInterestToken * _holdToken;
     long long  _lifetimeHint;
     NSURL * _remoteURL;
-    FCMutexLock * _stateMutex;
+    NFMutexLock * _stateMutex;
 }
 
 @property (nonatomic, copy) NSString *assetKey;
@@ -25,12 +25,12 @@
 @property (retain) NSError *downloadError;
 @property (nonatomic, retain) NSHashTable *downloadRequests;
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *fetchGroup;
-@property (nonatomic, retain) <FCOperationCanceling><FCOperationPrioritizing> *fetchOperation;
+@property (nonatomic, retain) FCOperation *fetchOperation;
 @property (copy) NSString *filePath;
 @property (nonatomic, retain) FCInterestToken *holdToken;
 @property (nonatomic) long long lifetimeHint;
 @property (nonatomic, retain) NSURL *remoteURL;
-@property (nonatomic, retain) FCMutexLock *stateMutex;
+@property (nonatomic, retain) NFMutexLock *stateMutex;
 @property (readonly) NSURL *streamingURL;
 @property (readonly, copy) NSString *uniqueKey;
 

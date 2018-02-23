@@ -8,6 +8,8 @@
 
 @property (nonatomic, readonly) NMSMutableMediaSyncInfo *syncInfo;
 
++ (id)sharedLibraryRequestQueue;
+
 - (void).cxx_destruct;
 - (void)execute;
 - (id)syncInfo;

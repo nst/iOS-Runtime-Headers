@@ -43,6 +43,7 @@
 @property (nonatomic, readonly) NSNumber *metricsLoadURLSessionDuration;
 @property (nonatomic, retain) NSArray *passThroughErrors;
 @property (readonly) ISURLRequestPerformance *performanceMetrics;
+@property (nonatomic, readonly) NSData *rawResponseData;
 @property (copy) SSURLRequestProperties *requestProperties;
 @property (retain) NSURLResponse *response;
 @property (nonatomic, readonly) bool shouldDisableCellular;
@@ -74,7 +75,6 @@
 - (id)_accountIdentifier;
 - (id)_activeURL;
 - (id)_activeURLRequest;
-- (id)_copyAcceptLanguageString;
 - (id)_copyAuthenticationContext;
 - (id)_copyConnectionPropertiesWithDataConnectionServiceType:(struct __CFString { }*)arg1;
 - (id)_copyQueryStringDictionaryForRedirect:(id)arg1;
@@ -132,6 +132,7 @@
 - (id)newRequestWithURL:(id)arg1;
 - (id)passThroughErrors;
 - (id)performanceMetrics;
+- (id)rawResponseData;
 - (id)request;
 - (id)requestProperties;
 - (id)response;

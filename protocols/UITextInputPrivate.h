@@ -14,6 +14,7 @@
 
 @optional
 
+- (NSDictionary *)_autofillContext;
 - (double)_delayUntilRepeatInsertText:(NSString *)arg1;
 - (void)_didHideCorrections;
 - (void)_insertAttributedTextWithoutClosingTyping:(NSAttributedString *)arg1;

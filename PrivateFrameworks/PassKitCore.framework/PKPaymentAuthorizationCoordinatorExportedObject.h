@@ -33,6 +33,7 @@
 - (id)controller;
 - (void)dealloc;
 - (id)delegate;
+- (void)didEncounterAuthorizationEvent:(unsigned long long)arg1;
 - (id)init;
 - (id)initWithController:(id)arg1;
 - (id)privateDelegate;

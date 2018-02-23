@@ -20,7 +20,7 @@
     }  _geolocationProvider;
     struct ObjectStorage<WebKit::WebProcessPool> { 
         struct type { 
-            unsigned char __lx[1088]; 
+            unsigned char __lx[1128]; 
         } data; 
     }  _processPool;
 }

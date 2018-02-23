@@ -37,6 +37,7 @@
     double  _lastStopTime;
     NSObject<OS_os_log> * _logObject;
     bool  _minimumIntervalFallbackEnabled;
+    double  _nonCellularEarlyFireConstantInterval;
     double  _onTimeKeepAliveTime;
     int  _onlyAllowedStyle;
     bool  _onlyAllowedStyleSet;
@@ -76,6 +77,7 @@
 @property double maximumKeepAliveInterval;
 @property (nonatomic) bool minimumIntervalFallbackEnabled;
 @property (nonatomic) double minimumKeepAliveInterval;
+@property (nonatomic) double nonCellularEarlyFireConstantInterval;
 @property (nonatomic, readonly) double pollingInterval;
 @property (nonatomic) bool powerOptimizationsForExpensiveNetworkingDisabled;
 @property (readonly) Class superclass;
@@ -97,6 +99,7 @@
 - (void)_delayTimerFired;
 - (void)_deregisterForDeviceConditionsNotifications;
 - (id)_getCachedWWANKeepAliveInterval;
+- (id)_growthAlgorithmOnInterface:(long long)arg1;
 - (void)_handleDeviceConditionChangeCallback;
 - (bool)_hasBudgetRemaining;
 - (id)_initWithConnectionClass:(int)arg1 interfaceIdentifier:(long long)arg2 guidancePriority:(unsigned long long)arg3 delegate:(id)arg4 delegateQueue:(id)arg5 serviceIdentifier:(id)arg6;
@@ -110,6 +113,7 @@
 - (void)_releasePowerAssertion;
 - (void)_resolveStateWithAction:(int)arg1;
 - (void)_saveWWANKeepAliveInterval;
+- (void)_setMaximumKeepAliveInterval:(double)arg1 onInterface:(long long)arg2;
 - (void)_setTimerGuidance:(double)arg1;
 - (void)_setupKeepAliveForReconnect;
 - (void)_setupTimerForPollForAdjustment:(bool)arg1;
@@ -143,6 +147,7 @@
 - (double)maximumKeepAliveInterval;
 - (bool)minimumIntervalFallbackEnabled;
 - (double)minimumKeepAliveInterval;
+- (double)nonCellularEarlyFireConstantInterval;
 - (bool)operatorMinimumIntervalFallbackAllowed;
 - (id)persistentInterfaceManager;
 - (double)pollingInterval;
@@ -159,6 +164,7 @@
 - (void)setMaximumKeepAliveInterval:(double)arg1;
 - (void)setMinimumIntervalFallbackEnabled:(bool)arg1;
 - (void)setMinimumKeepAliveInterval:(double)arg1;
+- (void)setNonCellularEarlyFireConstantInterval:(double)arg1;
 - (void)setOnlyAllowedStyle:(int)arg1;
 - (void)setOperatorMinimumIntervalFallbackAllowed:(bool)arg1;
 - (void)setPollingIntervalOverride:(double)arg1;

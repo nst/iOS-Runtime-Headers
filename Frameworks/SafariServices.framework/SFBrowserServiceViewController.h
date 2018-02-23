@@ -4,10 +4,12 @@
 
 @interface SFBrowserServiceViewController : _SFBrowserContentViewController <SFServiceViewControllerProtocol, _SFActivityDelegate> {
     id /* block */  _activityViewControllerInfoFetchCompletionHandler;
+    SFBrowserPersonaAnalyticsHelper * _cachedAnalyticsHelper;
     bool  _canNotifyHostApplicationOfRedirects;
-    WKNavigation * _firstNavigation;
+    bool  _hasBegunFirstNavigation;
     NSString * _hostApplicationCallbackURLScheme;
     bool  _isBeingUsedForLinkPreview;
+    bool  _isExpectingClientRedirect;
     NSDate * _lastHostApplicationSuspendDate;
     WKProcessPool * _processPool;
     _SFWebViewUsageMonitor * _usageMonitor;
@@ -26,6 +28,7 @@
 + (id)_remoteViewControllerInterface;
 
 - (void).cxx_destruct;
+- (id)_analyticsHelper;
 - (id)_applicationPayloadForOpeningInSafari;
 - (void)_closeDatabasesOnBackgroundingOrDismissal;
 - (void)_didLoadWebView;
@@ -35,7 +38,8 @@
 - (void)_getSafariDataSharingModeWithPrivacyPrompt:(bool)arg1 completion:(id /* block */)arg2;
 - (void)_hostApplicationDidEnterBackground;
 - (void)_hostApplicationWillEnterForeground;
-- (void)_notifyInitialLoadDidFinish:(bool)arg1;
+- (bool)_notifyInitialLoadDidFinish:(bool)arg1;
+- (unsigned long long)_persona;
 - (void)_recordHostAppIdAndURLForTapToRadar:(id)arg1;
 - (bool)_redirectToHostAppWithExpectedCallbackSchemeIfPossible:(id)arg1;
 - (bool)_redirectToHostAppWithNavigationResult:(id)arg1 options:(id)arg2;
@@ -61,12 +65,15 @@
 - (void)setIsBeingUsedForLinkPreview:(bool)arg1;
 - (void)setIsRunningTransitionAnimation:(bool)arg1;
 - (void)setUserNotification:(id)arg1;
+- (void)updateScrollViewIndicatorVerticalInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 horizontalInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 - (id)userNotification;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 - (void)webViewController:(id)arg1 didFinishDocumentLoadForNavigation:(id)arg2;
-- (void)webViewController:(id)arg1 didPerformClientRedirectForNavigation:(id)arg2;
 - (void)webViewController:(id)arg1 didReceiveServerRedirectForProvisionalNavigation:(id)arg2;
 - (void)webViewController:(id)arg1 didStartProvisionalNavigation:(id)arg2;
+- (void)webViewController:(id)arg1 willPerformClientRedirectToURL:(id)arg2 withDelay:(double)arg3;
+- (void)webViewControllerDidCancelClientRedirect:(id)arg1;
 - (id)websiteDataStoreConfiguration;
 
 @end

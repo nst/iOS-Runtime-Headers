@@ -42,6 +42,7 @@
 - (void)serviceDidDetectMicButtonLongPressEnded;
 - (void)serviceDidDetectMicButtonTap;
 - (void)serviceDidDismissBugReporter;
+- (void)serviceDidDismissViewControllerWithStatusBarStyle:(long long)arg1;
 - (void)serviceDidEndTaptoEdit;
 - (void)serviceDidEnterUITrackingMode;
 - (void)serviceDidExitUITrackingMode;
@@ -49,7 +50,9 @@
 - (void)serviceDidPresentBugReporter;
 - (void)serviceDidPresentConversationFromBreadcrumb;
 - (void)serviceDidPresentUserInterface;
+- (void)serviceDidPresentViewControllerWithStatusBarStyle:(long long)arg1;
 - (void)serviceDidReadBulletinWithIdentifier:(id)arg1;
+- (void)serviceDidRequestCurrentTextInput:(id /* block */)arg1;
 - (void)serviceDidRequestKeyboard:(bool)arg1;
 - (void)serviceDidRequestKeyboard:(bool)arg1 minimized:(bool)arg2;
 - (void)serviceDidResetTextInput;
@@ -80,6 +83,7 @@
 - (void)setStatusBarHidden:(bool)arg1 animated:(bool)arg2;
 - (void)setStatusBarHidden:(bool)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 - (void)setStatusViewDisabled:(bool)arg1;
+- (void)setStatusViewHeight:(double)arg1;
 - (void)setStatusViewHidden:(bool)arg1;
 - (void)setStatusViewUserInteractionEnabled:(bool)arg1;
 - (void)setViewServiceApplicationInfo:(id)arg1;

@@ -5,6 +5,7 @@
 @interface GEOAbstractMapServiceTicket : GEOAbstractTicket <GEOMapServiceTicket> {
     NSArray * _browseCategories;
     bool  _chainResultSet;
+    GEOResolvedItem * _clientResolvedResult;
     GEORelatedSearchSuggestion * _defaultRelatedSuggestion;
     GEODirectionIntent * _directionIntent;
     NSArray * _displayHeaderSubstitutes;
@@ -22,6 +23,7 @@
 @property (nonatomic) unsigned long long cachePolicy;
 @property (getter=isCancelled, nonatomic, readonly) bool cancelled;
 @property (getter=isChainResultSet, nonatomic, readonly) bool chainResultSet;
+@property (nonatomic, readonly) GEOResolvedItem *clientResolvedResult;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) GEORelatedSearchSuggestion *defaultRelatedSuggestion;
 @property (readonly, copy) NSString *description;
@@ -44,6 +46,7 @@
 - (void)applyToCorrectedSearch:(id)arg1;
 - (void)applyToPlaceInfo:(id)arg1;
 - (id)browseCategories;
+- (id)clientResolvedResult;
 - (id)defaultRelatedSuggestion;
 - (id)directionIntent;
 - (id)displayHeaderSubstitutes;

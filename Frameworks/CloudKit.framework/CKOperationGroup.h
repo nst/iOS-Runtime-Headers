@@ -25,6 +25,8 @@
 @property (nonatomic, copy) NSNumber *quantityNumber;
 @property (nonatomic, retain) CKOperationGroupSystemImposedInfo *systemImposedInfo;
 
+// Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
+
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -54,5 +56,37 @@
 - (void)setQuantityNumber:(id)arg1;
 - (void)setSystemImposedInfo:(id)arg1;
 - (id)systemImposedInfo;
+
+// Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
+
++ (id)br_downloadConflictingVersions;
++ (id)br_downloadOpportunistic;
++ (id)br_downloadOptimizeStorageOff;
++ (id)br_downloadThumbnails;
++ (id)br_downloadThumbnailsUserInitiated;
++ (id)br_downloadUpdatedDocuments;
++ (id)br_downloadUserInitiated;
++ (id)br_fetchIdentityXPC;
++ (id)br_fetchNonLocalVersions;
++ (id)br_publishingRequest;
++ (id)br_purge;
++ (id)br_quotaUpdateUploader;
++ (id)br_quotaUpdateXPC;
++ (id)br_sharingMisc;
++ (id)br_syncDown;
++ (id)br_syncDownAppLaunch;
++ (id)br_syncDownAppLibraryMetadata;
++ (id)br_syncDownInitial;
++ (id)br_syncDownPeriodic;
++ (id)br_syncDownPushTriggered;
++ (id)br_syncDownZoneHealth;
++ (id)br_syncUp;
++ (id)br_syncUpAndDownShareDB;
++ (id)br_syncUpAppLibraryMetadata;
++ (id)br_syncUpZoneHealth;
++ (id)br_upload;
++ (id)br_zoneConsolidation;
++ (id)br_zoneConsolidationManual;
++ (id)br_zoneHealthSimulation;
 
 @end

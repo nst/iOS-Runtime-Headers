@@ -51,6 +51,6 @@
 + (id)allSupportedProperties;
 
 - (void).cxx_destruct;
-- (id)modelObjectWithStoreItemMetadata:(id)arg1;
+- (id)modelObjectWithStoreItemMetadata:(id)arg1 sourceModelObject:(id)arg2;
 
 @end

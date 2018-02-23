@@ -11,6 +11,4 @@
 
 + (id)typeString;
 
-- (Class)componentViewClass;
-
 @end

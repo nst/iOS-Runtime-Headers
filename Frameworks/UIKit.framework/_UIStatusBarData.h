@@ -48,6 +48,7 @@
 @property (nonatomic, copy) _UIStatusBarDataCellularEntry *cellularEntry;
 @property (nonatomic, copy) _UIStatusBarDataStringEntry *dateEntry;
 @property (nonatomic, copy) _UIStatusBarDataBoolEntry *electronicTollCollectionEntry;
+@property (getter=isEmpty, nonatomic, readonly) bool empty;
 @property (nonatomic, copy) _UIStatusBarDataStringEntry *forwardNavigationEntry;
 @property (nonatomic, copy) _UIStatusBarDataEntry *liquidDetectionEntry;
 @property (nonatomic, copy) _UIStatusBarDataLocationEntry *locationEntry;
@@ -92,6 +93,7 @@
 - (id)forwardNavigationEntry;
 - (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
+- (bool)isEmpty;
 - (bool)isEqual:(id)arg1;
 - (id)liquidDetectionEntry;
 - (id)locationEntry;

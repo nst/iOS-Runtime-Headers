@@ -42,6 +42,7 @@
 + (id)sharedAccountsCookiesConfig;
 + (id)sharedAccountsLogoutConfig;
 + (id)sharedAccountsMigrationConfig;
++ (id)sharedAccountsMigrationConfigOversize;
 + (id)sharedAccountsStorefrontConfig;
 + (id)sharedBagCacheConfig;
 + (id)sharedBagConfig;
@@ -50,6 +51,7 @@
 + (id)sharedDaemonConfigOversize;
 + (id)sharedFairPlayAnisetteConfig;
 + (id)sharedFeatureEnablerMigrationConfig;
++ (id)sharedFollowUpConfig;
 + (id)sharedStoreServicesConfig;
 + (id)sharedStoreServicesConfigOversize;
 + (id)sharedWriteToDiskConfig;

@@ -3,7 +3,7 @@
  */
 
 @interface _SFAutoFillAuthenticationCache : NSObject {
-    NSMutableSet * _domainsFailedToAuthenticateForAutoFill;
+    NSMutableDictionary * _domainsFailedToAuthenticateDueToTimeout;
     NSMutableSet * _domainsSucceededToAuthenticateForAutoFill;
 }
 
@@ -11,7 +11,8 @@
 - (bool)authenticationShouldFailOnDomain:(id)arg1;
 - (bool)authenticationShouldSucceedOnDomain:(id)arg1;
 - (void)clearAllDomains;
-- (void)didFinishAuthenticationOnDomain:(id)arg1 withSuccess:(bool)arg2;
+- (void)didFinishAuthenticationOnDomain:(id)arg1 withSuccess:(bool)arg2 error:(id)arg3;
 - (id)init;
+- (bool)timeoutCausedFailureOnDomain:(id)arg1;
 
 @end

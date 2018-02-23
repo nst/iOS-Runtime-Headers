@@ -6,6 +6,7 @@
     NSData * _advertisementData;
     NSDictionary * _advertisementFields;
     NSData * _bluetoothAddress;
+    unsigned int  _connectedServices;
     NSUUID * _counterpartIdentifier;
     long long  _distance;
     unsigned long long  _foundTicks;
@@ -27,6 +28,7 @@
 @property (nonatomic, copy) NSData *advertisementData;
 @property (nonatomic, copy) NSDictionary *advertisementFields;
 @property (nonatomic, copy) NSData *bluetoothAddress;
+@property (nonatomic) unsigned int connectedServices;
 @property (nonatomic, copy) NSUUID *counterpartIdentifier;
 @property (nonatomic) long long distance;
 @property (nonatomic) unsigned long long foundTicks;
@@ -48,6 +50,7 @@
 - (id)advertisementData;
 - (id)advertisementFields;
 - (id)bluetoothAddress;
+- (unsigned int)connectedServices;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)counterpartIdentifier;
 - (id)description;
@@ -66,6 +69,7 @@
 - (void)setAdvertisementData:(id)arg1;
 - (void)setAdvertisementFields:(id)arg1;
 - (void)setBluetoothAddress:(id)arg1;
+- (void)setConnectedServices:(unsigned int)arg1;
 - (void)setCounterpartIdentifier:(id)arg1;
 - (void)setDistance:(long long)arg1;
 - (void)setFoundTicks:(unsigned long long)arg1;

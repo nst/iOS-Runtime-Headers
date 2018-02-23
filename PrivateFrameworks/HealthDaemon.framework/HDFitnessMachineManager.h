@@ -3,6 +3,7 @@
  */
 
 @interface HDFitnessMachineManager : NSObject <HDFitnessMachinePairingManagerDelegate, HDFitnessMachineStateTimersDelegate> {
+    HDFitnessMachineAnalyticsCollector * _analyticsCollector;
     NSMutableArray * _characteristicDataBuffer;
     HDFitnessMachineDataCollector * _collector;
     NSMutableArray * _connections;
@@ -18,6 +19,7 @@
     bool  _shouldReconnect;
 }
 
+@property (nonatomic, retain) HDFitnessMachineAnalyticsCollector *analyticsCollector;
 @property (nonatomic, readonly) <HDFitnessMachineConnectionInitiatorProtocol> *connectionInitiatorServer;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -69,8 +71,10 @@
 - (void)_queue_setDeviceInformation:(id)arg1;
 - (void)_queue_setMachineState:(unsigned long long)arg1 date:(id)arg2;
 - (void)_queue_simulateDisconnect;
+- (void)_queue_tearDownAfterStopEvent;
 - (bool)_queue_waitingOnInitialStatusAndData;
 - (void)_setQueue:(id)arg1;
+- (id)analyticsCollector;
 - (void)clientInvalidatedWithConnectionUUID:(id)arg1;
 - (id)connectionInitiatorServer;
 - (unsigned long long)connectionOptionsForSession:(id)arg1 isReconnect:(bool)arg2;
@@ -87,13 +91,15 @@
 - (void)pairingManager:(id)arg1 discoveredHealthService:(id)arg2 machineType:(unsigned long long)arg3;
 - (void)pairingManager:(id)arg1 failedPairingWithError:(id)arg2;
 - (void)pairingManager:(id)arg1 updatedConnectionStateFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
+- (void)pairingManagerDidBeginPairing:(id)arg1;
 - (void)pairingManagerReadyToConnect:(id)arg1;
-- (id)pairingManagerRequestsOOBData:(id)arg1;
-- (void)pairingManagerUpdatedDataTransferRequirements:(id)arg1;
+- (void)pairingManagerReceivedActivityTypeAndPermission:(id)arg1;
+- (id)pairingManagerRequestsOOBData:(id)arg1 error:(id*)arg2;
 - (void)pairingManagerUpdatedMachineInformation:(id)arg1;
 - (void)pairingManagerWillBeginPairing:(id)arg1 fitnessMachineToken:(id)arg2;
 - (void)registerClient:(id)arg1 withConnectionUUID:(id)arg2;
 - (id)serviceManager;
+- (void)setAnalyticsCollector:(id)arg1;
 - (void)setFitnessMachineStateTimers:(id)arg1;
 - (void)setServiceManager:(id)arg1;
 - (void)simulateDisconnect;

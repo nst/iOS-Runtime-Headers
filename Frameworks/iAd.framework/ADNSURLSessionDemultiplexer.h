@@ -10,6 +10,7 @@
     long long  _requestCount;
     NSURLSession * _session;
     id /* block */  _sessionInvalidated;
+    bool  _sessionMarkedInvalid;
     NSMutableDictionary * _taskInfoByTaskIdentifier;
 }
 
@@ -23,6 +24,7 @@
 @property (nonatomic) long long requestCount;
 @property (retain) NSURLSession *session;
 @property (nonatomic, copy) id /* block */ sessionInvalidated;
+@property (nonatomic) bool sessionMarkedInvalid;
 @property (readonly) Class superclass;
 @property (retain) NSMutableDictionary *taskInfoByTaskIdentifier;
 
@@ -43,6 +45,7 @@
 - (long long)requestCount;
 - (id)session;
 - (id /* block */)sessionInvalidated;
+- (bool)sessionMarkedInvalid;
 - (void)setConfiguration:(id)arg1;
 - (void)setDemuxQueue:(id)arg1;
 - (void)setIdentifier:(id)arg1;
@@ -50,6 +53,7 @@
 - (void)setRequestCount:(long long)arg1;
 - (void)setSession:(id)arg1;
 - (void)setSessionInvalidated:(id /* block */)arg1;
+- (void)setSessionMarkedInvalid:(bool)arg1;
 - (void)setTaskInfoByTaskIdentifier:(id)arg1;
 - (id)taskInfoByTaskIdentifier;
 - (id)taskInfoForTask:(id)arg1;

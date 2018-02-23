@@ -12,6 +12,7 @@
     bool  _visible;
 }
 
+@property (nonatomic, readonly) UIAccessibilityHUDItem *accessibilityHUDRepresentation;
 @property (nonatomic, copy) UIColor *activeColor;
 @property (nonatomic, readonly) double baselineOffset;
 @property (readonly, copy) NSString *debugDescription;

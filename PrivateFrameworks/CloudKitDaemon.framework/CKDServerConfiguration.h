@@ -19,6 +19,8 @@
 - (void).cxx_destruct;
 - (id)allowedAppVersionsCache;
 - (bool)applicationWithBundleID:(id)arg1 canSyncUsingVersion:(id)arg2 forContainer:(id)arg3;
+- (unsigned long long)c2MetricsReportFrequency:(id)arg1;
+- (unsigned long long)c2MetricsReportFrequencyBase:(id)arg1;
 - (id)description;
 - (id)dictionaryPropertyEncoding;
 - (id)expiry;

@@ -27,6 +27,7 @@
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToCurrencyAmount:(id)arg1;
 - (id)minimalFormattedStringValue;
+- (id)minimalFormattedStringValueInLocale:(id)arg1;
 - (id)negativeValue;
 
 @end

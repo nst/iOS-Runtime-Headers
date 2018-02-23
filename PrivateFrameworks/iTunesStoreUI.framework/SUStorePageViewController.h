@@ -12,6 +12,7 @@
     <SUStorePageViewControllerDelegate> * _delegate;
     double  _expirationTime;
     bool  _externalRequest;
+    bool  _isInBackground;
     bool  _lastLoadDidFail;
     SUStorePageProtocol * _lastValidProtocol;
     id /* block */  _loadBlock;

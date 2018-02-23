@@ -8,12 +8,12 @@
 - (NSString *)aceHost;
 - (NSString *)assistantIdentifier;
 - (void)barrier:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
-- (void)cancelSynchronously:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 6: bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)cancelSynchronously:(void *)arg1 onQueue:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 7: bool, bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (NSString *)connectionId;
 - (<SiriCoreSiriConnectionDelegate> *)delegate;
 - (bool)deviceIsInWalkaboutExperimentGroup;
 - (void)getAnalysisInfo:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, SiriCoreAceConnectionAnalysisInfo *, void*
-- (void)getConnectionMetrics:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, SiriCoreConnectionMetrics *, void*
+- (void)getConnectionMetricsSynchronously:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: bool, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, SiriCoreConnectionMetrics *, void*
 - (bool)imposePolicyBan;
 - (NSString *)languageCode;
 - (NSString *)peerAssistantIdentifier;
@@ -24,6 +24,7 @@
 - (void)probeConnection;
 - (NSString *)productTypePrefix;
 - (void)sendCommand:(void *)arg1 errorHandler:(void *)arg2; // needs 2 arg types, found 7: <SiriCoreSessionObject> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
+- (void)sendCommands:(void *)arg1 errorHandler:(void *)arg2; // needs 2 arg types, found 8: NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <SiriCoreSessionObject> *, NSError *, void*
 - (void)setAceHost:(NSString *)arg1;
 - (void)setAssistantIdentifier:(NSString *)arg1;
 - (void)setConnectionId:(NSString *)arg1;

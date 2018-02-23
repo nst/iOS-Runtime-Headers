@@ -24,6 +24,7 @@
 - (bool)_isURLOutOfScope:(id)arg1;
 - (void)_loadNextFallbackURL;
 - (void)_loadWebClipPageURL:(id)arg1;
+- (unsigned long long)_persona;
 - (bool)_privateBrowsingInitiallyEnabled;
 - (bool)_usesScrollToTopView;
 - (bool)canInstallProfiles;

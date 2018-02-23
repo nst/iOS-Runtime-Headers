@@ -6,6 +6,7 @@
 @required
 
 - (SFColor *)backgroundColor;
+- (bool)borderless;
 - (bool)canBeHidden;
 - (NSDictionary *)dictionaryRepresentation;
 - (bool)hasBottomPadding;
@@ -17,6 +18,7 @@
 - (NSString *)punchoutPickerTitle;
 - (int)separatorStyle;
 - (void)setBackgroundColor:(SFColor *)arg1;
+- (void)setBorderless:(bool)arg1;
 - (void)setCanBeHidden:(bool)arg1;
 - (void)setHasBottomPadding:(bool)arg1;
 - (void)setHasTopPadding:(bool)arg1;

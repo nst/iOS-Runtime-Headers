@@ -13,9 +13,12 @@
     bool  _dtxEnabled;
     bool  _latencySensitiveMode;
     unsigned long long  _maxPtime;
+    unsigned long long  _numRedundantPayloads;
     bool  _octetAligned;
     long long  _preferredCodecRateMode;
     unsigned long long  _ptime;
+    unsigned long long  _rxRedPayloadType;
+    unsigned long long  _txRedPayloadType;
 }
 
 @property (nonatomic) long long audioStreamMode;
@@ -28,9 +31,12 @@
 @property (getter=isDTXEnabled, nonatomic) bool dtxEnabled;
 @property (getter=isLatencySensitiveMode, nonatomic) bool latencySensitiveMode;
 @property (nonatomic) unsigned long long maxPtime;
+@property (nonatomic) unsigned long long numRedundantPayloads;
 @property (getter=isOctectAligned, nonatomic) bool octetAligned;
 @property (nonatomic) long long preferredCodecRateMode;
 @property (nonatomic) unsigned long long ptime;
+@property (nonatomic) unsigned long long rxRedPayloadType;
+@property (nonatomic) unsigned long long txRedPayloadType;
 
 + (unsigned int)clientCodecRateMaskForCodecRateMode:(unsigned int)arg1;
 + (long long)clientCodecRateModeForCodecRateMode:(int)arg1;
@@ -55,10 +61,13 @@
 - (bool)isDTXEnabled;
 - (bool)isLatencySensitiveMode;
 - (bool)isOctectAligned;
+- (bool)isRedValid;
 - (bool)isValid;
 - (unsigned long long)maxPtime;
+- (unsigned long long)numRedundantPayloads;
 - (long long)preferredCodecRateMode;
 - (unsigned long long)ptime;
+- (unsigned long long)rxRedPayloadType;
 - (void)setAudioStreamMode:(long long)arg1;
 - (void)setCnEnabled:(bool)arg1;
 - (void)setCnPayloadType:(unsigned long long)arg1;
@@ -69,9 +78,13 @@
 - (void)setDtxEnabled:(bool)arg1;
 - (void)setLatencySensitiveMode:(bool)arg1;
 - (void)setMaxPtime:(unsigned long long)arg1;
+- (void)setNumRedundantPayloads:(unsigned long long)arg1;
 - (void)setOctetAligned:(bool)arg1;
 - (void)setPreferredCodecRateMode:(long long)arg1;
 - (void)setPtime:(unsigned long long)arg1;
+- (void)setRxRedPayloadType:(unsigned long long)arg1;
+- (void)setTxRedPayloadType:(unsigned long long)arg1;
 - (void)setUpWithDictionary:(id)arg1;
+- (unsigned long long)txRedPayloadType;
 
 @end

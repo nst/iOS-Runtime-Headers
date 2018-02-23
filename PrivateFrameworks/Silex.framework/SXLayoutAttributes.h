@@ -21,6 +21,7 @@
 - (id)columnLayout;
 - (id)contentSizeCategory;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (id)initWithColumnLayout:(id)arg1 contentSizeCategory:(id)arg2;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })safeAreaInsets;
 - (void)setSafeAreaInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;

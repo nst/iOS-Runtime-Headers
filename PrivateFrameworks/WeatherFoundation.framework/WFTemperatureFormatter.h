@@ -11,6 +11,7 @@
     struct UAMeasureFormat { } * _measureFormatter;
     int  _outputUnit;
     unsigned long long  _roundingMode;
+    int  _symbolType;
 }
 
 @property (nonatomic, copy) NSString *fallbackTemperatureString;
@@ -21,6 +22,7 @@
 @property (nonatomic) struct UAMeasureFormat { }*measureFormatter;
 @property (nonatomic) int outputUnit;
 @property (nonatomic) unsigned long long roundingMode;
+@property (nonatomic) int symbolType;
 
 + (id)temperatureFormatterWithInputUnit:(int)arg1 outputUnit:(int)arg2;
 
@@ -49,6 +51,8 @@
 - (void)setMeasureFormatter:(struct UAMeasureFormat { }*)arg1;
 - (void)setOutputUnit:(int)arg1;
 - (void)setRoundingMode:(unsigned long long)arg1;
+- (void)setSymbolType:(int)arg1;
 - (id)stringForObjectValue:(id)arg1;
+- (int)symbolType;
 
 @end

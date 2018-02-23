@@ -5,6 +5,7 @@
 @interface _SFFormAutoFillController : NSObject <SFFormMetadataObserver> {
     <SFFormAutoFiller> * _autoFiller;
     <SFFormAutoFillControllerDelegate> * _delegate;
+    bool  _isCurrentlyAuthenticating;
     bool  _metadataCorrectionsEnabled;
     NSTimer * _prefillTimer;
     _WKRemoteObjectInterface * _remoteObjectInterface;
@@ -21,7 +22,7 @@
 @property (nonatomic, readonly) UIView<WBUFormAutoFillWebView> *webView;
 
 - (void).cxx_destruct;
-- (void)_autoFillLoginFormSynchronously:(id)arg1 inFrame:(id)arg2;
+- (void)_autoFillLoginFormSynchronouslyAndClearMetadata:(id)arg1 inFrame:(id)arg2;
 - (void)_didCollectURLsForPreFilling:(id)arg1 atURL:(id)arg2;
 - (void)_fieldFocused:(id)arg1 inForm:(id)arg2 inFrame:(id)arg3 inputSession:(id)arg4;
 - (void)_prefillTimerFired:(id)arg1;

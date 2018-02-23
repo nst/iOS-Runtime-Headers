@@ -43,6 +43,11 @@
 - (void)_logEvent:(id)arg1;
 - (id)actionSetFromObject:(id)arg1;
 - (void)addActivationCharacteristicsIfNeeded:(id)arg1 forCharacteristic:(id)arg2;
+- (void)addBridgedAcessoryCharacteristicsFor:(id)arg1 toCollection:(id)arg2 assistantObjects:(id)arg3;
+- (void)addCharacteristicWithType:(id)arg1 fromService:(id)arg2 toCollection:(id)arg3 assistantObjects:(id)arg4;
+- (id)addCharacteristicsFromRelatedServicesFor:(id)arg1 assistantObjects:(id)arg2;
+- (void)addIfNeededActivationCharacteristic:(id)arg1 fromService:(id)arg2 toCollection:(id)arg3;
+- (void)addLinkedServiceCharacteristicsFor:(id)arg1 toCollection:(id)arg2 assistantObjects:(id)arg3;
 - (id)addStatusCharacteristicsIfNeeded:(id)arg1;
 - (id)adjustGetValue:(id)arg1 type:(id)arg2 units:(id)arg3 attribute:(id)arg4;
 - (id)adjustSetValue:(id)arg1 type:(id)arg2 units:(id)arg3 attribute:(id)arg4;
@@ -80,7 +85,7 @@
 - (bool)isAttributeValue:(id)arg1 equalTo:(id)arg2;
 - (long long)numberOfHomes;
 - (id)objectsWithIdentifierList:(id)arg1;
-- (id)objectsWithSearchFilter:(id)arg1 inHome:(id)arg2;
+- (id)objectsWithSearchFilter:(id)arg1 inHome:(id)arg2 overrideServiceTypeIfNeeded:(id*)arg3;
 - (id)parseColorEncoding:(id)arg1;
 - (void)performWithGather:(id)arg1 queue:(id)arg2 msgDispatcher:(id)arg3 completion:(id /* block */)arg4;
 - (bool)populateColorResult:(id)arg1 serviceType:(id)arg2 service:(id)arg3 action:(id)arg4 responses:(id)arg5 forObjects:(id)arg6;

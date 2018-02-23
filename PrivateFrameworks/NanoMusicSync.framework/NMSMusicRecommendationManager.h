@@ -23,7 +23,7 @@
 
 - (void).cxx_destruct;
 - (void)_deleteCachedArtworksWithTokens:(id)arg1;
-- (id)_expirationDateForUpdateDate:(id)arg1 withOffsetDays:(long long)arg2;
+- (id)_expirationDateForUpdateDate:(id)arg1 withOffsetDays:(long long)arg2 preferredTimeWindow:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
 - (id)_fetchAddedDateForContainer:(id)arg1;
 - (void)_finishLoadingContentsWithRecommendationsResponse:(id)arg1;
 - (void)_handleActiveAccountDidChangeNotification:(id)arg1;
@@ -59,6 +59,7 @@
 - (id)_sortedContainersBasedOnRecency;
 - (void)_startArtworkRetryTimer;
 - (void)_startRecommendationRetryTimer;
+- (void)_unregisterForPairingFinishedNotification;
 - (bool)_updateRecommendationsSelections;
 - (bool)_updateRecommendationsWithRecommendationsResponse:(id)arg1;
 - (void)dealloc;

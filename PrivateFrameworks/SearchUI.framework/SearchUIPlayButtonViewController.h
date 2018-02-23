@@ -34,7 +34,6 @@
 
 + (id)font;
 + (id)localMediaItemForStoreIdentifiers:(id)arg1;
-+ (id)playButton;
 + (bool)supportsResult:(id)arg1;
 
 - (void).cxx_destruct;

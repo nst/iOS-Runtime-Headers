@@ -36,6 +36,7 @@
 - (id)internalWhitelist;
 - (id)locateLog:(id)arg1 forRouting:(id)arg2 options:(id)arg3;
 - (void)postContent:(id)arg1 withHeaders:(id)arg2;
+- (void)prefaceSubmission:(id)arg1 withData:(id)arg2 usingArchive:(id)arg3 andHeaders:(id)arg4;
 - (bool)processJob:(id)arg1 forRouting:(id)arg2 including:(id)arg3 usingConfig:(id)arg4;
 - (bool)processSubmissionJobs:(id)arg1 usingConfig:(id)arg2;
 - (void)setAllowUnsignedBlobs:(bool)arg1;

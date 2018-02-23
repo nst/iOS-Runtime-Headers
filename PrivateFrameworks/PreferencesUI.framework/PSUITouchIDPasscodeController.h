@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUITouchIDPasscodeController : PSUIBiometricController <BiometricKitDelegate, UIPopoverControllerDelegate> {
+@interface PSUITouchIDPasscodeController : PSUIBiometricController <BiometricKitDelegate, BiometricKitUIEnrollResultDelegate, UIPopoverControllerDelegate> {
     BiometricKit * _highlightMatcher;
     NSObject<OS_dispatch_queue> * _highlightQueue;
 }
@@ -23,6 +23,7 @@
 - (id)biometricLogo;
 - (void)dealloc;
 - (void)enrollBiometric;
+- (void)enrollResult:(int)arg1 bkIdentity:(id)arg2;
 - (void)enrollResult:(int)arg1 identity:(id)arg2;
 - (void)enrollmentControllerDidDismiss;
 - (id)fingerprintSpecifiers;

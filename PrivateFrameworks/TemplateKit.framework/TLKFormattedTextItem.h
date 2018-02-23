@@ -4,4 +4,6 @@
 
 @interface TLKFormattedTextItem : TLKObject
 
+- (bool)hasContent;
+
 @end

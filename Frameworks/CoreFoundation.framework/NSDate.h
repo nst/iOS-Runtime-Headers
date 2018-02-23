@@ -304,6 +304,7 @@
 // Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
 
 + (id)dateFormatter;
++ (id)dateWithHour:(long long)arg1 minute:(long long)arg2 second:(long long)arg3;
 + (id)dateWithResolution:(unsigned long long)arg1;
 + (id)dateWithResolution:(unsigned long long)arg1 calendar:(id)arg2;
 + (id)endOfDay;
@@ -319,6 +320,7 @@
 - (id)dateReducedToResolution:(unsigned long long)arg1 calendar:(id)arg2;
 - (id)endOfDay;
 - (unsigned long long)hour;
+- (unsigned long long)minute;
 - (id)startOfDay;
 - (id)stringFromDate;
 - (long long)weekday;
@@ -434,7 +436,9 @@
 
 // Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/IMSharedUtilities
 
++ (id)__im_dateWithCurrentServerTime;
 + (id)__im_dateWithNanosecondTimeIntervalSinceReferenceDate:(long long)arg1;
++ (bool)useCourierTime;
 
 - (long long)__im_nanosecondTimeInterval;
 - (long long)differenceFromDate:(id)arg1;
@@ -521,6 +525,7 @@
 - (bool)fc_isWithinTimeInterval:(double)arg1 ofDate:(id)arg2;
 - (unsigned long long)fc_millisecondTimeIntervalSince1970;
 - (unsigned long long)fc_millisecondTimeIntervalSinceDate:(id)arg1;
+- (id)fc_stringWithISO8601Format;
 - (id)fc_stringWithYearAndMonthFormat;
 - (double)fc_timeIntervalUntilNow;
 - (bool)isToday;

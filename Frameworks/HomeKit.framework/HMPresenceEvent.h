@@ -54,7 +54,9 @@
 - (id)presenceType;
 - (unsigned long long)presenceUserType;
 - (void)setActivation:(id)arg1;
+- (void)setPresenceEventType:(unsigned long long)arg1;
 - (void)setPresenceType:(id)arg1;
+- (void)setPresenceUserType:(unsigned long long)arg1;
 - (void)updatePresenceType:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)updateUsers:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)users;

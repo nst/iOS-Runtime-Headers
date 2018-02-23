@@ -36,6 +36,7 @@
 - (bool)allowsLockScreenMediaControls;
 - (bool)allowsLogout;
 - (bool)allowsPhotoSlideshow;
+- (bool)allowsScreenshots;
 - (bool)allowsSiri;
 - (bool)allowsTimer;
 - (bool)allowsUnlocking;

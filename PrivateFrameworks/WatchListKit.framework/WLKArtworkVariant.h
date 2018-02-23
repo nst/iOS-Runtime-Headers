@@ -10,6 +10,7 @@
     }  _artworkSize;
     long long  _artworkType;
     NSURL * _artworkURL;
+    NSString * _artworkURLString;
     NSString * _artworkURLTemplate;
     NSString * _format;
     bool  _supportsLayeredImage;
@@ -19,6 +20,7 @@
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } artworkSize;
 @property (nonatomic, readonly) long long artworkType;
 @property (nonatomic, readonly, copy) NSURL *artworkURL;
+@property (nonatomic, readonly, copy) NSString *artworkURLString;
 @property (nonatomic, readonly, copy) NSString *format;
 @property (nonatomic) bool supportsLayeredImage;
 
@@ -32,6 +34,7 @@
 - (id)artworkURL;
 - (id)artworkURLForSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)artworkURLForSize:(struct CGSize { double x1; double x2; })arg1 format:(id)arg2;
+- (id)artworkURLString;
 - (id)description;
 - (id)format;
 - (bool)hasAlpha;

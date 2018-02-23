@@ -3,20 +3,22 @@
  */
 
 @interface NUArticleActivityManager : NSObject <NUActivityProvider> {
-    <NUURLHandler> * _URLHandler;
+    <NUURLHandling> * _URLHandler;
     <FCHeadlineProviding> * _headline;
     FCReadingHistory * _readingHistory;
     FCReadingList * _readingList;
+    <NUReportConcernViewPresenter> * _reportConcernViewPresenter;
     FCSubscriptionList * _subscriptionList;
 }
 
-@property (nonatomic, readonly) <NUURLHandler> *URLHandler;
+@property (nonatomic, readonly) <NUURLHandling> *URLHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <FCHeadlineProviding> *headline;
 @property (nonatomic, readonly) FCReadingHistory *readingHistory;
 @property (nonatomic, readonly) FCReadingList *readingList;
+@property (nonatomic, readonly) <NUReportConcernViewPresenter> *reportConcernViewPresenter;
 @property (nonatomic, readonly) FCSubscriptionList *subscriptionList;
 @property (readonly) Class superclass;
 
@@ -32,10 +34,11 @@
 - (bool)articleSavedForHeadline:(id)arg1;
 - (bool)channelMutedForHeadline:(id)arg1;
 - (id)headline;
-- (id)initWithHeadline:(id)arg1 readingHistory:(id)arg2 readingList:(id)arg3 subscriptionList:(id)arg4 URLHandler:(id)arg5;
+- (id)initWithHeadline:(id)arg1 readingHistory:(id)arg2 readingList:(id)arg3 subscriptionList:(id)arg4 URLHandler:(id)arg5 reportConcernViewPresenter:(id)arg6;
 - (id /* block */)performBlockForHeadline:(id)arg1 withType:(unsigned long long)arg2;
 - (id)readingHistory;
 - (id)readingList;
+- (id)reportConcernViewPresenter;
 - (id)subscriptionList;
 - (id)supportedActivities;
 - (void)toggleArticleDislikeStatusForHeadline:(id)arg1;

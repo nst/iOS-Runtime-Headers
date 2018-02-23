@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TSReading.framework/TSReading
  */
 
-@interface TSDBezierPath : NSObject <NSCoding, NSCopying> {
+@interface TSDBezierPath : NSObject <NSCopying, NSSecureCoding> {
     struct { 
         unsigned int sfr_flags : 8; 
         unsigned int sfr_pathState : 2; 
@@ -92,6 +92,7 @@
 + (void)strokeLineFromPoint:(struct CGPoint { double x1; double x2; })arg1 toPoint:(struct CGPoint { double x1; double x2; })arg2;
 + (void)strokeRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 + (id)subtractBezierPaths:(id)arg1;
++ (bool)supportsSecureCoding;
 + (id)tracedPathForImage:(struct CGImage { }*)arg1 alphaThreshold:(double)arg2 pointSpacing:(double)arg3;
 + (id)tracedPathForInstantAlphaBinaryBitmap:(id)arg1 pointSpacing:(double)arg2;
 + (id)uniteBezierPaths:(id)arg1;

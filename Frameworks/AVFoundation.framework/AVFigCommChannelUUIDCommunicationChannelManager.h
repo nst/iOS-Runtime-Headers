@@ -24,6 +24,7 @@
 - (void)didCloseCommChannelUUID:(struct __CFString { }*)arg1;
 - (id)init;
 - (id)initWithRoutingContext:(struct OpaqueFigRoutingContext { }*)arg1;
+- (id)openCommunicationChannelWithOptions:(id)arg1 error:(id*)arg2;
 - (id)outgoingCommunicationChannel;
 - (id)parentOutputContextImpl;
 - (void)setParentOutputContextImpl:(id)arg1;

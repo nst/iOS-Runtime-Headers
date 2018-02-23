@@ -41,6 +41,7 @@
 - (double)_fittingHeightForView:(id)arg1;
 - (bool)_isSafeToPerformLayout;
 - (void)_removePreferredHeightConstraintFromViewController:(id)arg1;
+- (void)_sendScrollnotification;
 - (void)_setOverlayViewFrame;
 - (void)_setPreferredHeight:(double)arg1 forViewController:(id)arg2;
 - (void)_setScrollEnabled:(bool)arg1 forcedUpdate:(bool)arg2;

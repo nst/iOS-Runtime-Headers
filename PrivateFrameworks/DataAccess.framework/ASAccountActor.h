@@ -30,7 +30,9 @@
 - (int)performFetchAttachmentRequest:(id)arg1 consumer:(id)arg2;
 - (int)performFetchMessageSearchResultRequests:(id)arg1 consumer:(id)arg2;
 - (void)performFolderChange:(id)arg1 isUserRequested:(bool)arg2;
+- (int)performMailboxRequest:(id)arg1 mailbox:(id)arg2 previousTag:(id)arg3 clientWinsOnSyncConflict:(bool)arg4 isUserRequested:(bool)arg5 consumer:(id)arg6;
 - (int)performMailboxRequest:(id)arg1 mailbox:(id)arg2 previousTag:(id)arg3 isUserRequested:(bool)arg4 consumer:(id)arg5;
+- (int)performMailboxRequests:(id)arg1 mailbox:(id)arg2 previousTag:(id)arg3 clientWinsOnSyncConflict:(bool)arg4 isUserRequested:(bool)arg5 consumer:(id)arg6;
 - (int)performMailboxRequests:(id)arg1 mailbox:(id)arg2 previousTag:(id)arg3 isUserRequested:(bool)arg4 consumer:(id)arg5;
 - (int)performMoveRequests:(id)arg1 consumer:(id)arg2;
 - (int)performResolveRecipientsRequest:(id)arg1 consumer:(id)arg2;

@@ -28,7 +28,8 @@
 - (id)initWithForwarder:(id)arg1 onConnection:(id)arg2 publisherID:(id)arg3 values:(id)arg4;
 - (bool)isFromConnection:(id)arg1;
 - (id)itemLocation;
-- (void)observeValue:(id)arg1 forKey:(id)arg2 inUserInfo:(bool)arg3;
+- (void)observeUserInfoValue:(id)arg1 forKey:(id)arg2;
+- (void)observeValues:(id)arg1 forKeys:(id)arg2;
 - (oneway void)pause;
 - (oneway void)prioritize;
 - (id)publisherID;

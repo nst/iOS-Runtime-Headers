@@ -44,6 +44,7 @@
 - (id)_getNearestOutline:(id)arg1 forDestination:(id)arg2;
 - (bool)_isCommonlyMappedToNothing:(id)arg1;
 - (bool)_isNonAsciiSpace:(id)arg1;
+- (id)_namedDestination:(id)arg1 forNameDictionary:(struct CGPDFDictionary { }*)arg2;
 - (void)_notifyAKAdaptorPagePlaceholder:(id)arg1 wasReplacedWithPage:(id)arg2 atIndex:(unsigned long long)arg3;
 - (id)_rawPageAtIndex:(unsigned long long)arg1;
 - (bool)_verifyAnnotationArray:(id)arg1;
@@ -81,7 +82,6 @@
 - (id)documentAttributes;
 - (id)documentCatalogMetadataForRootPath:(id)arg1 withKeys:(id)arg2;
 - (bool)documentChanged;
-- (int)documentId;
 - (struct CGPDFDocument { }*)documentRef;
 - (id)documentURL;
 - (void)enableDocumentMRUMode:(bool)arg1;
@@ -99,16 +99,15 @@
 - (struct __CFDictionary { }*)gcCreateInfoDictionary;
 - (unsigned long long)indexForPage:(id)arg1;
 - (id)init;
-- (id)initWithCGPDFDocument:(struct CGPDFDocument { }*)arg1;
 - (id)initWithData:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (void)insertPage:(id)arg1 atIndex:(unsigned long long)arg2;
-- (bool)isAccessibilityUsingTaggedPDF;
 - (bool)isEncrypted;
 - (bool)isFinding;
 - (bool)isLocked;
 - (long long)majorVersion;
 - (long long)minorVersion;
+- (id)namedDestination:(id)arg1;
 - (struct __CFData { }*)newXMPFromData:(id)arg1 preserveExistingXMPMetadata:(bool)arg2;
 - (void)normalizeFindOptions:(unsigned long long)arg1;
 - (id)outlineItemForSelection:(id)arg1;
@@ -130,12 +129,12 @@
 - (id)selectionFromPage:(id)arg1 atCharacterIndex:(unsigned long long)arg2 toPage:(id)arg3 atCharacterIndex:(unsigned long long)arg4;
 - (id)selectionFromPage:(id)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2 toPage:(id)arg3 atPoint:(struct CGPoint { double x1; double x2; })arg4;
 - (id)selectionFromPage:(id)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2 toPage:(id)arg3 atPoint:(struct CGPoint { double x1; double x2; })arg4 type:(int)arg5;
-- (void)setAccessibilityUsingTaggedPDF:(bool)arg1;
 - (void)setBookmarked:(bool)arg1 atPageIndex:(unsigned long long)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setDocument:(struct CGPDFDocument { }*)arg1;
 - (void)setDocumentAttributes:(id)arg1;
 - (void)setDocumentCatalogMetadata:(id)arg1 withNSpace:(id)arg2 prefix:(id)arg3 rootPath:(id)arg4;
+- (void)setDocumentHasBurnInAnnotations:(bool)arg1;
 - (void)setFormData:(id)arg1;
 - (void)setOutlineRoot:(id)arg1;
 - (void)setPDFAKControllerDelegate:(id)arg1;

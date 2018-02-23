@@ -226,6 +226,7 @@
 + (id)predicateForContactMatchingEmailAddress:(id)arg1;
 + (id)predicateForContactMatchingMapString:(id)arg1;
 + (id)predicateForContactMatchingPhoneNumber:(id)arg1;
++ (id)predicateForContactMatchingPhoneNumberWithDigits:(id)arg1 countryCode:(id)arg2;
 + (id)predicateForContactMatchingURLString:(id)arg1;
 + (id)predicateForContactsInContainerWithIdentifier:(id)arg1;
 + (id)predicateForContactsInGroupWithIdentifier:(id)arg1;

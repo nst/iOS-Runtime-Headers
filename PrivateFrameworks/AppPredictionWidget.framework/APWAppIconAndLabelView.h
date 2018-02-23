@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) UITraitCollection *traitCollection;
 
 + (void)_applyKerning:(double)arg1 whitespaceKerning:(double)arg2 toAttributedString:(id)arg3;
-+ (id)_attributedStringForAppName:(id)arg1 font:(id)arg2 bounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
++ (id)_attributedStringForAppName:(id)arg1 font:(id)arg2 bounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 minimumLetterSpacing:(double)arg4;
 + (double)baselineOffsetMultipleForTraitCollection:(id)arg1;
 + (double)caption2BodyLeadingForTraitCollection:(id)arg1;
 + (double)fontSizeForTraitCollection:(id)arg1;

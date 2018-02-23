@@ -65,6 +65,7 @@
 - (void)recacheIdentitiesSoon;
 - (void)removeAllEntries;
 - (void)removeEntryAtIndex:(long long)arg1;
+- (void)reportFavoritesIssue:(id)arg1;
 - (void)save;
 - (void)saveImmediately;
 - (void)setDirty:(bool)arg1;
@@ -72,6 +73,7 @@
 - (void)setPostCount:(bool)arg1;
 - (void)setStore:(id)arg1;
 - (void)setUidToEntry:(id)arg1;
+- (bool)shouldNotReportFavoritesError:(id)arg1;
 - (id)store;
 - (id)synchronousRemoteObjectProxyForContactsXPCService;
 - (id)uidToEntry;

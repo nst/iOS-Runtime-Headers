@@ -8,6 +8,7 @@
     id /* block */  _containerViewConfigurationBlock;
     UIResponder * _currentPinnedResponder;
     UITapGestureRecognizer * _dismissGestureRecognizer;
+    id /* block */  _dismissalTransitionDidEndBlock;
     NSArray * _keyboardSnapshotViews;
     NSHashTable * _keyboardWindows;
     UIVisualEffectView * _presentationContainerEffectView;
@@ -24,6 +25,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UITapGestureRecognizer *dismissGestureRecognizer;
+@property (nonatomic, copy) id /* block */ dismissalTransitionDidEndBlock;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSArray *keyboardSnapshotViews;
 @property (nonatomic, copy) NSHashTable *keyboardWindows;
@@ -60,6 +62,7 @@
 - (bool)_presentationPotentiallyUnderlapsStatusBar;
 - (void)_presentationTransitionWillBeginForContainerEffectView:(id)arg1;
 - (void)_previewTransitionDidEnd:(bool)arg1;
+- (bool)_shouldBlurStatusBar;
 - (bool)_shouldDisableInteractionDuringTransitions;
 - (bool)_shouldKeepCurrentFirstResponder;
 - (bool)_shouldSavePresentedViewControllerForStateRestoration;
@@ -69,6 +72,7 @@
 - (id)currentPinnedResponder;
 - (id)dismissGestureRecognizer;
 - (void)dismissalTransitionDidEnd:(bool)arg1;
+- (id /* block */)dismissalTransitionDidEndBlock;
 - (void)dismissalTransitionWillBegin;
 - (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;
@@ -84,6 +88,7 @@
 - (void)setContainerViewConfigurationBlock:(id /* block */)arg1;
 - (void)setCurrentPinnedResponder:(id)arg1;
 - (void)setDismissGestureRecognizer:(id)arg1;
+- (void)setDismissalTransitionDidEndBlock:(id /* block */)arg1;
 - (void)setKeyboardSnapshotViews:(id)arg1;
 - (void)setKeyboardWindows:(id)arg1;
 - (void)setPresentationContainerEffectView:(id)arg1;

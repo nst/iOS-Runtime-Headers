@@ -44,6 +44,7 @@
 - (void)addRootRecordChange;
 - (id)allTransactionStoreRowIDs;
 - (id)cachedCloudRecordWithObjectID:(id)arg1;
+- (void)cachedCloudRecordWithObjectID:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)changeWithObjectID:(id)arg1;
 - (id)changeWithRecordName:(id)arg1;
 - (id)cloudChanges;
@@ -74,6 +75,7 @@
 - (id)processingCloudChanges;
 - (id)recordChangeMap;
 - (void)removeChangeWithObjectID:(id)arg1;
+- (void)resetRecordWithRecordID:(id)arg1;
 - (id)rootRecordModelObject;
 - (void)setAllChangedAsProcessed;
 - (void)setAsProcessedChange:(id)arg1;

@@ -11,6 +11,7 @@
     <PKPeerPaymentAddBankAcountInformationViewControllerDelegate> * _delegate;
     UIButton * _deleteBankInformationButton;
     PKPeerPaymentFindBankAccountInformationFooterView * _footerView;
+    bool  _hasInteractedWithCell;
     bool  _isEditingBankInformation;
     unsigned long long  _state;
     PKTableHeaderView * _tableHeader;
@@ -40,6 +41,7 @@
 - (unsigned long long)_minTextLengthForRow:(unsigned long long)arg1;
 - (double)_minimumRequiredWidthForCellText:(id)arg1 withFont:(id)arg2;
 - (id)_placeholderTextForRow:(unsigned long long)arg1;
+- (void)_reloadTableSection;
 - (unsigned long long)_rowWithTextField:(id)arg1;
 - (void)_setIdleTimerDisabled:(bool)arg1 title:(id)arg2 subtitle:(id)arg3;
 - (void)_setNavigationBarEnabled:(bool)arg1;
@@ -47,6 +49,7 @@
 - (void)_setState:(unsigned long long)arg1;
 - (void)_setTableFooterView;
 - (void)_setTableViewHeaderActivitySpinnerAnimated:(bool)arg1 title:(id)arg2 subtitle:(id)arg3;
+- (void)_setText:(id)arg1 forForCellAtRow:(unsigned long long)arg2;
 - (void)_showHeaderActivitySpinner;
 - (void)_showHowToFindAccountInformationViewController:(id)arg1;
 - (id)_textForRow:(unsigned long long)arg1;

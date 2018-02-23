@@ -13,6 +13,7 @@
 - (id)imageIdentifierForPrimaryState:(long long)arg1;
 - (id)imageIdentifiersKeyedByPrimaryState;
 - (id)initWithImageIdentifiersKeyedByPrimaryState:(id)arg1;
+- (id)initWithImageIdentifiersKeyedByPrimaryState:(id)arg1 defaultImageIdentifier:(id)arg2;
 - (bool)isEqual:(id)arg1;
 - (void)setImageIdentifiersKeyedByPrimaryState:(id)arg1;
 

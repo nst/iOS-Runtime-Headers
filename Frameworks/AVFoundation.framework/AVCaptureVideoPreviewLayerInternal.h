@@ -15,6 +15,8 @@
     int  changeSeed;
     bool  chromaNoiseReductionEnabled;
     AVCaptureConnection * connection;
+    double  d22ScreenScale;
+    double  d22ScreenWidth;
     bool  depthDataDeliveryEnabled;
     bool  depthDataDeliverySupported;
     bool  disableActions;

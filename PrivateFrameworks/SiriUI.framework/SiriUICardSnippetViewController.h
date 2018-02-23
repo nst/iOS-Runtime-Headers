@@ -62,7 +62,8 @@
 - (void)loadView;
 - (id)localeForCardSnippetView:(id)arg1;
 - (bool)logContentsIfApplicable;
-- (void)modalContainerViewControllerWillBeDismissed:(id)arg1;
+- (void)modalContainerViewControllerViewDidDisappear:(id)arg1;
+- (void)modalContainerViewControllerViewWillDisappear:(id)arg1;
 - (unsigned long long)navigationIndexOfCardViewController:(id)arg1;
 - (bool)performNextCardCommand:(id)arg1 forCardViewController:(id)arg2;
 - (bool)performPunchoutCommand:(id)arg1 forCardViewController:(id)arg2;

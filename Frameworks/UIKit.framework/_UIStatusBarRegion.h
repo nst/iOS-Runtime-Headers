@@ -34,7 +34,7 @@
 @property (nonatomic, readonly) NSArray *currentEnabledDisplayItems;
 @property (nonatomic, retain) NSSet *dependentRegionIdentifiers;
 @property (nonatomic, retain) NSMutableIndexSet *disablingTokens;
-@property (nonatomic, readonly, copy) NSDictionary *displayItemFrames;
+@property (nonatomic, readonly, copy) NSDictionary *displayItemAbsoluteFrames;
 @property (nonatomic, retain) NSOrderedSet *displayItems;
 @property (getter=isEnabled, nonatomic, readonly) bool enabled;
 @property (nonatomic, readonly) NSArray *enabledDisplayItems;
@@ -62,7 +62,8 @@
 - (id)description;
 - (void)disableWithToken:(unsigned long long)arg1;
 - (id)disablingTokens;
-- (id)displayItemFrames;
+- (id)displayItemAbsoluteFrames;
+- (id)displayItemForHUDAtPointInContentView:(struct CGPoint { double x1; double x2; })arg1;
 - (id)displayItems;
 - (void)enableWithToken:(unsigned long long)arg1;
 - (id)enabledDisplayItems;

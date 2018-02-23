@@ -15,6 +15,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SBUIPasscodeEntryFieldDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIFont *font;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *stringValue;
 @property (readonly) Class superclass;
@@ -38,6 +39,7 @@
 - (id)customBackgroundColor;
 - (id)delegate;
 - (void)deleteLastCharacter;
+- (id)font;
 - (id)initWithDefaultSizeAndLightStyle:(bool)arg1;
 - (bool)isFirstResponder;
 - (void)notePasscodeFieldDidAcceptEntry;
@@ -46,8 +48,10 @@
 - (bool)resignFirstResponder;
 - (void)setCustomBackgroundColor:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setFont:(id)arg1;
 - (void)setStringValue:(id)arg1;
 - (bool)shouldInsertPasscodeText:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)stringValue;
 - (bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 replacementString:(id)arg3;
 - (void)textFieldDidResignFirstResponder:(id)arg1;

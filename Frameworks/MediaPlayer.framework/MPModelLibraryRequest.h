@@ -23,9 +23,9 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) MPMediaQuery *legacyMediaQuery;
 @property (nonatomic, retain) MPMediaLibrary *mediaLibrary;
+@property (nonatomic, readonly) MPSectionedCollection *playbackSourceModelObjects;
 @property (nonatomic, readonly, copy) NSString *rtcReportingPlayQueueSourceIdentifier;
 @property (nonatomic, copy) NSArray *scopedContainers;
-@property (nonatomic) bool shouldExcludeNonShuffleItems;
 @property (readonly) Class superclass;
 @property (nonatomic) bool wantsDetailedKeepLocalRequestableResponse;
 

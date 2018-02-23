@@ -14,6 +14,7 @@
 
 - (void).cxx_destruct;
 - (struct { long long x1; long long x2; })blockPathForX:(id)arg1 zoom:(long long)arg2;
+- (bool)blocksAvailableFromPath:(struct { long long x1; long long x2; })arg1 toPath:(struct { long long x1; long long x2; })arg2;
 - (void)blocksRequestedFromPath:(struct { long long x1; long long x2; })arg1 toPath:(struct { long long x1; long long x2; })arg2;
 - (id)cachedBlockForPath:(struct { long long x1; long long x2; })arg1 context:(id)arg2;
 - (id)delegate;

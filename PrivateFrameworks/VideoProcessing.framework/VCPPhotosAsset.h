@@ -6,7 +6,7 @@
     PHAsset * _asset;
     NSDictionary * _cachedExif;
     NSArray * _cachedResources;
-    long long  _onceExif;
+    bool  _onceExif;
 }
 
 @property (nonatomic, readonly) NSArray *resources;

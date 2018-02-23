@@ -13,7 +13,7 @@
 @property (nonatomic, readonly, copy) NSString *groupEmitterIdentifier;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool isRequiredByFollowingEmitters;
-@property (nonatomic, readonly) bool requiresForYouCatchUpOperation;
+@property (nonatomic, readonly) long long requiredForYouContentTypes;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

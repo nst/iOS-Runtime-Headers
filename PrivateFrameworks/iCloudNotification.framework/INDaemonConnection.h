@@ -16,6 +16,6 @@
 - (void)notifyDeviceStorageLevel:(long long)arg1 completion:(id /* block */)arg2;
 - (bool)registerAccount:(id)arg1 foriCloudNotificationsWithReason:(unsigned long long)arg2 error:(id*)arg3;
 - (bool)unregisterAccount:(id)arg1 fromiCloudNotificationsWithError:(id*)arg2;
-- (void)updateOfferForAccount:(id)arg1 offerId:(id)arg2 buttonId:(id)arg3 completion:(id /* block */)arg4;
+- (void)updateOfferForAccount:(id)arg1 offerId:(id)arg2 buttonId:(id)arg3 info:(id)arg4 completion:(id /* block */)arg5;
 
 @end

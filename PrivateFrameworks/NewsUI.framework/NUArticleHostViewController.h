@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsUI.framework/NewsUI
  */
 
-@interface NUArticleHostViewController : UIViewController <NULoadingDelegate, NUPagable> {
+@interface NUArticleHostViewController : UIViewController <NULoadingDelegate, NUPageable> {
     FCArticle * _article;
     <NUArticleViewControllerFactory> * _articleViewControllerFactory;
     UIViewController * _contentTypeViewController;

@@ -26,6 +26,7 @@
 - (bool)mayBeKeptInViewHierarchy;
 - (long long)parentModalPresentationStyle;
 - (id)parentTransitioningDelegate;
+- (long long)preferredStatusBarStyle;
 - (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;
 - (void)setDelegate:(id)arg1;
 - (bool)shouldShowChatChrome;

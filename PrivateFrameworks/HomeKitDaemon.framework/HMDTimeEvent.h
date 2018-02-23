@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDTimeEvent : HMDEvent <HMFDumpState, HMFLogging, HMFMessageReceiver, NSSecureCoding> {
+@interface HMDTimeEvent : HMDEvent <HMDHomeMessageReceiver, HMFDumpState, HMFLogging, NSSecureCoding> {
     HMDBackgroundTaskAgentTimer * _btaTimer;
     bool  _repetitive;
 }
@@ -12,6 +12,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (readonly, copy) NSSet *messageReceiverChildren;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, readonly) bool repetitive;
 @property (readonly) Class superclass;

@@ -20,6 +20,7 @@
 + (id)availableArtworkWithRequest:(id)arg1;
 + (void)cancelFetchingArtworkForRequest:(id)arg1;
 + (void)fetchArtworkForRequest:(id)arg1 completionHandler:(id /* block */)arg2;
++ (void)fetchArtworkInfoForRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 + (bool)needsToFetchArtworkForRequest:(id)arg1;
 
 - (void).cxx_destruct;

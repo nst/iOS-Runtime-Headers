@@ -13,6 +13,7 @@
     bool  _forPickingDocuments;
     NSArray * _forbiddenActionIdentifiers;
     NSArray * _hiddenSourcesIdentifiers;
+    NSString * _hostBundleTitle;
     NSString * _hostIdentifier;
     bool  _inProcess;
     unsigned long long  _interactionMode;
@@ -55,9 +56,11 @@
 @property bool forPickingDocuments;
 @property (retain) NSArray *forbiddenActionIdentifiers;
 @property (nonatomic, copy) NSArray *hiddenSourcesIdentifiers;
+@property (nonatomic, copy) NSString *hostBundleTitle;
 @property (nonatomic, copy) NSString *hostIdentifier;
 @property bool inProcess;
 @property unsigned long long interactionMode;
+@property (readonly) bool isFilesApp;
 @property unsigned long long maximumNumberOfItemsToFetch;
 @property unsigned long long maximumNumberOfRows;
 @property bool neverCreateBookmarkForOpenInPlace;
@@ -78,7 +81,7 @@
 @property bool showSearchInNavBar;
 @property bool singleSourceMode;
 @property bool skipDownload;
-@property bool sourceIsManaged;
+@property (nonatomic) bool sourceIsManaged;
 @property bool sourceIsWritableFileProvider;
 @property bool suppressBlackCallout;
 @property double thumbnailFetchingTimeOut;
@@ -104,12 +107,14 @@
 - (bool)forPickingDocuments;
 - (id)forbiddenActionIdentifiers;
 - (id)hiddenSourcesIdentifiers;
+- (id)hostBundleTitle;
 - (id)hostIdentifier;
 - (bool)inProcess;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)interactionMode;
 - (unsigned long long)interactionModeForPreparing;
+- (bool)isFilesApp;
 - (unsigned long long)maximumNumberOfItemsToFetch;
 - (unsigned long long)maximumNumberOfRows;
 - (bool)neverCreateBookmarkForOpenInPlace;
@@ -130,6 +135,7 @@
 - (void)setForPickingDocuments:(bool)arg1;
 - (void)setForbiddenActionIdentifiers:(id)arg1;
 - (void)setHiddenSourcesIdentifiers:(id)arg1;
+- (void)setHostBundleTitle:(id)arg1;
 - (void)setHostIdentifier:(id)arg1;
 - (void)setInProcess:(bool)arg1;
 - (void)setInteractionMode:(unsigned long long)arg1;

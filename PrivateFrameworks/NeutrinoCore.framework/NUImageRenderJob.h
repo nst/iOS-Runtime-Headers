@@ -9,7 +9,6 @@
     CIRenderTask * _renderTask;
     <NUPurgeableImage> * _renderedImage;
     NURegion * _renderedRegion;
-    int  _renderer;
     NUPurgeableStoragePool * _storagePool;
 }
 
@@ -22,7 +21,7 @@
 - (void).cxx_destruct;
 - (void)cleanUp;
 - (bool)complete:(out id*)arg1;
-- (bool)copyStorage:(id)arg1 region:(id)arg2 toImage:(id)arg3 atPoint:(struct { long long x1; long long x2; })arg4;
+- (bool)copyStorage:(id)arg1 fromRect:(struct { struct { long long x_1_1_1; long long x_1_1_2; } x1; struct { long long x_2_1_1; long long x_2_1_2; } x2; })arg2 toImage:(id)arg3 atPoint:(struct { long long x1; long long x2; })arg4;
 - (id)extentPolicy;
 - (id)imageAccumulationNode;
 - (id)imageAccumulationNodeWithSize:(struct { long long x1; long long x2; })arg1 format:(id)arg2 colorSpace:(id)arg3;

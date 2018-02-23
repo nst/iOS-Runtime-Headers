@@ -10,6 +10,7 @@
     bool  _isInstalled;
     NSArray * _languages;
     NSString * _name;
+    NSString * _voicePath;
 }
 
 @property (nonatomic, readonly) long long footprint;
@@ -19,6 +20,7 @@
 @property (nonatomic, readonly) bool isInstalled;
 @property (nonatomic, readonly) NSArray *languages;
 @property (nonatomic, readonly) NSString *name;
+@property (nonatomic, retain) NSString *voicePath;
 
 + (bool)supportsSecureCoding;
 
@@ -37,5 +39,7 @@
 - (id)languages;
 - (id)name;
 - (void)setIdentifier:(id)arg1;
+- (void)setVoicePath:(id)arg1;
+- (id)voicePath;
 
 @end

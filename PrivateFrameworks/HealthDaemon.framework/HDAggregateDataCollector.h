@@ -5,7 +5,7 @@
 @interface HDAggregateDataCollector : HDDataCollector {
     bool  _didReceiveSensorDatum;
     bool  _fetchingHistoricalData;
-    _HKDataCollectorDelayedOperation * _historicalFetchOperation;
+    _HKDelayedOperation * _historicalFetchOperation;
     NSDictionary * _lastReceivedSecondaryContext;
     <HDSensorDatum> * _lastReceivedSensorDatum;
     double  _maxDatumDuration;
@@ -19,6 +19,7 @@
 - (double)_queue_aggregationInterval;
 - (void)_queue_beginStreaming;
 - (void)_queue_beginUpdates;
+- (void)_queue_executeHistoricalFetchOperation;
 - (void)_queue_fetchHistoricalDataForcedUpdate:(bool)arg1 completion:(id /* block */)arg2;
 - (void)_queue_fetchHistoricalDataWithCompletion:(id /* block */)arg1;
 - (void)_queue_handleCMDatabaseReset;

@@ -57,6 +57,7 @@
 @property (getter=_hasAcceptsApplePayAmenity, nonatomic, readonly) bool hasAcceptsApplePayAmenity;
 @property (getter=_hasAnyAmenities, nonatomic, readonly) bool hasAnyAmenities;
 @property (getter=_hasBusinessClaim, nonatomic, readonly) bool hasBusinessClaim;
+@property (getter=_hasCorrectedHomeWorkAddress, nonatomic, readonly) bool hasCorrectedHomeWorkAddress;
 @property (getter=_hasCorrectedHomeWorkCoordinate, nonatomic, readonly) bool hasCorrectedHomeWorkCoordinate;
 @property (getter=_hasDelivery, nonatomic, readonly) bool hasDelivery;
 @property (getter=_hasDeliveryAmenity, nonatomic, readonly) bool hasDeliveryAmenity;
@@ -234,6 +235,7 @@
 - (bool)_hasAcceptsApplePayAmenity;
 - (bool)_hasAnyAmenities;
 - (bool)_hasBusinessClaim;
+- (bool)_hasCorrectedHomeWorkAddress;
 - (bool)_hasCorrectedHomeWorkCoordinate;
 - (bool)_hasDelivery;
 - (bool)_hasDeliveryAmenity;

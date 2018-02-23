@@ -29,6 +29,7 @@
     AFUISiriLanguage * _siriLanguage;
     NSArray * _siriLanguageOptions;
     UIButton * _skipButton;
+    bool  _skipToEndForTesting;
     NSString * _spokenLanguageCode;
     UILabel * _statusLabel;
     VTUIEnrollmentSuccessView * _successView;
@@ -46,6 +47,7 @@
 @property (nonatomic) bool hasRetriedTraining;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) unsigned long long sessionId;
+@property (nonatomic) bool skipToEndForTesting;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) VTUITrainingManager *trainingManager;
 
@@ -61,6 +63,7 @@
 - (void)_continueFromIntro:(id)arg1;
 - (void)_continueFromLanguageOptions:(id)arg1;
 - (void)_createTrainingManagerIfNeeded;
+- (void)_didEnterBackground;
 - (void)_finishFromLanguageOptions:(id)arg1;
 - (void)_finishSiriSetup:(id)arg1;
 - (id)_getSetupModeString;
@@ -127,10 +130,13 @@
 - (void)setAudioRms:(float)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHasRetriedTraining:(bool)arg1;
+- (void)setSkipToEndForTesting:(bool)arg1;
+- (void)setupNavigationBarStyleForAppearing:(bool)arg1;
 - (void)shouldAbortAnotherDeviceBetter:(id)arg1;
 - (void)shouldContinue:(id)arg1;
 - (void)siriLanguageSpokenLanguageCodeDidChange:(id)arg1;
 - (void)skipAssistant:(id)arg1;
+- (bool)skipToEndForTesting;
 - (void)skipTraining:(id)arg1;
 - (id)trainingManager;
 - (void)viewDidDisappear:(bool)arg1;

@@ -8,8 +8,8 @@
     bool  _showsSearchField;
 }
 
-@property (nonatomic, readonly, retain) UITextField *searchField;
-@property (nonatomic, readonly, retain) UILabel *searchFieldLabel;
+@property (nonatomic, readonly) UITextField *searchField;
+@property (nonatomic, readonly) UILabel *searchFieldLabel;
 @property (nonatomic, readonly) double searchFieldOffset;
 @property (nonatomic) bool showsSearchField;
 

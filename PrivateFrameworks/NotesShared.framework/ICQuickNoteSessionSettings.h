@@ -11,5 +11,7 @@
 + (void)setSessionDuration:(long long)arg1;
 + (void)setShowOnLockScreen:(long long)arg1;
 + (long long)showOnLockScreen;
++ (long long)showOnLockScreenSettingValue;
++ (void)updateNotesOnLockScreenWhenAccountSupportingLockScreenAdded;
 
 @end

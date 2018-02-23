@@ -7,6 +7,7 @@
     NSArray * _migratableDevices;
     <BPSWatchMigrationControllerDelegate> * _migrationDelegate;
     BPSMultipleWatchMigrationView * _multipleWatchView;
+    MBSnapshot * _snapshot;
     BPSRemoteWatchView * _watchView;
 }
 
@@ -14,6 +15,7 @@
 @property (nonatomic, retain) NSArray *migratableDevices;
 @property (nonatomic) <BPSWatchMigrationControllerDelegate> *migrationDelegate;
 @property (nonatomic, retain) BPSMultipleWatchMigrationView *multipleWatchView;
+@property (nonatomic, retain) MBSnapshot *snapshot;
 @property (nonatomic, retain) BPSRemoteWatchView *watchView;
 
 - (void).cxx_destruct;
@@ -21,6 +23,7 @@
 - (void)_saveMigrationPreference:(bool)arg1;
 - (bool)iTunes;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)initWithSnapshot:(id)arg1;
 - (void)loadView;
 - (id)migratableDevices;
 - (id)migrationDelegate;
@@ -29,8 +32,10 @@
 - (void)setMigratableDevices:(id)arg1;
 - (void)setMigrationDelegate:(id)arg1;
 - (void)setMultipleWatchView:(id)arg1;
+- (void)setSnapshot:(id)arg1;
 - (void)setWatchView:(id)arg1;
 - (bool)shouldBeDisplayedGivenMigrationData:(id)arg1;
+- (id)snapshot;
 - (id)watchView;
 
 @end

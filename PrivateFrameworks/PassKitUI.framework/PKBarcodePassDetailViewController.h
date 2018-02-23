@@ -36,6 +36,7 @@
     PKPassHeaderView * _passHeaderView;
     UITableViewCell * _personalizePassCell;
     unsigned long long  _personalizePassSection;
+    double  _previousLayoutTableViewWidth;
     UIRefreshControl * _refreshControl;
     NSObject<OS_dispatch_source> * _refreshTimeout;
     NSArray * _rowCountBySection;
@@ -80,6 +81,7 @@
 - (bool)_linkedAppAvailable;
 - (id)_locationHelpViewForTableView:(id)arg1;
 - (id)_locationRelevancyHelpText;
+- (double)_offscreenHeaderHeight;
 - (void)_passSettingsChanged:(id)arg1;
 - (bool)_personalizeAvailable;
 - (id)_personalizePassCell;
@@ -112,6 +114,7 @@
 - (void)pushSettingsFromViewToModel;
 - (void)refreshControlValueChanged:(id)arg1;
 - (void)reloadData;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
 - (void)setDeleteOverrider:(id)arg1;
 - (void)setShowsLinks:(bool)arg1;
 - (void)setSuppressedContent:(unsigned long long)arg1;

@@ -14,6 +14,7 @@
 - (void)_performEditWithStateTransformation:(id /* block */)arg1 containerEdit:(id /* block */)arg2;
 - (id)_visibleState;
 - (void)deleteContentsObjectAtIndex:(unsigned long long)arg1;
+- (void)deleteContentsObjectAtIndexes:(id)arg1;
 - (void)moveContentsObjectAtIndex:(unsigned long long)arg1 toIndex:(unsigned long long)arg2;
 
 @end

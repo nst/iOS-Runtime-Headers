@@ -3,6 +3,7 @@
  */
 
 @interface IKImageElement : IKViewElement {
+    double  _aspectRatio;
     unsigned long long  _imageType;
     NSURL * _resolvedURL;
     double  _srcHeight;
@@ -11,6 +12,7 @@
     NSArray * _srcsetRules;
 }
 
+@property (nonatomic, readonly) double aspectRatio;
 @property (nonatomic, readonly) UIColor *borderColor;
 @property (nonatomic, readonly) long long fill;
 @property (nonatomic, readonly) double height;
@@ -37,6 +39,7 @@
 - (unsigned long long)_imageTypeForTagName:(id)arg1;
 - (void)_parseSrcset:(id)arg1;
 - (void)appDocumentDidMarkStylesDirty;
+- (double)aspectRatio;
 - (id)borderColor;
 - (long long)fill;
 - (double)height;

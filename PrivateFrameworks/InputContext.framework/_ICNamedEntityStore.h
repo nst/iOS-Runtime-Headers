@@ -19,10 +19,13 @@
 - (void).cxx_destruct;
 - (void)addEntity:(id)arg1 isDurable:(bool)arg2;
 - (void)addEntry:(id)arg1 tokenizedNewEntity:(id)arg2;
+- (bool)areStringCharactersWhitelisted:(id)arg1;
+- (struct USet { }*)exemplarSetForSupportedLocales;
 - (id)filterWord:(id)arg1;
 - (id /* block */)filteringBlock;
 - (id)init;
 - (bool)isFirstCandidateBetter:(id)arg1 than:(id)arg2;
+- (bool)isValidNamedEntity:(id)arg1 explanation:(id*)arg2;
 - (id)lexicons;
 - (void)reloadRecents;
 - (void)removeAllEntries;

@@ -25,6 +25,8 @@
 - (id)init;
 - (id)initAsPrivateContainer;
 - (id)initWithAssemblies:(id)arg1;
+- (id)initWithFrameworkAssemblies:(id)arg1;
+- (id)initWithFrameworkAssemblies:(id)arg1 assemblies:(id)arg2;
 - (id)pool;
 - (id)privateContainers;
 - (id)register:(id)arg1 name:(id)arg2 createDefinitionBlock:(id /* block */)arg3;

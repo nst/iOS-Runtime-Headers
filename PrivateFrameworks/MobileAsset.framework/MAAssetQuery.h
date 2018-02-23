@@ -18,6 +18,7 @@
 @property (nonatomic, readonly) NSArray *results;
 @property (nonatomic, readonly) long long returnTypes;
 
+- (long long)addKeyValueArray:(id)arg1 with:(id)arg2;
 - (long long)addKeyValuePair:(id)arg1 with:(id)arg2;
 - (id)assetType;
 - (void)augmentResultsWithState:(bool)arg1;

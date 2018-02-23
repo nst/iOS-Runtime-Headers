@@ -11,8 +11,8 @@
     NSUUID * _userDictionaryUUID;
 }
 
-@property (retain) NSSet *addressBookTokens;
-@property (retain) NSSet *userDictionaryTokens;
+@property (nonatomic, retain) NSSet *addressBookTokens;
+@property (nonatomic, retain) NSSet *userDictionaryTokens;
 @property (nonatomic, copy) NSUUID *userDictionaryUUID;
 
 + (id)sharedTextCheckerExemptionsImpl;

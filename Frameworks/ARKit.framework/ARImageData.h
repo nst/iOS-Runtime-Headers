@@ -9,6 +9,7 @@
     }  _cameraIntrinsics;
     long long  _cameraPosition;
     NSDate * _captureDate;
+    long long  _captureFramesPerSecond;
     AVDepthData * _depthData;
     double  _depthDataTimestamp;
     double  _exposureDuration;
@@ -16,8 +17,8 @@
     ARFaceData * _faceData;
     struct __CVBuffer { } * _pixelBuffer;
     bool  _pixelBufferIsMirrored;
+    long long  _renderFramesPerSecond;
     bool  _shouldRestrictFrameRate;
-    long long  _targetFramesPerSecond;
     float  _temperature;
     double  _timestamp;
     float  _tint;
@@ -27,6 +28,7 @@
 @property (nonatomic) struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[3]; } cameraIntrinsics;
 @property (nonatomic) long long cameraPosition;
 @property (nonatomic, retain) NSDate *captureDate;
+@property (nonatomic) long long captureFramesPerSecond;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) AVDepthData *depthData;
 @property (nonatomic) double depthDataTimestamp;
@@ -38,9 +40,9 @@
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } imageResolution;
 @property (nonatomic) struct __CVBuffer { }*pixelBuffer;
 @property (nonatomic) bool pixelBufferIsMirrored;
+@property (nonatomic) long long renderFramesPerSecond;
 @property (nonatomic) bool shouldRestrictFrameRate;
 @property (readonly) Class superclass;
-@property (nonatomic) long long targetFramesPerSecond;
 @property (nonatomic) float temperature;
 @property (nonatomic) double timestamp;
 @property (nonatomic) float tint;
@@ -53,6 +55,7 @@
 - (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[3]; })cameraIntrinsics;
 - (long long)cameraPosition;
 - (id)captureDate;
+- (long long)captureFramesPerSecond;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)depthData;
@@ -63,12 +66,14 @@
 - (id)faceData;
 - (struct CGSize { double x1; double x2; })imageResolution;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 captureDevice:(id)arg2 captureSession:(id)arg3;
+- (id)initWithSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 captureFramePerSecond:(long long)arg2 renderFramePerSecond:(long long)arg3 captureDevice:(id)arg4 captureSession:(id)arg5;
 - (struct __CVBuffer { }*)pixelBuffer;
 - (bool)pixelBufferIsMirrored;
+- (long long)renderFramesPerSecond;
 - (void)setCameraIntrinsics:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[3]; })arg1;
 - (void)setCameraPosition:(long long)arg1;
 - (void)setCaptureDate:(id)arg1;
+- (void)setCaptureFramesPerSecond:(long long)arg1;
 - (void)setDepthData:(id)arg1;
 - (void)setDepthDataTimestamp:(double)arg1;
 - (void)setExposureDuration:(double)arg1;
@@ -77,13 +82,12 @@
 - (void)setISO:(float)arg1;
 - (void)setPixelBuffer:(struct __CVBuffer { }*)arg1;
 - (void)setPixelBufferIsMirrored:(bool)arg1;
+- (void)setRenderFramesPerSecond:(long long)arg1;
 - (void)setShouldRestrictFrameRate:(bool)arg1;
-- (void)setTargetFramesPerSecond:(long long)arg1;
 - (void)setTemperature:(float)arg1;
 - (void)setTimestamp:(double)arg1;
 - (void)setTint:(float)arg1;
 - (bool)shouldRestrictFrameRate;
-- (long long)targetFramesPerSecond;
 - (float)temperature;
 - (double)timestamp;
 - (float)tint;

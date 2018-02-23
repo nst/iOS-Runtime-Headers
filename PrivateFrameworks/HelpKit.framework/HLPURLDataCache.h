@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@interface HLPURLDataCache : NSObject <NSCoding, NSCopying> {
+@interface HLPURLDataCache : NSObject <NSCopying, NSSecureCoding> {
     unsigned long long  _cacheType;
     unsigned long long  _fileSize;
     NSString * _identifier;
@@ -20,6 +20,8 @@
 @property (nonatomic, retain) NSString *locale;
 @property (nonatomic) long long maxAge;
 @property (nonatomic, retain) NSDate *updatedDate;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (unsigned long long)cacheType;

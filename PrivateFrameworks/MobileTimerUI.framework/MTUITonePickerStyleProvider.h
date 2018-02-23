@@ -26,6 +26,7 @@
 @property (nonatomic, readonly) UIColor *vibrationPickerCellHighlightedTextColor;
 @property (nonatomic, readonly) UIColor *vibrationPickerCellTextColor;
 @property (nonatomic, readonly) UIFont *vibrationPickerCellTextFont;
+@property (nonatomic, readonly) UIColor *vibrationPickerCustomBackgroundColor;
 @property (nonatomic, readonly) long long vibrationPickerCustomTableSeparatorBackdropOverlayBlendMode;
 @property (nonatomic, readonly) UIColor *vibrationPickerCustomTableSeparatorColor;
 @property (nonatomic, readonly) UIColor *vibrationPickerHeaderTextColor;
@@ -58,6 +59,7 @@
 - (id)vibrationPickerCellHighlightedTextColor;
 - (id)vibrationPickerCellTextColor;
 - (id)vibrationPickerCellTextFont;
+- (id)vibrationPickerCustomBackgroundColor;
 - (id)vibrationPickerHeaderTextColor;
 - (id)vibrationPickerHeaderTextFont;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })vibrationPickerHeaderTextPaddingInsets;

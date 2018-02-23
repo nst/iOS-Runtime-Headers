@@ -54,6 +54,7 @@
     }  _has;
     NSString * _iadNativeAd;
     NSString * _iadNativeCampaign;
+    NSString * _iadNativeCampaignAd;
     NSString * _iadNativeLine;
     NSString * _iosActivityType;
     bool  _isBreakingNewsArticle;
@@ -131,6 +132,7 @@
 @property (nonatomic) bool hasGroupType;
 @property (nonatomic, readonly) bool hasIadNativeAd;
 @property (nonatomic, readonly) bool hasIadNativeCampaign;
+@property (nonatomic, readonly) bool hasIadNativeCampaignAd;
 @property (nonatomic, readonly) bool hasIadNativeLine;
 @property (nonatomic, readonly) bool hasIosActivityType;
 @property (nonatomic) bool hasIsBreakingNewsArticle;
@@ -168,6 +170,7 @@
 @property (nonatomic, readonly) bool hasWidgetEngagement;
 @property (nonatomic, retain) NSString *iadNativeAd;
 @property (nonatomic, retain) NSString *iadNativeCampaign;
+@property (nonatomic, retain) NSString *iadNativeCampaignAd;
 @property (nonatomic, retain) NSString *iadNativeLine;
 @property (nonatomic, retain) NSString *iosActivityType;
 @property (nonatomic) bool isBreakingNewsArticle;
@@ -267,6 +270,7 @@
 - (bool)hasGroupType;
 - (bool)hasIadNativeAd;
 - (bool)hasIadNativeCampaign;
+- (bool)hasIadNativeCampaignAd;
 - (bool)hasIadNativeLine;
 - (bool)hasIosActivityType;
 - (bool)hasIsBreakingNewsArticle;
@@ -305,6 +309,7 @@
 - (unsigned long long)hash;
 - (id)iadNativeAd;
 - (id)iadNativeCampaign;
+- (id)iadNativeCampaignAd;
 - (id)iadNativeLine;
 - (id)iosActivityType;
 - (bool)isBreakingNewsArticle;
@@ -388,6 +393,7 @@
 - (void)setHasTopStoryType:(bool)arg1;
 - (void)setIadNativeAd:(id)arg1;
 - (void)setIadNativeCampaign:(id)arg1;
+- (void)setIadNativeCampaignAd:(id)arg1;
 - (void)setIadNativeLine:(id)arg1;
 - (void)setIosActivityType:(id)arg1;
 - (void)setIsBreakingNewsArticle:(bool)arg1;

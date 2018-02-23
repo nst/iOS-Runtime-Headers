@@ -8,6 +8,7 @@
         double *m_buffer; 
         unsigned int m_capacity; 
         unsigned int m_size; 
+        unsigned int m_mask; 
     }  _intervalCache;
     NSObject<OS_dispatch_queue> * _queue;
 }

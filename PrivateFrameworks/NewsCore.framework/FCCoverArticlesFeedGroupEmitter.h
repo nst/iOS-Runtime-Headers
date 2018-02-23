@@ -13,7 +13,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool isRequiredByFollowingEmitters;
 @property (nonatomic) unsigned long long minPrecedingTopicGroups;
-@property (nonatomic, readonly) bool requiresForYouCatchUpOperation;
+@property (nonatomic, readonly) long long requiredForYouContentTypes;
 @property (readonly) Class superclass;
 
 - (id)backingChannelTagIDWithAppConfig:(id)arg1;
@@ -23,7 +23,7 @@
 - (id)initWithMinPrecedingTopicGroups:(unsigned long long)arg1;
 - (unsigned long long)minPrecedingTopicGroups;
 - (id)operationToEmitGroupWithContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
-- (bool)requiresForYouCatchUpOperation;
+- (long long)requiredForYouContentTypes;
 - (void)setMinPrecedingTopicGroups:(unsigned long long)arg1;
 - (bool)wantsToEmitGroupInContext:(id)arg1 withCursor:(id)arg2 toCursor:(id)arg3;
 - (bool)wantsToInsertGroup:(id)arg1 withContext:(id)arg2;

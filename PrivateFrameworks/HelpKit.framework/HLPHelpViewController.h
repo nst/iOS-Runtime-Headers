@@ -58,7 +58,6 @@
 + (id)helpViewControllerWithTitle:(id)arg1 identifier:(id)arg2 version:(id)arg3 subpath:(id)arg4;
 
 - (void).cxx_destruct;
-- (void)contentSizeCategoryDidChange:(id)arg1;
 - (id)currentHelpTopicItemForTableOfContentViewController:(id)arg1;
 - (void)dealloc;
 - (id)delegate;

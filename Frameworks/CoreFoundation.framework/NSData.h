@@ -24,6 +24,7 @@
 @property (nonatomic, readonly, copy) NSData *fm_sha512Hash;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *hexString;
+@property (readonly) NSString *hmf_hexidecimalRepresentation;
 @property (getter=hmf_isZeroed, readonly) bool hmf_zeroed;
 @property (readonly) unsigned long long length;
 @property (nonatomic, readonly) NSString *md5;
@@ -326,6 +327,11 @@
 
 - (id)cr_md5DigestHexString;
 
+// Image: /System/Library/PrivateFrameworks/CoreSpeech.framework/CoreSpeech
+
+- (id)initWithXPCObject:(id)arg1;
+- (id)xpcObject;
+
 // Image: /System/Library/PrivateFrameworks/CourseKit.framework/CourseKit
 
 - (id)md5;
@@ -426,6 +432,7 @@
 - (id)decodeCalendar;
 - (id)decodeDateComponents;
 - (id)decodeTimeZone;
+- (id)hmf_hexidecimalRepresentation;
 - (bool)hmf_isZeroed;
 - (id)shortDescription;
 

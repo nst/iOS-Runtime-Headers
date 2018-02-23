@@ -5,6 +5,7 @@
 @interface FMFDevice : NSObject <NSCopying, NSSecureCoding> {
     NSString * _deviceId;
     NSString * _deviceName;
+    NSString * _idsDeviceId;
     bool  _isActiveDevice;
     bool  _isAutoMeCapable;
     bool  _isThisDevice;
@@ -12,11 +13,12 @@
 
 @property (nonatomic, copy) NSString *deviceId;
 @property (nonatomic, copy) NSString *deviceName;
+@property (nonatomic, copy) NSString *idsDeviceId;
 @property (nonatomic) bool isActiveDevice;
 @property (nonatomic) bool isAutoMeCapable;
 @property (nonatomic) bool isThisDevice;
 
-+ (id)deviceWithId:(id)arg1 name:(id)arg2 isActive:(bool)arg3 isThisDevice:(bool)arg4 isAutoMeCapable:(bool)arg5;
++ (id)deviceWithId:(id)arg1 name:(id)arg2 idsDeviceId:(id)arg3 isActive:(bool)arg4 isThisDevice:(bool)arg5 isAutoMeCapable:(bool)arg6;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -27,6 +29,7 @@
 - (id)deviceName;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
+- (id)idsDeviceId;
 - (id)initWithCoder:(id)arg1;
 - (bool)isActiveDevice;
 - (bool)isAutoMeCapable;
@@ -34,6 +37,7 @@
 - (bool)isThisDevice;
 - (void)setDeviceId:(id)arg1;
 - (void)setDeviceName:(id)arg1;
+- (void)setIdsDeviceId:(id)arg1;
 - (void)setIsActiveDevice:(bool)arg1;
 - (void)setIsAutoMeCapable:(bool)arg1;
 - (void)setIsThisDevice:(bool)arg1;

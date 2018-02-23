@@ -4,10 +4,12 @@
 
 @interface HMDAppleMediaAccessoryModel : HMDMediaAccessoryModel
 
-@property (nonatomic, retain) NSData *device;
+@property (nonatomic, retain) HMDDevice *device;
 @property (nonatomic, retain) NSString *deviceUUID;
 @property (nonatomic, retain) NSData *loggedInAccount;
+@property (nonatomic, retain) HMFPairingIdentity *pairingIdentity;
 @property (nonatomic, retain) HMFSoftwareVersion *softwareVersion;
+@property (nonatomic, retain) NSData *symptoms;
 
 + (id)properties;
 

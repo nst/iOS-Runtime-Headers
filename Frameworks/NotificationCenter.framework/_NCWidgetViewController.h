@@ -17,6 +17,7 @@
         unsigned int implementsMarginInsets : 1; 
         unsigned int implementsActiveDisplayModeDidChange : 1; 
         unsigned int implementsDidBecomeForeground : 1; 
+        unsigned int implementsVisibleFrameDidChange : 1; 
     }  _contentProvidingViewControllerFlags;
     UIView * _contentView;
     struct CGRect { 
@@ -60,6 +61,7 @@
 - (void)__setActiveDisplayMode:(long long)arg1;
 - (void)__setMaximumSize:(struct CGSize { double x1; double x2; })arg1 forDisplayMode:(long long)arg2;
 - (void)__updateVisibilityState:(long long)arg1;
+- (void)__updateVisibleFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withReplyHandler:(id /* block */)arg2;
 - (long long)_clientLargestSupportedDisplayMode;
 - (void)_clientLargestSupportedDisplayModeDidChange;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_clientMarginInsets;
@@ -86,6 +88,7 @@
 - (void)_setMaximumWidth:(double)arg1 forDisplayMode:(long long)arg2;
 - (void)_setVisibilityState:(long long)arg1;
 - (void)_setVisibilityState:(long long)arg1 force:(bool)arg2;
+- (bool)_setVisibleFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)_shouldRemoveViewFromHierarchyOnDisappear;
 - (long long)_visibilityState;
 - (id)_widgetExtensionContext;

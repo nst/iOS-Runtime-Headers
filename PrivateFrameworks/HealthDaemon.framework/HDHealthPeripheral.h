@@ -7,7 +7,6 @@
     HKDevice * _deviceInformation;
     bool  _discoveredServices;
     NSMutableDictionary * _healthServices;
-    int  _mfaSucceeded;
     NSString * _name;
     bool  _privateMode;
     _HKExpiringCompletionTimer * _privateModeTimer;
@@ -26,7 +25,6 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableDictionary *healthServices;
 @property (nonatomic, readonly) NSUUID *identifier;
-@property (nonatomic) int mfaSucceeded;
 @property (readonly) NSString *name;
 @property (nonatomic) bool privateMode;
 @property (nonatomic, retain) _HKExpiringCompletionTimer *privateModeTimer;
@@ -38,7 +36,6 @@
 @property (readonly) long long state;
 @property (readonly) NSString *stateDescription;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) bool waitingOnMFA;
 
 + (id)implementedProperties;
 
@@ -61,9 +58,7 @@
 - (id)healthServiceForType:(long long)arg1;
 - (id)healthServices;
 - (id)identifier;
-- (id)initWithCBPeripheral:(id)arg1 name:(id)arg2 requireMFA:(bool)arg3 serviceManager:(id)arg4 profile:(id)arg5;
-- (void)markMFAStatusSuccessful;
-- (int)mfaSucceeded;
+- (id)initWithCBPeripheral:(id)arg1 name:(id)arg2 serviceManager:(id)arg3 profile:(id)arg4;
 - (id)name;
 - (void)performOperation:(id)arg1 withParameters:(id)arg2 completion:(id /* block */)arg3;
 - (void)peripheral:(id)arg1 didDiscoverCharacteristicsForService:(id)arg2 error:(id)arg3;
@@ -83,7 +78,6 @@
 - (id)servicesQueue;
 - (void)setDiscoveredServices:(bool)arg1;
 - (void)setHealthServices:(id)arg1;
-- (void)setMfaSucceeded:(int)arg1;
 - (void)setPrivateMode:(bool)arg1;
 - (void)setPrivateModeTimer:(id)arg1;
 - (void)setProfile:(id)arg1;
@@ -93,7 +87,6 @@
 - (void)setServicesQueue:(id)arg1;
 - (long long)state;
 - (id)stateDescription;
-- (bool)waitingOnMFA;
 - (void)writeCharacteristic:(id)arg1 expectResponse:(bool)arg2 completion:(id /* block */)arg3;
 
 @end

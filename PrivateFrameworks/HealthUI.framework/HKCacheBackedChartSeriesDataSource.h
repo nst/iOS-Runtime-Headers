@@ -22,6 +22,7 @@
 
 - (void).cxx_destruct;
 - (void)_resetCachedPaths;
+- (bool)blocksAvailableFromPath:(struct { long long x1; long long x2; })arg1 toPath:(struct { long long x1; long long x2; })arg2;
 - (void)blocksRequestedFromPath:(struct { long long x1; long long x2; })arg1 toPath:(struct { long long x1; long long x2; })arg2;
 - (id)cachedBlockForPath:(struct { long long x1; long long x2; })arg1 context:(id)arg2;
 - (id)chartCache;

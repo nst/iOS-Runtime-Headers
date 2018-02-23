@@ -6,6 +6,7 @@
     NSSet * _allQuantityTypes;
     bool  _cacheIndicesAreSet;
     HKQuantityType * _calorieGoalType;
+    NSTimeZone * _currentTimeZone;
     HDActivityCacheDataSource * _dataSource;
     NSDate * _dateOverride;
     bool  _existingActivityCachesAreSet;
@@ -19,6 +20,7 @@
     CMPedometer * _pedometer;
     HDProfile * _profile;
     NSObject<OS_dispatch_queue> * _queue;
+    int  _rebuildCacheNotificationToken;
     _HKDelayedOperation * _rebuildCachesOperation;
     bool  _shouldSendCacheUpdateNotification;
     NSTimeZone * _timeZoneOverride;
@@ -52,6 +54,7 @@
 - (void)_queue_alertObservers:(id)arg1 heartRateSummaryChanged:(id)arg2;
 - (void)_queue_alertObserversTodayActivityCacheChanged:(id)arg1;
 - (void)_queue_alertObserversYesterdayActivityCacheChanged:(id)arg1;
+- (id)_queue_currentDate;
 - (id)_queue_currentTimeZone;
 - (void)_queue_deleteActivityCaches:(id)arg1;
 - (bool)_queue_goalsSet;
@@ -64,6 +67,7 @@
 - (bool)_queue_readyToPrimeDataSource;
 - (bool)_queue_readyToSaveCaches;
 - (void)_queue_rebuildActivityCaches;
+- (void)_queue_rebuildCachesIfNeededForTimeChange;
 - (void)_queue_registerForSignificantTimeChangeNotification;
 - (void)_queue_resetCacheIndices;
 - (void)_queue_resetDailyGoals;
@@ -75,14 +79,12 @@
 - (bool)_queue_saveTodayCache;
 - (bool)_queue_saveYesterdayCache;
 - (void)_queue_streamSamplesAdded;
-- (id)_queue_today;
 - (void)_queue_updateCaches;
 - (void)_queue_updateDailyGoalsWithGoalSample:(id)arg1;
 - (void)_queue_updateDailyGoalsWithSamples:(id)arg1;
 - (void)_queue_updateDateIntervalsWithExistingActivityCaches;
 - (void)_queue_updateHeartRateSummaries;
 - (void)_queue_updateWheelchairUse;
-- (void)_significantTimeChangeOccurred:(id)arg1;
 - (void)_userCharacteristicsDidChangeNotification:(id)arg1;
 - (void)accessStatisticsBuilderWithCacheIndex:(long long)arg1 handler:(id /* block */)arg2;
 - (void)addActivityCacheObserver:(id)arg1;

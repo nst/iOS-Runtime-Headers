@@ -119,6 +119,7 @@
 - (id)delegate;
 - (id)dictationColor;
 - (void)didMoveToSuperview;
+- (void)fadeOutCurrentAura;
 - (double)horizontalScaleFactor;
 - (bool)inDictationMode;
 - (bool)inSiriMode;

@@ -12,6 +12,7 @@
     int  _chosenRedPayloadType;
     void * _controlInfoGenerator;
     bool  _ignoreSilence;
+    bool  _includeRedSequenceOffset;
     struct AudioStreamBasicDescription { 
         double mSampleRate; 
         unsigned int mFormatID; 
@@ -29,6 +30,8 @@
     int  _operatingMode;
     unsigned char  _packetsPerBundle;
     bool  _redEnabled;
+    unsigned int  _redMaxDelay20ms;
+    unsigned int  _redNumPayloads;
     struct opaqueRTCReporting { } * _reportingAgent;
     struct tagHANDLE { int x1; } * _rtpHandle;
     struct tagHANDLE { int x1; } * _rtpVideo;
@@ -48,6 +51,7 @@
 @property (nonatomic) int chosenRedPayloadType;
 @property (nonatomic) void*controlInfoGenerator;
 @property (nonatomic) bool ignoreSilence;
+@property (nonatomic) bool includeRedSequenceOffset;
 @property (nonatomic) struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; } inputFormat;
 @property (nonatomic) bool isUseCaseWatchContinuity;
 @property (nonatomic) struct tagHANDLE { int x1; }*mediaQueue;
@@ -55,6 +59,8 @@
 @property (nonatomic) int operatingMode;
 @property (nonatomic) unsigned char packetsPerBundle;
 @property (getter=isRedEnabled, nonatomic) bool redEnabled;
+@property (nonatomic) unsigned int redMaxDelay20ms;
+@property (nonatomic) unsigned int redNumPayloads;
 @property (nonatomic) struct opaqueRTCReporting { }*reportingAgent;
 @property (nonatomic) struct tagHANDLE { int x1; }*rtpHandle;
 @property (nonatomic) struct tagHANDLE { int x1; }*rtpVideo;
@@ -75,6 +81,7 @@
 - (void)dealloc;
 - (id)description;
 - (bool)ignoreSilence;
+- (bool)includeRedSequenceOffset;
 - (struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; })inputFormat;
 - (bool)isRedEnabled;
 - (bool)isUseCaseWatchContinuity;
@@ -82,6 +89,8 @@
 - (bool)needsPacketThread;
 - (int)operatingMode;
 - (unsigned char)packetsPerBundle;
+- (unsigned int)redMaxDelay20ms;
+- (unsigned int)redNumPayloads;
 - (struct opaqueRTCReporting { }*)reportingAgent;
 - (struct tagHANDLE { int x1; }*)rtpHandle;
 - (struct tagHANDLE { int x1; }*)rtpVideo;
@@ -94,6 +103,7 @@
 - (void)setChosenRedPayloadType:(int)arg1;
 - (void)setControlInfoGenerator:(void*)arg1;
 - (void)setIgnoreSilence:(bool)arg1;
+- (void)setIncludeRedSequenceOffset:(bool)arg1;
 - (void)setInputFormat:(struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; })arg1;
 - (void)setIsUseCaseWatchContinuity:(bool)arg1;
 - (void)setMediaQueue:(struct tagHANDLE { int x1; }*)arg1;
@@ -101,6 +111,8 @@
 - (void)setOperatingMode:(int)arg1;
 - (void)setPacketsPerBundle:(unsigned char)arg1;
 - (void)setRedEnabled:(bool)arg1;
+- (void)setRedMaxDelay20ms:(unsigned int)arg1;
+- (void)setRedNumPayloads:(unsigned int)arg1;
 - (void)setReportingAgent:(struct opaqueRTCReporting { }*)arg1;
 - (void)setRtpHandle:(struct tagHANDLE { int x1; }*)arg1;
 - (void)setRtpVideo:(struct tagHANDLE { int x1; }*)arg1;

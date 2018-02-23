@@ -10,7 +10,7 @@
     int  _decodedFrames;
     NSObject<OS_dispatch_group> * _group;
     NSObject<OS_dispatch_semaphore> * _inputSemaphore;
-    long long  _launchOnce;
+    bool  _launchOnce;
     int  _outputFrameIdx;
     NSObject<OS_dispatch_semaphore> * _outputSemaphore;
     struct opaqueCMSampleBuffer {} * _sampleBuffer;

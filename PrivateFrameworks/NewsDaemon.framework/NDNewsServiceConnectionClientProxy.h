@@ -14,7 +14,7 @@
 
 - (void).cxx_destruct;
 - (id)client;
-- (void)serviceHasNewHeadlineResults;
+- (void)serviceHasNewTodayResults;
 - (void)setClient:(id)arg1;
 
 @end

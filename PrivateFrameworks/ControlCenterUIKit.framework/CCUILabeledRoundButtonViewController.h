@@ -14,6 +14,7 @@
     bool  _labelsVisible;
     NSString * _subtitle;
     bool  _toggleStateOnTap;
+    bool  _useAlternateBackground;
     bool  _useLightStyle;
 }
 
@@ -29,6 +30,7 @@
 @property (nonatomic, copy) NSString *subtitle;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic) bool toggleStateOnTap;
+@property (nonatomic) bool useAlternateBackground;
 @property (nonatomic) bool useLightStyle;
 
 - (void).cxx_destruct;
@@ -59,9 +61,11 @@
 - (void)setSubtitle:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setToggleStateOnTap:(bool)arg1;
+- (void)setUseAlternateBackground:(bool)arg1;
 - (void)setUseLightStyle:(bool)arg1;
 - (id)subtitle;
 - (bool)toggleStateOnTap;
+- (bool)useAlternateBackground;
 - (bool)useLightStyle;
 
 @end

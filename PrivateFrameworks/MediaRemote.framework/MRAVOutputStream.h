@@ -3,12 +3,14 @@
  */
 
 @interface MRAVOutputStream : MRAVBufferedOutputStream {
+    bool  _channelIsOpen;
     AVOutputContextCommunicationChannel * _communicationChannel;
     AVOutputContext * _outputContext;
 }
 
 @property (nonatomic, readonly) AVOutputContext *outputContext;
 
+- (void)_outputContextDidCloseCommunicationChannelNotification:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (bool)hasSpaceAvailable;

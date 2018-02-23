@@ -9,6 +9,8 @@
 
 @optional
 
+- (BSAnimationSettings *)hideHomeAffordanceAnimationSettingsForLongLookPresentationController:(UIPresentationController<NCLongLookPresentationController> *)arg1;
 - (bool)longLookPresentationControllerShouldAllowKeyboardOnAppearance:(UIPresentationController<NCLongLookPresentationController> *)arg1;
+- (BSAnimationSettings *)unhideHomeAffordanceAnimationSettingsForLongLookPresentationController:(UIPresentationController<NCLongLookPresentationController> *)arg1;
 
 @end

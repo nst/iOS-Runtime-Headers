@@ -217,6 +217,8 @@
 - (bool)isAppRatingLimitInEffect;
 - (bool)isAppRemovalAllowed;
 - (bool)isAssistantUserGeneratedContentAllowed;
+- (bool)isAttentionAwareAutoLockAllowed;
+- (bool)isAuthenticationBeforeAutoFillRequired;
 - (bool)isAutoCorrectionAllowed;
 - (bool)isAutomaticAppDownloadsAllowed;
 - (bool)isAutomaticAppUpdatesAllowed;

@@ -12,6 +12,7 @@
         unsigned int isEnabled : 1; 
         unsigned int isUserDisabled : 1; 
         unsigned int isiCloudSignedIn : 1; 
+        unsigned int isiTunesSignedIn : 1; 
         unsigned int registrationError : 1; 
         unsigned int registrationErrorReason : 1; 
         unsigned int registrationStatus : 1; 
@@ -19,6 +20,7 @@
     unsigned int  _isEnabled;
     unsigned int  _isUserDisabled;
     unsigned int  _isiCloudSignedIn;
+    unsigned int  _isiTunesSignedIn;
     int  _registrationError;
     int  _registrationErrorReason;
     int  _registrationStatus;
@@ -33,6 +35,7 @@
 @property (nonatomic) bool hasIsEnabled;
 @property (nonatomic) bool hasIsUserDisabled;
 @property (nonatomic) bool hasIsiCloudSignedIn;
+@property (nonatomic) bool hasIsiTunesSignedIn;
 @property (nonatomic) bool hasRegistrationError;
 @property (nonatomic) bool hasRegistrationErrorReason;
 @property (nonatomic) bool hasRegistrationStatus;
@@ -41,6 +44,7 @@
 @property (nonatomic) unsigned int isEnabled;
 @property (nonatomic) unsigned int isUserDisabled;
 @property (nonatomic) unsigned int isiCloudSignedIn;
+@property (nonatomic) unsigned int isiTunesSignedIn;
 @property (nonatomic) int registrationError;
 @property (nonatomic) int registrationErrorReason;
 @property (nonatomic) int registrationStatus;
@@ -59,6 +63,7 @@
 - (bool)hasIsEnabled;
 - (bool)hasIsUserDisabled;
 - (bool)hasIsiCloudSignedIn;
+- (bool)hasIsiTunesSignedIn;
 - (bool)hasRegistrationError;
 - (bool)hasRegistrationErrorReason;
 - (bool)hasRegistrationStatus;
@@ -69,6 +74,7 @@
 - (bool)isEqual:(id)arg1;
 - (unsigned int)isUserDisabled;
 - (unsigned int)isiCloudSignedIn;
+- (unsigned int)isiTunesSignedIn;
 - (void)mergeFrom:(id)arg1;
 - (bool)readFrom:(id)arg1;
 - (int)registrationError;
@@ -82,6 +88,7 @@
 - (void)setHasIsEnabled:(bool)arg1;
 - (void)setHasIsUserDisabled:(bool)arg1;
 - (void)setHasIsiCloudSignedIn:(bool)arg1;
+- (void)setHasIsiTunesSignedIn:(bool)arg1;
 - (void)setHasRegistrationError:(bool)arg1;
 - (void)setHasRegistrationErrorReason:(bool)arg1;
 - (void)setHasRegistrationStatus:(bool)arg1;
@@ -89,6 +96,7 @@
 - (void)setIsEnabled:(unsigned int)arg1;
 - (void)setIsUserDisabled:(unsigned int)arg1;
 - (void)setIsiCloudSignedIn:(unsigned int)arg1;
+- (void)setIsiTunesSignedIn:(unsigned int)arg1;
 - (void)setRegistrationError:(int)arg1;
 - (void)setRegistrationErrorReason:(int)arg1;
 - (void)setRegistrationStatus:(int)arg1;

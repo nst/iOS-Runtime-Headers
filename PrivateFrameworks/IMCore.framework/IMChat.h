@@ -31,6 +31,7 @@
     bool  _hasMoreRecentMessagesToLoad;
     unsigned int  _hasPendingMarkRead;
     bool  _hasRefreshedServiceForSending;
+    bool  _hasSurfRequest;
     NSString * _identifier;
     unsigned int  _ignoreDowngradeStatusUpdates;
     IMMessage * _invitationForPendingParticipants;
@@ -90,6 +91,7 @@
 @property (nonatomic, readonly) bool hasRecipientsFollowingLocation;
 @property (nonatomic, readonly) bool hasRecipientsSharingLocation;
 @property (nonatomic, readonly) bool hasSiblingRecipientsSharingLocation;
+@property (nonatomic) bool hasSurfRequest;
 @property (nonatomic, readonly) bool hasUnhandledInvitation;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *identifier;
@@ -305,6 +307,9 @@
 - (bool)hasRecipientsSharingLocation;
 - (bool)hasSiblingRecipientsSharingLocation;
 - (bool)hasStoredMessageWithGUID:(id)arg1;
+- (bool)hasSurfRequest;
+- (bool)hasSurfRequestForPaymentType:(unsigned long long)arg1;
+- (bool)hasSurfRequestNotFromMe:(id)arg1;
 - (bool)hasUnhandledInvitation;
 - (id)init;
 - (id)invitationForPendingParticipants;
@@ -364,6 +369,7 @@
 - (unsigned long long)overallChatStatus;
 - (id)participants;
 - (id)participantsWithState:(unsigned long long)arg1;
+- (unsigned long long)paymentTypeForMessage:(id)arg1;
 - (id)persistentID;
 - (id)personCentricID;
 - (id)pronunciationHint;
@@ -390,6 +396,7 @@
 - (void)setFrequentReplies:(id)arg1;
 - (void)setGroupID:(id)arg1;
 - (void)setHasHadSuccessfulQuery:(bool)arg1;
+- (void)setHasSurfRequest:(bool)arg1;
 - (void)setInvitationForPendingParticipants:(id)arg1;
 - (void)setIsFiltered:(bool)arg1;
 - (void)setLatestTypingIndicatorTimeInterval:(double)arg1;

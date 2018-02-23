@@ -78,6 +78,7 @@
     PXImageLayerModulator * _imageLayerModulator;
     int  _inProgressSaveRequestID;
     bool  _isAnimatingLayoutOrientation;
+    bool  _isImageFrameReady;
     long long  _layoutOrientation;
     CAMLightingControl * _lightingControl;
     NSArray * _lightingControlConstraints;
@@ -355,6 +356,8 @@
 - (bool)_shouldBePreviewingOriginal;
 - (bool)_shouldDisplayDepthButtonInToolbar;
 - (bool)_shouldDisplayRedEyeTool;
+- (bool)_shouldShowDepthControl;
+- (bool)_shouldShowLightingControl;
 - (void)_showCancelAndRevertOptionsAllowResetTool:(bool)arg1;
 - (void)_startMonitoringSaveProgressIfNeeded;
 - (void)_startWaitingForAssetChange;
@@ -435,12 +438,14 @@
 - (id)mainLivePhotoView;
 - (id)mediaDestination;
 - (id)mediaProvider;
+- (void)mediaViewDidEndZooming:(id)arg1;
 - (void)mediaViewDidFinishPreparingVideo:(id)arg1;
 - (void)mediaViewDidFinishRendering:(id)arg1 withStatistics:(id)arg2;
 - (void)mediaViewDidStartPreparingVideo:(id)arg1;
 - (void)mediaViewDidUpdateLivePhoto:(id)arg1;
 - (long long)mediaViewEdgeInsetsUpdateDisableCount;
 - (void)mediaViewIsReadyForVideoPlayback:(id)arg1;
+- (void)mediaViewWillBeginZooming:(id)arg1;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
 - (bool)oldToolShouldDisappearUnderneathMediaView;
 - (id)oldToolView;

@@ -11,6 +11,7 @@
 - (double)lastNetworkChangedTime;
 - (NSString *)networkType;
 - (NSNumber *)pixelRatio;
+- (bool)runningAnInternalBuild;
 - (NSString *)vendorID;
 
 @end

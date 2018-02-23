@@ -56,8 +56,6 @@
 - (void)_addXORAddressAttribute:(long long)arg1 value:(struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg2;
 - (bool)addAttribute:(struct IDSStunAttribute { unsigned short x1; unsigned short x2; unsigned short x3; union { struct sockaddr_storage { unsigned char x_1_2_1; unsigned char x_1_2_2; BOOL x_1_2_3[6]; long long x_1_2_4; BOOL x_1_2_5[112]; } x_4_1_1; unsigned short x_4_1_2; unsigned int x_4_1_3; unsigned long long x_4_1_4; struct StunBinaryData { int x_5_2_1; unsigned char x_5_2_2[1472]; } x_4_1_5; struct StunErrorCode { int x_6_2_1; int x_6_2_2; unsigned char x_6_2_3[128]; int x_6_2_4; } x_4_1_6; struct StunUnknownAttribute { int x_7_2_1; unsigned short x_7_2_2[20]; } x_4_1_7; } x4; }*)arg1;
 - (bool)allocationRequestWithDictionaryToBuffer:(id)arg1 outputBuffer:(char *)arg2 outputLength:(int*)arg3 lifeTime:(int)arg4;
-- (bool)bindingRequestToBuffer:(char *)arg1 outputLength:(int*)arg2 transactionID:(char *)arg3 nominateCount:(int)arg4 userName:(char *)arg5 usernameLen:(int)arg6 sendTime:(unsigned short)arg7 keyData:(id)arg8;
-- (bool)bindingResponseToBuffer:(char *)arg1 outputLength:(int*)arg2 transactionID:(id)arg3 nominateCount:(int)arg4 echoTime:(unsigned short)arg5 delay:(unsigned short)arg6 keyData:(id)arg7;
 - (bool)channelBindRequestWithDictionaryToBuffer:(id)arg1 outputBuffer:(char *)arg2 outputLength:(int*)arg3 channelNumber:(unsigned short)arg4;
 - (bool)dataIndicationToBuffer:(char *)arg1 outputLength:(int*)arg2 data:(char *)arg3 dataLen:(int)arg4 keyData:(id)arg5;
 - (id)description;
@@ -75,6 +73,8 @@
 - (void)setTransactionID:(id)arg1;
 - (bool)setTransactionID:(id)arg1 attributes:(id)arg2;
 - (double)startTime;
+- (bool)stunRequestToBuffer:(char *)arg1 outputLength:(int*)arg2 transactionID:(char *)arg3 reqCount:(int)arg4 userName:(char *)arg5 usernameLen:(int)arg6 sendTime:(unsigned short)arg7 keyData:(id)arg8;
+- (bool)stunResponseToBuffer:(char *)arg1 outputLength:(int*)arg2 transactionID:(id)arg3 reqCount:(int)arg4 echoTime:(unsigned short)arg5 delay:(unsigned short)arg6 keyData:(id)arg7;
 - (id)transactionID;
 - (long long)type;
 - (bool)verifyMessageIntegrityWithKey:(id)arg1 inputBuffer:(char *)arg2 inputLength:(int)arg3;

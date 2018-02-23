@@ -5,6 +5,7 @@
 @interface FPExtensionProviderChangesReceiver : NSObject <FPItemCollectionDelegate> {
     id /* block */  _changesHandler;
     NSString * _identifier;
+    bool  _invalidated;
     FPItemCollection * _localStorageCollection;
     int  _notifyToken;
     NSDictionary * _providersByID;
@@ -33,6 +34,6 @@
 - (void)providersInfoHasChanged:(id)arg1 error:(id)arg2;
 - (void)setChangesHandler:(id /* block */)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)updateProviderInfo;
+- (void)updateProviderInfoWithAttemptCount:(unsigned long long)arg1;
 
 @end

@@ -8,6 +8,7 @@
     bool  _latencySensitiveMode;
     unsigned long long  _maxPtime;
     VCAudioStreamMultiwayConfig * _multiwayConfig;
+    unsigned char  _numRedundantPayloads;
     unsigned long long  _ptime;
     bool  _redEnabled;
 }
@@ -17,8 +18,9 @@
 @property (getter=isLatencySensitiveMode, nonatomic) bool latencySensitiveMode;
 @property (nonatomic) unsigned long long maxPtime;
 @property (nonatomic, retain) VCAudioStreamMultiwayConfig *multiwayConfig;
+@property (nonatomic) unsigned char numRedundantPayloads;
 @property (nonatomic) unsigned long long ptime;
-@property (getter=isRedEnabled, nonatomic) bool redEnabled;
+@property (getter=isRedEnabled, nonatomic, readonly) bool redEnabled;
 
 - (void)addCodecConfiguration:(id)arg1;
 - (long long)audioStreamMode;
@@ -30,15 +32,17 @@
 - (bool)isRedEnabled;
 - (unsigned long long)maxPtime;
 - (id)multiwayConfig;
+- (unsigned char)numRedundantPayloads;
 - (unsigned long long)ptime;
 - (void)setAudioStreamMode:(long long)arg1;
 - (void)setLatencySensitiveMode:(bool)arg1;
 - (void)setMaxPtime:(unsigned long long)arg1;
 - (void)setMultiwayConfig:(id)arg1;
+- (void)setNumRedundantPayloads:(unsigned char)arg1;
 - (void)setPtime:(unsigned long long)arg1;
-- (void)setRedEnabled:(bool)arg1;
 - (bool)setupCNCodecWithClientDictionary:(id)arg1;
 - (bool)setupCodecWithClientDictionary:(id)arg1;
 - (bool)setupDTMFCodecWithClientDictionary:(id)arg1;
+- (void)setupRedWithRxPayload:(unsigned int)arg1 txPayload:(unsigned int)arg2;
 
 @end

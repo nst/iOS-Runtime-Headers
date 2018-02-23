@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)description;
-- (bool)extractToBatch:(id)arg1 maximumCount:(unsigned long long)arg2 error:(id*)arg3;
+- (bool)extractToBatch:(id)arg1 maximumCount:(unsigned long long)arg2 maximumResourceSize:(unsigned long long)arg3 error:(id*)arg4;
 - (id)initWithStorage:(id)arg1;
 - (void)reset;
 - (void)resetConditionallyFromNewIncomingChange:(id)arg1;

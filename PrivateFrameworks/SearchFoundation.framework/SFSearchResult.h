@@ -32,6 +32,7 @@
     SFCard * _inlineCard;
     NSString * _intendedQuery;
     bool  _isCentered;
+    bool  _isFuzzyMatch;
     bool  _isLocalApplicationResult;
     bool  _isQuickGlance;
     bool  _isSecondaryTitleDetached;
@@ -127,6 +128,7 @@
 @property (nonatomic, retain) SFCard *inlineCard;
 @property (nonatomic, copy) NSString *intendedQuery;
 @property (nonatomic) bool isCentered;
+@property (nonatomic) bool isFuzzyMatch;
 @property (nonatomic) bool isLocalApplicationResult;
 @property (nonatomic) bool isQuickGlance;
 @property (nonatomic) bool isSecondaryTitleDetached;
@@ -228,6 +230,7 @@
 - (id)inlineCard;
 - (id)intendedQuery;
 - (bool)isCentered;
+- (bool)isFuzzyMatch;
 - (bool)isLocalApplicationResult;
 - (bool)isQuickGlance;
 - (bool)isSecondaryTitleDetached;
@@ -298,6 +301,7 @@
 - (void)setInlineCard:(id)arg1;
 - (void)setIntendedQuery:(id)arg1;
 - (void)setIsCentered:(bool)arg1;
+- (void)setIsFuzzyMatch:(bool)arg1;
 - (void)setIsLocalApplicationResult:(bool)arg1;
 - (void)setIsQuickGlance:(bool)arg1;
 - (void)setIsSecondaryTitleDetached:(bool)arg1;

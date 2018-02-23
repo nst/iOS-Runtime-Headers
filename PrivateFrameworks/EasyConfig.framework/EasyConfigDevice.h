@@ -83,6 +83,7 @@
     bool  _supportsHAP;
     bool  _supportsHAP2;
     bool  _supportsMFi;
+    bool  _supportsPairSetup;
     bool  _supportsTLV;
     NSObject<OS_dispatch_source> * _timeoutTimer;
     NSObject<OS_dispatch_queue> * _userQueue;

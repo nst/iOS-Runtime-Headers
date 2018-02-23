@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDRemoteLoginBase : HMFObject <HMFLogging, HMFMessageReceiver> {
+@interface HMDRemoteLoginBase : HMFObject <HMDHomeMessageReceiver, HMFLogging> {
     HMDAppleMediaAccessory * _accessory;
     NSString * _logString;
     HMFMessageDispatcher * _msgDispatcher;
@@ -17,6 +17,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *logString;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (readonly, copy) NSSet *messageReceiverChildren;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, readonly) HMDRemoteLoginHandler *remoteLoginHandler;
@@ -24,7 +25,9 @@
 @property (nonatomic, readonly) NSUUID *uuid;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
++ (bool)hasMessageReceiverChildren;
 + (id)logCategory;
++ (bool)shouldAcceptMessage:(id)arg1 home:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)accessory;

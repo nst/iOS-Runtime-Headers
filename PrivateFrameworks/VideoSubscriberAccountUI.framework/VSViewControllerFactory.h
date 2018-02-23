@@ -18,7 +18,8 @@
 - (id)privateQueue;
 - (void)setPrivateQueue:(id)arg1;
 - (id)viewControllerForAboutPrivacyWithTarget:(id)arg1 action:(SEL)arg2;
-- (id)viewControllerForAppsSupportedByIdentityProviderWithID:(id)arg1 delegate:(id)arg2;
+- (id)viewControllerForAppsSupportedByIdentityProvider:(id)arg1 delegate:(id)arg2;
+- (id)viewControllerForLegalese:(id)arg1 withTarget:(id)arg2 action:(SEL)arg3;
 - (id)viewControllerForPlaybackActivityReportingFromAppsWithBundleIDs:(id)arg1 grantingVouchers:(bool)arg2 appleAccount:(id)arg3 identityProvider:(id)arg4 completionHandler:(id /* block */)arg5;
 - (id)viewControllerForUnsupportedProvider:(id)arg1 withRequestingAppDisplayName:(id)arg2 storage:(id)arg3 acknowledgementHandler:(id /* block */)arg4;
 - (id)viewControllerToConfirmAccountDeletionForIdentityProviderDisplayName:(id)arg1 preferredStyle:(long long)arg2 confirmationHandler:(id /* block */)arg3;

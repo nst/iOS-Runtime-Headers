@@ -6,14 +6,17 @@
     unsigned long long  _category;
     <HFCharacteristicOperationContextProviding> * _contextProvider;
     NSError * _underlyingError;
+    HMSymptom * _underlyingSymptom;
 }
 
 @property (nonatomic) unsigned long long category;
 @property (nonatomic, retain) <HFCharacteristicOperationContextProviding> *contextProvider;
 @property (getter=isPersistentError, nonatomic, readonly) bool persistentError;
 @property (nonatomic, copy) NSError *underlyingError;
+@property (nonatomic, retain) HMSymptom *underlyingSymptom;
 
 + (id)errorWithUnderlyingError:(id)arg1 readTraits:(id)arg2 contextProvider:(id)arg3;
++ (id)errorWithUnderlyingSymptom:(id)arg1 isFixingCurrently:(bool)arg2 contextProvider:(id)arg3;
 
 - (void).cxx_destruct;
 - (unsigned long long)category;
@@ -22,6 +25,8 @@
 - (void)setCategory:(unsigned long long)arg1;
 - (void)setContextProvider:(id)arg1;
 - (void)setUnderlyingError:(id)arg1;
+- (void)setUnderlyingSymptom:(id)arg1;
 - (id)underlyingError;
+- (id)underlyingSymptom;
 
 @end

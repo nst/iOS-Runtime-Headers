@@ -3,6 +3,7 @@
  */
 
 @interface PUEditPluginHostViewController : UIViewController <PLDismissableViewController> {
+    NSNumber * __allowsFullScreen;
     bool  __didHandleCancel;
     bool  __didHandleDone;
     id  __disablingIdleTimerToken;
@@ -14,6 +15,7 @@
     PUEditPlugin * _plugin;
 }
 
+@property (setter=_setAllowsFullScreen:, nonatomic, retain) NSNumber *_allowsFullScreen;
 @property (setter=_setDidHandleCancel:, nonatomic) bool _didHandleCancel;
 @property (setter=_setDidHandleDone:, nonatomic) bool _didHandleDone;
 @property (setter=_setDisablingIdleTimerToken:, nonatomic, retain) id _disablingIdleTimerToken;
@@ -29,7 +31,8 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_addRemoteViewControllerIfNeeded;
+- (void)_addRemoteViewControllerIfNeededAllowingFullscreen:(bool)arg1;
+- (id)_allowsFullScreen;
 - (void)_beginContentEditingWithCompletionHandler:(id /* block */)arg1 timeout:(double)arg2;
 - (void)_beginDisablingIdleTimer;
 - (bool)_didHandleCancel;
@@ -42,10 +45,13 @@
 - (void)_handleCancel;
 - (void)_handleCancelButton:(id)arg1;
 - (void)_handleDoneButton:(id)arg1;
+- (void)_handleVendorVersion:(unsigned int)arg1 completion:(id /* block */)arg2;
 - (id)_hostContext;
+- (void)_queryAllowsFullScreen:(id /* block */)arg1;
 - (void)_queryShouldShowCancelConfirmationWithResponseHandler:(id /* block */)arg1 timeout:(double)arg2;
 - (id)_remoteViewController;
 - (id)_request;
+- (void)_setAllowsFullScreen:(id)arg1;
 - (void)_setDidHandleCancel:(bool)arg1;
 - (void)_setDidHandleDone:(bool)arg1;
 - (void)_setDisablingIdleTimerToken:(id)arg1;

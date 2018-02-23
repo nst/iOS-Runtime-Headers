@@ -179,6 +179,7 @@
 - (bool)isInitialized;
 - (bool)isPaired;
 - (bool)isWatchSetupPushActive;
+- (void)keepPhoneUnlockedInternalTestSPI:(id /* block */)arg1;
 - (unsigned short)lastCompatibilityStateSent;
 - (unsigned long long)lastStatusSent;
 - (long long)maxPairedDeviceCount;

@@ -105,6 +105,7 @@
 - (id /* block */)pingHandler;
 - (void)pingWithCallback:(id /* block */)arg1;
 - (void)pong;
+- (id)prettyDescription;
 - (long long)priorClientTransportType;
 - (long long)priorWorkerTransportType;
 - (bool)readyToCancel;

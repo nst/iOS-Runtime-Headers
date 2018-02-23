@@ -126,6 +126,7 @@
 
 - (void).cxx_destruct;
 - (void)_ascendItemHierarchyWithBlock:(id /* block */)arg1;
+- (void)_cheapCheckSavingItem;
 - (bool)_checkForSharedToMeItemInTrashWithPath:(id)arg1;
 - (bool)_checkZoneUpdateFromFSAtPath:(id)arg1 parentGlobalID:(id)arg2;
 - (bool)_computedUserVisibleStatusAtPath:(id)arg1;
@@ -249,7 +250,7 @@
 - (void)markForceRejected;
 - (void)markFound;
 - (void)markItemForgottenByServer;
-- (void)markLatestRequestAcknowledgedInZone:(id)arg1;
+- (bool)markLatestRequestAcknowledgedInZone:(id)arg1;
 - (void)markLatestSyncRequestFailedInZone:(id)arg1;
 - (void)markLatestSyncRequestRejectedInZone:(id)arg1;
 - (void)markLiveFromStageWithPath:(id)arg1;

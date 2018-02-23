@@ -7,6 +7,7 @@
 + (bool)copyAllFilesFromDir:(id)arg1 toDir:(id)arg2;
 + (bool)copyAllFilesFromDir:(id)arg1 toDir:(id)arg2 keepSourceDir:(bool)arg3;
 + (id)copyAndReturn:(id)arg1 toDir:(id)arg2;
++ (id)copyAndReturn:(id)arg1 toDir:(id)arg2 withNewFileName:(id)arg3;
 + (bool)copyFile:(id)arg1 toDir:(id)arg2;
 + (id)copyItem:(id)arg1 toDestinationDir:(id)arg2 zipped:(bool)arg3;
 + (id)copyPath:(id)arg1 toDestinationDir:(id)arg2 zipped:(bool)arg3;

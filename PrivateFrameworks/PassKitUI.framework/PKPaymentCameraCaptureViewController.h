@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentCameraCaptureViewController : CRCameraReader <CRCameraReaderDelegate, PKPaymentSetupViewControllerCanHideSetupLaterButton> {
+@interface PKPaymentCameraCaptureViewController : CRCameraReader <CRCameraReaderDelegate, PKPaymentSetupHideSetupLaterButtonProtocol> {
     PKPaymentSetupBrowseProductsViewController * _browseCardsController;
     <PKPaymentCameraCaptureViewControllerDelegate> * _cameraCaptureDelegate;
     UIView * _cameraInstructionContainerView;

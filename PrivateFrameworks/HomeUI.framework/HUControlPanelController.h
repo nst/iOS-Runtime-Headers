@@ -39,8 +39,11 @@
 - (id)initWithDelegate:(id)arg1;
 - (id)interactionStateByControlID;
 - (void)removeItem:(id)arg1;
+- (id)sectionFooterForItem:(id)arg1 forSourceItem:(id)arg2;
+- (id)sectionTitleForItem:(id)arg1 forSourceItem:(id)arg2;
 - (void)setupCell:(id)arg1 forItem:(id)arg2;
 - (bool)shouldDisplayItem:(id)arg1;
+- (bool)shouldShowSectionFooterForItem:(id)arg1;
 - (bool)shouldShowSectionTitleForItem:(id)arg1;
 - (void)updateCell:(id)arg1 forItem:(id)arg2 animated:(bool)arg3;
 

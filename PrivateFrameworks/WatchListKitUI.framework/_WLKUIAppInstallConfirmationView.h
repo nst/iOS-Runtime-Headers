@@ -10,9 +10,9 @@
     UIButton * _appStoreButton;
     NSString * _appSubtitle;
     NSLayoutConstraint * _buttonHeightConstraint;
+    WLKUIBuyButtonLockup * _buyLockup;
     UIButton * _cancelButton;
     bool  _didLayout;
-    NSString * _downloadSize;
     NSString * _iAP;
     UILabel * _imageSubtitleView;
     _WLKUIAppInstallLockup * _lockupView;
@@ -30,7 +30,6 @@
 @property (nonatomic, retain) UIButton *appStoreButton;
 @property (nonatomic, copy) NSString *appSubtitle;
 @property (nonatomic, retain) UIButton *cancelButton;
-@property (nonatomic, copy) NSString *downloadSize;
 @property (nonatomic, copy) NSString *iAP;
 @property (nonatomic, retain) _WLKUIAppInstallLockup *lockupView;
 @property (nonatomic, copy) NSString *message;
@@ -40,12 +39,8 @@
 + (struct CGSize { double x1; double x2; })iconSize;
 
 - (void).cxx_destruct;
-- (void)_contentSizeCategoryDidChange;
-- (bool)_isAccessibilityContentSize;
-- (bool)_isLargeContentSize;
 - (void)_layoutForIos;
 - (void)_layoutForTvos;
-- (void)_updateForPreferredContentSize;
 - (id)actionButton;
 - (id)ageRating;
 - (id)appIcon;
@@ -53,9 +48,7 @@
 - (id)appStoreButton;
 - (id)appSubtitle;
 - (id)cancelButton;
-- (void)dealloc;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
-- (id)downloadSize;
 - (id)iAP;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
@@ -70,7 +63,6 @@
 - (void)setAppStoreButton:(id)arg1;
 - (void)setAppSubtitle:(id)arg1;
 - (void)setCancelButton:(id)arg1;
-- (void)setDownloadSize:(id)arg1;
 - (void)setIAP:(id)arg1;
 - (void)setLockupView:(id)arg1;
 - (void)setMessage:(id)arg1;

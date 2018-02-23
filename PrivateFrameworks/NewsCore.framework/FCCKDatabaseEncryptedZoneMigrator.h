@@ -4,7 +4,7 @@
 
 @interface FCCKDatabaseEncryptedZoneMigrator : NSObject <FCCKDatabaseMigrator> {
     id /* block */  _deprecatedBlock;
-    FCCKDatabaseEncryptionMiddleware * _recordEncryptionMiddleware;
+    <FCCKDatabaseRecordMiddleware> * _recordEncryptionMiddleware;
     FCCKPrivateDatabaseSchema * _sourceSchema;
     NSSet * _sourceZoneNames;
 }
@@ -13,7 +13,7 @@
 @property (nonatomic, copy) id /* block */ deprecatedBlock;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) FCCKDatabaseEncryptionMiddleware *recordEncryptionMiddleware;
+@property (nonatomic, retain) <FCCKDatabaseRecordMiddleware> *recordEncryptionMiddleware;
 @property (nonatomic, retain) FCCKPrivateDatabaseSchema *sourceSchema;
 @property (nonatomic, retain) NSSet *sourceZoneNames;
 @property (readonly) Class superclass;

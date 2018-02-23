@@ -13,6 +13,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (retain) UIFont *font;
 @property (readonly) unsigned long long hash;
 @property (retain) TLKIconsView *iconView;
 @property (retain) TLKRichText *richText;
@@ -22,8 +23,6 @@
 @property (readonly) Class superclass;
 @property (retain) TLKEmojiableVibrantLabel *textLabel;
 
-+ (id)font;
-
 - (void).cxx_destruct;
 - (id)attributedString;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })containerStackView:(id)arg1 minimumSpacingAdjecentToArrangedSubview:(id)arg2;
@@ -31,6 +30,7 @@
 - (void)dealloc;
 - (void)disableObserver:(bool)arg1;
 - (void)disableUnbatchedUpdates;
+- (id)font;
 - (id)iconView;
 - (id)init;
 - (void)makeTertiary;

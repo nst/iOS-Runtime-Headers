@@ -4,14 +4,12 @@
 
 @interface PKDeviceRegistrationService : NSObject {
     bool  _isRegistering;
-    PKAssertion * _registrationAssertion;
     PKXPCService * _remoteService;
 }
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (void)_aquireAssertionWithCompletion:(id /* block */)arg1;
 - (id)_remoteObjectProxy;
 - (id)_remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (id)_remoteObjectProxyWithFailureHandler:(id /* block */)arg1;

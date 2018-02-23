@@ -30,6 +30,7 @@
     _SFPBTextColumnsCardSection * _textColumnsCardSection;
     _SFPBTitleCardSection * _titleCardSection;
     _SFPBTrackListCardSection * _trackListCardSection;
+    _SFPBWatchListCardSection * _watchListCardSection;
     _SFPBWebCardSection * _webCardSection;
 }
 
@@ -68,6 +69,7 @@
 @property (nonatomic, readonly) bool hasTextColumnsCardSection;
 @property (nonatomic, readonly) bool hasTitleCardSection;
 @property (nonatomic, readonly) bool hasTrackListCardSection;
+@property (nonatomic, readonly) bool hasWatchListCardSection;
 @property (nonatomic, readonly) bool hasWebCardSection;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _SFPBImagesCardSection *imagesCardSection;
@@ -93,6 +95,7 @@
 @property (nonatomic, retain) _SFPBTextColumnsCardSection *textColumnsCardSection;
 @property (nonatomic, retain) _SFPBTitleCardSection *titleCardSection;
 @property (nonatomic, retain) _SFPBTrackListCardSection *trackListCardSection;
+@property (nonatomic, retain) _SFPBWatchListCardSection *watchListCardSection;
 @property (nonatomic, retain) _SFPBWebCardSection *webCardSection;
 
 - (void).cxx_destruct;
@@ -130,6 +133,7 @@
 - (bool)hasTextColumnsCardSection;
 - (bool)hasTitleCardSection;
 - (bool)hasTrackListCardSection;
+- (bool)hasWatchListCardSection;
 - (bool)hasWebCardSection;
 - (unsigned long long)hash;
 - (id)imagesCardSection;
@@ -178,6 +182,7 @@
 - (void)setTextColumnsCardSection:(id)arg1;
 - (void)setTitleCardSection:(id)arg1;
 - (void)setTrackListCardSection:(id)arg1;
+- (void)setWatchListCardSection:(id)arg1;
 - (void)setWebCardSection:(id)arg1;
 - (id)socialMediaPostCardSection;
 - (id)stockChartCardSection;
@@ -187,6 +192,7 @@
 - (id)textColumnsCardSection;
 - (id)titleCardSection;
 - (id)trackListCardSection;
+- (id)watchListCardSection;
 - (id)webCardSection;
 - (void)writeTo:(id)arg1;
 

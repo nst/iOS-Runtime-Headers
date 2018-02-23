@@ -10,6 +10,7 @@
     CLLocationManager * _locationManager;
     NSObject<OS_dispatch_queue> * _locationUpdateStartQueue;
     PCPersistentTimer * _locationUpdateTimer;
+    PCPersistentTimer * _requestLocationsTimer;
     bool  _requestingLocation;
     double  _ti;
 }
@@ -25,6 +26,7 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
+- (void)_requestLocationsTimeout:(id)arg1;
 - (void)_sosPersistentTimerInitialRequest:(id)arg1;
 - (void)_sosPersistentTimerLocationManagerTic:(id)arg1;
 - (void)_startTimer;
@@ -34,6 +36,7 @@
 - (id)forceEnableLocationAssertion;
 - (id)init;
 - (void)invalidateInitialTimer;
+- (void)invalidateRequestLocationsTimer;
 - (void)invalidateTimer;
 - (bool)isRequestingLocation;
 - (bool)isValid;

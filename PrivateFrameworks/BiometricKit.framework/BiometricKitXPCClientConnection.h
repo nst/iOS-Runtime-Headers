@@ -6,6 +6,7 @@
     NSMutableDictionary * _clients;
     NSObject<OS_dispatch_queue> * _queue;
     NSXPCConnection * _xpcConnection;
+    int  serverStartedNotificationToken;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
@@ -16,6 +17,7 @@
 - (void).cxx_destruct;
 - (bool)addClient:(id)arg1;
 - (id)client:(unsigned long long)arg1;
+- (void)dealloc;
 - (void)enrollFeedback:(id)arg1 client:(unsigned long long)arg2;
 - (void)enrollResult:(id)arg1 client:(unsigned long long)arg2;
 - (void)enrollUpdate:(id)arg1 client:(unsigned long long)arg2;

@@ -10,6 +10,7 @@
     UIColor * inactiveColor;
     NSMutableArray * pageRanges;
     NSMutableArray * pages;
+    NSUUID * pdfSelectionUUID;
 }
 
 - (void).cxx_destruct;

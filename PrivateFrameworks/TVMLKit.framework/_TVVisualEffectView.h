@@ -3,27 +3,23 @@
  */
 
 @interface _TVVisualEffectView : UIVisualEffectView {
-    UIView * _backdropLayerHostView;
-    NSString * _savedGroupName;
+    UIView * _hostView;
 }
 
-@property (nonatomic) UIView *backdropLayerHostView;
-@property (nonatomic, readonly, copy) NSString *savedGroupName;
+@property (nonatomic) UIView *hostView;
 
-+ (id)backdropLayerHostViews;
-+ (void)disableBackdropLayerHostView:(id)arg1;
-+ (void)enableBackdropLayerHostView:(id)arg1;
++ (void)addHostView:(id)arg1;
++ (void)disableForHostView:(id)arg1;
++ (void)enableForHostView:(id)arg1;
++ (id)hostViewDisablements;
++ (void)removeHostView:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_setGroupName:(id)arg1;
-- (id)backdropLayerHostView;
-- (void)backdropLayerHostViewDisabled:(id)arg1;
-- (void)backdropLayerHostViewEnabled:(id)arg1;
+- (void)_disablement:(id)arg1;
+- (void)_setDisabled:(bool)arg1;
 - (void)dealloc;
 - (void)didMoveToWindow;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithEffect:(id)arg1;
-- (id)savedGroupName;
-- (void)setBackdropLayerHostView:(id)arg1;
+- (id)hostView;
+- (void)setHostView:(id)arg1;
 
 @end

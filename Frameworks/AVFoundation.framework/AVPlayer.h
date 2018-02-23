@@ -39,6 +39,9 @@
 + (bool)automaticallyNotifiesObserversOfUsesAudioOnlyModeForExternalPlayback;
 + (bool)automaticallyNotifiesObserversOfUsesLegacyAutomaticWaitingBehavior;
 + (bool)automaticallyNotifiesObserversOfVibrationPattern;
++ (long long)availableHDRModes;
++ (void)checkForAvailableHDRModesChanges;
++ (void)fireAvailableHDRModesDidChangeNotification;
 + (void)initialize;
 + (bool)isIAPDExtendedModeActive;
 + (id)keyPathsForValuesAffectingActionAtItemEnd;
@@ -49,6 +52,7 @@
 + (id)playerWithPlayerItem:(id)arg1;
 + (id)playerWithURL:(id)arg1;
 + (long long)propertyStorageCachePolicy;
++ (void)registerForScreenConnectionChanges;
 
 - (bool)_CALayerDestinationIsTVOut;
 - (long long)_actionAtItemEnd;
@@ -94,6 +98,7 @@
 - (void)_didFinishSuspension:(id)arg1;
 - (bool)_disallowsAMRAudio;
 - (bool)_disallowsHardwareAcceleratedVideoDecoder;
+- (bool)_disallowsVideoLayerDisplayCompositing;
 - (id)_displaysUsedForPlayback;
 - (bool)_dynamicallyChoosesInitialVariant;
 - (void)_enqueuePlayQueueModification_invokeOnIvarAccessQueue:(id)arg1;
@@ -153,6 +158,7 @@
 - (void)_setClientName:(id)arg1;
 - (void)_setClientPriority:(long long)arg1;
 - (void)_setCurrentItem:(id)arg1;
+- (void)_setDisallowsVideoLayerDisplayCompositing:(bool)arg1;
 - (void)_setDisplaysUsedForPlayback:(id)arg1;
 - (void)_setDynamicallyChoosesInitialVariant:(bool)arg1;
 - (void)_setEQPreset:(int)arg1;

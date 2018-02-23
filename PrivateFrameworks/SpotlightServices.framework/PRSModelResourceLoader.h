@@ -3,18 +3,18 @@
  */
 
 @interface PRSModelResourceLoader : NSObject {
-    NSMutableArray * _pendingUpdates;
+    NSMutableSet * _pendingUpdates;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
-@property (nonatomic, retain) NSMutableArray *pendingUpdates;
+@property (nonatomic, retain) NSMutableSet *pendingUpdates;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
 + (id)resourceDirectoryPathForType:(unsigned long long)arg1 forUpdate:(bool)arg2;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (bool)_loadArchivedResources:(id)arg1 parentPath:(id)arg2 existingVersion:(id)arg3;
+- (bool)_loadArchivedResources:(id)arg1 parentPath:(id)arg2;
 - (int)checkHeader:(struct prs_model_resource_header { unsigned int x1; unsigned int x2; unsigned int x3; unsigned char x4[0]; }*)arg1;
 - (bool)hasPendingUpdates;
 - (id)init;
@@ -24,6 +24,7 @@
 - (void)moveNewlyPackagedResources:(id)arg1;
 - (id)pendingUpdates;
 - (id)queue;
+- (void)removeDeprecatedResources;
 - (void)removeResourcesForType:(unsigned long long)arg1;
 - (void)removeResourcesForType:(unsigned long long)arg1 group:(id)arg2;
 - (void)setPendingUpdates:(id)arg1;

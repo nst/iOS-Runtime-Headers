@@ -30,6 +30,7 @@
     SFTextColumnsCardSection * _textColumnsCardSection;
     SFTitleCardSection * _titleCardSection;
     SFTrackListCardSection * _trackListCardSection;
+    SFWatchListCardSection * _watchListCardSection;
     SFWebCardSection * _webCardSection;
 }
 
@@ -66,6 +67,7 @@
 @property (nonatomic, retain) SFTextColumnsCardSection *textColumnsCardSection;
 @property (nonatomic, retain) SFTitleCardSection *titleCardSection;
 @property (nonatomic, retain) SFTrackListCardSection *trackListCardSection;
+@property (nonatomic, retain) SFWatchListCardSection *watchListCardSection;
 @property (nonatomic, retain) SFWebCardSection *webCardSection;
 
 + (bool)supportsSecureCoding;
@@ -123,6 +125,7 @@
 - (void)setTextColumnsCardSection:(id)arg1;
 - (void)setTitleCardSection:(id)arg1;
 - (void)setTrackListCardSection:(id)arg1;
+- (void)setWatchListCardSection:(id)arg1;
 - (void)setWebCardSection:(id)arg1;
 - (id)socialMediaPostCardSection;
 - (id)stockChartCardSection;
@@ -132,6 +135,7 @@
 - (id)textColumnsCardSection;
 - (id)titleCardSection;
 - (id)trackListCardSection;
+- (id)watchListCardSection;
 - (id)webCardSection;
 
 @end

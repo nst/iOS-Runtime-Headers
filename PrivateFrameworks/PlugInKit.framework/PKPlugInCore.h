@@ -13,6 +13,7 @@
     NSString * _identifier;
     long long  _lastModified;
     NSString * _localizedContainingName;
+    NSDictionary * _localizedFileProviderActionNames;
     NSString * _localizedName;
     NSString * _localizedShortName;
     bool  _onSystemVolume;
@@ -40,6 +41,7 @@
 @property (readonly) bool isMultiplexed;
 @property long long lastModified;
 @property (retain) NSString *localizedContainingName;
+@property (retain) NSDictionary *localizedFileProviderActionNames;
 @property (retain) NSString *localizedName;
 @property (retain) NSString *localizedShortName;
 @property (readonly) bool oldStyle;
@@ -89,6 +91,7 @@
 - (bool)isMultiplexed;
 - (long long)lastModified;
 - (id)localizedContainingName;
+- (id)localizedFileProviderActionNames;
 - (void)localizedInfoDictionaryForKeys:(id)arg1 completion:(id /* block */)arg2;
 - (id)localizedName;
 - (id)localizedShortName;
@@ -118,6 +121,7 @@
 - (void)setIdentifier:(id)arg1;
 - (void)setLastModified:(long long)arg1;
 - (void)setLocalizedContainingName:(id)arg1;
+- (void)setLocalizedFileProviderActionNames:(id)arg1;
 - (void)setLocalizedName:(id)arg1;
 - (void)setLocalizedShortName:(id)arg1;
 - (void)setOnSystemVolume:(bool)arg1;

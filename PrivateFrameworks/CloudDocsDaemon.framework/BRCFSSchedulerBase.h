@@ -44,10 +44,11 @@
 - (bool)hasActiveWork;
 - (bool)hasWork;
 - (id)hasWorkGroup;
-- (bool)haveIdleJobsMatching:(id)arg1;
+- (bool)haveActiveJobsMatching:(id)arg1;
 - (id)initWithSession:(id)arg1 name:(id)arg2 tableName:(id)arg3;
 - (struct brc_job_update { int x1; long long x2; })insertOrUpdateJobID:(id)arg1 throttle:(id)arg2 withState:(int)arg3 insertedSQLColumn:(id)arg4 insertedSQLValues:(id)arg5 updatedSQLValues:(id)arg6;
 - (bool)isCancelled;
+- (int)jobStateFor:(id)arg1;
 - (id)name;
 - (void)performFirstSchedulingAfterStartupInDB:(id)arg1;
 - (void)postponeJobID:(id)arg1 withThrottle:(id)arg2;

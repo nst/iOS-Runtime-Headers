@@ -29,6 +29,7 @@
 @property (readonly) NSURL *splunkUploadURL;
 @property (readonly) Class superclass;
 
++ (void)addOSVersion:(id)arg1;
 + (id)databasePath;
 + (long long)fuzzyDaysSinceDate:(id)arg1;
 + (id)logger;
@@ -42,7 +43,7 @@
 - (id)eventDictWithBlacklistedFieldsStrippedFrom:(id)arg1;
 - (id)extraValuesToUploadToServer;
 - (bool)forceUploadWithError:(id*)arg1;
-- (id)getLoggingJSONWithError:(id*)arg1;
+- (id)getLoggingJSON:(bool)arg1 error:(id*)arg2;
 - (id)getSysdiagnoseDumpWithError:(id*)arg1;
 - (bool)ignoreServerDisablingMessages;
 - (id)init;

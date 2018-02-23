@@ -12,6 +12,7 @@
     NSMutableDictionary * _clockDevices;
     struct AudioServerPlugInDriverInterface {} ** _driverRef;
     struct AudioServerPlugInDriverInterface { void *x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); int (*x23)(); } * _interfacePtr;
+    NSString * _manufacturerName;
     unsigned int  _nextObjectID;
     NSObject<OS_dispatch_queue> * _objectQueue;
     NSMapTable * _objects;
@@ -39,6 +40,7 @@
 - (void)addBox:(id)arg1;
 - (void)addCAObject:(id)arg1;
 - (void)addClockDevice:(id)arg1;
+- (void)addClockDevices:(id)arg1;
 - (void)addDevice:(id)arg1;
 - (void)addDevices:(id)arg1;
 - (unsigned int)addRef;
@@ -48,11 +50,14 @@
 - (id)bundleID;
 - (void)changedProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 forObject:(id)arg2;
 - (void)changedProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 forObjectID:(unsigned int)arg2;
+- (id)clockDevices;
 - (unsigned int)dataSizeForProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned int)arg2 andQualifierData:(const void*)arg3;
 - (void)dealloc;
 - (bool)deregisterForSystemSleepNotifications;
 - (id)devices;
+- (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(bool)arg2;
 - (id)dictionaryForKey:(id)arg1;
+- (id)driverClassName;
 - (struct AudioServerPlugInDriverInterface {}**)driverRef;
 - (bool)getProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned int)arg2 qualifierData:(const void*)arg3 dataSize:(unsigned int*)arg4 andData:(void*)arg5 forClient:(int)arg6;
 - (void)halInitializeWithPluginHost:(struct AudioServerPlugInHostInterface { int (*x1)(); int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); }*)arg1;
@@ -70,6 +75,7 @@
 - (void)removeBox:(id)arg1;
 - (void)removeCAObject:(id)arg1;
 - (void)removeClockDevice:(id)arg1;
+- (void)removeClockDevices:(id)arg1;
 - (void)removeDevice:(id)arg1;
 - (void)removeDevices:(id)arg1;
 - (unsigned int)removeRef;

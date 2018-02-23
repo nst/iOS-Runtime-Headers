@@ -8,6 +8,7 @@
     UIView * _backdropTintView;
     UIViewController * _backdropTintViewController;
     UIView * _backdropView;
+    _TVProductCollectionViewCell * _bannerCell;
     UIViewController * _bannerViewController;
     IKAudioElement * _bgAudioElement;
     CALayer * _bgBlurSublayer;
@@ -30,6 +31,7 @@
     IKViewElement * _productBannerElement;
     double  _productBannerHeight;
     NSArray * _rowSpacingMetricsList;
+    bool  _sportsProductTemplate;
     IKViewElement * _templateElement;
     IKViewElement * _titleElement;
     UIImageView * _topHeroGradientView;
@@ -68,12 +70,16 @@
 - (long long)_overrideLargeTitleDisplayMode;
 - (void)_recordImpressionsForVisibleView;
 - (id)_relatedSectionHeaderView;
+- (bool)_shouldShowTopHeroImage;
 - (bool)_shouldUsePartialScrollingTemplate;
 - (id)_spacingMetricsForViewControllers:(id)arg1 contentSize:(struct CGSize { double x1; double x2; }*)arg2;
+- (bool)_sportsLandscapePhone;
+- (bool)_sportsLandscapePhoneIsOverlaySection:(id)arg1;
 - (struct CGSize { double x1; double x2; })_topHeroImageViewSize;
 - (void)_updateBackgroundTintView;
 - (void)_updateBackgroundTintViewEffects;
 - (void)_updateImpressions;
+- (void)_updateTopHeroImageOverlay;
 - (void)_updateTopHeroImageVisibility:(id)arg1;
 - (id)_yOffsetForView:(id)arg1 withScrollView:(id)arg2 targetYOffset:(double)arg3;
 - (void)animationDidStop:(id)arg1 finished:(bool)arg2;

@@ -4,6 +4,7 @@
 
 @interface SPSearchQueryContext : NSObject {
     bool  _allowInternet;
+    NSArray * _disabledApps;
     NSArray * _disabledBundles;
     NSArray * _disabledDomains;
     SFSearchSuggestion * _engagedSuggestion;
@@ -24,6 +25,7 @@
 }
 
 @property (nonatomic) bool allowInternet;
+@property (nonatomic, retain) NSArray *disabledApps;
 @property (nonatomic, retain) NSArray *disabledBundles;
 @property (nonatomic, retain) NSArray *disabledDomains;
 @property (nonatomic, readonly) NSString *displayedText;
@@ -48,6 +50,7 @@
 
 - (void).cxx_destruct;
 - (bool)allowInternet;
+- (id)disabledApps;
 - (id)disabledBundles;
 - (id)disabledDomains;
 - (id)displayedText;
@@ -67,6 +70,7 @@
 - (id)searchEntities;
 - (id)searchString;
 - (void)setAllowInternet:(bool)arg1;
+- (void)setDisabledApps:(id)arg1;
 - (void)setDisabledBundles:(id)arg1;
 - (void)setDisabledDomains:(id)arg1;
 - (void)setEngagedSuggestion:(id)arg1;

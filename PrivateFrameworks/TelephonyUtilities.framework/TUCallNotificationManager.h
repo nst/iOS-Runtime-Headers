@@ -24,7 +24,6 @@
 - (void)faceTimeIDStatusChangedForCall:(id)arg1;
 - (void)hardPauseDigitsStateChangedForCall:(id)arg1;
 - (void)hasSentInvitationChangedForCall:(id)arg1;
-- (void)hasUpdatedAudioChangedForCall:(id)arg1;
 - (void)isEmergencyChangedForCall:(id)arg1;
 - (void)isOnHoldChangedForCall:(id)arg1;
 - (void)isSendingAudioChangedForCall:(id)arg1;
@@ -40,6 +39,7 @@
 - (void)postNotificationsForCall:(id)arg1 usingComparisonCall:(id)arg2 afterUpdatesInBlock:(id /* block */)arg3;
 - (void)postNotificationsForCallContainer:(id)arg1 afterUpdatesInBlock:(id /* block */)arg2;
 - (void)prefersExclusiveAccessToCellularNetworkChangedForCall:(id)arg1;
+- (void)providerContextChangedForCall:(id)arg1;
 - (void)remoteAspectRatioChangedForCall:(id)arg1;
 - (void)remoteCameraOrientationChangedForCall:(id)arg1;
 - (void)remoteScreenAspectRatioChangedForCall:(id)arg1;

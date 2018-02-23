@@ -261,6 +261,7 @@
 + (id)sharedInstance;
 + (bool)shouldMergeAssistantBarWithKeyboardLayout;
 + (bool)showsGlobeAndDictationKeysExternallyForInterfaceOrientation:(long long)arg1;
++ (bool)showsGlobeAndDictationKeysExternallyForInterfaceOrientation:(long long)arg1 inputMode:(id)arg2;
 + (struct CGSize { double x1; double x2; })sizeForInterfaceOrientation:(long long)arg1;
 + (struct CGSize { double x1; double x2; })sizeForInterfaceOrientation:(long long)arg1 ignoreInputView:(bool)arg2;
 + (double)splitProgress;
@@ -271,6 +272,8 @@
 + (id)uniqueNumberPadInputModesFromInputModes:(id)arg1 forKeyboardType:(long long)arg2;
 
 - (bool)_activeCandidateViewNeedsBackdrop;
+- (id)_autofillContext;
+- (id)_autofillContextForInputDelegate:(id)arg1;
 - (void)_clearAutofillGroup;
 - (int)_clipCornersOfView:(id)arg1;
 - (void)_completePerformInputViewControllerOutput:(id)arg1 executionContext:(id)arg2;
@@ -577,6 +580,7 @@
 - (void)inputManagerDidGenerateAutocorrections:(id)arg1 executionContext:(id)arg2;
 - (void)inputManagerDidGenerateCandidatesForRequest:(id)arg1 resultSet:(id)arg2;
 - (id)inputManagerState;
+- (bool)inputModeHasHardwareLayout:(id)arg1;
 - (id)inputModeLastUsedPreference;
 - (id)inputModePreference;
 - (id)inputOverlayContainer;
@@ -585,6 +589,7 @@
 - (void)insertText:(id)arg1;
 - (void)insertTextAfterSelection:(id)arg1;
 - (void)insertTextSuggestion:(id)arg1;
+- (id)internationalKeyDisplayStringOnEmojiKeyboard;
 - (bool)isAutoDeleteActive;
 - (bool)isAutoFillMode;
 - (bool)isAutoShifted;
@@ -607,6 +612,7 @@
 - (bool)keyboardDrawsOpaque;
 - (bool)keyboardIsKeyPad;
 - (bool)keyboardsExpandedPreference;
+- (double)lastTouchDownTimestamp;
 - (id)layoutForKeyHitTest;
 - (void)layoutHasChanged;
 - (id)layoutState;
@@ -895,7 +901,7 @@
 - (id)updateKeyBehaviors:(id)arg1 withBehaviors:(id)arg2 forState:(id)arg3;
 - (void)updateKeyboardConfigurations;
 - (void)updateKeyboardEventsLagging:(id)arg1;
-- (void)updateKeyboardOutput:(id)arg1 withInputForSmartPunctuation:(id)arg2;
+- (void)updateKeyboardOutput:(id)arg1 withInputForSmartPunctuation:(id)arg2 keyboardConfiguration:(id)arg3;
 - (void)updateKeyboardStateForDeletion;
 - (void)updateKeyboardStateForInsertion:(id)arg1;
 - (void)updateLayout;

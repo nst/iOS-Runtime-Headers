@@ -16,7 +16,7 @@
         int width; 
         int height; 
     }  _offlineOutputDimensions;
-    NSDictionary * _optionsDict;
+    NSMutableDictionary * _optionsDict;
     struct opaqueCMFormatDescription { } * _outputFormatDescription;
     unsigned long long  _outputHeight;
     unsigned long long  _outputWidth;

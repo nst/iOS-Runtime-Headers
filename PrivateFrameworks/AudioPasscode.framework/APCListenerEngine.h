@@ -7,6 +7,7 @@
     AUPasscodeDecoder * _decoderAU;
     AVAudioUnit * _decoderAUNode;
     AVAudioEngine * _engine;
+    AVAudioSession * _session;
 }
 
 + (id)listenerWithCodecConfig:(id)arg1 queue:(id)arg2 dataReceivedHandler:(id /* block */)arg3 error:(id*)arg4;
@@ -17,7 +18,7 @@
 - (id)initWithCodecConfig:(id)arg1 queue:(id)arg2 dataReceivedHandler:(id /* block */)arg3 error:(id*)arg4;
 - (void)makeEngineConnections;
 - (void)setupAudioSession;
-- (void)startEngine;
+- (void)startEngineWithError:(id*)arg1;
 - (void)stopEngine;
 
 @end

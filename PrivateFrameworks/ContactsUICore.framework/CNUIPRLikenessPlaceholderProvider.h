@@ -12,6 +12,7 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
++ (id)companyImageNameForDiameter:(double)arg1;
 + (id)imageNameForDiameter:(double)arg1;
 
 - (void).cxx_destruct;

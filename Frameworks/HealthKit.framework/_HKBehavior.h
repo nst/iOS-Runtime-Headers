@@ -46,6 +46,7 @@
 @property (nonatomic) bool isAppleInternalInstall;
 @property (nonatomic) bool isAppleWatch;
 @property (nonatomic) bool isCompanionCapable;
+@property (nonatomic, readonly) bool isCurrentDeviceN2XA;
 @property (nonatomic) bool isDeviceSupported;
 @property (nonatomic, readonly) bool isRunningStoreDemoMode;
 @property (nonatomic) bool isTestingDevice;
@@ -125,6 +126,7 @@
 - (bool)isAppleInternalInstall;
 - (bool)isAppleWatch;
 - (bool)isCompanionCapable;
+- (bool)isCurrentDeviceN2XA;
 - (bool)isDeviceSupported;
 - (bool)isRunningStoreDemoMode;
 - (bool)isTestingDevice;

@@ -6,6 +6,7 @@
     id /* block */  _completionHandler;
     bool  _fullScreen;
     NSCache * _indexToThumbnailsCache;
+    NSLayoutConstraint * _leftConstraint;
     NSOperationQueue * _operationQueue;
     struct CGSize { 
         double width; 
@@ -14,6 +15,7 @@
     <QLWebKitPaginator> * _paginator;
     NSString * _previewContentType;
     WBUPrintPageRenderer * _renderer;
+    NSLayoutConstraint * _rightConstraint;
     struct CGPoint { 
         double x; 
         double y; 
@@ -49,12 +51,14 @@
 - (void)_scrollToPage:(long long)arg1;
 - (void)_showScrubberIfNeeded:(bool)arg1 reloadThumbnails:(bool)arg2;
 - (id)_thumbnailAtIndex:(unsigned long long)arg1;
+- (void)_updateConstraintConstants:(bool)arg1;
 - (void)_updateScrubberForTraitCollection:(id)arg1 animated:(bool)arg2 reloadThumbnailsIfNeeded:(bool)arg3;
 - (void)_updateScrubberVisibilityAnimated:(bool)arg1;
 - (void)_updateScrubberVisibilityAnimated:(bool)arg1 reloadThumbnailsIfNeeded:(bool)arg2;
 - (void)_webViewDidRequestPasswordForQuickLookDocument:(id)arg1;
 - (bool)automaticallyUpdateScrollViewContentInset;
 - (bool)automaticallyUpdateScrollViewContentOffset;
+- (bool)automaticallyUpdateScrollViewIndicatorInset;
 - (bool)canPinchToDismiss;
 - (bool)canSwipeToDismiss;
 - (unsigned long long)currentPageNumber;

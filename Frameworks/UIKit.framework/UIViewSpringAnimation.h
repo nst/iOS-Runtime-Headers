@@ -4,6 +4,8 @@
 
 @interface UIViewSpringAnimation : NSObject <UIIntervalAnimating> {
     <UIVectorOperatable> * _current;
+    <UIVectorOperatable> * _distance;
+    <UIVectorOperatable> * _epsilon;
     <UIVectorOperatable> * _intermediate;
     <UIVectorOperatable> * _intermediateVelocity;
     struct { 
@@ -27,6 +29,7 @@
         bool targetSmoothingDisabled; 
     }  _parameters;
     bool  _parametersInitialized;
+    <UIVectorOperatable> * _scaledVelocity;
     struct { 
         struct { 
             double value; 
@@ -42,6 +45,7 @@
     id /* block */  _targetValueGetter;
     <UIVectorOperatable> * _value;
     <UIVectorOperatable> * _velocity;
+    float  _velocityScalingFactor;
     <UIVectorOperatable> * _zero;
 }
 

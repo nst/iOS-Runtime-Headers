@@ -4,6 +4,7 @@
 
 @interface CKBrowserSwitcherFooterView : UIView <UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate> {
     CKAppStripLayout * _appStripLayout;
+    UIView * _bottomGrayLine;
     UICollectionView * _collectionView;
     <CKBrowserSwitcherFooterViewDataSource> * _dataSource;
     <CKBrowserSwitcherFooterViewDelegate> * _delegate;
@@ -27,13 +28,14 @@
 }
 
 @property (nonatomic, retain) CKAppStripLayout *appStripLayout;
+@property (nonatomic, retain) UIView *bottomGrayLine;
 @property (nonatomic) <CKBrowserSwitcherFooterViewDataSource> *dataSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CKBrowserSwitcherFooterViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIView *grayLine;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) bool isMagnified;
+@property (nonatomic) bool isMagnified;
 @property (nonatomic) bool minifiesOnSelection;
 @property (nonatomic) bool scrollsLastUsedAppIconIntoView;
 @property (readonly) Class superclass;
@@ -42,6 +44,7 @@
 - (void)adjustMagnificationAtPoint:(struct CGPoint { double x1; double x2; })arg1 minifyImmediately:(bool)arg2;
 - (id)appStripLayout;
 - (void)appsLongPressed:(id)arg1;
+- (id)bottomGrayLine;
 - (id)collectionView;
 - (bool)collectionView:(id)arg1 canMoveItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
@@ -61,6 +64,7 @@
 - (bool)isMagnified;
 - (void)layoutSubviews;
 - (bool)minifiesOnSelection;
+- (void)minifyImmediately:(bool)arg1;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (void)reloadData;
 - (void)resetScrollPosition;
@@ -69,10 +73,12 @@
 - (bool)scrollsLastUsedAppIconIntoView;
 - (void)selectPluginAtIndexPath:(id)arg1;
 - (void)setAppStripLayout:(id)arg1;
+- (void)setBottomGrayLine:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setGrayLine:(id)arg1;
 - (void)setInitiallySelectedPluginIfNeeded;
+- (void)setIsMagnified:(bool)arg1;
 - (void)setMinifiesOnSelection:(bool)arg1;
 - (void)setScrollsLastUsedAppIconIntoView:(bool)arg1;
 - (struct CGPoint { double x1; double x2; })targetContentOffsetForFocusPoint:(struct CGPoint { double x1; double x2; })arg1 initialLayoutMode:(unsigned long long)arg2 finalLayoutMode:(unsigned long long)arg3;

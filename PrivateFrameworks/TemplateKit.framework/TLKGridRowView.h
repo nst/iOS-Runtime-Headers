@@ -31,6 +31,7 @@
 - (unsigned long long)indexOfFirstTrailingColumn;
 - (id)init;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (bool)isLayoutSizeDependentOnPerpendicularAxis;
 - (id)labels;
 - (void)layoutSubviews;
 - (id)manager;

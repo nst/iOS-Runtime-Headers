@@ -44,6 +44,7 @@
 
 @property (setter=_setBarMetrics:, nonatomic) long long _barMetrics;
 @property (setter=_setImageStyle:, nonatomic) long long _imageStyle;
+@property (nonatomic, readonly) UIImage *_internalLandscapeSelectedImagePhone;
 @property (getter=_isSelected, setter=_setSelected:, nonatomic) bool _selected;
 @property (setter=_setTintColor:, nonatomic, retain) UIColor *_tintColor;
 @property (nonatomic, copy) UIColor *badgeColor;
@@ -65,6 +66,7 @@
 - (id)_createViewForTabBar:(id)arg1 asProxyView:(bool)arg2;
 - (id)_imageForState:(unsigned long long)arg1 metrics:(long long)arg2 position:(long long)arg3 type:(long long)arg4;
 - (long long)_imageStyle;
+- (id)_internalLandscapeSelectedImagePhone;
 - (id)_internalLandscapeTemplateImage;
 - (id)_internalLandscapeTemplateImages;
 - (id)_internalLargeContentSizeImage;

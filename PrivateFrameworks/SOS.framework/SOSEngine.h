@@ -38,17 +38,19 @@
 
 - (void).cxx_destruct;
 - (void)SOSSendingLocationUpdateChanged:(id)arg1;
-- (bool)_locationIsValidToSend:(id)arg1;
 - (id)clientConnections;
 - (void)contactStoreDidChange;
 - (id)contactsManager;
 - (long long)currentSOSInitiationState;
 - (void)dealloc;
+- (void)didDismissSOSBeforeSOSCall:(long long)arg1;
+- (void)dismissSOSWithCompletion:(id /* block */)arg1;
 - (id)friendsManager;
 - (id)init;
 - (bool)isSendingLocationUpdate;
 - (void)isSendingLocationUpdate:(id /* block */)arg1;
 - (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)locationIsValidToSend:(id)arg1;
 - (void)mostRecentLocationSentWithCompletion:(id /* block */)arg1;
 - (bool)notificationEnabledAndContactsExist;
 - (void)setClientConnections:(id)arg1;

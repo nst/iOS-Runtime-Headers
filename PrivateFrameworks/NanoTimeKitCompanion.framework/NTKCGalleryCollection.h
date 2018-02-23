@@ -3,14 +3,12 @@
  */
 
 @interface NTKCGalleryCollection : NSObject <NTKEnumeratableFaceCollection> {
-    NTKCompanionApp * _app;
     id /* block */  _calloutName;
     <NTKCGalleryCollectionDelegate> * _delegate;
     NSString * _descriptionText;
     NSString * _title;
 }
 
-@property (nonatomic, retain) NTKCompanionApp *app;
 @property (nonatomic, copy) id /* block */ calloutName;
 @property (nonatomic, readonly) bool canAddNewFaces;
 @property (readonly, copy) NSString *debugDescription;
@@ -25,7 +23,6 @@
 + (id)_astronomyFaces;
 + (id)_chronographFaces;
 + (id)_colorFaces;
-+ (id)_complicationFaces;
 + (id)_explorerFaces;
 + (id)_extraLargeFaces;
 + (id)_galleryCollectionWithCollectionIdentifier:(id)arg1 title:(id)arg2 calloutName:(id /* block */)arg3;
@@ -46,11 +43,8 @@
 + (id)_victoryDigitalFaces;
 + (id)_zeusFaces;
 + (id)galleryCollections;
-+ (id)sampleFacesWithApp:(id)arg1;
-+ (id)sampleFacesWithApp:(id)arg1 notIncludingFaceStyle:(long long)arg2;
 
 - (void).cxx_destruct;
-- (id)app;
 - (id /* block */)calloutName;
 - (bool)canAddNewFaces;
 - (id)delegate;
@@ -60,7 +54,6 @@
 - (unsigned long long)indexOfFace:(id)arg1;
 - (id)newFace;
 - (unsigned long long)numberOfFaces;
-- (void)setApp:(id)arg1;
 - (void)setCalloutName:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDescriptionText:(id)arg1;

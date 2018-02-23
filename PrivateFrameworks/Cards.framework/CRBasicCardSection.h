@@ -4,10 +4,12 @@
 
 @interface CRBasicCardSection : NSObject <CRCardSection> {
     <SFCardSection> * _backingCardSection;
+    NSString * _cardSectionIdentifier;
 }
 
 @property (nonatomic, readonly) NSArray *actionCommands;
 @property (nonatomic, retain) <SFCardSection> *backingCardSection;
+@property (nonatomic, readonly) NSString *cardSectionIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool hasNextCard;
@@ -19,8 +21,10 @@
 
 - (void).cxx_destruct;
 - (id)backingCardSection;
+- (id)cardSectionIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)setBackingCardSection:(id)arg1;
 

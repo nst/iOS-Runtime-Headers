@@ -11,14 +11,14 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) Class headlineResultsFetchDescriptorClass;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) Class todayResultsFetchDescriptorClass;
 
 - (void).cxx_destruct;
 - (id /* block */)availabilityChangedNotificationBlock;
-- (Class)headlineResultsFetchDescriptorClass;
 - (id)init;
 - (bool)isAvailable;
 - (void)setAvailabilityChangedNotificationBlock:(id /* block */)arg1;
+- (Class)todayResultsFetchDescriptorClass;
 
 @end

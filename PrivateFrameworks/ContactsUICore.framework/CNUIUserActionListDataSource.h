@@ -52,6 +52,7 @@
 - (void)setModeler:(id)arg1;
 - (void)setModels:(id)arg1;
 - (void)setTracksChanges:(bool)arg1;
+- (bool)shouldUseLabelForButtonWithDefaultAction:(id)arg1;
 - (id)thirdPartyActionsForContactProperty:(id)arg1;
 - (id)thirdPartyActionsForCurrentContactAndPropertyKey:(id)arg1 identifier:(id)arg2;
 - (id)thirdPartyTargetsForActionTypes:(id)arg1;

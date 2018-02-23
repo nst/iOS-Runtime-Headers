@@ -40,6 +40,7 @@
 - (void).cxx_destruct;
 - (void)_disablePhoneLocatorAndErase;
 - (void)_eraseSettingsAndContent;
+- (void)_managerDidFailBackup;
 - (bool)_networkConnectivityAvailable;
 - (void)_resetWithMode:(int)arg1;
 - (void)_showStockholmLocallyStoredValueOfflineWarningIfNeeded:(id /* block */)arg1;
@@ -61,6 +62,7 @@
 - (void)manager:(id)arg1 didFailBackupWithError:(id)arg2;
 - (void)manager:(id)arg1 didUpdateProgress:(float)arg2 estimatedTimeRemaining:(unsigned long long)arg3;
 - (void)managerDidFinishBackup:(id)arg1;
+- (void)managerDidLoseConnectionToService:(id)arg1;
 - (void)popupViewDidDisappear;
 - (void)presentAlertForCloudStatus:(unsigned long long)arg1;
 - (void)presentBackupAlertWithTitle:(id)arg1 message:(id)arg2 finishButtonTitle:(id)arg3 shouldSync:(bool)arg4;

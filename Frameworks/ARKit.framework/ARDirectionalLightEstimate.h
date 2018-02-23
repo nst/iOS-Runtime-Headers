@@ -2,10 +2,13 @@
    Image: /System/Library/Frameworks/ARKit.framework/ARKit
  */
 
-@interface ARDirectionalLightEstimate : ARLightEstimate {
+@interface ARDirectionalLightEstimate : ARLightEstimate <NSCopying> {
     double  _confidenceRating;
     void _primaryLightDirection;
     double  _primaryLightIntensity;
+    struct { 
+        float coefficients[9]; 
+    }  _sphericalHarmonicIntensity;
     NSData * _sphericalHarmonicsCoefficients;
 }
 
@@ -14,16 +17,12 @@
 @property (nonatomic, readonly) double primaryLightIntensity;
 @property (nonatomic, readonly, copy) NSData *sphericalHarmonicsCoefficients;
 
-+ (float)_dotProductSphericalHarmonicsSH1:(struct array<float, 9> { float x1[9]; })arg1 SH2:(struct array<float, 9> { float x1[9]; })arg2;
-+ (struct { float x1; float x2; })_primaryLightItensityUsingSH:(void *)arg1 inDirection:(void *)arg2 defaultIntensity:(void *)arg3; // needs 3 arg types, found 2: struct array<float, 9> { float x1[9]; }, float
-+ (struct array<float, 9> { float x1[9]; })_shFunctionAtDirection;
-+ (struct array<float, 9> { float x1[9]; })_sphericalHarmonicsFromNSData:(id)arg1;
-+ (id)sphericalHarmonicsFlipZAxis:(id)arg1;
-
 - (void).cxx_destruct;
 - (double)confidenceRating;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (id)initWithCoefficients:(id)arg1 temperature:(double)arg2;
+- (id)initWithDirectionalLightEstimate:(id)arg1;
+- (id)initWithSphericalHarmonics:(struct { float x1[9]; })arg1 temperature:(double)arg2;
 - (void)primaryLightDirection;
 - (double)primaryLightIntensity;
 - (void)setConfidenceRating:(double)arg1;

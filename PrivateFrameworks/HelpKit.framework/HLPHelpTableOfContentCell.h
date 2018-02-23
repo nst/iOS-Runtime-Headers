@@ -9,6 +9,7 @@
     NSLayoutConstraint * _arrowImageViewWidthConstraint;
     bool  _closed;
     HLPHelpItem * _helpItem;
+    bool  _ignoreLevels;
     UILabel * _nameLabel;
     NSLayoutConstraint * _sectionImageLeadingConstraint;
     HLPURLSession * _sectionImageURLSession;
@@ -21,6 +22,7 @@
 @property (nonatomic, retain) UIImageView *arrowImageView;
 @property (nonatomic) bool closed;
 @property (nonatomic, retain) HLPHelpItem *helpItem;
+@property (nonatomic) bool ignoreLevels;
 @property (nonatomic, retain) UILabel *nameLabel;
 @property (nonatomic, retain) UIImageView *sectionImageView;
 @property (nonatomic) bool showFirstLevelIcon;
@@ -32,7 +34,9 @@
 - (bool)closed;
 - (void)dealloc;
 - (id)helpItem;
+- (bool)ignoreLevels;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (long long)itemLevel;
 - (void)layoutSubviews;
 - (id)nameLabel;
 - (void)prepareForReuse;
@@ -40,6 +44,7 @@
 - (void)setArrowImageView:(id)arg1;
 - (void)setClosed:(bool)arg1;
 - (void)setHelpItem:(id)arg1;
+- (void)setIgnoreLevels:(bool)arg1;
 - (void)setNameLabel:(id)arg1;
 - (void)setRTL:(bool)arg1;
 - (void)setSectionImageView:(id)arg1;
@@ -47,7 +52,6 @@
 - (bool)showFirstLevelIcon;
 - (void)toggle;
 - (void)updateConstraints;
-- (void)updateFonts;
 - (void)updateToggleImageAnimated:(bool)arg1;
 
 @end

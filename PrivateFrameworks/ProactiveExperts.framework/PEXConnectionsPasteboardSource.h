@@ -8,6 +8,7 @@
     unsigned long long  _pasteboardNotificationState;
     id  _pasteboardObserver;
     PBServerConnection * _pasteboardServerConnection;
+    NSOperationQueue * _pbQueue;
     NSLocale * _testLocale;
 }
 

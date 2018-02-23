@@ -16,6 +16,7 @@
         double x; 
         double y; 
     }  _cursorLocationBase;
+    NSMutableArray * _deallocHandlers;
     <_UIKeyboardTextSelectionGestureControllerDelegate> * _delegate;
     bool  _didFloatCursor;
     bool  _didSuppressSelectionGrabbers;
@@ -68,6 +69,7 @@
 - (struct CGPoint { double x1; double x2; })accumulatedAcceleration;
 - (struct CGPoint { double x1; double x2; })accumulatedBounding;
 - (id)activeGestures;
+- (id)addDeallocationHandler:(id /* block */)arg1;
 - (id)addOneFingerTextSelectionGesturesToView:(id)arg1;
 - (id)addTwoFingerTextSelectionGesturesToView:(id)arg1;
 - (bool)allowOneFingerDeepPress;
@@ -97,6 +99,7 @@
 - (int)previousForcePressCount;
 - (long long)previousRepeatedGranularity;
 - (void)redisableEnclosingScrollViewNestedPinching;
+- (void)removeDeallocationHandler:(id)arg1;
 - (id)selectionController;
 - (void)setAccumulatedAcceleration:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setAccumulatedBounding:(struct CGPoint { double x1; double x2; })arg1;

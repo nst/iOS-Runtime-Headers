@@ -15,6 +15,7 @@
 @property (nonatomic, retain) IXPlaceholderSeed *seed;
 
 + (id)_iconDataForBundle:(struct __CFBundle { }*)arg1 error:(id*)arg2;
++ (id)_infoPlistLocalizationDictionaryForBundleURL:(id)arg1 error:(id*)arg2;
 + (id)_placeholderForBundle:(id)arg1 client:(unsigned long long)arg2 withParent:(id)arg3 installType:(unsigned long long)arg4 metadata:(id)arg5 error:(id*)arg6;
 + (id)placeholderForInstallable:(id)arg1 client:(unsigned long long)arg2 installType:(unsigned long long)arg3 metadata:(id)arg4 error:(id*)arg5;
 + (id)placeholderForRemovableSystemAppWithBundleID:(id)arg1 client:(unsigned long long)arg2 installType:(unsigned long long)arg3 error:(id*)arg4;
@@ -29,6 +30,7 @@
 - (bool)hasIconPromise;
 - (bool)hasPlugInPlaceholderPromises;
 - (id)iconPromiseWithError:(id*)arg1;
+- (id)infoPlistLocalizationsWithError:(id*)arg1;
 - (id)initAppPlaceholderWithBundleName:(id)arg1 bundleID:(id)arg2 installType:(unsigned long long)arg3 client:(unsigned long long)arg4;
 - (id)initPlugInPlaceholderWithBundleName:(id)arg1 bundleID:(id)arg2 parentPlaceholder:(id)arg3 client:(unsigned long long)arg4;
 - (id)initWithCoder:(id)arg1;
@@ -46,6 +48,7 @@
 - (bool)setConfigurationCompleteWithError:(id*)arg1;
 - (bool)setEntitlementsPromise:(id)arg1 error:(id*)arg2;
 - (bool)setIconPromise:(id)arg1 error:(id*)arg2;
+- (bool)setInfoPlistLocalizations:(id)arg1 error:(id*)arg2;
 - (bool)setLaunchProhibited:(bool)arg1 error:(id*)arg2;
 - (void)setMetadata:(id)arg1;
 - (bool)setMetadata:(id)arg1 error:(id*)arg2;

@@ -132,6 +132,7 @@
 - (void)_updateTextViewHeightWithHeaderFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_updateTextViewOriginWithHeaderFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)_userInterfaceConfigurationSupportsCorecipientsTableView;
+- (double)_verticalPadding;
 - (void)autocompleteResultsController:(id)arg1 didRequestInfoAboutRecipient:(id)arg2;
 - (void)autocompleteResultsController:(id)arg1 didSelectRecipient:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)automaticKeyboardFinishedAppearing:(id)arg1;
@@ -193,7 +194,7 @@
 - (bool)isShowingFromAddressPickerWheel;
 - (bool)isShowingPeoplePicker;
 - (void)layoutForChangedComposeHeaderView:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })layoutMargins;
+- (void)layoutMarginsDidChange;
 - (void)layoutSubviews;
 - (void)menuDidHide;
 - (id)multiField;

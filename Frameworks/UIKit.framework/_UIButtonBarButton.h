@@ -43,6 +43,7 @@
 - (void)configureFromBarItem:(id)arg1 withAppearanceDelegate:(id)arg2;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)heightMinimizingConstraint;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

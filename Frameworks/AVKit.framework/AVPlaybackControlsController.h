@@ -10,6 +10,7 @@
     AVTimeFormatter * _elapsedTimeFormatter;
     bool  _entersFullScreenWhenPlaybackBegins;
     bool  _hasSeekableLiveStreamingContent;
+    bool  _includesVideoGravityButton;
     AVKeyValueObservationController * _keyValueObservationController;
     NSTimer * _loadingIndicatorTimer;
     double  _loadingIndicatorTimerDelay;
@@ -18,6 +19,16 @@
     AVPictureInPictureController * _pictureInPictureController;
     AVPlaybackControlsView * _playbackControlsView;
     bool  _playbackSuspendedForScrubbing;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _playbackViewFrame;
     AVPlayerController * _playerController;
     AVPlayerViewController * _playerViewController;
     bool  _playerViewControllerContentViewIsContainedInWindow;
@@ -32,6 +43,7 @@
     AVRouteDetector * _routeDetector;
     UIAlertController * _routePickerAlertController;
     bool  _scrubbingOrSeeking;
+    bool  _shouldIgnoreTimeResolverUpdates;
     bool  _showsDoneButtonWhenFullScreen;
     bool  _showsFullScreenButton;
     bool  _showsLoadingIndicator;
@@ -40,6 +52,8 @@
     bool  _suspended;
     long long  _timeControlStatus;
     AVPlayerControllerTimeResolver * _timeResolver;
+    NSString * _videoGravity;
+    long long  _videoGravityButtonType;
     AVVolumeController * _volumeController;
 }
 
@@ -58,6 +72,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool includesDoneButton;
 @property (nonatomic, readonly) bool includesFullScreenButton;
+@property (nonatomic) bool includesVideoGravityButton;
 @property (nonatomic, readonly) AVKeyValueObservationController *keyValueObservationController;
 @property (nonatomic) NSTimer *loadingIndicatorTimer;
 @property (nonatomic) double loadingIndicatorTimerDelay;
@@ -69,6 +84,7 @@
 @property (nonatomic, readonly) bool playButtonsShowPauseGlyph;
 @property (nonatomic, retain) AVPlaybackControlsView *playbackControlsView;
 @property (getter=isPlaybackSuspendedForScrubbing, nonatomic) bool playbackSuspendedForScrubbing;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } playbackViewFrame;
 @property (nonatomic) AVPlayerController *playerController;
 @property (nonatomic, readonly) AVPlayerViewController *playerViewController;
 @property (nonatomic) bool playerViewControllerContentViewIsContainedInWindow;
@@ -86,6 +102,7 @@
 @property (getter=isScrubbingOrSeeking, nonatomic) bool scrubbingOrSeeking;
 @property (getter=isSeekingEnabled, nonatomic, readonly) bool seekingEnabled;
 @property (nonatomic, readonly) bool shouldEnterFullScreenWhenPlaybackBegins;
+@property (nonatomic) bool shouldIgnoreTimeResolverUpdates;
 @property (nonatomic) bool showsDoneButtonWhenFullScreen;
 @property (nonatomic) bool showsFullScreenButton;
 @property (nonatomic) bool showsLoadingIndicator;
@@ -101,6 +118,8 @@
 @property (nonatomic, readonly) double targetTime;
 @property (nonatomic) long long timeControlStatus;
 @property (nonatomic, retain) AVPlayerControllerTimeResolver *timeResolver;
+@property (nonatomic, copy) NSString *videoGravity;
+@property (nonatomic) long long videoGravityButtonType;
 @property (nonatomic, readonly) AVVolumeController *volumeController;
 
 + (id)keyPathsForValuesAffectingCanShowLoadingIndicator;
@@ -134,6 +153,7 @@
 - (void)_stopVisibilityControllerManagementOfViewVisibilityIfNeeded;
 - (void)_updateOrCreateTimeResolverIfNeeded;
 - (void)_updateScrubberAndTimeLabels;
+- (void)_updateVideoGravityButtonType;
 - (void)_updateVolumeButtonGlyph;
 - (void)_updateVolumeSliderValueWithSystemVolume:(float)arg1 animated:(bool)arg2;
 - (id)_volumeButtonMicaPackageState;
@@ -147,6 +167,7 @@
 - (bool)hasSeekableLiveStreamingContent;
 - (bool)includesDoneButton;
 - (bool)includesFullScreenButton;
+- (bool)includesVideoGravityButton;
 - (id)initWithPlayerViewController:(id)arg1;
 - (bool)isCoveringWindow;
 - (bool)isFullScreen;
@@ -167,11 +188,13 @@
 - (id)playbackControlsView;
 - (void)playbackControlsViewDidLoad:(id)arg1;
 - (void)playbackControlsVisibilityDidChange;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })playbackViewFrame;
 - (id)playerController;
 - (id)playerViewController;
-- (struct CGSize { double x1; double x2; })playerViewControllerContentViewContentDimensions;
+- (void)playerViewControllerContentViewDidChangeVideoGravity:(id)arg1;
 - (void)playerViewControllerContentViewDidMoveToWindow:(id)arg1;
 - (bool)playerViewControllerContentViewIsContainedInWindow;
+- (bool)playerViewControllerContentViewShouldApplyAutomaticVideoGravity:(id)arg1;
 - (void)playerViewControllerContentViewWillLayoutSubviews:(id)arg1;
 - (void)playerViewControllerDidFinishFullScreenDimissalTransition;
 - (bool)playerViewControllerHasInvalidViewControllerHierarchy;
@@ -194,6 +217,7 @@
 - (void)setCoveringWindow:(bool)arg1;
 - (void)setEntersFullScreenWhenPlaybackBegins:(bool)arg1;
 - (void)setHasSeekableLiveStreamingContent:(bool)arg1;
+- (void)setIncludesVideoGravityButton:(bool)arg1;
 - (void)setLoadingIndicatorTimer:(id)arg1;
 - (void)setLoadingIndicatorTimerDelay:(double)arg1;
 - (void)setMultipleRoutesDetected:(bool)arg1;
@@ -201,6 +225,7 @@
 - (void)setPictureInPictureController:(id)arg1;
 - (void)setPlaybackControlsView:(id)arg1;
 - (void)setPlaybackSuspendedForScrubbing:(bool)arg1;
+- (void)setPlaybackViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setPlayerController:(id)arg1;
 - (void)setPlayerViewControllerContentViewIsContainedInWindow:(bool)arg1;
 - (void)setPlayerViewControllerHasInvalidViewControllerHierarchy:(bool)arg1;
@@ -213,6 +238,7 @@
 - (void)setRouteDetector:(id)arg1;
 - (void)setRoutePickerAlertController:(id)arg1;
 - (void)setScrubbingOrSeeking:(bool)arg1;
+- (void)setShouldIgnoreTimeResolverUpdates:(bool)arg1;
 - (void)setShowsDoneButtonWhenFullScreen:(bool)arg1;
 - (void)setShowsFullScreenButton:(bool)arg1;
 - (void)setShowsLoadingIndicator:(bool)arg1;
@@ -221,7 +247,10 @@
 - (void)setSuspended:(bool)arg1;
 - (void)setTimeControlStatus:(long long)arg1;
 - (void)setTimeResolver:(id)arg1;
+- (void)setVideoGravity:(id)arg1;
+- (void)setVideoGravityButtonType:(long long)arg1;
 - (bool)shouldEnterFullScreenWhenPlaybackBegins;
+- (bool)shouldIgnoreTimeResolverUpdates;
 - (bool)showsDoneButtonWhenFullScreen;
 - (bool)showsFullScreenButton;
 - (bool)showsLoadingIndicator;
@@ -244,6 +273,8 @@
 - (void)transportControls:(id)arg1 scrubberDidEndScrubbing:(id)arg2;
 - (void)transportControls:(id)arg1 scrubberDidScrub:(id)arg2;
 - (void)transportControlsNeedsLayoutIfNeeded:(id)arg1;
+- (id)videoGravity;
+- (long long)videoGravityButtonType;
 - (void)volumeButtonLongPressTriggered:(id)arg1;
 - (void)volumeButtonPanChanged:(id)arg1;
 - (void)volumeButtonTapTriggered:(id)arg1;

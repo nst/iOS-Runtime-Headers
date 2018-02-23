@@ -6,11 +6,14 @@
     bool  _isObserving;
     NSUserDefaults * _mediaPlaybackCoreDefaults;
     NSUserDefaults * _mobileIPodDefaults;
+    NSUserDefaults * _nanoMusicSyncDefaults;
 }
 
 + (id)sharedSynchronizer;
 
 - (void).cxx_destruct;
+- (void)_createDefaultGreenTeaSettingsIfNecessary;
+- (void)_reconcileGreenTeaSettingsIfNecessary;
 - (void)beginObservingUpdates;
 - (void)dealloc;
 - (void)endObservingUpdates;

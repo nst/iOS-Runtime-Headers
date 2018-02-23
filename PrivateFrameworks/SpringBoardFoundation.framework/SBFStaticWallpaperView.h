@@ -8,10 +8,12 @@
     UIImage * _displayedImage;
     UIImage * _image;
     double  _overallContrast;
+    UIImage * _sampleImage;
 }
 
 @property (nonatomic, retain) SBFColorBoxes *colorBoxes;
 @property (getter=_displayedImage, setter=_setDisplayedImage:, nonatomic, retain) UIImage *displayedImage;
+@property (getter=_sampleImage, setter=_setSampleImage:, nonatomic, retain) UIImage *sampleImage;
 
 + (bool)_allowsParallax;
 + (bool)_allowsRasterization;
@@ -23,24 +25,21 @@
 - (id)_computeAverageColor;
 - (double)_contrastInContentViewRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 contrastWithinBoxes:(double*)arg2 contrastBetweenBoxes:(double*)arg3;
 - (id)_createColorBoxes;
+- (void)_displayImage:(id)arg1;
 - (id)_displayedImage;
-- (id)_fallbackImageWithOriginalSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)_imageByDarkeningHighlightsInImage:(id)arg1;
-- (id)_imageForBackdropParameters:(struct { long long x1; long long x2; long long x3; double x4; double x5; double x6; double x7; bool x8; })arg1 includeTint:(bool)arg2;
 - (struct CGSize { double x1; double x2; })_imageSize;
-- (id)_mappedImageKeyForParameters:(struct { long long x1; long long x2; long long x3; double x4; double x5; double x6; double x7; bool x8; })arg1 includingTint:(bool)arg2;
-- (bool)_needsFallbackImageForImage:(id)arg1;
 - (id)_repeatingGradientImageWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2;
 - (void)_resetColorBoxes;
+- (id)_sampleImage;
 - (void)_setDisplayedImage:(id)arg1;
-- (void)_setImage:(id)arg1;
 - (void)_setSampleImage:(id)arg1;
 - (void)_setUpStaticImageContentView:(id)arg1;
 - (void)_setupContentView;
 - (void)_setupWallpaperImage:(id)arg1 options:(unsigned long long)arg2;
-- (id)_variantCacheIdentifier;
 - (id)_wallpaperImageForAnalysis;
 - (float)_zoomScale;
+- (id)cacheGroup;
 - (id)colorBoxes;
 - (double)contrast;
 - (bool)contrastRequiresTreatments;

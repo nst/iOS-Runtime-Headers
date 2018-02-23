@@ -24,6 +24,7 @@
     double  _rtpTimeOutInterval;
     unsigned long long  _rxPayloadType;
     NSData * _sendMasterKey;
+    AVCTextStreamConfig * _text;
     unsigned long long  _txPayloadType;
     AVCVideoStreamConfig * _video;
 }
@@ -49,6 +50,7 @@
 @property (nonatomic) double rtpTimeOutInterval;
 @property (nonatomic) unsigned long long rxPayloadType;
 @property (nonatomic, retain) NSData *sendMasterKey;
+@property (nonatomic, retain) AVCTextStreamConfig *text;
 @property (nonatomic) unsigned long long txPayloadType;
 @property (nonatomic, retain) AVCVideoStreamConfig *video;
 
@@ -74,6 +76,7 @@
 - (bool)isRTPTimeOutEnabled;
 - (bool)isRateAdaptationEnabled;
 - (bool)isValidAudioConfig;
+- (bool)isValidTextConfig;
 - (bool)isValidVideoConfig;
 - (id)localAddress;
 - (id)receiveMasterKey;
@@ -107,9 +110,11 @@
 - (void)setSRTCPCipherSuite:(long long)arg1;
 - (void)setSRTPCipherSuite:(long long)arg1;
 - (void)setSendMasterKey:(id)arg1;
+- (void)setText:(id)arg1;
 - (void)setTxPayloadType:(unsigned long long)arg1;
 - (void)setUpWithDictionary:(id)arg1;
 - (void)setVideo:(id)arg1;
+- (id)text;
 - (unsigned long long)txPayloadType;
 - (id)video;
 

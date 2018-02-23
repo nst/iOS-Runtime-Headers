@@ -3,9 +3,8 @@
  */
 
 @interface CSSpeakerModel : NSObject {
-    CSAsset * _asset;
-    bool  _isValid;
     NSString * _languageCode;
+    NSString * _modelFileName;
     NSString * _modelPath;
     NSString * _utteranceDirectory;
 }
@@ -20,8 +19,9 @@
 - (void)_createDirectoryIfNotExist:(id)arg1;
 - (bool)_isDirectoryEmpty:(id)arg1;
 - (id)_satPath;
+- (void)discard;
 - (id)enrollmentUtterance;
-- (id)initWithAsset:(id)arg1 languageCode:(id)arg2;
+- (id)initWithSpeakerModelFileName:(id)arg1 languageCode:(id)arg2;
 - (bool)isValid;
 - (id)modelDirectory;
 - (id)modelPath;

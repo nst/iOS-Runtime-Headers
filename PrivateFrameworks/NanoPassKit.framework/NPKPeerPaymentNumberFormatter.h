@@ -12,6 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)currencyCode;
+- (id)currencySymbol;
 - (id)init;
 - (id)initWithCurrencyCode:(id)arg1;
 - (void)setCurrencyCode:(id)arg1;

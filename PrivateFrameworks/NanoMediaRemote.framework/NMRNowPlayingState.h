@@ -16,6 +16,7 @@
     NSString * _artist;
     NSData * _artworkImageData;
     bool  _banCommandEnabled;
+    long long  _banCommandPresentationStyle;
     bool  _banCommandSupported;
     bool  _bannedActive;
     bool  _bookmarkCommandEnabled;
@@ -30,6 +31,7 @@
     NSNumber * _itemCompanionPersistentID;
     NSNumber * _itemPersistentID;
     bool  _likeCommandEnabled;
+    long long  _likeCommandPresentationStyle;
     bool  _likeCommandSupported;
     bool  _likedActive;
     NSString * _localizedBanTitle;
@@ -67,6 +69,7 @@
 @property (nonatomic, copy) NSString *artist;
 @property (nonatomic, retain) NSData *artworkImageData;
 @property (getter=isBanCommandEnabled, nonatomic) bool banCommandEnabled;
+@property (nonatomic) long long banCommandPresentationStyle;
 @property (getter=isBanCommandSupported, nonatomic) bool banCommandSupported;
 @property (getter=isBannedActive, nonatomic) bool bannedActive;
 @property (getter=isBookmarkCommandEnabled, nonatomic) bool bookmarkCommandEnabled;
@@ -84,6 +87,7 @@
 @property (nonatomic, copy) NSNumber *itemCompanionPersistentID;
 @property (nonatomic, copy) NSNumber *itemPersistentID;
 @property (getter=isLikeCommandEnabled, nonatomic) bool likeCommandEnabled;
+@property (nonatomic) long long likeCommandPresentationStyle;
 @property (getter=isLikeCommandSupported, nonatomic) bool likeCommandSupported;
 @property (getter=isLikedActive, nonatomic) bool likedActive;
 @property (nonatomic, copy) NSString *localizedBanTitle;
@@ -122,6 +126,7 @@
 - (bool)_updateArtistIfNecessary:(id)arg1;
 - (bool)_updateArtworkImageDataIfNecessary:(id)arg1;
 - (bool)_updateBanCommandEnabledIfNecessary:(bool)arg1;
+- (bool)_updateBanCommandPresentationStyleIfNecessary:(long long)arg1;
 - (bool)_updateBanCommandSupportedIfNecessary:(bool)arg1;
 - (bool)_updateBannedActiveIfNecessary:(bool)arg1;
 - (bool)_updateBookmarkCommandEnabledIfNecessary:(bool)arg1;
@@ -134,6 +139,7 @@
 - (bool)_updateItemCompanionPersistentIDIfNecessary:(id)arg1;
 - (bool)_updateItemPersistentIDIfNecessary:(id)arg1;
 - (bool)_updateLikeCommandEnabledIfNecessary:(bool)arg1;
+- (bool)_updateLikeCommandPresentationStyleIfNecessary:(long long)arg1;
 - (bool)_updateLikeCommandSupportedIfNecessary:(bool)arg1;
 - (bool)_updateLikedActiveIfNecessary:(bool)arg1;
 - (bool)_updateRadioStationHashIfNecessary:(id)arg1;
@@ -153,6 +159,7 @@
 - (bool)applyMediaRemoteSupportedCommands:(id)arg1;
 - (id)artist;
 - (id)artworkImageData;
+- (long long)banCommandPresentationStyle;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (double)duration;
@@ -188,6 +195,7 @@
 - (id)itemAlbumPersistentID;
 - (id)itemCompanionPersistentID;
 - (id)itemPersistentID;
+- (long long)likeCommandPresentationStyle;
 - (id)localizedBanTitle;
 - (id)localizedBookmarkTitle;
 - (id)localizedLikeTitle;
@@ -213,6 +221,7 @@
 - (void)setArtist:(id)arg1;
 - (void)setArtworkImageData:(id)arg1;
 - (void)setBanCommandEnabled:(bool)arg1;
+- (void)setBanCommandPresentationStyle:(long long)arg1;
 - (void)setBanCommandSupported:(bool)arg1;
 - (void)setBannedActive:(bool)arg1;
 - (void)setBookmarkCommandEnabled:(bool)arg1;
@@ -227,6 +236,7 @@
 - (void)setItemCompanionPersistentID:(id)arg1;
 - (void)setItemPersistentID:(id)arg1;
 - (void)setLikeCommandEnabled:(bool)arg1;
+- (void)setLikeCommandPresentationStyle:(long long)arg1;
 - (void)setLikeCommandSupported:(bool)arg1;
 - (void)setLikedActive:(bool)arg1;
 - (void)setLocalizedBanTitle:(id)arg1;

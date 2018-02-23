@@ -7,13 +7,14 @@
         double width; 
         double height; 
     }  _actualSize;
+    NSObject<OS_dispatch_semaphore> * _canBeginRenderSemaphore;
     int  _cancelAllRendering;
     int  _cancelLongRunningRenderingCount;
-    NSObject<OS_dispatch_semaphore> * _completeRenderSemaphore;
     bool  _drawingCommands;
     PKStrokeGenerator * _inputController;
     double  _inputScale;
     bool  _isTorndown;
+    double  _lastFrameDuration;
     PKLinedPaper * _linedPaper;
     struct CGAffineTransform { 
         double a; 
@@ -28,8 +29,15 @@
         double height; 
     }  _pixelSize;
     NSMutableArray * _postPresentCallbacks;
+    double  _presentationCount;
+    double  _presentationDelay;
+    double  _presentationDelayGrowth;
     CAEAGLLayer * _presentationLayer;
+    double  _presentationMaxDelay;
     int  _queuedRenders;
+    struct atomic_flag { 
+        bool _Value; 
+    }  _readyToBeginRender;
     NSObject<OS_dispatch_queue> * _renderQueue;
     struct CGAffineTransform { 
         double a; 
@@ -50,6 +58,7 @@
         double tx; 
         double ty; 
     }  _strokeTransform;
+    id /* block */  _vSyncTimeoutBlock;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -85,7 +94,7 @@
 - (void)_deleteFramebuffer;
 - (void)_discard;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_getContentsBoundsInStrokeSpace;
-- (void)_present;
+- (void)_present:(double)arg1;
 - (void)_renderAheadWithTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 at:(double)arg2;
 - (void)_renderAndPresent:(bool)arg1 withTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2;
 - (void)_renderDrawPoints;
@@ -99,6 +108,7 @@
 - (void)clear;
 - (void)copyIntoTiles:(id)arg1;
 - (void)dealloc;
+- (void)didFinishRendering:(id /* block */)arg1;
 - (void)didTeardownTile;
 - (void)disableRendering;
 - (void)drawImage:(struct CGImage { }*)arg1 andMask:(struct CGImage { }*)arg2;
@@ -114,7 +124,6 @@
 - (bool)drawingCommands;
 - (void)drawingEnded:(id)arg1 finishStrokeBlock:(id /* block */)arg2;
 - (void)enableRendering;
-- (void)finishRendering:(id /* block */)arg1;
 - (void)flushMemoryIfPossible;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })getContentsBoundsInStrokeSpace;
 - (id)init;
@@ -153,6 +162,7 @@
 - (void)setViewScissor:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setup;
 - (void)setupNewTile:(id)arg1;
+- (void)signalVSyncSemaphore:(double)arg1;
 - (bool)solidColorBackboard;
 - (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })strokeTransform;
 - (void)teardown;

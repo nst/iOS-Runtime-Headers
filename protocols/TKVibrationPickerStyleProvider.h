@@ -22,6 +22,7 @@
 
 @optional
 
+- (UIColor *)vibrationPickerCustomBackgroundColor;
 - (long long)vibrationPickerCustomTableSeparatorBackdropOverlayBlendMode;
 - (UIColor *)vibrationPickerCustomTableSeparatorColor;
 - (bool)vibrationPickerHeaderTextShouldBeUppercase;

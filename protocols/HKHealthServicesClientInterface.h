@@ -9,6 +9,5 @@
 - (void)clientRemote_deliverDiscoveryHealthService:(HKHealthService *)arg1 toClient:(unsigned long long)arg2 finished:(bool)arg3 withError:(NSError *)arg4;
 - (void)clientRemote_deliverSessionCharacteristics:(NSArray *)arg1 forService:(NSString *)arg2 toClient:(unsigned long long)arg3 withError:(NSError *)arg4;
 - (void)clientRemote_deliverSessionHealthServiceStatus:(long long)arg1 toClient:(unsigned long long)arg2 finished:(bool)arg3 withError:(NSError *)arg4;
-- (void)clientRemote_deliverSessionTransitoryData:(NSDictionary *)arg1 toClient:(unsigned long long)arg2 withError:(NSError *)arg3;
 
 @end

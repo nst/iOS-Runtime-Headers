@@ -193,6 +193,7 @@
 - (unsigned long long)renderingAPI;
 - (bool)rendersContinuously;
 - (void)resumeDisplayLink;
+- (void)safeAreaInsetsDidChange;
 - (id)scene;
 - (double)sceneTime;
 - (id)scn_backingLayer;

@@ -3,18 +3,19 @@
  */
 
 @interface HFAccessorySettingAdapterManager : NSObject {
-    HMAccessoryProfile<HFAccessorySettings> * _accessoryProfile;
     NSMutableDictionary * _adaptersByID;
+    <HFMediaProfileContainer> * _mediaProfileContainer;
 }
 
-@property (nonatomic, readonly) HMAccessoryProfile<HFAccessorySettings> *accessoryProfile;
 @property (nonatomic, readonly) NSMutableDictionary *adaptersByID;
+@property (nonatomic, readonly) <HFMediaProfileContainer> *mediaProfileContainer;
 
 - (void).cxx_destruct;
 - (id)_createAdapterForIdentifier:(id)arg1;
-- (id)accessoryProfile;
 - (id)adapterForIdentifier:(id)arg1;
 - (id)adaptersByID;
-- (id)initWithAccessoryProfile:(id)arg1;
+- (id)init;
+- (id)initWithMediaProfileContainer:(id)arg1;
+- (id)mediaProfileContainer;
 
 @end

@@ -11,6 +11,7 @@
 @property (nonatomic, readonly) bool showLegalText;
 @property (nonatomic) bool showQuickNoteFingerGestureRecognizer;
 @property (nonatomic) bool showSupervisionText;
+@property (nonatomic) bool weDontNeedNoEducation;
 
 - (void)_bindAndRegisterDefaults;
 

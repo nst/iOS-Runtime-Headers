@@ -23,5 +23,6 @@
 - (void)setShallowDepthOfFieldStatus:(long long)arg1 animated:(bool)arg2;
 - (long long)shallowDepthOfFieldStatus;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (void)updateToContentSize:(id)arg1;
 
 @end

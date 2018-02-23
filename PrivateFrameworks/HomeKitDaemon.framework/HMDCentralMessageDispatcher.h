@@ -10,6 +10,7 @@
     HMFMessageDispatcher * _recvDispatcher;
     NSMutableArray * _relayedMessages;
     NSMutableDictionary * _remoteGateways;
+    HMDSecureRemoteMessageFilter * _secureRemoteMessageFilter;
 }
 
 @property (nonatomic, retain) HMDAdminEnforcementMessageFilter *adminMsgFilter;
@@ -19,6 +20,7 @@
 @property (nonatomic, retain) HMFMessageDispatcher *recvDispatcher;
 @property (nonatomic, readonly) NSMutableArray *relayedMessages;
 @property (nonatomic, retain) NSMutableDictionary *remoteGateways;
+@property (nonatomic, retain) HMDSecureRemoteMessageFilter *secureRemoteMessageFilter;
 @property (nonatomic, readonly) HMDSecureRemoteMessageTransport *secureRemoteTransport;
 
 + (id)destinationWithTarget:(id)arg1 userID:(id)arg2 destination:(id)arg3 multicast:(bool)arg4;
@@ -57,6 +59,7 @@
 - (id)remoteGateways;
 - (void)removeHome:(id)arg1;
 - (void)reset;
+- (id)secureRemoteMessageFilter;
 - (id)secureRemoteTransport;
 - (void)sendSecureMessage:(id)arg1 target:(id)arg2 userID:(id)arg3 destination:(id)arg4 responseQueue:(id)arg5 responseHandler:(id /* block */)arg6;
 - (void)setAdminMsgFilter:(id)arg1;
@@ -67,6 +70,7 @@
 - (void)setRecvDispatcher:(id)arg1;
 - (void)setRemoteAccessDevice:(id)arg1 forHome:(id)arg2;
 - (void)setRemoteGateways:(id)arg1;
+- (void)setSecureRemoteMessageFilter:(id)arg1;
 - (void)updateHome:(id)arg1 configurationVersion:(long long)arg2;
 - (void)updateLocalAdministratorName;
 

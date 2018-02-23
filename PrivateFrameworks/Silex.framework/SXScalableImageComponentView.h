@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXScalableImageComponentView : SXMediaComponentView <SXDragManagerDataSource, SXFullScreenCanvasShowable, SXImageViewDelegate, SXTextSourceDataSource> {
+@interface SXScalableImageComponentView : SXMediaComponentView <SXDragManagerDataSource, SXFullscreenCanvasShowable, SXImageViewDelegate, SXTextSourceDataSource> {
     SXMediaViewEvent * _activeViewEvent;
+    <SXFullscreenCanvasControllerFactory> * _canvasControllerFactory;
     SXDragManager * _dragManager;
-    SXFullScreenCanvasController * _fullScreenCanvasController;
+    SXFullscreenCanvasController * _fullScreenCanvasController;
     UIView * _gestureView;
     SXImageResource * _imageResource;
     SXImageView * _imageView;
+    <SXImageViewFactory> * _imageViewFactory;
     double  _lastKnownPinchVelocity;
     double  _lastKnownRotationVelocity;
     bool  _presentingOnFullScreenCanvas;
@@ -25,14 +27,16 @@
 }
 
 @property (nonatomic, retain) SXMediaViewEvent *activeViewEvent;
+@property (nonatomic, readonly) <SXFullscreenCanvasControllerFactory> *canvasControllerFactory;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) SXDragManager *dragManager;
-@property (nonatomic, retain) SXFullScreenCanvasController *fullScreenCanvasController;
+@property (nonatomic, retain) SXFullscreenCanvasController *fullScreenCanvasController;
 @property (nonatomic) UIView *gestureView;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SXImageResource *imageResource;
 @property (nonatomic, readonly) SXImageView *imageView;
+@property (nonatomic, readonly) <SXImageViewFactory> *imageViewFactory;
 @property (nonatomic) double lastKnownPinchVelocity;
 @property (nonatomic) double lastKnownRotationVelocity;
 @property (getter=isPresentingOnFullScreenCanvas, nonatomic) bool presentingOnFullScreenCanvas;
@@ -44,6 +48,7 @@
 - (id)additionsForTextSource:(id)arg1;
 - (bool)allowHierarchyRemoval;
 - (unsigned long long)analyticsMediaType;
+- (id)canvasControllerFactory;
 - (id)contentSizeCategoryForTextSource:(id)arg1;
 - (void)createMediaViewEvent;
 - (id)description;
@@ -73,13 +78,15 @@
 - (id)imageView;
 - (void)imageView:(id)arg1 didLoadAnimatedImage:(id)arg2;
 - (void)imageView:(id)arg1 didLoadImage:(id)arg2 ofQuality:(int)arg3;
-- (id)initWithComponent:(id)arg1 configuration:(id)arg2 context:(id)arg3 analyticsReporting:(id)arg4 appStateMonitor:(id)arg5;
+- (id)imageViewFactory;
+- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6 imageViewFactory:(id)arg7 canvasControllerFactory:(id)arg8;
 - (id)inlineTextStylesForTextSource:(id)arg1;
 - (bool)isPresentingOnFullScreenCanvas;
 - (double)lastKnownPinchVelocity;
 - (double)lastKnownRotationVelocity;
 - (void)layoutImageView;
-- (void)presentComponent;
+- (void)loadComponent:(id)arg1;
+- (void)presentComponentWithChanges:(struct { bool x1; bool x2; })arg1;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
 - (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })previousContentFrame;

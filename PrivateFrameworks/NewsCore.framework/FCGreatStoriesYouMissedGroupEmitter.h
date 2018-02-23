@@ -15,7 +15,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool isRequiredByFollowingEmitters;
 @property (nonatomic) unsigned long long limit;
-@property (nonatomic, readonly) bool requiresForYouCatchUpOperation;
+@property (nonatomic, readonly) long long requiredForYouContentTypes;
 @property (readonly) Class superclass;
 
 + (bool)greatStoriesMayEmit:(id)arg1;
@@ -28,7 +28,7 @@
 - (id)groupEmitterIdentifier;
 - (unsigned long long)limit;
 - (id)operationToEmitGroupWithContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
-- (bool)requiresForYouCatchUpOperation;
+- (long long)requiredForYouContentTypes;
 - (void)setContext:(id)arg1;
 - (void)setLimit:(unsigned long long)arg1;
 - (bool)wantsToEmitGroupInContext:(id)arg1 withCursor:(id)arg2 toCursor:(id)arg3;

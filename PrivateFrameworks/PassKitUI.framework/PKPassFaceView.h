@@ -25,6 +25,7 @@
     NSMutableSet * _headerInvariantViews;
     unsigned long long  _invariantViewCreatedRegions;
     PKLiveRenderedCardFaceView * _liveBackgroundView;
+    bool  _liveMotionEnabled;
     UIImage * _partialFaceImage;
     PKPass * _pass;
     bool  _resizablePartialImage;
@@ -48,6 +49,7 @@
 @property (nonatomic) <PKPassFaceDelegate> *delegate;
 @property (nonatomic, readonly) PKPassFaceTemplate *faceTemplate;
 @property (nonatomic, retain) NSMutableArray *headerBucketViews;
+@property (nonatomic) bool liveMotionEnabled;
 @property (nonatomic, readonly) PKPass *pass;
 @property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } shadowInsets;
 @property (nonatomic) bool showsLiveRendering;
@@ -94,6 +96,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)insertContentView:(id)arg1 ofType:(long long)arg2;
 - (void)layoutSubviews;
+- (bool)liveMotionEnabled;
 - (id)pass;
 - (id)passFaceTemplate;
 - (void)presentDiff:(id)arg1 completion:(id /* block */)arg2;

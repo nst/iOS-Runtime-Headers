@@ -4,6 +4,7 @@
 
 @interface UINavigationItem : NSObject <DebugHierarchyObject, NSCoding> {
     bool  __alignLargeTitleAccessoryViewToBaseline;
+    NSArray * __alternateLargeTitles;
     bool  __backgroundHidden;
     UIView * __canvasView;
     <_UINavigationItemChangeObserver> * __changeObserver;
@@ -27,6 +28,12 @@
     UIImageView * _frozenTitleView;
     bool  _hidesBackButton;
     long long  _largeTitleDisplayMode;
+    struct NSDirectionalEdgeInsets { 
+        double top; 
+        double leading; 
+        double bottom; 
+        double trailing; 
+    }  _largeTitleInsets;
     NSArray * _leftBarButtonItems;
     unsigned long long  _leftFlexibleSpaceCount;
     NSArray * _leftItemSpaceList;
@@ -43,10 +50,12 @@
     long long  _tag;
     NSString * _title;
     UIView * _titleView;
+    bool  _useRelativeLargeTitleInsets;
 }
 
 @property (setter=_setAbbreviatedBackButtonTitles:, nonatomic, copy) NSArray *_abbreviatedBackButtonTitles;
 @property (nonatomic, readonly) bool _alignLargeTitleAccessoryViewToBaseline;
+@property (nonatomic, retain) NSArray *_alternateLargeTitles;
 @property (setter=_setBackgroundHidden:, nonatomic) bool _backgroundHidden;
 @property (setter=_setCanvasView:, nonatomic, retain) UIView *_canvasView;
 @property (setter=_setChangeObserver:, nonatomic) <_UINavigationItemChangeObserver> *_changeObserver;
@@ -78,6 +87,7 @@
 @property (nonatomic) bool hidesBackButton;
 @property (nonatomic) bool hidesSearchBarWhenScrolling;
 @property (nonatomic) long long largeTitleDisplayMode;
+@property (nonatomic) struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; } largeTitleInsets;
 @property (nonatomic, retain) UIBarButtonItem *leftBarButtonItem;
 @property (nonatomic, copy) NSArray *leftBarButtonItems;
 @property (nonatomic) bool leftItemsSupplementBackButton;
@@ -94,6 +104,7 @@
 @property (nonatomic) long long tag;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, retain) UIView *titleView;
+@property (nonatomic) bool useRelativeLargeTitleInsets;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
@@ -104,6 +115,7 @@
 - (bool)_accumulateViewsFromItems:(id)arg1 isLeft:(bool)arg2 refreshViews:(bool)arg3;
 - (void)_addDefaultTitleViewToNavigationBarIfNecessary;
 - (bool)_alignLargeTitleAccessoryViewToBaseline;
+- (id)_alternateLargeTitles;
 - (bool)_backgroundHidden;
 - (id)_barButtonForBackButtonIndicator;
 - (id)_buttonForBackButtonIndicator;
@@ -216,6 +228,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTitle:(id)arg1;
 - (long long)largeTitleDisplayMode;
+- (struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; })largeTitleInsets;
 - (id)leftBarButtonItem;
 - (id)leftBarButtonItems;
 - (bool)leftItemsSupplementBackButton;
@@ -240,6 +253,7 @@
 - (void)setHidesBackButton:(bool)arg1 animated:(bool)arg2;
 - (void)setHidesSearchBarWhenScrolling:(bool)arg1;
 - (void)setLargeTitleDisplayMode:(long long)arg1;
+- (void)setLargeTitleInsets:(struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setLeftBarButtonItem:(id)arg1;
 - (void)setLeftBarButtonItem:(id)arg1 animated:(bool)arg2;
 - (void)setLeftBarButtonItems:(id)arg1;
@@ -256,6 +270,8 @@
 - (void)setTag:(long long)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleView:(id)arg1;
+- (void)setUseRelativeLargeTitleInsets:(bool)arg1;
+- (void)set_alternateLargeTitles:(id)arg1;
 - (void)set_customLeftView:(id)arg1;
 - (void)set_customLeftViews:(id)arg1;
 - (void)set_customRightView:(id)arg1;
@@ -269,6 +285,7 @@
 - (id)title;
 - (id)titleView;
 - (void)updateNavigationBarButtonsAnimated:(bool)arg1;
+- (bool)useRelativeLargeTitleInsets;
 
 // Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
 

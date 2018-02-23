@@ -20,6 +20,7 @@
     NSObject<OS_dispatch_queue> * _resourceQueue;
     <HDHealthStoreServerInterface> * _serverProxy;
     NSMutableDictionary * _subserverProxiesBySelector;
+    NSMutableDictionary * _waitForSyncStartHandlersByUUID;
     NSMutableDictionary * _workoutSessionsByUUID;
 }
 
@@ -43,7 +44,8 @@
 - (void).cxx_destruct;
 - (id /* block */)_actionCompletionOnClientQueue:(id /* block */)arg1;
 - (void)_activeWorkoutApplicationIdentifierWithCompletion:(id /* block */)arg1;
-- (void)_addWorkoutSession:(id)arg1;
+- (void)_addWaitForSyncStartHandlerWithUUID:(id)arg1 waitForSyncSyncStartHandler:(id /* block */)arg2;
+- (bool)_addWorkoutSession:(id)arg1;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_applicationWillResignActive:(id)arg1;
 - (void)_beginWorkoutWithActivityType:(unsigned long long)arg1 startDate:(id)arg2 goalType:(unsigned long long)arg3 goal:(id)arg4 metadata:(id)arg5 lapLength:(id)arg6 shouldUseDeviceData:(bool)arg7 completion:(id /* block */)arg8;
@@ -58,8 +60,9 @@
 - (id)_createFitnessMachineConnection;
 - (id)_createFitnessMachineConnectionInitiator;
 - (void)_currentValueForQuantityTypeCode:(long long)arg1 characteristicTypeCode:(long long)arg2 beforeDate:(id)arg3 completion:(id /* block */)arg4;
+- (void)_currentWorkoutSnapshotWithCompletion:(id /* block */)arg1;
 - (void)_deleteObjects:(id)arg1 options:(unsigned long long)arg2 completion:(id /* block */)arg3;
-- (void)_endWorkoutSession:(id)arg1;
+- (void)_endWorkoutSession:(id)arg1 completion:(id /* block */)arg2;
 - (void)_fetchBoolDaemonPreferenceForKey:(id)arg1 completion:(id /* block */)arg2;
 - (void)_fetchDaemonPreferenceForKey:(id)arg1 completion:(id /* block */)arg2;
 - (void)_fetchDevicesMatchingProperty:(id)arg1 values:(id)arg2 completion:(id /* block */)arg3;
@@ -76,19 +79,20 @@
 - (id /* block */)_objectCompletionOnClientQueue:(id /* block */)arg1;
 - (id /* block */)_objectHandlerOnClientQueue:(id /* block */)arg1;
 - (void)_pauseAllActiveWorkoutsWithCompletion:(id /* block */)arg1;
-- (void)_pauseWorkoutSession:(id)arg1;
+- (void)_pauseWorkoutSession:(id)arg1 completion:(id /* block */)arg2;
 - (void)_profileServerProxyWithCompletion:(id /* block */)arg1 errorHandler:(id /* block */)arg2;
 - (id)_queries;
 - (void)_queryControlServerProxyWithCompletion:(id /* block */)arg1 errorHandler:(id /* block */)arg2;
 - (void)_reattachWorkout:(id)arg1 fitnessMachineConnection:(id)arg2 fitnessMachineSessionConfiguration:(id)arg3 completion:(id /* block */)arg4;
 - (void)_reattachWorkout:(id)arg1 fitnessMachineConnection:(id)arg2 fitnessMachineSessionConfiguration:(id)arg3 willReactivate:(bool)arg4 completion:(id /* block */)arg5;
+- (void)_removeWaitForSyncStartHandlerWithUUID:(id)arg1;
 - (void)_removeWorkoutSession:(id)arg1;
 - (void)_replaceWorkout:(id)arg1 withWorkout:(id)arg2 completion:(id /* block */)arg3;
 - (void)_resourceQueue_addFitnessMachineConnection:(id)arg1;
 - (void)_resourceQueue_addFitnessMachineConnectionInitiator:(id)arg1;
 - (id)_resourceQueue_fitnessMachineConnectionForUUID:(id)arg1;
 - (void)_resourceQueue_setUpWithEndpoint:(id)arg1;
-- (void)_resumeWorkoutSession:(id)arg1;
+- (void)_resumeWorkoutSession:(id)arg1 completion:(id /* block */)arg2;
 - (void)_safeFetchDaemonPreferenceForKey:(id)arg1 expectedReturnClass:(Class)arg2 completion:(id /* block */)arg3;
 - (void)_saveActiveWorkout:(id)arg1 isMachineWorkout:(bool)arg2 completion:(id /* block */)arg3;
 - (void)_saveObjects:(id)arg1 atomically:(bool)arg2 completion:(id /* block */)arg3;
@@ -108,7 +112,7 @@
 - (void)_setPreferredUnit:(id)arg1 forType:(id)arg2 completion:(id /* block */)arg3;
 - (bool)_setWheelchairUse:(long long)arg1 error:(id*)arg2;
 - (void)_shouldGenerateDemoDataPreferenceIsSet:(id /* block */)arg1;
-- (void)_startWorkoutSession:(id)arg1;
+- (void)_startWorkoutSession:(id)arg1 completion:(id /* block */)arg2;
 - (void)_subserverProxyForSelector:(SEL)arg1 completion:(id /* block */)arg2 errorHandler:(id /* block */)arg3;
 - (void)_throwIfAuthorizationDisallowedForSharing:(bool)arg1 types:(id)arg2;
 - (void)_throwIfParentTypeNotRequestedForSharing:(bool)arg1 types:(id)arg2;
@@ -134,6 +138,7 @@
 - (void)clientRemote_presentAuthorizationWithRequestRecord:(id)arg1 completion:(id /* block */)arg2;
 - (void)clientRemote_presentAuthorizationWithSession:(id)arg1 completion:(id /* block */)arg2;
 - (void)clientRemote_unitPreferencesDidUpdate;
+- (void)clientRemote_waitOnHealthCloudSyncWithProgressDidStartWithUUID:(id)arg1;
 - (void)closeTransactionForType:(id)arg1 anchor:(id)arg2 ackTime:(id)arg3 query:(id)arg4;
 - (void)connectionInterrupted;
 - (void)connectionInvalidated;
@@ -284,8 +289,11 @@
 - (void)_populateDemographicsWrapper:(id)arg1 withFirstName:(id)arg2 lastName:(id)arg3 meContact:(id)arg4;
 - (id)_sortedSources:(id)arg1;
 - (id)createMedicalIDData;
+- (id)hk_additionalSourcesForInstalledAppsWithBundleIdentifiers:(id)arg1;
+- (id)hk_appSourcesRequiringAuthorizationFromSources:(id)arg1;
 - (void)hk_fetchExistingDemographicInformationWithCompletion:(id /* block */)arg1;
-- (id)hk_sourcesForAuthorizationWithSources:(id)arg1;
+- (void)hk_fetchSortedAppSourcesRequiringAuthorizationWithCompletion:(id /* block */)arg1;
+- (id)hk_researchAppBundleIdentifiers;
 - (id)hk_sourcesForDevicesWithSources:(id)arg1;
 
 @end

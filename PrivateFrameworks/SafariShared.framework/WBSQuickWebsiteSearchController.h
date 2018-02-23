@@ -10,11 +10,7 @@
     NSObject<OS_dispatch_queue> * _quickWebsiteSearchProvidersBySourcePageURLStringAccessQueue;
     bool  _quickWebsiteSearchProvidersLoadedFromDisk;
     NSURL * _searchDescriptionsURL;
-    struct unique_ptr<SafariShared::CoalescedAsynchronousWriter, std::__1::default_delete<SafariShared::CoalescedAsynchronousWriter> > { 
-        struct __compressed_pair<SafariShared::CoalescedAsynchronousWriter *, std::__1::default_delete<SafariShared::CoalescedAsynchronousWriter> > { 
-            struct CoalescedAsynchronousWriter {} *__first_; 
-        } __ptr_; 
-    }  _writer;
+    WBSCoalescedAsynchronousWriter * _writer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -26,7 +22,6 @@
 
 + (id)sharedController;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_addHost:(id)arg1 toOpenSearchDescriptionWithDocumentURL:(id)arg2;
 - (id)_dictionaryRepresentation;

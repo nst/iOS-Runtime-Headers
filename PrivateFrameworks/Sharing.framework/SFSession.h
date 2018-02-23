@@ -72,6 +72,7 @@
     NSUUID * _serviceUUID;
     unsigned int  _sessionFlags;
     unsigned int  _sessionID;
+    id /* block */  _sessionStartedHandler;
     SFTRSession * _sfTRSession;
     unsigned int  _sharingSourceVersion;
     NSXPCListenerEndpoint * _testListenerEndpoint;
@@ -120,6 +121,7 @@
 @property (nonatomic, copy) NSUUID *serviceUUID;
 @property (nonatomic) unsigned int sessionFlags;
 @property (nonatomic) unsigned int sessionID;
+@property (nonatomic, copy) id /* block */ sessionStartedHandler;
 @property (nonatomic) unsigned int sharingSourceVersion;
 @property (nonatomic, retain) NSXPCListenerEndpoint *testListenerEndpoint;
 @property (nonatomic) double timeout;
@@ -239,6 +241,7 @@
 - (void)sessionReceivedFrameType:(unsigned char)arg1 data:(id)arg2;
 - (void)sessionReceivedRequest:(id)arg1;
 - (void)sessionReceivedResponse:(id)arg1;
+- (id /* block */)sessionStartedHandler;
 - (void)setBluetoothState:(long long)arg1;
 - (void)setBluetoothStateChangedHandler:(id /* block */)arg1;
 - (void)setDispatchQueue:(id)arg1;
@@ -271,6 +274,7 @@
 - (void)setServiceUUID:(id)arg1;
 - (void)setSessionFlags:(unsigned int)arg1;
 - (void)setSessionID:(unsigned int)arg1;
+- (void)setSessionStartedHandler:(id /* block */)arg1;
 - (void)setSharingSourceVersion:(unsigned int)arg1;
 - (void)setTestListenerEndpoint:(id)arg1;
 - (void)setTimeout:(double)arg1;

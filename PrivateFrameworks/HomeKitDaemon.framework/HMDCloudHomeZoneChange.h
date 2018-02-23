@@ -20,6 +20,7 @@
 - (void)loadCloudRecordsAndDetermineDeletesFromCache:(id /* block */)arg1;
 - (bool)moreChangesToProcess;
 - (id)objectChanges;
+- (void)resetRecordWithRecordID:(id)arg1;
 - (void)setDeleteAsProcessedWithRecordID:(id)arg1;
 - (void)setSaveAsProcessedWithRecord:(id)arg1;
 - (void)setShareGroupChange:(id)arg1;

@@ -28,10 +28,13 @@
     NSObject<OS_dispatch_queue> * _observationSetupQueueForDefaultConnection;
     NSObject<OS_dispatch_queue> * _observationSetupQueueForSecondaryConnection;
     NSPurgeableData * _purgeableDataRepresentation;
+    NSObject<OS_dispatch_queue> * _serialQueue;
     bool  _shouldUsePurgeableData;
 }
 
 @property (nonatomic, readonly, copy) NSSet *bundleIdentifiers;
+@property (readonly) unsigned int currentStatus;
+@property unsigned int currentStatus;
 @property (nonatomic, readonly) NSSet *documentsTypes;
 @property (nonatomic, readonly) NSURL *documentsURL;
 @property (nonatomic, readonly) NSSet *exportedTypes;
@@ -41,9 +44,11 @@
 @property (nonatomic, readonly) bool isDocumentScopePublic;
 @property (nonatomic) bool isInCloudDocsZone;
 @property (nonatomic) bool isInInitialState;
+@property (retain) NSDate *lastServerUpdate;
+@property (readonly) NSDate *lastServerUpdate;
 @property (nonatomic, readonly) NSString *localizedName;
-@property (getter=isOverQuota, nonatomic) bool overQuota;
-@property (getter=isOverQuota, nonatomic, readonly) bool overQuota;
+@property (getter=isOverQuota) bool overQuota;
+@property (getter=isOverQuota, readonly) bool overQuota;
 @property (nonatomic, readonly) NSString *supportedFolderLevels;
 @property (nonatomic, readonly) NSURL *trashURL;
 @property (nonatomic, readonly) NSURL *url;

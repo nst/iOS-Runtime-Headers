@@ -2,7 +2,12 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSMutableSet : NSSet
+@interface NSMutableSet : NSSet <HMFMerging>
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 // Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
 
@@ -78,6 +83,11 @@
 // Image: /System/Library/PrivateFrameworks/FMCoreLite.framework/FMCoreLite
 
 - (void)fm_safeAddObject:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
+
+- (bool)mergeObject:(id)arg1;
+- (bool)shouldMergeObject:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 

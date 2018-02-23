@@ -3,6 +3,7 @@
  */
 
 @interface FCTodayConfigOperation : FCOperation {
+    <FCAppConfiguration> * _appConfiguration;
     <FCContentContext> * _context;
     NSArray * _networkEvents;
     NSObject * _resultInterestToken;
@@ -11,6 +12,7 @@
     NSString * _widgetConfigID;
 }
 
+@property (copy) <FCAppConfiguration> *appConfiguration;
 @property (nonatomic, retain) <FCContentContext> *context;
 @property (nonatomic, copy) NSArray *networkEvents;
 @property (nonatomic, copy) NSObject *resultInterestToken;
@@ -20,6 +22,7 @@
 
 - (void).cxx_destruct;
 - (void)_collectRecordIDsReferencedBySectionConfig:(id)arg1 withArticleListIDs:(id)arg2 articleIDs:(id)arg3;
+- (id)appConfiguration;
 - (id)context;
 - (id)init;
 - (id)networkEvents;
@@ -27,6 +30,7 @@
 - (void)performOperation;
 - (id)resultInterestToken;
 - (id)resultTodayConfig;
+- (void)setAppConfiguration:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setNetworkEvents:(id)arg1;
 - (void)setResultInterestToken:(id)arg1;

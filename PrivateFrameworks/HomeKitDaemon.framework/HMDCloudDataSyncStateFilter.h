@@ -68,7 +68,7 @@
 - (void)_clearResetConfigDisplayTimer;
 - (bool)_cloudSyncinProgressCheck:(id)arg1 supressPopup:(bool)arg2 sendCanceledError:(bool*)arg3 dataSyncState:(unsigned long long*)arg4;
 - (void)_handleAccountStatusChanged:(id)arg1;
-- (void)_postNotificationForDataSyncInProgress:(bool)arg1 dataSyncState:(unsigned long long)arg2;
+- (void)_postNotificationForDataSyncInProgress:(bool)arg1 dataSyncState:(unsigned long long)arg2 forcePost:(bool)arg3;
 - (void)_registerForMessages;
 - (void)_resetCloudDataSyncTimer;
 - (void)_stallCloudDataSyncTimer;
@@ -89,7 +89,7 @@
 - (bool)acceptMessage:(id)arg1 target:(id)arg2 errorReason:(id*)arg3;
 - (bool)cloudDataSyncCompleted;
 - (id)cloudDataSyncInProgressTimer;
-- (bool)dataSyncInProgressWithState:(unsigned long long*)arg1;
+- (bool)dataSyncInProgressWithState:(unsigned long long*)arg1 withMessage:(id)arg2;
 - (id)dataSyncTimerStartTimestamp;
 - (void)dealloc;
 - (bool)decryptionFailed;
@@ -99,7 +99,7 @@
 - (id)iCloudSwitchPopupTimer;
 - (bool)iCloudSwitchRequiredPopShown;
 - (bool)iCloudSwitchStateEnabled;
-- (id)initWithName:(id)arg1 homeManager:(id)arg2 messageDispatcher:(id)arg3 serverTokenAvailable:(bool)arg4 homeDataHasBeenDecrypted:(bool)arg5 localDataDecryptionFailed:(bool)arg6 totalHomes:(long long)arg7 currentAccount:(id)arg8;
+- (id)initWithName:(id)arg1 homeManager:(id)arg2 messageDispatcher:(id)arg3 serverTokenAvailable:(bool)arg4 homeDataHasBeenDecrypted:(bool)arg5 homeManagerServerTokenAvailable:(bool)arg6 localDataDecryptionFailed:(bool)arg7 totalHomes:(long long)arg8 currentAccount:(id)arg9;
 - (bool)isCloudDataSyncPeerAvailable;
 - (bool)isKeychainSyncPeerAvailable;
 - (bool)isLocalDataDecryptionFailed;

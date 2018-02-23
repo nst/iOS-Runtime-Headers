@@ -41,7 +41,9 @@
 - (void)_register;
 - (void)_reportResponses;
 - (void)_resetActionTimer;
-- (void)_startActionTimer;
+- (void)_startActionSetTimer;
+- (void)_startActionTimerWithTimeInterval:(double)arg1;
+- (void)_startReadWriteActionTimer;
 - (id)actionTimer;
 - (void)addActionSetRequest:(id)arg1 actionSet:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)addReadRequests:(id)arg1 home:(id)arg2 completion:(id /* block */)arg3;

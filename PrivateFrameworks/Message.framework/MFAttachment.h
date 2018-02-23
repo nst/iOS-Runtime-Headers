@@ -19,7 +19,10 @@
 }
 
 @property (nonatomic) MFAttachmentManager *attachmentManager;
+@property (nonatomic, readonly) NSString *className;
+@property (nonatomic, readonly) double constrainedWidth;
 @property (copy) NSString *contentID;
+@property (nonatomic, readonly) NSString *contentType;
 @property (nonatomic, retain) <MFDataConsumer> *customConsumer;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) unsigned long long decodedFileSize;
@@ -34,12 +37,26 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *icsRepresentation;
 @property (nonatomic) struct CGSize { double x1; double x2; } imageDimensions;
+@property (nonatomic, readonly) unsigned long long imageScalingFlags;
 @property (readonly) NSString *inferredMimeType;
 @property (readonly) bool isAutoArchive;
+@property (nonatomic, readonly) bool isCalendarFile;
+@property (nonatomic, readonly) bool isCameraRollCompatibleVideo;
 @property (readonly) bool isContainedInCompose;
 @property (readonly) bool isContainedInRFC822;
+@property (nonatomic, readonly) bool isContentCompressed;
+@property (nonatomic, readonly) bool isContentOpenable;
 @property (readonly) bool isDataAvailableLocally;
+@property (nonatomic, readonly) bool isDisplayableByWebKit;
+@property (nonatomic, readonly) bool isDisplayableImage;
+@property (nonatomic, readonly) bool isDisplayableInline;
+@property (nonatomic, readonly) bool isDisplayableInsidePlugin;
+@property (nonatomic, readonly) bool isDisplayableSinglePagePDFFile;
+@property (nonatomic, readonly) bool isMedia;
+@property (nonatomic, readonly) bool isPDFFile;
 @property bool isPlaceholder;
+@property (nonatomic, readonly) bool isRFC822;
+@property (nonatomic, readonly) bool isRestrictedMIMEType;
 @property (nonatomic) unsigned long long lastProgressBytes;
 @property (nonatomic) double lastProgressTime;
 @property (nonatomic, retain) MFMailDropMetadata *mailDropMetadata;
@@ -49,6 +66,7 @@
 @property (readonly) NSString *path;
 @property (nonatomic, retain) MFAttachmentPlaceholder *placeholder;
 @property (nonatomic, copy) NSString *remoteImageFileName;
+@property (nonatomic, readonly) unsigned long long scaledFileSize;
 @property (readonly) bool shouldAutoDownload;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSURL *url;

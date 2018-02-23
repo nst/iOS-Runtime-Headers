@@ -9,7 +9,5 @@
 + (id)typeString;
 
 - (Class)componentModelClass;
-- (Class)componentSizerClass;
-- (Class)componentViewClass;
 
 @end

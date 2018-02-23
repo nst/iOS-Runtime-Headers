@@ -13,9 +13,11 @@
         unsigned int timestamp : 1; 
         unsigned int trigger : 1; 
         unsigned int eventType : 1; 
+        unsigned int locState : 1; 
         unsigned int moState : 1; 
         unsigned int securityType : 1; 
     }  _has;
+    unsigned int  _locState;
     unsigned int  _moState;
     unsigned int  _securityType;
     NSString * _ssid;
@@ -31,11 +33,13 @@
 @property (nonatomic) bool hasBlacklistDuration;
 @property (nonatomic) bool hasDstChange;
 @property (nonatomic) bool hasEventType;
+@property (nonatomic) bool hasLocState;
 @property (nonatomic) bool hasMoState;
 @property (nonatomic) bool hasSecurityType;
 @property (nonatomic, readonly) bool hasSsid;
 @property (nonatomic) bool hasTimestamp;
 @property (nonatomic) bool hasTrigger;
+@property (nonatomic) unsigned int locState;
 @property (nonatomic) unsigned int moState;
 @property (nonatomic) unsigned int securityType;
 @property (nonatomic, retain) NSString *ssid;
@@ -55,6 +59,7 @@
 - (bool)hasBlacklistDuration;
 - (bool)hasDstChange;
 - (bool)hasEventType;
+- (bool)hasLocState;
 - (bool)hasMoState;
 - (bool)hasSecurityType;
 - (bool)hasSsid;
@@ -62,6 +67,7 @@
 - (bool)hasTrigger;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
+- (unsigned int)locState;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)moState;
 - (bool)readFrom:(id)arg1;
@@ -73,10 +79,12 @@
 - (void)setHasBlacklistDuration:(bool)arg1;
 - (void)setHasDstChange:(bool)arg1;
 - (void)setHasEventType:(bool)arg1;
+- (void)setHasLocState:(bool)arg1;
 - (void)setHasMoState:(bool)arg1;
 - (void)setHasSecurityType:(bool)arg1;
 - (void)setHasTimestamp:(bool)arg1;
 - (void)setHasTrigger:(bool)arg1;
+- (void)setLocState:(unsigned int)arg1;
 - (void)setMoState:(unsigned int)arg1;
 - (void)setSecurityType:(unsigned int)arg1;
 - (void)setSsid:(id)arg1;

@@ -26,5 +26,6 @@
 - (bool)isEqual:(id)arg1;
 - (bool)returnsMultipleResults;
 - (id)sgContactMatchesWithSortOrder:(long long)arg1 mutableObjects:(bool)arg2 service:(id)arg3 error:(id*)arg4;
+- (id)shortDebugDescription;
 
 @end

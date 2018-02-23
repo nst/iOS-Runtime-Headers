@@ -24,6 +24,9 @@
     bool  _managedUsesContainer;
     bool  _neverCache;
     struct __CFSet { } * _observingConnections;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _observingConnectionsLock;
     const char * _pathToTemporaryFileToWriteTo;
     NSObject<OS_xpc_object> * _pendingChangesQueue;
     unsigned long long  _pendingChangesSize;
@@ -78,6 +81,7 @@
 - (void)lockedSync:(id /* block */)arg1;
 - (bool)managed;
 - (void)markNeedsToReloadFromDiskDueToFailedWrite;
+- (void)observingConnectionsLockedSync:(id /* block */)arg1;
 - (int)owner;
 - (void)removeOwner;
 - (void)respondToFileWrittenToBehindOurBack;

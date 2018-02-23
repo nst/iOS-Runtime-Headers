@@ -42,6 +42,7 @@
     SEL  _interactiveTransitionCleanupSelector;
     bool  _isChangingInputViews;
     bool  _isChangingPlacement;
+    bool  _isSnapshotting;
     UIInputViewSetNotificationInfo * _keyboardHeightChangeNotificationInfo;
     NSDate * _keyboardShowTimestamp;
     NSString * _lastKeyboardID;
@@ -185,6 +186,7 @@
 - (id)_updateOrCreateConstraintInDict:(id)arg1 key:(id)arg2 fromView:(id)arg3 toView:(id)arg4 tracker:(id)arg5 creator:(id /* block */)arg6;
 - (void)_updatePlacementWithPlacement:(id)arg1;
 - (bool)_useLiveRotation;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_viewSafeAreaInsetsFromScene;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_visibleFrame;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_visibleInputViewFrame;
 - (id)accessoryViewHeightConstraint;

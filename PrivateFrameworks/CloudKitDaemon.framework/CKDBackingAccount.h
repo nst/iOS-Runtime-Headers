@@ -16,6 +16,7 @@
 @property (nonatomic, readonly) NSURL *privateCloudDBURL;
 @property (nonatomic, readonly) NSURL *privateCodeServiceURL;
 @property (nonatomic, readonly) NSURL *privateDeviceServiceURL;
+@property (nonatomic, readonly) NSURL *privateMetricsServiceURL;
 @property (nonatomic, readonly) NSURL *privateShareServiceURL;
 @property (nonatomic, readonly) NSString *serverPreferredPushEnvironment;
 @property (nonatomic, readonly) NSString *username;
@@ -31,6 +32,7 @@
 - (id)_init;
 - (id)accountPropertiesForDataclass:(id)arg1;
 - (bool)canAuthWithCloudKit;
+- (bool)canRenew;
 - (id)ckAccount;
 - (id)cloudKitAuthTokenWithError:(id*)arg1;
 - (void)displayAuthenticationPromptWithReason:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -47,6 +49,7 @@
 - (id)privateCloudDBURL;
 - (id)privateCodeServiceURL;
 - (id)privateDeviceServiceURL;
+- (id)privateMetricsServiceURL;
 - (id)privateShareServiceURL;
 - (void)renewAuthTokenInStore:(id)arg1 withOptions:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)serverPreferredPushEnvironment;

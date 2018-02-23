@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDMediaEndpoint : NSObject {
+@interface HMDMediaEndpoint : HMFObject {
     NSArray * _advertisements;
     void * _endpoint;
     NSString * _localizedName;
@@ -28,5 +28,6 @@
 - (id)localizedName;
 - (id)sessionIdentifier;
 - (id)uniqueIdentifier;
+- (void)updateWithEndpoint:(void*)arg1;
 
 @end

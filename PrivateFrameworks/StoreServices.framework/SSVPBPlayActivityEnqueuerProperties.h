@@ -9,8 +9,10 @@
     struct { 
         unsigned int storeAccountID : 1; 
         unsigned int systemReleaseType : 1; 
+        unsigned int privateListeningEnabled : 1; 
         unsigned int sBEnabled : 1; 
     }  _has;
+    bool  _privateListeningEnabled;
     bool  _sBEnabled;
     unsigned long long  _storeAccountID;
     NSString * _storeFrontID;
@@ -24,11 +26,13 @@
 @property (nonatomic, readonly) bool hasBuildVersion;
 @property (nonatomic, readonly) bool hasDeviceGUID;
 @property (nonatomic, readonly) bool hasDeviceName;
+@property (nonatomic) bool hasPrivateListeningEnabled;
 @property (nonatomic) bool hasSBEnabled;
 @property (nonatomic) bool hasStoreAccountID;
 @property (nonatomic, readonly) bool hasStoreFrontID;
 @property (nonatomic) bool hasSystemReleaseType;
 @property (nonatomic, readonly) bool hasTimeZoneName;
+@property (nonatomic) bool privateListeningEnabled;
 @property (nonatomic) bool sBEnabled;
 @property (nonatomic) unsigned long long storeAccountID;
 @property (nonatomic, retain) NSString *storeFrontID;
@@ -47,6 +51,7 @@
 - (bool)hasBuildVersion;
 - (bool)hasDeviceGUID;
 - (bool)hasDeviceName;
+- (bool)hasPrivateListeningEnabled;
 - (bool)hasSBEnabled;
 - (bool)hasStoreAccountID;
 - (bool)hasStoreFrontID;
@@ -55,14 +60,17 @@
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (bool)privateListeningEnabled;
 - (bool)readFrom:(id)arg1;
 - (bool)sBEnabled;
 - (void)setBuildVersion:(id)arg1;
 - (void)setDeviceGUID:(id)arg1;
 - (void)setDeviceName:(id)arg1;
+- (void)setHasPrivateListeningEnabled:(bool)arg1;
 - (void)setHasSBEnabled:(bool)arg1;
 - (void)setHasStoreAccountID:(bool)arg1;
 - (void)setHasSystemReleaseType:(bool)arg1;
+- (void)setPrivateListeningEnabled:(bool)arg1;
 - (void)setSBEnabled:(bool)arg1;
 - (void)setStoreAccountID:(unsigned long long)arg1;
 - (void)setStoreFrontID:(id)arg1;

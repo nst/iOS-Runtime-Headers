@@ -33,6 +33,7 @@
         double x; 
         double y; 
     }  _previousPoint;
+    <SXReachabilityProvider> * _reachabilityProvider;
     <SXResourceDataSource> * _resourceDataSource;
     UILongPressGestureRecognizer * _scrubGesture;
     bool  _scrubbingEnabled;
@@ -74,6 +75,7 @@
 @property (nonatomic) struct CGSize { double x1; double x2; } preferredQualityLoadingImageSize;
 @property (nonatomic, readonly) bool prefersHighQuality;
 @property (nonatomic) struct CGPoint { double x1; double x2; } previousPoint;
+@property (nonatomic, readonly) <SXReachabilityProvider> *reachabilityProvider;
 @property (nonatomic, readonly) <SXResourceDataSource> *resourceDataSource;
 @property (nonatomic, retain) UILongPressGestureRecognizer *scrubGesture;
 @property (nonatomic) bool scrubbingEnabled;
@@ -115,9 +117,10 @@
 - (id /* block */)highQualityImageRequestCancelHandler;
 - (unsigned long long)highQualityInterest;
 - (id)imageResource;
-- (id)initWithImageResource:(id)arg1 resourceDataSource:(id)arg2;
+- (id)initWithImageResource:(id)arg1 resourceDataSource:(id)arg2 reachabilityProvider:(id)arg3;
 - (unsigned long long)intendedFrameIndex;
 - (id)interestTable;
+- (bool)isAccessibilityElement;
 - (bool)isScrubbing;
 - (bool)isVisible;
 - (id)itemsForCustomRotor:(id)arg1;
@@ -139,6 +142,7 @@
 - (bool)prefersHighQuality;
 - (struct CGPoint { double x1; double x2; })previousPoint;
 - (void)reachabilityChanged:(bool)arg1;
+- (id)reachabilityProvider;
 - (id)resourceDataSource;
 - (void)resume;
 - (id)scrubGesture;
@@ -174,6 +178,7 @@
 - (bool)shouldResumeAfterLoad;
 - (bool)shouldShowLoadingIndicator;
 - (void)showNextFrame;
+- (id)stringForAXDragAction;
 - (id)supportedCustomRotors;
 - (void)validateLoadedImage;
 - (void)willMoveToSuperview:(id)arg1;

@@ -29,10 +29,13 @@
 
 - (void).cxx_destruct;
 - (void)_indexOneBatchWithCompletionHandler:(id /* block */)arg1;
+- (void)_invalidate;
 - (void)_learnNewIndexState:(id)arg1;
+- (void)dealloc;
 - (void)deleteSearchableItemsWithDomainIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)description;
 - (id)domainContext;
+- (void)dropIndexAndInvalidateWithCompletionHandler:(id /* block */)arg1;
 - (void)dropIndexWithCompletionHandler:(id /* block */)arg1;
 - (void)dumpStateTo:(id)arg1;
 - (id)index;

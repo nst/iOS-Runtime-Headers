@@ -18,5 +18,6 @@
 @optional
 
 - (void)authorizationDidPresent;
+- (void)didEncounterAuthorizationEvent:(unsigned long long)arg1;
 
 @end

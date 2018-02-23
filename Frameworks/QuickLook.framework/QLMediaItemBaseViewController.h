@@ -55,7 +55,6 @@
 - (void).cxx_destruct;
 - (void)_updateExternalPlayback;
 - (void)_updatePlayingStatus;
-- (id)audioSessionCategory;
 - (void)buttonPressedWithIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
 - (double)currentPlaybackHeadPosition;
 - (void)dealloc;

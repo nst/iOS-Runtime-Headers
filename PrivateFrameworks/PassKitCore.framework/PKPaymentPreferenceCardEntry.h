@@ -3,6 +3,7 @@
  */
 
 @interface PKPaymentPreferenceCardEntry : NSObject {
+    NSString * _availabilityString;
     NSString * _displayName;
     bool  _isSelectable;
     PKPaymentPass * _pass;
@@ -10,6 +11,7 @@
     bool  _shouldShowCardUI;
 }
 
+@property (nonatomic, copy) NSString *availabilityString;
 @property (nonatomic, copy) NSString *displayName;
 @property (nonatomic) bool isSelectable;
 @property (nonatomic, retain) PKPaymentPass *pass;
@@ -17,10 +19,12 @@
 @property (nonatomic) bool shouldShowCardUI;
 
 - (void).cxx_destruct;
+- (id)availabilityString;
 - (id)displayName;
 - (bool)isSelectable;
 - (id)pass;
 - (id)paymentApplication;
+- (void)setAvailabilityString:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setIsSelectable:(bool)arg1;
 - (void)setPass:(id)arg1;

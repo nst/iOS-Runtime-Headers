@@ -8,7 +8,7 @@
     FCCacheCoordinatorFlushPolicy * _flushPolicy;
     <FCOperationThrottler> * _flushThrottler;
     bool  _flushingEnabled;
-    FCMutexLock * _interestLock;
+    NFMutexLock * _interestLock;
     NSCountedSet * _interestedKeys;
     NSMutableSet * _storedKeys;
     <FCCacheCoordinatorLocking> * _underlyingLock;
@@ -22,7 +22,7 @@
 @property (nonatomic, retain) <FCOperationThrottler> *flushThrottler;
 @property (getter=isFlushingEnabled) bool flushingEnabled;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) FCMutexLock *interestLock;
+@property (nonatomic, retain) NFMutexLock *interestLock;
 @property (nonatomic, retain) NSCountedSet *interestedKeys;
 @property (nonatomic, retain) NSMutableSet *storedKeys;
 @property (readonly) Class superclass;

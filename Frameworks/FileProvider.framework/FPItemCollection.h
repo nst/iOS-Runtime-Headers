@@ -32,6 +32,7 @@
     bool  _shouldRetryOnceAfterCrash;
     bool  _shouldUpdate;
     NSArray * _sortDescriptors;
+    bool  _started;
     FPPacer * _updatePacer;
     NSObject<OS_dispatch_queue> * _updateQueue;
     NSArray * _updateSortDescriptors;

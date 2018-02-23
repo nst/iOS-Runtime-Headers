@@ -8,15 +8,21 @@
     UILabel * _addAccountDetailLabel;
     PKPeerPaymentBankAccountInformation * _bankInformation;
     NSDecimalNumber * _cardBalance;
+    UIImageView * _checkmarkImageView;
     NSDecimalNumber * _currentAmount;
     NSNumberFormatter * _currentAmountFormatter;
     <PKPerformActionViewDelegate> * _delegate;
     PKEnterCurrencyAmountView * _enterCurrencyAmountView;
-    NSDecimalNumber * _maxAmount;
-    NSDecimalNumber * _minAmount;
+    NSDecimalNumber * _maxBalance;
+    NSDecimalNumber * _maxLoadAmount;
+    NSDecimalNumber * _minBalance;
+    NSDecimalNumber * _minLoadAmount;
     PKEnterValueNewBalanceView * _newBalanceView;
     PKPeerPaymentService * _peerPaymentService;
     UITableView * _tableView;
+    UILabel * _tranferMessageLabel;
+    UILabel * _tranferTitleLabel;
+    bool  _transferComplete;
 }
 
 @property (nonatomic, retain) PKPeerPaymentAccount *account;
@@ -26,15 +32,18 @@
 @property (nonatomic) <PKPerformActionViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, copy) NSDecimalNumber *maxAmount;
-@property (nonatomic, copy) NSDecimalNumber *minAmount;
+@property (nonatomic, copy) NSDecimalNumber *maxBalance;
+@property (nonatomic, copy) NSDecimalNumber *maxLoadAmount;
+@property (nonatomic, copy) NSDecimalNumber *minBalance;
+@property (nonatomic, copy) NSDecimalNumber *minLoadAmount;
 @property (readonly) Class superclass;
+@property (nonatomic) bool transferComplete;
 
 - (void).cxx_destruct;
 - (id)_addAccountButton;
 - (id)_addAccountDetailLabel;
 - (void)_addAccountInformation:(id)arg1;
-- (double)_amountTopPadding;
+- (id)_checkmarkImageView;
 - (void)_createSubviews;
 - (void)_currentAmountDidChangeTo:(id)arg1 shouldGenerateNewSuggestions:(bool)arg2;
 - (void)_handleEditAccountInformationButtonPressed;
@@ -42,8 +51,11 @@
 - (void)_presentAddBankAccountViewController;
 - (void)_presentViewController:(id)arg1;
 - (void)_setRightBarButtonEnabledState;
-- (bool)_shouldShakeCard:(id)arg1;
+- (bool)_shouldShakeWithNewAmount:(id)arg1;
 - (id)_tableView;
+- (unsigned long long)_topPadding;
+- (id)_tranferMessageLabel;
+- (id)_tranferTitleLabel;
 - (void)_updateCurrentAmount:(id)arg1 shouldGenerateNewSuggestions:(bool)arg2;
 - (id)account;
 - (id)amountTextField;
@@ -56,8 +68,10 @@
 - (id)initWithAccount:(id)arg1 bankInformation:(id)arg2;
 - (id)initWithPass:(id)arg1 action:(id)arg2 paymentDataProvider:(id)arg3;
 - (void)layoutSubviews;
-- (id)maxAmount;
-- (id)minAmount;
+- (id)maxBalance;
+- (id)maxLoadAmount;
+- (id)minBalance;
+- (id)minLoadAmount;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)pass;
 - (void)saveLastInputValues;
@@ -65,13 +79,17 @@
 - (void)setAccount:(id)arg1;
 - (void)setCardBalance:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setMaxAmount:(id)arg1;
-- (void)setMinAmount:(id)arg1;
+- (void)setMaxBalance:(id)arg1;
+- (void)setMaxLoadAmount:(id)arg1;
+- (void)setMinBalance:(id)arg1;
+- (void)setMinLoadAmount:(id)arg1;
+- (void)setTransferComplete:(bool)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (id)transactionAmount;
 - (id)transactionCurrency;
+- (bool)transferComplete;
 - (void)willDismissViewController;
 - (void)willMoveToWindow:(id)arg1;
 

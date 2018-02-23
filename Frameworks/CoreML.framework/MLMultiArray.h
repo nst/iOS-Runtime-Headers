@@ -19,6 +19,8 @@
 @property (nonatomic, readonly) NSArray *shape;
 @property (nonatomic, readonly) NSArray *strides;
 
+// Image: /System/Library/Frameworks/CoreML.framework/CoreML
+
 + (id)arrayFromIndexVector:(const struct vector<unsigned long, std::__1::allocator<unsigned long> > { unsigned long long *x1; unsigned long long *x2; struct __compressed_pair<unsigned long *, std::__1::allocator<unsigned long> > { unsigned long long *x_3_1_1; } x3; }*)arg1;
 + (int)cppStorageOrder:(long long)arg1;
 + (id)doubleMatrixWithValues:(id)arg1 error:(id*)arg2;
@@ -45,6 +47,7 @@
 - (id)initWithShape:(id)arg1 dataType:(long long)arg2 storageOrder:(long long)arg3 error:(id*)arg4;
 - (bool)isContiguous;
 - (bool)isContiguousInOrder:(long long)arg1;
+- (bool)isEqual:(id)arg1;
 - (bool)isEqualToMultiArray:(id)arg1;
 - (bool)isManagingData;
 - (id)numberArray;
@@ -60,5 +63,12 @@
 - (id)shape;
 - (id)strides;
 - (bool)vectorizeIntoMultiArray:(id)arg1 storageOrder:(long long)arg2 error:(id*)arg3;
+
+// Image: /System/Library/PrivateFrameworks/SpotlightServices.framework/SpotlightServices
+
+- (double*)doublePointer;
+- (float*)floatPointer;
+- (id)initForDoubleTypeWithShape:(id)arg1;
+- (id)initForFloat32TypeWithShape:(id)arg1;
 
 @end

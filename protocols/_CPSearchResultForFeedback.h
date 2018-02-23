@@ -17,6 +17,7 @@
 - (bool)hasFbr;
 - (bool)hasIdentifier;
 - (bool)hasIntendedQuery;
+- (bool)hasIsFuzzyMatch;
 - (bool)hasIsLocalApplicationResult;
 - (bool)hasIsStaticCorrection;
 - (bool)hasLocalFeatures;
@@ -35,6 +36,7 @@
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 - (NSString *)intendedQuery;
+- (bool)isFuzzyMatch;
 - (bool)isLocalApplicationResult;
 - (bool)isStaticCorrection;
 - (NSData *)jsonData;
@@ -53,6 +55,7 @@
 - (void)setFbr:(NSString *)arg1;
 - (void)setIdentifier:(NSString *)arg1;
 - (void)setIntendedQuery:(NSString *)arg1;
+- (void)setIsFuzzyMatch:(bool)arg1;
 - (void)setIsLocalApplicationResult:(bool)arg1;
 - (void)setIsStaticCorrection:(bool)arg1;
 - (void)setLocalFeatures:(_CPStruct *)arg1;

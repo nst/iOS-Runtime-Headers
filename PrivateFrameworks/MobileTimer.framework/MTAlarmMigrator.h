@@ -4,10 +4,14 @@
 
 @interface MTAlarmMigrator : NSObject {
     NSMutableArray * _alarms;
+    NSArray * _oldAlarms;
+    Alarm * _oldSleepAlarm;
     MTAlarm * _sleepAlarm;
 }
 
 @property (nonatomic, retain) NSMutableArray *alarms;
+@property (nonatomic, retain) NSArray *oldAlarms;
+@property (nonatomic, retain) Alarm *oldSleepAlarm;
 @property (nonatomic, retain) MTAlarm *sleepAlarm;
 
 + (id)_numberFromString:(id)arg1;
@@ -20,7 +24,12 @@
 - (id)alarms;
 - (void)cleanUpOldNotifications;
 - (void)migrateFromOldStorage;
+- (id)oldAlarms;
+- (id)oldSleepAlarm;
+- (void)removeFromOldStorage;
 - (void)setAlarms:(id)arg1;
+- (void)setOldAlarms:(id)arg1;
+- (void)setOldSleepAlarm:(id)arg1;
 - (void)setSleepAlarm:(id)arg1;
 - (id)sleepAlarm;
 

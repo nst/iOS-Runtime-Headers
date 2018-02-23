@@ -3,25 +3,25 @@
  */
 
 @interface PKPaymentAuthorizationFooterView : UIView {
+    bool  _compact;
     unsigned long long  _confirmationStyle;
     long long  _constraintState;
+    bool  _constraintsDirty;
     <PKPaymentAuthorizationFooterViewDelegate> * _delegate;
+    NSMutableArray * _dynamicRegularConstraints;
     PKGlyphView * _glyphView;
-    NSMutableArray * _hiddenConstraints;
+    NSArray * _hiddenConstraints;
     UILabel * _labelView;
     PKPaymentAuthorizationLayout * _layout;
     UIView * _lockupView;
-    NSLayoutConstraint * _overallHeightConstraint;
     UILabel * _passbookPaymentDetailsView;
     UIButton * _payWithPasscodeButton;
-    NSLayoutConstraint * _payWithPasscodeCenterYConstraint;
     long long  _queuedConstraintState;
-    NSMutableArray * _regularConstraints;
     unsigned long long  _requestType;
     NSLayoutConstraint * _separatorLeftConstraint;
     UIView * _separatorView;
-    NSMutableArray * _seperatorConstraints;
     long long  _state;
+    NSArray * _staticRegularConstraints;
 }
 
 @property (nonatomic) unsigned long long confirmationStyle;
@@ -38,6 +38,7 @@
 - (id)_titleAttributedStringForState:(long long)arg1;
 - (id)_titleLabelAttributedString:(id)arg1;
 - (unsigned long long)confirmationStyle;
+- (id)defaultHeightConstraint;
 - (id)delegate;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 layout:(id)arg2;
 - (id)layout;

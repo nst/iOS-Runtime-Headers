@@ -71,6 +71,7 @@
 - (void)_layoutYAxisLabels;
 - (unsigned long long)_numberOfDataPointsForSeriesAtIndex:(unsigned long long)arg1;
 - (unsigned long long)_numberOfSeries;
+- (void)_orderSubviews;
 - (float)_relativePositionForXPlaneValue:(id)arg1;
 - (void)_reloadDataSeries;
 - (id)_seriesAtIndex:(unsigned long long)arg1;

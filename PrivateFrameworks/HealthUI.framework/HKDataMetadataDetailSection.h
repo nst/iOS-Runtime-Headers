@@ -13,7 +13,6 @@
 @property (nonatomic, readonly) HKUnitPreferenceController *unitController;
 
 - (void).cxx_destruct;
-- (void)_addPrivateMetadataIfAppropriateKey:(id)arg1 value:(id)arg2;
 - (void)_loadMetadataValues;
 - (id)displayTypeController;
 - (id)initWithSample:(id)arg1 displayTypeController:(id)arg2 unitController:(id)arg3;

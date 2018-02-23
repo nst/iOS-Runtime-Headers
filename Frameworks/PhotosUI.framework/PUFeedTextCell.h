@@ -10,10 +10,6 @@
     NSAttributedString * _attributedDetailText;
     NSAttributedString * _attributedText;
     long long  _buttonHorizontalAlignment;
-    struct UIOffset { 
-        double horizontal; 
-        double vertical; 
-    }  _buttonOffset;
     double  _buttonPadding;
     long long  _buttonSize;
     long long  _buttonType;
@@ -37,6 +33,7 @@
     }  _iconPadding;
     long long  _numberOfDetailTextLines;
     long long  _numberOfTextLines;
+    bool  _shouldUseAccessibilityLayout;
     bool  _shouldUseOpaqueBackground;
     long long  _tappableArea;
     long long  _textAlignment;
@@ -50,7 +47,6 @@
 @property (nonatomic, retain) NSAttributedString *attributedDetailText;
 @property (nonatomic, retain) NSAttributedString *attributedText;
 @property (nonatomic) long long buttonHorizontalAlignment;
-@property (nonatomic) struct UIOffset { double x1; double x2; } buttonOffset;
 @property (nonatomic) double buttonPadding;
 @property (nonatomic) long long buttonSize;
 @property (nonatomic) long long buttonType;
@@ -61,6 +57,7 @@
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } iconPadding;
 @property (nonatomic) long long numberOfDetailTextLines;
 @property (nonatomic) long long numberOfTextLines;
+@property (nonatomic) bool shouldUseAccessibilityLayout;
 @property (nonatomic) bool shouldUseOpaqueBackground;
 @property (nonatomic) long long tappableArea;
 @property (nonatomic) long long textAlignment;
@@ -69,10 +66,13 @@
 - (void).cxx_destruct;
 - (id)_button;
 - (void)_configureButton:(id)arg1 withType:(long long)arg2 size:(long long)arg3 animated:(bool)arg4;
+- (void)_contentSizeCategoryDidChange:(id)arg1;
 - (id)_delegate;
 - (id)_detailLabel;
 - (void)_handleButton:(id)arg1;
 - (id)_iconImageView;
+- (struct CGSize { double x1; double x2; })_iconSize;
+- (void)_invalidateCachedTextSizes;
 - (id)_label;
 - (id)_labelBackgroundColor;
 - (struct CGSize { double x1; double x2; })_maximumPossibleTextSizeForButtonWithType:(long long)arg1 size:(long long)arg2;
@@ -85,14 +85,15 @@
 - (void)_updateDetailLabel;
 - (void)_updateIconImageView;
 - (void)_updateLabelsBackgroundColor;
+- (void)_updateShouldUseAccessibilityLayout;
 - (id)attributedDetailText;
 - (id)attributedText;
 - (long long)buttonHorizontalAlignment;
-- (struct UIOffset { double x1; double x2; })buttonOffset;
 - (double)buttonPadding;
 - (long long)buttonSize;
 - (long long)buttonType;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (void)dealloc;
 - (id)iconImage;
 - (long long)iconLocation;
 - (struct UIOffset { double x1; double x2; })iconOffset;
@@ -104,7 +105,6 @@
 - (void)setAttributedDetailText:(id)arg1;
 - (void)setAttributedText:(id)arg1;
 - (void)setButtonHorizontalAlignment:(long long)arg1;
-- (void)setButtonOffset:(struct UIOffset { double x1; double x2; })arg1;
 - (void)setButtonPadding:(double)arg1;
 - (void)setButtonSize:(long long)arg1;
 - (void)setButtonType:(long long)arg1;
@@ -116,11 +116,13 @@
 - (void)setIconPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setNumberOfDetailTextLines:(long long)arg1;
 - (void)setNumberOfTextLines:(long long)arg1;
+- (void)setShouldUseAccessibilityLayout:(bool)arg1;
 - (void)setShouldUseOpaqueBackground:(bool)arg1;
 - (void)setTappableArea:(long long)arg1;
 - (void)setTextAlignment:(long long)arg1;
 - (void)setTextDetailTextSpacing:(double)arg1;
 - (bool)shouldRecognizerTap:(id)arg1;
+- (bool)shouldUseAccessibilityLayout;
 - (bool)shouldUseOpaqueBackground;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (long long)tappableArea;

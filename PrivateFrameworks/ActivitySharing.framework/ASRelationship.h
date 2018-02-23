@@ -107,6 +107,7 @@
 - (id)relationshipEvents;
 - (id)relationshipShareID;
 - (id)relationshipSnapshotForDate:(id)arg1;
+- (id)relationshipWithConsolidatedEvents;
 - (id)remoteActivityDataShareID;
 - (id)remoteRelationshipShareID;
 - (bool)sentInviteResponse;

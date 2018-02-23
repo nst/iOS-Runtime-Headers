@@ -58,6 +58,8 @@
     int  _firmwareStillImageOutputRetainedBufferCountOverride;
     int  _firmwareTimeMachineBufferCapacity;
     int  _horizontalSensorBinningFactor;
+    unsigned long long  _infraredProjectorUptimeInUsForHighPowerSparse;
+    unsigned long long  _infraredProjectorUptimeInUsForLowPowerSparse;
     bool  _isInfraredSourceNode;
     bool  _ispMultiBandNoiseReductionEnabled;
     bool  _keypointDetectionEnabled;
@@ -99,6 +101,7 @@
     }  _preferredPreviewDimensions;
     BWNodeOutput * _previewOutput;
     bool  _previewOutputEnabled;
+    int  _previousInfraredCaptureID;
     NSDictionary * _qHDRSensorDefectivePixelInfo;
     struct OpaqueFigSampleBufferProcessor { } * _qrmSampleBufferProcessor;
     struct { 
@@ -119,16 +122,22 @@
         int height; 
     }  _sensorCropDimensions;
     struct { 
-        float sphereShiftX; 
-        float sphereShiftY; 
         struct { 
             float x; 
             float y; 
-        } teleShpereShift; 
+        } lastWideSpherePos; 
         struct { 
             float x; 
             float y; 
-        } previousPos; 
+        } lastTeleSpherePos; 
+        struct { 
+            float x; 
+            float y; 
+        } currentTeleSpherePos; 
+        struct { 
+            float x; 
+            float y; 
+        } previousTeleSpherePos; 
         bool supportAverageSpherePositionKey; 
     }  _sphereShiftState;
     bool  _stillImageKeypointDetectionEnabled;
@@ -168,6 +177,8 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) BWNodeOutput *detectedFacesOutput;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) unsigned long long infraredProjectorUptimeInUsForHighPowerSparse;
+@property (nonatomic, readonly) unsigned long long infraredProjectorUptimeInUsForLowPowerSparse;
 @property (readonly) BWNodeOutput *previewOutput;
 @property (readonly) BWNodeOutput *stillImageOutput;
 @property (readonly) Class superclass;
@@ -245,6 +256,7 @@
 - (bool)detectedFacesOutputEnabled;
 - (bool)discardsDepthDataForStillImages;
 - (bool)discardsUnstableSphereVideoFrames;
+- (struct { int x1; int x2; })finalPreviewOutputDimensions;
 - (struct { int x1; int x2; })firmwareStillImageDimensionsAfterOverscanCropping;
 - (int)firmwareStillImageOutputRetainedBufferCountOverride;
 - (int)firmwareTimeMachineBufferCapacity;
@@ -252,11 +264,14 @@
 - (bool)handlesHDRReferenceFrameReporting;
 - (bool)hasNonLiveConfigurationChanges;
 - (int)horizontalSensorBinningFactor;
+- (unsigned long long)infraredProjectorUptimeInUsForHighPowerSparse;
+- (unsigned long long)infraredProjectorUptimeInUsForLowPowerSparse;
 - (bool)ispMultiBandNoiseReductionEnabled;
 - (bool)keypointDetectionEnabled;
 - (bool)ltmLookUpTableMetadataEnabled;
 - (bool)lumaHistogramMetadataEnabled;
 - (void)makeCurrentConfigurationLive;
+- (void)makeOutputsLiveIfNeeded;
 - (float)maxFrameRate;
 - (int)maxIntegrationTimeOverride;
 - (float)minFrameRate;
@@ -358,6 +373,5 @@
 - (bool)videoCaptureOutputPixelBufferAttachmentModificationAllowed;
 - (unsigned int)videoPixelFormat;
 - (bool)videoStabilizationEnabled;
-- (void)willStop;
 
 @end

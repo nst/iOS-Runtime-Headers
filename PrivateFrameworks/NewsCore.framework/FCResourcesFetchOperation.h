@@ -25,7 +25,6 @@
 - (id)fetchResourcesWithCompletion:(id /* block */)arg1;
 - (id)init;
 - (id)initWithContext:(id)arg1 resourceIDs:(id)arg2;
-- (id)initWithContext:(id)arg1 resourceURLs:(id)arg2;
 - (id)resourceIDs;
 - (id)resources;
 - (void)setCacheLifetimeHint:(long long)arg1;

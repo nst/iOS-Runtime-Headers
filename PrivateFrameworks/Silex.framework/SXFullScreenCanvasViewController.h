@@ -2,20 +2,20 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXFullScreenCanvasViewController : UIViewController {
-    bool  _isObservingNavigationBar;
+@interface SXFullscreenCanvasViewController : UIViewController {
+    SXKeyValueObserver * _navigationBarObserver;
     bool  _visible;
 }
 
-@property (nonatomic) bool isObservingNavigationBar;
+@property (nonatomic, retain) SXKeyValueObserver *navigationBarObserver;
 @property (nonatomic) bool visible;
 
-- (bool)isObservingNavigationBar;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void).cxx_destruct;
+- (id)navigationBarObserver;
 - (long long)preferredStatusBarStyle;
 - (long long)preferredStatusBarUpdateAnimation;
 - (bool)prefersStatusBarHidden;
-- (void)setIsObservingNavigationBar:(bool)arg1;
+- (void)setNavigationBarObserver:(id)arg1;
 - (void)setVisible:(bool)arg1;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;

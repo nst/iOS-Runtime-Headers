@@ -7,6 +7,7 @@
     NSArray * _contentConstraints;
     unsigned long long  _iconSize;
     HUIconView * _iconView;
+    UILayoutGuide * _lastBaselineLayoutGuide;
     UILabel * _primaryStatusLabel;
     <HFStringGenerator> * _primaryStatusText;
     UILabel * _secondaryStatusLabel;
@@ -18,6 +19,7 @@
 @property (nonatomic, retain) NSArray *contentConstraints;
 @property (nonatomic) unsigned long long iconSize;
 @property (nonatomic, readonly) HUIconView *iconView;
+@property (nonatomic, retain) UILayoutGuide *lastBaselineLayoutGuide;
 @property (nonatomic, readonly) UILabel *primaryStatusLabel;
 @property (nonatomic, copy) <HFStringGenerator> *primaryStatusText;
 @property (nonatomic, readonly) UILabel *secondaryStatusLabel;
@@ -30,9 +32,10 @@
 - (double)_iconHeight;
 - (void)_invalidateContentAndConstraints;
 - (id)_primaryFont;
-- (id)_primaryFontMetrics;
+- (id)_primaryFontTextStyle;
 - (id)_secondaryFont;
-- (id)_secondaryFontMetrics;
+- (id)_secondaryFontTextStyle;
+- (double)_secondaryStatusLineHeight;
 - (id)_statusParagraphStyleWithLineHeight:(double)arg1;
 - (void)_updatePrimaryStatusContent;
 - (void)_updateSecondaryStatusContent;
@@ -41,6 +44,8 @@
 - (unsigned long long)iconSize;
 - (id)iconView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)lastBaselineAnchor;
+- (id)lastBaselineLayoutGuide;
 - (id)primaryStatusLabel;
 - (id)primaryStatusText;
 - (id)secondaryStatusLabel;
@@ -48,6 +53,7 @@
 - (void)setContentAlignment:(unsigned long long)arg1;
 - (void)setContentConstraints:(id)arg1;
 - (void)setIconSize:(unsigned long long)arg1;
+- (void)setLastBaselineLayoutGuide:(id)arg1;
 - (void)setPrimaryStatusText:(id)arg1;
 - (void)setSecondaryStatusText:(id)arg1;
 - (void)setSizeSubclass:(long long)arg1;

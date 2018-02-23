@@ -79,6 +79,10 @@
 - (id)volatileDomainForName:(id)arg1;
 - (id)volatileDomainNames;
 
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
+- (void)hk_removeObjectsForKeysWithPrefix:(id)arg1;
+
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
 + (id)mf_copyCompositionServicesPreferenceValueForKey:(id)arg1;

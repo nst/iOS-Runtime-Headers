@@ -7,7 +7,6 @@
     NSString * _appleID;
     NSString * _certificateToken;
     SFAppleIDContactInfo * _contactInfo;
-    bool  _dirty;
     bool  _forceValidation;
     SFAppleIDIdentity * _identity;
     NSDate * _lastConnectAttemptDate;
@@ -23,7 +22,6 @@
 @property (nonatomic, readonly) NSString *appleID;
 @property (nonatomic, retain) NSString *certificateToken;
 @property (nonatomic, retain) SFAppleIDContactInfo *contactInfo;
-@property (getter=isDirty, nonatomic) bool dirty;
 @property (nonatomic) bool forceValidation;
 @property (nonatomic, retain) SFAppleIDIdentity *identity;
 @property (nonatomic, retain) NSDate *lastConnectAttemptDate;
@@ -49,7 +47,6 @@
 - (id)initWithAppleID:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
-- (bool)isDirty;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToAccount:(id)arg1;
 - (id)lastConnectAttemptDate;
@@ -61,7 +58,6 @@
 - (void)setAltDSID:(id)arg1;
 - (void)setCertificateToken:(id)arg1;
 - (void)setContactInfo:(id)arg1;
-- (void)setDirty:(bool)arg1;
 - (void)setForceValidation:(bool)arg1;
 - (void)setIdentity:(id)arg1;
 - (void)setLastConnectAttemptDate:(id)arg1;

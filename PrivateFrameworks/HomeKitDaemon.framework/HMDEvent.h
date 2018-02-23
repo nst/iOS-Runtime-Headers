@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDEvent : HMFObject <HMDBackingStoreObjectProtocol, HMFDumpState, HMFLogging, HMFMessageReceiver, NSSecureCoding> {
+@interface HMDEvent : HMFObject <HMDBackingStoreObjectProtocol, HMDHomeMessageReceiver, HMFDumpState, HMFLogging, NSSecureCoding> {
     unsigned long long  _activationType;
     <HMDEventDelegate> * _delegate;
     bool  _endEvent;
@@ -26,6 +26,7 @@
 @property (nonatomic, readonly) HMDHome *home;
 @property (nonatomic, retain) NSString *logString;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (readonly, copy) NSSet *messageReceiverChildren;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (readonly) Class superclass;
@@ -33,6 +34,7 @@
 @property (nonatomic, readonly) NSUUID *uuid;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
++ (bool)hasMessageReceiverChildren;
 + (id)logCategory;
 + (bool)supportsSecureCoding;
 

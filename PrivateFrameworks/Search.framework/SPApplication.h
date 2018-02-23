@@ -15,6 +15,7 @@
 @property (nonatomic, retain) NSURL *URL;
 @property (nonatomic, retain) NSString *displayIdentifier;
 @property (nonatomic, retain) NSString *displayName;
+@property (nonatomic, readonly) bool displayNameLoaded;
 @property (nonatomic) bool isWebClip;
 @property (nonatomic, retain) NSMutableArray *keywords;
 @property (nonatomic, retain) NSString *longDisplayName;
@@ -28,8 +29,10 @@
 - (id)description;
 - (id)displayIdentifier;
 - (id)displayName;
+- (bool)displayNameLoaded;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (bool)isWebClip;
 - (id)keywords;
 - (id)longDisplayName;

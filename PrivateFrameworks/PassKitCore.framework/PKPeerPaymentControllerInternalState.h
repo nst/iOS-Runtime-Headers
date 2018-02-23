@@ -13,7 +13,7 @@
     PKPeerPaymentRecipient * recipient;
     NSString * recipientDisplayName;
     NSString * recipientPhoneOrEmail;
-    NSString * requestToken;
+    PKPeerPaymentRequestToken * requestToken;
     NSString * routingNumber;
     NSString * senderPhoneOrEmail;
     unsigned long long  state;

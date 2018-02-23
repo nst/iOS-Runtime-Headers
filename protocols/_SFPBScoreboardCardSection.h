@@ -10,10 +10,12 @@
 - (_SFPBColor *)backgroundColor;
 - (bool)canBeHidden;
 - (void)clearPunchoutOptions;
+- (NSString *)eventStatus;
 - (bool)hasAccessibilityDescription;
 - (bool)hasBackgroundColor;
 - (bool)hasBottomPadding;
 - (bool)hasCanBeHidden;
+- (bool)hasEventStatus;
 - (bool)hasHasBottomPadding;
 - (bool)hasHasTopPadding;
 - (bool)hasPunchoutPickerDismissText;
@@ -37,6 +39,7 @@
 - (void)setAccessibilityDescription:(NSString *)arg1;
 - (void)setBackgroundColor:(_SFPBColor *)arg1;
 - (void)setCanBeHidden:(bool)arg1;
+- (void)setEventStatus:(NSString *)arg1;
 - (void)setHasBottomPadding:(bool)arg1;
 - (void)setHasTopPadding:(bool)arg1;
 - (void)setPunchoutOptions:(NSArray *)arg1;

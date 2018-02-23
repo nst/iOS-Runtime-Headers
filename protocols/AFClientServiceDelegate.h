@@ -45,6 +45,8 @@
 - (oneway void)speechRecordingStartpointDetected;
 - (oneway void)speechRecordingWillBeginRecognitionUpdateForTask:(NSString *)arg1;
 - (oneway void)speechRecordingWillBeginWithInputAudioPowerXPCWrapper:(AFXPCWrapper *)arg1;
+- (oneway void)startPlaybackDidFail:(long long)arg1;
 - (oneway void)startUIRequestWithText:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, void*
+- (oneway void)willProcessStartPlayback:(long long)arg1;
 
 @end

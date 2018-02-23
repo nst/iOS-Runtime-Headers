@@ -30,6 +30,7 @@
 - (void)addChangeWithRecord:(id)arg1;
 - (id)allTransactionStoreRowIDs;
 - (id)cachedCloudRecordWithObjectID:(id)arg1;
+- (void)cachedCloudRecordWithObjectID:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)changeWithObjectID:(id)arg1;
 - (id)changeWithRecordName:(id)arg1;
 - (id)cloudZone;
@@ -52,6 +53,7 @@
 - (id)privateZoneRootRecordID;
 - (id)processedTransactionStoreRowIDs;
 - (void)removeChangeWithObjectID:(id)arg1;
+- (void)resetRecordWithRecordID:(id)arg1;
 - (id)rootGroupChange;
 - (void)setAllChangedAsProcessed;
 - (void)setCloudZone:(id)arg1;

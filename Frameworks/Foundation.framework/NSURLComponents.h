@@ -87,6 +87,10 @@
 
 // Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
 
++ (id)parsec_componentsWithString:(id)arg1;
++ (id)parsec_componentsWithURL:(id)arg1 resolvingAgainstBaseURL:(bool)arg2;
+
+- (id)parsec_componentsForEmbeddedAMPURL;
 - (id)parsec_normalizedURLStringForDeepLinkIngest;
 - (id)parsec_normalizedURLStringForDeepLinkWhitelist;
 - (id)parsec_normalizedURLStringForLDAModel;
@@ -112,6 +116,10 @@
 
 - (id)rms_componentsByAddingQueryParameters:(id)arg1;
 - (id)rms_componentsByAddingQueryParameters:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
+
+- (id)queryValueForName:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
 

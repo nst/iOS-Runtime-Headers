@@ -19,6 +19,7 @@
     }  _apcDecoderConfig;
     AUPasscodeCodecConfiguration * _codecConfig;
     id /* block */  _dataHandler;
+    bool  _deliverDataSerially;
     unsigned int  _desiredChannelCount;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     NSMutableData * _incomingPayload;
@@ -81,5 +82,6 @@
 - (void)setCodecConfig:(id)arg1;
 - (void)setDataHandler:(id /* block */)arg1;
 - (void)setDispatchQueue:(id)arg1;
+- (void)setRenderingOffline:(bool)arg1;
 
 @end

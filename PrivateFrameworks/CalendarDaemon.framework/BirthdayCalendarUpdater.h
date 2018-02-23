@@ -13,8 +13,6 @@
     void * _facebookCalendar;
 }
 
-+ (id)_dateFromBirthdayComponents:(id)arg1;
-
 - (void).cxx_destruct;
 - (bool)_areNormalizedBirthdaysTheSame:(id)arg1 birthday2:(id)arg2;
 - (id)_birthdayCalendarForCalendarScale:(id)arg1;

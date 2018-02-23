@@ -3,26 +3,27 @@
  */
 
 @interface MRNowPlayingClient : NSObject <MRNowPlayingClientState> {
-    void * _activePlayerPath;
+    void * _activePlayer;
     void * _client;
-    int  _notifyRestoreClientStateForLaunch;
     NSMutableArray * _playerClients;
+    void * _playerPath;
     NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
-@property (nonatomic) void*activePlayerPath;
-@property (nonatomic, readonly) void*client;
+@property (nonatomic) void*activePlayer;
+@property (nonatomic) void*client;
 @property (nonatomic, readonly) NSArray *playerClients;
 
-- (void*)activePlayerPath;
+- (void*)activePlayer;
 - (void*)client;
 - (void)dealloc;
 - (id)description;
-- (id)initWithClient:(void*)arg1;
+- (id)initWithPlayerPath:(void*)arg1;
 - (id)nowPlayingPlayerClientForPlayerPath:(void*)arg1;
 - (id)playerClients;
 - (void)removePlayer:(void*)arg1;
 - (void)restoreNowPlayingClientState;
-- (void)setActivePlayerPath:(void*)arg1;
+- (void)setActivePlayer:(void*)arg1;
+- (void)setClient:(void*)arg1;
 
 @end

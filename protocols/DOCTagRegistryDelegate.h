@@ -9,6 +9,7 @@
 - (void)addTag:(DOCTag *)arg1 options:(long long)arg2;
 - (void)addTags:(NSArray *)arg1 options:(long long)arg2;
 - (bool)canReplaceTag:(DOCTag *)arg1 withTag:(DOCTag *)arg2;
+- (NSOrderedSet *)discoveredTags;
 - (bool)inBatchUpdate;
 - (bool)insertTag:(DOCTag *)arg1 atIndex:(unsigned long long)arg2;
 - (bool)isValidNewTagName:(NSString *)arg1;
@@ -20,5 +21,6 @@
 - (void)setTagSerialNumber:(long long)arg1;
 - (DOCTag *)tagForName:(NSString *)arg1;
 - (long long)tagSerialNumber;
+- (NSOrderedSet *)userTags;
 
 @end

@@ -13,6 +13,7 @@
         double height; 
     }  _displacement;
     bool  _eaten;
+    unsigned long long  _edgeAim;
     long long  _edgeType;
     long long  _forceCorrelationToken;
     NSMutableArray * _forwardingRecord;
@@ -71,6 +72,7 @@
 
 @property (setter=_setDisplacement:, nonatomic) struct CGSize { double x1; double x2; } _displacement;
 @property (getter=_isEaten, setter=_setEaten:, nonatomic) bool _eaten;
+@property (setter=_setEdgeAim:, nonatomic) unsigned long long _edgeAim;
 @property (setter=_setEdgeType:, nonatomic) long long _edgeType;
 @property (setter=_setForceCorrelationToken:, nonatomic) long long _forceCorrelationToken;
 @property (setter=_setForwardablePhase:, nonatomic) long long _forwardablePhase;
@@ -130,6 +132,7 @@
 - (void)_computeAzimuthAngleInWindow;
 - (struct CGSize { double x1; double x2; })_displacement;
 - (double)_distanceFrom:(id)arg1 inView:(id)arg2;
+- (unsigned long long)_edgeAim;
 - (bool)_edgeForceActive;
 - (bool)_edgeForcePending;
 - (long long)_edgeType;
@@ -148,6 +151,7 @@
 - (struct CGPoint { double x1; double x2; })_locationInSceneReferenceSpace;
 - (struct CGPoint { double x1; double x2; })_locationInWindow:(id)arg1;
 - (double)_maximumPossiblePressure;
+- (bool)_mightBeConsideredForForceSystemGesture;
 - (id)_mutableForwardingRecord;
 - (bool)_needsForceUpdate;
 - (unsigned char)_pathIdentity;
@@ -168,6 +172,7 @@
 - (void)_setAzimuthAngleInCADisplay:(double)arg1;
 - (void)_setDisplacement:(struct CGSize { double x1; double x2; })arg1;
 - (void)_setEaten:(bool)arg1;
+- (void)_setEdgeAim:(unsigned long long)arg1;
 - (void)_setEdgeType:(long long)arg1;
 - (void)_setForceCorrelationToken:(long long)arg1;
 - (void)_setForwardablePhase:(long long)arg1;

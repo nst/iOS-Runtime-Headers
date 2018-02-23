@@ -8,6 +8,7 @@
     long long  _biometricAuthorizationAttempts;
     NSString * _challenge;
     SSConsolidatedDialog * _consolidatedDialog;
+    NSString * _dialogId;
     bool  _didAuthenticate;
     bool  _didBuyParamsChange;
     bool  _didFallbackToPassword;
@@ -19,6 +20,7 @@
     bool  _shouldContinueTouchIDSession;
     bool  _shouldSendFallbackHeader;
     NSString * _signature;
+    NSString * _userAgent;
 }
 
 @property (copy) NSNumber *accountIdentifier;
@@ -28,6 +30,7 @@
 @property (retain) SSConsolidatedDialog *consolidatedDialog;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (copy) NSString *dialogId;
 @property bool didAuthenticate;
 @property bool didBuyParamsChange;
 @property bool didFallbackToPassword;
@@ -41,6 +44,7 @@
 @property bool shouldSendFallbackHeader;
 @property (copy) NSString *signature;
 @property (readonly) Class superclass;
+@property (copy) NSString *userAgent;
 
 - (void).cxx_destruct;
 - (id)accountIdentifier;
@@ -50,6 +54,7 @@
 - (id)consolidatedDialog;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
+- (id)dialogId;
 - (bool)didAuthenticate;
 - (bool)didBuyParamsChange;
 - (bool)didFallbackToPassword;
@@ -65,6 +70,7 @@
 - (void)setBiometricAuthorizationAttempts:(long long)arg1;
 - (void)setChallenge:(id)arg1;
 - (void)setConsolidatedDialog:(id)arg1;
+- (void)setDialogId:(id)arg1;
 - (void)setDidAuthenticate:(bool)arg1;
 - (void)setDidBuyParamsChange:(bool)arg1;
 - (void)setDidFallbackToPassword:(bool)arg1;
@@ -75,8 +81,10 @@
 - (void)setShouldContinueTouchIDSession:(bool)arg1;
 - (void)setShouldSendFallbackHeader:(bool)arg1;
 - (void)setSignature:(id)arg1;
+- (void)setUserAgent:(id)arg1;
 - (bool)shouldContinueTouchIDSession;
 - (bool)shouldSendFallbackHeader;
 - (id)signature;
+- (id)userAgent;
 
 @end

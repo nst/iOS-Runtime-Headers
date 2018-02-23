@@ -27,6 +27,9 @@
     bool  _recordingAudio;
     FBSProcessWatchdogPolicy * _sceneCreateWatchdogPolicy;
     long long  _terminationReason;
+    FBSProcessTerminationRequest * _terminationRequest;
+    FBProcessState * _terminationState;
+    FBProcessWatchdogEventContext * _terminationWatchdogContext;
     FBProcessWatchdog * _watchdog;
 }
 
@@ -59,6 +62,7 @@
 - (bool)_queue_bootstrapAndExecWithContext:(id)arg1;
 - (void)_queue_callExitObservers;
 - (void)_queue_cancelWatchdogTimer;
+- (id)_queue_composeContextWithValue:(id)arg1 key:(id)arg2;
 - (id)_queue_cpuStatistics;
 - (id)_queue_crashReportThermalsInfo;
 - (void)_queue_doGracefulKillWithDeliveryConfirmation:(id /* block */)arg1;
@@ -83,7 +87,6 @@
 - (unsigned long long)_queue_noteExitedForForceQuit:(bool)arg1;
 - (int)_queue_ourTaskStateForBKSTaskState:(long long)arg1;
 - (void)_queue_processDidExit;
-- (void)_queue_processReallyDidExit;
 - (void)_queue_sceneNeedsGracefulExit:(id)arg1 withDeliveryConfirmation:(id /* block */)arg2;
 - (void)_queue_setTaskState:(int)arg1;
 - (void)_queue_setVisibility:(int)arg1;

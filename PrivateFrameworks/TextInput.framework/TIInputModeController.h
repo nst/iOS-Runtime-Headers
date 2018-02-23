@@ -42,6 +42,7 @@
 - (void)setInputModesForTesting:(id)arg1;
 - (void)setPreferredLanguages:(id)arg1;
 - (id)suggestedDictationLanguageForDeviceLanguage;
+- (id)suggestedDictationLanguagesForDeviceLanguage;
 - (id)supportedInputModeIdentifiers;
 - (id)supportedInputModeLanguageAndRegions;
 

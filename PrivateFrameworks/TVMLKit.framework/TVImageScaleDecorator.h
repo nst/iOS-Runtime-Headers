@@ -13,6 +13,12 @@
     }  _cornerRadii;
     bool  _decoratedImageIsEquivalentToOriginal;
     double  _focusedSizeIncrease;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _padding;
     long long  _scaleMode;
     struct CGSize { 
         double width; 
@@ -25,6 +31,7 @@
 @property (nonatomic) struct TVCornerRadii { double x1; double x2; double x3; double x4; } cornerRadii;
 @property (nonatomic) bool cropToFit;
 @property (nonatomic) double focusedSizeIncrease;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } padding;
 @property (nonatomic) long long scaleMode;
 @property (nonatomic) struct CGSize { double x1; double x2; } scaleToSize;
 @property (nonatomic) double upscaleAdjustment;
@@ -33,6 +40,7 @@
 - (void)_applyCornerMaskForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toContext:(struct CGContext { }*)arg2;
 - (double)_focusedSizeIncreaseFactor;
 - (id)_imageFixedForRotation:(id)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_paddingAdjustedForUpscaling;
 - (struct CGSize { double x1; double x2; })_scaleToSizeAdjustedForUpscaling;
 - (void)_setDecoratedImageIsEquivalentToOriginal:(bool)arg1;
 - (id)bgColor;
@@ -50,6 +58,7 @@
 - (bool)loaderCropToFit;
 - (struct CGSize { double x1; double x2; })loaderScaleToSize;
 - (bool)needsAlphaForImage:(id)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })padding;
 - (long long)scaleMode;
 - (struct CGSize { double x1; double x2; })scaleToSize;
 - (void)setBgColor:(id)arg1;
@@ -57,6 +66,7 @@
 - (void)setCornerRadii:(struct TVCornerRadii { double x1; double x2; double x3; double x4; })arg1;
 - (void)setCropToFit:(bool)arg1;
 - (void)setFocusedSizeIncrease:(double)arg1;
+- (void)setPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setScaleMode:(long long)arg1;
 - (void)setScaleToSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setUpscaleAdjustment:(double)arg1;

@@ -15,14 +15,13 @@
 + (void)setStylesOnLabels:(id)arg1 withStyle:(unsigned long long)arg2;
 
 - (void).cxx_destruct;
-- (id)generateLabelForGridWithBold:(bool)arg1;
 - (id)init;
 - (id)keyLabels;
 - (void)setKeyLabels:(id)arg1;
 - (void)setStyle:(unsigned long long)arg1;
 - (void)setValueLabels:(id)arg1;
 - (unsigned long long)style;
-- (void)updateWithTuples:(id)arg1 valueColumnIsTrailing:(bool)arg2;
+- (void)updateWithTuples:(id)arg1 valueColumnIsTrailing:(bool)arg2 truncateKey:(bool)arg3;
 - (id)valueLabels;
 
 @end

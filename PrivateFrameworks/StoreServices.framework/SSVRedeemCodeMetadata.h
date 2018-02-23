@@ -7,6 +7,7 @@
     NSString * _inputCode;
 }
 
+@property (nonatomic, readonly) bool allowsAutoSubmission;
 @property (nonatomic, readonly) NSString *code;
 @property (nonatomic, readonly) NSString *codeType;
 @property (nonatomic, copy) NSString *inputCode;
@@ -14,6 +15,7 @@
 @property (nonatomic, readonly) NSDictionary *redeemCodeDictionary;
 
 - (void).cxx_destruct;
+- (bool)allowsAutoSubmission;
 - (id)code;
 - (id)codeType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

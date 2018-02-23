@@ -45,13 +45,17 @@
 - (id)URL;
 - (struct _CFURLRequest { }*)_CFURLRequest;
 - (bool)_URLHasScheme:(id)arg1;
+- (id)_allHTTPHeaderFieldsAsArrays;
 - (id)_copyReplacingURLWithURL:(id)arg1;
+- (bool)_ignoreHSTS;
 - (id)_initWithCFURLRequest:(struct _CFURLRequest { }*)arg1;
 - (bool)_isSafeRequestForBackgroundDownload;
 - (double)_payloadTransmissionTimeout;
+- (bool)_preventHSTSStorage;
 - (id)_propertyForKey:(id)arg1;
 - (void)_removePropertyForKey:(id)arg1;
 - (bool)_requiresShortConnectionTimeout;
+- (bool)_schemeWasUpgradedDueToDynamicHSTS;
 - (void)_setProperty:(id)arg1 forKey:(id)arg2;
 - (id)_startTimeoutDate;
 - (double)_timeWindowDelay;

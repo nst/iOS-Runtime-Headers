@@ -11,6 +11,7 @@
     bool  _isRunning;
     AVAudioPlayerNode * _player;
     float  _prePlayVolume;
+    AVAudioSession * _session;
     id /* block */  _stopEngineCompletion;
 }
 
@@ -24,6 +25,7 @@
 - (id)createAU:(struct AudioComponentDescription { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; })arg1;
 - (void)createEngineAndAttachNodes;
 - (id)dispatchQueue;
+- (void)endPasscodeEmbedding;
 - (float)evaluateAsset;
 - (id)initWithAssetURL:(id)arg1 codecConfig:(id)arg2 payload:(id)arg3 error:(id*)arg4;
 - (void)makeEngineConnections;
@@ -32,6 +34,8 @@
 - (void)setupAudioSession;
 - (bool)startEngine;
 - (void)stopEngine:(bool)arg1 withCompletion:(id /* block */)arg2;
+- (void)stopEngineAfterMinimumLoops:(unsigned long long)arg1 withCompletion:(id /* block */)arg2;
 - (id /* block */)stopEngineCompletion;
+- (void)stopEngineWithFadeOut:(float)arg1 completion:(id /* block */)arg2;
 
 @end

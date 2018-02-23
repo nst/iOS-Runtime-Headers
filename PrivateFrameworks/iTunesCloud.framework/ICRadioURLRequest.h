@@ -4,12 +4,14 @@
 
 @interface ICRadioURLRequest : ICStoreURLRequest {
     bool  _backgroundRadioRequest;
+    NSNumber * _delegatedPrivateListeningEnabled;
     NSNumber * _privateListeningEnabled;
     long long  _protocolVersion;
     id /* block */  _radioContentDictionaryCreationBlock;
 }
 
 @property (getter=isBackgroundRadioRequest, nonatomic) bool backgroundRadioRequest;
+@property (getter=isDelegatedPrivateListeningEnabled, nonatomic, copy) NSNumber *delegatedPrivateListeningEnabled;
 @property (getter=isPrivateListeningEnabled, nonatomic, copy) NSNumber *privateListeningEnabled;
 @property (nonatomic) long long protocolVersion;
 @property (nonatomic, copy) id /* block */ radioContentDictionaryCreationBlock;
@@ -19,10 +21,12 @@
 - (void)buildStoreURLRequestWithURLRequest:(id)arg1 builderProperties:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)initWithURLRequest:(id)arg1 requestContext:(id)arg2;
 - (bool)isBackgroundRadioRequest;
+- (id)isDelegatedPrivateListeningEnabled;
 - (id)isPrivateListeningEnabled;
 - (long long)protocolVersion;
 - (id /* block */)radioContentDictionaryCreationBlock;
 - (void)setBackgroundRadioRequest:(bool)arg1;
+- (void)setDelegatedPrivateListeningEnabled:(id)arg1;
 - (void)setPrivateListeningEnabled:(id)arg1;
 - (void)setProtocolVersion:(long long)arg1;
 - (void)setRadioContentDictionaryCreationBlock:(id /* block */)arg1;

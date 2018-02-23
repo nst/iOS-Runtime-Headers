@@ -16,6 +16,7 @@
 
 - (void).cxx_destruct;
 - (void)_buildAndSendRequestForURL:(id)arg1;
+- (void)_getURLFromBagAndSendRequest;
 - (bool)allowsExplicitContent;
 - (void)cancel;
 - (void)execute;

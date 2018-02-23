@@ -120,6 +120,7 @@
 - (bool)supportsInAppPayment;
 - (bool)supportsOptionalAuthentication;
 - (bool)supportsWebPaymentMode:(long long)arg1 withExclusionList:(id)arg2;
+- (bool)supportsWebPaymentMode:(long long)arg1 withExclusionList:(id)arg2 clientOSVersion:(id)arg3;
 - (id)suspendedReason;
 
 @end

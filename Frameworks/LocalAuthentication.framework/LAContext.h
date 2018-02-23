@@ -33,7 +33,7 @@
 - (void).cxx_destruct;
 - (id)_evaluationMechanismsFromReturnedError:(id)arg1 error:(id*)arg2;
 - (id)_hashWithBundleIdentifier:(id)arg1;
-- (id)_publicErrorFromInternalError:(id)arg1;
+- (id)_publicErrorFromInternalError:(id)arg1 options:(id)arg2;
 - (id)_serverPropertyValueForOption:(long long)arg1;
 - (void)_setServerPropertyForOption:(long long)arg1 value:(id)arg2;
 - (long long)biometryType;
@@ -69,12 +69,14 @@
 - (id)optionAuthenticationReason;
 - (id)optionAuthenticationTitle;
 - (id)optionBiometryLockoutRecovery;
+- (id)optionCallerAuditToken;
 - (id)optionCallerName;
 - (id)optionCallerPID;
 - (id)optionCancelVisible;
 - (id)optionFaceDetectLength;
 - (id)optionFallbackVisible;
 - (id)optionMaxBiometryFailures;
+- (id)optionNoFailureUI;
 - (id)optionNotInteractive;
 - (id)optionPINFirst;
 - (id)optionPINLength;
@@ -114,12 +116,14 @@
 - (void)setOptionAuthenticationReason:(id)arg1;
 - (void)setOptionAuthenticationTitle:(id)arg1;
 - (void)setOptionBiometryLockoutRecovery:(id)arg1;
+- (void)setOptionCallerAuditToken:(id)arg1;
 - (void)setOptionCallerName:(id)arg1;
 - (void)setOptionCallerPID:(id)arg1;
 - (void)setOptionCancelVisible:(id)arg1;
 - (void)setOptionFaceDetectLength:(id)arg1;
 - (void)setOptionFallbackVisible:(id)arg1;
 - (void)setOptionMaxBiometryFailures:(id)arg1;
+- (void)setOptionNoFailureUI:(id)arg1;
 - (void)setOptionNotInteractive:(id)arg1;
 - (void)setOptionPINFirst:(id)arg1;
 - (void)setOptionPINLength:(id)arg1;

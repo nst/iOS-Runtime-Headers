@@ -4,10 +4,8 @@
 
 @interface NCNotificationListSectionRevealHintView : UICollectionReusableView {
     bool  _donePerformingInitialReveal;
+    bool  _forceRevealed;
     double  _hintingAlpha;
-    UIViewFloatAnimatableProperty * _hintingAlphaFloatAnimatableProperty;
-    double  _hintingTranslation;
-    UIViewFloatAnimatableProperty * _hintingTranslationFloatAnimatableProperty;
     double  _initialRevealPercentageForPersistentTitle;
     bool  _needsFadeOut;
     bool  _recentsNotificationSectionEmpty;
@@ -19,10 +17,8 @@
 }
 
 @property (getter=isDonePerformingInitialReveal, nonatomic) bool donePerformingInitialReveal;
+@property (getter=isForceRevealed, nonatomic) bool forceRevealed;
 @property (nonatomic) double hintingAlpha;
-@property (nonatomic, retain) UIViewFloatAnimatableProperty *hintingAlphaFloatAnimatableProperty;
-@property (nonatomic) double hintingTranslation;
-@property (nonatomic, retain) UIViewFloatAnimatableProperty *hintingTranslationFloatAnimatableProperty;
 @property (nonatomic) double initialRevealPercentageForPersistentTitle;
 @property (nonatomic) bool needsFadeOut;
 @property (getter=isRecentsNotificationSectionEmpty, nonatomic) bool recentsNotificationSectionEmpty;
@@ -36,15 +32,12 @@
 
 - (void).cxx_destruct;
 - (double)_alphaValueBasedOnRevealPercentage;
-- (void)_animateHintingWithCompletion:(id /* block */)arg1;
 - (double)_baseAlphaValueBasedOnPersistence;
 - (double)_chevronAlphaForAlpha:(double)arg1;
 - (id)_chevronImage;
 - (void)_configureRevealHintChevronIfNecessary;
 - (void)_configureRevealHintTitleIfNecessary;
-- (void)_fadeOutHintingWithCompletion:(id /* block */)arg1;
 - (double)_hintTitleDisplacementForRevealPercentage:(double)arg1;
-- (double)_hintingTranslationDistance;
 - (id)_labelFont;
 - (void)_layoutRevealHintChevron;
 - (void)_layoutRevealHintChevronForInitialRevealPercentage:(double)arg1;
@@ -52,34 +45,26 @@
 - (void)_layoutRevealHintTitle;
 - (void)_layoutRevealHintTitleForInitialRevealPercentage:(double)arg1;
 - (void)_layoutRevealHintTitleForRevealPercentage:(double)arg1;
-- (void)_setupHintingFloatAnimatableProperties;
 - (void)_updateAlpha;
 - (void)_updateBaseAlpha;
 - (void)_updateHintTitle;
 - (void)_updateHintTitleFont;
 - (void)_updateLayout;
-- (void)dealloc;
 - (double)hintingAlpha;
-- (id)hintingAlphaFloatAnimatableProperty;
-- (double)hintingTranslation;
-- (id)hintingTranslationFloatAnimatableProperty;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (double)initialRevealPercentageForPersistentTitle;
 - (bool)isDonePerformingInitialReveal;
+- (bool)isForceRevealed;
 - (bool)isRecentsNotificationSectionEmpty;
 - (bool)isShowingPersistentTitle;
 - (void)layoutSubviews;
 - (bool)needsFadeOut;
-- (void)performHintingAnimated:(bool)arg1 withFadeOut:(bool)arg2;
-- (void)performHintingFadeOutIfNecessaryAnimated:(bool)arg1;
 - (id)revealHintChevron;
 - (id)revealHintTitle;
 - (double)revealPercentage;
 - (void)setDonePerformingInitialReveal:(bool)arg1;
+- (void)setForceRevealed:(bool)arg1;
 - (void)setHintingAlpha:(double)arg1;
-- (void)setHintingAlphaFloatAnimatableProperty:(id)arg1;
-- (void)setHintingTranslation:(double)arg1;
-- (void)setHintingTranslationFloatAnimatableProperty:(id)arg1;
 - (void)setInitialRevealPercentageForPersistentTitle:(double)arg1;
 - (void)setNeedsFadeOut:(bool)arg1;
 - (void)setRecentsNotificationSectionEmpty:(bool)arg1;

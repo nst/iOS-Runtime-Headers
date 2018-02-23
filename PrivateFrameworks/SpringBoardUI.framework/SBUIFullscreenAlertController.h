@@ -52,6 +52,7 @@
 - (bool)viewIsReadyToBeRemoved;
 - (void)viewWillAnimateIn;
 - (void)viewWillAnimateOut;
+- (bool)wantsHomeButtonPress;
 - (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 
 @end

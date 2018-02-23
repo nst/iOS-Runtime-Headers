@@ -74,6 +74,7 @@
 - (void)_updateMusicPlayerControllerQueueWithCompletionHandler:(id /* block */)arg1;
 - (void)_willFinishReloadWithQueueFeeder:(id)arg1 fromPlaybackContext:(id)arg2;
 - (void)addPlaybackContext:(id)arg1 toQueueWithInsertionType:(long long)arg2 completionHandler:(id /* block */)arg3;
+- (bool)allowsQueueResetWhenReachingEnd;
 - (bool)canSkipToPreviousItemForItem:(id)arg1;
 - (void)clearHardQueue;
 - (void)clearSoftQueue;
@@ -136,6 +137,7 @@
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })softQueuePlaylistIndexRange;
 - (bool)supportsAddToQueue;
 - (long long)upNextItemCount;
+- (void)updateLocationDependentPropertiesForItem:(id)arg1;
 - (bool)userCanChangeShuffleAndRepeatType;
 
 @end

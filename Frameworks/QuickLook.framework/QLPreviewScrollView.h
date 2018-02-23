@@ -18,7 +18,20 @@
     double  _maxZoomScale;
     double  _minZoomScale;
     bool  _needsZoomUpdate;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _peripheryInsetsLandscape;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _peripheryInsetsPortrait;
     double  _pinchMaxZoomScale;
+    bool  _preventZoomUpdate;
     bool  _readyToCancelPanGesture;
     bool  _shouldFit;
     <QLPreviewScrollViewZoomDelegate> * _zoomDelegate;
@@ -34,7 +47,10 @@
 @property (readonly) double maxZoomScale;
 @property (readonly) double minZoomScale;
 @property (nonatomic) bool needsZoomUpdate;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } peripheryInsetsLandscape;
+@property struct UIEdgeInsets { double x1; double x2; double x3; double x4; } peripheryInsetsPortrait;
 @property (readonly) double pinchMaxZoomScale;
+@property (nonatomic) bool preventZoomUpdate;
 @property bool shouldFit;
 @property (readonly) Class superclass;
 @property <QLPreviewScrollViewZoomDelegate> *zoomDelegate;
@@ -51,12 +67,18 @@
 - (double)maxZoomScale;
 - (double)minZoomScale;
 - (bool)needsZoomUpdate;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })peripheryInsetsLandscape;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })peripheryInsetsPortrait;
 - (double)pinchMaxZoomScale;
+- (bool)preventZoomUpdate;
 - (void)resetZoomScale;
 - (void)scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(double)arg3;
 - (void)scrollViewWillBeginZooming:(id)arg1 withView:(id)arg2;
 - (void)setContentViewSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setNeedsZoomUpdate:(bool)arg1;
+- (void)setPeripheryInsetsLandscape:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setPeripheryInsetsPortrait:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setPreventZoomUpdate:(bool)arg1;
 - (void)setShouldFit:(bool)arg1;
 - (void)setZoomDelegate:(id)arg1;
 - (bool)shouldFit;

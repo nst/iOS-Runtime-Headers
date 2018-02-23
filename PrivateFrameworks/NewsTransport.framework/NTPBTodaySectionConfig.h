@@ -15,6 +15,8 @@
     unsigned long long  _fallbackOrder;
     NTPBForYouTodaySectionSpecificConfig * _forYouTodaySectionConfig;
     bool  _glanceable;
+    NSString * _groupActionTitle;
+    NSString * _groupActionUrl;
     struct { 
         unsigned int cachedResultCutoffTime : 1; 
         unsigned int fallbackOrder : 1; 
@@ -33,11 +35,13 @@
         unsigned int glanceable : 1; 
         unsigned int presenceDeterminedByPersonalization : 1; 
         unsigned int shownInFavoritesOnlyMode : 1; 
+        unsigned int useNameColorInWidget : 1; 
         unsigned int videoPlaysMutedByDefault : 1; 
     }  _has;
     NSString * _identifier;
     unsigned long long  _interSectionFilteringOptions;
     unsigned long long  _intraSectionFilteringOptions;
+    NTPBItemsTodaySectionSpecificConfig * _itemsTodaySectionConfig;
     int  _leadingCellPromotionPolicy;
     unsigned long long  _maximumStoriesAllocation;
     unsigned long long  _minimumStoriesAllocation;
@@ -61,6 +65,7 @@
     int  _seenArticlesFilterMethod;
     unsigned long long  _seenArticlesMinimumTimeSinceFirstSeenToFilter;
     bool  _shownInFavoritesOnlyMode;
+    bool  _useNameColorInWidget;
     bool  _videoPlaysMutedByDefault;
 }
 
@@ -76,6 +81,8 @@
 @property (nonatomic) unsigned long long fallbackOrder;
 @property (nonatomic, retain) NTPBForYouTodaySectionSpecificConfig *forYouTodaySectionConfig;
 @property (nonatomic) bool glanceable;
+@property (nonatomic, retain) NSString *groupActionTitle;
+@property (nonatomic, retain) NSString *groupActionUrl;
 @property (nonatomic, readonly) bool hasArticleIDsTodaySectionConfig;
 @property (nonatomic, readonly) bool hasArticleListTodaySectionConfig;
 @property (nonatomic, readonly) bool hasBackgroundGradientColor;
@@ -88,9 +95,12 @@
 @property (nonatomic) bool hasFallbackOrder;
 @property (nonatomic, readonly) bool hasForYouTodaySectionConfig;
 @property (nonatomic) bool hasGlanceable;
+@property (nonatomic, readonly) bool hasGroupActionTitle;
+@property (nonatomic, readonly) bool hasGroupActionUrl;
 @property (nonatomic, readonly) bool hasIdentifier;
 @property (nonatomic) bool hasInterSectionFilteringOptions;
 @property (nonatomic) bool hasIntraSectionFilteringOptions;
+@property (nonatomic, readonly) bool hasItemsTodaySectionConfig;
 @property (nonatomic) bool hasLeadingCellPromotionPolicy;
 @property (nonatomic) bool hasMaximumStoriesAllocation;
 @property (nonatomic) bool hasMinimumStoriesAllocation;
@@ -109,10 +119,12 @@
 @property (nonatomic) bool hasSeenArticlesFilterMethod;
 @property (nonatomic) bool hasSeenArticlesMinimumTimeSinceFirstSeenToFilter;
 @property (nonatomic) bool hasShownInFavoritesOnlyMode;
+@property (nonatomic) bool hasUseNameColorInWidget;
 @property (nonatomic) bool hasVideoPlaysMutedByDefault;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic) unsigned long long interSectionFilteringOptions;
 @property (nonatomic) unsigned long long intraSectionFilteringOptions;
+@property (nonatomic, retain) NTPBItemsTodaySectionSpecificConfig *itemsTodaySectionConfig;
 @property (nonatomic) int leadingCellPromotionPolicy;
 @property (nonatomic) unsigned long long maximumStoriesAllocation;
 @property (nonatomic) unsigned long long minimumStoriesAllocation;
@@ -133,6 +145,7 @@
 @property (nonatomic) int seenArticlesFilterMethod;
 @property (nonatomic) unsigned long long seenArticlesMinimumTimeSinceFirstSeenToFilter;
 @property (nonatomic) bool shownInFavoritesOnlyMode;
+@property (nonatomic) bool useNameColorInWidget;
 @property (nonatomic) bool videoPlaysMutedByDefault;
 
 // Image: /System/Library/PrivateFrameworks/NewsTransport.framework/NewsTransport
@@ -155,6 +168,8 @@
 - (unsigned long long)fallbackOrder;
 - (id)forYouTodaySectionConfig;
 - (bool)glanceable;
+- (id)groupActionTitle;
+- (id)groupActionUrl;
 - (bool)hasArticleIDsTodaySectionConfig;
 - (bool)hasArticleListTodaySectionConfig;
 - (bool)hasBackgroundGradientColor;
@@ -167,9 +182,12 @@
 - (bool)hasFallbackOrder;
 - (bool)hasForYouTodaySectionConfig;
 - (bool)hasGlanceable;
+- (bool)hasGroupActionTitle;
+- (bool)hasGroupActionUrl;
 - (bool)hasIdentifier;
 - (bool)hasInterSectionFilteringOptions;
 - (bool)hasIntraSectionFilteringOptions;
+- (bool)hasItemsTodaySectionConfig;
 - (bool)hasLeadingCellPromotionPolicy;
 - (bool)hasMaximumStoriesAllocation;
 - (bool)hasMinimumStoriesAllocation;
@@ -188,12 +206,14 @@
 - (bool)hasSeenArticlesFilterMethod;
 - (bool)hasSeenArticlesMinimumTimeSinceFirstSeenToFilter;
 - (bool)hasShownInFavoritesOnlyMode;
+- (bool)hasUseNameColorInWidget;
 - (bool)hasVideoPlaysMutedByDefault;
 - (unsigned long long)hash;
 - (id)identifier;
 - (unsigned long long)interSectionFilteringOptions;
 - (unsigned long long)intraSectionFilteringOptions;
 - (bool)isEqual:(id)arg1;
+- (id)itemsTodaySectionConfig;
 - (int)leadingCellPromotionPolicy;
 - (unsigned long long)maximumStoriesAllocation;
 - (void)mergeFrom:(id)arg1;
@@ -228,6 +248,8 @@
 - (void)setFallbackOrder:(unsigned long long)arg1;
 - (void)setForYouTodaySectionConfig:(id)arg1;
 - (void)setGlanceable:(bool)arg1;
+- (void)setGroupActionTitle:(id)arg1;
+- (void)setGroupActionUrl:(id)arg1;
 - (void)setHasCachedResultCutoffTime:(bool)arg1;
 - (void)setHasDisplaysAsVideoPlaylist:(bool)arg1;
 - (void)setHasFallbackOrder:(bool)arg1;
@@ -245,10 +267,12 @@
 - (void)setHasSeenArticlesFilterMethod:(bool)arg1;
 - (void)setHasSeenArticlesMinimumTimeSinceFirstSeenToFilter:(bool)arg1;
 - (void)setHasShownInFavoritesOnlyMode:(bool)arg1;
+- (void)setHasUseNameColorInWidget:(bool)arg1;
 - (void)setHasVideoPlaysMutedByDefault:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setInterSectionFilteringOptions:(unsigned long long)arg1;
 - (void)setIntraSectionFilteringOptions:(unsigned long long)arg1;
+- (void)setItemsTodaySectionConfig:(id)arg1;
 - (void)setLeadingCellPromotionPolicy:(int)arg1;
 - (void)setMaximumStoriesAllocation:(unsigned long long)arg1;
 - (void)setMinimumStoriesAllocation:(unsigned long long)arg1;
@@ -268,8 +292,10 @@
 - (void)setSeenArticlesFilterMethod:(int)arg1;
 - (void)setSeenArticlesMinimumTimeSinceFirstSeenToFilter:(unsigned long long)arg1;
 - (void)setShownInFavoritesOnlyMode:(bool)arg1;
+- (void)setUseNameColorInWidget:(bool)arg1;
 - (void)setVideoPlaysMutedByDefault:(bool)arg1;
 - (bool)shownInFavoritesOnlyMode;
+- (bool)useNameColorInWidget;
 - (bool)videoPlaysMutedByDefault;
 - (void)writeTo:(id)arg1;
 

@@ -12,6 +12,12 @@
     <UIActivityGroupViewControllerDelegate> * _delegate;
     UILongPressGestureRecognizer * _editingGestureRecognizer;
     bool  _embedded;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _externalSafeInset;
     bool  _hasActivities;
     NSIndexPath * _indexPathForMenuActivity;
     struct CGPoint { 
@@ -35,6 +41,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UILongPressGestureRecognizer *editingGestureRecognizer;
 @property (getter=isEmbedded, nonatomic) bool embedded;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } externalSafeInset;
 @property (nonatomic) bool hasActivities;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSIndexPath *indexPathForMenuActivity;
@@ -78,6 +85,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)editingGestureRecognizer;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })externalSafeInset;
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)handleEditingGesture:(id)arg1;
 - (bool)hasActivities;
@@ -105,6 +113,7 @@
 - (void)setEditing:(bool)arg1 animated:(bool)arg2;
 - (void)setEditingGestureRecognizer:(id)arg1;
 - (void)setEmbedded:(bool)arg1;
+- (void)setExternalSafeInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setHasActivities:(bool)arg1;
 - (void)setIndexPathForMenuActivity:(id)arg1;
 - (void)setInitialDraggingLocation:(struct CGPoint { double x1; double x2; })arg1;

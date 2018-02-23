@@ -4,6 +4,7 @@
 
 @interface VTUIEnrollmentStateView : UIView <UIScrollViewDelegate> {
     _UIBackdropView * _backdropView;
+    NSLayoutConstraint * _bottomFooterConstraint;
     VTUIButton * _finishEnrollmentButton;
     NSMutableArray * _horizontalPaddingConstraints;
     UIImageView * _imageView;
@@ -19,6 +20,9 @@
     UILabel * _subtitleLabel;
     UILabel * _titleLabel;
     bool  _usingFallbackImage;
+    UIView * _videoContainerView;
+    NSURL * _videoURL;
+    VTBFFOnBoardingVideoView * _videoView;
     NSMutableArray * _widthConstraints;
 }
 
@@ -27,6 +31,7 @@
 @property (nonatomic, readonly) VTUIButton *finishEnrollmentButton;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) NSURL *videoURL;
 
 - (void).cxx_destruct;
 - (void)_positionFooter;
@@ -38,6 +43,7 @@
 - (id)footerView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
+- (void)safeAreaInsetsDidChange;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
@@ -45,6 +51,10 @@
 - (void)setInstructionText:(id)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setTitle:(id)arg1;
+- (void)setVideoURL:(id)arg1;
+- (void)stopPlayingVideo;
 - (bool)suppressFinishButton;
+- (id)videoURL;
+- (bool)viewSupportsEducationalVideo;
 
 @end

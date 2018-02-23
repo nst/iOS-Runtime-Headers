@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentCredentialProvisioningViewController : PKPaymentSetupProvisioningFieldsViewController <PKPaymentProvisioningControllerDelegate, PKPaymentSetupViewControllerCanHideSetupLaterButton, PKPaymentSetupViewControllerRequiresPreflightProtocol> {
+@interface PKPaymentCredentialProvisioningViewController : PKPaymentSetupProvisioningFieldsViewController <PKPaymentProvisioningControllerDelegate, PKPaymentSetupHideSetupLaterButtonProtocol, PKPaymentSetupRequiresPreflightProtocol> {
     bool  _allowsManualEntry;
     unsigned long long  _credentialProvisioningType;
     unsigned long long  _displayType;
@@ -18,8 +18,6 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (id)nextCredentialViewControllerWithProvisioningController:(id)arg1 context:(long long)arg2 setupDelegate:(id)arg3 setupProduct:(id)arg4 allowsManualEntry:(bool)arg5;
-
 - (void).cxx_destruct;
 - (void)_cleanupTransferredCredentialFromSourceDeviceWithCompletion:(id /* block */)arg1;
 - (void)_createPassSnapshotFromPaymentPass:(id)arg1 completion:(id /* block */)arg2;
@@ -33,6 +31,7 @@
 - (void)_preflightCredentialFieldsWithCompletion:(id /* block */)arg1;
 - (id)_remoteExistingCredentialDefaultHeaderViewSubTitle;
 - (void)_skipCard;
+- (void)_terminateSetupFlow;
 - (void)_updatePassSnapshotHeader;
 - (void)addDifferentCard:(id)arg1;
 - (void)dealloc;

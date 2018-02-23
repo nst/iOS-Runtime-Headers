@@ -14,7 +14,7 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) bool isEmptySymbol;
 @property unsigned long long length;
-@property (readonly) NSString *name;
+@property (retain) NSString *name;
 @property (readonly) unsigned long long offsetIntoOwner;
 @property (readonly) Class superclass;
 
@@ -42,6 +42,7 @@
 - (unsigned long long)offsetIntoOwner;
 - (void)populateReferencesUsingBufferPosition:(const void*)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;
 - (void)setLength:(unsigned long long)arg1;
+- (void)setName:(id)arg1;
 - (void)setOffsetIntoOwner:(unsigned long long)arg1;
 - (unsigned long long)sizeInBytesForSerializedVersion;
 - (id)sourceInfoWithOffsetIntoSymbol:(unsigned long long)arg1;

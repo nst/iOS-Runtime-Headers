@@ -3,7 +3,6 @@
  */
 
 @interface SCNSceneSource : NSObject <NSKeyedUnarchiverDelegate> {
-    NSOperationQueue * _downloadingQueue;
     struct __C3DScene { } * _lastLoadedScene;
     NSDictionary * _lastOptions;
     bool  _sceneLoaded;

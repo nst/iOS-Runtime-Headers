@@ -17,6 +17,7 @@
     int  _feedType;
     NSData * _feedViewExposureId;
     NSMutableArray * _fractionalCohortMemberships;
+    NSString * _galleryId;
     int  _galleryType;
     struct { 
         unsigned int backendArticleVersionInt64 : 1; 
@@ -79,6 +80,7 @@
 @property (nonatomic) int feedType;
 @property (nonatomic, retain) NSData *feedViewExposureId;
 @property (nonatomic, retain) NSMutableArray *fractionalCohortMemberships;
+@property (nonatomic, retain) NSString *galleryId;
 @property (nonatomic) int galleryType;
 @property (nonatomic) bool hasAdSupportedChannel;
 @property (nonatomic, readonly) bool hasArticleId;
@@ -93,6 +95,7 @@
 @property (nonatomic, readonly) bool hasFeedId;
 @property (nonatomic) bool hasFeedType;
 @property (nonatomic, readonly) bool hasFeedViewExposureId;
+@property (nonatomic, readonly) bool hasGalleryId;
 @property (nonatomic) bool hasGalleryType;
 @property (nonatomic) bool hasIsDigitalReplicaAd;
 @property (nonatomic) bool hasIsNativeAd;
@@ -176,6 +179,7 @@
 - (id)fractionalCohortMembershipAtIndex:(unsigned long long)arg1;
 - (id)fractionalCohortMemberships;
 - (unsigned long long)fractionalCohortMembershipsCount;
+- (id)galleryId;
 - (int)galleryType;
 - (id)galleryTypeAsString:(int)arg1;
 - (bool)hasAdSupportedChannel;
@@ -191,6 +195,7 @@
 - (bool)hasFeedId;
 - (bool)hasFeedType;
 - (bool)hasFeedViewExposureId;
+- (bool)hasGalleryId;
 - (bool)hasGalleryType;
 - (bool)hasIsDigitalReplicaAd;
 - (bool)hasIsNativeAd;
@@ -252,6 +257,7 @@
 - (void)setFeedType:(int)arg1;
 - (void)setFeedViewExposureId:(id)arg1;
 - (void)setFractionalCohortMemberships:(id)arg1;
+- (void)setGalleryId:(id)arg1;
 - (void)setGalleryType:(int)arg1;
 - (void)setHasAdSupportedChannel:(bool)arg1;
 - (void)setHasArticleType:(bool)arg1;

@@ -66,9 +66,11 @@
 - (id)initWithDirectory:(id)arg1 databaseName:(id)arg2 modelURL:(id)arg3 readOnly:(bool)arg4 localOnly:(bool)arg5 sync:(bool)arg6;
 - (id)initWithDirectory:(id)arg1 databaseName:(id)arg2 modelURL:(id)arg3 sync:(bool)arg4;
 - (void)invalidateManagedObjectContextAndPersistentStoreCoordinatorFor:(id)arg1;
+- (bool)isManagedObjectContextFor:(id)arg1 equalToManagedObjectContext:(id)arg2;
 - (bool)isManagedObjectModel:(id)arg1 compatibleWithPersistentStoreAtURL:(id)arg2 error:(id*)arg3;
 - (bool)localOnly;
 - (id)managedObjectContextFor:(id)arg1;
+- (id)managedObjectContextForKey:(id)arg1;
 - (id)managedObjectModel;
 - (id)managedObjectModelForVersion:(unsigned long long)arg1;
 - (id)managedObjectModelURLForVersion:(unsigned long long)arg1;
@@ -79,9 +81,11 @@
 - (id)modelURL;
 - (id)persistentStoreCoordinatorFor:(id)arg1;
 - (bool)readOnly;
+- (void)removeManagedObjectContextForKey:(id)arg1;
 - (void)removePersistentStoreCoordinatorFor:(id)arg1;
 - (void)removePersistentStoresInCoordinator:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setManagedObjectContext:(id)arg1 forKey:(id)arg2;
 - (void)setManagedObjectModel:(id)arg1;
 - (bool)sync;
 

@@ -3,20 +3,26 @@
  */
 
 @interface SXDocumentStyleRenderer : NSObject <SXDocumentStyleRenderer, SXViewportChangeListener> {
-    SXContext * _context;
+    <SXDocumentControllerProvider> * _documentControllerProvider;
+    <SXGradientFactory> * _gradientFactory;
     SXGradientFillView * _gradientFillView;
     SXImageFillView * _imageFillView;
+    <SXImageViewFactory> * _imageViewFactory;
+    <SXPresentationDelegate> * _presentationDelegate;
     UIView * _topBackgroundView;
     SXVideoFillView * _videoFillView;
     SXViewport * _viewport;
 }
 
-@property (nonatomic, readonly) SXContext *context;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) <SXDocumentControllerProvider> *documentControllerProvider;
+@property (nonatomic, readonly) <SXGradientFactory> *gradientFactory;
 @property (nonatomic, retain) SXGradientFillView *gradientFillView;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SXImageFillView *imageFillView;
+@property (nonatomic, readonly) <SXImageViewFactory> *imageViewFactory;
+@property (nonatomic) <SXPresentationDelegate> *presentationDelegate;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIView *topBackgroundView;
 @property (nonatomic, retain) SXVideoFillView *videoFillView;
@@ -26,16 +32,20 @@
 - (void)applyBackgroundColorForStyle:(id)arg1 onView:(id)arg2;
 - (void)applyFillForStyle:(id)arg1 onView:(id)arg2;
 - (void)applyStyle:(id)arg1 onView:(id)arg2;
-- (void)applyTopBackgroundColorForStyle:(id)arg1 onView:(id)arg2;
-- (id)context;
+- (void)applyTopBackgroundForStyle:(id)arg1 onView:(id)arg2;
+- (id)documentControllerProvider;
+- (id)gradientFactory;
 - (id)gradientFillView;
 - (id)gradientViewForFill:(id)arg1;
 - (id)imageFillView;
+- (id)imageViewFactory;
 - (id)imageViewForFill:(id)arg1;
-- (id)initWithContext:(id)arg1 viewport:(id)arg2;
+- (id)initWithDocumentControllerProvider:(id)arg1 viewport:(id)arg2 imageViewFactory:(id)arg3 gradientFactory:(id)arg4;
 - (void)layoutTopBackgroundView;
+- (id)presentationDelegate;
 - (void)setGradientFillView:(id)arg1;
 - (void)setImageFillView:(id)arg1;
+- (void)setPresentationDelegate:(id)arg1;
 - (void)setTopBackgroundView:(id)arg1;
 - (void)setVideoFillView:(id)arg1;
 - (id)topBackgroundView;

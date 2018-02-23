@@ -4,6 +4,7 @@
 
 @interface SBAppSwitcherDefaults : SBAbstractSpringBoardDefaultDomain
 
+@property (nonatomic) unsigned long long bottomEdgeGestureSwipeCount;
 @property (nonatomic, readonly) NSArray *legacyRecentApplications;
 @property (nonatomic, readonly) NSArray *legacyRecentDisplayItemRoles;
 @property (nonatomic, readonly) NSArray *legacyRecentDisplayItems;

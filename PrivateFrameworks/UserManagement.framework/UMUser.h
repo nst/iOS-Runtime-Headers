@@ -8,6 +8,7 @@
     NSDate * _creationDate;
     unsigned long long  _dataQuota;
     unsigned long long  _dataUsed;
+    NSError * _debugErrorCausingLogout;
     NSString * _displayName;
     NSError * _errorCausingLogout;
     NSString * _familyName;
@@ -41,6 +42,7 @@
 @property (nonatomic, copy) NSDate *creationDate;
 @property (nonatomic) unsigned long long dataQuota;
 @property (nonatomic) unsigned long long dataUsed;
+@property (nonatomic, copy) NSError *debugErrorCausingLogout;
 @property (nonatomic, copy) NSString *displayName;
 @property (nonatomic, retain) NSError *errorCausingLogout;
 @property (nonatomic, copy) NSString *familyName;
@@ -84,6 +86,7 @@
 - (id)creationDate;
 - (unsigned long long)dataQuota;
 - (unsigned long long)dataUsed;
+- (id)debugErrorCausingLogout;
 - (id)description;
 - (id)displayName;
 - (id)errorCausingLogout;
@@ -119,6 +122,7 @@
 - (void)setCreationDate:(id)arg1;
 - (void)setDataQuota:(unsigned long long)arg1;
 - (void)setDataUsed:(unsigned long long)arg1;
+- (void)setDebugErrorCausingLogout:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setErrorCausingLogout:(id)arg1;
 - (void)setFamilyName:(id)arg1;

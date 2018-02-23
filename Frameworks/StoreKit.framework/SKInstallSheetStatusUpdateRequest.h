@@ -12,6 +12,7 @@
 @property (nonatomic, copy) id /* block */ completionHandler;
 @property (nonatomic) bool isInstallSheetOpen;
 
+- (void)_handleReply:(id)arg1;
 - (void)_sendXPCMessage;
 - (id)bundleId;
 - (id /* block */)completionHandler;

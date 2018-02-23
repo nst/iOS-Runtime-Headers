@@ -8,6 +8,7 @@
     const char * _static_description;
     double  _timeout;
     double  _timeoutTime;
+    bool  _timerStarted;
 }
 
 - (const char *)_static_description;

@@ -10,6 +10,7 @@
 + (id)errorForInvalidArgument:(id)arg1 named:(id)arg2;
 + (id)errorForInvalidModelWithLocalizedDescription:(id)arg1;
 + (id)errorForInvalidModelWithLocalizedDescription:(id)arg1 underlyingError:(id)arg2;
++ (id)errorForInvalidOperationWithLocalizedDescription:(id)arg1;
 + (id)errorForInvalidOption:(id)arg1 named:(id)arg2;
 + (id)errorForMemoryAllocationFailure;
 + (id)errorForMissingOptionNamed:(id)arg1;

@@ -8,7 +8,6 @@
     UIView * _canvasView;
     _UINavigationBarContentView * _contentView;
     bool  _hasIdiom;
-    UIView * _largeTitleMaskView;
     _UINavigationBarLargeTitleView * _largeTitleView;
     struct CGSize { 
         double width; 
@@ -43,8 +42,10 @@
 - (void)_layoutInBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 wantsExtendedContentView:(bool)arg2;
 - (void)_performAnimationWithTransitionCompletion:(id /* block */)arg1 transition:(int)arg2;
 - (id)_resolveLargeTitleAttributes;
+- (void)_setupTopNavigationItemAnimated:(bool)arg1;
 - (void)_setupTransitionContextForTransition:(int)arg1;
 - (id)_shim_backdropGroupName;
+- (double)_shim_backgroundAlpha;
 - (id)_shim_compatibilityBackgroundView;
 - (bool)_shim_disableBlurTinting;
 - (void)_shim_setBackdropGroupName:(id)arg1;

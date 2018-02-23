@@ -21,6 +21,7 @@
 - (void)clearFriendListWithCompletion:(id /* block */)arg1;
 - (void)cloudKitAccountStatusWithCompletion:(id /* block */)arg1;
 - (void)connectionInvalidated;
+- (void)consolidateRelationshipEventsForFriendWithUUID:(id)arg1 completion:(id /* block */)arg2;
 - (id)exportedInterface;
 - (void)fetchAllDataIfTimeSinceLastFetchIsGreaterThan:(unsigned long long)arg1 completion:(id /* block */)arg2;
 - (void)fetchAllDataWithCompletion:(id /* block */)arg1;

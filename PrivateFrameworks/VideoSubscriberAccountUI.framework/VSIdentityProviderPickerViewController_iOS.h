@@ -45,6 +45,7 @@
 - (void)_dismissAboutPrivacy:(id)arg1;
 - (void)_performSelectionForIdentityProvider:(id)arg1;
 - (void)_showAboutPrivacy:(id)arg1;
+- (id)_titleForTableHeaderView;
 - (void)_updateTableHeaderTitle;
 - (unsigned long long)additionalProvidersMode;
 - (id)delegate;
@@ -81,7 +82,6 @@
 - (double)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (id)titleForTableFooterView;
-- (id)titleForTableHeaderView;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)unfilteredDataSource;
 - (void)viewDidLoad;

@@ -59,6 +59,6 @@
 - (void)teardownCachedBuddyOffer;
 - (void)teardownCachedOffer;
 - (void)teardownCachedOffers;
-- (void)updateOfferId:(id)arg1 buttonId:(id)arg2 completion:(id /* block */)arg3;
+- (void)updateOfferId:(id)arg1 buttonId:(id)arg2 info:(id)arg3 completion:(id /* block */)arg4;
 
 @end

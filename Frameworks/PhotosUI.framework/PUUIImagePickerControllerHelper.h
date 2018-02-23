@@ -42,6 +42,7 @@
 - (bool)clientSuppressesForchTouch;
 - (bool)didHandleSelectionOfAssets;
 - (id)gridViewController;
+- (void)handleKeyboardAvoidanceIfNeeded:(id)arg1;
 - (void)handleSelectionOfAsset:(id)arg1 inCollection:(id)arg2;
 - (void)handleSelectionOfAssets:(id)arg1;
 - (void)handleToggleSelectionOfItemAtIndexPath:(id)arg1;

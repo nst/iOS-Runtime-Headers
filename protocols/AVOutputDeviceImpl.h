@@ -12,22 +12,26 @@
 - (bool)canBeGrouped;
 - (bool)canSetVolume;
 - (NSNumber *)caseBatteryLevel;
+- (void)configureUsingBlock:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 13: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <AVOutputDeviceConfigurationModification> *, void*, id /* block */, void*, void, id /* block */, <AVOutputDeviceConfigurationRetrieval> *, NSError *, void*
 - (NSArray *)connectedPairedDevices;
 - (unsigned long long)deviceFeatures;
 - (long long)deviceSubType;
 - (long long)deviceType;
+- (NSString *)firmwareVersion;
 - (bool)groupContainsGroupLeader;
 - (NSString *)groupID;
 - (NSData *)identifyingMACAddress;
 - (bool)isGroupLeader;
 - (bool)isInUseByPairedDevice;
 - (NSNumber *)leftBatteryLevel;
+- (NSString *)logicalDeviceID;
+- (NSString *)manufacturer;
 - (NSString *)modelID;
 - (NSString *)name;
 - (AVOutputDevice *)parentOutputDevice;
 - (bool)requiresAuthorization;
 - (NSNumber *)rightBatteryLevel;
-- (void)setAdministrativeConfiguration:(void *)arg1 administrationPassword:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 10: NSDictionary *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, NSError *, NSDictionary *, void*
+- (NSString *)serialNumber;
 - (void)setParentOutputDevice:(AVOutputDevice *)arg1;
 - (void)setSecondDisplayEnabled:(bool)arg1;
 - (void)setVolume:(float)arg1;

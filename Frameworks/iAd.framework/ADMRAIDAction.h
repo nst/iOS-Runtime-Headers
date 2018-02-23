@@ -20,6 +20,7 @@
 
 + (id)descriptionForActionType:(long long)arg1;
 + (bool)doesURLOpenNews:(id)arg1;
++ (id)errorDescriptionForActionType:(long long)arg1 errorType:(long long)arg2;
 + (bool)supportsSecureCoding;
 
 - (id)calendarEventInfo;

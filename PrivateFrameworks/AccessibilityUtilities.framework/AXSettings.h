@@ -22,6 +22,7 @@
 @property (readonly) bool accessibilityEnabled;
 @property (nonatomic, retain) NSURL *alexLocalAssetURL;
 @property (nonatomic) bool allowHearingAidControlOnLockScreen;
+@property (nonatomic) bool appValidationTestingMode;
 @property bool applicationAccessibilityEnabled;
 @property (nonatomic) bool assistiveTouchActionRepeatEnabled;
 @property (nonatomic) double assistiveTouchActionRepeatInterval;
@@ -33,6 +34,8 @@
 @property (nonatomic, retain) NSArray *assistiveTouchCustomGestures;
 @property (nonatomic) double assistiveTouchDelayAfterInput;
 @property (nonatomic) bool assistiveTouchDelayAfterInputEnabled;
+@property (nonatomic, retain) NSString *assistiveTouchDoubleTapAction;
+@property (nonatomic) double assistiveTouchDoubleTapActionTimeout;
 @property bool assistiveTouchEnabled;
 @property (nonatomic) bool assistiveTouchGroupElementsEnabled;
 @property bool assistiveTouchHardwareEnabled;
@@ -43,6 +46,8 @@
 @property (nonatomic) bool assistiveTouchInputCoalescingEnabled;
 @property (nonatomic) double assistiveTouchInputHoldDuration;
 @property (nonatomic) bool assistiveTouchInputHoldEnabled;
+@property (nonatomic, retain) NSString *assistiveTouchLongPressAction;
+@property (nonatomic) double assistiveTouchLongPressActionDuration;
 @property (nonatomic) double assistiveTouchLongPressDuration;
 @property (nonatomic) bool assistiveTouchLongPressEnabled;
 @property (nonatomic) bool assistiveTouchLongPressPauseScanningEnabled;
@@ -69,6 +74,7 @@
 @property (nonatomic) bool assistiveTouchScannerSpeechIsInterruptedByScanning;
 @property (nonatomic) double assistiveTouchScannerSpeechRate;
 @property (nonatomic) long long assistiveTouchScanningMode;
+@property (nonatomic, retain) NSString *assistiveTouchSingleTapAction;
 @property (nonatomic) double assistiveTouchSpeed;
 @property (nonatomic) double assistiveTouchStepInterval;
 @property (nonatomic) bool assistiveTouchSwitchUsageConfirmed;
@@ -91,7 +97,10 @@
 @property (nonatomic, retain) NSArray *currentVoices;
 @property (nonatomic, retain) NSArray *customPronunciationSubstitutions;
 @property (nonatomic, readonly) NSArray *deviceKeys;
+@property (nonatomic) bool didResetD22Preferences;
+@property (nonatomic) bool didTriggerSOSToday;
 @property (nonatomic) double dockSize;
+@property (nonatomic, copy) NSSet *downloadedSiriVoices;
 @property (nonatomic) bool enableHearingAidReporter;
 @property (nonatomic) bool enableVoiceOverCaptions;
 @property bool enhanceBackgroundContrastEnabled;
@@ -255,6 +264,7 @@
 @property (nonatomic) long long voiceOverDeletionFeedback;
 @property (nonatomic) long long voiceOverDescribedMedia;
 @property (nonatomic) double voiceOverDoubleTapInterval;
+@property (nonatomic) bool voiceOverEditAppsActionEnabled;
 @property bool voiceOverEnabled;
 @property bool voiceOverEnabledThroughAccessory;
 @property (nonatomic, readonly) bool voiceOverHandwritingEnabled;
@@ -394,6 +404,7 @@
 - (void)addRotorOptionsForLoginSession;
 - (id)alexLocalAssetURL;
 - (bool)allowHearingAidControlOnLockScreen;
+- (bool)appValidationTestingMode;
 - (bool)applicationAccessibilityEnabled;
 - (bool)assistiveTouchActionRepeatEnabled;
 - (double)assistiveTouchActionRepeatInterval;
@@ -407,6 +418,8 @@
 - (bool)assistiveTouchCustomizationEnabled;
 - (double)assistiveTouchDelayAfterInput;
 - (bool)assistiveTouchDelayAfterInputEnabled;
+- (id)assistiveTouchDoubleTapAction;
+- (double)assistiveTouchDoubleTapActionTimeout;
 - (bool)assistiveTouchEnabled;
 - (bool)assistiveTouchGroupElementsEnabled;
 - (bool)assistiveTouchHardwareEnabled;
@@ -417,6 +430,8 @@
 - (bool)assistiveTouchInputCoalescingEnabled;
 - (double)assistiveTouchInputHoldDuration;
 - (bool)assistiveTouchInputHoldEnabled;
+- (id)assistiveTouchLongPressAction;
+- (double)assistiveTouchLongPressActionDuration;
 - (double)assistiveTouchLongPressDuration;
 - (bool)assistiveTouchLongPressEnabled;
 - (bool)assistiveTouchLongPressPauseScanningEnabled;
@@ -444,6 +459,7 @@
 - (bool)assistiveTouchScannerSpeechIsInterruptedByScanning;
 - (double)assistiveTouchScannerSpeechRate;
 - (long long)assistiveTouchScanningMode;
+- (id)assistiveTouchSingleTapAction;
 - (double)assistiveTouchSpeed;
 - (double)assistiveTouchStepInterval;
 - (bool)assistiveTouchSwitchUsageConfirmed;
@@ -472,7 +488,11 @@
 - (id)customPronunciationSubstitutions;
 - (void)dealloc;
 - (id)deviceKeys;
+- (bool)didResetD22Preferences;
+- (bool)didTriggerSOSToday;
+- (bool)didTriggerSOSValueSet;
 - (double)dockSize;
+- (id)downloadedSiriVoices;
 - (bool)enableHearingAidReporter;
 - (bool)enableVoiceOverCaptions;
 - (bool)enhanceBackgroundContrastEnabled;
@@ -573,6 +593,7 @@
 - (id)selectedSpeechVoiceIdentifiers;
 - (void)setAlexLocalAssetURL:(id)arg1;
 - (void)setAllowHearingAidControlOnLockScreen:(bool)arg1;
+- (void)setAppValidationTestingMode:(bool)arg1;
 - (void)setApplicationAccessibilityEnabled:(bool)arg1;
 - (void)setAssistiveTouchActionRepeatEnabled:(bool)arg1;
 - (void)setAssistiveTouchActionRepeatInterval:(double)arg1;
@@ -584,6 +605,8 @@
 - (void)setAssistiveTouchCustomGestures:(id)arg1;
 - (void)setAssistiveTouchDelayAfterInput:(double)arg1;
 - (void)setAssistiveTouchDelayAfterInputEnabled:(bool)arg1;
+- (void)setAssistiveTouchDoubleTapAction:(id)arg1;
+- (void)setAssistiveTouchDoubleTapActionTimeout:(double)arg1;
 - (void)setAssistiveTouchEnabled:(bool)arg1;
 - (void)setAssistiveTouchGroupElementsEnabled:(bool)arg1;
 - (void)setAssistiveTouchHardwareEnabled:(bool)arg1;
@@ -594,6 +617,8 @@
 - (void)setAssistiveTouchInputCoalescingEnabled:(bool)arg1;
 - (void)setAssistiveTouchInputHoldDuration:(double)arg1;
 - (void)setAssistiveTouchInputHoldEnabled:(bool)arg1;
+- (void)setAssistiveTouchLongPressAction:(id)arg1;
+- (void)setAssistiveTouchLongPressActionDuration:(double)arg1;
 - (void)setAssistiveTouchLongPressDuration:(double)arg1;
 - (void)setAssistiveTouchLongPressEnabled:(bool)arg1;
 - (void)setAssistiveTouchLongPressPauseScanningEnabled:(bool)arg1;
@@ -621,6 +646,7 @@
 - (void)setAssistiveTouchScannerSpeechIsInterruptedByScanning:(bool)arg1;
 - (void)setAssistiveTouchScannerSpeechRate:(double)arg1;
 - (void)setAssistiveTouchScanningMode:(long long)arg1;
+- (void)setAssistiveTouchSingleTapAction:(id)arg1;
 - (void)setAssistiveTouchSpeed:(double)arg1;
 - (void)setAssistiveTouchStepInterval:(double)arg1;
 - (void)setAssistiveTouchSwitchUsageConfirmed:(bool)arg1;
@@ -641,7 +667,10 @@
 - (void)setClassicInvertColors:(bool)arg1;
 - (void)setCurrentVoices:(id)arg1;
 - (void)setCustomPronunciationSubstitutions:(id)arg1;
+- (void)setDidResetD22Preferences:(bool)arg1;
+- (void)setDidTriggerSOSToday:(bool)arg1;
 - (void)setDockSize:(double)arg1;
+- (void)setDownloadedSiriVoices:(id)arg1;
 - (void)setEnableHearingAidReporter:(bool)arg1;
 - (void)setEnableVoiceOverCaptions:(bool)arg1;
 - (void)setEnhanceBackgroundContrastEnabled:(bool)arg1;
@@ -801,6 +830,7 @@
 - (void)setVoiceOverDeletionFeedback:(long long)arg1;
 - (void)setVoiceOverDescribedMedia:(long long)arg1;
 - (void)setVoiceOverDoubleTapInterval:(double)arg1;
+- (void)setVoiceOverEditAppsActionEnabled:(bool)arg1;
 - (void)setVoiceOverEnabled:(bool)arg1;
 - (void)setVoiceOverEnabledThroughAccessory:(bool)arg1;
 - (void)setVoiceOverHandwritingWasNativeAutocorrectEnabled:(id)arg1;
@@ -973,6 +1003,7 @@
 - (long long)voiceOverDeletionFeedback;
 - (long long)voiceOverDescribedMedia;
 - (double)voiceOverDoubleTapInterval;
+- (bool)voiceOverEditAppsActionEnabled;
 - (bool)voiceOverEnabled;
 - (bool)voiceOverEnabledThroughAccessory;
 - (bool)voiceOverHandwritingEnabled;

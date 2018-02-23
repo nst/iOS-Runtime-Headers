@@ -27,6 +27,7 @@
 - (id)supportsInStoreDemoModeCapability;
 - (id)supportsNightShiftCapability;
 - (id)supportsPSShowStorageCapability;
+- (id)supportsPSTTYCapability;
 - (id)supportsRaiseToWakeCapability;
 
 @end

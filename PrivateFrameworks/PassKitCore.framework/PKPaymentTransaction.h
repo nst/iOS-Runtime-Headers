@@ -3,12 +3,16 @@
  */
 
 @interface PKPaymentTransaction : NSObject <NSSecureCoding, PKCloudStoreCoding> {
+    long long  _adjustmentType;
     NSString * _administrativeArea;
     NSDecimalNumber * _amount;
     NSString * _currencyCode;
+    bool  _deviceScoreIdentifiersRequired;
+    bool  _deviceScoreIdentifiersSubmitted;
     bool  _enRoute;
     NSString * _endStation;
     NSData * _endStationCode;
+    NSDate * _expirationDate;
     PKPaymentTransactionFees * _fees;
     PKPaymentTransactionForeignExchangeInformation * _foreignExchangeInformation;
     bool  _hasAssociatedPaymentApplication;
@@ -33,12 +37,14 @@
     bool  _processedForLocation;
     bool  _processedForMerchantCleanup;
     bool  _processedForStations;
+    NSUUID * _requestDeviceScoreIdentifier;
     NSDecimalNumber * _secondaryFundingSourceAmount;
     NSString * _secondaryFundingSourceCurrencyCode;
     NSString * _secondaryFundingSourceDPANSuffix;
     NSString * _secondaryFundingSourceDescription;
     NSString * _secondaryFundingSourceFPANIdentifier;
     long long  _secondaryFundingSourceNetwork;
+    NSUUID * _sendDeviceScoreIdentifier;
     NSString * _serviceIdentifier;
     NSString * _startStation;
     NSData * _startStationCode;
@@ -52,19 +58,25 @@
     long long  _transactionType;
     unsigned long long  _transitModifiers;
     long long  _transitType;
+    unsigned long long  _updateReasons;
 }
 
+@property (nonatomic) long long adjustmentType;
 @property (nonatomic, retain) NSString *administrativeArea;
 @property (nonatomic, copy) NSDecimalNumber *amount;
 @property (nonatomic, readonly) PKCurrencyAmount *currencyAmount;
 @property (nonatomic, copy) NSString *currencyCode;
+@property (nonatomic) bool deviceScoreIdentifiersRequired;
+@property (nonatomic) bool deviceScoreIdentifiersSubmitted;
 @property (nonatomic, readonly) NSString *displayLocation;
 @property (nonatomic) bool enRoute;
 @property (nonatomic, copy) NSString *endStation;
 @property (nonatomic, copy) NSData *endStationCode;
+@property (nonatomic, copy) NSDate *expirationDate;
 @property (nonatomic, retain) PKPaymentTransactionFees *fees;
 @property (nonatomic, retain) PKPaymentTransactionForeignExchangeInformation *foreignExchangeInformation;
 @property (nonatomic, readonly) NSString *formattedBalanceAdjustmentAmount;
+@property (nonatomic, readonly) NSString *formattedBalanceAdjustmentSubtotalAmount;
 @property (nonatomic) bool hasAssociatedPaymentApplication;
 @property (nonatomic, readonly) bool hasBackingData;
 @property (nonatomic) bool hasNotificationServiceData;
@@ -84,7 +96,7 @@
 @property (nonatomic, copy) NSString *paymentHash;
 @property (nonatomic, copy) NSString *peerPaymentCounterpartHandle;
 @property (nonatomic, copy) NSString *peerPaymentMemo;
-@property (nonatomic) unsigned long long peerPaymentStatus;
+@property (nonatomic) long long peerPaymentStatus;
 @property (nonatomic) long long peerPaymentType;
 @property (nonatomic, copy) NSDecimalNumber *primaryFundingSourceAmount;
 @property (nonatomic, readonly) PKCurrencyAmount *primaryFundingSourceCurrencyAmount;
@@ -92,6 +104,7 @@
 @property (nonatomic) bool processedForLocation;
 @property (nonatomic) bool processedForMerchantCleanup;
 @property (nonatomic) bool processedForStations;
+@property (nonatomic, copy) NSUUID *requestDeviceScoreIdentifier;
 @property (nonatomic, copy) NSDecimalNumber *secondaryFundingSourceAmount;
 @property (nonatomic, readonly) PKCurrencyAmount *secondaryFundingSourceCurrencyAmount;
 @property (nonatomic, copy) NSString *secondaryFundingSourceCurrencyCode;
@@ -99,6 +112,7 @@
 @property (nonatomic, copy) NSString *secondaryFundingSourceDescription;
 @property (nonatomic, copy) NSString *secondaryFundingSourceFPANIdentifier;
 @property (nonatomic) long long secondaryFundingSourceNetwork;
+@property (nonatomic, copy) NSUUID *sendDeviceScoreIdentifier;
 @property (nonatomic, copy) NSString *serviceIdentifier;
 @property (nonatomic, copy) NSString *startStation;
 @property (nonatomic, copy) NSData *startStationCode;
@@ -113,6 +127,7 @@
 @property (nonatomic) long long transactionType;
 @property (nonatomic) unsigned long long transitModifiers;
 @property (nonatomic) long long transitType;
+@property (nonatomic, readonly) unsigned long long updateReasons;
 
 + (id)cloudStoreTransactionDeviceDataRecordTypeRecordNamePrefix;
 + (id)paymentTransactionFromSource:(unsigned long long)arg1;
@@ -121,13 +136,18 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_formatBalanceAdjustmentAmount:(id)arg1;
 - (id)_transactionSourceString;
 - (id)_transactionTypeString;
+- (void)addUpdateReasons:(unsigned long long)arg1;
+- (long long)adjustmentType;
 - (id)administrativeArea;
 - (id)amount;
 - (id)currencyAmount;
 - (id)currencyCode;
 - (id)description;
+- (bool)deviceScoreIdentifiersRequired;
+- (bool)deviceScoreIdentifiersSubmitted;
 - (id)dictionaryRepresentation;
 - (id)displayLocation;
 - (bool)enRoute;
@@ -135,11 +155,14 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)endStation;
 - (id)endStationCode;
+- (id)expirationDate;
 - (id)fees;
 - (id)foreignExchangeInformation;
 - (id)formattedBalanceAdjustmentAmount;
+- (id)formattedBalanceAdjustmentSubtotalAmount;
 - (bool)hasAssociatedPaymentApplication;
 - (bool)hasBackingData;
+- (bool)hasCloudArchivableDeviceData;
 - (bool)hasNotificationServiceData;
 - (bool)hasTransactionSource;
 - (unsigned long long)hash;
@@ -147,6 +170,7 @@
 - (id)init;
 - (id)initWithCloudStoreCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (bool)isCloudArchivableDeviceDataEqual:(id)arg1;
 - (bool)isCloudKitArchived;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToPaymentTransaction:(id)arg1;
@@ -163,7 +187,7 @@
 - (id)paymentHash;
 - (id)peerPaymentCounterpartHandle;
 - (id)peerPaymentMemo;
-- (unsigned long long)peerPaymentStatus;
+- (long long)peerPaymentStatus;
 - (long long)peerPaymentType;
 - (id)primaryFundingSourceAmount;
 - (id)primaryFundingSourceCurrencyAmount;
@@ -172,6 +196,7 @@
 - (bool)processedForMerchantCleanup;
 - (bool)processedForStations;
 - (id)recordTypesAndNames;
+- (id)requestDeviceScoreIdentifier;
 - (id)secondaryFundingSourceAmount;
 - (id)secondaryFundingSourceCurrencyAmount;
 - (id)secondaryFundingSourceCurrencyCode;
@@ -179,13 +204,18 @@
 - (id)secondaryFundingSourceDescription;
 - (id)secondaryFundingSourceFPANIdentifier;
 - (long long)secondaryFundingSourceNetwork;
+- (id)sendDeviceScoreIdentifier;
 - (id)serviceIdentifier;
+- (void)setAdjustmentType:(long long)arg1;
 - (void)setAdministrativeArea:(id)arg1;
 - (void)setAmount:(id)arg1;
 - (void)setCurrencyCode:(id)arg1;
+- (void)setDeviceScoreIdentifiersRequired:(bool)arg1;
+- (void)setDeviceScoreIdentifiersSubmitted:(bool)arg1;
 - (void)setEnRoute:(bool)arg1;
 - (void)setEndStation:(id)arg1;
 - (void)setEndStationCode:(id)arg1;
+- (void)setExpirationDate:(id)arg1;
 - (void)setFees:(id)arg1;
 - (void)setForeignExchangeInformation:(id)arg1;
 - (void)setHasAssociatedPaymentApplication:(bool)arg1;
@@ -205,19 +235,21 @@
 - (void)setPaymentHash:(id)arg1;
 - (void)setPeerPaymentCounterpartHandle:(id)arg1;
 - (void)setPeerPaymentMemo:(id)arg1;
-- (void)setPeerPaymentStatus:(unsigned long long)arg1;
+- (void)setPeerPaymentStatus:(long long)arg1;
 - (void)setPeerPaymentType:(long long)arg1;
 - (void)setPrimaryFundingSourceAmount:(id)arg1;
 - (void)setPrimaryFundingSourceCurrencyCode:(id)arg1;
 - (void)setProcessedForLocation:(bool)arg1;
 - (void)setProcessedForMerchantCleanup:(bool)arg1;
 - (void)setProcessedForStations:(bool)arg1;
+- (void)setRequestDeviceScoreIdentifier:(id)arg1;
 - (void)setSecondaryFundingSourceAmount:(id)arg1;
 - (void)setSecondaryFundingSourceCurrencyCode:(id)arg1;
 - (void)setSecondaryFundingSourceDPANSuffix:(id)arg1;
 - (void)setSecondaryFundingSourceDescription:(id)arg1;
 - (void)setSecondaryFundingSourceFPANIdentifier:(id)arg1;
 - (void)setSecondaryFundingSourceNetwork:(long long)arg1;
+- (void)setSendDeviceScoreIdentifier:(id)arg1;
 - (void)setServiceIdentifier:(id)arg1;
 - (void)setStartStation:(id)arg1;
 - (void)setStartStationCode:(id)arg1;
@@ -244,5 +276,7 @@
 - (long long)transactionType;
 - (unsigned long long)transitModifiers;
 - (long long)transitType;
+- (unsigned long long)updateReasons;
+- (id)updateReasonsDescription;
 
 @end

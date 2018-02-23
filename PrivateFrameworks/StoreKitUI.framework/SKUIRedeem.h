@@ -6,6 +6,7 @@
     double  _ITunesPassLearnMoreAlertInterval;
     NSString * _balance;
     NSString * _credit;
+    NSString * _creditDisplay;
     NSURL * _customizedThankyouURL;
     NSArray * _downloads;
     <SKUIArtworkProviding> * _headerArtworkProvider;
@@ -23,6 +24,7 @@
 @property (nonatomic) double ITunesPassLearnMoreAlertInterval;
 @property (nonatomic, copy) NSString *balance;
 @property (nonatomic, copy) NSString *credit;
+@property (nonatomic, copy) NSString *creditDisplay;
 @property (nonatomic, retain) NSURL *customizedThankyouURL;
 @property (nonatomic, retain) NSArray *downloads;
 @property (nonatomic, retain) <SKUIArtworkProviding> *headerArtworkProvider;
@@ -42,6 +44,7 @@
 - (double)ITunesPassLearnMoreAlertInterval;
 - (id)balance;
 - (id)credit;
+- (id)creditDisplay;
 - (id)customizedThankyouURL;
 - (id)downloads;
 - (void)encodeWithCoder:(id)arg1;
@@ -57,6 +60,7 @@
 - (id)redirectURL;
 - (void)setBalance:(id)arg1;
 - (void)setCredit:(id)arg1;
+- (void)setCreditDisplay:(id)arg1;
 - (void)setCustomizedThankyouURL:(id)arg1;
 - (void)setDownloads:(id)arg1;
 - (void)setHeaderArtworkProvider:(id)arg1;

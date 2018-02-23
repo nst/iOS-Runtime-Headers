@@ -6,6 +6,8 @@
     NSString * _EVOrganizationName;
     bool  _EVOrganizationNameIsValid;
     _SFURLSpoofingMitigator * _URLSpoofingMitigator;
+    SFBrowserPersonaAnalyticsHelper * __analyticsHelper;
+    unsigned long long  __persona;
     bool  __privateBrowsingInitiallyEnabled;
     _WKActivatedElementInfo * _activatedElementInfo;
     WBSAutomaticReaderActivationManager * _automaticReaderActivationManager;
@@ -17,6 +19,7 @@
     bool  _canOpenDownloadForInitialLoad;
     SFSafariViewControllerConfiguration * _configuration;
     double  _crashBannerDraggingOffset;
+    bool  _currentLoadIsEligibleForAutoFillAuthentication;
     long long  _customPreferredStatusBarStyle;
     bool  _didNotifyInitialLoadFinish;
     bool  _didReceivePolicyForInitialLoad;
@@ -27,6 +30,12 @@
     _SFFindOnPageView * _findOnPageView;
     WBSFluidProgressController * _fluidProgressController;
     WBSFluidProgressState * _fluidProgressState;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _horizontalScrollIndicatorBaseInsets;
     bool  _interfaceFillsScreen;
     bool  _isDisplayingTelephonyPrompt;
     bool  _isShowingHTTPAuthenticationDialog;
@@ -59,12 +68,20 @@
     _SFTelephonyNavigationMitigationPolicy * _telephonyNavigationPolicy;
     bool  _updatingGeometryFromDynamicBarAnimator;
     bool  _usesNarrowLayout;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _verticalScrollIndicatorBaseInsets;
     SFReaderEnabledWebViewController * _webViewController;
     bool  _webViewLayoutUnderlapsStatusBar;
     WKPreferences * _wkPreferences;
 }
 
+@property (nonatomic, readonly) SFBrowserPersonaAnalyticsHelper *_analyticsHelper;
 @property (nonatomic, readonly) bool _isUsedForAuthentication;
+@property (nonatomic, readonly) unsigned long long _persona;
 @property (nonatomic, readonly) bool _privateBrowsingInitiallyEnabled;
 @property (nonatomic, readonly) bool _usesScrollToTopView;
 @property (nonatomic, retain) _WKActivatedElementInfo *activatedElementInfo;
@@ -90,6 +107,7 @@
 - (void).cxx_destruct;
 - (id)_EVOrganizationName;
 - (id)_activeToolbar;
+- (id)_analyticsHelper;
 - (id)_applicationPayloadForOpeningInSafari;
 - (bool)_canScrollToTopInView:(id)arg1;
 - (bool)_canShowDownloadWithoutPrompting:(id)arg1;
@@ -117,11 +135,12 @@
 - (id)_linkPreviewActionsWithDefaultActions:(id)arg1;
 - (id)_mailContentProvider;
 - (double)_maximumHeightObscuredByBottomBar;
-- (void)_notifyInitialLoadDidFinish:(bool)arg1;
+- (bool)_notifyInitialLoadDidFinish:(bool)arg1;
 - (void)_openCurrentURLInSafari;
 - (id)_openNewWebViewIfNeededWithConfiguration:(id)arg1 forNavigationAction:(id)arg2;
 - (void)_perSiteAutomaticReaderActivationPreferenceDidChange:(id)arg1;
 - (void)_performSafeBrowsingCheckForURL:(id)arg1;
+- (unsigned long long)_persona;
 - (id)_previewViewControllerForURL:(id)arg1 defaultActions:(id)arg2 elementInfo:(id)arg3;
 - (bool)_privateBrowsingInitiallyEnabled;
 - (void)_recordHostAppIdAndURLForTapToRadar:(id)arg1;
@@ -150,6 +169,7 @@
 - (bool)_showICSControllerForPath:(id)arg1 sourceURL:(id)arg2;
 - (void)_showPassBookControllerForPass:(id)arg1;
 - (void)_showReaderAnimated:(bool)arg1;
+- (bool)_supportsTrackerProtection;
 - (void)_toggleReaderFromExplicitUserAction;
 - (void)_updateCrashBannerOffset;
 - (void)_updateCurrentScrollViewInsets;
@@ -161,6 +181,7 @@
 - (void)_updatePreferredControlTintColor;
 - (void)_updatePreviewLoadingUI;
 - (void)_updateRemoteSwipeGestureState;
+- (void)_updateScrollIndicatorVerticalInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 horizontalInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 - (void)_updateScrollToTopView;
 - (void)_updateStatusBarStyleForced:(bool)arg1;
 - (void)_updateTrackerProtectionPreferences;
@@ -178,6 +199,7 @@
 - (bool)addBookmarkNavControllerCanSaveBookmarkChanges:(id)arg1;
 - (unsigned long long)availableContentTypeForMailContentProvider:(id)arg1;
 - (bool)becomeFirstResponder;
+- (unsigned long long)browserPersonaForWebViewController:(id)arg1;
 - (bool)browserToolbarCanGoBack:(id)arg1;
 - (bool)browserToolbarCanGoForward:(id)arg1;
 - (bool)browserToolbarCanOpenPageInSafari:(id)arg1;
@@ -199,12 +221,14 @@
 - (id)configuration;
 - (bool)createFluidProgressState;
 - (id)currentFluidProgressStateSource;
+- (bool)currentLoadIsEligibleForAutoFillAuthenticationForWebViewController:(id)arg1;
 - (void)dealloc;
 - (void)didMoveToParentViewController:(id)arg1;
 - (long long)dismissButtonStyle;
 - (long long)displayMode;
 - (id)downloadBackgroundTaskName;
 - (bool)dynamicBarAnimator:(id)arg1 canHideBarsByDraggingWithOffset:(double)arg2;
+- (double)dynamicBarAnimator:(id)arg1 minimumTopBarHeightForOffset:(double)arg2;
 - (void)dynamicBarAnimatorOutputsDidChange:(id)arg1;
 - (void)dynamicBarAnimatorWillEnterSteadyState:(id)arg1;
 - (void)dynamicBarAnimatorWillLeaveSteadyState:(id)arg1;
@@ -318,7 +342,6 @@
 - (void)webViewController:(id)arg1 didFailProvisionalNavigation:(id)arg2 withError:(id)arg3;
 - (void)webViewController:(id)arg1 didFinishDocumentLoadForNavigation:(id)arg2;
 - (void)webViewController:(id)arg1 didFinishNavigation:(id)arg2;
-- (void)webViewController:(id)arg1 didPerformClientRedirectForNavigation:(id)arg2;
 - (void)webViewController:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)webViewController:(id)arg1 didReceiveServerRedirectForProvisionalNavigation:(id)arg2;
 - (void)webViewController:(id)arg1 didSameDocumentNavigation:(id)arg2 ofType:(long long)arg3;
@@ -326,6 +349,8 @@
 - (id)webViewController:(id)arg1 previewViewControllerForURL:(id)arg2 defaultActions:(id)arg3 elementInfo:(id)arg4;
 - (void)webViewController:(id)arg1 printFrame:(id)arg2;
 - (void)webViewController:(id)arg1 webViewDidClose:(id)arg2;
+- (void)webViewController:(id)arg1 willPerformClientRedirectToURL:(id)arg2 withDelay:(double)arg3;
+- (void)webViewControllerDidCancelClientRedirect:(id)arg1;
 - (void)webViewControllerDidChangeEstimatedProgress:(id)arg1;
 - (void)webViewControllerDidChangeHasOnlySecureContent:(id)arg1;
 - (void)webViewControllerDidChangeLoadingState:(id)arg1;
@@ -337,6 +362,7 @@
 - (void)webViewControllerWebProcessDidBecomeResponsive:(id)arg1;
 - (void)webViewControllerWebProcessDidBecomeUnresponsive:(id)arg1;
 - (void)webViewControllerWebProcessDidCrash:(id)arg1;
+- (void)webViewControllerWillAuthenticateForAutoFill:(id)arg1;
 - (void)webViewControllerWillPresentJavaScriptDialog:(id)arg1;
 - (id)webViewForFindOnPageView:(id)arg1;
 - (bool)webViewLayoutUnderlapsStatusBar;

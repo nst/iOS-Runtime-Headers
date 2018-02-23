@@ -3,14 +3,14 @@
  */
 
 @interface MSPCloudZoneCache : NSObject <NSSecureCoding> {
-    <NSObject><NSCopying><NSCoding> * _accountIdentity;
+    NSUUID * _accountIdentity;
     NSMutableDictionary * _deletedRecordIdentifiersByRecordType;
     NSMutableDictionary * _records;
     CKServerChangeToken * _token;
     NSString * _zoneName;
 }
 
-@property (nonatomic, readonly) <NSObject><NSCopying><NSCoding> *accountIdentity;
+@property (nonatomic, readonly) NSUUID *accountIdentity;
 @property (nonatomic, readonly) NSMutableDictionary *deletedRecordIdentifiersByRecordType;
 @property (nonatomic, readonly) NSMutableDictionary *records;
 @property (nonatomic, copy) CKServerChangeToken *token;

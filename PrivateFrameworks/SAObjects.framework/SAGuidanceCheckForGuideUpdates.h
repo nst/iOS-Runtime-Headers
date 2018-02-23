@@ -6,7 +6,6 @@
 
 @property (nonatomic, copy) NSString *aceId;
 @property (nonatomic, copy) NSNumber *currentGuideTag;
-@property (nonatomic, copy) NSNumber *currentSuggestedUtterancesTag;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -20,12 +19,10 @@
 + (id)checkForGuideUpdatesWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)currentGuideTag;
-- (id)currentSuggestedUtterancesTag;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (bool)requiresResponse;
 - (void)setCurrentGuideTag:(id)arg1;
-- (void)setCurrentSuggestedUtterancesTag:(id)arg1;
 - (void)setSupportedFeatures:(id)arg1;
 - (id)supportedFeatures;
 

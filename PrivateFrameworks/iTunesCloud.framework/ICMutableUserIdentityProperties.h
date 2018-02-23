@@ -16,6 +16,7 @@
 @property (nonatomic, copy) NSString *storefrontIdentifier;
 @property (nonatomic, copy) NSString *username;
 
+- (void)replaceValuesWithValuesFromProperties:(id)arg1;
 - (void)setAlternateDSID:(id)arg1;
 - (void)setCarrierBundleDeviceIdentifier:(id)arg1;
 - (void)setCloudBackupEnabled:(bool)arg1;

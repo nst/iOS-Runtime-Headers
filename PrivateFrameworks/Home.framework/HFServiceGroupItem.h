@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Home.framework/Home
  */
 
-@interface HFServiceGroupItem : HFItem <HFCharacteristicWriteActionBuilderFactory, HFServiceLikeBuilderCreating, HFServiceLikeItem> {
+@interface HFServiceGroupItem : HFItem <HFCharacteristicWriteActionBuilderFactory, HFGroupableItemProtocol, HFServiceLikeBuilderCreating, HFServiceLikeItem> {
     HMServiceGroup * _serviceGroup;
     <HFCharacteristicValueSource> * _valueSource;
 }
@@ -11,6 +11,9 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <HFHomeKitObject> *homeKitObject;
+@property (nonatomic, readonly) bool isContainedWithinItemGroup;
+@property (nonatomic, readonly) bool isItemGroup;
+@property (nonatomic, readonly) unsigned long long numberOfItemsContainedWithinGroup;
 @property (nonatomic, readonly) HMServiceGroup *serviceGroup;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) <HFCharacteristicValueSource> *valueSource;
@@ -44,6 +47,9 @@
 - (id)incrementalStateControlItem;
 - (id)init;
 - (id)initWithValueSource:(id)arg1 serviceGroup:(id)arg2;
+- (bool)isContainedWithinItemGroup;
+- (bool)isItemGroup;
+- (unsigned long long)numberOfItemsContainedWithinGroup;
 - (id)primaryStateControlItem;
 - (id)serviceGroup;
 - (id)serviceLikeBuilderInHome:(id)arg1;

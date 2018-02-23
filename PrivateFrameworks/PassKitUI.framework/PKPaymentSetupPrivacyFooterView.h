@@ -11,6 +11,7 @@
     UITextView * _messageView;
     NSString * _paymentNetwork;
     NSString * _privacyText;
+    bool  _showFooterLink;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,6 +21,7 @@
 @property (nonatomic, copy) UIColor *linkColor;
 @property (nonatomic, copy) UIColor *messageColor;
 @property (nonatomic, copy) NSString *privacyText;
+@property (nonatomic) bool showFooterLink;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -44,6 +46,8 @@
 - (void)setLinkColor:(id)arg1;
 - (void)setMessageColor:(id)arg1;
 - (void)setPrivacyText:(id)arg1;
+- (void)setShowFooterLink:(bool)arg1;
+- (bool)showFooterLink;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
 - (void)traitCollectionDidChange:(id)arg1;

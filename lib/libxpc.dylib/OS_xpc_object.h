@@ -13,6 +13,5 @@
 - (id)debugDescription;
 - (id)description;
 - (id)init;
-- (id)retain;
 
 @end

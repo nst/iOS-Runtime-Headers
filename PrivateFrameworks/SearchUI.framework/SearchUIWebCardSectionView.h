@@ -12,7 +12,7 @@
 
 - (struct CGSize { double x1; double x2; })containerView:(id)arg1 systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg2 forArrangedSubview:(id)arg3;
 - (id)cssColorForColor:(id)arg1;
-- (id)initWithCardSection:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
+- (id)initWithRowModel:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
 - (id)replaceCSSColorHexCode:(id)arg1 withColor:(id)arg2 inString:(id)arg3;
 - (id)setupContentView;
 - (void)webViewDidFinishLoad:(id)arg1;

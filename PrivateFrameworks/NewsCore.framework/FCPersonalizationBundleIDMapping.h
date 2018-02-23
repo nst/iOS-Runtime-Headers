@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCPersonalizationBundleIDMapping : NSObject <NSCopying, NSSecureCoding> {
+@interface FCPersonalizationBundleIDMapping : NSObject <FCJSONEncodableObjectProviding, NSCopying, NSSecureCoding> {
     NSDictionary * _bundleIDMapping;
     NTPBBundleIDMapping * _pbBundleIDMapping;
 }
@@ -21,6 +21,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPBBundleIDMapping:(id)arg1;
+- (id)jsonEncodableObject;
 - (void)setBundleIDMapping:(id)arg1;
 - (id)tagScoresForBundleID:(id)arg1;
 

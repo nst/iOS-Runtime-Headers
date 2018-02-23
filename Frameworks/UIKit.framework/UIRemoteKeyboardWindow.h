@@ -29,6 +29,7 @@
 - (bool)_isTextEffectsWindowNotificationOwner;
 - (bool)_isWindowServerHostingManaged;
 - (bool)_matchingOptions:(id)arg1;
+- (long long)_orientationForClassicPresentation;
 - (void)_resetScene;
 - (void)_setRotatableClient:(id)arg1 toOrientation:(long long)arg2 updateStatusBar:(bool)arg3 duration:(double)arg4 force:(bool)arg5 isRotating:(bool)arg6;
 - (bool)_usesWindowServerHitTesting;

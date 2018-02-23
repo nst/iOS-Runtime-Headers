@@ -65,6 +65,7 @@
 + (id)keyPathForHomeKitSceneDataDictionary;
 + (id)keyPathForInUseStatus;
 + (id)keyPathForIntentsDataDictionary;
++ (id)keyPathForKeybagLockStatus;
 + (id)keyPathForLastUseDate;
 + (id)keyPathForLowBattery;
 + (id)keyPathForLowPowerModeStatus;

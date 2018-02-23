@@ -58,5 +58,6 @@
 // Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
 
 + (id)siriui_platterVibrancyEffect;
++ (id)siriui_userUtteranceEditModeVibrancyEffect;
 
 @end

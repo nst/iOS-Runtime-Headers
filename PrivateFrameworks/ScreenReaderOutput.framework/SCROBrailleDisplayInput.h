@@ -7,6 +7,7 @@
     double  _brailleTranslationTimeout;
     double  _busySince;
     struct __CFArray { } * _currentBrailleChord;
+    bool  _currentBrailleChordBeganWithSpacebar;
     bool  _currentBrailleChordContainsNonSpacebarChordableKey;
     bool  _currentBrailleChordContainsSpacebar;
     unsigned int  _currentBrailleModifiers;
@@ -17,6 +18,7 @@
     struct __CFSet { } * _downKeys;
     bool  _isQuiet;
     double  _lastBrailleChordPosted;
+    double  _lastBrailleChordTypingTime;
     bool  _memorizeNextKeyImmediately;
     double  _memorizeNextKeyImmediatelyTimeout;
     bool  _newDown;
@@ -34,6 +36,7 @@
 @property (nonatomic) double brailleTranslationTimeout;
 @property (nonatomic) double busySince;
 @property (nonatomic) struct __CFArray { }*currentBrailleChord;
+@property (nonatomic) bool currentBrailleChordBeganWithSpacebar;
 @property (nonatomic) bool currentBrailleChordContainsNonSpacebarChordableKey;
 @property (nonatomic) bool currentBrailleChordContainsSpacebar;
 @property (nonatomic) unsigned int currentBrailleModifiers;
@@ -44,6 +47,7 @@
 @property (nonatomic) struct __CFSet { }*downKeys;
 @property (nonatomic) bool isQuiet;
 @property (nonatomic) double lastBrailleChordPosted;
+@property (nonatomic) double lastBrailleChordTypingTime;
 @property (nonatomic) bool memorizeNextKeyImmediately;
 @property (nonatomic) double memorizeNextKeyImmediatelyTimeout;
 @property (nonatomic) bool newDown;
@@ -60,6 +64,7 @@
 - (double)brailleTranslationTimeout;
 - (double)busySince;
 - (struct __CFArray { }*)currentBrailleChord;
+- (bool)currentBrailleChordBeganWithSpacebar;
 - (bool)currentBrailleChordContainsNonSpacebarChordableKey;
 - (bool)currentBrailleChordContainsSpacebar;
 - (unsigned int)currentBrailleModifiers;
@@ -71,6 +76,7 @@
 - (struct __CFSet { }*)downKeys;
 - (bool)isQuiet;
 - (double)lastBrailleChordPosted;
+- (double)lastBrailleChordTypingTime;
 - (bool)memorizeNextKeyImmediately;
 - (double)memorizeNextKeyImmediatelyTimeout;
 - (bool)newDown;
@@ -83,6 +89,7 @@
 - (void)setBrailleTranslationTimeout:(double)arg1;
 - (void)setBusySince:(double)arg1;
 - (void)setCurrentBrailleChord:(struct __CFArray { }*)arg1;
+- (void)setCurrentBrailleChordBeganWithSpacebar:(bool)arg1;
 - (void)setCurrentBrailleChordContainsNonSpacebarChordableKey:(bool)arg1;
 - (void)setCurrentBrailleChordContainsSpacebar:(bool)arg1;
 - (void)setCurrentBrailleModifiers:(unsigned int)arg1;
@@ -93,6 +100,7 @@
 - (void)setDownKeys:(struct __CFSet { }*)arg1;
 - (void)setIsQuiet:(bool)arg1;
 - (void)setLastBrailleChordPosted:(double)arg1;
+- (void)setLastBrailleChordTypingTime:(double)arg1;
 - (void)setMemorizeNextKeyImmediately:(bool)arg1;
 - (void)setMemorizeNextKeyImmediatelyTimeout:(double)arg1;
 - (void)setNewDown:(bool)arg1;

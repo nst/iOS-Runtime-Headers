@@ -13,7 +13,6 @@
 
 - (void).cxx_destruct;
 - (unsigned long long)hash;
-- (id)initWithDefaults;
 - (id)initWithPresubscribedChannels:(id)arg1 recommendedPBNotificationChannels:(id)arg2;
 - (bool)isEqual:(id)arg1;
 - (id)preSubscribedNotificationsChannelIDs;

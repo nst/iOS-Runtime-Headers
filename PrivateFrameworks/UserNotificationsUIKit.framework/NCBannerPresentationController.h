@@ -10,11 +10,11 @@
         double height; 
     }  _childPreferredContentSize;
     long long  _transitionState;
-    bool  _wantsUseableContainerHeight;
+    bool  _wantsUseableContainerBounds;
 }
 
 @property (nonatomic, retain) NSArray *additionalBackgroundViews;
-@property (nonatomic) bool wantsUseableContainerHeight;
+@property (nonatomic) bool wantsUseableContainerBounds;
 
 + (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_presentedFrameForVisiblePortion:(bool)arg1 ofView:(id)arg2 inPresentationFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 + (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })useableContainerViewFrameInContainerViewWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -33,10 +33,10 @@
 - (void)presentationTransitionDidEnd:(bool)arg1;
 - (void)presentationTransitionWillBegin;
 - (void)setAdditionalBackgroundViews:(id)arg1;
-- (void)setWantsUseableContainerHeight:(bool)arg1;
+- (void)setWantsUseableContainerBounds:(bool)arg1;
 - (bool)shouldRemovePresentersView;
 - (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
-- (bool)wantsUseableContainerHeight;
+- (bool)wantsUseableContainerBounds;
 
 @end

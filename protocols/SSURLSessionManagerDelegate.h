@@ -21,6 +21,7 @@
 - (NSNumber *)metricsLoadURLSamplingPercentage;
 - (NSNumber *)metricsLoadURLSamplingPercentageCachedResponses;
 - (NSNumber *)metricsLoadURLSessionDuration;
+- (NSData *)rawResponseData;
 - (SSURLRequestProperties *)requestProperties;
 - (bool)shouldDisableCellular;
 - (bool)shouldRequireCellular;

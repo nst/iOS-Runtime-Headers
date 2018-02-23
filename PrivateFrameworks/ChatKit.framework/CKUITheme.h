@@ -11,6 +11,8 @@
 
 @property (nonatomic) long long HUDStyle;
 @property (nonatomic, readonly) UIColor *activeRecordingDotColor;
+@property (nonatomic, readonly) long long appManagerStatusBarStyle;
+@property (nonatomic, readonly) UIColor *appStripCoverFillColor;
 @property (nonatomic, readonly) UIColor *appTintColor;
 @property (nonatomic, readonly) UIColor *attachmentBalloonActionColor;
 @property (nonatomic, readonly) UIColor *attachmentBalloonSubtitleTextColor;
@@ -116,6 +118,8 @@
 - (void).cxx_destruct;
 - (long long)HUDStyle;
 - (id)activeRecordingDotColor;
+- (long long)appManagerStatusBarStyle;
+- (id)appStripCoverFillColor;
 - (id)appTintColor;
 - (id)attachmentBalloonActionColor;
 - (id)attachmentBalloonSubtitleTextColor;

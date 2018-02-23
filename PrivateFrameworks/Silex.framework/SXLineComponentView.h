@@ -23,7 +23,7 @@
 
 - (void).cxx_destruct;
 - (id)borderView;
-- (void)presentComponent;
+- (void)presentComponentWithChanges:(struct { bool x1; bool x2; })arg1;
 - (void)setBorderView:(id)arg1;
 - (void)setStrokeLayer:(id)arg1;
 - (void)setStrokeRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITextSuggestion : TIKeyboardCandidate <NSCopying> {
+@interface UITextSuggestion : NSObject <NSCopying> {
     bool  __shouldPersist;
     NSString * _displayText;
     NSString * _headerText;
@@ -10,6 +10,7 @@
     NSString * _searchText;
 }
 
+@property (nonatomic, readonly) TIKeyboardCandidate *_keyboardCandidate;
 @property (nonatomic, readonly) bool _shouldPersist;
 @property (nonatomic, copy) NSString *displayText;
 @property (nonatomic, copy) NSString *headerText;
@@ -19,14 +20,13 @@
 + (id)textSuggestionWithInputText:(id)arg1;
 + (id)textSuggestionWithInputText:(id)arg1 searchText:(id)arg2;
 
+- (void).cxx_destruct;
+- (id)_keyboardCandidate;
 - (bool)_shouldPersist;
-- (id)candidate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)displayText;
 - (id)headerText;
 - (id)initWithInputText:(id)arg1 searchText:(id)arg2 displayText:(id)arg3 headerText:(id)arg4;
-- (id)input;
 - (id)inputText;
 - (id)searchText;
 - (void)setDisplayText:(id)arg1;

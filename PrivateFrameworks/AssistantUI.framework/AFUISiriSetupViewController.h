@@ -16,6 +16,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <AFUISiriSetupViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) <SBUIPluginFluidDismissalState> *fluidDismissalState;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool lastTimeShown;
 @property (nonatomic, readonly) bool shouldTurnOnScreenOnAppearance;

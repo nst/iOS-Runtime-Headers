@@ -10,6 +10,7 @@
 - (NSArray *)browseCategories;
 - (unsigned long long)cachePolicy;
 - (void)cancel;
+- (GEOResolvedItem *)clientResolvedResult;
 - (GEORelatedSearchSuggestion *)defaultRelatedSuggestion;
 - (GEODirectionIntent *)directionIntent;
 - (NSArray *)displayHeaderSubstitutes;

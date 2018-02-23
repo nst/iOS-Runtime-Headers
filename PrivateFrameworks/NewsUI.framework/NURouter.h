@@ -3,14 +3,14 @@
  */
 
 @interface NURouter : NSObject <NURouter> {
-    <NUURLHandler> * _urlHandler;
+    <NUURLHandling> * _urlHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) <NUURLHandler> *urlHandler;
+@property (nonatomic, readonly) <NUURLHandling> *urlHandler;
 
 - (void).cxx_destruct;
 - (id)initWithURLHandler:(id)arg1;

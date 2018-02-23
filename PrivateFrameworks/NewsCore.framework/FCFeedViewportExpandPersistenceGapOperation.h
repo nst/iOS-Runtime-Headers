@@ -3,6 +3,7 @@
  */
 
 @interface FCFeedViewportExpandPersistenceGapOperation : FCOperation {
+    <FCAppConfiguration> * _appConfiguration;
     FCFeedViewportBookmark * _bookmark;
     bool  _cachedOnly;
     FCCloudContext * _context;
@@ -16,6 +17,7 @@
     FCFeedViewport * _viewport;
 }
 
+@property (nonatomic, copy) <FCAppConfiguration> *appConfiguration;
 @property (nonatomic, copy) FCFeedViewportBookmark *bookmark;
 @property (nonatomic) bool cachedOnly;
 @property (nonatomic, retain) FCCloudContext *context;
@@ -29,6 +31,7 @@
 @property (nonatomic, retain) FCFeedViewport *viewport;
 
 - (void).cxx_destruct;
+- (id)appConfiguration;
 - (id)bookmark;
 - (bool)cachedOnly;
 - (id)context;
@@ -41,6 +44,7 @@
 - (id)inflatedGroup;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
+- (void)setAppConfiguration:(id)arg1;
 - (void)setBookmark:(id)arg1;
 - (void)setCachedOnly:(bool)arg1;
 - (void)setContext:(id)arg1;

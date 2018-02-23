@@ -11,7 +11,7 @@
 
 @optional
 
-- (void)identityProviderViewController:(VSIdentityProviderViewController *)arg1 didAuthenticateAccount:(VSAccount *)arg2 supportingApps:(NSArray *)arg3 forRequest:(VSIdentityProviderRequest *)arg4;
+- (void)identityProviderViewController:(VSIdentityProviderViewController *)arg1 didAuthenticateAccount:(VSAccount *)arg2 forRequest:(VSIdentityProviderRequest *)arg3;
 - (void)identityProviderViewControllerDidFinishLoading:(VSIdentityProviderViewController *)arg1;
 
 @end

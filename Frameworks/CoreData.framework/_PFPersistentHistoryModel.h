@@ -9,8 +9,9 @@
 + (id)_tombstonesColumnsForEntity:(id)arg1;
 + (id)_tombstonesForEntity:(id)arg1;
 + (void)createModelsWithTombstoneCount:(int)arg1;
-+ (id)newHistorySQLModelWithStoreSQLModel:(id)arg1;
-+ (id)newPersistentHistoryModelWithStoreSQLModel:(id)arg1;
++ (void)createModelsWithTombstoneCount:(int)arg1 includeIndexes:(bool)arg2;
++ (id)newPersistentHistoryManagedObjectModelForSQLModel:(id)arg1 options:(id)arg2;
++ (id)newPersistentHistorySQLModelForSQLModel:(id)arg1 options:(id)arg2;
 + (void)resetCaches;
 
 @end

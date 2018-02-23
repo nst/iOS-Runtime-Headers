@@ -20,6 +20,8 @@
 
 - (void).cxx_destruct;
 - (void)_addConnection:(id)arg1;
+- (void)_handleRecentStationsControllerDidChange;
+- (void)_playActivityReportingControllerDidFlushEventsNotification:(id)arg1;
 - (void)_radioAvailabilityControllerRadioAvailableDidChangeNotification:(id)arg1;
 - (void)_recentStationsControllerDidChangeStationsNotification:(id)arg1;
 - (void)_removeConnection:(id)arg1;

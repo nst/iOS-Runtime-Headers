@@ -22,7 +22,6 @@
 @property (readonly) bool wantsEdgeToEdgeLayout;
 
 - (void).cxx_destruct;
-- (void)_handleResignActive:(id)arg1;
 - (id)_imageBalloon;
 - (void)_loadBalloonView;
 - (id)_transcriptPluginBalloon;
@@ -35,7 +34,9 @@
 - (void)loadView;
 - (bool)loadedContentView;
 - (void)payloadWillClear;
-- (id)payloadWillSend;
+- (void)payloadWillSend;
+- (void)performHostAppResume;
+- (void)performHostAppSuspend;
 - (id)plugin;
 - (id)pluginBubbleViewController;
 - (void)setBalloonView:(id)arg1;

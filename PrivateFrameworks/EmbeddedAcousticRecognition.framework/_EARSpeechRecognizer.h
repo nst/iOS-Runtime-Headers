@@ -11,6 +11,8 @@
     bool  _farField;
     _EARFormatter * _formatter;
     NSObject<OS_dispatch_queue> * _formatterQueue;
+    NSString * _inputOrigin;
+    NSArray * _leftContext;
     double  _maximumRecognitionDuration;
     NSDictionary * _recognitionConfidenceSubtraction;
     NSObject<OS_dispatch_queue> * _recognitionQueue;
@@ -28,6 +30,8 @@
 @property (nonatomic) bool detectUtterances;
 @property (nonatomic) double endpointStart;
 @property (nonatomic) bool farField;
+@property (nonatomic, copy) NSString *inputOrigin;
+@property (nonatomic, copy) NSArray *leftContext;
 @property (nonatomic) double maximumRecognitionDuration;
 @property (nonatomic, readonly) _EARSpeechModelInfo *modelInfo;
 @property (nonatomic, copy) NSDictionary *recognitionConfidenceSubtraction;
@@ -54,6 +58,8 @@
 - (id)initWithConfiguration:(id)arg1 useQuasarFormatter:(bool)arg2;
 - (id)initWithConfiguration:(id)arg1 withGeneralVoc:(id)arg2 withLexiconEnh:(id)arg3 withItnEnh:(id)arg4;
 - (id)initWithConfiguration:(id)arg1 withLanguage:(id)arg2 withSdapiConfig:(id)arg3;
+- (id)inputOrigin;
+- (id)leftContext;
 - (double)maximumRecognitionDuration;
 - (id)modelInfo;
 - (id)recognitionConfidenceSubtraction;
@@ -71,6 +77,8 @@
 - (void)setDetectUtterances:(bool)arg1;
 - (void)setEndpointStart:(double)arg1;
 - (void)setFarField:(bool)arg1;
+- (void)setInputOrigin:(id)arg1;
+- (void)setLeftContext:(id)arg1;
 - (void)setMaximumRecognitionDuration:(double)arg1;
 - (void)setRecognitionConfidenceSubtraction:(id)arg1;
 - (void)setRecognitionReplacements:(id)arg1;

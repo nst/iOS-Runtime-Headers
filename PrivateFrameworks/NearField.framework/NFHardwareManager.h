@@ -68,6 +68,7 @@
 - (id)startFieldDetectSession:(id /* block */)arg1;
 - (id)startLoyaltyAndContactlessPaymentSession:(id /* block */)arg1;
 - (id)startNdefTagSession:(id /* block */)arg1;
+- (id)startNdefTagSessionWithBluetoothLESecureOOBData:(id)arg1 callback:(id /* block */)arg2;
 - (id)startPeerPaymentSession:(id /* block */)arg1;
 - (id)startReaderSession:(id /* block */)arg1;
 - (id)startSecureElementManagerSession:(id /* block */)arg1;

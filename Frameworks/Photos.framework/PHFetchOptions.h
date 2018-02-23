@@ -14,6 +14,7 @@
     NSNumber * _includeFavoriteMemoriesCollectionListNumber;
     NSNumber * _includeHiddenAssetsNumber;
     NSNumber * _includeNonvisibleFacesNumber;
+    NSNumber * _includeOnlyFacesInFaceGroupsNumber;
     NSNumber * _includeOnlyFacesNeedingFaceCropNumber;
     NSNumber * _includeOnlyFacesWithFaceprintsNumber;
     NSNumber * _includeOnlyPersonsWithVisibleKeyFacesNumber;
@@ -52,6 +53,7 @@
 @property (nonatomic) bool includeFavoriteMemoriesCollectionList;
 @property (nonatomic) bool includeHiddenAssets;
 @property (nonatomic) bool includeNonvisibleFaces;
+@property (nonatomic) bool includeOnlyFacesInFaceGroups;
 @property (nonatomic) bool includeOnlyFacesNeedingFaceCrop;
 @property (nonatomic) bool includeOnlyFacesWithFaceprints;
 @property (nonatomic) bool includeOnlyPersonsWithVisibleKeyFaces;
@@ -96,6 +98,7 @@
 - (bool)includeFavoriteMemoriesCollectionList;
 - (bool)includeHiddenAssets;
 - (bool)includeNonvisibleFaces;
+- (bool)includeOnlyFacesInFaceGroups;
 - (bool)includeOnlyFacesNeedingFaceCrop;
 - (bool)includeOnlyFacesWithFaceprints;
 - (bool)includeOnlyPersonsWithVisibleKeyFaces;
@@ -128,6 +131,7 @@
 - (void)setIncludeFavoriteMemoriesCollectionList:(bool)arg1;
 - (void)setIncludeHiddenAssets:(bool)arg1;
 - (void)setIncludeNonvisibleFaces:(bool)arg1;
+- (void)setIncludeOnlyFacesInFaceGroups:(bool)arg1;
 - (void)setIncludeOnlyFacesNeedingFaceCrop:(bool)arg1;
 - (void)setIncludeOnlyFacesWithFaceprints:(bool)arg1;
 - (void)setIncludeOnlyPersonsWithVisibleKeyFaces:(bool)arg1;

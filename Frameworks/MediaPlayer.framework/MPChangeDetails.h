@@ -27,6 +27,7 @@
 - (void)_finalize;
 - (void)appendItemMoveFromIndexPath:(id)arg1 toIndexPath:(id)arg2 updated:(bool)arg3;
 - (void)appendSectionMoveFromIndex:(long long)arg1 toIndex:(long long)arg2 updated:(bool)arg3;
+- (id)debugDescription;
 - (id)deletedItemIndexPaths;
 - (id)deletedSections;
 - (id)description;

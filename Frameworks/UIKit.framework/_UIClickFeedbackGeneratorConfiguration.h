@@ -11,6 +11,8 @@
 @property (nonatomic, retain) _UIFeedback<_UIFeedbackDiscretePlayable> *pressedUpFeedback;
 
 + (id)defaultConfiguration;
++ (id)latchingOffConfiguration;
++ (id)latchingOnConfiguration;
 
 - (void).cxx_destruct;
 - (id)feedbackKeyPaths;

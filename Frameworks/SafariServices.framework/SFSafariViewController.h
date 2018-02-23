@@ -13,6 +13,12 @@
     long long  _dismissButtonStyle;
     long long  _displayMode;
     bool  _hasBeenDisplayedAtLeastOnce;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _horizontalScrollIndicatorBaseInsets;
     NSURL * _initialURL;
     SFInteractiveDismissController * _interactiveDismissController;
     SFSafariLaunchPlaceholderView * _launchPlaceholderView;
@@ -22,6 +28,13 @@
     SFBrowserRemoteViewController * _remoteViewController;
     SFQueueingServiceViewControllerProxy<SFServiceViewControllerProtocol> * _serviceProxy;
     bool  _swipeGestureEnabled;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _verticalScrollIndicatorBaseInsets;
+    bool  _viewSizeIsTransitioning;
 }
 
 @property (setter=_setActivatedElementInfo:, nonatomic, retain) _WKActivatedElementInfo *_activatedElementInfo;
@@ -44,6 +57,7 @@
 - (id)_activatedElementInfo;
 - (void)_addRemoteView;
 - (void)_addRemoteViewControllerIfNeeded;
+- (void)_boundingPathMayHaveChangedForView:(id)arg1 relativeToBoundsOriginOnly:(bool)arg2;
 - (void)_connectToService;
 - (id)_defaultPreviewActionItems;
 - (id)_fetchCustomActivitiesForURL:(id)arg1 title:(id)arg2;
@@ -59,8 +73,10 @@
 - (void)_setUpWithURL:(id)arg1 configuration:(id)arg2;
 - (bool)_showingLinkPreview;
 - (bool)_showingLinkPreviewWithMinimalUI;
+- (void)_updateScrollViewIndicatorInsets;
 - (id)childViewControllerForStatusBarStyle;
 - (id)configuration;
+- (void)dealloc;
 - (id)delegate;
 - (long long)dismissButtonStyle;
 - (id)initWithCoder:(id)arg1;
@@ -96,5 +112,6 @@
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

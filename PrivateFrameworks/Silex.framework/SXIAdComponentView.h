@@ -3,6 +3,7 @@
  */
 
 @interface SXIAdComponentView : SXComponentView <ADBannerViewDelegate, SXAdDisplayInstructions, SXAdDocumentStateObserver, SXViewportChangeListener> {
+    SXAdController * _adController;
     ADBannerView * _bannerView;
     id /* block */  _cancelHandler;
     SXIAdDebugView * _debugView;
@@ -10,6 +11,7 @@
     NSError * _error;
     NSString * _generatedOpportunityIdentifier;
     bool  _hasInvalidatedLayout;
+    SXHost * _host;
     bool  _isDisplayingBannerView;
     bool  _isReceivingViewportChanges;
     int  _opportunityError;
@@ -19,6 +21,7 @@
     }  _viewportSizeOnAdRequest;
 }
 
+@property (nonatomic, readonly) SXAdController *adController;
 @property (nonatomic, retain) ADBannerView *bannerView;
 @property (nonatomic, copy) id /* block */ cancelHandler;
 @property (readonly, copy) NSString *debugDescription;
@@ -29,6 +32,7 @@
 @property (nonatomic, retain) NSString *generatedOpportunityIdentifier;
 @property (nonatomic) bool hasInvalidatedLayout;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) SXHost *host;
 @property (nonatomic) bool isDisplayingBannerView;
 @property (nonatomic) bool isReceivingViewportChanges;
 @property (nonatomic) int opportunityError;
@@ -36,6 +40,7 @@
 @property (nonatomic) struct CGSize { double x1; double x2; } viewportSizeOnAdRequest;
 
 - (void).cxx_destruct;
+- (id)adController;
 - (void)adDocumentAppearing;
 - (void)adDocumentDisappeared;
 - (void)adSheetDisconnectedNotification:(id)arg1;
@@ -46,7 +51,6 @@
 - (void)bannerViewDidLoadAd:(id)arg1;
 - (void)cancelAdRequest;
 - (id /* block */)cancelHandler;
-- (void)dealloc;
 - (id)debugView;
 - (bool)didUnloadBannerView;
 - (void)displayBannerView;
@@ -54,13 +58,15 @@
 - (id)generatedOpportunityIdentifier;
 - (bool)hasInvalidatedLayout;
 - (bool)hasRequestedBannerViewCurrentViewport;
-- (id)initWithComponent:(id)arg1 configuration:(id)arg2 context:(id)arg3 analyticsReporting:(id)arg4 appStateMonitor:(id)arg5;
+- (id)host;
+- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 host:(id)arg6 adController:(id)arg7;
 - (void)invalidateLayoutIfNeeded;
 - (bool)isDisplayingBannerView;
 - (bool)isReceivingViewportChanges;
 - (void)layoutBannerView;
+- (void)loadComponent:(id)arg1;
 - (int)opportunityError;
-- (void)presentComponent;
+- (void)presentComponentWithChanges:(struct { bool x1; bool x2; })arg1;
 - (void)registerForViewportChanges;
 - (void)removeBannerViewWithError:(id)arg1;
 - (void)requestBannerView;

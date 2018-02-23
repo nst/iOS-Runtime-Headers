@@ -8,6 +8,8 @@
 - (void)cancelSpeakingForSiriViewController:(id <SiriUIViewController>)arg1;
 - (NSLocale *)localeForSiriViewController:(id <SiriUIViewController>)arg1;
 - (void)removeSiriViewController:(id <SiriUIViewController>)arg1;
+- (void)siriSnippetViewController:(id <SiriUIViewController>)arg1 didDismissViewController:(UIViewController *)arg2;
+- (void)siriSnippetViewController:(id <SiriUIViewController>)arg1 didPresentViewController:(UIViewController *)arg2;
 - (void)siriSnippetViewController:(id <SiriUIViewController>)arg1 didRequestKeyboardWithVisibility:(bool)arg2;
 - (void)siriSnippetViewController:(id <SiriUIViewController>)arg1 willDismissViewController:(UIViewController *)arg2;
 - (void)siriSnippetViewController:(id <SiriUIViewController>)arg1 willPresentViewController:(UIViewController *)arg2;

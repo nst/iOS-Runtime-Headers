@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/NewsUI.framework/NewsUI
  */
 
-@interface NUANFArticleDataProvider : NSObject <NUArticleDataProvider, SXEmbedDataSource> {
+@interface NUANFArticleDataProvider : NSObject <NUArticleDataProvider> {
     FCArticle * _article;
     NSString * _articleID;
     NUANFAssetLoader * _assetLoader;
     <FCContentContext> * _contentContext;
     NUANFContextLoader * _contextLoader;
-    NUANFEmbedConfigurationLoader * _embedConfigurationLoader;
+    <NUEmbedDataManager> * _embedDataManger;
     NUANFFontLoader * _fontLoader;
     <NUFontRegistration> * _fontRegistration;
     SXHost * _host;
@@ -21,7 +21,7 @@
 @property (nonatomic, retain) NUANFContextLoader *contextLoader;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, retain) NUANFEmbedConfigurationLoader *embedConfigurationLoader;
+@property (nonatomic, retain) <NUEmbedDataManager> *embedDataManger;
 @property (nonatomic, retain) NUANFFontLoader *fontLoader;
 @property (nonatomic, readonly) <NUFontRegistration> *fontRegistration;
 @property (readonly) unsigned long long hash;
@@ -35,18 +35,17 @@
 - (id)contentContext;
 - (id)contextLoader;
 - (void)dealloc;
-- (id)embedConfigurationLoader;
-- (id)embedForType:(id)arg1;
+- (id)embedDataManger;
 - (id)fontLoader;
 - (id)fontRegistration;
 - (id)host;
-- (id)initWithArticle:(id)arg1 contentContext:(id)arg2 fontRegistration:(id)arg3 host:(id)arg4;
+- (id)initWithArticle:(id)arg1 contentContext:(id)arg2 fontRegistration:(id)arg3 host:(id)arg4 embedDataManager:(id)arg5;
 - (void)loadArticleWithCompletionBlock:(id /* block */)arg1;
 - (void)loadContextWithCompletionBlock:(id /* block */)arg1;
 - (void)setArticleID:(id)arg1;
 - (void)setAssetLoader:(id)arg1;
 - (void)setContextLoader:(id)arg1;
-- (void)setEmbedConfigurationLoader:(id)arg1;
+- (void)setEmbedDataManger:(id)arg1;
 - (void)setFontLoader:(id)arg1;
 
 @end

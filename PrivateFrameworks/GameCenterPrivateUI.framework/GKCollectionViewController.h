@@ -189,6 +189,7 @@
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidDisappearAnimated:(bool)arg1 bubbleFlow:(bool)arg2;
 - (void)viewDidLoad;
+- (void)viewLayoutMarginsDidChange;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;

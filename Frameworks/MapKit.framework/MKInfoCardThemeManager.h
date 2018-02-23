@@ -24,8 +24,12 @@
 @property (nonatomic, readonly) UIColor *disabledActionRowBackgroundColor;
 @property (nonatomic, readonly) UIColor *disabledActionRowTextColor;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) UIColor *headerPrimaryButtonHighlightedColor;
+@property (nonatomic, readonly) UIColor *headerPrimaryButtonNormalColor;
+@property (nonatomic, readonly) UIColor *headerSecondaryButtonHighlightedColor;
+@property (nonatomic, readonly) UIColor *headerSecondaryButtonNormalColor;
 @property (nonatomic, readonly) UIColor *highlightedActionRowTextColor;
-@property (nonatomic, readonly) UIColor *highlightedRowColor;
+@property (nonatomic, readonly) UIColor *highlightedTintColor;
 @property (nonatomic, readonly) bool isDarkTheme;
 @property (nonatomic, readonly) bool isVibrantTheme;
 @property (nonatomic, readonly) UIFont *largeTitleFont;
@@ -74,8 +78,12 @@
 - (id)brandTitleFont;
 - (id)disabledActionRowBackgroundColor;
 - (id)disabledActionRowTextColor;
+- (id)headerPrimaryButtonHighlightedColor;
+- (id)headerPrimaryButtonNormalColor;
+- (id)headerSecondaryButtonHighlightedColor;
+- (id)headerSecondaryButtonNormalColor;
 - (id)highlightedActionRowTextColor;
-- (id)highlightedRowColor;
+- (id)highlightedTintColor;
 - (id)iconFontToMatch:(id)arg1;
 - (id)init;
 - (bool)isDarkTheme;

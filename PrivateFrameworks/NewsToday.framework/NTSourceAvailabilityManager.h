@@ -15,8 +15,8 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
 - (void).cxx_destruct;
-- (void)_recomputePreferredAvailableHeadlineResultsSource;
-- (void)_setPreferredAvailableHeadlineResultsSource:(Class)arg1;
+- (void)_recomputePreferredAvailableTodayResultsSource;
+- (void)_setPreferredAvailableTodayResultsSource:(Class)arg1;
 - (id)availabilityEntriesInPreferredOrder;
 - (id)init;
 - (id)initWithAvailabilityEntriesInPreferredOrder:(id)arg1 queue:(id)arg2;

@@ -6,6 +6,7 @@
 
 @property (getter=isRemoteGatewayCapable, nonatomic) bool remoteGatewayCapable;
 @property (getter=isResidentCapable, nonatomic) bool residentCapable;
+@property (nonatomic) bool supportsAssistantAccessControl;
 @property (nonatomic) bool supportsCloudDataSync;
 @property (nonatomic) bool supportsDeviceSetup;
 @property (nonatomic) bool supportsKeyTransferClient;
@@ -19,6 +20,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setRemoteGatewayCapable:(bool)arg1;
 - (void)setResidentCapable:(bool)arg1;
+- (void)setSupportsAssistantAccessControl:(bool)arg1;
 - (void)setSupportsCloudDataSync:(bool)arg1;
 - (void)setSupportsDeviceSetup:(bool)arg1;
 - (void)setSupportsKeyTransferClient:(bool)arg1;

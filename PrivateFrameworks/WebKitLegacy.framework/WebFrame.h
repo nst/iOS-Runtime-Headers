@@ -87,7 +87,7 @@
 - (bool)_loadsSynchronously;
 - (id)_markDOMRange;
 - (bool)_needsLayout;
-- (id)_nodesFromList:(struct Vector<WebCore::Node *, 0, WTF::CrashOnOverflow, 16> { struct Node {} **x1; unsigned int x2; unsigned int x3; }*)arg1;
+- (id)_nodesFromList:(struct Vector<WebCore::Node *, 0, WTF::CrashOnOverflow, 16> { struct Node {} **x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg1;
 - (unsigned int)_paintBehaviorForDestinationContext:(struct CGContext { }*)arg1;
 - (unsigned int)_pendingFrameUnloadEventCount;
 - (id)_rectsForRange:(id)arg1;

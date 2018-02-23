@@ -44,12 +44,15 @@
 - (void)_performExportWithRequest:(id)arg1;
 - (void)_performImportWithRequest:(id)arg1;
 - (void)_performResetZoneRequest:(id)arg1;
+- (bool)_recoverFromError:(id)arg1 withMonitor:(id)arg2;
+- (bool)_recoverFromPartialError:(id)arg1 withMonitor:(id)arg2;
 - (void)_requestAbortedNotInitialized:(id)arg1;
 - (void)_requestEncounteredUnrecoverableError:(id)arg1 withResult:(id)arg2;
 - (void)_setContainer:(id)arg1;
 - (void)_setDatabase:(id)arg1;
 - (void)_setObservedStore:(id)arg1 observedCoordinator:(id)arg2;
 - (void)_setUpCloudKitIntegration;
+- (void)_setZone:(id)arg1;
 - (void)checkForNewChanges;
 - (void)ckAccountChanged:(id)arg1;
 - (id)ckDatabaseName;

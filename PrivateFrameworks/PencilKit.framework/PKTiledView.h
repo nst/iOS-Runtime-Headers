@@ -5,6 +5,7 @@
 @interface PKTiledView : UIView <PKCanvasViewDelegate, PKSelectionDelegate, UIDropInteractionDelegate_Private, UIGestureRecognizerDelegate, UIScrollViewDelegate, _UIScrollViewLayoutObserver, _UIScrollViewScrollObserver> {
     NSArray * _additionalStrokes;
     PKCanvasView * _canvasView;
+    UITapGestureRecognizer * _clearSelectionGestureRecognizer;
     PKDrawing * _createdDrawingForTouchThatHitNothing;
     PKDrawing * _dirtyDrawing;
     UITouch * _drawingTouchThatHitNothing;
@@ -23,6 +24,7 @@
     _UITextAttachmentDrawingView * _liveAttachment;
     UIScrollView * _scrollView;
     PKSelectionController * _selectionController;
+    bool  _shouldHideCanvasAfterScroll;
     _UITextAttachmentDrawingView * _standInEndAttachmentView;
     UIButton * _tapToRadarButton;
     double  _tileHeight;
@@ -32,6 +34,7 @@
 
 @property (nonatomic, readonly) NSArray *additionalStrokes;
 @property (nonatomic, retain) PKCanvasView *canvasView;
+@property (nonatomic, readonly) UITapGestureRecognizer *clearSelectionGestureRecognizer;
 @property (nonatomic, retain) PKDrawing *createdDrawingForTouchThatHitNothing;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -50,6 +53,7 @@
 @property (nonatomic, retain) _UITextAttachmentDrawingView *liveAttachment;
 @property (nonatomic) UIScrollView *scrollView;
 @property (nonatomic, retain) PKSelectionController *selectionController;
+@property (nonatomic) bool shouldHideCanvasAfterScroll;
 @property (nonatomic, retain) _UITextAttachmentDrawingView *standInEndAttachmentView;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIButton *tapToRadarButton;
@@ -61,6 +65,7 @@
 + (bool)showDebugOutlines;
 
 - (void).cxx_destruct;
+- (void)_addGestureToClearSelection;
 - (id)_attachmentForSelectionRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_canvasView:(id)arg1 didFinishRenderingStrokeOnRenderQueue:(id)arg2 inDrawing:(id)arg3;
 - (void)_clearSelectionIfNecessary;
@@ -90,6 +95,7 @@
 - (void)canvasViewDidCancelStroke:(id)arg1;
 - (void)canvasViewDidEndStroke:(id)arg1;
 - (void)canvasViewWillBeginNewStroke:(id)arg1 withTouch:(id)arg2;
+- (id)clearSelectionGestureRecognizer;
 - (struct CGPoint { double x1; double x2; })closestPointForPastedSelectionRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withDrawing:(id*)arg2;
 - (bool)containsDrawingUUID:(id)arg1;
 - (void)copy:(id)arg1;
@@ -113,6 +119,7 @@
 - (void)duplicate:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameOfEndAttachment;
 - (void)generateTile:(long long)arg1 inAttachment:(id)arg2 rendering:(bool)arg3;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)gestureView;
 - (void)getDrawingTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg1 strokeTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg2 paperTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg3;
 - (bool)hasEndAttachment;
@@ -166,11 +173,13 @@
 - (void)setLiveAttachment:(id)arg1;
 - (void)setScrollView:(id)arg1;
 - (void)setSelectionController:(id)arg1;
+- (void)setShouldHideCanvasAfterScroll:(bool)arg1;
 - (void)setStandInEndAttachmentView:(id)arg1;
 - (void)setTapToRadarButton:(id)arg1;
 - (void)setTileHeight:(double)arg1;
 - (void)setTileLevel:(long long)arg1;
 - (void)setTileWidth:(double)arg1;
+- (bool)shouldHideCanvasAfterScroll;
 - (id)standInEndAttachmentView;
 - (id)tapToRadarButton;
 - (void)textDidBeginEditing:(id)arg1;

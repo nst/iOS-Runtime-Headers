@@ -11,12 +11,22 @@
 
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
-+ (bool)isAbsintheV3V4Enabled;
++ (bool)isAbsintheV4Enabled;
++ (bool)isBAACertEnabled;
++ (bool)isDebugPiscoLoggingEnabled;
++ (bool)isDeviceScoringEnabled;
 + (bool)isEngramEnabled;
++ (bool)isLiveDeliveryWarmUpEnabled;
++ (bool)isPiscoEnabled;
 + (long long)phoneNumberValidationMode;
 + (id)phoneNumberValidationPreflightTestData;
-+ (void)setEnableAbsintheV3V4:(bool)arg1;
++ (void)setEnableAbsintheV4:(bool)arg1;
++ (void)setEnableBAACert:(bool)arg1;
++ (void)setEnableDebugPiscoLogging:(bool)arg1;
++ (void)setEnableDeviceScoring:(bool)arg1;
 + (void)setEnableEngram:(bool)arg1;
++ (void)setEnableLiveDeliveryWarmUp:(bool)arg1;
++ (void)setEnablePisco:(bool)arg1;
 + (void)setPhoneNumberValidationMode:(long long)arg1;
 + (void)setPhoneNumberValidationPreflightTestData:(id)arg1;
 + (id)sharedDefaults;

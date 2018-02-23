@@ -17,7 +17,7 @@
         double height; 
     }  _cachedPreferredItemSize;
     NSCache * _cachedPreferredItemSizesByString;
-    NSMutableSet * _cachedSharedItems;
+    NSMutableOrderedSet * _cachedSharedItems;
     UICollectionView * _collectionView;
     SFCollectionViewLayout * _collectionViewLayout;
     bool  _darkStyleOnLegacyApp;

@@ -10,6 +10,7 @@
 
 @property (nonatomic) bool disableAssetCleaning;
 @property (nonatomic) bool disableCache;
+@property (nonatomic) bool enableHomePodSimulation;
 @property (nonatomic) bool enableLocalVoices;
 @property (nonatomic, readonly) bool internalBuild;
 @property (nonatomic, retain) NSUserDefaults *internalDefaults;
@@ -20,6 +21,7 @@
 - (void).cxx_destruct;
 - (bool)disableAssetCleaning;
 - (bool)disableCache;
+- (bool)enableHomePodSimulation;
 - (bool)enableLocalVoices;
 - (id)init;
 - (bool)internalBuild;
@@ -27,6 +29,7 @@
 - (bool)isInternalBuild;
 - (void)setDisableAssetCleaning:(bool)arg1;
 - (void)setDisableCache:(bool)arg1;
+- (void)setEnableHomePodSimulation:(bool)arg1;
 - (void)setEnableLocalVoices:(bool)arg1;
 - (void)setInternalDefaults:(id)arg1;
 - (void)setIsInternalBuild:(bool)arg1;

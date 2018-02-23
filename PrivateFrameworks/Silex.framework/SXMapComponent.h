@@ -13,7 +13,6 @@
 + (id)typeString;
 + (id /* block */)valueClassBlockForPropertyWithName:(id)arg1;
 
-- (Class)componentViewClass;
 - (unsigned long long)defaultMapTypeWithValue:(id)arg1 withType:(int)arg2;
 
 @end

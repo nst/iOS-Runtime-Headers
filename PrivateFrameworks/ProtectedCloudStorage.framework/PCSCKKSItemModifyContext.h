@@ -9,6 +9,9 @@
     NSData * _existingItemReference;
     NSData * _existingItemSHA1;
     struct __PCSLogContext { } * _log;
+    PCSMTT * _mtt;
+    struct _PCSIdentityData { } * _relocateIdentity;
+    bool  _roll;
     struct __CFDictionary { } * _rollAttributes;
     struct _PCSIdentityData { } * _rollIdentity;
     NSData * _rollItemReference;
@@ -16,6 +19,8 @@
     NSDate * _server_NextRollDate;
     NSString * _service;
     struct _PCSIdentitySetData { } * _set;
+    bool  _sync;
+    long long  _timeoutValue;
 }
 
 @property struct _PCSIdentityData { }*currentIdentity;
@@ -24,12 +29,17 @@
 @property (retain) NSData *existingItemReference;
 @property (retain) NSData *existingItemSHA1;
 @property struct __PCSLogContext { }*log;
+@property (readonly) PCSMTT *mtt;
+@property struct _PCSIdentityData { }*relocateIdentity;
+@property bool roll;
 @property struct _PCSIdentityData { }*rollIdentity;
 @property (retain) NSData *rollItemReference;
 @property (retain) NSData *rollItemSHA1;
 @property (retain) NSDate *server_NextRollDate;
 @property (retain) NSString *service;
 @property struct _PCSIdentitySetData { }*set;
+@property bool sync;
+@property long long timeoutValue;
 
 - (void).cxx_destruct;
 - (struct _PCSIdentityData { }*)currentIdentity;
@@ -38,8 +48,12 @@
 - (id)dsid;
 - (id)existingItemReference;
 - (id)existingItemSHA1;
+- (id)init;
 - (struct __PCSLogContext { }*)log;
+- (id)mtt;
+- (struct _PCSIdentityData { }*)relocateIdentity;
 - (void)resetIdentities;
+- (bool)roll;
 - (struct _PCSIdentityData { }*)rollIdentity;
 - (id)rollItemReference;
 - (id)rollItemSHA1;
@@ -52,11 +66,17 @@
 - (void)setExistingItemReference:(id)arg1;
 - (void)setExistingItemSHA1:(id)arg1;
 - (void)setLog:(struct __PCSLogContext { }*)arg1;
+- (void)setRelocateIdentity:(struct _PCSIdentityData { }*)arg1;
+- (void)setRoll:(bool)arg1;
 - (void)setRollIdentity:(struct _PCSIdentityData { }*)arg1;
 - (void)setRollItemReference:(id)arg1;
 - (void)setRollItemSHA1:(id)arg1;
 - (void)setServer_NextRollDate:(id)arg1;
 - (void)setService:(id)arg1;
 - (void)setSet:(struct _PCSIdentitySetData { }*)arg1;
+- (void)setSync:(bool)arg1;
+- (void)setTimeoutValue:(long long)arg1;
+- (bool)sync;
+- (long long)timeoutValue;
 
 @end

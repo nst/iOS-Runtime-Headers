@@ -31,6 +31,7 @@
 - (id)existingArtworkEffectResultForEffectType:(long long)arg1 catalog:(id)arg2 options:(id)arg3;
 - (id)existingRepresentationForArtworkCatalog:(id)arg1;
 - (id)fallbackCache;
+- (void)getExportableArtworkPropertiesForCatalog:(id)arg1 completionHandler:(id /* block */)arg2;
 - (bool)hasExistingRepresentationOnDiskForArtworkCatalog:(id)arg1;
 - (id)init;
 - (bool)isRepresentation:(id)arg1 bestRepresentationForArtworkCatalog:(id)arg2;

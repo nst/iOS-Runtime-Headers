@@ -4,6 +4,7 @@
 
 @interface SFProcessDictionary : NSObject {
     unsigned long long  _cacheCapacity;
+    NSMutableDictionary * _pidToBundleIdentifierMap;
     NSMutableSet * _pidsPendingTermination;
     NSMutableArray * _recentlyReferencedPIDs;
     NSCountedSet * _references;
@@ -18,10 +19,11 @@
 - (void)_handleProcessTermination:(int)arg1;
 - (void)_removeUnreferencedObjectsIfNeeded;
 - (void)_removeValueForPID:(id)arg1;
+- (void)_updateInterestedApplications;
 - (unsigned long long)cacheCapacity;
 - (void)dealloc;
 - (void)decrementReferenceForPID:(int)arg1;
-- (id)incrementReferenceForPID:(int)arg1 valueCreationBlock:(id /* block */)arg2;
+- (id)incrementReferenceForPID:(int)arg1 bundleIdentifier:(id)arg2 valueCreationBlock:(id /* block */)arg3;
 - (id)init;
 - (id)initWithCacheCapacity:(unsigned long long)arg1;
 

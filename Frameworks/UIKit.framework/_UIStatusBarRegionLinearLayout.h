@@ -27,7 +27,7 @@
 - (void).cxx_destruct;
 - (id)_horizontalConstraintsForViews:(id)arg1 layoutGuides:(id)arg2;
 - (void)_updateConstraints;
-- (id)_verticalConstraintsForView:(id)arg1;
+- (id)_verticalConstraintsForDisplayItem:(id)arg1;
 - (id)displayItems;
 - (bool)fitsAllItems;
 - (id)horizontalConstraints;

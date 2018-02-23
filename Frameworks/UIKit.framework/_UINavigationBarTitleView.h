@@ -35,6 +35,7 @@
 @property (nonatomic) bool hideStandardTitle;
 @property (nonatomic) bool hideTrailingBarButtons;
 @property (nonatomic, readonly) UINavigationItem *navigationItem;
+@property (nonatomic, readonly) int preferredAlignment;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) long long titleLocation;
 @property (nonatomic) bool underlayBarContent;
@@ -53,6 +54,7 @@
 - (void)_transitionCompleted:(long long)arg1 willBeDisplayed:(bool)arg2;
 - (void)_transitionWillBegin:(long long)arg1 willBeDisplayed:(bool)arg2;
 - (bool)_underlayNavigationBarContent;
+- (bool)_wantsTwoPartTransition;
 - (double)backButtonMaximumWidth;
 - (void)contentDidChange;
 - (id)contentOverlayRects;
@@ -65,6 +67,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)navigationItem;
 - (void)performTransition:(long long)arg1 willBeDisplayed:(bool)arg2;
+- (int)preferredAlignment;
 - (void)preferredContentSizeDidChange;
 - (long long)preferredContentSizeForSize:(long long)arg1;
 - (void)setBackButtonMaximumWidth:(double)arg1;

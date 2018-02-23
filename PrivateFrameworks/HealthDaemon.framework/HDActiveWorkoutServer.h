@@ -54,8 +54,9 @@
 - (bool)_isFitnessMachineWorkout;
 - (void)_queue_activateWorkoutWithCompletion:(id /* block */)arg1;
 - (void)_queue_addEventType:(long long)arg1 forDateInterval:(id)arg2;
-- (bool)_queue_addSamplesSinceResumeData:(id)arg1 startDate:(id)arg2 database:(id)arg3 error:(id*)arg4;
+- (bool)_queue_addSamplesSinceResumeData:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 sourceEntity:(id)arg4 database:(id)arg5 error:(id*)arg6;
 - (void)_queue_endWorkoutWithCompletion:(id /* block */)arg1;
+- (void)_queue_finalizeTotalsWithEndDate:(id)arg1;
 - (bool)_queue_fitnessMachineWorkoutShouldAddSample:(id)arg1;
 - (id)_queue_gapsNeedingUpdate;
 - (bool)_queue_gapsResolved;
@@ -66,7 +67,7 @@
 - (bool)_queue_resolveGap:(id)arg1 quantityType:(id)arg2;
 - (void)_queue_resolveGaps;
 - (bool)_queue_resolveGapsWithEndDate:(id)arg1 error:(id*)arg2;
-- (void)_queue_samplesAdded:(id)arg1 lastUUID:(id)arg2 journaled:(bool)arg3 anchor:(id)arg4;
+- (void)_queue_samplesAdded:(id)arg1 journaled:(bool)arg2 anchor:(id)arg3 updateResumeData:(bool)arg4;
 - (void)_queue_setAsCompleteAndStopObserving;
 - (void)_queue_setResumeDataForType:(id)arg1 lastUUID:(id)arg2 inJournal:(bool)arg3;
 - (void)_queue_setState:(long long)arg1;
@@ -74,13 +75,11 @@
 - (void)_queue_startWorkoutSessionIfNeededWithCompletion:(id /* block */)arg1;
 - (long long)_queue_stateForDate:(id)arg1;
 - (void)_queue_stopWorkoutSessionIfNeededWithCompletion:(id /* block */)arg1;
-- (id)_queue_sumQuantityForType:(id)arg1 startUUID:(id)arg2 endUUID:(id)arg3 startDate:(id)arg4 endDate:(id)arg5 database:(id)arg6 localDeviceEntity:(id)arg7 newUUIDs:(id)arg8 lastUUID:(id*)arg9 newAnchor:(id*)arg10 error:(id*)arg11;
-- (bool)_queue_updateTotalsForReactivationWithResumeData:(id)arg1 startDate:(id)arg2 error:(id*)arg3;
 - (void)_queue_updateTotalsSinceResumeDate:(id)arg1;
-- (bool)_queue_updateTotalsWithDataGap:(id)arg1 quantityType:(id)arg2 database:(id)arg3 localDeviceEntity:(id)arg4 error:(id*)arg5;
-- (bool)_queue_updateTotalsWithResumeData:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 database:(id)arg4 localDeviceEntity:(id)arg5 error:(id*)arg6;
-- (void)_queue_updateTotalsWithValues:(id)arg1 UUIDs:(id)arg2 inJournal:(bool)arg3;
-- (id)_reactivatePredicateForType:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 startRowId:(id)arg4 endRowId:(id)arg5 localDeviceEntity:(id)arg6;
+- (bool)_queue_updateTotalsWithDataGap:(id)arg1 quantityType:(id)arg2 database:(id)arg3 error:(id*)arg4;
+- (bool)_queue_updateTotalsWithResumeData:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 sourceEntity:(id)arg4 error:(id*)arg5;
+- (void)_queue_updateTotalsWithValues:(id)arg1 UUIDs:(id)arg2 inJournal:(bool)arg3 updateResumeData:(bool)arg4;
+- (id)_reactivatePredicateForType:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 startRowId:(id)arg4 endRowId:(id)arg5 sourceEntity:(id)arg6;
 - (id)_rowIdInDatabase:(id)arg1 forUUID:(id)arg2 error:(id*)arg3;
 - (bool)_shouldUseDeviceData;
 - (id)_transactionIdentifier;

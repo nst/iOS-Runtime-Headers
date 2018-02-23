@@ -17,6 +17,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) unsigned long long maxConcurrentRequests;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSURLSession *urlSession;
 
@@ -52,6 +53,8 @@
 - (id)init;
 - (id)initWithConfiguration:(id)arg1;
 - (id)initWithConfiguration:(id)arg1 maxConcurrentRequests:(unsigned long long)arg2;
+- (id)initWithConfiguration:(id)arg1 maxConcurrentRequests:(unsigned long long)arg2 qualityOfService:(long long)arg3;
+- (unsigned long long)maxConcurrentRequests;
 - (void)pause;
 - (void)processCompletedResponse:(id)arg1 toRequest:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)processInitialResponse:(id)arg1 toRequest:(id)arg2 withCompletionHandler:(id /* block */)arg3;

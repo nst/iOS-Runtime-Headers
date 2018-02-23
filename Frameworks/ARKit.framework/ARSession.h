@@ -32,6 +32,7 @@
     id  _thermalStateObserver;
     bool  _trackingWasReset;
     bool  _worldOriginInitialized;
+    bool  _worldOriginReset;
     ARWorldTrackingTechnique * _worldTrackingTechnique;
 }
 
@@ -49,6 +50,8 @@
 @property (nonatomic) struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; } sessionOriginTransform;
 @property (nonatomic) unsigned long long state;
 @property (readonly) Class superclass;
+
++ (void)initialize;
 
 - (void).cxx_destruct;
 - (void)_addObserver:(id)arg1;

@@ -11,7 +11,7 @@
     id /* block */  _contentsDidChangeHandler;
     CKDatabase * _database;
     MSPJournal * _journal;
-    <NSObject><NSCopying><NSCoding> * _latestAccountIdentity;
+    NSString * _latestAccountIdentity;
     NSDate * _minimumRetryAfter;
     NSObject<OS_dispatch_queue> * _reachabilityQueue;
     CKRecordZoneID * _zoneID;

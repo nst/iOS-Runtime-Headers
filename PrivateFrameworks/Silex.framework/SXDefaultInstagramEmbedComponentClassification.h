@@ -8,6 +8,5 @@
 + (id)typeString;
 
 - (Class)componentModelClass;
-- (Class)componentViewClass;
 
 @end

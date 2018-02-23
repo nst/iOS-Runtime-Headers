@@ -42,6 +42,7 @@
 @property (readonly) NSString *logPath;
 @property (readonly) NSString *modelCode;
 @property (readonly) NSString *osTrain;
+@property (readonly) NSString *productNameVersionBuildString;
 @property (readonly) NSString *productVersion;
 @property (readonly) NSString *releaseType;
 @property (readonly) NSString *seedGroup;
@@ -68,6 +69,7 @@
 - (id)metadata;
 - (id)modelCode;
 - (id)osTrain;
+- (id)productNameVersionBuildString;
 - (id)productVersion;
 - (id)releaseType;
 - (id)seedGroup;

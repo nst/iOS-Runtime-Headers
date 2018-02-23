@@ -16,7 +16,6 @@
     UISearchController * _searchController;
     HLPHelpSearchResultTableViewController * _searchResultTableViewController;
     NSArray * _searchTerms;
-    bool  _searching;
     UIView * _tableFooterView;
     HLPHelpUsageController * _usageController;
 }
@@ -49,7 +48,6 @@
 - (long long)numberOfVisibleHelpItemForSectionItem:(id)arg1;
 - (void)openHelpItem:(id)arg1 animated:(bool)arg2;
 - (void)scrollToHelpItem:(id)arg1 deselectImmediately:(bool)arg2 animated:(bool)arg3;
-- (void)searchBarSearchButtonClicked:(id)arg1;
 - (id)searchController;
 - (id)searchTerms;
 - (void)setDelegate:(id)arg1;

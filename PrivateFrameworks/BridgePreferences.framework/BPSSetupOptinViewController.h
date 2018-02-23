@@ -78,6 +78,7 @@
 - (bool)wantsAlternateChoicePillButton;
 - (bool)wantsAlternateChoiceSystemButton;
 - (bool)wantsLearnMoreButton;
+- (bool)wantsLightenBlendedScreen;
 - (bool)wantsOkayPillButton;
 - (bool)wantsSuggestedChoicePillButton;
 - (bool)wantsToShowWatchHW;

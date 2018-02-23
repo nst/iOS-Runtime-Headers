@@ -9,7 +9,6 @@
     }  __masterSizeWithoutGeometry;
     double  _angle;
     bool  _centerContent;
-    NUComposition * _composition;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -26,6 +25,8 @@
         bool hasDidUpdateLivePhoto; 
         bool hasDidFinishRenderingWithStatistics; 
         bool hasDidZoom; 
+        bool hasWillBeginZooming; 
+        bool hasDidEndZooming; 
         bool hasIsReadyForVideoPlayback; 
         bool hasDidStartPreparingVideo; 
         bool hasDidFinishPreparingVideo; 
@@ -42,6 +43,7 @@
     bool  _muted;
     NUAVPlayerController * _nuAVPlayerController;
     NUAVPlayerView * _playerView;
+    NUCoalescer * _renderCoalescer;
     NURenderView * _renderView;
     NUMediaViewRenderer * _renderer;
     NUScrollView * _scrollView;
@@ -51,7 +53,7 @@
 @property (nonatomic) struct CGSize { double x1; double x2; } _masterSizeWithoutGeometry;
 @property (nonatomic) double angle;
 @property (nonatomic) bool centerContent;
-@property (nonatomic, retain) NUComposition *composition;
+@property (nonatomic, copy) NUComposition *composition;
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } cropRect;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <NUMediaViewDelegate> *delegate;
@@ -78,7 +80,6 @@
 - (struct CGSize { double x1; double x2; })_imageSize;
 - (id)_livePhotoView;
 - (struct CGSize { double x1; double x2; })_masterSizeWithoutGeometry;
-- (id)_renderClient;
 - (id)_renderView;
 - (id)_renderer;
 - (void)_rendererDidCreateAVPlayerController:(id)arg1;
@@ -95,10 +96,10 @@
 - (void)_transitionToInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)_updateContentInsets;
 - (void)_updateRenderContent;
+- (void)_updateRenderContentCoalesced:(bool)arg1;
 - (void)_updateVideoPlayerAlpha;
 - (id)_videoPlayerView;
 - (id)_videoPlayerViewWithoutControls;
-- (void)_viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3;
 - (void)_withComposition:(id)arg1 visitRenderClient:(id /* block */)arg2;
 - (double)angle;
 - (bool)centerContent;
@@ -130,7 +131,9 @@
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(bool)arg2;
 - (void)scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(double)arg3;
+- (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewDidZoom:(id)arg1;
+- (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewWillBeginZooming:(id)arg1 withView:(id)arg2;
 - (void)setAngle:(double)arg1;
 - (void)setCenterContent:(bool)arg1;

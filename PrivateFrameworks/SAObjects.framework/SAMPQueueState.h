@@ -22,6 +22,8 @@
 @property (nonatomic) int state;
 @property (readonly) Class superclass;
 
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
+
 + (id)queueState;
 + (id)queueStateWithDictionary:(id)arg1 context:(id)arg2;
 
@@ -53,5 +55,13 @@
 - (id)shuffleEnabled;
 - (id)source;
 - (int)state;
+
+// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
+
+- (void)_af_setNowPlayingInfo:(id)arg1;
+- (void)_af_setShuffleModeFromNowPlayingInfo:(id)arg1;
+- (void)_af_validateAndFinalize;
+- (id)_mediaItemIdURLFromNowPlayingInfo:(id)arg1;
+- (id)_mediaTypeFromNowPlayingInfo:(id)arg1;
 
 @end

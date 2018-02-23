@@ -153,6 +153,7 @@
 - (void)_setSelectedDOMRangeAndUpdateUI:(id)arg1;
 - (void)_setUnobscuredSafeAreaInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (bool)_shouldDeferEvents;
+- (bool)_shouldRestorationInputViewsOnlyWhenKeepingFirstResponder;
 - (void)_startAssistingKeyboard;
 - (void)_startAssistingNode:(id)arg1;
 - (void)_startDeferringEvents;

@@ -53,6 +53,7 @@
 - (void)dealloc;
 - (void)endObservingNetworkReachability;
 - (void)environmentMonitorDidChangeNetworkReachability:(id)arg1;
+- (void)environmentMonitorDidChangeNetworkType:(id)arg1;
 - (bool)hasProperNetworkConditionsToPlayMedia;
 - (bool)hasProperNetworkConditionsToShowCloudMedia;
 - (id)init;

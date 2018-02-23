@@ -48,7 +48,7 @@
 - (void)deregisterReceiver:(id)arg1;
 - (void)dispatchMessage:(id)arg1 target:(id)arg2;
 - (id)endPoint;
-- (id)initWithQueue:(id)arg1 receiveDispatcher:(id)arg2 messageFilterChain:(id)arg3 registerAsMachService:(bool)arg4;
+- (id)initWithReceiveDispatcher:(id)arg1 messageFilterChain:(id)arg2 registerAsMachService:(bool)arg3;
 - (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)lostModeMessageFilter;
 - (id)messageReceiveQueue;

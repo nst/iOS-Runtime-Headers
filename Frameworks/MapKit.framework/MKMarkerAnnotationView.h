@@ -67,6 +67,7 @@
 - (id)glyphTintColor;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
 - (bool)isProvidingCustomFeature;
+- (void)layoutSublayersOfLayer:(id)arg1;
 - (void)layoutSubviews;
 - (id)markerStrokeTintColor;
 - (double)markerStrokeWidth;

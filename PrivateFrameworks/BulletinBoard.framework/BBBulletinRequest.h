@@ -81,6 +81,7 @@
 - (unsigned long long)expirationEvents;
 - (void)generateBulletinID;
 - (void)generateNewBulletinID;
+- (bool)hasAdditionalAttachmentsModificationsRelativeTo:(id)arg1;
 - (bool)hasContentModificationsRelativeTo:(id)arg1;
 - (void)publish;
 - (void)publish:(bool)arg1;

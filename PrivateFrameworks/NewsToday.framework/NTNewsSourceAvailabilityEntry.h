@@ -15,16 +15,15 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, readonly) Class headlineResultsFetchDescriptorClass;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) Class todayResultsFetchDescriptorClass;
 
 - (void).cxx_destruct;
 - (id)NewsAvailabilityMonitor;
 - (void)_updateAvailability;
 - (id /* block */)availabilityChangedNotificationBlock;
 - (void)dealloc;
-- (Class)headlineResultsFetchDescriptorClass;
 - (id)init;
 - (id)initWithProcessVariant:(unsigned long long)arg1 queue:(id)arg2;
 - (bool)isAvailable;
@@ -34,5 +33,6 @@
 - (void)setAvailable:(bool)arg1;
 - (void)setNewsAvailabilityMonitor:(id)arg1;
 - (void)setQueue:(id)arg1;
+- (Class)todayResultsFetchDescriptorClass;
 
 @end

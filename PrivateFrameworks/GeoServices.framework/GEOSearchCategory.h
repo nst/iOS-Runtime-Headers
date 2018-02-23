@@ -16,6 +16,7 @@
 @property (nonatomic, readonly) NSString *shortDisplayString;
 @property (nonatomic, readonly) int sortOrder;
 @property (nonatomic, readonly) GEOFeatureStyleAttributes *styleAttributes;
+@property (getter=isSubCategorySameAsTopLevel, nonatomic, readonly) bool subCategorySameAsTopLevel;
 @property (nonatomic, readonly) int subCategoryType;
 @property (nonatomic, readonly) NSArray *subcategories;
 @property (getter=_suggestionEntryMetadata, nonatomic, readonly) NSData *suggestionEntryMetadata;
@@ -36,6 +37,7 @@
 - (id)initWithBrowseCategory:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStorage:(id)arg1;
+- (bool)isSubCategorySameAsTopLevel;
 - (id)mapsURL;
 - (id)popularTokenString;
 - (void)sendFeedback;

@@ -32,12 +32,11 @@
 - (void)_createGradientLayer;
 - (void)_createLabel;
 - (void)_executePostAnimationCompletionBlocks;
-- (void)_fadeInImmediately:(bool)arg1 completion:(id /* block */)arg2;
 - (id)_fontWithTextStyle:(id)arg1 symbolicTraits:(unsigned int)arg2 withMaximumFontSizeCategory:(id)arg3;
 - (void)_invalidateGradientAnimationTimer;
 - (void)_preferredTextSizeChanged:(id)arg1;
 - (void)_resetGradientAndLabelBefore:(bool)arg1;
-- (void)_runFadeAnimationForFadingOut:(bool)arg1 completion:(id /* block */)arg2;
+- (void)_runFadeAnimationForFadingOut:(bool)arg1 duration:(double)arg2 completion:(id /* block */)arg3;
 - (void)_runGradientAnimation:(bool)arg1;
 - (void)_timerTriggered;
 - (void)_updateLabelTextWithLanguage:(id)arg1;
@@ -48,9 +47,12 @@
 - (double)baselineOffset;
 - (void)cancelFadeInTimerIfNecessary;
 - (id)description;
+- (void)didMoveToSuperview;
 - (void)fadeIn;
 - (void)fadeInImmediately:(bool)arg1;
+- (void)fadeInImmediately:(bool)arg1 completion:(id /* block */)arg2;
 - (void)fadeOut;
+- (void)fadeOutWithDuration:(double)arg1 completion:(id /* block */)arg2;
 - (id)gradientLayer;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)label;

@@ -34,6 +34,7 @@
         bool respondsToRevealDidEnd; 
         bool respondsToWillPresentCameraRoll; 
         bool respondsToPrefersPresentingStatusbarHiddenDidChange; 
+        bool respondsToPreferredPresentationOrientation; 
     }  _presentationDelegateFlags;
     UIGestureRecognizer * _previewGestureRecognizer;
     <CAMCameraRollControllerSessionDelegate> * _sessionDelegate;
@@ -149,7 +150,9 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })oneUpPresentationHelper:(id)arg1 rectForAssetReference:(id)arg2 cropInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg3 contentsRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg4;
 - (void)oneUpPresentationHelper:(id)arg1 shouldHideAssetReferences:(id)arg2;
 - (void)oneUpPresentationHelper:(id)arg1 willPresentOneUpViewController:(id)arg2;
+- (bool)oneUpPresentationHelperEnableFreezeLayoutOnOrientationChange:(id)arg1;
 - (long long)oneUpPresentationHelperPreferredBarStyle:(id)arg1;
+- (long long)oneUpPresentationHelperPreferredPresentationOrientation:(id)arg1;
 - (bool)oneUpPresentationHelperShouldLeaveContentOnSecondScreen:(id)arg1;
 - (id)oneUpPresentationHelperViewController:(id)arg1;
 - (id)persistedThumbnailImage;

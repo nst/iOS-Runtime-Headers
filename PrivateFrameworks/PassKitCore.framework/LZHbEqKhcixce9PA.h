@@ -15,7 +15,7 @@
 
 - (void).cxx_destruct;
 - (void)computeScoresUsingSettings:(id)arg1 completion:(id /* block */)arg2;
-- (void)getScoreMessageWithIdentifier:(id)arg1 nonce:(id)arg2 completion:(id /* block */)arg3;
+- (void)getScoreMessageWithIdentifier:(id)arg1 hostChallenge:(id)arg2 challengeResponse:(id)arg3 seid:(id)arg4 nonce:(id)arg5 completion:(id /* block */)arg6;
 - (id)initWithServiceName:(id)arg1;
 
 @end

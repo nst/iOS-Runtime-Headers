@@ -2,12 +2,25 @@
    Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
  */
 
-@interface _DKKnowledgeStorageLogging : NSObject
+@interface _DKKnowledgeStorageLogging : NSObject <_DKKnowledgeStorageEventNotificationDelegate> {
+    NSObject<OS_dispatch_queue> * _notificationQueue;
+}
 
-+ (void)_knowledgeStorageDidInsertEvents:(id)arg1;
-+ (void)_knowledgeStorageDidInsertLocalEvents:(id)arg1;
-+ (void)_updateCounter:(id)arg1 notification:(id)arg2;
-+ (void)load;
-+ (id)portraitStreamNames;
+@property (readonly) NSObject<OS_dispatch_queue> *notificationQueue;
+
++ (id)sharedInstance;
+
+- (void).cxx_destruct;
+- (void)_sendDistributedNotificationName:(id)arg1;
+- (void)_sendDistributedNotificationName:(id)arg1 object:(id)arg2 throttledActivityName:(id)arg3;
+- (void)_sendDistributedNotificationName:(id)arg1 streamNameCounts:(id)arg2;
+- (void)_updateCounter:(id)arg1 streamNameCounts:(id)arg2;
+- (id)init;
+- (void)knowledgeStorage:(id)arg1 didDeleteEventsWithStreamNameCounts:(id)arg2;
+- (void)knowledgeStorage:(id)arg1 didInsertEventsWithStreamNameCounts:(id)arg2;
+- (void)knowledgeStorage:(id)arg1 didInsertLocalEventsWithStreamNameCounts:(id)arg2;
+- (id)notificationQueue;
+- (id)portraitStreamNames;
+- (id)typeValueWithStreamName:(id)arg1;
 
 @end

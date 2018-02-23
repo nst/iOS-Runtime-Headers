@@ -19,5 +19,6 @@
 - (void)setIsRunningTransitionAnimation:(bool)arg1;
 - (void)setPreferredBarTintColor:(UIColor *)arg1;
 - (void)setPreferredControlTintColor:(UIColor *)arg1;
+- (void)updateScrollViewIndicatorVerticalInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 horizontalInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 
 @end

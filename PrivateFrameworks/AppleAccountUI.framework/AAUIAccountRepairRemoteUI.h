@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@interface AAUIAccountRepairRemoteUI : NSObject <RUIObjectModelDelegate> {
+@interface AAUIAccountRepairRemoteUI : NSObject <RUILoaderDelegate, RUIObjectModelDelegate> {
     ACAccount * _account;
     UINavigationController * _accountRepairUIViewController;
     ACAccountStore * _accountStore;
@@ -41,6 +41,7 @@
 - (void)objectModelPressedBack:(id)arg1;
 - (id)parentViewControllerForObjectModel:(id)arg1;
 - (void)presentFromViewController:(id)arg1 modal:(bool)arg2;
+- (id)sessionConfigurationForLoader:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (unsigned long long)supportedInterfaceOrientationsForObjectModel:(id)arg1 page:(id)arg2;
 - (void)useCookieHeadersForInitialRequest:(id)arg1;

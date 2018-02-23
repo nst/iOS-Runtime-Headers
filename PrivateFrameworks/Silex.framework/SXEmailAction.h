@@ -11,10 +11,7 @@
 @property (nonatomic, readonly) NSString *subject;
 
 - (void).cxx_destruct;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (Class)handlerClass;
-- (id)initWithAddition:(id)arg1;
-- (id)initWithSubject:(id)arg1 recipient:(id)arg2 addition:(id)arg3;
+- (id)initWithRecipient:(id)arg1 subject:(id)arg2;
 - (id)recipient;
 - (id)subject;
 

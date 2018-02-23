@@ -10,6 +10,7 @@
     NSURLRequest * _currentURLRequest;
     NSError * _error;
     bool  _extendedCertificateValidationRequired;
+    long long  _handlingType;
     double  _lastProgressUpdateTime;
     double  _lastUpdateTime;
     unsigned long long  _maxRetryCount;
@@ -24,7 +25,6 @@
     NSURL * _responseDataURL;
     unsigned long long  _retryCount;
     double  _retryDelay;
-    bool  _shouldRetry;
     NSURLSessionTask * _task;
     long long  _type;
     NSURLRequest * _urlRequest;
@@ -40,6 +40,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSError *error;
 @property (getter=isExtendedCertificateValidationRequired, nonatomic) bool extendedCertificateValidationRequired;
+@property (nonatomic) long long handlingType;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) double lastProgressUpdateTime;
 @property (nonatomic) double lastUpdateTime;
@@ -53,7 +54,6 @@
 @property (nonatomic, retain) NSURL *responseDataURL;
 @property (nonatomic) unsigned long long retryCount;
 @property (nonatomic) double retryDelay;
-@property (nonatomic) bool shouldRetry;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSURLSessionTask *task;
 @property (nonatomic) long long type;
@@ -71,6 +71,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)error;
+- (long long)handlingType;
 - (id)initWithURL:(id)arg1 requestContext:(id)arg2;
 - (id)initWithURLRequest:(id)arg1 requestContext:(id)arg2;
 - (bool)isExtendedCertificateValidationRequired;
@@ -93,6 +94,7 @@
 - (void)setCurrentURLRequest:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setExtendedCertificateValidationRequired:(bool)arg1;
+- (void)setHandlingType:(long long)arg1;
 - (void)setLastProgressUpdateTime:(double)arg1;
 - (void)setLastUpdateTime:(double)arg1;
 - (void)setMaxRetryCount:(unsigned long long)arg1;
@@ -104,12 +106,10 @@
 - (void)setResponseDataURL:(id)arg1;
 - (void)setRetryCount:(unsigned long long)arg1;
 - (void)setRetryDelay:(double)arg1;
-- (void)setShouldRetry:(bool)arg1;
 - (void)setTask:(id)arg1;
 - (void)setType:(long long)arg1;
 - (void)setUrlResponse:(id)arg1;
 - (void)setWaitSemaphore:(id)arg1;
-- (bool)shouldRetry;
 - (id)task;
 - (long long)type;
 - (void)updateState:(long long)arg1;

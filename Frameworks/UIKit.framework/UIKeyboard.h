@@ -57,6 +57,7 @@
 + (bool)respondsToProxGesture;
 + (bool)shouldMinimizeForHardwareKeyboard;
 + (struct CGSize { double x1; double x2; })sizeForInterfaceOrientation:(long long)arg1;
++ (struct CGSize { double x1; double x2; })sizeForInterfaceOrientation:(long long)arg1 ignoreInputView:(bool)arg2;
 + (bool)splitKeyboardEnabled;
 
 - (void)_acceptCurrentCandidate;

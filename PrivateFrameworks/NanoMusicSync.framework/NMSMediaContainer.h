@@ -21,7 +21,7 @@
 @property (nonatomic) unsigned long long type;
 
 + (id)_fetchSizeDictForSongs:(id)arg1;
-+ (id)_songsForContainerClass:(Class)arg1 containerIDs:(id)arg2 sizesDictOut:(id*)arg3;
++ (id)_songsForContainerClass:(Class)arg1 containerIDs:(id)arg2 includingNonLibraryContent:(bool)arg3 sizesDictOut:(id*)arg4;
 + (id)containerWithLibraryHeavyRotationRecommendation:(id)arg1 albumID:(id)arg2;
 + (id)containerWithLibraryHeavyRotationRecommendation:(id)arg1 playlistID:(id)arg2;
 + (id)containerWithStoreHeavyRotationRecommendation:(id)arg1;

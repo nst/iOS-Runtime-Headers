@@ -29,7 +29,7 @@
 - (bool)isTransitionable;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })originalFrameForContentView:(id)arg1 behavior:(id)arg2;
 - (void)prepareForTransitionType:(unsigned long long)arg1;
-- (void)presentComponent;
+- (void)presentComponentWithChanges:(struct { bool x1; bool x2; })arg1;
 - (void)removeComponentView:(id)arg1;
 - (void)setComponentViews:(id)arg1;
 - (void)setDragManager:(id)arg1;

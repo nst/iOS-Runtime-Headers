@@ -11,11 +11,12 @@
 - (id)_remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (id)_remoteObjectProxyWithFailureHandler:(id /* block */)arg1;
 - (id)_remoteObjectProxyWithSemaphore:(id)arg1;
-- (void)allItemsOfClassType:(Class)arg1 storeLocally:(bool)arg2 completion:(id /* block */)arg3;
-- (void)fetchAndStoreRecordsForPaymentPass:(id)arg1 completion:(id /* block */)arg2;
+- (void)allTransactionsAndStoreLocally:(bool)arg1 completion:(id /* block */)arg2;
+- (void)fetchAndStoreRecordsForPaymentPassWithUniqueIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (id)init;
-- (void)removeItemsWithRecordNames:(id)arg1 itemClass:(Class)arg2 completion:(id /* block */)arg3;
+- (void)removeTransactionsWithRecordNames:(id)arg1 completion:(id /* block */)arg2;
 - (void)resetContainerWithCompletion:(id /* block */)arg1;
+- (void)resetContainerWithHandler:(id /* block */)arg1;
 - (void)simulateCloudStorePushWithCompletion:(id /* block */)arg1;
 - (void)updateCloudStoreWithLocalItems:(id)arg1 recordSpecificKeys:(id)arg2 completion:(id /* block */)arg3;
 

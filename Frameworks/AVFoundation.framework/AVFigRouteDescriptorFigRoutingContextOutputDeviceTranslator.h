@@ -11,11 +11,11 @@
 
 + (id)sharedOutputDeviceTranslator;
 
-- (void)addOutputDevice:(id)arg1 toRoutingContext:(struct OpaqueFigRoutingContext { }*)arg2;
+- (void)addOutputDevice:(id)arg1 withOptions:(struct __CFDictionary { }*)arg2 toRoutingContext:(struct OpaqueFigRoutingContext { }*)arg3 completionHandler:(id /* block */)arg4;
 - (id)outputDeviceFromRoutingContext:(struct OpaqueFigRoutingContext { }*)arg1;
 - (id)outputDevicesFromRoutingContext:(struct OpaqueFigRoutingContext { }*)arg1;
 - (void)removeOutputDevice:(id)arg1 fromRoutingContext:(struct OpaqueFigRoutingContext { }*)arg2;
-- (bool)setOutputDevice:(id)arg1 withOptions:(struct __CFDictionary { }*)arg2 onRoutingContext:(struct OpaqueFigRoutingContext { }*)arg3;
+- (void)setOutputDevice:(id)arg1 withOptions:(struct __CFDictionary { }*)arg2 onRoutingContext:(struct OpaqueFigRoutingContext { }*)arg3 completionHandler:(id /* block */)arg4;
 - (void)setOutputDevices:(id)arg1 withOptions:(struct __CFDictionary { }*)arg2 onRoutingContext:(struct OpaqueFigRoutingContext { }*)arg3;
 
 @end

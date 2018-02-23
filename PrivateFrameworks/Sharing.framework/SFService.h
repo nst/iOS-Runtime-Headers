@@ -29,6 +29,7 @@
     CUAppleIDClient * _myAppleIDInfoClient;
     bool  _needsKeyboard;
     bool  _needsSetup;
+    bool  _overrideScreenOff;
     NSDictionary * _pairSetupACL;
     id /* block */  _pairSetupCompletionHandler;
     bool  _pairSetupDisabled;
@@ -36,6 +37,7 @@
     NSString * _peerAppleID;
     id /* block */  _peerDisconnectedHandler;
     unsigned int  _pinType;
+    unsigned long long  _problemFlags;
     id /* block */  _receivedFramePeerHandler;
     id /* block */  _receivedObjectHandler;
     id /* block */  _receivedRequestHandler;
@@ -94,6 +96,7 @@
 @property (nonatomic, retain) CUAppleIDClient *myAppleIDInfoClient;
 @property (nonatomic) bool needsKeyboard;
 @property (nonatomic) bool needsSetup;
+@property (nonatomic) bool overrideScreenOff;
 @property (nonatomic, copy) NSDictionary *pairSetupACL;
 @property (nonatomic, copy) id /* block */ pairSetupCompletionHandler;
 @property (nonatomic) bool pairSetupDisabled;
@@ -101,6 +104,7 @@
 @property (nonatomic, copy) NSString *peerAppleID;
 @property (nonatomic, copy) id /* block */ peerDisconnectedHandler;
 @property (nonatomic) unsigned int pinType;
+@property (nonatomic) unsigned long long problemFlags;
 @property (nonatomic, copy) id /* block */ receivedFramePeerHandler;
 @property (nonatomic, copy) id /* block */ receivedObjectHandler;
 @property (nonatomic, copy) id /* block */ receivedRequestHandler;
@@ -174,6 +178,7 @@
 - (id)myAppleIDInfoClient;
 - (bool)needsKeyboard;
 - (bool)needsSetup;
+- (bool)overrideScreenOff;
 - (id)pairSetupACL;
 - (id /* block */)pairSetupCompletionHandler;
 - (bool)pairSetupDisabled;
@@ -182,6 +187,7 @@
 - (id)peerAppleID;
 - (id /* block */)peerDisconnectedHandler;
 - (unsigned int)pinType;
+- (unsigned long long)problemFlags;
 - (id /* block */)receivedFramePeerHandler;
 - (id /* block */)receivedObjectHandler;
 - (id /* block */)receivedRequestHandler;
@@ -230,6 +236,7 @@
 - (void)setMyAppleIDInfoClient:(id)arg1;
 - (void)setNeedsKeyboard:(bool)arg1;
 - (void)setNeedsSetup:(bool)arg1;
+- (void)setOverrideScreenOff:(bool)arg1;
 - (void)setPairSetupACL:(id)arg1;
 - (void)setPairSetupCompletionHandler:(id /* block */)arg1;
 - (void)setPairSetupDisabled:(bool)arg1;
@@ -237,6 +244,7 @@
 - (void)setPeerAppleID:(id)arg1;
 - (void)setPeerDisconnectedHandler:(id /* block */)arg1;
 - (void)setPinType:(unsigned int)arg1;
+- (void)setProblemFlags:(unsigned long long)arg1;
 - (void)setReceivedFramePeerHandler:(id /* block */)arg1;
 - (void)setReceivedObjectHandler:(id /* block */)arg1;
 - (void)setReceivedRequestHandler:(id /* block */)arg1;

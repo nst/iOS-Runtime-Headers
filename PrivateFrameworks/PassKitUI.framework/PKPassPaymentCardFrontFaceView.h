@@ -12,6 +12,7 @@
 - (void)createHeaderContentViews;
 - (void)dealloc;
 - (void)layoutSubviews;
+- (void)setShowsLiveBalance:(bool)arg1;
 - (id)shortFaceTemplate;
 - (id)shortScrunchedFaceTemplate;
 - (bool)showsShare;

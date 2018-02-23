@@ -31,5 +31,6 @@
 - (long long)preferredWhitePointAdaptivityStyle;
 - (void)previewDidAppear:(bool)arg1;
 - (void)previewDidDisappear:(bool)arg1;
+- (void)setAppearance:(id)arg1 animated:(bool)arg2;
 
 @end

@@ -2,13 +2,15 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKServerFormattedString : NSObject <NSCoding, NSCopying> {
+@interface MKServerFormattedString : NSObject <NSCopying, NSSecureCoding> {
     <GEOServerFormattedString> * _geoServerString;
     MKServerFormattedStringParameters * _parameters;
 }
 
 @property (nonatomic, readonly) <GEOServerFormattedString> *geoServerString;
 @property (nonatomic, readonly, copy) MKServerFormattedStringParameters *parameters;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_parametersByScrubbingUnusedOverrideVariablesFromParameters:(id)arg1 geoServerString:(id)arg2;

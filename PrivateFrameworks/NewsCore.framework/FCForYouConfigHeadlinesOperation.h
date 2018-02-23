@@ -5,12 +5,12 @@
 @interface FCForYouConfigHeadlinesOperation : FCOperation {
     NSArray * _additionalArticleListIDs;
     NSArray * _additionalTagIDs;
+    <FCAppConfiguration> * _appConfiguration;
     FCCachePolicy * _articleListCachePolicy;
     <FCContentContext> * _context;
     FCCachePolicy * _editorialSectionTagCachePolicy;
     long long  _fields;
     FCCachePolicy * _forYouConfigCachePolicy;
-    NSString * _forYouConfigID;
     id /* block */  _headlinesCompletionHandler;
     <FCFeedPersonalizing> * _personalizer;
     NSDictionary * _resultArticleListsByID;
@@ -22,12 +22,12 @@
 
 @property (nonatomic, copy) NSArray *additionalArticleListIDs;
 @property (nonatomic, copy) NSArray *additionalTagIDs;
+@property (nonatomic, copy) <FCAppConfiguration> *appConfiguration;
 @property (nonatomic, retain) FCCachePolicy *articleListCachePolicy;
 @property (nonatomic, retain) <FCContentContext> *context;
 @property (nonatomic, retain) FCCachePolicy *editorialSectionTagCachePolicy;
 @property (nonatomic) long long fields;
 @property (nonatomic, retain) FCCachePolicy *forYouConfigCachePolicy;
-@property (nonatomic, copy) NSString *forYouConfigID;
 @property (nonatomic, copy) id /* block */ headlinesCompletionHandler;
 @property (nonatomic, retain) <FCFeedPersonalizing> *personalizer;
 @property (nonatomic, retain) NSDictionary *resultArticleListsByID;
@@ -40,12 +40,12 @@
 - (long long)_requestTypeOverride;
 - (id)additionalArticleListIDs;
 - (id)additionalTagIDs;
+- (id)appConfiguration;
 - (id)articleListCachePolicy;
 - (id)context;
 - (id)editorialSectionTagCachePolicy;
 - (long long)fields;
 - (id)forYouConfigCachePolicy;
-- (id)forYouConfigID;
 - (id /* block */)headlinesCompletionHandler;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
@@ -56,12 +56,12 @@
 - (id)resultHeadlinesByArticleListID;
 - (void)setAdditionalArticleListIDs:(id)arg1;
 - (void)setAdditionalTagIDs:(id)arg1;
+- (void)setAppConfiguration:(id)arg1;
 - (void)setArticleListCachePolicy:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setEditorialSectionTagCachePolicy:(id)arg1;
 - (void)setFields:(long long)arg1;
 - (void)setForYouConfigCachePolicy:(id)arg1;
-- (void)setForYouConfigID:(id)arg1;
 - (void)setHeadlinesCompletionHandler:(id /* block */)arg1;
 - (void)setPersonalizer:(id)arg1;
 - (void)setResultArticleListsByID:(id)arg1;

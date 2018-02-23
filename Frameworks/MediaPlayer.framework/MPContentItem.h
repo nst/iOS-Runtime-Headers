@@ -4,10 +4,7 @@
 
 @interface MPContentItem : NSObject {
     MPMediaItemArtwork * _artwork;
-    bool  _hasChanges;
     void * _mediaRemoteContentItem;
-    void * _mediaRemoteDeltaContentItem;
-    NSObject<OS_dispatch_queue> * _notificationQueue;
 }
 
 @property (nonatomic, readonly) void*_mediaRemoteContentItem;
@@ -26,19 +23,20 @@
 + (bool)shouldPushArtworkData;
 
 - (void).cxx_destruct;
-- (void)_applyDeferredNotification;
-- (id)_changeDictionary;
 - (id)_initWithMediaRemoteContentItem:(void*)arg1;
 - (void)_loadArtwork:(id)arg1 completion:(id /* block */)arg2;
 - (void*)_mediaRemoteContentItem;
 - (void)_postItemChangedNotificationWithDeltaBlock:(id /* block */)arg1;
 - (id)artwork;
+- (id)createExternalRepresentation;
 - (void)dealloc;
 - (id)description;
 - (id)identifier;
 - (id)init;
+- (id)initWithExternalRepresentation:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;
 - (bool)isContainer;
+- (bool)isEqual:(id)arg1;
 - (bool)isExplicitContent;
 - (bool)isPlayable;
 - (bool)isStreamingContent;

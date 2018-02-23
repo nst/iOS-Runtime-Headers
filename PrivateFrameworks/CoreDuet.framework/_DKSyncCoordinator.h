@@ -3,6 +3,7 @@
  */
 
 @interface _DKSyncCoordinator : NSObject <APSConnectionDelegate> {
+    _DKThrottledActivity * _activityThrottler;
     bool  _cloudSyncAvailablityObserverRegistered;
     APSConnection * _connection;
     bool  _databaseObserversRegistered;
@@ -13,6 +14,7 @@
     NSArray * _streamNamesObservedForAdditions;
     NSArray * _streamNamesObservedForDeletions;
     NSString * _syncActivityName;
+    NSHashTable * _syncCoordinatorEventNotificationDelegates;
     bool  _syncPolicyChangedObserverRegistered;
     _DKSyncState * _syncState;
     NSString * _triggeredSyncDelayActivityName;
@@ -35,11 +37,8 @@
 - (void)_cloudSyncAvailabilityDidChange:(id)arg1;
 - (void)_cloudSyncDidReset:(id)arg1;
 - (void)_createPushConnection;
-- (void)_databaseDidAddToStream:(id)arg1;
 - (void)_databaseDidAddToStreamName:(id)arg1;
-- (void)_databaseDidDeleteFromStream:(id)arg1;
 - (void)_databaseDidDeleteFromStreamName:(id)arg1;
-- (void)_databaseDidHaveInsertsAndDeletes:(id)arg1;
 - (void)_databaseDidHaveInsertsAndDeletesWithInsertsAndDeletesCount:(unsigned long long)arg1;
 - (void)_deleteAllRemoteSyncDataIfSiriCloudSyncHasBeenDisabled;
 - (void)_deleteEventsForDevices:(id)arg1;
@@ -75,7 +74,6 @@
 - (void)_sendNotificationsForAppliedRemoteAdditionChangeSet:(id)arg1;
 - (void)_sendNotificationsForAppliedRemoteDeletionChangeSet:(id)arg1 deleted:(unsigned long long)arg2;
 - (void)_sendNotificationsForCreatedAdditionChangeSet:(id)arg1;
-- (void)_sendNotificationsForCreatedChangeSet:(id)arg1;
 - (void)_sendNotificationsForCreatedDeletionChangeSet:(id)arg1;
 - (unsigned long long)_sequenceNumberOfLastDeletionChangeSetProcessedFromDevice:(id)arg1;
 - (void)_setIfHigherSequenceNumber:(unsigned long long)arg1 ofLastDeletionChangeSetProcessedFromDevice:(id)arg2;
@@ -91,6 +89,7 @@
 - (void)_unregisterPeriodicJob;
 - (void)_unregisterSiriSyncEnabledObserver;
 - (void)_unregisterSyncPolicyChangedObserver;
+- (void)addSyncCoordinatorEventNotificationDelegate:(id)arg1;
 - (id)changeSetForSyncWithInsertedObjects:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 error:(id*)arg4;
 - (id)changeSetForSyncWithTombstones:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 error:(id*)arg4;
 - (void)connection:(id)arg1 didReceiveIncomingMessage:(id)arg2;
@@ -98,7 +97,11 @@
 - (void)dealloc;
 - (void)deleteRemoteStateWithReply:(id /* block */)arg1;
 - (id)initWithStorage:(id)arg1;
+- (void)knowledgeStorage:(id)arg1 didDeleteEventsWithStreamNameCounts:(id)arg2;
+- (void)knowledgeStorage:(id)arg1 didHaveInsertsAndDeletesWithCount:(unsigned long long)arg2;
+- (void)knowledgeStorage:(id)arg1 didInsertEventsWithStreamNameCounts:(id)arg2;
 - (void)performSyncWithPolicy:(id)arg1 reply:(id /* block */)arg2;
+- (void)removeSyncCoordinatorEventNotificationDelegate:(id)arg1;
 - (id)storage;
 - (void)syncWithReply:(id /* block */)arg1;
 

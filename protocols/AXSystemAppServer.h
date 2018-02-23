@@ -28,4 +28,8 @@
 - (void)rebootDevice;
 - (void)wakeUpDeviceIfNecessary;
 
+@optional
+
+- (bool)isPasscodeLockVisible;
+
 @end

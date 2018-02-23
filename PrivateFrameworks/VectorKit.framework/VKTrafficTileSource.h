@@ -21,7 +21,9 @@
 - (void)_acceptPendingTilesIfCompletedWithTile:(id)arg1;
 - (void)_acceptTileIfComplete:(id)arg1 forKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg2;
 - (void)_constructTile:(id)arg1 forKey:(struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; })arg2;
+- (void)_failTilesForFailedDynamicTile:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (void)_fetchedTile:(id)arg1;
+- (void)_notifyRoadsTileSourceOfErrorForSourceKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (bool)_shouldDecodeTile:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (bool)canFetchTrafficTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (void)clearCaches;

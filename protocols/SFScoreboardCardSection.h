@@ -9,6 +9,7 @@
 - (SFColor *)backgroundColor;
 - (bool)canBeHidden;
 - (NSDictionary *)dictionaryRepresentation;
+- (NSString *)eventStatus;
 - (bool)hasBottomPadding;
 - (bool)hasTopPadding;
 - (NSData *)jsonData;
@@ -19,6 +20,7 @@
 - (void)setAccessibilityDescription:(NSString *)arg1;
 - (void)setBackgroundColor:(SFColor *)arg1;
 - (void)setCanBeHidden:(bool)arg1;
+- (void)setEventStatus:(NSString *)arg1;
 - (void)setHasBottomPadding:(bool)arg1;
 - (void)setHasTopPadding:(bool)arg1;
 - (void)setPunchoutOptions:(NSArray *)arg1;

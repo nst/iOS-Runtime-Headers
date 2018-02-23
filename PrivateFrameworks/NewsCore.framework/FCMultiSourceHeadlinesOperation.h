@@ -3,6 +3,7 @@
  */
 
 @interface FCMultiSourceHeadlinesOperation : FCOperation {
+    <FCAppConfiguration> * _appConfiguration;
     NSSet * _articleIDs;
     NSArray * _articleListIDs;
     FCCachePolicy * _cachePolicyForArticleLists;
@@ -14,6 +15,7 @@
     NSDictionary * _resultArticleListsByID;
 }
 
+@property (nonatomic, copy) <FCAppConfiguration> *appConfiguration;
 @property (nonatomic, copy) NSSet *articleIDs;
 @property (nonatomic, copy) NSArray *articleListIDs;
 @property (nonatomic, retain) FCCachePolicy *cachePolicyForArticleLists;
@@ -25,6 +27,7 @@
 @property (nonatomic, retain) NSDictionary *resultArticleListsByID;
 
 - (void).cxx_destruct;
+- (id)appConfiguration;
 - (id)articleIDs;
 - (id)articleListIDs;
 - (id)cachePolicyForArticleLists;
@@ -37,6 +40,7 @@
 - (id)resultArticleIDHeadlinesByArticleID;
 - (id)resultArticleListHeadlinesByArticleListID;
 - (id)resultArticleListsByID;
+- (void)setAppConfiguration:(id)arg1;
 - (void)setArticleIDs:(id)arg1;
 - (void)setArticleListIDs:(id)arg1;
 - (void)setCachePolicyForArticleLists:(id)arg1;

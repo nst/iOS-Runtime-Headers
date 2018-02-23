@@ -12,6 +12,7 @@
 @property (nonatomic, readonly) GEOMapRegion *boundingRegion;
 @property (nonatomic, readonly) NSArray *browseCategories;
 @property (getter=isChainResultSet, nonatomic, readonly) bool chainResultSet;
+@property (nonatomic, readonly) GEOResolvedItem *clientResolvedResult;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) GEORelatedSearchSuggestion *defaultRelatedSuggestion;
 @property (readonly, copy) NSString *description;
@@ -38,6 +39,7 @@
 - (id)boundingRegion;
 - (id)browseCategories;
 - (void)cancel;
+- (id)clientResolvedResult;
 - (id)defaultRelatedSuggestion;
 - (id)description;
 - (id)directionIntent;

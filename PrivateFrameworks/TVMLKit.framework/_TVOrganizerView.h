@@ -10,7 +10,6 @@
     NSArray * _components;
     NSDictionary * _divSizesByPosition;
     NSDictionary * _divsByPosition;
-    UIFocusGuide * _focusGuide;
     UIView * _lastFocusedView;
     UIView * _leftColumnDivider;
     bool  _remembersLastFocusedItem;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXMosaicGalleryComponentSizer : SXGalleryComponentSizer <SXMosaicGalleryLayouterDataSource> {
+@interface SXMosaicGalleryComponentSizer : SXComponentSizer <SXMosaicGalleryLayouterDataSource> {
     SXMosaicGalleryLayouter * _layouter;
 }
 

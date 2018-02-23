@@ -35,7 +35,7 @@
 - (bool)setDataProtectionClassOfItemAtURL:(id)arg1 toClass:(int)arg2 ifPredicate:(id /* block */)arg3 error:(id*)arg4;
 - (bool)setInstallType:(id)arg1 onBundle:(id)arg2 error:(id*)arg3;
 - (bool)setUniqueInstallID:(id)arg1 onBundle:(id)arg2 error:(id*)arg3;
-- (bool)standardizeOwnershipAtURL:(id)arg1 toUID:(unsigned int)arg2 GID:(unsigned int)arg3 validateSymlinks:(bool)arg4 removeACLs:(bool)arg5 error:(id*)arg6;
+- (bool)standardizeOwnershipAtURL:(id)arg1 toUID:(unsigned int)arg2 GID:(unsigned int)arg3 validateSymlinks:(bool)arg4 removeACLs:(bool)arg5 setProtectionClass:(bool)arg6 error:(id*)arg7;
 - (id)uniqueInstallIDForBundle:(id)arg1 error:(id*)arg2;
 - (id)urlsForItemsInDirectoryAtURL:(id)arg1 ignoringSymlinks:(bool)arg2 error:(id*)arg3;
 

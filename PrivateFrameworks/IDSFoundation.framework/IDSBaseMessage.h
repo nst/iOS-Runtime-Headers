@@ -26,6 +26,7 @@
     unsigned long long  _sentByteCount;
     NSString * _service;
     NSData * _serviceData;
+    <IDSBaseMessageSigningSession> * _signingSession;
     NSString * _subService;
     double  _timeSent;
     double  _timeout;
@@ -35,7 +36,6 @@
     unsigned long long  _uniqueID;
     NSDictionary * _userInfo;
     bool  _usingOutgoingPush;
-    IDSValidationSession * _validationSession;
     bool  _wantsBinaryPush;
     bool  _wantsIntegerUniqueIDs;
     bool  _wantsMultipleResponses;
@@ -98,6 +98,7 @@
 @property (nonatomic, copy) NSNumber *serverTimestampReceivedDate;
 @property (copy) NSString *service;
 @property (copy) NSData *serviceData;
+@property (nonatomic, retain) <IDSBaseMessageSigningSession> *signingSession;
 @property (copy) NSString *subService;
 @property double timeSent;
 @property double timeout;
@@ -109,7 +110,6 @@
 @property (readonly) NSString *userAgentHeaderString;
 @property (nonatomic, copy) NSMutableArray *userIDArray;
 @property (copy) NSDictionary *userInfo;
-@property (nonatomic, retain) IDSValidationSession *validationSession;
 @property (readonly) bool wantsAPSRetries;
 @property (readonly) bool wantsAnisetteHeaders;
 @property (readonly) bool wantsBagKey;
@@ -231,6 +231,7 @@
 - (void)setServerTimestampReceivedDate:(id)arg1;
 - (void)setService:(id)arg1;
 - (void)setServiceData:(id)arg1;
+- (void)setSigningSession:(id)arg1;
 - (void)setSubService:(id)arg1;
 - (void)setTimeSent:(double)arg1;
 - (void)setTimeout:(double)arg1;
@@ -241,12 +242,12 @@
 - (void)setUniqueID:(unsigned long long)arg1;
 - (void)setUserIDArray:(id)arg1;
 - (void)setUserInfo:(id)arg1;
-- (void)setValidationSession:(id)arg1;
 - (void)setWantsBinaryPush:(bool)arg1;
 - (void)setWantsIntegerUniqueIDs:(bool)arg1;
 - (void)setWantsMultipleResponses:(bool)arg1;
 - (void)setWantsResponse:(bool)arg1;
 - (bool)shouldForceDevicesToCarry;
+- (id)signingSession;
 - (id)subService;
 - (double)timeSent;
 - (double)timeout;
@@ -258,7 +259,6 @@
 - (id)userAgentHeaderString;
 - (id)userIDArray;
 - (id)userInfo;
-- (id)validationSession;
 - (bool)wantsAPSRetries;
 - (bool)wantsAnisetteHeaders;
 - (bool)wantsBagKey;

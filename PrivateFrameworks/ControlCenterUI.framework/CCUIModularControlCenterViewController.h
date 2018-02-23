@@ -14,11 +14,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CCUIModularControlCenterViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } edgeInsets;
 @property (readonly) unsigned long long hash;
 @property (getter=isHostedInTestApp, nonatomic) bool hostedInTestApp;
 @property (nonatomic, readonly) CCUIModuleCollectionViewController *moduleCollectionViewController;
 @property (nonatomic, readonly) CCUIModuleInstanceManager *moduleInstanceManager;
+@property (nonatomic, readonly) unsigned long long moduleRowCount;
 @property (nonatomic, readonly) CCUIStatusLabelViewController *statusLabelViewController;
 @property (readonly) Class superclass;
 
@@ -27,7 +27,6 @@
 - (void).cxx_destruct;
 - (long long)_interfaceOrientation;
 - (id)_moduleCollectionViewContainerView;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_moduleCollectionViewFrame;
 - (void)_reparent;
 - (void)_reparentAndBecomeActive;
 - (void)_reparentCollectionViewController;
@@ -35,17 +34,16 @@
 - (id)_safeModuleCollectionViewContainerView;
 - (id)_safeStatusLabelViewContainerView;
 - (id)_statusLabelViewContainerView;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_statusLabelViewFrame;
 - (bool)canDismissPresentedContent;
 - (void)closeCurrentModuleWithCompletionHandler:(id /* block */)arg1;
 - (void)contentModuleContext:(id)arg1 enqueueStatusUpdate:(id)arg2;
 - (id)delegate;
+- (void)dismissControlCenterForContentModuleContext:(id)arg1;
 - (void)dismissExpandedModuleAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (void)dismissExpandedViewForContentModuleContext:(id)arg1;
 - (void)dismissPresentedContent;
 - (void)dismissPresentedContentAnimated:(bool)arg1 completion:(id /* block */)arg2;
 - (void)dismissPresentedContentWithCompletionHandler:(id /* block */)arg1;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
 - (void)expandModuleWithIdentifier:(id)arg1;
 - (id)initWithSystemAgent:(id)arg1;
 - (id)interactionHighlightContainerViewForModuleCollectionViewController:(id)arg1;
@@ -62,6 +60,7 @@
 - (void)moduleCollectionViewController:(id)arg1 willRemoveModuleContainerViewController:(id)arg2;
 - (id)moduleInstanceManager;
 - (void)moduleInstancesChangedForModuleInstanceManager:(id)arg1;
+- (unsigned long long)moduleRowCount;
 - (id)obscuringBackgroundViewForModuleCollectionViewController:(id)arg1;
 - (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)requestExpandModuleForContentModuleContext:(id)arg1;
@@ -70,7 +69,6 @@
 - (bool)shouldAutomaticallyForwardAppearanceMethods;
 - (id)statusLabelViewController;
 - (void)viewDidLoad;
-- (void)viewWillLayoutSubviews;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

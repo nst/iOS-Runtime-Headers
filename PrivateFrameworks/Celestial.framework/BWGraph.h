@@ -17,6 +17,7 @@
     bool  _running;
     NSMutableArray * _sinkNodes;
     NSMutableArray * _sourceNodes;
+    NSObject<OS_dispatch_group> * _sourceNodesStartGroup;
     NSObject<OS_dispatch_group> * _startGroup;
     <BWGraphStatusDelegate> * _statusDelegate;
     bool  _supportsLiveReconfiguration;
@@ -45,6 +46,7 @@
 - (id)_reverseDepthFirstEnumeratorWithVertexOrdering:(int)arg1;
 - (id)_sinkNodes;
 - (id)_sourceNodes;
+- (void)_timedOutWaitingForOperationToCompleteWithDescription:(id)arg1;
 - (void)_waitForOutstandingStartOrCommitOperationToComplete;
 - (bool)addNode:(id)arg1 error:(id*)arg2;
 - (void)beginConfiguration;
@@ -64,5 +66,6 @@
 - (bool)stop:(id*)arg1;
 - (bool)supportsLiveReconfiguration;
 - (void)waitForOutstandingStartOrCommitOperationToComplete;
+- (void)waitForSourceNodesToStart;
 
 @end

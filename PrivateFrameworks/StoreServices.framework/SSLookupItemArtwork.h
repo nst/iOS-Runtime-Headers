@@ -27,6 +27,7 @@
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 - (id)MP_colorForColorKind:(id)arg1;
+- (id)MP_rawURLString;
 - (id)initWithRawMediaLookupDictionary:(id)arg1;
 
 @end

@@ -19,10 +19,10 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) VSDelayOperation *expirationOperation;
-@property (nonatomic, retain) VSSubscriptionFetchOptionsValidator *fetchOptionsValidator;
+@property (retain) VSSubscriptionFetchOptionsValidator *fetchOptionsValidator;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) VSLinkedOnOrAfterChecker *linkedOnOrAfterChecker;
-@property (nonatomic, retain) VSSubscriptionPredicateFactory *predicateFactory;
+@property (retain) VSSubscriptionPredicateFactory *predicateFactory;
 @property (nonatomic, retain) NSOperationQueue *privateQueue;
 @property (nonatomic, retain) VSRemoteNotifier *remoteNotifier;
 @property (nonatomic, retain) NSMutableDictionary *subscriptionsByOptions;

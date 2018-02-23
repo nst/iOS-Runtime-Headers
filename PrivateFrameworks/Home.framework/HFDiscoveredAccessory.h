@@ -33,6 +33,7 @@
 - (id)description;
 - (id)discoveryDate;
 - (id)error;
+- (id)identify;
 - (id)init;
 - (id)initWithAccessory:(id)arg1;
 - (id)initWithAccessoryUUID:(id)arg1 accessoryName:(id)arg2;

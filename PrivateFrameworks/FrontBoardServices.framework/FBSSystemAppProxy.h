@@ -27,7 +27,6 @@
 - (id)init;
 - (void)isPasscodeLockedOrBlockedWithCompletion:(id /* block */)arg1;
 - (void)openApplication:(id)arg1 options:(id)arg2 clientHandle:(id)arg3 withResult:(id /* block */)arg4;
-- (void)pidForApplication:(id)arg1 withResult:(id /* block */)arg2;
 - (id)processHandleForApplication:(id)arg1;
 - (void)sendActions:(id)arg1 withResult:(id /* block */)arg2;
 - (void)setBadgeValue:(id)arg1 forBundleID:(id)arg2;

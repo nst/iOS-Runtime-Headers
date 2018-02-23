@@ -30,8 +30,6 @@
 - (id)accessibilityCustomRotorMembership;
 - (bool)accessibilitySkippedDuringReadAll;
 - (Class)componentModelClass;
-- (Class)componentSizerClass;
-- (Class)componentViewClass;
 - (unsigned long long)contentRelevance;
 - (id)defaultComponentStyleIdentifiers;
 - (id)defaultTextStyleIdentifiers;

@@ -55,6 +55,8 @@
     struct __CVBuffer { } * _streamingFilteringScaledDepthInputBuffer;
     struct __CVBuffer { } * _streamingFilteringScaledDepthOutputBuffer;
     int  _verticalSensorBinningFactor;
+    struct work_interval { } * _workInterval;
+    bool  _workIntervalHintsEnabled;
 }
 
 + (void)initialize;
@@ -65,6 +67,7 @@
 - (int)_convertU16toFloatForImage_NEON:(struct __CVBuffer { }*)arg1 dst:(struct __CVBuffer { }*)arg2 options:(struct { unsigned int x1; float x2; float x3; unsigned int x4; bool x5; }*)arg3;
 - (id)_depthMetadataDictionaryFromDepthSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 orientation:(unsigned int)arg2 stillFilteringRequested:(bool)arg3;
 - (int)_loadAndConfigureDepthProcessorClass:(id)arg1;
+- (int)_parseCameraInfo;
 - (void)_updateOutputRequirements;
 - (int)baseRotationDegrees;
 - (int)convertToFloatAndRotate:(struct opaqueCMSampleBuffer { }*)arg1 inputSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2 outputPixelBuffer:(struct __CVBuffer { }*)arg3;

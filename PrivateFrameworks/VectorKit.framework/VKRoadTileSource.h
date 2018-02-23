@@ -13,6 +13,7 @@
 @property (nonatomic, retain) VKTrafficTileSource *trafficTileSource;
 
 - (void)_fetchedTile:(id)arg1;
+- (void)_trafficFailed:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (void)clearCaches;
 - (void)dealloc;
 - (void)expireAllTraffic;

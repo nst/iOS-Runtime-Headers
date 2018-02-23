@@ -10,6 +10,7 @@
 
 @property (nonatomic, readonly) bool devicePresenceDetected;
 @property (nonatomic) long long discoveryMode;
+@property (nonatomic, readonly) bool supportsMultipleSelection;
 
 - (void).cxx_destruct;
 - (void)_activeAudioRouteDidChangeNotification:(id)arg1;
@@ -24,8 +25,10 @@
 - (void)getPickedRouteHasVolumeControlWithCompletion:(id /* block */)arg1;
 - (void)getRoutesForCategory:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)init;
+- (bool)routeIsLeaderOfEndpoint:(id)arg1;
 - (void)setDiscoveryMode:(long long)arg1;
 - (void)setPickedRoute:(id)arg1 withPassword:(id)arg2 completion:(id /* block */)arg3;
+- (bool)supportsMultipleSelection;
 - (void)unpickAirPlayAVRoutesWithCompletion:(id /* block */)arg1;
 
 @end

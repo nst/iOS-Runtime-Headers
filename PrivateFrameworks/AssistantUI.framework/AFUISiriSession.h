@@ -41,6 +41,7 @@
 + (id)effectiveCoreLocationBundle;
 
 - (void).cxx_destruct;
+- (void)_applePaySheetPresented;
 - (void)_authenticationUIDismissed;
 - (void)_authenticationUIPresented;
 - (id)_connection;
@@ -51,6 +52,7 @@
 - (void)_handleRequestUpdateViewsCommand:(id)arg1 completion:(id /* block */)arg2;
 - (void)_handleUnlockDeviceCommand:(id)arg1 completion:(id /* block */)arg2;
 - (bool)_hasActiveRequest;
+- (void)_localAuthenticationUIPresented;
 - (void)_outputVoiceDidChange:(id)arg1;
 - (void)_performAceCommand:(id)arg1 forRequestUpdateViewsCommand:(id)arg2 afterDelay:(double)arg3;
 - (void)_performBlockWithDelegate:(id /* block */)arg1;

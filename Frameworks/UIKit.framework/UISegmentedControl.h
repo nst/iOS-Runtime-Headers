@@ -40,6 +40,7 @@
 @property (getter=_internalFocusSystem, nonatomic, readonly) _UIHostedFocusSystem *internalFocusSystem;
 @property (getter=isMomentary, nonatomic) bool momentary;
 @property (nonatomic, readonly) unsigned long long numberOfSegments;
+@property (setter=px_setMinimumSegmentWidth:, nonatomic) double px_minimumSegmentWidth;
 @property (nonatomic, retain) UIView *removedSegment;
 @property (nonatomic) long long segmentedControlStyle;
 @property (nonatomic) long long selectedSegmentIndex;
@@ -141,6 +142,11 @@
 
 // Image: /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib
 
+- (struct CGSize { double x1; double x2; })__dbg_contentOffsetForSelectedSegment;
+- (bool)__dbg_hasValidSelectedSegmentIndex;
+- (bool)__dbg_isEnabledForSelectedSegment;
+- (id)__dbg_titleForSelectedSegment;
+- (double)__dbg_widthForSelectedSegment;
 - (id)debugHierarchyPropertyDescriptions;
 - (id)debugHierarchyValueForPropertyWithName:(id)arg1;
 
@@ -256,6 +262,14 @@
 - (long long)_mapkit_selectedSegmentIndex;
 - (void)_mapkit_setSelectedSegmentIndex:(long long)arg1;
 - (void)_mapkit_setTitle:(id)arg1 forSegmentAtIndex:(long long)arg2 insertIfNeeded:(bool)arg3;
+
+// Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
+
++ (double)px_defaultMinimumSegmentWidth;
+
+- (struct CGSize { double x1; double x2; })_pxswizzled_sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (double)px_minimumSegmentWidth;
+- (void)px_setMinimumSegmentWidth:(double)arg1;
 
 // Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
 

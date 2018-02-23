@@ -11,6 +11,7 @@
 - (id)accountForMessage:(id)arg1;
 - (id)addMessages:(id)arg1 withMailbox:(id)arg2 fetchBodies:(bool)arg3 newMessagesByOldMessage:(id)arg4;
 - (id)addMessages:(id)arg1 withMailbox:(id)arg2 fetchBodies:(bool)arg3 newMessagesByOldMessage:(id)arg4 remoteIDs:(id)arg5 setFlags:(unsigned long long)arg6 clearFlags:(unsigned long long)arg7 messageFlagsForMessages:(id)arg8 copyFiles:(bool)arg9 addPOPUIDs:(bool)arg10 dataSectionsByMessage:(id)arg11;
+- (void)adjustLastSyncStatusCountBy:(long long)arg1 forMailbox:(id)arg2;
 - (unsigned int)allNonDeleteCountForMailbox:(id)arg1 includeServerSearchResults:(bool)arg2 includeThreadSearchResults:(bool)arg3;
 - (id)allUIDsInMailbox:(id)arg1;
 - (void)appendOfflineCacheOperation:(id)arg1 forAccount:(long long)arg2 lastTemporaryID:(unsigned int)arg3;

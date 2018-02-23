@@ -3,6 +3,7 @@
  */
 
 @interface HFItemSection : NSObject <HFDiffableItemGroup, NAIdentifiable, NSCopying, NSMutableCopying> {
+    NSAttributedString * _attributedFooterTitle;
     NSString * _footerTitle;
     NSString * _headerTitle;
     NSString * _identifier;
@@ -10,6 +11,7 @@
     NSDictionary * _userInfo;
 }
 
+@property (nonatomic, copy) NSAttributedString *attributedFooterTitle;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSArray *diffableItems;
@@ -28,6 +30,7 @@
 
 - (void).cxx_destruct;
 - (id)_createCopyMutable:(bool)arg1;
+- (id)attributedFooterTitle;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)diffableItems;
@@ -41,6 +44,7 @@
 - (bool)isEqual:(id)arg1;
 - (id)items;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (void)setAttributedFooterTitle:(id)arg1;
 - (void)setFooterTitle:(id)arg1;
 - (void)setHeaderTitle:(id)arg1;
 - (void)setItems:(id)arg1;

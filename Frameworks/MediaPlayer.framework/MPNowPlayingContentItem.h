@@ -2,22 +2,21 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPNowPlayingContentItem : MPContentItem {
+@interface MPNowPlayingContentItem : MPContentItem <NSCopying> {
     <MPNowPlayingContentItemArtworkDataSource> * _artworkDataSource;
     <MPNowPlayingContentItemDescriptionDataSource> * _descriptionDataSource;
-    <MPNowPlayingContentItemLanguageOptionDataSource> * _languageOptionDataSource;
     <MPNowPlayingContentItemLyricsDataSource> * _lyricsDataSource;
-    void * _mediaRemoteDeltaRequest;
     NSDictionary * _nowPlayingInfo;
 }
 
-@property (nonatomic) void*_mediaRemoteDeltaRequest;
 @property (nonatomic, copy) NSString *albumArtistName;
 @property (nonatomic, copy) NSString *albumName;
 @property (getter=isAlwaysLiveItem, nonatomic) bool alwaysLiveItem;
 @property (nonatomic, retain) MPMediaItemArtwork *artwork;
-@property (nonatomic) <MPNowPlayingContentItemArtworkDataSource> *artworkDataSource;
+@property (nonatomic, retain) <MPNowPlayingContentItemArtworkDataSource> *artworkDataSource;
 @property (nonatomic, copy) NSString *artworkIdentifier;
+@property (nonatomic, copy) NSString *artworkURL;
+@property (nonatomic, copy) NSArray *artworkURLTemplates;
 @property (nonatomic, readonly) NSDictionary *auxiliaryNowPlayingInfo;
 @property (nonatomic, copy) NSArray *availableLanguageOptions;
 @property (nonatomic, copy) NSString *collectionIdentifier;
@@ -37,19 +36,22 @@
 @property (getter=isExplicitItem, nonatomic) bool explicitItem;
 @property (nonatomic, copy) NSString *externalContentIdentifier;
 @property (nonatomic, copy) NSString *genreName;
+@property (nonatomic) bool hasArtwork;
+@property (nonatomic) bool hasDescription;
+@property (nonatomic) bool hasLanguageOptions;
+@property (nonatomic) bool hasLyrics;
 @property (nonatomic, copy) NSString *info;
-@property (nonatomic) <MPNowPlayingContentItemLanguageOptionDataSource> *languageOptionDataSource;
+@property (nonatomic) long long legacyUniqueID;
 @property (nonatomic, copy) NSString *localizedContentRating;
 @property (nonatomic, copy) MPNowPlayingInfoLyricsItem *lyrics;
 @property (nonatomic) <MPNowPlayingContentItemLyricsDataSource> *lyricsDataSource;
 @property (nonatomic) unsigned long long mediaType;
 @property (nonatomic, copy) NSDictionary *nowPlayingInfo;
-@property (nonatomic) unsigned long long numberOfChildren;
+@property (nonatomic) long long numberOfChildren;
 @property (nonatomic) long long playCount;
 @property (nonatomic) float playbackRate;
 @property (nonatomic) long long playlistType;
 @property (nonatomic, copy) NSString *profileIdentifier;
-@property (nonatomic, copy) NSString *queueIdentifier;
 @property (nonatomic, copy) NSString *radioStationName;
 @property (nonatomic, copy) NSString *radioStationStringIdentifier;
 @property (nonatomic) long long radioStationType;
@@ -73,19 +75,20 @@
 + (bool)shouldPushArtworkData;
 
 - (void).cxx_destruct;
-- (id)_changeDictionary;
-- (void*)_mediaRemoteDeltaRequest;
+- (void)_mergeContentItem:(id)arg1;
 - (id)albumArtistName;
 - (id)albumName;
 - (id)artworkDataSource;
 - (id)artworkIdentifier;
+- (id)artworkURL;
+- (id)artworkURLTemplates;
 - (id)auxiliaryNowPlayingInfo;
 - (id)availableLanguageOptions;
 - (id)collectionIdentifier;
 - (id)collectionInfo;
 - (id)composerName;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currentLanguageOptions;
-- (void)dealloc;
 - (float)defaultPlaybackRate;
 - (id)descriptionDataSource;
 - (id)deviceSpecificUserInfo;
@@ -98,8 +101,11 @@
 - (long long)episodeNumber;
 - (id)externalContentIdentifier;
 - (id)genreName;
+- (bool)hasArtwork;
+- (bool)hasDescription;
+- (bool)hasLanguageOptions;
+- (bool)hasLyrics;
 - (id)info;
-- (id)initWithIdentifier:(id)arg1;
 - (void)invalidateArtwork;
 - (void)invalidateDescription;
 - (void)invalidateLanguageOptions;
@@ -108,18 +114,17 @@
 - (bool)isExplicitItem;
 - (bool)isSharableItem;
 - (bool)isSteerable;
-- (id)languageOptionDataSource;
+- (long long)legacyUniqueID;
 - (id)localizedContentRating;
 - (id)lyrics;
 - (id)lyricsDataSource;
 - (unsigned long long)mediaType;
 - (id)nowPlayingInfo;
-- (unsigned long long)numberOfChildren;
+- (long long)numberOfChildren;
 - (long long)playCount;
 - (float)playbackRate;
 - (long long)playlistType;
 - (id)profileIdentifier;
-- (id)queueIdentifier;
 - (id)radioStationName;
 - (id)radioStationStringIdentifier;
 - (long long)radioStationType;
@@ -133,6 +138,8 @@
 - (void)setArtwork:(id)arg1;
 - (void)setArtworkDataSource:(id)arg1;
 - (void)setArtworkIdentifier:(id)arg1;
+- (void)setArtworkURL:(id)arg1;
+- (void)setArtworkURLTemplates:(id)arg1;
 - (void)setAvailableLanguageOptions:(id)arg1;
 - (void)setCollectionIdentifier:(id)arg1;
 - (void)setCollectionInfo:(id)arg1;
@@ -146,24 +153,27 @@
 - (void)setDuration:(double)arg1;
 - (void)setEditingStyleFlags:(long long)arg1;
 - (void)setElapsedTime:(double)arg1;
-- (void)setElapsedTime:(double)arg1 playbackRate:(double)arg2;
+- (void)setElapsedTime:(double)arg1 playbackRate:(float)arg2;
 - (void)setEpisodeNumber:(long long)arg1;
 - (void)setExplicitItem:(bool)arg1;
 - (void)setExternalContentIdentifier:(id)arg1;
 - (void)setGenreName:(id)arg1;
+- (void)setHasArtwork:(bool)arg1;
+- (void)setHasDescription:(bool)arg1;
+- (void)setHasLanguageOptions:(bool)arg1;
+- (void)setHasLyrics:(bool)arg1;
 - (void)setInfo:(id)arg1;
-- (void)setLanguageOptionDataSource:(id)arg1;
+- (void)setLegacyUniqueID:(long long)arg1;
 - (void)setLocalizedContentRating:(id)arg1;
 - (void)setLyrics:(id)arg1;
 - (void)setLyricsDataSource:(id)arg1;
 - (void)setMediaType:(unsigned long long)arg1;
 - (void)setNowPlayingInfo:(id)arg1;
-- (void)setNumberOfChildren:(unsigned long long)arg1;
+- (void)setNumberOfChildren:(long long)arg1;
 - (void)setPlayCount:(long long)arg1;
 - (void)setPlaybackRate:(float)arg1;
 - (void)setPlaylistType:(long long)arg1;
 - (void)setProfileIdentifier:(id)arg1;
-- (void)setQueueIdentifier:(id)arg1;
 - (void)setRadioStationName:(id)arg1;
 - (void)setRadioStationStringIdentifier:(id)arg1;
 - (void)setRadioStationType:(long long)arg1;
@@ -183,7 +193,6 @@
 - (void)setTrackArtistName:(id)arg1;
 - (void)setTrackNumber:(long long)arg1;
 - (void)setUserInfo:(id)arg1;
-- (void)set_mediaRemoteDeltaRequest:(void*)arg1;
 - (double)startTime;
 - (long long)storeAlbumID;
 - (long long)storeArtistID;

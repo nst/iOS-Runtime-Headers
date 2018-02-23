@@ -31,6 +31,7 @@
 @property (setter=_setReadyForDisplay:, nonatomic) bool isReadyForDisplay;
 @property (nonatomic, readonly) bool isViewLoaded;
 @property (setter=_setLoadedView:, nonatomic, retain) UIView *loadedView;
+@property (nonatomic, readonly) UIView *originalView;
 @property (setter=_setView:, nonatomic, retain) UIView *view;
 
 - (void).cxx_destruct;
@@ -72,6 +73,7 @@
 - (id)loadView;
 - (id)loadedView;
 - (void)notifyWhenReadyForDisplayWithTimeOut:(double)arg1 completionHandler:(id /* block */)arg2;
+- (id)originalView;
 - (void)prepareForReuse;
 - (id)presentationLayoutInfo;
 - (void)removeAllAnimations;

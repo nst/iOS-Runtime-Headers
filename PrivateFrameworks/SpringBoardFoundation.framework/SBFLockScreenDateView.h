@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@interface SBFLockScreenDateView : UIView <SBFScreenFadeReplicatable> {
+@interface SBFLockScreenDateView : UIView <SBFScreenFadeReplicatable, SFChargingVisualInformationProvider> {
     double  _alignmentPercent;
     SBFLockScreenDateSubtitleView * _customSubtitleView;
     NSDate * _date;
@@ -20,6 +20,8 @@
 }
 
 @property (nonatomic) double alignmentPercent;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } chargingVisualInformationTimeFrame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } chargingVisualInformationTimeSubtitleFrame;
 @property (nonatomic, readonly) double contentAlpha;
 @property (nonatomic, retain) SBFLockScreenDateSubtitleView *customSubtitleView;
 @property (nonatomic, retain) NSDate *date;
@@ -52,6 +54,8 @@
 - (void)_updateLabels;
 - (void)_updateUsesCompactDateFormat;
 - (double)alignmentPercent;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })chargingVisualInformationTimeFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })chargingVisualInformationTimeSubtitleFrame;
 - (double)contentAlpha;
 - (id)customSubtitleView;
 - (id)date;

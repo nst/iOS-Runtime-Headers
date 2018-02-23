@@ -5,8 +5,9 @@
 
 @required
 
+- (void)didReachLargeNudgePeakForEnrollView:(PSPearlEnrollView *)arg1;
+- (void)didReachSmallNudgePeakForEnrollView:(PSPearlEnrollView *)arg1;
 - (void)enrollView:(PSPearlEnrollView *)arg1 didNudgeInDirection:(unsigned long long)arg2 nudgeCount:(unsigned long long)arg3;
-- (void)enrollView:(PSPearlEnrollView *)arg1 filledPillsAroundAngle:(double)arg2;
-- (bool)enrollView:(PSPearlEnrollView *)arg1 shouldFillInSectionForAngle:(double)arg2;
+- (void)enrollView:(PSPearlEnrollView *)arg1 willNudgeInDirection:(unsigned long long)arg2 nudgeCount:(unsigned long long)arg3;
 
 @end

@@ -124,6 +124,7 @@
 - (bool)_repairEncodedImagesDuringMigration:(id)arg1;
 - (void)_saveDiffLocked:(id)arg1 forPassWithUniqueID:(id)arg2;
 - (void)_savePassLocked:(id)arg1 locallyAdded:(bool)arg2 wasUpdate:(bool*)arg3;
+- (void)_saveTransaction:(id)arg1 forPassWithUniqueID:(id)arg2 withPaymentCredentialType:(long long)arg3 shouldTrim:(bool)arg4;
 - (void)_saveTransactionLocked:(id)arg1 forPassWithUniqueID:(id)arg2;
 - (void)_setCurrentEphemeralTransactionIdentifier:(id)arg1 forPassWithUniqueID:(id)arg2;
 - (void)_setFelicaTransitAppletStateLocked:(id)arg1 forPassWithUniqueID:(id)arg2;
@@ -183,6 +184,7 @@
 - (bool)passDBIsAvailable;
 - (id)passDescriptions;
 - (id)passForUniqueID:(id)arg1;
+- (id)passForUniqueID:(id)arg1 includeImageSets:(bool)arg2;
 - (id)passUniqueIDForTransactionWithIdentifier:(id)arg1;
 - (id)passUniqueIDForTransactionWithServiceIdentifier:(id)arg1;
 - (id)pendingAddValueDateForPassWithUniqueID:(id)arg1;
@@ -195,6 +197,7 @@
 - (id /* block */)restoreBlockForVolatilePassData;
 - (void)saveDiff:(id)arg1 forPassWithUniqueID:(id)arg2;
 - (id)savePass:(id)arg1 isLocalPass:(bool)arg2;
+- (void)saveTransaction:(id)arg1 forPass:(id)arg2;
 - (void)saveTransaction:(id)arg1 forPassWithUniqueID:(id)arg2 withPaymentCredentialType:(long long)arg3;
 - (struct sqlite3_stmt { }*)selectCloudKitArchivedTransactionsStatement;
 - (struct sqlite3_stmt { }*)selectDeletePendingStatement;

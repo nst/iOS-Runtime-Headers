@@ -15,7 +15,7 @@
     NSMutableArray * _recordZonesToSave;
     NSMutableDictionary * _retryableErrorsByZoneID;
     id /* block */  _saveCompletionBlock;
-    bool  _shouldSynchronizeUserKeyRegistry;
+    NSMutableArray * _zonesWaitingOnKeyRegistrySync;
 }
 
 @property (nonatomic) bool allowDefaultZoneSave;
@@ -30,7 +30,7 @@
 @property (nonatomic, retain) NSMutableArray *recordZonesToSave;
 @property (nonatomic, retain) NSMutableDictionary *retryableErrorsByZoneID;
 @property (nonatomic, copy) id /* block */ saveCompletionBlock;
-@property (nonatomic) bool shouldSynchronizeUserKeyRegistry;
+@property (nonatomic, retain) NSMutableArray *zonesWaitingOnKeyRegistrySync;
 
 + (long long)isPredominatelyDownload;
 
@@ -74,7 +74,7 @@
 - (void)setRecordZonesToSave:(id)arg1;
 - (void)setRetryableErrorsByZoneID:(id)arg1;
 - (void)setSaveCompletionBlock:(id /* block */)arg1;
-- (void)setShouldSynchronizeUserKeyRegistry:(bool)arg1;
-- (bool)shouldSynchronizeUserKeyRegistry;
+- (void)setZonesWaitingOnKeyRegistrySync:(id)arg1;
+- (id)zonesWaitingOnKeyRegistrySync;
 
 @end

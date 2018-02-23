@@ -16,6 +16,8 @@
 - (void)_stageEvent:(id)arg1;
 - (void)_stageEvents:(id)arg1;
 - (void)barrier:(id /* block */)arg1;
+- (void)beginEventsGrouping;
+- (void)endEventsGrouping;
 - (id)init;
 - (void)logClientFeedbackPresented:(id)arg1;
 - (void)logEvent:(id)arg1;

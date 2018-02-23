@@ -33,6 +33,7 @@
 - (bool)_isSystemAppFrontmostExcludingSiri:(bool)arg1;
 - (void)_isSystemAppFrontmostExcludingSiri:(bool)arg1 completion:(id /* block */)arg2;
 - (id)_messageForMediaPlayingQueryForBundleID:(id)arg1;
+- (void)_sendRemoteViewIPCMessage:(long long)arg1 withRemoteViewType:(long long)arg2 withData:(id)arg3;
 - (id)_serviceName;
 - (bool)_shouldDispatchLocally;
 - (bool)_shouldValidateEntitlements;
@@ -65,6 +66,7 @@
 - (bool)hasActiveOrPendingCallOrFaceTime;
 - (void)hideAlert;
 - (void)hideNotificationCenter;
+- (void)hideRemoteView:(long long)arg1 withData:(id)arg2;
 - (id)init;
 - (id)installedApps;
 - (bool)isAppSwitcherVisible;
@@ -82,6 +84,7 @@
 - (bool)isNotificationVisible;
 - (bool)isNowPlayingUIVisible;
 - (bool)isOrientationLocked;
+- (bool)isPasscodeLockVisible;
 - (bool)isPointInsideAccessibilityInspector:(id)arg1;
 - (bool)isPurpleBuddyAppFrontmost;
 - (bool)isReceivingAirPlay;
@@ -101,6 +104,7 @@
 - (bool)isSystemAppFrontmostExludingSiri;
 - (bool)isSystemAppShowingAnAlert;
 - (bool)isSystemSleeping;
+- (void)isSystemSleeping:(id /* block */)arg1;
 - (bool)isVoiceControlRunning;
 - (void)launchMagnifierApp;
 - (bool)loadGAXBundleForUnmanagedASAM;
@@ -119,6 +123,7 @@
 - (void)purpleBuddyPID:(id /* block */)arg1;
 - (id)reachabilityHandlers;
 - (double)reachabilityOffset;
+- (void)reactivateInCallService;
 - (void)rebootDevice;
 - (void)registerReachabilityHandler:(id /* block */)arg1 withIdentifierCallback:(id /* block */)arg2;
 - (void)registerSpringBoardActionHandler:(id /* block */)arg1 withIdentifierCallback:(id /* block */)arg2;
@@ -140,6 +145,7 @@
 - (void)setLockScreenDimTimerEnabled:(bool)arg1;
 - (void)setOrientationLocked:(bool)arg1;
 - (void)setReachabilityActive:(bool)arg1;
+- (void)setReachabilityEnabled:(bool)arg1;
 - (void)setReachabilityHandlers:(id)arg1;
 - (void)setShowSpeechPlaybackControls:(bool)arg1;
 - (void)setSiriIsTalking:(bool)arg1;
@@ -149,6 +155,7 @@
 - (void)showControlCenter:(bool)arg1;
 - (void)showNotificationCenter;
 - (bool)showNotificationCenter:(bool)arg1;
+- (void)showRemoteView:(long long)arg1 withData:(id)arg2;
 - (void)simulateEdgePressHaptics;
 - (void)startHearingAidServer;
 - (void)systemAppInfoWithQuery:(unsigned long long)arg1 completion:(id /* block */)arg2;
@@ -156,6 +163,7 @@
 - (void)toggleDock;
 - (bool)toggleIncomingCall;
 - (void)toggleNotificationCenter;
+- (void)toggleReachability;
 - (int)topEventPidOverride;
 - (void)unlockDevice;
 - (void)userEventOccurred;

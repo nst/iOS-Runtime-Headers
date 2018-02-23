@@ -16,7 +16,6 @@
 @property (nonatomic) int state;
 @property (nonatomic) unsigned long long timestamp;
 
-- (int)StringAsState:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -32,7 +31,6 @@
 - (void)setState:(int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (int)state;
-- (id)stateAsString:(int)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 

@@ -12,6 +12,7 @@
 @property (nonatomic, readonly) <SXEdgeSpacing> *margin;
 @property (nonatomic, readonly) struct _SXConvertibleValue { double x1; unsigned long long x2; } maximumContentWidth;
 @property (nonatomic, readonly) struct _SXConvertibleValue { double x1; unsigned long long x2; } minimumHeight;
+@property (nonatomic, readonly) struct _SXConvertibleValue { double x1; unsigned long long x2; } suggestedHeight;
 
 + (Class)classForProtocolProperty:(id)arg1 withValue:(id)arg2;
 

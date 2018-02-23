@@ -10,5 +10,6 @@
 - (NSString *)dragIdentifier;
 - (<UIItemProviderWriting> *)dragObject;
 - (UIView *)dragPreviewView;
+- (NSString *)stringForAXDragAction;
 
 @end

@@ -11,6 +11,7 @@
 - (oneway void)confirmIntent:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 10: INIntent *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, INIntentResponse *, NSData *, NSSet *, NSError *, void*
 - (oneway void)handleIntent:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 10: INIntent *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, INIntentResponse *, NSData *, NSSet *, NSError *, void*
 - (oneway void)resolveIntentSlot:(void *)arg1 forIntent:(void *)arg2 completionBlock:(void *)arg3; // needs 3 arg types, found 8: NSString *, INIntent *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSData *, void*
+- (oneway void)resolveIntentSlots:(void *)arg1 forIntent:(void *)arg2 completionBlock:(void *)arg3; // needs 3 arg types, found 10: NSArray *, INIntent *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, bool, INIntent *, NSDictionary *, void*
 
 @optional
 

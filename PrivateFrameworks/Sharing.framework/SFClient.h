@@ -23,11 +23,8 @@
 - (void)_invalidated;
 - (void)activateAssertionWithIdentifier:(id)arg1;
 - (void)activityStateWithCompletion:(id /* block */)arg1;
-- (void)addAppleID:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)appleIDInfoWithCompletion:(id /* block */)arg1;
-- (void)appleIDListWithCompletion:(id /* block */)arg1;
 - (void)contactIDForEmailHash:(id)arg1 phoneHash:(id)arg2 completion:(id /* block */)arg3;
-- (void)copyIdentityForAppleID:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)dealloc;
 - (id)dispatchQueue;
 - (void)displayNameForEmailHash:(id)arg1 phoneHash:(id)arg2 completion:(id /* block */)arg3;
@@ -39,7 +36,7 @@
 - (void)openSetupURL:(id)arg1 completion:(id /* block */)arg2;
 - (void)preventExitForLocaleReason:(id)arg1;
 - (void)reenableProxCardType:(unsigned char)arg1 completion:(id /* block */)arg2;
-- (void)requestWithInfo:(id)arg1 completion:(id /* block */)arg2;
+- (void)repairDevice:(id)arg1 completion:(id /* block */)arg2;
 - (void)retriggerProximityPairing:(id /* block */)arg1;
 - (void)retriggerProximitySetup:(id /* block */)arg1;
 - (void)setDispatchQueue:(id)arg1;
@@ -47,7 +44,6 @@
 - (void)setInvalidationHandler:(id /* block */)arg1;
 - (void)setupDevice:(id)arg1 home:(id)arg2 completion:(id /* block */)arg3;
 - (void)showDevicePickerWithInfo:(id)arg1 completion:(id /* block */)arg2;
-- (void)statusInfoWithCompletion:(id /* block */)arg1;
 - (void)triggerHomeKitDeviceDetectedWithURL:(id)arg1 completion:(id /* block */)arg2;
 - (void)wifiPasswordSharingAvailabilityWithCompletion:(id /* block */)arg1;
 

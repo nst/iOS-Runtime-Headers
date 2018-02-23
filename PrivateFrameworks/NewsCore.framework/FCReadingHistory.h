@@ -20,6 +20,7 @@
 + (long long)commandQueueUrgency;
 + (id)commandStoreFileName;
 + (id)commandsToMergeLocalDataToCloud:(id)arg1;
++ (void)configureKeyValueStoreForJSONHandling:(id)arg1;
 + (id)desiredKeys;
 + (id)localStoreFilename;
 + (id)localStoreMigrator;

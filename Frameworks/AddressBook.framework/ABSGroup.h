@@ -7,7 +7,6 @@
     CNMutableGroup * _cnImpl;
     int  _revertedRecordID;
     ABSSource * _source;
-    unsigned int  _type;
 }
 
 @property (nonatomic, readonly) NSString *CNIdentifierString;
@@ -32,7 +31,6 @@
 - (id)cnImpl;
 - (id)compositeName;
 - (const void*)copyValueForProperty:(int)arg1;
-- (unsigned int)getType;
 - (int)id;
 - (id)init;
 - (id)initWithMutableGroup:(id)arg1;

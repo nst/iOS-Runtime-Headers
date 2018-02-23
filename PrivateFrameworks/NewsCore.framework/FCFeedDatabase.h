@@ -42,7 +42,7 @@
 
 + (unsigned short)currentFeedDatabaseVersion;
 + (void)initialize;
-+ (id)temporaryFeedDatabase;
++ (id)temporaryFeedDatabaseWithEndpoint:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)_feedItemsForLookups:(id)arg1 withFeedsByID:(id)arg2;

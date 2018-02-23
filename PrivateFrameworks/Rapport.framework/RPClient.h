@@ -23,6 +23,7 @@
 - (void)_interrupted;
 - (void)_invalidated;
 - (void)activateAssertionWithIdentifier:(id)arg1;
+- (void)diagnosticCommand:(id)arg1 params:(id)arg2 completion:(id /* block */)arg3;
 - (void)diagnosticLogControl:(id)arg1 completion:(id /* block */)arg2;
 - (void)diagnosticShow:(id)arg1 level:(int)arg2 completion:(id /* block */)arg3;
 - (id)dispatchQueue;

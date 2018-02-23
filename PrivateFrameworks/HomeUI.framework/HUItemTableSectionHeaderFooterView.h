@@ -3,11 +3,14 @@
  */
 
 @interface HUItemTableSectionHeaderFooterView : UITableViewHeaderFooterView <UITextViewDelegate> {
+    NSArray * _constraints;
+    <HFStringGenerator> * _message;
     UITextView * _messageTextView;
     <HUTextInteractionHandling> * _textInteractionHandler;
     unsigned long long  _type;
 }
 
+@property (nonatomic, retain) NSArray *constraints;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) UILabel *detailTextLabel;
@@ -22,17 +25,20 @@
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } textViewEdgeInsets;
 @property (nonatomic) unsigned long long type;
 
-+ (id)defaultAttributesFotType:(unsigned long long)arg1;
++ (id)defaultAttributesForType:(unsigned long long)arg1;
 + (bool)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
 - (void)_updateDefaultValuesForType;
+- (id)constraints;
 - (id)detailTextLabel;
 - (id)initWithReuseIdentifier:(id)arg1;
+- (id)initWithReuseIdentifier:(id)arg1 type:(unsigned long long)arg2;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (id)message;
 - (id)messageTextView;
 - (void)prepareForReuse;
+- (void)setConstraints:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setMessageTextView:(id)arg1;
 - (void)setTextAlignment:(long long)arg1;

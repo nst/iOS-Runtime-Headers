@@ -50,6 +50,7 @@
 - (void)handleAddedDeviceInformation:(id)arg1;
 - (void)handleCurrentDeviceUpdate:(id)arg1;
 - (void)handleDeviceRemovedFromAccount:(id)arg1;
+- (void)handleRemovedDeviceInformation:(id)arg1;
 - (id)init;
 - (id)initWithAccountRegistry:(id)arg1;
 - (bool)isReachable;

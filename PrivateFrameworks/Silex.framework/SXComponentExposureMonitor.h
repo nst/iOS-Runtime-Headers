@@ -16,7 +16,7 @@
 
 - (void).cxx_destruct;
 - (id)initWithViewport:(id)arg1;
-- (void)onExposureOf:(id)arg1 execute:(id /* block */)arg2;
+- (void)onExposureOf:(id)arg1 exposureStateChangeBlock:(id /* block */)arg2;
 - (void)performMonitoring;
 - (void)setTrackingComponents:(id)arg1;
 - (void)trackExposureForTracking:(id)arg1;

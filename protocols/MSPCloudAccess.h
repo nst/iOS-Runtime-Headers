@@ -6,7 +6,7 @@
 @required
 
 - (id /* block */)availabilityDidChangeHandler:(void *)arg1; // needs 1 arg types, found 5: id /* block */, <MSPCloudAccess> *, void*, id, SEL
-- (void)checkForAvailabilityWithCallbackQueue:(void *)arg1 schedulePreAvailabilityOperationHandler:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 14: NSObject<OS_dispatch_queue> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSOperation *, void*, id /* block */, void*, void, id /* block */, <NSObject><NSCopying><NSCoding> *, NSError *, void*
+- (void)checkForAvailabilityWithCallbackQueue:(void *)arg1 schedulePreAvailabilityOperationHandler:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 14: NSObject<OS_dispatch_queue> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSOperation *, void*, id /* block */, void*, void, id /* block */, NSString *, NSError *, void*
 - (id /* block */)contentsDidChangeHandler:(void *)arg1; // needs 1 arg types, found 11: id /* block */, id /* block */, void*, void, id /* block */, bool, NSError *, void*, void*, id, SEL
 - (NSDate *)minimumStartDate;
 - (void)networkReachabilityChanged:(bool)arg1;

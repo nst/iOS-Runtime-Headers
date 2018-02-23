@@ -3,6 +3,7 @@
  */
 
 @interface VSAppSettingsFacade : NSObject {
+    NSOperation * _currentPresentationOperation;
     NSArray * _decidedApps;
     NSArray * _featuredAdamIDs;
     VSIdentityProvider * _identityProvider;
@@ -17,6 +18,7 @@
     NSArray * _voucherApps;
 }
 
+@property (nonatomic, retain) NSOperation *currentPresentationOperation;
 @property (nonatomic, copy) NSArray *decidedApps;
 @property (nonatomic, copy) NSArray *featuredAdamIDs;
 @property (nonatomic, retain) VSIdentityProvider *identityProvider;
@@ -32,9 +34,10 @@
 
 - (void).cxx_destruct;
 - (id)_fetchOperationForAdamIDs:(id)arg1;
-- (void)_promoteFeaturedAdamIDs:(id)arg1 inApps:(id)arg2;
 - (void)_setNeedsUpdateApps;
 - (void)_updateApps;
+- (id)autorelease;
+- (id)currentPresentationOperation;
 - (void)dealloc;
 - (id)decidedApps;
 - (id)featuredAdamIDs;
@@ -46,7 +49,10 @@
 - (bool)needsUpdateApps;
 - (id)privateQueue;
 - (int)registrationToken;
+- (oneway void)release;
 - (id)restrictionsCenter;
+- (id)retain;
+- (void)setCurrentPresentationOperation:(id)arg1;
 - (void)setDecidedApps:(id)arg1;
 - (void)setFeaturedAdamIDs:(id)arg1;
 - (void)setIdentityProvider:(id)arg1;

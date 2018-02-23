@@ -30,6 +30,7 @@
 - (id)currentChangeIfExists;
 - (id)debugDetailedDescription;
 - (void)didPerformChanges;
+- (void)didPublishChanges;
 - (id)init;
 - (id)newViewModelChange;
 - (void)performChanges:(id /* block */)arg1;

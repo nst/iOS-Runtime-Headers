@@ -3,45 +3,64 @@
  */
 
 @interface SXVideoComponentView : SXMediaComponentView <SXFullscreenVideoPlaybackCandidate, SXMediaPlaybackDelegate, SXReachabilityObserver, SXVideoAdProviderDataSource, SXVideoPlayerViewControllerDataSource, SXVideoPlayerViewControllerDelegate, SXViewportChangeListener> {
+    SXAdController * _adController;
+    SXVideoAnalyticsRouter * _analyticsRouter;
+    <SXAppStateMonitor> * _appStateMonitor;
     bool  _isReceivingViewportDynamicBoundsChanges;
     SXPosterFrameView * _posterFrame;
+    <SXReachabilityProvider> * _reachabilityProvider;
+    <SXResourceDataSource> * _resourceDataSource;
     id /* block */  _thumbnailRequestCancelHandler;
+    SXVideoComponentAnalyticsReporting * _videoComponentAnalyticsReporter;
     SXVideoPlayerViewController * _videoPlayerViewController;
 }
 
+@property (nonatomic, readonly) SXAdController *adController;
+@property (nonatomic, retain) SXVideoAnalyticsRouter *analyticsRouter;
+@property (nonatomic, readonly) <SXAppStateMonitor> *appStateMonitor;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool isReceivingViewportDynamicBoundsChanges;
 @property (nonatomic, retain) SXPosterFrameView *posterFrame;
+@property (nonatomic, readonly) <SXReachabilityProvider> *reachabilityProvider;
+@property (nonatomic, readonly) <SXResourceDataSource> *resourceDataSource;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) id /* block */ thumbnailRequestCancelHandler;
+@property (nonatomic, retain) SXVideoComponentAnalyticsReporting *videoComponentAnalyticsReporter;
 @property (nonatomic, retain) SXVideoPlayerViewController *videoPlayerViewController;
 
 - (void).cxx_destruct;
+- (id)adController;
 - (bool)allowHierarchyRemoval;
 - (unsigned long long)analyticsMediaType;
+- (id)analyticsRouter;
 - (unsigned long long)analyticsVideoType;
+- (id)appStateMonitor;
 - (bool)canEnterFullscreen;
 - (void)discardContents;
 - (void)enterFullscreen;
-- (id)initWithComponent:(id)arg1 configuration:(id)arg2 context:(id)arg3 analyticsReporting:(id)arg4 appStateMonitor:(id)arg5;
+- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6 resourceDataSource:(id)arg7 reachabilityProvider:(id)arg8 adController:(id)arg9;
 - (bool)isReceivingViewportDynamicBoundsChanges;
+- (void)loadComponent:(id)arg1;
 - (void)loadPosterFrameImage;
 - (void)pauseMediaPlayback;
 - (void)pausePrerollIfNeeded;
 - (void)playButtonTapped;
-- (bool)playbackIsAllowedForMode:(unsigned long long)arg1;
 - (id)posterFrame;
 - (void)prepareForTransitionType:(unsigned long long)arg1;
-- (void)presentComponent;
+- (void)presentComponentWithChanges:(struct { bool x1; bool x2; })arg1;
 - (void)reachabilityChanged:(bool)arg1;
+- (id)reachabilityProvider;
 - (void)registerAsMediaPlaybackDelegate;
 - (void)registerForViewportDynamicBoundsChanges;
 - (void)renderContents;
+- (id)resourceDataSource;
+- (void)setAnalyticsRouter:(id)arg1;
 - (void)setIsReceivingViewportDynamicBoundsChanges:(bool)arg1;
 - (void)setPosterFrame:(id)arg1;
 - (void)setThumbnailRequestCancelHandler:(id /* block */)arg1;
+- (void)setVideoComponentAnalyticsReporter:(id)arg1;
 - (void)setVideoPlayerViewController:(id)arg1;
 - (void)setupVideoPlayerViewController:(id)arg1;
 - (id /* block */)thumbnailRequestCancelHandler;
@@ -51,7 +70,9 @@
 - (void)unregisterForViewportDynamicBoundsChanges;
 - (id)videoAdForVideoPlayerViewController:(id)arg1;
 - (id /* block */)videoAdWithCompletionBlock:(id /* block */)arg1;
+- (id)videoComponentAnalyticsReporter;
 - (id)videoForVideoPlayerViewController:(id)arg1;
+- (bool)videoPlayerIsMoreThan50PercentVisible;
 - (id)videoPlayerViewController;
 - (void)videoPlayerViewController:(id)arg1 resumedPlaybackOfVideo:(id)arg2;
 - (void)videoPlayerViewController:(id)arg1 startedPlaybackOfVideo:(id)arg2;

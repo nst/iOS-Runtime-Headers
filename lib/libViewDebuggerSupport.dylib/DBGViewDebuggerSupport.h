@@ -6,7 +6,6 @@
 
 + (id)_arrayEncodedIndexPath:(id)arg1;
 + (id)_collectSubviewInfoForView:(id)arg1 encodeLayers:(bool)arg2;
-+ (id)_deepCopyLayer:(id)arg1;
 + (id)_layerInfo:(id)arg1 view:(id)arg2;
 + (bool)_layerShouldSupersedeSnapshot:(id)arg1;
 + (void)_populateConstraintInfosArray:(id)arg1 forViewHierarchy:(id)arg2;

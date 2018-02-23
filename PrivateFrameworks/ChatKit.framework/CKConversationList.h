@@ -35,6 +35,7 @@
 - (void)_handlePreferredServiceChangedNotification:(id)arg1;
 - (void)_handleRegistryDidRegisterChatNotification:(id)arg1;
 - (void)_handleRegistryWillUnregisterChatNotification:(id)arg1;
+- (bool)_isUnreadChat:(id)arg1 ignoringMessages:(id)arg2;
 - (void)_postConversationListChangedNotification;
 - (bool)_shouldFilterForParticipants:(id)arg1;
 - (id)activeConversations;

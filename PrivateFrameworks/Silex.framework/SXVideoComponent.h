@@ -19,7 +19,6 @@
 + (id)typeString;
 
 - (double)aspectRatioWithValue:(id)arg1 withType:(int)arg2;
-- (Class)componentViewClass;
 - (bool)enablePrerollWithValue:(id)arg1 withType:(int)arg2;
 
 @end

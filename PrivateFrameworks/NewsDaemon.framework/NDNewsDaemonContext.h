@@ -17,11 +17,11 @@
 - (void).cxx_destruct;
 - (id)_queue;
 - (id)daemon;
-- (void)fetchLatestHeadlinesWithParameters:(id)arg1 completion:(id /* block */)arg2;
+- (void)fetchLatestResultsWithParameters:(id)arg1 completion:(id /* block */)arg2;
 - (id)init;
 - (void)markAnalyticsElement:(id)arg1 asReadAtDate:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)markAnalyticsElements:(id)arg1 asSeenAtDate:(id)arg2 withCompletion:(id /* block */)arg3;
-- (void)serviceHasNewHeadlineResults;
+- (void)serviceHasNewTodayResults;
 - (void)setDaemon:(id)arg1;
 - (void)setUpdateResultsHandler:(id /* block */)arg1;
 - (id /* block */)updateResultsHandler;

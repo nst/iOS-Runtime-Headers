@@ -12,6 +12,7 @@
         unsigned short *m_buffer; 
         unsigned int m_capacity; 
         unsigned int m_size; 
+        unsigned int m_mask; 
     }  _upconvertedText;
 }
 

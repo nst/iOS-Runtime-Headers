@@ -34,7 +34,7 @@
     bool  _isInternalInstall;
     int  _matchingMode;
     NSObject<OS_os_log> * _osLog;
-    NSObject<OS_os_log> * _osLogInternal;
+    NSObject<OS_os_log> * _osLogTrace;
     bool  _showDebugImages;
     BiometricKitStatistics * _statistics;
     BiometricKitXPCClient * _xpcClient;

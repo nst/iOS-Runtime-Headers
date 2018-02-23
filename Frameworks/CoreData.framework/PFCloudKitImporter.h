@@ -42,13 +42,13 @@
 - (id)coordinator;
 - (id)database;
 - (void)dealloc;
-- (void)importIfNecessaryInTransaction:(id)arg1 completion:(id /* block */)arg2;
+- (void)importIfNecessaryWithCompletion:(id /* block */)arg1;
 - (id)importOperation;
 - (id)init;
 - (id)initWithOptions:(id)arg1 request:(id)arg2 store:(id)arg3 workQueue:(id)arg4 zone:(id)arg5 andDatabase:(id)arg6;
 - (id)monitor;
 - (id)options;
-- (void)processAccumulatedChangesForServerChangeToken:(id)arg1 withAccumulatedUpdates:(id)arg2 andDeletes:(id)arg3 inTransaction:(id)arg4 completion:(id /* block */)arg5;
+- (void)processAccumulatedChangesForServerChangeToken:(id)arg1 withAccumulatedUpdates:(id)arg2 andDeletes:(id)arg3 completion:(id /* block */)arg4;
 - (void)removeDownloadedAssetFiles;
 - (id)request;
 - (id)store;

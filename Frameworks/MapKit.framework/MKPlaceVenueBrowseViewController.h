@@ -7,6 +7,7 @@
     UIColor * _cellTitleLabelTextColor;
     MKVenuesBrowseCollectionView * _collectionView;
     NSLayoutConstraint * _collectionViewBottomConstraint;
+    MKFixedToTopCollectionViewFlowLayout * _collectionViewFlowLayout;
     <GEOVenueComponentIdentifier> * _componentIdentifier;
     <MKPlaceVenueBrowseViewControllerDelegate> * _delegate;
     MKMapItem * _mapItem;
@@ -22,6 +23,7 @@
 @property (nonatomic, retain) UIColor *cellTitleLabelTextColor;
 @property (nonatomic, retain) MKVenuesBrowseCollectionView *collectionView;
 @property (nonatomic, retain) NSLayoutConstraint *collectionViewBottomConstraint;
+@property (nonatomic, retain) MKFixedToTopCollectionViewFlowLayout *collectionViewFlowLayout;
 @property (nonatomic, retain) <GEOVenueComponentIdentifier> *componentIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MKPlaceVenueBrowseViewControllerDelegate> *delegate;
@@ -45,6 +47,7 @@
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (id)collectionViewBottomConstraint;
 - (double)collectionViewBottomPadding;
+- (id)collectionViewFlowLayout;
 - (id)componentIdentifier;
 - (void)contentSizeCategoryDidChange:(id)arg1;
 - (id)delegate;
@@ -58,6 +61,7 @@
 - (void)setCellTitleLabelTextColor:(id)arg1;
 - (void)setCollectionView:(id)arg1;
 - (void)setCollectionViewBottomConstraint:(id)arg1;
+- (void)setCollectionViewFlowLayout:(id)arg1;
 - (void)setComponentIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setMapItem:(id)arg1;

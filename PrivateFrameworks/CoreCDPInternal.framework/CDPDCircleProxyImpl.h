@@ -15,6 +15,7 @@
 + (bool)canAuthenticate;
 + (bool)registerCredentialsFromContext:(id)arg1;
 + (bool)registerCredentialsFromContext:(id)arg1 force:(bool)arg2;
++ (bool)tryRegisteringCredentialsFromContext:(id)arg1;
 
 - (void).cxx_destruct;
 - (int)_authenticatedCircleStatus:(id*)arg1;

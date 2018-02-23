@@ -30,7 +30,7 @@
 - (void)_lockedCreatePCSCacheFetchOfItem:(id)arg1 forOperation:(id)arg2 options:(unsigned long long)arg3 fetchCreator:(id /* block */)arg4 withCompletionHandler:(id /* block */)arg5;
 - (void)_lockedFetchPCSForItem:(id)arg1 memoryCache:(id)arg2 forOperation:(id)arg3 options:(unsigned long long)arg4 fetchCreator:(id /* block */)arg5 withCompletionHandler:(id /* block */)arg6;
 - (id)_lockedGetOutstandingFetchForOperation:(id)arg1 options:(unsigned long long)arg2 itemIDString:(id)arg3;
-- (id)_lockedGetSQLCache;
+- (id)_lockedGetSQLCacheWithErrorHandler:(id /* block */)arg1;
 - (void)_lockedHandleMemoryFetchOfItem:(id)arg1 pcsData:(id)arg2 forOperation:(id)arg3 options:(unsigned long long)arg4 fetchCreator:(id /* block */)arg5 withCompletionHandler:(id /* block */)arg6;
 - (void)_lockedInvalidateAllOutstandingPCSFetchesForItemIDString:(id)arg1 databaseScope:(long long)arg2;
 - (void)_lockedRemoveOutstandingFetch:(id)arg1 forItemIDString:(id)arg2 databaseScope:(long long)arg3;
@@ -61,6 +61,7 @@
 - (void)setOutstandingFetches:(id)arg1;
 - (id)shareMemoryCache;
 - (id)sqlCache;
+- (id)sqlCacheWithErrorHandler:(id /* block */)arg1;
 - (void)updateMemoryCacheWithRecordPCSData:(id)arg1 forRecordWithID:(id)arg2 databaseScope:(long long)arg3 withCompletionHandler:(id /* block */)arg4;
 - (void)updateMemoryCacheWithSharePCSData:(id)arg1 forShareWithID:(id)arg2 databaseScope:(long long)arg3 withCompletionHandler:(id /* block */)arg4;
 - (void)updateMemoryCacheWithZonePCSData:(id)arg1 forZoneWithID:(id)arg2 databaseScope:(long long)arg3 withCompletionHandler:(id /* block */)arg4;

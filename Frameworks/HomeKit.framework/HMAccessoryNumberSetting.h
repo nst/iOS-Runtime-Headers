@@ -2,11 +2,15 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMAccessoryNumberSetting : HMAccessorySetting
+@interface HMAccessoryNumberSetting : HMAccessorySetting <HFPrettyDescription, HFStateDumpSerializable>
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
 @property (readonly) NSNumber *maximumValue;
 @property (readonly) NSNumber *minimumValue;
 @property (readonly) NSNumber *stepValue;
+@property (readonly) Class superclass;
 
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
@@ -20,5 +24,7 @@
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
 - (bool)hf_isBooleanSetting;
+- (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
+- (id)hf_serializedStateDumpRepresentation;
 
 @end

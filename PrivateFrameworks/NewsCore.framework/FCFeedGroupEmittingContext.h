@@ -3,6 +3,7 @@
  */
 
 @interface FCFeedGroupEmittingContext : NSObject {
+    <FCAppConfiguration> * _appConfiguration;
     NSSet * _articleIDs;
     FCCloudContext * _cloudContext;
     NSSet * _clusterIDs;
@@ -29,6 +30,7 @@
     NSArray * _remainingEmitters;
 }
 
+@property (nonatomic, readonly, copy) <FCAppConfiguration> *appConfiguration;
 @property (nonatomic, readonly, copy) NSSet *articleIDs;
 @property (nonatomic, readonly) FCCloudContext *cloudContext;
 @property (nonatomic, readonly, copy) NSSet *clusterIDs;
@@ -59,6 +61,7 @@
 - (void).cxx_destruct;
 - (id)_filterTransformationWithFilterOptions:(long long)arg1 groupTypes:(id)arg2 includeArticlesFromGroupTypes:(bool)arg3;
 - (id)allArticleIDs;
+- (id)appConfiguration;
 - (id)articleIDs;
 - (id)articleIDsContainedByGroupType:(long long)arg1;
 - (id)cloudContext;
@@ -83,7 +86,7 @@
 - (id)forYouCatchUpOperation;
 - (id)groupFromPageWithType:(long long)arg1;
 - (id)groupsFromPage;
-- (id)initWithCloudContext:(id)arg1 refreshSession:(id)arg2 refreshDateRange:(id)arg3 currentEdition:(id)arg4 followingEdition:(id)arg5 precedingGroups:(id)arg6 followingGroups:(id)arg7 pendingGroupsFromOtherSessions:(id)arg8 feedDescriptor:(id)arg9 emitters:(id)arg10 desiredHeadlineCount:(unsigned long long)arg11 preferSpeedOverQuality:(bool)arg12 forYouCatchUpOperation:(id)arg13;
+- (id)initWithAppConfiguration:(id)arg1 cloudContext:(id)arg2 refreshSession:(id)arg3 refreshDateRange:(id)arg4 currentEdition:(id)arg5 followingEdition:(id)arg6 precedingGroups:(id)arg7 followingGroups:(id)arg8 pendingGroupsFromOtherSessions:(id)arg9 feedDescriptor:(id)arg10 emitters:(id)arg11 desiredHeadlineCount:(unsigned long long)arg12 preferSpeedOverQuality:(bool)arg13 forYouCatchUpOperation:(id)arg14;
 - (bool)isFirstPageInRefreshSession;
 - (bool)isNewEdition;
 - (bool)isOffline;
@@ -92,6 +95,7 @@
 - (bool)pageHasExhaustedGroupsWithTypes:(id)arg1;
 - (bool)pageHasPrecedingGroupWithSourceIdentifier:(id)arg1;
 - (bool)pageWillContainGroupWithType:(long long)arg1;
+- (bool)pageWillContainHeadlineCount:(unsigned long long)arg1 fromGroupTypes:(id)arg2;
 - (id)pendingGroups;
 - (id)pendingGroupsFromOtherSessions;
 - (id)personalizer;

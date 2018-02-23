@@ -4,6 +4,15 @@
 
 @interface _TVBgImageLoadingViewController : UIViewController <TVAppTemplateController> {
     bool  _appliedNavigationItem;
+    struct { 
+        bool respondsToBackroundImageProxy; 
+        bool respondsToBackgroundImageRequiresBlur; 
+        bool respondsToBackdropNeeded; 
+        bool respondsToImageProxySize; 
+        bool respondsToBlurEffectStyle; 
+        bool respondsToPurgeBgImages; 
+        bool respondsToConfigureBgImageBackdropImage; 
+    }  _bgImageLoadingOptions;
     TVImageProxy * _bgImageProxy;
     bool  _loaded;
     IKViewElement * _navigationItemElement;
@@ -24,10 +33,9 @@
 - (struct CGSize { double x1; double x2; })_backgroundImageProxySize;
 - (bool)_backgroundImageRequiresBlur;
 - (long long)_blurEffectStyle;
-- (void)_configureWithBgImage:(id)arg1 backdropImage:(id)arg2;
+- (void)_dismissViewController:(id)arg1;
 - (bool)_isBackdropNeeded;
 - (long long)_overrideLargeTitleDisplayMode;
-- (void)_purgeBgImages;
 - (void)_reparentNavigationItem:(id)arg1;
 - (void)_updateNavigationBarPadding;
 - (void)_updateNavigationItem;
@@ -43,6 +51,7 @@
 - (void)updateNavigationItem:(id)arg1;
 - (void)updateWithViewElement:(id)arg1;
 - (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(bool)arg1;
 

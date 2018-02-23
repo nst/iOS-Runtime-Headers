@@ -14,12 +14,13 @@
     NSArray * _ignoreCacheForArticleIDs;
     bool  _overrideArticleCachePolicy;
     bool  _overrideTagCachePolicy;
+    bool  _shouldFilterHeadlinesWithoutSourceChannels;
     unsigned long long  _tagCachePolicy;
     double  _tagMaximumCachedAge;
 }
 
 @property (nonatomic) bool allowRecordChainFetch;
-@property (nonatomic, retain) <FCAppConfiguration> *appConfiguration;
+@property (nonatomic, copy) <FCAppConfiguration> *appConfiguration;
 @property unsigned long long articleCachePolicy;
 @property (nonatomic, retain) NSArray *articleIDs;
 @property double articleMaximumCachedAge;
@@ -29,6 +30,7 @@
 @property (nonatomic, retain) NSArray *ignoreCacheForArticleIDs;
 @property bool overrideArticleCachePolicy;
 @property bool overrideTagCachePolicy;
+@property (nonatomic) bool shouldFilterHeadlinesWithoutSourceChannels;
 @property unsigned long long tagCachePolicy;
 @property double tagMaximumCachedAge;
 
@@ -64,8 +66,10 @@
 - (void)setIgnoreCacheForArticleIDs:(id)arg1;
 - (void)setOverrideArticleCachePolicy:(bool)arg1;
 - (void)setOverrideTagCachePolicy:(bool)arg1;
+- (void)setShouldFilterHeadlinesWithoutSourceChannels:(bool)arg1;
 - (void)setTagCachePolicy:(unsigned long long)arg1;
 - (void)setTagMaximumCachedAge:(double)arg1;
+- (bool)shouldFilterHeadlinesWithoutSourceChannels;
 - (unsigned long long)tagCachePolicy;
 - (double)tagMaximumCachedAge;
 

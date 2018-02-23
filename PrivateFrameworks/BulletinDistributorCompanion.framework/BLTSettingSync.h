@@ -6,11 +6,13 @@
     BLTSectionInfoListBridgeProvider * _bridgeProvider;
     bool  _initialSyncPerformed;
     BBObserver * _observer;
+    NSMutableDictionary * _reloadBBCompletions;
     BLTSectionInfoList * _sectionInfoList;
     BLTSectionInfoSyncCoordinator * _sectionInfoSyncCoordinator;
     NSObject<OS_dispatch_queue> * _sectionInfoSyncCoordinatorQueue;
     BLTSettingSyncSendQueue * _settingSendQueue;
     unsigned long long  _settingSyncSendQueueMaxConcurrentSendCount;
+    unsigned long long  _stateHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,7 +22,10 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_addReloadBBCompletion:(id /* block */)arg1 sectionID:(id)arg2;
 - (id)_alertingSectionIDs;
+- (void)_callAndRemoveReloadBBCompletion:(id /* block */)arg1 sectionID:(id)arg2;
+- (void)_callReloadBBCompletionsForSectionID:(id)arg1;
 - (unsigned long long)_fetchSettingSyncMaxCountOverride;
 - (unsigned long long)_fetchSyncState;
 - (void)_initSettingSyncSendQueueMaxConcurrentSendCount;
@@ -30,6 +35,7 @@
 - (void)_sendSpooledSyncWithCompletion:(id /* block */)arg1 withProgress:(id /* block */)arg2;
 - (void)_setupSectionInfoListWithCompletion:(id /* block */)arg1;
 - (void)_spoolInitialSync;
+- (id)_stateDescription;
 - (void)_storeSyncState:(unsigned long long)arg1;
 - (void)_updateAllBBSectionsWithCompletion:(id /* block */)arg1 withProgress:(id /* block */)arg2 spoolToFile:(bool)arg3;
 - (bool)_willSectionIDAlert:(id)arg1;

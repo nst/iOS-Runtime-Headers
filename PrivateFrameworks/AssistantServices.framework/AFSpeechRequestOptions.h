@@ -25,6 +25,7 @@
     NSString * _serverCommandId;
     NSXPCListenerEndpoint * _speechRecordingEventListeningEndpoint;
     bool  _suppressStopAlert;
+    bool  _updateSiriOutputVolume;
     bool  _useAutomaticEndpointing;
     bool  _useBorealisBuffer;
     bool  _usePrelisteningMode;
@@ -55,6 +56,7 @@
 @property (nonatomic, copy) NSString *serverCommandId;
 @property (nonatomic, retain) NSXPCListenerEndpoint *speechRecordingEventListeningEndpoint;
 @property (nonatomic) bool suppressStopAlert;
+@property (nonatomic) bool updateSiriOutputVolume;
 @property (nonatomic) bool useAutomaticEndpointing;
 @property (nonatomic) bool useBorealisBuffer;
 @property (nonatomic) bool usePrelisteningMode;
@@ -113,6 +115,7 @@
 - (void)setServerCommandId:(id)arg1;
 - (void)setSpeechRecordingEventListeningEndpoint:(id)arg1;
 - (void)setSuppressStopAlert:(bool)arg1;
+- (void)setUpdateSiriOutputVolume:(bool)arg1;
 - (void)setUseAutomaticEndpointing:(bool)arg1;
 - (void)setUseBorealisBuffer:(bool)arg1;
 - (void)setUsePrelisteningMode:(bool)arg1;
@@ -120,6 +123,7 @@
 - (void)setVoiceTriggerEventInfo:(id)arg1;
 - (id)speechRecordingEventListeningEndpoint;
 - (bool)suppressStopAlert;
+- (bool)updateSiriOutputVolume;
 - (bool)useAutomaticEndpointing;
 - (bool)useBorealisBuffer;
 - (bool)usePrelisteningMode;

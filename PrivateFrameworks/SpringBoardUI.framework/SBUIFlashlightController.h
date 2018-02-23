@@ -8,10 +8,12 @@
     NSObject<OS_dispatch_queue> * _flashlightQueue;
     unsigned long long  _level;
     NSHashTable * _observers;
+    bool  _overheated;
 }
 
 @property (getter=isAvailable, nonatomic, readonly) bool available;
 @property (nonatomic) unsigned long long level;
+@property (getter=isOverheated, nonatomic, readonly) bool overheated;
 
 + (id)sharedInstance;
 
@@ -19,15 +21,17 @@
 - (unsigned long long)_loadFlashlightLevel;
 - (void)_postAvailabilityChangeNotification:(bool)arg1;
 - (void)_postLevelChangeNotification:(unsigned long long)arg1;
+- (void)_postOverheatedChangeNotification:(bool)arg1;
 - (void)_setFlashlightLevel:(float)arg1;
 - (void)_storeFlashlightLevel:(unsigned long long)arg1;
 - (void)_turnPowerOff;
 - (void)_turnPowerOn;
-- (void)_updateState;
+- (void)_updateStateWithAvailable:(bool)arg1 level:(unsigned long long)arg2 overheated:(bool)arg3;
 - (void)addObserver:(id)arg1;
 - (void)coolDown;
 - (id)init;
 - (bool)isAvailable;
+- (bool)isOverheated;
 - (unsigned long long)level;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)removeAllObservers;

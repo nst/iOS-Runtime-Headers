@@ -13,7 +13,6 @@
 + (id)typeString;
 
 - (id)captionWithLocalizedRoleForSpeaking;
-- (Class)componentViewClass;
 - (bool)shouldBeExposedToAssistiveTechnology;
 
 @end

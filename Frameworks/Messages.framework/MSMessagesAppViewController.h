@@ -8,6 +8,7 @@
     bool  _isReadyForDisplay;
 }
 
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } _balloonMaskEdgeInsets;
 @property (nonatomic, retain) MSConversation *activeConversation;
 @property (nonatomic, retain) <_MSMessageComposeExtensionImplProtocol> *appContext;
 @property (readonly, copy) NSString *debugDescription;
@@ -18,7 +19,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (struct CGSize { double x1; double x2; })_contentSizeThatFits:(struct CGSize { double x1; double x2; })arg1 presentationStyle:(unsigned long long)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_balloonMaskEdgeInsets;
 - (void)_conversation:(id)arg1 didSelectMessage:(id)arg2;
 - (void)_conversation:(id)arg1 willSelectMessage:(id)arg2;
 - (bool)_handleTextInputPayload:(id)arg1 withPayloadID:(id)arg2;

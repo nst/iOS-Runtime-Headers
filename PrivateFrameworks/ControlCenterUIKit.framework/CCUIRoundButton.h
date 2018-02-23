@@ -3,6 +3,7 @@
  */
 
 @interface CCUIRoundButton : UIControl <UIGestureRecognizerDelegate> {
+    UIView * _alternateSelectedStateBackgroundView;
     UIImage * _glyphImage;
     UIImageView * _glyphImageView;
     CCUICAPackageDescription * _glyphPackageDescription;
@@ -12,8 +13,10 @@
     UIView * _normalStateBackgroundView;
     UIImageView * _selectedGlyphView;
     UIView * _selectedStateBackgroundView;
+    bool  _useAlternateBackground;
 }
 
+@property (nonatomic, retain) UIView *alternateSelectedStateBackgroundView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIImage *glyphImage;
@@ -27,13 +30,16 @@
 @property (nonatomic, retain) UIImageView *selectedGlyphView;
 @property (nonatomic, retain) UIView *selectedStateBackgroundView;
 @property (readonly) Class superclass;
+@property (nonatomic) bool useAlternateBackground;
 
 - (void).cxx_destruct;
 - (double)_cornerRadius;
+- (void)_deactivateReachability:(id)arg1;
 - (void)_handlePressGesture:(id)arg1;
 - (void)_primaryActionPerformed:(id)arg1;
 - (void)_setCornerRadius:(double)arg1;
 - (void)_updateForStateChange;
+- (id)alternateSelectedStateBackgroundView;
 - (void)dealloc;
 - (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
@@ -54,6 +60,7 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)selectedGlyphView;
 - (id)selectedStateBackgroundView;
+- (void)setAlternateSelectedStateBackgroundView:(id)arg1;
 - (void)setGlyphImage:(id)arg1;
 - (void)setGlyphImageView:(id)arg1;
 - (void)setGlyphPackageDescription:(id)arg1;
@@ -63,6 +70,8 @@
 - (void)setNormalStateBackgroundView:(id)arg1;
 - (void)setSelectedGlyphView:(id)arg1;
 - (void)setSelectedStateBackgroundView:(id)arg1;
+- (void)setUseAlternateBackground:(bool)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (bool)useAlternateBackground;
 
 @end

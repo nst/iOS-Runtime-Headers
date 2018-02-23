@@ -7,6 +7,7 @@
     int  _connectionRequestNotificationToken;
     NSObject<OS_dispatch_semaphore> * _initialStateSemaphore;
     NSString * _mostRecentSOSActivationReason;
+    NSMapTable * _observerToQueue;
     bool  _sendingLocationUpdate;
     long long  _sosInitiationState;
     long long  _sosInteractiveState;
@@ -22,6 +23,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *mostRecentSOSActivationReason;
+@property (nonatomic, readonly) NSMapTable *observerToQueue;
 @property (readonly) Class superclass;
 
 + (long long)TPInCallUILaunchReasonForSOSTriggerMechanism:(long long)arg1;
@@ -39,11 +41,16 @@
 - (void).cxx_destruct;
 - (void)_resetStateWithCompletion:(id /* block */)arg1;
 - (void)_waitForInitialState;
+- (void)addObserver:(id)arg1 queue:(id)arg2;
 - (id)connection;
 - (int)connectionRequestNotificationToken;
 - (long long)currentSOSInitiationState;
 - (long long)currentSOSInteractiveState;
 - (void)dealloc;
+- (void)didDismissClientSOSBeforeSOSCall:(long long)arg1;
+- (void)didDismissSOSBeforeSOSCall:(long long)arg1;
+- (void)dismissClientSOSWithCompletion:(id /* block */)arg1;
+- (void)dismissSOSWithCompletion:(id /* block */)arg1;
 - (id)init;
 - (bool)isAllowedToMessageSOSContacts;
 - (bool)isAutomaticCallCountdownEnabled;
@@ -51,7 +58,9 @@
 - (bool)longPressTriggersEmergencySOS;
 - (void)mostRecentLocationSentWithCompletion:(id /* block */)arg1;
 - (id)mostRecentSOSActivationReason;
+- (id)observerToQueue;
 - (id)remoteSOSEngineProxy;
+- (void)removeObserver:(id)arg1;
 - (void)setAllowedToMessageSOSContacts:(bool)arg1;
 - (void)setAutomaticCallCountdownEnabled:(bool)arg1;
 - (void)setConnection:(id)arg1;
@@ -63,8 +72,8 @@
 - (void)setSendingLocationUpdate:(bool)arg1;
 - (void)startSendingLocationUpdateWithCompletion:(id /* block */)arg1;
 - (void)stopSendingLocationUpdate;
-- (void)updateCurrentSOSInitiationState:(long long)arg1;
-- (void)updateCurrentSOSInteractiveState:(long long)arg1;
+- (void)updateClientCurrentSOSInitiationState:(long long)arg1;
+- (void)updateClientCurrentSOSInteractiveState:(long long)arg1;
 - (void)willStartSendingLocationUpdate;
 
 @end

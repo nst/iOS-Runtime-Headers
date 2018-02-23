@@ -4,6 +4,7 @@
 
 @interface AWDIDSSessionCompleted : PBCodable <NSCopying> {
     int  _clientType;
+    unsigned int  _destinationType;
     unsigned int  _durationOfSession;
     unsigned int  _durationToConnect;
     unsigned int  _endedReason;
@@ -11,6 +12,7 @@
     struct { 
         unsigned int timestamp : 1; 
         unsigned int clientType : 1; 
+        unsigned int destinationType : 1; 
         unsigned int durationOfSession : 1; 
         unsigned int durationToConnect : 1; 
         unsigned int endedReason : 1; 
@@ -48,11 +50,13 @@
 }
 
 @property (nonatomic) int clientType;
+@property (nonatomic) unsigned int destinationType;
 @property (nonatomic) unsigned int durationOfSession;
 @property (nonatomic) unsigned int durationToConnect;
 @property (nonatomic) unsigned int endedReason;
 @property (nonatomic, retain) NSString *guid;
 @property (nonatomic) bool hasClientType;
+@property (nonatomic) bool hasDestinationType;
 @property (nonatomic) bool hasDurationOfSession;
 @property (nonatomic) bool hasDurationToConnect;
 @property (nonatomic) bool hasEndedReason;
@@ -95,12 +99,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (unsigned int)destinationType;
 - (id)dictionaryRepresentation;
 - (unsigned int)durationOfSession;
 - (unsigned int)durationToConnect;
 - (unsigned int)endedReason;
 - (id)guid;
 - (bool)hasClientType;
+- (bool)hasDestinationType;
 - (bool)hasDurationOfSession;
 - (bool)hasDurationToConnect;
 - (bool)hasEndedReason;
@@ -140,11 +146,13 @@
 - (id)serviceName;
 - (unsigned int)sessionProtocolVersionNumber;
 - (void)setClientType:(int)arg1;
+- (void)setDestinationType:(unsigned int)arg1;
 - (void)setDurationOfSession:(unsigned int)arg1;
 - (void)setDurationToConnect:(unsigned int)arg1;
 - (void)setEndedReason:(unsigned int)arg1;
 - (void)setGuid:(id)arg1;
 - (void)setHasClientType:(bool)arg1;
+- (void)setHasDestinationType:(bool)arg1;
 - (void)setHasDurationOfSession:(bool)arg1;
 - (void)setHasDurationToConnect:(bool)arg1;
 - (void)setHasEndedReason:(bool)arg1;

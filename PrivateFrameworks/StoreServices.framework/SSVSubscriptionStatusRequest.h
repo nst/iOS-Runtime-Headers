@@ -20,6 +20,7 @@
 @property (nonatomic, copy) NSString *reason;
 @property (readonly) Class superclass;
 
++ (bool)_allowMultipleCallbacks;
 + (long long)requestMessage;
 
 - (void).cxx_destruct;

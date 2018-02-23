@@ -28,7 +28,7 @@
 - (void)_testMigrate;
 - (void)_testMigrateToSchema:(unsigned long long)arg1;
 - (id)_trimMigrationPlan:(id)arg1 toSchema:(unsigned long long)arg2;
-- (void)addAppInstallForBundleId:(id)arg1 date:(id)arg2 genre:(id)arg3 subGenres:(id)arg4;
+- (void)addAppInstallForBundleId:(id)arg1 date:(id)arg2 genreId:(id)arg3 subGenreIds:(id)arg4;
 - (void)addAppLaunchForBundleId:(id)arg1 date:(id)arg2 withLaunchType:(long long)arg3;
 - (void)addCategoricalHistogramData:(id)arg1 forHistogramOfType:(long long)arg2;
 - (void)addExtensionLaunchForBundleId:(id)arg1 date:(id)arg2;
@@ -63,7 +63,6 @@
 - (void)migrateWithMigrationPlan:(id)arg1;
 - (bool)migrationUpdateOrInsertTimestamp:(long long)arg1 intoColumn:(id)arg2 forBundleId:(id)arg3;
 - (long long)migration_AddExtensionInfo;
-- (long long)migration_AddGenres;
 - (long long)migration_AppLaunchHistogramToTable;
 - (long long)migration_DelinkFromCoreLocationVisitMonitoring;
 - (long long)migration_DeprecateGenericAppIntentModels;
@@ -82,14 +81,14 @@
 - (long long)skipFromZeroSchema;
 - (void)swapInDuetHelperStub:(id)arg1;
 - (bool)updateOrInsertCategoricalHistogramData:(id)arg1 forHistogram:(long long)arg2;
-- (bool)updateOrInsertGenre:(id)arg1 subGenres:(id)arg2 forBundleId:(id)arg3;
+- (bool)updateOrInsertGenreId:(id)arg1 subGenreIds:(id)arg2 forBundleId:(id)arg3;
 - (bool)updateOrInsertHistogramData:(id)arg1 forHistogram:(long long)arg2;
-- (bool)updateOrInsertInstallTimestamp:(long long)arg1 genre:(id)arg2 subGenres:(id)arg3 forBundleId:(id)arg4 isExtension:(bool)arg5;
+- (bool)updateOrInsertInstallTimestamp:(long long)arg1 genreId:(id)arg2 subGenreIds:(id)arg3 forBundleId:(id)arg4 isExtension:(bool)arg5;
 - (bool)updateOrInsertSubsequentLaunchCountData:(id)arg1 forBundleId:(id)arg2;
 - (bool)updateOrInsertTimestamp:(long long)arg1 intoColumn:(id)arg2 forBundleId:(id)arg3 isExtension:(bool)arg4;
 - (void)updateSchemaVersionNumberTo:(long long)arg1;
 - (void)writeBlob:(id)arg1 type:(long long)arg2;
-- (void)writeGenre:(id)arg1 subGenres:(id)arg2 forBundleId:(id)arg3;
+- (void)writeGenreId:(id)arg1 subGenreIds:(id)arg2 forBundleId:(id)arg3;
 - (void)writeLaunches:(id)arg1 followingBundle:(id)arg2;
 
 @end

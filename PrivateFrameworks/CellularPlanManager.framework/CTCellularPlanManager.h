@@ -97,6 +97,7 @@
 - (void)setUserInPurchaseFlow:(bool)arg1;
 - (void)shouldShowAddNewRemotePlan:(id /* block */)arg1;
 - (void)shouldShowAddNewRemotePlanWithFlowType:(id /* block */)arg1;
+- (void)shouldShowAddNewRemotePlanWithFlowTypeAndTrialPlanType:(id /* block */)arg1;
 - (void)shouldShowPlanList:(id /* block */)arg1;
 - (void)startRemoteProvisioningWithCompletion:(id /* block */)arg1;
 - (void)subscriptionDetailsForCompletion:(id)arg1;

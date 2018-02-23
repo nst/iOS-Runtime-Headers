@@ -5,8 +5,8 @@
 
 @required
 
-- (HMAccessoryProfile<HFAccessorySettings> *)accessoryProfile;
 - (HFAccessorySettingsEntity *)entity;
+- (<HFMediaProfileContainer> *)mediaProfileContainer;
 - (NSString *)settingKeyPath;
 
 @end

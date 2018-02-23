@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
  */
 
-@interface MRTelevisionDevice : MRExternalDevice {
+@interface MRTelevisionDevice : MRTransportExternalDevice {
     unsigned int  _gameControllerInputMode;
     id /* block */  _gameControllerInputModeCallback;
     NSObject<OS_dispatch_queue> * _gameControllerInputModeCallbackQueue;

@@ -18,7 +18,6 @@
 
 + (void)_collectTimingDataWithOptions:(unsigned long long)arg1;
 + (bool)_collectsTimingData;
-+ (void)_resourceLoadLoop:(id)arg1;
 + (void)_setCollectsTimingData:(bool)arg1;
 + (void)_setLoaderThreadPriority:(int)arg1;
 + (void)_setMIMETypesWithNoSizeLimit:(id)arg1;
@@ -30,6 +29,7 @@
 + (struct __CFRunLoop { }*)resourceLoaderRunLoop;
 + (void)sendAsynchronousRequest:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 + (id)sendSynchronousRequest:(id)arg1 returningResponse:(id*)arg2 error:(id*)arg3;
++ (void)withResourceLoaderRunLoopAsync:(id /* block */)arg1;
 
 - (id)_cfInternal;
 - (id)_dlInternal;

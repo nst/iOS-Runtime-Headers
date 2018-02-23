@@ -29,7 +29,7 @@
     bool  audioIsPaused;
     void * audioMediaControlInfoGenerator;
     NSObject<OS_dispatch_queue> * audioQueue;
-    struct tagVCAudioReceiver { struct tagVCAudioReceiverConfig { struct tagHANDLE {} *x_1_1_1; void *x_1_1_2; void *x_1_1_3; unsigned int x_1_1_4; int x_1_1_5; int x_1_1_6; struct opaqueRTCReporting {} *x_1_1_7; } x1; void *x2; void *x3; struct opaqueVCJitterBuffer {} *x4; bool x5; struct AudioStreamBasicDescription {} *x6; int x7; double x8; struct tagVCRealTimeThread { unsigned int x_9_1_1; unsigned int x_9_1_2; struct _opaque_pthread_mutex_t { long long x_3_2_1; BOOL x_3_2_2[56]; } x_9_1_3; struct _opaque_pthread_mutex_t { long long x_4_2_1; BOOL x_4_2_2[56]; } x_9_1_4; struct _opaque_pthread_cond_t { long long x_5_2_1; BOOL x_5_2_2[40]; } x_9_1_5; int (*x_9_1_6)(); void *x_9_1_7; struct OpaqueFigThread {} *x_9_1_8; int x_9_1_9; BOOL x_9_1_10[60]; unsigned int x_9_1_11; unsigned int x_9_1_12; } x9; struct tagVCAudioReceiverReportingTask { struct opaqueRTCReporting {} *x_10_1_1; struct tagHANDLE {} *x_10_1_2; } x10; bool x11; struct _opaque_pthread_mutex_t { long long x_12_1_1; BOOL x_12_1_2[56]; } x12; struct _opaque_pthread_mutex_t { long long x_13_1_1; BOOL x_13_1_2[56]; } x13; } * audioReceiver;
+    struct tagVCAudioReceiver { struct tagVCAudioReceiverConfig { struct tagHANDLE {} *x_1_1_1; void *x_1_1_2; void *x_1_1_3; unsigned int x_1_1_4; int x_1_1_5; int x_1_1_6; bool x_1_1_7; struct opaqueRTCReporting {} *x_1_1_8; } x1; void *x2; void *x3; struct opaqueVCJitterBuffer {} *x4; bool x5; struct AudioStreamBasicDescription {} *x6; int x7; double x8; struct tagVCRealTimeThread { unsigned int x_9_1_1; unsigned int x_9_1_2; struct _opaque_pthread_mutex_t { long long x_3_2_1; BOOL x_3_2_2[56]; } x_9_1_3; struct _opaque_pthread_mutex_t { long long x_4_2_1; BOOL x_4_2_2[56]; } x_9_1_4; struct _opaque_pthread_cond_t { long long x_5_2_1; BOOL x_5_2_2[40]; } x_9_1_5; int (*x_9_1_6)(); void *x_9_1_7; struct OpaqueFigThread {} *x_9_1_8; int x_9_1_9; BOOL x_9_1_10[60]; unsigned int x_9_1_11; unsigned int x_9_1_12; } x9; struct tagVCAudioReceiverReportingTask { struct opaqueRTCReporting {} *x_10_1_1; struct tagHANDLE {} *x_10_1_2; } x10; bool x11; struct _opaque_pthread_mutex_t { long long x_12_1_1; BOOL x_12_1_2[56]; } x12; struct _opaque_pthread_mutex_t { long long x_13_1_1; BOOL x_13_1_2[56]; } x13; } * audioReceiver;
     VCAudioTransmitter * audioTransmitter;
     unsigned int  awdCallNonce;
     unsigned int  awdTime;
@@ -217,7 +217,7 @@
 }
 
 @property (readonly) bool audioIsPaused;
-@property (readonly) struct tagVCAudioReceiver { struct tagVCAudioReceiverConfig { struct tagHANDLE {} *x_1_1_1; void *x_1_1_2; void *x_1_1_3; unsigned int x_1_1_4; int x_1_1_5; int x_1_1_6; struct opaqueRTCReporting {} *x_1_1_7; } x1; void *x2; void *x3; struct opaqueVCJitterBuffer {} *x4; bool x5; struct AudioStreamBasicDescription {} *x6; int x7; double x8; struct tagVCRealTimeThread { unsigned int x_9_1_1; unsigned int x_9_1_2; struct _opaque_pthread_mutex_t { long long x_3_2_1; BOOL x_3_2_2[56]; } x_9_1_3; struct _opaque_pthread_mutex_t { long long x_4_2_1; BOOL x_4_2_2[56]; } x_9_1_4; struct _opaque_pthread_cond_t { long long x_5_2_1; BOOL x_5_2_2[40]; } x_9_1_5; int (*x_9_1_6)(); void *x_9_1_7; struct OpaqueFigThread {} *x_9_1_8; int x_9_1_9; BOOL x_9_1_10[60]; unsigned int x_9_1_11; unsigned int x_9_1_12; } x9; struct tagVCAudioReceiverReportingTask { struct opaqueRTCReporting {} *x_10_1_1; struct tagHANDLE {} *x_10_1_2; } x10; bool x11; struct _opaque_pthread_mutex_t { long long x_12_1_1; BOOL x_12_1_2[56]; } x12; struct _opaque_pthread_mutex_t { long long x_13_1_1; BOOL x_13_1_2[56]; } x13; }*audioReceiver;
+@property (readonly) struct tagVCAudioReceiver { struct tagVCAudioReceiverConfig { struct tagHANDLE {} *x_1_1_1; void *x_1_1_2; void *x_1_1_3; unsigned int x_1_1_4; int x_1_1_5; int x_1_1_6; bool x_1_1_7; struct opaqueRTCReporting {} *x_1_1_8; } x1; void *x2; void *x3; struct opaqueVCJitterBuffer {} *x4; bool x5; struct AudioStreamBasicDescription {} *x6; int x7; double x8; struct tagVCRealTimeThread { unsigned int x_9_1_1; unsigned int x_9_1_2; struct _opaque_pthread_mutex_t { long long x_3_2_1; BOOL x_3_2_2[56]; } x_9_1_3; struct _opaque_pthread_mutex_t { long long x_4_2_1; BOOL x_4_2_2[56]; } x_9_1_4; struct _opaque_pthread_cond_t { long long x_5_2_1; BOOL x_5_2_2[40]; } x_9_1_5; int (*x_9_1_6)(); void *x_9_1_7; struct OpaqueFigThread {} *x_9_1_8; int x_9_1_9; BOOL x_9_1_10[60]; unsigned int x_9_1_11; unsigned int x_9_1_12; } x9; struct tagVCAudioReceiverReportingTask { struct opaqueRTCReporting {} *x_10_1_1; struct tagHANDLE {} *x_10_1_2; } x10; bool x11; struct _opaque_pthread_mutex_t { long long x_12_1_1; BOOL x_12_1_2[56]; } x12; struct _opaque_pthread_mutex_t { long long x_13_1_1; BOOL x_13_1_2[56]; } x13; }*audioReceiver;
 @property (nonatomic, readonly) int audioTierAudioCodecBitrate;
 @property (nonatomic, readonly) int audioTierNetworkBitrate;
 @property (nonatomic, readonly) int audioTierPacketsPerBundle;
@@ -314,7 +314,7 @@
 - (bool)applyNegotiatedVideoSettings:(id*)arg1;
 - (bool)audioIsPaused;
 - (unsigned int)audioRTPID;
-- (struct tagVCAudioReceiver { struct tagVCAudioReceiverConfig { struct tagHANDLE {} *x_1_1_1; void *x_1_1_2; void *x_1_1_3; unsigned int x_1_1_4; int x_1_1_5; int x_1_1_6; struct opaqueRTCReporting {} *x_1_1_7; } x1; void *x2; void *x3; struct opaqueVCJitterBuffer {} *x4; bool x5; struct AudioStreamBasicDescription {} *x6; int x7; double x8; struct tagVCRealTimeThread { unsigned int x_9_1_1; unsigned int x_9_1_2; struct _opaque_pthread_mutex_t { long long x_3_2_1; BOOL x_3_2_2[56]; } x_9_1_3; struct _opaque_pthread_mutex_t { long long x_4_2_1; BOOL x_4_2_2[56]; } x_9_1_4; struct _opaque_pthread_cond_t { long long x_5_2_1; BOOL x_5_2_2[40]; } x_9_1_5; int (*x_9_1_6)(); void *x_9_1_7; struct OpaqueFigThread {} *x_9_1_8; int x_9_1_9; BOOL x_9_1_10[60]; unsigned int x_9_1_11; unsigned int x_9_1_12; } x9; struct tagVCAudioReceiverReportingTask { struct opaqueRTCReporting {} *x_10_1_1; struct tagHANDLE {} *x_10_1_2; } x10; bool x11; struct _opaque_pthread_mutex_t { long long x_12_1_1; BOOL x_12_1_2[56]; } x12; struct _opaque_pthread_mutex_t { long long x_13_1_1; BOOL x_13_1_2[56]; } x13; }*)audioReceiver;
+- (struct tagVCAudioReceiver { struct tagVCAudioReceiverConfig { struct tagHANDLE {} *x_1_1_1; void *x_1_1_2; void *x_1_1_3; unsigned int x_1_1_4; int x_1_1_5; int x_1_1_6; bool x_1_1_7; struct opaqueRTCReporting {} *x_1_1_8; } x1; void *x2; void *x3; struct opaqueVCJitterBuffer {} *x4; bool x5; struct AudioStreamBasicDescription {} *x6; int x7; double x8; struct tagVCRealTimeThread { unsigned int x_9_1_1; unsigned int x_9_1_2; struct _opaque_pthread_mutex_t { long long x_3_2_1; BOOL x_3_2_2[56]; } x_9_1_3; struct _opaque_pthread_mutex_t { long long x_4_2_1; BOOL x_4_2_2[56]; } x_9_1_4; struct _opaque_pthread_cond_t { long long x_5_2_1; BOOL x_5_2_2[40]; } x_9_1_5; int (*x_9_1_6)(); void *x_9_1_7; struct OpaqueFigThread {} *x_9_1_8; int x_9_1_9; BOOL x_9_1_10[60]; unsigned int x_9_1_11; unsigned int x_9_1_12; } x9; struct tagVCAudioReceiverReportingTask { struct opaqueRTCReporting {} *x_10_1_1; struct tagHANDLE {} *x_10_1_2; } x10; bool x11; struct _opaque_pthread_mutex_t { long long x_12_1_1; BOOL x_12_1_2[56]; } x12; struct _opaque_pthread_mutex_t { long long x_13_1_1; BOOL x_13_1_2[56]; } x13; }*)audioReceiver;
 - (int)audioTierAudioCodecBitrate;
 - (int)audioTierNetworkBitrate;
 - (int)audioTierPacketsPerBundle;
@@ -345,6 +345,7 @@
 - (void)cleanupWCMClient;
 - (void)cleanupWRMClient;
 - (unsigned int)codecBitmapForPayloads:(id)arg1;
+- (struct CGSize { double x1; double x2; })computeVisibleAspectRatioWithRemoteScreenAspectRatio:(struct CGSize { double x1; double x2; }*)arg1 remoteExpectedAspectRatio:(struct CGSize { double x1; double x2; }*)arg2 encodeWidth:(int)arg3 encodeHeight:(int)arg4;
 - (id)configForPayloadType:(int)arg1;
 - (bool)configureLegacyTransportWithInviteInfo:(id)arg1 error:(id*)arg2;
 - (void)configureRateController;
@@ -388,7 +389,7 @@
 - (id)getFeaturesListStringForPayload:(int)arg1;
 - (void)getFrontCaptureTime:(float*)arg1 backCaptureTime:(float*)arg2;
 - (id)getVideoRuleForVideoMode:(unsigned long long)arg1 interface:(int)arg2 sessionBitrate:(int*)arg3;
-- (void)getVideoSettings:(int)arg1 forInterface:(int)arg2 width:(int*)arg3 height:(int*)arg4 framerate:(int*)arg5 bitRate:(int*)arg6;
+- (bool)getVideoSettings:(int)arg1 forInterface:(int)arg2 payload:(int)arg3 width:(int*)arg4 height:(int*)arg5 framerate:(int*)arg6 bitRate:(int*)arg7;
 - (struct tagHANDLE { int x1; }*)hAFRC;
 - (struct tagHANDLE { int x1; }*)hMediaQueue;
 - (void)handleCellTechChange:(int)arg1;

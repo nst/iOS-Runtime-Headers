@@ -16,6 +16,7 @@
     UITapGestureRecognizer * _tapGestureRecognizer;
     <CNActionViewTemplateImage> * _templateImage;
     NSString * _title;
+    UIFont * _titleFont;
     UILabel * _titleLabel;
     NSString * _type;
 }
@@ -37,12 +38,15 @@
 @property (nonatomic, retain) UITapGestureRecognizer *tapGestureRecognizer;
 @property (nonatomic, retain) <CNActionViewTemplateImage> *templateImage;
 @property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) UIFont *titleFont;
 @property (nonatomic, retain) UILabel *titleLabel;
 @property (nonatomic, retain) NSString *type;
 
 + (id)borderColorForDisabledBoldState;
 + (id)contentColorForDisabledBoldState;
 + (id)contentColorForDisabledVibrantDarkState;
++ (id)defaultTitleFont;
++ (id)defaultTitleFontOfSize:(double)arg1;
 + (void)fadeInView:(id)arg1;
 
 - (void).cxx_destruct;
@@ -82,6 +86,7 @@
 - (void)setTapGestureRecognizer:(id)arg1;
 - (void)setTemplateImage:(id)arg1;
 - (void)setTitle:(id)arg1;
+- (void)setTitleFont:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
 - (void)setType:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
@@ -91,6 +96,7 @@
 - (id)templateImage;
 - (void)tintColorDidChange;
 - (id)title;
+- (id)titleFont;
 - (id)titleLabel;
 - (id)type;
 - (void)updateImageViewStateAnimated:(bool)arg1;

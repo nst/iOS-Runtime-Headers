@@ -57,6 +57,7 @@
     id /* block */  _responseProgressBlock;
     long long  _responseStatusCode;
     NSString * _serverProvidedAutoBugCaptureReason;
+    CKDTapToRadarRequest * _serverProvidedTapToRadarRequest;
     CKDProtobufStreamWriter * _streamWriter;
     CKTimeLogger * _timeLogger;
     NSDictionary * _timingData;
@@ -145,6 +146,7 @@
 @property (nonatomic, readonly) long long responseStatusCode;
 @property (nonatomic, readonly) NSString *sectionID;
 @property (nonatomic, copy) NSString *serverProvidedAutoBugCaptureReason;
+@property (nonatomic, retain) CKDTapToRadarRequest *serverProvidedTapToRadarRequest;
 @property (nonatomic, readonly) long long serverType;
 @property (nonatomic, readonly) bool shouldCompressBody;
 @property (nonatomic, readonly) bool shouldSendKeyIDs;
@@ -318,6 +320,7 @@
 - (id)sectionID;
 - (bool)sendRequestAnonymously;
 - (id)serverProvidedAutoBugCaptureReason;
+- (id)serverProvidedTapToRadarRequest;
 - (long long)serverType;
 - (void)setAccountInfoProvider:(id)arg1;
 - (void)setAllowAutomaticRedirects:(bool)arg1;
@@ -358,6 +361,7 @@
 - (void)setResponseObjectUUIDs:(id)arg1;
 - (void)setResponseProgressBlock:(id /* block */)arg1;
 - (void)setServerProvidedAutoBugCaptureReason:(id)arg1;
+- (void)setServerProvidedTapToRadarRequest:(id)arg1;
 - (void)setTimeLogger:(id)arg1;
 - (void)setTimingData:(id)arg1;
 - (void)setTrafficLogger:(id)arg1;

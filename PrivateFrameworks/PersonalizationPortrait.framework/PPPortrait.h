@@ -16,6 +16,9 @@
 + (id)_findLocalEntitiesWithSource:(id)arg1 stream:(id)arg2;
 + (id)_findLocalTopicsWithSource:(id)arg1 stream:(id)arg2;
 + (void)_loadNamedEntitiesOverrideFromDefaults:(id)arg1;
++ (void)_logEngagementFeedbackForItems:(id)arg1 domain:(struct PPMPortraitDomain_ { unsigned long long x1; })arg2;
++ (void)_logOverallEngagement:(id)arg1 domain:(struct PPMPortraitDomain_ { unsigned long long x1; })arg2;
++ (void)_logUsedFeedbackForItems:(id)arg1 domain:(struct PPMPortraitDomain_ { unsigned long long x1; })arg2;
 + (id)_namedEntitiesOverride;
 + (id)_namedEntityRecordFromEvent:(id)arg1;
 + (void)_purgeRecordsForDisabledBundleIdsAsync;
@@ -70,6 +73,15 @@
 + (id)namedEntityRecordsWithLimit:(unsigned long long)arg1 matchingName:(id)arg2 matchingSourceBundleId:(id)arg3 sinceDate:(id)arg4 error:(id*)arg5;
 + (id)namedEntityRecordsWithLimit:(unsigned long long)arg1 matchingName:(id)arg2 sinceDate:(id)arg3 error:(id*)arg4;
 + (id)namedEntityRecordsWithQuery:(id)arg1 error:(id*)arg2;
++ (void)portraitFeedbackEngagedMappedTopics:(id)arg1 forMapping:(id)arg2;
++ (void)portraitFeedbackEngagedNamedEntities:(id)arg1;
++ (void)portraitFeedbackEngagedTopics:(id)arg1;
++ (void)portraitFeedbackMappedTopicsOverallEngagement:(id)arg1 forMapping:(id)arg2;
++ (void)portraitFeedbackNamedEntitiesOverallEngagement:(id)arg1;
++ (void)portraitFeedbackTopicsOverallEngagement:(id)arg1;
++ (void)portraitFeedbackUsedMappedTopics:(id)arg1 forMapping:(id)arg2;
++ (void)portraitFeedbackUsedNamedEntities:(id)arg1;
++ (void)portraitFeedbackUsedTopics:(id)arg1;
 + (id)rankedNamedEntitiesWithLimit:(unsigned long long)arg1 error:(id*)arg2;
 + (id)rankedNamedEntitiesWithLimit:(unsigned long long)arg1 matchingCategory:(unsigned long long)arg2 error:(id*)arg3;
 + (id)rankedNamedEntitiesWithLimit:(unsigned long long)arg1 matchingCategory:(unsigned long long)arg2 excludingSourceBundleId:(id)arg3 fromDate:(id)arg4 toDate:(id)arg5 error:(id*)arg6;

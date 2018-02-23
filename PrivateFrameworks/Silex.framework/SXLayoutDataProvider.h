@@ -8,7 +8,6 @@
     NSMutableDictionary * _componentLayouts;
     NSMutableArray * _components;
     NSMutableSet * _componentsIdentifiersToRemove;
-    SXContext * _context;
     SXDocumentController * _documentController;
     NSObject<OS_dispatch_semaphore> * _semaphore;
 }
@@ -18,7 +17,6 @@
 @property (nonatomic, retain) NSMutableDictionary *componentLayouts;
 @property (nonatomic, retain) NSMutableArray *components;
 @property (nonatomic, retain) NSMutableSet *componentsIdentifiersToRemove;
-@property (nonatomic, readonly) SXContext *context;
 @property (nonatomic, readonly) SXDocumentController *documentController;
 @property (nonatomic, readonly) NSObject<OS_dispatch_semaphore> *semaphore;
 
@@ -31,11 +29,10 @@
 - (id)componentLayouts;
 - (id)components;
 - (id)componentsIdentifiersToRemove;
-- (id)context;
 - (id)description;
 - (id)documentController;
 - (unsigned long long)indexOfComponent:(id)arg1;
-- (id)initWithComponents:(id)arg1 andContext:(id)arg2;
+- (id)initWithComponents:(id)arg1 documentController:(id)arg2;
 - (void)insertComponent:(id)arg1 afterComponent:(id)arg2;
 - (void)insertComponent:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)insertComponentLayout:(id)arg1 withIdentifier:(id)arg2;

@@ -3,6 +3,7 @@
  */
 
 @interface PSSoftwareUpdateTermsManager : NSObject <RemoteUIControllerDelegate> {
+    bool  _agreeToCombinedTOSInProgress;
     UIViewController * _hostController;
     bool  _overrideNextRUIAction;
     UIViewController * _presentedViewController;

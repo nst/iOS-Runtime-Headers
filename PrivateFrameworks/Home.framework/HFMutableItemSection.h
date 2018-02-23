@@ -4,6 +4,7 @@
 
 @interface HFMutableItemSection : HFItemSection
 
+@property (nonatomic, copy) NSAttributedString *attributedFooterTitle;
 @property (nonatomic, copy) NSString *footerTitle;
 @property (nonatomic, copy) NSString *headerTitle;
 @property (nonatomic, copy) NSArray *items;

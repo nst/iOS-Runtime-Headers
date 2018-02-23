@@ -12,6 +12,7 @@
 
 @property (copy) NSDictionary *_DuetActivityProperties;
 @property (copy) NSData *_TCPConnectionMetadata;
+@property (readonly) unsigned short _TLSNegotiatedCipherSuite;
 @property unsigned long long _allowedProtocolTypes;
 @property bool _allowsCellular;
 @property (nonatomic) bool _allowsQUIC;
@@ -36,10 +37,12 @@
 @property unsigned int _darkWakePowerAssertion;
 @property (nonatomic, retain) NSDictionary *_dependencyInfo;
 @property bool _disallowCellular;
+@property (nonatomic) bool _doesSZExtractorConsumeExtractedData;
 @property long long _expectedWorkload;
-@property (nonatomic, retain) <SZExtractor> *_extractor;
+@property (setter=set_extractor:, nonatomic, retain) <SZExtractor> *_extractor;
 @property bool _extractorFinishedDecoding;
 @property bool _extractorPreparedForExtraction;
+@property (nonatomic) bool _hasSZExtractor;
 @property (nonatomic, retain) NSURLSessionTaskMetrics *_incompleteTaskMetrics;
 @property (nonatomic, readonly) bool _isAVAssetTask;
 @property (copy) NSURL *_ledBellyFallbackURL;
@@ -148,6 +151,7 @@
 - (float)priority;
 - (void)resume;
 - (void)setPriority:(float)arg1;
+- (void)set_TLSNegotiatedCipherSuite:(unsigned short)arg1;
 - (void)set_extractorFinishedDecoding:(bool)arg1;
 - (void)set_extractorPreparedForExtraction:(bool)arg1;
 - (void)set_loadingPriority:(double)arg1;

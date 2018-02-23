@@ -2,12 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentAuthorizationServiceViewController : UIViewController <PKAuthenticatorDelegate, PKPaymentAuthorizationFooterViewDelegate, PKPaymentAuthorizationServiceProtocol, PKPaymentAuthorizationStateMachineDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
+@interface PKPaymentAuthorizationServiceViewController : UIViewController <AKAppleIDAuthenticationInAppContextDelegate, PKAuthenticatorDelegate, PKPaymentAuthorizationFooterViewDelegate, PKPaymentAuthorizationServiceProtocol, PKPaymentAuthorizationStateMachineDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
+    bool  _allowCompactProcessing;
     bool  _authenticating;
     PKAuthenticator * _authenticator;
     long long  _authorizationMode;
     unsigned long long  _biometryAttempts;
     bool  _bypassAuthenticator;
+    UIBarButtonItem * _cancelBarButtonItem;
+    bool  _cancelButtonDisabled;
     UIView * _contentView;
     NSLayoutConstraint * _contentViewRightConstraint;
     <PKPaymentAuthorizationServiceViewControllerDelegate><PKPaymentAuthorizationHostProtocol> * _delegate;
@@ -19,30 +22,37 @@
     bool  _isPad;
     double  _keyboardHeight;
     PKPaymentAuthorizationLayout * _layout;
+    bool  _needsFinalCallback;
+    UIViewController * _passcodeViewController;
     NSLayoutConstraint * _passphraseBottomConstraint;
     UIView * _passphraseSeparatorView;
     UIViewController * _passphraseViewController;
     PKPaymentAuthorizationPasswordButtonView * _passwordButtonView;
     PKPaymentPreferencesViewController * _paymentCardPreferencesController;
+    PKPeerPaymentAccount * _peerPaymentAccount;
     PKPhysicalButtonView * _physicalButtonView;
     long long  _preferencesStyle;
     PKPaymentPreferencesViewController * _shippingAddressPreferencesController;
     PKPaymentPreferencesViewController * _shippingContactPreferencesController;
     PKPaymentPreferencesViewController * _shippingMethodPreferencesController;
+    bool  _shouldIgnorePhysicalButton;
     PKPaymentAuthorizationStateMachine * _stateMachine;
     PKPaymentAuthorizationSummaryItemsView * _summaryItemsView;
     PKPaymentAuthorizationTotalView * _totalView;
     bool  _treatingHostAsBackgrounded;
     bool  _userIntentRequired;
+    bool  _viewAppeared;
     bool  _visible;
 }
 
 @property (nonatomic, retain) PKAuthenticator *authenticator;
+@property (nonatomic, readonly) bool cancelButtonDisabled;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKPaymentAuthorizationServiceViewControllerDelegate><PKPaymentAuthorizationHostProtocol> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PKPhysicalButtonView *physicalButtonView;
+@property (nonatomic, readonly) bool shouldIgnorePhysicalButton;
 @property (nonatomic, retain) PKPaymentAuthorizationStateMachine *stateMachine;
 @property (readonly) Class superclass;
 @property (getter=isUserIntentRequired, nonatomic, readonly) bool userIntentRequired;
@@ -50,12 +60,13 @@
 - (void).cxx_destruct;
 - (void)_addPassphraseViewControllerToHierarchy:(id)arg1 withCompletion:(id /* block */)arg2;
 - (long long)_authenticatorPolicy;
+- (id)_availabilityStringForPass:(id)arg1;
 - (id)_compactNavigationController;
 - (void)_createSubviews;
 - (void)_didCancel:(bool)arg1;
 - (void)_didFailWithError:(id)arg1;
 - (void)_didFailWithFatalError:(id)arg1;
-- (void)_didSucceed;
+- (void)_didSucceedWithAuthorizationStateParam:(id)arg1;
 - (id)_evaluationRequest;
 - (void)_handleModelUpdate;
 - (void)_hostApplicationDidEnterBackground;
@@ -67,8 +78,11 @@
 - (void)_removeSimulatorHIDListener;
 - (void)_resumeAuthenticationWithPreviousError:(id)arg1 animated:(bool)arg2;
 - (void)_selectOptionsForDataItem:(id)arg1;
+- (void)_sendDidEncounterAuthorizationEventIfNecessary:(unsigned long long)arg1;
 - (void)_setAuthenticating:(bool)arg1;
-- (void)_setUserIntentRequired:(bool)arg1;
+- (void)_setPasscodeViewController:(id)arg1;
+- (void)_setPassphraseViewController:(id)arg1;
+- (void)_setUserIntentRequired:(bool)arg1 shouldIgnorePhysicalButton:(bool)arg2;
 - (void)_setVisible:(bool)arg1;
 - (void)_setupPaymentPassAndBillingAddress;
 - (void)_setupShippingAddress;
@@ -78,9 +92,12 @@
 - (void)_startEvaluation;
 - (void)_startSimulatorHIDListener;
 - (void)_suspendAuthentication;
+- (void)_suspendAuthenticationAndForceReset:(bool)arg1;
 - (Class)_tableViewClassForDataItem:(id)arg1;
 - (long long)_totalViewStyle;
 - (void)_updateBackgroundedState:(bool)arg1;
+- (void)_updateFooterStateForBiometricMatchMissIfNecessary;
+- (void)_updatePendingTransaction:(id)arg1 withAuthorizationStateParam:(id)arg2;
 - (void)_updatePhysicalButtonInstruction;
 - (void)_updatePreferencesWithErrors:(id)arg1;
 - (void)_updatePreferredContentSize;
@@ -90,6 +107,7 @@
 - (id)authenticator;
 - (void)authenticator:(id)arg1 didRequestUserAction:(long long)arg2;
 - (void)authenticator:(id)arg1 didTransitionToPearlState:(long long)arg2;
+- (void)authenticatorDidEncounterBiometricLockout:(id)arg1;
 - (void)authenticatorDidEncounterFingerOff:(id)arg1;
 - (void)authenticatorDidEncounterFingerOn:(id)arg1;
 - (void)authenticatorDidEncounterMatchMiss:(id)arg1;
@@ -100,8 +118,13 @@
 - (void)authorizationDidSelectPaymentMethodCompleteWithUpdate:(id)arg1;
 - (void)authorizationDidSelectShippingAddressCompleteWithUpdate:(id)arg1;
 - (void)authorizationDidSelectShippingMethodCompleteWithUpdate:(id)arg1;
+- (void)authorizationFooterViewDidChangeConstraints:(id)arg1;
 - (void)authorizationFooterViewPasscodeButtonPressed:(id)arg1;
+- (void)authorizationFooterViewWillChangeConstraints:(id)arg1;
+- (void)biometricAttemptFailed;
+- (bool)cancelButtonDisabled;
 - (void)cancelPressed:(id)arg1;
+- (void)contextWillBeginPresentingSecondaryUI:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)dismissPasscodeViewController;
@@ -112,6 +135,7 @@
 - (void)handleHostApplicationWillResignActive:(bool)arg1;
 - (id)handlePaymentRequest:(id)arg1 fromAppWithLocalizedName:(id)arg2 andApplicationIdentifier:(id)arg3;
 - (id)initWithLayout:(id)arg1;
+- (void)invalidate;
 - (bool)isUserIntentRequired;
 - (void)keyboardWillHide:(id)arg1;
 - (void)keyboardWillShow:(id)arg1;
@@ -125,6 +149,7 @@
 - (void)setFooterState:(long long)arg1 string:(id)arg2 animated:(bool)arg3;
 - (void)setPhysicalButtonView:(id)arg1;
 - (void)setStateMachine:(id)arg1;
+- (bool)shouldIgnorePhysicalButton;
 - (void)signInViewController:(id)arg1 didAuthenticateWithResults:(id)arg2 error:(id)arg3;
 - (bool)signInViewController:(id)arg1 shouldContinueWithAuthenticationResults:(id)arg2 error:(id)arg3 forContext:(id)arg4;
 - (id)stateMachine;

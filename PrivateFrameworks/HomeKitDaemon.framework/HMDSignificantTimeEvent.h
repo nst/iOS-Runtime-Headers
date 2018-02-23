@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDSignificantTimeEvent : HMDTimeEvent <HMFDumpState, HMFLogging, HMFMessageReceiver, NSSecureCoding> {
+@interface HMDSignificantTimeEvent : HMDTimeEvent <HMDHomeMessageReceiver, HMFDumpState, HMFLogging, NSSecureCoding> {
     NSDateComponents * _offset;
     NSString * _significantEvent;
 }
@@ -11,6 +11,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (readonly, copy) NSSet *messageReceiverChildren;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, retain) NSDateComponents *offset;
 @property (nonatomic, retain) NSString *significantEvent;

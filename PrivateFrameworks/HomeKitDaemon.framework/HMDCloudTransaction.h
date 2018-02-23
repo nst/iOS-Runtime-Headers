@@ -8,6 +8,7 @@
     bool  _createZone;
     bool  _deleteZone;
     HMDCloudChange * _homeDataChange;
+    bool  _iCloudSwitchStateEnabled;
     NSUUID * _identifier;
     bool  _needConflictResolution;
     HMFOSTransaction * _osTransaction;
@@ -32,6 +33,7 @@
 @property (nonatomic, retain) HMDCloudChange *homeDataChange;
 @property (getter=isHomeManagerTransaction, nonatomic, readonly) bool homeManagerTransaction;
 @property (getter=isHomeTransaction, nonatomic, readonly) bool homeTransaction;
+@property (nonatomic) bool iCloudSwitchStateEnabled;
 @property (nonatomic, readonly) NSUUID *identifier;
 @property (getter=isLegacyTransaction, nonatomic, readonly) bool legacyTransaction;
 @property (getter=isMetadataTransaction, nonatomic, readonly) bool metadataTransaction;
@@ -56,6 +58,7 @@
 - (void)addChangeWithRecord:(id)arg1;
 - (id)allTransactionStoreRowIDs;
 - (id)cachedCloudRecordWithObjectID:(id)arg1;
+- (void)cachedCloudRecordWithObjectID:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)changeWithObjectID:(id)arg1;
 - (id)changeWithRecordName:(id)arg1;
 - (id)cloudZone;
@@ -69,6 +72,7 @@
 - (void)fetchBatchToUpload:(id /* block */)arg1;
 - (bool)hasValidChanges;
 - (id)homeDataChange;
+- (bool)iCloudSwitchStateEnabled;
 - (id)identifier;
 - (id)init;
 - (id)initWithType:(unsigned long long)arg1 temporaryCache:(bool)arg2;
@@ -88,6 +92,7 @@
 - (id)recordsToSave;
 - (void)removeChangeWithObjectID:(id)arg1;
 - (id)replayTransaction:(id)arg1 stagedTransaction:(id)arg2;
+- (void)resetRecordWithRecordID:(id)arg1;
 - (void)setAllChangedAsProcessed;
 - (void)setCloudZone:(id)arg1;
 - (void)setCloudZoneChange:(id)arg1;
@@ -95,6 +100,7 @@
 - (void)setDeleteAsProcessedWithRecordID:(id)arg1;
 - (void)setDeleteZone:(bool)arg1;
 - (void)setHomeDataChange:(id)arg1;
+- (void)setICloudSwitchStateEnabled:(bool)arg1;
 - (void)setNeedConflictResolution:(bool)arg1;
 - (void)setOsTransaction:(id)arg1;
 - (void)setSaveAsProcessedWithRecord:(id)arg1;

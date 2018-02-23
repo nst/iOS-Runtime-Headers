@@ -3,7 +3,7 @@
 
 @protocol MPNowPlayingInfoLyricsDelegate <NSObject>
 
-@optional
+@required
 
 - (void)nowPlayingInfoCenter:(MPNowPlayingInfoCenter *)arg1 didBeginLyricsEvent:(MPNowPlayingInfoLyricsEvent *)arg2;
 - (void)nowPlayingInfoCenter:(MPNowPlayingInfoCenter *)arg1 didEndLyricsEvent:(MPNowPlayingInfoLyricsEvent *)arg2;

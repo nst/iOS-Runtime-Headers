@@ -11,7 +11,6 @@
     PKPaymentWebServiceContext * _context;
     NSObject<OS_dispatch_queue> * _delegateQueue;
     NSHashTable * _delegates;
-    PKPaymentHeroImageController * _heroImageController;
     NSMutableDictionary * _passesByLocalURL;
     PKPaymentDevice * _paymentDevice;
     bool  _sharedService;
@@ -45,6 +44,7 @@
 - (void)_archiveBackgroundContext;
 - (void)_archiveContext;
 - (bool)_canRegisterForPeerPayment;
+- (void)_canRegisterForPeerPaymentWithCompletion:(id /* block */)arg1;
 - (void)_cleanupPassDownloadCache;
 - (void)_deviceConfigurationDataWithCompletion:(id /* block */)arg1;
 - (void)_deviceProvisioningDataWithCompletion:(id /* block */)arg1;
@@ -68,10 +68,12 @@
 - (id)_paymentDevice;
 - (unsigned long long)_performRewrapRequest:(id)arg1 responseHandler:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (void)_performVerificationRequest:(id)arg1 selectedChannel:(id)arg2 paymentPass:(id)arg3 taskID:(unsigned long long)arg4 completion:(id /* block */)arg5;
+- (void)_recentConfiguration:(id /* block */)arg1;
 - (void)_removeVerificationRequestRecord:(id)arg1;
 - (unsigned long long)_resultForResponse:(id)arg1 error:(id)arg2 successHandler:(id /* block */)arg3;
 - (unsigned long long)_resultForUnexpectedStatusCode:(long long)arg1;
 - (void)_startBackgroundURLSessionWithIdentifier:(id)arg1 context:(id)arg2 backgroundDelegate:(id)arg3 completion:(id /* block */)arg4;
+- (unsigned long long)_updateContextWithRegistrationResponse:(id)arg1;
 - (void)_updateRequestWithCurrentTargetDevice:(id)arg1;
 - (void)addDelegate:(id)arg1;
 - (id)archiver;
@@ -150,6 +152,7 @@
 - (id)targetDevice;
 - (unsigned long long)unregisterDeviceWithCompanionSerialNumber:(id)arg1 completion:(id /* block */)arg2;
 - (unsigned long long)unregisterDeviceWithCompletion:(id /* block */)arg1;
+- (unsigned long long)updateRegistrationDataWithCompletion:(id /* block */)arg1;
 - (unsigned long long)updateVerification:(id)arg1 completion:(id /* block */)arg2;
 - (unsigned long long)verificationChannelsForPass:(id)arg1 completion:(id /* block */)arg2;
 - (unsigned long long)verificationOptionsForRequest:(id)arg1 completion:(id /* block */)arg2;

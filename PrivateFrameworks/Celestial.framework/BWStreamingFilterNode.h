@@ -5,13 +5,10 @@
 @interface BWStreamingFilterNode : BWNode <BWDetectedFacesFilterDelegate, BWRendererResourceProvider> {
     bool  _attachesInputPixelBufferAfterRendering;
     BWFigVideoCaptureDevice * _captureDevice;
-    NSObject<OS_dispatch_queue> * _captureDeviceQueue;
     BWColorLookupCache * _colorLookupCache;
     BWRenderListAnimator * _currentAnimator;
     BWRenderList * _currentRenderList;
     bool  _depthDataDeliveryEnabled;
-    int  _frameratesByThermalPressureLevel;
-    float  _lastDeviceFramerate;
     bool  _metadataProcessingEnabled;
     BWRenderList * _mostRecentRenderListRequested;
     BWRenderListAnimator * _nextAnimator;
@@ -19,12 +16,11 @@
     bool  _preparedToBecomeLive;
     NSObject<OS_dispatch_queue> * _processorPreparationQueue;
     bool  _receivedInitialFixedPointDisparityBuffer;
+    bool  _receivedOccludedFixedPointDisparityBuffer;
     struct os_unfair_lock_s { 
         unsigned int _os_unfair_lock_opaque; 
     }  _renderListLock;
     BWRenderListProcessor * _renderListProcessor;
-    int  _thermalPressureNotificationToken;
-    bool  _thermalThrottlingEnabled;
     BWNodeOutput * _videoOutputProvidingRenderingPool;
 }
 
@@ -38,9 +34,6 @@
 
 + (void)initialize;
 
-- (void)_registerForThermalNotificationsAndSetInitialDeviceFramerate;
-- (void)_setDeviceFramerate:(int)arg1;
-- (void)_updateThermalPressureLevelAndSetDeviceFramerate;
 - (bool)attachesInputPixelBufferAfterRendering;
 - (void)changeToFilters:(id)arg1 animated:(bool)arg2;
 - (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;

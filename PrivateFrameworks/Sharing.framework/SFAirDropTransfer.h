@@ -9,6 +9,7 @@
     NSString * _contentsTitle;
     NSURL * _customDestinationURL;
     NSError * _error;
+    unsigned long long  _failureReason;
     NSString * _identifier;
     SFAirDropTransferMetaData * _metaData;
     NSArray * _possibleActions;
@@ -25,6 +26,7 @@
 @property (nonatomic, copy) NSString *contentsTitle;
 @property (nonatomic, copy) NSURL *customDestinationURL;
 @property (nonatomic, retain) NSError *error;
+@property (nonatomic) unsigned long long failureReason;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, retain) SFAirDropTransferMetaData *metaData;
 @property (nonatomic, readonly) bool needsAction;
@@ -35,6 +37,7 @@
 @property (nonatomic) unsigned long long transferState;
 @property (nonatomic) unsigned long long userResponse;
 
++ (bool)automaticallyNotifiesObserversOfFailureReason;
 + (bool)automaticallyNotifiesObserversOfTransferState;
 + (bool)automaticallyNotifiesObserversOfUserResponse;
 + (id)keyPathsForValuesAffectingNeedsAction;
@@ -51,6 +54,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)error;
+- (unsigned long long)failureReason;
 - (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
@@ -67,6 +71,7 @@
 - (void)setContentsTitle:(id)arg1;
 - (void)setCustomDestinationURL:(id)arg1;
 - (void)setError:(id)arg1;
+- (void)setFailureReason:(unsigned long long)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setMetaData:(id)arg1;
 - (void)setPossibleActions:(id)arg1;

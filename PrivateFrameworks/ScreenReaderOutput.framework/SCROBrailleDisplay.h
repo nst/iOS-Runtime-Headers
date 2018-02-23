@@ -21,9 +21,12 @@
     int  _inputContractionMode;
     bool  _inputEnabled;
     struct __CFRunLoopTimer { } * _inputEventTimer;
+    bool  _inputPaused;
+    double  _inputPausedTime;
     bool  _inputShowEightDot;
     <SCROIOElementProtocol> * _ioElement;
     bool  _isValid;
+    NSMutableArray * _keyEventsQueue;
     long long  _mainSize;
     bool  _needsUpdating;
     int  _outputContractionMode;
@@ -71,13 +74,16 @@
 - (bool)_hasPressedBrailleKeys;
 - (id)_initWithDriver:(id)arg1 driverIdentifier:(id)arg2 ioElement:(id)arg3 delegate:(id)arg4;
 - (void)_inputEventHandler;
+- (bool)_inputPaused;
 - (bool)_isMemorizingKeys;
 - (void)_keyboardHelpHandler:(id)arg1;
 - (id)_newBrailleKeyForCurrentBrailleChord;
 - (id)_newBrailleKeyForCurrentKeyChord;
 - (id)_newBrailleKeyboardKeyForText:(id)arg1 modifiers:(unsigned int)arg2;
 - (void)_panHandler:(id)arg1;
+- (void)_pauseInput;
 - (void)_processKeyEvents:(id)arg1;
+- (void)_replaceRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withString:(id)arg2 cursor:(unsigned long long)arg3;
 - (void)_runThread;
 - (void)_setBatchUpdates:(id)arg1;
 - (void)_setBrailleFormatter:(id)arg1;
@@ -94,6 +100,7 @@
 - (id)_translatedBrailleStringAndKeyEvents:(out id*)arg1 replacementRange:(out struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg2 cursor:(out unsigned long long*)arg3;
 - (void)_unloadHandler;
 - (void)_unloadNotification:(id)arg1;
+- (void)_unpauseInput;
 - (void)_updateDisplay;
 - (id)aggregatedStatus;
 - (bool)automaticBrailleTranslationEnabled;

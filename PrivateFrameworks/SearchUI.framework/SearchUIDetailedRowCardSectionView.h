@@ -35,7 +35,6 @@
 - (void)buttonPressed;
 - (id)buttonView;
 - (long long)containerStackView:(id)arg1 alignmentForArrangedSubview:(id)arg2;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })containerView:(id)arg1 layoutFrameForArrangedSubview:(id)arg2 withProposedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 - (id)detailsView;
 - (id)innerStackView;
 - (void)setAccessoryViewControllerForSection:(id)arg1;
@@ -47,6 +46,6 @@
 - (id)setupContentView;
 - (id)thumbnailView;
 - (void)updateChevronVisible:(bool)arg1 leaveSpaceForChevron:(bool)arg2;
-- (void)updateWithCardSection:(id)arg1;
+- (void)updateWithRowModel:(id)arg1;
 
 @end

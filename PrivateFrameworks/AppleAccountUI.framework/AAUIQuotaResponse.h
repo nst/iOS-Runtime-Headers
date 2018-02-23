@@ -5,10 +5,13 @@
 @interface AAUIQuotaResponse : AAResponse {
     NSDictionary * _endPoints;
     NSDictionary * _quotaInfo;
+    NSDictionary * _storageInfo;
+    NSDictionary * _storageMeterLabel;
     NSArray * _usage;
 }
 
 @property (nonatomic, readonly) NSNumber *availableStorageInBytes;
+@property (nonatomic, readonly) NSString *displayLabel;
 @property (nonatomic, readonly) bool hasMaxTier;
 @property (nonatomic, readonly) NSArray *iCloudMediaUsage;
 @property (nonatomic, readonly) NSURL *manageStorageURL;
@@ -18,6 +21,7 @@
 
 - (void).cxx_destruct;
 - (id)availableStorageInBytes;
+- (id)displayLabel;
 - (bool)hasMaxTier;
 - (id)iCloudMediaUsage;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;

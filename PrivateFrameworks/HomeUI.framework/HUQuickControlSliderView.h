@@ -23,17 +23,20 @@
 @property (nonatomic) double secondarySliderValue;
 @property (nonatomic, retain) id secondaryValue;
 @property (nonatomic) bool showOffState;
-@property (nonatomic) long long sizeSubclass;
 @property (nonatomic) double sliderValue;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) id value;
 @property (nonatomic, retain) HUQuickControlSliderValueOverlayView *valueOverlayView;
 
++ (bool)requiresConstraintBasedLayout;
+
 - (void).cxx_destruct;
 - (struct { double x1; double x2; })_permittedValueRange;
+- (void)_updateOffState;
 - (id)backgroundView;
 - (id)initWithProfile:(id)arg1;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (id)intrinsicSizeDescriptorForControlSize:(unsigned long long)arg1;
 - (void)layoutSubviews;
 - (id)overlayTopConstraint;
 - (id)profile;

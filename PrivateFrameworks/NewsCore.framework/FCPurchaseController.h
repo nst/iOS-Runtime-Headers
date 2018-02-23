@@ -78,6 +78,7 @@
 - (void)handleWebAccessSuccessWithTagID:(id)arg1;
 - (id)init;
 - (id)initWithCloudContext:(id)arg1;
+- (id)initWithCloudContext:(id)arg1 keyValueStoreOption:(unsigned long long)arg2;
 - (bool)isPaidSubscriber;
 - (bool)isPaidSubscriberFromAppStore;
 - (bool)isPaidSubscriberFromNews;

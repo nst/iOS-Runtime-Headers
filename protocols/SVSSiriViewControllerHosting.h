@@ -15,6 +15,7 @@
 - (void)serviceDidDetectMicButtonLongPressEnded;
 - (void)serviceDidDetectMicButtonTap;
 - (void)serviceDidDismissBugReporter;
+- (void)serviceDidDismissViewControllerWithStatusBarStyle:(long long)arg1;
 - (void)serviceDidEndTaptoEdit;
 - (void)serviceDidEnterUITrackingMode;
 - (void)serviceDidExitUITrackingMode;
@@ -22,7 +23,9 @@
 - (void)serviceDidPresentBugReporter;
 - (void)serviceDidPresentConversationFromBreadcrumb;
 - (void)serviceDidPresentUserInterface;
+- (void)serviceDidPresentViewControllerWithStatusBarStyle:(long long)arg1;
 - (void)serviceDidReadBulletinWithIdentifier:(NSString *)arg1;
+- (void)serviceDidRequestCurrentTextInput:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSString *, void*
 - (void)serviceDidRequestKeyboard:(bool)arg1;
 - (void)serviceDidRequestKeyboard:(bool)arg1 minimized:(bool)arg2;
 - (void)serviceDidResetTextInput;

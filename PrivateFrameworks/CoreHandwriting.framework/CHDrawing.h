@@ -46,7 +46,6 @@
 
 @property (nonatomic) /* Warning: unhandled struct encoding: '{CJKChar={vector<std::__1::vector<double' */ struct  drawing; /* unknown property attribute:  std::__1::allocator<int> >=^i}}} */
 
-+ (double)_computeXProjectionBoundsOverlapFromReferenceBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toSubjectBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 + (id)sortedArrayForPointIndices:(id)arg1;
 
 - (id).cxx_construct;

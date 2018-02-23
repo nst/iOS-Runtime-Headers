@@ -19,7 +19,9 @@
 
 // Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
 
+- (void)_setIgnoreHSTS:(bool)arg1;
 - (void)_setPayloadTransmissionTimeout:(double)arg1;
+- (void)_setPreventHSTSStorage:(bool)arg1;
 - (void)_setRequiresShortConnectionTimeout:(bool)arg1;
 - (void)_setStartTimeoutDate:(id)arg1;
 - (void)_setTimeWindowDelay:(double)arg1;

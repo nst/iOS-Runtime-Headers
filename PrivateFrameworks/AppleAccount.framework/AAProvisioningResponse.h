@@ -17,6 +17,7 @@
 @property (nonatomic, readonly) NSString *lastName;
 @property (getter=isManagedAppleID, nonatomic, readonly) bool managedAppleID;
 @property (getter=isNotesMigrated, nonatomic, readonly) bool notesMigrated;
+@property (getter=hasOptionalTerms, nonatomic, readonly) bool optionalTerms;
 @property (nonatomic, readonly) NSString *primaryEmail;
 @property (nonatomic, readonly) NSNumber *primaryEmailVerified;
 @property (nonatomic, readonly) NSArray *provisionedDataclasses;
@@ -29,6 +30,7 @@
 - (id)firstName;
 - (id)fmipAuthToken;
 - (id)fmipSiriToken;
+- (bool)hasOptionalTerms;
 - (id)iCloudAuthToken;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;

@@ -10,12 +10,13 @@
 @property (nonatomic, readonly) NSDictionary *outputSettingsDictionary;
 @property (nonatomic, readonly) bool willYieldCompressedSamples;
 
-+ (id)_outputSettingsWithOutputSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
++ (id)_outputSettingsWithOutputSettingsDictionary:(id)arg1 mediaType:(id)arg2 exceptionReason:(id*)arg3;
 + (unsigned long long)_validateOutputSettingsDictionary:(id)arg1 compatibilityDescription:(id*)arg2;
 + (id)defaultOutputSettingsForMediaType:(id)arg1;
 + (id)eligibleOutputSettingsDictionaryKeys;
-+ (id)outputSettingsWithOutputSettingsDictionary:(id)arg1;
++ (id)outputSettingsWithOutputSettingsDictionary:(id)arg1 mediaType:(id)arg2;
 + (id)registeredOutputSettingsClasses;
++ (bool)supportsEmptyOutputSettingsDictionary;
 + (unsigned long long)validateOutputSettingsDictionary:(id)arg1;
 
 - (bool)canFullySpecifyOutputFormatReturningReason:(id*)arg1;

@@ -3,6 +3,8 @@
  */
 
 @interface NTSectionConfigSectionDescriptor : NSObject <NTSectionDescriptor> {
+    NSString * _actionTitle;
+    NSURL * _actionURL;
     NSString * _backgroundGradientColor;
     unsigned long long  _cachedResultCutoffTime;
     NSString * _compactName;
@@ -25,9 +27,12 @@
     long long  _seenArticlesMinimumTimeSinceFirstSeenToFilter;
     long long  _supplementalInterSectionFilterOptions;
     long long  _supplementalIntraSectionFilterOptions;
+    bool  _useNameColorInWidget;
     bool  _videoPlaysMutedByDefault;
 }
 
+@property (nonatomic, readonly, copy) NSString *actionTitle;
+@property (nonatomic, readonly, copy) NSURL *actionURL;
 @property (nonatomic, readonly, copy) NSString *backgroundGradientColor;
 @property (nonatomic, readonly) unsigned long long cachedResultCutoffTime;
 @property (nonatomic, readonly, copy) NSString *compactName;
@@ -54,9 +59,13 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) long long supplementalInterSectionFilterOptions;
 @property (nonatomic, readonly) long long supplementalIntraSectionFilterOptions;
+@property (nonatomic, readonly) bool useNameColorInWidget;
 @property (nonatomic, readonly) bool videoPlaysMutedByDefault;
 
 - (void).cxx_destruct;
+- (id)actionTitle;
+- (id)actionURL;
+- (id)assembleResultsWithCatchUpOperation:(id)arg1;
 - (id)backgroundGradientColor;
 - (unsigned long long)cachedResultCutoffTime;
 - (id)compactName;
@@ -66,7 +75,6 @@
 - (id)discoverMoreVideosTitle;
 - (id)discoverMoreVideosURL;
 - (bool)displaysAsVideoPlaylist;
-- (id)extractResultsFromCatchUpOperation:(id)arg1;
 - (unsigned long long)fallbackOrder;
 - (id)fetchDescriptor;
 - (id)identifier;
@@ -87,6 +95,7 @@
 - (void)setFetchDescriptor:(id)arg1;
 - (long long)supplementalInterSectionFilterOptions;
 - (long long)supplementalIntraSectionFilterOptions;
+- (bool)useNameColorInWidget;
 - (bool)videoPlaysMutedByDefault;
 
 @end

@@ -3,6 +3,7 @@
  */
 
 @interface AVCVirtualTTYDevice : NSObject {
+    NSObject<OS_dispatch_queue> * _callbackQueue;
     AVConferenceXPCClient * _connection;
     id  _delegate;
     bool  _isStarted;
@@ -14,6 +15,8 @@
 - (id)delegate;
 - (void)deregisterBlocksForDelegateNotifications;
 - (id)initWithMode:(long long)arg1 error:(id*)arg2;
+- (id)initWithMode:(long long)arg1 error:(id*)arg2 streamToken:(long long)arg3;
+- (id)initWithStreamToken:(long long)arg1 error:(id*)arg2;
 - (void)registerBlocksForDelegateNotifications;
 - (id)sendCharacter:(unsigned short)arg1;
 - (void)setDelegate:(id)arg1;

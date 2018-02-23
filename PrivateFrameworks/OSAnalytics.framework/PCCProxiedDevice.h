@@ -7,6 +7,7 @@
     PCCEndpoint * _endpoint;
     unsigned int  _error_count;
     NSString * _jobId;
+    bool  _jobSuppressStatus;
     NSString * _jobTarget;
     NSMutableArray * _log_sets;
     NSMutableDictionary * _pending_list;

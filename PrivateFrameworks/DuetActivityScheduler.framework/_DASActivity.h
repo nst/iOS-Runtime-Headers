@@ -161,6 +161,7 @@
 - (bool)isEqual:(id)arg1;
 - (bool)isIdenticalLaunchTo:(id)arg1;
 - (bool)isIntensive;
+- (bool)isSilentPush;
 - (bool)isUpload;
 - (bool)keepsPrevious;
 - (double)lastComputedScore;
@@ -245,8 +246,6 @@
 - (void)setUploadSize:(unsigned long long)arg1;
 - (void)setUserInfo:(id)arg1;
 - (void)setUuid:(id)arg1;
-- (void)setdownloadSize:(unsigned long long)arg1;
-- (void)setuploadSize:(unsigned long long)arg1;
 - (id)shortDescription;
 - (bool)shouldBePersisted;
 - (id)startAfter;

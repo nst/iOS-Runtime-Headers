@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCRecordSource : NSObject <FCCacheCoordinatorDelegate, FCCacheFlushing, FCFetchCoordinatorDelegate> {
+@interface FCRecordSource : NSObject <FCCacheCoordinatorDelegate, FCCacheFlushing, FCFetchCoordinatorDelegate, FCJSONEncodableObjectProviding> {
     NSString * _activeTreatmentID;
     FCCacheCoordinator * _cacheCoordinator;
     FCCKContentDatabase * _contentDatabase;
@@ -83,6 +83,7 @@
 - (id)initWithContentDatabase:(id)arg1 contentDirectory:(id)arg2;
 - (id)initWithContentDatabase:(id)arg1 contentDirectory:(id)arg2 experimentalizableFieldsPostfix:(id)arg3 activeTreatmentID:(id)arg4;
 - (bool)isRecordStale:(id)arg1 withCachePolicy:(id)arg2;
+- (id)jsonEncodableObject;
 - (id)localStore;
 - (id)localizableExperimentalizableKeys;
 - (id)localizableKeys;

@@ -29,6 +29,7 @@
     AVButton * _standardPlayPauseButton;
     AVView * _transportControlsContainerView;
     AVTransportControlsView * _transportControlsView;
+    AVButton * _videoGravityButton;
     NSLayoutConstraint * _volumeBottomToTransportControlsTopConstraint;
     AVVolumeButtonControl * _volumeButton;
     AVBackdropView * _volumeControls;
@@ -67,6 +68,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) AVView *transportControlsContainerView;
 @property (nonatomic, readonly) AVTransportControlsView *transportControlsView;
+@property (nonatomic, readonly) AVButton *videoGravityButton;
 @property (nonatomic, readonly) NSLayoutConstraint *volumeBottomToTransportControlsTopConstraint;
 @property (nonatomic, readonly) AVVolumeButtonControl *volumeButton;
 @property (nonatomic, readonly) AVBackdropView *volumeControls;
@@ -80,6 +82,7 @@
 - (void)_setupInitialLayout;
 - (void)_statusBarFrameDidChange:(id)arg1;
 - (void)_statusBarFrameWillChange:(id)arg1;
+- (void)_statusBarHiddenDidChange:(id)arg1;
 - (void)_statusBarOrientationWillChange:(id)arg1;
 - (void)_updateDoubleRowTransportControlsEnabled;
 - (void)_updateLayoutMargins;
@@ -124,6 +127,7 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)transportControlsContainerView;
 - (id)transportControlsView;
+- (id)videoGravityButton;
 - (id)volumeBottomToTransportControlsTopConstraint;
 - (id)volumeButton;
 - (id)volumeControls;

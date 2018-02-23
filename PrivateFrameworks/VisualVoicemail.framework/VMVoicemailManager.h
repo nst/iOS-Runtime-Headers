@@ -13,7 +13,9 @@
     bool  _subscribed;
     bool  _syncInProgress;
     int  _token;
+    bool  _transcribing;
     bool  _transcriptionEnabled;
+    NSProgress * _transcriptionProgress;
     NSMutableSet * _trashedMessages;
     NSOrderedSet * _voicemails;
 }
@@ -36,7 +38,9 @@
 @property (getter=isSubscribed, nonatomic) bool subscribed;
 @property (getter=isSyncInProgress, nonatomic) bool syncInProgress;
 @property (nonatomic) int token;
+@property (getter=isTranscribing, nonatomic) bool transcribing;
 @property (getter=isTranscriptionEnabled, nonatomic, readonly) bool transcriptionEnabled;
+@property (nonatomic, readonly) NSProgress *transcriptionProgress;
 @property (nonatomic, retain) NSMutableSet *trashedMessages;
 @property (nonatomic, readonly) long long unreadCount;
 @property (nonatomic, copy) NSOrderedSet *voicemails;
@@ -62,6 +66,7 @@
 - (bool)isOnline;
 - (bool)isSubscribed;
 - (bool)isSyncInProgress;
+- (bool)isTranscribing;
 - (bool)isTranscriptionEnabled;
 - (bool)isTranscriptionEnabled;
 - (long long)mailboxGreetingState;
@@ -88,12 +93,14 @@
 - (void)setSubscribed:(bool)arg1;
 - (void)setSyncInProgress:(bool)arg1;
 - (void)setToken:(int)arg1;
+- (void)setTranscribing:(bool)arg1;
 - (void)setTrashedMessages:(id)arg1;
 - (void)setVoicemails:(id)arg1;
 - (unsigned long long)storageUsage;
 - (void)synchronize;
 - (id)synchronousServerConnectionWithErrorHandler:(id /* block */)arg1;
 - (int)token;
+- (id)transcriptionProgress;
 - (id)trashVoicemail:(id)arg1;
 - (id)trashVoicemails:(id)arg1;
 - (id)trashedMessages;

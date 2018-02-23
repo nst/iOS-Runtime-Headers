@@ -321,6 +321,7 @@
 + (unsigned long long)countOfAssetsFailedToUploadInLibrary:(id)arg1;
 + (unsigned long long)countOfAssetsMissingOriginalsInLibrary:(id)arg1;
 + (unsigned long long)countOfAssetsQuarantinedInLibrary:(id)arg1;
++ (void)countOfAssetsWithRequiredResourcesNotLocallyAvailableInLibrary:(id)arg1 outCount:(unsigned long long*)arg2 photoCount:(unsigned long long*)arg3 videoCount:(unsigned long long*)arg4;
 + (unsigned long long)countUsedAssetsWithKind:(short)arg1 excludeTrashed:(bool)arg2 excludeInvisible:(bool)arg3 excludeCloudShared:(bool)arg4 inManagedObjectContext:(id)arg5;
 + (id)createCloudPhotoLibraryAssetWithAssetRecord:(id)arg1 withCloudMaster:(id)arg2 inLibrary:(id)arg3;
 + (void)createMastersInLibrary:(id)arg1;
@@ -378,6 +379,7 @@
 + (id)photoFromAssetURL:(id)arg1 photoLibrary:(id)arg2 sidecar:(id*)arg3;
 + (bool)photoGroupingVisibilityEnabled;
 + (int)portraitScrubberThumbnailFormat;
++ (id)predicateForCompleteResources;
 + (id)predicateForDepthDataPhotos;
 + (id)predicateForDepthEffectPhotos;
 + (id)predicateForSupportedAssetTypesForUpload;
@@ -426,6 +428,7 @@
 - (int)_avalancheTypeFromCplBurstFlags:(unsigned long long)arg1;
 - (id)_calculateCloudAdjustmentFingerprintFromAdjustmentPListAndCPLResources;
 - (int)_calculateStateForWorkerType:(short)arg1 flags:(int*)arg2;
+- (bool)_checkResource:(unsigned long long)arg1 onPath:(id)arg2 onMaster:(bool)arg3;
 - (void)_cleanSubstandardFile;
 - (void)_cleanupPenultimateResources;
 - (id)_cloudSharedPathWithExtension:(id)arg1;
@@ -452,6 +455,8 @@
 - (id)_generatePosterFrameResourcesFromVideoURL:(id)arg1 withIdentifier:(id)arg2 forMaster:(bool)arg3;
 - (id)_generateVideoResourcesFromURL:(id)arg1 withIdentifier:(id)arg2 forMaster:(bool)arg3;
 - (void)_getLargestAvailableDataRepresentation:(id*)arg1 type:(id*)arg2;
+- (bool)_hasAllAdjustedResourcesLocallyAvailable;
+- (bool)_hasAllOriginalResourcesLocallyAvailable;
 - (bool)_hasBecomeNonVisibleToMemoriesAndPersons:(id)arg1;
 - (bool)_hasFFCDimensions;
 - (bool)_hasPanoramaDimensions;
@@ -644,6 +649,7 @@
 - (void)handleDelayedAnalysisStateUpdateWithChangedValues:(id)arg1 managedObjectContext:(id)arg2;
 - (bool)hasAdjustedVideoComplement;
 - (bool)hasAdjustmentsOrLegacyAdjustments;
+- (bool)hasAllRequiredResourcesLocallyAvailable;
 - (bool)hasGPS;
 - (bool)hasJustBeenHidden;
 - (bool)hasJustBeenShown;

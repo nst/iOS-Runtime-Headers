@@ -7,6 +7,7 @@
     UIColor * __focusedColor;
     UIColor * __tintColor;
     id /* block */  _completion;
+    bool  _continuousCorners;
     double  _cornerRadius;
     UIImage * _flatHighlightImage;
     UIImage * _flatImage;

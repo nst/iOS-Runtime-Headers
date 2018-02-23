@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MMCS.framework/MMCS
  */
 
-@interface C2RequestOptions : NSObject {
+@interface C2RequestOptions : NSObject <NSCopying> {
     unsigned char  __allowsExpensiveAccess;
     unsigned char  __allowsPowerNapScheduling;
     NSString * __appleIDContextSessionIdentifier;
@@ -10,7 +10,11 @@
     NSString * __sourceApplicationSecondaryIdentifier;
     double  __timeoutIntervalForRequest;
     double  __timeoutIntervalForResource;
+    NSURL * _c2MetricsEndpoint;
+    unsigned long long  _c2MetricsReportFrequency;
+    unsigned long long  _c2MetricsReportFrequencyBase;
     NSString * _identifier;
+    unsigned char  _metricRequest;
     unsigned char  _outOfProcess;
     unsigned char  _outOfProcessDiscretionary;
     NSString * _outOfProcessPoolName;
@@ -26,8 +30,12 @@
 @property (nonatomic, copy) NSString *_sourceApplicationSecondaryIdentifier;
 @property (nonatomic) double _timeoutIntervalForRequest;
 @property (nonatomic) double _timeoutIntervalForResource;
+@property (nonatomic, copy) NSURL *c2MetricsEndpoint;
+@property (nonatomic) unsigned long long c2MetricsReportFrequency;
+@property (nonatomic) unsigned long long c2MetricsReportFrequencyBase;
 @property (nonatomic, readonly) double emptySessionExpiryInSeconds;
 @property (nonatomic, copy) NSString *identifier;
+@property (nonatomic) unsigned char metricRequest;
 @property (nonatomic) unsigned char outOfProcess;
 @property (nonatomic) unsigned char outOfProcessDiscretionary;
 @property (nonatomic, copy) NSString *outOfProcessPoolName;
@@ -37,6 +45,7 @@
 
 + (double)defaultEmptySessionExpiryInSeconds;
 + (id)stringForQualityOfService:(long long)arg1;
++ (unsigned char)triesteMetricsEnabled;
 
 - (void).cxx_destruct;
 - (unsigned char)_allowsExpensiveAccess;
@@ -46,13 +55,17 @@
 - (id)_sourceApplicationSecondaryIdentifier;
 - (double)_timeoutIntervalForRequest;
 - (double)_timeoutIntervalForResource;
-- (id)copy;
+- (id)c2MetricsEndpoint;
+- (unsigned long long)c2MetricsReportFrequency;
+- (unsigned long long)c2MetricsReportFrequencyBase;
 - (id)copyAndDecorateRequest:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)decorateTask:(id)arg1;
 - (id)defaultSessionConfiguration;
 - (double)emptySessionExpiryInSeconds;
 - (id)identifier;
 - (id)init;
+- (unsigned char)metricRequest;
 - (unsigned char)outOfProcess;
 - (unsigned char)outOfProcessDiscretionary;
 - (id)outOfProcessPoolName;
@@ -60,7 +73,11 @@
 - (id)resolvedEndpointsWithHostname;
 - (id)sessionConfiguration;
 - (id)sessionConfigurationName;
+- (void)setC2MetricsEndpoint:(id)arg1;
+- (void)setC2MetricsReportFrequency:(unsigned long long)arg1;
+- (void)setC2MetricsReportFrequencyBase:(unsigned long long)arg1;
 - (void)setIdentifier:(id)arg1;
+- (void)setMetricRequest:(unsigned char)arg1;
 - (void)setOutOfProcess:(unsigned char)arg1;
 - (void)setOutOfProcessDiscretionary:(unsigned char)arg1;
 - (void)setOutOfProcessPoolName:(id)arg1;

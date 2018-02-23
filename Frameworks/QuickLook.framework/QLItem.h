@@ -8,6 +8,7 @@
     UIColor * _backgroundColorOverride;
     bool  _canBeEdited;
     bool  _canBeShared;
+    unsigned long long  _editedFileBehavior;
     long long  _editedFileExtensionHandle;
     NSURL * _editedFileURL;
     QLItemFetcher * _fetcher;
@@ -50,6 +51,7 @@
 @property (nonatomic) bool canBeShared;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) unsigned long long editedFileBehavior;
 @property (nonatomic, retain) NSURL *editedFileURL;
 @property (nonatomic, retain) QLItemFetcher *fetcher;
 @property (retain) FPItem *fpItem;
@@ -112,6 +114,7 @@
 - (void)dealloc;
 - (long long)defaultWhitePointAdaptivityStyle;
 - (id)description;
+- (unsigned long long)editedFileBehavior;
 - (id)editedFileURL;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fetcher;
@@ -155,6 +158,7 @@
 - (void)setBackgroundColorOverride:(id)arg1;
 - (void)setCanBeEdited:(bool)arg1;
 - (void)setCanBeShared:(bool)arg1;
+- (void)setEditedFileBehavior:(unsigned long long)arg1;
 - (void)setEditedFileURL:(id)arg1;
 - (void)setEditedFileURL:(id)arg1 withSandboxExtension:(id)arg2;
 - (void)setFetcher:(id)arg1;

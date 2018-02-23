@@ -35,7 +35,7 @@
 - (id)_createHelpButton:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_createReportBugButtonWithTemplateImage:(id)arg1;
 - (id)_createTextFieldWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_defaultFrame;
 - (void)_helpButtonLongPressed:(id)arg1;
 - (void)_helpButtonTapped:(id)arg1;
 - (void)_keyboardWillHide:(id)arg1;
@@ -52,8 +52,10 @@
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inputViewStyle:(long long)arg2;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 - (bool)resignFirstResponder;
+- (void)safeAreaInsetsDidChange;
 - (void)setAudioRoutePickerBluetoothOn:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setShowAudioRoutePicker:(bool)arg1;

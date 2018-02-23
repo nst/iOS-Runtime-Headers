@@ -10,11 +10,11 @@
     bool  _should_hactivate;
 }
 
-@property (nonatomic, copy) NSString *device_class;
-@property (nonatomic) bool has_telephony;
-@property (nonatomic) bool is_fpga;
-@property (nonatomic, copy) NSString *product_type;
-@property (nonatomic) bool should_hactivate;
+@property (nonatomic, readonly, copy) NSString *device_class;
+@property (nonatomic, readonly) bool has_telephony;
+@property (nonatomic, readonly) bool is_fpga;
+@property (nonatomic, readonly, copy) NSString *product_type;
+@property (nonatomic, readonly) bool should_hactivate;
 
 + (id)sharedInstance;
 
@@ -23,13 +23,9 @@
 - (id)copyDeviceTreeProperty:(id)arg1 key:(id)arg2;
 - (id)device_class;
 - (bool)has_telephony;
+- (id)init;
 - (bool)is_fpga;
 - (id)product_type;
-- (void)setDevice_class:(id)arg1;
-- (void)setHas_telephony:(bool)arg1;
-- (void)setIs_fpga:(bool)arg1;
-- (void)setProduct_type:(id)arg1;
-- (void)setShould_hactivate:(bool)arg1;
 - (bool)should_hactivate;
 
 @end

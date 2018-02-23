@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@interface SFAppleIDContactInfo : NSObject {
+@interface SFAppleIDContactInfo : NSObject <NSSecureCoding> {
     NSString * _firstName;
     NSString * _lastName;
     NSArray * _validatedEmailAddresses;

@@ -10,6 +10,7 @@
 - (bool)_paymentScreenRequirementsIncludePasscode:(id)arg1;
 - (bool)_paymentScreenRequirementsIncludeiCloud:(id)arg1;
 - (bool)canShowAppleIDScreen;
+- (bool)canShowFaceIDScreen;
 - (bool)canShowPasscodeScreen;
 - (bool)canShowPaymentScreen;
 - (bool)canShowSiriScreen;

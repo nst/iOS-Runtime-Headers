@@ -12,6 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)extractedTerm;
+- (id)initWithAutocompleteResolvedItem:(id)arg1;
 - (id)initWithResolvedItem:(id)arg1;
 - (int)itemType;
 - (unsigned long long)resultIndex;

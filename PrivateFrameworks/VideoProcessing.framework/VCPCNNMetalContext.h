@@ -12,6 +12,7 @@
 @property (retain) <MTLCommandQueue> *commandQueue;
 @property (retain) <MTLDevice> *device;
 
++ (id)sharedCommandQueue;
 + (bool)supportGPU;
 + (bool)supportVectorForward;
 
@@ -20,7 +21,7 @@
 - (id)commandQueue;
 - (id)device;
 - (int)execute;
-- (id)initNewContext;
+- (id)initNewContext:(bool)arg1;
 - (void)setCommandBuffer:(id)arg1;
 - (void)setCommandQueue:(id)arg1;
 - (void)setDevice:(id)arg1;

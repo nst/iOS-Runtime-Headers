@@ -31,6 +31,7 @@
 - (void)deliverMetrics:(id)arg1;
 - (double)duration;
 - (id)events;
+- (id)getSnapshot;
 - (id)initWithWorkoutSession:(id)arg1 client:(id)arg2 server:(id)arg3 isFirstParty:(bool)arg4;
 - (bool)isFirstParty;
 - (id)server;

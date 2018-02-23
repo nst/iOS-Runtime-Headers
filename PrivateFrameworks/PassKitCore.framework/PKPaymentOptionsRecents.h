@@ -6,6 +6,7 @@
     CNContact * _cachedMeContact;
     bool  _meCardCachingEnabled;
     <NSObject> * _meContactDidChangeNotificationObserver;
+    PKPaymentOptionsSynchronization * _optionsSynchronization;
     CRRecentContactsLibrary * _recentContactsLibrary;
 }
 
@@ -17,11 +18,19 @@
 + (id)defaultInstance;
 
 - (void).cxx_destruct;
+- (void)_addContactToKeychain:(id)arg1 forPreference:(id)arg2;
 - (id)_contactFromRecent:(id)arg1 preference:(id)arg2;
+- (id)_contactsFromKeychainForPreference:(id)arg1;
 - (void)_coreRecentsContactsForPreference:(id)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
 - (id)_defaultCRSearchQuery;
+- (void)_deleteRecentContactFromKeychain:(id)arg1 forPreference:(id)arg2;
+- (void)_deleteRecentContactsFromKeychainForContactKey:(id)arg1;
+- (void)_deleteRecentContactsFromKeychainForPreference:(id)arg1;
+- (id)_keychainDataForKey:(id)arg1;
+- (id)_keychainKeyFromContactKey:(id)arg1;
 - (id)_labelsToPropertiesDictionaryForContact:(id)arg1;
 - (id)_postalAddressLabeledValueFromRecent:(id)arg1;
+- (void)_setKeychainData:(id)arg1 forKey:(id)arg2;
 - (id)contactMetadataForContact:(id)arg1 preference:(id)arg2;
 - (void)dealloc;
 - (void)deleteAllRecentsWithCallbackQueue:(id)arg1 completion:(id /* block */)arg2;

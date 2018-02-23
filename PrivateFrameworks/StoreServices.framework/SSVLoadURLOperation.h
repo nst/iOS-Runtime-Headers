@@ -58,6 +58,7 @@
 @property (readonly) SSMetricsPageEvent *metricsPageEvent;
 @property (copy) id /* block */ outputBlock;
 @property (copy) id /* block */ prepareRequestBlock;
+@property (nonatomic, readonly) NSData *rawResponseData;
 @property bool recordsMetrics;
 @property (copy) NSString *referrerApplicationName;
 @property (copy) NSString *referrerURLString;
@@ -69,6 +70,8 @@
 @property (nonatomic, readonly) NSString *sourceAppBundleID;
 @property (copy) NSString *storeFrontSuffix;
 @property (readonly) Class superclass;
+
++ (id)currentAcceptLanguage;
 
 - (void).cxx_destruct;
 - (id)SAPSession;
@@ -124,6 +127,7 @@
 - (id)metricsPageEvent;
 - (id /* block */)outputBlock;
 - (id /* block */)prepareRequestBlock;
+- (id)rawResponseData;
 - (bool)recordsMetrics;
 - (id)referrerApplicationName;
 - (id)referrerURLString;

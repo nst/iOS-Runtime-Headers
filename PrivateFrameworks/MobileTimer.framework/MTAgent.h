@@ -5,6 +5,7 @@
 @interface MTAgent : NSObject <MTAgentDiagnosticDelegate, MTSystemStateDelegate> {
     MTAlarmScheduler * _alarmScheduler;
     MTAlarmServer * _alarmServer;
+    MTAlarmSnapshot * _alarmSnapshot;
     MTAlarmStorage * _alarmStorage;
     MTAlarmSyncDataModel * _alarmSyncDataModel;
     MTSyncStorage * _alarmSyncStorage;
@@ -25,11 +26,13 @@
     MTTimeListener * _timeListener;
     MTTimerScheduler * _timerScheduler;
     MTTimerServer * _timerServer;
+    MTTimerSnapshot * _timerSnapshot;
     MTTimerStorage * _timerStorage;
 }
 
 @property (nonatomic, retain) MTAlarmScheduler *alarmScheduler;
 @property (nonatomic, retain) MTAlarmServer *alarmServer;
+@property (nonatomic, retain) MTAlarmSnapshot *alarmSnapshot;
 @property (nonatomic, retain) MTAlarmStorage *alarmStorage;
 @property (nonatomic, retain) MTAlarmSyncDataModel *alarmSyncDataModel;
 @property (nonatomic, retain) MTSyncStorage *alarmSyncStorage;
@@ -54,6 +57,7 @@
 @property (nonatomic, retain) MTTimeListener *timeListener;
 @property (nonatomic, retain) MTTimerScheduler *timerScheduler;
 @property (nonatomic, retain) MTTimerServer *timerServer;
+@property (nonatomic, retain) MTTimerSnapshot *timerSnapshot;
 @property (nonatomic, retain) MTTimerStorage *timerStorage;
 
 + (id)agent;
@@ -67,6 +71,7 @@
 - (void)_setupTimers;
 - (id)alarmScheduler;
 - (id)alarmServer;
+- (id)alarmSnapshot;
 - (id)alarmStorage;
 - (id)alarmSyncDataModel;
 - (id)alarmSyncStorage;
@@ -83,6 +88,7 @@
 - (void)restoreDidFinish;
 - (void)setAlarmScheduler:(id)arg1;
 - (void)setAlarmServer:(id)arg1;
+- (void)setAlarmSnapshot:(id)arg1;
 - (void)setAlarmStorage:(id)arg1;
 - (void)setAlarmSyncDataModel:(id)arg1;
 - (void)setAlarmSyncStorage:(id)arg1;
@@ -103,6 +109,7 @@
 - (void)setTimeListener:(id)arg1;
 - (void)setTimerScheduler:(id)arg1;
 - (void)setTimerServer:(id)arg1;
+- (void)setTimerSnapshot:(id)arg1;
 - (void)setTimerStorage:(id)arg1;
 - (id)sleepMetrics;
 - (id)sleepMonitor;
@@ -114,6 +121,7 @@
 - (id)timeListener;
 - (id)timerScheduler;
 - (id)timerServer;
+- (id)timerSnapshot;
 - (id)timerStorage;
 
 @end

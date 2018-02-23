@@ -5,14 +5,14 @@
 @interface FCFeedManager : NSObject {
     FCCloudContext * _context;
     NSMapTable * _feedDescriptorsByID;
-    FCMutexLock * _feedDescriptorsLock;
+    NFMutexLock * _feedDescriptorsLock;
     <FCFeedPersonalizing> * _feedPersonalizer;
     FCAsyncSerialQueue * _feedUpdateQueue;
 }
 
 @property (nonatomic, retain) FCCloudContext *context;
 @property (nonatomic, retain) NSMapTable *feedDescriptorsByID;
-@property (nonatomic, retain) FCMutexLock *feedDescriptorsLock;
+@property (nonatomic, retain) NFMutexLock *feedDescriptorsLock;
 @property (nonatomic, retain) <FCFeedPersonalizing> *feedPersonalizer;
 @property (nonatomic, retain) FCAsyncSerialQueue *feedUpdateQueue;
 
@@ -23,9 +23,7 @@
 
 - (void).cxx_destruct;
 - (id)_feedDescriptorWithIdentifier:(id)arg1 forceRecreate:(bool)arg2 tag:(id)arg3;
-- (void)backgroundFetchFeedsWithCompletionHandler:(id /* block */)arg1;
 - (id)context;
-- (id)feedDescriptorForArticleIDs:(id)arg1;
 - (id)feedDescriptorForArticlesInSameClusterAsArticleID:(id)arg1;
 - (id)feedDescriptorForForYou;
 - (id)feedDescriptorForReadingHistory;

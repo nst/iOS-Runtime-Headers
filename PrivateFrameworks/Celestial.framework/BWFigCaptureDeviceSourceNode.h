@@ -119,6 +119,7 @@
 - (bool)hasNonLiveConfigurationChanges;
 - (bool)lowLightBoostSupportedForFormat;
 - (void)makeCurrentConfigurationLive;
+- (void)makeOutputsLiveIfNeeded;
 - (float)maxFrameRate;
 - (int)maxIntegrationTimeOverride;
 - (float)minFrameRate;
@@ -157,6 +158,5 @@
 - (id)videoCaptureOutput;
 - (id)videoCaptureOutputColorInfoOverride;
 - (bool)videoCaptureOutputPixelBufferAttachmentModificationAllowed;
-- (void)willStop;
 
 @end

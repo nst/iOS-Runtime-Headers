@@ -9,6 +9,7 @@
     NSMutableDictionary * _cachedLocationForHandleByHandle;
     NSMutableDictionary * _cachedOfferExpirationForHandleByHandle;
     NSXPCConnection * _connection;
+    NSObject<OS_dispatch_queue> * _connectionQueue;
     <FMFSessionDelegate> * _delegate;
     NSOperationQueue * _delegateQueue;
     NSMutableSet * _internalHandles;
@@ -21,6 +22,7 @@
 @property (nonatomic, retain) NSMutableDictionary *cachedLocationForHandleByHandle;
 @property (nonatomic, retain) NSMutableDictionary *cachedOfferExpirationForHandleByHandle;
 @property (nonatomic, retain) NSXPCConnection *connection;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *connectionQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FMFSessionDelegate> *delegate;
 @property (nonatomic, retain) NSOperationQueue *delegateQueue;
@@ -37,7 +39,9 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
+- (id)__connection;
 - (void)_checkAndDisplayMeDeviceSwitchAlert;
+- (void)_daemonDidLaunch;
 - (bool)_isNoMappingPacketReturnedError:(id)arg1;
 - (void)_registerForFMFDLaunchedNotification;
 - (void)_sendAutoSwitchMeDevice;
@@ -58,6 +62,7 @@
 - (bool)canShareLocationWithHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3;
 - (void)canShareLocationWithHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 completion:(id /* block */)arg4;
 - (id)connection;
+- (id)connectionQueue;
 - (void)contactForPayload:(id)arg1 completion:(id /* block */)arg2;
 - (void)crashDaemon;
 - (void)dataForPayload:(id)arg1 completion:(id /* block */)arg2;
@@ -146,7 +151,6 @@
 - (oneway void)sendMappingPacket:(id)arg1 toHandle:(id)arg2;
 - (id)serverProxy;
 - (void)sessionHandleReport:(id /* block */)arg1;
-- (void)sessionWasCreatedRefresh;
 - (void)setActiveDevice:(id)arg1 completion:(id /* block */)arg2;
 - (void)setCachedCanShareLocationWithHandleByHandle:(id)arg1;
 - (void)setCachedGetHandlesFollowingMyLocation:(id)arg1;
@@ -154,6 +158,7 @@
 - (void)setCachedLocationForHandleByHandle:(id)arg1;
 - (void)setCachedOfferExpirationForHandleByHandle:(id)arg1;
 - (void)setConnection:(id)arg1;
+- (void)setConnectionQueue:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegateQueue:(id)arg1;
 - (void)setExpiredInitTimestamp;

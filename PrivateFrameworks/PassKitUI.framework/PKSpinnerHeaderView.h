@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKSpinnerHeaderView : UIView {
+@interface PKSpinnerHeaderView : UITableViewHeaderFooterView {
     UILabel * _headerLabel;
     NSString * _headerText;
     bool  _showSpinner;
     UIActivityIndicatorView * _spinner;
-    UITableView * _tableView;
 }
 
 @property (nonatomic, retain) NSString *headerText;
 @property (nonatomic) bool showSpinner;
-@property (nonatomic) UITableView *tableView;
 
 + (id)_labelFont;
 + (double)sectionHeight;
@@ -24,8 +22,6 @@
 - (void)layoutSubviews;
 - (void)setHeaderText:(id)arg1;
 - (void)setShowSpinner:(bool)arg1;
-- (void)setTableView:(id)arg1;
 - (bool)showSpinner;
-- (id)tableView;
 
 @end

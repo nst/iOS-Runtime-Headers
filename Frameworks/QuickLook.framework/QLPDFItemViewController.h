@@ -19,6 +19,7 @@
 - (void)_updateThumbnailViewWithTraitCollection:(id)arg1;
 - (bool)automaticallyUpdateScrollViewContentInset;
 - (bool)automaticallyUpdateScrollViewContentOffset;
+- (bool)automaticallyUpdateScrollViewIndicatorInset;
 - (bool)canSwipeToDismiss;
 - (bool)controller:(id)arg1 shouldOpenLinkAtURL:(id)arg2;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })customEdgeInsets;

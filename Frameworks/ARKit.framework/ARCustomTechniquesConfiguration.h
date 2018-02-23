@@ -11,7 +11,9 @@
 + (id)new;
 
 - (void).cxx_destruct;
+- (void)configureRecordingTechnique;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (void)ensureTechniqueAndCustomSensorCompatibility;
 - (id)init;
 - (bool)isEqual:(id)arg1;

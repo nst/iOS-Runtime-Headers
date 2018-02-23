@@ -16,6 +16,8 @@
 @property (retain) id parentViewController;
 @property (readonly) Class superclass;
 
++ (bool)_copyErrorForAuthenticateResponse:(id)arg1 error:(id*)arg2;
+
 - (void)_handleAuthenticateResponse:(id)arg1;
 - (id)authenticateResponse;
 - (id)authenticatedAccountDSID;

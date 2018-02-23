@@ -15,7 +15,7 @@
 @property (nonatomic, copy) NSString *recipientPhoneOrEmail;
 
 - (void).cxx_destruct;
-- (id)_urlRequestWithServiceURL:(id)arg1 account:(id)arg2 deviceIdentifier:(id)arg3 deviceScore:(id)arg4;
+- (id)_urlRequestWithServiceURL:(id)arg1 account:(id)arg2 deviceIdentifier:(id)arg3 deviceScore:(id)arg4 deviceMetadata:(id)arg5;
 - (id)amount;
 - (id)currency;
 - (id)recipientIdentifier;

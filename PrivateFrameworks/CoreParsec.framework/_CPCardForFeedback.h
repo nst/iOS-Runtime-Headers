@@ -4,11 +4,14 @@
 
 @interface _CPCardForFeedback : PBCodable <NSSecureCoding, _CPCardForFeedback> {
     NSArray * _cardSections;
+    NSString * _fbr;
 }
 
 @property (nonatomic, copy) NSArray *cardSections;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *fbr;
+@property (nonatomic, readonly) bool hasFbr;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSData *jsonData;
 @property (readonly) Class superclass;
@@ -20,6 +23,8 @@
 - (unsigned long long)cardSectionsCount;
 - (void)clearCardSections;
 - (id)dictionaryRepresentation;
+- (id)fbr;
+- (bool)hasFbr;
 - (unsigned long long)hash;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithFacade:(id)arg1;
@@ -28,6 +33,7 @@
 - (id)jsonData;
 - (bool)readFrom:(id)arg1;
 - (void)setCardSections:(id)arg1;
+- (void)setFbr:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

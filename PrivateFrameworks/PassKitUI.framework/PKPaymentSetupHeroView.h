@@ -24,6 +24,8 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
++ (id)assetBackgroundColor;
+
 - (void).cxx_destruct;
 - (void)_createCardViewsWithImages:(id)arg1;
 - (void)_createSubviews;

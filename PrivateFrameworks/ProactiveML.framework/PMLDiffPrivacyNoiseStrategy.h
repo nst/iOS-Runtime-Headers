@@ -20,6 +20,8 @@
 @property float scaleFactor;
 @property (readonly) Class superclass;
 
++ (id)gaussianNoiseWithScaleFactor:(float)arg1 minimumMagnitude:(float)arg2 seed:(int)arg3;
+
 - (void).cxx_destruct;
 - (void)addNoiseToDenseVector:(id)arg1;
 - (void)addNoiseToFeatureMatrix:(id)arg1;
@@ -29,6 +31,7 @@
 - (void)addNoiseToSparseVector:(id)arg1;
 - (void)addNoiseToWeights:(id)arg1;
 - (id)createSampler;
+- (id)description;
 - (id)initWithMaxIterationCount:(int)arg1 scaleFactor:(float)arg2 minimumMagnitude:(float)arg3 samplerClass:(Class)arg4 inplaceNorm:(bool)arg5;
 - (id)initWithMaxIterationCount:(int)arg1 scaleFactor:(float)arg2 minimumMagnitude:(float)arg3 seed:(int)arg4 samplerClass:(Class)arg5 inplaceNorm:(bool)arg6;
 - (id)initWithPlist:(id)arg1 chunks:(id)arg2 context:(id)arg3;

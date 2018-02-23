@@ -6,6 +6,7 @@
     NSObject<OS_dispatch_queue> * _accessQueue;
     bool  _allowsHighQualityMusicStreamingOnCellular;
     NSObject<OS_dispatch_queue> * _calloutQueue;
+    NSMutableDictionary * _lastSiriPlaybackContextIDs;
     int  _musicEQPreset;
     long long  _musicRepeatType;
     long long  _musicShuffleType;
@@ -44,11 +45,13 @@
 - (void)dealloc;
 - (id)init;
 - (id)isPrivateListeningEnabled;
+- (id)lastSiriPlaybackContextIDForPlayerID:(id)arg1;
 - (int)musicEQPreset;
 - (long long)musicRepeatType;
 - (long long)musicShuffleType;
 - (unsigned long long)preferredVideosAssetQualityOnCellular;
 - (unsigned long long)preferredVideosAssetQualityOnWifi;
+- (void)setLastSiriPlaybackContextID:(id)arg1 forPlayerID:(id)arg2;
 - (void)setMusicRepeatType:(long long)arg1;
 - (void)setMusicShuffleType:(long long)arg1;
 - (void)setPrivateListeningEnabled:(id)arg1;

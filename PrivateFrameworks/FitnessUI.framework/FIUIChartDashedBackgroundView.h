@@ -8,14 +8,17 @@
     NSArray * _linePositions;
     long long  _lineType;
     unsigned long long  _numLines;
+    bool  _shouldCenterLines;
 }
 
 @property (nonatomic, retain) UIColor *color;
 @property (nonatomic) long long direction;
 @property (nonatomic) long long lineType;
 @property (nonatomic) unsigned long long numLines;
+@property (nonatomic) bool shouldCenterLines;
 
 - (void).cxx_destruct;
+- (void)_updateLinePositions;
 - (id)color;
 - (long long)direction;
 - (void)drawLine:(id)arg1 rect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 context:(struct CGContext { }*)arg3;
@@ -27,5 +30,7 @@
 - (void)setDirection:(long long)arg1;
 - (void)setLineType:(long long)arg1;
 - (void)setNumLines:(unsigned long long)arg1;
+- (void)setShouldCenterLines:(bool)arg1;
+- (bool)shouldCenterLines;
 
 @end

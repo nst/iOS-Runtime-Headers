@@ -67,7 +67,7 @@
 - (void)_propertyQueue_addStepCount:(id)arg1;
 - (void)_propertyQueue_addSwimmingStrokeCount:(id)arg1;
 - (void)_propertyQueue_alertDelegateDidEncounterError:(id)arg1;
-- (void)_propertyQueue_alertDelegateDidReceiveWorkoutEvent:(id)arg1;
+- (void)_propertyQueue_alertDelegateDidReceiveWorkoutEvent:(id)arg1 completion:(id /* block */)arg2;
 - (void)_propertyQueue_alertDelegateDidUpdateState:(long long)arg1 date:(id)arg2;
 - (void)_propertyQueue_alertDelegateWorkoutDidUpdateTotalActiveEnergyBurned;
 - (void)_propertyQueue_alertDelegateWorkoutDidUpdateTotalBasalEnergyBurned;
@@ -110,7 +110,7 @@
 - (bool)_validateForSavingWithClientEntitlements:(id)arg1 error:(id*)arg2;
 - (id)_workoutServerWithErrorHandler:(id /* block */)arg1;
 - (void)activateWorkoutWithCompletion:(id /* block */)arg1;
-- (void)clientRemote_receivedWorkoutEvent:(id)arg1;
+- (void)clientRemote_receivedWorkoutEvent:(id)arg1 completion:(id /* block */)arg2;
 - (void)clientRemote_serverFailedWithError:(id)arg1;
 - (void)clientRemote_serverPausedWithDate:(id)arg1 completion:(id /* block */)arg2;
 - (void)clientRemote_serverStoppedWithDate:(id)arg1;

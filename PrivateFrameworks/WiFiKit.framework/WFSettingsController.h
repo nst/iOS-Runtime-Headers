@@ -6,6 +6,7 @@
     bool  _cloudSyncRunning;
     WFNetworkSettingsConfig * _config;
     bool  _currentNetwork;
+    <WFSettingsControllerDelegate> * _delegate;
     WFIPMonitor * _ipMonitor;
     bool  _monitorIPChanges;
     WFNetworkScanRecord * _network;
@@ -19,6 +20,7 @@
 @property (nonatomic, retain) WFNetworkSettingsConfig *config;
 @property (nonatomic) bool currentNetwork;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <WFSettingsControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) WFIPMonitor *ipMonitor;
@@ -41,9 +43,9 @@
 - (id)config;
 - (bool)currentNetwork;
 - (void)dealloc;
+- (id)delegate;
 - (id)initWithNetwork:(id)arg1 ipMonitor:(id)arg2 recommendations:(id)arg3 currentNetwork:(bool)arg4;
-- (id)initWithNetwork:(id)arg1 ipMonitor:(id)arg2 recommendations:(id)arg3 currentNetwork:(bool)arg4 legacyUI:(bool)arg5;
-- (id)initWithNetwork:(id)arg1 networkProfile:(id)arg2 ipMonitor:(id)arg3 recommendations:(id)arg4 currentNetwork:(bool)arg5 legacyUI:(bool)arg6;
+- (id)initWithNetwork:(id)arg1 networkProfile:(id)arg2 ipMonitor:(id)arg3 recommendations:(id)arg4 currentNetwork:(bool)arg5 delegate:(id)arg6;
 - (id)ipMonitor;
 - (bool)monitorIPChanges;
 - (id)network;
@@ -56,6 +58,7 @@
 - (void)setCloudSyncRunning:(bool)arg1;
 - (void)setConfig:(id)arg1;
 - (void)setCurrentNetwork:(bool)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setIpMonitor:(id)arg1;
 - (void)setMonitorIPChanges:(bool)arg1;
 - (void)setNetwork:(id)arg1;

@@ -4,10 +4,15 @@
 
 @interface _ATXLocationManagerWrapper : NSObject <CLLocationManagerDelegate, _ATXLocationManagerWrapperProtocol> {
     _ATXLocation * _currentLOI;
+    long long  _currentLOIType;
     CLLocation * _currentLocation;
+    CLLocation * _gymLOI;
+    CLLocation * _homeLOI;
     NSDate * _lastLOIUpdateTimestamp;
     CLLocationManager * _locationManager;
     RTRoutineManager * _routineManager;
+    CLLocation * _schoolLOI;
+    CLLocation * _workLOI;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -16,11 +21,21 @@
 @property (retain) CLLocationManager *locationManager;
 @property (readonly) Class superclass;
 
++ (id)sharedInstance;
++ (id)stringForLOIType:(long long)arg1;
+
 - (void).cxx_destruct;
-- (id)_getCurrentLocation;
 - (void)_updateCurrentLocationOfInterest;
+- (void)_updateDistancesFromLOIsWithCompletionBlock:(id /* block */)arg1;
+- (void)_updateLocationOfInterestIfTimeElapsed;
 - (void)clearLocationOfInterest;
+- (long long)currentLOIType;
+- (double)distanceFromGymOfCurrentLocation;
+- (double)distanceFromHomeOfCurrentLocation;
+- (double)distanceFromSchoolOfCurrentLocation;
+- (double)distanceFromWorkOfCurrentLocation;
 - (void)fetchAllLocationsOfInterest:(id /* block */)arg1;
+- (id)getCurrentLocation;
 - (id)init;
 - (id)locationManager;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;

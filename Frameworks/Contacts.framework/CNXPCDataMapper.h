@@ -63,5 +63,6 @@
 - (id)unifiedContactCountWithError:(id*)arg1;
 - (bool)unregisterChangeHistoryClientIdentifier:(id)arg1 error:(id*)arg2;
 - (id)userActivityUserInfoForContact:(id)arg1;
+- (id)verifyIndexWithError:(id*)arg1;
 
 @end

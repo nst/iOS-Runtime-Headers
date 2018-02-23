@@ -25,6 +25,7 @@
 + (bool)_allowAuthorizationForReadingWithTypes:(id)arg1 entitlements:(id)arg2 disallowedTypes:(id)arg3;
 + (bool)_allowAuthorizationForSharing:(bool)arg1 types:(id)arg2 entitlements:(id)arg3 disallowedTypes:(id)arg4;
 + (bool)_allowAuthorizationForSharingWithTypes:(id)arg1 entitlements:(id)arg2 disallowedTypes:(id)arg3;
++ (void)_enumerateObjectTypesWithHandler:(id /* block */)arg1;
 + (id)_objectTypeWithIdentifier:(id)arg1 class:(Class)arg2 lookupTable:(id)arg3;
 + (id)_typeWithIdentifier:(id)arg1;
 + (id)_typesIncludingParentTypes:(id)arg1;

@@ -15,13 +15,14 @@
 @property (nonatomic, copy) NSString *memo;
 @property (nonatomic, copy) NSString *paymentIdentifier;
 @property (nonatomic, copy) NSString *recipientAddress;
-@property (nonatomic, copy) NSString *requestToken;
+@property (nonatomic, copy) PKPeerPaymentRequestToken *requestToken;
 @property (nonatomic, copy) NSString *senderAddress;
 @property (nonatomic, copy) NSString *transactionIdentifier;
 @property (nonatomic) unsigned long long type;
 @property (nonatomic, readonly) MSMessage *underlyingMessage;
 
 - (void).cxx_destruct;
+- (id)_requestDeviceScoreIdentifier;
 - (void)_updateDataURL;
 - (void)_updateLayoutContents;
 - (void)_updateSummaryText;

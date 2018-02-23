@@ -36,6 +36,7 @@
 - (void)prepareScoreMessage;
 - (void)scoreMessageWithNonce:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)scoreWithNonce:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)scoreWithScoreRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)score_id_queue;
 - (void)setCallback_queue:(id)arg1;
 - (void)setContext:(id)arg1;

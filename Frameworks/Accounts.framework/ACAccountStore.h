@@ -220,6 +220,16 @@
 - (bool)hasMailAccountsForSync;
 - (id)mailAccountsForSync;
 
+// Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
+
++ (id)_accountTypesCache;
+
+- (id)_correspondingAccountWithAccountTypeIdentifier:(id)arg1 forAccount:(id)arg2 error:(id*)arg3;
+- (id)_ss_IDMSAccountForAccount:(id)arg1 error:(id*)arg2;
+- (id)_ss_accountTypeWithIdentifier:(id)arg1 error:(id*)arg2;
+- (id)_ss_appleAuthenticationAccountForAccount:(id)arg1 error:(id*)arg2;
+- (id)_ss_iCloudAccountForAccount:(id)arg1 error:(id*)arg2;
+
 // Image: /System/Library/PrivateFrameworks/iTunesCloud.framework/iTunesCloud
 
 + (id)ic_sharedAccountStore;

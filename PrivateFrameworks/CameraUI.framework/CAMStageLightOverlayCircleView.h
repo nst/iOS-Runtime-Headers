@@ -4,27 +4,28 @@
 
 @interface CAMStageLightOverlayCircleView : UIView {
     bool  _active;
-    double  _highlightedStrokeInset;
-    double  _highlightedStrokeWidth;
-    double  _unhighlightedStrokeInset;
-    double  _unhighlightedStrokeWidth;
+    UIImage * _highlightedImage;
+    UIImage * _image;
 }
 
 @property (getter=isActive, nonatomic) bool active;
-@property (nonatomic, readonly) double highlightedStrokeInset;
-@property (nonatomic, readonly) double highlightedStrokeWidth;
-@property (nonatomic, readonly) double unhighlightedStrokeInset;
-@property (nonatomic, readonly) double unhighlightedStrokeWidth;
+@property (nonatomic, retain) UIImage *highlightedImage;
+@property (nonatomic, retain) UIImage *image;
 
-- (id)_circleImageWithColor:(id)arg1 strokeWidth:(double)arg2 strokeInset:(double)arg3;
-- (void)_drawCircleWithColor:(id)arg1 strokeWidth:(double)arg2 strokeInset:(double)arg3;
-- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (double)highlightedStrokeInset;
-- (double)highlightedStrokeWidth;
+- (void).cxx_destruct;
+- (id)_circleImageWithColor:(id)arg1;
+- (void)_drawCircleWithColor:(id)arg1;
+- (void)_updateContentsAnimated:(bool)arg1;
+- (void)_updateImagesIfNeeded;
+- (id)actionForLayer:(id)arg1 forKey:(id)arg2;
+- (id)highlightedImage;
+- (id)image;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (bool)isActive;
+- (void)layoutSubviews;
 - (void)setActive:(bool)arg1;
-- (double)unhighlightedStrokeInset;
-- (double)unhighlightedStrokeWidth;
+- (void)setActive:(bool)arg1 animated:(bool)arg2;
+- (void)setHighlightedImage:(id)arg1;
+- (void)setImage:(id)arg1;
 
 @end

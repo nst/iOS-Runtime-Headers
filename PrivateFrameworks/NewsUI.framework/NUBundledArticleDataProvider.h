@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsUI.framework/NewsUI
  */
 
-@interface NUBundledArticleDataProvider : NSObject <NUArticleDataProvider, SXEmbedDataSource, SXReachabilityProvider, SXResourceDataSource> {
+@interface NUBundledArticleDataProvider : NSObject <NUArticleDataProvider, SXEmbedDataProvider, SXResourceDataSource> {
     FCArticle * _article;
 }
 
@@ -14,13 +14,11 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)addReachabilityObserver:(id)arg1;
 - (id)article;
 - (id)articleID;
 - (id)embedForType:(id)arg1;
 - (id)fileURLForBundleURL:(id)arg1;
 - (id)initWithArticle:(id)arg1;
-- (bool)isNetworkReachable;
 - (void)load;
 - (void)loadContextWithCompletionBlock:(id /* block */)arg1;
 - (id /* block */)loadImagesForImageRequest:(id)arg1 completionBlock:(id /* block */)arg2;

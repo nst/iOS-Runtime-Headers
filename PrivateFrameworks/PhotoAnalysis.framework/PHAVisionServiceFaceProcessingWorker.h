@@ -9,6 +9,7 @@
         unsigned long long faceCount; 
         unsigned long long clusteringCount; 
     }  _analysisStatistics;
+    bool  _clustererNeedsSyncing;
     bool  _disabledByUserDefaults;
     unsigned long long  _incrementalPersonProcessingStage;
     unsigned long long  _lastMinimumFaceGroupSizeForCreatingMergeCandidates;
@@ -62,7 +63,7 @@
 - (void)_performIntermediateCVMLCleanup;
 - (int)_performPersistedFaceAnalysisOfPVImage:(id)arg1 withAttributes:(id)arg2 forAsset:(id)arg3 error:(id*)arg4;
 - (int)_performPersistedFaceAnalysisOfResource:(id)arg1 withAttributes:(id)arg2 forAsset:(id)arg3 error:(id*)arg4;
-- (id)_photoVisionAllowingCreation:(bool)arg1 error:(id*)arg2;
+- (id)_photoVisionAllowingCreation:(bool)arg1 syncClusterCache:(bool)arg2 error:(id*)arg3;
 - (bool)_promotePersonsWithError:(id*)arg1;
 - (id)_pvImageForAsset:(id)arg1 error:(id*)arg2;
 - (id)_pvImageForAssetResource:(id)arg1 assetWidth:(unsigned long long)arg2 assetHeight:(unsigned long long)arg3 error:(id*)arg4;

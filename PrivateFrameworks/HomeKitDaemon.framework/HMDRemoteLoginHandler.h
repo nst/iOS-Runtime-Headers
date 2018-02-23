@@ -29,6 +29,7 @@
 - (void).cxx_destruct;
 - (void)_handleRemoteLoginAccount:(id)arg1 message:(id)arg2;
 - (void)_initialize;
+- (void)_sendAccountUpdateNotification:(id)arg1;
 - (void)_updateLoggedInAccount:(id)arg1;
 - (id)accessory;
 - (id)anisetteDataHandler;

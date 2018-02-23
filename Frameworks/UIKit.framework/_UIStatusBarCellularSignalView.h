@@ -21,6 +21,7 @@
 - (void)_updateCycleAnimationVisibility;
 - (void)_updateFromMode:(long long)arg1;
 - (void)_visibilityDidChange;
+- (id)accessibilityHUDRepresentation;
 - (id)cycleAnimation;
 - (void)didMoveToWindow;
 - (struct CGSize { double x1; double x2; })intrinsicContentSize;

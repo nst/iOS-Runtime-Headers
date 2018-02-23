@@ -16,14 +16,13 @@
 @property (nonatomic) <EKEventAttachmentCellControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
-@property (nonatomic) bool sourceIsManaged;
 @property (readonly) Class superclass;
 
 + (id)_attachmentDownloadErrorLocalizedString;
 + (bool)_attachmentIsViewable:(id)arg1;
 + (id)_cannotOpenAttachmentLocalizedString;
 + (id)_okLocalizedString;
-+ (id)cellControllersForAttachments:(id)arg1 givenExistingControllers:(id)arg2;
++ (id)cellControllersForAttachments:(id)arg1 givenExistingControllers:(id)arg2 sourceIsManaged:(bool)arg3;
 
 - (void).cxx_destruct;
 - (void)_clearDownloadID;
@@ -37,11 +36,9 @@
 - (id)documentInteractionControllerViewControllerForPreview:(id)arg1;
 - (id)documentInteractionControllerViewForPreview:(id)arg1;
 - (void)documentInteractionControllerWillEndPreview:(id)arg1;
-- (id)initWithAttachment:(id)arg1;
+- (id)initWithAttachment:(id)arg1 sourceIsManaged:(bool)arg2;
 - (void)setAttachment:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setSourceIsManaged:(bool)arg1;
-- (bool)sourceIsManaged;
 - (void)tearDown;
 
 @end

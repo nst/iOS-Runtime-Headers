@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDUnassociatedAccessory : HMFObject <HMFMessageReceiver, NSSecureCoding> {
+@interface HMDUnassociatedAccessory : HMFObject <HMFLogging, HMFMessageReceiver, NSSecureCoding> {
     long long  _associationOptions;
     HMAccessoryCategory * _category;
     NSObject<OS_dispatch_queue> * _clientQueue;
@@ -29,6 +29,7 @@
 @property (readonly) Class superclass;
 @property (readonly, copy) NSUUID *uuid;
 
++ (id)logCategory;
 + (id)otherAccessoryCategory;
 + (id)shortDescription;
 + (bool)supportsSecureCoding;
@@ -53,6 +54,7 @@
 - (id)initWithIdentifier:(id)arg1 name:(id)arg2 category:(id)arg3 messageDispatcher:(id)arg4;
 - (bool)isEqual:(id)arg1;
 - (bool)isReachable;
+- (id)logIdentifier;
 - (id)messageDestination;
 - (id)messageDispatcher;
 - (id)messageReceiveQueue;

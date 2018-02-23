@@ -27,7 +27,8 @@
 - (id)initWithForwarder:(id)arg1 onConnection:(id)arg2 subscriberID:(id)arg3 appBundleID:(id)arg4;
 - (bool)isFromConnection:(id)arg1;
 - (id)itemLocation;
-- (oneway void)observePublisherForID:(id)arg1 value:(id)arg2 forKey:(id)arg3 inUserInfo:(bool)arg4;
+- (oneway void)observePublisherForID:(id)arg1 values:(id)arg2 forKeys:(id)arg3;
+- (oneway void)observePublisherUserInfoForID:(id)arg1 value:(id)arg2 forKey:(id)arg3;
 - (oneway void)removePublisherForID:(id)arg1;
 - (void)setCategory:(id)arg1;
 - (void)setItemLocation:(id)arg1;

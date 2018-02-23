@@ -56,6 +56,7 @@
 - (id)objectForMediaItem:(id)arg1;
 - (id)objectForPlayer:(id)arg1;
 - (id)objectForPlaylist:(id)arg1;
+- (oneway void)release;
 - (void)sendErrorWithMessage:(id)arg1;
 - (void)setAppContext:(id)arg1;
 - (void)setAppDeviceConfig:(id)arg1;

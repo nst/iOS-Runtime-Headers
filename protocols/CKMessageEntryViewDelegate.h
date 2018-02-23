@@ -24,6 +24,7 @@
 @optional
 
 - (bool)getContainerWidth:(double*)arg1 offset:(double*)arg2;
+- (void)messageEntryViewSwipeDownGestureRecognized:(CKMessageEntryView *)arg1;
 - (void)sendCurrentLocationMessage:(CKMessageEntryView *)arg1;
 - (bool)shouldMessageEntryViewReportBrowserButtonHitToInputDelegate:(CKMessageEntryView *)arg1;
 

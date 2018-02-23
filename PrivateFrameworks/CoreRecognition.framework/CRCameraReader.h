@@ -5,6 +5,7 @@
 @interface CRCameraReader : UIViewController <AVCaptureMetadataOutputObjectsDelegate, AVCaptureVideoDataOutputSampleBufferDelegate, CALayerDelegate> {
     UIActivityIndicatorView * _activityIndicator;
     CRAlignmentLayer * _alignmentLayer;
+    float  _borderPaddingIDCard;
     CRBoxLayer * _boxLayer;
     CRPollingTimer * _boxLayerHideTimer;
     <CRCameraReaderDelegate> * _callbackDelegate;
@@ -92,6 +93,7 @@
 
 @property (retain) UIActivityIndicatorView *activityIndicator;
 @property (retain) CRAlignmentLayer *alignmentLayer;
+@property float borderPaddingIDCard;
 @property (retain) CRBoxLayer *boxLayer;
 @property (retain) CRPollingTimer *boxLayerHideTimer;
 @property <CRCameraReaderDelegate> *callbackDelegate;
@@ -163,6 +165,7 @@
 
 + (id)extractCardImage:(id)arg1 fromPixelBuffer:(struct __CVBuffer { }*)arg2 withCardBuffer:(struct __CVBuffer { }*)arg3 pixelFocalLength:(id)arg4;
 + (id)extractCardImage:(id)arg1 fromPixelBuffer:(struct __CVBuffer { }*)arg2 withCardBuffer:(struct __CVBuffer { }*)arg3 withPoints:(id)arg4 pixelFocalLength:(id)arg5;
++ (id)extractCardImage:(id)arg1 fromPixelBuffer:(struct __CVBuffer { }*)arg2 withCardBuffer:(struct __CVBuffer { }*)arg3 withPoints:(id)arg4 pixelFocalLength:(id)arg5 padding:(float)arg6;
 + (id)findCodeInImage:(struct vImage_Buffer { void *x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; })arg1 maxStage:(unsigned long long)arg2;
 + (id)findCodeInImage:(struct vImage_Buffer { void *x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; })arg1 maxStage:(unsigned long long)arg2 outputObjectTypes:(id)arg3;
 + (id)findCodeInImage:(struct vImage_Buffer { void *x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; })arg1 maxStage:(unsigned long long)arg2 roi:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
@@ -177,6 +180,7 @@
 - (void)aetPlacementTextColor:(id)arg1;
 - (id)alignmentLayer;
 - (void)animatePresentCodeAtFrameTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (float)borderPaddingIDCard;
 - (id)boxLayer;
 - (id)boxLayerHideTimer;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boxLayerPresentationFrame;
@@ -284,6 +288,7 @@
 - (double)sessionTimeout;
 - (void)setActivityIndicator:(id)arg1;
 - (void)setAlignmentLayer:(id)arg1;
+- (void)setBorderPaddingIDCard:(float)arg1;
 - (void)setBoxLayer:(id)arg1;
 - (void)setBoxLayerHideTimer:(id)arg1;
 - (void)setCallbackDelegate:(id)arg1;

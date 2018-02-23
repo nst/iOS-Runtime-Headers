@@ -77,7 +77,8 @@
 - (void)iCloudSignOut;
 - (void)iCloudSignOutHack;
 - (void)iCloudUpdateForUserName:(NSString *)arg1 accountInfo:(NSDictionary *)arg2;
-- (void)idsiCloudSignInDataMigratorForID:(NSString *)arg1;
+- (void)iTunesSignInWithUserName:(NSString *)arg1 authToken:(NSString *)arg2 password:(NSString *)arg3 accountInfo:(NSDictionary *)arg4 accountStatus:(NSNumber *)arg5 handles:(NSArray *)arg6;
+- (void)iTunesSignOut;
 - (void)incomingAccountSyncMessage:(NSDictionary *)arg1;
 - (void)initialLocalSyncCompletedForServices:(NSArray *)arg1;
 - (void)initialLocalSyncStartedForServices:(NSArray *)arg1;
@@ -93,6 +94,7 @@
 - (void)passwordUpdatedForAccount:(NSString *)arg1;
 - (void)reRegisterWithUserID:(NSString *)arg1 action:(NSNumber *)arg2 service:(NSString *)arg3;
 - (void)redeliverMessagesForDevice:(NSString *)arg1 requestID:(NSString *)arg2;
+- (void)regenerateRegisteredIdentity;
 - (void)registerAccount:(NSString *)arg1;
 - (void)registerForNotificationsOnServices:(NSSet *)arg1;
 - (void)registrationControlGetRegistrationStateForRegistrationType:(long long)arg1 requestID:(NSString *)arg2;
@@ -104,7 +106,6 @@
 - (void)reportiMessageUnknownSender:(NSString *)arg1 messageID:(NSString *)arg2 messageServerTimestamp:(NSNumber *)arg3 toURI:(NSString *)arg4;
 - (void)reunionSyncCompletedForServices:(NSArray *)arg1 requestID:(NSString *)arg2;
 - (void)reunionSyncStartedForServices:(NSArray *)arg1 requestID:(NSString *)arg2;
-- (void)rollKeys;
 - (void)sendAllocationRequest:(NSString *)arg1 options:(NSDictionary *)arg2;
 - (void)sendAppAckWithGUID:(NSString *)arg1 toDestination:(NSString *)arg2 forAccountWithUniqueID:(NSString *)arg3 connectionType:(long long)arg4;
 - (void)sendInvitation:(NSString *)arg1 withData:(NSData *)arg2 declineOnError:(bool)arg3;

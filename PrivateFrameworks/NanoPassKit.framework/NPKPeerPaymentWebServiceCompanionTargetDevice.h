@@ -14,14 +14,22 @@
 @property (nonatomic, retain) NPSManager *preferencesSyncManager;
 @property (readonly) Class superclass;
 
++ (void)attemptToDownloadPeerPaymentPassAtURL:(id)arg1 withWebService:(id)arg2 completion:(id /* block */)arg3;
+
 - (void).cxx_destruct;
 - (id)account;
 - (id)bridgedClientInfo;
+- (void)checkTLKsMissingWithCompletion:(id /* block */)arg1;
+- (void)cloudStoreStatusWithCompletion:(id /* block */)arg1;
 - (void)downloadPassIfNecessaryWithCompletion:(id /* block */)arg1;
 - (id)globalDomainAccessor;
 - (id)init;
+- (void)initalizeCloudStoreIfNecessaryWithCompletion:(id /* block */)arg1;
+- (void)initalizeCloudStoreIfNecessaryWithHandler:(id /* block */)arg1;
+- (void)peerPaymentReRegisterWithURL:(id)arg1 pushToken:(id)arg2 completion:(id /* block */)arg3;
 - (id)preferencesSyncManager;
 - (void)provisionPeerPaymentPassWithProvisioningController:(id)arg1 credential:(id)arg2 completion:(id /* block */)arg3;
+- (void)resetApplePayManateeViewWithCompletion:(id /* block */)arg1;
 - (void)setGlobalDomainAccessor:(id)arg1;
 - (void)setPreferencesSyncManager:(id)arg1;
 - (void)setUserHasDisabledPeerPayment:(bool)arg1;

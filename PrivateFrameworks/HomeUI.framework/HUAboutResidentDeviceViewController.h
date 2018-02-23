@@ -4,9 +4,10 @@
 
 @interface HUAboutResidentDeviceViewController : UIViewController {
     UIImageView * _atvImageView;
-    UILabel * _atvTextLabel;
     NSArray * _constraints;
     <HUAboutResidentDeviceViewControllerDelegate> * _delegate;
+    UILabel * _homeHubTextLabel;
+    UIImageView * _homePodImageView;
     UIImageView * _iPadImageView;
     UILabel * _iPadTextLabel;
     HUGridLayoutOptions * _layoutOptions;
@@ -18,9 +19,10 @@
 }
 
 @property (nonatomic, retain) UIImageView *atvImageView;
-@property (nonatomic, retain) UILabel *atvTextLabel;
 @property (nonatomic, retain) NSArray *constraints;
 @property (nonatomic) <HUAboutResidentDeviceViewControllerDelegate> *delegate;
+@property (nonatomic, retain) UILabel *homeHubTextLabel;
+@property (nonatomic, retain) UIImageView *homePodImageView;
 @property (nonatomic, retain) UIImageView *iPadImageView;
 @property (nonatomic, retain) UILabel *iPadTextLabel;
 @property (nonatomic, retain) HUGridLayoutOptions *layoutOptions;
@@ -43,9 +45,10 @@
 - (void)_done:(id)arg1;
 - (void)_setNavigationBarVisibility;
 - (id)atvImageView;
-- (id)atvTextLabel;
 - (id)constraints;
 - (id)delegate;
+- (id)homeHubTextLabel;
+- (id)homePodImageView;
 - (id)iPadImageView;
 - (id)iPadTextLabel;
 - (id)init;
@@ -53,9 +56,10 @@
 - (id)layoutOptions;
 - (id)scrollView;
 - (void)setAtvImageView:(id)arg1;
-- (void)setAtvTextLabel:(id)arg1;
 - (void)setConstraints:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setHomeHubTextLabel:(id)arg1;
+- (void)setHomePodImageView:(id)arg1;
 - (void)setIPadImageView:(id)arg1;
 - (void)setIPadTextLabel:(id)arg1;
 - (void)setLayoutOptions:(id)arg1;

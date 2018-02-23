@@ -241,6 +241,7 @@
 - (bool)_shouldPersistViewWhenCoding;
 - (bool)_shouldPreventAutorotation;
 - (bool)_shouldSynthesizeSupportedOrientations;
+- (bool)_shouldUseRelativeInsets;
 - (void)_showMasterViewAnimated:(bool)arg1;
 - (unsigned long long)_targetEdgeForPopover;
 - (void)_triggerDisplayModeAction:(id)arg1;

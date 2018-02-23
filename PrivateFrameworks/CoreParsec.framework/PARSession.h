@@ -71,6 +71,7 @@
 - (void)searchViewDidAppear:(id)arg1;
 - (void)searchViewDidDisappear:(id)arg1;
 - (void)sectionHeaderDidBecomeVisible:(id)arg1;
+- (void)sendCBAEngagementFeedback:(id)arg1 query:(unsigned long long)arg2;
 - (void)sendCustomFeedback:(id)arg1;
 - (void)setBag:(id)arg1;
 - (void)setClient:(id)arg1;

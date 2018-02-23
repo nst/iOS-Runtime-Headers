@@ -40,6 +40,15 @@
 }
 
 @property (setter=_aa_setRawPassword:, nonatomic, copy) NSString *_aa_rawPassword;
+@property (nonatomic, readonly) NSNumber *_ss_DSID;
+@property (nonatomic, readonly) NSString *_ss_altDSID;
+@property (nonatomic, readonly) NSString *_ss_hashedDescription;
+@property (nonatomic, readonly) bool _ss_isAppleAuthenticationAccount;
+@property (nonatomic, readonly) bool _ss_isIDMSAccount;
+@property (nonatomic, readonly) bool _ss_isLocalAccount;
+@property (nonatomic, readonly) bool _ss_isiCloudAccount;
+@property (nonatomic, readonly) bool _ss_isiTunesAccount;
+@property (setter=_ss_setSecureToken:, nonatomic, copy) NSString *_ss_secureToken;
 @property (nonatomic, readonly) NSDictionary *aa_accountFirstDisplayAlert;
 @property (nonatomic, readonly) NSDictionary *aa_accountFooterButton;
 @property (nonatomic, readonly) NSString *aa_accountFooterText;
@@ -56,6 +65,7 @@
 @property (nonatomic, readonly) ACAccount *aa_fmipAccount;
 @property (nonatomic, readonly) NSString *aa_fmipToken;
 @property (nonatomic, readonly) NSString *aa_formattedUsername;
+@property (nonatomic, readonly) bool aa_hasOptionalTerms;
 @property (nonatomic, readonly) NSString *aa_hsaToken;
 @property (setter=aa_setCloudDocsMigrationComplete:, nonatomic) bool aa_isCloudDocsMigrationComplete;
 @property (nonatomic, readonly) bool aa_isManagedAppleID;
@@ -193,6 +203,7 @@
 - (void)_markPropertyDirty:(id)arg1;
 - (void)_setAccountStore:(id)arg1;
 - (void)_setObjectID:(id)arg1;
+- (void)_unsafe_markPropertyDirty:(id)arg1;
 - (bool)_useParentForCredentials;
 - (id)accountByCleaningThirdPartyTransformations;
 - (id)accountDescription;
@@ -269,6 +280,7 @@
 - (void)setCredential:(id)arg1;
 - (void)setCredentialType:(id)arg1;
 - (void)setDataclassProperties:(id)arg1;
+- (void)setDirty:(bool)arg1 forProperty:(id)arg2;
 - (void)setEnabled:(bool)arg1 forDataclass:(id)arg2;
 - (void)setEnabledDataclasses:(id)arg1;
 - (void)setIdentifier:(id)arg1;
@@ -325,6 +337,7 @@
 - (id)aa_fmipAccount;
 - (id)aa_fmipToken;
 - (id)aa_formattedUsername;
+- (bool)aa_hasOptionalTerms;
 - (id)aa_hsaToken;
 - (id)aa_hsaTokenWithError:(id*)arg1;
 - (bool)aa_isCloudDocsMigrationComplete;
@@ -550,6 +563,20 @@
 - (bool)ic_isNotesMigrated;
 - (bool)ic_isPrimaryAppleAccount;
 - (bool)ic_supportsHTMLNotes;
+
+// Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
+
+- (id)_ss_DSID;
+- (id)_ss_altDSID;
+- (id)_ss_hashedDescription;
+- (bool)_ss_isAppleAuthenticationAccount;
+- (bool)_ss_isDuplicate:(id)arg1;
+- (bool)_ss_isIDMSAccount;
+- (bool)_ss_isLocalAccount;
+- (bool)_ss_isiCloudAccount;
+- (bool)_ss_isiTunesAccount;
+- (id)_ss_secureToken;
+- (void)_ss_setSecureToken:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/iTunesCloud.framework/iTunesCloud
 

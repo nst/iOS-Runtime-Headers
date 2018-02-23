@@ -9,7 +9,6 @@
     UIButton * _denyButton;
     UILabel * _descriptionLabel;
     id /* block */  _dismissHandler;
-    double  _sideInsets;
     <PXPerson> * _suggestedPerson;
 }
 
@@ -20,7 +19,6 @@
 @property (nonatomic, retain) UILabel *descriptionLabel;
 @property (nonatomic, copy) id /* block */ dismissHandler;
 @property (nonatomic, readonly) double preferredHeight;
-@property (nonatomic) double sideInsets;
 @property (retain) <PXPerson> *suggestedPerson;
 
 - (void).cxx_destruct;
@@ -44,9 +42,7 @@
 - (void)setDenyButton:(id)arg1;
 - (void)setDescriptionLabel:(id)arg1;
 - (void)setDismissHandler:(id /* block */)arg1;
-- (void)setSideInsets:(double)arg1;
 - (void)setSuggestedPerson:(id)arg1;
-- (double)sideInsets;
 - (id)suggestedPerson;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLoad;

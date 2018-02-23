@@ -45,6 +45,8 @@
 @property (nonatomic, readonly) bool shouldBindRowsTogether;
 @property (readonly) Class superclass;
 
++ (void)gradientConfigForCollection:(id)arg1 gradientMask:(long long)arg2 gradientLengths:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg3 gradientInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg4 gradientBoundsInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg5;
+
 - (void).cxx_destruct;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_adjustedHeaderFrame;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_adjustedPadding;

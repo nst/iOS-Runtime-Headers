@@ -50,6 +50,7 @@
 - (void)_updateContactAndForceSelection:(bool)arg1;
 - (bool)_updateMeCardWithNewContact:(id)arg1 oldContact:(id)arg2 forKey:(id)arg3 usingPreference:(id)arg4;
 - (void)_updateNavigationBarButtons;
+- (void)_updatePreferredContentSize;
 - (void)addressEditorViewController:(id)arg1 selectedContact:(id)arg2;
 - (void)addressEditorViewControllerDidCancel:(id)arg1;
 - (void)addressSearcherViewController:(id)arg1 selectedContact:(id)arg2;
@@ -90,6 +91,7 @@
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (void)tableViewDidFinishReload:(id)arg1;
 - (void)textFieldDidBeginEditing:(id)arg1;
 - (void)textFieldDidEndEditing:(id)arg1;
 - (bool)textFieldShouldEndEditing:(id)arg1;

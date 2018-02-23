@@ -52,6 +52,7 @@
 - (id)initWithResponseDictionary:(id)arg1;
 - (bool)isAdministrator;
 - (bool)isEligibleForFreeTrial;
+- (bool)isEqualToStatus:(id)arg1;
 - (bool)isHeadOfHousehold;
 - (bool)isInFreeTrial;
 - (bool)isMatchEnabled;

@@ -33,6 +33,7 @@
         unsigned int carHeadunitPixelHeight : 1; 
         unsigned int carHeadunitPixelWidth : 1; 
         unsigned int mapZoomLevel : 1; 
+        unsigned int sessionRelativeTimestamp : 1; 
         unsigned int action : 1; 
         unsigned int carHeadunitConnectionType : 1; 
         unsigned int carHeadunitInteractionModel : 1; 
@@ -80,6 +81,7 @@
         unsigned long long _high; 
         unsigned long long _low; 
     }  _sessionId;
+    double  _sessionRelativeTimestamp;
     int  _source;
     bool  _supportDirectionIntentSearch;
     bool  _supportDymSuggestion;
@@ -153,6 +155,7 @@
 @property (nonatomic) bool hasReviewUserPhotosCount;
 @property (nonatomic) bool hasSequenceNumber;
 @property (nonatomic) bool hasSessionId;
+@property (nonatomic) bool hasSessionRelativeTimestamp;
 @property (nonatomic) bool hasSource;
 @property (nonatomic) bool hasSupportDirectionIntentSearch;
 @property (nonatomic) bool hasSupportDymSuggestion;
@@ -182,6 +185,7 @@
 @property (nonatomic) unsigned int reviewUserPhotosCount;
 @property (nonatomic) unsigned int sequenceNumber;
 @property (nonatomic) struct GEOSessionID { unsigned long long x1; unsigned long long x2; } sessionId;
+@property (nonatomic) double sessionRelativeTimestamp;
 @property (nonatomic) int source;
 @property (nonatomic) bool supportDirectionIntentSearch;
 @property (nonatomic) bool supportDymSuggestion;
@@ -296,6 +300,7 @@
 - (bool)hasReviewUserPhotosCount;
 - (bool)hasSequenceNumber;
 - (bool)hasSessionId;
+- (bool)hasSessionRelativeTimestamp;
 - (bool)hasSource;
 - (bool)hasSupportDirectionIntentSearch;
 - (bool)hasSupportDymSuggestion;
@@ -339,6 +344,7 @@
 - (unsigned int)reviewUserPhotosCount;
 - (unsigned int)sequenceNumber;
 - (struct GEOSessionID { unsigned long long x1; unsigned long long x2; })sessionId;
+- (double)sessionRelativeTimestamp;
 - (void)setAction:(int)arg1;
 - (void)setAnalyticsAppIdentifier:(id)arg1;
 - (void)setAppIdentifier:(id)arg1;
@@ -379,6 +385,7 @@
 - (void)setHasReviewUserPhotosCount:(bool)arg1;
 - (void)setHasSequenceNumber:(bool)arg1;
 - (void)setHasSessionId:(bool)arg1;
+- (void)setHasSessionRelativeTimestamp:(bool)arg1;
 - (void)setHasSource:(bool)arg1;
 - (void)setHasSupportDirectionIntentSearch:(bool)arg1;
 - (void)setHasSupportDymSuggestion:(bool)arg1;
@@ -403,6 +410,7 @@
 - (void)setReviewUserPhotosCount:(unsigned int)arg1;
 - (void)setSequenceNumber:(unsigned int)arg1;
 - (void)setSessionId:(struct GEOSessionID { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setSessionRelativeTimestamp:(double)arg1;
 - (void)setSource:(int)arg1;
 - (void)setSupportDirectionIntentSearch:(bool)arg1;
 - (void)setSupportDymSuggestion:(bool)arg1;

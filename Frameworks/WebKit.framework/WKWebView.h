@@ -8,6 +8,7 @@
     bool  _allowsBackForwardNavigationGestures;
     bool  _allowsLinkPreview;
     bool  _allowsViewportShrinkToFit;
+    bool  _avoidsUnsafeArea;
     bool  _commitDidRestoreScrollPosition;
     struct RetainPtr<WKWebViewConfiguration> { 
         void *m_ptr; 
@@ -96,6 +97,33 @@
     long long  _interfaceOrientationOverride;
     bool  _isChangingObscuredInsetsInteractively;
     double  _lastAdjustmentForScroller;
+    struct optional<int> { 
+        bool init_; 
+        union constexpr_storage_t<int> { 
+            unsigned char dummy_; 
+            int value_; 
+        } storage_; 
+    }  _lastSentDeviceOrientation;
+    struct optional<WebCore::FloatSize> { 
+        bool init_; 
+        union constexpr_storage_t<WebCore::FloatSize> { 
+            unsigned char dummy_; 
+            struct FloatSize { 
+                float m_width; 
+                float m_height; 
+            } value_; 
+        } storage_; 
+    }  _lastSentMaximumUnobscuredSize;
+    struct optional<WebCore::FloatSize> { 
+        bool init_; 
+        union constexpr_storage_t<WebCore::FloatSize> { 
+            unsigned char dummy_; 
+            struct FloatSize { 
+                float m_width; 
+                float m_height; 
+            } value_; 
+        } storage_; 
+    }  _lastSentMinimumLayoutSize;
     struct CGSize { 
         double width; 
         double height; 
@@ -230,6 +258,7 @@
 @property (nonatomic, readonly) NSArray *_certificateChain;
 @property (nonatomic, readonly) NSURL *_committedURL;
 @property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } _computedContentInset;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } _computedUnobscuredSafeAreaInset;
 @property (nonatomic, readonly) WKWebViewContentProviderRegistry *_contentProviderRegistry;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _contentVisibleRect;
 @property (setter=_setCustomUserAgent:, copy) NSString *_customUserAgent;
@@ -329,6 +358,7 @@
 - (id)URL;
 - (id)_MIMEType;
 - (void)_accessibilityDidGetSpeakSelectionContent:(id)arg1;
+- (void)_accessibilityRetrieveRectsAtSelectionOffset:(long long)arg1 withText:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_accessibilityRetrieveSpeakSelectionContent;
 - (void)_accessibilitySettingsDidChange:(id)arg1;
 - (void)_addShortcut:(id)arg1;
@@ -370,8 +400,7 @@
 - (id)_dataForDisplayedPDF;
 - (void)_define:(id)arg1;
 - (id)_diagnosticLoggingDelegate;
-- (void)_didChangeAvoidsUnsafeArea:(bool)arg1;
-- (void)_didCommitLayerTree:(const struct RemoteLayerTreeTransaction { unsigned long long x1; struct Vector<WTF::RefPtr<WebKit::PlatformCALayerRemote>, 0, WTF::CrashOnOverflow, 16> { struct RefPtr<WebKit::PlatformCALayerRemote> {} *x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; struct HashMap<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> >, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > > { struct HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > >, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> >, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > >::KeyValuePairTraits, WTF::HashTraits<unsigned long long> > { struct KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > {} *x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_3_1_1; } x3; }*)arg1;
+- (void)_didCommitLayerTree:(const struct RemoteLayerTreeTransaction { unsigned long long x1; struct Vector<WTF::RefPtr<WebKit::PlatformCALayerRemote>, 0, WTF::CrashOnOverflow, 16> { struct RefPtr<WebKit::PlatformCALayerRemote> {} *x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; unsigned int x_2_1_4; } x2; struct HashMap<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> >, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > > { struct HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > >, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> >, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > >::KeyValuePairTraits, WTF::HashTraits<unsigned long long> > { struct KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > {} *x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_3_1_1; } x3; }*)arg1;
 - (void)_didCommitLoadForMainFrame;
 - (void)_didDismissForcePressPreview;
 - (void)_didFailLoadForMainFrame;
@@ -384,6 +413,9 @@
 - (void)_didScroll;
 - (void)_didShowForcePressPreview;
 - (void)_disableBackForwardSnapshotVolatilityForTesting;
+- (void)_dispatchSetDeviceOrientation:(int)arg1;
+- (void)_dispatchSetMaximumUnobscuredSize:(struct FloatSize { float x1; float x2; })arg1;
+- (void)_dispatchSetMinimumLayoutSize:(struct FloatSize { float x1; float x2; })arg1;
 - (void)_doAfterNextPresentationUpdate:(id /* block */)arg1;
 - (void)_doAfterNextPresentationUpdateWithoutWaitingForPainting:(id /* block */)arg1;
 - (void)_doAfterNextStablePresentationUpdate:(id /* block */)arg1;
@@ -392,6 +424,7 @@
 - (unsigned long long)_dragInteractionPolicy;
 - (id)_draggableElementAtPosition:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_dynamicViewportUpdateChangedTargetToScale:(double)arg1 position:(struct CGPoint { double x1; double x2; })arg2 nextValidLayerTreeTransactionID:(unsigned long long)arg3;
+- (unsigned long long)_effectiveObscuredInsetEdgesAffectedBySafeArea;
 - (void)_enclosingScrollerScrollingEnded:(id)arg1;
 - (id)_enclosingViewForExposedRectComputation;
 - (void)_endAnimatedResize;
@@ -508,6 +541,7 @@
 - (void)_setAllowsRemoteInspection:(bool)arg1;
 - (void)_setAllowsViewportShrinkToFit:(bool)arg1;
 - (void)_setApplicationNameForUserAgent:(id)arg1;
+- (void)_setAvoidsUnsafeArea:(bool)arg1;
 - (void)_setBackgroundExtendsBeyondPage:(bool)arg1;
 - (void)_setCustomUserAgent:(id)arg1;
 - (void)_setDiagnosticLoggingDelegate:(id)arg1;

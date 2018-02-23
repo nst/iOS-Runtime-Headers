@@ -19,7 +19,7 @@
     struct CGPDFDocument { } * document;
     NSArray * documentCatalogMetadata;
     bool  documentChanged;
-    int  documentId;
+    bool  documentHasBurnInAnnotations;
     NSURL * documentURL;
     long long  findCharIndex;
     PDFSelection * findInstance;

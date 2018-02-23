@@ -39,6 +39,7 @@
 - (id)paymentServicesURLForRegion:(id)arg1;
 - (id)paymentSetupBrowsableProductTypesForRegion:(id)arg1;
 - (id)paymentSetupFeaturedNetworksForRegion:(id)arg1;
+- (bool)peerPaymentEnabledForRegion:(id)arg1;
 - (id)primaryFeaturedNetworkForRegion:(id)arg1;
 - (double)provisioningEnablementPercentageForRegion:(id)arg1;
 - (bool)regionHasProvisioningEnablementPercentage:(id)arg1;
@@ -49,6 +50,7 @@
 - (id)supportedRegionsForOSVersion:(id)arg1 deviceClass:(id)arg2 platform:(id)arg3;
 - (bool)suppressCardholderNameFieldForRegion:(id)arg1;
 - (id)unsupportedWebPaymentConfigurations;
+- (bool)userCanResetCloudStoreApplePayViewForRegion:(id)arg1;
 - (id)version;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentTransactionDetailViewController : PKSectionTableViewController <PKPeerPaymentContactResolverDelegate> {
+@interface PKPaymentTransactionDetailViewController : PKSectionTableViewController <PKPaymentDataProviderDelegate, PKPeerPaymentContactResolverDelegate> {
     PKPeerPaymentBubbleView * _bubbleView;
     PKPeerPaymentContactResolver * _contactResolver;
     PKPaymentTransactionDetailHeaderView * _headerView;
@@ -15,6 +15,7 @@
     PKPeerPaymentController * _peerPaymentController;
     PKPeerPaymentStatusResponse * _peerPaymentStatusResponse;
     PKPaymentTransaction * _transaction;
+    NSDateFormatter * _transactionDateFormatter;
 }
 
 @property (nonatomic, retain) PKPeerPaymentBubbleView *bubbleView;
@@ -33,15 +34,16 @@
 @property (nonatomic, retain) PKPeerPaymentStatusResponse *peerPaymentStatusResponse;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) PKPaymentTransaction *transaction;
+@property (nonatomic, retain) NSDateFormatter *transactionDateFormatter;
 
 - (void).cxx_destruct;
 - (unsigned long long)_accountInfoRowForRowIndex:(long long)arg1;
 - (bool)_accountInfoRowIsEnabled:(unsigned long long)arg1;
 - (unsigned long long)_actionRowForRowIndex:(long long)arg1;
 - (bool)_actionRowIsEnabled:(unsigned long long)arg1;
-- (id)_balloonViewWithBubbleView:(id)arg1 transaction:(id)arg2;
 - (id)_cellForPeerPaymentCounterpartInTableView:(id)arg1;
-- (void)_handleAction:(unsigned long long)arg1 forPeerPaymentBubbleView:(id)arg2;
+- (id)_fraudRiskCellForTableView:(id)arg1;
+- (void)_handleBubbleAction:(unsigned long long)arg1 forPeerPaymentBubbleView:(id)arg2;
 - (void)_handlePeerPaymentDisplayableError:(id)arg1 withPeerPaymentController:(id)arg2;
 - (unsigned long long)_locationType;
 - (id)_mapTilePlaceholderImage;
@@ -51,11 +53,13 @@
 - (long long)_numberOfStatusRowsEnabled;
 - (void)_openMessagesToPresentAction:(unsigned long long)arg1;
 - (void)_openTransactionInIssuerApp;
-- (void)_performAction:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)_performPeerPaymentAction:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)_reloadTableHeaderView;
 - (id)_reuseIdentifierForSection:(unsigned long long)arg1;
 - (long long)_rowIndexForAccountInfoRow:(unsigned long long)arg1;
 - (long long)_rowIndexForActionRow:(unsigned long long)arg1;
 - (long long)_rowIndexForStatusRow:(unsigned long long)arg1;
+- (bool)_shouldDisplayTransactionStatusChangedDate;
 - (unsigned long long)_statusRowForRowIndex:(long long)arg1;
 - (bool)_statusRowIsEnabled:(unsigned long long)arg1;
 - (id)_tableView:(id)arg1 actionButtonCellForSection:(unsigned long long)arg2;
@@ -63,8 +67,9 @@
 - (id)_tableView:(id)arg1 cellForActionAtIndex:(long long)arg2;
 - (id)_tableView:(id)arg1 cellForAmountDetailLineItemAtIndex:(long long)arg2;
 - (id)_tableView:(id)arg1 cellForStatusRowAtIndex:(long long)arg2;
-- (void)_tableView:(id)arg1 didSelectActionAtRowIndex:(long long)arg2;
+- (void)_tableView:(id)arg1 didSelectActionAtIndexPath:(id)arg2;
 - (void)_tableView:(id)arg1 didSelectMechantAddressAtIndexPath:(id)arg2;
+- (void)_tableView:(id)arg1 didSelectPeerPaymentAction:(id)arg2 atIndexPath:(id)arg3;
 - (void)_tableView:(id)arg1 willDisplayAmountDetailsCell:(id)arg2 atIndexPath:(id)arg3;
 - (id)_titleValueCellWithTitle:(id)arg1 value:(id)arg2;
 - (id)_transactionDateDescription;
@@ -83,6 +88,8 @@
 - (id)mapTilePlaceholderImage;
 - (id)merchantLocationSnapshotter;
 - (id)paymentPass;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveTransaction:(id)arg2;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didRemoveTransactionWithIdentifier:(id)arg2;
 - (id)paymentServiceDataProvider;
 - (id)peerPaymentController;
 - (id)peerPaymentStatusResponse;
@@ -98,12 +105,16 @@
 - (void)setMerchantLocationSnapshotter:(id)arg1;
 - (void)setPeerPaymentController:(id)arg1;
 - (void)setPeerPaymentStatusResponse:(id)arg1;
+- (void)setTransaction:(id)arg1;
+- (void)setTransactionDateFormatter:(id)arg1;
 - (bool)shouldMapSection:(unsigned long long)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)transaction;
+- (id)transactionDateFormatter;
 - (void)viewDidLoad;
 - (void)viewWillLayoutSubviews;
 

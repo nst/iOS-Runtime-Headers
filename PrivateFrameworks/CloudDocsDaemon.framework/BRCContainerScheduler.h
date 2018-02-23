@@ -69,7 +69,7 @@
 - (void)redoZonePCSPreperation;
 - (void)refreshPushRegistrationAfterAppsListChanged;
 - (void)resume;
-- (void)schedulePeriodicSyncIfNecessary;
+- (void)schedulePeriodicSyncIfNecessaryInGroup:(id)arg1;
 - (void)scheduleSyncDownForContainerMetadataWithGroup:(id)arg1;
 - (void)scheduleSyncDownForSharedDatabaseImmediately:(bool)arg1;
 - (void)scheduleSyncDownForZoneHealthWithGroup:(id)arg1;

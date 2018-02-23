@@ -3,12 +3,13 @@
  */
 
 @interface HKMapPointAnnotation : MKPointAnnotation {
-    bool  _isStartPoint;
+    UIColor * _markerTintColor;
 }
 
-@property (nonatomic) bool isStartPoint;
+@property (nonatomic, retain) UIColor *markerTintColor;
 
-- (bool)isStartPoint;
-- (void)setIsStartPoint:(bool)arg1;
+- (void).cxx_destruct;
+- (id)markerTintColor;
+- (void)setMarkerTintColor:(id)arg1;
 
 @end

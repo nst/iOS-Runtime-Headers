@@ -31,6 +31,7 @@
 
 + (id)_labelFont;
 + (struct CGSize { double x1; double x2; })_labelSizeWithWidth:(double)arg1 title:(id)arg2;
++ (void)allSectionHeadersHidden;
 + (double)headerHeightWithWidth:(double)arg1 title:(id)arg2;
 
 - (void).cxx_destruct;

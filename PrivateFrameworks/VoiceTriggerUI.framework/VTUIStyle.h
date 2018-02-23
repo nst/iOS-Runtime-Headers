@@ -3,6 +3,7 @@
  */
 
 @interface VTUIStyle : NSObject {
+    UIFontMetrics * _bodyMetricsForScaling;
     NSString * _deviceClass;
     NSArray * _deviceImageDoneSuffixes;
     NSArray * _deviceImageIntroSuffixes;
@@ -13,11 +14,13 @@
     bool  _isIpad;
     bool  _isLargeIpad;
     bool  _needMoreLineSpacing;
+    bool  _supportSideButtonActivation;
 }
 
 @property (nonatomic) long long enrollmentMode;
 @property (nonatomic) bool isBuddy;
 @property (nonatomic) bool isHeySiriAlwaysOn;
+@property (nonatomic) bool supportSideButtonActivation;
 
 + (id)sharedStyle;
 
@@ -33,6 +36,9 @@
 - (void)dealloc;
 - (id)deviceDoneImage;
 - (id)deviceSetupImage;
+- (id)educationVideoTopGradientColor;
+- (double)educationalVideoFrameHeight;
+- (bool)educationalVideosSupported;
 - (long long)enrollmentMode;
 - (double)finishEnrollmentFromBottom;
 - (double)flamesHeight;
@@ -60,6 +66,7 @@
 - (double)minimumImageViewHeight;
 - (void)orientationChanged:(id)arg1;
 - (double)paddingFromTop;
+- (id)placeholderImageForEducationalVideo;
 - (id)primaryButtonFont;
 - (double)primaryButtonHeight;
 - (double)primaryButtonHorizontalInset;
@@ -69,6 +76,7 @@
 - (void)setEnrollmentMode:(long long)arg1;
 - (void)setIsBuddy:(bool)arg1;
 - (void)setIsHeySiriAlwaysOn:(bool)arg1;
+- (void)setSupportSideButtonActivation:(bool)arg1;
 - (id)siriWaveformImage;
 - (double)skipButtonBaselineBottomMargin;
 - (double)statusLabelMinHeight;
@@ -76,6 +84,7 @@
 - (double)subtitle1BaselineOffset;
 - (double)subtitle2BaselineOffset;
 - (id)subtitleFont;
+- (bool)supportSideButtonActivation;
 - (double)textOverlayLabelWidth;
 - (double)textOverlayOffsetFromTop;
 - (double)tickMarkHorizontalSizeRatio;

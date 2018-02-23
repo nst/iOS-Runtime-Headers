@@ -4,6 +4,7 @@
 
 @interface CSSelfTriggerDetector : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate, CSSpeechManagerDelegate> {
     CSAsset * _currentAsset;
+    <CSSelfTriggerDetectorDelegate> * _delegate;
     CSKeywordAnalyzerNDAPI * _keywordAnalyzer;
     float  _keywordThreshold;
     unsigned long long  _outputAudioChannel;
@@ -13,6 +14,7 @@
 
 @property (nonatomic, retain) CSAsset *currentAsset;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CSSelfTriggerDetectorDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CSKeywordAnalyzerNDAPI *keywordAnalyzer;
@@ -26,6 +28,7 @@
 - (void)_reset;
 - (void)_setAsset:(id)arg1;
 - (id)currentAsset;
+- (id)delegate;
 - (id)initWithManager:(id)arg1 asset:(id)arg2;
 - (id)keywordAnalyzer;
 - (void)keywordAnalyzerNDAPI:(id)arg1 hasResultAvailable:(id)arg2 forChannel:(unsigned long long)arg3;
@@ -35,6 +38,7 @@
 - (void)reset;
 - (void)setAsset:(id)arg1;
 - (void)setCurrentAsset:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setKeywordAnalyzer:(id)arg1;
 - (void)setKeywordThreshold:(float)arg1;
 - (void)setOutputAudioChannel:(unsigned long long)arg1;
@@ -45,5 +49,6 @@
 - (void)speechManagerDidStopForwarding:(id)arg1 forReason:(long long)arg2;
 - (void)speechManagerLPCMRecordBufferAvailable:(id)arg1 chunk:(id)arg2;
 - (void)speechManagerRecordBufferAvailable:(id)arg1 buffer:(id)arg2;
+- (void)start;
 
 @end

@@ -20,6 +20,7 @@
 - (id)initWithCandidate:(id)arg1 forInput:(id)arg2 uniqueID:(unsigned long long)arg3 completionUniqueID:(unsigned long long)arg4;
 - (id)initWithCandidateResultSetCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (bool)isCompletionCandidate;
 - (bool)isInlineCompletionCandidate;
 - (unsigned long long)uniqueID;
 

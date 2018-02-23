@@ -13,6 +13,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)_fixupRemappedDeletesAndReturnBestCloudIdentifierFromRemappedIdentifiers:(id)arg1 fallback:(id)arg2;
 - (void)discardDeleteForRemappedRecordWithIdentifier:(id)arg1;
 - (id)realIdentifierForRemappedIdentifier:(id)arg1;
 - (bool)resetWithError:(id*)arg1;

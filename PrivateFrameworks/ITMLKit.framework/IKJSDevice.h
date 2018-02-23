@@ -25,6 +25,7 @@
 @property (nonatomic, readonly) NSString *networkType;
 @property (nonatomic, readonly) NSNumber *pixelRatio;
 @property (nonatomic, readonly) NSString *productType;
+@property (nonatomic, readonly) bool runningAnInternalBuild;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *systemVersion;
 @property (nonatomic, readonly) NSString *vendorID;
@@ -52,6 +53,7 @@
 - (id)networkType;
 - (id)pixelRatio;
 - (id)productType;
+- (bool)runningAnInternalBuild;
 - (void)setDeviceConfig:(id)arg1;
 - (id)systemVersion;
 - (id)vendorID;

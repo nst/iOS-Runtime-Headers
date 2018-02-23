@@ -5,11 +5,12 @@
 @interface PSPearlPillContainerView : UIView {
     long long  _clockwise;
     long long  _counterwise;
-    double  _extraPillRotation;
+    bool  _hasPillStateStash;
     long long  _lastAngle;
     long long  _numberOfVisiblePillViews;
     NSMutableArray * _pillViews;
     double  _radius;
+    unsigned long long  _stashedPillStates;
     int  _state;
     UIImageView * _successAnimation;
 }
@@ -33,10 +34,13 @@
 - (double)percentOfPillsCompleted;
 - (double)radius;
 - (void)resetPillsAnimated:(bool)arg1;
-- (void)setAllPillState:(unsigned long long)arg1 animated:(bool)arg2;
+- (void)setAllPillState:(unsigned long long)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 - (void)setRadius:(double)arg1 animated:(bool)arg2 completion:(id /* block */)arg3;
 - (void)setState:(int)arg1;
+- (void)stashPillStates;
 - (int)state;
 - (id)unfilledDirections;
+- (void)unstashPillStatesAnimated:(bool)arg1;
+- (bool)unstashPillStatesIfNeededAnimated:(bool)arg1;
 
 @end

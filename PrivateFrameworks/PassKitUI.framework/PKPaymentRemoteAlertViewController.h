@@ -2,13 +2,18 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentRemoteAlertViewController : SBUIRemoteAlertServiceViewController <PKPaymentServiceDelegate> {
+@interface PKPaymentRemoteAlertViewController : SBUIRemoteAlertServiceViewController <PKPaymentServiceDelegate, SBSHardwareButtonEventConsuming> {
+    bool  _appearedOnce;
     bool  _backlightActive;
     bool  _deviceUILocked;
+    PKFieldDetectEducationViewController * _educationVC;
     NSArray * _fieldPassUniqueIdentifiers;
     PKFieldProperties * _fieldProperties;
     NSObject<OS_dispatch_group> * _fieldPropertiesLookupGroup;
-    bool  _homeButtonDoubleTapAlertHasOccurred;
+    bool  _insertedGroupsVC;
+    bool  _invalidated;
+    SBSAssertion * _lockButtonAssertion;
+    <BSInvalidatable> * _lockButtonObserver;
     PKAssertion * _notificationSuppressionAssertion;
     PKPassGroupsViewController * _passGroupsViewController;
     NSString * _passUniqueIdentifier;
@@ -17,6 +22,7 @@
     long long  _presentationSource;
     unsigned long long  _presentationStartTime;
     bool  _processHomeButtonEvents;
+    bool  _shouldInsertGroupsVC;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -29,21 +35,28 @@
 + (id)groupsControllerWithSource:(long long)arg1;
 
 - (void).cxx_destruct;
+- (void)_appearIfNecessary;
 - (void)_contactlessInterfaceSessionDidAuthorize:(id)arg1;
 - (void)_contactlessInterfaceSessionFinishTransaction:(id)arg1;
 - (void)_dismissForSource:(unsigned long long)arg1 completion:(id /* block */)arg2;
 - (void)_dismissIfRestricted;
+- (void)_insertGroupController;
+- (void)_invalidate;
 - (bool)_notificationIsFromChildViewController:(id)arg1;
 - (void)_paymentDidReceiveSuccessfulTransactionNotification:(id)arg1;
 - (void)_presentHomeButtonDoubleTapAlertIfNecessary;
+- (void)_presentPassAnimated:(bool)arg1;
 - (void)_setupGroupController;
 - (void)_willAppearInRemoteViewController;
 - (id)childViewControllerForStatusBarHidden;
 - (id)childViewControllerForStatusBarStyle;
+- (void)configureWithContext:(id)arg1 completion:(id /* block */)arg2;
+- (void)consumeDoublePressUpForButtonKind:(long long)arg1;
 - (void)dealloc;
 - (void)handleHomeButtonPressed;
 - (id)init;
 - (void)linkedApplicationOpen:(id)arg1;
+- (void)loadView;
 - (void)setUserInfo:(id)arg1;
 - (bool)shouldAutorotate;
 - (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;

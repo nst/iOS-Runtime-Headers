@@ -4,9 +4,11 @@
 
 @interface HDDataTypeSourceOrderEntity : HDHealthEntity
 
++ (id)_orderedSourceIDsForType:(id)arg1 userOrdered:(bool*)arg2 database:(id)arg3 error:(id*)arg4;
 + (bool)_saveOrderedSourceIDs:(id)arg1 dataTypeCode:(long long)arg2 userOrdered:(bool)arg3 syncProvenance:(long long)arg4 database:(id)arg5 error:(id*)arg6;
 + (id)columnsDefinition;
 + (id)databaseTable;
++ (id)indices;
 + (id)joinClausesForProperty:(id)arg1;
 + (id)orderedSourceIDsForType:(id)arg1 userOrdered:(bool*)arg2 profile:(id)arg3 error:(id*)arg4;
 + (id)propertyForSyncProvenance;

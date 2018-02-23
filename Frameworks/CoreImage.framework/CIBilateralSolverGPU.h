@@ -8,6 +8,7 @@
     <MTLBuffer> * _b_buf;
     <MTLCommandBuffer> * _commandBuffer;
     <MTLComputePipelineState> * _computePipelines;
+    NSObject<OS_dispatch_group> * _computePipelinesGroup;
     <MTLBuffer> * _d_buf;
     <MTLBuffer> * _gridBlurBuffer;
     <MTLBuffer> * _gridCoordIndicesBuffer;
@@ -63,7 +64,7 @@
 - (void)_setupBuffer;
 - (void)_setupMetal;
 - (void)_setupPipelineCache;
-- (void)_setupPipelines;
+- (void)_setupPipelinesAsync:(id /* block */)arg1;
 - (int)doSolveWithBilateralGridhash:(id)arg1 reference:(id)arg2 disparity:(id)arg3 confidence:(id)arg4 output:(id)arg5 lambda:(float)arg6 maxIterations:(int)arg7 offsets:(struct { }*)arg8;
 - (id)initWithWidth:(int)arg1 height:(int)arg2 maxVertices:(unsigned long long)arg3 commandBuffer:(id)arg4;
 - (void)setUseTrilinearInterpolation:(bool)arg1;

@@ -13,6 +13,7 @@
     bool  _detectScenes;
     bool  _detectText;
     bool  _detectTraits;
+    NSArray * _ignoredLayerContextIDs;
     bool  _includeImageInResult;
     NSSet * _spellCheckingLanguages;
     AXMLanguage * _textDetectionLanguage;
@@ -28,6 +29,7 @@
 @property (nonatomic) bool detectScenes;
 @property (nonatomic) bool detectText;
 @property (nonatomic) bool detectTraits;
+@property (nonatomic, retain) NSArray *ignoredLayerContextIDs;
 @property (nonatomic) bool includeImageInResult;
 @property (nonatomic, retain) NSSet *spellCheckingLanguages;
 @property (nonatomic, retain) AXMLanguage *textDetectionLanguage;
@@ -48,6 +50,7 @@
 - (bool)detectText;
 - (bool)detectTraits;
 - (void)encodeWithCoder:(id)arg1;
+- (id)ignoredLayerContextIDs;
 - (bool)includeImageInResult;
 - (id)initWithCoder:(id)arg1;
 - (void)setClientID:(long long)arg1;
@@ -60,6 +63,7 @@
 - (void)setDetectScenes:(bool)arg1;
 - (void)setDetectText:(bool)arg1;
 - (void)setDetectTraits:(bool)arg1;
+- (void)setIgnoredLayerContextIDs:(id)arg1;
 - (void)setIncludeImageInResult:(bool)arg1;
 - (void)setSpellCheckingLanguages:(id)arg1;
 - (void)setTextDetectionLanguage:(id)arg1;

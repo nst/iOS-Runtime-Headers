@@ -15,7 +15,7 @@
 @optional
 
 - (id)existingArtworkEffectResultForEffectType:(long long)arg1 catalog:(MPArtworkCatalog *)arg2 options:(NSDictionary *)arg3;
-- (void)getExportableArtworkURLForCatalog:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 8: MPArtworkCatalog *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSURL *, NSError *, void*
+- (void)getExportableArtworkPropertiesForCatalog:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 8: MPArtworkCatalog *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, MPExportableArtworkProperties *, NSError *, void*
 - (bool)hasExistingRepresentationOnDiskForArtworkCatalog:(MPArtworkCatalog *)arg1;
 - (void)loadArtworkEffectResultForEffectType:(void *)arg1 catalog:(void *)arg2 options:(void *)arg3 systemEffectHandler:(void *)arg4 completionHandler:(void *)arg5; // needs 5 arg types, found 28: long long, MPArtworkCatalog *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id /* block */, void*, void, id /* block */, id, void*, inout unsigned short, void*, const const out const void*, void*, void*, id /* block */, void*, void, id /* block */, id, void*, inout unsigned short, void*, const const out const void*, void*
 

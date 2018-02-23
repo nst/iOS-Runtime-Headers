@@ -6,6 +6,7 @@
     unsigned long long  _currentDeadline;
     int  _displayNotifyToken;
     bool  _displayState;
+    BKFaceDetectOperation * _finishingPresenceOperation;
     unsigned long long  _lastErrorTime;
     unsigned long long  _operationCreateTime;
     NSObject<OS_dispatch_source> * _operationStalledTimer;
@@ -20,11 +21,13 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)cancelFaceDetect;
+- (void)cancelFaceDetect:(id)arg1;
+- (void)cancelStalledTimer;
 - (int)currentState;
 - (void)device:(id)arg1 pearlEventOccurred:(long long)arg2;
 - (void)device:(id)arg1 pearlStateChanged:(long long)arg2;
 - (void)faceDetectStalled;
+- (void)finishingFaceDetect:(id)arg1;
 - (id)init;
 - (id)initForUnitTest:(bool)arg1;
 - (void)operation:(id)arg1 faceDetectStateChanged:(id)arg2;

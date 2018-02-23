@@ -7,12 +7,14 @@
     NSDictionary * _results;
 }
 
+@property (nonatomic, readonly) NSArray *allKeys;
 @property (nonatomic) unsigned long long outcomeType;
 @property (nonatomic, readonly) NSDictionary *results;
 
 + (id)outcomeWithResults:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)allKeys;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (unsigned long long)hash;

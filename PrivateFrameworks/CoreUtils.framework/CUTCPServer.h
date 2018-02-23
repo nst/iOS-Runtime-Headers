@@ -4,6 +4,7 @@
 
 @interface CUTCPServer : NSObject {
     id /* block */  _connectionEndedHandler;
+    id /* block */  _connectionPrepareHandler;
     id /* block */  _connectionStartedHandler;
     struct NSMutableSet { Class x1; } * _connections;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
@@ -15,18 +16,21 @@
     NSObject<OS_dispatch_source> * _listenerSourceV4;
     NSObject<OS_dispatch_source> * _listenerSourceV6;
     unsigned int  _maxConnectionCount;
+    CUNetLinkManager * _netLinkManager;
     int  _tcpListenPort;
     int  _tcpListeningPort;
     struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; char *x15; struct LogCategoryPrivate {} *x16; } * _ucat;
 }
 
 @property (nonatomic, copy) id /* block */ connectionEndedHandler;
+@property (nonatomic, copy) id /* block */ connectionPrepareHandler;
 @property (nonatomic, copy) id /* block */ connectionStartedHandler;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
 @property (nonatomic) unsigned int flags;
 @property (nonatomic, copy) id /* block */ invalidationHandler;
 @property (nonatomic, copy) NSString *label;
 @property (nonatomic) unsigned int maxConnectionCount;
+@property (nonatomic, retain) CUNetLinkManager *netLinkManager;
 @property (nonatomic) int tcpListenPort;
 @property (nonatomic) int tcpListeningPort;
 
@@ -37,6 +41,7 @@
 - (bool)activateDirectAndReturnError:(id*)arg1;
 - (void)activateWithCompletion:(id /* block */)arg1;
 - (id /* block */)connectionEndedHandler;
+- (id /* block */)connectionPrepareHandler;
 - (id /* block */)connectionStartedHandler;
 - (void)dealloc;
 - (id)description;
@@ -48,13 +53,16 @@
 - (id /* block */)invalidationHandler;
 - (id)label;
 - (unsigned int)maxConnectionCount;
+- (id)netLinkManager;
 - (void)setConnectionEndedHandler:(id /* block */)arg1;
+- (void)setConnectionPrepareHandler:(id /* block */)arg1;
 - (void)setConnectionStartedHandler:(id /* block */)arg1;
 - (void)setDispatchQueue:(id)arg1;
 - (void)setFlags:(unsigned int)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setMaxConnectionCount:(unsigned int)arg1;
+- (void)setNetLinkManager:(id)arg1;
 - (void)setTcpListenPort:(int)arg1;
 - (void)setTcpListeningPort:(int)arg1;
 - (int)tcpListenPort;

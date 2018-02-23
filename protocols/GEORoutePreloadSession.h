@@ -23,6 +23,7 @@
 - (void)start;
 - (void)stop;
 - (void)stopLoading;
+- (void)tearDown;
 - (void)updateWithRouteMatch:(GEORouteMatch *)arg1;
 
 @end

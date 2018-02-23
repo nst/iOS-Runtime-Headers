@@ -4,6 +4,7 @@
 
 @interface HFServiceBuilder : HFItemBuilder <HFServiceLikeBuilder> {
     NSString * _associatedServiceType;
+    long long  _configurationState;
     <HFIconDescriptor> * _iconDescriptor;
     bool  isFavorite;
     NSString * name;
@@ -12,6 +13,7 @@
 
 @property (nonatomic, copy) NSString *associatedServiceType;
 @property (nonatomic, readonly) NSArray *availableIconDescriptors;
+@property (nonatomic) long long configurationState;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -28,6 +30,7 @@
 
 - (void).cxx_destruct;
 - (id)_lazilyUpdateAssociatedServiceType;
+- (id)_lazilyUpdateConfigurationState;
 - (id)_lazilyUpdateDateAdded;
 - (id)_lazilyUpdateFavorite;
 - (id)_lazilyUpdateIcon;
@@ -38,6 +41,7 @@
 - (id)associatedServiceType;
 - (id)availableIconDescriptors;
 - (id)commitItem;
+- (long long)configurationState;
 - (id)description;
 - (id)iconDescriptor;
 - (id)initWithExistingObject:(id)arg1 inHome:(id)arg2;
@@ -48,6 +52,7 @@
 - (id)room;
 - (id)service;
 - (void)setAssociatedServiceType:(id)arg1;
+- (void)setConfigurationState:(long long)arg1;
 - (void)setIconDescriptor:(id)arg1;
 - (void)setIsFavorite:(bool)arg1;
 - (void)setName:(id)arg1;

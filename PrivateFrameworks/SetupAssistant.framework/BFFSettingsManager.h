@@ -23,6 +23,7 @@
 - (void)_applyStashedFlowSkipIdentifiers;
 - (void)_applyStashedManagedConfiguration;
 - (void)_applyStashedPreferences;
+- (void)_populatePathsToStash;
 - (id)_preferencesForDomain:(id)arg1;
 - (void)_reset:(bool)arg1;
 - (unsigned long long)_restoreConfiguration;
@@ -30,6 +31,7 @@
 - (void)_restoreWatchData;
 - (id)_shovePath:(id)arg1 toPath:(id)arg2;
 - (bool)_stashConfiguration;
+- (void)_stashPath:(id)arg1;
 - (bool)_stashPaths;
 - (void)applySafeHavenStash;
 - (void)clearHapticTypeForButtonKind:(long long)arg1;
@@ -52,7 +54,6 @@
 - (void)stashFlowSkipIdentifiers:(id)arg1;
 - (void)stashHapticType:(long long)arg1 forButtonKind:(long long)arg2;
 - (void)stashLocationServicesChoice:(bool)arg1;
-- (void)stashPath:(id)arg1;
 - (void)stashWatchData:(id)arg1;
 
 @end

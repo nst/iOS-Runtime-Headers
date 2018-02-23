@@ -7,6 +7,7 @@
     NSDictionary * _dictionary;
     id  _parameter;
     NSString * _subtarget;
+    long long  _tag;
     bool  _tidContinue;
     NSString * _title;
     long long  _urlType;
@@ -21,6 +22,7 @@
 @property (readonly) bool shouldContinueTouchIDSession;
 @property (copy) NSString *subtarget;
 @property (readonly) Class superclass;
+@property long long tag;
 @property (retain) NSString *title;
 @property long long urlType;
 
@@ -43,10 +45,12 @@
 - (void)setDictionary:(id)arg1;
 - (void)setParameter:(id)arg1;
 - (void)setSubtarget:(id)arg1;
+- (void)setTag:(long long)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUrlType:(long long)arg1;
 - (bool)shouldContinueTouchIDSession;
 - (id)subtarget;
+- (long long)tag;
 - (id)title;
 - (long long)urlType;
 

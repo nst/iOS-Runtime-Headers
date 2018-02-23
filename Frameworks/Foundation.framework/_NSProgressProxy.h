@@ -12,11 +12,13 @@
 - (id)_initWithForwarder:(id)arg1 values:(id)arg2 isOld:(bool)arg3;
 - (void)_invokePublishingHandler:(id /* block */)arg1;
 - (void)_invokeUnpublishingHandler;
-- (void)_setRemoteValue:(id)arg1 forKey:(id)arg2 inUserInfo:(bool)arg3;
+- (void)_setRemoteUserInfoValue:(id)arg1 forKey:(id)arg2;
+- (void)_setRemoteValues:(id)arg1 forKeys:(id)arg2;
 - (void)acknowledgeWithSuccess:(bool)arg1;
 - (void)becomeCurrentWithPendingUnitCount:(long long)arg1;
 - (void)cancel;
 - (void)dealloc;
+- (double)fractionCompleted;
 - (bool)isOld;
 - (void)pause;
 - (void)prioritize;

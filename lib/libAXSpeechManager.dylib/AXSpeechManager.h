@@ -11,6 +11,7 @@
     bool  _showControlCenterControls;
     bool  _speechEnabled;
     NSMutableArray * _speechQueue;
+    bool  _supportsAccurateWordCallbacks;
     TTSSpeechSynthesizer * _synthesizer;
     bool  isPaused;
 }
@@ -27,6 +28,7 @@
 @property (nonatomic, readonly) bool showControlCenterControls;
 @property (nonatomic) bool speechEnabled;
 @property (readonly) Class superclass;
+@property (nonatomic) bool supportsAccurateWordCallbacks;
 
 + (id)_resetAvailableVoices;
 + (id)availableLanguageCodes;
@@ -73,6 +75,7 @@
 - (void)setOutputChannels:(id)arg1;
 - (void)setRequestWillStart:(id /* block */)arg1;
 - (void)setSpeechEnabled:(bool)arg1;
+- (void)setSupportsAccurateWordCallbacks:(bool)arg1;
 - (bool)showControlCenterControls;
 - (bool)speechEnabled;
 - (void)speechSynthesizer:(id)arg1 didContinueSpeakingRequest:(id)arg2;
@@ -82,6 +85,7 @@
 - (void)speechSynthesizer:(id)arg1 willSpeakRangeOfSpeechString:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 forRequest:(id)arg3;
 - (void)stopSpeaking;
 - (void)stopSpeaking:(int)arg1;
+- (bool)supportsAccurateWordCallbacks;
 - (void)tearDown;
 - (id)voiceIdentifierUsedForLanguage:(id)arg1;
 

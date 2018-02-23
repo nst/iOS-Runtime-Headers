@@ -63,6 +63,7 @@
 - (id)itemManager:(id)arg1 futureToUpdateItems:(id)arg2 itemUpdateOptions:(id)arg3;
 - (void)itemManager:(id)arg1 performUpdateRequest:(id)arg2;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
+- (void)performBatchCollectionViewUpdatesForUpdateRequest:(id)arg1 reloadOnly:(bool)arg2;
 - (struct CGSize { double x1; double x2; })preferredContentSizeForCollectionViewContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)recursivelyDisableItemUpdates:(bool)arg1 withReason:(id)arg2;
 - (id)registeredCellClasses;

@@ -30,6 +30,7 @@
 - (void)_setMaximumSize:(struct CGSize { double x1; double x2; })arg1 forDisplayMode:(long long)arg2;
 - (void)_setValid:(bool)arg1;
 - (void)_updateVisibilityState:(long long)arg1;
+- (void)_updateVisibleFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withReplyHandler:(id /* block */)arg2;
 - (void)dealloc;
 - (id)disconnect;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

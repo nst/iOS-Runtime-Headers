@@ -56,6 +56,7 @@
 - (void)_invalidateAccessoryViewContainer;
 - (void)_invalidateAccessoryViewTopOutset;
 - (void)_invalidateContainedToolbar;
+- (void)_invalidateSize;
 - (void)_invalidateToolbarItems;
 - (bool)_isUpdating;
 - (double)_minimumBackgroundHeight;

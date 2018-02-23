@@ -36,6 +36,7 @@
 + (long long)commandQueueUrgency;
 + (id)commandStoreFileName;
 + (id)commandsToMergeLocalDataToCloud:(id)arg1;
++ (void)configureKeyValueStoreForJSONHandling:(id)arg1;
 + (id)desiredKeys;
 + (void)initialize;
 + (id)localStoreFilename;
@@ -57,7 +58,7 @@
 - (id)aggregateForFeatureKey:(id)arg1;
 - (id)aggregates;
 - (id)aggregatesForFeatureKeys:(id)arg1;
-- (void)appConfigurationDidChange:(id)arg1;
+- (void)appConfigurationManager:(id)arg1 appConfigurationDidChange:(id)arg2;
 - (bool)attemptingUpload;
 - (bool)canHelpRestoreZoneName:(id)arg1;
 - (void)clearPersonalizationData;

@@ -10,7 +10,7 @@
 @property (nonatomic, readonly, copy) NSString *groupEmitterIdentifier;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool isRequiredByFollowingEmitters;
-@property (nonatomic, readonly) bool requiresForYouCatchUpOperation;
+@property (nonatomic, readonly) long long requiredForYouContentTypes;
 @property (readonly) Class superclass;
 
 - (id)backingChannelTagIDWithAppConfig:(id)arg1;
@@ -18,7 +18,7 @@
 - (id)groupEmitterIdentifier;
 - (bool)isRequiredByFollowingEmitters;
 - (id)operationToEmitGroupWithContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
-- (bool)requiresForYouCatchUpOperation;
+- (long long)requiredForYouContentTypes;
 - (bool)wantsToEmitGroupInContext:(id)arg1 withCursor:(id)arg2 toCursor:(id)arg3;
 - (bool)wantsToInsertGroup:(id)arg1 withContext:(id)arg2;
 

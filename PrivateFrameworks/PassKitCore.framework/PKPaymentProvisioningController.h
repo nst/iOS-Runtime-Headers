@@ -81,6 +81,7 @@
 - (void)addDelegate:(id)arg1;
 - (void)associateCredentials:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)associatedCredentials;
+- (id)associatedCredentialsForDefaultBehaviour;
 - (id)automaticExpressModes;
 - (id)credentialProvisioningQueue;
 - (void)dealloc;

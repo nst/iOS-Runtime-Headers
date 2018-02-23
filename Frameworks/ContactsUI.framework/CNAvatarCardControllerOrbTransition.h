@@ -65,7 +65,6 @@
 - (id)initWithCardViewController:(id)arg1 headerView:(id)arg2 sourceView:(id)arg3 highlightedView:(id)arg4 sourceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg5 isDismissing:(bool)arg6;
 - (bool)isDismissing;
 - (void)performTransitionFromView:(id)arg1 toView:(id)arg2 containerView:(id)arg3;
-- (void)performWithCustomAnimator:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (void)prepareTransitionFromView:(id)arg1 toView:(id)arg2 containerView:(id)arg3;
 - (void)setCardViewController:(id)arg1;
 - (void)setDelegate:(id)arg1;

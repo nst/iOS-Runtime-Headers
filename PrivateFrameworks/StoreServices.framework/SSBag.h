@@ -41,11 +41,7 @@
 + (id)_debugBackingDictionaries;
 + (id)_debugBackingDictionariesAccessQueue;
 + (id)_defaultURLCookieNames;
-+ (bool)_deviceIsAppleTV;
-+ (bool)_deviceIsAppleWatch;
-+ (bool)_deviceIsiPad;
-+ (bool)_deviceIsiPhone;
-+ (bool)_deviceIsiPod;
++ (id)_deviceString;
 + (bool)_isBackingDictionary:(id)arg1 equalToBackingDictionary:(id)arg2;
 + (id)_overriddenURLCookieNames;
 + (id)_processLoadBagOperation:(id)arg1 error:(id*)arg2;

@@ -55,6 +55,7 @@
 @property (nonatomic) bool detectedOneShotStartpoint;
 @property (nonatomic) bool detectedRecurrentEndpoint;
 @property (nonatomic) bool detectedRecurrentStartpoint;
+@property (nonatomic, readonly) double elapsedTimeWithNoSpeech;
 @property (nonatomic) double endWaitTime;
 @property (nonatomic) long long endpointMode;
 @property (nonatomic) long long endpointStyle;

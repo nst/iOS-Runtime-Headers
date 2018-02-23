@@ -35,6 +35,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSXPCConnection *unzipServiceConnection;
 
+// Image: /System/Library/PrivateFrameworks/StreamingZip.framework/StreamingZip
+
 + (void)enableDebugLogging;
 + (bool)supportsSecureCoding;
 
@@ -85,5 +87,9 @@
 - (void)suspendStreamWithCompletionBlock:(id /* block */)arg1;
 - (void)terminateStreamWithError:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)unzipServiceConnection;
+
+// Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
+
++ (id)optionsForArchiveURL:(id)arg1 digest:(id)arg2;
 
 @end

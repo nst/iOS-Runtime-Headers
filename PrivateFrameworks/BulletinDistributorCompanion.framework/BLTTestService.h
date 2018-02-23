@@ -10,7 +10,6 @@
 
 - (void).cxx_destruct;
 - (void)_connectIfNecessary;
-- (void)_disconnect;
 - (void)addBulletin:(id)arg1 forFeed:(unsigned long long)arg2 playLightsAndSirens:(bool)arg3 attachment:(id)arg4 attachmentType:(long long)arg5 alwaysSend:(bool)arg6 completion:(id /* block */)arg7;
 - (void)addBulletin:(id)arg1 forFeed:(unsigned long long)arg2 playLightsAndSirens:(bool)arg3 attachment:(id)arg4 attachmentType:(long long)arg5 completion:(id /* block */)arg6;
 - (void)clearSectionInfoSentCacheWithCompletion:(id /* block */)arg1;

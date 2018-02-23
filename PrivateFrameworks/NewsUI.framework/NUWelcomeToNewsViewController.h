@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsUI.framework/NewsUI
  */
 
-@interface NUWelcomeToNewsViewController : UIViewController <NUPagable> {
+@interface NUWelcomeToNewsViewController : UIViewController <NUPageable> {
     NUViewNode * _appIconImageViewNode;
     NUCanvas * _canvas;
     NUViewNode * _descriptionLabelNode;

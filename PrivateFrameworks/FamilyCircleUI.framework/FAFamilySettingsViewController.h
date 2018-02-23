@@ -9,7 +9,7 @@
     PSSpecifier * _addFamilyMemberCell;
     ACAccount * _appleAccount;
     AAGrandSlamSigner * _appleIDGrandSlamSigner;
-    RemoteUIController * _appleIDRemoteUIController;
+    AAUIRemoteUIController * _appleIDRemoteUIController;
     FAChildAccountCreationController * _childAccountCreationController;
     UINavigationController * _childAccountCreationNavController;
     NSMutableURLRequest * _currentRemoteUIRequest;
@@ -18,12 +18,12 @@
     AAFamilyDetailsResponse * _familyDetailsResponse;
     PSSpecifier * _familyMembersGroup;
     FACircleRemoteUIDelegate * _familyRemoteUIDelegate;
-    RemoteUIController * _familyV2RemoteUIController;
+    AAUIRemoteUIController * _familyV2RemoteUIController;
     bool  _fetchingPaymentInfo;
     bool  _fetchingPaymentMethodImage;
     ACAccount * _grandSlamAccount;
     AAGrandSlamSigner * _iCloudGrandSlamSigner;
-    RemoteUIController * _iCloudRemoteUIController;
+    AAUIRemoteUIController * _iCloudRemoteUIController;
     SSAccount * _itunesAccount;
     AAFamilyMember * _memberBeingViewed;
     NSMutableDictionary * _memberDetailsPageSurrogatesByOM;

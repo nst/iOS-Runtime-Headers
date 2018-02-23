@@ -43,14 +43,17 @@
 - (id)displayName;
 - (void)encodeWithCloudStoreCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (bool)hasCloudArchivableDeviceData;
 - (unsigned long long)hash;
 - (id)industryCategory;
 - (long long)industryCode;
 - (id)initWithCloudStoreCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (bool)isCloudArchivableDeviceDataEqual:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToMerchant:(id)arg1;
 - (bool)isValid;
+- (id)jsonDictionaryRepresentation;
 - (id)location;
 - (double)locationLatitude;
 - (double)locationLongitude;

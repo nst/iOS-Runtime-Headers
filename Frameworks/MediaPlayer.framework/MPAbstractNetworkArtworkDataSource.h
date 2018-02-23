@@ -23,6 +23,8 @@
 @property (nonatomic, retain) NSMutableDictionary *pendingRequestToCompletionHandlers;
 @property (readonly) Class superclass;
 
++ (void)_applyURLCachePolicy:(unsigned long long)arg1 cacheDiskPath:(id)arg2 toConfiguration:(id)arg3;
+
 - (void).cxx_destruct;
 - (id)URLSession;
 - (id)URLSessionConfiguration;
@@ -56,6 +58,7 @@
 - (bool)shouldLookForLargerRepresentationsWhenBestRepresentationIsUnavailable;
 - (id)sortedSupportedSizesForCatalog:(id)arg1;
 - (id)supportedSizesForCatalog:(id)arg1;
+- (void)updateURLSessionWithCachePolicy:(unsigned long long)arg1 cachePath:(id)arg2;
 - (id)visualIdenticalityIdentifierForCatalog:(id)arg1;
 - (bool)wantsBackgroundImageDecompression;
 

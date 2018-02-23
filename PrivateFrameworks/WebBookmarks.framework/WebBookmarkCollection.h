@@ -13,6 +13,7 @@
     bool  _readonly;
     WebBookmark * _rootBookmark;
     SafariFetcherServerProxy * _safariFetcherServerProxy;
+    bool  _skipExternalNotifications;
     WebBookmarkTitleWordTokenizer * _wordTokenizer;
 }
 
@@ -291,11 +292,12 @@
 - (unsigned long long)indexOfReadingListBookmark:(id)arg1 countingOnlyUnread:(bool)arg2;
 - (id)initReadonlySafariBookmarkCollection;
 - (id)initSafariBookmarkCollectionCheckingIntegrity:(bool)arg1;
-- (id)initSafariBookmarkCollectionCheckingIntegrity:(bool)arg1 readonlyCollection:(bool)arg2;
+- (id)initSafariBookmarkCollectionCheckingIntegrity:(bool)arg1 readonlyCollection:(bool)arg2 skipExternalNotifications:(bool)arg3;
+- (id)initSafariBookmarkCollectionCheckingIntegrity:(bool)arg1 skipExternalNotifications:(bool)arg2;
 - (id)initWithPath:(id)arg1;
 - (id)initWithPath:(id)arg1 checkIntegrity:(bool)arg2;
 - (id)initWithPath:(id)arg1 migratingBookmarksPlist:(id)arg2 syncAnchorPlist:(id)arg3;
-- (id)initWithPath:(id)arg1 migratingBookmarksPlist:(id)arg2 syncAnchorPlist:(id)arg3 checkIntegrity:(bool)arg4 readonlyCollection:(bool)arg5;
+- (id)initWithPath:(id)arg1 migratingBookmarksPlist:(id)arg2 syncAnchorPlist:(id)arg3 checkIntegrity:(bool)arg4 readonlyCollection:(bool)arg5 skipExternalNotifications:(bool)arg6;
 - (bool)isEmpty;
 - (bool)isMerging;
 - (id)listWithID:(int)arg1;

@@ -14,6 +14,7 @@
 @property HMAccessory *accessory;
 @property (retain) HMSoftwareUpdate *availableUpdate;
 @property (nonatomic, retain) _HMContext *context;
+@property (getter=isControllable, readonly) bool controllable;
 @property (readonly, copy) NSString *debugDescription;
 @property <HMSoftwareUpdateControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -40,6 +41,7 @@
 - (unsigned long long)hash;
 - (id)init;
 - (id)initWithAccessory:(id)arg1;
+- (bool)isControllable;
 - (bool)isEqual:(id)arg1;
 - (id)logIdentifier;
 - (id)messageDestination;

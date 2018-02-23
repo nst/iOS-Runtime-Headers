@@ -22,12 +22,14 @@
 
 - (void)_appendToCachedData:(id)arg1;
 - (void)_cacheContentInformation:(id)arg1;
+- (bool)_canSetOrUseCachedContentInformation;
 - (struct OpaqueFigCustomURLHandler { }*)_contentKeySessionCustomURLHandler;
 - (bool)_contentKeySessionIsAttached;
 - (struct OpaqueFigCustomURLHandler { }*)_customURLHandler;
 - (struct OpaqueFigCustomURLLoader { }*)_customURLLoader;
 - (void)_ensureResponseInfoSentToCustomURLHandler;
 - (id)_getAndClearCachedData;
+- (bool)_isRequestForContentKey;
 - (void)_performCancellationByClient;
 - (id)_requestDictionary;
 - (unsigned long long)_requestID;
@@ -57,7 +59,7 @@
 - (void)forwardRequestToContentKeySession;
 - (void)generateStreamingContentKeyRequestDataAsynchronouslyForApp:(id)arg1 contentIdentifier:(id)arg2 options:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)init;
-- (id)initWithResourceLoader:(id)arg1 URL:(id)arg2 httpRequestHeaders:(id)arg3 requestOffset:(id)arg4 requestLength:(id)arg5 figCryptor:(struct OpaqueFigCPECryptor { }*)arg6 figPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg7 figAssetImageGenerator:(struct OpaqueFigAssetImageGenerator { }*)arg8;
+- (id)initWithResourceLoader:(id)arg1 URL:(id)arg2 httpRequestHeaders:(id)arg3 requestOffset:(id)arg4 requestLength:(id)arg5 allowedContentTypes:(id)arg6 figCryptor:(struct OpaqueFigCPECryptor { }*)arg7 figPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg8 figAssetImageGenerator:(struct OpaqueFigAssetImageGenerator { }*)arg9;
 - (id)initWithResourceLoader:(id)arg1 requestDictionary:(id)arg2;
 - (id)initWithResourceLoader:(id)arg1 requestInfo:(struct __CFDictionary { }*)arg2 requestID:(unsigned long long)arg3;
 - (bool)isCancelled;

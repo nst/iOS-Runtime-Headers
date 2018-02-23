@@ -20,10 +20,14 @@
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (id)familyName;
 - (unsigned long long)hash;
 - (id)initWithFamilyName:(id)arg1 weight:(long long)arg2 width:(long long)arg3 style:(long long)arg4;
 - (bool)isEqual:(id)arg1;
+- (id)stringForStyle:(long long)arg1;
+- (id)stringForWeight:(long long)arg1;
+- (id)stringForWidth:(long long)arg1;
 - (long long)style;
 - (long long)weight;
 - (long long)width;

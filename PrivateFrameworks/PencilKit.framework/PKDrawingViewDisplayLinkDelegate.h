@@ -9,7 +9,7 @@
 @property (nonatomic) PKInternalDrawingView *view;
 
 - (void).cxx_destruct;
-- (void)display;
+- (void)display:(id)arg1;
 - (void)setView:(id)arg1;
 - (id)view;
 

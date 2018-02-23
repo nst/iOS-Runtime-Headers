@@ -28,6 +28,7 @@
 - (bool)_updateName;
 - (id)accessory;
 - (id)accessoryProtocols;
+- (id)analyticsDescription;
 - (void)beginWiredBluetoothPairing:(id /* block */)arg1;
 - (id)bluetoothAddress;
 - (id)certificateSerialNumber;
@@ -35,6 +36,7 @@
 - (id)description;
 - (id)displayName;
 - (bool)isBluetoothConnected;
+- (id)radarDescription;
 - (void)requestWiFiCredentials;
 - (void)sendDeviceTransportIdentifiers;
 - (void)setAccessory:(id)arg1;

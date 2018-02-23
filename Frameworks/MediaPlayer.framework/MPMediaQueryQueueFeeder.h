@@ -44,7 +44,6 @@
 - (void).cxx_destruct;
 - (void)_allowsHighQualityMusicStreamingOnCellularDidChangeNotification:(id)arg1;
 - (void)_commonInit;
-- (void)_configureStoreAVItem:(id)arg1;
 - (id)_currentEmptyQueueError;
 - (void)_handleMediaLibraryDidChange;
 - (id)_identifierAtIndex:(unsigned long long)arg1;

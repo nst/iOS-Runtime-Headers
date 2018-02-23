@@ -33,6 +33,8 @@
 - (double)tableView:(UITableView *)arg1 maxTitleWidthForHeaderInSection:(long long)arg2;
 - (bool)tableView:(UITableView *)arg1 shouldDrawBottomSeparatorForSection:(long long)arg2;
 - (bool)tableView:(UITableView *)arg1 shouldDrawTopSeparatorForSection:(long long)arg2;
+- (bool)tableView:(UITableView *)arg1 shouldHaveFullLengthBottomSeparatorForSection:(long long)arg2;
+- (bool)tableView:(UITableView *)arg1 shouldHaveFullLengthTopSeparatorForSection:(long long)arg2;
 - (_UITableViewCellActionButton *)tableView:(UITableView *)arg1 swipeAccessoryButtonForRowAtIndexPath:(NSIndexPath *)arg2;
 - (void)tableView:(UITableView *)arg1 swipeAccessoryButtonPushedForRowAtIndexPath:(NSIndexPath *)arg2;
 - (NSString *)tableView:(UITableView *)arg1 titleForSwipeAccessoryButtonForRowAtIndexPath:(NSIndexPath *)arg2;

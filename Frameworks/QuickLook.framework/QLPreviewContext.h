@@ -6,6 +6,7 @@
     UIColor * _backgroundColor;
     bool  _canBeEdited;
     NSString * _contentType;
+    unsigned long long  _editedFileBehavior;
     NSURL * _editedFileURL;
     QLItem * _item;
     NSNumber * _itemSize;
@@ -19,6 +20,7 @@
 @property (retain) UIColor *backgroundColor;
 @property bool canBeEdited;
 @property (retain) NSString *contentType;
+@property unsigned long long editedFileBehavior;
 @property (retain) NSURL *editedFileURL;
 @property (retain) QLItem *item;
 @property (retain) NSNumber *itemSize;
@@ -34,6 +36,7 @@
 - (id)backgroundColor;
 - (bool)canBeEdited;
 - (id)contentType;
+- (unsigned long long)editedFileBehavior;
 - (id)editedFileURL;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -47,6 +50,7 @@
 - (void)setBackgroundColor:(id)arg1;
 - (void)setCanBeEdited:(bool)arg1;
 - (void)setContentType:(id)arg1;
+- (void)setEditedFileBehavior:(unsigned long long)arg1;
 - (void)setEditedFileURL:(id)arg1;
 - (void)setItem:(id)arg1;
 - (void)setItemSize:(id)arg1;

@@ -16,6 +16,7 @@
 
 @optional
 
+- (double)elapsedTimeWithNoSpeech;
 - (NSString *)endpointerModelVersion;
 - (void)handleVoiceTriggerWithActivationInfo:(NSDictionary *)arg1;
 - (void)processServerEndpointFeatures:(CSServerEndpointFeatures *)arg1;

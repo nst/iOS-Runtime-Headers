@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraSettingsControlManager : HMFObject <HMFLogging, HMFMessageReceiver> {
+@interface HMDCameraSettingsControlManager : HMFObject <HMDHomeMessageReceiver, HMFLogging> {
     HMDAccessory * _accessory;
     NSArray * _characteristicsList;
     NSDictionary * _characteristicsValues;
@@ -27,6 +27,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *logID;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (readonly, copy) NSSet *messageReceiverChildren;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, readonly) HMDNotificationRegistration *notificationRegistration;
@@ -36,6 +37,7 @@
 @property (nonatomic, readonly) NSUUID *uniqueIdentifier;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
 
++ (bool)hasMessageReceiverChildren;
 + (id)logCategory;
 
 - (void).cxx_destruct;

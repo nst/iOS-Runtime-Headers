@@ -4,12 +4,14 @@
 
 @interface _TVTextBadge : UIView {
     double  _cornerRadius;
+    double  _lineWidth;
     NSAttributedString * _text;
     UIColor * _tintColor;
     NSString * _type;
 }
 
 @property (nonatomic) double cornerRadius;
+@property (nonatomic) double lineWidth;
 @property (nonatomic, retain) NSAttributedString *text;
 @property (nonatomic, retain) UIColor *tintColor;
 @property (nonatomic, retain) NSString *type;
@@ -19,7 +21,9 @@
 - (void).cxx_destruct;
 - (double)cornerRadius;
 - (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)lineWidth;
 - (void)setCornerRadius:(double)arg1;
+- (void)setLineWidth:(double)arg1;
 - (void)setText:(id)arg1;
 - (void)setTintColor:(id)arg1;
 - (void)setType:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXStripGalleryComponentSizer : SXGalleryComponentSizer
+@interface SXStripGalleryComponentSizer : SXComponentSizer
 
 - (double)calculateHeightForWidth:(double)arg1 inColumnLayout:(id)arg2;
 - (double)contentWidthForColumnLayout:(id)arg1;

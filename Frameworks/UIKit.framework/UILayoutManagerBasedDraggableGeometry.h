@@ -20,7 +20,7 @@
 - (id)_draggableTextInRange:(id)arg1;
 - (bool)_isUsableLink:(id)arg1;
 - (id /* block */)_previewProviderForTextInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
-- (void)_renderTextInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 image:(out id*)arg2 boundingRectangles:(out id*)arg3 unified:(bool)arg4;
+- (void)_renderTextInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 image:(out id*)arg2 boundingRectangles:(out id*)arg3 forLifting:(bool)arg4;
 - (id /* block */)_targetedPreviewProviderForImage:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (id /* block */)_targetedPreviewProviderForTextInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id /* block */)_targetedPreviewProviderForTextInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 overrideLifting:(id /* block */)arg2;

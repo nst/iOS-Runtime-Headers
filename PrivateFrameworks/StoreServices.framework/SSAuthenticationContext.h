@@ -19,6 +19,7 @@
     bool  _displaysOnLockScreen;
     bool  _forceDaemonAuthentication;
     NSDictionary * _httpHeaders;
+    NSString * _logUUID;
     NSString * _okButtonLabel;
     NSString * _password;
     NSString * _passwordEquivalentToken;
@@ -61,6 +62,7 @@
 @property (nonatomic, readonly) bool forceDaemonAuthentication;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *initialPassword;
+@property (readonly) NSString *logUUID;
 @property (nonatomic, readonly, copy) NSString *okButtonLabel;
 @property (nonatomic, readonly, copy) NSString *password;
 @property (nonatomic, readonly, copy) NSString *passwordEquivalentToken;
@@ -114,6 +116,7 @@
 - (id)initialPassword;
 - (bool)isAccountNameEditable;
 - (bool)isDemoAccount;
+- (id)logUUID;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)okButtonLabel;
 - (id)password;

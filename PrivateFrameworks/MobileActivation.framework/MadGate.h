@@ -12,7 +12,6 @@
 - (id)connection;
 - (id)copyActivationRecord:(id*)arg1;
 - (id)copyPCRTToken:(id*)arg1;
-- (id)copyRegulatoryImages:(id*)arg1;
 - (id)copyUCRTToken:(id*)arg1;
 - (id)createActivationInfo:(id*)arg1;
 - (id)createRecertInfo:(id*)arg1;

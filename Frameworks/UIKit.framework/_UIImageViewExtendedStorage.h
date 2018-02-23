@@ -16,6 +16,7 @@
     NSArray * _highlightedAnimationImages;
     UIImage * _highlightedImage;
     UIImage * _image;
+    UIImageView * _imageView;
     bool  _masksTemplateImages;
     unsigned long long  _templateImageRenderingEffects;
 }
@@ -27,5 +28,6 @@
 
 - (void).cxx_destruct;
 - (void)animationDidStop:(id)arg1 finished:(bool)arg2;
+- (id)initForImageView:(id)arg1;
 
 @end

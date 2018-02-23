@@ -12,6 +12,7 @@
 
 - (void).cxx_destruct;
 - (void)_handleTransientStateForPersonDidChangeNotification:(id)arg1;
+- (id)_newOperationForRemovingFollower:(id)arg1 completion:(id /* block */)arg2;
 - (void)_notifyTransientStatesDidChangeWithSnapshot:(id)arg1;
 - (void)_performTransientFollowPendingRequestState:(long long)arg1 onPerson:(id)arg2 completion:(id /* block */)arg3;
 - (void)_performTransientFollowState:(long long)arg1 onPerson:(id)arg2 completion:(id /* block */)arg3;
@@ -26,6 +27,7 @@
 - (void)declineFollowRequestFromPerson:(id)arg1 completion:(id /* block */)arg2;
 - (void)followPerson:(id)arg1 completion:(id /* block */)arg2;
 - (id)init;
+- (void)removeFollower:(id)arg1 completion:(id /* block */)arg2;
 - (void)requestFollowPerson:(id)arg1 completion:(id /* block */)arg2;
 - (long long)transientFollowPendingRequestStateForPerson:(id)arg1;
 - (long long)transientFollowStateForPerson:(id)arg1;

@@ -37,7 +37,10 @@
     unsigned int  _forceDelayedCurrentTimeToSet;
     unsigned int  _hasDelayedCurrentTimeToSet;
     bool  _hasPendingRate;
+    bool  _hasProvidedAudibleLikelyToKeepUp;
+    bool  _hasProvidedAudiblePlay;
     bool  _hasSentTracePlaybackStartDidFinish;
+    NSString * _identifier;
     long long  _indexChangeDirection;
     float  _inflightSeekRate;
     bool  _isConnectingPlayer;
@@ -146,6 +149,7 @@
 @property (nonatomic, readonly) MPQueueFeeder *feeder;
 @property (nonatomic, readonly) bool hasVolumeControl;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly) bool isCurrentItemReady;
 @property (nonatomic, readonly) bool isExternalPlaybackActive;
 @property (nonatomic) bool limitsBandwidthForCellularAccess;
@@ -191,6 +195,7 @@
 + (id)keyPathsForValuesAffectingCurrentItem;
 + (bool)outputSupportsAC3;
 + (Class)playlistManagerClass;
++ (bool)prefersApplicationAudioSession;
 
 - (void).cxx_destruct;
 - (void)_addObserverInfo:(id)arg1 forCoreMediaObserver:(id)arg2 forInitialCreation:(bool)arg3;
@@ -202,6 +207,7 @@
 - (void)_applyAirPlayMusicModeForItem:(id)arg1 shouldIgnorePlaybackQueueTransactions:(bool)arg2;
 - (void)_applyCellularAccessSettings;
 - (void)_attemptAutoPlay;
+- (void)_audioSessionMediaServicesWereResetNotification:(id)arg1;
 - (bool)_canPlayItem:(id)arg1;
 - (void)_cancelStallTimer;
 - (void)_cancelUpdateCurrentItemBookkeepingTimer;
@@ -212,6 +218,7 @@
 - (void)_clearSeekingIntervalsForStreaming;
 - (void)_clearVideoLayer:(bool)arg1;
 - (void)_configureAVPlaylistManager;
+- (void)_configureAudioSession;
 - (void)_configureUpdateCurrentItemBookkeepingTimer;
 - (void)_connectAVPlayer;
 - (void)_contentsChanged;
@@ -288,6 +295,7 @@
 - (void)_setState:(long long)arg1;
 - (void)_setValid:(bool)arg1;
 - (void)_setVideoLayerAttachedToPlayer:(bool)arg1 force:(bool)arg2 pauseIfNecessary:(bool)arg3;
+- (bool)_shouldProvideAudiblePlaybackPerformance;
 - (bool)_showsPlayingWhenInState:(long long)arg1;
 - (void)_sizeDidChange:(id)arg1;
 - (void)_streamBufferFull:(id)arg1;
@@ -372,6 +380,7 @@
 - (void)finalizeBookkeepingNow;
 - (bool)forceRestartPlaybackIfNecessary;
 - (bool)hasVolumeControl;
+- (id)identifier;
 - (id)init;
 - (bool)isCurrentItemReady;
 - (bool)isExternalPlaybackActive;

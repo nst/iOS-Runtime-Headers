@@ -6,6 +6,7 @@
     NSString * _accessibilityDescription;
     _SFPBColor * _backgroundColor;
     bool  _canBeHidden;
+    NSString * _eventStatus;
     struct { 
         unsigned int canBeHidden : 1; 
         unsigned int hasTopPadding : 1; 
@@ -30,10 +31,12 @@
 @property (nonatomic) bool canBeHidden;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *eventStatus;
 @property (nonatomic, readonly) bool hasAccessibilityDescription;
 @property (nonatomic, readonly) bool hasBackgroundColor;
 @property (nonatomic) bool hasBottomPadding;
 @property (nonatomic, readonly) bool hasCanBeHidden;
+@property (nonatomic, readonly) bool hasEventStatus;
 @property (nonatomic, readonly) bool hasHasBottomPadding;
 @property (nonatomic, readonly) bool hasHasTopPadding;
 @property (nonatomic, readonly) bool hasPunchoutPickerDismissText;
@@ -65,10 +68,12 @@
 - (bool)canBeHidden;
 - (void)clearPunchoutOptions;
 - (id)dictionaryRepresentation;
+- (id)eventStatus;
 - (bool)hasAccessibilityDescription;
 - (bool)hasBackgroundColor;
 - (bool)hasBottomPadding;
 - (bool)hasCanBeHidden;
+- (bool)hasEventStatus;
 - (bool)hasHasBottomPadding;
 - (bool)hasHasTopPadding;
 - (bool)hasPunchoutPickerDismissText;
@@ -96,6 +101,7 @@
 - (void)setAccessibilityDescription:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setCanBeHidden:(bool)arg1;
+- (void)setEventStatus:(id)arg1;
 - (void)setHasBottomPadding:(bool)arg1;
 - (void)setHasTopPadding:(bool)arg1;
 - (void)setPunchoutOptions:(id)arg1;

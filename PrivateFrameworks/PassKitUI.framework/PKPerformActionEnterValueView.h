@@ -6,7 +6,6 @@
     PKPaymentPassAction * _action;
     NSDecimalNumber * _cardBalance;
     NSDecimalNumber * _currentAmount;
-    NSNumberFormatter * _currentAmountFormatter;
     <PKPerformActionViewDelegate> * _delegate;
     PKEnterCurrencyAmountView * _enterCurrencyAmountView;
     PKFelicaPassProperties * _felicaProperties;

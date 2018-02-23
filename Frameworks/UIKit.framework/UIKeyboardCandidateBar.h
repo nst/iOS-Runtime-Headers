@@ -19,6 +19,10 @@
     NSArray * _filteredCandidates;
     bool  _forceReloadInitiallyHiddenCandidates;
     NSString * _inlineText;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _lastLayoutSize;
     UIKeyboardCandidatePocketShadow * _leftBorder;
     NSDictionary * _opacities;
     UIKeyboardCandidatePocketShadow * _rightBorder;
@@ -45,6 +49,7 @@
 @property (nonatomic) bool forceReloadInitiallyHiddenCandidates;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *inlineText;
+@property (nonatomic) struct CGSize { double x1; double x2; } lastLayoutSize;
 @property (nonatomic, retain) UIKeyboardCandidatePocketShadow *leftBorder;
 @property (nonatomic, retain) NSDictionary *opacities;
 @property (nonatomic, retain) UIKeyboardCandidatePocketShadow *rightBorder;
@@ -141,6 +146,7 @@
 - (bool)isExtendedList;
 - (bool)isFloatingList;
 - (id)keyboardBehaviors;
+- (struct CGSize { double x1; double x2; })lastLayoutSize;
 - (id)leftBorder;
 - (double)leftMarginForCollectionView:(id)arg1 layout:(id)arg2;
 - (unsigned long long)maxNumberOfProactiveCells;
@@ -172,6 +178,7 @@
 - (void)setForceReloadInitiallyHiddenCandidates:(bool)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setInlineText:(id)arg1;
+- (void)setLastLayoutSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setLeftBorder:(id)arg1;
 - (void)setOpacities:(id)arg1;
 - (void)setRightBorder:(id)arg1;

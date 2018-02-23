@@ -27,7 +27,7 @@
 @property (nonatomic, retain) FCTagController *tagController;
 
 - (void).cxx_destruct;
-- (id)_extraTagsWithPreSubscribedNotificationSupport;
+- (void)_fetchExtraTagsWithPreSubscribedNotificationSupportWithCompletion:(id /* block */)arg1;
 - (void)_fetchMissingTagsWithCompletion:(id /* block */)arg1;
 - (void)_fetchTagsForIDs:(id)arg1 maxCachedAge:(double)arg2 qualityOfService:(long long)arg3 completion:(id /* block */)arg4;
 - (void)_handleSubscriptionType:(unsigned long long)arg1 addedSubscriptionsByType:(id)arg2 removedSubscriptionsByType:(id)arg3 changedSubscriptionsByType:(id)arg4 eventInitiationLevel:(long long)arg5;
@@ -37,6 +37,7 @@
 - (void)_notifyOfTagsWithNotificationSupport:(id)arg1;
 - (void)_purchaseListDidChange;
 - (void)_refreshChannelsWithNotificationsEnabled;
+- (void)activityObservingApplicationDidEnterBackground;
 - (void)addAutoFavoriteSubscriptionForTagIDs:(id)arg1 groupableSubscriptionForTagIDs:(id)arg2 originProvider:(id /* block */)arg3 eventInitiationLevelProvider:(id /* block */)arg4 completion:(id /* block */)arg5;
 - (bool)addGroupableSubscriptionForTagID:(id)arg1 origin:(unsigned long long)arg2 eventInitiationLevel:(long long)arg3;
 - (bool)addIgnoredSubscriptionForTagID:(id)arg1 eventInitiationLevel:(long long)arg2;
@@ -48,7 +49,6 @@
 - (bool)addSubscriptionToTag:(id)arg1 eventInitiationLevel:(long long)arg2 options:(long long)arg3 error:(id*)arg4;
 - (bool)addSubscriptionToTag:(id)arg1 notificationsEnabled:(bool)arg2 error:(id*)arg3 eventInitiationLevel:(long long)arg4;
 - (id)appConfigurationManager;
-- (void)applicationDidEnterBackground;
 - (id)autoFavoriteTagIDs;
 - (id)cachedSubscribedTags;
 - (bool)canAddSubscription;

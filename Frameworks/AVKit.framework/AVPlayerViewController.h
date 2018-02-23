@@ -133,6 +133,7 @@
 - (void)_loadPlaybackControlsControllersIfNeeded;
 - (void)_mediaSelectionDoneButtonTapped:(id)arg1;
 - (bool)_modalPresentationStyleIsFullScreen;
+- (void)_setVideoGravity:(id)arg1 forLayoutMetrics:(unsigned long long)arg2;
 - (void)_togglePictureInPicture;
 - (void)_transitionFromFullScreenAnimated:(bool)arg1 completionHandler:(id /* block */)arg2;
 - (void)_transitionFromFullScreenWithReason:(long long)arg1 animated:(bool)arg2 completionHandler:(id /* block */)arg3;
@@ -220,7 +221,6 @@
 - (void)prepareForPopoverPresentation:(id)arg1;
 - (bool)presentRoutingViewController:(id)arg1;
 - (bool)requiresLinearPlayback;
-- (void)scaleButtonTapped:(id)arg1;
 - (id)secondScreenWindow;
 - (void)setAllowsPictureInPicturePlayback:(bool)arg1;
 - (void)setCanHideInteractiveContentOverlayView:(bool)arg1;
@@ -254,6 +254,7 @@
 - (bool)updatesNowPlayingInfoCenter;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })videoBounds;
 - (id)videoGravity;
+- (void)videoGravityButtonTapped:(id)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;

@@ -23,6 +23,8 @@
             float *__first_; 
         } __end_cap_; 
     }  _floatBuffer;
+    unsigned long long  _numTotalInputSamples;
+    unsigned long long  _numTotalOutputSamples;
     NSObject<OS_dispatch_queue> * _queue;
     struct vector<short, std::__1::allocator<short> > { 
         short *__begin_; 

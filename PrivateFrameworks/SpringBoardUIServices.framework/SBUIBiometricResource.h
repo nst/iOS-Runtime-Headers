@@ -98,6 +98,7 @@
 - (void)noteScreenWillTurnOn;
 - (void)refreshMatchMode;
 - (void)removeObserver:(id)arg1;
+- (void)restartMatchingIfNeededForAssertion:(id)arg1;
 - (void)setAuthenticationPolicy:(id)arg1;
 - (void)setUnlockCredentialSet:(id)arg1;
 - (id)succinctDescription;

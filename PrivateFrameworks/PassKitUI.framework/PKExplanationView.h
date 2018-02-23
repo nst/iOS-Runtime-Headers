@@ -8,6 +8,7 @@
     _UIBackdropView * _backdropView;
     double  _backdropWeight;
     NSString * _bodyText;
+    bool  _bodyTextIsLeftAlgined;
     UILabel * _bodyTextLabel;
     UIImageView * _checkmarkView;
     long long  _context;
@@ -23,6 +24,7 @@
     bool  _privacyFooterShouldPin;
     UIScrollView * _scrollView;
     bool  _showPrivacyView;
+    UIFont * _titleFont;
     UILabel * _titleLabel;
     NSString * _titleText;
     double  _topMargin;
@@ -31,6 +33,7 @@
 
 @property (nonatomic, readonly) UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, copy) NSString *bodyText;
+@property (nonatomic) bool bodyTextIsLeftAlgined;
 @property (nonatomic, readonly) UIImageView *checkmarkView;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKExplanationViewDelegate> *delegate;
@@ -46,6 +49,7 @@
 @property (nonatomic, readonly) PKPaymentSetupPrivacyFooterView *privacyView;
 @property (nonatomic) bool showPrivacyView;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) UIFont *titleFont;
 @property (nonatomic, copy) NSString *titleText;
 @property (nonatomic) double topMargin;
 
@@ -60,6 +64,7 @@
 - (void)_updateTitleLabel;
 - (id)activityIndicator;
 - (id)bodyText;
+- (bool)bodyTextIsLeftAlgined;
 - (id)checkmarkView;
 - (void)dealloc;
 - (id)delegate;
@@ -79,6 +84,7 @@
 - (id)privacyView;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)setBodyText:(id)arg1;
+- (void)setBodyTextIsLeftAlgined:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setForceShowSetupLaterButton:(bool)arg1;
 - (void)setHeroView:(id)arg1;
@@ -86,9 +92,11 @@
 - (void)setImage:(id)arg1;
 - (void)setLogoImageView:(id)arg1;
 - (void)setShowPrivacyView:(bool)arg1;
+- (void)setTitleFont:(id)arg1;
 - (void)setTitleText:(id)arg1;
 - (void)setTopMargin:(double)arg1;
 - (bool)showPrivacyView;
+- (id)titleFont;
 - (id)titleText;
 - (double)topMargin;
 

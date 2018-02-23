@@ -14,7 +14,6 @@
     NSMutableArray * _cloudZonePushOperations;
     NSMutableDictionary * _cloudZonePushOperationsMap;
     HMDHomeManager * _homeManager;
-    NSMutableArray * _idsMergeOperations;
     long long  _pauseCloudPushLevel;
     bool  _pauseQueue;
     NSObject<OS_dispatch_queue> * _propertyQueue;
@@ -36,7 +35,6 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) HMDHomeManager *homeManager;
-@property (nonatomic, retain) NSMutableArray *idsMergeOperations;
 @property (nonatomic) long long pauseCloudPushLevel;
 @property (nonatomic) bool pauseQueue;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
@@ -67,7 +65,6 @@
 - (id)description;
 - (id)dumpState;
 - (id)homeManager;
-- (id)idsMergeOperations;
 - (id)initWithClientQueue:(id)arg1 homeManager:(id)arg2;
 - (void)kick;
 - (void)killCloudPushAndResume;
@@ -90,7 +87,6 @@
 - (void)setCloudZonePushOperations:(id)arg1;
 - (void)setCloudZonePushOperationsMap:(id)arg1;
 - (void)setHomeManager:(id)arg1;
-- (void)setIdsMergeOperations:(id)arg1;
 - (void)setPauseCloudPushLevel:(long long)arg1;
 - (void)setPauseQueue:(bool)arg1;
 - (void)setSyncLoopDialogDisplayed:(bool)arg1;

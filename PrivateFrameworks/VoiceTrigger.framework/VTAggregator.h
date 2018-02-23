@@ -33,6 +33,13 @@
 - (void)logProfileUpdateScoreMSE:(double)arg1;
 - (void)logRecognizerTimedOut;
 - (void)logSecondPassResult:(bool)arg1;
+- (void)logTdPsrExtraAudioSamplesProcessed:(unsigned long long)arg1;
+- (void)logTdPsrFailedDuringSATDetection;
+- (void)logTdPsrFailedDuringSATRetraining;
+- (void)logTdPsrSATDetectionTimedOut;
+- (void)logTdPsrSATDetectionWaitTimeMs:(double)arg1;
+- (void)logTdPsrSATRetrainingTimedOut;
+- (void)logTdPsrSATRetrainingWaitTimeMs:(double)arg1;
 - (void)logTimeVoiceTriggerTransitionsToState:(unsigned long long)arg1;
 - (void)logZeroRunAudio:(int)arg1;
 - (void)setAssetString:(id)arg1;

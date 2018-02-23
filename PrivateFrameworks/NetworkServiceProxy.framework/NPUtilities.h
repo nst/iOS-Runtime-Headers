@@ -15,6 +15,7 @@
 + (bool)hasPacketDrop:(id)arg1;
 + (id)hexDumpBytes:(const void*)arg1 length:(unsigned long long)arg2;
 + (long long)interfaceTypeOfInterface:(id)arg1;
++ (long long)interfaceTypeOfNWInterface:(id)arg1;
 + (id)parseXHost:(id)arg1;
 + (unsigned long long)parseXRTT:(id)arg1;
 + (void)parseXTimeout:(id)arg1 hardTTLInSeconds:(double*)arg2;

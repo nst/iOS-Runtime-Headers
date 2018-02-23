@@ -46,7 +46,11 @@
 + (void)logRequestCancelAfterSeconds:(double)arg1;
 + (void)logRequestCompletedWithDuration:(double)arg1;
 + (void)logRequestLaunchedApp;
++ (void)logSiriInvokedVia:(long long)arg1;
++ (void)logSiriMediaVolumeAction:(long long)arg1;
 + (void)logSiriOtherRequestStarted;
++ (void)logSiriPausedMedia;
++ (void)logSiriQuickStopAction:(unsigned long long)arg1;
 + (void)logSiriRequestCancelled;
 + (void)logSiriRequestFailedWithError:(id)arg1;
 + (void)logSiriRequestSucceeded;

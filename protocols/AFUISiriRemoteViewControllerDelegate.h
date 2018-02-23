@@ -8,9 +8,12 @@
 - (void)dismissSiriRemoteViewController:(AFUISiriRemoteViewController *)arg1 delayForTTS:(bool)arg2;
 - (void)notifyOnNextUserInteractionForSiriRemoteViewController:(AFUISiriRemoteViewController *)arg1;
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 didChangePresentationPeekMode:(unsigned long long)arg2;
+- (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 didDismissViewControllerWithStatusBarStyle:(long long)arg2;
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 didEncounterUnexpectedServiceError:(NSError *)arg2;
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 didFinishTest:(NSString *)arg2;
+- (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 didPresentViewControllerWithStatusBarStyle:(long long)arg2;
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 didReadBulletinWithIdentifier:(NSString *)arg2;
+- (void)siriRemoteViewController:(void *)arg1 didRequestCurrentTextInputWithReplyHandler:(void *)arg2; // needs 2 arg types, found 7: AFUISiriRemoteViewController *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSString *, void*
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 didRequestKeyboard:(bool)arg2;
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 didRequestKeyboard:(bool)arg2 minimized:(bool)arg3;
 - (void)siriRemoteViewController:(void *)arg1 handlePasscodeUnlockWithCompletion:(void *)arg2; // needs 2 arg types, found 7: AFUISiriRemoteViewController *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, long long, void*

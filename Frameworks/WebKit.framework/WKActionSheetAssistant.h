@@ -149,6 +149,7 @@
                         struct FloatRect {} *m_buffer; 
                         unsigned int m_capacity; 
                         unsigned int m_size; 
+                        unsigned int m_mask; 
                     } textRectsInBoundingRectCoordinates; 
                     float contentImageScaleFactor; 
                     struct RefPtr<WebCore::Image> { 

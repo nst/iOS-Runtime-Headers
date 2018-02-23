@@ -36,6 +36,7 @@
 - (void)_addReindexedProperty:(id)arg1 toSetForEntity:(id)arg2;
 - (long long)_countNullsInColumn:(id)arg1 forEntity:(id)arg2;
 - (long long)_countUnreferencedPrimaryKeysForEntity:(id)arg1 inForeignKeyColumnName:(id)arg2 fromTable:(id)arg3;
+- (void)_determineAncillaryModelIndexesForMigration;
 - (void)_determineAttributeTriggerToMigrateForAttributeNamed:(id)arg1 withSourceEntity:(id)arg2 andDestinationEntity:(id)arg3;
 - (void)_determineIndexesToMigrateForSourceEntity:(id)arg1 andDestinationEntity:(id)arg2;
 - (void)_determinePropertyDependenciesOnIDForEntity:(id)arg1;

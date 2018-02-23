@@ -3,7 +3,11 @@
  */
 
 @interface UIFieldEditor : UIScrollView <NSLayoutManagerDelegate, NSUITextViewCommonMethods, UIAutoscrollContainer, UIKeyInputPrivate, UIKeyboardInput, UITextAutoscrolling, UITextInput, UITextInputControllerDelegate, _UITextFieldContentViewContext> {
+    _UIFieldEditorLayoutManager * __layoutManager;
     bool  __shouldObscureNextInput;
+    NSTextContainer * __textContainer;
+    UITextInputController * __textInputController;
+    _UICascadingTextStorage * __textStorage;
     bool  _active;
     bool  _allowsAttachments;
     UIAutoscroll * _autoscroll;
@@ -25,9 +29,8 @@
         unsigned int delegateRespondsToShouldReplaceWithText : 1; 
         unsigned int suppressScrollToSelection : 1; 
         unsigned int clearOnNextEdit : 1; 
+        unsigned int needsInvalidationAfterObscuredRangeChange : 1; 
     }  _feFlags;
-    UITextInputController * _inputController;
-    _UIFieldEditorLayoutManager * _layoutManager;
     NSTimer * _obscureAllTextTimer;
     unsigned long long  _obscuredSecureLength;
     NSAttributedString * _originalAttributedString;
@@ -38,9 +41,7 @@
         double right; 
     }  _padding;
     _UITextFieldContentView * _passcodeStyleCutoutView;
-    NSTextContainer * _textContainer;
     UITextField * _textField;
-    _UICascadingTextStorage * _textStorage;
     struct _NSRange { 
         unsigned long long location; 
         unsigned long long length; 
@@ -96,6 +97,7 @@
 - (void).cxx_destruct;
 - (void)_adaptToPasscodeStyleIfNeeded;
 - (void)_applyCorrectTextContainerSize;
+- (void)_applyCorrectTextContainerSize:(id)arg1;
 - (void)_cancelObscureAllTextTimer;
 - (bool)_clearOnEditIfNeeded;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentInsetsFromFonts;
@@ -104,10 +106,11 @@
 - (void)_handleObscuredTextAfterActivationChange;
 - (bool)_hasDictationPlaceholder;
 - (id)_inputController;
-- (void)_invalidateAfterObscuredRangeChange;
+- (void)_invalidateAfterObscuredRangeChangeIfNeeded;
 - (bool)_isPasscodeStyle;
 - (id)_layoutManager;
 - (void)_obscureAllText;
+- (id)_ownerField;
 - (double)_passcodeStyleAlpha;
 - (void)_performPasteOfAttributedString:(id)arg1 toRange:(id)arg2 animator:(id)arg3 completion:(id /* block */)arg4;
 - (void)_performWhileSuppressingDelegateNotifications:(id /* block */)arg1;
@@ -116,10 +119,12 @@
 - (id)_responderForBecomeFirstResponder;
 - (void)_scrollRangeToVisible:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 animated:(bool)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_selectionClipRect;
+- (void)_setNeedsInvalidateAfterObscuredRangeChange;
 - (void)_setValue:(id)arg1 forTextAttribute:(id)arg2;
 - (bool)_shouldObscureInput;
 - (bool)_shouldObscureNextInput;
 - (id)_textContainer;
+- (id)_textInputController;
 - (id)_textInputTraits;
 - (id)_textSelectingContainer;
 - (id)_textStorage;
@@ -163,7 +168,7 @@
 - (bool)hasMarkedText;
 - (bool)hasText;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)initWithTextField:(id)arg1 textStorage:(id)arg2;
+- (id)initWithTextField:(id)arg1;
 - (id)inputDelegate;
 - (void)insertDictationResult:(id)arg1 withCorrectionIdentifier:(id)arg2;
 - (id)insertDictationResultPlaceholder;

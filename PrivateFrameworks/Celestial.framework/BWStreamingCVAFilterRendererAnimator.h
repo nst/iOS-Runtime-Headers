@@ -6,7 +6,6 @@
     struct { 
         float simulatedFocalRatio; 
     }  _currentFrame;
-    bool  _depthAvailable;
     int  _mostRecentEffectStatus;
     BWRamp * _simulatedFocalRatioRamp;
 }
@@ -15,11 +14,11 @@
 
 + (void)initialize;
 
-- (void)_resetSimulatedFocalRatioRampWithEffectStatus:(int)arg1;
+- (void)_resetSimulatedFocalRatioRampWithEffectStatus:(int)arg1 forFrontCamera:(bool)arg2;
 - (void)dealloc;
 - (id)init;
 - (id)initWithEffectStatus:(int)arg1;
 - (bool)isDepthAvailable;
-- (struct { float x1; }*)simulateNextFrameWithEffectStatus:(int)arg1 portraitStability:(float)arg2;
+- (struct { float x1; }*)simulateNextFrameWithEffectStatus:(int)arg1 portraitStability:(float)arg2 forFrontCamera:(bool)arg3;
 
 @end

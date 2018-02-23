@@ -4,6 +4,7 @@
 
 @interface TUCallCapabilitiesState : NSObject <NSCopying, NSSecureCoding, TUPubliclyAccessibleCopying> {
     bool  _accountsMatchForSecondaryCalling;
+    bool  _accountsSupportSecondaryCalling;
     NSArray * _cloudCallingDevices;
     bool  _csCallingCurrentlyAvailable;
     bool  _ctCapabilitiesValid;
@@ -11,10 +12,10 @@
     bool  _faceTimeAudioAvailable;
     bool  _faceTimeVideoAvailable;
     NSString * _outgoingRelayCallerID;
-    bool  _pairedDeviceExists;
     int  _relayCallingAvailability;
     NSDictionary * _relayCallingDisabledForDeviceID;
     bool  _relayCallingEnabled;
+    bool  _relayCallingFeaturesEnabled;
     bool  _supportsBasebandCalling;
     bool  _supportsCarrierServices;
     bool  _supportsCellularData;
@@ -43,7 +44,7 @@
 }
 
 @property (nonatomic) bool accountsMatchForSecondaryCalling;
-@property (nonatomic, readonly) bool accountsSupportSecondaryCalling;
+@property (nonatomic) bool accountsSupportSecondaryCalling;
 @property (nonatomic, copy) NSArray *cloudCallingDevices;
 @property (getter=isCSCallingCurrentlyAvailable, nonatomic) bool csCallingCurrentlyAvailable;
 @property (getter=areCTCapabilitiesValid, nonatomic) bool ctCapabilitiesValid;
@@ -55,10 +56,10 @@
 @property (getter=isFaceTimeVideoAvailable, nonatomic) bool faceTimeVideoAvailable;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *outgoingRelayCallerID;
-@property (nonatomic) bool pairedDeviceExists;
 @property (nonatomic) int relayCallingAvailability;
 @property (nonatomic, copy) NSDictionary *relayCallingDisabledForDeviceID;
 @property (getter=isRelayCallingEnabled, nonatomic) bool relayCallingEnabled;
+@property (getter=areRelayCallingFeaturesEnabled, nonatomic) bool relayCallingFeaturesEnabled;
 @property (readonly) Class superclass;
 @property (nonatomic) bool supportsBasebandCalling;
 @property (nonatomic) bool supportsCarrierServices;
@@ -93,6 +94,7 @@
 - (bool)accountsMatchForSecondaryCalling;
 - (bool)accountsSupportSecondaryCalling;
 - (bool)areCTCapabilitiesValid;
+- (bool)areRelayCallingFeaturesEnabled;
 - (id)cloudCallingDevices;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)defaultPairedDevice;
@@ -113,12 +115,12 @@
 - (bool)isWiFiEmergencyCallingAvailable;
 - (bool)isWiFiEmergencyCallingSupported;
 - (id)outgoingRelayCallerID;
-- (bool)pairedDeviceExists;
 - (id)publiclyAccessibleCopy;
 - (id)publiclyAccessibleCopyWithZone:(struct _NSZone { }*)arg1;
 - (int)relayCallingAvailability;
 - (id)relayCallingDisabledForDeviceID;
 - (void)setAccountsMatchForSecondaryCalling:(bool)arg1;
+- (void)setAccountsSupportSecondaryCalling:(bool)arg1;
 - (void)setCloudCallingDevices:(id)arg1;
 - (void)setCsCallingCurrentlyAvailable:(bool)arg1;
 - (void)setCtCapabilitiesValid:(bool)arg1;
@@ -126,10 +128,10 @@
 - (void)setFaceTimeAudioAvailable:(bool)arg1;
 - (void)setFaceTimeVideoAvailable:(bool)arg1;
 - (void)setOutgoingRelayCallerID:(id)arg1;
-- (void)setPairedDeviceExists:(bool)arg1;
 - (void)setRelayCallingAvailability:(int)arg1;
 - (void)setRelayCallingDisabledForDeviceID:(id)arg1;
 - (void)setRelayCallingEnabled:(bool)arg1;
+- (void)setRelayCallingFeaturesEnabled:(bool)arg1;
 - (void)setSupportsBasebandCalling:(bool)arg1;
 - (void)setSupportsCarrierServices:(bool)arg1;
 - (void)setSupportsCellularData:(bool)arg1;

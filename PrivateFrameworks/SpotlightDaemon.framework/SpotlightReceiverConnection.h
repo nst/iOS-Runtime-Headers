@@ -7,6 +7,7 @@
     NSSet * _bundleIDs;
     NSArray * _contentTypes;
     bool  _disabled;
+    double  _minDate;
     NSMutableSet * _negativeSet;
     NSMutableSet * _positiveSet;
     unsigned int  _requestCount;
@@ -14,6 +15,7 @@
     NSString * _serviceName;
     bool  _setupComplete;
     NSObject<OS_dispatch_semaphore> * _setupSemaphore;
+    bool  _skipFileProviderItems;
     int  _supportedJobs;
     bool  _wantsHTML;
     bool  _wantsText;
@@ -22,11 +24,13 @@
 @property (nonatomic, readonly) NSSet *INIntentClassNames;
 @property (nonatomic, readonly) NSSet *bundleIDs;
 @property (nonatomic, readonly) NSArray *contentTypes;
+@property (nonatomic) double minDate;
 @property (nonatomic, readonly) unsigned int requestCount;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *senderQueue;
 @property (nonatomic, readonly) NSString *serviceName;
 @property (nonatomic) bool setupComplete;
 @property (retain) NSObject<OS_dispatch_semaphore> *setupSemaphore;
+@property (nonatomic) bool skipFileProviderItems;
 @property (nonatomic, readonly) int supportedJobs;
 @property (nonatomic, readonly) bool unresponsive;
 @property (nonatomic) bool wantsHTML;
@@ -57,6 +61,7 @@
 - (void)indexFromBundle:(id)arg1 protectionClass:(id)arg2 items:(id)arg3 itemsContent:(id)arg4;
 - (id)initWithServiceName:(id)arg1 clientID:(long long)arg2 wantsText:(bool)arg3 wantsHTML:(bool)arg4;
 - (void)invalidationHandler;
+- (double)minDate;
 - (void)purgeFromBundle:(id)arg1 identifiers:(id)arg2;
 - (void)receiverRequestComplete;
 - (void)receiverRequestStart;
@@ -64,13 +69,16 @@
 - (void)runOnSenderQueue:(id /* block */)arg1;
 - (id)senderQueue;
 - (id)serviceName;
+- (void)setMinDate:(double)arg1;
 - (void)setSetupComplete:(bool)arg1;
 - (void)setSetupSemaphore:(id)arg1;
+- (void)setSkipFileProviderItems:(bool)arg1;
 - (void)setWantsHTML:(bool)arg1;
 - (void)setWantsText:(bool)arg1;
 - (bool)setupComplete;
 - (void)setupComplete:(bool)arg1;
 - (id)setupSemaphore;
+- (bool)skipFileProviderItems;
 - (void)startSetup;
 - (int)supportedJobs;
 - (bool)unresponsive;

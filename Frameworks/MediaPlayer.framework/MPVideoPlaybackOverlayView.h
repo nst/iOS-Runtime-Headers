@@ -18,7 +18,9 @@
     UIView * _bottomBarItemsGuide;
     UIView * _bottomBarTopLayoutGuide;
     NSArray * _bottomItems;
+    NSLayoutConstraint * _bottomItemsBottomConstraint;
     NSArray * _bottomItemsConstraints;
+    NSLayoutConstraint * _bottomItemsLeftConstraint;
     NSLayoutConstraint * _bottomItemsRightConstraint;
     <MPVideoOverlayDelegate> * _delegate;
     UIButton * _doneButton;
@@ -45,11 +47,14 @@
     bool  _ticking;
     _UIBackdropView * _topBarBackdropView;
     NSLayoutConstraint * _topBarBottomConstraint;
+    NSLayoutConstraint * _topBarHeightConstraint;
     UIView * _topBarItemsGuide;
     UIView * _topBarLayoutGuide;
+    NSLayoutConstraint * _topBarLayoutGuideHeightConstraint;
     NSArray * _topBarTraitCollectionConstraints;
     NSArray * _topItems;
     NSArray * _topItemsConstraints;
+    NSLayoutConstraint * _topItemsTopConstraint;
     NSLayoutConstraint * _topItemsTrailingConstraint;
     MPVideoView * _videoView;
     UIViewController * _viewControllerForModalPresentationOrientation;
@@ -132,6 +137,7 @@
 - (void)_setOverrideType:(long long)arg1;
 - (void)_setScrubberDuration:(double)arg1;
 - (void)_setScrubberValue:(double)arg1;
+- (bool)_shouldHideStatusBar;
 - (void)_showScrubInstructions;
 - (void)_skipButtonTouchCancel:(id)arg1;
 - (void)_skipButtonTouchDown:(id)arg1;

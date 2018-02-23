@@ -29,8 +29,6 @@
 - (void)setContainerIdentifier:(id)arg1;
 - (void)setContainerInfo:(id)arg1;
 - (void)setNeedUserID:(bool)arg1;
-- (id)sourceApplicationBundleIdentifier;
-- (id)sourceApplicationSecondaryIdentifier;
 - (id)url;
 - (bool)usesCloudKitAuthToken;
 - (bool)usesiCloudAuthToken;

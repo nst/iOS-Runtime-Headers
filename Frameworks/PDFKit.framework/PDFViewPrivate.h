@@ -23,6 +23,10 @@
     bool  displaysPageBreaks;
     bool  displaysRTL;
     PDFDocument * document;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  documentViewCenterBeforeRotation;
     PDFDocumentViewController * documentViewController;
     UIDragInteraction * dragInteraction;
     bool  enableSelectionDrawing;
@@ -31,9 +35,16 @@
     double  gutterWide;
     NSArray * highlights;
     long long  historyIndex;
+    double  horizontalScaleFactorBeforeRotation;
     bool  inhibitAutoScroll;
     bool  isUsingPageViewController;
     unsigned long long  lastHorizontalScrollDirection;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  lastSafeAreaInsets;
     unsigned long long  lastVerticalScrollDirection;
     unsigned long long  lastVisiblePage;
     UILongPressGestureRecognizer * longPressGestureRecognizer;

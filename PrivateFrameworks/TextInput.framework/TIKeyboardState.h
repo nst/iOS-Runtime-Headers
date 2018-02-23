@@ -10,6 +10,7 @@
             unsigned int autoDisplayMode : 1; 
         } fields; 
     }  _autocorrectionListUIState;
+    NSDictionary * _autofillContext;
     NSString * _clientIdentifier;
     TIKeyboardCandidate * _currentCandidate;
     NSUUID * _documentIdentifier;
@@ -54,6 +55,7 @@
 @property (nonatomic) bool autocorrectionEnabled;
 @property (nonatomic) bool autocorrectionListUIAutoDisplayMode;
 @property (nonatomic) bool autocorrectionListUIDisplayed;
+@property (nonatomic, retain) NSDictionary *autofillContext;
 @property (nonatomic) bool canSendCurrentLocation;
 @property (nonatomic) bool candidateSelectionPredictionEnabled;
 @property (nonatomic, copy) NSString *clientIdentifier;
@@ -95,6 +97,7 @@
 - (bool)autocorrectionEnabled;
 - (bool)autocorrectionListUIAutoDisplayMode;
 - (bool)autocorrectionListUIDisplayed;
+- (id)autofillContext;
 - (bool)canSendCurrentLocation;
 - (bool)candidateSelectionPredictionEnabled;
 - (id)clientIdentifier;
@@ -129,6 +132,7 @@
 - (void)setAutocorrectionEnabled:(bool)arg1;
 - (void)setAutocorrectionListUIAutoDisplayMode:(bool)arg1;
 - (void)setAutocorrectionListUIDisplayed:(bool)arg1;
+- (void)setAutofillContext:(id)arg1;
 - (void)setCanSendCurrentLocation:(bool)arg1;
 - (void)setCandidateSelectionPredictionEnabled:(bool)arg1;
 - (void)setClientIdentifier:(id)arg1;

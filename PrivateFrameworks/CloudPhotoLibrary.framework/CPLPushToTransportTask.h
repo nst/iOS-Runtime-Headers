@@ -15,6 +15,7 @@
     bool  _generatingSomeDerivatives;
     bool  _isUsingOverQuotaStrategy;
     unsigned long long  _lastReportedProgress;
+    double  _latestApproximativeUploadRate;
     NSObject<OS_dispatch_queue> * _lock;
     CPLEnginePushRepository * _pushRepository;
     NSMutableDictionary * _recordsNeedingToBeFullyFetched;

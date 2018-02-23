@@ -36,6 +36,7 @@
 - (id)endpointUUIDsForConnectionWithUUID:(id)arg1;
 - (id)init;
 - (bool)isConnectionAuthenticated:(id)arg1;
+- (void)launchServer;
 - (bool)processIncomingData:(id)arg1 forEndpointWithUUID:(id)arg2;
 - (void)propertiesDidChange:(id)arg1 forConnectionWithUUID:(id)arg2 previousProperties:(id)arg3;
 - (void)propertiesDidChange:(id)arg1 forEndpointWithUUID:(id)arg2 previousProperties:(id)arg3 connectionUUID:(id)arg4;

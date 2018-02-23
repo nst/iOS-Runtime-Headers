@@ -17,6 +17,7 @@
 
 - (void).cxx_destruct;
 - (void)_menuBarHeightChange:(id)arg1;
+- (id)childViewControllerForHomeIndicatorAutoHidden;
 - (double)collectionViewHeight;
 - (id)context;
 - (void)dealloc;

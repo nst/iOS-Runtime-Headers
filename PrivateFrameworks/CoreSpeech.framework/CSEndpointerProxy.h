@@ -41,6 +41,7 @@
 - (double)automaticEndpointingSuspensionEndTime;
 - (double)delay;
 - (bool)didEnterTwoshot;
+- (double)elapsedTimeWithNoSpeech;
 - (double)endWaitTime;
 - (long long)endpointMode;
 - (long long)endpointStyle;

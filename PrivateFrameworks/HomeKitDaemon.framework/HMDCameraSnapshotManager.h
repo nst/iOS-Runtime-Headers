@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraSnapshotManager : HMFObject <HMDCameraSnapshotLocalDelegate, HMDCameraSnapshotRemoteRelayReceiverDelegate, HMDCameraSnapshotRemoteRelaySenderDelegate, HMDCameraSnapshotRemoteRelayStreamDelegate, HMDCameraSnapshotRemoteStreamReceiverDelegate, HMDCameraSnapshotRemoteStreamSenderDelegate, HMDCameraStreamSnapshotHandlerDelegate, HMFLogging, HMFMessageReceiver, HMFTimerDelegate> {
+@interface HMDCameraSnapshotManager : HMFObject <HMDCameraSnapshotLocalDelegate, HMDCameraSnapshotRemoteRelayReceiverDelegate, HMDCameraSnapshotRemoteRelaySenderDelegate, HMDCameraSnapshotRemoteRelayStreamDelegate, HMDCameraSnapshotRemoteStreamReceiverDelegate, HMDCameraSnapshotRemoteStreamSenderDelegate, HMDCameraStreamSnapshotHandlerDelegate, HMDHomeMessageReceiver, HMFLogging, HMFTimerDelegate> {
     HMDAccessory * _accessory;
     HMDSnapshotLocalSession * _currentLocalSession;
     NSMutableDictionary * _currentRemoteSessions;
@@ -32,6 +32,7 @@
 @property (nonatomic, readonly) NSString *imageCacheDirectory;
 @property (nonatomic, readonly) NSString *logID;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (readonly, copy) NSSet *messageReceiverChildren;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, readonly) HMDCameraSnapshotMonitorEvents *monitorServicesManager;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
@@ -49,6 +50,7 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
 
 + (void)auditSnapshotDirectories:(id)arg1;
++ (bool)hasMessageReceiverChildren;
 + (id)logCategory;
 
 - (void).cxx_destruct;
@@ -84,6 +86,7 @@
 - (id)logID;
 - (id)logIdentifier;
 - (id)messageReceiveQueue;
+- (id)messageReceiverChildren;
 - (id)messageTargetUUID;
 - (void)monitorForEventsForServices:(id)arg1;
 - (id)monitorServicesManager;

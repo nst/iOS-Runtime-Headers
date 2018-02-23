@@ -6,6 +6,7 @@
     AKAppleIDAuthenticationController * _authController;
     UIBarButtonItem * _cancelButtonBarItem;
     PSSpecifier * _createNewAccountButtonSpecifier;
+    PSSpecifier * _createNewAccountGroupSpecifier;
     NSTimer * _idleJiggleTimer;
     bool  _isPasswordDirty;
     bool  _isPresentedModally;
@@ -39,6 +40,7 @@
 - (void)_cancelButtonWasTapped:(id)arg1;
 - (void)_createNewAppleIDButtonWasTapped:(id)arg1;
 - (double)_heightForCreateNewAccountFooterWithWidth:(double)arg1;
+- (double)_heightForCreateNewAccountSpecifierWithWidth:(double)arg1;
 - (void)_iForgotButtonWasTapped:(id)arg1;
 - (void)_idleTimerFired;
 - (id)_monogrammer;
@@ -51,6 +53,7 @@
 - (void)_setInteractionEnabled:(bool)arg1;
 - (void)_setPassword:(id)arg1 withSpecifier:(id)arg2;
 - (void)_setUsername:(id)arg1 withSpecifier:(id)arg2;
+- (bool)_shouldAnchorCreateAccountButton;
 - (bool)_shouldShowCancelDone;
 - (void)_signInButtonWasTapped:(id)arg1;
 - (void)_signInWithUsername:(id)arg1 password:(id)arg2;
@@ -83,6 +86,7 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
 - (id)title;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;

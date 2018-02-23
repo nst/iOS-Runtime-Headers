@@ -77,6 +77,7 @@
 - (id)onLaunchError;
 - (id)preferences;
 - (id)privateQueue;
+- (oneway void)release;
 - (id)responseHandler;
 - (void)setAllowUI:(bool)arg1;
 - (void)setAppDocumentController:(id)arg1;

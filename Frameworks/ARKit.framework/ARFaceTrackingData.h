@@ -10,12 +10,14 @@
             float *__first_; 
         } __end_cap_; 
     }  _blendShapeCoefficients;
+    NSObject<OS_dispatch_semaphore> * _imageVerticesSemaphore;
     struct { 
         /* Warning: Unrecognized filer type: ']' using 'void*' */ void*columns[4]; 
     }  _leftEyeTransform;
     void _lookAtPoint;
     struct vector<float __attribute__((ext_vector_type(3))), std::__1::allocator<float __attribute__((ext_vector_type(3)))> >="__begin_"^"__end_"^"__end_cap_"{__compressed_pair<float * __attribute__((ext_vector_type(3))), std::__1::allocator<float __attribute__((ext_vector_type(3)))> >="__first_"^ {}  _meshVertices;
     struct vector<float __attribute__((ext_vector_type(3))), std::__1::allocator<float __attribute__((ext_vector_type(3)))> >="__begin_"^"__end_"^"__end_cap_"{__compressed_pair<float * __attribute__((ext_vector_type(3))), std::__1::allocator<float __attribute__((ext_vector_type(3)))> >="__first_"^ {}  _normals;
+    NSObject<OS_dispatch_semaphore> * _normalsSemaphore;
     struct { 
         /* Warning: Unrecognized filer type: ']' using 'void*' */ void*columns[4]; 
     }  _rightEyeTransform;
@@ -23,7 +25,6 @@
     struct { 
         /* Warning: Unrecognized filer type: ']' using 'void*' */ void*columns[4]; 
     }  _transform;
-    NSString * _versionString;
     struct vector<float __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >="__begin_"^"__end_"^"__end_cap_"{__compressed_pair<float * __attribute__((ext_vector_type(2))), std::__1::allocator<float __attribute__((ext_vector_type(2)))> >="__first_"^ {}  _verticesImageSpace;
 }
 
@@ -42,7 +43,6 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSDictionary *trackingData;
 @property (nonatomic, readonly) struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; } transform;
-@property (nonatomic, readonly) NSString *versionString;
 @property (nonatomic, readonly) unsigned long long vertexCount;
 @property (nonatomic, readonly) const /* Warning: Unrecognized filer type: '' using 'void*' */ void**vertices;
 
@@ -56,7 +56,7 @@
 - (unsigned long long)blendShapeCoefficientsCount;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (const /* Warning: Unrecognized filer type: '1' using 'void*' */ void**)imageVertices;
-- (id)initWithTrackingData:(id)arg1 versionString:(id)arg2;
+- (id)initWithTrackingData:(id)arg1;
 - (bool)isValid;
 - (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })leftEyeTransform;
 - (void)lookAtPoint;
@@ -65,7 +65,6 @@
 - (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })rightEyeTransform;
 - (id)trackingData;
 - (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })transform;
-- (id)versionString;
 - (unsigned long long)vertexCount;
 - (const /* Warning: Unrecognized filer type: '1' using 'void*' */ void**)vertices;
 

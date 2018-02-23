@@ -2,7 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITextField : UIControl <ABText, DebugHierarchyObject, MPUAutoupdatingTextContainer, NSCoding, UIContentSizeCategoryAdjusting, UIGestureRecognizerDelegate, UIKeyInputPrivate, UIKeyboardInput, UIPopoverControllerDelegate, UITextDragSupporting, UITextDraggable, UITextDropSupporting, UITextDroppable, UITextFieldContent, UITextInput, UITextInputTraits_Private, UITextPasteConfigurationSupporting, UITextPasteConfigurationSupporting_Internal, UIViewGhostedRangeSupporting, _UIFloatingContentViewDelegate, _UILayoutBaselineUpdating, _UITextFieldContent_Internal, _UITextFieldVisualStyleSubject> {
+@interface UITextField : UIControl <ABText, DebugHierarchyObject, MPUAutoupdatingTextContainer, NSCoding, UIContentSizeCategoryAdjusting, UIGestureRecognizerDelegate, UIKeyInputPrivate, UIKeyboardInput, UIPopoverControllerDelegate, UITextDragSupporting, UITextDraggable, UITextDropSupporting, UITextDroppable, UITextFieldContent, UITextInput, UITextInputTraits_Private, UITextPasteConfigurationSupporting, UITextPasteConfigurationSupporting_Internal, UIViewGhostedRangeSupporting, _UIFloatingContentViewDelegate, _UILayoutBaselineUpdating, _UITextFieldContentViewContextProvider, _UITextFieldContent_Internal, _UITextFieldVisualStyleSubject> {
+    _UIFieldEditorLayoutManager * __layoutManager;
+    NSTextContainer * __textContainer;
     bool  _adjustsFontForContentSizeCategory;
     bool  _animateNextHighlightChange;
     UITextFieldAtomBackgroundView * _atomBackgroundView;
@@ -57,7 +59,6 @@
     <UITextPasteDelegate> * _pasteDelegate;
     UITextFieldLabel * _placeholderLabel;
     UITextFieldLabel * _prefixLabel;
-    _UICascadingTextStorage * _prewarmedTextStorage;
     float  _progress;
     UIView * _recentsAccessoryView;
     UIView * _rightView;
@@ -101,9 +102,9 @@
         unsigned int blurEnabled : 1; 
         unsigned int disableFocus : 1; 
         unsigned int disableRemoteTextEditing : 1; 
-        unsigned int prewarmedTextStorageReady : 1; 
         unsigned int allowsAttachments : 1; 
     }  _textFieldFlags;
+    _UICascadingTextStorage * _textStorage;
     UITextInputTraits * _traits;
     UIColor * _tvCustomFocusedTextColor;
     UIColor * _tvCustomTextColor;
@@ -276,6 +277,7 @@
 - (void)_clearSelectionUI;
 - (id)_contentBackdropView;
 - (id)_contentSnapshot;
+- (id)_contextForTextFieldContentView;
 - (unsigned long long)_controlEventsForActionTriggered;
 - (id)_copyFont:(id)arg1 newSize:(float)arg2 maxSize:(float)arg3;
 - (void)_createBaselineLayoutLabelIfNecessary;
@@ -290,6 +292,7 @@
 - (void)_detachFieldEditor;
 - (id)_dictationInterpretations;
 - (void)_didAttachFieldEditor;
+- (void)_didChangeSecureTextEntry;
 - (void)_didUpdateAfterDetachingFieldEditor;
 - (void)_disableClipToBoundsForBorderStyleNone;
 - (bool)_disableTextColorUpdateOnTraitCollectionChange;
@@ -317,7 +320,7 @@
 - (bool)_inPopover;
 - (bool)_inVibrantContentView;
 - (void)_initContentView;
-- (void)_initPrewarmedTextStorage;
+- (void)_initTextStorage;
 - (void)_initialScrollDidFinish:(id)arg1;
 - (id)_inputController;
 - (void)_insertAttributedTextWithoutClosingTyping:(id)arg1;
@@ -338,6 +341,7 @@
 - (long long)_keyboardAppearance;
 - (void)_layoutContent;
 - (void)_layoutLabels;
+- (id)_layoutManager;
 - (struct CGSize { double x1; double x2; })_leftViewOffset;
 - (float)_marginTop;
 - (float)_marginTopForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
@@ -431,6 +435,7 @@
 - (Class)_systemBackgroundViewClass;
 - (id)_systemInputViewController;
 - (id)_text;
+- (id)_textContainer;
 - (id)_textContentView;
 - (id)_textInputViewForAddingGestureRecognizers;
 - (bool)_textNeedsSanitizing:(id)arg1;
@@ -438,6 +443,7 @@
 - (bool)_textShouldUseVibrancy;
 - (struct CGSize { double x1; double x2; })_textSize;
 - (struct CGSize { double x1; double x2; })_textSizeUsingFullFontSize:(bool)arg1;
+- (id)_textStorage;
 - (id)_textStorageTextColor;
 - (void)_transliterateChinese:(id)arg1;
 - (id)_tvCustomFocusedTextColor;
@@ -699,6 +705,7 @@
 - (void)setContinuousSpellCheckingEnabled:(bool)arg1;
 - (void)setDefaultTextAttributes:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDevicePasscodeEntry:(bool)arg1;
 - (void)setDisabledBackground:(id)arg1;
 - (void)setDisplaySecureEditsUsingPlainText:(bool)arg1;
 - (void)setDisplaySecureTextUsingPlainText:(bool)arg1;

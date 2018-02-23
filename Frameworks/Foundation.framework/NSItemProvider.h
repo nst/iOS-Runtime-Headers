@@ -11,6 +11,7 @@
     id /* block */  _previewImageHandler;
     NSMutableDictionary * _representationByType;
     NSArray * _representations;
+    NSString * _sanitizedSuggestedName;
     NSString * _suggestedName;
     NSMutableOrderedSet * _typeOrder;
     NSDictionary * _userInfo;
@@ -21,6 +22,7 @@
 @property (nonatomic, retain) NSMutableDictionary *_preferredRepresentationByType;
 @property (nonatomic, retain) NSMutableDictionary *_representationByType;
 @property (readonly) NSArray *_representations;
+@property (readonly, copy) NSString *_sanitizedSuggestedName;
 @property (nonatomic, retain) NSMutableOrderedSet *_typeOrder;
 @property <NSItemProviderDataTransferDelegate> *dataTransferDelegate;
 @property (nonatomic) struct CGSize { double x1; double x2; } preferredPresentationSize;
@@ -56,6 +58,7 @@
 - (id)_representationConformingToType:(id)arg1;
 - (id)_representationForType:(id)arg1;
 - (id)_representations;
+- (id)_sanitizedSuggestedName;
 - (void)_setItemRepresentation:(id)arg1;
 - (void)_setMetadataValue:(id)arg1 forKey:(id)arg2;
 - (id)_typeOrder;

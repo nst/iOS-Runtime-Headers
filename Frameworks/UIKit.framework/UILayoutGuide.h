@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UILayoutGuide : NSObject <AVKitLayoutItem, NSCoding, NSISVariableDelegate, SearchUIAutoLayoutItem, UILayoutItem_Internal, _UILayoutItem> {
+@interface UILayoutGuide : NSObject <AVKitLayoutItem, HULayoutAnchorProviding, NSCoding, NSISVariableDelegate, SearchUIAutoLayoutItem, UILayoutItem_Internal, _UILayoutItem> {
     bool  __allowsNegativeDimensions;
     bool  __shouldBeArchived;
     bool  _allowOwningViewSetting;

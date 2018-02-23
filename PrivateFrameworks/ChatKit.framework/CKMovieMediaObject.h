@@ -10,6 +10,8 @@
     bool  _isAppleAutoloopVideoInitialized;
     bool  _isAutoloopVideo;
     bool  _isAutoloopVideoInitialized;
+    bool  _isJellyfishInitialized;
+    bool  _isJellyfishVideo;
     struct CGSize { 
         double width; 
         double height; 
@@ -24,7 +26,8 @@
 @property (nonatomic) bool isAppleAutoloopVideoInitialized;
 @property (nonatomic) bool isAutoloopVideo;
 @property (nonatomic) bool isAutoloopVideoInitialized;
-@property (nonatomic, readonly) bool isJellyfishVideo;
+@property (nonatomic) bool isJellyfishInitialized;
+@property (nonatomic) bool isJellyfishVideo;
 @property (nonatomic) struct CGSize { double x1; double x2; } pxSize;
 @property (nonatomic, retain) UIImage *thumbnail;
 
@@ -35,6 +38,7 @@
 + (bool)isPreviewable;
 
 - (void).cxx_destruct;
+- (bool)_assetContainsMetadataKey:(id)arg1;
 - (id)asset;
 - (struct CGSize { double x1; double x2; })bbSize;
 - (bool)canExport;
@@ -48,6 +52,7 @@
 - (bool)isAppleAutoloopVideoInitialized;
 - (bool)isAutoloopVideo;
 - (bool)isAutoloopVideoInitialized;
+- (bool)isJellyfishInitialized;
 - (bool)isJellyfishVideo;
 - (int)mediaType;
 - (Class)previewBalloonViewClass;
@@ -63,6 +68,8 @@
 - (void)setIsAppleAutoloopVideoInitialized:(bool)arg1;
 - (void)setIsAutoloopVideo:(bool)arg1;
 - (void)setIsAutoloopVideoInitialized:(bool)arg1;
+- (void)setIsJellyfishInitialized:(bool)arg1;
+- (void)setIsJellyfishVideo:(bool)arg1;
 - (void)setPxSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setThumbnail:(id)arg1;
 - (id)thumbnail;

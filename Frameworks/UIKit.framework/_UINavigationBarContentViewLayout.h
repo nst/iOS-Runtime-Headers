@@ -12,6 +12,8 @@
     _UIButtonBarButton * _backButton;
     NSArray * _backButtonConstraints;
     UILayoutGuide * _backButtonGuide;
+    UIView * _backButtonSnapshot;
+    NSLayoutConstraint * _backButtonToLeadingBarSpacer;
     _UINavigationBarContentView * _contentView;
     long long  _currentContentSize;
     bool  _hasFakedBackButton;
@@ -29,14 +31,17 @@
     UIBarButtonItemGroup * _leadingBarGroup;
     UILayoutGuide * _leadingBarGuide;
     UIView * _leadingBarSnapshot;
+    NSLayoutConstraint * _leadingBarToTitleSpacer;
     NSLayoutConstraint * _leadingMarginConstraint;
     double  _overrideSize;
     double  _preferredBackButtonWidth;
     double  _resolvedSize;
+    NSLayoutConstraint * _titleToTrailingBarSpacer;
     double  _titleVerticalPositionAdjustment;
     UIView * _titleView;
     NSArray * _titleViewConstraints;
     UILayoutGuide * _titleViewGuide;
+    UIView * _titleViewSnapshot;
     _UITAMICAdaptorView * _titleViewWrapperView;
     _UIButtonBar * _trailingBar;
     NSArray * _trailingBarConstraints;
@@ -52,6 +57,7 @@
 @property (nonatomic, retain) UIView<_UINavigationBarAugmentedTitleView> *augmentedTitleView;
 @property (nonatomic, retain) _UIButtonBarButton *backButton;
 @property (nonatomic, readonly) UILayoutGuide *backButtonGuide;
+@property (nonatomic, readonly) UIView *backButtonSnapshot;
 @property (nonatomic, readonly) _UINavigationBarContentView *contentView;
 @property (nonatomic) long long currentContentSize;
 @property (nonatomic, readonly) double currentHeight;
@@ -70,6 +76,7 @@
 @property (nonatomic) double titleVerticalPositionAdjustment;
 @property (nonatomic, retain) UIView *titleView;
 @property (nonatomic, readonly) UILayoutGuide *titleViewGuide;
+@property (nonatomic, readonly) UIView *titleViewSnapshot;
 @property (nonatomic, readonly) _UITAMICAdaptorView *titleViewWrapperView;
 @property (nonatomic, retain) _UIButtonBar *trailingBar;
 @property (nonatomic, readonly) UILayoutGuide *trailingBarGuide;
@@ -98,6 +105,7 @@
 - (id)augmentedTitleView;
 - (id)backButton;
 - (id)backButtonGuide;
+- (id)backButtonSnapshot;
 - (void)cleanupAfterLayoutTransitionCompleted;
 - (id)contentView;
 - (long long)currentContentSize;
@@ -118,7 +126,9 @@
 - (double)overrideSize;
 - (double)preferredBackButtonWidth;
 - (void)removeAllSnapshots;
+- (void)replaceBackButtonWithSnapshot;
 - (void)replaceLeadingBarWithSnapshot;
+- (void)replaceTitleViewWithSnapshot;
 - (void)replaceTrailingBarWithSnapshot;
 - (double)resolvedSize;
 - (void)setActive:(bool)arg1;
@@ -144,6 +154,7 @@
 - (double)titleVerticalPositionAdjustment;
 - (id)titleView;
 - (id)titleViewGuide;
+- (id)titleViewSnapshot;
 - (id)titleViewWrapperView;
 - (id)trailingBar;
 - (id)trailingBarGuide;
@@ -151,6 +162,7 @@
 - (id)trailingBarSnapshot;
 - (void)unfreeze;
 - (void)updateAugmentedTitleViewHeight;
+- (void)updateSpacingConstraints;
 - (void)updateTitleHeight;
 
 @end

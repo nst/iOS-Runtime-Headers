@@ -9,6 +9,7 @@
     CCUIControlCenterPositionProvider * _landscapePositionProvider;
     CCUILayoutOptions * _layoutOptions;
     NSObject<OS_dispatch_group> * _moduleCloseDispatchGroup;
+    NSDictionary * _moduleContainerViewByIdentifier;
     CCUIModuleInstanceManager * _moduleManager;
     NSDictionary * _moduleViewControllerByIdentifier;
     CCUIControlCenterPositionProvider * _portraitPositionProvider;
@@ -32,10 +33,10 @@
 - (id)_moduleInstances;
 - (void)_populateModuleViewControllers;
 - (id)_positionProviderForInterfaceOrientation:(long long)arg1;
+- (void)_refreshPositionProviders;
 - (void)_removeAndTearDownModuleViewControllerFromHierarchy:(id)arg1;
-- (void)_setupAndAddModuleViewControllerToHierarchy:(id)arg1;
+- (id)_setupAndAddModuleViewControllerToHierarchy:(id)arg1;
 - (bool)_shouldApplyBackgroundEffects;
-- (void)_sizeAndSortModuleViews;
 - (id)_sizesForModuleIdentifiers:(id)arg1 moduleInstanceByIdentifier:(id)arg2 interfaceOrientation:(long long)arg3;
 - (void)_updateEnabledModuleIdentifiers;
 - (void)_updateModuleControllers;
@@ -59,7 +60,6 @@
 - (bool)isModuleExpandedForIdentifier:(id)arg1;
 - (struct CCUILayoutSize { unsigned long long x1; unsigned long long x2; })layoutSizeForLayoutView:(id)arg1;
 - (struct CCUILayoutRect { struct CCUILayoutPoint { unsigned long long x_1_1_1; unsigned long long x_1_1_2; } x1; struct CCUILayoutSize { unsigned long long x_2_1_1; unsigned long long x_2_1_2; } x2; })layoutView:(id)arg1 layoutRectForSubview:(id)arg2;
-- (bool)layoutView:(id)arg1 shouldIgnoreSubview:(id)arg2;
 - (void)loadView;
 - (id)moduleCollectionView;
 - (void)moduleInstancesChangedForModuleInstanceManager:(id)arg1;
@@ -72,8 +72,10 @@
 - (bool)shouldApplyBackgroundEffectsForContentModuleContainerViewController:(id)arg1;
 - (bool)shouldAutomaticallyForwardAppearanceMethods;
 - (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 - (void)willBecomeActive;
 - (void)willResignActive;

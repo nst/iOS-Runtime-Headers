@@ -34,6 +34,7 @@
 - (double)articleDiversificationUniquePublisherExpectationSlope;
 - (double)articleDiversificationUniquePublisherExpectationYIntercept;
 - (id)diversifyArticles:(id)arg1 limit:(unsigned long long)arg2;
+- (id)diversifyArticles:(id)arg1 limit:(unsigned long long)arg2 preselectedArticles:(id)arg3;
 - (id)globalScoreRangesValueStore;
 - (id)globalScoresRingBufferContainer;
 - (id)init;

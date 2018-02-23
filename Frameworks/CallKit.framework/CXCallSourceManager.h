@@ -40,6 +40,7 @@
 - (void)callSource:(id)arg1 reportedOutgoingCallWithUUID:(id)arg2 connectedAtDate:(id)arg3;
 - (void)callSource:(id)arg1 reportedOutgoingCallWithUUID:(id)arg2 sentInvitationAtDate:(id)arg3;
 - (void)callSource:(id)arg1 reportedOutgoingCallWithUUID:(id)arg2 startedConnectingAtDate:(id)arg3;
+- (void)callSource:(id)arg1 requestedTransaction:(id)arg2 completion:(id /* block */)arg3;
 - (void)callSourceConnectionEnded:(id)arg1;
 - (void)callSourceConnectionStarted:(id)arg1;
 - (void)callSourceInvalidated:(id)arg1;

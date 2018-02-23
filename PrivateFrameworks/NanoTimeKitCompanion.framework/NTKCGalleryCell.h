@@ -19,7 +19,6 @@
     }  _itemSize;
     UICollectionViewFlowLayout * _layout;
     NSLayoutConstraint * _leadingInsetConstraint;
-    UIButton * _seeAll;
     long long  _selectedIndex;
     UILabel * _title;
     NSLayoutConstraint * _titleBaselineConstraint;
@@ -43,7 +42,6 @@
 @property (nonatomic) struct CGSize { double x1; double x2; } itemSize;
 @property (nonatomic, retain) UICollectionViewFlowLayout *layout;
 @property (nonatomic, retain) NSLayoutConstraint *leadingInsetConstraint;
-@property (nonatomic, retain) UIButton *seeAll;
 @property (nonatomic) long long selectedIndex;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UILabel *title;
@@ -56,7 +54,6 @@
 - (void).cxx_destruct;
 - (struct CGPoint { double x1; double x2; })_contentInsetPoint;
 - (void)_fontSizeDidChange;
-- (void)_seeAllTapped;
 - (bool)_shouldShowAddNewFace;
 - (id)addNewFace;
 - (void)calculateHeightForCollection;
@@ -87,7 +84,6 @@
 - (void)layoutSubviews;
 - (id)leadingInsetConstraint;
 - (id)previewViewAndRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 forFace:(id)arg2;
-- (id)seeAll;
 - (long long)selectedIndex;
 - (void)setAddNewFace:(id)arg1;
 - (void)setCollection:(id)arg1;
@@ -103,7 +99,6 @@
 - (void)setItemSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setLayout:(id)arg1;
 - (void)setLeadingInsetConstraint:(id)arg1;
-- (void)setSeeAll:(id)arg1;
 - (void)setSelectedIndex:(long long)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleBaselineConstraint:(id)arg1;

@@ -12,6 +12,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (readonly, copy) NSUUID *identifier;
+@property (readonly, copy) NSString *keyPath;
 @property (readonly, copy) NSString *localizedTitle;
 @property HMAccessorySelectionSetting *setting;
 @property (readonly) Class superclass;
@@ -40,6 +41,8 @@
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
+- (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
+- (id)hf_serializedStateDumpRepresentation;
 - (id)uniqueIdentifier;
 
 @end

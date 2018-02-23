@@ -30,8 +30,10 @@
 - (void)enrollFeedback:(id)arg1 withTimestamp:(unsigned long long)arg2;
 - (void)enrollResult:(id)arg1 withTimestamp:(unsigned long long)arg2;
 - (void)enrollUpdate:(id)arg1 withTimestamp:(unsigned long long)arg2;
+- (int)fieldDiagnosticsControl:(unsigned int)arg1 inData:(id)arg2 outData:(id*)arg3 withClient:(id)arg4;
 - (bool)fileRadarWithLogs:(id)arg1 withDescription:(id)arg2;
 - (int)forceBioLockoutForUser:(unsigned int)arg1 withOptions:(id)arg2 withClient:(id)arg3;
+- (int)getAugmentationEligibility:(bool*)arg1 forIdentity:(id)arg2 withClient:(id)arg3;
 - (long long)getBioLockoutStateForUser:(unsigned int)arg1 withClient:(id)arg2;
 - (id)getBioLog;
 - (int)getBiometrickitdInfo:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned long long x4; unsigned char x5; unsigned char x6; unsigned char x7; }*)arg1;
@@ -80,6 +82,7 @@
 - (id)pullCaptureBufferWithClient:(id)arg1;
 - (id)pullDebugImageData:(bool)arg1 rotated:(bool)arg2 hasWidth:(unsigned int*)arg3 hasHeight:(unsigned int*)arg4 withClient:(id)arg5;
 - (id)pullMatchPolicyInfoData;
+- (int)queryIdentityMigrationFailureForUser:(unsigned int)arg1 failed:(bool*)arg2 clear:(bool)arg3 withClient:(id)arg4;
 - (int)registerDSID:(unsigned long long)arg1 withOptions:(id)arg2 withClient:(id)arg3;
 - (void)registerDelegate:(bool)arg1 withClient:(id)arg2;
 - (int)registerStoreToken:(id)arg1 withClient:(id)arg2;

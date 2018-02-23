@@ -10,7 +10,6 @@
     <ICMusicSubscriptionLeaseSessionDelegate> * _delegate;
     bool  _delegatedLeaseSession;
     bool  _isPerformingAutomaticRefresh;
-    NSString * _lastRequestHouseholdID;
     NSDate * _leaseExpirationDate;
     ICMusicSubscriptionLeaseStatus * _leaseStatus;
     long long  _pendingLeaseAcquisitionRevisionID;
@@ -20,7 +19,6 @@
 @property (getter=isAutomaticallyRefreshingLease, nonatomic, readonly) bool automaticallyRefreshingLease;
 @property (nonatomic, readonly) <ICMusicSubscriptionLeaseSessionDelegate> *delegate;
 @property (getter=isDelegatedLeaseSession, nonatomic, readonly) bool delegatedLeaseSession;
-@property (nonatomic, readonly, copy) NSString *lastRequestHouseholdID;
 @property (nonatomic, readonly, copy) NSDate *leaseExpirationDate;
 @property (nonatomic, readonly, copy) ICMusicSubscriptionLeaseStatus *leaseStatus;
 @property (nonatomic, readonly, copy) ICStoreRequestContext *requestContext;
@@ -42,10 +40,10 @@
 - (void)endAutomaticallyRefreshingLease;
 - (bool)isAutomaticallyRefreshingLease;
 - (bool)isDelegatedLeaseSession;
-- (id)lastRequestHouseholdID;
 - (id)leaseExpirationDate;
 - (id)leaseStatus;
 - (id)performPlaybackRequest:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)reloadFairPlayKeyStatusWithCompletionHandler:(id /* block */)arg1;
 - (id)requestContext;
 
 @end

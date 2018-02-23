@@ -27,6 +27,7 @@
 - (id)titleLabel;
 - (id)titleString;
 - (void)updateTitleLabel;
+- (double)verticalTitleInset;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 

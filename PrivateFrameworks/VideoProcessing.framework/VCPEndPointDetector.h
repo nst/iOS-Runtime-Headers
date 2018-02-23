@@ -44,7 +44,7 @@
 
 - (void).cxx_destruct;
 - (void)addDetectionFromTime:(const struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg1 toTime:(const struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2 result:(id)arg3;
-- (int)finalize:(const struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg1;
+- (int)finalizeAnalysisAtTime:(const struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg1;
 - (void)handleVADEventOfType:(int)arg1 andOfCategoryNum:(unsigned int)arg2 havingTimeStamp:(double)arg3 andHavingValue:(const void*)arg4;
 - (id)initWithTrackStart:(const struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg1 sampleRate:(double)arg2;
 - (id)musicResults;

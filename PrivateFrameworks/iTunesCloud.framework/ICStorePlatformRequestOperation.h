@@ -3,6 +3,8 @@
  */
 
 @interface ICStorePlatformRequestOperation : ICAsyncOperation {
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    ICStoreURLRequest * _activeURLRequest;
     ICStorePlatformRequest * _platformRequest;
     id /* block */  _responseHandler;
     ICStorePlatformRequestOperation * _strongSelf;
@@ -18,6 +20,7 @@
 - (void)_executeUnpersonalized;
 - (void)_finishWithResponse:(id)arg1 error:(id)arg2;
 - (id)_requestContext;
+- (void)cancel;
 - (void)execute;
 - (void)finishWithError:(id)arg1;
 - (id)initWithPlatformRequest:(id)arg1;

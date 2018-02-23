@@ -3,7 +3,7 @@
  */
 
 @interface PKPaymentPreferenceCardCell : PKPaymentPreferenceCell {
-    NSString * _availabilityStringPrefix;
+    NSString * _availabilityString;
     UIImageView * _cardArtView;
     UILabel * _censoredPANLabel;
     bool  _dimCardArt;
@@ -14,13 +14,12 @@
     UIColor * _mainLabelColor;
     PKPaymentPass * _pass;
     PKPassSnapshotter * _passSnapshotter;
-    bool  _showAvailability;
     bool  _showBillingAddress;
     UIStackView * _stackView;
     UIColor * _subTextLabelColor;
 }
 
-@property (nonatomic, copy) NSString *availabilityStringPrefix;
+@property (nonatomic, copy) NSString *availabilityString;
 @property (nonatomic, readonly) UILabel *censoredPANLabel;
 @property (nonatomic) bool dimCardArt;
 @property (nonatomic, retain) UIColor *disabledMainLabelColor;
@@ -28,18 +27,16 @@
 @property (nonatomic, retain) UIColor *mainLabelColor;
 @property (nonatomic, retain) PKPaymentPass *pass;
 @property (nonatomic, retain) PKPassSnapshotter *passSnapshotter;
-@property (nonatomic) bool showAvailability;
 @property (nonatomic) bool showBillingAddress;
 @property (nonatomic, retain) UIColor *subTextLabelColor;
 
 + (double)textOffset;
 
 - (void).cxx_destruct;
-- (id)_passAvailabilityString;
 - (void)_setupConstraints;
 - (void)_updateCellContent;
 - (void)_updateLabelTextColors;
-- (id)availabilityStringPrefix;
+- (id)availabilityString;
 - (id)censoredPANLabel;
 - (bool)dimCardArt;
 - (id)disabledMainLabelColor;
@@ -50,7 +47,7 @@
 - (id)passSnapshotter;
 - (void)pk_applyAppearance:(id)arg1;
 - (void)prepareForReuse;
-- (void)setAvailabilityStringPrefix:(id)arg1;
+- (void)setAvailabilityString:(id)arg1;
 - (void)setDimCardArt:(bool)arg1;
 - (void)setDisabledMainLabelColor:(id)arg1;
 - (void)setDisabledSubTextLabelColor:(id)arg1;
@@ -60,10 +57,8 @@
 - (void)setMainLabelColor:(id)arg1;
 - (void)setPass:(id)arg1;
 - (void)setPassSnapshotter:(id)arg1;
-- (void)setShowAvailability:(bool)arg1;
 - (void)setShowBillingAddress:(bool)arg1;
 - (void)setSubTextLabelColor:(id)arg1;
-- (bool)showAvailability;
 - (bool)showBillingAddress;
 - (id)subTextLabelColor;
 

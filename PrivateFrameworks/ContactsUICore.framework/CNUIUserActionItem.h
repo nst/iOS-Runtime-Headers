@@ -79,6 +79,7 @@
 - (bool)shouldCurateIfPerformed;
 - (bool)shouldGroupByBundleIdentifier;
 - (bool)shouldUseApplicationNameForLabel;
+- (bool)shouldUseLabelForQuickActionButtonTitle;
 - (id)targetHandle;
 - (id)teamIdentifier;
 - (id)type;

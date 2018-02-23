@@ -4,7 +4,6 @@
 
 @interface SCNMetalLibraryManager : NSObject <NSFilePresenter> {
     struct __CFDictionary { } * _availableCompiledLibraries;
-    struct __CFString { } * _availableCompiledLibrariesSearchKey;
     NSMapTable * _availableLibraries;
     <MTLLibrary> * _commonProfileCacheLibrary;
     NSDictionary * _commonProfilePrecompiledFunctions;
@@ -16,6 +15,8 @@
     <MTLLibrary> * _frameworkLibrary;
     struct __C3DFXMetalProgram { struct __C3DFXProgram { struct __C3DEntity { struct __CFRuntimeBase { unsigned long long x_1_3_1; unsigned long long x_1_3_2; } x_1_2_1; void *x_1_2_2; struct __CFString {} *x_1_2_3; struct __CFString {} *x_1_2_4; struct __CFDictionary {} *x_1_2_5; struct __C3DScene {} *x_1_2_6; long long x_1_2_7; } x_1_1_1; int x_1_1_2; unsigned int x_1_1_3 : 1; unsigned int x_1_1_4 : 1; struct __C3DFXProgramDelegate {} *x_1_1_5; } x1; struct __CFString {} *x2[2]; struct __CFString {} *x3; struct __CFDictionary {} *x4; void *x5; struct __CFDictionary {} *x6; void *x7; struct __CFString {} *x8; } * _isolateProgram;
     NSURL * _resourcesFolderURL;
+    NSObject<OS_dispatch_semaphore> * _sharedHashCodeSemaphore;
+    struct __CFString { } * _sharedHashCodeString;
     bool  _traceResources;
     NSOperationQueue * _watchingFolderQueue;
 }
@@ -35,7 +36,7 @@
 - (struct __C3DFXProgram { struct __C3DEntity { struct __CFRuntimeBase { unsigned long long x_1_2_1; unsigned long long x_1_2_2; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; struct __C3DScene {} *x_1_1_6; long long x_1_1_7; } x1; int x2; unsigned int x3 : 1; unsigned int x4 : 1; struct __C3DFXProgramDelegate {} *x5; }*)defaultProgramUsingTessellation:(bool)arg1;
 - (id)deviceQueue;
 - (id)frameworkLibrary;
-- (id)hashCodeForSource:(id)arg1 macros:(id)arg2;
+- (id)hashCodeForSource:(id)arg1 macros:(id)arg2 hashStorageLock:(id*)arg3;
 - (id)initWithDevice:(id)arg1;
 - (struct __C3DFXProgram { struct __C3DEntity { struct __CFRuntimeBase { unsigned long long x_1_2_1; unsigned long long x_1_2_2; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; struct __C3DScene {} *x_1_1_6; long long x_1_1_7; } x1; int x2; unsigned int x3 : 1; unsigned int x4 : 1; struct __C3DFXProgramDelegate {} *x5; }*)isolateProgram;
 - (id)libraryForCommonProfileCache;

@@ -7,7 +7,6 @@
     NSUserDefaults * _userDefaults;
 }
 
-@property (getter=isAirPlay2Enabled, nonatomic, readonly) bool airPlay2Enabled;
 @property (nonatomic, readonly) double airPlayOutputContextInitTimeoutDuration;
 @property (nonatomic, readonly) double bluetoothDeviceResumeDuration;
 @property (nonatomic, readonly) double broadcastCommandWaitDuration;
@@ -23,6 +22,7 @@
 @property (nonatomic, readonly) double externalDeviceTimeoutDuration;
 @property (nonatomic, readonly) bool hasExternalDeviceSocketQOSLevelSet;
 @property (nonatomic, readonly) long long maxTransactionMemorySize;
+@property (nonatomic, readonly) bool shouldInitializeGenericBonjourService;
 @property (nonatomic, readonly) bool shouldInitializeTelevisionBonjourService;
 @property (nonatomic, readonly) bool shouldLogPairingSetupCode;
 @property (nonatomic, readonly) double transactionWaitDurationOnNetworkSend;
@@ -30,6 +30,7 @@
 @property (nonatomic, readonly) double transactionWaitDurationOnXpcSend;
 @property (nonatomic, readonly) bool useDebugAVRouteWithoutVolumeControl;
 @property (nonatomic, readonly) bool useExternalDeviceSystemPairing;
+@property (nonatomic, readonly) bool useGenericTransportForHostedEndpoints;
 @property (nonatomic, readonly) bool useNoDelayOptionForExternalDeviceSockets;
 @property (nonatomic, readonly) bool usePeerToPeerExternalDeviceConnections;
 @property (nonatomic, readonly) bool useSystemAudioContextForAirPlayTransport;
@@ -55,11 +56,11 @@
 - (double)externalDeviceTimeoutDuration;
 - (bool)hasExternalDeviceSocketQOSLevelSet;
 - (id)init;
-- (bool)isAirPlay2Enabled;
 - (bool)isExternalDevicePairingAllowed;
 - (long long)maxTransactionMemorySize;
 - (void)setConnectedClientPIDs:(id)arg1;
 - (void)setExternalDevicePairingAllowed:(bool)arg1;
+- (bool)shouldInitializeGenericBonjourService;
 - (bool)shouldInitializeTelevisionBonjourService;
 - (bool)shouldLogPairingSetupCode;
 - (double)transactionWaitDurationOnNetworkSend;
@@ -67,6 +68,7 @@
 - (double)transactionWaitDurationOnXpcSend;
 - (bool)useDebugAVRouteWithoutVolumeControl;
 - (bool)useExternalDeviceSystemPairing;
+- (bool)useGenericTransportForHostedEndpoints;
 - (bool)useNoDelayOptionForExternalDeviceSockets;
 - (bool)usePeerToPeerExternalDeviceConnections;
 - (bool)useSystemAudioContextForAirPlayTransport;

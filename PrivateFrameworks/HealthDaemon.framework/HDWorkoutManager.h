@@ -11,6 +11,7 @@
     _HDWorkoutData * _currentHeartRateRecoveryWorkout;
     NSMutableSet * _currentObservedTypes;
     _HDWorkoutData * _currentWorkout;
+    HDSessionAssertion * _currentWorkoutAssertion;
     bool  _enableDNDDuringWorkout;
     NSMutableSet * _eventCollectors;
     void * _heartRateRecoveryPowerAssertion;
@@ -76,6 +77,7 @@
 - (void)_queue_sessionEnded;
 - (void)_queue_setActivityType:(unsigned long long)arg1 forSessionUUID:(id)arg2 isIndoor:(bool)arg3;
 - (void)_queue_setActivityTypeForWorkoutSession:(id)arg1;
+- (void)_queue_setBackgroundExecutionForWorkoutType:(long long)arg1 event:(id)arg2;
 - (void)_queue_setCurrentSessionState:(long long)arg1;
 - (void)_queue_smoothAllUnsmoothedLocationSeries;
 - (void)_queue_startBackgroundExecutionForWorkout:(id)arg1;
@@ -112,6 +114,7 @@
 - (void)endHeartRateRecovery;
 - (void)foregroundClientProcessesDidChange:(id)arg1;
 - (void)generatePauseOrResumeRequestWithCompletion:(id /* block */)arg1;
+- (void)getCurrentWorkoutSnapshotWithCompletion:(id /* block */)arg1;
 - (void)getFirstPartyWorkoutSnapshotWithCompletion:(id /* block */)arg1;
 - (bool)hasActiveWorkoutServerForClient:(id)arg1;
 - (bool)hasAnyActiveConnectedGymWorkouts;

@@ -4,6 +4,7 @@
 
 @interface TKLabelContainerView : UIView {
     UILabel * _label;
+    double  _labelDefaultLastBaselineOffsetFromBottom;
     struct UIEdgeInsets { 
         double top; 
         double left; 
@@ -12,6 +13,7 @@
     }  _labelPaddingInsets;
 }
 
+@property (nonatomic) double labelDefaultLastBaselineOffsetFromBottom;
 @property (nonatomic, retain) UIFont *labelFont;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } labelPaddingInsets;
 @property (nonatomic, retain) UIColor *labelShadowColor;
@@ -21,6 +23,7 @@
 
 - (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)labelDefaultLastBaselineOffsetFromBottom;
 - (id)labelFont;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })labelPaddingInsets;
 - (id)labelShadowColor;
@@ -28,6 +31,7 @@
 - (id)labelText;
 - (id)labelTextColor;
 - (void)layoutSubviews;
+- (void)setLabelDefaultLastBaselineOffsetFromBottom:(double)arg1;
 - (void)setLabelFont:(id)arg1;
 - (void)setLabelPaddingInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setLabelShadowColor:(id)arg1;

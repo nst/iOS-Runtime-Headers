@@ -26,7 +26,7 @@
 + (id)_predicateWithRegistryUUID:(id)arg1;
 + (id)columnsDefinition;
 + (id)databaseTable;
-+ (bool)enumeratePairingsForStoreIdentifier:(long long)arg1 database:(id)arg2 error:(id*)arg3 handler:(id /* block */)arg4;
++ (id)nanoPairingEntityWithRegistryUUID:(id)arg1 database:(id)arg2 error:(id*)arg3;
 + (id)nanoPairingEntityWithRegistryUUID:(id)arg1 profile:(id)arg2 error:(id*)arg3;
 + (long long)protectionClass;
 + (id)sourceEntityForRegistryUUID:(id)arg1 profile:(id)arg2 error:(id*)arg3;

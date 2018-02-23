@@ -16,7 +16,7 @@
     <SBScenePlaceholderContentContext> * _placeholderContentContext;
     bool  _placeholderContentEnabled;
     <SBScenePlaceholderContentViewProvider> * _placeholderContentProvider;
-    UIView * _placeholderContentView;
+    UIView<SBScenePlaceholderContentView> * _placeholderContentView;
     struct CGSize { 
         double width; 
         double height; 
@@ -54,6 +54,7 @@
 - (void)_configureSceneLiveHostView:(id)arg1;
 - (void)_configureSceneSnapshotContext:(id)arg1;
 - (void)_configureViewForEffectiveDisplayMode:(long long)arg1;
+- (void)_containerContentWrapperInterfaceOrientationChangedTo:(long long)arg1;
 - (void)_disableHosting;
 - (void)_enableHostingIfPossible;
 - (void)_evaluateEffectiveDisplayModeWithAnimationFactory:(id)arg1 completion:(id /* block */)arg2;

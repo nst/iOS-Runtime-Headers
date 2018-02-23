@@ -18,6 +18,7 @@
 - (id)_aceObjectDictionaryAtFilepath:(id)arg1;
 - (id)_cachedGuideUpdate;
 - (void)_checkGuideUpdateUsingAFClientLiteWithTag:(id)arg1;
+- (void)_clearCachedGuide;
 - (id)_pathForCachedGuideUpdate;
 - (bool)_shouldCheckForUpdateAtDate:(id)arg1 lastAppUpdateTime:(id)arg2;
 - (void)_updateLastCheckedWithDate:(id)arg1;
@@ -25,7 +26,6 @@
 - (id)cachedGuideTag;
 - (id)cachedSuggestedUtterances;
 - (void)checkGuideUpdate;
-- (void)clearCachedGuide;
 - (void)dealloc;
 - (id)init;
 - (bool)shouldCheckForUpdateWithLastAppUpdateTime:(id)arg1;

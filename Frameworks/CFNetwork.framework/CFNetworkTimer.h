@@ -7,8 +7,11 @@
     double  _lastPauseTime;
     double  _lastResumeTime;
     double  _runTime;
+    int  _state;
     NSObject<OS_dispatch_source> * _timer;
 }
+
+@property int state;
 
 - (void)cancelTimer;
 - (void)dealloc;
@@ -18,7 +21,9 @@
 - (void)resumeCallbacksForTimer;
 - (void)resumeTimer;
 - (void)setCancelCallbacks:(id /* block */)arg1;
+- (void)setState:(int)arg1;
 - (void)setTimer:(double)arg1;
+- (int)state;
 - (void)suspendCallbacksForTimer;
 
 @end

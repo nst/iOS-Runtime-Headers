@@ -134,6 +134,7 @@
 - (bool)setPauseVideo:(bool)arg1 callID:(long long)arg2 error:(id*)arg3;
 - (void)setPeerCN:(id)arg1 callID:(long long)arg2;
 - (void)setPeerProtocolVersion:(unsigned int)arg1 forCallID:(long long)arg2;
+- (void)setPeerReportingIdentifier:(id)arg1 sessionIdentifier:(id)arg2 forCallID:(long long)arg3;
 - (void)setRemoteVideoBackLayer:(void*)arg1;
 - (void)setRemoteVideoLayer:(void*)arg1;
 - (void)setRequiresWifi:(bool)arg1;

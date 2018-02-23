@@ -23,6 +23,7 @@
 
 - (id)_placeholderRelativePathsToBackupAndRestoreWithCache:(id)arg1;
 - (id)_resourceRelativePathsToBackupAndRestoreForRootDir:(id)arg1 relativePath:(id)arg2;
+- (bool)_writeDeviceAppropriateIconToPath:(id)arg1 fromBundlePath:(id)arg2;
 - (id)bundleDir;
 - (id)bundleID;
 - (id)bundleVersion;

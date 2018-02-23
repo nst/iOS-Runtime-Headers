@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIAlertController : UIViewController <DebugHierarchyObject, UIAlertControllerContaining, UIAlertControllerVisualStyleProviding, UIPreviewInteractionControllerDelegate, _UIAlertControllerTextFieldViewControllerContaining> {
+@interface UIAlertController : UIViewController <DebugHierarchyObject, HUPreloadableViewController, UIAlertControllerContaining, UIAlertControllerVisualStyleProviding, UIPreviewInteractionControllerDelegate, _UIAlertControllerTextFieldViewControllerContaining> {
     NSMutableArray * __actionDelimiterIndices;
     UIPopoverController * __compatibilityPopoverController;
     UIView * __presentationSourceRepresentationView;
@@ -340,6 +340,8 @@
 + (id)alertControllerForAddingServiceGroupWithProceed:(id /* block */)arg1;
 + (id)alertControllerForAddingZoneWithProceed:(id /* block */)arg1;
 + (id)hu_alertControllerForUnimplementedFeature:(id)arg1;
+
+- (id)hu_preloadContent;
 
 // Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
 

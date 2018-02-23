@@ -67,6 +67,7 @@
 - (id)initOffline;
 - (bool)isFetching;
 - (bool)isLoaded;
+- (bool)isTVEnabled;
 - (id)orderedChannels;
 - (id)requiredRequestKeyValuePairsDictionary;
 - (id)serverRouteForKey:(id)arg1;

@@ -5,18 +5,19 @@
 @interface HMDDeviceCapabilities : HMFObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     bool  _remoteGatewayCapable;
     bool  _residentCapable;
+    bool  _supportsAssistantAccessControl;
     bool  _supportsCloudDataSync;
     bool  _supportsDeviceSetup;
     bool  _supportsKeyTransferClient;
     bool  _supportsKeyTransferServer;
     bool  _supportsKeychainSync;
-    bool  _supportsSharedEventTriggerActivation;
     bool  _supportsStandaloneMode;
     bool  _supportsWholeHouseAudio;
 }
 
 @property (getter=isRemoteGatewayCapable, nonatomic, readonly) bool remoteGatewayCapable;
 @property (getter=isResidentCapable, nonatomic, readonly) bool residentCapable;
+@property (nonatomic, readonly) bool supportsAssistantAccessControl;
 @property (nonatomic, readonly) bool supportsCloudDataSync;
 @property (nonatomic, readonly) bool supportsDeviceSetup;
 @property (nonatomic, readonly) bool supportsKeyTransferClient;
@@ -26,7 +27,10 @@
 @property (nonatomic, readonly) bool supportsWholeHouseAudio;
 
 + (id)deviceCapabilities;
++ (bool)isAppleMediaAccessory;
 + (id)shortDescription;
++ (bool)supportsHomeApp;
++ (bool)supportsLocalization;
 + (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -43,6 +47,7 @@
 - (bool)isResidentCapable;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)shortDescription;
+- (bool)supportsAssistantAccessControl;
 - (bool)supportsCloudDataSync;
 - (bool)supportsDeviceSetup;
 - (bool)supportsKeyTransferClient;

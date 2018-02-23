@@ -17,5 +17,6 @@
 - (id)init;
 - (void)scheduleBookmarksDatabaseMaintenance;
 - (void)scheduleBookmarksDatabaseMigrationTask;
+- (void)scheduleHSTSSuperCookieCleanup;
 
 @end

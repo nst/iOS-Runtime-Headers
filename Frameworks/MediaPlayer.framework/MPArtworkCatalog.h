@@ -65,6 +65,7 @@
 - (bool)isLoadingRepresentation;
 - (unsigned long long)renderHint;
 - (void)requestColorAnalysisWithAlgorithm:(long long)arg1 completionHandler:(id /* block */)arg2;
+- (void)requestExportableArtworkPropertiesWithCompletion:(id /* block */)arg1;
 - (void)requestExportableArtworkURLWithCompletion:(id /* block */)arg1;
 - (void)requestFocusRegionsWithCompletionHandler:(id /* block */)arg1;
 - (void)requestImageWithCompletionHandler:(id /* block */)arg1;

@@ -34,7 +34,7 @@
 @property (nonatomic) <VCMomentsCollectorDelegate> *momentsCollectorDelegate;
 @property (nonatomic) <VCMediaStreamNotification> *notificationDelegate;
 @property (nonatomic) <RTCPReportProvider> *rtcpReportProvider;
-@property (nonatomic) int state;
+@property (nonatomic, readonly) int state;
 @property (nonatomic, retain) VCMediaStreamConfig *streamConfig;
 @property (readonly) Class superclass;
 
@@ -59,12 +59,12 @@
 - (id)notificationDelegate;
 - (void)onCallIDChanged;
 - (bool)onConfigureStreamWithConfiguration:(id)arg1 error:(id*)arg2;
-- (void)onPause;
-- (void)onResume;
+- (void)onPauseWithCompletionHandler:(id /* block */)arg1;
+- (void)onResumeWithCompletionHandler:(id /* block */)arg1;
 - (void)onRtcpEnabledChanged;
 - (void)onRtcpSendIntervalChanged;
-- (void)onStart;
-- (void)onStop;
+- (void)onStartWithCompletionHandler:(id /* block */)arg1;
+- (void)onStopWithCompletionHandler:(id /* block */)arg1;
 - (void)registerRTPPayloadMappings;
 - (id)rtcpReportProvider;
 - (id)rxNetworkPayloads;
@@ -81,7 +81,6 @@
 - (void)setRtcpTimeOutInterval:(double)arg1;
 - (void)setRtpTimeOutEnabled:(bool)arg1;
 - (void)setRtpTimeOutInterval:(double)arg1;
-- (void)setState:(int)arg1;
 - (void)setStreamConfig:(id)arg1;
 - (bool)setStreamConfig:(id)arg1 withError:(id*)arg2;
 - (void)setStreamDirection:(long long)arg1;

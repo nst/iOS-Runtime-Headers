@@ -42,7 +42,7 @@
 - (void)assetLink:(id)arg1 didTransitionAssetStates:(id)arg2;
 - (void)assetLink:(id)arg1 didUpdateAsset:(id)arg2 progress:(double)arg3;
 - (void)assetLinkDidChange:(id)arg1;
-- (void)cancelAllAssetsMatchingPredicate:(id)arg1;
+- (void)cancelAllAssetsMatchingPredicate:(id)arg1 withError:(id)arg2;
 - (void)cancelAssets:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)cancelAssets:(id)arg1 withError:(id)arg2 completion:(id /* block */)arg3;
 - (void)dealloc;

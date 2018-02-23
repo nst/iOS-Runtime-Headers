@@ -9,8 +9,8 @@
         unsigned int _os_unfair_lock_opaque; 
     }  _lock;
     ICDelegateAccountStoreOptions * _options;
-    NSXPCConnection * _singleWriterConnection;
     ICDelegateAccountStore * _strongSelf;
+    ICDelegateAccountStoreXPCWriter * _xpcWriter;
 }
 
 @property (nonatomic, readonly, copy) NSString *databasePath;
@@ -23,13 +23,12 @@
 
 - (void).cxx_destruct;
 - (id)_initWithValidatedOptions:(id)arg1;
-- (void)_openWithSingleWriterConnection:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_openWithXPCWriter:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)_popConnection;
+- (void)_postDidChangeNotification;
 - (void)_recycleConnection:(id)arg1;
 - (bool)_resetCorruptionUsingSQL;
 - (void)_resetCorruptionUsingXPC;
-- (id)_singleWriterXPCConnection;
-- (void)_singleWriterXPCConnectionDidInvalidate:(id)arg1;
 - (void)_writeSQLUsingBlock:(id /* block */)arg1;
 - (void)_writeUsingBlock:(id /* block */)arg1;
 - (void)_writeXPCUsingBlock:(id /* block */)arg1;
@@ -38,7 +37,6 @@
 - (bool)connectionNeedsResetForCorruption:(id)arg1;
 - (id)databasePath;
 - (id)initSingleWriterWithOptions:(id)arg1 error:(id*)arg2;
-- (void)invalidate;
 - (void)readUsingBlock:(id /* block */)arg1;
 - (void)removeAllTokensWithCompletionHandler:(id /* block */)arg1;
 - (void)removeDelegationUUIDs:(id)arg1 forUserIdentity:(id)arg2 completionHandler:(id /* block */)arg3;

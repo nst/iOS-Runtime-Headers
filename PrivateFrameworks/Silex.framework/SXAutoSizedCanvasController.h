@@ -3,9 +3,11 @@
  */
 
 @interface SXAutoSizedCanvasController : NSObject <STTextTangierInteractiveCanvasControllerDelegate, TSWPEditingControllerDelegate> {
+    <SXComponentActionHandler> * _actionHandler;
     STTextTangierCanvasViewController * _cvc;
     <SXAutoSizedCanvasControllerDelegate> * _delegate;
     TSKDocumentRoot * _documentRoot;
+    <SXTangierDragItemProvider> * _dragItemProvider;
     struct CGRect { 
         struct CGPoint { 
             double x; 
@@ -20,6 +22,7 @@
     double  _lineHeight;
 }
 
+@property (nonatomic, readonly) <SXComponentActionHandler> *actionHandler;
 @property (nonatomic, readonly) bool allowEditMenuToAppear;
 @property (nonatomic, readonly) bool allowTextEditingToBegin;
 @property (nonatomic, readonly) TSDCanvasView *canvasView;
@@ -28,6 +31,7 @@
 @property (nonatomic) <SXAutoSizedCanvasControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) TSKDocumentRoot *documentRoot;
+@property (nonatomic, readonly) <SXTangierDragItemProvider> *dragItemProvider;
 @property (nonatomic, readonly) bool editorAllowsCaret;
 @property (nonatomic, readonly) bool editorAllowsEditMenu;
 @property (nonatomic, readonly) bool editorAllowsHyperlinkInteraction;
@@ -54,6 +58,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)actionHandler;
 - (bool)allowCopy;
 - (bool)allowHighlighting;
 - (bool)allowSelectionPopover;
@@ -61,10 +66,12 @@
 - (id)cvc;
 - (id)delegate;
 - (id)documentRoot;
+- (id)dragItemProvider;
 - (bool)editorAllowsCaret;
 - (bool)editorAllowsEditMenu;
 - (id)icc;
-- (id)initWithDocumentRoot:(id)arg1;
+- (id)initWithDocumentRoot:(id)arg1 actionHandler:(id)arg2 dragItemProvider:(id)arg3;
+- (id)interactiveCanvasController:(id)arg1 dragItemForSmartField:(id)arg2 interaction:(id)arg3 session:(id)arg4;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })interactiveCanvasController:(id)arg1 expandVisibleBoundsForTiling:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (void)interactiveCanvasController:(id)arg1 interactedWithHyperlink:(id)arg2 info:(id)arg3 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4 touchPoint:(struct CGPoint { double x1; double x2; })arg5 touchAndHold:(bool)arg6;
 - (void)invalidateLayoutsAndFrames;

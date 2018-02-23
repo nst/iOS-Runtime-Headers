@@ -22,6 +22,7 @@
     bool  _preventLoadingItems;
     double  _rateQueueDepthAdjustmentDelay;
     NSMutableSet * _reusableItems;
+    bool  _shouldDeferItemLoading;
 }
 
 @property (nonatomic, readonly) MPAVItem *currentItem;
@@ -29,6 +30,7 @@
 @property (nonatomic, copy) id /* block */ equilibriumAchievedHandler;
 @property (nonatomic, readonly) NSArray *items;
 @property (nonatomic, readonly) MPQueuePlayer *player;
+@property (nonatomic) bool shouldDeferItemLoading;
 
 - (void).cxx_destruct;
 - (void)_beginBackgroundTaskAssertion;
@@ -56,5 +58,7 @@
 - (id)player;
 - (void)reloadItemsKeepingCurrentItem:(bool)arg1;
 - (void)setEquilibriumAchievedHandler:(id /* block */)arg1;
+- (void)setShouldDeferItemLoading:(bool)arg1;
+- (bool)shouldDeferItemLoading;
 
 @end

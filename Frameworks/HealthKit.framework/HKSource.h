@@ -28,6 +28,7 @@
 + (id)_currentSourceProductType:(bool)arg1;
 + (id)_generateIdentifierForAppleDevice;
 + (id)_generateIdentifierForAppleDeviceWithUUID:(id)arg1;
++ (bool)_isPlaceholderBundleIdentifier:(id)arg1;
 + (id)_localDeviceSource;
 + (bool)_representsCurrentDeviceWithBundleIdentifier:(id)arg1;
 + (id)_sourceBundleIdentifierWithEntitlements:(id)arg1 processBundleIdentifier:(id)arg2 isExtension:(bool)arg3;

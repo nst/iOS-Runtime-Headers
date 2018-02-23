@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCTopStoriesConfiguration : NSObject {
+@interface FCTopStoriesConfiguration : NSObject <NSCopying> {
     NSString * _channelID;
     long long  _cutoffTime;
     long long  _maximumArticleCount;
@@ -23,6 +23,7 @@
 
 - (void).cxx_destruct;
 - (id)channelID;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (long long)cutoffTime;
 - (unsigned long long)hash;
 - (id)initWithDefaults;

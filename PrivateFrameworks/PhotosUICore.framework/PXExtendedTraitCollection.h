@@ -13,6 +13,12 @@
     }  __viewSize;
     double  _displayScale;
     bool  _enabled;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _layoutMargins;
     long long  _layoutOrientation;
     struct CGSize { 
         double width; 
@@ -28,6 +34,7 @@
         bool layoutOrientation; 
         bool displayScale; 
         bool safeAreaInsets; 
+        bool layoutMargins; 
         bool userInterfaceIdiom; 
         bool userInterfaceFeature; 
     }  _needsUpdateFlags;
@@ -47,6 +54,7 @@
 @property (setter=_setViewSize:, nonatomic) struct CGSize { double x1; double x2; } _viewSize;
 @property (setter=_setDisplayScale:, nonatomic) double displayScale;
 @property (getter=isEnabled, nonatomic) bool enabled;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } layoutMargins;
 @property (setter=_setLayoutOrientation:, nonatomic) long long layoutOrientation;
 @property (setter=_setLayoutReferenceSize:, nonatomic) struct CGSize { double x1; double x2; } layoutReferenceSize;
 @property (setter=_setLayoutSizeClass:, nonatomic) long long layoutSizeClass;
@@ -79,6 +87,7 @@
 - (void)_setViewSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_updateDisplayScaleIfNeeded;
 - (void)_updateIfNeeded;
+- (void)_updateLayoutMarginsIfNeeded;
 - (void)_updateLayoutOrientationIfNeeded;
 - (void)_updateLayoutReferenceSizeIfNeeded;
 - (void)_updateLayoutSizeClassIfNeeded;
@@ -99,9 +108,11 @@
 - (id)init;
 - (id)initWithViewController:(struct NSObject { Class x1; }*)arg1;
 - (void)invalidateDisplayScale;
+- (void)invalidateLayoutMargins;
 - (void)invalidateSafeAreaInsets;
 - (void)invalidateTraitCollection;
 - (bool)isEnabled;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })layoutMargins;
 - (long long)layoutOrientation;
 - (struct CGSize { double x1; double x2; })layoutReferenceSize;
 - (long long)layoutSizeClass;
@@ -110,6 +121,7 @@
 - (void)registerObservations;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })safeAreaInsets;
 - (void)setEnabled:(bool)arg1;
+- (void)setLayoutMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setSafeAreaInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (struct NSObject { Class x1; }*)traitCollection;
 - (void)unregisterObservations;
@@ -117,10 +129,12 @@
 - (long long)userInterfaceFeatureForViewController:(struct NSObject { Class x1; }*)arg1;
 - (long long)userInterfaceIdiom;
 - (struct NSObject { Class x1; }*)viewController;
+- (void)viewControllerDidMoveToParentViewController:(struct NSObject { Class x1; }*)arg1;
 - (void)viewControllerLayoutOrientationDidChange;
 - (void)viewControllerTraitCollectionDidChange;
 - (void)viewControllerViewDidAppear;
 - (void)viewControllerViewDidLoad;
+- (void)viewControllerViewLayoutMarginsDidChange;
 - (void)viewControllerViewSafeAreaInsetsDidChange;
 - (void)viewControllerViewWillAppear;
 - (void)viewControllerViewWillLayoutSubviews;

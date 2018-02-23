@@ -19,11 +19,11 @@
     double  _footerViewMinimumHeight;
     NSMutableDictionary * _groupViewsByGroupID;
     NSMutableDictionary * _groupViewsInFlightByGroupID;
-    bool  _hasOutstandingPeerPaymentAccountActions;
     bool  _hasSuspendedTransition;
     PKPassthroughView * _headerContainerView;
     bool  _inPassthroughHitTest;
     unsigned long long  _initialIndexOfReorderedGroup;
+    bool  _invalidated;
     struct UIEdgeInsets { 
         double top; 
         double left; 
@@ -34,10 +34,7 @@
         double width; 
         double height; 
     }  _lastBoundsSize;
-    struct CGSize { 
-        double width; 
-        double height; 
-    }  _lastStatusBarSize;
+    double  _lastTopContentSeparatorHeight;
     struct { 
         unsigned long long numberOfGroups; 
         unsigned long long separatorIndex; 
@@ -57,6 +54,7 @@
         unsigned int isContinuingModalPresentation : 1; 
         unsigned int forceSubheaderUpdate : 1; 
         unsigned int forceFooterUpdate : 1; 
+        unsigned int preventFooterLayout : 1; 
         unsigned int mutatingForcePileOffscreen : 1; 
     }  _layoutState;
     unsigned long long  _modalGroupIndex;
@@ -95,9 +93,11 @@
     long long  _scrollingTestState;
     PKSecureElement * _secureElement;
     bool  _showingFooter;
+    bool  _staggerPileAnimations;
     PKPassthroughView * _subheaderContainerView;
     long long  _suspendedNextState;
     NSMutableArray * _suspendedTransitionCompletionHandlers;
+    double  _topContentSeparatorHeight;
     id /* block */  _transitionCanceller;
     NSMutableArray * _transitionCompletionHandlers;
     unsigned int  _userInteractionCounter;
@@ -109,7 +109,6 @@
 @property (nonatomic) <PKPassGroupStackViewDelegate><UIScrollViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool footerSuppressed;
-@property (nonatomic) bool hasOutstandingPeerPaymentAccountActions;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool isModallyPresentedPassAuthorized;
 @property (nonatomic, readonly) bool isPresentingPassViewFront;
@@ -120,13 +119,14 @@
 @property (nonatomic, readonly) double pileHeight;
 @property (nonatomic) long long pilingMode;
 @property (nonatomic) long long presentationState;
+@property (nonatomic) bool staggerPileAnimations;
 @property (readonly) Class superclass;
+@property (nonatomic) double topContentSeparatorHeight;
 
 + (id)backgroundColor;
 
 - (void).cxx_destruct;
 - (void)_addGroupViewAsSubview:(id)arg1 forIndex:(unsigned long long)arg2;
-- (void)_addMotionEffectsToModalPile;
 - (void)_addPanGestureRecognizerToGroupView:(id)arg1;
 - (void)_adjustPassFooterViewOpacityForYOffset:(double)arg1;
 - (void)_adjustSeparationGroupAndPassViewsForReordering;
@@ -202,7 +202,6 @@
 - (void)_refreshBacklightForFrontmostPassGroup;
 - (void)_refreshBrightness;
 - (void)_removeGroupViewAsSubviewWithGroupID:(id)arg1;
-- (void)_removeMotionEffectsFromModalPile;
 - (void)_reorderPositionChangedForReorderedGroupViewWithVelocity:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_resetBrightness;
 - (void)_resumeSuspendedTransition;
@@ -275,8 +274,8 @@
 - (void)gotoBaseTestState;
 - (bool)groupView:(id)arg1 deleteButtonEnabledForPass:(id)arg2;
 - (void)groupView:(id)arg1 deleteButtonPressedForPass:(id)arg2;
-- (void)groupView:(id)arg1 didScrollToPassView:(id)arg2;
 - (void)groupView:(id)arg1 didUpdatePassView:(id)arg2;
+- (void)groupView:(id)arg1 frontmostPassViewDidChange:(id)arg2;
 - (void)groupView:(id)arg1 panned:(struct CGPoint { double x1; double x2; })arg2 withVelocity:(struct CGPoint { double x1; double x2; })arg3;
 - (void)groupView:(id)arg1 resizeButtonPressedForPass:(id)arg2 withBarcode:(bool)arg3;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })groupView:(id)arg1 targetPageControlFrameForProposedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
@@ -292,10 +291,10 @@
 - (bool)groupViewShouldAllowPassResize:(id)arg1;
 - (void)groupViewTapped:(id)arg1;
 - (bool)handleDeletePassRequestWithPass:(id)arg1 forViewController:(id)arg2;
-- (bool)hasOutstandingPeerPaymentAccountActions;
 - (id)headerForPassType:(unsigned long long)arg1;
 - (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)invalidate;
 - (bool)isModallyPresentedPassAuthorized;
 - (bool)isPresentingPassViewFront;
 - (bool)isReordering;
@@ -308,6 +307,7 @@
 - (void)noteDidEndScrollingForTesting;
 - (id)pageIndicatorTintColor;
 - (void)passFooterViewDidChangeUserIntentRequirement:(id)arg1;
+- (void)passFooterViewDidChangeUserIntentRequirement:(id)arg1 withContext:(id)arg2;
 - (void)paymentDeviceDidBecomeAvailable;
 - (void)paymentDeviceDidBecomeUnavailable;
 - (void)paymentDeviceDidEnterRestrictedMode;
@@ -327,7 +327,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)setFooterSuppressed:(bool)arg1;
 - (void)setFooterSuppressed:(bool)arg1 withContext:(id)arg2;
-- (void)setHasOutstandingPeerPaymentAccountActions:(bool)arg1;
 - (void)setModalGroupIndex:(unsigned long long)arg1;
 - (void)setPageIndicatorTintColor:(id)arg1;
 - (void)setPilingMode:(long long)arg1;
@@ -335,12 +334,17 @@
 - (void)setPresentationState:(long long)arg1 animated:(bool)arg2;
 - (void)setPresentationState:(long long)arg1 animated:(bool)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)setPresentationState:(long long)arg1 context:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)setStaggerPileAnimations:(bool)arg1;
 - (void)setTableModalPresentationEnabled:(bool)arg1 animated:(bool)arg2;
+- (void)setTopContentSeparatorHeight:(double)arg1;
 - (void)stageGroupInPresentationState:(long long)arg1 atIndex:(unsigned long long)arg2;
+- (bool)staggerPileAnimations;
 - (id)subheaderForPassType:(unsigned long long)arg1;
 - (void)testGoModal;
 - (void)testGroupSelection;
 - (void)tilePassesEagerly:(bool)arg1;
+- (double)topContentSeparatorHeight;
 - (void)updateHeaderAndSubheaderViewsIfNecessary;
+- (void)updatePeerPaymentFooterViewIfNecessary;
 
 @end

@@ -36,7 +36,12 @@
 - (id)childCloudRecordsWithParentID:(id)arg1;
 - (id)cloudGroup;
 - (id)cloudRecordWithName:(id)arg1;
+- (void)cloudRecordWithName:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)cloudRecordWithNames:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)cloudRecordWithObjectID:(id)arg1;
+- (void)cloudRecordWithObjectID:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)cloudRecordWithObjectIDs:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)cloudRecordsForParentID:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)cloudZone;
 - (void)deleteCloudRecord:(id)arg1;
 - (id)description;

@@ -25,10 +25,10 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (readonly) bool isTextExecSegment;
-@property (readonly) NSString *name;
+@property (retain) NSString *name;
 @property (retain) NSString *path;
 @property (readonly) Class superclass;
-@property (readonly) unsigned long long textSegmentLength;
+@property unsigned long long textSegmentLength;
 @property (readonly) NSUUID *uuid;
 
 + (id)classDictionaryKey;
@@ -61,7 +61,9 @@
 - (id)oldSymbolContainingOffsetIntoSymbolOwner:(unsigned long long)arg1;
 - (id)path;
 - (void)populateReferencesUsingBufferPosition:(const void*)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;
+- (void)setName:(id)arg1;
 - (void)setPath:(id)arg1;
+- (void)setTextSegmentLength:(unsigned long long)arg1;
 - (unsigned long long)sizeInBytesForSerializedVersion;
 - (id)symbolContainingOffsetIntoSymbolOwner:(unsigned long long)arg1;
 - (unsigned long long)textSegmentLength;

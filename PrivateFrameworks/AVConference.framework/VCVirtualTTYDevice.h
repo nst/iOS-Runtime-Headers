@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/AVConference.framework/AVConference
  */
 
-@interface VCVirtualTTYDevice : NSObject <VCAudioIODelegate, VCAudioIOSink, VCAudioIOSource, VCMediaStreamProtocol> {
+@interface VCVirtualTTYDevice : NSObject <VCAudioIODelegate, VCAudioIOSink, VCAudioIOSource, VCMediaStreamProtocol, VCTextSender> {
     VCAudioIO * _audioIO;
     struct opaqueCMSimpleQueue { } * _charQueue;
     struct tagVCMemoryPool { struct { void *x_1_1_1; long long x_1_1_2; } x1; unsigned long long x2; } * _characterPool;
     int  _clientPid;
     VCAudioPayload * _currentAudioPayload;
     struct SoundDec_t { struct AudioStreamBasicDescription { double x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; unsigned int x_1_1_9; } x1; struct AudioStreamBasicDescription { double x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; unsigned int x_2_1_4; unsigned int x_2_1_5; unsigned int x_2_1_6; unsigned int x_2_1_7; unsigned int x_2_1_8; unsigned int x_2_1_9; } x2; int x3; int x4; struct OpaqueAudioConverter {} *x5; char *x6; int x7; struct AudioStreamPacketDescription { long long x_8_1_1; unsigned int x_8_1_2; unsigned int x_8_1_3; } x8; struct AudioBufferList {} *x9; struct AudioBufferList {} *x10; char *x11; char *x12; int x13; int x14; int x15; int x16; unsigned char x17; int x18; int x19; unsigned int x20; unsigned int x21; } * _decoder;
+    id  _textStream;
     unsigned int  _vpioSamplesPerFrame;
     NSObject<VCMediaStreamDelegate> * delegate;
     NSObject<OS_dispatch_queue> * delegateNotificationQueue;
@@ -51,7 +52,7 @@
 - (void)lock;
 - (void)pullAudioSamples:(struct opaqueVCAudioBufferList { }*)arg1;
 - (void)pushAudioSamples:(struct opaqueVCAudioBufferList { }*)arg1;
-- (void)sendCharater:(unsigned short)arg1;
+- (void)sendCharacter:(unsigned short)arg1;
 - (void)setCanProcessAudio:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDeviceRole:(int)arg1;

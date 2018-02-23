@@ -96,7 +96,7 @@
 
 - (bool)_navigation_isNavd;
 
-// Image: /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
+// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 
 - (bool)safari_systemSupportsCloudKitBookmarks;
 

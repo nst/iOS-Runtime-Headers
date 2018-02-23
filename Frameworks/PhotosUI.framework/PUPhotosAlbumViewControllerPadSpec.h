@@ -5,7 +5,6 @@
 @interface PUPhotosAlbumViewControllerPadSpec : PUPhotosAlbumViewControllerSpec
 
 - (double)contentCornerRadius;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })fullMomentsLevelSectionHeaderContentInset;
 - (unsigned long long)fullMomentsSectionHeaderBackgroundStyle;
 - (long long)fullMomentsSectionHeaderStyle;
 - (id)gridSpec;

@@ -18,11 +18,14 @@
 
 - (void).cxx_destruct;
 - (id)companionSerialNumber;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (bool)devSigned;
 - (void)encodeWithCoder:(id)arg1;
 - (id)enrollmentData;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToPeerPaymentDeviceRegistrationData:(id)arg1;
 - (void)setCompanionSerialNumber:(id)arg1;
 - (void)setDevSigned:(bool)arg1;
 - (void)setEnrollmentData:(id)arg1;

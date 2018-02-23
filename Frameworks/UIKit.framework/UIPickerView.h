@@ -33,6 +33,7 @@
         unsigned int usesCheckedSelection : 1; 
         unsigned int skipsBackground : 1; 
         unsigned int isInLayoutSubviews : 1; 
+        unsigned int usesDynamicRowHeight : 1; 
     }  _pickerViewFlags;
     NSMutableArray * _selectionBars;
     UISelectionFeedbackGenerator * _selectionFeedbackGenerator;
@@ -55,11 +56,12 @@
 @property (getter=_highlightColor, setter=_setHighlightColor:, nonatomic, retain) UIColor *highlightColor;
 @property (getter=_magnifierLineColor, setter=_setMagnifierLineColor:, nonatomic, retain) UIColor *magnifierLineColor;
 @property (nonatomic, readonly) long long numberOfComponents;
-@property (getter=_selectionFeedbackGenerator, setter=_setRetargetGenerator:, nonatomic, retain) UISelectionFeedbackGenerator *selectionFeedbackGenerator;
+@property (getter=_selectionFeedbackGenerator, setter=_setSelectionFeedbackGenerator:, nonatomic, retain) UISelectionFeedbackGenerator *selectionFeedbackGenerator;
 @property (nonatomic) bool showsSelectionIndicator;
 @property (readonly) Class superclass;
 @property (getter=_textColor, setter=_setTextColor:, nonatomic, retain) UIColor *textColor;
 @property (getter=_textShadowColor, setter=_setTextShadowColor:, nonatomic, retain) UIColor *textShadowColor;
+@property (getter=_usesDynamicRowHeight, setter=_setUsesDynamicRowHeight:) bool usesDynamicRowHeight;
 @property (getter=_usesModernStyle, setter=_setUsesModernStyle:) bool usesModernStyle;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
@@ -76,6 +78,7 @@
 - (void)_UIAppearance_setTextColor:(id)arg1;
 - (void)__scalarStatisticsForUserValueChangedEvent:(void *)arg1; // needs 1 arg types, found 5: short, /* Warning: Unrecognized filer type: '"' using 'void*' */ void*, char *, short, /* Warning: Unrecognized filer type: ',' using 'void*' */ void*
 - (void)_addMagnifierLinesForRowHeight:(double)arg1;
+- (bool)_canHostViewControllerContentScrollView;
 - (void)_completeCurrentTest;
 - (bool)_contentHuggingDefault_isUsuallyFixedHeight;
 - (bool)_contentHuggingDefault_isUsuallyFixedWidth;
@@ -108,6 +111,7 @@
 - (id)_popoverSuffix;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_resetSelectionOfTables;
+- (double)_rowHeightForDefaultFont;
 - (id)_scalarStatisticsForUserValueChangedEvent;
 - (void)_selectRow:(long long)arg1 inComponent:(long long)arg2 animated:(bool)arg3 notify:(bool)arg4;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_selectionBarRectForHeight:(double)arg1;
@@ -122,10 +126,11 @@
 - (void)_setHighlightColor:(id)arg1;
 - (void)_setMagnifierEnabled:(bool)arg1;
 - (void)_setMagnifierLineColor:(id)arg1;
-- (void)_setRetargetGenerator:(id)arg1;
+- (void)_setSelectionFeedbackGenerator:(id)arg1;
 - (void)_setTextColor:(id)arg1;
 - (void)_setTextShadowColor:(id)arg1;
 - (void)_setUsesCheckedSelection:(bool)arg1;
+- (void)_setUsesDynamicRowHeight:(bool)arg1;
 - (void)_setUsesModernStyle:(bool)arg1;
 - (bool)_shouldDrawWithModernStyle;
 - (struct CGSize { double x1; double x2; })_sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
@@ -137,6 +142,7 @@
 - (void)_updateWithOldSize:(struct CGSize { double x1; double x2; })arg1 newSize:(struct CGSize { double x1; double x2; })arg2;
 - (bool)_usesCheckSelection;
 - (bool)_usesCheckedSelection;
+- (bool)_usesDynamicRowHeight;
 - (bool)_usesModernStyle;
 - (double)_wheelShift;
 - (void)_willPlayClickSound;

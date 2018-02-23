@@ -7,6 +7,8 @@
     double  _contentToLabelPadding;
     UIView * _contentView;
     UIView * _contentViewSizingView;
+    UILabel * _secondarySubtitleLabel;
+    NSString * _secondarySubtitleText;
     UILabel * _subtitleLabel;
     NSString * _subtitleText;
     double  _topPadding;
@@ -16,20 +18,27 @@
 @property (nonatomic) double contentToLabelPadding;
 @property (nonatomic, readonly) UIView *contentView;
 @property (nonatomic, readonly) UIView *contentViewSizingView;
+@property (nonatomic, retain) UILabel *secondarySubtitleLabel;
+@property (nonatomic, copy) NSString *secondarySubtitleText;
 @property (nonatomic, retain) UILabel *subtitleLabel;
 @property (nonatomic, copy) NSString *subtitleText;
 @property (nonatomic) double topPadding;
 
 - (void).cxx_destruct;
+- (void)_updateSecondarySubtitleLabel;
 - (void)_updateSubtitleLabel;
 - (double)bottomPadding;
 - (double)contentToLabelPadding;
 - (id)contentView;
 - (id)contentViewSizingView;
-- (id)initWithContentView:(id)arg1 contentViewSizingView:(id)arg2 subtitleText:(id)arg3;
+- (id)initWithContentView:(id)arg1 contentViewSizingView:(id)arg2 subtitleText:(id)arg3 secondarySubtitleText:(id)arg4;
 - (void)layoutSubviews;
+- (id)secondarySubtitleLabel;
+- (id)secondarySubtitleText;
 - (void)setBottomPadding:(double)arg1;
 - (void)setContentToLabelPadding:(double)arg1;
+- (void)setSecondarySubtitleLabel:(id)arg1;
+- (void)setSecondarySubtitleText:(id)arg1;
 - (void)setSubtitleLabel:(id)arg1;
 - (void)setSubtitleText:(id)arg1;
 - (void)setTopPadding:(double)arg1;

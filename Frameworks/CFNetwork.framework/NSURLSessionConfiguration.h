@@ -84,7 +84,7 @@
 @property (copy) NSString *_sourceApplicationBundleIdentifier;
 @property (copy) NSString *_sourceApplicationSecondaryIdentifier;
 @property bool _supportsAVAssetDownloads;
-@property (copy) NSArray *_suppressedHTTPHeaders;
+@property (copy) NSSet *_suppressedAutoAddedHTTPHeaders;
 @property (copy) NSString *_tcpConnectionPoolName;
 @property long long _timingDataOptions;
 @property (copy) NSString *_tlsTrustPinningPolicyName;

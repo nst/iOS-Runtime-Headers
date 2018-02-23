@@ -12,6 +12,8 @@
 
 @property (setter=_setDelegate:, nonatomic) <AFSettingsDelegate> *_delegate;
 
++ (void)initialize;
+
 - (void).cxx_destruct;
 - (void)_clearConnection;
 - (void)_clearSyncNeededForKey:(id)arg1;

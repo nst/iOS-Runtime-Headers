@@ -21,6 +21,7 @@
     NMSNotificationDispatcher * _recoSelectionsNotifier;
     NMSNotificationDispatcher * _settingsNotifier;
     NMSNotificationDispatcher * _storeRecoNotifier;
+    NMSNotificationDispatcher * _syncStateNotifier;
 }
 
 @property (nonatomic) bool allowOffChargerAssetSync;
@@ -31,11 +32,13 @@
 @property (nonatomic) unsigned long long assetSyncType;
 @property (nonatomic, readonly, copy) NSNumber *availableMediaStorageOnWatch;
 @property (nonatomic, copy) NSData *cachedRecommendationsData;
+@property (nonatomic, copy) NSDictionary *clientPinningSettingsToken;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSNumber *lastFullySentAssetSyncPlaylistPersistentID;
 @property (nonatomic, copy) NSNumber *lastFullySentAssetSyncPlaylistVersion;
+@property (nonatomic, copy) NSDate *lastMusicAppActiveDate;
 @property (nonatomic, copy) NSArray *libraryRecommendationAlbums;
 @property (nonatomic, copy) NSArray *libraryRecommendationPlaylists;
 @property (nonatomic, readonly) NSDate *modificationDate;
@@ -45,6 +48,7 @@
 @property (nonatomic, copy) NSDate *recommendationExpirationDate;
 @property (nonatomic) bool shouldUseLibraryRecommendations;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) NSDictionary *syncStateDict;
 @property (nonatomic, retain) NSNumber *workoutPlaylistID;
 
 + (id)sharedDefaults;
@@ -90,6 +94,7 @@
 - (id)availableMediaStorageOnWatch;
 - (void)beginBatchUpdates;
 - (id)cachedRecommendationsData;
+- (id)clientPinningSettingsToken;
 - (id)description;
 - (void)dispatcherDidReceiveNotificationFromOtherProcess:(id)arg1;
 - (void)dispatcherDidReceiveNotificationFromRemoteDevice:(id)arg1;
@@ -97,6 +102,7 @@
 - (id)init;
 - (id)lastFullySentAssetSyncPlaylistPersistentID;
 - (id)lastFullySentAssetSyncPlaylistVersion;
+- (id)lastMusicAppActiveDate;
 - (id)libraryRecommendationAlbums;
 - (id)libraryRecommendationPlaylists;
 - (id)modificationDate;
@@ -111,8 +117,10 @@
 - (void)setAssetSyncPlaylistPersistentID:(id)arg1;
 - (void)setAssetSyncType:(unsigned long long)arg1;
 - (void)setCachedRecommendationsData:(id)arg1;
+- (void)setClientPinningSettingsToken:(id)arg1;
 - (void)setLastFullySentAssetSyncPlaylistPersistentID:(id)arg1;
 - (void)setLastFullySentAssetSyncPlaylistVersion:(id)arg1;
+- (void)setLastMusicAppActiveDate:(id)arg1;
 - (void)setLibraryRecommendationAlbums:(id)arg1;
 - (void)setLibraryRecommendationPlaylists:(id)arg1;
 - (void)setMusicRecommendationDict:(id)arg1;
@@ -122,6 +130,7 @@
 - (void)setShouldUseLibraryRecommendations:(bool)arg1;
 - (void)setWorkoutPlaylistID:(id)arg1;
 - (bool)shouldUseLibraryRecommendations;
+- (id)syncStateDict;
 - (id)workoutPlaylistID;
 
 @end

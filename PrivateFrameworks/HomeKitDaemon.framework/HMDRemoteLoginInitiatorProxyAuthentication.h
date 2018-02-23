@@ -17,5 +17,6 @@
 - (void)dealloc;
 - (id)description;
 - (id)initWithSessionID:(id)arg1 remoteDevice:(id)arg2 workQueue:(id)arg3 remoteMessageSender:(id)arg4 delegate:(id)arg5 authResults:(id)arg6;
+- (int)loginType;
 
 @end

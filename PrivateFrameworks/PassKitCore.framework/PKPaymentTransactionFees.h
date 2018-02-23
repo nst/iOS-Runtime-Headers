@@ -23,6 +23,7 @@
 - (id)initWithJsonString:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToFees:(id)arg1;
+- (id)jsonArrayRepresentation;
 - (id)jsonString;
 - (id)recordTypesAndNames;
 - (void)setFees:(id)arg1;

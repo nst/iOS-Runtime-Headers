@@ -12,7 +12,7 @@
     NFLCellGeneratorManager * _cellGeneratorManager;
     long long  _columnCount;
     double  _columnWidth;
-    NSObject<NFLFeedLayoutSearchConfiguration> * _defaultFeedLayoutSearchConfiguration;
+    <NFLFeedLayoutSearchConfiguration> * _defaultFeedLayoutSearchConfiguration;
     FCHeadlineTemplate * _defaultHeadlineTemplate;
     double  _feedGutter;
     <FCFeedTheming> * _feedTheme;
@@ -24,6 +24,7 @@
     double  _rowHeight;
     double  _scaleValue;
     bool  _showingPrefetchedPurchase;
+    UITraitCollection * _traitCollection;
     double  _verticalMarginInRows;
     struct CGSize { 
         double width; 
@@ -40,7 +41,7 @@
 @property (nonatomic, readonly) NFLCellGeneratorManager *cellGeneratorManager;
 @property (nonatomic, readonly) long long columnCount;
 @property (nonatomic, readonly) double columnWidth;
-@property (nonatomic, copy) NSObject<NFLFeedLayoutSearchConfiguration> *defaultFeedLayoutSearchConfiguration;
+@property (nonatomic, copy) <NFLFeedLayoutSearchConfiguration> *defaultFeedLayoutSearchConfiguration;
 @property (nonatomic, retain) FCHeadlineTemplate *defaultHeadlineTemplate;
 @property (nonatomic, readonly, copy) UIColor *feedBackgroundColor;
 @property (nonatomic, readonly) double feedGutter;
@@ -53,6 +54,7 @@
 @property (nonatomic, readonly) double rowHeight;
 @property (nonatomic, readonly) double scaleValue;
 @property (nonatomic, readonly) bool showingPrefetchedPurchase;
+@property (nonatomic, retain) UITraitCollection *traitCollection;
 @property (nonatomic, readonly) double verticalMarginInRows;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } viewportSize;
 
@@ -71,6 +73,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)defaultFeedLayoutSearchConfiguration;
 - (id)defaultHeadlineTemplate;
+- (id)description;
 - (id)feedBackgroundColor;
 - (double)feedGutter;
 - (id)feedTheme;
@@ -83,6 +86,8 @@
 - (id)initWithViewportSize:(struct CGSize { double x1; double x2; })arg1 viewportInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2 preferredContentSizeCategory:(id)arg3 showAccessoryText:(bool)arg4 layoutType:(long long)arg5 layoutOptions:(unsigned long long)arg6;
 - (unsigned long long)layoutOptions;
 - (id)preferredContentSizeCategory;
+- (bool)preservesLayoutMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (bool)preservesTraitCollection:(id)arg1;
 - (double)rowHeight;
 - (double)scaleValue;
 - (void)setAllowsExcerptsInAllCells:(bool)arg1;
@@ -90,7 +95,9 @@
 - (void)setDefaultHeadlineTemplate:(id)arg1;
 - (void)setFeedTheme:(id)arg1;
 - (void)setPreferredContentSizeCategory:(id)arg1;
+- (void)setTraitCollection:(id)arg1;
 - (bool)showingPrefetchedPurchase;
+- (id)traitCollection;
 - (double)verticalMarginInRows;
 - (struct CGSize { double x1; double x2; })viewportSize;
 

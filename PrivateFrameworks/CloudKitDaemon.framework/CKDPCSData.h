@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSString *pcsKeyID;
 @property (readonly) Class superclass;
 
++ (id)newFromSqliteStatement:(struct sqlite3_stmt { }*)arg1 atIndex:(int)arg2;
 + (id)newFromSqliteValue:(struct sqlite3_value { }*)arg1;
 + (bool)supportsSecureCoding;
 

@@ -19,6 +19,7 @@
 @property (nonatomic, readonly) bool showsInLockScreen;
 @property (nonatomic, readonly) bool showsInNotificationCenter;
 @property (nonatomic, readonly, copy) NSString *subSectionIdentifier;
+@property (nonatomic, readonly) long long subSectionPriority;
 @property (nonatomic, readonly, copy) NSSet *subSectionSettings;
 @property (readonly) Class superclass;
 
@@ -46,9 +47,12 @@
 + (id)notificationSectionSettingsForBBSectionInfo:(id)arg1;
 
 - (unsigned long long)_contentPreviewSettingFromBBContentPreviewSetting:(long long)arg1;
+- (id)_notificationSectionSettingsForSubSectionWithIdentifier:(id)arg1;
 - (unsigned long long)contentPreviewSetting;
+- (unsigned long long)contentPreviewSettingForRequestWithSubSectionIdentifiers:(id)arg1;
 - (bool)notificationsEnabled;
 - (bool)showsInLockScreen;
 - (bool)showsInNotificationCenter;
+- (long long)subSectionPriority;
 
 @end

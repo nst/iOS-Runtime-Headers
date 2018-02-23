@@ -204,6 +204,8 @@
 
 // Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
 
++ (id)mpc_remotePlaybackQueueRequiredProperties;
+
 - (id)mpc_protoContainerRepresentation;
 
 @end

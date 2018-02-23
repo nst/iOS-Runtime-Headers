@@ -14,6 +14,12 @@
     bool  _localVCDisablesAutomaticBehaviors;
     _UIAsyncInvocation * _prepareForDisconnectionInvocation;
     id  _remoteViewControllerProxy;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _safeAreaInsets;
     struct CGSize { 
         double width; 
         double height; 
@@ -43,12 +49,14 @@
 - (void)__prepareForDisconnectionWithCompletionHandler:(id /* block */)arg1;
 - (void)__setHostAllowedNotifications:(id)arg1;
 - (void)__setNextAutomaticOrderOutDirection:(int)arg1 duration:(double)arg2;
+- (void)__setSafeAreaInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)__setSceneSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)__setWindowOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_invalidateUnconditionallyThen:(id /* block */)arg1;
 - (bool)_isDeallocating;
 - (void)_prepareForDisconnectionUnconditionallyThen:(id /* block */)arg1;
 - (id)_queue;
+- (void)_reloadSafeInsets;
 - (void)_resetSceneSize;
 - (void)_restoreInputViews;
 - (bool)_tryRetain;

@@ -30,6 +30,7 @@
     int  _filter;
     float  _filterValue;
     UIView * _filterView;
+    long long  _finishedPosition;
     double  _frameInterval;
     unsigned int  _hasOuterAnimator;
     unsigned int  _hasOuterTrackingAnimator;
@@ -71,6 +72,7 @@
 - (void)_acceptEarlyAnimationCutoff:(id)arg1;
 - (void)_addAnimationStateForTracking:(id)arg1;
 - (bool)_addCompletion:(id /* block */)arg1;
+- (bool)_addCompletionWithPosition:(id /* block */)arg1;
 - (bool)_addPendingKeyframeValue:(id)arg1 forKey:(id)arg2 view:(id)arg3;
 - (bool)_allowsHitTesting;
 - (bool)_allowsUserInteraction;
@@ -95,6 +97,7 @@
 - (void)_runConstraintBasedLayoutAnimations;
 - (void)_setAlongsideAnimations:(id /* block */)arg1;
 - (void)_setCustomCurve:(id)arg1;
+- (void)_setFinishedPosition:(long long)arg1;
 - (bool)_shouldAnimateAdditivelyForKey:(id)arg1 onLayer:(id)arg2 forView:(id)arg3;
 - (bool)_shouldStartFromCurrentStateForLayer:(id)arg1 key:(id)arg2 forView:(id)arg3;
 - (void)_trackAnimation:(id)arg1 nonAdditiveAnimation:(id)arg2 withAnimationKey:(id)arg3 forKeyPath:(id)arg4 inLayer:(id)arg5;

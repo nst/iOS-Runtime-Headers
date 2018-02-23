@@ -11,10 +11,12 @@
     AVAssetWriterInputPixelBufferAdaptor * _depthInputAdaptor;
     AVAssetWriterInput * _deviceOrientationInput;
     AVAssetWriterInputMetadataAdaptor * _deviceOrientationInputAdaptor;
+    bool  _expectDepthData;
     AVAssetWriterInput * _gyroInput;
     AVAssetWriterInputMetadataAdaptor * _gyroInputAdaptor;
     NSObject<OS_dispatch_semaphore> * _inputIsReadySemaphore;
     bool  _isWaitingUntilInputIsReady;
+    NSMutableDictionary * _lastRecordedTimestamps;
     NSMutableArray * _motionDataCache;
     NSURL * _outputFileURL;
     NSObject<OS_dispatch_queue> * _processingQueue;
@@ -30,6 +32,7 @@
     AVAssetWriterInputMetadataAdaptor * _videoMetadataInputAdaptor;
 }
 
+@property (nonatomic) bool expectDepthData;
 @property (nonatomic, readonly) NSURL *outputFileURL;
 @property (nonatomic) <ARRecordingTechniqueDelegate> *recordingTechniqueDelegate;
 @property (nonatomic) bool shouldSaveVideoInPhotosLibrary;
@@ -40,6 +43,7 @@
 - (void)copyVideoToPhotoLibrary;
 - (id)createFileMetadata;
 - (void)dealloc;
+- (bool)expectDepthData;
 - (void)finishRecording;
 - (void)initAssetWriterIfRequiredWithImageData:(id)arg1;
 - (id)initWithFileURL:(id)arg1 sensorDataTypes:(unsigned long long)arg2;
@@ -49,6 +53,7 @@
 - (id)processData:(id)arg1;
 - (id)recordingTechniqueDelegate;
 - (void)removeTemporaryVideoFile;
+- (void)setExpectDepthData:(bool)arg1;
 - (void)setRecordingTechniqueDelegate:(id)arg1;
 - (void)setShouldSaveVideoInPhotosLibrary:(bool)arg1;
 - (void)setupAssetWriterWithImageData:(id)arg1;

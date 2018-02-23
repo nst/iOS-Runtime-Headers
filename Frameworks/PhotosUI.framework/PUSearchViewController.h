@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUSearchViewController : UIViewController <PUSearchResultsDataSourceChangeObserver, PUSuggestedSearchResultsDelegate, UISearchBarDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching, UITableViewDelegate> {
+@interface PUSearchViewController : UIViewController <PUSearchResultsDataSourceChangeObserver, PUSuggestedSearchResultsDelegate, UISearchBarDelegate, UISearchBarDelegate_Private, UITableViewDataSource, UITableViewDataSourcePrefetching, UITableViewDelegate> {
     id /* block */  __runImmediatelyAfterViewDidAppear;
     UITableViewCell * _axDummyCell;
     UILabel * _axDummySubtitleLabel;
@@ -94,6 +94,7 @@
 - (bool)px_canPerformCrossfadeTransitionWithMasterViewController:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (id)searchBar;
+- (void)searchBarCancelButtonClicked:(id)arg1;
 - (void)searchBarSearchButtonClicked:(id)arg1;
 - (void)searchResultsDataSource:(id)arg1 didFetchAssetsForSearchResultsValue:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)searchResultsDataSourceHasPendingChanges:(id)arg1;

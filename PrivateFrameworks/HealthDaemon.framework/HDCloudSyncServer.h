@@ -15,7 +15,7 @@
 - (void)remote_fetchCloudSyncStatusWithCompletion:(id /* block */)arg1;
 - (id)remote_forceCloudResetWithCompletion:(id /* block */)arg1;
 - (id)remote_forceCloudSyncWithOptions:(unsigned long long)arg1 completion:(id /* block */)arg2;
-- (id)remote_waitOnHealthCloudSyncWithCompletion:(id /* block */)arg1;
+- (id)remote_waitOnHealthCloudSyncWithUUID:(id)arg1 completion:(id /* block */)arg2;
 - (id)retmote_fetchCloudSyncProgressWithCompletion:(id /* block */)arg1;
 
 @end

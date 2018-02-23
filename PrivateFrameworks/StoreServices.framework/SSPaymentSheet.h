@@ -4,9 +4,11 @@
 
 @interface SSPaymentSheet : NSObject <NSCopying, SSXPCCoding> {
     NSString * _accountHeader;
+    NSString * _buyParams;
     long long  _confirmationTitleType;
     NSString * _countryCode;
     NSString * _currencyCode;
+    NSString * _dialogId;
     NSString * _displayPrice;
     NSAttributedString * _displayPriceLabel;
     NSString * _explanation;
@@ -30,11 +32,13 @@
 }
 
 @property (copy) NSString *accountHeader;
+@property (readonly, copy) NSString *buyParams;
 @property long long confirmationTitleType;
 @property (copy) NSString *countryCode;
 @property (copy) NSString *currencyCode;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (copy) NSString *dialogId;
 @property (copy) NSString *displayPrice;
 @property (readonly, copy) NSAttributedString *displayPriceLabel;
 @property (copy) NSString *explanation;
@@ -79,12 +83,14 @@
 - (void)_stringValuesToUppercase;
 - (void)_unlock;
 - (id)accountHeader;
+- (id)buyParams;
 - (long long)confirmationTitleType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
 - (id)countryCode;
 - (id)currencyCode;
 - (id)defaultAuthKitAuthenticationContext;
+- (id)dialogId;
 - (id)displayPrice;
 - (id)displayPriceLabel;
 - (id)explanation;
@@ -108,6 +114,7 @@
 - (void)setConfirmationTitleType:(long long)arg1;
 - (void)setCountryCode:(id)arg1;
 - (void)setCurrencyCode:(id)arg1;
+- (void)setDialogId:(id)arg1;
 - (void)setDisplayPrice:(id)arg1;
 - (void)setExplanation:(id)arg1;
 - (void)setMessage:(id)arg1;

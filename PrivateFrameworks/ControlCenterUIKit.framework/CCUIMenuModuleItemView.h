@@ -22,7 +22,7 @@
 
 - (void).cxx_destruct;
 - (double)_glyphMargin;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_labelInsets;
+- (struct NSDirectionalEdgeInsets { double x1; double x2; double x3; double x4; })_labelInsets;
 - (void)_setContinuousCornerRadius:(double)arg1;
 - (bool)_shouldCenterText;
 - (double)_titleBaselineToBottom;

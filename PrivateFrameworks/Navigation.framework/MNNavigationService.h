@@ -96,6 +96,7 @@
 - (id)init;
 - (bool)isDetour;
 - (bool)isInVehicle;
+- (bool)isOpenForClient:(id)arg1;
 - (bool)isPredictingDestination;
 - (bool)isTrackingCurrentLocation;
 - (id)lastLocation;

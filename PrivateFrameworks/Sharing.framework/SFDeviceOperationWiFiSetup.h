@@ -7,6 +7,7 @@
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     bool  _invalidateCalled;
     double  _metricSeconds;
+    CUReachabilityMonitor * _reachabilityMonitor;
     SFSession * _sfSession;
     unsigned long long  _startTicks;
     NSObject<OS_dispatch_source> * _timeoutTimer;
@@ -19,6 +20,7 @@
 
 - (void).cxx_destruct;
 - (void)_activate;
+- (void)_activate2;
 - (void)_complete:(id)arg1;
 - (void)activate;
 - (id /* block */)completionHandler;

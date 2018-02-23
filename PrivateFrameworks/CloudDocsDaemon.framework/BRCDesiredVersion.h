@@ -11,6 +11,7 @@
             unsigned int startDownload : 1; 
             unsigned int wantsThumbnail : 1; 
             unsigned int userInitiated : 1; 
+            unsigned int wantsContentForThumbnail : 1; 
         } ; 
     }  _flags;
     NSString * _serverName;
@@ -26,6 +27,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) bool userInitiated;
 @property (nonatomic, readonly) bool wantsContent;
+@property (nonatomic, readonly) bool wantsContentForThumbnail;
 @property (nonatomic, readonly) bool wantsThumbnail;
 
 + (id)newFromSqliteValue:(struct sqlite3_value { }*)arg1;
@@ -49,6 +51,7 @@
 - (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 - (bool)userInitiated;
 - (bool)wantsContent;
+- (bool)wantsContentForThumbnail;
 - (bool)wantsThumbnail;
 
 @end

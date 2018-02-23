@@ -34,7 +34,7 @@
 @property (nonatomic, retain) UILabel *updateNameLabel;
 
 - (void).cxx_destruct;
-- (id)_gearBackgroundImage;
+- (void)_updateReleaseNotesHeightIfNeeded;
 - (id)animatedGearView;
 - (id)gearBackgroundImage;
 - (id)gearBackgroundImageView;
@@ -43,6 +43,7 @@
 - (id)internalViewResizingDelegate;
 - (id)item;
 - (id)labelStackView;
+- (void)layoutSubviews;
 - (id)publisherNameLabel;
 - (id)releaseNotesSummaryHeightConstraint;
 - (id)releaseNotesSummaryView;

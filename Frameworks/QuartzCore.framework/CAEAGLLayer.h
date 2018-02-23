@@ -27,6 +27,7 @@
 - (double)inputTime;
 - (bool)isAsynchronous;
 - (bool)isDrawableAvailable;
+- (bool)isDrawableAvailableInternal;
 - (void)layerDidBecomeVisible:(bool)arg1;
 - (bool)lowLatency;
 - (unsigned long long)maximumDrawableCount;
@@ -37,6 +38,7 @@
 - (void)setInputTime:(double)arg1;
 - (void)setLowLatency:(bool)arg1;
 - (void)setMaximumDrawableCount:(unsigned long long)arg1;
+- (void)setPresentationHandler:(id /* block */)arg1;
 - (void)setPresentsWithTransaction:(bool)arg1;
 - (bool)shouldArchiveValueForKey:(id)arg1;
 

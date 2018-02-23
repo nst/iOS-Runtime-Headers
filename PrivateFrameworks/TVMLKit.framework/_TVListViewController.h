@@ -3,9 +3,11 @@
  */
 
 @interface _TVListViewController : _TVMLCollectionViewController <TVAppTemplateImpressionable, UICollectionViewDelegateFlowLayout, _TVListViewCellDelegate> {
+    bool  _alwaysSoftFocusEnabled;
     double  _cachedCellWidth;
     NSMutableArray * _cachedListChildViewControllers;
     NSDictionary * _cachedListItemLockupHeightsBySection;
+    bool  _configureForStackTemplate;
     <_TVListViewControllerDelegate> * _delegate;
     bool  _indexDisplayEnabled;
     NSIndexPath * _lastPreviewedIndexPath;
@@ -19,6 +21,7 @@
     bool  _secondIndexPathFocused;
 }
 
+@property (getter=isAlwaysSoftFocusEnabled, nonatomic) bool alwaysSoftFocusEnabled;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <_TVListViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -58,11 +61,13 @@
 - (void)didUpdateCollectionViewByNeedingReload:(bool)arg1 focusUpdate:(bool)arg2;
 - (struct CGSize { double x1; double x2; })expectedCellSizeForElement:(id)arg1 atIndexPath:(id)arg2;
 - (id)impressionableElementsContainedInDocument:(id)arg1;
+- (bool)isAlwaysSoftFocusEnabled;
 - (bool)isIndexDisplayEnabled;
 - (bool)listCell:(id)arg1 shouldAppearSelectedForPreviouslyFocusedView:(id)arg2;
 - (id)makeCollectionViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (void)setAlwaysSoftFocusEnabled:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIndexDisplayEnabled:(bool)arg1;
 - (void)templateControllerDidUpdateFocusFromView:(id)arg1;

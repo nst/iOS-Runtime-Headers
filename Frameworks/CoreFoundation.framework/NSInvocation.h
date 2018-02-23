@@ -43,6 +43,10 @@
 - (void)setTarget:(id)arg1;
 - (id)target;
 
+// Image: /System/Library/Frameworks/FileProvider.framework/FileProvider
+
+- (id)fp_copy;
+
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 - (bool)_hasBlockArgument;

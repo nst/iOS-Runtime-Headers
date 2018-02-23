@@ -60,9 +60,9 @@
 - (id)_nonQuantitySamplesQueryStringWithSampleTypes:(id)arg1;
 - (id)_overallDateInterval;
 - (id)_parameterStringWithCount:(long long)arg1;
-- (bool)_primeNonQuantitySamplesWithError:(id*)arg1;
+- (bool)_primeNonQuantitySamplesWithError:(id*)arg1 count:(long long*)arg2;
 - (bool)_primePreviousActivationLogEntryWithError:(id*)arg1;
-- (bool)_primeQuantitySamplesWithError:(id*)arg1;
+- (bool)_primeQuantitySamplesWithError:(id*)arg1 count:(long long*)arg2;
 - (bool)_quantitySampleIsValidWithTypeCode:(long long)arg1 workoutSourceIdentifier:(long long)arg2 isWatchSource:(bool)arg3;
 - (id)_quantitySamplesQueryStringWithQuantityTypes:(id)arg1;
 - (bool)_quantityTypeRequiresWatchSource:(long long)arg1;

@@ -61,8 +61,12 @@
 + (id)currentDevice;
 + (bool)deviceIsAppleTV;
 + (bool)deviceIsAppleWatch;
++ (bool)deviceIsAudioAccessory;
 + (bool)deviceIsInternalBuild;
 + (bool)deviceIsSeedBuild;
++ (bool)deviceIsiPad;
++ (bool)deviceIsiPhone;
++ (bool)deviceIsiPod;
 + (bool)promptNeedsDisplay:(id)arg1;
 + (bool)setCachedAvailableItemKinds:(id)arg1;
 + (void)setLastPromptAttemptDate:(id)arg1 forPromptWithIdentifier:(id)arg2;

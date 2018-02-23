@@ -8,6 +8,7 @@
 + (unsigned long long)channelForOutputReference;
 + (unsigned long long)channelForProcessedInput;
 + (int)csAudioProcessingQueuePriority;
++ (float)daysBeforeRemovingLogFiles;
 + (double)inputRecordingBufferDuration;
 + (unsigned int)inputRecordingBytesPerFrame;
 + (unsigned int)inputRecordingBytesPerPacket;
@@ -15,7 +16,6 @@
 + (long long)inputRecordingEncoderAudioQuality;
 + (unsigned int)inputRecordingFramesPerPacket;
 + (unsigned int)inputRecordingNumberOfChannels;
-+ (unsigned long long)inputRecordingProcessingChannelsBitset;
 + (unsigned int)inputRecordingSampleBitDepth;
 + (unsigned int)inputRecordingSampleByteDepth;
 + (float)inputRecordingSampleRate;

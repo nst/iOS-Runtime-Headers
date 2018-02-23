@@ -8,12 +8,14 @@
 }
 
 @property (nonatomic, retain) NSString *bundleID;
+@property (readonly) bool isValid;
 @property (nonatomic) unsigned long long variant;
 
 + (double)cornerRadiusForHomeScreenIcons;
 + (double)cornerRadiusForSmallSpotlightIcons;
 + (struct CGSize { double x1; double x2; })homeScreenIconSize;
 + (double)iconCornerRadiusForFormat:(int)arg1;
++ (struct CGSize { double x1; double x2; })tinyIconSize;
 + (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleFrameForHomeScreenIcons;
 + (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleFrameForSmallSpotlightIcons;
 + (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleFrameForTinyIcons;
@@ -22,6 +24,7 @@
 - (id)bundleID;
 - (id)generateImageWithFormat:(int)arg1;
 - (id)initWithBundleID:(id)arg1 variant:(unsigned long long)arg2;
+- (bool)isValid;
 - (id)loadImage;
 - (void)setBundleID:(id)arg1;
 - (void)setSize;

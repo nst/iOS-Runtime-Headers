@@ -9,6 +9,7 @@
     struct os_unfair_lock_s { 
         unsigned int _os_unfair_lock_opaque; 
     }  _calibrationLock;
+    struct OpaqueFigSimpleMutex { } * _calibrationPipelineMutex;
     NSObject<OS_dispatch_queue> * _calibrationRunQueue;
     bool  _calibrationShouldAbort;
     struct { 
@@ -32,7 +33,7 @@
 + (void)initializeSharedInstance;
 + (id)sharedInstance;
 
-- (void)_attemptToRunCalibrationForCalibrationContext:(id)arg1 deviceType:(int)arg2 devicePosition:(int)arg3 resultsBlock:(id /* block */)arg4;
+- (void)_attemptToRunCalibrationForCalibrationContext:(id)arg1 deviceType:(int)arg2 devicePosition:(int)arg3 disableHistoryChecking:(bool)arg4 resultsBlock:(id /* block */)arg5;
 - (bool)_calibrationShouldAbort;
 - (id)_createDefaultXPCSchedulingParametersWithInterval:(int)arg1 batteryLevel:(int)arg2;
 - (double)_getMagneticThresholdFromAttempt;

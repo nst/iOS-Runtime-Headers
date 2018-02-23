@@ -4,7 +4,7 @@
 
 @interface BWVisionLandmarkDetector : NSObject {
     BWPixelBufferPool * _faceDetectionBufferPool;
-    M2MController * _m2mController;
+    FigM2MController * _m2mController;
 }
 
 + (void)initialize;

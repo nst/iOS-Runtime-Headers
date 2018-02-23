@@ -15,6 +15,7 @@
 - (NSString *)contentAdvisory;
 - (NSString *)descriptionText;
 - (NSDictionary *)dictionaryRepresentation;
+- (NSString *)footnote;
 - (bool)hasBottomPadding;
 - (bool)hasTopPadding;
 - (bool)hideVerticalDivider;
@@ -43,6 +44,7 @@
 - (void)setCanBeHidden:(bool)arg1;
 - (void)setContentAdvisory:(NSString *)arg1;
 - (void)setDescriptionText:(NSString *)arg1;
+- (void)setFootnote:(NSString *)arg1;
 - (void)setHasBottomPadding:(bool)arg1;
 - (void)setHasTopPadding:(bool)arg1;
 - (void)setHideVerticalDivider:(bool)arg1;

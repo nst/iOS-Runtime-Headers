@@ -27,7 +27,6 @@
 @property (copy) NSString *color;
 @property (copy) NSNumber *coverGlassColor;
 @property (copy) NSString *enclosureColor;
-@property bool hasBeenUnlockedSinceLastCheckIn;
 @property (copy) NSNumber *housingColor;
 @property (readonly) NSString *integratedCircuitCardIdentifier;
 @property (readonly) NSString *internationalMobileEquipmentIdentity;
@@ -83,7 +82,6 @@
 - (id)description;
 - (id)enclosureColor;
 - (void)encodeWithCoder:(id)arg1;
-- (bool)hasBeenUnlockedSinceLastCheckIn;
 - (id)housingColor;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -108,7 +106,6 @@
 - (void)setColor:(id)arg1;
 - (void)setCoverGlassColor:(id)arg1;
 - (void)setEnclosureColor:(id)arg1;
-- (void)setHasBeenUnlockedSinceLastCheckIn:(bool)arg1;
 - (void)setHousingColor:(id)arg1;
 - (void)setLinkType:(unsigned long long)arg1;
 - (void)setLocale:(id)arg1;

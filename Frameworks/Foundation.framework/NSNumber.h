@@ -203,6 +203,11 @@
 - (long long)cr_CRContactIDValue;
 - (long long)cr_CRRecentIDValue;
 
+// Image: /System/Library/PrivateFrameworks/CoreSpeech.framework/CoreSpeech
+
+- (id)initWithXPCObject:(id)arg1;
+- (id)xpcObject;
+
 // Image: /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DAEAS.framework/DAEAS
 
 + (bool)acceptsTopLevelLeaves;
@@ -236,6 +241,8 @@
 
 - (id)hf_absoluteValue;
 - (long long)hf_compareAbsoluteValue:(id)arg1;
+- (id)hf_largerNumber:(id)arg1;
+- (id)hf_smallerNumber:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 

@@ -87,10 +87,15 @@
         unsigned int loadFailureReason : 1; 
         unsigned int maxActiveTimeSpent : 1; 
         unsigned int maxVerticalScrollPositionEnding : 1; 
+        unsigned int moduleEventType : 1; 
+        unsigned int moduleItemCount : 1; 
+        unsigned int moduleItemPosition : 1; 
+        unsigned int moduleLocation : 1; 
         unsigned int nextArticleAffordanceType : 1; 
         unsigned int paidSubscriberToFeedType : 1; 
         unsigned int parentFeedType : 1; 
         unsigned int previousArticleHostViewTypeIfSwipe : 1; 
+        unsigned int previousWebEmbedLocation : 1; 
         unsigned int publisherArticleVersion : 1; 
         unsigned int topStoryMandatoryArticleCount : 1; 
         unsigned int topStoryOptionalArticleCount : 1; 
@@ -124,6 +129,7 @@
     }  _has;
     NSString * _iadNativeAd;
     NSString * _iadNativeCampaign;
+    NSString * _iadNativeCampaignAd;
     NSString * _iadNativeLine;
     bool  _isBreakingNewsArticle;
     bool  _isCoverArticle;
@@ -145,6 +151,11 @@
     int  _loadFailureReason;
     int  _maxActiveTimeSpent;
     float  _maxVerticalScrollPositionEnding;
+    int  _moduleEventType;
+    NSData * _moduleExposureId;
+    int  _moduleItemCount;
+    int  _moduleItemPosition;
+    int  _moduleLocation;
     NSMutableArray * _namedEntities;
     NSString * _nativeCampaignData;
     int  _nextArticleAffordanceType;
@@ -160,6 +171,8 @@
     NSString * _previousArticleId;
     long long  _previousArticlePublisherArticleVersion;
     NSString * _previousArticleVersion;
+    NSString * _previousWebEmbedId;
+    int  _previousWebEmbedLocation;
     int  _publisherArticleVersion;
     long long  _publisherArticleVersionInt64;
     NSString * _referencedArticleId;
@@ -172,6 +185,7 @@
     bool  _subscriptionOnlyArticle;
     NSString * _surfacedByChannelId;
     NSString * _surfacedBySectionId;
+    NSMutableArray * _surfacedByTagIds;
     NSString * _surfacedByTopicId;
     int  _topStoryMandatoryArticleCount;
     int  _topStoryOptionalArticleCount;
@@ -277,6 +291,7 @@
 @property (nonatomic) bool hasGroupType;
 @property (nonatomic, readonly) bool hasIadNativeAd;
 @property (nonatomic, readonly) bool hasIadNativeCampaign;
+@property (nonatomic, readonly) bool hasIadNativeCampaignAd;
 @property (nonatomic, readonly) bool hasIadNativeLine;
 @property (nonatomic) bool hasIsBreakingNewsArticle;
 @property (nonatomic) bool hasIsCoverArticle;
@@ -298,6 +313,11 @@
 @property (nonatomic) bool hasLoadFailureReason;
 @property (nonatomic) bool hasMaxActiveTimeSpent;
 @property (nonatomic) bool hasMaxVerticalScrollPositionEnding;
+@property (nonatomic) bool hasModuleEventType;
+@property (nonatomic, readonly) bool hasModuleExposureId;
+@property (nonatomic) bool hasModuleItemCount;
+@property (nonatomic) bool hasModuleItemPosition;
+@property (nonatomic) bool hasModuleLocation;
 @property (nonatomic, readonly) bool hasNativeCampaignData;
 @property (nonatomic) bool hasNextArticleAffordanceType;
 @property (nonatomic, readonly) bool hasNextArticleAffordanceTypeFeedId;
@@ -312,6 +332,8 @@
 @property (nonatomic, readonly) bool hasPreviousArticleId;
 @property (nonatomic) bool hasPreviousArticlePublisherArticleVersion;
 @property (nonatomic, readonly) bool hasPreviousArticleVersion;
+@property (nonatomic, readonly) bool hasPreviousWebEmbedId;
+@property (nonatomic) bool hasPreviousWebEmbedLocation;
 @property (nonatomic) bool hasPublisherArticleVersion;
 @property (nonatomic) bool hasPublisherArticleVersionInt64;
 @property (nonatomic, readonly) bool hasReferencedArticleId;
@@ -338,6 +360,7 @@
 @property (nonatomic) bool hasWidgetSectionArticleRank;
 @property (nonatomic, retain) NSString *iadNativeAd;
 @property (nonatomic, retain) NSString *iadNativeCampaign;
+@property (nonatomic, retain) NSString *iadNativeCampaignAd;
 @property (nonatomic, retain) NSString *iadNativeLine;
 @property (nonatomic) bool isBreakingNewsArticle;
 @property (nonatomic) bool isCoverArticle;
@@ -359,6 +382,11 @@
 @property (nonatomic) int loadFailureReason;
 @property (nonatomic) int maxActiveTimeSpent;
 @property (nonatomic) float maxVerticalScrollPositionEnding;
+@property (nonatomic) int moduleEventType;
+@property (nonatomic, retain) NSData *moduleExposureId;
+@property (nonatomic) int moduleItemCount;
+@property (nonatomic) int moduleItemPosition;
+@property (nonatomic) int moduleLocation;
 @property (nonatomic, retain) NSMutableArray *namedEntities;
 @property (nonatomic, retain) NSString *nativeCampaignData;
 @property (nonatomic) int nextArticleAffordanceType;
@@ -374,6 +402,8 @@
 @property (nonatomic, retain) NSString *previousArticleId;
 @property (nonatomic) long long previousArticlePublisherArticleVersion;
 @property (nonatomic, retain) NSString *previousArticleVersion;
+@property (nonatomic, retain) NSString *previousWebEmbedId;
+@property (nonatomic) int previousWebEmbedLocation;
 @property (nonatomic) int publisherArticleVersion;
 @property (nonatomic) long long publisherArticleVersionInt64;
 @property (nonatomic, retain) NSString *referencedArticleId;
@@ -386,6 +416,7 @@
 @property (nonatomic) bool subscriptionOnlyArticle;
 @property (nonatomic, retain) NSString *surfacedByChannelId;
 @property (nonatomic, retain) NSString *surfacedBySectionId;
+@property (nonatomic, retain) NSMutableArray *surfacedByTagIds;
 @property (nonatomic, retain) NSString *surfacedByTopicId;
 @property (nonatomic) int topStoryMandatoryArticleCount;
 @property (nonatomic) int topStoryOptionalArticleCount;
@@ -401,6 +432,7 @@
 
 + (Class)fractionalCohortMembershipType;
 + (Class)namedEntitiesType;
++ (Class)surfacedByTagIdsType;
 
 - (void).cxx_destruct;
 - (int)StringAsArticleHostViewType:(id)arg1;
@@ -415,16 +447,20 @@
 - (int)StringAsGroupPresentationReason:(id)arg1;
 - (int)StringAsGroupType:(id)arg1;
 - (int)StringAsLoadFailureReason:(id)arg1;
+- (int)StringAsModuleEventType:(id)arg1;
+- (int)StringAsModuleLocation:(id)arg1;
 - (int)StringAsNextArticleAffordanceType:(id)arg1;
 - (int)StringAsPaidSubscriberToFeedType:(id)arg1;
 - (int)StringAsParentFeedType:(id)arg1;
 - (int)StringAsPreviousArticleHostViewTypeIfSwipe:(id)arg1;
+- (int)StringAsPreviousWebEmbedLocation:(id)arg1;
 - (int)StringAsTopStoryType:(id)arg1;
 - (int)StringAsWidgetSection:(id)arg1;
 - (int)activeTimeSpent;
 - (bool)adSupportedChannel;
 - (void)addFractionalCohortMembership:(id)arg1;
 - (void)addNamedEntities:(id)arg1;
+- (void)addSurfacedByTagIds:(id)arg1;
 - (double)agedPersonalizationScore;
 - (double)agedUserFeedbackScore;
 - (id)anfComponentId;
@@ -450,6 +486,7 @@
 - (int)characterCount;
 - (void)clearFractionalCohortMemberships;
 - (void)clearNamedEntities;
+- (void)clearSurfacedByTagIds;
 - (double)computedGlobalScoreCoefficient;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -533,6 +570,7 @@
 - (bool)hasGroupType;
 - (bool)hasIadNativeAd;
 - (bool)hasIadNativeCampaign;
+- (bool)hasIadNativeCampaignAd;
 - (bool)hasIadNativeLine;
 - (bool)hasIsBreakingNewsArticle;
 - (bool)hasIsCoverArticle;
@@ -554,6 +592,11 @@
 - (bool)hasLoadFailureReason;
 - (bool)hasMaxActiveTimeSpent;
 - (bool)hasMaxVerticalScrollPositionEnding;
+- (bool)hasModuleEventType;
+- (bool)hasModuleExposureId;
+- (bool)hasModuleItemCount;
+- (bool)hasModuleItemPosition;
+- (bool)hasModuleLocation;
 - (bool)hasNativeCampaignData;
 - (bool)hasNextArticleAffordanceType;
 - (bool)hasNextArticleAffordanceTypeFeedId;
@@ -568,6 +611,8 @@
 - (bool)hasPreviousArticleId;
 - (bool)hasPreviousArticlePublisherArticleVersion;
 - (bool)hasPreviousArticleVersion;
+- (bool)hasPreviousWebEmbedId;
+- (bool)hasPreviousWebEmbedLocation;
 - (bool)hasPublisherArticleVersion;
 - (bool)hasPublisherArticleVersionInt64;
 - (bool)hasReferencedArticleId;
@@ -595,6 +640,7 @@
 - (unsigned long long)hash;
 - (id)iadNativeAd;
 - (id)iadNativeCampaign;
+- (id)iadNativeCampaignAd;
 - (id)iadNativeLine;
 - (bool)isBreakingNewsArticle;
 - (bool)isCoverArticle;
@@ -619,6 +665,13 @@
 - (int)maxActiveTimeSpent;
 - (float)maxVerticalScrollPositionEnding;
 - (void)mergeFrom:(id)arg1;
+- (int)moduleEventType;
+- (id)moduleEventTypeAsString:(int)arg1;
+- (id)moduleExposureId;
+- (int)moduleItemCount;
+- (int)moduleItemPosition;
+- (int)moduleLocation;
+- (id)moduleLocationAsString:(int)arg1;
 - (id)namedEntities;
 - (id)namedEntitiesAtIndex:(unsigned long long)arg1;
 - (unsigned long long)namedEntitiesCount;
@@ -640,6 +693,9 @@
 - (id)previousArticleId;
 - (long long)previousArticlePublisherArticleVersion;
 - (id)previousArticleVersion;
+- (id)previousWebEmbedId;
+- (int)previousWebEmbedLocation;
+- (id)previousWebEmbedLocationAsString:(int)arg1;
 - (int)publisherArticleVersion;
 - (long long)publisherArticleVersionInt64;
 - (bool)readFrom:(id)arg1;
@@ -745,6 +801,10 @@
 - (void)setHasLoadFailureReason:(bool)arg1;
 - (void)setHasMaxActiveTimeSpent:(bool)arg1;
 - (void)setHasMaxVerticalScrollPositionEnding:(bool)arg1;
+- (void)setHasModuleEventType:(bool)arg1;
+- (void)setHasModuleItemCount:(bool)arg1;
+- (void)setHasModuleItemPosition:(bool)arg1;
+- (void)setHasModuleLocation:(bool)arg1;
 - (void)setHasNextArticleAffordanceType:(bool)arg1;
 - (void)setHasPaidNonpaidSubscriptionCtr:(bool)arg1;
 - (void)setHasPaidSubscriberToFeedType:(bool)arg1;
@@ -753,6 +813,7 @@
 - (void)setHasPersonalizationTreatmentId:(bool)arg1;
 - (void)setHasPreviousArticleHostViewTypeIfSwipe:(bool)arg1;
 - (void)setHasPreviousArticlePublisherArticleVersion:(bool)arg1;
+- (void)setHasPreviousWebEmbedLocation:(bool)arg1;
 - (void)setHasPublisherArticleVersion:(bool)arg1;
 - (void)setHasPublisherArticleVersionInt64:(bool)arg1;
 - (void)setHasSubscriptionOnlyArticle:(bool)arg1;
@@ -766,6 +827,7 @@
 - (void)setHasWidgetSectionArticleRank:(bool)arg1;
 - (void)setIadNativeAd:(id)arg1;
 - (void)setIadNativeCampaign:(id)arg1;
+- (void)setIadNativeCampaignAd:(id)arg1;
 - (void)setIadNativeLine:(id)arg1;
 - (void)setIsBreakingNewsArticle:(bool)arg1;
 - (void)setIsCoverArticle:(bool)arg1;
@@ -787,6 +849,11 @@
 - (void)setLoadFailureReason:(int)arg1;
 - (void)setMaxActiveTimeSpent:(int)arg1;
 - (void)setMaxVerticalScrollPositionEnding:(float)arg1;
+- (void)setModuleEventType:(int)arg1;
+- (void)setModuleExposureId:(id)arg1;
+- (void)setModuleItemCount:(int)arg1;
+- (void)setModuleItemPosition:(int)arg1;
+- (void)setModuleLocation:(int)arg1;
 - (void)setNamedEntities:(id)arg1;
 - (void)setNativeCampaignData:(id)arg1;
 - (void)setNextArticleAffordanceType:(int)arg1;
@@ -802,6 +869,8 @@
 - (void)setPreviousArticleId:(id)arg1;
 - (void)setPreviousArticlePublisherArticleVersion:(long long)arg1;
 - (void)setPreviousArticleVersion:(id)arg1;
+- (void)setPreviousWebEmbedId:(id)arg1;
+- (void)setPreviousWebEmbedLocation:(int)arg1;
 - (void)setPublisherArticleVersion:(int)arg1;
 - (void)setPublisherArticleVersionInt64:(long long)arg1;
 - (void)setReferencedArticleId:(id)arg1;
@@ -814,6 +883,7 @@
 - (void)setSubscriptionOnlyArticle:(bool)arg1;
 - (void)setSurfacedByChannelId:(id)arg1;
 - (void)setSurfacedBySectionId:(id)arg1;
+- (void)setSurfacedByTagIds:(id)arg1;
 - (void)setSurfacedByTopicId:(id)arg1;
 - (void)setTopStoryMandatoryArticleCount:(int)arg1;
 - (void)setTopStoryOptionalArticleCount:(int)arg1;
@@ -832,6 +902,9 @@
 - (bool)subscriptionOnlyArticle;
 - (id)surfacedByChannelId;
 - (id)surfacedBySectionId;
+- (id)surfacedByTagIds;
+- (id)surfacedByTagIdsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)surfacedByTagIdsCount;
 - (id)surfacedByTopicId;
 - (int)topStoryMandatoryArticleCount;
 - (int)topStoryOptionalArticleCount;

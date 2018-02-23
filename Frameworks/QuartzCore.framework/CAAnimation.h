@@ -131,6 +131,8 @@
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
 + (id)pkui_shakeAnimation;
++ (id)pkui_shakeAnimationWithInitalOffest:(double)arg1 springStiffness:(double)arg2 springDamping:(double)arg3;
++ (id)pkui_smallShakeAnimation;
 
 - (id /* block */)pkui_completionHandler;
 - (id /* block */)pkui_didStartHandler;

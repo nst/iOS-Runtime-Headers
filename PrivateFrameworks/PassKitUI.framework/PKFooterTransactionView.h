@@ -28,13 +28,14 @@
 @property (nonatomic, readonly) PKPaymentTransaction *transaction;
 
 - (void).cxx_destruct;
-- (id)_amountText;
+- (bool)_deemphasizeAmount;
 - (id)_image;
 - (id)_locationText;
 - (id)_merchantText;
 - (id)_peerPaymentCounterpart;
 - (id)_relativeDateText;
 - (id)_statusText;
+- (bool)_strikethroughAmount;
 - (void)_updateContentAnimated:(bool)arg1;
 - (void)beginUpdates;
 - (void)contactsDidChangeForContactResolver:(id)arg1;

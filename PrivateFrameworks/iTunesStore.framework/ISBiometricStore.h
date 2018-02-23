@@ -3,7 +3,6 @@
  */
 
 @interface ISBiometricStore : NSObject {
-    long long  _biometricStyle;
     NSCache * _contextCache;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     NSLock * _lock;
@@ -27,7 +26,6 @@
 - (long long)biometricState;
 - (bool)canPerformBiometricOptIn;
 - (bool)canPerformExtendedTouchIDActionsForAccountIdentifier:(id)arg1;
-- (bool)canPerformMultiBiometrics;
 - (void)clearLastRegisteredAccountIdentifier;
 - (id)createAttestationDataForAccountIdentifier:(id)arg1 error:(id*)arg2;
 - (bool)deleteKeychainTokensForAccountIdentifier:(id)arg1 error:(id*)arg2;

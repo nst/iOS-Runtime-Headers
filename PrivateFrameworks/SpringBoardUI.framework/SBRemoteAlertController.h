@@ -40,5 +40,6 @@
 - (void)remoteAlertDidActivate:(id)arg1;
 - (void)remoteAlertDidDeactivate:(id)arg1;
 - (void)remoteAlertDidRequestDismissal:(id)arg1;
+- (void)remoteAlertDidRequestInvalidation:(id)arg1;
 
 @end

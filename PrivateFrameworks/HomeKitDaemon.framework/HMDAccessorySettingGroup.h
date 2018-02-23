@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDAccessorySettingGroup : HMFObject <HMDBackingStoreObjectProtocol, HMFLogging, HMFMessageReceiver, NSSecureCoding> {
+@interface HMDAccessorySettingGroup : HMFObject <HMDBackingStoreObjectProtocol, HMDHomeMessageReceiver, HMFLogging, NSSecureCoding> {
     HMDAccessory * _accessory;
     NSObject<OS_dispatch_queue> * _clientQueue;
     HMDAccessorySettingGroup * _group;
@@ -14,7 +14,7 @@
     NSMutableSet * _settings;
 }
 
-@property (nonatomic, retain) HMDAccessory *accessory;
+@property (nonatomic) HMDAccessory *accessory;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -22,15 +22,19 @@
 @property (readonly, copy) NSArray *groups;
 @property (readonly) unsigned long long hash;
 @property (readonly, copy) NSUUID *identifier;
+@property (readonly) NSString *keyPath;
 @property (nonatomic, retain) HMFMessageDispatcher *messageDispatcher;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (readonly, copy) NSSet *messageReceiverChildren;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (readonly) HMDAccessorySettingGroupModel *model;
+@property (readonly, copy) NSArray *models;
 @property (readonly, copy) NSString *name;
 @property (readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (readonly, copy) NSArray *settings;
 @property (readonly) Class superclass;
 
++ (bool)hasMessageReceiverChildren;
 + (id)logCategory;
 + (id)supportedGroupsClasses;
 + (id)supportedSettingsClasses;
@@ -42,7 +46,6 @@
 - (void)_handleRemoveGroup:(id)arg1;
 - (void)_handleRemoveSetting:(id)arg1;
 - (void)_relayRequestMessage:(id)arg1 completionHandler:(id /* block */)arg2;
-- (bool)_shouldAcceptMessage:(id)arg1;
 - (id)accessory;
 - (void)addGroup:(id)arg1;
 - (void)addSetting:(id)arg1;
@@ -63,13 +66,16 @@
 - (id)initWithModel:(id)arg1;
 - (id)initWithName:(id)arg1;
 - (bool)isEqual:(id)arg1;
+- (id)keyPath;
 - (id)logIdentifier;
 - (id)mergeWithGroupMetadata:(id)arg1;
 - (id)messageDestination;
 - (id)messageDispatcher;
 - (id)messageReceiveQueue;
+- (id)messageReceiverChildren;
 - (id)messageTargetUUID;
 - (id)model;
+- (id)models;
 - (id)name;
 - (id)propertyQueue;
 - (void)registerForMessages;

@@ -91,14 +91,15 @@
 @property (nonatomic, readonly) bool wantsOpaqueUI;
 @property (nonatomic, readonly) bool wasExpandedPresentation;
 
-+ (double)navbarHeight;
-
 - (void).cxx_destruct;
 - (bool)_currentPluginIsAppManager;
 - (bool)_currentPluginIsAppStore;
+- (bool)_currentPluginIsJellyfish;
 - (void)_dismiss:(id)arg1;
 - (void)_dragBegan:(id)arg1;
 - (void)_dragEnded:(id)arg1;
+- (bool)_shouldShowDimmingView;
+- (void)_updateDimmingViewAlpha;
 - (void)animateBrowserViewFromSourceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 interactive:(bool)arg2 grabberView:(id)arg3 switcherFooterView:(id)arg4 completion:(id /* block */)arg5;
 - (void)animateBrowserViewToTargetRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 grabberView:(id)arg2 switcherFooterView:(id)arg3 completion:(id /* block */)arg4;
 - (id)balloonPlugin;
@@ -169,6 +170,7 @@
 - (void)switcherView:(id)arg1 didMagnify:(bool)arg2;
 - (void)switcherView:(id)arg1 didSelectPluginAtIndex:(id)arg2;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })targetBrowserFrame;
+- (double)topAreaHeight;
 - (void)touchTrackerRecognized:(id)arg1;
 - (unsigned long long)transitionDirection;
 - (void)updateFooterViewFrame;

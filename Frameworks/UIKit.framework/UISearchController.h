@@ -17,6 +17,7 @@
     _UISearchControllerDidScrollDelegate * _didScrollDelegate;
     UITapGestureRecognizer * _doneButtonGestureRecognizer;
     bool  _hidesNavigationBarDuringPresentation;
+    long long  _lastKnownInterfaceOrientation;
     _UINavigationControllerManagedSearchPalette * _managedPalette;
     bool  _obscuresBackgroundDuringPresentation;
     UIView * _resultsControllerViewContainer;
@@ -151,6 +152,7 @@
 - (double)transitionDuration:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
+- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(bool)arg2;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 

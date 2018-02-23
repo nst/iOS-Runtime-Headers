@@ -22,6 +22,7 @@
 @property (nonatomic, readonly, copy) NSArray *appNames;
 @property (nonatomic, readonly, copy) NSArray *contactsWords;
 @property (nonatomic, readonly, copy) NSArray *corrections;
+@property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 @property (nonatomic, readonly, copy) NSArray *eventLocationNames;
 @property (nonatomic, readonly, copy) NSArray *eventTitles;
 @property (nonatomic, readonly, copy) NSDictionary *interactionSenderDisplayNames;
@@ -54,6 +55,7 @@
 - (id)corrections;
 - (id)debugDescription;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)eventLocationNames;
 - (id)eventTitles;

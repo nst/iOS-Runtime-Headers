@@ -11,6 +11,7 @@
 @property (nonatomic, copy) NSAttributedString *attributedName;
 @property (nonatomic) bool ignoreWhenVoiceOverTouches;
 @property (getter=_image, setter=_setImage:, nonatomic, retain) UIImage *image;
+@property (getter=_accessibilityInternalCustomActionIdentifier, setter=_accessibilitySetInternalCustomActionIdentifier:, nonatomic, retain) NSString *internalCustomActionIdentifier;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) SEL selector;
 @property (getter=_shortName, setter=_setShortName:, nonatomic, retain) NSString *shortName;
@@ -36,7 +37,9 @@
 
 - (id)_accessibilityAXAttributedName;
 - (id)_accessibilityCustomActionIdentifier;
+- (id)_accessibilityInternalCustomActionIdentifier;
 - (bool)_accessibilityMatchesCustomActionIdentifier:(id)arg1;
+- (void)_accessibilitySetInternalCustomActionIdentifier:(id)arg1;
 - (id)_image;
 - (void)_setImage:(id)arg1;
 - (void)_setShortName:(id)arg1;

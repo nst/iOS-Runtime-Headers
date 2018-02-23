@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@interface RadioAvailabilityController : NSObject <ISURLBagObserver, MCProfileConnectionObserver> {
+@interface RadioAvailabilityController : NSObject <ICEnvironmentMonitorObserver, MCProfileConnectionObserver> {
     NSObject<OS_dispatch_queue> * _accessQueue;
     NSObject<OS_dispatch_queue> * _calloutSerialQueue;
     bool  _hasSuccessfullyLoadedURLBag;
     bool  _isRadioAvailable;
-    bool  _isRadioAvailableFromBag;
+    NSNumber * _isRadioAvailableFromBag;
     bool  _isRadioRestricted;
     NSNumber * _lastActiveAccountUniqueIdentifier;
     NSObject<OS_dispatch_queue> * _restrictionLoadQueue;
@@ -28,8 +28,8 @@
 - (void)_updateRadioAvailabilityAllowingNotifications:(bool)arg1;
 - (void)_updateRadioAvailabilityWithStoreBagDictionary:(id)arg1 error:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)_userDefaultsDomain;
-- (void)bagDidChange:(id)arg1;
 - (void)dealloc;
+- (void)environmentMonitorDidChangeNetworkReachability:(id)arg1;
 - (void)getRadioAvailabilityWithCompletionHandler:(id /* block */)arg1;
 - (bool)hasLoadedRadioAvailability;
 - (id)init;

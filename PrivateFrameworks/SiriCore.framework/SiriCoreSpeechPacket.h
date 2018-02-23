@@ -31,9 +31,8 @@
 - (void)setPacketNumber:(long long)arg1;
 - (void)setPackets:(id)arg1;
 - (void)setRefId:(id)arg1;
-- (void)siriCore_addSendCompletion:(id /* block */)arg1;
 - (bool)siriCore_bufferingAllowedDuringActiveSession;
-- (void)siriCore_dispatchSendCompletionsWithResult:(long long)arg1 error:(id)arg2;
+- (bool)siriCore_canBeRemapped;
 - (void)siriCore_invokeThunk;
 - (bool)siriCore_isRestartable;
 - (bool)siriCore_isRetryable;
@@ -42,6 +41,5 @@
 - (id)siriCore_serializedAceDataError:(id*)arg1;
 - (void)siriCore_setSessionRequestId:(id)arg1;
 - (bool)siriCore_supportedByLocalSession;
-- (bool)siriCore_supportsSendCompletions;
 
 @end

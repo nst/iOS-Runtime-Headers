@@ -11,7 +11,7 @@
     bool  _applyOnCompletion;
     bool  _autoreverses;
     double  _beginTime;
-    id  _caAnimation;
+    id  _caAnimationCache;
     bool  _cumulative;
     bool  _didMutate;
     double  _duration;

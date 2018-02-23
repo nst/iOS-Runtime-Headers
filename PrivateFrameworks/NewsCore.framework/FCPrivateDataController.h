@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCPrivateDataController : NSObject <FCCKZonePruningAssistant, FCCKZoneRestorationSource, FCCommandQueueDelegate, FCPrivateRecordSyncManagerDelegate, FCPrivateZoneSyncManagerDelegate> {
+@interface FCPrivateDataController : NSObject <FCCKZonePruningAssistant, FCCKZoneRestorationSource, FCCommandQueueDelegate, FCJSONEncodableObjectProviding, FCPrivateRecordSyncManagerDelegate, FCPrivateZoneSyncManagerDelegate> {
     unsigned long long  _changeCount;
     FCCommandQueue * _commandQueue;
     FCCloudContext * _context;
@@ -43,6 +43,7 @@
 + (long long)commandQueueUrgency;
 + (id)commandStoreFileName;
 + (id)commandsToMergeLocalDataToCloud:(id)arg1;
++ (void)configureKeyValueStoreForJSONHandling:(id)arg1;
 + (id)desiredKeys;
 + (id)internalLocalStoreKeys;
 + (bool)isLocalStoreKeyInternal:(id)arg1;
@@ -84,6 +85,7 @@
 - (bool)isDirty;
 - (bool)isSyncingEnabled;
 - (bool)isWaitingForFirstSync;
+- (id)jsonEncodableObject;
 - (void)loadLocalCachesFromStore;
 - (id)localStore;
 - (void)manualDirty;

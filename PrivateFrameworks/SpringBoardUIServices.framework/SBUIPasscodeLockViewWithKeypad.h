@@ -22,8 +22,10 @@
 @property (getter=_undoInputOnTouchCancellation, setter=_setUndoInputOnTouchCancellation:, nonatomic) bool undoInputOnTouchCancellation;
 
 - (void).cxx_destruct;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_defaultEntryFieldPosition;
 - (double)_entryFieldBottomYDistanceFromNumberPadTopButton;
 - (bool)_includesStatusView;
+- (void)_layoutEntryField;
 - (void)_layoutStatusView;
 - (id)_newEntryField;
 - (id)_newStatusSubtitleView;
@@ -34,8 +36,8 @@
 - (void)_notifyDelegatePasscodeCancelled;
 - (void)_notifyDelegatePasscodeEntered;
 - (id)_numberPad;
-- (double)_numberPadOffsetFromTopOfScreen;
 - (id)_numericEntryFieldIfExists;
+- (double)_offsetForCenteringTitleAndEntryFieldFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withTopYvalue:(double)arg2 bottomYvalue:(double)arg3;
 - (void)_setHasInput:(bool)arg1;
 - (void)_setUndoInputOnTouchCancellation:(bool)arg1;
 - (id)_statusSubtitleView;

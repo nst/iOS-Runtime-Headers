@@ -4,9 +4,12 @@
 
 @interface AFMyriadCoordinator : NSObject <WPHeySiriProtocol> {
     bool  _BTLEReady;
+    AFMyriadEmergencyCallPunchout * _callPunchout;
+    struct __CFNotificationCenter { } * _center;
     bool  _clientIsDirectActivating;
     bool  _clientIsListeningAfterRecentWin;
     bool  _clientIsWatchActivation;
+    bool  _clientIsWatchTrumpPromote;
     bool  _clientLostDueToTrumping;
     bool  _clientRecentlyLostElection;
     bool  _coordinationEnabled;
@@ -15,16 +18,20 @@
     id  _delegate;
     NSUUID * _designatedSelfID;
     int  _deviceAdjust;
-    NSString * _deviceClass;
+    unsigned char  _deviceClass;
+    NSString * _deviceClassName;
+    double  _deviceDelay;
     unsigned char  _deviceGroup;
     bool  _ducking;
     WPHeySiri * _heySiriBTLE;
     bool  _inTask;
     BOOL  _incomingAdjustment;
+    NSMutableDictionary * _incomingTrumps;
     bool  _lastDecision;
     unsigned long long  _lastDecisionTime;
+    double  _lastEmergencyAttempt;
     unsigned short  _lastPHash;
-    NSDate * _lastSiriActivationTime;
+    double  _lastSiriActivationTime;
     bool  _listenTimerIsRunning;
     NSObject<OS_dispatch_queue> * _myriadReadinessQueue;
     unsigned long long  _myriadState;
@@ -36,7 +43,9 @@
     int  _nTimesExtended;
     unsigned long long  _nextState;
     AFPowerAssertionManager * _powerAssertionManager;
+    NSData * _previousAdvertisedData;
     unsigned long long  _previousState;
+    NSMutableDictionary * _previousTrumps;
     NSMutableDictionary * _replies;
     NSMutableDictionary * _replyCounts;
     bool  _supportsExtended;
@@ -45,6 +54,8 @@
     NSObject<OS_dispatch_source> * _timerSource;
     AFMyriadRecord * _triggerRecord;
     NSDate * _triggerTime;
+    unsigned long long  _voiceTriggerTime;
+    bool  _wasEmergency;
     NSObject<OS_dispatch_semaphore> * _wiproxReadinessSemaphore;
 }
 
@@ -65,14 +76,22 @@
 - (void)_advertiseSuppressTriggerInOutput;
 - (void)_advertiseTrigger;
 - (void)_advertiseWith:(id)arg1 afterDelay:(float)arg2 maxInterval:(float)arg3 thenExecute:(id /* block */)arg4;
+- (void)_ageWedgeFilter;
 - (void)_duringNextWindowEnterState:(unsigned long long)arg1;
 - (void)_duringNextWindowExecute:(id /* block */)arg1;
+- (id)_endAdvertisingAnalyticsContext:(bool)arg1;
+- (void)_endAdvertisingWithDeviceProhibitions:(id)arg1;
 - (void)_enterState:(unsigned long long)arg1;
+- (bool)_inTaskTriggerWasTooSoon;
 - (void)_initDeviceClassAndAdjustments;
+- (void)_initializeTimer;
+- (bool)_isAPhone:(unsigned char)arg1;
 - (bool)_okayToSuppressOnOutput;
 - (void)_resetActionWindows;
 - (void)_setupActionWindows;
 - (bool)_shouldContinueFor:(id)arg1;
+- (bool)_shouldHandleEmergency;
+- (void)_signalEmergencyCallHandled;
 - (id)_sortedReplies;
 - (void)_startAdvertisingFromVoiceTrigger;
 - (void)_startAdvertisingFromVoiceTriggerAdjusted:(BOOL)arg1;
@@ -83,10 +102,11 @@
 - (id)_stateAsString;
 - (id)_stateAsString:(unsigned long long)arg1;
 - (void)_stopAdvertisingAndListening;
+- (double)_targetDelayAfterTrigger:(unsigned long long)arg1;
+- (bool)_testAndUpdateWedgeFilter:(id)arg1;
 - (void)_unduck;
 - (void)_waitWiProx:(long long)arg1 andExecute:(id /* block */)arg2;
 - (void)_waitWiProxAndExecute:(id /* block */)arg1;
-- (void)_waitWiProxForeverAndExecute:(id /* block */)arg1;
 - (id)activityEventStream;
 - (void)advertiseWith:(id)arg1;
 - (void)advertiseWith:(id)arg1 afterDelay:(float)arg2 maxInterval:(float)arg3;
@@ -99,6 +119,7 @@
 - (void)endAdvertisingAfterDelay:(float)arg1;
 - (void)endAdvertisingWithDeviceProhibitions:(id)arg1;
 - (void)endTask;
+- (void)enterState:(unsigned long long)arg1;
 - (void)heySiri:(id)arg1 failedToStartAdvertisingWithError:(id)arg2;
 - (void)heySiri:(id)arg1 failedToStartScanningWithError:(id)arg2;
 - (void)heySiri:(id)arg1 foundDevice:(id)arg2 withData:(id)arg3;
@@ -112,10 +133,15 @@
 - (id)initWithDelegate:(id)arg1;
 - (id)lateSuppressionRecord;
 - (void)logCoreDuetResults:(id)arg1;
+- (void)preheatWiProx;
 - (unsigned short)recentEventBump;
 - (void)resetReplies;
 - (id)responseObject:(unsigned short)arg1;
+- (void)setInTask:(bool)arg1;
+- (void)setupAdvIntervalsInDelay:(float*)arg1 interval:(float*)arg2;
+- (void)setupEnabled:(bool)arg1;
 - (void)startAdvertising:(id)arg1 afterDelay:(float)arg2 maxInterval:(float)arg3;
+- (void)startAdvertisingEmergency;
 - (void)startAdvertisingEmergencyHandled;
 - (void)startAdvertisingFromDirectTrigger;
 - (void)startAdvertisingFromInTaskVoiceTrigger;
@@ -124,7 +150,9 @@
 - (void)startAdvertisingFromVoiceTriggerAdjusted:(BOOL)arg1;
 - (void)startListening;
 - (void)startResponseAdvertising:(unsigned short)arg1;
+- (void)startWatchAdvertisingFromDirectTrigger;
 - (void)startWatchAdvertisingFromVoiceTrigger;
+- (void)stopAdvertising;
 - (void)stopListening;
 - (id)voiceTriggerRecord;
 

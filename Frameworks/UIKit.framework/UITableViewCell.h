@@ -275,7 +275,7 @@
 - (struct CGSize { double x1; double x2; })_imageInsetSize;
 - (id)_imageView;
 - (id)_imageView:(bool)arg1;
-- (double)_imageViewTrailingX;
+- (double)_imageViewExtentFromCellLeadingEdge;
 - (double)_indexBarExtentFromEdge;
 - (id)_indexPath;
 - (bool)_insetsBackground;
@@ -677,7 +677,6 @@
 - (void)hu_configureCheckmarkForImageView:(id)arg1 checked:(bool)arg2;
 - (id)hu_forcedSeparatorStyle;
 - (void)hu_setForcedSeparatorStyle:(id)arg1;
-- (void)hu_setSelectedBackgroundColor:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/ManagedConfigurationUI.framework/ManagedConfigurationUI
 

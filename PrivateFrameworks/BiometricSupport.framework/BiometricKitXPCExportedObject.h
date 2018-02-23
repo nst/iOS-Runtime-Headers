@@ -30,8 +30,10 @@
 - (void)enableBackgroundFdet:(bool)arg1 client:(unsigned long long)arg2 replyBlock:(id /* block */)arg3;
 - (void)enroll:(int)arg1 user:(unsigned int)arg2 options:(id)arg3 client:(unsigned long long)arg4 replyBlock:(id /* block */)arg5;
 - (void)enrollContinue:(unsigned long long)arg1 replyBlock:(id /* block */)arg2;
+- (void)fieldDiagnosticsControl:(unsigned int)arg1 inData:(id)arg2 client:(unsigned long long)arg3 replyBlock:(id /* block */)arg4;
 - (void)fileRadarWithLogs:(id)arg1 description:(id)arg2 client:(unsigned long long)arg3 replyBlock:(id /* block */)arg4;
 - (void)forceBioLockoutForUser:(unsigned int)arg1 options:(id)arg2 client:(unsigned long long)arg3 replyBlock:(id /* block */)arg4;
+- (void)getAugmentationEligibilityForIdentity:(id)arg1 client:(unsigned long long)arg2 replyBlock:(id /* block */)arg3;
 - (void)getBioLockoutStateForUser:(unsigned int)arg1 client:(unsigned long long)arg2 replyBlock:(id /* block */)arg3;
 - (void)getBiometryAvailabilityForUser:(unsigned int)arg1 client:(unsigned long long)arg2 replyBlock:(id /* block */)arg3;
 - (void)getCalibrationDataInfo:(unsigned long long)arg1 replyBlock:(id /* block */)arg2;
@@ -62,6 +64,7 @@
 - (void)pullCaptureBuffer:(unsigned long long)arg1 replyBlock:(id /* block */)arg2;
 - (void)pullDebugImageData:(bool)arg1 rotated:(bool)arg2 client:(unsigned long long)arg3 replyBlock:(id /* block */)arg4;
 - (void)pullMatchPolicyInfoData:(unsigned long long)arg1 replyBlock:(id /* block */)arg2;
+- (void)queryIdentityMigrationFailureForUser:(unsigned int)arg1 clear:(bool)arg2 client:(unsigned long long)arg3 replyBlock:(id /* block */)arg4;
 - (void)registerDSID:(unsigned long long)arg1 options:(id)arg2 client:(unsigned long long)arg3 replyBlock:(id /* block */)arg4;
 - (void)registerDelegate:(bool)arg1 client:(unsigned long long)arg2 replyBlock:(id /* block */)arg3;
 - (void)registerStoreToken:(id)arg1 client:(unsigned long long)arg2 replyBlock:(id /* block */)arg3;

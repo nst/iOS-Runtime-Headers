@@ -21,6 +21,7 @@
 @property (nonatomic, readonly) bool hasLocalContent;
 @property (nonatomic, readonly) bool isAutomaticallyEvictable;
 @property (nonatomic, readonly) bool isDownloadRequested;
+@property (nonatomic, readonly) bool isDownloadRequestedForThumbnail;
 @property (nonatomic, readonly) bool isEvictable;
 @property (nonatomic, readonly) bool isVisibleIniCloudDrive;
 @property (nonatomic, retain) NSSet *liveConflictLoserEtags;
@@ -89,6 +90,7 @@
 - (bool)isAutomaticallyEvictable;
 - (bool)isDocument;
 - (bool)isDownloadRequested;
+- (bool)isDownloadRequestedForThumbnail;
 - (bool)isEvictable;
 - (bool)isFault;
 - (bool)isPackage;
@@ -101,7 +103,7 @@
 - (void)markForceNeedsSyncUp;
 - (void)markForceUpload;
 - (void)markItemForgottenByServer;
-- (void)markLatestRequestAcknowledgedInZone:(id)arg1;
+- (bool)markLatestRequestAcknowledgedInZone:(id)arg1;
 - (void)markLatestSyncRequestRejectedInZone:(id)arg1;
 - (void)markLiveFromStageWithPath:(id)arg1;
 - (void)markNeedsReading;

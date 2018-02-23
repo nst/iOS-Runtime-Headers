@@ -32,6 +32,7 @@
 - (void).cxx_destruct;
 - (void)_deactivateAndExitWithStatus:(int)arg1;
 - (void)_dumpState;
+- (void)_enableICloudBackups;
 - (void)_exitWithStatus:(int)arg1;
 - (void)_finishInitializationWithDataAvailable;
 - (void)_handleXPCConnection:(id)arg1;

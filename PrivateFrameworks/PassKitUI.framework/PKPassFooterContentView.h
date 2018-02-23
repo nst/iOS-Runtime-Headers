@@ -34,6 +34,7 @@
 - (void)didBecomeVisibleAnimated:(bool)arg1;
 - (id)infoButton;
 - (id)initWithStyle:(long long)arg1 pass:(id)arg2;
+- (void)invalidate;
 - (bool)isPassAuthorized;
 - (bool)isUserIntentRequired;
 - (void)layoutSubviews;

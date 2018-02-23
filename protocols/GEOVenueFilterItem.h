@@ -5,6 +5,7 @@
 
 @required
 
+- (bool)describesParentVenue;
 - (<GEOVenueIdentifier> *)filterID;
 - (<GEOVenueLabel> *)label;
 

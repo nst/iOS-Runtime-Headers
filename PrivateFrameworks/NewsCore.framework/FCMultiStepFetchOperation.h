@@ -3,12 +3,12 @@
  */
 
 @interface FCMultiStepFetchOperation : FCFetchOperation {
-    FCMutexLock * _accessLock;
+    NFMutexLock * _accessLock;
     NSMutableArray * _stepResults;
     NSMutableArray * _steps;
 }
 
-@property (nonatomic, retain) FCMutexLock *accessLock;
+@property (nonatomic, retain) NFMutexLock *accessLock;
 @property (nonatomic, retain) NSMutableArray *stepResults;
 @property (nonatomic, retain) NSMutableArray *steps;
 

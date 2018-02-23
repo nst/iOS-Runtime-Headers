@@ -4,11 +4,11 @@
 
 @interface FCOnceOperation : NSObject {
     bool  _finished;
-    FCMutexLock * _lock;
+    NFMutexLock * _lock;
 }
 
 @property (nonatomic) bool finished;
-@property (nonatomic, retain) FCMutexLock *lock;
+@property (nonatomic, retain) NFMutexLock *lock;
 
 - (void).cxx_destruct;
 - (void)executeOnce:(id /* block */)arg1;

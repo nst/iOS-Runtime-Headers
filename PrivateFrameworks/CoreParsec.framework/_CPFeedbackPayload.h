@@ -8,7 +8,9 @@
     _CPCardSectionFeedback * _cardSectionFeedback;
     _CPCardViewAppearFeedback * _cardViewAppearFeedback;
     _CPCardViewDisappearFeedback * _cardViewDisappearFeedback;
+    _CPCBAEngagementFeedback * _cbaEngagementFeedback;
     _CPClearInputFeedback * _clearInputFeedback;
+    _CPClientTimingFeedback * _clientTimingFeedback;
     _CPConnectionInvalidatedFeedback * _connectionInvalidatedFeedback;
     _CPCustomFeedback * _customFeedback;
     _CPDidGoToSearchFeedback * _didGoToSearchFeedback;
@@ -51,7 +53,9 @@
 @property (nonatomic, retain) _CPCardSectionFeedback *cardSectionFeedback;
 @property (nonatomic, retain) _CPCardViewAppearFeedback *cardViewAppearFeedback;
 @property (nonatomic, retain) _CPCardViewDisappearFeedback *cardViewDisappearFeedback;
+@property (nonatomic, retain) _CPCBAEngagementFeedback *cbaEngagementFeedback;
 @property (nonatomic, retain) _CPClearInputFeedback *clearInputFeedback;
+@property (nonatomic, retain) _CPClientTimingFeedback *clientTimingFeedback;
 @property (nonatomic, readonly) PBCodable<_CPProcessableFeedback> *codable;
 @property (nonatomic, retain) _CPConnectionInvalidatedFeedback *connectionInvalidatedFeedback;
 @property (nonatomic, retain) _CPCustomFeedback *customFeedback;
@@ -69,7 +73,9 @@
 @property (nonatomic, readonly) bool hasCardSectionFeedback;
 @property (nonatomic, readonly) bool hasCardViewAppearFeedback;
 @property (nonatomic, readonly) bool hasCardViewDisappearFeedback;
+@property (nonatomic, readonly) bool hasCbaEngagementFeedback;
 @property (nonatomic, readonly) bool hasClearInputFeedback;
+@property (nonatomic, readonly) bool hasClientTimingFeedback;
 @property (nonatomic, readonly) bool hasConnectionInvalidatedFeedback;
 @property (nonatomic, readonly) bool hasCustomFeedback;
 @property (nonatomic, readonly) bool hasDidGoToSearchFeedback;
@@ -141,7 +147,9 @@
 - (id)cardSectionFeedback;
 - (id)cardViewAppearFeedback;
 - (id)cardViewDisappearFeedback;
+- (id)cbaEngagementFeedback;
 - (id)clearInputFeedback;
+- (id)clientTimingFeedback;
 - (id)codable;
 - (id)connectionInvalidatedFeedback;
 - (id)customFeedback;
@@ -158,7 +166,9 @@
 - (bool)hasCardSectionFeedback;
 - (bool)hasCardViewAppearFeedback;
 - (bool)hasCardViewDisappearFeedback;
+- (bool)hasCbaEngagementFeedback;
 - (bool)hasClearInputFeedback;
+- (bool)hasClientTimingFeedback;
 - (bool)hasConnectionInvalidatedFeedback;
 - (bool)hasCustomFeedback;
 - (bool)hasDidGoToSearchFeedback;
@@ -223,7 +233,9 @@
 - (void)setCardSectionFeedback:(id)arg1;
 - (void)setCardViewAppearFeedback:(id)arg1;
 - (void)setCardViewDisappearFeedback:(id)arg1;
+- (void)setCbaEngagementFeedback:(id)arg1;
 - (void)setClearInputFeedback:(id)arg1;
+- (void)setClientTimingFeedback:(id)arg1;
 - (void)setConnectionInvalidatedFeedback:(id)arg1;
 - (void)setCustomFeedback:(id)arg1;
 - (void)setDidGoToSearchFeedback:(id)arg1;

@@ -5,7 +5,7 @@
 
 @required
 
-- (void)airportSettingsViewController:(WFAirportViewController *)arg1 setAutoJoinEnabled:(bool)arg2;
+- (void)airportSettingsViewController:(WFAirportViewController *)arg1 setAskToJoinEnabled:(bool)arg2;
 - (NSString *)airportSettingsViewController:(WFAirportViewController *)arg1 unconfiguredAccessoriesGroupHeaderTitle:(NSArray *)arg2;
 - (long long)airportSettingsViewControllerAskToJoinStatus:(WFAirportViewController *)arg1;
 - (bool)airportSettingsViewControllerCurrentNetworkConnectionIsProblematic:(WFAirportViewController *)arg1;

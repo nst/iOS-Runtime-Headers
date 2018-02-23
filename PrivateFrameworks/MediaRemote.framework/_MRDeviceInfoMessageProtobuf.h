@@ -20,6 +20,7 @@
         unsigned int supportsSystemPairing : 1; 
     }  _has;
     unsigned int  _lastSupportedMessageType;
+    NSString * _localReceiverPairingIdentity;
     NSString * _localizedModelName;
     NSString * _name;
     unsigned long long  _protocolVersion;
@@ -44,6 +45,7 @@
 @property (nonatomic, readonly) bool hasBluetoothAddress;
 @property (nonatomic) bool hasConnected;
 @property (nonatomic) bool hasLastSupportedMessageType;
+@property (nonatomic, readonly) bool hasLocalReceiverPairingIdentity;
 @property (nonatomic, readonly) bool hasLocalizedModelName;
 @property (nonatomic, readonly) bool hasName;
 @property (nonatomic) bool hasProtocolVersion;
@@ -56,6 +58,7 @@
 @property (nonatomic, readonly) bool hasSystemMediaApplication;
 @property (nonatomic, readonly) bool hasUniqueIdentifier;
 @property (nonatomic) unsigned int lastSupportedMessageType;
+@property (nonatomic, retain) NSString *localReceiverPairingIdentity;
 @property (nonatomic, retain) NSString *localizedModelName;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic) unsigned long long protocolVersion;
@@ -84,6 +87,7 @@
 - (bool)hasBluetoothAddress;
 - (bool)hasConnected;
 - (bool)hasLastSupportedMessageType;
+- (bool)hasLocalReceiverPairingIdentity;
 - (bool)hasLocalizedModelName;
 - (bool)hasName;
 - (bool)hasProtocolVersion;
@@ -98,6 +102,7 @@
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
 - (unsigned int)lastSupportedMessageType;
+- (id)localReceiverPairingIdentity;
 - (id)localizedModelName;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
@@ -118,6 +123,7 @@
 - (void)setHasSupportsSharedQueue:(bool)arg1;
 - (void)setHasSupportsSystemPairing:(bool)arg1;
 - (void)setLastSupportedMessageType:(unsigned int)arg1;
+- (void)setLocalReceiverPairingIdentity:(id)arg1;
 - (void)setLocalizedModelName:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setProtocolVersion:(unsigned long long)arg1;

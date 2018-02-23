@@ -116,6 +116,7 @@
 - (void)setClippingPath:(id)arg1;
 - (void)setColorMap:(id)arg1 fillMap:(id)arg2;
 - (int)setMapMode:(int)arg1;
+- (void)setMaximumObjectTableSize:(unsigned int)arg1;
 - (int)setMetaRgn;
 - (int)setMiterLimit:(double)arg1;
 - (int)setPaletteEntries:(unsigned int)arg1 in_colours:(id)arg2 in_index:(unsigned int)arg3;

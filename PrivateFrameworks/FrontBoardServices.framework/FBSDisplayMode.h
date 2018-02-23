@@ -4,6 +4,7 @@
 
 @interface FBSDisplayMode : NSObject <BSXPCCoding, NSCopying, NSSecureCoding> {
     long long  _gamut;
+    long long  _hdr;
     unsigned long long  _height;
     unsigned long long  _preferredScale;
     double  _refreshRate;
@@ -16,6 +17,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long hdrMode;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } pixelSize;
 @property (nonatomic, readonly) double refreshRate;
 @property (nonatomic, readonly) double scale;
@@ -26,13 +28,15 @@
 + (bool)supportsSecureCoding;
 
 - (id)_caColorGamut;
+- (id)_caHDRMode;
 - (unsigned long long)_caHeight;
 - (unsigned long long)_caPreferredScale;
 - (double)_caRefreshRate;
 - (unsigned long long)_caWidth;
 - (unsigned long long)_height;
 - (id)_initWithCADisplayMode:(id)arg1 scale:(double)arg2 rotation:(long long)arg3;
-- (id)_initWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 preferredScale:(unsigned long long)arg3 scaleOverride:(double)arg4 refreshRate:(double)arg5 gamut:(long long)arg6 rotation:(long long)arg7 validityCheck:(long long)arg8;
+- (id)_initWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 preferredScale:(unsigned long long)arg3 scaleOverride:(double)arg4 refreshRate:(double)arg5 gamut:(long long)arg6 hdr:(long long)arg7 rotation:(long long)arg8 validityCheck:(long long)arg9;
+- (id)_initWithWidth:(unsigned long long)arg1 height:(unsigned long long)arg2 scale:(unsigned long long)arg3 refreshRate:(double)arg4 gamut:(long long)arg5 hdr:(long long)arg6;
 - (id)_referenceSizeDescription;
 - (long long)_rotation;
 - (unsigned long long)_width;
@@ -42,6 +46,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (unsigned long long)hash;
+- (long long)hdrMode;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;

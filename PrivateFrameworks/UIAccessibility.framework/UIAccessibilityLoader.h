@@ -18,7 +18,6 @@
 + (void)_accessibilityStartServer;
 + (void)_accessibilityStopServer;
 + (bool)_accessibilityUIKitBundleLoaded;
-+ (void)_applicationAccessibilityListener:(id)arg1;
 + (id)_axBundleForBundle:(id)arg1;
 + (void)_loadAXBundleForBundle:(id)arg1 didLoadCallback:(id /* block */)arg2;
 + (void)_loadAXBundleForBundle:(id)arg1 didLoadCallback:(id /* block */)arg2 forceLoad:(bool)arg3 loadSubbundles:(bool)arg4 loadAllAccessibilityInfo:(bool)arg5;

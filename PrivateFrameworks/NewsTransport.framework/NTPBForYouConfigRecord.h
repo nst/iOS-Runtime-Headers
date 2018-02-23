@@ -9,6 +9,7 @@
     NSString * _coverArticlesArticleListID;
     NSMutableArray * _editorialArticleListIDs;
     NSMutableArray * _editorialSectionTagIDs;
+    NSMutableArray * _specialEventArticleIDs;
     NSMutableArray * _topStoriesCombinedArticleIDs;
     NSString * _trendingArticleListID;
 }
@@ -23,17 +24,20 @@
 @property (nonatomic, readonly) bool hasConfiguration;
 @property (nonatomic, readonly) bool hasCoverArticlesArticleListID;
 @property (nonatomic, readonly) bool hasTrendingArticleListID;
+@property (nonatomic, retain) NSMutableArray *specialEventArticleIDs;
 @property (nonatomic, retain) NSMutableArray *topStoriesCombinedArticleIDs;
 @property (nonatomic, retain) NSString *trendingArticleListID;
 
 + (Class)breakingNewsArticleIDsType;
 + (Class)editorialArticleListIDsType;
 + (Class)editorialSectionTagIDsType;
++ (Class)specialEventArticleIDsType;
 + (Class)topStoriesCombinedArticleIDsType;
 
 - (void)addBreakingNewsArticleIDs:(id)arg1;
 - (void)addEditorialArticleListIDs:(id)arg1;
 - (void)addEditorialSectionTagIDs:(id)arg1;
+- (void)addSpecialEventArticleIDs:(id)arg1;
 - (void)addTopStoriesCombinedArticleIDs:(id)arg1;
 - (id)base;
 - (id)breakingNewsArticleIDs;
@@ -42,6 +46,7 @@
 - (void)clearBreakingNewsArticleIDs;
 - (void)clearEditorialArticleListIDs;
 - (void)clearEditorialSectionTagIDs;
+- (void)clearSpecialEventArticleIDs;
 - (void)clearTopStoriesCombinedArticleIDs;
 - (id)configuration;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -69,8 +74,12 @@
 - (void)setCoverArticlesArticleListID:(id)arg1;
 - (void)setEditorialArticleListIDs:(id)arg1;
 - (void)setEditorialSectionTagIDs:(id)arg1;
+- (void)setSpecialEventArticleIDs:(id)arg1;
 - (void)setTopStoriesCombinedArticleIDs:(id)arg1;
 - (void)setTrendingArticleListID:(id)arg1;
+- (id)specialEventArticleIDs;
+- (id)specialEventArticleIDsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)specialEventArticleIDsCount;
 - (id)topStoriesCombinedArticleIDs;
 - (id)topStoriesCombinedArticleIDsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)topStoriesCombinedArticleIDsCount;

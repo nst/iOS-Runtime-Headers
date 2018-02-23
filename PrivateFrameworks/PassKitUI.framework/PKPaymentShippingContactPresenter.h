@@ -10,6 +10,6 @@
 @property (readonly) Class superclass;
 
 + (id)_valueForItem:(id)arg1;
-+ (void)presentCell:(id)arg1 withDataItem:(id)arg2 shouldShowSeperator:(bool)arg3;
++ (void)presentCell:(id)arg1 withDataItem:(id)arg2 shouldShowSeperator:(bool)arg3 forPaymentRequest:(id)arg4;
 
 @end

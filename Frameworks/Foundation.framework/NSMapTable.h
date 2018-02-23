@@ -93,7 +93,7 @@
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
-- (id)nf_objectsForKeys:(id)arg1;
+- (id)fc_objectsForKeys:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 

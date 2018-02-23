@@ -130,7 +130,7 @@
                     unsigned int first_party : 1; 
                     unsigned int __pad_bits : 6; 
                     unsigned char __pad[6]; 
-                } connection_attempts[10]; 
+                } connection_attempts[8]; 
                 int report_reason; 
                 unsigned int ip_address_attempt_count; 
             } legacy; 
@@ -197,7 +197,8 @@
                 unsigned int used_tfo : 1; 
                 unsigned int tls_version_timeout : 1; 
                 unsigned int first_party : 1; 
-                unsigned int __pad_bits : 5; 
+                unsigned int tls13_configured : 1; 
+                unsigned int __pad_bits : 4; 
                 unsigned char __pad[3]; 
             } nw_connection_report; 
         } u; 
@@ -252,6 +253,8 @@
 @property (nonatomic, readonly) unsigned int timeToConnectionStartMsecs;
 @property (nonatomic, readonly) unsigned int timeToDnsResolvedMsecs;
 @property (nonatomic, readonly) unsigned int timeToDnsStartMsecs;
+@property (nonatomic, readonly) bool tls13Configured;
+@property (nonatomic, readonly) bool tlsSucceeded;
 @property (nonatomic, readonly) unsigned int trafficClass;
 
 - (void).cxx_destruct;
@@ -308,6 +311,8 @@
 - (unsigned int)timeToConnectionStartMsecs;
 - (unsigned int)timeToDnsResolvedMsecs;
 - (unsigned int)timeToDnsStartMsecs;
+- (bool)tls13Configured;
+- (bool)tlsSucceeded;
 - (unsigned int)trafficClass;
 
 @end

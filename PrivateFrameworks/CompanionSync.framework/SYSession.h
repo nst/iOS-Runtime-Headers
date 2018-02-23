@@ -54,6 +54,8 @@
 @property (readonly) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, retain) NSString *reason;
 @property (nonatomic, readonly) double remainingSessionTime;
+@property (nonatomic, readonly) unsigned long long sentChangeByteCount;
+@property (nonatomic, readonly) unsigned long long sentChangeCount;
 @property (nonatomic, retain) <SYChangeSerializer> *serializer;
 @property (nonatomic, readonly) SYService *service;
 @property (nonatomic, copy) NSDictionary *sessionMetadata;
@@ -126,6 +128,8 @@
 - (id)queue;
 - (id)reason;
 - (double)remainingSessionTime;
+- (unsigned long long)sentChangeByteCount;
+- (unsigned long long)sentChangeCount;
 - (id)serializer;
 - (id)service;
 - (id)sessionMetadata;

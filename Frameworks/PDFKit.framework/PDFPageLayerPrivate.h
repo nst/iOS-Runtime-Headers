@@ -4,6 +4,7 @@
 
 @interface PDFPageLayerPrivate : NSObject {
     bool  allowUpdate;
+    CALayer * effectsLayer;
     PDFTimer * forcedUpdateTimer;
     int  generationCount;
     NSObject<PDFPageLayerGeometryInterface> * geometryInterface;

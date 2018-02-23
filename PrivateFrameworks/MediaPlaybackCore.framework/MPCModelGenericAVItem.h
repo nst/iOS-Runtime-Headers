@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
  */
 
-@interface MPCModelGenericAVItem : MPAVItem <AVAssetResourceLoaderDelegate, AVPlayerItemMetadataOutputPushDelegate, MPMusicSubscriptionLeasePlaybackParticipating, MPRTCReportingItemSessionCreating> {
+@interface MPCModelGenericAVItem : MPAVItem <AVAssetResourceLoaderDelegate, AVPlayerItemMetadataOutputPushDelegate, ICEnvironmentMonitorObserver, MPMusicSubscriptionLeasePlaybackParticipating, MPRTCReportingItemSessionCreating> {
     NSObject<OS_dispatch_queue> * _accessQueue;
     bool  _allowsAirPlayFromCloud;
     <MPCModelPlaybackAssetCacheProviding> * _assetCacheProvider;
     NSString * _assetSourceStoreFrontID;
     NSNumber * _bookmarkTime;
     NSArray * _currentGlobalTimedMetadataGroups;
+    bool  _didDeferPreventionStatusUpdate;
     long long  _equivalencySourceAdamID;
     id /* block */  _firstBecomeActivePlayerItemBlock;
     MPModelGenericObject * _flattenedGenericObject;
@@ -20,15 +21,16 @@
     bool  _isAssetSubscriptionProtectionType;
     bool  _isAutomaticallyRefreshingSuzeLeaseSession;
     bool  _isHLSAsset;
+    bool  _isMusicCellularStreamingAllowed;
     bool  _isSubscriptionPolicyContent;
     bool  _isiTunesStoreStream;
     MPPropertySet * _itemProperties;
     NSData * _jingleTimedMetadata;
     bool  _lastPreparedForNonZeroRate;
     long long  _leasePlaybackPreventionState;
+    NSNumber * _maximumSizeAllowedForCellularAccess;
     MPMediaLibrary * _mediaLibrary;
     MPModelGenericObject * _metadataGenericObject;
-    MPCAVItemNetworkPolicyHandler * _networkPolicyHandler;
     MPCPlaybackRequestEnvironment * _playbackRequestEnvironment;
     bool  _radioPlayback;
     bool  _radioStreamPlayback;
@@ -40,11 +42,13 @@
     ICStoreRequestContext * _storeRequestContext;
     NSURL * _streamingKeyCertificateURL;
     NSURL * _streamingKeyServerURL;
+    long long  _subscriptionLeaseRequestCount;
     ICMusicSubscriptionLeaseSession * _subscriptionLeaseSession;
     NSObject<OS_dispatch_queue> * _subscriptionLeaseSessionLoadQueue;
     MPSubscriptionStatusPlaybackInformation * _subscriptionPlaybackInformation;
     NSObject<OS_dispatch_queue> * _subscriptionPlaybackInformationLoadQueue;
     MPCSuzeLeaseSession * _suzeLeaseSession;
+    NSOperationQueue * _timedMetadataOperationQueue;
     MPCModelGenericAVItemTimedMetadataRequest * _timedMetadataRequest;
     MPCModelGenericAVItemTimedMetadataResponse * _timedMetadataResponse;
     NSOperationQueue * _utilitySerialQueue;
@@ -73,9 +77,15 @@
 @property (readonly) Class superclass;
 @property (nonatomic) bool supportsRadioTrackActions;
 
++ (bool)_prefersHighQualityAudioContentForNetworkType:(long long)arg1;
++ (bool)_prefersHighQualityVideoContentForNetworkType:(long long)arg1;
+
 - (void).cxx_destruct;
+- (bool)_allowsAssetCaching;
+- (void)_allowsHighQualityMusicStreamingOnCellularDidChangeNotification:(id)arg1;
 - (bool)_allowsStreamingPlayback;
 - (void)_applyLoudnessInfo;
+- (void)_applyPreferredPeakBitRateToPlayerItem:(id)arg1 withItemType:(long long)arg2;
 - (id)_bookmarkTime;
 - (void)_contentTasteControllerDidChangeNotification:(id)arg1;
 - (void)_currentPlaybackRateDidChange:(float)arg1;
@@ -83,7 +93,6 @@
 - (void)_getUnverifiedSubscriptionLeaseSessionWithCompletion:(id /* block */)arg1;
 - (void)_handlePlaybackFinishedTime:(double)arg1 didFinishByHittingEnd:(bool)arg2;
 - (void)_handleUpdatedLikedState:(long long)arg1 completion:(id /* block */)arg2;
-- (id)_householdID;
 - (void)_invalidateContentItem;
 - (id)_isPrivateListeningEnabled;
 - (id)_modelPlaybackPosition;
@@ -124,6 +133,7 @@
 - (id)artworkTimeMarkers;
 - (id)assetCacheProvider;
 - (id)assetSourceStoreFrontID;
+- (id)bookmarkTime;
 - (id)chapterTimeMarkers;
 - (id)cloudAlbumID;
 - (unsigned long long)cloudID;
@@ -134,6 +144,7 @@
 - (void)dealloc;
 - (id)description;
 - (double)durationFromExternalMetadata;
+- (void)environmentMonitorDidChangeNetworkType:(id)arg1;
 - (long long)equivalencySourceAdamID;
 - (id)externalContentIdentifier;
 - (id)genericObject;
@@ -162,7 +173,6 @@
 - (void)metadataOutput:(id)arg1 didOutputTimedMetadataGroups:(id)arg2 fromPlayerItemTrack:(id)arg3;
 - (id)modelGenericObject;
 - (long long)mpcReporting_equivalencySourceAdamID;
-- (id)mpcReporting_householdID;
 - (id)mpcReporting_identityPropertiesLoader;
 - (unsigned long long)mpcReporting_itemType;
 - (id)mpcReporting_jingleTimedMetadata;
@@ -175,6 +185,7 @@
 - (void)notePlaybackFinishedByHittingEnd;
 - (void)nowPlayingInfoCenter:(id)arg1 lyricsForContentItem:(id)arg2 completion:(id /* block */)arg3;
 - (unsigned long long)persistentID;
+- (id)playbackError;
 - (id)playbackInfo;
 - (id)playbackRequestEnvironment;
 - (bool)prefersSeekOverSkip;

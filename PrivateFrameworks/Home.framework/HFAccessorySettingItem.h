@@ -3,17 +3,17 @@
  */
 
 @interface HFAccessorySettingItem : HFItem <HFAccessorySettingItemProtocol> {
-    HMAccessoryProfile<HFAccessorySettings> * _accessoryProfile;
     HFAccessorySettingsEntity * _entity;
+    <HFMediaProfileContainer> * _mediaProfileContainer;
     HMAccessorySetting * _setting;
 }
 
-@property (nonatomic, retain) HMAccessoryProfile<HFAccessorySettings> *accessoryProfile;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) HFAccessorySettingsEntity *entity;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <HFHomeKitObject> *homeKitObject;
+@property (nonatomic, retain) <HFMediaProfileContainer> *mediaProfileContainer;
 @property (nonatomic, retain) HMAccessorySetting *setting;
 @property (nonatomic, readonly) NSString *settingKeyPath;
 @property (readonly) Class superclass;
@@ -25,13 +25,13 @@
 - (void)_decorateOutcomeWithResultKeys:(id)arg1;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (bool)_validateKeyPathDependencies;
-- (id)accessoryProfile;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)entity;
 - (id)homeKitObject;
-- (id)initWithAccessoryProfile:(id)arg1 setting:(id)arg2;
-- (void)setAccessoryProfile:(id)arg1;
+- (id)initWithMediaProfileContainer:(id)arg1 setting:(id)arg2;
+- (id)mediaProfileContainer;
 - (void)setEntity:(id)arg1;
+- (void)setMediaProfileContainer:(id)arg1;
 - (void)setSetting:(id)arg1;
 - (id)setting;
 - (id)settingKeyPath;

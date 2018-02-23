@@ -3,11 +3,13 @@
  */
 
 @interface HUQuickControlSimpleInteractionCoordinator : HUQuickControlInteractionCoordinator <HUQuickControlViewInteractionDelegate> {
+    UIViewController<HUQuickControlInteractiveViewController> * _contraptionViewController;
     bool  _hasStartedSecondTouch;
     bool  _shouldDismissAutomatically;
     id  _value;
 }
 
+@property (nonatomic, readonly) UIViewController<HUQuickControlInteractiveViewController> *contraptionViewController;
 @property (nonatomic, readonly) UIView<HUQuickControlInteractiveView> *controlView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -20,9 +22,11 @@
 - (void)_requestDismissalIfNecessary;
 - (void)_setValue:(id)arg1 notifyDelegate:(bool)arg2 updateControlView:(bool)arg3;
 - (void)beginUserInteractionWithFirstTouchGestureRecognizer:(id)arg1;
+- (id)contraptionViewController;
 - (void)controlView:(id)arg1 interactionStateDidChange:(bool)arg2 forFirstTouch:(bool)arg3;
 - (void)controlView:(id)arg1 valueDidChange:(id)arg2;
 - (bool)hasStartedSecondTouch;
+- (id)initWithContraptionViewController:(id)arg1 delegate:(id)arg2;
 - (id)initWithControlView:(id)arg1 delegate:(id)arg2;
 - (bool)isUserInteractionActive;
 - (bool)isUserInteractionEnabled;

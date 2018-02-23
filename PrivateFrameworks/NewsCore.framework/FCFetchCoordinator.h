@@ -3,7 +3,7 @@
  */
 
 @interface FCFetchCoordinator : NSObject <FCOperationThrottlerDelegate> {
-    FCMutexLock * _accessLock;
+    NFMutexLock * _accessLock;
     NSCountedSet * _allKeys;
     <FCFetchCoordinatorDelegate> * _delegate;
     NSHashTable * _fetchGroups;
@@ -12,7 +12,7 @@
     unsigned long long  _maxConcurrentFetchCount;
 }
 
-@property (nonatomic, retain) FCMutexLock *accessLock;
+@property (nonatomic, retain) NFMutexLock *accessLock;
 @property (nonatomic, retain) NSCountedSet *allKeys;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FCFetchCoordinatorDelegate> *delegate;

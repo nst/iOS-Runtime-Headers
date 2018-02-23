@@ -8,10 +8,12 @@
 - (void)addImages:(_SFPBImage *)arg1;
 - (void)addPunchoutOptions:(_SFPBPunchout *)arg1;
 - (_SFPBColor *)backgroundColor;
+- (bool)borderless;
 - (bool)canBeHidden;
 - (void)clearImages;
 - (void)clearPunchoutOptions;
 - (bool)hasBackgroundColor;
+- (bool)hasBorderless;
 - (bool)hasBottomPadding;
 - (bool)hasCanBeHidden;
 - (bool)hasHasBottomPadding;
@@ -34,6 +36,7 @@
 - (NSString *)punchoutPickerTitle;
 - (int)separatorStyle;
 - (void)setBackgroundColor:(_SFPBColor *)arg1;
+- (void)setBorderless:(bool)arg1;
 - (void)setCanBeHidden:(bool)arg1;
 - (void)setHasBottomPadding:(bool)arg1;
 - (void)setHasTopPadding:(bool)arg1;

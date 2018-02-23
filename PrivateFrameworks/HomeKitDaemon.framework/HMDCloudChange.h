@@ -22,6 +22,7 @@
 @property (nonatomic, readonly) NSSet *dependentUUIDs;
 @property (readonly, copy) NSString *description;
 @property (getter=isDropAfterApply, nonatomic, readonly) bool dropAfterApply;
+@property (getter=isDropAndDoNotApply, nonatomic, readonly) bool dropAndDoNotApply;
 @property (getter=isDropStagedAfterApply, nonatomic, readonly) bool dropStagedAfterApply;
 @property (readonly) unsigned long long hash;
 @property (getter=isInvalid, nonatomic, readonly) bool invalidChange;
@@ -54,6 +55,7 @@
 - (bool)isAdded;
 - (bool)isDeleted;
 - (bool)isDropAfterApply;
+- (bool)isDropAndDoNotApply;
 - (bool)isDropStagedAfterApply;
 - (bool)isInvalid;
 - (bool)isPushAfterApply;
@@ -63,6 +65,7 @@
 - (id)record;
 - (id)recordID;
 - (void)replayChange:(id)arg1 stagedChange:(id)arg2;
+- (void)resetRecord;
 - (id)rowIDs;
 - (id)rowIDsSet;
 - (void)setApplyType:(unsigned long long)arg1;

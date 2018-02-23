@@ -5,6 +5,7 @@
 @interface MPCPlaybackDelegationProperties : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     NSString * _deviceGUID;
     NSString * _deviceName;
+    MPCPrivateListeningStateSource * _privateListeningStateSource;
     NSString * _requestUserAgent;
     unsigned long long  _storeAccountID;
     long long  _systemReleaseType;
@@ -13,6 +14,7 @@
 
 @property (nonatomic, readonly, copy) NSString *deviceGUID;
 @property (nonatomic, readonly, copy) NSString *deviceName;
+@property (nonatomic, readonly, copy) MPCPrivateListeningStateSource *privateListeningStateSource;
 @property (nonatomic, readonly, copy) NSString *requestUserAgent;
 @property (nonatomic, readonly) unsigned long long storeAccountID;
 @property (nonatomic, readonly) long long systemReleaseType;
@@ -27,8 +29,9 @@
 - (id)deviceName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithStoreAccountID:(unsigned long long)arg1 deviceGUID:(id)arg2;
+- (id)initWithStoreAccountID:(unsigned long long)arg1 deviceGUID:(id)arg2 privateListeningStateSource:(id)arg3;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)privateListeningStateSource;
 - (id)requestUserAgent;
 - (unsigned long long)storeAccountID;
 - (long long)systemReleaseType;

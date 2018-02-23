@@ -5,6 +5,7 @@
 @interface MFComposeSubjectView : MFComposeHeaderView <NSLayoutManagerDelegate, UITextViewDelegate> {
     unsigned int  _delegateRespondsToTextChange;
     unsigned int  _delegateRespondsToWillRemoveContent;
+    bool  _needsExclusionPathUpdate;
     UIButton * _notifyButton;
     unsigned int  _notifyButtonSelected;
     unsigned int  _showNotifyButton;
@@ -20,6 +21,7 @@
 
 - (bool)_canBecomeFirstResponder;
 - (id)_textContainerExclusionPathsWithNotifyButton:(bool)arg1;
+- (void)_updateExclusionPathsIfNeeded;
 - (void)_updateTextContainerInsets;
 - (bool)becomeFirstResponder;
 - (void)dealloc;
@@ -35,6 +37,7 @@
 - (void)notifyButtonClicked:(id)arg1;
 - (void)refreshPreferredContentSize;
 - (void)setDelegate:(id)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setNotifyButtonSelected:(bool)arg1;
 - (void)setShowNotifyButton:(bool)arg1;
 - (void)setText:(id)arg1;

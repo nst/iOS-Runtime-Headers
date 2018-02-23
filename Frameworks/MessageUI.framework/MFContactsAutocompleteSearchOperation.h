@@ -5,9 +5,8 @@
 @interface MFContactsAutocompleteSearchOperation : MFContactsSearchOperation <CNAutocompleteFetchDelegate> {
     CNAutocompleteStore * _autocompleteStore;
     CNAutocompleteFetchContext * _fetchContext;
-    NSError * _fetchError;
-    <CNCancelable> * _fetchRequestHandle;
-    NSObject<OS_dispatch_semaphore> * _fetchRequestSemaphore;
+    MFPromise * _fetchRequestPromise;
+    MFCancelationToken * _fetchRequestToken;
     bool  _includeContacts;
     bool  _includeRecents;
     bool  _includeServers;

@@ -28,6 +28,7 @@
 - (void).cxx_destruct;
 - (Class)_aggregatorClassForObjectType:(id)arg1;
 - (id)_dataCollectorsDiagnosticDescription;
+- (bool)_dataReceived:(id)arg1 provenance:(id)arg2 isDemoData:(bool)arg3 error:(id*)arg4;
 - (void)_demoObjectsReceived:(id)arg1 completion:(id /* block */)arg2;
 - (id)_observersDescription;
 - (void)_queue_addDataCollector:(id)arg1;
@@ -36,7 +37,6 @@
 - (void)_queue_alertCollectorsOfTypesWithObservers;
 - (struct { double x1; bool x2; bool x3; bool x4; })_queue_collectionStateForType:(id)arg1;
 - (void)_queue_createBuiltinCollectors;
-- (bool)_queue_dataReceived:(id)arg1 provenance:(id)arg2 isDemoData:(bool)arg3 error:(id*)arg4;
 - (double)_queue_defaultCollectionIntervalForType:(id)arg1;
 - (id)_queue_demoManagerCreatingIfNecessary;
 - (id)_queue_observerMapForType:(id)arg1;
@@ -64,7 +64,7 @@
 - (id)queue;
 - (void)removeDataCollectionObserver:(id)arg1;
 - (void)removeDataCollectionObserver:(id)arg1 type:(id)arg2;
-- (void)sensorDataArrayReceived:(id)arg1 deviceEntity:(id)arg2 withCompletion:(id /* block */)arg3;
+- (bool)sensorDataArrayReceived:(id)arg1 deviceEntity:(id)arg2 error:(id*)arg3;
 - (void)sensorDataReceived:(id)arg1 deviceEntity:(id)arg2;
 - (void)setBlteHeartRateDataCollector:(id)arg1;
 - (void)setDataCollectorsByType:(id)arg1;

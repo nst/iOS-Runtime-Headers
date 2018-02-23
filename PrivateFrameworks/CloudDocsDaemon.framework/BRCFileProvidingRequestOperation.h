@@ -7,6 +7,7 @@
     NSMutableArray * _callbacks;
     BRCXPCClient * _client;
     BRCDirectoryItem * _directoryItem;
+    NSSet * _docIDsToCancel;
     bool  _isFinished;
     bool  _isForBackup;
     bool  _isMonitoringReachability;

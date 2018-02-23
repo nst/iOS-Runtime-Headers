@@ -18,8 +18,6 @@
     FCHeadlineTemplate * _defaultHeadlineTemplate;
     NSString * _defaultSectionID;
     NTPBFeedConfiguration * _feedConfiguration;
-    double  _forYouCutoffTime;
-    unsigned long long  _forYouMaximumArticleCount;
     NSString * _foregroundColorHexString;
     NSString * _groupTitleColorHexString;
     unsigned long long  _groupingEligibility;
@@ -35,6 +33,7 @@
     bool  _isHidden;
     bool  _isNotificationEnabled;
     bool  _isPublic;
+    bool  _isRealTimeTrackingEnabed;
     NSDate * _loadDate;
     FCAssetHandle * _logoImageAssetHandle;
     long long  _minimumNewsVersion;
@@ -110,6 +109,7 @@
 @property (nonatomic, readonly) <FCTopicProviding> *asTopic;
 @property (nonatomic, readonly) FCColor *backgroundColor;
 @property (nonatomic, copy) NSString *backgroundColorHexString;
+@property (nonatomic, readonly) NSData *backingTagRecordData;
 @property (nonatomic) double bannerImageBaselineOffsetPercentage;
 @property (nonatomic, readonly) FCTagBanner *bannerImageForMask;
 @property (nonatomic, readonly) FCTagBanner *bannerImageForThemeBackground;
@@ -128,8 +128,6 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NTPBFeedConfiguration *feedConfiguration;
 @property (nonatomic, readonly) long long feedType;
-@property (nonatomic, readonly) double forYouCutoffTime;
-@property (nonatomic, readonly) unsigned long long forYouMaximumArticleCount;
 @property (nonatomic, readonly) FCColor *foregroundColor;
 @property (nonatomic, copy) NSString *foregroundColorHexString;
 @property (nonatomic, readonly) FCColor *groupTitleColor;
@@ -149,6 +147,7 @@
 @property (nonatomic, readonly) bool isHidden;
 @property (nonatomic, readonly) bool isNotificationEnabled;
 @property (nonatomic, readonly) bool isPublic;
+@property (nonatomic, readonly) bool isRealTimeTrackingEnabed;
 @property (nonatomic, readonly) bool isSubscribable;
 @property (nonatomic, readonly) bool isWhite;
 @property (nonatomic, readonly) bool isWhitelisted;
@@ -212,6 +211,7 @@
 - (id)authorizationURL;
 - (id)backgroundColor;
 - (id)backgroundColorHexString;
+- (id)backingTagRecordData;
 - (double)bannerImageBaselineOffsetPercentage;
 - (id)bannerImageForMask;
 - (id)bannerImageForThemeBackground;
@@ -231,8 +231,6 @@
 - (id)feedConfiguration;
 - (id)feedIDForBin:(long long)arg1;
 - (long long)feedType;
-- (double)forYouCutoffTime;
-- (unsigned long long)forYouMaximumArticleCount;
 - (id)foregroundColor;
 - (id)foregroundColorHexString;
 - (id)freeFeedIDForBin:(long long)arg1;
@@ -265,6 +263,7 @@
 - (bool)isNotificationEnabled;
 - (bool)isPublic;
 - (bool)isPurchaseSetup;
+- (bool)isRealTimeTrackingEnabed;
 - (bool)isSubscribable;
 - (bool)isWhite;
 - (bool)isWhitelisted;

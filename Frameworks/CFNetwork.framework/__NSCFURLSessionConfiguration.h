@@ -96,7 +96,7 @@
     NSString * _sourceApplicationBundleIdentifier;
     NSString * _sourceApplicationSecondaryIdentifier;
     bool  _supportsAVAssetDownloads;
-    NSArray * _suppressedHTTPHeaders;
+    NSSet * _suppressedAutoAddedHTTPHeaders;
     NSString * _tcpConnectionPoolName;
     double  _timeoutIntervalForRequest;
     double  _timeoutIntervalForResource;
@@ -189,7 +189,7 @@
 - (id)_sourceApplicationBundleIdentifier;
 - (id)_sourceApplicationSecondaryIdentifier;
 - (bool)_supportsAVAssetDownloads;
-- (id)_suppressedHTTPHeaders;
+- (id)_suppressedAutoAddedHTTPHeaders;
 - (id)_tcpConnectionPoolName;
 - (long long)_timingDataOptions;
 - (id)_tlsTrustPinningPolicyName;
@@ -321,7 +321,7 @@
 - (void)set_sourceApplicationBundleIdentifier:(id)arg1;
 - (void)set_sourceApplicationSecondaryIdentifier:(id)arg1;
 - (void)set_supportsAVAssetDownloads:(bool)arg1;
-- (void)set_suppressedHTTPHeaders:(id)arg1;
+- (void)set_suppressedAutoAddedHTTPHeaders:(id)arg1;
 - (void)set_tcpConnectionPoolName:(id)arg1;
 - (void)set_timingDataOptions:(long long)arg1;
 - (void)set_tlsTrustPinningPolicyName:(id)arg1;

@@ -41,6 +41,7 @@
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
++ (id)_defaultTraitCollection;
 + (id)_emptyTraitCollection;
 + (id)_traitCollectionWithValue:(id)arg1 forTraitNamed:(id)arg2;
 + (bool)supportsSecureCoding;

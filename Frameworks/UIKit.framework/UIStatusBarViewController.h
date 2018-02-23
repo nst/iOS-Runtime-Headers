@@ -32,5 +32,6 @@
 - (void)setStatusBarHidden:(bool)arg1 animationParameters:(id)arg2;
 - (void)setStatusBarOrientation:(long long)arg1 animationParameters:(id)arg2;
 - (void)setStatusBarStyle:(long long)arg1 animationParameters:(id)arg2;
+- (void)viewDidLoad;
 
 @end

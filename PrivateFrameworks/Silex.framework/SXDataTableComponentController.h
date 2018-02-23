@@ -9,6 +9,7 @@
     NSArray * _records;
     <SXDataTableStyleFactory> * _styleFactory;
     SXDataTableDictionary * _textLayouters;
+    <SXDataTableTextSourceFactory> * _textSourceFactory;
 }
 
 @property (nonatomic, readonly) SXDataTableDictionary *cellObjects;
@@ -21,6 +22,7 @@
 @property (nonatomic, readonly) <SXDataTableStyleFactory> *styleFactory;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) SXDataTableDictionary *textLayouters;
+@property (nonatomic, readonly) <SXDataTableTextSourceFactory> *textSourceFactory;
 
 - (void).cxx_destruct;
 - (id)additionsForTextSource:(id)arg1;
@@ -49,7 +51,7 @@
 - (unsigned long long)horizontalAlignmentForCellAtIndexPath:(struct { unsigned long long x1; unsigned long long x2; })arg1;
 - (bool)indexPathIsHeader:(struct { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct { unsigned long long x1; unsigned long long x2; })indexPathSubstractingHeaders:(struct { unsigned long long x1; unsigned long long x2; })arg1;
-- (id)initWithStyleFactory:(id)arg1 dataSource:(id)arg2;
+- (id)initWithStyleFactory:(id)arg1 textSourceFactory:(id)arg2 dataSource:(id)arg3;
 - (id)inlineTextStylesForTextSource:(id)arg1;
 - (void)loadRecords;
 - (double)minimumWidthForCellAtIndexPath:(struct { unsigned long long x1; unsigned long long x2; })arg1;
@@ -72,6 +74,7 @@
 - (id)textLayouters;
 - (id)textResizerForTextSource:(id)arg1;
 - (id)textRulesForTextSource:(id)arg1;
+- (id)textSourceFactory;
 - (id)textStyleForTextSource:(id)arg1;
 - (unsigned long long)verticalAlignmentForCellAtIndexPath:(struct { unsigned long long x1; unsigned long long x2; })arg1;
 - (double)widthForCellAtIndexPath:(struct { unsigned long long x1; unsigned long long x2; })arg1;

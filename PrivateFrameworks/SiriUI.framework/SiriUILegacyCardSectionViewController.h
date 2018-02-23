@@ -36,6 +36,8 @@
 - (void)setContainingSnippetViewController:(id)arg1;
 - (unsigned long long)siriDeviceLockStateForSnippetViewController:(id)arg1;
 - (id)siriEnabledAppListForSiriViewController:(id)arg1;
+- (void)siriSnippetViewController:(id)arg1 didDismissViewController:(id)arg2;
+- (void)siriSnippetViewController:(id)arg1 didPresentViewController:(id)arg2;
 - (void)siriSnippetViewController:(id)arg1 didRequestKeyboardWithVisibility:(bool)arg2;
 - (void)siriSnippetViewController:(id)arg1 didShowGuideStartDate:(id)arg2 endDate:(id)arg3;
 - (void)siriSnippetViewController:(id)arg1 pushSirilandSnippets:(id)arg2;
@@ -59,6 +61,7 @@
 - (bool)siriViewController:(id)arg1 openURL:(id)arg2;
 - (void)siriViewController:(id)arg1 openURL:(id)arg2 completion:(id /* block */)arg3;
 - (void)siriViewController:(id)arg1 performAceCommands:(id)arg2;
+- (void)siriViewController:(id)arg1 performAceCommands:(id)arg2 completion:(id /* block */)arg3;
 - (void)siriViewController:(id)arg1 sendGenericAceCommands:(id)arg2;
 - (void)siriViewController:(id)arg1 setContentOffset:(double)arg2;
 - (void)siriViewController:(id)arg1 setDomainObject:(id)arg2 forIdentifier:(id)arg3;
@@ -70,7 +73,6 @@
 - (id)siriViewControllerEffectiveBundleForCoreLocation:(id)arg1;
 - (double)siriViewControllerExpectedWidth:(id)arg1;
 - (void)siriViewControllerHeightDidChange:(id)arg1;
-- (void)siriViewControllerHeightDidChange:(id)arg1 heightDifference:(double)arg2;
 - (void)siriViewControllerHeightDidChange:(id)arg1 pinTopOfSnippet:(bool)arg2;
 - (void)siriViewControllerRequestTearDownEditingViewController:(id)arg1;
 - (bool)siriViewControllerShouldPreventUserInteraction:(id)arg1;

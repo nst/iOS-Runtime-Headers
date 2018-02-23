@@ -18,6 +18,8 @@
 @property (retain) CVMLSimilarityMatrix *matrix;
 @property (readonly) bool useClusterObservation;
 
++ (id)clustererModelFileNamesFromState:(id)arg1 storedInPath:(id)arg2 error:(id*)arg3;
+
 - (void).cxx_destruct;
 - (bool)addFaces:(id)arg1 error:(id*)arg2;
 - (bool)cancelClustering:(id*)arg1;

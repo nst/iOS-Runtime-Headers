@@ -21,6 +21,7 @@
 - (bool)getDoSupervectorSecondaryTest;
 - (double)getExtraSamplesAtStart;
 - (double)getLoggingThreshold;
+- (int)getMaximumSpeakerVectors;
 - (id)getRecognizerConfig;
 - (double)getRecognizerScoreScaleFactor;
 - (double)getRecognizerThresholdOffset;

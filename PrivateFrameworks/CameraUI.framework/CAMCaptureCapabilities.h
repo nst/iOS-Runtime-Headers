@@ -5,11 +5,13 @@
 @interface CAMCaptureCapabilities : NSObject {
     bool  _HEVCEncodingSupported;
     double  __backCaptureInterval;
+    double  __backDualCameraSwitchOverZoomFactor;
     double  __backDualPhotoModeMaximumZoomFactor;
     double  __backDualVideoModeMaximumZoomFactor;
     double  __backPhotoModeMaximumZoomFactor;
     double  __backVideoModeMaximumZoomFactor;
     double  __frontCaptureInterval;
+    double  __frontDualCameraSwitchOverZoomFactor;
     double  __frontDualPhotoModeMaximumZoomFactor;
     double  __frontDualVideoModeMaximumZoomFactor;
     double  __frontPhotoModeMaximumZoomFactor;
@@ -91,11 +93,13 @@
 
 @property (getter=isHEVCEncodingSupported, nonatomic, readonly) bool HEVCEncodingSupported;
 @property (nonatomic, readonly) double _backCaptureInterval;
+@property (nonatomic, readonly) double _backDualCameraSwitchOverZoomFactor;
 @property (nonatomic, readonly) double _backDualPhotoModeMaximumZoomFactor;
 @property (nonatomic, readonly) double _backDualVideoModeMaximumZoomFactor;
 @property (nonatomic, readonly) double _backPhotoModeMaximumZoomFactor;
 @property (nonatomic, readonly) double _backVideoModeMaximumZoomFactor;
 @property (nonatomic, readonly) double _frontCaptureInterval;
+@property (nonatomic, readonly) double _frontDualCameraSwitchOverZoomFactor;
 @property (nonatomic, readonly) double _frontDualPhotoModeMaximumZoomFactor;
 @property (nonatomic, readonly) double _frontDualVideoModeMaximumZoomFactor;
 @property (nonatomic, readonly) double _frontPhotoModeMaximumZoomFactor;
@@ -177,11 +181,13 @@
 + (id)capabilities;
 
 - (double)_backCaptureInterval;
+- (double)_backDualCameraSwitchOverZoomFactor;
 - (double)_backDualPhotoModeMaximumZoomFactor;
 - (double)_backDualVideoModeMaximumZoomFactor;
 - (double)_backPhotoModeMaximumZoomFactor;
 - (double)_backVideoModeMaximumZoomFactor;
 - (double)_frontCaptureInterval;
+- (double)_frontDualCameraSwitchOverZoomFactor;
 - (double)_frontDualPhotoModeMaximumZoomFactor;
 - (double)_frontDualVideoModeMaximumZoomFactor;
 - (double)_frontPhotoModeMaximumZoomFactor;
@@ -194,6 +200,7 @@
 - (long long)back1080pMaxFPS;
 - (long long)back720pMaxFPS;
 - (double)captureIntervalForDevice:(long long)arg1;
+- (double)dualCameraSwitchOverZoomFactorForDevicePosition:(long long)arg1;
 - (long long)front1080pMaxFPS;
 - (long long)front720pMaxFPS;
 - (bool)hasFilteringEntitlement;
@@ -287,13 +294,14 @@
 - (bool)isSquareModeSupported;
 - (bool)isStillDuringVideoSupported;
 - (bool)isSupportedMode:(long long)arg1 withDevice:(long long)arg2;
-- (bool)isSupportedVideoConfiguration:(long long)arg1 forMode:(long long)arg2 device:(long long)arg3 encodingBehavior:(long long)arg4;
+- (bool)isSupportedVideoConfiguration:(long long)arg1 forMode:(long long)arg2 device:(long long)arg3;
 - (bool)isTelephotoSupportedForDevicePosition:(long long)arg1;
 - (bool)isTimelapseSupportedForDevice:(long long)arg1;
 - (bool)isTopBarInvertedForModernPhone;
 - (bool)isTorchPatternSupportedForDevice:(long long)arg1;
 - (bool)isTorchSupportedForDevice:(long long)arg1;
 - (bool)isVideoSupported;
+- (bool)isZoomAllowedForMode:(long long)arg1 device:(long long)arg2 videoConfiguration:(long long)arg3;
 - (long long)maximumBurstLength;
 - (long long)maximumRecordedFileSize;
 - (double)maximumZoomFactorForMode:(long long)arg1 device:(long long)arg2 videoConfiguration:(long long)arg3;

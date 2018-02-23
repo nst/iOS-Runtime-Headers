@@ -5,6 +5,7 @@
 @interface SFSearchResult_SpotlightExtras : SFSearchResult <NSSecureCoding> {
     PRSL2FeatureVector * _L2FeatureVector;
     PRSL3FeatureVector * _L3FeatureVector;
+    SFPunchout * _cachedPunchout;
     NSArray * _contactAlternateNames;
     NSDate * _contentCreationDate;
     NSString * _contentURL;
@@ -15,8 +16,8 @@
     NSString * _filename;
     bool  _hasAssociatedUserActivity;
     bool  _isParsecResult;
-    double  _l2score;
-    double  _l3score;
+    float  _l2score;
+    float  _l3score;
     NSDate * _lastUsedDate;
     NSArray * _launchDates;
     NSString * _launchString;
@@ -49,8 +50,8 @@
 @property (nonatomic, retain) NSString *filename;
 @property (nonatomic) bool hasAssociatedUserActivity;
 @property (nonatomic) bool isParsecResult;
-@property (nonatomic) double l2score;
-@property (nonatomic) double l3score;
+@property (nonatomic) float l2score;
+@property (nonatomic) float l3score;
 @property (retain) NSDate *lastUsedDate;
 @property (nonatomic, retain) NSArray *launchDates;
 @property (nonatomic, retain) NSString *launchString;
@@ -88,8 +89,8 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (bool)isParsecResult;
-- (double)l2score;
-- (double)l3score;
+- (float)l2score;
+- (float)l3score;
 - (id)lastUsedDate;
 - (id)launchDates;
 - (id)launchString;
@@ -99,6 +100,7 @@
 - (id)objectForFeedback;
 - (id)parentFileIdentifier;
 - (id)protectionClass;
+- (id)punchout;
 - (id)queryString;
 - (id)rankingItem;
 - (struct ranking_index_score_t { unsigned long long x1; unsigned long long x2; })score;
@@ -113,9 +115,9 @@
 - (void)setHasAssociatedUserActivity:(bool)arg1;
 - (void)setIsParsecResult:(bool)arg1;
 - (void)setL2FeatureVector:(id)arg1;
-- (void)setL2score:(double)arg1;
+- (void)setL2score:(float)arg1;
 - (void)setL3FeatureVector:(id)arg1;
-- (void)setL3score:(double)arg1;
+- (void)setL3score:(float)arg1;
 - (void)setLastUsedDate:(id)arg1;
 - (void)setLaunchDates:(id)arg1;
 - (void)setLaunchString:(id)arg1;

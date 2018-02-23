@@ -14,6 +14,7 @@
 + (id)colorEffectColor:(id)arg1;
 + (id)colorEffectContrast:(double)arg1;
 + (id)colorEffectInvert;
++ (id)colorEffectLuminanceMap:(id)arg1 blendingAmount:(double)arg2;
 + (id)colorEffectMatrix:(struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; double x_1_1_4; } x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; struct { double x_3_1_1; double x_3_1_2; double x_3_1_3; double x_3_1_4; } x3; struct { double x_4_1_1; double x_4_1_2; double x_4_1_3; double x_4_1_4; } x4; struct { double x_5_1_1; double x_5_1_2; double x_5_1_3; double x_5_1_4; } x5; })arg1;
 + (id)colorEffectMonochromeTint:(id)arg1 blendingAmount:(double)arg2 brightnessAdjustment:(double)arg3;
 + (id)colorEffectMultiply:(id)arg1;

@@ -4,7 +4,7 @@
 
 @interface UIKeyboardPredictionView : UIView {
     UITouch * _activeTouch;
-    UITextSuggestion * _currentFirstTextSuggestion;
+    TIKeyboardCandidate * _currentFirstTextSuggestion;
     NSDate * _lastTextSuggestionUpdateDate;
     long long  _lastTextSuggestionUpdateOrientation;
     NSDate * _lastUpdateDate;
@@ -22,7 +22,6 @@
     bool  m_currentInputModeEnablePrediction;
     bool  m_delayActive;
     bool  m_dragging;
-    NSMutableArray * m_emojiCells;
     UIKeyboardPredictionBarGrabber * m_grabber;
     bool  m_hasLongCandidates;
     struct CGPoint { 
@@ -30,6 +29,7 @@
         double y; 
     }  m_initLocation;
     bool  m_isMinimized;
+    bool  m_isSafariAutofill;
     UIKeyboardPredictionCell * m_lastCell;
     bool  m_lightKeyboard;
     UIView * m_message;
@@ -46,14 +46,17 @@
     NSMutableArray * m_safariCredentialThreeExtraTextCells;
     NSMutableArray * m_safariCredentialTwoExtraTextCells;
     NSMutableArray * m_safariCredentialZeroExtraTextCells;
-    NSMutableArray * m_textAndEmojiCells;
+    NSMutableArray * m_textAndThreeEmojiCells;
+    NSMutableArray * m_textAndTwoEmojiCells;
+    NSMutableArray * m_threeEmojiCells;
     NSMutableArray * m_threeTextCells;
+    NSMutableArray * m_twoEmojiCells;
     NSMutableArray * m_twoTextCells;
     double  m_width;
 }
 
 @property (nonatomic, retain) UITouch *activeTouch;
-@property (nonatomic, retain) UITextSuggestion *currentFirstTextSuggestion;
+@property (nonatomic, retain) TIKeyboardCandidate *currentFirstTextSuggestion;
 @property (nonatomic, retain) NSDate *lastTextSuggestionUpdateDate;
 @property (nonatomic) long long lastTextSuggestionUpdateOrientation;
 @property (nonatomic, retain) NSDate *lastUpdateDate;
@@ -138,7 +141,6 @@
 - (void)setState:(int)arg1;
 - (void)setTouchedCellState:(int)arg1;
 - (void)setUpdateTimer:(id)arg1;
-- (bool)shouldAuthCommitPrediction;
 - (bool)show;
 - (void)showMessageWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (int)state;

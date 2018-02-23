@@ -8,6 +8,7 @@
     HMMediaProfile * _mediaProfile;
     _HMMediaSession * _mediaSession;
     long long  _playbackState;
+    NSString * _routeUID;
     NSUUID * _uuid;
 }
 
@@ -19,6 +20,7 @@
 @property HMMediaProfile *mediaProfile;
 @property (nonatomic, retain) _HMMediaSession *mediaSession;
 @property (readonly) long long playbackState;
+@property (nonatomic, readonly) NSString *routeUID;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSUUID *uniqueIdentifier;
 @property (nonatomic, retain) NSUUID *uuid;
@@ -33,16 +35,19 @@
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithUUID:(id)arg1 playbackState:(long long)arg2;
+- (id)initWithUUID:(id)arg1 routeUID:(id)arg2 playbackState:(long long)arg3;
 - (bool)isEqual:(id)arg1;
 - (id)mediaProfile;
 - (id)mediaSession;
 - (void)mediaSession:(id)arg1 didUpdatePlaybackState:(long long)arg2;
+- (void)mediaSession:(id)arg1 didUpdateRouteUID:(id)arg2;
 - (id)messageTargetUUID;
 - (void)pauseWithCompletionHandler:(id /* block */)arg1;
 - (long long)playbackState;
 - (id)playbackStateDescription;
+- (void)refreshPlaybackStateWithCompletionHandler:(id /* block */)arg1;
 - (void)resumeWithCompletionHandler:(id /* block */)arg1;
+- (id)routeUID;
 - (void)setDelegate:(id)arg1;
 - (void)setMediaProfile:(id)arg1;
 - (void)setMediaSession:(id)arg1;

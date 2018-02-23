@@ -429,6 +429,7 @@
 - (id)pk_encryptedNumberForKey:(id)arg1;
 - (id)pk_encryptedObjectForKey:(id)arg1 ofClass:(Class)arg2;
 - (id)pk_encryptedStringForKey:(id)arg1;
+- (id)pk_encryptedUUIDForKey:(id)arg1;
 - (unsigned long long)pk_encryptedUint64ForKey:(id)arg1;
 - (unsigned long long)pk_encryptedUnsignedIntegerForKey:(id)arg1;
 - (id)pk_encryptedUrlForKey:(id)arg1;

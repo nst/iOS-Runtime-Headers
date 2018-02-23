@@ -8,6 +8,7 @@
     _UIStatusBarImageView * _shackleView;
 }
 
+@property (nonatomic, readonly) UIAccessibilityHUDItem *accessibilityHUDRepresentation;
 @property (nonatomic, readonly) double baselineOffset;
 @property (nonatomic, retain) _UIStatusBarImageView *bodyView;
 @property (nonatomic, copy) id /* block */ completionBlock;

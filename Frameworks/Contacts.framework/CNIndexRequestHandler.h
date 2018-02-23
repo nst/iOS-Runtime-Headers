@@ -39,7 +39,9 @@
 - (bool)endIndexBatchWithClientState;
 - (void)fetchAndCheckLastClientState;
 - (id)fetchChangeHistory;
+- (id)fetchChangeHistoryWithError:(id*)arg1;
 - (bool)fetchLastClientState;
+- (id)fetchSearchableItemsIndexedByContactIdentifierWithError:(id*)arg1;
 - (bool)fullSyncContacts;
 - (id)index;
 - (bool)indexSearchableItems:(id)arg1;
@@ -57,5 +59,6 @@
 - (void)setContactStore:(id)arg1;
 - (void)setIndex:(id)arg1;
 - (void)setIsFullSyncNeeded:(bool)arg1;
+- (id)verifyIndexLoggingSummary:(bool)arg1 error:(id*)arg2;
 
 @end

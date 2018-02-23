@@ -11,6 +11,9 @@
 
 + (bool)_preventsAppearanceProxyCustomization;
 
+- (bool)_shouldUseContentOverlayInsetsAsStatusBarUnderlapHeight;
+- (double)_statusBarHeightAdjustmentForCurrentOrientation;
+- (bool)_viewControllerUnderlapsStatusBar;
 - (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
 

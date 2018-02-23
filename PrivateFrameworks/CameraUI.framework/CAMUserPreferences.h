@@ -67,7 +67,6 @@
 @property (nonatomic, readonly) long long slomoConfiguration;
 @property (nonatomic) long long squareModeLastCapturedEffectFilterType;
 @property (nonatomic, readonly) long long videoConfiguration;
-@property (nonatomic, readonly) long long videoEncodingBehavior;
 
 + (id)_defaultCaptureConfiguration;
 + (bool)_fallBackToCameraDefaultsForBundleIdentifier:(id)arg1;
@@ -124,7 +123,7 @@
 - (long long)slomoConfiguration;
 - (long long)squareModeLastCapturedEffectFilterType;
 - (long long)videoConfiguration;
-- (long long)videoEncodingBehavior;
+- (long long)videoEncodingBehaviorForConfiguration:(long long)arg1;
 - (void)writePreferences;
 
 @end

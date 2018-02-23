@@ -15,5 +15,6 @@
 - (void)logMetricSearchResultsIncludedPureSuggestionWithBundleId:(NSString *)arg1;
 - (void)logMetricSuggestedContactDetailShown:(SGRecordId *)arg1 contactIdentifier:(NSString *)arg2 bundleId:(NSString *)arg3;
 - (void)logMetricSuggestedContactDetailUsed:(SGRecordId *)arg1 contactIdentifier:(NSString *)arg2 bundleId:(NSString *)arg3;
+- (void)logUnknownContactInformationShownCount:(unsigned long long)arg1 notShownCount:(unsigned long long)arg2 bundleId:(NSString *)arg3;
 
 @end

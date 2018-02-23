@@ -15,6 +15,7 @@
     NSString * _noteTitle;
     NSDictionary * _serverDict;
     NSString * _title;
+    bool  _zeroAction;
 }
 
 @property (nonatomic, retain) NSString *altMessage;
@@ -29,6 +30,7 @@
 @property (nonatomic, retain) NSString *noteTitle;
 @property (nonatomic, retain) NSDictionary *serverDict;
 @property (nonatomic, retain) NSString *title;
+@property (getter=isZeroAction, nonatomic) bool zeroAction;
 
 + (void)clearFollowupWithController:(id)arg1 completion:(id /* block */)arg2;
 
@@ -40,6 +42,7 @@
 - (id)init;
 - (id)initWithServerDictionary:(id)arg1;
 - (bool)isForAccountGroup;
+- (bool)isZeroAction;
 - (id)links;
 - (id)message;
 - (id)noteActivateLink;
@@ -62,6 +65,7 @@
 - (void)setNoteTitle:(id)arg1;
 - (void)setServerDict:(id)arg1;
 - (void)setTitle:(id)arg1;
+- (void)setZeroAction:(bool)arg1;
 - (id)title;
 
 @end

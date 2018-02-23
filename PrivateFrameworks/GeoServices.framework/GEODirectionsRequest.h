@@ -16,6 +16,7 @@
     struct { 
         unsigned int sessionID : 1; 
         unsigned int requestTime : 1; 
+        unsigned int sessionRelativeTimestamp : 1; 
         unsigned int departureTime : 1; 
         unsigned int mainTransportTypeMaxRouteCount : 1; 
         unsigned int nonRecommendedRoutesOption : 1; 
@@ -49,6 +50,7 @@
         unsigned long long _high; 
         unsigned long long _low; 
     }  _sessionID;
+    double  _sessionRelativeTimestamp;
     NSData * _sessionState;
     unsigned int  _timeSinceLastRerouteRequest;
     GEOTFTrafficSnapshot * _trafficSnapshot;
@@ -92,6 +94,7 @@
 @property (nonatomic, readonly) bool hasRouteAttributes;
 @property (nonatomic) bool hasSequenceNumber;
 @property (nonatomic) bool hasSessionID;
+@property (nonatomic) bool hasSessionRelativeTimestamp;
 @property (nonatomic, readonly) bool hasSessionState;
 @property (nonatomic) bool hasTimeSinceLastRerouteRequest;
 @property (nonatomic, readonly) bool hasTrafficSnapshot;
@@ -114,6 +117,7 @@
 @property (nonatomic) unsigned int sequenceNumber;
 @property (nonatomic, retain) NSMutableArray *serviceTags;
 @property (nonatomic) struct GEOSessionID { unsigned long long x1; unsigned long long x2; } sessionID;
+@property (nonatomic) double sessionRelativeTimestamp;
 @property (nonatomic, retain) NSData *sessionState;
 @property (nonatomic) unsigned int timeSinceLastRerouteRequest;
 @property (nonatomic, retain) GEOTFTrafficSnapshot *trafficSnapshot;
@@ -178,6 +182,7 @@
 - (bool)hasRouteAttributes;
 - (bool)hasSequenceNumber;
 - (bool)hasSessionID;
+- (bool)hasSessionRelativeTimestamp;
 - (bool)hasSessionState;
 - (bool)hasTimeSinceLastRerouteRequest;
 - (bool)hasTrafficSnapshot;
@@ -214,6 +219,7 @@
 - (id)serviceTags;
 - (unsigned long long)serviceTagsCount;
 - (struct GEOSessionID { unsigned long long x1; unsigned long long x2; })sessionID;
+- (double)sessionRelativeTimestamp;
 - (id)sessionState;
 - (void)setAbClientMetadata:(id)arg1;
 - (void)setAdditionalEnabledMarkets:(id)arg1;
@@ -236,6 +242,7 @@
 - (void)setHasRequestTime:(bool)arg1;
 - (void)setHasSequenceNumber:(bool)arg1;
 - (void)setHasSessionID:(bool)arg1;
+- (void)setHasSessionRelativeTimestamp:(bool)arg1;
 - (void)setHasTimeSinceLastRerouteRequest:(bool)arg1;
 - (void)setHasUseLiveTrafficAsFallback:(bool)arg1;
 - (void)setIsFromAPI:(bool)arg1;
@@ -256,6 +263,7 @@
 - (void)setSequenceNumber:(unsigned int)arg1;
 - (void)setServiceTags:(id)arg1;
 - (void)setSessionID:(struct GEOSessionID { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setSessionRelativeTimestamp:(double)arg1;
 - (void)setSessionState:(id)arg1;
 - (void)setTimeSinceLastRerouteRequest:(unsigned int)arg1;
 - (void)setTrafficSnapshot:(id)arg1;

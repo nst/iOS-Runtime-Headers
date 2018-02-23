@@ -4,6 +4,7 @@
 
 @interface HMDUserModel : HMDBackingStoreModelObject
 
+@property (nonatomic, retain) NSString *changeTag;
 @property (nonatomic, retain) NSString *displayName;
 @property (nonatomic, retain) NSDictionary *pairingIdentity;
 @property (nonatomic, retain) NSNumber *presenceAuthorizationStatus;

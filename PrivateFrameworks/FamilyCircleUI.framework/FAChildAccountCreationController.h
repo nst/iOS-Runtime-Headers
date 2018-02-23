@@ -65,6 +65,7 @@
 - (void)objectModelPressedBack:(id)arg1;
 - (id)parentViewControllerForObjectModel:(id)arg1;
 - (void)prepareForDismiss;
+- (id)sessionConfigurationForLoader:(id)arg1;
 - (void)setContinuationData:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setNavigationController:(id)arg1;

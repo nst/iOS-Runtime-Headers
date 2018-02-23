@@ -26,6 +26,7 @@
     bool  _networkActive;
     int  _networkHits;
     NSMutableSet * _openers;
+    NSObject<OS_dispatch_queue> * _openersIsolation;
     GEOTileServerProxy * _proxy;
     struct deque<ErrorInfo, std::__1::allocator<ErrorInfo> > { 
         struct __split_buffer<ErrorInfo *, std::__1::allocator<ErrorInfo *> > { 
@@ -48,6 +49,7 @@
         double y; 
     }  _sortPoint;
     NSMutableArray * _tileDecoders;
+    NSObject<OS_dispatch_queue> * _tileDecodersIsolation;
     struct unique_ptr<geo::DispatchTimer, std::__1::default_delete<geo::DispatchTimer> > { 
         struct __compressed_pair<geo::DispatchTimer *, std::__1::default_delete<geo::DispatchTimer> > { 
             struct DispatchTimer {} *__first_; 
@@ -73,6 +75,7 @@
 - (void)_receivedMemoryWarningNotification;
 - (void)_removeUsageDataForKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (void)_requestOnlineTiles;
+- (id)_tileDecoderForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 quickly:(bool*)arg2;
 - (void)_tileEditionChanged:(id)arg1;
 - (void)_timerFired;
 - (void)_updateNetworkActive;

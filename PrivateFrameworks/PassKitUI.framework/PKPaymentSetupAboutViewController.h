@@ -4,10 +4,9 @@
 
 @interface PKPaymentSetupAboutViewController : UIViewController <UIScrollViewDelegate> {
     PKPaymentSetupAboutView * _aboutView;
-    NSString * _bodyText;
+    NSMutableString * _bodyText;
     void * _navigationController;
     bool  _navigationControllerHidesShadow;
-    bool  _requiresPrivacy;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -18,10 +17,8 @@
 - (void).cxx_destruct;
 - (void)_done:(id)arg1;
 - (void)_setupNavigationItemWithTitle:(id)arg1 isPresented:(bool)arg2;
-- (void)_showPrivacyView:(id)arg1;
 - (void)dealloc;
-- (id)initForPrivacyPresented:(bool)arg1;
-- (id)initWithAboutText:(id)arg1 isPresented:(bool)arg2;
+- (id)initForPrivacyPresented:(bool)arg1 webService:(id)arg2;
 - (void)loadView;
 - (void)scrollViewDidScroll:(id)arg1;
 

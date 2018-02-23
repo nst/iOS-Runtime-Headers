@@ -30,6 +30,7 @@
 - (oneway void)release;
 - (id)retain;
 - (unsigned long long)retainCount;
+- (id)textStreamWithStreamToken:(long long)arg1;
 - (void)vcMediaStream:(id)arg1 didPauseStream:(bool)arg2 error:(id)arg3;
 - (void)vcMediaStream:(id)arg1 didReceiveDTMFEventWithDigit:(BOOL)arg2;
 - (void)vcMediaStream:(id)arg1 didReceiveRTCPPackets:(id)arg2;

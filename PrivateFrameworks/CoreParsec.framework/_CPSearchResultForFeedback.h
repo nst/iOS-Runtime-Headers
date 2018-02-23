@@ -16,9 +16,11 @@
         unsigned int queryId : 1; 
         unsigned int isLocalApplicationResult : 1; 
         unsigned int publiclyIndexable : 1; 
+        unsigned int isFuzzyMatch : 1; 
     }  _has;
     NSString * _identifier;
     NSString * _intendedQuery;
+    bool  _isFuzzyMatch;
     bool  _isLocalApplicationResult;
     bool  _isStaticCorrection;
     _CPStruct * _localFeatures;
@@ -49,6 +51,7 @@
 @property (nonatomic, readonly) bool hasFbr;
 @property (nonatomic, readonly) bool hasIdentifier;
 @property (nonatomic, readonly) bool hasIntendedQuery;
+@property (nonatomic, readonly) bool hasIsFuzzyMatch;
 @property (nonatomic, readonly) bool hasIsLocalApplicationResult;
 @property (nonatomic, readonly) bool hasIsStaticCorrection;
 @property (nonatomic, readonly) bool hasLocalFeatures;
@@ -66,6 +69,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) NSString *intendedQuery;
+@property (nonatomic) bool isFuzzyMatch;
 @property (nonatomic) bool isLocalApplicationResult;
 @property (nonatomic) bool isStaticCorrection;
 @property (nonatomic, readonly) NSData *jsonData;
@@ -98,6 +102,7 @@
 - (bool)hasFbr;
 - (bool)hasIdentifier;
 - (bool)hasIntendedQuery;
+- (bool)hasIsFuzzyMatch;
 - (bool)hasIsLocalApplicationResult;
 - (bool)hasIsStaticCorrection;
 - (bool)hasLocalFeatures;
@@ -119,6 +124,7 @@
 - (id)initWithJSON:(id)arg1;
 - (id)intendedQuery;
 - (bool)isEqual:(id)arg1;
+- (bool)isFuzzyMatch;
 - (bool)isLocalApplicationResult;
 - (bool)isStaticCorrection;
 - (id)jsonData;
@@ -138,6 +144,7 @@
 - (void)setFbr:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setIntendedQuery:(id)arg1;
+- (void)setIsFuzzyMatch:(bool)arg1;
 - (void)setIsLocalApplicationResult:(bool)arg1;
 - (void)setIsStaticCorrection:(bool)arg1;
 - (void)setLocalFeatures:(id)arg1;

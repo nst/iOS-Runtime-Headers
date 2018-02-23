@@ -11,12 +11,15 @@
 
 - (id)_aggdCameraStreamingTimeStringFromDeviceType:(int)arg1 devicePosition:(int)arg2;
 - (id)_aggdGNRProcessingStatusStringFromProcessingStatus:(int)arg1;
+- (id)_aggdPearlInfraredProjectorUptimeStringFromCurrent:(int)arg1 pattern:(int)arg2 applicationID:(id)arg3;
 - (id)_aggdSDOFProcessingStatusStringFromProcessingStatus:(int)arg1;
-- (id)_aggdShutterLagStringForCaptureType:(int)arg1 wideSubCaptureType:(int)arg2 teleSubCaptureType:(int)arg3 stillDuringVideo:(bool)arg4 frontCamera:(bool)arg5;
 - (id)_aggdStereoFusionProcessingStatusStringFromProcessingStatus:(int)arg1;
 - (id)_aggdStereoFusionProcessingTypeStringForCaptureType:(int)arg1 isStereoFusionCapture:(bool)arg2 wideSubCaptureType:(int)arg3 teleSubCaptureType:(int)arg4 isOriginalImage:(bool)arg5;
+- (id)_aggdStringForPrefix:(id)arg1 primaryCaptureType:(int)arg2 secondaryCaptureType:(int)arg3 captureFlags:(unsigned long long)arg4 stillDuringVideo:(bool)arg5 frontCamera:(bool)arg6;
+- (id)_captureTypeStringWithPrimaryCaptureType:(int)arg1 secondaryCaptureType:(int)arg2;
 - (void)_incrementAggdScalarKey:(id)arg1 withValue:(long long)arg2;
 - (void)_pushValue:(double)arg1 aggdDistributionKey:(id)arg2;
+- (void)_reportInitFailure;
 - (void)_setAggdScalarKey:(id)arg1 withValue:(long long)arg2;
 - (void)dealloc;
 - (id)init;
@@ -27,11 +30,22 @@
 - (void)reportCalibrationStatisticsWithTime:(id)arg1 timeValue:(double)arg2 attemptsField:(id)arg3 attemptsValue:(long long)arg4 successField:(id)arg5 successValue:(long long)arg6 magneticFieldMagnitudeField:(id)arg7 magneticFieldMagnitudeValue:(double)arg8;
 - (void)reportCameraStreamingTimeInMilliseconds:(unsigned long long)arg1 deviceType:(int)arg2 devicePosition:(int)arg3;
 - (void)reportGNRSampleBufferProcessorProcessingStatus:(int)arg1;
+- (void)reportLuxLevel:(unsigned int)arg1 primaryCaptureType:(int)arg2 secondaryCaptureType:(int)arg3 captureFlags:(unsigned long long)arg4 stillDuringVideo:(bool)arg5 frontCamera:(bool)arg6;
+- (void)reportNonCameraAppCaptureWithPrimaryCaptureType:(int)arg1 secondaryCaptureType:(int)arg2 captureFlags:(unsigned long long)arg3 stillDuringVideo:(bool)arg4 frontCamera:(bool)arg5;
+- (void)reportPearlInfraredProjectorUptime:(unsigned long long)arg1 current:(int)arg2 pattern:(int)arg3 applicationID:(id)arg4;
 - (void)reportSDOFSampleBufferProcessorProcessingStatus:(int)arg1;
-- (void)reportShutterLag:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 captureType:(int)arg2 wideSubCaptureType:(int)arg3 teleSubCaptureType:(int)arg4 stillDuringVideo:(bool)arg5 frontCamera:(bool)arg6;
-- (void)reportSphereCalibrationForPosition:(int)arg1 freqX:(float)arg2 deltaFreqX:(float)arg3 qX:(float)arg4 deltaQX:(float)arg5 freqY:(float)arg6 deltaFreqY:(float)arg7 qY:(float)arg8 deltaQY:(float)arg9 gainY:(float)arg10 calibrationStatus:(unsigned int)arg11 isValid:(bool)arg12;
+- (void)reportShutterLag:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 primaryCaptureType:(int)arg2 secondaryCaptureType:(int)arg3 captureFlags:(unsigned long long)arg4 stillDuringVideo:(bool)arg5 frontCamera:(bool)arg6;
+- (void)reportSphereCalibrationForPosition:(int)arg1 freqX:(float)arg2 deltaFreqX:(float)arg3 qX:(float)arg4 deltaQX:(float)arg5 gainX:(float)arg6 freqY:(float)arg7 deltaFreqY:(float)arg8 qY:(float)arg9 deltaQY:(float)arg10 gainY:(float)arg11 calibrationStatus:(unsigned int)arg12 isValid:(bool)arg13;
 - (void)reportSphereEndStopCalibrationForPosition:(int)arg1 oisPositiveX:(int)arg2 oisNegativeX:(int)arg3 oisPositiveY:(int)arg4 oisNegativeY:(int)arg5 maxPositiveXDriftFromNVM:(int)arg6 maxNegativeXDriftFromNVM:(int)arg7 maxPositiveYDriftFromNVM:(int)arg8 maxNegativeYDriftFromNVM:(int)arg9 sphereStrokeX:(int)arg10 sphereStrokeY:(int)arg11 calibrationStatus:(unsigned int)arg12 isValid:(bool)arg13;
 - (void)reportStereoFusionProcessingTypeForCaptureType:(int)arg1 isStereoFusionCapture:(bool)arg2 wideSubCaptureType:(int)arg3 teleSubCaptureType:(int)arg4 isOriginalImage:(bool)arg5;
 - (void)reportStereoFusionSampleBufferProcessorProcessingStatus:(int)arg1;
+- (void)reportZeroShutterLagFirmwareTimeMachineInitFailure;
+- (void)reportZeroShutterLagInitSuccess;
+- (void)reportZeroShutterLagMetadataInitFailureWithReasons:(unsigned int)arg1;
+- (void)reportZeroShutterLagPreviewTimeMachineInitFailure;
+- (void)reportZeroShutterLagReferenceFrameSelectionFailureForCaptureType:(int)arg1;
+- (void)reportZeroShutterLagSphereInitFailure;
+- (void)reportZeroShutterLagSuccess;
+- (void)reportZoomFactor:(float)arg1 primaryCaptureType:(int)arg2 secondaryCaptureType:(int)arg3 captureFlags:(unsigned long long)arg4 stillDuringVideo:(bool)arg5 frontCamera:(bool)arg6;
 
 @end

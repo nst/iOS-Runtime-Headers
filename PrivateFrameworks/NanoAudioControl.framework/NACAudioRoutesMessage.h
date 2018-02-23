@@ -11,6 +11,8 @@
 @property (nonatomic, retain) NSString *category;
 @property (nonatomic, readonly) bool hasCategory;
 
++ (Class)audioRoutesType;
+
 - (void).cxx_destruct;
 - (void)addAudioRoutes:(id)arg1;
 - (id)audioRoutes;

@@ -3,6 +3,7 @@
  */
 
 @interface _MCDBrowsableContentTableViewPreloader : NSObject {
+    UIAlertController * _alertController;
     bool  _cancelled;
     id /* block */  _cancelledBlock;
     MCDPCContainer * _container;
@@ -12,9 +13,11 @@
     bool  _isTabbedBrowsing;
     MCDPCItem * _item;
     MPWeakTimer * _loadingTimer;
-    UIViewController * _sourceViewController;
+    bool  _pushToNowPlaying;
+    MCDBrowsableContentTableViewController * _sourceViewController;
 }
 
+@property (nonatomic, retain) UIAlertController *alertController;
 @property (getter=isCancelled, nonatomic) bool cancelled;
 @property (nonatomic, readonly, copy) id /* block */ cancelledBlock;
 @property (nonatomic, readonly) MCDPCContainer *container;
@@ -24,13 +27,14 @@
 @property (nonatomic) bool isTabbedBrowsing;
 @property (nonatomic, readonly) MCDPCItem *item;
 @property (nonatomic, retain) MPWeakTimer *loadingTimer;
-@property (nonatomic, readonly) UIViewController *sourceViewController;
+@property (nonatomic) bool pushToNowPlaying;
+@property (nonatomic, readonly) MCDBrowsableContentTableViewController *sourceViewController;
 
 - (void).cxx_destruct;
 - (void)_deregister;
 - (void)_displayErrorAlertController:(id)arg1;
 - (void)_loadContainerAndPush:(id)arg1;
-- (void)_pushToPlayback:(id)arg1;
+- (id)alertController;
 - (id /* block */)cancelledBlock;
 - (id)container;
 - (void)dealloc;
@@ -44,10 +48,15 @@
 - (id)item;
 - (void)loadAndPush;
 - (id)loadingTimer;
+- (bool)pushToNowPlaying;
+- (void)pushToPlayback;
+- (void)setAlertController:(id)arg1;
 - (void)setCancelled:(bool)arg1;
 - (void)setIsRootTableView:(bool)arg1;
 - (void)setIsTabbedBrowsing:(bool)arg1;
 - (void)setLoadingTimer:(id)arg1;
+- (void)setPushToNowPlaying:(bool)arg1;
 - (id)sourceViewController;
+- (void)viewDidDisappear;
 
 @end

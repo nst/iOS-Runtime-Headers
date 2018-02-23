@@ -21,6 +21,7 @@
     AVPlayerViewController * _playerViewController;
     UIImage * _poster;
     MiroPosterViewController * _posterViewController;
+    int  _prefsNum;
     id  _proVideoPeriodicCaller;
     bool  _progressHasDownload;
     UILabel * _progressLabel;
@@ -57,6 +58,7 @@
 @property (nonatomic, retain) AVPlayerViewController *playerViewController;
 @property (nonatomic, retain) UIImage *poster;
 @property (nonatomic, retain) MiroPosterViewController *posterViewController;
+@property int prefsNum;
 @property (nonatomic, retain) id proVideoPeriodicCaller;
 @property bool progressHasDownload;
 @property (nonatomic, retain) UILabel *progressLabel;
@@ -125,6 +127,7 @@
 - (id)playerViewController;
 - (id)poster;
 - (id)posterViewController;
+- (int)prefsNum;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
 - (id)proVideoPeriodicCaller;
 - (bool)progressHasDownload;
@@ -151,6 +154,7 @@
 - (void)setPlayerViewController:(id)arg1;
 - (void)setPoster:(id)arg1;
 - (void)setPosterViewController:(id)arg1;
+- (void)setPrefsNum:(int)arg1;
 - (void)setProVideoPeriodicCaller:(id)arg1;
 - (void)setProgressHasDownload:(bool)arg1;
 - (void)setProgressLabel:(id)arg1;

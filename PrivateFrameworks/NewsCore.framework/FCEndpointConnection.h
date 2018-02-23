@@ -26,8 +26,8 @@
 - (id)baseURL;
 - (id)initWithAppConfigurationManager:(id)arg1;
 - (id)initWithAppConfigurationManager:(id)arg1 sourceApplicationBundleIdentifier:(id)arg2;
-- (void)performHTTPRequestWithURL:(id)arg1 method:(id)arg2 data:(id)arg3 contentType:(id)arg4 priority:(float)arg5 callbackQueue:(id)arg6 completion:(id /* block */)arg7;
-- (void)performHTTPRequestWithURL:(id)arg1 valuesByHTTPHeaderField:(id)arg2 method:(id)arg3 data:(id)arg4 contentType:(id)arg5 priority:(float)arg6 callbackQueue:(id)arg7 completion:(id /* block */)arg8;
+- (void)performHTTPRequestWithURL:(id)arg1 method:(id)arg2 data:(id)arg3 contentType:(id)arg4 priority:(float)arg5 requiresMescalSigning:(bool)arg6 callbackQueue:(id)arg7 completion:(id /* block */)arg8;
+- (void)performHTTPRequestWithURL:(id)arg1 valuesByHTTPHeaderField:(id)arg2 method:(id)arg3 data:(id)arg4 contentType:(id)arg5 priority:(float)arg6 requiresMescalSigning:(bool)arg7 callbackQueue:(id)arg8 completion:(id /* block */)arg9;
 - (id)requestSerialQueue;
 - (id)session;
 - (void)setAppConfigurationManager:(id)arg1;

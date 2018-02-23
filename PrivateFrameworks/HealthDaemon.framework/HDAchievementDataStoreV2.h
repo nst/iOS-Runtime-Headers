@@ -56,6 +56,7 @@
 @property (nonatomic) unsigned long long totalStandGoalsAttempted;
 @property (nonatomic) unsigned long long totalStandGoalsMade;
 
++ (bool)_isChallengeProgressInAverages:(id)arg1;
 + (id)createEvaluatedAchievementWithDefinition:(id)arg1 environment:(id)arg2;
 
 - (void).cxx_destruct;
@@ -81,7 +82,7 @@
 - (void)_setCommitsForIntegrationTesting;
 - (void)_setDoubleValue:(double)arg1 forProperty:(id)arg2 monthOffset:(long long)arg3;
 - (void)_setKeyValueDomain:(id)arg1;
-- (void)_setLocalValue:(id)arg1 forKey:(id)arg2;
+- (bool)_setLocalValue:(id)arg1 forKey:(id)arg2;
 - (void)_setMockCommittedAchievements:(id)arg1;
 - (void)_setUnsignedIntegerValue:(unsigned long long)arg1 forProperty:(id)arg2 monthOffset:(long long)arg3;
 - (void)_setValue:(id)arg1 forKey:(id)arg2;

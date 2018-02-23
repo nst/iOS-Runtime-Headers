@@ -13,12 +13,15 @@
     id /* block */  _finalTracklistLoadingCompletionHandler;
     bool  _hasFoundStartItem;
     bool  _hasLoadedFinalResponse;
+    bool  _hasShuffledInitialResult;
     bool  _isSiriInitiated;
+    NSObject<OS_dispatch_queue> * _itemListChangeDetectionQueue;
     NSOperationQueue * _operationQueue;
     MPPlaceholderAVItem * _placeholderAVItem;
     MPPlaybackPlaceholderMediaItem * _placeholderMediaItem;
     MPCPlaybackRequestEnvironment * _playbackRequestEnvironment;
     MPModelRequest * _request;
+    bool  _requireFinalTracklist;
     MPModelResponse * _response;
     struct map<unsigned long, MPIdentifierSet *, std::__1::less<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, MPIdentifierSet *> > > { 
         struct __tree<std::__1::__value_type<unsigned long, MPIdentifierSet *>, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, MPIdentifierSet *>, std::__1::less<unsigned long>, true>, std::__1::allocator<std::__1::__value_type<unsigned long, MPIdentifierSet *> > > { 
@@ -35,6 +38,7 @@
     }  _retrievedIndexToIdentifiers;
     NSString * _rtcReportingPlayQueueSourceIdentifier;
     MPShuffleController * _shuffleController;
+    NSString * _siriAssetInfo;
     MPIdentifierSet * _startItemIdentifiers;
     NSDictionary * _startTimeModifications;
 }
@@ -62,7 +66,7 @@
 - (void)_endBackgroundTaskAssertion;
 - (id)_equivalencySourceAdamIDForIdentifierSet:(id)arg1;
 - (id)_genericObjectForModelObject:(id)arg1;
-- (void)_handleFinalResponseWithPreferredStartIndex:(unsigned long long)arg1;
+- (bool)_handleFinalResponseWithPreferredStartIndex:(unsigned long long)arg1;
 - (bool)_hasPlaceholderItemAtIndex:(unsigned long long)arg1;
 - (id)_identifierSetAtIndex:(unsigned long long)arg1;
 - (unsigned long long)_indexOfItemWithIdentifier:(id)arg1 shouldIgnoreShuffle:(bool)arg2;
@@ -75,6 +79,8 @@
 - (void)_reloadModelRequestForInvalidation;
 - (void)_reloadModelRequestWithCompletionHandler:(id /* block */)arg1;
 - (void)_responseDidInvalidateNotification:(id)arg1;
+- (id)_resultsForShuffleController;
+- (bool)_shouldRecordReturnedItemIDs;
 - (unsigned long long)_songShuffledIndexForIndex:(unsigned long long)arg1;
 - (void)_unregisterNotificationsForResponse:(id)arg1;
 - (void)applyVolumeNormalizationForItem:(id)arg1;

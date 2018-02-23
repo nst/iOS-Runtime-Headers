@@ -7,6 +7,7 @@
     struct _builderFlags { 
         unsigned int isDirty : 1; 
         unsigned int hasItemURL : 1; 
+        unsigned int hasItemData : 1; 
         unsigned int hasNumberOfLoops : 1; 
         unsigned int hasVolume : 1; 
         unsigned int hasFadeInDuration : 1; 
@@ -15,6 +16,7 @@
     }  _builderFlags;
     double  _fadeInDuration;
     double  _fadeOutDuration;
+    NSData * _itemData;
     NSURL * _itemURL;
     long long  _numberOfLoops;
     NSDictionary * _userInfo;
@@ -27,6 +29,7 @@
 - (id)initWithBaseObject:(id)arg1;
 - (id)setFadeInDuration:(double)arg1;
 - (id)setFadeOutDuration:(double)arg1;
+- (id)setItemData:(id)arg1;
 - (id)setItemURL:(id)arg1;
 - (id)setNumberOfLoops:(long long)arg1;
 - (id)setUserInfo:(id)arg1;

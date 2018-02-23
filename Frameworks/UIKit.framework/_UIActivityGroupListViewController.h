@@ -46,6 +46,7 @@
 - (void)updateVisibleActivityGroupViewControllers;
 - (id)viewControllerForItemAtIndexPath:(id)arg1;
 - (void)viewDidLoad;
+- (void)viewSafeAreaInsetsDidChange;
 - (id)visibleActivityGroupViewControllers;
 
 @end

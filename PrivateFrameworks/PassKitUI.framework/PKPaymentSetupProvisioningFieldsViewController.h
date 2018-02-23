@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentSetupProvisioningFieldsViewController : PKPaymentSetupFieldsViewController <PKPaymentSetupViewControllerCanHideSetupLaterButton, PKPaymentVerificationControllerDelegate, RemoteUIControllerDelegate, UITextFieldDelegate> {
+@interface PKPaymentSetupProvisioningFieldsViewController : PKPaymentSetupFieldsViewController <PKPaymentSetupHideSetupLaterButtonProtocol, PKPaymentVerificationControllerDelegate, RemoteUIControllerDelegate, UITextFieldDelegate> {
     CLInUseAssertion * _CLInUse;
     NSString * _activatingPaymentPassUniqueID;
     UINotificationFeedbackGenerator * _cardAddedFeedbackGenerator;

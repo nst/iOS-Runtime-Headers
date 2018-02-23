@@ -3,6 +3,7 @@
  */
 
 @interface _TVMonogramDescription : NSObject <NSSecureCoding> {
+    UIColor * _backgroundColor;
     UIColor * _borderColor;
     double  _borderWidth;
     double  _cornerRadius;
@@ -12,6 +13,13 @@
     bool  _hasPlaceholder;
     NSURL * _imageURL;
     NSString * _lastName;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _padding;
+    long long  _scaleMode;
     struct CGSize { 
         double width; 
         double height; 
@@ -20,6 +28,7 @@
     double  _upscaleAdjustment;
 }
 
+@property (nonatomic, retain) UIColor *backgroundColor;
 @property (nonatomic, retain) UIColor *borderColor;
 @property (nonatomic) double borderWidth;
 @property (nonatomic) double cornerRadius;
@@ -29,6 +38,8 @@
 @property (nonatomic) bool hasPlaceholder;
 @property (nonatomic, readonly, copy) NSURL *imageURL;
 @property (nonatomic, readonly, copy) NSString *lastName;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } padding;
+@property (nonatomic) long long scaleMode;
 @property (nonatomic) struct CGSize { double x1; double x2; } size;
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic) double upscaleAdjustment;
@@ -36,6 +47,7 @@
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)backgroundColor;
 - (id)borderColor;
 - (double)borderWidth;
 - (double)cornerRadius;
@@ -49,11 +61,16 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFirstName:(id)arg1 lastName:(id)arg2 imageURL:(id)arg3 font:(id)arg4;
 - (id)lastName;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })padding;
+- (long long)scaleMode;
+- (void)setBackgroundColor:(id)arg1;
 - (void)setBorderColor:(id)arg1;
 - (void)setBorderWidth:(double)arg1;
 - (void)setCornerRadius:(double)arg1;
 - (void)setFillColor:(id)arg1;
 - (void)setHasPlaceholder:(bool)arg1;
+- (void)setPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setScaleMode:(long long)arg1;
 - (void)setSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setText:(id)arg1;
 - (void)setUpscaleAdjustment:(double)arg1;

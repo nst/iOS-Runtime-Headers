@@ -21,6 +21,7 @@
 }
 
 @property (getter=_allEventTypes, nonatomic, readonly) NSIndexSet *allEventTypes;
+@property (getter=_allFeedbacks, nonatomic, readonly) NSSet *allFeedbacks;
 @property (getter=_allSystemSoundIDs, nonatomic, readonly) NSIndexSet *allSystemSoundIDs;
 @property (nonatomic) long long audioOutputMode;
 @property (nonatomic, readonly) _UIFeedbackParameters *audioParameters;
@@ -56,6 +57,7 @@
 
 - (void).cxx_destruct;
 - (id)_allEventTypes;
+- (id)_allFeedbacks;
 - (id)_allSystemSoundIDs;
 - (id)_category;
 - (id)_coordinateSpace;

@@ -6,7 +6,6 @@
     id  _symmetricKeyInternal;
 }
 
-@property (getter=_keyData, nonatomic, readonly) NSData *keyData;
 @property (nonatomic, readonly, copy) _SFSymmetricKeySpecifier *keySpecifier;
 
 + (Class)_attributesClass;
@@ -15,5 +14,6 @@
 - (id)_keyData;
 - (id)initRandomKeyWithSpecifier:(id)arg1 error:(id*)arg2;
 - (id)initWithData:(id)arg1 specifier:(id)arg2 error:(id*)arg3;
+- (id)keyData;
 
 @end

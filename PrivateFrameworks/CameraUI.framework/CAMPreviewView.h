@@ -7,6 +7,7 @@
     NSMutableDictionary * __faceIndicators;
     NSMutableDictionary * __internalTrackedSubjectIndicatorsByIdentifier;
     UILabel * __simulatorLabel;
+    double  _bottomContentInset;
     CAMSubjectIndicatorView * _centeredSubjectIndicatorView;
     CAMFocusIndicatorView * _continuousIndicator;
     CAMGridView * _gridView;
@@ -22,6 +23,7 @@
 @property (nonatomic, readonly) NSMutableDictionary *_faceIndicators;
 @property (nonatomic, readonly) NSMutableDictionary *_internalTrackedSubjectIndicatorsByIdentifier;
 @property (nonatomic, readonly) UILabel *_simulatorLabel;
+@property (nonatomic) double bottomContentInset;
 @property (nonatomic, retain) CAMSubjectIndicatorView *centeredSubjectIndicatorView;
 @property (nonatomic, retain) CAMFocusIndicatorView *continuousIndicator;
 @property (nonatomic, readonly) NSDictionary *faceIndicatorsByIdentifier;
@@ -46,6 +48,7 @@
 - (id)_simulatorLabel;
 - (void)addFaceIndicator:(id)arg1 forIdentifier:(long long)arg2;
 - (void)addTrackedSubjectIndicator:(id)arg1 forIdentifier:(long long)arg2;
+- (double)bottomContentInset;
 - (struct CGPoint { double x1; double x2; })captureDevicePointOfInterestForPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)centeredSubjectIndicatorView;
 - (id)continuousIndicator;
@@ -63,6 +66,7 @@
 - (id)pointIndicator;
 - (void)removeFaceIndicatorForIdentifier:(long long)arg1;
 - (void)removeTrackedSubjectIndicatorForIdentifier:(long long)arg1;
+- (void)setBottomContentInset:(double)arg1;
 - (void)setCenteredSubjectIndicatorView:(id)arg1;
 - (void)setContinuousIndicator:(id)arg1;
 - (void)setGridView:(id)arg1;

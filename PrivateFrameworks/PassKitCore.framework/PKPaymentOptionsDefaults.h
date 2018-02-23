@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@interface PKPaymentOptionsDefaults : NSObject <PKPaymentOptionsProtocol> {
+@interface PKPaymentOptionsDefaults : NSObject <PKPaymentOptionsProtocol, PKPaymentOptionsSynchronizationDelegate> {
     NSDictionary * _defaultBillingAddresses;
     CNContact * _defaultContactEmail;
     CNContact * _defaultContactName;
     CNContact * _defaultContactPhone;
     CNContact * _defaultShippingAddress;
     int  _defaultsChangedNotifyToken;
+    PKPaymentOptionsSynchronization * _optionsSynchronization;
     unsigned long long  _postedNotificationCount;
 }
 
@@ -54,6 +55,7 @@
 - (void)deleteDefaultShippingAddress;
 - (id)init;
 - (void)migrateToSyncable;
+- (void)optionsSynchronizationDidChangeTo:(bool)arg1;
 - (void)setDefaultBillingAddress:(id)arg1 forPaymentPass:(id)arg2;
 - (void)setDefaultBillingAddress:(id)arg1 forPrimaryAccountIdentifier:(id)arg2;
 - (void)setDefaultBillingAddress:(id)arg1 forRemotePaymentInstrument:(id)arg2;

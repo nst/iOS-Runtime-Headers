@@ -22,9 +22,11 @@
 - (id)_accessibility_HUDItemForPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)_accessibility_controlToActivateForHUDGestureLiftAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_shim_30244716;
+- (bool)_shim_34415965;
 - (id)_shim_backIndicatorView;
 - (id)_shim_backdropGroupName;
 - (long long)_shim_backdropStyle;
+- (double)_shim_backgroundAlpha;
 - (double)_shim_backgroundHeight;
 - (id)_shim_compatibilityBackgroundView;
 - (id)_shim_contentView;

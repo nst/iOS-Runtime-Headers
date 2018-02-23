@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDRemoteLoginAnisetteDataProviderBridge : HMFObject <HMFLogging, HMFMessageReceiver, NSSecureCoding> {
+@interface HMDRemoteLoginAnisetteDataProviderBridge : HMFObject <HMDHomeMessageReceiver, HMFLogging, NSSecureCoding> {
     HMFMessageDispatcher * _msgDispatcher;
     HMDRemoteLoginMessageSender * _remoteMessageSender;
     NSUUID * _uuid;
@@ -13,6 +13,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (readonly, copy) NSSet *messageReceiverChildren;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, retain) HMDRemoteLoginMessageSender *remoteMessageSender;
@@ -20,6 +21,7 @@
 @property (nonatomic, readonly) NSUUID *uuid;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
++ (bool)hasMessageReceiverChildren;
 + (id)logCategory;
 + (bool)supportsSecureCoding;
 

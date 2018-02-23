@@ -281,8 +281,8 @@
 - (void)map:(id)arg1 didUpdateVerticalYawTo:(double)arg2;
 - (void)map:(id)arg1 flyoverModeDidChange:(int)arg2;
 - (void)map:(id)arg1 flyoverModeWillChange:(int)arg2;
+- (void)map:(id)arg1 labelMarkerDidChangeState:(const struct shared_ptr<md::LabelMarker> { struct LabelMarker {} *x1; struct __shared_weak_count {} *x2; }*)arg2;
 - (id)map:(id)arg1 presentationForAnnotation:(id)arg2;
-- (void)map:(id)arg1 selectedLabelMarkerDidChangeState:(const struct shared_ptr<md::LabelMarker> { struct LabelMarker {} *x1; struct __shared_weak_count {} *x2; }*)arg2;
 - (void)map:(id)arg1 selectedLabelMarkerWillDisappear:(const struct shared_ptr<md::LabelMarker> { struct LabelMarker {} *x1; struct __shared_weak_count {} *x2; }*)arg2;
 - (void)map:(id)arg1 willChangeRegionAnimated:(bool)arg2;
 - (void)map:(id)arg1 willTransitionFrom:(long long)arg2 to:(long long)arg3 duration:(double)arg4;

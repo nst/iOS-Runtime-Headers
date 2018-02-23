@@ -17,6 +17,7 @@
     NSNumber * _responseTimeStamp;
     NSData * _responseToken;
     NSNumber * _wpConnectionErrorCode;
+    NSString * _wpConnectionErrorDomain;
     NSDictionary * _wpConnectionErrorUserInfo;
 }
 
@@ -34,6 +35,7 @@
 @property (nonatomic, copy) NSNumber *responseTimeStamp;
 @property (nonatomic, copy) NSData *responseToken;
 @property (nonatomic, copy) NSNumber *wpConnectionErrorCode;
+@property (nonatomic, copy) NSString *wpConnectionErrorDomain;
 @property (nonatomic, copy) NSDictionary *wpConnectionErrorUserInfo;
 
 - (void).cxx_destruct;
@@ -69,8 +71,10 @@
 - (void)setResponseTimeStamp:(id)arg1;
 - (void)setResponseToken:(id)arg1;
 - (void)setWpConnectionErrorCode:(id)arg1;
+- (void)setWpConnectionErrorDomain:(id)arg1;
 - (void)setWpConnectionErrorUserInfo:(id)arg1;
 - (id)wpConnectionErrorCode;
+- (id)wpConnectionErrorDomain;
 - (id)wpConnectionErrorUserInfo;
 
 @end

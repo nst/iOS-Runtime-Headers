@@ -8,6 +8,7 @@
 @property (nonatomic, copy) NSString *buildVersion;
 @property (nonatomic, copy) NSString *deviceGUID;
 @property (nonatomic, copy) NSString *deviceName;
+@property (getter=isPrivateListeningEnabled, nonatomic, copy) NSNumber *privateListeningEnabled;
 @property (nonatomic) unsigned long long storeAccountID;
 @property (nonatomic, copy) NSString *storeFrontID;
 @property (nonatomic) long long systemReleaseType;
@@ -18,6 +19,7 @@
 - (void)setBuildVersion:(id)arg1;
 - (void)setDeviceGUID:(id)arg1;
 - (void)setDeviceName:(id)arg1;
+- (void)setPrivateListeningEnabled:(id)arg1;
 - (void)setSBEnabled:(bool)arg1;
 - (void)setStoreAccountID:(unsigned long long)arg1;
 - (void)setStoreFrontID:(id)arg1;

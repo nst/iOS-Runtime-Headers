@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDAccessoryBrowser : HMFObject <HAPAccessoryServerBrowserDelegate, HAPAccessoryServerDelegate, HMDMediaBrowserDelegate, HMDWatchSystemStateDelegate, HMFMessageReceiver, HMFTimerDelegate> {
+@interface HMDAccessoryBrowser : HMFObject <HAPAccessoryServerBrowserDelegate, HAPAccessoryServerDelegate, HMDMediaBrowserDelegate, HMDWatchSystemStateDelegate, HMFLogging, HMFMessageReceiver, HMFTimerDelegate> {
     NSMutableArray * _accessoryServerBrowsers;
     bool  _activeSiriCommand;
     bool  _appIsInForeground;
+    bool  _browseForMediaAccessories;
     NSMutableSet * _browsingXPCConnections;
     HAPAccessoryServerBrowserBTLE * _btleAccessoryServerBrowser;
     NSMutableArray * _currentlyPairingAccessories;
@@ -20,6 +21,7 @@
     NSMutableSet * _identifiersOfBTLEPairedAccessories;
     NSMutableSet * _identifiersOfPairedAccessories;
     HAPAccessoryServerBrowserIP * _ipAccessoryServerBrowser;
+    NSMutableSet * _mediaAccessoryControlConnections;
     HMDMediaBrowser * _mediaBrowser;
     HMFMessageDispatcher * _messageDispatcher;
     NSObject<OS_dispatch_queue> * _propertyQueue;
@@ -35,6 +37,7 @@
 @property (nonatomic, retain) NSMutableArray *accessoryServerBrowsers;
 @property (nonatomic) bool activeSiriCommand;
 @property (nonatomic) bool appIsInForeground;
+@property (nonatomic) bool browseForMediaAccessories;
 @property (nonatomic, retain) NSMutableSet *browsingXPCConnections;
 @property (nonatomic, retain) HAPAccessoryServerBrowserBTLE *btleAccessoryServerBrowser;
 @property (nonatomic, retain) NSMutableArray *currentlyPairingAccessories;
@@ -67,7 +70,17 @@
 @property (nonatomic, retain) NSUUID *uuid;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
++ (id)logCategory;
+
 - (void).cxx_destruct;
+- (void)__addMediaAccessoryControlObserver:(id)arg1;
+- (void)__evaluateStartDiscoveringAssociatedMediaAccessories;
+- (void)__evaluateStopDiscoveringAssociatedMediaAccessories;
+- (bool)__isConnectionBeingObserved:(id)arg1;
+- (bool)__isCurrentDevicePrimaryResident;
+- (bool)__isMediaAccessoryControlRequested;
+- (id)__observerMatchingConnection:(id)arg1;
+- (void)__removeMediaAccessoryControlObserver:(id)arg1;
 - (void)_addReconfirmTimer:(id)arg1 accessoryServer:(id)arg2;
 - (void)_addUnpairedAccessoryForServer:(id)arg1;
 - (void)_btleAccessoryReachabilityProbeTimer:(bool)arg1;
@@ -80,10 +93,12 @@
 - (void)_discoverAccessoryServer:(id)arg1 linkType:(long long)arg2 errorHandler:(id /* block */)arg3;
 - (void)_handleActiveAppOrSiriCommand;
 - (void)_handleAddedAccessory:(id)arg1;
+- (void)_handleAddedAccessoryAdvertisements:(id)arg1;
 - (void)_handleInvalidatedXPCConnection:(id)arg1;
 - (void)_handleNoActiveHomeKitAppOrSiriCommand;
 - (void)_handlePairingInterruptedTimeout:(id)arg1 error:(id)arg2;
 - (void)_handleRemovedAccessory:(id)arg1;
+- (void)_handleRemovedAccessoryAdvertisements:(id)arg1;
 - (void)_handleRemovedUnpairedHAPAccessory:(id)arg1;
 - (void)_handleRequestFetchNewAccessories:(id)arg1;
 - (void)_handleRequestSearchForNewAccessories:(id)arg1;
@@ -109,6 +124,7 @@
 - (id)_pairingInformationForUnpairedAccessory:(id)arg1;
 - (void)_promptForPairingPasswordForServer:(id)arg1 reason:(id)arg2;
 - (void)_registerForMessages;
+- (void)_removeMediaAccessoryControlObserverMatchingConnection:(id)arg1;
 - (void)_removePairingInformation:(id)arg1 errorCode:(long long)arg2;
 - (void)_removePairingInformationForUnpairedAccessory:(id)arg1;
 - (void)_resurrectAccessoryServer:(id)arg1;
@@ -126,6 +142,7 @@
 - (void)_stopSearchingWithXPCConnection:(id)arg1;
 - (void)_tombstoneAccessoryServer:(id)arg1;
 - (id)_tombstonedAccessoryServerWithServerIdentifier:(id)arg1;
+- (id)_unassociatedMediaAccessoryWithIdentifier:(id)arg1;
 - (id)_unpairedAccessoryForServer:(id)arg1;
 - (id)_unpairedAccessoryMatchingPairingInfo:(id)arg1;
 - (id)_unpairedAccessoryWithServerIdentifier:(id)arg1;
@@ -160,8 +177,10 @@
 - (void)addUnpairedAccessoryServer:(id)arg1 identifier:(id)arg2;
 - (void)addUnpairedHAPAccessory:(id)arg1;
 - (bool)appIsInForeground;
+- (bool)browseForMediaAccessories;
 - (void)browser:(id)arg1 didAddAdvertisements:(id)arg2;
 - (void)browser:(id)arg1 didRemoveAdvertisements:(id)arg2;
+- (void)browser:(id)arg1 didRemoveSessions:(id)arg2;
 - (void)browser:(id)arg1 didUpdateEndpoints:(id)arg2;
 - (id)browsingXPCConnections;
 - (void)btleAccessoryReachabilityProbeTimer:(bool)arg1;
@@ -183,20 +202,21 @@
 - (id)discoveredAccessoryServerIdentifiers;
 - (id)discoveredAccessoryServers;
 - (id)discoveringBLEAccessoryServerIdentifiers;
+- (id)dumpBrowsingConnections;
 - (id)dumpRegisteredPairedAccessories;
 - (id)dumpUnassociatedAccessories;
 - (unsigned long long)generationCounter;
 - (void)handleActiveSiriCommand:(id)arg1;
 - (void)handleAddedAccessory:(id)arg1;
-- (void)handleAddedAccessoryAdvertisements:(id)arg1;
 - (void)handleAppTermination:(id)arg1;
 - (void)handleHomeKitAppInForeground:(id)arg1;
 - (void)handleNewlyPairedAccessory:(id)arg1 linkType:(long long)arg2;
 - (void)handleNoActiveHomeKitApp:(id)arg1;
 - (void)handleNoActiveSiriCommand:(id)arg1;
 - (void)handleRemovedAccessory:(id)arg1;
-- (void)handleRemovedAccessoryAdvertisements:(id)arg1;
 - (void)handleSetupCodeAvailable:(id)arg1;
+- (void)handleStartDiscoveringAssociatedMediaAccessories:(bool)arg1 forTransport:(id)arg2 completionHandler:(id /* block */)arg3;
+- (bool)hasClientRequestedMediaAccessoryControl:(id)arg1;
 - (void)homeLocationChangeNotification:(id)arg1;
 - (id)homeManager;
 - (id)identifiersOfAssociatedMediaAccessories;
@@ -206,7 +226,6 @@
 - (id)ipAccessoryServerBrowser;
 - (bool)isBrowsingAllowed;
 - (bool)isDemoAccessoryIdentifier:(id)arg1;
-- (id)logIdentifier;
 - (id)mediaBrowser;
 - (id)messageDispatcher;
 - (id)messageReceiveQueue;
@@ -230,6 +249,7 @@
 - (void)setAccessoryServerBrowsers:(id)arg1;
 - (void)setActiveSiriCommand:(bool)arg1;
 - (void)setAppIsInForeground:(bool)arg1;
+- (void)setBrowseForMediaAccessories:(bool)arg1;
 - (void)setBrowsingXPCConnections:(id)arg1;
 - (void)setBtleAccessoryServerBrowser:(id)arg1;
 - (void)setCurrentlyPairingAccessories:(id)arg1;

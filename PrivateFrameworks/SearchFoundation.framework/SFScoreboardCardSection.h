@@ -6,6 +6,7 @@
     NSString * _accessibilityDescription;
     SFColor * _backgroundColor;
     bool  _canBeHidden;
+    NSString * _eventStatus;
     struct { 
         unsigned int canBeHidden : 1; 
         unsigned int hasTopPadding : 1; 
@@ -33,6 +34,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
+@property (nonatomic, copy) NSString *eventStatus;
 @property (nonatomic) bool hasBottomPadding;
 @property (nonatomic) bool hasTopPadding;
 @property (readonly) unsigned long long hash;
@@ -64,6 +66,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
+- (id)eventStatus;
 - (bool)hasBottomPadding;
 - (bool)hasCanBeHidden;
 - (bool)hasHasBottomPadding;
@@ -80,6 +83,7 @@
 - (void)setAccessibilityDescription:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setCanBeHidden:(bool)arg1;
+- (void)setEventStatus:(id)arg1;
 - (void)setHasBottomPadding:(bool)arg1;
 - (void)setHasTopPadding:(bool)arg1;
 - (void)setPunchoutOptions:(id)arg1;

@@ -38,7 +38,7 @@
 - (id)_titleForItemAtIndexPath:(id)arg1;
 - (id)_toneIdentifierForIndexPath:(id)arg1;
 - (void)_updateWithToneIdentifier:(id)arg1 mediaIdentifier:(id)arg2 notifyDelegate:(bool)arg3;
-- (void)addMediaItems:(id)arg1;
+- (void)addMediaItemsWithIdentifiers:(id)arg1;
 - (id)currentlySelectedIndexPath;
 - (void)dealloc;
 - (id)defaultToneIdentifier;

@@ -36,10 +36,12 @@
 @property (readonly, copy) NSURL *privateFrameworksURL;
 @property (readonly, copy) NSString *resourcePath;
 @property (readonly, copy) NSURL *resourceURL;
+@property (nonatomic, readonly, copy) NSString *safari_normalizedVersion;
 @property (readonly, copy) NSString *sharedFrameworksPath;
 @property (readonly, copy) NSURL *sharedFrameworksURL;
 @property (readonly, copy) NSString *sharedSupportPath;
 @property (readonly, copy) NSURL *sharedSupportURL;
+@property (readonly, copy) NSString *xct_bundleLinkageInfo;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
@@ -160,6 +162,7 @@
 + (id)_rpLocalizedAppNameFromBundleID:(id)arg1;
 + (id)_rpLocalizedStringFromFrameworkBundleWithKey:(id)arg1;
 + (id)baseIdentifier:(id)arg1;
++ (id)bundleWithPID:(int)arg1;
 + (id)fallbackBundle;
 + (id)localizedBundle;
 
@@ -269,12 +272,16 @@
 
 // Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/Frameworks/XCTest.framework/XCTest
 
+- (id)xct_bundleLinkageInfo;
 - (id)xct_frameworkBundleVersion;
-- (void)xct_logLinkedBundleInfo;
 
 // Image: /System/Library/PrivateFrameworks/MediaControls.framework/MediaControls
 
 + (id)mediaControlsBundle;
+
+// Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
+
++ (id)mediaPlaybackCoreBundle;
 
 // Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
 
@@ -335,6 +342,10 @@
 // Image: /System/Library/PrivateFrameworks/SAML.framework/SAML
 
 + (id)saml_frameworkBundle;
+
+// Image: /System/Library/PrivateFrameworks/SafariCore.framework/SafariCore
+
+- (id)safari_normalizedVersion;
 
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 

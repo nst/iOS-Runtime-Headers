@@ -17,8 +17,10 @@
     <CSEndpointAnalyzerDelegate> * _delegate;
     bool  _didAddAudio;
     bool  _didCommunicateEndpoint;
+    bool  _didDetectSpeech;
     bool  _didReceiveServerFeatures;
     bool  _didTimestampFirstAudioPacket;
+    double  _elapsedTimeWithNoSpeech;
     double  _endWaitTime;
     long long  _endpointMode;
     long long  _endpointStyle;
@@ -63,8 +65,10 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool didAddAudio;
 @property (nonatomic) bool didCommunicateEndpoint;
+@property (nonatomic) bool didDetectSpeech;
 @property (nonatomic) bool didReceiveServerFeatures;
 @property (nonatomic) bool didTimestampFirstAudioPacket;
+@property (nonatomic) double elapsedTimeWithNoSpeech;
 @property (nonatomic) double endWaitTime;
 @property (nonatomic) long long endpointMode;
 @property (nonatomic) long long endpointStyle;
@@ -116,8 +120,10 @@
 - (id)delegate;
 - (bool)didAddAudio;
 - (bool)didCommunicateEndpoint;
+- (bool)didDetectSpeech;
 - (bool)didReceiveServerFeatures;
 - (bool)didTimestampFirstAudioPacket;
+- (double)elapsedTimeWithNoSpeech;
 - (double)endWaitTime;
 - (long long)endpointMode;
 - (long long)endpointStyle;
@@ -162,8 +168,10 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDidAddAudio:(bool)arg1;
 - (void)setDidCommunicateEndpoint:(bool)arg1;
+- (void)setDidDetectSpeech:(bool)arg1;
 - (void)setDidReceiveServerFeatures:(bool)arg1;
 - (void)setDidTimestampFirstAudioPacket:(bool)arg1;
+- (void)setElapsedTimeWithNoSpeech:(double)arg1;
 - (void)setEndWaitTime:(double)arg1;
 - (void)setEndpointMode:(long long)arg1;
 - (void)setEndpointStyle:(long long)arg1;

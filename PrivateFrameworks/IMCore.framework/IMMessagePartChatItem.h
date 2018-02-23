@@ -30,7 +30,7 @@
 + (bool)_isWhiteListedURL:(id)arg1;
 + (id)_messageItemWithPartsDeleted:(id)arg1 fromMessageItem:(id)arg2;
 + (id)_newMessagePartsForMessageItem:(id)arg1;
-+ (id)_newMessagePartsForMessageItem:(id)arg1 shouldDisplayLink:(bool)arg2 isBusiness:(bool)arg3;
++ (id)_newMessagePartsForMessageItem:(id)arg1 shouldDisplayLink:(bool)arg2 isBusiness:(bool)arg3 hasKnownParticipants:(bool)arg4;
 + (bool)_testingSupportsURL:(id)arg1;
 
 - (void).cxx_destruct;

@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCMTWriterMutexLock : NSObject <FCLocking> {
-    FCMutexLock * _mutex;
+@interface FCMTWriterMutexLock : NSObject <NFLocking> {
+    NFMutexLock * _mutex;
 }
 
-@property (nonatomic, retain) FCMutexLock *mutex;
+@property (nonatomic, retain) NFMutexLock *mutex;
 
 - (void).cxx_destruct;
 - (id)init;

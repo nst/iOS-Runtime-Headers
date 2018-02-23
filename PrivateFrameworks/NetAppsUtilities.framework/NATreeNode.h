@@ -32,6 +32,7 @@
 - (id)description;
 - (unsigned long long)hash;
 - (id)initWithRepresentedObject:(id)arg1;
+- (id)initWithRepresentedObject:(id)arg1 childNodes:(id)arg2;
 - (id)internalChildNodes;
 - (bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;

@@ -51,12 +51,14 @@
 - (void)_displayAudioRoutePicker;
 - (void)_getDefaultVolumeSliderFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 routeButtonFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 forBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 - (void)_initWithStyle:(long long)arg1;
+- (void)_loadAudioRoutePickerIfNeeded;
 - (id)_routeButton;
 - (void)_routingControllerDidUpdateVolumeControlState:(id)arg1;
 - (void)_setRouteDiscoveryEnabled:(bool)arg1;
 - (void)_setShowsRouteButton:(bool)arg1 animated:(bool)arg2;
 - (void)_setShowsVolumeSlider:(bool)arg1;
-- (void)_setVolumeAudioCategory:(id)arg1;
+- (void)_startPrewarmingAudioRoutePicker;
+- (void)_stopPrewarmingAudioRoutePicker;
 - (void)_updateWirelessRouteStatus;
 - (bool)areWirelessRoutesAvailable;
 - (void)dealloc;

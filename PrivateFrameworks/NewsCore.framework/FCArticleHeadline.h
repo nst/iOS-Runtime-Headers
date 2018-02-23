@@ -38,7 +38,8 @@
     NSString * _referencedArticleID;
     NSArray * _relatedArticleIDs;
     NSString * _shortExcerpt;
-    NSObject<FCChannelProviding> * _sourceChannel;
+    bool  _showMinimalChrome;
+    <FCChannelProviding> * _sourceChannel;
     NSString * _sourceName;
     bool  _sponsored;
     FCTopStoriesStyleConfiguration * _storyStyle;
@@ -62,6 +63,7 @@
     FCHeadlineThumbnail * _thumbnailWidgetHQ;
     FCHeadlineThumbnail * _thumbnailWidgetLQ;
     NSString * _title;
+    NSString * _titleCompact;
     NSArray * _topicIDs;
     NSArray * _topics;
     NSString * _versionIdentifier;
@@ -84,6 +86,7 @@
 - (id)articleInterestToken;
 - (id)articleRecord;
 - (long long)backendArticleVersion;
+- (id)backingArticleRecordData;
 - (long long)behaviorFlags;
 - (id)blockedStorefrontIDs;
 - (bool)canBePurchased;
@@ -101,6 +104,7 @@
 - (id)identifier;
 - (id)init;
 - (id)initWithArticleRecord:(id)arg1 articleInterestToken:(id)arg2 sourceChannel:(id)arg3 storyStyleConfigs:(id)arg4 storyTypeTimeout:(long long)arg5 rapidUpdatesTimeout:(long long)arg6 assetManager:(id)arg7;
+- (id)initWithArticleRecordData:(id)arg1 sourceChannel:(id)arg2 assetManager:(id)arg3;
 - (bool)isDeleted;
 - (bool)isDraft;
 - (bool)isFeatureCandidate;
@@ -141,8 +145,10 @@
 - (void)setThumbnailMedium:(id)arg1;
 - (void)setThumbnailUltraHQ:(id)arg1;
 - (void)setTitle:(id)arg1;
+- (void)setTitleCompact:(id)arg1;
 - (void)setTopicIDs:(id)arg1;
 - (id)shortExcerpt;
+- (bool)showMinimalChrome;
 - (id)sourceChannel;
 - (id)sourceName;
 - (id)storyStyle;
@@ -157,6 +163,7 @@
 - (id)thumbnailWidgetHQ;
 - (id)thumbnailWidgetLQ;
 - (id)title;
+- (id)titleCompact;
 - (id)topicIDs;
 - (id)topics;
 - (id)versionIdentifier;

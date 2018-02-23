@@ -29,7 +29,8 @@
 - (void)setICloudToken:(id)arg1;
 - (void)setStore:(id)arg1;
 - (id)store;
-- (void)synchronizeTagsToCloud;
-- (void)ubiquityIdentityDidChange:(id)arg1;
+- (void)syncTagsWithCloud:(bool)arg1;
+- (void)ubiquityIdentityDidChange;
+- (void)writeTagsToCloud;
 
 @end

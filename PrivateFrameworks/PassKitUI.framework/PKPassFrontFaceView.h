@@ -12,6 +12,7 @@
     bool  _showsBarcodeView;
     bool  _showsInfo;
     bool  _showsLinkedApp;
+    bool  _showsLiveBalance;
 }
 
 @property (nonatomic, readonly) PKBarcodeStickerView *barcodeView;
@@ -20,6 +21,7 @@
 @property (nonatomic) bool showsBarcodeView;
 @property (nonatomic) bool showsInfo;
 @property (nonatomic) bool showsLinkedApp;
+@property (nonatomic) bool showsLiveBalance;
 
 - (void).cxx_destruct;
 - (void)_barcodeButtonPressed;
@@ -44,12 +46,14 @@
 - (void)setShowsBarcodeView:(bool)arg1 animated:(bool)arg2;
 - (void)setShowsInfo:(bool)arg1;
 - (void)setShowsLinkedApp:(bool)arg1;
+- (void)setShowsLiveBalance:(bool)arg1;
 - (id)shortFaceTemplate;
 - (id)shortScrunchedFaceTemplate;
 - (bool)showsBarcodeButton;
 - (bool)showsBarcodeView;
 - (bool)showsInfo;
 - (bool)showsLinkedApp;
+- (bool)showsLiveBalance;
 - (id)tallFaceTemplate;
 - (void)updateValidity;
 

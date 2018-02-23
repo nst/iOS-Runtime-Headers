@@ -4,8 +4,6 @@
 
 @interface IMCloudKitEventNotificationRuntimeTestSuite : IMRuntimeTestSuite
 
-+ (void)load;
-
 - (id)init;
 
 @end

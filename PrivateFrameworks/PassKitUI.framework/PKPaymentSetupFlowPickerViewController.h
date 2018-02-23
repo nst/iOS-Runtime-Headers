@@ -2,33 +2,52 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentSetupFlowPickerViewController : PKPaymentSetupTableViewController <PKPaymentSetupActivitySpinnerViewControllerProtocol> {
+@interface PKPaymentSetupFlowPickerViewController : PKPaymentSetupTableViewController <PKPaymentSetupActivitySpinnerProtocol, PKPaymentSetupBrowseProductsViewControllerDelegate, PKPaymentSetupHideSetupLaterButtonProtocol> {
+    bool  _allowsManualEntry;
     PKPaymentSetupFooterView * _footerView;
     PKTableHeaderView * _headerView;
+    bool  _hideSetupLaterButton;
     NSMutableArray * _pickerItems;
+    PKPaymentProvisioningController * _provisioningController;
+    long long  _setupContext;
     <PKPaymentSetupViewControllerDelegate> * _setupDelegate;
-    PKPaymentWebService * _webService;
 }
 
+@property (nonatomic) bool allowsManualEntry;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PKTableHeaderView *headerView;
-@property (nonatomic, readonly) NSArray *pickerItems;
+@property (nonatomic) bool hideSetupLaterButton;
+@property (nonatomic, readonly) PKPaymentProvisioningController *provisioningController;
+@property (nonatomic, readonly) long long setupContext;
 @property (nonatomic, readonly) <PKPaymentSetupViewControllerDelegate> *setupDelegate;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) PKPaymentWebService *webService;
+
++ (id)_filteredPaymentSetupProducts:(id)arg1 localCredential:(id)arg2;
++ (id)paymentSetupFlowPickerWithSetupDelegate:(id)arg1 context:(long long)arg2 provisioningController:(id)arg3;
 
 - (void).cxx_destruct;
+- (void)_didSelectProducts:(id)arg1;
 - (void)_setNavigationBarEnabled:(bool)arg1;
 - (void)_setupLater:(id)arg1;
+- (void)_terminateSetupFlow;
 - (void)addPickerItem:(id)arg1;
+- (bool)allowsManualEntry;
+- (void)browseProductsViewController:(id)arg1 didSelectProduct:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (id)footerView;
 - (id)headerView;
 - (void)hideActivitySpinner;
-- (id)initWithWebService:(id)arg1 setupDelegate:(id)arg2 context:(long long)arg3;
+- (bool)hideSetupLaterButton;
+- (id)initWithSetupDelegate:(id)arg1 context:(long long)arg2 provisioningController:(id)arg3;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)pickerItems;
+- (void)productSelectionViewController:(id)arg1 didSelectProduct:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)productSelectionViewController:(id)arg1 pushViewController:(id)arg2 withCompletion:(id /* block */)arg3;
+- (id)provisioningController;
+- (void)setAllowsManualEntry:(bool)arg1;
+- (void)setHideSetupLaterButton:(bool)arg1;
+- (long long)setupContext;
 - (id)setupDelegate;
 - (void)showActivitySpinner;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
@@ -39,6 +58,5 @@
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
-- (id)webService;
 
 @end

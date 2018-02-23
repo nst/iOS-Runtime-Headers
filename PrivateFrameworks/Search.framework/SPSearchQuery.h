@@ -10,6 +10,7 @@
     double  _creationTime;
     NSDictionary * _dictationResponse;
     bool  _dictationStable;
+    NSArray * _disabledApps;
     NSArray * _disabledBundles;
     NSArray * _disabledDomains;
     SFSearchSuggestion * _engagedSuggestion;
@@ -42,6 +43,7 @@
 @property (nonatomic, readonly) double creationTime;
 @property (nonatomic, retain) NSDictionary *dictationResponse;
 @property (nonatomic) bool dictationStable;
+@property (nonatomic, retain) NSArray *disabledApps;
 @property (nonatomic, retain) NSArray *disabledBundles;
 @property (nonatomic, readonly) NSArray *disabledDomains;
 @property (nonatomic, readonly) SFSearchSuggestion *engagedSuggestion;
@@ -74,6 +76,7 @@
 - (double)creationTime;
 - (id)dictationResponse;
 - (bool)dictationStable;
+- (id)disabledApps;
 - (id)disabledBundles;
 - (id)disabledDomains;
 - (id)engagedSuggestion;
@@ -84,10 +87,6 @@
 - (bool)infinitePatience;
 - (id)initWithQuery:(id)arg1 domains:(id)arg2;
 - (id)initWithSearchQueryContext:(id)arg1;
-- (id)initWithSearchString:(id)arg1;
-- (id)initWithSearchString:(id)arg1 keyboardLanguage:(id)arg2 forSearchDomains:(id)arg3 disabledBundles:(id)arg4;
-- (id)initWithSearchString:(id)arg1 keyboardLanguage:(id)arg2 forSearchDomains:(id)arg3 disabledDomains:(id)arg4 disabledBundles:(id)arg5;
-- (id)initWithSearchString:(id)arg1 keyboardLanguage:(id)arg2 keyboardPrimaryLanguage:(id)arg3 forSearchDomains:(id)arg4 disabledDomains:(id)arg5 disabledBundles:(id)arg6 searchEntities:(id)arg7;
 - (bool)internal;
 - (bool)isEqual:(id)arg1;
 - (bool)isPasscodeLocked;
@@ -106,6 +105,7 @@
 - (void)setContentFilters:(long long)arg1;
 - (void)setDictationResponse:(id)arg1;
 - (void)setDictationStable:(bool)arg1;
+- (void)setDisabledApps:(id)arg1;
 - (void)setDisabledBundles:(id)arg1;
 - (void)setGrouped:(bool)arg1;
 - (void)setInfinitePatience:(bool)arg1;

@@ -21,6 +21,7 @@
 - (id)accountPropertiesForDataclass:(id)arg1;
 - (id)accountStore;
 - (bool)canAuthWithCloudKit;
+- (bool)canRenew;
 - (id)ckAccount;
 - (id)cloudKitAuthTokenWithError:(id*)arg1;
 - (id)dsid;

@@ -20,5 +20,6 @@
 - (id)installedChildViewControllersKeyedByCell;
 - (void)setEditing:(bool)arg1 animated:(bool)arg2;
 - (void)setInstalledChildViewControllersKeyedByCell:(id)arg1;
+- (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(id)arg1;
 
 @end

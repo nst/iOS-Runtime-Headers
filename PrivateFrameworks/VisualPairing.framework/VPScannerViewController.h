@@ -4,6 +4,7 @@
 
 @interface VPScannerViewController : UIViewController {
     UIButton * _cancelButton;
+    UIView * _containerView;
     id /* block */  _eventHandler;
     UIButton * _pairManuallyButton;
     id /* block */  _scannedCodeHandler;
@@ -15,6 +16,7 @@
 }
 
 @property (nonatomic, retain) UIButton *cancelButton;
+@property (nonatomic, retain) UIView *containerView;
 @property (nonatomic, copy) id /* block */ eventHandler;
 @property (nonatomic, retain) UIButton *pairManuallyButton;
 @property (nonatomic, copy) id /* block */ scannedCodeHandler;
@@ -28,6 +30,7 @@
 
 - (void).cxx_destruct;
 - (id)cancelButton;
+- (id)containerView;
 - (id /* block */)eventHandler;
 - (void)handleCancelButton:(id)arg1;
 - (void)handlePairManuallyButton:(id)arg1;
@@ -35,6 +38,7 @@
 - (id /* block */)scannedCodeHandler;
 - (id)scannerView;
 - (void)setCancelButton:(id)arg1;
+- (void)setContainerView:(id)arg1;
 - (void)setEventHandler:(id /* block */)arg1;
 - (void)setPairManuallyButton:(id)arg1;
 - (void)setScannedCodeHandler:(id /* block */)arg1;

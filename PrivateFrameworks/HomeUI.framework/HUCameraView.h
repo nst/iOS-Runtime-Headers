@@ -5,9 +5,13 @@
 @interface HUCameraView : UIView <UIScrollViewDelegate> {
     bool  _allowDigitalZoom;
     UIView * _backgroundView;
-    double  _badgeInset;
-    NSArray * _badgeInsetConstraints;
+    NSLayoutConstraint * _badgeLeadingConstraint;
+    struct UIOffset { 
+        double horizontal; 
+        double vertical; 
+    }  _badgeOffset;
     NSLayoutYAxisAnchor * _badgeTopAnchor;
+    NSLayoutConstraint * _badgeTopConstraint;
     HUCameraBadgeView * _badgeView;
     NSLayoutConstraint * _cameraAspectRatioConstraint;
     HURemoteContextHostingView * _cameraContainerView;
@@ -25,9 +29,10 @@
 @property (nonatomic) bool allowDigitalZoom;
 @property (nonatomic, retain) UIView *backgroundView;
 @property (getter=isBadgeHidden, nonatomic) bool badgeHidden;
-@property (nonatomic) double badgeInset;
-@property (nonatomic, retain) NSArray *badgeInsetConstraints;
+@property (nonatomic, retain) NSLayoutConstraint *badgeLeadingConstraint;
+@property (nonatomic) struct UIOffset { double x1; double x2; } badgeOffset;
 @property (nonatomic, retain) NSLayoutYAxisAnchor *badgeTopAnchor;
+@property (nonatomic, retain) NSLayoutConstraint *badgeTopConstraint;
 @property (nonatomic, readonly) HUCameraBadgeView *badgeView;
 @property (nonatomic, retain) NSLayoutConstraint *cameraAspectRatioConstraint;
 @property (nonatomic, readonly) HURemoteContextHostingView *cameraContainerView;
@@ -67,9 +72,10 @@
 - (bool)allowDigitalZoom;
 - (id)backgroundColor;
 - (id)backgroundView;
-- (double)badgeInset;
-- (id)badgeInsetConstraints;
+- (id)badgeLeadingConstraint;
+- (struct UIOffset { double x1; double x2; })badgeOffset;
 - (id)badgeTopAnchor;
+- (id)badgeTopConstraint;
 - (id)badgeView;
 - (id)cameraAspectRatioConstraint;
 - (id)cameraContainerView;
@@ -95,9 +101,10 @@
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBackgroundView:(id)arg1;
 - (void)setBadgeHidden:(bool)arg1;
-- (void)setBadgeInset:(double)arg1;
-- (void)setBadgeInsetConstraints:(id)arg1;
+- (void)setBadgeLeadingConstraint:(id)arg1;
+- (void)setBadgeOffset:(struct UIOffset { double x1; double x2; })arg1;
 - (void)setBadgeTopAnchor:(id)arg1;
+- (void)setBadgeTopConstraint:(id)arg1;
 - (void)setCameraAspectRatioConstraint:(id)arg1;
 - (void)setCameraContentMode:(long long)arg1;
 - (void)setCameraDimmingView:(id)arg1;

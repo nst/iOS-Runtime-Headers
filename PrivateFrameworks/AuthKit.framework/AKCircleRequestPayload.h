@@ -20,7 +20,6 @@
 @property (nonatomic, retain) NSDictionary *responseInfo;
 @property (nonatomic, retain) AKPushMessage *responseMessage;
 @property (nonatomic, retain) NSString *serverInfo;
-@property (nonatomic, readonly) NSString *serverMachineId;
 @property (nonatomic, retain) NSString *transactionId;
 
 + (id)payloadWithMessage:(id)arg1;
@@ -40,7 +39,6 @@
 - (id)responseInfo;
 - (id)responseMessage;
 - (id)serverInfo;
-- (id)serverMachineId;
 - (void)setAltDSID:(id)arg1;
 - (void)setCircleStep:(unsigned long long)arg1;
 - (void)setClientErrorCode:(long long)arg1;

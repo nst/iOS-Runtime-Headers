@@ -4,6 +4,8 @@
 
 @interface PDFPageViewPrivate : NSObject {
     UITextView * activeTextView;
+    PDFAnnotation * activeWidgetAnnotation;
+    UIView * activeWidgetControl;
     UIImage * backgroundImage;
     CALayer * backgroundLayer;
     int  backgroundQuality;
@@ -14,28 +16,13 @@
     }  bookmarkSize;
     NSObject<PDFPageLayerGeometryInterface> * geometryInterface;
     bool  isPerformingUndo;
-    struct CGImage { } * lollipopImageMask;
-    CALayer * lollipopMagnifierLayer;
-    struct CGSize { 
-        double width; 
-        double height; 
-    }  lollipopSize;
-    struct CGImage { } * magnifierImageMask;
-    struct CGSize { 
-        double width; 
-        double height; 
-    }  magnifierSize;
     PDFPage * page;
     NSMutableArray * pageAnnotationEffects;
     PDFPageLayer * pageLayer;
-    NSMutableArray * pageMarkups;
     NSMutableArray * pageSignatures;
-    NSMapTable * pageWidgetMapTable;
-    PDFPagePopupLayer * popupLayer;
     PDFRenderingProperties * renderingProperties;
-    PDFPageSearchLayer * searchLayer;
-    PDFPageSelectionLayer * selectionLayer;
-    CALayer * textMagnifierLayer;
+    PDFPageLayerEffect * searchLayer;
+    PDFPageLayerEffect * selectionLayer;
     unsigned long long  visibilityDelegateIndex;
 }
 

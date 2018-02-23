@@ -3,6 +3,7 @@
  */
 
 @interface _UIKeyboardTextSelectionGestureCluster : UITextGestureCluster <_UIPanOrFlickGestureRecognizerDelegate> {
+    id  _deallocToken;
     _UIKeyboardTextSelectionGestureController * _owner;
     NSMapTable * _weakMap;
 }
@@ -64,6 +65,7 @@
 - (void)oneFingerForcePan:(id)arg1;
 - (void)oneFingerForcePress:(id)arg1;
 - (id)owner;
+- (void)registerOwner:(id)arg1;
 - (id)selectionController;
 - (void)selfHide;
 - (void)twoFingerLongPressGestureWithState:(long long)arg1 withTranslation:(struct CGPoint { double x1; double x2; })arg2;

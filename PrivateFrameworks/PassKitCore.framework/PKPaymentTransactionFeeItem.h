@@ -18,7 +18,6 @@
 
 - (void).cxx_destruct;
 - (void)_initWithFeeDictionary:(id)arg1;
-- (id)_rawDictionary;
 - (id)currencyAmount;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -28,6 +27,7 @@
 - (id)initWithFeeDictionary:(id)arg1;
 - (bool)isEqual:(id)arg1;
 - (bool)isEqualToFeeItem:(id)arg1;
+- (id)jsonDictionaryRepresentation;
 - (id)localizedDisplayName;
 - (void)setCurrencyAmount:(id)arg1;
 - (void)setIdentifier:(id)arg1;

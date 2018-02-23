@@ -5,7 +5,7 @@
 @interface VCPURLAsset : VCPAsset {
     NSDictionary * _cachedExif;
     NSURL * _imageURL;
-    long long  _onceExif;
+    bool  _onceExif;
     unsigned long long  _pixelHeight;
     unsigned long long  _pixelWidth;
 }

@@ -58,11 +58,13 @@
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })padding;
 - (long long)position;
 - (id)ratingStyle;
+- (id)shadow;
 - (id)style;
 - (long long)textAlignment;
 - (id)textHighlightStyle;
 - (double)textMinimumScaleFactor;
 - (id)textStyle;
+- (id)textTransform;
 - (id)tintColor;
 - (id)valueForStyleProperty:(id)arg1;
 - (double)width;

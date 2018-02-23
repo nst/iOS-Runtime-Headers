@@ -8,6 +8,7 @@
     NSDate * _dateOfDeviceEligibilityUpdate;
     NSDate * _dateOfLastCloudTabDevicesUpdate;
     WBSDeviceEligibilityInformation * _deviceEligibilityInformation;
+    NSArray * _eligibleOperatingSystemVersionRanges;
     <WBSLogger> * _keyActionsLogger;
     bool  _lastCloudTabDevicesSyncRequestWasSuccessful;
     NSDate * _nonMigratableDeviceGracePeriodStartDate;
@@ -17,12 +18,16 @@
 
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 @property (nonatomic, readonly) NSDate *earliestPossibleDateOfMigration;
+@property (nonatomic, copy) NSArray *eligibleOperatingSystemVersionRanges;
 @property (nonatomic, retain) <WBSLogger> *keyActionsLogger;
 @property (getter=isReadyToMigrate, nonatomic, readonly) bool readyToMigrate;
+
++ (id)_deviceEligibilityInformationFromDictionaryRepresentation:(id)arg1;
 
 - (void).cxx_destruct;
 - (double)_deviceEligibilityUpdateInterval;
 - (void)_fetchDeviceEligibilityInformationWithCloudTabDeviceProvider:(id)arg1 deviceEligibilityFetcher:(id)arg2 completionHandler:(id /* block */)arg3;
+- (bool)_hasValidDeviceEligibilityInformation;
 - (bool)_isCloudTabDeviceDataPastExpiration;
 - (bool)_isDateInGracePeriod:(id)arg1;
 - (bool)_isInternalInstall;
@@ -43,9 +48,11 @@
 - (long long)_timescale;
 - (id)dictionaryRepresentation;
 - (id)earliestPossibleDateOfMigration;
+- (id)eligibleOperatingSystemVersionRanges;
 - (id)initFromDictionaryRepresentation:(id)arg1;
 - (bool)isReadyToMigrate;
 - (id)keyActionsLogger;
+- (void)setEligibleOperatingSystemVersionRanges:(id)arg1;
 - (void)setKeyActionsLogger:(id)arg1;
 - (void)updateWithCloudTabDeviceProvider:(id)arg1 deviceEligibilityFetcher:(id)arg2 completionHandler:(id /* block */)arg3;
 

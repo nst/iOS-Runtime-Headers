@@ -4,6 +4,7 @@
 
 @interface PUFeedViewControllerPadSpec : PUFeedViewControllerSpec
 
+- (double)collectionViewContentInset;
 - (long long)configurationForSectionHeaderType:(long long)arg1 collectionViewType:(long long)arg2;
 - (void)configureCommentSeparatorMetrics:(inout struct PUFeedSeparatorMetrics { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct UIEdgeInsets { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; }*)arg1;
 - (void)configureFeedCollectionViewLayout:(id)arg1 forCollectionViewType:(long long)arg2 collectionViewSize:(struct CGSize { double x1; double x2; })arg3;
@@ -32,7 +33,6 @@
 - (bool)shouldUseAspectThumbnails;
 - (bool)shouldUseFullscreenLayout;
 - (double)spacingBetweenSectionWithInfo:(id)arg1 andHeaderWithGroupID:(id)arg2;
-- (double)standardSideMargins;
 - (struct CGSize { double x1; double x2; })thumbnailSize;
 - (struct CGSize { double x1; double x2; })thumbnailSizeForImageSize:(struct CGSize { double x1; double x2; })arg1;
 

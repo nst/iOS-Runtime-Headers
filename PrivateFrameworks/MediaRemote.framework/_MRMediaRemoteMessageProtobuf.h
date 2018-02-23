@@ -17,6 +17,8 @@
     _MRGetStateMessageProtobuf * _getStateMessage;
     _MRGetVoiceInputDevicesMessageProtobuf * _getVoiceInputDevicesMessage;
     _MRGetVoiceInputDevicesResponseMessageProtobuf * _getVoiceInputDevicesResponseMessage;
+    _MRGetVolumeMessageProtobuf * _getVolumeMessage;
+    _MRGetVolumeResultMessageProtobuf * _getVolumeResultMessage;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int errorCode : 1; 
@@ -35,6 +37,8 @@
     _MRRegisterHIDDeviceResultMessageProtobuf * _registerHIDDeviceResultMessage;
     _MRRegisterVoiceInputDeviceMessageProtobuf * _registerVoiceInputDeviceMessage;
     _MRRegisterVoiceInputDeviceResponseMessageProtobuf * _registerVoiceInputDeviceResponseMessage;
+    _MRRemoveClientMessageProtobuf * _removeClientMessage;
+    _MRRemovePlayerMessageProtobuf * _removePlayerMessage;
     _MRSendButtonEventMessageProtobuf * _sendButtonEventMessage;
     _MRSendCommandMessageProtobuf * _sendCommandMessage;
     _MRSendCommandResultMessageProtobuf * _sendCommandResultMessage;
@@ -50,12 +54,17 @@
     _MRSetNowPlayingPlayerMessageProtobuf * _setNowPlayingPlayerMessage;
     _MRSetRecordingStateMessageProtobuf * _setRecordingStateMessage;
     _MRSetStateMessageProtobuf * _setStateMessage;
+    _MRSetVolumeMessageProtobuf * _setVolumeMessage;
     _MRTextInputMessageProtobuf * _textInputMessage;
     unsigned long long  _timestamp;
     _MRTransactionMessageProtobuf * _transactionPackets;
     int  _type;
     _MRUnregisterGameControllerMessageProtobuf * _unregisterGameController;
+    _MRUpdateClientMessageProtobuf * _updateClientMessage;
+    _MRUpdateContentItemArtworkMessageProtobuf * _updateContentItemArtworkMessage;
+    _MRUpdateContentItemMessageProtobuf * _updateContentItemMessage;
     _MRVolumeControlAvailabilityProtobuf * _volumeControlAvailabilityMessage;
+    _MRVolumeDidChangeMessageProtobuf * _volumeDidChangeMessage;
     _MRWakeDeviceMessageProtobuf * _wakeDeviceMessage;
 }
 
@@ -73,6 +82,8 @@
 @property (nonatomic, retain) _MRGetStateMessageProtobuf *getStateMessage;
 @property (nonatomic, retain) _MRGetVoiceInputDevicesMessageProtobuf *getVoiceInputDevicesMessage;
 @property (nonatomic, retain) _MRGetVoiceInputDevicesResponseMessageProtobuf *getVoiceInputDevicesResponseMessage;
+@property (nonatomic, retain) _MRGetVolumeMessageProtobuf *getVolumeMessage;
+@property (nonatomic, retain) _MRGetVolumeResultMessageProtobuf *getVolumeResultMessage;
 @property (nonatomic, readonly) bool hasAuthenticationToken;
 @property (nonatomic, readonly) bool hasClientUpdatesConfigMessage;
 @property (nonatomic, readonly) bool hasConnectionState;
@@ -87,6 +98,8 @@
 @property (nonatomic, readonly) bool hasGetStateMessage;
 @property (nonatomic, readonly) bool hasGetVoiceInputDevicesMessage;
 @property (nonatomic, readonly) bool hasGetVoiceInputDevicesResponseMessage;
+@property (nonatomic, readonly) bool hasGetVolumeMessage;
+@property (nonatomic, readonly) bool hasGetVolumeResultMessage;
 @property (nonatomic, readonly) bool hasIdentifier;
 @property (nonatomic, readonly) bool hasKeyboardMessage;
 @property (nonatomic, readonly) bool hasModifyOutputContextRequestMessage;
@@ -100,6 +113,8 @@
 @property (nonatomic, readonly) bool hasRegisterHIDDeviceResultMessage;
 @property (nonatomic, readonly) bool hasRegisterVoiceInputDeviceMessage;
 @property (nonatomic, readonly) bool hasRegisterVoiceInputDeviceResponseMessage;
+@property (nonatomic, readonly) bool hasRemoveClientMessage;
+@property (nonatomic, readonly) bool hasRemovePlayerMessage;
 @property (nonatomic, readonly) bool hasSendButtonEventMessage;
 @property (nonatomic, readonly) bool hasSendCommandMessage;
 @property (nonatomic, readonly) bool hasSendCommandResultMessage;
@@ -115,12 +130,17 @@
 @property (nonatomic, readonly) bool hasSetNowPlayingPlayerMessage;
 @property (nonatomic, readonly) bool hasSetRecordingStateMessage;
 @property (nonatomic, readonly) bool hasSetStateMessage;
+@property (nonatomic, readonly) bool hasSetVolumeMessage;
 @property (nonatomic, readonly) bool hasTextInputMessage;
 @property (nonatomic) bool hasTimestamp;
 @property (nonatomic, readonly) bool hasTransactionPackets;
 @property (nonatomic) bool hasType;
 @property (nonatomic, readonly) bool hasUnregisterGameController;
+@property (nonatomic, readonly) bool hasUpdateClientMessage;
+@property (nonatomic, readonly) bool hasUpdateContentItemArtworkMessage;
+@property (nonatomic, readonly) bool hasUpdateContentItemMessage;
 @property (nonatomic, readonly) bool hasVolumeControlAvailabilityMessage;
+@property (nonatomic, readonly) bool hasVolumeDidChangeMessage;
 @property (nonatomic, readonly) bool hasWakeDeviceMessage;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) _MRKeyboardMessageProtobuf *keyboardMessage;
@@ -135,6 +155,8 @@
 @property (nonatomic, retain) _MRRegisterHIDDeviceResultMessageProtobuf *registerHIDDeviceResultMessage;
 @property (nonatomic, retain) _MRRegisterVoiceInputDeviceMessageProtobuf *registerVoiceInputDeviceMessage;
 @property (nonatomic, retain) _MRRegisterVoiceInputDeviceResponseMessageProtobuf *registerVoiceInputDeviceResponseMessage;
+@property (nonatomic, retain) _MRRemoveClientMessageProtobuf *removeClientMessage;
+@property (nonatomic, retain) _MRRemovePlayerMessageProtobuf *removePlayerMessage;
 @property (nonatomic, retain) _MRSendButtonEventMessageProtobuf *sendButtonEventMessage;
 @property (nonatomic, retain) _MRSendCommandMessageProtobuf *sendCommandMessage;
 @property (nonatomic, retain) _MRSendCommandResultMessageProtobuf *sendCommandResultMessage;
@@ -150,12 +172,17 @@
 @property (nonatomic, retain) _MRSetNowPlayingPlayerMessageProtobuf *setNowPlayingPlayerMessage;
 @property (nonatomic, retain) _MRSetRecordingStateMessageProtobuf *setRecordingStateMessage;
 @property (nonatomic, retain) _MRSetStateMessageProtobuf *setStateMessage;
+@property (nonatomic, retain) _MRSetVolumeMessageProtobuf *setVolumeMessage;
 @property (nonatomic, retain) _MRTextInputMessageProtobuf *textInputMessage;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic, retain) _MRTransactionMessageProtobuf *transactionPackets;
 @property (nonatomic) int type;
 @property (nonatomic, retain) _MRUnregisterGameControllerMessageProtobuf *unregisterGameController;
+@property (nonatomic, retain) _MRUpdateClientMessageProtobuf *updateClientMessage;
+@property (nonatomic, retain) _MRUpdateContentItemArtworkMessageProtobuf *updateContentItemArtworkMessage;
+@property (nonatomic, retain) _MRUpdateContentItemMessageProtobuf *updateContentItemMessage;
 @property (nonatomic, retain) _MRVolumeControlAvailabilityProtobuf *volumeControlAvailabilityMessage;
+@property (nonatomic, retain) _MRVolumeDidChangeMessageProtobuf *volumeDidChangeMessage;
 @property (nonatomic, retain) _MRWakeDeviceMessageProtobuf *wakeDeviceMessage;
 
 - (int)StringAsType:(id)arg1;
@@ -178,6 +205,8 @@
 - (id)getStateMessage;
 - (id)getVoiceInputDevicesMessage;
 - (id)getVoiceInputDevicesResponseMessage;
+- (id)getVolumeMessage;
+- (id)getVolumeResultMessage;
 - (bool)hasAuthenticationToken;
 - (bool)hasClientUpdatesConfigMessage;
 - (bool)hasConnectionState;
@@ -192,6 +221,8 @@
 - (bool)hasGetStateMessage;
 - (bool)hasGetVoiceInputDevicesMessage;
 - (bool)hasGetVoiceInputDevicesResponseMessage;
+- (bool)hasGetVolumeMessage;
+- (bool)hasGetVolumeResultMessage;
 - (bool)hasIdentifier;
 - (bool)hasKeyboardMessage;
 - (bool)hasModifyOutputContextRequestMessage;
@@ -205,6 +236,8 @@
 - (bool)hasRegisterHIDDeviceResultMessage;
 - (bool)hasRegisterVoiceInputDeviceMessage;
 - (bool)hasRegisterVoiceInputDeviceResponseMessage;
+- (bool)hasRemoveClientMessage;
+- (bool)hasRemovePlayerMessage;
 - (bool)hasSendButtonEventMessage;
 - (bool)hasSendCommandMessage;
 - (bool)hasSendCommandResultMessage;
@@ -220,12 +253,17 @@
 - (bool)hasSetNowPlayingPlayerMessage;
 - (bool)hasSetRecordingStateMessage;
 - (bool)hasSetStateMessage;
+- (bool)hasSetVolumeMessage;
 - (bool)hasTextInputMessage;
 - (bool)hasTimestamp;
 - (bool)hasTransactionPackets;
 - (bool)hasType;
 - (bool)hasUnregisterGameController;
+- (bool)hasUpdateClientMessage;
+- (bool)hasUpdateContentItemArtworkMessage;
+- (bool)hasUpdateContentItemMessage;
 - (bool)hasVolumeControlAvailabilityMessage;
+- (bool)hasVolumeDidChangeMessage;
 - (bool)hasWakeDeviceMessage;
 - (unsigned long long)hash;
 - (id)identifier;
@@ -244,6 +282,8 @@
 - (id)registerHIDDeviceResultMessage;
 - (id)registerVoiceInputDeviceMessage;
 - (id)registerVoiceInputDeviceResponseMessage;
+- (id)removeClientMessage;
+- (id)removePlayerMessage;
 - (id)sendButtonEventMessage;
 - (id)sendCommandMessage;
 - (id)sendCommandResultMessage;
@@ -268,6 +308,8 @@
 - (void)setGetStateMessage:(id)arg1;
 - (void)setGetVoiceInputDevicesMessage:(id)arg1;
 - (void)setGetVoiceInputDevicesResponseMessage:(id)arg1;
+- (void)setGetVolumeMessage:(id)arg1;
+- (void)setGetVolumeResultMessage:(id)arg1;
 - (void)setHasErrorCode:(bool)arg1;
 - (void)setHasTimestamp:(bool)arg1;
 - (void)setHasType:(bool)arg1;
@@ -288,6 +330,8 @@
 - (void)setRegisterHIDDeviceResultMessage:(id)arg1;
 - (void)setRegisterVoiceInputDeviceMessage:(id)arg1;
 - (void)setRegisterVoiceInputDeviceResponseMessage:(id)arg1;
+- (void)setRemoveClientMessage:(id)arg1;
+- (void)setRemovePlayerMessage:(id)arg1;
 - (void)setSendButtonEventMessage:(id)arg1;
 - (void)setSendCommandMessage:(id)arg1;
 - (void)setSendCommandResultMessage:(id)arg1;
@@ -303,13 +347,19 @@
 - (void)setSetNowPlayingPlayerMessage:(id)arg1;
 - (void)setSetRecordingStateMessage:(id)arg1;
 - (void)setSetStateMessage:(id)arg1;
+- (void)setSetVolumeMessage:(id)arg1;
 - (id)setStateMessage;
 - (void)setTextInputMessage:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setTransactionPackets:(id)arg1;
 - (void)setType:(int)arg1;
 - (void)setUnregisterGameController:(id)arg1;
+- (void)setUpdateClientMessage:(id)arg1;
+- (void)setUpdateContentItemArtworkMessage:(id)arg1;
+- (void)setUpdateContentItemMessage:(id)arg1;
 - (void)setVolumeControlAvailabilityMessage:(id)arg1;
+- (void)setVolumeDidChangeMessage:(id)arg1;
+- (id)setVolumeMessage;
 - (void)setWakeDeviceMessage:(id)arg1;
 - (id)textInputMessage;
 - (unsigned long long)timestamp;
@@ -317,7 +367,11 @@
 - (int)type;
 - (id)typeAsString:(int)arg1;
 - (id)unregisterGameController;
+- (id)updateClientMessage;
+- (id)updateContentItemArtworkMessage;
+- (id)updateContentItemMessage;
 - (id)volumeControlAvailabilityMessage;
+- (id)volumeDidChangeMessage;
 - (id)wakeDeviceMessage;
 - (void)writeTo:(id)arg1;
 

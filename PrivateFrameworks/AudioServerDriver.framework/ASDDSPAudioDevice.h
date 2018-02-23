@@ -33,6 +33,8 @@
 - (bool)clockIsStable;
 - (id)currentDSPConfiguration;
 - (id)deviceName;
+- (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(bool)arg2;
+- (id)driverClassName;
 - (id)dspDatabase;
 - (id)findDSPConfigurationForCurrentState;
 - (id /* block */)getZeroTimestampBlock;

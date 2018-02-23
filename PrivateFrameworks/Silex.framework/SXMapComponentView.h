@@ -76,7 +76,7 @@
 - (void)handleTap:(id)arg1;
 - (bool)hasSelectedAnnotations;
 - (id)imageView;
-- (id)initWithComponent:(id)arg1 configuration:(id)arg2 context:(id)arg3 analyticsReporting:(id)arg4 appStateMonitor:(id)arg5;
+- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6;
 - (bool)isPresentingFullscreen;
 - (bool)isUserInteractingWithMap;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })mapRect;
@@ -85,7 +85,7 @@
 - (unsigned long long)mapTypeForSegmentIndex:(unsigned long long)arg1;
 - (id)mapView;
 - (void)memoryWarning:(id)arg1;
-- (void)presentComponent;
+- (void)presentComponentWithChanges:(struct { bool x1; bool x2; })arg1;
 - (void)presentFullScreen;
 - (struct { struct CLLocationCoordinate2D { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })region;
 - (void)renderContents;

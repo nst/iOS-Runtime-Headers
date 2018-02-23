@@ -80,6 +80,8 @@
 
 + (id)zeroUUID;
 
+- (bool)hmf_isEqualToUUID:(id)arg1;
+- (bool)hmf_isEqualToUUIDString:(id)arg1;
 - (id)initWithNamespace:(id)arg1 data:(id)arg2;
 - (id)shortDescription;
 

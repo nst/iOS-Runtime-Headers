@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NetAppsUtilities.framework/NetAppsUtilities
  */
 
-@interface NATreeNodedeepNodeEnumerator : NSEnumerator <NSCopying> {
+@interface NATreeNodeDeepNodeEnumerator : NSEnumerator <NSCopying> {
     NSMutableArray * _enumeratorStack;
     NATreeNode * _node;
 }

@@ -6,6 +6,7 @@
     BSMutableSettings * _settings;
 }
 
+@property (getter=isBackgroundActivityEnabled, nonatomic, readonly) bool backgroundActivityEnabled;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -21,6 +22,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (bool)isBackgroundActivityEnabled;
 - (bool)isHidden;
 - (id)keyDescriptionForSetting:(unsigned long long)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;

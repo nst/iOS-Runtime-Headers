@@ -24,6 +24,7 @@
     double  _rate;
     NSMutableArray * _replacedWords;
     TTSSpeechChannel * _speechChannel;
+    bool  _supportsAccurateWordCallbacks;
     NSString * _text;
     bool  _useMonarchStyleRate;
     bool  _useVoiceBooster;
@@ -51,6 +52,7 @@
 @property (nonatomic) double rate;
 @property (nonatomic, retain) NSMutableArray *replacedWords;
 @property (nonatomic, retain) TTSSpeechChannel *speechChannel;
+@property (nonatomic) bool supportsAccurateWordCallbacks;
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic) bool useMonarchStyleRate;
 @property (nonatomic) bool useVoiceBooster;
@@ -105,6 +107,7 @@
 - (void)setRate:(double)arg1;
 - (void)setReplacedWords:(id)arg1;
 - (void)setSpeechChannel:(id)arg1;
+- (void)setSupportsAccurateWordCallbacks:(bool)arg1;
 - (void)setText:(id)arg1;
 - (void)setUseMonarchStyleRate:(bool)arg1;
 - (void)setUseVoiceBooster:(bool)arg1;
@@ -116,6 +119,7 @@
 - (void)speechRequestDidStartForService:(id)arg1;
 - (void)speechRequestDidStopWithSuccess:(bool)arg1 phonemesSpoken:(id)arg2 forService:(id)arg3 error:(id)arg4;
 - (void)speechRequestMark:(long long)arg1 didStartForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 forService:(id)arg3;
+- (bool)supportsAccurateWordCallbacks;
 - (id)text;
 - (bool)useMonarchStyleRate;
 - (bool)useVoiceBooster;

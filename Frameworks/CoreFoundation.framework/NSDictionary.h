@@ -213,6 +213,7 @@
 - (bool)_hk_validateMetadataValueContent:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
 - (id)hk_allValuesBySortedKeys;
 - (bool)hk_containsKeys:(id)arg1;
+- (id)hk_copyWithoutPrivateMetadataKeys;
 - (id)hk_dictionaryByAddingEntriesFromDictionary:(id)arg1;
 - (id)hk_sortedKeys;
 - (bool)hk_validateMetadataKeysAndValuesAllowingPrivateMetadataKeys:(bool)arg1 error:(id*)arg2;
@@ -304,6 +305,8 @@
 
 - (id)vs_arrayForKey:(id)arg1;
 - (id)vs_arrayOfDictionariesForKey:(id)arg1;
+- (id)vs_arrayOfKindOfClass:(Class)arg1 forKey:(id)arg2;
+- (id)vs_arrayOfNumbersForKey:(id)arg1;
 - (id)vs_arrayOfStringsForKey:(id)arg1;
 - (id)vs_dictionaryForKey:(id)arg1;
 - (id)vs_numberForKey:(id)arg1;
@@ -497,6 +500,7 @@
 - (bool)parsec_boolForKey:(id)arg1;
 - (id)parsec_dataForKey:(id)arg1;
 - (id)parsec_dateForKey:(id)arg1;
+- (id)parsec_dictionaryByMappingKeysUsingBlock:(id /* block */)arg1;
 - (id)parsec_dictionaryForKey:(id)arg1;
 - (id)parsec_numberForKey:(id)arg1;
 - (id)parsec_stringForKey:(id)arg1;
@@ -536,10 +540,17 @@
 - (id)sf_asTitleCardSection:(id)arg1;
 - (id)sf_asTrack:(id)arg1;
 - (id)sf_asTrackListCardSection:(id)arg1;
+- (id)sf_asWatchListCardSection:(id)arg1;
+- (id)sf_asWatchListItem:(id)arg1;
 - (id)sf_asWebCardSection:(id)arg1;
 - (void)sf_baseCardSection:(id)arg1 reply:(id)arg2;
 - (id)sf_imageForKey:(id)arg1 reply:(id)arg2;
 - (int)sf_textColorForKey:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreSpeech.framework/CoreSpeech
+
+- (id)initWithXPCObject:(id)arg1;
+- (id)xpcObject;
 
 // Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
 
@@ -712,6 +723,7 @@
 
 + (id)_hucc_sizeSubclassSearchOrderForBaseSizeSubclass:(unsigned long long)arg1;
 
+- (id)hu_objectForViewSizeSubclass:(long long)arg1;
 - (double)hucc_constantForSizeSubclass:(unsigned long long)arg1;
 - (id)hucc_objectForSizeSubclass:(unsigned long long)arg1;
 
@@ -867,7 +879,11 @@
 - (id)fc_dictionaryByTransformingKeysWithKeyAndValueBlock:(id /* block */)arg1;
 - (id)fc_dictionaryByTransformingValuesWithBlock:(id /* block */)arg1;
 - (id)fc_dictionaryByTransformingValuesWithKeyAndValueBlock:(id /* block */)arg1;
+- (id)fc_jsonEncodableDictionary;
+- (id)fc_jsonEncodableDictionaryWithObjectHandler:(id /* block */)arg1 arrayObjectHandler:(id /* block */)arg2 dictionaryKeyHandler:(id /* block */)arg3 dictionaryValueHandler:(id /* block */)arg4;
 - (id)fc_jsonString;
+- (id)fc_jsonStringWithObjectHandler:(id /* block */)arg1 arrayObjectHandler:(id /* block */)arg2 dictionaryKeyHandler:(id /* block */)arg3 dictionaryValueHandler:(id /* block */)arg4;
+- (id)fc_jsonStringWithOmittedUnsupportedDataTypes;
 - (bool)fc_localDataHint;
 - (id)fc_sortedEntriesWithKeyBlock:(id /* block */)arg1;
 - (id)fc_subdictionaryForKeys:(id)arg1;
@@ -1164,6 +1180,16 @@
 
 - (id)blj_dictionaryByRemovingValuesForKey:(id)arg1;
 - (id)blj_dictionaryBySwappingValuesWithDictionary:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/iTunesCloud.framework/iTunesCloud
+
+- (id)ic_arrayValueForKey:(id)arg1;
+- (bool)ic_boolValueForKey:(id)arg1;
+- (id)ic_dictionaryValueForKey:(id)arg1;
+- (long long)ic_int64ValueForKey:(id)arg1;
+- (int)ic_intValueForKey:(id)arg1;
+- (id)ic_numberValueForKey:(id)arg1;
+- (id)ic_stringValueForKey:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
 

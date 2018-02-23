@@ -5,11 +5,7 @@
 @interface WBSSiteMetadataImageCache : NSObject {
     WBSCacheRetainReleasePolicy * _cachePolicy;
     NSMutableDictionary * _cacheSettings;
-    struct unique_ptr<SafariShared::CoalescedAsynchronousWriter, std::__1::default_delete<SafariShared::CoalescedAsynchronousWriter> > { 
-        struct __compressed_pair<SafariShared::CoalescedAsynchronousWriter *, std::__1::default_delete<SafariShared::CoalescedAsynchronousWriter> > { 
-            struct CoalescedAsynchronousWriter {} *__first_; 
-        } __ptr_; 
-    }  _cacheSettingsWriter;
+    WBSCoalescedAsynchronousWriter * _cacheSettingsWriter;
     <WBSSiteMetadataImageCacheDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _diskAccessQueue;
     NSURL * _imageDirectoryURL;
@@ -26,7 +22,6 @@
 @property (nonatomic, readonly) long long imageType;
 @property (getter=isTerminating, nonatomic, readonly) bool terminating;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)_cacheSettingsFileURL;
 - (void)_didLoadImage:(id)arg1 forKeyString:(id)arg2 fromDisk:(bool)arg3;

@@ -5,7 +5,6 @@
 @interface HMDRemoteMessageTransport : HMFMessageTransport <HMFLogging> {
     HMDAccountRegistry * _accountRegistry;
     long long  _qualityOfService;
-    bool  _secure;
 }
 
 @property (nonatomic, readonly) HMDAccountRegistry *accountRegistry;

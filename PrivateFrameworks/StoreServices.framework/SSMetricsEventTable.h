@@ -10,6 +10,8 @@
 - (bool)_migrateToVersion1;
 - (bool)_migrateToVersion2;
 - (bool)_migrateToVersion3;
+- (id)_pragmaValueForName:(id)arg1;
 - (bool)_setupDatabase;
+- (void)performTransactionWithBlock:(id /* block */)arg1;
 
 @end

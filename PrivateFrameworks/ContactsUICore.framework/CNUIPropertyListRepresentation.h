@@ -4,11 +4,11 @@
 
 @interface CNUIPropertyListRepresentation : NSObject {
     NSDictionary * _attachments;
-    <NSCopying> * _propertyList;
+    NSDictionary * _propertyList;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *attachments;
-@property (nonatomic, readonly, copy) <NSCopying> *propertyList;
+@property (nonatomic, readonly, copy) NSDictionary *propertyList;
 
 + (id)propertyListWithContentsOfPackageURL:(id)arg1 dataProxy:(id)arg2;
 + (id)writePropertyList:(id)arg1 toURL:(id)arg2 dataProxy:(id)arg3 fileManager:(id)arg4;

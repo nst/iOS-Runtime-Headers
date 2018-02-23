@@ -15,8 +15,12 @@
 @property (nonatomic, readonly, copy) id /* block */ completionHandler;
 @property (nonatomic, readonly) CNContactFetchRequest *contactFetchRequest;
 @property (nonatomic, readonly) <CNEncodedFetchCursor> *cursor;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) CNContactsEnvironment *environment;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <CNContactsLogger> *logger;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void*)addressBook;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface _NSPropertyDescriptionProxy : NSObject {
+@interface _NSPropertyDescriptionProxy : NSObject <NSSecureCoding> {
     NSEntityDescription * _entityDescription;
     unsigned int  _entitysReferenceIDForProperty;
     id  _sourceBuffer;
@@ -10,6 +10,7 @@
 }
 
 + (bool)resolveInstanceMethod:(SEL)arg1;
++ (bool)supportsSecureCoding;
 
 - (void)_createCachesAndOptimizeState;
 - (unsigned int)_entitysReferenceID;

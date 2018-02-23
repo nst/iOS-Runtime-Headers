@@ -3,9 +3,9 @@
  */
 
 @interface LPiTunesMediaLookupItemBranding : NSObject <LPiTunesMediaAssetCustomResolver> {
+    LPOneShotFetcher * _EVODMetadataFetcher;
     NSURL * _URL;
     bool  _cancelled;
-    LPOneShotFetcher * _iconFetcher;
     LPiTunesMediaAsset * _originatingAsset;
 }
 

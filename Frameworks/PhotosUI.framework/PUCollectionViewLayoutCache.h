@@ -20,6 +20,7 @@
 - (void).cxx_destruct;
 - (bool)cachesResults;
 - (struct CGSize { double x1; double x2; })collectionViewContentSize;
+- (bool)flipsHorizontallyInOppositeLayoutDirection;
 - (id)init;
 - (id)initWithProvider:(id)arg1;
 - (void)invalidateLayoutCache;

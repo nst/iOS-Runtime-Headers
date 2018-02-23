@@ -17,6 +17,7 @@
     HDMetadataManager * _metadataManager;
     HDMigrationManager * _migrationManager;
     long long  _profileType;
+    HDSessionAssertionManager * _sessionAssertionManager;
     HDSourceManager * _sourceManager;
     HDSourceOrderManager * _sourceOrderManager;
     HDDaemonSyncEngine * _syncEngine;
@@ -50,6 +51,7 @@
 @property (nonatomic, readonly) long long profileType;
 @property (nonatomic, readonly) HDServiceConnectionManager *serviceConnectionManager;
 @property (nonatomic, readonly) HDHealthServiceManager *serviceManager;
+@property (nonatomic, readonly) HDSessionAssertionManager *sessionAssertionManager;
 @property (nonatomic, readonly) HDSourceManager *sourceManager;
 @property (nonatomic, readonly) HDSourceOrderManager *sourceOrderManager;
 @property (nonatomic, readonly) <HDSyncEngine> *syncEngine;
@@ -94,6 +96,7 @@
 - (long long)profileType;
 - (id)serviceConnectionManager;
 - (id)serviceManager;
+- (id)sessionAssertionManager;
 - (bool)setDisplayName:(id)arg1 error:(id*)arg2;
 - (id)sourceManager;
 - (id)sourceOrderManager;

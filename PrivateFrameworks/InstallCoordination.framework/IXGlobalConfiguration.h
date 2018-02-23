@@ -19,6 +19,7 @@
 @property (nonatomic, readonly) NSURL *rootPath;
 @property (nonatomic, readonly) NSURL *systemContainerPath;
 @property (nonatomic, readonly) unsigned int uid;
+@property (nonatomic, readonly) NSURL *userVolumeURL;
 
 + (id)sharedInstance;
 
@@ -34,5 +35,6 @@
 - (id)rootPath;
 - (id)systemContainerPath;
 - (unsigned int)uid;
+- (id)userVolumeURL;
 
 @end

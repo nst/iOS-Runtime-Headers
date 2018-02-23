@@ -15,6 +15,10 @@
     }  _preferredContentSize;
     NSPointerArray * _registeredWidgetHosts;
     NSString * _sdkVersion;
+    bool  _wantsVisibleFrame;
+    struct { 
+        unsigned int didInitializeWantsVisibleFrame : 1; 
+    }  _widgetInfoFlags;
 }
 
 @property (setter=_setDisplayName:, nonatomic, copy) NSString *displayName;
@@ -27,6 +31,7 @@
 @property (nonatomic) struct CGSize { double x1; double x2; } preferredContentSize;
 @property (getter=_sdkVersion, nonatomic, readonly, copy) NSString *sdkVersion;
 @property (nonatomic, readonly) UIImage *settingsIcon;
+@property (setter=_setWantsVisibleFrame:, nonatomic) bool wantsVisibleFrame;
 @property (nonatomic, readonly, copy) NSString *widgetIdentifier;
 
 + (id)_productVersion;
@@ -45,6 +50,7 @@
 - (void)_setIcon:(id)arg1;
 - (void)_setLargestAllowedDisplayMode:(long long)arg1;
 - (void)_setOutlineIcon:(id)arg1;
+- (void)_setWantsVisibleFrame:(bool)arg1;
 - (id)displayName;
 - (id)extension;
 - (id)icon;
@@ -59,6 +65,7 @@
 - (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)settingsIcon;
 - (void)updatePreferredContentSize:(struct CGSize { double x1; double x2; })arg1 forWidgetHost:(id)arg2;
+- (bool)wantsVisibleFrame;
 - (id)widgetIdentifier;
 - (id)widgetInfoWithExtension:(id)arg1;
 

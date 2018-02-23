@@ -179,7 +179,7 @@
         unsigned int didConfirmLayoutGuideClass : 1; 
         unsigned int overridesTraitCollectionDidChange : 1; 
         unsigned int restoresFocusAfterTransition : 1; 
-        unsigned int freezeTraitsOnCounterRotationForPresentation : 1; 
+        unsigned int freezeLayoutForOrientationChangeOnDismissal : 1; 
         unsigned int viewRespectsSystemMinimumLayoutMargins : 1; 
         unsigned int ignoresWrapperViewForContentOverlayInsets : 1; 
     }  _viewControllerFlags;
@@ -242,7 +242,6 @@
 @property (nonatomic, readonly) bool ab_isInSheet;
 @property (nonatomic, readonly) bool ab_shouldShowNavBarButtons;
 @property (nonatomic, readonly) bool ab_shouldUseTransparentBackgroundInPopovers;
-@property (nonatomic, retain) SXActionHandler *actionHandler;
 @property (nonatomic, readonly) _UIActionSheetPresentationController *actionSheetPresentationController;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } additionalSafeAreaInsets;
 @property (nonatomic, copy) id /* block */ afterAppearanceBlock;
@@ -372,6 +371,7 @@
 @property (nonatomic, readonly) double px_imageModulationIntensity;
 @property (nonatomic, readonly) PXImageModulationManager *px_imageModulationManager;
 @property (nonatomic, readonly) bool px_isSnapBackDestination;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } px_layoutMargins;
 @property (nonatomic, readonly) PXOneUpPresentation *px_oneUpPresentation;
 @property (nonatomic, readonly) bool px_photosUICategoriesAvailable;
 @property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } px_safeAreaInsets;
@@ -503,6 +503,7 @@
 - (id)_allContainedViewControllers;
 - (bool)_allowNestedNavigationControllers;
 - (bool)_allowsAutorotation;
+- (bool)_allowsFreezeLayoutForOrientationChangeOnDismissal;
 - (bool)_ancestorViewControllerIsInPopover;
 - (id)_ancestorViewControllerOfClass:(Class)arg1 allowModalParent:(bool)arg2;
 - (id)_animatorForOperation:(long long)arg1 fromViewController:(id)arg2 toViewController:(id)arg3;
@@ -549,7 +550,7 @@
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_cumulativeOverlayInsetsForViewControllerHierarchy;
 - (id)_customAnimatorForDismissedController:(id)arg1;
 - (id)_customAnimatorForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
-- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_customBasePresentationInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_customBasePresentationInsetsForView:(id)arg1;
 - (id)_customInteractionControllerForDismissal:(id)arg1;
 - (id)_customInteractionControllerForPresentation:(id)arg1;
 - (id)_customPresentationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
@@ -613,11 +614,13 @@
 - (id)_extensionContextUUID;
 - (id)_firstResponder;
 - (id)_focusMapContainer;
+- (bool)_formSheetObeysContentContainerSize;
 - (struct CGSize { double x1; double x2; })_formSheetSizeForWindowWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (bool)_forwardAppearanceMethods;
 - (bool)_forwardRotationMethods;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForContainerViewInSheetForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForContainerViewInSheetForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 displayingTopView:(bool)arg2 andBottomView:(bool)arg3;
+- (bool)_freezeLayoutForOrientationChangeOnDismissal;
 - (void)_getRotationContentSettings:(struct { bool x1; bool x2; bool x3; bool x4; bool x5; double x6; int x7; }*)arg1;
 - (bool)_getViewControllerToInheritInsetsFrom:(id*)arg1 viaImmediateChild:(id*)arg2;
 - (bool)_hackFor11408026_beginAppearanceTransition:(bool)arg1 animated:(bool)arg2;
@@ -811,6 +814,7 @@
 - (void)_setExpectedWindow:(id)arg1;
 - (void)_setExtensionContextUUID:(id)arg1;
 - (void)_setFormSheetSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setFreezeLayoutForOrientationChangeOnDismissal:(bool)arg1;
 - (void)_setHostApplicationBundleIdentifier:(id)arg1;
 - (void)_setHostAuditToken:(struct { unsigned int x1[8]; })arg1;
 - (void)_setHostProcessIdentifier:(int)arg1;
@@ -950,6 +954,7 @@
 - (id)_viewControllersWhoseOrientationsMustCoincide;
 - (id)_viewForContentInPopover;
 - (id)_viewForModalPresentationInPopover;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_viewFrameInWindowForContentOverlayInsetsCalculation;
 - (bool)_viewHostsLayoutEngine;
 - (bool)_viewHostsLayoutEngineAllowsTAMIC_NO;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_viewSafeAreaInsetsFromScene;
@@ -1458,6 +1463,8 @@
 - (bool)bs_endAppearanceTransition:(bool)arg1;
 - (bool)bs_endAppearanceTransitionForChildViewController:(id)arg1;
 - (bool)bs_endAppearanceTransitionForChildViewController:(id)arg1 toVisible:(bool)arg2;
+- (bool)bs_isAppearingOrAppeared;
+- (bool)bs_isDisappearingOrDisappeared;
 - (id)bs_presentationContextDefiningViewController;
 - (id)bs_presentedViewControllerIncludingAncestors;
 - (bool)bs_removeChildViewController:(id)arg1;
@@ -1634,6 +1641,8 @@
 
 // Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
 
+- (void)paymentSetupPreflight:(id /* block */)arg1;
+- (void)paymentSetupSetHideSetupLaterButton:(bool)arg1;
 - (void)pk_applyAppearance:(id)arg1;
 - (id)pk_childrenForAppearance;
 
@@ -1642,7 +1651,7 @@
 - (bool)pl_isInPopover;
 - (bool)pl_visitControllerHierarchyWithBlock:(id /* block */)arg1;
 - (void)revertStatusBarStyle:(long long)arg1 currentStatusBarStyle:(long long)arg2 animated:(bool)arg3;
-- (long long)setStatusBarStyleForFullScreenViewAnimated:(bool)arg1 useTelephonyUI:(bool)arg2 canHideStatusBar:(bool)arg3 newStatusBarStyle:(long long*)arg4;
+- (long long)setStatusBarStyleForFullScreenViewAnimated:(bool)arg1 useTelephonyUI:(bool)arg2 canHideStatusBar:(bool)arg3 newStatusBarStyle:(long long*)arg4 navigationBarDidUpdate:(bool*)arg5;
 - (int)uiipc_filterForMediaTypes:(id)arg1;
 - (id)uiipc_imagePickerController;
 - (id)uiipc_imagePickerOptions;
@@ -1674,8 +1683,10 @@
 - (void)_pxswizzled_oneUpPresentation_viewDidDisappear:(bool)arg1;
 - (void)_pxswizzled_oneUpPresentation_viewWillAppear:(bool)arg1;
 - (void)_pxswizzled_oneUpPresentation_viewWillDisappear:(bool)arg1;
+- (void)_pxswizzled_viewControllerTraitCollection_didMoveToParentViewController:(id)arg1;
 - (void)_pxswizzled_viewControllerTraitCollection_traitCollectionDidChange:(id)arg1;
 - (void)_pxswizzled_viewControllerTraitCollection_viewDidLoad;
+- (void)_pxswizzled_viewControllerTraitCollection_viewLayoutMarginsDidChange;
 - (void)_pxswizzled_viewControllerTraitCollection_viewSafeAreaInsetsDidChange;
 - (void)_pxswizzled_viewControllerTraitCollection_viewWillAppear:(bool)arg1;
 - (void)_pxswizzled_viewControllerTraitCollection_viewWillLayoutSubviews;
@@ -1709,6 +1720,7 @@
 - (bool)px_isImageModulationEnabled;
 - (bool)px_isSnapBackDestination;
 - (bool)px_isVisible;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })px_layoutMargins;
 - (id)px_oneUpPresentation;
 - (bool)px_photosUICategoriesAvailable;
 - (void)px_presentViewControllerInNavigationController:(id)arg1 animated:(bool)arg2 dimissButtonLocation:(long long)arg3 completion:(id /* block */)arg4;
@@ -1726,25 +1738,6 @@
 // Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
 
 - (void)popRecursivelyToRootController;
-
-// Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
-
-- (id)actionHandler;
-- (id)actionHandler;
-- (id)actionHandler;
-- (id)actionHandler;
-- (id)actionHandler;
-- (id)actionHandler;
-- (id)actionHandler;
-- (id)actionHandler;
-- (void)setActionHandler:(id)arg1;
-- (void)setActionHandler:(id)arg1;
-- (void)setActionHandler:(id)arg1;
-- (void)setActionHandler:(id)arg1;
-- (void)setActionHandler:(id)arg1;
-- (void)setActionHandler:(id)arg1;
-- (void)setActionHandler:(id)arg1;
-- (void)setActionHandler:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
 
@@ -1783,11 +1776,6 @@
 - (void)tv_setIdentifier:(id)arg1;
 - (void)tv_updateViewLayout;
 
-// Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
-
-- (id)ax_descriptionWithIndentation:(long long)arg1 includeAXInfo:(bool)arg2;
-- (id)ax_recursiveDescriptionWithIndentation:(long long)arg1 includeLayers:(bool)arg2 includeAXInfo:(bool)arg3;
-
 // Image: /System/Library/PrivateFrameworks/UserNotificationsUIKit.framework/UserNotificationsUIKit
 
 - (id)containingNotificationViewController;
@@ -1818,11 +1806,8 @@
 - (void)rc_automaticallyUpdateScreenUpdatesDisabled;
 - (bool)rc_canAnimate;
 - (void)rc_ensureIsInterfaceOrientationMask:(unsigned long long)arg1 preferredOrientation:(long long)arg2 doneEnsuringBlock:(id /* block */)arg3;
-- (bool)rc_hasAxisWithRegularSizeClassOrGreater;
 - (bool)rc_isDescendantOfViewController:(id)arg1;
-- (bool)rc_isHorizontalSizeClassRegularOrGreater;
 - (bool)rc_isPrimaryLayoutAxis:(long long)arg1;
-- (bool)rc_isVerticalSizeClassRegularOrGreater;
 - (void)rc_loadViewIfNecessary;
 - (id)rc_navigationItemForPresentingNavigationItem:(id)arg1 forViewController:(id)arg2;
 - (void)rc_runAutomatedDebuggingTestsWithCompletion:(id /* block */)arg1;

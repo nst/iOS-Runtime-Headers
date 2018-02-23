@@ -23,6 +23,7 @@
         unsigned int topicSubscriptionCount : 1; 
         unsigned int breakingNewsAvailableDuringSession : 1; 
         unsigned int breakingNewsDismissedDuringSession : 1; 
+        unsigned int syncedOtherUserIdDuringSession : 1; 
     }  _has;
     int  _internalAutoSubscribeFeedCount;
     NSMutableArray * _lastVisibleViews;
@@ -34,6 +35,7 @@
     int  _safariAutoSubscribeFeedCount;
     int  _sessionEndReason;
     NSMutableArray * _subscribedFeedIds;
+    bool  _syncedOtherUserIdDuringSession;
     int  _topicSubscriptionCount;
 }
 
@@ -55,6 +57,7 @@
 @property (nonatomic) bool hasPortraitAutoSubscribeFeedCount;
 @property (nonatomic) bool hasSafariAutoSubscribeFeedCount;
 @property (nonatomic) bool hasSessionEndReason;
+@property (nonatomic) bool hasSyncedOtherUserIdDuringSession;
 @property (nonatomic) bool hasTopicSubscriptionCount;
 @property (nonatomic) int internalAutoSubscribeFeedCount;
 @property (nonatomic, retain) NSMutableArray *lastVisibleViews;
@@ -66,6 +69,7 @@
 @property (nonatomic) int safariAutoSubscribeFeedCount;
 @property (nonatomic) int sessionEndReason;
 @property (nonatomic, retain) NSMutableArray *subscribedFeedIds;
+@property (nonatomic) bool syncedOtherUserIdDuringSession;
 @property (nonatomic) int topicSubscriptionCount;
 
 + (Class)autoSubscribedFeedIdsType;
@@ -113,6 +117,7 @@
 - (bool)hasPortraitAutoSubscribeFeedCount;
 - (bool)hasSafariAutoSubscribeFeedCount;
 - (bool)hasSessionEndReason;
+- (bool)hasSyncedOtherUserIdDuringSession;
 - (bool)hasTopicSubscriptionCount;
 - (unsigned long long)hash;
 - (int)internalAutoSubscribeFeedCount;
@@ -151,6 +156,7 @@
 - (void)setHasPortraitAutoSubscribeFeedCount:(bool)arg1;
 - (void)setHasSafariAutoSubscribeFeedCount:(bool)arg1;
 - (void)setHasSessionEndReason:(bool)arg1;
+- (void)setHasSyncedOtherUserIdDuringSession:(bool)arg1;
 - (void)setHasTopicSubscriptionCount:(bool)arg1;
 - (void)setInternalAutoSubscribeFeedCount:(int)arg1;
 - (void)setLastVisibleViews:(id)arg1;
@@ -162,10 +168,12 @@
 - (void)setSafariAutoSubscribeFeedCount:(int)arg1;
 - (void)setSessionEndReason:(int)arg1;
 - (void)setSubscribedFeedIds:(id)arg1;
+- (void)setSyncedOtherUserIdDuringSession:(bool)arg1;
 - (void)setTopicSubscriptionCount:(int)arg1;
 - (id)subscribedFeedIds;
 - (id)subscribedFeedIdsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)subscribedFeedIdsCount;
+- (bool)syncedOtherUserIdDuringSession;
 - (int)topicSubscriptionCount;
 - (void)writeTo:(id)arg1;
 

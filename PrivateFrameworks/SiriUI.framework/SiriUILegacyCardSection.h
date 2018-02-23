@@ -2,10 +2,13 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@interface SiriUILegacyCardSection : NSObject <CRCardSection>
+@interface SiriUILegacyCardSection : NSObject <CRCardSection> {
+    NSString * _cardSectionIdentifier;
+}
 
 @property (nonatomic, readonly) NSArray *actionCommands;
 @property (nonatomic, readonly) <SFCardSection> *backingCardSection;
+@property (nonatomic, copy) NSString *cardSectionIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool hasNextCard;
@@ -14,8 +17,12 @@
 
 + (bool)supportsSecureCoding;
 
+- (void).cxx_destruct;
+- (id)cardSectionIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
+- (void)setCardSectionIdentifier:(id)arg1;
 
 @end

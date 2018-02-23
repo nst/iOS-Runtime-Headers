@@ -11,6 +11,7 @@
     ASDStreamDSPConfiguration * _currentDSPConfiguration;
     NSUserDefaults * _defaults;
     NSObject<OS_dispatch_queue> * _dspQueue;
+    long long  _graphAudioValidationMode;
     struct list<ASDDSPGraphHelper, std::__1::allocator<ASDDSPGraphHelper> > { 
         struct __list_node_base<ASDDSPGraphHelper, void *> { 
             struct __list_node_base<ASDDSPGraphHelper, void *> {} *__prev_; 
@@ -20,6 +21,7 @@
             unsigned long long __first_; 
         } __size_alloc_; 
     }  _graphHelpers;
+    long long  _ioReferenceCount;
     bool  _isRunning;
     bool  _keepGraphInitialized;
     long long  _maximumFramesPerIOCycle;
@@ -34,6 +36,7 @@
 }
 
 @property (nonatomic, retain) ASDStreamDSPConfiguration *currentDSPConfiguration;
+@property (nonatomic) long long graphAudioValidationMode;
 @property (nonatomic, readonly) ASDDSPGraph *hardwareDSP;
 @property (nonatomic) bool keepGraphInitialized;
 @property (nonatomic, readonly) long long maximumFramesPerIOCycle;
@@ -41,7 +44,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)_allocateStreamingResources;
+- (bool)_allocateStreamingResources;
 - (void)_allocateStreamingResourcesForGraphHelper:(struct ASDDSPGraphHelper { struct shared_ptr<DSPGraph::Graph> { struct Graph {} *x_1_1_1; struct __shared_weak_count {} *x_1_1_2; } x1; struct unique_ptr<DSPGraph::Graph, std::__1::default_delete<DSPGraph::Graph> > { struct __compressed_pair<DSPGraph::Graph *, std::__1::default_delete<DSPGraph::Graph> > { struct Graph {} *x_1_2_1; } x_2_1_1; } x2; struct unique_ptr<AUProcessingBlock_DSPGraph, std::__1::default_delete<AUProcessingBlock_DSPGraph> > { struct __compressed_pair<AUProcessingBlock_DSPGraph *, std::__1::default_delete<AUProcessingBlock_DSPGraph> > { struct AUProcessingBlock_DSPGraph {} *x_1_2_1; } x_3_1_1; } x3; unsigned long long x4; }*)arg1;
 - (void)_deallocateStreamingResources;
 - (id)_hardwareDSP;
@@ -55,6 +58,9 @@
 - (bool)changePhysicalFormat:(id)arg1;
 - (id)clientDSPForClient:(unsigned int)arg1;
 - (id)currentDSPConfiguration;
+- (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(bool)arg2;
+- (id)driverClassName;
+- (long long)graphAudioValidationMode;
 - (bool)graphStructureIsValid:(id)arg1 clientID:(unsigned long long)arg2;
 - (id)hardwareDSP;
 - (id)initWithDirection:(unsigned int)arg1 withPlugin:(id)arg2;
@@ -68,6 +74,7 @@
 - (bool)removeHardwareDSP;
 - (void)resumeProcessing;
 - (void)setCurrentDSPConfiguration:(id)arg1;
+- (void)setGraphAudioValidationMode:(long long)arg1;
 - (void)setKeepGraphInitialized:(bool)arg1;
 - (void)setUnderlyingStreams:(id)arg1;
 - (void)startStream;

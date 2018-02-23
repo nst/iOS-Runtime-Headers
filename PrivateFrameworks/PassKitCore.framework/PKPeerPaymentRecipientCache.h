@@ -3,8 +3,8 @@
  */
 
 @interface PKPeerPaymentRecipientCache : NSObject {
-    NSMutableDictionary * _map;
     NSObject<OS_dispatch_queue> * _mapAccessQueue;
+    PKMapContainer * _mapContainer;
     NSTimer * _mapNeedsWriteTimer;
 }
 
@@ -16,13 +16,16 @@
 - (bool)_canReadMap;
 - (bool)_canWriteMap;
 - (void)_handleDiskMapChangedNotification:(id)arg1;
+- (void)_handlePurgedNotification:(id)arg1;
 - (id)_keyForRecipientAddress:(id)arg1;
 - (void)_setMapNeedsWrite;
-- (void)_updateMapFromDisk;
+- (void)_updateMapsFromDisk;
 - (bool)_writeMapToDisk;
 - (void)cacheRecipient:(id)arg1 forRecipientAddress:(id)arg2;
 - (void)dealloc;
 - (id)init;
+- (bool)lowFrequencyDeviceScoreSubmissionRequiredForRecipientAddress:(id)arg1;
+- (void)noteSubmittedLowFrequencyDeviceScoreForRecipientAddress:(id)arg1;
 - (bool)purgeCache;
 - (void)purgeRecipientWithRecipientAddress:(id)arg1;
 - (id)recipientForRecipientAddress:(id)arg1;

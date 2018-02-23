@@ -3,9 +3,11 @@
  */
 
 @interface PKPassFooterView : UIView <PKPassFooterContentViewDelegate> {
+    bool  _acquiringSession;
     PKPassFooterContentView * _contentView;
     unsigned char  _contentViewVisibility;
     <PKPassFooterViewDelegate> * _delegate;
+    bool  _isAssistantActive;
     bool  _isBackgrounded;
     PKPassView * _passView;
     long long  _paymentApplicationState;
@@ -41,12 +43,16 @@
 - (void)_deleteButtonTapped;
 - (void)_endSession;
 - (void)_endSessionStartTimer;
+- (void)_handleAddDeactivationReasonNotification:(id)arg1;
 - (void)_handleEnterBackgroundNotification:(id)arg1;
 - (void)_handleEnterForegroundNotification:(id)arg1;
+- (void)_handleRemoveDeactivationReasonNotification:(id)arg1;
 - (void)_lostModeButtonTapped;
 - (void)_setContentView:(id)arg1 animated:(bool)arg2;
 - (void)_setUserIntentRequired:(bool)arg1;
 - (void)_startContactlessInterfaceSessionWithSessionAvailable:(id /* block */)arg1 sessionUnavailable:(id /* block */)arg2;
+- (void)_updateForForegroundActivePresentationIfNecessaryAnimated:(bool)arg1;
+- (void)_updateForNonForegroundActivePresentationAnimated:(bool)arg1;
 - (void)configureForState:(long long)arg1 context:(id)arg2 passView:(id)arg3;
 - (void)dealloc;
 - (id)delegate;

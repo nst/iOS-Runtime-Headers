@@ -42,7 +42,12 @@
 - (id)bridgedClientInfo;
 - (void)cancelOutstandingEnableServiceModeRequests;
 - (void)cancelOutstandingSetDefaultExpressPassRequestsWithExpressMode:(id)arg1;
+- (void)checkCompanionPeerPaymentRegistrationState:(id)arg1;
+- (void)checkTLKsMissingResponse:(id)arg1;
+- (void)checkTLKsMissingWithCompletion:(id /* block */)arg1;
 - (bool)claimSecureElementForCurrentUser;
+- (void)cloudStoreStatusResponse:(id)arg1;
+- (void)cloudStoreStatusWithCompletion:(id /* block */)arg1;
 - (id)companionAgentConnection;
 - (void)configurationDataResponse:(id)arg1;
 - (unsigned long long)context;
@@ -51,6 +56,7 @@
 - (id)deviceName;
 - (id)deviceRegion;
 - (void)didRegisterResponse:(id)arg1;
+- (void)downloadAllPaymentPasses:(id)arg1;
 - (void)downloadAllPaymentPassesForPaymentWebService:(id)arg1;
 - (void)dumpLogsResponse:(id)arg1;
 - (void)dumpLogsWithCompletion:(id /* block */)arg1;
@@ -58,6 +64,9 @@
 - (void)enableServiceModeResponse:(id)arg1;
 - (bool)felicaSecureElementIsAvailable;
 - (void)getPairingInfoResponse:(id)arg1;
+- (void)handleCompanionMigrationResponse:(id)arg1;
+- (void)handleCompanionMigrationWithCompletion:(id /* block */)arg1;
+- (void)handleCompanionPeerPaymentRegistration;
 - (void)handleDeletePaymentTransactionWithIdentifier:(id)arg1 passUniqueIdentifier:(id)arg2;
 - (void)handlePaymentTransactions:(id)arg1;
 - (void)handlePendingRemovalOfPassWithUniqueID:(id)arg1 completion:(id /* block */)arg2;
@@ -72,6 +81,10 @@
 - (void)handleWebServiceContextNeededRequest:(id)arg1;
 - (id)init;
 - (id)initWithContext:(unsigned long long)arg1 responseQueue:(id)arg2;
+- (void)initializeCloudStoreIfNecessaryResponse:(id)arg1;
+- (void)initializeCloudStoreIfNecessaryWithCompletion:(id /* block */)arg1;
+- (void)initializeCloudStoreIfNecessaryWithHandler:(id /* block */)arg1;
+- (void)initializeCloudStoreIfNecessaryWithHandlerResponse:(id)arg1;
 - (id)internalQueue;
 - (unsigned long long)maximumPaymentCards;
 - (void)noteProvisioningDidBegin;
@@ -94,15 +107,16 @@
 - (void)paymentWebService:(id)arg1 queueConnectionToTrustedServiceManagerForPushTopic:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)paymentWebService:(id)arg1 registrationDataWithAuthToken:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)paymentWebService:(id)arg1 removePass:(id)arg2 withCompletionHandler:(id /* block */)arg3;
-- (void)paymentWebService:(id)arg1 setNewAuthRandomIfNecessary:(id /* block */)arg2;
+- (void)paymentWebService:(id)arg1 setNewAuthRandom:(id /* block */)arg2;
 - (void)paymentWebService:(id)arg1 setNewAuthRandomIfNecessaryReturningPairingState:(id /* block */)arg2;
 - (void)paymentWebService:(id)arg1 signData:(id)arg2 signatureEntanglementMode:(unsigned long long)arg3 withCompletionHandler:(id /* block */)arg4;
 - (void)paymentWebService:(id)arg1 signData:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)paymentWebService:(id)arg1 validateAddPreconditionsWithCompletion:(id /* block */)arg2;
 - (void)paymentWebService:(id)arg1 validateTransferPreconditionsWithCompletion:(id /* block */)arg2;
 - (void)paymentWebServiceDidUpdateConfiguration:(id)arg1;
+- (bool)paymentWebServiceSupportsPeerPaymentRegistration:(id)arg1;
 - (void)peerPaymentRegisterResponse:(id)arg1;
-- (void)peerPaymentRegisterWithURL:(id)arg1 completion:(id /* block */)arg2;
+- (void)peerPaymentRegisterWithURL:(id)arg1 forceReRegistration:(bool)arg2 completion:(id /* block */)arg3;
 - (void)peerPaymentUnregisterResponse:(id)arg1;
 - (void)peerPaymentUnregisterWithCompletion:(id /* block */)arg1;
 - (void)pendingRemovalResponse:(id)arg1;
@@ -117,6 +131,8 @@
 - (void)queueTSMConnectionResponse:(id)arg1;
 - (void)registrationDataResponse:(id)arg1;
 - (void)removeAIDsFromSecureElement:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)resetApplePayManateeViewResponse:(id)arg1;
+- (void)resetApplePayManateeViewWithCompletion:(id /* block */)arg1;
 - (id)responseQueue;
 - (void)retrieveTransactionsForPassWithUniqueID:(id)arg1;
 - (void)secureElementCardsWithCompletion:(id /* block */)arg1;
@@ -124,7 +140,6 @@
 - (id)secureElementIdentifiers;
 - (unsigned long long)secureElementOwnershipStateForCurrentUser;
 - (void)secureElementRemoveAppletsResponse:(id)arg1;
-- (void)sendCompanionMigratedEventToWatch;
 - (void)sendPaymentOptionsDefaultsToWatch;
 - (void)sendWebServiceContextToWatch:(id)arg1;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(bool)arg4 error:(id)arg5;

@@ -8,6 +8,7 @@
     bool  _incremental;
     long long  _pendingBlockingEntryChangeType;
     CXCallDirectoryMutablePhoneNumberEntryData * _pendingBlockingEntryData;
+    long long  _pendingIdentificationEntryChangeType;
     CXCallDirectoryMutableLabeledPhoneNumberEntryData * _pendingIdentificationEntryDataForAddition;
     CXCallDirectoryMutablePhoneNumberEntryData * _pendingIdentificationEntryDataForRemoval;
     id /* block */  _remoteObjectProxyGenerator;
@@ -21,6 +22,7 @@
 @property (getter=isIncremental, nonatomic, readonly) bool incremental;
 @property (nonatomic) long long pendingBlockingEntryChangeType;
 @property (nonatomic, retain) CXCallDirectoryMutablePhoneNumberEntryData *pendingBlockingEntryData;
+@property (nonatomic) long long pendingIdentificationEntryChangeType;
 @property (nonatomic, retain) CXCallDirectoryMutableLabeledPhoneNumberEntryData *pendingIdentificationEntryDataForAddition;
 @property (nonatomic, retain) CXCallDirectoryMutablePhoneNumberEntryData *pendingIdentificationEntryDataForRemoval;
 @property (nonatomic, copy) id /* block */ remoteObjectProxyGenerator;
@@ -31,8 +33,7 @@
 
 - (void).cxx_destruct;
 - (void)_flushPendingBlockingEntryData;
-- (void)_flushPendingIdentificationEntryDataForAddition;
-- (void)_flushPendingIdentificationEntryDataForRemoval;
+- (void)_flushPendingIdentificationEntryData;
 - (void)_performBlockIfIncremental:(id /* block */)arg1 usingSelectorForExceptionMessage:(SEL)arg2;
 - (id)_remoteObjectProxyWithErrorHandler:(id /* block */)arg1 synchronous:(bool)arg2;
 - (void)addBlockingEntryWithNextSequentialPhoneNumber:(long long)arg1;
@@ -47,6 +48,7 @@
 - (bool)isIncremental;
 - (long long)pendingBlockingEntryChangeType;
 - (id)pendingBlockingEntryData;
+- (long long)pendingIdentificationEntryChangeType;
 - (id)pendingIdentificationEntryDataForAddition;
 - (id)pendingIdentificationEntryDataForRemoval;
 - (id /* block */)remoteObjectProxyGenerator;
@@ -59,6 +61,7 @@
 - (void)setHasQueriedIsIncremental:(bool)arg1;
 - (void)setPendingBlockingEntryChangeType:(long long)arg1;
 - (void)setPendingBlockingEntryData:(id)arg1;
+- (void)setPendingIdentificationEntryChangeType:(long long)arg1;
 - (void)setPendingIdentificationEntryDataForAddition:(id)arg1;
 - (void)setPendingIdentificationEntryDataForRemoval:(id)arg1;
 - (void)setRemoteObjectProxyGenerator:(id /* block */)arg1;

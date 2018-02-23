@@ -3,11 +3,13 @@
  */
 
 @interface NUANFArticleAdManagerFactory : NSObject <NUArticleAdManagerFactory> {
+    <NUAdMetadataFactory> * _adMetadataFactory;
     <NUAdProvider> * _adProvider;
     <NUDevice> * _device;
     <NUAdSettings> * _settings;
 }
 
+@property (nonatomic, readonly) <NUAdMetadataFactory> *adMetadataFactory;
 @property (nonatomic, readonly) <NUAdProvider> *adProvider;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -17,10 +19,11 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)adMetadataFactory;
 - (id)adProvider;
 - (id)createArticleAdManagerForArticle:(id)arg1;
 - (id)device;
-- (id)initWithAdProvider:(id)arg1 settings:(id)arg2 device:(id)arg3;
+- (id)initWithAdProvider:(id)arg1 adMetadataFactory:(id)arg2 settings:(id)arg3 device:(id)arg4;
 - (id)settings;
 
 @end

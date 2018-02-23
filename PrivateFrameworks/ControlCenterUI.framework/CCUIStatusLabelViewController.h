@@ -12,6 +12,7 @@
 }
 
 @property (nonatomic) <CCUIStatusLabelViewControllerDelegate> *delegate;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } edgeInsets;
 @property (nonatomic) unsigned long long verticalAlignment;
 
 - (void).cxx_destruct;
@@ -26,9 +27,11 @@
 - (void)_notifyDelegateWillBeginStatusUpdates;
 - (void)_resetPresentationStateAnimated:(bool)arg1;
 - (id)delegate;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
 - (void)enqueueStatusUpdate:(id)arg1 forIdentifier:(id)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)setDelegate:(id)arg1;
+- (void)setEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setVerticalAlignment:(unsigned long long)arg1;
 - (unsigned long long)verticalAlignment;
 - (void)viewDidDisappear:(bool)arg1;

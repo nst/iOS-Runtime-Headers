@@ -52,6 +52,7 @@
     NSString * _reason;
     NSObject<OS_dispatch_queue> * _secondFactorQueue;
     id /* block */  _secondFactoryEntryCompletion;
+    NSString * _securityUpgradeContext;
     NSArray * _serviceIdentifiers;
     long long  _serviceType;
     NSString * _shortLivedToken;
@@ -123,6 +124,7 @@
 @property (nonatomic, copy) AKDevice *proxiedDevice;
 @property (nonatomic, retain) AKAnisetteData *proxiedDeviceAnisetteData;
 @property (nonatomic, copy) NSString *reason;
+@property (nonatomic, copy) NSString *securityUpgradeContext;
 @property (nonatomic, copy) NSString *serviceIdentifier;
 @property (nonatomic, copy) NSArray *serviceIdentifiers;
 @property (nonatomic) long long serviceType;
@@ -221,6 +223,7 @@
 - (id)proxiedDevice;
 - (id)proxiedDeviceAnisetteData;
 - (id)reason;
+- (id)securityUpgradeContext;
 - (id)serviceIdentifier;
 - (id)serviceIdentifiers;
 - (long long)serviceType;
@@ -257,6 +260,7 @@
 - (void)setProxiedDevice:(id)arg1;
 - (void)setProxiedDeviceAnisetteData:(id)arg1;
 - (void)setReason:(id)arg1;
+- (void)setSecurityUpgradeContext:(id)arg1;
 - (void)setServiceIdentifier:(id)arg1;
 - (void)setServiceIdentifiers:(id)arg1;
 - (void)setServiceType:(long long)arg1;

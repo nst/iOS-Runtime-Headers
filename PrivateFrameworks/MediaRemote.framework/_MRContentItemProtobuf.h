@@ -5,8 +5,15 @@
 @interface _MRContentItemProtobuf : PBCodable <NSCopying> {
     NSString * _ancestorIdentifier;
     NSData * _artworkData;
+    int  _artworkDataHeight;
+    int  _artworkDataWidth;
+    NSData * _artworkURLTemplatesData;
     NSMutableArray * _availableLanguageOptions;
     NSMutableArray * _currentLanguageOptions;
+    struct { 
+        unsigned int artworkDataHeight : 1; 
+        unsigned int artworkDataWidth : 1; 
+    }  _has;
     NSString * _identifier;
     NSString * _info;
     _MRLyricsItemProtobuf * _lyrics;
@@ -19,10 +26,16 @@
 
 @property (nonatomic, retain) NSString *ancestorIdentifier;
 @property (nonatomic, retain) NSData *artworkData;
+@property (nonatomic) int artworkDataHeight;
+@property (nonatomic) int artworkDataWidth;
+@property (nonatomic, retain) NSData *artworkURLTemplatesData;
 @property (nonatomic, retain) NSMutableArray *availableLanguageOptions;
 @property (nonatomic, retain) NSMutableArray *currentLanguageOptions;
 @property (nonatomic, readonly) bool hasAncestorIdentifier;
 @property (nonatomic, readonly) bool hasArtworkData;
+@property (nonatomic) bool hasArtworkDataHeight;
+@property (nonatomic) bool hasArtworkDataWidth;
+@property (nonatomic, readonly) bool hasArtworkURLTemplatesData;
 @property (nonatomic, readonly) bool hasIdentifier;
 @property (nonatomic, readonly) bool hasInfo;
 @property (nonatomic, readonly) bool hasLyrics;
@@ -51,6 +64,9 @@
 - (void)addSections:(id)arg1;
 - (id)ancestorIdentifier;
 - (id)artworkData;
+- (int)artworkDataHeight;
+- (int)artworkDataWidth;
+- (id)artworkURLTemplatesData;
 - (id)availableLanguageOptions;
 - (id)availableLanguageOptionsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)availableLanguageOptionsCount;
@@ -67,6 +83,9 @@
 - (id)dictionaryRepresentation;
 - (bool)hasAncestorIdentifier;
 - (bool)hasArtworkData;
+- (bool)hasArtworkDataHeight;
+- (bool)hasArtworkDataWidth;
+- (bool)hasArtworkURLTemplatesData;
 - (bool)hasIdentifier;
 - (bool)hasInfo;
 - (bool)hasLyrics;
@@ -90,8 +109,13 @@
 - (unsigned long long)sectionsCount;
 - (void)setAncestorIdentifier:(id)arg1;
 - (void)setArtworkData:(id)arg1;
+- (void)setArtworkDataHeight:(int)arg1;
+- (void)setArtworkDataWidth:(int)arg1;
+- (void)setArtworkURLTemplatesData:(id)arg1;
 - (void)setAvailableLanguageOptions:(id)arg1;
 - (void)setCurrentLanguageOptions:(id)arg1;
+- (void)setHasArtworkDataHeight:(bool)arg1;
+- (void)setHasArtworkDataWidth:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setInfo:(id)arg1;
 - (void)setLyrics:(id)arg1;

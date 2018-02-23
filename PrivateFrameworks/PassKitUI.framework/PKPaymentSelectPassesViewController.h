@@ -10,6 +10,7 @@
     NSString * _headerTitle;
     PKTableHeaderView * _headerView;
     NSArray * _passes;
+    PKPeerPaymentAccount * _peerPaymentAccount;
     NSMutableArray * _selectedIndexPaths;
 }
 
@@ -28,7 +29,7 @@
 - (id)headerSubtitle;
 - (id)headerTitle;
 - (id)headerView;
-- (id)initWithPaymentPasses:(id)arg1 context:(long long)arg2 delegate:(id)arg3;
+- (id)initWithPaymentPasses:(id)arg1 context:(long long)arg2 delegate:(id)arg3 peerPaymentAccount:(id)arg4;
 - (id)initWithStyle:(long long)arg1 context:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)pkui_navigationBarTintColor;

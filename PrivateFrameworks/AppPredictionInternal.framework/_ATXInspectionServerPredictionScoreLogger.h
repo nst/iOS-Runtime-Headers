@@ -17,6 +17,7 @@
 - (id)inputsAndSubscores;
 - (void)logInputs:(id)arg1 subscores:(id)arg2 forBundleId:(id)arg3;
 - (void)setAssetVersion:(unsigned long long)arg1;
+- (void)setCacheAge:(double)arg1;
 - (void)setConsumerSubType:(unsigned char)arg1;
 - (void)setPredictionClass:(id)arg1;
 

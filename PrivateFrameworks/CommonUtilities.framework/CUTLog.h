@@ -10,6 +10,7 @@
 + (id)fileCopier;
 + (id)network;
 + (id)power;
++ (id)utilities;
 + (id)weakLink;
 + (id)xpc;
 

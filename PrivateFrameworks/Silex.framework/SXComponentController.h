@@ -3,9 +3,8 @@
  */
 
 @interface SXComponentController : NSObject <SXAXAssistiveTechStatusChangeListener, SXViewportChangeListener> {
-    <SXComponentHosting> * _componentHost;
     NSMutableDictionary * _componentIdentifiersToInvalidate;
-    <SXComponentViewFactory> * _componentViewFactory;
+    <SXComponentViewEngine> * _componentViewEngine;
     <SXComponentControllerDelegate> * _delegate;
     bool  _invalidationDispatched;
     bool  _isPresented;
@@ -19,12 +18,11 @@
     SXViewport * _viewport;
 }
 
-@property (nonatomic, readonly) <SXComponentHosting> *componentHost;
 @property (nonatomic, retain) NSMutableDictionary *componentIdentifiersToInvalidate;
-@property (nonatomic, readonly) <SXComponentViewFactory> *componentViewFactory;
+@property (nonatomic, readonly) <SXComponentViewEngine> *componentViewEngine;
 @property (nonatomic, readonly) NSArray *componentViews;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, readonly) <SXComponentControllerDelegate> *delegate;
+@property (nonatomic) <SXComponentControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSArray *flattenedComponentViews;
 @property (readonly) unsigned long long hash;
@@ -44,9 +42,8 @@
 - (void).cxx_destruct;
 - (void)assistiveTechnologyStatusDidChange;
 - (void)cancelInvalidationForComponentWithIdentifier:(id)arg1;
-- (id)componentHost;
 - (id)componentIdentifiersToInvalidate;
-- (id)componentViewFactory;
+- (id)componentViewEngine;
 - (id)componentViewForIdentifier:(id)arg1;
 - (id)componentViewForPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)componentViewForPoint:(struct CGPoint { double x1; double x2; })arg1 inComponents:(id)arg2;
@@ -55,9 +52,9 @@
 - (id)componentViewsForRole:(int)arg1 forLayoutBlueprint:(id)arg2;
 - (id)componentsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)delegate;
-- (void)fadeInComponents:(id)arg1;
+- (void)fadeComponent:(id)arg1 completion:(id /* block */)arg2;
 - (id)flattenedComponentViews;
-- (id)initWithViewport:(id)arg1 componentViewFactory:(id)arg2 componentHost:(id)arg3 delegate:(id)arg4;
+- (id)initWithViewport:(id)arg1 componentViewEngine:(id)arg2;
 - (void)invalidateLayoutForComponentWithIdentifier:(id)arg1;
 - (void)invalidateLayoutForComponentWithIdentifier:(id)arg1 suggestedSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)invalidateLayoutForComponentWithIdentifier:(id)arg1 suggestedSize:(struct CGSize { double x1; double x2; })arg2 priority:(int)arg3;
@@ -69,11 +66,10 @@
 - (void)mightInvalidateComponentWithIdentifier:(id)arg1;
 - (id)nestedComponentViews;
 - (id)possibleInvalidations;
-- (void)presentBlueprint:(id)arg1 animated:(bool)arg2;
-- (void)presentBlueprint:(id)arg1 forParentComponentView:(id)arg2 inHost:(id)arg3;
-- (void)presentBlueprint:(id)arg1 inHost:(id)arg2;
-- (void)presentBlueprint:(id)arg1 withAttributes:(id)arg2;
-- (id)presentComponentBlueprint:(id)arg1 inHost:(id)arg2 columnLayout:(id)arg3;
+- (void)presentBlueprint:(id)arg1 forParentComponentView:(id)arg2 inHost:(id)arg3 presentationDelegate:(id)arg4;
+- (void)presentBlueprint:(id)arg1 host:(id)arg2 presentationDelegate:(id)arg3 animated:(bool)arg4;
+- (void)presentBlueprint:(id)arg1 host:(id)arg2 presentationDelegate:(id)arg3 attributes:(id)arg4;
+- (id)presentComponentBlueprint:(id)arg1 inHost:(id)arg2 presentationDelegate:(id)arg3 columnLayout:(id)arg4;
 - (void)presentComponentsInBlueprint:(id)arg1;
 - (id)presentationAttributes;
 - (id)presentedBlueprint;
@@ -81,6 +77,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })renderBounds;
 - (void)renderContentsIfNeededForComponents:(id)arg1;
 - (void)setComponentIdentifiersToInvalidate:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setInvalidationDispatched:(bool)arg1;
 - (void)setIsPresenting:(bool)arg1;
 - (void)setMappedComponentViews:(id)arg1;

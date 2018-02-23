@@ -39,6 +39,7 @@
 - (void)_setConversationDeferredSetup;
 - (bool)_shouldSetToFieldAsFirstResponder;
 - (bool)_shouldValidatePayloadBeforeSendingPayload:(id)arg1;
+- (void)_triggerRecipientFinalization;
 - (void)_updateNavigationButtons;
 - (void)_updateTitleAnimated:(bool)arg1;
 - (void)addBizIntentToConversation:(id)arg1;
@@ -47,6 +48,7 @@
 - (id)businessInfoView;
 - (void)businessInfoView:(id)arg1 infoButtonTapped:(id)arg2;
 - (void)cancelButtonTapped:(id)arg1;
+- (void)chatInputWillUpdateInputViewShowingBrowser;
 - (id)composeCancelItem;
 - (id)composeRecipientSelectionController;
 - (void)conversationLeft;

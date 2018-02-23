@@ -2,13 +2,9 @@
    Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
  */
 
-@interface NTKCFaceDetailViewController : UIViewController <NTKCFaceDetailActionSectionDelegate, NTKCFaceDetailComplicationSectionDelegate, NTKCFaceDetailDataSourcesSectionDelegate, NTKCFaceDetailDescriptionSectionDelegate, NTKCFaceDetailEditOptionSectionDelegate, NTKCFaceDetailOtherFacesWithAppSectionDelegate, NTKCFaceDetailOtherSectionDelegate, NTKCFaceDetailPhotosSectionDelegate, NTKFaceCollectionObserver, NTKFaceObserver, UITableViewDataSource, UITableViewDelegate> {
+@interface NTKCFaceDetailViewController : UIViewController <NTKCFaceDetailActionSectionDelegate, NTKCFaceDetailComplicationSectionDelegate, NTKCFaceDetailDataSourcesSectionDelegate, NTKCFaceDetailDescriptionSectionDelegate, NTKCFaceDetailEditOptionSectionDelegate, NTKCFaceDetailOtherSectionDelegate, NTKCFaceDetailPhotosSectionDelegate, NTKFaceCollectionObserver, NTKFaceObserver, UITableViewDataSource, UITableViewDelegate> {
     _NTKCDetailActionButton * _addButton;
     UIActivityIndicatorView * _addSpinner;
-    NTKCompanionApp * _app;
-    bool  _appExistsOnFace;
-    NTKCIconView * _appIcon;
-    UILabel * _appName;
     NSMutableArray * _currentSections;
     <NTKCFaceDetailViewControllerDelegate> * _delegate;
     NTKCFaceDetailDescriptionSectionController * _descriptionSection;
@@ -20,9 +16,6 @@
     bool  _faceHasBeenEdited;
     UILabel * _faceName;
     NTKCompanionFaceViewController * _faceVC;
-    UILabel * _featured;
-    UIView * _featuredAnimationContainer;
-    UIView * _featuredContainer;
     struct CGSize { 
         double width; 
         double height; 
@@ -43,10 +36,6 @@
 
 @property (nonatomic, retain) _NTKCDetailActionButton *addButton;
 @property (nonatomic, retain) UIActivityIndicatorView *addSpinner;
-@property (nonatomic, retain) NTKCompanionApp *app;
-@property (nonatomic) bool appExistsOnFace;
-@property (nonatomic, retain) NTKCIconView *appIcon;
-@property (nonatomic, retain) UILabel *appName;
 @property (nonatomic, retain) NSMutableArray *currentSections;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <NTKCFaceDetailViewControllerDelegate> *delegate;
@@ -60,9 +49,6 @@
 @property (nonatomic, readonly) bool faceHasBeenEdited;
 @property (nonatomic, retain) UILabel *faceName;
 @property (nonatomic, retain) NTKCompanionFaceViewController *faceVC;
-@property (nonatomic, retain) UILabel *featured;
-@property (nonatomic, retain) UIView *featuredAnimationContainer;
-@property (nonatomic, retain) UIView *featuredContainer;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) struct CGSize { double x1; double x2; } headerFaceSize;
 @property (nonatomic, retain) UIView *headerSeparator;
@@ -84,7 +70,6 @@
 - (void)_addFace;
 - (void)_addFaceEndedForFace:(id)arg1;
 - (void)_addTapped;
-- (bool)_appExistsOnFace;
 - (bool)_cellIsHiddenBehindHeader:(id)arg1;
 - (void)_ensureOtherSection;
 - (void)_faceChangedOptionsForEditMode:(long long)arg1;
@@ -105,10 +90,6 @@
 - (void)actionSectionDidSelect:(id)arg1;
 - (id)addButton;
 - (id)addSpinner;
-- (id)app;
-- (bool)appExistsOnFace;
-- (id)appIcon;
-- (id)appName;
 - (id)complicationSection:(id)arg1 allowedComplicationsForSlot:(id)arg2;
 - (void)complicationSection:(id)arg1 didChangeToComplication:(id)arg2 forSlot:(id)arg3;
 - (id)currentSections;
@@ -134,23 +115,19 @@
 - (id)faceName;
 - (void)faceResourceDirectoryDidChange:(id)arg1;
 - (id)faceVC;
-- (id)featured;
-- (id)featuredAnimationContainer;
-- (id)featuredContainer;
 - (struct CGSize { double x1; double x2; })headerFaceSize;
 - (id)headerSeparator;
 - (id)headerView;
 - (bool)inGallery;
 - (id)initWithFace:(id)arg1;
 - (id)initWithFace:(id)arg1 externalAssets:(id)arg2;
-- (id)initWithFace:(id)arg1 inGallery:(bool)arg2 app:(id)arg3;
-- (id)initWithFace:(id)arg1 inGallery:(bool)arg2 app:(id)arg3 externalAssets:(id)arg4;
+- (id)initWithFace:(id)arg1 inGallery:(bool)arg2;
+- (id)initWithFace:(id)arg1 inGallery:(bool)arg2 externalAssets:(id)arg3;
 - (double)intrinsicHeaderHeight;
 - (id)kaleidoscopeContentSection;
 - (id)kaleidoscopeStyleSection;
 - (id)library;
 - (long long)numberOfSectionsInTableView:(id)arg1;
-- (void)otherFacesWithAppSection:(id)arg1 didSelectFace:(id)arg2 finishedSelectionHandler:(id /* block */)arg3;
 - (id)otherSection;
 - (void)otherSection:(id)arg1 didChangeShowSeconds:(id)arg2 forMode:(long long)arg3;
 - (void)otherSection:(id)arg1 didToggleMonogram:(id)arg2 forSlot:(id)arg3;
@@ -161,10 +138,6 @@
 - (id /* block */)selectionFinishedHandler;
 - (void)setAddButton:(id)arg1;
 - (void)setAddSpinner:(id)arg1;
-- (void)setApp:(id)arg1;
-- (void)setAppExistsOnFace:(bool)arg1;
-- (void)setAppIcon:(id)arg1;
-- (void)setAppName:(id)arg1;
 - (void)setCurrentSections:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDescriptionSection:(id)arg1;
@@ -175,9 +148,6 @@
 - (void)setFaceContainer:(id)arg1;
 - (void)setFaceName:(id)arg1;
 - (void)setFaceVC:(id)arg1;
-- (void)setFeatured:(id)arg1;
-- (void)setFeaturedAnimationContainer:(id)arg1;
-- (void)setFeaturedContainer:(id)arg1;
 - (void)setHeaderFaceSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setHeaderSeparator:(id)arg1;
 - (void)setHeaderView:(id)arg1;

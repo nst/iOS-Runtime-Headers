@@ -13,6 +13,7 @@
     GEOMapServiceTraits * _traits;
 }
 
+@property (nonatomic, readonly) GEOResolvedItem *clientResolved;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSArray *displayLines;
@@ -30,6 +31,7 @@
 - (void).cxx_destruct;
 - (id)_placeDataAutocompleteEntry;
 - (id)calloutTitle;
+- (id)clientResolved;
 - (id)displayLines;
 - (id)entry;
 - (id)entryMetadata;

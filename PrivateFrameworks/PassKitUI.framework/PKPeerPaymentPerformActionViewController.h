@@ -5,13 +5,14 @@
 @interface PKPeerPaymentPerformActionViewController : UIViewController <PKPaymentSetupViewControllerDelegate, PKPerformActionViewDelegate> {
     PKPeerPaymentAccount * _account;
     UIView<PKPeerPaymentPerformActionView> * _actionView;
+    PKPerformActionBackdropView * _backdropView;
     PKPeerPaymentBankAccountInformation * _bankInformation;
     <PKPeerPaymentPerformActionViewControllerDelegate> * _delegate;
+    long long  _detailViewStyle;
     PKPerformActionLoadingView * _loadingView;
     PKPaymentPass * _pass;
-    PKPerformActionPassView * _passView;
     unsigned long long  _peerPaymentAction;
-    PKPeerPaymentService * _peerPaymentService;
+    bool  _performingAction;
     RemoteUIController * _termsController;
 }
 
@@ -32,6 +33,7 @@
 - (void).cxx_destruct;
 - (id)_actionViewForPass:(id)arg1 action:(unsigned long long)arg2;
 - (void)_cancelButtonPressed:(id)arg1;
+- (void)_doneBarButtonPressed:(id)arg1;
 - (void)_handleError:(id)arg1;
 - (void)_handleError:(id)arg1 completion:(id /* block */)arg2;
 - (id)_navigationBarTitle;
@@ -45,7 +47,9 @@
 - (id)account;
 - (id)actionView;
 - (id)delegate;
+- (id)doneBarButton;
 - (id)initWithPaymentPass:(id)arg1 account:(id)arg2 peerPaymentAction:(unsigned long long)arg3;
+- (id)initWithPaymentPass:(id)arg1 account:(id)arg2 peerPaymentAction:(unsigned long long)arg3 detailViewStyle:(long long)arg4;
 - (id)pass;
 - (void)performActionView:(id)arg1 requestsPresentViewController:(id)arg2;
 - (id)rightBarButton;
@@ -55,10 +59,12 @@
 - (void)shakeCard;
 - (id)spinnerBarButton;
 - (void)updateFirstResponder;
+- (void)viewControllerDidCancelSetupFlow:(id)arg1;
 - (void)viewControllerDidTerminateSetupFlow:(id)arg1;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

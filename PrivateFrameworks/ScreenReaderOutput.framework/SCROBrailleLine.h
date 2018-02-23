@@ -35,7 +35,7 @@
     bool  _needsDisplayFlush;
     bool  _needsFocusFlush;
     bool  _needsStatusFlush;
-    NSDictionary * _pendingBrailleStringDictionary;
+    NSMutableArray * _pendingBrailleStringDictionaries;
     long long  _rightInset;
     struct _NSRange { 
         unsigned long long location; 
@@ -60,7 +60,7 @@
 @property (nonatomic) bool isKeyboardHelpOn;
 @property (nonatomic) long long lineOffset;
 @property (nonatomic, readonly) bool needsDisplayFlush;
-@property (nonatomic, retain) NSDictionary *pendingBrailleStringDictionary;
+@property (nonatomic, retain) NSMutableArray *pendingBrailleStringDictionaries;
 @property (nonatomic, readonly) bool shouldTranslateNow;
 @property (nonatomic, readonly) bool wantsEdits;
 @property (nonatomic) bool wordWrapEnabled;
@@ -130,7 +130,7 @@
 - (id)newLineDescriptor;
 - (bool)panLeft;
 - (bool)panRight;
-- (id)pendingBrailleStringDictionary;
+- (id)pendingBrailleStringDictionaries;
 - (void)setAnyUnread:(bool)arg1;
 - (void)setAppToken:(id)arg1;
 - (void)setChunkArray:(id)arg1;
@@ -147,7 +147,7 @@
 - (void)setLineOffset:(long long)arg1;
 - (void)setMainSize:(long long)arg1;
 - (void)setMasterStatusCellIndex:(long long)arg1;
-- (void)setPendingBrailleStringDictionary:(id)arg1;
+- (void)setPendingBrailleStringDictionaries:(id)arg1;
 - (void)setRealStatus:(id)arg1;
 - (void)setShowDotsSevenAndEight:(bool)arg1;
 - (void)setStatusSize:(long long)arg1;

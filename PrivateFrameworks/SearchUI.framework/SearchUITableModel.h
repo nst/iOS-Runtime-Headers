@@ -10,6 +10,7 @@
 @property (retain) NSArray *sections;
 @property (retain) NSArray *tableRowModel;
 
++ (id)asyncRowManagersForCardSections:(id)arg1;
 + (id)gridLayoutsForCardSections:(id)arg1;
 + (id)resultsForMultiResultRowInSection:(id)arg1 startingAtIndex:(unsigned long long)arg2;
 + (id)rowModelsForCardSections:(id)arg1 result:(id)arg2;

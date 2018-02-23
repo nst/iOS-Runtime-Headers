@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXFullScreenImageView : UIView <UIGestureRecognizerDelegate, UIScrollViewDelegate> {
+@interface SXFullscreenImageView : UIView <UIGestureRecognizerDelegate, UIScrollViewDelegate> {
     unsigned long long  _activeGestureCount;
     UIActivityIndicatorView * _activityIndicator;
     SXImageView * _contentView;
@@ -21,7 +21,7 @@
         double x; 
         double y; 
     }  _currentTranslation;
-    <SXFullScreenImageViewDelegate> * _delegate;
+    <SXFullscreenImageViewDelegate> * _delegate;
     UITapGestureRecognizer * _doubleTapGestureRecognizer;
     bool  _isZooming;
     UIScrollView * _scrollView;
@@ -35,7 +35,7 @@
 @property (nonatomic) double currentScale;
 @property (nonatomic) struct CGPoint { double x1; double x2; } currentTranslation;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) <SXFullScreenImageViewDelegate> *delegate;
+@property (nonatomic) <SXFullscreenImageViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UITapGestureRecognizer *doubleTapGestureRecognizer;
 @property (readonly) unsigned long long hash;

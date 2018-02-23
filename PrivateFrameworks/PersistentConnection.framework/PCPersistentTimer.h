@@ -4,6 +4,7 @@
 
 @interface PCPersistentTimer : NSObject <CUTPowerMonitorDelegate> {
     bool  _disableSystemWaking;
+    double  _earlyFireConstantInterval;
     double  _fireTime;
     unsigned long long  _guidancePriority;
     NSObject<OS_os_log> * _logObject;
@@ -22,6 +23,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) bool disableSystemWaking;
+@property (nonatomic) double earlyFireConstantInterval;
 @property (nonatomic, readonly) double fireTime;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) double minimumEarlyFireProportion;
@@ -45,6 +47,7 @@
 - (void)dealloc;
 - (id)debugDescription;
 - (bool)disableSystemWaking;
+- (double)earlyFireConstantInterval;
 - (double)fireTime;
 - (bool)firingIsImminent;
 - (id)initWithFireDate:(id)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5;
@@ -61,6 +64,7 @@
 - (void)scheduleInRunLoop:(id)arg1;
 - (void)scheduleInRunLoop:(id)arg1 inMode:(id)arg2;
 - (void)setDisableSystemWaking:(bool)arg1;
+- (void)setEarlyFireConstantInterval:(double)arg1;
 - (void)setMinimumEarlyFireProportion:(double)arg1;
 - (void)setUserVisible:(bool)arg1;
 - (double)startTime;

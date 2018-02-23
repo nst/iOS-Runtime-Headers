@@ -18,7 +18,7 @@
 - (id)a1;
 - (id)a2;
 - (long long)acknowledgmentType;
-- (void)animateWithDelay:(double)arg1 completionDelay:(double)arg2 completion:(id /* block */)arg3;
+- (void)animateWithBeginTime:(double)arg1 completionDelay:(double)arg2 completion:(id /* block */)arg3;
 - (double)animationDuration;
 - (struct CGPoint { double x1; double x2; })glyphOffset;
 - (id)h1;

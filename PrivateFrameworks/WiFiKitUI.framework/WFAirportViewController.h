@@ -4,6 +4,7 @@
 
 @interface WFAirportViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, WFNetworkListing> {
     NSArray * _adhocNetworks;
+    bool  _askToJoinShown;
     WFChooseNetworkHeaderViewController * _chooseNetworkHeader;
     <WFNetworkListRecord> * _currentNetwork;
     float  _currentNetworkScaledRSSI;
@@ -28,6 +29,7 @@
 }
 
 @property (nonatomic, retain) NSArray *adhocNetworks;
+@property (nonatomic) bool askToJoinShown;
 @property (nonatomic, retain) WFChooseNetworkHeaderViewController *chooseNetworkHeader;
 @property (retain) <WFNetworkListRecord> *currentNetwork;
 @property float currentNetworkScaledRSSI;
@@ -67,6 +69,7 @@
 - (id)_nameOfSection:(long long)arg1;
 - (void)_powerSwitchChanged:(id)arg1;
 - (void)_promptToJoinAdhoc:(id)arg1;
+- (bool)_refreshATJShownStateIfChanged;
 - (void)_reloadHotspotSection;
 - (id)_sectionNameAtIndex:(long long)arg1;
 - (long long)_sectionTypeAtSection:(long long)arg1;
@@ -74,6 +77,7 @@
 - (void)_updateCellsWithNewData:(id)arg1 oldData:(id)arg2 inSection:(long long)arg3 insertSection:(bool)arg4;
 - (void)_updateNetworkRestrictionHeader;
 - (id)adhocNetworks;
+- (bool)askToJoinShown;
 - (id)chooseNetworkHeader;
 - (id)currentNetwork;
 - (float)currentNetworkScaledRSSI;
@@ -95,6 +99,7 @@
 - (void)refresh;
 - (id)sections;
 - (void)setAdhocNetworks:(id)arg1;
+- (void)setAskToJoinShown:(bool)arg1;
 - (void)setChooseNetworkHeader:(id)arg1;
 - (void)setCurrentNetwork:(id)arg1;
 - (void)setCurrentNetwork:(id)arg1 scrollToRecord:(bool)arg2;

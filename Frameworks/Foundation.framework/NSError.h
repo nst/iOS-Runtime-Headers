@@ -437,6 +437,7 @@
 - (bool)br_isCloudDocsErrorCode:(long long)arg1;
 - (bool)br_isCocoaErrorCode:(long long)arg1;
 - (bool)br_isPOSIXErrorCode:(long long)arg1;
+- (id)br_underlyingPOSIXError;
 
 // Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
 
@@ -643,6 +644,10 @@
 - (bool)isHMFError;
 - (id)shortDescription;
 
+// Image: /System/Library/PrivateFrameworks/HardwareDiagnostics.framework/HardwareDiagnostics
+
+- (id)dictionaryRepresentation;
+
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 + (id)hk_errorWithCodableError:(id)arg1;
@@ -662,9 +667,14 @@
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
++ (id)hf_errorWithCode:(long long)arg1;
++ (id)hf_errorWithCode:(long long)arg1 descriptionFormat:(id)arg2;
++ (id)hf_errorWithCode:(long long)arg1 operation:(id)arg2 options:(id)arg3;
+
 - (id)hf_errorWithOperationType:(id)arg1 failedItemName:(id)arg2;
 - (id)hf_errorWithOperationType:(id)arg1 options:(id)arg2;
 - (bool)hf_isHomeKitNamingError;
+- (bool)hf_isUnreachableError;
 
 // Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
 
@@ -700,6 +710,9 @@
 
 + (id)_xcui_error:(long long)arg1 description:(id)arg2;
 + (id)_xcui_error:(long long)arg1 description:(id)arg2 userInfo:(id)arg3;
++ (id)_xcui_errorWithDomain:(id)arg1 code:(long long)arg2 description:(id)arg3;
+
+- (bool)xcui_isUITestingError:(long long)arg1;
 
 // Image: /System/Library/PrivateFrameworks/KeychainCircle.framework/KeychainCircle
 
@@ -773,6 +786,10 @@
 + (id)ml_errorWithCode:(unsigned long long)arg1;
 + (id)ml_errorWithCode:(unsigned long long)arg1 description:(id)arg2;
 
+// Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
+
+- (id)npk_errorWithDomain:(id)arg1 code:(long long)arg2;
+
 // Image: /System/Library/PrivateFrameworks/NanoRegistry.framework/NanoRegistry
 
 - (id)nr_safeDescription;
@@ -802,7 +819,6 @@
 
 + (id)fc_belowMinimumVersionError;
 + (id)fc_canaryDownError;
-+ (id)fc_createStateMachineErrorForCode:(long long)arg1 userInfo:(id)arg2;
 + (id)fc_encryptionErrorWithCode:(unsigned long long)arg1;
 + (id)fc_encryptionErrorWithCode:(unsigned long long)arg1 description:(id)arg2;
 + (id)fc_encryptionErrorWithCode:(unsigned long long)arg1 descriptionFormat:(id)arg2;
@@ -813,6 +829,7 @@
 + (id)fc_notAvailableError;
 + (id)fc_notCachedError;
 + (id)fc_offlineErrorWithReason:(long long)arg1;
++ (id)fc_requestDroppedErrorForDroppedFeeds:(unsigned long long)arg1 totalFeeds:(unsigned long long)arg2;
 
 - (bool)fc_hasCKErrorWithCodePassingTest:(id /* block */)arg1;
 - (bool)fc_hasIdentityLostError;
@@ -827,10 +844,15 @@
 - (bool)fc_isOfflineErrorOfflineReason:(long long*)arg1;
 - (bool)fc_isOperationThrottledError;
 - (bool)fc_isServiceUnavailableError;
-- (bool)fc_isStateMachineError:(long long)arg1;
 - (bool)fc_isTemporaryNetworkOrServerError;
 - (bool)fc_shouldRetry;
 - (id)fc_underlyingCKErrorUserInfoValueForKey:(id)arg1 forItemID:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/NewsFoundation.framework/NewsFoundation
+
++ (id)fc_createStateMachineErrorForCode:(long long)arg1 userInfo:(id)arg2;
+
+- (bool)fc_isStateMachineError:(long long)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NewsUI.framework/NewsUI
 

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsUI.framework/NewsUI
  */
 
-@interface NUExtensionURLHandler : NSObject <NUURLHandler> {
+@interface NUExtensionURLHandler : NSObject <NUURLHandling> {
     NSExtensionContext * _extensionContext;
 }
 
@@ -15,6 +15,6 @@
 - (void).cxx_destruct;
 - (id)extensionContext;
 - (id)initWithExtensionContext:(id)arg1;
-- (void)openURL:(id)arg1 completion:(id /* block */)arg2;
+- (void)openURL:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;
 
 @end

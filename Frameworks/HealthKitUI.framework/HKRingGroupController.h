@@ -16,7 +16,6 @@
     double  _ringIconSize;
     double  _ringInterspacing;
     double  _ringScale;
-    bool  _ringStartingStateIsDirty;
     double  _ringThickness;
     NSArray * _rings;
     double  _zRotation;
@@ -42,7 +41,7 @@
 - (double)_adjustedDurationForRingWithIndex:(long long)arg1 startPercentage:(double)arg2 targetPercentage:(double)arg3 defaultDuration:(double)arg4;
 - (void)_configureIconWithStartingPercentage:(double)arg1 forRingAtIndex:(unsigned long long)arg2 animated:(bool)arg3;
 - (unsigned long long)_lastRingFrameNumberForRingAtIndex:(unsigned long long)arg1;
-- (void)_markRingStartingStateDirty;
+- (void)_markRingGroupAsDirty;
 - (id)_newAnimatablePropertyForType:(unsigned long long)arg1;
 - (void)_removeAllRingAnimationsForPropertyType:(unsigned long long)arg1;
 - (double)_ringPercentageAdjustedForProximityToFull:(double)arg1 withRingDiameter:(double)arg2 thickness:(double)arg3;
@@ -55,6 +54,12 @@
 - (bool)_setFloatValue:(float)arg1 forIconPropertyType:(unsigned long long)arg2 ofRingAtIndex:(long long)arg3 animated:(bool)arg4;
 - (void)_setFloatValue:(float)arg1 forRingPropertyType:(unsigned long long)arg2 ofRingAtIndex:(long long)arg3 animated:(bool)arg4;
 - (bool)_setFloatValue:(float)arg1 fromCurrentValue:(float)arg2 forRingPropertyType:(unsigned long long)arg3 ofRingAtIndex:(long long)arg4 animated:(bool)arg5 duration:(double)arg6 completion:(id /* block */)arg7;
+- (bool)_setRingDiameter:(double)arg1;
+- (bool)_setRingIconSize:(double)arg1;
+- (bool)_setRingInterspacing:(double)arg1;
+- (bool)_setRingScale:(double)arg1;
+- (bool)_setRingThickness:(double)arg1;
+- (bool)_setZRotation:(double)arg1;
 - (void)_updateRingDiameters;
 - (void)_updateRingIconProperties;
 - (void)_updateRingThicknesses;

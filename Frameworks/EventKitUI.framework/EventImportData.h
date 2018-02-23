@@ -7,6 +7,7 @@
     NSDate * _endDate;
     NSData * _icsData;
     NSString * _notes;
+    bool  _prefersManagedCalendar;
     int  _requestedAction;
     NSDate * _startDate;
     NSString * _title;
@@ -17,6 +18,7 @@
 @property (nonatomic, retain) NSDate *endDate;
 @property (nonatomic, retain) NSData *icsData;
 @property (nonatomic, retain) NSString *notes;
+@property (nonatomic) bool prefersManagedCalendar;
 @property (nonatomic) int requestedAction;
 @property (nonatomic, retain) NSDate *startDate;
 @property (nonatomic, retain) NSString *title;
@@ -30,6 +32,7 @@
 + (id)acceptedTypeIdentifiers;
 + (id)eventImportDataFromData:(id)arg1 forType:(id)arg2;
 + (void)extractEventImportDataFromDropSession:(id)arg1 completionBlock:(id /* block */)arg2;
++ (bool)isSessionManaged:(id)arg1;
 + (bool)itemContainsCalendarICSData:(id)arg1;
 
 - (void).cxx_destruct;
@@ -38,10 +41,12 @@
 - (id)icsData;
 - (id)init;
 - (id)notes;
+- (bool)prefersManagedCalendar;
 - (int)requestedAction;
 - (void)setEndDate:(id)arg1;
 - (void)setIcsData:(id)arg1;
 - (void)setNotes:(id)arg1;
+- (void)setPrefersManagedCalendar:(bool)arg1;
 - (void)setRequestedAction:(int)arg1;
 - (void)setStartDate:(id)arg1;
 - (void)setTitle:(id)arg1;

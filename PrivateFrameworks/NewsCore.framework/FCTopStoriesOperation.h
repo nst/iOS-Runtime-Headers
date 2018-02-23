@@ -3,6 +3,7 @@
  */
 
 @interface FCTopStoriesOperation : FCOperation {
+    <FCAppConfiguration> * _appConfiguration;
     FCArticleList * _articleList;
     id /* block */  _catchUpCompletionHandler;
     FCCloudContext * _context;
@@ -13,6 +14,7 @@
     NSDictionary * _topStoriesMetadataByArticleID;
 }
 
+@property (nonatomic, copy) <FCAppConfiguration> *appConfiguration;
 @property (retain) FCArticleList *articleList;
 @property (copy) id /* block */ catchUpCompletionHandler;
 @property (nonatomic, retain) FCCloudContext *context;
@@ -24,6 +26,7 @@
 
 - (void).cxx_destruct;
 - (void)_checkShouldShowTopStoriesWithCompletionHandler:(id /* block */)arg1;
+- (id)appConfiguration;
 - (id)articleList;
 - (id /* block */)catchUpCompletionHandler;
 - (id)context;
@@ -32,6 +35,7 @@
 - (void)operationWillFinishWithError:(id)arg1;
 - (id)optionalHeadlines;
 - (void)performOperation;
+- (void)setAppConfiguration:(id)arg1;
 - (void)setArticleList:(id)arg1;
 - (void)setCatchUpCompletionHandler:(id /* block */)arg1;
 - (void)setContext:(id)arg1;

@@ -35,6 +35,7 @@
 - (id)_customUserAgentString;
 - (id)_incrementCreativeIdentifier;
 - (void)_requestOpenURL:(id)arg1;
+- (void)_tapGestureTimerDidExpireForRequestedActionType:(long long)arg1;
 - (void)_updateWebProcessProxyVisibility;
 - (id)_userAgentForUserAgentString:(id)arg1;
 - (bool)_webView:(id)arg1 focusShouldStartInputSession:(id)arg2;

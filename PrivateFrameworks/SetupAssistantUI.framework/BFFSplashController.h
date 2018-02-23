@@ -3,6 +3,14 @@
  */
 
 @interface BFFSplashController : UIViewController <UIScrollViewDelegate> {
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _additionalInsets;
+    UIColor * _bleedColor;
+    UIView * _bleedView;
     UIView * _buttonTray;
     NSMutableArray * _buttons;
     UIView * _contentView;
@@ -19,6 +27,8 @@
     bool  _usesTwoButtonLayout;
 }
 
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } additionalInsets;
+@property (nonatomic, retain) UIColor *bleedColor;
 @property (nonatomic, readonly) UIView *buttonTray;
 @property (nonatomic, retain) UIView *contentView;
 @property (nonatomic) long long contentViewPosition;
@@ -41,6 +51,8 @@
 - (void)_updateButtonFonts;
 - (void)_updateTrayVisibility;
 - (void)addButtonWithTitle:(id)arg1 style:(long long)arg2 action:(id /* block */)arg3;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })additionalInsets;
+- (id)bleedColor;
 - (id)buttonAtIndex:(unsigned long long)arg1;
 - (id)buttonTray;
 - (id)contentScrollView;
@@ -56,6 +68,8 @@
 - (void)loadView;
 - (void)removeAllButtons;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)setAdditionalInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setBleedColor:(id)arg1;
 - (void)setButtonsEnabled:(bool)arg1;
 - (void)setContentView:(id)arg1;
 - (void)setContentViewPosition:(long long)arg1;
@@ -71,8 +85,11 @@
 - (void)setUsesTwoButtonLayout:(bool)arg1;
 - (id)tint;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)updateBleedColor;
 - (bool)usesTwoButtonLayout;
 - (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

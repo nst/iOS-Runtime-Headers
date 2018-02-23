@@ -9,6 +9,7 @@
     NSDateInterval * _interval;
     bool  _isCategory;
     unsigned long long  _minimumOccurrencesForInclusion;
+    NSPredicate * _predicate;
     _DKEventStream * _stream;
 }
 
@@ -18,9 +19,11 @@
 @property (nonatomic, retain) NSDateInterval *interval;
 @property (nonatomic) bool isCategory;
 @property (nonatomic) unsigned long long minimumOccurrencesForInclusion;
+@property (nonatomic, retain) NSPredicate *predicate;
 @property (nonatomic, retain) _DKEventStream *stream;
 
 + (id)histogramQueryForStream:(id)arg1 interval:(id)arg2;
++ (id)histogramQueryForStream:(id)arg1 interval:(id)arg2 withPredicate:(id)arg3;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -40,12 +43,14 @@
 - (id)interval;
 - (bool)isCategory;
 - (unsigned long long)minimumOccurrencesForInclusion;
+- (id)predicate;
 - (void)setHistogramHandler:(id /* block */)arg1;
 - (void)setIncludeLocalResults:(bool)arg1;
 - (void)setIncludeRemoteResults:(bool)arg1;
 - (void)setInterval:(id)arg1;
 - (void)setIsCategory:(bool)arg1;
 - (void)setMinimumOccurrencesForInclusion:(unsigned long long)arg1;
+- (void)setPredicate:(id)arg1;
 - (void)setStream:(id)arg1;
 - (id)stream;
 

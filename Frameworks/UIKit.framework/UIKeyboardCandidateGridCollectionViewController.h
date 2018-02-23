@@ -8,6 +8,12 @@
     <UIKeyboardCandidateListDelegate> * _candidateListDelegate;
     TIKeyboardCandidateResultSet * _candidateSet;
     int  _candidatesVisualStyle;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _contentInsets;
     <UIKeyboardCandidateGridCollectionViewControllerDelegate> * _delegate;
     NSArray * _filteredCandidates;
     double  _groupBarWidth;
@@ -38,6 +44,7 @@
 @property (nonatomic) int candidatesVisualStyle;
 @property (nonatomic, readonly) UIKeyboardCandidateGridCollectionView *collectionView;
 @property (nonatomic, readonly) UIKeyboardCandidateGridLayout *collectionViewGridLayout;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <UIKeyboardCandidateGridCollectionViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -76,6 +83,7 @@
 - (bool)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (id)collectionViewGridLayout;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (id)currentCandidate;
 - (unsigned long long)currentIndex;
 - (void)dealloc;
@@ -100,7 +108,7 @@
 - (id)lastCandidateIndexPathInGroupAtIndex:(unsigned long long)arg1;
 - (void)layout;
 - (bool)layoutExtensionCandidates;
-- (void)loadSecondaryCandidatesView;
+- (bool)loadSecondaryCandidatesView;
 - (void)loadView;
 - (unsigned long long)maxNumberOfProactiveCells;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
@@ -131,6 +139,7 @@
 - (void)setCandidateSet:(id)arg1;
 - (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 maxX:(double)arg4 layout:(bool)arg5;
 - (void)setCandidatesVisualStyle:(int)arg1;
+- (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setGroupBarWidth:(double)arg1;
 - (void)setHasSecondaryCandidates:(bool)arg1;
@@ -153,6 +162,7 @@
 - (id)statisticsIdentifier;
 - (void)stepOneLine:(bool)arg1;
 - (bool)supportsNumberKeySelection;
+- (void)updateBackgroundColor;
 - (void)updateHeaderView;
 - (void)updateIndexTitles;
 - (void)viewDidLoad;

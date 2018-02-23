@@ -3,9 +3,11 @@
  */
 
 @interface _SFKey : NSObject {
+    NSData * _keyData;
     id  _keyInternal;
 }
 
+@property (nonatomic, readonly) NSData *keyData;
 @property (nonatomic, readonly, copy) NSString *keyDomain;
 @property (nonatomic, readonly, copy) _SFKeySpecifier *keySpecifier;
 
@@ -16,6 +18,7 @@
 - (id)initRandomKeyWithSpecifier:(id)arg1;
 - (id)initWithAttributes:(id)arg1;
 - (id)initWithData:(id)arg1 specifier:(id)arg2 error:(id*)arg3;
+- (id)keyData;
 - (struct NSString { Class x1; }*)keyDomain;
 - (id)keySpecifier;
 

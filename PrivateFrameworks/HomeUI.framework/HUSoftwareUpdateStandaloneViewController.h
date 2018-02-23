@@ -5,6 +5,7 @@
 @interface HUSoftwareUpdateStandaloneViewController : HUItemTableViewController <HUSoftwareUpdateItemModuleControllerDelegate, HUSwitchCellDelegate> {
     NAFuture * _softwareUpdateFetchFuture;
     HUSoftwareUpdateItemModuleController * _softwareUpdateModule;
+    UNUserNotificationCenter * _userNotificationCenter;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,10 +15,16 @@
 @property (nonatomic, retain) NAFuture *softwareUpdateFetchFuture;
 @property (nonatomic, retain) HUSoftwareUpdateItemModuleController *softwareUpdateModule;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) UNUserNotificationCenter *userNotificationCenter;
 
 - (void).cxx_destruct;
+- (void)_kickoffSoftwareUpdate;
+- (void)_setupRefreshControl;
+- (void)_triggerRefresh:(id)arg1;
 - (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;
-- (id)init;
+- (id)initWithHome:(id)arg1;
+- (id)initWithItemManager:(id)arg1 tableViewStyle:(long long)arg2;
+- (void)itemManager:(id)arg1 didUpdateResultsForItem:(id)arg2 atIndexPath:(id)arg3;
 - (id)itemModuleControllers;
 - (void)setSoftwareUpdateFetchFuture:(id)arg1;
 - (void)setSoftwareUpdateModule:(id)arg1;
@@ -25,9 +32,11 @@
 - (id)softwareUpdateFetchFuture;
 - (id)softwareUpdateModule;
 - (id)softwareUpdateModuleController:(id)arg1 dismissViewController:(id)arg2;
+- (id)softwareUpdateModuleController:(id)arg1 navigateToViewController:(id)arg2;
 - (id)softwareUpdateModuleController:(id)arg1 presentViewController:(id)arg2;
 - (void)switchCell:(id)arg1 didTurnOn:(bool)arg2;
 - (void)updateCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3 animated:(bool)arg4;
+- (id)userNotificationCenter;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;
 

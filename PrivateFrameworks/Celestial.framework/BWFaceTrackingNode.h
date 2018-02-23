@@ -23,9 +23,9 @@
 
 + (void)initialize;
 
-- (void)_process;
 - (void)_processSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (int)_setupCVA;
+- (void)_startProcessingSampleSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
 - (bool)frontCamera;

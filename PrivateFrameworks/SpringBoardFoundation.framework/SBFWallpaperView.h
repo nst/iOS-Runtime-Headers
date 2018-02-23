@@ -32,6 +32,7 @@
     double  _zoomFactor;
 }
 
+@property (nonatomic, readonly, copy) NSString *cacheGroup;
 @property (nonatomic, retain) UIView *contentView;
 @property (nonatomic) bool continuousColorSamplingEnabled;
 @property (nonatomic, readonly) bool contrastRequiresGradient;
@@ -54,6 +55,7 @@
 @property (nonatomic, readonly) bool supportsCropping;
 @property (nonatomic) unsigned long long transformOptions;
 @property (nonatomic) long long variant;
+@property (nonatomic, readonly, copy) NSString *variantCacheIdentifier;
 @property (nonatomic) bool wallpaperAnimationEnabled;
 @property (nonatomic, readonly) UIImage *wallpaperImage;
 @property (nonatomic, copy) NSString *wallpaperName;
@@ -72,14 +74,17 @@
 - (void)_beginDisallowRasterizationBlock;
 - (id)_blurReplacementImage;
 - (id)_blurredImage;
+- (id)_cacheKeyForParameters:(struct { long long x1; long long x2; long long x3; double x4; double x5; double x6; double x7; bool x8; })arg1 includingTint:(bool)arg2;
 - (id)_computeAverageColor;
 - (double)_contrastInContentViewRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 contrastWithinBoxes:(double*)arg2 contrastBetweenBoxes:(double*)arg3;
 - (id)_displayedImage;
 - (void)_endDisallowRasterizationBlock;
+- (id)_fallbackImageWithOriginalSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_handleVariantChange;
 - (void)_handleVisibilityChange;
 - (id)_imageForBackdropParameters:(struct { long long x1; long long x2; long long x3; double x4; double x5; double x6; double x7; bool x8; })arg1 includeTint:(bool)arg2;
 - (bool)_isVisible;
+- (bool)_needsFallbackImageForBackdropGeneratedImage:(id)arg1;
 - (void)_notifyBlursInvalidated;
 - (void)_notifyGeometryInvalidated;
 - (id)_primaryColorOverride;
@@ -95,6 +100,7 @@
 - (void)_updateScaleFactor;
 - (id)averageColorInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withSmudgeRadius:(double)arg2;
 - (id)blurredImage;
+- (id)cacheGroup;
 - (double)contentScaleFactor;
 - (id)contentView;
 - (bool)continuousColorSamplingEnabled;
@@ -155,6 +161,7 @@
 - (unsigned long long)transformOptions;
 - (void)updateLegibilitySettingsForAverageColor:(id)arg1;
 - (long long)variant;
+- (id)variantCacheIdentifier;
 - (bool)wallpaperAnimationEnabled;
 - (id)wallpaperImage;
 - (id)wallpaperName;

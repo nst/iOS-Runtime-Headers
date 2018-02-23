@@ -98,6 +98,7 @@
 @property (nonatomic, retain) UIColor *tintColor;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } titleEdgeInsets;
 @property (nonatomic, readonly) UILabel *titleLabel;
+@property (nonatomic, copy) NSString *vs_normalTitle;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
@@ -475,6 +476,11 @@
 - (void)setAlternateImageNamed:(id)arg1 inBundle:(id)arg2;
 - (void)setImageNamed:(id)arg1 inBundle:(id)arg2;
 - (void)setTarget:(id)arg1 action:(SEL)arg2;
+
+// Image: /System/Library/PrivateFrameworks/VideoSubscriberAccountUI.framework/VideoSubscriberAccountUI
+
+- (void)setVs_normalTitle:(id)arg1;
+- (id)vs_normalTitle;
 
 // Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
 

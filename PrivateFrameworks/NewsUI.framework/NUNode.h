@@ -24,7 +24,7 @@
         } size; 
     }  _frame;
     NSMutableArray * _subnodes;
-    <NUNode> * _supernode;
+    NSObject<NUNode> * _supernode;
 }
 
 @property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
@@ -34,7 +34,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableArray *subnodes;
 @property (readonly) Class superclass;
-@property (nonatomic) <NUNode> *supernode;
+@property (nonatomic) NSObject<NUNode> *supernode;
 
 - (void).cxx_destruct;
 - (void)addSubnode:(id)arg1;

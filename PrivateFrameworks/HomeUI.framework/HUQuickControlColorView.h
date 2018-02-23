@@ -34,7 +34,6 @@
 @property (nonatomic, retain) HFColorPaletteColor *selectedColor;
 @property (getter=isSelectedColorInPalette, nonatomic, readonly) bool selectedColorInPalette;
 @property (nonatomic) bool showPickerModeControl;
-@property (nonatomic) long long sizeSubclass;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) HUQuickControlCircleButton *switchButton;
 @property (nonatomic, retain) NSLayoutConstraint *switchButtonHeightConstraint;
@@ -67,6 +66,7 @@
 - (id)initWithProfile:(id)arg1;
 - (id)initWithProfile:(id)arg1 colorPalette:(id)arg2;
 - (id)interactionDelegate;
+- (id)intrinsicSizeDescriptorForControlSize:(unsigned long long)arg1;
 - (bool)isSelectedColorInPalette;
 - (bool)isUserInteractionActive;
 - (void)layoutSubviews;

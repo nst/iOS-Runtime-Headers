@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPaymentAuthorizationRemoteAlertViewController : SBUIRemoteAlertServiceViewController <PKPaymentAuthorizationHostProtocol, PKPaymentAuthorizationServiceViewControllerDelegate, PKPaymentSetupDelegate, SBSHardwareButtonEventConsuming> {
+@interface PKPaymentAuthorizationRemoteAlertViewController : SBUIRemoteAlertServiceViewController <PKCompactNavigationContainerControllerDelegate, PKPaymentAuthorizationHostProtocol, PKPaymentAuthorizationServiceViewControllerDelegate, PKPaymentSetupDelegate, SBSHardwareButtonEventConsuming> {
     bool  _didDismiss;
     bool  _didSendAuthorizationDidPresent;
     bool  _dismissAfterPaymentSetup;
@@ -71,8 +71,12 @@
 - (void)authorizationDidSelectPaymentMethod:(id)arg1;
 - (void)authorizationDidSelectShippingAddress:(id)arg1;
 - (void)authorizationDidSelectShippingMethod:(id)arg1;
+- (void)authorizationViewController:(id)arg1 didEncounterAuthorizationEvent:(unsigned long long)arg2;
 - (void)authorizationViewControllerDidChangeUserIntentRequirement:(id)arg1;
 - (void)authorizationWillStart;
+- (void)compactNavigationContainerControllerReceivedExternalTap:(id)arg1;
+- (void)configureWithContext:(id)arg1 completion:(id /* block */)arg2;
+- (void)consumeDoublePressUpForButtonKind:(long long)arg1;
 - (void)consumeSinglePressUpForButtonKind:(long long)arg1;
 - (void)dealloc;
 - (bool)dismissAfterPaymentSetup;

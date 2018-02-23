@@ -6,7 +6,7 @@
     LPiTunesMediaAsset * _artwork;
     NSString * _genre;
     NSString * _name;
-    bool  _needsBrandingAsset;
+    bool  _needsBrandingText;
     NSArray * _offers;
     NSString * _storeFrontIdentifier;
     NSString * _storeIdentifier;

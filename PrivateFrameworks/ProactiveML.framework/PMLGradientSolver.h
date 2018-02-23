@@ -8,8 +8,10 @@
     id /* block */  _gradientCalculator;
     bool  _intercept;
     float  _learningRate;
+    unsigned long long  _minIterations;
     PMLModelRegressor * _objective;
     id /* block */  _predictionCalculator;
+    float  _stoppingThreshold;
     PMLModelWeights * _weights;
 }
 
@@ -23,8 +25,7 @@
 - (id)computeAvgGradientWithIterations:(unsigned long long)arg1;
 - (id)covariates;
 - (id)init;
-- (id)initWithLearningRate:(float)arg1 weights:(id)arg2 gradientCalculator:(id /* block */)arg3 predictionCalculator:(id /* block */)arg4 batchPredictionCalculator:(id /* block */)arg5;
-- (id)initWithLearningRate:(float)arg1 weights:(id)arg2 intercept:(bool)arg3 gradientCalculator:(id /* block */)arg4 predictionCalculator:(id /* block */)arg5 batchPredictionCalculator:(id /* block */)arg6;
+- (id)initWithLearningRate:(float)arg1 minIterations:(unsigned long long)arg2 stoppingThreshold:(float)arg3 weights:(id)arg4 intercept:(bool)arg5 gradientCalculator:(id /* block */)arg6 predictionCalculator:(id /* block */)arg7 batchPredictionCalculator:(id /* block */)arg8;
 - (bool)intercept;
 - (float)meanSquaredError;
 - (id)objective;

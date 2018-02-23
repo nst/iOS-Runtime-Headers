@@ -60,6 +60,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)event:(long long)arg1 params:(id)arg2 reply:(id /* block */)arg3;
+- (void)fallbackToPasscode;
 - (bool)fingerPresent;
 - (bool)fingerPresentTimeoutExpired;
 - (bool)fingerPresentTimeoutRequired;
@@ -72,6 +73,7 @@
 - (id)init;
 - (id)initWithRequest:(id)arg1 completionHandler:(id /* block */)arg2 forAuthenticator:(id)arg3;
 - (void)invalidate;
+- (void)invalidateWithIntent:(long long)arg1;
 - (bool)passcodeActive;
 - (bool)passphraseActive;
 - (long long)pearlState;

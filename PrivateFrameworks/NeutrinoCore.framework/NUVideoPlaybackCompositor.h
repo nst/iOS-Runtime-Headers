@@ -4,7 +4,6 @@
 
 @interface NUVideoPlaybackCompositor : NUVideoCompositor
 
-- (void)failVideoCompositionRequest:(id)arg1 error:(id)arg2;
 - (void)fulfillVideoCompositionRequest:(id)arg1;
 
 @end

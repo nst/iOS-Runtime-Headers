@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCPersonalizationURLMapping : NSObject <NSCopying, NSSecureCoding> {
+@interface FCPersonalizationURLMapping : NSObject <FCJSONEncodableObjectProviding, NSCopying, NSSecureCoding> {
     NTPBURLMapping * _pbURLMapping;
     NSDictionary * _urlMappingByDomain;
 }
@@ -20,6 +20,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPBURLMapping:(id)arg1;
+- (id)jsonEncodableObject;
 - (id)popularityForURL:(id)arg1;
 - (void)setUrlMappingByDomain:(id)arg1;
 - (id)tagScoresForURL:(id)arg1;

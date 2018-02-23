@@ -14,12 +14,15 @@
 + (id)sharedPreferences;
 
 - (void).cxx_destruct;
-- (id)_defaultKeyForKey:(id)arg1 type:(unsigned long long)arg2;
-- (unsigned long long)_enabledFeedbackTypesForKey:(id)arg1;
+- (void)_accessibilityForceTouchChanged:(id)arg1;
+- (id)_categoryForNullableCategory:(id)arg1;
+- (id)_categoryKeyForCategory:(id)arg1 type:(unsigned long long)arg2;
+- (unsigned long long)_defaultFeedbackTypesForCategory:(id)arg1;
+- (id)_defaultKeyForCategoryKey:(id)arg1 type:(unsigned long long)arg2;
+- (unsigned long long)_enabledFeedbackTypesForCategory:(id)arg1;
 - (void)_invalidate;
-- (id)_keyForCategory:(id)arg1;
-- (void)_setEnabledFeedbackTypes:(unsigned long long)arg1 forKey:(id)arg2;
-- (void)_setEnabledFeedbackTypes:(unsigned long long)arg1 forKey:(id)arg2 postNotification:(bool)arg3;
+- (void)_setEnabledFeedbackTypes:(unsigned long long)arg1 forCategory:(id)arg2;
+- (void)_setEnabledFeedbackTypes:(unsigned long long)arg1 forCategory:(id)arg2 postNotification:(bool)arg3;
 - (void)_startObservingDefaults;
 - (void)_updateEnabledFeedbackTypes:(unsigned long long*)arg1 forKey:(id)arg2 type:(unsigned long long)arg3;
 - (id)defaultFeedbackTypes;

@@ -5,9 +5,11 @@
 @interface FCUserInfo : FCPrivateDataController <FCTagSettingsDelegate> {
     NSDate * _dateLastResetMeteredCount;
     bool  _iCloudAccountChanged;
+    NSDictionary * _readOnlyUserInfo;
     FCTagSettings * _tagSettings;
     NSNumber * _totalMeteredCount;
     bool  _useParsecResults;
+    FCMTWriterMutexLock * _userInfoLock;
 }
 
 @property (nonatomic, copy) NSDate *dateLastOpened;
@@ -15,6 +17,7 @@
 @property (nonatomic, readonly) NSDate *dateLastViewedSaved;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *editorialArticleVersion;
 @property (nonatomic, copy) NSString *feldsparID;
 @property (nonatomic) bool hasShownProgressivePersonalizationWelcomeBrick;
 @property (readonly) unsigned long long hash;
@@ -24,12 +27,14 @@
 @property (nonatomic, readonly, copy) NSString *notificationsUserID;
 @property (nonatomic, copy) NSNumber *onboardingVersionNumber;
 @property (nonatomic, readonly) unsigned long long progressivePersonalization;
+@property (nonatomic, retain) NSDictionary *readOnlyUserInfo;
 @property (nonatomic, readonly) bool shouldShowDefaultForYou;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) FCTagSettings *tagSettings;
 @property (nonatomic, copy) NSNumber *totalMeteredCount;
 @property (nonatomic, readonly) bool useParsecResults;
 @property (nonatomic) bool userHasCompletedFavoritesSetup;
+@property (nonatomic, retain) FCMTWriterMutexLock *userInfoLock;
 @property (nonatomic, copy) NSDate *userStartDate;
 
 + (id)backingRecordIDs;
@@ -44,11 +49,14 @@
 + (bool)requiresBatchedSync;
 + (bool)requiresHighPriorityFirstSync;
 + (bool)requiresPushNotificationSupport;
-+ (id)userInfoCKRecordFromStore:(id)arg1;
++ (id)userInfoCKRecordFromUserInfoDictionary:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)_modifyUserInfoWithBlock:(id /* block */)arg1;
 - (void)_persistNotificationsUserID:(id)arg1;
 - (void)_removeiCloudDataValues;
+- (void)_setUserInfoValue:(id)arg1 forKey:(id)arg2;
+- (id)_userInfoValueForKey:(id)arg1;
 - (void)accessTokenDidChangeForTagID:(id)arg1;
 - (void)accessTokenRemovedForTagID:(id)arg1 userInitiated:(bool)arg2;
 - (void)addModifyTagSettingsCommandToCommandQueue:(id)arg1;
@@ -58,6 +66,7 @@
 - (id)dateLastOpened;
 - (id)dateLastResetMeteredCount;
 - (id)dateLastViewedSaved;
+- (id)editorialArticleVersion;
 - (id)feldsparID;
 - (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordIDs:(id)arg2;
 - (void)handleSyncWithUserInfoRecord:(id)arg1;
@@ -74,18 +83,22 @@
 - (id)onboardingVersionNumber;
 - (void)prepareForUse;
 - (unsigned long long)progressivePersonalization;
+- (id)readOnlyUserInfo;
 - (id)recordsForRestoringZoneName:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)setDateLastOpened:(id)arg1;
 - (void)setDateLastResetMeteredCount:(id)arg1;
+- (void)setEditorialArticleVersion:(id)arg1;
 - (void)setFeldsparID:(id)arg1;
 - (void)setHasShownProgressivePersonalizationWelcomeBrick:(bool)arg1;
 - (void)setICloudAccountChanged:(bool)arg1;
 - (void)setMonthlyMeteredCount:(id)arg1;
 - (void)setOnboardingVersionNumber:(id)arg1;
+- (void)setReadOnlyUserInfo:(id)arg1;
 - (void)setTagSettings:(id)arg1;
 - (void)setTotalMeteredCount:(id)arg1;
 - (void)setUserHasCompletedFavoritesSetup:(bool)arg1;
+- (void)setUserInfoLock:(id)arg1;
 - (void)setUserStartDate:(id)arg1;
 - (bool)shouldShowDefaultForYou;
 - (void)syncLocalNotificationsUserID:(id)arg1 withRemoteNotificationsUserID:(id)arg2;
@@ -94,6 +107,7 @@
 - (id)totalMeteredCount;
 - (bool)useParsecResults;
 - (bool)userHasCompletedFavoritesSetup;
+- (id)userInfoLock;
 - (id)userStartDate;
 - (void)validateIsMeteredLimitReachedWithArticleID:(id)arg1 completion:(id /* block */)arg2;
 

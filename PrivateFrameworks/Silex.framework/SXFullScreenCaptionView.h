@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXFullScreenCaptionView : UIView <STStandaloneTextLayoutDelegate, SXAutoSizedCanvasControllerDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate> {
+@interface SXFullscreenCaptionView : UIView <STStandaloneTextLayoutDelegate, SXAutoSizedCanvasControllerDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate> {
+    <SXComponentActionHandler> * _actionHandler;
+    <SXActionProvider> * _actionProvider;
     SXAutoSizedCanvasController * _autoSizeCanvasController;
     UIVisualEffectView * _backgroundView;
-    SXFullScreenCaption * _caption;
+    SXFullscreenCaption * _caption;
     STStandaloneTextInfo * _captionInfo;
     STStandaloneTextLayout * _captionLayout;
-    <SXFullScreenCaptionViewDelegate> * _delegate;
+    <SXFullscreenCaptionViewDelegate> * _delegate;
     STTextTangierDocumentRoot * _documentRoot;
     int  _expansionMode;
     struct UIEdgeInsets { 
@@ -39,13 +41,15 @@
     unsigned long long  _viewIndex;
 }
 
+@property (nonatomic, readonly) <SXComponentActionHandler> *actionHandler;
+@property (nonatomic, readonly) <SXActionProvider> *actionProvider;
 @property (nonatomic, retain) SXAutoSizedCanvasController *autoSizeCanvasController;
 @property (nonatomic, retain) UIVisualEffectView *backgroundView;
-@property (nonatomic, readonly) SXFullScreenCaption *caption;
+@property (nonatomic, readonly) SXFullscreenCaption *caption;
 @property (nonatomic, retain) STStandaloneTextInfo *captionInfo;
 @property (nonatomic, retain) STStandaloneTextLayout *captionLayout;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) <SXFullScreenCaptionViewDelegate> *delegate;
+@property (nonatomic) <SXFullscreenCaptionViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) STTextTangierDocumentRoot *documentRoot;
 @property (nonatomic, readonly) bool expanded;
@@ -66,6 +70,8 @@
 + (id)_overridePropertiesWithComponentStyle:(id)arg1 storage:(id)arg2;
 
 - (void).cxx_destruct;
+- (id)actionHandler;
+- (id)actionProvider;
 - (id)autoSizeCanvasController;
 - (id)backgroundView;
 - (id)caption;
@@ -88,7 +94,7 @@
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)handleSwipeGestureRecognizer:(id)arg1;
 - (void)handleTapGestureRecognizer:(id)arg1;
-- (id)init;
+- (id)initWithActionProvider:(id)arg1 actionHandler:(id)arg2;
 - (void)initializeTangier;
 - (void)layoutSubviews;
 - (double)marginForTextLayout:(id)arg1;

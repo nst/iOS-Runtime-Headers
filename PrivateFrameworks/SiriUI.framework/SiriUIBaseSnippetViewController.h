@@ -3,7 +3,7 @@
  */
 
 @interface SiriUIBaseSnippetViewController : UIViewController <SiriUIViewController> {
-    <SiriUIAceObjectViewControllerDelegate> * _delegate;
+    <SiriUIBaseAceObjectViewControllerDelegate> * _delegate;
     SiriUISashItem * _sashItem;
     bool  _utteranceUserInteractionEnabled;
     AceObject * aceObject;
@@ -11,7 +11,7 @@
 
 @property (nonatomic, retain) AceObject *aceObject;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) <SiriUIAceObjectViewControllerDelegate> *delegate;
+@property (nonatomic) <SiriUIBaseAceObjectViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) SiriUISashItem *sashItem;

@@ -270,6 +270,7 @@
 
 // Image: /System/Library/Frameworks/iAd.framework/iAd
 
++ (bool)excludeCustomJavaScript;
 + (id)sharedAdvertisingConfiguration:(bool)arg1;
 
 @end

@@ -8,6 +8,7 @@
     NSString * _movieSubtitle;
     NSString * _movieTitle;
     MPAVController * _player;
+    _MPAVPlayerView * _playerView;
     long long  _scaleMode;
     double  _startTime;
     double  _stopTime;
@@ -25,6 +26,7 @@
 @property (nonatomic, retain) NSString *movieSubtitle;
 @property (nonatomic, retain) NSString *movieTitle;
 @property (nonatomic) MPAVController *player;
+@property (nonatomic, readonly) AVPlayerLayer *playerLayer;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } preferredContentSize;
 @property (getter=isReadyForDisplay, nonatomic, readonly) bool readyForDisplay;
 @property (nonatomic) long long scaleMode;
@@ -34,8 +36,6 @@
 @property (nonatomic, retain) NSString *videoGravity;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
-
-+ (Class)layerClass;
 
 - (void).cxx_destruct;
 - (id)AVURLAssetOptions;
@@ -51,6 +51,7 @@
 - (id)movieSubtitle;
 - (id)movieTitle;
 - (id)player;
+- (id)playerLayer;
 - (long long)scaleMode;
 - (void)setAVURLAssetOptions:(id)arg1;
 - (void)setMovieSubtitle:(id)arg1;

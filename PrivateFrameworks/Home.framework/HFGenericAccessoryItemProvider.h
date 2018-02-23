@@ -13,7 +13,7 @@
 @property (nonatomic, readonly) HMHome *home;
 
 - (void).cxx_destruct;
-- (bool)_supportsCreatingAccessoryItemForAccessory:(id)arg1;
+- (bool)_isAccessorySupported:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id /* block */)filter;
 - (id)genericItems;

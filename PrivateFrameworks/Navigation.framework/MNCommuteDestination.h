@@ -13,6 +13,7 @@
     MNObserverHashTable * _observers;
     double  _remainingDistance;
     double  _remainingTime;
+    bool  _rerouting;
     GEOComposedRoute * _route;
     GEORouteSet * _routeSet;
     long long  _score;
@@ -34,6 +35,7 @@
 @property (retain) MNObserverHashTable *observers;
 @property (nonatomic) double remainingDistance;
 @property (nonatomic) double remainingTime;
+@property (nonatomic) bool rerouting;
 @property (nonatomic, retain) GEOComposedRoute *route;
 @property (nonatomic, retain) GEORouteSet *routeSet;
 @property (nonatomic) long long score;
@@ -68,6 +70,7 @@
 - (double)remainingDistance;
 - (double)remainingTime;
 - (void)removeObserver:(id)arg1;
+- (bool)rerouting;
 - (id)route;
 - (id)routeSet;
 - (long long)score;
@@ -82,6 +85,7 @@
 - (void)setObservers:(id)arg1;
 - (void)setRemainingDistance:(double)arg1;
 - (void)setRemainingTime:(double)arg1;
+- (void)setRerouting:(bool)arg1;
 - (void)setRoute:(id)arg1;
 - (void)setRouteSet:(id)arg1;
 - (void)setScore:(long long)arg1;

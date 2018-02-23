@@ -13,7 +13,6 @@
     PKPassView * _frontmostPassView;
     PKGroup * _group;
     bool  _groupWasMarkedDeleted;
-    double  _horizontalMotionRelativeValue;
     UIScrollView * _horizontalScrollView;
     bool  _isAuthenticating;
     struct { 
@@ -57,7 +56,6 @@
     PKReusablePassViewQueue * _passViewQueue;
     NSMutableDictionary * _passViewsByUniqueID;
     long long  _presentationState;
-    double  _verticalMotionRelativeValue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -66,7 +64,6 @@
 @property (nonatomic, retain) PKPassView *frontmostPassView;
 @property (nonatomic, readonly) PKGroup *group;
 @property (readonly) unsigned long long hash;
-@property (nonatomic) double horizontalMotionRelativeValue;
 @property (getter=isModallyPresented, nonatomic) bool modallyPresented;
 @property (nonatomic, readonly) struct UIOffset { double x1; double x2; } offsetForFrontmostPassWhileStacked;
 @property (nonatomic, readonly) UIPageControl *pageControl;
@@ -74,7 +71,6 @@
 @property (nonatomic) PKReusablePassViewQueue *passViewQueue;
 @property (nonatomic) long long presentationState;
 @property (readonly) Class superclass;
-@property (nonatomic) double verticalMotionRelativeValue;
 
 - (void).cxx_destruct;
 - (void)_addPanAndLongPressGestureRecognizers;
@@ -118,7 +114,6 @@
 - (void)group:(id)arg1 didRemovePass:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)group:(id)arg1 didUpdatePass:(id)arg2 atIndex:(unsigned long long)arg3;
 - (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
-- (double)horizontalMotionRelativeValue;
 - (id)initWithGroup:(id)arg1 delegate:(id)arg2 presentationState:(long long)arg3;
 - (bool)isModallyPresented;
 - (void)layoutPagesAnimated:(bool)arg1;
@@ -152,18 +147,14 @@
 - (void)setDimmer:(double)arg1 animated:(bool)arg2;
 - (void)setFrontmostPassView:(id)arg1;
 - (void)setFrontmostPassViewFromPassIndex:(long long)arg1;
-- (void)setHorizontalMotionRelativeValue:(double)arg1;
 - (void)setModallyPresented:(bool)arg1;
 - (void)setPageControlHidden:(bool)arg1;
 - (void)setPassViewQueue:(id)arg1;
-- (void)setPileMotionEffectsEnabled:(bool)arg1;
 - (void)setPresentationState:(long long)arg1;
 - (void)setPresentationState:(long long)arg1 animated:(bool)arg2;
-- (void)setVerticalMotionRelativeValue:(double)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)sizeToFit;
 - (void)updatePageControlFrame;
 - (void)updateToStackWithProgress:(double)arg1 originalPosition:(struct CGPoint { double x1; double x2; })arg2 timingFunction:(id /* block */)arg3;
-- (double)verticalMotionRelativeValue;
 
 @end

@@ -23,6 +23,8 @@
 + (void)initialize;
 + (void)prewarm;
 
+- (void)_renderUsingParameters:(id)arg1 inputPixelBuffer:(struct __CVBuffer { }*)arg2 inputSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg3 originalPixelBuffer:(struct __CVBuffer { }*)arg4 processedPixelBuffer:(struct __CVBuffer { }*)arg5 prewarming:(bool)arg6 completionHandler:(id /* block */)arg7;
+- (id)_visionKitFaceObservationToCoreImageDictionary:(id)arg1 orientation:(id)arg2;
 - (void)adjustMetadataOfSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (bool)adjustsMetadata;
 - (id)coreImageArrayRepresentationForRegion:(id)arg1;

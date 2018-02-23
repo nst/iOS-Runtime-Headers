@@ -5,6 +5,7 @@
 @interface _TVStackCollectionViewController : UICollectionViewController {
     UIView * _backdropTintView;
     UIViewController * _backdropTintViewController;
+    bool  _configureForListTemplate;
     NSIndexPath * _lastFocusedIndexPath;
     _TVNeedsMoreContentEvaluator * _needsMoreContentEvaluator;
     NSArray * _stackRows;
@@ -40,8 +41,9 @@
 - (void)loadView;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)updateWithContainerViewElement:(id)arg1;
+- (void)updateWithViewElement:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (id)viewElement;
 

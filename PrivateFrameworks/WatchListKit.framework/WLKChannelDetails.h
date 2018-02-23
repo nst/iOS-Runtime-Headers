@@ -18,6 +18,7 @@
     bool  _requiresSubscriptionForConsent;
     bool  _shouldIncludeInConsent;
     bool  _shouldPromptForConsentOnSubscriptionChange;
+    bool  _shouldTrackPlayActivity;
     bool  _subscribed;
     bool  _watchListEnabled;
 }
@@ -40,6 +41,7 @@
 @property (nonatomic, readonly) bool requiresSubscriptionForConsent;
 @property (nonatomic, readonly) bool shouldIncludeInConsent;
 @property (nonatomic, readonly) bool shouldPromptForConsentOnSubscriptionChange;
+@property (nonatomic, readonly) bool shouldTrackPlayActivity;
 @property (getter=isSubscribed, nonatomic, readonly) bool subscribed;
 @property (readonly) Class superclass;
 @property (getter=isWatchListEnabled, nonatomic, readonly) bool watchListEnabled;
@@ -66,5 +68,6 @@
 - (bool)requiresSubscriptionForConsent;
 - (bool)shouldIncludeInConsent;
 - (bool)shouldPromptForConsentOnSubscriptionChange;
+- (bool)shouldTrackPlayActivity;
 
 @end

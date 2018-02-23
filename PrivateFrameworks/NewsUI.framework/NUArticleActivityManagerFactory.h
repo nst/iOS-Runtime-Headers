@@ -3,13 +3,13 @@
  */
 
 @interface NUArticleActivityManagerFactory : NSObject <NUArticleActivityFactory> {
-    <NUURLHandler> * _URLHandler;
+    <NUURLHandling> * _URLHandler;
     FCReadingHistory * _readingHistory;
     FCReadingList * _readingList;
     FCSubscriptionList * _subscriptionList;
 }
 
-@property (nonatomic, readonly) <NUURLHandler> *URLHandler;
+@property (nonatomic, readonly) <NUURLHandling> *URLHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -20,7 +20,7 @@
 
 - (void).cxx_destruct;
 - (id)URLHandler;
-- (id)activityProviderForHeadline:(id)arg1;
+- (id)activityProviderForHeadline:(id)arg1 reportConcernViewPresenter:(id)arg2;
 - (id)initWithReadingHistory:(id)arg1 readingList:(id)arg2 subscriptionList:(id)arg3 URLHandler:(id)arg4;
 - (id)readingHistory;
 - (id)readingList;

@@ -3,7 +3,6 @@
  */
 
 @interface MFSecureMIMEPersonHeaderView : UIView {
-    UIView * _backgroundView;
     NSArray * _buttons;
     unsigned int  _editing;
     UILabel * _label;

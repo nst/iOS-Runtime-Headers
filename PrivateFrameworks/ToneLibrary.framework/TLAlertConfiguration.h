@@ -14,6 +14,7 @@
     bool  _hasCustomRepeatingFlag;
     bool  _isFrozen;
     double  _maximumDuration;
+    bool  _shouldForcePlayingAtUserSelectedAudioVolume;
     bool  _shouldIgnoreRingerSwitch;
     bool  _shouldRepeat;
     NSString * _toneIdentifier;
@@ -31,6 +32,7 @@
 @property (nonatomic, copy) NSURL *externalVibrationPatternFileURL;
 @property (getter=isForPreview, nonatomic) bool forPreview;
 @property (nonatomic) double maximumDuration;
+@property (nonatomic) bool shouldForcePlayingAtUserSelectedAudioVolume;
 @property (nonatomic) bool shouldIgnoreRingerSwitch;
 @property (nonatomic) bool shouldRepeat;
 @property (nonatomic, copy) NSString *toneIdentifier;
@@ -67,11 +69,13 @@
 - (void)setExternalVibrationPatternFileURL:(id)arg1;
 - (void)setForPreview:(bool)arg1;
 - (void)setMaximumDuration:(double)arg1;
+- (void)setShouldForcePlayingAtUserSelectedAudioVolume:(bool)arg1;
 - (void)setShouldIgnoreRingerSwitch:(bool)arg1;
 - (void)setShouldRepeat:(bool)arg1;
 - (void)setToneIdentifier:(id)arg1;
 - (void)setTopic:(id)arg1;
 - (void)setVibrationIdentifier:(id)arg1;
+- (bool)shouldForcePlayingAtUserSelectedAudioVolume;
 - (bool)shouldIgnoreRingerSwitch;
 - (bool)shouldRepeat;
 - (id)toneIdentifier;

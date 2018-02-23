@@ -7,7 +7,9 @@
 
 - (void)archiveWebServiceBackgroundContext:(PKPaymentWebServiceBackgroundContext *)arg1;
 - (void)archiveWebServiceContext:(PKPaymentWebServiceContext *)arg1;
+- (void)checkCompanionPeerPaymentRegistrationState;
 - (void)handleAppletState:(PKFelicaTransitAppletState *)arg1 forUniqueID:(NSString *)arg2;
+- (void)handleDownloadAllPaymentPasses;
 - (void)handlePaymentTransactions:(NSArray *)arg1 appletStates:(NSDictionary *)arg2 forUniqueIDs:(NSArray *)arg3;
 - (void)handlePaymentWebServiceContextFromWatch:(PKPaymentWebServiceContext *)arg1;
 - (void)handlePreconditionNotMetWithUniqueIDs:(NSArray *)arg1 shouldUnregister:(bool)arg2;

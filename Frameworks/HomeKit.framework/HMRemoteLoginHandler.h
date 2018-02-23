@@ -18,6 +18,7 @@
 @property (nonatomic, readonly) HMAccessory *accessory;
 @property (nonatomic, readonly) HMRemoteLoginAnisetteDataProvider *anisetteDataProvider;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;
+@property (getter=isControllable, readonly) bool controllable;
 @property (nonatomic, retain) NSString *currentSessionID;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) HMDelegateCaller *delegateCaller;
@@ -32,6 +33,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSUUID *uniqueIdentifier;
 @property (nonatomic, readonly) NSUUID *uuid;
+
+// Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
 + (bool)supportsSecureCoding;
 
@@ -56,6 +59,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (bool)isControllable;
 - (bool)isSessionInProgress;
 - (id)loggedInAccount;
 - (id)messageReceiveQueue;
@@ -73,5 +77,9 @@
 - (void)signout:(id /* block */)arg1;
 - (id)uniqueIdentifier;
 - (id)uuid;
+
+// Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
+
+- (id)hu_appleMusicInAppAuthenticationContext;
 
 @end

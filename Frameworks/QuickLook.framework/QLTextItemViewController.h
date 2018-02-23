@@ -4,8 +4,10 @@
 
 @interface QLTextItemViewController : QLItemViewController <QLPrintingProtocol, UITextViewDelegate> {
     NSAttributedString * _content;
+    NSLayoutConstraint * _leftConstraint;
     UIPrintPageRenderer * _pageRenderer;
     UISimpleTextPrintFormatter * _printFormatter;
+    NSLayoutConstraint * _rightConstraint;
     UITextView * _textView;
 }
 
@@ -22,8 +24,10 @@
 + (Class)transformerClass;
 
 - (void).cxx_destruct;
+- (void)_updateConstraintConstants:(bool)arg1;
 - (bool)automaticallyUpdateScrollViewContentInset;
 - (bool)automaticallyUpdateScrollViewContentOffset;
+- (bool)automaticallyUpdateScrollViewIndicatorInset;
 - (bool)canPinchToDismiss;
 - (bool)canSwipeToDismiss;
 - (void)loadPreviewControllerWithContents:(id)arg1 context:(id)arg2 completionHandler:(id /* block */)arg3;
@@ -36,6 +40,7 @@
 - (id)printer;
 - (id)registeredKeyCommands;
 - (id)scrollView;
+- (void)setAppearance:(id)arg1 animated:(bool)arg2;
 - (bool)shouldRecognizeGestureRecognizer:(id)arg1;
 - (bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
 

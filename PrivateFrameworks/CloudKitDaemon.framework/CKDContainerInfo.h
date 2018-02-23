@@ -8,6 +8,7 @@
     NSURL * _publicCloudDBURL;
     NSURL * _publicCodeServiceURL;
     NSURL * _publicDeviceServiceURL;
+    NSURL * _publicMetricsServiceURL;
     NSURL * _publicShareServiceURL;
 }
 
@@ -16,6 +17,7 @@
 @property (nonatomic, copy) NSURL *publicCloudDBURL;
 @property (nonatomic, copy) NSURL *publicCodeServiceURL;
 @property (nonatomic, copy) NSURL *publicDeviceServiceURL;
+@property (nonatomic, copy) NSURL *publicMetricsServiceURL;
 @property (nonatomic, copy) NSURL *publicShareServiceURL;
 
 + (bool)supportsSecureCoding;
@@ -34,12 +36,14 @@
 - (id)publicCloudDBURL;
 - (id)publicCodeServiceURL;
 - (id)publicDeviceServiceURL;
+- (id)publicMetricsServiceURL;
 - (id)publicShareServiceURL;
 - (void)setContainerScopedUserID:(id)arg1;
 - (void)setEnvironment:(long long)arg1;
 - (void)setPublicCloudDBURL:(id)arg1;
 - (void)setPublicCodeServiceURL:(id)arg1;
 - (void)setPublicDeviceServiceURL:(id)arg1;
+- (void)setPublicMetricsServiceURL:(id)arg1;
 - (void)setPublicShareServiceURL:(id)arg1;
 
 @end

@@ -5,6 +5,7 @@
 @interface SKUIGiftRecipientTableViewCell : UITableViewCell <CNContactPickerDelegate, MFComposeRecipientViewDelegate, SKUIGiftContactSearchDelegate> {
     CNContactPickerViewController * _contactPickerController;
     CNContactStore * _contactStore;
+    bool  _didLayoutSubviews;
     UILabel * _placeholderLabel;
     MFComposeRecipientView * _recipientView;
     SKUIGiftContactSearchController * _searchController;
@@ -14,6 +15,7 @@
 @property (nonatomic, copy) NSAttributedString *attributedPlaceholder;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) bool didLayoutSubviews;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *label;
 @property (nonatomic, copy) NSArray *recipientAddresses;
@@ -37,6 +39,7 @@
 - (void)contactPicker:(id)arg1 didSelectContactProperty:(id)arg2;
 - (void)contactPickerDidCancel:(id)arg1;
 - (void)dealloc;
+- (bool)didLayoutSubviews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)label;
 - (void)layoutSubviews;
@@ -47,6 +50,7 @@
 - (void)searchController:(id)arg1 didSelectRecipient:(id)arg2;
 - (void)searchControllerDidFinishSearch:(id)arg1;
 - (void)setAttributedPlaceholder:(id)arg1;
+- (void)setDidLayoutSubviews:(bool)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setRecipientAddresses:(id)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;

@@ -35,7 +35,6 @@
 - (id)_remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (id)_remoteObjectProxyWithFailureHandler:(id /* block */)arg1;
 - (id)_remoteObjectProxyWithSemaphore:(id)arg1;
-- (void)_sharedPaymentWebServiceContextWithCompletion:(id /* block */)arg1;
 - (id)_synchronousRemoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (void)_transactionsAppLaunchTokenForPassWithUniqueIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)archiveMessageWithIdentifier:(id)arg1;
@@ -55,6 +54,7 @@
 - (bool)hasPaymentDeviceFieldProperties;
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
+- (void)initializeSecureElement:(id /* block */)arg1;
 - (void)initializeSecureElementIfNecessaryWithCompletion:(id /* block */)arg1;
 - (void)insertOrUpdatePaymentTransaction:(id)arg1 forPassUniqueIdentifier:(id)arg2 paymentApplication:(id)arg3 completion:(id /* block */)arg4;
 - (void)insertOrUpdateValueAddedServiceTransaction:(id)arg1 forPassUniqueIdentifier:(id)arg2 paymentTransaction:(id)arg3 completion:(id /* block */)arg4;
@@ -88,6 +88,7 @@
 - (void)setExpressWithPassInformation:(id)arg1 credential:(id)arg2 completion:(id /* block */)arg3;
 - (void)setSharedPaymentWebServiceContext:(id)arg1;
 - (id)sharedPaymentWebServiceContext;
+- (void)sharedPaymentWebServiceContextWithCompletion:(id /* block */)arg1;
 - (void)simulateDefaultExpressTransitPassIdentifier:(id)arg1;
 - (void)simulatePaymentPush;
 - (void)startBackgroundVerificationObserverForPass:(id)arg1 verificationMethod:(id)arg2;

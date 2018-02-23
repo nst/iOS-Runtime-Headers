@@ -35,12 +35,9 @@
 
 // Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
 
-- (void)siriCore_addSendCompletion:(id /* block */)arg1;
-- (void)siriCore_dispatchSendCompletionsWithResult:(long long)arg1 error:(id)arg2;
 - (bool)siriCore_isRetryable;
 - (id)siriCore_requestId;
 - (void)siriCore_setSessionRequestId:(id)arg1;
 - (bool)siriCore_supportedByLocalSession;
-- (bool)siriCore_supportsSendCompletions;
 
 @end

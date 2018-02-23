@@ -52,6 +52,7 @@
 - (id)newPlayActivityEvent;
 - (id)player;
 - (void)recordPlayActivityEvents:(id)arg1 forEventSource:(id)arg2;
+- (void)recordUserSeekFromTime:(double)arg1 toTime:(double)arg2 forItem:(id)arg3;
 - (id)reportingController;
 - (void)setOffline:(bool)arg1;
 - (void)setSBEnabled:(bool)arg1;

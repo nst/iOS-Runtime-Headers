@@ -3,13 +3,14 @@
  */
 
 @interface PXAssetVariationCollectionViewCell : UICollectionViewCell <PXAssetEditOperationManagerObserver, PXChangeObserver, PXMutableAssetVariationCollectionViewCell> {
-    UIActivityIndicatorView * _activityIndicatorView;
+    NSProgress * __renderProgress;
     UIView * _backgroundView;
     PXAssetEditOperationManager * _editOperationManager;
     NSError * _error;
     PXLoadingFailureBadgeView * _failureView;
     bool  _isPerformingChanges;
     bool  _isPerformingUpdates;
+    PXRoundProgressView * _loadingProgressView;
     struct { 
         bool titleLabel; 
         bool variationView; 
@@ -17,6 +18,7 @@
         bool selectedView; 
         bool error; 
         bool failureView; 
+        bool renderProgress; 
     }  _needsUpdateFlags;
     bool  _playbackAllowed;
     PXAssetVariationRenderProvider * _renderProvider;
@@ -27,6 +29,7 @@
     UIView * _variationView;
 }
 
+@property (setter=_setRenderProgress:, nonatomic, retain) NSProgress *_renderProgress;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) double distanceBetweenLastBaselineAndBottom;
@@ -39,7 +42,6 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) PXAssetVariationOption *variationOption;
 
-+ (id)_createActivityIndicatorView;
 + (void)preloadResources;
 
 - (void).cxx_destruct;
@@ -47,20 +49,25 @@
 - (void)_invalidateError;
 - (void)_invalidateFailureView;
 - (void)_invalidateProgressView;
+- (void)_invalidateRenderProgress;
 - (void)_invalidateSelectedView;
 - (void)_invalidateTitleLabel;
 - (void)_invalidateVariationView;
 - (bool)_needsUpdate;
+- (id)_renderProgress;
 - (void)_setError:(id)arg1;
 - (void)_setNeedsUpdate;
+- (void)_setRenderProgress:(id)arg1;
 - (void)_updateErrorIfNeeded;
 - (void)_updateFailureViewIfNeeded;
 - (void)_updateIfNeeded;
 - (void)_updateProgressViewIfNeeded;
+- (void)_updateRenderProgressIfNeeded;
 - (void)_updateSelectedViewIfNeeded;
 - (void)_updateTitleLabelIfNeeded;
 - (void)_updateVariationViewIfNeeded;
 - (void)assetEditOperationManager:(id)arg1 didChangeEditOperationsPerformedOnAsset:(id)arg2 context:(void*)arg3;
+- (void)dealloc;
 - (double)distanceBetweenLastBaselineAndBottom;
 - (double)distanceBetweenPreviewBottomAndLastBaseline;
 - (id)editOperationManager;
@@ -71,6 +78,7 @@
 - (void)layoutSubviews;
 - (id)loadVariationView;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)performChanges:(id /* block */)arg1;
 - (void)prepareForReuse;
 - (id)renderProvider;

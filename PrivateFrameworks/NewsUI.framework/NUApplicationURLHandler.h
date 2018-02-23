@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/NewsUI.framework/NewsUI
  */
 
-@interface NUApplicationURLHandler : NSObject <NUURLHandler>
+@interface NUApplicationURLHandler : NSObject <NUURLHandling>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (void)openURL:(id)arg1 completion:(id /* block */)arg2;
+- (void)openURL:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;
 
 @end

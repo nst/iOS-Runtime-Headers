@@ -6,9 +6,13 @@
     bool  _destinationInvalid;
     NSArray * _locationHistory;
     int  _score;
+    double  _scoredDistance;
+    double  _scoredTimeInterval;
 }
 
 @property (nonatomic, copy) NSArray *locationHistory;
+@property (nonatomic) double scoredDistance;
+@property (nonatomic) double scoredTimeInterval;
 
 + (double)weight;
 
@@ -18,7 +22,11 @@
 - (bool)destinationInvalid;
 - (id)locationHistory;
 - (int)score;
+- (double)scoredDistance;
+- (double)scoredTimeInterval;
 - (void)setLocationHistory:(id)arg1;
+- (void)setScoredDistance:(double)arg1;
+- (void)setScoredTimeInterval:(double)arg1;
 - (void)updateLocationHistory:(id)arg1;
 - (void)updateScoreIfPossible;
 

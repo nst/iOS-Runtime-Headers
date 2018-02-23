@@ -27,6 +27,7 @@
 - (struct NSData { Class x1; }*)configurationData;
 - (id)createCompatibleConfigForCapabilites:(id)arg1;
 - (id)dispatchQueue;
+- (void)endPasscodeEmbedding;
 - (id)init;
 - (id)initWithCodecConfiguration:(id)arg1;
 - (id)initWithListenerCapabilityData:(struct NSData { Class x1; }*)arg1;
@@ -38,5 +39,7 @@
 - (void)setDispatchQueue:(id)arg1;
 - (bool)startSend;
 - (void)stopSend:(bool)arg1 withCompletion:(id /* block */)arg2;
+- (void)stopSendAfterMinimumLoops:(unsigned long long)arg1 withCompletion:(id /* block */)arg2;
+- (void)stopSendWithFadeOut:(float)arg1 completion:(id /* block */)arg2;
 
 @end

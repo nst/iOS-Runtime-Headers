@@ -4,7 +4,6 @@
 
 @interface FCEndOfArticleFetchOperation : FCFetchOperation {
     FCCloudContext * _context;
-    FCFeedTransformationEndOfArticle * _endOfArticleTransform;
     <FCFeedPersonalizing> * _feedPersonalizer;
     bool  _fetchAllTopics;
     bool  _fetchPublisherHeadlines;
@@ -20,7 +19,6 @@
 }
 
 @property (nonatomic, retain) FCCloudContext *context;
-@property (nonatomic, retain) FCFeedTransformationEndOfArticle *endOfArticleTransform;
 @property (nonatomic, retain) <FCFeedPersonalizing> *feedPersonalizer;
 @property bool fetchAllTopics;
 @property bool fetchPublisherHeadlines;
@@ -37,10 +35,9 @@
 - (void).cxx_destruct;
 - (void)_fetchThumbnailsForHeadlines:(id)arg1 callbackQueue:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)_filterHeadlines:(id)arg1 completion:(id /* block */)arg2;
-- (void)_streamingHeadlinesForArticleIDs:(id)arg1 callbackQueue:(id)arg2 minimumResultCount:(unsigned long long)arg3 completion:(id /* block */)arg4;
+- (void)_streamingHeadlinesForArticleIDs:(id)arg1 endOfArticleTransform:(id)arg2 callbackQueue:(id)arg3 minimumResultCount:(unsigned long long)arg4 completion:(id /* block */)arg5;
 - (id)_streamingHeadlinesForFeedItems:(id)arg1 tagsByID:(id)arg2;
 - (id)context;
-- (id)endOfArticleTransform;
 - (id)feedPersonalizer;
 - (bool)fetchAllTopics;
 - (bool)fetchPublisherHeadlines;
@@ -54,7 +51,6 @@
 - (void)prepareOperation;
 - (double)screenScale;
 - (void)setContext:(id)arg1;
-- (void)setEndOfArticleTransform:(id)arg1;
 - (void)setFeedPersonalizer:(id)arg1;
 - (void)setFetchAllTopics:(bool)arg1;
 - (void)setFetchPublisherHeadlines:(bool)arg1;

@@ -23,6 +23,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) bool isStarted;
 @property (nonatomic) <MNNavigationSessionManagerDelegate> *navigationDelegate;
+@property (nonatomic, readonly) MNResourceManager *resourceManager;
 @property (nonatomic, readonly) MNSuggestionsManager *suggestionsManager;
 @property (readonly) Class superclass;
 
@@ -30,11 +31,11 @@
 
 - (void).cxx_destruct;
 - (void)_changeToDesiredLocationProviderType;
-- (void)_changeToDesiredResourcePolicy;
 - (id)_initialState;
 - (void)_replayStateForNewObserver:(id)arg1;
 - (unsigned long long)_stateTypeForState:(id)arg1;
 - (void)acceptReroute:(bool)arg1 forTrafficIncidentAlertDetails:(id)arg2;
+- (void)acquireDesiredResourcePolicy;
 - (void)addObserver:(id)arg1;
 - (id)auditToken;
 - (void)changeSettings:(id)arg1;
@@ -64,6 +65,7 @@
 - (void)removeObserver:(id)arg1;
 - (void)repeatCurrentGuidanceWithReply:(id /* block */)arg1;
 - (void)repeatCurrentTrafficAlertWithReply:(id /* block */)arg1;
+- (id)resourceManager;
 - (void)resumeOriginalDestination;
 - (void)setCurrentAudioOutputSetting:(id)arg1;
 - (void)setCurrentState:(id)arg1;

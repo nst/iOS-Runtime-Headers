@@ -250,6 +250,7 @@
 + (id)cui_cameraKerningForFont:(id)arg1;
 + (id)cui_cameraModeDialApproximateFontForContentSize:(id)arg1;
 + (id)cui_cameraModeDialFontForContentSize:(id)arg1;
++ (double)cui_cameraModeDialFontSizeForContentSize:(id)arg1;
 + (id)cui_cameraMonospacedFontOfSize:(double)arg1;
 + (id)cui_cameraPadModeDialFontForContentSize:(id)arg1;
 + (id)cui_cameraTimerFontForContentSize:(id)arg1 layoutStyle:(long long)arg2;
@@ -321,7 +322,6 @@
 + (id)hk_chartAxisLabelFont;
 + (id)hk_defaultFontWithUIFontTextStyle:(id)arg1 symbolicTraits:(unsigned int)arg2 attributes:(id)arg3;
 + (double)hk_fittingScaleFactorForUILabels:(id)arg1 constrainingWidth:(double)arg2;
-+ (id)hk_largeNavigationControllerFont;
 + (id)hk_preferredFontForTextStyle:(id)arg1;
 + (id)hk_preferredFontForTextStyle:(id)arg1 symbolicTraits:(unsigned int)arg2;
 + (id)hk_preferredFontIgnoringAccessibilitySizeForTextStyle:(id)arg1;
@@ -423,8 +423,10 @@
 + (bool)pk_loadFontWithFileName:(id)arg1;
 + (bool)pk_loadPeerPaymentCashFont;
 + (bool)pk_loadPeerPaymentChiseledCashFont;
++ (bool)pk_loadTextCondensedSemiboldCashFont;
 + (id)pk_peerPaymentCashFontOfSize:(double)arg1;
 + (id)pk_peerPaymentChiseledCashFontOfSize:(double)arg1;
++ (id)pk_textCondensedSemiboldCashFontOfSize:(double)arg1;
 
 - (id)pk_fixedWidthFont;
 
@@ -462,6 +464,10 @@
 + (id)siriui_thinWeightFontWithSize:(double)arg1;
 + (id)siriui_typedTextInputFont;
 + (id)siriui_userUtteranceFont;
+
+// Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
+
++ (id)tv_fontFromTextStyle:(id)arg1 fontWeight:(id)arg2 fontSize:(double)arg3 symbolicTraits:(unsigned int)arg4;
 
 // Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
 

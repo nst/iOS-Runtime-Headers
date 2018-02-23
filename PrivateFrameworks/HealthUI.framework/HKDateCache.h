@@ -65,6 +65,8 @@
 - (bool)isDateInToday:(id)arg1;
 - (bool)isDateInTomorrow:(id)arg1;
 - (bool)isDateInYesterday:(id)arg1;
+- (bool)isDateWithinLastRollingMonth:(id)arg1;
+- (bool)isDateWithinLastRollingYear:(id)arg1;
 - (bool)isDayOfWeekNumberOnWeekend:(id)arg1;
 - (id)oneMinuteBeforeEndOfDayMidnight;
 - (id)oneSecondBeforeEndOfDayMidnight;

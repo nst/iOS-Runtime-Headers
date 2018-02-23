@@ -31,23 +31,23 @@
 @property long long enabledServiceTypes;
 @property (copy) NSString *firstName;
 @property long long freeDownloadsPasswordSetting;
+@property (nonatomic, readonly) bool hasBrokenDSID;
 @property (readonly) unsigned long long hash;
 @property (copy) NSString *lastName;
 @property (getter=isLocalAccount, nonatomic, readonly) bool localAccount;
 @property (getter=isManagedAppleID) bool managedAppleID;
 @property (getter=isNewCustomer) bool newCustomer;
 @property long long paidPurchasesPasswordSetting;
-@property (copy) NSString *secureToken;
+@property (nonatomic, copy) NSString *passwordEquivalentToken;
+@property (nonatomic, copy) NSString *rawPassword;
+@property (nonatomic, copy) NSString *secureToken;
 @property (getter=isSocialEnabled) bool socialEnabled;
 @property (copy) NSString *storeFrontIdentifier;
 @property (readonly) Class superclass;
 @property (retain) NSNumber *uniqueIdentifier;
 
 + (id)DSIDFromAuthenticationResponseDictionary:(id)arg1;
-+ (id)_copyKeychainStringForAccount:(id)arg1;
 + (id)_countryCodeFromStorefrontIdentifier:(id)arg1;
-+ (void)_removeValueFromKeychainForAccount:(id)arg1;
-+ (void)_saveString:(id)arg1 toKeychainForAccount:(id)arg2;
 + (id)_valueForFirstAvailableKeyPath:(id)arg1 inDictionary:(id)arg2;
 + (long long)accountKindFromAuthenticationResponseDictionary:(id)arg1;
 + (id)accountNameFromAuthenticationResponseDictionary:(id)arg1;
@@ -56,11 +56,10 @@
 + (bool)backingAccountIsLocalAccount:(id)arg1;
 + (id)creditsStringFromAuthenticationResponseDictionary:(id)arg1;
 + (id)firstNameFromAuthenticationResponseDictionary:(id)arg1;
-+ (id)getITunesTokenFromKeychainForAccountId:(id)arg1;
 + (bool)isManagedAppleIDFromAuthenticationResponseDictionary:(id)arg1;
 + (bool)isNewCustomerFromAuthenticationResponseDictionary:(id)arg1;
 + (id)lastNameFromAuthenticationResponseDictionary:(id)arg1;
-+ (void)saveITunesTokenToKeychain:(id)arg1 forAccountId:(id)arg2;
++ (id)secureTokenForIdentifier:(id)arg1;
 + (id)serverValueForAccountPasswordSettingValue:(long long)arg1;
 + (id)storeFrontIdentifierFromURLResponse:(id)arg1;
 
@@ -102,6 +101,7 @@
 - (void)getKeybagSyncDataWithType:(long long)arg1 completionHandler:(id /* block */)arg2;
 - (void)getPurchasedItemsForItems:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)getTermsAndConditionsWithBlock:(id /* block */)arg1;
+- (bool)hasBrokenDSID;
 - (unsigned long long)hash;
 - (id)hashedDescription;
 - (id)init;
@@ -121,7 +121,9 @@
 - (id)lastName;
 - (bool)mergeValuesFromAccount:(id)arg1;
 - (long long)paidPurchasesPasswordSetting;
+- (id)passwordEquivalentToken;
 - (id)popBiometricToken;
+- (id)rawPassword;
 - (void)removeAvailableServiceTypes:(long long)arg1;
 - (void)removeEnabledServiceTypes:(long long)arg1;
 - (void)resetTransientData;
@@ -150,6 +152,8 @@
 - (void)setManagedAppleID:(bool)arg1;
 - (void)setNewCustomer:(bool)arg1;
 - (void)setPaidPurchasesPasswordSetting:(long long)arg1;
+- (void)setPasswordEquivalentToken:(id)arg1;
+- (void)setRawPassword:(id)arg1;
 - (void)setSecureToken:(id)arg1;
 - (void)setSocialEnabled:(bool)arg1;
 - (void)setStoreFrontIdentifier:(id)arg1;

@@ -27,6 +27,7 @@
 - (void)_updateForCurrentSizeCategory;
 - (id)bodyText;
 - (id)bodyTextView;
+- (double)bottomPadding;
 - (void)deactivateDefaultTitleLabelBaselineConstraint;
 - (id)delegate;
 - (id)initWithTopInset:(double)arg1 linkButtonTitle:(id)arg2;

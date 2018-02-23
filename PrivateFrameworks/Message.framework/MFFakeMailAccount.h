@@ -7,9 +7,11 @@
     MFIMAPConnection * _cachedConnection;
     DeliveryAccount * _deliveryAccount;
     NSRecursiveLock * _flagChangesLock;
+    bool  _managed;
 }
 
 @property (nonatomic, retain) DeliveryAccount *deliveryAccount;
+@property (getter=isManaged, nonatomic) bool managed;
 
 - (void).cxx_destruct;
 - (id)URLString;
@@ -31,10 +33,12 @@
 - (id)initWithURL:(id)arg1;
 - (id)initWithURL:(id)arg1 rootMailboxUid:(id)arg2;
 - (bool)isActive;
+- (bool)isManaged;
 - (unsigned int)minID;
 - (id)powerAssertionIdentifierWithPrefix:(id)arg1;
 - (void)setCachedConnection:(id)arg1;
 - (void)setDeliveryAccount:(id)arg1;
+- (void)setManaged:(bool)arg1;
 - (void)setUnreadCount:(unsigned int)arg1 forMailbox:(id)arg2;
 - (bool)shouldFetchAgainWithError:(id)arg1 foregroundRequest:(bool)arg2;
 - (bool)supportsFastRemoteBodySearch;

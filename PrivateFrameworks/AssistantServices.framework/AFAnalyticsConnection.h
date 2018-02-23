@@ -4,6 +4,7 @@
 
 @interface AFAnalyticsConnection : NSObject <AFAnalyticsService, AFAnalyticsServiceDelegate> {
     NSXPCConnection * _connection;
+    NSObject<OS_dispatch_group> * _group;
     NSObject<OS_dispatch_source> * _idleTimer;
     bool  _needsCleanUpConnection;
     unsigned long long  _numberOfEventsBeingSent;
@@ -30,7 +31,9 @@
 - (void)_startIdleTimer;
 - (void)_stopIdleTimer;
 - (void)_willStartSendingEvents:(id)arg1;
+- (oneway void)beginEventsGrouping;
 - (void)dealloc;
+- (oneway void)endEventsGrouping;
 - (oneway void)flushStagedEventsWithReply:(id /* block */)arg1;
 - (id)init;
 - (bool)needsCleanUpConnection;

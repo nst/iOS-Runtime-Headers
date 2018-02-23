@@ -34,6 +34,7 @@
 - (id)predicateFormat;
 - (void)setAugmentMainStoreResults:(bool)arg1;
 - (void)setMainStoreContactIdentifiers:(id)arg1;
+- (id)shortDebugDescription;
 - (id)suggestedContactsWithSortOrder:(long long)arg1 keysToFetch:(id)arg2 mutableObjects:(bool)arg3 service:(id)arg4 error:(id*)arg5;
 
 @end

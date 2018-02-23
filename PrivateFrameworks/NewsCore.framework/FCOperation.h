@@ -6,7 +6,7 @@
     NSMutableArray * _childOperations;
     bool  _childOperationsCancelled;
     bool  _childOperationsFinished;
-    FCMutexLock * _childOperationsLock;
+    NFMutexLock * _childOperationsLock;
     bool  _executing;
     bool  _finished;
     NSObject<OS_dispatch_group> * _finishedGroup;
@@ -15,6 +15,7 @@
     double  _operationStartTime;
     long long  _relativePriority;
     unsigned long long  _retryCount;
+    bool  _started;
     id /* block */  _timedOutTest;
     double  _timeoutDuration;
 }
@@ -22,7 +23,7 @@
 @property (nonatomic, retain) NSMutableArray *childOperations;
 @property (nonatomic) bool childOperationsCancelled;
 @property (nonatomic) bool childOperationsFinished;
-@property (nonatomic, retain) FCMutexLock *childOperationsLock;
+@property (nonatomic, retain) NFMutexLock *childOperationsLock;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *finishedGroup;
@@ -34,6 +35,7 @@
 @property (nonatomic, readonly) FCOperation *proxyOperation;
 @property (nonatomic) long long relativePriority;
 @property (nonatomic) unsigned long long retryCount;
+@property (nonatomic) bool started;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) id /* block */ timedOutTest;
 @property (nonatomic) double timeoutDuration;
@@ -89,11 +91,13 @@
 - (void)setQualityOfService:(long long)arg1;
 - (void)setRelativePriority:(long long)arg1;
 - (void)setRetryCount:(unsigned long long)arg1;
+- (void)setStarted:(bool)arg1;
 - (void)setTimedOutTest:(id /* block */)arg1;
 - (void)setTimeoutDuration:(double)arg1;
 - (bool)shouldStartThrottlingWithError:(id)arg1 retryAfter:(double*)arg2;
 - (void)start;
 - (void)startIfNeeded;
+- (bool)started;
 - (id)throttleGroup;
 - (id /* block */)timedOutTest;
 - (double)timeoutDuration;

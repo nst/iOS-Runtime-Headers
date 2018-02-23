@@ -60,8 +60,8 @@
 - (void)deleteFrom:(id)arg1 where:(id)arg2 bindings:(id)arg3;
 - (void)dropAllTables;
 - (void)end;
-- (void)executeSQL:(id)arg1;
-- (void)executeSQL:(id)arg1 arguments:(char *)arg2;
+- (bool)executeSQL:(id)arg1;
+- (bool)executeSQL:(id)arg1 arguments:(char *)arg2;
 - (bool)hasMigrated;
 - (id)initWithPath:(id)arg1 schema:(id)arg2;
 - (long long)insertOrReplaceInto:(id)arg1 values:(id)arg2;
@@ -73,7 +73,6 @@
 - (bool)openWithError:(id*)arg1;
 - (id)path;
 - (id)propertyForKey:(id)arg1;
-- (void)raise:(id)arg1;
 - (void)remove;
 - (void)removeAllStatements;
 - (void)removePropertyForKey:(id)arg1;

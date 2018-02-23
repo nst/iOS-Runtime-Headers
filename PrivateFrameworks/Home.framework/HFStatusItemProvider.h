@@ -11,6 +11,7 @@
 @property (nonatomic, readonly) HMRoom *room;
 
 + (id)_statusItemClasses;
++ (bool)hasStatusItemForServiceType:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

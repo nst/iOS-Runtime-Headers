@@ -34,6 +34,7 @@
 - (id)playbackEngine;
 - (id)playbackHistoryController;
 - (void)recordLyricsViewEvent:(id)arg1;
+- (void)reportUserSeekFromTime:(double)arg1 toTime:(double)arg2;
 - (id)reportingPlaybackObserver;
 - (id)rtcReportingController;
 - (void)setAssistantAnalyticsController:(id)arg1;

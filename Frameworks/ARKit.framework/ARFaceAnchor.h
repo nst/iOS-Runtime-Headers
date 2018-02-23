@@ -29,12 +29,8 @@
 - (const /* Warning: Unrecognized filer type: '1' using 'void*' */ void**)imageVertices;
 - (id)initWithIdentifier:(id)arg1 trackingData:(id)arg2;
 - (bool)isTracked;
-- (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })leftEyeTransform;
-- (void)lookAtPoint;
-- (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })rightEyeTransform;
 - (void)setIsTracked:(bool)arg1;
 - (void)setTrackingData:(id)arg1;
 - (id)trackingData;
-- (id)versionString;
 
 @end

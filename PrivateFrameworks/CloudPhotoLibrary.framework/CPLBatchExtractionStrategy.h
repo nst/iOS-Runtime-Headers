@@ -27,7 +27,7 @@
 - (void).cxx_destruct;
 - (void)_computeNextStep;
 - (id)currentStepDescription;
-- (bool)extractBatch:(out id*)arg1 error:(id*)arg2;
+- (bool)extractBatch:(out id*)arg1 maximumResourceSize:(unsigned long long)arg2 error:(id*)arg3;
 - (id)initWithName:(id)arg1 storage:(id)arg2 steps:(id)arg3;
 - (unsigned long long)maximumRecordCountPerBatch;
 - (id)name;

@@ -8,6 +8,7 @@
     NSObject<OS_dispatch_data> * _bufferedGeneralOutputData;
     NSObject<OS_dispatch_data> * _bufferedInputData;
     NSObject<OS_dispatch_data> * _bufferedProviderHeaderOutputData;
+    NSObject<OS_dispatch_data> * _bufferedUncompressedData;
     SiriCoreSiriConnectionInfo * _connectionInfo;
     long long  _connectionMethod;
     <SiriCoreConnectionProvider> * _connectionProvider;
@@ -31,6 +32,7 @@
     void * _lastOutputDataPointer;
     unsigned long long  _lastOutputLength;
     unsigned long long  _metricsCount;
+    NSObject<OS_dispatch_queue> * _metricsQueue;
     NSMutableArray * _outgoingCommandsWithSendCompletions;
     SiriCoreDataCompressor * _outputCompressor;
     unsigned long long  _outputLengthUnchangedCounter;
@@ -64,7 +66,6 @@
 - (void).cxx_destruct;
 - (id)_aceHeaderData;
 - (void)_aceHeaderTimeoutFired:(id)arg1 afterTimeout:(double)arg2;
-- (void)_addOutgoingCommandForSendCompletion:(id)arg1;
 - (id)_bestErrorBetweenError:(id)arg1 peerError:(id)arg2;
 - (void)_bufferGeneralData:(id)arg1;
 - (bool)_canFallBackFromError:(id)arg1;
@@ -83,7 +84,6 @@
 - (void)_didEncounterError:(id)arg1;
 - (void)_fallBackToNextConnectionMethod:(long long)arg1 fromError:(id)arg2 afterDelay:(double)arg3;
 - (void)_fallBackToNextConnectionMethodWithError:(id)arg1 orElse:(id /* block */)arg2;
-- (void)_flushOutgoingCommandsAndDispatchSendCompletionWithResult:(long long)arg1 error:(id)arg2;
 - (void)_getCellularMetrics:(id)arg1;
 - (id)_getInitialPayloadWithBufferedLength:(unsigned long long*)arg1;
 - (void)_getWifiMetrics:(id)arg1;
@@ -122,7 +122,6 @@
 - (bool)_tryReadingParsedDataFromBytes:(const void*)arg1 length:(unsigned long long)arg2 packet:(struct { unsigned char x1; unsigned int x2; }*)arg3 object:(id*)arg4 bytesParsed:(unsigned long long*)arg5 error:(id*)arg6;
 - (void)_tryToWriteBufferedOutputData;
 - (void)_updateBuffersForInitialPayload:(id)arg1 bufferedLength:(unsigned long long)arg2;
-- (id)_userAgent;
 - (bool)_usingFlorence;
 - (bool)_usingNetwork;
 - (bool)_usingPOP;
@@ -145,7 +144,8 @@
 - (id)peerVersion;
 - (void)probeConnection;
 - (id)productTypePrefix;
-- (void)sendCommand:(id)arg1 errorHandler:(id /* block */)arg2;
+- (void)sendCommand:(id)arg1 moreComing:(bool)arg2 errorHandler:(id /* block */)arg3;
+- (void)sendCommands:(id)arg1 errorHandler:(id /* block */)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setDeviceIsInWalkaboutExperimentGroup:(bool)arg1;
 - (void)setPeerProviderClass:(Class)arg1;

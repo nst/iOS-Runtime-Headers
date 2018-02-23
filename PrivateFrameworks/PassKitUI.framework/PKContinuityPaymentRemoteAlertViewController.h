@@ -30,12 +30,15 @@
 - (void)authorizationDidSelectShippingAddress:(id)arg1;
 - (void)authorizationDidSelectShippingMethod:(id)arg1;
 - (void)authorizationWillStart;
+- (void)configureWithContext:(id)arg1 completion:(id /* block */)arg2;
 - (void)dealloc;
 - (void)didReceiveCancellationForRemotePaymentRequest:(id)arg1;
 - (void)didReceivePaymentClientUpdate:(id)arg1 forRemotePaymentRequest:(id)arg2;
 - (void)didReceivePaymentResult:(id)arg1 forRemotePaymentRequest:(id)arg2;
 - (void)handleHomeButtonPressed;
 - (id)init;
+- (long long)preferredStatusBarStyle;
+- (bool)prefersStatusBarHidden;
 - (void)setUserInfo:(id)arg1;
 - (bool)shouldAutorotate;
 - (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;

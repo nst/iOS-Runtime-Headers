@@ -8,6 +8,7 @@
         unsigned int pending : 1; 
         unsigned int success : 1; 
     }  _has;
+    NSData * _peerPaymentAccountData;
     NSData * _peerPaymentWebServiceContextData;
     bool  _pending;
     bool  _success;
@@ -15,9 +16,11 @@
 
 @property (nonatomic, retain) NSData *errorData;
 @property (nonatomic, readonly) bool hasErrorData;
+@property (nonatomic, readonly) bool hasPeerPaymentAccountData;
 @property (nonatomic, readonly) bool hasPeerPaymentWebServiceContextData;
 @property (nonatomic) bool hasPending;
 @property (nonatomic) bool hasSuccess;
+@property (nonatomic, retain) NSData *peerPaymentAccountData;
 @property (nonatomic, retain) NSData *peerPaymentWebServiceContextData;
 @property (nonatomic) bool pending;
 @property (nonatomic) bool success;
@@ -29,18 +32,21 @@
 - (id)dictionaryRepresentation;
 - (id)errorData;
 - (bool)hasErrorData;
+- (bool)hasPeerPaymentAccountData;
 - (bool)hasPeerPaymentWebServiceContextData;
 - (bool)hasPending;
 - (bool)hasSuccess;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (id)peerPaymentAccountData;
 - (id)peerPaymentWebServiceContextData;
 - (bool)pending;
 - (bool)readFrom:(id)arg1;
 - (void)setErrorData:(id)arg1;
 - (void)setHasPending:(bool)arg1;
 - (void)setHasSuccess:(bool)arg1;
+- (void)setPeerPaymentAccountData:(id)arg1;
 - (void)setPeerPaymentWebServiceContextData:(id)arg1;
 - (void)setPending:(bool)arg1;
 - (void)setSuccess:(bool)arg1;

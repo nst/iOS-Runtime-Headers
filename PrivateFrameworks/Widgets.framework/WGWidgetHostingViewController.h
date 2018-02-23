@@ -140,6 +140,7 @@
 - (void)_insertSnapshotWithCompletionHandler:(id /* block */)arg1;
 - (void)_invalidateDisconnectionTimer;
 - (void)_invalidateSnapshotWithForce:(bool)arg1 removingSnapshotFilesForActiveDisplayMode:(bool)arg2 completionHandler:(id /* block */)arg3;
+- (void)_invalidateVisibleFrame;
 - (bool)_isActiveSequence:(id)arg1;
 - (bool)_isBlacklisted;
 - (bool)_isEncodingLayerTree;

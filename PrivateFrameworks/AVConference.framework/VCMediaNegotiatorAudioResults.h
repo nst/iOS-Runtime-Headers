@@ -11,6 +11,7 @@
     int  _redPayload;
     unsigned int  _remoteSSRC;
     NSMutableArray * _secondaryPayloads;
+    bool  _useSBR;
 }
 
 @property (nonatomic) bool allowRecording;
@@ -21,6 +22,7 @@
 @property (nonatomic) int redPayload;
 @property (nonatomic) unsigned int remoteSSRC;
 @property (nonatomic, readonly) NSArray *secondaryPayloads;
+@property (nonatomic) bool useSBR;
 
 - (void)addSecondaryPayload:(int)arg1;
 - (bool)allowRecording;
@@ -40,5 +42,7 @@
 - (void)setPrimaryPayload:(int)arg1;
 - (void)setRedPayload:(int)arg1;
 - (void)setRemoteSSRC:(unsigned int)arg1;
+- (void)setUseSBR:(bool)arg1;
+- (bool)useSBR;
 
 @end

@@ -16,7 +16,6 @@
     NSNumber * _storeExternalVersion;
     NSString * _subscriptionPeriodInISO_8601;
     NSString * _subscriptionPriceFormatted;
-    NSString * _trialPeriodInISO_8601;
 }
 
 @property (nonatomic, copy) NSNumber *appAdamID;
@@ -36,13 +35,13 @@
 @property (nonatomic, copy) NSString *subscriptionPeriodInISO_8601;
 @property (nonatomic, copy) NSString *subscriptionPriceFormatted;
 @property (readonly) Class superclass;
-@property (nonatomic, copy) NSString *trialPeriodInISO_8601;
 
 - (void).cxx_destruct;
 - (id)appAdamID;
 - (void)appLookupForBundleIDWithAppAdamID:(id)arg1 completion:(id /* block */)arg2;
 - (void)appLookupWithAppAdamID:(id)arg1 completion:(id /* block */)arg2;
 - (id)bundleID;
+- (void)checkIfOfferUsedAlreadyWithAppAdamID:(id)arg1 completion:(id /* block */)arg2;
 - (id)cloudContext;
 - (id)initWithPurchaseID:(id)arg1 cloudContext:(id)arg2 purchaseRestore:(bool)arg3;
 - (id)introductoryOffer;
@@ -70,12 +69,10 @@
 - (void)setStoreExternalVersion:(id)arg1;
 - (void)setSubscriptionPeriodInISO_8601:(id)arg1;
 - (void)setSubscriptionPriceFormatted:(id)arg1;
-- (void)setTrialPeriodInISO_8601:(id)arg1;
 - (void)simulatePurchaseWithTagID:(id)arg1 webAccessOptIn:(bool)arg2;
 - (void)startPurchaseWithTagID:(id)arg1 webAccessOptIn:(bool)arg2 completion:(id /* block */)arg3;
 - (id)storeExternalVersion;
 - (id)subscriptionPeriodInISO_8601;
 - (id)subscriptionPriceFormatted;
-- (id)trialPeriodInISO_8601;
 
 @end

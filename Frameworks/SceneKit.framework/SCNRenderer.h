@@ -4,6 +4,7 @@
 
 @interface SCNRenderer : NSObject <SCNSceneRenderer, SCNTechniqueSupport> {
     unsigned long long  __antialiasingMode;
+    void __drawableSafeAreaInsets;
     double  __nextFrameTime;
     NSObject<OS_dispatch_queue> * __renderingQueue;
     struct SCNVector4 { 
@@ -151,6 +152,7 @@
 - (bool)_drawSceneWithLegacyRenderer:(struct __C3DScene { }*)arg1;
 - (bool)_drawSceneWithNewRenderer:(struct __C3DScene { }*)arg1;
 - (void)_drawWithJitteringPresentationMode;
+- (void)_drawableSafeAreaInsets;
 - (bool)_enablesDeferredShading;
 - (void)_endFrame;
 - (struct __C3DEngineContext { }*)_engineContext;
@@ -292,6 +294,7 @@
 - (void)set_collectCompilationErrors:(bool)arg1;
 - (void)set_deltaTime:(double)arg1;
 - (void)set_disableLinearRendering:(bool)arg1;
+- (void)set_drawableSafeAreaInsets;
 - (void)set_enablesDeferredShading:(bool)arg1;
 - (void)set_nextFrameTime:(double)arg1;
 - (void)set_privateRendererShouldForwardSceneRendererDelegationMessagesToOwner:(bool)arg1;

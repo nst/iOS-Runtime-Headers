@@ -27,7 +27,6 @@
     UIView * _knobView;
     NSLayoutConstraint * _knobViewXConstraint;
     double  _lastRecordedTime;
-    bool  _live;
     UIImageView * _liveBackground;
     UILabel * _liveLabel;
     NSString * _remainingTime;
@@ -52,7 +51,6 @@
 @property (getter=isEmpty, nonatomic) bool empty;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIView *knobView;
-@property (getter=isLive, nonatomic) bool live;
 @property (nonatomic, retain) UIImageView *liveBackground;
 @property (nonatomic, retain) UILabel *liveLabel;
 @property (nonatomic, retain) UILabel *remainingTimeLabel;
@@ -76,7 +74,7 @@
 - (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (void)dealloc;
+- (void)createDisplayLinkIfNeeded;
 - (void)didMoveToWindow;
 - (struct { double x1; double x2; double x3; double x4; double x5; float x6; float x7; bool x8; bool x9; })durationSnapshot;
 - (id)elapsedTimeLabel;
@@ -84,9 +82,9 @@
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)invalidateDisplayLinkIfNeeded;
 - (bool)isCurrentlyTracking;
 - (bool)isEmpty;
-- (bool)isLive;
 - (bool)isTimeControlOnScreen;
 - (bool)isTransitioning;
 - (id)knobView;
@@ -104,7 +102,6 @@
 - (void)setEmpty:(bool)arg1;
 - (void)setEnabled:(bool)arg1;
 - (void)setKnobView:(id)arg1;
-- (void)setLive:(bool)arg1;
 - (void)setLiveBackground:(id)arg1;
 - (void)setLiveLabel:(id)arg1;
 - (void)setRemainingTimeLabel:(id)arg1;

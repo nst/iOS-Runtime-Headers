@@ -22,6 +22,7 @@
 - (void)_applicationWillDeactivate:(id)arg1;
 - (id)_clientDeferralProperties;
 - (id)_deferredPropertiesForClientContext:(unsigned int)arg1;
+- (bool)_formSheetObeysContentContainerSize;
 - (id)_hostDeferralProperties;
 - (void)_localAuthenticationUIDismissed;
 - (void)_localAuthenticationUIPresented;
@@ -38,6 +39,7 @@
 - (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;
 - (void)setSourceView:(id)arg1;
 - (bool)shouldPresentAsPopover;
+- (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
 - (id)sourceView;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(bool)arg1;

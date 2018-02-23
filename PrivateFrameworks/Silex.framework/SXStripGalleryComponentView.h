@@ -2,13 +2,15 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXStripGalleryComponentView : SXGalleryComponentView <SXFullScreenCanvasShowable, SXImageViewDelegate, SXItemizedScrollViewDataSource, SXItemizedScrollViewDelegate, SXTextSourceDataSource> {
+@interface SXStripGalleryComponentView : SXGalleryComponentView <SXFullscreenCanvasShowable, SXImageViewDelegate, SXItemizedScrollViewDataSource, SXItemizedScrollViewDelegate, SXTextSourceDataSource> {
+    <SXFullscreenCanvasControllerFactory> * _canvasControllerFactory;
     double  _contentOffset;
     double  _contentWidth;
     NSMutableSet * _exposedGalleryItems;
-    SXFullScreenCanvasController * _fullScreenCanvasController;
+    SXFullscreenCanvasController * _fullScreenCanvasController;
     UIView * _fullscreenGestureView;
     NSArray * _imageResources;
+    <SXImageViewFactory> * _imageViewFactory;
     NSMutableArray * _imageViews;
     SXItemizedScrollView * _itemizedScrollView;
     unsigned long long  _lastPreloadViewIndex;
@@ -20,15 +22,17 @@
     double  _xOffset;
 }
 
+@property (nonatomic, readonly) <SXFullscreenCanvasControllerFactory> *canvasControllerFactory;
 @property (nonatomic, readonly) double contentOffset;
 @property (nonatomic, readonly) double contentWidth;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSMutableSet *exposedGalleryItems;
-@property (nonatomic, retain) SXFullScreenCanvasController *fullScreenCanvasController;
+@property (nonatomic, retain) SXFullscreenCanvasController *fullScreenCanvasController;
 @property (nonatomic) UIView *fullscreenGestureView;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSArray *imageResources;
+@property (nonatomic, readonly) <SXImageViewFactory> *imageViewFactory;
 @property (nonatomic, retain) NSMutableArray *imageViews;
 @property (nonatomic, retain) SXItemizedScrollView *itemizedScrollView;
 @property (nonatomic) unsigned long long lastPreloadViewIndex;
@@ -45,6 +49,7 @@
 - (bool)allowHierarchyRemoval;
 - (unsigned long long)analyticsGalleryType;
 - (unsigned long long)analyticsMediaType;
+- (id)canvasControllerFactory;
 - (double)contentOffset;
 - (id)contentSizeCategoryForTextSource:(id)arg1;
 - (double)contentWidth;
@@ -80,9 +85,10 @@
 - (id)imageResources;
 - (void)imageView:(id)arg1 didLoadAnimatedImage:(id)arg2;
 - (void)imageView:(id)arg1 didLoadImage:(id)arg2 ofQuality:(int)arg3;
+- (id)imageViewFactory;
 - (id)imageViewForLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (id)imageViews;
-- (id)initWithComponent:(id)arg1 configuration:(id)arg2 context:(id)arg3 analyticsReporting:(id)arg4 appStateMonitor:(id)arg5;
+- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6 imageViewFactory:(id)arg7 canvasControllerFactory:(id)arg8;
 - (id)inlineTextStylesForTextSource:(id)arg1;
 - (id)itemizedScrollView;
 - (void)itemizedScrollView:(id)arg1 didChangeToActiveViewIndex:(unsigned long long)arg2;
@@ -92,11 +98,12 @@
 - (id)itemizedScrollView:(id)arg1 viewAtIndex:(unsigned long long)arg2;
 - (bool)itemizedScrollViewWillReindex:(id)arg1;
 - (unsigned long long)lastPreloadViewIndex;
+- (void)loadComponent:(id)arg1;
 - (bool)loadedAtleastOneImage;
 - (id)mediaViewEvent;
 - (unsigned long long)numberOfViewsInItemizedScrollView:(id)arg1;
 - (void)preloadAdjacentViewsForIndex:(unsigned long long)arg1;
-- (void)presentComponent;
+- (void)presentComponentWithChanges:(struct { bool x1; bool x2; })arg1;
 - (void)receivedInfo:(id)arg1 fromLayoutingPhaseWithIdentifier:(id)arg2;
 - (bool)requestInteractivityFocusForFullScreenCanvasController:(id)arg1;
 - (double)rightContentInset;

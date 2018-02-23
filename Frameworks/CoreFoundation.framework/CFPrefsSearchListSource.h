@@ -7,14 +7,15 @@
     struct __CFArray { } * _cloudPrefixKeys;
     CFPrefsCloudSource * _cloudSetTarget;
     struct __CFString { } * _identifier;
+    bool  _isRebuildingCache;
     struct __CFDictionary { } * _keysToSources;
     struct _opaque_pthread_mutex_t { long long x1; BOOL x2[56]; } * _searchListLock;
     struct __CFArray { } * _sourceList;
     CFPrefsPlistSource * _standardSetTarget;
-    bool  completedInitialLoad;
     bool  initialized;
 }
 
+- (void)_deferredNotify:(id)arg1 ofChangesFromDictionary:(struct __CFDictionary { }*)arg2 toDictionary:(struct __CFDictionary { }*)arg3;
 - (void)addCloudSourceForIdentifier:(struct __CFString { }*)arg1 configurationPath:(struct __CFString { }*)arg2 storeName:(struct __CFString { }*)arg3 container:(struct __CFString { }*)arg4;
 - (void)addCompatibilitySource;
 - (void)addManagedSourceForIdentifier:(struct __CFString { }*)arg1 user:(struct __CFString { }*)arg2;
@@ -40,7 +41,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)createRequestNewContentMessageForDaemon:(int)arg1;
 - (void)dealloc;
-- (void)deferredNotifyOfChangesFromDictionary:(struct __CFDictionary { }*)arg1 toDictionary:(struct __CFDictionary { }*)arg2;
+- (void)deferredNotifyCausedByLoadingOfChangesFromDictionary:(struct __CFDictionary { }*)arg1 toDictionary:(struct __CFDictionary { }*)arg2;
+- (void)deferredNotifyCausedByLocalWriteOfChangesFromDictionary:(struct __CFDictionary { }*)arg1 toDictionary:(struct __CFDictionary { }*)arg2;
 - (id)description;
 - (struct __CFString { }*)domainIdentifier;
 - (void)freeze;

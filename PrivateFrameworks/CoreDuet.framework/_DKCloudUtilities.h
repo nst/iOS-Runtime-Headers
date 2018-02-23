@@ -14,6 +14,7 @@
 + (id)containerIdentifier;
 + (bool)isCloudKitEnabled;
 + (bool)isSyncAvailableAndEnabled;
++ (bool)isSyncAvailableAndEnabledWithVerboseLogging:(bool)arg1;
 + (bool)isUnitTesting;
 + (void)setCloudKitEnabled:(bool)arg1;
 + (void)setUnitTesting:(bool)arg1;

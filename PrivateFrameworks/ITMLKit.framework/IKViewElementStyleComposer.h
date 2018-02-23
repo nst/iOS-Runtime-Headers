@@ -15,7 +15,7 @@
 
 @property (nonatomic, retain) IKViewElementStyle *composedSansDefaultStyle;
 @property (nonatomic, retain) IKViewElementStyle *composedStyle;
-@property (getter=isCompositionDone, nonatomic) bool compositionDone;
+@property (getter=isCompositionDone, nonatomic, readonly) bool compositionDone;
 @property (nonatomic, readonly, retain) IKViewElementStyleComposer *defaultStyleComposer;
 @property (nonatomic, readonly, retain) IKViewElementStyle *elementStyleOverrides;
 @property (nonatomic, readonly, retain) IKViewElementStyleComposer *parentStyleComposer;
@@ -39,7 +39,6 @@
 - (bool)requiresMediaQueryEvaluation;
 - (void)setComposedSansDefaultStyle:(id)arg1;
 - (void)setComposedStyle:(id)arg1;
-- (void)setCompositionDone:(bool)arg1;
 - (void)setNeedsRecomposition;
 - (id)styleList;
 

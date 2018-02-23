@@ -6,12 +6,14 @@
     NSString * _clientIdentifierForLastAutofillGeneration;
     NSString * _clientIdentifierForLastKeyboardSync;
     NSUUID * _documentIdentifierForLastAutofillGeneration;
+    LAContext * _laContext;
     NSDictionary * _queuedCustomInfo;
 }
 
 @property (nonatomic, retain) NSString *clientIdentifierForLastAutofillGeneration;
 @property (nonatomic, retain) NSString *clientIdentifierForLastKeyboardSync;
 @property (nonatomic, retain) NSUUID *documentIdentifierForLastAutofillGeneration;
+@property (nonatomic, retain) LAContext *laContext;
 @property (nonatomic, retain) NSDictionary *queuedCustomInfo;
 
 + (id)sharedInstance;
@@ -22,7 +24,8 @@
 - (void)dealloc;
 - (id)documentIdentifierForLastAutofillGeneration;
 - (id)generateAutofillFormCandidatesWithSecureCandidateRenderer:(id)arg1 withRenderTraits:(id)arg2 withKeyboardState:(id)arg3;
-- (id)getCredentialsWithApplicationIdentifier:(id)arg1;
+- (id)getCredentialsWithApplicationIdentifier:(id)arg1 autofillContext:(id)arg2;
+- (id)laContext;
 - (id)obtainApplicationIdentifierFromConnection:(id)arg1;
 - (void)obtainCredential:(id)arg1;
 - (void)pushQueuedCredentialIfNecessaryForKeyboardState:(id)arg1;
@@ -30,6 +33,9 @@
 - (void)setClientIdentifierForLastAutofillGeneration:(id)arg1;
 - (void)setClientIdentifierForLastKeyboardSync:(id)arg1;
 - (void)setDocumentIdentifierForLastAutofillGeneration:(id)arg1;
+- (void)setLaContext:(id)arg1;
 - (void)setQueuedCustomInfo:(id)arg1;
+- (void)shouldAcceptAutofill:(id)arg1 completion:(id /* block */)arg2;
+- (bool)shouldAuthenticateToAcceptAutofill;
 
 @end

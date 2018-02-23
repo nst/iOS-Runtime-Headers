@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDHomePresenceBase : HMFObject <HMFLogging, HMFMessageReceiver> {
+@interface HMDHomePresenceBase : HMFObject <HMDHomeMessageReceiver, HMFLogging> {
     HMDHome * _home;
     NSString * _logString;
     HMFMessageDispatcher * _msgDispatcher;
@@ -17,6 +17,7 @@
 @property (nonatomic) HMDHome *home;
 @property (nonatomic, retain) NSString *logString;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (readonly, copy) NSSet *messageReceiverChildren;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, readonly) HMDNotificationRegistration *notificationRegistration;
@@ -24,6 +25,7 @@
 @property (nonatomic, retain) NSUUID *uuid;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
++ (bool)hasMessageReceiverChildren;
 + (id)logCategory;
 
 - (void).cxx_destruct;

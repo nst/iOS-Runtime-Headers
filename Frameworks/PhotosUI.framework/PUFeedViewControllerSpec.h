@@ -3,6 +3,7 @@
  */
 
 @interface PUFeedViewControllerSpec : NSObject {
+    double  _collectionViewContentInset;
     PUPhotosGridViewControllerSpec * _gridSpec;
     long long  _largeNumberOfSubjectsForLikes;
     int  _largeTileFastImageFormat;
@@ -52,6 +53,7 @@
     int  _veryLargeTileQualityImageFormat;
 }
 
+@property (nonatomic, readonly) double collectionViewContentInset;
 @property (nonatomic, readonly) PUPhotosGridViewControllerSpec *gridSpec;
 @property (nonatomic, readonly) long long largeNumberOfSubjectsForLikes;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } minimumVideoTileSize;
@@ -69,6 +71,7 @@
 - (void).cxx_destruct;
 - (void)_setQualityImageFormats:(id)arg1;
 - (bool)canUseSimplePreheatManager;
+- (double)collectionViewContentInset;
 - (long long)configurationForSectionHeaderType:(long long)arg1 collectionViewType:(long long)arg2;
 - (void)configureCommentSeparatorMetrics:(inout struct PUFeedSeparatorMetrics { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct UIEdgeInsets { double x_2_1_1; double x_2_1_2; double x_2_1_3; double x_2_1_4; } x2; }*)arg1;
 - (void)configureFeedCollectionViewLayout:(id)arg1 forCollectionViewType:(long long)arg2 collectionViewSize:(struct CGSize { double x1; double x2; })arg3;

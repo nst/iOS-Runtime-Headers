@@ -3,32 +3,39 @@
  */
 
 @interface NTSection : NSObject <NSCopying, NSSecureCoding, NTSectionDisplayDescriptor> {
+    NSString * _actionTitle;
+    NSURL * _actionURL;
     NTPBSectionDisplayDescriptor * _displayDescriptor;
-    NSOrderedSet * _headlines;
     NSString * _identifier;
+    NSOrderedSet * _items;
     NSString * _personalizationFeatureID;
     SFRankingFeedback * _rankingFeedback;
     NSString * _referralBarName;
 }
 
+@property (nonatomic, copy) NSString *actionTitle;
+@property (nonatomic, copy) NSURL *actionURL;
 @property (nonatomic, readonly, copy) NSString *backgroundGradientColor;
 @property (nonatomic, readonly, copy) NSString *discoverMoreVideosSubtitle;
 @property (nonatomic, readonly, copy) NSString *discoverMoreVideosTitle;
 @property (nonatomic, readonly, copy) NSURL *discoverMoreVideosURL;
 @property (nonatomic, copy) NTPBSectionDisplayDescriptor *displayDescriptor;
 @property (nonatomic, readonly) bool displaysAsVideoPlaylist;
-@property (nonatomic, copy) NSOrderedSet *headlines;
 @property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSOrderedSet *items;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSString *nameColor;
 @property (nonatomic, readonly, copy) NSString *personalizationFeatureID;
 @property (nonatomic, copy) SFRankingFeedback *rankingFeedback;
 @property (nonatomic, copy) NSString *referralBarName;
+@property (nonatomic, readonly) bool useNameColorInWidget;
 @property (nonatomic, readonly) bool videoPlaysMutedByDefault;
 
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)actionTitle;
+- (id)actionURL;
 - (id)backgroundGradientColor;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -39,22 +46,25 @@
 - (bool)displaysAsVideoPlaylist;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
-- (id)headlines;
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 personalizationFeatureID:(id)arg2 headlines:(id)arg3 rankingFeedback:(id)arg4 displayDescriptor:(id)arg5 referralBarName:(id)arg6;
+- (id)initWithIdentifier:(id)arg1 actionTitle:(id)arg2 actionURL:(id)arg3 personalizationFeatureID:(id)arg4 items:(id)arg5 rankingFeedback:(id)arg6 displayDescriptor:(id)arg7 referralBarName:(id)arg8;
 - (bool)isEqual:(id)arg1;
+- (id)items;
 - (id)name;
 - (id)nameColor;
 - (id)personalizationFeatureID;
 - (id)rankingFeedback;
 - (id)referralBarName;
+- (void)setActionTitle:(id)arg1;
+- (void)setActionURL:(id)arg1;
 - (void)setDisplayDescriptor:(id)arg1;
-- (void)setHeadlines:(id)arg1;
 - (void)setIdentifier:(id)arg1;
+- (void)setItems:(id)arg1;
 - (void)setRankingFeedback:(id)arg1;
 - (void)setReferralBarName:(id)arg1;
+- (bool)useNameColorInWidget;
 - (bool)videoPlaysMutedByDefault;
 
 @end

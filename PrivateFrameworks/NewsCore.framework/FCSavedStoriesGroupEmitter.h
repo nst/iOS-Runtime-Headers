@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) bool isRequiredByFollowingEmitters;
 @property (nonatomic) unsigned long long minPrecedingTopicGroups;
 @property (nonatomic, retain) FCReadingList *readingList;
-@property (nonatomic, readonly) bool requiresForYouCatchUpOperation;
+@property (nonatomic, readonly) long long requiredForYouContentTypes;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -30,7 +30,6 @@
 - (unsigned long long)minPrecedingTopicGroups;
 - (id)operationToEmitGroupWithContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
 - (id)readingList;
-- (bool)requiresForYouCatchUpOperation;
 - (void)setDesiredArticlesCount:(long long)arg1;
 - (void)setMinPrecedingTopicGroups:(unsigned long long)arg1;
 - (void)setReadingList:(id)arg1;

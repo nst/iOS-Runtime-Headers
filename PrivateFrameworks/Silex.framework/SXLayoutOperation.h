@@ -3,8 +3,9 @@
  */
 
 @interface SXLayoutOperation : NSOperation <SXLayouterDelegate> {
+    <SXComponentSizerEngine> * _componentSizerEngine;
     double  _constrainedWidth;
-    <SXDynamicAdController> * _dynamicAdController;
+    SXDynamicAdController * _dynamicAdController;
     bool  _executing;
     bool  _finished;
     SXLayoutAttributes * _layoutAttributes;
@@ -17,10 +18,11 @@
     }  _viewportSize;
 }
 
+@property (nonatomic, readonly) <SXComponentSizerEngine> *componentSizerEngine;
 @property (nonatomic, readonly) double constrainedWidth;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) <SXDynamicAdController> *dynamicAdController;
+@property (nonatomic, readonly) SXDynamicAdController *dynamicAdController;
 @property bool executing;
 @property bool finished;
 @property (readonly) unsigned long long hash;
@@ -32,6 +34,7 @@
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } viewportSize;
 
 - (void).cxx_destruct;
+- (id)componentSizerEngine;
 - (double)constrainedWidth;
 - (id)createLayoutBlueprintForLayoutDataProvider:(id)arg1 documentColumnLayout:(id)arg2;
 - (void)doFinishBookKeeping;
@@ -40,7 +43,7 @@
 - (bool)executing;
 - (void)finalizeLayoutBlueprint:(id)arg1 startOffset:(struct CGPoint { double x1; double x2; })arg2;
 - (bool)finished;
-- (id)initWithViewportSize:(struct CGSize { double x1; double x2; })arg1 constrainedToWidth:(double)arg2 layoutDataProvider:(id)arg3 dynamicAdController:(id)arg4;
+- (id)initWithViewportSize:(struct CGSize { double x1; double x2; })arg1 constrainedToWidth:(double)arg2 layoutDataProvider:(id)arg3 componentSizerEngine:(id)arg4 dynamicAdController:(id)arg5;
 - (bool)isAsynchronous;
 - (bool)isExecuting;
 - (bool)isFinished;

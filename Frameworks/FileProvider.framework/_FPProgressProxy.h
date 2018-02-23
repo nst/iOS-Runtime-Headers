@@ -3,7 +3,9 @@
  */
 
 @interface _FPProgressProxy : NSProgress {
+    NSURL * _fileURL;
     NSObject<OS_dispatch_queue> * _queue;
+    bool  _shouldStopAccessingURL;
     id  _subscriber;
 }
 

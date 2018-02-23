@@ -15,7 +15,7 @@
     UIBarButtonItem * _originalRightBarButtonItem;
     FAFamilyPickInviteeViewController * _pickInviteeVC;
     NSData * _pushToken;
-    RemoteUIController * _remoteUIController;
+    AAUIRemoteUIController * _remoteUIController;
     UIActivityIndicatorView * _spinnerView;
     NSMutableURLRequest * _startRemoteUIRequest;
 }

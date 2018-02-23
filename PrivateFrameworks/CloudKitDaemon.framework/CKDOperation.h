@@ -19,6 +19,7 @@
     CKOperationInfo * _operationInfo;
     NSObject<OS_os_activity> * _osActivity;
     CKDOperation * _parentOperation;
+    int  _pcsWaitCount;
     <NSObject> * _powerAssertion;
     CKDClientProxy * _proxy;
     CKDURLRequest * _request;
@@ -66,6 +67,7 @@
 @property (nonatomic, retain) CKOperationInfo *operationInfo;
 @property (nonatomic, readonly) CKOperationResult *operationResult;
 @property (nonatomic) CKDOperation *parentOperation;
+@property (nonatomic) int pcsWaitCount;
 @property (nonatomic, retain) <NSObject> *powerAssertion;
 @property (nonatomic, readonly) bool preferAnonymousRequests;
 @property (nonatomic) CKDClientProxy *proxy;
@@ -74,6 +76,7 @@
 @property (nonatomic, retain) NSMutableArray *requestUUIDs;
 @property (nonatomic, readonly) bool shouldCheckAppVersion;
 @property (nonatomic) bool shouldPipelineFetchAllChangesRequests;
+@property (nonatomic, readonly) bool shouldSkipZonePCSUpdate;
 @property (nonatomic, readonly) NSString *sourceApplicationBundleIdentifier;
 @property (nonatomic, readonly) NSString *sourceApplicationSecondaryIdentifier;
 @property (nonatomic, retain) NSDate *startDate;
@@ -153,12 +156,15 @@
 - (bool)isFinished;
 - (bool)isLongLived;
 - (bool)isProxyOperation;
+- (bool)isWaitingOnPCS;
 - (void)main;
 - (bool)makeStateTransition;
 - (void)makeStateTransition:(bool)arg1;
 - (id)metricExecuteStartDate;
 - (id)nameForState:(unsigned long long)arg1;
 - (unsigned long long)networkServiceType;
+- (void)noteOperationDidFinishWaitingOnPCS;
+- (void)noteOperationWillWaitOnPCS;
 - (id)operationGroupID;
 - (id)operationGroupName;
 - (id)operationGroupQuantityNumber;
@@ -168,6 +174,7 @@
 - (Class)operationResultClass;
 - (bool)operationShouldBeFlowControlled;
 - (id)parentOperation;
+- (int)pcsWaitCount;
 - (id)powerAssertion;
 - (bool)preferAnonymousRequests;
 - (id)proxy;
@@ -192,6 +199,7 @@
 - (void)setMetricExecuteStartDate:(id)arg1;
 - (void)setOperationInfo:(id)arg1;
 - (void)setParentOperation:(id)arg1;
+- (void)setPcsWaitCount:(int)arg1;
 - (void)setPowerAssertion:(id)arg1;
 - (void)setProxy:(id)arg1;
 - (void)setRequest:(id)arg1;
@@ -206,6 +214,7 @@
 - (void)setUserSyncTask:(id)arg1;
 - (bool)shouldCheckAppVersion;
 - (bool)shouldPipelineFetchAllChangesRequests;
+- (bool)shouldSkipZonePCSUpdate;
 - (id)sourceApplicationBundleIdentifier;
 - (id)sourceApplicationSecondaryIdentifier;
 - (void)spawnAndRunOperationOfClass:(Class)arg1 operationInfo:(id)arg2 operationConfigurationBlock:(id /* block */)arg3;

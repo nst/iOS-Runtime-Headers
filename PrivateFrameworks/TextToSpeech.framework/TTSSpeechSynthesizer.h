@@ -19,6 +19,7 @@
     float  _rate;
     void * _speakingRequestClientContext;
     NSMutableArray * _speechRequests;
+    bool  _supportsAccurateWordCallbacks;
     struct { 
         unsigned int delegateStartWithRequest : 1; 
         unsigned int delegateFinishWithRequest : 1; 
@@ -44,6 +45,7 @@
 @property (nonatomic) float rate;
 @property (nonatomic, readonly) NSString *resolvedVoiceIdentifier;
 @property (nonatomic) void*speakingRequestClientContext;
+@property (nonatomic) bool supportsAccurateWordCallbacks;
 @property (nonatomic, copy) NSArray *userSubstitutions;
 @property (nonatomic, retain) NSString *voiceIdentifier;
 @property (nonatomic) float volume;
@@ -107,6 +109,7 @@
 - (void)setPitch:(float)arg1;
 - (void)setRate:(float)arg1;
 - (void)setSpeakingRequestClientContext:(void*)arg1;
+- (void)setSupportsAccurateWordCallbacks:(bool)arg1;
 - (void)setUseMonarchStyleRate:(bool)arg1;
 - (void)setUserSubstitutions:(id)arg1;
 - (void)setVoiceIdentifier:(id)arg1;
@@ -126,6 +129,7 @@
 - (bool)stopSpeakingAtNextBoundary:(long long)arg1 synchronously:(bool)arg2 error:(id*)arg3;
 - (bool)stopSpeakingRequest:(id)arg1 atNextBoundary:(long long)arg2 error:(id*)arg3;
 - (bool)stopSpeakingRequest:(id)arg1 atNextBoundary:(long long)arg2 synchronously:(bool)arg3 error:(id*)arg4;
+- (bool)supportsAccurateWordCallbacks;
 - (void)useAudioQueueFlags:(unsigned int)arg1;
 - (bool)useMonarchStyleRate;
 - (void)useSharedAudioSession:(bool)arg1;

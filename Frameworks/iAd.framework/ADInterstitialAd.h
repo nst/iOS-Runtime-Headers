@@ -56,6 +56,7 @@
 - (void)_dismissModalInterstitial;
 - (void)_notifyDelegateOfBannerLoad;
 - (void)_presentFromViewController:(id)arg1;
+- (bool)_shouldClampPresentedFrame;
 - (id)adResponseId;
 - (id)adSpace;
 - (id)adSpaceView;

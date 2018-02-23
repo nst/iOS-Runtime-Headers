@@ -29,6 +29,7 @@
 - (bool)_setValue:(id)arg1 forProperty:(id)arg2;
 - (void)addPropertyObserver:(id)arg1 forPropertyChanges:(id)arg2;
 - (bool)archived;
+- (bool)canMigrate;
 - (id)changeBlocks;
 - (void)dealloc;
 - (id)description;

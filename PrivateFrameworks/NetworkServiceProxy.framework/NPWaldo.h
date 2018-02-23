@@ -164,6 +164,7 @@
 - (id)allOnRamps;
 - (id)cachedLocation;
 - (void)cancelProbes;
+- (void)cleanupStaleKeys;
 - (id)configurationIdentifier;
 - (id)connectionIdleTimeoutMaximum;
 - (id)copyEdgeList:(id)arg1;

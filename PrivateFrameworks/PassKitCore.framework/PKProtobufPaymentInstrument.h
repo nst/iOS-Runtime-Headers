@@ -8,6 +8,7 @@
     struct { 
         unsigned int ingestedDate : 1; 
         unsigned int peerPaymentAccountBalance : 1; 
+        unsigned int peerPaymentAccountState : 1; 
         unsigned int hasAssociatedPeerPaymentAccount : 1; 
         unsigned int supportsAutomaticSelection : 1; 
     }  _has;
@@ -19,6 +20,7 @@
     NSMutableArray * _paymentApplications;
     long long  _peerPaymentAccountBalance;
     NSString * _peerPaymentAccountCurrency;
+    unsigned int  _peerPaymentAccountState;
     NSString * _primaryAccountIdentifier;
     NSString * _primaryAccountNumberSuffix;
     bool  _supportsAutomaticSelection;
@@ -35,6 +37,7 @@
 @property (nonatomic, readonly) bool hasPassID;
 @property (nonatomic) bool hasPeerPaymentAccountBalance;
 @property (nonatomic, readonly) bool hasPeerPaymentAccountCurrency;
+@property (nonatomic) bool hasPeerPaymentAccountState;
 @property (nonatomic, readonly) bool hasPrimaryAccountIdentifier;
 @property (nonatomic, readonly) bool hasPrimaryAccountNumberSuffix;
 @property (nonatomic) bool hasSupportsAutomaticSelection;
@@ -45,6 +48,7 @@
 @property (nonatomic, retain) NSMutableArray *paymentApplications;
 @property (nonatomic) long long peerPaymentAccountBalance;
 @property (nonatomic, retain) NSString *peerPaymentAccountCurrency;
+@property (nonatomic) unsigned int peerPaymentAccountState;
 @property (nonatomic, retain) NSString *primaryAccountIdentifier;
 @property (nonatomic, retain) NSString *primaryAccountNumberSuffix;
 @property (nonatomic) bool supportsAutomaticSelection;
@@ -74,6 +78,7 @@
 - (bool)hasPassID;
 - (bool)hasPeerPaymentAccountBalance;
 - (bool)hasPeerPaymentAccountCurrency;
+- (bool)hasPeerPaymentAccountState;
 - (bool)hasPrimaryAccountIdentifier;
 - (bool)hasPrimaryAccountNumberSuffix;
 - (bool)hasSupportsAutomaticSelection;
@@ -89,6 +94,7 @@
 - (unsigned long long)paymentApplicationsCount;
 - (long long)peerPaymentAccountBalance;
 - (id)peerPaymentAccountCurrency;
+- (unsigned int)peerPaymentAccountState;
 - (id)primaryAccountIdentifier;
 - (id)primaryAccountNumberSuffix;
 - (bool)readFrom:(id)arg1;
@@ -98,6 +104,7 @@
 - (void)setHasHasAssociatedPeerPaymentAccount:(bool)arg1;
 - (void)setHasIngestedDate:(bool)arg1;
 - (void)setHasPeerPaymentAccountBalance:(bool)arg1;
+- (void)setHasPeerPaymentAccountState:(bool)arg1;
 - (void)setHasSupportsAutomaticSelection:(bool)arg1;
 - (void)setIngestedDate:(double)arg1;
 - (void)setIssuerCountryCode:(id)arg1;
@@ -106,6 +113,7 @@
 - (void)setPaymentApplications:(id)arg1;
 - (void)setPeerPaymentAccountBalance:(long long)arg1;
 - (void)setPeerPaymentAccountCurrency:(id)arg1;
+- (void)setPeerPaymentAccountState:(unsigned int)arg1;
 - (void)setPrimaryAccountIdentifier:(id)arg1;
 - (void)setPrimaryAccountNumberSuffix:(id)arg1;
 - (void)setSupportsAutomaticSelection:(bool)arg1;

@@ -18,6 +18,7 @@
         unsigned int shuffleMode : 1; 
         unsigned int skipFrequency : 1; 
         unsigned int skipInterval : 1; 
+        unsigned int upNextItemCount : 1; 
         unsigned int active : 1; 
         unsigned int enabled : 1; 
         unsigned int supportsSharedQueue : 1; 
@@ -54,6 +55,7 @@
         unsigned long long size; 
     }  _supportedRates;
     bool  _supportsSharedQueue;
+    int  _upNextItemCount;
 }
 
 @property (nonatomic) bool active;
@@ -75,6 +77,7 @@
 @property (nonatomic) bool hasSkipFrequency;
 @property (nonatomic) bool hasSkipInterval;
 @property (nonatomic) bool hasSupportsSharedQueue;
+@property (nonatomic) bool hasUpNextItemCount;
 @property (nonatomic, retain) NSString *localizedShortTitle;
 @property (nonatomic, retain) NSString *localizedTitle;
 @property (nonatomic) float maximumRating;
@@ -95,6 +98,7 @@
 @property (nonatomic, readonly) float*supportedRates;
 @property (nonatomic, readonly) unsigned long long supportedRatesCount;
 @property (nonatomic) bool supportsSharedQueue;
+@property (nonatomic) int upNextItemCount;
 
 + (Class)supportedCustomQueueIdentifierType;
 
@@ -136,6 +140,7 @@
 - (bool)hasSkipFrequency;
 - (bool)hasSkipInterval;
 - (bool)hasSupportsSharedQueue;
+- (bool)hasUpNextItemCount;
 - (unsigned long long)hash;
 - (bool)isEqual:(id)arg1;
 - (id)localizedShortTitle;
@@ -168,6 +173,7 @@
 - (void)setHasSkipFrequency:(bool)arg1;
 - (void)setHasSkipInterval:(bool)arg1;
 - (void)setHasSupportsSharedQueue:(bool)arg1;
+- (void)setHasUpNextItemCount:(bool)arg1;
 - (void)setLocalizedShortTitle:(id)arg1;
 - (void)setLocalizedTitle:(id)arg1;
 - (void)setMaximumRating:(float)arg1;
@@ -184,6 +190,7 @@
 - (void)setSupportedPlaybackQueueTypes:(int*)arg1 count:(unsigned long long)arg2;
 - (void)setSupportedRates:(float*)arg1 count:(unsigned long long)arg2;
 - (void)setSupportsSharedQueue:(bool)arg1;
+- (void)setUpNextItemCount:(int)arg1;
 - (int)shuffleMode;
 - (id)shuffleModeAsString:(int)arg1;
 - (int)skipFrequency;
@@ -201,6 +208,7 @@
 - (float*)supportedRates;
 - (unsigned long long)supportedRatesCount;
 - (bool)supportsSharedQueue;
+- (int)upNextItemCount;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -11,5 +11,6 @@
 - (bool)isDeviceLockedWithPasscode;
 - (bool)isTimeoutSuspended;
 - (bool)openSensitiveURL:(NSURL *)arg1;
+- (AFPeerInfo *)peerInfoForCurrentCommand;
 
 @end

@@ -28,6 +28,7 @@
         long long numerator; 
         long long denominator; 
     }  _renderScale;
+    int  _rendererType;
     NSObject<OS_dispatch_group> * _replyGroup;
     NURenderRequest * _request;
     NUGeometrySpaceMap * _resolvedSpaceMap;
@@ -60,6 +61,7 @@
 @property (nonatomic, retain) NURenderPipeline *renderPipeline;
 @property (nonatomic) struct { long long x1; long long x2; } renderScale;
 @property (nonatomic, readonly) <NURenderer> *renderer;
+@property (nonatomic, readonly) int rendererType;
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *replyGroup;
 @property (readonly) NURenderRequest *request;
 @property (nonatomic, retain) NUGeometrySpaceMap *resolvedSpaceMap;
@@ -137,12 +139,14 @@
 - (id)priority;
 - (void)removeObserver:(id)arg1;
 - (bool)render:(out id*)arg1;
+- (id)renderImage:(id)arg1 into:(id)arg2 colorSpace:(id)arg3 roi:(id)arg4 imageSize:(struct { long long x1; long long x2; })arg5 error:(out id*)arg6;
 - (id)renderNode;
 - (id)renderNodeWithPipelineState:(id)arg1 error:(out id*)arg2;
 - (id)renderPipeline;
 - (struct { long long x1; long long x2; })renderScale;
 - (bool)renderVideoFrames:(id)arg1 intoPixelBuffer:(struct __CVBuffer { }*)arg2 time:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 colorSpace:(id)arg4 error:(out id*)arg5;
 - (id)renderer;
+- (int)rendererType;
 - (void)reply:(id)arg1;
 - (id)replyGroup;
 - (id)request;

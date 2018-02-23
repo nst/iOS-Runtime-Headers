@@ -19,7 +19,7 @@
 @property (readonly) SSAccount *activeAccount;
 @property (readonly) SSAccount *activeLockerAccount;
 @property (getter=isAuthenticationActive, readonly) bool authenticationActive;
-@property (nonatomic, retain) ACAccountStore *backingAccountStore;
+@property (nonatomic, readonly) ACAccountStore *backingAccountStore;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) SSAccount *demoAccount;
 @property (readonly, copy) NSString *description;
@@ -124,6 +124,7 @@
 - (bool)removeAccount:(id)arg1 error:(id*)arg2;
 - (void)removeAllAccountsWithCompletion:(id /* block */)arg1;
 - (void)removeCookiesForAccount:(id)arg1 logKey:(id)arg2;
+- (bool)repairAccountWithBrokenDSID:(id)arg1;
 - (void)resetExpiration;
 - (void)resetExpirationForTokenType:(long long)arg1;
 - (void)saveAccount:(id)arg1 completion:(id /* block */)arg2;
@@ -135,7 +136,6 @@
 - (void)setAccountsCacheAccessQueue:(id)arg1;
 - (id)setActiveAccount:(id)arg1;
 - (id)setActiveLockerAccount:(id)arg1;
-- (void)setBackingAccountStore:(id)arg1;
 - (void)setDefaultAccountName:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)setInProcessCacheDisabled:(bool)arg1;
 - (void)setKeyValueStore:(id)arg1;

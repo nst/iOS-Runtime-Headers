@@ -33,13 +33,10 @@
 
 - (void).cxx_destruct;
 - (id)__fetchWithGroup:(id)arg1 uuids:(id)arg2 error:(id*)arg3;
-- (void)_fetchObjects:(bool)arg1 migration:(bool)arg2 result:(id /* block */)arg3;
 - (void)commit:(id)arg1 run:(bool)arg2 save:(bool)arg3 completionHandler:(id /* block */)arg4;
 - (id)delegate;
 - (id)description;
 - (id)dumpState;
-- (void)fetchAllObjects:(id /* block */)arg1;
-- (void)fetchMigratedObjects:(id /* block */)arg1;
 - (id)home;
 - (id)homeManager;
 - (id)initWithUUID:(id)arg1;
@@ -49,7 +46,6 @@
 - (id)local;
 - (id)logIdentifier;
 - (id)lookup;
-- (void)markAsMigrated:(id /* block */)arg1;
 - (void)registerObject:(id)arg1 forUUID:(id)arg2;
 - (id)root;
 - (void)saveToPersistentStoreWithReason:(id)arg1 incrementGeneration:(bool)arg2;

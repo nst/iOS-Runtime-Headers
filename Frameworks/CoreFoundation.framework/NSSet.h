@@ -185,6 +185,13 @@
 
 - (id)DACompactDescription;
 
+// Image: /System/Library/PrivateFrameworks/DiagnosticExtensionsDaemon.framework/DiagnosticExtensionsDaemon
+
+- (id)findWithBlock:(id /* block */)arg1;
+- (id)flatMapWithBlock:(id /* block */)arg1;
+- (id)rejectItemsPassingTest:(id /* block */)arg1;
+- (id)selectItemsPassingTest:(id /* block */)arg1;
+
 // Image: /System/Library/PrivateFrameworks/FMCoreLite.framework/FMCoreLite
 
 + (id)fm_setWithSafeObject:(id)arg1;
@@ -256,6 +263,8 @@
 
 - (bool)na_all:(id /* block */)arg1;
 - (bool)na_any:(id /* block */)arg1;
+- (id)na_dictionaryByBucketingObjectsUsingKeyGenerator:(id /* block */)arg1;
+- (id)na_dictionaryWithKeyGenerator:(id /* block */)arg1;
 - (void)na_each:(id /* block */)arg1;
 - (id)na_filter:(id /* block */)arg1;
 - (id)na_firstObjectPassingTest:(id /* block */)arg1;

@@ -14,6 +14,7 @@
     bool  shouldOfferSignupCompletion;
     bool  shouldOfferTrialPlan;
     bool  shouldShowAddNewRemotePlan;
+    NSString * trialPlanType;
 }
 
 @property (nonatomic, readonly) bool LTEMayImpactService;
@@ -22,12 +23,14 @@
 @property (nonatomic, readonly) bool shouldOfferSignupCompletion;
 @property (nonatomic, readonly) bool shouldOfferTrialPlan;
 @property (nonatomic, readonly) bool shouldShowAddNewRemotePlan;
+@property (nonatomic, readonly) NSString *trialPlanType;
 
 + (void)_presentAirplaneModeOnAlertOnViewController:(id)arg1;
 + (void)_presentCellularRequiredModeAlertOnViewController:(id)arg1;
 + (void)_presentErrorTitle:(id)arg1 onViewController:(id)arg2 withActionTitle:(id)arg3 actionHandler:(id /* block */)arg4;
 + (void)_presentErrorTitled:(id)arg1 withMessage:(id)arg2 onViewController:(id)arg3;
 + (id)carrierName;
++ (id)carrierPhoneNumber;
 + (void)presentCellularError:(id)arg1 onViewController:(id)arg2;
 + (id)sharedInstance;
 
@@ -55,6 +58,7 @@
 - (bool)shouldOfferTrialPlan;
 - (bool)shouldShowAddNewRemotePlan;
 - (void)startRemoteProvisioning;
+- (id)trialPlanType;
 - (void)updateCellularPlansWithFetch:(bool)arg1;
 - (id)userConsentMessageForConsentType:(long long)arg1 relevantPlanItem:(id)arg2;
 

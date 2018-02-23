@@ -11,10 +11,8 @@
     NSMutableSet * _fetchResults;
     bool  _hasBeenEnabled;
     NSDictionary * _holdInterestTokensByArticleID;
-    NSOperationQueue * _operationSerialQueue;
     NSMutableDictionary * _outstandingOperationsByArticleID;
     FCThreadSafeMutableSet * _readingListAvailableForOfflineReading;
-    NSObject<OS_dispatch_queue> * _updateHoldInterestTokensQueue;
     <FCOperationThrottler> * _updateHoldInterestTokensThrottler;
     <FCReadingListContentControllerObserving> * observer;
 }
@@ -31,12 +29,10 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSDictionary *holdInterestTokensByArticleID;
 @property (nonatomic) <FCReadingListContentControllerObserving> *observer;
-@property (nonatomic, retain) NSOperationQueue *operationSerialQueue;
 @property (nonatomic, retain) NSMutableDictionary *outstandingOperationsByArticleID;
 @property (nonatomic, retain) FCThreadSafeMutableSet *readingListAvailableForOfflineReading;
 @property (nonatomic, readonly) NSSet *readingListForOfflineReading;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *updateHoldInterestTokensQueue;
 @property (nonatomic, retain) <FCOperationThrottler> *updateHoldInterestTokensThrottler;
 
 - (void).cxx_destruct;
@@ -60,7 +56,6 @@
 - (void)networkReachabilityDidChange:(id)arg1;
 - (void)notifyWhenFinishedDownloadingForOfflineReadingWithTimeout:(unsigned long long)arg1 block:(id /* block */)arg2;
 - (id)observer;
-- (id)operationSerialQueue;
 - (void)operationThrottler:(id)arg1 performAsyncOperationWithCompletion:(id /* block */)arg2;
 - (id)outstandingOperationsByArticleID;
 - (id)readingListAvailableForOfflineReading;
@@ -74,12 +69,9 @@
 - (void)setHasBeenEnabled:(bool)arg1;
 - (void)setHoldInterestTokensByArticleID:(id)arg1;
 - (void)setObserver:(id)arg1;
-- (void)setOperationSerialQueue:(id)arg1;
 - (void)setOutstandingOperationsByArticleID:(id)arg1;
 - (void)setReadingListAvailableForOfflineReading:(id)arg1;
-- (void)setUpdateHoldInterestTokensQueue:(id)arg1;
 - (void)setUpdateHoldInterestTokensThrottler:(id)arg1;
-- (id)updateHoldInterestTokensQueue;
 - (id)updateHoldInterestTokensThrottler;
 
 @end

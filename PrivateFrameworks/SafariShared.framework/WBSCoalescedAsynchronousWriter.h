@@ -4,17 +4,19 @@
 
 @interface WBSCoalescedAsynchronousWriter : NSObject {
     id /* block */  _dataSourceBlock;
+    NSObject<OS_dispatch_queue> * _dataSourceQueue;
     <WBSCoalescedAsynchronousWriterDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _diskAccessQueue;
     bool  _done;
     NSURL * _fileURL;
     NSObject<OS_dispatch_queue> * _internalQueue;
+    NSString * _name;
     struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
         struct __compressed_pair<SafariShared::SuddenTerminationDisabler *, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
             struct SuddenTerminationDisabler {} *__first_; 
         } __ptr_; 
     }  _suddenTerminationDisabler;
-    NSTimer * _timer;
+    NSObject<OS_dispatch_source> * _timer;
     double  _writeDelayInterval;
     NSObject<OS_dispatch_group> * _writeGroup;
     id /* block */  _writerBlock;
@@ -25,20 +27,23 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_cancelPendingWriteSynchronouslyLeavingSuddenTerminationIntact;
-- (id)_initWithName:(id)arg1 fileURL:(id)arg2 writerBlock:(id /* block */)arg3 dataSourceBlock:(id /* block */)arg4;
+- (id)_dataFromDataSource;
+- (id)_initWithName:(id)arg1 fileURL:(id)arg2 writerBlock:(id /* block */)arg3 dataSourceQueue:(id)arg4 dataSourceBlock:(id /* block */)arg5;
 - (void)_invalidateTimer;
 - (void)_scheduleTimer;
-- (void)_timerFired:(id)arg1;
+- (void)_timerFired;
 - (void)_waitForWriteCompletion;
 - (void)_writeData:(id)arg1;
 - (void)_writeDataAsynchronously:(id)arg1;
-- (void)_writeDataFromDataSourceAsynchronously;
 - (void)cancelPendingWriteSynchronously;
 - (void)completePendingWriteSynchronously;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithName:(id)arg1 fileURL:(id)arg2 dataSourceBlock:(id /* block */)arg3;
+- (id)initWithName:(id)arg1 fileURL:(id)arg2 dataSourceQueue:(id)arg3 dataSourceBlock:(id /* block */)arg4;
 - (id)initWithName:(id)arg1 writerBlock:(id /* block */)arg2 dataSourceBlock:(id /* block */)arg3;
+- (id)initWithName:(id)arg1 writerBlock:(id /* block */)arg2 dataSourceQueue:(id)arg3 dataSourceBlock:(id /* block */)arg4;
+- (void)performScheduledWriteSynchronously;
 - (void)scheduleWrite;
 - (void)setDelegate:(id)arg1;
 - (void)startScheduledWriteNow;

@@ -13,12 +13,10 @@
 @property (nonatomic, retain) SKUIPlayButton *playButton;
 @property (readonly) Class superclass;
 
-+ (id)vibrantTextViewForStyle:(unsigned long long)arg1;
-
 - (void).cxx_destruct;
 - (void)_playButtonPressed:(id)arg1;
 - (void)_updateStateFromCardSection:(id)arg1 animated:(bool)arg2;
-- (id)initWithCardSection:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
+- (id)initWithRowModel:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
 - (id)playButton;
 - (void)selectableTextView:(id)arg1 presentViewController:(id)arg2;
 - (void)setPlayButton:(id)arg1;

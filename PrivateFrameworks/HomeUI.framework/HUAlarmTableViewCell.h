@@ -5,12 +5,14 @@
 @interface HUAlarmTableViewCell : UITableViewCell {
     MTUIAlarmView * _alarmView;
     <HUAlarmTableViewCellDelegate> * _delegate;
+    bool  _disabled;
     bool  _enabled;
     UISwitch * _enabledSwitch;
 }
 
 @property (nonatomic, retain) MTUIAlarmView *alarmView;
 @property (nonatomic) <HUAlarmTableViewCellDelegate> *delegate;
+@property (getter=isDisabled, nonatomic) bool disabled;
 @property (nonatomic) bool enabled;
 @property (nonatomic, retain) UISwitch *enabledSwitch;
 
@@ -22,12 +24,12 @@
 - (id)enabledSwitch;
 - (id)init;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
-- (void)internalSetBackgroundColor:(id)arg1;
+- (bool)isDisabled;
 - (void)refreshUI:(id)arg1 animated:(bool)arg2;
 - (void)setAlarmActiveDelegate:(id)arg1;
 - (void)setAlarmView:(id)arg1;
-- (void)setBackgroundColor:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDisabled:(bool)arg1;
 - (void)setEditing:(bool)arg1 animated:(bool)arg2;
 - (void)setEnabled:(bool)arg1;
 - (void)setEnabledSwitch:(id)arg1;

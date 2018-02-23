@@ -39,7 +39,7 @@
 + (id)shortDescription;
 
 - (void).cxx_destruct;
-- (void)_cleanupDevices;
+- (void)_cleanupDevices:(id)arg1;
 - (void)_updateLocalAccount;
 - (void)_updateLocalDevices;
 - (id)accountChangeBackoffTimer;

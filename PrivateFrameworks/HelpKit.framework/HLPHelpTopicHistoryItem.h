@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@interface HLPHelpTopicHistoryItem : NSObject <NSCoding, NSCopying> {
+@interface HLPHelpTopicHistoryItem : NSObject <NSCopying, NSSecureCoding> {
     NSString * _anchor;
     struct CGPoint { 
         double x; 
@@ -19,6 +19,8 @@
 @property (nonatomic) struct CGPoint { double x1; double x2; } contentOffset;
 @property (nonatomic) struct CGSize { double x1; double x2; } contentSize;
 @property (nonatomic, retain) NSString *identifier;
+
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)anchor;

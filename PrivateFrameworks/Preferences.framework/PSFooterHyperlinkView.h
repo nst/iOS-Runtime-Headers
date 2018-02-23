@@ -32,6 +32,7 @@
 - (SEL)action;
 - (id)iconView;
 - (id)initWithSpecifier:(id)arg1;
+- (bool)isValidLinkRange;
 - (void)layoutSubviews;
 - (struct _NSRange { unsigned long long x1; unsigned long long x2; })linkRange;
 - (double)preferredHeightForWidth:(double)arg1;

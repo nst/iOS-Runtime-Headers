@@ -8,6 +8,7 @@
     <HKQueryClientInterface><NSXPCProxyCreating> * _clientProxy;
     double  _collectionInterval;
     HKQueryServerConfiguration * _configuration;
+    NSArray * _dataObservationAssertions;
     <HDQueryServerDelegate> * _delegate;
     bool  _didEndActivationTransaction;
     _HKFilter * _filter;
@@ -110,6 +111,7 @@
 - (id)sampleType;
 - (void)samplesAdded:(id)arg1 anchor:(id)arg2;
 - (void)samplesOfTypesWereRemoved:(id)arg1 anchor:(id)arg2;
+- (id)sanitizedSampleForQueryClient:(id)arg1;
 - (void)scheduleDatabaseAccessOnQueueWithBlock:(id /* block */)arg1;
 - (void)setCollectionInterval:(double)arg1;
 - (void)setQueryDidFinishHandler:(id /* block */)arg1;

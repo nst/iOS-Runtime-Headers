@@ -6,7 +6,6 @@
 
 + (id)SSID;
 + (bool)airplaneMode;
-+ (void)asyncSSID:(id /* block */)arg1;
 + (bool)onWifi;
 + (void)setAirplaneMode:(bool)arg1;
 + (void)setSSID:(id)arg1;

@@ -11,6 +11,8 @@
 @property (nonatomic) long long releaseYear;
 @property (readonly) Class superclass;
 
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
+
 + (id)releaseInfo;
 + (id)releaseInfoWithDictionary:(id)arg1 context:(id)arg2;
 
@@ -20,5 +22,9 @@
 - (long long)releaseYear;
 - (void)setReleaseDate:(id)arg1;
 - (void)setReleaseYear:(long long)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
+
++ (id)_af_releaseInfoWithReleaseDate:(id)arg1;
 
 @end

@@ -42,7 +42,12 @@
 - (id)backingStoreZone;
 - (id)cache;
 - (id)cloudRecordWithName:(id)arg1;
+- (void)cloudRecordWithName:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)cloudRecordWithNames:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)cloudRecordWithObjectID:(id)arg1;
+- (void)cloudRecordWithObjectID:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)cloudRecordWithObjectIDs:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)cloudRecordsForParentID:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)createCloudRecordWithFetchResult:(id)arg1;
 - (id)createCloudRecordWithObjectID:(id)arg1 recordName:(id)arg2;
 - (id)createCloudZoneChangeTemporaryCache:(bool)arg1;
@@ -50,6 +55,7 @@
 - (void)deleteZone;
 - (id)description;
 - (bool)doesProcessChangeEvenIfDecryptionFails;
+- (void)fetchMigratedObjects:(id /* block */)arg1;
 - (bool)hasDecrypted;
 - (bool)hasRecordsAvaliable;
 - (bool)hasServerTokenAvaliable;
@@ -57,6 +63,7 @@
 - (id)initWithBackingStoreCacheZone:(id)arg1 cloudCache:(id)arg2;
 - (bool)isRootCloudRecord:(id)arg1;
 - (bool)isRootRecord:(id)arg1;
+- (void)markMigratedObjectsAsMigrated;
 - (id)owner;
 - (id)privateZoneRootRecordID;
 - (id)rootGroup;

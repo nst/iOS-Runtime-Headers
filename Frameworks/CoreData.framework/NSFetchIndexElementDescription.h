@@ -33,6 +33,7 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned long long)hash;
 - (id)indexDescription;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithProperty:(id)arg1 collationType:(unsigned long long)arg2;

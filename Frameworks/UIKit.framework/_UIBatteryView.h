@@ -3,9 +3,11 @@
  */
 
 @interface _UIBatteryView : UIView {
-    double  _baselineOffset;
+    _UIBatteryViewAXHUDImageCacheInfo * _accessibilityHUDImageCacheInfo;
     UIColor * _bodyColor;
     CAShapeLayer * _bodyLayer;
+    CAShapeLayer * _boltLayer;
+    CAShapeLayer * _boltMaskLayer;
     double  _chargePercent;
     long long  _chargingState;
     bool  _compact;
@@ -14,12 +16,15 @@
     UIColor * _pinColor;
     CAShapeLayer * _pinLayer;
     bool  _saverModeActive;
+    bool  _showsInlineChargingIndicator;
     long long  _sizeCategory;
 }
 
-@property (nonatomic) double baselineOffset;
+@property (nonatomic, retain) _UIBatteryViewAXHUDImageCacheInfo *accessibilityHUDImageCacheInfo;
 @property (nonatomic, copy) UIColor *bodyColor;
 @property (nonatomic, retain) CAShapeLayer *bodyLayer;
+@property (nonatomic, retain) CAShapeLayer *boltLayer;
+@property (nonatomic, retain) CAShapeLayer *boltMaskLayer;
 @property (nonatomic) double chargePercent;
 @property (nonatomic) long long chargingState;
 @property (nonatomic) bool compact;
@@ -29,6 +34,7 @@
 @property (nonatomic, copy) UIColor *pinColor;
 @property (nonatomic, retain) CAShapeLayer *pinLayer;
 @property (nonatomic) bool saverModeActive;
+@property (nonatomic) bool showsInlineChargingIndicator;
 @property (nonatomic) long long sizeCategory;
 
 - (void).cxx_destruct;
@@ -40,12 +46,17 @@
 - (double)_marginForTraitCollection:(id)arg1;
 - (double)_outsideCornerRadiusForTraitCollection:(id)arg1;
 - (struct CGSize { double x1; double x2; })_pinSizeForTraitCollection:(id)arg1;
+- (void)_unflipBoltIfNecessary;
 - (void)_updateBodyColors;
+- (void)_updateBolt;
 - (void)_updateFillColor;
 - (void)_updateFillLayer;
-- (double)baselineOffset;
+- (id)accessibilityHUDImageCacheInfo;
+- (id)accessibilityHUDRepresentation;
 - (id)bodyColor;
 - (id)bodyLayer;
+- (id)boltLayer;
+- (id)boltMaskLayer;
 - (double)chargePercent;
 - (long long)chargingState;
 - (bool)compact;
@@ -60,9 +71,11 @@
 - (id)pinColor;
 - (id)pinLayer;
 - (bool)saverModeActive;
-- (void)setBaselineOffset:(double)arg1;
+- (void)setAccessibilityHUDImageCacheInfo:(id)arg1;
 - (void)setBodyColor:(id)arg1;
 - (void)setBodyLayer:(id)arg1;
+- (void)setBoltLayer:(id)arg1;
+- (void)setBoltMaskLayer:(id)arg1;
 - (void)setChargePercent:(double)arg1;
 - (void)setChargingState:(long long)arg1;
 - (void)setCompact:(bool)arg1;
@@ -71,7 +84,9 @@
 - (void)setPinColor:(id)arg1;
 - (void)setPinLayer:(id)arg1;
 - (void)setSaverModeActive:(bool)arg1;
+- (void)setShowsInlineChargingIndicator:(bool)arg1;
 - (void)setSizeCategory:(long long)arg1;
+- (bool)showsInlineChargingIndicator;
 - (long long)sizeCategory;
 - (void)traitCollectionDidChange:(id)arg1;
 

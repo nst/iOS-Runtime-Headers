@@ -45,8 +45,8 @@
 
 - (void).cxx_destruct;
 - (void)_updateReachabilityGivenRequirements;
-- (void)appConfigurationDidChange:(id)arg1;
 - (id)appConfigurationManager;
+- (void)appConfigurationManager:(id)arg1 appConfigurationDidChange:(id)arg2;
 - (id)articleController;
 - (id)assetCacheDirectoryURL;
 - (id)assetManager;

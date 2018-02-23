@@ -11,6 +11,7 @@
     UIBarButtonItem * _doneButtonItem;
     HKHealthStore * _healthStore;
     NSArray * _readingTypeOrdering;
+    NSString * _researchStudyUsageDescription;
     NSString * _shareDescription;
     HKSource * _source;
     HKSourceAuthorizationController * _sourceAuthorizationController;
@@ -30,6 +31,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HKHealthStore *healthStore;
 @property (readonly) bool isPrompting;
+@property (nonatomic, copy) NSString *researchStudyUsageDescription;
 @property (nonatomic, copy) NSString *shareDescription;
 @property (nonatomic, retain) HKSource *source;
 @property (nonatomic, retain) HKSourceAuthorizationController *sourceAuthorizationController;
@@ -48,6 +50,7 @@
 - (void)_finishWithError:(id)arg1;
 - (bool)_isTypeEnabledAtIndexPath:(id)arg1;
 - (id)_localizedNameForSection:(long long)arg1 type:(id)arg2;
+- (id)_openAppCell;
 - (bool)_shouldDisplayHealthRecordsRequests;
 - (bool)_shouldDisplayReadingSection;
 - (bool)_shouldDisplaySharingSection;
@@ -69,12 +72,14 @@
 - (bool)isPrompting;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)reloadAuthorizationSettings;
+- (id)researchStudyUsageDescription;
 - (id)sectionsForAuthController:(id)arg1;
 - (void)setActualSections:(id)arg1;
 - (void)setCancelButtonItem:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisplayCategoryController:(id)arg1;
 - (void)setDoneButtonItem:(id)arg1;
+- (void)setResearchStudyUsageDescription:(id)arg1;
 - (void)setShareDescription:(id)arg1;
 - (void)setSource:(id)arg1;
 - (void)setSourceAuthorizationController:(id)arg1;

@@ -36,6 +36,7 @@
 
 - (void).cxx_destruct;
 - (void)_checkForDingbatDuplicates;
+- (void)_checkForMalformationEmoji;
 - (void)_cleanUpOldFlagsCaches;
 - (void)_readPreferencesFromDefaults;
 - (void)_setRecentStrings:(id)arg1;
@@ -48,6 +49,7 @@
 - (bool)hasDisplayedSkinToneHelp;
 - (bool)hasLastUsedVariantForEmoji:(id)arg1;
 - (id)init;
+- (bool)isMalformationEmoji:(id)arg1;
 - (id)lastUsedVariantEmojiForEmoji:(id)arg1;
 - (void)loadDefaultsIfNecessary;
 - (unsigned long long)maximumRecentsCount;

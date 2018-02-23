@@ -28,6 +28,7 @@
 - (unsigned long long)numSamples;
 - (unsigned long long)sampleByteDepth;
 - (unsigned long long)startSampleCount;
+- (id)subChunkFrom:(unsigned long long)arg1 numSamples:(unsigned long long)arg2;
 - (id)subChunkFrom:(unsigned long long)arg1 numSamples:(unsigned long long)arg2 forChannel:(unsigned long long)arg3;
 
 @end

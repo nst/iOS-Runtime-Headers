@@ -9,6 +9,7 @@
     BSProcessHandle * _originatingProcess;
     BSMutableSettings * _otherSettings;
     BSMutableSettings * _transientLocalClientSettings;
+    FBSceneUpdateContext * _updateContext;
 }
 
 @property (nonatomic, copy) NSSet *actions;
@@ -19,6 +20,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) BSProcessHandle *originatingProcess;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) FBSceneUpdateContext *updateContext;
 
 // Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
 
@@ -44,9 +46,11 @@
 - (void)setAnimationFence:(id)arg1;
 - (void)setAnimationSettings:(id)arg1;
 - (void)setOriginatingProcess:(id)arg1;
+- (void)setUpdateContext:(id)arg1;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
 - (id)transientLocalClientSettings;
+- (id)updateContext;
 - (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit

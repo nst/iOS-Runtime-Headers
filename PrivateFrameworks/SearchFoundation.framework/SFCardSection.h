@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
  */
 
-@interface SFCardSection : NSObject <NSCopying, SFCardSection, SFJSONSerializable> {
+@interface SFCardSection : NSObject <CRCardSection, NSCopying, SFCardSection, SFJSONSerializable> {
     SFColor * _backgroundColor;
     bool  _canBeHidden;
     NSString * _cardSectionId;
@@ -20,14 +20,18 @@
     NSString * _type;
 }
 
+@property (nonatomic, readonly) NSArray *actionCommands;
 @property (nonatomic, retain) SFColor *backgroundColor;
+@property (nonatomic, readonly) <SFCardSection> *backingCardSection;
 @property (nonatomic) bool canBeHidden;
 @property (nonatomic, copy) NSString *cardSectionId;
+@property (nonatomic, readonly) NSString *cardSectionIdentifier;
 @property (nonatomic, copy) NSArray *commands;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 @property (nonatomic) bool hasBottomPadding;
+@property (nonatomic, readonly) bool hasNextCard;
 @property (nonatomic) bool hasTopPadding;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool hideDivider;
@@ -94,6 +98,10 @@
 
 // Image: /System/Library/PrivateFrameworks/Cards.framework/Cards
 
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)actionCommands;
+- (id)backingCardSection;
+- (id)cardSectionIdentifier;
+- (bool)hasNextCard;
+- (id)parametersForInteraction:(id)arg1;
 
 @end

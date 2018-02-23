@@ -9,9 +9,14 @@
     NSNumber * _connectionDelay;
     NSString * _connectionEdgeID;
     NSString * _connectionEdgeType;
+    NSNumber * _connectionEstablishmentTimeMsec;
     NSNumber * _connectionFallbackReason;
     NSString * _connectionMethod;
     NSArray * _connectionMethodHistory;
+    NSNumber * _connectionStartTimeToConnectionEstablishmentTimeMsec;
+    NSNumber * _connectionStartTimeToDNSResolutionTimeMsec;
+    NSNumber * _connectionStartTimeToTLSHandshakeTimeMsec;
+    NSNumber * _dnsResolutionTime;
     NSNumber * _firstTxByteDelay;
     NSDictionary * _flowNetworkInterfaceType;
     NSNumber * _meanPing;
@@ -29,6 +34,7 @@
     NSDictionary * _tcpInfoMetricsByInterfaceName;
     NSNumber * _timeUntilFirstByteRead;
     NSNumber * _timeUntilOpen;
+    NSNumber * _tlsHandshakeTimeMsec;
     NSNumber * _unacknowledgedPingCount;
     NSString * _wifiChannelInfo;
     NSString * _wifiPhyMode;
@@ -40,9 +46,14 @@
 @property (nonatomic, copy) NSNumber *connectionDelay;
 @property (nonatomic, copy) NSString *connectionEdgeID;
 @property (nonatomic, copy) NSString *connectionEdgeType;
+@property (nonatomic, copy) NSNumber *connectionEstablishmentTimeMsec;
 @property (nonatomic, copy) NSNumber *connectionFallbackReason;
 @property (nonatomic, copy) NSString *connectionMethod;
 @property (nonatomic, copy) NSArray *connectionMethodHistory;
+@property (nonatomic, copy) NSNumber *connectionStartTimeToConnectionEstablishmentTimeMsec;
+@property (nonatomic, copy) NSNumber *connectionStartTimeToDNSResolutionTimeMsec;
+@property (nonatomic, copy) NSNumber *connectionStartTimeToTLSHandshakeTimeMsec;
+@property (nonatomic, copy) NSNumber *dnsResolutionTime;
 @property (nonatomic, copy) NSNumber *firstTxByteDelay;
 @property (nonatomic, copy) NSDictionary *flowNetworkInterfaceType;
 @property (nonatomic, copy) NSNumber *meanPing;
@@ -60,6 +71,7 @@
 @property (setter=setTCPInfoMetricsByInterfaceName:, nonatomic, copy) NSDictionary *tcpInfoMetricsByInterfaceName;
 @property (nonatomic, copy) NSNumber *timeUntilFirstByteRead;
 @property (nonatomic, copy) NSNumber *timeUntilOpen;
+@property (nonatomic, copy) NSNumber *tlsHandshakeTimeMsec;
 @property (nonatomic, copy) NSNumber *unacknowledgedPingCount;
 @property (nonatomic, copy) NSString *wifiChannelInfo;
 @property (nonatomic, copy) NSString *wifiPhyMode;
@@ -73,9 +85,14 @@
 - (id)connectionDelay;
 - (id)connectionEdgeID;
 - (id)connectionEdgeType;
+- (id)connectionEstablishmentTimeMsec;
 - (id)connectionFallbackReason;
 - (id)connectionMethod;
 - (id)connectionMethodHistory;
+- (id)connectionStartTimeToConnectionEstablishmentTimeMsec;
+- (id)connectionStartTimeToDNSResolutionTimeMsec;
+- (id)connectionStartTimeToTLSHandshakeTimeMsec;
+- (id)dnsResolutionTime;
 - (id)firstTxByteDelay;
 - (id)flowNetworkInterfaceType;
 - (id)getConnectionMetricsDescription;
@@ -92,6 +109,7 @@
 - (void)setConnectionDelay:(id)arg1;
 - (void)setConnectionEdgeID:(id)arg1;
 - (void)setConnectionEdgeType:(id)arg1;
+- (void)setConnectionEstablishmentTimeMsec:(id)arg1;
 - (void)setConnectionFallbackReason:(id)arg1;
 - (void)setConnectionMethod:(id)arg1;
 - (void)setConnectionMethodHistory:(id)arg1;
@@ -101,6 +119,10 @@
 - (void)setConnectionMetricsFromStream:(id)arg1 isPop:(bool)arg2 withCompletion:(id /* block */)arg3;
 - (void)setConnectionMetricsFromStreamForDirect:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)setConnectionMetricsFromStreamForPOP:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)setConnectionStartTimeToConnectionEstablishmentTimeMsec:(id)arg1;
+- (void)setConnectionStartTimeToDNSResolutionTimeMsec:(id)arg1;
+- (void)setConnectionStartTimeToTLSHandshakeTimeMsec:(id)arg1;
+- (void)setDnsResolutionTime:(id)arg1;
 - (void)setFirstTxByteDelay:(id)arg1;
 - (void)setFlowNetworkInterfaceType:(id)arg1;
 - (void)setMeanPing:(id)arg1;
@@ -118,6 +140,7 @@
 - (void)setTCPInfoMetricsByInterfaceName:(id)arg1;
 - (void)setTimeUntilFirstByteRead:(id)arg1;
 - (void)setTimeUntilOpen:(id)arg1;
+- (void)setTlsHandshakeTimeMsec:(id)arg1;
 - (void)setUnacknowledgedPingCount:(id)arg1;
 - (void)setWifiChannelInfo:(id)arg1;
 - (void)setWifiPhyMode:(id)arg1;
@@ -129,6 +152,7 @@
 - (id)tcpInfoMetricsByInterfaceName;
 - (id)timeUntilFirstByteRead;
 - (id)timeUntilOpen;
+- (id)tlsHandshakeTimeMsec;
 - (id)unacknowledgedPingCount;
 - (id)wifiChannelInfo;
 - (id)wifiPhyMode;

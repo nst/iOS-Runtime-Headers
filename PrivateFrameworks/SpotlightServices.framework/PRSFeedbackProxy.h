@@ -28,6 +28,7 @@
 - (void)didReceiveResultsAfterTimeout:(id)arg1;
 - (void)didStartSearch:(id)arg1;
 - (id)listener;
+- (void)reportFeedback:(id)arg1 queryId:(long long)arg2;
 - (void)resultsDidBecomeVisible:(id)arg1;
 - (void)searchViewDidAppear:(id)arg1;
 - (void)searchViewDidDisappear:(id)arg1;

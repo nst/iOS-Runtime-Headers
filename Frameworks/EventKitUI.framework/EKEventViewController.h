@@ -143,7 +143,6 @@
 - (unsigned long long)_sectionForDetailItem:(id)arg1;
 - (id)_sectionsForTableView:(id)arg1;
 - (void)_setObservesKeyboardNotifications:(bool)arg1;
-- (void)_setUpAttendeesWithAcceptedItem:(id)arg1 declinedItem:(id)arg2 maybeItem:(id)arg3 noReplyItem:(id)arg4;
 - (void)_setUpForEvent;
 - (void)_setUpkeyCommands;
 - (bool)_shouldDisplayDelegateOrOutOfDateMessage;

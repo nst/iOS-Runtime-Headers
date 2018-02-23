@@ -11,6 +11,7 @@
 - (void)commuteDestination:(MNCommuteDestination *)arg1 didChangeLastMatchedLocation:(MNLocation *)arg2;
 - (void)commuteDestination:(MNCommuteDestination *)arg1 didChangeRemainingDistance:(double)arg2;
 - (void)commuteDestination:(MNCommuteDestination *)arg1 didChangeRemainingTime:(double)arg2;
+- (void)commuteDestination:(MNCommuteDestination *)arg1 didChangeRerouting:(bool)arg2;
 - (void)commuteDestination:(MNCommuteDestination *)arg1 didChangeRoute:(GEOComposedRoute *)arg2;
 - (void)commuteDestination:(MNCommuteDestination *)arg1 didChangeScore:(long long)arg2;
 - (void)commuteDestination:(MNCommuteDestination *)arg1 didChangeScores:(NSDictionary *)arg2;

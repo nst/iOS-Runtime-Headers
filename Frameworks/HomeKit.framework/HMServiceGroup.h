@@ -31,8 +31,10 @@
 @property (nonatomic, readonly) bool hf_isSupported;
 @property (nonatomic, readonly) bool hf_isVisibleInHomeStatus;
 @property (nonatomic, readonly) NSPredicate *hf_notificationsCondition;
+@property (nonatomic, readonly) HFServiceDescriptor *hf_serviceDescriptor;
 @property (nonatomic, readonly) HFServiceNameComponents *hf_serviceNameComponents;
 @property (nonatomic, readonly) bool hf_shouldShowInFavorites;
+@property (nonatomic, readonly) bool hf_supportsHomeStatus;
 @property (nonatomic, readonly) bool hf_supportsNotifications;
 @property (nonatomic) HMHome *home;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
@@ -107,8 +109,10 @@
 - (id)hf_notificationsCondition;
 - (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
 - (id)hf_serializedStateDumpRepresentation;
+- (id)hf_serviceDescriptor;
 - (id)hf_serviceNameComponents;
 - (bool)hf_shouldShowInFavorites;
+- (bool)hf_supportsHomeStatus;
 - (bool)hf_supportsNotifications;
 - (id)hf_updateDateAdded:(id)arg1;
 - (id)hf_updateIsFavorite:(bool)arg1;

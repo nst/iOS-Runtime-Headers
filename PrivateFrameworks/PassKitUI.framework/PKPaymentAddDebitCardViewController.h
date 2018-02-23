@@ -5,7 +5,7 @@
 @interface PKPaymentAddDebitCardViewController : PKExplanationViewController <PKExplanationViewDelegate, PKPaymentSetupDelegate> {
     <PKPaymentSetupViewControllerDelegate> * _delegate;
     UIImage * _passSnapShot;
-    PKPaymentWebService * _webService;
+    PKPaymentProvisioningController * _provisioningController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,16 +14,17 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_completeAddDebitCardFlow;
+- (void)_handleNextStep;
 - (void)_handleProvisioningError:(id)arg1;
 - (id)_paymentSetupNavigationControllerForProvisioningController:(id)arg1;
 - (void)_presentPaymentSetupController;
 - (void)_setNavigationBarEnabled:(bool)arg1;
 - (void)_setViewEnabledState:(bool)arg1;
 - (void)_setupLater;
+- (void)_terminateSetupFlow;
 - (void)explanationViewDidSelectContinue:(id)arg1;
 - (void)explanationViewDidSelectSetupLater:(id)arg1;
-- (id)initWithPaymentWebService:(id)arg1 context:(long long)arg2 setupDelegate:(id)arg3 passSnapshot:(id)arg4;
+- (id)initWithProvisioningController:(id)arg1 context:(long long)arg2 setupDelegate:(id)arg3 passSnapshot:(id)arg4;
 - (void)paymentSetupDidFinish:(id)arg1;
 - (void)viewDidLoad;
 

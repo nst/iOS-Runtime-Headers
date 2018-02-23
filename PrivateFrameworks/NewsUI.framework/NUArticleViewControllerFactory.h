@@ -9,7 +9,7 @@
     <NUDynamicTypeProviding> * _dynamicTypeProviding;
     <NUEndOfArticleDataProviderFactory> * _endOfArticleDataProviderFactory;
     <NUScrollViewKeyCommandHandler> * _keyCommandHandler;
-    <NULinkPreviewing> * _linkPreviewing;
+    <NFResolver> * _resolver;
 }
 
 @property (nonatomic, readonly) <SXAppStateMonitor> *appStateMonitor;
@@ -21,7 +21,7 @@
 @property (nonatomic, readonly) <NUEndOfArticleDataProviderFactory> *endOfArticleDataProviderFactory;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <NUScrollViewKeyCommandHandler> *keyCommandHandler;
-@property (nonatomic, readonly) <NULinkPreviewing> *linkPreviewing;
+@property (nonatomic, readonly) <NFResolver> *resolver;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -33,8 +33,8 @@
 - (id)createArticleWebViewControllerWithArticle:(id)arg1;
 - (id)dynamicTypeProviding;
 - (id)endOfArticleDataProviderFactory;
-- (id)initWithArticleDataProviderFactory:(id)arg1 endOfArticleDataProviderFactory:(id)arg2 articleAdManagerFactory:(id)arg3 linkPreviewing:(id)arg4 dynamicTypeProviding:(id)arg5 appStateMonitor:(id)arg6 keyCommandHandler:(id)arg7;
+- (id)initWithArticleDataProviderFactory:(id)arg1 endOfArticleDataProviderFactory:(id)arg2 articleAdManagerFactory:(id)arg3 dynamicTypeProviding:(id)arg4 appStateMonitor:(id)arg5 keyCommandHandler:(id)arg6 resolver:(id)arg7;
 - (id)keyCommandHandler;
-- (id)linkPreviewing;
+- (id)resolver;
 
 @end

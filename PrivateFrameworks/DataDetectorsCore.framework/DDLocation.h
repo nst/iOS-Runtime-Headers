@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsCore.framework/DataDetectorsCore
  */
 
-@interface DDLocation : NSObject <NSCoding> {
+@interface DDLocation : NSObject <NSSecureCoding> {
     NSString * _fileName;
     int  _firstColumn;
     int  _firstLine;
@@ -15,6 +15,8 @@
 @property (readonly) int firstLine;
 @property (readonly) int lastColumn;
 @property (readonly) int lastLine;
+
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (id)description;

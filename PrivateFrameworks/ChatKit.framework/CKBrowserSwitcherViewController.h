@@ -20,7 +20,6 @@
     double  _expandGestureTranslationOffset;
     bool  _expandInteractionDidMove;
     UIViewPropertyAnimator * _expandPropertyAnimator;
-    _UIBackdropView * _extraTopSpacingBackdropView;
     UICollectionViewFlowLayout * _flowLayout;
     CKBrowserSwitcherFooterView * _footerView;
     CKBrowserSwitcherFooterViewDataSource * _footerViewDataSource;
@@ -88,6 +87,7 @@
 - (void)_endHoldingScrollUpdatesForKey:(id)arg1;
 - (void)_handleRemoteViewControllerConnectionInterrupted:(id)arg1;
 - (void)_handleVisibleSwitcherPluginsChanged:(id)arg1;
+- (bool)_hasLandscapeGutters;
 - (double)_horizontalOffsetForVisibleSwitcherPluginIndex:(unsigned long long)arg1;
 - (void)_insertCurrentBrowserAndRemoveOldBrowsersIfNeeded;
 - (void)_loadBrowserForBalloonPlugin:(id)arg1 datasource:(id)arg2;

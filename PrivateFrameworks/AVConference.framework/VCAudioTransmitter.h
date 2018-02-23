@@ -28,6 +28,7 @@
     struct opaqueVCAudioBufferList { } * _encodeBuffer;
     unsigned int  _estimateTxAudioBytes;
     bool  _ignoreSilence;
+    bool  _includeRedSequenceOffset;
     struct AudioStreamBasicDescription { 
         double mSampleRate; 
         unsigned int mFormatID; 

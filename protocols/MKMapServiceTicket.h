@@ -10,6 +10,7 @@
 - (GEOMapRegion *)boundingRegion;
 - (NSArray *)browseCategories;
 - (void)cancel;
+- (GEOResolvedItem *)clientResolvedResult;
 - (GEORelatedSearchSuggestion *)defaultRelatedSuggestion;
 - (GEODirectionIntent *)directionIntent;
 - (NSArray *)displayHeaderSubstitutes;

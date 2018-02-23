@@ -26,6 +26,7 @@
 - (bool)isDeviceLockedWithPasscode;
 - (bool)isTimeoutSuspended;
 - (bool)openSensitiveURL:(id)arg1;
+- (id)peerInfoForCurrentCommand;
 - (id)serviceHelper;
 - (void)setIsClientLiteHelper:(bool)arg1;
 - (void)setServiceHelper:(id)arg1;

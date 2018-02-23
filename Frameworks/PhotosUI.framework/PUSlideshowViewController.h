@@ -91,6 +91,7 @@
 - (void)viewDidLoad;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 - (void)viewWillAppear:(bool)arg1;
+- (void)viewWillLayoutSubviews;
 - (id)visibleAssets;
 
 @end

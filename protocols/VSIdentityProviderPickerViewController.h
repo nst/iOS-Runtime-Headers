@@ -19,4 +19,8 @@
 - (void)setRequestingAppDisplayName:(NSString *)arg1;
 - (void)setResourceTitle:(NSString *)arg1;
 
+@optional
+
+- (UISearchController *)searchController;
+
 @end

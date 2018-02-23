@@ -9,6 +9,7 @@
     NSString * _audioEventQueueLabel;
     unsigned long long  _audioSessionDeactivationPreventionRequestsCount;
     TLAttentionAwarenessEffectCoordinator * _effectCoordinator;
+    bool  _hasToneAssetForPendingPlayingAlert;
     bool  _isAlertActivationAssertionAcquired;
     bool  _isAttentionAwarenessSubsystemFullyInitialized;
     bool  _isAudioEnvironmentSetup;
@@ -65,6 +66,7 @@
 - (void)_queuePlayer:(id)arg1 currentItemStatusWasUpdatedToValue:(long long)arg2;
 - (void)_queuePlayer:(id)arg1 currentItemWasUpdatedFromValue:(id)arg2;
 - (void)_reloadPlaybackForPlayingAlertWithToneIdentifier:(id)arg1;
+- (void)_resetClientPriority;
 - (void)_restoreAudioEnvironment;
 - (void)_startObservingAudioSessionInterruptionNotifications;
 - (void)_startObservingQueuePlayer;

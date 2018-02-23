@@ -3,25 +3,31 @@
  */
 
 @interface MPNowPlayingInfoCenter : NSObject {
-    NSDictionary * __mediaRemoteNowPlayingInfo;
+    NSObject<OS_dispatch_queue> * _accessQueue;
     MPArtworkResizeUtility * _artworkResizeUtility;
-    void * _artworkToken;
-    bool  _coalescingUpdates;
-    NSMutableOrderedSet * _contentItemIdentifiersNotSentToMediaRemote;
-    NSMutableOrderedSet * _contentItemIdentifiersSentToMediaRemote;
+    struct { 
+        void *createPlaybackQueue; 
+        void *createChildItem; 
+        void *metadata; 
+        void *artwork; 
+        void *info; 
+        void *languageOptions; 
+        void *lyrics; 
+    }  _callbacks;
+    NSObject<OS_dispatch_queue> * _calloutQueue;
+    NSMutableArray * _contentItemIdentifiers;
+    MSVTimer * _contentItemInvalidationTimer;
+    MSVLRUDictionary * _contentItems;
     NSDictionary * _convertedNowPlayingInfo;
-    void * _createChildItemToken;
-    void * _createItemForIdentifierToken;
-    void * _createItemForOffsetToken;
-    void * _createPlaybackQueueToken;
-    void * _infoToken;
-    void * _languageOptionsToken;
+    NSObject<OS_dispatch_queue> * _dataSourceQueue;
+    struct _MSVSignedRange { 
+        long long location; 
+        long long length; 
+    }  _loadedContentItemsRange;
     <MPNowPlayingInfoLyricsDelegate> * _lyricsDelegate;
-    void * _lyricsToken;
-    void * _metadataToken;
     NSMutableDictionary * _mutatedContentItems;
     NSMutableDictionary * _mutatedPlaybackQueueRequests;
-    bool  _needsInvalidation;
+    MPNowPlayingContentItem * _nowPlayingContentItem;
     NSDictionary * _nowPlayingInfo;
     <MPNowPlayingPlaybackQueueDataSource> * _playbackQueueDataSource;
     <MPNowPlayingPlaybackQueueDelegate> * _playbackQueueDelegate;
@@ -30,61 +36,74 @@
     void * _playerPath;
     MPNowPlayingInfoCenterArtworkContext * _publishedContext;
     NSDate * _pushDate;
-    NSObject<OS_dispatch_queue> * _queue;
     NSDictionary * _queuedNowPlayingInfo;
+    struct _MSVSignedRange { 
+        long long location; 
+        long long length; 
+    }  _requestedContentItemsRange;
     NSObject<OS_dispatch_queue> * _utilityQueue;
 }
 
-@property (nonatomic, readonly) NSDictionary *_mediaRemoteNowPlayingInfo;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *dataSourceQueue;
 @property (nonatomic) <MPNowPlayingInfoLyricsDelegate> *lyricsDelegate;
-@property (copy) NSDictionary *nowPlayingInfo;
+@property (nonatomic, retain) MPNowPlayingContentItem *nowPlayingContentItem;
+@property (nonatomic, copy) NSDictionary *nowPlayingInfo;
 @property (nonatomic) MPCPlaybackEngine *playbackEngine;
 @property (nonatomic) <MPNowPlayingPlaybackQueueDataSource> *playbackQueueDataSource;
 @property (nonatomic) <MPNowPlayingPlaybackQueueDelegate> *playbackQueueDelegate;
-@property unsigned long long playbackState;
+@property (nonatomic) unsigned long long playbackState;
 @property (nonatomic, readonly) NSString *playerID;
-@property (nonatomic, readonly, copy) NSSet *unpublishedChangedContentItemIDs;
+@property (nonatomic, readonly) void*playerPath;
+@property (nonatomic, readonly) bool supportsArtworkCatalogLoading;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 + (id)defaultCenter;
 + (id)infoCenterForPlayerID:(id)arg1;
++ (id)serviceQueue;
 
 - (void).cxx_destruct;
-- (void)_clearPlaybackQueueDataSourceCallbacks;
+- (id)_artworkCatalogForContentItem:(id)arg1;
+- (void)_becomeActiveWithCompletion:(id /* block */)arg1;
+- (id)_childContentItemForContentItem:(id)arg1 indexPath:(id)arg2;
 - (void)_contentItemChangedNotification:(id)arg1;
-- (void)_getArtworkForRequest:(void*)arg1 item:(id)arg2 returnItem:(id)arg3 completion:(id /* block */)arg4;
+- (id)_contentItemForIdentifier:(id)arg1;
+- (id)_contentItemForIdentifier:(id)arg1 alreadyOnDataSourceQueue:(bool)arg2;
+- (id)_contentItemIDsInRange:(struct { long long x1; long long x2; })arg1 itemsRange:(struct { long long x1; long long x2; }*)arg2;
+- (void*)_createPlaybackQueueForRequest:(void*)arg1;
 - (void)_getInfoForRequest:(void*)arg1 item:(id)arg2 returnItem:(id)arg3 completion:(id /* block */)arg4;
-- (void)_getLanguageOptionsForRequest:(void*)arg1 item:(id)arg2 returnItem:(id)arg3 completion:(id /* block */)arg4;
-- (void)_getLyricsForRequest:(void*)arg1 item:(id)arg2 returnItem:(id)arg3 completion:(id /* block */)arg4;
+- (void)_getMetadataForContentItem:(id)arg1 completion:(id /* block */)arg2;
+- (void)_initializeNowPlayingInfo;
 - (void)_invalidatePlaybackQueueImmediately;
-- (id)_mediaRemoteNowPlayingInfo;
-- (void)_pushContentItemsUpdate;
-- (void)_pushNowPlayingInfoAndRetry:(bool)arg1;
-- (id)_queryChildItemFromDataSource:(id)arg1 atIndexPath:(id)arg2 fromRoot:(id)arg3;
-- (void)_registerLyricsDelegateCallbacks:(id)arg1;
-- (void)_registerPlaybackQueueDataSourceCallbacks:(id)arg1;
-- (void)_removeToken:(void**)arg1;
+- (id)_onDataSourceQueue_artworkCatalogForContentItem:(id)arg1;
+- (void)_onDataSourceQueue_getContentItemIDsInRange:(struct _MSVSignedRange { long long x1; long long x2; })arg1 completion:(id /* block */)arg2;
+- (void)_onQueue_clearPlaybackQueueDataSourceCallbacks;
+- (void)_onQueue_pushContentItemsUpdate;
+- (void)_onQueue_pushNowPlayingInfoAndRetry:(bool)arg1;
+- (void)_onQueue_registerLyricsDelegateCallbacks:(id)arg1;
+- (void)_onQueue_registerPlaybackQueueDataSourceCallbacks:(id)arg1;
 - (void)becomeActive;
-- (void)beginObservingChangesForContentItemIDs:(id)arg1;
-- (void)beginPlaybackQueueContentItemUpdates;
+- (id)dataSourceQueue;
 - (void)dealloc;
-- (void)endPlaybackQueueContentItemUpdates;
 - (id)init;
 - (id)initWithPlayerID:(id)arg1;
 - (void)invalidatePlaybackQueue;
 - (id)lyricsDelegate;
+- (id)nowPlayingContentItem;
 - (id)nowPlayingInfo;
 - (id)playbackQueueDataSource;
 - (id)playbackQueueDelegate;
 - (unsigned long long)playbackState;
 - (id)playerID;
+- (void*)playerPath;
+- (void)setDataSourceQueue:(id)arg1;
 - (void)setLyricsDelegate:(id)arg1;
+- (void)setNowPlayingContentItem:(id)arg1;
 - (void)setNowPlayingInfo:(id)arg1;
 - (void)setPlaybackQueueDataSource:(id)arg1;
 - (void)setPlaybackQueueDelegate:(id)arg1;
 - (void)setPlaybackState:(unsigned long long)arg1;
-- (id)unpublishedChangedContentItemIDs;
+- (bool)supportsArtworkCatalogLoading;
 
 // Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
 

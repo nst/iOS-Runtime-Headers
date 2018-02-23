@@ -23,6 +23,6 @@
 - (id)setupContentView;
 - (id)splitHeaderView;
 - (void)updateChevronVisible:(bool)arg1 leaveSpaceForChevron:(bool)arg2;
-- (void)updateWithCardSection:(id)arg1;
+- (void)updateWithRowModel:(id)arg1;
 
 @end

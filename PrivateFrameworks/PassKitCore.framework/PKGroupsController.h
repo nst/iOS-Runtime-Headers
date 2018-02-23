@@ -79,6 +79,7 @@
 - (void)moveGroupAtIndex:(unsigned long long)arg1 toIndex:(unsigned long long)arg2;
 - (void)objectSettingsDidChangeNotification:(id)arg1;
 - (void)passLibrary:(id)arg1 receivedUpdatedCatalog:(id)arg2 passes:(id)arg3;
+- (id)passWithUniqueID:(id)arg1;
 - (void)preloadGroupsAndFrontFaceImages;
 - (void)reloadGroups;
 - (void)reloadGroupsAndNotify:(bool)arg1 completion:(id /* block */)arg2;

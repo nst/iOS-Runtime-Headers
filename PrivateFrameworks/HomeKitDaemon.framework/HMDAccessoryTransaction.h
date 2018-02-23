@@ -7,6 +7,7 @@
 @property (nonatomic, retain) NSNumber *accessoryCategory;
 @property (nonatomic, retain) NSNumber *blocked;
 @property (nonatomic, retain) NSString *configurationAppIdentifier;
+@property (nonatomic, retain) NSString *configuredName;
 @property (nonatomic, retain) NSString *firmwareVersion;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSString *manufacturer;

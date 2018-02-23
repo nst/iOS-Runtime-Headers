@@ -11,8 +11,6 @@
 + (Class)transformerClass;
 
 - (void).cxx_destruct;
-- (bool)automaticallyUpdateScrollViewContentInset;
-- (bool)automaticallyUpdateScrollViewContentOffset;
 - (bool)canEnterFullScreen;
 - (bool)canSwipeToDismiss;
 - (void)loadPreviewControllerWithContents:(id)arg1 context:(id)arg2 completionHandler:(id /* block */)arg3;

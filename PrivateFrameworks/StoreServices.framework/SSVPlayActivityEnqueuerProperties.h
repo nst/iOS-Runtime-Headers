@@ -7,6 +7,7 @@
     NSString * _buildVersion;
     NSString * _deviceGUID;
     NSString * _deviceName;
+    NSNumber * _privateListeningEnabled;
     unsigned long long  _storeAccountID;
     NSString * _storeFrontID;
     long long  _systemReleaseType;
@@ -17,6 +18,7 @@
 @property (nonatomic, readonly, copy) NSString *buildVersion;
 @property (nonatomic, readonly, copy) NSString *deviceGUID;
 @property (nonatomic, readonly, copy) NSString *deviceName;
+@property (getter=isPrivateListeningEnabled, nonatomic, readonly, copy) NSNumber *privateListeningEnabled;
 @property (nonatomic, readonly) unsigned long long storeAccountID;
 @property (nonatomic, readonly, copy) NSString *storeFrontID;
 @property (nonatomic, readonly) long long systemReleaseType;
@@ -33,6 +35,7 @@
 - (id)deviceName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)isPrivateListeningEnabled;
 - (bool)isSBEnabled;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned long long)storeAccountID;

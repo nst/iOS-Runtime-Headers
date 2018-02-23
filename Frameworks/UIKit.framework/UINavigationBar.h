@@ -29,6 +29,7 @@
         unsigned int isIgnoringLock : 1; 
         unsigned int isContainedInPopover : 1; 
         unsigned int layoutInProgress : 1; 
+        unsigned int delegateRespondsToFreezeLayoutForDismissalSelector : 1; 
     }  _navbarFlags;
     bool  _prefersLargeTitles;
     long long  _requestedContentSize;
@@ -190,9 +191,11 @@
 - (void)_getBackgroundImage:(id*)arg1 shouldRespectOversizedBackgroundImage:(bool*)arg2 actualBarMetrics:(long long*)arg3 actualBarPosition:(long long*)arg4;
 - (bool)_hasBackButton;
 - (bool)_hasCustomAutolayoutNeighborSpacingForAttribute:(long long*)arg1;
+- (bool)_hasLegacyProvider;
 - (double)_heightIncludingBackground;
 - (struct { double x1; double x2; })_heightRangeForNavigationItem:(id)arg1 fittingWidth:(double)arg2;
 - (bool)_hidesShadow;
+- (bool)_hostsLayoutEngineAllowsTAMIC_NO;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_incomingNavigationBarFrame;
 - (double)_internalShadowAlpha;
 - (void)_intrinsicContentSizeInvalidatedForChildView:(id)arg1;

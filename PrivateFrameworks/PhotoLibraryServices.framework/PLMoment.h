@@ -32,7 +32,6 @@
 @property (nonatomic, readonly, copy) NSString *localizedTitle;
 @property (nonatomic, retain) PLMomentList *megaMomentList;
 @property (nonatomic, retain) NSDate *modificationDate;
-@property (nonatomic, retain) PLMomentLibrary *momentLibrary;
 @property (nonatomic, readonly) unsigned long long photosCount;
 @property (nonatomic, retain) NSDate *representativeDate;
 @property (nonatomic, retain) NSData *reverseLocationData;
@@ -54,7 +53,6 @@
 
 + (id)allAssetsIncludedInMomentsInLibrary:(id)arg1;
 + (id)allAssetsIncludedInMomentsInManagedObjectContext:(id)arg1 IDsOnly:(bool)arg2 error:(id*)arg3;
-+ (id)allMomentsInLibrary:(id)arg1;
 + (id)allMomentsInManagedObjectContext:(id)arg1 error:(id*)arg2;
 + (id)allMomentsRequiringAnalysisInManagedObjectContext:(id)arg1 error:(id*)arg2;
 + (id)entityInManagedObjectContext:(id)arg1;

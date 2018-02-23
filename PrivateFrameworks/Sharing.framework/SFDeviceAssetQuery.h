@@ -3,6 +3,7 @@
  */
 
 @interface SFDeviceAssetQuery : NSObject {
+    NSDictionary * _additionalQueryParameters;
     NSString * _color;
     NSString * _colorCoverGlass;
     NSString * _colorHousing;
@@ -14,6 +15,7 @@
     unsigned long long  _version;
 }
 
+@property (nonatomic, readonly) NSDictionary *additionalQueryParameters;
 @property (nonatomic, readonly) NSString *color;
 @property (nonatomic, readonly) NSString *colorCoverGlass;
 @property (nonatomic, readonly) NSString *colorHousing;
@@ -27,6 +29,7 @@
 + (bool)deviceWantsLegacyFormats;
 
 - (void).cxx_destruct;
+- (id)additionalQueryParameters;
 - (id)color;
 - (id)colorCoverGlass;
 - (id)colorHousing;
@@ -34,8 +37,10 @@
 - (bool)forEngagement;
 - (unsigned long long)hash;
 - (id)initWithBluetoothProductIdentifier:(unsigned long long)arg1 color:(unsigned long long)arg2 engagement:(bool)arg3;
+- (id)initWithHomePodColor:(unsigned long long)arg1;
 - (id)initWithPhoneProductType:(id)arg1 colorHousing:(id)arg2 colorCoverGlass:(id)arg3;
 - (id)initWithProductType:(id)arg1;
+- (id)initWithProductType:(id)arg1 additionalQueryParameters:(id)arg2;
 - (id)initWithWatchProductType:(id)arg1 marketingProductNumber:(id)arg2;
 - (bool)isEqual:(id)arg1;
 - (bool)legacyFormats;

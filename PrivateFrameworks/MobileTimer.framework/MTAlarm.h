@@ -62,6 +62,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *title;
 
+// Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
+
 + (bool)_date:(id)arg1 isOnDay:(long long)arg2 calendar:(id)arg3;
 + (bool)_isInternalBuild;
 + (id)alarm;
@@ -117,6 +119,7 @@
 - (bool)isSleepAlarm;
 - (bool)isSnoozed;
 - (id)keyForIdentifier;
+- (id)keysAffectingNotification;
 - (id)keysAffectingScheduling;
 - (id)keysAffectingSnooze;
 - (id)lastModifiedDate;
@@ -161,5 +164,13 @@
 - (id)sound;
 - (id)title;
 - (id)upcomingTriggersAfterDate:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Home.framework/Home
+
++ (id)hf_alarmsMatchingAlarmId:(id)arg1 withinItemArray:(id)arg2;
++ (bool)hf_areAlarms:(id)arg1 equalToAlarms:(id)arg2 includeModificationDate:(bool)arg3;
++ (id)hf_buildAlarmFromCollectionSettingItem:(id)arg1;
++ (id)hf_buildAlarmsFromCollectionSettingItems:(id)arg1;
++ (bool)hf_verifyThatAlarmsAreConsistent:(id)arg1;
 
 @end

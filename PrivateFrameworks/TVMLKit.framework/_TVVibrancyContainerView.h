@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
  */
 
-@interface _TVVibrancyContainerView : UIVisualEffectView {
+@interface _TVVibrancyContainerView : _TVVisualEffectView {
     UIView * _containedView;
 }
 

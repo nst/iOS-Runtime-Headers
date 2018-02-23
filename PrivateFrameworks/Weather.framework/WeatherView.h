@@ -4,6 +4,7 @@
 
 @interface WeatherView : UIView <CityUpdateObserver> {
     City * _city;
+    NSLocale * _lastLocale;
     bool  _showWind;
     bool  _showingDay;
     UIView * _windView;

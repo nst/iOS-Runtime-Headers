@@ -10,6 +10,7 @@
     NSString * _hardwareModel;
     struct { 
         unsigned int sessionId : 1; 
+        unsigned int relativeTimestamp : 1; 
         unsigned int requestSource : 1; 
         unsigned int sequenceNumber : 1; 
         unsigned int isFromApi : 1; 
@@ -22,6 +23,7 @@
     NSString * _loggedAbExperiment;
     NSString * _osVersion;
     NSString * _productName;
+    double  _relativeTimestamp;
     int  _requestSource;
     GEOLocalTime * _requestTime;
     unsigned int  _sequenceNumber;
@@ -49,6 +51,7 @@
 @property (nonatomic, readonly) bool hasLoggedAbExperiment;
 @property (nonatomic, readonly) bool hasOsVersion;
 @property (nonatomic, readonly) bool hasProductName;
+@property (nonatomic) bool hasRelativeTimestamp;
 @property (nonatomic) bool hasRequestSource;
 @property (nonatomic, readonly) bool hasRequestTime;
 @property (nonatomic) bool hasSequenceNumber;
@@ -59,6 +62,7 @@
 @property (nonatomic, retain) NSString *loggedAbExperiment;
 @property (nonatomic, retain) NSString *osVersion;
 @property (nonatomic, retain) NSString *productName;
+@property (nonatomic) double relativeTimestamp;
 @property (nonatomic) int requestSource;
 @property (nonatomic, retain) GEOLocalTime *requestTime;
 @property (nonatomic) unsigned int sequenceNumber;
@@ -92,6 +96,7 @@
 - (bool)hasLoggedAbExperiment;
 - (bool)hasOsVersion;
 - (bool)hasProductName;
+- (bool)hasRelativeTimestamp;
 - (bool)hasRequestSource;
 - (bool)hasRequestTime;
 - (bool)hasSequenceNumber;
@@ -107,6 +112,7 @@
 - (id)osVersion;
 - (id)productName;
 - (bool)readFrom:(id)arg1;
+- (double)relativeTimestamp;
 - (int)requestSource;
 - (id)requestSourceAsString:(int)arg1;
 - (id)requestTime;
@@ -123,6 +129,7 @@
 - (void)setHasIsFromApi:(bool)arg1;
 - (void)setHasIsInternalInstall:(bool)arg1;
 - (void)setHasIsInternalTool:(bool)arg1;
+- (void)setHasRelativeTimestamp:(bool)arg1;
 - (void)setHasRequestSource:(bool)arg1;
 - (void)setHasSequenceNumber:(bool)arg1;
 - (void)setHasSessionId:(bool)arg1;
@@ -132,6 +139,7 @@
 - (void)setLoggedAbExperiment:(id)arg1;
 - (void)setOsVersion:(id)arg1;
 - (void)setProductName:(id)arg1;
+- (void)setRelativeTimestamp:(double)arg1;
 - (void)setRequestSource:(int)arg1;
 - (void)setRequestTime:(id)arg1;
 - (void)setSequenceNumber:(unsigned int)arg1;

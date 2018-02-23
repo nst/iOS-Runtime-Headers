@@ -20,6 +20,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (bool)_formContainsAutoFilledElements:(id)arg1;
 - (id)_observer;
 - (void)_webProcessPlugInBrowserContextController:(id)arg1 didAssociateFormControls:(id)arg2;
 - (void)_webProcessPlugInBrowserContextController:(id)arg1 textDidChangeInTextField:(id)arg2 inFrame:(id)arg3 initiatedByUserTyping:(bool)arg4;

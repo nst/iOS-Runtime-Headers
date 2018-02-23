@@ -16,9 +16,7 @@
 @property (nonatomic) bool hasTimestamp;
 @property (nonatomic) unsigned long long timestamp;
 
-- (int)StringAsAction:(id)arg1;
 - (int)action;
-- (id)actionAsString:(int)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

@@ -33,6 +33,12 @@
     }  _originalSize;
     bool  _prefersFirstLineSelection;
     int  _preventLayout;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _previousLayoutMargins;
     struct _NSRange { 
         unsigned long long location; 
         unsigned long long length; 
@@ -152,6 +158,7 @@
 - (bool)isDirty;
 - (bool)isForwardingNotification;
 - (id)keyCommands;
+- (void)layoutMarginsDidChange;
 - (void)layoutWithMinimumSize;
 - (id)localDragSessionID;
 - (id)mailComposeViewDelegate;
@@ -186,7 +193,6 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setImageDropSnapshot:(id)arg1;
 - (void)setLayoutInterval:(int)arg1;
-- (void)setLayoutMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setLoading:(bool)arg1;
 - (void)setLocalDragSessionID:(id)arg1;
 - (void)setMailComposeViewDelegate:(id)arg1;

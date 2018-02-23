@@ -32,6 +32,7 @@
 - (void)configurationDataWithCompletionHandler:(id /* block */)arg1;
 - (void)dealloc;
 - (void)deleteApplicationWithAID:(id)arg1;
+- (bool)hasRegistrationRegionMap;
 - (id)init;
 - (id)initWithCallbackQueue:(id)arg1;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;

@@ -12,6 +12,7 @@
 - (bool)drawsSeparatorAtTopOfSection;
 - (long long)indentationLevel;
 - (double)indexBarExtentFromEdge;
+- (bool)insetsContentViewsToSafeArea;
 - (bool)layoutMarginsFollowReadableWidth;
 - (double)sectionBorderWidth;
 - (int)sectionLocation;
@@ -22,6 +23,7 @@
 - (void)setDrawsSeparatorAtTopOfSection:(bool)arg1;
 - (void)setIndentationLevel:(long long)arg1;
 - (void)setIndexBarExtentFromEdge:(double)arg1;
+- (void)setInsetsContentViewsToSafeArea:(bool)arg1;
 - (void)setLayoutMarginsFollowReadableWidth:(bool)arg1;
 - (void)setSectionBorderWidth:(double)arg1;
 - (void)setSectionLocation:(int)arg1;

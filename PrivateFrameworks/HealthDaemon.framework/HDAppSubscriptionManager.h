@@ -40,7 +40,6 @@
 - (void)_queue_launchSubscription:(id)arg1 anchor:(id)arg2;
 - (void)_queue_scheduleLaunchForSubscription:(id)arg1 anchor:(id)arg2;
 - (void)_queue_scheduleLaunches:(long long)arg1 anchor:(id)arg2;
-- (void)_queue_setAnchor:(id)arg1 forDataCode:(long long)arg2;
 - (void)_queue_subscribeForBundleID:(id)arg1 dataCode:(long long)arg2 frequencyInSeconds:(unsigned long long)arg3;
 - (id)_queue_subscriptionForActivityName:(id)arg1 anchor:(id*)arg2;
 - (void)_queue_updateBundleID:(id)arg1 dataCode:(long long)arg2 launchTime:(id)arg3;
@@ -50,6 +49,7 @@
 - (bool)_shouldDoAFirstLaunchForBundleIdentifier:(id)arg1;
 - (void)ackForBundleID:(id)arg1 dataCode:(long long)arg2 anchor:(id)arg3 ackTime:(id)arg4;
 - (id)appAssertionManager;
+- (bool)areSubscriptionsSupportedForDataTypeCode:(long long)arg1;
 - (int)backgroundAppRefreshNotifyToken;
 - (id)backgroundTaskScheduler;
 - (void)database:(id)arg1 protectedDataDidBecomeAvailable:(bool)arg2;
@@ -79,6 +79,7 @@
 - (void)setShouldScheduleLaunches:(bool)arg1;
 - (bool)shouldScheduleLaunches;
 - (void)subscribeForBundleID:(id)arg1 dataCode:(long long)arg2 frequencyInSeconds:(unsigned long long)arg3;
+- (void)unitTesting_synchronizeWithQueue;
 - (void)updateBundleID:(id)arg1 dataCode:(long long)arg2 launchTime:(id)arg3;
 
 @end

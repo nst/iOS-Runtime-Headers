@@ -4,11 +4,13 @@
 
 @interface SXTangierController : NSObject <STTextTangierInteractiveCanvasControllerDataSource, STTextTangierInteractiveCanvasControllerDelegate, SXTextComponentLayoutHosting, SXTextSelecting, SXViewportChangeListener> {
     UIView * _aboveRepsHost;
+    <SXComponentActionHandler> * _componentActionHandler;
     STTextTangierCanvasViewController * _cvc;
     <SXTangierControllerDelegate> * _delegate;
     STTangierRepDirectLayerHostProvider * _directLayerHostProvider;
     bool  _disableClippingForTiles;
     STTextTangierDocumentRoot * _documentRoot;
+    <SXTangierDragItemProvider> * _dragItemProvider;
     bool  _enclosingCanvasScrolling;
     STTextTangierInteractiveCanvasController * _icc;
     unsigned long long  _initialSubviewCount;
@@ -28,6 +30,7 @@
 @property (nonatomic, readonly) UIView *aboveRepsHost;
 @property (nonatomic, readonly) bool allowEditMenuToAppear;
 @property (nonatomic, readonly) bool allowTextEditingToBegin;
+@property (nonatomic, readonly) <SXComponentActionHandler> *componentActionHandler;
 @property (nonatomic, readonly) STTextTangierCanvasViewController *cvc;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SXTangierControllerDelegate> *delegate;
@@ -35,6 +38,7 @@
 @property (nonatomic, readonly) STTangierRepDirectLayerHostProvider *directLayerHostProvider;
 @property (nonatomic) bool disableClippingForTiles;
 @property (nonatomic, readonly) TSKDocumentRoot *documentRoot;
+@property (nonatomic, readonly) <SXTangierDragItemProvider> *dragItemProvider;
 @property (getter=isEnclosingCanvasScrolling, nonatomic) bool enclosingCanvasScrolling;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) STTextTangierInteractiveCanvasController *icc;
@@ -67,6 +71,7 @@
 - (void)_fixLayoutOffsets;
 - (id)aboveRepsHost;
 - (void)clearSelection;
+- (id)componentActionHandler;
 - (id)cvc;
 - (void)dealloc;
 - (id)delegate;
@@ -76,9 +81,10 @@
 - (id)directLayerHostProvider;
 - (bool)disableClippingForTiles;
 - (id)documentRoot;
+- (id)dragItemProvider;
 - (void)endSelection;
 - (id)icc;
-- (id)init;
+- (id)initWithViewport:(id)arg1 scrollView:(id)arg2 componentActionHandler:(id)arg3 dragItemProvider:(id)arg4;
 - (unsigned long long)initialSubviewCount;
 - (id)interactiveCanvasController:(id)arg1 delegateConformingToProtocol:(id)arg2 forRep:(id)arg3;
 - (id)interactiveCanvasController:(id)arg1 dragItemForSmartField:(id)arg2 interaction:(id)arg3 session:(id)arg4;

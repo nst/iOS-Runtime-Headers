@@ -5,7 +5,7 @@
 @interface WKUserScript : NSObject <NSCopying, WKObject> {
     struct ObjectStorage<API::UserScript> { 
         struct type { 
-            unsigned char __lx[128]; 
+            unsigned char __lx[144]; 
         } data; 
     }  _userScript;
 }

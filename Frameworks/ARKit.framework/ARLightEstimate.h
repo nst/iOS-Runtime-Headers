@@ -9,12 +9,12 @@
 
 @property (nonatomic, readonly) double ambientColorTemperature;
 @property (nonatomic, readonly) double ambientIntensity;
-
-+ (void)cct2rgb:(float)arg1;
+@property (nonatomic, readonly, copy) NSData *sphericalHarmonicsCoefficients;
 
 - (double)ambientColorTemperature;
 - (double)ambientIntensity;
 - (id)description;
 - (id)initWithAmbientIntensity:(double)arg1 temperature:(double)arg2;
+- (id)sphericalHarmonicsCoefficients;
 
 @end

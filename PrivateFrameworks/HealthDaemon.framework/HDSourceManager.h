@@ -15,8 +15,9 @@
 
 - (void).cxx_destruct;
 - (void)_applicationsUninstalledNotification:(id)arg1;
+- (id)_clientSourcesWithPredicate:(id)arg1 error:(id*)arg2;
+- (id)_createCopyOfFirstSourceWithPredicate:(id)arg1 database:(id)arg2 error:(id*)arg3;
 - (id)_createSourceEntityForBundleIdentifier:(id)arg1 name:(id)arg2 options:(unsigned long long)arg3 isCurrentDevice:(bool)arg4 productType:(id)arg5 error:(id*)arg6;
-- (id)_createSourceEntityForClientWithBundleIdentifier:(id)arg1 name:(id)arg2 entitlements:(id)arg3 error:(id*)arg4;
 - (id)_createSourceEntityForLocalDeviceWithError:(id*)arg1;
 - (id)_createSourceEntityForSpartanDeviceWithError:(id*)arg1;
 - (void)_deleteSourceIfNoSampleFoundWithBundleIdentifier:(id)arg1;
@@ -42,10 +43,11 @@
 - (id)init;
 - (id)initWithProfile:(id)arg1;
 - (id)localDeviceSourceWithError:(id*)arg1;
+- (id)localSourceForBundleIdentifier:(id)arg1 copyIfNecessary:(bool)arg2 error:(id*)arg3;
 - (id)localSourceForBundleIdentifier:(id)arg1 error:(id*)arg2;
-- (id)localSourceForSourceID:(id)arg1 error:(id*)arg2;
+- (id)localSourceForSourceID:(id)arg1 copyIfNecessary:(bool)arg2 error:(id*)arg3;
 - (bool)setLocalDeviceSourceUUID:(id)arg1 bundleIdentifier:(id)arg2 error:(id*)arg3;
-- (id)sourceEntityForSource:(id)arg1 createOrUpdateIfNecessary:(bool)arg2 error:(id*)arg3;
+- (id)sourceEntityForClientSource:(id)arg1 createOrUpdateIfNecessary:(bool)arg2 error:(id*)arg3;
 - (id)sourceForAppleDeviceWithUUID:(id)arg1 identifier:(id)arg2 name:(id)arg3 productType:(id)arg4 createIfNecessary:(bool)arg5 error:(id*)arg6;
 - (id)sourceForApplicationIdentifier:(id)arg1 createOrUpdateIfNecessary:(bool)arg2 entitlements:(id)arg3 name:(id)arg4 error:(id*)arg5;
 - (id)sourceForClient:(id)arg1 error:(id*)arg2;

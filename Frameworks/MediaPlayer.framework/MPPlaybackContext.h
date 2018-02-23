@@ -11,6 +11,7 @@
     bool  _shouldRestartPlayback;
     bool  _shouldStartPlayback;
     long long  _shuffleType;
+    NSString * _siriAssetInfo;
     NSString * _siriReferenceIdentifier;
     long long  _startIndex;
 }
@@ -24,6 +25,7 @@
 @property (nonatomic) bool shouldRestartPlayback;
 @property (nonatomic) bool shouldStartPlayback;
 @property (nonatomic) long long shuffleType;
+@property (nonatomic, copy) NSString *siriAssetInfo;
 @property (nonatomic, copy) NSString *siriReferenceIdentifier;
 @property (nonatomic) long long startIndex;
 
@@ -50,11 +52,13 @@
 - (void)setShouldRestartPlayback:(bool)arg1;
 - (void)setShouldStartPlayback:(bool)arg1;
 - (void)setShuffleType:(long long)arg1;
+- (void)setSiriAssetInfo:(id)arg1;
 - (void)setSiriReferenceIdentifier:(id)arg1;
 - (void)setStartIndex:(long long)arg1;
 - (bool)shouldRestartPlayback;
 - (bool)shouldStartPlayback;
 - (long long)shuffleType;
+- (id)siriAssetInfo;
 - (id)siriReferenceIdentifier;
 - (long long)startIndex;
 

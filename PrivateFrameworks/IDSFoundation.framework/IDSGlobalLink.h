@@ -70,6 +70,7 @@
     bool  _hasPendingAllocation;
     bool  _hasPendingSelfAllocation;
     unsigned long long  _headerOverhead;
+    NSString * _idsSessionID;
     NSMutableArray * _interfaceAddressArray;
     double  _inviteRecvTime;
     double  _inviteSentTime;
@@ -83,7 +84,6 @@
     NSMutableDictionary * _linkIDToCandidatePairs;
     NSMutableArray * _localCandidateList;
     int  _localConnDataCounter;
-    NSMutableArray * _nat64Blocks;
     struct IDSNAT64PrefixCache_ { } * _nat64PrefixCache;
     double  _natMappingTimeout;
     int  _nominateCount;
@@ -172,7 +172,7 @@
 - (float)_getCommNATTimeoutValue;
 - (id)_getLink:(int)arg1 stunTransport:(long long)arg2;
 - (unsigned int)_getLinkInformation:(long long)arg1 linkOK:(bool*)arg2;
-- (void)_getNAT64PrefixForInterface:(int)arg1 interfaceName:(id)arg2;
+- (void)_getNAT64PrefixForInterface:(int)arg1 interfaceName:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)_handleActivityTimer;
 - (void)_handleDisconnectTimer;
 - (void)_handleSelfAllocationTimeout:(id)arg1;

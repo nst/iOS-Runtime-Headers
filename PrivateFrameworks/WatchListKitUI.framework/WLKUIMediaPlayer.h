@@ -4,6 +4,8 @@
 
 @interface WLKUIMediaPlayer : IKJSObject <WLKUIMediaPlayerLibraryExport, WLKUIOrderedItemsMapDelegate> {
     NSOperationQueue * _artworkLoadingQueue;
+    NSOperationQueue * _fetchCompletionOperationQueue;
+    NSOperationQueue * _fetchOperationQueue;
     WLKUIOrderedItemsMap * _orderedItemsMap;
     MPUQueryDataSource * _queryDataSource;
     NSObject<OS_dispatch_queue> * _queue;
@@ -12,6 +14,8 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSOperationQueue *fetchCompletionOperationQueue;
+@property (nonatomic, retain) NSOperationQueue *fetchOperationQueue;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) WLKUIOrderedItemsMap *orderedItemsMap;
 @property (nonatomic, retain) MPUQueryDataSource *queryDataSource;
@@ -26,6 +30,7 @@
 - (id)_dateFromConfigurationObject:(id)arg1;
 - (id)_getItem:(id)arg1 includeChildren:(bool)arg2 additionalProperties:(id)arg3;
 - (id)_identifierForMediaItem:(id)arg1 withProperty:(id)arg2;
+- (id)_logObject;
 - (id)_mediaItemForIdentifier:(id)arg1;
 - (void)_mediaLibraryChanged:(id)arg1;
 - (id)_numberForString:(id)arg1;
@@ -33,6 +38,9 @@
 - (void)_onSyncGenerationChangedNotification:(id)arg1;
 - (id)_stringForNumber:(id)arg1;
 - (void)dealloc;
+- (id)fetchCompletionOperationQueue;
+- (void)fetchMediaEntitiesWithOptions:(id)arg1 :(id)arg2;
+- (id)fetchOperationQueue;
 - (id)findItemByPersistentIdentifier:(id)arg1 :(id)arg2;
 - (id)findItemByStoreIdentifier:(id)arg1 :(id)arg2;
 - (void)getImageForItem:(id)arg1 :(id)arg2 :(id)arg3;
@@ -45,11 +53,14 @@
 - (id)getShowIdentifierForStoreIdentifier:(id)arg1;
 - (void)getUpdateProgress:(id)arg1;
 - (id)initWithAppContext:(id)arg1;
+- (bool)isHDRCapable;
 - (void)itemsMapAddedKeys:(id)arg1 andRemovedKeys:(id)arg2;
 - (bool)libraryHasMedia;
 - (id)orderedItemsMap;
 - (id)queryDataSource;
 - (long long)queryHasItemCount:(id)arg1;
+- (void)setFetchCompletionOperationQueue:(id)arg1;
+- (void)setFetchOperationQueue:(id)arg1;
 - (bool)setFilter:(id)arg1;
 - (void)setFilterAsync:(id)arg1 :(id)arg2;
 - (void)setOrderedItemsMap:(id)arg1;

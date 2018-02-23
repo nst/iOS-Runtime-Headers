@@ -5,6 +5,7 @@
 @interface SXVideoProvider : NSObject <SXVideoProviding> {
     NSURL * _URL;
     <SXAnalyticsReporting> * _analyticsReporter;
+    NSString * _mediaIdentifier;
     <SXVideoMetadataProviding> * _metadata;
     double  _pausedAtTime;
     SXTimeline * _timeline;
@@ -15,6 +16,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) NSString *mediaIdentifier;
 @property (nonatomic) <SXVideoMetadataProviding> *metadata;
 @property (nonatomic) double pausedAtTime;
 @property (readonly) Class superclass;
@@ -26,6 +28,7 @@
 - (void)configureTimelineForQuartileReporting;
 - (id)initWithURL:(id)arg1;
 - (id /* block */)loadWithCompletionBlock:(id /* block */)arg1;
+- (id)mediaIdentifier;
 - (id)metadata;
 - (void)muteStateChanged:(bool)arg1;
 - (double)pausedAtTime;

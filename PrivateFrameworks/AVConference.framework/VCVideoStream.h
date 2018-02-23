@@ -44,12 +44,12 @@
 - (void)initVideoTransmitter:(id)arg1;
 - (void)onCallIDChanged;
 - (bool)onConfigureStreamWithConfiguration:(id)arg1 error:(id*)arg2;
-- (void)onPause;
-- (void)onResume;
+- (void)onPauseWithCompletionHandler:(id /* block */)arg1;
+- (void)onResumeWithCompletionHandler:(id /* block */)arg1;
 - (void)onRtcpEnabledChanged;
 - (void)onRtcpSendIntervalChanged;
-- (void)onStart;
-- (void)onStop;
+- (void)onStartWithCompletionHandler:(id /* block */)arg1;
+- (void)onStopWithCompletionHandler:(id /* block */)arg1;
 - (void)overrideConfigWithDefaults;
 - (void)reportRTCPPackets:(struct _RTCPPacketList { union tagNTP { unsigned long long x_1_1_1; struct { unsigned int x_2_2_1; unsigned int x_2_2_2; } x_1_1_2; } x1; unsigned char x2; struct tagRTCPPACKET {} *x3[10]; unsigned char x4[1472]; unsigned int x5; unsigned char x6[1472]; }*)arg1;
 - (void)reportingVideoStreamEvent:(unsigned short)arg1;

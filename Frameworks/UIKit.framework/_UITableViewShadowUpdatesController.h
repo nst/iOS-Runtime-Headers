@@ -147,6 +147,8 @@
 - (long long)tableView:(id)arg1 sectionForSectionIndexTitle:(id)arg2 atIndex:(long long)arg3;
 - (bool)tableView:(id)arg1 shouldDrawBottomSeparatorForSection:(long long)arg2;
 - (bool)tableView:(id)arg1 shouldDrawTopSeparatorForSection:(long long)arg2;
+- (bool)tableView:(id)arg1 shouldHaveFullLengthBottomSeparatorForSection:(long long)arg2;
+- (bool)tableView:(id)arg1 shouldHaveFullLengthTopSeparatorForSection:(long long)arg2;
 - (bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (bool)tableView:(id)arg1 shouldIndentWhileEditingRowAtIndexPath:(id)arg2;
 - (bool)tableView:(id)arg1 shouldShowMenuForRowAtIndexPath:(id)arg2;

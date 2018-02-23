@@ -15,6 +15,7 @@
         double width; 
         double height; 
     }  _imageSize;
+    bool  _lastAboveZoomThreshold;
     struct CGRect { 
         struct CGPoint { 
             double x; 

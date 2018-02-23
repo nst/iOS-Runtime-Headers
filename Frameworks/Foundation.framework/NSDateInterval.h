@@ -37,6 +37,7 @@
 + (id)hk_dateIntervalWithStart:(double)arg1 end:(double)arg2;
 + (id)hk_dateIntervalWithStartDate:(id)arg1 endDate:(id)arg2;
 
+- (bool)hk_containsTime:(double)arg1;
 - (bool)hk_intersectsDateIntervalWithStartDate:(id)arg1 endDate:(id)arg2;
 - (id)hk_midDate;
 

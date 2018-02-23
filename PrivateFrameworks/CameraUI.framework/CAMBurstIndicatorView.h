@@ -6,12 +6,14 @@
     UIView * __backgroundView;
     UILabel * __countLabel;
     long long  __numberOfPhotos;
+    NSString * _contentSizeCategory;
     long long  _layoutStyle;
 }
 
 @property (nonatomic, readonly) UIView *_backgroundView;
 @property (nonatomic, readonly) UILabel *_countLabel;
 @property (nonatomic, readonly) long long _numberOfPhotos;
+@property (nonatomic, copy) NSString *contentSizeCategory;
 @property (nonatomic) long long layoutStyle;
 
 - (void).cxx_destruct;
@@ -20,8 +22,9 @@
 - (id)_countLabel;
 - (long long)_numberOfPhotos;
 - (void)_performCaptureAnimation;
+- (void)_updateAttributes;
 - (void)_updateCountLabelWithNumberOfPhotos;
-- (void)_updateForLayoutStyle;
+- (id)contentSizeCategory;
 - (void)finishIncrementingWithCompletionHandler:(id /* block */)arg1;
 - (long long)incrementWithCaptureAnimation:(bool)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -31,6 +34,7 @@
 - (long long)layoutStyle;
 - (void)layoutSubviews;
 - (void)reset;
+- (void)setContentSizeCategory:(id)arg1;
 - (void)setLayoutStyle:(long long)arg1;
 
 @end

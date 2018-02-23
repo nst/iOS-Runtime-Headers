@@ -9,6 +9,7 @@
 @property (nonatomic, retain) _UIStatusBarBackgroundActivityView *backgroundView;
 
 + (id)backgroundDisplayIdentifier;
++ (bool)shouldKeepIconVisibleForActivityType:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)_backgroundColorForActivityType:(long long)arg1;

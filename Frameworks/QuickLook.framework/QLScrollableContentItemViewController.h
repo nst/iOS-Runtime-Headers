@@ -19,6 +19,7 @@
 
 - (void).cxx_destruct;
 - (void)_doubleTapRecognized:(id)arg1;
+- (void)_updateScrollViewZoomUpdate:(struct CGSize { double x1; double x2; })arg1;
 - (bool)canPinchToDismiss;
 - (id)contentView;
 - (void)didEndZoomingAtScale:(double)arg1;
@@ -30,6 +31,7 @@
 - (void)previewDidDisappear:(bool)arg1;
 - (void)previewScrollView:(id)arg1 didEndZoomingAtScale:(double)arg2;
 - (double)previewScrollView:(id)arg1 extraMinimumZoomForMinimumZoomScale:(double)arg2 maximumZoomScale:(double)arg3;
+- (bool)previewScrollViewShouldResizeContentBasedOnPeripheryInsets:(id)arg1;
 - (void)previewScrollViewWillBeginZooming:(id)arg1;
 - (void)previewWillAppear:(bool)arg1;
 - (id)registeredKeyCommands;

@@ -8,7 +8,6 @@
     CNMutableContainer * _cnImpl;
     int  _revertedRecordID;
     ABSSource * _source;
-    unsigned int  _type;
 }
 
 @property (nonatomic, readonly) NSString *CNIdentifierString;
@@ -34,7 +33,6 @@
 - (id)compositeName;
 - (const void*)copyValueForProperty:(int)arg1;
 - (id)getAccount;
-- (unsigned int)getType;
 - (int)id;
 - (id)initWithMutableContainer:(id)arg1;
 - (bool)removeProperty:(int)arg1 withError:(id*)arg2;

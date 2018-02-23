@@ -8,22 +8,26 @@
     RUIObjectModel * _currentRemoteOM;
     NSHTTPURLResponse * _deferredResponse;
     <AKAppleIDAuthenticationInAppContextDelegate> * _delegate;
+    bool  _forceInlinePresentation;
     bool  _isPresentingServerUI;
     NSHTTPURLResponse * _latestReadResponse;
     UINavigationController * _modalRemoteUINavController;
     UINavigationController * _navController;
+    bool  _overrideFirstActionSignal;
     UIViewController * _presentingViewController;
     RemoteUIController * _remoteUIController;
     id /* block */  _serverUICompletion;
     AKAppleIDServerResourceLoadDelegate * _serverUIDelegate;
     AKAppleIDServerUIDataHarvester * _serverUIHelper;
     AAUICDPStingrayRemoteUIController * _stingrayController;
+    UIViewController * _topViewControllerOnLoadStart;
 }
 
 @property (nonatomic) <AKAppleIDAuthenticationInAppContextAlertDelegate> *alertDelegate;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <AKAppleIDAuthenticationInAppContextDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) bool forceInlinePresentation;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) UIViewController *presentingViewController;
 @property (readonly) Class superclass;
@@ -33,6 +37,7 @@
 - (void)_cleanUpBasicLogin;
 - (void)_cleanUpBasicLoginWithCompletion:(id /* block */)arg1;
 - (void)_completeWithFinalResponse:(id)arg1;
+- (void)_handleBackButtonTap:(id)arg1;
 - (bool)_isDeferrableFinalResponseHarvested;
 - (id)_navController;
 - (void)_presentLoginAlertWithError:(id)arg1 title:(id)arg2 message:(id)arg3 waitForInteraction:(bool)arg4 completion:(id /* block */)arg5;
@@ -49,6 +54,7 @@
 - (void)dismissKeepUsingUIWithCompletion:(id /* block */)arg1;
 - (void)dismissSecondFactorUIWithCompletion:(id /* block */)arg1;
 - (void)dismissServerProvidedUIWithCompletion:(id /* block */)arg1;
+- (bool)forceInlinePresentation;
 - (void)presentBasicLoginUIWithCompletion:(id /* block */)arg1;
 - (void)presentKeepUsingUIForAppleID:(id)arg1 completion:(id /* block */)arg2;
 - (void)presentLoginAlertWithError:(id)arg1 title:(id)arg2 message:(id)arg3 completion:(id /* block */)arg4;
@@ -68,6 +74,7 @@
 - (id)serverDataHarvester;
 - (void)setAlertDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setForceInlinePresentation:(bool)arg1;
 - (void)setPresentingViewController:(id)arg1;
 - (void)willPresentModalNavigationController:(id)arg1;
 

@@ -2,7 +2,7 @@
    Image: /usr/lib/libobjc.A.dylib
  */
 
-@interface NSObject <CAAnimatableValue, CARenderValue, CKLParsedObject, CRCardSection, DebugHierarchyObject, NSObject, PQLResultSetInitializer, _DKProtobufConverting> {
+@interface NSObject <CAAnimatableValue, CARenderValue, CKLParsedObject, DebugHierarchyObject, NSObject, PQLResultSetInitializer, _DKProtobufConverting> {
     Class  isa;
 }
 
@@ -30,15 +30,12 @@
 @property (nonatomic) unsigned long long accessibilityTraits;
 @property (nonatomic, copy) NSString *accessibilityValue;
 @property (nonatomic) bool accessibilityViewIsModal;
-@property (nonatomic, readonly) NSArray *actionCommands;
 @property (readonly) unsigned long long akToolbarButtonItemType;
 @property (readonly, retain) id autoContentAccessingProxy;
-@property (nonatomic, readonly) <SFCardSection> *backingCardSection;
 @property (readonly) Class classForKeyedArchiver;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, retain) NSString *fm_logID;
-@property (nonatomic, readonly) bool hasNextCard;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) long long hashValue;
 @property (getter=_hf_briefDescription, nonatomic, readonly, copy) NSString *hf_briefDescription;
@@ -340,6 +337,7 @@
 
 // Image: /System/Library/Frameworks/Intents.framework/Intents
 
+- (SEL)_intents_setterForPropertyWithName:(id)arg1;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
@@ -558,21 +556,11 @@
 - (unsigned long long)_accessibilityUnsignedIntegerValueForKey:(id)arg1;
 - (id)_accessibilityValueForKey:(id)arg1;
 - (void)_ax_appendPrettyDescriptionToString:(id)arg1 indentationString:(id)arg2 visitedCollections:(id)arg3;
-- (void)_ax_automationTreeDescription:(id)arg1 indentation:(long long)arg2;
 - (id)_safeValidatedValueForKey:(id)arg1 expectedClass:(Class)arg2 expectedTypeEncoding:(const char *)arg3;
 - (id)_safeValidatedValueForKey:(id)arg1 expectedClass:(Class)arg2 possibleExpectedTypeEncodings:(const char *)arg3;
 - (id)axSuperTrampoline;
 - (id)axTrampolineForClass:(Class)arg1;
-- (id)ax_accessibilityDescription;
-- (id)ax_automationTreeDescription;
-- (id)ax_descriptionWithIndentation:(long long)arg1 includeAXInfo:(bool)arg2;
-- (void)ax_initializeDebugging;
 - (id)ax_prettyDescription;
-- (id)ax_recursiveDescription;
-- (id)ax_recursiveDescriptionIncludingAXInfo;
-- (id)ax_recursiveDescriptionIncludingLayers;
-- (id)ax_recursiveDescriptionIncludingLayersAndAXInfo;
-- (id)ax_recursiveDescriptionWithIndentation:(long long)arg1 includeLayers:(bool)arg2 includeAXInfo:(bool)arg3;
 - (void)handleFailoversForClassNamed:(id)arg1;
 - (id)safeArrayForKey:(id)arg1;
 - (bool)safeBoolForKey:(id)arg1;
@@ -664,13 +652,6 @@
 - (int)_crk_trailingCardSectionSeparatorStyle;
 - (id)crk_backingPunchout;
 - (unsigned long long)crk_intrinsicInteractiveBehavior;
-
-// Image: /System/Library/PrivateFrameworks/Cards.framework/Cards
-
-- (id)actionCommands;
-- (id)backingCardSection;
-- (bool)hasNextCard;
-- (id)parametersForInteraction:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
 
@@ -1155,6 +1136,7 @@
 - (id)_accessibilityAllContextDescriptors;
 - (id)_accessibilityAllDragSourceDescriptors;
 - (id)_accessibilityAllDropPointDescriptors;
+- (bool)_accessibilityAllowOutOfBoundsHitTestAtPoint:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (double)_accessibilityAllowedGeometryOverlap;
 - (double)_accessibilityAllowedGeometryOverlapX;
 - (bool)_accessibilityAllowsAlternativeCharacterActivation;
@@ -1177,6 +1159,7 @@
 - (bool)_accessibilityApplicationIsRTL;
 - (int)_accessibilityApplicationOrientation;
 - (id)_accessibilityApplicationSemanticContext;
+- (id)_accessibilityApplicationWindowContextIDs;
 - (id /* block */)_accessibilityAttributeMatcher:(long long)arg1;
 - (id)_accessibilityAttributedTextRetrieval;
 - (id)_accessibilityAttributedValueForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg1;
@@ -1240,6 +1223,7 @@
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_accessibilityConvertSystemBoundedScreenRectToContextSpace:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)_accessibilityCurrentStatus;
 - (id)_accessibilityCurrentlyFocusedElementForTechnology:(id)arg1;
+- (id)_accessibilityCustomActionGroupIdentifier;
 - (id)_accessibilityCustomActionNamesAndIdentifiers;
 - (id)_accessibilityCustomActions;
 - (id)_accessibilityCustomRotorResultHelper:(id)arg1 array:(id)arg2;
@@ -1320,6 +1304,7 @@
 - (id)_accessibilityFuzzyHitTestElements;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_accessibilityGesturePracticeRegion;
 - (void*)_accessibilityGetBlockForAttribute:(long long)arg1;
+- (id)_accessibilityGroupIdentifier;
 - (id)_accessibilityGuideElementHeaderText;
 - (id)_accessibilityGuideElementInDirection:(bool)arg1;
 - (void)_accessibilityHandleATFocused:(bool)arg1 assistiveTech:(id)arg2;
@@ -1353,6 +1338,7 @@
 - (id)_accessibilityHeaderElement;
 - (id)_accessibilityHeaderElementsForColumn:(unsigned long long)arg1;
 - (id)_accessibilityHeaderElementsForRow:(unsigned long long)arg1;
+- (id)_accessibilityHeadingLevel;
 - (id)_accessibilityHitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (bool)_accessibilityHitTestReverseOrder;
 - (bool)_accessibilityHitTestShouldFallbackToNearestChild;
@@ -1382,7 +1368,7 @@
 - (bool)_accessibilityIsAutoscrolling;
 - (bool)_accessibilityIsAwayAlertElement;
 - (bool)_accessibilityIsAwayAlertElementNew;
-- (bool)_accessibilityIsContainedByPreferredNativeFocusElement;
+- (bool)_accessibilityIsContainedByNativeFocusElement;
 - (bool)_accessibilityIsContainedByVideoElement;
 - (bool)_accessibilityIsDescendantOfElement:(id)arg1;
 - (bool)_accessibilityIsDictating;
@@ -1409,6 +1395,7 @@
 - (bool)_accessibilityIsNotFirstElement;
 - (bool)_accessibilityIsPressed;
 - (bool)_accessibilityIsRTL;
+- (bool)_accessibilityIsRealtimeElement;
 - (bool)_accessibilityIsRemoteElement;
 - (bool)_accessibilityIsScannerElement;
 - (bool)_accessibilityIsScannerGroup;
@@ -1547,6 +1534,8 @@
 - (void)_accessibilityRawSetIsSpeakThisElement:(id)arg1;
 - (bool)_accessibilityReadAllContinuesWithScroll;
 - (bool)_accessibilityReadAllOnFocus;
+- (bool)_accessibilityRealtimeCompleted;
+- (bool)_accessibilityRealtimeHasUnread;
 - (id)_accessibilityRecentlyActivatedApplicationBundleIdentifiers;
 - (void)_accessibilityRegisterForDictationLifecycleNotifications;
 - (long long)_accessibilityReinterpretVoiceOverCommand:(long long)arg1;
@@ -1864,6 +1853,7 @@
 - (void)_setAccessibilityIdentifierBlock:(id /* block */)arg1;
 - (void)_setAccessibilityIsMainWindow:(bool)arg1;
 - (void)_setAccessibilityIsNotFirstElement:(bool)arg1;
+- (void)_setAccessibilityIsRealtimeElementBlock:(id /* block */)arg1;
 - (void)_setAccessibilityLabelBlock:(id /* block */)arg1;
 - (void)_setAccessibilityLanguageBlock:(id /* block */)arg1;
 - (void)_setAccessibilityLinkedUIElements:(id)arg1;
@@ -1923,7 +1913,6 @@
 - (id)accessibilityInvalidStatus;
 - (bool)accessibilityIsAttachmentElement;
 - (bool)accessibilityIsComboBox;
-- (bool)accessibilityIsWindow;
 - (id)accessibilityLabelForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; }*)arg1;
 - (long long)accessibilityLineNumberForPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)accessibilityLinkedElement;
@@ -1973,11 +1962,9 @@
 - (int (*)impOrNullForSelector:(SEL)arg1;
 - (bool)isAccessibilityOpaqueElementProvider;
 - (id)isAccessibilityUserDefinedScrollAncestor;
-- (id)isAccessibilityUserDefinedWindow;
 - (void)setAccessibilitySize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setIsAccessibilityOpaqueElementProvider:(bool)arg1;
 - (void)setIsAccessibilityScrollAncestor:(bool)arg1;
-- (void)setIsAccessibilityWindow:(bool)arg1;
 
 // Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
 

@@ -18,7 +18,7 @@
 - (id)backingTopicID;
 - (bool)enableNotificationsWithSubscriptionController:(id)arg1 error:(id*)arg2;
 - (long long)feedFilterOptions;
-- (id)feedGroupEmitters;
+- (id)feedGroupEmittersWithAppConfiguration:(id)arg1;
 - (long long)feedSortMethod;
 - (long long)feedType;
 - (bool)hasNotificationsEnabledWithSubscriptionController:(id)arg1;

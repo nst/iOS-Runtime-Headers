@@ -52,6 +52,7 @@
 @property (nonatomic, copy) NSDateComponents *releaseDateComponents;
 @property (nonatomic, retain) MPModelSong *representativeSong;
 @property (nonatomic, copy) NSString *shortEditorNotes;
+@property (nonatomic, readonly) bool shouldShowFullAlbum;
 @property (nonatomic, copy) id /* block */ songPopularityBlock;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic) long long trackCount;
@@ -195,5 +196,9 @@
 - (id)_radioStationMatchMetadata;
 - (id)mpc_protoContainerRepresentation;
 - (id)mpc_radioContentReference;
+
+// Image: /System/Library/PrivateFrameworks/NanoMusicSync.framework/NanoMusicSync
+
+- (bool)shouldShowFullAlbum;
 
 @end

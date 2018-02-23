@@ -19,6 +19,7 @@
 @property (nonatomic, readonly) unsigned long long deviceFeatures;
 @property (nonatomic, readonly) long long deviceSubType;
 @property (nonatomic, readonly) long long deviceType;
+@property (nonatomic, readonly) NSString *firmwareVersion;
 @property (nonatomic, readonly) bool groupContainsGroupLeader;
 @property (nonatomic, readonly, copy) NSString *groupID;
 @property (readonly) unsigned long long hash;
@@ -26,11 +27,14 @@
 @property (getter=isInUseByPairedDevice, nonatomic, readonly) bool inUseByPairedDevice;
 @property (nonatomic, readonly) bool isGroupLeader;
 @property (nonatomic, readonly) NSNumber *leftBatteryLevel;
+@property (nonatomic, readonly) NSString *logicalDeviceID;
+@property (nonatomic, readonly) NSString *manufacturer;
 @property (nonatomic, readonly, copy) NSString *modelID;
 @property (nonatomic, readonly, copy) NSString *name;
 @property AVOutputDevice *parentOutputDevice;
 @property (nonatomic, readonly) bool requiresAuthorization;
 @property (nonatomic, readonly) NSNumber *rightBatteryLevel;
+@property (nonatomic, readonly) NSString *serialNumber;
 @property (readonly) Class superclass;
 @property (readonly) float volume;
 
@@ -42,10 +46,12 @@
 - (bool)canBeGrouped;
 - (bool)canSetVolume;
 - (id)caseBatteryLevel;
+- (void)configureUsingBlock:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
 - (id)connectedPairedDevices;
 - (unsigned long long)deviceFeatures;
 - (long long)deviceSubType;
 - (long long)deviceType;
+- (id)firmwareVersion;
 - (bool)groupContainsGroupLeader;
 - (id)groupID;
 - (unsigned long long)hash;
@@ -54,12 +60,14 @@
 - (bool)isGroupLeader;
 - (bool)isInUseByPairedDevice;
 - (id)leftBatteryLevel;
+- (id)logicalDeviceID;
+- (id)manufacturer;
 - (id)modelID;
 - (id)name;
 - (id)parentOutputDevice;
 - (bool)requiresAuthorization;
 - (id)rightBatteryLevel;
-- (void)setAdministrativeConfiguration:(id)arg1 administrationPassword:(id)arg2 completionHandler:(id /* block */)arg3;
+- (id)serialNumber;
 - (void)setParentOutputDevice:(id)arg1;
 - (void)setSecondDisplayEnabled:(bool)arg1;
 - (void)setVolume:(float)arg1;

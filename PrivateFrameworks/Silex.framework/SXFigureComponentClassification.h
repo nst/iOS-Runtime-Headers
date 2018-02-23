@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXFigureComponentClassification : SXDefaultImageComponentClassification
+@interface SXFigureComponentClassification : SXDefaultScalableImageComponentClassification
 
 + (int)role;
 + (id)roleString;

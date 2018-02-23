@@ -19,6 +19,7 @@
     bool  _filterPastedAttributes;
     bool  _filterSubstringAttributes;
     bool  _filterSubstringAttributesForPlainText;
+    bool  _hasEditedCharactersAfterTextSelection;
     bool  _isApplyingUndoCommand;
     bool  _isChangingSelectionByGestures;
     bool  _isDictating;
@@ -68,6 +69,7 @@
 @property (nonatomic) bool filterPastedAttributes;
 @property (nonatomic) bool filterSubstringAttributes;
 @property (nonatomic) bool filterSubstringAttributesForPlainText;
+@property (nonatomic) bool hasEditedCharactersAfterTextSelection;
 @property (readonly) unsigned long long hash;
 @property (nonatomic) bool isApplyingUndoCommand;
 @property (nonatomic) bool isChangingSelectionByGestures;
@@ -130,6 +132,7 @@
 - (void)coordinateEditing:(id /* block */)arg1;
 - (void)coordinateReading:(id /* block */)arg1;
 - (id)copyDataForUTI:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 persistenceHelper:(id)arg3;
+- (id)correctParagraphStyleReuseForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withNewAttributedString:(id)arg2;
 - (id)customPasteboardDataFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 persistenceHelper:(id)arg2;
 - (id)dataFromRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 documentAttributes:(id)arg2 error:(id*)arg3;
 - (void)dd_makeLinksForResultsInAttributesOfType:(unsigned long long)arg1 context:(id)arg2;
@@ -154,6 +157,7 @@
 - (void)fixupAfterEditing;
 - (void)fixupAfterEditingDelayedToEndOfRunLoop;
 - (void)forceFixupAfterEditingIfDelayed;
+- (bool)hasEditedCharactersAfterTextSelection;
 - (bool)ic_containsAttribute:(id)arg1 InRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (id)initWithAttributedString:(id)arg1 replicaID:(id)arg2;
 - (id)initWithAttributedString:(id)arg1 replicaID:(id)arg2 sourceZoomController:(id)arg3 keepSourceZoomController:(bool)arg4;
@@ -210,6 +214,7 @@
 - (void)setFilterPastedAttributes:(bool)arg1;
 - (void)setFilterSubstringAttributes:(bool)arg1;
 - (void)setFilterSubstringAttributesForPlainText:(bool)arg1;
+- (void)setHasEditedCharactersAfterTextSelection:(bool)arg1;
 - (void)setIsApplyingUndoCommand:(bool)arg1;
 - (void)setIsChangingSelectionByGestures:(bool)arg1;
 - (void)setIsDictating:(bool)arg1;

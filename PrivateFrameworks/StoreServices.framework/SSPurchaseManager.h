@@ -15,7 +15,9 @@
 @property (readonly) NSString *managerIdentifier;
 
 - (void)_connectToDaemon;
+- (void)_handleAuthenticateRequest:(id)arg1 fromConnection:(id)arg2;
 - (void)_handleMessage:(id)arg1 fromConnection:(id)arg2;
+- (void)_handlePurchasesFinished:(id)arg1 fromConnection:(id)arg2;
 - (id)_newEncodedArrayWithPurchaseIdentifiers:(id)arg1;
 - (id)_newEncodedArrayWithPurchases:(id)arg1;
 - (void)_reconnectForDaemonLaunch;

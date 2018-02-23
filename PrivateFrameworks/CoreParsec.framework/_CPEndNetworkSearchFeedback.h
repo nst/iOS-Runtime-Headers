@@ -49,6 +49,8 @@
 @property (nonatomic, readonly, copy) NSString *uuid;
 @property (nonatomic, copy) NSString *uuid;
 
++ (id)_networkTimingStructFromDictionary:(id)arg1;
+
 - (void).cxx_destruct;
 - (id)_formatNetworkTimingData;
 - (id)dictionaryRepresentation;

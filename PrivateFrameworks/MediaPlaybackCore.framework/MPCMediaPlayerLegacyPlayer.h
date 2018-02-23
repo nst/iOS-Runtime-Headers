@@ -2,15 +2,18 @@
    Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
  */
 
-@interface MPCMediaPlayerLegacyPlayer : MPCPlayer <MPNowPlayingPlaybackQueueDataSource_Private, MPRemoteCommandDelegate_Private> {
+@interface MPCMediaPlayerLegacyPlayer : MPCPlayer <MPNowPlayingPlaybackQueueDataSource, MPRemoteCommandDelegate_Private> {
+    bool  _allowsNewPlaybackErrorItem;
     NSMapTable * _avItemToPlayerItemWeakMap;
     MPCMediaPlayerLegacyItemContainer * _currentContainer;
     MPCMediaPlayerLegacyItem * _currentItem;
     MPCPlaybackIntent * _fallbackPlaybackIntent;
+    MPAVItem * _firstPlaybackErrorItem;
     bool  _hasReceivedAddPlaybackIntent;
     bool  _hasScheduledPlaybackStatePreservation;
     bool  _iAmTheiPod;
     bool  _isRestoringPlaybackState;
+    MPLibraryAddStatusObserver * _libraryAddStatusObserver;
     bool  _mediaRemoteSync;
     MPCMediaPlayerLegacyAVController * _player;
     MPCMediaPlayerLegacyNowPlayingObserver * _playerObserver;
@@ -73,8 +76,10 @@
 - (bool)isMediaRemoteSyncing;
 - (bool)isRestoringPlaybackState;
 - (bool)isSyncingNowPlayingInfo;
-- (id)nowPlayingContentItemForIdentifier:(id)arg1;
-- (id)nowPlayingContentItemsForRequest:(void*)arg1 range:(struct { long long x1; long long x2; }*)arg2;
+- (id)nowPlayingInfoCenter:(id)arg1 artworkCatalogForContentItem:(id)arg2;
+- (id)nowPlayingInfoCenter:(id)arg1 artworkForContentItem:(id)arg2 size:(struct CGSize { double x1; double x2; })arg3 completion:(id /* block */)arg4;
+- (id)nowPlayingInfoCenter:(id)arg1 contentItemForID:(id)arg2;
+- (id)nowPlayingInfoCenter:(id)arg1 contentItemIDForOffset:(long long)arg2;
 - (void)performCommandEvent:(id)arg1 completion:(id /* block */)arg2;
 - (bool)pictureInPictureSupported;
 - (id)player;

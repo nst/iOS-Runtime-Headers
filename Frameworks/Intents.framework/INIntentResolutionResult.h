@@ -64,7 +64,7 @@
 - (id)itemToConfirm;
 - (id)neededParameterKeyPaths;
 - (long long)resolutionResultCode;
-- (id)resolutionResultDataForIntent:(id)arg1 intentSlotDescription:(id)arg2;
+- (id)resolutionResultDataForIntent:(id)arg1 intentSlotDescription:(id)arg2 error:(id*)arg3;
 - (id)resolvedValue;
 - (void)setAlternatives:(id)arg1;
 - (void)setConflictingParameterKeyPath:(id)arg1;

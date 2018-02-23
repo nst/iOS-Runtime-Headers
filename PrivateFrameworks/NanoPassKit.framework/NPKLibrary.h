@@ -21,6 +21,7 @@
     bool  _serverHasPasses;
     bool  _serverHasPotentiallyRelevantPasses;
     int  _updatePassDescriptionsFailureCount;
+    NSObject<OS_dispatch_queue> * _updatePassDescriptionsQueue;
     bool  _updatingPassDescriptions;
     NSMutableArray * _workToPerformAfterInitialLoad;
     NSXPCConnection * _xpcConnection;
@@ -49,6 +50,7 @@
 @property bool serverHasPasses;
 @property bool serverHasPotentiallyRelevantPasses;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *updatePassDescriptionsQueue;
 @property (nonatomic) bool updatingPassDescriptions;
 @property (nonatomic, retain) NSMutableArray *workToPerformAfterInitialLoad;
 @property (readonly) NSXPCConnection *xpcConnection;
@@ -58,6 +60,7 @@
 - (void).cxx_destruct;
 - (id)_descriptionsWithFilter:(id /* block */)arg1;
 - (id)_init;
+- (bool)_shouldUpdatePassDescriptionsWithHighPriority;
 - (void)_tearDownConnectionBecauseOfInvalidation;
 - (void)_updatePassDescriptions;
 - (void)_updatePassDescriptionsWithCompletionHandler:(id /* block */)arg1;
@@ -108,6 +111,7 @@
 - (void)processFelicaTransitAppletState:(id)arg1 forPassUniqueID:(id)arg2;
 - (void)processFelicaTransitHistory:(id)arg1 forPaymentApplication:(id)arg2 withPassUniqueIdentifier:(id)arg3 transactionDate:(id)arg4;
 - (id)relevantPassTuples;
+- (void)requestPeerAccountTermsAndConditionsAcceptance;
 - (bool)serverHasPasses;
 - (bool)serverHasPotentiallyRelevantPasses;
 - (void)setDisableCaching:(bool)arg1;
@@ -126,6 +130,7 @@
 - (void)setServerHasPotentiallyRelevantPasses:(bool)arg1;
 - (void)setUpdatingPassDescriptions:(bool)arg1;
 - (void)setWorkToPerformAfterInitialLoad:(id)arg1;
+- (id)updatePassDescriptionsQueue;
 - (bool)updatingPassDescriptions;
 - (id)workToPerformAfterInitialLoad;
 - (id)xpcConnection;

@@ -32,7 +32,7 @@
 - (void)begin:(id)arg1;
 - (bool)build:(id)arg1 error:(out id*)arg2;
 - (void)delete;
-- (void)drawVertexArray:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (void)drawVertexArray:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 mode:(long long)arg3;
 - (void)end:(id)arg1;
 - (void)generate:(id)arg1;
 - (id)init;

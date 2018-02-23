@@ -14,7 +14,7 @@
 - (void).cxx_destruct;
 - (void)_removeExpiredItemsPeriodically;
 - (void)addStoreItemMetadata:(id)arg1;
-- (void)getStoreItemMetadataForRequest:(id)arg1 responseHandler:(id /* block */)arg2;
+- (id)getStoreItemMetadataForRequest:(id)arg1 responseHandler:(id /* block */)arg2;
 - (id)init;
 - (void)requestStoreItemMetadataForReason:(unsigned long long)arg1 withItemIdentifiers:(id)arg2 responseHandler:(id /* block */)arg3;
 

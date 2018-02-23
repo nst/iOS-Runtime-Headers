@@ -3,7 +3,7 @@
  */
 
 @interface FigPAMFrameScore : NSObject {
-    UtlFaceDetection * _faceDetection;
+    FigUtlFaceDetection * _faceDetection;
     NSMutableArray * _frameScoreInputs;
     struct FigPAMFrameScoreWeightsStruct { 
         float eyeOpen; 

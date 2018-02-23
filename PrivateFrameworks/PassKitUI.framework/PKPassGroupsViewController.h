@@ -30,11 +30,11 @@
     NSTimer * _passViewedNotificationTimer;
     bool  _passesAreOutdated;
     PKPaymentService * _paymentService;
-    PKPeerPaymentAccountResolutionController * _peerPaymentAccountResolutionController;
     PKPeerPaymentService * _peerPaymentService;
     bool  _persistentCardEmulationQueued;
     long long  _presentationState;
     bool  _reloadingPasses;
+    long long  _style;
     unsigned long long  _suppressedContent;
     bool  _updatingBackdropSettings;
     bool  _viewAppeared;
@@ -45,9 +45,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, retain) PKPassGroupStackView *groupStackView;
+@property (nonatomic, readonly) PKGroupsController *groupsController;
 @property bool handleFieldDetection;
 @property (readonly) unsigned long long hash;
 @property bool passesAreOutdated;
+@property (nonatomic, readonly) bool presentingPass;
+@property (nonatomic, readonly) long long style;
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned long long suppressedContent;
 @property (getter=isWelcomeStateEnabled, nonatomic) bool welcomeStateEnabled;
@@ -113,6 +116,7 @@
 - (void)groupStackViewDidEndReordering:(id)arg1;
 - (bool)groupStackViewShouldAllowReordering:(id)arg1;
 - (bool)groupStackViewShouldShowHeaderViews:(id)arg1;
+- (id)groupsController;
 - (void)groupsController:(id)arg1 didInsertGroup:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)groupsController:(id)arg1 didMoveGroup:(id)arg2 fromIndex:(unsigned long long)arg3 toIndex:(unsigned long long)arg4;
 - (void)groupsController:(id)arg1 didRemoveGroup:(id)arg2 atIndex:(unsigned long long)arg3;
@@ -123,6 +127,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithGroupsController:(id)arg1;
+- (id)initWithGroupsController:(id)arg1 style:(long long)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (bool)isWelcomeStateEnabled;
 - (void)loadView;
@@ -137,6 +142,7 @@
 - (bool)prefersStatusBarHidden;
 - (void)presentActionViewControllerWithUniqueID:(id)arg1 actionType:(unsigned long long)arg2;
 - (void)presentAutomaticPresentationControllerForPassWithUniqueID:(id)arg1;
+- (void)presentDefaultPaymentPassAnimated:(bool)arg1 completionHandler:(id /* block */)arg2;
 - (void)presentGroupTable;
 - (void)presentGroupTableAnimated:(bool)arg1;
 - (void)presentInitialState;
@@ -148,11 +154,13 @@
 - (void)presentPassWithUniqueID:(id)arg1 animated:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (void)presentPassWithUniqueID:(id)arg1 context:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)presentPassWithUpdateUserNotificationIdentifier:(id)arg1;
+- (void)presentPaymentPassDetailsWithUniqueID:(id)arg1 animated:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (void)presentPaymentSetupController;
 - (void)presentPaymentSetupInMode:(long long)arg1 referrerIdentifier:(id)arg2;
 - (void)presentPileOffscreen;
 - (void)presentTransactionDetailsForTransactionWithIdentifier:(id)arg1;
 - (void)presentTransactionDetailsForTransactionWithServiceIdentifier:(id)arg1;
+- (bool)presentingPass;
 - (void)queuePersistentCardEmulation;
 - (void)reloadGroupsForGroupStackView:(id)arg1;
 - (void)reloadPasses;
@@ -169,6 +177,7 @@
 - (void)setWelcomeStateEnabled:(bool)arg1;
 - (bool)shouldAutorotate;
 - (void)startPaymentPreflight:(id)arg1 withPaymentSetupMode:(long long)arg2 referrerIdentifier:(id)arg3;
+- (long long)style;
 - (unsigned long long)supportedInterfaceOrientations;
 - (unsigned long long)suppressedContent;
 - (void)terminateFieldDetect;
@@ -177,6 +186,7 @@
 - (void)updateRegionSupportIfNecessary;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
+- (void)viewSafeAreaInsetsDidChange;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
 

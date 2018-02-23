@@ -26,6 +26,7 @@
         BOOL __opaque[56]; 
     }  _pendingQueueLock;
     id /* block */  _perfSampleHandlerBlock;
+    NSObject<OS_dispatch_semaphore> * _presentScheduledSemaphore;
     bool  _profilingEnabled;
     unsigned long long  _qosClass;
     long long  _qosRelativePriority;

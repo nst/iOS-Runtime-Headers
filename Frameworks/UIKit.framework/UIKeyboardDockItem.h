@@ -23,7 +23,7 @@
 @property (nonatomic, retain) UILongPressGestureRecognizer *longPressGestureRecognizer;
 @property (nonatomic, retain) UIPanGestureRecognizer *panGestureRecognizer;
 @property (nonatomic) struct CGPoint { double x1; double x2; } touchDownPoint;
-@property (nonatomic, readonly) UIView *view;
+@property (nonatomic, readonly) UIKeyboardDockItemButton *view;
 
 + (id)_darkStyleGlyphColor;
 + (id)_standardGlyphColor;

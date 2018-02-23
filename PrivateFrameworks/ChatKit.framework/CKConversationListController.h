@@ -74,6 +74,7 @@
 - (void)_conversationPinStateChangedNotification:(id)arg1;
 - (void)_conversationSpamFilteringStateChangedNotification:(id)arg1;
 - (void)_dismissDetailsController:(id)arg1;
+- (void)_endHoldingUpdatesForBatchEditing:(bool)arg1;
 - (void)_filterCellSelectionChanged:(id)arg1;
 - (void)_getRotationContentSettings:(struct { bool x1; bool x2; bool x3; bool x4; bool x5; double x6; int x7; }*)arg1;
 - (void)_groupsChanged:(id)arg1;
@@ -207,6 +208,7 @@
 - (void)updateConversationSelection;
 - (void)updateCurrentEditButton;
 - (void)updateFilterControl:(id)arg1;
+- (void)updateMarginWidth;
 - (void)updateNavigationItems;
 - (void)updateNoMessagesDialog;
 - (void)updateSMSSpamConversationsDisplayName;

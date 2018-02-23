@@ -9,6 +9,7 @@
     NSString * _directory;
     NSObject<OS_dispatch_queue> * _executionQueue;
     unsigned long long  _insertsAndDeletesObserverCount;
+    NSHashTable * _knowledgeStorageEventNotificationDelegates;
     bool  _localOnly;
     NSURL * _modelURL;
     _DKCoreDataStorage * _storage;
@@ -30,7 +31,7 @@
 - (id)_requestForChangeSinceDate:(id)arg1;
 - (void)_sendEventsNotificationName:(id)arg1 withObjects:(id)arg2;
 - (void)_sendInsertEventsNotificationWithObjects:(id)arg1;
-- (void)_sendInsertsAndDeletesNotificationWithNotification:(id)arg1;
+- (void)addKnowledgeStorageEventNotificationDelegate:(id)arg1;
 - (void)closeStorage;
 - (void)closeSyncStorage;
 - (bool)copyValueToManagedObject:(id)arg1;
@@ -70,6 +71,7 @@
 - (unsigned long long)lastSequenceNumberForChangeSetWithEntityName:(id)arg1 error:(id*)arg2;
 - (bool)localOnly;
 - (id)removeBadObjects:(id)arg1;
+- (void)removeKnowledgeStorageEventNotificationDelegate:(id)arg1;
 - (bool)saveChangeSetsForSync:(id)arg1 error:(id*)arg2;
 - (void)saveHistogram:(id)arg1 responseQueue:(id)arg2 withCompletion:(id /* block */)arg3;
 - (bool)saveObjects:(id)arg1 error:(id*)arg2;

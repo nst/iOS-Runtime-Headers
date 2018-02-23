@@ -70,6 +70,7 @@
 - (void)_killConnection:(int)arg1;
 - (void)_pauseProgress:(unsigned long long)arg1;
 - (id)_queue;
+- (Class)_remoteObjectInterfaceClass;
 - (void)_removeImportedProxy:(id)arg1;
 - (void)_resumeProgress:(unsigned long long)arg1;
 - (void)_sendDesistForProxy:(id)arg1;

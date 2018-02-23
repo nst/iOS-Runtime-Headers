@@ -18,6 +18,7 @@
     bool  _deleted;
     NSArray * _endOfArticleTopicIDs;
     bool  _featureCandidate;
+    NSData * _flintDocumentPrefetchedData;
     NSString * _flintDocumentUrlString;
     NSArray * _flintFontResourceIDs;
     bool  _hasThumbnail;
@@ -38,7 +39,8 @@
     NSString * _referencedArticleID;
     NSArray * _relatedArticleIDs;
     NSString * _shortExcerpt;
-    NSObject<FCChannelProviding> * _sourceChannel;
+    bool  _showMinimalChrome;
+    <FCChannelProviding> * _sourceChannel;
     NSString * _sourceName;
     bool  _sponsored;
     FCTopStoriesStyleConfiguration * _storyStyle;
@@ -69,6 +71,7 @@
 @property (nonatomic, retain) NSDictionary *articlePayload;
 @property (nonatomic, retain) FCAssetManager *assetManager;
 @property (nonatomic, retain) NSString *changeEtag;
+@property (nonatomic, retain) NSData *flintDocumentPrefetchedData;
 @property (nonatomic, retain) NSString *flintDocumentUrlString;
 @property (nonatomic, retain) NSArray *flintFontResourceIDs;
 
@@ -87,9 +90,10 @@
 - (id)contentURL;
 - (id)coverArt;
 - (id)endOfArticleTopicIDs;
+- (id)flintDocumentPrefetchedData;
 - (id)flintDocumentUrlString;
 - (id)flintFontResourceIDs;
-- (id)generateFlintDocumentAssetHandleForUrlString:(id)arg1 withAssetManager:(id)arg2;
+- (id)generateFlintDocumentAssetHandleForUrlString:(id)arg1 prefetchedData:(id)arg2 withAssetManager:(id)arg3;
 - (id)generateThumbnailAssetHandleForUrlString:(id)arg1 withAssetManager:(id)arg2;
 - (bool)hasThumbnail;
 - (id)iAdCategories;
@@ -119,6 +123,7 @@
 - (void)setChangeEtag:(id)arg1;
 - (void)setContentType:(unsigned long long)arg1;
 - (void)setDeleted:(bool)arg1;
+- (void)setFlintDocumentPrefetchedData:(id)arg1;
 - (void)setFlintDocumentUrlString:(id)arg1;
 - (void)setFlintFontResourceIDs:(id)arg1;
 - (void)setHasThumbnail:(bool)arg1;
@@ -140,6 +145,7 @@
 - (void)setTitle:(id)arg1;
 - (void)setTopicIDs:(id)arg1;
 - (id)shortExcerpt;
+- (bool)showMinimalChrome;
 - (id)sourceChannel;
 - (id)sourceName;
 - (id)storyStyle;

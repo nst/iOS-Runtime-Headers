@@ -18,6 +18,7 @@
     NSNumber * _itemID;
     NSString * _itemName;
     long long  _purchaseID;
+    NSNumber * _purchaserDSID;
     NSString * _referrerName;
     NSString * _referrerURL;
     NSArray * _requiredCapabilities;
@@ -41,6 +42,7 @@
 @property (nonatomic, copy) NSNumber *itemID;
 @property (nonatomic, copy) NSString *itemName;
 @property long long purchaseID;
+@property (nonatomic, copy) NSNumber *purchaserDSID;
 @property (nonatomic, copy) NSString *referrerName;
 @property (nonatomic, copy) NSString *referrerURL;
 @property (nonatomic, copy) NSArray *requiredCapabilities;
@@ -73,6 +75,7 @@
 - (id)itemID;
 - (id)itemName;
 - (long long)purchaseID;
+- (id)purchaserDSID;
 - (id)referrerName;
 - (id)referrerURL;
 - (id)requiredCapabilities;
@@ -92,6 +95,7 @@
 - (void)setItemID:(id)arg1;
 - (void)setItemName:(id)arg1;
 - (void)setPurchaseID:(long long)arg1;
+- (void)setPurchaserDSID:(id)arg1;
 - (void)setReferrerName:(id)arg1;
 - (void)setReferrerURL:(id)arg1;
 - (void)setRequiredCapabilities:(id)arg1;

@@ -15,6 +15,7 @@
 @property (nonatomic, readonly) NSString *elementIdentifier;
 @property (nonatomic, readonly) NSString *elementName;
 @property (nonatomic, readonly) TVViewElement *parentViewElement;
+@property (nonatomic, readonly) long long semanticContentAttribute;
 @property (nonatomic, readonly) TVViewElementStyle *style;
 @property (nonatomic, readonly) long long updateType;
 
@@ -32,6 +33,7 @@
 - (bool)isDisabled;
 - (id)parentViewElement;
 - (void)resetProperty:(long long)arg1;
+- (long long)semanticContentAttribute;
 - (void)setDisabled:(bool)arg1;
 - (id)style;
 - (long long)updateType;

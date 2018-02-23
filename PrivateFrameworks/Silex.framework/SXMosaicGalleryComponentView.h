@@ -2,24 +2,28 @@
    Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
  */
 
-@interface SXMosaicGalleryComponentView : SXGalleryComponentView <SXFullScreenCanvasShowable, SXImageViewDelegate, SXMosaicGalleryLayouterDataSource, SXTextSourceDataSource, SXViewportChangeListener> {
+@interface SXMosaicGalleryComponentView : SXGalleryComponentView <SXFullscreenCanvasShowable, SXImageViewDelegate, SXMosaicGalleryLayouterDataSource, SXTextSourceDataSource, SXViewportChangeListener> {
+    <SXFullscreenCanvasControllerFactory> * _canvasControllerFactory;
     NSMutableSet * _exposedGalleryItems;
-    SXFullScreenCanvasController * _fullScreenCanvasController;
+    SXFullscreenCanvasController * _fullScreenCanvasController;
     SXMosaicGalleryLayouter * _galleryLayouter;
     UIView * _galleryView;
+    <SXGalleryItemImageViewFactory> * _imageViewFactory;
     NSMutableArray * _imageViews;
     bool  _loadedAtleastOneImage;
     SXMediaViewEvent * _mediaViewEvent;
     NSMutableArray * _visibleImageViews;
 }
 
+@property (nonatomic, readonly) <SXFullscreenCanvasControllerFactory> *canvasControllerFactory;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSMutableSet *exposedGalleryItems;
-@property (nonatomic, readonly) SXFullScreenCanvasController *fullScreenCanvasController;
+@property (nonatomic, readonly) SXFullscreenCanvasController *fullScreenCanvasController;
 @property (nonatomic, retain) SXMosaicGalleryLayouter *galleryLayouter;
 @property (nonatomic, retain) UIView *galleryView;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) <SXGalleryItemImageViewFactory> *imageViewFactory;
 @property (nonatomic, readonly) NSMutableArray *imageViews;
 @property (nonatomic) bool loadedAtleastOneImage;
 @property (nonatomic, retain) SXMediaViewEvent *mediaViewEvent;
@@ -31,6 +35,7 @@
 - (bool)allowHierarchyRemoval;
 - (unsigned long long)analyticsGalleryType;
 - (unsigned long long)analyticsMediaType;
+- (id)canvasControllerFactory;
 - (id)contentSizeCategoryForTextSource:(id)arg1;
 - (void)createMediaViewEventForGalleryItem:(id)arg1;
 - (void)discardContents;
@@ -64,15 +69,17 @@
 - (id)galleryView;
 - (void)imageView:(id)arg1 didLoadAnimatedImage:(id)arg2;
 - (void)imageView:(id)arg1 didLoadImage:(id)arg2 ofQuality:(int)arg3;
+- (id)imageViewFactory;
 - (id)imageViewForItemAtIndex:(unsigned long long)arg1;
 - (id)imageViewForLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (id)imageViews;
-- (id)initWithComponent:(id)arg1 configuration:(id)arg2 context:(id)arg3 analyticsReporting:(id)arg4 appStateMonitor:(id)arg5;
+- (id)initWithDocumentController:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 analyticsReporting:(id)arg4 componentStyleRendererFactory:(id)arg5 appStateMonitor:(id)arg6 imageViewFactory:(id)arg7 canvasControllerFactory:(id)arg8;
 - (id)inlineTextStylesForTextSource:(id)arg1;
+- (void)loadComponent:(id)arg1;
 - (bool)loadedAtleastOneImage;
 - (id)mediaViewEvent;
 - (unsigned long long)numberOfItemsForGalleryLayouter:(id)arg1;
-- (void)presentComponent;
+- (void)presentComponentWithChanges:(struct { bool x1; bool x2; })arg1;
 - (void)receivedInfo:(id)arg1 fromLayoutingPhaseWithIdentifier:(id)arg2;
 - (void)renderContents;
 - (void)renderContentsInDrawableRect;

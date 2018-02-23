@@ -22,6 +22,7 @@
 @property (nonatomic, readonly) unsigned long long source;
 @property (readonly) Class superclass;
 
++ (id)cloudRequiresPushOptions;
 + (id)defaultCloudOptions;
 + (id)defaultIDSOptions;
 + (id)defaultLegacyCloudOptions;

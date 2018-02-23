@@ -5,16 +5,17 @@
 @interface PKInlineInkPicker : UIControl <PKInlineColorPickerDelegate> {
     UIView * _backgroundView;
     UILayoutGuide * _backgroundViewLayoutGuide;
+    UIView * _clippingView;
     PKInlineColorPicker * _colorPicker;
     <PKInlineInkPickerDelegate> * _delegate;
     bool  _forceCompactLayout;
     NSArray * _inkIdentifiers;
     bool  _isUsedOnDarkBackground;
-    _PKOverflowCoveringView * _overflowCoveringView;
     unsigned long long  _pickerState;
     unsigned long long  _previousDrawingToolIndex;
     unsigned long long  _selectedInkIndex;
     unsigned long long  _selectionState;
+    UIView * _separatorView;
     bool  _shouldEmboss;
     unsigned long long  _sizeState;
     NSArray * _toolButtonItems;
@@ -23,6 +24,7 @@
 
 @property (nonatomic, retain) UIView *backgroundView;
 @property (nonatomic, readonly) UILayoutGuide *backgroundViewLayoutGuide;
+@property (nonatomic, retain) UIView *clippingView;
 @property (nonatomic, retain) PKInlineColorPicker *colorPicker;
 @property (nonatomic) unsigned long long colorSet;
 @property (readonly, copy) NSString *debugDescription;
@@ -32,7 +34,6 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSArray *inkIdentifiers;
 @property (nonatomic) bool isUsedOnDarkBackground;
-@property (nonatomic, retain) _PKOverflowCoveringView *overflowCoveringView;
 @property (nonatomic) unsigned long long pickerState;
 @property (nonatomic) unsigned long long previousDrawingToolIndex;
 @property (nonatomic, copy) UIColor *selectedColor;
@@ -40,6 +41,7 @@
 @property (nonatomic, copy) NSString *selectedInkIdentifier;
 @property (nonatomic) unsigned long long selectedInkIndex;
 @property (nonatomic) unsigned long long selectionState;
+@property (nonatomic, retain) UIView *separatorView;
 @property (nonatomic) bool shouldEmboss;
 @property (nonatomic) unsigned long long sizeState;
 @property (readonly) Class superclass;
@@ -61,6 +63,7 @@
 - (id)backgroundView;
 - (id)backgroundViewLayoutGuide;
 - (double)cachedToolButtonWidthForSizeState:(unsigned long long)arg1;
+- (id)clippingView;
 - (id)colorPicker;
 - (void)colorPickerColorTappedInCompactChooseToolState:(id)arg1;
 - (void)colorPickerDidSelectColor:(id)arg1 colorChanged:(bool)arg2;
@@ -81,7 +84,6 @@
 - (struct CGSize { double x1; double x2; })minimumSizeForSizeState:(unsigned long long)arg1 selectionState:(unsigned long long)arg2;
 - (void)notifyColorSelected:(bool)arg1;
 - (void)notifyToolSelected:(bool)arg1;
-- (id)overflowCoveringView;
 - (unsigned long long)pickerState;
 - (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (unsigned long long)previousDrawingToolIndex;
@@ -92,14 +94,15 @@
 - (unsigned long long)selectedInkIndex;
 - (unsigned long long)selectionState;
 - (unsigned long long)selectionStateForSizeState:(unsigned long long)arg1 previousSelectionState:(unsigned long long)arg2;
+- (id)separatorView;
 - (void)setBackgroundView:(id)arg1;
+- (void)setClippingView:(id)arg1;
 - (void)setColorPicker:(id)arg1;
 - (void)setColorSet:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setForceCompactLayout:(bool)arg1;
 - (void)setInkIdentifiers:(id)arg1;
 - (void)setIsUsedOnDarkBackground:(bool)arg1;
-- (void)setOverflowCoveringView:(id)arg1;
 - (void)setPickerState:(unsigned long long)arg1;
 - (void)setPreviousDrawingToolIndex:(unsigned long long)arg1;
 - (void)setSelectedColor:(id)arg1;
@@ -110,6 +113,7 @@
 - (void)setSelectedInkIdentifier:(id)arg1 animated:(bool)arg2;
 - (void)setSelectedInkIndex:(unsigned long long)arg1;
 - (void)setSelectionState:(unsigned long long)arg1;
+- (void)setSeparatorView:(id)arg1;
 - (void)setShouldEmboss:(bool)arg1;
 - (void)setSizeState:(unsigned long long)arg1;
 - (void)setToolButtonItems:(id)arg1;

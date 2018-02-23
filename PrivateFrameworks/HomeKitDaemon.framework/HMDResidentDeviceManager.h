@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDResidentDeviceManager : HMFObject <HMDBackingStoreObjectProtocol, HMFLogging, HMFMessageReceiver, HMFTimerDelegate, NSSecureCoding> {
+@interface HMDResidentDeviceManager : HMFObject <HMDBackingStoreObjectProtocol, HMDHomeMessageReceiver, HMFLogging, HMFTimerDelegate, NSSecureCoding> {
     NSObject<OS_dispatch_queue> * _clientQueue;
     bool  _confirming;
     <HMDResidentDeviceManagerDelegate> * _delegate;
@@ -35,6 +35,7 @@
 @property (nonatomic) long long lastAtHomeLevel;
 @property (nonatomic, readonly) HMFMessageDispatcher *messageDispatcher;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (readonly, copy) NSSet *messageReceiverChildren;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, readonly) HMDResidentDevice *primaryResidentDevice;
 @property (nonatomic, retain) NSUUID *primaryResidentUUID;
@@ -48,6 +49,7 @@
 @property (nonatomic, readonly) NSUUID *uuid;
 
 + (long long)compareElectionVersions:(id)arg1 otherVersion:(id)arg2;
++ (bool)hasMessageReceiverChildren;
 + (id)logCategory;
 + (id)shortDescription;
 + (bool)supportsSecureCoding;
@@ -71,6 +73,7 @@
 - (void)_registerForMessages;
 - (void)_removeResidentDevice:(id)arg1;
 - (void)_removeResidentDeviceWithModel:(id)arg1 message:(id)arg2;
+- (void)_run;
 - (void)_setupSessionWithPrimaryResidentDevice;
 - (void)_startMonitoringResident;
 - (void)_stopMonitoringResident;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WiFiKit.framework/WiFiKit
  */
 
-@interface WFNetworkListController : NSObject <WFAirportViewControllerDelegate, WFGasQueryControllerDelegate, WFHotspotInterfaceDelegate, WFNetworkListDelegate, WFNetworkSettingsViewControllerDelegate, WFOtherNetworkViewControllerDelegate, WFScanManagerDelegate> {
+@interface WFNetworkListController : NSObject <WFAirportViewControllerDelegate, WFGasQueryControllerDelegate, WFHotspotInterfaceDelegate, WFNetworkListDelegate, WFNetworkSettingsViewControllerDelegate, WFOtherNetworkViewControllerDelegate, WFScanManagerDelegate, WFSettingsControllerDelegate> {
     bool  _associating;
     <WFNetworkListRecord> * _associatingNetwork;
     bool  _associatingToOtherNetwork;
@@ -118,7 +118,7 @@
 - (void)_updateViewControllerScanResults;
 - (void)_updateViewsForNetworks:(id)arg1;
 - (bool)_useLegacySettingsUI;
-- (void)airportSettingsViewController:(id)arg1 setAutoJoinEnabled:(bool)arg2;
+- (void)airportSettingsViewController:(id)arg1 setAskToJoinEnabled:(bool)arg2;
 - (id)airportSettingsViewController:(id)arg1 unconfiguredAccessoriesGroupHeaderTitle:(id)arg2;
 - (long long)airportSettingsViewControllerAskToJoinStatus:(id)arg1;
 - (bool)airportSettingsViewControllerCurrentNetworkConnectionIsProblematic:(id)arg1;
@@ -206,6 +206,7 @@
 - (void)setViewController:(id)arg1;
 - (void)setViewControllerSupportsCurrentNetworkSubtitle:(bool)arg1;
 - (id)settingsController;
+- (bool)settingsControllerSupportsAirPortManagement:(id)arg1;
 - (void)startScanning;
 - (id)stateMonitor;
 - (void)stopScanning;

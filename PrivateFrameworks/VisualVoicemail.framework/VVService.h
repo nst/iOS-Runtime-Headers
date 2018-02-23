@@ -101,6 +101,7 @@
 - (void)displayPasswordRequestIfNecessary;
 - (bool)doTrashCompaction;
 - (bool)doesClientManageTrashCompaction;
+- (unsigned long long)failureReasonForError:(id)arg1;
 - (bool)greetingAvailable;
 - (bool)greetingFetchExistsProgressiveLoadInProgress:(bool*)arg1;
 - (void)handleAFLanguageCodeDidChangeNotification:(id)arg1;

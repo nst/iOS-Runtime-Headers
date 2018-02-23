@@ -6,19 +6,23 @@
     bool  _amendSettings;
     bool  _createDefaultTransitionContext;
     bool  _delegate;
-    bool  _didCommit;
     bool  _didCommitDEPRECATED;
-    bool  _didCreateScene;
+    bool  _didCommitDEPRECATED2;
+    bool  _didCreate;
+    bool  _didCreateSceneDEPRECATED;
     bool  _didDestroy;
     bool  _didReceiveActions;
     bool  _didSynchronize;
     bool  _didUpdateClientSettings;
     bool  _hostingPolicyForScene;
     bool  _internalObserver;
-    bool  _willCommit;
+    bool  _updateApplied;
+    bool  _updateCompleted;
+    bool  _updatePrepared;
+    bool  _willCommitDEPRECATED;
     bool  _willDestroy;
     bool  _willSynchronize;
-    bool  _willUpdateScene;
+    bool  _willUpdateSceneDEPRECATED;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -43,15 +47,15 @@
 - (id)observer;
 - (void)sceneManager:(id)arg1 amendSettings:(id)arg2 forUpdatingScene:(id)arg3;
 - (id)sceneManager:(id)arg1 createDefaultTransitionContextForScene:(id)arg2;
-- (void)sceneManager:(id)arg1 didCommitUpdateForScene:(id)arg2 transactionID:(unsigned long long)arg3 success:(bool)arg4;
-- (void)sceneManager:(id)arg1 didCreateScene:(id)arg2 withClient:(id)arg3;
+- (void)sceneManager:(id)arg1 didCreateScene:(id)arg2;
 - (void)sceneManager:(id)arg1 didDestroyScene:(id)arg2;
 - (long long)sceneManager:(id)arg1 hostingPolicyForScene:(id)arg2;
 - (void)sceneManager:(id)arg1 scene:(id)arg2 didReceiveActions:(id)arg3;
 - (void)sceneManager:(id)arg1 scene:(id)arg2 didUpdateClientSettingsWithDiff:(id)arg3 oldClientSettings:(id)arg4 transitionContext:(id)arg5;
-- (void)sceneManager:(id)arg1 willCommitUpdateForScene:(id)arg2 transactionID:(unsigned long long)arg3;
+- (void)sceneManager:(id)arg1 updateForScene:(id)arg2 appliedWithContext:(id)arg3;
+- (void)sceneManager:(id)arg1 updateForScene:(id)arg2 completedWithContext:(id)arg3 error:(id)arg4;
+- (void)sceneManager:(id)arg1 updateForScene:(id)arg2 preparedWithContext:(id)arg3;
 - (void)sceneManager:(id)arg1 willDestroyScene:(id)arg2;
-- (void)sceneManager:(id)arg1 willUpdateScene:(id)arg2 withSettings:(id)arg3 transitionContext:(id)arg4;
 - (void)sceneManagerDidEndSceneUpdateSynchronization:(id)arg1;
 - (void)sceneManagerWillBeginSceneUpdateSynchronization:(id)arg1;
 - (id)succinctDescription;

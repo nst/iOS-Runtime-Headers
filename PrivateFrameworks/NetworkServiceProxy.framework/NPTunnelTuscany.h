@@ -59,6 +59,7 @@
 - (void)handleEOF;
 - (void)handleFallbackForFlow:(id)arg1;
 - (void)handleFlowUsedTunnel;
+- (void)handleHelloAck:(unsigned int)arg1;
 - (void)handleInputAvailable;
 - (void)handlePingResponseRTT:(unsigned long long)arg1 geohash:(id)arg2;
 - (void)handleReadData:(struct nw_frame_array_s { struct nw_frame {} *x1; struct nw_frame {} **x2; }*)arg1;

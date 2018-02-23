@@ -16,11 +16,15 @@
     __NSCFURLSession * _session;
     struct __CFDictionary { } * _socketProperties;
     NSMutableArray * _transactionMetrics;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _unfair_lock;
     NSString * _uniqueIdentifier;
 }
 
 - (const struct __CFDictionary {}**)_DuetActivityProperties;
 - (const struct __CFData {}**)_TCPConnectionMetadata;
+- (unsigned short)_TLSNegotiatedCipherSuite;
 - (unsigned long long)_allowedProtocolTypes;
 - (id)_allowsCellular;
 - (bool)_allowsQUIC;
@@ -103,6 +107,7 @@
 - (float)priority;
 - (id)session;
 - (void)set_TCPConnectionMetadata:(id)arg1;
+- (void)set_TLSNegotiatedCipherSuite:(unsigned short)arg1;
 - (void)set_allowsQUIC:(bool)arg1;
 - (void)set_incompleteTaskMetrics:(id)arg1;
 - (void)set_preconnect:(bool)arg1;

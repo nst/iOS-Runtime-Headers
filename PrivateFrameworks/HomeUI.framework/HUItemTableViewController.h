@@ -7,10 +7,9 @@
     NSMutableArray * _foregroundUpdateFutures;
     HUGridLayoutOptions * _gridLayoutOptions;
     bool  _hasFinishedInitialLoad;
-    NSMapTable * _indexPathToTextFieldMap;
     HFItemManager * _itemManager;
     NSMutableSet * _registeredCellClasses;
-    NSMapTable * _textFieldToIndexPathMap;
+    NSMapTable * _textFieldToCellMap;
     bool  _visibilityUpdatesEnabled;
     bool  _wantsPreferredContentSize;
 }
@@ -23,11 +22,10 @@
 @property (nonatomic) bool hasFinishedInitialLoad;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HFItem *hu_presentedItem;
-@property (nonatomic, readonly) NSMapTable *indexPathToTextFieldMap;
 @property (nonatomic, retain) HFItemManager *itemManager;
 @property (nonatomic, readonly) NSMutableSet *registeredCellClasses;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) NSMapTable *textFieldToIndexPathMap;
+@property (nonatomic, readonly) NSMapTable *textFieldToCellMap;
 @property (nonatomic) bool visibilityUpdatesEnabled;
 @property (nonatomic) bool wantsPreferredContentSize;
 
@@ -47,6 +45,7 @@
 - (id)_visibleCellForItem:(id)arg1;
 - (unsigned long long)automaticDisablingReasonsForItem:(id)arg1;
 - (bool)automaticallyUpdatesViewControllerTitle;
+- (bool)bypassInitialItemUpdateReload;
 - (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;
 - (id)childViewControllersToPreload;
 - (id)currentTextForTextField:(id)arg1 item:(id)arg2;
@@ -60,7 +59,6 @@
 - (void)highlightItemAnimated:(id)arg1 duration:(double)arg2;
 - (id)hu_preloadContent;
 - (id)hu_presentedItem;
-- (id)indexPathToTextFieldMap;
 - (id)initWithItemManager:(id)arg1 tableViewStyle:(long long)arg2;
 - (id)initWithStyle:(long long)arg1;
 - (id)itemManager;
@@ -98,7 +96,6 @@
 - (bool)shouldHideHeaderAboveSection:(long long)arg1;
 - (bool)shouldHideSeparatorsForCell:(id)arg1 indexPath:(id)arg2;
 - (bool)shouldManageTextFieldForItem:(id)arg1;
-- (id)subclass_preloadContent;
 - (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
@@ -121,7 +118,7 @@
 - (id)textFieldForVisibleItem:(id)arg1;
 - (bool)textFieldShouldClear:(id)arg1;
 - (bool)textFieldShouldReturn:(id)arg1;
-- (id)textFieldToIndexPathMap;
+- (id)textFieldToCellMap;
 - (void)updateCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3 animated:(bool)arg4;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLayoutSubviews;

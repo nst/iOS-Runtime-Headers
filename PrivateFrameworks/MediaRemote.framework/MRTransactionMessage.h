@@ -11,6 +11,7 @@
 @property (nonatomic, readonly) void*playerPath;
 
 - (void)dealloc;
+- (id)initWithContentItems:(id)arg1 forPlayerPath:(void*)arg2;
 - (id)initWithName:(unsigned long long)arg1 packets:(id)arg2 playerPath:(void*)arg3;
 - (id)initWithPlaybackQueue:(void*)arg1 forPlayerPath:(void*)arg2;
 - (unsigned long long)name;

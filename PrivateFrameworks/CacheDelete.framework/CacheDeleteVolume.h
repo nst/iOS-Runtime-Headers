@@ -6,7 +6,6 @@
     unsigned long long  _initialFreespace;
     bool  _isRoot;
     NSString * _mountPoint;
-    NSDictionary * _thresholds;
 }
 
 @property (readonly) unsigned long long initialFreespace;

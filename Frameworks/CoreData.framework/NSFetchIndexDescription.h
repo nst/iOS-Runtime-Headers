@@ -34,6 +34,7 @@
 - (id)elements;
 - (void)encodeWithCoder:(id)arg1;
 - (id)entity;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1 elements:(id)arg2;
 - (id)initWithName:(id)arg1 predicate:(id)arg2 elements:(id)arg3 entity:(id)arg4;

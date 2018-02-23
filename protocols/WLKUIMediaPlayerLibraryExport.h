@@ -5,6 +5,7 @@
 
 @required
 
+- (void)fetchMediaEntitiesWithOptions:(NSDictionary *)arg1 :(JSValue *)arg2;
 - (NSDictionary *)findItemByPersistentIdentifier:(id)arg1 :(NSArray *)arg2;
 - (NSDictionary *)findItemByStoreIdentifier:(NSNumber *)arg1 :(NSArray *)arg2;
 - (void)getImageForItem:(NSString *)arg1 :(NSDictionary *)arg2 :(JSValue *)arg3;
@@ -16,6 +17,7 @@
 - (NSArray *)getItems;
 - (NSString *)getShowIdentifierForStoreIdentifier:(NSNumber *)arg1;
 - (void)getUpdateProgress:(JSValue *)arg1;
+- (bool)isHDRCapable;
 - (bool)libraryHasMedia;
 - (long long)queryHasItemCount:(NSString *)arg1;
 - (bool)setFilter:(NSDictionary *)arg1;

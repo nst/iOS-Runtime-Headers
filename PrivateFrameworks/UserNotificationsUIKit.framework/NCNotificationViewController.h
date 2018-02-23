@@ -6,6 +6,8 @@
     <UIViewControllerTransitionCoordinator> * _activeTransitionCoordinator;
     UIView * _associatedView;
     bool  _canPan;
+    UIPanGestureRecognizer * _customContentHomeAffordanceGestureRecognizer;
+    bool  _customContentHomeAffordanceVisible;
     <NCNotificationCustomContentProviding> * _customContentProvider;
     UIViewController<NCNotificationCustomContent> * _customContentProvidingViewController;
     <NCNotificationViewControllerDelegate> * _delegate;
@@ -29,6 +31,8 @@
 @property (nonatomic) bool adjustsFontForContentSizeCategory;
 @property (nonatomic) UIView *associatedView;
 @property (getter=hasCommittedToPresentingCustomContentProvidingViewController, nonatomic, readonly) bool committedToPresentingCustomContentProvidingViewController;
+@property (nonatomic) UIPanGestureRecognizer *customContentHomeAffordanceGestureRecognizer;
+@property (getter=isCustomContentHomeAffordanceVisible, nonatomic) bool customContentHomeAffordanceVisible;
 @property (nonatomic, retain) <NCNotificationCustomContentProviding> *customContentProvider;
 @property (getter=_customContentProvidingViewController, setter=_setCustomContentProvidingViewController:, nonatomic, retain) UIViewController<NCNotificationCustomContent> *customContentProvidingViewController;
 @property (readonly, copy) NSString *debugDescription;
@@ -108,6 +112,7 @@
 - (void)contentProvider:(id)arg1 requestsPresentingLongLookAnimated:(bool)arg2;
 - (void)customContent:(id)arg1 forwardAction:(id)arg2 forNotification:(id)arg3 withUserInfo:(id)arg4;
 - (void)customContent:(id)arg1 requestPermissionToExecuteAction:(id)arg2 forNotification:(id)arg3 withUserInfo:(id)arg4 completionHandler:(id /* block */)arg5;
+- (id)customContentHomeAffordanceGestureRecognizer;
 - (id)customContentProvider;
 - (void)customContentRequestsDismiss:(id)arg1;
 - (id)debugDescription;
@@ -125,6 +130,7 @@
 - (id)initWithNotificationRequest:(id)arg1;
 - (id)initWithNotificationRequest:(id)arg1 revealingAdditionalContentOnPresentation:(bool)arg2;
 - (bool)isContentExtensionVisible:(id)arg1;
+- (bool)isCustomContentHomeAffordanceVisible;
 - (bool)isDragging;
 - (bool)isInteractionEnabled;
 - (bool)isLookStyleLongLook;
@@ -146,6 +152,8 @@
 - (bool)revealAdditionalContentOnPresentation;
 - (void)setAdjustsFontForContentSizeCategory:(bool)arg1;
 - (void)setAssociatedView:(id)arg1;
+- (void)setCustomContentHomeAffordanceGestureRecognizer:(id)arg1;
+- (void)setCustomContentHomeAffordanceVisible:(bool)arg1;
 - (void)setCustomContentProvider:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setGroupName:(id)arg1;

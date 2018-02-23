@@ -11,6 +11,8 @@
 @property (nonatomic) long long responseType;
 
 - (void).cxx_destruct;
+- (bool)_hasActiveICloudAccount;
+- (long long)_mapCorrectSelectedButtonWithDialog:(id)arg1;
 - (id)_newCreateAccountDialog;
 - (id)init;
 - (id)initWithReason:(id)arg1;

@@ -7,6 +7,7 @@
     AXMTaskDispatcher * _outputRequests;
     NSObject<OS_dispatch_queue> * _queue;
     NSArray * _queue_activeComponents;
+    AXMHapticComponent * _queue_hapticComponent;
     AXMSoundComponent * _queue_soundComponent;
     AXMSpeechComponent * _queue_speechComponent;
     long long  _state;

@@ -9,8 +9,6 @@
 + (id)typeString;
 
 - (Class)componentModelClass;
-- (Class)componentSizerClass;
-- (Class)componentViewClass;
 - (bool)isCollapsible;
 
 @end

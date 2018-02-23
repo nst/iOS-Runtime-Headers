@@ -38,7 +38,7 @@
 @property (nonatomic) struct CGSize { double x1; double x2; } blueprintSize;
 @property (nonatomic) struct CGSize { double x1; double x2; } canvasSize;
 @property (nonatomic, retain) SXComponentDependencyResolver *dependencySolver;
-@property (nonatomic, readonly) bool didPlaceDynamicAds;
+@property (nonatomic) bool didPlaceDynamicAds;
 @property (nonatomic, retain) NSMutableDictionary *flattenedBlueprint;
 @property (nonatomic, retain) NSMutableSet *invalidatedComponents;
 @property (nonatomic, readonly) bool isComplete;
@@ -87,6 +87,7 @@
 - (void)setBlueprintSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setCanvasSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setDependencySolver:(id)arg1;
+- (void)setDidPlaceDynamicAds:(bool)arg1;
 - (void)setFlattenedBlueprint:(id)arg1;
 - (void)setInvalidatedComponents:(id)arg1;
 - (void)setLayoutAttributes:(id)arg1;

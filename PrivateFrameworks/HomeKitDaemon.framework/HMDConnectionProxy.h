@@ -9,6 +9,7 @@
     bool  _entitledForAPIAccess;
     bool  _entitledForBackgroundMode;
     bool  _entitledForSPIAccess;
+    unsigned long long  _entitlements;
     NSDictionary * _privateAccessEntitlement;
     HMDProcessInfo * _processInfo;
     HMFMessageDispatcher * _recvDispatcher;
@@ -33,6 +34,7 @@
 @property (getter=isEntitledForAPIAccess, nonatomic, readonly) bool entitledForAPIAccess;
 @property (getter=isEntitledForBackgroundMode, nonatomic, readonly) bool entitledForBackgroundMode;
 @property (getter=isEntitledForSPIAccess, nonatomic, readonly) bool entitledForSPIAccess;
+@property (readonly) unsigned long long entitlements;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, retain) NSDictionary *privateAccessEntitlement;
@@ -44,6 +46,8 @@
 @property (nonatomic, readonly) NSString *teamIdentifier;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 @property (nonatomic) NSXPCConnection *xpcConnection;
+
++ (unsigned long long)entitlementsForConnection:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_displayName;
@@ -61,6 +65,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)effectiveLocationBundleIdentifier;
+- (unsigned long long)entitlements;
 - (id)extractTeamIdentifier;
 - (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4;
 - (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 responseHandler:(id /* block */)arg5;

@@ -5,9 +5,11 @@
 @interface _TVShelfViewController : _TVMLCollectionViewController <TVShelfViewLayoutDelegate, UICollectionViewDelegateFlowLayout> {
     unsigned long long  _autohighlightScrollPosition;
     bool  _centered;
+    bool  _configureForListTemplate;
     <__TVShelfViewControllerDelegate> * _delegate;
     double  _lastPreviewDelay;
     NSIndexPath * _lastPreviewedIndexPath;
+    long long  _listTemplateAlignment;
     NSIndexPath * _pendingPreviewedIndexPath;
     unsigned long long  _speedBumpEdges;
 }

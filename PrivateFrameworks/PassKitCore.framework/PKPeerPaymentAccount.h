@@ -3,12 +3,16 @@
  */
 
 @interface PKPeerPaymentAccount : NSObject <NSSecureCoding> {
+    bool  _accountStateDirty;
     NSString * _associatedPassSerialNumber;
     NSString * _associatedPassTypeIdentifier;
     NSURL * _associatedPassURL;
     NSString * _countryCode;
     PKCurrencyAmount * _currentBalance;
     bool  _identityVerificationRequired;
+    NSDate * _lastUpdated;
+    NSDecimalNumber * _maximumBalance;
+    double  _proactiveFetchPeriod;
     unsigned long long  _stage;
     unsigned long long  _state;
     NSArray * _supportedFeatureDescriptors;
@@ -17,6 +21,7 @@
     NSURL * _termsURL;
 }
 
+@property (getter=isAccountStateDirty, nonatomic) bool accountStateDirty;
 @property (nonatomic, copy) NSString *associatedPassSerialNumber;
 @property (nonatomic, copy) NSString *associatedPassTypeIdentifier;
 @property (nonatomic, copy) NSURL *associatedPassURL;
@@ -24,8 +29,11 @@
 @property (nonatomic, copy) PKCurrencyAmount *currentBalance;
 @property (nonatomic, readonly, copy) NSArray *defaultSuggestions;
 @property (nonatomic) bool identityVerificationRequired;
+@property (nonatomic, retain) NSDate *lastUpdated;
+@property (nonatomic, copy) NSDecimalNumber *maximumBalance;
 @property (nonatomic, readonly) NSDictionary *maximumTransferAmounts;
 @property (nonatomic, readonly) NSDictionary *minimumTransferAmounts;
+@property (nonatomic) double proactiveFetchPeriod;
 @property (nonatomic) unsigned long long stage;
 @property (nonatomic) unsigned long long state;
 @property (nonatomic, copy) NSArray *supportedFeatureDescriptors;
@@ -50,18 +58,28 @@
 - (bool)identityVerificationRequired;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
+- (id)initWithDictionary:(id)arg1 lastUpdated:(id)arg2;
+- (bool)isAccountOutOfDate;
+- (bool)isAccountStateDirty;
 - (bool)isEqual:(id)arg1;
+- (id)lastUpdated;
 - (id)loadFromCardFeatureDescriptor;
+- (id)maximumBalance;
 - (id)maximumTransferAmounts;
 - (id)minimumTransferAmounts;
+- (double)proactiveFetchPeriod;
 - (id)requestFromUserFeatureDescriptor;
 - (id)sendToUserFeatureDescriptor;
+- (void)setAccountStateDirty:(bool)arg1;
 - (void)setAssociatedPassSerialNumber:(id)arg1;
 - (void)setAssociatedPassTypeIdentifier:(id)arg1;
 - (void)setAssociatedPassURL:(id)arg1;
 - (void)setCountryCode:(id)arg1;
 - (void)setCurrentBalance:(id)arg1;
 - (void)setIdentityVerificationRequired:(bool)arg1;
+- (void)setLastUpdated:(id)arg1;
+- (void)setMaximumBalance:(id)arg1;
+- (void)setProactiveFetchPeriod:(double)arg1;
 - (void)setStage:(unsigned long long)arg1;
 - (void)setState:(unsigned long long)arg1;
 - (void)setSupportedFeatureDescriptors:(id)arg1;

@@ -4,7 +4,7 @@
 
 @interface NUGLContext : NSObject {
     NSMapTable * _bindings;
-    struct Context { int (**x1)(); int x2; id x3; } * _gl;
+    struct Context { int (**x1)(); int x2; int x3; id x4; } * _gl;
     NUGLObjectPool * _privateObjectPool;
     NUGLObjectPool * _sharedObjectPool;
     NSMutableDictionary * _state;

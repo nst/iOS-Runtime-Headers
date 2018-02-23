@@ -38,7 +38,7 @@
 + (long long)audioConfigurationForMode:(long long)arg1 device:(long long)arg2 emulationMode:(long long)arg3 duringCall:(bool)arg4;
 + (id)captureGraphConfigurationUsingConfiguration:(id)arg1;
 + (id)configuration:(id)arg1 withDevice:(long long)arg2;
-+ (long long)sanitizeVideoConfigurationForDesiredConfiguration:(long long)arg1 mode:(long long)arg2 device:(long long)arg3 encodingBehavior:(long long)arg4;
++ (long long)sanitizeVideoConfigurationForDesiredConfiguration:(long long)arg1 mode:(long long)arg2 device:(long long)arg3;
 + (id)tinyConfigurationForConfiguration:(id)arg1 preserveFilters:(bool)arg2;
 
 - (long long)HDRMode;

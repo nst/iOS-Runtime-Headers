@@ -485,6 +485,7 @@
 - (id)hk_croppedImageWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)hk_resizedImageWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (double)hk_scaledImageViewHeightWithScaledWidth:(double)arg1;
+- (id)hk_watchIconImage;
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
@@ -830,8 +831,8 @@
 + (id)telephonyUIActionButtonGlyphImage;
 + (id)telephonyUIImageNamed:(id)arg1;
 + (id)telephonyUIUnreadIndicatorGlyphImage;
-+ (id)telephonyUI_AudioControlsGlyphForDeviceModelType:(long long)arg1;
-+ (id)telephonyUI_AudioRouteGlyphForDeviceModelType:(long long)arg1;
++ (id)telephonyUI_AudioControlsGlyphForDeviceType:(long long)arg1;
++ (id)telephonyUI_AudioRouteGlyphForDeviceType:(long long)arg1;
 + (id)telephonyUI_BluetoothAudioControlGlyphImage;
 + (id)telephonyUI_BluetoothAudioRouteGlyphImage;
 + (id)telephonyUI_CarPlayAudioRouteGlyphImage;

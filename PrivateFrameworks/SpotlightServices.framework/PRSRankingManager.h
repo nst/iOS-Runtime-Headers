@@ -18,10 +18,8 @@
 
 + (void)addToGlanceCategories:(id)arg1;
 + (void)fetchDuetValues;
-+ (id)getAppWhiteListReader;
 + (id)getCoreDuetValues;
 + (id)getCoreDuetValuesWhilePossiblyBlocking;
-+ (void)loadAppWhiteList;
 + (id)quickGlanceBundleIds;
 
 - (void).cxx_destruct;

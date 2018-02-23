@@ -3,6 +3,7 @@
  */
 
 @interface AXEventHandInfoRepresentation : NSObject <AXEventRepresentationDescription, NSCopying, NSSecureCoding> {
+    unsigned int  _additionalHandEventFlagsForGeneratedEvents;
     unsigned short  _currentFingerCount;
     unsigned int  _eventType;
     unsigned int  _handEventMask;
@@ -18,6 +19,7 @@
     unsigned char  _systemGesturePossible;
 }
 
+@property (nonatomic) unsigned int additionalHandEventFlagsForGeneratedEvents;
 @property (nonatomic) unsigned short currentFingerCount;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -39,6 +41,7 @@
 
 - (void).cxx_destruct;
 - (id)accessibilityEventRepresentationTabularDescription;
+- (unsigned int)additionalHandEventFlagsForGeneratedEvents;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned short)currentFingerCount;
 - (id)description;
@@ -52,6 +55,7 @@
 - (unsigned short)initialFingerCount;
 - (unsigned long long)length;
 - (id)paths;
+- (void)setAdditionalHandEventFlagsForGeneratedEvents:(unsigned int)arg1;
 - (void)setCurrentFingerCount:(unsigned short)arg1;
 - (void)setEventType:(unsigned int)arg1;
 - (void)setHandEventMask:(unsigned int)arg1;

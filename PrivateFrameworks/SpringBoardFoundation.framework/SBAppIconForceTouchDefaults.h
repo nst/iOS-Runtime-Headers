@@ -6,6 +6,7 @@
 
 @property (nonatomic) float animationDurationMultiplier;
 @property (nonatomic) bool enableUIPreviewInteractionAnimations;
+@property (nonatomic) float quickActionAnimationDuration;
 
 - (void)_bindAndRegisterDefaults;
 

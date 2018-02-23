@@ -17,7 +17,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSArray *invalidationObservers;
 @property (nonatomic) long long playerState;
-@property (nonatomic) NSIndexPath *playingIndexPath;
+@property (nonatomic, copy) NSIndexPath *playingIndexPath;
 @property (nonatomic, retain) MPSectionedCollection *queueContentItems;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) <MPCSupportedCommands> *supportedCommands;

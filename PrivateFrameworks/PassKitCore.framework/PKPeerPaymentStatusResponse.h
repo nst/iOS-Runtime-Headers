@@ -6,14 +6,14 @@
     NSArray * _actions;
     NSData * _amountHash;
     NSString * _paymentIdentifier;
-    unsigned long long  _status;
+    long long  _status;
     NSString * _transactionIdentifier;
 }
 
 @property (nonatomic, readonly, copy) NSArray *actions;
 @property (nonatomic, readonly, copy) NSData *amountHash;
 @property (nonatomic, readonly, copy) NSString *paymentIdentifier;
-@property (nonatomic, readonly) unsigned long long status;
+@property (nonatomic, readonly) long long status;
 @property (nonatomic, readonly, copy) NSString *transactionIdentifier;
 
 - (void).cxx_destruct;
@@ -22,7 +22,7 @@
 - (bool)amountHashIsValidForAmount:(id)arg1 andCurrency:(id)arg2;
 - (id)initWithData:(id)arg1;
 - (id)paymentIdentifier;
-- (unsigned long long)status;
+- (long long)status;
 - (id)transactionIdentifier;
 
 @end

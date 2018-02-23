@@ -17,6 +17,7 @@
 
 - (void).cxx_destruct;
 - (void)cancelAllPendingVideoCompositionRequests;
+- (void)failVideoCompositionRequest:(id)arg1 error:(id)arg2;
 - (void)fulfillVideoCompositionRequest:(id)arg1;
 - (id)init;
 - (void)renderContextChanged:(id)arg1;

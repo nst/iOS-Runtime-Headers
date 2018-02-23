@@ -9,6 +9,7 @@
     bool  _appStoreAutoEnableToggled;
     NSArray * _appStripCandidatePlugins;
     NSArray * _cachedPotentiallyVisiblePlugins;
+    <CKExtensionConsumer> * _currentExtensionConsumer;
     NSArray * _favoriteAppStripPlugins;
     bool  _isAppInstalationEnabled;
     bool  _isAppInstallationObserver;
@@ -37,6 +38,7 @@
 @property (nonatomic, retain) NSArray *allPlugins;
 @property (getter=isAppStoreAutoEnableToggled, nonatomic) bool appStoreAutoEnableToggled;
 @property (nonatomic, retain) NSArray *cachedPotentiallyVisiblePlugins;
+@property (nonatomic) <CKExtensionConsumer> *currentExtensionConsumer;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSArray *disabledPlugins;
@@ -57,6 +59,7 @@
 @property (nonatomic, retain) NSDictionary *pluginLaunchTimeMap;
 @property (nonatomic, retain) NSDictionary *pluginSeenMap;
 @property (nonatomic, retain) NSDictionary *pluginVersionMap;
+@property (nonatomic, readonly) NSArray *potentiallyVisibleNonFavoritePlugins;
 @property (nonatomic, readonly) NSArray *potentiallyVisiblePlugins;
 @property (nonatomic, readonly) NSArray *recentAppStripPlugins;
 @property (nonatomic, retain) CKPreviewDispatchCache *snapshotCache;
@@ -99,6 +102,7 @@
 - (void)cleanSeenMap;
 - (void)commitInteractionTimeOrderingChanges;
 - (id)createFakeAppsForPPTTesting:(unsigned long long)arg1;
+- (id)currentExtensionConsumer;
 - (void)dealloc;
 - (id)descriptionOfVisibleDrawerPlugins;
 - (id)digitalTouchViewControllerWithDataSource:(id)arg1;
@@ -107,7 +111,7 @@
 - (id)existingViewControllerForPluginIdentifier:(id)arg1;
 - (id)favoriteAppStripPlugins;
 - (id)filteredArrayOfInstallationsThatShouldBeVisible:(id)arg1;
-- (void)forceKillRemoteExtensions;
+- (void)forceKillRemoteExtensionsWithDelay:(bool)arg1;
 - (void)forceTearDownRemoteViews;
 - (void)handleManagedConfigSettingsChangeNotification:(id)arg1;
 - (id)handwritingViewControllerWithPluginPayloads:(id)arg1;
@@ -147,6 +151,7 @@
 - (id)pluginLaunchTimeMap;
 - (id)pluginSeenMap;
 - (id)pluginVersionMap;
+- (id)potentiallyVisibleNonFavoritePlugins;
 - (id)potentiallyVisiblePlugins;
 - (void)prepareForSuspend;
 - (id)recentAppStripPlugins;
@@ -160,6 +165,7 @@
 - (void)setAllPlugins:(id)arg1;
 - (void)setAppStoreAutoEnableToggled:(bool)arg1;
 - (void)setCachedPotentiallyVisiblePlugins:(id)arg1;
+- (void)setCurrentExtensionConsumer:(id)arg1;
 - (void)setEnabled:(bool)arg1 forPlugin:(id)arg2;
 - (void)setFavoriteAppStripPlugins:(id)arg1;
 - (void)setIsAppInstalationEnabled:(bool)arg1;

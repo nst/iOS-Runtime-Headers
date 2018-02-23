@@ -24,6 +24,12 @@
         double width; 
         double height; 
     }  _evaluatedItemSize;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _externalSafeInset;
     NSIndexPath * _indexPathForDraggedItem;
     NSArray * _preparedLayoutAttributes;
     NSArray * _preparedUpdateItems;
@@ -36,6 +42,7 @@
 @property (nonatomic) double evaluatedHorizontalItemOffset;
 @property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } evaluatedInset;
 @property (nonatomic) struct CGSize { double x1; double x2; } evaluatedItemSize;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } externalSafeInset;
 @property (nonatomic, copy) NSIndexPath *indexPathForDraggedItem;
 @property (nonatomic, copy) NSArray *preparedLayoutAttributes;
 @property (nonatomic, copy) NSArray *preparedUpdateItems;
@@ -59,6 +66,7 @@
 - (double)evaluatedHorizontalItemOffset;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })evaluatedInset;
 - (struct CGSize { double x1; double x2; })evaluatedItemSize;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })externalSafeInset;
 - (id)finalLayoutAttributesForDisappearingItemAtIndexPath:(id)arg1;
 - (void)finalizeCollectionViewUpdates;
 - (void)handleEditingGesture:(id)arg1;
@@ -79,6 +87,7 @@
 - (void)setEvaluatedHorizontalItemOffset:(double)arg1;
 - (void)setEvaluatedInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setEvaluatedItemSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setExternalSafeInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setIndexPathForDraggedItem:(id)arg1;
 - (void)setPreparedLayoutAttributes:(id)arg1;
 - (void)setPreparedUpdateItems:(id)arg1;

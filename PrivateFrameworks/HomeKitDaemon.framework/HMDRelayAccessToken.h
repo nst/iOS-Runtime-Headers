@@ -27,6 +27,7 @@
 - (void)configureWithHome:(id)arg1;
 - (id)dictionaryEncoding;
 - (void)encodeWithCoder:(id)arg1;
+- (void)fixupUserIdentifier;
 - (unsigned long long)hash;
 - (id)identifier;
 - (id)init;

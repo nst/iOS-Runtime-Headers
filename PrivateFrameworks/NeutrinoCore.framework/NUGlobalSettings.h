@@ -17,6 +17,7 @@
 + (bool)deviceDisableOpenGL;
 + (bool)devicePrintRenderer;
 + (id)globalSettings;
++ (bool)imageLayerDebug;
 + (bool)imageRenderJobUseSurfaceRenderer;
 + (bool)imageRenderJobUseTextureRenderer;
 + (bool)imageSourceDisableRAW;
@@ -38,6 +39,7 @@
 + (void)setDeviceDisableMetal:(bool)arg1;
 + (void)setDeviceDisableOpenGL:(bool)arg1;
 + (void)setDevicePrintRenderer:(bool)arg1;
++ (void)setImageLayerDebug:(bool)arg1;
 + (void)setImageRenderJobUseSurfaceRenderer:(bool)arg1;
 + (void)setImageRenderJobUseTextureRenderer:(bool)arg1;
 + (void)setImageSourceDisableRAW:(bool)arg1;
@@ -50,10 +52,12 @@
 + (void)setRendererUseP3Linear:(bool)arg1;
 + (void)setStoragePoolMigrationDelay:(double)arg1;
 + (void)setStoragePoolNonPurgeableLimit:(long long)arg1;
++ (void)setStoragePoolPurgeableLimit:(long long)arg1;
 + (void)setSurfaceStorageFactoryUsePool:(bool)arg1;
 + (void)setViewDebugEnabled:(bool)arg1;
 + (double)storagePoolMigrationDelay;
 + (long long)storagePoolNonPurgeableLimit;
++ (long long)storagePoolPurgeableLimit;
 + (bool)surfaceStorageFactoryUsePool;
 
 - (void).cxx_destruct;

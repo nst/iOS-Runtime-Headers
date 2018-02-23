@@ -9,12 +9,12 @@
 - (BWFigVideoCaptureStream *)captureStream;
 - (NSDictionary *)colorInfoForOutput:(BWNodeOutput *)arg1;
 - (BWNodeOutput *)detectedFacesOutput;
+- (void)makeOutputsLiveIfNeeded;
 - (void)setVideoCaptureOutputColorInfoOverride:(NSDictionary *)arg1;
 - (void)setVideoCaptureOutputPixelBufferAttachmentModificationAllowed:(bool)arg1;
 - (BWNodeOutput *)stillImageOutput;
 - (BWNodeOutput *)videoCaptureOutput;
 - (NSDictionary *)videoCaptureOutputColorInfoOverride;
 - (bool)videoCaptureOutputPixelBufferAttachmentModificationAllowed;
-- (void)willStop;
 
 @end

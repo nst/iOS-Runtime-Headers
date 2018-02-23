@@ -4,12 +4,14 @@
 
 @interface _SFPBImagesCardSection : PBCodable <NSSecureCoding, _SFPBImagesCardSection> {
     _SFPBColor * _backgroundColor;
+    bool  _borderless;
     bool  _canBeHidden;
     struct { 
         unsigned int canBeHidden : 1; 
         unsigned int hasTopPadding : 1; 
         unsigned int hasBottomPadding : 1; 
         unsigned int separatorStyle : 1; 
+        unsigned int borderless : 1; 
     }  _has;
     bool  _hasBottomPadding;
     bool  _hasTopPadding;
@@ -22,10 +24,12 @@
 }
 
 @property (nonatomic, retain) _SFPBColor *backgroundColor;
+@property (nonatomic) bool borderless;
 @property (nonatomic) bool canBeHidden;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) bool hasBackgroundColor;
+@property (nonatomic, readonly) bool hasBorderless;
 @property (nonatomic) bool hasBottomPadding;
 @property (nonatomic, readonly) bool hasCanBeHidden;
 @property (nonatomic, readonly) bool hasHasBottomPadding;
@@ -49,11 +53,13 @@
 - (void)addImages:(id)arg1;
 - (void)addPunchoutOptions:(id)arg1;
 - (id)backgroundColor;
+- (bool)borderless;
 - (bool)canBeHidden;
 - (void)clearImages;
 - (void)clearPunchoutOptions;
 - (id)dictionaryRepresentation;
 - (bool)hasBackgroundColor;
+- (bool)hasBorderless;
 - (bool)hasBottomPadding;
 - (bool)hasCanBeHidden;
 - (bool)hasHasBottomPadding;
@@ -80,6 +86,7 @@
 - (bool)readFrom:(id)arg1;
 - (int)separatorStyle;
 - (void)setBackgroundColor:(id)arg1;
+- (void)setBorderless:(bool)arg1;
 - (void)setCanBeHidden:(bool)arg1;
 - (void)setHasBottomPadding:(bool)arg1;
 - (void)setHasTopPadding:(bool)arg1;

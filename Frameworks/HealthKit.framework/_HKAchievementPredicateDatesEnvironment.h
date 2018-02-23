@@ -13,6 +13,7 @@
     NSDate * _endOfToday;
     long long  _firstDayOfFitnessWeek;
     NSDate * _firstWristOnDateToday;
+    long long  _lastDayOfFitnessWeek;
     NSDate * _now;
     long long  _numberOfDaysInCurrentMonth;
     NSDate * _startOfCurrentFitnessWeek;

@@ -4,6 +4,7 @@
 
 @interface NMSMediaSyncInfo : NSObject {
     NSDictionary * _info;
+    int  _notifyToken;
     unsigned long long  _target;
     NSString * _targetIdentifier;
 }
@@ -21,6 +22,7 @@
 - (id)_preferencesApplicationID;
 - (id)_preferencesInfoKey;
 - (void)_readInfo;
+- (void)_registerForInfoChanged;
 - (id)_syncInfoFilePath;
 - (id)_targetIdentifier;
 - (id)containers;

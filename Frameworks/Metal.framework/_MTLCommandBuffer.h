@@ -22,6 +22,7 @@
     unsigned long long  _globalTraceObjectID;
     unsigned long long  _gpuEndTime;
     unsigned long long  _gpuStartTime;
+    bool  _hasPresent;
     unsigned long long  _kernelEndTime;
     unsigned long long  _kernelStartTime;
     NSString * _label;

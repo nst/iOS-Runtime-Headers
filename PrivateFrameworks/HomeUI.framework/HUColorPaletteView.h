@@ -33,7 +33,6 @@
 @property (nonatomic, retain) id secondaryValue;
 @property (nonatomic, retain) HFColorPaletteColor *selectedColor;
 @property (nonatomic, retain) NSNumber *selectedColorBiasIndex;
-@property (nonatomic) long long sizeSubclass;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSNumber *trackingColorIndex;
 @property (getter=isUserInteractionActive, nonatomic) bool userInteractionActive;
@@ -63,6 +62,8 @@
 - (id)initWithProfile:(id)arg1;
 - (id)initWithProfile:(id)arg1 colorPalette:(id)arg2;
 - (id)interactionDelegate;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (id)intrinsicSizeDescriptorForControlSize:(unsigned long long)arg1;
 - (bool)isUserInteractionActive;
 - (void)layoutSubviews;
 - (id)profile;
@@ -84,6 +85,7 @@
 - (void)setUserInteractionActive:(bool)arg1;
 - (void)setValue:(id)arg1;
 - (id)trackingColorIndex;
+- (void)traitCollectionDidChange:(id)arg1;
 - (id)value;
 
 @end

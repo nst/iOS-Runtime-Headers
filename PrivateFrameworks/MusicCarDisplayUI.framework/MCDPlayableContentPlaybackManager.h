@@ -68,6 +68,7 @@
 - (bool)isSeeking;
 - (bool)limitedUI;
 - (id)model;
+- (void)modelResponseDidInvalidate:(id)arg1;
 - (bool)nowPlayingViewController:(id)arg1 buttonShouldBeActive:(long long)arg2;
 - (void)nowPlayingViewController:(id)arg1 didSendAction:(long long)arg2 state:(long long)arg3;
 - (bool)nowPlayingViewController:(id)arg1 shouldDisplayButton:(long long)arg2 withImage:(out id*)arg3 existingIdentifier:(id)arg4 tinted:(out bool*)arg5;

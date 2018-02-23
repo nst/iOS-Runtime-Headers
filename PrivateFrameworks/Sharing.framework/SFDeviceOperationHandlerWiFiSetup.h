@@ -13,6 +13,7 @@
     bool  _stepDone;
     NSError * _stepError;
     int  _wifiChannel;
+    bool  _wifiDirected;
     NSData * _wifiPSK;
     NSString * _wifiPassword;
     NSString * _wifiSSID;

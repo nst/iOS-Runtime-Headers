@@ -29,6 +29,7 @@
     float  _depthPixelBufferScale;
     int  _depthPixelBufferXPadding;
     int  _depthPixelBufferYPadding;
+    float  _depthQualityMetricFocalPlaneOffsetMeters;
     float  _disparityFilterColorStd;
     float  _disparityFilterUpdateRate;
     int  _disparityPushingBackgroundToForegroundDisparityDifference;
@@ -111,6 +112,7 @@
 @property float depthPixelBufferScale;
 @property int depthPixelBufferXPadding;
 @property int depthPixelBufferYPadding;
+@property float depthQualityMetricFocalPlaneOffsetMeters;
 @property (readonly, copy) NSString *description;
 @property float disparityFilterColorStd;
 @property float disparityFilterUpdateRate;
@@ -195,6 +197,7 @@
 - (float)depthPixelBufferScale;
 - (int)depthPixelBufferXPadding;
 - (int)depthPixelBufferYPadding;
+- (float)depthQualityMetricFocalPlaneOffsetMeters;
 - (float)disparityFilterColorStd;
 - (float)disparityFilterUpdateRate;
 - (int)disparityPushingBackgroundToForegroundDisparityDifference;
@@ -266,6 +269,7 @@
 - (void)setDepthPixelBufferScale:(float)arg1;
 - (void)setDepthPixelBufferXPadding:(int)arg1;
 - (void)setDepthPixelBufferYPadding:(int)arg1;
+- (void)setDepthQualityMetricFocalPlaneOffsetMeters:(float)arg1;
 - (void)setDisparityFilterColorStd:(float)arg1;
 - (void)setDisparityFilterUpdateRate:(float)arg1;
 - (void)setDisparityPushingBackgroundToForegroundDisparityDifference:(int)arg1;

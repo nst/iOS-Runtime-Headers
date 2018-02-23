@@ -9,13 +9,16 @@
     }  _has;
     _MPCProtoContainerIdentifierSet * _identifierSet;
     NSMutableArray * _items;
+    NSString * _playActivityFeatureName;
 }
 
 @property (nonatomic) int containerType;
 @property (nonatomic) bool hasContainerType;
 @property (nonatomic, readonly) bool hasIdentifierSet;
+@property (nonatomic, readonly) bool hasPlayActivityFeatureName;
 @property (nonatomic, retain) _MPCProtoContainerIdentifierSet *identifierSet;
 @property (nonatomic, retain) NSMutableArray *items;
+@property (nonatomic, retain) NSString *playActivityFeatureName;
 
 + (Class)itemType;
 
@@ -28,6 +31,7 @@
 - (id)dictionaryRepresentation;
 - (bool)hasContainerType;
 - (bool)hasIdentifierSet;
+- (bool)hasPlayActivityFeatureName;
 - (unsigned long long)hash;
 - (id)identifierSet;
 - (bool)isEqual:(id)arg1;
@@ -35,11 +39,13 @@
 - (id)items;
 - (unsigned long long)itemsCount;
 - (void)mergeFrom:(id)arg1;
+- (id)playActivityFeatureName;
 - (bool)readFrom:(id)arg1;
 - (void)setContainerType:(int)arg1;
 - (void)setHasContainerType:(bool)arg1;
 - (void)setIdentifierSet:(id)arg1;
 - (void)setItems:(id)arg1;
+- (void)setPlayActivityFeatureName:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -12,7 +12,6 @@
     long long  _storePurchasedAdamID;
     long long  _storeRadioAdamID;
     long long  _storeSubscriptionAdamID;
-    NSString * _storefrontID;
 }
 
 @property (nonatomic) unsigned long long accountID;
@@ -24,7 +23,6 @@
 @property (nonatomic) long long storePurchasedAdamID;
 @property (nonatomic) long long storeRadioAdamID;
 @property (nonatomic) long long storeSubscriptionAdamID;
-@property (nonatomic, copy) NSString *storefrontID;
 
 - (void).cxx_destruct;
 - (unsigned long long)accountID;
@@ -44,11 +42,9 @@
 - (void)setStorePurchasedAdamID:(long long)arg1;
 - (void)setStoreRadioAdamID:(long long)arg1;
 - (void)setStoreSubscriptionAdamID:(long long)arg1;
-- (void)setStorefrontID:(id)arg1;
 - (unsigned long long)storeCloudID;
 - (long long)storePurchasedAdamID;
 - (long long)storeRadioAdamID;
 - (long long)storeSubscriptionAdamID;
-- (id)storefrontID;
 
 @end

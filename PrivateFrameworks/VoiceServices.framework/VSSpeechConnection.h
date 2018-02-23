@@ -15,7 +15,6 @@
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, readonly) VSPresynthesizedAudioRequest *presynthesizedAudioRequest;
 @property (nonatomic, readonly) VSSpeechRequest *request;
-@property (nonatomic, readonly) VSSpeechRequest *synthesisRequest;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *threadSafeQueue;
 @property (nonatomic, retain) NSXPCConnection *xpcConnection;
 
@@ -26,6 +25,7 @@
 - (id)availableFootprintsForVoice:(id)arg1 languageCode:(id)arg2;
 - (id)availableVoicesForLanguageCode:(id)arg1;
 - (oneway void)cleanUnusedAssets:(id /* block */)arg1;
+- (id)concurrentSynthesisRequests;
 - (void)continueCurrentSpeechRequest;
 - (void)dealloc;
 - (id)delegate;
@@ -51,7 +51,6 @@
 - (void)setLogToFile:(bool)arg1;
 - (void)setPresynthesizedAudioRequest:(id)arg1;
 - (void)setRequest:(id)arg1;
-- (void)setSynthesisRequest:(id)arg1;
 - (void)setThreadSafeQueue:(id)arg1;
 - (void)setXpcConnection:(id)arg1;
 - (void)startPresynthesizedAudioRequest:(id)arg1;
@@ -59,7 +58,6 @@
 - (void)startSynthesisRequest:(id)arg1;
 - (void)stopCurrentSpeechRequestAtMark:(long long)arg1;
 - (void)stopPresynthesizedAudioRequest;
-- (id)synthesisRequest;
 - (id)threadSafeQueue;
 - (void)updateWithConnectionIdentifier:(id)arg1;
 - (id)xpcConnection;

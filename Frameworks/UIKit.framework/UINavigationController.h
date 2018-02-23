@@ -103,6 +103,7 @@
         unsigned int didSetNeedsFocusInTransition : 1; 
         unsigned int layingOutTopViewController : 1; 
         unsigned int hasScheduledDeferredUpdateNavigationBarHostedRefreshControl : 1; 
+        unsigned int allowsFreezeLayoutForOrientationChangeOnDismissal : 1; 
     }  _navigationControllerFlags;
     UIView * _navigationTransitionView;
     UIView * _paletteClippingView;
@@ -132,6 +133,7 @@
 @property (setter=_setNavbarAnimationId:, nonatomic, retain) NSUUID *_navbarAnimationId;
 @property (setter=_setNavigationBarAnimationWasCancelled:, nonatomic) bool _navigationBarAnimationWasCancelled;
 @property (setter=_setPreferredNavigationBarPosition:, nonatomic) long long _preferredNavigationBarPosition;
+@property (setter=_setSearchHidNavigationBar:, nonatomic) bool _searchHidNavigationBar;
 @property (setter=_setShouldUseBuiltinAnimator:, nonatomic) bool _shouldUseBuiltinAnimator;
 @property (setter=_setToolbarAnimationId:, nonatomic, retain) NSUUID *_toolbarAnimationId;
 @property (setter=_setToolbarAnimationWasCancelled:, nonatomic) bool _toolbarAnimationWasCancelled;
@@ -195,6 +197,7 @@
 - (bool)_allowChildSplitViewControllers;
 - (bool)_allowNestedNavigationControllers;
 - (bool)_allowsAutorotation;
+- (bool)_allowsFreezeLayoutForOrientationChangeOnDismissal;
 - (bool)_animationParametersForHidingNavigationBar:(bool)arg1 lastOperation:(long long)arg2 edge:(unsigned long long*)arg3 duration:(double*)arg4;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_avoidanceInsets;
 - (id)_backdropBarGroupName;
@@ -407,6 +410,7 @@
 - (void)_sendNavigationBarToBack;
 - (void)_setAllowChildSplitViewControllers:(bool)arg1;
 - (void)_setAllowNestedNavigationControllers:(bool)arg1;
+- (void)_setAllowsFreezeLayoutForOrientationChangeOnDismissal:(bool)arg1;
 - (void)_setBackdropGroupName:(id)arg1;
 - (void)_setBarSwipeHideGesture:(id)arg1;
 - (void)_setBarTapHideGesture:(id)arg1;
@@ -763,7 +767,6 @@
 - (void)pk_applyAppearance:(id)arg1;
 - (id)pk_childrenForAppearance;
 - (id)pkui_compactNavigationContainer;
-- (void)pushCredentialViewController:(id)arg1 pruningHierarchy:(bool)arg2 animated:(bool)arg3;
 
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 

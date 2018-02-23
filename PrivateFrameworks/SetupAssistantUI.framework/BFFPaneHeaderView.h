@@ -4,6 +4,7 @@
 
 @interface BFFPaneHeaderView : UIView {
     UIView * _bottomLine;
+    double  _customTopPadding;
     UILabel * _detailTextLabel;
     double  _flexibleHeight;
     UIImage * _icon;
@@ -17,6 +18,7 @@
 }
 
 @property (nonatomic, retain) UIColor *bottomLineColor;
+@property (nonatomic) double customTopPadding;
 @property (nonatomic, readonly) UILabel *detailTextLabel;
 @property (nonatomic) double flexibleHeight;
 @property (nonatomic, retain) UIImage *icon;
@@ -29,6 +31,7 @@
 - (double)_labelsAndLinksBaselineOffsetForView:(id)arg1;
 - (void)_linkButtonPressed;
 - (id)bottomLineColor;
+- (double)customTopPadding;
 - (id)detailTextLabel;
 - (double)flexibleHeight;
 - (double)heightForWidth:(double)arg1 inView:(id)arg2;
@@ -37,6 +40,7 @@
 - (bool)isTextLabelAlignedByLastBaseline;
 - (void)layoutSubviews;
 - (void)setBottomLineColor:(id)arg1;
+- (void)setCustomTopPadding:(double)arg1;
 - (void)setFlexibleHeight:(double)arg1;
 - (void)setIcon:(id)arg1;
 - (void)setLinkText:(id)arg1 handler:(id /* block */)arg2;

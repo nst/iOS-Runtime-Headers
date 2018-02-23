@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CardKit.framework/CardKit
  */
 
-@interface CRKCardSectionViewController : UIViewController <INUIRemoteViewControllerDelegate, SFFeedbackListener, SearchUIFeedbackDelegate> {
+@interface CRKCardSectionViewController : UIViewController <CRKFeedbackDelegate, INUIRemoteViewControllerDelegate, SFFeedbackListener, SearchUIFeedbackDelegate> {
     bool  _active;
     <CRCardSection> * _cardSection;
     bool  _compressed;
@@ -12,6 +12,7 @@
     bool  _loading;
     CRKOverlayButton * _overlayButton;
     INUIRemoteViewController * _remoteViewController;
+    CRKCardSectionViewConfiguration * _viewConfiguration;
 }
 
 @property (nonatomic, readonly) INUIRemoteViewController *_remoteViewController;
@@ -27,9 +28,11 @@
 @property (getter=isLoading, nonatomic) bool loading;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIView<CRKCardSectionView> *view;
+@property (nonatomic, retain) CRKCardSectionViewConfiguration *viewConfiguration;
 
 + (id)cardSectionClasses;
 + (id)cardSectionViewControllerForCardSection:(id)arg1 dataSource:(id)arg2;
++ (id)cardSectionViewControllerForViewConfiguration:(id)arg1 dataSource:(id)arg2;
 + (void)registerCardSectionViewController;
 
 - (void).cxx_destruct;
@@ -53,6 +56,7 @@
 - (id)_interaction;
 - (bool)_isIndicatingActivity;
 - (bool)_isLoadedWithIntentsUIView;
+- (bool)_isTitleSectionViewController;
 - (void)_loadCardSectionView;
 - (id)_parameters;
 - (void)_performCommand:(id)arg1;
@@ -68,8 +72,18 @@
 - (bool)_shouldRenderButtonOverlay;
 - (id)_unhandledParameters;
 - (id)cardSection;
+- (void)cardSectionViewDidAppearForCardSection:(id)arg1 withAppearanceFeedback:(id)arg2;
+- (void)cardSectionViewDidDisappearForCardSection:(id)arg1 withDisappearanceFeedback:(id)arg2;
 - (void)cardSectionViewDidInvalidateSize:(id)arg1;
+- (void)cardSectionViewDidInvalidateSize:(id)arg1 animate:(bool)arg2;
+- (void)cardSectionViewDidInvalidateSizeForCardSection:(id)arg1;
 - (void)cardSectionViewDidSelectPreferredPunchoutIndex:(long long)arg1;
+- (void)cardSectionViewWillAppearForCardSection:(id)arg1 withAppearanceFeedback:(id)arg2;
+- (void)cardViewDidAppearForCard:(id)arg1 withAppearanceFeedback:(id)arg2;
+- (void)cardViewDidDisappearForCard:(id)arg1 withDisappearanceFeedback:(id)arg2;
+- (void)cardViewWillAppearForCard:(id)arg1 withAppearanceFeedback:(id)arg2;
+- (void)controllerForCard:(id)arg1 didReceiveAsyncCard:(id)arg2 withAsyncCardReceiptFeedback:(id)arg3;
+- (void)controllerForCard:(id)arg1 didRequestAsyncCard:(id)arg2 withAsyncCardRequestFeedback:(id)arg3;
 - (unsigned long long)crk_intrinsicInteractiveBehavior;
 - (id)dataSource;
 - (id)delegate;
@@ -91,6 +105,10 @@
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLoading:(bool)arg1;
+- (void)setViewConfiguration:(id)arg1;
+- (bool)shouldHandleEngagement:(id)arg1 forCardSection:(id)arg2;
+- (void)userDidEngageCardSection:(id)arg1 withEngagementFeedback:(id)arg2;
+- (id)viewConfiguration;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;

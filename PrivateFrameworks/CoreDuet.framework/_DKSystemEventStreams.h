@@ -37,6 +37,7 @@
 + (id)internalQueryDataCollectionStream;
 + (id)isSleepEventStream;
 + (id)isWeekendEventStream;
++ (id)keybagIsLockedStream;
 + (id)locationVisitStream;
 + (id)microLocationVisitStream;
 + (id)motionStream;

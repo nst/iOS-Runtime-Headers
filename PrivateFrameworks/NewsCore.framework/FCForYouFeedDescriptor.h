@@ -23,18 +23,18 @@
 - (id)editionAtDate:(id)arg1;
 - (id)editionFollowingEdition:(id)arg1;
 - (long long)feedFilterOptions;
-- (id)feedGroupEmitters;
+- (id)feedGroupEmittersWithAppConfiguration:(id)arg1;
 - (id)feedPaginator;
 - (long long)feedSortMethod;
 - (id)iAdFeedID;
 - (id)initWithIdentifier:(id)arg1 trendingAndSavedStoriesCount:(long long)arg2 appConfigurationManager:(id)arg3 subscriptionList:(id)arg4;
 - (id)name;
-- (id)offlineFeedGroupEmitters;
+- (id)offlineFeedGroupEmittersWithAppConfiguration:(id)arg1;
 - (void)prepareToProvideFeedGroupEmittersWithCallbackQueue:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setAppConfigurationManager:(id)arg1;
 - (void)setSubscriptionList:(id)arg1;
 - (void)setTrendingAndSavedStoriesCount:(unsigned long long)arg1;
-- (bool)shouldFilterFeedGroupEmitter:(id)arg1;
+- (bool)shouldFilterFeedGroupEmitter:(id)arg1 withAppConfiguration:(id)arg2;
 - (id)subscriptionList;
 - (unsigned long long)trendingAndSavedStoriesCount;
 

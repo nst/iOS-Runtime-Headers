@@ -17,6 +17,7 @@
     bool  _isSOS;
     NSString * _locale;
     NSDictionary * _messageSummaryInfo;
+    NSString * _notificationIDSTokenURI;
     NSData * _payloadData;
     NSString * _plainBody;
     long long  _replaceID;
@@ -59,6 +60,7 @@
 @property (nonatomic, readonly) bool isTypingMessage;
 @property (nonatomic, retain) NSString *locale;
 @property (nonatomic, retain) NSDictionary *messageSummaryInfo;
+@property (nonatomic, retain) NSString *notificationIDSTokenURI;
 @property (nonatomic, retain) NSData *payloadData;
 @property (nonatomic, retain) NSString *plainBody;
 @property (nonatomic) long long replaceID;
@@ -74,6 +76,7 @@
 
 // Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/IMSharedUtilities
 
++ (bool)messageContainsSurfDD:(id)arg1;
 + (bool)supportsSecureCoding;
 
 - (void)_clearBodyData;
@@ -135,6 +138,7 @@
 - (bool)isUpdatingDataSourcePayload;
 - (id)locale;
 - (id)messageSummaryInfo;
+- (id)notificationIDSTokenURI;
 - (id)payloadData;
 - (id)plainBody;
 - (long long)replaceID;
@@ -154,6 +158,7 @@
 - (void)setIsSOS:(bool)arg1;
 - (void)setLocale:(id)arg1;
 - (void)setMessageSummaryInfo:(id)arg1;
+- (void)setNotificationIDSTokenURI:(id)arg1;
 - (void)setPayloadData:(id)arg1;
 - (void)setPlainBody:(id)arg1;
 - (void)setReplaceID:(long long)arg1;
@@ -183,7 +188,7 @@
 - (bool)_hasMessageChatItem;
 - (bool)_isInvitation;
 - (id)_newChatItems;
-- (id)_newChatItemsWithFilteredChat:(bool)arg1 isBusiness:(bool)arg2;
+- (id)_newChatItemsWithFilteredChat:(bool)arg1 isBusiness:(bool)arg2 hasKnownParticipants:(bool)arg3;
 - (id)_service;
 - (void)_setInivtation:(bool)arg1;
 - (id)descriptionForPurpose:(long long)arg1 isGroupMessage:(bool)arg2 messageDataSource:(id /* block */)arg3 attachmentDataSource:(id /* block */)arg4;

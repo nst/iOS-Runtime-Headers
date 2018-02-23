@@ -13,6 +13,7 @@
     UILabel * _subtitleLabel;
     NSString * _title;
     UILabel * _titleLabel;
+    bool  _useAlternateBackground;
 }
 
 @property (nonatomic, retain) CCUIRoundButton *buttonView;
@@ -25,6 +26,7 @@
 @property (nonatomic, retain) UILabel *subtitleLabel;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, retain) UILabel *titleLabel;
+@property (nonatomic) bool useAlternateBackground;
 
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange;
@@ -56,10 +58,12 @@
 - (void)setSubtitleLabel:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
+- (void)setUseAlternateBackground:(bool)arg1;
 - (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)subtitle;
 - (id)subtitleLabel;
 - (id)title;
 - (id)titleLabel;
+- (bool)useAlternateBackground;
 
 @end

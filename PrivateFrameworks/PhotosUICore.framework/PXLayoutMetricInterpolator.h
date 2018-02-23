@@ -17,6 +17,7 @@
 
 + (id)albumsGridEdgeInsetsInterpolator;
 + (id)albumsGridItemWidthInterpolator;
++ (id)layoutMarginWidthInterpolator;
 + (id)memoriesDetailsEdgeInsetsInterpolator;
 + (id)memoriesFeedInteritemSpacingInterpolator;
 + (id)memoriesFeedLandscapeEdgeInsetsInterpolator;

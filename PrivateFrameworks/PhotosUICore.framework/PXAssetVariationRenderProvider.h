@@ -5,8 +5,6 @@
 @interface PXAssetVariationRenderProvider : PXObservable <PXPhotoLibraryUIChangeObserver> {
     NSOperation * __analysisOperation;
     NSDictionary * __analysisResult;
-    NSString * __analysisResultCacheKey;
-    long long  __baseVersion;
     NSDate * __beginRenderingDate;
     PLPhotoEditModel * __editModel;
     NSNumber * __editModelDuration;
@@ -30,18 +28,6 @@
     bool  _hasBegunRendering;
     NSProgress * _imageURLProgress;
     NSProgress * _initialLoadingProgress;
-    struct { 
-        bool status; 
-        bool placeholderImage; 
-        bool existingVideoAsset; 
-        bool existingVariationResult; 
-        bool imageURL; 
-        bool videoURL; 
-        bool editModel; 
-        bool analysisResult; 
-        bool cachedAnalysisResult; 
-        bool renders; 
-    }  _needsUpdate;
     UIImage * _placeholderImage;
     NSMutableDictionary * _progressesByVariationType;
     NSProgress * _recipeGenerationProgress;
@@ -53,14 +39,13 @@
         double width; 
         double height; 
     }  _targetSize;
+    PXUpdater * _updater;
     NSProgress * _videoURLProgress;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (setter=_setAnalysisOperation:, nonatomic, retain) NSOperation *_analysisOperation;
 @property (setter=_setAnalysisResult:, nonatomic, copy) NSDictionary *_analysisResult;
-@property (setter=_setAnalysisResultCacheKey:, nonatomic, retain) NSString *_analysisResultCacheKey;
-@property (setter=_setBaseVersion:, nonatomic) long long _baseVersion;
 @property (setter=_setBeginRenderingDate:, nonatomic, retain) NSDate *_beginRenderingDate;
 @property (setter=_setEditModel:, nonatomic, copy) PLPhotoEditModel *_editModel;
 @property (setter=_setEditModelDuration:, nonatomic, retain) NSNumber *_editModelDuration;
@@ -74,7 +59,6 @@
 @property (setter=_setRecipeGenerationDuration:, nonatomic, retain) NSNumber *_recipeGenerationDuration;
 @property (nonatomic, readonly) NSMutableDictionary *_renderingDurationByVariationType;
 @property (nonatomic, readonly) NSMutableDictionary *_renderingOperationsByVariationType;
-@property (nonatomic, readonly) struct CGSize { double x1; double x2; } _resolvedTargetSize;
 @property (setter=_setTotalRenderingDuration:, nonatomic, retain) NSNumber *_totalRenderingDuration;
 @property (setter=_setVideoURL:, nonatomic, retain) NSURL *_videoURL;
 @property (setter=_setVideoURLDuration:, nonatomic, retain) NSNumber *_videoURLDuration;
@@ -95,7 +79,9 @@
 @property (readonly) Class superclass;
 @property (nonatomic) struct CGSize { double x1; double x2; } targetSize;
 
++ (id)_imageURLCache;
 + (void)_performSimulatedWorkWithProgress:(id)arg1;
++ (id)_videoURLCache;
 + (id)placeholderFilters;
 + (id)sharedOperationQueue;
 + (id)supportedVariationTypes;
@@ -103,8 +89,6 @@
 - (void).cxx_destruct;
 - (id)_analysisOperation;
 - (id)_analysisResult;
-- (id)_analysisResultCacheKey;
-- (long long)_baseVersion;
 - (id)_beginRenderingDate;
 - (id)_editModel;
 - (id)_editModelDuration;
@@ -133,18 +117,14 @@
 - (void)_invalidateRenders;
 - (void)_invalidateStatus;
 - (void)_invalidateVideoURL;
-- (bool)_needsUpdate;
 - (int)_placeholderImageRequestID;
 - (id)_recipeGenerationDuration;
 - (void)_removeAllResults;
 - (id)_renderingDurationByVariationType;
 - (id)_renderingOperationsByVariationType;
-- (struct CGSize { double x1; double x2; })_resolvedTargetSize;
 - (void)_setAnalysisOperation:(id)arg1;
 - (void)_setAnalysisResult:(id)arg1;
-- (void)_setAnalysisResultCacheKey:(id)arg1;
 - (void)_setAsset:(id)arg1;
-- (void)_setBaseVersion:(long long)arg1;
 - (void)_setBeginRenderingDate:(id)arg1;
 - (void)_setEditModel:(id)arg1;
 - (void)_setEditModelDuration:(id)arg1;
@@ -166,17 +146,16 @@
 - (void)_setVideoURLDuration:(id)arg1;
 - (void)_setVideoURLRequestID:(int)arg1;
 - (id)_totalRenderingDuration;
-- (void)_updateAnalysisResultIfNeeded;
-- (void)_updateCachedAnalysisResultIfNeeded;
-- (void)_updateEditModelIfNeeded;
-- (void)_updateExistingVariationResultIfNeeded;
-- (void)_updateExistingVideoAssetIfNeeded;
-- (void)_updateIfNeeded;
-- (void)_updateImageURLIfNeeded;
-- (void)_updatePlaceholderImageIfNeeded;
-- (void)_updateRendersIfNeeded;
-- (void)_updateStatusIfNeeded;
-- (void)_updateVideoURLIfNeeded;
+- (void)_updateAnalysisResult;
+- (void)_updateCachedAnalysisResult;
+- (void)_updateEditModel;
+- (void)_updateExistingVariationResult;
+- (void)_updateExistingVideoAsset;
+- (void)_updateImageURL;
+- (void)_updatePlaceholderImage;
+- (void)_updateRenders;
+- (void)_updateStatus;
+- (void)_updateVideoURL;
 - (id)_videoURL;
 - (id)_videoURLDuration;
 - (int)_videoURLRequestID;
@@ -204,5 +183,6 @@
 - (long long)status;
 - (id)statusDescription;
 - (struct CGSize { double x1; double x2; })targetSize;
+- (void)unloadResults;
 
 @end

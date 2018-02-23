@@ -36,6 +36,7 @@
     IKCollectionElement * _collectionElement;
     UICollectionView * _collectionView;
     bool  _didAppear;
+    bool  _didUpdateFocus;
     IKViewElement * _headerElement;
     UIViewController * _headerViewController;
     bool  _ignoreNextSelect;
@@ -67,6 +68,7 @@
 + (id)headerElementFromCollectionElement:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)_ascertainLastFocusedIndexPathInView;
 - (void)_cancelImpressionsUpdate;
 - (void)_confirmationPreviewInteractionControllerShouldBegin;
 - (void)_doUpdateViewLayoutAnimated:(bool)arg1 relayout:(bool)arg2;

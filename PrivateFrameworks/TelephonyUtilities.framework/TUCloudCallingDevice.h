@@ -7,6 +7,7 @@
     NSString * _modelIdentifier;
     NSString * _name;
     NSString * _phoneNumberURI;
+    bool  _supportsRestrictingSecondaryCalling;
     NSString * _uniqueID;
 }
 
@@ -14,6 +15,7 @@
 @property (nonatomic, copy) NSString *modelIdentifier;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *phoneNumberURI;
+@property (nonatomic) bool supportsRestrictingSecondaryCalling;
 @property (nonatomic, copy) NSString *uniqueID;
 
 + (bool)supportsSecureCoding;
@@ -32,7 +34,9 @@
 - (void)setModelIdentifier:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPhoneNumberURI:(id)arg1;
+- (void)setSupportsRestrictingSecondaryCalling:(bool)arg1;
 - (void)setUniqueID:(id)arg1;
+- (bool)supportsRestrictingSecondaryCalling;
 - (id)uniqueID;
 
 @end

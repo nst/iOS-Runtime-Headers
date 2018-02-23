@@ -3,6 +3,9 @@
  */
 
 @interface ICDelegateAccountStoreServiceListener : NSObject <ICDelegateAccountStoreService, NSXPCListenerDelegate> {
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    NSMutableArray * _connections;
     bool  _ignoresEntitlements;
     NSXPCListener * _listener;
     ICUserIdentityStore * _testingIdentityStore;
@@ -21,6 +24,7 @@
 - (id)XPCEndpoint;
 - (id)_identityStore;
 - (id)_initWithXPCListener:(id)arg1;
+- (void)_userIdentityStoreDelegateAccountStoreDidChangeNotification:(id)arg1;
 - (void)addDelegationUUIDs:(id)arg1 forUserIdentity:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)invalidate;
 - (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;

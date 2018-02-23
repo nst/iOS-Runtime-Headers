@@ -5,6 +5,7 @@
 @interface SBUIIconForceTouchViewController : UIViewController <UIGestureRecognizerDelegate> {
     double  _currentPeekProgress;
     SBUIIconForceTouchControllerDataProvider * _dataProvider;
+    SBAppIconForceTouchDefaults * _defaults;
     <SBUIIconForceTouchViewControllerDelegate> * _delegate;
     NSMutableArray * _dismissCompletionHandlers;
     SBUIIconForceTouchIconViewWrapperView * _iconViewWrapperViewAbove;
@@ -18,6 +19,7 @@
     NSArray * _showingLayoutConstraints;
     double  _smoothedValue;
     long long  _state;
+    unsigned long long  _tapticEngineFeedbackMask;
     SBUIIconForceTouchVisualEffectView * _visualEffectView;
 }
 
@@ -31,6 +33,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)_defaults;
 - (void)_dismissAnimated:(bool)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)_handleTapGestureRecognizer:(id)arg1;
 - (long long)_layoutForDataProvider:(id)arg1;

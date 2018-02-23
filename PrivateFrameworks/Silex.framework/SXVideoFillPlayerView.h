@@ -3,7 +3,7 @@
  */
 
 @interface SXVideoFillPlayerView : UIView {
-    SXContext * _context;
+    SXDocumentController * _documentController;
     unsigned long long  _fillMode;
     bool  _hasRequestedPlayback;
     SXImageResource * _imageResource;
@@ -14,7 +14,7 @@
     SXVideoResource * _videoResource;
 }
 
-@property (nonatomic, retain) SXContext *context;
+@property (nonatomic, readonly) SXDocumentController *documentController;
 @property (nonatomic) unsigned long long fillMode;
 @property (nonatomic) bool hasRequestedPlayback;
 @property (nonatomic, retain) SXImageResource *imageResource;
@@ -25,12 +25,12 @@
 @property (nonatomic, retain) SXVideoResource *videoResource;
 
 - (void).cxx_destruct;
-- (id)context;
 - (void)dealloc;
+- (id)documentController;
 - (unsigned long long)fillMode;
 - (bool)hasRequestedPlayback;
 - (id)imageResource;
-- (id)initWithImageResource:(id)arg1 videoResource:(id)arg2 andContext:(id)arg3;
+- (id)initWithImageResource:(id)arg1 videoResource:(id)arg2 documentController:(id)arg3 imageViewFactory:(id)arg4;
 - (void)layoutSubviews;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)pause;
@@ -39,7 +39,6 @@
 - (id)player;
 - (id)playerLayer;
 - (void)reset;
-- (void)setContext:(id)arg1;
 - (void)setFillMode:(unsigned long long)arg1;
 - (void)setHasRequestedPlayback:(bool)arg1;
 - (void)setImageResource:(id)arg1;

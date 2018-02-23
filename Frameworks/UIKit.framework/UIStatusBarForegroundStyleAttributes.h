@@ -30,6 +30,7 @@
 - (long long)activityIndicatorStyleWithSyncActivity:(bool)arg1;
 - (double)baselineOffsetForStyle:(long long)arg1;
 - (double)batteryAccessoryMargin;
+- (id)batteryColorForCapacity:(int)arg1 style:(unsigned long long)arg2 usingTintColor:(bool)arg3;
 - (id)bluetoothBatteryColorForCapacity:(double)arg1 usingTintColor:(bool)arg2;
 - (double)bluetoothBatteryExtraPadding;
 - (id)bluetoothBatteryImageNameWithCapacity:(double)arg1;

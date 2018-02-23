@@ -252,6 +252,8 @@
 
 // Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
 
++ (id)mf_defaultVolumeMountPoint;
+
 - (bool)mf_canWriteToDirectoryAtPath:(id)arg1;
 - (void)mf_deleteFilesInSortedArray:(id)arg1 matchingPrefix:(id)arg2 fromDirectory:(id)arg3;
 - (id)mf_fileModificationDateAtPath:(id)arg1 traverseLink:(bool)arg2;

@@ -6,7 +6,6 @@
     bool  _empty;
     MediaControlsTransportButton * _leftButton;
     NSBundle * _mediaControlsBundle;
-    long long  _mediaControlsPlayerState;
     MediaControlsTransportButton * _middleButton;
     <MediaControlsRatingActionSheet> * _ratingActionSheetDelegate;
     MPCPlayerResponse * _response;
@@ -18,7 +17,6 @@
 @property (getter=isEmpty, nonatomic) bool empty;
 @property (nonatomic, retain) MediaControlsTransportButton *leftButton;
 @property (nonatomic, retain) NSBundle *mediaControlsBundle;
-@property (nonatomic) long long mediaControlsPlayerState;
 @property (nonatomic, retain) MediaControlsTransportButton *middleButton;
 @property (nonatomic) <MediaControlsRatingActionSheet> *ratingActionSheetDelegate;
 @property (nonatomic, retain) MPCPlayerResponse *response;
@@ -36,7 +34,6 @@
 - (void)layoutSubviews;
 - (id)leftButton;
 - (id)mediaControlsBundle;
-- (long long)mediaControlsPlayerState;
 - (id)middleButton;
 - (id)ratingActionSheetDelegate;
 - (id)response;
@@ -44,7 +41,6 @@
 - (void)setEmpty:(bool)arg1;
 - (void)setLeftButton:(id)arg1;
 - (void)setMediaControlsBundle:(id)arg1;
-- (void)setMediaControlsPlayerState:(long long)arg1;
 - (void)setMiddleButton:(id)arg1;
 - (void)setRatingActionSheetDelegate:(id)arg1;
 - (void)setResponse:(id)arg1;

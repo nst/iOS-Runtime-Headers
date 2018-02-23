@@ -12,9 +12,9 @@
     NSHashTable * _geometryObservers;
     FBSceneHostManager * _hostManager;
     NSString * _identifier;
+    bool  _inTransaction;
     unsigned long long  _lastForegroundingTransitionID;
     FBSceneLayerManager * _layerManager;
-    bool  _lockedForMutation;
     FBSMutableSceneSettings * _mutableSettings;
     FBSSceneSettings * _settings;
     <BSInvalidatable> * _stateCaptureAssertion;
@@ -23,7 +23,7 @@
     NSString * _workspaceIdentifier;
 }
 
-@property (setter=_setLockedForMutation:, nonatomic) bool _lockedForMutation;
+@property (getter=_isInTransaction, nonatomic, readonly) bool _inTransaction;
 @property (nonatomic, readonly) unsigned long long _transactionID;
 @property (nonatomic, readonly, retain) <FBSceneClient> *client;
 @property (nonatomic, readonly, retain) FBProcess *clientProcess;
@@ -38,7 +38,7 @@
 @property (nonatomic, readonly, retain) FBSceneHostManager *hostManager;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly, retain) FBSceneLayerManager *layerManager;
-@property (nonatomic, readonly, retain) FBSMutableSceneSettings *mutableSettings;
+@property (nonatomic, retain) FBSMutableSceneSettings *mutableSettings;
 @property (nonatomic, readonly, copy) FBSSceneParameters *parameters;
 @property (nonatomic, readonly, retain) FBSSceneSettings *settings;
 @property (nonatomic, readonly, copy) FBSSceneSpecification *specification;
@@ -49,12 +49,13 @@
 // Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
 
 - (void)_addSceneGeometryObserver:(id)arg1;
-- (unsigned long long)_applyMutableSettings:(id)arg1 withTransitionContext:(id)arg2 completion:(id /* block */)arg3;
+- (void)_applyUpdateWithContext:(id)arg1 completion:(id /* block */)arg2;
+- (unsigned long long)_beginTransaction;
 - (void)_dispatchClientMessageWithBlock:(id /* block */)arg1;
+- (void)_endTransaction:(unsigned long long)arg1;
 - (void)_invalidateWithTransitionContext:(id)arg1;
-- (bool)_lockedForMutation;
+- (bool)_isInTransaction;
 - (void)_removeSceneGeometryObserver:(id)arg1;
-- (void)_setLockedForMutation:(bool)arg1;
 - (unsigned long long)_transactionID;
 - (id)client;
 - (void)client:(id)arg1 attachLayer:(id)arg2;
@@ -87,6 +88,7 @@
 - (id)parameters;
 - (void)sendActions:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setMutableSettings:(id)arg1;
 - (id)settings;
 - (id)snapshotContext;
 - (id)specification;

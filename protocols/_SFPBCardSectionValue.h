@@ -38,6 +38,7 @@
 - (bool)hasTextColumnsCardSection;
 - (bool)hasTitleCardSection;
 - (bool)hasTrackListCardSection;
+- (bool)hasWatchListCardSection;
 - (bool)hasWebCardSection;
 - (_SFPBImagesCardSection *)imagesCardSection;
 - (id)initWithDictionary:(NSDictionary *)arg1;
@@ -82,6 +83,7 @@
 - (void)setTextColumnsCardSection:(_SFPBTextColumnsCardSection *)arg1;
 - (void)setTitleCardSection:(_SFPBTitleCardSection *)arg1;
 - (void)setTrackListCardSection:(_SFPBTrackListCardSection *)arg1;
+- (void)setWatchListCardSection:(_SFPBWatchListCardSection *)arg1;
 - (void)setWebCardSection:(_SFPBWebCardSection *)arg1;
 - (_SFPBSocialMediaPostCardSection *)socialMediaPostCardSection;
 - (_SFPBStockChartCardSection *)stockChartCardSection;
@@ -91,6 +93,7 @@
 - (_SFPBTextColumnsCardSection *)textColumnsCardSection;
 - (_SFPBTitleCardSection *)titleCardSection;
 - (_SFPBTrackListCardSection *)trackListCardSection;
+- (_SFPBWatchListCardSection *)watchListCardSection;
 - (_SFPBWebCardSection *)webCardSection;
 
 @end

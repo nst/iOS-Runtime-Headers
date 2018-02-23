@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKChatController : CKCoreChatController <AFContextProvider, CKActionMenuGestureRecognizerButtonDelegate, CKBrowserDragControllerTranscriptDelegate, CKChatInputControllerDelegate, CKDetailsControllerDelegate, CKEffectPickerViewControllerDelegate, CKFullScreenBalloonViewControllerDelegate, CKMessageEntryViewDelegate, CKNavbarCanvasViewControllerDelegate, CKPhotoPickerControllerDelegate, CKReaderViewControllerDelegate, CKSendAnimationBalloonProvider, CKSendAnimationManagerDelegate, CKThrowAnimationManagerDelegate, CKTrimControllerDelegate, CKUnexpectedlyLoggedOutNotificationViewDelegate, CKVideoMessageRecordingViewControllerDelegate, CNContactViewControllerDelegate, EKEventEditViewDelegate, PHPhotoLibraryChangeObserver, PKAddPassesViewControllerDelegate, QLPreviewControllerDelegate, SGUIBannerViewDelegate, UIDragInteractionDelegate, UIDropInteractionDelegate, UIGestureRecognizerDelegate, UIInteractionProgressObserver, UIPopoverPresentationControllerDelegate, UIPreviewInteractionDelegate, UITextDropDelegate, UITextPasteDelegate, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private, UIViewControllerTransitioningDelegate> {
+@interface CKChatController : CKCoreChatController <AFContextProvider, CKActionMenuGestureRecognizerButtonDelegate, CKBrowserDragControllerTranscriptDelegate, CKChatInputControllerDelegate, CKDetailsControllerDelegate, CKEffectPickerViewControllerDelegate, CKExtensionConsumer, CKFullScreenBalloonViewControllerDelegate, CKMessageEntryViewDelegate, CKNavbarCanvasViewControllerDelegate, CKPhotoPickerControllerDelegate, CKReaderViewControllerDelegate, CKSendAnimationBalloonProvider, CKSendAnimationManagerDelegate, CKThrowAnimationManagerDelegate, CKTrimControllerDelegate, CKUnexpectedlyLoggedOutNotificationViewDelegate, CKVideoMessageRecordingViewControllerDelegate, CNContactViewControllerDelegate, EKEventEditViewDelegate, PHPhotoLibraryChangeObserver, PKAddPassesViewControllerDelegate, QLPreviewControllerDelegate, SGUIBannerViewDelegate, UIDragInteractionDelegate, UIDropInteractionDelegate, UIGestureRecognizerDelegate, UIInteractionProgressObserver, UIPopoverPresentationControllerDelegate, UIPreviewInteractionDelegate, UITextDropDelegate, UITextPasteDelegate, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private, UIViewControllerTransitioningDelegate> {
     UIToolbar * _actionsToolbar;
     CKAudioTrimViewController * _audioTrimController;
     IMScheduledUpdater * _autorotationUpdater;
@@ -219,6 +219,7 @@
 - (void)_updateProgressBarFrame;
 - (void)_updateTranscriptInlineNotification;
 - (void)_updateTranscriptOffsetForBannerView;
+- (void)_validateAndSendComposition:(id)arg1 completion:(id /* block */)arg2;
 - (void)_willSendComposition:(id)arg1 inConversation:(id)arg2;
 - (void)actionMenuGestureRecognizerButtonDidTouchDownButton:(id)arg1;
 - (void)actionMenuGestureRecognizerButtonDidTouchUpInsideButton:(id)arg1;
@@ -261,6 +262,7 @@
 - (void)chatInputDidUpdateWithNewInputViewController:(id)arg1;
 - (void)chatInputSentComposition:(id)arg1;
 - (void)chatInputWillChangeHeightForCompactPresentation:(double)arg1;
+- (void)chatInputWillUpdateInputViewShowingBrowser;
 - (void)checkSuggestionsForBanner;
 - (void)ckVideoMessageRecordingViewController:(id)arg1 mediaObjectCaptured:(id)arg2 error:(id)arg3;
 - (void)ckVideoMessageRecordingViewControllerRecordingCanceled:(id)arg1;
@@ -270,6 +272,7 @@
 - (void)composeRecipientViewShouldResignFirstResponder;
 - (id)composition;
 - (id)compositionBeingTrimmed;
+- (id)consumingBundleIdentifiers;
 - (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
 - (void)dealloc;
 - (id /* block */)deferredPresentationBlock;
@@ -371,6 +374,7 @@
 - (void)messageEntryViewSendButtonHitWhileDisabled:(id)arg1;
 - (void)messageEntryViewSendButtonLongPressBegan:(id)arg1;
 - (bool)messageEntryViewShouldBeginEditing:(id)arg1;
+- (void)messageEntryViewSwipeDownGestureRecognized:(id)arg1;
 - (double)minimumBottomInset;
 - (id)navbarCanvasViewController;
 - (void)navbarCanvasViewController:(id)arg1 avatarPickerViewControllerDidSelectEntity:(id)arg2;
@@ -391,6 +395,7 @@
 - (bool)prefersStatusBarHidden;
 - (void)prepareForSuspend;
 - (void)prepareToDismissForSecondInstance;
+- (void)presentAppStoreForURL:(id)arg1 fromSourceApplication:(id)arg2;
 - (void)presentTrimControllerForMediaObject:(id)arg1;
 - (void)presentationController:(id)arg1 willPresentWithAdaptiveStyle:(long long)arg2 transitionCoordinator:(id)arg3;
 - (id)presentedControllerDoneButtonItem;

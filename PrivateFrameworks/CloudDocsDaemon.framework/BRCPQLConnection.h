@@ -24,6 +24,7 @@
 - (void)brc_close;
 - (void)disableProfilingForQueriesInBlock:(id /* block */)arg1;
 - (bool)executeWithErrorHandler:(id /* block */)arg1 sql:(id)arg2;
+- (bool)executeWithExpectedIndex:(id)arg1 sql:(id)arg2;
 - (bool)executeWithSlowStatementRadar:(id)arg1 sql:(id)arg2;
 - (id)fetchWithSlowStatementRadar:(id)arg1 objectOfClass:(Class)arg2 sql:(id)arg3;
 - (id)fetchWithSlowStatementRadar:(id)arg1 sql:(id)arg2;

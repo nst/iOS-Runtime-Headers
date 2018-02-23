@@ -53,7 +53,6 @@
 - (void).cxx_destruct;
 - (void)_currentNetworkDidChange;
 - (id)_debugLQMString:(id)arg1;
-- (id)_filterScanResultsForRestrictedNetworks:(id)arg1;
 - (void)_hostAPStateDidChange:(id)arg1;
 - (bool)_isNetworkRestrictionActive;
 - (void)_linkChangedWithInfo:(id)arg1;
@@ -84,6 +83,7 @@
 - (bool)deviceSupportsWAPI;
 - (void)disassociateFromCarPlayUserConfiguredNetwork;
 - (void)disassociateFromCurrentNetwork;
+- (id)filterScanResultsForRestrictedNetworks:(id)arg1;
 - (void)finalize;
 - (id)gasQueue;
 - (bool)hasNoGatewayIP;

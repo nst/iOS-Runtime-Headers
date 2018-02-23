@@ -27,6 +27,7 @@
 
 + (id)_dateRangeSeparatorString;
 + (void)initializeDateFormattersIfNeededForInterval:(long long)arg1 withTimeZone:(id)arg2;
++ (id)monoSpacedFontWithFont:(id)arg1;
 + (id)newHUDLabel;
 + (id)stringForTimeIntervalSince1970:(double)arg1 withInterval:(long long)arg2 isDouble:(bool)arg3 isLeft:(bool)arg4;
 

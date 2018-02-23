@@ -16,7 +16,9 @@
 - (NSString *)payloadBundleID;
 - (void)payloadWillClear;
 - (void)payloadWillSave;
-- (NSData *)payloadWillSend;
+- (void)payloadWillSend;
+- (void)performHostAppResume;
+- (void)performHostAppSuspend;
 - (bool)wantsClearButton;
 - (bool)wantsEdgeToEdgeLayout;
 - (void)willAnimateBoundsChange;

@@ -5,7 +5,7 @@
 @interface MPRequest : NSObject <MPRequestCancellationToken, NSCopying> {
     NSOperationQueue * _calloutQueue;
     NSError * _cancelationError;
-    NSBlockOperation * _completionOperation;
+    NSObject<OS_dispatch_queue> * _cleanupQueue;
     NSString * _label;
     NSArray * _middlewareClasses;
     long long  _qualityOfService;
@@ -15,7 +15,7 @@
 
 @property (nonatomic, readonly) NSOperationQueue *calloutQueue;
 @property (nonatomic, readonly) NSError *cancelationError;
-@property (nonatomic, readonly) NSBlockOperation *completionOperation;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *cleanupQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned long long hash;
@@ -34,7 +34,7 @@
 - (id)calloutQueue;
 - (void)cancel;
 - (id)cancelationError;
-- (id)completionOperation;
+- (id)cleanupQueue;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)init;

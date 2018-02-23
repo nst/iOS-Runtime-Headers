@@ -309,50 +309,13 @@
                     } __pair3_; 
                 } __tree_; 
             } tasks; 
-            struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { 
-                struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { 
-                    struct __rep { 
-                        union { 
-                            struct __long { 
-                                char *__data_; 
-                                unsigned long long __size_; 
-                                unsigned long long __cap_; 
-                            } __l; 
-                            struct __short { 
-                                BOOL __data_[23]; 
-                                struct { 
-                                    unsigned char __size_; 
-                                } ; 
-                            } __s; 
-                            struct __raw { 
-                                unsigned long long __words[3]; 
-                            } __r; 
-                        } ; 
-                    } __first_; 
-                } __r_; 
-            } sourceLanguage; 
-            struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { 
-                struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { 
-                    struct __rep { 
-                        union { 
-                            struct __long { 
-                                char *__data_; 
-                                unsigned long long __size_; 
-                                unsigned long long __cap_; 
-                            } __l; 
-                            struct __short { 
-                                BOOL __data_[23]; 
-                                struct { 
-                                    unsigned char __size_; 
-                                } ; 
-                            } __s; 
-                            struct __raw { 
-                                unsigned long long __words[3]; 
-                            } __r; 
-                        } ; 
-                    } __first_; 
-                } __r_; 
-            } targetLanguage; 
+            struct vector<std::__1::pair<std::__1::basic_string<char>, std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<std::__1::basic_string<char>, std::__1::basic_string<char> > > > { 
+                struct pair<std::__1::basic_string<char>, std::__1::basic_string<char> > {} *__begin_; 
+                struct pair<std::__1::basic_string<char>, std::__1::basic_string<char> > {} *__end_; 
+                struct __compressed_pair<std::__1::pair<std::__1::basic_string<char>, std::__1::basic_string<char> > *, std::__1::allocator<std::__1::pair<std::__1::basic_string<char>, std::__1::basic_string<char> > > > { 
+                    struct pair<std::__1::basic_string<char>, std::__1::basic_string<char> > {} *__first_; 
+                } __end_cap_; 
+            } languagePairs; 
         } translationModelInfo; 
         struct shared_ptr<quasar::ModelLoader> { 
             struct ModelLoader {} *__ptr_; 

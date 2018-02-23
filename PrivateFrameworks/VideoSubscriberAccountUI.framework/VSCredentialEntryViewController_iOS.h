@@ -4,20 +4,20 @@
 
 @interface VSCredentialEntryViewController_iOS : ACUIViewController <VSCredentialEntryViewController> {
     bool  _cancellationAllowed;
-    NSArray * _credentialEntryFieldSpecifiers;
     <VSAuthenticationViewControllerDelegate> * _delegate;
     double  _keyboardHeight;
     id  _keyboardWillHideObserver;
     id  _keyboardWillShowObserver;
     UIButton * _linkButton;
     VSIdentityProviderLogoView * _logoView;
+    PSTextFieldSpecifier * _passwordFieldSpecifier;
     id  _textFieldTextDidChangeObserver;
+    PSTextFieldSpecifier * _usernameFieldSpecifier;
     VSCredentialEntryViewModel * _viewModel;
     id  _weakTarget;
 }
 
 @property (getter=isCancellationAllowed, nonatomic) bool cancellationAllowed;
-@property (nonatomic, retain) NSArray *credentialEntryFieldSpecifiers;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <VSAuthenticationViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -27,13 +27,16 @@
 @property (nonatomic) id keyboardWillShowObserver;
 @property (nonatomic, retain) UIButton *linkButton;
 @property (nonatomic, retain) VSIdentityProviderLogoView *logoView;
+@property (nonatomic, retain) PSTextFieldSpecifier *passwordFieldSpecifier;
 @property (nonatomic, readonly) struct CGSize { double x1; double x2; } preferredLogoSize;
 @property (readonly) Class superclass;
 @property (nonatomic) id textFieldTextDidChangeObserver;
+@property (nonatomic, retain) PSTextFieldSpecifier *usernameFieldSpecifier;
 @property (nonatomic, readonly) VSViewModel *viewModel;
 @property (nonatomic, retain) id weakTarget;
 
 - (void).cxx_destruct;
+- (id)_createSpecifierForField:(id)arg1;
 - (id)_credentialEntryFieldForSpecifier:(id)arg1;
 - (void)_linkButtonTapped:(id)arg1;
 - (id)_linkURL;
@@ -47,7 +50,6 @@
 - (id)_textForSpecifier:(id)arg1;
 - (void)_updateLinkButtonLayout;
 - (void)cancelButtonTapped:(id)arg1;
-- (id)credentialEntryFieldSpecifiers;
 - (void)dealloc;
 - (id)delegate;
 - (void)doneButtonPressed:(id)arg1;
@@ -59,20 +61,23 @@
 - (id)linkButton;
 - (id)logoView;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)passwordFieldSpecifier;
 - (struct CGSize { double x1; double x2; })preferredLogoSize;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)setCancellationAllowed:(bool)arg1;
-- (void)setCredentialEntryFieldSpecifiers:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setKeyboardHeight:(double)arg1;
 - (void)setKeyboardWillHideObserver:(id)arg1;
 - (void)setKeyboardWillShowObserver:(id)arg1;
 - (void)setLinkButton:(id)arg1;
 - (void)setLogoView:(id)arg1;
+- (void)setPasswordFieldSpecifier:(id)arg1;
 - (void)setTextFieldTextDidChangeObserver:(id)arg1;
+- (void)setUsernameFieldSpecifier:(id)arg1;
 - (void)setViewModel:(id)arg1;
 - (void)setWeakTarget:(id)arg1;
 - (id)textFieldTextDidChangeObserver;
+- (id)usernameFieldSpecifier;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;

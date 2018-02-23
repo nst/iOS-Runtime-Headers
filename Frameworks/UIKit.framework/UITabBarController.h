@@ -105,6 +105,7 @@
 - (void)_getRotationContentSettings:(struct { bool x1; bool x2; bool x3; bool x4; bool x5; double x6; int x7; }*)arg1;
 - (bool)_hasPreferredInterfaceOrientationForPresentation;
 - (void)_hideBarWithTransition:(int)arg1 isExplicit:(bool)arg2;
+- (void)_hideBarWithTransition:(int)arg1 isExplicit:(bool)arg2 duration:(double)arg3;
 - (bool)_ignoreUnselectedTabsForStateRestoration;
 - (id)_interactor;
 - (void)_invalidateBarLayoutIfNecessary;
@@ -152,6 +153,7 @@
 - (bool)_shouldSynthesizeSupportedOrientations;
 - (bool)_shouldUseOnePartRotation;
 - (void)_showBarWithTransition:(int)arg1 isExplicit:(bool)arg2;
+- (void)_showBarWithTransition:(int)arg1 isExplicit:(bool)arg2 duration:(double)arg3;
 - (long long)_subclassPreferredFocusedViewPrioritizationType;
 - (void)_tabBarItemClicked:(id)arg1;
 - (long long)_tabBarPosition;
@@ -190,6 +192,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)hideBarWithTransition:(int)arg1;
+- (void)hideBarWithTransition:(int)arg1 duration:(double)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
@@ -225,6 +228,7 @@
 - (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (bool)shouldUpdateFocusInContext:(id)arg1;
 - (void)showBarWithTransition:(int)arg1;
+- (void)showBarWithTransition:(int)arg1 duration:(double)arg2;
 - (bool)showsEditButtonOnLeft;
 - (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
 - (unsigned long long)supportedInterfaceOrientations;

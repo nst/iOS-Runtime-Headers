@@ -46,7 +46,6 @@
 - (void)setPendingGroups:(id)arg1;
 - (void)setPendingKeys:(id)arg1;
 - (void)systemApplicationDidSuspend;
-- (void)systemApplicationDidSuspendForEventsOnly;
 - (bool)waitOnGenerationForKey:(id)arg1;
 
 @end

@@ -36,9 +36,11 @@
 - (void).cxx_destruct;
 - (id)URLForResource:(id)arg1;
 - (id)_controllerTransitionFromElement:(id)arg1 toElement:(id)arg2 forNavigationControllerOperation:(long long)arg3 relativeToFrom:(bool)arg4;
+- (void)_darkerSystemColorStatusChanged:(id)arg1;
 - (id)_getImageFromURLorBundle:(id)arg1;
 - (id)_imageProxyForElement:(id)arg1;
 - (void)_registerControllerTransitioningCreator:(id /* block */)arg1 withType:(unsigned long long)arg2;
+- (void)_registerProductTemplateURL:(id)arg1 forTemplateName:(id)arg2 includeParentStyleSheets:(bool)arg3;
 - (void)_registerViewControllerCreator:(id /* block */)arg1 withType:(unsigned long long)arg2;
 - (void)_registerViewCreator:(id /* block */)arg1 withType:(unsigned long long)arg2;
 - (void)_setViewProxy:(id)arg1 forViewElement:(id)arg2;
@@ -47,6 +49,7 @@
 - (id)_viewForElement:(id)arg1;
 - (id)_viewFromElement:(id)arg1 existingView:(id)arg2;
 - (Class)collectionViewCellClassForElement:(id)arg1;
+- (void)dealloc;
 - (id)extendedInterfaceCreator;
 - (id)imageForResource:(id)arg1;
 - (id)init;

@@ -24,7 +24,6 @@
     MPMediaPlaybackItemMetadata * _playbackItemMetadata;
     double  _playbackStartTime;
     unsigned long long  _preferredAssetQuality;
-    NSNumber * _privateListeningEnabled;
     bool  _rentalCheckoutRequired;
     unsigned long long  _rentalID;
     NSString * _requestingBundleIdentifier;
@@ -32,7 +31,6 @@
     id  _rtcReportingParentHierarchyToken;
     NSString * _rtcReportingServiceIdentifier;
     NSData * _serverPlaybackContextDataForStoppingLease;
-    NSNumber * _siriInitiated;
     MPStreamingDownloadSession * _streamingDownloadSession;
 }
 
@@ -46,7 +44,6 @@
 @property (getter=isIgnoringHLSOfflinePlaybackKeys, nonatomic) bool ignoreHLSOfflinePlaybackKeys;
 @property (nonatomic, readonly) unsigned long long options;
 @property (nonatomic, readonly) MPMediaPlaybackItemMetadata *playbackItemMetadata;
-@property (getter=isPrivateListeningEnabled, nonatomic, copy) NSNumber *privateListeningEnabled;
 @property (getter=isRentalCheckoutRequired, nonatomic, readonly) bool rentalCheckoutRequired;
 @property (nonatomic, readonly) unsigned long long rentalID;
 @property (nonatomic, copy) NSString *requestingBundleIdentifier;
@@ -55,7 +52,6 @@
 @property (nonatomic, readonly) id rtcReportingParentHierarchyToken;
 @property (nonatomic, readonly, copy) NSString *rtcReportingServiceIdentifier;
 @property (nonatomic, retain) NSData *serverPlaybackContextDataForStoppingLease;
-@property (getter=isSiriInitiated, nonatomic, copy) NSNumber *siriInitiated;
 @property (nonatomic, readonly) unsigned long long streamType;
 @property (nonatomic, readonly, copy) NSURL *streamingKeyCertificateURL;
 @property (nonatomic, readonly, copy) NSURL *streamingKeyServerURL;
@@ -139,9 +135,7 @@
 - (bool)isExplicitTrack;
 - (bool)isIgnoringHLSOfflinePlaybackKeys;
 - (bool)isLikedStateEnabled;
-- (id)isPrivateListeningEnabled;
 - (bool)isRentalCheckoutRequired;
-- (id)isSiriInitiated;
 - (bool)isStreamable;
 - (bool)isStreamingLowQualityAsset;
 - (bool)isSupportedDefaultPlaybackSpeed:(long long)arg1;
@@ -184,12 +178,10 @@
 - (void)setPlaybackCheckpointCurrentTime:(double)arg1;
 - (void)setPlaybackFinishedTime:(double)arg1;
 - (void)setPlaybackStoppedTime:(double)arg1;
-- (void)setPrivateListeningEnabled:(id)arg1;
 - (void)setRating:(float)arg1;
 - (void)setRequestingBundleIdentifier:(id)arg1;
 - (void)setRequestingBundleVersion:(id)arg1;
 - (void)setServerPlaybackContextDataForStoppingLease:(id)arg1;
-- (void)setSiriInitiated:(id)arg1;
 - (void)setupPlaybackInfo;
 - (bool)shouldShowComposer;
 - (id)storeDownload;
@@ -217,8 +209,6 @@
 
 // Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
 
-- (id)mpcReporting_privateListeningEnabled;
 - (bool)mpcReporting_shouldReportPlayEventsToStore;
-- (id)mpcReporting_siriInitiated;
 
 @end

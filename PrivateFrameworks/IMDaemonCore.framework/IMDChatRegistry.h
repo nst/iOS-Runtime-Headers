@@ -27,11 +27,13 @@
 - (id)_allHandles;
 - (bool)_chat:(id)arg1 isDuplicateOfChat:(id)arg2;
 - (id)_chatInfoForConnection;
+- (id)_chatInfoForNumberOfChats:(long long)arg1;
 - (id)_chatInfoForSaving;
 - (id)_chatInfoInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (struct NSArray { Class x1; }*)_createGroupChatsArray;
 - (id)_existingChatForCKRecord:(id)arg1;
 - (id)_existingChatWithOriginalGroupID:(id)arg1 onService:(id)arg2;
+- (id)_existingiMessageChatForChatIdentifier:(id)arg1 style:(unsigned char)arg2;
 - (id)_findChatWinnerInDuplicateChatArray:(struct NSArray { Class x1; }*)arg1;
 - (id)_findLosingChatGUIDsInArrayOfChats:(struct NSArray { Class x1; }*)arg1 withWinner:(id)arg2;
 - (void)_forceReloadChats:(bool)arg1;

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
  */
 
-@interface PKPeerPaymentDocumentSubmissionInfoViewController : PKExplanationViewController <PKExplanationViewDelegate, PKPeerPaymentDocumentSubmissionControllerDelegate, PKPeerPaymentDocumentSubmissionViewControllerResponder> {
-    UIBarButtonItem * _cancelButtonItem;
+@interface PKPeerPaymentDocumentSubmissionInfoViewController : PKExplanationViewController <PKExplanationViewControllerDelegate, PKExplanationViewDelegate, PKPeerPaymentDocumentSubmissionControllerDelegate, PKPeerPaymentDocumentSubmissionViewControllerResponder> {
     long long  _context;
     PKPeerPaymentDocumentSubmissionController * _controller;
     long long  _currentSide;
     long long  _currentState;
-    PKExplanationView * _explanationView;
     NSTimer * _timerDismissAfterSuccess;
 }
 
@@ -18,7 +16,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)cancel;
+- (void)_cancelPressed;
 - (void)captureController:(id)arg1 didChangeStateTo:(long long)arg2;
 - (void)captureController:(id)arg1 requestsDismissCurrentViewControllerAnimated:(bool)arg2;
 - (void)captureController:(id)arg1 requestsPresentViewController:(id)arg2 animated:(bool)arg3;

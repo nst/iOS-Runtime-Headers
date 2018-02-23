@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MaterialKit.framework/MaterialKit
  */
 
-@interface MTSystemModuleMaterialSettings : MTSystemMaterialSettings <MTMaterialLuminanceOverlaySettings, _MTMaterialVersioning> {
+@interface MTSystemModuleMaterialSettings : MTSystemMaterialSettings <MTMaterialLuminanceOverlaySettings, MTZooming, _MTMaterialVersioning> {
     double  _auxiliaryOverlayBlurRadius;
     double  _baseOverlayBrightness;
     double  _baseOverlaySaturation;
@@ -32,6 +32,7 @@
 @property (nonatomic) double secondaryOverlayTintAlpha;
 @property (nonatomic, readonly, copy) UIColor *secondaryOverlayTintColor;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) double zoom;
 
 + (id)sharedMaterialSettings;
 
@@ -62,5 +63,6 @@
 - (void)setUsesLuminanceMap:(bool)arg1;
 - (bool)usesLuminanceMap;
 - (Class)vibrantStylingProviderClass;
+- (double)zoom;
 
 @end

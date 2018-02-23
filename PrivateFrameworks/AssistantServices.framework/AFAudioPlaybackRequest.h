@@ -5,6 +5,7 @@
 @interface AFAudioPlaybackRequest : NSObject <NSCopying, NSSecureCoding> {
     double  _fadeInDuration;
     double  _fadeOutDuration;
+    NSData * _itemData;
     NSURL * _itemURL;
     long long  _numberOfLoops;
     NSDictionary * _userInfo;
@@ -13,6 +14,7 @@
 
 @property (nonatomic, readonly) double fadeInDuration;
 @property (nonatomic, readonly) double fadeOutDuration;
+@property (nonatomic, readonly, copy) NSData *itemData;
 @property (nonatomic, readonly, copy) NSURL *itemURL;
 @property (nonatomic, readonly) long long numberOfLoops;
 @property (nonatomic, readonly, copy) NSDictionary *userInfo;
@@ -30,8 +32,9 @@
 - (double)fadeOutDuration;
 - (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithItemURL:(id)arg1 numberOfLoops:(long long)arg2 volume:(float)arg3 fadeInDuration:(double)arg4 fadeOutDuration:(double)arg5 userInfo:(id)arg6;
+- (id)initWithItemURL:(id)arg1 itemData:(id)arg2 numberOfLoops:(long long)arg3 volume:(float)arg4 fadeInDuration:(double)arg5 fadeOutDuration:(double)arg6 userInfo:(id)arg7;
 - (bool)isEqual:(id)arg1;
+- (id)itemData;
 - (id)itemURL;
 - (long long)numberOfLoops;
 - (id)userInfo;

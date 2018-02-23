@@ -4,7 +4,6 @@
 
 @interface __NSCFTCPIOStreamTask : __NSCFURLSessionTask {
     NSData * __initialDataPayload;
-    NSError * _cancelError;
     unsigned char  _captureStreamsUponCompletion;
     NSMutableArray * _completedSuspendedWork;
     int  _connectionState;

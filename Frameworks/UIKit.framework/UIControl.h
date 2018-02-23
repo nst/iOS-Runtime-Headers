@@ -160,8 +160,4 @@
 - (id)adPrivacyData;
 - (void)setAdPrivacyData:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
-
-- (id)ax_descriptionWithIndentation:(long long)arg1 includeAXInfo:(bool)arg2;
-
 @end

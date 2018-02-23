@@ -133,7 +133,6 @@
 - (void)_performCancelAction;
 - (void)_performDuplicateActivityWithAssetsByAssetCollection:(id)arg1;
 - (void)_performEditAction;
-- (void)_performGroupActivityWithAssetsByAssetCollection:(id)arg1;
 - (void)_performHideActivityWithAssetsByAssetCollection:(id)arg1;
 - (void)_performLikeAction:(bool)arg1;
 - (void)_performPlayPauseAction:(long long)arg1;

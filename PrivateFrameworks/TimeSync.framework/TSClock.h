@@ -16,6 +16,8 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *notificationQueue;
 
 + (unsigned long long)_mach_absolute_time;
++ (id)clockNameForClockIdentifier:(unsigned long long)arg1;
++ (id)diagnosticInfoForClockIdentifier:(unsigned long long)arg1;
 
 - (void)addClient:(id)arg1;
 - (id)clients;

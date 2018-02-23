@@ -38,8 +38,8 @@
 - (void)clearAppInstallInfo;
 - (void)clearAppLaunchInfo;
 - (void)dealloc;
-- (id)genreForBundleId:(id)arg1;
-- (id)genresForBundleId:(id)arg1;
+- (id)genreIdForBundleId:(id)arg1;
+- (id)genreIdsForBundleId:(id)arg1;
 - (id)init;
 - (id)initWithDataStore:(id)arg1;
 - (id)initWithInMemoryStore;
@@ -53,7 +53,8 @@
 - (void)removeAppLaunchesForBundleId:(id)arg1;
 - (void)startInstallDeltaRecording;
 - (id)stopInstallDeltaRecording;
-- (id)subGenresForBundleId:(id)arg1;
-- (void)updateGenresForBundleId:(id)arg1 genre:(id)arg2 subGenres:(id)arg3;
+- (id)subGenreIdsForBundleId:(id)arg1;
+- (void)updateGenreIdsForAllApps;
+- (void)updateGenreIdsForBundleId:(id)arg1 genreId:(id)arg2 subGenreIds:(id)arg3;
 
 @end

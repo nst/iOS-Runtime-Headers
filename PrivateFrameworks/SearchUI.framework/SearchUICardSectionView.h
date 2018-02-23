@@ -6,7 +6,7 @@
     UIView * _chevronView;
     UIView * _contentView;
     <SearchUIFeedbackDelegate> * _feedbackDelegate;
-    SFCardSection * _section;
+    SearchUICardSectionRowModel * _rowModel;
     bool  _spansFullWidth;
     unsigned long long  _style;
 }
@@ -17,7 +17,8 @@
 @property (readonly, copy) NSString *description;
 @property <SearchUIFeedbackDelegate> *feedbackDelegate;
 @property (readonly) unsigned long long hash;
-@property (nonatomic, retain) SFCardSection *section;
+@property (nonatomic, retain) SearchUICardSectionRowModel *rowModel;
+@property (nonatomic, readonly) SFCardSection *section;
 @property (readonly) bool spansFullWidth;
 @property unsigned long long style;
 @property (readonly) Class superclass;
@@ -31,23 +32,25 @@
 
 - (void).cxx_destruct;
 - (id)chevronView;
+- (void)containerView:(id)arg1 willMeasureArrangedSubviewsFittingSize:(struct CGSize { double x1; double x2; })arg2 forReason:(long long)arg3;
 - (id)contentView;
 - (void)didInvalidateSizeAnimate:(bool)arg1;
 - (id)feedbackDelegate;
-- (id)initWithCardSection:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
+- (id)initWithRowModel:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
 - (void)openPunchout:(id)arg1 triggerEvent:(unsigned long long)arg2;
 - (void)presentViewController:(id)arg1;
+- (id)rowModel;
 - (id)section;
 - (id)sendFeedbackForPunchout:(id)arg1 triggerEvent:(unsigned long long)arg2;
 - (void)setChevronView:(id)arg1;
 - (void)setContentView:(id)arg1;
 - (void)setFeedbackDelegate:(id)arg1;
-- (void)setSection:(id)arg1;
+- (void)setRowModel:(id)arg1;
 - (void)setStyle:(unsigned long long)arg1;
 - (id)setupContentView;
 - (bool)spansFullWidth;
 - (unsigned long long)style;
 - (void)updateChevronVisible:(bool)arg1 leaveSpaceForChevron:(bool)arg2;
-- (void)updateWithCardSection:(id)arg1;
+- (void)updateWithRowModel:(id)arg1;
 
 @end

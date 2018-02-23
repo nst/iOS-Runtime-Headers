@@ -38,6 +38,7 @@
 - (id)_init;
 - (id)_initWithEvent:(struct __GSEvent { }*)arg1 touches:(id)arg2;
 - (double)_initialTouchTimestamp;
+- (double)_initialTouchTimestampForWindow:(id)arg1;
 - (void)_invalidateGestureRecognizerForWindowCache;
 - (id)_lastPendingCoalescedTouchForIndex:(long long)arg1 hidEvent:(struct __IOHIDEvent { }*)arg2;
 - (void)_moveCoalescedTouchesFromHidEvent:(struct __IOHIDEvent { }*)arg1 toHidEvent:(struct __IOHIDEvent { }*)arg2;

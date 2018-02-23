@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDTrigger : HMFObject <HMDBackingStoreObjectProtocol, HMDBulletinIdentifiers, HMFDumpState, HMFLogging, HMFMessageReceiver, NSSecureCoding> {
+@interface HMDTrigger : HMFObject <HMDBackingStoreObjectProtocol, HMDBulletinIdentifiers, HMDHomeMessageReceiver, HMFDumpState, HMFLogging, NSSecureCoding> {
     NSMutableDictionary * _actionSetMappings;
     NSMutableArray * _actionSetUUIDs;
     bool  _active;
@@ -31,6 +31,7 @@
 @property (readonly) unsigned long long hash;
 @property (nonatomic) HMDHome *home;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (readonly, copy) NSSet *messageReceiverChildren;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, copy) NSDate *mostRecentFireDate;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
@@ -44,12 +45,14 @@
 @property (nonatomic, retain) NSUUID *uuid;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
++ (bool)hasMessageReceiverChildren;
 + (id)logCategory;
 + (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_actionSetsUpdated:(id)arg1 message:(id)arg2;
 - (void)_activate:(bool)arg1 completionHandler:(id /* block */)arg2;
+- (void)_activateTriggerRequest:(id)arg1;
 - (void)_activateWithCompletion:(id /* block */)arg1;
 - (void)_executeActionSets:(id)arg1 captureCurrentState:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (void)_executeActionSetsWithCompletionHandler:(id /* block */)arg1;
@@ -65,8 +68,10 @@
 - (bool)_isTriggerFiredNotificationEntitled;
 - (void)_recentFireDateUpdated:(id)arg1;
 - (void)_registerForMessages;
+- (void)_renameRequest:(id)arg1;
 - (void)_transactionObjectRemoved:(id)arg1 message:(id)arg2;
 - (void)_transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
+- (void)_updateActionSetRequest:(id)arg1 postUpdate:(bool)arg2;
 - (struct NSDictionary { Class x1; }*)actionContext;
 - (id)actionSetMappings;
 - (id)actionSetUUIDs;
@@ -98,6 +103,7 @@
 - (void)markChangedForMessage:(id)arg1;
 - (void)markChangedForMessage:(id)arg1 triggerModel:(id)arg2;
 - (id)messageReceiveQueue;
+- (id)messageReceiverChildren;
 - (id)messageTargetUUID;
 - (bool)modelContainsTriggerFired:(id)arg1;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1;
@@ -134,6 +140,7 @@
 - (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
 - (void)triggerFired;
 - (unsigned long long)triggerType;
+- (id)updateEventTriggerMessage:(int)arg1 message:(id)arg2 relay:(bool)arg3;
 - (void)userDidConfirmExecute:(bool)arg1 completionHandler:(id /* block */)arg2;
 - (id)uuid;
 - (id)workQueue;

@@ -12,12 +12,15 @@
     SUScriptKeyValueStore * _deviceLocalStorage;
     NSMutableDictionary * _downloadQueues;
     WebFrame * _frame;
+    struct __CFString { } * _hsaCurrentIdentifier;
+    NSObject<OS_dispatch_queue> * _hsaTokenQueue;
     SUScriptMediaLibrary * _mediaLibrary;
     SUScriptMetricsController * _metricsController;
     SUScriptNotificationObserver * _notificationObserver;
     SUScriptPreviewOverlay * _previewOverlay;
     SUScriptPurchaseManager * _purchaseManager;
     NSMutableSet * _requireCellularURLs;
+    NSNumber * _safariDismissButtonStyle;
     SFSafariViewController * _safariViewController;
     NSString * _safariViewControllerIdentifier;
     SUScriptOperationDelegate * _scriptOperationDelegate;
@@ -50,6 +53,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) SUScriptDevice *device;
 @property (readonly) SUScriptKeyValueStore *deviceLocalStorage;
+@property (readonly) NSString *deviceSerialNumber;
 @property (readonly) id globalRootObject;
 @property (readonly) unsigned long long hash;
 @property (readonly) NSArray *installedSoftwareApplications;
@@ -66,6 +70,7 @@
 @property (readonly) SUScriptPurchaseManager *purchaseManager;
 @property (readonly) NSString *referrerURL;
 @property (readonly) NSString *referringUserAgent;
+@property (copy) NSNumber *safariDismissButtonStyle;
 @property (nonatomic, retain) SFSafariViewController *safariViewController;
 @property (nonatomic, retain) NSString *safariViewControllerIdentifier;
 @property (readonly) NSString *safariViewControllerIdentifierQueryParameterName;
@@ -150,6 +155,7 @@
 - (id)delegate;
 - (id)device;
 - (id)deviceLocalStorage;
+- (id)deviceSerialNumber;
 - (long long)dialogDisplayCountForKey:(id)arg1;
 - (id)diskSpaceAvailable;
 - (void)dismissSafariViewControllerAnimated:(bool)arg1;
@@ -255,9 +261,11 @@
 - (id)requestInfo;
 - (void)requireCellularForResourceWithURL:(id)arg1;
 - (void)retryAllRestoreDownloads;
+- (id)safariDismissButtonStyle;
 - (id)safariViewController;
 - (void)safariViewController:(id)arg1 didCompleteInitialLoad:(bool)arg2;
 - (void)safariViewControllerDidFinish:(id)arg1;
+- (id)safariViewControllerDismissButtonStyle;
 - (id)safariViewControllerIdentifier;
 - (id)safariViewControllerIdentifierQueryParameterName;
 - (id)screenReaderRunning;
@@ -289,7 +297,9 @@
 - (void)setPrimaryLockerAccount:(id)arg1;
 - (void)setReferrerURL:(id)arg1;
 - (void)setReferringUserAgent:(id)arg1;
+- (void)setSafariDismissButtonStyle:(id)arg1;
 - (void)setSafariViewController:(id)arg1;
+- (void)setSafariViewControllerDismissButtonStyle:(id)arg1;
 - (void)setSafariViewControllerIdentifier:(id)arg1;
 - (void)setScriptWindowContext:(id)arg1;
 - (void)setStoreFrontIdentifier:(id)arg1;
@@ -307,7 +317,9 @@
 - (void)signOutPrimaryAccount;
 - (id)softwareApplicationWithAdamID:(id)arg1;
 - (id)softwareApplicationWithBundleID:(id)arg1;
+- (void)startListeningForAuthenticationTokenWithCallback:(id)arg1;
 - (void)startedTest:(id)arg1;
+- (void)stopListeningForAuthenticationToken;
 - (id)storeFrontIdentifier;
 - (long long)storeSheetType;
 - (long long)storeSheetTypeAskToBuy;

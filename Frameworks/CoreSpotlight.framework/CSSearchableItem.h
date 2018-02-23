@@ -2,63 +2,20 @@
    Image: /System/Library/Frameworks/CoreSpotlight.framework/CoreSpotlight
  */
 
-@interface CSSearchableItem : NSObject <CSIndexQueuableItem, NSCopying, NSFileProviderItem_Private, NSSecureCoding> {
+@interface CSSearchableItem : NSObject <CSIndexQueuableItem, NSCopying, NSSecureCoding> {
     CSSearchableItemAttributeSet * _attributeSet;
     /* Warning: Unrecognized filer type: 'T' using 'void*' */ void* _score;
 }
 
 @property (retain) CSSearchableItemAttributeSet *attributeSet;
 @property (copy) NSString *bundleID;
-@property (nonatomic, readonly) unsigned long long capabilities;
-@property (nonatomic, readonly, copy) NSNumber *childItemCount;
-@property (readonly, copy) NSString *containerDisplayName;
-@property (nonatomic, readonly, copy) NSDate *contentModificationDate;
-@property (nonatomic, readonly, copy) NSDate *creationDate;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (nonatomic, readonly, copy) NSString *displayName;
-@property (nonatomic, readonly, copy) NSNumber *documentSize;
 @property (copy) NSString *domainIdentifier;
-@property (getter=isDownloadRequested, readonly, copy) NSNumber *downloadRequested;
-@property (getter=isDownloaded, nonatomic, readonly) bool downloaded;
-@property (getter=isDownloading, nonatomic, readonly) bool downloading;
-@property (nonatomic, readonly, copy) NSError *downloadingError;
 @property (copy) NSDate *expirationDate;
-@property (nonatomic, readonly, copy) NSNumber *favoriteRank;
-@property (readonly, copy) NSURL *fileURL;
-@property (nonatomic, readonly, copy) NSString *filename;
-@property (readonly, copy) NSString *fp_appContainerBundleIdentifier;
-@property (readonly, copy) NSString *fp_domainIdentifier;
-@property (readonly) bool fp_isContainer;
-@property (readonly, copy) NSString *fp_spotlightDomainIdentifier;
-@property (getter=fp_isUbiquitous, readonly) bool fp_ubiquitous;
-@property (readonly, copy) NSNumber *hasUnresolvedConflicts;
-@property (readonly) unsigned long long hash;
-@property (getter=isHidden, readonly) bool hidden;
 @property bool isUpdate;
-@property (nonatomic, readonly, copy) NSString *itemIdentifier;
-@property (nonatomic, readonly, copy) NSDate *lastUsedDate;
-@property (nonatomic, readonly) NSPersonNameComponents *mostRecentEditorNameComponents;
-@property (getter=isMostRecentVersionDownloaded, nonatomic, readonly) bool mostRecentVersionDownloaded;
 @property bool noIndex;
-@property (nonatomic, readonly) NSPersonNameComponents *ownerNameComponents;
-@property (nonatomic, readonly, copy) NSString *parentItemIdentifier;
 @property (copy) NSString *protection;
-@property (readonly, copy) NSString *providerIdentifier;
 @property /* Warning: Unrecognized filer type: 'T' using 'void*' */ void*score;
-@property (getter=isShared, nonatomic, readonly) bool shared;
-@property (getter=isSharedByCurrentUser, nonatomic, readonly) bool sharedByCurrentUser;
-@property (readonly, copy) NSString *sharingPermissions;
-@property (readonly) Class superclass;
-@property (nonatomic, readonly, copy) NSData *tagData;
-@property (getter=isTrashed, nonatomic, readonly) bool trashed;
-@property (nonatomic, readonly, copy) NSString *typeIdentifier;
 @property (copy) NSString *uniqueIdentifier;
-@property (getter=isUploaded, nonatomic, readonly) bool uploaded;
-@property (getter=isUploading, nonatomic, readonly) bool uploading;
-@property (nonatomic, readonly, copy) NSError *uploadingError;
-@property (nonatomic, readonly) NSDictionary *userInfo;
-@property (nonatomic, readonly) NSData *versionIdentifier;
 
 // Image: /System/Library/Frameworks/CoreSpotlight.framework/CoreSpotlight
 
@@ -73,6 +30,7 @@
 - (void)_populateMissingPeopleWithNames:(id)arg1 emailAddresses:(id)arg2 allItemPersons:(id)arg3 primaryItemPersons:(id)arg4 additionalItemPersons:(id)arg5 hiddenAdditionalItemPersons:(id)arg6 personDictionary:(id)arg7 contactProperties:(id)arg8 nameKey:(id)arg9 emailKey:(id)arg10 contactIdentifierKey:(id)arg11 personKey:(id)arg12 attributeSet:(id)arg13;
 - (id)_propertiesDescription;
 - (void)_standardizeDeprecatedProperties:(id)arg1;
+- (void)_standardizeFileProvider:(id)arg1;
 - (void)_standardizeHTML:(id)arg1;
 - (void)_standardizeMarkAs:(id)arg1;
 - (void)_standardizePeople:(id)arg1;
@@ -111,47 +69,6 @@
 - (void)setUniqueIdentifier:(id)arg1;
 - (void)standardizeAttributes;
 - (id)uniqueIdentifier;
-
-// Image: /System/Library/Frameworks/FileProvider.framework/FileProvider
-
-+ (id)fp_queryFetchAttributes;
-
-- (unsigned long long)capabilities;
-- (id)childItemCount;
-- (id)containerSubitemCount;
-- (id)contentModificationDate;
-- (id)creationDate;
-- (id)displayName;
-- (id)documentSize;
-- (id)downloadingError;
-- (id)favoriteRank;
-- (id)filename;
-- (id)fp_appContainerBundleIdentifier;
-- (id)fp_domainIdentifier;
-- (bool)fp_isContainer;
-- (bool)fp_isUbiquitous;
-- (id)fp_spotlightDomainIdentifier;
-- (bool)isDownloaded;
-- (bool)isDownloading;
-- (bool)isMostRecentVersionDownloaded;
-- (bool)isShared;
-- (bool)isSharedByCurrentUser;
-- (bool)isTrashed;
-- (bool)isUploaded;
-- (bool)isUploading;
-- (id)itemIdentifier;
-- (id)lastUsedDate;
-- (id)mostRecentEditorNameComponents;
-- (id)ownerNameComponents;
-- (id)parentItemIdentifier;
-- (id)providerIdentifier;
-- (id)sharingCurrentUserPermissions;
-- (id)sharingCurrentUserRole;
-- (id)tagData;
-- (id)typeIdentifier;
-- (id)uploadingError;
-- (id)userInfo;
-- (id)versionIdentifier;
 
 // Image: /System/Library/PrivateFrameworks/ContactsUICore.framework/ContactsUICore
 

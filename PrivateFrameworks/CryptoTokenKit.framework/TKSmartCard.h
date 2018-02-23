@@ -34,6 +34,7 @@
 
 - (void).cxx_destruct;
 - (unsigned long long)allowedProtocols;
+- (bool)beginSessionWithError:(id*)arg1;
 - (void)beginSessionWithReply:(id /* block */)arg1;
 - (id)buildIns:(unsigned char)arg1 p1:(unsigned char)arg2 p2:(unsigned char)arg3 data:(id)arg4 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg5 le:(id)arg6 protocol:(unsigned long long)arg7 chained:(bool)arg8 extended:(bool*)arg9 realLe:(unsigned long long*)arg10;
 - (bool)checkAPDUResponse:(id)arg1 error:(id*)arg2;
@@ -49,6 +50,7 @@
 - (bool)inSessionWithError:(id*)arg1 executeBlock:(id /* block */)arg2;
 - (id)initWithSlot:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)querySessionWithReply:(id /* block */)arg1;
 - (void)releaseSessionWithReply:(id /* block */)arg1;
 - (id)remoteSessionWithErrorHandler:(id /* block */)arg1;
 - (void)reserveExclusive:(bool)arg1 reply:(id /* block */)arg2;

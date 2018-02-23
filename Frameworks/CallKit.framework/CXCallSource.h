@@ -50,6 +50,7 @@
 - (oneway void)reportOutgoingCallWithUUID:(id)arg1 connectedAtDate:(id)arg2;
 - (oneway void)reportOutgoingCallWithUUID:(id)arg1 sentInvitationAtDate:(id)arg2;
 - (oneway void)reportOutgoingCallWithUUID:(id)arg1 startedConnectingAtDate:(id)arg2;
+- (oneway void)requestTransaction:(id)arg1 reply:(id /* block */)arg2;
 - (void)setConnected:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setQueue:(id)arg1;

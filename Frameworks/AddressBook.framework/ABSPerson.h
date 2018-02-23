@@ -8,7 +8,6 @@
     NSMutableSet * _nonNilSetProperties;
     NSString * _revertedRecordIdentifier;
     ABSSource * _source;
-    unsigned int  _type;
 }
 
 @property (nonatomic, readonly) NSString *CNIdentifierString;
@@ -51,7 +50,6 @@
 - (id)copyImageData;
 - (id)copyImageDataWithFormat:(int)arg1;
 - (const void*)copyValueForProperty:(int)arg1;
-- (unsigned int)getType;
 - (bool)hasImageData;
 - (int)id;
 - (id)init;

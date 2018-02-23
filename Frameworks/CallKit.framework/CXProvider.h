@@ -66,6 +66,7 @@
 - (void)reportOutgoingCallWithUUID:(id)arg1 connectedAtDate:(id)arg2;
 - (void)reportOutgoingCallWithUUID:(id)arg1 sentInvitationAtDate:(id)arg2;
 - (void)reportOutgoingCallWithUUID:(id)arg1 startedConnectingAtDate:(id)arg2;
+- (void)requestTransaction:(id)arg1 completion:(id /* block */)arg2;
 - (bool)requiresProxyingAVAudioSessionState;
 - (void)sendProviderDidBegin;
 - (void)setCompletionQueue:(id)arg1;

@@ -21,7 +21,7 @@
             } constrainedEdgeLength; 
             struct { 
                 unsigned char tessellationLevel; 
-                unsigned int restrictsToSingleCrease : 1; 
+                unsigned int wantsSingleCreasePatch : 1; 
                 unsigned int useScreenSpaceTessellation : 1; 
             } subdivisionSurface; 
         } parameters; 

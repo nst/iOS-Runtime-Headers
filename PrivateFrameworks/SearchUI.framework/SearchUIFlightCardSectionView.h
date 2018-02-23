@@ -19,7 +19,7 @@
 - (void).cxx_destruct;
 - (void)flightController:(id)arg1 didSelectLeg:(long long)arg2 ofFlight:(long long)arg3;
 - (id)flightViewController;
-- (id)initWithCardSection:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
+- (id)initWithRowModel:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
 - (unsigned long long)lastSelectedLegIndex;
 - (void)setFlightViewController:(id)arg1;
 - (void)setLastSelectedLegIndex:(unsigned long long)arg1;

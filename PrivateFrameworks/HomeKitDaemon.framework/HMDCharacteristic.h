@@ -10,7 +10,7 @@
     HMDCharacteristicMetadata * _characteristicMetadata;
     long long  _characteristicProperties;
     NSString * _characteristicType;
-    NSMutableSet * _hapCharacteristicTuples;
+    NSSet * _hapCharacteristicTuples;
     id  _lastKnownValue;
     NSDate * _lastKnownValueUpdateTime;
     NSDate * _notificationEnabledTime;
@@ -32,7 +32,7 @@
 @property (nonatomic, readonly, copy) NSUUID *contextSPIUniqueIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, retain) NSMutableSet *hapCharacteristicTuples;
+@property (nonatomic, retain) NSSet *hapCharacteristicTuples;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSNumber *instanceID;
 @property (nonatomic, retain) id lastKnownValue;
@@ -50,6 +50,7 @@
 @property (nonatomic, readonly, copy) id value;
 
 + (bool)supportsSecureCoding;
++ (bool)value:(id)arg1 differentThan:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)accessory;
@@ -57,7 +58,6 @@
 - (bool)broadcastNotificationEnabled;
 - (struct NSDictionary { Class x1; }*)bulletinContext;
 - (id)characteristicForHAPAccessory:(id)arg1;
-- (id)characteristicForServerIdentifier:(id)arg1 linkType:(long long)arg2;
 - (id)characteristicInstanceID;
 - (id)characteristicMetadata;
 - (long long)characteristicProperties;
@@ -112,7 +112,6 @@
 - (bool)supportsRead;
 - (id)type;
 - (void)unconfigure;
-- (void)unconfigureAll;
 - (void)unconfigureForServerIdentifier:(id)arg1 linkType:(long long)arg2;
 - (void)updateLastKnownValue;
 - (void)updateService:(id)arg1 accessory:(id)arg2;
@@ -122,6 +121,5 @@
 - (id)validateValueForNotify:(id)arg1 outValue:(id*)arg2;
 - (id)validateValueForWrite:(id)arg1 outValue:(id*)arg2;
 - (id)value;
-- (bool)value:(id)arg1 differentThan:(id)arg2;
 
 @end

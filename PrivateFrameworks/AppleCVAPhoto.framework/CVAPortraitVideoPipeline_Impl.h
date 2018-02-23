@@ -4,23 +4,39 @@
 
 @interface CVAPortraitVideoPipeline_Impl : NSObject <CVADisparityPostprocessingVideoPipeline, CVAMattingVideoPipeline, CVAPortraitVideoPipeline> {
     struct __CVPixelBufferPool { } * _canonicalDisparityPixelBufferPool;
+    struct unique_ptr<DisparityAutofocus, std::__1::default_delete<DisparityAutofocus> > { 
+        struct __compressed_pair<DisparityAutofocus *, std::__1::default_delete<DisparityAutofocus> > { 
+            struct DisparityAutofocus {} *__first_; 
+        } __ptr_; 
+    }  _disparityAutofocus;
+    struct unique_ptr<DisparityConversion, std::__1::default_delete<DisparityConversion> > { 
+        struct __compressed_pair<DisparityConversion *, std::__1::default_delete<DisparityConversion> > { 
+            struct DisparityConversion {} *__first_; 
+        } __ptr_; 
+    }  _disparityConversion;
+    struct unique_ptr<GeometricTransformation, std::__1::default_delete<GeometricTransformation> > { 
+        struct __compressed_pair<GeometricTransformation *, std::__1::default_delete<GeometricTransformation> > { 
+            struct GeometricTransformation {} *__first_; 
+        } __ptr_; 
+    }  _disparityGeometricTransformation;
     <CVADisparityPostprocessingCompletionDelegate> * _disparityPostprocessingCompletionDelegate;
+    struct unique_ptr<DisparityStatistics, std::__1::default_delete<DisparityStatistics> > { 
+        struct __compressed_pair<DisparityStatistics *, std::__1::default_delete<DisparityStatistics> > { 
+            struct DisparityStatistics {} *__first_; 
+        } __ptr_; 
+    }  _disparityStatistics;
     struct unique_ptr<cva::FocusStateMachine, std::__1::default_delete<cva::FocusStateMachine> > { 
         struct __compressed_pair<cva::FocusStateMachine *, std::__1::default_delete<cva::FocusStateMachine> > { 
             struct FocusStateMachine {} *__first_; 
         } __ptr_; 
     }  _focusStateMachine;
-    struct unique_ptr<cva::FusionImage, std::__1::default_delete<cva::FusionImage> > { 
-        struct __compressed_pair<cva::FusionImage *, std::__1::default_delete<cva::FusionImage> > { 
-            struct FusionImage {} *__first_; 
-        } __ptr_; 
-    }  _fusionImage;
     <CVAMattingCompletionDelegate> * _mattingCompletionDelegate;
     NSObject<OS_dispatch_queue> * _notificationQueue;
     <CVAPortraitCompletionDelegate> * _portraitCompletionDelegate;
     struct Preferences { 
         bool drawFocusMachineState; 
         int overlayShiftOnRendering; 
+        int displayFrameTime; 
         int retainLastRelativeShift; 
         int noiseBits; 
         int fNumber_tenths; 
@@ -37,6 +53,7 @@
             struct StageLightStateMachine {} *__first_; 
         } __ptr_; 
     }  _stageLightStateMachine;
+    struct __CVBuffer { } * _untransformedCanonicalDisparityPixelBuffer;
     VideoMattingMetal * _vmAccelerator;
     struct DynamicMetaParams { 
         float mattingCoeffUpdateRate; 
@@ -114,7 +131,7 @@
 - (id)internal_postprocessDisparityWithRequest:(id)arg1 disparityPostprocessingCompletionHandler:(id /* block */)arg2 isFinalStage:(bool)arg3 status:(int*)arg4;
 - (void)internal_relightWithRequest:(id)arg1 faceModel:(id)arg2 mattingResult:(id)arg3 status:(int*)arg4;
 - (void)internal_renderStageLightWithRequest:(id)arg1 mattingResult:(id)arg2 portraitCompletionHandler:(id /* block */)arg3 status:(int*)arg4;
-- (void)internal_renderWithRequest:(id)arg1 mattingResult:(id)arg2 portraitCompletionHandler:(id /* block */)arg3 status:(int*)arg4;
+- (void)internal_renderWithRequest:(id)arg1 mattingResult:(id)arg2 portraitCompletionHandler:(id /* block */)arg3 status:(int*)arg4 timestamp:(long long)arg5;
 - (id)mattingCompletionDelegate;
 - (id)portraitCompletionDelegate;
 - (int)postprocessDisparityWithRequest:(id)arg1;

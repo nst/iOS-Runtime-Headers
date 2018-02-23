@@ -65,6 +65,8 @@
 
 // Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
 
++ (id)_clonedCSSDeclarationEdgeInsetsFromDeclaration:(id)arg1;
++ (id)_updatedEdgeInsetsDeclaration:(id)arg1 withValue:(double)arg2 forIndex:(unsigned long long)arg3;
 + (void)addBlockedStyle:(id)arg1;
 + (unsigned long long)alignmentFromString:(id)arg1;
 + (void)clearBlockedStyles;
@@ -78,6 +80,7 @@
 + (bool)isHiddenStyleRegistered;
 + (id)normalizeClassSelectorString:(id)arg1;
 + (unsigned long long)positionFromString:(id)arg1;
++ (void)registerEdgeInsetStyle:(id)arg1 aliasName:(id)arg2 withPositionStyleNames:(id)arg3 inherited:(bool)arg4;
 + (void)registerHiddenStyle:(id)arg1;
 + (void)registerStyle:(id)arg1 aliasName:(id)arg2 withType:(unsigned long long)arg3 inherited:(bool)arg4;
 + (void)registerStyle:(id)arg1 withType:(unsigned long long)arg2 inherited:(bool)arg3;
@@ -87,12 +90,12 @@
 + (void)unregisterStyles;
 
 - (void).cxx_destruct;
+- (void)_addDeclaration:(id)arg1;
 - (void)_addElementStyle:(id)arg1;
 - (void)_addParentStyle:(id)arg1;
 - (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForStyleKey:(id)arg1;
 - (id)_gradientFromString:(id)arg1;
 - (id)_newColorFromString:(id)arg1;
-- (void)_setDeclaration:(id)arg1 forKey:(id)arg2;
 - (id)_styleNameForAlias:(id)arg1;
 - (id)backgroundColor;
 - (id)badgeTreatment;
@@ -141,6 +144,7 @@
 - (id)mediaQueryList;
 - (unsigned long long)ordinalMaxLength;
 - (long long)reflectImage;
+- (bool)requiresDynamicEvaluation;
 - (id)rowHeight;
 - (void)setMediaQueryList:(id)arg1;
 - (void)setStyleDict:(id)arg1;

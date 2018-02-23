@@ -2,9 +2,14 @@
    Image: /System/Library/PrivateFrameworks/WatchListKitUI.framework/WatchListKitUI
  */
 
-@interface WLKUINotificationCenter : IKJSObject <WLKUINotificationCenter> {
-    <WLKUINotificationsImpl> * _impl;
+@interface WLKUINotificationCenter : IKJSObject <WLKNotificationCenterDelegate, WLKUINotificationCenter> {
+    WLKNotificationCenter * _center;
 }
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)handleAction:(id)arg1;

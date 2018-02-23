@@ -11,12 +11,12 @@
     id /* block */  _handler;
     bool  _hasSentObject;
     long long  _lastSyncAnchor;
-    NSMutableDictionary * _localProvenanceMapping;
-    NSMutableDictionary * _localSourceMapping;
     long long  _maxEncodedBytesPerMessage;
     HDProfile * _profile;
     HDDataProvenanceCache * _provenanceCache;
     bool  _requiresLocalSourceConversion;
+    NSMutableDictionary * _syncPrimaryProvenanceMapping;
+    NSMutableDictionary * _syncPrimarySourceMapping;
     HDSyncSession * _syncSession;
 }
 

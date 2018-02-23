@@ -26,6 +26,8 @@
 
 // Image: /Developer/usr/lib/libMainThreadChecker.dylib
 
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })extendedViewInsets;
+- (double)extendedViewTop;
 - (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)handleTap;
 - (void)scrollViewWillBeginDragging:(id)arg1;

@@ -12,6 +12,8 @@
 @property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
++ (id)generateBluetoothLESecureNdefPayloadWithOOBData:(id)arg1;
+
 - (void)dealloc;
 - (id)delegate;
 - (void)didEndUnexpectedly;

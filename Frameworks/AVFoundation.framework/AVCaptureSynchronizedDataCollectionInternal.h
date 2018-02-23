@@ -3,7 +3,7 @@
  */
 
 @interface AVCaptureSynchronizedDataCollectionInternal : NSObject {
-    long long  changeSeed;
+    unsigned long long  changeSeed;
     BOOL  count;
     struct { 
         long long value; 

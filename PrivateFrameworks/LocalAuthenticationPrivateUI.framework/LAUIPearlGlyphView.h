@@ -8,13 +8,19 @@
         float accumulator_growth; 
         float accumulator_persistence; 
         float accumulator_luminance_alpha_factor; 
+        float blur_scale; 
         float k; 
         float epsilon; 
     }  _blurredRenderState;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _boundsSize;
     struct double4x4 { 
         /* Warning: Unrecognized filer type: ']' using 'void*' */ void*columns[4]; 
     }  _cameraTransform;
     bool  _changingState;
+    struct CGColorSpace { } * _colorSpace;
     struct vector<void (^)(bool), std::__1::allocator<void (^)(bool)> >="__begin_"^@?"__end_"^@?"__end_cap_"{__compressed_pair<void (^__strong *)(bool), std::__1::allocator<void (^)(bool)> >="__first_"^@? {}  _completionHandlers;
     UIView * _containerView;
     CALayer * _contentLayer;
@@ -93,8 +99,10 @@
             } __p3_; 
         } __table_; 
     }  _faceStates;
-    void _failureColor;
+    bool  _feedbackEnabled;
     void _finishedColor;
+    bool  _finishedColorOverridden;
+    bool  _hideFace;
     void _idleColor;
     bool  _inWindow;
     double  _lastUpdateTime;
@@ -107,6 +115,7 @@
         float accumulator_growth; 
         float accumulator_persistence; 
         float accumulator_luminance_alpha_factor; 
+        float blur_scale; 
         float k; 
         float epsilon; 
     }  _normalRenderState;
@@ -116,7 +125,7 @@
     bool  _paused;
     long long  _priorState;
     void _processingColor;
-    bool  _renderUpdateRequested;
+    bool  _reduceBlur;
     LAUICubicBSplineRenderer * _renderer;
     struct map<unsigned long, std::__1::set<unsigned long, std::__1::less<unsigned long>, std::__1::allocator<unsigned long> >, std::__1::less<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, std::__1::set<unsigned long, std::__1::less<unsigned long>, std::__1::allocator<unsigned long> > > > > { 
         struct __tree<std::__1::__value_type<unsigned long, std::__1::set<unsigned long, std::__1::less<unsigned long>, std::__1::allocator<unsigned long> > >, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, std::__1::set<unsigned long, std::__1::less<unsigned long>, std::__1::allocator<unsigned long> > >, std::__1::less<unsigned long>, true>, std::__1::allocator<std::__1::__value_type<unsigned long, std::__1::set<unsigned long, std::__1::less<unsigned long>, std::__1::allocator<unsigned long> > > > > { 
@@ -145,8 +154,10 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <LAUIPearlGlyphViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) bool feedbackEnabled;
 @property (nonatomic, readonly) UIColor *finishedColor;
 @property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool hideFace;
 @property (nonatomic) struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; } modelTransform;
 @property (getter=isPaused, nonatomic) bool paused;
 @property (nonatomic, readonly) long long state;
@@ -156,18 +167,25 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)_applyBlurRadius;
 - (void)_applyStateAnimated:(bool)arg1;
 - (void)_applyStyle;
 - (void)_createStates;
 - (void)_executeCompletionHandlers:(bool)arg1;
+- (void)_extractColorVectorFromColor:(id)arg1;
+- (void)_updateReduceBlurState;
 - (void)_updateRendererPaused:(bool)arg1;
+- (void)applicationDidBecomeActive:(id)arg1;
 - (void)beginExternalAnimation;
 - (id)contentLayer;
+- (void)dealloc;
 - (id)delegate;
 - (void)didMoveToWindow;
 - (void)drawInMTKView:(id)arg1;
 - (void)endExternalAnimation;
+- (bool)feedbackEnabled;
 - (id)finishedColor;
+- (bool)hideFace;
 - (id)init;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithStyle:(long long)arg1;
@@ -177,8 +195,12 @@
 - (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })modelTransform;
 - (void)mtkView:(id)arg1 drawableSizeWillChange:(struct CGSize { double x1; double x2; })arg2;
 - (void)purgeBuffers;
+- (void)reduceMotionDidChange:(id)arg1;
+- (void)reduceTransparencyDidChange:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setFeedbackEnabled:(bool)arg1;
 - (void)setFinishedColor:(id)arg1 animated:(bool)arg2;
+- (void)setHideFace:(bool)arg1 animated:(bool)arg2;
 - (void)setModelTransform:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })arg1;
 - (void)setPaused:(bool)arg1;
 - (void)setState:(long long)arg1 animated:(bool)arg2;

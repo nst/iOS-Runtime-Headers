@@ -25,7 +25,7 @@
 
 - (void).cxx_destruct;
 - (void)addSegmentToResults;
-- (int)finalize;
+- (int)finalizeAnalysis;
 - (id)init;
 - (int)processFrameMetadata:(id)arg1;
 - (id)results;

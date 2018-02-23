@@ -47,6 +47,8 @@
 @property (retain) NSXPCListener *xpcListener;
 
 + (bool)holdVoucherForConnections;
++ (void)initialize;
++ (bool)isHomePod;
 + (id)stateAsString:(long long)arg1;
 
 - (void).cxx_destruct;

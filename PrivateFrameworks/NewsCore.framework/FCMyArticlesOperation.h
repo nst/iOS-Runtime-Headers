@@ -3,6 +3,7 @@
  */
 
 @interface FCMyArticlesOperation : FCOperation {
+    <FCAppConfiguration> * _appConfiguration;
     long long  _binOverride;
     FCCloudContext * _context;
     FCDateRange * _dateRange;
@@ -16,6 +17,7 @@
     bool  _streamFeedItems;
 }
 
+@property (nonatomic, copy) <FCAppConfiguration> *appConfiguration;
 @property (nonatomic) long long binOverride;
 @property (nonatomic, retain) FCCloudContext *context;
 @property (nonatomic, copy) FCDateRange *dateRange;
@@ -32,6 +34,7 @@
 - (void).cxx_destruct;
 - (void)_appendFeedItems:(id)arg1;
 - (void)_fetchTagsForQueryingWithCompletionHandler:(id /* block */)arg1;
+- (id)appConfiguration;
 - (long long)binOverride;
 - (id)context;
 - (id)dateRange;
@@ -46,6 +49,7 @@
 - (void)operationWillFinishWithError:(id)arg1;
 - (unsigned long long)perFeedLimit;
 - (void)performOperation;
+- (void)setAppConfiguration:(id)arg1;
 - (void)setBinOverride:(long long)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDateRange:(id)arg1;

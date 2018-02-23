@@ -6,6 +6,7 @@
     bool  AABEnabled;
     id /* block */  _callback;
     void * _callbackContext;
+    struct __CFDictionary { } * _clientDisplayMap;
     id /* block */  _ecoModeNotificationHandler;
     int  _ecoModeNotificationToken;
     id /* block */  _ecoModePreferencesUpdateNotificationHandler;

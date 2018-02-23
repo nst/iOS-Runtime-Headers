@@ -104,6 +104,7 @@
 - (id)opportunisticTopics;
 - (id)publicToken;
 - (void)removeFromRunLoop;
+- (void)requestKeepAlive;
 - (void)requestTokenForTopic:(id)arg1 identifier:(id)arg2;
 - (void)scheduleInRunLoop:(id)arg1;
 - (void)sendFakeMessage:(id)arg1;

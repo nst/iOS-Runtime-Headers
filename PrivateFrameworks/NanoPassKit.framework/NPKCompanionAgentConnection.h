@@ -90,6 +90,7 @@
 - (void)setDefaultPaymentApplication:(id)arg1 forPassWithUniqueID:(id)arg2 completion:(id /* block */)arg3;
 - (void)setDelegate:(id)arg1;
 - (void)setHasQueuedPaymentPasses:(bool)arg1;
+- (void)setPeerPaymentAccount:(id)arg1 forDevice:(id)arg2;
 - (void)setQueueAppropriateFailedActions:(bool)arg1;
 - (void)setSharedPaymentWebServiceContext:(id)arg1 forDevice:(id)arg2;
 - (void)setSharedPeerPaymentWebServiceContext:(id)arg1 forDevice:(id)arg2;

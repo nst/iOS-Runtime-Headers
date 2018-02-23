@@ -88,6 +88,7 @@
 - (void)updateViewControllerTitle:(id)arg1;
 - (void)updateWithTableModel:(id)arg1;
 - (id)viewControllerForIndexPath:(id)arg1 isPeek:(bool)arg2;
+- (void)viewSafeAreaInsetsDidChange;
 - (void)viewWillAppear:(bool)arg1;
 - (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;

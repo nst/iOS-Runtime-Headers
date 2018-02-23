@@ -29,6 +29,7 @@
 - (id)constraints;
 - (id)initWithName:(id)arg1 type:(long long)arg2 properties:(unsigned long long)arg3 constraints:(id)arg4 value:(id)arg5;
 - (id)modelWithParentIdentifier:(id)arg1;
+- (id)modelsWithParentIdentifier:(id)arg1;
 - (id)name;
 - (unsigned long long)properties;
 - (id)propertyDescription;

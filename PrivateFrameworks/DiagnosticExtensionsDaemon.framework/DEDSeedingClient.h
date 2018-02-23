@@ -21,6 +21,7 @@
 @property <DEDSeedingClientDelegate> *uploadDelegate;
 
 - (void).cxx_destruct;
+- (id)HTTPErrorWithResponse:(id)arg1 withData:(id)arg2;
 - (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
 - (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;

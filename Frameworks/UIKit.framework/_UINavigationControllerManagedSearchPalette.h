@@ -18,11 +18,14 @@
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (id)_initWithNavigationController:(id)arg1 forEdge:(unsigned long long)arg2;
 - (void)_popDisableLayoutFlushingForTransition;
+- (void)_propagateBackgroundToContents;
 - (void)_pushDisableLayoutFlushingForTransition;
 - (id)_searchBar;
 - (void)_setSearchBar:(id)arg1;
 - (void)_setShadowAlpha:(double)arg1;
 - (double)_shadowAlpha;
+- (bool)_shouldHideWhenScrolling;
+- (bool)_shouldUpdateBackground;
 - (bool)_supportsSpecialSearchBarTransitions;
 - (void)_updateLayoutForCurrentConfiguration;
 - (bool)ignoreGeometryChanges;

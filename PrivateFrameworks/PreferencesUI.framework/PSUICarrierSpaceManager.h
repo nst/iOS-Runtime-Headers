@@ -13,6 +13,7 @@
     struct __CTServerConnection { } * _serverConnection;
     CTCarrierSpaceUsageInfo * _usageInfo;
     CTCarrierSpaceUserConsentFlowInfo * _userConsentFlowInfo;
+    NSNumber * _userConsentResponse;
 }
 
 @property (nonatomic, retain) CTCarrierSpaceClient *carrierSpaceClient;
@@ -52,6 +53,7 @@
 - (bool)supportsSweetgum;
 - (void)usageDidChange;
 - (id)usageInfo;
+- (void)userConsentAcknowledged:(bool)arg1;
 - (id)userConsentFlowInfo;
 - (void)userConsentFlowInfoDidChange;
 

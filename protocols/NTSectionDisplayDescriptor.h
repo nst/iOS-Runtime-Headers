@@ -5,6 +5,8 @@
 
 @required
 
+- (NSString *)actionTitle;
+- (NSURL *)actionURL;
 - (NSString *)backgroundGradientColor;
 - (NSString *)discoverMoreVideosSubtitle;
 - (NSString *)discoverMoreVideosTitle;
@@ -12,6 +14,7 @@
 - (bool)displaysAsVideoPlaylist;
 - (NSString *)name;
 - (NSString *)nameColor;
+- (bool)useNameColorInWidget;
 - (bool)videoPlaysMutedByDefault;
 
 @end

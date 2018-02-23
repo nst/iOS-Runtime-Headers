@@ -123,6 +123,7 @@
 @property (nonatomic, readonly) unsigned long long loginStatus;
 @property (nonatomic, readonly) NSString *loginStatusMessage;
 @property (nonatomic, readonly) bool makingChanges;
+@property (getter=isMakoAccount, nonatomic, readonly) bool makoAccount;
 @property (nonatomic, readonly) NSDate *myIdleSince;
 @property (nonatomic, readonly) NSString *myNowPlayingString;
 @property (nonatomic, readonly) NSData *myPictureData;
@@ -319,6 +320,7 @@
 - (bool)isConnected;
 - (bool)isConnecting;
 - (bool)isInvisible;
+- (bool)isMakoAccount;
 - (bool)isManaged;
 - (bool)isOperational;
 - (bool)isRegistered;

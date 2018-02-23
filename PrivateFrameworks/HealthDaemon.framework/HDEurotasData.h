@@ -31,6 +31,7 @@
 - (void)addHeartRate:(unsigned short)arg1;
 - (void)addTotalEnergy:(unsigned short)arg1;
 - (unsigned short)averageHeartRate;
+- (id)description;
 - (id)getBinaryValueWithError:(id*)arg1;
 - (bool)hasActiveEnergy;
 - (bool)hasAverageHeartRate;
@@ -38,6 +39,7 @@
 - (bool)hasTotalEnergy;
 - (unsigned short)heartRate;
 - (id)initForWriting;
+- (bool)isEqual:(id)arg1;
 - (unsigned short)totalEnergy;
 
 @end

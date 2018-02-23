@@ -165,6 +165,7 @@
 - (void)_didChangeKeyplaneWithContext:(id)arg1;
 - (void)_didTapBiasEscapeButton:(id)arg1;
 - (bool)_handRestRecognizerCancelShouldBeEnd;
+- (bool)_handleTouchForEmojiInputView;
 - (id)_keyplaneVariantsKeyForString:(id)arg1;
 - (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_paddedKeyUnionFrame;
 - (void)_recordKeystrokeStatisticForKeyPress;
@@ -222,6 +223,7 @@
 - (long long)currentHandBiasWithCoordinator:(id)arg1;
 - (id)currentKeyplane;
 - (id)currentKeyplaneView;
+- (id)currentRepresentedStringForDualDisplayKey:(id)arg1;
 - (void)deactivateActiveKey;
 - (void)deactivateActiveKeys;
 - (void)deactivateActiveKeysClearingTouchInfo:(bool)arg1 clearingDimming:(bool)arg2;
@@ -302,11 +304,13 @@
 - (id)initialKeyplaneNameWithKBStarName:(id)arg1;
 - (id)inputModeToMergeCapsLockKey;
 - (void)installGestureRecognizers;
+- (id)internationalKeyDisplayStringOnEmojiKeyboard;
 - (bool)is10KeyRendering;
 - (bool)isAlphabeticPlane;
 - (bool)isDeadkeyInput:(id)arg1;
 - (bool)isEmojiKeyplane;
 - (bool)isLongPressedKey:(id)arg1;
+- (bool)isMultitapKey:(id)arg1;
 - (bool)isRotating;
 - (bool)isShiftKeyBeingHeld;
 - (bool)isShiftKeyPlaneChooser;
@@ -331,6 +335,7 @@
 - (id)keyplaneNameForRevertAfterTouch;
 - (id)keyplaneNamed:(id)arg1;
 - (unsigned long long)keyplaneShiftState;
+- (double)lastTouchDownTimestamp;
 - (double)lastTouchUpTimestamp;
 - (double)lastTwoFingerTapTimestamp;
 - (id)layoutTag;

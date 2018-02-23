@@ -17,6 +17,7 @@
     }  _insetMargins;
     bool  _needsReloadData;
     bool  _notificationRequestRemovedWhileInLongLook;
+    bool  _notificationRequestRemovedWhilePossiblyInLongLook;
     NCNotificationViewController * _notificationViewControllerForSizing;
     NSHashTable * _observers;
     NCNotificationListTouchEater * _touchEater;
@@ -40,6 +41,7 @@
         unsigned int scrollViewShouldScrollToTop : 1; 
         unsigned int scrollViewDidScrollToTop : 1; 
     }  _userInteractionDelegateFlags;
+    NCNotificationViewController * _viewControllerPossiblyPresentingLongLook;
     NCNotificationViewController * _viewControllerPresentingLongLook;
 }
 
@@ -57,6 +59,7 @@
 @property (nonatomic, readonly) double itemSpacing;
 @property (nonatomic) bool needsReloadData;
 @property (nonatomic) bool notificationRequestRemovedWhileInLongLook;
+@property (nonatomic) bool notificationRequestRemovedWhilePossiblyInLongLook;
 @property (nonatomic, retain) NCNotificationViewController *notificationViewControllerForSizing;
 @property (nonatomic, retain) NSHashTable *observers;
 @property (getter=isPresentingNotificationInLongLook, nonatomic, readonly) bool presentingNotificationInLongLook;
@@ -64,6 +67,7 @@
 @property (nonatomic, retain) NCNotificationListTouchEater *touchEater;
 @property (nonatomic) <NCNotificationListViewControllerUserInteractionDelegate> *userInteractionDelegate;
 @property (nonatomic) struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; } userInteractionDelegateFlags;
+@property (nonatomic, retain) NCNotificationViewController *viewControllerPossiblyPresentingLongLook;
 @property (nonatomic, retain) NCNotificationViewController *viewControllerPresentingLongLook;
 
 - (void).cxx_destruct;
@@ -108,7 +112,9 @@
 - (void)handleEatenTouchEndStateForGestureRecognizer:(id)arg1;
 - (bool)hasContent;
 - (bool)hasVisibleContent;
+- (id)hideHomeAffordanceAnimationSettingsForNotificationViewController:(id)arg1;
 - (void)hideRequestsForNotificationSectionIdentifier:(id)arg1 subSectionIdentifier:(id)arg2;
+- (void)hideRequestsForNotificationSectionSettings:(id)arg1;
 - (id)indexPathForNotificationRequest:(id)arg1;
 - (id)init;
 - (bool)insertNotificationRequest:(id)arg1 forCoalescedNotification:(id)arg2;
@@ -135,7 +141,9 @@
 - (void)notificationListCollectionView:(id)arg1 willSetFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (id)notificationRequestAtIndexPath:(id)arg1;
 - (id)notificationRequestInLongLook;
+- (id)notificationRequestPossiblyInLongLook;
 - (bool)notificationRequestRemovedWhileInLongLook;
+- (bool)notificationRequestRemovedWhilePossiblyInLongLook;
 - (id)notificationRequestsPassingTest:(id /* block */)arg1;
 - (id)notificationUsageTrackingStateForNotificationViewController:(id)arg1;
 - (void)notificationViewController:(id)arg1 executeAction:(id)arg2 withParameters:(id)arg3 completion:(id /* block */)arg4;
@@ -172,22 +180,29 @@
 - (void)setCellsSizesCaches:(id)arg1;
 - (void)setCellsSizesCachesSuppressedContent:(id)arg1;
 - (void)setChildPreferredContentSizeChangeCoordinator:(id)arg1;
+- (void)setCustomContentHomeAffordanceVisible:(bool)arg1 withGestureRecognizer:(id)arg2;
 - (void)setDestinationDelegate:(id)arg1;
 - (void)setNeedsReloadData:(bool)arg1;
 - (void)setNotificationRequestRemovedWhileInLongLook:(bool)arg1;
+- (void)setNotificationRequestRemovedWhilePossiblyInLongLook:(bool)arg1;
 - (void)setNotificationViewControllerForSizing:(id)arg1;
 - (void)setObservers:(id)arg1;
 - (void)setTouchEater:(id)arg1;
 - (void)setTouchEaterEnabled:(bool)arg1;
 - (void)setUserInteractionDelegate:(id)arg1;
 - (void)setUserInteractionDelegateFlags:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; })arg1;
+- (void)setViewControllerPossiblyPresentingLongLook:(id)arg1;
 - (void)setViewControllerPresentingLongLook:(id)arg1;
+- (id)settleHomeAffordanceAnimationBehaviorDescriptionForNotificationViewController:(id)arg1;
 - (bool)shouldReceiveTouch:(id)arg1 forGestureRecognizer:(id)arg2;
 - (bool)showAdditionalMessageLinesForNotificationViewController:(id)arg1;
 - (void)showRequestsForNotificationSectionIdentifier:(id)arg1 subSectionIdentifier:(id)arg2;
+- (void)showRequestsForNotificationSectionSettings:(id)arg1;
 - (id)touchEater;
+- (id)unhideHomeAffordanceAnimationSettingsForNotificationViewController:(id)arg1;
 - (id)userInteractionDelegate;
 - (struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; })userInteractionDelegateFlags;
+- (id)viewControllerPossiblyPresentingLongLook;
 - (id)viewControllerPresentingLongLook;
 - (void)viewDidAppear:(bool)arg1;
 - (void)viewDidDisappear:(bool)arg1;

@@ -170,6 +170,7 @@
 - (bool)fp_reparentUnderFolder:(id)arg1 allowBouncing:(bool)arg2 completionHandler:(id /* block */)arg3;
 - (bool)fp_reparentUnderFolder:(id)arg1 completionHandler:(id /* block */)arg2;
 - (bool)fp_reparentUnderFolder:(id)arg1 withNewName:(id)arg2 completionHandler:(id /* block */)arg3;
+- (id)fp_scopeDescription;
 - (id)fp_shortDescription;
 - (bool)fp_trashUnderFolder:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)fp_withReadWriteAccess:(id /* block */)arg1;
@@ -283,6 +284,9 @@
 - (id)writableTypeIdentifiersForItemProvider;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
++ (id)hk_tapToHealthRadarURLWithTitle:(id)arg1 description:(id)arg2 classification:(long long)arg3 reproducibility:(long long)arg4 keywords:(id)arg5;
++ (id)hk_tapToRadarURLForBundleID:(id)arg1 title:(id)arg2 description:(id)arg3 classification:(long long)arg4 reproducibility:(long long)arg5 keywords:(id)arg6;
 
 - (id)hk_valueForFirstInstanceOfParameterNamed:(id)arg1;
 
@@ -727,7 +731,7 @@
 
 - (id)dd_emailFromMailtoScheme;
 - (bool)dd_isAnySimpleTelephonyScheme;
-- (bool)dd_isMaps;
+- (bool)dd_isMaps:(bool)arg1;
 - (id)dd_phoneNumberFromTelScheme;
 - (id)dd_phoneNumberFromTelSchemeAndExtractBody:(id*)arg1;
 
@@ -751,6 +755,13 @@
 - (id)gs_URLByUpdatingPathExtensionWithPathOrURL:(id)arg1;
 - (id)gs_issueExtension:(const char *)arg1 error:(id*)arg2;
 - (id)gs_issueReadExtensionIfNeededForPid:(int)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
+
++ (id)hu_allowAccessWhileLockedSettingsURL;
++ (id)hu_locationDeviceSettingsURL;
++ (id)hu_locationServicesSettingsURL;
++ (id)hu_notificationSettingsURL;
 
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
@@ -839,6 +850,7 @@
 - (bool)_isFeldsparOldChannelURL;
 - (bool)_isFeldsparOldTopicURL;
 - (id)fc_NewsArticleID;
+- (id)fc_URLByAddingQueryItem:(id)arg1;
 - (id)fc_URLByDeletingFragment;
 - (id)fc_URLByDeletingQuery;
 - (id)fc_feldsparTagID;
@@ -991,14 +1003,6 @@
 - (id)URLByReallyResolvingSymlinksInPath;
 - (bool)sd_containsOrIsItemAtURL:(id)arg1 error:(id*)arg2;
 - (bool)sd_strictlyContainsItemAtURL:(id)arg1 error:(id*)arg2;
-
-// Image: /System/Library/PrivateFrameworks/Silex.framework/Silex
-
-+ (bool)sx_canHandleNavigationAction:(id)arg1;
-+ (id)sx_sanitizedURLForWebView:(id)arg1 navigationAction:(id)arg2;
-
-- (bool)_sx_isFeldsparURL;
-- (id)sx_sanitizedURL;
 
 // Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
 

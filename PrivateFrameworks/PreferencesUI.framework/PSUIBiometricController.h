@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUIBiometricController : PSUIPasscodeLockController <BiometricKitUIEnrollResultDelegate, UIPopoverControllerDelegate> {
+@interface PSUIBiometricController : PSUIPasscodeLockController <UIPopoverControllerDelegate> {
     bool  _currentlyEnablingTouchIDForPurchases;
     PSEnrollContainerViewController * _enrollController;
-    UIPopoverController * _enrollmentPopoverController;
+    UIViewController * _enrollmentPopoverController;
     id /* block */  _modalFlowCancelCompletion;
     id /* block */  _modalFlowSuccessCompletion;
     long long  _storeState;
@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) PSEnrollContainerViewController *enrollController;
-@property (nonatomic, retain) UIPopoverController *enrollmentPopoverController;
+@property (nonatomic, retain) UIViewController *enrollmentPopoverController;
 @property (readonly) unsigned long long hash;
 @property (nonatomic, copy) id /* block */ modalFlowCancelCompletion;
 @property (nonatomic, copy) id /* block */ modalFlowSuccessCompletion;
@@ -30,6 +30,7 @@
 - (void)addEnrollmentOrCreatePasscodeIfNecessaryWithCompletion:(id /* block */)arg1;
 - (id)authorizationToken;
 - (id)biometricLogo;
+- (id)biometricTableViewHeader;
 - (void)cancelModalFlow;
 - (void)completeModalFlow;
 - (bool)currentlyEnablingTouchIDForPurchases;
@@ -41,11 +42,11 @@
 - (void)enrollmentCompletedForIdentity:(id)arg1;
 - (void)enrollmentControllerDidDismiss;
 - (id)enrollmentPopoverController;
-- (bool)hasPasscodeAndFingerprints;
+- (bool)hasPasscodeAndBiometric;
 - (id)headerForUseBiometricSection;
 - (void)hideCancelButton;
+- (bool)isBiometricEditingAllowed;
 - (bool)isEnrollmentAvailable;
-- (bool)isFingerprintEditingAllowed;
 - (id)isTouchIDForPurchasesEnabled:(id)arg1;
 - (bool)isTouchIDForPurchasesRestricted;
 - (id)isTouchIDForStockholmEnabled:(id)arg1;
@@ -55,10 +56,11 @@
 - (id /* block */)modalFlowCancelCompletion;
 - (id /* block */)modalFlowSuccessCompletion;
 - (id)passcodeController;
-- (bool)popoverControllerShouldDismissPopover:(id)arg1;
+- (bool)popoverPresentationControllerShouldDismissPopover:(id)arg1;
 - (void)presentPasscodePaneFromSpecifier:(id)arg1;
 - (void)presentPopoverForContentViewController:(id)arg1;
 - (void)pushPasscodePane;
+- (void)setBiometricUnlockEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setCurrentlyEnablingTouchIDForPurchases:(bool)arg1;
 - (void)setEnrollController:(id)arg1;
 - (void)setEnrollmentPopoverController:(id)arg1;
@@ -67,7 +69,6 @@
 - (void)setStoreState:(long long)arg1;
 - (void)setTouchIDForPurchasesEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setTouchIDForStockholmEnabled:(id)arg1 specifier:(id)arg2;
-- (void)setTouchIDUnlockEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setupBiometricLogoHeader;
 - (bool)shouldRestrictFeaturesRequiringEnrollment;
 - (long long)storeState;

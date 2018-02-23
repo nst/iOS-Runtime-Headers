@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsUI.framework/NewsUI
  */
 
-@interface NUInterstitialViewController : UIViewController <NUPagable> {
+@interface NUInterstitialViewController : UIViewController <NUPageable> {
     bool  _hasPresentedInterstitial;
     ADInterstitialAd * _interstitial;
     UIView * _interstitialView;

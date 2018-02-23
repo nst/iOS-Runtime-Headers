@@ -5,6 +5,7 @@
 @interface ARFaceTrackingTechnique : ARTechnique {
     NSObject<OS_dispatch_semaphore> * _dataSemaphore;
     ARFaceTrackingData * _faceTrackingData;
+    bool  _isFaceTracked;
 }
 
 + (bool)isSupported;

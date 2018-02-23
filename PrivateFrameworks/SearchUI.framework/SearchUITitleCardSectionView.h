@@ -18,6 +18,6 @@
 - (void)setContainerView:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (id)setupContentView;
-- (void)updateWithCardSection:(id)arg1;
+- (void)updateWithRowModel:(id)arg1;
 
 @end

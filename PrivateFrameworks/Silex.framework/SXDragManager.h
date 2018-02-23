@@ -36,5 +36,6 @@
 - (void)setDataSource:(id)arg1;
 - (void)setEnabled:(bool)arg1;
 - (unsigned long long)sharingPolicy;
+- (void)updateAccessibilityDragSourceDescriptorsForDraggableElement:(id)arg1;
 
 @end

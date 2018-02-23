@@ -116,6 +116,7 @@
 - (struct CGPoint { double x1; double x2; })contentOffset;
 - (struct CGSize { double x1; double x2; })contentSize;
 - (void)didMoveToSuperview;
+- (void)didMoveToWindow;
 - (id)diffuseShadowView;
 - (id)initWithDUIPreview:(id)arg1;
 - (bool)isBackgroundVisible;

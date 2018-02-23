@@ -48,7 +48,6 @@
 
 - (void).cxx_destruct;
 - (void)backButtonTapped;
-- (void)contentSizeCategoryDidChange:(id)arg1;
 - (id)currentTopicHistoryItem;
 - (void)dealloc;
 - (id)delegate;

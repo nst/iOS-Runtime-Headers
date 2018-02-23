@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@interface AAUIAccountCreationRemoteUI : NSObject <RUIObjectModelDelegate> {
+@interface AAUIAccountCreationRemoteUI : NSObject <RUILoaderDelegate, RUIObjectModelDelegate> {
     AASetupAssistantService * _aaService;
     UINavigationController * _createAccountNavController;
     <AAUIAccountCreationDelegate> * _delegate;
@@ -44,6 +44,7 @@
 - (void)objectModelDidChange:(id)arg1;
 - (void)objectModelPressedBack:(id)arg1;
 - (id)parentViewControllerForObjectModel:(id)arg1;
+- (id)sessionConfigurationForLoader:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (unsigned long long)supportedInterfaceOrientationsForObjectModel:(id)arg1 page:(id)arg2;
 
